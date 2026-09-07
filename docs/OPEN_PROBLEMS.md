@@ -135,7 +135,26 @@ structured citizen-reporting scheme running year-round rather than in summer.
 
 ---
 
-## 9. Trawling and bed integrity in the receiving bays
+## 9. Fat, and everything else with no nitrogen in it
+
+*Fedtemøg* names a material. Triglycerides contain no nitrogen at all, carry roughly
+2.9 g of oxygen demand per gram, float rather than settle, and do not disperse. Sewers
+accumulate them as fedtpropper and release them on a flow threshold — the same hours in
+which the flow bypasses the treatment works.
+
+No national figure exists for how much leaves the system. One utility reported 25 tonnes
+of fat arriving at its works in a year, which counts only the fraction that did *not*
+overflow. There is no unit in which this would be reported, because the reporting unit
+is nitrogen.
+
+**What would settle it.** Composition sampling of overflow at a handful of structures
+across a range of event sizes — the same flow-proportional campaign as item 5, with FOG
+and total organic carbon added to the determinands. Utilities already record fedtprop
+clearing operations; those records would give the retention side.
+
+---
+
+## 10. Trawling and bed integrity in the receiving bays
 
 A loose, dead bed resuspends several times more often than a living one, and bottom
 trawling removes structure-forming fauna directly. Whether the bays receiving urban
@@ -146,7 +165,7 @@ subject to an access key.
 
 ---
 
-## 10. Whether toxicant loading, not nutrients, gates recovery
+## 11. Whether toxicant loading, not nutrients, gates recovery
 
 Eelgrass partially recovered through the 1940s–60s after the 1930s wasting disease, then
 declined again in the 1980s. That failure-to-recover window coincides with rising
@@ -163,7 +182,7 @@ loadings against the eelgrass record.
 
 ---
 
-## 11. The three unplaced flood sheets
+## 12. The three unplaced flood sheets
 
 Amager, Bispebjerg and København Vest did not register confidently and carry *more*
 modelled flooding than the four that did. Two hand-placed control points each in

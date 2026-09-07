@@ -56,7 +56,7 @@ and that is one branch of a tree, not the trunk. There are at least three routes
 | Route | What arrives | Does it need nitrogen? |
 |---|---|---|
 | **A. Growth** | dissolved nutrients | **Yes** — this is the modelled pathway |
-| **B. Direct organic matter** | organic carbon that is already biomass — sewage solids, faecal matter, resuspended basin sludge | **No.** The material does not have to be grown. It has already been grown, somewhere else, out of somebody else's nitrogen. |
+| **B. Direct organic matter** | organic carbon that is already biomass or was never alive at all — sewage solids, faecal matter, resuspended basin sludge, and fat | **No.** The material does not have to be grown. It has already been grown, somewhere else, out of somebody else's nitrogen — or, in the case of fat, contains no nitrogen at any point in its existence. |
 | **C. Killing what is already there** | nothing — toxicants, hypoxia, sulphide, physical disturbance | **No.** The standing stock of living tissue in a bay is converted to detritus in place. No new carbon enters the system at all. |
 
 Routes B and C are not exotic. B is what a combined sewer overflow physically is. C is what every hypoxic event and every toxicant pulse does by definition. Neither appears in any nutrient accounting, because neither is a nutrient.
@@ -89,6 +89,27 @@ The ratio above understates route B, because the two carbons are not interchange
 
 Which inverts the seasonal argument. Nitrogen's effectiveness at producing shore biomass is highest in spring and summer and close to zero in late autumn. Direct organic matter's effectiveness is **flat across the year**, and its delivery peaks in autumn and winter with the rain. The two pathways have opposite seasonality, and only the one that switches off in autumn is measured.
 
+### The word names a material
+
+*Fedtemøg* is not a metaphor. It means fat filth, and the fat is literal. Sewage carries fats, oils and grease continuously, and the sewer accumulates them into the deposits Danish utilities call fedtpropper — the same thing an English-speaking utility calls a fatberg.
+
+As a fedtemøg precursor, fat has an uncomfortable set of properties:
+
+| Property | Value | Consequence |
+|---|---|---|
+| Nitrogen content | **0%** | Triglycerides are carbon, hydrogen and oxygen. A nitrogen accounting cannot see this material at all — not under-count it, *not see it*. |
+| Carbon content | **~76%** by mass | Roughly twice the carbon density of algal dry matter. |
+| Oxygen demand | **~2.9 g O₂ per g** | Against ~1.1 for carbohydrate and ~1.5 for protein. Fat is the most oxygen-expensive common organic material there is. |
+| Density | below water | It floats. It does not settle out of the way; it goes to the surface and then to a shore. |
+| Solubility | none | It does not dilute. It coalesces. |
+| Degradation | slow, and slower without oxygen | It persists long enough to travel, and longest exactly where the water is already anoxic. |
+
+**And its release is threshold-triggered.** A fedtprop is a deposit on a pipe wall. It leaves when the flow is high enough to scour it — which is the same condition, in the same hours, as a combined sewer overflow. The material is retained through every dry day of the year and exported during precisely the hours when the flow bypasses the treatment works.
+
+So the annual accounting is doubly wrong for this material. It is invisible to the nitrogen unit, and its export is concentrated in the event tail that a modelled-annual-volume × fixed-concentration method averages away.
+
+**Scale, as far as it can be established.** One Danish utility reported receiving 25 tonnes of fat at its treatment plant in a single year, alongside 193 tonnes of screenings. That is one utility, one year, and — the important part — it counts only what *reached the works*. Every hour the system is in overflow is an hour that stream is going somewhere else. There is no national figure, no monitoring, and no unit in which it would be reported.
+
 ### Route C needs no carbon at all
 
 The third route has no input term to argue about. A bay holds a standing stock of living tissue — macroalgae, eelgrass, fauna, biofilm. Kill it and that tissue becomes detritus without a single additional gram entering the system. Toxicants, a hypoxic event, a sulphide pulse and a trawl all do this.
@@ -97,7 +118,42 @@ This route is the one the nutrient frame cannot even represent as a question. It
 
 **The consequence for the 70%.** A necessary condition for one branch is not a cause of the outcome. Removing nitrogen entirely would close route A and leave routes B and C running.
 
-## 4. The test that has already been run
+## 4. The bloom is mostly not made of what was delivered
+
+There is a second structural problem, and it is the one that does the most damage to an apportionment. The system feeds itself.
+
+The loop, stated plainly:
+
+1. simple, fast-replicating life grows on whatever is available
+2. its respiration and decay draw the oxygen down
+3. things that need oxygen die — fauna, and then everything else
+4. the dead tissue remineralises, releasing the nutrients it was built from
+5. those nutrients feed step 1 again, and there is now less competition for them
+
+Every turn of that loop makes the next turn easier, and the material driving it from turn two onward was **already in the bay**. It is not a delivery. Nothing crossed a boundary that an accounting could meter.
+
+This is not a speculative mechanism. It is the standard distinction in marine biogeochemistry between **new production** — running on nutrients newly supplied from outside the productive layer — and **regenerated production**, running on nutrients recycled in place. Their ratio has a name, the f-ratio, and in productive coastal water in summer it is low: most of the production is regenerated, not new.
+
+Which means the sentence "this bloom was caused by X% agriculture" is making a claim about the minority term. The majority of the nitrogen in a late-summer bloom was not delivered that summer by anyone. It was released by the previous round of dying.
+
+### What the loop does to the arithmetic
+
+An apportionment is a linear instrument. It assumes the outcome is a weighted sum of the inputs, so that halving one input removes its share of the outcome. A self-amplifying loop is not a weighted sum. In one:
+
+- **the trigger and the fuel are different quantities.** External input can be small and still start something that runs on internal stock;
+- **the same input produces wildly different outcomes** depending on how far round the loop the system already is — which is the state-dependence of section 7, arriving here by a second route;
+- **there are thresholds.** Below one, the loop damps; above it, the loop runs. Attribution either side of that line means different things;
+- **history matters.** What is in the sediment is last decade's deliveries, and it is released on the sediment's schedule, not this year's.
+
+None of that is exotic or contested. It is the ordinary behaviour of a system with positive feedback, and it is why the same load can produce record damage in one year and a third of it in the next.
+
+### And in Køge Bugt, the trigger is probably not nutrients
+
+The loop above still starts with growth. A bay receiving a large, pulsed delivery of sewage solids and fat can enter it further along — the organic material and the oxygen demand arrive together, already made, and the die-off that releases the internal store can be the *first* step rather than the third.
+
+That is a different causal shape from the one the accounting models, it produces the same shore, and it would be attributed to nitrogen by any method that only counts nitrogen.
+
+## 5. The test that has already been run
 
 There is one empirical check on the nitrogen-dominant model, and Denmark has spent thirty-five years and a great deal of money running it.
 
@@ -124,7 +180,7 @@ The series is NOT monotonically worsening. Interannual variance is very large - 
 
 2025 is the reason to be careful with this argument, and also the reason it points where it does. A system whose worst outcome swings threefold between consecutive years, under a load that barely moves between them, is a system governed by **the physics and the state of the individual year** — wind, stratification, temperature, what the bed is made of — with load as a slow background term. Note also that the load series is *flow-normalised*: the weather signal is deliberately removed from the input and is the dominant signal in the output.
 
-## 5. Three ways to explain the gap
+## 6. Three ways to explain the gap
 
 | Explanation | Standing | Detail |
 |---|---|---|
@@ -138,7 +194,7 @@ The three share a property worth stating plainly: **none of them is a source.** 
 
 So when the intervention underperforms, the instrument has exactly one thing it can recommend: more of the same intervention. Not because that is the best reading of the evidence, but because it is the only reading the instrument can express.
 
-## 6. State-dependence, stated as the mechanism
+## 7. State-dependence, stated as the mechanism
 
 The third explanation deserves its own statement, because it is the one this project's own computations support.
 
@@ -154,7 +210,7 @@ So the damage function is not *f(load)*. It is *f(load, state)*, and the state t
 
 Every item on that list is a reason the *same* kilogram of nitrogen does more damage in 2025 than it did in 1990. None of them appears in a source apportionment, because none of them is a source. **Nitrogen sensitivity is a derived property of a damaged system**, and the accounting treats it as a constant.
 
-## 7. What this does and does not establish
+## 8. What this does and does not establish
 
 **It does not establish that agriculture is off the hook.** Multiplying unknown fractions yields an unknown, not a small one. Agriculture is plausibly still the largest single nitrogen contributor, the load is real, and reductions have documented local benefits.
 
@@ -170,7 +226,7 @@ If nitrogen were the whole binding constraint, this would be a solved problem in
 
 Both readings sit in the same record. **That thirty-five years of data cannot distinguish them is the strongest single argument that the accounting is measuring the wrong thing.**
 
-## 8. What would separate the readings
+## 9. What would separate the readings
 
 | To test | Do this |
 |---|---|

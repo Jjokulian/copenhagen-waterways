@@ -24,6 +24,9 @@ MANUAL = os.path.join(ROOT, "data", "manual")
 AGRI_PCT = 69.6          # the published share, taken at face value throughout
 C_PER_COD = 0.375        # g organic C per g COD (CH2O + O2 -> CO2 + H2O)
 C_PER_N = (106 * 12.011) / (16 * 14.007)   # Redfield, by mass: 5.68 g C per g N
+C_FRAC_FAT = 0.759      # tripalmitin C51H98O6: 612.6 g C in 807 g - fat is mostly carbon
+COD_PER_FAT = 2.9       # g O2 per g fat, vs ~1.07 for carbohydrate and ~1.5 for protein
+N_FRAC_FAT = 0.0        # triglycerides are C, H and O. There is no nitrogen in fat.
 
 # The chain the phrase "agriculture causes 70% of fedtemøg" asserts, one link per row.
 # "coefficient" is what would have to exist for the multiplication to be legitimate.
@@ -164,10 +167,11 @@ def main():
     a("| Route | What arrives | Does it need nitrogen? |")
     a("|---|---|---|")
     a("| **A. Growth** | dissolved nutrients | **Yes** — this is the modelled pathway |")
-    a("| **B. Direct organic matter** | organic carbon that is already biomass — sewage "
-      "solids, faecal matter, resuspended basin sludge | **No.** The material does not "
-      "have to be grown. It has already been grown, somewhere else, out of somebody "
-      "else's nitrogen. |")
+    a("| **B. Direct organic matter** | organic carbon that is already biomass or was "
+      "never alive at all — sewage solids, faecal matter, resuspended basin sludge, "
+      "and fat | **No.** The material does not have to be grown. It has already been "
+      "grown, somewhere else, out of somebody else's nitrogen — or, in the case of "
+      "fat, contains no nitrogen at any point in its existence. |")
     a("| **C. Killing what is already there** | nothing — toxicants, hypoxia, sulphide, "
       "physical disturbance | **No.** The standing stock of living tissue in a bay is "
       "converted to detritus in place. No new carbon enters the system at all. |")
@@ -237,6 +241,43 @@ def main():
       "in autumn and winter with the rain. The two pathways have opposite seasonality, "
       "and only the one that switches off in autumn is measured.\n")
 
+    a("### The word names a material\n")
+    a("*Fedtemøg* is not a metaphor. It means fat filth, and the fat is literal. Sewage "
+      "carries fats, oils and grease continuously, and the sewer accumulates them into "
+      "the deposits Danish utilities call fedtpropper — the same thing an English-"
+      "speaking utility calls a fatberg.\n")
+    a("As a fedtemøg precursor, fat has an uncomfortable set of properties:\n")
+    a("| Property | Value | Consequence |")
+    a("|---|---|---|")
+    a(f"| Nitrogen content | **{N_FRAC_FAT:.0f}%** | Triglycerides are carbon, hydrogen and "
+      "oxygen. A nitrogen accounting cannot see this material at all — not "
+      "under-count it, *not see it*. |")
+    a(f"| Carbon content | **~{C_FRAC_FAT*100:.0f}%** by mass | Roughly twice the carbon "
+      "density of algal dry matter. |")
+    a(f"| Oxygen demand | **~{COD_PER_FAT:.1f} g O₂ per g** | Against ~1.1 for "
+      "carbohydrate and ~1.5 for protein. Fat is the most oxygen-expensive common "
+      "organic material there is. |")
+    a("| Density | below water | It floats. It does not settle out of the way; it goes "
+      "to the surface and then to a shore. |")
+    a("| Solubility | none | It does not dilute. It coalesces. |")
+    a("| Degradation | slow, and slower without oxygen | It persists long enough to "
+      "travel, and longest exactly where the water is already anoxic. |")
+    a("")
+    a("**And its release is threshold-triggered.** A fedtprop is a deposit on a pipe "
+      "wall. It leaves when the flow is high enough to scour it — which is the same "
+      "condition, in the same hours, as a combined sewer overflow. The material is "
+      "retained through every dry day of the year and exported during precisely the "
+      "hours when the flow bypasses the treatment works.\n")
+    a("So the annual accounting is doubly wrong for this material. It is invisible to "
+      "the nitrogen unit, and its export is concentrated in the event tail that a "
+      "modelled-annual-volume × fixed-concentration method averages away.\n")
+    a("**Scale, as far as it can be established.** One Danish utility reported receiving "
+      "25 tonnes of fat at its treatment plant in a single year, alongside 193 tonnes of "
+      "screenings. That is one utility, one year, and — the important part — it counts "
+      "only what *reached the works*. Every hour the system is in overflow is an hour "
+      "that stream is going somewhere else. There is no national figure, no monitoring, "
+      "and no unit in which it would be reported.\n")
+
     a("### Route C needs no carbon at all\n")
     a("The third route has no input term to argue about. A bay holds a standing stock of "
       "living tissue — macroalgae, eelgrass, fauna, biofilm. Kill it and that tissue "
@@ -251,7 +292,63 @@ def main():
       "routes B and C running.\n")
 
     # ------------------------------------------------------------------ 4
-    a("## 4. The test that has already been run\n")
+    a("## 4. The bloom is mostly not made of what was delivered\n")
+    a("There is a second structural problem, and it is the one that does the most damage "
+      "to an apportionment. The system feeds itself.\n")
+    a("The loop, stated plainly:\n")
+    for i, t in enumerate([
+        "simple, fast-replicating life grows on whatever is available",
+        "its respiration and decay draw the oxygen down",
+        "things that need oxygen die — fauna, and then everything else",
+        "the dead tissue remineralises, releasing the nutrients it was built from",
+        "those nutrients feed step 1 again, and there is now less competition for them",
+    ], 1):
+        a(f"{i}. {t}")
+    a("")
+    a("Every turn of that loop makes the next turn easier, and the material driving it "
+      "from turn two onward was **already in the bay**. It is not a delivery. Nothing "
+      "crossed a boundary that an accounting could meter.\n")
+    a("This is not a speculative mechanism. It is the standard distinction in marine "
+      "biogeochemistry between **new production** — running on nutrients newly supplied "
+      "from outside the productive layer — and **regenerated production**, running on "
+      "nutrients recycled in place. Their ratio has a name, the f-ratio, and in "
+      "productive coastal water in summer it is low: most of the production is "
+      "regenerated, not new.\n")
+    a("Which means the sentence \"this bloom was caused by X% agriculture\" is making a "
+      "claim about the minority term. The majority of the nitrogen in a late-summer "
+      "bloom was not delivered that summer by anyone. It was released by the previous "
+      "round of dying.\n")
+    a("### What the loop does to the arithmetic\n")
+    a("An apportionment is a linear instrument. It assumes the outcome is a weighted sum "
+      "of the inputs, so that halving one input removes its share of the outcome. A "
+      "self-amplifying loop is not a weighted sum. In one:\n")
+    for t in [
+        "**the trigger and the fuel are different quantities.** External input can be "
+        "small and still start something that runs on internal stock;",
+        "**the same input produces wildly different outcomes** depending on how far round "
+        "the loop the system already is — which is the state-dependence of section 7, "
+        "arriving here by a second route;",
+        "**there are thresholds.** Below one, the loop damps; above it, the loop runs. "
+        "Attribution either side of that line means different things;",
+        "**history matters.** What is in the sediment is last decade's deliveries, and it "
+        "is released on the sediment's schedule, not this year's.",
+    ]:
+        a(f"- {t}")
+    a("")
+    a("None of that is exotic or contested. It is the ordinary behaviour of a system with "
+      "positive feedback, and it is why the same load can produce record damage in one "
+      "year and a third of it in the next.\n")
+    a("### And in Køge Bugt, the trigger is probably not nutrients\n")
+    a("The loop above still starts with growth. A bay receiving a large, pulsed delivery "
+      "of sewage solids and fat can enter it further along — the organic material and the "
+      "oxygen demand arrive together, already made, and the die-off that releases the "
+      "internal store can be the *first* step rather than the third.\n")
+    a("That is a different causal shape from the one the accounting models, it produces "
+      "the same shore, and it would be attributed to nitrogen by any method that only "
+      "counts nitrogen.\n")
+
+    # ------------------------------------------------------------------ 5
+    a("## 5. The test that has already been run\n")
     a("There is one empirical check on the nitrogen-dominant model, and Denmark has "
       "spent thirty-five years and a great deal of money running it.\n")
 
@@ -286,8 +383,8 @@ def main():
       "weather signal is deliberately removed from the input and is the dominant "
       "signal in the output.\n")
 
-    # ------------------------------------------------------------------ 5
-    a("## 5. Three ways to explain the gap\n")
+    # ------------------------------------------------------------------ 6
+    a("## 6. Three ways to explain the gap\n")
     a("| Explanation | Standing | Detail |")
     a("|---|---|---|")
     for c in tr["competing_explanations"]:
@@ -306,8 +403,8 @@ def main():
       "reading of the evidence, but because it is the only reading the instrument can "
       "express.\n")
 
-    # ------------------------------------------------------------------ 6
-    a("## 6. State-dependence, stated as the mechanism\n")
+    # ------------------------------------------------------------------ 7
+    a("## 7. State-dependence, stated as the mechanism\n")
     a("The third explanation deserves its own statement, because it is the one this "
       "project's own computations support.\n")
     a("Nitrogen is not a toxicant. It is a growth subsidy — the opposite of dead water. "
@@ -335,8 +432,8 @@ def main():
       "derived property of a damaged system**, and the accounting treats it as a "
       "constant.\n")
 
-    # ------------------------------------------------------------------ 7
-    a("## 7. What this does and does not establish\n")
+    # ------------------------------------------------------------------ 8
+    a("## 8. What this does and does not establish\n")
     a("**It does not establish that agriculture is off the hook.** Multiplying unknown "
       "fractions yields an unknown, not a small one. Agriculture is plausibly still the "
       "largest single nitrogen contributor, the load is real, and reductions have "
@@ -364,8 +461,8 @@ def main():
       "distinguish them is the strongest single argument that the accounting is "
       "measuring the wrong thing.**\n")
 
-    # ------------------------------------------------------------------ 8
-    a("## 8. What would separate the readings\n")
+    # ------------------------------------------------------------------ 9
+    a("## 9. What would separate the readings\n")
     a("| To test | Do this |")
     a("|---|---|")
     for t, d in [

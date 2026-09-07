@@ -109,9 +109,13 @@ def main():
         dd = d5[keys[0]]["by_month"][str(i)]
         a(f"| {m} | {lv:,.0f} | {dd:,.0f} | {dd/max(lv,0.1):.1f}× |")
     a("")
-    a("October through January runs roughly double July. The resuspension season coincides "
-      "with the overflow season and with the autumn overturn — three things converging in "
-      "the same weeks, and the wave physics says so independently of anything about sewage.\n")
+    a("October through January runs roughly double July.\n")
+    a("*Corrected.* An earlier version of this document said the resuspension season "
+      "coincides with the overflow season. Over 31 years of rainfall it does not: rain "
+      "intense enough to overflow a combined sewer peaks in **June to August**, because "
+      "intensity in Denmark is convective. Resuspension peaks in **October to January**. "
+      "See [CURRENTS.md](#CURRENTS.md) — the two are separated by a residence time, not "
+      "simultaneous, and the sequence is deposit in summer, mobilise in autumn.\n")
     a("Note the ratio column: biology protects most in summer (nearly 9× in July) and least "
       "in a January gale. Losing the benthos costs you most in the calm season; in a storm "
       "the bed moves regardless.\n")
