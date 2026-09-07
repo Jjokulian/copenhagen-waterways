@@ -112,6 +112,56 @@ CHEM_TIERS = [
     ]),
 ]
 
+# Where each captured stream can go. The route is decided by the same evolutionary
+# prior that decides the source-control instrument - which is the point of the section.
+DISPOSAL = [
+    ("Organic matter — fat, solids, plant biomass",
+     "Deepest prior of all: it is carbon.",
+     "Digest it. Denmark already runs sludge digestion for biogas. The end state is CO₂ "
+     "and a digestate, and the fat is the highest-yield fraction there is.",
+     "resource"),
+    ("Nitrogen and phosphorus",
+     "The whole point of the biology.",
+     "Harvest as biomass. Phosphorus especially is a finite mined resource and worth "
+     "recovering rather than burying.",
+     "resource"),
+    ("Zinc, copper",
+     "Deep prior — essential elements with transporters and homeostasis.",
+     "**Let it become soil, below a concentration threshold.** Danish counties already "
+     "set limit values for metals in sediment destined for reuse. Below the limit it "
+     "re-enters the terrestrial cycle; above it, a lined cell.",
+     "threshold"),
+    ("Cadmium, mercury, lead",
+     "Weak or no prior — detoxified, not used.",
+     "Burial, but stabilised. Mercury methylates in anoxic sediment, so an anoxic "
+     "destination is the wrong one for that fraction specifically.",
+     "threshold"),
+    ("6PPD-quinone and similar degradable novel entities",
+     "No prior, but it breaks down.",
+     "Residence time *is* the treatment. What the pond does not settle, it outlives.",
+     "degrades"),
+    ("PFAS",
+     "No prior and no sink.",
+     "**Destruction, to specification.** And mostly it is not captured at all — it is "
+     "dissolved and mobile, so a settling pond does not collect it. Destruction applies "
+     "to the concentrated streams: spent filter media, firefighting foam, industrial "
+     "waste.",
+     "destroy"),
+]
+
+# Destruction conditions, because "burn it" done badly makes fluorinated by-products.
+DESTRUCTION = [
+    ("High-temperature incineration", ">1,100 °C, 2–3 s residence, excess oxygen",
+     ">99.99% mineralisation for AFFF and similar wastes",
+     "Below that, the parent compound disappears but products of incomplete combustion "
+     "form — perfluorocarboxylic acids, perfluoroalkanes, C₂F₆, CHF₃. Ordinary "
+     "municipal waste incineration is **not** this."),
+    ("Supercritical water oxidation", "650 °C, 22 MPa, ~11% excess O₂, 10–11 s",
+     ">99.999% for all 12 PFAAs measured",
+     "Also produces small volatile organofluorines including trifluoromethane, a potent "
+     "greenhouse gas. Emerging, not yet at municipal scale."),
+]
+
 # Passive stormwater treatment performance, from the pond and biofilter literature.
 TREATMENT = [
     ("Suspended solids (TSS)", "76–84%",
@@ -215,7 +265,7 @@ def main():
 
     # ================================================================ SOLUTION
     a("## Part two — the solution\n")
-    a("Six things. They are ordered by how much evidence stands behind them, not by "
+    a("Seven things. They are ordered by how much evidence stands behind them, not by "
       "how appealing they are.\n")
 
     # ---- 1
@@ -316,7 +366,7 @@ def main():
     # ---- Vestamager
     sp = amager_split()
     am, ml = sp["Amager"], sp["mainland"]
-    a("### Case two: Vestamager, which is the right shape\n")
+    a("#### Case two: Vestamager, which is the right shape\n")
     a("Behind the Amager dyke is a polder. Between 1939 and 1943 a 14 km dyke four "
       "metres high was built across a shallow bay, channels were dug, and about "
       f"**{VESTAMAGER_HA/100:.0f} km² was pumped dry**. Two pump stations still keep it "
@@ -446,7 +496,70 @@ def main():
       "never dredged becomes the thing it was built to prevent.\n")
 
     # ---- 4
-    a("### 4. Source control, sorted by what life has met before\n")
+    a("### 4. Where the captured material goes, which the same taxonomy decides\n")
+    a("Sections 2 and 3 both end in the same objection, and it is a fair one. A "
+      "treatment wetland concentrates contaminants in its sediment. Extractive "
+      "aquaculture concentrates them in biomass. Neither is a solution if the answer to "
+      "*and then what* is *we bank it somewhere and hope*.\n")
+    a("The answer is that **the disposal route is decided by the same evolutionary "
+      "prior that decides the source-control instrument.** It is one principle, applied "
+      "twice:\n")
+    a("> If life has met the substance before, the question is a **concentration**: "
+      "there exists a level below which lifecycles absorb it and it becomes sediment "
+      "and then soil. If life has never met it, there is no such level, and the only "
+      "terminal option is **destruction**.\n")
+    a("| Captured stream | Prior | Where it goes |")
+    a("|---|---|---|")
+    for name, prior, route, _kind in DISPOSAL:
+        a(f"| **{name}** | {prior} | {route} |")
+    a("")
+
+    a("#### Why burial actually works on land and not in the bay\n")
+    a("This is the part that makes the first half of the principle more than a hope, "
+      "and it comes straight out of [SEABED.md](#SEABED.md).\n")
+    a("Metals buried in **marine** sediment are held as sulphides in anoxic mud, and "
+      "they are released again on re-oxidation. A dead bed crosses the resuspension "
+      "threshold several times more often than a living one, so the marine sink is a "
+      "store that storms keep re-opening — conditional on exactly the bed integrity "
+      "that is failing.\n")
+    a("**Soil does not resuspend under storm waves.** A terrestrial sink is terminal in "
+      "a way a marine one is not. Which is a second, independent argument for "
+      "intercepting the material on land: not only that it is easier to catch there, "
+      "but that once caught, it stays caught.\n")
+
+    a("#### And destruction has to mean destruction\n")
+    a("The other half needs a specification, because burning a fluorinated compound "
+      "badly does not destroy it — it makes different fluorinated compounds. The "
+      "carbon–fluorine bond is the strongest single bond in organic chemistry, which is "
+      "both why PFAS persists and why the conditions are extreme:\n")
+    a("| Route | Conditions | Destruction | The catch |")
+    a("|---|---|---|---|")
+    for route, cond, eff, catch in DESTRUCTION:
+        a(f"| {route} | {cond} | **{eff}** | {catch} |")
+    a("")
+    a("So *incinerate it* is not the policy. **Above 1,100 °C with adequate residence "
+      "time** is the policy, and sending PFAS waste to a plant that cannot hold those "
+      "conditions converts a known problem into an unmonitored one.\n")
+    a("Which loops back to why the source-control instrument for PFAS is a use "
+      "restriction rather than a treatment requirement. Destruction only works on a "
+      "**collected, concentrated** stream. PFAS dispersed through textiles, packaging "
+      "and coatings is never collected, so there is nothing to feed the furnace. "
+      "**The taxonomy decides not only the disposal route but whether collection is "
+      "possible at all** — and where it is not, the only lever left is upstream.\n")
+
+    a("#### What this settles, and what it does not\n")
+    a("It settles the objection raised against extractive aquaculture and against "
+      "treatment wetlands: the harvested material is not an unanswered question. "
+      "Organic matter is a fuel, nutrients are a resource, deep-prior metals are a "
+      "concentration threshold with existing Danish limit values behind it, and the "
+      "novel entities are a destruction problem on a stream small enough to handle.\n")
+    a("It does not settle the cost, the logistics, or who pays for dredging a pond "
+      "every fifteen years. Those are real and they are ordinary. The point is only "
+      "that the material has somewhere to go, and that which somewhere is not a matter "
+      "of preference — it follows from what the substance is.\n\n")
+
+    # ---- 5
+    a("### 5. Source control, sorted by what life has met before\n")
     a("The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says nitrogen "
       "produces mush rather than meadow because the organisms that would have used it "
       "well are gone. If that is right, the substances that removed them sit upstream "
@@ -535,8 +648,8 @@ def main():
       "— the industrial areas and heavily trafficked roads the substances come from. "
       f"The same programme reports {hz['counterpoint']}.\n")
 
-    # ---- 5
-    a("### 5. Rebuild the thing that used to absorb it\n")
+    # ---- 6
+    a("### 6. Rebuild the thing that used to absorb it\n")
     a("Load reduction assumes the receiving system will recover once the pressure comes "
       "off. Where the structural life has already gone, that assumption is doing a lot "
       "of unexamined work — a bay with no filter feeders, no eelgrass and a loose bed "
@@ -561,13 +674,16 @@ def main():
     ]:
         a(f"- {t}")
     a("")
-    a("*Caveat, and it is not small.* Extractive aquaculture that concentrates metals "
-      "and organic contaminants creates a disposal question it does not answer. The "
-      "honest position is that it is a lever worth pulling and that where the harvest "
-      "goes has to be settled before, not after.\n")
+    a("*The disposal question* — extractive aquaculture concentrates metals and "
+      "organic contaminants in the harvest — is answered in section 4, and the answer "
+      "splits the harvest rather than the idea. Biomass carrying deep-prior metals has "
+      "a threshold below which it re-enters the terrestrial cycle; biomass carrying "
+      "cadmium or mercury does not, because those biomagnify and have no prior. So "
+      "where a harvest goes has to be settled by assay, before it is scaled, not "
+      "after.\n")
 
-    # ---- 6
-    a("### 6. Measure the six things that would settle the argument\n")
+    # ---- 7
+    a("### 7. Measure the six things that would settle the argument\n")
     a("This is first in priority and last in the list because it is the least "
       "satisfying. Everything above is contestable, and it is contestable because the "
       "measurements that would resolve it were never taken.\n")

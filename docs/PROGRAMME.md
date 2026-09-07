@@ -35,7 +35,7 @@ Not a lower number. A coast where the structural life comes back — where there
 
 ## Part two — the solution
 
-Six things. They are ordered by how much evidence stands behind them, not by how appealing they are.
+Seven things. They are ordered by how much evidence stands behind them, not by how appealing they are.
 
 ### 1. Rainwater rivers — and the alignments already exist
 
@@ -93,7 +93,7 @@ A lake carrying one number, from a chlorophyll series that ended around 2018, wi
 
 And there is a better reason to reject the site, which does not depend on how clean it is now. The lake is 14 m deep with **poor circulation** — cold water immediately below a warm surface layer. That is precisely the configuration that stratifies and goes anoxic under nutrient load. Directing stormwater into it would reproduce Køge Bugt in miniature, in fresh water, half a kilometre inland. **A deep, still hole is a bad treatment basin.** What treatment wants is the opposite: shallow, wide, and vegetated.
 
-### Case two: Vestamager, which is the right shape
+#### Case two: Vestamager, which is the right shape
 
 Behind the Amager dyke is a polder. Between 1939 and 1943 a 14 km dyke four metres high was built across a shallow bay, channels were dug, and about **20 km² was pumped dry**. Two pump stations still keep it that way. It is Kalvebod Fælled, now part of Naturpark Amager.
 
@@ -178,7 +178,52 @@ What that buys, from the pond literature:
 
 Two honest limits. Ponds do not remove dissolved fractions — chloride from road salt, dissolved copper, PFAS — so they are a complement to source control and not a substitute for it. And their performance depends entirely on the sediment being *removed* periodically rather than left to accumulate and eventually scour, which is the identical failure mode as the sewer basins. A pond that is never dredged becomes the thing it was built to prevent.
 
-### 4. Source control, sorted by what life has met before
+### 4. Where the captured material goes, which the same taxonomy decides
+
+Sections 2 and 3 both end in the same objection, and it is a fair one. A treatment wetland concentrates contaminants in its sediment. Extractive aquaculture concentrates them in biomass. Neither is a solution if the answer to *and then what* is *we bank it somewhere and hope*.
+
+The answer is that **the disposal route is decided by the same evolutionary prior that decides the source-control instrument.** It is one principle, applied twice:
+
+> If life has met the substance before, the question is a **concentration**: there exists a level below which lifecycles absorb it and it becomes sediment and then soil. If life has never met it, there is no such level, and the only terminal option is **destruction**.
+
+| Captured stream | Prior | Where it goes |
+|---|---|---|
+| **Organic matter — fat, solids, plant biomass** | Deepest prior of all: it is carbon. | Digest it. Denmark already runs sludge digestion for biogas. The end state is CO₂ and a digestate, and the fat is the highest-yield fraction there is. |
+| **Nitrogen and phosphorus** | The whole point of the biology. | Harvest as biomass. Phosphorus especially is a finite mined resource and worth recovering rather than burying. |
+| **Zinc, copper** | Deep prior — essential elements with transporters and homeostasis. | **Let it become soil, below a concentration threshold.** Danish counties already set limit values for metals in sediment destined for reuse. Below the limit it re-enters the terrestrial cycle; above it, a lined cell. |
+| **Cadmium, mercury, lead** | Weak or no prior — detoxified, not used. | Burial, but stabilised. Mercury methylates in anoxic sediment, so an anoxic destination is the wrong one for that fraction specifically. |
+| **6PPD-quinone and similar degradable novel entities** | No prior, but it breaks down. | Residence time *is* the treatment. What the pond does not settle, it outlives. |
+| **PFAS** | No prior and no sink. | **Destruction, to specification.** And mostly it is not captured at all — it is dissolved and mobile, so a settling pond does not collect it. Destruction applies to the concentrated streams: spent filter media, firefighting foam, industrial waste. |
+
+#### Why burial actually works on land and not in the bay
+
+This is the part that makes the first half of the principle more than a hope, and it comes straight out of [SEABED.md](#SEABED.md).
+
+Metals buried in **marine** sediment are held as sulphides in anoxic mud, and they are released again on re-oxidation. A dead bed crosses the resuspension threshold several times more often than a living one, so the marine sink is a store that storms keep re-opening — conditional on exactly the bed integrity that is failing.
+
+**Soil does not resuspend under storm waves.** A terrestrial sink is terminal in a way a marine one is not. Which is a second, independent argument for intercepting the material on land: not only that it is easier to catch there, but that once caught, it stays caught.
+
+#### And destruction has to mean destruction
+
+The other half needs a specification, because burning a fluorinated compound badly does not destroy it — it makes different fluorinated compounds. The carbon–fluorine bond is the strongest single bond in organic chemistry, which is both why PFAS persists and why the conditions are extreme:
+
+| Route | Conditions | Destruction | The catch |
+|---|---|---|---|
+| High-temperature incineration | >1,100 °C, 2–3 s residence, excess oxygen | **>99.99% mineralisation for AFFF and similar wastes** | Below that, the parent compound disappears but products of incomplete combustion form — perfluorocarboxylic acids, perfluoroalkanes, C₂F₆, CHF₃. Ordinary municipal waste incineration is **not** this. |
+| Supercritical water oxidation | 650 °C, 22 MPa, ~11% excess O₂, 10–11 s | **>99.999% for all 12 PFAAs measured** | Also produces small volatile organofluorines including trifluoromethane, a potent greenhouse gas. Emerging, not yet at municipal scale. |
+
+So *incinerate it* is not the policy. **Above 1,100 °C with adequate residence time** is the policy, and sending PFAS waste to a plant that cannot hold those conditions converts a known problem into an unmonitored one.
+
+Which loops back to why the source-control instrument for PFAS is a use restriction rather than a treatment requirement. Destruction only works on a **collected, concentrated** stream. PFAS dispersed through textiles, packaging and coatings is never collected, so there is nothing to feed the furnace. **The taxonomy decides not only the disposal route but whether collection is possible at all** — and where it is not, the only lever left is upstream.
+
+#### What this settles, and what it does not
+
+It settles the objection raised against extractive aquaculture and against treatment wetlands: the harvested material is not an unanswered question. Organic matter is a fuel, nutrients are a resource, deep-prior metals are a concentration threshold with existing Danish limit values behind it, and the novel entities are a destruction problem on a stream small enough to handle.
+
+It does not settle the cost, the logistics, or who pays for dredging a pond every fifteen years. Those are real and they are ordinary. The point is only that the material has somewhere to go, and that which somewhere is not a matter of preference — it follows from what the substance is.
+
+
+### 5. Source control, sorted by what life has met before
 
 The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says nitrogen produces mush rather than meadow because the organisms that would have used it well are gone. If that is right, the substances that removed them sit upstream of the nutrient problem, and no amount of nutrient policy reaches them.
 
@@ -253,7 +298,7 @@ None of that makes zinc a PFAS. It makes the metal case an argument about **rate
 
 *This remains the section furthest from what this project has measured.* We have not established that any of these is a binding constraint in Danish coastal water — only that the mechanisms are well founded, that the substances are present, and that the monitoring which would settle it rests on eleven stations which in Miljøstyrelsen's own words are limiting for *explicitly limiting for 'industriomraader og meget trafikerede veje'* — the industrial areas and heavily trafficked roads the substances come from. The same programme reports the same programme reports the highest median metal concentrations in sludge from basins.
 
-### 5. Rebuild the thing that used to absorb it
+### 6. Rebuild the thing that used to absorb it
 
 Load reduction assumes the receiving system will recover once the pressure comes off. Where the structural life has already gone, that assumption is doing a lot of unexamined work — a bay with no filter feeders, no eelgrass and a loose bed does not return to 1960 because the load returns to 1960.
 
@@ -262,9 +307,9 @@ Load reduction assumes the receiving system will recover once the pressure comes
 - **Leave the bed alone where it is recovering.** A living bed resuspends several times less often than a dead one ([SEABED.md](#SEABED.md)), so bed integrity is not only a fisheries question — it changes how often the accumulated sulphide and metals come back into the water.
 - **Harvest as a use, not a disposal.** Extracted biomass that is too contaminated for human consumption still has uses where accumulation is acceptable — which is a question about what we are willing to do with it, not a technical obstacle.
 
-*Caveat, and it is not small.* Extractive aquaculture that concentrates metals and organic contaminants creates a disposal question it does not answer. The honest position is that it is a lever worth pulling and that where the harvest goes has to be settled before, not after.
+*The disposal question* — extractive aquaculture concentrates metals and organic contaminants in the harvest — is answered in section 4, and the answer splits the harvest rather than the idea. Biomass carrying deep-prior metals has a threshold below which it re-enters the terrestrial cycle; biomass carrying cadmium or mercury does not, because those biomagnify and have no prior. So where a harvest goes has to be settled by assay, before it is scaled, not after.
 
-### 6. Measure the six things that would settle the argument
+### 7. Measure the six things that would settle the argument
 
 This is first in priority and last in the list because it is the least satisfying. Everything above is contestable, and it is contestable because the measurements that would resolve it were never taken.
 
