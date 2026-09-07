@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copenhagen Waterways</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --line:#30363d; --ink:#e6edf3; --dim:#8b949e;
+    --combined:#e8734a;   /* fælleskloak - sewage and rain share a pipe */
+    --separate:#4a9de8;   /* separatkloak */
+    --sewage:#c9a227;     /* spildevandskloak */
+    --basin:#7ee0a8; --tunnel:#b07ee0; --outfall:#ff5c7a; --plant:#ffd166;
+    --water:#1b3a5c; --lar:#5fd3bc;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font:13px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif}
+  #map{position:absolute;inset:0}
+  .panel{position:absolute;top:0;left:0;bottom:0;width:310px;z-index:2;overflow-y:auto;
+    background:rgba(22,27,34,.94);backdrop-filter:blur(8px);border-right:1px solid var(--line);
+    padding:14px 14px 40px}
+  .panel h1{font-size:15px;margin:0 0 2px;letter-spacing:.2px}
+  .panel .sub{color:var(--dim);font-size:11px;margin-bottom:14px}
+  .grp{margin-bottom:14px}
+  .grp>h2{font-size:10px;text-transform:uppercase;letter-spacing:.9px;color:var(--dim);
+    margin:0 0 6px;font-weight:600}
+  label.row{display:flex;align-items:center;gap:8px;padding:3px 0;cursor:pointer}
+  label.row:hover{color:#fff}
+  label.row input{accent-color:#4a9de8;margin:0}
+  .sw{width:11px;height:11px;border-radius:2px;flex:0 0 auto}
+  .sw.line{height:3px;border-radius:1px}
+  .sw.dot{border-radius:50%}
+  .count{margin-left:auto;color:var(--dim);font-size:10px;font-variant-numeric:tabular-nums}
+  .stats{border-top:1px solid var(--line);padding-top:10px;margin-top:6px;
+    color:var(--dim);font-size:11px}
+  .stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+  .stats p{margin:0 0 7px}
+  .warn{color:#ffb86b}
+  #detail{position:absolute;top:12px;right:12px;width:330px;max-height:calc(100% - 24px);
+    overflow-y:auto;z-index:3;background:rgba(22,27,34,.96);border:1px solid var(--line);
+    border-radius:8px;padding:12px 14px;display:none}
+  #detail h3{margin:0 0 8px;font-size:13px;padding-right:20px}
+  #detail table{width:100%;border-collapse:collapse;font-size:11.5px}
+  #detail td{padding:3px 0;vertical-align:top;border-bottom:1px solid #21262d}
+  #detail td:first-child{color:var(--dim);width:44%;padding-right:8px}
+  #detail a{color:#58a6ff}
+  #close{position:absolute;top:8px;right:10px;cursor:pointer;color:var(--dim);
+    background:none;border:0;font-size:16px}
+  #loading{position:absolute;inset:0;display:grid;place-items:center;z-index:9;
+    background:var(--bg);color:var(--dim)}
+  .btn{background:#21262d;border:1px solid var(--line);color:var(--ink);border-radius:5px;
+    padding:5px 9px;cursor:pointer;font-size:11px;margin:2px 3px 2px 0}
+  .btn:hover{background:#2d333b}
+  .btn.on{background:#1f6feb;border-color:#1f6feb}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="loading">loading ~13 MB of Copenhagen water data…</div>
+
+<div class="panel">
+  <h1>Copenhagen Waterways</h1>
+  <div class="sub">Sewers, cloudburst infrastructure and discharge points, from open data</div>
+
+  <div class="grp">
+    <h2>View</h2>
+    <button class="btn" id="b2d">2D</button>
+    <button class="btn on" id="b3d">3D</button>
+    <button class="btn" id="bfit">Reset</button>
+    <div style="margin-top:7px">
+      <span style="color:var(--dim);font-size:11px">Vertical exaggeration</span><br>
+      <button class="btn exag" data-x="1">×1</button>
+      <button class="btn exag on" data-x="10">×10</button>
+      <button class="btn exag" data-x="25">×25</button>
+    </div>
+  </div>
+
+  <div class="grp" id="layers"></div>
+
+  <div class="grp">
+    <h2>Highlight</h2>
+    <label class="row"><input type="checkbox" id="undoc">
+      <span>Only structures with no plan page</span></label>
+    <div class="sub" style="margin:2px 0 0">Geometry the city draws but never describes.</div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+</div>
+
+<div id="detail"><button id="close">×</button><div id="detail-body"></div></div>
+
+<script>
+const B = "../data/derived/viewer/";
+
+// Layer definitions. `paint`/`type` are MapLibre; `sw` drives the legend swatch.
+const LAYERS = [
+  {id:"catchments", file:"catchments.geojson", group:"Context", label:"Cloudburst catchments",
+   type:"line", on:false, sw:"#4d5b6a",
+   paint:{"line-color":"#4d5b6a","line-width":1.4,"line-dasharray":[3,2]}},
+  {id:"water", file:"water.geojson", group:"Context", label:"Lakes & watercourses",
+   type:"fill", on:true, sw:"var(--water)",
+   paint:{"fill-color":"#1b3a5c","fill-opacity":.85}},
+  {id:"coast", file:"coast.geojson", group:"Context", label:"Coastline",
+   type:"line", on:true, sw:"#2b4a6f",
+   paint:{"line-color":"#2b4a6f","line-width":1}},
+
+  {id:"sewer", file:"sewer_catchments.geojson", group:"Sewer system",
+   label:"Sewer catchments", type:"fill", on:true, sw:"var(--combined)",
+   paint:{"fill-color":["match",["get","kloaksystem_status"],
+            "Fælleskloakeret","#e8734a",
+            "Separatkloakeret","#4a9de8",
+            "Spildevandskloakeret","#c9a227",
+            "#3d444d"],
+          "fill-opacity":.34}},
+  {id:"sewer-line", file:"sewer_catchments.geojson", group:"Sewer system",
+   label:"Catchment outlines", type:"line", on:false, sw:"#586069",
+   paint:{"line-color":"#586069","line-width":.4}},
+
+  {id:"tunnels", file:"tunnels_roads.geojson", group:"Cloudburst plan",
+   label:"Cloudburst roads, pipes, tunnels", type:"line", on:true, sw:"var(--tunnel)",
+   paint:{"line-color":"#b07ee0","line-width":["interpolate",["linear"],["zoom"],11,1,16,3.5],
+          "line-opacity":.9}},
+  {id:"terrain", file:"terrain_changes.geojson", group:"Cloudburst plan",
+   label:"Planned terrain changes", type:"line", on:false, sw:"#d98b5f",
+   paint:{"line-color":"#d98b5f","line-width":1.6}},
+  {id:"basins-fill", file:"basins.geojson", group:"Cloudburst plan",
+   label:"Basins & retention squares", type:"fill", on:true, sw:"var(--basin)",
+   paint:{"fill-color":["case",["==",["get","_doc"],1],"#7ee0a8","#4a5a52"],
+          "fill-opacity":.55}},
+  {id:"basins-3d", file:"basins.geojson", group:"Cloudburst plan",
+   label:"↳ extruded by claimed volume", type:"fill-extrusion", on:true, sw:"#3ddc97",
+   filter:[">",["coalesce",["get","_depth_implied"],0],0],
+   paint:{"fill-extrusion-color":"#3ddc97","fill-extrusion-opacity":.8,
+          "fill-extrusion-height":["*",["coalesce",["get","_depth_implied"],0],
+                                       ["coalesce",["get","_exag"],1]],
+          "fill-extrusion-base":0}},
+
+  {id:"rain-lines", file:"rain_lines.geojson", group:"Rainwater on the surface",
+   label:"Swales & channels", type:"line", on:false, sw:"#5fd3bc",
+   paint:{"line-color":"#5fd3bc","line-width":1.6}},
+  {id:"lar", file:"lar.geojson", group:"Rainwater on the surface",
+   label:"Local infiltration (LAR)", type:"fill", on:false, sw:"var(--lar)",
+   paint:{"fill-color":"#5fd3bc","fill-opacity":.5}},
+
+  {id:"outfalls", file:"discharge_points.geojson", group:"Where it comes out",
+   label:"Discharge & overflow points", type:"circle", on:true, sw:"var(--outfall)", dot:true,
+   paint:{"circle-color":["case",["in",["get","bgv_type"],["literal",["OV","OS","OF","OK"]]],
+            "#ff5c7a","#4a9de8"],
+          "circle-radius":["interpolate",["linear"],["zoom"],
+            10,["case",[">",["coalesce",["get","vol_sb"],0],0],4,2],
+            15,["case",[">",["coalesce",["get","vol_sb"],0],0],11,4]],
+          "circle-stroke-color":"#0d1117","circle-stroke-width":.8,"circle-opacity":.92}},
+  {id:"plants", file:"treatment_plants.geojson", group:"Where it comes out",
+   label:"Treatment plants", type:"circle", on:true, sw:"var(--plant)", dot:true,
+   paint:{"circle-color":"#ffd166","circle-radius":9,
+          "circle-stroke-color":"#0d1117","circle-stroke-width":1.5}},
+];
+
+const map = new maplibregl.Map({
+  container:"map",
+  style:{version:8, sources:{}, layers:[{id:"bg",type:"background",paint:{"background-color":"#0d1117"}}]},
+  center:[12.5655,55.6805], zoom:11.4, pitch:50, bearing:-17, maxPitch:75, antialias:true
+});
+map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),"bottom-right");
+map.addControl(new maplibregl.ScaleControl({unit:"metric"}),"bottom-left");
+
+const counts = {};
+let basinsData = null;   // kept so the exaggeration control can re-set the source data
+
+/** Rough polygon area in m2 (equirectangular shoelace) - only for scaling the extrusion. */
+function ringArea(ring){
+  const R=6378137, rad=Math.PI/180, lat0=ring[0][1]*rad;
+  let a=0;
+  for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+    const x1=ring[j][0]*rad*R*Math.cos(lat0), y1=ring[j][1]*rad*R;
+    const x2=ring[i][0]*rad*R*Math.cos(lat0), y2=ring[i][1]*rad*R;
+    a += x1*y2 - x2*y1;
+  }
+  return Math.abs(a/2);
+}
+function featureArea(g){
+  if(!g) return 0;
+  if(g.type==="Polygon") return ringArea(g.coordinates[0]);
+  if(g.type==="MultiPolygon") return g.coordinates.reduce((s,p)=>s+ringArea(p[0]),0);
+  return 0;
+}
+
+/**
+ * Attribute claimed volume to basin polygons.
+ *
+ * A klima_id is often drawn as several separate polygons - KV69 is six of them. The
+ * plan states ONE volume for the project as a whole, so giving each polygon the full
+ * figure would invent storage and produce nonsense depths (the same project reading
+ * 1.4 m and 11.4 m). Split it by area share instead: every part of a project then
+ * shows the same implied mean depth, which is the only defensible reading of a single
+ * project-level number.
+ */
+function annotateBasins(fc, volumes){
+  const areaByKid = {};
+  for(const f of fc.features){
+    const a = featureArea(f.geometry);
+    f.properties._area_m2 = Math.round(a);
+    const k = f.properties.klima_id;
+    if(k) areaByKid[k] = (areaByKid[k] || 0) + a;
+  }
+  for(const f of fc.features){
+    const k = f.properties.klima_id, v = volumes[k], total = areaByKid[k] || 0;
+    const a = f.properties._area_m2;
+    if(v && total > 50){
+      f.properties._project_volume_m3 = v;
+      f.properties._share_volume_m3 = Math.round(v * (a / total));
+      f.properties._depth_implied = +(v / total).toFixed(2);  // identical for every part
+      f.properties._parts = fc.features.filter(x => x.properties.klima_id === k).length;
+    }else{
+      f.properties._depth_implied = null;
+    }
+  }
+  return fc;
+}
+
+async function load(){
+  const cache = {};
+  await Promise.all([...new Set(LAYERS.map(l=>l.file))].map(async f=>{
+    const r = await fetch(B+f);
+    if(!r.ok) throw new Error(f+": HTTP "+r.status);
+    cache[f] = await r.json();
+  }));
+
+  // constructions.geojson carries the reconstructed prose->geometry join
+  let volumes = {}, constructions = null;
+  try{
+    const r = await fetch(B+"constructions.geojson");
+    if(r.ok){
+      constructions = await r.json();
+      for(const f of constructions.features){
+        const p=f.properties;
+        if(p.claimed_volume_m3) volumes[p.klima_id]=p.claimed_volume_m3;
+      }
+    }
+  }catch(e){ console.warn("constructions.geojson not available", e); }
+
+  basinsData = annotateBasins(cache["basins.geojson"], volumes);
+
+  // documented / undocumented flag onto the basins and alignments
+  const documented = new Set();
+  if(constructions) for(const f of constructions.features)
+    if(f.properties.documented) documented.add(f.properties.klima_id);
+  for(const f of ["basins.geojson","tunnels_roads.geojson"])
+    for(const ft of cache[f].features)
+      ft.properties._doc = documented.has(ft.properties.klima_id) ? 1 : 0;
+
+  for(const L of LAYERS){
+    counts[L.id] = cache[L.file].features.length;
+    if(!map.getSource(L.id)) map.addSource(L.id,{type:"geojson",data:cache[L.file]});
+    const spec={id:L.id,source:L.id,type:L.type,paint:L.paint,
+                layout:{visibility:L.on?"visible":"none"}};
+    if(L.filter) spec.filter=L.filter;
+    map.addLayer(spec);
+  }
+  applyExag();
+  buildUI();
+  await loadStats();
+  document.getElementById("loading").remove();
+}
+
+function buildUI(){
+  const host=document.getElementById("layers"); host.innerHTML="";
+  const groups=[...new Set(LAYERS.map(l=>l.group))];
+  for(const g of groups){
+    const d=document.createElement("div"); d.className="grp";
+    d.innerHTML=`<h2>${g}</h2>`;
+    for(const L of LAYERS.filter(x=>x.group===g)){
+      const row=document.createElement("label"); row.className="row";
+      const cls = L.dot?"sw dot":(L.type==="line"?"sw line":"sw");
+      row.innerHTML=`<input type="checkbox" ${L.on?"checked":""}>
+        <span class="${cls}" style="background:${L.sw}"></span>
+        <span>${L.label}</span><span class="count">${counts[L.id].toLocaleString()}</span>`;
+      row.querySelector("input").onchange=e=>
+        map.setLayoutProperty(L.id,"visibility",e.target.checked?"visible":"none");
+      d.appendChild(row);
+    }
+    host.appendChild(d);
+  }
+}
+
+async function loadStats(){
+  let reg=null;
+  try{ const r=await fetch("../data/derived/registry.json"); if(r.ok) reg=await r.json(); }
+  catch(e){}
+  const el=document.getElementById("stats");
+  if(!reg){ el.innerHTML="<p>registry.json not built yet.</p>"; return; }
+  const c=reg.counts, n=x=>x.toLocaleString();
+  el.innerHTML=`
+    <p><b>${n(c.plan_projects)}</b> plan project pages, <b>${n(c.plan_projects_with_geometry)}</b> linked to geometry.</p>
+    <p><b>${n(c.unique_klima_id_with_geometry)}</b> mapped structures; <b class="warn">${n(c.klima_id_with_geometry_but_no_plan_page)}</b> of them have no plan page.</p>
+    <p>Claimed storage, attributable: <b>${n(c.storage_m3_attributable)} m³</b>.
+       A further <b>${n(c.storage_m3_shared_attribution)} m³</b> is stated on pages naming several structures, so it is not assigned.</p>
+    <p>Stated annual discharge: <b>${n(c.annual_flow_m3_per_year)} m³/year</b> — a rate, not storage.</p>
+    <p style="color:#6e7681">Extrusion height = claimed volume ÷ total project footprint = implied mean depth,
+       exaggerated by the factor selected above. Most are shallow surface detention (0.1–0.6 m), not tanks.
+       Basins with no attributable volume are drawn flat and grey.</p>`;
+}
+
+// ---- interaction -------------------------------------------------------------
+const DETAIL=document.getElementById("detail"), BODY=document.getElementById("detail-body");
+document.getElementById("close").onclick=()=>DETAIL.style.display="none";
+
+const HIDE=new Set(["_h","_doc","_exag"]);
+const NICE={kloaksystem_status:"Sewer system (now)",kloaksystem_plan:"Sewer system (planned)",
+  renseanlaeg:"Treatment plant",befgrad_status:"Impervious fraction",label:"Catchment",
+  klima_id:"Cloudburst id",projekt_navn:"Project",typologi:"Type",vandopland:"Catchment",
+  forventet_ibrugtagning:"Expected in use",pkt_navn:"Structure id",bgv_type:"Structure type",
+  vol_sb:"Detention basin (m³)",vol_fbas:"Retention basin (m³)",komm_navn:"Municipality",
+  godk_pe:"Capacity (PE)",rens_sta:"Treatment stage",_area_m2:"Footprint (m²)",
+  _project_volume_m3:"Claimed volume, whole project (m³)",
+  _share_volume_m3:"This polygon's area share (m³)",
+  _depth_implied:"Implied mean depth (m)",_parts:"Polygons in this project"};
+
+map.on("click",e=>{
+  const ids=LAYERS.filter(L=>map.getLayoutProperty(L.id,"visibility")!=="none").map(L=>L.id);
+  const hits=map.queryRenderedFeatures(e.point,{layers:ids});
+  if(!hits.length){ DETAIL.style.display="none"; return; }
+  const f=hits[0], p=f.properties;
+  const L=LAYERS.find(x=>x.id===f.layer.id);
+  let rows="";
+  for(const[k,v]of Object.entries(p)){
+    if(HIDE.has(k)||v===null||v===""||v==="null") continue;
+    rows+=`<tr><td>${NICE[k]||k}</td><td>${
+      typeof v==="number"?v.toLocaleString():String(v)}</td></tr>`;
+  }
+  let links="";
+  if(p.klima_id){
+    links=`<p style="margin:9px 0 0"><a href="https://planer.kk.dk/spildevandsplan-2018/projekter/"
+      target="_blank" rel="noopener">Spildevandsplan 2018 project register</a></p>`;
+  }
+  BODY.innerHTML=`<h3>${L?L.label:f.layer.id}</h3><table>${rows}</table>${links}`;
+  DETAIL.style.display="block";
+});
+map.on("mouseenter","outfalls",()=>map.getCanvas().style.cursor="pointer");
+map.on("mouseleave","outfalls",()=>map.getCanvas().style.cursor="");
+
+document.getElementById("undoc").onchange=e=>{
+  const flt=e.target.checked?["==",["get","_doc"],0]:null;
+  map.setFilter("basins-fill", flt);
+  map.setFilter("tunnels", flt);
+  map.setFilter("basins-3d", e.target.checked
+    ? ["all", ["==",["get","_doc"],0], [">",["coalesce",["get","_depth_implied"],0],0]]
+    : [">",["coalesce",["get","_depth_implied"],0],0]);
+};
+const b2d=document.getElementById("b2d"), b3d=document.getElementById("b3d");
+b2d.onclick=()=>{map.easeTo({pitch:0,bearing:0});b2d.classList.add("on");b3d.classList.remove("on");};
+b3d.onclick=()=>{map.easeTo({pitch:55,bearing:-17});b3d.classList.add("on");b2d.classList.remove("on");};
+let EXAG = 10;
+function applyExag(){
+  if(!basinsData) return;
+  for(const f of basinsData.features) f.properties._exag = EXAG;
+  const src = map.getSource("basins-3d");
+  if(src) src.setData(basinsData);
+}
+for(const b of document.querySelectorAll(".exag")) b.onclick=()=>{
+  EXAG = +b.dataset.x;
+  document.querySelectorAll(".exag").forEach(x=>x.classList.toggle("on", x===b));
+  applyExag();
+};
+
+document.getElementById("bfit").onclick=()=>
+  map.easeTo({center:[12.5655,55.6805],zoom:11.4,pitch:50,bearing:-17});
+
+map.on("load",()=>load().catch(err=>{
+  document.getElementById("loading").innerHTML=
+    `<div style="text-align:center;max-width:460px;padding:20px">
+       <p style="color:#ff7b72">Could not load the data bundle.</p>
+       <p style="font-size:12px">${err.message}</p>
+       <p style="font-size:12px">Serve the project over HTTP — <code>file://</code> blocks fetch.<br>
+       <code>cd copenhagen-waterways &amp;&amp; python3 -m http.server 8000</code><br>
+       then open <code>http://localhost:8000/viz/</code></p></div>`;
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Reproducible from the fetch scripts - 131 MB raw + 13 MB bundle.
+data/raw/
+data/derived/
+# data/manual/ is hand-authored and IS tracked.
+__pycache__/
+*.pyc

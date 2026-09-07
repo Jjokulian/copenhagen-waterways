@@ -1,0 +1,142 @@
+# Data sources for Copenhagen's water system
+
+What is public, what is paywalled, what does not exist in open form, and what each
+thing is actually good for. Everything marked **fetched** is pulled by the scripts in
+`scripts/` and lands in `data/raw/`.
+
+## 1. Københavns Kommune — Kbhkort WFS  *(fetched)*
+
+`https://wfs-kbhkort.kk.dk/k101/ows` — GeoServer, ~481 layers, no authentication.
+Discovered via the CKAN catalogue at `https://admin.opendata.dk/api/3/action/package_search?q=organization:city-of-copenhagen`
+(note: `www.opendata.dk/api` 404s; the working API host is `admin.opendata.dk`).
+
+Layer names are not documented anywhere central — get them from
+`?service=WFS&version=1.1.0&request=GetCapabilities`. The 21 we use are in
+`scripts/layers.json`; the rest are mostly unrelated municipal themes.
+
+| Layer | What it is | Why it matters |
+|---|---|---|
+| `sp_kloakoplande` | 766 sewer catchments | The backbone. Tells you whether a block is **fælleskloakeret** (combined — sewage and rain in one pipe, so heavy rain means sewage overflow) or **separatkloakeret**, plus the receiving treatment plant and impervious fraction. |
+| `skp_bassiner_pladser_kk` | 176 cloudburst basins and retention squares | Planned storage. Carries `klima_id`. |
+| `skp_veje_tunneller_kk` | 976 cloudburst roads, pipes, tunnels | Alignments including the skybrudsledninger. Carries `klima_id`. |
+| `skp_skybrudsoplande` / `skp_deloplande` | 7 catchments / 21 sub-catchments | The organising unit of the whole cloudburst plan. |
+| `skp_terraenaend` | 147 planned terrain modifications | Where the street surface itself is reshaped to steer water. |
+| `skp_igangsatte_prj_kk` / `skp_afsluttede_prj_kk` | 90 in progress / 50 completed | Build status. Both carry the key (`klima_id`, and `klimaid` on the completed layer — note the spelling difference). |
+| `lar_registreringer` | 1444 local infiltration installations | The decentralised half of the rainwater story. |
+| `dp_regnvandsafledning_p/l/f` | 2235 points, 697 lines, 148 polygons | Surface conveyance in public space: gullies, swales, channels. |
+| `grundvand_pejlinger_2021`, `grundvand_potentialelinjer_2021`, `terraen_minus_gvs` | Groundwater observations, contours, depth-to-water | The practical ceiling on how deep anything can be dug. |
+| `vand_oversigtskort`, `havn`, `kbh_kysttyper` | Lakes, watercourses, harbour, coast | Where the invisible system finally discharges. |
+| `hmax263_dige`, `hmax285_dige` | Storm surge dike lines at 2.63 m and 2.85 m | 101 MB of the 131 MB raw total. Coastal flooding, not rainfall — peripheral to this project. |
+
+**Gotcha:** this server speaks WFS 1.0.0 and returns `EPSG:4326` as `[lon, lat]`, but
+1.1.0 flips the axis order. `scripts/common.py` detects and normalises this rather
+than trusting either.
+
+## 2. Miljøstyrelsen MiljøGIS — Vandområdeplan 3 basisanalyse  *(fetched)*
+
+`https://wfs2-miljoegis.mim.dk/vp3basis2019/ows` — national, 47 layers, no auth.
+
+This is the **discharge end** of the system, and the single most valuable open source
+for "where does sewage actually come out". Derived from PULS (see §3), so it is the
+open shadow of a database that is not itself open.
+
+| Layer | Metro Copenhagen | Notes |
+|---|---|---|
+| `vp3_basis_2019_punkt_rbu_udl` | **680 points** (392 in København) | Rain-dependent discharges: combined sewer overflow structures and stormwater outfalls. `bgv_type` gives the structure type, `vol_sb` the attached basin volume in m³. 47 points carry a volume, totalling **314,176 m³**. |
+| `vp3_basis_2019_punkt_rens_udl` | 5 | Treatment plants — Lynetten, Damhusåen, Avedøre and neighbours. `godk_pe` = approved capacity in person-equivalents. |
+| `vp3_basis_2019_punkt_ind_udl` | 31 | Industrial discharges. |
+| `vp3_basis_2019_punkt_spredt_udl` | 4622 | Scattered dwellings — mostly peri-urban. |
+| `vp3basis2019_badevand` | 36 | Bathing water stations: the public-health consequence, useful for sanity-checking overflow claims. |
+
+Layers here are national, so `fetch_wfs.py` clips them — by `komm_navn` where that
+column exists, otherwise by bounding box. Three layers have no municipality column and
+would silently come back empty without the bbox fallback.
+
+**`bgv_type` decoding** is in `data/manual/codelists.json`, taken from Miljøstyrelsen's
+[Datateknisk anvisning DP02 v4 (2024)](https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf),
+table 2. `OV`/`OS`/`OF`/`OK`/`Bypass`/`Skybrud` are authoritative from that table.
+`SE` and `SF` (487 of our 680 points) are **not** in it — they belong to the separate-sewer
+outfall list and our reading is flagged `inferred: true`. Do not report those two as fact.
+
+The same document's table 1 gives the national median concentrations for overflow water
+(BI₅ 30, COD 180, Tot-N 12, Tot-P 2.0 mg/l), which is how you turn a volume into a load.
+
+## 3. Spildevandsplan 2018 project register — planer.kk.dk  *(fetched)*
+
+`https://planer.kk.dk/spildevandsplan-2018/projekter/` — 357 project pages, enumerable
+from `https://planer.kk.dk/sitemap.xml`. Categories: byudvikling (140), skybrudssikring
+(102), afløbssystem (61), klimatilpasning-af-kloakken (51), renseanlæg (3).
+
+This is the prose record of every claimed construction: purpose, dimensions, stated
+volumes, ownership, and the affected land parcels by matrikel number. `fetch_plan_projects.py`
+parses it into structured JSON and pulls out stated quantities with the sentence each
+came from, so a human can judge the figure.
+
+**The join problem.** Copenhagen keys these two worlds differently and publishes no
+mapping:
+
+* plan pages use a plan number — `A1.14`, `K1.57`
+* the map layers use a cloudburst number — `klima_id`: `BIR7.5`, `KV86`, `VEL45`
+
+The pages *cite* the klima_id in their titles and body text ("A3.3 Regnvandsledning i
+Bispebjerg Bakke, BIR 7.5"). `build_registry.py` recovers the link by scanning for ids
+that actually exist in the geometry, which stops stray tokens inventing matches. The
+recovered mapping is a **reconstruction, not an official crosswalk** — treat it as such.
+
+The project map on each page renders through `cowi.mapcentia.com/api/v2/` (a MapCentia
+GC2 instance). Its SQL endpoint answers trivial queries but returns nothing for schema
+introspection, so per-project geometry is not reachable that way.
+
+## 4. PULS — Punktkilder og spildevand  *(not directly accessible)*
+
+The national point-source database behind §2, run by Danmarks Miljøportal. Municipalities
+report roughly 4,500 overflow structures and ~20,000 rain-dependent discharge points
+annually, including measured or modelled overflow volumes and event counts per year.
+
+Read access to the PULS UI needs a Miljøportal account provisioned through an
+organisation's IT coordinator; there is no anonymous API. The VP3 layers in §2 are a
+periodic public extract, which is why they carry structure types and basin volumes but
+not the year-by-year overflow quantities.
+
+The support host `support.miljoeportal.dk` returns 403 to automated fetches, and the
+`b0902-prod-dist-app.azurewebsites.net` geoserver quoted in older guides no longer
+resolves. The Miljøstyrelsen dTA PDFs are the reliable documentation.
+
+## 5. LER — Ledningsejerregistret  *(deliberately not used)*
+
+The actual as-built pipe geometry, with depths, lives here. It is **not open data and
+we do not attempt to obtain it.** Access requires eID identification as a *graveaktør*
+(excavation actor) and is granted for the purpose of an intended excavation; utility
+owners then have five days to return data. Querying it without genuine intent to dig
+would be a misuse of the register, and the returned data is licensed for that dig, not
+for republication.
+
+This is the honest limit on the 3D ambition: **no open source gives surveyed invert
+levels for Copenhagen's sewers.** Depths in this project come from what the plan
+documents state in prose, and are labelled as claims.
+
+## 6. HOFOR  *(narrative only)*
+
+The utility that owns and operates the system. Publishes project descriptions and
+figures — tunnel lengths, diameters, pump capacities, storage volumes — but no GIS
+downloads. `hofor.dk` is a citation source for the manual register, not a data source.
+It directs pipe-location requests to LER.
+
+## 7. Elevation — Dataforsyningen  *(available, not yet wired)*
+
+`https://api.dataforsyningen.dk` is up and serves DHM (Danmarks Højdemodel), including
+the 0.4 m terrain model, via WMS/WCS. A free API token is required.
+
+This is the missing input for **actually modelling where rain flows**: fill the DEM
+sinks, compute flow direction and accumulation, and you get surface flow paths and
+ponding depressions directly, rather than inferring them from the plan. It needs a
+raster stack this VM cannot hold — see the note in the README.
+
+## Practical notes
+
+* `pip` is unavailable and RAM is ~1 GB, so every script is standard-library only and
+  the viewer loads MapLibre from a CDN. No GDAL, no geopandas.
+* Nothing here is authenticated. Re-running the fetch scripts reproduces `data/raw/`
+  from scratch; only `data/manual/` is hand-authored.
+* Licensing: the Copenhagen layers are published as open data via opendata.dk; the
+  Miljøstyrelsen layers are public-sector open data. Attribute both if you republish.

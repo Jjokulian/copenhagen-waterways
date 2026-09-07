@@ -1,0 +1,27 @@
+{
+  "_source": "Miljøstyrelsen, 'Datateknisk anvisning for regnbetingede udledninger (RBU)', TA nr. DP02, version 4, gyldig fra 1. januar 2024, table 2 (side 8). https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf",
+  "_note": "Decodes the 'bgv_type' attribute on vp3_basis_2019_punkt_rbu_udl. Codes marked inferred:true are NOT in the dTA table - they belong to the separate-sewer stormwater outlet list and are our best reading. Verify before relying on them.",
+  "bygvaerkstype": {
+    "OV": {"da": "Overløbsbygværk", "en": "Combined sewer overflow structure, no basin", "combined_sewer": true, "inferred": false},
+    "OS": {"da": "Overløbsbygværk med sparebassin (tilbageløb til renseanlæg)", "en": "CSO structure with a detention basin that drains back to the treatment plant", "combined_sewer": true, "inferred": false},
+    "OF": {"da": "Overløbsbygværk med forsinkelsesbassin på overløb", "en": "CSO structure with a retention basin on the overflow", "combined_sewer": true, "inferred": false},
+    "OK": {"da": "Overløb med spare- og forsinkelsesbassin (Kombibassin)", "en": "Overflow with combined detention and retention basin", "combined_sewer": true, "inferred": false},
+    "Bypass": {"da": "Overløb inde på renseanlægget som ikke indgår i renseanlæggets afløbsmålinger", "en": "Bypass inside the treatment plant, outside its effluent metering", "combined_sewer": true, "inferred": false},
+    "Skybrud": {"da": "Skybrudstunnel til regn- og overløbsvand i forbindelse med skybrud", "en": "Cloudburst tunnel for stormwater and overflow water", "combined_sewer": true, "inferred": false},
+    "SE": {"da": "Separat regnvandsudløb (formodet)", "en": "Separate stormwater outfall (inferred)", "combined_sewer": false, "inferred": true},
+    "SF": {"da": "Separat regnvandsudløb med forsinkelse (formodet)", "en": "Separate stormwater outfall with retention (inferred)", "combined_sewer": false, "inferred": true}
+  },
+  "rbu_fields": {
+    "pkt_navn": "Structure identifier used by the utility (e.g. UØ124).",
+    "bgv_type": "Bygværkstype - see above.",
+    "vol_sb": "Sparebassin volume in m3. 0 or null means no attached basin.",
+    "vol_fbas": "Forsinkelsesbassin (retention basin) volume in m3.",
+    "komm_navn": "Reporting municipality."
+  },
+  "typetal_overloebsvand_mg_per_l": {
+    "_source": "Same dTA, Tabel 1 (side 7). Median concentrations used nationally to convert an overflow volume into a pollutant load.",
+    "BI5": 30, "COD": 180, "Tot-N": 12, "Tot-P": 2.0,
+    "_reference_overvand": {"BI5": 25, "COD": 160, "Tot-N": 10, "Tot-P": 1.8},
+    "_reference_spildevand": {"BI5": 160, "COD": 320, "Tot-N": 43, "Tot-P": 7}
+  }
+}

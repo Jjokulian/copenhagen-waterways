@@ -1,0 +1,224 @@
+{
+ "_comment": "WFS layer catalogue. Each source has its own endpoint, typeName prefix and WFS version. 'filter' restricts national layers to the Copenhagen area by attribute after download.",
+ "sources": [
+  {
+   "id": "kk",
+   "name": "Københavns Kommune - Kbhkort",
+   "endpoint": "https://wfs-kbhkort.kk.dk/k101/ows",
+   "prefix": "k101",
+   "version": "1.0.0",
+   "licence": "Open data, Københavns Kommune (via opendata.dk)",
+   "layers": [
+    {
+     "name": "sp_kloakoplande",
+     "theme": "sewer",
+     "title_da": "Kloakoplande (Spildevandsplan)",
+     "title_en": "Sewer catchments",
+     "note": "Per-catchment sewer system status (fælles-/spildevands-/separatkloakeret), receiving treatment plant, impervious fraction. The backbone dataset for 'what kind of sewer is under this block'."
+    },
+    {
+     "name": "skp_bassiner_pladser_kk",
+     "theme": "cloudburst",
+     "title_da": "Skybrudsplan - bassiner og pladser",
+     "title_en": "Cloudburst basins and retention squares",
+     "note": "Planned/claimed detention volumes. Has klima_id joining to the Spildevandsplan project pages."
+    },
+    {
+     "name": "skp_veje_tunneller_kk",
+     "theme": "cloudburst",
+     "title_da": "Skybrudsplan - veje og tunneller",
+     "title_en": "Cloudburst roads, pipes and tunnels",
+     "note": "Includes skybrudsledninger and tunnel alignments. klima_id joins to project pages."
+    },
+    {
+     "name": "skp_deloplande",
+     "theme": "catchment",
+     "title_da": "Skybrudsdeloplande",
+     "title_en": "Cloudburst sub-catchments",
+     "note": "Sub-division of the seven cloudburst catchments."
+    },
+    {
+     "name": "skp_skybrudsoplande",
+     "theme": "catchment",
+     "title_da": "Skybrudsoplande",
+     "title_en": "Cloudburst catchments",
+     "note": "The top-level water catchments used to organise the whole plan."
+    },
+    {
+     "name": "skp_terraenaend",
+     "theme": "cloudburst",
+     "title_da": "Skybrudsplan - terrænændringer",
+     "title_en": "Planned terrain modifications",
+     "note": "Where the surface itself is reshaped to steer water."
+    },
+    {
+     "name": "skp_igangsatte_prj_kk",
+     "theme": "projects",
+     "title_da": "Igangsatte klimatilpasningsprojekter",
+     "title_en": "Climate adaptation projects in progress"
+    },
+    {
+     "name": "skp_afsluttede_prj_kk",
+     "theme": "projects",
+     "title_da": "Afsluttede klimatilpasningsprojekter",
+     "title_en": "Completed climate adaptation projects"
+    },
+    {
+     "name": "skp_masterplaner_kk",
+     "theme": "projects",
+     "title_da": "Masterplansområder",
+     "title_en": "Masterplan areas"
+    },
+    {
+     "name": "lar_registreringer",
+     "theme": "rain",
+     "title_da": "Lokal Afledning af Regnvand (LAR)",
+     "title_en": "Local rainwater infiltration installations",
+     "note": "Registered on-site infiltration - the decentralised half of the rainwater story."
+    },
+    {
+     "name": "dp_regnvandsafledning_l",
+     "theme": "rain",
+     "title_da": "Regnvandsafledning (linje)",
+     "title_en": "Rainwater conveyance - lines",
+     "note": "Swales, channels, trenches in public space."
+    },
+    {
+     "name": "dp_regnvandsafledning_f",
+     "theme": "rain",
+     "title_da": "Regnvandsafledning (flade)",
+     "title_en": "Rainwater conveyance - polygons"
+    },
+    {
+     "name": "dp_regnvandsafledning_p",
+     "theme": "rain",
+     "title_da": "Regnvandsafledning (punkt)",
+     "title_en": "Rainwater conveyance - points",
+     "note": "Inlets, gullies and similar point assets in public space."
+    },
+    {
+     "name": "vand_oversigtskort",
+     "theme": "surface",
+     "title_da": "Søer og vandløb",
+     "title_en": "Lakes and watercourses",
+     "note": "The visible receiving waters - where the invisible system finally discharges."
+    },
+    {
+     "name": "havn",
+     "theme": "surface",
+     "title_da": "Havn",
+     "title_en": "Harbour"
+    },
+    {
+     "name": "kbh_kysttyper",
+     "theme": "surface",
+     "title_da": "Kysttyper",
+     "title_en": "Coast types"
+    },
+    {
+     "name": "grundvand_pejlinger_2021",
+     "theme": "groundwater",
+     "title_da": "Grundvandspejlinger 2021",
+     "title_en": "Groundwater observations 2021",
+     "note": "Constrains how deep anything can be built and where infiltration actually works."
+    },
+    {
+     "name": "grundvand_potentialelinjer_2021",
+     "theme": "groundwater",
+     "title_da": "Grundvandspotentialelinjer 2021",
+     "title_en": "Groundwater potentiometric contours 2021"
+    },
+    {
+     "name": "terraen_minus_gvs",
+     "theme": "groundwater",
+     "title_da": "Terræn minus grundvandsspejl",
+     "title_en": "Terrain minus groundwater table",
+     "note": "Depth to groundwater - the practical ceiling on basin depth."
+    },
+    {
+     "name": "hmax263_dige",
+     "theme": "surge",
+     "title_da": "Dige, stormflodsniveau 2.63 m",
+     "title_en": "Dike line, 2.63 m storm surge"
+    },
+    {
+     "name": "hmax285_dige",
+     "theme": "surge",
+     "title_da": "Dige, stormflodsniveau 2.85 m",
+     "title_en": "Dike line, 2.85 m storm surge"
+    }
+   ]
+  },
+  {
+   "id": "vp3",
+   "name": "Miljøstyrelsen MiljøGIS - Vandområdeplan 3, basisanalyse 2019",
+   "endpoint": "https://wfs2-miljoegis.mim.dk/vp3basis2019/ows",
+   "prefix": "vp3basis2019",
+   "version": "1.1.0",
+   "licence": "Public sector open data, Miljøministeriet",
+   "note": "National coverage. These are the DISCHARGE END of the system - where Copenhagen's sewers actually release to water bodies. Filtered to the metropolitan municipalities on download.",
+   "filter": {
+    "property": "komm_navn",
+    "in": [
+     "København",
+     "Frederiksberg",
+     "Tårnby",
+     "Hvidovre",
+     "Gentofte",
+     "Gladsaxe",
+     "Rødovre",
+     "Herlev",
+     "Brøndby",
+     "Dragør"
+    ]
+   },
+   "layers": [
+    {
+     "name": "vp3_basis_2019_punkt_rbu_udl",
+     "theme": "discharge",
+     "title_da": "Regnbetingede udledninger (RBU)",
+     "title_en": "Rain-dependent discharge points",
+     "note": "Combined-sewer overflow structures and stormwater outfalls. 'bgv_type' is the structure type, 'vol_sb' the associated basin volume in m3. This is the national PULS-derived register - the closest thing to an open list of where sewage overflows to the harbour."
+    },
+    {
+     "name": "vp3_basis_2019_punkt_rens_udl",
+     "theme": "discharge",
+     "title_da": "Renseanlæg - udledningspunkter",
+     "title_en": "Treatment plant discharge points",
+     "note": "'godk_pe' is approved capacity in person-equivalents; 'rens_sta' the treatment stage."
+    },
+    {
+     "name": "vp3_basis_2019_punkt_ind_udl",
+     "theme": "discharge",
+     "title_da": "Industrielle udledninger",
+     "title_en": "Industrial discharge points"
+    },
+    {
+     "name": "vp3_basis_2019_punkt_spredt_udl",
+     "theme": "discharge",
+     "title_da": "Spredt bebyggelse - udledninger",
+     "title_en": "Scattered-dwelling discharges"
+    },
+    {
+     "name": "vp3basis2019_badevand",
+     "theme": "discharge",
+     "title_da": "Badevandsstationer",
+     "title_en": "Bathing water stations",
+     "note": "The public-health consequence of overflow events; useful as a validation layer."
+    },
+    {
+     "name": "vp3_basis_2019_soe_overordnet",
+     "theme": "surface",
+     "title_da": "Søer (VP3)",
+     "title_en": "Lakes, national water plan"
+    },
+    {
+     "name": "vp3_basis_2019_vandloeb_overordnet",
+     "theme": "surface",
+     "title_da": "Vandløb (VP3)",
+     "title_en": "Watercourses, national water plan"
+    }
+   ]
+  }
+ ]
+}

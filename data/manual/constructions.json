@@ -1,0 +1,39 @@
+{
+  "_schema": {
+    "_purpose": "Hand-curated record of major claimed structures, for facts that exist only in prose or press material and never as an attribute in any GIS layer - depth, internal diameter, pump capacity, completion year.",
+    "_rule": "Every numeric claim carries a source URL and the date it was read. If a figure cannot be sourced, it is omitted rather than estimated. Where sources disagree, record both and say so in 'disputed'.",
+    "_fields": {
+      "id": "Local key for this file.",
+      "klima_id": "Cloudburst id(s) linking to WFS geometry, if known.",
+      "plan_ids": "Spildevandsplan project number(s) on planer.kk.dk.",
+      "confidence": "high = stated by the owner/utility or the statutory plan; medium = press or secondary; low = inferred.",
+      "claims": "Each entry: value, unit, source, read_on, and optionally note/disputed."
+    }
+  },
+  "constructions": [
+    {
+      "id": "kalvebod-brygge-skybrudstunnel",
+      "name": "Kalvebod Brygge Skybrudstunnel",
+      "type": "cloudburst tunnel",
+      "owner": "HOFOR",
+      "catchment": "Vesterbro / Ladegårdsåen",
+      "klima_id": ["VEL45"],
+      "plan_ids": ["K1.57", "K1.78"],
+      "route": "Vodroffsvej / Gammel Kongevej (Frederiksberg) - under Kødbyen - Kalvebod Brygge, discharging to Inderhavnen",
+      "confidence": "high",
+      "claims": [
+        {"what": "length", "value": 1.3, "unit": "km", "qualifier": "ca.", "source": "https://www.hofor.dk/baeredygtige-byer/udviklingsprojekter/skybrudssikring/kalvebod-brygge-skybrudstunnel/", "read_on": "2026-09-07"},
+        {"what": "internal_diameter", "value": [2, 3], "unit": "m", "qualifier": "range", "source": "https://www.hofor.dk/baeredygtige-byer/udviklingsprojekter/skybrudssikring/kalvebod-brygge-skybrudstunnel/", "read_on": "2026-09-07"},
+        {"what": "depth_below_ground", "value": 20, "unit": "m", "qualifier": "ned til", "source": "https://www.hofor.dk/baeredygtige-byer/udviklingsprojekter/skybrudssikring/kalvebod-brygge-skybrudstunnel/", "read_on": "2026-09-07"},
+        {"what": "storage_volume", "value": 10000, "unit": "m3", "source": "https://www.hofor.dk/baeredygtige-byer/udviklingsprojekter/skybrudssikring/kalvebod-brygge-skybrudstunnel/", "read_on": "2026-09-07"},
+        {"what": "pump_capacity", "value": 20, "unit": "m3/s", "qualifier": "ca., on the Sønder Boulevard - Kalvebod Brygge section", "source": "https://www.hofor.dk/baeredygtige-byer/udviklingsprojekter/skybrudssikring/kalvebod-brygge-skybrudstunnel/", "read_on": "2026-09-07"},
+        {"what": "shafts", "value": 3, "unit": "count", "note": "Temporary work shafts at Vodroffsvej/Gammel Kongevej, Halmtorvet/Gasværksvej, Kalvebod Brygge 45-47. The statutory plan page K1.57 describes two permanent deep shafts - the counts refer to different things.", "source": "https://www.hofor.dk/baeredygtige-byer/udviklingsprojekter/skybrudssikring/kalvebod-brygge-skybrudstunnel/", "read_on": "2026-09-07"},
+        {"what": "completion", "value": 2027, "unit": "year", "disputed": "HOFOR's own project page says 2027; trade press in 2025 reported 'helt klar i 2026'. Owner's figure preferred.", "source": "https://www.hofor.dk/baeredygtige-byer/udviklingsprojekter/skybrudssikring/kalvebod-brygge-skybrudstunnel/", "read_on": "2026-09-07"}
+      ],
+      "plan_pages": [
+        "https://planer.kk.dk/spildevandsplan-2018/projekter/skybrudssikring/arealreservation-kalvebod-brygge-skybrudstunnel/",
+        "https://planer.kk.dk/spildevandsplan-2018/projekter/skybrudssikring/supplement-til-vel45-kalvebod-brygge-skybrudstunnel/"
+      ]
+    }
+  ]
+}
