@@ -35,11 +35,16 @@ def main():
     w(f"| Distinct mapped structures (`klima_id`) | {fmt(c['unique_klima_id_with_geometry'])} |")
     w(f"| ... cited by at least one plan page | {fmt(c['klima_id_cited_by_a_plan_page'])} |")
     w(f"| ... **drawn but never described** | {fmt(c['klima_id_with_geometry_but_no_plan_page'])} |")
+    if c.get("klima_id_mentioned_only_elsewhere_in_the_plan") is not None:
+        w(f"| ... mentioned only outside the project register "
+          f"| {fmt(c['klima_id_mentioned_only_elsewhere_in_the_plan'])} |")
     w(f"| Construction features written | {fmt(c['construction_features'])} |")
     w("")
-    w("The last row is the finding worth keeping: the city draws "
-      f"{fmt(c['klima_id_with_geometry_but_no_plan_page'])} numbered structures that no project "
-      "page in the statutory plan describes.\n")
+    w("The finding worth keeping: the city draws "
+      f"{fmt(c['klima_id_with_geometry_but_no_plan_page'])} numbered structures that "
+      "**no page of the statutory plan describes**. That is checked against the whole "
+      "document - the project register plus the 117 appendix, status, target and "
+      "'aktuelle projekter' pages - not just the project pages.\n")
 
     w("## Claimed volumes\n")
     w("A cubic-metre figure in planning prose can mean a tank that *holds* that much, or an "
@@ -168,8 +173,8 @@ def main():
 
     ids = reg["klima_id_without_documentation"]
     w("## Undocumented structures\n")
-    w(f"{len(ids)} `klima_id` values appear in the city's own map layers with no matching "
-      "project page:\n")
+    w(f"{len(ids)} `klima_id` values appear in the city's own map layers and nowhere in "
+      "the text of the plan:\n")
     by_pre = defaultdict(list)
     for i in ids:
         m = re.match(r"^[A-ZÆØÅ]+", i)
