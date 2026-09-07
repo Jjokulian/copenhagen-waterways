@@ -1,0 +1,146 @@
+{
+ "_what": "Every pathway of reactive nitrogen to Danish marine waters we could enumerate. lo/hi are plausible bounds in kt N/yr; null means not quantified. The empty rows are the point: with the set unclosed there is no denominator and no percentages.",
+ "_bounds_are_ours": "Bounds marked own:true are constructed here, not published figures.",
+ "pathways": [
+  {
+   "pathway": "Danish land via monitored streams",
+   "lo": 32,
+   "hi": 38,
+   "status": "PARTLY MEASURED",
+   "note": "49% of area; grab samples + linear interpolation, documented low bias"
+  },
+  {
+   "pathway": "Danish land via unmonitored catchments",
+   "lo": 27,
+   "hi": 33,
+   "status": "MODELLED",
+   "note": "51% of area; diffuse model minus modelled lake/wetland retention"
+  },
+  {
+   "pathway": "Foreign rivers to shared Danish waters",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "e.g. German inflow to Flensborg Fjord; not separated in Danish accounts"
+  },
+  {
+   "pathway": "Treatment plants (in the stream total or direct)",
+   "lo": 2.5,
+   "hi": 3.5,
+   "status": "MEASURED",
+   "note": "flow-metered, routinely sampled - best-constrained line"
+  },
+  {
+   "pathway": "Rain-dependent overflow, combined sewer",
+   "lo": 0.2,
+   "hi": 4.0,
+   "status": "MODELLED",
+   "note": "0.4 kt at published typetal; upper bound allows first flush + scour + volume error"
+  },
+  {
+   "pathway": "Separate stormwater outfalls",
+   "lo": 0.2,
+   "hi": 2.0,
+   "status": "MODELLED",
+   "note": "concentration from a 1990 programme, applied nationally"
+  },
+  {
+   "pathway": "Scattered dwellings",
+   "lo": 0.05,
+   "hi": 0.3,
+   "status": "MODELLED",
+   "note": "dwelling counts x assumed per-capita load"
+  },
+  {
+   "pathway": "Industry",
+   "lo": 0.2,
+   "hi": 0.5,
+   "status": "MEASURED",
+   "note": "reported"
+  },
+  {
+   "pathway": "Marine aquaculture (net pens)",
+   "lo": 0.3,
+   "hi": 1.0,
+   "status": "MODELLED",
+   "note": "feed balance; direct to sea"
+  },
+  {
+   "pathway": "Atmospheric deposition to Danish sea, wet+dry",
+   "lo": 45,
+   "hi": 65,
+   "status": "MODELLED",
+   "note": "DEHM output; 53 kt in 2022, 89 kt in 2014 - no direct over-water measurement"
+  },
+  {
+   "pathway": "Organic N in deposition (DON)",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "routinely excluded from deposition inventories"
+  },
+  {
+   "pathway": "Shipping NOx deposited locally",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "inside the deposition total but not separated"
+  },
+  {
+   "pathway": "Submarine groundwater discharge",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "NOT A TERM in the national account; monitored only at 1.5-5 m depth in 6 catchments"
+  },
+  {
+   "pathway": "Legacy N still in transit",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "8-24 yr lag observed in LOOP; a timing term on the rows above, not an extra source"
+  },
+  {
+   "pathway": "Drained organic soils / lowmoor peat",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "inside the diffuse residual, not separated"
+  },
+  {
+   "pathway": "Net advective import, Kattegat + Belt",
+   "lo": 60,
+   "hi": 180,
+   "status": "MODELLED",
+   "note": "small net of two very large opposing fluxes; older studies; highly variable"
+  },
+  {
+   "pathway": "N2 fixation in situ",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "not quantified for Danish waters"
+  },
+  {
+   "pathway": "Coastal and seabed erosion",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "organic N release"
+  },
+  {
+   "pathway": "Dredging / port resuspension",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": ""
+  },
+  {
+   "pathway": "Sediment efflux / internal regeneration",
+   "lo": null,
+   "hi": null,
+   "status": "UNQUANTIFIED",
+   "note": "one study puts net advection at ~10% of what annual primary production requires,\n     which implies regeneration supplies most of it; state-dependent, rises under anoxia"
+  }
+ ]
+}

@@ -7,6 +7,7 @@ python3 scripts/fetch_wfs.py
 python3 scripts/fetch_plan_projects.py
 python3 scripts/build_registry.py
 python3 scripts/report.py
+python3 scripts/nitrogen.py
 
 # The 2012 flood model, recovered from the PDFs it was published in.
 python3 scripts/floodmaps.py fetch
@@ -25,7 +26,7 @@ python3 scripts/build_viewer_data.py
 echo
 python3 scripts/floodmaps.py status
 echo
-echo "Reports:  docs/REGISTER.md   docs/FLOOD_GAP.md   docs/flood_gap_map.png"
+echo "Reports:  docs/REGISTER.md   docs/FLOOD_GAP.md   docs/NITROGEN.md"
 echo "Serve it: python3 -m http.server 8000"
 echo "  map          http://localhost:8000/viz/"
 echo "  georeference http://localhost:8000/viz/georef.html   (for the 3 unresolved sheets)"
