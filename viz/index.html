@@ -74,8 +74,10 @@
     <div style="margin-top:7px">
       <span style="color:var(--dim);font-size:11px">Vertical exaggeration</span><br>
       <button class="btn exag" data-x="1">×1</button>
-      <button class="btn exag on" data-x="10">×10</button>
-      <button class="btn exag" data-x="25">×25</button>
+      <button class="btn exag on" data-x="25">×25</button>
+      <button class="btn exag" data-x="100">×100</button>
+      <div class="sub" id="exagnote" style="margin:4px 0 0">&nbsp;</div>
+      <button class="btn" id="bexag" style="margin-top:5px">Show me one</button>
     </div>
   </div>
 
@@ -137,8 +139,7 @@ const LAYERS = [
    label:"↳ extruded by claimed volume", type:"fill-extrusion", on:true, sw:"#3ddc97",
    filter:[">",["coalesce",["get","_depth_implied"],0],0],
    paint:{"fill-extrusion-color":"#3ddc97","fill-extrusion-opacity":.8,
-          "fill-extrusion-height":["*",["coalesce",["get","_depth_implied"],0],
-                                       ["coalesce",["get","_exag"],1]],
+          "fill-extrusion-height":["*",["coalesce",["get","_depth_implied"],0],25],
           "fill-extrusion-base":0}},
 
   {id:"rain-lines", file:"rain_lines.geojson", group:"Rainwater on the surface",
@@ -388,8 +389,11 @@ async function loadStats(){
        A further <b>${n(c.storage_m3_shared_attribution)} m³</b> is stated on pages naming several structures, so it is not assigned.</p>
     <p>Stated annual discharge: <b>${n(c.annual_flow_m3_per_year)} m³/year</b> — a rate, not storage.</p>
     <p style="color:#6e7681">Extrusion height = claimed volume ÷ total project footprint = implied mean depth,
-       exaggerated by the factor selected above. Most are shallow surface detention (0.1–0.6 m), not tanks.
-       Basins with no attributable volume are drawn flat and grey.</p>`;
+       exaggerated by the factor selected above. Most are shallow surface detention (0.1–0.6 m), not tanks —
+       a &ldquo;basin&rdquo; here is usually a square or park graded down by tens of centimetres, which is why
+       the exaggeration exists at all.
+       <b>Only 13 of ${n(c.plan_projects)} plan pages state a storage volume</b>, and only 8 of those name a
+       single structure, so almost every basin is drawn flat and grey for want of a number.</p>`;
 }
 
 // ---- interaction -------------------------------------------------------------
@@ -449,17 +453,45 @@ document.getElementById("undoc").onchange=e=>{
 const b2d=document.getElementById("b2d"), b3d=document.getElementById("b3d");
 b2d.onclick=()=>{map.easeTo({pitch:0,bearing:0});b2d.classList.add("on");b3d.classList.remove("on");};
 b3d.onclick=()=>{map.easeTo({pitch:55,bearing:-17});b3d.classList.add("on");b2d.classList.remove("on");};
-let EXAG = 10;
+let EXAG = 25;
+// The extruded basins: only those with a claimed volume AND a footprint to divide it by.
+// There are far fewer than people expect, which is most of why this control used to look
+// broken - it was working on 16 polygons out of 176, none of them tall.
+function extrudable(){
+  if(!basinsData) return [];
+  return basinsData.features.filter(f => (f.properties._depth_implied || 0) > 0);
+}
 function applyExag(){
-  if(!basinsData) return;
-  for(const f of basinsData.features) f.properties._exag = EXAG;
-  const src = map.getSource("basins-3d");
-  if(src) src.setData(basinsData);
+  if(!map.getLayer("basins-3d")) return;
+  // A paint property, not a source rewrite: instant, and it cannot silently no-op.
+  map.setPaintProperty("basins-3d", "fill-extrusion-height",
+    ["*", ["coalesce", ["get","_depth_implied"], 0], EXAG]);
+  const ex = extrudable(), note = document.getElementById("exagnote");
+  if(!note) return;
+  if(!ex.length){ note.textContent = "No basin has an attributable volume."; return; }
+  const d = ex.map(f => f.properties._depth_implied).sort((a,b)=>a-b);
+  const med = d[Math.floor(d.length/2)], max = d[d.length-1];
+  note.innerHTML = `<b>${ex.length}</b> of ${basinsData.features.length} basins are `
+    + `extruded — the rest have no stated volume.<br>`
+    + `Implied depth ${med.toFixed(2)}–${max.toFixed(2)} m, drawn as `
+    + `<b>${(med*EXAG).toFixed(0)}–${(max*EXAG).toFixed(0)} m</b>.`;
 }
 for(const b of document.querySelectorAll(".exag")) b.onclick=()=>{
   EXAG = +b.dataset.x;
   document.querySelectorAll(".exag").forEach(x=>x.classList.toggle("on", x===b));
   applyExag();
+};
+// Fly to the deepest one, because at city zoom a 9 m block is a few pixels.
+document.getElementById("bexag").onclick=()=>{
+  const ex = extrudable();
+  if(!ex.length) return;
+  ex.sort((a,b)=> b.properties._depth_implied - a.properties._depth_implied);
+  const f = ex[0];
+  let sx=0, sy=0, n=0;
+  (function walk(c){ if(typeof c[0]==="number"){sx+=c[0];sy+=c[1];n++;} else c.forEach(walk); })
+    (f.geometry.coordinates);
+  map.easeTo({center:[sx/n, sy/n], zoom:16.5, pitch:62, bearing:-17, duration:1400});
+  map.setLayoutProperty("basins-3d","visibility","visible");
 };
 
 document.getElementById("bfit").onclick=()=>
