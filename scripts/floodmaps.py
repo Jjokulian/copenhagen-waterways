@@ -46,7 +46,7 @@ import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, MANUAL, RAW, fetch, log, read_json, write_json
+from common import DERIVED, MANUAL, RAW, ROOT, fetch, log, read_json, write_json
 
 CKAN = ("https://admin.opendata.dk/api/3/action/package_show"
         "?id=oversvommelsesscenarier-for-vandoplande")
@@ -457,9 +457,14 @@ def cmd_check(args):
     """
     np, Image = _np(), _pil()
     from PIL import ImageDraw
+    import floodreg
     sheets = read_json(os.path.join(OUTDIR, "_sheets.json"))
-    geo = read_json(os.path.join(OUTDIR, "_georef.json"))
-    lonm = _lonm()
+    geo_path = os.path.join(OUTDIR, "_georef.json")
+    if not os.path.exists(geo_path):
+        log("nothing georeferenced yet - run `autoref` or `georef` first")
+        return 0
+    geo = read_json(geo_path)
+    lonm = floodreg.LONM
     for sheet in (args or SHEETS):
         if sheet not in geo:
             continue
@@ -471,8 +476,9 @@ def cmd_check(args):
         im = Image.open(os.path.join(OUTDIR, f"{sheet}.render.png")).convert("RGB")
         im = im.crop((fx0, fy0, fx1 + 1, fy1 + 1))
         dr = ImageDraw.Draw(im)
-        for ring in water_rings():
-            pts = [((lon - w0) * lonm / mpp, (n0 - lat) * LATM / mpp) for lon, lat in ring]
+        for ring in floodreg.water_rings():
+            pts = [((lon - w0) * lonm / mpp, (n0 - lat) * floodreg.LATM / mpp)
+                   for lon, lat in ring]
             if all(x < -60 or x > im.width + 60 or y < -60 or y > im.height + 60
                    for x, y in pts):
                 continue
@@ -481,7 +487,8 @@ def cmd_check(args):
         im = im.resize((int(im.width * sc), int(im.height * sc)), Image.LANCZOS)
         dst = os.path.join(OUTDIR, f"{sheet}.check.jpg")
         im.save(dst, quality=80, optimize=True)
-        log(f"  {sheet:16} -> {dst}   (magenta should trace the quays)")
+        tag = "accepted" if g.get("confident") else "NOT accepted"
+        log(f"  {sheet:16} [{tag}] -> {os.path.relpath(dst, ROOT)}")
     return 0
 
 
@@ -579,18 +586,33 @@ def cmd_status(args):
     extr = load(os.path.join(OUTDIR, "_extract.json"))
     geo = load(os.path.join(OUTDIR, "_georef.json"))
     ctrl = load(CONTROL)
-    log(f"{'sheet':16} {'pdf':>4} {'render':>7} {'extract':>9} {'points':>7} {'georef':>8}")
+
+    log(f"{'sheet':16}{'pdf':>4}{'render':>8}{'extract':>10}{'points':>8}  georef")
     for s in SHEETS:
         pdf = "yes" if os.path.exists(os.path.join(PDFDIR, f"{s}.pdf")) else "-"
         r = "yes" if s in sheets else "-"
         e = f"{extr[s]['flooded_m2']/1e6:.2f}km2" if s in extr else "-"
         n = len((ctrl.get(s) or {}).get("points") or [])
-        g = f"{geo[s]['rms_residual_m']:.0f}m" if s in geo else "-"
-        log(f"{s:16} {pdf:>4} {r:>7} {e:>9} {n:>7} {g:>8}")
-    ready = [s for s in SHEETS if s in geo]
+        g = geo.get(s)
+        if not g:
+            gtxt = "-"
+        elif "rms_residual_m" in g:
+            gtxt = f"control points, rms {g['rms_residual_m']:.0f} m"
+        elif g.get("confident"):
+            gtxt = (f"auto, {g['agree']}/{g['variants_run']} detectors agree "
+                    f"within {g['spread_m']:.0f} m")
+        else:
+            gtxt = (f"NOT accepted ({g.get('agree', 0)}/{g.get('variants_run', 0)} agree, "
+                    f"spread {g.get('spread_m', 0):.0f} m) - needs control points")
+        log(f"{s:16}{pdf:>4}{r:>8}{e:>10}{n:>8}  {gtxt}")
+
+    ready = [s for s in SHEETS if geo.get(s, {}).get("confident") or
+             "rms_residual_m" in geo.get(s, {})]
     log(f"\n{len(ready)}/{len(SHEETS)} sheets georeferenced.")
     if len(ready) < len(SHEETS):
-        log("Set control points in viz/georef.html, then re-run `georef`.")
+        missing = [s for s in SHEETS if s not in ready]
+        log(f"Still needed: {', '.join(missing)}. Set two control points each in "
+            "viz/georef.html, then run `georef`.")
     return 0
 
 
