@@ -53,6 +53,19 @@ In 2021, PFOS from firefighting foam used for years at the **Korsør** fire trai
 
 It is the same story as Parkersburg — a fire-training ground, cattle, a small community, blood tests — and it happened here, in Danish, within living memory, by the exact pathway this programme is about: **untreated surface water, led to a ditch.**
 
+##### Where to start, and what is actually free
+
+| | |
+|---|---|
+| **C8 Science Panel reports** — [c8sciencepanel.org](http://www.c8sciencepanel.org/) | Free, and the primary source rather than the dramatisation. The panel published its own findings openly. |
+| **DR's Korsør coverage** | Free, Danish, and the local case. |
+| ***Dark Waters*** (2019) | Was on DRTV; that listing has expired. The free route in Denmark is **Filmstriben** with a library card, subject to your municipality's quota. Otherwise it is rental. |
+| Bilott, *Exposure* (2019) | Library or purchase. |
+
+*A note on where not to link.* There is a copy of the related documentary on the Internet Archive whose filename carries scene-release tags — an unauthorised rip. A project whose entire argument is that provenance matters cannot link to it, and the credibility cost would be larger than the benefit.
+
+*And on making it commons.* Worth being realistic: Focus Features, part of Universal, holds distribution on a 2019 studio feature and will not place it in the public domain. **The achievable ask is a screening licence, not a commons release** — and it is a normal transaction that distributors grant routinely for non-commercial community and educational screenings. Participant, which produced the film, wound up in April 2024, and its founder kept the library rather than sell it to a buyer who would not maintain its purpose. A skeleton holding company built around social-impact filmmaking is an unusually receptive audience for a request to screen it in a community that is downstream of an outfall.
+
 The transferable lesson is not that a film should be cited. It is that both stories worked because they were about a person, a place and an animal, and never about a molecule. Which is why Part One of this document starts with a shore and a smell rather than with a percentage — and why [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 8 argues that the cheapest useful thing anyone could fund is a camera pointed at a beach, year-round.
 
 ### What we would be asking for, said plainly
@@ -569,6 +582,7 @@ The same test distinguishes the good version of the fluorspar argument from the 
 | **Københavns Kommune** | In the next spildevandsplan revision: connect everyday rain to the surface network already designed, and report the separation figure net of *Separatkloakeret opland tilkoblet fællessystemet*. |
 | **The bay's ten municipalities** | A joint body whose jurisdiction is the bay. There is currently none, and the asymmetry between who discharges and who receives is the reason there needs to be. |
 | **Miljøstyrelsen** | Raise the required videnniveau for large structures. Add FOG and TOC to the determinands. Extend benthic sampling into autumn. Fund a fedtemøg index. |
+| **Anyone organising locally** | A community screening is a licence request, not a campaign — ask the distributor's educational arm. And the more useful evening is the local one: Korsør, then a map of the bay, then the question of who decides. |
 | **Denmark, at EU level** | Support the 6PPD restriction dossier. Ask for a copper product standard for brake pads. Treat the PFAS limits as a floor. |
 
 ## What would make this wrong
