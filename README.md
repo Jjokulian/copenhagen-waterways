@@ -192,28 +192,29 @@ Extracted flood area per sheet, before georeferencing: Bispebjerg 2.22 km², kbh
 
 `scripts/floodgap.py` puts the recovered model next to the cloudburst works and asks the
 question the PDF format made awkward. Output: `docs/FLOOD_GAP.md` and
-`docs/flood_gap_map.png`. Covering the four registered inner-city catchments and 1.67 km²
-of modelled flooding at 0.1 m or deeper:
+`docs/flood_gap_map.png`. Covering the four registered inner-city catchments and
+1.521 km² of modelled flooding **on land** at 0.1 m or deeper (the sheets
+also paint 0.148 km² over lakes and the harbour, excluded — water
+standing on water is not something a basin fixes):
 
 | Distance | Near *any* planned work | Near something **built or started** |
 |---|---:|---:|
-| within 50 m | 69.6% | 17.8% |
-| within 100 m | 82.4% | 24.5% |
-| within 200 m | 89.9% | 36.3% |
+| within 50 m | 69.0% | 12.6% |
+| within 100 m | 82.6% | 20.0% |
+| within 200 m | 90.5% | 32.9% |
 
 **The plan is aimed correctly and is largely unbuilt.** Nine tenths of the modelled
-flooding has something planned within 200 m; barely a third has anything that has broken
-ground. The distance is generous — being 50 m from a cloudburst road is not protection —
-which makes the second column the more striking of the two.
+flooding has something planned within 200 m; a third has anything that has broken ground.
+The distance is generous — being 50 m from a cloudburst road is not protection — which
+makes the second column the more striking of the two.
 
-Only four places have deep water (≥0.2 m) with nothing planned within 100 m, totalling
-0.06 km² and roughly 42,000 m³. That small number is itself the finding: coverage is good,
+Only 4 places have deep water (≥0.2 m) with nothing planned within 100 m, totalling 0.06 km² and roughly 42,260 m³. That small number is itself the finding: coverage is good,
 delivery is not.
 
-One number that looks like a finding and is not: 93% of this flooding sits over combined
+One number that looks like a finding and is not: 94% of this flooding sits over combined
 sewer, where rain and sewage share a pipe — so the standing water is mixed with sewage.
-But 87% of the mapped area *is* combined sewer, a ratio of 1.06. The consequence is real;
-the correlation is not. The report states both.
+But 87% of the mapped area *is* combined sewer, a ratio of 1.07. The consequence
+is real; the correlation is not. The report states both.
 
 ## Logging what you actually see
 

@@ -230,9 +230,21 @@ def main():
 
     depth, used = load_flood(grid, sheets, geo, np, Image)
     cell_m2 = CELL * CELL
-    flooded = depth >= FLOOD_DEPTH_MIN
+
+    # The 2012 sheets paint depth bands over lakes and the harbour as well as over land -
+    # verified, not assumed: 80-99% of classified cells are an exact match to a palette
+    # colour, so they are painted fill rather than photographed water. Water standing on
+    # water is not a problem a cloudburst basin solves, so it is excluded from the
+    # comparison and reported separately.
+    import floodreg
+    water = rasterise(grid, [("poly", r) for r in floodreg.water_rings()], Image, np)
+    flooded_all = depth >= FLOOD_DEPTH_MIN
+    flooded = flooded_all & ~water
+    on_water = int((flooded_all & water).sum())
     log(f"sheets used: {', '.join(sorted(used))}")
-    log(f"modelled flooding at >= 0.1 m: {flooded.sum()*cell_m2/1e6:.2f} km2")
+    log(f"modelled flooding at >= 0.1 m: {flooded_all.sum()*cell_m2/1e6:.2f} km2 total, "
+        f"{flooded.sum()*cell_m2/1e6:.2f} km2 on land "
+        f"({on_water*cell_m2/1e6:.2f} km2 painted over lakes and harbour)")
 
     # --- planned works
     layers = {}
@@ -264,6 +276,9 @@ def main():
             "catchments. Amager, Bispebjerg and Koebenhavn Vest are missing.",
             "Distances are to any part of a planned work, which is generous: being 50 m "
             "from a cloudburst road is not the same as being protected by it.",
+            "The sheets paint depth over lakes and the harbour as well as over land. "
+            "Those cells are excluded here - water standing on water is not something a "
+            "cloudburst basin addresses - and reported as flooded_over_water_km2.",
         ],
         "flooded_area_km2": round(total * cell_m2 / 1e6, 3),
         "by_band": {},
@@ -273,7 +288,7 @@ def main():
     }
 
     for i in range(1, 7):
-        n = int((depth == i).sum())
+        n = int(((depth == i) & ~water).sum())
         if n:
             res["by_band"][BANDS[i]] = {"cells": n, "area_m2": round(n * cell_m2)}
 
@@ -283,13 +298,9 @@ def main():
         res["coverage"][f"within_{m}m_of_a_built_or_started_project"] = round(
             float((flooded & (d_built <= m)).sum()) / total, 3) if total else None
 
-    # --- QA: flooding must avoid open water. If the registration were wrong, flood
-    # cells would land in water at roughly the water's share of the grid; landing well
-    # below that is independent evidence the sheets are placed correctly. It also rules
-    # out the deepest band (a dark navy) being confused with dark harbour water.
-    import floodreg
-    wr = [("poly", r) for r in floodreg.water_rings()]
-    water = rasterise(grid, wr, Image, np)
+    # --- QA: flooding must be under-represented on open water. If the registration were
+    # wrong, flood cells would land in water at roughly the water's share of the grid;
+    # landing well below that is independent evidence the sheets are placed correctly.
     baseline = float(water.mean())
     res["qa_flood_vs_water"] = {
         "water_share_of_grid": round(baseline, 3),
@@ -302,6 +313,8 @@ def main():
         if n:
             res["qa_flood_vs_water"]["by_band"][BANDS[i]] = {
                 "cells": n, "share_in_water": round(float((m & water).sum()) / n, 3)}
+    res["flooded_over_water_km2"] = round(on_water * cell_m2 / 1e6, 3)
+    res["flooded_total_km2"] = round(int(flooded_all.sum()) * cell_m2 / 1e6, 3)
     worst = max((v["share_in_water"] for v in res["qa_flood_vs_water"]["by_band"].values()),
                 default=0.0)
     res["qa_flood_vs_water"]["passes"] = bool(worst < baseline)
@@ -348,7 +361,7 @@ def main():
                 }
 
     # --- the worst unaddressed places
-    far = flooded & (d_any > 100) & (depth >= 3)     # >= 0.2 m and >100 m from any work
+    far = flooded & (d_any > 100) & (depth >= 3)     # land, >= 0.2 m, >100 m from any work
     clusters = label_clusters(far, np, HOTSPOT_MIN_CELLS)
     log(f"unaddressed clusters (>=0.2 m, >100 m from any planned work): {len(clusters)}")
     spots = []
@@ -495,7 +508,9 @@ def write_report(res):
       "confidently. Amager, Bispebjerg and København Vest are not included.\n")
 
     w("## The headline\n")
-    w(f"Across {res['flooded_area_km2']} km² of modelled flooding at 0.1 m or deeper:\n")
+    w(f"Across {res['flooded_area_km2']} km² of modelled flooding **on land** at 0.1 m or "
+      f"deeper (the sheets also paint {res.get('flooded_over_water_km2', 0)} km² over lakes "
+      "and the harbour, excluded here):\n")
     w("| Distance | Near *any* planned work | Near something **built or started** |")
     w("|---|---:|---:|")
     for m in NEAR_M:

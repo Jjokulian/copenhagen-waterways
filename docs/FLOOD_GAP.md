@@ -6,13 +6,13 @@ Covers **indre-by, ladegaardsaaen, norrebro, osterbro**: the sheets that registe
 
 ## The headline
 
-Across 1.67 km² of modelled flooding at 0.1 m or deeper:
+Across 1.521 km² of modelled flooding **on land** at 0.1 m or deeper (the sheets also paint 0.148 km² over lakes and the harbour, excluded here):
 
 | Distance | Near *any* planned work | Near something **built or started** |
 |---|---:|---:|
-| within 50 m | 69.6% | 17.8% |
-| within 100 m | 82.4% | 24.5% |
-| within 200 m | 89.9% | 36.3% |
+| within 50 m | 69.0% | 12.6% |
+| within 100 m | 82.6% | 20.0% |
+| within 200 m | 90.5% | 32.9% |
 
 The plan is aimed correctly and is largely unbuilt. Nine tenths of the modelled flooding has something planned within 200 m of it; barely a third has anything that has actually broken ground. The gap between those two columns is the backlog, and it is most of the plan.
 
@@ -22,12 +22,12 @@ Read the distances as generous. Being 50 m from a cloudburst road is not the sam
 
 | Band | Area (m²) |
 |---|---:|
-| 0.05-0.1 m | 1,701,100 |
-| 0.1-0.2 m | 415,900 |
-| 0.2-0.5 m | 477,100 |
-| 0.5-1 m | 601,200 |
-| 1-2 m | 140,000 |
-| >2 m | 35,600 |
+| 0.05-0.1 m | 1,607,600 |
+| 0.1-0.2 m | 371,300 |
+| 0.2-0.5 m | 429,700 |
+| 0.5-1 m | 551,400 |
+| 1-2 m | 133,900 |
+| >2 m | 35,000 |
 
 ## Is the registration trustworthy?
 
@@ -46,14 +46,14 @@ Open water is 13.7% of the study area. If the sheets were placed wrongly, floodi
 
 ## What is underneath it
 
-Sewer catchments cover 69% of the study area and contain 44% of the flooding. Shares below are of that portion.
+Sewer catchments cover 69% of the study area and contain 47% of the flooding. Shares below are of that portion.
 
 | System | Share of area | Share of flooding | Ratio |
 |---|---:|---:|---:|
-| Fælleskloakeret | 87.3% | 92.9% | 1.06× |
-| Separatkloakeret, tag- og vejvand til recipient | 11.2% | 7.0% | 0.62× |
-| 3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand | 1.3% | 0.3% | 0.24× |
-| Spildevandskloakeret | 0.3% | 0.1% | 0.52× |
+| Fælleskloakeret | 87.3% | 93.8% | 1.07× |
+| Separatkloakeret, tag- og vejvand til recipient | 11.2% | 6.1% | 0.55× |
+| 3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand | 1.3% | 0.3% | 0.25× |
+| Spildevandskloakeret | 0.3% | 0.1% | 0.54× |
 
 93% of this flooding sits over combined sewer, where stormwater and sewage share one pipe - so that standing water is mixed with sewage. But note the ratio: 87% of the mapped area is combined sewer too. Flooding is **not** concentrated over combined sewers; the inner city is simply built that way almost everywhere. The consequence is real, the correlation is not.
 
@@ -75,3 +75,4 @@ Four is a small number, and that is the finding: the plan's *coverage* is good. 
 - The flood model is 2012 calculations of a 2010 scenario; the plan is 2018 with later addenda. This compares two snapshots taken six years apart.
 - Only sheets that registered confidently are included - the inner-city catchments. Amager, Bispebjerg and Koebenhavn Vest are missing.
 - Distances are to any part of a planned work, which is generous: being 50 m from a cloudburst road is not the same as being protected by it.
+- The sheets paint depth over lakes and the harbour as well as over land. Those cells are excluded here - water standing on water is not something a cloudburst basin addresses - and reported as flooded_over_water_km2.
