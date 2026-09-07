@@ -376,6 +376,14 @@ def main():
       "and a camera on a post.\n")
     a("**Tennant's tapes are not available, and the format is.** He proved the format "
       "works. Nobody needs his licence to use it.\n")
+    a("*One archive that is open.* The **documents** from that litigation were donated "
+      "to UCSF's Industry Documents Library — free, fully searchable, two PFAS "
+      "collections spanning 1961 to 2006, sitting alongside the tobacco and opioid "
+      "archives. The paper record is public; the visual record is not. That asymmetry, "
+      "and what it would take to close it, is "
+      "[OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 9 — which also notes that "
+      "*documenting pollution effects* is a project in its own right and does not "
+      "belong in a repository about Copenhagen's sewers.\n")
     a("##### Where to start, and what is actually free\n")
     a("| | |")
     a("|---|---|")

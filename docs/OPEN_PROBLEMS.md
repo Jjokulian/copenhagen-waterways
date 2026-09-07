@@ -135,7 +135,58 @@ structured citizen-reporting scheme running year-round rather than in summer.
 
 ---
 
-## 9. Fat, and everything else with no nitrogen in it
+## 9. There is no visual record of what high concentrations actually do
+
+Danish monitoring produces concentrations. It does not produce images of consequence,
+and the two are not substitutes.
+
+**Korsør, 2021.** Fødevarestyrelsen found PFOS in calf meat at 156, 189 and 230 ng/g,
+analysed 27 samples across beef, fish, fruit, berries, vegetables and honey, and offered
+179 residents a health examination. Every one of those is a measurement of a
+*concentration* — in the food, and then in the people. Nothing published records what
+the animals looked like, whether they were examined beyond a meat assay, or what
+symptoms if any they showed. The exposure was documented as a number in the food chain
+and never as an effect in an organism.
+
+**Parkersburg, 1998–2004**, is the counter-case, and it is the reason anyone outside a
+toxicology department has heard of PFAS at all. Wilbur Tennant filmed his own herd over
+years: more than 150 animals dead one at a time, blackened teeth, tumours, deformities,
+calves born with white blind eyes, a creek running with foam and a discharge pipe from a
+DuPont landfill. He made that record himself because no official programme covered what
+was happening to him.
+
+**Why it matters.** Dose–response at the high end is where a mechanism shows itself, and
+whole-organism failure is a kind of evidence a hazard ratio cannot carry. It is also the
+form of evidence that moves anything. And it is entirely absent from the Danish record —
+which is this project's recurring finding arriving one layer further out: the thing that
+is easy to count gets counted, and the thing that would show what it means does not.
+
+**The asymmetry worth noting.** The *paper* record from that litigation is open. Bilott's
+discovery documents were donated to UCSF's Industry Documents Library — free, fully
+searchable, two PFAS collections spanning 1961–2006, including the 39 documents used in
+*The Devil We Know*, alongside the tobacco and opioid archives. **The document archive is
+public. The video archive is not**, and remains under copyright into the 2070s.
+
+**What would settle it.**
+
+- Locate the Tennant archive and establish who holds it. Both films licensed the footage,
+  so a rights holder exists and has granted permission before.
+- Ask Fødevarestyrelsen and DTU Fødevareinstituttet whether the Korsør animals were
+  examined beyond the meat assay, and whether anything was photographed or necropsied.
+- For everything since: a standing, provenanced archive of visual documentation of
+  pollution effects, contributed by the people it happens to.
+
+**This is larger than this project.** It is its own thing — *documenting pollution
+effects* — and it needs an archive, a contribution standard, a provenance chain and a
+licence model, none of which belong in a repository about Copenhagen's sewers. It is
+recorded here because this project kept running into the gap and could not fill it. The
+nearest thing here is `viz/log.html`, an offline field logger that records a shore
+observation in the flood model's own vocabulary — the right shape, at approximately none
+of the required scale.
+
+---
+
+## 10. Fat, and everything else with no nitrogen in it
 
 *Fedtemøg* names a material. Triglycerides contain no nitrogen at all, carry roughly
 2.9 g of oxygen demand per gram, float rather than settle, and do not disperse. Sewers
@@ -154,7 +205,7 @@ clearing operations; those records would give the retention side.
 
 ---
 
-## 10. Trawling and bed integrity in the receiving bays
+## 11. Trawling and bed integrity in the receiving bays
 
 A loose, dead bed resuspends several times more often than a living one, and bottom
 trawling removes structure-forming fauna directly. Whether the bays receiving urban
@@ -165,7 +216,7 @@ subject to an access key.
 
 ---
 
-## 11. Whether toxicant loading, not nutrients, gates recovery
+## 12. Whether toxicant loading, not nutrients, gates recovery
 
 Eelgrass partially recovered through the 1940s–60s after the 1930s wasting disease, then
 declined again in the 1980s. That failure-to-recover window coincides with rising
@@ -182,7 +233,7 @@ loadings against the eelgrass record.
 
 ---
 
-## 12. The three unplaced flood sheets
+## 13. The three unplaced flood sheets
 
 Amager, Bispebjerg and København Vest did not register confidently and carry *more*
 modelled flooding than the four that did. Two hand-placed control points each in
