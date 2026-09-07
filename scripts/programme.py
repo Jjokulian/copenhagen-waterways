@@ -64,16 +64,16 @@ CHEM_TIERS = [
         ("Zinc", "galvanised surfaces, tyres, roofing",
          "**Essential micronutrient.** Life has transporters, metallothioneins and "
          "homeostasis for it, evolved over billions of years of exposure.",
-         "Binds to particles and organic matter and buries in sediment.",
+         "Already terminal — it is an element. Binds to particles and buries.",
          "**Reduce the flux, and keep the sink working.** A building-regulation rule on "
          "roof and gutter materials costs nothing and compounds over the fifty-year "
          "life of a roof. Not a ban."),
         ("Copper", "brake pads, roofing, antifouling",
-         "**Essential, but a narrow window.** The prior exists and is thinner than "
-         "zinc's — copper is acutely toxic to bivalve larvae and to fish olfaction at "
-         "very low concentrations, which is to say to exactly the filter feeders and "
-         "grazers whose loss the rest of this argument turns on.",
-         "Same as zinc: particle-bound, buried.",
+         "**Essential, but a narrow window.** Thinner than zinc's — copper is acutely "
+         "toxic to bivalve larvae and to fish olfaction at very low concentrations, "
+         "which is to say to exactly the filter feeders and grazers whose loss the rest "
+         "of this argument turns on.",
+         "Element; particle-bound, buried.",
          "A product standard for brake pads. California legislated copper out of them "
          "and the industry complied."),
     ]),
@@ -81,34 +81,39 @@ CHEM_TIERS = [
         ("Cadmium, mercury, lead", "combustion, legacy paint and plumbing, industry",
          "**No metabolic function.** Being an element is not the same as having a "
          "prior; life has detoxification for these, not use.",
-         "Buried — but mercury methylates in anoxic sediment, so the sink partly "
-         "converts it into a worse form.",
+         "Element — but mercury methylates in anoxic sediment, so the sink partly "
+         "converts it into a more bioavailable form.",
          "Already restricted, and the restrictions largely worked. What is left is the "
          "legacy stock in sediment, which is a bed-integrity question rather than a "
          "chemicals one."),
     ]),
-    ("No prior, but degradable — novel entities that break down", [
+    ("Novel, but the cascade lands back in the primed set — a transient", [
         ("6PPD / 6PPD-quinone", "tyre antiozonant and its oxidation product",
-         "**No organism has ever met this molecule.** Acutely lethal to coho salmon at "
-         "nanogram-per-litre concentrations — among the most toxic substances ever "
-         "found in urban runoff, at levels no evolved tolerance covers.",
-         "It degrades, so the standing stock tracks the flux.",
+         "**No organism has met this molecule.** Acutely lethal to coho salmon at "
+         "nanogram-per-litre concentrations, at levels no evolved tolerance covers. And "
+         "note that 6PPD's *degradation product* is the toxic one — degrading is not by "
+         "itself resolution.",
+         "**Terminates in the primed set.** Microbially mediated in soil, half-life "
+         "13.5–14.2 days for the quinone; the ring breaks, the carbon chain shortens, "
+         "and the metabolites are assimilated and mineralised. Slower without light "
+         "(~6 months) and slower anaerobically.",
          "Stop making it. A substance of concern under REACH since 2023, with a "
          "Dutch-Austrian restriction dossier in preparation. **The fastest payoff on "
-         "this list**, because stopping the input drains the stock."),
+         "this list**, because the terminus is reached in weeks — cut the input and the "
+         "standing stock drains itself."),
     ]),
-    ("No prior and no sink — novel and permanent", [
-        ("PFAS", "textiles, packaging, coatings, foams, cosmetics — and a small number "
-         "of uses nothing else can do",
-         "**No prior and no degradation route.** Nothing metabolises them; nothing "
-         "buries them irreversibly. Every gram emitted is still in circulation.",
-         "None. That is the category difference.",
-         "**Restrict the mass use, not the molecule.** Reserve it for applications "
-         "where no substitute exists and the volumes are small — reactor and "
-         "chemical-plant seals, medical implants, some aerospace. This already has a "
-         "name in the literature and in EU chemicals policy: the *essential-use* "
-         "concept. The September 2025 EU water agreement adds a limit for 25 PFAS, and "
-         "a concentration limit is a different instrument from a use restriction."),
+    ("Novo-chemical — novel, chronic, and the cascade never lands", [
+        ("PFAS, and its precursors", "textiles, packaging, coatings, foams, cosmetics "
+         "— and a small number of uses nothing else can do",
+         "**No prior anywhere in the cascade.** The carbon–fluorine bond is the "
+         "strongest single bond in organic chemistry.",
+         "**Never terminates.** The precursors *do* degrade — and they degrade into "
+         "PFCAs and PFSAs, which the literature calls the *terminal* transformation "
+         "products, because that is where the chain stops. Complete mineralisation and "
+         "deep defluorination remain unsolved. Degradation here moves the problem "
+         "without ending it.",
+         "**Restrict the mass use, not the molecule.** Reserve it for the cases that "
+         "pass both tests in the section below."),
     ]),
 ]
 
@@ -136,12 +141,12 @@ DISPOSAL = [
      "Burial, but stabilised. Mercury methylates in anoxic sediment, so an anoxic "
      "destination is the wrong one for that fraction specifically.",
      "threshold"),
-    ("6PPD-quinone and similar degradable novel entities",
-     "No prior, but it breaks down.",
+    ("6PPD-quinone and similar transients",
+     "No prior, but the cascade terminates in the primed set.",
      "Residence time *is* the treatment. What the pond does not settle, it outlives.",
      "degrades"),
-    ("PFAS",
-     "No prior and no sink.",
+    ("PFAS — a novo-chemical",
+     "No prior, and the cascade never terminates in one.",
      "**Destruction, to specification.** And mostly it is not captured at all — it is "
      "dissolved and mobile, so a settling pond does not collect it. Destruction applies "
      "to the concentrated streams: spent filter media, firefighting foam, industrial "
@@ -564,28 +569,58 @@ def main():
       "produces mush rather than meadow because the organisms that would have used it "
       "well are gone. If that is right, the substances that removed them sit upstream "
       "of the nutrient problem, and no amount of nutrient policy reaches them.\n")
-    a("The useful way to sort those substances is **not by how toxic they are**. It is "
-      "by whether life has an **evolutionary prior** for them — whether anything has "
-      "met the molecule before. That single question decides whether adaptation is "
-      "available, whether a sink exists, and therefore which instrument can work at "
-      "all.\n")
-    a("| Prior | Adaptation available? | Sink? | So the instrument is |")
-    a("|---|---|---|---|")
-    for tier, adapt, sink, instr in [
-        ("**Deep** — essential elements (Zn, Cu)",
-         "Yes — transporters, homeostasis", "Yes — particle-bound burial",
+    a("The useful way to sort those substances is **not by how toxic they are**, and "
+      "not by half-life either. It is by whether life has an **evolutionary prior** for "
+      "them — and, where it does not, whether the substance *breaks down into something "
+      "it does*.\n")
+    a("That second clause is the whole test, because degrading is not the same as "
+      "resolving. A novel compound can degrade into another novel compound. 6PPD "
+      "degrades into 6PPD-quinone, which is the toxic one. PFAS precursors degrade "
+      "into PFCAs and PFSAs, which the literature calls **terminal** transformation "
+      "products precisely because that is where the chain stops.\n")
+    a("So the criterion is the **terminus**:\n")
+    a("> **Novo-chemical**: a substance that is not evolutionarily primed, whose "
+      "presence is lasting or chronic, and **whose degradation cascade does not "
+      "terminate in something life is primed for.**\n")
+    a("Everything else is a transient — a nuisance with a clock on it. A novo-chemical "
+      "has no clock.\n")
+    a("| Prior | Where the cascade ends | Adaptation? | Sink? | Instrument |")
+    a("|---|---|---|---|---|")
+    for tier, term, adapt, sink, instr in [
+        ("**Deep** — essential elements (Zn, Cu)", "it is already an element",
+         "Yes — transporters, homeostasis", "Particle-bound burial",
          "**reduce the flux**"),
-        ("**Weak** — no biological role (Cd, Hg, Pb)",
-         "Detoxification only", "Yes, but Hg methylates",
-         "**restrict, then guard the sediment**"),
-        ("**None**, degradable (6PPD-q)", "No", "Degradation", "**stop production**"),
-        ("**None**, permanent (PFAS)", "No", "**None**", "**restrict the mass use**"),
+        ("**Weak** — no biological role (Cd, Hg, Pb)", "element, but Hg methylates",
+         "Detoxification only", "Burial, stabilised",
+         "**restrict, guard the sediment**"),
+        ("**None**, but *terminates* (6PPD-q)", "**mineralised, ~2 weeks in soil**",
+         "No — but it does not need to", "Degradation", "**stop production**"),
+        ("**None**, and *never terminates* — a novo-chemical (PFAS)",
+         "**PFCAs / PFSAs, and stops there**", "No", "**None**",
+         "**reserved use only**"),
     ]:
-        a(f"| {tier} | {adapt} | {sink} | {instr} |")
+        a(f"| {tier} | {term} | {adapt} | {sink} | {instr} |")
     a("")
-    a("That is a correction to an earlier draft of this page, which put all four on one "
-      "list with one remedy. They are different categories of threat and they need "
-      "different instruments.\n")
+    a("That is a correction to an earlier draft of this page, twice over. The first "
+      "draft put all four on one list with one remedy. The second split them by "
+      "persistence, which is nearly right and gets 6PPD wrong — it is novel and "
+      "acutely lethal and it still belongs in a different category from PFAS, because "
+      "its metabolites are assimilated and mineralised within weeks. **Persistence is "
+      "a symptom. The terminus is the property.**\n")
+    a("*One interaction worth naming.* The terminus is reached by microbes, and reached "
+      "slowly where there is no oxygen — 6PPD persists roughly fifty times longer "
+      "anaerobically. So anoxic sediment does two things at once: it re-opens the metal "
+      "store on every resuspension, and it stalls the clock on the transients. The bed "
+      "condition is upstream of both.\n")
+    a("*And where this sits against existing regulation.* REACH screens for PBT and "
+      "vPvB, and PMT and vPvM were added as a category of substance of very high "
+      "concern under the Chemicals Strategy for Sustainability. Those are the right "
+      "instincts, but they are **threshold criteria on half-life, bioaccumulation and "
+      "mobility**. Transformation products are assessed as an addendum rather than as "
+      "the organising question. The terminus test makes it the organising question, "
+      "and it is the test that separates 6PPD-quinone from a PFAS precursor — two "
+      "substances that would score similarly on a half-life screen and belong in "
+      "different regimes.\n")
 
     for tier, rows in CHEM_TIERS:
         a(f"#### {tier}\n")
@@ -595,18 +630,54 @@ def main():
             a(f"- **Sink:** {sink}")
             a(f"- **Ask:** {ask}\n")
 
-    a("#### The PFAS case, in one analogy\n")
-    a("The instrument for PFAS is the one used for antibiotics, and for the same "
-      "reason. The harm from antibiotics does not come from the molecule; it comes "
-      "from **volume and ubiquity**, which is what breeds resistance. So the response "
-      "was never to ban them — it was to reserve them for the cases where nothing else "
-      "works, and to stop putting them in livestock feed as a growth promoter.\n")
-    a("PFAS is the same shape. The harm is environmental saturation by a substance "
-      "nothing removes. Reactor seals and medical implants are not the problem; "
-      "impregnated textiles, food packaging, cosmetics and ski wax are, because that is "
-      "where the tonnage and the dispersal are. **Mass use is the target, not the "
-      "chemistry.** That distinction is already the basis of the EU's essential-use "
-      "framework, so the argument does not need to be invented — only applied.\n")
+    a("#### The instrument for a novo-chemical: reserved use\n")
+    a("The instrument is the one used for antibiotics, and for the same reason. The "
+      "harm from antibiotics never came from the molecule; it came from **volume and "
+      "ubiquity**, which is what breeds resistance. So the response was not to ban "
+      "them. It was to reserve them for cases where nothing else works, and to stop "
+      "putting them in livestock feed as a growth promoter.\n")
+    a("A novo-chemical needs the same treatment, and the test has **two prongs**, not "
+      "one:\n")
+    a("| | The test | Why it is necessary |")
+    a("|---|---|---|")
+    a("| **1. No substitute** | Does anything else do this job? | This is the "
+      "*essential-use* concept, already in EU chemicals policy. It bounds the number of "
+      "applications. |")
+    a("| **2. Closed system** | Does the material stay somewhere it can be collected and "
+      "destroyed at end of life? | This bounds the *dispersal*, and it is the prong "
+      "usually left out. |")
+    a("")
+    a("The second prong is not decoration. Section 4 established that destruction only "
+      "works on a **collected, concentrated** stream — >1,100 °C with adequate "
+      "residence time, or supercritical water oxidation — and that dispersed material "
+      "is never collected, so there is nothing to feed the furnace. **A closed system "
+      "is the condition that makes the disposal route exist at all.**\n")
+    a("Which sorts the applications cleanly:\n")
+    a("| Use | No substitute? | Closed system? | |")
+    a("|---|---|---|---|")
+    for use, sub, closed, verdict in [
+        ("Reactor and chemical-plant seals", "Yes", "Yes — inventoried, serviced, "
+         "decommissioned under waste tracking", "**reserved**"),
+        ("Medical implants and devices", "Yes", "Yes — explanted and disposed as "
+         "clinical waste", "**reserved**"),
+        ("Some aerospace and semiconductor process chemistry", "Largely",
+         "Yes — closed process, captured waste streams", "**reserved, under review**"),
+        ("Firefighting foam", "Substitutes now exist",
+         "No — it is deployed by spraying it on the ground", "**out**"),
+        ("Impregnated textiles, food packaging, cosmetics, ski wax",
+         "No", "No — it is dispersed by design", "**out**"),
+    ]:
+        a(f"| {use} | {sub} | {closed} | {verdict} |")
+    a("")
+    a("Note what the second prong catches that the first does not. Firefighting foam "
+      "has a serious argument on prong one — it saves lives, and the substitutes took "
+      "decades. It fails absolutely on prong two, because the method of use *is* "
+      "dispersal into the ground. **The volume and the containment are the policy "
+      "variables; the chemistry is not.**\n")
+    a("So: *banned as a mass-adopted material, reserved for special products in "
+      "special facilities.* That is not a compromise between banning and permitting. "
+      "It is the only formulation that matches what the substance actually is — "
+      "irreplaceable in a few places, and irretrievable everywhere else.\n")
 
     a("#### Two caveats on the metals, which are this project's own findings\n")
     hz = mon["hazardous_substances"]
