@@ -31786,6 +31786,700 @@
   {
    "type": "Feature",
    "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "U1",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.675,
+     55.6486
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "U4",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6567,
+     55.6346
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "U2",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6548,
+     55.6415
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "Lynetten Bypass",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6588,
+     55.6968
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "Damhusåen Bypass",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6576,
+     55.6981
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ124",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6256,
+     55.6701
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ38",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6001,
+     55.6897
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ113",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.598,
+     55.6768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "U12b",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5931,
+     55.6296
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ42",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5966,
+     55.6846
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ43",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5956,
+     55.6834
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ44",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5952,
+     55.6805
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ37",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.595,
+     55.6959
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ107",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5896,
+     55.6716
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ103",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5894,
+     55.6718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ97",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5886,
+     55.675
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ52",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5886,
+     55.6763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UN10",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5849,
+     55.6407
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ67",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5863,
+     55.6747
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "U11b",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5789,
+     55.6183
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ66",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5826,
+     55.6765
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ55",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5815,
+     55.6772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ68",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5807,
+     55.6724
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ69",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5789,
+     55.6715
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ65",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5786,
+     55.6772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ93",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5754,
+     55.6667
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ60",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5757,
+     55.6758
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ72",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5728,
+     55.6677
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ73",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5687,
+     55.6658
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ74",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5668,
+     55.665
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ89",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5643,
+     55.6562
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ75",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5647,
+     55.661
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ77",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5583,
+     55.6589
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ79",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5528,
+     55.6568
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ82.1",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5509,
+     55.6523
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ80",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5489,
+     55.6546
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ85",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5448,
+     55.6462
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UØ84",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5412,
+     55.6501
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "node",
+    "role": "diversion",
+    "name": "UK12",
+    "note": "REAL combined-sewer overflow structure. PROPOSED diversion node: turbidity, conductivity and flow continuously, grab sample on threshold. Clean flow to the wetland, flagged flow held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5308,
+     55.6424
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "facility",
+    "role": "energy from waste",
+    "name": "ARC / Amager Bakke",
+    "status": "REAL LOCATION — CAPABILITY NOT VERIFIED",
+    "note": "Municipal energy-from-waste, owned by Dragør, Frederiksberg, Hvidovre, København and Tårnby — the same municipalities that discharge into the bay. Municipal EfW typically runs below the >1,100 °C / 2-3 s condition that PFAS destruction needs, and Danish trade reporting describes PFAS as a live problem for incineration plants rather than a solved one. **Treat as unsuitable for the destruction branch until its permit and a fluorine mass balance say otherwise.**"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.61854,
+     55.68458
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "facility",
+    "role": "hazardous waste reception",
+    "name": "SMOKA (approximate)",
+    "status": "REAL FACILITY — LOCATION APPROXIMATE, ROLE NOT VERIFIED",
+    "note": "The capital's hazardous-waste receiving station, co-owned by ARC. It is a reception and transfer point, not a destruction facility. Included because the collection step has to land somewhere and this is where it already lands. Coordinates are approximate — geocoding failed and this was placed from the Prøvestenen area."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.635,
+     55.6845
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "destination",
+    "role": "forebay",
+    "name": "Sedimentation forebay",
+    "note": "INDICATIVE. Gross-pollutant trap and a deep, small settling cell ahead of the wetland — the part that is dredged often, so the wetland behind it is dredged rarely."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       12.559,
+       55.618
+      ],
+      [
+       12.562,
+       55.618
+      ],
+      [
+       12.562,
+       55.623
+      ],
+      [
+       12.559,
+       55.623
+      ],
+      [
+       12.559,
+       55.618
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "kind": "destination",
     "role": "sedimentation",
     "name": "Vestamager sedimentation wetland",
@@ -31841,6 +32535,8 @@
   "interceptor_km": 71.2,
   "gaps": 4,
   "flood_path_km2": 1.521,
-  "near_surface_pct": 72.0
+  "near_surface_pct": 72.0,
+  "diversion_nodes": 39,
+  "nyborg_note": "Fortum Waste Solutions, Nyborg (the former Kommunekemi, founded 1971) is where Danish practice already sends spent PFAS media. Secondary sources describe capture on granular activated carbon and ion-exchange resin followed by high-temperature incineration above 1,200 °C. **This project has not verified that.** It is a reported practice, not a measured performance, and the difference is the whole subject of this section."
  }
 }

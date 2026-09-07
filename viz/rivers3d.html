@@ -89,6 +89,11 @@
     the sensor is held for heavy-duty treatment.
     <a href="../docs/routing_logic.svg" style="color:#3fa9e0">Routing &rarr;</a></p>
 
+  <h2>Due diligence</h2>
+  <p class="note" id="dd">…</p>
+  <p class="note">No facility on this map has had its permit or its performance checked
+    here. A red dot means the place is real, not that it can do the job.</p>
+
   <h2>Honesty</h2>
   <p class="note">
     <span class="tag real">real</span>buildings, coastline, the cloudburst plan's actual
@@ -127,7 +132,9 @@ const LAYERS = [
   {id:"open_channel", label:"Rivers in the open", sw:"var(--river)", line:true, on:true, tag:"prop"},
   {id:"interceptor", label:"Interceptor retrofit (buried)", sw:"var(--pipe)", line:true, on:true, tag:"prop"},
   {id:"gap", label:"River indicated, none planned", sw:"var(--gap)", dot:true, on:true, tag:"rec"},
-  {id:"wetland", label:"Vestamager wetland", sw:"var(--wet)", on:true, tag:"prop"},
+  {id:"wetland", label:"Wetland &amp; forebay", sw:"var(--wet)", on:true, tag:"prop"},
+  {id:"node", label:"Diversion node", sw:"#ffd166", dot:true, on:true, tag:"prop"},
+  {id:"facility", label:"Existing facility", sw:"#ff6b6b", dot:true, on:true, tag:"real"},
 ];
 
 function fc(feats){ return {type:"FeatureCollection", features:feats}; }
@@ -219,7 +226,19 @@ async function load(){
            "circle-radius":["interpolate",["linear"],["zoom"],11,6,16,42],
            "circle-stroke-color":"#ff8a5c","circle-stroke-width":2}});
 
-  map.addSource("wetland",{type:"geojson", data:pick("destination","sedimentation")});
+  map.addSource("node",{type:"geojson", data:pick("node","diversion")});
+  map.addLayer({id:"node",source:"node",type:"circle",
+    paint:{"circle-color":"#ffd166","circle-radius":["interpolate",["linear"],["zoom"],11,2.5,16,7],
+           "circle-stroke-color":"#7a5c14","circle-stroke-width":1}});
+
+  map.addSource("facility",{type:"geojson", data:pick("facility")});
+  map.addLayer({id:"facility",source:"facility",type:"circle",
+    paint:{"circle-color":"#ff6b6b","circle-radius":["interpolate",["linear"],["zoom"],11,5,16,13],
+           "circle-stroke-color":"#fff","circle-stroke-width":2}});
+
+  map.addSource("wetland",{type:"geojson",
+    data:fc(feats.filter(f=>f.properties.kind==="destination" &&
+                            (f.properties.role==="sedimentation"||f.properties.role==="forebay")))});
   map.addLayer({id:"wetland",source:"wetland",type:"fill-extrusion",
     paint:{"fill-extrusion-color":"#3ddc97","fill-extrusion-opacity":.32,
            "fill-extrusion-height":6,"fill-extrusion-base":0}});
@@ -233,7 +252,10 @@ async function load(){
     + `<b>${scene.meta.interceptor_km.toLocaleString()} km</b> is planned as pipe: `
     + `retrofit candidates.<br>`
     + `<b>${scene.meta.near_surface_pct}%</b> of the modelled flood path already has a `
-    + `surface route within 100 m.`;
+    + `surface route within 100 m.<br>`
+    + `<b>${scene.meta.diversion_nodes}</b> existing overflow structures on Amager — `
+    + `the places the system already discharges, and therefore where a diversion goes.`;
+  document.getElementById("dd").textContent = scene.meta.nyborg_note;
   document.getElementById("loading").remove();
 }
 
@@ -267,12 +289,14 @@ function buildUI(flood){
   };
 }
 
-for(const id of ["open_channel","interceptor","gap","wetland"]){
+for(const id of ["open_channel","interceptor","gap","wetland","node","facility"]){
   map.on("click", id, e => {
     const p = e.features[0].properties;
-    new maplibregl.Popup({closeButton:false, maxWidth:"300px"})
+    const st = p.status ? `<div style="font-size:10px;letter-spacing:.08em;
+      text-transform:uppercase;color:#ffb4a2;margin:0 0 5px">${p.status}</div>` : "";
+    new maplibregl.Popup({closeButton:false, maxWidth:"320px"})
       .setLngLat(e.lngLat)
-      .setHTML(`<div class="pop"><b>${p.name || p.typologi || "Corridor"}</b>${p.note||""}</div>`)
+      .setHTML(`<div class="pop"><b>${p.name || p.typologi || "Corridor"}</b>${st}${p.note||""}</div>`)
       .addTo(map);
   });
   map.on("mouseenter", id, ()=> map.getCanvas().style.cursor="pointer");

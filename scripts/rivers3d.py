@@ -43,13 +43,49 @@ AMAGER_WETLAND = [  # indicative cells on the northern edge of the polder, OUTSI
 ]
 KALKGRAV = (12.2088, 55.5478)
 
+# Facilities the routing would use. "status" is the epistemic label and it is the point:
+# a location being real is not the same as a capability being verified, and nothing in
+# this list has had its permit or its performance checked by this project.
+FACILITIES = [
+    {"name": "ARC / Amager Bakke",
+     "lon": 12.61854, "lat": 55.68458,
+     "role": "energy from waste",
+     "status": "REAL LOCATION — CAPABILITY NOT VERIFIED",
+     "note": "Municipal energy-from-waste, owned by Dragør, Frederiksberg, Hvidovre, "
+             "København and Tårnby — the same municipalities that discharge into the "
+             "bay. Municipal EfW typically runs below the >1,100 °C / 2-3 s condition "
+             "that PFAS destruction needs, and Danish trade reporting describes PFAS as "
+             "a live problem for incineration plants rather than a solved one. "
+             "**Treat as unsuitable for the destruction branch until its permit and a "
+             "fluorine mass balance say otherwise.**"},
+    {"name": "SMOKA (approximate)",
+     "lon": 12.6350, "lat": 55.6845,
+     "role": "hazardous waste reception",
+     "status": "REAL FACILITY — LOCATION APPROXIMATE, ROLE NOT VERIFIED",
+     "note": "The capital's hazardous-waste receiving station, co-owned by ARC. It is a "
+             "reception and transfer point, not a destruction facility. Included because "
+             "the collection step has to land somewhere and this is where it already "
+             "lands. Coordinates are approximate — geocoding failed and this was placed "
+             "from the Prøvestenen area."},
+]
+
+# Off the map, and the one that matters most.
+NYBORG_NOTE = (
+    "Fortum Waste Solutions, Nyborg (the former Kommunekemi, founded 1971) is where "
+    "Danish practice already sends spent PFAS media. Secondary sources describe capture "
+    "on granular activated carbon and ion-exchange resin followed by high-temperature "
+    "incineration above 1,200 °C. **This project has not verified that.** It is a "
+    "reported practice, not a measured performance, and the difference is the whole "
+    "subject of this section."
+)
+
 
 def line_len(coords):
     return sum(math.hypot((b[0] - a[0]) * LONM, (b[1] - a[1]) * 111320.0)
                for a, b in zip(coords, coords[1:]))
 
 
-def simplify(ring, min_m=3.5):
+def simplify(ring, min_m=7.0):
     out, last = [], None
     for c in ring:
         if last is not None:
@@ -89,6 +125,11 @@ def build_buildings():
             h = DEFAULT_H
         ring = simplify([[p["lon"], p["lat"]] for p in g])
         if len(ring) < 4:
+            continue
+        # Drop sheds, garages and bike stores. 63,910 buildings across Amager and the
+        # inner city is 36 MB of GeoJSON; the small stuff is most of the count and none
+        # of the skyline.
+        if _ring_area(ring) < 150:
             continue
         if ring[0] != ring[-1]:
             ring.append(ring[0])
@@ -239,6 +280,49 @@ def build_scene():
                                     "and none is planned"},
              "geometry": {"type": "Point", "coordinates": [c["lon"], c["lat"]]}})
 
+    # ---- diversion nodes: real overflow structures on Amager, proposed new function.
+    # These are where the combined system already discharges, so they are where a
+    # diversion would go. The locations are data; the function is a proposal.
+    amager = (12.53, 55.55, 12.70, 55.70)
+    n_div = 0
+    for f in read_json(os.path.join(RAW, "national", "punkt_rbu_udl.geojson"))["features"]:
+        pr, g = f["properties"], f.get("geometry")
+        if not g or not str(pr.get("bgv_type", "")).startswith("O"):
+            continue
+        lon, lat = g["coordinates"][:2]
+        if not (amager[0] <= lon <= amager[2] and amager[1] <= lat <= amager[3]):
+            continue
+        n_div += 1
+        add({"type": "Feature",
+             "properties": {"kind": "node", "role": "diversion",
+                            "name": pr.get("pkt_navn") or "overflow structure",
+                            "note": "REAL combined-sewer overflow structure. PROPOSED "
+                                    "diversion node: turbidity, conductivity and flow "
+                                    "continuously, grab sample on threshold. Clean flow "
+                                    "to the wetland, flagged flow held."},
+             "geometry": {"type": "Point", "coordinates": [round(lon, 6), round(lat, 6)]}})
+
+    # ---- facilities
+    for fac in FACILITIES:
+        add({"type": "Feature",
+             "properties": {"kind": "facility", "role": fac["role"],
+                            "name": fac["name"], "status": fac["status"],
+                            "note": fac["note"]},
+             "geometry": {"type": "Point", "coordinates": [fac["lon"], fac["lat"]]}})
+
+    # ---- a forebay at the wetland inlet: the coarse half of the treatment train
+    add({"type": "Feature",
+         "properties": {"kind": "destination", "role": "forebay",
+                        "name": "Sedimentation forebay",
+                        "note": "INDICATIVE. Gross-pollutant trap and a deep, small "
+                                "settling cell ahead of the wetland — the part that is "
+                                "dredged often, so the wetland behind it is dredged "
+                                "rarely."},
+         "geometry": {"type": "Polygon",
+                      "coordinates": [[[12.5590, 55.6180], [12.5620, 55.6180],
+                                       [12.5620, 55.6230], [12.5590, 55.6230],
+                                       [12.5590, 55.6180]]]}})
+
     # ---- destinations
     add({"type": "Feature",
          "properties": {"kind": "destination", "role": "sedimentation",
@@ -265,9 +349,12 @@ def build_scene():
                "gaps": len(riv["corridors"]),
                "flood_path_km2": riv["flood_path_km2"],
                "near_surface_pct": riv["near_surface_conveyance_pct"],
+               "diversion_nodes": n_div,
+               "nyborg_note": NYBORG_NOTE,
            }}
     p = os.path.join(VIEWER, "rivers3d.geojson")
     write_json(p, out)
+    log(f"  diversion nodes on Amager: {n_div}")
     log(f"  rivers3d.geojson     {len(feats):,} features, "
         f"{out['meta']['open_channel_km']:,.0f} km open channel, "
         f"{out['meta']['interceptor_km']:,.0f} km interceptor candidate")

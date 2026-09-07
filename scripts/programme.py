@@ -566,15 +566,126 @@ def main():
     for route, cond, eff, catch in DESTRUCTION:
         a(f"| {route} | {cond} | **{eff}** | {catch} |")
     a("")
-    a("So *incinerate it* is not the policy. **Above 1,100 °C with adequate residence "
-      "time** is the policy, and sending PFAS waste to a plant that cannot hold those "
-      "conditions converts a known problem into an unmonitored one.\n")
+    a("So *incinerate it* is not the policy, and neither is a temperature on a permit. "
+      "**Roughly burning a fluorinated compound is worse than not burning it.**\n")
+    a("The failure mode is specific and it is not a leak. Below the destruction "
+      "condition the parent molecule disappears — a plant measuring only the parent "
+      "reports success — while the fluorine leaves as volatile and ultrafine species "
+      "through the stack. C₂F₆ has an atmospheric lifetime of the order of ten thousand "
+      "years. CHF₃ is a greenhouse gas thousands of times more potent than CO₂. Partial "
+      "combustion takes a water-borne problem that was at least *localised* and converts "
+      "it into an airborne one that is global and permanent. That is a worse outcome "
+      "than leaving it in the ground.\n")
+
+    a("##### The verification is a fluorine mass balance, not a temperature\n")
+    a("If the parent compound can vanish while the fluorine escapes, then measuring the "
+      "parent compound proves nothing. The test has to follow the element:\n")
+    a("| Measure | What it catches |")
+    a("|---|---|")
+    for m, w in [
+        ("**Total fluorine in**, on the feed", "the denominator. Without it there is no "
+         "balance and no claim."),
+        ("**Fluoride captured**, in scrubber liquor and residue",
+         "the fraction actually mineralised and held."),
+        ("**Total organic fluorine in the stack**, not a target-analyte list",
+         "the products of incomplete combustion, which by definition are compounds "
+         "nobody put on the list."),
+        ("**Ultrafine particulate**, with fluorine speciation",
+         "the route the user of a bag filter is least likely to be looking at."),
+        ("**The unaccounted remainder**", "presumed emitted. This is the number that "
+         "matters and it is the one nobody reports."),
+    ]:
+        a(f"| {m} | {w} |")
+    a("")
+    a("A plant that cannot close its fluorine balance is not destroying PFAS. It is "
+      "relocating it, and the new location is the atmosphere.\n")
+    a("There is also a route with no stack at all. **Mechanochemical destruction** — "
+      "milling PFAS with phosphate or silicate salts — recovers close to the full "
+      "fluorine content as potassium or sodium fluoride at ambient temperature. No "
+      "combustion, therefore no flue gas, therefore no products of incomplete "
+      "combustion. It is laboratory and pilot scale rather than municipal scale, and it "
+      "is the most direct answer to the objection above.\n")
     a("Which loops back to why the source-control instrument for PFAS is a use "
       "restriction rather than a treatment requirement. Destruction only works on a "
       "**collected, concentrated** stream. PFAS dispersed through textiles, packaging "
       "and coatings is never collected, so there is nothing to feed the furnace. "
       "**The taxonomy decides not only the disposal route but whether collection is "
       "possible at all** — and where it is not, the only lever left is upstream.\n")
+    a("##### Does the capacity already exist? Not established.\n")
+    a("Danish practice reportedly already runs this route: PFAS is concentrated onto "
+      "granular activated carbon or ion-exchange resin, and the spent media go as "
+      "hazardous waste to Fortum Waste Solutions in Nyborg — the former Kommunekemi — "
+      "for incineration above 1,200 °C. Miljøstyrelsen published a feasibility study on "
+      "on-site ion exchange with regeneration and destruction in 2024.\n")
+    a("**None of that has been verified here, and it should not be assumed.** What "
+      "exists is a reported practice and a reported temperature, from secondary "
+      "sources. What would establish the capability is the list above: the plant's "
+      "permitted conditions, and a fluorine mass balance across it. Danish waste-sector "
+      "reporting describes PFAS as an open problem for incineration plants rather than "
+      "a solved one, which is a reason to check rather than to assume.\n")
+    a("The same caution applies locally and more sharply. **ARC / Amager Bakke** is a "
+      "municipal energy-from-waste plant on Amager, owned by five of the municipalities "
+      "that discharge into the bay, and it is the obvious thing to point at. Municipal "
+      "EfW typically operates below the destruction condition. Pointing the flagged "
+      "stream at it because it is nearby and municipally owned would be exactly the "
+      "*roughly burn it* failure.\n")
+    a("> The design consequence: **the destruction branch is the one part of this "
+      "programme that must not be built on an assumption.** Everything else degrades "
+      "gracefully if it is half-right. This one, done half-right, is worse than not "
+      "doing it.\n")
+
+    a("##### And the fluorine is worth money, which is the same measurement\n")
+    a("Destroying PFAS properly produces fluoride — captured in the scrubber as calcium "
+      "fluoride, or recovered directly as KF by the mechanochemical route. **Fluorspar "
+      "is on the EU critical raw materials list**, it is the feedstock for essentially "
+      "all fluorochemistry including pharmaceuticals, and its reserves are being mined "
+      "down.\n")
+    a("Which produces an unusually clean alignment:\n")
+    for t in [
+        "**the proof of destruction and the product are the same measurement.** "
+        "Fluorine you can weigh in the residue is fluorine that did not go up the "
+        "stack. A plant with a closed balance has both a compliance case and something "
+        "to sell; a plant without one has neither, and the absence is visible on the "
+        "same spreadsheet.",
+        "**it makes the failure mode economically legible.** Under a temperature-based "
+        "permit, incomplete combustion is invisible and costs the operator nothing. "
+        "Under a fluorine balance it shows up as lost product.",
+        "**and it makes the facility an export service rather than a cost centre.** "
+        "Destruction capacity that can prove its balance is a scarce thing that other "
+        "countries need, and the feedstock is a waste stream people pay to be rid of. "
+        "That is a genuine industrial prospect and it is the argument that would fund "
+        "building the thing properly rather than cheaply.",
+    ]:
+        a(f"- {t}")
+    a("")
+    a("*The caveats, because this is the part most likely to be over-sold.* Recovery as "
+      "a saleable grade is demonstrated at laboratory and pilot scale, not at municipal "
+      "scale. Scrubber residues from hazardous-waste incineration are themselves "
+      "hazardous and Denmark currently exports air-pollution-control residue rather "
+      "than using it. And an economic case for importing waste is an argument that runs "
+      "away from you very easily — it is only a good one while the balance is closed "
+      "and audited, which is the entire condition.\n")
+
+    a("#### The dredged material has somewhere to go, and it is already being asked for\n")
+    a("A wetland and its forebay have to be dredged, and section 4's threshold test says "
+      "what happens next: below the Danish limit values for metals in sediment, the "
+      "material is soil. The question is where soil is wanted.\n")
+    a("On this coast, it is wanted now. **Avedøre Holme is 450 ha of existing "
+      "reclamation** in Køge Bugt, and in January 2025 Hvidovre dropped the nine-island "
+      "*Holmene* proposal in favour of a land-reclamation and storm-surge protection "
+      "project — an engineered coastline with salt marsh, doing double duty as the "
+      "flood defence. Køge Bugt Strandpark, further south, was built the same way "
+      "between 1977 and 1980, and is the reason that shoreline has a dyke at all.\n")
+    a("So the loop closes without anyone inventing a use: **a bay that needs its "
+      "sediment intercepted, and a coast that needs fill for its own flood defence.** "
+      "The material comes out of the treatment train and goes into the dyke.\n")
+    a("*Two limits, and the second is firm.* Sediment above the threshold is not fill — "
+      "it is a lined-cell problem, and the assay decides, not the convenience. And "
+      "**incineration residue is not fill at all.** Air-pollution-control residue from "
+      "hazardous-waste incineration is itself hazardous and Denmark currently exports "
+      "it. A reclamation whose stated purpose is salt marsh and habitat is the last "
+      "place to test that boundary — the fill has to clear the threshold on its own "
+      "merits or go somewhere else.\n")
 
     a("#### Deciding which route, in real time\n")
     a("The two routes have very different costs, so the branch should be taken by "
