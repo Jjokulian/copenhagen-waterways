@@ -113,10 +113,25 @@ def main():
     geo = os.path.join(DERIVED, "floodmaps", "_georef.json")
     if os.path.exists(geo):
         g = read_json(geo)
-        write_json(os.path.join(outdir, "floodmaps.json"), g)
-        log(f"  {'floodmaps':20} {len(g):>6} georeferenced sheet(s)")
+        # only ship sheets whose registration was actually accepted
+        ok = {k: v for k, v in g.items() if v.get("confident")}
+        write_json(os.path.join(outdir, "floodmaps.json"), ok)
+        skipped = len(g) - len(ok)
+        log(f"  {'floodmaps':20} {len(ok):>6} georeferenced sheet(s)"
+            + (f"  ({skipped} not confident, withheld)" if skipped else ""))
+        for k in ok:
+            src = os.path.join(DERIVED, "floodmaps", f"{k}.depth.png")
+            if os.path.exists(src):
+                import shutil
+                shutil.copy2(src, os.path.join(outdir, f"{k}.depth.png"))
     else:
         log("  -- no georeferenced flood sheets yet (viz/georef.html -> floodmaps.py georef)")
+
+    gap = os.path.join(DERIVED, "floodgap.json")
+    if os.path.exists(gap):
+        import shutil
+        shutil.copy2(gap, os.path.join(outdir, "floodgap.json"))
+        log(f"  {'floodgap':20} analysis copied")
 
     write_json(os.path.join(outdir, "index.json"), index)
     log(f"\nbundle: {total/1e6:.1f} MB in data/derived/viewer/")

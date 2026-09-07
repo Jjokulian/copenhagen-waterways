@@ -12,7 +12,12 @@ python3 scripts/report.py
 python3 scripts/floodmaps.py fetch
 python3 scripts/floodmaps.py render
 python3 scripts/floodmaps.py extract
-python3 scripts/floodmaps.py georef || true    # no-op until control points are set
+python3 scripts/floodmaps.py autoref     # locates sheets by matching water
+python3 scripts/floodmaps.py check       # overlays to confirm by eye
+python3 scripts/floodmaps.py georef || true   # hand-placed points, if any
+
+# Does the cloudburst plan go where the water goes?
+python3 scripts/floodgap.py || true
 
 python3 scripts/observations.py import || true # no-op until a walk has been logged
 python3 scripts/build_viewer_data.py
@@ -20,7 +25,8 @@ python3 scripts/build_viewer_data.py
 echo
 python3 scripts/floodmaps.py status
 echo
-echo "Serve it:  python3 -m http.server 8000"
+echo "Reports:  docs/REGISTER.md   docs/FLOOD_GAP.md   docs/flood_gap_map.png"
+echo "Serve it: python3 -m http.server 8000"
 echo "  map          http://localhost:8000/viz/"
-echo "  georeference http://localhost:8000/viz/georef.html"
-echo "  field log    http://localhost:8000/viz/log.html   (open on your phone)"
+echo "  georeference http://localhost:8000/viz/georef.html   (for the 3 unresolved sheets)"
+echo "  field log    http://localhost:8000/viz/log.html      (open on your phone)"

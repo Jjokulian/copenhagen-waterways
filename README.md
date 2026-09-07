@@ -45,6 +45,8 @@ scripts/
   build_viewer_data.py    compacts 131 MB into a 13 MB browser bundle
   report.py               renders docs/REGISTER.md
   floodmaps.py            recovers the 2012 flood model out of its PDFs
+  floodreg.py             locates the sheets on the map by matching water
+  floodgap.py             compares modelled flooding against what was planned
   observations.py         validates and merges field observations
 data/
   raw/                    downloaded, untouched
@@ -53,6 +55,8 @@ data/
 docs/
   DATA_SOURCES.md         what is public, what is paywalled, what does not exist
   REGISTER.md             the register, generated
+  FLOOD_GAP.md            modelled flooding vs the cloudburst plan, generated
+  flood_gap_map.png       one picture of that comparison
 viz/
   index.html              the map
   georef.html             two-pane control-point tool for the flood sheets
@@ -153,19 +157,61 @@ layer and blanked, because it contains a filled rectangle per band — on Indre 
 plus a blue-cast test for the near-white palest band, which removes 95% of false hits
 (363,940 raw matches down to 18,393 real ones on Indre By).
 
-**Not solid: georeferencing.** Three automatic approaches were tried — matching the drawn
-catchment outline, fitting on strict-black pixels, and water IoU against the city's own
-vector water. The best landed 36% of the known catchment boundary on the drawn one
-against an 11% chance level. None was good enough to trust, so none is used.
+**Georeferencing: four of seven, automatically.** `floodmaps.py autoref` locates a sheet
+by cross-correlating the water visible in its orthophoto against the city's water
+polygons, with FFT evaluating every offset at once. Three things had to be handled: the
+flood bands are painted blue and swamp the water signal (18.8% of Bispebjerg) so they are
+masked out; searching the whole city locks onto the wrong water (Bispebjerg landed at
+latitude 55.61, south of the city) so the search is confined to the sheet's own catchment;
+and the sheets do not share one orthophoto, so no single water detector survives all seven.
 
-Instead `viz/georef.html` puts the sheet beside a reference map drawn from the city's own
-vector layers and takes two control points per sheet — about two minutes each. It reports
-the implied scale against the printed scale bar and the RMS residual, so a bad
-registration is visible rather than silent. Paste the result into
-`data/manual/floodmap_control.json` and run `floodmaps.py georef`.
+That last point is why it is an ensemble. Six detectors run independently and a position
+is accepted only where they agree — agreement between methods that fail differently is
+evidence, one confident answer is not. **indre-by, ladegaardsaaen, norrebro and osterbro**
+were accepted and each confirmed by eye against the photographed quays and lake edges.
+**amager, bispebjerg and kbhvest** were not; they need two hand-placed control points each
+in `viz/georef.html`. kbhvest passed a looser threshold and its water outlines visibly do
+not track the photograph, so the bar was raised rather than shipping a wrong registration.
+
+An independent check backs this up: open water is 13.7% of the study area, so a wrong
+registration would drop flooding into the harbour at about that rate. It lands there at
+1.7–10.7% depending on depth band — below the baseline at every depth, and *least* often
+for the deepest band, which also rules out its dark navy being confused with dark water.
+
+Two approaches were tried and rejected: matching the drawn catchment outline (it turns out
+the 2012 "Oplandsgrænser" is **not** today's `skp_skybrudsoplande` boundary — 13.6%
+coverage against an 11% chance level even from a registration known to be correct), and
+correlating against the OSM street network (too uniform; Indre By landed 9 km off).
 
 Extracted flood area per sheet, before georeferencing: Bispebjerg 2.22 km², kbhvest
 1.39 km², Amager 1.18 km², Ladegårdsåen 0.42, Nørrebro 0.36, Østerbro 0.10, Indre By 0.04.
+
+## Does the plan go where the water goes?
+
+`scripts/floodgap.py` puts the recovered model next to the cloudburst works and asks the
+question the PDF format made awkward. Output: `docs/FLOOD_GAP.md` and
+`docs/flood_gap_map.png`. Covering the four registered inner-city catchments and 1.67 km²
+of modelled flooding at 0.1 m or deeper:
+
+| Distance | Near *any* planned work | Near something **built or started** |
+|---|---:|---:|
+| within 50 m | 69.6% | 17.8% |
+| within 100 m | 82.4% | 24.5% |
+| within 200 m | 89.9% | 36.3% |
+
+**The plan is aimed correctly and is largely unbuilt.** Nine tenths of the modelled
+flooding has something planned within 200 m; barely a third has anything that has broken
+ground. The distance is generous — being 50 m from a cloudburst road is not protection —
+which makes the second column the more striking of the two.
+
+Only four places have deep water (≥0.2 m) with nothing planned within 100 m, totalling
+0.06 km² and roughly 42,000 m³. That small number is itself the finding: coverage is good,
+delivery is not.
+
+One number that looks like a finding and is not: 93% of this flooding sits over combined
+sewer, where rain and sewage share a pipe — so the standing water is mixed with sewage.
+But 87% of the mapped area *is* combined sewer, a ratio of 1.06. The consequence is real;
+the correlation is not. The report states both.
 
 ## Logging what you actually see
 
@@ -187,7 +233,8 @@ live in `data/manual/` and are never touched by a fetch script.
 
 ## Where to take it next
 
-- Set control points for the seven flood sheets and georeference them. Two points each.
+- Set control points for amager, bispebjerg and kbhvest in `viz/georef.html` — two each —
+  then re-run `floodgap.py` to extend the comparison beyond the inner city.
 - Walk somewhere in heavy rain with `log.html` open, then compare the observations
   against the recovered 2012 model. Disagreements are the interesting output.
 - Wire up DHM and compute real flow accumulation — a 2026 answer to replace the 2012 one.

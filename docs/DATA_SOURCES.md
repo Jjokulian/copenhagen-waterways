@@ -170,9 +170,21 @@ rain.
 Extracted flooded area: Bispebjerg 2.22 km2, KBH Vest 1.39, Amager 1.18, Ladegårdsåen
 0.42, Nørrebro 0.36, Østerbro 0.10, Indre By 0.04.
 
-Georeferencing is **not** automatic and deliberately so — see the README. The registration
-is set by hand in `viz/georef.html` with residuals reported, rather than by an automatic
-fit that looked plausible and was not.
+Georeferencing is automatic for four of the seven sheets (`floodmaps.py autoref`), by
+cross-correlating orthophoto water against the city's water polygons with an ensemble of
+six detectors; a position is accepted only where independent detectors agree. Two further
+findings from that work:
+
+* The **"Oplandsgraenser" drawn on these 2012 sheets is not today's catchment boundary**.
+  Registering on water and then testing against the drawn outline gives 13.6% coverage
+  against an 11% chance level. The catchments were redrawn between 2012 and the current
+  `skp_skybrudsoplande`. Do not use the drawn outline to georeference or validate.
+* The **sheets do not share one orthophoto**. Exposures differ enough that a water
+  detector tuned on Indre By finds 0.1% of Bispebjerg, whose lakes render near-black with
+  no blue cast at all.
+
+The three unresolved sheets (amager, bispebjerg, kbhvest) take hand-placed control points
+in `viz/georef.html`, which reports residuals so a bad registration is visible.
 
 CKAN id: `oversvommelsesscenarier-for-vandoplande`.
 

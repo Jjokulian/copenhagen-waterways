@@ -310,7 +310,7 @@ async function loadExtras(){
   }else{
     for(const k of sheets){
       const g=geo[k];
-      map.addSource("flood-"+k,{type:"image",url:"../../"+g.image,coordinates:g.corners_for_maplibre});
+      map.addSource("flood-"+k,{type:"image",url:B+k+".depth.png",coordinates:g.corners_for_maplibre});
       map.addLayer({id:"flood-"+k,source:"flood-"+k,type:"raster",
         paint:{"raster-opacity":.85},layout:{visibility:"visible"}});
       FLOOD.push("flood-"+k);
@@ -318,8 +318,24 @@ async function loadExtras(){
     rows+=`<label class="row"><input type="checkbox" id="floodtoggle" checked>
       <span class="sw" style="background:#4a9de8"></span><span>Modelled flood depth</span>
       <span class="count">${sheets.length} sheets</span></label>
-      <div class="sub" style="margin:2px 0 0">100-year event. Worst residual
-      ${Math.max(...sheets.map(k=>geo[k].rms_residual_m)).toFixed(0)} m — check before trusting.</div>`;
+      <div class="sub" style="margin:2px 0 0">100-year event, 2012 calculations,
+      recovered from PDF. ${sheets.join(", ")}.</div>`;
+  }
+
+  let spots=null;
+  try{ const r=await fetch(B+"flood_hotspots.geojson"); if(r.ok) spots=await r.json(); }catch(e){}
+  if(spots&&spots.features.length){
+    map.addSource("hotspots",{type:"geojson",data:spots});
+    map.addLayer({id:"hotspots",source:"hotspots",type:"circle",paint:{
+      "circle-color":"#ff5c7a","circle-opacity":.25,
+      "circle-radius":["interpolate",["linear"],["zoom"],
+        11,["*",["sqrt",["get","area_m2"]],0.03],
+        16,["*",["sqrt",["get","area_m2"]],0.9]],
+      "circle-stroke-color":"#ff5c7a","circle-stroke-width":1.6}});
+    rows+=`<label class="row"><input type="checkbox" id="spottoggle" checked>
+      <span class="sw dot" style="background:#ff5c7a"></span><span>Deep &amp; nothing planned</span>
+      <span class="count">${spots.features.length}</span></label>
+      <div class="sub" style="margin:2px 0 0">Modelled ≥0.2 m, &gt;100 m from any planned work.</div>`;
   }
 
   let obs=null;
@@ -350,6 +366,9 @@ async function loadExtras(){
   const ft=document.getElementById("floodtoggle");
   if(ft) ft.onchange=e=>FLOOD.forEach(id=>
     map.setLayoutProperty(id,"visibility",e.target.checked?"visible":"none"));
+  const st=document.getElementById("spottoggle");
+  if(st) st.onchange=e=>
+    map.setLayoutProperty("hotspots","visibility",e.target.checked?"visible":"none");
   const ot=document.getElementById("obstoggle");
   if(ot) ot.onchange=e=>
     map.setLayoutProperty("obs","visibility",e.target.checked?"visible":"none");
@@ -384,6 +403,9 @@ const NICE={kloaksystem_status:"Sewer system (now)",kloaksystem_plan:"Sewer syst
   forventet_ibrugtagning:"Expected in use",pkt_navn:"Structure id",bgv_type:"Structure type",
   vol_sb:"Detention basin (m³)",vol_fbas:"Retention basin (m³)",komm_navn:"Municipality",
   godk_pe:"Capacity (PE)",rens_sta:"Treatment stage",_area_m2:"Footprint (m²)",
+  area_m2:"Area (m²)",max_depth_band:"Deepest modelled band (m)",
+  implied_volume_m3:"Implied volume (m³)",
+  distance_to_nearest_planned_work_m:"Nearest planned work (m)",
   observed_at:"Observed",accuracy_m:"GPS accuracy (m)",depth_class:"Observed depth (m)",
   flow:"Flow",drain:"Drain",rain:"Rain",note:"Note",
   _project_volume_m3:"Claimed volume, whole project (m³)",
@@ -392,11 +414,13 @@ const NICE={kloaksystem_status:"Sewer system (now)",kloaksystem_plan:"Sewer syst
 
 map.on("click",e=>{
   const ids=LAYERS.filter(L=>map.getLayoutProperty(L.id,"visibility")!=="none").map(L=>L.id);
-  if(map.getLayer("obs")&&map.getLayoutProperty("obs","visibility")!=="none") ids.unshift("obs");
+  for(const extra of ["obs","hotspots"])
+    if(map.getLayer(extra)&&map.getLayoutProperty(extra,"visibility")!=="none") ids.unshift(extra);
   const hits=map.queryRenderedFeatures(e.point,{layers:ids});
   if(!hits.length){ DETAIL.style.display="none"; return; }
   const f=hits[0], p=f.properties;
-  const L=LAYERS.find(x=>x.id===f.layer.id)||(f.layer.id==="obs"?{label:"Field observation"}:null);
+  const NAMED={obs:"Field observation",hotspots:"Deep water, nothing planned nearby"};
+  const L=LAYERS.find(x=>x.id===f.layer.id)||(NAMED[f.layer.id]?{label:NAMED[f.layer.id]}:null);
   let rows="";
   for(const[k,v]of Object.entries(p)){
     if(HIDE.has(k)||v===null||v===""||v==="null") continue;
