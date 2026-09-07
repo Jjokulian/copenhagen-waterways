@@ -1,0 +1,196 @@
+{
+ "amager": {
+  "frame_px": [
+   2255,
+   3068
+  ],
+  "m_per_px": 1.8726591760299625,
+  "extent_km": [
+   4.22,
+   5.75
+  ],
+  "map_scale": 14745,
+  "marks": [
+   {
+    "label": "1",
+    "fx": 0.885,
+    "fy": 0.047,
+    "desc": "angular harbour basin with piers, top right",
+    "px": 1995.7,
+    "py": 144.2
+   },
+   {
+    "label": "2",
+    "fx": 0.945,
+    "fy": 0.235,
+    "desc": "open water / bay on the east edge",
+    "px": 2131.0,
+    "py": 721.0
+   },
+   {
+    "label": "3",
+    "fx": 0.9,
+    "fy": 0.3,
+    "desc": "enclosed basin inshore of the coast",
+    "px": 2029.5,
+    "py": 920.4
+   },
+   {
+    "label": "4",
+    "fx": 0.115,
+    "fy": 0.085,
+    "desc": "pale water body in open ground, top left",
+    "px": 259.3,
+    "py": 260.8
+   },
+   {
+    "label": "5",
+    "fx": 0.957,
+    "fy": 0.652,
+    "desc": "beach and sand strip on the east edge",
+    "px": 2158.0,
+    "py": 2000.3
+   },
+   {
+    "label": "6",
+    "fx": 0.549,
+    "fy": 0.972,
+    "desc": "running track / sports ground, bottom",
+    "px": 1238.0,
+    "py": 2982.1
+   },
+   {
+    "label": "7",
+    "fx": 0.075,
+    "fy": 0.055,
+    "desc": "canal junction, far top left",
+    "px": 169.1,
+    "py": 168.7
+   }
+  ]
+ },
+ "bispebjerg": {
+  "frame_px": [
+   3231,
+   2056
+  ],
+  "m_per_px": 2.2123893805309733,
+  "extent_km": [
+   7.15,
+   4.55
+  ],
+  "map_scale": 17420,
+  "marks": [
+   {
+    "label": "1",
+    "fx": 0.345,
+    "fy": 0.395,
+    "desc": "large dark lake or marsh, left of centre",
+    "px": 1114.7,
+    "py": 812.1
+   },
+   {
+    "label": "2",
+    "fx": 0.8,
+    "fy": 0.325,
+    "desc": "white oval - stadium or arena, right of centre",
+    "px": 2584.8,
+    "py": 668.2
+   },
+   {
+    "label": "3",
+    "fx": 0.965,
+    "fy": 0.125,
+    "desc": "coastline / shore, top right corner",
+    "px": 3117.9,
+    "py": 257.0
+   },
+   {
+    "label": "4",
+    "fx": 0.43,
+    "fy": 0.82,
+    "desc": "regular green blocks - cemetery, bottom centre",
+    "px": 1389.3,
+    "py": 1685.9
+   },
+   {
+    "label": "5",
+    "fx": 0.13,
+    "fy": 0.13,
+    "desc": "open parkland with structures, top left",
+    "px": 420.0,
+    "py": 267.3
+   },
+   {
+    "label": "6",
+    "fx": 0.7,
+    "fy": 0.13,
+    "desc": "pale water body, upper right",
+    "px": 2261.7,
+    "py": 267.3
+   }
+  ]
+ },
+ "kbhvest": {
+  "frame_px": [
+   2255,
+   3068
+  ],
+  "m_per_px": 3.6496350364963503,
+  "extent_km": [
+   8.23,
+   11.2
+  ],
+  "map_scale": 28737,
+  "marks": [
+   {
+    "label": "1",
+    "fx": 0.255,
+    "fy": 0.48,
+    "desc": "long narrow lake running NW-SE, left of centre",
+    "px": 575.0,
+    "py": 1472.6
+   },
+   {
+    "label": "2",
+    "fx": 0.365,
+    "fy": 0.145,
+    "desc": "dark lake, top centre",
+    "px": 823.1,
+    "py": 444.9
+   },
+   {
+    "label": "3",
+    "fx": 0.855,
+    "fy": 0.76,
+    "desc": "harbour basin with piers, bottom right",
+    "px": 1928.0,
+    "py": 2331.7
+   },
+   {
+    "label": "4",
+    "fx": 0.56,
+    "fy": 0.975,
+    "desc": "open water at the bottom edge",
+    "px": 1262.8,
+    "py": 2991.3
+   },
+   {
+    "label": "5",
+    "fx": 0.18,
+    "fy": 0.545,
+    "desc": "pale flooded area at the lake's south end",
+    "px": 405.9,
+    "py": 1672.1
+   },
+   {
+    "label": "6",
+    "fx": 0.93,
+    "fy": 0.56,
+    "desc": "dense quays / rail area, right edge",
+    "px": 2097.2,
+    "py": 1718.1
+   }
+  ]
+ }
+}
