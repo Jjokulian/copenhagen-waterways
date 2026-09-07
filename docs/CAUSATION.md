@@ -43,7 +43,61 @@ Every one of those links is a real causal connection. None of them has a number.
 
 This is not a claim that the links are weak. It is a claim about what kind of object the result is. **A product of four unknown fractions is an unknown fraction** — not a small one. Agriculture may still be the largest single contributor at every link. Nobody has computed it either way, and that is the finding.
 
-## 3. The test that has already been run
+And section 3 argues the more serious objection: the chain is not a chain.
+
+## 3. Nitrogen is necessary for one pathway, not for the outcome
+
+Section 2 treats the argument as a chain and asks for each link's coefficient. That concedes too much, because it accepts the shape. The published framing is
+
+> nitrogen → primary production → biomass → the mush on the shore
+
+and that is one branch of a tree, not the trunk. There are at least three routes to the same endpoint, and **nitrogen is a necessary condition for exactly one of them**:
+
+| Route | What arrives | Does it need nitrogen? |
+|---|---|---|
+| **A. Growth** | dissolved nutrients | **Yes** — this is the modelled pathway |
+| **B. Direct organic matter** | organic carbon that is already biomass — sewage solids, faecal matter, resuspended basin sludge | **No.** The material does not have to be grown. It has already been grown, somewhere else, out of somebody else's nitrogen. |
+| **C. Killing what is already there** | nothing — toxicants, hypoxia, sulphide, physical disturbance | **No.** The standing stock of living tissue in a bay is converted to detritus in place. No new carbon enters the system at all. |
+
+Routes B and C are not exotic. B is what a combined sewer overflow physically is. C is what every hypoxic event and every toxicant pulse does by definition. Neither appears in any nutrient accounting, because neither is a nutrient.
+
+### Their own typetal, read as carbon
+
+The comparison can be made from Miljøstyrelsen's own numbers. Every discharge type in the typetal table carries both an organic load (COD) and a nitrogen load. Route A's carbon is what that nitrogen could produce at Redfield stoichiometry — 5.68 g C per g N. Route B's carbon is what the water is already carrying — 0.375 g C per g COD.
+
+| Discharge type | COD mg/l | Tot-N mg/l | **B: carbon delivered** | **A: carbon its N could grow** | B ÷ A |
+|---|---:|---:|---:|---:|---:|
+| Combined sewer overflow | 180 | 12.0 | 68 mg C/l | 68 mg C/l | **0.99** |
+| Separate stormwater | 50 | 2.0 | 19 mg C/l | 11 mg C/l | **1.65** |
+| Stormwater runoff (reference) | 160 | 10.0 | 60 mg C/l | 57 mg C/l | **1.06** |
+| Raw sewage (reference) | 320 | 43.0 | 120 mg C/l | 244 mg C/l | **0.49** |
+
+A combined sewer overflow delivers **68 mg of organic carbon per litre directly**, and carries enough nitrogen to grow **68 mg C/l** — a ratio of **0.99**. The two pathways are the same size. Only one of them is counted, and that one is counted at 0.6% of a national nitrogen total.
+
+For separate stormwater and for the stormwater-runoff reference the direct term is the *larger* of the two. Only raw sewage — the one stream that actually goes to treatment — is nitrogen-dominated.
+
+*Both columns are ceilings.* Not all COD is degradable on a relevant timescale, and not all nitrogen is assimilated. The two overstatements run in the same direction, so the **ratio** is the robust part; the absolute milligrams are not. The point does not need them to be.
+
+### Why the direct route is worth more per gram
+
+The ratio above understates route B, because the two carbons are not interchangeable:
+
+1. **Route A carbon is conditional.** It requires a phototroph that is present, in a growing season, with light reaching it, and with phosphorus and silicon in supportive ratio. Nitrogen delivered in November grows nothing.
+2. **Route B carbon is unconditional.** It is already organic matter. It settles, it decays, and it consumes oxygen in the dark in December exactly as well as in July.
+3. **Route B arrives where it is discharged.** Route A carbon is produced wherever the light and the season allowed, which may be nowhere near the shore that receives the consequence.
+4. **Route B arrives in pulses, on the flow threshold** — the same events that scour a basin and resuspend its accumulated sludge. Route A is a slow background.
+
+Which inverts the seasonal argument. Nitrogen's effectiveness at producing shore biomass is highest in spring and summer and close to zero in late autumn. Direct organic matter's effectiveness is **flat across the year**, and its delivery peaks in autumn and winter with the rain. The two pathways have opposite seasonality, and only the one that switches off in autumn is measured.
+
+### Route C needs no carbon at all
+
+The third route has no input term to argue about. A bay holds a standing stock of living tissue — macroalgae, eelgrass, fauna, biofilm. Kill it and that tissue becomes detritus without a single additional gram entering the system. Toxicants, a hypoxic event, a sulphide pulse and a trawl all do this.
+
+This route is the one the nutrient frame cannot even represent as a question. It has no source, no load, no unit. And it is the only route that explains why the same bay can produce more decaying material in a year when *less* was delivered to it.
+
+**The consequence for the 70%.** A necessary condition for one branch is not a cause of the outcome. Removing nitrogen entirely would close route A and leave routes B and C running.
+
+## 4. The test that has already been run
 
 There is one empirical check on the nitrogen-dominant model, and Denmark has spent thirty-five years and a great deal of money running it.
 
@@ -70,7 +124,7 @@ The series is NOT monotonically worsening. Interannual variance is very large - 
 
 2025 is the reason to be careful with this argument, and also the reason it points where it does. A system whose worst outcome swings threefold between consecutive years, under a load that barely moves between them, is a system governed by **the physics and the state of the individual year** — wind, stratification, temperature, what the bed is made of — with load as a slow background term. Note also that the load series is *flow-normalised*: the weather signal is deliberately removed from the input and is the dominant signal in the output.
 
-## 4. Three ways to explain the gap
+## 5. Three ways to explain the gap
 
 | Explanation | Standing | Detail |
 |---|---|---|
@@ -84,7 +138,7 @@ The three share a property worth stating plainly: **none of them is a source.** 
 
 So when the intervention underperforms, the instrument has exactly one thing it can recommend: more of the same intervention. Not because that is the best reading of the evidence, but because it is the only reading the instrument can express.
 
-## 5. State-dependence, stated as the mechanism
+## 6. State-dependence, stated as the mechanism
 
 The third explanation deserves its own statement, because it is the one this project's own computations support.
 
@@ -100,7 +154,7 @@ So the damage function is not *f(load)*. It is *f(load, state)*, and the state t
 
 Every item on that list is a reason the *same* kilogram of nitrogen does more damage in 2025 than it did in 1990. None of them appears in a source apportionment, because none of them is a source. **Nitrogen sensitivity is a derived property of a damaged system**, and the accounting treats it as a constant.
 
-## 6. What this does and does not establish
+## 7. What this does and does not establish
 
 **It does not establish that agriculture is off the hook.** Multiplying unknown fractions yields an unknown, not a small one. Agriculture is plausibly still the largest single nitrogen contributor, the load is real, and reductions have documented local benefits.
 
@@ -116,7 +170,7 @@ If nitrogen were the whole binding constraint, this would be a solved problem in
 
 Both readings sit in the same record. **That thirty-five years of data cannot distinguish them is the strongest single argument that the accounting is measuring the wrong thing.**
 
-## 7. What would separate the readings
+## 8. What would separate the readings
 
 | To test | Do this |
 |---|---|

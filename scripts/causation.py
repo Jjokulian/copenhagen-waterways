@@ -22,6 +22,8 @@ from common import ROOT, log, read_json
 
 MANUAL = os.path.join(ROOT, "data", "manual")
 AGRI_PCT = 69.6          # the published share, taken at face value throughout
+C_PER_COD = 0.375        # g organic C per g COD (CH2O + O2 -> CO2 + H2O)
+C_PER_N = (106 * 12.011) / (16 * 14.007)   # Redfield, by mass: 5.68 g C per g N
 
 # The chain the phrase "agriculture causes 70% of fedtemøg" asserts, one link per row.
 # "coefficient" is what would have to exist for the multiplication to be legitimate.
@@ -149,9 +151,107 @@ def main():
       "fraction** — not a small one. Agriculture may still be the largest single "
       "contributor at every link. Nobody has computed it either way, and that is the "
       "finding.\n")
+    a("And section 3 argues the more serious objection: the chain is not a chain.\n")
 
     # ------------------------------------------------------------------ 3
-    a("## 3. The test that has already been run\n")
+    a("## 3. Nitrogen is necessary for one pathway, not for the outcome\n")
+    a("Section 2 treats the argument as a chain and asks for each link's coefficient. "
+      "That concedes too much, because it accepts the shape. The published framing is\n")
+    a("> nitrogen → primary production → biomass → the mush on the shore\n")
+    a("and that is one branch of a tree, not the trunk. There are at least three routes "
+      "to the same endpoint, and **nitrogen is a necessary condition for exactly one of "
+      "them**:\n")
+    a("| Route | What arrives | Does it need nitrogen? |")
+    a("|---|---|---|")
+    a("| **A. Growth** | dissolved nutrients | **Yes** — this is the modelled pathway |")
+    a("| **B. Direct organic matter** | organic carbon that is already biomass — sewage "
+      "solids, faecal matter, resuspended basin sludge | **No.** The material does not "
+      "have to be grown. It has already been grown, somewhere else, out of somebody "
+      "else's nitrogen. |")
+    a("| **C. Killing what is already there** | nothing — toxicants, hypoxia, sulphide, "
+      "physical disturbance | **No.** The standing stock of living tissue in a bay is "
+      "converted to detritus in place. No new carbon enters the system at all. |")
+    a("")
+    a("Routes B and C are not exotic. B is what a combined sewer overflow physically is. "
+      "C is what every hypoxic event and every toxicant pulse does by definition. Neither "
+      "appears in any nutrient accounting, because neither is a nutrient.\n")
+
+    a("### Their own typetal, read as carbon\n")
+    a("The comparison can be made from Miljøstyrelsen's own numbers. Every discharge "
+      "type in the typetal table carries both an organic load (COD) and a nitrogen load. "
+      "Route A's carbon is what that nitrogen could produce at Redfield stoichiometry — "
+      f"{C_PER_N:.2f} g C per g N. Route B's carbon is what the water is already "
+      f"carrying — {C_PER_COD} g C per g COD.\n")
+    a("| Discharge type | COD mg/l | Tot-N mg/l | **B: carbon delivered** | "
+      "**A: carbon its N could grow** | B ÷ A |")
+    a("|---|---:|---:|---:|---:|---:|")
+    tt = mon["typetal_nutrients_mg_per_l"]
+    labels = [("combined_overflow", "Combined sewer overflow"),
+              ("separate_stormwater", "Separate stormwater"),
+              ("reference_stormwater_runoff", "Stormwater runoff (reference)"),
+              ("reference_raw_sewage", "Raw sewage (reference)")]
+    for key, lbl in labels:
+        r = tt[key]
+        cb = r["COD"] * C_PER_COD
+        ca = r["Tot-N"] * C_PER_N
+        a(f"| {lbl} | {r['COD']:,.0f} | {r['Tot-N']:,.1f} | {cb:.0f} mg C/l | "
+          f"{ca:.0f} mg C/l | **{cb/ca:.2f}** |")
+    a("")
+    r = tt["combined_overflow"]
+    cb = r["COD"] * C_PER_COD
+    ca = r["Tot-N"] * C_PER_N
+    a(f"A combined sewer overflow delivers **{cb:.0f} mg of organic carbon per litre "
+      f"directly**, and carries enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of "
+      f"**{cb/ca:.2f}**. The two pathways are the same size. Only one of them is "
+      "counted, and that one is counted at 0.6% of a national nitrogen total.\n")
+    a("For separate stormwater and for the stormwater-runoff reference the direct term is "
+      "the *larger* of the two. Only raw sewage — the one stream that actually goes to "
+      "treatment — is nitrogen-dominated.\n")
+    a("*Both columns are ceilings.* Not all COD is degradable on a relevant timescale, "
+      "and not all nitrogen is assimilated. The two overstatements run in the same "
+      "direction, so the **ratio** is the robust part; the absolute milligrams are not. "
+      "The point does not need them to be.\n")
+
+    a("### Why the direct route is worth more per gram\n")
+    a("The ratio above understates route B, because the two carbons are not "
+      "interchangeable:\n")
+    for i, t in enumerate([
+        "**Route A carbon is conditional.** It requires a phototroph that is present, "
+        "in a growing season, with light reaching it, and with phosphorus and silicon in "
+        "supportive ratio. Nitrogen delivered in November grows nothing.",
+        "**Route B carbon is unconditional.** It is already organic matter. It settles, "
+        "it decays, and it consumes oxygen in the dark in December exactly as well as in "
+        "July.",
+        "**Route B arrives where it is discharged.** Route A carbon is produced wherever "
+        "the light and the season allowed, which may be nowhere near the shore that "
+        "receives the consequence.",
+        "**Route B arrives in pulses, on the flow threshold** — the same events that "
+        "scour a basin and resuspend its accumulated sludge. Route A is a slow "
+        "background.",
+    ], 1):
+        a(f"{i}. {t}")
+    a("")
+    a("Which inverts the seasonal argument. Nitrogen's effectiveness at producing shore "
+      "biomass is highest in spring and summer and close to zero in late autumn. Direct "
+      "organic matter's effectiveness is **flat across the year**, and its delivery peaks "
+      "in autumn and winter with the rain. The two pathways have opposite seasonality, "
+      "and only the one that switches off in autumn is measured.\n")
+
+    a("### Route C needs no carbon at all\n")
+    a("The third route has no input term to argue about. A bay holds a standing stock of "
+      "living tissue — macroalgae, eelgrass, fauna, biofilm. Kill it and that tissue "
+      "becomes detritus without a single additional gram entering the system. Toxicants, "
+      "a hypoxic event, a sulphide pulse and a trawl all do this.\n")
+    a("This route is the one the nutrient frame cannot even represent as a question. It "
+      "has no source, no load, no unit. And it is the only route that explains why the "
+      "same bay can produce more decaying material in a year when *less* was delivered "
+      "to it.\n")
+    a("**The consequence for the 70%.** A necessary condition for one branch is not a "
+      "cause of the outcome. Removing nitrogen entirely would close route A and leave "
+      "routes B and C running.\n")
+
+    # ------------------------------------------------------------------ 4
+    a("## 4. The test that has already been run\n")
     a("There is one empirical check on the nitrogen-dominant model, and Denmark has "
       "spent thirty-five years and a great deal of money running it.\n")
 
@@ -186,8 +286,8 @@ def main():
       "weather signal is deliberately removed from the input and is the dominant "
       "signal in the output.\n")
 
-    # ------------------------------------------------------------------ 4
-    a("## 4. Three ways to explain the gap\n")
+    # ------------------------------------------------------------------ 5
+    a("## 5. Three ways to explain the gap\n")
     a("| Explanation | Standing | Detail |")
     a("|---|---|---|")
     for c in tr["competing_explanations"]:
@@ -206,8 +306,8 @@ def main():
       "reading of the evidence, but because it is the only reading the instrument can "
       "express.\n")
 
-    # ------------------------------------------------------------------ 5
-    a("## 5. State-dependence, stated as the mechanism\n")
+    # ------------------------------------------------------------------ 6
+    a("## 6. State-dependence, stated as the mechanism\n")
     a("The third explanation deserves its own statement, because it is the one this "
       "project's own computations support.\n")
     a("Nitrogen is not a toxicant. It is a growth subsidy — the opposite of dead water. "
@@ -235,8 +335,8 @@ def main():
       "derived property of a damaged system**, and the accounting treats it as a "
       "constant.\n")
 
-    # ------------------------------------------------------------------ 6
-    a("## 6. What this does and does not establish\n")
+    # ------------------------------------------------------------------ 7
+    a("## 7. What this does and does not establish\n")
     a("**It does not establish that agriculture is off the hook.** Multiplying unknown "
       "fractions yields an unknown, not a small one. Agriculture is plausibly still the "
       "largest single nitrogen contributor, the load is real, and reductions have "
@@ -264,8 +364,8 @@ def main():
       "distinguish them is the strongest single argument that the accounting is "
       "measuring the wrong thing.**\n")
 
-    # ------------------------------------------------------------------ 7
-    a("## 7. What would separate the readings\n")
+    # ------------------------------------------------------------------ 8
+    a("## 8. What would separate the readings\n")
     a("| To test | Do this |")
     a("|---|---|")
     for t, d in [
