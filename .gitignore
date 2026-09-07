@@ -17,3 +17,4 @@ data/derived/floodmaps/*.band.npy
 __pycache__/
 *.pyc
 data/raw/osm/
+data/raw/weather/

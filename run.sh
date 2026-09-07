@@ -8,6 +8,8 @@ python3 scripts/fetch_plan_projects.py
 python3 scripts/build_registry.py
 python3 scripts/report.py
 python3 scripts/nitrogen.py
+python3 scripts/waves.py || true
+python3 scripts/seabed.py || true
 
 # The 2012 flood model, recovered from the PDFs it was published in.
 python3 scripts/floodmaps.py fetch
