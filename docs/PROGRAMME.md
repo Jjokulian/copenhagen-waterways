@@ -450,6 +450,91 @@ Which produces an uncomfortable conclusion for everyone. The people who want urg
 
 **Is it solvable in a year?** Not the infrastructure. But the *measurement* is a season's work, the *operating* changes — basin emptying, grease enforcement, release timing — are a year's work and would act on exactly the pulsed, threshold-triggered discharge that the annual accounting is blind to. If the concentration in the register carries through to load, then a year of operational change on a few dozen structures is not a small intervention at all. Nobody knows whether it does, because nobody has measured it. That is the single most actionable sentence in this document.
 
+## Is this a cost, or is it an industry?
+
+The programme above reads as expenditure. It is worth asking whether it is actually the same shape as green energy was in 1990 — a cost centre that turns out to be a sector, and grows precisely because the problem does.
+
+### The Danish precedent is exact, and it is not a metaphor
+
+Denmark did this once already with wind, and is halfway through doing it again with water. Water technology export has gone from **DKK 12.5bn in 2006** to roughly **DKK 25bn by 2022**, growing at about **3× the rate of Danish exports overall**, with a stated national target of DKK 40bn by 2030.
+
+The mechanism in both cases was the same and it is the relevant one here: **a domestic requirement created a domestic market before the technology was competitive**, and the export followed the reference plants. Nobody bought Danish wind turbines because Denmark wrote a good report about wind.
+
+### The demand signal is liability, not subsidy — which is stronger
+
+Green energy needed a subsidy because it was selling a commodity that already had a price, and selling it dearer. Clean-up sells the absence of a harm, which has no price at all until somebody is made to pay for it. That is normally the fatal weakness of the sector.
+
+For PFAS it has stopped being true:
+
+| | USD |
+|---|---:|
+| 3M, public water systems | **10.5–12.5bn** |
+| DuPont / Chemours | **1.19bn** |
+| Tyco Fire Products | **0.75bn** |
+| US federal infrastructure allocation for PFAS in water systems | 10bn |
+| *For comparison — the entire global PFAS remediation market, 2025* | *1.98bn/yr* |
+
+**The settlements are several times the size of the industry that would do the work.** Around USD 13.6bn is committed to public water systems in the United States against a global remediation sector of roughly two billion a year. That is a demand overhang, and a demand overhang is the condition under which an industry scales rather than merely persists.
+
+And it is a more durable signal than a subsidy, because it does not depend on a government keeping its nerve. It depends on courts, and on a science base that is firming up rather than softening. Forecast growth is unremarkable — 2.0 to 3.5bn globally by 2035, 2.5 to 5.2bn in North America — but forecasts of a sector this young are the least reliable number on the page.
+
+### The third demand curve, which is the one that matters
+
+Liability demand is real and it is bounded — by what courts award, and by settlement deadlines that can be missed. There is a third kind, and it does not behave like a market at all.
+
+PFAS is already in the rain. Cousins and colleagues (*Environmental Science & Technology*, 2022) compared four perfluoroalkyl acids — PFOA, PFOS, PFHxS, PFNA — in rainwater, soil and surface water worldwide against published guideline levels, and concluded that **the planetary boundary for chemical pollution has been exceeded**. Not regionally. The lowest PFOA concentration they recorded anywhere was on the Tibetan Plateau, and Antarctic rainwater is in the same condition. Their benchmark for the sum of the four is, as it happens, **the Danish drinking water limit value**, which rainwater across the planet routinely exceeds.
+
+*The caveat this project owes its own standards.* "Fourteen times the guideline" is partly a statement about where the guideline was set — the US advisory level for PFOA was lowered in 2022 to a concentration below routine laboratory detection, so the multiple moved because the yardstick moved. The underlying observation does not depend on that: the compounds are present everywhere, including places with no source within thousands of kilometres, and the stock only grows.
+
+What follows is an economic point rather than a toxicological one. A pollutant that is globally distributed, that accumulates, and whose effects propagate through food webs in ways nobody can currently bound, carries a **threshold risk**: a level at which some function — reproduction in a taxon, a fishery, a drinking water source — stops working. Nobody knows where that level is. The relevant feature is what happens to demand if it is reached:
+
+| Demand type | Set by | Bounded by |
+|---|---|---|
+| **Elastic** — green energy | the price of the commodity it replaces | the commodity price |
+| **Liability** — PFAS now | courts and settlements | what is awarded |
+| **Threshold** — PFAS if a function fails | nothing | **nothing** |
+
+Under the third, willingness to pay stops being a variable. That is the *any cost* case, and it is the one the user of this document was pointing at.
+
+#### Which creates an awkward asymmetry
+
+**Capacity cannot be built at the moment it is needed.** Permitting and constructing high-temperature destruction is the better part of a decade. If the threshold arrives, the capacity that exists is the capacity someone built beforehand, and the rest is a queue.
+
+That is an argument for building ahead of demonstrated need — which is exactly the argument made for renewables in 1990, and which turned out to be right. It also collides head-on with the moral hazard below, and the collision has a resolution: **size the capacity to the legacy stock, not to a projected flow.** What is already emitted is finite, already in the environment, and needs processing whether or not another gram is ever manufactured. It is a large enough job to justify serious capacity without requiring the production to continue.
+
+And there is a second reason to move early that has nothing to do with cost. **Inelastic demand under crisis conditions produces bad procurement.** Things get deployed at scale because they are available, not because they were verified — which is how the world ends up discussing ocean iron fertilisation. The value of settling the fluorine mass balance standard now, calmly, is that when the hurry comes there is a method that has been checked, rather than whichever one sells fastest.
+
+That, rather than any market forecast, is the strongest reason to treat this as an industry now: **not because it will be cheaper, but because a verified method is only buildable while there is still time to verify it.**
+
+### Where the analogy breaks: two different cost curves
+
+This is the part that decides what to build first, and it is usually skipped.
+
+Solar got cheap because of Wright's law — cost falls a fixed percentage per doubling of cumulative production — and Wright's law applies to **manufactured, modular, repeated units**. It does not apply to bespoke civil engineering, which has historically shown the opposite: nuclear construction got *more* expensive with experience.
+
+The programme above contains both, and they will behave differently:
+
+| | Cost curve | Which parts |
+|---|---|---|
+| **Manufactured and modular** | falls with deployment | diversion sensors, ion-exchange and regeneration skids, mechanochemical destruction reactors, monitoring and telemetry, flow-proportional samplers |
+| **Bespoke civil works** | flat or rising | the wetland and its forebay, the interceptor retrofit, open channels, land reclamation |
+
+Which produces the same sequencing as section 7 arrived at from a completely different direction: **do the instrumented, modular things first** — they are cheap now, they get cheaper, and they are the exportable part. **Do the civil works last** — they will not get cheaper and they need the measurements to be specified correctly anyway.
+
+It also says which half is the industry. Nobody exports a Danish wetland. They export the sensor, the skid, the reactor and the standard.
+
+### The failure mode this creates, said plainly
+
+An industry whose revenue grows with the pollution acquires an interest in the pollution continuing. This is not a hypothetical: it is the standing critique of waste incineration, which needs a waste stream to burn and has lobbied accordingly, and of carbon offsetting.
+
+Build import-fed destruction capacity in Denmark and you create a domestic constituency whose business case is that PFAS keeps being manufactured somewhere. That constituency will, in the ordinary way of things, turn up in the consultation on the restriction dossier.
+
+The antidote is a sequencing condition, and it should be written down before anything is built:
+
+> **Source restriction leads; destruction capacity follows.** Capacity sized to the legacy stock and the reserved uses, not to a projected flow. A destruction industry scaled to a *continuing* input is not a clean-up industry — it is a disposal service for a business model that should have ended.
+
+The same test distinguishes the good version of the fluorspar argument from the bad one. Recovering fluorine from a **finite legacy stock** is mining a waste dump, which is unambiguously good. Recovering it from an **ongoing production stream** is a subsidy to that production, dressed as circularity.
+
 ## Who would have to do what
 
 | Level | The ask |
