@@ -462,15 +462,17 @@ def main():
       "forcing it into a pipe. That is the natural drainage network of the city, and it "
       "has already been mapped.\n")
     a("**What this covers, before any number is quoted.** The 2012 model was published "
-      "as seven PDF sheets and four registered confidently — indre-by, ladegaardsaaen, "
-      f"nørrebro, østerbro. Everything below is **{riv['flood_path_km2']:.2f} km² of "
-      "inner-city flood path**. Amager, Bispebjerg and København Vest are not in it, "
-      "and they carry *more* modelled flooding than the four that are "
-      "([FLOOD_GAP.md](#FLOOD_GAP.md), [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 13). "
-      "That matters twice over here: the percentages are inner-city percentages, and "
-      "**section 2 proposes a system for Amager on ground the flood evidence does not "
-      "cover.** Two hand-placed control points per sheet would close it, and nobody has "
-      "done it.\n")
+      "as seven PDF sheets. Four registered automatically against the water in them — "
+      "indre-by, ladegaardsaaen, nørrebro, østerbro — and **Amager was placed from six "
+      "control points reported by a resident**, who found each of six marked dots on a "
+      f"web map. Everything below is **{riv['flood_path_km2']:.2f} km² of flood path** "
+      f"across those five sheets, out of "
+      f"{', '.join(riv['generated_from'])}.\n")
+    a("Amager's placement is good to about ±60–90 m against 20–30 m for the automatic "
+      "four, so treat the 50 m proximity band on that sheet as indicative. **Bispebjerg "
+      "and København Vest are still unplaced** and hold 3.6 km² of extracted flooding "
+      "between them — more than everything here — so these remain partial numbers "
+      "([OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 13).\n")
     a("Measured against it:\n")
     a("| | Share of the *inner-city* modelled flood path |")
     a("|---|---:|")
@@ -614,12 +616,13 @@ def main():
       "magnitude too small and the wrong shape; this is two orders of magnitude larger "
       "than needed and exactly the right shape.\n")
 
-    a("*And the evidence gap, stated where it bites.* The flood-path analysis in "
-      "section 1 covers four inner-city sheets. **The Amager sheet is one of the three "
-      "that never registered**, so there is no modelled flood path for the island this "
-      "section proposes to drain. The area, the polder and the sewer statistics are "
-      "real; the routing is not evidenced yet, and placing that sheet is the cheapest "
-      "way to change that.\n")
+    a("*And the evidence, now that it exists.* This section used to sit on ground the "
+      "flood model did not cover — Amager was one of the three sheets that never "
+      "registered. It has since been placed from resident-reported control points, so "
+      "**the island this section proposes to drain now has its modelled flood paths in "
+      "the analysis**. Adding them moved the city-wide surface-route coverage in "
+      "section 1 down by nine points, which is the honest direction: the inner-city "
+      "sheets were the well-served ones.\n")
     a("#### The objections, which are real\n")
     for h, t in [
         ("Natura 2000.",

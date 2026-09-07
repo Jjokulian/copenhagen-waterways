@@ -598,6 +598,9 @@ def cmd_status(args):
             gtxt = "-"
         elif "rms_residual_m" in g:
             gtxt = f"control points, rms {g['rms_residual_m']:.0f} m"
+        elif g.get("control_points"):
+            gtxt = (f"assisted, {g['control_points']} control points, "
+                    f"SE {g['standard_error_m']:.0f} m")
         elif g.get("confident"):
             gtxt = (f"auto, {g['agree']}/{g['variants_run']} detectors agree "
                     f"within {g['spread_m']:.0f} m")

@@ -6,6 +6,22 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
+     12.581885,
+     55.670117
+    ]
+   },
+   "properties": {
+    "area_m2": 53400,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 18690,
+    "distance_to_nearest_planned_work_m": 105
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
      12.567183,
      55.669321
     ]
@@ -38,6 +54,38 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
+     12.577781,
+     55.667382
+    ]
+   },
+   "properties": {
+    "area_m2": 27900,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 9765,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.583882,
+     55.652977
+    ]
+   },
+   "properties": {
+    "area_m2": 6300,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 7285,
+    "distance_to_nearest_planned_work_m": 110
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
      12.580176,
      55.714664
     ]
@@ -54,6 +102,54 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
+     12.639832,
+     55.659547
+    ]
+   },
+   "properties": {
+    "area_m2": 7800,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 5850,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.582631,
+     55.647093
+    ]
+   },
+   "properties": {
+    "area_m2": 7300,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 5825,
+    "distance_to_nearest_planned_work_m": 164
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.613894,
+     55.646171
+    ]
+   },
+   "properties": {
+    "area_m2": 5400,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 3975,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
      12.594265,
      55.6974
     ]
@@ -63,6 +159,38 @@
     "max_depth_band": "0.5-1",
     "implied_volume_m3": 2635,
     "distance_to_nearest_planned_work_m": 190
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.588367,
+     55.662362
+    ]
+   },
+   "properties": {
+    "area_m2": 7300,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 2555,
+    "distance_to_nearest_planned_work_m": 120
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.631725,
+     55.668273
+    ]
+   },
+   "properties": {
+    "area_m2": 6700,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 2345,
+    "distance_to_nearest_planned_work_m": 194
    }
   }
  ]

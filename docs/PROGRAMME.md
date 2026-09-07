@@ -124,18 +124,20 @@ Seven things. They are ordered by how much evidence stands behind them, not by h
 
 The 2012 flood model is usually read as a risk map. It is also a survey: at 10 m resolution, it is a record of where water in Copenhagen goes when you stop forcing it into a pipe. That is the natural drainage network of the city, and it has already been mapped.
 
-**What this covers, before any number is quoted.** The 2012 model was published as seven PDF sheets and four registered confidently — indre-by, ladegaardsaaen, nørrebro, østerbro. Everything below is **1.52 km² of inner-city flood path**. Amager, Bispebjerg and København Vest are not in it, and they carry *more* modelled flooding than the four that are ([FLOOD_GAP.md](#FLOOD_GAP.md), [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 13). That matters twice over here: the percentages are inner-city percentages, and **section 2 proposes a system for Amager on ground the flood evidence does not cover.** Two hand-placed control points per sheet would close it, and nobody has done it.
+**What this covers, before any number is quoted.** The 2012 model was published as seven PDF sheets. Four registered automatically against the water in them — indre-by, ladegaardsaaen, nørrebro, østerbro — and **Amager was placed from six control points reported by a resident**, who found each of six marked dots on a web map. Everything below is **2.42 km² of flood path** across those five sheets, out of amager, indre-by, ladegaardsaaen, norrebro, osterbro.
+
+Amager's placement is good to about ±60–90 m against 20–30 m for the automatic four, so treat the 50 m proximity band on that sheet as indicative. **Bispebjerg and København Vest are still unplaced** and hold 3.6 km² of extracted flooding between them — more than everything here — so these remain partial numbers ([OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 13).
 
 Measured against it:
 
 | | Share of the *inner-city* modelled flood path |
 |---|---:|
-| Within 100 m of a planned **surface** route | **72%** |
-| Within 100 m of a planned **pipe** | 24% |
-| Within 100 m of anything in the plan | 81% |
-| **With no surface route within 100 m** | **28%** |
+| Within 100 m of a planned **surface** route | **63%** |
+| Within 100 m of a planned **pipe** | 20% |
+| Within 100 m of anything in the plan | 73% |
+| **With no surface route within 100 m** | **37%** |
 
-So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **72% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
+So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **63% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
 
 **What is missing is the connection.** A skybrudsvej is designed against a hundred-year event: it activates when the system is already overwhelmed, a handful of times a decade. Ordinary heavy rain — the rain that actually causes overflows, many times a year — still goes down the gully into the combined pipe exactly as before. The surface network was built to protect the city from water, not to protect the sea from the city.
 
@@ -151,9 +153,9 @@ Not every alignment can be a river. A dense street with no room to lose, a junct
 
 What this buys is the thing that matters: **there is no longer a mixture to overflow.** An overflow structure on a foul-only sewer has nothing to spill in a storm, because the storm is not in that pipe. It is more expensive per metre than a channel and far cheaper than a parallel corridor, and it is the reason the proposal does not have to stop where the street narrows.
 
-On this project's classification, **24% of the modelled flood path already has a planned pipe within 100 m** — those alignments are the retrofit candidates, because the trench is going to be opened anyway.
+On this project's classification, **20% of the modelled flood path already has a planned pipe within 100 m** — those alignments are the retrofit candidates, because the trench is going to be opened anyway.
 
-And where no alignment exists — the 28% — the model names the places. 4 corridor candidates come out of it: stretches with more than 0.5 m of modelled water, no surface route within 100 m, and enough length to be a channel rather than a puddle. They are circled on the map and listed in `data/derived/rivermap.json`.
+And where no alignment exists — the 37% — the model names the places. 9 corridor candidates come out of it: stretches with more than 0.5 m of modelled water, no surface route within 100 m, and enough length to be a channel rather than a puddle. They are circled on the map and listed in `data/derived/rivermap.json`.
 
 ### 2. An outlet that is not the sea
 
@@ -218,7 +220,7 @@ Stormwater treatment wetlands are conventionally sized at a few per cent of the 
 
 **Between half a per cent and three per cent of the polder would do it.** That is the difference between this and the quarry: the quarry was two orders of magnitude too small and the wrong shape; this is two orders of magnitude larger than needed and exactly the right shape.
 
-*And the evidence gap, stated where it bites.* The flood-path analysis in section 1 covers four inner-city sheets. **The Amager sheet is one of the three that never registered**, so there is no modelled flood path for the island this section proposes to drain. The area, the polder and the sewer statistics are real; the routing is not evidenced yet, and placing that sheet is the cheapest way to change that.
+*And the evidence, now that it exists.* This section used to sit on ground the flood model did not cover — Amager was one of the three sheets that never registered. It has since been placed from resident-reported control points, so **the island this section proposes to drain now has its modelled flood paths in the analysis**. Adding them moved the city-wide surface-route coverage in section 1 down by nine points, which is the honest direction: the inner-city sheets were the well-served ones.
 
 #### The objections, which are real
 

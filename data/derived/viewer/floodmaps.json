@@ -1,4 +1,42 @@
 {
+ "amager": {
+  "method": "assisted: resident-reported control points + correlation refinement",
+  "control_points": 6,
+  "control_point_scatter_rms_m": 142,
+  "standard_error_m": 58,
+  "correlation_offset_from_control_mean_m": 90,
+  "zncc": 0.421,
+  "precision": 0.829,
+  "m_per_px_from_scalebar": 1.8727,
+  "scale_check": "Control points fitted freely reproduce the scale bar to +0.3% in latitude and +2.7% in longitude, so the reported positions carry no systematic bias. The bounds below use the scale bar's scale and fit position only.",
+  "bounds_wgs84": {
+   "west": 12.576608,
+   "east": 12.64384357267627,
+   "south": 55.627447163204636,
+   "north": 55.679058
+  },
+  "corners_for_maplibre": [
+   [
+    12.576608,
+    55.679058
+   ],
+   [
+    12.64384357267627,
+    55.679058
+   ],
+   [
+    12.64384357267627,
+    55.627447163204636
+   ],
+   [
+    12.576608,
+    55.627447163204636
+   ]
+  ],
+  "image": "data/derived/floodmaps/amager.depth.png",
+  "confident": true,
+  "caveat": "Placed to about +-60-90 m, against 20-30 m for the auto-registered sheets. Adequate for the 100 m and 200 m proximity bands in FLOOD_GAP.md; treat the 50 m band on this sheet as indicative."
+ },
  "indre-by": {
   "method": "autoref: ensemble water cross-correlation",
   "agree": 4,

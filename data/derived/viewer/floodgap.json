@@ -1,5 +1,6 @@
 {
  "generated_from": [
+  "amager",
   "indre-by",
   "ladegaardsaaen",
   "norrebro",
@@ -7,12 +8,12 @@
  ],
  "grid": {
   "cell_m": 10.0,
-  "width": 645,
-  "height": 715,
+  "width": 842,
+  "height": 1047,
   "bounds": {
    "west": 12.509555543869267,
-   "south": 55.65726140956776,
-   "east": 12.61234710737548,
+   "south": 55.627447163204636,
+   "east": 12.64384357267627,
    "north": 55.72151304194326
   }
  },
@@ -22,72 +23,108 @@
   "Distances are to any part of a planned work, which is generous: being 50 m from a cloudburst road is not the same as being protected by it.",
   "The sheets paint depth over lakes and the harbour as well as over land. Those cells are excluded here - water standing on water is not something a cloudburst basin addresses - and reported as flooded_over_water_km2."
  ],
- "flooded_area_km2": 1.521,
+ "flooded_area_km2": 2.418,
  "by_band": {
   "0.05-0.1": {
-   "cells": 16076,
-   "area_m2": 1607600
+   "cells": 18554,
+   "area_m2": 1855400
   },
   "0.1-0.2": {
-   "cells": 3713,
-   "area_m2": 371300
+   "cells": 5029,
+   "area_m2": 502900
   },
   "0.2-0.5": {
-   "cells": 4297,
-   "area_m2": 429700
+   "cells": 9062,
+   "area_m2": 906200
   },
   "0.5-1": {
-   "cells": 5514,
-   "area_m2": 551400
+   "cells": 7746,
+   "area_m2": 774600
   },
   "1-2": {
-   "cells": 1339,
-   "area_m2": 133900
+   "cells": 1864,
+   "area_m2": 186400
   },
   ">2": {
-   "cells": 350,
-   "area_m2": 35000
+   "cells": 476,
+   "area_m2": 47600
   }
  },
  "coverage": {
-  "within_50m_of_any_planned_work": 0.69,
-  "within_50m_of_a_built_or_started_project": 0.126,
-  "within_100m_of_any_planned_work": 0.826,
-  "within_100m_of_a_built_or_started_project": 0.2,
-  "within_200m_of_any_planned_work": 0.905,
-  "within_200m_of_a_built_or_started_project": 0.329
+  "within_50m_of_any_planned_work": 0.588,
+  "within_50m_of_a_built_or_started_project": 0.12,
+  "within_100m_of_any_planned_work": 0.748,
+  "within_100m_of_a_built_or_started_project": 0.199,
+  "within_200m_of_any_planned_work": 0.874,
+  "within_200m_of_a_built_or_started_project": 0.319
  },
  "by_sewer_system": {
   "Spildevandskloakeret": {
-   "flooded_area_m2": 1000,
-   "share_of_flooding_in_mapped_catchments": 0.001,
-   "share_of_mapped_catchment_area": 0.003,
-   "concentration_ratio": 0.54,
-   "share_of_all_flooding": 0.001
+   "flooded_area_m2": 28600,
+   "share_of_flooding_in_mapped_catchments": 0.019,
+   "share_of_mapped_catchment_area": 0.018,
+   "concentration_ratio": 1.09,
+   "share_of_all_flooding": 0.012
   },
   "Fælleskloakeret": {
-   "flooded_area_m2": 675000,
-   "share_of_flooding_in_mapped_catchments": 0.938,
-   "share_of_mapped_catchment_area": 0.873,
-   "concentration_ratio": 1.07,
-   "share_of_all_flooding": 0.444
+   "flooded_area_m2": 1343000,
+   "share_of_flooding_in_mapped_catchments": 0.908,
+   "share_of_mapped_catchment_area": 0.757,
+   "concentration_ratio": 1.2,
+   "share_of_all_flooding": 0.555
+  },
+  "unspecified": {
+   "flooded_area_m2": 2100,
+   "share_of_flooding_in_mapped_catchments": 0.001,
+   "share_of_mapped_catchment_area": 0.022,
+   "concentration_ratio": 0.06,
+   "share_of_all_flooding": 0.001
   },
   "Separatkloakeret, tag- og vejvand til recipient": {
-   "flooded_area_m2": 44100,
-   "share_of_flooding_in_mapped_catchments": 0.061,
-   "share_of_mapped_catchment_area": 0.112,
-   "concentration_ratio": 0.55,
-   "share_of_all_flooding": 0.029
+   "flooded_area_m2": 87800,
+   "share_of_flooding_in_mapped_catchments": 0.059,
+   "share_of_mapped_catchment_area": 0.188,
+   "concentration_ratio": 0.32,
+   "share_of_all_flooding": 0.036
+  },
+  "Separatkloakeretopland tilkoblet fællessystemet": {
+   "flooded_area_m2": 1600,
+   "share_of_flooding_in_mapped_catchments": 0.001,
+   "share_of_mapped_catchment_area": 0.0,
+   "concentration_ratio": 2.23,
+   "share_of_all_flooding": 0.001
+  },
+  "Separatkloakeret, vejvand til recipient": {
+   "flooded_area_m2": 1500,
+   "share_of_flooding_in_mapped_catchments": 0.001,
+   "share_of_mapped_catchment_area": 0.003,
+   "concentration_ratio": 0.29,
+   "share_of_all_flooding": 0.001
   },
   "3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand": {
-   "flooded_area_m2": 2300,
-   "share_of_flooding_in_mapped_catchments": 0.003,
-   "share_of_mapped_catchment_area": 0.013,
-   "concentration_ratio": 0.25,
-   "share_of_all_flooding": 0.002
+   "flooded_area_m2": 48500,
+   "share_of_flooding_in_mapped_catchments": 0.033,
+   "share_of_mapped_catchment_area": 0.033,
+   "concentration_ratio": 0.99,
+   "share_of_all_flooding": 0.02
+  },
+  "Fælleskloakeret, vejvand til recipient": {
+   "flooded_area_m2": 800,
+   "share_of_flooding_in_mapped_catchments": 0.001,
+   "share_of_mapped_catchment_area": 0.0,
+   "concentration_ratio": 6.96,
+   "share_of_all_flooding": 0.0
   }
  },
  "hotspots": [
+  {
+   "lon": 12.581885,
+   "lat": 55.670117,
+   "area_m2": 53400,
+   "max_depth_band": "0.2-0.5",
+   "implied_volume_m3": 18690,
+   "distance_to_nearest_planned_work_m": 105
+  },
   {
    "lon": 12.567183,
    "lat": 55.669321,
@@ -105,6 +142,22 @@
    "distance_to_nearest_planned_work_m": 217
   },
   {
+   "lon": 12.577781,
+   "lat": 55.667382,
+   "area_m2": 27900,
+   "max_depth_band": "0.2-0.5",
+   "implied_volume_m3": 9765,
+   "distance_to_nearest_planned_work_m": 101
+  },
+  {
+   "lon": 12.583882,
+   "lat": 55.652977,
+   "area_m2": 6300,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 7285,
+   "distance_to_nearest_planned_work_m": 110
+  },
+  {
    "lon": 12.580176,
    "lat": 55.714664,
    "area_m2": 8100,
@@ -113,56 +166,96 @@
    "distance_to_nearest_planned_work_m": 102
   },
   {
+   "lon": 12.639832,
+   "lat": 55.659547,
+   "area_m2": 7800,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 5850,
+   "distance_to_nearest_planned_work_m": 104
+  },
+  {
+   "lon": 12.582631,
+   "lat": 55.647093,
+   "area_m2": 7300,
+   "max_depth_band": ">2",
+   "implied_volume_m3": 5825,
+   "distance_to_nearest_planned_work_m": 164
+  },
+  {
+   "lon": 12.613894,
+   "lat": 55.646171,
+   "area_m2": 5400,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 3975,
+   "distance_to_nearest_planned_work_m": 101
+  },
+  {
    "lon": 12.594265,
    "lat": 55.6974,
    "area_m2": 4100,
    "max_depth_band": "0.5-1",
    "implied_volume_m3": 2635,
    "distance_to_nearest_planned_work_m": 190
+  },
+  {
+   "lon": 12.588367,
+   "lat": 55.662362,
+   "area_m2": 7300,
+   "max_depth_band": "0.2-0.5",
+   "implied_volume_m3": 2555,
+   "distance_to_nearest_planned_work_m": 120
+  },
+  {
+   "lon": 12.631725,
+   "lat": 55.668273,
+   "area_m2": 6700,
+   "max_depth_band": "0.2-0.5",
+   "implied_volume_m3": 2345,
+   "distance_to_nearest_planned_work_m": 194
   }
  ],
  "qa_flood_vs_water": {
-  "water_share_of_grid": 0.137,
+  "water_share_of_grid": 0.197,
   "note": "Values below the baseline mean flooding avoids open water, as it should.",
   "by_band": {
    "0.05-0.1": {
-    "cells": 17011,
-    "share_in_water": 0.055
+    "cells": 20260,
+    "share_in_water": 0.084
    },
    "0.1-0.2": {
-    "cells": 4159,
-    "share_in_water": 0.107
+    "cells": 5504,
+    "share_in_water": 0.086
    },
    "0.2-0.5": {
-    "cells": 4771,
-    "share_in_water": 0.099
+    "cells": 13902,
+    "share_in_water": 0.348
    },
    "0.5-1": {
-    "cells": 6012,
-    "share_in_water": 0.083
+    "cells": 11050,
+    "share_in_water": 0.299
    },
    "1-2": {
-    "cells": 1400,
-    "share_in_water": 0.044
+    "cells": 2020,
+    "share_in_water": 0.077
    },
    ">2": {
-    "cells": 356,
-    "share_in_water": 0.017
+    "cells": 504,
+    "share_in_water": 0.056
    }
   },
-  "passes": true
+  "passes": false
  },
- "flooded_over_water_km2": 0.148,
- "flooded_total_km2": 1.67,
+ "flooded_over_water_km2": 0.88,
+ "flooded_total_km2": 3.298,
  "sewer_catchment_coverage": {
-  "catchment_share_of_grid": 0.692,
-  "flooded_cells_inside_a_catchment": 7197,
-  "flooded_cells_total": 15213,
-  "share_of_flooding_inside": 0.473
+  "catchment_share_of_grid": 0.584,
+  "flooded_cells_inside_a_catchment": 14787,
+  "flooded_cells_total": 24177,
+  "share_of_flooding_inside": 0.612
  },
  "hotspot_totals": {
-  "clusters": 4,
-  "area_m2": 59500,
-  "implied_volume_m3": 42260
+  "clusters": 12,
+  "area_m2": 181600,
+  "implied_volume_m3": 98550
  }
 }

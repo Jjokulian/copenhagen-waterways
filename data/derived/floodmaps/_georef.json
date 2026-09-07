@@ -1,89 +1,41 @@
 {
  "amager": {
-  "method": "autoref: ensemble water cross-correlation",
-  "agree": 2,
-  "variants_run": 5,
-  "spread_m": 27.0,
-  "best_iou": 0.032,
+  "method": "assisted: resident-reported control points + correlation refinement",
+  "control_points": 6,
+  "control_point_scatter_rms_m": 142,
+  "standard_error_m": 58,
+  "correlation_offset_from_control_mean_m": 90,
+  "zncc": 0.421,
+  "precision": 0.829,
   "m_per_px_from_scalebar": 1.8727,
+  "scale_check": "Control points fitted freely reproduce the scale bar to +0.3% in latitude and +2.7% in longitude, so the reported positions carry no systematic bias. The bounds below use the scale bar's scale and fit position only.",
   "bounds_wgs84": {
-   "west": 12.578259497459158,
-   "east": 12.64550665959701,
-   "south": 55.62968360313164,
-   "north": 55.681294439927
+   "west": 12.576608,
+   "east": 12.64384357267627,
+   "south": 55.627447163204636,
+   "north": 55.679058
   },
   "corners_for_maplibre": [
    [
-    12.578259497459158,
-    55.681294439927
+    12.576608,
+    55.679058
    ],
    [
-    12.64550665959701,
-    55.681294439927
+    12.64384357267627,
+    55.679058
    ],
    [
-    12.64550665959701,
-    55.62968360313164
+    12.64384357267627,
+    55.627447163204636
    ],
    [
-    12.578259497459158,
-    55.62968360313164
+    12.576608,
+    55.627447163204636
    ]
   ],
   "image": "data/derived/floodmaps/amager.depth.png",
-  "confident": false,
-  "variants": [
-   {
-    "variant": "blue K16",
-    "ok": false,
-    "reason": "no usable water mask"
-   },
-   {
-    "variant": "blue K8",
-    "ok": true,
-    "lon_nw": 12.578498068322617,
-    "lat_nw": 55.68149630760678,
-    "z": 3.56,
-    "iou": 0.027,
-    "water_fraction": 0.0039
-   },
-   {
-    "variant": "blue loose K16",
-    "ok": true,
-    "lon_nw": 12.578020926595697,
-    "lat_nw": 55.68109257224723,
-    "z": 3.51,
-    "iou": 0.032,
-    "water_fraction": 0.005
-   },
-   {
-    "variant": "adapt 6% K16",
-    "ok": true,
-    "lon_nw": 12.57181808414573,
-    "lat_nw": 55.7002027125991,
-    "z": 3.13,
-    "iou": 0.014,
-    "water_fraction": 0.0052
-   },
-   {
-    "variant": "adapt 12% K16",
-    "ok": true,
-    "lon_nw": 12.58088377695722,
-    "lat_nw": 55.69105137778271,
-    "z": 3.65,
-    "iou": 0.032,
-    "water_fraction": 0.0139
-   },
-   {
-    "variant": "adapt 8% K8",
-    "ok": true,
-    "lon_nw": 12.577066643141857,
-    "lat_nw": 55.68028510152814,
-    "z": 4.18,
-    "iou": 0.062,
-    "water_fraction": 0.0145
-   }
-  ]
+  "confident": true,
+  "caveat": "Placed to about +-60-90 m, against 20-30 m for the auto-registered sheets. Adequate for the 100 m and 200 m proximity bands in FLOOD_GAP.md; treat the 50 m band on this sheet as indicative."
  },
  "bispebjerg": {
   "method": "autoref: ensemble water cross-correlation",

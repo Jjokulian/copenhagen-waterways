@@ -54,6 +54,25 @@ MARKS = {
         ("6", 0.930, 0.560, "dense quays / rail area, right edge"),
     ],
 }
+# Dots for the click-and-report loop: a person finds each on a map and reports its
+# coordinate. Several, spread out, on point-like features - so their clicking noise
+# averages down instead of becoming a systematic offset.
+DOTS = {
+    "amager": [
+        (0.885, 0.047), (0.945, 0.300), (0.957, 0.652),
+        (0.549, 0.972), (0.100, 0.070), (0.075, 0.905),
+    ],
+    "bispebjerg": [
+        (0.345, 0.395), (0.800, 0.325), (0.965, 0.125),
+        (0.430, 0.820), (0.130, 0.130), (0.640, 0.640),
+    ],
+    "kbhvest": [
+        (0.255, 0.480), (0.365, 0.145), (0.855, 0.760),
+        (0.560, 0.975), (0.180, 0.545), (0.930, 0.300),
+    ],
+}
+DOT_CROP_M = 350.0    # half-width of each zoom inset, metres
+
 CROP_M = 900.0        # metres each way around a marker in the zoomed crop
 GRID_M = 500.0        # reference grid spacing on the overview, in metres
 
@@ -77,11 +96,76 @@ def ring(dr, x, y, r, label, colour=(255, 60, 60)):
     dr.text((bx + 5, by + 7), label, fill=(255, 230, 60))
 
 
+def dot_sheet(sheet, meta, Image, ImageDraw):
+    """One image: the whole sheet with numbered dots, and a zoom inset for each."""
+    base = frame_image(sheet, meta, Image)
+    W, H = base.size
+    mpp = meta["m_per_px"]
+    dots = DOTS[sheet]
+
+    def dot(dr, x, y, r, lab):
+        col = (255, 45, 45)
+        dr.ellipse([x - r * 2.4, y - r * 2.4, x + r * 2.4, y + r * 2.4],
+                   outline=col, width=max(2, r // 8))
+        dr.ellipse([x - r, y - r, x + r, y + r], outline=col, width=max(3, r // 4))
+        dr.ellipse([x - r // 3, y - r // 3, x + r // 3, y + r // 3], fill=col)
+        bx, by = x + r * 2.6, y - r * 2.6
+        dr.rectangle([bx, by, bx + 42, by + 40], fill=(0, 0, 0))
+        dr.text((bx + 15, by + 12), lab, fill=(255, 235, 60))
+
+    ov = base.copy()
+    d = ImageDraw.Draw(ov)
+    for i, (fx, fy) in enumerate(dots, 1):
+        dot(d, fx * W, fy * H, max(18, W // 90), str(i))
+    ov.thumbnail((780, 780))
+
+    tile, half = 420, DOT_CROP_M / mpp
+    insets = []
+    for i, (fx, fy) in enumerate(dots, 1):
+        cx, cy = fx * W, fy * H
+        x0 = min(max(0, int(cx - half)), max(0, W - int(2 * half)))
+        y0 = min(max(0, int(cy - half)), max(0, H - int(2 * half)))
+        c = base.crop((x0, y0, x0 + int(2 * half), y0 + int(2 * half))
+                      ).resize((tile, tile), Image.LANCZOS)
+        cd = ImageDraw.Draw(c)
+        dot(cd, (cx - x0) / (2 * half) * tile, (cy - y0) / (2 * half) * tile, 16, str(i))
+        cd.rectangle([0, tile - 20, tile, tile], fill=(0, 0, 0))
+        cd.text((6, tile - 16), f"{i}   {2*DOT_CROP_M:.0f} m across", fill=(225, 235, 245))
+        insets.append(c)
+
+    cols = 2
+    rows = (len(insets) + cols - 1) // cols
+    right_w, right_h = cols * tile, rows * tile
+    out = Image.new("RGB", (ov.width + 8 + right_w, max(ov.height, right_h)), (10, 12, 16))
+    out.paste(ov, (0, 0))
+    for i, c in enumerate(insets):
+        out.paste(c, (ov.width + 8 + (i % cols) * tile, (i // cols) * tile))
+    return out
+
+
 def main(argv):
     Image, ImageDraw = _pil()
     os.makedirs(DEST, exist_ok=True)
     sheets = read_json(os.path.join(OUT, "_sheets.json"))
     index = {}
+
+    if argv and argv[0] == "dots":
+        for sheet in (argv[1:] or list(DOTS)):
+            meta = sheets[sheet]
+            im = dot_sheet(sheet, meta, Image, ImageDraw)
+            p = os.path.join(DEST, f"{sheet}_dots.jpg")
+            im.save(p, quality=90, optimize=True)
+            W = meta["frame"][2] - meta["frame"][0] + 1
+            H = meta["frame"][3] - meta["frame"][1] + 1
+            index[sheet] = {"m_per_px": meta["m_per_px"], "frame_px": [W, H],
+                            "dots": [{"n": i, "fx": fx, "fy": fy,
+                                      "px": round(fx * W, 1), "py": round(fy * H, 1)}
+                                     for i, (fx, fy) in enumerate(DOTS[sheet], 1)]}
+            log(f"  {sheet:12} {len(DOTS[sheet])} dots -> {os.path.basename(p)}")
+        with open(os.path.join(DEST, "dots.json"), "w", encoding="utf-8") as f:
+            json.dump(index, f, ensure_ascii=False, indent=1)
+        log(f"\nwrote {DEST}/dots.json")
+        return 0
 
     for sheet in (argv or list(MARKS)):
         meta = sheets[sheet]

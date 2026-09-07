@@ -1,47 +1,56 @@
 {
  "_what": "Control points for the flood sheets that automatic registration could not place. 'points' entries are used by scripts/floodmaps.py georef; anything under '_working' is a narrowed constraint, NOT a placement.",
  "amager": {
-  "points": [],
-  "_working": {
-   "status": "NARROWED, NOT PLACED",
-   "frame_extent_m": [
-    4222.85,
-    5745.32
-   ],
-   "m_per_px": 1.8726591760299625,
-   "identified_by_resident": {
-    "top_corner": "central Copenhagen",
-    "top_left": "Sydhavn across the harbour; the half circle with spikes is Christianshavn",
-    "left_side": "Amager Fælled",
-    "right_side": "Amager Strandpark - the painted water areas are its dyked storm-flood beach lagoons",
-    "south_limit": "cut off early in the Amager city area, north of the bird reserve"
+  "points": [
+   {
+    "px": 1995.7,
+    "py": 144.2,
+    "lat": 55.676817,
+    "lon": 12.637286,
+    "n": 1,
+    "note": "harbour basin / pier, top right"
    },
-   "resident_map_centre": [
-    55.6543968,
-    12.6189178
-   ],
-   "resident_implied_nw": [
-    55.6802,
-    12.5853
-   ],
-   "correlation_best_nw": [
-    55.67758,
-    12.58768
-   ],
-   "correlation_zncc": 0.346,
-   "agreement_m": 330,
-   "cluster_box_nw": {
-    "lat": [
-     55.67698,
-     55.67967
-    ],
-    "lon": [
-     12.58768,
-     12.59245
-    ]
+   {
+    "px": 2131.0,
+    "py": 920.4,
+    "lat": 55.66336,
+    "lon": 12.640247,
+    "n": 2,
+    "note": "water body, east edge"
    },
-   "conclusion": "Two independent estimates - a resident's reading of the sheet against a map, and a fine ZNCC search of the sheet's painted-water mask against real water - agree to about 330 m and bracket each other. That is enough to say where the sheet is and not enough to use it: FLOOD_GAP.md scores proximity in 50/100/200 m bands, so a 250 m placement error would distort exactly the numbers the sheet is wanted for.",
-   "what_would_close_it": "One POINT landmark rather than a district. District names geocode to their centre with a 1-2 km bbox, which is the same size as the remaining uncertainty. A metro station, a named bridge, or a pier tip geocodes to a few metres. The M1 and M2 lines were open by 2010 and their elevated structures are visible on the imagery: Islands Brygge, DR Byen, Sundby, Amagerbro, Lergravsparken, Øresund, Amager Strand, Femøren and Kastrup are all candidates."
-  }
+   {
+    "px": 2158.0,
+    "py": 2000.3,
+    "lat": 55.645171,
+    "lon": 12.639292,
+    "n": 3,
+    "note": "beach / lagoon, east edge (reported as iffy)"
+   },
+   {
+    "px": 1238.0,
+    "py": 2982.1,
+    "lat": 55.629069,
+    "lon": 12.609927,
+    "n": 4,
+    "note": "running track, bottom"
+   },
+   {
+    "px": 225.5,
+    "py": 214.8,
+    "lat": 55.677002,
+    "lon": 12.583807,
+    "n": 5,
+    "note": "canal junction, top left"
+   },
+   {
+    "px": 169.1,
+    "py": 2776.5,
+    "lat": 55.633579,
+    "lon": 12.578003,
+    "n": 6,
+    "note": "bottom left"
+   }
+  ],
+  "_source": "Reported by a resident locating each dot on a web map, one at a time. Six points so the clicking noise averages down rather than becoming an offset; the scale bar is an independent check on bias and the fit passes it to 0.3% in latitude."
  }
 }

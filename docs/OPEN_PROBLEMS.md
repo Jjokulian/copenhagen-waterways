@@ -233,17 +233,29 @@ loadings against the eelgrass record.
 
 ---
 
-## 13. The three unplaced flood sheets
+## 13. The two remaining unplaced flood sheets
 
-Amager, Bispebjerg and København Vest did not register confidently and hold **4.79 km²
-of extracted flooding against 0.92 km² on the four that did** — so roughly five sixths of
-the recovered model is sitting on disk, classified and unusable, for want of a position.
-Every figure derived from the model is therefore an inner-city figure, and the Vestamager
-proposal in [PROGRAMME.md](#PROGRAMME.md) sits on the island whose sheet is missing.
+**Amager is placed.** A resident located six marked dots on a web map; fitted freely,
+those six reproduce the sheet's own scale bar to +0.3% in latitude and +2.7% in
+longitude, which says the reports carry no systematic bias. Fitting position only, with
+the scale bar's scale, the six imply a corner with 142 m scatter — a standard error of
+**58 m** — and an independent correlation of the sheet's painted water against real water
+peaks **90 m** from that mean. Two unrelated methods inside one standard error.
 
-**A second attempt was made and failed.** It is worth recording what it established,
-because it changes what the third attempt should do. `scripts/floodcheck.py` came out of
-it.
+It is placed to about ±60–90 m against 20–30 m for the automatically registered sheets,
+so the 50 m proximity band on that sheet is indicative rather than firm. Adding it took
+the flood-path area from 1.52 to **2.42 km²** and dropped surface-route coverage from 72%
+to **63%** — the inner-city sheets were the well-served ones, and the correction goes the
+uncomfortable way, which is the point of doing it.
+
+**Bispebjerg and København Vest remain**, holding 3.6 km² of extracted flooding between
+them — still more than everything currently in the analysis. The method that worked is
+now routine: `scripts/floodmarks.py dots <sheet>` renders numbered dots with 700 m zoom
+insets, someone finds them on a map, and the fit reports its own scatter and checks
+itself against the scale bar.
+
+**What the automatic attempt established**, before the assisted one succeeded — it is
+what made the assisted attempt cheap. `scripts/floodcheck.py` came out of it.
 
 - **The scale bar is right.** Measured directly off the render: 534 px for 1000 m on
   Amager, 1:14,745. The 2× error that once put Amager in the wrong place is genuinely
@@ -268,7 +280,7 @@ it.
   sheet paints, how much is real — reaches 1.00, and reaches it at many positions,
   because a sea blob slides along a coast.
 
-**What would settle it.** A person who can look at the sheet and name two features.
+**What settles it.** A person who can look at the sheet and find its dots on a map.
 The obstacle is not the mathematics and no longer the extraction; it is that recognising
 *this beach, that stadium* and giving each a coordinate is a human act. Two points per
 sheet in `viz/georef.html`, or read off any map, and `scripts/floodmaps.py georef` does

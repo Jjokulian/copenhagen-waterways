@@ -31786,6 +31786,91 @@
   {
    "type": "Feature",
    "properties": {
+    "kind": "gap",
+    "role": "missing",
+    "area_m2": 10900.0,
+    "length_m": 220,
+    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.642369,
+     55.657556
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "gap",
+    "role": "missing",
+    "area_m2": 10200.0,
+    "length_m": 290,
+    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.639824,
+     55.659301
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "gap",
+    "role": "missing",
+    "area_m2": 7300.0,
+    "length_m": 110,
+    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.582552,
+     55.647138
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "gap",
+    "role": "missing",
+    "area_m2": 6900.0,
+    "length_m": 340,
+    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.60826,
+     55.645489
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "gap",
+    "role": "missing",
+    "area_m2": 6700.0,
+    "length_m": 160,
+    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.643155,
+     55.647873
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "kind": "node",
     "role": "diversion",
     "name": "U1",
@@ -32533,9 +32618,9 @@
  "meta": {
   "open_channel_km": 209.7,
   "interceptor_km": 71.2,
-  "gaps": 4,
-  "flood_path_km2": 1.521,
-  "near_surface_pct": 72.0,
+  "gaps": 9,
+  "flood_path_km2": 2.418,
+  "near_surface_pct": 63.4,
   "diversion_nodes": 39,
   "nyborg_note": "Fortum Waste Solutions, Nyborg (the former Kommunekemi, founded 1971) is where Danish practice already sends spent PFAS media. Secondary sources describe capture on granular activated carbon and ion-exchange resin followed by high-temperature incineration above 1,200 °C. **This project has not verified that.** It is a reported practice, not a measured performance, and the difference is the whole subject of this section."
  }
