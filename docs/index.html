@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copenhagen Waterways — reports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root{
+    --ground:#f4f6f8;--surface:#fcfdfe;--sunk:#eaeef3;
+    --ink:#111820;--ink-2:#3d4a58;--muted:#66727f;--rule:#d7dee6;--accent:#2a6fa8;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ground:#0d141d;--surface:#141d28;--sunk:#101822;
+    --ink:#e8eef4;--ink-2:#c0cbd7;--muted:#8896a5;--rule:#25313e;--accent:#4f97ce;
+  }}
+  :root[data-theme="dark"]{
+    --ground:#0d141d;--surface:#141d28;--sunk:#101822;
+    --ink:#e8eef4;--ink-2:#c0cbd7;--muted:#8896a5;--rule:#25313e;--accent:#4f97ce;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);
+    font:400 16.5px/1.62 "Source Serif 4",Georgia,serif}
+  .shell{max-width:1080px;margin:0 auto;padding:0 24px 90px;
+    display:grid;grid-template-columns:230px 1fr;gap:46px}
+  nav{position:sticky;top:0;align-self:start;padding:44px 0 0;max-height:100vh;overflow-y:auto}
+  nav a.home{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:17px;
+    color:var(--ink);text-decoration:none;letter-spacing:-.02em;margin:0 0 22px}
+  nav a.home:hover{color:var(--accent)}
+  .navlabel{font-family:Archivo,sans-serif;font-size:10.5px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  nav ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:3px}
+  nav li a{display:block;padding:7px 11px;border-radius:5px;text-decoration:none;
+    font-family:Archivo,sans-serif;font-size:14px;color:var(--ink-2);line-height:1.35}
+  nav li a:hover{background:var(--sunk);color:var(--ink)}
+  nav li a[aria-current="page"]{background:var(--sunk);color:var(--accent);font-weight:600}
+  nav li a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  main{padding:44px 0 0;min-width:0}
+  #doc{max-width:70ch}
+  #doc h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.4vw,40px);font-weight:700;
+    letter-spacing:-.024em;line-height:1.1;margin:0 0 20px;text-wrap:balance}
+  #doc h2{font-family:Archivo,sans-serif;font-size:13px;font-weight:600;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--muted);margin:44px 0 16px;
+    padding-top:22px;border-top:1px solid var(--rule)}
+  #doc h3{font-family:Archivo,sans-serif;font-size:18.5px;font-weight:600;
+    letter-spacing:-.01em;margin:30px 0 10px}
+  #doc p{margin:0 0 16px}
+  #doc ul,#doc ol{margin:0 0 16px;padding-left:22px}
+  #doc li{margin-bottom:8px}
+  #doc a{color:var(--accent)}
+  #doc code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--sunk);
+    padding:1px 6px;border-radius:3px}
+  #doc blockquote{margin:16px 0;padding:2px 0 2px 18px;border-left:3px solid var(--rule);
+    color:var(--ink-2)}
+  .tablewrap{overflow-x:auto;margin:20px 0}
+  #doc table{border-collapse:collapse;width:100%;font-family:Archivo,sans-serif;
+    font-size:13.5px;font-variant-numeric:tabular-nums;min-width:420px}
+  #doc th,#doc td{text-align:left;padding:8px 14px 8px 0;border-bottom:1px solid var(--rule);
+    vertical-align:baseline}
+  #doc th{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted)}
+  #doc td:nth-child(n+2){font-family:"IBM Plex Mono",monospace;font-size:12.5px}
+  #doc img{max-width:100%;height:auto;border-radius:6px;border:1px solid var(--rule)}
+  #doc hr{border:0;border-top:1px solid var(--rule);margin:34px 0}
+  .status{color:var(--muted);font-family:Archivo,sans-serif;font-size:14.5px}
+  @media (max-width:800px){
+    .shell{grid-template-columns:1fr;gap:0;padding-bottom:70px}
+    nav{position:static;max-height:none;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+    nav ul{grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;
+      margin-bottom:14px}
+    main{padding-top:28px}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <nav>
+    <a class="home" href="../">← Copenhagen Waterways</a>
+    <p class="navlabel">Reports</p>
+    <ul id="nav"></ul>
+    <p class="navlabel">Also</p>
+    <ul>
+      <li><a href="flood_gap_map.png">The map, full size</a></li>
+      <li><a href="../viz/">Interactive map</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div id="doc"><p class="status">Loading…</p></div>
+  </main>
+</div>
+
+<script>
+/* The reports are generated as Markdown by the pipeline, and Markdown is the canonical
+   form. GitHub Pages serves a .md file as plain text, so this renders it instead of
+   asking anyone to read a raw table. */
+const DOCS = [
+  ["FLOOD_GAP.md",    "Does the plan go where the water goes?"],
+  ["REGISTER.md",     "Register of claimed structures"],
+  ["DATA_SOURCES.md", "Where the data comes from"],
+];
+const navEl = document.getElementById("nav");
+const docEl = document.getElementById("doc");
+
+for (const [file, label] of DOCS) {
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = "#" + file;
+  a.textContent = label;
+  a.dataset.file = file;
+  li.appendChild(a);
+  navEl.appendChild(li);
+}
+
+function current() {
+  const want = decodeURIComponent(location.hash.slice(1));
+  return DOCS.some(([f]) => f === want) ? want : DOCS[0][0];
+}
+
+async function show() {
+  const file = current();
+  for (const a of navEl.querySelectorAll("a"))
+    a.toggleAttribute("aria-current", a.dataset.file === file);
+  docEl.innerHTML = '<p class="status">Loading…</p>';
+  try {
+    const r = await fetch(file, { cache: "no-cache" });
+    if (!r.ok) throw new Error(`${file} — HTTP ${r.status}`);
+    docEl.innerHTML = marked.parse(await r.text(), { gfm: true });
+    // tables carry long Danish system names; let each scroll rather than the page
+    for (const t of docEl.querySelectorAll("table")) {
+      const w = document.createElement("div");
+      w.className = "tablewrap";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    }
+    document.title = (DOCS.find(([f]) => f === file) || [, "Reports"])[1]
+      + " — Copenhagen Waterways";
+    window.scrollTo(0, 0);
+  } catch (e) {
+    docEl.innerHTML = `<p class="status">Could not load ${file}: ${e.message}. `
+      + `The generated reports live beside this page in <code>docs/</code>.</p>`;
+  }
+}
+addEventListener("hashchange", show);
+show();
+</script>
+</body>
+</html>

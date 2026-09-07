@@ -1,0 +1,10865 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U4",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6775,
+     55.591
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U4A",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6748,
+     55.594
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U5",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 300,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6727,
+     55.5969
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U6",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6718,
+     55.5994
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U30",
+    "bgv_type": "SF",
+    "vol_fbas": 1200,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6715,
+     55.6014
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1",
+    "bgv_type": "OS",
+    "vol_sb": 1000,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.675,
+     55.6486
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U31",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6704,
+     55.603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U34",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6702,
+     55.6066
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U28B",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 800,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6684,
+     55.5888
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U33",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6698,
+     55.606
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U28A",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6657,
+     55.5873
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U28",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 500,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6623,
+     55.5849
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U25A",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6537,
+     55.5816
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U4",
+    "bgv_type": "OS",
+    "vol_sb": 4418,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6567,
+     55.6346
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U2",
+    "bgv_type": "OS",
+    "vol_sb": 5423,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6548,
+     55.6415
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Lynetten Bypass",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6588,
+     55.6968
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Damhusåen Bypass",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6576,
+     55.6981
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U25",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 2300,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.643,
+     55.5795
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U26",
+    "bgv_type": "SF",
+    "vol_fbas": 500,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6393,
+     55.5806
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ367",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6454,
+     55.6721
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ215",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6394,
+     55.6765
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24A",
+    "bgv_type": "SF",
+    "vol_fbas": 1500,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6322,
+     55.6002
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ220",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.639,
+     55.6806
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ216",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.638,
+     55.6769
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U4",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6403,
+     55.7053
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ219",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6368,
+     55.6799
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24B",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.629,
+     55.5957
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ221",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6371,
+     55.6832
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24C",
+    "bgv_type": "SF",
+    "vol_fbas": 3000,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6282,
+     55.5945
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ218",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6347,
+     55.6774
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ214",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6335,
+     55.6719
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ213",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6332,
+     55.6722
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ217",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6335,
+     55.6761
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ206",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.633,
+     55.6842
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ366",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6312,
+     55.6649
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ212",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6319,
+     55.6731
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ207",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6319,
+     55.6838
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ223",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6305,
+     55.671
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.622,
+     55.5799
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ211",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6294,
+     55.6753
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ208",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.63,
+     55.6831
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ224",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6289,
+     55.6722
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ210",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.629,
+     55.6758
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ209",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6274,
+     55.6776
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ303",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6301,
+     55.7179
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ124",
+    "bgv_type": "OS",
+    "vol_sb": 42000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6256,
+     55.6701
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U23",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 500,
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6155,
+     55.5653
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ222",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6263,
+     55.6841
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ200",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6253,
+     55.6925
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ201",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.625,
+     55.6917
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ202",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6247,
+     55.6913
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ203",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6244,
+     55.6908
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ304",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6267,
+     55.7164
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ119",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6208,
+     55.681
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ117",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6202,
+     55.6872
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ305",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6225,
+     55.7145
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ306",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6212,
+     55.7139
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U5b",
+    "bgv_type": "OS",
+    "vol_sb": 1000,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6256,
+     55.7636
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ396",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6179,
+     55.6869
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ307",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6182,
+     55.7125
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ204",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6155,
+     55.6886
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ395",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6151,
+     55.6872
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ281",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6144,
+     55.6828
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ394",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6124,
+     55.6854
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ-256",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6147,
+     55.7212
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U286",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6088,
+     55.6839
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ144",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6081,
+     55.6822
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ388",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6074,
+     55.6791
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ387",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6071,
+     55.6777
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØU141",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.607,
+     55.6789
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ386",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6068,
+     55.6778
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ308",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6099,
+     55.7138
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ385",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6063,
+     55.678
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ384",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6057,
+     55.6781
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ22.1",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6097,
+     55.723
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ383",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6054,
+     55.6782
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ393",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6058,
+     55.6862
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ382",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6049,
+     55.6783
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ381",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6045,
+     55.6784
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ380",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6041,
+     55.6786
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ379",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6037,
+     55.6786
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ378",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6032,
+     55.6787
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ377",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6029,
+     55.6788
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ143",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.603,
+     55.6823
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ280",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6022,
+     55.6746
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ145",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6018,
+     55.6756
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ392",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6024,
+     55.6838
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ375",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6016,
+     55.6763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ374",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6015,
+     55.6766
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ243",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6043,
+     55.7083
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ251",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6045,
+     55.7109
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ373",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.601,
+     55.6763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ22",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6048,
+     55.7196
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ389",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6011,
+     55.6806
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ391",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6011,
+     55.6826
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ244",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6034,
+     55.7097
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ236",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6029,
+     55.7065
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ21",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.604,
+     55.7183
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ309",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6023,
+     55.7074
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ242",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6022,
+     55.7087
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ38",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6001,
+     55.6897
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ140",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5985,
+     55.6722
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ36.3",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.601,
+     55.7008
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ36.2",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6008,
+     55.6984
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ390",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5991,
+     55.6811
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ113",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.598,
+     55.6768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ235",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6005,
+     55.7066
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U143",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5978,
+     55.6772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U142",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5976,
+     55.6771
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U141",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5975,
+     55.6771
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U140",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5975,
+     55.677
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U12b",
+    "bgv_type": "OS",
+    "vol_sb": 939,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5931,
+     55.6296
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U139",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5975,
+     55.677
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ250",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6006,
+     55.7117
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U138",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5973,
+     55.6769
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U137",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5973,
+     55.6769
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ36.1",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5991,
+     55.697
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U136",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5972,
+     55.6768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U135",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5971,
+     55.6768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U134",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.597,
+     55.6767
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U133",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5969,
+     55.6766
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ41",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5976,
+     55.6858
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ237",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5997,
+     55.7079
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U132",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5967,
+     55.6765
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U131",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5966,
+     55.6764
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ23",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6007,
+     55.7216
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ372",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5966,
+     55.6774
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U130",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5964,
+     55.6763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U129",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5964,
+     55.6763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ231",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.599,
+     55.7045
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U128",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5963,
+     55.6762
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ230",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5987,
+     55.7041
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ328",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5978,
+     55.6956
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ324",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.598,
+     55.6972
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ323",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.598,
+     55.6977
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ325",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5978,
+     55.6964
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ322",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.598,
+     55.6987
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ371",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.596,
+     55.6772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ326",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5977,
+     55.6961
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ327",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5977,
+     55.696
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ42",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5966,
+     55.6846
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ321",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5977,
+     55.6987
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ249",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5989,
+     55.712
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ232",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5981,
+     55.7051
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U127",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5953,
+     55.6756
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ24",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5989,
+     55.7162
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ370",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5953,
+     55.6777
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ319",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5972,
+     55.6985
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ320",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5972,
+     55.6986
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ318",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5971,
+     55.6982
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ245",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5981,
+     55.7109
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ317",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5969,
+     55.6977
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U126",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5949,
+     55.6753
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ43",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5956,
+     55.6834
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ316",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5968,
+     55.6973
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ315",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5967,
+     55.697
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ44",
+    "bgv_type": "OS",
+    "vol_sb": 8000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5952,
+     55.6805
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ314",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5967,
+     55.6966
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ313",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5966,
+     55.6962
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ369",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5948,
+     55.6776
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ312",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5965,
+     55.6959
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "IH-U125",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5946,
+     55.675
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ20",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5986,
+     55.7191
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ241",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5974,
+     55.7097
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ368",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5944,
+     55.6774
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ329",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.596,
+     55.6954
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ311",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5959,
+     55.6958
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ233",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5967,
+     55.7049
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ238",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.597,
+     55.7087
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ36",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5954,
+     55.6972
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U28",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6011,
+     55.7603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ310",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5951,
+     55.6959
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ37",
+    "bgv_type": "OS",
+    "vol_sb": 100,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.595,
+     55.6959
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ28",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5957,
+     55.7065
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ247",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5963,
+     55.7126
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ248",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5963,
+     55.7126
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U15",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5916,
+     55.6626
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ32.3",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5949,
+     55.7017
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ246",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5959,
+     55.7119
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ32",
+    "bgv_type": "OS",
+    "vol_sb": 32000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5949,
+     55.7024
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U13",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5911,
+     55.6613
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U07",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5911,
+     55.6613
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U14",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5911,
+     55.6618
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U06",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.591,
+     55.6623
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U16",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5908,
+     55.6603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ240",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5951,
+     55.7102
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ239",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.595,
+     55.7091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ234",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5945,
+     55.7047
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U08",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5903,
+     55.6591
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U20",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5902,
+     55.6589
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U5a",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5998,
+     55.764
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U19",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5901,
+     55.6585
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U18",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.59,
+     55.6582
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U17",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5897,
+     55.6572
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U21",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5899,
+     55.66
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U04",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5884,
+     55.6541
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U22",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5886,
+     55.6586
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ31",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5927,
+     55.7045
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U6",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5975,
+     55.7571
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ107",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5896,
+     55.6716
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ19",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5937,
+     55.7173
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ103",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5894,
+     55.6718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U03",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5879,
+     55.6555
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ29",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.592,
+     55.7061
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U4",
+    "bgv_type": "OS",
+    "vol_sb": 800,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5974,
+     55.7663
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ17",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5918,
+     55.7101
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ97",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5886,
+     55.675
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ302",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5919,
+     55.7111
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ52",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5886,
+     55.6763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ365",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5882,
+     55.6712
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AF-U06",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5857,
+     55.6469
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN10",
+    "bgv_type": "OS",
+    "vol_sb": 8750,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5849,
+     55.6407
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U3",
+    "bgv_type": "OS",
+    "vol_sb": 1600,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5966,
+     55.7684
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ27.1",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5916,
+     55.7141
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U47",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5846,
+     55.638
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U7",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5951,
+     55.7543
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AF-U04",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5851,
+     55.6453
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1b",
+    "bgv_type": "OS",
+    "vol_sb": 10000,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5968,
+     55.7756
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ12.1",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5915,
+     55.7187
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U48",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5838,
+     55.6396
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ364",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5866,
+     55.6712
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U9b",
+    "bgv_type": "OS",
+    "vol_sb": 16000,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.593,
+     55.7423
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U12",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5854,
+     55.6593
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U42",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5836,
+     55.6404
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U39",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5833,
+     55.6381
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN15",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5826,
+     55.6305
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U03",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5827,
+     55.6308
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U49",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5833,
+     55.6382
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U40",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5833,
+     55.6382
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AF-U05",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5835,
+     55.6412
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AF-U03",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5834,
+     55.6411
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AF-U01",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5834,
+     55.6411
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UN-U02",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5849,
+     55.6576
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ301",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5898,
+     55.711
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U06",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5823,
+     55.6303
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ67",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5863,
+     55.6747
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U02",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5821,
+     55.6296
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ66.2",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5862,
+     55.6755
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U46",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5827,
+     55.6369
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U391",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5826,
+     55.637
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U2",
+    "bgv_type": "OS",
+    "vol_sb": 1000,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5951,
+     55.7729
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ279",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5854,
+     55.6718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØS-U12",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5812,
+     55.6263
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØS-U03",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5812,
+     55.6262
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U41",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5818,
+     55.6347
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U32",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5815,
+     55.634
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ16",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5886,
+     55.7121
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ300",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5885,
+     55.7124
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "BC-U43",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5812,
+     55.633
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ272",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5847,
+     55.6722
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U12",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5811,
+     55.6331
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ15",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5884,
+     55.7124
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ54",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.585,
+     55.676
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U8",
+    "bgv_type": "OS",
+    "vol_sb": 3300,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5917,
+     55.7503
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U09",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5804,
+     55.6312
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U11b",
+    "bgv_type": "OS",
+    "vol_sb": 5684,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5789,
+     55.6183
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U11a",
+    "bgv_type": "SF",
+    "vol_fbas": 615,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5789,
+     55.6183
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UPR1",
+    "bgv_type": "SF",
+    "vol_fbas": 4135,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5788,
+     55.6176
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ66.1",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.584,
+     55.6759
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U23",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5788,
+     55.6183
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U08",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5797,
+     55.6314
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U35",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5787,
+     55.6316
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ66",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5826,
+     55.6765
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "TUB0300",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5868,
+     55.7271
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ151",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5815,
+     55.6694
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP2",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5866,
+     55.7266
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØS-U11",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5773,
+     55.6261
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ55",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5815,
+     55.6772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U36",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5774,
+     55.6317
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U9a",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5875,
+     55.7434
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP10",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5858,
+     55.7259
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ68",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5807,
+     55.6724
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ14.1",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5846,
+     55.7158
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "TUB0180",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5856,
+     55.7277
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U31",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5852,
+     55.7234
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U33",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5765,
+     55.6336
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØS-U01",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5752,
+     55.6208
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ10.1",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5845,
+     55.7223
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U37",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5761,
+     55.6316
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP3",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5846,
+     55.7275
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U31A",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5841,
+     55.7223
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U10",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5858,
+     55.741
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U11",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5853,
+     55.7403
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ69",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5789,
+     55.6715
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U12",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5744,
+     55.6223
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UPR2",
+    "bgv_type": "SF",
+    "vol_fbas": 4135,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5715,
+     55.592
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U52",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5838,
+     55.7263
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U13",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5742,
+     55.6221
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U06",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5743,
+     55.6223
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ10.2",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5832,
+     55.7215
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U12",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5848,
+     55.7398
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U38",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5749,
+     55.6315
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U13",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5844,
+     55.7391
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U103",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5745,
+     55.6315
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ65",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5786,
+     55.6772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "TUB0040",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5831,
+     55.7271
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U14",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5731,
+     55.6197
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U07",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5731,
+     55.6195
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U16",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5727,
+     55.6164
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U13",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57,
+     55.5873
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U08",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5726,
+     55.6164
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U51",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5827,
+     55.7281
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP5",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5827,
+     55.7283
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U39",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5737,
+     55.6315
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U15",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5831,
+     55.737
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U31",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5736,
+     55.6342
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "TUB0017",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5823,
+     55.7285
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U09",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.572,
+     55.6163
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U16",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5828,
+     55.7361
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U17",
+    "bgv_type": "OS",
+    "vol_sb": 2300,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5826,
+     55.7352
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U19",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5821,
+     55.7298
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP4",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5816,
+     55.7279
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP6",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5813,
+     55.7254
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U50",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5815,
+     55.7276
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U07",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5727,
+     55.6322
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U40",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5726,
+     55.6317
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U101",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5725,
+     55.6317
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URs-1",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5772,
+     55.6852
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ93",
+    "bgv_type": "OS",
+    "vol_sb": 8000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5754,
+     55.6667
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP9",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5806,
+     55.7259
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "TUB0028",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5807,
+     55.7282
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U05",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5718,
+     55.6316
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ60",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5757,
+     55.6758
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U102",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5721,
+     55.638
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP8",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5795,
+     55.7254
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U10",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5695,
+     55.616
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØC-U11",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5705,
+     55.627
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U05",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5699,
+     55.6259
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U19",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.569,
+     55.6245
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "URP7",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5781,
+     55.7253
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ72",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5728,
+     55.6677
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U20",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5678,
+     55.6218
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U11",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5668,
+     55.616
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U21",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5667,
+     55.619
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "VA-U22",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5655,
+     55.6162
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ73",
+    "bgv_type": "OS",
+    "vol_sb": 1200,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5687,
+     55.6658
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ352",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5682,
+     55.6612
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ350",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5666,
+     55.659
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ74",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5668,
+     55.665
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ351",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5661,
+     55.6604
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ89",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5643,
+     55.6562
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ75",
+    "bgv_type": "OS",
+    "vol_sb": 2000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5647,
+     55.661
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ360",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5643,
+     55.6624
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ359",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5641,
+     55.6625
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ358",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5637,
+     55.6626
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ357",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5635,
+     55.6627
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ349",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5626,
+     55.6537
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ356",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5633,
+     55.6628
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ355",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5631,
+     55.663
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ78.1",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5626,
+     55.6585
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ354",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5629,
+     55.6631
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ353",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5627,
+     55.6632
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ78",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5602,
+     55.6552
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ77",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5583,
+     55.6589
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ255",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5582,
+     55.6593
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ330",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5566,
+     55.65
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ81",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5566,
+     55.6501
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ90",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5565,
+     55.6501
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ332",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5548,
+     55.6502
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ333",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5541,
+     55.6484
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ87",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5536,
+     55.6454
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ147",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5527,
+     55.6462
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ150",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5525,
+     55.6445
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ79",
+    "bgv_type": "OS",
+    "vol_sb": 28000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5528,
+     55.6568
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ253",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5523,
+     55.6546
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ148",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5513,
+     55.6458
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ277",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5512,
+     55.6458
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ331",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5515,
+     55.6517
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ149",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5507,
+     55.6451
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ336",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5509,
+     55.648
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ337",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5507,
+     55.6478
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ342",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5507,
+     55.6478
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ343",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5505,
+     55.6476
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ338",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5505,
+     55.6479
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ82.1",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5509,
+     55.6523
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ344",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5505,
+     55.6476
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ339",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5505,
+     55.6478
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ340",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5504,
+     55.6477
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ341",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5503,
+     55.6477
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ86",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5501,
+     55.6474
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ88",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5492,
+     55.6423
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ276",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5495,
+     55.6466
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ335",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5495,
+     55.6486
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ275",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5491,
+     55.6467
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ278",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5486,
+     55.6458
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ80",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5489,
+     55.6546
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ273",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5478,
+     55.6471
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ØU142",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5477,
+     55.6493
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ146",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5474,
+     55.6484
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ348",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.548,
+     55.6562
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ274",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5469,
+     55.648
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ334",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5466,
+     55.6493
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ85",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5448,
+     55.6462
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ346",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5445,
+     55.6529
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ347",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5436,
+     55.6554
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK13",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5419,
+     55.6371
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK15",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5422,
+     55.643
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK104",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5415,
+     55.6407
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK103",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5414,
+     55.6411
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK102",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5412,
+     55.6418
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK101",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.541,
+     55.6425
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK14",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5409,
+     55.6426
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UØ84",
+    "bgv_type": "OS",
+    "vol_sb": 2000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5412,
+     55.6501
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U21b",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5424,
+     55.7237
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "USø11",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5423,
+     55.7237
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Sø-U02",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5405,
+     55.7247
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U21",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5405,
+     55.7248
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "USø12",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5397,
+     55.7259
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U21a",
+    "bgv_type": "OV",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5394,
+     55.7262
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U21c",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5394,
+     55.7262
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK12",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5308,
+     55.6424
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U48",
+    "bgv_type": "OF",
+    "vol_fbas": 954,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5353,
+     55.7275
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HG20000",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5356,
+     55.7361
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U40",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535,
+     55.7286
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U41",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5349,
+     55.7297
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U45",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5352,
+     55.735
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U42",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5348,
+     55.7305
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U49",
+    "bgv_type": "OF",
+    "vol_fbas": 1294.5,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5348,
+     55.7321
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HG86000",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5348,
+     55.7326
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HG95000",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5348,
+     55.7317
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U46",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5346,
+     55.7328
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK11",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5263,
+     55.6427
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HG290001",
+    "bgv_type": "OS",
+    "vol_sb": 3000,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5342,
+     55.7374
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Sø-U05",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5332,
+     55.727
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U43",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5339,
+     55.7397
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U29",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5339,
+     55.7419
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "USø13",
+    "bgv_type": "OS",
+    "vol_sb": 1000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5322,
+     55.727
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U44",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5335,
+     55.7412
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM14",
+    "bgv_type": "OS",
+    "vol_sb": 730,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5278,
+     55.7207
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U47",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5279,
+     55.7269
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U26",
+    "bgv_type": "OF",
+    "vol_fbas": 260,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5296,
+     55.7487
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Sø-U06",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5273,
+     55.7268
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U27",
+    "bgv_type": "OS",
+    "vol_sb": 7000,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5285,
+     55.7539
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U25",
+    "bgv_type": "OS",
+    "vol_sb": 34000,
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5214,
+     55.7278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Sø-U07",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5214,
+     55.7278
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM16",
+    "bgv_type": "OS",
+    "vol_sb": 1500,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.519,
+     55.7171
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Sø-U08",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.519,
+     55.7272
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Sø-U09",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5184,
+     55.7268
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U18",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5183,
+     55.7267
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Sø-U10",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.518,
+     55.7263
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U17a",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5179,
+     55.7264
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U17",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5179,
+     55.7263
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM17b",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5169,
+     55.7172
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U16",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5174,
+     55.7257
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM-U01",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5155,
+     55.7224
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U15",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5153,
+     55.7225
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM-U02",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5138,
+     55.7198
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U14",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5137,
+     55.7197
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U209",
+    "bgv_type": "OS",
+    "vol_sb": 4448,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5037,
+     55.6147
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U209R",
+    "bgv_type": "SF",
+    "vol_fbas": 25790,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5037,
+     55.6147
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U200",
+    "bgv_type": "OS",
+    "vol_sb": 6889,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5044,
+     55.6376
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "LV297",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5151,
+     55.7613
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "5Æ87000",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5146,
+     55.7612
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "LV308",
+    "bgv_type": "SE",
+    "komm_navn": "Gentofte"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.514,
+     55.7611
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U601",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5002,
+     55.6104
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM18",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5089,
+     55.7149
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U101",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5021,
+     55.6397
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM18",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5088,
+     55.7151
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U102",
+    "bgv_type": "OS",
+    "vol_sb": 2050,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.502,
+     55.6401
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD10",
+    "bgv_type": "OS",
+    "vol_sb": 4000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5018,
+     55.6407
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U203",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5002,
+     55.6284
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD10b",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5013,
+     55.6414
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U103",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5008,
+     55.6416
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U471",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4983,
+     55.6154
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U471R",
+    "bgv_type": "SE",
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4983,
+     55.6154
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U207",
+    "bgv_type": "OS",
+    "vol_sb": 431,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4988,
+     55.6249
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U104",
+    "bgv_type": "OV",
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4988,
+     55.6426
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U105",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4988,
+     55.6426
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U208",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4949,
+     55.6217
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM-U04",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5036,
+     55.7201
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM-U03",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5036,
+     55.7197
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U13",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5036,
+     55.7196
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U34",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5035,
+     55.7196
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U106",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4954,
+     55.6447
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM19",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.5012,
+     55.7153
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM19b",
+    "bgv_type": "OS",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4999,
+     55.7152
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM27",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4999,
+     55.7178
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U107",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4924,
+     55.6459
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U108",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4906,
+     55.6467
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U108241",
+    "bgv_type": "SE",
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4897,
+     55.6482
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD11b",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4894,
+     55.6487
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U109",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4891,
+     55.6489
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM21",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4942,
+     55.7114
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD12",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4867,
+     55.6519
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U110",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4864,
+     55.6519
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U182",
+    "bgv_type": "OS",
+    "vol_sb": 6040,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4863,
+     55.6519
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U182R",
+    "bgv_type": "SF",
+    "vol_fbas": 11125,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4863,
+     55.6519
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U111",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4862,
+     55.652
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U35",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4909,
+     55.725
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM26",
+    "bgv_type": "OS",
+    "vol_sb": 2500,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4896,
+     55.715
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U113",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.484,
+     55.6535
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U114",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 1390,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4839,
+     55.6536
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD13",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4839,
+     55.6537
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U605",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4789,
+     55.6012
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HA-U14",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4827,
+     55.6541
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U115",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 559,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4824,
+     55.6542
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD14",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.481,
+     55.6547
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U116",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48,
+     55.6554
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U117",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4796,
+     55.6557
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD15",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4786,
+     55.6565
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD18",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4783,
+     55.6619
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD20",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4784,
+     55.663
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD19",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4784,
+     55.6629
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U121",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4782,
+     55.6617
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U122",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4782,
+     55.6621
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U184",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4784,
+     55.6638
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U118",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4778,
+     55.6575
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD20b",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4784,
+     55.6646
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HA-U10",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4783,
+     55.6638
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U123",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 13875,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4783,
+     55.6631
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD21",
+    "bgv_type": "OS",
+    "vol_sb": 13000,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4784,
+     55.6653
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD22",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4784,
+     55.6654
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD16",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4776,
+     55.6583
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U120",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4777,
+     55.6602
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD17",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4777,
+     55.6602
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U119",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4775,
+     55.6595
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U12",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.483,
+     55.7264
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD23",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4775,
+     55.6662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DNU1802",
+    "bgv_type": "OV",
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4763,
+     55.6671
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U28",
+    "bgv_type": "OS",
+    "vol_sb": 4000,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4852,
+     55.7709
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DLM0101",
+    "bgv_type": "OS",
+    "vol_sb": 350,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4751,
+     55.6684
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U610",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 31152,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4691,
+     55.6019
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UD24",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4745,
+     55.6724
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U11",
+    "bgv_type": "OF",
+    "vol_fbas": 5000,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4776,
+     55.718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U11",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4775,
+     55.718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UH11",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4715,
+     55.6869
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DGH1601",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4696,
+     55.6803
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UH10",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4696,
+     55.6808
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UM30",
+    "bgv_type": "SE",
+    "vol_fbas": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4728,
+     55.7175
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DFU0100",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4671,
+     55.6867
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UH12",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4674,
+     55.6911
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DEU0100",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4673,
+     55.6912
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DDL1500",
+    "bgv_type": "OV",
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4669,
+     55.6926
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HA-U05",
+    "bgv_type": "OV",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4662,
+     55.6937
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UH13",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4653,
+     55.6946
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UH14",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.465,
+     55.7022
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24e",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4713,
+     55.7733
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24d",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4709,
+     55.7734
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DBU0100",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 16000,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4642,
+     55.6997
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DBU0300",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4637,
+     55.6969
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DAH0105",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.464,
+     55.7015
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DCH0101",
+    "bgv_type": "OS",
+    "vol_sb": 9625,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4634,
+     55.6964
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U307",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4508,
+     55.6182
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Avedøre Aflastning",
+    "bgv_type": "OS",
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4488,
+     55.597
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DAU1900",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4577,
+     55.7042
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1103500",
+    "bgv_type": "SF",
+    "vol_fbas": 2600,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4587,
+     55.7164
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4586,
+     55.7169
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UKa11",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4583,
+     55.7152
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UKa10",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4583,
+     55.7165
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1104000",
+    "bgv_type": "OS",
+    "vol_sb": 14,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.458,
+     55.7182
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U2",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4579,
+     55.7182
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UKa12",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4575,
+     55.7142
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1101000",
+    "bgv_type": "OS",
+    "vol_sb": 8625,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4554,
+     55.7136
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U612",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4459,
+     55.6085
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1105000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4552,
+     55.7212
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U3",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4551,
+     55.7213
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U29",
+    "bgv_type": "SF",
+    "vol_fbas": 290,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     55.7222
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U4",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     55.7222
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U30",
+    "bgv_type": "SF",
+    "vol_fbas": 2300,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4542,
+     55.7224
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK5",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4443,
+     55.6095
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U303",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4442,
+     55.6153
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U311",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 9537,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4447,
+     55.623
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U5",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     55.7343
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1107000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4536,
+     55.7255
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U301",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4439,
+     55.6152
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1106000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4533,
+     55.7236
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24",
+    "bgv_type": "OS",
+    "vol_sb": 12800,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4568,
+     55.7659
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1112000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4534,
+     55.7272
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U31",
+    "bgv_type": "SF",
+    "vol_fbas": 870,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4533,
+     55.7273
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U6",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4533,
+     55.7272
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AFU0100",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4515,
+     55.7072
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1304",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4516,
+     55.7091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "510700S",
+    "bgv_type": "OS",
+    "vol_sb": 3115,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4531,
+     55.7261
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1113000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4533,
+     55.7285
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U7",
+    "bgv_type": "SF",
+    "vol_fbas": 3000,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4531,
+     55.7294
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24a",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4565,
+     55.7697
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DTH0100",
+    "bgv_type": "OV",
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4512,
+     55.7099
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "HVU0000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 3500,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4506,
+     55.7073
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U613",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4424,
+     55.6157
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DQU0100",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4502,
+     55.7079
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1305",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4502,
+     55.7091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1306",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4502,
+     55.7091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF18",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4428,
+     55.6272
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK4",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4412,
+     55.6113
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ACP0300",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 21000,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4495,
+     55.7073
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AEU0700",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4495,
+     55.7074
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1114000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4513,
+     55.7309
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U32",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.451,
+     55.7319
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1199000",
+    "bgv_type": "SE",
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4507,
+     55.7325
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AEU0600",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4483,
+     55.7077
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U8",
+    "bgv_type": "OV",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4503,
+     55.733
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U33",
+    "bgv_type": "SF",
+    "vol_fbas": 1400,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4503,
+     55.733
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1115000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4502,
+     55.7332
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AEU0100",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4466,
+     55.7091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1116000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4487,
+     55.7362
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U9c",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4484,
+     55.7372
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1117000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4482,
+     55.7373
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U9b",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4478,
+     55.7377
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U314",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 67,
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4375,
+     55.6295
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U9a",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4471,
+     55.7385
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "1118000",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4471,
+     55.7385
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24b",
+    "bgv_type": "OS",
+    "vol_sb": 650,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4497,
+     55.7708
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF19",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4371,
+     55.6317
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U27",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4471,
+     55.7513
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U10",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4463,
+     55.7459
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK3",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4347,
+     55.6155
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "5500000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 1800,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4458,
+     55.742
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AMT",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.446,
+     55.7463
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1308",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4401,
+     55.6937
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U26",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4454,
+     55.7538
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1309",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4397,
+     55.693
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "DPH2901",
+    "bgv_type": "OV",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4385,
+     55.6916
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U25",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4438,
+     55.756
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AKU0100",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4395,
+     55.709
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1310",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4349,
+     55.6886
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U24c",
+    "bgv_type": "OS",
+    "vol_sb": 900,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4416,
+     55.7685
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF1",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4304,
+     55.6415
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AKU0500",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4362,
+     55.7085
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AKU1800",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4361,
+     55.7085
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1311",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4322,
+     55.6849
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF4",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4287,
+     55.6446
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF3",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4287,
+     55.6446
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF2",
+    "bgv_type": "SF",
+    "vol_fbas": 11200,
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4284,
+     55.642
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF6",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4284,
+     55.6459
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF5",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4283,
+     55.6452
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U23d",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4375,
+     55.7554
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF8",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4271,
+     55.6491
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ALU0100",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4321,
+     55.7083
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U23c",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4359,
+     55.7566
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF7",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4259,
+     55.6468
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U23b",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4354,
+     55.7565
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U23a",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4354,
+     55.7565
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "2407001",
+    "bgv_type": "OS",
+    "vol_sb": 1995,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4318,
+     55.718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF9",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.425,
+     55.6506
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK6",
+    "bgv_type": "OS",
+    "vol_fbas": 109980,
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4218,
+     55.616
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK2",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4218,
+     55.6159
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "ALU0600",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4293,
+     55.7075
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF11",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4246,
+     55.6535
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF12",
+    "bgv_type": "SF",
+    "vol_fbas": 3600,
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4251,
+     55.6606
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF10",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4244,
+     55.6531
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1301",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4292,
+     55.7076
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF13",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4247,
+     55.6632
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF16",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4249,
+     55.6684
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U1312",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4254,
+     55.676
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF15",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4248,
+     55.6683
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF17",
+    "bgv_type": "SE",
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4247,
+     55.6688
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF17",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4247,
+     55.6688
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UF14",
+    "bgv_type": "SF",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4238,
+     55.6665
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6704000",
+    "bgv_type": "SE",
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4312,
+     55.7526
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "AZU2000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Rødovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.424,
+     55.6725
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U22a",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4299,
+     55.7551
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4302000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4261,
+     55.7165
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6711000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 234,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4286,
+     55.7485
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4321000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 481,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4255,
+     55.7137
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4000000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 10720,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4253,
+     55.7181
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U22b",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4282,
+     55.7545
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4304000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4246,
+     55.7191
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U38",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4274,
+     55.7562
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6709000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4247,
+     55.7494
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U37",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4235,
+     55.7586
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U21",
+    "bgv_type": "SF",
+    "vol_fbas": 1680,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4226,
+     55.7529
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4305000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4193,
+     55.7225
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4306000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4192,
+     55.7231
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "UK1",
+    "bgv_type": "SE",
+    "komm_navn": "Brøndby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4078,
+     55.6165
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6000000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 700,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4184,
+     55.753
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U36",
+    "bgv_type": "SE",
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4178,
+     55.7576
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4307000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4144,
+     55.726
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4308000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4142,
+     55.7263
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "U20",
+    "bgv_type": "SF",
+    "vol_fbas": 500,
+    "komm_navn": "Gladsaxe"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4167,
+     55.7591
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4309000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4134,
+     55.7273
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4310000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4124,
+     55.7279
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6707000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 1306,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4129,
+     55.7488
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4319000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4085,
+     55.7292
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4300000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 6685,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4082,
+     55.7317
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "4601000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4066,
+     55.7358
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6700000",
+    "bgv_type": "SF",
+    "vol_sb": 0,
+    "vol_fbas": 300,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4042,
+     55.7521
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6706011",
+    "bgv_type": "SE",
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4033,
+     55.75
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6703000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4022,
+     55.7538
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6702000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4016,
+     55.7546
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "6701000",
+    "bgv_type": "SE",
+    "vol_sb": 0,
+    "vol_fbas": 0,
+    "komm_navn": "Herlev"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.3983,
+     55.757
+    ]
+   }
+  }
+ ]
+}

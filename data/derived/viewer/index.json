@@ -1,0 +1,74 @@
+[
+ {
+  "name": "sewer_catchments",
+  "source_layer": "sp_kloakoplande",
+  "features": 766,
+  "bytes": 4192306
+ },
+ {
+  "name": "basins",
+  "source_layer": "skp_bassiner_pladser_kk",
+  "features": 176,
+  "bytes": 299745
+ },
+ {
+  "name": "tunnels_roads",
+  "source_layer": "skp_veje_tunneller_kk",
+  "features": 974,
+  "bytes": 433934
+ },
+ {
+  "name": "catchments",
+  "source_layer": "skp_skybrudsoplande",
+  "features": 7,
+  "bytes": 620834
+ },
+ {
+  "name": "terrain_changes",
+  "source_layer": "skp_terraenaend",
+  "features": 147,
+  "bytes": 53861
+ },
+ {
+  "name": "lar",
+  "source_layer": "lar_registreringer",
+  "features": 1444,
+  "bytes": 1490106
+ },
+ {
+  "name": "rain_lines",
+  "source_layer": "dp_regnvandsafledning_l",
+  "features": 697,
+  "bytes": 336673
+ },
+ {
+  "name": "water",
+  "source_layer": "vand_oversigtskort",
+  "features": 366,
+  "bytes": 1987951
+ },
+ {
+  "name": "coast",
+  "source_layer": "kbh_kysttyper",
+  "features": 957,
+  "bytes": 1605610
+ },
+ {
+  "name": "discharge_points",
+  "source_layer": "vp3_basis_2019_punkt_rbu_udl",
+  "features": 680,
+  "bytes": 168211
+ },
+ {
+  "name": "treatment_plants",
+  "source_layer": "vp3_basis_2019_punkt_rens_udl",
+  "features": 5,
+  "bytes": 1374
+ },
+ {
+  "name": "constructions",
+  "source_layer": "derived",
+  "features": 1262,
+  "bytes": 1854288
+ }
+]

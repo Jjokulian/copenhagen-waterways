@@ -1,0 +1,270 @@
+{
+ "amager": {
+  "bands": {
+   "0.05-0.1 m": {
+    "pixels": 34256,
+    "area_m2": 120131
+   },
+   "0.1-0.2 m": {
+    "pixels": 10773,
+    "area_m2": 37779
+   },
+   "0.2-0.5 m": {
+    "pixels": 183005,
+    "area_m2": 641772
+   },
+   "0.5-1 m": {
+    "pixels": 99437,
+    "area_m2": 348711
+   },
+   "1-2 m": {
+    "pixels": 8010,
+    "area_m2": 28090
+   },
+   ">2 m": {
+    "pixels": 1706,
+    "area_m2": 5983
+   }
+  },
+  "flooded_m2": 1182466,
+  "frame_m2": 24261597,
+  "flooded_fraction": 0.0487,
+  "missing_bands": [],
+  "legend_blanked": [
+   1736,
+   2600,
+   2267,
+   3118
+  ]
+ },
+ "bispebjerg": {
+  "bands": {
+   "0.05-0.1 m": {
+    "pixels": 233413,
+    "area_m2": 1142479
+   },
+   "0.1-0.2 m": {
+    "pixels": 61043,
+    "area_m2": 298785
+   },
+   "0.2-0.5 m": {
+    "pixels": 63225,
+    "area_m2": 309465
+   },
+   "0.5-1 m": {
+    "pixels": 70650,
+    "area_m2": 345808
+   },
+   "1-2 m": {
+    "pixels": 22013,
+    "area_m2": 107746
+   },
+   ">2 m": {
+    "pixels": 3044,
+    "area_m2": 14899
+   }
+  },
+  "flooded_m2": 2219182,
+  "frame_m2": 32514958,
+  "flooded_fraction": 0.0683,
+  "missing_bands": [],
+  "legend_blanked": [
+   2729,
+   1692,
+   3261,
+   2209
+  ]
+ },
+ "indre-by": {
+  "bands": {
+   "0.05-0.1 m": {
+    "pixels": 16755,
+    "area_m2": 29471
+   },
+   "0.1-0.2 m": {
+    "pixels": 4253,
+    "area_m2": 7481
+   },
+   "0.2-0.5 m": {
+    "pixels": 1542,
+    "area_m2": 2712
+   },
+   "0.5-1 m": {
+    "pixels": 306,
+    "area_m2": 538
+   },
+   "1-2 m": {
+    "pixels": 0,
+    "area_m2": 0
+   },
+   ">2 m": {
+    "pixels": 5,
+    "area_m2": 9
+   }
+  },
+  "flooded_m2": 40211,
+  "frame_m2": 12169121,
+  "flooded_fraction": 0.0033,
+  "missing_bands": [
+   "1-2 m"
+  ],
+  "legend_blanked": [
+   1736,
+   2600,
+   2267,
+   3118
+  ]
+ },
+ "kbhvest": {
+  "bands": {
+   "0.05-0.1 m": {
+    "pixels": 37187,
+    "area_m2": 495325
+   },
+   "0.1-0.2 m": {
+    "pixels": 27408,
+    "area_m2": 365070
+   },
+   "0.2-0.5 m": {
+    "pixels": 14141,
+    "area_m2": 188356
+   },
+   "0.5-1 m": {
+    "pixels": 8055,
+    "area_m2": 107291
+   },
+   "1-2 m": {
+    "pixels": 12722,
+    "area_m2": 169455
+   },
+   ">2 m": {
+    "pixels": 4841,
+    "area_m2": 64481
+   }
+  },
+  "flooded_m2": 1389978,
+  "frame_m2": 92151153,
+  "flooded_fraction": 0.0151,
+  "missing_bands": [],
+  "legend_blanked": [
+   1748,
+   178,
+   2279,
+   696
+  ]
+ },
+ "ladegaardsaaen": {
+  "bands": {
+   "0.05-0.1 m": {
+    "pixels": 53864,
+    "area_m2": 163484
+   },
+   "0.1-0.2 m": {
+    "pixels": 4815,
+    "area_m2": 14614
+   },
+   "0.2-0.5 m": {
+    "pixels": 13090,
+    "area_m2": 39730
+   },
+   "0.5-1 m": {
+    "pixels": 50405,
+    "area_m2": 152985
+   },
+   "1-2 m": {
+    "pixels": 13844,
+    "area_m2": 42018
+   },
+   ">2 m": {
+    "pixels": 2863,
+    "area_m2": 8690
+   }
+  },
+  "flooded_m2": 421521,
+  "frame_m2": 21004853,
+  "flooded_fraction": 0.0201,
+  "missing_bands": [],
+  "legend_blanked": [
+   1736,
+   2600,
+   2267,
+   3118
+  ]
+ },
+ "norrebro": {
+  "bands": {
+   "0.05-0.1 m": {
+    "pixels": 209206,
+    "area_m2": 191210
+   },
+   "0.1-0.2 m": {
+    "pixels": 47092,
+    "area_m2": 43041
+   },
+   "0.2-0.5 m": {
+    "pixels": 68590,
+    "area_m2": 62690
+   },
+   "0.5-1 m": {
+    "pixels": 61753,
+    "area_m2": 56441
+   },
+   "1-2 m": {
+    "pixels": 3067,
+    "area_m2": 2803
+   },
+   ">2 m": {
+    "pixels": 1041,
+    "area_m2": 951
+   }
+  },
+  "flooded_m2": 357136,
+  "frame_m2": 6364444,
+  "flooded_fraction": 0.0561,
+  "missing_bands": [],
+  "legend_blanked": [
+   1719,
+   2617,
+   2250,
+   3134
+  ]
+ },
+ "osterbro": {
+  "bands": {
+   "0.05-0.1 m": {
+    "pixels": 30957,
+    "area_m2": 45154
+   },
+   "0.1-0.2 m": {
+    "pixels": 10447,
+    "area_m2": 15238
+   },
+   "0.2-0.5 m": {
+    "pixels": 6164,
+    "area_m2": 8991
+   },
+   "0.5-1 m": {
+    "pixels": 17214,
+    "area_m2": 25109
+   },
+   "1-2 m": {
+    "pixels": 4447,
+    "area_m2": 6486
+   },
+   ">2 m": {
+    "pixels": 149,
+    "area_m2": 217
+   }
+  },
+  "flooded_m2": 101195,
+  "frame_m2": 10156946,
+  "flooded_fraction": 0.01,
+  "missing_bands": [],
+  "legend_blanked": [
+   1719,
+   2617,
+   2250,
+   3134
+  ]
+ }
+}

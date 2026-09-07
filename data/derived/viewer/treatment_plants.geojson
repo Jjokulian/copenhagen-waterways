@@ -1,0 +1,85 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Dragør",
+    "godk_pe": 22500,
+    "rens_sta": "MBNDK",
+    "komm_navn": "Dragør"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6766,
+     55.6016
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Tårnby",
+    "godk_pe": 71000,
+    "rens_sta": "MBNDK",
+    "komm_navn": "Tårnby"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6828,
+     55.649
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Renseanlæg Damhusåen",
+    "godk_pe": 350000,
+    "rens_sta": "MBNDK",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6512,
+     55.6906
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Spildevandscenter Avedøre",
+    "godk_pe": 400000,
+    "rens_sta": "MBNDK",
+    "komm_navn": "Hvidovre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4487,
+     55.597
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "pkt_navn": "Renseanlæg Lynetten",
+    "godk_pe": 750000,
+    "rens_sta": "MBNDK",
+    "komm_navn": "København"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.644,
+     55.6991
+    ]
+   }
+  }
+ ]
+}

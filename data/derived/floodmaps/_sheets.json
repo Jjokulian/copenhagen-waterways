@@ -1,0 +1,191 @@
+{
+ "amager": {
+  "size": [
+   2339,
+   3309
+  ],
+  "frame": [
+   31,
+   79,
+   2285,
+   3146
+  ],
+  "scalebar_px": 534,
+  "scalebar_m": 1000.0,
+  "m_per_px": 1.8726591760299625,
+  "map_scale": 14745,
+  "standard_legend": true,
+  "preview": {
+   "file": "data/derived/floodmaps/amager.preview.jpg",
+   "size": [
+    1500,
+    2041
+   ],
+   "scale_to_frame": 1.5033333333333334
+  },
+  "sheet": "amager",
+  "catchment": "Amager"
+ },
+ "bispebjerg": {
+  "size": [
+   3309,
+   2339
+  ],
+  "frame": [
+   38,
+   161,
+   3268,
+   2216
+  ],
+  "scalebar_px": 452,
+  "scalebar_m": 1000.0,
+  "m_per_px": 2.2123893805309733,
+  "map_scale": 17420,
+  "standard_legend": true,
+  "preview": {
+   "file": "data/derived/floodmaps/bispebjerg.preview.jpg",
+   "size": [
+    1500,
+    955
+   ],
+   "scale_to_frame": 2.154
+  },
+  "sheet": "bispebjerg",
+  "catchment": "Bispebjerg"
+ },
+ "indre-by": {
+  "size": [
+   2339,
+   3309
+  ],
+  "frame": [
+   31,
+   79,
+   2285,
+   3146
+  ],
+  "scalebar_px": 377,
+  "scalebar_m": 500.0,
+  "m_per_px": 1.3262599469496021,
+  "map_scale": 10443,
+  "standard_legend": true,
+  "preview": {
+   "file": "data/derived/floodmaps/indre-by.preview.jpg",
+   "size": [
+    1500,
+    2041
+   ],
+   "scale_to_frame": 1.5033333333333334
+  },
+  "sheet": "indre-by",
+  "catchment": "Indre By"
+ },
+ "kbhvest": {
+  "size": [
+   2339,
+   3309
+  ],
+  "frame": [
+   31,
+   79,
+   2285,
+   3146
+  ],
+  "scalebar_px": 274,
+  "scalebar_m": 1000.0,
+  "m_per_px": 3.6496350364963503,
+  "map_scale": 28737,
+  "standard_legend": true,
+  "preview": {
+   "file": "data/derived/floodmaps/kbhvest.preview.jpg",
+   "size": [
+    1500,
+    2041
+   ],
+   "scale_to_frame": 1.5033333333333334
+  },
+  "sheet": "kbhvest",
+  "catchment": "København Vest"
+ },
+ "ladegaardsaaen": {
+  "size": [
+   2339,
+   3309
+  ],
+  "frame": [
+   31,
+   78,
+   2285,
+   3146
+  ],
+  "scalebar_px": 574,
+  "scalebar_m": 1000.0,
+  "m_per_px": 1.7421602787456445,
+  "map_scale": 13718,
+  "standard_legend": true,
+  "preview": {
+   "file": "data/derived/floodmaps/ladegaardsaaen.preview.jpg",
+   "size": [
+    1500,
+    2041
+   ],
+   "scale_to_frame": 1.5033333333333334
+  },
+  "sheet": "ladegaardsaaen",
+  "catchment": "Ladegårdsåen"
+ },
+ "norrebro": {
+  "size": [
+   2339,
+   3309
+  ],
+  "frame": [
+   30,
+   78,
+   2284,
+   3165
+  ],
+  "scalebar_px": 523,
+  "scalebar_m": 500.0,
+  "m_per_px": 0.9560229445506692,
+  "map_scale": 7528,
+  "standard_legend": true,
+  "preview": {
+   "file": "data/derived/floodmaps/norrebro.preview.jpg",
+   "size": [
+    1500,
+    2054
+   ],
+   "scale_to_frame": 1.5033333333333334
+  },
+  "sheet": "norrebro",
+  "catchment": "Nørrebro"
+ },
+ "osterbro": {
+  "size": [
+   2339,
+   3309
+  ],
+  "frame": [
+   30,
+   78,
+   2284,
+   3165
+  ],
+  "scalebar_px": 414,
+  "scalebar_m": 500.0,
+  "m_per_px": 1.2077294685990339,
+  "map_scale": 9510,
+  "standard_legend": true,
+  "preview": {
+   "file": "data/derived/floodmaps/osterbro.preview.jpg",
+   "size": [
+    1500,
+    2054
+   ],
+   "scale_to_frame": 1.5033333333333334
+  },
+  "sheet": "osterbro",
+  "catchment": "Østerbro"
+ }
+}

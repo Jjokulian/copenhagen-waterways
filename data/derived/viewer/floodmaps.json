@@ -1,0 +1,362 @@
+{
+ "indre-by": {
+  "method": "autoref: ensemble water cross-correlation",
+  "agree": 4,
+  "variants_run": 6,
+  "spread_m": 28.2,
+  "best_iou": 0.374,
+  "m_per_px_from_scalebar": 1.3263,
+  "bounds_wgs84": {
+   "west": 12.564721133129309,
+   "east": 12.61234710737548,
+   "south": 55.66495564366584,
+   "north": 55.70150761561375
+  },
+  "corners_for_maplibre": [
+   [
+    12.564721133129309,
+    55.70150761561375
+   ],
+   [
+    12.61234710737548,
+    55.70150761561375
+   ],
+   [
+    12.61234710737548,
+    55.66495564366584
+   ],
+   [
+    12.564721133129309,
+    55.66495564366584
+   ]
+  ],
+  "image": "data/derived/floodmaps/indre-by.depth.png",
+  "confident": true,
+  "variants": [
+   {
+    "variant": "blue K16",
+    "ok": true,
+    "lon_nw": 12.564763373461235,
+    "lat_nw": 55.70150761561375,
+    "z": 4.74,
+    "iou": 0.331,
+    "water_fraction": 0.107
+   },
+   {
+    "variant": "blue K8",
+    "ok": true,
+    "lon_nw": 12.564932334788937,
+    "lat_nw": 55.70169823867476,
+    "z": 4.83,
+    "iou": 0.361,
+    "water_fraction": 0.1135
+   },
+   {
+    "variant": "blue loose K16",
+    "ok": true,
+    "lon_nw": 12.564763373461235,
+    "lat_nw": 55.70150761561375,
+    "z": 4.96,
+    "iou": 0.374,
+    "water_fraction": 0.1336
+   },
+   {
+    "variant": "adapt 6% K16",
+    "ok": true,
+    "lon_nw": 12.564087528150425,
+    "lat_nw": 55.69712328521061,
+    "z": 2.83,
+    "iou": 0.13,
+    "water_fraction": 0.0363
+   },
+   {
+    "variant": "adapt 12% K16",
+    "ok": true,
+    "lon_nw": 12.56442545080583,
+    "lat_nw": 55.70131699255274,
+    "z": 4.82,
+    "iou": 0.269,
+    "water_fraction": 0.0815
+   },
+   {
+    "variant": "adapt 8% K8",
+    "ok": true,
+    "lon_nw": 12.564763373461235,
+    "lat_nw": 55.70036387724771,
+    "z": 3.16,
+    "iou": 0.182,
+    "water_fraction": 0.0498
+   }
+  ]
+ },
+ "ladegaardsaaen": {
+  "method": "autoref: ensemble water cross-correlation",
+  "agree": 6,
+  "variants_run": 6,
+  "spread_m": 23.2,
+  "best_iou": 0.148,
+  "m_per_px_from_scalebar": 1.7422,
+  "bounds_wgs84": {
+   "west": 12.512583162162445,
+   "east": 12.5751441109109,
+   "south": 55.65726140956776,
+   "north": 55.705291322390885
+  },
+  "corners_for_maplibre": [
+   [
+    12.512583162162445,
+    55.705291322390885
+   ],
+   [
+    12.5751441109109,
+    55.705291322390885
+   ],
+   [
+    12.5751441109109,
+    55.65726140956776
+   ],
+   [
+    12.512583162162445,
+    55.65726140956776
+   ]
+  ],
+  "image": "data/derived/floodmaps/ladegaardsaaen.depth.png",
+  "confident": true,
+  "variants": [
+   {
+    "variant": "blue K16",
+    "ok": true,
+    "lon_nw": 12.512583162162446,
+    "lat_nw": 55.70524958900297,
+    "z": 6.59,
+    "iou": 0.114,
+    "water_fraction": 0.0077
+   },
+   {
+    "variant": "blue K8",
+    "ok": true,
+    "lon_nw": 12.512583162162446,
+    "lat_nw": 55.70524958900297,
+    "z": 7.28,
+    "iou": 0.148,
+    "water_fraction": 0.0095
+   },
+   {
+    "variant": "blue loose K16",
+    "ok": true,
+    "lon_nw": 12.512583162162446,
+    "lat_nw": 55.70524958900297,
+    "z": 6.54,
+    "iou": 0.144,
+    "water_fraction": 0.0106
+   },
+   {
+    "variant": "adapt 6% K16",
+    "ok": true,
+    "lon_nw": 12.512583162162446,
+    "lat_nw": 55.70549998933049,
+    "z": 6.03,
+    "iou": 0.077,
+    "water_fraction": 0.006
+   },
+   {
+    "variant": "adapt 12% K16",
+    "ok": true,
+    "lon_nw": 12.512583162162446,
+    "lat_nw": 55.70524958900297,
+    "z": 5.98,
+    "iou": 0.101,
+    "water_fraction": 0.0135
+   },
+   {
+    "variant": "adapt 8% K8",
+    "ok": true,
+    "lon_nw": 12.512583162162446,
+    "lat_nw": 55.70524958900297,
+    "z": 6.95,
+    "iou": 0.141,
+    "water_fraction": 0.0118
+   }
+  ]
+ },
+ "norrebro": {
+  "method": "autoref: ensemble water cross-correlation",
+  "agree": 3,
+  "variants_run": 6,
+  "spread_m": 12.7,
+  "best_iou": 0.412,
+  "m_per_px_from_scalebar": 0.956,
+  "bounds_wgs84": {
+   "west": 12.509555543869267,
+   "east": 12.54388631306775,
+   "south": 55.674426736469954,
+   "north": 55.700946668672366
+  },
+  "corners_for_maplibre": [
+   [
+    12.509555543869267,
+    55.700946668672366
+   ],
+   [
+    12.54388631306775,
+    55.700946668672366
+   ],
+   [
+    12.54388631306775,
+    55.674426736469954
+   ],
+   [
+    12.509555543869267,
+    55.674426736469954
+   ]
+  ],
+  "image": "data/derived/floodmaps/norrebro.depth.png",
+  "confident": true,
+  "variants": [
+   {
+    "variant": "blue K16",
+    "ok": true,
+    "lon_nw": 12.510529898294413,
+    "lat_nw": 55.702068841969364,
+    "z": 4.19,
+    "iou": 0.267,
+    "water_fraction": 0.0027
+   },
+   {
+    "variant": "blue K8",
+    "ok": true,
+    "lon_nw": 12.551939961363093,
+    "lat_nw": 55.71546621704571,
+    "z": 4.26,
+    "iou": 0.072,
+    "water_fraction": 0.0041
+   },
+   {
+    "variant": "blue loose K16",
+    "ok": true,
+    "lon_nw": 12.509555543869267,
+    "lat_nw": 55.700969570168226,
+    "z": 4.33,
+    "iou": 0.406,
+    "water_fraction": 0.0076
+   },
+   {
+    "variant": "adapt 6% K16",
+    "ok": true,
+    "lon_nw": 12.509555543869267,
+    "lat_nw": 55.700832161193084,
+    "z": 4.37,
+    "iou": 0.377,
+    "water_fraction": 0.0066
+   },
+   {
+    "variant": "adapt 12% K16",
+    "ok": true,
+    "lon_nw": 12.544388714568216,
+    "lat_nw": 55.708527063801036,
+    "z": 4.51,
+    "iou": 0.109,
+    "water_fraction": 0.0088
+   },
+   {
+    "variant": "adapt 8% K8",
+    "ok": true,
+    "lon_nw": 12.509555543869267,
+    "lat_nw": 55.701038274655794,
+    "z": 4.47,
+    "iou": 0.412,
+    "water_fraction": 0.0108
+   }
+  ]
+ },
+ "osterbro": {
+  "method": "autoref: ensemble water cross-correlation",
+  "agree": 6,
+  "variants_run": 6,
+  "spread_m": 15.9,
+  "best_iou": 0.343,
+  "m_per_px_from_scalebar": 1.2077,
+  "bounds_wgs84": {
+   "west": 12.55824929387788,
+   "east": 12.601618840474032,
+   "south": 55.68801080875036,
+   "north": 55.72151304194326
+  },
+  "corners_for_maplibre": [
+   [
+    12.55824929387788,
+    55.72151304194326
+   ],
+   [
+    12.601618840474032,
+    55.72151304194326
+   ],
+   [
+    12.601618840474032,
+    55.68801080875036
+   ],
+   [
+    12.55824929387788,
+    55.68801080875036
+   ]
+  ],
+  "image": "data/derived/floodmaps/osterbro.depth.png",
+  "confident": true,
+  "variants": [
+   {
+    "variant": "blue K16",
+    "ok": true,
+    "lon_nw": 12.558351867824006,
+    "lat_nw": 55.721556438618386,
+    "z": 3.7,
+    "iou": 0.295,
+    "water_fraction": 0.0675
+   },
+   {
+    "variant": "blue K8",
+    "ok": true,
+    "lon_nw": 12.558351867824006,
+    "lat_nw": 55.721556438618386,
+    "z": 3.7,
+    "iou": 0.343,
+    "water_fraction": 0.0764
+   },
+   {
+    "variant": "blue loose K16",
+    "ok": true,
+    "lon_nw": 12.558351867824006,
+    "lat_nw": 55.721556438618386,
+    "z": 3.68,
+    "iou": 0.331,
+    "water_fraction": 0.0827
+   },
+   {
+    "variant": "adapt 6% K16",
+    "ok": true,
+    "lon_nw": 12.558351867824006,
+    "lat_nw": 55.7213828519179,
+    "z": 3.58,
+    "iou": 0.155,
+    "water_fraction": 0.0305
+   },
+   {
+    "variant": "adapt 12% K16",
+    "ok": true,
+    "lon_nw": 12.55804414598563,
+    "lat_nw": 55.721556438618386,
+    "z": 3.95,
+    "iou": 0.21,
+    "water_fraction": 0.048
+   },
+   {
+    "variant": "adapt 8% K8",
+    "ok": true,
+    "lon_nw": 12.55804414598563,
+    "lat_nw": 55.721469645268144,
+    "z": 3.53,
+    "iou": 0.239,
+    "water_fraction": 0.047
+   }
+  ]
+ }
+}

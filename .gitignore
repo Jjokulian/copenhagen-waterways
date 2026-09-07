@@ -1,6 +1,18 @@
-# Reproducible from the fetch scripts - 131 MB raw + 13 MB bundle.
+# Raw downloads (~145 MB) are reproducible from the fetch scripts.
 data/raw/
-data/derived/
+
+# Most of data/derived is reproducible too, but the web bundle and the flood-sheet
+# assets ARE the deployed site - committing them means a clone serves it immediately,
+# and CI never has to re-crawl a municipal server to rebuild a static page.
+data/derived/*
+!data/derived/viewer/
+!data/derived/registry.json
+!data/derived/constructions.geojson
+!data/derived/floodgap.json
+!data/derived/floodmaps/
+# ... but not the heavy intermediates inside it (93 MB of renders, 47 MB of arrays).
+data/derived/floodmaps/*.render.png
+data/derived/floodmaps/*.band.npy
 # data/manual/ is hand-authored and IS tracked.
 __pycache__/
 *.pyc

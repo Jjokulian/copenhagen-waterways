@@ -1,0 +1,4124 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53971,
+       55.70121
+      ],
+      [
+       12.53965,
+       55.70108
+      ],
+      [
+       12.53984,
+       55.70104
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54239,
+       55.70524
+      ],
+      [
+       12.54265,
+       55.70546
+      ],
+      [
+       12.5431,
+       55.70522
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54959,
+       55.70846
+      ],
+      [
+       12.55001,
+       55.70819
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53528,
+       55.71377
+      ],
+      [
+       12.53516,
+       55.71358
+      ],
+      [
+       12.53519,
+       55.71353
+      ],
+      [
+       12.53536,
+       55.71326
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Cykelsti sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53511,
+       55.71318
+      ],
+      [
+       12.53782,
+       55.7101
+      ],
+      [
+       12.53922,
+       55.70857
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Cykelsti sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53531,
+       55.71335
+      ],
+      [
+       12.53574,
+       55.71297
+      ],
+      [
+       12.53639,
+       55.71233
+      ],
+      [
+       12.53724,
+       55.71141
+      ],
+      [
+       12.53825,
+       55.71018
+      ],
+      [
+       12.53963,
+       55.70865
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56595,
+       55.71595
+      ],
+      [
+       12.5655,
+       55.71662
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.47979,
+       55.71881
+      ],
+      [
+       12.47879,
+       55.71762
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.48217,
+       55.71831
+      ],
+      [
+       12.48129,
+       55.71712
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.48945,
+       55.71667
+      ],
+      [
+       12.48997,
+       55.71567
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.4899,
+       55.72102
+      ],
+      [
+       12.4907,
+       55.72086
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.4944,
+       55.71125
+      ],
+      [
+       12.49418,
+       55.71155
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49949,
+       55.71155
+      ],
+      [
+       12.49906,
+       55.71195
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.4984,
+       55.70667
+      ],
+      [
+       12.49841,
+       55.70667
+      ],
+      [
+       12.49902,
+       55.70667
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.50034,
+       55.70978
+      ],
+      [
+       12.50115,
+       55.70977
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49802,
+       55.70266
+      ],
+      [
+       12.49827,
+       55.7027
+      ],
+      [
+       12.49851,
+       55.70277
+      ],
+      [
+       12.49871,
+       55.70283
+      ],
+      [
+       12.49888,
+       55.70292
+      ],
+      [
+       12.49915,
+       55.70305
+      ],
+      [
+       12.4993,
+       55.70311
+      ],
+      [
+       12.49958,
+       55.70287
+      ],
+      [
+       12.49985,
+       55.70264
+      ],
+      [
+       12.49998,
+       55.70234
+      ],
+      [
+       12.5001,
+       55.70191
+      ],
+      [
+       12.50019,
+       55.70161
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51506,
+       55.71346
+      ],
+      [
+       12.51526,
+       55.71357
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.50499,
+       55.70486
+      ],
+      [
+       12.505,
+       55.70522
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53229,
+       55.72697
+      ],
+      [
+       12.53328,
+       55.72693
+      ],
+      [
+       12.5346,
+       55.72706
+      ],
+      [
+       12.53505,
+       55.72705
+      ],
+      [
+       12.53536,
+       55.72704
+      ],
+      [
+       12.53574,
+       55.72695
+      ],
+      [
+       12.53675,
+       55.72672
+      ],
+      [
+       12.53761,
+       55.72652
+      ],
+      [
+       12.53858,
+       55.72628
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53574,
+       55.72182
+      ],
+      [
+       12.538,
+       55.72177
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57076,
+       55.72348
+      ],
+      [
+       12.57248,
+       55.72355
+      ],
+      [
+       12.57259,
+       55.72439
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57287,
+       55.72437
+      ],
+      [
+       12.5728,
+       55.7236
+      ],
+      [
+       12.5729,
+       55.72356
+      ],
+      [
+       12.57433,
+       55.72364
+      ],
+      [
+       12.57428,
+       55.72433
+      ],
+      [
+       12.57287,
+       55.72437
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57606,
+       55.72649
+      ],
+      [
+       12.57663,
+       55.72535
+      ],
+      [
+       12.57692,
+       55.72455
+      ],
+      [
+       12.5773,
+       55.72348
+      ],
+      [
+       12.57742,
+       55.72298
+      ],
+      [
+       12.5774,
+       55.72268
+      ],
+      [
+       12.5771,
+       55.72182
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57286,
+       55.72342
+      ],
+      [
+       12.5728,
+       55.72337
+      ],
+      [
+       12.57291,
+       55.72269
+      ],
+      [
+       12.57448,
+       55.72276
+      ],
+      [
+       12.57435,
+       55.72351
+      ],
+      [
+       12.57286,
+       55.72342
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57774,
+       55.7173
+      ],
+      [
+       12.57899,
+       55.71743
+      ],
+      [
+       12.58026,
+       55.71756
+      ],
+      [
+       12.58112,
+       55.71765
+      ],
+      [
+       12.58201,
+       55.71771
+      ],
+      [
+       12.58294,
+       55.71778
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57775,
+       55.7174
+      ],
+      [
+       12.58107,
+       55.71773
+      ],
+      [
+       12.58089,
+       55.7184
+      ],
+      [
+       12.57763,
+       55.71803
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57766,
+       55.71812
+      ],
+      [
+       12.58051,
+       55.71845
+      ],
+      [
+       12.58087,
+       55.71849
+      ],
+      [
+       12.58067,
+       55.7191
+      ],
+      [
+       12.57759,
+       55.71875
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57763,
+       55.71885
+      ],
+      [
+       12.58066,
+       55.71918
+      ],
+      [
+       12.58041,
+       55.7199
+      ],
+      [
+       12.5804,
+       55.72013
+      ],
+      [
+       12.58043,
+       55.72033
+      ],
+      [
+       12.58048,
+       55.72045
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58062,
+       55.72041
+      ],
+      [
+       12.58056,
+       55.72018
+      ],
+      [
+       12.58056,
+       55.71994
+      ],
+      [
+       12.58066,
+       55.71962
+      ],
+      [
+       12.58081,
+       55.7192
+      ],
+      [
+       12.58238,
+       55.71955
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58245,
+       55.71948
+      ],
+      [
+       12.58165,
+       55.71927
+      ],
+      [
+       12.58124,
+       55.71918
+      ],
+      [
+       12.58085,
+       55.71911
+      ],
+      [
+       12.58103,
+       55.7185
+      ],
+      [
+       12.58201,
+       55.71859
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58204,
+       55.71851
+      ],
+      [
+       12.58106,
+       55.71842
+      ],
+      [
+       12.58123,
+       55.71773
+      ],
+      [
+       12.58291,
+       55.71786
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51729,
+       55.70377
+      ],
+      [
+       12.51666,
+       55.70506
+      ],
+      [
+       12.51636,
+       55.70583
+      ],
+      [
+       12.51684,
+       55.70592
+      ],
+      [
+       12.51833,
+       55.7038
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.5219,
+       55.71005
+      ],
+      [
+       12.52315,
+       55.7098
+      ],
+      [
+       12.52341,
+       55.70975
+      ],
+      [
+       12.52367,
+       55.7097
+      ],
+      [
+       12.52435,
+       55.70956
+      ],
+      [
+       12.52459,
+       55.70951
+      ],
+      [
+       12.52463,
+       55.70962
+      ],
+      [
+       12.52458,
+       55.71034
+      ],
+      [
+       12.52454,
+       55.71076
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52187,
+       55.70988
+      ],
+      [
+       12.5244,
+       55.70941
+      ],
+      [
+       12.52573,
+       55.70914
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52846,
+       55.71009
+      ],
+      [
+       12.53183,
+       55.7101
+      ],
+      [
+       12.53238,
+       55.7101
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53189,
+       55.71162
+      ],
+      [
+       12.53196,
+       55.71036
+      ],
+      [
+       12.53195,
+       55.71025
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52258,
+       55.70722
+      ],
+      [
+       12.52521,
+       55.7064
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52278,
+       55.70726
+      ],
+      [
+       12.52535,
+       55.70644
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52514,
+       55.70605
+      ],
+      [
+       12.52621,
+       55.70565
+      ],
+      [
+       12.52722,
+       55.70524
+      ],
+      [
+       12.52743,
+       55.70516
+      ],
+      [
+       12.52883,
+       55.70464
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52545,
+       55.70632
+      ],
+      [
+       12.52524,
+       55.70615
+      ],
+      [
+       12.52697,
+       55.70551
+      ],
+      [
+       12.52736,
+       55.70538
+      ],
+      [
+       12.52759,
+       55.7053
+      ],
+      [
+       12.529,
+       55.70474
+      ],
+      [
+       12.52929,
+       55.70463
+      ],
+      [
+       12.52969,
+       55.70444
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52667,
+       55.70464
+      ],
+      [
+       12.52812,
+       55.70404
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52653,
+       55.70442
+      ],
+      [
+       12.5273,
+       55.70412
+      ],
+      [
+       12.52611,
+       55.70322
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52641,
+       55.70312
+      ],
+      [
+       12.52657,
+       55.70326
+      ],
+      [
+       12.52746,
+       55.70401
+      ],
+      [
+       12.52819,
+       55.70375
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52806,
+       55.70777
+      ],
+      [
+       12.52802,
+       55.70771
+      ],
+      [
+       12.52799,
+       55.70765
+      ],
+      [
+       12.52804,
+       55.70756
+      ],
+      [
+       12.52807,
+       55.7075
+      ],
+      [
+       12.52935,
+       55.70711
+      ],
+      [
+       12.52886,
+       55.7066
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52832,
+       55.70778
+      ],
+      [
+       12.52828,
+       55.7077
+      ],
+      [
+       12.52835,
+       55.70756
+      ],
+      [
+       12.52844,
+       55.70753
+      ],
+      [
+       12.52867,
+       55.70748
+      ],
+      [
+       12.53051,
+       55.70696
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52957,
+       55.70707
+      ],
+      [
+       12.52914,
+       55.70662
+      ],
+      [
+       12.52915,
+       55.70652
+      ],
+      [
+       12.53206,
+       55.70571
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52826,
+       55.70675
+      ],
+      [
+       12.52886,
+       55.7066
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52817,
+       55.70662
+      ],
+      [
+       12.52876,
+       55.70645
+      ],
+      [
+       12.53193,
+       55.70558
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52869,
+       55.70791
+      ],
+      [
+       12.53191,
+       55.7073
+      ],
+      [
+       12.53194,
+       55.70655
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52878,
+       55.70801
+      ],
+      [
+       12.53156,
+       55.7075
+      ],
+      [
+       12.53195,
+       55.70742
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.59695,
+       55.68796
+      ],
+      [
+       12.59593,
+       55.6879
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.59357,
+       55.68758
+      ],
+      [
+       12.59255,
+       55.68747
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.59031,
+       55.68727
+      ],
+      [
+       12.58917,
+       55.68593
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53066,
+       55.70302
+      ],
+      [
+       12.53311,
+       55.70202
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53645,
+       55.70322
+      ],
+      [
+       12.53648,
+       55.70353
+      ],
+      [
+       12.53415,
+       55.70386
+      ],
+      [
+       12.53304,
+       55.70369
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53226,
+       55.70564
+      ],
+      [
+       12.53239,
+       55.70561
+      ],
+      [
+       12.53265,
+       55.70555
+      ],
+      [
+       12.53645,
+       55.70456
+      ],
+      [
+       12.53715,
+       55.70437
+      ],
+      [
+       12.53786,
+       55.70417
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53227,
+       55.70545
+      ],
+      [
+       12.53253,
+       55.70538
+      ],
+      [
+       12.53628,
+       55.70435
+      ],
+      [
+       12.53698,
+       55.70416
+      ],
+      [
+       12.5378,
+       55.70396
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54406,
+       55.70518
+      ],
+      [
+       12.54528,
+       55.70454
+      ],
+      [
+       12.54547,
+       55.70442
+      ],
+      [
+       12.54674,
+       55.70368
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54595,
+       55.70527
+      ],
+      [
+       12.5486,
+       55.70373
+      ],
+      [
+       12.54881,
+       55.70359
+      ],
+      [
+       12.54806,
+       55.70325
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54839,
+       55.70307
+      ],
+      [
+       12.54904,
+       55.70351
+      ],
+      [
+       12.54941,
+       55.70354
+      ],
+      [
+       12.54975,
+       55.70353
+      ],
+      [
+       12.55355,
+       55.70352
+      ],
+      [
+       12.55349,
+       55.70312
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54941,
+       55.7037
+      ],
+      [
+       12.55142,
+       55.70374
+      ],
+      [
+       12.55142,
+       55.70403
+      ],
+      [
+       12.55134,
+       55.70425
+      ],
+      [
+       12.55092,
+       55.70453
+      ],
+      [
+       12.54941,
+       55.7037
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54909,
+       55.70387
+      ],
+      [
+       12.55085,
+       55.70485
+      ],
+      [
+       12.55118,
+       55.70465
+      ],
+      [
+       12.55158,
+       55.70438
+      ],
+      [
+       12.55177,
+       55.70409
+      ],
+      [
+       12.55174,
+       55.70373
+      ],
+      [
+       12.55359,
+       55.7037
+      ],
+      [
+       12.55372,
+       55.70467
+      ],
+      [
+       12.5539,
+       55.70492
+      ],
+      [
+       12.55418,
+       55.70513
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55384,
+       55.70315
+      ],
+      [
+       12.55387,
+       55.7035
+      ],
+      [
+       12.5541,
+       55.70349
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55413,
+       55.70367
+      ],
+      [
+       12.55391,
+       55.7037
+      ],
+      [
+       12.55401,
+       55.70434
+      ],
+      [
+       12.55406,
+       55.70468
+      ],
+      [
+       12.55424,
+       55.70483
+      ],
+      [
+       12.55441,
+       55.70498
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54632,
+       55.70591
+      ],
+      [
+       12.54745,
+       55.70681
+      ],
+      [
+       12.54845,
+       55.70754
+      ],
+      [
+       12.5496,
+       55.70835
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54659,
+       55.70582
+      ],
+      [
+       12.54762,
+       55.7066
+      ],
+      [
+       12.54846,
+       55.70722
+      ],
+      [
+       12.54982,
+       55.7082
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.5521,
+       55.71011
+      ],
+      [
+       12.54988,
+       55.70857
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55015,
+       55.70838
+      ],
+      [
+       12.55237,
+       55.70994
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54618,
+       55.70543
+      ],
+      [
+       12.54876,
+       55.70382
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Cykelsti sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54041,
+       55.70256
+      ],
+      [
+       12.54163,
+       55.7044
+      ],
+      [
+       12.54164,
+       55.70461
+      ],
+      [
+       12.54168,
+       55.7052
+      ],
+      [
+       12.54216,
+       55.70615
+      ],
+      [
+       12.5432,
+       55.70677
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53267,
+       55.71008
+      ],
+      [
+       12.53358,
+       55.71008
+      ],
+      [
+       12.53604,
+       55.71017
+      ],
+      [
+       12.5377,
+       55.71031
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53811,
+       55.71039
+      ],
+      [
+       12.53921,
+       55.71063
+      ],
+      [
+       12.53989,
+       55.71078
+      ],
+      [
+       12.54148,
+       55.71143
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54345,
+       55.71221
+      ],
+      [
+       12.54392,
+       55.71241
+      ],
+      [
+       12.54439,
+       55.71267
+      ],
+      [
+       12.54466,
+       55.71299
+      ],
+      [
+       12.54478,
+       55.71339
+      ],
+      [
+       12.54475,
+       55.71392
+      ],
+      [
+       12.54462,
+       55.7143
+      ],
+      [
+       12.54442,
+       55.71458
+      ],
+      [
+       12.54419,
+       55.71476
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53225,
+       55.71028
+      ],
+      [
+       12.53227,
+       55.71163
+      ],
+      [
+       12.53241,
+       55.71175
+      ],
+      [
+       12.53305,
+       55.71188
+      ],
+      [
+       12.5334,
+       55.71197
+      ],
+      [
+       12.53367,
+       55.71206
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53416,
+       55.71226
+      ],
+      [
+       12.53455,
+       55.71253
+      ],
+      [
+       12.53499,
+       55.71294
+      ],
+      [
+       12.53507,
+       55.71309
+      ],
+      [
+       12.53521,
+       55.71309
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53427,
+       55.71279
+      ],
+      [
+       12.53452,
+       55.71306
+      ],
+      [
+       12.53468,
+       55.71329
+      ],
+      [
+       12.53467,
+       55.71365
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53645,
+       55.71478
+      ],
+      [
+       12.53667,
+       55.71503
+      ],
+      [
+       12.53707,
+       55.7154
+      ],
+      [
+       12.53755,
+       55.71581
+      ],
+      [
+       12.53805,
+       55.7162
+      ],
+      [
+       12.53838,
+       55.71645
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53969,
+       55.71911
+      ],
+      [
+       12.53803,
+       55.71716
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53872,
+       55.71912
+      ],
+      [
+       12.53761,
+       55.71733
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53855,
+       55.71914
+      ],
+      [
+       12.53746,
+       55.71735
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53734,
+       55.71951
+      ],
+      [
+       12.53652,
+       55.71746
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53718,
+       55.71958
+      ],
+      [
+       12.53637,
+       55.71747
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53925,
+       55.71921
+      ],
+      [
+       12.53786,
+       55.71723
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55461,
+       55.71116
+      ],
+      [
+       12.55586,
+       55.71173
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55237,
+       55.70994
+      ],
+      [
+       12.55389,
+       55.71079
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.5559,
+       55.70774
+      ],
+      [
+       12.55536,
+       55.70879
+      ],
+      [
+       12.55503,
+       55.7095
+      ],
+      [
+       12.5548,
+       55.70975
+      ],
+      [
+       12.55456,
+       55.71
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52483,
+       55.7243
+      ],
+      [
+       12.52484,
+       55.72395
+      ],
+      [
+       12.52489,
+       55.72361
+      ],
+      [
+       12.52454,
+       55.72358
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52506,
+       55.72434
+      ],
+      [
+       12.52507,
+       55.72392
+      ],
+      [
+       12.52512,
+       55.72364
+      ],
+      [
+       12.52533,
+       55.72365
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52269,
+       55.7225
+      ],
+      [
+       12.52529,
+       55.7227
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52467,
+       55.72346
+      ],
+      [
+       12.52493,
+       55.72349
+      ],
+      [
+       12.52506,
+       55.72285
+      ],
+      [
+       12.5247,
+       55.72283
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52533,
+       55.72352
+      ],
+      [
+       12.52513,
+       55.7235
+      ],
+      [
+       12.52528,
+       55.72286
+      ],
+      [
+       12.52563,
+       55.72288
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55697,
+       55.70826
+      ],
+      [
+       12.5565,
+       55.70937
+      ],
+      [
+       12.55574,
+       55.71042
+      ],
+      [
+       12.55527,
+       55.71085
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55826,
+       55.70674
+      ],
+      [
+       12.55778,
+       55.70836
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55802,
+       55.70658
+      ],
+      [
+       12.55747,
+       55.70815
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56314,
+       55.71403
+      ],
+      [
+       12.56503,
+       55.71475
+      ],
+      [
+       12.56457,
+       55.71542
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54588,
+       55.71623
+      ],
+      [
+       12.54682,
+       55.71647
+      ],
+      [
+       12.54739,
+       55.71666
+      ],
+      [
+       12.54774,
+       55.7169
+      ],
+      [
+       12.54789,
+       55.71709
+      ],
+      [
+       12.54832,
+       55.71702
+      ],
+      [
+       12.54888,
+       55.71689
+      ],
+      [
+       12.54865,
+       55.71651
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.55137,
+       55.71474
+      ],
+      [
+       12.54872,
+       55.7163
+      ],
+      [
+       12.54645,
+       55.71567
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54892,
+       55.71643
+      ],
+      [
+       12.54918,
+       55.71682
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56127,
+       55.72005
+      ],
+      [
+       12.5626,
+       55.72121
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56516,
+       55.73022
+      ],
+      [
+       12.56517,
+       55.72982
+      ],
+      [
+       12.56537,
+       55.72922
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56542,
+       55.73015
+      ],
+      [
+       12.56547,
+       55.72965
+      ],
+      [
+       12.56558,
+       55.72932
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56548,
+       55.72786
+      ],
+      [
+       12.56575,
+       55.72858
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56346,
+       55.7282
+      ],
+      [
+       12.56367,
+       55.72882
+      ],
+      [
+       12.56467,
+       55.7287
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56386,
+       55.72945
+      ],
+      [
+       12.56373,
+       55.72894
+      ],
+      [
+       12.56455,
+       55.72885
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56356,
+       55.72944
+      ],
+      [
+       12.56342,
+       55.72897
+      ],
+      [
+       12.56282,
+       55.72904
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56279,
+       55.7289
+      ],
+      [
+       12.56335,
+       55.72883
+      ],
+      [
+       12.5632,
+       55.72824
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49428,
+       55.7113
+      ],
+      [
+       12.49442,
+       55.71083
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49441,
+       55.71073
+      ],
+      [
+       12.49464,
+       55.71002
+      ],
+      [
+       12.49439,
+       55.70916
+      ],
+      [
+       12.49437,
+       55.70849
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49446,
+       55.71141
+      ],
+      [
+       12.49463,
+       55.71076
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49467,
+       55.71055
+      ],
+      [
+       12.49483,
+       55.70996
+      ],
+      [
+       12.49462,
+       55.7093
+      ],
+      [
+       12.4946,
+       55.70848
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.4944,
+       55.70461
+      ],
+      [
+       12.49283,
+       55.7047
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49442,
+       55.70446
+      ],
+      [
+       12.4927,
+       55.70458
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49902,
+       55.70671
+      ],
+      [
+       12.49901,
+       55.70679
+      ],
+      [
+       12.49966,
+       55.70677
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.50053,
+       55.70772
+      ],
+      [
+       12.50017,
+       55.70768
+      ],
+      [
+       12.49995,
+       55.70759
+      ],
+      [
+       12.49958,
+       55.7074
+      ],
+      [
+       12.49912,
+       55.70729
+      ],
+      [
+       12.4987,
+       55.70728
+      ],
+      [
+       12.49855,
+       55.70732
+      ],
+      [
+       12.49867,
+       55.70805
+      ],
+      [
+       12.49882,
+       55.7088
+      ],
+      [
+       12.49901,
+       55.70956
+      ],
+      [
+       12.49909,
+       55.71011
+      ],
+      [
+       12.49915,
+       55.7105
+      ],
+      [
+       12.49927,
+       55.7108
+      ],
+      [
+       12.49943,
+       55.71119
+      ],
+      [
+       12.49944,
+       55.71139
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.49835,
+       55.70729
+      ],
+      [
+       12.49848,
+       55.70785
+      ],
+      [
+       12.49866,
+       55.7088
+      ],
+      [
+       12.49888,
+       55.70986
+      ],
+      [
+       12.49896,
+       55.71033
+      ],
+      [
+       12.49899,
+       55.71045
+      ],
+      [
+       12.49905,
+       55.71066
+      ],
+      [
+       12.49917,
+       55.71092
+      ],
+      [
+       12.49929,
+       55.71124
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.50631,
+       55.70372
+      ],
+      [
+       12.50626,
+       55.70428
+      ],
+      [
+       12.50803,
+       55.70453
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58051,
+       55.68277
+      ],
+      [
+       12.58122,
+       55.68258
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58879,
+       55.68324
+      ],
+      [
+       12.58975,
+       55.68299
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.50649,
+       55.70443
+      ],
+      [
+       12.50786,
+       55.70463
+      ],
+      [
+       12.50818,
+       55.7047
+      ],
+      [
+       12.50874,
+       55.70472
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51212,
+       55.71193
+      ],
+      [
+       12.51289,
+       55.71262
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51256,
+       55.7119
+      ],
+      [
+       12.51235,
+       55.71172
+      ],
+      [
+       12.51273,
+       55.7109
+      ],
+      [
+       12.51287,
+       55.71062
+      ],
+      [
+       12.5129,
+       55.71055
+      ],
+      [
+       12.51297,
+       55.71007
+      ],
+      [
+       12.51295,
+       55.70997
+      ],
+      [
+       12.51431,
+       55.70988
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51427,
+       55.71297
+      ],
+      [
+       12.51515,
+       55.71339
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51411,
+       55.71306
+      ],
+      [
+       12.51496,
+       55.71352
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51719,
+       55.71562
+      ],
+      [
+       12.51742,
+       55.71535
+      ],
+      [
+       12.51766,
+       55.71524
+      ],
+      [
+       12.51805,
+       55.71512
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51733,
+       55.71564
+      ],
+      [
+       12.51749,
+       55.71546
+      ],
+      [
+       12.51767,
+       55.71533
+      ],
+      [
+       12.51846,
+       55.71511
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Kantsten hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51901,
+       55.71444
+      ],
+      [
+       12.51918,
+       55.71391
+      ],
+      [
+       12.51897,
+       55.71381
+      ],
+      [
+       12.51906,
+       55.71347
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58188,
+       55.6824
+      ],
+      [
+       12.58265,
+       55.6822
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58498,
+       55.68155
+      ],
+      [
+       12.5858,
+       55.68133
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.58717,
+       55.68096
+      ],
+      [
+       12.588,
+       55.68076
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57069,
+       55.67606
+      ],
+      [
+       12.57069,
+       55.67566
+      ],
+      [
+       12.57122,
+       55.67538
+      ],
+      [
+       12.57125,
+       55.6754
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57256,
+       55.6747
+      ],
+      [
+       12.57346,
+       55.67425
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57384,
+       55.67405
+      ],
+      [
+       12.57446,
+       55.67374
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Oplandsregulering"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.57502,
+       55.67345
+      ],
+      [
+       12.57574,
+       55.67309
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51415,
+       55.70023
+      ],
+      [
+       12.51546,
+       55.70144
+      ],
+      [
+       12.5167,
+       55.70103
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51336,
+       55.70438
+      ],
+      [
+       12.51247,
+       55.70242
+      ],
+      [
+       12.51224,
+       55.702
+      ],
+      [
+       12.51048,
+       55.70044
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51396,
+       55.70241
+      ],
+      [
+       12.51464,
+       55.70311
+      ],
+      [
+       12.51498,
+       55.70346
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51645,
+       55.7018
+      ],
+      [
+       12.5171,
+       55.70236
+      ],
+      [
+       12.51745,
+       55.70274
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.5192,
+       55.70224
+      ],
+      [
+       12.51865,
+       55.70275
+      ],
+      [
+       12.51803,
+       55.70356
+      ],
+      [
+       12.51737,
+       55.70455
+      ],
+      [
+       12.51717,
+       55.70495
+      ],
+      [
+       12.51713,
+       55.70504
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.51891,
+       55.70201
+      ],
+      [
+       12.51866,
+       55.70181
+      ],
+      [
+       12.51852,
+       55.70156
+      ],
+      [
+       12.51835,
+       55.70126
+      ],
+      [
+       12.51833,
+       55.70123
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52506,
+       55.7035
+      ],
+      [
+       12.52619,
+       55.70311
+      ],
+      [
+       12.52631,
+       55.7032
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52525,
+       55.70625
+      ],
+      [
+       12.52507,
+       55.70611
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52725,
+       55.7053
+      ],
+      [
+       12.5274,
+       55.70524
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52727,
+       55.70425
+      ],
+      [
+       12.5281,
+       55.70392
+      ],
+      [
+       12.52899,
+       55.70461
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.52882,
+       55.70652
+      ],
+      [
+       12.52905,
+       55.70645
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.53636,
+       55.70443
+      ],
+      [
+       12.53707,
+       55.70426
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn hæves"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.56914,
+       55.72383
+      ],
+      [
+       12.56996,
+       55.72286
+      ],
+      [
+       12.57032,
+       55.72239
+      ],
+      [
+       12.57058,
+       55.72196
+      ],
+      [
+       12.5708,
+       55.72152
+      ],
+      [
+       12.57116,
+       55.72083
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "type": "Terræn sænkes"
+   },
+   "geometry": {
+    "type": "MultiLineString",
+    "coordinates": [
+     [
+      [
+       12.54856,
+       55.70914
+      ],
+      [
+       12.54922,
+       55.7087
+      ],
+      [
+       12.54977,
+       55.70834
+      ],
+      [
+       12.5498,
+       55.70833
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}
