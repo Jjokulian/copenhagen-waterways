@@ -271,5 +271,52 @@
     "detail": "Eelgrass down 80-90% from historical extent; filtration capacity lost; benthos repeatedly killed; denitrification switching to DNRA under anoxia; a loose bed resuspending several times more often (see SEABED.md). The same load does more damage than it did in 1990. No term in any published account carries this."
    }
   ]
+ },
+ "karlstrup_kalkgrav": {
+  "_what": "What is actually established about the condition of Karlstrup Kalkgrav, and when. Raised because a resident reported algal growth, odour, declining fish and accumulated plastic waste - none of which is visible in any monitoring series.",
+  "water_body": {
+   "registered_as": "Karlstrup Sø",
+   "id": "DKLAKE812",
+   "link": "https://vandplandata.dk/vandomraade/Soe/DKLAKE812",
+   "area_km2": 0.06,
+   "catchment": "DK2.4 Køge bugt",
+   "municipality": "Solrød",
+   "type": "LWTYPE10",
+   "origin_class": "Naturlig"
+  },
+  "official_status": {
+   "source": "Vandområdeplan 2021-2027 basisanalyse (vp3basis2019), WFS vp3basis2019:vp3_basis_2019_soe_overordnet",
+   "data_window": "roughly 2014-2018 - the VP3 basis analysis; NOT current",
+   "ecological_status": "God økologisk tilstand",
+   "ecological_basis": "Assessed on the phytoplankton quality element only, from chlorophyll data.",
+   "chemical_status": "Ukendt kemisk tilstand - never determined",
+   "at_risk": "Nej"
+  },
+  "what_is_not_measured": [
+   "Not a designated bathing water, so it is outside the badevand sampling programme. The four bathing waters within 3 km are all coastal.",
+   "Chemical status has never been assessed - the field reads 'ukendt'.",
+   "No litter, plastic or macro-waste monitoring of any kind.",
+   "No odour, fish-kill or oxygen series.",
+   "The ecological assessment rests on one quality element, chlorophyll, in a window that ended around 2018."
+  ],
+  "clarity_claim": {
+   "claim": "'den klareste på Sjælland' - the clearest lake on Zealand",
+   "source": "da.wikipedia.org/wiki/Karlstrup_Kalkgrav",
+   "citation_year": null,
+   "page_last_edited": "2025-07-24",
+   "assessment": "Uncited and undated. The page carries it forward but there is no evidence it was ever re-checked against a measurement. It should not be treated as a current statement of condition."
+  },
+  "physical_setting": {
+   "depth_m": 14,
+   "water_level": "held about 4 m below sea level by a pump station",
+   "pumped_to_sea_m3_per_year": 600000,
+   "circulation": "Wikipedia notes 'ringe cirkulation i søen' - poor circulation, with cold water immediately below a warm surface layer.",
+   "implication": "A deep, poorly-circulating basin is the configuration that stratifies and goes anoxic under nutrient load. That is a reason NOT to use it as a receiving water, and it is independent of how clean it is now."
+  },
+  "resident_report": {
+   "reported": "algal growth, some odour, fish dying out where there had been a fishing culture, and accumulated plastic waste from visitors",
+   "status": "UNVERIFIED HERE - and unverifiable from any published series, which is the point",
+   "consistent_with": "Local news reports of heavy summer visitor pressure and litter; the put-and-take fishery leased to Solrød Sportsfisker Klub Regnbuen; and the poor-circulation setting above."
+  }
  }
 }

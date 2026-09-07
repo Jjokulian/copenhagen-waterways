@@ -16,37 +16,100 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, ROOT, log, read_json
 
 MANUAL = os.path.join(ROOT, "data", "manual")
+RAWD = os.path.join(ROOT, "data", "raw")
 
-# Source control targets. Each is a substance whose route to the sea is urban runoff,
-# where the only effective intervention is upstream of the drain.
-CHEMICALS = [
-    ("6PPD / 6PPD-quinone",
-     "tyre antiozonant and its oxidation product",
-     "Acutely lethal to coho salmon at nanogram-per-litre concentrations — among the "
-     "most toxic substances ever found in urban runoff. Identified as a substance of "
-     "concern under REACH in 2023; the Netherlands and Austria are preparing a joint "
-     "restriction dossier, a process that runs 2–3 years before anything binds.",
-     "Support the restriction. It is already moving and needs no new instrument."),
-    ("Copper",
-     "brake pads, roofing, antifouling",
-     "Highly toxic to fish and invertebrates at low concentrations, and among the "
-     "highest metals in Danish basin sludge. Reformulated brake pads are proven "
-     "technology — California legislated copper out of them and the industry complied.",
-     "A product standard, not a discharge permit. Denmark could ask for one at EU level "
-     "and adopt a national procurement rule immediately."),
-    ("Zinc",
-     "galvanised surfaces, tyres, roofing",
-     "The highest-concentration metal in the Danish stormwater typetal, from surfaces "
-     "that are chosen at the design stage and then last fifty years.",
-     "Building regulation. A rule about roof and gutter materials in new construction "
-     "costs nothing and compounds."),
-    ("PFAS",
-     "everything",
-     "The September 2025 EU water agreement adds a limit for 25 PFAS to the priority "
-     "substances list. Persistent, mobile, and not removed by any of the passive "
-     "treatment described below.",
-     "The one class on this list where end-of-pipe treatment genuinely cannot help, "
-     "which makes it the clearest case for a ban rather than a limit."),
+# Amager island, traced by hand from the coastline. Used only to split Copenhagen's
+# catchments into "could reach Vestamager by gravity" and "the harbour is in the way".
+AMAGER = [(12.585, 55.700), (12.640, 55.700), (12.665, 55.640), (12.660, 55.590),
+          (12.610, 55.545), (12.545, 55.575), (12.545, 55.630), (12.565, 55.665),
+          (12.570, 55.686)]
+VESTAMAGER_HA = 2000.0     # the 1939-43 reclamation, ~20 km2
+
+
+def _inside(x, y, poly):
+    c = False
+    for i in range(len(poly)):
+        x1, y1 = poly[i]
+        x2, y2 = poly[(i + 1) % len(poly)]
+        if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1) + x1:
+            c = not c
+    return c
+
+
+def amager_split():
+    """Combined-sewered impervious hectares, on Amager and on the mainland."""
+    out = {"Amager": 0.0, "mainland": 0.0}
+    for f in read_json(os.path.join(RAWD, "sp_kloakoplande.geojson"))["features"]:
+        p, g = f["properties"], f.get("geometry")
+        if not g or (p.get("kloaksystem_status") or "") != "Fælleskloakeret":
+            continue
+        xs, ys = [], []
+        def walk(c):
+            if isinstance(c[0], (int, float)):
+                xs.append(c[0]); ys.append(c[1])
+            else:
+                for q in c:
+                    walk(q)
+        walk(g["coordinates"])
+        cx, cy = sum(xs) / len(xs), sum(ys) / len(ys)
+        key = "Amager" if _inside(cx, cy, AMAGER) else "mainland"
+        out[key] += p.get("befaestet_areal_status") or 0
+    return out
+
+
+# Source control targets, sorted by EVOLUTIONARY PRIOR rather than by toxicity - which
+# is the axis that decides whether adaptation and burial are available at all.
+CHEM_TIERS = [
+    ("Deep prior — essential elements", [
+        ("Zinc", "galvanised surfaces, tyres, roofing",
+         "**Essential micronutrient.** Life has transporters, metallothioneins and "
+         "homeostasis for it, evolved over billions of years of exposure.",
+         "Binds to particles and organic matter and buries in sediment.",
+         "**Reduce the flux, and keep the sink working.** A building-regulation rule on "
+         "roof and gutter materials costs nothing and compounds over the fifty-year "
+         "life of a roof. Not a ban."),
+        ("Copper", "brake pads, roofing, antifouling",
+         "**Essential, but a narrow window.** The prior exists and is thinner than "
+         "zinc's — copper is acutely toxic to bivalve larvae and to fish olfaction at "
+         "very low concentrations, which is to say to exactly the filter feeders and "
+         "grazers whose loss the rest of this argument turns on.",
+         "Same as zinc: particle-bound, buried.",
+         "A product standard for brake pads. California legislated copper out of them "
+         "and the industry complied."),
+    ]),
+    ("Weak or no prior — elements with no biological role", [
+        ("Cadmium, mercury, lead", "combustion, legacy paint and plumbing, industry",
+         "**No metabolic function.** Being an element is not the same as having a "
+         "prior; life has detoxification for these, not use.",
+         "Buried — but mercury methylates in anoxic sediment, so the sink partly "
+         "converts it into a worse form.",
+         "Already restricted, and the restrictions largely worked. What is left is the "
+         "legacy stock in sediment, which is a bed-integrity question rather than a "
+         "chemicals one."),
+    ]),
+    ("No prior, but degradable — novel entities that break down", [
+        ("6PPD / 6PPD-quinone", "tyre antiozonant and its oxidation product",
+         "**No organism has ever met this molecule.** Acutely lethal to coho salmon at "
+         "nanogram-per-litre concentrations — among the most toxic substances ever "
+         "found in urban runoff, at levels no evolved tolerance covers.",
+         "It degrades, so the standing stock tracks the flux.",
+         "Stop making it. A substance of concern under REACH since 2023, with a "
+         "Dutch-Austrian restriction dossier in preparation. **The fastest payoff on "
+         "this list**, because stopping the input drains the stock."),
+    ]),
+    ("No prior and no sink — novel and permanent", [
+        ("PFAS", "textiles, packaging, coatings, foams, cosmetics — and a small number "
+         "of uses nothing else can do",
+         "**No prior and no degradation route.** Nothing metabolises them; nothing "
+         "buries them irreversibly. Every gram emitted is still in circulation.",
+         "None. That is the category difference.",
+         "**Restrict the mass use, not the molecule.** Reserve it for applications "
+         "where no substitute exists and the volumes are small — reactor and "
+         "chemical-plant seals, medical implants, some aerospace. This already has a "
+         "name in the literature and in EU chemicals policy: the *essential-use* "
+         "concept. The September 2025 EU water agreement adds a limit for 25 PFAS, and "
+         "a concentration limit is a different instrument from a use restriction."),
+    ]),
 ]
 
 # Passive stormwater treatment performance, from the pond and biofilter literature.
@@ -207,38 +270,139 @@ def main():
       "wetland or a quarry rather than the bay.\n")
     a("![Køge Bugt: what drains into it](koege_bugt_system.svg)\n")
     a("*Real: coastline, combined-sewer catchments, overflow structures, treatment "
-      "plants, the quarry. Green and dashed: proposal, not data.*\n")
-    a("**The chalk quarry case, assessed honestly.** Karlstrup Kalkgrav sits behind "
-      "Solrød Strand, separated from Køge Bugt by the motorway. Its water level is held "
+      "plants, and the chalk quarry discussed below. Green and dashed: proposal, not "
+      "data.*\n")
+    a("**Case one: a flooded chalk quarry.** Karlstrup Kalkgrav sits behind Solrød "
+      "Strand, separated from Køge Bugt by the motorway. Its water level is held "
       "**four metres below sea level** by a pump station that already removes about "
-      "**600,000 m³ a year** and discharges it into the bay. As a piece of hydraulic "
-      "geometry it is close to ideal: a deep hole below sea level, adjacent to the "
-      "shore, with the pumping already installed.\n")
-    a("And it is the wrong site. It is Zealand's clearest lake, a protected geological "
-      "and recreational area, and the clarity is exactly what would be destroyed. "
-      "Anyone proposing to route stormwater into it would deserve to lose the argument, "
-      "and I am not proposing it.\n")
-    a("What the case establishes is the **specification**, which is worth having:\n")
+      "**600,000 m³ a year** and discharges it into the bay. As hydraulic geometry it "
+      "looks close to ideal: a deep hole below sea level, next to the shore, with the "
+      "pumping installed.\n")
+    a("**It is the wrong site, and my first reason for saying so was out of date.** "
+      "I originally rejected it as \"Zealand's clearest lake\", which is what the "
+      "encyclopedia says. That claim carries no citation and no year. A resident who "
+      "knows the place reports algal growth, an odour, a declining fishery where there "
+      "had been a fishing culture, and accumulated plastic waste.\n")
+    a("So the useful question is not whether the lake is clean. It is **what would "
+      "have told us either way**, and the answer is close to nothing:\n")
+    kk = mon["karlstrup_kalkgrav"]
+    st = kk["official_status"]
+    a("| | |")
+    a("|---|---|")
+    a(f"| Registered as | {kk['water_body']['registered_as']} "
+      f"({kk['water_body']['id']}), {kk['water_body']['area_km2']} km², "
+      f"catchment {kk['water_body']['catchment']} |")
+    a(f"| Ecological status | **{st['ecological_status']}** — assessed on the "
+      "phytoplankton element only, from chlorophyll |")
+    a(f"| Chemical status | **{st['chemical_status']}** |")
+    a(f"| Data window | **{st['data_window']}** |")
+    a("| Bathing-water sampling | none — it is not a designated bathing water; the four "
+      "within 3 km are all coastal |")
+    a("| Litter, plastic, odour, fish kills | **not monitored by anything** |")
+    a("")
+    a("A lake carrying one number, from a chlorophyll series that ended around 2018, "
+      "with chemical status never determined and no instrument at all for the things "
+      "the resident describes. **The disagreement about its condition cannot be "
+      "settled from published data**, and that is the same failure this project keeps "
+      "finding: the condition people can smell is the condition nothing measures.\n")
+    a("And there is a better reason to reject the site, which does not depend on how "
+      "clean it is now. The lake is 14 m deep with **poor circulation** — cold water "
+      "immediately below a warm surface layer. That is precisely the configuration "
+      "that stratifies and goes anoxic under nutrient load. Directing stormwater into "
+      "it would reproduce Køge Bugt in miniature, in fresh water, half a kilometre "
+      "inland. **A deep, still hole is a bad treatment basin.** What treatment wants is "
+      "the opposite: shallow, wide, and vegetated.\n")
+
+    # ---- Vestamager
+    sp = amager_split()
+    am, ml = sp["Amager"], sp["mainland"]
+    a("### Case two: Vestamager, which is the right shape\n")
+    a("Behind the Amager dyke is a polder. Between 1939 and 1943 a 14 km dyke four "
+      "metres high was built across a shallow bay, channels were dug, and about "
+      f"**{VESTAMAGER_HA/100:.0f} km² was pumped dry**. Two pump stations still keep it "
+      "that way. It is Kalvebod Fælled, now part of Naturpark Amager.\n")
+    a("Everything the quarry only pretended to offer is actually there:\n")
+    a("| | |")
+    a("|---|---|")
+    a(f"| Area | ~{VESTAMAGER_HA:,.0f} ha, held below sea level |")
+    a("| Hydraulics | already a pumped polder — the pumps, dyke and channels exist |")
+    a("| Feed | gravity, from an island that sits above it |")
+    a("| Shape | shallow, wide and vegetated — what settling and uptake actually want |")
+    a("| Ownership | public |")
+    a("")
+    a("**And Amager is a third of the problem.** Splitting Copenhagen's "
+      "combined-sewered impervious area by island:\n")
+    a("| | Impervious hectares on the combined system |")
+    a("|---|---:|")
+    a(f"| **Amager** — upstream of the polder, no harbour to cross | **{am:,.0f} ha "
+      f"({am/(am+ml)*100:.0f}%)** |")
+    a(f"| Mainland Copenhagen | {ml:,.0f} ha ({ml/(am+ml)*100:.0f}%) |")
+    a("")
+    a("Stormwater treatment wetlands are conventionally sized at a few per cent of the "
+      "impervious area draining to them. For Amager's share that is:\n")
+    a("| Sizing | Treatment area | Share of Vestamager |")
+    a("|---|---:|---:|")
+    for f_, lbl in ((0.01, "1% — a lean wet pond"), (0.02, "2%"), (0.03, "3%"),
+                    (0.05, "5% — generous, wetland-type")):
+        a(f"| {lbl} | {am*f_:,.0f} ha | **{am*f_/VESTAMAGER_HA*100:.1f}%** |")
+    a("")
+    a(f"**Between half a per cent and three per cent of the polder would do it.** That "
+      "is the difference between this and the quarry: the quarry was two orders of "
+      "magnitude too small and the wrong shape; this is two orders of magnitude larger "
+      "than needed and exactly the right shape.\n")
+
+    a("#### The objections, which are real\n")
+    for h, t in [
+        ("Natura 2000.",
+         "A bird protection area occupies the south-western corner, with no public "
+         "access. That is a binding legal constraint on siting — though not "
+         "automatically an argument against, because a shallow treatment wetland *is* "
+         "wader habitat and the polder's water levels are already managed for exactly "
+         "that. The tension is real and it is about which hectares, not whether."),
+        ("Contaminant banking.",
+         "This is the serious one. Everything the treatment removes — metals, PAH, tyre "
+         "wear, microplastics — accumulates in the sediment, and accumulating it inside "
+         "a bird reserve puts it into a food chain. Treatment cells would have to sit "
+         "outside the designated area, be lined, and be dredged on a schedule that is "
+         "actually kept. A pond that is never dredged becomes the thing it was built to "
+         "prevent, and doing that in a nature park would be worse than not building it."),
+        ("It only serves a third of the city.",
+         f"The mainland's {ml:,.0f} ha cannot reach the polder by gravity — the harbour "
+         "is in the way. This is not the answer for Copenhagen. It is a good answer for "
+         "Amager, and Amager is where a third of the combined-sewered surface is."),
+        ("Groundwater and the polder's own water balance.",
+         "Adding a large managed inflow to a basin whose level is maintained by pumping "
+         "changes the pumping duty and the salinity gradient. Neither is exotic; both "
+         "have to be modelled before anyone draws a line on a map."),
+    ]:
+        a(f"- **{h}** {t}")
+    a("")
+    a("*What this is:* the case that the site meets the physical criteria, which is a "
+      "much weaker claim than that it should be built. Nobody has run the numbers, and "
+      "the four objections above are where the argument would actually be won or lost.\n")
+
+    a("#### The specification, generalised\n")
+    a("What the two cases together establish is the shopping list:\n")
     for t in [
-        "a void of the order of 10⁵–10⁶ m³, which disused extraction sites routinely are",
-        "a bed below the receiving water level, so the flow is gravity-fed or already pumped",
-        "no protection status and no existing ecological value to destroy",
-        "and — the part that makes it work — **no hydraulic connection to the sea**, so "
-        "there is no threshold at which it discharges",
+        "**shallow and wide, not deep and still** — settling and plant uptake need "
+        "surface area, and a deep unmixed basin stratifies and goes anoxic",
+        "**below the contributing catchment**, so the feed is gravity",
+        "**not hydraulically connected to the sea**, so there is no threshold at which "
+        "it discharges",
+        "**an area of order 1–5% of the impervious catchment**",
+        "**and a dredging obligation written down before it is built**",
     ]:
         a(f"- {t}")
     a("")
-    a("Denmark has a great many disused gravel and chalk workings and a public register "
-      "of raw-material extraction areas. Screening that register against those four "
-      "criteria is a desk exercise. It has not been done for this purpose, and the fact "
-      "that it has not been done is the finding.\n")
-    a("*The obvious objection, stated before anyone else has to.* Anything infiltrating "
-      "toward the chalk aquifer is a groundwater question, and Copenhagen drinks its "
-      "groundwater. A terminal water for stormwater has to be lined, or it has to sit "
-      "somewhere the aquifer is already written off, or it has to discharge to a "
-      "surface watercourse after treatment. That constraint is real and it narrows the "
-      "site list considerably. It does not eliminate it.\n")
-
+    a("Denmark has a public register of raw-material extraction areas and a great many "
+      "low-lying reclaimed and drained areas. Screening them against that list is a "
+      "desk exercise. It has not been done for this purpose, and that it has not been "
+      "done is the finding.\n")
+    a("*The standing objection.* Anything infiltrating toward the chalk aquifer is a "
+      "groundwater question, and Copenhagen drinks its groundwater. A terminal water "
+      "has to be lined, or sit where the aquifer is already written off, or discharge "
+      "to a surface watercourse after treatment. That narrows the site list "
+      "considerably. It does not empty it.\n\n")
     # ---- 3
     a("### 3. Light treatment at high throughput, which is a different machine\n")
     a("Separating rainwater does not mean discharging it raw. Untreated urban surface "
@@ -282,28 +446,94 @@ def main():
       "never dredged becomes the thing it was built to prevent.\n")
 
     # ---- 4
-    a("### 4. Ban the chemicals, rather than filtering them\n")
-    a("The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says that nitrogen "
+    a("### 4. Source control, sorted by what life has met before\n")
+    a("The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says nitrogen "
       "produces mush rather than meadow because the organisms that would have used it "
-      "well are gone. If that is right, then the toxicants that removed them are "
-      "upstream of the nutrient problem, and no amount of nutrient policy reaches "
-      "them.\n")
-    a("Four concrete targets, with what is already in motion:\n")
-    for name, source, why, ask in CHEMICALS:
-        a(f"**{name}** — *{source}*")
-        a(f"  {why}")
-        a(f"  → **{ask}**\n")
-    a("The general principle is unglamorous and decisive: **you cannot filter out what "
-      "you can decline to manufacture.** A substance regulated at the point of "
-      "discharge has to be caught at 19,665 outfalls. The same substance regulated at "
-      "the point of sale has to be caught once. Denmark regulates the outfall and "
-      "imports the product.\n")
-    a("*This is the least developed section here, and the one where I am furthest "
-      "outside what this project has actually measured.* We have not established that "
-      "any of these four is a binding constraint in Danish coastal water — only that "
-      "the mechanism is well founded, that the substances are present, and that the "
-      "monitoring which would settle it rests on eleven stations that deliberately "
-      "exclude the roads and industrial catchments where the substances come from.\n")
+      "well are gone. If that is right, the substances that removed them sit upstream "
+      "of the nutrient problem, and no amount of nutrient policy reaches them.\n")
+    a("The useful way to sort those substances is **not by how toxic they are**. It is "
+      "by whether life has an **evolutionary prior** for them — whether anything has "
+      "met the molecule before. That single question decides whether adaptation is "
+      "available, whether a sink exists, and therefore which instrument can work at "
+      "all.\n")
+    a("| Prior | Adaptation available? | Sink? | So the instrument is |")
+    a("|---|---|---|---|")
+    for tier, adapt, sink, instr in [
+        ("**Deep** — essential elements (Zn, Cu)",
+         "Yes — transporters, homeostasis", "Yes — particle-bound burial",
+         "**reduce the flux**"),
+        ("**Weak** — no biological role (Cd, Hg, Pb)",
+         "Detoxification only", "Yes, but Hg methylates",
+         "**restrict, then guard the sediment**"),
+        ("**None**, degradable (6PPD-q)", "No", "Degradation", "**stop production**"),
+        ("**None**, permanent (PFAS)", "No", "**None**", "**restrict the mass use**"),
+    ]:
+        a(f"| {tier} | {adapt} | {sink} | {instr} |")
+    a("")
+    a("That is a correction to an earlier draft of this page, which put all four on one "
+      "list with one remedy. They are different categories of threat and they need "
+      "different instruments.\n")
+
+    for tier, rows in CHEM_TIERS:
+        a(f"#### {tier}\n")
+        for name, source, prior, sink, ask in rows:
+            a(f"**{name}** — *{source}*\n")
+            a(f"- **Prior:** {prior}")
+            a(f"- **Sink:** {sink}")
+            a(f"- **Ask:** {ask}\n")
+
+    a("#### The PFAS case, in one analogy\n")
+    a("The instrument for PFAS is the one used for antibiotics, and for the same "
+      "reason. The harm from antibiotics does not come from the molecule; it comes "
+      "from **volume and ubiquity**, which is what breeds resistance. So the response "
+      "was never to ban them — it was to reserve them for the cases where nothing else "
+      "works, and to stop putting them in livestock feed as a growth promoter.\n")
+    a("PFAS is the same shape. The harm is environmental saturation by a substance "
+      "nothing removes. Reactor seals and medical implants are not the problem; "
+      "impregnated textiles, food packaging, cosmetics and ski wax are, because that is "
+      "where the tonnage and the dispersal are. **Mass use is the target, not the "
+      "chemistry.** That distinction is already the basis of the EU's essential-use "
+      "framework, so the argument does not need to be invented — only applied.\n")
+
+    a("#### Two caveats on the metals, which are this project's own findings\n")
+    hz = mon["hazardous_substances"]
+    zn, cu = hz["typetal_ug_per_l"]["Zink"], hz["typetal_ug_per_l"]["Kobber"]
+    a(f"Zinc is the largest metal term in the Danish stormwater typetal by an order of "
+      f"magnitude — **{zn[0]:,.0f} µg/l** in combined overflow and {zn[1]:,.0f} µg/l in "
+      f"separate stormwater, against {cu[0]:,.0f} and {cu[1]:,.0f} for copper, with a "
+      f"maximum observed of {zn[2]:,.0f}. The flux is not small.\n")
+    a("**The sink is conditional, and the condition is failing.** Metals bury as "
+      "sulphides in anoxic sediment and come back out on re-oxidation. "
+      "[SEABED.md](#SEABED.md) computes that a dead bed crosses the resuspension "
+      "threshold several times more often than a living one. So sediment is not a "
+      "terminal sink — it is a store that the same degradation we are worried about "
+      "keeps re-opening. Burial only counts while the bed stays intact, which ties "
+      "metal policy directly to bed integrity and to trawling. The two cannot be "
+      "argued separately.\n")
+    a("**And adaptation has a specific price.** Communities do become metal-tolerant; "
+      "the phenomenon is well documented and has a name, pollution-induced community "
+      "tolerance. But tolerance at the community level is achieved by **losing the "
+      "sensitive species**, and the sensitive ones are disproportionately the slow, "
+      "structural, long-lived organisms. *Life adapts* and *the higher life is replaced "
+      "by the simple life* are the same sentence read two ways — which is the "
+      "mechanism this whole document is about, arriving from a different direction.\n")
+    a("None of that makes zinc a PFAS. It makes the metal case an argument about "
+      "**rate and community cost**, where the novel-entity case is an argument about "
+      "**permanence**. Different arguments, different remedies, and conflating them "
+      "weakens both.\n")
+
+    a("#### The general principle\n")
+    a("**You cannot filter out what you can decline to manufacture.** A substance "
+      "regulated at the point of discharge has to be caught at 19,665 outfalls. The "
+      "same substance regulated at the point of sale has to be caught once. Denmark "
+      "regulates the outfall and imports the product.\n")
+    a("*This remains the section furthest from what this project has measured.* We have "
+      "not established that any of these is a binding constraint in Danish coastal "
+      "water — only that the mechanisms are well founded, that the substances are "
+      "present, and that the monitoring which would settle it rests on eleven stations "
+      f"which in Miljøstyrelsen's own words are limiting for *{hz['excludes_heavy_catchments']}* "
+      "— the industrial areas and heavily trafficked roads the substances come from. "
+      f"The same programme reports {hz['counterpoint']}.\n")
 
     # ---- 5
     a("### 5. Rebuild the thing that used to absorb it\n")
