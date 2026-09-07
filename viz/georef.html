@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flood sheet georeferencing</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--ink:#e6edf3;--dim:#8b949e;--acc:#1f6feb}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);overflow:hidden;
+    font:13px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif}
+  #bar{height:46px;display:flex;align-items:center;gap:10px;padding:0 12px;
+    border-bottom:1px solid var(--line);background:var(--panel)}
+  #bar h1{font-size:14px;margin:0 8px 0 0}
+  select,button{background:#21262d;border:1px solid var(--line);color:var(--ink);
+    border-radius:5px;padding:5px 9px;font-size:12px;cursor:pointer}
+  button.primary{background:var(--acc);border-color:var(--acc)}
+  button:disabled{opacity:.4;cursor:default}
+  #wrap{position:absolute;top:46px;bottom:150px;left:0;right:0;display:flex}
+  .pane{flex:1;position:relative;overflow:hidden;border-right:1px solid var(--line)}
+  .pane:last-child{border-right:0}
+  .tag{position:absolute;top:8px;left:8px;z-index:5;background:rgba(13,17,23,.85);
+    padding:3px 8px;border-radius:4px;font-size:11px;color:var(--dim)}
+  #sheetbox{position:absolute;inset:0;overflow:auto;background:#000;cursor:crosshair}
+  #sheetimg{display:block;transform-origin:0 0}
+  #map{position:absolute;inset:0}
+  #foot{position:absolute;bottom:0;left:0;right:0;height:150px;overflow-y:auto;
+    border-top:1px solid var(--line);background:var(--panel);padding:8px 12px}
+  table{width:100%;border-collapse:collapse;font-size:11.5px;font-variant-numeric:tabular-nums}
+  th,td{text-align:left;padding:3px 6px;border-bottom:1px solid #21262d}
+  th{color:var(--dim);font-weight:600}
+  .hint{color:var(--dim);font-size:11.5px}
+  .warn{color:#ffb86b}.ok{color:#3fb950}.err{color:#ff7b72}
+  .dot{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;
+    border:2px solid #fff;background:var(--acc);pointer-events:none}
+  #out{width:100%;height:110px;background:#0d1117;color:#8b949e;border:1px solid var(--line);
+    border-radius:5px;font:11px/1.4 ui-monospace,monospace;padding:6px;display:none}
+</style>
+</head>
+<body>
+<div id="bar">
+  <h1>Georeference flood sheets</h1>
+  <select id="sheet"></select>
+  <span class="hint" id="meta"></span>
+  <span style="flex:1"></span>
+  <button id="undo">Undo point</button>
+  <button id="clear">Clear sheet</button>
+  <button id="copy" class="primary">Copy control JSON</button>
+</div>
+
+<div id="wrap">
+  <div class="pane">
+    <div class="tag">1 — click a landmark on the flood sheet</div>
+    <div id="sheetbox"><img id="sheetimg" alt="flood sheet"><div id="dots"></div></div>
+  </div>
+  <div class="pane">
+    <div class="tag">2 — click the same landmark on the reference map</div>
+    <div id="map"></div>
+  </div>
+</div>
+
+<div id="foot">
+  <div class="hint" id="status"></div>
+  <table id="tbl"><thead><tr><th>#</th><th>sheet px</th><th>lon, lat</th>
+    <th>implied m/px</th><th>vs scale bar</th></tr></thead><tbody></tbody></table>
+  <textarea id="out" readonly spellcheck="false"></textarea>
+</div>
+
+<script>
+/**
+ * Two clicks per sheet is enough: every sheet has north up (the north arrow confirms it),
+ * so the mapping is lon = a*px + b, lat = c*py + d with no rotation term. A third point
+ * is not needed to solve it, but any extra point gives a residual, which is the only way
+ * to know the registration is right rather than merely plausible.
+ *
+ * The right-hand reference map draws the city's own vector layers - coastline, water,
+ * catchment outlines - so the landmarks being matched come from the same authority that
+ * published the sheets. No external basemap, no tile service.
+ */
+const B="../data/derived/floodmaps/", V="../data/derived/viewer/";
+let SHEETS={}, sheet=null, pending=null;
+const control=JSON.parse(localStorage.getItem("floodcontrol")||"{}");
+
+const $=id=>document.getElementById(id);
+const img=$("sheetimg"), dots=$("dots"), box=$("sheetbox");
+
+const map=new maplibregl.Map({container:"map",
+  style:{version:8,sources:{},layers:[{id:"bg",type:"background",paint:{"background-color":"#0d1117"}}]},
+  center:[12.5655,55.6805],zoom:11,maxPitch:0});
+map.addControl(new maplibregl.NavigationControl({showCompass:false}),"bottom-right");
+
+map.on("load",async()=>{
+  for(const [name,paint,type] of [
+    ["water",{"fill-color":"#1b3a5c","fill-opacity":.9},"fill"],
+    ["coast",{"line-color":"#4a7ba8","line-width":1.1},"line"],
+    ["catchments",{"line-color":"#e8734a","line-width":2,"line-dasharray":[3,2]},"line"],
+    ["sewer_catchments",{"line-color":"#2d3742","line-width":.5},"line"]]){
+    try{
+      const r=await fetch(V+name+".geojson"); if(!r.ok) continue;
+      map.addSource(name,{type:"geojson",data:await r.json()});
+      map.addLayer({id:name,source:name,type,paint});
+    }catch(e){ console.warn(name,e); }
+  }
+  boot();
+});
+
+async function boot(){
+  SHEETS=await (await fetch(B+"_sheets.json")).json();
+  const sel=$("sheet");
+  for(const k of Object.keys(SHEETS).sort()){
+    const o=document.createElement("option"); o.value=k;
+    o.textContent=`${k}  (${(control[k]?.points||[]).length} pts)`; sel.appendChild(o);
+  }
+  sel.onchange=()=>load(sel.value);
+  load(sel.value);
+}
+
+function load(k){
+  sheet=k; pending=null;
+  const m=SHEETS[k];
+  img.src=B+k+".preview.jpg";
+  img.onload=()=>{ drawDots(); };
+  $("meta").textContent=`${m.catchment} — scale bar ${m.scalebar_m} m / ${m.scalebar_px} px `+
+    `= ${m.m_per_px.toFixed(3)} m/px, frame ${m.frame[2]-m.frame[0]+1}×${m.frame[3]-m.frame[1]+1} px`;
+  // frame the catchment on the reference map
+  fetch(V+"catchments.geojson").then(r=>r.json()).then(gj=>{
+    const f=gj.features.find(x=>(x.properties.opland_kort_navn||"")===m.catchment);
+    if(!f) return;
+    let b=[[180,90],[-180,-90]];
+    (function walk(c){ if(typeof c[0]==="number"){
+        b[0][0]=Math.min(b[0][0],c[0]); b[0][1]=Math.min(b[0][1],c[1]);
+        b[1][0]=Math.max(b[1][0],c[0]); b[1][1]=Math.max(b[1][1],c[1]);
+      } else c.forEach(walk); })(f.geometry.coordinates);
+    map.fitBounds(b,{padding:40,duration:0});
+  });
+  render();
+}
+
+box.onclick=e=>{
+  const r=img.getBoundingClientRect();
+  const x=(e.clientX-r.left)/r.width*img.naturalWidth;
+  const y=(e.clientY-r.top)/r.height*img.naturalHeight;
+  if(x<0||y<0||x>img.naturalWidth||y>img.naturalHeight) return;
+  const s=SHEETS[sheet].preview.scale_to_frame;
+  const f=SHEETS[sheet].frame;
+  // preview covers the map frame only; convert back to full-render pixel coordinates
+  pending={px:f[0]+x*s, py:f[1]+y*s, _vx:x, _vy:y};
+  render();
+};
+
+map.on("click",e=>{
+  if(!pending){ flash("Click the flood sheet first, then the same point here."); return; }
+  const pts=(control[sheet] ||= {points:[]}).points;
+  pts.push({px:Math.round(pending.px), py:Math.round(pending.py),
+            lon:+e.lngLat.lng.toFixed(6), lat:+e.lngLat.lat.toFixed(6),
+            _vx:pending._vx, _vy:pending._vy});
+  pending=null; save(); render(); drawDots();
+});
+
+function save(){
+  localStorage.setItem("floodcontrol",JSON.stringify(control));
+  const sel=$("sheet");
+  for(const o of sel.options) o.textContent=`${o.value}  (${(control[o.value]?.points||[]).length} pts)`;
+}
+
+function drawDots(){
+  dots.innerHTML="";
+  const r=img.getBoundingClientRect(), bb=box.getBoundingClientRect();
+  for(const [i,p] of ((control[sheet]?.points)||[]).entries()){
+    const d=document.createElement("div"); d.className="dot";
+    d.style.left=(p._vx/img.naturalWidth*r.width+(r.left-bb.left)+box.scrollLeft)+"px";
+    d.style.top=(p._vy/img.naturalHeight*r.height+(r.top-bb.top)+box.scrollTop)+"px";
+    d.title="point "+(i+1); dots.appendChild(d);
+  }
+}
+
+/** Least-squares fit of the two independent axes, plus residuals in metres. */
+function solve(pts){
+  if(pts.length<2) return null;
+  const fit=(u,v)=>{const n=u.length,su=u.reduce((a,b)=>a+b,0),sv=v.reduce((a,b)=>a+b,0),
+    suu=u.reduce((a,b)=>a+b*b,0),suv=u.reduce((a,b,i)=>a+b*v[i],0),den=n*suu-su*su;
+    if(Math.abs(den)<1e-12) return null;
+    const a=(n*suv-su*sv)/den; return [a,(sv-a*su)/n];};
+  const X=fit(pts.map(p=>p.px),pts.map(p=>p.lon));
+  const Y=fit(pts.map(p=>p.py),pts.map(p=>p.lat));
+  if(!X||!Y) return null;
+  const res=pts.map(p=>{
+    const dlon=(X[0]*p.px+X[1])-p.lon, dlat=(Y[0]*p.py+Y[1])-p.lat;
+    const lonm=111320*Math.cos(p.lat*Math.PI/180);
+    return Math.hypot(dlon*lonm,dlat*111320);});
+  const lat0=pts.reduce((a,p)=>a+p.lat,0)/pts.length;
+  return {X,Y,res,rms:Math.sqrt(res.reduce((a,b)=>a+b*b,0)/res.length),
+          mpp:Math.abs(X[0])*111320*Math.cos(lat0*Math.PI/180)};
+}
+
+function render(){
+  const pts=(control[sheet]?.points)||[], m=SHEETS[sheet];
+  const s=solve(pts), tb=$("tbl").querySelector("tbody");
+  tb.innerHTML="";
+  pts.forEach((p,i)=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td>${i+1}</td><td>${p.px}, ${p.py}</td>
+      <td>${p.lon.toFixed(5)}, ${p.lat.toFixed(5)}</td>
+      <td>${s?s.mpp.toFixed(3):"—"}</td>
+      <td>${s?(s.res[i]).toFixed(1)+" m residual":"—"}</td>`;
+    tb.appendChild(tr);
+  });
+  let msg;
+  if(pending) msg=`<span class="warn">Sheet point captured at ${Math.round(pending.px)}, ${Math.round(pending.py)} — now click the same place on the reference map.</span>`;
+  else if(pts.length<2) msg=`<span class="hint">${2-pts.length} more point(s) needed. Pick things you can identify on both: a bridge, a quay corner, a lake tip, a large junction. Spread them far apart.</span>`;
+  else{
+    const drift=(s.mpp-m.m_per_px)/m.m_per_px*100;
+    const bad=Math.abs(drift)>4||s.rms>40;
+    msg=`<span class="${bad?'err':'ok'}">Fit: ${s.mpp.toFixed(3)} m/px vs scale bar ${m.m_per_px.toFixed(3)} `+
+        `(${drift>=0?"+":""}${drift.toFixed(1)}%), RMS residual ${s.rms.toFixed(1)} m.</span> `+
+        (bad?`<span class="hint">That disagrees with the printed scale bar — check the points, or add a third.</span>`
+            :`<span class="hint">Consistent with the scale bar. Add a third point to confirm.</span>`);
+  }
+  $("status").innerHTML=msg;
+}
+
+function flash(t){ $("status").innerHTML=`<span class="warn">${t}</span>`; }
+
+$("undo").onclick=()=>{ (control[sheet]?.points||[]).pop(); pending=null; save(); render(); drawDots(); };
+$("clear").onclick=()=>{ if(control[sheet]) control[sheet].points=[]; pending=null; save(); render(); drawDots(); };
+$("copy").onclick=async()=>{
+  const out=$("out");
+  out.style.display="block";
+  out.value=JSON.stringify(control,null,1);
+  out.select();
+  try{ await navigator.clipboard.writeText(out.value); flash("Copied. Save as data/manual/floodmap_control.json, then run: python3 scripts/floodmaps.py georef"); }
+  catch(e){ flash("Copy the JSON below into data/manual/floodmap_control.json, then run: python3 scripts/floodmaps.py georef"); }
+};
+window.addEventListener("resize",drawDots);
+box.addEventListener("scroll",drawDots);
+</script>
+</body>
+</html>

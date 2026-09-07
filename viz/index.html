@@ -39,6 +39,7 @@
   .stats b{color:var(--ink);font-variant-numeric:tabular-nums}
   .stats p{margin:0 0 7px}
   .warn{color:#ffb86b}
+  .sub code{background:#21262d;padding:1px 4px;border-radius:3px;font-size:10.5px}
   #detail{position:absolute;top:12px;right:12px;width:330px;max-height:calc(100% - 24px);
     overflow-y:auto;z-index:3;background:rgba(22,27,34,.96);border:1px solid var(--line);
     border-radius:8px;padding:12px 14px;display:none}
@@ -79,6 +80,8 @@
   </div>
 
   <div class="grp" id="layers"></div>
+
+  <div class="grp" id="extras"></div>
 
   <div class="grp">
     <h2>Highlight</h2>
@@ -169,6 +172,7 @@ map.addControl(new maplibregl.ScaleControl({unit:"metric"}),"bottom-left");
 
 const counts = {};
 let basinsData = null;   // kept so the exaggeration control can re-set the source data
+const FLOOD = [];        // ids of the recovered flood-model raster layers
 
 /** Rough polygon area in m2 (equirectangular shoelace) - only for scaling the extrusion. */
 function ringArea(ring){
@@ -261,6 +265,7 @@ async function load(){
     map.addLayer(spec);
   }
   applyExag();
+  await loadExtras();
   buildUI();
   await loadStats();
   document.getElementById("loading").remove();
@@ -284,6 +289,70 @@ function buildUI(){
     }
     host.appendChild(d);
   }
+}
+
+/**
+ * The 2012 flood model, recovered from its PDFs, and the field observations meant to
+ * check it. Both are optional: the overlays only exist once control points have been
+ * set in georef.html, and observations only once someone has walked in the rain.
+ */
+async function loadExtras(){
+  const host=document.getElementById("extras");
+  let rows="<h2>Recovered flood model (2012)</h2>";
+
+  let geo=null;
+  try{ const r=await fetch(B+"floodmaps.json"); if(r.ok) geo=await r.json(); }catch(e){}
+  const sheets=geo?Object.keys(geo):[];
+  if(!sheets.length){
+    rows+=`<div class="sub">Not georeferenced yet. Run <code>floodmaps.py render extract</code>,
+      set two control points per sheet in <a href="georef.html" style="color:#58a6ff">georef.html</a>,
+      then <code>floodmaps.py georef</code>.</div>`;
+  }else{
+    for(const k of sheets){
+      const g=geo[k];
+      map.addSource("flood-"+k,{type:"image",url:"../../"+g.image,coordinates:g.corners_for_maplibre});
+      map.addLayer({id:"flood-"+k,source:"flood-"+k,type:"raster",
+        paint:{"raster-opacity":.85},layout:{visibility:"visible"}});
+      FLOOD.push("flood-"+k);
+    }
+    rows+=`<label class="row"><input type="checkbox" id="floodtoggle" checked>
+      <span class="sw" style="background:#4a9de8"></span><span>Modelled flood depth</span>
+      <span class="count">${sheets.length} sheets</span></label>
+      <div class="sub" style="margin:2px 0 0">100-year event. Worst residual
+      ${Math.max(...sheets.map(k=>geo[k].rms_residual_m)).toFixed(0)} m — check before trusting.</div>`;
+  }
+
+  let obs=null;
+  try{ const r=await fetch(B+"observations.geojson"); if(r.ok) obs=await r.json(); }catch(e){}
+  rows+="<h2 style='margin-top:12px'>Field observations</h2>";
+  if(!obs||!obs.features.length){
+    rows+=`<div class="sub">Nothing logged yet. Walk with
+      <a href="log.html" style="color:#58a6ff">log.html</a> open on your phone, then
+      <code>observations.py import</code>. This is the layer no dataset has.</div>`;
+  }else{
+    map.addSource("obs",{type:"geojson",data:obs});
+    map.addLayer({id:"obs",source:"obs",type:"circle",paint:{
+      "circle-color":["match",["get","depth_class"],
+        "dry","#6e7681","<0.05","#d1e2f2","0.05-0.1","#9ac7e0",
+        "0.1-0.2","#519ccc","0.2-0.5","#1c6bb0","0.5-1","#08306b",">1","#4c0519","#888"],
+      "circle-radius":["interpolate",["linear"],["zoom"],10,4,16,12],
+      "circle-stroke-width":["case",["==",["get","drain"],"surcharging"],2.5,1],
+      "circle-stroke-color":["case",["==",["get","drain"],"surcharging"],"#ff5c7a","#0d1117"]}});
+    const sur=obs.features.filter(f=>f.properties.drain==="surcharging").length;
+    rows+=`<label class="row"><input type="checkbox" id="obstoggle" checked>
+      <span class="sw dot" style="background:#519ccc"></span><span>Observed water</span>
+      <span class="count">${obs.features.length}</span></label>`;
+    if(sur) rows+=`<div class="sub warn" style="margin:2px 0 0">${sur} drain(s) observed
+      surcharging — water leaving the pipe upward.</div>`;
+  }
+  host.innerHTML=rows;
+
+  const ft=document.getElementById("floodtoggle");
+  if(ft) ft.onchange=e=>FLOOD.forEach(id=>
+    map.setLayoutProperty(id,"visibility",e.target.checked?"visible":"none"));
+  const ot=document.getElementById("obstoggle");
+  if(ot) ot.onchange=e=>
+    map.setLayoutProperty("obs","visibility",e.target.checked?"visible":"none");
 }
 
 async function loadStats(){
@@ -315,16 +384,19 @@ const NICE={kloaksystem_status:"Sewer system (now)",kloaksystem_plan:"Sewer syst
   forventet_ibrugtagning:"Expected in use",pkt_navn:"Structure id",bgv_type:"Structure type",
   vol_sb:"Detention basin (m³)",vol_fbas:"Retention basin (m³)",komm_navn:"Municipality",
   godk_pe:"Capacity (PE)",rens_sta:"Treatment stage",_area_m2:"Footprint (m²)",
+  observed_at:"Observed",accuracy_m:"GPS accuracy (m)",depth_class:"Observed depth (m)",
+  flow:"Flow",drain:"Drain",rain:"Rain",note:"Note",
   _project_volume_m3:"Claimed volume, whole project (m³)",
   _share_volume_m3:"This polygon's area share (m³)",
   _depth_implied:"Implied mean depth (m)",_parts:"Polygons in this project"};
 
 map.on("click",e=>{
   const ids=LAYERS.filter(L=>map.getLayoutProperty(L.id,"visibility")!=="none").map(L=>L.id);
+  if(map.getLayer("obs")&&map.getLayoutProperty("obs","visibility")!=="none") ids.unshift("obs");
   const hits=map.queryRenderedFeatures(e.point,{layers:ids});
   if(!hits.length){ DETAIL.style.display="none"; return; }
   const f=hits[0], p=f.properties;
-  const L=LAYERS.find(x=>x.id===f.layer.id);
+  const L=LAYERS.find(x=>x.id===f.layer.id)||(f.layer.id==="obs"?{label:"Field observation"}:null);
   let rows="";
   for(const[k,v]of Object.entries(p)){
     if(HIDE.has(k)||v===null||v===""||v==="null") continue;

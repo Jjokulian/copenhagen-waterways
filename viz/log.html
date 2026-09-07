@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Rain field log</title>
+<style>
+  /*
+   * Built for one hand, in rain, on a phone. Big targets, no typing required for a
+   * complete record, everything kept in localStorage so it works with no signal.
+   * The depth options are the SAME six bands as the 2012 flood model sheets, so an
+   * observation can be compared against the model directly rather than by eye.
+   */
+  :root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--ink:#e6edf3;--dim:#8b949e;
+        --acc:#1f6feb;--ok:#3fb950;--warn:#ffb86b;--err:#ff7b72}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.45 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{position:sticky;top:0;z-index:9;background:var(--panel);
+    border-bottom:1px solid var(--line);padding:10px 14px}
+  h1{font-size:16px;margin:0 0 2px}
+  #fix{font-size:12px;color:var(--dim)}
+  #fix b{color:var(--ink);font-variant-numeric:tabular-nums}
+  main{padding:14px;padding-bottom:130px;max-width:640px;margin:0 auto}
+  fieldset{border:0;padding:0;margin:0 0 18px}
+  legend{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--dim);
+    padding:0 0 7px;font-weight:600}
+  .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:8px}
+  .opt{background:#21262d;border:1px solid var(--line);border-radius:9px;
+    padding:13px 8px;text-align:center;font-size:14px;cursor:pointer;user-select:none}
+  .opt.sel{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+  .opt small{display:block;color:var(--dim);font-size:11px;margin-top:2px}
+  .opt.sel small{color:#cfe0ff}
+  textarea{width:100%;background:#0d1117;border:1px solid var(--line);border-radius:9px;
+    color:var(--ink);padding:11px;font:15px/1.4 inherit;min-height:70px}
+  footer{position:fixed;bottom:0;left:0;right:0;background:var(--panel);
+    border-top:1px solid var(--line);padding:10px 14px;display:flex;gap:9px;
+    align-items:center}
+  button{flex:1;border:1px solid var(--line);background:#21262d;color:var(--ink);
+    border-radius:9px;padding:15px;font-size:15px;font-weight:600;cursor:pointer}
+  button.go{background:var(--acc);border-color:var(--acc);color:#fff;flex:2}
+  button:disabled{opacity:.45}
+  button.sm{flex:0 0 auto;padding:9px 12px;font-size:13px;font-weight:400}
+  #msg{padding:9px 14px;font-size:13px;text-align:center;min-height:20px}
+  #list{border-top:1px solid var(--line);margin-top:8px}
+  .rec{border-bottom:1px solid #21262d;padding:9px 2px;font-size:13px;display:flex;gap:9px}
+  .rec b{font-variant-numeric:tabular-nums}
+  .rec .x{margin-left:auto;color:var(--dim);cursor:pointer;padding:0 6px}
+  .sheet{position:fixed;inset:0;background:rgba(13,17,23,.97);z-index:20;padding:16px;
+    overflow-y:auto;display:none}
+  .sheet textarea{min-height:46vh;font:11px/1.35 ui-monospace,monospace}
+</style>
+</head>
+<body>
+<header>
+  <h1>Rain field log</h1>
+  <div id="fix">locating…</div>
+</header>
+
+<main>
+  <fieldset><legend>Water depth here</legend><div class="opts" id="depth"></div></fieldset>
+  <fieldset><legend>Is it moving?</legend><div class="opts" id="flow"></div></fieldset>
+  <fieldset><legend>The nearest drain</legend><div class="opts" id="drain"></div></fieldset>
+  <fieldset><legend>Rain right now</legend><div class="opts" id="rain"></div></fieldset>
+  <fieldset><legend>Note (optional)</legend>
+    <textarea id="note" placeholder="Where exactly, what it looked like, anything odd."></textarea>
+  </fieldset>
+  <div id="list"></div>
+</main>
+
+<footer>
+  <button class="go" id="save">Save observation</button>
+  <button class="sm" id="export">Export</button>
+</footer>
+<div id="msg"></div>
+
+<div class="sheet" id="sheet">
+  <p style="font-size:13px;color:#8b949e">
+    Save this as <code>data/manual/observations.import.json</code> in the project, then run
+    <code>python3 scripts/observations.py import</code>.</p>
+  <textarea id="out" readonly spellcheck="false"></textarea>
+  <div style="display:flex;gap:9px;margin-top:10px">
+    <button id="copy" class="go">Copy</button>
+    <button id="dl">Download</button>
+    <button id="close">Close</button>
+  </div>
+</div>
+
+<script>
+const FIELDS={
+  // depth classes mirror the 2012 model's legend so the two are directly comparable
+  depth:[["dry","dry","no standing water"],["<0.05","&lt;5 cm","wet, film"],
+         ["0.05-0.1","5–10 cm","over the sole"],["0.1-0.2","10–20 cm","mid-shoe to ankle"],
+         ["0.2-0.5","20–50 cm","shin to knee"],["0.5-1","50–100 cm","knee to waist"],
+         [">1","&gt;1 m",""]],
+  flow:[["standing","standing",""],["slow","slow",""],["fast","fast","visibly running"],
+        ["torrent","torrent","hard to stand in"]],
+  drain:[["clear","draining",""],["slow","slow",""],["blocked","blocked","leaves, ice, debris"],
+         ["surcharging","surcharging","water coming UP"],["none","no drain",""],
+         ["unseen","under water",""]],
+  rain:[["none","stopped",""],["light","light",""],["moderate","moderate",""],
+        ["heavy","heavy",""],["cloudburst","cloudburst",""]],
+};
+const sel={}, KEY="rainlog.v1";
+let recs=JSON.parse(localStorage.getItem(KEY)||"[]");
+let fix=null, watchId=null;
+const $=id=>document.getElementById(id);
+
+for(const [k,opts] of Object.entries(FIELDS)){
+  const host=$(k);
+  for(const [val,label,hint] of opts){
+    const d=document.createElement("div");
+    d.className="opt"; d.dataset.v=val;
+    d.innerHTML=label+(hint?`<small>${hint}</small>`:"");
+    d.onclick=()=>{ sel[k]=(sel[k]===val?null:val);
+      [...host.children].forEach(c=>c.classList.toggle("sel",c.dataset.v===sel[k]));
+      check(); };
+    host.appendChild(d);
+  }
+}
+
+function check(){ $("save").disabled = !(sel.depth && fix); }
+
+/* GPS. Accuracy is shown and stored: an observation logged at 40 m accuracy should not
+   later be treated as if it pinned a specific gully. */
+if(navigator.geolocation){
+  watchId=navigator.geolocation.watchPosition(p=>{
+    fix={lon:+p.coords.longitude.toFixed(6), lat:+p.coords.latitude.toFixed(6),
+         acc:Math.round(p.coords.accuracy)};
+    const q=fix.acc<=10?"var(--ok)":fix.acc<=30?"var(--warn)":"var(--err)";
+    $("fix").innerHTML=`<b>${fix.lat.toFixed(5)}, ${fix.lon.toFixed(5)}</b> · `+
+      `<span style="color:${q}">±${fix.acc} m</span> · ${recs.length} saved`;
+    check();
+  }, e=>{ $("fix").innerHTML=`<span style="color:var(--err)">no location: ${e.message}</span>`; },
+  {enableHighAccuracy:true, maximumAge:5000, timeout:20000});
+}else $("fix").textContent="this browser has no geolocation";
+
+$("save").onclick=()=>{
+  if(!fix||!sel.depth) return;
+  recs.push({t:new Date().toISOString(), lon:fix.lon, lat:fix.lat, acc:fix.acc,
+             depth:sel.depth, flow:sel.flow||null, drain:sel.drain||null,
+             rain:sel.rain||null, note:$("note").value.trim()||null});
+  localStorage.setItem(KEY,JSON.stringify(recs));
+  $("note").value="";
+  // keep rain and depth selected - consecutive observations on one walk usually share them
+  for(const k of ["flow","drain"]){ sel[k]=null;
+    [...$(k).children].forEach(c=>c.classList.remove("sel")); }
+  msg(`Saved. ${recs.length} observation${recs.length===1?"":"s"} on this device.`,"var(--ok)");
+  draw(); check();
+};
+
+function msg(t,c){ $("msg").innerHTML=`<span style="color:${c||"var(--dim)"}">${t}</span>`;
+  clearTimeout(msg._t); msg._t=setTimeout(()=>$("msg").textContent="",4000); }
+
+function draw(){
+  const l=$("list"); l.innerHTML="";
+  for(const [i,r] of [...recs].reverse().entries()){
+    const idx=recs.length-1-i;
+    const d=document.createElement("div"); d.className="rec";
+    d.innerHTML=`<b>${r.depth}</b><span style="color:var(--dim)">`+
+      `${[r.flow,r.drain].filter(Boolean).join(" · ")||"—"}</span>`+
+      `<span style="color:var(--dim)">${r.t.slice(11,16)}</span>`+
+      `<span class="x" data-i="${idx}">remove</span>`;
+    d.querySelector(".x").onclick=e=>{
+      recs.splice(+e.target.dataset.i,1);
+      localStorage.setItem(KEY,JSON.stringify(recs)); draw(); };
+    l.appendChild(d);
+  }
+}
+
+function geojson(){
+  return {type:"FeatureCollection",
+    generated:new Date().toISOString(),
+    source:"viz/log.html field observation",
+    features:recs.map(r=>({type:"Feature",
+      geometry:{type:"Point",coordinates:[r.lon,r.lat]},
+      properties:{observed_at:r.t, accuracy_m:r.acc, depth_class:r.depth,
+                  flow:r.flow, drain:r.drain, rain:r.rain, note:r.note}}))};
+}
+
+$("export").onclick=()=>{
+  if(!recs.length){ msg("Nothing logged yet.","var(--warn)"); return; }
+  $("out").value=JSON.stringify(geojson(),null,1);
+  $("sheet").style.display="block";
+};
+$("close").onclick=()=>$("sheet").style.display="none";
+$("copy").onclick=async()=>{
+  $("out").select();
+  try{ await navigator.clipboard.writeText($("out").value); msg("Copied.","var(--ok)"); }
+  catch(e){ msg("Select the text and copy it manually.","var(--warn)"); }
+};
+$("dl").onclick=()=>{
+  const b=new Blob([$("out").value],{type:"application/geo+json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(b);
+  a.download="observations.import.json"; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+};
+draw(); check();
+</script>
+</body>
+</html>

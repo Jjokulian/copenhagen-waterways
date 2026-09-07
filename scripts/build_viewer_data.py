@@ -12,7 +12,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, RAW, log, read_json, write_json
+from common import DERIVED, MANUAL, RAW, log, read_json, write_json
 
 PRECISION = 5  # ~1 m at this latitude; plenty for a city-scale map
 
@@ -94,6 +94,29 @@ def main():
         log(f"  {'constructions':20} {len(gj['features']):>6} features  {size/1e6:>6.2f} MB")
     else:
         log("  -- constructions.geojson not built yet (run build_registry.py)")
+
+    # field observations (hand-collected, never overwritten by a fetch)
+    obs = os.path.join(MANUAL, "observations.geojson")
+    if os.path.exists(obs):
+        gj = read_json(obs)
+        dst = os.path.join(outdir, "observations.geojson")
+        write_json(dst, {"type": "FeatureCollection", "features": gj.get("features", [])})
+        n = len(gj.get("features", []))
+        total += os.path.getsize(dst)
+        index.append({"name": "observations", "source_layer": "manual", "features": n,
+                      "bytes": os.path.getsize(dst)})
+        log(f"  {'observations':20} {n:>6} features")
+    else:
+        log("  -- no field observations yet (viz/log.html -> scripts/observations.py import)")
+
+    # georeferenced flood-model overlays, if control points have been set
+    geo = os.path.join(DERIVED, "floodmaps", "_georef.json")
+    if os.path.exists(geo):
+        g = read_json(geo)
+        write_json(os.path.join(outdir, "floodmaps.json"), g)
+        log(f"  {'floodmaps':20} {len(g):>6} georeferenced sheet(s)")
+    else:
+        log("  -- no georeferenced flood sheets yet (viz/georef.html -> floodmaps.py georef)")
 
     write_json(os.path.join(outdir, "index.json"), index)
     log(f"\nbundle: {total/1e6:.1f} MB in data/derived/viewer/")

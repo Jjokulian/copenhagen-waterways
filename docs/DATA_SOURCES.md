@@ -150,14 +150,48 @@ vector extents, so nothing can be intersected with it; no depth values, so nothi
 queried. A person wanting the answer must re-derive it from terrain, or walk around in the
 rain.
 
-Recovering it is tractable and worth doing: each sheet carries a scale bar and a coastline
-that can be matched against `kbh_kysttyper`, so the images can be warped into EPSG:25832,
-and the six depth bands are flat distinct colours that classify cleanly back into polygons.
-`numpy`, `PIL`, `pdftoppm`, `pdfimages` and `convert` are all present on this machine. The
-result would be a 2012-vintage modelled flood surface — dated, but real data rather than a
-picture of data, and directly comparable against field observation.
+**Recovered** by `scripts/floodmaps.py`. Findings from doing it:
+
+* The georeferencing is genuinely absent, not merely unadvertised — the files contain no
+  `/Measure`, `/GPTS`, `/LPTS`, `/Viewport` or projection string, compressed or otherwise.
+* The seven sheets are at **seven different scales**, 1:7,528 (Nørrebro) to 1:28,737
+  (KBH Vest), with 500 m or 1000 m scale bars. Each sheet carries a real text layer, so
+  the bar length is read rather than guessed; guessing it put Amager out by 2x.
+* The depth ramp is the standard Blues palette: `#f7fbff #d1e2f2 #9ac7e0 #519ccc #1c6bb0
+  #08306b` for the six bands. Identical on every sheet (verified from each sheet's own
+  legend labels).
+* The legend must be masked before export, or its swatches become fictional deep water:
+  on Indre By the entire "1-2 m" band was legend, nothing else. Its position moves
+  between sheets (top-right on KBH Vest, bottom-right elsewhere), so it is located from
+  the text layer.
+* The palest band is nearly white and matches every pale roof on colour alone. Its blue
+  cast (B-R = +8) separates it: 363,940 raw matches on Indre By, 18,393 real.
+
+Extracted flooded area: Bispebjerg 2.22 km2, KBH Vest 1.39, Amager 1.18, Ladegårdsåen
+0.42, Nørrebro 0.36, Østerbro 0.10, Indre By 0.04.
+
+Georeferencing is **not** automatic and deliberately so — see the README. The registration
+is set by hand in `viz/georef.html` with residuals reported, rather than by an automatic
+fit that looked plausible and was not.
 
 CKAN id: `oversvommelsesscenarier-for-vandoplande`.
+
+## 9. Observed surface water  *(does not exist; we collect it)*
+
+There is no open dataset of where water is actually seen standing or running in
+Copenhagen streets. The gap is structural rather than accidental: Miljøstyrelsen's
+technical standard (dTA DP02, section 3.1.1) defines model calibration as measurement
+*at the overflow structure* — five clearly separable overflow events. Calibration happens
+inside the pipes. Nothing in the reporting chain observes a street surface.
+
+So a modelled 0.2 m at a corner is never checked against the 0.4 m that is actually there
+because a gully has been blocked since 2019. `viz/log.html` (a phone-friendly, offline
+field logger) and `scripts/observations.py` collect that layer. Records use the same six
+depth classes as the 2012 model so the two compare directly, and flag drains that are
+*surcharging* — water rising out of the gully, meaning the pipe below is full.
+
+Stored in `data/manual/observations.geojson`, hand-collected, never overwritten by a
+fetch script.
 
 ## Practical notes
 
