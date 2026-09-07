@@ -351,6 +351,31 @@ def main():
       "sits in an annual technical notice and a teaching pack.\n")
     a("**That is a distribution problem, not an evidence problem** — and it is the "
       "cheapest thing on this entire page to fix.\n")
+
+    a("#### What Tennant actually did, which is the transferable part\n")
+    a("A compilation of his footage would land hard, and something close to it exists: "
+      "*The Devil We Know* (2018) is a documentary rather than a dramatisation and uses "
+      "the real material. But the reason it works is worth isolating, because it is a "
+      "**method**, not a subject.\n")
+    a("He filmed **one place, repeatedly, over years, himself.** Not a survey, not a "
+      "cohort, not a sampling design agreed with anybody. The same fields, the same "
+      "creek, the same animals, until the sequence became an argument that no "
+      "cross-sectional study could have made and no press release could deny. He was, "
+      "in effect, a monitoring programme of one — and he ran it because the official "
+      "one did not cover what was happening to him.\n")
+    a("Which is the exact shape of the cheapest item in this project. "
+      "[OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 8 asks for **fixed coastal cameras "
+      "with a monthly index, year-round** — a longitudinal record of one shore, made "
+      "continuously, by the people the shore belongs to. Not a documentary crew "
+      "arriving in a bad week. The same evidentiary logic Tennant stumbled into: "
+      "*this place, this often, this long.*\n")
+    a("And it is already half-built. `viz/log.html` in this repository is a field "
+      "logger for a phone, offline, using the flood model's own depth classes — "
+      "written so an observation from a shore can be recorded with the same "
+      "vocabulary the model uses. What it lacks is not software. It lacks ten years "
+      "and a camera on a post.\n")
+    a("**Tennant's tapes are not available, and the format is.** He proved the format "
+      "works. Nobody needs his licence to use it.\n")
     a("##### Where to start, and what is actually free\n")
     a("| | |")
     a("|---|---|")
