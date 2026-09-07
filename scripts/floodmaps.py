@@ -9,21 +9,33 @@ Pipeline:
     fetch      download the seven PDFs
     render     PDF -> PNG at 200 dpi, locate the map frame and read the scale bar
     extract    classify the six depth bands -> a depth-coded PNG with transparency
+    autoref    locate each sheet automatically by matching water (FFT correlation)
     georef     apply control points -> world file + corner coordinates, with residuals
+    check      render a visual overlay per sheet so a human can confirm the fit
     status     what is done and what still needs control points
 
-Georeferencing is deliberately NOT automatic. Three automatic approaches were tried
-(catchment-outline matching, strict-black line fitting, water IoU) and none produced a
-fit worth trusting; the best landed 36% of the known catchment boundary on the drawn
-one, against an 11% chance level. Rather than ship a confident-looking wrong answer,
-control points are set by hand in viz/georef.html and this script reports the residual
-so the error is visible. Two points per sheet is about two minutes of work.
+Georeferencing (`autoref`) works by matching water. The orthophoto's water has a strong
+signature - dark, with G-R and B-R both around +18 - and the city publishes water as
+vector polygons, so the sheet can be located by cross-correlating the two. FFT does it
+over the whole city at once rather than searching offsets one at a time.
+
+An earlier attempt matched the drawn catchment outline instead and failed badly. The
+reason turned out to be interesting: the "Oplandsgraenser" drawn on these 2012 sheets is
+NOT the boundary in today's skp_skybrudsoplande. Registering on water and then testing
+against the drawn outline gives 13.6% coverage against an 11% chance level - the
+registration is right (the vector coastline traces the photographed quays exactly) and
+the boundary is what changed. Do not use the catchment outline to validate.
+
+`georef` remains available for hand-placed control points via viz/georef.html, as a
+fallback and for any sheet where autoref's confidence is low.
 
 Usage:
     python3 scripts/floodmaps.py fetch
     python3 scripts/floodmaps.py render [sheet ...]
     python3 scripts/floodmaps.py extract [sheet ...]
+    python3 scripts/floodmaps.py autoref [sheet ...]
     python3 scripts/floodmaps.py georef [sheet ...]
+    python3 scripts/floodmaps.py check [sheet ...]
     python3 scripts/floodmaps.py status
 """
 import json
@@ -67,6 +79,14 @@ BANDS = [
     {"rgb": (28, 107, 176),  "lo": 1.0,  "hi": 2.0,  "label": "1-2 m"},
     {"rgb": (8, 48, 107),    "lo": 2.0,  "hi": None, "label": ">2 m"},
 ]
+
+# Search window for autoref: Copenhagen plus a margin, in WGS84.
+SEARCH = (12.28, 55.48, 12.82, 55.82)
+LATM = 111320.0
+# Water in these orthophotos: dark, and markedly greener/bluer than red.
+WATER_GR = 9      # min (G - R)
+WATER_BR = 9      # min (B - R)
+WATER_LUM = 70    # max mean luminance
 
 COLOUR_TOL = 26.0   # euclidean RGB distance; the sheets are JPEG so exact match is rare
 FLATNESS = 20.0     # max local std-dev, applied only to the five darker bands
@@ -370,6 +390,101 @@ def find_legend(pdf, size):
             min(W, int(x1 * sx)), min(H, int(y1 * sy))]
 
 
+# --------------------------------------------------------------------------- autoref
+def cmd_autoref(args):
+    """Locate each sheet by matching water, using several detectors and their agreement.
+
+    See scripts/floodreg.py for why it is an ensemble rather than one algorithm: the
+    sheets do not share an orthophoto, and no single water detector survives all seven.
+    A sheet is only accepted when independent detectors land in the same place.
+    """
+    np, Image = _np(), _pil()
+    import floodreg
+    sheets = read_json(os.path.join(OUTDIR, "_sheets.json"))
+    path = os.path.join(OUTDIR, "_georef.json")
+    out = read_json(path) if os.path.exists(path) else {}
+
+    for sheet in (args or SHEETS):
+        if sheet not in sheets:
+            log(f"  -- {sheet}: not rendered")
+            continue
+        m = sheets[sheet]
+        log(f"  {sheet}:")
+        res = floodreg.register(OUTDIR, sheet, m, SHEETS[sheet], np, Image)
+        if not res or not res.get("resolved"):
+            log(f"    unresolved: {(res or {}).get('reason', 'no agreement')}")
+            out.pop(sheet, None)
+            continue
+
+        fx0, fy0, fx1, fy1 = m["frame"]
+        mpp = m["m_per_px"]
+        west, north = res["lon_nw"], res["lat_nw"]
+        east = west + (fx1 - fx0 + 1) * mpp / floodreg.LONM
+        south = north - (fy1 - fy0 + 1) * mpp / floodreg.LATM
+        # Accept only on agreement between detectors that fail differently. A lone
+        # confident answer is exactly what produced the earlier wrong registrations.
+        # Thresholds set by inspecting the overlays: kbhvest passed a looser bar at
+        # 57 m spread / IoU 0.117, and its magenta water outlines visibly do not track
+        # the photographed water. Accepting it would have shipped a wrong registration.
+        confident = res["agree"] >= 3 and res["spread_m"] <= 40 and res["best_iou"] >= 0.12
+        out[sheet] = {
+            "method": "autoref: ensemble water cross-correlation",
+            "agree": res["agree"], "variants_run": res["variants_run"],
+            "spread_m": res["spread_m"], "best_iou": res["best_iou"],
+            "m_per_px_from_scalebar": round(mpp, 4),
+            "bounds_wgs84": {"west": west, "east": east, "south": south, "north": north},
+            "corners_for_maplibre": [[west, north], [east, north], [east, south], [west, south]],
+            "image": f"data/derived/floodmaps/{sheet}.depth.png",
+            "confident": bool(confident),
+            "variants": res["variants"],
+        }
+        log(f"    => {res['agree']}/{res['variants_run']} agree within "
+            f"{res['spread_m']:.0f} m, best IoU {res['best_iou']:.3f}  "
+            f"{'ACCEPTED' if confident else 'NOT CONFIDENT - verify or use georef.html'}")
+
+    write_json(path, out)
+    ok = sum(1 for v in out.values() if v.get("confident"))
+    log(f"\n{ok}/{len(SHEETS)} sheets accepted. Run `check` and look at the overlays:")
+    log("the magenta water outlines must trace the photographed quays and lake edges.")
+    return 0
+
+
+def cmd_check(args):
+    """Draw the city's water outlines onto each registered sheet.
+
+    The only honest confirmation. If the magenta lines trace the photographed quays, the
+    registration is right; if they float, it is not.
+    """
+    np, Image = _np(), _pil()
+    from PIL import ImageDraw
+    sheets = read_json(os.path.join(OUTDIR, "_sheets.json"))
+    geo = read_json(os.path.join(OUTDIR, "_georef.json"))
+    lonm = _lonm()
+    for sheet in (args or SHEETS):
+        if sheet not in geo:
+            continue
+        m, g = sheets[sheet], geo[sheet]
+        fx0, fy0, fx1, fy1 = m["frame"]
+        mpp = m["m_per_px"]
+        w0 = g["bounds_wgs84"]["west"]
+        n0 = g["bounds_wgs84"]["north"]
+        im = Image.open(os.path.join(OUTDIR, f"{sheet}.render.png")).convert("RGB")
+        im = im.crop((fx0, fy0, fx1 + 1, fy1 + 1))
+        dr = ImageDraw.Draw(im)
+        for ring in water_rings():
+            pts = [((lon - w0) * lonm / mpp, (n0 - lat) * LATM / mpp) for lon, lat in ring]
+            if all(x < -60 or x > im.width + 60 or y < -60 or y > im.height + 60
+                   for x, y in pts):
+                continue
+            dr.line(pts + [pts[0]], fill=(255, 0, 255), width=max(2, int(6 / mpp)))
+        sc = 1400 / im.width
+        im = im.resize((int(im.width * sc), int(im.height * sc)), Image.LANCZOS)
+        dst = os.path.join(OUTDIR, f"{sheet}.check.jpg")
+        im.save(dst, quality=80, optimize=True)
+        log(f"  {sheet:16} -> {dst}   (magenta should trace the quays)")
+    return 0
+
+
 # ---------------------------------------------------------------------------- georef
 def cmd_georef(args):
     """Turn hand-placed control points into corner coordinates and a world file."""
@@ -480,7 +595,8 @@ def cmd_status(args):
 
 
 COMMANDS = {"fetch": cmd_fetch, "render": cmd_render, "extract": cmd_extract,
-            "georef": cmd_georef, "status": cmd_status}
+            "autoref": cmd_autoref, "georef": cmd_georef, "check": cmd_check,
+            "status": cmd_status}
 
 
 def main():

@@ -4,3 +4,4 @@ data/derived/
 # data/manual/ is hand-authored and IS tracked.
 __pycache__/
 *.pyc
+data/raw/osm/
