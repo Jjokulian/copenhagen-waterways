@@ -36,6 +36,7 @@ python3 scripts/currents.py transport && python3 scripts/currents.py report
 python3 scripts/solutions.py            # -> docs/SOLUTIONS.md
 python3 scripts/rivermap.py             # -> docs/river_map.png
 python3 scripts/programme_map.py        # -> docs/*.svg
+python3 scripts/rivers3d.py             # -> viewer bundle + 2 SVGs
 python3 scripts/programme.py            # -> docs/PROGRAMME.md
 
 python3 -m http.server 8000             # then open http://localhost:8000/viz/
@@ -68,6 +69,7 @@ scripts/
   rivermap.py             the flood model read as the city's natural drainage
   programme_map.py        the two figures for the argument page
   programme.py            the argument - kept separate from the investigation
+  rivers3d.py             the 3D scene, the retrofit section, the routing logic
   observations.py         validates and merges field observations
 data/
   raw/                    downloaded, untouched
@@ -90,6 +92,7 @@ docs/
   index.html              renders the Markdown for GitHub Pages
 viz/
   index.html              the map
+  rivers3d.html           the proposal in 3D - rivers, retrofit, destinations
   georef.html             two-pane control-point tool for the flood sheets
   log.html                field logger, for a phone, offline
 ```

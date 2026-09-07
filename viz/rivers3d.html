@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rainwater rivers — Copenhagen in 3D</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<style>
+  :root{
+    --bg:#0b1016; --panel:#111a23; --rule:#22303c; --ink:#e6eef5; --dim:#8fa1b0;
+    --river:#3fa9e0; --gap:#ff8a5c; --pipe:#a4707c; --wet:#3ddc97; --warn:#ffd166;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  #map{position:absolute;inset:0}
+  .panel{position:absolute;top:0;left:0;width:352px;max-height:100%;overflow-y:auto;
+    background:rgba(17,26,35,.94);backdrop-filter:blur(8px);
+    border-right:1px solid var(--rule);padding:16px 18px 26px}
+  h1{font-size:17px;margin:0 0 3px;letter-spacing:-.01em}
+  .sub{color:var(--dim);font-size:12px;margin:0 0 14px}
+  h2{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);
+    margin:18px 0 8px;padding-top:12px;border-top:1px solid var(--rule)}
+  .row{display:flex;align-items:flex-start;gap:9px;padding:4px 0;cursor:pointer;
+    font-size:13px}
+  .row input{margin-top:3px;accent-color:#3fa9e0}
+  .sw{width:13px;height:13px;border-radius:3px;flex:0 0 auto;margin-top:2px}
+  .sw.line{height:4px;margin-top:7px;border-radius:2px}
+  .sw.dot{border-radius:50%}
+  .btn{background:#18242f;border:1px solid var(--rule);color:var(--ink);
+    border-radius:6px;padding:5px 10px;font-size:12px;cursor:pointer;margin:0 4px 4px 0}
+  .btn:hover{border-color:#3d5566}
+  .btn.on{background:#1d3a4d;border-color:#3fa9e0;color:#bfe4f7}
+  .stat{font-size:12px;color:var(--dim);margin:8px 0 0}
+  .stat b{color:var(--ink)}
+  .note{font-size:11.5px;color:var(--dim);font-style:italic;margin:8px 0 0}
+  .tag{display:inline-block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    padding:1px 6px;border-radius:3px;margin-right:5px;vertical-align:1px}
+  .tag.real{background:#14342a;color:#6ee0ac}
+  .tag.rec{background:#33291a;color:#ffd166}
+  .tag.prop{background:#1d3a4d;color:#8fd4f5}
+  #loading{position:absolute;inset:0;display:grid;place-items:center;
+    background:var(--bg);color:var(--dim);z-index:5;text-align:center;padding:24px}
+  .pop{font:13px system-ui,sans-serif;max-width:280px}
+  .pop b{display:block;margin-bottom:4px}
+  .maplibregl-popup-content{background:#111a23;color:#e6eef5;border:1px solid #22303c;
+    border-radius:7px;padding:11px 13px}
+  .maplibregl-popup-tip{border-top-color:#111a23!important;border-bottom-color:#111a23!important}
+  @media (max-width:760px){.panel{width:100%;max-height:44%;border-right:0;
+    border-bottom:1px solid var(--rule)}}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="loading">loading the city…</div>
+
+<div class="panel">
+  <h1>Rainwater rivers</h1>
+  <p class="sub">Copenhagen with the rain taken out of the sewage system.
+    Part of <a href="../docs/#PROGRAMME.md" style="color:#3fa9e0">the argument</a>.</p>
+
+  <h2>View</h2>
+  <button class="btn" data-view="city">The corridors</button>
+  <button class="btn" data-view="system">Whole system</button>
+  <button class="btn" data-view="amager">Vestamager</button>
+  <button class="btn" id="b2d">Flatten</button>
+
+  <h2>What you are looking at</h2>
+  <div id="layers"></div>
+
+  <h2>Vertical exaggeration</h2>
+  <div>
+    <button class="btn exag" data-x="1">×1</button>
+    <button class="btn exag on" data-x="4">×4</button>
+    <button class="btn exag" data-x="10">×10</button>
+  </div>
+  <p class="note">Copenhagen's relief is a few metres across the whole city. Without
+    exaggeration the terrain is invisible — which is itself why the water goes where it
+    goes rather than where the pipes are.</p>
+
+  <h2>The proposal</h2>
+  <p class="stat" id="stats">…</p>
+  <p class="note">Where a channel in the open is not feasible, the same alignment gets
+    an interceptor: the foul sewer is dropped about a metre and a rain-only line goes
+    into the space between it and the manhole.
+    <a href="../docs/retrofit_section.svg" style="color:#3fa9e0">Section &rarr;</a></p>
+  <p class="note">Clean flow goes to the Vestamager wetland by gravity. Flow that trips
+    the sensor is held for heavy-duty treatment.
+    <a href="../docs/routing_logic.svg" style="color:#3fa9e0">Routing &rarr;</a></p>
+
+  <h2>Honesty</h2>
+  <p class="note">
+    <span class="tag real">real</span>buildings, coastline, the cloudburst plan's actual
+    alignments, the polder.<br><br>
+    <span class="tag rec">recovered</span>the 2012 flood model — where water goes when
+    nothing forces it into a pipe.<br><br>
+    <span class="tag prop">proposed</span>which alignments become open channels, and
+    where the wetland sits. Indicative. Nothing here is sited or engineered.
+  </p>
+</div>
+
+<script>
+const DATA = "../data/derived/viewer/";
+const map = new maplibregl.Map({
+  container: "map",
+  style: {version:8, sources:{}, layers:[{id:"bg",type:"background",
+          paint:{"background-color":"#0b1016"}}]},
+  center:[12.5620,55.6820], zoom:12.6, pitch:62, bearing:-24, maxPitch:80, antialias:true
+});
+map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),"bottom-right");
+map.addControl(new maplibregl.ScaleControl({unit:"metric"}),"bottom-left");
+
+const VIEWS = {
+  city:   {center:[12.5560,55.6870], zoom:13.4, pitch:66, bearing:-24},
+  system: {center:[12.4200,55.5900], zoom:10.2, pitch:52, bearing:-14},
+  amager: {center:[12.5750,55.6150], zoom:13.0, pitch:64, bearing:-8},
+};
+
+/* Layer specs. Order matters: ground first, water last, so the rivers read on top. */
+const LAYERS = [
+  {id:"green", label:"Parks and open ground", sw:"#1d3326", on:true, tag:"real"},
+  {id:"water", label:"Existing water", sw:"#16354f", on:true, tag:"real"},
+  {id:"roads", label:"Streets", sw:"#1b242d", on:true, tag:"real"},
+  {id:"buildings", label:"Buildings, extruded", sw:"#2c3945", on:true, tag:"real"},
+  {id:"floodpaths", label:"Flood paths (2012 model)", sw:"#ffd166", on:false, tag:"rec"},
+  {id:"open_channel", label:"Rivers in the open", sw:"var(--river)", line:true, on:true, tag:"prop"},
+  {id:"interceptor", label:"Interceptor retrofit (buried)", sw:"var(--pipe)", line:true, on:true, tag:"prop"},
+  {id:"gap", label:"River indicated, none planned", sw:"var(--gap)", dot:true, on:true, tag:"rec"},
+  {id:"wetland", label:"Vestamager wetland", sw:"var(--wet)", on:true, tag:"prop"},
+];
+
+function fc(feats){ return {type:"FeatureCollection", features:feats}; }
+
+async function getJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(u+" — "+r.status); return r.json(); }
+
+async function load(){
+  // Everything comes from the committed bundle. data/raw is git-ignored, so it does
+  // not exist on the deployed site and nothing here may depend on it.
+  const [scene, buildings, coast, ground, roads] = await Promise.all([
+    getJSON(DATA+"rivers3d.geojson"),
+    getJSON(DATA+"buildings3d.geojson").catch(()=>fc([])),
+    getJSON(DATA+"coast3d.geojson").catch(()=>fc([])),
+    getJSON(DATA+"ground3d.geojson").catch(()=>fc([])),
+    getJSON(DATA+"roads3d.geojson").catch(()=>fc([])),
+  ]);
+  const byKind = k => fc(ground.features.filter(f => f.properties.k === k));
+
+  // ---- terrain. Free, keyless, global. Copenhagen is flat, so it needs exaggerating.
+  try{
+    map.addSource("dem",{type:"raster-dem", encoding:"terrarium", tileSize:256,
+      maxzoom:13, tiles:["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"]});
+    map.setTerrain({source:"dem", exaggeration:4});
+  }catch(e){ console.warn("terrain unavailable", e); }
+
+  // ---- ground
+  map.addSource("green",{type:"geojson", data:byKind("green")});
+  map.addLayer({id:"green",source:"green",type:"fill",
+    paint:{"fill-color":"#16281d","fill-opacity":.85}});
+
+  map.addSource("water",{type:"geojson", data:byKind("water")});
+  map.addLayer({id:"water",source:"water",type:"fill",
+    paint:{"fill-color":"#12293d","fill-opacity":.95}});
+
+  map.addSource("coast",{type:"geojson", data:coast});
+  map.addLayer({id:"coast",source:"coast",type:"line",
+    paint:{"line-color":"#2c4a63","line-width":1}});
+
+  map.addSource("roads",{type:"geojson", data:roads});
+  map.addLayer({id:"roads",source:"roads",type:"line",
+    paint:{"line-color":"#1e2933","line-width":["interpolate",["linear"],["zoom"],11,.4,16,2.2]}});
+
+  // ---- buildings
+  map.addSource("buildings",{type:"geojson", data:buildings});
+  map.addLayer({id:"buildings",source:"buildings",type:"fill-extrusion",
+    paint:{
+      "fill-extrusion-color":["interpolate",["linear"],["get","h"],
+        3,"#232f3a", 12,"#2c3945", 30,"#3a4956", 60,"#4b5c6b"],
+      "fill-extrusion-height":["get","h"],
+      "fill-extrusion-base":0,
+      "fill-extrusion-opacity":.92}});
+
+  // ---- the recovered flood model, as image overlays where sheets registered
+  const flood = [];
+  try{
+    const fm = await getJSON(DATA+"floodmaps.json");
+    for(const [k,g] of Object.entries(fm)){
+      if(!g || !g.corners_for_maplibre) continue;
+      map.addSource("fp-"+k,{type:"image", url:DATA+k+".depth.png",
+        coordinates:g.corners_for_maplibre});
+      map.addLayer({id:"fp-"+k, source:"fp-"+k, type:"raster",
+        layout:{visibility:"none"}, paint:{"raster-opacity":.55}});
+      flood.push("fp-"+k);
+    }
+  }catch(e){ console.warn("flood overlays unavailable", e); }
+
+  // ---- the proposal
+  const feats = scene.features;
+  const pick = (k,r) => fc(feats.filter(f=>f.properties.kind===k &&
+                                          (!r || f.properties.role===r)));
+
+  map.addSource("open_channel",{type:"geojson", data:pick("river","open_channel")});
+  map.addLayer({id:"open_channel-glow",source:"open_channel",type:"line",
+    paint:{"line-color":"#3fa9e0","line-width":["interpolate",["linear"],["zoom"],11,3,16,16],
+           "line-opacity":.18,"line-blur":6}});
+  map.addLayer({id:"open_channel",source:"open_channel",type:"line",
+    layout:{"line-cap":"round","line-join":"round"},
+    paint:{"line-color":"#4fc3f7","line-width":["interpolate",["linear"],["zoom"],11,1.4,16,7]}});
+
+  map.addSource("interceptor",{type:"geojson", data:pick("river","interceptor")});
+  map.addLayer({id:"interceptor",source:"interceptor",type:"line",
+    layout:{"line-cap":"round"},
+    paint:{"line-color":"#a4707c","line-width":["interpolate",["linear"],["zoom"],11,1,16,4.5],
+           "line-dasharray":[2.5,2]}});
+
+  map.addSource("gap",{type:"geojson", data:pick("gap")});
+  map.addLayer({id:"gap",source:"gap",type:"circle",
+    paint:{"circle-color":"#ff8a5c","circle-opacity":.28,
+           "circle-radius":["interpolate",["linear"],["zoom"],11,6,16,42],
+           "circle-stroke-color":"#ff8a5c","circle-stroke-width":2}});
+
+  map.addSource("wetland",{type:"geojson", data:pick("destination","sedimentation")});
+  map.addLayer({id:"wetland",source:"wetland",type:"fill-extrusion",
+    paint:{"fill-extrusion-color":"#3ddc97","fill-extrusion-opacity":.32,
+           "fill-extrusion-height":6,"fill-extrusion-base":0}});
+  map.addLayer({id:"wetland-line",source:"wetland",type:"line",
+    paint:{"line-color":"#3ddc97","line-width":2,"line-dasharray":[3,2]}});
+
+  buildUI(flood);
+  document.getElementById("stats").innerHTML =
+    `<b>${scene.meta.open_channel_km.toLocaleString()} km</b> of the cloudburst plan is `
+    + `already a surface alignment — it could carry a river.<br>`
+    + `<b>${scene.meta.interceptor_km.toLocaleString()} km</b> is planned as pipe: `
+    + `retrofit candidates.<br>`
+    + `<b>${scene.meta.near_surface_pct}%</b> of the modelled flood path already has a `
+    + `surface route within 100 m.`;
+  document.getElementById("loading").remove();
+}
+
+function buildUI(flood){
+  const host = document.getElementById("layers");
+  for(const L of LAYERS){
+    const row = document.createElement("label");
+    row.className = "row";
+    const cls = L.dot ? "sw dot" : (L.line ? "sw line" : "sw");
+    row.innerHTML = `<input type="checkbox" ${L.on?"checked":""}>
+      <span class="${cls}" style="background:${L.sw}"></span>
+      <span><span class="tag ${L.tag==='real'?'real':L.tag==='rec'?'rec':'prop'}">${L.tag}</span>${L.label}</span>`;
+    row.querySelector("input").onchange = e => {
+      const v = e.target.checked ? "visible" : "none";
+      const ids = L.id === "floodpaths" ? flood
+                : L.id === "open_channel" ? ["open_channel","open_channel-glow"]
+                : L.id === "wetland" ? ["wetland","wetland-line"]
+                : L.id === "water" ? ["water","coast"]
+                : [L.id];
+      for(const id of ids) if(map.getLayer(id)) map.setLayoutProperty(id,"visibility",v);
+    };
+    host.appendChild(row);
+  }
+  for(const b of document.querySelectorAll("[data-view]"))
+    b.onclick = () => map.easeTo({...VIEWS[b.dataset.view], duration:1600});
+  document.getElementById("b2d").onclick = () => map.easeTo({pitch:0,bearing:0,duration:900});
+  for(const b of document.querySelectorAll(".exag")) b.onclick = () => {
+    document.querySelectorAll(".exag").forEach(x=>x.classList.toggle("on",x===b));
+    const t = map.getTerrain();
+    if(t) map.setTerrain({...t, exaggeration:+b.dataset.x});
+  };
+}
+
+for(const id of ["open_channel","interceptor","gap","wetland"]){
+  map.on("click", id, e => {
+    const p = e.features[0].properties;
+    new maplibregl.Popup({closeButton:false, maxWidth:"300px"})
+      .setLngLat(e.lngLat)
+      .setHTML(`<div class="pop"><b>${p.name || p.typologi || "Corridor"}</b>${p.note||""}</div>`)
+      .addTo(map);
+  });
+  map.on("mouseenter", id, ()=> map.getCanvas().style.cursor="pointer");
+  map.on("mouseleave", id, ()=> map.getCanvas().style.cursor="");
+}
+
+map.on("load", () => load().catch(err => {
+  document.getElementById("loading").innerHTML =
+    `<div style="max-width:460px">
+       <p style="color:#ff7b72">Could not build the scene.</p>
+       <p style="font-size:12px">${err.message}</p>
+       <p style="font-size:12px">This page needs WebGL and the derived data bundle.
+          Run <code>python3 scripts/rivers3d.py</code>.</p>
+     </div>`;
+}));
+</script>
+</body>
+</html>

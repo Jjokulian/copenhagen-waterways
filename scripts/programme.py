@@ -272,6 +272,10 @@ def main():
     a("## Part two — the solution\n")
     a("Seven things. They are ordered by how much evidence stands behind them, not by "
       "how appealing they are.\n")
+    a("> **[Open the 3D view →](../viz/rivers3d.html)** — the whole proposal on the real "
+      "city: buildings, terrain, the recovered flood paths, which alignments become open "
+      "channels, which get the interceptor retrofit, and where the wetland sits. Real, "
+      "recovered and proposed are labelled separately throughout.\n")
 
     # ---- 1
     a("### 1. Rainwater rivers — and the alignments already exist\n")
@@ -307,6 +311,26 @@ def main():
       "surface network that has already been designed and partly built, instead of only "
       "the cloudburst rain. That is a change in inlet design and drainage regulation, "
       "not a new masterplan.\n")
+
+    a("#### Where an open channel will not fit\n")
+    a("Not every alignment can be a river. A dense street with no room to lose, a "
+      "junction, a listed square — in those places the water still has to leave the "
+      "sewage system, and the way to do it is vertical rather than horizontal.\n")
+    a("![Street section: the combined sewer now, and the interceptor "
+      "retrofit](retrofit_section.svg)\n")
+    a("**Drop the foul sewer by about a metre and put a rain-only line into the space "
+      "above it.** Same trench, same street, same gully. The manhole connects to the "
+      "new line instead of the old one; the house drains stay on the foul sewer, which "
+      "is now deeper and, with the rain taken out, never full.\n")
+    a("What this buys is the thing that matters: **there is no longer a mixture to "
+      "overflow.** An overflow structure on a foul-only sewer has nothing to spill in a "
+      "storm, because the storm is not in that pipe. It is more expensive per metre than "
+      "a channel and far cheaper than a parallel corridor, and it is the reason the "
+      "proposal does not have to stop where the street narrows.\n")
+    a(f"On this project's classification, **{riv['near_buried_conveyance_pct']:.0f}% of "
+      "the modelled flood path already has a planned pipe within 100 m** — those "
+      "alignments are the retrofit candidates, because the trench is going to be opened "
+      "anyway.\n")
     if riv["corridors"]:
         a(f"And where no alignment exists — the {riv['no_surface_route_pct']:.0f}% — the "
           f"model names the places. {len(riv['corridors'])} corridor candidates come out "
@@ -551,6 +575,23 @@ def main():
       "and coatings is never collected, so there is nothing to feed the furnace. "
       "**The taxonomy decides not only the disposal route but whether collection is "
       "possible at all** — and where it is not, the only lever left is upstream.\n")
+
+    a("#### Deciding which route, in real time\n")
+    a("The two routes have very different costs, so the branch should be taken by "
+      "measurement rather than by policy:\n")
+    a("![Routing the rain by what is in it](routing_logic.svg)\n")
+    a("A diversion node needs nothing exotic — turbidity, conductivity and flow "
+      "continuously, with a grab sample triggered on threshold. Clean flow takes the "
+      "cheap default: gravity to the wetland, settle, take up, dredge on schedule. "
+      "Flow that trips the sensor is held for the expensive branch.\n")
+    a("**And the expensive branch can be built later.** The wetland accumulates; it does "
+      "not fail suddenly. Sediment concentrations rise over years, which means the "
+      "sequence can be: build the wetland, instrument the inflow, and let the measured "
+      "accumulation rate decide when — and whether — a heavy-duty facility is worth "
+      "building at all. That is the opposite of the usual order, where the expensive "
+      "asset is specified first from an assumption.\n")
+    a("The honest gap: **nobody has set the threshold**, because nobody measures the "
+      "events. Which returns, as everything here does, to section 7.\n")
 
     a("#### What this settles, and what it does not\n")
     a("It settles the objection raised against extractive aquaculture and against "

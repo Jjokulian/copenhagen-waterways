@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" width="960" height="430" role="img" aria-label="Real-time routing: clean rainwater to the sedimentation wetland, contaminated rainwater to heavy-duty treatment">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#55666f"/></marker></defs>
+<rect width="960" height="430" fill="#fbfcfd"/>
+<text x="30" y="34" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#1c2a33">Routing the rain by what is in it</text>
+<rect x="30" y="70" width="180" height="74" rx="8" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.6"/>
+<text x="120.0" y="92" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">rainwater river</text>
+<text x="120.0" y="110" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">surface channel</text>
+<text x="120.0" y="124" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">or interceptor line</text>
+<rect x="30" y="190" width="180" height="92" rx="8" fill="#eef3f6" stroke="#2f7fb5" stroke-width="1.6"/>
+<text x="120.0" y="212" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">diversion node</text>
+<text x="120.0" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">turbidity, conductivity,</text>
+<text x="120.0" y="244" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">flow — continuous</text>
+<text x="120.0" y="258" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">grab sample on threshold</text>
+<path d="M120,144 L120,188" stroke="#1f7a5a" stroke-width="2.2" marker-end="url(#a)" fill="none"/>
+<rect x="300" y="120" width="200" height="96" rx="8" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.6"/>
+<text x="400.0" y="142" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">below threshold</text>
+<text x="400.0" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">no novo-chemical signal</text>
+<text x="400.0" y="174" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">above the</text>
+<text x="400.0" y="188" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">accumulating background</text>
+<rect x="300" y="262" width="200" height="96" rx="8" fill="#f6e3e0" stroke="#c0392b" stroke-width="1.6"/>
+<text x="400.0" y="284" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">above threshold</text>
+<text x="400.0" y="302" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">a signal, or an unknown</text>
+<text x="400.0" y="316" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">peak — divert</text>
+<path d="M212,214 L296,168" stroke="#1f7a5a" stroke-width="2.2" marker-end="url(#a)" fill="none"/>
+<text x="254.0" y="183.0" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1f7a5a">clean</text>
+<path d="M212,256 L296,302" stroke="#c0392b" stroke-width="2.2" marker-end="url(#a)" fill="none"/>
+<text x="240" y="298" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#c0392b">flagged</text>
+<rect x="590" y="120" width="200" height="96" rx="8" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.6"/>
+<text x="690.0" y="142" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">Vestamager wetland</text>
+<text x="690.0" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">gravity, passive</text>
+<text x="690.0" y="174" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">settling and uptake</text>
+<text x="690.0" y="188" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">dredged on schedule</text>
+<rect x="590" y="262" width="200" height="96" rx="8" fill="#f6e3e0" stroke="#c0392b" stroke-width="1.6"/>
+<text x="690.0" y="284" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">heavy-duty branch</text>
+<text x="690.0" y="302" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">holding, then treatment</text>
+<text x="690.0" y="316" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">and destruction</text>
+<text x="690.0" y="330" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">at specification</text>
+<path d="M502,168 L586,168" stroke="#1f7a5a" stroke-width="2.2" marker-end="url(#a)" fill="none"/>
+<path d="M502,310 L586,310" stroke="#c0392b" stroke-width="2.2" marker-end="url(#a)" fill="none"/>
+<text x="690" y="234" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-style="italic" fill="#7a8892">the cheap default</text>
+<text x="690" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-style="italic" fill="#7a8892">the expensive exception — and it can be built later</text>
+<text x="930" y="416" text-anchor="end" font-family="system-ui,sans-serif" font-size="10.5" fill="#8c99a2">The threshold is the part nobody has set, because nobody measures the events.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" role="img" aria-label="Street cross-section: the existing combined sewer, and the retrofit that drops it and inserts a stormwater line above it">
+<style>.t{font:600 13px system-ui,sans-serif;fill:#1c2a33}.s{font:11px system-ui,sans-serif;fill:#55666f}.n{font:italic 10.5px system-ui,sans-serif;fill:#7a8892}.h{font:700 12px system-ui,sans-serif;letter-spacing:.09em}.dim{stroke:#8b98a2;stroke-width:1;fill:none}</style>
+<rect width="960" height="500" fill="#fbfcfd"/>
+<text class="h" x="30" y="34" fill="#8e2318">NOW</text>
+<rect x="30" y="120" width="420" height="330" fill="#e6ded2"/>
+<rect x="30" y="108" width="420" height="12" fill="#63707a"/>
+<text class="s" x="38" y="82">street surface</text>
+<rect x="90" y="108" width="26" height="12" fill="#2b3840"/>
+<text class="s" x="126" y="138">gully &amp; manhole</text>
+<path d="M38,88 L38,106" stroke="#8b98a2" stroke-width="1" fill="none"/>
+<text class="h" x="510" y="34" fill="#1f7a5a">RETROFIT</text>
+<rect x="510" y="120" width="420" height="330" fill="#e6ded2"/>
+<rect x="510" y="108" width="420" height="12" fill="#63707a"/>
+<text class="s" x="518" y="82">street surface</text>
+<rect x="570" y="108" width="26" height="12" fill="#2b3840"/>
+<text class="s" x="606" y="138">gully &amp; manhole</text>
+<path d="M518,88 L518,106" stroke="#8b98a2" stroke-width="1" fill="none"/>
+<rect x="88" y="120" width="30" height="150" fill="#c8bda9"/>
+<circle cx="230" cy="300" r="44" fill="#7d3a30" stroke="#5a2620" stroke-width="3"/>
+<text class="t" x="230" y="296" text-anchor="middle" fill="#fff">combined</text>
+<text class="t" x="230" y="312" text-anchor="middle" fill="#fff">sewer</text>
+<path d="M103,270 L103,300 L186,300" stroke="#7d3a30" stroke-width="9" fill="none"/>
+<path d="M430,120 L430,300 L276,300" stroke="#a8705f" stroke-width="6" fill="none"/>
+<text class="n" x="424" y="160" text-anchor="end">house drain</text>
+<text class="s" x="38" y="390">Rain and sewage share the pipe.</text>
+<text class="s" x="38" y="407">When it fills, the mixture leaves</text>
+<text class="s" x="38" y="424">through an overflow, untreated.</text>
+<rect x="568" y="120" width="30" height="86" fill="#c8bda9"/>
+<circle cx="710" cy="232" r="36" fill="#2f7fb5" stroke="#1d5a85" stroke-width="3"/>
+<text class="t" x="710" y="228" text-anchor="middle" fill="#fff">rain</text>
+<text class="t" x="710" y="244" text-anchor="middle" fill="#fff">only</text>
+<path d="M583,206 L583,232 L674,232" stroke="#2f7fb5" stroke-width="9" fill="none"/>
+<circle cx="710" cy="352" r="44" fill="#7d3a30" stroke="#5a2620" stroke-width="3"/>
+<text class="t" x="710" y="348" text-anchor="middle" fill="#fff">foul</text>
+<text class="t" x="710" y="364" text-anchor="middle" fill="#fff">sewer</text>
+<path class="dim" d="M810,300 L810,352"/>
+<path class="dim" d="M804,300 L816,300"/>
+<path class="dim" d="M804,352 L816,352"/>
+<text class="s" x="822" y="332">dropped ~1 m</text>
+<path d="M754,300 L806,300" stroke="#8b98a2" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+<text class="n" x="754" y="294">old invert</text>
+<path d="M910,120 L910,352 L756,352" stroke="#a8705f" stroke-width="6" fill="none"/>
+<text class="n" x="904" y="160" text-anchor="end">house drain</text>
+<text class="n" x="710" y="182" text-anchor="middle">shallower and smaller than the sewer</text>
+<text class="s" x="518" y="420">Same trench, same street. The vertical space</text>
+<text class="s" x="518" y="437">between the manhole and the sewer is where</text>
+<text class="s" x="518" y="454">the rain line goes.</text>
+<text class="n" x="930" y="486" text-anchor="end">Schematic. Depths and diameters are illustrative; the arrangement is the point.</text>
+</svg>
