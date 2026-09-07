@@ -1,112 +1,275 @@
 {
-  "_what": "How Denmark's nutrient and oxygen figures are actually produced. Every entry is a documented property of the measurement system, with its source. Collected because these facts are stated in technical annexes and stripped when the headline numbers travel.",
-  "_rule": "Nothing here is inferred. Where a claim is our reading rather than the source's words, it is marked inferred:true.",
-
-  "overflow_reporting": {
-    "source": "Miljøstyrelsen, Datateknisk anvisning for regnbetingede udledninger (RBU), TA nr. DP02, version 4, gyldig 1. januar 2024",
-    "url": "https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf",
-    "volume_is_modelled_not_measured": true,
-    "knowledge_levels": [
-      {"level": 0, "method": "PULS calculation", "uncertainty_pct": null},
-      {"level": 1, "method": "Simple mass balance", "uncertainty_pct": 135},
-      {"level": 2, "method": "Uncalibrated 1D hydrodynamic model (Mike Urban)", "uncertainty_pct": 100},
-      {"level": 3, "method": "Calibrated Mike Urban", "uncertainty_pct": 55},
-      {"level": 4, "method": "Software sensor / CFD", "uncertainty_pct": 45},
-      {"level": 5, "method": "Measurement-based", "uncertainty_pct": 30}
-    ],
-    "mass_method": "modelled annual volume x a fixed national concentration (typetal)",
-    "recorded_fields_include_event_count": true,
-    "recorded_fields_include_flow_rate": false,
-    "note_on_flow": "PULS records 'antal overløb' - the number of overflows. It records no flow rate, no peak and no threshold crossing, so a high-flow event that scours accumulated basin sediment cannot be distinguished from a small dilute one."
+ "_what": "How Denmark's nutrient and oxygen figures are actually produced. Every entry is a documented property of the measurement system, with its source. Collected because these facts are stated in technical annexes and stripped when the headline numbers travel.",
+ "_rule": "Nothing here is inferred. Where a claim is our reading rather than the source's words, it is marked inferred:true.",
+ "overflow_reporting": {
+  "source": "Miljøstyrelsen, Datateknisk anvisning for regnbetingede udledninger (RBU), TA nr. DP02, version 4, gyldig 1. januar 2024",
+  "url": "https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf",
+  "volume_is_modelled_not_measured": true,
+  "knowledge_levels": [
+   {
+    "level": 0,
+    "method": "PULS calculation",
+    "uncertainty_pct": null
+   },
+   {
+    "level": 1,
+    "method": "Simple mass balance",
+    "uncertainty_pct": 135
+   },
+   {
+    "level": 2,
+    "method": "Uncalibrated 1D hydrodynamic model (Mike Urban)",
+    "uncertainty_pct": 100
+   },
+   {
+    "level": 3,
+    "method": "Calibrated Mike Urban",
+    "uncertainty_pct": 55
+   },
+   {
+    "level": 4,
+    "method": "Software sensor / CFD",
+    "uncertainty_pct": 45
+   },
+   {
+    "level": 5,
+    "method": "Measurement-based",
+    "uncertainty_pct": 30
+   }
+  ],
+  "mass_method": "modelled annual volume x a fixed national concentration (typetal)",
+  "recorded_fields_include_event_count": true,
+  "recorded_fields_include_flow_rate": false,
+  "note_on_flow": "PULS records 'antal overløb' - the number of overflows. It records no flow rate, no peak and no threshold crossing, so a high-flow event that scours accumulated basin sediment cannot be distinguished from a small dilute one."
+ },
+ "typetal_nutrients_mg_per_l": {
+  "combined_overflow": {
+   "BI5": 30,
+   "COD": 180,
+   "Tot-N": 12,
+   "Tot-P": 2.0,
+   "provenance": "NOVANA measurements of water from combined systems; one documented revision, 2019, when phosphorus was reduced by one third"
   },
-
-  "typetal_nutrients_mg_per_l": {
-    "combined_overflow": {"BI5": 30, "COD": 180, "Tot-N": 12, "Tot-P": 2.0,
-      "provenance": "NOVANA measurements of water from combined systems; one documented revision, 2019, when phosphorus was reduced by one third"},
-    "separate_stormwater": {"BI5": 6, "COD": 50, "Tot-N": 2, "Tot-P": 0.3,
-      "provenance": "Spildevandsforskning nr. 4, 1990, 'Bestemmelse af belastningen fra regnvandsbetingede udledninger'"},
-    "reference_raw_sewage": {"BI5": 160, "COD": 320, "Tot-N": 43, "Tot-P": 7.0},
-    "reference_stormwater_runoff": {"BI5": 25, "COD": 160, "Tot-N": 10, "Tot-P": 1.8},
-    "_note": "These are annual-average figures, applied to an annual volume for load accounting. They are not event concentrations and cannot represent a first flush."
+  "separate_stormwater": {
+   "BI5": 6,
+   "COD": 50,
+   "Tot-N": 2,
+   "Tot-P": 0.3,
+   "provenance": "Spildevandsforskning nr. 4, 1990, 'Bestemmelse af belastningen fra regnvandsbetingede udledninger'"
   },
-
-  "quality_control": {
-    "acceptance_interval_combined_mg_per_l": [10, 12],
-    "acceptance_interval_separate_mg_per_l": [1.8, 2.2],
-    "procedure": "If reported nitrogen divided by reported volume falls outside the interval, the data owner is contacted to correct the error.",
-    "consequence": "The check tests conformity to the assumed concentration, not accuracy. A genuinely high measured first-flush concentration would be flagged as a mistake.",
-    "exclusions": [
-      "Dry-weather emergency overflows have a de minimis threshold below which they need not be entered in PULS at all",
-      "Sewage that surcharges onto the street and enters the stormwater system is classed as 'haendelig uheld' and not systematically accounted",
-      "Reporting is by the municipalities and utilities responsible for the discharge, with the agency filling in defaults for non-submitters"
-    ]
+  "reference_raw_sewage": {
+   "BI5": 160,
+   "COD": 320,
+   "Tot-N": 43,
+   "Tot-P": 7.0
   },
-
-  "hazardous_substances": {
-    "source": "Miljøstyrelsen / DHI, 'Typetal for miljøfarlige forurenende stoffer i regnbetingede udledninger', januar 2022, based on NOVANA 2000-2020",
-    "url": "https://mst.dk/media/grzhqw5f/typetal-for-miljoefarlige-forurenende-stoffer-i-regnbetingede-udledninger.pdf",
-    "stations_combined_overflow": 6,
-    "stations_separate_stormwater": 5,
-    "applied_to_discharge_points_nationally": 19665,
-    "catchments_selected": "deliberately chosen to represent households and residential areas",
-    "excludes_basins": "typetal cover only discharges 'uden forudgaaende rensning i form af fx filtrering eller sedimentation i regnvandsbassiner'",
-    "excludes_heavy_catchments": "explicitly limiting for 'industriomraader og meget trafikerede veje'",
-    "counterpoint": "the same programme reports the highest median metal concentrations in sludge from basins",
-    "typetal_ug_per_l": {
-      "_columns": ["combined_overflow", "separate_stormwater", "max_observed"],
-      "Zink": [170, 130, 400],
-      "Kobber": [16, 9.0, 50],
-      "Bly": [5.0, 4.0, 24],
-      "Chrom": [2.4, 4.0, 8.0],
-      "Nikkel": [2.7, 4.0, 9.0],
-      "Arsen": [0.80, 1.3, 4.0],
-      "Cadmium": [0.10, 0.070, 0.31],
-      "Kviksoelv": [0.05, 0.03, 0.30]
-    }
+  "reference_stormwater_runoff": {
+   "BI5": 25,
+   "COD": 160,
+   "Tot-N": 10,
+   "Tot-P": 1.8
   },
-
-  "diffuse_load": {
-    "stream_stations": 240,
-    "stations_near_river_mouths": 120,
-    "area_measured_pct": 49,
-    "area_modelled_pct": 51,
-    "method": "grab samples at fixed intervals, load computed as sum of daily discharge x linearly interpolated concentration",
-    "documented_bias": "In all three streams of the 2018 GUDP study, transport computed from grab samples was ALWAYS underestimated relative to intensive daily measurement. The authors suggest bias-correcting the national figures.",
-    "deviation_annual_pct": [-0.9, -7.7],
-    "deviation_monthly_pct": [-50, 98],
-    "storm_dynamics": "high-frequency sensor data show nitrate diluting as discharge rises, then rising with a ~7 hour lag behind the flow peak, moving up to 0.5 mg N/l per hour",
-    "retention_uncertainty_pct_points": [6, 27],
-    "retention_uncertainty_national_average_pct_points": 16,
-    "estimator_pathology": "In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment.",
-    "agriculture_is_a_residual": "measured-plus-modelled total, minus modelled point sources, minus modelled natural background"
-  },
-
-  "monitoring_windows": {
-    "iltsvind_DCE": {"period": "Jul-Aug, Aug-Sep, Sep-Oct, Oct-Nov",
-      "window_set_by": "mechanism (the stratified season)",
-      "seasonal_claim_circular": false},
-    "soft_bottom_fauna": {"period": "1 March - 31 May",
-      "window_set_by": "programme design",
-      "consequence": "The annual autumn die-off is never observed. It is measured only in its aftermath the following spring, once recolonisation has begun."},
-    "bathing_water": {"period": "bathing season, roughly June-September",
-      "window_set_by": "human use",
-      "seasonal_claim_circular": true},
-    "fedtemoeg_as_a_shore_condition": {"period": "no systematic national monitoring",
-      "window_set_by": "when people are on beaches and complain",
-      "seasonal_claim_circular": true}
-  },
-
-  "koege_bugt": {
-    "iltsvind_2023": "Køge og Faxe Bugt blev der ikke registreret iltsvind",
-    "iltsvind_2025": "Køge Bugt og Faxe Bugt er der ikke registreret iltsvind i år",
-    "source": "DCE Rådgivningsnotat 2023|52 and Fagligt notat 2025|71",
-    "interpretation": "DCE's iltsvind is dissolved oxygen below 4 mg/l in bottom water, mapped in stratified basins. Køge Bugt is shallow and mixes readily, so it may never qualify while still having anoxic sediment, sulphate reduction and a putrefying shoreline. 'Not registered' is probably accurate and says nothing about whether the bay is dead.",
-    "unresolved": "Whether 'ikke registreret' means measured-and-absent or not-measured. Not established here."
-  },
-
-  "national_volumes_m3_per_year": {
-    "separate_stormwater_discharged": 195000000,
-    "combined_overflow_water": 33000000,
-    "source": "NOVANA point-source programme, via the MFS typetal report"
+  "_note": "These are annual-average figures, applied to an annual volume for load accounting. They are not event concentrations and cannot represent a first flush."
+ },
+ "quality_control": {
+  "acceptance_interval_combined_mg_per_l": [
+   10,
+   12
+  ],
+  "acceptance_interval_separate_mg_per_l": [
+   1.8,
+   2.2
+  ],
+  "procedure": "If reported nitrogen divided by reported volume falls outside the interval, the data owner is contacted to correct the error.",
+  "consequence": "The check tests conformity to the assumed concentration, not accuracy. A genuinely high measured first-flush concentration would be flagged as a mistake.",
+  "exclusions": [
+   "Dry-weather emergency overflows have a de minimis threshold below which they need not be entered in PULS at all",
+   "Sewage that surcharges onto the street and enters the stormwater system is classed as 'haendelig uheld' and not systematically accounted",
+   "Reporting is by the municipalities and utilities responsible for the discharge, with the agency filling in defaults for non-submitters"
+  ]
+ },
+ "hazardous_substances": {
+  "source": "Miljøstyrelsen / DHI, 'Typetal for miljøfarlige forurenende stoffer i regnbetingede udledninger', januar 2022, based on NOVANA 2000-2020",
+  "url": "https://mst.dk/media/grzhqw5f/typetal-for-miljoefarlige-forurenende-stoffer-i-regnbetingede-udledninger.pdf",
+  "stations_combined_overflow": 6,
+  "stations_separate_stormwater": 5,
+  "applied_to_discharge_points_nationally": 19665,
+  "catchments_selected": "deliberately chosen to represent households and residential areas",
+  "excludes_basins": "typetal cover only discharges 'uden forudgaaende rensning i form af fx filtrering eller sedimentation i regnvandsbassiner'",
+  "excludes_heavy_catchments": "explicitly limiting for 'industriomraader og meget trafikerede veje'",
+  "counterpoint": "the same programme reports the highest median metal concentrations in sludge from basins",
+  "typetal_ug_per_l": {
+   "_columns": [
+    "combined_overflow",
+    "separate_stormwater",
+    "max_observed"
+   ],
+   "Zink": [
+    170,
+    130,
+    400
+   ],
+   "Kobber": [
+    16,
+    9.0,
+    50
+   ],
+   "Bly": [
+    5.0,
+    4.0,
+    24
+   ],
+   "Chrom": [
+    2.4,
+    4.0,
+    8.0
+   ],
+   "Nikkel": [
+    2.7,
+    4.0,
+    9.0
+   ],
+   "Arsen": [
+    0.8,
+    1.3,
+    4.0
+   ],
+   "Cadmium": [
+    0.1,
+    0.07,
+    0.31
+   ],
+   "Kviksoelv": [
+    0.05,
+    0.03,
+    0.3
+   ]
   }
+ },
+ "diffuse_load": {
+  "stream_stations": 240,
+  "stations_near_river_mouths": 120,
+  "area_measured_pct": 49,
+  "area_modelled_pct": 51,
+  "method": "grab samples at fixed intervals, load computed as sum of daily discharge x linearly interpolated concentration",
+  "documented_bias": "In all three streams of the 2018 GUDP study, transport computed from grab samples was ALWAYS underestimated relative to intensive daily measurement. The authors suggest bias-correcting the national figures.",
+  "deviation_annual_pct": [
+   -0.9,
+   -7.7
+  ],
+  "deviation_monthly_pct": [
+   -50,
+   98
+  ],
+  "storm_dynamics": "high-frequency sensor data show nitrate diluting as discharge rises, then rising with a ~7 hour lag behind the flow peak, moving up to 0.5 mg N/l per hour",
+  "retention_uncertainty_pct_points": [
+   6,
+   27
+  ],
+  "retention_uncertainty_national_average_pct_points": 16,
+  "estimator_pathology": "In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment.",
+  "agriculture_is_a_residual": "measured-plus-modelled total, minus modelled point sources, minus modelled natural background"
+ },
+ "monitoring_windows": {
+  "iltsvind_DCE": {
+   "period": "Jul-Aug, Aug-Sep, Sep-Oct, Oct-Nov",
+   "window_set_by": "mechanism (the stratified season)",
+   "seasonal_claim_circular": false
+  },
+  "soft_bottom_fauna": {
+   "period": "1 March - 31 May",
+   "window_set_by": "programme design",
+   "consequence": "The annual autumn die-off is never observed. It is measured only in its aftermath the following spring, once recolonisation has begun."
+  },
+  "bathing_water": {
+   "period": "bathing season, roughly June-September",
+   "window_set_by": "human use",
+   "seasonal_claim_circular": true
+  },
+  "fedtemoeg_as_a_shore_condition": {
+   "period": "no systematic national monitoring",
+   "window_set_by": "when people are on beaches and complain",
+   "seasonal_claim_circular": true
+  }
+ },
+ "koege_bugt": {
+  "iltsvind_2023": "Køge og Faxe Bugt blev der ikke registreret iltsvind",
+  "iltsvind_2025": "Køge Bugt og Faxe Bugt er der ikke registreret iltsvind i år",
+  "source": "DCE Rådgivningsnotat 2023|52 and Fagligt notat 2025|71",
+  "interpretation": "DCE's iltsvind is dissolved oxygen below 4 mg/l in bottom water, mapped in stratified basins. Køge Bugt is shallow and mixes readily, so it may never qualify while still having anoxic sediment, sulphate reduction and a putrefying shoreline. 'Not registered' is probably accurate and says nothing about whether the bay is dead.",
+  "unresolved": "Whether 'ikke registreret' means measured-and-absent or not-measured. Not established here."
+ },
+ "national_volumes_m3_per_year": {
+  "separate_stormwater_discharged": 195000000,
+  "combined_overflow_water": 33000000,
+  "source": "NOVANA point-source programme, via the MFS typetal report"
+ },
+ "load_trend_vs_outcome": {
+  "_what": "The intervention and the outcome, side by side. Both series are published by the same institutions that publish the apportionment. Neither is disputed here; the point is that they are never plotted against each other.",
+  "nitrogen_load": {
+   "series": "Flow-normalised total nitrogen supply from Danish land areas to the sea",
+   "reported_by": "DCE / Aarhus Universitet, annual NOVANA reporting; summarised at miljotilstand.dk",
+   "url": "https://miljotilstand.dk/vandmiljoe/tilfoersel-af-kvaelstof-og-fosfor-til-havet-fra-danske-landomraader",
+   "approx_1990_kt": 100,
+   "approx_recent_kt": 55,
+   "reduction_pct_since_1990": 50,
+   "note": "'Flow-normalised' removes the year-to-year weather signal from the load series - which is itself worth noting, because the outcome series below is dominated by exactly that signal.",
+   "airborne_component": "Atmospheric nitrogen to Danish sea areas was 59 kt in 2023 and is also roughly halved since 1990."
+  },
+  "iltsvind_extent": {
+   "series": "Area of Danish inner waters affected by oxygen depletion, mid/late September",
+   "reported_by": "DCE, four notices per year (Jul-Aug, Aug-Sep, Sep-Oct, Oct-Nov)",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2024/N2024_53.pdf",
+   "record_year": 2002,
+   "observations": [
+    {
+     "year": 1989,
+     "note": "September extent comparable to 2023"
+    },
+    {
+     "year": 2000,
+     "note": "September extent comparable to 2023"
+    },
+    {
+     "year": 2002,
+     "note": "largest recorded; still the maximum of the series"
+    },
+    {
+     "year": 2023,
+     "km2_september": 7500,
+     "note": "largest in 20 years; second-largest September on record, exceeded only by 2002"
+    },
+    {
+     "year": 2024,
+     "km2_september": 11000,
+     "note": "nearly 50% larger than 2023; second-largest ever recorded, exceeded only by 2002"
+    },
+    {
+     "year": 2025,
+     "km2_late_august": 3200,
+     "km2_late_september": 3700,
+     "note": "far smaller area, but early onset and a high severe fraction - over 40% of the affected area severely depleted in August"
+    }
+   ],
+   "caveat": "The series is NOT monotonically worsening. Interannual variance is very large - 2025 was roughly a third of 2024 by area. That variance is itself the finding: extent is governed by the physics of the individual year, not by the slow trend in load."
+  },
+  "the_juxtaposition": "Land-based nitrogen supply is down about half since 1990. September oxygen-depletion extent in 2023 and 2024 was at or above the level of 1989, 2000 and 2002, when the load was roughly double. No trend in the extremes is detectable against a halved input.",
+  "competing_explanations": [
+   {
+    "name": "Legacy lag",
+    "status": "PARTIAL",
+    "detail": "LOOP catchments show 8-24 years between a management change and a detectable decline in stream nitrogen. 1990-2025 is 35 years - longer than the longest observed lag - so lag cannot carry the whole gap."
+   },
+   {
+    "name": "Warming",
+    "status": "SUPPORTED, INDEPENDENT",
+    "detail": "DCE names bottom-water temperature above the long-term mean as a contributing factor. Warmer water holds less oxygen and respires faster. This has strengthened while nitrogen fell. It is not represented anywhere in a source apportionment."
+   },
+   {
+    "name": "Loss of assimilative state",
+    "status": "MECHANISTICALLY SUPPORTED, UNQUANTIFIED",
+    "detail": "Eelgrass down 80-90% from historical extent; filtration capacity lost; benthos repeatedly killed; denitrification switching to DNRA under anoxia; a loose bed resuspending several times more often (see SEABED.md). The same load does more damage than it did in 1990. No term in any published account carries this."
+   }
+  ]
+ }
 }

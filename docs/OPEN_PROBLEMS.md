@@ -30,7 +30,30 @@ distinguish locally-derived from imported material. Requires sediment samples.
 
 ---
 
-## 2. Whether "ikke registreret" means measured or unmeasured
+## 2. Why the extremes did not respond to a halved load
+
+Land-based nitrogen supply is down roughly 50% since 1990. September oxygen-depletion
+extent in 2023 and 2024 was at or above the level of 1989, 2000 and 2002, when the load
+was about double. Meanwhile 2025 came in at roughly a third of 2024's area. Neither the
+absence of a trend nor the size of the year-to-year swing has an accepted explanation.
+
+Three candidates — legacy lag, warming, loss of assimilative state — are laid out in
+[CAUSATION.md](#CAUSATION.md). Lag fails on elapsed time. The other two have no term
+anywhere in a source apportionment, because neither is a source.
+
+**Why it matters.** This is the only empirical test of the nitrogen-dominant model that
+anyone has actually run, and it has been running for thirty-five years. If load is not
+the dominant control on the extremes, then the apportionment is answering a question
+about attribution while the policy is asking a question about outcomes.
+
+**What would settle it.** A regression of annual iltsvind extent on flow-normalised load,
+wind-work over the stratified season, and bottom-water temperature anomaly — with an
+interaction term for state. All three series are published by DCE. No new data, no new
+instruments. The regression appears not to have been published.
+
+---
+
+## 3. Whether "ikke registreret" means measured or unmeasured
 
 DCE reports state no oxygen depletion registered in Køge Bugt, including in 2023, the worst
 iltsvind year in twenty. That is probably accurate — the bay is shallow and may never
@@ -42,7 +65,7 @@ monitoring positions inside Køge Bugt at all.
 
 ---
 
-## 3. The potency term
+## 4. The potency term
 
 Nitrogen accounting has no equivalent of GWP. A kilogram delivered in February into a mixed
 column counts identically to a kilogram delivered in July into a stratified fjord, though
@@ -58,7 +81,7 @@ current implicit weight of 1.0 everywhere.
 
 ---
 
-## 4. Event-based measurement of overflow
+## 5. Event-based measurement of overflow
 
 The reporting method is modelled annual volume × a fixed concentration, quality-controlled
 against that same concentration, with no flow rate recorded. Sediment resuspension in a
@@ -71,7 +94,7 @@ defined, it is the best method in their hierarchy, and almost nobody does it.
 
 ---
 
-## 5. The unquantified nitrogen pathways
+## 6. The unquantified nitrogen pathways
 
 Ten of twenty enumerated pathways carry no number. Two are tractable:
 
@@ -85,7 +108,7 @@ Until at least these two are filled, no denominator exists and no percentage is 
 
 ---
 
-## 6. The autumn die-off
+## 7. The autumn die-off
 
 Soft-bottom fauna is sampled 1 March to 31 May. The annual mortality is observed only in
 its aftermath, once recolonisation has begun, so the depth of the kill — and therefore the
@@ -97,7 +120,7 @@ exist; only the timing would change.
 
 ---
 
-## 7. Fedtemøg as a condition
+## 8. Fedtemøg as a condition
 
 There is no systematic national monitoring of the shore condition at all — not extent, not
 biomass, not duration, not odour. What exists is bathing-water sampling in the bathing
@@ -112,7 +135,7 @@ structured citizen-reporting scheme running year-round rather than in summer.
 
 ---
 
-## 8. Trawling and bed integrity in the receiving bays
+## 9. Trawling and bed integrity in the receiving bays
 
 A loose, dead bed resuspends several times more often than a living one, and bottom
 trawling removes structure-forming fauna directly. Whether the bays receiving urban
@@ -123,7 +146,7 @@ subject to an access key.
 
 ---
 
-## 9. Whether toxicant loading, not nutrients, gates recovery
+## 10. Whether toxicant loading, not nutrients, gates recovery
 
 Eelgrass partially recovered through the 1940s–60s after the 1930s wasting disease, then
 declined again in the 1980s. That failure-to-recover window coincides with rising
@@ -140,7 +163,7 @@ loadings against the eelgrass record.
 
 ---
 
-## 10. The three unplaced flood sheets
+## 11. The three unplaced flood sheets
 
 Amager, Bispebjerg and København Vest did not register confidently and carry *more*
 modelled flooding than the four that did. Two hand-placed control points each in

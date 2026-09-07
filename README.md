@@ -26,6 +26,11 @@ python3 scripts/build_registry.py       # join prose to geometry
 python3 scripts/report.py               # -> docs/REGISTER.md
 python3 scripts/build_viewer_data.py    # -> data/derived/viewer/ (13 MB)
 
+python3 scripts/nitrogen.py             # -> docs/NITROGEN.md
+python3 scripts/waves.py                # -> data/derived/waves.json
+python3 scripts/seabed.py               # -> docs/SEABED.md   (after waves.py)
+python3 scripts/causation.py            # -> docs/CAUSATION.md
+
 python3 -m http.server 8000             # then open http://localhost:8000/viz/
 ```
 
@@ -47,16 +52,26 @@ scripts/
   floodmaps.py            recovers the 2012 flood model out of its PDFs
   floodreg.py             locates the sheets on the map by matching water
   floodgap.py             compares modelled flooding against what was planned
+  nitrogen.py             audits how the marine nitrogen figures are produced
+  waves.py                31 yr of hourly wind -> wave-driven bed shear stress
+  seabed.py               renders the wave results and the accumulation term
+  causation.py            follows the nitrogen figure forward through its causal chain
   observations.py         validates and merges field observations
 data/
   raw/                    downloaded, untouched
   derived/                constructions.geojson, registry.json, viewer/
-  manual/                 codelists.json, constructions.json  (hand-curated, sourced)
+  manual/                 hand-curated and sourced: codelists, constructions,
+                          monitoring methodology, nitrogen pathways
 docs/
   DATA_SOURCES.md         what is public, what is paywalled, what does not exist
   REGISTER.md             the register, generated
   FLOOD_GAP.md            modelled flooding vs the cloudburst plan, generated
   flood_gap_map.png       one picture of that comparison
+  NITROGEN.md             where the marine nitrogen figures come from, generated
+  CAUSATION.md            what survives between that figure and a claim about a shore
+  SEABED.md               wind, waves, and whether the bed stays put, generated
+  OPEN_PROBLEMS.md        what this could not settle, hand-maintained
+  index.html              renders the Markdown for GitHub Pages
 viz/
   index.html              the map
   georef.html             two-pane control-point tool for the flood sheets
