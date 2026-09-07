@@ -75,7 +75,7 @@ Numbers as of the last run; regenerate with `scripts/report.py`.
 | Rain-dependent discharge points, metro area | 680 (392 in København) |
 | Spildevandsplan project pages parsed | 357 |
 | Distinct mapped structures (`klima_id`) | 349 |
-| ... that no plan page describes | **263** |
+| ... that no page of the plan describes | **262** |
 
 Three things worth knowing that were not obvious going in:
 
@@ -84,9 +84,11 @@ projects by plan number (`A1.14`, `K1.57`); the map layers identify them by clou
 number (`klima_id`: `BIR7.5`, `KV86`). No published crosswalk connects them. The plan
 pages happen to cite the klima_id in their titles, so `build_registry.py` recovers the
 link by scanning for ids that actually exist in the geometry — 86 of 349 matched. The
-other **263 mapped structures have no project page at all.** That gap is a finding, and
-it is preserved in `registry.json` under `klima_id_without_documentation` rather than
-dropped.
+other **262 mapped structures are not described anywhere in the plan.** That is checked
+against the whole document, not just the project register: the other 117 pages —
+appendices, status chapters, targets, the "aktuelle projekter" listings — are crawled and
+scanned too, and they account for exactly one further id. The gap is preserved in
+`registry.json` under `klima_id_without_documentation` rather than dropped.
 
 **"m³" in this corpus means two different things.** A page saying 550,000 m³ may be
 describing an annual pumped volume, not a tank. Summing them naively inflated the total
@@ -244,8 +246,9 @@ live in `data/manual/` and are never touched by a fetch script.
 - Resolve the 45 unclassified m³ figures by hand and fold them into the register.
 - Extend `data/manual/constructions.json` to the other cloudburst tunnels
   (Svanemøllen, Valby) with the same one-source-per-claim discipline.
-- Cross-check the 263 undocumented `klima_id`s against the 2024/2025 plan addenda; some
-  may be described in supplements the 2018 sitemap does not cover.
+- Chase the 262 undocumented `klima_id`s outside planer.kk.dk — committee papers, HOFOR
+  project pages, the 2024/2025 addenda if they are ever published as pages. Everything on
+  planer.kk.dk is already scanned.
 
 ## Sources and licensing
 

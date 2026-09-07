@@ -193,6 +193,11 @@ def main():
     log("fetching sitemap ...")
     sm = fetch(SITEMAP).decode("utf-8", "replace")
     urls = sorted(set(re.findall(r"<loc>(%s[^<]+/[^<]+/)</loc>" % re.escape(PLAN), sm)))
+    # Everything else in the plan: appendices, status chapters, targets, the
+    # "aktuelle projekter" pages. Scanned so that "no plan page describes this
+    # structure" means the WHOLE plan, not just the project register.
+    other = sorted(set(re.findall(r"<loc>(https://planer\.kk\.dk/spildevandsplan-2018/[^<]*)</loc>", sm)))
+    other = [u for u in other if "/projekter/" not in u]
     if limit:
         urls = urls[:limit]
     log(f"{len(urls)} project pages to read")
@@ -209,6 +214,19 @@ def main():
             log(f"  !! {url}: {e}")
         if i % 50 == 0:
             log(f"  {i}/{len(urls)} ({fetched} newly downloaded)")
+
+    log(f"\nreading {len(other)} non-project pages of the plan ...")
+    others = []
+    for i, url in enumerate(other, 1):
+        try:
+            page, was_cached = cached_get(url, refresh)
+            if not was_cached:
+                time.sleep(DELAY)
+            others.append({"url": url, "text": strip_tags(page)[:200000]})
+        except Exception as e:
+            log(f"  -- {url}: {e}")
+    write_json(os.path.join(RAW, "plan_other_pages.json"), others)
+    log(f"  {len(others)} pages -> data/raw/plan_other_pages.json")
 
     write_json(os.path.join(RAW, "plan_projects.json"), projects)
     with_id = sum(1 for p in projects if p["klima_id"])

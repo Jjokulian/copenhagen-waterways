@@ -194,7 +194,21 @@ def main():
             "tables": p.get("tables", []),
         })
 
-    orphan_ids = sorted(known - matched_ids)
+    # A structure only counts as undocumented if the WHOLE plan is silent on it, not
+    # just the project register. Scanning the other 117 pages moves exactly one id.
+    elsewhere = {}
+    other_path = os.path.join(RAW, "plan_other_pages.json")
+    if os.path.exists(other_path):
+        for page in read_json(other_path):
+            for m in re.finditer(r"\b([A-ZÆØÅ]{1,4})\s?(\d+(?:\.\d+)*[A-Za-z]?)\b",
+                                 page.get("text") or ""):
+                cid = norm_id(m.group(1) + m.group(2))
+                if cid in known and cid not in matched_ids:
+                    elsewhere.setdefault(cid, page["url"])
+        log(f"  scanned {len(read_json(other_path))} non-project plan pages; "
+            f"{len(elsewhere)} extra klima_id mentioned there")
+
+    orphan_ids = sorted(known - matched_ids - set(elsewhere))
 
     # --- constructions.geojson: every keyed geometry, enriched with any prose we found
     by_kid = defaultdict(list)
@@ -244,6 +258,7 @@ def main():
     log(f"  ... linked to geometry          : {sum(1 for e in entries if e['has_geometry'])}")
     log(f"  klima_id in geometry            : {len(known)}")
     log(f"  ... cited by some plan page     : {len(matched_ids)}")
+    log(f"  ... mentioned only elsewhere    : {len(elsewhere)}")
     log(f"  ... drawn but never described   : {len(orphan_ids)}")
     log(f"  construction features written   : {len(features)} ({documented} with prose)")
     log("\n  by plan category: " + ", ".join(f"{k}={v}" for k, v in by_cat.most_common()))
@@ -273,6 +288,7 @@ def main():
             "unique_klima_id_with_geometry": len(known),
             "klima_id_cited_by_a_plan_page": len(matched_ids),
             "klima_id_with_geometry_but_no_plan_page": len(orphan_ids),
+            "klima_id_mentioned_only_elsewhere_in_the_plan": len(elsewhere),
             "construction_features": len(features),
             "storage_m3_attributable": round(sum(attributable.values())),
             "storage_m3_shared_attribution": round(sum(shared.values())),
@@ -280,6 +296,7 @@ def main():
             "volume_figures_needing_human_read": sum(len(e["unclear_volumes_m3"]) for e in entries),
         },
         "klima_id_without_documentation": orphan_ids,
+        "klima_id_only_mentioned_outside_the_project_register": elsewhere,
         "projects": entries,
     })
     log("\nwrote data/derived/constructions.geojson and data/derived/registry.json")
