@@ -103,12 +103,20 @@ and the data would not be republishable if it did. Every depth here comes from w
 planning document *states*, and is labelled as a claim. A genuinely surveyed 3D model of
 Copenhagen's sewers cannot be built from open data.
 
-**Rainwater flow paths are not modelled.** Doing it properly means taking the 0.4 m
-national terrain model (DHM, on Dataforsyningen — reachable, needs a free token), filling
-its sinks, and computing flow direction and accumulation. That is a raster job needing
-several GB of working memory; this machine has under one. Until then, the cloudburst
-catchments and the planned alignments are the city's *intended* flow paths, which is not
-the same as where water actually goes. `docs/DATA_SOURCES.md` §7 has the details.
+**Rainwater flow paths were modelled — the results just are not data.** Copenhagen ran a
+2D surface flood model and published `Oversvømmelsesscenarier for vandoplande`: depth maps
+of a 100-year event for all seven catchments, banded 0.05–0.1 up to >2 m. They are seven
+**raster PDFs**. No georeferencing, no vector extents, no queryable depths, and the
+calculations date from 2012 for a 2010 scenario. The knowledge exists and is public; the
+data was never released. Recovering it means warping the images to a coordinate system and
+classifying the depth bands back into polygons — feasible here (numpy, PIL and pdftoppm are
+present), not yet done.
+
+Building it fresh instead means the 0.4 m terrain model (DHM, on Dataforsyningen — reachable,
+needs a free token), sink-filling, and flow accumulation: a raster job wanting several GB of
+RAM, which this machine does not have. Either way, the cloudburst catchments and planned
+alignments currently in the viewer are the city's *intended* flow paths, not where water
+goes. `docs/DATA_SOURCES.md` §7–8 has the details.
 
 **The plan is from 2018, with later addenda.** Project status and completion years drift;
 `skp_igangsatte_prj_kk` and `skp_afsluttede_prj_kk` are the layers to trust for build state.

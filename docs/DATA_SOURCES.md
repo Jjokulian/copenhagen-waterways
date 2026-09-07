@@ -132,6 +132,33 @@ sinks, compute flow direction and accumulation, and you get surface flow paths a
 ponding depressions directly, rather than inferring them from the plan. It needs a
 raster stack this VM cannot hold — see the note in the README.
 
+## 8. Modelled flood extents — published as pictures  *(not yet recovered)*
+
+`Oversvømmelsesscenarier for vandoplande` on opendata.dk: the output of Copenhagen's 2D
+surface flood model, showing inundation depth for a 100-year event across all seven water
+catchments, banded 0.05–0.1 / 0.1–0.2 / 0.2–0.5 / 0.5–1 / 1–2 / >2 m.
+
+It is published as **seven raster PDFs** — amager, bispebjerg, indre-by, kbhvest,
+ladegaardsaaen, norrebro, osterbro — roughly 8 MB each, aerial photo with the depth bands
+painted over it. The dataset description states the calculations are from 2012, for a 2010
+scenario.
+
+This is the most important thing in this catalogue and the least usable. The modelling
+question — *where does rain actually pond in Copenhagen* — was answered at municipal scale
+and then flattened into an image. There is no georeferencing, so it cannot be overlaid; no
+vector extents, so nothing can be intersected with it; no depth values, so nothing can be
+queried. A person wanting the answer must re-derive it from terrain, or walk around in the
+rain.
+
+Recovering it is tractable and worth doing: each sheet carries a scale bar and a coastline
+that can be matched against `kbh_kysttyper`, so the images can be warped into EPSG:25832,
+and the six depth bands are flat distinct colours that classify cleanly back into polygons.
+`numpy`, `PIL`, `pdftoppm`, `pdfimages` and `convert` are all present on this machine. The
+result would be a 2012-vintage modelled flood surface — dated, but real data rather than a
+picture of data, and directly comparable against field observation.
+
+CKAN id: `oversvommelsesscenarier-for-vandoplande`.
+
 ## Practical notes
 
 * `pip` is unavailable and RAM is ~1 GB, so every script is standard-library only and
