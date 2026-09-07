@@ -30,6 +30,10 @@ python3 scripts/nitrogen.py             # -> docs/NITROGEN.md
 python3 scripts/waves.py                # -> data/derived/waves.json
 python3 scripts/seabed.py               # -> docs/SEABED.md   (after waves.py)
 python3 scripts/causation.py            # -> docs/CAUSATION.md
+python3 scripts/currents.py fetch       # marine + Baltic wind  (~10 min)
+python3 scripts/currents.py validate && python3 scripts/currents.py index
+python3 scripts/currents.py transport && python3 scripts/currents.py report
+python3 scripts/solutions.py            # -> docs/SOLUTIONS.md
 
 python3 -m http.server 8000             # then open http://localhost:8000/viz/
 ```
@@ -56,6 +60,8 @@ scripts/
   waves.py                31 yr of hourly wind -> wave-driven bed shear stress
   seabed.py               renders the wave results and the accumulation term
   causation.py            follows the nitrogen figure forward through its causal chain
+  currents.py             retention, transport and the overflow-hour test
+  solutions.py            what the city plans against what it has done
   observations.py         validates and merges field observations
 data/
   raw/                    downloaded, untouched
@@ -70,6 +76,8 @@ docs/
   NITROGEN.md             where the marine nitrogen figures come from, generated
   CAUSATION.md            what survives between that figure and a claim about a shore
   SEABED.md               wind, waves, and whether the bed stays put, generated
+  CURRENTS.md             where the water goes, generated
+  SOLUTIONS.md            the response, measured from the city's own layers
   OPEN_PROBLEMS.md        what this could not settle, hand-maintained
   index.html              renders the Markdown for GitHub Pages
 viz/
