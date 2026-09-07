@@ -62,13 +62,16 @@ DOTS = {
         (0.885, 0.047), (0.945, 0.300), (0.957, 0.652),
         (0.549, 0.972), (0.100, 0.070), (0.075, 0.905),
     ],
+    # Chosen to sit ON something with recognisable geometry - a lake's corner, a
+    # stadium, a marina basin, a motorway junction - rather than on featureless housing,
+    # because a dot on a repeating suburb cannot be placed accurately by anyone.
     "bispebjerg": [
-        (0.345, 0.395), (0.800, 0.325), (0.965, 0.125),
-        (0.430, 0.820), (0.130, 0.130), (0.640, 0.640),
+        (0.300, 0.360), (0.788, 0.318), (0.955, 0.100),
+        (0.523, 0.243), (0.118, 0.098), (0.352, 0.706),
     ],
     "kbhvest": [
-        (0.255, 0.480), (0.365, 0.145), (0.855, 0.760),
-        (0.560, 0.975), (0.180, 0.545), (0.930, 0.300),
+        (0.243, 0.452), (0.176, 0.540), (0.838, 0.742),
+        (0.548, 0.962), (0.118, 0.135), (0.905, 0.548),
     ],
 }
 DOT_CROP_M = 350.0    # half-width of each zoom inset, metres
@@ -117,7 +120,11 @@ def dot_sheet(sheet, meta, Image, ImageDraw):
     d = ImageDraw.Draw(ov)
     for i, (fx, fy) in enumerate(dots, 1):
         dot(d, fx * W, fy * H, max(18, W // 90), str(i))
-    ov.thumbnail((780, 780))
+    ov_target_h = ((len(dots) + 1) // 2) * 420
+    ov = ov.resize((max(1, int(ov.width * ov_target_h / ov.height)), ov_target_h),
+                   Image.LANCZOS)
+    if ov.width > 900:
+        ov.thumbnail((900, 10**6))
 
     tile, half = 420, DOT_CROP_M / mpp
     insets = []
