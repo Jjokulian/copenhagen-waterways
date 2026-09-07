@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" role="img" aria-label="Where a raindrop goes now, and where it would go">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#55666f"/></marker></defs>
+<rect width="980" height="560" fill="#fbfcfd"/>
+<text x="30" y="34" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#1c2a33">Where a raindrop goes</text>
+<text x="30" y="70" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#8e2318">NOW — 90.7% of Copenhagen</text>
+<rect x="30" y="88" width="175" height="52" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
+<text x="117.5" y="119.0" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">rain on a street</text>
+<rect x="30" y="166" width="175" height="52" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
+<text x="117.5" y="186" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">gully</text>
+<text x="117.5" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">straight into the sewer</text>
+<rect x="30" y="244" width="175" height="64" rx="7" fill="#f6e3e0" stroke="#c0392b" stroke-width="1.4"/>
+<text x="117.5" y="264" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">combined sewer</text>
+<text x="117.5" y="282" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">rain + sewage, one pipe</text>
+<rect x="30" y="336" width="175" height="78" rx="7" fill="#f6e3e0" stroke="#c0392b" stroke-width="1.4"/>
+<text x="117.5" y="356" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">basin</text>
+<text x="117.5" y="374" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">holds it — until it fills,</text>
+<text x="117.5" y="387" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">then scours what settled</text>
+<path d="M117,140 L117,164" stroke="#8e2318" stroke-width="2" marker-end="url(#a)"/>
+<path d="M117,218 L117,242" stroke="#8e2318" stroke-width="2" marker-end="url(#a)"/>
+<path d="M117,308 L117,334" stroke="#8e2318" stroke-width="2" marker-end="url(#a)"/>
+<rect x="245" y="244" width="150" height="64" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
+<text x="320.0" y="264" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">treatment works</text>
+<text x="320.0" y="282" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">dry weather only</text>
+<path d="M205,276 L243,276" stroke="#55666f" stroke-width="2" marker-end="url(#a)"/>
+<rect x="245" y="350" width="150" height="64" rx="7" fill="#f3cdc7" stroke="#8e2318" stroke-width="1.4"/>
+<text x="320.0" y="370" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">THE SEA</text>
+<text x="320.0" y="388" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">untreated, on a threshold</text>
+<path d="M205,380 L243,380" stroke="#8e2318" stroke-width="2" marker-end="url(#a)"/>
+<text x="320" y="436" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-style="italic" fill="#8e2318">fat, solids, sludge, metals — all of it, in hours</text>
+<text x="545" y="70" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1f7a5a">PROPOSED</text>
+<rect x="545" y="88" width="175" height="52" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
+<text x="632.5" y="119.0" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">rain on a street</text>
+<rect x="545" y="166" width="175" height="64" rx="7" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.4"/>
+<text x="632.5" y="186" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">surface channel</text>
+<text x="632.5" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">a river, not a gully</text>
+<rect x="545" y="256" width="175" height="64" rx="7" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.4"/>
+<text x="632.5" y="276" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">wetland / basin</text>
+<text x="632.5" y="294" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">settles and takes up</text>
+<path d="M632,140 L632,164" stroke="#1f7a5a" stroke-width="2" marker-end="url(#a)"/>
+<path d="M632,230 L632,254" stroke="#1f7a5a" stroke-width="2" marker-end="url(#a)"/>
+<rect x="545" y="346" width="175" height="78" rx="7" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.4"/>
+<text x="632.5" y="366" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">terminal water</text>
+<text x="632.5" y="384" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">quarry, lake, watercourse —</text>
+<text x="632.5" y="397" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">an outlet that is not the sea</text>
+<path d="M632,320 L632,344" stroke="#1f7a5a" stroke-width="2" marker-end="url(#a)"/>
+<rect x="770" y="166" width="175" height="64" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
+<text x="857.5" y="186" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">sewer</text>
+<text x="857.5" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">sewage only, always full</text>
+<rect x="770" y="256" width="175" height="64" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
+<text x="857.5" y="276" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">treatment works</text>
+<text x="857.5" y="294" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">never bypassed</text>
+<path d="M857,230 L857,254" stroke="#55666f" stroke-width="2" marker-end="url(#a)"/>
+<rect x="770" y="346" width="175" height="78" rx="7" fill="#dfeef6" stroke="#2b6f9c" stroke-width="1.4"/>
+<text x="857.5" y="366" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">THE SEA</text>
+<text x="857.5" y="384" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">treated effluent only</text>
+<path d="M857,320 L857,344" stroke="#55666f" stroke-width="2" marker-end="url(#a)"/>
+<text x="857" y="446" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-style="italic" fill="#2b6f9c">no threshold, no bypass, no scour event</text>
+<text x="950" y="546" text-anchor="end" font-family="system-ui,sans-serif" font-size="10.5" fill="#8c99a2">The left column is Copenhagen as built. The right is an argument.</text>
+</svg>

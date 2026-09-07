@@ -38,6 +38,9 @@
   nav li a:hover{background:var(--sunk);color:var(--ink)}
   nav li a[aria-current="page"]{background:var(--sunk);color:var(--accent);font-weight:600}
   nav li a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  nav li.navgroup{font-family:Archivo,sans-serif;font-size:10.5px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    margin:18px 0 6px;padding:12px 11px 0;border-top:1px solid var(--rule)}
   main{padding:44px 0 0;min-width:0}
   #doc{max-width:70ch}
   #doc h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.4vw,40px);font-weight:700;
@@ -96,28 +99,45 @@
 /* The reports are generated as Markdown by the pipeline, and Markdown is the canonical
    form. GitHub Pages serves a .md file as plain text, so this renders it instead of
    asking anyone to read a raw table. */
-const DOCS = [
-  ["FLOOD_GAP.md",    "Does the plan go where the water goes?"],
-  ["NITROGEN.md",     "What the sea actually receives"],
-  ["CAUSATION.md",    "The chain from nitrogen to fedtem\u00f8g"],
-  ["SEABED.md",       "The seabed, the wind, and what stays put"],
-  ["CURRENTS.md",     "Where the water goes"],
-  ["SOLUTIONS.md",    "What would actually stop it"],
-  ["OPEN_PROBLEMS.md","Open problems"],
-  ["REGISTER.md",     "Register of claimed structures"],
-  ["DATA_SOURCES.md", "Where the data comes from"],
+/* Two groups, deliberately. Everything under "Investigation" reports what the data
+   supports and stops. "The argument" says what ought to be done, which is a different
+   kind of claim and is kept on its own page. */
+const GROUPS = [
+  ["Investigation", [
+    ["FLOOD_GAP.md",    "Does the plan go where the water goes?"],
+    ["NITROGEN.md",     "What the sea actually receives"],
+    ["CAUSATION.md",    "The chain from nitrogen to fedtem\u00f8g"],
+    ["SEABED.md",       "The seabed, the wind, and what stays put"],
+    ["CURRENTS.md",     "Where the water goes"],
+    ["SOLUTIONS.md",    "What would actually stop it"],
+    ["OPEN_PROBLEMS.md","Open problems"],
+    ["REGISTER.md",     "Register of claimed structures"],
+    ["DATA_SOURCES.md", "Where the data comes from"],
+  ]],
+  ["The argument", [
+    ["PROGRAMME.md",    "The problem and the solution"],
+  ]],
 ];
+const DOCS = GROUPS.flatMap(([, ds]) => ds);
 const navEl = document.getElementById("nav");
 const docEl = document.getElementById("doc");
 
-for (const [file, label] of DOCS) {
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.href = "#" + file;
-  a.textContent = label;
-  a.dataset.file = file;
-  li.appendChild(a);
-  navEl.appendChild(li);
+for (const [heading, docs] of GROUPS) {
+  if (heading !== GROUPS[0][0]) {
+    const h = document.createElement("li");
+    h.className = "navgroup";
+    h.textContent = heading;
+    navEl.appendChild(h);
+  }
+  for (const [file, label] of docs) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + file;
+    a.textContent = label;
+    a.dataset.file = file;
+    li.appendChild(a);
+    navEl.appendChild(li);
+  }
 }
 
 function current() {

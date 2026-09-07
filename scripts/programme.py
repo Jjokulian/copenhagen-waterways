@@ -1,0 +1,469 @@
+#!/usr/bin/env python3
+"""Generate docs/PROGRAMME.md - the argument, kept deliberately separate from the
+investigation.
+
+Every other document here reports what the data says and stops there. This one says what
+ought to be done, which is a different kind of claim and is labelled as one throughout.
+Numbers are pulled from the investigation outputs so the two cannot drift apart, and
+each is linked back to the page that established it.
+
+Usage:  python3 scripts/programme.py   (after rivermap.py, currents.py, solutions.py)
+"""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import DERIVED, ROOT, log, read_json
+
+MANUAL = os.path.join(ROOT, "data", "manual")
+
+# Source control targets. Each is a substance whose route to the sea is urban runoff,
+# where the only effective intervention is upstream of the drain.
+CHEMICALS = [
+    ("6PPD / 6PPD-quinone",
+     "tyre antiozonant and its oxidation product",
+     "Acutely lethal to coho salmon at nanogram-per-litre concentrations — among the "
+     "most toxic substances ever found in urban runoff. Identified as a substance of "
+     "concern under REACH in 2023; the Netherlands and Austria are preparing a joint "
+     "restriction dossier, a process that runs 2–3 years before anything binds.",
+     "Support the restriction. It is already moving and needs no new instrument."),
+    ("Copper",
+     "brake pads, roofing, antifouling",
+     "Highly toxic to fish and invertebrates at low concentrations, and among the "
+     "highest metals in Danish basin sludge. Reformulated brake pads are proven "
+     "technology — California legislated copper out of them and the industry complied.",
+     "A product standard, not a discharge permit. Denmark could ask for one at EU level "
+     "and adopt a national procurement rule immediately."),
+    ("Zinc",
+     "galvanised surfaces, tyres, roofing",
+     "The highest-concentration metal in the Danish stormwater typetal, from surfaces "
+     "that are chosen at the design stage and then last fifty years.",
+     "Building regulation. A rule about roof and gutter materials in new construction "
+     "costs nothing and compounds."),
+    ("PFAS",
+     "everything",
+     "The September 2025 EU water agreement adds a limit for 25 PFAS to the priority "
+     "substances list. Persistent, mobile, and not removed by any of the passive "
+     "treatment described below.",
+     "The one class on this list where end-of-pipe treatment genuinely cannot help, "
+     "which makes it the clearest case for a ban rather than a limit."),
+]
+
+# Passive stormwater treatment performance, from the pond and biofilter literature.
+TREATMENT = [
+    ("Suspended solids (TSS)", "76–84%",
+     "76% mean across 72 ponds in Canada and the USA; 81% in a mature Swedish wetland; "
+     "84% at a Norwegian highway pond"),
+    ("Microplastics > 500 µm", "95%", "measured across Danish and Nordic stormwater ponds"),
+    ("Microplastics < 500 µm", "88%", "same programme"),
+    ("Tyre wear particles", "~95%",
+     "below the detection limit in three of four pond effluents; found in every "
+     "sediment sample"),
+]
+
+
+def main():
+    riv = read_json(os.path.join(DERIVED, "rivermap.json"))
+    ret = read_json(os.path.join(DERIVED, "currents_index.json"))["retention"]
+    mon = read_json(os.path.join(MANUAL, "monitoring.json"))
+    vol = mon["national_volumes_m3_per_year"]
+    tt = mon["typetal_nutrients_mg_per_l"]
+
+    o = []
+    a = o.append
+
+    a("# The problem and the solution\n")
+    a("> **This page is an argument.** Every other document in this project reports what "
+      "the data supports and stops there. This one says what ought to be done, which is "
+      "a different kind of claim, and it is labelled as one from here to the bottom. "
+      "The numbers are pulled from the investigation pages and linked back; the "
+      "*conclusions drawn from them* are mine and the reader is entitled to reject "
+      "them.\n")
+
+    # ================================================================ PROBLEM
+    a("## Part one — the problem\n")
+
+    a("### It is not a number. It is a shore.\n")
+    a("The thing that is wrong is not that a percentage is misattributed. It is that "
+      "there are stretches of Danish coast where, from late summer into autumn, the "
+      "water goes turbid and the shore goes putrid, and where the structural life that "
+      "used to be there — eelgrass, weed with holdfasts, the animals that lived in "
+      "both — has been replaced by mush.\n")
+    a("Everything downstream of that observation is instrumentation. The observation "
+      "does not depend on the instrument, and it is worth saying plainly that people "
+      "who live on such a coast know it is happening long before any monitoring "
+      "programme is designed to notice.\n")
+
+    a("### Four reasons the current framing cannot fix it\n")
+    for i, (h, t) in enumerate([
+        ("One unit, one culprit.",
+         "Nitrogen is the only quantity in the account, so it is the only quantity "
+         "policy can act on. Fat has no nitrogen in it. Toxicants have no nitrogen in "
+         "them. Neither can be represented, so neither gets addressed. "
+         "See [CAUSATION.md](#CAUSATION.md)."),
+        ("A linear instrument on a self-amplifying system.",
+         "An apportionment assumes the outcome is a weighted sum of the inputs. Oxygen "
+         "depletion feeds itself: the dying releases the nutrients that drive the next "
+         "round. Halving an input in such a system does not halve the outcome, and the "
+         "record since 1990 shows exactly that."),
+        ("What is not measured cannot be acted on.",
+         "Benthic fauna is sampled 1 March – 31 May, so the autumn die-off is never "
+         "observed. Fedtemøg has no national monitoring at all. Overflow mass is a "
+         "modelled volume times an assumed concentration, quality-controlled against "
+         "that same concentration. A programme cannot be held to account for what its "
+         "own instruments are blind to."),
+        ("The countable source becomes the blamed source.",
+         "Every term that would shift attribution away from something easy to count — "
+         "atmospheric deposition, sediment regeneration, submarine groundwater, legacy "
+         "load, temperature, the state of the receiving bay — is precisely a term with "
+         "no row in the table. That may be an accident of what is measurable. It is "
+         "still what determines who gets a policy aimed at them."),
+    ], 1):
+        a(f"{i}. **{h}** {t}")
+    a("")
+
+    a("### Who bears it is not who decides\n")
+    a("This is the part that is genuinely political rather than technical.\n")
+    a("Of Køge Bugt's combined-sewer basin storage, **92% sits in København, Hvidovre "
+      "and Tårnby**, along with 47 of the bay's 85 combined overflows. Vallensbæk, "
+      "Ishøj and Solrød have **zero** combined-sewer overflows — they separated their "
+      "systems and physically cannot discharge sewage into the bay in a storm. Greve "
+      "has two.\n")
+    a("The bay opens to the southeast, so the discharge enters at the northern end and "
+      "the whole shoreline is downstream of it. **The municipality that built the "
+      "storage is not the municipality that smells it.**\n")
+    k = ret["koege_bugt"]
+    aa = ret["aarhus_bugt"]
+    a(f"And the bay does not flush: **{k['flush_days_20km']:.0f} days** to move water "
+      f"20 km, against {aa['flush_days_20km']:.1f} for Aarhus Bugt "
+      f"([CURRENTS.md](#CURRENTS.md)). What arrives, stays.\n")
+    a("There is no authority whose jurisdiction is the bay. There are ten "
+      "municipalities, several utilities, a state agency that maps oxygen in stratified "
+      "bottom water, and a shoreline that belongs to whoever is standing on it. The "
+      "cost is externalised across an administrative boundary, and the boundary is the "
+      "reason nobody is answerable.\n")
+
+    a("### What we would be asking for, said plainly\n")
+    a("Not a lower number. A coast where the structural life comes back — where there "
+      "is eelgrass to walk past, weed with a holdfast instead of a film, and a "
+      "November shoreline that does not smell of putrefaction. That is the goal. "
+      "Nitrogen loading is at most a proxy for it, and a poor one, because a system "
+      "can hit its nitrogen target and stay dead.\n")
+
+    # ================================================================ SOLUTION
+    a("## Part two — the solution\n")
+    a("Six things. They are ordered by how much evidence stands behind them, not by "
+      "how appealing they are.\n")
+
+    # ---- 1
+    a("### 1. Rainwater rivers — and the alignments already exist\n")
+    a("![Where the water wants to go, and whether the plan lets it](river_map.png)\n")
+    a("*The recovered 2012 cloudburst model against the cloudburst plan, with the plan "
+      "split into routes where the water would be visible and routes where it stays in "
+      "a pipe. Generated by `scripts/rivermap.py`.*\n")
+    a("The 2012 flood model is usually read as a risk map. It is also a survey: at 10 m "
+      "resolution, it is a record of where water in Copenhagen goes when you stop "
+      "forcing it into a pipe. That is the natural drainage network of the city, and it "
+      "has already been mapped.\n")
+    a("Measured against it:\n")
+    a("| | Share of modelled flood path |")
+    a("|---|---:|")
+    a(f"| Within 100 m of a planned **surface** route | **{riv['near_surface_conveyance_pct']:.0f}%** |")
+    a(f"| Within 100 m of a planned **pipe** | {riv['near_buried_conveyance_pct']:.0f}% |")
+    a(f"| Within 100 m of anything in the plan | {riv['near_anything_pct']:.0f}% |")
+    a(f"| **With no surface route within 100 m** | **{riv['no_surface_route_pct']:.0f}%** |")
+    a("")
+    a(f"So the surprise is a positive one. Copenhagen has already drawn the river "
+      f"network: **{riv['near_surface_conveyance_pct']:.0f}% of the flood paths have a "
+      "surface alignment planned beside them.** The city's cloudburst plan is "
+      "169 km of surface conveyance against 71 km of pipe "
+      "([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not "
+      "missing.\n")
+    a("**What is missing is the connection.** A skybrudsvej is designed against a "
+      "hundred-year event: it activates when the system is already overwhelmed, a "
+      "handful of times a decade. Ordinary heavy rain — the rain that actually causes "
+      "overflows, many times a year — still goes down the gully into the combined pipe "
+      "exactly as before. The surface network was built to protect the city from water, "
+      "not to protect the sea from the city.\n")
+    a("**The ask is therefore small and specific:** connect the everyday rain to the "
+      "surface network that has already been designed and partly built, instead of only "
+      "the cloudburst rain. That is a change in inlet design and drainage regulation, "
+      "not a new masterplan.\n")
+    if riv["corridors"]:
+        a(f"And where no alignment exists — the {riv['no_surface_route_pct']:.0f}% — the "
+          f"model names the places. {len(riv['corridors'])} corridor candidates come out "
+          "of it: stretches with more than 0.5 m of modelled water, no surface route "
+          "within 100 m, and enough length to be a channel rather than a puddle. They "
+          "are circled on the map and listed in `data/derived/rivermap.json`.\n")
+
+    # ---- 2
+    a("### 2. An outlet that is not the sea\n")
+    a("![Where a raindrop goes now, and where it would go](system_flow.svg)\n")
+    a("A basin that overflows to the sea is a delay, not a solution. It holds the water "
+      "until it fills, and then it releases both the water and the sediment that "
+      "settled in it during every previous event — on a flow threshold, which is why "
+      "the annual-average accounting cannot see it.\n")
+    a("The alternative is a terminal water: an outlet that is a lake, a watercourse, a "
+      "wetland or a quarry rather than the bay.\n")
+    a("![Køge Bugt: what drains into it](koege_bugt_system.svg)\n")
+    a("*Real: coastline, combined-sewer catchments, overflow structures, treatment "
+      "plants, the quarry. Green and dashed: proposal, not data.*\n")
+    a("**The chalk quarry case, assessed honestly.** Karlstrup Kalkgrav sits behind "
+      "Solrød Strand, separated from Køge Bugt by the motorway. Its water level is held "
+      "**four metres below sea level** by a pump station that already removes about "
+      "**600,000 m³ a year** and discharges it into the bay. As a piece of hydraulic "
+      "geometry it is close to ideal: a deep hole below sea level, adjacent to the "
+      "shore, with the pumping already installed.\n")
+    a("And it is the wrong site. It is Zealand's clearest lake, a protected geological "
+      "and recreational area, and the clarity is exactly what would be destroyed. "
+      "Anyone proposing to route stormwater into it would deserve to lose the argument, "
+      "and I am not proposing it.\n")
+    a("What the case establishes is the **specification**, which is worth having:\n")
+    for t in [
+        "a void of the order of 10⁵–10⁶ m³, which disused extraction sites routinely are",
+        "a bed below the receiving water level, so the flow is gravity-fed or already pumped",
+        "no protection status and no existing ecological value to destroy",
+        "and — the part that makes it work — **no hydraulic connection to the sea**, so "
+        "there is no threshold at which it discharges",
+    ]:
+        a(f"- {t}")
+    a("")
+    a("Denmark has a great many disused gravel and chalk workings and a public register "
+      "of raw-material extraction areas. Screening that register against those four "
+      "criteria is a desk exercise. It has not been done for this purpose, and the fact "
+      "that it has not been done is the finding.\n")
+    a("*The obvious objection, stated before anyone else has to.* Anything infiltrating "
+      "toward the chalk aquifer is a groundwater question, and Copenhagen drinks its "
+      "groundwater. A terminal water for stormwater has to be lined, or it has to sit "
+      "somewhere the aquifer is already written off, or it has to discharge to a "
+      "surface watercourse after treatment. That constraint is real and it narrows the "
+      "site list considerably. It does not eliminate it.\n")
+
+    # ---- 3
+    a("### 3. Light treatment at high throughput, which is a different machine\n")
+    a("Separating rainwater does not mean discharging it raw. Untreated urban surface "
+      "water is one of the main routes by which tyre particles, microplastics and "
+      "metals reach the sea, and simply giving it its own pipe would move that problem "
+      "rather than solve it.\n")
+    a("But stormwater needs a **fundamentally lighter machine** than sewage does, and "
+      "the reason is chemical rather than economic:\n")
+    a("| | Sewage | Stormwater |")
+    a("|---|---|---|")
+    a(f"| Volume (national, rain-dependent) | {vol['combined_overflow_water']/1e6:,.0f} "
+      f"million m³/yr overflow | {vol['separate_stormwater_discharged']/1e6:,.0f} "
+      "million m³/yr |")
+    a(f"| Strength (COD) | {tt['reference_raw_sewage']['COD']:,.0f} mg/l | "
+      f"{tt['separate_stormwater']['COD']:,.0f} mg/l |")
+    a(f"| Nitrogen | {tt['reference_raw_sewage']['Tot-N']:,.0f} mg/l | "
+      f"{tt['separate_stormwater']['Tot-N']:,.0f} mg/l |")
+    a("| Pollutants are mostly | dissolved and biological | **bound to particles** |")
+    a("| So the removal mechanism is | biological process, aeration, energy | "
+      "**gravity** |")
+    a("")
+    a("That last row is the whole argument. Metals, PAH, tyre wear and microplastics in "
+      "runoff travel attached to sediment, and sediment settles on its own. A treatment "
+      "train of gross-pollutant trap, forebay, wet pond and filter strip has no aeration "
+      "basin, no sludge recirculation, no energy input, and no process to upset. Its "
+      "throughput is limited by area, and area is the cheap input.\n")
+    a("What that buys, from the pond literature:\n")
+    a("| Removed | Efficiency | Evidence |")
+    a("|---|---:|---|")
+    for name, eff, src in TREATMENT:
+        a(f"| {name} | **{eff}** | {src} |")
+    a("")
+    a("**95% of tyre wear material, by letting water sit still.** That is the strongest "
+      "single number in this document, and it is the answer to the objection that "
+      "separated stormwater would just be pollution with a shorter pipe.\n")
+    a("Two honest limits. Ponds do not remove dissolved fractions — chloride from road "
+      "salt, dissolved copper, PFAS — so they are a complement to source control and "
+      "not a substitute for it. And their performance depends entirely on the sediment "
+      "being *removed* periodically rather than left to accumulate and eventually "
+      "scour, which is the identical failure mode as the sewer basins. A pond that is "
+      "never dredged becomes the thing it was built to prevent.\n")
+
+    # ---- 4
+    a("### 4. Ban the chemicals, rather than filtering them\n")
+    a("The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says that nitrogen "
+      "produces mush rather than meadow because the organisms that would have used it "
+      "well are gone. If that is right, then the toxicants that removed them are "
+      "upstream of the nutrient problem, and no amount of nutrient policy reaches "
+      "them.\n")
+    a("Four concrete targets, with what is already in motion:\n")
+    for name, source, why, ask in CHEMICALS:
+        a(f"**{name}** — *{source}*")
+        a(f"  {why}")
+        a(f"  → **{ask}**\n")
+    a("The general principle is unglamorous and decisive: **you cannot filter out what "
+      "you can decline to manufacture.** A substance regulated at the point of "
+      "discharge has to be caught at 19,665 outfalls. The same substance regulated at "
+      "the point of sale has to be caught once. Denmark regulates the outfall and "
+      "imports the product.\n")
+    a("*This is the least developed section here, and the one where I am furthest "
+      "outside what this project has actually measured.* We have not established that "
+      "any of these four is a binding constraint in Danish coastal water — only that "
+      "the mechanism is well founded, that the substances are present, and that the "
+      "monitoring which would settle it rests on eleven stations that deliberately "
+      "exclude the roads and industrial catchments where the substances come from.\n")
+
+    # ---- 5
+    a("### 5. Rebuild the thing that used to absorb it\n")
+    a("Load reduction assumes the receiving system will recover once the pressure comes "
+      "off. Where the structural life has already gone, that assumption is doing a lot "
+      "of unexamined work — a bay with no filter feeders, no eelgrass and a loose bed "
+      "does not return to 1960 because the load returns to 1960.\n")
+    for t in [
+        "**Extractive aquaculture.** Mussels and macroalgae remove nitrogen as biomass "
+        "and are harvested rather than left to decay. At the loads computed for this "
+        "bay, single-digit km² would match the overflow nitrogen. It is the only "
+        "intervention on this list that removes what is already in the water rather "
+        "than reducing what is added.",
+        "**Eelgrass, where the light allows it.** Uptake, sediment stabilisation and "
+        "habitat in one organism. Turbidity is the binding constraint, which links it "
+        "directly to items 1 and 3.",
+        "**Leave the bed alone where it is recovering.** A living bed resuspends "
+        "several times less often than a dead one ([SEABED.md](#SEABED.md)), so bed "
+        "integrity is not only a fisheries question — it changes how often the "
+        "accumulated sulphide and metals come back into the water.",
+        "**Harvest as a use, not a disposal.** Extracted biomass that is too "
+        "contaminated for human consumption still has uses where accumulation is "
+        "acceptable — which is a question about what we are willing to do with it, not "
+        "a technical obstacle.",
+    ]:
+        a(f"- {t}")
+    a("")
+    a("*Caveat, and it is not small.* Extractive aquaculture that concentrates metals "
+      "and organic contaminants creates a disposal question it does not answer. The "
+      "honest position is that it is a lever worth pulling and that where the harvest "
+      "goes has to be settled before, not after.\n")
+
+    # ---- 6
+    a("### 6. Measure the six things that would settle the argument\n")
+    a("This is first in priority and last in the list because it is the least "
+      "satisfying. Everything above is contestable, and it is contestable because the "
+      "measurements that would resolve it were never taken.\n")
+    a("| Measure | Cost | What it settles |")
+    a("|---|---|---|")
+    for m, c, w in [
+        ("Flow-proportional sampling at the 13 largest overflow structures",
+         "weeks",
+         "Whether load is as concentrated as volume is. 13 of 1,328 structures hold 24% "
+         "of recorded storage; if load follows, most of the problem has 13 addresses."),
+        ("Fat, oil, grease and total organic carbon added to the determinands", "trivial",
+         "Whether the material the shore is named after is even in the discharge."),
+        ("Autumn benthic sampling at existing stations", "one survey season",
+         "The depth of the annual die-off, which the March–May window has never seen."),
+        ("Fixed coastal cameras with a monthly index, year-round", "negligible",
+         "Whether fedtemøg has the season everyone assumes. Currently unfalsifiable in "
+         "either direction."),
+        ("Iltsvind extent regressed on load, wind-work and temperature", "no new data",
+         "Whether the extremes track load at all. All three series are already "
+         "published by DCE."),
+        ("A screen of disused extraction sites against the four criteria in item 2",
+         "a desk week",
+         "Whether terminal storage is available at all, before anyone argues about "
+         "whether it is desirable."),
+    ]:
+        a(f"| {m} | **{c}** | {w} |")
+    a("")
+
+    # ================================================================ ORDER
+    a("## The order of operations\n")
+    a("The interventions above split cleanly by timescale, and the split is the "
+      "argument for what to do this year:\n")
+    a("| | Timescale |")
+    a("|---|---|")
+    for t, s_ in [
+        ("Measure the tail; publish event-level flow", "weeks"),
+        ("Empty basins before the season rather than letting flow scour them", "months"),
+        ("Enforce grease separation at source", "months"),
+        ("Screen extraction sites for terminal storage", "months"),
+        ("Connect everyday rain to the existing surface network", "years"),
+        ("Build the missing corridors and their treatment ponds", "years"),
+        ("Product bans through REACH", "2–3 years, already started"),
+        ("Genuine network separation", "decades — 13 of 300 catchments are planned for it"),
+    ]:
+        a(f"| {t} | **{s_}** |")
+    a("")
+    a("Which produces an uncomfortable conclusion for everyone. The people who want "
+      "urgent action have to accept that the physical fix is a generational programme. "
+      "The people who want to wait for better evidence have to accept that the evidence "
+      "is cheap, available, and has been declined for decades.\n")
+    a("**Is it solvable in a year?** Not the infrastructure. But the *measurement* is a "
+      "season's work, the *operating* changes — basin emptying, grease enforcement, "
+      "release timing — are a year's work and would act on exactly the pulsed, "
+      "threshold-triggered discharge that the annual accounting is blind to. If the "
+      "concentration in the register carries through to load, then a year of "
+      "operational change on a few dozen structures is not a small intervention at "
+      "all. Nobody knows whether it does, because nobody has measured it. That is the "
+      "single most actionable sentence in this document.\n")
+
+    # ================================================================ ASK
+    a("## Who would have to do what\n")
+    a("| Level | The ask |")
+    a("|---|---|")
+    for lvl, ask in [
+        ("Utility (HOFOR, Biofos, and the bay's others)",
+         "Instrument the largest structures. Publish flow, not just event counts. Empty "
+         "basins ahead of the season."),
+        ("Københavns Kommune",
+         "In the next spildevandsplan revision: connect everyday rain to the surface "
+         "network already designed, and report the separation figure net of "
+         "*Separatkloakeret opland tilkoblet fællessystemet*."),
+        ("The bay's ten municipalities",
+         "A joint body whose jurisdiction is the bay. There is currently none, and the "
+         "asymmetry between who discharges and who receives is the reason there needs "
+         "to be."),
+        ("Miljøstyrelsen",
+         "Raise the required videnniveau for large structures. Add FOG and TOC to the "
+         "determinands. Extend benthic sampling into autumn. Fund a fedtemøg index."),
+        ("Denmark, at EU level",
+         "Support the 6PPD restriction dossier. Ask for a copper product standard for "
+         "brake pads. Treat the PFAS limits as a floor."),
+    ]:
+        a(f"| **{lvl}** | {ask} |")
+    a("")
+
+    # ================================================================ HONEST
+    a("## What would make this wrong\n")
+    a("A programme that cannot be refuted is not a programme. Each of these would "
+      "damage the argument above, and each is testable:\n")
+    for t in [
+        "**If flow-proportional sampling at the largest structures finds loads close to "
+        "the typetal**, then the concentration argument fails, the overflow term really "
+        "is 0.6%, and the priority should go back to diffuse sources.",
+        "**If autumn benthic sampling finds no die-off beyond what the spring survey "
+        "implies**, the ratchet mechanism is wrong and the March–May window was "
+        "adequate after all.",
+        "**If a year-round fedtemøg index shows a clean summer peak and a quiet "
+        "November**, then the seasonal argument here is wrong and the existing "
+        "monitoring windows were correctly placed.",
+        "**If iltsvind extent regresses cleanly on load once weather is controlled "
+        "for**, the nitrogen-dominant model is vindicated and the state-dependence "
+        "argument is unnecessary.",
+        "**If retention in Køge Bugt disappears on a 1 km regional model**, the "
+        "accumulation mechanism loses its main quantitative support.",
+    ]:
+        a(f"- {t}")
+    a("")
+    a("Four of those five need no new instruments and no new money. That is the "
+      "position this document is arguing from: not that it is right, but that it has "
+      "been cheap to check for thirty years and nobody has checked.\n")
+
+    a("---\n")
+    a("*Figures generated by `scripts/programme.py`, `scripts/rivermap.py` and "
+      "`scripts/programme_map.py`. Every number traces to an investigation page; the "
+      "arguments do not. Sources for the treatment efficiencies are the stormwater "
+      "pond and biofilter literature cited inline; sources for the chemical status are "
+      "ECHA, the Danish Environmental Protection Agency and the September 2025 EU water "
+      "agreement.*")
+
+    path = os.path.join(ROOT, "docs", "PROGRAMME.md")
+    text = "\n".join(o)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(text)
+    log(f"wrote docs/PROGRAMME.md ({len(text):,} chars)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

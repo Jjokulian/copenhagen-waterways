@@ -34,6 +34,9 @@ python3 scripts/currents.py fetch       # marine + Baltic wind  (~10 min)
 python3 scripts/currents.py validate && python3 scripts/currents.py index
 python3 scripts/currents.py transport && python3 scripts/currents.py report
 python3 scripts/solutions.py            # -> docs/SOLUTIONS.md
+python3 scripts/rivermap.py             # -> docs/river_map.png
+python3 scripts/programme_map.py        # -> docs/*.svg
+python3 scripts/programme.py            # -> docs/PROGRAMME.md
 
 python3 -m http.server 8000             # then open http://localhost:8000/viz/
 ```
@@ -62,6 +65,9 @@ scripts/
   causation.py            follows the nitrogen figure forward through its causal chain
   currents.py             retention, transport and the overflow-hour test
   solutions.py            what the city plans against what it has done
+  rivermap.py             the flood model read as the city's natural drainage
+  programme_map.py        the two figures for the argument page
+  programme.py            the argument - kept separate from the investigation
   observations.py         validates and merges field observations
 data/
   raw/                    downloaded, untouched
@@ -79,6 +85,8 @@ docs/
   CURRENTS.md             where the water goes, generated
   SOLUTIONS.md            the response, measured from the city's own layers
   OPEN_PROBLEMS.md        what this could not settle, hand-maintained
+  PROGRAMME.md            THE ARGUMENT - what ought to be done, labelled as such
+  river_map.png           where the water wants to go vs what the plan allows
   index.html              renders the Markdown for GitHub Pages
 viz/
   index.html              the map
