@@ -235,8 +235,43 @@ loadings against the eelgrass record.
 
 ## 13. The three unplaced flood sheets
 
-Amager, Bispebjerg and København Vest did not register confidently and carry *more*
-modelled flooding than the four that did. Two hand-placed control points each in
-`viz/georef.html` extends the flood-versus-plan comparison beyond the inner city.
+Amager, Bispebjerg and København Vest did not register confidently and hold **4.79 km²
+of extracted flooding against 0.92 km² on the four that did** — so roughly five sixths of
+the recovered model is sitting on disk, classified and unusable, for want of a position.
+Every figure derived from the model is therefore an inner-city figure, and the Vestamager
+proposal in [PROGRAMME.md](#PROGRAMME.md) sits on the island whose sheet is missing.
 
-The smallest item on this list, and the only one that needs no new data.
+**A second attempt was made and failed.** It is worth recording what it established,
+because it changes what the third attempt should do. `scripts/floodcheck.py` came out of
+it.
+
+- **The scale bar is right.** Measured directly off the render: 534 px for 1000 m on
+  Amager, 1:14,745. The 2× error that once put Amager in the wrong place is genuinely
+  fixed, and scale is not the problem.
+- **A sheet is a zoom, not a catchment.** The Amager sheet covers 4.2 × 5.7 km; the
+  Amager og Christianshavn cloudburst catchment is 9.2 × 9.5 km. The sheet is a portion
+  of its catchment, framed for A3. This is probably why matching against catchment
+  outlines failed — the two were never the same shape.
+- **The sea is painted, in exact palette colour.** A sample of open water returns
+  (154, 199, 224) with zero variance — the 0.2–0.5 m band. So water can be pulled
+  cleanly out of the band classification already on disk instead of guessed at from
+  colour heuristics, and doing so lifted the best IoU from 0.08 to 0.25.
+- **A family of candidate positions is ruled out.** Every high-scoring position put
+  Øresund down the sheet's full eastern edge. The sheet's bottom-right corner is
+  unambiguously suburban — housing, allotments, a running track, a railway — with the
+  coast entering only at the top-right. Those positions are wrong regardless of what
+  they score.
+- **And no scoring rule settled it.** IoU rewards agreeing water but is indifferent to
+  putting open sea where the sheet shows houses. A ±1 matched filter overcorrects and
+  parks the frame where there is no water at all. ZNCC behaves sensibly and peaks at
+  0.43, but not at a position that survives looking at it. Precision — of the water the
+  sheet paints, how much is real — reaches 1.00, and reaches it at many positions,
+  because a sea blob slides along a coast.
+
+**What would settle it.** A person who can look at the sheet and name two features.
+The obstacle is not the mathematics and no longer the extraction; it is that recognising
+*this beach, that stadium* and giving each a coordinate is a human act. Two points per
+sheet in `viz/georef.html`, or read off any map, and `scripts/floodmaps.py georef` does
+the rest and reports its own residual.
+
+Still the smallest item on this list, and still the only one needing no new data.
