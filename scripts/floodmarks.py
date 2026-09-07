@@ -55,6 +55,7 @@ MARKS = {
     ],
 }
 CROP_M = 900.0        # metres each way around a marker in the zoomed crop
+GRID_M = 500.0        # reference grid spacing on the overview, in metres
 
 
 def _pil():
@@ -89,14 +90,31 @@ def main(argv):
         W, H = base.size
         mpp = meta["m_per_px"]
 
-        # --- overview
+        # --- overview, with a reference grid so a place can be pointed at as well as
+        # named. Columns A.. across, rows 1.. down, one cell per 500 m so a grid
+        # reference is also a rough distance.
         ov = base.copy()
         dr = ImageDraw.Draw(ov)
+        cell_px = GRID_M / mpp
+        ncol = int(W / cell_px) + 1
+        nrow = int(H / cell_px) + 1
+        for i in range(1, ncol):
+            x = i * cell_px
+            dr.line([(x, 0), (x, H)], fill=(255, 235, 60), width=2)
+        for j in range(1, nrow):
+            y = j * cell_px
+            dr.line([(0, y), (W, y)], fill=(255, 235, 60), width=2)
+        for i in range(ncol):
+            for j in range(nrow):
+                ref = f"{chr(65+i)}{j+1}"
+                bx, by = i * cell_px + 6, j * cell_px + 6
+                dr.rectangle([bx, by, bx + 13 * len(ref) + 8, by + 30], fill=(0, 0, 0))
+                dr.text((bx + 5, by + 7), ref, fill=(255, 235, 60))
         for label, fx, fy, _desc in marks:
             ring(dr, fx * W, fy * H, max(26, W // 55), label)
-        ov.thumbnail((1500, 1500))
-        p_ov = os.path.join(DEST, f"{sheet}_overview.png")
-        ov.save(p_ov)
+        ov.thumbnail((2000, 2000))
+        p_ov = os.path.join(DEST, f"{sheet}_overview.jpg")
+        ov.save(p_ov, quality=88, optimize=True)
 
         # --- contact sheet of crops
         n = len(marks)
@@ -123,14 +141,15 @@ def main(argv):
                          fill=(0, 0, 0))
             sd.text(((i % cols) * tile + 6, (i // cols) * tile + tile - 18),
                     f"{label}  {desc[:44]}", fill=(220, 230, 240))
-        p_cs = os.path.join(DEST, f"{sheet}_marks.png")
-        sheet_im.save(p_cs)
+        p_cs = os.path.join(DEST, f"{sheet}_marks.jpg")
+        sheet_im.save(p_cs, quality=90, optimize=True)
 
         index[sheet] = {
             "frame_px": [W, H],
             "m_per_px": mpp,
             "extent_km": [round(W * mpp / 1000, 2), round(H * mpp / 1000, 2)],
             "map_scale": meta.get("map_scale"),
+            "grid_m": GRID_M,
             "marks": [{"label": l, "fx": fx, "fy": fy, "desc": d,
                        "px": round(fx * W, 1), "py": round(fy * H, 1)}
                       for l, fx, fy, d in marks],
