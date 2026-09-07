@@ -82,6 +82,11 @@ def main():
     a("")
     a("At 10 m the difference is nearly sevenfold — and the deeper, quieter water is exactly "
       "where the fine organic sulphidic mud settles.\n")
+    a("There is a name for what that looks like. Under severe oxygen depletion, white "
+      "filamentous sulphur bacteria (*Beggiatoa*) spread across the bed in milky "
+      "sheets, oxidising hydrogen sulphide to sulphate using oxygen taken from the "
+      "water. Danish calls them **liglagen** — corpse shroud — and they appear in late "
+      "summer. The mat is the sulphide oxygen sink, visible.\n")
     a("That matters because resuspending sulphidic sediment is **itself an oxygen sink**, "
       "with no nitrogen and no algae in it. At 50 µmol AVS per gram dry sediment, stirring "
       "5 cm consumes about 80 g O₂/m² — the entire oxygen content of a 10 m water column. "

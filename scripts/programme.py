@@ -314,6 +314,43 @@ def main():
       "community, blood tests — and it happened here, in Danish, within living memory, "
       "by the exact pathway this programme is about: **untreated surface water, led to "
       "a ditch.**\n")
+    a("**But it does not carry the same weight, and it is worth being honest about "
+      "why.** Korsør is 118 blood tests. That is a number, and a number about elevated "
+      "long-term risk, and nobody has ever been moved by a percentile. Parkersburg had "
+      "something else: over 150 animals dead one at a time, blackened teeth, tumours "
+      "and deformities, a creek running white with foam, and a discharge pipe pouring "
+      "green liquid out of a DuPont landfill — **filmed, over years, by the farmer it "
+      "was happening to.** Wilbur Tennant made the evidence himself because nobody else "
+      "would. It is visible, individual and unarguable in a way a cohort study can "
+      "never be.\n")
+    a("*One restraint, because this project does not get to be sloppy about mechanism.* "
+      "The documented signs in those cattle are weight loss, tumours, blackened teeth "
+      "and deformities. Reading the behavioural changes as neurological damage goes "
+      "beyond what the record establishes, and PFOA is not principally characterised as "
+      "a neurotoxicant. The horror in that footage is real without needing that "
+      "claim.\n")
+
+    a("#### Denmark already has the image, and its name is worse\n")
+    a("So the gap is not that Denmark lacks a dystopian picture of what this does. It "
+      "has one, it is photographed every year, and Danish already has a word for it.\n")
+    a("> **Liglagen.** *Corpse shroud.*\n")
+    a("Under severe oxygen depletion, white filamentous sulphur bacteria — *Beggiatoa* — "
+      "spread across the seabed in milky sheets. Aarhus University's own outreach "
+      "material calls them *havbundens liglagen*, the seabed's corpse shroud, and "
+      "publishes an exercise for schoolchildren on how to grow one. They appear in late "
+      "summer. Anything that could swim has left; anything that could not is underneath "
+      "them.\n")
+    a("And the mat is not a symptom sitting on top of the mechanism — **it is the "
+      "mechanism, made visible.** The bacteria are using oxygen out of the water to "
+      "convert hydrogen sulphide to sulphate. That is the same sulphide oxygen sink "
+      "computed in [SEABED.md](#SEABED.md), the one that consumes a water column's "
+      "worth of oxygen with no nitrogen and no algae involved in it. The white sheet is "
+      "what that reaction looks like from a boat.\n")
+    a("A dead cow with black teeth and a seabed wearing a shroud are the same kind of "
+      "evidence. One of them was filmed by a farmer and shown in cinemas. The other "
+      "sits in an annual technical notice and a teaching pack.\n")
+    a("**That is a distribution problem, not an evidence problem** — and it is the "
+      "cheapest thing on this entire page to fix.\n")
     a("##### Where to start, and what is actually free\n")
     a("| | |")
     a("|---|---|")
@@ -330,6 +367,24 @@ def main():
       "Internet Archive whose filename carries scene-release tags — an unauthorised "
       "rip. A project whose entire argument is that provenance matters cannot link to "
       "it, and the credibility cost would be larger than the benefit.\n")
+    a("*And on Tennant's own footage.* It is the most valuable material in the whole "
+      "story and it is **not in the commons.** He shot it himself around 1998-99 and "
+      "carried it to Taft Stettinius & Hollister in cardboard boxes; he died in 2009, "
+      "having been diagnosed with cancer, before the litigation resolved. A work "
+      "authored by an individual is protected for the author's life plus seventy years, "
+      "which puts it under copyright into the 2070s. Filing something as a court "
+      "exhibit puts it in the record — it does not waive the copyright, and access is "
+      "not a licence. *(That is a reading of the position, not legal advice.)*\n")
+    a("The encouraging part is that both *Dark Waters* and *The Devil We Know* used it, "
+      "which means a rights holder exists, can be found, and has said yes before. The "
+      "ask would go to the family, or through the firm where Bilott still practises — "
+      "and it would be a request to people who chose to make the record public in the "
+      "first place, which is a different conversation from asking a studio.\n")
+    a("**But it is the wrong effort.** Chasing American footage is borrowing salience "
+      "when Denmark's own image is annual, local, and photographed by a public "
+      "university. Getting permission for a seabed photograph from Aarhus is an email. "
+      "Getting permission for a dead farmer's tapes from an estate and two "
+      "distributors is a project.\n")
     a("*And on making it commons.* Worth being realistic: Focus Features, part of "
       "Universal, holds distribution on a 2019 studio feature and will not place it in "
       "the public domain. **The achievable ask is a screening licence, not a commons "
