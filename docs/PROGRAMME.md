@@ -29,6 +29,32 @@ And the bay does not flush: **73 days** to move water 20 km, against 3.4 for Aar
 
 There is no authority whose jurisdiction is the bay. There are ten municipalities, several utilities, a state agency that maps oxygen in stratified bottom water, and a shoreline that belongs to whoever is standing on it. The cost is externalised across an administrative boundary, and the boundary is the reason nobody is answerable.
 
+### How a thing like this becomes public
+
+Nothing above will matter if nobody is angry about it, so it is worth looking at how a chemical story has actually broken through before.
+
+**Dark Waters** (2019, Todd Haynes, Mark Ruffalo) is the one most people have seen — Rob Bilott's twenty-year case against DuPont over PFOA in Parkersburg, West Virginia. *(Not to be confused with* Dark Water*, singular, which is a horror film.)* Behind it sits a documented record that is far stronger than the dramatisation:
+
+| | |
+|---|---|
+| C8 Health Project, 2005–06 | **69,030 participants**, 11 epidemiological studies — one of the largest exposure cohorts ever assembled, and it exists only because a lawsuit forced it |
+| C8 Science Panel, 2012 | "probable link" findings for high cholesterol, thyroid disease, kidney and testicular cancer, pregnancy-induced hypertension and ulcerative colitis |
+| Bilott, *Exposure* (2019) | the primary account |
+
+*And the caveat this project owes.* "Probable link" was a **legal** definition — *more likely than not* — agreed as part of a settlement, not a scientific standard. Some of those links have been contested since. That does not undo the finding; it means the finding is an estimator with a known provenance, which is exactly how everything else on this site is treated.
+
+The settlements in the industry section below descend directly from that case. So the film is not decoration here — it is the origin of a demand curve this document later relies on.
+
+#### But the Danish version is better, and it is 100 km from Køge Bugt
+
+In 2021, PFOS from firefighting foam used for years at the **Korsør** fire training ground reached a field by the most ordinary route imaginable: surface water from the site ran to a ditch, and the ditch to a lake. Cattle belonging to the Korsør Kogræsserforening grazed there. The members ate the beef.
+
+**118 people were found with elevated PFOS in their blood**, among the highest levels measured in Denmark. One family was affected across four generations. 145 sites nationally were subsequently flagged for investigation, and residents have taken the municipality to court.
+
+It is the same story as Parkersburg — a fire-training ground, cattle, a small community, blood tests — and it happened here, in Danish, within living memory, by the exact pathway this programme is about: **untreated surface water, led to a ditch.**
+
+The transferable lesson is not that a film should be cited. It is that both stories worked because they were about a person, a place and an animal, and never about a molecule. Which is why Part One of this document starts with a shore and a smell rather than with a percentage — and why [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 8 argues that the cheapest useful thing anyone could fund is a camera pointed at a beach, year-round.
+
 ### What we would be asking for, said plainly
 
 Not a lower number. A coast where the structural life comes back — where there is eelgrass to walk past, weed with a holdfast instead of a film, and a November shoreline that does not smell of putrefaction. That is the goal. Nitrogen loading is at most a proxy for it, and a poor one, because a system can hit its nitrogen target and stay dead.
