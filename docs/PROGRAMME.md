@@ -124,16 +124,18 @@ Seven things. They are ordered by how much evidence stands behind them, not by h
 
 The 2012 flood model is usually read as a risk map. It is also a survey: at 10 m resolution, it is a record of where water in Copenhagen goes when you stop forcing it into a pipe. That is the natural drainage network of the city, and it has already been mapped.
 
+**What this covers, before any number is quoted.** The 2012 model was published as seven PDF sheets and four registered confidently — indre-by, ladegaardsaaen, nørrebro, østerbro. Everything below is **1.52 km² of inner-city flood path**. Amager, Bispebjerg and København Vest are not in it, and they carry *more* modelled flooding than the four that are ([FLOOD_GAP.md](#FLOOD_GAP.md), [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 13). That matters twice over here: the percentages are inner-city percentages, and **section 2 proposes a system for Amager on ground the flood evidence does not cover.** Two hand-placed control points per sheet would close it, and nobody has done it.
+
 Measured against it:
 
-| | Share of modelled flood path |
+| | Share of the *inner-city* modelled flood path |
 |---|---:|
 | Within 100 m of a planned **surface** route | **72%** |
 | Within 100 m of a planned **pipe** | 24% |
 | Within 100 m of anything in the plan | 81% |
 | **With no surface route within 100 m** | **28%** |
 
-So the surprise is a positive one. Copenhagen has already drawn the river network: **72% of the flood paths have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
+So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **72% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
 
 **What is missing is the connection.** A skybrudsvej is designed against a hundred-year event: it activates when the system is already overwhelmed, a handful of times a decade. Ordinary heavy rain — the rain that actually causes overflows, many times a year — still goes down the gully into the combined pipe exactly as before. The surface network was built to protect the city from water, not to protect the sea from the city.
 
@@ -215,6 +217,8 @@ Stormwater treatment wetlands are conventionally sized at a few per cent of the 
 | 5% — generous, wetland-type | 53 ha | **2.6%** |
 
 **Between half a per cent and three per cent of the polder would do it.** That is the difference between this and the quarry: the quarry was two orders of magnitude too small and the wrong shape; this is two orders of magnitude larger than needed and exactly the right shape.
+
+*And the evidence gap, stated where it bites.* The flood-path analysis in section 1 covers four inner-city sheets. **The Amager sheet is one of the three that never registered**, so there is no modelled flood path for the island this section proposes to drain. The area, the polder and the sewer statistics are real; the routing is not evidenced yet, and placing that sheet is the cheapest way to change that.
 
 #### The objections, which are real
 

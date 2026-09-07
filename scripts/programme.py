@@ -461,17 +461,27 @@ def main():
       "resolution, it is a record of where water in Copenhagen goes when you stop "
       "forcing it into a pipe. That is the natural drainage network of the city, and it "
       "has already been mapped.\n")
+    a("**What this covers, before any number is quoted.** The 2012 model was published "
+      "as seven PDF sheets and four registered confidently — indre-by, ladegaardsaaen, "
+      f"nørrebro, østerbro. Everything below is **{riv['flood_path_km2']:.2f} km² of "
+      "inner-city flood path**. Amager, Bispebjerg and København Vest are not in it, "
+      "and they carry *more* modelled flooding than the four that are "
+      "([FLOOD_GAP.md](#FLOOD_GAP.md), [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 13). "
+      "That matters twice over here: the percentages are inner-city percentages, and "
+      "**section 2 proposes a system for Amager on ground the flood evidence does not "
+      "cover.** Two hand-placed control points per sheet would close it, and nobody has "
+      "done it.\n")
     a("Measured against it:\n")
-    a("| | Share of modelled flood path |")
+    a("| | Share of the *inner-city* modelled flood path |")
     a("|---|---:|")
     a(f"| Within 100 m of a planned **surface** route | **{riv['near_surface_conveyance_pct']:.0f}%** |")
     a(f"| Within 100 m of a planned **pipe** | {riv['near_buried_conveyance_pct']:.0f}% |")
     a(f"| Within 100 m of anything in the plan | {riv['near_anything_pct']:.0f}% |")
     a(f"| **With no surface route within 100 m** | **{riv['no_surface_route_pct']:.0f}%** |")
     a("")
-    a(f"So the surprise is a positive one. Copenhagen has already drawn the river "
-      f"network: **{riv['near_surface_conveyance_pct']:.0f}% of the flood paths have a "
-      "surface alignment planned beside them.** The city's cloudburst plan is "
+    a(f"So the surprise is a positive one. Across the inner city, Copenhagen has "
+      f"already drawn the river network: **{riv['near_surface_conveyance_pct']:.0f}% of "
+      "the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is "
       "169 km of surface conveyance against 71 km of pipe "
       "([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not "
       "missing.\n")
@@ -604,6 +614,12 @@ def main():
       "magnitude too small and the wrong shape; this is two orders of magnitude larger "
       "than needed and exactly the right shape.\n")
 
+    a("*And the evidence gap, stated where it bites.* The flood-path analysis in "
+      "section 1 covers four inner-city sheets. **The Amager sheet is one of the three "
+      "that never registered**, so there is no modelled flood path for the island this "
+      "section proposes to drain. The area, the polder and the sewer statistics are "
+      "real; the routing is not evidenced yet, and placing that sheet is the cheapest "
+      "way to change that.\n")
     a("#### The objections, which are real\n")
     for h, t in [
         ("Natura 2000.",
