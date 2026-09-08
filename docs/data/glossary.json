@@ -529,6 +529,16 @@
   "label": "Conserved targets: \"selective\" is a claim about dose",
   "text": "The molecular machinery agricultural biocides attack is shared far beyond the taxon on the label. Azoles inhibit CYP51, the sterol enzyme of every eukaryote, and other cytochrome P450s including the vertebrate ones that make steroid hormones. Strobilurins block respiratory complex III and SDHIs block complex II, which is simultaneously a Krebs-cycle enzyme - conserved wherever there are mitochondria. Neonicotinoids act on acetylcholine receptors and pyrethroids on voltage-gated sodium channels, both universal in animals. Triazines block photosystem II, which is what algae photosynthesise with."
  },
+ "E18": {
+  "kind": "hypothesis (E)",
+  "label": "Tyre-wear transformation products",
+  "text": "6PPD is an antiozonant put into tyre rubber since the 1960s to stop it cracking. At the tyre surface it reacts with ozone to give 6PPD-quinone, which washes off roads with the rain. The parent compound is unremarkable; the transformation product is acutely lethal to some fish at sub-microgram per litre concentrations - among the most potent aquatic toxicants known. It was identified in 2020, after decades of use, by fractionating road runoff to find what was killing coho salmon returning to urban streams."
+ },
+ "E19": {
+  "kind": "hypothesis (E)",
+  "label": "The sentinel species decides what is detectable",
+  "text": "Not a pollutant but a property of how pollutants are found, and `E18` is its worked example. Sensitivity to 6PPD-quinone varies by orders of magnitude between species that live in the same water: some salmonids die at concentrations that leave the standard laboratory test organisms visibly unaffected. A compound screened against the usual battery would therefore pass, and did, for decades. The general form: routine ecotoxicology establishes safety with respect to the species chosen, and the choice was made for husbandry convenience rather than sensitivity."
+ },
  "E17": {
   "kind": "hypothesis (E)",
   "label": "The microbiome is the exposed organ",

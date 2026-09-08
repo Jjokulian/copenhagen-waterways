@@ -1612,7 +1612,9 @@ H = [
      "The pipe is not only a conveyor of dilute runoff; it is a sink that "
      "periodically empties. Misconnected foul drains put sewage into the same "
      "store, so a separate system is not thereby a clean one.",
-     "Concentration peaks at the onset of an event and decays through it - the "
+     "Chemically distinct from B1 - hydrocarbons, tyre-wear particles and their "
+     "transformation products (`E18`) rather than faecal indicators. Concentration "
+     "peaks at the onset of an event and decays through it - the "
      "first flush - so load per event scales with the length of the preceding dry "
      "spell and the peak shear reached, not with rainfall volume alone. A pulse "
      "arrives as reduced material and turbidity together, so oxygen falls and "
@@ -1975,6 +1977,41 @@ H = [
      "Marine concentrations of the actual high-tonnage compounds, with endpoints "
      "matched to their mechanism. Danish marine monitoring covers few of them and "
      "tests mortality rather than the conserved pathway."),
+    ("E18", "E", "Tyre-wear transformation products", ["O3", "O6", "O7"],
+     "6PPD is an antiozonant put into tyre rubber since the 1960s to stop it "
+     "cracking. At the tyre surface it reacts with ozone to give 6PPD-quinone, "
+     "which washes off roads with the rain. The parent compound is unremarkable; "
+     "the transformation product is acutely lethal to some fish at sub-microgram "
+     "per litre concentrations - among the most potent aquatic toxicants known. It "
+     "was identified in 2020, after decades of use, by fractionating road runoff "
+     "to find what was killing coho salmon returning to urban streams.",
+     "Mortality tied to road density and to the first hours of rainfall rather "
+     "than to any nutrient or oxygen variable, and falling on particular species "
+     "while others in the same water are unaffected.",
+     "Concentration in road runoff and receiving water during storms, against "
+     "mortality in a sensitive species. The road-density gradient is the natural "
+     "experiment, and it is uncorrelated with agricultural gradients, which makes "
+     "it unusually separable from most of group A.",
+     "6PPD-quinone is not measured in Danish monitoring. Whether Danish "
+     "salmonids - sea trout especially - carry the sensitivity is a species "
+     "question that the published work does not settle for them."),
+    ("E19", "E", "The sentinel species decides what is detectable", ["O3", "O7"],
+     "Not a pollutant but a property of how pollutants are found, and `E18` is its "
+     "worked example. Sensitivity to 6PPD-quinone varies by orders of magnitude "
+     "between species that live in the same water: some salmonids die at "
+     "concentrations that leave the standard laboratory test organisms visibly "
+     "unaffected. A compound screened against the usual battery would therefore "
+     "pass, and did, for decades. The general form: routine ecotoxicology "
+     "establishes safety with respect to the species chosen, and the choice was "
+     "made for husbandry convenience rather than sensitivity.",
+     "Harm concentrated in particular taxa with no dose-response visible in the "
+     "monitored ones, and an absence of any signal in compliance testing while "
+     "field populations decline.",
+     "The same compound tested across a panel spanning the taxa actually present, "
+     "rather than the standard species. Disagreement between panel and standard "
+     "is the measurement.",
+     "Danish testing follows the standard batteries. No panel of locally present "
+     "species exists, so this cannot currently be checked for any compound."),
     ("E17", "E", "The microbiome is the exposed organ", ["O3", "O7", "O6"],
      "Animals and plants carry the target taxa inside them. A fungicide reaching a "
      "marine invertebrate meets that animal's fungal and bacterial symbionts; a "

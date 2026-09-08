@@ -2,7 +2,7 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it enumerates the mechanisms that could produce the outcomes below, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**160 mechanisms in 17 groups.** No entry here is the subject of the page and the rest its alternatives. The grouping is alphabetical for reference, which is an ordering and not a ranking; the letters carry no priority, and `A1` is first for the same reason `Z8` is last.
+**162 mechanisms in 17 groups.** No entry here is the subject of the page and the rest its alternatives. The grouping is alphabetical for reference, which is an ordering and not a ranking; the letters carry no priority, and `A1` is first for the same reason `Z8` is last.
 
 **Some entries have a political history attached to them and some do not, and that history is not a property of the mechanism.** A mechanism that has been legislated about is not thereby more likely; one that nobody has campaigned on is not thereby more likely either. Where an entry names an industry, a practice or a public work, it names it as the physical source of a flux, in the same way `C4` names an inflow event — the entry is about what enters the water, never about who is at fault for it. Attribution of blame is not a scientific operation and is not performed anywhere on this page.
 
@@ -10,9 +10,9 @@ The register is written down *before* anything is scored, so that the field cann
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 160 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 162 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 160 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 162 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -511,7 +511,7 @@ Rain overwhelms a combined system and raw sewage discharges directly: organics, 
 
 Two mechanisms in one pipe, and the second is the larger. First, what the rain picks up: road and roof runoff carrying organics, hydrocarbons, tyre wear and metals through a pipe built to skip treatment. Second, **what the system has been storing since the last storm.** Pipes and detention basins accumulate settled solids between events and go anoxic while they sit, so the deposit is reduced, sulphide-bearing and immediately oxygen-demanding on contact with seawater. A large storm scours it and delivers it as a pulse. The pipe is not only a conveyor of dilute runoff; it is a sink that periodically empties. Misconnected foul drains put sewage into the same store, so a separate system is not thereby a clean one.
 
-**Predicts.** Concentration peaks at the onset of an event and decays through it - the first flush - so load per event scales with the length of the preceding dry spell and the peak shear reached, not with rainfall volume alone. A pulse arrives as reduced material and turbidity together, so oxygen falls and light falls in the same hours.
+**Predicts.** Chemically distinct from B1 - hydrocarbons, tyre-wear particles and their transformation products (`E18`) rather than faecal indicators. Concentration peaks at the onset of an event and decays through it - the first flush - so load per event scales with the length of the preceding dry spell and the peak shear reached, not with rainfall volume alone. A pulse arrives as reduced material and turbidity together, so oxygen falls and light falls in the same hours.
 
 **Discriminated by.** First-flush concentration against the event mean, at the same outfall. Sediment stock in basins before and after a large storm. Reduced-sulphur signature in what is discharged, which separates a scoured in-system deposit from freshly washed-off road surface.
 
@@ -1032,6 +1032,30 @@ The molecular machinery agricultural biocides attack is shared far beyond the ta
 **Discriminated by.** Body burdens and sublethal endpoints in non-target marine taxa chosen by *target conservation* rather than by convenience - copepods for the neuroactives, algae for the photosynthesis inhibitors, fungi and sterol synthesis for the azoles.
 
 **Needs.** Marine concentrations of the actual high-tonnage compounds, with endpoints matched to their mechanism. Danish marine monitoring covers few of them and tests mortality rather than the conserved pathway.
+
+### E18 — Tyre-wear transformation products
+
+**Outcomes:** O3, O6, O7
+
+6PPD is an antiozonant put into tyre rubber since the 1960s to stop it cracking. At the tyre surface it reacts with ozone to give 6PPD-quinone, which washes off roads with the rain. The parent compound is unremarkable; the transformation product is acutely lethal to some fish at sub-microgram per litre concentrations - among the most potent aquatic toxicants known. It was identified in 2020, after decades of use, by fractionating road runoff to find what was killing coho salmon returning to urban streams.
+
+**Predicts.** Mortality tied to road density and to the first hours of rainfall rather than to any nutrient or oxygen variable, and falling on particular species while others in the same water are unaffected.
+
+**Discriminated by.** Concentration in road runoff and receiving water during storms, against mortality in a sensitive species. The road-density gradient is the natural experiment, and it is uncorrelated with agricultural gradients, which makes it unusually separable from most of group A.
+
+**Needs.** 6PPD-quinone is not measured in Danish monitoring. Whether Danish salmonids - sea trout especially - carry the sensitivity is a species question that the published work does not settle for them.
+
+### E19 — The sentinel species decides what is detectable
+
+**Outcomes:** O3, O7
+
+Not a pollutant but a property of how pollutants are found, and `E18` is its worked example. Sensitivity to 6PPD-quinone varies by orders of magnitude between species that live in the same water: some salmonids die at concentrations that leave the standard laboratory test organisms visibly unaffected. A compound screened against the usual battery would therefore pass, and did, for decades. The general form: routine ecotoxicology establishes safety with respect to the species chosen, and the choice was made for husbandry convenience rather than sensitivity.
+
+**Predicts.** Harm concentrated in particular taxa with no dose-response visible in the monitored ones, and an absence of any signal in compliance testing while field populations decline.
+
+**Discriminated by.** The same compound tested across a panel spanning the taxa actually present, rather than the standard species. Disagreement between panel and standard is the measurement.
+
+**Needs.** Danish testing follows the standard batteries. No panel of locally present species exists, so this cannot currently be checked for any compound.
 
 ### E17 — The microbiome is the exposed organ
 
