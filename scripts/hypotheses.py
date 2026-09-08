@@ -3630,6 +3630,57 @@ def render(rows):
       "matter in an environment. Partial reductive defluorination has been reported "
       "under specific engineered conditions; whole-chain breakdown in the field has "
       "not.\n")
+    a("**So what is PFAS an example of?** Not priming. It is a case where three "
+      "independent barriers stack on the same molecule, and that is exactly why it "
+      "is useless as a control and excellent as a warning:\n")
+    a("| | barrier | why it stops degradation |")
+    a("|---|---|---|")
+    a("| 1 | **No prior for the polymer** | Machinery exists for *mono*fluorinated "
+      "carbon and has for a very long time. Nothing has met a perfluoroalkyl chain "
+      "until now. |")
+    a("| 2 | **Bond strength** | The strongest single bond in organic chemistry, "
+      "and it strengthens as fluorines crowd the same carbon. |")
+    a("| 3 | **No point of attack** | Small, unpolarisable fluorines packed around "
+      "the backbone. Nothing to grip and no exposed carbon to grip it on. |")
+    a("")
+    a("Remove any one and the other two still hold, so the outcome is "
+      "**over-determined**. An over-determined case cannot tell you which cause is "
+      "doing the work, and PFAS was doing rhetorical duty here precisely because "
+      "all three point the same way and the argument felt strong. That feeling was "
+      "the error.\n")
+    a("### What a clean test of priming would need, and the closest thing to it\n")
+    a("To isolate priming you need two substrates that differ in whether machinery "
+      "existed and are otherwise as alike as possible: comparable bond energies, "
+      "comparable physical accessibility, same environments, same exposure period. "
+      "The nearest available pair is two ordinary plastics.\n")
+    a("| | PET | polyethylene |")
+    a("|---|---|---|")
+    a("| backbone joined by | **ester linkages** | **carbon–carbon only** |")
+    a("| is there machinery for that linkage | esterases and lipases, in every "
+      "environment, ancient | alkane oxidases exist — but for short chains with an "
+      "accessible end, not for a polymer |")
+    a("| bond strength | not the limiting factor | C–C and C–H are **weaker** than "
+      "the ester chemistry, not stronger |")
+    a("| mass production from | mid-century | mid-century |")
+    a("| outcome | *Ideonella sakaiensis*, isolated 2016, digests it | essentially "
+      "not digested; accumulates in tissue |")
+    a("")
+    a("Same class of material, same decades, same seas, same microbes. The bonds "
+      "that resist are the *weaker* ones. What differs is whether anything already "
+      "knew how to cut that kind of joint — which is priming, doing the work alone, "
+      "with bond strength pointing the other way.\n")
+    a("It is still not perfectly clean, and the register should say so rather than "
+      "claim a second time to have found the decisive case. Polyethylene is also "
+      "less accessible than PET — more crystalline, no polar handle, and a long "
+      "chain with no exposed end presents nothing to an enzyme however weak its "
+      "bonds are. So barrier 3 is partly present here too. **Priming and "
+      "accessibility have not been separated by any example on this page, and may "
+      "not be separable in principle**, since machinery evolves against substrates "
+      "it can physically reach. What has been separated is priming from bond "
+      "strength, and that is the narrower claim now made.\n")
+    a("The consequence for `E9` is that persistence is not one property. It is at "
+      "least three, they are not measured by the same test, and a compound can be "
+      "persistent by any of them.\n")
     a("**And mutation is not random**, which most tellings of this get wrong. Rates "
       "vary by orders of magnitude across a genome with chromatin state, "
       "transcription and sequence context; stress induces mutagenesis in bacteria; "

@@ -227,6 +227,34 @@ One more layer under all of this, and it is the one that decides the direction o
 >
 > One narrower statement does survive, and it is what E9 actually needs: no organism has been shown to mineralise a perfluoroalkyl chain at rates that matter in an environment. Partial reductive defluorination has been reported under specific engineered conditions; whole-chain breakdown in the field has not.
 
+**So what is PFAS an example of?** Not priming. It is a case where three independent barriers stack on the same molecule, and that is exactly why it is useless as a control and excellent as a warning:
+
+| | barrier | why it stops degradation |
+|---|---|---|
+| 1 | **No prior for the polymer** | Machinery exists for *mono*fluorinated carbon and has for a very long time. Nothing has met a perfluoroalkyl chain until now. |
+| 2 | **Bond strength** | The strongest single bond in organic chemistry, and it strengthens as fluorines crowd the same carbon. |
+| 3 | **No point of attack** | Small, unpolarisable fluorines packed around the backbone. Nothing to grip and no exposed carbon to grip it on. |
+
+Remove any one and the other two still hold, so the outcome is **over-determined**. An over-determined case cannot tell you which cause is doing the work, and PFAS was doing rhetorical duty here precisely because all three point the same way and the argument felt strong. That feeling was the error.
+
+### What a clean test of priming would need, and the closest thing to it
+
+To isolate priming you need two substrates that differ in whether machinery existed and are otherwise as alike as possible: comparable bond energies, comparable physical accessibility, same environments, same exposure period. The nearest available pair is two ordinary plastics.
+
+| | PET | polyethylene |
+|---|---|---|
+| backbone joined by | **ester linkages** | **carbon–carbon only** |
+| is there machinery for that linkage | esterases and lipases, in every environment, ancient | alkane oxidases exist — but for short chains with an accessible end, not for a polymer |
+| bond strength | not the limiting factor | C–C and C–H are **weaker** than the ester chemistry, not stronger |
+| mass production from | mid-century | mid-century |
+| outcome | *Ideonella sakaiensis*, isolated 2016, digests it | essentially not digested; accumulates in tissue |
+
+Same class of material, same decades, same seas, same microbes. The bonds that resist are the *weaker* ones. What differs is whether anything already knew how to cut that kind of joint — which is priming, doing the work alone, with bond strength pointing the other way.
+
+It is still not perfectly clean, and the register should say so rather than claim a second time to have found the decisive case. Polyethylene is also less accessible than PET — more crystalline, no polar handle, and a long chain with no exposed end presents nothing to an enzyme however weak its bonds are. So barrier 3 is partly present here too. **Priming and accessibility have not been separated by any example on this page, and may not be separable in principle**, since machinery evolves against substrates it can physically reach. What has been separated is priming from bond strength, and that is the narrower claim now made.
+
+The consequence for `E9` is that persistence is not one property. It is at least three, they are not measured by the same test, and a compound can be persistent by any of them.
+
 **And mutation is not random**, which most tellings of this get wrong. Rates vary by orders of magnitude across a genome with chromatin state, transcription and sequence context; stress induces mutagenesis in bacteria; recombination concentrates at hotspots rather than falling evenly; and meiosis, hybridisation and mate choice are themselves under selection and in no sense a lottery. Horizontal transfer is biased hardest of all — it delivers whatever the local gene pool happens to hold. Variation is **structured**, and the structure is itself an evolved product of what the lineage has met before. Which is priming again, one level down.
 
 **The exception is real and it is not small: RNA viruses adapt the opposite way round.** Their polymerase does not proofread, so they mutate several orders of magnitude faster than anything cellular — close to the highest rate that still permits replication at all. The consequence is that most progeny are non-viable and die immediately, and the lineage exists not as a genotype but as a *cloud* of variants around one, with selection acting on the cloud. With populations of billions inside a single host and generations in hours, the waste is affordable and the sequence space explored per day is enormous.
