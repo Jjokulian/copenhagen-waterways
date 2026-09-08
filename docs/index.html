@@ -132,9 +132,11 @@ code.gloss{
 /* The reports are generated as Markdown by the pipeline, and Markdown is the canonical
    form. GitHub Pages serves a .md file as plain text, so this renders it instead of
    asking anyone to read a raw table. */
-/* Two groups, deliberately. Everything under "Investigation" reports what the data
-   supports and stops. "The argument" says what ought to be done, which is a different
-   kind of claim and is kept on its own page. */
+/* Three groups, deliberately, one per object of study. Everything under "Investigation"
+   reports what the data supports and stops. "The public record" studies what was said
+   out loud, which is a different object with a different evidentiary standard - a
+   statement can be checked against the document behind it, never against the sea.
+   "The argument" says what ought to be done, which is a third kind of claim. */
 const GROUPS = [
   ["Investigation", [
     ["FLOOD_GAP.md",    "Does the plan go where the water goes?"],
@@ -154,6 +156,9 @@ const GROUPS = [
     ["OPEN_PROBLEMS.md","Open problems"],
     ["REGISTER.md",     "Register of claimed structures"],
     ["DATA_SOURCES.md", "Where the data comes from"],
+  ]],
+  ["The public record", [
+    ["POLITICS.md",     "What was actually said"],
   ]],
   ["The argument", [
     ["RESIDUAL.md",     "The number that was never measured"],
