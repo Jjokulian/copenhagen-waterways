@@ -296,6 +296,47 @@ Three things follow, all from the document rather than from us:
    agricultural share is not a thing this method produces**, and any year-on-year
    movement in a published share is an artefact of interpolating a quinquennial split.
 
+### So how does the construction perform against things that were measured?
+
+This is the question the rest of it turns on, and Windolf et al. (2012) answer it
+per catchment. Over 1990–2009:
+
+| catchment | field surplus fell | **measured** normalised diffuse load fell | pass-through |
+|---|---|---|---|
+| Horsens, Isefjord, Odense | 30–52 kg N ha⁻¹ yr⁻¹ | **10–14** | roughly ¼ to ⅓ |
+| Randers, Roskilde | 24–50 | **3–5** | roughly a tenth |
+| **Mariager** | fell as elsewhere | **no response traceable** | **zero** |
+
+**The construction moves and the measurement mostly does not.** For every kilogram per
+hectare the surplus fell, the measured diffuse load fell by something like 0.1 to 0.4
+where it responded at all, and by nothing in one catchment of ten. The paper attributes
+the spread to nitrogen removal in groundwater varying with geology, and the Mariager
+failure to old oxic aquifers where nitrate survives.
+
+Read carefully, that is three separate findings:
+
+1. **Direction: good.** Nine of ten catchments show a significant relation. The surplus
+   is not noise.
+2. **Magnitude: poor.** The transfer coefficient ranges from 0 to about a third. A load
+   reduction predicted from a surplus reduction would be **overestimated by a factor of
+   three to ten**, or entirely, depending which catchment you are standing in.
+3. **And the national figure hides exactly this.** Figur 6.7 D shows *"en meget stærk,
+   signifikant lineær relation"* at national scale. That relation is an aggregate over
+   catchments whose individual pass-through runs from zero to a third. **The strength of
+   the national fit is not evidence that the local coefficient is stable — it is what
+   aggregation does to a variable coefficient.**
+
+Point 3 is this project's recurring finding arriving in the nitrogen account: a basket
+looks tight from outside and is heterogeneous within, and the tightness is partly an
+artefact of looking from outside. It is the same shape as the water bodies that carry no
+within-basket signal, and the same shape as a national trend that tracks which stations
+were reporting.
+
+**None of which says the decline was not real.** Measured estuary nitrogen fell 24–62%
+and measured inlet concentrations 18–55%. Something large happened. What the numbers do
+not support is using the surplus as a quantitative instrument — sizing an intervention
+on it, or converting a surplus target into an expected load.
+
 ### Which sharpens what the residual absorbs
 
 Section 1 lists **10 of 20 pathways carrying no number at all**. Every one of them that
