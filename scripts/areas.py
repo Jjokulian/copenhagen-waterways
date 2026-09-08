@@ -30,7 +30,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, RAW, ROOT, log, read_json, write_json
+from common import DERIVED, RAW, ROOT, log, read_json, write_json, write_doc
 
 NAT = os.path.join(RAW, "national")
 OUT_MD = os.path.join(ROOT, "docs", "AREAS.md")
@@ -439,8 +439,7 @@ def main():
     write_json(OUT_JSON, {"assignment": {"rule": "nearest marine boundary vertex",
                                          "max_km": MAX_ASSIGN_KM},
                           "cum_hoc": ch, "areas": rec})
-    with open(OUT_MD, "w", encoding="utf-8") as f:
-        f.write(render(props, rec, ch))
+    write_doc(OUT_MD, render(props, rec, ch))
     nothing = [r for r in rec.values()
                if not r["has_statistical_model"] and not r["observation"].get("bathing")]
     log(f"\nwrote docs/AREAS.md ({os.path.getsize(OUT_MD):,} chars)")

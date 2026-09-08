@@ -10,11 +10,13 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 ## Three kinds of work, which are not interchangeable
 
-**Constructive and investigative — `experiment`** (10 of 13 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+**Constructive and investigative — `experiment`** (10 of 16 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
 
-**Investigative — `measurement`** (2 of 13 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+**Investigative — `measurement`** (2 of 16 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
 
-**Armchair — `analysis`** (1 of 13 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+**Build the means of measurement — `instrument`** (3 of 16 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
+
+**Armchair — `analysis`** (1 of 16 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
 
 Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
 
@@ -22,12 +24,12 @@ Naming them separately matters because they are not substitutes and they are not
 
 | | | experiments |
 |---|---|---|
-| `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X2, X7, X9, X10, X12 |
+| `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X2, X7, X9, X10, X12, X14, X15, X16 |
 | `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11, X13 |
 | `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5 |
 | `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X8 |
 
-**7 of 13 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
+**10 of 16 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
 
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
@@ -138,6 +140,60 @@ Filter-feeder loss is hypothesised to raise chlorophyll with no change in nutrie
 **Decide, in advance.** Chlorophyll clears at achievable densities → the same water-quality target is reachable by restoration at some ratio of effort to load reduction, and that ratio is computable. It does not → drop the argument.
 
 *The dead-shell control matters: mussel beds change flow as well as filtering, and the two effects have different policy implications.*
+
+### X14 — Can one station stand for a water body?
+
+`instrument`
+
+**Bears on:** [`I1`](#HYPOTHESES.md) Changing station network, [`I3`](#HYPOTHESES.md) Changing sampling frequency and season, [`H1`](#HYPOTHESES.md) Alternative stable states and hysteresis, [`C1`](#HYPOTHESES.md) Stratification strength, [`M1`](#HYPOTHESES.md) Depletion of something essential
+
+The national assessment attaches one number to each water body, and the marine programme puts a median of one station in each - so the homogeneity that the whole framework assumes cannot be tested with the data that framework produces. Bathing water suggests a water body explains about 8% of the variation inside it, but bathing water measures faecal indicators, not the variables at issue.
+
+**Manipulate.** Twenty to fifty logging sensors - temperature, salinity, pressure, oxygen, turbidity, light - deployed across a single water body for one stratified season, at spacings from hundreds of metres to tens of kilometres.
+
+**Control.** One of them co-located with the existing NOVANA station, which is what makes everything else comparable to the official record rather than a separate universe of numbers.
+
+**Measure.** The variance decomposition: how much of the variation is between sensors inside this one polygon, and how does agreement decay with distance.
+
+**Decide, in advance.** Agreement stays high across the polygon → the water body is a coherent unit and one station is defensible after all, which would be a genuine result against this project's own argument. Agreement decays over a few kilometres → the unit is not the unit, and every per-water-body number is an average over things that are not alike.
+
+***Precision is worth less than replication here.** A sensor with 10% error at forty points tells you more about whether a polygon is homogeneous than one perfect instrument does, because the question is about variance and not about level. That inverts the usual objection to cheap sensors, and it is the reason this is affordable.*
+
+### X15 — What does the aggregation cost?
+
+`instrument`
+
+**Bears on:** [`I3`](#HYPOTHESES.md) Changing sampling frequency and season, [`I4`](#HYPOTHESES.md) Changing indicator definition, [`U2`](#HYPOTHESES.md) Acute peaks under chronic means, [`M1`](#HYPOTHESES.md) Depletion of something essential
+
+The oxygen indicator is the share of time oxygen sits below a threshold in the worst month, computed from six years of data, yielding one value per water body per six years. Nobody has measured what that collapse discards, because doing so needs a continuous record to compare against.
+
+**Manipulate.** Nothing in the water. Log one station continuously for two years at ten-minute resolution, then recompute the official indicator from the full record and again from monthly samples drawn out of it.
+
+**Control.** The comparison is the control: identical water, identical sensor, two sampling regimes. Repeat the monthly draw a thousand times with different start dates to get the spread rather than one number.
+
+**Measure.** The indicator under continuous sampling, and the distribution of its value under monthly sampling of the same water.
+
+**Decide, in advance.** The monthly estimate is unbiased and tight → the aggregation is defensible and this line of criticism should be dropped. It is biased, or its spread spans the regulatory threshold → **the classification of a water body depends on which days somebody happened to sail**, and that is quantifiable to a probability rather than merely arguable.
+
+*One sensor and two years. It is the cheapest way to put a number on the central claim of this whole project, and it works against us as easily as for us.*
+
+### X16 — Do the cheap instruments agree with the expensive ones?
+
+`instrument`
+
+**Bears on:** [`I2`](#HYPOTHESES.md) Changing analytical method, [`I5`](#HYPOTHESES.md) Changing correction factors, [`I6`](#HYPOTHESES.md) Changing custodian
+
+Any distributed network is worthless if its readings cannot be tied to the national record, and cheap sensors drift and foul. This is the calibration that makes X14 and X15 admissible rather than interesting.
+
+**Manipulate.** Cheap loggers moored alongside a NOVANA station and beside the ship on every sampling visit, for a full year including a summer.
+
+**Control.** The reference method itself - Winkler titration for oxygen, and the station's own sonde - measured at the same moment, which gives two independent comparisons rather than one.
+
+**Measure.** Offset and drift over time, fouling rate, and how long a sensor stays inside a stated tolerance before servicing.
+
+**Decide, in advance.** Drift is characterisable and correctable → the network's numbers can enter the same analyses as NOVANA's. It is not → the network still answers questions about *variance* and *timing*, which do not need absolute accuracy, and it should be scoped to those.
+
+***Biofouling is the binding constraint on marine deployment, not cost.** Everything else is solved; a sensor left in Danish water grows a community within weeks. Wipers, copper guards and UV all work and all add cost and power, and the honest version of this proposal budgets for servicing rather than pretending a buoy is unattended infrastructure.*
 
 ## Lab — A university lab, standard methods, one to two seasons.
 

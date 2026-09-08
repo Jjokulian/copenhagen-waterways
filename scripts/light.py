@@ -43,7 +43,7 @@ import statistics
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, RAW, ROOT, log, write_json
+from common import DERIVED, RAW, ROOT, log, write_json, write_doc
 
 ODA = os.path.join(RAW, "oda")
 OUT = os.path.join(ROOT, "docs", "LIGHT.md")
@@ -310,8 +310,7 @@ def render(d):
 def main():
     d = analyse()
     write_json(os.path.join(DERIVED, "light.json"), d)
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(render(d))
+    write_doc(OUT, render(d))
     log(f"wrote docs/LIGHT.md ({os.path.getsize(OUT):,} chars)")
     log(f"  {d['n_growth_season']:,} growth-season casts, {d['n_stations']} stations, "
         f"{d['years'][0]}-{d['years'][1]}")

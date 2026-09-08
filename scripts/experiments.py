@@ -35,7 +35,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, ROOT, log, read_json, write_json
+from common import DERIVED, ROOT, log, read_json, write_json, write_doc
 
 OUT = os.path.join(ROOT, "docs", "EXPERIMENTS.md")
 
@@ -51,6 +51,18 @@ KINDS = [
      "rather than the evidence: it can establish what is happening, where and when, "
      "but not why. Cheaper than an experiment and still requires being there. Most "
      "of the gaps in this project are of this kind - not unknowable, unrecorded."),
+    ("instrument", "Build the means of measurement",
+     "You make the thing that takes the reading, and put it where nobody was "
+     "looking. It is a measurement project with a build phase, and it differs from "
+     "the others in what it can be aimed at: **a network can be pointed at the "
+     "assumptions of the existing monitoring**, not only at the sea. Whether one "
+     "station can stand for a water body, whether monthly sampling sees a six-hour "
+     "event, what an aggregation costs - all of those are questions about the "
+     "instrument, and all of them are answerable by building a denser one beside "
+     "it. It is also the kind with the clearest route to actually happening here: "
+     "the Danish state is unusually willing to fund digital infrastructure, and a "
+     "distributed sensor network is legible to it in a way that a request for more "
+     "ship time is not."),
     ("analysis", "Armchair",
      "You work on what is already written down. It can establish consistency, bound "
      "magnitudes, expose contradictions and kill hypotheses - but it cannot "
@@ -292,6 +304,78 @@ X = [
      "The dead-shell control matters: mussel beds change flow as well as filtering, "
      "and the two effects have different policy implications."),
 
+    ("X14", "Can one station stand for a water body?", "instrument",
+     ["I1", "I3", "H1", "C1", "M1"], "small",
+     "The national assessment attaches one number to each water body, and the "
+     "marine programme puts a median of one station in each - so the homogeneity "
+     "that the whole framework assumes cannot be tested with the data that "
+     "framework produces. Bathing water suggests a water body explains about 8% of "
+     "the variation inside it, but bathing water measures faecal indicators, not "
+     "the variables at issue.",
+     "Twenty to fifty logging sensors - temperature, salinity, pressure, oxygen, "
+     "turbidity, light - deployed across a single water body for one stratified "
+     "season, at spacings from hundreds of metres to tens of kilometres.",
+     "One of them co-located with the existing NOVANA station, which is what makes "
+     "everything else comparable to the official record rather than a separate "
+     "universe of numbers.",
+     "The variance decomposition: how much of the variation is between sensors "
+     "inside this one polygon, and how does agreement decay with distance.",
+     "Agreement stays high across the polygon → the water body is a coherent unit "
+     "and one station is defensible after all, which would be a genuine result "
+     "against this project's own argument. Agreement decays over a few kilometres "
+     "→ the unit is not the unit, and every per-water-body number is an average "
+     "over things that are not alike.",
+     "**Precision is worth less than replication here.** A sensor with 10% error at "
+     "forty points tells you more about whether a polygon is homogeneous than one "
+     "perfect instrument does, because the question is about variance and not about "
+     "level. That inverts the usual objection to cheap sensors, and it is the "
+     "reason this is affordable."),
+
+    ("X15", "What does the aggregation cost?", "instrument",
+     ["I3", "I4", "U2", "M1"], "small",
+     "The oxygen indicator is the share of time oxygen sits below a threshold in "
+     "the worst month, computed from six years of data, yielding one value per "
+     "water body per six years. Nobody has measured what that collapse discards, "
+     "because doing so needs a continuous record to compare against.",
+     "Nothing in the water. Log one station continuously for two years at "
+     "ten-minute resolution, then recompute the official indicator from the full "
+     "record and again from monthly samples drawn out of it.",
+     "The comparison is the control: identical water, identical sensor, two "
+     "sampling regimes. Repeat the monthly draw a thousand times with different "
+     "start dates to get the spread rather than one number.",
+     "The indicator under continuous sampling, and the distribution of its value "
+     "under monthly sampling of the same water.",
+     "The monthly estimate is unbiased and tight → the aggregation is defensible "
+     "and this line of criticism should be dropped. It is biased, or its spread "
+     "spans the regulatory threshold → **the classification of a water body "
+     "depends on which days somebody happened to sail**, and that is quantifiable "
+     "to a probability rather than merely arguable.",
+     "One sensor and two years. It is the cheapest way to put a number on the "
+     "central claim of this whole project, and it works against us as easily as "
+     "for us."),
+
+    ("X16", "Do the cheap instruments agree with the expensive ones?", "instrument",
+     ["I2", "I5", "I6"], "small",
+     "Any distributed network is worthless if its readings cannot be tied to the "
+     "national record, and cheap sensors drift and foul. This is the calibration "
+     "that makes X14 and X15 admissible rather than interesting.",
+     "Cheap loggers moored alongside a NOVANA station and beside the ship on every "
+     "sampling visit, for a full year including a summer.",
+     "The reference method itself - Winkler titration for oxygen, and the "
+     "station's own sonde - measured at the same moment, which gives two "
+     "independent comparisons rather than one.",
+     "Offset and drift over time, fouling rate, and how long a sensor stays inside "
+     "a stated tolerance before servicing.",
+     "Drift is characterisable and correctable → the network's numbers can enter "
+     "the same analyses as NOVANA's. It is not → the network still answers "
+     "questions about *variance* and *timing*, which do not need absolute "
+     "accuracy, and it should be scoped to those.",
+     "**Biofouling is the binding constraint on marine deployment, not cost.** "
+     "Everything else is solved; a sensor left in Danish water grows a community "
+     "within weeks. Wipers, copper guards and UV all work and all add cost and "
+     "power, and the honest version of this proposal budgets for servicing rather "
+     "than pretending a buoy is unattended infrastructure."),
+
     ("X13", "Does the muck build up because nothing is eating it?", "experiment",
      ["E13", "E14", "E15", "R3", "R11"], "lab",
      "Turfgrass thatch - a greasy organic mat - forms when pesticides kill the "
@@ -433,8 +517,7 @@ def main():
                                  "control": g_, "measure": h_, "decide": i_,
                                  "note": j_}
                                 for a_, b_, k_, c_, d_, e_, f_, g_, h_, i_, j_ in X]})
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(render(X, hyp))
+    write_doc(OUT, render(X, hyp))
     log(f"wrote docs/EXPERIMENTS.md ({os.path.getsize(OUT):,} chars)")
     cheap = sum(1 for r in X if r[4] in ("small", "desk"))
     log(f"  {len(X)} experiments; {cheap} need no institution")

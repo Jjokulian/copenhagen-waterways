@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**153 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**154 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 153 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 154 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 153 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 154 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -18,9 +18,12 @@ Three further problems, which matter for what can be concluded:
 
 **The entries are not independent.** Sulphur alone appears as an oxygen sink (`E1`), as reduced bed chemistry (`M7`), as the reason the marine electron-acceptor cascade differs from the freshwater one (`R5`), as the release mechanism for sediment phosphate (`R6`), and as the poison that kills eelgrass from below (`T1`). That is one element seen from five sides, not five causes. **Counting entries therefore says nothing about weight**, and a group with fourteen entries is not thereby more important than one with four.
 
-**A mechanism has to be conceivable before it can be a hypothesis, and conceivability has a history.** The clearest precedent is mycorrhizal symbiosis. Something like nine in ten land plants feed through a fungal partner; the arrangement is four hundred million years old; and for most plants it is the primary organ of nutrient acquisition. It entered the scientific picture properly within living memory. Every soil textbook before that was wrong about how plants eat, and nobody knew they were wrong — the mechanism was not rejected, it was **unimagined**, and no amount of care in enumerating the known causes would have produced it.\n
-There is good reason to think the marine version of that gap is open right now, and that it sits in the same place: fungi, oomycetes and labyrinthulids. Molecular surveys keep finding far more fungal diversity in marine sediment than anyone expected, the group that causes eelgrass wasting disease is one of these, and none of them appears in Danish marine monitoring at all (`R11`, `F12`, `T8`). The lucinid clam symbiosis of `T2` makes the same point on a smaller scale: it was described in 2012, and before that its loss was not a hypothesis anyone could have held.\n
-So the honest reading of this register's size is not *we have thought of a lot*. It is that the entries are drawn from what the literature has so far been able to imagine, and the history of that literature is a history of whole functional domains arriving late.\n
+**A mechanism has to be conceivable before it can be a hypothesis, and conceivability has a history.** The clearest precedent is mycorrhizal symbiosis. Something like nine in ten land plants feed through a fungal partner; the arrangement is four hundred million years old; and for most plants it is the primary organ of nutrient acquisition. It entered the scientific picture properly within living memory. Every soil textbook before that was wrong about how plants eat, and nobody knew they were wrong — the mechanism was not rejected, it was **unimagined**, and no amount of care in enumerating the known causes would have produced it.
+
+There is good reason to think the marine version of that gap is open right now, and that it sits in the same place: fungi, oomycetes and labyrinthulids. Molecular surveys keep finding far more fungal diversity in marine sediment than anyone expected, the group that causes eelgrass wasting disease is one of these, and none of them appears in Danish marine monitoring at all (`R11`, `F12`, `T8`). The lucinid clam symbiosis of `T2` makes the same point on a smaller scale: it was described in 2012, and before that its loss was not a hypothesis anyone could have held.
+
+So the honest reading of this register's size is not *we have thought of a lot*. It is that the entries are drawn from what the literature has so far been able to imagine, and the history of that literature is a history of whole functional domains arriving late.
+
 **Some causes may not separate at all.** Several of these plausibly have no independent existence and occur only in combination — the light-and-sulphide interaction of `T1`, the mixture effects of `U1`. Listing them as separable items imposes a structure the world may not have.
 
 > **The consequence for scoring.** Any ranking computed over this field is a ranking *within the field*, not a decomposition of reality. A statement of the form "mechanism X accounts for n% of the problem" would require the field to be complete, disjoint and independent, and it is none of the three. Making that claim anyway would be the residual-estimator error of [RESIDUAL.md](#RESIDUAL.md) committed one level up — treating what is left over after our own enumeration as if it were a measurement of the world.
@@ -136,8 +139,10 @@ The convergence is not a coincidence and it is not vagueness about the damage. I
 
 **A depletion does not kill indiscriminately. It removes exactly those organisms that required the missing thing, and releases those that did not.** Oxygen depletion kills aerobes and releases anaerobes. Silicon depletion removes diatoms and releases flagellates. Cobalamin depletion removes the algae that cannot make vitamin B12 for themselves and leaves the bacteria that make it for them. Carbonate depletion removes calcifiers and no one else. Light starvation removes what is rooted at depth. Each is a filter with its own specific shape.
 
-**And the number of ways an organism can be stopped is the number of things it requires.** That is Liebig's law read as a counting argument. Large, slow, structured life needs a particular substrate, particular partners, particular light, particular chemistry, a particular season, and years of quiet in which to mature — a dozen windows, any one of which closing is fatal. An opportunist needs carbon, some nutrient, and water. Whatever goes wrong, it is more likely to have gone wrong for the demanding species, and the asymmetry is not about fitness: **the low-requirement organism wins by being harder to stop.**\n
-Which has a consequence that reverses the usual reading. A standing meadow or mussel bed is not a *symptom* of a healthy system — it is a **cause** of one. It draws the surplus down, shades the water, filters the plankton, oxygenates and binds the sediment, and shelters the grazers. It manufactures scarcity for its competitor: it imposes Liebig limitation on organisms that have almost none of their own. Read backwards, that is the whole of the hysteresis in `H1` — once the structural life is gone nothing imposes the limitation, the surplus stays available, and the fast forms keep it.\n
+**And the number of ways an organism can be stopped is the number of things it requires.** That is Liebig's law read as a counting argument. Large, slow, structured life needs a particular substrate, particular partners, particular light, particular chemistry, a particular season, and years of quiet in which to mature — a dozen windows, any one of which closing is fatal. An opportunist needs carbon, some nutrient, and water. Whatever goes wrong, it is more likely to have gone wrong for the demanding species, and the asymmetry is not about fitness: **the low-requirement organism wins by being harder to stop.**
+
+Which has a consequence that reverses the usual reading. A standing meadow or mussel bed is not a *symptom* of a healthy system — it is a **cause** of one. It draws the surplus down, shades the water, filters the plankton, oxygenates and binds the sediment, and shelters the grazers. It manufactures scarcity for its competitor: it imposes Liebig limitation on organisms that have almost none of their own. Read backwards, that is the whole of the hysteresis in `H1` — once the structural life is gone nothing imposes the limitation, the surplus stays available, and the fast forms keep it.
+
 But every filter selects in the same direction, because what survives a filter is whatever had the fewest requirements to begin with — fast, small, short-lived, unselective, needing no structure and no partner and no particular chemistry. Run any filter and you enrich for that. Run several and you enrich harder.
 
 > So it is not that all damage looks alike. It is that **all selection runs the same way**, and the endpoint is the set of organisms that no filter removes. That is what the phrase *primordial soup* is reaching for, and it is why an outcome can be reached from a dozen unrelated directions and look identical from every one of them.
@@ -1026,6 +1031,18 @@ Marine viruses run to about ten million particles per millilitre and lyse a larg
 **Discriminated by.** Viral abundance and lysis rate against the share of production reaching mesozooplankton - the ratio, not either alone.
 
 **Needs.** Marine viral counts. Standard method since the 1990s; not in Danish monitoring at any station.
+
+### F13 — The organisms that fall between the folk categories
+
+**Outcomes:** O3, O7, O2, O1
+
+Danish marine monitoring is organised as *bundfauna*, *vegetation* and *phytoplankton* — animals, plants, and small green things. That is a folk taxonomy, and it does not match the tree of life. Labyrinthulids, which cause eelgrass wasting disease, are stramenopiles: more closely related to kelp and diatoms than to any fungus, despite living like one. Oomycetes are in the same group. Animals and fungi are sister lineages, so a mushroom is a closer relative of yours than of a plant. Plants, animals and fungi are three branches out of many, and most eukaryotic diversity — nearly all of it marine and microbial — sits in groups with no common name.
+
+**Predicts.** **A survey organised by folk categories has no column for an organism that does not fit them.** The absence is then read as absence in the sea rather than absence from the form. This is the mycorrhizal problem made administrative: not a mechanism rejected, a mechanism with nowhere to be recorded. The specific casualties here are the ones that matter most for decay and disease — labyrinthulids, thraustochytrids, oomycetes, marine fungi.
+
+**Discriminated by.** Molecular community surveys — sequencing what is present rather than sorting it into the categories the form provides. Metabarcoding is standard, cheap and taxonomically agnostic by construction.
+
+**Needs.** Sediment and water eDNA surveys with an open taxonomic frame. None in Danish routine monitoring, and the categories on the existing forms are why.
 
 ### F12 — The micropathogens nobody catalogues
 

@@ -589,6 +589,11 @@
   "label": "Viral lysis and the viral shunt",
   "text": "Marine viruses run to about ten million particles per millilitre and lyse a large share of the bacterial and algal standing stock every day. Lysis does not pass carbon up the food chain - it returns it to dissolved and colloidal organic matter, to be respired by bacteria again. That short-circuit is the viral shunt."
  },
+ "F13": {
+  "kind": "hypothesis (F)",
+  "label": "The organisms that fall between the folk categories",
+  "text": "Danish marine monitoring is organised as *bundfauna*, *vegetation* and *phytoplankton* — animals, plants, and small green things. That is a folk taxonomy, and it does not match the tree of life. Labyrinthulids, which cause eelgrass wasting disease, are stramenopiles: more closely related to kelp and diatoms than to any fungus, despite living like one. Oomycetes are in the same group. Animals and fungi are sister lineages, so a mushroom is a closer relative of yours than of a plant. Plants, animals and fungi are three branches out of many, and most eukaryotic diversity — nearly all of it marine and microbial — sits in groups with no common name."
+ },
  "F12": {
   "kind": "hypothesis (F)",
   "label": "The micropathogens nobody catalogues",
@@ -1223,6 +1228,13 @@
     "biocrust"
    ]
   },
+  "biofouling": {
+   "text": "The community of organisms that colonises any surface left in the sea - within weeks. It is the binding constraint on long instrument deployment, not cost.",
+   "why": "Everything in the water is looking for somewhere to attach, and a clean sensor is an opportunity.",
+   "forms": [
+    "biofouling"
+   ]
+  },
   "biogenic": {
    "text": "Made by living things. Biogenic structure means reefs, beds and burrows built by organisms rather than by geology.",
    "why": "Greek bios (life) plus genes (born of).",
@@ -1435,6 +1447,13 @@
     "ecotoxicology"
    ]
   },
+  "eDNA": {
+   "text": "Environmental DNA - genetic material shed into water or sediment by whatever passed through. It lets you survey a community without catching anything.",
+   "why": "The method that most directly bypasses the problem of a form with the wrong columns on it.",
+   "forms": [
+    "edna"
+   ]
+  },
   "eelgrass": {
    "text": "A true flowering plant that lives fully submerged in the sea, forming meadows on soft bottoms. It roots in the sediment, needs light at the bed, and shelters everything else. Danish: alegras.",
    "why": "Named for its long ribbon leaves. Zostera marina is the Danish species.",
@@ -1494,8 +1513,8 @@
    ]
   },
   "eukaryote": {
-   "text": "An organism whose cells keep their DNA in a nucleus - animals, plants, fungi, and most algae. Bacteria and archaea are the ones that do not.",
-   "why": "Greek eu (well) plus karyon (kernel, nut): properly nucleated.",
+   "text": "An organism whose cells keep their DNA in a nucleus - animals, plants, fungi, and the enormous majority of microbial diversity that is none of the three.",
+   "why": "Greek eu (well) plus karyon (kernel). Bacteria and archaea are the ones that do not.",
    "forms": [
     "eukaryote",
     "eukaryotic"
@@ -1567,6 +1586,13 @@
     "flocculation"
    ]
   },
+  "folk taxonomy": {
+   "text": "A classification based on how things look and what they do, rather than on how they are related. Plants, animals and fungi is one; it predates evolutionary biology and still organises most monitoring.",
+   "why": "Useful and intuitive, and it systematically hides organisms that fall between its categories.",
+   "forms": [
+    "folk taxonomy"
+   ]
+  },
   "foraminifera": {
    "text": "Single-celled organisms that build tiny chambered shells. Abundant in sediment, and their shells preserve, which makes them a record of past conditions.",
    "why": "Latin foramen (hole) plus ferre (to bear) - the shells are perforated.",
@@ -1587,7 +1613,8 @@
    "why": "Latin fungus, mushroom - though most fungi never make anything you would recognise as one.",
    "forms": [
     "fungal",
-    "fungi"
+    "fungi",
+    "fungus"
    ]
   },
   "fungicide": {
@@ -1730,6 +1757,14 @@
     "invertebrates"
    ]
   },
+  "IoT": {
+   "text": "Internet of things - cheap networked devices that report readings without anyone visiting them. In an environmental context the appeal is replication rather than precision.",
+   "why": "For testing whether one station can represent an area, forty rough sensors beat one perfect one, because the question is about variance.",
+   "forms": [
+    "iot",
+    "iotic"
+   ]
+  },
   "isotherm": {
    "text": "A curve showing how much of a substance a material will hold at each concentration, measured at one temperature. The standard way to describe a soil's capacity to hold phosphate.",
    "why": "Greek isos (equal) plus therme (heat) - the temperature is held constant.",
@@ -1859,6 +1894,13 @@
    "why": "Greek mesos, middle.",
    "forms": [
     "mesozooplankton"
+   ]
+  },
+  "metabarcoding": {
+   "text": "Sequencing DNA from a bulk sample to list what organisms are present, without anyone having to identify them by eye. Taxonomically agnostic by construction, which is exactly why it finds things the categories missed.",
+   "why": "Barcoding is identifying one specimen by a short DNA sequence; meta- is doing it to a whole community at once.",
+   "forms": [
+    "metabarcoding"
    ]
   },
   "microbiome": {
@@ -2013,6 +2055,13 @@
    "forms": [
     "oomycete",
     "oomycetes"
+   ]
+  },
+  "opisthokont": {
+   "text": "The branch containing animals and fungi together. They are sister lineages: a mushroom is a closer relative of yours than of a plant.",
+   "why": "Greek opisthen (behind) plus kontos (pole), after the single rear-facing tail on a sperm cell and a fungal spore alike.",
+   "forms": [
+    "opisthokont"
    ]
   },
   "optode": {
@@ -2433,6 +2482,14 @@
     "stoichiometry"
    ]
   },
+  "stramenopile": {
+   "text": "A major branch of the eukaryotic tree containing diatoms, brown algae and kelp, oomycetes and labyrinthulids. Its members look like plants, fungi and moulds respectively, and are none of those things.",
+   "why": "Latin stramen (straw) plus pilus (hair), after the fine hairs on one of their two swimming tails. Also called heterokonts, for the same reason.",
+   "forms": [
+    "stramenopile",
+    "stramenopiles"
+   ]
+  },
   "stratification": {
    "text": "Water settled into layers that do not mix, because the upper water is warmer or fresher and therefore lighter.",
    "why": "Latin stratum, a layer. It is what makes deep water run out of oxygen.",
@@ -2541,6 +2598,14 @@
    "why": "The ordinary roofing word. Greenkeepers treat it by restoring the soil fauna, not by feeding the grass less.",
    "forms": [
     "thatch"
+   ]
+  },
+  "thraustochytrid": {
+   "text": "Marine microbes in the same group as labyrinthulids, increasingly recognised as major decomposers of organic matter at sea - and farmed commercially for omega-3 oil.",
+   "why": "Neither fungi nor algae nor animals, and absent from every category on a monitoring form.",
+   "forms": [
+    "thraustochytrid",
+    "thraustochytrids"
    ]
   },
   "toxicant": {

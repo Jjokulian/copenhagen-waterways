@@ -37,7 +37,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, ROOT, log, write_json
+from common import DERIVED, ROOT, log, write_json, write_doc
 
 OUT = os.path.join(ROOT, "docs", "HYPOTHESES.md")
 
@@ -190,6 +190,9 @@ TERMS = {
     'biocrust': (
         'A living skin of cyanobacteria, lichens and mosses binding a desert soil surface. Break it and the sand mobilises.',
         'Biological soil crust. Its marine counterpart is microphytobenthos.'),
+    'biofouling': (
+        'The community of organisms that colonises any surface left in the sea - within weeks. It is the binding constraint on long instrument deployment, not cost.',
+        'Everything in the water is looking for somewhere to attach, and a clean sensor is an opportunity.'),
     'biogenic': (
         'Made by living things. Biogenic structure means reefs, beds and burrows built by organisms rather than by geology.',
         'Greek bios (life) plus genes (born of).'),
@@ -277,6 +280,9 @@ TERMS = {
     'ecotoxicology': (
         'The study of how chemicals affect organisms and ecosystems. In regulatory practice it usually means acute mortality tests on a few standard species.',
         'Ecology plus toxicology - a young field, and its standard methods predate most of what is now known about symbiosis.'),
+    'eDNA': (
+        'Environmental DNA - genetic material shed into water or sediment by whatever passed through. It lets you survey a community without catching anything.',
+        'The method that most directly bypasses the problem of a form with the wrong columns on it.'),
     'eelgrass': (
         'A true flowering plant that lives fully submerged in the sea, forming meadows on soft bottoms. It roots in the sediment, needs light at the bed, and shelters everything else. Danish: alegras.',
         'Named for its long ribbon leaves. Zostera marina is the Danish species.'),
@@ -302,8 +308,8 @@ TERMS = {
         'A proposed rule that the most harmful substances should be permitted only where they are genuinely necessary and no substitute exists - rather than wherever the exposure looks acceptable.',
         'The concept borrowed from how antibiotics are managed, and the closest existing idea to reserving a chemical rather than banning it.'),
     'eukaryote': (
-        'An organism whose cells keep their DNA in a nucleus - animals, plants, fungi, and most algae. Bacteria and archaea are the ones that do not.',
-        'Greek eu (well) plus karyon (kernel, nut): properly nucleated.'),
+        'An organism whose cells keep their DNA in a nucleus - animals, plants, fungi, and the enormous majority of microbial diversity that is none of the three.',
+        'Greek eu (well) plus karyon (kernel). Bacteria and archaea are the ones that do not.'),
     'eutrophic': (
         'Over-fed: a water body receiving more nutrient than it can process.',
         'Greek eu- (well) plus trophe (nourishment) - literally well-nourished, which is why the word sounds like praise and means the opposite.'),
@@ -331,6 +337,9 @@ TERMS = {
     'flocculation': (
         'Fine particles and dissolved organic matter clumping together and settling out, which happens abruptly where fresh water meets salt.',
         'Latin floccus, a tuft of wool. What the clumps look like.'),
+    'folk taxonomy': (
+        'A classification based on how things look and what they do, rather than on how they are related. Plants, animals and fungi is one; it predates evolutionary biology and still organises most monitoring.',
+        'Useful and intuitive, and it systematically hides organisms that fall between its categories.'),
     'foraminifera': (
         'Single-celled organisms that build tiny chambered shells. Abundant in sediment, and their shells preserve, which makes them a record of past conditions.',
         'Latin foramen (hole) plus ferre (to bear) - the shells are perforated.'),
@@ -397,6 +406,9 @@ TERMS = {
     'invertebrate': (
         'An animal without a backbone - worms, molluscs, crustaceans, insects. The overwhelming majority of animal species, and nearly everything on a seabed.',
         'Latin in- (not) plus vertebra. Defined by what it lacks, which tells you who wrote the category.'),
+    'IoT': (
+        'Internet of things - cheap networked devices that report readings without anyone visiting them. In an environmental context the appeal is replication rather than precision.',
+        'For testing whether one station can represent an area, forty rough sensors beat one perfect one, because the question is about variance.'),
     'isotherm': (
         "A curve showing how much of a substance a material will hold at each concentration, measured at one temperature. The standard way to describe a soil's capacity to hold phosphate.",
         'Greek isos (equal) plus therme (heat) - the temperature is held constant.'),
@@ -451,6 +463,9 @@ TERMS = {
     'mesozooplankton': (
         'The middle size class of drifting animals, chiefly copepods - between a fifth of a millimetre and two centimetres. The link between algae and fish.',
         'Greek mesos, middle.'),
+    'metabarcoding': (
+        'Sequencing DNA from a bulk sample to list what organisms are present, without anyone having to identify them by eye. Taxonomically agnostic by construction, which is exactly why it finds things the categories missed.',
+        'Barcoding is identifying one specimen by a short DNA sequence; meta- is doing it to a whole community at once.'),
     'microbiome': (
         'The community of microbes living in and on an organism, which for many purposes is part of that organism - performing digestion, defence and nutrition it cannot perform alone.',
         'Micro plus biome. A word that exists because the older picture of an individual organism turned out to be incomplete.'),
@@ -514,6 +529,9 @@ TERMS = {
     'oomycete': (
         'A fungus-like group including Pythium and Phytophthora - water moulds that swim as spores and attack stressed roots. They are not actually fungi despite living like them.',
         'Greek oon (egg) plus mykes (fungus).'),
+    'opisthokont': (
+        'The branch containing animals and fungi together. They are sister lineages: a mushroom is a closer relative of yours than of a plant.',
+        'Greek opisthen (behind) plus kontos (pole), after the single rear-facing tail on a sperm cell and a fungal spore alike.'),
     'optode': (
         "An oxygen sensor that measures how a dye's glow is quenched by oxygen. It replaced chemical titration, and the two do not always agree.",
         'Optical electrode.'),
@@ -688,6 +706,9 @@ TERMS = {
     'stoichiometry': (
         'The fixed proportions in which substances combine, and so how much of one thing a given amount of another can produce or consume.',
         'Greek stoicheion (element) plus metron (measure).'),
+    'stramenopile': (
+        'A major branch of the eukaryotic tree containing diatoms, brown algae and kelp, oomycetes and labyrinthulids. Its members look like plants, fungi and moulds respectively, and are none of those things.',
+        'Latin stramen (straw) plus pilus (hair), after the fine hairs on one of their two swimming tails. Also called heterokonts, for the same reason.'),
     'stratification': (
         'Water settled into layers that do not mix, because the upper water is warmer or fresher and therefore lighter.',
         'Latin stratum, a layer. It is what makes deep water run out of oxygen.'),
@@ -733,6 +754,9 @@ TERMS = {
     'thatch': (
         'A greasy organic mat that builds up in turf when material is produced faster than it decays. Caused by heavy fertilising, pesticides killing earthworms, and compaction.',
         'The ordinary roofing word. Greenkeepers treat it by restoring the soil fauna, not by feeding the grass less.'),
+    'thraustochytrid': (
+        'Marine microbes in the same group as labyrinthulids, increasingly recognised as major decomposers of organic matter at sea - and farmed commercially for omega-3 oil.',
+        'Neither fungi nor algae nor animals, and absent from every category on a monitoring form.'),
     'toxicant': (
         'A poisonous substance, especially a manufactured one. Distinguished from a toxin, which strictly means a poison made by a living thing.',
         'The distinction matters in the literature and is routinely ignored elsewhere.'),
@@ -1777,6 +1801,29 @@ H = [
      "mesozooplankton - the ratio, not either alone.",
      "Marine viral counts. Standard method since the 1990s; not in Danish "
      "monitoring at any station."),
+    ("F13", "F", "The organisms that fall between the folk categories",
+     ["O3", "O7", "O2", "O1"],
+     "Danish marine monitoring is organised as *bundfauna*, *vegetation* and "
+     "*phytoplankton* — animals, plants, and small green things. That is a folk "
+     "taxonomy, and it does not match the tree of life. Labyrinthulids, which cause "
+     "eelgrass wasting disease, are stramenopiles: more closely related to kelp and "
+     "diatoms than to any fungus, despite living like one. Oomycetes are in the same "
+     "group. Animals and fungi are sister lineages, so a mushroom is a closer "
+     "relative of yours than of a plant. Plants, animals and fungi are three "
+     "branches out of many, and most eukaryotic diversity — nearly all of it marine "
+     "and microbial — sits in groups with no common name.",
+     "**A survey organised by folk categories has no column for an organism that "
+     "does not fit them.** The absence is then read as absence in the sea rather "
+     "than absence from the form. This is the mycorrhizal problem made "
+     "administrative: not a mechanism rejected, a mechanism with nowhere to be "
+     "recorded. The specific casualties here are the ones that matter most for "
+     "decay and disease — labyrinthulids, thraustochytrids, oomycetes, marine "
+     "fungi.",
+     "Molecular community surveys — sequencing what is present rather than sorting "
+     "it into the categories the form provides. Metabarcoding is standard, cheap and "
+     "taxonomically agnostic by construction.",
+     "Sediment and water eDNA surveys with an open taxonomic frame. None in Danish "
+     "routine monitoring, and the categories on the existing forms are why."),
     ("F12", "F", "The micropathogens nobody catalogues", ["O3", "O6", "O7"],
      "Viruses, bacteria, protists, fungi and oomycetes cause mass mortality in "
      "marine organisms routinely - eelgrass wasting, sea star wasting, oyster "
@@ -2748,7 +2795,7 @@ def render(rows):
       "scientific picture properly within living memory. Every soil textbook before "
       "that was wrong about how plants eat, and nobody knew they were wrong — the "
       "mechanism was not rejected, it was **unimagined**, and no amount of care in "
-      "enumerating the known causes would have produced it.\\n")
+      "enumerating the known causes would have produced it.\n")
     a("There is good reason to think the marine version of that gap is open right "
       "now, and that it sits in the same place: fungi, oomycetes and "
       "labyrinthulids. Molecular surveys keep finding far more fungal diversity in "
@@ -2756,11 +2803,11 @@ def render(rows):
       "disease is one of these, and none of them appears in Danish marine "
       "monitoring at all (`R11`, `F12`, `T8`). The lucinid clam symbiosis of `T2` "
       "makes the same point on a smaller scale: it was described in 2012, and "
-      "before that its loss was not a hypothesis anyone could have held.\\n")
+      "before that its loss was not a hypothesis anyone could have held.\n")
     a("So the honest reading of this register's size is not *we have thought of a "
       "lot*. It is that the entries are drawn from what the literature has so far "
       "been able to imagine, and the history of that literature is a history of "
-      "whole functional domains arriving late.\\n")
+      "whole functional domains arriving late.\n")
     a("**Some causes may not separate at all.** Several of these plausibly have no "
       "independent existence and occur only in combination — the light-and-sulphide "
       "interaction of `T1`, the mixture effects of `U1`. Listing them as separable "
@@ -2952,7 +2999,7 @@ def render(rows):
       "opportunist needs carbon, some nutrient, and water. Whatever goes wrong, it "
       "is more likely to have gone wrong for the demanding species, and the "
       "asymmetry is not about fitness: **the low-requirement organism wins by being "
-      "harder to stop.**\\n")
+      "harder to stop.**\n")
     a("Which has a consequence that reverses the usual reading. A standing meadow or "
       "mussel bed is not a *symptom* of a healthy system — it is a **cause** of one. "
       "It draws the surplus down, shades the water, filters the plankton, oxygenates "
@@ -2960,7 +3007,7 @@ def render(rows):
       "for its competitor: it imposes Liebig limitation on organisms that have "
       "almost none of their own. Read backwards, that is the whole of the hysteresis "
       "in `H1` — once the structural life is gone nothing imposes the limitation, "
-      "the surplus stays available, and the fast forms keep it.\\n")
+      "the surplus stays available, and the fast forms keep it.\n")
     a("But every filter selects in the same direction, because what survives a "
       "filter is whatever had the fewest requirements to begin with — fast, small, "
       "short-lived, unselective, needing no structure and no partner and no "
@@ -3217,8 +3264,7 @@ def main():
                               "forms": sorted(set(forms) | {t.lower()})}
     write_json(os.path.join(ROOT, "docs", "data", "glossary.json"), gloss)
     log(f"  glossary: {len(gloss) - 2} ids, {len(TERMS)} terms")
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(render(rows))
+    write_doc(OUT, render(rows))
     log(f"wrote docs/HYPOTHESES.md ({os.path.getsize(OUT):,} chars)")
     log(f"  {len(rows)} hypotheses across {len(GROUPS)} groups, "
         f"{len(OUTCOMES)} outcomes kept apart")

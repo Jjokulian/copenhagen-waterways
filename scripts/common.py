@@ -138,3 +138,22 @@ def plain_r2(r2):
     shrink = 1 - math.sqrt(max(0.0, 1 - r2))
     return (f"accounts for {100*r2:.0f}% of the wobble; shrinks prediction error "
             f"by {100*shrink:.0f}% against just guessing the average")
+
+
+def write_doc(path, text):
+    """Write a generated Markdown document, refusing the escaping bugs.
+
+    A literal backslash-n reaches the page as visible characters and silently
+    welds two paragraphs together - which is what happens when a string is escaped
+    twice, once for the generator and once for whatever wrote the generator. It has
+    happened here more than once and is invisible in review, so it is checked."""
+    bad = text.count("\\n")
+    if bad:
+        import re as _re
+        first = _re.search(r".{0,70}\\\\n.{0,20}", text)
+        raise ValueError(
+            f"{os.path.basename(path)}: {bad} literal backslash-n in the output "
+            f"- a double-escaped newline. First at: ...{first.group(0) if first else ''}...")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(text)
+    return len(text)

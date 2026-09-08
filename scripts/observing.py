@@ -36,7 +36,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (DERIVED, RAW, ROOT, log, plain_r, plain_r2, read_json,
-                    write_json)
+                    write_doc, write_json)
 
 NAT = os.path.join(RAW, "national")
 OUT = os.path.join(ROOT, "docs", "OBSERVING.md")
@@ -638,8 +638,7 @@ def main():
         "noise_floor": noise_floor(),
     }
     write_json(os.path.join(DERIVED, "observing.json"), d)
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(render(d))
+    write_doc(OUT, render(d))
     log(f"wrote docs/OBSERVING.md ({os.path.getsize(OUT):,} chars)")
     log(f"  statistical models cover {d['coverage']['pct']:.1f}% of marine area")
     log(f"  internal coherence of a water body: r={d['internal']['mean_r']:+.3f} "

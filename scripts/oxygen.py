@@ -31,7 +31,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, RAW, ROOT, log, read_json
+from common import DERIVED, RAW, ROOT, log, read_json, write_doc
 
 OUT = os.path.join(ROOT, "docs", "OXYGEN.md")
 
@@ -328,8 +328,7 @@ def main():
           "area_without": sum(r["area_km2"] for r in without),
           "pct_without": 100 * sum(r["area_km2"] for r in without) / tot,
           "total_points": len(props), **mats}
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(render(hz))
+    write_doc(OUT, render(hz))
     log(f"wrote docs/OXYGEN.md ({os.path.getsize(OUT):,} chars)")
     log(f"  1 kg N (full route) = {O2_PER_N_TOTAL:.1f} kg O2 "
         f"= {O2_PER_N_TOTAL/O2_PER_FAT:.1f} kg fat")

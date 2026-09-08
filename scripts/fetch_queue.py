@@ -53,7 +53,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, MANUAL, ROOT, log, read_json, write_json
+from common import DERIVED, MANUAL, ROOT, log, read_json, write_json, write_doc
 
 OUT = os.path.join(ROOT, "docs", "DATA_QUEUE.md")
 FILES = ["data_sources.json", "data_sources_2.json"]
@@ -273,8 +273,7 @@ def main():
       "would settle a hypothesis that currently cannot be ranked at all. The tiers "
       "say what is easy, and the register says what is important; they are "
       "different questions and this page is only the first one.\n")
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write("\n".join(o) + "\n")
+    write_doc(OUT, "\n".join(o) + "\n")
     log(f"\nwrote docs/DATA_QUEUE.md ({os.path.getsize(OUT):,} chars)")
     for t, label, _ in TIERS:
         log(f"  {t:9} {len(by[t]):>3}")
