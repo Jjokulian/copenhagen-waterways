@@ -40,17 +40,130 @@ from common import DERIVED, ROOT, log, write_json
 
 OUT = os.path.join(ROOT, "docs", "HYPOTHESES.md")
 
+# Three layers, because collapsing them is how a measurement becomes a goal.
+#
+# TERMINAL is what anyone actually values. Nobody values a dissolved gas
+# concentration. An earlier version of this file listed oxygen deficit as an
+# outcome, which reproduced the exact error the project exists to criticise:
+# promoting the measured intermediate to the thing of interest, because it is the
+# thing that is measured.
+#
+# ROUTES are the sufficient paths to a terminal outcome. Oxygen deficit is one of
+# them. It is neither necessary nor sufficient on its own, and several of the
+# others leave no oxygen signature at all.
+#
+# OBSERVABLES are what can be seen, reported or instrumented. Each belongs to a
+# route, and the mapping is many-to-many.
+
+TERMINAL = [
+    ("T1", "A living seabed lost",
+     "The large, slow, long-lived organisms gone, and with them the structure the "
+     "rest of the community sits in."),
+    ("T2", "A degraded state that maintains itself",
+     "The feedback closed: the loss of vegetation, filter feeders and bioturbators "
+     "each make the conditions that removed them more likely. This is the outcome "
+     "that matters most and the one nothing in the monitoring is designed to detect, "
+     "because it is a property of the system's dynamics rather than of any sample."),
+    ("T3", "Water unfit or unpleasant to be in",
+     "Greasy, foul, foaming, or unsafe. The outcome people experience directly, and "
+     "the reason any of this is politically live."),
+    ("T4", "Provisioning lost",
+     "Fish, shellfish and the livelihoods on them."),
+    ("T5", "The shore lost as a place",
+     "Smell, appearance, and the ordinary use of a coastline."),
+]
+
+ROUTES = [
+    ("M1", "Oxygen deficit",
+     "Respiration and chemical demand exceed resupply. Well measured, heavily "
+     "modelled, and the only route the requirement acts on."),
+    ("M2", "Toxic exposure",
+     "Something is poisoned. The dose makes the poison, so this route is acutely "
+     "sensitive to peak concentration rather than to any annual mean — and annual "
+     "means are what is reported. Leaves a fully oxygenated dead water."),
+    ("M3", "Physical destruction and burial",
+     "The habitat removed, crushed, dredged or covered. Needs no chemistry at all."),
+    ("M4", "Food-web restructuring",
+     "Removal or addition of a species changes what everything else does. "
+     "Overfishing, invasion, disease."),
+    ("M5", "Light starvation",
+     "Rooted vegetation shaded out by turbidity, which then removes the thing that "
+     "was holding the sediment down."),
+    ("M6", "Surface film and gel",
+     "The water itself becomes a different medium: greasy, foaming, mucilaginous."),
+    ("M7", "Reduced chemistry at the bed",
+     "Sulphide and its relatives, toxic in their own right and an oxygen sink "
+     "besides. The bed becomes hostile before the water column shows anything."),
+]
+
+# Routes we can name and cannot quantify. Listing them is not a rhetorical move: an
+# unquantified route that goes unlisted becomes, in every summary downstream, an
+# absent one - and "no evidence of an effect" is then read as "evidence of no
+# effect". These belong to M2 and have no entry in the scored field below because
+# no method exists that would let them be scored fairly.
+UNQUANTIFIABLE = [
+    ("U1", "Mixture and cocktail effects",
+     "Toxicity is assessed one substance at a time against one threshold at a time. "
+     "Real exposure is simultaneous, and effects combine additively at best and "
+     "synergistically often. The number of pairs alone, let alone higher orders, "
+     "exceeds what could ever be tested. There is no defensible way to compute the "
+     "combined effect, and equally none to argue it is zero."),
+    ("U2", "Acute peaks under chronic means",
+     "The dose makes the poison, and the dose that kills arrives in an event. "
+     "Monitoring reports means over months; an outfall discharging for six hours "
+     "after a storm is invisible in an annual average and entirely visible to "
+     "whatever was living below it."),
+    ("U3", "Floor and ceiling effects",
+     "Where a community has already lost its sensitive members, adding stress "
+     "produces no further measurable change — so the most degraded places return "
+     "the smallest effect sizes, and a naive analysis reads that as evidence the "
+     "stressor does not matter."),
+    ("U4", "Substances on no monitoring list",
+     "Tens of thousands of chemicals are in commerce; a few dozen are measured. A "
+     "substance absent from the list is absent from every finding, whatever it is "
+     "doing."),
+    ("U5", "Sublethal and transgenerational effects",
+     "Impaired reproduction, behaviour and development leave no corpse to count. "
+     "The survey counts individuals present, not individuals functioning."),
+]
+
 # The outcomes. Conflating these is the original error, so they are kept apart.
 OUTCOMES = [
     ("O1", "Oxygen deficit", "Dissolved oxygen below 4 or 2 mg/L, by depth, "
-     "duration and extent. A balance between demand and resupply."),
-    ("O2", "Fedtemøg on a shore", "Fatty, organic, foul material accumulating at "
-     "the waterline. A transport-and-deposition outcome, not a concentration."),
+     "duration and extent. **An observable on route M1, not an outcome.** Nobody "
+     "values a gas concentration; it earns its place only through what it causes, "
+     "and it is neither necessary nor sufficient for any of T1-T5."),
+    ("O2", "Fedtemøg", "Greasy organic matter in the water and on the shore. It has "
+     "at least three manifestations and they are not the same measurement: **O2a** "
+     "accumulation at the waterline, a transport-and-deposition outcome; **O2b** the "
+     "greasy film on skin after swimming, which is a property of the water column "
+     "and of the sea-surface microlayer, present without any shore deposit and "
+     "reported at different times of year; **O2c** the smell, which is a chemical "
+     "signature (sulphide, amines, volatile fatty acids) and the thing the public "
+     "actually reports. Denmark measures none of the three."),
     ("O3", "Loss of higher benthic life", "The large, slow, long-lived animals "
      "going. Reachable by suffocation, poisoning, burial or physical destruction."),
     ("O4", "Turbidity and phytoplankton biomass", "Chlorophyll and light "
      "attenuation. Measures of quantity, standing in for claims about composition."),
+    ("O5", "Foam", "Persistent foam on the water and along the strandline. A "
+     "surfactant and protein phenomenon, and a different measurement from either "
+     "greasiness or shore deposit."),
+    ("O6", "Mass mortality events", "Fish kills, and die-offs of any other "
+     "conspicuous group. Sudden, dateable, and the clearest possible evidence that "
+     "*something* happened — reachable by hypoxia, toxin, pathogen or heat."),
+    ("O7", "Loss of rooted vegetation", "Eelgrass and macroalgal depth limit and "
+     "cover. The WFD's own biological indicator, and the one that has conspicuously "
+     "failed to recover as loads fell."),
+    ("O8", "Visible discolouration", "Water turned brown, red or milky. What people "
+     "photograph and report, and what the chlorophyll indicator averages away."),
+    ("O9", "Bathing water failure", "Closures and quality downgrades. The one "
+     "outcome Denmark measures densely, over a long period, at 1,026 points."),
 ]
+
+# The list above is open on purpose. These are phenomena, not a taxonomy, and the
+# names people use for them overlap and shift - "fedtemøg" alone covers at least
+# three distinct measurements. Adding an outcome is cheap; discovering afterwards
+# that the analysis could only see the ones somebody had already named is not.
 
 GROUPS = [
     ("A", "Nutrient-driven production in place",
@@ -74,6 +187,10 @@ GROUPS = [
      "Slow forcings that change the baseline every other hypothesis sits on."),
     ("H", "State, memory and regime",
      "Hypotheses in which the current year's drivers are not the explanation."),
+    ("J", "Surface film, gel and the greasy water itself",
+     "Fedtemøg as a property of the water rather than of the shore. These are the "
+     "mechanisms that produce a greasy film on skin, and they are the ones that can "
+     "operate in a sea with no Danish catchment at all."),
     ("I", "Observation and measurement",
      "Rival explanations for an apparent trend that live in the instrument rather "
      "than the sea. Omitting these is not neutrality; it is an assumption."),
@@ -81,7 +198,7 @@ GROUPS = [
 
 H = [
     # ---- A ----------------------------------------------------------------
-    ("A1", "A", "Danish land-based nitrogen load", ["O1", "O4", "O3"],
+    ("A1", "A", "Danish land-based nitrogen load", ["O1", "O4", "O3", "O7"],
      "Waterborne N from Danish land reaches a coastal water, is taken up in summer "
      "when N limits growth, the biomass sinks, and its remineralisation draws down "
      "bottom oxygen.",
@@ -142,7 +259,7 @@ H = [
      "hundred metres; seasonal with the production cycle.",
      "Sediment and fauna transects radiating from each of the 26 licensed sites.",
      "Per-farm production and feed use by month; sediment stations near farms."),
-    ("A9", "A", "Nitrogen fixation", ["O4", "O1"],
+    ("A9", "A", "Nitrogen fixation", ["O4", "O1", "O8"],
      "Cyanobacteria fixing atmospheric N, adding nitrogen the load account cannot "
      "see and which increases when N is scarce relative to P.",
      "Fixation rises as the N:P ratio falls, so reducing N load can *increase* total "
@@ -151,7 +268,7 @@ H = [
      "Species-level phytoplankton counts; N-fixation rate measurements."),
 
     # ---- B ----------------------------------------------------------------
-    ("B1", "B", "Combined sewer overflow", ["O1", "O2", "O3"],
+    ("B1", "B", "Combined sewer overflow", ["O1", "O2", "O3", "O9", "O5"],
      "Rain overwhelms a combined system and raw sewage discharges directly: "
      "organics, fat, faecal solids, at 1 g O₂ demand per g COD.",
      "Event-timed. Deficit and shore fouling follow rainfall by hours to days, not "
@@ -160,14 +277,14 @@ H = [
      "per-outfall discharge volume.",
      "Per-outfall overflow volume and duration per event. Denmark has 19,665 "
      "registered outfalls and this is the single most valuable missing series."),
-    ("B2", "B", "Separate stormwater", ["O1", "O2"],
+    ("B2", "B", "Separate stormwater", ["O1", "O2", "O9"],
      "Road and roof runoff carrying organics, hydrocarbons, tyre wear and metals "
      "through a pipe that was built to skip treatment.",
      "Event-timed like B1 but chemically distinct - hydrocarbons and 6PPD-quinone "
      "rather than faecal indicators.",
      "Faecal indicator against hydrocarbon signature in the same event.",
      "Per-outfall stormwater volume; road-runoff chemistry."),
-    ("B3", "B", "Treatment plant organic load", ["O1"],
+    ("B3", "B", "Treatment plant organic load", ["O1", "O5"],
      "Continuous discharge of residual COD and BOD from 750 plants.",
      "Steady rather than event-driven; scales with population equivalent.",
      "Deficit against PE density, controlling for treatment stage.",
@@ -191,7 +308,7 @@ H = [
      "Extreme local deficit in harbours; a plausible direct source of shore fat.",
      "Oxygen and organic content inside harbour basins, which are rarely monitored.",
      "Harbour water quality measurements. Largely absent."),
-    ("B7", "B", "Shipping discharges", ["O1", "O2", "O5"],
+    ("B7", "B", "Shipping discharges", ["O1", "O2"],
      "Sewage, greywater, food waste and scrubber washwater discharged legally "
      "under MARPOL along shipping lanes.",
      "Follows traffic density and lane geometry rather than any catchment; "
@@ -262,7 +379,7 @@ H = [
      "Tide gauge records. Available and long."),
 
     # ---- D ----------------------------------------------------------------
-    ("D1", "D", "Bottom trawling", ["O3", "O1", "O2"],
+    ("D1", "D", "Bottom trawling", ["O3", "O1", "O2", "O7"],
      "Gear dragged across the bed destroys structure and fauna directly, and "
      "resuspends reduced sediment whose sulphide consumes oxygen on contact.",
      "Fauna loss follows effort spatially with no oxygen anomaly needed; turbidity "
@@ -368,13 +485,13 @@ H = [
      "in group D.",
      "Sediment metal concentration against fauna composition.",
      "Sediment metals. Four national points."),
-    ("E11", "E", "Ammonia toxicity", ["O3"],
+    ("E11", "E", "Ammonia toxicity", ["O3", "O6"],
      "Un-ionised ammonia toxic to fauna at concentrations well below those that "
      "matter for growth, and more toxic as pH and temperature rise.",
      "Kills without hypoxia; worst in warm alkaline water near outfalls.",
      "Un-ionised ammonia calculated from ammonium, pH and temperature.",
      "Ammonium with simultaneous pH and temperature. In the ODA record."),
-    ("E12", "E", "Hydrogen sulphide toxicity", ["O3", "O2"],
+    ("E12", "E", "Hydrogen sulphide toxicity", ["O3", "O2", "O6"],
      "Sulphide toxic to fauna in its own right, and the source of the smell people "
      "actually report.",
      "Kills at the bed before oxygen reaches zero; produces the sensory signature "
@@ -398,7 +515,7 @@ H = [
      "Bioturbation potential index from fauna data against sediment oxygen "
      "penetration depth.",
      "Species-level fauna with abundance and biomass. In the ODA bundfauna data."),
-    ("F3", "F", "Loss of eelgrass and macroalgae", ["O1", "O4", "O2"],
+    ("F3", "F", "Loss of eelgrass and macroalgae", ["O1", "O4", "O2", "O7"],
      "Rooted vegetation produces oxygen, stabilises sediment and competes for "
      "nutrients; its loss removes all three at once.",
      "Turbidity and resuspension rise together after vegetation loss, which then "
@@ -424,7 +541,7 @@ H = [
      "Episodic; the carcass fall is a concentrated oxygen sink.",
      "Jellyfish abundance against subsequent deficit.",
      "Jellyfish monitoring. Essentially none in Denmark."),
-    ("F7", "F", "Harmful algal blooms specifically", ["O3", "O1"],
+    ("F7", "F", "Harmful algal blooms specifically", ["O3", "O1", "O6", "O8"],
      "Toxin-producing species killing fauna directly, distinct from biomass.",
      "Kills at chlorophyll levels that the indicator scores as acceptable, because "
      "the indicator counts biomass and not identity.",
@@ -437,19 +554,19 @@ H = [
      "indicator cannot distinguish from health, and which is what fedtemøg is.",
      "Diversity and turnover rate alongside biomass.",
      "Microbial community composition. Not monitored at all."),
-    ("F9", "F", "Disease and parasite mass mortality", ["O3", "O1", "O2"],
+    ("F9", "F", "Disease and parasite mass mortality", ["O3", "O1", "O2", "O6"],
      "A pathogen killing a dominant species, leaving a decaying mass.",
      "Sudden, species-specific, and not preceded by any oxygen anomaly.",
      "Mortality event records with species and date.",
      "Marine mortality event register. Ad hoc."),
-    ("F10", "F", "Vertebrate mass mortality", ["O2", "O1"],
+    ("F10", "F", "Vertebrate mass mortality", ["O2", "O1", "O6"],
      "Seal, bird or fish die-offs depositing large local organic loads.",
      "Local, sudden, and a direct route to shore fouling.",
      "Stranding and die-off records.",
      "Stranding networks. Partial."),
 
     # ---- G ----------------------------------------------------------------
-    ("G1", "G", "Warming", ["O1", "O3", "O4"],
+    ("G1", "G", "Warming", ["O1", "O3", "O4", "O6"],
      "Less oxygen held, faster respiration, stronger and longer stratification - "
      "three effects in the same direction.",
      "Monotone worsening independent of load, and it explains why load reduction "
@@ -521,6 +638,77 @@ H = [
      "Non-parametric response of production and diversity to load.",
      "Load and response across a wide gradient - which the 123 areas supply."),
 
+    # ---- J ----------------------------------------------------------------
+    ("J1", "J", "Transparent exopolymer particles and marine gel", ["O2", "O1", "O3", "O5", "O8"],
+     "Phytoplankton and bacteria exude sticky polysaccharide gel - TEP - especially "
+     "under nutrient imbalance, when cells fix carbon they cannot balance with N or "
+     "P and dump the excess as extracellular carbon. The gel aggregates into marine "
+     "snow and, at scale, into mucilage.",
+     "Gel production rises when the N:P ratio is skewed *in either direction*, so "
+     "reducing one nutrient without the other can increase it. This is the "
+     "mechanism behind Adriatic mucilage events, and it is the best available "
+     "physical candidate for what fedtemøg actually is.",
+     "TEP concentration against the ambient N:P ratio and bloom senescence stage - "
+     "not against nutrient load.",
+     "TEP measurements. Not in Danish monitoring at all; the method is standard and "
+     "cheap (Alcian blue)."),
+    ("J2", "J", "Sea-surface microlayer enrichment", ["O2"],
+     "The top micrometres of the sea concentrate surfactants, lipids, proteins and "
+     "hydrophobic pollutants by orders of magnitude over the bulk water, and "
+     "convergence lines concentrate that film further.",
+     "This is the layer a swimmer's skin actually passes through. It explains "
+     "greasiness with no shore deposit and no unusual bulk concentration, and it is "
+     "destroyed by wind - so the effect is calm-weather and episodic.",
+     "Microlayer sampling (glass plate or screen) against bulk water at the same "
+     "station, with wind speed.",
+     "Sea-surface microlayer sampling. None in Danish monitoring."),
+    ("J3", "J", "Surfactants from detergents and personal care", ["O2", "O5"],
+     "Anionic and non-ionic surfactants passing through treatment plants and "
+     "storm outfalls, which are surface-active by design and accumulate in the "
+     "microlayer.",
+     "Scales with population equivalent, not with agriculture; concentrates in the "
+     "film; and directly produces a slippery feel.",
+     "Surfactant concentration in the microlayer near outfalls.",
+     "Marine surfactant measurements. Essentially none."),
+    ("J4", "J", "Sunscreen and UV filters", ["O2", "O3"],
+     "Oily and silicone-based personal care products applied directly by bathers "
+     "and delivered at the exact place and season people swim.",
+     "Peaks at bathing beaches in bathing season, which is precisely when and where "
+     "greasiness is reported, and is invisible to every catchment model.",
+     "UV filter concentrations at bathing beaches across the season, against "
+     "visitor numbers.",
+     "Marine UV filter monitoring. None in Denmark."),
+    ("J5", "J", "Microplastic and its biofilm", ["O2", "O3"],
+     "Particles that carry a biofilm and sorb hydrophobic organics, concentrating "
+     "in the same surface film.",
+     "Accumulates monotonically, is globally shared, and is enriched in the "
+     "microlayer along with everything else hydrophobic.",
+     "Microplastic counts in microlayer versus bulk water.",
+     "Some Danish microplastic data. Microlayer-specific: none."),
+    ("J6", "J", "Oil and hydrocarbon films", ["O2", "O3"],
+     "Operational discharges, bilge, road runoff and scrubber washwater leaving "
+     "thin films that spread over large areas from small volumes.",
+     "Follows shipping lanes and urban outfalls; a litre spreads over hectares; "
+     "detectable by satellite SAR as slicks.",
+     "SAR slick detections against traffic density and outfall locations.",
+     "Sentinel-1 SAR is free and covers the whole period. This one is testable now."),
+    ("J7", "J", "Exudate from senescing blooms", ["O2", "O1"],
+     "A bloom that is dying releases far more dissolved and colloidal organic "
+     "carbon than a bloom that is growing.",
+     "The greasy phase follows the collapse of a bloom, not its peak - so it is "
+     "offset in time from the chlorophyll maximum the indicator measures, and can "
+     "occur in a season the May-September window scores as fine.",
+     "Dissolved and colloidal organic carbon against bloom phase, not bloom size.",
+     "DOC with sufficient temporal resolution to resolve bloom collapse."),
+    ("J8", "J", "Bacterial exopolymer from fast-growing communities", ["O2", "O1"],
+     "When the large and slow are gone, what remains are r-selected bacteria that "
+     "produce copious extracellular polymer.",
+     "Greasiness as a *symptom of the degraded state itself* rather than of any "
+     "current-year input - which would explain why it persists after loads fall.",
+     "Bacterial community composition and exopolymer production against community "
+     "diversity.",
+     "Microbial community data. Not monitored."),
+
     # ---- I ----------------------------------------------------------------
     ("I1", "I", "Changing station network", ["O1", "O3", "O4"],
      "Stations added, moved and dropped over the record, so a trend can be a trend "
@@ -587,10 +775,42 @@ def render(rows):
       "false, it is **unranked**, and a ranking that omits its unranked members is "
       "a ranking of what was convenient to measure.\n")
 
-    a("## The outcomes, kept apart\n")
-    a("Conflating these is the original error. They are reachable by different "
-      "routes and they are not the same thing.\n")
+    a("## What is actually at stake\n")
+    a("Nobody values a dissolved gas concentration. An earlier version of this page "
+      "listed oxygen deficit as an outcome, which reproduced the exact error the "
+      "project exists to criticise — promoting the measured intermediate to the "
+      "thing of interest, because it is the thing that is measured. So the "
+      "structure here is three layers.\n")
+    a("### Terminal outcomes — what anyone actually cares about\n")
     a("| | outcome | what it is |")
+    a("|---|---|---|")
+    for i, n, w in TERMINAL:
+        a(f"| `{i}` | **{n}** | {w} |")
+    a("")
+    a("### Routes — the sufficient paths to those outcomes\n")
+    a("Oxygen deficit is **one** of these. It is neither necessary nor sufficient "
+      "for any terminal outcome, and several of the others leave no oxygen "
+      "signature at all — a poisoned water can be fully oxygenated.\n")
+    a("| | route | what it is |")
+    a("|---|---|---|")
+    for i, n, w in ROUTES:
+        a(f"| `{i}` | **{n}** | {w} |")
+    a("")
+    a("### Routes we can name and cannot quantify\n")
+    a("Listing these is not a rhetorical move. An unquantified route that goes "
+      "unlisted becomes an absent one in every summary downstream, and *no evidence "
+      "of an effect* is then read as *evidence of no effect*. None of them appears "
+      "in the scored field below, because no method exists that would score them "
+      "fairly. That is a statement about the method, not about the sea.\n")
+    a("| | | |")
+    a("|---|---|---|")
+    for i, n, w in UNQUANTIFIABLE:
+        a(f"| `{i}` | **{n}** | {w} |")
+    a("")
+    a("### Observables — what can be seen, reported or instrumented\n")
+    a("These are what the hypotheses below are scored against. Each belongs to one "
+      "or more routes, and the mapping is many-to-many.\n")
+    a("| | observable | what it is |")
     a("|---|---|---|")
     for i, name, what in OUTCOMES:
         a(f"| `{i}` | **{name}** | {what} |")
@@ -629,7 +849,11 @@ def main():
     ids = [r[0] for r in rows]
     assert len(ids) == len(set(ids)), "duplicate hypothesis id"
     payload = {
-        "outcomes": [{"id": i, "name": n, "what": w} for i, n, w in OUTCOMES],
+        "terminal": [{"id": i, "name": n, "what": w} for i, n, w in TERMINAL],
+        "routes": [{"id": i, "name": n, "what": w} for i, n, w in ROUTES],
+        "unquantifiable": [{"id": i, "name": n, "what": w}
+                           for i, n, w in UNQUANTIFIABLE],
+        "observables": [{"id": i, "name": n, "what": w} for i, n, w in OUTCOMES],
         "groups": [{"id": g, "name": n, "note": t} for g, n, t in GROUPS],
         "hypotheses": [{"id": h, "group": g, "title": t, "outcomes": o,
                         "mechanism": m, "predicts": p, "discriminated_by": d,

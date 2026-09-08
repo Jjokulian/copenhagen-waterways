@@ -2,20 +2,65 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**71 mechanisms in 9 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**79 mechanisms in 10 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
-## The outcomes, kept apart
+## What is actually at stake
 
-Conflating these is the original error. They are reachable by different routes and they are not the same thing.
+Nobody values a dissolved gas concentration. An earlier version of this page listed oxygen deficit as an outcome, which reproduced the exact error the project exists to criticise — promoting the measured intermediate to the thing of interest, because it is the thing that is measured. So the structure here is three layers.
+
+### Terminal outcomes — what anyone actually cares about
 
 | | outcome | what it is |
 |---|---|---|
-| `O1` | **Oxygen deficit** | Dissolved oxygen below 4 or 2 mg/L, by depth, duration and extent. A balance between demand and resupply. |
-| `O2` | **Fedtemøg on a shore** | Fatty, organic, foul material accumulating at the waterline. A transport-and-deposition outcome, not a concentration. |
+| `T1` | **A living seabed lost** | The large, slow, long-lived organisms gone, and with them the structure the rest of the community sits in. |
+| `T2` | **A degraded state that maintains itself** | The feedback closed: the loss of vegetation, filter feeders and bioturbators each make the conditions that removed them more likely. This is the outcome that matters most and the one nothing in the monitoring is designed to detect, because it is a property of the system's dynamics rather than of any sample. |
+| `T3` | **Water unfit or unpleasant to be in** | Greasy, foul, foaming, or unsafe. The outcome people experience directly, and the reason any of this is politically live. |
+| `T4` | **Provisioning lost** | Fish, shellfish and the livelihoods on them. |
+| `T5` | **The shore lost as a place** | Smell, appearance, and the ordinary use of a coastline. |
+
+### Routes — the sufficient paths to those outcomes
+
+Oxygen deficit is **one** of these. It is neither necessary nor sufficient for any terminal outcome, and several of the others leave no oxygen signature at all — a poisoned water can be fully oxygenated.
+
+| | route | what it is |
+|---|---|---|
+| `M1` | **Oxygen deficit** | Respiration and chemical demand exceed resupply. Well measured, heavily modelled, and the only route the requirement acts on. |
+| `M2` | **Toxic exposure** | Something is poisoned. The dose makes the poison, so this route is acutely sensitive to peak concentration rather than to any annual mean — and annual means are what is reported. Leaves a fully oxygenated dead water. |
+| `M3` | **Physical destruction and burial** | The habitat removed, crushed, dredged or covered. Needs no chemistry at all. |
+| `M4` | **Food-web restructuring** | Removal or addition of a species changes what everything else does. Overfishing, invasion, disease. |
+| `M5` | **Light starvation** | Rooted vegetation shaded out by turbidity, which then removes the thing that was holding the sediment down. |
+| `M6` | **Surface film and gel** | The water itself becomes a different medium: greasy, foaming, mucilaginous. |
+| `M7` | **Reduced chemistry at the bed** | Sulphide and its relatives, toxic in their own right and an oxygen sink besides. The bed becomes hostile before the water column shows anything. |
+
+### Routes we can name and cannot quantify
+
+Listing these is not a rhetorical move. An unquantified route that goes unlisted becomes an absent one in every summary downstream, and *no evidence of an effect* is then read as *evidence of no effect*. None of them appears in the scored field below, because no method exists that would score them fairly. That is a statement about the method, not about the sea.
+
+| | | |
+|---|---|---|
+| `U1` | **Mixture and cocktail effects** | Toxicity is assessed one substance at a time against one threshold at a time. Real exposure is simultaneous, and effects combine additively at best and synergistically often. The number of pairs alone, let alone higher orders, exceeds what could ever be tested. There is no defensible way to compute the combined effect, and equally none to argue it is zero. |
+| `U2` | **Acute peaks under chronic means** | The dose makes the poison, and the dose that kills arrives in an event. Monitoring reports means over months; an outfall discharging for six hours after a storm is invisible in an annual average and entirely visible to whatever was living below it. |
+| `U3` | **Floor and ceiling effects** | Where a community has already lost its sensitive members, adding stress produces no further measurable change — so the most degraded places return the smallest effect sizes, and a naive analysis reads that as evidence the stressor does not matter. |
+| `U4` | **Substances on no monitoring list** | Tens of thousands of chemicals are in commerce; a few dozen are measured. A substance absent from the list is absent from every finding, whatever it is doing. |
+| `U5` | **Sublethal and transgenerational effects** | Impaired reproduction, behaviour and development leave no corpse to count. The survey counts individuals present, not individuals functioning. |
+
+### Observables — what can be seen, reported or instrumented
+
+These are what the hypotheses below are scored against. Each belongs to one or more routes, and the mapping is many-to-many.
+
+| | observable | what it is |
+|---|---|---|
+| `O1` | **Oxygen deficit** | Dissolved oxygen below 4 or 2 mg/L, by depth, duration and extent. **An observable on route M1, not an outcome.** Nobody values a gas concentration; it earns its place only through what it causes, and it is neither necessary nor sufficient for any of T1-T5. |
+| `O2` | **Fedtemøg** | Greasy organic matter in the water and on the shore. It has at least three manifestations and they are not the same measurement: **O2a** accumulation at the waterline, a transport-and-deposition outcome; **O2b** the greasy film on skin after swimming, which is a property of the water column and of the sea-surface microlayer, present without any shore deposit and reported at different times of year; **O2c** the smell, which is a chemical signature (sulphide, amines, volatile fatty acids) and the thing the public actually reports. Denmark measures none of the three. |
 | `O3` | **Loss of higher benthic life** | The large, slow, long-lived animals going. Reachable by suffocation, poisoning, burial or physical destruction. |
 | `O4` | **Turbidity and phytoplankton biomass** | Chlorophyll and light attenuation. Measures of quantity, standing in for claims about composition. |
+| `O5` | **Foam** | Persistent foam on the water and along the strandline. A surfactant and protein phenomenon, and a different measurement from either greasiness or shore deposit. |
+| `O6` | **Mass mortality events** | Fish kills, and die-offs of any other conspicuous group. Sudden, dateable, and the clearest possible evidence that *something* happened — reachable by hypoxia, toxin, pathogen or heat. |
+| `O7` | **Loss of rooted vegetation** | Eelgrass and macroalgal depth limit and cover. The WFD's own biological indicator, and the one that has conspicuously failed to recover as loads fell. |
+| `O8` | **Visible discolouration** | Water turned brown, red or milky. What people photograph and report, and what the chlorophyll indicator averages away. |
+| `O9` | **Bathing water failure** | Closures and quality downgrades. The one outcome Denmark measures densely, over a long period, at 1,026 points. |
 
 ## A. Nutrient-driven production in place
 
@@ -23,7 +68,7 @@ Conflating these is the original error. They are reachable by different routes a
 
 ### A1 — Danish land-based nitrogen load
 
-**Outcomes:** O1, O4, O3
+**Outcomes:** O1, O4, O3, O7
 
 Waterborne N from Danish land reaches a coastal water, is taken up in summer when N limits growth, the biomass sinks, and its remineralisation draws down bottom oxygen.
 
@@ -119,7 +164,7 @@ Net-pen fish farms discharging dissolved nutrients and particulate feed and faec
 
 ### A9 — Nitrogen fixation
 
-**Outcomes:** O4, O1
+**Outcomes:** O4, O1, O8
 
 Cyanobacteria fixing atmospheric N, adding nitrogen the load account cannot see and which increases when N is scarce relative to P.
 
@@ -135,7 +180,7 @@ Cyanobacteria fixing atmospheric N, adding nitrogen the load account cannot see 
 
 ### B1 — Combined sewer overflow
 
-**Outcomes:** O1, O2, O3
+**Outcomes:** O1, O2, O3, O9, O5
 
 Rain overwhelms a combined system and raw sewage discharges directly: organics, fat, faecal solids, at 1 g O₂ demand per g COD.
 
@@ -147,7 +192,7 @@ Rain overwhelms a combined system and raw sewage discharges directly: organics, 
 
 ### B2 — Separate stormwater
 
-**Outcomes:** O1, O2
+**Outcomes:** O1, O2, O9
 
 Road and roof runoff carrying organics, hydrocarbons, tyre wear and metals through a pipe that was built to skip treatment.
 
@@ -159,7 +204,7 @@ Road and roof runoff carrying organics, hydrocarbons, tyre wear and metals throu
 
 ### B3 — Treatment plant organic load
 
-**Outcomes:** O1
+**Outcomes:** O1, O5
 
 Continuous discharge of residual COD and BOD from 750 plants.
 
@@ -207,7 +252,7 @@ Fish waste, bilge, and organic debris concentrated in enclosed basins with poor 
 
 ### B7 — Shipping discharges
 
-**Outcomes:** O1, O2, O5
+**Outcomes:** O1, O2
 
 Sewage, greywater, food waste and scrubber washwater discharged legally under MARPOL along shipping lanes.
 
@@ -347,7 +392,7 @@ Changed exchange volume through straits and over sills.
 
 ### D1 — Bottom trawling
 
-**Outcomes:** O3, O1, O2
+**Outcomes:** O3, O1, O2, O7
 
 Gear dragged across the bed destroys structure and fauna directly, and resuspends reduced sediment whose sulphide consumes oxygen on contact.
 
@@ -555,7 +600,7 @@ From harbours, industry, dumping and historic contamination.
 
 ### E11 — Ammonia toxicity
 
-**Outcomes:** O3
+**Outcomes:** O3, O6
 
 Un-ionised ammonia toxic to fauna at concentrations well below those that matter for growth, and more toxic as pH and temperature rise.
 
@@ -567,7 +612,7 @@ Un-ionised ammonia toxic to fauna at concentrations well below those that matter
 
 ### E12 — Hydrogen sulphide toxicity
 
-**Outcomes:** O3, O2
+**Outcomes:** O3, O2, O6
 
 Sulphide toxic to fauna in its own right, and the source of the smell people actually report.
 
@@ -607,7 +652,7 @@ Burrowing fauna irrigate the sediment and oxygenate its upper layer; without the
 
 ### F3 — Loss of eelgrass and macroalgae
 
-**Outcomes:** O1, O4, O2
+**Outcomes:** O1, O4, O2, O7
 
 Rooted vegetation produces oxygen, stabilises sediment and competes for nutrients; its loss removes all three at once.
 
@@ -655,7 +700,7 @@ Gelatinous predators removing zooplankton and depositing rapidly-decaying biomas
 
 ### F7 — Harmful algal blooms specifically
 
-**Outcomes:** O3, O1
+**Outcomes:** O3, O1, O6, O8
 
 Toxin-producing species killing fauna directly, distinct from biomass.
 
@@ -679,7 +724,7 @@ When the slow, large and long-lived are gone, what remains are the organisms tha
 
 ### F9 — Disease and parasite mass mortality
 
-**Outcomes:** O3, O1, O2
+**Outcomes:** O3, O1, O2, O6
 
 A pathogen killing a dominant species, leaving a decaying mass.
 
@@ -691,7 +736,7 @@ A pathogen killing a dominant species, leaving a decaying mass.
 
 ### F10 — Vertebrate mass mortality
 
-**Outcomes:** O2, O1
+**Outcomes:** O2, O1, O6
 
 Seal, bird or fish die-offs depositing large local organic loads.
 
@@ -707,7 +752,7 @@ Seal, bird or fish die-offs depositing large local organic loads.
 
 ### G1 — Warming
 
-**Outcomes:** O1, O3, O4
+**Outcomes:** O1, O3, O4, O6
 
 Less oxygen held, faster respiration, stronger and longer stratification - three effects in the same direction.
 
@@ -828,6 +873,106 @@ The same nutrient is a subsidy at low dose and a stressor at high, so the respon
 **Discriminated by.** Non-parametric response of production and diversity to load.
 
 **Needs.** Load and response across a wide gradient - which the 123 areas supply.
+
+## J. Surface film, gel and the greasy water itself
+
+*Fedtemøg as a property of the water rather than of the shore. These are the mechanisms that produce a greasy film on skin, and they are the ones that can operate in a sea with no Danish catchment at all.*
+
+### J1 — Transparent exopolymer particles and marine gel
+
+**Outcomes:** O2, O1, O3, O5, O8
+
+Phytoplankton and bacteria exude sticky polysaccharide gel - TEP - especially under nutrient imbalance, when cells fix carbon they cannot balance with N or P and dump the excess as extracellular carbon. The gel aggregates into marine snow and, at scale, into mucilage.
+
+**Predicts.** Gel production rises when the N:P ratio is skewed *in either direction*, so reducing one nutrient without the other can increase it. This is the mechanism behind Adriatic mucilage events, and it is the best available physical candidate for what fedtemøg actually is.
+
+**Discriminated by.** TEP concentration against the ambient N:P ratio and bloom senescence stage - not against nutrient load.
+
+**Needs.** TEP measurements. Not in Danish monitoring at all; the method is standard and cheap (Alcian blue).
+
+### J2 — Sea-surface microlayer enrichment
+
+**Outcomes:** O2
+
+The top micrometres of the sea concentrate surfactants, lipids, proteins and hydrophobic pollutants by orders of magnitude over the bulk water, and convergence lines concentrate that film further.
+
+**Predicts.** This is the layer a swimmer's skin actually passes through. It explains greasiness with no shore deposit and no unusual bulk concentration, and it is destroyed by wind - so the effect is calm-weather and episodic.
+
+**Discriminated by.** Microlayer sampling (glass plate or screen) against bulk water at the same station, with wind speed.
+
+**Needs.** Sea-surface microlayer sampling. None in Danish monitoring.
+
+### J3 — Surfactants from detergents and personal care
+
+**Outcomes:** O2, O5
+
+Anionic and non-ionic surfactants passing through treatment plants and storm outfalls, which are surface-active by design and accumulate in the microlayer.
+
+**Predicts.** Scales with population equivalent, not with agriculture; concentrates in the film; and directly produces a slippery feel.
+
+**Discriminated by.** Surfactant concentration in the microlayer near outfalls.
+
+**Needs.** Marine surfactant measurements. Essentially none.
+
+### J4 — Sunscreen and UV filters
+
+**Outcomes:** O2, O3
+
+Oily and silicone-based personal care products applied directly by bathers and delivered at the exact place and season people swim.
+
+**Predicts.** Peaks at bathing beaches in bathing season, which is precisely when and where greasiness is reported, and is invisible to every catchment model.
+
+**Discriminated by.** UV filter concentrations at bathing beaches across the season, against visitor numbers.
+
+**Needs.** Marine UV filter monitoring. None in Denmark.
+
+### J5 — Microplastic and its biofilm
+
+**Outcomes:** O2, O3
+
+Particles that carry a biofilm and sorb hydrophobic organics, concentrating in the same surface film.
+
+**Predicts.** Accumulates monotonically, is globally shared, and is enriched in the microlayer along with everything else hydrophobic.
+
+**Discriminated by.** Microplastic counts in microlayer versus bulk water.
+
+**Needs.** Some Danish microplastic data. Microlayer-specific: none.
+
+### J6 — Oil and hydrocarbon films
+
+**Outcomes:** O2, O3
+
+Operational discharges, bilge, road runoff and scrubber washwater leaving thin films that spread over large areas from small volumes.
+
+**Predicts.** Follows shipping lanes and urban outfalls; a litre spreads over hectares; detectable by satellite SAR as slicks.
+
+**Discriminated by.** SAR slick detections against traffic density and outfall locations.
+
+**Needs.** Sentinel-1 SAR is free and covers the whole period. This one is testable now.
+
+### J7 — Exudate from senescing blooms
+
+**Outcomes:** O2, O1
+
+A bloom that is dying releases far more dissolved and colloidal organic carbon than a bloom that is growing.
+
+**Predicts.** The greasy phase follows the collapse of a bloom, not its peak - so it is offset in time from the chlorophyll maximum the indicator measures, and can occur in a season the May-September window scores as fine.
+
+**Discriminated by.** Dissolved and colloidal organic carbon against bloom phase, not bloom size.
+
+**Needs.** DOC with sufficient temporal resolution to resolve bloom collapse.
+
+### J8 — Bacterial exopolymer from fast-growing communities
+
+**Outcomes:** O2, O1
+
+When the large and slow are gone, what remains are r-selected bacteria that produce copious extracellular polymer.
+
+**Predicts.** Greasiness as a *symptom of the degraded state itself* rather than of any current-year input - which would explain why it persists after loads fall.
+
+**Discriminated by.** Bacterial community composition and exopolymer production against community diversity.
+
+**Needs.** Microbial community data. Not monitored.
 
 ## I. Observation and measurement
 

@@ -21,6 +21,14 @@ Politeness: stations are requested in batches with a pause between them, the cli
 sends a User-Agent naming the project, and nothing here runs concurrently. The
 station register is fetched first because it is small and indexes everything else.
 
+Written for a small machine. This VM has ~3 GB of RAM and /tmp is a 1 GB tmpfs, so
+a response held in memory is a response competing with everything else. Every
+download streams to disk in chunks and is never materialised as a single object;
+each batch is appended to the output file and forgotten; the output file is replaced
+at the start of a run rather than grown; and the run stops on its own if it would
+exceed --max-mb or leave less than MIN_FREE_MB on the volume. Storage that must be
+replaced rather than filled without care is the constraint, not an afterthought.
+
 Topics (Hav):
     stations   Observationssted   the register: id, name, water body, UTM32, dates
     ctd        Feltmaaling/CTD    oxygen, temperature, salinity by depth
@@ -30,7 +38,7 @@ Topics (Hav):
 
 Usage:
     python3 scripts/fetch_oda.py stations
-    python3 scripts/fetch_oda.py ctd --from 1970-01-01 --to 2026-12-31 [--batch 200]
+    python3 scripts/fetch_oda.py ctd --from 1970-01-01 --to 2026-12-31 --years 5
 """
 import argparse
 import html
@@ -104,6 +112,20 @@ def station_list(field_id, sltype):
 
 
 def select_stations(field_id, sltype, checkbox_ids):
+    """Add these stations to the station criterion.
+
+    Two traps live here, both learned the hard way.
+
+    SCL2_SelectMultiSelectList *adds* to whatever is already selected rather than
+    replacing it, so batching over stations re-downloads every earlier batch and the
+    extract grows quadratically - the first run of this cost 1.46 GB to fetch 153 MB
+    of register. HentData_NulstilCond does clear the criteria, but it also makes the
+    server regenerate every criterion field with fresh ids, so a cached field id then
+    points at a field that no longer exists and the selection silently does nothing.
+
+    So: stations are selected once, in full, and batching is done over time instead,
+    where setting a period replaces the previous one. Criterion ids are re-read from
+    the pane on every use and never cached across a rebuild."""
     oda.call("SCL2_SelectMultiSelectList",
              {"SLType": sltype, "SelectBoxId": field_id},
              lists={"checkBoxes": {k: "true" for k in checkbox_ids}}, pause=1.2)
@@ -129,19 +151,71 @@ def select_all_output(datarun_html):
     return len(ids)
 
 
-def download_csv(timeout=600):
+CHUNK = 1 << 16
+MIN_FREE_MB = 512      # never take the volume below this
+
+
+def free_mb(path):
+    st = os.statvfs(path)
+    return st.f_bavail * st.f_frsize / 1e6
+
+
+def stream_csv(out_fh, skip_header, budget_mb, timeout=900):
+    """Stream one extract straight to an open file. Returns (rows, bytes, error).
+
+    Never holds the response in memory: reads in 64 KB chunks, keeps only enough
+    to find the first newline, and stops early if the batch would blow the budget.
+    The server reports failures as a one-line CSV whose first field is a message,
+    so the head of the stream is inspected before anything is written."""
     req = urllib.request.Request(oda.BASE + "getcsv.aspx?type=HentData",
                                  headers={"User-Agent": oda.UA})
+    rows = written = 0
+    head, checked, dropped_header = b"", False, not skip_header
     with oda._op.open(req, timeout=timeout) as r:
-        return r.read()
+        while True:
+            buf = r.read(CHUNK)
+            if not buf:
+                break
+            if not checked:
+                head += buf
+                if len(head) < 400 and b"\n" not in head:
+                    continue
+                probe = head[:400].decode("iso-8859-1", "replace")
+                if "msg " in probe or "Column " in probe or "Fejl" in probe:
+                    return 0, 0, probe.strip()[:200]
+                checked, buf, head = True, head, b""
+            if not dropped_header:
+                nl = buf.find(b"\n")
+                if nl < 0:
+                    continue
+                buf, dropped_header = buf[nl + 1:], True
+            rows += buf.count(b"\n")
+            written += len(buf)
+            out_fh.write(buf)
+            if budget_mb and written / 1e6 > budget_mb:
+                return rows, written, f"batch exceeded budget of {budget_mb:.0f} MB"
+    return rows, written, None
 
 
-def looks_like_error(data):
-    head = data[:400].decode("iso-8859-1", "replace")
-    return data.count(b"\n") <= 1 and ("msg " in head or "Column " in head)
+def split_periods(frm, to, years):
+    """Slice the requested span into chunks of `years`, or one open request.
+
+    Setting a period replaces the previous one, unlike the station criterion, so
+    this is the axis it is safe to batch on."""
+    if not years or not frm or not to:
+        return [(frm, to)]
+    y0, y1 = int(frm[:4]), int(to[:4])
+    out = []
+    y = y0
+    while y <= y1:
+        e = min(y + years - 1, y1)
+        out.append((f"{y}-01-01" if y > y0 else frm,
+                    f"{e}-12-31" if e < y1 else to))
+        y = e + 1
+    return out
 
 
-def run(topic, frm, to, batch, limit):
+def run(topic, frm, to, years, limit, max_mb):
     os.makedirs(DEST, exist_ok=True)
     spec = TOPICS[topic]
     log(f"logging in as {EMAIL}")
@@ -176,34 +250,42 @@ def run(topic, frm, to, batch, limit):
     nfields = select_all_output(panes["HentData_FillDataRun"])
     log(f"  {nfields} output fields selected")
 
-    parts, rows_total = [], 0
-    for i in range(0, len(stations), batch):
-        chunk = stations[i:i + batch]
-        big = select_stations(field_id, sltype, [c[0] for c in chunk])
-        set_period(frm, to)
-        select_all_output(panes["HentData_FillDataRun"])
-        if big:
-            log(f"  [{i//batch+1}] server flags this extract as large; "
-                f"reduce --batch and retry")
-            return 2
-        data = download_csv()
-        if looks_like_error(data):
-            log(f"  [{i//batch+1}] server error: "
-                f"{data[:200].decode('iso-8859-1','replace').strip()}")
-            return 3
-        lines = data.decode("iso-8859-1").splitlines()
-        parts.append(lines if not parts else lines[1:])
-        rows_total += len(lines) - 1
-        log(f"  [{i//batch+1}/{(len(stations)+batch-1)//batch}] "
-            f"stations {i+1}-{i+len(chunk)}: {len(lines)-1:,} rows "
-            f"({rows_total:,} total)")
-        time.sleep(2.0)
-
     out = os.path.join(DEST, f"{topic}.csv")
-    with open(out, "w", encoding="utf-8") as f:
-        for p in parts:
-            f.write("\n".join(p) + "\n")
-    log(f"\nwrote {out} ({os.path.getsize(out)/1e6:.1f} MB, {rows_total:,} rows)")
+    log(f"  {free_mb(DEST):,.0f} MB free; budget {max_mb:,} MB")
+
+    # One station selection for all of them; the criterion accumulates, so doing
+    # this once is both correct and cheapest.
+    big = select_stations(field_id, sltype, [c[0] for c in stations])
+    select_all_output(panes["HentData_FillDataRun"])
+    if big:
+        log("  server flags the whole-record extract as too large to stream; "
+            "periods will be requested one at a time")
+
+    periods = split_periods(frm, to, years)
+    rows_total = bytes_total = 0
+    with open(out, "wb") as fh:                       # replace, never grow
+        for n, (a, b) in enumerate(periods, 1):
+            if a or b:
+                set_period(a, b)
+                select_all_output(panes["HentData_FillDataRun"])
+            room = min(max_mb - bytes_total / 1e6, free_mb(DEST) - MIN_FREE_MB)
+            if room <= 0:
+                log(f"  [{n}] stopping: budget or free space exhausted "
+                    f"({bytes_total/1e6:,.0f} MB written, "
+                    f"{free_mb(DEST):,.0f} MB free)")
+                break
+            rows, nbytes, err = stream_csv(fh, skip_header=(n > 1), budget_mb=room)
+            if err:
+                log(f"  [{n}] {err}")
+                return 3
+            rows_total += rows
+            bytes_total += nbytes
+            log(f"  [{n}/{len(periods)}] {a or 'start'}..{b or 'end'}: "
+                f"{rows:,} rows, {nbytes/1e6:,.1f} MB "
+                f"({rows_total:,} rows, {bytes_total/1e6:,.0f} MB total)")
+            time.sleep(2.0)
+    log(f"\nwrote {out} ({os.path.getsize(out)/1e6:,.1f} MB, {rows_total:,} rows)")
+    log(f"  {free_mb(DEST):,.0f} MB still free")
     return 0
 
 
@@ -213,10 +295,14 @@ def main(argv):
     ap.add_argument("topic", choices=sorted(TOPICS))
     ap.add_argument("--from", dest="frm", default=None, help="yyyy-mm-dd")
     ap.add_argument("--to", dest="to", default=None, help="yyyy-mm-dd")
-    ap.add_argument("--batch", type=int, default=250, help="stations per request")
+    ap.add_argument("--years", type=int, default=0,
+                    help="split the period into chunks of this many years "
+                         "(needs --from and --to); 0 requests it in one go")
     ap.add_argument("--limit", type=int, default=0, help="stop after N stations")
+    ap.add_argument("--max-mb", type=int, default=2000,
+                    help="stop before the output exceeds this many MB")
     a = ap.parse_args(argv)
-    return run(a.topic, a.frm, a.to, a.batch, a.limit)
+    return run(a.topic, a.frm, a.to, a.years, a.limit, a.max_mb)
 
 
 if __name__ == "__main__":
