@@ -110,6 +110,7 @@ const GROUPS = [
     ["OBSERVING.md",    "What Denmark measures, and where"],
     ["OXYGEN.md",       "What actually removes the oxygen"],
     ["AREAS.md",        "There is no Denmark"],
+    ["areas.html",      "Map: what is known, where, when"],
     ["SEABED.md",       "The seabed, the wind, and what stays put"],
     ["CURRENTS.md",     "Where the water goes"],
     ["SOLUTIONS.md",    "What would actually stop it"],
@@ -123,7 +124,7 @@ const GROUPS = [
     ["LANDBRUG.md",     "Til landbruget \u2014 p\u00e5 dansk"],
   ]],
 ];
-const DOCS = GROUPS.flatMap(([, ds]) => ds);
+const DOCS = GROUPS.flatMap(([, ds]) => ds).filter(([f]) => !f.endsWith(".html"));
 const navEl = document.getElementById("nav");
 const docEl = document.getElementById("doc");
 
@@ -137,9 +138,15 @@ for (const [heading, docs] of GROUPS) {
   for (const [file, label] of docs) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = "#" + file;
+    // An .html entry is a page of its own, not a document the reader renders.
+    if (file.endsWith(".html")) {
+      a.href = file;
+      a.className = "external";
+    } else {
+      a.href = "#" + file;
+      a.dataset.file = file;
+    }
     a.textContent = label;
-    a.dataset.file = file;
     li.appendChild(a);
     navEl.appendChild(li);
   }
