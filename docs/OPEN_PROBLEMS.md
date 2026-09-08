@@ -367,3 +367,67 @@ happened, and it needs a boat and a lab rather than a model.
 
 Provenance for both events is in `data/manual/monitoring.json` under
 `sediment_release_events`.
+
+---
+
+## 16. The drainage reconstruction exists for one city, and cannot currently be repeated
+
+Item 14 is about the Copenhagen model being fourteen years old. This is the larger version
+of the same problem: **that reconstruction exists for Copenhagen and nowhere else**, and it
+only exists there because seven PDFs happened to be published and the georeferencing
+happened to be recoverable from them. That is not a method. It is a lucky archaeology.
+
+Everywhere else in Denmark the 4D view has **endpoints without a network**. The outfall
+extract now on disk holds 4,217 combined-sewer overflow structures and 16,185 separate
+stormwater outfalls, each with a position, an annual volume, and a *reduced impervious
+area* behind it. What it does not hold — anywhere — is which ground drains to which
+outfall. So the country has 20,402 measured spouts and no map of the taps.
+
+**Why this blocks specific work.** `B1` and `B2` in the register both need per-outfall
+catchment: the first flush hypothesis predicts load scaling with antecedent dry period ×
+connected area × peak shear, and none of those can be assembled from a point. The same gap
+stops any attempt to attribute a receiving water's condition to the ground behind it, which
+is the whole premise of a catchment-based directive.
+
+**What is closed.** Denmark's national utility register, Ledningsejerregistret, holds pipe
+geometry and is not open data. This project does not query it and no argument here depends
+on it. It is recorded because its existence is the reason the gap looks strange: the data
+exists, is complete, is maintained by law, and is unavailable — and the same is almost
+certainly true of most European cities. The absence is administrative, not physical.
+
+### What is open, and has not been tried
+
+- **Municipal wastewater plans.** Every Danish municipality must adopt and publish a
+  *spildevandsplan*, and they carry catchment maps. Ninety-eight municipalities, published
+  independently, in formats ranging from a WMS layer to a scanned appendix. Some are already
+  in `data/raw/plan_html/`. Nobody has assembled them.
+- **The BBR building register**, which carries a construction year per building. That makes
+  impervious change since any date computable nationally rather than by hand — item 14's
+  344 ha, for every municipality, without a hydraulic model.
+- **Terrain.** Combined systems were largely laid in buried watercourses, so surface flow
+  accumulation over a DEM is a prior on where the pipes run, not merely a separate question.
+- **Historic maps**, for the same reason: the streams that were culverted are where the
+  sewers are.
+
+### The method that might work, stated so it can be attacked
+
+Delineate catchments from terrain, then **constrain the delineation so each outfall's
+computed impervious area matches the reduced area already reported for it**. The reported
+figure stops being an input and becomes the validation: a delineation that reproduces
+20,402 independently published areas is doing something right, and one that cannot is
+falsified cheaply.
+
+That inverts the usual dependency. It needs no pipe geometry, only endpoints with sizes,
+terrain, and building footprints — all of which are open. It would produce a *plausible*
+network rather than the real one, and the difference must be stated wherever it is used;
+but a plausible catchment with a stated error is worth more than no catchment at all, which
+is what exists today for 97 of 98 municipalities.
+
+### And the same principle for the rest of the 4D view
+
+The view should show the **basis** rather than the output. For every area and every year:
+what was actually measured, by whom, how often, and which of the modelled quantities rest
+on it. A map of model outputs is a map of somebody's confidence. A map of what was measured
+is a map of what is known, and the two differ most exactly where it matters — which is the
+finding [AREAS.md](#AREAS.md) already reports for the 56% of sea area carrying neither a
+model nor an observation.

@@ -10,13 +10,13 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 ## Three kinds of work, which are not interchangeable
 
-**Constructive and investigative — `experiment`** (11 of 20 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+**Constructive and investigative — `experiment`** (11 of 21 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
 
-**Investigative — `measurement`** (5 of 20 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+**Investigative — `measurement`** (5 of 21 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
 
-**Build the means of measurement — `instrument`** (3 of 20 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
+**Build the means of measurement — `instrument`** (3 of 21 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
 
-**Armchair — `analysis`** (1 of 20 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+**Armchair — `analysis`** (2 of 21 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
 
 Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
 
@@ -27,9 +27,9 @@ Naming them separately matters because they are not substitutes and they are not
 | `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X18, X2, X7, X19, X20, X9, X10, X12, X14, X15, X16 |
 | `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11, X13 |
 | `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5, X17 |
-| `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X8 |
+| `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X21, X8 |
 
-**13 of 20 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
+**14 of 21 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
 
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
@@ -382,6 +382,24 @@ The register cannot say what agricultural biocides do to marine decomposers, bec
 *This is the only design here that is simultaneously an intervention, a national experiment, and survivable for the people inside it. It also supplies what nothing else can: **a real counterfactual for the chemical argument**, at the scale the argument is made. Denmark already has the administrative machinery — pesticide taxation, action plans, and protection zones around wellfields where spraying is restricted — so the instrument exists and only the randomisation and the marine measurement would be new.*
 
 ## Desk — No fieldwork at all. The data already exists; the analysis has not been run.
+
+### X21 — Reconstruct the catchments from the endpoints, nationally
+
+`analysis`
+
+**Bears on:** [`B1`](#HYPOTHESES.md) Combined sewer overflow, [`B2`](#HYPOTHESES.md) Separate stormwater, [`B3`](#HYPOTHESES.md) Treatment plant organic load, [`A4`](#HYPOTHESES.md) Point-source discharge of nutrients
+
+Denmark has 20,402 outfalls with a position, an annual volume and a reported reduced impervious area, and no published map of which ground drains to which. The pipe geometry exists in a national register that is not open, so the network cannot be looked up. It may be inferable.
+
+**Manipulate.** Nothing physical. Delineate catchments from the terrain model, then **constrain the delineation so each outfall's computed impervious area matches the reduced area already published for it**. Building footprints and construction years come from BBR, so impervious cover can be reconstructed for any year rather than only for today.
+
+**Control.** The 20,402 reported areas are the control, and they were produced independently of any terrain analysis. A delineation that reproduces them is doing something right; one that cannot is falsified without fieldwork. Hold out a random tenth to fit nothing and check against those.
+
+**Measure.** Terrain, building footprints with year built, and the outfall register - all open, all already fetched or fetchable. Plus, where a municipal wastewater plan publishes real catchment boundaries, those become a second and much harder test.
+
+**Decide, in advance.** Catchments reproducing the published areas within a stated error → per-outfall connected area for the whole country, which is what B1 and B2 need and neither has. Systematic failure in some region or sewer type → that is informative too, because it localises where terrain stops predicting the network. Failure everywhere → the inference does not work and the register stays the only route.
+
+*It produces a plausible network, not the real one, and every use must say so. But 97 of 98 municipalities currently have no catchment map at all, and a plausible one with a stated error beats nothing. Copenhagen's exists only because seven PDFs happened to be recoverable, which is archaeology rather than method.*
 
 ### X8 — Are the trends in the sea or in the instruments?
 

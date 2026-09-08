@@ -321,6 +321,38 @@ X = [
      "unrelated to funding, and it shares that with X18: the people who fished "
      "before the change are ageing out, and the baseline goes with them."),
 
+    ("X21", "Reconstruct the catchments from the endpoints, nationally",
+     "analysis",
+     ["B1", "B2", "B3", "A4"], "desk",
+     "Denmark has 20,402 outfalls with a position, an annual volume and a reported "
+     "reduced impervious area, and no published map of which ground drains to "
+     "which. The pipe geometry exists in a national register that is not open, so "
+     "the network cannot be looked up. It may be inferable.",
+     "Nothing physical. Delineate catchments from the terrain model, then "
+     "**constrain the delineation so each outfall's computed impervious area "
+     "matches the reduced area already published for it**. Building footprints and "
+     "construction years come from BBR, so impervious cover can be reconstructed "
+     "for any year rather than only for today.",
+     "The 20,402 reported areas are the control, and they were produced "
+     "independently of any terrain analysis. A delineation that reproduces them is "
+     "doing something right; one that cannot is falsified without fieldwork. Hold "
+     "out a random tenth to fit nothing and check against those.",
+     "Terrain, building footprints with year built, and the outfall register - all "
+     "open, all already fetched or fetchable. Plus, where a municipal wastewater "
+     "plan publishes real catchment boundaries, those become a second and much "
+     "harder test.",
+     "Catchments reproducing the published areas within a stated error → per-"
+     "outfall connected area for the whole country, which is what B1 and B2 need "
+     "and neither has. Systematic failure in some region or sewer type → that is "
+     "informative too, because it localises where terrain stops predicting the "
+     "network. Failure everywhere → the inference does not work and the register "
+     "stays the only route.",
+     "It produces a plausible network, not the real one, and every use must say "
+     "so. But 97 of 98 municipalities currently have no catchment map at all, and a "
+     "plausible one with a stated error beats nothing. Copenhagen's exists only "
+     "because seven PDFs happened to be recoverable, which is archaeology rather "
+     "than method."),
+
     ("X8", "Are the trends in the sea or in the instruments?", "analysis",
      ["I1", "I2", "I3", "I5", "I6", "L3"], "desk",
      "The raw record carries the supplier, the sampling gear, the sonde, the "
