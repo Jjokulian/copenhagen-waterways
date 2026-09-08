@@ -1,0 +1,56 @@
+{
+ "_what": "Do the same station groupings emerge from disjoint random halves of the measured variables?",
+ "_why": "A null test is conditioned on the features chosen and cannot say whether a grouping is a property of the places or of what happened to be measured. Agreement between derivations from disjoint feature subsets can, and assumes no partition at all.",
+ "_reading": "agreement_between_halves is the adjusted Rand index: 0 is what two random partitions of the same shape reach, 1 is identity. Rising with features_per_half means the derivations converge; flat and near zero means there is nothing to converge on.",
+ "_limit": "One clustering method (average linkage on 1 - correlation), one granularity (12 groups), and only the stations measured on every variable - which are the best-observed ones, so this is the friendliest case rather than a representative one.",
+ "groups": 12,
+ "stations": 150,
+ "official_groups_here": 84,
+ "variables": [
+  "fluo",
+  "oxy_bed",
+  "oxy_surf",
+  "oxysat_bed",
+  "oxysat_surf",
+  "sal_bed",
+  "sal_surf",
+  "temp_bed",
+  "temp_surf"
+ ],
+ "results": [
+  {
+   "features_per_half": 1,
+   "pairs": 12,
+   "agreement_between_halves": 0.236,
+   "best": 0.737,
+   "worst": -0.027,
+   "agreement_with_official": 0.069
+  },
+  {
+   "features_per_half": 2,
+   "pairs": 12,
+   "agreement_between_halves": 0.333,
+   "best": 0.51,
+   "worst": 0.24,
+   "agreement_with_official": 0.101
+  },
+  {
+   "features_per_half": 3,
+   "pairs": 12,
+   "agreement_between_halves": 0.359,
+   "best": 0.486,
+   "worst": 0.22,
+   "agreement_with_official": 0.093
+  },
+  {
+   "features_per_half": 4,
+   "pairs": 12,
+   "agreement_between_halves": 0.462,
+   "best": 0.738,
+   "worst": 0.314,
+   "agreement_with_official": 0.117
+  }
+ ],
+ "_finding": "Agreement between derivations from disjoint feature halves rises monotonically with the number of features per half: 0.236, 0.333, 0.359, 0.462. That is the signature of real structure - independent halves of the feature space increasingly recover the same groupings. Both partitions in that comparison have the same number of groups, so the trend is not a granularity artifact.",
+ "_confound": "**agreement_with_official is NOT interpretable as run.** The derived partitions have 12 groups; the official partition places these same 150 stations in 84 water bodies. Adjusted Rand index penalises granularity mismatch heavily, so the low values (0.069-0.117) are partly arithmetic rather than finding. A matched-granularity rerun is needed before anything is concluded about whether the water bodies are the structure the derivations found."
+}
