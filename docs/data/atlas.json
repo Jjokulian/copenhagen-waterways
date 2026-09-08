@@ -145,9 +145,12 @@
    "classes": [
     1,
     2,
-    6
+    6,
+    7
    ],
-   "notes": "NOT YET DISPLAYABLE. 24 GB needs a reduction pipeline. Reduce with monthly MEDIANS, never means, and ship the count of contributing days per cell alongside - the sky-gap denominator is the point, not a footnote."
+   "notes": "NOT YET DISPLAYABLE. 24 GB needs a reduction pipeline. Reduce with monthly MEDIANS, never means, and ship the count of contributing days per cell alongside - the sky-gap denominator is the point, not a footnote.",
+   "community_split_is_not_evidence": "VERIFIED 9 Sep 2026: the DIATO/CHL ratio is a function of CHL alone. Binning CHL to 2 decimals, the largest within-bin spread of the ratio is 6.3e-4 (2025) and 8.4e-4 (2012), in bins holding up to 1,195 cells, against a total ratio range of just 0.33-0.43; correlation of the ratio with CHL is +0.90 to +0.92. So the phytoplankton community split carries NO information independent of total chlorophyll. Any hypothesis whose signature is a composition change at constant biomass - K1's diatom-to-flagellate shift among them - is unrepresentable in this product. Class 7, and the reason the class exists: it looks like six measured fields and is one.",
+   "coverage_warning": "Ocean colour is sky-limited. A single mid-year time slice in 1998 yielded 1 usable cell over the inner-waters grid against 26,520 in 2025 - so apparent early-record change is partly satellite coverage."
   },
   {
    "id": "osm_coast",
