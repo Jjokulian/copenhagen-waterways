@@ -2,7 +2,7 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**93 mechanisms in 11 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**98 mechanisms in 12 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
@@ -1199,6 +1199,70 @@ Repeated mortality events select the survivors down to a narrow set, and a narro
 
 **Needs.** Species-level fauna with abundance, which the ODA bundfauna data carries.
 
+## L. The baseline and the counterfactual
+
+*Not rival causes of degradation, but rival accounts of whether the degradation and its remedy are correctly specified at all. The reference condition is a *modelled* state, and the target is derived from it, so an error there moves every requirement in the country without touching a single measurement. This is the failure mode that took African desertification research thirty years to find: Fairhead and Leach's forest patches in Guinea, read by colonial and successor science as relics of a destroyed forest, had been created by the villagers. The causal arrow was backwards, and the error was in the assumed original state.*
+
+### L1 — The reference condition never existed
+
+**Outcomes:** O4, O7
+
+Environmental targets are set against a modelled pre-impact state. If that state is wrong - if the coast was never as clear, as vegetated or as oligotrophic as the model supposes - then the gap being closed is partly an artefact of the model rather than a loss.
+
+**Predicts.** The target is unreachable, and effort produces no measured improvement no matter how much is spent. Indistinguishable, from inside, from a system that is responding too slowly.
+
+**Discriminated by.** Independent evidence of past state: sediment cores, historic charts, photographs, fisheries and harbour records, and accounts of what the water looked like.
+
+**Needs.** Dated sediment cores with diatom and pigment stratigraphy. Some exist; they are not what the reference condition is derived from.
+
+### L2 — The reference is a model output treated as a fact
+
+**Outcomes:** O4, O7
+
+Denmark's chlorophyll target is computed by ensemble modelling of a reference situation, then scaled by an EU-agreed ratio of 0.6. Both halves are choices, and neither is a measurement.
+
+**Predicts.** The requirement moves when the model or the ratio is revised, with no change in the sea. This is the residual-estimator problem relocated to the target instead of the source.
+
+**Discriminated by.** The sensitivity of the national indsatsbehov to the reference model's assumptions and to the EQR value - a one-line calculation nobody publishes.
+
+**Needs.** The reference model's assumptions, and the indsatsbehov recomputed across their plausible range.
+
+### L3 — The trend depends on the start year
+
+**Outcomes:** O1, O4, O7
+
+Almost every Danish series begins in the 1970s or later, at or near the historical maximum of nutrient loading. A trend measured from a peak is a recovery; the same data from a different start is something else.
+
+**Predicts.** The direction and size of every reported change is a function of where the record was cut, and the cut is set by when monitoring began rather than by anything about the sea.
+
+**Discriminated by.** Every trend recomputed across all plausible start years, reported as a surface rather than a single number.
+
+**Needs.** The longest available series, and the pre-monitoring evidence from L1.
+
+### L4 — Recovery is blocked by something other than the driver
+
+**Outcomes:** O7, O3
+
+A target can be unreachable because a *different* thing is missing - seed stock, substrate, the bioturbators, the iron the sediment lost - while the driver being managed is already at the required level.
+
+**Predicts.** Load falls to target and the indicator does not follow. Attributed to lag; equally consistent with a missing precondition that no amount of load reduction supplies.
+
+**Discriminated by.** Transplant and restoration experiments: put the vegetation or the fauna back where conditions are said to be adequate and see whether it holds.
+
+**Needs.** Restoration trials with controls. A handful exist in Denmark; they are decisive evidence and are not treated as such.
+
+### L5 — The reference sites are not references
+
+**Outcomes:** O3, O4
+
+Where the reference is spatial rather than historical - a comparable unimpacted area - the comparison assumes such an area exists. In a sea with no unfished, undredged, undeposited water anywhere, it may not.
+
+**Predicts.** Every site is degraded relative to an unobservable baseline, so the gradient between them understates the total change and the fitted coefficient is biased toward zero. The floor effect of U3, applied to the whole country.
+
+**Discriminated by.** Whether any candidate reference area is genuinely unimpacted on the D and E routes, not merely on nutrients.
+
+**Needs.** Trawling, dumping and contaminant coverage for the areas used as references.
+
 ## I. Observation and measurement
 
 *Rival explanations for an apparent trend that live in the instrument rather than the sea. Omitting these is not neutrality; it is an assumption.*
@@ -1274,6 +1338,20 @@ The 2007 structural reform moved monitoring from the counties to the state; the 
 **Discriminated by.** Result against DataLeverandoer and TekniskAnvisninganvendt.
 
 **Needs.** Both fields are in the raw record. Also held.
+
+## Borrowed from a field that already made this mistake
+
+The structure here — a degraded end state reachable by many routes, self-reinforcing loops, a ratchet that does not reverse, and a confident single-cause account with a politically available culprit — is not new. It is the shape of the African desertification narrative, and that field spent thirty years correcting it.
+
+What it corrected with is worth copying:
+
+- **Non-equilibrium dynamics.** Ellis and Swift showed that in arid systems rainfall variance dominates density-dependent processes, so *carrying capacity* and *overstocking* were the wrong model class rather than the wrong numbers. That objection took longest to land and mattered most. Here it is H1 and H4.
+
+- **Longer, spatially replicated measurement.** Satellite records showed the Sahel greening while the desertification narrative was at its peak. The measurement reversed the finding. Here that is 6,288 stations and the full record rather than 29 stations and a window closing in 2012.
+
+- **Checking whether the baseline was ever real.** Fairhead and Leach found that forest patches in Guinea, read as relics of a destroyed forest, had been *created* by the villagers living in them. The causal arrow was backwards and the error lay in the assumed original state. That is group L, and it is the class of hypothesis this project was missing entirely until the parallel was pointed out.
+
+The parallel is structural and it is not an argument that either narrative is false. Land degradation in the Sahel is real in places, and nutrient enrichment in Danish water is real in places. What the desertification literature establishes is that a real problem, a confident single-cause story, and a wrong attribution coexist comfortably for decades — and that the cost of the error is paid by whoever the available culprit turns out to be.
 
 ## What comes next
 
