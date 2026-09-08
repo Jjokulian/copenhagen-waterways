@@ -213,6 +213,49 @@ building.
 
 ---
 
+## When somebody attacks the gap on purpose
+
+Everything above treats the gap between an estimator and the thing it estimates as an
+honest hazard — a place where error accumulates unnoticed. It is also an *attack surface*,
+and once you see that, two well-documented disasters stop looking like scandals about
+dishonesty and start looking like scandals about measurement.
+
+**Protein in milk.** Protein content is not measured. Nitrogen is measured, by the Kjeldahl
+method, and multiplied by a conversion factor, because protein is roughly 16% nitrogen and
+nitrogen is cheap to measure. The estimator is nitrogen; the estimand is protein. Melamine
+is 66.6% nitrogen by mass and contains no protein whatsoever. Adding it to diluted milk
+raises the measured value without raising the real one — **the estimator moves and the
+estimand does not.** In 2008 roughly 300,000 infants in China were affected and six died,
+by kidney failure from melamine and cyanuric acid crystallising together in the tubules.
+Nobody had to defeat a laboratory. The substitution was in the definition of the test.
+
+**Emissions in a car.** Regulated emissions are not measured on the road. They are measured
+on a defined test cycle, which is the estimator for real-world emissions. Software that
+recognises the cycle and behaves differently on it defeats the estimator completely while
+leaving the estimand untouched — and the same logic runs one layer down in the exhaust
+system itself, where the reagent that makes NOx reduction work is a consumable with a
+running cost, and devices exist to switch it off. The register's `A10` is that pathway.
+
+The two cases share a shape worth naming, because it is the practical reason any of this
+matters:
+
+> **Wherever a quantity is estimated by proxy and something depends on the number, the gap
+> between proxy and quantity is a place where value can be extracted.** It does not require
+> a conspiracy. It requires only that somebody notice the gap before the people relying on
+> the number do.
+
+Which gives a fourth question to add to the three above, and it is not a scientific
+question at all:
+
+4. **Who benefits if the estimator moves without the estimand?**
+
+If the answer is "nobody", the gap is only a hazard. If somebody does benefit, the gap is a
+mechanism, and its size stops being an academic matter. None of this is an accusation about
+any Danish number. It is the reason to *ask* — and asking is cheap, which is the whole
+argument of this page.
+
+---
+
 ## What a checkable number looks like instead
 
 The opposite of a residual is not a better model. It is **two methods that fail

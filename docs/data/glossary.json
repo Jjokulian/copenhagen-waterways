@@ -694,6 +694,11 @@
   "label": "Sunscreen and UV filters",
   "text": "Oily and silicone-based personal care products applied directly by bathers and delivered at the exact place and season people swim."
  },
+ "J9": {
+  "kind": "hypothesis (J)",
+  "label": "Fragmentation as a source term, and the inventory that omits it",
+  "text": "Size and chemistry are independent gates. An intact polymer object is unavailable to enzymes and also unavailable to tissue — it can block or entangle, but it cannot accumulate inside a cell, because it cannot get in. Grinding it to micro and nano scale opens the first gate and leaves the second exactly as shut: uptake becomes possible, degradability is unchanged, because fragmentation is physical and the bonds are untouched. So the hazardous window is *created* by weathering rather than present at manufacture, and material becomes more available to organisms as it breaks down. That makes any process which fragments plastic a source term in its own right, separately from the plastic being there. Mechanical recycling's core operation is shredding; recycled PET commonly becomes textile fibre, which is the most shedding-prone form the material can take and which sheds through the wastewater system for the whole service life of the garment, into sludge, and in Denmark onto farmland. Tyre wear is fragmentation performed continuously by ordinary use. **And remediation runs the opposite way to fragmentation.** Macroplastic can be netted; microplastic above roughly ten micrometres can be filtered; nanoplastic cannot be removed from open water or sediment by any known method, because at that size it stops behaving like a particle that can be strained. Fragmentation is therefore a one-way ratchet across an irreversibility threshold, and the processes performing it include ones intended as remedies."
+ },
  "J5": {
   "kind": "hypothesis (J)",
   "label": "Microplastic and its biofilm",
@@ -3174,7 +3179,8 @@
    "text": "Transparent exopolymer particles - sticky invisible gel produced by algae and bacteria, which aggregates into marine snow and, at scale, mucilage.",
    "why": "Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.",
    "forms": [
-    "tep"
+    "tep",
+    "teps"
    ]
   },
   "terminal electron acceptor": {

@@ -2382,7 +2382,7 @@ H = [
      "UV filter concentrations at bathing beaches across the season, against "
      "visitor numbers.",
      "Marine UV filter monitoring. None in Denmark."),
-    ("J6", "J", "Fragmentation as a source term, and the inventory that omits it",
+    ("J9", "J", "Fragmentation as a source term, and the inventory that omits it",
      ["O2", "O3", "O7"],
      "Size and chemistry are independent gates. An intact polymer object is "
      "unavailable to enzymes and also unavailable to tissue — it can block or "
@@ -3878,6 +3878,29 @@ def render(rows):
       "not be separable in principle**, since machinery evolves against substrates "
       "it can physically reach. What has been separated is priming from bond "
       "strength, and that is the narrower claim now made.\n")
+    a("### The strongest case is a whole pathway assembling inside living memory\n")
+    a("Atrazine is a triazine herbicide introduced in 1958. Bacteria now degrade it "
+      "completely — a six-enzyme route, `atzA` through `atzF`, that opens the ring "
+      "to cyanuric acid and takes it on to carbon dioxide and ammonia. The genes "
+      "sit on self-transmissible plasmids and near-identical sequences turn up on "
+      "different continents, so the pathway did not merely arise: it **assembled "
+      "from enzymes recruited off existing jobs and then spread globally, within "
+      "about forty years.**\n")
+    a("And the first step carries the measurement priming has otherwise lacked. "
+      "`AtzA`, the atrazine chlorohydrolase, and `TriA`, the melamine deaminase, "
+      "are 98% identical proteins — they differ at nine amino acids out of some "
+      "four hundred and seventy-five — and they catalyse *different reactions*, one "
+      "stripping a chlorine and the other stripping an amine. **Nine substitutions "
+      "is the distance between one novel capability and another.** That is what "
+      "\"the distance from existing machinery to the required function\" means when "
+      "it is put in units, and it is why the supply of mutations is not the "
+      "limiting term: nine is nothing, if you are already standing in the right "
+      "place.\n")
+    a("It also closes a loop back to `A10`. The ladder that atrazine degradation "
+      "descends — melamine, ammeline, ammelide, cyanuric acid, biuret, urea — is "
+      "the same ladder that urea *climbs* when it polymerises on a cold catalyst in "
+      "a diesel exhaust. The bacteria that would take those deposits apart are "
+      "common, and they are common because of a herbicide.\n")
     a("The consequence for `E9` is that persistence is not one property. It is at "
       "least three, they are not measured by the same test, and a compound can be "
       "persistent by any of them.\n")

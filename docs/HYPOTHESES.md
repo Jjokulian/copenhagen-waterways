@@ -2,7 +2,7 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it enumerates the mechanisms that could produce the outcomes below, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**164 mechanisms in 17 groups.** No entry here is the subject of the page and the rest its alternatives. The grouping is alphabetical for reference, which is an ordering and not a ranking; the letters carry no priority, and `A1` is first for the same reason `Z8` is last.
+**165 mechanisms in 17 groups.** No entry here is the subject of the page and the rest its alternatives. The grouping is alphabetical for reference, which is an ordering and not a ranking; the letters carry no priority, and `A1` is first for the same reason `Z8` is last.
 
 **Some entries have a political history attached to them and some do not, and that history is not a property of the mechanism.** A mechanism that has been legislated about is not thereby more likely; one that nobody has campaigned on is not thereby more likely either. Where an entry names an industry, a practice or a public work, it names it as the physical source of a flux, in the same way `C4` names an inflow event — the entry is about what enters the water, never about who is at fault for it. Attribution of blame is not a scientific operation and is not performed anywhere on this page.
 
@@ -10,9 +10,9 @@ The register is written down *before* anything is scored, so that the field cann
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 164 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 165 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 164 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 165 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -252,6 +252,14 @@ To isolate priming you need two substrates that differ in whether machinery exis
 Same class of material, same decades, same seas, same microbes. The bonds that resist are the *weaker* ones. What differs is whether anything already knew how to cut that kind of joint — which is priming, doing the work alone, with bond strength pointing the other way.
 
 It is still not perfectly clean, and the register should say so rather than claim a second time to have found the decisive case. Polyethylene is also less accessible than PET — more crystalline, no polar handle, and a long chain with no exposed end presents nothing to an enzyme however weak its bonds are. So barrier 3 is partly present here too. **Priming and accessibility have not been separated by any example on this page, and may not be separable in principle**, since machinery evolves against substrates it can physically reach. What has been separated is priming from bond strength, and that is the narrower claim now made.
+
+### The strongest case is a whole pathway assembling inside living memory
+
+Atrazine is a triazine herbicide introduced in 1958. Bacteria now degrade it completely — a six-enzyme route, `atzA` through `atzF`, that opens the ring to cyanuric acid and takes it on to carbon dioxide and ammonia. The genes sit on self-transmissible plasmids and near-identical sequences turn up on different continents, so the pathway did not merely arise: it **assembled from enzymes recruited off existing jobs and then spread globally, within about forty years.**
+
+And the first step carries the measurement priming has otherwise lacked. `AtzA`, the atrazine chlorohydrolase, and `TriA`, the melamine deaminase, are 98% identical proteins — they differ at nine amino acids out of some four hundred and seventy-five — and they catalyse *different reactions*, one stripping a chlorine and the other stripping an amine. **Nine substitutions is the distance between one novel capability and another.** That is what "the distance from existing machinery to the required function" means when it is put in units, and it is why the supply of mutations is not the limiting term: nine is nothing, if you are already standing in the right place.
+
+It also closes a loop back to `A10`. The ladder that atrazine degradation descends — melamine, ammeline, ammelide, cyanuric acid, biuret, urea — is the same ladder that urea *climbs* when it polymerises on a cold catalyst in a diesel exhaust. The bacteria that would take those deposits apart are common, and they are common because of a herbicide.
 
 The consequence for `E9` is that persistence is not one property. It is at least three, they are not measured by the same test, and a compound can be persistent by any of them.
 
@@ -1452,6 +1460,22 @@ Oily and silicone-based personal care products applied directly by bathers and d
 **Discriminated by.** UV filter concentrations at bathing beaches across the season, against visitor numbers.
 
 **Needs.** Marine UV filter monitoring. None in Denmark.
+
+### J9 — Fragmentation as a source term, and the inventory that omits it
+
+**Outcomes:** O2, O3, O7
+
+Size and chemistry are independent gates. An intact polymer object is unavailable to enzymes and also unavailable to tissue — it can block or entangle, but it cannot accumulate inside a cell, because it cannot get in. Grinding it to micro and nano scale opens the first gate and leaves the second exactly as shut: uptake becomes possible, degradability is unchanged, because fragmentation is physical and the bonds are untouched. So the hazardous window is *created* by weathering rather than present at manufacture, and material becomes more available to organisms as it breaks down.
+
+That makes any process which fragments plastic a source term in its own right, separately from the plastic being there. Mechanical recycling's core operation is shredding; recycled PET commonly becomes textile fibre, which is the most shedding-prone form the material can take and which sheds through the wastewater system for the whole service life of the garment, into sludge, and in Denmark onto farmland. Tyre wear is fragmentation performed continuously by ordinary use.
+
+**And remediation runs the opposite way to fragmentation.** Macroplastic can be netted; microplastic above roughly ten micrometres can be filtered; nanoplastic cannot be removed from open water or sediment by any known method, because at that size it stops behaving like a particle that can be strained. Fragmentation is therefore a one-way ratchet across an irreversibility threshold, and the processes performing it include ones intended as remedies.
+
+**Predicts.** A source inventory built from consumption and littering will systematically understate exposure, because it counts material entering the environment and not the surface area or particle count it becomes. Sites that fragment deliberately — recycling plants, shredders — should read as point sources against a diffuse background, which is a testable spatial claim.
+
+**Discriminated by.** Particle counts and size distributions in wastewater and receiving water upstream and downstream of a recycling facility, against a matched reach with none. Size distribution matters more than mass: the same mass at smaller size is a different exposure.
+
+**Needs.** Not measured in Denmark for this pathway. A subagent reports that Miljøstyrelsen's national microplastic source inventory is dominated by tyre wear and contains no recycling or shredding category at all — **unverified here, and it should be checked against the source before it is relied on**, because an absent category in an inventory is exactly the kind of claim that is easy to assert and hard to prove.
 
 ### J5 — Microplastic and its biofilm
 
