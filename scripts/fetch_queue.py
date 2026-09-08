@@ -1,0 +1,193 @@
+#!/usr/bin/env python3
+"""Turn the source register into a queue you can actually work through.
+
+data_sources.json records what exists. It does not say what to do on Monday. The
+access field is free text written by whoever verified the source, which is right
+for a record and useless for a work plan, so this classifies it into four tiers and
+sorts by what would move the most hypotheses.
+
+    open        fetch it now, no account, no permission
+    held        gated, but this project already holds the credential
+    account     a free registration stands between us and it
+    blocked     not public, request-only, FOI, or unverified
+
+The tiers are ordered by friction, not by value. A blocked source can matter more
+than an open one - the queue says so in the notes rather than hiding it by sorting
+it last.
+
+"Unlocks" counts hypotheses in the register that name this source and have no
+open-tier alternative. It is a crude priority signal and it is meant to be: the
+point is to stop the register being a list of things nobody fetched.
+
+Output: data/derived/fetch_queue.json, docs/DATA_QUEUE.md
+
+Usage:  python3 scripts/fetch_queue.py
+"""
+import collections
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import DERIVED, MANUAL, ROOT, log, read_json, write_json
+
+OUT = os.path.join(ROOT, "docs", "DATA_QUEUE.md")
+FILES = ["data_sources.json", "data_sources_2.json"]
+
+# Credentials this project already has working. A source behind one of these is
+# not blocked, it is queued.
+HELD = {
+    "oda": ("ODA / Overfladevandsdatabasen", "email login, scripted SOAP extract "
+            "working in scripts/oda_client.py"),
+    "dataforsyningen": ("Dataforsyningen", "API token on this machine, orthophoto "
+                        "WMS verified"),
+}
+
+TIERS = [
+    ("open", "Fetch it now", "No account, no permission, no negotiation."),
+    ("held", "Gated, but we hold the key",
+     "Behind a login this project already has working."),
+    ("account", "One free registration away",
+     "A form and an email address. Nothing is being withheld; it just has not been "
+     "done."),
+    ("blocked", "Not open",
+     "Request-only, FOI, institutional provisioning, or unverified. These are the "
+     "ones worth arguing about publicly, because for several of them the "
+     "measurement exists and the public cannot see it."),
+]
+
+
+def classify(src):
+    a = (src.get("access") or "").lower()
+    sid = (src.get("id") or "").lower()
+    name = (src.get("name") or "").lower()
+    if sid.startswith("oda") or "odaforalle" in (src.get("url") or "").lower() \
+            or name.startswith("oda -") or "already working in this project" in a:
+        return "held", "oda"
+    if "dataforsyning" in a or "dataforsyning" in name:
+        return "held", "dataforsyningen"
+    if any(k in a for k in ("not public", "request only", "request-only", "foi",
+                            "aktindsigt", "provisioned through")):
+        return "blocked", None
+    if any(k in a for k in ("unverified", "no bulk download", "no open download",
+                            "no programmatic", "api layer unreachable",
+                            "download mechanics")):
+        return "blocked", None
+    if any(k in a for k in ("registration", "free account", "login", "api token",
+                            "cds account", "account required")):
+        return "account", None
+    if any(k in a for k in ("open", "no key", "no login", "no auth", "direct get",
+                            "direct download", "cc-by", "cc by")):
+        return "open", None
+    return "blocked", None
+
+
+def load():
+    out, seen = [], set()
+    for fn in FILES:
+        p = os.path.join(MANUAL, fn)
+        if not os.path.exists(p):
+            log(f"  {fn}: not present yet, skipped")
+            continue
+        d = read_json(p)
+        n = 0
+        for s in d.get("sources") or []:
+            if s.get("id") in seen:
+                continue
+            seen.add(s.get("id"))
+            s["_file"] = fn
+            out.append(s)
+            n += 1
+        log(f"  {fn}: {n} sources")
+    return out
+
+
+def main():
+    srcs = load()
+    if not srcs:
+        log("no source register found")
+        return 1
+    for s in srcs:
+        s["_tier"], s["_cred"] = classify(s)
+
+    # a hypothesis is "unlocked" by a source only if nothing easier already serves it
+    easiest = {}
+    order = {t: i for i, (t, _, _) in enumerate(TIERS)}
+    for s in srcs:
+        for h in s.get("hypotheses") or []:
+            if h not in easiest or order[s["_tier"]] < order[easiest[h]]:
+                easiest[h] = s["_tier"]
+    for s in srcs:
+        s["_unlocks"] = sorted(h for h in (s.get("hypotheses") or [])
+                               if easiest.get(h) == s["_tier"])
+
+    by = collections.defaultdict(list)
+    for s in srcs:
+        by[s["_tier"]].append(s)
+    for v in by.values():
+        v.sort(key=lambda s: (-len(s["_unlocks"]), s["id"]))
+
+    write_json(os.path.join(DERIVED, "fetch_queue.json"),
+               {"tiers": [{"id": t, "label": l, "what": w} for t, l, w in TIERS],
+                "credentials_held": {k: {"name": n, "how": h}
+                                     for k, (n, h) in HELD.items()},
+                "queue": [{"id": s["id"], "tier": s["_tier"],
+                           "credential": s["_cred"], "name": s.get("name"),
+                           "custodian": s.get("custodian"), "url": s.get("url"),
+                           "hypotheses": s.get("hypotheses"),
+                           "unlocks": s["_unlocks"], "temporal": s.get("temporal"),
+                           "spatial": s.get("spatial"), "coverage": s.get("coverage"),
+                           "past_2012": s.get("past_2012"), "size": s.get("size"),
+                           "access": s.get("access"), "caveat": s.get("caveat")}
+                          for t, _, _ in TIERS for s in by[t]]})
+
+    o = []
+    a = o.append
+    a("# The fetch queue\n")
+    a("The source register records what exists. It does not say what to do on "
+      "Monday. This is the same information sorted by friction: what can be "
+      "downloaded now, what is behind a credential we already hold, what needs a "
+      "free registration nobody has done, and what is genuinely closed.\n")
+    a(f"**{len(srcs)} sources.** *Unlocks* counts hypotheses that this source "
+      "serves and that nothing easier serves — a crude priority signal, and meant "
+      "to be.\n")
+    a("| tier | | sources |")
+    a("|---|---|---:|")
+    for t, label, _ in TIERS:
+        a(f"| `{t}` | {label} | {len(by[t])} |")
+    a("")
+    for k, (n, h) in HELD.items():
+        a(f"- **{n}** — {h}")
+    a("")
+
+    for t, label, what in TIERS:
+        rows = by[t]
+        if not rows:
+            continue
+        a(f"## {label} — {len(rows)}\n")
+        a(f"*{what}*\n")
+        a("| source | unlocks | what it is | resolution |")
+        a("|---|---|---|---|")
+        for s in rows:
+            u = " ".join(f"`{h}`" for h in s["_unlocks"]) or "—"
+            res = " / ".join(x for x in (s.get("temporal"), s.get("spatial")) if x)
+            a(f"| **{s['id']}** | {u} | {(s.get('name') or '')[:90]} | {res[:80]} |")
+        a("")
+
+    a("## What this does not tell you\n")
+    a("Friction is not value. Several entries in the last tier matter more than "
+      "anything in the first — per-event overflow volumes, monthly trawling effort, "
+      "and marine phytoplankton species counts are each closed, and each of them "
+      "would settle a hypothesis that currently cannot be ranked at all. The tiers "
+      "say what is easy, and the register says what is important; they are "
+      "different questions and this page is only the first one.\n")
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write("\n".join(o) + "\n")
+    log(f"\nwrote docs/DATA_QUEUE.md ({os.path.getsize(OUT):,} chars)")
+    for t, label, _ in TIERS:
+        log(f"  {t:9} {len(by[t]):>3}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
