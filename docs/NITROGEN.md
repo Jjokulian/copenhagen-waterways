@@ -95,14 +95,27 @@ quickly — Mariager Fjord and parts of Limfjorden reduced their diffuse load *l
 *"relationen vist i Figur 6.7 D indikerer"*, citing Windolf et al. 2012b and 2012c.
 They are pointing at the figure's limits, not resting on it.
 
-**A non-circular design exists and we have not read it.** Windolf, Blicher-Mathiesen,
-Carstensen & Kronvang (2012c), *Environmental Science and Policy* 24: 24–33 —
-*"Changes in nitrogen loads to estuaries following implementation of Governmental
-Action Plans in Denmark: **a paired catchment and estuary approach** for analysing
-regional responses."* A paired design is precisely the thing that is not circular.
+**A body of cited work exists and we have not read it.** Windolf, Blicher-Mathiesen,
+Carstensen & Kronvang (2012c), *Environmental Science and Policy* 24: 24–33, DOI
+[10.1016/j.envsci.2012.08.009](https://doi.org/10.1016/j.envsci.2012.08.009) — *"…a
+paired catchment and estuary approach for analysing regional responses."* The paper is
+real (66 citations) and **paywalled; no abstract is carried by Crossref or OpenAlex,
+so we do not know its design.**
+
+*A first version of this section said it was "a paired design, precisely the thing
+that is not circular." That was inferred from the title and is withdrawn.* "Paired
+catchment **and estuary**" most plausibly means pairing each catchment with its
+estuary — linking land to sea — rather than the classic paired-catchment experiment of
+a treated basin against an untreated control. Only the second is inherently
+non-circular. And SR353 cites 2012b/c for catchments responding *less* than the
+markoverskud decline predicts, which suggests those papers take markoverskud as the
+driver and would inherit the same input rather than escape it. **Unresolved either
+way.**
+
 Separately, Bøgestrand et al. (2009) evaluated DK-QNP and found a regional bias —
-overestimating in western Denmark, underestimating in the east — which SR353 now
-corrects for. So model evaluation exists, and we had not looked for it.
+overestimating in western Denmark, underestimating in the east — which SR353 corrects
+for. So model *evaluation* exists. Whether model *validation against held-out gauged
+catchments* exists is what nobody here has established.
 
 **So the established claim is narrow:** *one figure, in one monitoring report, is
 structurally unable to support the inference it is used for.* The claim **not**
@@ -112,8 +125,10 @@ against gauged catchments held out of its fitting — which is the honest next s
 is not done.
 
 This is worth stating plainly because it is the error this project audits, committed
-here: **we found one bad argument and let it stand for the case.** A bad argument in a
-source does not mean there are no good ones.
+here twice in one hour, in both directions. First we found one bad argument and let it
+stand for the case — a bad argument in a source does not mean there are no good ones.
+Then, correcting that, we asserted from a *title* that a non-circular design existed.
+**Softening an overclaim is still an overclaim.**
 
 #### What "field surplus" is, in facts and observations
 
