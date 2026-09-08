@@ -244,6 +244,66 @@ PULS records 'antal overløb' - the number of overflows. It records no flow rate
 
 That matters because sediment resuspension is a **threshold** in flow, not a frequency of events. Below the critical shear stress the deposit stays in the basin; above it, the accumulated sludge leaves — and the hazardous-substances programme reports the highest median metal concentrations precisely in basin sludge. Multiplying an annual volume by an average concentration cannot represent that, and the resulting error is one-directional and largest in the wettest years.
 
+## 2b. Two subtractions, and the ~70% is not the one people think
+
+It is easy — this document did it — to run together the **field balance** and the
+**load apportionment**. They are different operations on different quantities, and the
+headline share is the second, not the first.
+
+| | **A — field surplus (*markoverskud*)** | **B — the ~70% share** |
+|---|---|---|
+| what it subtracts | harvest from inputs | point sources and background from river transport |
+| units | kg N/ha | t N/yr, reported as a share |
+| kind | **norm product** — counts × regulatory coefficients | **residual** — what is left after naming what could be named |
+| fails when | a norm changes with no change in any field | an unnamed source exists |
+
+They are coupled, which is why they get confused: **A is an input to DK-QNP, and DK-QNP
+supplies B's river-transport term over the ungauged ~45–51% of the country.** So A
+partly determines the minuend of B. But the ~70% itself is B.
+
+### B, from its own methods note
+
+The construction, in DCE's own words
+([MSFD notat 2-8](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Havstrateginotater/2-8_MSFD_notat_tilfoersel_NPO.pdf)):
+
+> *"Diffuse tilførsler (inkl. spredt bebyggelse) **minus** baggrundsbidraget (diffus
+> antropogen)"*
+
+with the two subtracted terms defined there as:
+
+- **Natural background** — *"et mål for den diffuse tilførsel der vil komme fra
+  oplandet, hvis der ikke var menneskelig aktivitet, og som **bestemmes i mindre oplande
+  med lav antropogen påvirkning**."* Measured in *other* catchments and transferred in.
+- **Diffuse load** — *"belastning fra dyrkede arealer **inkl. spredt bebyggelse, da
+  tilførsler fra spredt bebyggelse ofte er svær at adskille fra øvrige diffuse
+  kilder**."*
+
+Three things follow, all from the document rather than from us:
+
+1. **The category is defined as unseparated.** Scattered dwellings sit inside the
+   agricultural term *because they could not be separated from it*. That is stated in
+   the definition.
+2. **The subtrahend is a transferred measurement.** Background is not measured in the
+   catchment it is subtracted from. Small low-impact catchments stand in for the rest —
+   a basket assumption at the centre of the arithmetic. (Windolf et al. 2012 gives that
+   assumption its one strong check: the intercept of their measured regressions implies
+   1.24 ± 0.46 mg N/L, against 1.27 ± 0.55 measured in nine minimally-disturbed streams.
+   That agreement is real and is the best evidence the background term is not arbitrary.)
+3. **The split is not annual.** *"For de enkelte år opdeles den diffuse belastning ikke
+   i den naturlige baggrundsbelastning... men det for 5 års gennemsnit er lavet en
+   opdeling."* The background/anthropogenic division is made **only on five-year
+   averages**, because the split is too uncertain year by year. **So an annual
+   agricultural share is not a thing this method produces**, and any year-on-year
+   movement in a published share is an artefact of interpolating a quinquennial split.
+
+### Which sharpens what the residual absorbs
+
+Section 1 lists **10 of 20 pathways carrying no number at all**. Every one of them that
+reaches a river — submarine groundwater discharge, drained organic soils, legacy
+nitrogen in transit, foreign inflow to shared waters — lands inside B's leftover, and is
+named agriculture by subtraction. That is the substantive weakness of the ~70%, and it
+is separate from, and larger than, the circularity in §2.
+
 ## 3. Nitrogen mass is the wrong currency
 
 Oxygen depletion is the damage. Nitrogen is one route to it. Converting everything to oxygen demand — Redfield stoichiometry, which is chemistry rather than judgement:
