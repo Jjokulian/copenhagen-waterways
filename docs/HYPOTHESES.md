@@ -2421,7 +2421,7 @@ A deficit indicator built from the worst month is biased by how often you sample
 
 **Discriminated by.** Indicator against sampling effort per station-season.
 
-**Needs.** Date of every visit per station — in the raw record. But `Dato` is `YYYYMMDD`: **there is no time of day in any of 53.7M rows, and no column for it.** Oxygen has a diel cycle and daylight at 55°N runs 7–17 h, so the diel phase sampled shifts with season. Class 6, absent dimension: that half of I3 is **unscoreable, not unsupported**. A NOVANA technical instruction may bound the sampling hour — unchecked, and it would move this to class 2.
+**Needs.** Date of every visit per station — in the raw record. But `Dato` is `YYYYMMDD`: **there is no time of day in any of 53.7M rows, and no column for it.** Oxygen has a diel cycle and daylight at 55°N runs 7–17 h, so the diel phase sampled shifts with season. Class 6 **for the CTD extract**. But ODA marine water chemistry (`Emne_10_11`) is recorded in our own enumeration, twice, as carrying `Startdato + **Startklok**` — a clock time per sample, never fetched. If chemistry shares cruises with CTD, it bounds the sampling hour and this becomes class 2.
 
 ### I4 — Changing indicator definition
 

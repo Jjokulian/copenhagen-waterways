@@ -28,6 +28,13 @@ day of work:
 - `HYPOTHESES.md` called EU trawling effort *"the single most important missing layer in
   this whole register."* It is **23.1 MB, CC BY 4.0**, and covers 1,392 of our 1,415
   stations.
+- **Denmark wrote a national standard method for sediment sulphide front, sulphide
+  buffer capacity, oxidised iron and iron-bound phosphorus** — NOVA teknisk anvisning
+  kap. 14 (1998) — **ran it from 1998 to 2003, and discontinued it.** The register said
+  no iron speciation existed for any Danish site. That is wrong for 1998–2003 and right
+  for everything since. A measurement programme that existed and stopped is a fifth kind
+  of unknown known, and the hardest to find, because nothing in the current archive
+  records that it ever ran.
 
 None of those was hidden. All three were simply not looked for. **So any sentence in
 this project of the form "Denmark does not measure X" should be read as "X is not in
@@ -48,8 +55,11 @@ project has found some:
 - **`SondeNr` arrives as `999` on 83.5% of rows.** The probe number exists at the point
   of measurement — somebody held that instrument. It is lost between the ship and the
   archive, not absent from the world.
-- **Time of day is never recorded.** Every field sheet had one. `Dato` is `YYYYMMDD` in
-  all 53.7M rows, and no column exists.
+- **Time of day is absent from the CTD extract** — `Dato` is `YYYYMMDD` in all 53.7M
+  rows, and every field sheet had one. *Within an hour of publishing this page a fourth
+  unknown known surfaced, and it was partly ours: the topic enumeration records marine
+  water chemistry (`Emne_10_11`) as carrying `Startdato + Startklok`, twice, and we have
+  never fetched it.*
 - **The 1999 norm change and the 2012 harvest-method change are documented in DCE's own
   reports** — and do not travel downstream as uncertainty on the numbers they moved.
 

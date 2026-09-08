@@ -36,13 +36,16 @@ advertises a topic the dict never implements. Worse, `run()` hardcodes
 `topic.aspx?id=h&t=h` (Hav) — so the two land-load topics need a **code change**, not a
 config entry. Whoever fixes that unblocks item 1 for everyone.
 
-**Time of day is the one that cannot be recovered downstream at all.** Oxygen swings
+**Time of day may not be lost after all — and finding out is one fetch.** Oxygen swings
 diurnally; daylight at 55°N runs 7 to 17 hours across the year; so if sampling happens
 in working hours the diel phase sampled shifts systematically with season. There is no
-column for it anywhere. This is not a gap that better analysis fixes — the information
-was never written down. If a NOVANA technical instruction bounds the sampling hour,
-that alone converts an uncountable absence into a boundable one. **Nobody here has
-checked. It is one document.**
+clock-time column in the **CTD extract**, verified across all four fetched exports.
+**But our own topic enumeration records ODA marine water chemistry (`Emne_10_11`) as
+carrying `Startdato + Startklok` — a clock time per sample — in two independent passes,
+and we have never fetched it.** If that holds, and if chemistry samples share cruises
+with CTD casts, it bounds the CTD sampling hour and the diel confound stops being
+uncountable. A NOVANA technical instruction would do the same. **Neither has been
+checked. One is a fetch; the other is one document.**
 
 ---
 
