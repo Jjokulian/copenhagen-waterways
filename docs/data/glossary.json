@@ -934,6 +934,11 @@
   "label": "Pathogen and partner are not kinds of organism",
   "text": "Parasite, commensal and mutualist are positions on a spectrum, not classes of creature, and an organism moves along it with the context. The clearest demonstrations are the largest: mitochondria and chloroplasts were free-living bacteria; roughly eight per cent of the human genome is retroviral in origin; and the protein that builds the mammalian placenta is a captured viral envelope gene, so **mammalian pregnancy runs on a domesticated virus**. In the other direction, most of the viruses and microbes carried by any animal have no characterised effect at all."
  },
+ "T12": {
+  "kind": "hypothesis (T)",
+  "label": "Defence is outsourced, because the host cannot win the race",
+  "text": "Pasteur and Joubert saw microbes suppressing each other in 1877, and Fleming's *Penicillium* was the same phenomenon fifty years later. Nearly every antibiotic in use is a weapon taken off that battlefield — mostly from soil actinomycetes, which have been fighting fungi and each other for hundreds of millions of years. There is no reason the war stops at fungi and bacteria: phage against bacteria, bacteria against phage, fungi against both, all of them at generation times the host cannot approach. The matrix fills in almost completely and most of it is documented: fungi make antibacterials (penicillin); bacteria make antifungals (nystatin, amphotericin, both from *Streptomyces*); viruses make antibacterials, which is phage therapy; viruses make antifungals, and a mycovirus that weakens chestnut blight is a deployed biocontrol agent; and bacteria make antivirals — restriction enzymes, CRISPR, and a fast-growing list of anti-phage systems. Most strikingly, several components of our own innate immunity are homologous to those bacterial anti-phage systems, so the vertebrate immune system is itself partly a captured weapon from that war."
+ },
  "T11": {
   "kind": "hypothesis (T)",
   "label": "Occupancy is the function",
@@ -1045,6 +1050,13 @@
    "why": "Acetyl plus choline, its chemical parts.",
    "forms": [
     "acetylcholine"
+   ]
+  },
+  "actinomycete": {
+   "text": "A group of soil bacteria that produce most of the antibiotics in clinical use. They have been fighting fungi and each other for hundreds of millions of years, and the pharmacy is their armoury.",
+   "why": "The narrow sample of the microbial war that modern medicine happens to have read. The marine equivalent is close to unexplored.",
+   "forms": [
+    "actinomycete"
    ]
   },
   "aerobe": {
@@ -1262,6 +1274,13 @@
     "biocides"
    ]
   },
+  "biocontrol": {
+   "text": "Using one organism to suppress another instead of using a chemical. It cannot be evaded by a point mutation the way a single-target molecule can.",
+   "why": "The practical form of letting the microbial arms race do the work.",
+   "forms": [
+    "biocontrol"
+   ]
+  },
   "biocrust": {
    "text": "A living skin of cyanobacteria, lichens and mosses binding a desert soil surface. Break it and the sand mobilises.",
    "why": "Biological soil crust. Its marine counterpart is microphytobenthos.",
@@ -1434,6 +1453,13 @@
    "forms": [
     "copepod",
     "copepods"
+   ]
+  },
+  "CRISPR": {
+   "text": "A bacterial immune system that stores fragments of past viral infections and uses them to recognise and cut the same virus again. Repurposed as the standard gene-editing tool.",
+   "why": "An antiviral of bacterial variety - and, like restriction enzymes before it, a weapon captured from the bacteria-phage war and turned into laboratory equipment.",
+   "forms": [
+    "crispr"
    ]
   },
   "CTD": {
@@ -1875,6 +1901,13 @@
     "hydrothermal vent"
    ]
   },
+  "hypovirulence": {
+   "text": "A pathogen made less harmful, usually by its own infection with something else. The basis of using a virus to control a fungal disease of plants.",
+   "why": "Not killing the pathogen but taking its weapons away.",
+   "forms": [
+    "hypovirulence"
+   ]
+  },
   "hypoxia": {
    "text": "Not enough oxygen. Conventionally below 4 mg per litre in marine work, with 2 mg/l as severe.",
    "why": "Greek hypo- (under) plus oxys, the root in oxygen.",
@@ -1887,6 +1920,13 @@
    "why": "Greek hysteresis, a shortcoming or lagging behind.",
    "forms": [
     "hysteresis"
+   ]
+  },
+  "idempotent": {
+   "text": "Doing it again changes nothing. A niche is either occupied or it is not, so there is no dose to escalate and no gradient for anything to adapt along.",
+   "why": "Borrowed from mathematics and computing, and unusually apt: it names exactly what distinguishes exclusion from a chemical weapon.",
+   "forms": [
+    "idempotent"
    ]
   },
   "iltsvind": {
@@ -1923,6 +1963,13 @@
    "forms": [
     "infauna",
     "infaunal"
+   ]
+  },
+  "innate immunity": {
+   "text": "The defence system built in advance to recognise general signatures of infection, as against the adaptive system that learns individual ones. Plants and invertebrates have only this - and much of it turns out to be homologous to bacterial anti-phage machinery.",
+   "why": "Which makes part of our own immune system a captured weapon from the microbial war.",
+   "forms": [
+    "innate immunity"
    ]
   },
   "inoculum": {
@@ -2203,6 +2250,13 @@
     "mycorrhizal"
    ]
   },
+  "mycovirus": {
+   "text": "A virus that infects fungi. Some weaken their host rather than killing it, and one that weakens chestnut blight is a deployed biocontrol agent - a virus protecting a tree by disarming a fungus.",
+   "why": "Antifungals of viral variety, and a working demonstration that the whole matrix is real.",
+   "forms": [
+    "mycovirus"
+   ]
+  },
   "målbelastning": {
    "text": "Danish for target load - how much nitrogen a water body may receive and still meet its environmental objective.",
    "why": "Mål (target) plus belastning (load).",
@@ -2346,6 +2400,13 @@
    "why": "It disposes of peroxides, which would otherwise do damage.",
    "forms": [
     "peroxidase"
+   ]
+  },
+  "phage therapy": {
+   "text": "Treating a bacterial infection with the viruses that attack that bacterium. Used clinically in Georgia and Poland for decades and being revived against resistant infections.",
+   "why": "Antibacterials of viral variety - the matrix of microbial warfare filled in from a direction Western medicine largely skipped.",
+   "forms": [
+    "phage therapy"
    ]
   },
   "pharmacokinetic": {
@@ -2629,6 +2690,13 @@
    "why": "The reason every corpse relieves a carbon shortage and deepens an oxygen one.",
    "forms": [
     "respiration"
+   ]
+  },
+  "restriction enzyme": {
+   "text": "A bacterial protein that cuts foreign DNA at a specific sequence, defending against phage. Its discovery made molecular biology possible.",
+   "why": "The other great tool taken off the same battlefield.",
+   "forms": [
+    "restriction enzyme"
    ]
   },
   "resuspension": {

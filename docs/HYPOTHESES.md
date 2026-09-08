@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**158 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**159 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 158 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 159 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 158 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 159 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -1913,6 +1913,20 @@ Parasite, commensal and mutualist are positions on a spectrum, not classes of cr
 
 **Needs.** Host-associated microbial and viral community data through a stress gradient. Absent for every Danish marine species.
 
+### T12 — Defence is outsourced, because the host cannot win the race
+
+**Outcomes:** O3, O7, O6
+
+Pasteur and Joubert saw microbes suppressing each other in 1877, and Fleming's *Penicillium* was the same phenomenon fifty years later. Nearly every antibiotic in use is a weapon taken off that battlefield — mostly from soil actinomycetes, which have been fighting fungi and each other for hundreds of millions of years. There is no reason the war stops at fungi and bacteria: phage against bacteria, bacteria against phage, fungi against both, all of them at generation times the host cannot approach. The matrix fills in almost completely and most of it is documented: fungi make antibacterials (penicillin); bacteria make antifungals (nystatin, amphotericin, both from *Streptomyces*); viruses make antibacterials, which is phage therapy; viruses make antifungals, and a mycovirus that weakens chestnut blight is a deployed biocontrol agent; and bacteria make antivirals — restriction enzymes, CRISPR, and a fast-growing list of anti-phage systems. Most strikingly, several components of our own innate immunity are homologous to those bacterial anti-phage systems, so the vertebrate immune system is itself partly a captured weapon from that war.
+
+**Predicts.** **So a slow organism cannot defend itself by evolving.** It has two options, and it uses both. It can carry *generalisable priming* — machinery built in advance to recognise and label whatever turns up, which is what an immune system is, and which vertebrates push to the point of running mutation and selection somatically inside one body because the germline is far too slow. Or it can **outsource**: host the microbial combatants and let their arms race supply the defence. Eelgrass, mussels and every invertebrate on a Danish seabed have no adaptive immune system at all, so for them the second route is not a supplement. It is the defence.
+
+**Discriminated by.** Host susceptibility against the composition of its associated microbial community, rather than against any property of the host itself.
+
+**Needs.** Host-associated community data with matched disease outcomes. Absent. **And the consequence is the sharp end of group `E`**: a broad-spectrum biocide does not merely kill pests, it disarms the host by removing its garrison — and the host cannot re-evolve the defence, because being unable to compete on adaptive terms is why it was outsourced in the first place. It can only re-acquire the allies, which is `T5`, `T11` and `X1` again.
+
+There is a constructive corollary, and it belongs on the record even though it is not a hypothesis about Danish water. **That war is a chemical library a billion years old, and it has barely been read.** Nearly every antibiotic in clinical use came from one narrow sample of it — soil actinomycetes — and the marine equivalent is close to unexplored, while restriction enzymes and CRISPR, the two tools modern biology is built on, both came from the bacteria-phage front of the same conflict. Anything this project might want for restoration — a targeted antifungal, a phage against a specific pathogen, a hypovirulence agent — is more likely to be found there than synthesised, and a compound taken from that war has an evolutionary prior by construction.
+
 ### T11 — Occupancy is the function
 
 **Outcomes:** O3, O7, O6
@@ -1924,6 +1938,10 @@ A body is an environment, and so is a sediment surface, a leaf, a root, a mucus 
 **Discriminated by.** Invasion or infection success in an intact community against a depleted one, with the community otherwise matched. The classic design, and the same one as the sediment inoculation of `T5`.
 
 **Needs.** Challenge experiments on intact versus disturbed communities. Standard method in medical and soil microbiology, not applied in Danish marine work. **The human case is the strongest evidence in this whole register that the mechanism is real and the remedy works.** A course of antibiotics clears the gut community, *Clostridioides difficile* moves into the vacancy, and the harm comes from the emptiness rather than from the drug. The treatment is faecal microbiota transplant — putting a whole functioning community back, with cure rates around ninety per cent, and without anyone needing to know which member did the work. That is precisely the design of `X1`, already proven in one domain and never tried in the sediment.
+
+**And occupancy has a property no chemical intervention has: nothing can evolve resistance to a space being taken.** A biocide is a single molecular target, so it selects for whoever can alter that target, and the earlier section makes the winners predictable in advance. Exclusion offers no target at all — the incomer has to out-compete an entire established community for resources it also needs, which is not a mutation but a whole strategy. It is also *idempotent*: the niche is either occupied or it is not, adding more changes nothing, and there is no dose to escalate. That is why faecal transplant does not breed resistance the way the antibiotic that created the vacancy does.
+
+The honest limit: exclusion can still be defeated, by displacement or by an incomer occupying a slightly different niche. It is harder rather than impossible. But **an intervention that cannot be evaded by a point mutation is a different class of thing from one that can**, and that difference is a reason to prefer restoration over chemistry which owes nothing to sentiment.
 
 ### T10 — Removing an organism whose role is unknown is not neutral
 

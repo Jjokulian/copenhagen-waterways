@@ -112,6 +112,9 @@ TERMS = {
     'acetylcholine': (
         'The signalling molecule nerves use at many junctions. Its receptors and the enzyme that clears it are targets for several insecticide classes, and both are universal in animals.',
         'Acetyl plus choline, its chemical parts.'),
+    'actinomycete': (
+        'A group of soil bacteria that produce most of the antibiotics in clinical use. They have been fighting fungi and each other for hundreds of millions of years, and the pharmacy is their armoury.',
+        'The narrow sample of the microbial war that modern medicine happens to have read. The marine equivalent is close to unexplored.'),
     'aerobe': (
         'An organism that needs oxygen to live. Most animals, and many bacteria.',
         'Greek aer (air) plus bios (life). Its opposite is an anaerobe.'),
@@ -196,6 +199,9 @@ TERMS = {
     'biocide': (
         'Any substance intended to kill living things - the umbrella covering pesticides, fungicides, herbicides, antifoulants, disinfectants and wood preservatives.',
         'Literally life-killer. The word is honest in a way the specific ones are not.'),
+    'biocontrol': (
+        'Using one organism to suppress another instead of using a chemical. It cannot be evaded by a point mutation the way a single-target molecule can.',
+        'The practical form of letting the microbial arms race do the work.'),
     'biocrust': (
         'A living skin of cyanobacteria, lichens and mosses binding a desert soil surface. Break it and the sand mobilises.',
         'Biological soil crust. Its marine counterpart is microphytobenthos.'),
@@ -268,6 +274,9 @@ TERMS = {
     'copepod': (
         'A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth - and an arthropod, like the insects that insecticides are designed for.',
         'Greek kope (oar) plus pous (foot).'),
+    'CRISPR': (
+        'A bacterial immune system that stores fragments of past viral infections and uses them to recognise and cut the same virus again. Repurposed as the standard gene-editing tool.',
+        'An antiviral of bacterial variety - and, like restriction enzymes before it, a weapon captured from the bacteria-phage war and turned into laboratory equipment.'),
     'CTD': (
         'The standard instrument lowered through the water column, recording conductivity, temperature and depth continuously - and usually oxygen too. It gives a profile rather than a single value.',
         'Named for the three things it measures. Salinity is calculated from conductivity.'),
@@ -448,12 +457,18 @@ TERMS = {
     'hydrothermal vent': (
         'A seafloor hot spring where water heated by rock emerges carrying hydrogen sulphide and metals. The communities around them run entirely on chemical energy, with no sunlight anywhere in the food chain.',
         'Discovered in 1977, which overturned the assumption that all life ultimately depends on the sun.'),
+    'hypovirulence': (
+        'A pathogen made less harmful, usually by its own infection with something else. The basis of using a virus to control a fungal disease of plants.',
+        'Not killing the pathogen but taking its weapons away.'),
     'hypoxia': (
         'Not enough oxygen. Conventionally below 4 mg per litre in marine work, with 2 mg/l as severe.',
         'Greek hypo- (under) plus oxys, the root in oxygen.'),
     'hysteresis': (
         'A system that does not retrace its path: the conditions that would restore it are not the conditions that broke it. Easy to enter, hard to leave.',
         'Greek hysteresis, a shortcoming or lagging behind.'),
+    'idempotent': (
+        'Doing it again changes nothing. A niche is either occupied or it is not, so there is no dose to escalate and no gradient for anything to adapt along.',
+        'Borrowed from mathematics and computing, and unusually apt: it names exactly what distinguishes exclusion from a chemical weapon.'),
     'iltsvind': (
         'Danish for oxygen depletion - literally oxygen-dwindling. The word used in Danish public debate for what happens when the seabed suffocates.',
         'Ilt is Danish for oxygen, coined by H.C. Orsted from ild, fire.'),
@@ -469,6 +484,9 @@ TERMS = {
     'infauna': (
         'Animals living inside the sediment rather than on top of it - worms, clams, the things a grab sample catches.',
         'Latin in- plus fauna. The ones you have to dig for.'),
+    'innate immunity': (
+        'The defence system built in advance to recognise general signatures of infection, as against the adaptive system that learns individual ones. Plants and invertebrates have only this - and much of it turns out to be homologous to bacterial anti-phage machinery.',
+        'Which makes part of our own immune system a captured weapon from the microbial war.'),
     'inoculum': (
         'A small quantity of living material introduced deliberately to establish a community - a spoonful of healthy sediment, a starter culture.',
         'Latin inoculare, to graft in. The plural is inocula.'),
@@ -583,6 +601,9 @@ TERMS = {
     'mycorrhiza': (
         'The partnership between plant roots and fungi that feeds the plant phosphorus in exchange for carbon. Heavy fertilising suppresses it.',
         'Greek mykes (fungus) plus rhiza (root).'),
+    'mycovirus': (
+        'A virus that infects fungi. Some weaken their host rather than killing it, and one that weakens chestnut blight is a deployed biocontrol agent - a virus protecting a tree by disarming a fungus.',
+        'Antifungals of viral variety, and a working demonstration that the whole matrix is real.'),
     'målbelastning': (
         'Danish for target load - how much nitrogen a water body may receive and still meet its environmental objective.',
         'Mål (target) plus belastning (load).'),
@@ -643,6 +664,9 @@ TERMS = {
     'peroxidase': (
         'An enzyme that neutralises reactive oxygen inside a cell. The selenium-dependent version is why selenium is essential.',
         'It disposes of peroxides, which would otherwise do damage.'),
+    'phage therapy': (
+        'Treating a bacterial infection with the viruses that attack that bacterium. Used clinically in Georgia and Poland for decades and being revived against resistant infections.',
+        'Antibacterials of viral variety - the matrix of microbial warfare filled in from a direction Western medicine largely skipped.'),
     'pharmacokinetic': (
         'To do with how much of a substance an organism takes up, where it goes, and how fast it is broken down - as opposed to what it does once it arrives.',
         'Greek pharmakon (drug) plus kinesis (movement). Selectivity that is pharmacokinetic is selectivity of exposure, not of mechanism.'),
@@ -760,6 +784,9 @@ TERMS = {
     'respiration': (
         'Extracting energy from organic matter, consuming oxygen and releasing carbon dioxide. The reverse of photosynthesis, and what decay is at the chemical level.',
         'The reason every corpse relieves a carbon shortage and deepens an oxygen one.'),
+    'restriction enzyme': (
+        'A bacterial protein that cuts foreign DNA at a specific sequence, defending against phage. Its discovery made molecular biology possible.',
+        'The other great tool taken off the same battlefield.'),
     'resuspension': (
         'Sediment lifted back into the water by waves, currents or gear, after having settled.',
         'It returns buried material, and its chemistry, to circulation.'),
@@ -2754,6 +2781,52 @@ H = [
      "gradient, rather than presence-or-absence of any named organism.",
      "Host-associated microbial and viral community data through a stress gradient. "
      "Absent for every Danish marine species."),
+    ("T12", "T", "Defence is outsourced, because the host cannot win the race",
+     ["O3", "O7", "O6"],
+     "Pasteur and Joubert saw microbes suppressing each other in 1877, and Fleming's "
+     "*Penicillium* was the same phenomenon fifty years later. Nearly every "
+     "antibiotic in use is a weapon taken off that battlefield — mostly from soil "
+     "actinomycetes, which have been fighting fungi and each other for hundreds of "
+     "millions of years. There is no reason the war stops at fungi and bacteria: "
+     "phage against bacteria, bacteria against phage, fungi against both, all of "
+     "them at generation times the host cannot approach. The matrix fills in almost "
+     "completely and most of it is documented: fungi make antibacterials "
+     "(penicillin); bacteria make antifungals (nystatin, amphotericin, both from "
+     "*Streptomyces*); viruses make antibacterials, which is phage therapy; viruses "
+     "make antifungals, and a mycovirus that weakens chestnut blight is a deployed "
+     "biocontrol agent; and bacteria make antivirals — restriction enzymes, CRISPR, "
+     "and a fast-growing list of anti-phage systems. Most strikingly, several "
+     "components of our own innate immunity are homologous to those bacterial "
+     "anti-phage systems, so the vertebrate immune system is itself partly a "
+     "captured weapon from that war.",
+     "**So a slow organism cannot defend itself by evolving.** It has two options, "
+     "and it uses both. It can carry *generalisable priming* — machinery built in "
+     "advance to recognise and label whatever turns up, which is what an immune "
+     "system is, and which vertebrates push to the point of running mutation and "
+     "selection somatically inside one body because the germline is far too slow. "
+     "Or it can **outsource**: host the microbial combatants and let their arms "
+     "race supply the defence. Eelgrass, mussels and every invertebrate on a Danish "
+     "seabed have no adaptive immune system at all, so for them the second route is "
+     "not a supplement. It is the defence.",
+     "Host susceptibility against the composition of its associated microbial "
+     "community, rather than against any property of the host itself.",
+     "Host-associated community data with matched disease outcomes. Absent. **And "
+     "the consequence is the sharp end of group `E`**: a broad-spectrum biocide "
+     "does not merely kill pests, it disarms the host by removing its garrison — "
+     "and the host cannot re-evolve the defence, because being unable to compete on "
+     "adaptive terms is why it was outsourced in the first place. It can only "
+     "re-acquire the allies, which is `T5`, `T11` and `X1` again.\n\n"
+     "There is a constructive corollary, and it belongs on the record even though "
+     "it is not a hypothesis about Danish water. **That war is a chemical library "
+     "a billion years old, and it has barely been read.** Nearly every antibiotic "
+     "in clinical use came from one narrow sample of it — soil actinomycetes — and "
+     "the marine equivalent is close to unexplored, while restriction enzymes and "
+     "CRISPR, the two tools modern biology is built on, both came from the "
+     "bacteria-phage front of the same conflict. Anything this project might want "
+     "for restoration — a targeted antifungal, a phage against a specific pathogen, "
+     "a hypovirulence agent — is more likely to be found there than synthesised, "
+     "and a compound taken from that war has an evolutionary prior by "
+     "construction."),
     ("T11", "T", "Occupancy is the function", ["O3", "O7", "O6"],
      "A body is an environment, and so is a sediment surface, a leaf, a root, a "
      "mucus layer. What lives there is competing for space and resources against "
@@ -2779,7 +2852,22 @@ H = [
      "faecal microbiota transplant — putting a whole functioning community back, "
      "with cure rates around ninety per cent, and without anyone needing to know "
      "which member did the work. That is precisely the design of `X1`, already "
-     "proven in one domain and never tried in the sediment."),
+     "proven in one domain and never tried in the sediment.\n\n"
+     "**And occupancy has a property no chemical intervention has: nothing can "
+     "evolve resistance to a space being taken.** A biocide is a single molecular "
+     "target, so it selects for whoever can alter that target, and the earlier "
+     "section makes the winners predictable in advance. Exclusion offers no target "
+     "at all — the incomer has to out-compete an entire established community for "
+     "resources it also needs, which is not a mutation but a whole strategy. It is "
+     "also *idempotent*: the niche is either occupied or it is not, adding more "
+     "changes nothing, and there is no dose to escalate. That is why faecal "
+     "transplant does not breed resistance the way the antibiotic that created the "
+     "vacancy does.\n\n"
+     "The honest limit: exclusion can still be defeated, by displacement or by an "
+     "incomer occupying a slightly different niche. It is harder rather than "
+     "impossible. But **an intervention that cannot be evaded by a point mutation "
+     "is a different class of thing from one that can**, and that difference is a "
+     "reason to prefer restoration over chemistry which owes nothing to sentiment."),
     ("T10", "T", "Removing an organism whose role is unknown is not neutral",
      ["O3", "O7", "O6"],
      "Biocides and pest control remove organisms classified as harmful. That "
