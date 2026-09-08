@@ -26,13 +26,17 @@ station per water body it cannot be shown from the monitoring data either.
 Usage:  python3 scripts/observing.py
 """
 import collections
+import itertools
 import json
 import math
 import os
+import random
+import statistics
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, RAW, ROOT, log, read_json, write_json
+from common import (DERIVED, RAW, ROOT, log, plain_r, plain_r2, read_json,
+                    write_json)
 
 NAT = os.path.join(RAW, "national")
 OUT = os.path.join(ROOT, "docs", "OBSERVING.md")
@@ -74,6 +78,87 @@ def mean(xs):
     return sum(xs) / len(xs) if xs else None
 
 
+# ---------------------------------------------------------------------------
+# The noise floor of their own acceptance criterion.
+#
+# Their documented design: each data point is one seasonal mean for one year;
+# at least 15 points; eight candidate explanatory variables (Tabel 2); the ones
+# "som giver den største forklaringskraft" are selected, up to three per model.
+# That is a best-subset search over 92 candidate models fitted to ~20 points.
+#
+# So the question is not whether R2 = 0.57 is high. It is what R2 that search
+# returns when there is no relation there at all. This simulates exactly that,
+# under three conditions of increasing realism: white noise; autocorrelated
+# series, which annual marine and climate series are; and autocorrelated series
+# that additionally share a monotone decline, which every candidate variable did
+# over 1990-2012.
+# ---------------------------------------------------------------------------
+
+NOISE_CASES = [
+    ("20 points, white noise", 20, 0.0, 0.0),
+    ("20 points, autocorrelated (phi=0.5)", 20, 0.5, 0.0),
+    ("20 points, autocorrelated + shared decline", 20, 0.5, 2.0),
+    ("15 points (their stated minimum), same", 15, 0.5, 2.0),
+]
+N_CANDIDATES, MAX_TERMS, N_TRIALS = 8, 3, 400
+
+
+def _ols_r2(X, y):
+    n, k = len(y), len(X)
+    m = k + 1
+    A = [[1.0] + [X[j][i] for j in range(k)] for i in range(n)]
+    M = [[sum(A[i][a] * A[i][b] for i in range(n)) for b in range(m)]
+         + [sum(A[i][a] * y[i] for i in range(n))] for a in range(m)]
+    for c in range(m):
+        p = max(range(c, m), key=lambda r: abs(M[r][c]))
+        if abs(M[p][c]) < 1e-12:
+            return 0.0
+        M[c], M[p] = M[p], M[c]
+        for r in range(m):
+            if r != c:
+                f = M[r][c] / M[c][c]
+                for q in range(c, m + 1):
+                    M[r][q] -= f * M[c][q]
+    b = [M[i][m] / M[i][i] for i in range(m)]
+    my = sum(y) / n
+    ss = sum((v - my) ** 2 for v in y)
+    rs = sum((y[i] - (b[0] + sum(b[j + 1] * X[j][i] for j in range(k)))) ** 2
+             for i in range(n))
+    return max(0.0, 1 - rs / ss) if ss else 0.0
+
+
+def _series(n, phi, trend):
+    x = [random.gauss(0, 1)]
+    for _ in range(n - 1):
+        x.append(phi * x[-1] + random.gauss(0, math.sqrt(1 - phi * phi)))
+    return [v + trend * i / n for i, v in enumerate(x)] if trend else x
+
+
+def noise_floor(seed=7):
+    random.seed(seed)
+    out = []
+    for label, n, phi, trend in NOISE_CASES:
+        best = []
+        for _ in range(N_TRIALS):
+            y = _series(n, phi, trend)
+            X = [_series(n, phi, trend) for _ in range(N_CANDIDATES)]
+            b = 0.0
+            for k in range(1, MAX_TERMS + 1):
+                for c in itertools.combinations(range(N_CANDIDATES), k):
+                    b = max(b, _ols_r2([X[j] for j in c], y))
+            best.append(b)
+        best.sort()
+        q = lambda f: best[int(f * len(best))]
+        out.append({"case": label, "n_points": n, "phi": phi, "trend_sd": trend,
+                    "median": round(q(.5), 3), "p75": round(q(.75), 3),
+                    "p90": round(q(.9), 3),
+                    "share_passing": round(sum(1 for v in best if v >= 0.4) / len(best), 3)})
+    return {"candidates": N_CANDIDATES, "max_terms": MAX_TERMS,
+            "subsets_searched": sum(math.comb(N_CANDIDATES, k)
+                                    for k in range(1, MAX_TERMS + 1)),
+            "trials": N_TRIALS, "cases": out}
+
+
 def load():
     wb = {f["properties"]["ov_id"]: f["properties"]
           for f in read_json(os.path.join(NAT, "marin_overordnet.geojson"))["features"]}
@@ -113,6 +198,51 @@ def internal(wb, st):
             out[w] = {"r": sum(rs) / len(rs), "n_st": len(v), "n_pairs": len(rs),
                       "area": wb[w]["ov_stoe"], "name": wb[w]["ov_navn"]}
     return out
+
+
+def variance_components(st):
+    """Where does the variation in Danish bathing quality actually live?
+
+    Correlations answer "do two beaches move together". This answers the blunter
+    question underneath it: if you had to predict one beach-year, how much does
+    knowing the water body buy you? The national year-to-year swing is removed
+    first, so what remains is spatial structure plus local noise, and it is split
+    three ways - between water bodies, between beaches inside one water body, and
+    year to year at a single beach.
+
+    If the water body were a real unit, the first share would dominate the second.
+    """
+    obs = [(r["wb"], r["name"], y, v) for r in st for y, v in r["s"].items()]
+    if not obs:
+        return None
+    yb = collections.defaultdict(list)
+    for w, n, y, v in obs:
+        yb[y].append(v)
+    ym = {y: sum(v) / len(v) for y, v in yb.items()}
+    res = [(w, n, y, v - ym[y]) for w, n, y, v in obs]
+    N = len(res)
+    total = sum(v ** 2 for _, _, _, v in res) / N       # grand mean is ~0 by construction
+    gw = collections.defaultdict(list)
+    gs = collections.defaultdict(list)
+    for w, n, y, v in res:
+        gw[w].append(v)
+        gs[(w, n)].append(v)
+    gm = {w: sum(v) / len(v) for w, v in gw.items()}
+    sm = {k: sum(v) / len(v) for k, v in gs.items()}
+    between_wb = sum(len(v) * gm[w] ** 2 for w, v in gw.items()) / N
+    between_st = sum(len(v) * (sm[k] - gm[k[0]]) ** 2 for k, v in gs.items()) / N
+    within = sum((v - sm[(w, n)]) ** 2 for w, n, y, v in res) / N
+    flat = sum(1 for r in st if len(set(r["s"].values())) == 1)
+    movers = sorted(((statistics.pstdev(v), w, len(v)) for w, v in gw.items()
+                     if len(v) >= 40), reverse=True)
+    return {"n_obs": N, "n_stations": len(gs), "n_wb": len(gw),
+            "total": total,
+            "between_water_bodies": between_wb, "share_between_wb": between_wb / total,
+            "between_stations_within": between_st, "share_between_st": between_st / total,
+            "within_station": within, "share_within": within / total,
+            "flat_stations": flat,
+            "most_variable": [(round(a, 3), b, c) for a, b, c in movers[:6]],
+            "least_variable": [(round(a, 3), b, c) for a, b, c in movers[-5:]]}
 
 
 def by_distance(st, cap_km=25):
@@ -237,25 +367,43 @@ def render(d):
       "fjords, and a fjord is the one marine setting whose flushing, stratification "
       "and residence time are least like an open bay's.\n")
 
-    a("## 3. The instruments are at the surface, and oxygen is sampled once per six years\n")
-    a("The candidate explanatory variables are nutrient loads, freshwater flow, wind "
-      "stress, irradiance, salinity, water-column stability and **surface** water "
-      "temperature. Bottom-water temperature is not a candidate anywhere. Stratification "
-      "enters only as `vandsøjlestabilitet`, and is selected in 13 of the 72 published "
-      "models.\n")
-    a("Iltsvind is a bottom-water phenomenon, and so is the terminus of the fedtemøg "
-      "cycle. Neither has a bottom-water driver in the model.\n")
-    a("> The oxygen indicator itself, from DCE's Tabel 4: the share of time oxygen is "
-      "below 4 mg/L and 2 mg/L **in the single month where low-oxygen days are most "
-      "numerous**; six years of data go into the monthly frequencies; **one indicator "
-      "value emerges per six years**.\n")
-    a("DCE also state plainly that the sampling misses the events: *\"målingerne af ilt "
+    a("## 3. What the statistical layer is allowed to consider\n")
+    a("The models in Tabel 3 — the ones that produce the per-area numbers — draw their "
+      "explanatory variables from a fixed list of eight, given in Tabel 2: nutrient "
+      "loads (N and P), freshwater flow, wind stress, irradiance, salinity, "
+      "water-column stability, and **surface** water temperature. Bottom-water "
+      "temperature is not on the list. Stratification appears only as "
+      "`vandsøjlestabilitet`, selected in 13 of the 72 models.\n")
+    a("That list is worth reading for what is not on it. An oxygen deficit is a balance "
+      "— what removes oxygen against what resupplies it — and the routes on both sides "
+      "are many. Imported organic matter exerts its demand directly, with no nitrogen "
+      "and no growth step in between. Ammonium exerts a demand chemically, by being "
+      "oxidised. Sulphide released from disturbed sediment consumes oxygen the moment "
+      "it meets it. A kill event of any cause leaves a decaying mass and a bacterial "
+      "bloom on it. Warmer water holds less; a column that does not turn over does not "
+      "refill. None of those is a candidate variable, so whatever share belongs to them "
+      "has nowhere to go but into the coefficients on the variables that are there. The "
+      "enumeration is in [OXYGEN.md](#OXYGEN.md).\n")
+    a("The oxygen requirement itself comes from no regression at all. It is a **binary "
+      "trigger** on an indicator that is the share of time oxygen sits below 4 mg/L and "
+      "2 mg/L **in the single month where low-oxygen days are most numerous**, computed "
+      "from six years of measurements, yielding **one value per water body per six "
+      "years**. Oxygen is sampled far more often than that; this is about what survives "
+      "the aggregation. Eleven months of every year are discarded before the number is "
+      "formed, and the six-year collapse removes what is left of the temporal signal — "
+      "including any trend, and including whatever happened in the years the shore "
+      "actually got worse.\n")
+    a("DCE state plainly that the sampling misses the events: *\"målingerne af ilt "
       "foretages med en frekvens, som ikke nødvendigvis fanger kortvarige iltsvind\"*. "
-      "That single number per six years is not fitted to anything. It is a **binary "
-      "trigger**: if it fires, the requirement is a flat 25% cut in total nitrogen "
+      "If the trigger fires, the requirement is a flat 25% cut in total nitrogen "
       "concentration, chosen because it is *\"større end de normale år-til-år "
       "variationer\"* and because *\"det **vurderes**\"* to be the minimum that will move "
-      "the system.\n")
+      "the system. A judged round number, not a fitted response.\n")
+    a("> **Scope of this section.** Everything above is read from the statistical "
+      "modelling report (Timmermann et al. 2015) and its Tabel 2 and Tabel 3. A second, "
+      "mechanistic modelling layer exists (DHI, Erichsen & Kaas 2015) which this "
+      "project has not yet read in the original. Nothing here should be taken as a "
+      "claim about what that layer does or does not contain.\n")
 
     a("## 4. The window closes where the problem starts\n")
     a("The models are fitted on **1990-2012**. Over that window essentially every "
@@ -279,25 +427,89 @@ def render(d):
       "because the data end.\n")
     a("The acceptance criterion is **R² ≥ 0.4**, described in the report as *tentativt "
       "sat*. R² is the squared normalised cross-covariance between fitted and observed. "
-      "Two monotone declining series clear |r| ≥ 0.63 without any causal connection "
-      "between them. No out-of-sample validation is reported, and the explanatory "
-      "variables were selected per station as the best-performing subset, which "
-      "inflates R² further.\n")
+      "No out-of-sample validation is reported.\n")
+
+    a("### What that criterion returns when there is nothing there\n")
+    nf = d["noise_floor"]
+    a("Their design is documented precisely enough to test the criterion directly. Each "
+      "data point is *\"gennemsnit af målinger for en sæson (år)\"* — one seasonal mean "
+      "per year — with a stated minimum of 15 points. Tabel 2 offers "
+      f"{nf['candidates']} candidate explanatory variables. Tabel 3 shows one to three "
+      "selected per model, chosen as those *\"som giver den største forklaringskraft\"*. "
+      f"That is a best-subset search over **{nf['subsets_searched']} candidate models "
+      f"fitted to about 20 points**.\n")
+    a("So the question is not whether R² = 0.57 is high. It is what that search returns "
+      "**when there is no relation there at all**. Simulating exactly their design, "
+      f"{nf['trials']} times per case:\n")
+    a("| condition | median R² | 75th | 90th | share clearing R² ≥ 0.4 |")
+    a("|---|---:|---:|---:|---:|")
+    for c in nf["cases"]:
+        a(f"| {c['case']} | {c['median']:.2f} | {c['p75']:.2f} | {c['p90']:.2f} "
+          f"| {100*c['share_passing']:.0f}% |")
+    a("")
+    a("Annual marine and climate series are autocorrelated, and over 1990–2012 every "
+      "candidate declined together. Those are the bottom two rows. Under the conditions "
+      "their own data satisfy, **the median R² from pure noise is 0.56–0.66, and 82–90% "
+      "of noise models clear their acceptance criterion.**\n")
+    a("DCE report a mean R² of **0.56** across all 72 models; the median of the table "
+      "as parsed here is **0.57**.\n")
+    a("> That is not distinguishable from the noise floor of their own selection "
+      "procedure.\n")
+    a("This does **not** show the relations are false. Several are probably real — the "
+      "phosphorus models in particular are strong and mechanistically expected. What it "
+      "shows is that the reported R² carries no evidence either way, because the "
+      "threshold was set below the null distribution of the search that produced it. "
+      "The fix is cheap and standard: hold out years, or report the R² of the N-load "
+      "term alone against a model containing only the climate variables. Neither is "
+      "reported for any of the 72.\n")
+    a("Two caveats, stated because they matter. The simulation assumes all "
+      f"{nf['candidates']} candidates were offered to every model; if variables were "
+      "pre-screened on mechanistic grounds the inflation is smaller — though *\"største "
+      "forklaringskraft\"* describes a search, not a screen. And the shared-decline case "
+      "assumes a 2-SD monotone drift across the window, which is the right order for "
+      "Danish nitrogen load but is a choice; the autocorrelation-only row is the "
+      "conservative version and still puts the median at 0.43.\n")
 
     a("## 5. Is a water body a real thing? A test\n")
     a("Bathing water is the only long, dense, spatially replicated marine record "
       "Denmark has: 1,026 stations, one quality class per year from 1991 to 2018, each "
-      "carrying the id of the water body it sits in. If the polygon is a real unit, its "
-      "own stations should co-vary.\n")
+      "carrying the id of the water body it sits in. That is enough replication to ask "
+      "the question directly.\n")
+    v = d["variance"]
+    a(f"Take all {v['n_obs']:,} beach-year observations across {v['n_stations']} "
+      f"stations in {v['n_wb']} water bodies. Remove the national year-to-year swing "
+      f"first, so a warm wet summer everywhere does not count as structure. Split what "
+      f"is left three ways:\n")
+    a("| where the variation lives | share |")
+    a("|---|---:|")
+    a(f"| between water bodies | **{100*v['share_between_wb']:.1f}%** |")
+    a(f"| between beaches *inside* one water body | **{100*v['share_between_st']:.1f}%** |")
+    a(f"| year to year at a single beach | {100*v['share_within']:.1f}% |")
+    a("")
+    a("*(In plain words: if you had to guess how one beach did in one year, knowing "
+      f"which water body it is in gets you {100*v['share_between_wb']:.0f}% of the way. "
+      f"Knowing which beach — inside that same water body — gets you "
+      f"{100*v['share_between_st']:.0f}%, nearly twice as much. The unit that policy "
+      "treats as uniform explains less than the differences within it.)*\n")
+    a("The last row is large partly because a four-class ordinal is a noisy instrument, "
+      "and that noise falls on all three shares equally. The load-bearing comparison is "
+      "the first two rows against each other, and they do not depend on the noise level "
+      "at all.\n")
+    a("### The same thing said as correlations\n")
     a(f"Restricting to stations with at least 15 years of record and at least 3 years "
       f"below *Excellent* (so there is something to correlate), and to water bodies "
-      f"with at least 3 such stations - **{d['internal']['n_wb']} water bodies**:\n")
+      f"with at least 3 such stations — **{d['internal']['n_wb']} water bodies**:\n")
+    mr = d["internal"]["mean_r"]
     a(f"> Mean pairwise correlation between two stations **inside the same water "
-      f"body**: **r = {d['internal']['mean_r']:+.3f}**, i.e. **R² = "
-      f"{d['internal']['mean_r']**2:.3f}**.\n")
-    a("Two stations in one legally-uniform water body share about four percent of their "
-      "year-to-year variance. The model acceptance threshold for describing that same "
-      "water body is ten times higher.\n")
+      f"body**: **r = {mr:+.3f}**.\n")
+    a("*(In plain words: r is not a verdict, it is a co-wobble score — the average of "
+      "how far one beach sits above its own usual, in units of its own usual wobble, "
+      "times the same for the other beach. The divisor is the two **spreads**, not the "
+      "two means, which is what keeps it between −1 and +1 and lets r² be read as a "
+      f"share. Here that means: {plain_r(mr, 'one beach', 'the other')}.)*\n")
+    a(f"The threshold a model must clear to be accepted as a description of that same "
+      f"water body is R² ≥ 0.4 — which {plain_r2(0.4)}. The water body does not cohere "
+      f"to a tenth of the standard its own model is held to.\n")
     a("It is not an artefact of size. The least internally coherent bodies include some "
       "of the smallest:\n")
     a("| km² | water body | stations | mean r |")
@@ -349,18 +561,45 @@ def render(d):
           "polygon treats them and the open southern coast as one water with one "
           "status. The data say they are two.\n")
 
+    a("## What the observing system is actually built to see\n")
+    v = d["variance"]
+    a("Set the two records side by side. Denmark's densest, longest, most replicated "
+      "marine observation is of **faecal contamination** — is it safe to swim. The "
+      "chain policy acts on — nitrogen to algae to oxygen to a dead seabed — is "
+      "observed far more thinly, and the oxygen end of it most thinly of all.\n")
+    a("| | stations | water bodies | years | data points entering the analysis |")
+    a("|---|---:|---:|---|---:|")
+    a(f"| Bathing water (faecal indicator) | {v['n_stations']} | {v['n_wb']} "
+      f"| 1991–2018 | {v['n_obs']:,} station-years |")
+    a("| Nutrient/chlorophyll/Kd models | 29 | 22 | 1990–2012 | ~1,440 seasonal means "
+      "(72 models × ≥15 points) |")
+    a("| Oxygen indicator | — | per water body | rolling 6-year | **1 value per water "
+      "body per 6 years** |")
+    a("")
+    a("Roughly **fourteen times as many observations** stand behind the faecal record "
+      "as behind every nutrient model in the country combined, they are spread over "
+      "three times as many water bodies, and they run thirteen years further forward — "
+      "through exactly the period the fitted window excludes.\n")
+    a("That is not a small technical asymmetry. It means the sewage pathway is the one "
+      "Denmark can actually measure, and the nutrient pathway is the one Denmark acts "
+      "on. The two hypotheses about what wrecks a Danish shore are not being weighed "
+      "against each other on comparable evidence — one has an observing system and the "
+      "other has a model.\n")
+
     a("## What this does and does not show\n")
-    a("Bathing quality is a faecal indicator measure. Its variance is driven by local "
-      "rain and outfalls, so **low spatial coherence here is not proof that chlorophyll "
-      "is equally incoherent inside a water body.** That test cannot be run: the marine "
-      "monitoring programme puts 29 stations across 22 modelled water bodies — a median "
-      "of one each — so there is no replication to run it on.\n")
-    a("What it does show is that the water body is not, in general, a unit within which "
-      "measurable marine state is homogeneous - and that the one variable Denmark does "
-      "measure at enough points to check the assumption does not support it. "
-      "Homogeneity is asserted by the delineation, not demonstrated by it. The burden "
-      "belongs on the side making the assertion, and it is discharged nowhere in the "
-      "method documents.\n")
+    a("The bathing analysis above **cannot adjudicate the nitrogen chain**. It measures "
+      "*E. coli* and enterococci, not chlorophyll, so the finding that a water body is "
+      "internally incoherent is a finding about faecal contamination and is not proof "
+      "that chlorophyll behaves the same way inside one.\n")
+    a("But that limit cuts both directions, and the second direction is the one usually "
+      "left out. The bathing record is not a *weak proxy* for the nutrient question — "
+      "it is a *strong direct measurement of a competing one*. Whatever it shows about "
+      "sewage reaching Danish shores, it shows with fourteen times the observational "
+      "support of anything said about nitrogen, and it keeps showing it after 2012.\n")
+    a("Whether the water body is a coherent unit **for chlorophyll** cannot be tested "
+      "at all: 29 stations across 22 water bodies is a median of one each, and one "
+      "station cannot disagree with itself. The homogeneity is asserted by the "
+      "delineation and demonstrated nowhere.\n")
     a("The constructive version is not \"scrap the water bodies\". It is that the "
       "partition is an empirical question with an empirical answer, and the data to "
       "answer it would be one more monitoring station in each of the bodies that "
@@ -395,6 +634,8 @@ def main():
         "by_distance": by_distance(st),
         "boundary": {"testable": testable, "failed": failed},
         "koege": split_koege(st),
+        "variance": variance_components(st),
+        "noise_floor": noise_floor(),
     }
     write_json(os.path.join(DERIVED, "observing.json"), d)
     with open(OUT, "w", encoding="utf-8") as f:

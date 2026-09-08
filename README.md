@@ -31,6 +31,9 @@ python3 scripts/waves.py                # -> data/derived/waves.json
 python3 scripts/seabed.py               # -> docs/SEABED.md   (after waves.py)
 python3 scripts/causation.py            # -> docs/CAUSATION.md
 python3 scripts/observing.py            # -> docs/OBSERVING.md
+python3 scripts/oxygen.py               # -> docs/OXYGEN.md
+python3 scripts/areas.py                # -> docs/AREAS.md
+python3 scripts/areamap.py              # -> docs/areas.html
 python3 scripts/currents.py fetch       # marine + Baltic wind  (~10 min)
 python3 scripts/currents.py validate && python3 scripts/currents.py index
 python3 scripts/currents.py transport && python3 scripts/currents.py report
@@ -87,6 +90,8 @@ docs/
   NITROGEN.md             where the marine nitrogen figures come from, generated
   CAUSATION.md            what survives between that figure and a claim about a shore
   OBSERVING.md            what is measured, where, how often - and whether a "water body" is real
+  OXYGEN.md               every route that removes oxygen, priced; and what the indicators conflate
+  AREAS.md                one record per marine water body, and what cannot be modelled in each
   SEABED.md               wind, waves, and whether the bed stays put, generated
   CURRENTS.md             where the water goes, generated
   SOLUTIONS.md            the response, measured from the city's own layers

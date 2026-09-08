@@ -1,0 +1,688 @@
+{
+ "_what": "The scientific chain behind the Danish nitrogen indsatsbehov, reconstructed at the data level and the model level from the primary documents rather than from summaries of them. Built to stop this project strawmanning the case it argues against.",
+ "_rule": "Every entry carries a source. 'verified_by_reading': true means the statement was read in the primary document named, not inferred from a secondary description of it. Verbatim Danish is quoted where the claim is load-bearing. Where a number is our arithmetic on their table, it says so.",
+ "_status": "draft, 2026-09-08. Companion to docs/GRUNDLAGET.md.",
+ "_caution": "Institutional endorsement is not evidence about substance, and neither is institutional criticism. Nothing here is graded by who said it.",
+
+ "documents_read": [
+  {
+   "key": "del1",
+   "citation": "Erichsen, A.C., Timmermann, K., Kaas, H., Markager, S., Christensen, J. & Murray, C. (2014, rev. 18/5-2015). NST projektet 'Implementeringen af modeller til brug for vandforvaltningen'. Modeller for Danske Fjorde og Kystnære Havområder - Del 1. Metode til bestemmelse af målbelastning. Dokumentation. DHI og Aarhus Universitet, for Naturstyrelsen. Projekt 11811187-1.",
+   "url": "https://sgavmst.dk/media/hvomfapx/31-modeller-for-danske-fjorde-og-kystnaere-havomraader-del-1.pdf",
+   "pages": 29,
+   "what_it_is": "How the statistical, mechanistic and meta-analysis results were combined into one indsatsbehov and one målbelastning for each of the 119 VP2 marine water bodies.",
+   "read": "in full, via pdftotext -layout",
+   "verified_by_reading": true
+  },
+  {
+   "key": "del2",
+   "citation": "Erichsen, A.C. & Kaas, H. (2015, final 23/03-2015). Modeller for Danske Fjorde og Kystnære Havområder - del 2. Mekanistiske modeller og metode til bestemmelse af indsatsbehov. Dokumentation. DHI, for Naturstyrelsen. QA: Flemming Møhlenberg.",
+   "url": "https://edit.mst.dk/media/lspfqzss/312-modeller-for-danske-fjorde-og-kystnaere-havomraader-del-2.pdf",
+   "pages": 46,
+   "what_it_is": "The DHI mechanistic (3D hydrodynamic-ecological) models and the screening method used to derive a dose-response slope from them.",
+   "read": "sections 1-7 in full; section 8 (meta-analysis) skimmed",
+   "verified_by_reading": true
+  },
+  {
+   "key": "del3",
+   "citation": "Timmermann, K., Christensen, J., Murray, C. & Markager, S. (28 April 2015). NST-projektet 'Implementeringen af modeller til brug for vandforvaltningen'. Statistiske modeller og metoder til bestemmelse af indsatsbehov - del 3. DCE / Institut for Bioscience, Aarhus Universitet, for Naturstyrelsen. Faglig kvalitetssikring: Jens Würgler Hansen.",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2015/Dokumentation_statistiske_modeller_metoder_del3_28042015.pdf",
+   "pages": 26,
+   "what_it_is": "The DCE statistical models, the five indicators, the weighting, and the per-indicator indsatsbehov formulas.",
+   "read": "in full",
+   "verified_by_reading": true
+  },
+  {
+   "key": "novana2327",
+   "citation": "Miljøstyrelsen (September 2023). NOVANA. Det nationale overvågningsprogram for vandmiljø og natur 2023-27. ISBN 978-87-7038-556-5.",
+   "url": "https://www2.mst.dk/Udgiv/publikationer/2023/09/978-87-7038-556-5.pdf",
+   "what_it_is": "The observing system. Station counts, sampling frequencies and sampling windows for every marine parameter.",
+   "read": "chapter 2 (delprogram for hav og fjord) in full",
+   "verified_by_reading": true
+  },
+  {
+   "key": "so_main",
+   "citation": "Finansministeriet (formand), Miljøministeriet / Ministeriet for Grøn Trepart, Ministeriet for Fødevarer, Landbrug og Fiskeri (September 2024). Second opinion - Evaluering af det faglige grundlag for kvælstofindsatsen. Draft to følgegruppe 27 Aug 2024, published 24 Sept 2024.",
+   "what_it_is": "The cross-ministerial re-examination of the VP3 evidence base.",
+   "read": "structure and the sections on models, targets and indsatsbehov",
+   "verified_by_reading": true
+  },
+  {
+   "key": "so_bg",
+   "citation": "Same taskforce (November 2024). Second opinion - Baggrundsanalyser. 94 pp.",
+   "what_it_is": "The background analyses: chlorophyll targets in open coastal waters, the intercalibration comparison with Sweden and Germany (Bilag A), the typology (Bilag B), and the three target-value scenarios (Bilag C).",
+   "read": "chapter 4 and Bilag A and C",
+   "verified_by_reading": true
+  },
+  {
+   "key": "vp3_ret",
+   "citation": "Miljøministeriet. Retningslinjer for udarbejdelse af vandområdeplaner 2021-2027.",
+   "what_it_is": "How the model outputs become administrative targets and catchment quotas.",
+   "read": "section 5.4 and the targeted-regulation sections",
+   "verified_by_reading": true
+  }
+ ],
+
+ "not_obtained": [
+  {"citation": "Herman, P.M.J. et al. (2017) and (2023). International expert panel evaluations, phases I and II.", "why_it_matters": "The 2023 panel's finding on the VP3 chlorophyll G/M boundaries is load-bearing and is quoted here only via the Danish translation in so_bg, which itself warns that editorial choices were made in translation.", "verified_by_reading": false},
+  {"citation": "Erichsen, A.C., Timmermann, K. & Christensen, J.P.A. (2023). Second opinion readers guide to RBMP 3.", "why_it_matters": "The VP3-era model update: 11 mechanistic models over 107 coastal water bodies, replacing the 4 models / 45 water bodies of VP2. Every model-level number in this file is therefore VP2-era unless marked otherwise.", "verified_by_reading": false},
+  {"citation": "Erichsen et al. 2019, 2020a, 2020b; Timmermann et al. 2024a, 2024b; Hansen & Rytter 2024; Markager & Storm 2003; DCE SR612, SR479.", "why_it_matters": "Cited from so_bg and del3 reference lists only.", "verified_by_reading": false}
+ ],
+
+ "data_level": {
+  "_source": "novana2327, chapter 2, delprogram for hav og fjord",
+  "water_bodies": {
+   "wfd_within_1nm": 109,
+   "wfd_within_12nm_chemical_only": 14,
+   "vp2_count_used_by_the_models": 119,
+   "note": "The VP2 model documentation works on 119 water bodies; NOVANA 2023-27 and VP3 work on 109. The count changed with the VP3 redelineation.",
+   "verified_by_reading": true
+  },
+  "hydrography_and_water_chemistry": {
+   "what_is_measured": "Salinity, temperature, oxygen, light; nitrite/nitrate, ammonium, phosphate, silicon, total N, total P, chlorophyll.",
+   "total_stations": 114,
+   "control_stations_annual": 29,
+   "operational_stations_roughly_every_second_year": 85,
+   "stations_actually_sampled_in_a_given_year": "64-79 in fjords and coastal waters",
+   "frequency": "twice a month (one station six times a year)",
+   "additional_open_water_stations_outside_1nm": 18,
+   "open_water_frequency": "six times a year - monthly February-March and July-October",
+   "coverage_claim": "Kontrolovervågning plus operationel overvågning together cover all 109 water bodies over the five-year period.",
+   "verbatim": "Målingerne udføres i alt på 114 stationer fordelt på 29 kontrolovervågede stationer hvert år og 85 operationelt overvågede stationer cirka hvert andet år i fjorde og kystvande. Årligt udføres målingerne således på 64-79 stationer i fjorde og kystvande. Disse stationer overvåges to gange om måneden, på nær en enkelt station hvor der måles seks gange årligt.",
+   "our_reading": "114 stations for 109 water bodies is roughly one station per water body, and the operational majority is sampled in alternate years. A May-September chlorophyll mean therefore rests on order 10 samples, at one point in space, in the years a given water body is on programme.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+  "oxygen_iltsvind_programme": {
+   "additional_stations_per_year": "92-107, on top of the water-chemistry stations",
+   "frequency_fjords_and_coastal": "twice a month, July-November",
+   "frequency_limfjorden": "twice a month, June-October, because iltsvind typically starts earlier there",
+   "frequency_open_inner_waters": "monthly, July-October",
+   "hydrogen_sulphide": "measured only when there is specific reason to suspect it",
+   "verbatim": "De hydrografiske profilmålinger i iltsvindsprogrammet foregår som udgangspunkt to gange om måneden i tidsrummet juli-november for fjorde og kystvande, dog i juni-oktober for Limfjorden ... Svovlbrinte måles, når der er begrundet mistanke om forekomst heraf.",
+   "our_reading": "The oxygen window is set by mechanism, not by convenience - the stratified season is when stratification-driven hypoxia occurs. That makes seasonal claims drawn from it non-circular. It does mean December-May bottom-water oxygen is observed only through the 64-79 routine stations at two samples a month.",
+   "verified_by_reading": true
+  },
+  "sediment_nutrient_pools": {
+   "parameters": "total N, total P, iron-bound phosphate, dry matter, loss on ignition, density, in seven depths of the top 10 cm",
+   "frequency": "once, in 90 of the 109 water bodies over five years; 16-19 stations per year",
+   "window": "January-February",
+   "window_reason_verbatim": "Prøverne indsamles én gang på det tidspunkt af året, hvor sedimentet er mest oxideret (januar-februar).",
+   "our_reading": "The internal-loading pool is sampled at its annual redox maximum, by design. That is defensible for a comparable long-term pool measurement and it is the opposite of the state - warm, anoxic, releasing - that the mechanistic models say drives internal loading in summer. The pool size is measured; the summer flux is modelled.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+  "eelgrass_and_other_flowering_plants": {
+   "method": "maximum depth limit, main distribution and percentage cover on transects, by diver or video sled",
+   "window": "once, 1 June - 30 September",
+   "transects_total": 502,
+   "control_transects_annual": 139,
+   "operational_transects": "353, 1-4 times in the five-year period",
+   "transects_per_water_body": "1 to 16, depending mainly on water body size",
+   "water_bodies_covered": "103 of 109, with annual control monitoring in 25",
+   "verified_by_reading": true
+  },
+  "macroalgae": {
+   "window": "once, 1 June - 31 August, by diver",
+   "transects_total": 120,
+   "water_bodies_covered": "38 of 109, with annual control monitoring in 14",
+   "verified_by_reading": true
+  },
+  "soft_bottom_fauna": {
+   "window": "1 March - 31 May",
+   "verbatim": "Overvågningen af blødbundsfaunaen gennemføres i tidsrummet 1. marts-31. maj.",
+   "samples_per_station": 42,
+   "stations_total": 110,
+   "control_stations_annual": 15,
+   "operational_stations_every_third_year": 95,
+   "stations_sampled_in_a_given_year": "45-49",
+   "coverage": "all 109 water bodies over the five-year period",
+   "our_reading": "This confirms the claim this project has been making. The benthic community is counted in spring. An autumn kill is observed the following March at the earliest, after recolonisation has begun, and in most water bodies only every third year. The event that determines which organisms are present to receive the next year's nitrogen is not directly observed anywhere in the programme.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+  "what_changed_in_2023": {
+   "verbatim": "Dette er en opjustering i forhold til NOVANA 2017-21, hvor der ikke forekom overvågning af fytoplankton (her klorofyl) og bundfaunakvalitetselementet i alle vandområder.",
+   "our_reading": "The VP3 indsatsbehov was computed on the 2017-21 programme, under which chlorophyll and benthic fauna were NOT monitored in every water body. The improvement is real and it postdates the numbers now in force.",
+   "verified_by_reading": true
+  },
+  "what_is_not_monitored_at_all": [
+   "fedtemøg as a shore condition - no extent, no biomass, no duration, no national programme",
+   "eelgrass biomass - only cover and depth limit; the mechanistic models simulate biomass and therefore cannot be validated against a like quantity (del2, 5.2.1)",
+   "bottom-water oxygen December-May other than at the routine 64-79 stations"
+  ]
+ },
+
+ "model_level": {
+
+  "architecture": {
+   "_source": "del1 sections 1-4",
+   "three_instruments": [
+    "DCE statistical models - empirical regressions on monitoring station time series, Danish land loads only",
+    "DHI mechanistic models - 3D hydrodynamic-ecological simulation, all sources including foreign and atmospheric",
+    "meta-analysis - slopes borrowed from typologically similar water bodies for everything else"
+   ],
+   "vp2_coverage": {"statistical": "22 water bodies (29 stations)", "mechanistic": "45 water bodies", "meta_or_neighbour": "the remainder of 119"},
+   "integration_rules_verbatim": "1. I vandområder, hvor der er opstillet lokale mekanistiske modeller, benyttes i udgangspunktet indsatsbehov beregnet med denne type af model. 2. I inderfjorde, hvor der er opstillet statistiske modeller og ikke findes en mekanistisk lokalmodel, benyttes i udgangspunktet indsatsbehov beregnet med denne type af model. 3. Opstrøms vandområder med mindre indsatsbehov end nedstrøms vandområder dimensioneres efter nedstrøms indsatsbehov. 4. I områder, hvor fastlæggelsen er baseret på en meta-analyse, er indsatsbehovet som udgangspunkt beregnet som gennemsnit af indsatsbehov fundet ved de statistiske henholdsvis mekanistiske meta-model analyser. 5. I områder, hvor der hverken er data eller modeller, benyttes indsatsbehov for tilstødende vandområde.",
+   "our_reading": "Rule 5 is the one worth naming. Where there is neither data nor a model, the neighbour's number is used. In del1 Tabel 6, København Havn (area 9) receives 18% with the comment 'Øresund anvendt til at bestemme indsats til KBH'.",
+   "verified_by_reading": true
+  },
+
+  "statistical_models": {
+   "_source": "del3, sections 2-3",
+   "observational_base_verbatim": "Der er blevet udviklet statistiske modeller for 29 kystnære overvågningsstationer, som repræsenterer 22 vandområder (Figur 2). På disse 29 moniteringsstationer eksisterer lange tidsserier (> 15 år) for både forklaringsvariable (tilførsler, klima) og indikatorer, hvilket er en forudsætning for, at der kan opstilles robuste statistiske modeller. I udviklingen af modellerne er der brugt data fra perioden 1990-2012.",
+   "one_station_per_water_body_verbatim": "For de fleste vandområder er der kun en enkelt moniteringsstation med tilstrækkelig datadækning til statistisk modellering, og derfor betragtes denne station som repræsentativ for vandområdet. Vandområderne vil dog indeholde rumlige gradienter og disse gradienter vil, sammen med placeringen af moniteringsstationen være afgørende for, hvor repræsentativ stationen - og dermed det beregnede indsatsbehov - er for vandområdet.",
+   "model_form": "Iterative cross-validated multiple linear regression selecting on lowest RMSECV, then PLS regression on the selected variables. Data split 3/4 calibration and 1/4 validation for selection; the final parametrisation uses the whole dataset.",
+   "final_fit_uses_all_data_verbatim": "Når forklaringsvariablene er blevet udvalgt parametriseres den endelige model ved brug af hele datasættet for indikatoren, dvs både kalibreringsdatasættet og valideringsdatasættet.",
+   "modelled_indicators": {"TN": "Jan-Dec", "TP": "Jan-Dec", "Chlorophyll a": "May-Sept", "Kd1": "Mar-June", "Kd2": "July-Sept"},
+   "candidate_explanatory_variables": ["Danish land-based N load", "Danish land-based P load", "Danish freshwater discharge", "wind energy", "irradiance", "salinity", "water column stability (BV)", "surface water temperature"],
+   "candidate_periods": "each variable in 4, 8 or 12-month windows, stepped back monthly to January of the prior year - up to 43 period combinations per variable, all tested",
+   "acceptance_criteria_verbatim": "Den absolutte procentvise afvigelse mellem model og observation. Kriteriet for dette statistiske mål er tentativt sat til højst 30 %. R2 værdien - kriteriet for dette statistiske mål er tentativt sat til mindst 0,4. ... Om antallet af data punkter, som indgår i modellen, er tilstrækkeligt. Her er minimumsgrænsen tentativt sat til 15 datapunkter, hvor hvert datapunkt repræsenterer gennemsnit af målinger for en sæson (år).",
+   "reported_summary_verbatim": "Samlet set er der en gennemsnitlig absolut afvigelse på ca. 13 % mellem de modellerede og observerede indikatorværdier, hvor TN-, TP- og Kd-modellerne har en relativt lav afvigelse på ca. 11 %, mens klorofylmodellerne generelt har en noget højere afvigelse på ca. 20 %. Determinationskoefficienterne for alle modeltyperne har et gennemsnit på 0,56.",
+   "our_recount_of_their_table_3": {
+    "method": "Tabel 3 of del3 re-extracted from the PDF text layer and tallied. Our totals reproduce the paper's own summary (mean R2 0.567 vs their 0.56; mean deviation 13.6% vs their ~13%), which is the check that the extraction is sound.",
+    "fitted_indicator_models_with_numbers": 79,
+    "distinct_station_blocks": 22,
+    "mean_r2": 0.567,
+    "mean_absolute_deviation_pct": 13.6,
+    "models_below_their_own_R2_criterion_of_0.4": 13,
+    "models_above_their_own_30pct_deviation_criterion": 3,
+    "models_flagged_with_systematic_deviations": 28,
+    "models_failing_at_least_one_numeric_criterion": 15,
+    "worst_examples": [
+     {"area": "Ringkøbing", "indicator": "TP", "deviation_pct": 16.4, "r2": 0.09},
+     {"area": "Nissum", "indicator": "TP", "deviation_pct": 11.3, "r2": 0.18},
+     {"area": "Odense (st. 17)", "indicator": "Chl a", "deviation_pct": 8.9, "r2": 0.20},
+     {"area": "Ringkøbing", "indicator": "Kd2", "deviation_pct": 14.7, "r2": 0.23},
+     {"area": "Løgstør", "indicator": "TN", "deviation_pct": 18.4, "r2": 0.24},
+     {"area": "Skive", "indicator": "Chl a", "deviation_pct": 31.5, "r2": 0.27},
+     {"area": "Thisted", "indicator": "Chl a", "deviation_pct": 45.3, "r2": 0.49}
+    ],
+    "our_reading": "The models are not uniformly weak and they are not uniformly strong. The good ones are genuinely good - Ringkøbing TN R2 0.96, Vejle TP 0.97, Riisgårde TP 0.92, Randers TN 0.86. About a fifth fall below the authors' own stated acceptance threshold and are still carried in Tabel 6, marked yellow rather than green. A third carry systematic deviations. That is a defensible way to run a screening exercise and an indefensible basis for a per-catchment quota, and the difference is entirely in what the number is subsequently used for.",
+    "our_reading_is_inference": true,
+    "verified_by_reading": true
+   },
+   "the_window_determines_the_cause": {
+    "verbatim": "Det er dog som hovedregel fosfortilførslen, der styrer klorofylkoncentrationen i forårsperioden (resultater ikke vist), men da denne periode ikke er inkluderet i den interkalibrerede klorofylindikator, er det kvælstoftilførslen, der oftest udvælges som forklaringsvariabel for klorofylkoncentrationen.",
+    "our_reading": "This is the single most consequential sentence in del3. Phosphorus governs spring chlorophyll. The EU-intercalibrated chlorophyll indicator is May-September, which excludes spring. Nitrogen is therefore the variable that gets selected. The choice of indicator window is doing causal work, and the authors say so plainly, in parentheses, with the supporting results not shown.",
+    "our_reading_is_inference": false,
+    "verified_by_reading": true
+   },
+   "self_stated_limitation_regime_shift_verbatim": "Da modellerne er opstillet, kalibreret og valideret i en periode med relativt høje næringsstoftilførsler er beregningen af indsatsbehovet afhængig af, at de fundne relationer (hældningskoefficienter) mellem indikatorer og N-tilførsler ikke ændres over tid f.eks. som følge af regimeskift, klimaændringer mm. Det er imidlertid ikke muligt at forudsige om og evt. hvornår der vil indtræffe f.eks. regimeskift bl.a. fordi det empiriske grundlag for oliogotrofieringsprocessen er mangelfuldt og derfor er det vigtigt løbende at monitere systemerne og sikre at model prædiktionerne er valide.",
+   "self_stated_limitation_TN_bias_verbatim": "TN-modellerne har generelt en tendens til systematiske afvigelser over tid, idet de høje TN-koncentrationer observeret i starten af 1990'erne underestimeres, mens de lave TN-koncentrationer i sidste del af perioden overestimeres. Dette tilskrives tidsforsinkelsen pga. ophobning af organisk bundet kvælstof i sedimenterne.",
+   "verified_by_reading": true
+  },
+
+  "mechanistic_models": {
+   "_source": "del2, sections 2-6",
+   "_directive_question": "Do the mechanistic models contain stratification, temperature and seasonality that the statistical models lack?",
+   "_answer": "Yes, all three, explicitly and as resolved state variables - and also oxygen, sediment redox chemistry and eelgrass feedbacks. Any claim by this project that no model of the Danish system contains these things is false and must be withdrawn. What is true is narrower and survives: none of it reaches the indsatsbehov, because only two indicators are extracted from these models and oxygen is not one of them.",
+   "models": {
+    "count": 5,
+    "list": ["regional: Indre danske farvande, including the whole Baltic to Skagerrak", "local: Limfjorden", "local: Odense Fjord", "local: Roskilde Fjord", "Nordsøen (hydrodynamic/advection only; no ecosystem module, no eelgrass)"],
+    "with_ecosystem_module": 4,
+    "water_bodies_accepted_as_usable": 45,
+    "vp3_successor": "11 mechanistic models over 107 coastal water bodies (Erichsen et al. 2023) - not read here"
+   },
+   "form": {
+    "dimensions": 3,
+    "state_variables": "more than 50 primary state variables, about half benthic and half pelagic, plus derived variables",
+    "time_step": "a few minutes",
+    "output_interval": "24 hours",
+    "simulated_period": "2002-2011; first five years treated as spin-up; only 2007-2011 used for status and indsatsbehov",
+    "initialisation": "3-dimensional fields from NOVANA measurements in December-January before the first year"
+   },
+   "contains_stratification": {
+    "answer": true,
+    "evidence_verbatim": "Disse differentialeligninger benyttes til at beskrive i) fysiske forhold som strøm, salinitet og vandtemperatur, ii) vandtransport, og iii) biologiske processer som primærproduktion, iltforbrug, optag af næringssalte mm.",
+    "further_verbatim": "Vandområdet Lovns, Skive, Riisgårde, Bjørnholms Bugt er kendetegnet ved lagdeling gennem en stor del af sommeren, som giver perioder med iltsvind eller kraftigt iltsvind mere eller mindre regelmæssigt gennem sommermånederne.",
+    "validation_criteria_verbatim": "Under kalibreringen af modellerne bestræbes på at opnå statistiske mål svarende til BIAS <= 1psu/1°C og RMSE <= 2psu/2°C for mindst 80% af alle overflade- og bundmålinger i de åbne farvande og BIAS <= 2psu/2°C og RMSE <= 4psu/4°C i kystnære stationer og lokal modeller.",
+    "note": "Stratification is not a parameter; it is the emergent result of solving temperature and salinity in three dimensions. The validation is on salinity and temperature at surface and bottom, which is the right thing to validate.",
+    "verified_by_reading": true
+   },
+   "contains_temperature": {"answer": true, "evidence_verbatim": "Produktionen af fytoplankton (primærproduktionen) er bestemt af vandtemperaturen og tilgængeligheden af næringsstoffer og lys.", "verified_by_reading": true},
+   "contains_seasonality": {
+    "answer": true,
+    "evidence_verbatim": "Ved at beskrive denne dynamik kan modellerne simulere dag-til-dag, måned-til-måned og år-til-år variationer i en række miljøvariable",
+    "further": "The chlorophyll:carbon ratio is dynamic and varies over the year. Sediment N and P pools accumulate in autumn/winter/early spring and are released over summer.",
+    "further_verbatim": "Med indarbejdelsen af sedimentpuljer af N og P i modellen beskrives både ophobning af kvælstof og fosfor (efterår/vinteren og tidlige forår) og frigivelse af N og P over sommeren, når vandet er varmt og i forbindelse med iltsvind. Modellerne beskriver dermed de vigtigste processer i den interne belastning.",
+    "verified_by_reading": true
+   },
+   "contains_oxygen_and_iltsvind": {
+    "answer": true,
+    "evidence_verbatim": "En vigtig miljøfaktor, der påvirker pelagiske og bentiske dyr og planter, er iltkoncentrationen og især forekomst og varighed af eventuelle iltsvind. Udover at øge dødeligheden hos planter og dyr, så har iltsvind også store effekter på stofomsætningen og frigivelse af kvælstof og fosfor fra sediment til vandfasen, foruden forekomsten af sulfid. De mekanistiske modeller beskriver iltkoncentrationerne i alle vanddybder gennem hele året, og inkluderer effekter af iltsvind på både ålegræs og filtrerende bunddyr.",
+    "sediment_redox_verbatim": "I sedimentmodellen bindes fosfat (PO43-) under iltede forhold til oxideret jern (Fe3+), og dermed begrænses udvekslingen med vandfasen. Hvis jernatomerne reduceres (til Fe2+, som følge af lave iltkoncentrationer), frigives PO43- igen til porevandet ... Ved lave iltkoncentrationer kan nitrat (NO3-) denitrificeres til frit kvælstof, N2 ... I perioder med lave iltkoncentrationer i sediment og vandfasen øges frigivelsen af ammonium fra sedimentet til vandfasen.",
+    "eelgrass_feedback_verbatim": "I begge modeller er bølger og strøms indflydelse på ophvirvlingen af sediment og dermed lyssvækkelsen koblet til ålegræsbiomassen, således at stigende ålegræsbiomasse mindsker den resulterende lyssvækkelse. Der er således en feedback mekanisme i modellerne, der beskriver ålegræssets indflydelse på lysforholdene.",
+    "our_reading": "The mechanistic models contain, as coupled dynamics, most of what this project has argued the accounting cannot represent: hypoxia-driven internal loading, denitrification, ammonium release, sulphide, eelgrass loss as a self-reinforcing state, and resuspension. The alternative-stable-states argument this project makes is not absent from the Danish science. It is inside the model and outside the indicator set.",
+    "verified_by_reading": true
+   },
+   "validation": {
+    "who": "DHI, against NOVANA data 2002-2011, plus expert review",
+    "expert_review_verbatim": "Overordnet omfatter valideringen 2 elementer: a) en ekspertgennemgang af resultaterne for tjek af overordnede mønstre (fx sæsonvariationer) og b) en numerisk sammenligning med overvågningsdata. Ekspertgennemgangen bygger primært på den eksisterende viden om de hydrografiske, kemiske og biologiske forhold i de marine vandområder, da der generelt ikke findes data med samme geografiske dækning som modelresultaterne.",
+    "indre_danske_farvande": {
+     "validation_stations": 12,
+     "note": "Twelve NOVANA water-quality stations, evenly split between coastal and open-water, for a model covering Kattegat, the Belt Sea and the western Baltic including Bornholm.",
+     "TN_bias": "~15%", "TP_bias": "~20%", "DIN_bias": "~15%", "DIP_bias": "~35%",
+     "bottom_oxygen": "BIAS < 0.5 mg/l, R2 = 0.83",
+     "chlorophyll_full_period": "BIAS < 30% (0.7 µg/l), R2 = 0.36",
+     "chlorophyll_summer_indicator_window": "BIAS 0.3 µg/l, R2 = 0.71",
+     "Kd": "BIAS < 20%",
+     "eelgrass_biomass": "could not be validated systematically",
+     "eelgrass_verbatim": "med de større beregningsceller i IDF modellen, samt en måledatadækning som er begrænset set ift. modellens store domæne, har det ikke været muligt at validere IDF modellens ålegræsbiomasse systematisk."
+    },
+    "limfjorden": {
+     "validation_stations": "12, of which 3 excluded for lack of real data",
+     "eelgrass_transects": "about 40",
+     "TN_TP_bias": "~10%, R2 = 0.57", "DIN": "BIAS < 20%, R2 = 0.72", "DIP": "BIAS 25%, R2 = 0.46",
+     "chlorophyll": "BIAS 1.9 µg/l (~25%), R2 = 0.48; along-fjord gradient R2 = 0.95",
+     "eelgrass_biomass_vs_cover": "R2 = 0.35, BIAS ~20%, described by the authors as state-of-the-art for such a parameter",
+     "Kd": "BIAS < 10%, from the 7 stations that measure Kd"
+    },
+    "our_reading": "Bottom-water oxygen at R2 0.83 is the strongest single validation number in either document, and it is for the quantity this project has argued has no model. Chlorophyll over the full year is R2 0.36 and over the indicator window R2 0.71 - the model is markedly better at the thing it is scored on than at the year as a whole, and the authors explain why: the spring and autumn blooms, where the timing errors live, fall outside the summer indicator.",
+    "our_reading_is_inference": true,
+    "verified_by_reading": true
+   },
+   "how_the_slope_is_obtained": {
+    "runs_per_model": 8,
+    "composition": "1 present-day run; 6 reduction runs; 1 reference run at pre-industrial loading",
+    "reduction_design_verbatim": "For N-tilførslen er der fastlagt 3 reduktions-niveauer af tilførsler af N fra danske oplande. Dvs. i en given modelkørsel reduceres alle danske kvælstoftilførsler med samme procenttal.",
+    "levels": "N at present minus 15%, minus 30%, minus 60%; each crossed with P at present or P minus 10-20%",
+    "the_slope_is_a_line_through_three_points_verbatim": "Der er beregnet 2 trendlinjer for kvælstof (P-tilførsel som nutid og reduceret 10-20% ift. nutid) ... De 5 trendlinjer er baseret på resultaterne fra de 3 modelkørsler, hvor N er reduceret 15%, 30% eller 60%.",
+    "linearity_claim_verbatim": "Relationens trendlinje er vist som en ret linje. Reelt er den svagt buet (konkav), men inden for det spektrum, som er dækket af modelkørslerne, er forskellen fra en retlinjet funktion ikke signifikant.",
+    "everything_else_frozen_verbatim": "Vedrørende de øvrige input- og drivdata svarer de til dem, der er anvendt i modeludviklingen og dermed til nutidskørslerne. Det vil sige, at alt andet end næringstilførslerne er holdt konstant.",
+    "and_again_verbatim": "Alle andre ydre forhold er fastholdt uændrede.",
+    "foreign_loads_assumed_reduced": "In every reduction run, non-Danish Baltic loads are reduced per HELCOM BSAP (assumed fulfilled by 2021, by decision of Naturstyrelsen) and atmospheric deposition per the Gothenburg Protocol.",
+    "phosphorus_result_verbatim": "Fosfor-reduktionsscenarierne viser, at reduktioner ikke har effekt på de to indikatorer fytoplankton-sommerklorofyl og ålegræs-proxyen sommer-Kd, hvorfor de endelige opgørelser af indsatsbehov alene bygger på modelkørslerne, hvor der kun er ændret på kvælstoftilførslen.",
+    "our_reading": "This is the design, stated by the designers, and it is the right design for the question they were asked - what does reducing Danish nitrogen do. It is the wrong instrument for the question the number is used to answer in public - what caused the observed state. A slope obtained by varying one input while freezing meteorology, climate, boundary hydrography and every other pressure is a partial derivative. It cannot attribute an observed change, because nothing else was allowed to vary.",
+    "our_reading_is_inference": true,
+    "verified_by_reading": true
+   },
+   "indicators_extracted_for_indsatsbehov": {
+    "count": 2,
+    "list": ["phytoplankton summer chlorophyll (May-September)", "eelgrass proxy summer Kd (March-September)"],
+    "combination_verbatim": "Samlede indsatsbehov beregnes som gennemsnit af indsatsbehov for de to indikatorer",
+    "why_only_two_verbatim": "den nuværende modeludvikling fokuserer udelukkende på de EU interkalibrerede kvalitetselementer fytoplankton og bundvegetation",
+    "our_reading": "The model computes oxygen at all depths year-round, validated at R2 0.83, and none of it enters the indsatsbehov. The gate is not the physics and not the data. It is that only intercalibrated quality elements were in scope. Oxygen has no intercalibrated indicator, so the model's best-validated ecological output is not used to set the requirement.",
+    "our_reading_is_inference": true,
+    "verified_by_reading": true
+   },
+   "danish_share_of_the_indicator": {
+    "definition": "For each water body, the share of the indicator's distance from reference that Danish land-based nitrogen can move, if Danish loading went to reference level. The remainder is foreign loads, atmospheric deposition, internal sediment loading and - explicitly - climatic difference.",
+    "climate_bundled_in_verbatim": "For ålegræs-proxyen Kd, som bygger på måledata fra en anden klimatisk periode, kan klimatiske forskelle også indgå i dette bidrag.",
+    "range_verbatim": "Effekten af kvælstofreduktioner på indikatorerne varierer fra mindre end 5% til mere end 90%. Generelt påvirkes de mere lukkede vandområder mest, mens de åbne mere gennemstrømmede vandområder påvirkes i mindre grad.",
+    "selected_values_del2_tabel3": [
+     {"id": 1, "name": "Roskilde Fjord, ydre", "chlorophyll_pct": 72.8, "kd_pct": 57.2},
+     {"id": 2, "name": "Roskilde Fjord, indre", "chlorophyll_pct": 85.3, "kd_pct": 100.0},
+     {"id": 92, "name": "Odense Fjord, ydre", "chlorophyll_pct": 65.2, "kd_pct": 57.5},
+     {"id": 157, "name": "Bjørnholms Bugt, Riisgårde, Skive, Lovns", "chlorophyll_pct": 83.2, "kd_pct": 33.6},
+     {"id": 158, "name": "Hjarbæk Fjord", "chlorophyll_pct": 93.9, "kd_pct": 21.3},
+     {"id": 156, "name": "Nissum, Thisted, Kås, Løgstør, Nibe, Langerak", "chlorophyll_pct": 62.1, "kd_pct": 20.5},
+     {"id": 6, "name": "Nordlige Øresund", "chlorophyll_pct": 2.6, "kd_pct": 1.5},
+     {"id": 201, "name": "Køge Bugt", "chlorophyll_pct": 2.8, "kd_pct": 2.7},
+     {"id": 200, "name": "Kattegat, Nordsjælland", "chlorophyll_pct": 5.2, "kd_pct": 3.1},
+     {"id": 46, "name": "Fakse Bugt", "chlorophyll_pct": 1.0, "kd_pct": 0.7},
+     {"id": 56, "name": "Østersøen, Bornholm", "chlorophyll_pct": 0.2, "kd_pct": 0.3},
+     {"id": 208, "name": "Femerbælt", "chlorophyll_pct": 1.9, "kd_pct": 3.2}
+    ],
+    "our_reading": "This table is the strongest single piece of evidence in the whole chain, and it is theirs, not ours. DHI's own mechanistic model says Danish land-based nitrogen explains 2.8% of the chlorophyll indicator and 2.7% of the Kd indicator in Køge Bugt, and 2.6% / 1.5% in Nordlige Øresund. Del1 Tabel 6 then assigns København Havn an 18% indsatsbehov by copying Øresund's, because Copenhagen Harbour has no model of its own. The gradient across the table - 94% in Hjarbæk Fjord, 0.2% off Bornholm - is real, physically obvious and correctly modelled. It is also almost entirely absent from how the national total is discussed.",
+    "our_reading_is_inference": true,
+    "verified_by_reading": true
+   },
+   "self_stated_limitations_verbatim": [
+    "Vurdering af modellers usikkerheder baseres på flere forhold. Ud over usikkerhed på modellerne, er der en usikkerhed på overvågningsdata ... Denne usikkerhed kvantificeres ikke i denne rapport, som udelukkende ser på de usikkerheder, der relaterer sig til selve de mekanistiske modeller.",
+    "Enhver model er en forsimplet fremstilling af virkeligheden, og ingen model kan give en 100% afspejling af virkeligheden. De største afvigelser mellem modellers forudsigelser og de reelle forhold relaterer sig ofte til 'timingen', fx kan der være afvigelser på op til 2 uger for planktonalgernes opblomstring om foråret.",
+    "Hvis scenarierne derimod afviger meget fra de nuværende forhold (fx scenarier med store reduktioner i næringsstoftilførsler) kan det påvirke modelusikkerheden. Det er desværre ikke muligt at kvantificere sådanne scenariers modelusikkerheder, da der i sagens natur ikke findes data at holde modelresultaterne op imod, men generelt vil usikkerheden på modelresultaterne øges jo længere væk man kommer fra kalibreringsområdet.",
+    "Ved vurdering af resultater er det derudover også vigtigt at overveje fx opløsning i modellerne ..., betydningen af ekstremhændelser (som ikke udtrykkes i en models gennemsnitsbeskrivelse), muligheden for ændringer i økosystemstruktur, muligheden for systemskifter, m.v. Alle disse faktorer vil kunne have en vis betydning for modelresultaterne, men det er ikke mulige at beskrive betydningen systematisk."
+   ],
+   "verified_by_reading": true
+  },
+
+  "meta_analysis": {
+   "_source": "del3 section 6",
+   "principle_verbatim": "Den underliggende antagelse er, at et meta-område vil respondere på ændring i næringsstoftilførsel på samme måde som lignende vandområder, og de modellerede sammenhænge mellem indikatorer og tilførsler derfor kan overflyttes fra et område til et andet.",
+   "grouping": "By NST's coastal water typology, which contains a runoff index relating freshwater input to residence time. Two groups: 'Åbne fjorde/bugter, mindre ferskvandspåvirkede' (M1, M2, P1, P2) and 'Fjorde, noget ferskvandspåvirkede' (M3, M4, P3, P4).",
+   "indicators_dropped_verbatim": "De resterende indikatorer (sæsonfordelingen af DIP og Chl a samt N begrænsningsindikatoren) er afhængige af målinger jævnt fordelt over hele året, hvilket sjældent er forekommende i de områder, som ikke er dækket af modeller. Disse indikatorer er derfor ikke medtaget i analysen.",
+   "oxygen_assumed_absent_verbatim": "Iltsvindsindikatoren kræver relativt hyppige målinger især i iltsvindsperioden, før det kan afgøres, at der ikke forekommer iltsvind. I meta-analysen er det derfor antaget, at der ikke forekommer iltsvind, hvis de eksisterende iltmålinger viser, at der ikke forekommer lave iltkoncentrationer (< 4 mg L-1) i perioden 2007-2012.",
+   "our_reading": "In the meta-analysis water bodies the weighted average runs over three indicators, not five, weights 2 (chlorophyll) + 1 (oxygen) + 2 (Kd) = 5. We verified this arithmetic against their Tabel 7: Basnæs Nor 0/0/50 gives (0+0+100)/5 = 20, which is the published figure. Absence of evidence of hypoxia is treated as evidence of absence, and the paper says so.",
+   "verified_by_reading": true
+  }
+ },
+
+ "indsatsbehov_construction": {
+  "_source": "del3 sections 3-5, del1 section 4",
+  "core_equation": "indsatsbehov = 100 * ((Status - Miljømål) / Status) * (1 / hældning)",
+  "status_period": "2007-2012 (del3) / 2007-2011 (del1 and the mechanistic route)",
+  "status_preference_verbatim": "Når det er muligt benyttes imidlertid faktiske målinger i stedet for modelberegninger til at fastlægge statusværdien.",
+  "slope_is_extrapolated": "The slope is taken from a linear relation extrapolated to the target value (del3 Figur 4 caption: 'ekstrapoleret til miljømålsværdien').",
+
+  "five_indicators_and_weights": {
+   "table": [
+    {"indicator": "Chlorophyll", "weight": 2, "intercalibrated": true, "how_indsatsbehov_is_derived": "continuous, directly from the fitted slope"},
+    {"indicator": "Iltsvind", "weight": 1, "intercalibrated": false, "how_indsatsbehov_is_derived": "binary trigger, then a flat 25% cut in TN concentration"},
+    {"indicator": "DIP and Chl a seasonality (ecological effect of iltsvind)", "weight": 1, "intercalibrated": false, "how_indsatsbehov_is_derived": "same binary trigger and same flat 25%"},
+    {"indicator": "N-limitation", "weight": 1, "intercalibrated": false, "how_indsatsbehov_is_derived": "computed from an exponential DIN-TN relation to reach a target number of N-limited days"},
+    {"indicator": "Kd / eelgrass proxy", "weight": 2, "intercalibrated": true, "how_indsatsbehov_is_derived": "the distance is computed continuously, then binned into 0, 25, 50 or 75 percent"}
+   ],
+   "formula": "samlet indsatsbehov = (2*X1 + X2 + X3 + X4 + 2*X5) / 7",
+   "verified_by_reading": true
+  },
+
+  "why_an_average_and_not_a_maximum_verbatim": "Hvis det skulle sikres, at alle indikatorer opnåede deres miljømål skulle det maksimale indsatsbehov anvendes i stedet for et gennemsnit af de beregnede indsatsbehov. Der er imidlertid en række usikkerheder forbundet med beregning af indsatsbehov for de enkelte indikatorer herunder usikkerhed på bestemmelse af indikatorerne statusværdi og miljømål samt i de modeludledte hældningskoefficienter. Ved at anvende et gennemsnit af flere indikatorer, som alle er et mål for den økologiske tilstand, reduceres usikkerheden på beregningen af det samlede indsatsbehov, hvilket minimerer risikoen for overimplementering af indsatsbehovet.",
+
+  "oxygen_indicator": {
+   "definition": "Fraction of the time oxygen is below 4 mg/L and below 2 mg/L, in the month with the most low-oxygen days. Six years of data give one indicator value per six years.",
+   "trigger_verbatim": "Indsatsbehov, hvis der er kraftigt iltsvind >= 10 % af tiden ELLER, hvis der er moderat iltsvind >= 50 % af tiden, da begge forhold vil påvirke bl.a. bundfauna",
+   "the_25_percent_verbatim": "Hvis én eller flere af iltsvindsindikatorerne indikerer, at et vandområde er iltsvindsramt, fastsættes et indsatsbehov på 25 % af den nuværende TN-koncentration i vandområdet. Dette indsatsbehov er valgt ud fra, at det skal være tilstrækkeligt stort til at rykke systemet, dvs. være større end de normale år-til-år variationer, og det vurderes at en 25 % reduktion i TN-koncentrationen er minimumskrav for at ændre systemet.",
+   "causation_acknowledged_verbatim": "Iltsvind opstår som følge af komplekse sammenspil mellem mængden af dødt organisk stof, klimatiske forhold og vandområdets hydrografi. I kontekst af vandrammedirektivet er iltforholdene en støtteparameter, og der findes ikke en interkalibreret indikator for ilt.",
+   "detection_verbatim": "Da målingerne af ilt foretages med en frekvens, som ikke nødvendigvis fanger kortvarige iltsvind, vil det i nogle områder være muligt at detektere økologiske effekter af iltsvind, uden at der direkte er målt iltsvind. På tilsvarende vis kan der forekomme kortvarige iltsvind, uden det resulterer i målbare økologiske effekter.",
+   "our_reading": "The 25% is a concentration reduction, not a loading reduction. It is converted to a loading reduction through the water-body-specific TN slope, which is why del3 Tabel 6 shows oxygen indsatsbehov of 79%, 67%, 70%, 0% and so on rather than a uniform 25. The judged figure is the concentration cut; the variation across water bodies comes from the fitted TN model, not from the severity of the hypoxia. Two water bodies with identical hypoxia and different TN slopes get different requirements; two water bodies with wildly different hypoxia and the same slope get identical ones. There is no dose-response between oxygen conditions and the required reduction, and the paper does not claim there is.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+
+  "kd_indicator": {
+   "banding_verbatim": "afstandKd = ((statusKd - miljømålKd)/statusKd) * (1/hældningKd); indsatsbehovKd = 0 if afstand < 0.25; 0.25 if 0.25 < afstand <= 1.0; 0.5 if 1.0 < afstand <= 2.0; 0.75 if afstand > 2.0",
+   "self_stated_limitation_verbatim": "Både brugen af Kd-indikatoren i stedet for ålegræssets dybdegrænse og kategoriseringen af indsatsbehov betyder, at der ikke nødvendigvis vil komme ålegræs til måldybden, selvom den danske kvælstoftilførsel reduceres i overensstemmelse med de beregnede reduktionskrav.",
+   "why_not_eelgrass_directly": "Eelgrass depth limit 'kan ikke umiddelbart beskrives med statistiske modeller' because of the long re-establishment response time. Kd is used as proxy, converted from the eelgrass depth target on an assumption that light at the target depth is 14% of surface irradiance (studies give a range of 11-20%).",
+   "proxy_runs_both_ways_verbatim": "Status på Kd indikatoren > Kd beregnet ud fra status på ålegræssets dybdegrænse, dvs den observerede dybdegrænse for ålegræs viser, at lysforholdene er bedre end Kd målingerne indikerer. I disse tilfælde beregnes Kd status ud fra observerede ålegræs dybdegrænser.",
+   "target_deeper_than_the_water_verbatim": "Ålegræssets målsatte dybdegrænse > vanddybde og miljømål for Kd beregnes i stedet ud fra vanddybde",
+   "our_reading": "Every Kd value in del3 Tabel 6 and Tabel 7 is 0, 25, 50 or 75. That is not a coincidence and not rounding - it is equation (3). An indicator carrying two of seven weight units contributes one of four fixed values. Separately, in nine of the 22 meta-analysis water bodies the eelgrass target depth exceeds the actual water depth, so the Kd target is computed from the water depth instead; and in several others the observed eelgrass shows better light than the Kd measurements, so Kd status is computed backwards from eelgrass. The proxy is used in both directions, which means Kd and eelgrass are not independent lines of evidence.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+
+  "n_limitation_indicator": {
+   "definition": "Number of days per year with DIN below 2 µmol/L.",
+   "targets": "at least 150 days for fjords, at least 200 days for open areas",
+   "the_150_days_verbatim": "Empiriske analyser har vist, at algevæksten i kystnære havområder skal være kvælstofbegrænset i minimum 150 dage, før der kan ses en signifikant sammenhæng mellem klorofylkoncentrationer og kvælstofkoncentrationer (Fig 5).",
+   "figure_caption": "Figur 5: Sammenhæng mellem klorofylkoncentration om sommeren og det årlige antal dage med næringsstofbegrænsning i danske fjorde",
+   "target_TN_equation": "1 = x/365 * exp(-k * miljømålTN), where k is a station-specific constant from the empirical DIN-TN relation and x is the required number of N-limited days.",
+   "our_reading": "This is the most self-aware part of the whole method and it is rarely quoted. The authors state that below 150 N-limited days there is no significant chlorophyll-nitrogen relationship at all - that is, their own central mechanism does not operate. Their response is not to exclude those water bodies but to add to the indsatsbehov the reduction needed to make nitrogen limiting in the first place. That is a defensible engineering choice and it is also an admission that in those water bodies the requirement is not being derived from a measured dose-response. We have not seen Figur 5 itself - the underlying dataset, its size and its scatter are unverified here.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+
+  "results_vp2": {
+   "national_indsatsbehov_tons_N_per_year": 19080,
+   "national_maalbelastning_tons_N_per_year": 41988,
+   "mean_indsatsbehov_pct": {"mechanistic": 23, "statistical": 37, "final": 29},
+   "chlorophyll_indsatsbehov_exceeding_100pct_of_current_load": ["Lillebælt 134%", "Haderslev Fjord 135%", "Holckenhavn Fjord 126%", "Stege Nor 122%", "Hejlsminde Nor 109%", "Avnø Vig 106%", "Horsens Fjord ydre 105%", "Storebælt Romsø 103%", "Mariager Fjord indre 101%", "Kås 101%"],
+   "our_reading": "A chlorophyll indsatsbehov above 100% means the linear relation, extrapolated to the target, reaches the target only past zero Danish loading. These values are averaged down by the other indicators in the composite, so they do not appear in the final numbers - but they are the clearest visible signature of extrapolating a fitted line beyond the range of the data that fitted it.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+
+  "uncertainty": {
+   "_source": "del1 section 5",
+   "method": "ensemble - the spread between the mechanistic and statistical estimates in the water bodies where both exist",
+   "water_bodies_with_both_models": 11,
+   "of_total": 119,
+   "the_eleven": [
+    {"id": 2, "name": "Roskilde Fjord, indre", "mek_pct": 4, "stat_pct": 11},
+    {"id": 44, "name": "Hjelm Bugt", "mek_pct": 0, "stat_pct": 18},
+    {"id": 92, "name": "Odense Fjord, ydre", "mek_pct": 23, "stat_pct": 26},
+    {"id": 96, "name": "Storebælt, NV", "mek_pct": 34, "stat_pct": 44},
+    {"id": 102, "name": "Åbenrå Fjord", "mek_pct": 41, "stat_pct": 50},
+    {"id": 147, "name": "Århus Bugt, Kalø og Begtrup Vig", "mek_pct": 7, "stat_pct": 2},
+    {"id": 156, "name": "Limfjorden vest", "mek_pct": 37, "stat_pct": 31},
+    {"id": 157, "name": "Skive og Lovns", "mek_pct": 52, "stat_pct": 60},
+    {"id": 214, "name": "Det Sydfynske Øhav", "mek_pct": 30, "stat_pct": 40},
+    {"id": 216, "name": "Lillebælt, syd", "mek_pct": 36, "stat_pct": 32},
+    {"id": 224, "name": "Nordlige Lillebælt", "mek_pct": 56, "stat_pct": 58}
+   ],
+   "reported_per_water_body_uncertainty": "6% to 28%, mean 16%, at the 95% level",
+   "reported_national_uncertainty": "41,988 +/- 1,714 t N/yr on målbelastning; +/- 9% on indsatsbehov",
+   "no_ground_truth_verbatim": "Da der ikke findes dokumentation for den 'rigtige' målbelastning, kan man ikke på traditionel vis bestemme, hvor sikkert modellerne estimerer målbelastningen.",
+   "what_the_band_excludes_verbatim": "Den usikkerhed, som er beregnet her, forholder sig udelukkende til usikkerheden på effekt i forhold til en reduktion i kvælstof, og det vil sige den model-tekniske usikkerhed. Usikkerhedsanalysen inkluderer ikke eventuelle usikkerheder på målinger, fastlæggelse af statusværdier og bestemmelse af miljømål.",
+   "the_national_figure_is_an_illustration_verbatim": "Det er ikke umiddelbart muligt at beregne den kumulerede usikkerhed på landsplan, da usikkerheden på bestemmelse af målbelastningen for de ikke-ensemble modellerede vandområder er ukendt. For illustrationens skyld kan man antage, at variansen estimeret for de ensemble modellerede områder kan overføres til de resterende områder ved skalering med målbelastningen.",
+   "independence_assumption_verbatim": "Modellerne er uafhængige af hinanden ... Der er meget stor forskel på de to modeltyper (statistiske versus mekanistiske) og derudover er metoderne til at beregne den endelige målbelastning ... forskellig, hvorfor en antagelse om uafhængighed holder.",
+   "common_mode_caveat_verbatim": "Det skal dog bemærkes, at eventuelle ændringer i økosystemernes opførsel (f.eks. pga. regimeskift, klimaændringer mm), sandsynligvis vil bevirke, at begge modeltyper systematisk vil over eller underestimere målbelastningen. Det er dog ikke muligt, at forudsige systemændringer.",
+   "our_reading": "The published national uncertainty of plus or minus 9% is honest about being an illustration and is routinely quoted as if it were a measurement. Three things narrow it that should not be forgotten: it rests on 11 of 119 water bodies; it covers only the slope, not the status value or the target value; and the two models it compares share their status data (NOVANA), their chlorophyll target derivation and their 14% eelgrass light assumption. Independence holds for the slope and nowhere else - which is exactly what the authors claim, no more. On the 11 water bodies themselves the two methods differ by 0 vs 18 percentage points in Hjelm Bugt and 2 vs 7 in Århus Bugt. This is the project's own principle of independent checks with unrelated failure modes, applied by them, and it is the strongest methodological thing in the chain.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  }
+ },
+
+ "targets": {
+  "chlorophyll_target_derivation": {
+   "method_verbatim": "Miljømålet er bestemt ved ensemble-modellering af klorofylkoncentrationen i en referencesituation, hvorefter den EU-interkalibrerede Ecological Quality Ratio (EQR) værdi på 0,6, som beskriver forholdet mellem referenceværdien og G-M grænseværdien er benyttet til at beregne G-M grænseværdien",
+   "the_supporting_reference_was_unwritten": {
+    "reference_12_in_del3": "Notat om bestemmelse af grænseværdier for klorofyl (under udarbejdelse)",
+    "our_reading": "The target value for the single heaviest-weighted indicator is supported, in the April 2015 method document, by a note that had not been written. That does not make the value wrong. It does mean the derivation was not publicly checkable at the moment the method was published.",
+    "verified_by_reading": true
+   }
+  },
+  "the_vp3_recalculation_and_the_intercalibration_gap": {
+   "_source": "so_bg chapter 4 and Bilag A and C, quoting Herman et al. 2023 in Danish translation",
+   "panel_finding_verbatim": "Opdateringen af referenceværdier i VP3 har - på grund af en tilsvarende justering af G/M-grænseværdier - ført til uoverensstemmelser mellem de afledte G/M-grænseværdier og de interkalibrerede G/M-grænseværdier, som ligger til grund for EU-Kommissionsbeslutning 2018/229.",
+   "panel_recommendation_verbatim": "Der rådes til at sikre, at G/M-grænseværdier i åbne kystvande stadig er i overensstemmelse med Europa-Kommissionens beslutning. Det anbefales især at ophæve nedjustering af G/M-grænseværdierne i de åbne danske kystvande.",
+   "translation_caveat_verbatim": "Der gøres opmærksom på, at der i forbindelse med ministeriernes oversættelse kan være truffet redaktionelle valg for at understøtte formidlingen af panelets anbefalinger.",
+   "scenarios": {
+    "1": "no refitting; chlorophyll targets as in VP3. Described as the model group's view of the scientifically most correct solution.",
+    "2": "refitting in 13 open coastal water bodies, back to the intercalibration basis. The model group's alternative.",
+    "3": "refitting in 28 coastal water bodies. The taskforce's proposal, judged consistent with the phase II panel."
+   },
+   "worked_numbers_G_over_M_chlorophyll_ug_per_l": [
+    {"id": 201, "name": "Køge Bugt", "gig": "BC6", "vp3": 1.3, "intercalibrated_scenario_2_and_3": 1.72, "vp3_is_stricter_by_pct": 24},
+    {"id": 6, "name": "Nordlige Øresund", "gig": "NEA8b", "vp3": 1.5, "intercalibrated_scenario_2_and_3": 1.63, "vp3_is_stricter_by_pct": 8},
+    {"id": 205, "name": "Kattegat, Nordsjælland >20 m", "gig": "NEA8b", "vp3": 0.9, "intercalibrated_scenario_2_and_3": 1.58, "vp3_is_stricter_by_pct": 43},
+    {"id": 56, "name": "Østersøen, Bornholm", "gig": "BC6", "vp3": 1.0, "intercalibrated_scenario_2_and_3": 1.72, "vp3_is_stricter_by_pct": 42},
+    {"id": 222, "name": "Kattegat, Aalborg Bugt", "gig": "NEA8b", "vp3": 1.9, "intercalibrated_scenario_2_and_3": 1.58, "vp3_is_stricter_by_pct": -20}
+   ],
+   "our_reading": "In most of the open coastal water bodies the VP3 boundary is stricter than the value Denmark intercalibrated with Sweden and Germany, in one case by 43%. In Aalborg Bugt it goes the other way. This is not our finding; it is the finding of an international panel, restated by a Danish cross-ministerial taskforce, and it is on the record. It matters here for one specific reason: the indsatsbehov equation divides by the distance from status to target, so a stricter target does not scale the requirement gently - it moves the numerator directly.",
+   "our_reading_is_inference": true,
+   "verified_by_reading": true
+  },
+  "conditionality": {
+   "some_targets_unreachable_verbatim": "de danske klorofylmål i VP3 ikke vil være mulige at indfri uden yderligere indsatser fra andre lande eller supplerende indsatser målrettet atmosfærisk kvælstofdeposition, som vil ligge udover de reduktioner, som landene har forpligtet sig til",
+   "assumptions_baked_in_verbatim": "Indsatsbehovet i VP3 og i scenarierne i second opinion er opgjort under forudsætning af realisering af disse antagelser.",
+   "consistent_with_del2": "Every mechanistic reduction run assumes BSAP fulfilled by 2021 and the Gothenburg Protocol met. If those assumptions fail, the Danish requirement computed against them is not conservative - it is too small, and the target is unreachable at any Danish reduction.",
+   "verified_by_reading": true
+  },
+  "foreign_and_atmospheric_share": {
+   "vp3_era_verbatim": "de danske landbaserede belastninger generelt står for 3-40 pct. af påvirkningen i de åbne kystvande, og i de mere lukkede områder står danske landbaserede belastninger for over 60 pct. af påvirkningen af klorofyl-a koncentrationer",
+   "scale_caveat_verbatim": "en 10 pct. reduktion fra danske landbaserede belastninger til indre danske vandområder kan svare til en reduktion på 3.000 tons N, mens en tilsvarende 10 pct. reduktion til Østersøen fra andre lande kan svare til fx 70.000 tons N",
+   "verified_by_reading": true
+  }
+ },
+
+ "policy_numbers": {
+  "vp2_national_indsatsbehov_t_N_per_yr": 19080,
+  "vp3_era_indsatsbehov_t_N_per_yr": 13000,
+  "after_load_data_update_t_N_per_yr": 12100,
+  "swing_from_a_data_update_alone_pct": 7,
+  "december_2025_agreement_t_N_per_yr": "about 10,100, of which 9,600 from nitrogen regulation and 500 from wastewater; catchment quotas from 2027; indsatsbehov to be revisited mid-2026",
+  "vp3_retningslinjer_verbatim": "Målbelastning og indsatsbehovet opgøres med bistand fra Aarhus Universitet (DCE), DTU Aqua og DHI, ved hjælp af Miljøstyrelsens modelværktøjer, som er udviklet af Aarhus Universitet (DCE) og DHI til Vandområdeplanerne 2015-2021. Modelværktøjerne er forbedret og videreudviklet til Vandområdeplanerne 2021-2027",
+  "our_reading": "The 13,000 to 12,100 tonne move came from updating the loading data alone, with no change of method, target or model. That is a 7% swing in the national requirement from one input revision - larger than the difference between several of the policy options being argued over, and roughly the size of the entire published national uncertainty band.",
+  "verified_by_reading": true
+ },
+
+ "our_claims_audit": {
+  "_method": "Every claim this project makes about the Danish marine evidence base, graded against the primary documents. SURVIVES / NEEDS QUALIFYING / FALSE. Finding our own errors is the point.",
+
+  "FALSE": [
+   {
+    "claim": "There is no coefficient anywhere between nitrogen and any outcome.",
+    "where": "docs/LANDBRUG.md, the 'In English' summary at the foot of the page",
+    "why_false": "Directly contradicted by the correction banner at the top of the same page, and by del3 Tabel 3 (79 fitted indicator-models) and del2 (a validated 3D ecosystem model). This is a live internal inconsistency on a published page.",
+    "action": "Rewrite the English summary to match the banner.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "Nitrogen to oxygen depletion: no coefficient, NOT COMPUTED. There is no ventilation term, no state variable. A kilogram in February into a mixed column counts the same as a kilogram in July under a pycnocline.",
+    "where": "docs/CAUSATION.md section 2 table; docs/NITROGEN.md section 3; docs/LANDBRUG.md section 3 table",
+    "why_false": "The DHI mechanistic models are 3D, run at minute time steps for ten years on real meteorology, solve currents, salinity and temperature (hence stratification), carry oxygen as a pelagic state variable at all depths year-round, include sediment oxygen demand, redox-dependent phosphate release, denitrification and ammonium efflux, and validate bottom-water oxygen at R2 = 0.83 with BIAS below 0.5 mg/l. Ventilation, season and state are all in there. The statistical models are weaker but even they carry water-column stability (BV), temperature, wind and salinity as candidate variables, and BV and temperature are selected in several fitted models.",
+    "what_is_actually_true": "Three narrower claims survive and should replace it. (a) In the statistical route, the oxygen indsatsbehov is a binary trigger plus a judged flat 25% cut in TN concentration, with no dose-response between hypoxia severity and required reduction, and DCE says the 25% is 'vurderet'. (b) In the mechanistic route, oxygen is simulated and validated but is not one of the two indicators from which indsatsbehov is computed - only summer chlorophyll and summer Kd are - because only intercalibrated quality elements were in scope and oxygen has no intercalibrated indicator. (c) In the load accounting that produces the 69.6% figure, there is indeed no potency term of any kind.",
+    "action": "Replace the row in all three documents. The corrected claim is stronger, not weaker: the model that could compute this does compute it, and the answer is excluded by the indicator set rather than by the physics.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "Atmospheric deposition to Danish marine waters ... is absent from every published apportionment.",
+    "where": "docs/CAUSATION.md section 1",
+    "why_false": "'Every published apportionment' is too broad. Atmospheric deposition is an explicit input to all the DHI mechanistic models, Gothenburg Protocol reductions are applied in every scenario run, and so_bg discusses the atmospheric share directly.",
+    "what_is_actually_true": "It is absent from the source apportionment that produces the 69.6% figure, which is an apportionment of the Danish land-based waterborne term only. That is the apportionment the public sentence uses, and the claim is correct if scoped to it.",
+    "action": "Scope the sentence to the land-based apportionment.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "Sediment regeneration is not a source at all in the accounting frame.",
+    "where": "docs/CAUSATION.md section 1, docs/NITROGEN.md section 1 table",
+    "why_false_as_written": "As a statement about the whole Danish evidence base it is false. The mechanistic sediment module carries organic C, N and P pools, mineralisation, burial, iron-bound phosphate, denitrification and ammonium efflux, with explicit seasonal accumulation and summer release. NOVANA measures sediment nutrient pools in 90 of 109 water bodies.",
+    "what_is_actually_true": "Internal regeneration has no row in the load accounting, which is what the 69.6% divides. And what NOVANA measures is the pool, once, in January-February when the sediment is most oxidised - not the summer flux.",
+    "action": "Rewrite as 'has no row in the load accounting' and add the mechanistic-model carve-out. The January-February sampling window is a new and better version of the point.",
+    "verified_by_reading": true
+   }
+  ],
+
+  "NEEDS_QUALIFYING": [
+   {
+    "claim": "Nobody has published the regression of annual iltsvind extent on flow-normalised load, wind work and bottom-water temperature.",
+    "where": "docs/CAUSATION.md section 9; docs/LANDBRUG.md section 9 first demand",
+    "problem": "This is a strong negative claim about the literature that we have not verified. Against it: so_bg, citing Hansen & Rytter 2024, states 'Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer (eutrofiering)' - which is a summary of exactly that kind of analysis. We have not read Hansen & Rytter 2024.",
+    "action": "Either read Hansen & Rytter 2024 and the DCE iltsvind reports and restate precisely what has and has not been published, or soften to 'we have not found it published in a form that reports the coefficients'. The demand itself - publish the regression with its coefficients - is unaffected and remains reasonable.",
+    "verified_by_reading": false
+   },
+   {
+    "claim": "Halve the load and the extremes do not move. September oxygen-depletion extent in 2023 and 2024 was at or above the level of 1989, 2000 and 2002.",
+    "where": "docs/CAUSATION.md section 5; docs/LANDBRUG.md section 4",
+    "problem": "Three qualifications are missing and their absence is the sort of thing that gets an argument dismissed. (1) The comparison is a small number of hand-picked years against a series with enormous interannual variance - our own document says the variance is the finding, which cuts both ways. (2) The counterfactual is not 'no change'; the honest alternative hypothesis is 'worse without', and this comparison cannot distinguish them. (3) Warming over the same period works against the load reduction, which our own section 6 says, so the load-only reading is not the only one consistent with the record. Their side has an answer and it is not stupid.",
+    "action": "Keep the observation, drop the word 'test'. State it as: the extremes are not obviously tracking the load, the variance is dominated by year physics, and the record does not distinguish 'nitrogen is not the binding constraint' from 'nitrogen is the binding constraint and the counterfactual is worse'. That is what the data supports and it is still a serious problem for a policy that has to justify a specific tonnage.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "Most water bodies have one monitoring station.",
+    "where": "carried through several documents",
+    "qualification": "True and now precise. For the statistical models: 'For de fleste vandområder er der kun en enkelt moniteringsstation med tilstrækkelig datadækning til statistisk modellering' (del3 5.1). For NOVANA today: 114 hydrography and water-chemistry stations for 109 water bodies, of which only 29 are sampled every year. But it must be said alongside the fact that the eelgrass programme runs 502 transects and the iltsvind programme adds 92-107 stations a year - the observing system is not one station per water body across the board, it is one station per water body for the specific parameters that feed the statistical models.",
+    "action": "State the parameter alongside the count.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "The models cannot represent state-dependence, alternative stable states, or the loss of assimilative capacity.",
+    "where": "docs/CAUSATION.md sections 6 and 7",
+    "problem": "False for the mechanistic models, true for the statistical models and for the accounting. The DHI models contain eelgrass presence as a state with feedbacks onto light, resuspension and sediment nutrient release, and explicitly model why eelgrass fails to re-establish - sandworm burial of seeds, drifting macroalgae damaging shoots, resuspension - with the note 'i nogle områder forudsiger [modellen], at ålegræsvegetationen ikke genetableres i et omfang som registreret i tidligere tider. Skal der ske en genetablering i disse områder, skal nogle af de beskrevne stressfaktorer begrænses.' That is our argument, in their document.",
+    "action": "This is the single biggest correction available and it strengthens the project. The alternative-stable-states case is not a heterodox objection to the Danish science; it is in the Danish model and it does not reach the policy instrument. Rewrite section 7 around that.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "The 69.6% residual estimator returns negative values in dry years.",
+    "where": "docs/NITROGEN.md, docs/CAUSATION.md, docs/LANDBRUG.md",
+    "qualification": "Not re-verified in this pass. It concerns the load accounting, not the indsatsbehov chain, and nothing read here bears on it either way. Left standing, flagged as out of scope for this audit.",
+    "verified_by_reading": false
+   },
+   {
+    "claim": "DCE's iltsvind criterion requires stratified bottom water, so Køge Bugt cannot qualify however bad it gets.",
+    "where": "docs/CURRENTS.md, docs/NITROGEN.md section 5",
+    "qualification": "The mechanism is right and it is now much better supported: NOVANA's iltsvind programme is explicitly a stratified-season programme, and del2 shows the mechanistic models treat stratification as the precondition for hypoxia. But 'cannot qualify however bad it gets' is our inference, not a documented rule - the criterion is oxygen below 4 mg/l in bottom water, and a shallow well-mixed bay can in principle reach that. monitoring.json already records this as unresolved. Keep it that way.",
+    "verified_by_reading": true
+   }
+  ],
+
+  "SURVIVES": [
+   {
+    "claim": "Soft-bottom fauna is sampled 1 March - 31 May, so the autumn die-off is never observed directly.",
+    "confirmation_verbatim": "Overvågningen af blødbundsfaunaen gennemføres i tidsrummet 1. marts-31. maj.",
+    "strengthened_by": "110 stations, of which only 15 are annual; the other 95 are sampled every third year; 45-49 stations in any given year, for 109 water bodies.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "The oxygen indsatsbehov is a judged figure, not a measured dose-response.",
+    "confirmation_verbatim": "det vurderes at en 25 % reduktion i TN-koncentrationen er minimumskrav for at ændre systemet",
+    "note": "This was the claim the project retracted under institutional pressure. It is correct as stated for the statistical route and should be restored, with the mechanistic-route qualification attached.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "The eelgrass depth limit is not modelled directly; Kd is used as a proxy, and reaching the Kd target does not imply reaching the eelgrass target.",
+    "confirmation_verbatim": "der ikke nødvendigvis vil komme ålegræs til måldybden, selvom den danske kvælstoftilførsel reduceres i overensstemmelse med de beregnede reduktionskrav",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "Fedtemøg has no national monitoring - not extent, not biomass, not duration.",
+    "note": "Confirmed by exhaustion: NOVANA 2023-27 chapter 2 enumerates every marine activity and there is no such programme. Marine litter, microplastic and beach litter are monitored; stranded organic material is not.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "Nitrogen mass is the wrong currency because different oxygen sinks have different stoichiometry, and only algal remineralisation is in the accounting.",
+    "note": "Unaffected by anything read here. The mechanistic models do carry an oxygen budget with sediment demand and sulphide, but they are not the accounting, and the load figures the policy quotas are set against are nitrogen mass.",
+    "verified_by_reading": true
+   },
+   {
+    "claim": "Køge Bugt is the wrong shape for the national instrument.",
+    "note": "Massively strengthened by del2 Tabel 3 and del1 Tabel 6. DHI's own model: Danish land-based nitrogen explains 2.8% of the chlorophyll indicator and 2.7% of Kd in Køge Bugt. Copenhagen Harbour has no model at all and takes Øresund's 18%.",
+    "verified_by_reading": true
+   }
+  ]
+ },
+
+ "contested_points": [
+  {
+   "point": "Is there a quantified relationship between nitrogen loading and ecological outcome?",
+   "theirs": "Yes. 79 fitted statistical indicator-models with mean R2 0.56, plus four 3D ecosystem models validated against NOVANA, plus an ensemble comparison in 11 water bodies giving a national uncertainty of about 9%.",
+   "ours_corrected": "Yes for summer chlorophyll and for Kd. No for oxygen depletion as a policy quantity - it is simulated in the mechanistic models and validated well, and then excluded from the indicator set. No for anything downstream of oxygen. The chain from a tonnage to a shore is quantified for two links and not for the rest.",
+   "who_is_right": "Both, about different links. Our error was to say 'no coefficient' when we meant 'no coefficient for the link the public argument turns on'."
+  },
+  {
+   "point": "Do the models represent stratification, temperature and seasonality?",
+   "theirs": "Yes, in three dimensions, at minute time steps, on real meteorology.",
+   "ours_corrected": "Concede completely. This was the question we had not checked and the answer is unambiguous.",
+   "who_is_right": "Them."
+  },
+  {
+   "point": "Is the slope a causal coefficient?",
+   "theirs": "It is the modelled response of the indicator to a change in Danish land-based nitrogen, all else equal, and it is presented as such.",
+   "ours": "It is a partial derivative obtained by varying one input with everything else frozen - 'alt andet end næringstilførslerne er holdt konstant'. That is the correct instrument for 'what would reducing nitrogen do' and the wrong instrument for 'what caused the observed state'. The public argument uses it for the second.",
+   "who_is_right": "Us, and the documents agree with us in their own words. This is a claim about use, not about the science."
+  },
+  {
+   "point": "Is the published uncertainty adequate?",
+   "theirs": "About 9% nationally, from a genuine two-method ensemble - which is the right way to do it when there is no ground truth.",
+   "ours": "The method is right and the scope is narrow, and DCE and DHI say so: 11 of 119 water bodies, slope only, measurement and status and target uncertainty explicitly excluded, national figure obtained by an assumption made 'for illustrationens skyld'. It is a lower bound presented without that word.",
+   "who_is_right": "Us on scope, them on method. No dispute of fact - only of how the number is subsequently quoted."
+  },
+  {
+   "point": "Are the chlorophyll targets right?",
+   "theirs_model_group": "Scenario 1, the VP3 values, is the scientifically most correct solution.",
+   "theirs_panel_and_taskforce": "The VP3 open-water G/M boundaries diverge from the intercalibrated values underlying Commission Decision 2018/229 and the downward adjustment should be lifted.",
+   "ours": "We take no position on which value is ecologically right. We note that the indsatsbehov equation puts the target in the numerator, so this is not a marginal adjustment; and that Køge Bugt's VP3 boundary of 1.3 µg/l is 24% below the intercalibrated 1.72.",
+   "who_is_right": "This is an internal Danish dispute between qualified parties and we should report it, not adjudicate it."
+  },
+  {
+   "point": "Is averaging five indicators the right composition rule?",
+   "theirs": "Explicitly a choice to minimise the risk of over-implementation given the uncertainty on each indicator.",
+   "ours": "Stated honestly and defensible. The consequence is worth naming: no water body is required to reach all five targets, and the authors say so. Two of the seven weight units come from an indicator that takes only four values, and up to two more from a binary trigger times a judged constant.",
+   "who_is_right": "No factual dispute. Their reasoning is published and ours is a description of what it implies."
+  },
+  {
+   "point": "Is Køge Bugt in the frame at all?",
+   "theirs": "DHI's own model puts the Danish land-based nitrogen share of the chlorophyll indicator at 2.8%.",
+   "ours": "Same number. And Copenhagen Harbour has no model, taking Øresund's requirement by the rule for water bodies with neither data nor a model.",
+   "who_is_right": "Agreement. The number simply does not appear in the public argument."
+  }
+ ],
+
+ "synthesis": {
+  "common_ground": [
+   "Nitrogen loading does affect summer chlorophyll and water clarity in Danish coastal waters. The relationship is fitted in 22 water bodies, simulated in 45 more, and the direction is consistent everywhere.",
+   "The effect is strongly graded by geography. DHI's own numbers run from 94% of the chlorophyll indicator in Hjarbæk Fjord to 0.2% off Bornholm. Reducing Danish nitrogen is close to the whole story in closed fjords and close to none of it in open water.",
+   "Neither side has ground truth. There is no documented 'right' target loading, and DHI says so.",
+   "Hypoxia is a joint product of organic matter supply, weather and hydrography. DCE says so; the mechanistic models implement it; this project argues it.",
+   "Eelgrass loss is self-reinforcing and may not reverse when light returns. DHI models this explicitly and warns that in some areas the model predicts no re-establishment.",
+   "The published uncertainty covers the slope only."
+  ],
+  "where_a_reasonable_person_lands": "The Danish evidence base is much better than a critic who has only read the summaries would guess, and much narrower than a defender who has only read the summaries would guess. It supports a well-founded statement of the form 'reducing Danish land-based nitrogen by X% would improve summer chlorophyll and water clarity in this water body by roughly Y%, under frozen climate and assuming our neighbours meet their commitments'. It does not support 'nitrogen from agriculture causes N% of the oxygen depletion' or anything about fedtemøg, and no document in the chain claims it does. The gap between what the science says and what the politics says is where this project should stand, and it is a defensible place to stand precisely because the scientists' own caveats are the evidence for it.",
+  "what_would_have_to_be_true_for_them_to_be_right_and_us_wrong": [
+   "The two indicators actually extracted - summer chlorophyll and summer Kd - would have to be adequate sufficient statistics for ecological status, such that fixing them fixes the rest. The WFD asserts this; the mechanistic models could test it and were not asked to.",
+   "The fitted slopes would have to hold outside their calibration range, down to reductions of 30-60%. Both DCE and DHI say this is unverifiable and warn that uncertainty grows with distance from the calibration domain.",
+   "No regime shift or climate-driven change in the relationships. Both documents flag this and say it cannot be predicted.",
+   "BSAP and the Gothenburg Protocol would have to be delivered by our neighbours, because every scenario assumes it.",
+   "One monitoring station per water body would have to be spatially representative. del3 raises this and does not resolve it.",
+   "The VP3 chlorophyll targets would have to be right rather than the intercalibrated ones."
+  ],
+  "what_would_have_to_be_true_for_us_to_be_right_and_them_wrong": [
+   "The unmeasured routes to shore biomass - direct organic delivery, in-place killing, sediment regeneration - would have to be large relative to the growth route in the specific bays where the damage is complained about. We have arithmetic suggesting this for combined sewer overflows and no measurement.",
+   "The state term would have to dominate the load term, so that the same load does substantially more damage now. Mechanistically supported, quantified by nobody, including us.",
+   "The extremes would have to be genuinely insensitive to load rather than merely noisy. Thirty-five years of data have not settled this and our own document says the variance is the finding.",
+   "Fedtemøg would have to have a different seasonality or a different driver from what is assumed. Currently unfalsifiable in either direction, because nothing measures it."
+  ],
+  "the_honest_asymmetry": "Their case rests on a documented method with stated limitations, applied beyond the range where those limitations were tested. Our case rests on identifying real omissions and has, so far, no measurement of its own for any of them. Those are not symmetrical positions. The right conclusion is not that they are wrong - it is that the instrument is being asked a question it was not built for, and that the four cheapest measurements on our list would settle several of these arguments for less than the cost of a week of the policy."
+ }
+}

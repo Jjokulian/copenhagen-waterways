@@ -1,4 +1,5 @@
 """Shared helpers. Stdlib only - this box has no pip and ~300 MB of free RAM."""
+import math
 import gzip
 import json
 import os
@@ -108,3 +109,32 @@ def swap_axes(geom):
     if geom and "coordinates" in geom:
         walk(geom["coordinates"])
     return geom
+
+
+def plain_r(r, thing="one", other="the other"):
+    """Say what a correlation coefficient actually means, in words.
+
+    r is not a spell. It is the average of (how far x sits above its own average,
+    counted in units of x's own typical wobble) times the same for y. The divisor
+    is the two SPREADS, not the two means:
+
+        r = sum((x-xbar)*(y-ybar)) / sqrt(sum((x-xbar)^2) * sum((y-ybar)^2))
+
+    Dividing by the means, as is tempting, would make it depend on where zero
+    happens to sit. Dividing by the spreads is what makes it a pure co-wobble
+    score between -1 and +1, and what makes r-squared readable as a share.
+
+    Two honest translations, both reported here because they say different things:
+      r^2                  the share of one's wobble you can account for from the other
+      1 - sqrt(1 - r^2)    how much knowing one shrinks your error guessing the other
+    """
+    r2 = r * r
+    shrink = 1 - math.sqrt(max(0.0, 1 - r2))
+    return (f"{100*r2:.1f}% of the wobble in {thing} is shared with {other}; "
+            f"knowing {other} shrinks your error guessing {thing} by {100*shrink:.0f}%")
+
+
+def plain_r2(r2):
+    shrink = 1 - math.sqrt(max(0.0, 1 - r2))
+    return (f"accounts for {100*r2:.0f}% of the wobble; shrinks prediction error "
+            f"by {100*shrink:.0f}% against just guessing the average")

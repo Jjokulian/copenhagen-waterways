@@ -1,0 +1,180 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What is known, where, and when</title>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --sea:#eceff1;
+  --k0:#c9ccd1; --k1:#a8c4d8; --k2:#6f9fc4; --k3:#2f6a95;
+  --warn:#b4532f; --accent:#2f6a95;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#22252b;
+  --k0:#3a3e46; --k1:#3f5d75; --k2:#5a8cb0; --k3:#8fbcd9;
+  --warn:#e0866a; --accent:#8fbcd9;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#22252b;
+  --k0:#3a3e46; --k1:#3f5d75; --k2:#5a8cb0; --k3:#8fbcd9;
+  --warn:#e0866a; --accent:#8fbcd9;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:26px 30px 16px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:23px;font-weight:640;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:0;max-width:66ch;color:var(--ink2)}
+header a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:0;align-items:stretch}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}}
+#mapbox{position:relative;padding:14px 8px 0 18px;min-width:0}
+svg{width:100%;height:auto;display:block}
+.wb{stroke:var(--panel);stroke-width:.4;cursor:pointer}
+.wb:hover{stroke:var(--ink);stroke-width:1.1}
+.wb.sel{stroke:var(--ink);stroke-width:1.6}
+.dot{fill:var(--ink2);opacity:.5;pointer-events:none}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:20px 20px 28px;
+  min-width:0;overflow-wrap:anywhere}
+@media(max-width:900px){aside{border-left:0;border-top:1px solid var(--line)}}
+aside h2{margin:0 0 2px;font-size:17px;font-weight:640;letter-spacing:-.01em}
+.sub{color:var(--ink3);font-size:12px;margin-bottom:14px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:0 0 16px;font-size:13px}
+dt{color:var(--ink3)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;padding:10px 18px 14px;font-size:12px;
+  color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);
+  margin:18px 0 7px;font-weight:600}
+.tl{position:relative;margin:0 0 4px;font-size:12px}
+.tlrow{display:grid;grid-template-columns:1fr;margin-bottom:9px}
+.tllab{color:var(--ink2);margin-bottom:2px}
+.tlbar{position:relative;height:9px;background:var(--sea);border-radius:2px}
+.tlbar i{position:absolute;top:0;bottom:0;background:var(--k2);border-radius:2px;
+  display:block}
+.axis{position:relative;height:15px;border-top:1px solid var(--line);margin-top:4px}
+.axis b{position:absolute;top:2px;font-weight:400;color:var(--ink3);font-size:11px;
+  transform:translateX(-50%)}
+.cut{position:absolute;top:-4px;bottom:0;width:1px;background:var(--warn)}
+.gaps{margin:0;padding-left:16px;font-size:12.5px;color:var(--ink2)}
+.gaps li{margin-bottom:5px}
+.none{color:var(--ink3);font-style:italic;font-size:12.5px}
+.hint{padding:0 18px 18px;color:var(--ink3);font-size:12px;max-width:70ch}
+</style>
+
+<header>
+  <h1>What is known, where, and when</h1>
+  <p>Denmark's 123 marine water bodies, coloured by how much is actually known about
+  each one, with the years each stream of observation covers. Click an area. The red
+  line on the timeline is 2012 — where the fitted window ends, and where several of the
+  things it is asked to explain begin. Method:
+  <a href="./#OBSERVING.md">OBSERVING.md</a> and <a href="./#AREAS.md">AREAS.md</a>.</p>
+</header>
+
+<div class="legend">
+  <span><i class="sw" style="background:var(--k3)"></i> fitted model and repeated observation</span>
+  <span><i class="sw" style="background:var(--k2)"></i> fitted model only</span>
+  <span><i class="sw" style="background:var(--k1)"></i> repeated observation only</span>
+  <span><i class="sw" style="background:var(--k0)"></i> neither</span>
+</div>
+
+<div class="wrap">
+  <div id="mapbox"><svg id="map" viewBox="0 0 640 560" role="img"
+      aria-label="Map of Danish marine water bodies"></svg></div>
+  <aside id="panel"><p class="none">Loading…</p></aside>
+</div>
+<p class="hint">Colour is state of knowledge, not state of the water. “Fitted model”
+means DCE (2015) published a statistical relation between nutrient load and an
+indicator for this area, on 1990–2012 data. “Repeated observation” means at least one
+bathing station with a multi-year record — the only long, replicated marine series
+Denmark has in open data.</p>
+
+<script>
+const T0 = 1985, T1 = 2026;
+const $ = s => document.querySelector(s);
+let D = null, sel = null;
+
+fetch("data/areas/areas.json").then(r => r.json()).then(d => { D = d; draw(); });
+
+function knowledge(a){ return (a.m ? 2 : 0) + (a.bs > 0 ? 1 : 0); }
+const KCOL = ["var(--k0)","var(--k1)","var(--k2)","var(--k3)"];
+
+function draw(){
+  const svg = $("#map"), W = 640, H = 560, PAD = 12;
+  let x0=99,x1=-99,y0=99,y1=-99;
+  for(const rs of Object.values(D.geometry)) for(const r of rs) for(const [x,y] of r){
+    if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y; }
+  const midlat = (y0+y1)/2, kx = Math.cos(midlat*Math.PI/180);
+  const sx = (W-2*PAD)/((x1-x0)*kx), sy = (H-2*PAD)/(y1-y0), s = Math.min(sx,sy);
+  const ox = PAD + ((W-2*PAD) - (x1-x0)*kx*s)/2;
+  const oy = PAD + ((H-2*PAD) - (y1-y0)*s)/2;
+  const px = x => ox + (x-x0)*kx*s, py = y => oy + (y1-y)*s;
+
+  const ids = Object.keys(D.geometry).sort((a,b)=> D.areas[b].a - D.areas[a].a);
+  let out = "";
+  for(const id of ids){
+    const a = D.areas[id]; if(!a) continue;
+    let dd = "";
+    for(const r of D.geometry[id]){
+      dd += "M" + r.map(([x,y]) => px(x).toFixed(1)+","+py(y).toFixed(1)).join("L") + "Z";
+    }
+    out += `<path class="wb" id="p_${id}" d="${dd}" fill="${KCOL[knowledge(a)]}"><title>${
+      esc(a.n)} — ${a.a.toLocaleString()} km²</title></path>`;
+  }
+  for(const [x,y] of D.bathing) out += `<circle class="dot" cx="${px(x).toFixed(1)}" cy="${
+    py(y).toFixed(1)}" r="1.3"/>`;
+  svg.innerHTML = out;
+  svg.querySelectorAll(".wb").forEach(p =>
+    p.addEventListener("click", () => select(p.id.slice(2))));
+  select(ids.find(i => D.areas[i] && D.areas[i].n.indexOf("Køge") === 0) || ids[0]);
+}
+
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const nm = v => v == null ? "—" : v.toLocaleString();
+
+function select(id){
+  if(sel) { const e = $("#p_"+sel); if(e) e.classList.remove("sel"); }
+  sel = id; const e = $("#p_"+id); if(e) e.classList.add("sel");
+  const a = D.areas[id];
+  const pos = v => ((Math.min(Math.max(v,T0),T1) - T0) / (T1-T0) * 100);
+  let tl = "";
+  for(const s of a.streams){
+    const from = pos(s.from), to = pos(s.to);
+    tl += `<div class="tlrow"><div class="tllab">${esc(s.stream)}${
+      s.n ? " · " + s.n : ""} <span style="color:var(--ink3)">${s.from}–${s.to}</span></div>
+      <div class="tlbar"><i style="left:${from}%;width:${Math.max(1.2,to-from)}%"></i></div></div>`;
+  }
+  if(!a.streams.length) tl = `<p class="none">No stream of repeated marine observation
+    exists for this area in the open data.</p>`;
+  let ax = `<div class="axis"><div class="cut" style="left:${pos(2012)}%"></div>`;
+  for(const y of [1990,2000,2010,2020]) ax += `<b style="left:${pos(y)}%">${y}</b>`;
+  ax += `</div>`;
+
+  $("#panel").innerHTML = `
+    <h2>${esc(a.n)}</h2>
+    <div class="sub">${esc(id)} · ${esc(a.cat)} · type ${esc(a.t)}${
+      a.c ? " · " + esc(a.c) : ""}</div>
+    <dl>
+      <dt>Area</dt><dd>${a.a.toLocaleString()} km²</dd>
+      <dt>Fitted load→indicator model</dt><dd>${a.m ? "yes (1990–2012)" : "none"}</dd>
+      <dt>Bathing stations</dt><dd>${nm(a.bs)}${a.bfy ? ` (${a.bfy}–${a.bly})` : ""}</dd>
+      <dt>…agreeing with each other</dt><dd>${a.br == null ? "untestable"
+        : (a.br>0?"+":"") + a.br.toFixed(2)}</dd>
+      <dt>Hazardous-substance points</dt><dd>${nm(a.hz)}</dd>
+      <dt>Rain-conditioned outfalls</dt><dd>${nm(a.rbu)}</dd>
+      <dt>Basin volume</dt><dd>${a.vol ? nm(a.vol)+" m³" : "—"}</dd>
+      <dt>Treatment plants</dt><dd>${nm(a.rens)}${a.pe ? ` · ${nm(a.pe)} PE` : ""}</dd>
+      <dt>Aquaculture outfalls</dt><dd>${nm(a.hav)}</dd>
+      <dt>Dumping grounds</dt><dd>${nm(a.klap)}</dd>
+      <dt>Extraction areas</dt><dd>${nm(a.rst)}</dd>
+    </dl>
+    <h3>When the data exists</h3>
+    <div class="tl">${tl}${ax}</div>
+    <h3>What cannot be modelled here</h3>
+    ${a.gaps.length ? "<ul class='gaps'>" + a.gaps.map(g => "<li>"+esc(g)+"</li>").join("")
+      + "</ul>" : "<p class='none'>Nothing flagged.</p>"}`;
+}
+</script>
