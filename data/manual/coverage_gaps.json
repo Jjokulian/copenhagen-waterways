@@ -1,0 +1,65 @@
+{
+  "_what": "Sources that would contribute to any coverage count, that are known to exist, and that this project has not got. Kept because a count of what we hold is only interpretable beside a list of what we know we are missing.",
+  "_why": "A coverage figure has a numerator nobody can measure: the evidence that exists. Counting what we assembled gives a lower bound on evidence and therefore an upper bound on absence. Naming the known missing summands is what turns that from a caveat into a bounded statement - each entry below is a term we know belongs in the numerator and cannot add.",
+  "_classes": {
+    "closed": "Known to exist, complete, and not obtainable by us.",
+    "open_unassembled": "Obtainable, not yet obtained. A gap in our effort, not in the world.",
+    "absent": "Checked and confirmed not to exist in open form. The strongest kind of absence claim available, and still bounded by the search."
+  },
+  "gaps": [
+    {
+      "id": "PULS",
+      "class": "closed",
+      "what": "Punktkilder og spildevand - the national point-source database. Holds per-event overflow volume and duration for the 4,217 combined-sewer structures and 16,185 stormwater outfalls whose ANNUAL totals we hold.",
+      "would_add": "The time axis for B1 and B2. Their discriminating test is oxygen and shore condition in the days after an overflow against that event's volume, which an annual total cannot do.",
+      "barrier": "CVR-gated. Not merely a login: an access attempt with a private MitID was refused on the grounds that no CVR or VAT number attached to it was valid. Access appears to require a registered business or authority entity, so a private citizen cannot obtain it at all.",
+      "evidence_it_exists": "spildevandsdata.dk publishes a static extract of it, which is where our annual figures come from.",
+      "attempted": "2026-09-08, by the repository owner, via MitID."
+    },
+    {
+      "id": "LER",
+      "class": "closed",
+      "what": "Ledningsejerregistret - the national utility register, holding pipe geometry for the whole country.",
+      "would_add": "The drainage network itself, which open problem 16 says exists for exactly one Danish city and only by lucky archaeology.",
+      "barrier": "Not open data. This project does not query it and no argument here depends on it.",
+      "evidence_it_exists": "Statutory register, maintained by law.",
+      "attempted": "no - deliberately out of scope"
+    },
+    {
+      "id": "MUNICIPAL-SPILDEVANDSPLANER",
+      "class": "open_unassembled",
+      "what": "Every Danish municipality must adopt and publish a wastewater plan, and they carry catchment maps. 98 municipalities, published independently.",
+      "would_add": "Real catchment boundaries, which are the hard test for the inference method in X21.",
+      "barrier": "None. Nobody has assembled them. Some are already in data/raw/plan_html/.",
+      "evidence_it_exists": "Statutory requirement; several already fetched.",
+      "attempted": "partially, Copenhagen only"
+    },
+    {
+      "id": "ICES-EMODNET",
+      "class": "open_unassembled",
+      "what": "ICES oceanographic and contaminant databases and EMODnet, including Danish submissions and every neighbouring country's observations in the same water.",
+      "would_add": "Marine observation outside ODA entirely, including the cross-border series that a national extract cannot contain.",
+      "barrier": "Free registration, not completed.",
+      "evidence_it_exists": "Verified: 345 Danish continuous underwater-noise submissions across 8 stations, 2014-2026, found in the open ICES register.",
+      "attempted": "no"
+    },
+    {
+      "id": "FISH-KILL-REGISTER",
+      "class": "absent",
+      "what": "A Danish register of fish kills, spills and environmental incidents in open form.",
+      "would_add": "The observable behind fiskedoed, one of the four words the public uses for the damage.",
+      "barrier": "Checked and not found in open form. The surveillance is described publicly; no database is linked.",
+      "evidence_it_exists": "Unclear that a complete one exists at all, as opposed to being distributed across authorities.",
+      "attempted": "yes - recorded as B8-GAP in the source register"
+    },
+    {
+      "id": "MECHANISTIC-MODEL-RUNS",
+      "class": "closed",
+      "what": "The DHI and DCE mechanistic model runs behind the requirement - the 3D fields, not the summary reports.",
+      "would_add": "The ability to check the validation claims in GRUNDLAGET.md directly rather than through their authors' description of them.",
+      "barrier": "Not published as data. The method reports are public; the runs are not.",
+      "evidence_it_exists": "Described in detail in the primary method documents.",
+      "attempted": "no"
+    }
+  ]
+}

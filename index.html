@@ -46,6 +46,8 @@
   .navlabel{font-family:Archivo,sans-serif;font-size:10.5px;font-weight:600;
     letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
   #sitenav ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:3px}
+  /* display:grid above would otherwise beat the browser's rule for [hidden] */
+  #sitenav ul[hidden]{display:none}
   #sitenav li a{display:block;padding:7px 11px;border-radius:5px;text-decoration:none;
     font-family:Archivo,sans-serif;font-size:14px;color:var(--ink-2);line-height:1.35}
   #sitenav li a:hover{background:var(--sunk);color:var(--ink)}
@@ -141,10 +143,9 @@
     #doc h2,#doc h3{scroll-margin-top:calc(var(--bar) + 10px)}
     /* The sidebar is a drawer rather than a strip of the page: it is the contents
        of one document now, and a reader on a phone wants the first paragraph
-       before they want a list of the sections. */
-    /* Shown and hidden outright rather than faded: a panel that only appears once
-       an animation has finished is a panel that does not appear at all wherever
-       animation is throttled. */
+       before they want a list of the sections. Shown and hidden outright rather
+       than faded, because a panel that only arrives once an animation has finished
+       is a panel that does not arrive at all wherever animation is throttled. */
     #sitenav{display:none;position:fixed;top:var(--bar);left:0;right:0;bottom:0;
       z-index:45;max-height:none;padding:18px 16px 48px;background:var(--ground)}
     body.navopen #sitenav{display:block}
@@ -171,7 +172,6 @@
   @media (prefers-reduced-motion:reduce){
     .bars,.bars::before,.bars::after,.fold > summary::after{transition:none}
   }
-
 
 /* Glossary tooltips. Every `M1`, `V3`, `K8` in a generated document is a
    reference into docs/data/glossary.json, which is emitted from the same source
@@ -212,14 +212,14 @@ code.gloss{
 #tip[data-mode="sheet"]{position:fixed; top:auto; left:12px; right:12px; bottom:12px;
   max-width:none; max-height:min(60vh,28rem); overflow-y:auto;
   overscroll-behavior:contain; pointer-events:auto; padding:14px 14px 0; font-size:14px}
-#tip .tiptitle{color:var(--accent,#2a6fa8); text-decoration:none}
+#tip .tiptitle{color:var(--accent); text-decoration:none}
 #tip .tipgo{display:block; margin-top:9px; font-family:Archivo,sans-serif; font-size:13px;
-  color:var(--accent,#2a6fa8); text-decoration:none}
+  color:var(--accent); text-decoration:none}
 #tip .tipclose{position:sticky; bottom:0; display:block; width:100%; margin:12px 0 0;
-  padding:11px; border:0; border-top:1px solid var(--rule,#d7dee6);
-  background:var(--surface,#fff); color:var(--ink-2,#3d4a58);
+  padding:11px; border:0; border-top:1px solid var(--rule);
+  background:var(--surface); color:var(--ink-2);
   font-family:Archivo,sans-serif; font-size:13px; cursor:pointer}
-#tip .tipclose:focus-visible{outline:2px solid var(--accent,#2a6fa8); outline-offset:-2px}
+#tip .tipclose:focus-visible{outline:2px solid var(--accent); outline-offset:-2px}
   /* Landing. The hero and the three figures carry the page; everything below is
      the reading map, reached by scrolling rather than by a second navigation. */
   .hero{margin:.5rem 0 2rem;max-width:34em}
@@ -228,6 +228,8 @@ code.gloss{
   .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:1rem;margin:0 0 2.6rem}
   .fact{border-top:2px solid var(--accent);padding:.85rem .1rem 0}
+  .fact b span{font-family:"Source Serif 4",Georgia,serif;font-weight:400;
+    font-size:.55em;color:var(--muted);padding:0 .12em}
   .fact b{display:block;font-family:Archivo,sans-serif;font-size:clamp(26px,3.4vw,34px);
     line-height:1.05;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
   .fact p{margin:.5rem 0 .6rem;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
@@ -520,8 +522,10 @@ function startSpy(items) {
     resolve();
   }, { rootMargin: `-${band}px 0px -68% 0px`, threshold: 0 });
   for (const i of items) spy.observe(i.el);
-  resolve();   // the observer's first answer is a frame away, and a document
-}              // reopened halfway down should not be nowhere until then
+  // the observer's first answer is a frame away, and a document reopened halfway
+  // down should not be nowhere until then
+  resolve();
+}
 
 function goTo(section) {
   const el = section && document.getElementById(section);
@@ -908,7 +912,9 @@ function renderMap() {
     'about what nobody has measured.</p>',
     '</section>', '<div class="facts">'];
   for (const [n, t, doc] of FACTS)
-    parts.push('<div class="fact"><b>' + esc(n) + '</b><p>' + t + '</p>' +
+    // n is a literal in FACTS above and deliberately carries markup; t likewise.
+    // Neither is user input, and escaping them printed the tags on the page.
+    parts.push('<div class="fact"><b>' + n + '</b><p>' + t + '</p>' +
       (doc ? '<a href="#' + doc + '">' + esc(titleOf(doc)) + ' →</a>' : '') + '</div>');
   parts.push('</div>');
 
@@ -1056,6 +1062,21 @@ function settle(file, section) {
   syncFolds();
   startSpy(items);
   if (!goTo(section)) window.scrollTo(0, 0);
+  /* The webfonts swap in a moment after the first document is rendered and change
+     the height of everything above the target: measured 83px out, which leaves the
+     heading behind the top bar. So aim once more when the text has settled - after
+     jumping, never instead of it, because a browser that never answers must still
+     land the reader somewhere near the right place. */
+  if (section && document.fonts && document.fonts.status !== "loaded") {
+    let taken = false;
+    const took = () => { taken = true; };
+    const moves = ["wheel", "touchstart", "keydown"];
+    for (const m of moves) addEventListener(m, took, { once: true, passive: true });
+    document.fonts.ready.then(() => {
+      for (const m of moves) removeEventListener(m, took);
+      if (!taken && current().section === section) goTo(section);
+    });
+  }
 }
 
 let showing = null;   // which document is rendered, so a section link does not refetch

@@ -30,7 +30,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, RAW, ROOT, log, read_json, write_json, write_doc
+from common import DERIVED, MANUAL, RAW, ROOT, log, read_json, write_json, write_doc
 
 NAT = os.path.join(RAW, "national")
 OUT_MD = os.path.join(ROOT, "docs", "AREAS.md")
@@ -431,8 +431,31 @@ def render(props, rec, ch):
       "acceptable because we are the ones doing it.\n"
       ">\n"
       "> So absence is reported here as a count over a named corpus, and the corpus "
-      "is named every time. Anyone who knows of a marine series this project has "
-      "not assembled is holding a correction, and it is wanted.\n")
+      "is named every time.\n"
+      ">\n"
+      "> **And the corpus is named together with what is missing from it.** A "
+      "coverage figure has a numerator nobody can measure — the evidence that "
+      "exists — so counting what we assembled gives a *lower bound on evidence* and "
+      "therefore an *upper bound on absence*. That is only interpretable beside the "
+      "terms we know belong in the numerator and cannot add. They are kept in "
+      "`data/manual/coverage_gaps.json` and there are three kinds:\n")
+    gaps = read_json(os.path.join(MANUAL, "coverage_gaps.json"))["gaps"]
+    a("")
+    a("| | source | what it would add | why we do not have it |")
+    a("|---|---|---|---|")
+    for g in gaps:
+        a(f"| `{g['class']}` | **{g['id']}** | {g['would_add']} | {g['barrier']} |")
+    a("")
+    a("The distinction inside that table matters as much as the table. `closed` is "
+      "a gap in the world's availability; `open_unassembled` is a gap in our "
+      "effort and is nobody's fault but ours; `absent` is the only one where a "
+      "search was actually run to exhaustion, and even that is bounded by the "
+      "search. **PULS is the sharpest case.** It holds the per-event overflow "
+      "volumes that `B1` calls the single most valuable missing series, and an "
+      "access attempt with a private MitID was refused because no CVR or VAT "
+      "number attached to it was valid — so this is not a login anyone has "
+      "neglected to perform. It appears to require a registered business or "
+      "authority, which means a private citizen cannot obtain it at all.\n")
 
     a("## The cum hoc estimate, across areas instead of across years\n")
     a("A national time series has one unit of replication. The areas have "

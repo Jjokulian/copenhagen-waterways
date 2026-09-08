@@ -31,7 +31,21 @@ Assignment is by nearest point on the marine boundary, one rule for every layer,
 > - **Same width — a percentage is fine, including of an absence.** *57 of 123 water bodies have no point in the national hazardous-substance monitoring programme, covering 70% of the sea.* The category is that programme, the register of it is complete, so its complement is exact. Same for *28 of 123 have a fitted model — 5.7% of sea area*: the models are published and the sea is measured, and nothing rests on having found anything else.
 > - **Category wider than corpus — only a count is honest.** *56% of the sea has no marine observation* names a category — marine observation — far wider than the two layers actually searched. The leftover after subtracting what we happened to find is then reported as though it were measured, which is the operation [RESIDUAL.md](#RESIDUAL.md) is about, and it does not become acceptable because we are the ones doing it.
 >
-> So absence is reported here as a count over a named corpus, and the corpus is named every time. Anyone who knows of a marine series this project has not assembled is holding a correction, and it is wanted.
+> So absence is reported here as a count over a named corpus, and the corpus is named every time.
+>
+> **And the corpus is named together with what is missing from it.** A coverage figure has a numerator nobody can measure — the evidence that exists — so counting what we assembled gives a *lower bound on evidence* and therefore an *upper bound on absence*. That is only interpretable beside the terms we know belong in the numerator and cannot add. They are kept in `data/manual/coverage_gaps.json` and there are three kinds:
+
+
+| | source | what it would add | why we do not have it |
+|---|---|---|---|
+| `closed` | **PULS** | The time axis for B1 and B2. Their discriminating test is oxygen and shore condition in the days after an overflow against that event's volume, which an annual total cannot do. | CVR-gated. Not merely a login: an access attempt with a private MitID was refused on the grounds that no CVR or VAT number attached to it was valid. Access appears to require a registered business or authority entity, so a private citizen cannot obtain it at all. |
+| `closed` | **LER** | The drainage network itself, which open problem 16 says exists for exactly one Danish city and only by lucky archaeology. | Not open data. This project does not query it and no argument here depends on it. |
+| `open_unassembled` | **MUNICIPAL-SPILDEVANDSPLANER** | Real catchment boundaries, which are the hard test for the inference method in X21. | None. Nobody has assembled them. Some are already in data/raw/plan_html/. |
+| `open_unassembled` | **ICES-EMODNET** | Marine observation outside ODA entirely, including the cross-border series that a national extract cannot contain. | Free registration, not completed. |
+| `absent` | **FISH-KILL-REGISTER** | The observable behind fiskedoed, one of the four words the public uses for the damage. | Checked and not found in open form. The surveillance is described publicly; no database is linked. |
+| `closed` | **MECHANISTIC-MODEL-RUNS** | The ability to check the validation claims in GRUNDLAGET.md directly rather than through their authors' description of them. | Not published as data. The method reports are public; the runs are not. |
+
+The distinction inside that table matters as much as the table. `closed` is a gap in the world's availability; `open_unassembled` is a gap in our effort and is nobody's fault but ours; `absent` is the only one where a search was actually run to exhaustion, and even that is bounded by the search. **PULS is the sharpest case.** It holds the per-event overflow volumes that `B1` calls the single most valuable missing series, and an access attempt with a private MitID was refused because no CVR or VAT number attached to it was valid — so this is not a login anyone has neglected to perform. It appears to require a registered business or authority, which means a private citizen cannot obtain it at all.
 
 ## The cum hoc estimate, across areas instead of across years
 
