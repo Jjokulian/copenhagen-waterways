@@ -1522,6 +1522,49 @@ def render(rows):
       "false, it is **unranked**, and a ranking that omits its unranked members is "
       "a ranking of what was convenient to measure.\n")
 
+    a("## This list is not exhaustive, and we have no way to know how far off it is\n")
+    a(f"There are {len(rows)} entries below. That number should not be read as a "
+      "decomposition of the problem, and the field should not be read as closed.\n")
+    a("**The direct evidence that it is incomplete is its own history.** The first "
+      "version had 71 entries and was written to be thorough. It reached "
+      f"{len(rows)} within a single afternoon, and every addition came from an "
+      "analogy raised in passing — soil sickness, desertification, sandy deserts, "
+      "compost going anaerobic, turfgrass thatch, replant disease. None of those "
+      "came from searching the marine literature. A list that grows by three "
+      "quarters in one conversation is not a list anyone should call complete, and "
+      "there is no reason to think the next conversation would add fewer.\n")
+    a("Three further problems, which matter for what can be concluded:\n")
+    a("**It is not a partition.** The groups sit at different levels of "
+      "abstraction and cut across each other. Some entries are mechanisms, some are "
+      "conditions that let a mechanism operate, some are descriptions of a state, "
+      "and some — group I especially — are not about the sea at all but about the "
+      "instrument. They do not tile anything.\n")
+    a("**The entries are not independent.** Sulphur alone appears as an oxygen "
+      "sink (`E1`), as reduced bed chemistry (`M7`), as the reason the marine "
+      "electron-acceptor cascade differs from the freshwater one (`R5`), as the "
+      "release mechanism for sediment phosphate (`R6`), and as the poison that "
+      "kills eelgrass from below (`T1`). That is one element seen from five sides, "
+      "not five causes. **Counting entries therefore says nothing about weight**, "
+      "and a group with fourteen entries is not thereby more important than one "
+      "with four.\n")
+    a("**Some causes may not separate at all.** Several of these plausibly have no "
+      "independent existence and occur only in combination — the light-and-sulphide "
+      "interaction of `T1`, the mixture effects of `U1`. Listing them as separable "
+      "items imposes a structure the world may not have.\n")
+    a("> **The consequence for scoring.** Any ranking computed over this field is a "
+      "ranking *within the field*, not a decomposition of reality. A statement of "
+      "the form \"mechanism X accounts for n% of the problem\" would require the "
+      "field to be complete, disjoint and independent, and it is none of the three. "
+      "Making that claim anyway would be the residual-estimator error of "
+      "[RESIDUAL.md](#RESIDUAL.md) committed one level up — treating what is left "
+      "over after our own enumeration as if it were a measurement of the world.\n")
+    a("What the register is for is narrower and still worth having. It converts "
+      "*the cause is X* into *X is one of at least a hundred and twenty-seven, and "
+      "here is the observable that would tell it apart from its neighbours*. It is "
+      "written down before anything is scored so that it cannot be trimmed "
+      "afterwards to whatever the data happened to support. Absence from this list "
+      "is not evidence of absence, and additions are wanted.\n")
+
     a("## What is actually at stake\n")
     a("Nobody values a dissolved gas concentration. An earlier version of this page "
       "listed oxygen deficit as an outcome, which reproduced the exact error the "
@@ -1538,6 +1581,12 @@ def render(rows):
     a("Oxygen deficit is **one** of these. It is neither necessary nor sufficient "
       "for any terminal outcome, and several of the others leave no oxygen "
       "signature at all — a poisoned water can be fully oxygenated.\n")
+    a("These seven are not claimed to be all of them either, and they are not even "
+      "cleanly separable from one another: `M7` is partly a special case of `M2`, "
+      "and `M5` ends by feeding `M3`. They were arrived at by asking what could "
+      "produce the terminal outcomes, which is a question with no natural stopping "
+      "point. Treat them as seven routes we could name, not as the routes there "
+      "are.\n")
     a("| | route | what it is |")
     a("|---|---|---|")
     for i, n, w in ROUTES:
@@ -1672,6 +1721,10 @@ def render(rows):
       "interface so that none of them is advantaged by its formulation.\n")
     a("4. Score them out of sample — held-out years and held-out areas — and rank. "
       "Report the unrankable separately and by name.\n")
+    a("And whatever comes out of that, the caveat at the top holds: the ranking "
+      "will be a ranking within this field. The field is open, it is not a "
+      "partition, its entries are not independent, and its own history says it is "
+      "incomplete.\n")
     a("A1 may well win. That would be a far stronger result for it than the one it "
       "currently has, because it would have been tested against rivals rather than "
       "fitted alone.\n")
@@ -1683,6 +1736,19 @@ def main():
     ids = [r[0] for r in rows]
     assert len(ids) == len(set(ids)), "duplicate hypothesis id"
     payload = {
+        "_completeness": {
+            "exhaustive": False,
+            "why": "The first version had 71 entries and was written to be "
+                   "thorough; it reached 127 in a single afternoon, entirely from "
+                   "analogies raised in passing. No reason to believe the present "
+                   "list is closer to complete than that one was.",
+            "is_partition": False,
+            "entries_independent": False,
+            "note": "Counting entries says nothing about weight - sulphur alone "
+                    "appears as E1, M7, R5, R6 and T1, which is one element seen "
+                    "from five sides. Any ranking over this field is a ranking "
+                    "within the field, not a decomposition of reality.",
+        },
         "terminal": [{"id": i, "name": n, "what": w} for i, n, w in TERMINAL],
         "routes": [{"id": i, "name": n, "what": w} for i, n, w in ROUTES],
         "cascades": [{"route": i, "name": n, "chain": c, "closes": w}

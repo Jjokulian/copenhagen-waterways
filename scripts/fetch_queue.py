@@ -19,6 +19,30 @@ it last.
 open-tier alternative. It is a crude priority signal and it is meant to be: the
 point is to stop the register being a list of things nobody fetched.
 
+THE RESOLUTION RULE, which this file also enforces.
+
+Nothing is stored at an administrative unit. Not per water body, not per catchment,
+not per municipality, not per sub-basin. Everything is carried at the resolution it
+was actually taken: a position, a time, and where it exists a depth.
+
+This is not fastidiousness. This project spent a page establishing that a "water
+body" explains 7.9% of the variation in the one variable Denmark measures densely
+enough to check, and that two stations inside one share about four percent of their
+year-to-year variance. Loading a source that has already been summed into those
+polygons would import the assumption straight back, and every result computed on it
+would inherit a unit we had just shown is not a unit.
+
+So each source is flagged by whether its spatial index is a *measurement position*
+or an *administrative region*. The region ones are still worth having - they are
+often the only version that exists - but they enter as somebody's aggregate of a
+measurement, labelled as such, and never as the measurement.
+
+What a water body actually is, if it is anything, is then a question to be answered
+from the data rather than assumed by the schema: put the observations on the map
+with their own coordinates and times, see which of them move together, and check
+each proxy against an unrelated one. The administrative polygon becomes an overlay
+to be tested against, not a container to pour things into.
+
 Output: data/derived/fetch_queue.json, docs/DATA_QUEUE.md
 
 Usage:  python3 scripts/fetch_queue.py
@@ -43,6 +67,18 @@ HELD = {
                         "WMS verified"),
 }
 
+# Spatial index words that mean "somebody already aggregated this for you".
+ADMIN_UNIT = ("polygon", "water body", "waterbody", "vandomr", "reference",
+              "sub-basin", "subbasin", "basin", "catchment", "opland",
+              "municipality", "kommune", "region", "national", "country",
+              "ices rectangle", "rectangle", "c-square", "csquare", "per port",
+              "landing port", "agglomeration", "area-level", "per farm",
+              "per permit", "per facility", "named facility", "per klapplads")
+POINT_UNIT = ("point", "coordinate", "lat", "utm", "per station", "per cast",
+              "per haul", "per grab", "per observation", "per sample", "transect",
+              "grid", "cell", "m grid", "raster")
+
+
 TIERS = [
     ("open", "Fetch it now", "No account, no permission, no negotiation."),
     ("held", "Gated, but we hold the key",
@@ -55,6 +91,25 @@ TIERS = [
      "ones worth arguing about publicly, because for several of them the "
      "measurement exists and the public cannot see it."),
 ]
+
+
+def spatial_kind(src):
+    """Is this indexed by a place something was measured, or by a region?
+
+    A region-indexed source is somebody's aggregate. It can still be the only thing
+    that exists, and it is still worth fetching - but it must not be mistaken for a
+    measurement, because the unit it was summed into is exactly the unit this
+    project has shown is not coherent."""
+    t = " ".join(str(src.get(k) or "") for k in ("spatial", "aggregation")).lower()
+    admin = any(w in t for w in ADMIN_UNIT)
+    point = any(w in t for w in POINT_UNIT)
+    if point and not admin:
+        return "position"
+    if admin and not point:
+        return "region"
+    if admin and point:
+        return "mixed"
+    return "unknown"
 
 
 def classify(src):
@@ -109,6 +164,7 @@ def main():
         return 1
     for s in srcs:
         s["_tier"], s["_cred"] = classify(s)
+        s["_spatial"] = spatial_kind(s)
 
     # a hypothesis is "unlocked" by a source only if nothing easier already serves it
     easiest = {}
@@ -138,6 +194,7 @@ def main():
                            "unlocks": s["_unlocks"], "temporal": s.get("temporal"),
                            "spatial": s.get("spatial"), "coverage": s.get("coverage"),
                            "past_2012": s.get("past_2012"), "size": s.get("size"),
+                           "spatial_kind": s["_spatial"],
                            "access": s.get("access"), "caveat": s.get("caveat")}
                           for t, _, _ in TIERS for s in by[t]]})
 
@@ -166,13 +223,48 @@ def main():
             continue
         a(f"## {label} — {len(rows)}\n")
         a(f"*{what}*\n")
-        a("| source | unlocks | what it is | resolution |")
+        a("| source | unlocks | indexed by | what it is |")
         a("|---|---|---|---|")
+        MARK = {"position": "position", "region": "**region**", "mixed": "mixed",
+                "unknown": "?"}
         for s in rows:
             u = " ".join(f"`{h}`" for h in s["_unlocks"]) or "—"
-            res = " / ".join(x for x in (s.get("temporal"), s.get("spatial")) if x)
-            a(f"| **{s['id']}** | {u} | {(s.get('name') or '')[:90]} | {res[:80]} |")
+            a(f"| **{s['id']}** | {u} | {MARK[s['_spatial']]} "
+              f"| {(s.get('name') or '')[:88]} |")
         a("")
+
+    a("## The resolution rule\n")
+    kinds = collections.Counter(s["_spatial"] for s in srcs)
+    a("Nothing here is stored at an administrative unit — not per water body, not "
+      "per catchment, not per municipality, not per sub-basin. Everything is "
+      "carried at the resolution it was taken: a position, a time, and where it "
+      "exists a depth.\n")
+    a("That is not fastidiousness. [OBSERVING.md](#OBSERVING.md) establishes that a "
+      "water body explains **7.9%** of the variation in the one variable Denmark "
+      "measures densely enough to check, and that two stations inside one share "
+      "about four percent of their year-to-year variance. A source already summed "
+      "into those polygons would carry the assumption straight back in, and "
+      "everything computed from it would inherit a unit we had just shown is not "
+      "one.\n")
+    a("| indexed by | sources | |")
+    a("|---|---:|---|")
+    a(f"| position | {kinds['position']} | a place something was measured |")
+    a(f"| **region** | {kinds['region']} | somebody's aggregate; usable, but never "
+      f"as a measurement |")
+    a(f"| mixed | {kinds['mixed']} | carries both; take the position field |")
+    a(f"| ? | {kinds['unknown']} | not stated clearly enough to tell |")
+    a("")
+    a("The region-indexed sources are often the only version that exists, and "
+      "several matter a great deal — the monthly nutrient input series is per "
+      "marine reference polygon, and there is no per-outfall alternative. They "
+      "enter the panel labelled as somebody's aggregate of a measurement, and never "
+      "as the measurement.\n")
+    a("> **What a water body actually is, if it is anything, is a question to be "
+      "answered from the data rather than assumed by the schema.** Put the "
+      "observations on the map with their own coordinates and times, see which move "
+      "together, and check every proxy against an unrelated one. The administrative "
+      "polygon is then an overlay to be tested against — not a container to pour "
+      "things into.\n")
 
     a("## What this does not tell you\n")
     a("Friction is not value. Several entries in the last tier matter more than "

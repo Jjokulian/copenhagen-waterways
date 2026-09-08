@@ -35,7 +35,24 @@ except Exception:
 _op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(_jar))
 
 
-def login(email):
+def reset():
+    """Drop any stored session.
+
+    The server keeps topic, tool, criterion and aggregation state per session, and
+    criterion field ids are regenerated as that state changes. Reusing yesterday's
+    cookie therefore starts a run inside somebody else's half-configured form, and
+    the failure is silent: the criterion pane comes back without the fields you are
+    looking for, or the extract returns a header and no rows. Always start clean."""
+    _jar.clear()
+    try:
+        os.remove(JAR)
+    except OSError:
+        pass
+
+
+def login(email, fresh=True):
+    if fresh:
+        reset()
     c, o = call("Login_DoLogin", lists={"textF": {"email": email}})
     try:
         _jar.save(ignore_discard=True)

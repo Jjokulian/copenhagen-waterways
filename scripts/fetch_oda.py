@@ -41,6 +41,7 @@ Usage:
     python3 scripts/fetch_oda.py ctd --from 1970-01-01 --to 2026-12-31 --years 5
 """
 import argparse
+import gzip
 import html
 import os
 import re
@@ -111,6 +112,20 @@ def station_list(field_id, sltype):
     return re.findall(r'id="(SCL2CB_\d+)"[^>]*/>\s*(\d{3,12})\s*\(([^)]*)\)', s)
 
 
+def option_list(field_id, sltype):
+    """Every option in a multiselect, whatever its label looks like.
+
+    station_list expects the station format, "number (name)". Parameter options are
+    bare text - FDOM, Oxygen indhold, Salinitet - so matching on the station shape
+    returns an empty list and the criterion is silently left unset, which the server
+    reports as a header with no rows rather than as an error."""
+    c, o = oda.call("SCL2_FillMultiSelectList",
+                    {"srchStr": "", "SLType": sltype, "SelectBoxId": field_id,
+                     "method": "SCL2_FillMultiSelectList"}, pause=1.2)
+    return re.findall(r'id="(SCL2CB_\d+)"[^>]*/>\s*([^<]{1,80}?)\s*<',
+                      html.unescape(o))
+
+
 def select_stations(field_id, sltype, checkbox_ids):
     """Add these stations to the station criterion.
 
@@ -134,11 +149,24 @@ def select_stations(field_id, sltype, checkbox_ids):
     return "HentDataStor=true" in o
 
 
+def dk_date(iso):
+    """The datepicker round-trips Danish dd-mm-yyyy.
+
+    Sending ISO silently produces an empty result rather than an error: the server
+    accepts the string, fails to parse it into a range, and getcsv.aspx returns a
+    header and no rows - indistinguishable from "no data in this period", which is
+    how an afternoon goes missing."""
+    if not iso:
+        return ""
+    p = iso.split("-")
+    return f"{p[2]}-{p[1]}-{p[0]}" if len(p) == 3 else iso
+
+
 def set_period(frm, to):
     if not frm and not to:
         return
     oda.call("SCL2_DatePicked", lists={"textFields": {
-        "SCL2PeriodFrom": frm or "", "SCL2PeriodTo": to or ""}}, pause=0.8)
+        "SCL2PeriodFrom": dk_date(frm), "SCL2PeriodTo": dk_date(to)}}, pause=0.8)
     oda.call("HentData_KritChanged", pause=0.6)
 
 
@@ -250,28 +278,52 @@ def run(topic, frm, to, years, limit, max_mb):
     nfields = select_all_output(panes["HentData_FillDataRun"])
     log(f"  {nfields} output fields selected")
 
-    out = os.path.join(DEST, f"{topic}.csv")
-    log(f"  {free_mb(DEST):,.0f} MB free; budget {max_mb:,} MB")
+    # gzip on the way out. These extracts are wide, repetitive text - station name
+    # and instrument metadata repeated on every row - and compress about tenfold,
+    # which is the difference between fitting on this disk and not.
+    out = os.path.join(DEST, f"{topic}.csv.gz")
+    log(f"  {free_mb(DEST):,.0f} MB free; budget {max_mb:,} MB (compressed)")
 
     # One station selection for all of them; the criterion accumulates, so doing
     # this once is both correct and cheapest.
-    big = select_stations(field_id, sltype, [c[0] for c in stations])
+    select_stations(field_id, sltype, [c[0] for c in stations])
+
+    # Some topics have more than one obligatory criterion. CTD needs Parameter set
+    # as well as the station list: leave it empty and the server throws inside
+    # GetCount building its WHERE clause, and getcsv.aspx returns a header with no
+    # rows - which looks exactly like "there is no data for this period". Select
+    # everything in every remaining multiselect.
+    for label, (fid2, slt2) in crit.items():
+        if fid2 == field_id:
+            continue
+        opts = option_list(fid2, slt2)
+        if opts:
+            oda.call("SCL2_SelectMultiSelectList",
+                     {"SLType": slt2, "SelectBoxId": fid2},
+                     lists={"checkBoxes": {o[0]: "true" for o in opts}}, pause=1.0)
+            log(f"  {label}: all {len(opts)} selected")
+    oda.call("HentData_KritChanged", pause=0.8)
     select_all_output(panes["HentData_FillDataRun"])
-    if big:
-        log("  server flags the whole-record extract as too large to stream; "
-            "periods will be requested one at a time")
 
     periods = split_periods(frm, to, years)
     rows_total = bytes_total = 0
-    with open(out, "wb") as fh:                       # replace, never grow
+    with gzip.open(out, "wb", compresslevel=6) as fh:   # replace, never grow
         for n, (a, b) in enumerate(periods, 1):
             if a or b:
                 set_period(a, b)
                 select_all_output(panes["HentData_FillDataRun"])
-            room = min(max_mb - bytes_total / 1e6, free_mb(DEST) - MIN_FREE_MB)
+            # The size flag is only meaningful once the period is applied - checked
+            # before that, it describes the whole record and is always true.
+            c, o = oda.call("HentData_KritChanged", pause=0.6)
+            if "HentDataStor=true" in o:
+                log(f"  [{n}] {a or 'start'}..{b or 'end'} is too large to stream. "
+                    f"getcsv.aspx returns an error for these, and the portal wants "
+                    f"the extract ordered instead. Narrow --years and retry.")
+                return 2
+            room = min((max_mb - bytes_total) * 10, free_mb(DEST) - MIN_FREE_MB)
             if room <= 0:
                 log(f"  [{n}] stopping: budget or free space exhausted "
-                    f"({bytes_total/1e6:,.0f} MB written, "
+                    f"({bytes_total:,.0f} MB written, "
                     f"{free_mb(DEST):,.0f} MB free)")
                 break
             rows, nbytes, err = stream_csv(fh, skip_header=(n > 1), budget_mb=room)
@@ -279,10 +331,11 @@ def run(topic, frm, to, years, limit, max_mb):
                 log(f"  [{n}] {err}")
                 return 3
             rows_total += rows
-            bytes_total += nbytes
+            bytes_total = os.path.getsize(out) / 1e6 if os.path.exists(out) else 0
+            fh.flush()
             log(f"  [{n}/{len(periods)}] {a or 'start'}..{b or 'end'}: "
-                f"{rows:,} rows, {nbytes/1e6:,.1f} MB "
-                f"({rows_total:,} rows, {bytes_total/1e6:,.0f} MB total)")
+                f"{rows:,} rows, {nbytes/1e6:,.1f} MB raw "
+                f"({rows_total:,} rows, {bytes_total:,.0f} MB on disk)")
             time.sleep(2.0)
     log(f"\nwrote {out} ({os.path.getsize(out)/1e6:,.1f} MB, {rows_total:,} rows)")
     log(f"  {free_mb(DEST):,.0f} MB still free")

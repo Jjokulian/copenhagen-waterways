@@ -6,6 +6,24 @@ Showing that a claim rests on poor grounds reduces its political actionability. 
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
+## This list is not exhaustive, and we have no way to know how far off it is
+
+There are 127 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 127 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+
+Three further problems, which matter for what can be concluded:
+
+**It is not a partition.** The groups sit at different levels of abstraction and cut across each other. Some entries are mechanisms, some are conditions that let a mechanism operate, some are descriptions of a state, and some — group I especially — are not about the sea at all but about the instrument. They do not tile anything.
+
+**The entries are not independent.** Sulphur alone appears as an oxygen sink (`E1`), as reduced bed chemistry (`M7`), as the reason the marine electron-acceptor cascade differs from the freshwater one (`R5`), as the release mechanism for sediment phosphate (`R6`), and as the poison that kills eelgrass from below (`T1`). That is one element seen from five sides, not five causes. **Counting entries therefore says nothing about weight**, and a group with fourteen entries is not thereby more important than one with four.
+
+**Some causes may not separate at all.** Several of these plausibly have no independent existence and occur only in combination — the light-and-sulphide interaction of `T1`, the mixture effects of `U1`. Listing them as separable items imposes a structure the world may not have.
+
+> **The consequence for scoring.** Any ranking computed over this field is a ranking *within the field*, not a decomposition of reality. A statement of the form "mechanism X accounts for n% of the problem" would require the field to be complete, disjoint and independent, and it is none of the three. Making that claim anyway would be the residual-estimator error of [RESIDUAL.md](#RESIDUAL.md) committed one level up — treating what is left over after our own enumeration as if it were a measurement of the world.
+
+What the register is for is narrower and still worth having. It converts *the cause is X* into *X is one of at least a hundred and twenty-seven, and here is the observable that would tell it apart from its neighbours*. It is written down before anything is scored so that it cannot be trimmed afterwards to whatever the data happened to support. Absence from this list is not evidence of absence, and additions are wanted.
+
 ## What is actually at stake
 
 Nobody values a dissolved gas concentration. An earlier version of this page listed oxygen deficit as an outcome, which reproduced the exact error the project exists to criticise — promoting the measured intermediate to the thing of interest, because it is the thing that is measured. So the structure here is three layers.
@@ -23,6 +41,8 @@ Nobody values a dissolved gas concentration. An earlier version of this page lis
 ### Routes — the sufficient paths to those outcomes
 
 Oxygen deficit is **one** of these. It is neither necessary nor sufficient for any terminal outcome, and several of the others leave no oxygen signature at all — a poisoned water can be fully oxygenated.
+
+These seven are not claimed to be all of them either, and they are not even cleanly separable from one another: `M7` is partly a special case of `M2`, and `M5` ends by feeding `M3`. They were arrived at by asking what could produce the terminal outcomes, which is a question with no natural stopping point. Treat them as seven routes we could name, not as the routes there are.
 
 | | route | what it is |
 |---|---|---|
@@ -1722,6 +1742,8 @@ The parallel is structural and it is not an argument that either narrative is fa
 3. Express each hypothesis as a model over that panel, with a common interface so that none of them is advantaged by its formulation.
 
 4. Score them out of sample — held-out years and held-out areas — and rank. Report the unrankable separately and by name.
+
+And whatever comes out of that, the caveat at the top holds: the ranking will be a ranking within this field. The field is open, it is not a partition, its entries are not independent, and its own history says it is incomplete.
 
 A1 may well win. That would be a far stronger result for it than the one it currently has, because it would have been tested against rivals rather than fitted alone.
 
