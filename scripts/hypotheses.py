@@ -191,9 +191,179 @@ GROUPS = [
      "Fedtemøg as a property of the water rather than of the shore. These are the "
      "mechanisms that produce a greasy film on skin, and they are the ones that can "
      "operate in a sea with no Danish catchment at all."),
+    ("K", "Depletion and imbalance of what life requires",
+     "The policy frame is that there is too much of something. The plant-nutrition "
+     "literature is about there being too little, and about ratios. Liebig's law of "
+     "the minimum says growth is set by the scarcest essential resource, not by the "
+     "sum; Shelford's law of tolerance says every requirement has a ceiling as well "
+     "as a floor; and horticultural antagonism says an excess of one nutrient "
+     "*induces deficiency* of another by blocking its uptake. Under those three, "
+     "\"too much nitrogen\" and \"depleted of something else\" are not opposite "
+     "diagnoses. They are the same one."),
     ("I", "Observation and measurement",
      "Rival explanations for an apparent trend that live in the instrument rather "
      "than the sea. Omitting these is not neutrality; it is an assumption."),
+]
+
+
+# Each route has its own cascade, and they converge. This is the structural fact
+# that makes attribution hard, and it is why the terminal state carries almost no
+# information about which route produced it.
+CASCADES = [
+    ("M1", "Oxygen deficit",
+     "demand exceeds resupply → sensitive fauna die → burrowing and irrigation stop "
+     "→ the sediment goes anoxic → sulphide and phosphate are released → production "
+     "rises → demand rises",
+     "closes on itself through the sediment"),
+    ("M2", "Toxic exposure",
+     "sensitive species die first → grazers and filter feeders are lost "
+     "disproportionately, being larger and longer-lived → nothing crops the fast "
+     "growers → biomass turns over faster → more material to decay",
+     "closes through the loss of control from above"),
+    ("M3", "Physical destruction",
+     "structure removed → no refuge, no hard substrate, no shelter from flow → only "
+     "opportunists recolonise → no structure is rebuilt",
+     "closes by removing the thing that would have to regrow"),
+    ("M4", "Food-web restructuring",
+     "a predator or grazer is removed → its prey is released → the level below that "
+     "is suppressed → primary producers are uncontrolled",
+     "closes through trophic release"),
+    ("M5", "Light starvation",
+     "light at the bed falls below the plant's requirement → rooted vegetation dies "
+     "→ sediment is no longer held → resuspension rises → light falls further",
+     "closes through the sediment the plants were holding"),
+    ("M6", "Surface film and gel",
+     "nutrient imbalance drives carbon overflow → gel and exopolymer are produced → "
+     "aggregates form, resist grazing, and sink → smothering and decay → more "
+     "imbalance",
+     "closes by being inedible"),
+    ("M7", "Reduced chemistry at the bed",
+     "sulphide accumulates → fauna die at the sediment surface → irrigation stops → "
+     "the oxidised surface layer thins → sulphide reaches the water",
+     "closes through the loss of the animals that kept the bed oxidised"),
+]
+
+
+# Every element life requires, put through the same two questions we ask about
+# oxygen: can it be depleted here, and is there a loop that makes the depletion
+# feed itself? Oxygen is famous for having one. It is not alone, and it is not even
+# the best documented.
+#
+# "loop" is the self-reinforcing mechanism, where one exists. "evidence" is how well
+# established that loop is in the literature, not how likely it is to matter here.
+ELEMENTS = [
+    ("C", "Carbon", "CO₂ and bicarbonate; the vast DIC pool",
+     "Rarely limiting in bulk, but drawn down inside a dense bloom, where pH can "
+     "rise above 9.",
+     "High pH shifts ammonium toward un-ionised ammonia, which is acutely toxic. A "
+     "bloom therefore poisons the water by consuming carbon — a kill with no "
+     "hypoxia in it at all.",
+     "established"),
+    ("O", "Oxygen", "dissolved gas, resupplied from air and photosynthesis",
+     "Yes, and it is the one the requirement acts on.",
+     "The known one: deficit kills fauna, fauna stop irrigating the bed, the bed "
+     "goes anoxic, phosphate and sulphide are released, production rises, demand "
+     "rises.",
+     "established"),
+    ("N", "Nitrogen", "nitrate, ammonium, organic N",
+     "Yes — drawn to near zero in summer surface water, which is what N-limitation "
+     "means.",
+     "**Two loops, in opposite directions.** Hypoxia stops nitrification, which "
+     "starves denitrification of nitrate, so the sediment stops permanently "
+     "removing N and starts releasing ammonium instead: the bed flips from an N "
+     "sink to an N source. And as N falls relative to P, cyanobacterial fixation "
+     "rises and puts N back — so reducing the load can increase the internal supply "
+     "while selecting for the least desirable producers.",
+     "established"),
+    ("P", "Phosphorus", "phosphate, largely bound to iron oxides in oxic sediment",
+     "Yes, and famously reversible.",
+     "The best-documented loop in the whole system, better than the oxygen–fauna "
+     "one: anoxia reduces Fe(III) to Fe(II), the iron-bound phosphate dissolves, "
+     "production rises, oxygen falls, more phosphate is released. Denmark's own "
+     "assessment cites this to explain why the Skive and Lovns phosphorus models "
+     "fail.",
+     "established"),
+    ("S", "Sulphur", "sulphate, ~2.7 g/L — effectively unlimited",
+     "Never depleted. Its abundance is the problem.",
+     "Once oxygen and nitrate are gone, sulphate becomes the terminal electron "
+     "acceptor, and there is so much of it that sulphide production is unbounded. "
+     "Sulphide kills fauna, fauna stop irrigating, the oxidised surface layer thins, "
+     "more sulphide reaches the water. This is why marine hypoxia is worse than "
+     "freshwater hypoxia: the ocean carries its own poison reservoir.",
+     "established"),
+    ("Si", "Silicon", "dissolved silicate, supplied only by rock weathering",
+     "Yes — and uniquely, human activity does not replace it.",
+     "Enhanced production buries silica faster in diatom frustules; the Si:N ratio "
+     "falls; diatoms give way to flagellates and cyanobacteria, which need no Si, "
+     "are poorly grazed, and produce the gel. Less grazing means more sinking "
+     "organic matter, which means more of the hypoxia that started it.",
+     "established"),
+    ("Fe", "Iron", "required for photosynthesis and nitrate reduction; also the "
+     "sediment's phosphate trap",
+     "Coastal water is iron-rich in total, but the *sediment's* iron pool is "
+     "depletable and its bioavailability depends on redox and organic ligands.",
+     "The iron shuttle: repeated anoxia reduces and mobilises sediment iron, which "
+     "is exported or buried elsewhere. The bed permanently loses its capacity to "
+     "bind phosphate, so each hypoxic episode leaves the system more prone to the "
+     "next. A ratchet rather than a cycle — this one does not reverse when oxygen "
+     "returns.",
+     "established"),
+    ("Mn", "Manganese", "enzyme cofactor; redox-cycling like iron",
+     "Cycles between oxidation states with the redox front rather than depleting.",
+     "Shares the iron shuttle, and its oxides also consume oxygen on reoxidation.",
+     "established"),
+    ("Mo", "Molybdenum", "cofactor for nitrate reductase and for nitrogenase",
+     "Yes, in sulphidic water specifically.",
+     "Sulphide converts molybdate to thiomolybdate, which is scavenged and buried. "
+     "A euxinic basin therefore strips itself of the cofactor that both nitrogen "
+     "fixation and nitrate reduction require — hypoxia disabling two of the "
+     "nitrogen cycle's own valves.",
+     "established"),
+    ("Co", "Cobalt", "the metal at the centre of vitamin B12",
+     "Scarce, and its availability is mediated by the bacteria that make B12.",
+     "Most eukaryotic algae cannot make B12 and depend on bacteria for it. A shift "
+     "in the bacterial community changes which algae can grow at all, with no "
+     "change in any nutrient anyone measures.",
+     "established"),
+    ("Ca", "Calcium", "abundant as an ion; the limiting quantity is carbonate "
+     "saturation, not calcium",
+     "Calcium never depletes. Carbonate ion does, as acidification proceeds.",
+     "Shell dissolution currently buffers pH — a stabilising feedback that is being "
+     "spent. When the shells are gone the buffer goes with them.",
+     "established"),
+    ("Cu", "Copper", "essential cofactor, and a deliberate biocide",
+     "Not depleted; the risk is the ceiling, not the floor.",
+     "Antifouling copper puts an essential micronutrient into its toxic range on "
+     "purpose, in exactly the harbours and lanes where exchange is worst.",
+     "established"),
+    ("Zn", "Zinc", "cofactor for carbonic anhydrase, needed for carbon uptake",
+     "Can limit in some marine settings; some diatoms substitute cadmium for it.",
+     "Zinc limitation impairs carbon acquisition, which interacts with the carbon "
+     "drawdown loop above. Weakly studied in coastal water.",
+     "partly"),
+    ("Se", "Selenium", "glutathione peroxidase; protective against mercury",
+     "Deficiency documented in other systems; the essential-to-toxic window is "
+     "among the narrowest of any element.",
+     "Interacts with mercury burden, so neither is interpretable alone.",
+     "partly"),
+    ("B1", "Thiamine", "vitamin, not an element, but a hard requirement",
+     "Yes. Baltic salmon M74 syndrome is mass fry mortality from thiamine "
+     "deficiency, documented since the 1970s.",
+     "Deficiency is transmitted through the diet, so it follows the same community "
+     "shift as silicon depletion, at a life stage no survey counts.",
+     "established"),
+    ("K", "Potassium", "~400 mg/L in seawater",
+     "No. Never limiting.",
+     "None.",
+     "n/a"),
+    ("Mg", "Magnesium", "~1.3 g/L in seawater",
+     "No.",
+     "None.",
+     "n/a"),
+    ("Cl", "Chlorine", "the dominant anion in seawater",
+     "No.",
+     "None.",
+     "n/a"),
 ]
 
 H = [
@@ -709,6 +879,141 @@ H = [
      "diversity.",
      "Microbial community data. Not monitored."),
 
+    # ---- K ----------------------------------------------------------------
+    ("K1", "K", "Silicon depletion and the diatom-to-flagellate shift",
+     ["O4", "O2", "O8", "O1"],
+     "Diatoms build frustules of silica and cannot grow without dissolved silicon. "
+     "Si comes from rock weathering, so human activity does not raise it, while N "
+     "and P have risen severalfold. When Si runs out first, diatoms are replaced by "
+     "flagellates and cyanobacteria - poorly grazed, prone to harmful blooms, and "
+     "the principal producers of the gel in group J. Enhanced production also buries "
+     "Si faster, so the depletion reinforces itself.",
+     "Total biomass need not change at all; the *composition* does. This is a "
+     "mechanism where reducing nitrogen genuinely helps, for a reason that has "
+     "nothing to do with oxygen and that the chlorophyll indicator cannot see, "
+     "because it counts biomass and the change is in who the biomass is.",
+     "The Si:N ratio through time against diatom share of the community. Both are "
+     "measurable and the ratio is almost never reported.",
+     "Dissolved silicate alongside N and P at the same stations and dates, and "
+     "species-level phytoplankton counts. Silicate is in the ODA record."),
+    ("K2", "K", "Stoichiometric imbalance decides who grows", ["O4", "O2", "O8"],
+     "Redfield C:N:P at 106:16:1 and roughly Si:N at 1:1 for diatoms are "
+     "requirements, not averages. Skewing the ratios changes which organisms can "
+     "complete their life cycle, independently of how much of anything there is.",
+     "Community composition tracks ratios; total biomass tracks absolute supply. A "
+     "policy that moves one nutrient alone necessarily moves every ratio it appears "
+     "in, and the direction of that effect is not signed in advance.",
+     "Community composition against N:P and Si:N, with absolute concentrations held "
+     "fixed - which the 123 areas make possible.",
+     "Simultaneous N, P and Si with species-level counts."),
+    ("K3", "K", "Macronutrient excess inducing micronutrient deficiency",
+     ["O4", "O3", "O6"],
+     "Standard horticultural antagonism: high nitrogen suppresses uptake of copper "
+     "and boron, high phosphorus induces zinc deficiency, high potassium blocks "
+     "magnesium and calcium. The excess starves the organism of something else.",
+     "Damage that looks like deficiency arising from enrichment, so the same load "
+     "reduction helps for a mechanism nobody named. Routine in glasshouse practice "
+     "and, as far as we can find, entirely absent from Danish marine assessment.",
+     "Tissue micronutrient content in marine primary producers along a nutrient "
+     "gradient - the standard horticultural diagnostic, applied to the sea.",
+     "Tissue elemental analysis of algae and eelgrass. Not collected."),
+    ("K4", "K", "Thiamine (B1) deficiency", ["O6", "O3"],
+     "Thiamine deficiency causes mass mortality of fry and adults; Baltic salmon M74 "
+     "syndrome is documented from the 1970s onward, and similar deficiency has been "
+     "implicated in bird and fish die-offs across the region.",
+     "Kills at a life stage nobody surveys, with no poison and no hypoxia. Linked to "
+     "diet composition, so it is downstream of the same community shift as K1.",
+     "Thiamine status in fish eggs and prey species against community composition.",
+     "Thiamine assays. Swedish and Finnish work exists; Danish marine monitoring has "
+     "none."),
+    ("K5", "K", "Cobalamin (B12) and cobalt limitation", ["O4", "O8"],
+     "Most eukaryotic algae are B12 auxotrophs and depend on bacteria to supply it. "
+     "The vitamin, and the cobalt at its centre, is a limiting resource produced by "
+     "one part of the community for another.",
+     "Change the bacterial community and you change what algae can grow, with no "
+     "change in any nutrient that is measured.",
+     "B12 concentration and auxotroph share against bacterial community "
+     "composition.",
+     "Marine B12 measurements. None in Denmark."),
+    ("K6", "K", "Iron bioavailability", ["O4"],
+     "Iron is required for photosynthesis and nitrate reduction. Coastal water is "
+     "usually iron-replete in total, but availability depends on redox state and on "
+     "organic ligands, both of which change with hypoxia and with organic loading.",
+     "Availability, not total concentration, is the limiting quantity - so a "
+     "measurement of total iron can be flat while the available fraction moves.",
+     "Dissolved and ligand-bound iron speciation, not total iron.",
+     "Iron speciation. Not monitored."),
+    ("K7", "K", "Carbonate ion depletion", ["O3", "O6"],
+     "Acidification is usually framed as pH falling. For a calcifying organism the "
+     "operative quantity is the depletion of carbonate ion and the fall in aragonite "
+     "and calcite saturation - a resource being removed, not a toxin arriving.",
+     "Shell-forming larvae fail first, in the season when saturation is lowest, "
+     "which need not be the season anything is measured.",
+     "Aragonite saturation state against larval recruitment of calcifiers.",
+     "Carbonate system measurements - two of pH, alkalinity, DIC or pCO₂ together. "
+     "Thin in Danish coastal water."),
+    ("K8", "K", "The narrow window between deficient and toxic", ["O3", "O4"],
+     "Copper, zinc, manganese, nickel, selenium and boron are all essential and all "
+     "toxic, often within an order of magnitude. Shelford's law of tolerance, in the "
+     "elements.",
+     "Both tails kill, so a linear dose-response is the wrong shape and a threshold "
+     "set on one side says nothing about the other. Antifouling copper puts a "
+     "micronutrient into the toxic tail on purpose.",
+     "Response across the full gradient rather than against a single threshold.",
+     "Trace element concentrations with matched biological response. Sediment metals "
+     "are measured at four points nationally."),
+    ("K9", "K", "Selenium", ["O3", "O6"],
+     "Required for the glutathione peroxidase system, protective against mercury, "
+     "and toxic in modest excess. Deficiency has been implicated in fish and bird "
+     "mortality elsewhere.",
+     "Interacts with mercury burden, so neither element's effect is interpretable "
+     "without the other.",
+     "Selenium and mercury together in biota, as a ratio.",
+     "Selenium in Danish marine biota. Not routinely measured."),
+    ("K10", "K", "Salinity change and osmotic cost", ["O3", "O4", "O6"],
+     "The Danish straits are a salinity gradient, and every organism in them sits "
+     "near an edge of its tolerance. Changing freshwater delivery or Baltic inflow "
+     "moves the whole community's position in that range.",
+     "Species drop out at boundaries that have nothing to do with nutrients, and the "
+     "Baltic's low-diversity brackish fauna is already at a minimum where small "
+     "shifts have large effects.",
+     "Community composition against salinity variance, not mean.",
+     "Salinity by station, date and depth. In the CTD record."),
+    ("K11", "K", "Light as a depleted resource", ["O7", "O4"],
+     "Distinct from turbidity as a symptom: for a rooted plant, light at the bed is "
+     "a resource with a hard requirement - roughly 11-14% of surface irradiance for "
+     "eelgrass - and below it the plant does not grow slowly, it dies.",
+     "A threshold, not a gradient. Explains why vegetation recovery is abrupt and "
+     "why intermediate improvement produces no response at all.",
+     "Light at the bed against the requirement, per area, rather than Kd as an "
+     "index.",
+     "Kd with water depth, which together give light at the bed. Both are in the "
+     "record and the product is rarely formed."),
+    ("K12", "K", "Loss of habitat-forming structure", ["O3", "T1"],
+     "Mussel beds, eelgrass, stone reefs and biogenic structure are a resource in "
+     "themselves - surface, refuge, and hydrodynamic shelter. Denmark's stone reefs "
+     "were physically removed for construction stone through the twentieth century.",
+     "Species requiring hard substrate cannot return whatever the water quality "
+     "does, because the substrate is gone. Testable: reef restoration is a dated, "
+     "located intervention.",
+     "Fauna at restored reefs against unrestored controls.",
+     "Stone extraction records and reef restoration locations and dates."),
+    ("K13", "K", "Food depletion for filter feeders and larvae", ["O3", "O4"],
+     "Filter feeders and larvae need the right particles in the right size range at "
+     "the right time. A shift from diatoms to picoplankton or gel can leave high "
+     "chlorophyll and nothing edible.",
+     "Starvation amid apparent abundance. The chlorophyll indicator would score this "
+     "water as over-productive.",
+     "Larval condition and growth against particle size spectrum, not chlorophyll.",
+     "Particle size spectra and larval condition indices. Not monitored."),
+    ("K14", "K", "Genetic and functional diversity depletion", ["O3"],
+     "Repeated mortality events select the survivors down to a narrow set, and a "
+     "narrow set has fewer ways to respond to the next disturbance.",
+     "Declining resilience with no change in any concentration - the same stressor "
+     "produces a larger effect than it once did.",
+     "Functional diversity indices through time from the fauna record.",
+     "Species-level fauna with abundance, which the ODA bundfauna data carries."),
+
     # ---- I ----------------------------------------------------------------
     ("I1", "I", "Changing station network", ["O1", "O3", "O4"],
      "Stations added, moved and dropped over the record, so a trend can be a trend "
@@ -796,6 +1101,64 @@ def render(rows):
     for i, n, w in ROUTES:
         a(f"| `{i}` | **{n}** | {w} |")
     a("")
+    a("### The cascades, and where they converge\n")
+    a("Iltsvind is one *kind* of dying out, with one particular chain of "
+      "consequences. Every other route has its own chain, and each of them closes "
+      "into a loop that sustains itself.\n")
+    a("| route | the cascade | why it does not stop |")
+    a("|---|---|---|")
+    for i, n, chain, why in CASCADES:
+        a(f"| `{i}` **{n}** | {chain} | {why} |")
+    a("")
+    a("They converge. Whichever chain runs, the organisms left standing are the ones "
+      "with the highest maximum growth rate, the lowest resource requirement, the "
+      "shortest generation time and the least dependence on structure — fast, small, "
+      "unselective, ungrazed. Every route ends in the same place, and that place is "
+      "what the word *primordial soup* is reaching for: not an absence of life but "
+      "an abundance of the lowest forms of it, which is why it registers as high "
+      "biomass and high productivity on instruments built to treat those as health.\n")
+    a("> **The terminal state is multiply realisable, so observing it identifies no "
+      "cause.** A dead, greasy, over-productive water looks the same whether it was "
+      "suffocated, poisoned, dredged, fished out, shaded, gelled or soured. "
+      "Attribution has to come from the *discriminating* observables — the ones each "
+      "hypothesis below names — and never from the end state, however carefully the "
+      "end state is measured.\n")
+    a("This is also why a well-measured route is not thereby the route taken. Oxygen "
+      "is the best-instrumented of the seven by a wide margin. That is a fact about "
+      "Danish monitoring, not about Danish water.\n")
+
+    a("### Every requirement, put through the oxygen questions\n")
+    a("Oxygen is famous for having a feedback loop. That is a fact about how much "
+      "attention it has had, not about how unusual it is. Taking the standard list "
+      "of what a plant or an alga requires, and asking of each the same two "
+      "questions — *can it be depleted here*, and *is there a loop that makes the "
+      "depletion feed itself* — the answer is yes far more often than the framing "
+      "suggests, and two of the loops are better established than the oxygen one.\n")
+    a("| | requirement | can it deplete? | the loop | evidence |")
+    a("|---|---|---|---|---|")
+    for sym, name, role, dep, loop, ev in ELEMENTS:
+        a(f"| `{sym}` | **{name}** — {role} | {dep} | {loop} | {ev} |")
+    a("")
+    a("Three things fall out of that table.\n")
+    a("**Phosphorus and iron have the strongest loops, not oxygen.** The anoxic "
+      "release of iron-bound phosphate is textbook, and Denmark's own assessment "
+      "invokes it to explain why the Skive and Lovns phosphorus models fail. The "
+      "iron shuttle is worse still, because it is a *ratchet* rather than a cycle: "
+      "each hypoxic episode permanently exports sediment iron, so the bed loses "
+      "phosphate-binding capacity that does not come back when the oxygen does.\n")
+    a("**Two of the loops run against the policy.** Hypoxia stops nitrification and "
+      "so disables denitrification, flipping the sediment from a nitrogen sink to a "
+      "nitrogen source; and falling N relative to P selects for cyanobacteria, which "
+      "fix nitrogen from the air. Both mean the internal supply can rise while the "
+      "external load falls — which is a candidate explanation, on their own "
+      "mechanism, for why thirty-five years of load reduction has not produced the "
+      "expected recovery.\n")
+    a("**Sulphur is the one that makes marine hypoxia different.** Seawater carries "
+      "2.7 g/L of sulphate. Once oxygen and nitrate are exhausted it becomes the "
+      "terminal electron acceptor, and the supply is effectively unlimited — so the "
+      "sea manufactures its own poison, without limit, as soon as the oxygen goes. "
+      "Freshwater has no comparable reservoir.\n")
+
     a("### Routes we can name and cannot quantify\n")
     a("Listing these is not a rhetorical move. An unquantified route that goes "
       "unlisted becomes an absent one in every summary downstream, and *no evidence "
@@ -851,6 +1214,11 @@ def main():
     payload = {
         "terminal": [{"id": i, "name": n, "what": w} for i, n, w in TERMINAL],
         "routes": [{"id": i, "name": n, "what": w} for i, n, w in ROUTES],
+        "cascades": [{"route": i, "name": n, "chain": c, "closes": w}
+                     for i, n, c, w in CASCADES],
+        "elements": [{"symbol": a_, "name": b_, "role": c_, "depletable": d_,
+                      "loop": e_, "evidence": f_}
+                     for a_, b_, c_, d_, e_, f_ in ELEMENTS],
         "unquantifiable": [{"id": i, "name": n, "what": w}
                            for i, n, w in UNQUANTIFIABLE],
         "observables": [{"id": i, "name": n, "what": w} for i, n, w in OUTCOMES],

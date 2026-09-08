@@ -2,7 +2,7 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**79 mechanisms in 10 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**93 mechanisms in 11 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
@@ -33,6 +33,59 @@ Oxygen deficit is **one** of these. It is neither necessary nor sufficient for a
 | `M5` | **Light starvation** | Rooted vegetation shaded out by turbidity, which then removes the thing that was holding the sediment down. |
 | `M6` | **Surface film and gel** | The water itself becomes a different medium: greasy, foaming, mucilaginous. |
 | `M7` | **Reduced chemistry at the bed** | Sulphide and its relatives, toxic in their own right and an oxygen sink besides. The bed becomes hostile before the water column shows anything. |
+
+### The cascades, and where they converge
+
+Iltsvind is one *kind* of dying out, with one particular chain of consequences. Every other route has its own chain, and each of them closes into a loop that sustains itself.
+
+| route | the cascade | why it does not stop |
+|---|---|---|
+| `M1` **Oxygen deficit** | demand exceeds resupply → sensitive fauna die → burrowing and irrigation stop → the sediment goes anoxic → sulphide and phosphate are released → production rises → demand rises | closes on itself through the sediment |
+| `M2` **Toxic exposure** | sensitive species die first → grazers and filter feeders are lost disproportionately, being larger and longer-lived → nothing crops the fast growers → biomass turns over faster → more material to decay | closes through the loss of control from above |
+| `M3` **Physical destruction** | structure removed → no refuge, no hard substrate, no shelter from flow → only opportunists recolonise → no structure is rebuilt | closes by removing the thing that would have to regrow |
+| `M4` **Food-web restructuring** | a predator or grazer is removed → its prey is released → the level below that is suppressed → primary producers are uncontrolled | closes through trophic release |
+| `M5` **Light starvation** | light at the bed falls below the plant's requirement → rooted vegetation dies → sediment is no longer held → resuspension rises → light falls further | closes through the sediment the plants were holding |
+| `M6` **Surface film and gel** | nutrient imbalance drives carbon overflow → gel and exopolymer are produced → aggregates form, resist grazing, and sink → smothering and decay → more imbalance | closes by being inedible |
+| `M7` **Reduced chemistry at the bed** | sulphide accumulates → fauna die at the sediment surface → irrigation stops → the oxidised surface layer thins → sulphide reaches the water | closes through the loss of the animals that kept the bed oxidised |
+
+They converge. Whichever chain runs, the organisms left standing are the ones with the highest maximum growth rate, the lowest resource requirement, the shortest generation time and the least dependence on structure — fast, small, unselective, ungrazed. Every route ends in the same place, and that place is what the word *primordial soup* is reaching for: not an absence of life but an abundance of the lowest forms of it, which is why it registers as high biomass and high productivity on instruments built to treat those as health.
+
+> **The terminal state is multiply realisable, so observing it identifies no cause.** A dead, greasy, over-productive water looks the same whether it was suffocated, poisoned, dredged, fished out, shaded, gelled or soured. Attribution has to come from the *discriminating* observables — the ones each hypothesis below names — and never from the end state, however carefully the end state is measured.
+
+This is also why a well-measured route is not thereby the route taken. Oxygen is the best-instrumented of the seven by a wide margin. That is a fact about Danish monitoring, not about Danish water.
+
+### Every requirement, put through the oxygen questions
+
+Oxygen is famous for having a feedback loop. That is a fact about how much attention it has had, not about how unusual it is. Taking the standard list of what a plant or an alga requires, and asking of each the same two questions — *can it be depleted here*, and *is there a loop that makes the depletion feed itself* — the answer is yes far more often than the framing suggests, and two of the loops are better established than the oxygen one.
+
+| | requirement | can it deplete? | the loop | evidence |
+|---|---|---|---|---|
+| `C` | **Carbon** — CO₂ and bicarbonate; the vast DIC pool | Rarely limiting in bulk, but drawn down inside a dense bloom, where pH can rise above 9. | High pH shifts ammonium toward un-ionised ammonia, which is acutely toxic. A bloom therefore poisons the water by consuming carbon — a kill with no hypoxia in it at all. | established |
+| `O` | **Oxygen** — dissolved gas, resupplied from air and photosynthesis | Yes, and it is the one the requirement acts on. | The known one: deficit kills fauna, fauna stop irrigating the bed, the bed goes anoxic, phosphate and sulphide are released, production rises, demand rises. | established |
+| `N` | **Nitrogen** — nitrate, ammonium, organic N | Yes — drawn to near zero in summer surface water, which is what N-limitation means. | **Two loops, in opposite directions.** Hypoxia stops nitrification, which starves denitrification of nitrate, so the sediment stops permanently removing N and starts releasing ammonium instead: the bed flips from an N sink to an N source. And as N falls relative to P, cyanobacterial fixation rises and puts N back — so reducing the load can increase the internal supply while selecting for the least desirable producers. | established |
+| `P` | **Phosphorus** — phosphate, largely bound to iron oxides in oxic sediment | Yes, and famously reversible. | The best-documented loop in the whole system, better than the oxygen–fauna one: anoxia reduces Fe(III) to Fe(II), the iron-bound phosphate dissolves, production rises, oxygen falls, more phosphate is released. Denmark's own assessment cites this to explain why the Skive and Lovns phosphorus models fail. | established |
+| `S` | **Sulphur** — sulphate, ~2.7 g/L — effectively unlimited | Never depleted. Its abundance is the problem. | Once oxygen and nitrate are gone, sulphate becomes the terminal electron acceptor, and there is so much of it that sulphide production is unbounded. Sulphide kills fauna, fauna stop irrigating, the oxidised surface layer thins, more sulphide reaches the water. This is why marine hypoxia is worse than freshwater hypoxia: the ocean carries its own poison reservoir. | established |
+| `Si` | **Silicon** — dissolved silicate, supplied only by rock weathering | Yes — and uniquely, human activity does not replace it. | Enhanced production buries silica faster in diatom frustules; the Si:N ratio falls; diatoms give way to flagellates and cyanobacteria, which need no Si, are poorly grazed, and produce the gel. Less grazing means more sinking organic matter, which means more of the hypoxia that started it. | established |
+| `Fe` | **Iron** — required for photosynthesis and nitrate reduction; also the sediment's phosphate trap | Coastal water is iron-rich in total, but the *sediment's* iron pool is depletable and its bioavailability depends on redox and organic ligands. | The iron shuttle: repeated anoxia reduces and mobilises sediment iron, which is exported or buried elsewhere. The bed permanently loses its capacity to bind phosphate, so each hypoxic episode leaves the system more prone to the next. A ratchet rather than a cycle — this one does not reverse when oxygen returns. | established |
+| `Mn` | **Manganese** — enzyme cofactor; redox-cycling like iron | Cycles between oxidation states with the redox front rather than depleting. | Shares the iron shuttle, and its oxides also consume oxygen on reoxidation. | established |
+| `Mo` | **Molybdenum** — cofactor for nitrate reductase and for nitrogenase | Yes, in sulphidic water specifically. | Sulphide converts molybdate to thiomolybdate, which is scavenged and buried. A euxinic basin therefore strips itself of the cofactor that both nitrogen fixation and nitrate reduction require — hypoxia disabling two of the nitrogen cycle's own valves. | established |
+| `Co` | **Cobalt** — the metal at the centre of vitamin B12 | Scarce, and its availability is mediated by the bacteria that make B12. | Most eukaryotic algae cannot make B12 and depend on bacteria for it. A shift in the bacterial community changes which algae can grow at all, with no change in any nutrient anyone measures. | established |
+| `Ca` | **Calcium** — abundant as an ion; the limiting quantity is carbonate saturation, not calcium | Calcium never depletes. Carbonate ion does, as acidification proceeds. | Shell dissolution currently buffers pH — a stabilising feedback that is being spent. When the shells are gone the buffer goes with them. | established |
+| `Cu` | **Copper** — essential cofactor, and a deliberate biocide | Not depleted; the risk is the ceiling, not the floor. | Antifouling copper puts an essential micronutrient into its toxic range on purpose, in exactly the harbours and lanes where exchange is worst. | established |
+| `Zn` | **Zinc** — cofactor for carbonic anhydrase, needed for carbon uptake | Can limit in some marine settings; some diatoms substitute cadmium for it. | Zinc limitation impairs carbon acquisition, which interacts with the carbon drawdown loop above. Weakly studied in coastal water. | partly |
+| `Se` | **Selenium** — glutathione peroxidase; protective against mercury | Deficiency documented in other systems; the essential-to-toxic window is among the narrowest of any element. | Interacts with mercury burden, so neither is interpretable alone. | partly |
+| `B1` | **Thiamine** — vitamin, not an element, but a hard requirement | Yes. Baltic salmon M74 syndrome is mass fry mortality from thiamine deficiency, documented since the 1970s. | Deficiency is transmitted through the diet, so it follows the same community shift as silicon depletion, at a life stage no survey counts. | established |
+| `K` | **Potassium** — ~400 mg/L in seawater | No. Never limiting. | None. | n/a |
+| `Mg` | **Magnesium** — ~1.3 g/L in seawater | No. | None. | n/a |
+| `Cl` | **Chlorine** — the dominant anion in seawater | No. | None. | n/a |
+
+Three things fall out of that table.
+
+**Phosphorus and iron have the strongest loops, not oxygen.** The anoxic release of iron-bound phosphate is textbook, and Denmark's own assessment invokes it to explain why the Skive and Lovns phosphorus models fail. The iron shuttle is worse still, because it is a *ratchet* rather than a cycle: each hypoxic episode permanently exports sediment iron, so the bed loses phosphate-binding capacity that does not come back when the oxygen does.
+
+**Two of the loops run against the policy.** Hypoxia stops nitrification and so disables denitrification, flipping the sediment from a nitrogen sink to a nitrogen source; and falling N relative to P selects for cyanobacteria, which fix nitrogen from the air. Both mean the internal supply can rise while the external load falls — which is a candidate explanation, on their own mechanism, for why thirty-five years of load reduction has not produced the expected recovery.
+
+**Sulphur is the one that makes marine hypoxia different.** Seawater carries 2.7 g/L of sulphate. Once oxygen and nitrate are exhausted it becomes the terminal electron acceptor, and the supply is effectively unlimited — so the sea manufactures its own poison, without limit, as soon as the oxygen goes. Freshwater has no comparable reservoir.
 
 ### Routes we can name and cannot quantify
 
@@ -973,6 +1026,178 @@ When the large and slow are gone, what remains are r-selected bacteria that prod
 **Discriminated by.** Bacterial community composition and exopolymer production against community diversity.
 
 **Needs.** Microbial community data. Not monitored.
+
+## K. Depletion and imbalance of what life requires
+
+*The policy frame is that there is too much of something. The plant-nutrition literature is about there being too little, and about ratios. Liebig's law of the minimum says growth is set by the scarcest essential resource, not by the sum; Shelford's law of tolerance says every requirement has a ceiling as well as a floor; and horticultural antagonism says an excess of one nutrient *induces deficiency* of another by blocking its uptake. Under those three, "too much nitrogen" and "depleted of something else" are not opposite diagnoses. They are the same one.*
+
+### K1 — Silicon depletion and the diatom-to-flagellate shift
+
+**Outcomes:** O4, O2, O8, O1
+
+Diatoms build frustules of silica and cannot grow without dissolved silicon. Si comes from rock weathering, so human activity does not raise it, while N and P have risen severalfold. When Si runs out first, diatoms are replaced by flagellates and cyanobacteria - poorly grazed, prone to harmful blooms, and the principal producers of the gel in group J. Enhanced production also buries Si faster, so the depletion reinforces itself.
+
+**Predicts.** Total biomass need not change at all; the *composition* does. This is a mechanism where reducing nitrogen genuinely helps, for a reason that has nothing to do with oxygen and that the chlorophyll indicator cannot see, because it counts biomass and the change is in who the biomass is.
+
+**Discriminated by.** The Si:N ratio through time against diatom share of the community. Both are measurable and the ratio is almost never reported.
+
+**Needs.** Dissolved silicate alongside N and P at the same stations and dates, and species-level phytoplankton counts. Silicate is in the ODA record.
+
+### K2 — Stoichiometric imbalance decides who grows
+
+**Outcomes:** O4, O2, O8
+
+Redfield C:N:P at 106:16:1 and roughly Si:N at 1:1 for diatoms are requirements, not averages. Skewing the ratios changes which organisms can complete their life cycle, independently of how much of anything there is.
+
+**Predicts.** Community composition tracks ratios; total biomass tracks absolute supply. A policy that moves one nutrient alone necessarily moves every ratio it appears in, and the direction of that effect is not signed in advance.
+
+**Discriminated by.** Community composition against N:P and Si:N, with absolute concentrations held fixed - which the 123 areas make possible.
+
+**Needs.** Simultaneous N, P and Si with species-level counts.
+
+### K3 — Macronutrient excess inducing micronutrient deficiency
+
+**Outcomes:** O4, O3, O6
+
+Standard horticultural antagonism: high nitrogen suppresses uptake of copper and boron, high phosphorus induces zinc deficiency, high potassium blocks magnesium and calcium. The excess starves the organism of something else.
+
+**Predicts.** Damage that looks like deficiency arising from enrichment, so the same load reduction helps for a mechanism nobody named. Routine in glasshouse practice and, as far as we can find, entirely absent from Danish marine assessment.
+
+**Discriminated by.** Tissue micronutrient content in marine primary producers along a nutrient gradient - the standard horticultural diagnostic, applied to the sea.
+
+**Needs.** Tissue elemental analysis of algae and eelgrass. Not collected.
+
+### K4 — Thiamine (B1) deficiency
+
+**Outcomes:** O6, O3
+
+Thiamine deficiency causes mass mortality of fry and adults; Baltic salmon M74 syndrome is documented from the 1970s onward, and similar deficiency has been implicated in bird and fish die-offs across the region.
+
+**Predicts.** Kills at a life stage nobody surveys, with no poison and no hypoxia. Linked to diet composition, so it is downstream of the same community shift as K1.
+
+**Discriminated by.** Thiamine status in fish eggs and prey species against community composition.
+
+**Needs.** Thiamine assays. Swedish and Finnish work exists; Danish marine monitoring has none.
+
+### K5 — Cobalamin (B12) and cobalt limitation
+
+**Outcomes:** O4, O8
+
+Most eukaryotic algae are B12 auxotrophs and depend on bacteria to supply it. The vitamin, and the cobalt at its centre, is a limiting resource produced by one part of the community for another.
+
+**Predicts.** Change the bacterial community and you change what algae can grow, with no change in any nutrient that is measured.
+
+**Discriminated by.** B12 concentration and auxotroph share against bacterial community composition.
+
+**Needs.** Marine B12 measurements. None in Denmark.
+
+### K6 — Iron bioavailability
+
+**Outcomes:** O4
+
+Iron is required for photosynthesis and nitrate reduction. Coastal water is usually iron-replete in total, but availability depends on redox state and on organic ligands, both of which change with hypoxia and with organic loading.
+
+**Predicts.** Availability, not total concentration, is the limiting quantity - so a measurement of total iron can be flat while the available fraction moves.
+
+**Discriminated by.** Dissolved and ligand-bound iron speciation, not total iron.
+
+**Needs.** Iron speciation. Not monitored.
+
+### K7 — Carbonate ion depletion
+
+**Outcomes:** O3, O6
+
+Acidification is usually framed as pH falling. For a calcifying organism the operative quantity is the depletion of carbonate ion and the fall in aragonite and calcite saturation - a resource being removed, not a toxin arriving.
+
+**Predicts.** Shell-forming larvae fail first, in the season when saturation is lowest, which need not be the season anything is measured.
+
+**Discriminated by.** Aragonite saturation state against larval recruitment of calcifiers.
+
+**Needs.** Carbonate system measurements - two of pH, alkalinity, DIC or pCO₂ together. Thin in Danish coastal water.
+
+### K8 — The narrow window between deficient and toxic
+
+**Outcomes:** O3, O4
+
+Copper, zinc, manganese, nickel, selenium and boron are all essential and all toxic, often within an order of magnitude. Shelford's law of tolerance, in the elements.
+
+**Predicts.** Both tails kill, so a linear dose-response is the wrong shape and a threshold set on one side says nothing about the other. Antifouling copper puts a micronutrient into the toxic tail on purpose.
+
+**Discriminated by.** Response across the full gradient rather than against a single threshold.
+
+**Needs.** Trace element concentrations with matched biological response. Sediment metals are measured at four points nationally.
+
+### K9 — Selenium
+
+**Outcomes:** O3, O6
+
+Required for the glutathione peroxidase system, protective against mercury, and toxic in modest excess. Deficiency has been implicated in fish and bird mortality elsewhere.
+
+**Predicts.** Interacts with mercury burden, so neither element's effect is interpretable without the other.
+
+**Discriminated by.** Selenium and mercury together in biota, as a ratio.
+
+**Needs.** Selenium in Danish marine biota. Not routinely measured.
+
+### K10 — Salinity change and osmotic cost
+
+**Outcomes:** O3, O4, O6
+
+The Danish straits are a salinity gradient, and every organism in them sits near an edge of its tolerance. Changing freshwater delivery or Baltic inflow moves the whole community's position in that range.
+
+**Predicts.** Species drop out at boundaries that have nothing to do with nutrients, and the Baltic's low-diversity brackish fauna is already at a minimum where small shifts have large effects.
+
+**Discriminated by.** Community composition against salinity variance, not mean.
+
+**Needs.** Salinity by station, date and depth. In the CTD record.
+
+### K11 — Light as a depleted resource
+
+**Outcomes:** O7, O4
+
+Distinct from turbidity as a symptom: for a rooted plant, light at the bed is a resource with a hard requirement - roughly 11-14% of surface irradiance for eelgrass - and below it the plant does not grow slowly, it dies.
+
+**Predicts.** A threshold, not a gradient. Explains why vegetation recovery is abrupt and why intermediate improvement produces no response at all.
+
+**Discriminated by.** Light at the bed against the requirement, per area, rather than Kd as an index.
+
+**Needs.** Kd with water depth, which together give light at the bed. Both are in the record and the product is rarely formed.
+
+### K12 — Loss of habitat-forming structure
+
+**Outcomes:** O3, T1
+
+Mussel beds, eelgrass, stone reefs and biogenic structure are a resource in themselves - surface, refuge, and hydrodynamic shelter. Denmark's stone reefs were physically removed for construction stone through the twentieth century.
+
+**Predicts.** Species requiring hard substrate cannot return whatever the water quality does, because the substrate is gone. Testable: reef restoration is a dated, located intervention.
+
+**Discriminated by.** Fauna at restored reefs against unrestored controls.
+
+**Needs.** Stone extraction records and reef restoration locations and dates.
+
+### K13 — Food depletion for filter feeders and larvae
+
+**Outcomes:** O3, O4
+
+Filter feeders and larvae need the right particles in the right size range at the right time. A shift from diatoms to picoplankton or gel can leave high chlorophyll and nothing edible.
+
+**Predicts.** Starvation amid apparent abundance. The chlorophyll indicator would score this water as over-productive.
+
+**Discriminated by.** Larval condition and growth against particle size spectrum, not chlorophyll.
+
+**Needs.** Particle size spectra and larval condition indices. Not monitored.
+
+### K14 — Genetic and functional diversity depletion
+
+**Outcomes:** O3
+
+Repeated mortality events select the survivors down to a narrow set, and a narrow set has fewer ways to respond to the next disturbance.
+
+**Predicts.** Declining resilience with no change in any concentration - the same stressor produces a larger effect than it once did.
+
+**Discriminated by.** Functional diversity indices through time from the fauna record.
+
+**Needs.** Species-level fauna with abundance, which the ODA bundfauna data carries.
 
 ## I. Observation and measurement
 
