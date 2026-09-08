@@ -237,11 +237,27 @@ h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3
       aria-label="Map of Danish marine water bodies"></svg></div>
   <aside id="panel"><p class="none">Loading…</p></aside>
 </div>
-<p class="hint">Colour is state of knowledge, not state of the water. “Fitted model”
-means DCE (2015) published a statistical relation between nutrient load and an
-indicator for this area, on 1990–2012 data. “Repeated observation” means at least one
-bathing station with a multi-year record — the only long, replicated marine series
-Denmark has in open data.</p>
+<p class="hint"><b>Colour is coverage by two named layers, and nothing wider.</b>
+“Fitted model” means DCE (2015) published a statistical relation between nutrient
+load and an indicator for this area, fitted on 1990–2012 data. “Repeated
+observation” means at least one bathing station with a multi-year record. Those two
+layers are counted because they are what the water-plan assessment leans on — they
+are <b>not</b> a census of what Denmark measures, and an earlier version of this
+caption said they were.</p>
+<p class="hint"><b>Two cautions, because this map is easy to over-read.</b> First,
+the requirement does not rest only on what is coloured here. Alongside the fitted
+relations sit 3D mechanistic models that resolve stratification and oxygen at depth,
+an eelgrass transect programme, and an annual oxygen-deficit survey — reconstructed
+from the primary method documents in <a href="../#GRUNDLAGET.md">Grundlaget</a>. A
+map that showed only these two layers and called itself the state of knowledge would
+be arguing against a thinner case than the one that exists.</p>
+<p class="hint">Second, a pale area is a statement about <i>these layers</i> in
+<i>this extract</i>, never about the sea. ODA’s own topic extracts carry light
+casts back to 1980 and CTD profiles back to 1970 at stations this colouring does not
+count, and what a coverage figure is missing is itemised in
+<a href="../#AREAS.md">There is no Denmark</a>. The fitting window also ends in 2012,
+which is fourteen years before the policy it is used to support — that gap is the
+subject rather than a footnote.</p>
 
 <script>
 const T0 = 1985, T1 = 2026;
