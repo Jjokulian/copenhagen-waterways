@@ -20,8 +20,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -36,16 +36,11 @@
      "to": 2018,
      "n": 13,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST2": {
    "n": "Roskilde Fjord, indre",
@@ -67,8 +62,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 10,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -83,16 +78,11 @@
      "to": 2018,
      "n": 7,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 10,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST6": {
    "n": "Nordlige Øresund",
@@ -114,8 +104,8 @@
    "hav": 0,
    "klap": 3,
    "rst": 3,
-   "hz": 15,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -123,17 +113,11 @@
      "to": 2018,
      "n": 32,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 15,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST16": {
@@ -162,7 +146,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST17": {
@@ -185,20 +169,13 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST18": {
@@ -221,20 +198,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST24": {
@@ -276,7 +246,7 @@
     }
    ],
    "gaps": [
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST25": {
@@ -299,20 +269,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST28": {
@@ -335,8 +298,8 @@
    "hav": 0,
    "klap": 2,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -344,17 +307,11 @@
      "to": 2018,
      "n": 27,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST29": {
@@ -390,7 +347,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST34": {
@@ -413,8 +370,8 @@
    "hav": 2,
    "klap": 1,
    "rst": 0,
-   "hz": 4,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -422,17 +379,11 @@
      "to": 2018,
      "n": 11,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST35": {
@@ -455,20 +406,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST36": {
@@ -505,7 +449,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST37": {
@@ -542,7 +486,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST38": {
@@ -565,8 +509,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -574,18 +518,12 @@
      "to": 2018,
      "n": 3,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST44": {
@@ -621,7 +559,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST45": {
@@ -644,8 +582,8 @@
    "hav": 2,
    "klap": 2,
    "rst": 3,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -653,17 +591,11 @@
      "to": 2018,
      "n": 8,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST47": {
@@ -686,8 +618,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -695,18 +627,12 @@
      "to": 2018,
      "n": 2,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST49": {
@@ -735,7 +661,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST56": {
@@ -758,8 +684,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 19,
-   "hz": 5,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -767,17 +693,11 @@
      "to": 2018,
      "n": 23,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 5,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST57": {
@@ -806,7 +726,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST59": {
@@ -829,20 +749,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST62": {
@@ -871,7 +784,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST68": {
@@ -900,7 +813,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST72": {
@@ -929,7 +842,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST74": {
@@ -958,7 +871,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST80": {
@@ -981,8 +894,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -990,18 +903,12 @@
      "to": 2018,
      "n": 2,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST82": {
@@ -1024,20 +931,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST83": {
@@ -1060,20 +960,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST84": {
@@ -1102,7 +995,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST85": {
@@ -1125,20 +1018,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST86": {
@@ -1167,7 +1053,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST87": {
@@ -1190,8 +1076,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -1199,17 +1085,11 @@
      "to": 2018,
      "n": 8,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST89": {
@@ -1232,8 +1112,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -1241,18 +1121,12 @@
      "to": 2018,
      "n": 2,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST92": {
@@ -1288,7 +1162,7 @@
    ],
    "gaps": [
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST93": {
@@ -1311,8 +1185,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 4,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -1320,17 +1194,11 @@
      "to": 2012,
      "n": null,
      "cadence": "fitted once, 1990-2012"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST95": {
@@ -1353,8 +1221,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -1362,18 +1230,12 @@
      "to": 2018,
      "n": 14,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST96": {
@@ -1410,7 +1272,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST101": {
@@ -1447,7 +1309,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST102": {
@@ -1470,8 +1332,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -1486,16 +1348,11 @@
      "to": 2018,
      "n": 11,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST103": {
    "n": "Als Fjord",
@@ -1531,7 +1388,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST104": {
@@ -1560,7 +1417,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST105": {
@@ -1597,7 +1454,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST106": {
@@ -1620,20 +1477,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 4,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST107": {
@@ -1656,20 +1506,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST108": {
@@ -1698,7 +1541,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST109": {
@@ -1721,20 +1564,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST110": {
@@ -1757,20 +1593,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST111": {
@@ -1793,8 +1622,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -1802,18 +1631,12 @@
      "to": 2018,
      "n": 1,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST113": {
@@ -1836,8 +1659,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -1852,16 +1675,11 @@
      "to": 2018,
      "n": 6,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST114": {
    "n": "Flensborg Fjord, ydre",
@@ -1902,7 +1720,7 @@
     }
    ],
    "gaps": [
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST119": {
@@ -1925,8 +1743,8 @@
    "hav": 0,
    "klap": 3,
    "rst": 9,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -1934,18 +1752,12 @@
      "to": 2018,
      "n": 12,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST120": {
@@ -1968,20 +1780,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST122": {
@@ -2004,8 +1809,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 3,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2020,16 +1825,11 @@
      "to": 2018,
      "n": 11,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST123": {
    "n": "Vejle Fjord, indre",
@@ -2051,8 +1851,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 6,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2067,16 +1867,11 @@
      "to": 2018,
      "n": 7,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 6,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST124": {
    "n": "Kolding Fjord, indre",
@@ -2098,8 +1893,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 6,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2114,17 +1909,11 @@
      "to": 2018,
      "n": 2,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 6,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST125": {
@@ -2147,8 +1936,8 @@
    "hav": 1,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2163,17 +1952,11 @@
      "to": 2018,
      "n": 4,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST127": {
@@ -2216,7 +1999,7 @@
    ],
    "gaps": [
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST128": {
@@ -2239,8 +2022,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 7,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2255,16 +2038,11 @@
      "to": 2018,
      "n": 4,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 7,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST129": {
    "n": "Nissum Fjord, ydre",
@@ -2299,7 +2077,7 @@
    ],
    "gaps": [
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST131": {
@@ -2335,7 +2113,7 @@
    ],
    "gaps": [
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST132": {
@@ -2358,8 +2136,8 @@
    "hav": 2,
    "klap": 5,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2374,16 +2152,11 @@
      "to": 2018,
      "n": 9,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST133": {
    "n": "Vesterhavet, nord",
@@ -2405,8 +2178,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 1,
-   "hz": 4,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -2414,18 +2187,12 @@
      "to": 2018,
      "n": 21,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST136": {
@@ -2448,8 +2215,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2457,17 +2224,11 @@
      "to": 2012,
      "n": null,
      "cadence": "fitted once, 1990-2012"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST137": {
@@ -2510,7 +2271,7 @@
    ],
    "gaps": [
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST138": {
@@ -2533,8 +2294,8 @@
    "hav": 0,
    "klap": 2,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -2542,17 +2303,11 @@
      "to": 2018,
      "n": 17,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST139": {
@@ -2589,7 +2344,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST140": {
@@ -2625,7 +2380,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST141": {
@@ -2662,7 +2417,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST142": {
@@ -2691,7 +2446,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST144": {
@@ -2728,7 +2483,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST145": {
@@ -2764,7 +2519,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST146": {
@@ -2787,20 +2542,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST147": {
@@ -2836,7 +2584,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST154": {
@@ -2872,7 +2620,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST232": {
@@ -2895,8 +2643,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2904,17 +2652,11 @@
      "to": 2012,
      "n": null,
      "cadence": "fitted once, 1990-2012"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST235": {
@@ -2937,8 +2679,8 @@
    "hav": 0,
    "klap": 7,
    "rst": 0,
-   "hz": 8,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -2946,17 +2688,11 @@
      "to": 2012,
      "n": null,
      "cadence": "fitted once, 1990-2012"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 8,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST238": {
@@ -2979,20 +2715,13 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 4,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST157": {
@@ -3015,8 +2744,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 6,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -3031,16 +2760,11 @@
      "to": 2018,
      "n": 16,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 6,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST158": {
    "n": "Hjarbæk Fjord",
@@ -3062,8 +2786,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 4,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3071,18 +2795,12 @@
      "to": 2018,
      "n": 2,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST159": {
@@ -3105,8 +2823,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -3121,17 +2839,11 @@
      "to": 2018,
      "n": 4,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST160": {
@@ -3174,7 +2886,7 @@
    ],
    "gaps": [
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST200": {
@@ -3197,8 +2909,8 @@
    "hav": 0,
    "klap": 3,
    "rst": 7,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3206,17 +2918,11 @@
      "to": 2018,
      "n": 34,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST204": {
@@ -3239,8 +2945,8 @@
    "hav": 2,
    "klap": 1,
    "rst": 12,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3248,17 +2954,11 @@
      "to": 2018,
      "n": 9,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST205": {
@@ -3287,7 +2987,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "555 km² described by 0 shore observations."
    ]
   },
@@ -3324,7 +3024,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST207": {
@@ -3347,8 +3047,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3356,18 +3056,12 @@
      "to": 2018,
      "n": 2,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST208": {
@@ -3390,8 +3084,8 @@
    "hav": 0,
    "klap": 2,
    "rst": 3,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3399,17 +3093,11 @@
      "to": 2018,
      "n": 9,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST209": {
@@ -3432,8 +3120,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3441,17 +3129,11 @@
      "to": 2018,
      "n": 6,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST212": {
@@ -3474,8 +3156,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 2,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3483,18 +3165,12 @@
      "to": 2018,
      "n": 3,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 2,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST214": {
@@ -3517,8 +3193,8 @@
    "hav": 0,
    "klap": 3,
    "rst": 0,
-   "hz": 4,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3526,17 +3202,11 @@
      "to": 2018,
      "n": 21,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST231": {
@@ -3565,7 +3235,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST219": {
@@ -3601,7 +3271,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST221": {
@@ -3624,8 +3294,8 @@
    "hav": 3,
    "klap": 2,
    "rst": 2,
-   "hz": 7,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3633,17 +3303,11 @@
      "to": 2018,
      "n": 33,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 7,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST222": {
@@ -3666,8 +3330,8 @@
    "hav": 0,
    "klap": 8,
    "rst": 0,
-   "hz": 4,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3675,17 +3339,11 @@
      "to": 2018,
      "n": 14,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 4,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST225": {
@@ -3721,7 +3379,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST130": {
@@ -3744,8 +3402,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -3760,17 +3418,11 @@
      "to": 2018,
      "n": 2,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested."
+    "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST236": {
@@ -3793,8 +3445,8 @@
    "hav": 1,
    "klap": 0,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -3802,17 +3454,11 @@
      "to": 2012,
      "n": null,
      "cadence": "fitted once, 1990-2012"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST233": {
@@ -3835,20 +3481,13 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 9,
-   "hzy": 1999,
-   "streams": [
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 9,
-     "cadence": "campaign"
-    }
-   ],
+   "hz": 0,
+   "hzy": null,
+   "streams": [],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST234": {
@@ -3871,8 +3510,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -3880,17 +3519,11 @@
      "to": 2012,
      "n": null,
      "cadence": "fitted once, 1990-2012"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No bathing station: there is no long, repeated observation of any marine variable here in the open data."
+    "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST224": {
@@ -3913,8 +3546,8 @@
    "hav": 0,
    "klap": 1,
    "rst": 0,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -3922,17 +3555,11 @@
      "to": 2018,
      "n": 20,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST217": {
@@ -3968,7 +3595,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST201": {
@@ -3991,8 +3618,8 @@
    "hav": 0,
    "klap": 3,
    "rst": 12,
-   "hz": 5,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -4000,17 +3627,11 @@
      "to": 2018,
      "n": 29,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 5,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST90": {
@@ -4046,7 +3667,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST165": {
@@ -4069,8 +3690,8 @@
    "hav": 0,
    "klap": 0,
    "rst": 0,
-   "hz": 5,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
@@ -4085,16 +3706,11 @@
      "to": 2018,
      "n": 9,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 5,
-     "cadence": "campaign"
     }
    ],
-   "gaps": []
+   "gaps": [
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
   },
   "DKCOAST216": {
    "n": "Lillebælt, syd",
@@ -4116,8 +3732,8 @@
    "hav": 0,
    "klap": 3,
    "rst": 10,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -4125,17 +3741,11 @@
      "to": 2018,
      "n": 26,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST48": {
@@ -4171,7 +3781,7 @@
    ],
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST46": {
@@ -4194,8 +3804,8 @@
    "hav": 0,
    "klap": 3,
    "rst": 29,
-   "hz": 3,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -4203,17 +3813,11 @@
      "to": 2018,
      "n": 13,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 3,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST121": {
@@ -4236,8 +3840,8 @@
    "hav": 0,
    "klap": 2,
    "rst": 0,
-   "hz": 1,
-   "hzy": 1999,
+   "hz": 0,
+   "hzy": null,
    "streams": [
     {
      "stream": "Bathing water quality",
@@ -4245,17 +3849,11 @@
      "to": 2018,
      "n": 8,
      "cadence": "annual class"
-    },
-    {
-     "stream": "Hazardous substances",
-     "from": 1999,
-     "to": 2019,
-     "n": 1,
-     "cadence": "campaign"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord."
+    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST58": {
@@ -4284,7 +3882,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "3,831 km² described by 0 shore observations."
    ]
   },
@@ -4314,7 +3912,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST116": {
@@ -4343,7 +3941,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST163": {
@@ -4372,7 +3970,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "2,496 km² described by 0 shore observations."
    ]
   },
@@ -4402,7 +4000,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "687 km² described by 0 shore observations."
    ]
   },
@@ -4432,7 +4030,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,526 km² described by 0 shore observations."
    ]
   },
@@ -4462,7 +4060,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
   "DKCOAST211": {
@@ -4491,7 +4089,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,881 km² described by 0 shore observations."
    ]
   },
@@ -4521,7 +4119,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "3,703 km² described by 0 shore observations."
    ]
   },
@@ -4551,7 +4149,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,767 km² described by 0 shore observations."
    ]
   },
@@ -4581,7 +4179,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "4,249 km² described by 0 shore observations."
    ]
   },
@@ -4611,7 +4209,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "573 km² described by 0 shore observations."
    ]
   },
@@ -4641,7 +4239,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,316 km² described by 0 shore observations."
    ]
   },
@@ -4671,7 +4269,7 @@
    "gaps": [
     "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
-    "No hazardous-substance monitoring point."
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   }
  },

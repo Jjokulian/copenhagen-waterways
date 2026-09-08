@@ -1,0 +1,1429 @@
+{
+ "_what": "Per-value quality flags for stations_series. Nothing is removed.",
+ "_principle": "A flag records a judgement and its evidence. It does NOT enact a removal. Deleting an outlier is an unrecorded decision, and the visible outliers are the only observable sample from the error process - trim them and you destroy the sole estimator of the archive's own error rate while making it look cleaner.",
+ "_how_to_use": "Join on (station, month, variable). Any consumer may exclude flagged values, but should state that it did and which flags it honoured.",
+ "_flags": {
+  "batch_sign_flip": "Class 4. A processing defect, not a measurement. Excluding these is defensible; correcting the sign is NOT, because the defect is inferred.",
+  "gross": "Class 1. Outside what the chemistry permits, with no benign reading. Excluding is defensible; it is 0.01% of the archive.",
+  "beyond_chemistry": "Class 1, NOT flagged per value and counted only. Beyond the plausible band but explicable - bloom supersaturation, sensor zero offset at anoxia. Median of the oxygen band is 16.2 mg/l. EXCLUDING THESE IS NOT DEFENSIBLE: they are mostly real."
+ },
+ "beyond_chemistry_counts": {
+  "fluo": 73,
+  "oxy_bed": 188,
+  "oxy_surf": 329,
+  "oxysat_bed": 8,
+  "oxysat_surf": 25
+ },
+ "flags": [
+  {
+   "station": "93740007",
+   "month": "1997-01",
+   "variable": "fluo",
+   "value": -4.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside -1..None for fluo",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93740005",
+   "month": "2000-01",
+   "variable": "fluo",
+   "value": -1.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside -1..None for fluo",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99000049",
+   "month": "2005-06",
+   "variable": "fluo",
+   "value": -11.2,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside -1..None for fluo",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99110001",
+   "month": "2005-06",
+   "variable": "fluo",
+   "value": -7.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside -1..None for fluo",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93220004",
+   "month": "2026-04",
+   "variable": "fluo",
+   "value": -1.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside -1..None for fluo",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99330003",
+   "month": "1984-04",
+   "variable": "oxy_bed",
+   "value": 25.7,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97210001",
+   "month": "1988-03",
+   "variable": "oxy_bed",
+   "value": 99.2,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "95720006",
+   "month": "1989-06",
+   "variable": "oxy_bed",
+   "value": 79.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120008",
+   "month": "1993-03",
+   "variable": "oxy_bed",
+   "value": 20.35,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120011",
+   "month": "1993-03",
+   "variable": "oxy_bed",
+   "value": 21.75,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93220003",
+   "month": "1994-10",
+   "variable": "oxy_bed",
+   "value": 91.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220006",
+   "month": "1999-01",
+   "variable": "oxy_bed",
+   "value": 36.61,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-01",
+   "variable": "oxy_bed",
+   "value": 23.85,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-03",
+   "variable": "oxy_bed",
+   "value": 28.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-04",
+   "variable": "oxy_bed",
+   "value": 23.45,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-05",
+   "variable": "oxy_bed",
+   "value": 20.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110004",
+   "month": "2003-03",
+   "variable": "oxy_bed",
+   "value": 24.4,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110004",
+   "month": "2003-04",
+   "variable": "oxy_bed",
+   "value": 23.15,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110007",
+   "month": "2003-01",
+   "variable": "oxy_bed",
+   "value": 22.75,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110007",
+   "month": "2003-03",
+   "variable": "oxy_bed",
+   "value": 28.3,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93110001",
+   "month": "2005-05",
+   "variable": "oxy_bed",
+   "value": -9.41,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "93110002",
+   "month": "2005-05",
+   "variable": "oxy_bed",
+   "value": -9.38,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "94230024",
+   "month": "2005-06",
+   "variable": "oxy_bed",
+   "value": 20.82,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "95240005",
+   "month": "2005-03",
+   "variable": "oxy_bed",
+   "value": 25.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120014",
+   "month": "2005-06",
+   "variable": "oxy_bed",
+   "value": -9.67,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "97200012",
+   "month": "2005-05",
+   "variable": "oxy_bed",
+   "value": -9.7,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "97230001",
+   "month": "2005-05",
+   "variable": "oxy_bed",
+   "value": -9.93,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "96430001",
+   "month": "2006-05",
+   "variable": "oxy_bed",
+   "value": 20.6,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2006-07",
+   "variable": "oxy_bed",
+   "value": -0.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99350035",
+   "month": "2007-03",
+   "variable": "oxy_bed",
+   "value": 25.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2008-01",
+   "variable": "oxy_bed",
+   "value": -0.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2008-07",
+   "variable": "oxy_bed",
+   "value": -0.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2008-08",
+   "variable": "oxy_bed",
+   "value": -0.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2008-11",
+   "variable": "oxy_bed",
+   "value": 30.9,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99000049",
+   "month": "2008-02",
+   "variable": "oxy_bed",
+   "value": -0.3,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99200001",
+   "month": "2008-01",
+   "variable": "oxy_bed",
+   "value": 34.7,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99350002",
+   "month": "2008-11",
+   "variable": "oxy_bed",
+   "value": 26.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99360004",
+   "month": "2008-11",
+   "variable": "oxy_bed",
+   "value": 25.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "95820002",
+   "month": "2009-07",
+   "variable": "oxy_bed",
+   "value": -0.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99350036",
+   "month": "2009-06",
+   "variable": "oxy_bed",
+   "value": 30.8,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99360001",
+   "month": "2009-06",
+   "variable": "oxy_bed",
+   "value": 22.2,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99360004",
+   "month": "2009-06",
+   "variable": "oxy_bed",
+   "value": 22.8,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93220011",
+   "month": "2010-03",
+   "variable": "oxy_bed",
+   "value": 20.13,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2010-05",
+   "variable": "oxy_bed",
+   "value": -0.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2010-06",
+   "variable": "oxy_bed",
+   "value": -0.05,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210002",
+   "month": "2010-07",
+   "variable": "oxy_bed",
+   "value": 25.9,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210002",
+   "month": "2010-11",
+   "variable": "oxy_bed",
+   "value": 38.4,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210003",
+   "month": "2010-07",
+   "variable": "oxy_bed",
+   "value": 35.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210003",
+   "month": "2010-10",
+   "variable": "oxy_bed",
+   "value": 37.77,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210003",
+   "month": "2010-11",
+   "variable": "oxy_bed",
+   "value": 34.15,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-03",
+   "variable": "oxy_bed",
+   "value": 68.6,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-04",
+   "variable": "oxy_bed",
+   "value": 49.3,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-10",
+   "variable": "oxy_bed",
+   "value": 24.7,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-03",
+   "variable": "oxy_bed",
+   "value": 56.85,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-04",
+   "variable": "oxy_bed",
+   "value": 57.6,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-07",
+   "variable": "oxy_bed",
+   "value": 36.16,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96250088",
+   "month": "2010-04",
+   "variable": "oxy_bed",
+   "value": 32.44,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2012-07",
+   "variable": "oxy_bed",
+   "value": -0.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220171",
+   "month": "2017-07",
+   "variable": "oxy_bed",
+   "value": 281.6,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99330003",
+   "month": "1984-04",
+   "variable": "oxy_surf",
+   "value": 25.7,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97210001",
+   "month": "1988-03",
+   "variable": "oxy_surf",
+   "value": 103.4,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "95720006",
+   "month": "1989-06",
+   "variable": "oxy_surf",
+   "value": 101.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120004",
+   "month": "1993-03",
+   "variable": "oxy_surf",
+   "value": 20.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120008",
+   "month": "1993-03",
+   "variable": "oxy_surf",
+   "value": 20.15,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120011",
+   "month": "1993-03",
+   "variable": "oxy_surf",
+   "value": 21.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120019",
+   "month": "1993-01",
+   "variable": "oxy_surf",
+   "value": 20.3,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93220003",
+   "month": "1994-10",
+   "variable": "oxy_surf",
+   "value": 91.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93530004",
+   "month": "1995-04",
+   "variable": "oxy_surf",
+   "value": 24.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93530069",
+   "month": "1995-01",
+   "variable": "oxy_surf",
+   "value": 21.2,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93530069",
+   "month": "1995-04",
+   "variable": "oxy_surf",
+   "value": 22.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93530069",
+   "month": "1995-11",
+   "variable": "oxy_surf",
+   "value": 22.15,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93220009",
+   "month": "1996-04",
+   "variable": "oxy_surf",
+   "value": 22.15,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93220011",
+   "month": "1996-03",
+   "variable": "oxy_surf",
+   "value": 22.55,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93730002",
+   "month": "1996-02",
+   "variable": "oxy_surf",
+   "value": 21.3,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610010",
+   "month": "2000-07",
+   "variable": "oxy_surf",
+   "value": 20.7,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610016",
+   "month": "2000-07",
+   "variable": "oxy_surf",
+   "value": 20.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610055",
+   "month": "2000-07",
+   "variable": "oxy_surf",
+   "value": 20.7,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610056",
+   "month": "2000-07",
+   "variable": "oxy_surf",
+   "value": 20.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610010",
+   "month": "2002-04",
+   "variable": "oxy_surf",
+   "value": 20.3,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-01",
+   "variable": "oxy_surf",
+   "value": 24.55,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-03",
+   "variable": "oxy_surf",
+   "value": 28.25,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-04",
+   "variable": "oxy_surf",
+   "value": 23.45,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110003",
+   "month": "2003-05",
+   "variable": "oxy_surf",
+   "value": 20.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110004",
+   "month": "2003-01",
+   "variable": "oxy_surf",
+   "value": 23.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110004",
+   "month": "2003-03",
+   "variable": "oxy_surf",
+   "value": 23.65,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110004",
+   "month": "2003-04",
+   "variable": "oxy_surf",
+   "value": 22.75,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110007",
+   "month": "2003-01",
+   "variable": "oxy_surf",
+   "value": 24.95,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "98110007",
+   "month": "2003-03",
+   "variable": "oxy_surf",
+   "value": 28.2,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93110001",
+   "month": "2005-05",
+   "variable": "oxy_surf",
+   "value": -9.41,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "93110002",
+   "month": "2005-05",
+   "variable": "oxy_surf",
+   "value": -9.39,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "95240005",
+   "month": "2005-03",
+   "variable": "oxy_surf",
+   "value": 25.05,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "97120014",
+   "month": "2005-06",
+   "variable": "oxy_surf",
+   "value": -10.0,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "97200012",
+   "month": "2005-05",
+   "variable": "oxy_surf",
+   "value": -10.31,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "97230001",
+   "month": "2005-05",
+   "variable": "oxy_surf",
+   "value": -10.34,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "97300002",
+   "month": "2005-05",
+   "variable": "oxy_surf",
+   "value": -9.48,
+   "flag": "batch_sign_flip",
+   "class": 4,
+   "reason": "negative oxygen; co-reported saturation 100-108% and |value| matches Weiss solubility, so the water was oxygenated and the sign inverted",
+   "evidence": "11 station-months, 6 stations, 4 custodian prefixes, one two-month window 2005-05/06, span 6-75 km"
+  },
+  {
+   "station": "96430001",
+   "month": "2006-05",
+   "variable": "oxy_surf",
+   "value": 20.2,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99350035",
+   "month": "2007-03",
+   "variable": "oxy_surf",
+   "value": 25.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2008-11",
+   "variable": "oxy_surf",
+   "value": 28.7,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93220011",
+   "month": "2010-03",
+   "variable": "oxy_surf",
+   "value": 20.26,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93740016",
+   "month": "2010-06",
+   "variable": "oxy_surf",
+   "value": 22.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93740019",
+   "month": "2010-06",
+   "variable": "oxy_surf",
+   "value": 20.1,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210002",
+   "month": "2010-11",
+   "variable": "oxy_surf",
+   "value": 35.45,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-03",
+   "variable": "oxy_surf",
+   "value": 64.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-04",
+   "variable": "oxy_surf",
+   "value": 46.05,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-10",
+   "variable": "oxy_surf",
+   "value": 22.85,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-04",
+   "variable": "oxy_surf",
+   "value": 45.6,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220171",
+   "month": "2017-07",
+   "variable": "oxy_surf",
+   "value": 307.6,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..20 for oxy_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220006",
+   "month": "1999-01",
+   "variable": "oxysat_bed",
+   "value": 282.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2006-07",
+   "variable": "oxysat_bed",
+   "value": -1.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2008-01",
+   "variable": "oxysat_bed",
+   "value": -1.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2008-07",
+   "variable": "oxysat_bed",
+   "value": -1.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2008-08",
+   "variable": "oxysat_bed",
+   "value": -1.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2008-11",
+   "variable": "oxysat_bed",
+   "value": 318.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99000049",
+   "month": "2008-02",
+   "variable": "oxysat_bed",
+   "value": -3.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99200001",
+   "month": "2008-01",
+   "variable": "oxysat_bed",
+   "value": 296.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "95820002",
+   "month": "2009-07",
+   "variable": "oxysat_bed",
+   "value": -1.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99350002",
+   "month": "2009-12",
+   "variable": "oxysat_bed",
+   "value": 540.85,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "99350036",
+   "month": "2009-06",
+   "variable": "oxysat_bed",
+   "value": 334.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2010-05",
+   "variable": "oxysat_bed",
+   "value": -1.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2010-06",
+   "variable": "oxysat_bed",
+   "value": -0.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210002",
+   "month": "2010-07",
+   "variable": "oxysat_bed",
+   "value": 315.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210002",
+   "month": "2010-11",
+   "variable": "oxysat_bed",
+   "value": 368.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210003",
+   "month": "2010-07",
+   "variable": "oxysat_bed",
+   "value": 427.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210003",
+   "month": "2010-10",
+   "variable": "oxysat_bed",
+   "value": 375.9,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210003",
+   "month": "2010-11",
+   "variable": "oxysat_bed",
+   "value": 315.83,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-03",
+   "variable": "oxysat_bed",
+   "value": 594.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-04",
+   "variable": "oxysat_bed",
+   "value": 455.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-03",
+   "variable": "oxysat_bed",
+   "value": 515.31,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-04",
+   "variable": "oxysat_bed",
+   "value": 507.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-07",
+   "variable": "oxysat_bed",
+   "value": 416.02,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96250088",
+   "month": "2010-04",
+   "variable": "oxysat_bed",
+   "value": 299.25,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610032",
+   "month": "2012-07",
+   "variable": "oxysat_bed",
+   "value": -4.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220171",
+   "month": "2017-07",
+   "variable": "oxysat_bed",
+   "value": 3292.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_bed",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2008-11",
+   "variable": "oxysat_surf",
+   "value": 273.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96210002",
+   "month": "2010-11",
+   "variable": "oxysat_surf",
+   "value": 338.5,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-03",
+   "variable": "oxysat_surf",
+   "value": 561.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220004",
+   "month": "2010-04",
+   "variable": "oxysat_surf",
+   "value": 426.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220205",
+   "month": "2010-04",
+   "variable": "oxysat_surf",
+   "value": 399.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96220171",
+   "month": "2017-07",
+   "variable": "oxysat_surf",
+   "value": 3602.0,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside 0..250 for oxysat_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "93610035",
+   "month": "1985-05",
+   "variable": "temp_surf",
+   "value": 80.3,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside -2..32 for temp_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  },
+  {
+   "station": "96110002",
+   "month": "2010-01",
+   "variable": "temp_surf",
+   "value": -2.01,
+   "flag": "gross",
+   "class": 1,
+   "reason": "outside -2..32 for temp_surf",
+   "evidence": "bound is chemistry, not a percentile"
+  }
+ ]
+}

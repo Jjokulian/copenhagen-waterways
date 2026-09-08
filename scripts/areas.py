@@ -255,8 +255,24 @@ def build():
         rec[w]["streams"].append({"stream": "Bathing water quality", "from": yrs[0],
                                   "to": yrs[-1], "n": len(v), "cadence": "annual class"})
 
-    # ---- observation: hazardous substances, with real activity dates -----
-    hz = read_json(os.path.join(NAT, "sw_mfs_tilstand.geojson"))["features"]
+    # ---- observation: hazardous substances -------------------------------
+    #
+    # WITHDRAWN. This block used to assign every point in sw_mfs_tilstand to its
+    # nearest marine water body within MAX_ASSIGN_KM, and 66 of 123 bodies came out
+    # carrying a hazardous-substance observation count. Every one of those was
+    # freshwater: the layer holds 152 DKLAKE and 104 DKRIVER points and ZERO DKCOAST.
+    # Assigning a lake monitoring point to the sea because the sea is within 20 km
+    # manufactured marine coverage that does not exist - a modelled value in a column
+    # shaped like a measured one, which is exactly the class 7 error this project
+    # audits elsewhere. It is ours.
+    #
+    # The layer is also unusable for the purpose on its own terms: every point carries
+    # the same qecode ("QE3-3 - River Basin Specific Pollutants") and a status code
+    # with NO analyte, concentration or unit, so even where it applies it says that
+    # something was assessed, not what was found.
+    #
+    # The absence is now reported as an absence, below.
+    hz = []
     for f in hz:
         lat, lon = centroid(f["geometry"])
         w, d = A.nearest(lat, lon)
@@ -301,7 +317,10 @@ def build():
             gaps.append("Fewer than three bathing stations vary enough to correlate, "
                         "so whether this area behaves as one unit cannot be tested.")
         if "hazardous" not in r["observation"]:
-            gaps.append("No hazardous-substance monitoring point.")
+            gaps.append("No marine hazardous-substance monitoring point. The national "
+                        "layer sw_mfs_tilstand holds 256 points, all freshwater "
+                        "(152 lake, 104 river) and none marine, and carries no analyte "
+                        "or concentration. This gap applies to all 123 water bodies.")
         if r["area_km2"] > 500 and (b or {}).get("stations", 0) < 6:
             gaps.append(f"{r['area_km2']:,.0f} km² described by "
                         f"{(b or {}).get('stations', 0)} shore observations.")
