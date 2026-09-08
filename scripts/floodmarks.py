@@ -65,9 +65,12 @@ DOTS = {
     # Chosen to sit ON something with recognisable geometry - a lake's corner, a
     # stadium, a marina basin, a motorway junction - rather than on featureless housing,
     # because a dot on a repeating suburb cannot be placed accurately by anyone.
+    # Bispebjerg's first two points sat at almost the same height, which is why its
+    # standard error is 91 m against 58 m elsewhere: with the scale fixed, vertical
+    # position is only as good as the vertical spread of the points. These two are
+    # deliberately at the top and the bottom.
     "bispebjerg": [
-        (0.300, 0.360), (0.788, 0.318), (0.955, 0.100),
-        (0.523, 0.243), (0.118, 0.098), (0.352, 0.706),
+        (0.760, 0.088), (0.300, 0.905),
     ],
     "kbhvest": [
         (0.243, 0.452), (0.176, 0.540), (0.838, 0.742),

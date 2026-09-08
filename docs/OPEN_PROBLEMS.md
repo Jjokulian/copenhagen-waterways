@@ -265,7 +265,31 @@ the other three arrived.
 **What remains.** Treat the 50 m proximity band on the three assisted sheets as
 indicative; the 200 m band is sound everywhere. Two more control points on Bispebjerg,
 placed at different heights on the sheet rather than along one line, would take it from
-91 m to something nearer 50 m. That is the only outstanding item, and it is small.
+91 m to something nearer 50 m.
+
+### Why this was not automated, and how it could be
+
+The obvious objection is that a computer should be able to match a street grid. It was
+tried here and it does not work, for a reason worth writing down: **a dense uniform mesh
+carries almost no positional information.** Rasterising the OSM road network against the
+sheet's flood painting — which is very nearly a picture of the wet streets — gives a
+correlation peak of 0.051 whose nearest rival outside 150 m is 0.046. A ratio of 1.12 is
+not a peak; at any offset, some streets line up with some streets. The same defect
+defeats building footprints in a regular block plan.
+
+What *does* carry position is anything rare and irregular: a coastline, a lake, a
+harbour. That is why the four sheets with water registered automatically and the three
+without needed a person.
+
+**The right automated route exists and is free.** These are aerial photographs, so the
+correct reference is another aerial photograph with known georeferencing — not a vector
+layer. SDFI / Dataforsyningen publishes GeoDanmark Ortofoto as WMS and WMTS under an
+open licence, **including historical spring imagery covering 2004–2011**, which is the
+era of these sheets. Image-to-image registration against orthophotography of the same
+years would place all seven to a few metres and would need no human at all. It requires
+a free API key, which is the only reason it was not done here.
+
+That is the honest state of it: not a hard problem, an unregistered one.
 
 ---
 **What the automatic attempt established**, before the assisted one succeeded — it is
