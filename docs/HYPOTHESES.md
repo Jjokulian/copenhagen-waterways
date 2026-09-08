@@ -171,6 +171,33 @@ Together those mean the search radius has to include things that do not look lik
 
 > And the Yellowstone wolves are worth keeping in mind for a second reason. That cascade — wolves to elk to willow to beaver to the shape of the rivers — became the standard textbook illustration, and it has since been substantially challenged: the elk decline had other causes running at the same time, and the willow recovery was patchy and confounded. A compelling cascade narrative outran its evidence, in a well-studied system, watched by everyone. That is the same failure this project attributes to the nitrogen account, and it is available to us on exactly the same terms.
 
+### Not every depletion feeds itself — and the difference is decay
+
+The selection argument above is too tidy, and the correction sharpens it. Depletions are not interchangeable, because **what dies leaves a body, and decay has a gas signature**. Whether a shortage worsens or cures itself depends on whether the decomposers consume the missing thing or release it.
+
+Take the two great gases and run them against each other.
+
+| | what it kills | what decay then does | feedback |
+|---|---|---|---|
+| **Oxygen depletion** | aerobes — most animals | consumes more oxygen, releases CO₂ | **self-amplifying** |
+| **CO₂ depletion** | photosynthesisers | releases CO₂, consumes oxygen | **self-correcting** |
+
+The asymmetry is complete and it is not a coincidence. Respiration and photosynthesis are the same reaction run in opposite directions, so every corpse that decays *relieves* a carbon shortage and *deepens* an oxygen one. A carbon dioxide shortage cures itself, because everything that dies of it puts the carbon back. An oxygen shortage is fed by its own casualties.
+
+This is not hypothetical at either end. Inside a dense bloom, CO₂ really is drawn down far enough to push pH above 9 — which is the carbon entry in the element sweep below, and the reason a bloom can poison water by consuming carbon rather than by producing anything. It corrects within a day, as soon as respiration resumes. Bottom-water oxygen depletion does not correct at all; it compounds.
+
+**And the sign of that feedback depends on light and mixing, not on biology alone.** In shallow lit water the survivors of an oxygen crash are photosynthetic, so daylight restores oxygen and the system oscillates rather than ratchets. Below a pycnocline in the dark the survivors are sulphate reducers and methanogens, whose metabolism restores nothing and adds a poison. Same depletion, same selection logic, opposite outcome — decided by whether photons reach the survivors.
+
+### The winners do remake the world, on the wrong timescale
+
+The deeper objection is right, and it deserves stating at full strength: **organisms that can function in a depleted state come to dominate it, and in dominating it they change the conditions.** Adaptation is not only a response to the environment; it is a cause of the next one.
+
+The extreme case is the whole reason any of this exists. Cyanobacteria adapted to an anoxic, carbon-rich world, and in filling it they released oxygen — which poisoned most of the biosphere that had produced them and created the conditions for every aerobic thing since, the authors of this page included. That is the objection at planetary scale, and it is not a metaphor: the winners of a depletion rebuilt the atmosphere.
+
+> **It took roughly two billion years.** Which is the whole of the consolation and the whole of the problem. Life does rebalance, reliably, and on a timescale that has no relationship to a policy cycle, a fishery, a human life, or the persistence of anything anybody is trying to protect. *The system recovers* and *the recovery is available to us* are different claims, and only the first one is true.
+
+So the convergence argument survives with a boundary drawn around it. It describes what happens on the timescale of decades, in a system that is being pushed continuously and given no interval in which to run the slow half of the cycle. `W5` and `M9` are that boundary stated as mechanisms: it is the *return interval* relative to the recovery rate that decides the outcome, not the total disturbance.
+
 ### Who makes the window, and how fast they can move it
 
 One more layer under all of this, and it is the one that decides the direction of everything above.

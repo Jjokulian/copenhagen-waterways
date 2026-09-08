@@ -1332,7 +1332,8 @@
    "text": "An organism that lives on energy from inorganic chemical reactions - oxidising hydrogen, sulphide, ammonium, iron or methane. No light, no eating.",
    "why": "Chemo (chemical) plus litho (rock) plus troph (feeding). A way of making a living that has no eukaryotic equivalent at all.",
    "forms": [
-    "chemolithotroph"
+    "chemolithotroph",
+    "chemolithotrophs"
    ]
   },
   "chemosynthesis": {
@@ -1695,6 +1696,13 @@
    "why": "From American voting law of the 1890s, where a grandfather clause exempted people whose grandfathers had voted - the origin is not a happy one.",
    "forms": [
     "grandfathered"
+   ]
+  },
+  "Great Oxidation Event": {
+   "text": "The point around 2.4 billion years ago when oxygen produced by cyanobacteria accumulated in the atmosphere, poisoning most of the biosphere that had produced it and making all later aerobic life possible.",
+   "why": "The largest mass extinction there has ever been, caused by a waste product. It is also the clearest case of adapted survivors remaking the conditions for everything after them.",
+   "forms": [
+    "great oxidation event"
    ]
   },
   "hazard": {
@@ -2214,6 +2222,14 @@
     "photoinhibition"
    ]
   },
+  "photosynthesis": {
+   "text": "Building organic matter from carbon dioxide using light, releasing oxygen. Respiration is the same reaction run backwards, which is why the two gases move in opposite directions.",
+   "why": "Greek phos (light) plus synthesis (putting together).",
+   "forms": [
+    "photosynthesis",
+    "photosynthesises"
+   ]
+  },
   "photosystem II": {
    "text": "The protein complex that splits water and starts photosynthesis. Triazine and urea herbicides block it, which makes them equally effective against algae.",
    "why": "The second of two photosystems, named in the order they were discovered rather than the order they act.",
@@ -2426,6 +2442,13 @@
     "resistance"
    ]
   },
+  "respiration": {
+   "text": "Extracting energy from organic matter, consuming oxygen and releasing carbon dioxide. The reverse of photosynthesis, and what decay is at the chemical level.",
+   "why": "The reason every corpse relieves a carbon shortage and deepens an oxygen one.",
+   "forms": [
+    "respiration"
+   ]
+  },
   "resuspension": {
    "text": "Sediment lifted back into the water by waves, currents or gear, after having settled.",
    "why": "It returns buried material, and its chemistry, to circulation.",
@@ -2438,6 +2461,13 @@
    "why": "Latin retinere, to hold back. It is a modelled quantity presented as a map.",
    "forms": [
     "retention"
+   ]
+  },
+  "return interval": {
+   "text": "How long between one disturbance and the next. Compared against how long recovery takes, it decides whether a system persists in an early state permanently or reaches maturity between hits.",
+   "why": "The number that matters for trawling, and the one an annual effort figure cannot express.",
+   "forms": [
+    "return interval"
    ]
   },
   "rhizosphere": {
@@ -2523,6 +2553,20 @@
    "why": "A dose too low to kill outright is not neutral - it is the regime in which selection is strongest, because it kills enough to matter and spares enough to breed.",
    "forms": [
     "selection pressure"
+   ]
+  },
+  "self-amplifying": {
+   "text": "A feedback where the effect makes its own cause stronger. Oxygen depletion is one: the casualties decay, the decay consumes more oxygen.",
+   "why": "Also called positive feedback, which is misleading because nothing about it is good.",
+   "forms": [
+    "self-amplifying"
+   ]
+  },
+  "self-correcting": {
+   "text": "A feedback where the effect undoes its own cause. Carbon dioxide depletion is one: whatever dies of it decays and puts the carbon back.",
+   "why": "Also called negative feedback. The two words are about direction, not about desirability.",
+   "forms": [
+    "self-correcting"
    ]
   },
   "Shelford": {

@@ -382,6 +382,9 @@ TERMS = {
     'grandfathered': (
         'Permitted to continue under old rules because it was already in use when new rules arrived. Most industrial chemicals in Europe entered the system this way.',
         'From American voting law of the 1890s, where a grandfather clause exempted people whose grandfathers had voted - the origin is not a happy one.'),
+    'Great Oxidation Event': (
+        'The point around 2.4 billion years ago when oxygen produced by cyanobacteria accumulated in the atmosphere, poisoning most of the biosphere that had produced it and making all later aerobic life possible.',
+        'The largest mass extinction there has ever been, caused by a waste product. It is also the clearest case of adapted survivors remaking the conditions for everything after them.'),
     'hazard': (
         'The intrinsic capacity of something to cause harm, independent of whether anyone is exposed to it. A shark in an aquarium is a hazard; a shark in your bath is a risk.',
         'Kept strictly separate from risk in regulatory language, and routinely conflated everywhere else.'),
@@ -595,6 +598,9 @@ TERMS = {
     'photoinhibition': (
         'Too much light damaging the photosynthetic machinery. The ceiling of the light window.',
         'Light doing the inhibiting - the reason clearest is not always best.'),
+    'photosynthesis': (
+        'Building organic matter from carbon dioxide using light, releasing oxygen. Respiration is the same reaction run backwards, which is why the two gases move in opposite directions.',
+        'Greek phos (light) plus synthesis (putting together).'),
     'photosystem II': (
         'The protein complex that splits water and starts photosynthesis. Triazine and urea herbicides block it, which makes them equally effective against algae.',
         'The second of two photosystems, named in the order they were discovered rather than the order they act.'),
@@ -682,12 +688,18 @@ TERMS = {
     'resistance': (
         'The evolved ability to survive a dose that would once have been lethal. Its appearance is simultaneously evidence that the organism was exposed and that the exposure was selecting.',
         'The same phenomenon in bacteria facing antibiotics, fungi facing fungicides, and weeds facing herbicides - and for the same reason.'),
+    'respiration': (
+        'Extracting energy from organic matter, consuming oxygen and releasing carbon dioxide. The reverse of photosynthesis, and what decay is at the chemical level.',
+        'The reason every corpse relieves a carbon shortage and deepens an oxygen one.'),
     'resuspension': (
         'Sediment lifted back into the water by waves, currents or gear, after having settled.',
         'It returns buried material, and its chemistry, to circulation.'),
     'retention': (
         'The share of nitrogen applied on land that never reaches the sea, because it is taken up, denitrified or stored on the way. The largest single number in the whole account, and one its own producers say cannot be measured directly.',
         'Latin retinere, to hold back. It is a modelled quantity presented as a map.'),
+    'return interval': (
+        'How long between one disturbance and the next. Compared against how long recovery takes, it decides whether a system persists in an early state permanently or reaches maturity between hits.',
+        'The number that matters for trawling, and the one an annual effort figure cannot express.'),
     'rhizosphere': (
         'The thin zone of soil or sediment immediately around a root, chemically and biologically quite unlike the bulk material a few millimetres away.',
         'Greek rhiza (root) plus sphaira. Where the plant and the microbial world actually meet.'),
@@ -724,6 +736,12 @@ TERMS = {
     'selection pressure': (
         "Any condition that kills or hinders some individuals more than others, so that the survivors' traits become more common. Applying a biocide is applying one deliberately.",
         'A dose too low to kill outright is not neutral - it is the regime in which selection is strongest, because it kills enough to matter and spares enough to breed.'),
+    'self-amplifying': (
+        'A feedback where the effect makes its own cause stronger. Oxygen depletion is one: the casualties decay, the decay consumes more oxygen.',
+        'Also called positive feedback, which is misleading because nothing about it is good.'),
+    'self-correcting': (
+        'A feedback where the effect undoes its own cause. Carbon dioxide depletion is one: whatever dies of it decays and puts the carbon back.',
+        'Also called negative feedback. The two words are about direction, not about desirability.'),
     'Shelford': (
         'The law of tolerance: every requirement has a ceiling as well as a floor. Too much of a needed thing kills as surely as too little.',
         'Victor Shelford, an American ecologist, 1913. Liebig gives you the floor; Shelford gives you the roof.'),
@@ -3113,6 +3131,62 @@ def render(rows):
       "cascade narrative outran its evidence, in a well-studied system, watched by "
       "everyone. That is the same failure this project attributes to the nitrogen "
       "account, and it is available to us on exactly the same terms.\n")
+
+    a("### Not every depletion feeds itself — and the difference is decay\n")
+    a("The selection argument above is too tidy, and the correction sharpens it. "
+      "Depletions are not interchangeable, because **what dies leaves a body, and "
+      "decay has a gas signature**. Whether a shortage worsens or cures itself "
+      "depends on whether the decomposers consume the missing thing or release "
+      "it.\n")
+    a("Take the two great gases and run them against each other.\n")
+    a("| | what it kills | what decay then does | feedback |")
+    a("|---|---|---|---|")
+    a("| **Oxygen depletion** | aerobes — most animals | consumes more oxygen, "
+      "releases CO₂ | **self-amplifying** |")
+    a("| **CO₂ depletion** | photosynthesisers | releases CO₂, consumes oxygen "
+      "| **self-correcting** |")
+    a("")
+    a("The asymmetry is complete and it is not a coincidence. Respiration and "
+      "photosynthesis are the same reaction run in opposite directions, so every "
+      "corpse that decays *relieves* a carbon shortage and *deepens* an oxygen one. "
+      "A carbon dioxide shortage cures itself, because everything that dies of it "
+      "puts the carbon back. An oxygen shortage is fed by its own casualties.\n")
+    a("This is not hypothetical at either end. Inside a dense bloom, CO₂ really is "
+      "drawn down far enough to push pH above 9 — which is the carbon entry in the "
+      "element sweep below, and the reason a bloom can poison water by consuming "
+      "carbon rather than by producing anything. It corrects within a day, as soon "
+      "as respiration resumes. Bottom-water oxygen depletion does not correct at "
+      "all; it compounds.\n")
+    a("**And the sign of that feedback depends on light and mixing, not on biology "
+      "alone.** In shallow lit water the survivors of an oxygen crash are "
+      "photosynthetic, so daylight restores oxygen and the system oscillates rather "
+      "than ratchets. Below a pycnocline in the dark the survivors are sulphate "
+      "reducers and methanogens, whose metabolism restores nothing and adds a "
+      "poison. Same depletion, same selection logic, opposite outcome — decided by "
+      "whether photons reach the survivors.\n")
+    a("### The winners do remake the world, on the wrong timescale\n")
+    a("The deeper objection is right, and it deserves stating at full strength: "
+      "**organisms that can function in a depleted state come to dominate it, and "
+      "in dominating it they change the conditions.** Adaptation is not only a "
+      "response to the environment; it is a cause of the next one.\n")
+    a("The extreme case is the whole reason any of this exists. Cyanobacteria "
+      "adapted to an anoxic, carbon-rich world, and in filling it they released "
+      "oxygen — which poisoned most of the biosphere that had produced them and "
+      "created the conditions for every aerobic thing since, the authors of this "
+      "page included. That is the objection at planetary scale, and it is not a "
+      "metaphor: the winners of a depletion rebuilt the atmosphere.\n")
+    a("> **It took roughly two billion years.** Which is the whole of the "
+      "consolation and the whole of the problem. Life does rebalance, reliably, and "
+      "on a timescale that has no relationship to a policy cycle, a fishery, a "
+      "human life, or the persistence of anything anybody is trying to protect. "
+      "*The system recovers* and *the recovery is available to us* are different "
+      "claims, and only the first one is true.\n")
+    a("So the convergence argument survives with a boundary drawn around it. It "
+      "describes what happens on the timescale of decades, in a system that is "
+      "being pushed continuously and given no interval in which to run the slow "
+      "half of the cycle. `W5` and `M9` are that boundary stated as mechanisms: it "
+      "is the *return interval* relative to the recovery rate that decides the "
+      "outcome, not the total disturbance.\n")
 
     a("### Who makes the window, and how fast they can move it\n")
     a("One more layer under all of this, and it is the one that decides the "
