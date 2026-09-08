@@ -264,6 +264,16 @@ GROUPS = [
      "*induces deficiency* of another by blocking its uptake. Under those three, "
      "\"too much nitrogen\" and \"depleted of something else\" are not opposite "
      "diagnoses. They are the same one."),
+    ("Z", "The physical fields and their windows",
+     "Light starvation is the same argument as chemical deficiency, one physical "
+     "layer up - and the layer behaves differently in a way that matters. A "
+     "chemical has one axis: how much. A field has several, and each carries its "
+     "own floor and ceiling. Light is not only how much, but of what wavelengths, "
+     "for how long, and when. So the exhaustive treatment of the physical avenue is "
+     "a small cross-product - the fields are enumerable, their dimensions are "
+     "enumerable, and each dimension admits exactly the same three failure modes as "
+     "a chemical does. This is the most nearly closable part of the whole register, "
+     "and among the least examined."),
     ("T", "Sediment sickness: symbionts, pathogens and why nothing grows back",
      "Horticulture has a name for ground where a plant will not grow although the "
      "nutrients are adequate: replant disease, or soil sickness. Its causes are "
@@ -1574,6 +1584,140 @@ H = [
      "routes, not merely on nutrients.",
      "Trawling, dumping and contaminant coverage for the areas used as references."),
 
+    # ---- Z ----------------------------------------------------------------
+    ("Z1", "Z", "Light: too little, and too much", ["O7", "O4", "O3"],
+     "The floor is the eelgrass requirement, roughly 11-14% of surface irradiance. "
+     "The ceiling is real too: photoinhibition and UV damage at the surface, which "
+     "is why some species do worse in the clearest water.",
+     "Both tails, as with every window. A management target expressed only as *more "
+     "light is better* is the same error as a nutrient target expressed only as "
+     "*less is better*.",
+     "Response across the full irradiance range, not against a single threshold.",
+     "Kd and water depth together give light at the bed. Both are in the record; "
+     "the product is rarely formed."),
+    ("Z2", "Z", "Light quality, not quantity: browning", ["O7", "O4"],
+     "Water attenuates red first, then blue, and coloured dissolved organic matter "
+     "shifts the surviving spectrum brown-green. Photosynthetic pigments are tuned "
+     "to particular wavelengths, so **which** organisms can photosynthesise changes "
+     "even at constant total irradiance. CDOM export from catchments has been rising "
+     "across Nordic waters - the browning phenomenon - and it is driven by land use, "
+     "hydrology and recovery from acidification rather than by nutrients.",
+     "Community composition shifts with no change in Kd's magnitude, because Kd is "
+     "one number where the mechanism is a spectrum. A wholly separate driver, "
+     "arriving from the same catchments and correlated with nutrient load, which "
+     "makes it a confounder as well as a cause.",
+     "Spectral attenuation, or at minimum CDOM absorbance, alongside Kd.",
+     "Spectral light measurement or CDOM. Kd is measured as a single "
+     "broadband number."),
+    ("Z3", "Z", "Photoperiod and timing as a cue", ["O7", "O6", "O3"],
+     "Day length is a signal as well as an energy supply - it triggers spawning, "
+     "settlement, germination and migration. Turbidity changes the effective "
+     "photoperiod at depth without changing the calendar.",
+     "The organism's clock and its environment come apart, which is a failure of "
+     "`V7` rather than of energy supply. Nothing dies of darkness; the population "
+     "simply stops reproducing on time.",
+     "Timing of reproductive events against light climate at depth, over years.",
+     "Phenological observations. Effectively none for Danish marine "
+     "invertebrates."),
+    ("Z4", "Z", "Temperature: window, and rate", ["O3", "O6", "O7"],
+     "A floor, a ceiling, and - separately - a maximum rate of change that "
+     "acclimation can follow. The Danish straits sit at the southern edge for "
+     "boreal species and the northern edge for others, so both tails are populated.",
+     "Warming is usually treated as a mean shift. The lethal events are extremes "
+     "and rates, which a mean cannot represent, and the survivable-magnitude "
+     "argument is the `V8` avenue.",
+     "Response against temperature extremes and rates of change, not annual means.",
+     "Bottom temperature at high frequency. In the CTD record now being "
+     "downloaded."),
+    ("Z5", "Z", "Hydrodynamic energy has a floor as well as a ceiling",
+     ["O3", "O1", "O7"],
+     "Too much and organisms are dislodged, abraded and buried; too little and "
+     "filter feeders are not delivered food, larvae are not dispersed, and nothing "
+     "is flushed.",
+     "Both a sheltered artificial basin and an exposed dredged channel fail, for "
+     "opposite reasons, and neither failure is chemical. Construction changes this "
+     "field directly, which connects `C8` to a mechanism.",
+     "Bed shear stress distribution against community composition - the whole "
+     "distribution, since both tails matter.",
+     "Wave and current modelling. Bed shear already computed here from 31 years of "
+     "wind."),
+    ("Z6", "Z", "Sound, as a cue and as a stressor", ["O3", "O6", "O7"],
+     "Larvae of many marine invertebrates and fish orient to reef sound when "
+     "choosing where to settle. Shipping noise and pile driving mask it, and "
+     "impulsive noise injures directly.",
+     "A settlement failure with no chemical, thermal or oxygen signature - the "
+     "habitat is fine and nothing arrives, because the signal that would have "
+     "guided them is drowned. Another `V7` mechanism, and it follows shipping lanes "
+     "and construction rather than catchments.",
+     "Settlement rates against ambient noise, and against construction events with "
+     "known dates.",
+     "Underwater noise measurement. Some exists for marine mammals; essentially "
+     "none tied to invertebrate settlement."),
+    ("Z7", "Z", "Electromagnetic fields", ["O3"],
+     "Subsea power cables generate magnetic and induced electric fields. Elasmo"
+     "branchs and some invertebrates use electroreception for navigation and prey "
+     "detection.",
+     "Behavioural effects along cable routes, which are dated and mapped - so this "
+     "is testable even though it is speculative.",
+     "Distribution and behaviour against cable routes, before and after "
+     "installation.",
+     "Cable route and energisation dates. Available. Biological response: not "
+     "measured."),
+
+    ("Z8", "Z", "The attenuation budget is never partitioned", ["O7", "O4", "O3"],
+     "Kd is one broadband number. Ocean optics decomposes it as a sum of "
+     "independent contributions - pure water, phytoplankton pigment, coloured "
+     "dissolved organic matter, mineral particles, and non-algal detritus - each "
+     "with its own spectral signature, and the partition is standard practice with "
+     "a spectroradiometer.",
+     "**Kd is measured and its cause is assumed.** A Kd exceedance is attributed to "
+     "phytoplankton because phytoplankton is what the framework is about, but the "
+     "same number is produced by resuspended mineral sediment, by browning, by a "
+     "dredging plume, or by detritus that grew somewhere else and drifted in. This "
+     "is the residual-estimator problem in the light indicator: the quantity is "
+     "real and measured, and the attribution behind it is not.",
+     "Spectral attenuation partitioned into its components, against each candidate "
+     "source separately.",
+     "Spectral irradiance or absorbance. Denmark measures broadband Kd, which "
+     "cannot be partitioned even in principle."),
+    ("Z9", "Z", "Epiphyte shading, which bypasses the water column", ["O7"],
+     "Nutrient enrichment promotes algae growing directly *on* the eelgrass leaf. "
+     "The host is shaded at the blade surface, where no water-column measurement "
+     "reaches.",
+     "A nutrient effect on light that produces no change in Kd at all, because the "
+     "shading happens after the light has passed through the water. So the "
+     "nutrient-to-light pathway can operate with the light indicator reading "
+     "normally - and grazers that would have cropped the epiphytes are the ones "
+     "removed by every other route here.",
+     "Epiphyte load per unit leaf area against nutrient status and grazer "
+     "abundance.",
+     "Epiphyte biomass on eelgrass. Recorded in some research programmes; not in "
+     "routine monitoring."),
+    ("Z10", "Z", "Mineral plumes from works", ["O7", "O4", "O3"],
+     "Dredging, extraction, dumping, cable laying and construction all put mineral "
+     "particles into suspension. They attenuate light, abrade, and settle on leaves "
+     "and gills, and none of it involves a nutrient.",
+     "Turbidity with a known date, a known position and a known operator - so this "
+     "is one of the few attenuation sources that is a natural experiment rather "
+     "than a background condition.",
+     "Turbidity and vegetation response near works, before and after, against "
+     "controls at distance.",
+     "Works chronology with dates and footprints, and turbidity monitoring - which "
+     "large projects are typically required to do and which is rarely reanalysed."),
+    ("Z11", "Z", "The weakened host", ["O7", "O3", "O6"],
+     "Light starvation need not kill directly. A shaded plant photosynthesises "
+     "less, leaks less oxygen from its roots, carries less reserve, and is then "
+     "more susceptible to sulphide intrusion (`T1`), to wasting disease whose "
+     "virulence tracks host stress (`T3`), and to ordinary starvation.",
+     "The proximate cause of death is a pathogen or a poison, and the reason it "
+     "succeeded is shade. Attribution to either alone is wrong, and the "
+     "conventional analysis - which records the die-off and the nutrient level - "
+     "sees neither.",
+     "Host condition indices measured alongside both the stressor and the "
+     "pathogen, rather than any one of the three.",
+     "Carbohydrate reserves, tissue sulphide and pathogen load on the same plants. "
+     "Done in research; not in monitoring."),
+
     # ---- I ----------------------------------------------------------------
     ("I1", "I", "Changing station network", ["O1", "O3", "O4"],
      "Stations added, moved and dropped over the record, so a trend can be a trend "
@@ -1731,12 +1875,23 @@ def render(rows):
       "axis, unbounded on the other, and an avenue is only as closed as its weaker "
       "axis.\n")
     a("`V3` is the most nearly closed of all, and is the one worth pushing on. The "
-      "physicochemical fields an organism sits in are a short list — temperature, "
-      "salinity, pressure, pH, redox potential, light, hydrodynamic energy, "
-      "dissolved gas tension — each with a window and the same three failure modes. "
-      "Both axes are nearly enumerable, which is unusual and useful: it means the "
-      "conditions avenue can be checked almost to completion, and Denmark measures "
-      "most of these already.\n")
+      "physicochemical fields an organism sits in are a short list — light, "
+      "temperature, salinity, pressure, pH, redox potential, hydrodynamic energy, "
+      "sound, electromagnetic field — and it is close to complete.\n")
+    a("But a field is not a chemical, and the difference matters. **A chemical has "
+      "one axis: how much. A field has several, each carrying its own floor and "
+      "ceiling.** Light is not only how much, but of what wavelengths, for how "
+      "long, and when — and browning changes the second without changing the first, "
+      "while turbidity changes the third at depth without changing the calendar. "
+      "Temperature has a window and, separately, a maximum rate of change. "
+      "Hydrodynamic energy has a floor as well as a ceiling: too little and filter "
+      "feeders starve, too much and everything is abraded off.\n")
+    a("So the exhaustive treatment here is a small cross-product — **fields × "
+      "dimensions × the same three failure modes** — and all three factors are "
+      "enumerable. That makes it the most nearly closable part of the register, and "
+      "group **Z** exists to work through it. Denmark already measures most of the "
+      "fields; what is missing is mostly the extra dimensions, which is a cheaper "
+      "gap to close than any other on this page.\n")
     a("**`V4` and `V5` close better than the chemical ones, for a reason worth "
       "stating.** Destruction and attack are both done *by* something, and the set "
       "of possible agents is drawn from the biota. That set is bounded by what "
