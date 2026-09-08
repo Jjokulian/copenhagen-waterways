@@ -31,7 +31,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, ROOT, log, read_json
+from common import DERIVED, RAW, ROOT, log, read_json
 
 OUT = os.path.join(ROOT, "docs", "OXYGEN.md")
 
@@ -247,9 +247,20 @@ def render(hz):
       f"{hz['total_points']} points nationally, the matrices measured are biota "
       f"{hz['biota']}, water {hz['water']}, and **sediment {hz['sediment']}**.\n")
     a("Sediment is where persistent toxicants accumulate, and where a benthic animal "
-      "lives. It is measured at four points in Denmark. Any hypothesis in which the "
-      "seabed was poisoned rather than suffocated cannot be tested, and it cannot be "
-      "tested because the measurement was never taken.\n")
+      "actually lives. In the water-plan layer it is flagged at five of those "
+      f"{hz['total_points']} points; biota carries almost all of the rest.\n")
+    a("> **A correction, and a narrowing.** An earlier version of this page said "
+      "sediment is measured at four points *in Denmark*. That generalised one "
+      "layer — the VP3 hazardous-substance stations — to the whole country, and it "
+      "was wrong on both counts. The count in that layer is five, and a separate "
+      "international archive (ICES DOME) holds a longer Danish marine sediment "
+      "record that this project has not yet verified for itself. The defensible "
+      "claim is narrower: **the national water-plan monitoring that feeds the "
+      "assessment looks at biota and water and almost never at the bed**, which is "
+      "a statement about what the assessment can see rather than about what exists "
+      "somewhere.\n")
+    a("Either way a hypothesis in which the seabed was poisoned rather than "
+      "suffocated is not tested by the programme that sets the requirement.\n")
 
     a("## 4. Low oxygen is not the same as no life\n")
     a("This is the combination that sounds contrived, and it is the most solidly "
@@ -295,7 +306,7 @@ def render(hz):
       "eight paths and the instruments distinguish two. The fix is not a different "
       "target — it is an oxygen-demand budget alongside the nutrient budget, a fauna "
       "survey that runs in autumn as well as spring, and sediment toxicant measurement "
-      "at more than four points.\n")
+      "in the programme that actually sets the requirement.\n")
     return "\n".join(o) + "\n"
 
 
@@ -304,25 +315,26 @@ def main():
     tot = sum(r["area_km2"] for r in A.values())
     with_pts = [r for r in A.values() if r["observation"].get("hazardous")]
     without = [r for r in A.values() if not r["observation"].get("hazardous")]
-    mats = {"biota": 0, "water": 0, "sediment": 0}
-    n_points = 0
-    for r in with_pts:
-        h = r["observation"]["hazardous"]
-        n_points += h["stations"]
-        for k, v in h["matrices"].items():
-            mats[k] = mats.get(k, 0) + v
+
+    # Counts come from the layer itself, not from the subset that fell within the
+    # 20 km assignment radius - mixing the two gave a five-of-205 that was five of
+    # one denominator and 205 of another.
+    feats = read_json(os.path.join(RAW, "national", "sw_mfs_tilstand.geojson"))
+    props = [f["properties"] for f in feats["features"]]
+    mats = {lab: sum(1 for p in props if p.get(k) == "Ja")
+            for k, lab in (("maaltbiota", "biota"), ("maaltvand", "water"),
+                           ("maaltsedim", "sediment"))}
     hz = {"n_wb": len(A), "with_points": len(with_pts), "without": len(without),
           "area_without": sum(r["area_km2"] for r in without),
           "pct_without": 100 * sum(r["area_km2"] for r in without) / tot,
-          "total_points": n_points, **mats}
+          "total_points": len(props), **mats}
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(render(hz))
     log(f"wrote docs/OXYGEN.md ({os.path.getsize(OUT):,} chars)")
     log(f"  1 kg N (full route) = {O2_PER_N_TOTAL:.1f} kg O2 "
         f"= {O2_PER_N_TOTAL/O2_PER_FAT:.1f} kg fat")
-    log(f"  1 kg NH4-N (nitrification only) = {O2_PER_N_NITRIF:.2f} kg O2 "
-        f"= {O2_PER_N_NITRIF/O2_PER_FAT:.1f} kg fat")
-    log(f"  hazardous-substance sediment measurements nationally: {mats['sediment']}")
+    log(f"  hazardous-substance layer: {len(props)} points; "
+        f"biota {mats['biota']}, water {mats['water']}, sediment {mats['sediment']}")
     return 0
 
 

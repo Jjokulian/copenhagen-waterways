@@ -39,6 +39,27 @@ from common import DERIVED, ROOT, log, read_json, write_json
 
 OUT = os.path.join(ROOT, "docs", "EXPERIMENTS.md")
 
+# Three kinds of work, which are not interchangeable and are not equally strong.
+KINDS = [
+    ("experiment", "Constructive and investigative",
+     "You change one thing and watch what follows. It *creates* the evidence, and "
+     "it is the only kind that can establish causation, because the control is what "
+     "rules out the alternatives. It costs money, time, access and usually "
+     "permission."),
+    ("measurement", "Investigative",
+     "You observe something real that nobody recorded. It creates the *record* "
+     "rather than the evidence: it can establish what is happening, where and when, "
+     "but not why. Cheaper than an experiment and still requires being there. Most "
+     "of the gaps in this project are of this kind - not unknowable, unrecorded."),
+    ("analysis", "Armchair",
+     "You work on what is already written down. It can establish consistency, bound "
+     "magnitudes, expose contradictions and kill hypotheses - but it cannot "
+     "establish causation, and it cannot recover a fact that was never recorded. "
+     "**Almost everything this project has produced is of this kind.** That is worth "
+     "saying plainly: its findings are of the form *your evidence does not support "
+     "what you claim*, which is a real result and a limited one."),
+]
+
 SCALES = [
     ("small", "A person with a boat, a season, and a few thousand kroner. No "
               "institution required."),
@@ -50,7 +71,7 @@ SCALES = [
 ]
 
 X = [
-    ("X1", "Does eelgrass fail because the sediment is sick?",
+    ("X1", "Does eelgrass fail because the sediment is sick?", "experiment",
      ["T4", "T5", "T2", "T1"], "small",
      "Restoration plantings fail in sediment whose chemistry looks adequate. "
      "Horticulture calls this replant disease and tests it the obvious way.",
@@ -74,7 +95,7 @@ X = [
      "This is the cheapest decisive experiment in the register and nobody has run "
      "it. Denmark has failed eelgrass restorations to site it in."),
 
-    ("X2", "Is eelgrass killed by darkness, or by sulphide that darkness lets in?",
+    ("X2", "Is eelgrass killed by darkness, or by sulphide that darkness lets in?", "experiment",
      ["T1", "K11"], "small",
      "Eelgrass keeps sulphide out by leaking oxygen from its roots, powered by "
      "photosynthesis. If the leak is the mechanism, shading kills by poisoning "
@@ -93,7 +114,7 @@ X = [
      "Distinguishes two mechanisms that make identical predictions for the "
      "indicator and completely different predictions for what to do about it."),
 
-    ("X3", "Does fat lower measured nitrogen?",
+    ("X3", "Does fat lower measured nitrogen?", "experiment",
      ["R1", "B1"], "lab",
      "Fat has no nitrogen, so bacteria decomposing it must take nitrogen from the "
      "water. If so, a fat-loaded water reads as *less* eutrophic on the regulated "
@@ -111,7 +132,7 @@ X = [
      "A three-week bench experiment that would tell you whether one of the "
      "country's two regulated indicators can move the wrong way."),
 
-    ("X4", "Does a small organic input unlock a large old one?",
+    ("X4", "Does a small organic input unlock a large old one?", "experiment",
      ["R2", "H2"], "lab",
      "Priming: labile carbon gives microbes the energy to attack the recalcitrant "
      "pool, so an input's oxygen demand can exceed its own COD.",
@@ -128,7 +149,7 @@ X = [
      "Standard soil-science method applied to marine sediment. The equipment is a "
      "core tube and an oxygen optode."),
 
-    ("X5", "How long does a trawl track take to heal, and what does it release?",
+    ("X5", "How long does a trawl track take to heal, and what does it release?", "experiment",
      ["D1", "D8", "D11", "E1"], "programme",
      "Trawling is hypothesised to destroy the biostabilising surface skin and "
      "release sulphide. Both are measurable, and the disturbance can be applied on "
@@ -146,7 +167,7 @@ X = [
      "Requires a cooperative vessel and a closed area. Yields the one number - "
      "recovery time - that the whole trawling argument turns on."),
 
-    ("X6", "Is silicon the limiting nutrient, and does adding it bring diatoms back?",
+    ("X6", "Is silicon the limiting nutrient, and does adding it bring diatoms back?", "experiment",
      ["K1", "K2", "J1"], "lab",
      "Si comes only from weathering, so N and P have risen and Si has not. If Si "
      "limits, the community shifts away from diatoms toward the flagellates and "
@@ -163,7 +184,7 @@ X = [
      "A bottle experiment with a century of methodological pedigree. Silicate is "
      "already in the ODA record, so the observational half is free."),
 
-    ("X7", "Measure the greasy layer, at all",
+    ("X7", "Measure the greasy layer, at all", "measurement",
      ["J2", "J3", "J1", "J6"], "small",
      "The greasiness people report after swimming is a property of the sea-surface "
      "microlayer, which concentrates surfactants and lipids by orders of magnitude "
@@ -183,7 +204,7 @@ X = [
      "That it has never been done here, for a phenomenon the public reports "
      "constantly, is the finding."),
 
-    ("X8", "Are the trends in the sea or in the instruments?",
+    ("X8", "Are the trends in the sea or in the instruments?", "analysis",
      ["I1", "I2", "I3", "I5", "I6", "L3"], "desk",
      "The raw record carries the supplier, the sampling gear, the sonde, the "
      "technical instruction, and both the original and corrected result with the "
@@ -202,7 +223,7 @@ X = [
      "**No fieldwork and no permission required.** The data is downloaded. This is "
      "the highest ratio of consequence to cost in the register."),
 
-    ("X9", "Does anything happen after an overflow?",
+    ("X9", "Does anything happen after an overflow?", "measurement",
      ["B1", "B2", "U2", "O9"], "small",
      "Denmark has 19,665 rain-conditioned outfalls and no per-event record of what "
      "they discharge or what follows. Monthly sampling cannot see a six-hour event.",
@@ -219,7 +240,7 @@ X = [
      "coastal water is per-event overflow impact, and it is closed by hardware "
      "costing less than a laptop."),
 
-    ("X10", "Put it back and see if it holds",
+    ("X10", "Put it back and see if it holds", "experiment",
      ["L4", "H1", "T4"], "small",
      "A target can be unreachable because the driver is still too high, or because "
      "something else is missing. From the outside these look identical, and thirty "
@@ -238,7 +259,7 @@ X = [
      "another reason', and it is the question the whole nitrogen argument rests "
      "on."),
 
-    ("X11", "Does skewing the nutrient ratio make the gel?",
+    ("X11", "Does skewing the nutrient ratio make the gel?", "experiment",
      ["J1", "K2", "A9"], "lab",
      "Gel and exopolymer are hypothesised to come from carbon overflow when cells "
      "fix carbon they cannot balance with N or P.",
@@ -255,7 +276,7 @@ X = [
      "Directly tests whether the intervention could make one outcome worse while "
      "improving another."),
 
-    ("X12", "Do the filter feeders clear the water?",
+    ("X12", "Do the filter feeders clear the water?", "experiment",
      ["F1", "F2"], "small",
      "Filter-feeder loss is hypothesised to raise chlorophyll with no change in "
      "nutrient supply, which would make restoration an alternative to load "
@@ -278,7 +299,7 @@ def render(rows, hyp):
     a = o.append
     by_scale = {}
     for r in rows:
-        by_scale.setdefault(r[3], []).append(r)
+        by_scale.setdefault(r[4], []).append(r)
     titles = {h["id"]: h["title"] for h in hyp["hypotheses"]}
     titles.update({u["id"]: u["name"] for u in hyp["unquantifiable"]})
     titles.update({o["id"]: o["name"] for o in hyp["observables"]})
@@ -306,14 +327,27 @@ def render(rows, hyp):
       "the sediment-sickness and inoculation hypotheses turn on. Soil science has "
       "used it for a century.\n")
 
+    a("## Three kinds of work, which are not interchangeable\n")
+    counts = {}
+    for r in rows:
+        counts[r[2]] = counts.get(r[2], 0) + 1
+    for kid, label, what in KINDS:
+        a(f"**{label} — `{kid}`** ({counts.get(kid, 0)} of {len(rows)} below). {what}\n")
+    a("Naming them separately matters because they are not substitutes and they are "
+      "not equally strong. Only an experiment establishes causation. Only a "
+      "measurement can recover something nobody wrote down. Analysis is the cheapest "
+      "and the weakest, and it is what a project like this one can do from a desk — "
+      "so it should be honest that most of its output is of that kind, and that the "
+      "step up in force comes from going and looking.\n")
+
     a("## What it would take\n")
     a("| | | experiments |")
     a("|---|---|---|")
     for key, what in SCALES:
-        ids = [r[0] for r in rows if r[3] == key]
+        ids = [r[0] for r in rows if r[4] == key]
         a(f"| `{key}` | {what} | {', '.join(ids) if ids else '—'} |")
     a("")
-    cheap = [r for r in rows if r[3] in ("small", "desk")]
+    cheap = [r for r in rows if r[4] in ("small", "desk")]
     a(f"**{len(cheap)} of {len(rows)} need no institution.** Two need no fieldwork "
       f"or none of their own. The most consequential — X8, whether the national "
       f"trends are in the sea or in the instruments — is a desk exercise on data "
@@ -324,8 +358,9 @@ def render(rows, hyp):
         if not rs:
             continue
         a(f"## {key.capitalize()} — {what}\n")
-        for xid, title, settles, _, why, manip, ctrl, meas, decide, note in rs:
+        for xid, title, kind, settles, _, why, manip, ctrl, meas, decide, note in rs:
             a(f"### {xid} — {title}\n")
+            a(f"`{kind}`\n")
             named = ", ".join(f"[`{h}`](#HYPOTHESES.md) {titles.get(h, '')}"
                               for h in settles)
             a(f"**Bears on:** {named}\n")
@@ -362,21 +397,23 @@ def main():
              | {o["id"] for o in hyp["observables"]}
              | {r["id"] for r in hyp["routes"]}
              | {t["id"] for t in hyp["terminal"]})
-    bad = [(r[0], h) for r in X for h in r[2] if h not in known]
+    bad = [(r[0], h) for r in X for h in r[3] if h not in known]
     if bad:
         log(f"  WARNING: unknown hypothesis ids referenced: {bad}")
     write_json(os.path.join(DERIVED, "experiments.json"),
                {"scales": [{"id": k, "what": w} for k, w in SCALES],
-                "experiments": [{"id": a_, "title": b_, "settles": c_, "scale": d_,
-                                 "why": e_, "manipulate": f_, "control": g_,
-                                 "measure": h_, "decide": i_, "note": j_}
-                                for a_, b_, c_, d_, e_, f_, g_, h_, i_, j_ in X]})
+                "kinds": [{"id": a_, "label": b_, "what": c_} for a_, b_, c_ in KINDS],
+                "experiments": [{"id": a_, "title": b_, "kind": k_, "settles": c_,
+                                 "scale": d_, "why": e_, "manipulate": f_,
+                                 "control": g_, "measure": h_, "decide": i_,
+                                 "note": j_}
+                                for a_, b_, k_, c_, d_, e_, f_, g_, h_, i_, j_ in X]})
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(render(X, hyp))
     log(f"wrote docs/EXPERIMENTS.md ({os.path.getsize(OUT):,} chars)")
-    cheap = sum(1 for r in X if r[3] in ("small", "desk"))
+    cheap = sum(1 for r in X if r[4] in ("small", "desk"))
     log(f"  {len(X)} experiments; {cheap} need no institution")
-    log(f"  covering {len({h for r in X for h in r[2]})} hypotheses")
+    log(f"  covering {len({h for r in X for h in r[3]})} ids across the register")
     return 0
 
 

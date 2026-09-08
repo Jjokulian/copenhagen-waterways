@@ -92,9 +92,13 @@ Take the three things the chain conflates — nitrogen loaded, oxygen low, highe
 
 Reading down the last column: the indicator set fires on low oxygen and on high chlorophyll. It cannot see the difference between a water killed by nutrients and a water killed by something else, because the *only* fauna instrument is a soft-bottom survey run 1 March–31 May — after the winter, before the summer, and months after an autumn kill.
 
-And the toxicant column is not monitored either. Of Denmark's 123 marine water bodies, **66 have a hazardous-substance monitoring point** and 57 have none, covering 30,696 km² — 70% of the sea. Across all 205 points nationally, the matrices measured are biota 202, water 139, and **sediment 4**.
+And the toxicant column is not monitored either. Of Denmark's 123 marine water bodies, **66 have a hazardous-substance monitoring point** and 57 have none, covering 30,696 km² — 70% of the sea. Across all 256 points nationally, the matrices measured are biota 253, water 174, and **sediment 5**.
 
-Sediment is where persistent toxicants accumulate, and where a benthic animal lives. It is measured at four points in Denmark. Any hypothesis in which the seabed was poisoned rather than suffocated cannot be tested, and it cannot be tested because the measurement was never taken.
+Sediment is where persistent toxicants accumulate, and where a benthic animal actually lives. In the water-plan layer it is flagged at five of those 256 points; biota carries almost all of the rest.
+
+> **A correction, and a narrowing.** An earlier version of this page said sediment is measured at four points *in Denmark*. That generalised one layer — the VP3 hazardous-substance stations — to the whole country, and it was wrong on both counts. The count in that layer is five, and a separate international archive (ICES DOME) holds a longer Danish marine sediment record that this project has not yet verified for itself. The defensible claim is narrower: **the national water-plan monitoring that feeds the assessment looks at biota and water and almost never at the bed**, which is a statement about what the assessment can see rather than about what exists somewhere.
+
+Either way a hypothesis in which the seabed was poisoned rather than suffocated is not tested by the programme that sets the requirement.
 
 ## 4. Low oxygen is not the same as no life
 
@@ -112,5 +116,5 @@ The inverse holds as well. **Chlorophyll is a biomass measure.** A low chlorophy
 
 None of this shows that nitrogen does not matter. The full remineralisation route is the most oxygen-expensive line in the table, and where a system is nitrogen-limited and poorly flushed, reducing nitrogen will reduce oxygen demand. That much is sound.
 
-What it shows is that the account has one column where it needs several. Oxygen demand is the quantity that actually matters, every substance in the water has a price in it, and only one of them is counted. A shore can be wrecked by any of eight paths and the instruments distinguish two. The fix is not a different target — it is an oxygen-demand budget alongside the nutrient budget, a fauna survey that runs in autumn as well as spring, and sediment toxicant measurement at more than four points.
+What it shows is that the account has one column where it needs several. Oxygen demand is the quantity that actually matters, every substance in the water has a price in it, and only one of them is counted. A shore can be wrecked by any of eight paths and the instruments distinguish two. The fix is not a different target — it is an oxygen-demand budget alongside the nutrient budget, a fauna survey that runs in autumn as well as spring, and sediment toxicant measurement in the programme that actually sets the requirement.
 

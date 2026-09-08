@@ -8,6 +8,16 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 > **The recurring design element is the sterilised control** — the same material, autoclaved or irradiated, run alongside the live one. Identical chemistry, no organisms. It separates *the chemistry of this stuff* from *the organisms in it* in a single step, and that is exactly the distinction the sediment-sickness and inoculation hypotheses turn on. Soil science has used it for a century.
 
+## Three kinds of work, which are not interchangeable
+
+**Constructive and investigative — `experiment`** (9 of 12 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+
+**Investigative — `measurement`** (2 of 12 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+
+**Armchair — `analysis`** (1 of 12 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+
+Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
+
 ## What it would take
 
 | | | experiments |
@@ -22,6 +32,8 @@ So every entry below states its decision rule **before** anyone runs it, includi
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
 ### X1 — Does eelgrass fail because the sediment is sick?
+
+`experiment`
 
 **Bears on:** [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`T5`](#HYPOTHESES.md) Loss of sediment suppressiveness, [`T2`](#HYPOTHESES.md) Loss of the sulphide-detoxifying symbiosis, [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light
 
@@ -39,6 +51,8 @@ Restoration plantings fail in sediment whose chemistry looks adequate. Horticult
 
 ### X2 — Is eelgrass killed by darkness, or by sulphide that darkness lets in?
 
+`experiment`
+
 **Bears on:** [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light, [`K11`](#HYPOTHESES.md) Light as a depleted resource
 
 Eelgrass keeps sulphide out by leaking oxygen from its roots, powered by photosynthesis. If the leak is the mechanism, shading kills by poisoning rather than by starving.
@@ -54,6 +68,8 @@ Eelgrass keeps sulphide out by leaking oxygen from its roots, powered by photosy
 *Distinguishes two mechanisms that make identical predictions for the indicator and completely different predictions for what to do about it.*
 
 ### X7 — Measure the greasy layer, at all
+
+`measurement`
 
 **Bears on:** [`J2`](#HYPOTHESES.md) Sea-surface microlayer enrichment, [`J3`](#HYPOTHESES.md) Surfactants from detergents and personal care, [`J1`](#HYPOTHESES.md) Transparent exopolymer particles and marine gel, [`J6`](#HYPOTHESES.md) Oil and hydrocarbon films
 
@@ -71,6 +87,8 @@ The greasiness people report after swimming is a property of the sea-surface mic
 
 ### X9 — Does anything happen after an overflow?
 
+`measurement`
+
 **Bears on:** [`B1`](#HYPOTHESES.md) Combined sewer overflow, [`B2`](#HYPOTHESES.md) Separate stormwater, [`U2`](#HYPOTHESES.md) Acute peaks under chronic means, [`O9`](#HYPOTHESES.md) Bathing water failure
 
 Denmark has 19,665 rain-conditioned outfalls and no per-event record of what they discharge or what follows. Monthly sampling cannot see a six-hour event.
@@ -87,6 +105,8 @@ Denmark has 19,665 rain-conditioned outfalls and no per-event record of what the
 
 ### X10 — Put it back and see if it holds
 
+`experiment`
+
 **Bears on:** [`L4`](#HYPOTHESES.md) Recovery is blocked by something other than the driver, [`H1`](#HYPOTHESES.md) Alternative stable states and hysteresis, [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback
 
 A target can be unreachable because the driver is still too high, or because something else is missing. From the outside these look identical, and thirty years of unexplained non-recovery sit between them.
@@ -102,6 +122,8 @@ A target can be unreachable because the driver is still too high, or because som
 *This is the only experiment that can distinguish 'not yet' from 'never, for another reason', and it is the question the whole nitrogen argument rests on.*
 
 ### X12 — Do the filter feeders clear the water?
+
+`experiment`
 
 **Bears on:** [`F1`](#HYPOTHESES.md) Loss of filter feeders, [`F2`](#HYPOTHESES.md) Loss of bioturbators
 
@@ -121,6 +143,8 @@ Filter-feeder loss is hypothesised to raise chlorophyll with no change in nutrie
 
 ### X3 — Does fat lower measured nitrogen?
 
+`experiment`
+
 **Bears on:** [`R1`](#HYPOTHESES.md) The C:N threshold, and fat as a nitrogen sink, [`B1`](#HYPOTHESES.md) Combined sewer overflow
 
 Fat has no nitrogen, so bacteria decomposing it must take nitrogen from the water. If so, a fat-loaded water reads as *less* eutrophic on the regulated indicator while being more degraded.
@@ -136,6 +160,8 @@ Fat has no nitrogen, so bacteria decomposing it must take nitrogen from the wate
 *A three-week bench experiment that would tell you whether one of the country's two regulated indicators can move the wrong way.*
 
 ### X4 — Does a small organic input unlock a large old one?
+
+`experiment`
 
 **Bears on:** [`R2`](#HYPOTHESES.md) Priming of the old sediment pool by fresh carbon, [`H2`](#HYPOTHESES.md) Sediment legacy
 
@@ -153,6 +179,8 @@ Priming: labile carbon gives microbes the energy to attack the recalcitrant pool
 
 ### X6 — Is silicon the limiting nutrient, and does adding it bring diatoms back?
 
+`experiment`
+
 **Bears on:** [`K1`](#HYPOTHESES.md) Silicon depletion and the diatom-to-flagellate shift, [`K2`](#HYPOTHESES.md) Stoichiometric imbalance decides who grows, [`J1`](#HYPOTHESES.md) Transparent exopolymer particles and marine gel
 
 Si comes only from weathering, so N and P have risen and Si has not. If Si limits, the community shifts away from diatoms toward the flagellates and gel-formers.
@@ -168,6 +196,8 @@ Si comes only from weathering, so N and P have risen and Si has not. If Si limit
 *A bottle experiment with a century of methodological pedigree. Silicate is already in the ODA record, so the observational half is free.*
 
 ### X11 — Does skewing the nutrient ratio make the gel?
+
+`experiment`
 
 **Bears on:** [`J1`](#HYPOTHESES.md) Transparent exopolymer particles and marine gel, [`K2`](#HYPOTHESES.md) Stoichiometric imbalance decides who grows, [`A9`](#HYPOTHESES.md) Nitrogen fixation
 
@@ -187,6 +217,8 @@ Gel and exopolymer are hypothesised to come from carbon overflow when cells fix 
 
 ### X5 — How long does a trawl track take to heal, and what does it release?
 
+`experiment`
+
 **Bears on:** [`D1`](#HYPOTHESES.md) Bottom trawling, [`D8`](#HYPOTHESES.md) Loss of biostabilisation, and the mobile bed, [`D11`](#HYPOTHESES.md) Stabilisers against destabilisers, [`E1`](#HYPOTHESES.md) Sulphide oxidation
 
 Trawling is hypothesised to destroy the biostabilising surface skin and release sulphide. Both are measurable, and the disturbance can be applied on purpose.
@@ -204,6 +236,8 @@ Trawling is hypothesised to destroy the biostabilising surface skin and release 
 ## Desk — No fieldwork at all. The data already exists; the analysis has not been run.
 
 ### X8 — Are the trends in the sea or in the instruments?
+
+`analysis`
 
 **Bears on:** [`I1`](#HYPOTHESES.md) Changing station network, [`I2`](#HYPOTHESES.md) Changing analytical method, [`I3`](#HYPOTHESES.md) Changing sampling frequency and season, [`I5`](#HYPOTHESES.md) Changing correction factors, [`I6`](#HYPOTHESES.md) Changing custodian, [`L3`](#HYPOTHESES.md) The trend depends on the start year
 
