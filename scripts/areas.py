@@ -381,11 +381,33 @@ def render(props, rec, ch):
         km = sum(r["area_km2"] for r in sub)
         a(f"| {lab} | {len(sub)} | {km:,.0f} | {100*km/tot:.1f}% |")
     a("")
-    a(f"**{len(nothing)} water bodies covering "
+    a(f"{len(nothing)} water bodies covering "
       f"{sum(r['area_km2'] for r in nothing):,.0f} km² "
       f"({100*sum(r['area_km2'] for r in nothing)/tot:.0f}% of Danish sea) carry "
-      f"neither a fitted model nor a single repeated marine observation** in this "
-      f"open-data set. They still receive a requirement.\n")
+      f"neither a fitted model nor a repeated observation **in the two layers "
+      f"counted above** — bathing water and hazardous-substance status. They still "
+      f"receive a requirement.\n")
+    a("> **A correction, and a caution about the whole class of statement.** An "
+      "earlier version of this line said those water bodies carry \"neither a "
+      "fitted model nor a single repeated marine observation\", which reads as a "
+      "claim about marine observation in general. It is not one, and checked "
+      "against a wider corpus it is false. **A claim of absence is only as wide as "
+      "the search behind it**, and this search was two layers deep.\n"
+      ">\n"
+      "> The check: ODA's station register holds **6,258 positioned marine "
+      "stations**, and every one of the 123 water bodies contains at least one. "
+      "Assigned by point-in-polygon to the same boundaries used on this page, the "
+      "defensible version of the statement is much weaker — 3 areas (1.3% of sea "
+      "area) have no station visited in two or more distinct years, 8 areas (11.9%) "
+      "none visited in five or more, and 22 areas (18.2%) none visited in ten or "
+      "more.\n"
+      ">\n"
+      "> That last figure is worth having and is the one to quote. It is still a "
+      "statement about a search — ODA plus these layers — rather than about the "
+      "world, and anyone who knows of a marine series this project has not "
+      "assembled is holding a correction. The two layers above are counted here "
+      "because they are what the assessment itself leans on; they were never the "
+      "whole of what exists.\n")
 
     a("## The cum hoc estimate, across areas instead of across years\n")
     a("A national time series has one unit of replication. The areas have "

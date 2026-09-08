@@ -12,6 +12,7 @@
   :root{
     --ground:#f4f6f8;--surface:#fcfdfe;--sunk:#eaeef3;
     --ink:#111820;--ink-2:#3d4a58;--muted:#66727f;--rule:#d7dee6;--accent:#2a6fa8;
+    --bar:46px;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --ground:#0d141d;--surface:#141d28;--sunk:#101822;
@@ -26,23 +27,39 @@
     font:400 16.5px/1.62 "Source Serif 4",Georgia,serif}
   .shell{max-width:1080px;margin:0 auto;padding:0 24px 90px;
     display:grid;grid-template-columns:230px 1fr;gap:46px}
-  nav{position:sticky;top:0;align-self:start;padding:44px 0 0;max-height:100vh;overflow-y:auto}
-  nav a.home{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:17px;
-    color:var(--ink);text-decoration:none;letter-spacing:-.02em;margin:0 0 22px}
-  nav a.home:hover{color:var(--accent)}
+
+  /* Sidebar rules are scoped to #sitenav. A bare `nav` selector also matched the
+     .crumbs strip inside the article, which made it sticky halfway down the page. */
+  #sitenav{position:sticky;top:0;align-self:start;padding:44px 0 0;max-height:100vh;
+    overflow-y:auto;overscroll-behavior:contain;
+    transition:opacity .16s ease,transform .16s ease,visibility .16s}
+  #sitenav a.home{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:17px;
+    color:var(--ink);text-decoration:none;letter-spacing:-.02em;margin:0 0 18px}
+  #sitenav a.home:hover{color:var(--accent)}
+  /* The only cross-document link in the sidebar, so it is the loudest thing in it. */
+  #sitenav a.mapl{display:block;margin:0 0 24px;padding:9px 12px;border:1px solid var(--rule);
+    border-radius:6px;background:var(--sunk);color:var(--accent);text-decoration:none;
+    font-family:Archivo,sans-serif;font-size:13.5px;font-weight:600;line-height:1.35}
+  #sitenav a.mapl:hover{border-color:var(--accent)}
+  #sitenav a.mapl:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  #sitenav a.mapl[aria-current]{background:var(--accent);border-color:var(--accent);
+    color:var(--surface)}
   .navlabel{font-family:Archivo,sans-serif;font-size:10.5px;font-weight:600;
     letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
-  nav ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:3px}
-  nav li a{display:block;padding:7px 11px;border-radius:5px;text-decoration:none;
+  #sitenav ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:3px}
+  #sitenav li a{display:block;padding:7px 11px;border-radius:5px;text-decoration:none;
     font-family:Archivo,sans-serif;font-size:14px;color:var(--ink-2);line-height:1.35}
-  nav li a:hover{background:var(--sunk);color:var(--ink)}
-  nav li a[aria-current="page"]{background:var(--sunk);color:var(--accent);font-weight:600}
-  nav li a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
-  nav li.navgroup{font-family:Archivo,sans-serif;font-size:10.5px;font-weight:600;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-    margin:18px 0 6px;padding:12px 11px 0;border-top:1px solid var(--rule)}
+  #sitenav li a:hover{background:var(--sunk);color:var(--ink)}
+  #sitenav li a[aria-current]{background:var(--sunk);color:var(--accent);font-weight:600}
+  #sitenav li a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  /* Third-level entries are built for every section but shown only for the one
+     being read: HYPOTHESES.md has 182 of them. */
+  #nav li.lvl3{display:none}
+  #nav li.lvl3.open{display:block}
+  #nav li.lvl3 a{padding:5px 11px 5px 22px;font-size:13px;color:var(--muted)}
+  #nav li.lvl3 a[aria-current]{color:var(--accent)}
   main{padding:44px 0 0;min-width:0}
-  #doc{max-width:70ch}
+  #doc{max-width:70ch;overflow-wrap:break-word}
   #doc h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.4vw,40px);font-weight:700;
     letter-spacing:-.024em;line-height:1.1;margin:0 0 20px;text-wrap:balance}
   #doc h2{font-family:Archivo,sans-serif;font-size:13px;font-weight:600;letter-spacing:.13em;
@@ -50,15 +67,20 @@
     padding-top:22px;border-top:1px solid var(--rule)}
   #doc h3{font-family:Archivo,sans-serif;font-size:18.5px;font-weight:600;
     letter-spacing:-.01em;margin:30px 0 10px}
+  #doc h2,#doc h3{scroll-margin-top:14px}
   #doc p{margin:0 0 16px}
   #doc ul,#doc ol{margin:0 0 16px;padding-left:22px}
   #doc li{margin-bottom:8px}
   #doc a{color:var(--accent)}
   #doc code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--sunk);
-    padding:1px 6px;border-radius:3px}
+    padding:1px 6px;border-radius:3px;overflow-wrap:anywhere}
+  #doc pre{overflow-x:auto}
   #doc blockquote{margin:16px 0;padding:2px 0 2px 18px;border-left:3px solid var(--rule);
     color:var(--ink-2)}
-  .tablewrap{overflow-x:auto;margin:20px 0}
+  /* The wrapper scrolls so that the page never has to. It is a tab stop because a
+     region you can only reach by dragging it is not reachable at all. */
+  .tablewrap{overflow-x:auto;overscroll-behavior-x:contain;margin:20px 0}
+  .tablewrap:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   #doc table{border-collapse:collapse;width:100%;font-family:Archivo,sans-serif;
     font-size:13.5px;font-variant-numeric:tabular-nums;min-width:420px}
   #doc th,#doc td{text-align:left;padding:8px 14px 8px 0;border-bottom:1px solid var(--rule);
@@ -69,13 +91,86 @@
   #doc img{max-width:100%;height:auto;border-radius:6px;border:1px solid var(--rule)}
   #doc hr{border:0;border-top:1px solid var(--rule);margin:34px 0}
   .status{color:var(--muted);font-family:Archivo,sans-serif;font-size:14.5px}
+
+  /* The bar exists only below the layout breakpoint, where there is no column
+     beside the text to hold the contents in. It carries the way back to the
+     reading map, which is now the only cross-document navigation there is. */
+  .topbar{display:none;position:fixed;top:0;left:0;right:0;z-index:50;
+    align-items:center;gap:10px;height:var(--bar);padding:0 12px 0 6px;
+    background:var(--surface);border-bottom:1px solid var(--rule)}
+  .navbtn{display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;min-height:38px;
+    padding:0 10px;border:0;border-radius:6px;background:none;color:var(--ink);
+    cursor:pointer;font-family:Archivo,sans-serif;font-size:13.5px;font-weight:600}
+  .navbtn:hover{background:var(--sunk)}
+  .navbtn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .bars{position:relative;display:block;width:16px;height:1.6px}
+  .bars,.bars::before,.bars::after{background:currentColor;border-radius:1px;
+    transition:transform .16s ease,background-color .16s ease}
+  .bars::before,.bars::after{content:"";position:absolute;left:0;width:16px;height:1.6px}
+  .bars::before{top:-5px}
+  .bars::after{top:5px}
+  body.navopen .bars{background:transparent}
+  body.navopen .bars::before{transform:translateY(5px) rotate(45deg)}
+  body.navopen .bars::after{transform:translateY(-5px) rotate(-45deg)}
+  .topbar .here{flex:1 1 auto;min-width:0;font-family:Archivo,sans-serif;font-size:12.5px;
+    color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .topbar .topmap{flex:0 0 auto;padding:6px 9px;border:1px solid var(--rule);
+    border-radius:6px;font-family:Archivo,sans-serif;font-size:12.5px;font-weight:600;
+    color:var(--accent);text-decoration:none}
+  .topbar .topmap:hover{border-color:var(--accent)}
+  .topbar .topmap:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+  /* A phone screen has room for the title and very little else before a reader
+     wants a sentence of the document. Anything above the first paragraph that is
+     not the document itself folds to one line and opens on demand; a wide screen
+     forces the same elements open and hides the summary, so nothing about the
+     desktop page changes. Folded, never dropped. */
+  .fold > summary{display:none}
+  .fold > summary::-webkit-details-marker{display:none}
+  .crumbs{margin:0 0 1.6rem;padding:.5rem .8rem;border:1px solid var(--rule);border-radius:6px}
+  .crumbrow{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;
+    font-family:Archivo,sans-serif;font-size:13.5px}
+  .crumbs i,.fold > summary i{color:var(--muted);font-style:normal;letter-spacing:.04em;
+    text-transform:uppercase;font-size:11.5px;flex:0 0 auto}
+  .crumbrow span{display:inline-flex;gap:.4rem;align-items:baseline;flex-wrap:wrap}
+  .hint-short{display:none}
+
   @media (max-width:800px){
-    .shell{grid-template-columns:1fr;gap:0;padding-bottom:70px}
-    nav{position:static;max-height:none;padding-bottom:20px;border-bottom:1px solid var(--rule)}
-    nav ul{grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;
-      margin-bottom:14px}
-    main{padding-top:28px}
+    .shell{grid-template-columns:1fr;gap:0;padding:calc(var(--bar) + 10px) 16px 70px}
+    .topbar{display:flex}
+    main{padding:14px 0 0}
+    #doc h2,#doc h3{scroll-margin-top:calc(var(--bar) + 10px)}
+    /* The sidebar is a drawer rather than a strip of the page: it is the contents
+       of one document now, and a reader on a phone wants the first paragraph
+       before they want a list of the sections. */
+    #sitenav{position:fixed;top:var(--bar);left:0;right:0;bottom:0;z-index:45;
+      max-height:none;padding:18px 16px 48px;background:var(--ground);
+      visibility:hidden;opacity:0;transform:translateY(-5px)}
+    body.navopen #sitenav{visibility:visible;opacity:1;transform:none}
+    body.navopen{overflow:hidden}
+    #sitenav li a{padding:9px 11px}
+    #nav li.lvl3 a{padding:7px 11px 7px 22px}
+    .fold > summary{display:flex;gap:.45rem;align-items:baseline;cursor:pointer;
+      list-style:none;padding:.15rem 0;font-family:Archivo,sans-serif;font-size:13px;
+      color:var(--ink-2)}
+    .fold > summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;
+      border-radius:3px}
+    .fold > summary .line{flex:1 1 auto;min-width:0;overflow:hidden;
+      text-overflow:ellipsis;white-space:nowrap}
+    .fold[open] > summary .line{white-space:normal}
+    .fold > summary::after{content:"";flex:0 0 auto;width:.42rem;height:.42rem;
+      margin:0 .1rem 0 auto;border-right:1.5px solid var(--muted);
+      border-bottom:1.5px solid var(--muted);transform:translateY(-2px) rotate(45deg);
+      transition:transform .15s ease}
+    .fold[open] > summary::after{transform:translateY(1px) rotate(-135deg)}
+    .preface[open] > summary{margin-bottom:.5rem}
+    .hint-long{display:none}
+    .hint-short{display:inline}
   }
+  @media (prefers-reduced-motion:reduce){
+    #sitenav,.bars,.bars::before,.bars::after,.fold > summary::after{transition:none}
+  }
+
 
 /* Glossary tooltips. Every `M1`, `V3`, `K8` in a generated document is a
    reference into docs/data/glossary.json, which is emitted from the same source
@@ -109,6 +204,21 @@ code.gloss{
   border-top:1px solid var(--rule,#d7dee6); color:var(--ink-2,#3d4a58)}
 #tip i{display:block; font-style:normal; font-size:11px; letter-spacing:.06em;
   text-transform:uppercase; color:var(--muted,#66727f); margin-bottom:5px}
+/* Touch has no hover, so a tap opens the definition as a sheet at the foot of the
+   screen instead: fixed, so no viewport arithmetic can put it off the edge and a
+   stray pixel of scroll cannot chase it away, and hittable, so the article link
+   can live inside it rather than behind the word. */
+#tip[data-mode="sheet"]{position:fixed; top:auto; left:12px; right:12px; bottom:12px;
+  max-width:none; max-height:min(60vh,28rem); overflow-y:auto;
+  overscroll-behavior:contain; pointer-events:auto; padding:14px 14px 0; font-size:14px}
+#tip .tiptitle{color:var(--accent,#2a6fa8); text-decoration:none}
+#tip .tipgo{display:block; margin-top:9px; font-family:Archivo,sans-serif; font-size:13px;
+  color:var(--accent,#2a6fa8); text-decoration:none}
+#tip .tipclose{position:sticky; bottom:0; display:block; width:100%; margin:12px 0 0;
+  padding:11px; border:0; border-top:1px solid var(--rule,#d7dee6);
+  background:var(--surface,#fff); color:var(--ink-2,#3d4a58);
+  font-family:Archivo,sans-serif; font-size:13px; cursor:pointer}
+#tip .tipclose:focus-visible{outline:2px solid var(--accent,#2a6fa8); outline-offset:-2px}
   /* Landing. The hero and the three figures carry the page; everything below is
      the reading map, reached by scrolling rather than by a second navigation. */
   .hero{margin:.5rem 0 2rem;max-width:34em}
@@ -124,10 +234,6 @@ code.gloss{
 
   /* Reading map. Laid out with grid and flow only - no computed positions, so it
      degrades to a readable stack at any width instead of to overlapping boxes. */
-  .crumbs{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;margin:0 0 1.6rem;padding:.55rem .8rem;
-    border:1px solid var(--rule);border-radius:6px;font-family:Archivo,sans-serif;font-size:13.5px}
-  .crumbs i{color:var(--muted);font-style:normal;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px}
-  .crumbs span{display:inline-flex;gap:.4rem;align-items:baseline;flex-wrap:wrap}
   .routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin:1rem 0 2rem}
   .route{border:1px solid var(--rule);border-radius:6px;padding:.8rem .9rem}
   .route b{font-family:Archivo,sans-serif;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
@@ -145,15 +251,23 @@ code.gloss{
 </style>
 </head>
 <body>
+<div class="topbar">
+  <button type="button" class="navbtn" id="navbtn" aria-expanded="false" aria-controls="sitenav">
+    <span class="bars" aria-hidden="true"></span>Contents</button>
+  <span class="here" id="here" aria-hidden="true"></span>
+  <a class="topmap" href="#map">Map</a>
+</div>
 <div class="shell">
-  <nav>
-    <a class="home" href="../">← Copenhagen Waterways</a>
-    <p class="navlabel">Reports</p>
+  <nav id="sitenav" aria-label="This document">
+    <a class="home" href="#map">Copenhagen Waterways</a>
+    <a class="mapl" id="maplink" href="#map">Start here — the reading map</a>
+    <p class="navlabel" id="toclabel">On this page</p>
     <ul id="nav"></ul>
     <p class="navlabel">Also</p>
     <ul>
-      <li><a href="flood_gap_map.png">The map, full size</a></li>
-      <li><a href="../viz/">Interactive map</a></li>
+      <li><a href="docs/areas.html">Map: what is known, where, when</a></li>
+      <li><a href="docs/flood_gap_map.png">The map, full size</a></li>
+      <li><a href="viz/">Interactive map</a></li>
     </ul>
   </nav>
   <main>
@@ -269,49 +383,155 @@ const linked = f => Array.from(new Set([].concat(
   Object.keys(META).filter(k => ((META[k].related) || []).includes(f)))));
 const navEl = document.getElementById("nav");
 const docEl = document.getElementById("doc");
+const sitenav = document.getElementById("sitenav");
+const navBtn = document.getElementById("navbtn");
+const hereEl = document.getElementById("here");
+const tocLabel = document.getElementById("toclabel");
+const mapLink = document.getElementById("maplink");
+const NARROW = matchMedia("(max-width:800px)");
+const MOTION = matchMedia("(prefers-reduced-motion: no-preference)");
 
-{
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-  a.href = "#map";
-  a.dataset.file = "map";
-  a.textContent = "Start here";
-  li.appendChild(a);
-  navEl.appendChild(li);
+/* The sidebar is the contents of the document you are reading, not a list of every
+   document there is. Two dozen titles beside every page was an inventory: it was
+   the same on every page, so it never answered the one question a reader loses
+   inside a long report, which is where they are in it. Everything cross-document
+   is the reading map, one click above. */
+function setNav(open) {
+  document.body.classList.toggle("navopen", open);
+  navBtn.setAttribute("aria-expanded", open ? "true" : "false");
+}
+navBtn.addEventListener("click",
+  () => setNav(!document.body.classList.contains("navopen")));
+// a section link closes the drawer even when it does not change the hash
+sitenav.addEventListener("click", e => { if (e.target.closest("a")) setNav(false); });
+NARROW.addEventListener("change", () => { setNav(false); syncFolds(); });
+
+/* One hash, two things in it: which document, and which section of it. The
+   document half stays a bare filename because that is what a reader sees. */
+function current() {
+  const raw = decodeURIComponent(location.hash.slice(1));
+  const cut = raw.indexOf("::");
+  const want = cut < 0 ? raw : raw.slice(0, cut);
+  return { file: DOCS.some(([f]) => f === want) ? want : "map",
+           section: cut < 0 ? "" : raw.slice(cut + 2) };
 }
 
-for (const [heading, docs] of GROUPS) {
-  if (heading !== GROUPS[0][0]) {
-    const h = document.createElement("li");
-    h.className = "navgroup";
-    h.textContent = heading;
-    navEl.appendChild(h);
-  }
-  for (const [file, label] of docs) {
+/* marked does not emit heading ids, and a section link has to survive a reload, so
+   the slug is derived from the heading text and made unique in document order.
+   Danish letters are folded rather than dropped: "Køge" and "Kge" are not the
+   same word, and dropping them would collide headings that differ only there. */
+const FOLDED = {"æ":"ae","ø":"oe","å":"aa","ä":"ae","ö":"oe","ü":"ue","ß":"ss"};
+function slugify(text, used) {
+  const base = text.toLowerCase().replace(/[æøåäöüß]/g, c => FOLDED[c])
+    .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "section";
+  let id = base;
+  for (let n = 2; used.has(id); n++) id = base + "-" + n;
+  used.add(id);
+  return id;
+}
+
+let spyItems = [];
+let spy = null;
+let activeId = null;
+let hereLabel = "";
+
+/* Only h2 and h3, and only the h3s of the section being read. HYPOTHESES.md has
+   182 h3 headings: listing them all would be the same overload one level down. */
+function buildToc(root, file) {
+  const used = new Set();
+  const items = [];
+  navEl.textContent = "";
+  let group = "";
+  for (const h of root.querySelectorAll("h2,h3")) {
+    const id = h.id || (h.id = slugify(h.textContent, used));
+    const level = h.tagName === "H3" ? 3 : 2;
+    if (level === 2) group = id;
     const li = document.createElement("li");
+    li.className = "lvl" + level;
     const a = document.createElement("a");
-    // An .html entry is a page of its own, not a document the reader renders.
-    if (file.endsWith(".html")) {
-      a.href = urlOf(file);
-      a.className = "external";
-    } else {
-      a.href = "#" + file;
-      a.dataset.file = file;
-    }
-    a.textContent = label;
+    a.href = "#" + file + "::" + id;
+    a.textContent = h.textContent.trim();
     li.appendChild(a);
     navEl.appendChild(li);
+    items.push({ el: h, id, level, group: level === 2 ? id : group, li, a });
   }
+  tocLabel.hidden = navEl.hidden = !items.length;
+  return items;
 }
 
-function current() {
-  const want = decodeURIComponent(location.hash.slice(1));
-  if (want === "map") return "map";
-  return DOCS.some(([f]) => f === want) ? want : "map";
+function setActive(id) {
+  if (id === activeId) return;
+  activeId = id;
+  const now = spyItems.find(i => i.id === id) || null;
+  const group = now ? now.group : null;
+  for (const i of spyItems) {
+    if (i.level === 3) i.li.classList.toggle("open", i.group === group);
+    if (i === now) i.a.setAttribute("aria-current", "location");
+    else i.a.removeAttribute("aria-current");
+  }
+  hereEl.textContent = now ? now.a.textContent : hereLabel;
+  if (now) keepInView(now.a);
+}
+
+// scroll the sidebar, never the page: following a long document must not drag the
+// article around underneath the person reading it
+function keepInView(a) {
+  const box = sitenav.getBoundingClientRect();
+  const r = a.getBoundingClientRect();
+  if (r.top < box.top + 4) sitenav.scrollTop -= box.top + 4 - r.top;
+  else if (r.bottom > box.bottom - 4) sitenav.scrollTop += r.bottom - box.bottom + 4;
+}
+
+/* A band across the top of the viewport; the deepest heading inside it wins. When
+   the band is empty - a long section whose heading is already above it - the last
+   answer stands, which is what a reader means by "where am I". */
+function startSpy(items) {
+  if (spy) spy.disconnect();
+  spyItems = items;
+  activeId = null;
+  hereEl.textContent = hereLabel;
+  if (!items.length || typeof IntersectionObserver !== "function") return;
+  const order = new Map(items.map((i, n) => [i.el, n]));
+  const inBand = new Set();
+  spy = new IntersectionObserver(entries => {
+    for (const e of entries)
+      e.isIntersecting ? inBand.add(e.target) : inBand.delete(e.target);
+    let deepest = -1;
+    for (const el of inBand) deepest = Math.max(deepest, order.get(el));
+    if (deepest >= 0) setActive(items[deepest].id);
+  }, { rootMargin: `-${NARROW.matches ? 58 : 14}px 0px -68% 0px`, threshold: 0 });
+  for (const i of items) spy.observe(i.el);
+}
+
+function goTo(section) {
+  const el = section && document.getElementById(section);
+  if (!el) return false;
+  el.scrollIntoView({ behavior: MOTION.matches ? "smooth" : "auto", block: "start" });
+  setActive(section);
+  return true;
+}
+
+function syncFolds() {
+  for (const d of docEl.querySelectorAll("details.fold")) d.open = !NARROW.matches;
 }
 
 
 /* ---- glossary tooltips ------------------------------------------------- */
+/* Two behaviours, one tooltip. With a mouse it follows the pointer as it always
+   did. With a finger there is no hover to follow, so a tap opens the definition
+   and the word does not navigate until the second one - the article is reachable
+   from inside the sheet, which is where the reader is already looking. */
+const FINE = matchMedia("(hover: hover) and (pointer: fine)");
+let finePointer = FINE.matches;
+FINE.addEventListener("change", e => { finePointer = e.matches; });
+/* A touchscreen laptop answers yes to both queries, so the query only decides the
+   first interaction: after that, whatever the reader last actually used decides. */
+addEventListener("pointerdown", e => {
+  if (e.pointerType) finePointer = e.pointerType === "mouse";
+}, { capture: true, passive: true });
+const sheetMode = () => !finePointer;
+
 let GLOSS = null;
 const tipEl = Object.assign(document.createElement("div"),
                             {id: "tip", hidden: true});
@@ -335,9 +555,23 @@ function placeTip(el) {
   if (r.bottom + t.height + 16 > innerHeight && r.top > t.height + 16)
     top = r.top + scrollY - t.height - 8;
   let left = r.left + scrollX;
-  left = Math.min(left, scrollX + innerWidth - t.width - 12);
+  // clientWidth, not innerWidth: innerWidth includes the scrollbar, and a tip
+  // placed under it widens the document and makes the page itself scroll sideways
+  left = Math.min(left, scrollX + document.documentElement.clientWidth - t.width - 12);
   tipEl.style.top = top + "px";
   tipEl.style.left = Math.max(scrollX + 8, left) + "px";
+}
+
+let tipFor = null;               // the element the open tooltip belongs to
+let tipTimer = 0;
+const TIP_LIFE = 15000;          // long enough to read a definition of three sentences
+
+/* Nothing dismisses a sheet the reader is using, so the clock restarts on every
+   touch of it and only runs while it is open. */
+function armTip() {
+  clearTimeout(tipTimer);
+  if (tipFor && tipEl.dataset.mode === "sheet")
+    tipTimer = setTimeout(hideTip, TIP_LIFE);
 }
 
 function showTip(el) {
@@ -345,11 +579,17 @@ function showTip(el) {
   const g = el.classList.contains("term")
     ? (GLOSS._terms || {})[key] : (GLOSS || {})[key];
   if (!g) return;
+  const sheet = sheetMode();
+  const article = el.tagName === "A" ? el.href : "";
+  tipEl.dataset.mode = sheet ? "sheet" : "hover";
   tipEl.innerHTML = "";
   const kind = document.createElement("i");
   kind.textContent = g.kind || "term";
   const label = document.createElement("b");
-  label.textContent = g.label || key;
+  // in the sheet the headline is the link, because the word underneath it is
+  // covered by the reader's own thumb
+  if (sheet && article) label.appendChild(articleLink(article, g.label || key, "tiptitle"));
+  else label.textContent = g.label || key;
   const body = document.createElement("span");
   body.textContent = g.text;
   tipEl.append(kind, label, body);
@@ -358,16 +598,52 @@ function showTip(el) {
     why.textContent = g.why;
     tipEl.append(why);
   }
-  if (el.tagName === "A") {
-    const go = document.createElement("u");
-    // The tooltip itself is click-through (pointer-events:none) so it cannot get
-    // in the way of the text. The link is the underlined word, so say that.
-    go.textContent = "→ click the word itself for a fuller article";
-    tipEl.append(go);
+  if (article) {
+    if (sheet) {
+      tipEl.append(articleLink(article, "Open the article →", "tipgo"));
+    } else {
+      const go = document.createElement("u");
+      // The tooltip itself is click-through (pointer-events:none) so it cannot get
+      // in the way of the text. The link is the underlined word, so say that.
+      go.textContent = "→ click the word itself for a fuller article";
+      tipEl.append(go);
+    }
   }
-  placeTip(el);
+  if (sheet) {
+    const x = document.createElement("button");
+    x.type = "button";
+    x.className = "tipclose";
+    x.textContent = "Close";
+    x.setAttribute("aria-label", "Close definition");
+    x.addEventListener("click", hideTip);
+    tipEl.append(x);
+  }
+  tipFor = el;
+  if (sheet) {
+    tipEl.style.top = tipEl.style.left = "";   // the sheet is placed by CSS alone
+    tipEl.hidden = false;
+    tipEl.scrollTop = 0;
+  } else placeTip(el);
+  armTip();
 }
-const hideTip = () => { tipEl.hidden = true; };
+
+function articleLink(href, text, cls) {
+  const a = document.createElement("a");
+  a.className = cls;
+  a.href = href;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.textContent = text;
+  return a;
+}
+
+function hideTip() {
+  clearTimeout(tipTimer);
+  tipFor = null;
+  tipEl.hidden = true;
+}
+tipEl.addEventListener("pointerdown", armTip);
+tipEl.addEventListener("scroll", armTip, { passive: true });
 
 async function decorate(root, file) {
   const g = await glossary();
@@ -383,11 +659,24 @@ async function decorate(root, file) {
   if (n || root.querySelector(".gloss")) {
     const hint = document.createElement("p");
     hint.id = "glosshint";
-    hint.textContent = "Underlined words and codes have definitions — hover or "
-      + "tab to one to read it. Terms link out to a fuller article. Anything not "
+    const long = document.createElement("span");
+    long.className = "hint-long";
+    long.textContent = "Underlined words and codes have definitions — tap, hover "
+      + "or tab to one to read it. Terms link out to a fuller article. Anything not "
       + "underlined and unfamiliar is worth looking up; this page cannot mark "
       + "every word somebody has not met before.";
-    root.insertBefore(hint, root.firstChild);
+    // the same instruction in the space a phone has for it
+    const short = document.createElement("span");
+    short.className = "hint-short";
+    short.textContent = "Underlined words and codes have definitions — tap one.";
+    hint.append(long, short);
+    // under the title and the framing rather than above the title: it is a note
+    // about the page, and it used to be the first thing on the page
+    const under = root.querySelector(".preface") || root.querySelector(".crumbs")
+      || (root.firstElementChild && root.firstElementChild.tagName === "H1"
+          ? root.firstElementChild : null);
+    if (under) under.insertAdjacentElement("afterend", hint);
+    else root.insertBefore(hint, root.firstChild);
   }
 }
 
@@ -396,10 +685,23 @@ function arm(el, cls, key, aria) {
   el.dataset.gloss = key;
   el.tabIndex = 0;
   el.setAttribute("aria-label", aria);
-  el.addEventListener("mouseenter", () => showTip(el));
-  el.addEventListener("focus", () => showTip(el));
-  el.addEventListener("mouseleave", hideTip);
-  el.addEventListener("blur", hideTip);
+  el.addEventListener("mouseenter", () => { if (!sheetMode()) showTip(el); });
+  el.addEventListener("focus", () => { if (!sheetMode()) showTip(el); });
+  el.addEventListener("mouseleave", () => { if (!sheetMode()) hideTip(); });
+  el.addEventListener("blur", () => { if (!sheetMode()) hideTip(); });
+  /* Touch: the first tap reads the definition instead of leaving the page, the
+     second follows the link. A code has nowhere to go, so its second tap closes
+     the definition again. Tapping a different word opens that one straight away -
+     asking for a close first would make the common case two taps. */
+  el.addEventListener("click", e => {
+    if (!sheetMode()) return;
+    if (tipFor === el) {
+      if (el.tagName !== "A") { e.preventDefault(); hideTip(); }
+      return;
+    }
+    e.preventDefault();
+    showTip(el);
+  });
 }
 
 /* Mark the FIRST occurrence of each term only. Marking every one turns a page of
@@ -455,7 +757,8 @@ function markTerms(root, terms) {
     const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, {
       acceptNode(n) {
         if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        const bad = n.parentElement.closest("code,pre,a,h1,h2,h3,h4,h5,h6,#tip");
+        const bad = n.parentElement.closest(
+          "code,pre,a,h1,h2,h3,h4,h5,h6,summary,#tip");
         return bad ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
       },
     });
@@ -488,8 +791,24 @@ function markTerms(root, terms) {
   return total;
 }
 
-addEventListener("keydown", e => { if (e.key === "Escape") hideTip(); });
-addEventListener("scroll", hideTip, { passive: true });
+addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  if (!tipEl.hidden) { hideTip(); return; }
+  if (document.body.classList.contains("navopen")) { setNav(false); navBtn.focus(); }
+});
+/* A tap outside closes it and is otherwise left alone: swallowing that tap would
+   make the first touch after every definition do nothing, which reads as broken. */
+addEventListener("pointerdown", e => {
+  if (tipEl.hidden || !e.target || !e.target.closest) return;
+  if (!e.target.closest(".term,.gloss,#tip")) hideTip();
+}, { capture: true, passive: true });
+/* The hover tooltip is positioned against the word and would drift away from it,
+   so scrolling closes that one. The sheet is fixed to the viewport and drifts
+   nowhere - and on a phone a tap often produces a few pixels of scroll, which
+   would otherwise dismiss the definition in the same gesture that opened it. */
+addEventListener("scroll", () => {
+  if (tipEl.dataset.mode !== "sheet") hideTip();
+}, { passive: true });
 
 function esc(t) {
   const d = document.createElement("div");
@@ -501,14 +820,16 @@ function esc(t) {
    the page that derives it. They lead because a table of contents tells a first-time
    reader nothing about why any of this exists. */
 const FACTS = [
-  ["56%", "of Danish sea area — 44 water bodies, 24,605 km² — has neither a fitted " +
-          "model nor a single repeated marine observation in the open data. Every " +
-          "one of them still carries a requirement.", "AREAS.md"],
-  ["5.7%", "is how much of the sea the statistical models actually cover: 2,492 km² " +
-           "of 43,579. All of it is fjord.", "OBSERVING.md"],
   ["−3.5 → +20.5", "per cent per decade. One light record, one stretch of water, " +
-           "eight defensible ways to compute the trend, and both signs among them.",
+   "eight defensible ways to compute the trend — and both signs among them. " +
+   "Correcting only for which stations stayed open moves it from +18.2 to +1.6.",
    "LIGHT.md"],
+  ["6.31 <span>or</span> 8.18 m", "How deep useful light reaches, from the same " +
+   "casts, differing by 30% according to nothing but how near the surface the " +
+   "sensor was switched on. A choice nobody documents making.", "LIGHT.md"],
+  ["7.9% <span>vs</span> 13.3%", "A water body explains less of the variation " +
+   "inside it than two stations within one differ from each other. The unit the " +
+   "whole assessment is built on is not holding together.", "OBSERVING.md"],
 ];
 /* The public names the damage in four words. Set against what is measured, three of
    them have nothing behind them at all. */
@@ -560,9 +881,10 @@ function renderMap() {
   const parts = ['<section class="hero">',
     '<h1>What Denmark knows about its own coastal water</h1>',
     '<p class="lede">An open audit of what the national monitoring actually ' +
-    'measures, where, and what can honestly be concluded from it. Every figure ' +
-    'below is produced by a script in this repository from public data, and links ' +
-    'to the page that derives it.</p>',
+    'measures, and what can honestly be concluded from it. The figures below are ' +
+    'recomputed from the published data by scripts in this repository — each one ' +
+    'is a statement about method that anyone can reproduce and check, not a claim ' +
+    'about what nobody has measured.</p>',
     '</section>', '<div class="facts">'];
   for (const [n, t, doc] of FACTS)
     parts.push('<div class="fact"><b>' + esc(n) + '</b><p>' + t + '</p>' +
@@ -636,51 +958,133 @@ function renderMap() {
 function crumbs(file) {
   const m = META[file];
   if (!m) return "";
-  const after = (m.after || []).map(x =>
-    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
-  const next = leadsTo(file).map(x =>
-    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
-  const rel = linked(file).map(x =>
-    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+  const link = f => '<a href="#' + f + '">' + esc(titleOf(f)) + '</a>';
+  const after = (m.after || []).map(link).join(", ");
+  const next = leadsTo(file).map(link).join(", ");
+  const rel = linked(file).map(link).join(", ");
   if (!after && !next && !rel) return "";
-  return '<nav class="crumbs">' +
+  /* These edges are the only place the reading order appears while you are
+     reading anything, so the folded line still names the prerequisite. Folding it
+     to a word like "context" would hide the one thing worth knowing before you
+     start: that there is a page you were meant to have read first. */
+  const names = fs => fs.map(titleOf).join(", ");
+  const brief = (m.after || []).length ? "read after " + names(m.after)
+    : leadsTo(file).length ? "leads to " + names(leadsTo(file))
+    : "related: " + names(linked(file));
+  return '<nav class="crumbs" aria-label="Where this page sits in the reading">' +
+    '<details class="fold"><summary><i>where this sits</i>' +
+    '<span class="line">' + esc(brief) + '</span></summary><div class="crumbrow">' +
     (after ? '<span><i>read after</i> ' + after + '</span>' : '') +
     (next ? '<span><i>leads to</i> ' + next + '</span>' : '') +
     (rel ? '<span><i>related</i> ' + rel + '</span>' : '') +
-    '<span><a href="#map">reading map</a></span></nav>';
+    '<span><a href="#map">reading map</a></span></div></details></nav>';
 }
 
+/* Everything between the title and the first section heading is the page talking
+   about itself - a caveat, or a paragraph saying what kind of claim follows. It
+   earns its place in a desktop column and swallows a phone screen whole, so it
+   folds to its own first sentence. Folded, never dropped, and only ever the run
+   before the first section: a page that is all framing is left alone, because
+   there would be nothing underneath the fold to reach. */
+function foldPreface(root) {
+  const h1 = root.firstElementChild;
+  if (!h1 || h1.tagName !== "H1") return;
+  const lead = [];
+  let chars = 0, sectioned = false;
+  for (let el = h1.nextElementSibling; el; el = el.nextElementSibling) {
+    if (/^H[2-6]$/.test(el.tagName)) { sectioned = true; break; }
+    lead.push(el);
+    chars += el.textContent.length;
+  }
+  if (!sectioned || !lead.length || lead.length > 8 || chars < 300 || chars > 4500) return;
+  const d = document.createElement("details");
+  d.className = "fold preface";
+  const s = document.createElement("summary");
+  const kind = document.createElement("i");
+  kind.textContent = "opening note";
+  const line = document.createElement("span");
+  line.className = "line";
+  line.textContent = firstSentence(lead[0].textContent);
+  s.append(kind, line);
+  d.appendChild(s);
+  h1.insertAdjacentElement("afterend", d);
+  for (const el of lead) d.appendChild(el);
+}
+
+function firstSentence(text) {
+  const t = text.trim().replace(/\s+/g, " ");
+  const stop = t.search(/[.:;!?]\s/);
+  const cut = stop > 24 ? stop + 1 : Math.min(t.length, 96);
+  return t.slice(0, cut) + (cut < t.length ? "…" : "");
+}
+
+// the title first, then where the page sits: the crumbs say nothing until the
+// reader knows what "this" is
+function placeCrumbs(file) {
+  const html = crumbs(file);
+  if (!html) return;
+  const holder = document.createElement("div");
+  holder.innerHTML = html;
+  const h1 = docEl.firstElementChild;
+  docEl.insertBefore(holder.firstElementChild,
+    h1 && h1.tagName === "H1" ? h1.nextSibling : docEl.firstChild);
+}
+
+function settle(file, section) {
+  const items = buildToc(docEl, file);
+  syncFolds();
+  startSpy(items);
+  if (!goTo(section)) window.scrollTo(0, 0);
+}
+
+let showing = null;   // which document is rendered, so a section link does not refetch
+
 async function show() {
-  const file = current();
-  for (const a of navEl.querySelectorAll("a"))
-    a.toggleAttribute("aria-current", a.dataset.file === file);
+  const { file, section } = current();
+  setNav(false);
+  if (file === "map") mapLink.setAttribute("aria-current", "page");
+  else mapLink.removeAttribute("aria-current");
+  hereLabel = file === "map" ? "Reading map" : titleOf(file);
+  document.title = hereLabel + " — Copenhagen Waterways";
+  if (file === showing) {                 // same document, different section
+    if (!goTo(section)) window.scrollTo(0, 0);
+    return;
+  }
   if (file === "map") {
-    docEl.innerHTML = renderMap();
     hideTip();
-    document.title = "Reading map — Copenhagen Waterways";
-    window.scrollTo(0, 0);
+    docEl.innerHTML = renderMap();
+    showing = file;
+    settle(file, section);
     return;
   }
   docEl.innerHTML = '<p class="status">Loading…</p>';
   try {
     const r = await fetch(urlOf(file), { cache: "no-cache" });
     if (!r.ok) throw new Error(`${file} — HTTP ${r.status}`);
-    docEl.innerHTML = crumbs(file) + marked.parse(await r.text(), { gfm: true });
+    docEl.innerHTML = marked.parse(await r.text(), { gfm: true });
     // tables carry long Danish system names; let each scroll rather than the page
     for (const t of docEl.querySelectorAll("table")) {
       const w = document.createElement("div");
       w.className = "tablewrap";
+      w.tabIndex = 0;
+      w.setAttribute("role", "group");
+      w.setAttribute("aria-label", "Table, scrolls sideways");
       t.parentNode.insertBefore(w, t);
       w.appendChild(t);
     }
+    foldPreface(docEl);
+    placeCrumbs(file);
     hideTip();
-    decorate(docEl, file);
-    document.title = (DOCS.find(([f]) => f === file) || [, "Reports"])[1]
-      + " — Copenhagen Waterways";
-    window.scrollTo(0, 0);
+    // awaited, so that marking the glossary cannot move the ground under a
+    // section link that has just been scrolled to
+    await decorate(docEl, file).catch(() => {});
+    showing = file;
+    settle(file, section);
   } catch (e) {
+    showing = null;
     docEl.innerHTML = `<p class="status">Could not load ${file}: ${e.message}. `
-      + `The generated reports live beside this page in <code>docs/</code>.</p>`;
+      + `The generated reports live in <code>${DOCS_DIR}</code> beside this page.</p>`;
+    settle(file, "");
   }
 }
 addEventListener("hashchange", show);
