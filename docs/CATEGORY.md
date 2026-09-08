@@ -121,6 +121,47 @@ Salinity is spatially smooth, so *any* compact grouping predicts it well and rea
 boundaries have nothing left to add. Oxygen is rough, so shape alone fails and
 boundaries that follow enclosure carry real information.
 
+## Two methods, and the condition that chooses between them
+
+The null comparison above is not the strongest test available. It is the strongest
+test available *when the feature space is small*, and that is why it became standard.
+
+A null answers: **given these measurements, does this grouping beat chance?** The
+answer is still conditioned on which measurements were taken, so it cannot separate a
+property of the entities from an artifact of what someone chose to record.
+
+There is a test that can, and it assumes no partition at all:
+
+> Cluster the entities using a **random subset** of the measured features.
+> Cluster them again using a **disjoint** random subset.
+> Ask how much the two agree — and whether agreement **rises** as the subsets grow.
+
+A grouping that appears only when one particular measurement is included is an
+artifact of that measurement. A grouping that appears whichever features are drawn is
+a property of the entities. Convergence as the subsets widen is the signal; flat
+agreement near chance means there is nothing to converge on. The official partition is
+then scored on the same axis — its agreement with each derivation — so it is one
+candidate among them rather than the standard they are marked against.
+
+**Why this was not the historical default.** When these statistics were developed, a
+study had three or four measurements. You cannot split a feature space that small
+into disjoint halves; there is nothing to hold out. The null was not a compromise, it
+was the only thing available.
+
+That condition has quietly reversed. Measurement is now automatic and cumulative:
+many groups measure many things on the same entities, and the columns accumulate
+independently of any one question. Where that has happened, the stronger test is
+available and the weaker one is a habit.
+
+**So the rule is a threshold, not a preference.** Below roughly a dozen independent
+features, use a shape-matched null and accept that it cannot distinguish the entities
+from the instrument. Above that, split the feature space, because you can.
+
+*This page's own worked example sits at the bottom of that range — nine variables,
+so four per half — which is why the marine result is reported as suggestive. The
+method wants a case with dozens of characters per entity, which is what
+`../organism` exists to try.*
+
 ## You have read this category in other clothes
 
 Not rare, and not Danish. One line each, with no claim that any is wrong — only that
