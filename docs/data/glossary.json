@@ -924,6 +924,11 @@
   "label": "Change outrunning acclimation",
   "text": "Organisms acclimate and populations adapt, and both have rates. A warming or freshening survivable over a century can be lethal over a decade."
  },
+ "W8": {
+  "kind": "hypothesis (W)",
+  "label": "Whoever founds the community keeps it",
+  "text": "After a crash, the survivors are not a random sample — they are whoever tolerated the thing that did the killing. And they are then the **founder population**: everything that follows is their descendants competing among themselves, on a bed with no one else on it. Arriving first is worth more than being well suited, which community ecology calls a priority effect."
+ },
  "W7": {
   "kind": "hypothesis (W)",
   "label": "Too little variation left to respond with",
@@ -1175,6 +1180,13 @@
    "forms": [
     "autoclave",
     "autoclaved"
+   ]
+  },
+  "autologous": {
+   "text": "From the same individual. An autologous transplant returns a person's own material - banked before a treatment that would destroy it - rather than a donor's.",
+   "why": "Greek autos (self) plus logos here meaning relation. The marine version cannot be done after the fact, only before.",
+   "forms": [
+    "autologous"
    ]
   },
   "autotroph": {
@@ -1477,6 +1489,13 @@
     "crispr"
    ]
   },
+  "cryopreservation": {
+   "text": "Freezing living material so that it can be revived later. It is how a community can be banked while it still works, against a future when it does not.",
+   "why": "The only technique in this project that buys time rather than information.",
+   "forms": [
+    "cryopreservation"
+   ]
+  },
   "CTD": {
    "text": "The standard instrument lowered through the water column, recording conductivity, temperature and depth continuously - and usually oxygen too. It gives a profile rather than a single value.",
    "why": "Named for the three things it measures. Salinity is calculated from conductivity.",
@@ -1636,6 +1655,13 @@
     "endosymbiosis"
    ]
   },
+  "engraftment": {
+   "text": "Whether transplanted organisms actually establish and persist rather than being displaced. It varies enormously between donors and recipients, which is the practical problem with any transplant.",
+   "why": "The reason donor matching matters, in a gut and in a sediment alike.",
+   "forms": [
+    "engraftment"
+   ]
+  },
   "epibenthic": {
    "text": "Living on the surface of the seabed rather than buried in it.",
    "why": "Epi- (upon) plus benthos.",
@@ -1781,6 +1807,13 @@
    "why": "Latin foramen (hole) plus ferre (to bear) - the shells are perforated.",
    "forms": [
     "foraminifera"
+   ]
+  },
+  "founder effect": {
+   "text": "The outsized influence of whoever establishes a population first. Their descendants make up everything that follows, so what they happened to be matters more than what would have suited the place.",
+   "why": "After a crash the survivors are not a random sample - they are whoever tolerated the thing that did the killing, and then they have the place to themselves.",
+   "forms": [
+    "founder effect"
    ]
   },
   "frustule": {
@@ -2104,6 +2137,13 @@
    "why": "Latin lignum, wood. Nitrogen enrichment suppresses the enzymes that degrade it, which is why it accumulates.",
    "forms": [
     "lignin"
+   ]
+  },
+  "local adaptation": {
+   "text": "A population fitted to the specific conditions it has lived in, often over very many generations. It is why a transplanted community is at a disadvantage against residents on their own ground.",
+   "why": "And why a donor community has to come from a matched setting, or the survivors it must displace simply win.",
+   "forms": [
+    "local adaptation"
    ]
   },
   "lucinid": {
@@ -2557,6 +2597,13 @@
    "why": "Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.",
    "forms": [
     "priming"
+   ]
+  },
+  "priority effect": {
+   "text": "Arriving first being worth more than being well suited. It means the composition of a recovered community records its history as much as its conditions.",
+   "why": "The reason a degraded state can persist after the conditions that caused it have gone, with no other mechanism required.",
+   "forms": [
+    "priority effect"
    ]
   },
   "probiotic": {

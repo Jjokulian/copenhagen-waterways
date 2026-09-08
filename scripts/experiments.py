@@ -87,15 +87,19 @@ X = [
      ["T4", "T5", "T2", "T1"], "small",
      "Restoration plantings fail in sediment whose chemistry looks adequate. "
      "Horticulture calls this replant disease and tests it the obvious way.",
-     "Transplant eelgrass into a site where restoration has failed, in five "
-     "treatments: (a) as-is; (b) with sediment inoculum from a functioning bed; "
-     "(c) with the same inoculum autoclaved; (d) with lucinid clams added; "
-     "(e) inoculum plus clams.",
-     "Treatment (c) is the whole experiment. Live and sterilised inoculum carry "
-     "identical chemistry and differ only in their organisms, so the contrast "
-     "between them separates a chemical effect from a biological one. Plus "
-     "untransplanted plots and a transplant into a functioning bed as the upper "
-     "bound.",
+     "Transplant eelgrass into a site where restoration has failed, in six "
+     "treatments: (a) as-is; (b) inoculum from a functioning bed in a **matched** "
+     "setting - same salinity, sediment and thermal regime; (c) inoculum from a "
+     "functioning but **mismatched** setting; (d) the matched inoculum autoclaved; "
+     "(e) lucinid clams added; (f) matched inoculum plus clams.",
+     "Two contrasts carry it. **Live against sterilised** (b vs d) separates a "
+     "chemical effect from a biological one, because the two are identical in "
+     "everything except their organisms. **Matched against mismatched** (b vs c) "
+     "tests local adaptation: a community that has spent a million generations "
+     "adapting to one setting is at a disadvantage in another, and the residents "
+     "it has to displace are not. If donor origin matters, the practical rule "
+     "follows immediately. Plus untransplanted plots and a transplant into a "
+     "functioning bed as the upper bound.",
      "Survival and shoot density at 3, 6 and 12 months; sulphide in root and "
      "rhizome tissue; porewater sulphide.",
      "Live inoculum beats sterilised → the sediment's *biology* is the missing "
@@ -105,7 +109,45 @@ X = [
      "works → sediment sickness is not why restoration fails here, and attention "
      "goes back to the water column.",
      "This is the cheapest decisive experiment in the register and nobody has run "
-     "it. Denmark has failed eelgrass restorations to site it in."),
+     "it. Denmark has failed eelgrass restorations to site it in.\n\n"
+     "The human analogue has already worked through the same problem. Faecal "
+     "transplant restores a cleared gut, but donor material engrafts unevenly, "
+     "some donors work far better than others, and the current frontier is "
+     "**autologous banking** - freezing a person's own community before the "
+     "antibiotic and giving it back afterwards, so the restored community is "
+     "already adapted to that body. The marine version of the second half is "
+     "impossible retroactively and urgent prospectively, which is `X18`."),
+
+    ("X18", "Bank the communities that still work, before they stop working",
+     "measurement", ["T5", "T11", "W8", "T4", "L1"], "small",
+     "Restoring a community needs a source, and the best source is the same "
+     "community from a matched setting. Medicine has reached the same conclusion "
+     "and acted on it: stool banks exist, and the frontier is autologous banking - "
+     "freezing a person's own community *before* the antibiotic. The marine "
+     "equivalent of the autologous half is impossible after the fact, and the "
+     "donor half degrades a little every year as more sites fail.",
+     "Nothing is manipulated. Collect and cryopreserve sediment and rhizosphere "
+     "communities from the Danish sites that still function - eelgrass beds, mussel "
+     "beds, undisturbed soft bottoms - with full physical metadata: salinity, "
+     "sediment grain size, thermal regime, depth, exposure.",
+     "The metadata *is* the design. Without matched conditions recorded, a bank is "
+     "a freezer full of mud whose donors cannot be paired to a recipient site, and "
+     "`X1` shows that pairing is exactly what decides whether an inoculum "
+     "establishes.",
+     "Community composition by sequencing at the time of collection, so that what "
+     "was banked is documented rather than assumed, and so the archive doubles as a "
+     "baseline for `T10` and `W8`.",
+     "There is no hypothesis to falsify here, which is why it is filed as "
+     "measurement rather than experiment. What it produces is **optionality**: "
+     "every later restoration attempt, and every test of whether donor origin "
+     "matters, needs source material that either exists or does not. It also "
+     "supplies the pre-disturbance baseline that `T10` and `W8` both say is "
+     "missing by construction.",
+     "**The only item in this register that gets harder every year it is not "
+     "done.** Everything else here can be run later at the same cost; this one "
+     "loses material permanently as sites degrade, and the sites that would be most "
+     "valuable to have banked are the ones most likely to be gone. A freezer, a "
+     "coring tube, and somebody's time."),
 
     ("X2", "Is eelgrass killed by darkness, or by sulphide that darkness lets in?", "experiment",
      ["T1", "K11"], "small",

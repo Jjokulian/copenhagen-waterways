@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**159 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**160 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 159 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 160 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 159 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 160 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -1653,6 +1653,18 @@ Organisms acclimate and populations adapt, and both have rates. A warming or fre
 
 **Needs.** High-frequency records, which exist, analysed for rates rather than means, which is not done.
 
+### W8 — Whoever founds the community keeps it
+
+**Outcomes:** O3, O7, O4
+
+After a crash, the survivors are not a random sample — they are whoever tolerated the thing that did the killing. And they are then the **founder population**: everything that follows is their descendants competing among themselves, on a bed with no one else on it. Arriving first is worth more than being well suited, which community ecology calls a priority effect.
+
+**Predicts.** **So the composition of a degraded system is partly historical accident, not a reading of the new conditions.** It records what happened to survive one event, amplified by having had the place to itself afterwards. Which means the state can persist after the conditions that produced it have gone — no hysteresis mechanism required beyond who got there first — and it explains why removing the original stressor often changes nothing.
+
+**Discriminated by.** Whether recolonisation composition tracks current conditions or tracks the identity of the survivors of the last disturbance. Two very different predictions from the same starting point.
+
+**Needs.** Community composition immediately after a disturbance and through recovery, at the same place. Requires having sampled before, which is `T10`'s problem in another form.
+
 ### W7 — Too little variation left to respond with
 
 **Outcomes:** O3
@@ -1940,6 +1952,8 @@ A body is an environment, and so is a sediment surface, a leaf, a root, a mucus 
 **Needs.** Challenge experiments on intact versus disturbed communities. Standard method in medical and soil microbiology, not applied in Danish marine work. **The human case is the strongest evidence in this whole register that the mechanism is real and the remedy works.** A course of antibiotics clears the gut community, *Clostridioides difficile* moves into the vacancy, and the harm comes from the emptiness rather than from the drug. The treatment is faecal microbiota transplant — putting a whole functioning community back, with cure rates around ninety per cent, and without anyone needing to know which member did the work. That is precisely the design of `X1`, already proven in one domain and never tried in the sediment.
 
 **And occupancy has a property no chemical intervention has: nothing can evolve resistance to a space being taken.** A biocide is a single molecular target, so it selects for whoever can alter that target, and the earlier section makes the winners predictable in advance. Exclusion offers no target at all — the incomer has to out-compete an entire established community for resources it also needs, which is not a mutation but a whole strategy. It is also *idempotent*: the niche is either occupied or it is not, adding more changes nothing, and there is no dose to escalate. That is why faecal transplant does not breed resistance the way the antibiotic that created the vacancy does.
+
+**The idempotency holds only while turnover is slow relative to the intervention**, and that qualification is not small. A community of fast-dividing organisms is not a static occupancy; it is a contest being re-run continuously, and then *who founded it* matters more than who is suited to it — which is `W8`.
 
 The honest limit: exclusion can still be defeated, by displacement or by an incomer occupying a slightly different niche. It is harder rather than impossible. But **an intervention that cannot be evaded by a point mutation is a different class of thing from one that can**, and that difference is a reason to prefer restoration over chemistry which owes nothing to sentiment.
 

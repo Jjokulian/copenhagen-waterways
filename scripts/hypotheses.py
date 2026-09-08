@@ -160,6 +160,9 @@ TERMS = {
     'autoclave': (
         'To sterilise by steam under pressure. Autoclaved material has identical chemistry to the original and no living organisms, which is how you separate a chemical effect from a biological one.',
         'Greek auto (self) plus Latin clavis (key) - the lid seals itself as pressure rises.'),
+    'autologous': (
+        "From the same individual. An autologous transplant returns a person's own material - banked before a treatment that would destroy it - rather than a donor's.",
+        'Greek autos (self) plus logos here meaning relation. The marine version cannot be done after the fact, only before.'),
     'autotroph': (
         'An organism that builds its body from carbon dioxide rather than from other organisms. Plants and algae by photosynthesis, and many bacteria by chemistry.',
         'Greek autos (self) plus trophe (nourishment): self-feeding.'),
@@ -283,6 +286,9 @@ TERMS = {
     'CRISPR': (
         'A bacterial immune system that stores fragments of past viral infections and uses them to recognise and cut the same virus again. Repurposed as the standard gene-editing tool.',
         'An antiviral of bacterial variety - and, like restriction enzymes before it, a weapon captured from the bacteria-phage war and turned into laboratory equipment.'),
+    'cryopreservation': (
+        'Freezing living material so that it can be revived later. It is how a community can be banked while it still works, against a future when it does not.',
+        'The only technique in this project that buys time rather than information.'),
     'CTD': (
         'The standard instrument lowered through the water column, recording conductivity, temperature and depth continuously - and usually oxygen too. It gives a profile rather than a single value.',
         'Named for the three things it measures. Salinity is calculated from conductivity.'),
@@ -349,6 +355,9 @@ TERMS = {
     'endosymbiosis': (
         'One organism living inside another, permanently. Mitochondria and chloroplasts are both captured free-living bacteria, so every plant and animal is a former merger.',
         'The origin of the eukaryotic cell, and the reason the boundary between organism and community is not sharp.'),
+    'engraftment': (
+        'Whether transplanted organisms actually establish and persist rather than being displaced. It varies enormously between donors and recipients, which is the practical problem with any transplant.',
+        'The reason donor matching matters, in a gut and in a sediment alike.'),
     'epibenthic': (
         'Living on the surface of the seabed rather than buried in it.',
         'Epi- (upon) plus benthos.'),
@@ -409,6 +418,9 @@ TERMS = {
     'foraminifera': (
         'Single-celled organisms that build tiny chambered shells. Abundant in sediment, and their shells preserve, which makes them a record of past conditions.',
         'Latin foramen (hole) plus ferre (to bear) - the shells are perforated.'),
+    'founder effect': (
+        'The outsized influence of whoever establishes a population first. Their descendants make up everything that follows, so what they happened to be matters more than what would have suited the place.',
+        'After a crash the survivors are not a random sample - they are whoever tolerated the thing that did the killing, and then they have the place to themselves.'),
     'frustule': (
         'The two-part silica shell of a diatom.',
         'Latin frustulum, a little piece.'),
@@ -541,6 +553,9 @@ TERMS = {
     'lignin': (
         'The rigid material that makes wood woody. It is the hardest common biological molecule to break down, and mainly fungi do it.',
         'Latin lignum, wood. Nitrogen enrichment suppresses the enzymes that degrade it, which is why it accumulates.'),
+    'local adaptation': (
+        'A population fitted to the specific conditions it has lived in, often over very many generations. It is why a transplanted community is at a disadvantage against residents on their own ground.',
+        'And why a donor community has to come from a matched setting, or the survivors it must displace simply win.'),
     'lucinid': (
         'A family of clams that host sulphide-oxidising bacteria in their gills. In seagrass beds they keep the root zone habitable.',
         'The three-way partnership of plant, clam and bacterium was only described in 2012.'),
@@ -730,6 +745,9 @@ TERMS = {
     'priming': (
         'Having machinery already close to what a new situation requires. New biological capabilities almost never arise from nothing - they arise by duplicating and modifying something that already worked - so the distance from existing machinery to the needed function matters more than the supply of mutations.',
         'Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.'),
+    'priority effect': (
+        'Arriving first being worth more than being well suited. It means the composition of a recovered community records its history as much as its conditions.',
+        'The reason a degraded state can persist after the conditions that caused it have gone, with no other mechanism required.'),
     'probiotic': (
         'A live organism given deliberately to establish or restore a community. Used in aquaculture in place of antibiotics for the same reason it works in a gut.',
         'Literally for-life, coined against antibiotic, against-life.'),
@@ -2776,6 +2794,24 @@ H = [
      "Response to rate of change, holding the magnitude of change fixed.",
      "High-frequency records, which exist, analysed for rates rather than means, "
      "which is not done."),
+    ("W8", "W", "Whoever founds the community keeps it", ["O3", "O7", "O4"],
+     "After a crash, the survivors are not a random sample — they are whoever "
+     "tolerated the thing that did the killing. And they are then the **founder "
+     "population**: everything that follows is their descendants competing among "
+     "themselves, on a bed with no one else on it. Arriving first is worth more "
+     "than being well suited, which community ecology calls a priority effect.",
+     "**So the composition of a degraded system is partly historical accident, not "
+     "a reading of the new conditions.** It records what happened to survive one "
+     "event, amplified by having had the place to itself afterwards. Which means "
+     "the state can persist after the conditions that produced it have gone — no "
+     "hysteresis mechanism required beyond who got there first — and it explains "
+     "why removing the original stressor often changes nothing.",
+     "Whether recolonisation composition tracks current conditions or tracks the "
+     "identity of the survivors of the last disturbance. Two very different "
+     "predictions from the same starting point.",
+     "Community composition immediately after a disturbance and through recovery, "
+     "at the same place. Requires having sampled before, which is `T10`'s problem "
+     "in another form."),
     ("W7", "W", "Too little variation left to respond with", ["O3"],
      "Repeated mortality selects survivors down to a narrow genetic and functional "
      "set, and a narrow set has fewer ways to meet the next disturbance.",
@@ -2890,6 +2926,11 @@ H = [
      "changes nothing, and there is no dose to escalate. That is why faecal "
      "transplant does not breed resistance the way the antibiotic that created the "
      "vacancy does.\n\n"
+     "**The idempotency holds only while turnover is slow relative to the "
+     "intervention**, and that qualification is not small. A community of "
+     "fast-dividing organisms is not a static occupancy; it is a contest being "
+     "re-run continuously, and then *who founded it* matters more than who is "
+     "suited to it — which is `W8`.\n\n"
      "The honest limit: exclusion can still be defeated, by displacement or by an "
      "incomer occupying a slightly different niche. It is harder rather than "
      "impossible. But **an intervention that cannot be evaded by a point mutation "

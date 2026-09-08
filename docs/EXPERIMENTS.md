@@ -10,13 +10,13 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 ## Three kinds of work, which are not interchangeable
 
-**Constructive and investigative — `experiment`** (11 of 17 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+**Constructive and investigative — `experiment`** (11 of 18 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
 
-**Investigative — `measurement`** (2 of 17 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+**Investigative — `measurement`** (3 of 18 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
 
-**Build the means of measurement — `instrument`** (3 of 17 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
+**Build the means of measurement — `instrument`** (3 of 18 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
 
-**Armchair — `analysis`** (1 of 17 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+**Armchair — `analysis`** (1 of 18 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
 
 Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
 
@@ -24,12 +24,12 @@ Naming them separately matters because they are not substitutes and they are not
 
 | | | experiments |
 |---|---|---|
-| `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X2, X7, X9, X10, X12, X14, X15, X16 |
+| `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X18, X2, X7, X9, X10, X12, X14, X15, X16 |
 | `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11, X13 |
 | `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5, X17 |
 | `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X8 |
 
-**10 of 17 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
+**11 of 18 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
 
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
@@ -41,15 +41,35 @@ Naming them separately matters because they are not substitutes and they are not
 
 Restoration plantings fail in sediment whose chemistry looks adequate. Horticulture calls this replant disease and tests it the obvious way.
 
-**Manipulate.** Transplant eelgrass into a site where restoration has failed, in five treatments: (a) as-is; (b) with sediment inoculum from a functioning bed; (c) with the same inoculum autoclaved; (d) with lucinid clams added; (e) inoculum plus clams.
+**Manipulate.** Transplant eelgrass into a site where restoration has failed, in six treatments: (a) as-is; (b) inoculum from a functioning bed in a **matched** setting - same salinity, sediment and thermal regime; (c) inoculum from a functioning but **mismatched** setting; (d) the matched inoculum autoclaved; (e) lucinid clams added; (f) matched inoculum plus clams.
 
-**Control.** Treatment (c) is the whole experiment. Live and sterilised inoculum carry identical chemistry and differ only in their organisms, so the contrast between them separates a chemical effect from a biological one. Plus untransplanted plots and a transplant into a functioning bed as the upper bound.
+**Control.** Two contrasts carry it. **Live against sterilised** (b vs d) separates a chemical effect from a biological one, because the two are identical in everything except their organisms. **Matched against mismatched** (b vs c) tests local adaptation: a community that has spent a million generations adapting to one setting is at a disadvantage in another, and the residents it has to displace are not. If donor origin matters, the practical rule follows immediately. Plus untransplanted plots and a transplant into a functioning bed as the upper bound.
 
 **Measure.** Survival and shoot density at 3, 6 and 12 months; sulphide in root and rhizome tissue; porewater sulphide.
 
 **Decide, in advance.** Live inoculum beats sterilised → the sediment's *biology* is the missing thing, and T5 holds: sediment inoculation is a restoration tool. Both inocula beat as-is equally → it is chemistry, not biology. Clams alone work → T2, and the intervention is fauna rather than sediment. Nothing works → sediment sickness is not why restoration fails here, and attention goes back to the water column.
 
-*This is the cheapest decisive experiment in the register and nobody has run it. Denmark has failed eelgrass restorations to site it in.*
+*This is the cheapest decisive experiment in the register and nobody has run it. Denmark has failed eelgrass restorations to site it in.
+
+The human analogue has already worked through the same problem. Faecal transplant restores a cleared gut, but donor material engrafts unevenly, some donors work far better than others, and the current frontier is **autologous banking** - freezing a person's own community before the antibiotic and giving it back afterwards, so the restored community is already adapted to that body. The marine version of the second half is impossible retroactively and urgent prospectively, which is `X18`.*
+
+### X18 — Bank the communities that still work, before they stop working
+
+`measurement`
+
+**Bears on:** [`T5`](#HYPOTHESES.md) Loss of sediment suppressiveness, [`T11`](#HYPOTHESES.md) Occupancy is the function, [`W8`](#HYPOTHESES.md) Whoever founds the community keeps it, [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`L1`](#HYPOTHESES.md) The reference condition never existed
+
+Restoring a community needs a source, and the best source is the same community from a matched setting. Medicine has reached the same conclusion and acted on it: stool banks exist, and the frontier is autologous banking - freezing a person's own community *before* the antibiotic. The marine equivalent of the autologous half is impossible after the fact, and the donor half degrades a little every year as more sites fail.
+
+**Manipulate.** Nothing is manipulated. Collect and cryopreserve sediment and rhizosphere communities from the Danish sites that still function - eelgrass beds, mussel beds, undisturbed soft bottoms - with full physical metadata: salinity, sediment grain size, thermal regime, depth, exposure.
+
+**Control.** The metadata *is* the design. Without matched conditions recorded, a bank is a freezer full of mud whose donors cannot be paired to a recipient site, and `X1` shows that pairing is exactly what decides whether an inoculum establishes.
+
+**Measure.** Community composition by sequencing at the time of collection, so that what was banked is documented rather than assumed, and so the archive doubles as a baseline for `T10` and `W8`.
+
+**Decide, in advance.** There is no hypothesis to falsify here, which is why it is filed as measurement rather than experiment. What it produces is **optionality**: every later restoration attempt, and every test of whether donor origin matters, needs source material that either exists or does not. It also supplies the pre-disturbance baseline that `T10` and `W8` both say is missing by construction.
+
+***The only item in this register that gets harder every year it is not done.** Everything else here can be run later at the same cost; this one loses material permanently as sites degrade, and the sites that would be most valuable to have banked are the ones most likely to be gone. A freezer, a coring tube, and somebody's time.*
 
 ### X2 — Is eelgrass killed by darkness, or by sulphide that darkness lets in?
 
