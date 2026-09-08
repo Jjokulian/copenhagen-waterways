@@ -95,22 +95,45 @@ quickly — Mariager Fjord and parts of Limfjorden reduced their diffuse load *l
 *"relationen vist i Figur 6.7 D indikerer"*, citing Windolf et al. 2012b and 2012c.
 They are pointing at the figure's limits, not resting on it.
 
-**A body of cited work exists and we have not read it.** Windolf, Blicher-Mathiesen,
-Carstensen & Kronvang (2012c), *Environmental Science and Policy* 24: 24–33, DOI
-[10.1016/j.envsci.2012.08.009](https://doi.org/10.1016/j.envsci.2012.08.009) — *"…a
-paired catchment and estuary approach for analysing regional responses."* The paper is
-real (66 citations) and **paywalled; no abstract is carried by Crossref or OpenAlex,
-so we do not know its design.**
+**We have now read it, and it refutes the broader reading.** Windolf,
+Blicher-Mathiesen, Carstensen & Kronvang (2012), *Environmental Science and Policy*
+24: 24–33, [10.1016/j.envsci.2012.08.009](https://doi.org/10.1016/j.envsci.2012.08.009).
 
-*A first version of this section said it was "a paired design, precisely the thing
-that is not circular." That was inferred from the title and is withdrawn.* "Paired
-catchment **and estuary**" most plausibly means pairing each catchment with its
-estuary — linking land to sea — rather than the classic paired-catchment experiment of
-a treated basin against an untreated control. Only the second is inherently
-non-circular. And SR353 cites 2012b/c for catchments responding *less* than the
-markoverskud decline predicts, which suggests those papers take markoverskud as the
-driver and would inherit the same input rather than escape it. **Unresolved either
-way.**
+The design is a **catchment↔estuary pairing** — 10 catchments covering 35% of Danish
+land area with their estuaries, 1990–2009 — not the treated-versus-control paired
+catchment experiment. On that, an earlier draft of this section guessed right and then
+guessed wrong about what followed.
+
+What matters is where the numbers come from:
+
+| link | how it is obtained |
+|---|---|
+| catchment N surplus | the norm-product residual, as above |
+| **stream N load** | **measured** on the gauged fraction — fortnightly total-N concentrations × daily discharge — and **modelled** on the rest per Windolf et al. (2011), the DK-QNP family |
+| **estuary total N** | **measured.** Discrete samples, surface and bottom, 12–46×/year, upper/middle/lower reaches |
+
+Gauged area runs from **22% (Isefjord) to 87% (Randers Fjord)**, median about 66%. So
+the surplus↔load relation *is* partly circular, and unevenly so — at Isefjord more than
+three quarters of the catchment is modelled, at Randers about an eighth.
+
+**But two things in this paper are not circular at all**, and together they carry the
+attribution:
+
+1. **Estuary nitrogen is measured, and fell 24–62%.** It sits downstream of the load
+   model and takes no input from *markoverskud*. Stream and upper-estuary concentrations
+   *"nearly halved over the time frame investigated."*
+2. **The catchments respond differently, and that is the tell.** Eight show a direct
+   response under five years; two show a **decadal** delay attributed to nitrate
+   surviving in oxic chalk aquifers. A relation manufactured by a shared input would
+   give all ten the same response. The heterogeneity is a signature of real hydrology,
+   and a construction does not produce it.
+
+**So the position changes.** The narrow claim stands: Figur 6.7 D in SR353 cannot
+evidence what it is used for, and this paper does not rescue that figure. The broad
+claim — that the attribution lacks independent support — is now **positively refuted**,
+not merely unestablished. Measured stream loads over a gauged majority, measured
+estuary concentrations, and between-catchment heterogeneity are support that no
+circularity in one monitoring-report figure touches.
 
 Separately, Bøgestrand et al. (2009) evaluated DK-QNP and found a regional bias —
 overestimating in western Denmark, underestimating in the east — which SR353 corrects
@@ -129,6 +152,11 @@ here twice in one hour, in both directions. First we found one bad argument and 
 stand for the case — a bad argument in a source does not mean there are no good ones.
 Then, correcting that, we asserted from a *title* that a non-circular design existed.
 **Softening an overclaim is still an overclaim.**
+
+Reading the paper settled it, and against us. That is the steelman rule working as
+intended: the strongest version of the case was looked for, found, and turned out to be
+stronger than the finding. **The circularity is real and local. The attribution is not
+unevidenced.** Both sentences are needed, and only the first was in the first draft.
 
 #### What "field surplus" is, in facts and observations
 
