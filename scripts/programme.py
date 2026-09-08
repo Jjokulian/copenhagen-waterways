@@ -461,18 +461,17 @@ def main():
       "resolution, it is a record of where water in Copenhagen goes when you stop "
       "forcing it into a pipe. That is the natural drainage network of the city, and it "
       "has already been mapped.\n")
-    a("**What this covers, before any number is quoted.** The 2012 model was published "
-      "as seven PDF sheets. Four registered automatically against the water in them — "
-      "indre-by, ladegaardsaaen, nørrebro, østerbro — and **Amager was placed from six "
-      "control points reported by a resident**, who found each of six marked dots on a "
-      f"web map. Everything below is **{riv['flood_path_km2']:.2f} km² of flood path** "
-      f"across those five sheets, out of "
-      f"{', '.join(riv['generated_from'])}.\n")
-    a("Amager's placement is good to about ±60–90 m against 20–30 m for the automatic "
-      "four, so treat the 50 m proximity band on that sheet as indicative. **Bispebjerg "
-      "and København Vest are still unplaced** and hold 3.6 km² of extracted flooding "
-      "between them — more than everything here — so these remain partial numbers "
-      "([OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 13).\n")
+    a("**What this covers.** The 2012 model was published as seven PDF sheets with the "
+      "georeferencing stripped out. Four registered automatically against the water in "
+      "them. The other three — Amager, Bispebjerg, København Vest — were placed from "
+      "control points reported by a resident, who found marked dots on a web map one at "
+      f"a time. **All seven are now placed**, and everything below is "
+      f"**{riv['flood_path_km2']:.2f} km² of modelled flood path** across the whole "
+      "city.\n")
+    a("The three assisted sheets are good to roughly ±90–140 m against 20–30 m for the "
+      "automatic four, so treat the 50 m proximity band on those as indicative and the "
+      "200 m band as sound. Provenance and per-sheet accuracy are in "
+      "`data/derived/floodmaps/_georef.json`.\n")
     a("Measured against it:\n")
     a("| | Share of the *inner-city* modelled flood path |")
     a("|---|---:|")
@@ -617,12 +616,12 @@ def main():
       "than needed and exactly the right shape.\n")
 
     a("*And the evidence, now that it exists.* This section used to sit on ground the "
-      "flood model did not cover — Amager was one of the three sheets that never "
-      "registered. It has since been placed from resident-reported control points, so "
-      "**the island this section proposes to drain now has its modelled flood paths in "
-      "the analysis**. Adding them moved the city-wide surface-route coverage in "
-      "section 1 down by nine points, which is the honest direction: the inner-city "
-      "sheets were the well-served ones.\n")
+      "flood model did not cover — Amager was one of three sheets that never "
+      "registered. All three have since been placed from resident-reported control "
+      "points, so **the island this section proposes to drain has its modelled flood "
+      "paths in the analysis**. Adding the three took the surface-route coverage in "
+      "section 1 from 72% to 57%, which is the honest direction: the four sheets that "
+      "registered easily were also the best-served ones.\n")
     a("#### The objections, which are real\n")
     for h, t in [
         ("Natura 2000.",

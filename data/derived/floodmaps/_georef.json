@@ -38,86 +38,42 @@
   "caveat": "Placed to about +-60-90 m, against 20-30 m for the auto-registered sheets. Adequate for the 100 m and 200 m proximity bands in FLOOD_GAP.md; treat the 50 m band on this sheet as indicative."
  },
  "bispebjerg": {
-  "method": "autoref: ensemble water cross-correlation",
-  "agree": 2,
-  "variants_run": 4,
-  "spread_m": 17.7,
-  "best_iou": 0.092,
+  "method": "assisted: resident-reported control points + correlation check",
+  "control_points": 2,
+  "control_point_scatter_rms_m": 182,
+  "standard_error_m": 91,
+  "correlation_offset_from_control_mean_m": 56,
+  "zncc": 0.11,
+  "precision": 0.303,
   "m_per_px_from_scalebar": 2.2124,
+  "scale_check": "Two control points. Their x baseline reproduces the scale bar to +1.4%. They sit at almost the same height on the sheet, so they carry little independent vertical information, but with the scale fixed each one still implies a full position and the two agree to 50 m in longitude and 175 m in latitude. The water correlation is weak on this sheet - it is inland and the mask is thin - and lands 56 m away, which is corroboration rather than evidence.",
   "bounds_wgs84": {
-   "west": 12.471449093850465,
-   "east": 12.585281835430818,
-   "south": 55.69311655834744,
-   "north": 55.73397779232491
+   "west": 12.47035,
+   "east": 12.584335201781796,
+   "south": 55.691908766022536,
+   "north": 55.73277
   },
   "corners_for_maplibre": [
    [
-    12.471449093850465,
-    55.73397779232491
+    12.47035,
+    55.73277
    ],
    [
-    12.585281835430818,
-    55.73397779232491
+    12.584335201781796,
+    55.73277
    ],
    [
-    12.585281835430818,
-    55.69311655834744
+    12.584335201781796,
+    55.691908766022536
    ],
    [
-    12.471449093850465,
-    55.69311655834744
+    12.47035,
+    55.691908766022536
    ]
   ],
   "image": "data/derived/floodmaps/bispebjerg.depth.png",
-  "confident": false,
-  "variants": [
-   {
-    "variant": "blue K16",
-    "ok": false,
-    "reason": "no usable water mask"
-   },
-   {
-    "variant": "blue K8",
-    "ok": true,
-    "lon_nw": 12.471449093850465,
-    "lat_nw": 55.73143390227184,
-    "z": 2.75,
-    "iou": 0.043,
-    "water_fraction": 0.0024
-   },
-   {
-    "variant": "blue loose K16",
-    "ok": false,
-    "reason": "no usable water mask"
-   },
-   {
-    "variant": "adapt 6% K16",
-    "ok": true,
-    "lon_nw": 12.471449093850465,
-    "lat_nw": 55.73413678545323,
-    "z": 5.59,
-    "iou": 0.06,
-    "water_fraction": 0.0059
-   },
-   {
-    "variant": "adapt 12% K16",
-    "ok": true,
-    "lon_nw": 12.471449093850465,
-    "lat_nw": 55.73381879919659,
-    "z": 5.78,
-    "iou": 0.092,
-    "water_fraction": 0.0145
-   },
-   {
-    "variant": "adapt 8% K8",
-    "ok": true,
-    "lon_nw": 12.473422053778815,
-    "lat_nw": 55.73381879919659,
-    "z": 3.8,
-    "iou": 0.058,
-    "water_fraction": 0.0071
-   }
-  ]
+  "confident": true,
+  "caveat": "Placed to roughly +-136 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m."
  },
  "indre-by": {
   "method": "autoref: ensemble water cross-correlation",
@@ -210,94 +166,42 @@
   ]
  },
  "kbhvest": {
-  "method": "autoref: ensemble water cross-correlation",
-  "agree": 3,
-  "variants_run": 6,
-  "spread_m": 56.7,
-  "best_iou": 0.117,
+  "method": "assisted: resident-reported control points + correlation check",
+  "control_points": 2,
+  "control_point_scatter_rms_m": 117,
+  "standard_error_m": 58,
+  "correlation_offset_from_control_mean_m": 282,
+  "zncc": 0.224,
+  "precision": 0.733,
   "m_per_px_from_scalebar": 3.6496,
+  "scale_check": "Two control points agreeing to 104 m in longitude and 54 m in latitude, one of them reported by the observer as poorly placed. The water correlation sits 282 m north, almost entirely in latitude, but this sheet's water mask is only 0.8% of its area, so the correlation is the weaker witness and the control points are preferred.",
   "bounds_wgs84": {
-   "west": 12.440627661580486,
-   "east": 12.571685999469583,
-   "south": 55.62938721330987,
-   "north": 55.72997183684536
+   "west": 12.4399,
+   "east": 12.571023659763565,
+   "south": 55.62920537646451,
+   "north": 55.72979
   },
   "corners_for_maplibre": [
    [
-    12.440627661580486,
-    55.72997183684536
+    12.4399,
+    55.72979
    ],
    [
-    12.571685999469583,
-    55.72997183684536
+    12.571023659763565,
+    55.72979
    ],
    [
-    12.571685999469583,
-    55.62938721330987
+    12.571023659763565,
+    55.62920537646451
    ],
    [
-    12.440627661580486,
-    55.62938721330987
+    12.4399,
+    55.62920537646451
    ]
   ],
   "image": "data/derived/floodmaps/kbhvest.depth.png",
-  "confident": false,
-  "variants": [
-   {
-    "variant": "blue K16",
-    "ok": true,
-    "lon_nw": 12.44465724536185,
-    "lat_nw": 55.73233236256066,
-    "z": 3.05,
-    "iou": 0.023,
-    "water_fraction": 0.0025
-   },
-   {
-    "variant": "blue K8",
-    "ok": true,
-    "lon_nw": 12.44140258153844,
-    "lat_nw": 55.73023411748039,
-    "z": 4.44,
-    "iou": 0.052,
-    "water_fraction": 0.0051
-   },
-   {
-    "variant": "blue loose K16",
-    "ok": true,
-    "lon_nw": 12.440007725614121,
-    "lat_nw": 55.729709556210324,
-    "z": 3.09,
-    "iou": 0.102,
-    "water_fraction": 0.0128
-   },
-   {
-    "variant": "adapt 6% K16",
-    "ok": true,
-    "lon_nw": 12.43814791771503,
-    "lat_nw": 55.72603762731985,
-    "z": 2.59,
-    "iou": 0.071,
-    "water_fraction": 0.0113
-   },
-   {
-    "variant": "adapt 12% K16",
-    "ok": true,
-    "lon_nw": 12.43814791771503,
-    "lat_nw": 55.727611311130055,
-    "z": 2.82,
-    "iou": 0.099,
-    "water_fraction": 0.0301
-   },
-   {
-    "variant": "adapt 8% K8",
-    "ok": true,
-    "lon_nw": 12.440472677588895,
-    "lat_nw": 55.72997183684536,
-    "z": 3.25,
-    "iou": 0.117,
-    "water_fraction": 0.0252
-   }
-  ]
+  "confident": true,
+  "caveat": "Placed to roughly +-87 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m."
  },
  "ladegaardsaaen": {
   "method": "autoref: ensemble water cross-correlation",

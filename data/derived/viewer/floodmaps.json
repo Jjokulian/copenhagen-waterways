@@ -37,6 +37,44 @@
   "confident": true,
   "caveat": "Placed to about +-60-90 m, against 20-30 m for the auto-registered sheets. Adequate for the 100 m and 200 m proximity bands in FLOOD_GAP.md; treat the 50 m band on this sheet as indicative."
  },
+ "bispebjerg": {
+  "method": "assisted: resident-reported control points + correlation check",
+  "control_points": 2,
+  "control_point_scatter_rms_m": 182,
+  "standard_error_m": 91,
+  "correlation_offset_from_control_mean_m": 56,
+  "zncc": 0.11,
+  "precision": 0.303,
+  "m_per_px_from_scalebar": 2.2124,
+  "scale_check": "Two control points. Their x baseline reproduces the scale bar to +1.4%. They sit at almost the same height on the sheet, so they carry little independent vertical information, but with the scale fixed each one still implies a full position and the two agree to 50 m in longitude and 175 m in latitude. The water correlation is weak on this sheet - it is inland and the mask is thin - and lands 56 m away, which is corroboration rather than evidence.",
+  "bounds_wgs84": {
+   "west": 12.47035,
+   "east": 12.584335201781796,
+   "south": 55.691908766022536,
+   "north": 55.73277
+  },
+  "corners_for_maplibre": [
+   [
+    12.47035,
+    55.73277
+   ],
+   [
+    12.584335201781796,
+    55.73277
+   ],
+   [
+    12.584335201781796,
+    55.691908766022536
+   ],
+   [
+    12.47035,
+    55.691908766022536
+   ]
+  ],
+  "image": "data/derived/floodmaps/bispebjerg.depth.png",
+  "confident": true,
+  "caveat": "Placed to roughly +-136 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m."
+ },
  "indre-by": {
   "method": "autoref: ensemble water cross-correlation",
   "agree": 4,
@@ -126,6 +164,44 @@
     "water_fraction": 0.0498
    }
   ]
+ },
+ "kbhvest": {
+  "method": "assisted: resident-reported control points + correlation check",
+  "control_points": 2,
+  "control_point_scatter_rms_m": 117,
+  "standard_error_m": 58,
+  "correlation_offset_from_control_mean_m": 282,
+  "zncc": 0.224,
+  "precision": 0.733,
+  "m_per_px_from_scalebar": 3.6496,
+  "scale_check": "Two control points agreeing to 104 m in longitude and 54 m in latitude, one of them reported by the observer as poorly placed. The water correlation sits 282 m north, almost entirely in latitude, but this sheet's water mask is only 0.8% of its area, so the correlation is the weaker witness and the control points are preferred.",
+  "bounds_wgs84": {
+   "west": 12.4399,
+   "east": 12.571023659763565,
+   "south": 55.62920537646451,
+   "north": 55.72979
+  },
+  "corners_for_maplibre": [
+   [
+    12.4399,
+    55.72979
+   ],
+   [
+    12.571023659763565,
+    55.72979
+   ],
+   [
+    12.571023659763565,
+    55.62920537646451
+   ],
+   [
+    12.4399,
+    55.62920537646451
+   ]
+  ],
+  "image": "data/derived/floodmaps/kbhvest.depth.png",
+  "confident": true,
+  "caveat": "Placed to roughly +-87 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m."
  },
  "ladegaardsaaen": {
   "method": "autoref: ensemble water cross-correlation",

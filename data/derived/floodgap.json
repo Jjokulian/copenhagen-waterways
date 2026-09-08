@@ -1,20 +1,22 @@
 {
  "generated_from": [
   "amager",
+  "bispebjerg",
   "indre-by",
+  "kbhvest",
   "ladegaardsaaen",
   "norrebro",
   "osterbro"
  ],
  "grid": {
   "cell_m": 10.0,
-  "width": 842,
-  "height": 1047,
+  "width": 1280,
+  "height": 1172,
   "bounds": {
-   "west": 12.509555543869267,
+   "west": 12.4399,
    "south": 55.627447163204636,
    "east": 12.64384357267627,
-   "north": 55.72151304194326
+   "north": 55.73277
   }
  },
  "caveats": [
@@ -23,239 +25,463 @@
   "Distances are to any part of a planned work, which is generous: being 50 m from a cloudburst road is not the same as being protected by it.",
   "The sheets paint depth over lakes and the harbour as well as over land. Those cells are excluded here - water standing on water is not something a cloudburst basin addresses - and reported as flooded_over_water_km2."
  ],
- "flooded_area_km2": 2.418,
+ "flooded_area_km2": 5.636,
  "by_band": {
   "0.05-0.1": {
-   "cells": 18554,
-   "area_m2": 1855400
+   "cells": 44568,
+   "area_m2": 4456800
   },
   "0.1-0.2": {
-   "cells": 5029,
-   "area_m2": 502900
+   "cells": 15129,
+   "area_m2": 1512900
   },
   "0.2-0.5": {
-   "cells": 9062,
-   "area_m2": 906200
+   "cells": 18091,
+   "area_m2": 1809100
   },
   "0.5-1": {
-   "cells": 7746,
-   "area_m2": 774600
+   "cells": 15433,
+   "area_m2": 1543300
   },
   "1-2": {
-   "cells": 1864,
-   "area_m2": 186400
+   "cells": 6148,
+   "area_m2": 614800
   },
   ">2": {
-   "cells": 476,
-   "area_m2": 47600
+   "cells": 1560,
+   "area_m2": 156000
   }
  },
  "coverage": {
-  "within_50m_of_any_planned_work": 0.588,
-  "within_50m_of_a_built_or_started_project": 0.12,
-  "within_100m_of_any_planned_work": 0.748,
-  "within_100m_of_a_built_or_started_project": 0.199,
-  "within_200m_of_any_planned_work": 0.874,
-  "within_200m_of_a_built_or_started_project": 0.319
+  "within_50m_of_any_planned_work": 0.549,
+  "within_50m_of_a_built_or_started_project": 0.168,
+  "within_100m_of_any_planned_work": 0.719,
+  "within_100m_of_a_built_or_started_project": 0.259,
+  "within_200m_of_any_planned_work": 0.86,
+  "within_200m_of_a_built_or_started_project": 0.401
  },
  "by_sewer_system": {
   "Spildevandskloakeret": {
-   "flooded_area_m2": 28600,
-   "share_of_flooding_in_mapped_catchments": 0.019,
+   "flooded_area_m2": 49600,
+   "share_of_flooding_in_mapped_catchments": 0.013,
    "share_of_mapped_catchment_area": 0.018,
-   "concentration_ratio": 1.09,
-   "share_of_all_flooding": 0.012
+   "concentration_ratio": 0.74,
+   "share_of_all_flooding": 0.009
   },
   "Fælleskloakeret": {
-   "flooded_area_m2": 1343000,
-   "share_of_flooding_in_mapped_catchments": 0.908,
-   "share_of_mapped_catchment_area": 0.757,
-   "concentration_ratio": 1.2,
-   "share_of_all_flooding": 0.555
+   "flooded_area_m2": 3474100,
+   "share_of_flooding_in_mapped_catchments": 0.936,
+   "share_of_mapped_catchment_area": 0.812,
+   "concentration_ratio": 1.15,
+   "share_of_all_flooding": 0.616
   },
   "unspecified": {
-   "flooded_area_m2": 2100,
-   "share_of_flooding_in_mapped_catchments": 0.001,
-   "share_of_mapped_catchment_area": 0.022,
-   "concentration_ratio": 0.06,
-   "share_of_all_flooding": 0.001
+   "flooded_area_m2": 44300,
+   "share_of_flooding_in_mapped_catchments": 0.012,
+   "share_of_mapped_catchment_area": 0.018,
+   "concentration_ratio": 0.65,
+   "share_of_all_flooding": 0.008
   },
   "Separatkloakeret, tag- og vejvand til recipient": {
-   "flooded_area_m2": 87800,
-   "share_of_flooding_in_mapped_catchments": 0.059,
-   "share_of_mapped_catchment_area": 0.188,
-   "concentration_ratio": 0.32,
-   "share_of_all_flooding": 0.036
+   "flooded_area_m2": 138800,
+   "share_of_flooding_in_mapped_catchments": 0.037,
+   "share_of_mapped_catchment_area": 0.145,
+   "concentration_ratio": 0.26,
+   "share_of_all_flooding": 0.025
   },
   "Separatkloakeretopland tilkoblet fællessystemet": {
-   "flooded_area_m2": 1600,
-   "share_of_flooding_in_mapped_catchments": 0.001,
+   "flooded_area_m2": 1400,
+   "share_of_flooding_in_mapped_catchments": 0.0,
    "share_of_mapped_catchment_area": 0.0,
-   "concentration_ratio": 2.23,
-   "share_of_all_flooding": 0.001
+   "concentration_ratio": 0.88,
+   "share_of_all_flooding": 0.0
   },
   "Separatkloakeret, vejvand til recipient": {
-   "flooded_area_m2": 1500,
-   "share_of_flooding_in_mapped_catchments": 0.001,
+   "flooded_area_m2": 1700,
+   "share_of_flooding_in_mapped_catchments": 0.0,
    "share_of_mapped_catchment_area": 0.003,
-   "concentration_ratio": 0.29,
-   "share_of_all_flooding": 0.001
+   "concentration_ratio": 0.18,
+   "share_of_all_flooding": 0.0
   },
   "3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand": {
-   "flooded_area_m2": 48500,
-   "share_of_flooding_in_mapped_catchments": 0.033,
-   "share_of_mapped_catchment_area": 0.033,
-   "concentration_ratio": 0.99,
-   "share_of_all_flooding": 0.02
+   "flooded_area_m2": 47500,
+   "share_of_flooding_in_mapped_catchments": 0.013,
+   "share_of_mapped_catchment_area": 0.024,
+   "concentration_ratio": 0.53,
+   "share_of_all_flooding": 0.008
   },
   "Fælleskloakeret, vejvand til recipient": {
-   "flooded_area_m2": 800,
+   "flooded_area_m2": 2100,
    "share_of_flooding_in_mapped_catchments": 0.001,
    "share_of_mapped_catchment_area": 0.0,
-   "concentration_ratio": 6.96,
+   "concentration_ratio": 5.1,
    "share_of_all_flooding": 0.0
   }
  },
  "hotspots": [
   {
-   "lon": 12.581885,
-   "lat": 55.670117,
-   "area_m2": 53400,
-   "max_depth_band": "0.2-0.5",
-   "implied_volume_m3": 18690,
-   "distance_to_nearest_planned_work_m": 105
-  },
-  {
-   "lon": 12.567183,
-   "lat": 55.669321,
-   "area_m2": 27100,
-   "max_depth_band": ">2",
-   "implied_volume_m3": 17540,
-   "distance_to_nearest_planned_work_m": 166
-  },
-  {
-   "lon": 12.551334,
-   "lat": 55.663122,
-   "area_m2": 20200,
-   "max_depth_band": "0.5-1",
-   "implied_volume_m3": 14910,
-   "distance_to_nearest_planned_work_m": 217
-  },
-  {
-   "lon": 12.577781,
-   "lat": 55.667382,
-   "area_m2": 27900,
-   "max_depth_band": "0.2-0.5",
-   "implied_volume_m3": 9765,
+   "lon": 12.454312,
+   "lat": 55.707852,
+   "area_m2": 20600,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 30900,
    "distance_to_nearest_planned_work_m": 101
   },
   {
-   "lon": 12.583882,
-   "lat": 55.652977,
-   "area_m2": 6300,
+   "lon": 12.457029,
+   "lat": 55.707304,
+   "area_m2": 19800,
    "max_depth_band": "1-2",
-   "implied_volume_m3": 7285,
-   "distance_to_nearest_planned_work_m": 110
+   "implied_volume_m3": 29475,
+   "distance_to_nearest_planned_work_m": 101
   },
   {
-   "lon": 12.580176,
-   "lat": 55.714664,
-   "area_m2": 8100,
-   "max_depth_band": ">2",
-   "implied_volume_m3": 7175,
-   "distance_to_nearest_planned_work_m": 102
-  },
-  {
-   "lon": 12.639832,
-   "lat": 55.659547,
-   "area_m2": 7800,
-   "max_depth_band": "0.5-1",
-   "implied_volume_m3": 5850,
+   "lon": 12.533096,
+   "lat": 55.729708,
+   "area_m2": 27700,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 25300,
    "distance_to_nearest_planned_work_m": 104
   },
   {
-   "lon": 12.582631,
-   "lat": 55.647093,
-   "area_m2": 7300,
-   "max_depth_band": ">2",
-   "implied_volume_m3": 5825,
-   "distance_to_nearest_planned_work_m": 164
+   "lon": 12.581883,
+   "lat": 55.670138,
+   "area_m2": 54300,
+   "max_depth_band": "0.2-0.5",
+   "implied_volume_m3": 19005,
+   "distance_to_nearest_planned_work_m": 105
   },
   {
-   "lon": 12.613894,
-   "lat": 55.646171,
-   "area_m2": 5400,
+   "lon": 12.567209,
+   "lat": 55.66938,
+   "area_m2": 27500,
+   "max_depth_band": ">2",
+   "implied_volume_m3": 18120,
+   "distance_to_nearest_planned_work_m": 151
+  },
+  {
+   "lon": 12.482913,
+   "lat": 55.723361,
+   "area_m2": 23200,
+   "max_depth_band": ">2",
+   "implied_volume_m3": 17515,
+   "distance_to_nearest_planned_work_m": 327
+  },
+  {
+   "lon": 12.455162,
+   "lat": 55.716998,
+   "area_m2": 10100,
+   "max_depth_band": ">2",
+   "implied_volume_m3": 15250,
+   "distance_to_nearest_planned_work_m": 108
+  },
+  {
+   "lon": 12.551371,
+   "lat": 55.663124,
+   "area_m2": 19900,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 14445,
+   "distance_to_nearest_planned_work_m": 227
+  },
+  {
+   "lon": 12.535147,
+   "lat": 55.725593,
+   "area_m2": 9700,
    "max_depth_band": "1-2",
-   "implied_volume_m3": 3975,
+   "implied_volume_m3": 10680,
    "distance_to_nearest_planned_work_m": 101
   },
   {
-   "lon": 12.594265,
-   "lat": 55.6974,
-   "area_m2": 4100,
-   "max_depth_band": "0.5-1",
-   "implied_volume_m3": 2635,
-   "distance_to_nearest_planned_work_m": 190
+   "lon": 12.577769,
+   "lat": 55.667363,
+   "area_m2": 27700,
+   "max_depth_band": "0.2-0.5",
+   "implied_volume_m3": 9695,
+   "distance_to_nearest_planned_work_m": 101
   },
   {
-   "lon": 12.588367,
-   "lat": 55.662362,
-   "area_m2": 7300,
-   "max_depth_band": "0.2-0.5",
-   "implied_volume_m3": 2555,
+   "lon": 12.560899,
+   "lat": 55.705831,
+   "area_m2": 18700,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 9485,
+   "distance_to_nearest_planned_work_m": 101
+  },
+  {
+   "lon": 12.458512,
+   "lat": 55.686037,
+   "area_m2": 6000,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 9000,
+   "distance_to_nearest_planned_work_m": 500
+  },
+  {
+   "lon": 12.507471,
+   "lat": 55.700307,
+   "area_m2": 12200,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 8895,
+   "distance_to_nearest_planned_work_m": 105
+  },
+  {
+   "lon": 12.55993,
+   "lat": 55.728066,
+   "area_m2": 15200,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 8640,
    "distance_to_nearest_planned_work_m": 120
   },
   {
-   "lon": 12.631725,
-   "lat": 55.668273,
+   "lon": 12.462504,
+   "lat": 55.657995,
+   "area_m2": 11500,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 8625,
+   "distance_to_nearest_planned_work_m": 800
+  },
+  {
+   "lon": 12.583805,
+   "lat": 55.6529,
    "area_m2": 6700,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 8035,
+   "distance_to_nearest_planned_work_m": 104
+  },
+  {
+   "lon": 12.577403,
+   "lat": 55.731581,
+   "area_m2": 12900,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 7985,
+   "distance_to_nearest_planned_work_m": 520
+  },
+  {
+   "lon": 12.580136,
+   "lat": 55.714664,
+   "area_m2": 7700,
+   "max_depth_band": ">2",
+   "implied_volume_m3": 6815,
+   "distance_to_nearest_planned_work_m": 102
+  },
+  {
+   "lon": 12.52305,
+   "lat": 55.646123,
+   "area_m2": 8900,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 6675,
+   "distance_to_nearest_planned_work_m": 105
+  },
+  {
+   "lon": 12.582565,
+   "lat": 55.647075,
+   "area_m2": 7700,
+   "max_depth_band": ">2",
+   "implied_volume_m3": 6125,
+   "distance_to_nearest_planned_work_m": 160
+  },
+  {
+   "lon": 12.639804,
+   "lat": 55.659576,
+   "area_m2": 8100,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 6075,
+   "distance_to_nearest_planned_work_m": 104
+  },
+  {
+   "lon": 12.548223,
+   "lat": 55.711131,
+   "area_m2": 6400,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 6070,
+   "distance_to_nearest_planned_work_m": 102
+  },
+  {
+   "lon": 12.498777,
+   "lat": 55.717061,
+   "area_m2": 9100,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 5905,
+   "distance_to_nearest_planned_work_m": 390
+  },
+  {
+   "lon": 12.50615,
+   "lat": 55.710248,
+   "area_m2": 8400,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 5900,
+   "distance_to_nearest_planned_work_m": 227
+  },
+  {
+   "lon": 12.475467,
+   "lat": 55.725422,
+   "area_m2": 11900,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 5805,
+   "distance_to_nearest_planned_work_m": 714
+  },
+  {
+   "lon": 12.48627,
+   "lat": 55.674647,
+   "area_m2": 7100,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 5325,
+   "distance_to_nearest_planned_work_m": 104
+  },
+  {
+   "lon": 12.578543,
+   "lat": 55.730463,
+   "area_m2": 6800,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 5235,
+   "distance_to_nearest_planned_work_m": 440
+  },
+  {
+   "lon": 12.49582,
+   "lat": 55.717266,
+   "area_m2": 6900,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 4980,
+   "distance_to_nearest_planned_work_m": 336
+  },
+  {
+   "lon": 12.461562,
+   "lat": 55.694749,
+   "area_m2": 6300,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 4725,
+   "distance_to_nearest_planned_work_m": 133
+  },
+  {
+   "lon": 12.566709,
+   "lat": 55.724542,
+   "area_m2": 4500,
+   "max_depth_band": ">2",
+   "implied_volume_m3": 4385,
+   "distance_to_nearest_planned_work_m": 108
+  },
+  {
+   "lon": 12.475957,
+   "lat": 55.722405,
+   "area_m2": 6800,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 4205,
+   "distance_to_nearest_planned_work_m": 385
+  },
+  {
+   "lon": 12.478852,
+   "lat": 55.720172,
+   "area_m2": 4700,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 4160,
+   "distance_to_nearest_planned_work_m": 135
+  },
+  {
+   "lon": 12.478727,
+   "lat": 55.722792,
+   "area_m2": 10000,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 4140,
+   "distance_to_nearest_planned_work_m": 384
+  },
+  {
+   "lon": 12.483394,
+   "lat": 55.722574,
+   "area_m2": 6800,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 3740,
+   "distance_to_nearest_planned_work_m": 308
+  },
+  {
+   "lon": 12.548647,
+   "lat": 55.649251,
+   "area_m2": 10600,
    "max_depth_band": "0.2-0.5",
-   "implied_volume_m3": 2345,
-   "distance_to_nearest_planned_work_m": 194
+   "implied_volume_m3": 3710,
+   "distance_to_nearest_planned_work_m": 223
+  },
+  {
+   "lon": 12.483023,
+   "lat": 55.6712,
+   "area_m2": 9600,
+   "max_depth_band": "0.2-0.5",
+   "implied_volume_m3": 3360,
+   "distance_to_nearest_planned_work_m": 101
+  },
+  {
+   "lon": 12.613873,
+   "lat": 55.645944,
+   "area_m2": 4500,
+   "max_depth_band": "1-2",
+   "implied_volume_m3": 3255,
+   "distance_to_nearest_planned_work_m": 101
+  },
+  {
+   "lon": 12.594394,
+   "lat": 55.697033,
+   "area_m2": 5500,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 3245,
+   "distance_to_nearest_planned_work_m": 184
+  },
+  {
+   "lon": 12.609489,
+   "lat": 55.645472,
+   "area_m2": 4300,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 3225,
+   "distance_to_nearest_planned_work_m": 101
+  },
+  {
+   "lon": 12.463576,
+   "lat": 55.691736,
+   "area_m2": 4100,
+   "max_depth_band": "0.5-1",
+   "implied_volume_m3": 3075,
+   "distance_to_nearest_planned_work_m": 128
   }
  ],
  "qa_flood_vs_water": {
-  "water_share_of_grid": 0.197,
+  "water_share_of_grid": 0.158,
   "note": "Values below the baseline mean flooding avoids open water, as it should.",
   "by_band": {
    "0.05-0.1": {
-    "cells": 20260,
-    "share_in_water": 0.084
+    "cells": 50371,
+    "share_in_water": 0.115
    },
    "0.1-0.2": {
-    "cells": 5504,
-    "share_in_water": 0.086
+    "cells": 18625,
+    "share_in_water": 0.188
    },
    "0.2-0.5": {
-    "cells": 13902,
-    "share_in_water": 0.348
+    "cells": 24958,
+    "share_in_water": 0.275
    },
    "0.5-1": {
-    "cells": 11050,
-    "share_in_water": 0.299
+    "cells": 19811,
+    "share_in_water": 0.221
    },
    "1-2": {
-    "cells": 2020,
-    "share_in_water": 0.077
+    "cells": 6598,
+    "share_in_water": 0.068
    },
    ">2": {
-    "cells": 504,
-    "share_in_water": 0.056
+    "cells": 1925,
+    "share_in_water": 0.19
    }
   },
   "passes": false
  },
- "flooded_over_water_km2": 0.88,
- "flooded_total_km2": 3.298,
+ "flooded_over_water_km2": 1.556,
+ "flooded_total_km2": 7.192,
  "sewer_catchment_coverage": {
-  "catchment_share_of_grid": 0.584,
-  "flooded_cells_inside_a_catchment": 14787,
-  "flooded_cells_total": 24177,
-  "share_of_flooding_inside": 0.612
+  "catchment_share_of_grid": 0.468,
+  "flooded_cells_inside_a_catchment": 37105,
+  "flooded_cells_total": 56361,
+  "share_of_flooding_inside": 0.658
  },
  "hotspot_totals": {
-  "clusters": 12,
-  "area_m2": 181600,
-  "implied_volume_m3": 98550
+  "clusters": 50,
+  "area_m2": 544300,
+  "implied_volume_m3": 384575
  }
 }

@@ -52,5 +52,45 @@
    }
   ],
   "_source": "Reported by a resident locating each dot on a web map, one at a time. Six points so the clicking noise averages down rather than becoming an offset; the scale bar is an independent check on bias and the fit passes it to 0.3% in latitude."
+ },
+ "bispebjerg": {
+  "points": [
+   {
+    "px": 969.3,
+    "py": 740.2,
+    "lat": 55.718849,
+    "lon": 12.504157,
+    "n": 1,
+    "note": "lake / marsh"
+   },
+   {
+    "px": 2546.0,
+    "py": 653.8,
+    "lat": 55.718993,
+    "lon": 12.560584,
+    "n": 2,
+    "note": "stadium oval"
+   }
+  ]
+ },
+ "kbhvest": {
+  "points": [
+   {
+    "px": 1889.7,
+    "py": 2276.5,
+    "lat": 55.654914,
+    "lon": 12.54889,
+    "n": 3,
+    "note": "Y-shaped channel (observer: poorly placed)"
+   },
+   {
+    "px": 2040.8,
+    "py": 1681.3,
+    "lat": 55.674914,
+    "lon": 12.559383,
+    "n": 6,
+    "note": "park lake, right edge"
+   }
+  ]
  }
 }

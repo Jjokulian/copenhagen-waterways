@@ -233,27 +233,41 @@ loadings against the eelgrass record.
 
 ---
 
-## 13. The two remaining unplaced flood sheets
+## 13. The flood sheets — placed, at two different accuracies
 
-**Amager is placed.** A resident located six marked dots on a web map; fitted freely,
-those six reproduce the sheet's own scale bar to +0.3% in latitude and +2.7% in
-longitude, which says the reports carry no systematic bias. Fitting position only, with
-the scale bar's scale, the six imply a corner with 142 m scatter — a standard error of
-**58 m** — and an independent correlation of the sheet's painted water against real water
-peaks **90 m** from that mean. Two unrelated methods inside one standard error.
+**All seven are now placed.** Four registered automatically against the water painted in
+them, to 13–28 m. The other three — Amager, Bispebjerg, København Vest — were placed from
+control points reported by a resident who located marked dots on a web map.
 
-It is placed to about ±60–90 m against 20–30 m for the automatically registered sheets,
-so the 50 m proximity band on that sheet is indicative rather than firm. Adding it took
-the flood-path area from 1.52 to **2.42 km²** and dropped surface-route coverage from 72%
-to **63%** — the inner-city sheets were the well-served ones, and the correction goes the
-uncomfortable way, which is the point of doing it.
+| Sheet | Method | Points | Standard error |
+|---|---|---:|---:|
+| ladegaardsaaen, osterbro, norrebro, indre-by | automatic | — | 13–28 m |
+| amager | assisted | 6 | 58 m |
+| kbhvest | assisted | 2 | 58 m |
+| bispebjerg | assisted | 2 | 91 m |
 
-**Bispebjerg and København Vest remain**, holding 3.6 km² of extracted flooding between
-them — still more than everything currently in the analysis. The method that worked is
-now routine: `scripts/floodmarks.py dots <sheet>` renders numbered dots with 700 m zoom
-insets, someone finds them on a map, and the fit reports its own scatter and checks
-itself against the scale bar.
+The assisted sheets carry a real check rather than a hope. Amager's six points, fitted
+freely, reproduce the sheet's own scale bar to +0.3% in latitude and +2.7% in longitude;
+Bispebjerg's two reproduce it to +1.4% across their baseline. That is what rules out a
+systematic bias in where somebody clicks. Where the water correlation is strong it
+corroborates — 90 m on Amager, 56 m on Bispebjerg — and where it is weak it is
+explicitly the lesser witness: København Vest's water mask is 0.8% of the sheet, and its
+correlation optimum sits 282 m from the control points, so the points win.
 
+**What this changed, and it is uncomfortable.** Flood path area went from 1.52 km² to
+**5.64 km²**. Modelled flooding within 200 m of a planned work fell from 90.5% to
+**86.0%**, within 100 m from 82.6% to **71.9%**, and the share with any *surface* route
+within 100 m from 72% to **57%**. Corridor candidates went from 4 to **33**. The four
+sheets that registered easily were the inner-city ones, and they were also the
+best-served ones — so every headline number in this project was flattering the plan until
+the other three arrived.
+
+**What remains.** Treat the 50 m proximity band on the three assisted sheets as
+indicative; the 200 m band is sound everywhere. Two more control points on Bispebjerg,
+placed at different heights on the sheet rather than along one line, would take it from
+91 m to something nearer 50 m. That is the only outstanding item, and it is small.
+
+---
 **What the automatic attempt established**, before the assisted one succeeded — it is
 what made the assisted attempt cheap. `scripts/floodcheck.py` came out of it.
 
@@ -280,7 +294,11 @@ what made the assisted attempt cheap. `scripts/floodcheck.py` came out of it.
   sheet paints, how much is real — reaches 1.00, and reaches it at many positions,
   because a sea blob slides along a coast.
 
-**What settles it.** A person who can look at the sheet and find its dots on a map.
+**Why the assisted route worked.** With no rotation and the scale fixed by the sheet's
+own scale bar, a single control point already implies a complete position — so two points
+are two independent estimates plus a consistency check, and six only improve on two by a
+factor of the square root of three. The expensive part was never the number of points. It
+was having any at all.
 The obstacle is not the mathematics and no longer the extraction; it is that recognising
 *this beach, that stadium* and giving each a coordinate is a human act. Two points per
 sheet in `viz/georef.html`, or read off any map, and `scripts/floodmaps.py georef` does
