@@ -865,7 +865,7 @@ Household, agricultural and industrial biocides reach the same water and act on 
 
 **Discriminated by.** Summed biocidal load per catchment against decomposer biomass and decomposition rate — the sum, not any single substance against its own threshold, which is the `U1` problem.
 
-**Needs.** A total biocide load figure for Denmark by catchment. Note also that **which compound gets deployed at scale is a commercial decision, not a comparative environmental one**. Glyphosate is the case: its herbicide patent expired in 2000, but engineering crops to survive it turned herbicide and seed into a single coupled product, and global use rose roughly fifteenfold between the mid-1990s and the mid-2010s. The compound that ended up applied more widely than any other in history is the one whose target pathway is shared by plants, bacteria and fungi — an antimicrobial deployed at herbicide volumes, chosen for a business model rather than for its non-target profile. Denmark does not grow those crops, so this is not a direct Danish mechanism; Denmark is connected to it through imported feed, and separately restricted glyphosate's pre-harvest use. Sales data exists by substance nationally; nothing assembles it into an environmental load.
+**Needs.** A total biocide load figure for Denmark by catchment. Sales data exists by substance nationally; nothing assembles it into an environmental load. *Why* the load has the composition it has is a question about markets rather than about water, so it is argued in [PROGRAMME.md](#PROGRAMME.md) and deliberately not here — every entry in this register has to name an observable in the sea, and that one cannot.
 
 ### E16 — Conserved targets: "selective" is a claim about dose
 

@@ -120,6 +120,9 @@ TERMS = {
     'Alcian blue': (
         'A dye that stains the sticky sugar-based gel algae secrete, which is otherwise transparent. It is the only reason anybody knows the gel is there.',
         'Without it, transparent exopolymer particles are invisible - which is why they went unnoticed until the 1990s.'),
+    'algae': (
+        'Photosynthetic organisms that are not plants - from single cells drifting in water to seaweeds metres long. Not a single family, just everything green that was left over.',
+        'Latin alga, seaweed. A category defined by exclusion, which is why it holds unrelated things.'),
     'Allee': (
         'Below a certain population density, reproduction fails - mates are not found, spawning does not coincide, group defences stop working. The decline then feeds itself.',
         'Warder Clyde Allee, 1930s. The counterintuitive half of population ecology: rarity itself can be the cause of further rarity.'),
@@ -141,6 +144,9 @@ TERMS = {
     'anoxia': (
         'No oxygen at all, as opposed to too little.',
         'Greek an- (without). The step past hypoxia, and chemically a different world - sulphate reduction takes over.'),
+    'anoxic': (
+        'Containing no oxygen at all, as distinct from merely low. In marine sediment the switch to anoxic is also a switch to a different chemistry, producing sulphide.',
+        'Greek an- (without) plus the root of oxygen.'),
     'archaea': (
         'A third domain of life alongside bacteria and eukaryotes - superficially bacteria-like, biochemically very different, and responsible for much methane and ammonia cycling.',
         'Greek archaios, ancient.'),
@@ -156,6 +162,12 @@ TERMS = {
     'azole': (
         'The largest class of agricultural and medical fungicides. They block sterol synthesis at an enzyme every eukaryote shares, so their selectivity comes from dose and uptake rather than from the target being absent.',
         'Named for the five-membered nitrogen ring they contain.'),
+    'bacteria': (
+        'Single-celled organisms without a nucleus - the most abundant life on Earth, and in the sea the principal recyclers of everything that dies.',
+        'Greek bakterion, a little rod, after the shape of the first ones seen.'),
+    'bathymetry': (
+        'The shape of the seabed - underwater topography. It determines which basins can ventilate and which cannot.',
+        'Greek bathys (deep) plus metron (measure).'),
     'Beggiatoa': (
         'A sulphide-eating bacterium that forms thick white mats on oxygen-poor sediment. Its presence is a visible sign that the bed has gone sulphidic.',
         'Named after Francesco Secchi di Beggiato, a 19th-century Italian physician.'),
@@ -168,6 +180,12 @@ TERMS = {
     'bicarbonate': (
         "The dissolved form most of the ocean's carbon takes. Plants can use it for photosynthesis, and it buffers the water against pH change.",
         "The carbonate system's middle state, between dissolved CO2 and carbonate ion."),
+    'bioaccumulative': (
+        'Building up in an organism faster than it is excreted, so body burden rises over a lifetime. Distinct from biomagnification, which is the further concentration at each step up the food chain.',
+        'One of the three legs of the PBT test, and the reason persistence matters biologically rather than just chemically.'),
+    'biocide': (
+        'Any substance intended to kill living things - the umbrella covering pesticides, fungicides, herbicides, antifoulants, disinfectants and wood preservatives.',
+        'Literally life-killer. The word is honest in a way the specific ones are not.'),
     'biocrust': (
         'A living skin of cyanobacteria, lichens and mosses binding a desert soil surface. Break it and the sand mobilises.',
         'Biological soil crust. Its marine counterpart is microphytobenthos.'),
@@ -180,6 +198,9 @@ TERMS = {
     'bioturbation': (
         'The churning of sediment by animals burrowing, feeding and irrigating their tunnels. It mixes oxygen down into the bed.',
         'Bio- plus the same turba: life doing the stirring.'),
+    'bioturbator': (
+        'An animal that churns sediment by burrowing, feeding or irrigating its tunnels, mixing oxygen down into the bed. Worms, clams and shrimp mostly.',
+        'Bio plus Latin turba, a commotion - the same root as turbid and turbine.'),
     'bivalve': (
         'A shellfish with two hinged shells - mussel, clam, oyster, cockle. Most filter their food from the water, which incidentally clears it.',
         'Two valves, meaning the two halves of the shell.'),
@@ -225,12 +246,21 @@ TERMS = {
     'CYP51': (
         'The enzyme that makes sterols - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Azole fungicides work by blocking it, and every eukaryote has one.',
         'A cytochrome P450, numbered by family. The number is the only name it has.'),
+    'decomposer': (
+        'An organism that breaks down dead material - bacteria, fungi, and the animals that shred it first. Together they are the reason the world is not knee-deep in corpses.',
+        'Named for the job rather than for any relationship between the organisms doing it.'),
+    'decomposition': (
+        'The breakdown of dead material back to simpler substances. It is a relay run by different organisms at each stage, not a single process, which is why removing one link stalls the whole thing.',
+        'Latin de- (apart) plus componere (to put together): the undoing of assembly.'),
     'denitrification': (
         'Bacteria converting nitrate to nitrogen gas, which leaves the water permanently. The only process that actually removes nitrogen from a system.',
         'Undoing nitrification. It needs the nitrate that nitrification makes, so stopping one stops the other.'),
     'denitrifying': (
         'Converting nitrate to nitrogen gas, which removes it from the water permanently. The only process that actually gets rid of nitrogen rather than moving it.',
         'Un-doing nitrification. It requires low oxygen and available carbon.'),
+    'desertification': (
+        'Land degrading toward desert - a process with many causes and one appearance, which is why attributing it to a single culprit went badly wrong for thirty years.',
+        'The parallel this project borrows its cautionary lessons from.'),
     'detritivore': (
         'An animal that eats dead organic material rather than living prey or plants.',
         'Latin detritus (worn away) plus vorare (to devour).'),
@@ -240,6 +270,9 @@ TERMS = {
     'dinoflagellate': (
         'A single-celled alga that swims with two tails and often wears armour plating. Several make toxins, and some cause red tides.',
         'Greek dinos, whirling - they spin as they swim.'),
+    'ECHA': (
+        'The European Chemicals Agency, which runs REACH. Its compliance checks routinely find registration dossiers incomplete.',
+        'Based in Helsinki. It evaluates what industry submits rather than testing independently.'),
     'ecotoxicology': (
         'The study of how chemicals affect organisms and ecosystems. In regulatory practice it usually means acute mortality tests on a few standard species.',
         'Ecology plus toxicology - a young field, and its standard methods predate most of what is now known about symbiosis.'),
@@ -249,6 +282,9 @@ TERMS = {
     'endocrine disruption': (
         "Interference with an organism's hormone system, often at concentrations far below those that kill. Effects show as failed reproduction and altered development rather than as death.",
         'The endocrine system is the hormonal one - Greek endo (within) plus krinein (to separate).'),
+    'endocrine disruptor': (
+        'A substance that interferes with hormone systems, often at concentrations far below those that kill. Effects appear as failed reproduction and altered development rather than as death.',
+        'One of the few grounds on which European approval is refused on hazard alone, without an exposure argument.'),
     'epibenthic': (
         'Living on the surface of the seabed rather than buried in it.',
         'Epi- (upon) plus benthos.'),
@@ -261,6 +297,12 @@ TERMS = {
     'erg': (
         'A sand sea - the dune-covered kind of desert, as opposed to stony or salt desert.',
         "Arabic 'irq, a dune field. What makes it hostile is that the surface moves, not that it is dry."),
+    'essential use': (
+        'A proposed rule that the most harmful substances should be permitted only where they are genuinely necessary and no substitute exists - rather than wherever the exposure looks acceptable.',
+        'The concept borrowed from how antibiotics are managed, and the closest existing idea to reserving a chemical rather than banning it.'),
+    'eukaryote': (
+        'An organism whose cells keep their DNA in a nucleus - animals, plants, fungi, and most algae. Bacteria and archaea are the ones that do not.',
+        'Greek eu (well) plus karyon (kernel, nut): properly nucleated.'),
     'eutrophic': (
         'Over-fed: a water body receiving more nutrient than it can process.',
         'Greek eu- (well) plus trophe (nourishment) - literally well-nourished, which is why the word sounds like praise and means the opposite.'),
@@ -294,12 +336,24 @@ TERMS = {
     'frustule': (
         'The two-part silica shell of a diatom.',
         'Latin frustulum, a little piece.'),
+    'fungi': (
+        'A kingdom of life separate from plants and animals, feeding by absorbing what they have digested outside themselves. On land they are the principal decomposers of tough material; in the sea they are barely studied.',
+        'Latin fungus, mushroom - though most fungi never make anything you would recognise as one.'),
+    'fungicide': (
+        'A chemical designed to kill fungi. Applied in agriculture by the thousand tonnes, and acting on enzyme systems that fungi share with most other life.',
+        'The -cide ending is Latin caedere, to kill - as in pesticide, biocide, herbicide.'),
     'glyphosate': (
         "The world's most used herbicide. Its target enzyme is absent in animals but present in plants, bacteria and fungi, which makes it an antimicrobial as well as a weedkiller.",
         'From glycine and phosphonate, its chemical parts.'),
     'grab': (
         'A sampling device dropped to the seabed that bites out a fixed area of sediment and brings it up. One grab is one sample, and it is how nearly all seabed fauna data is collected.',
         'It grabs. The fixed area is what makes counts comparable.'),
+    'grandfathered': (
+        'Permitted to continue under old rules because it was already in use when new rules arrived. Most industrial chemicals in Europe entered the system this way.',
+        'From American voting law of the 1890s, where a grandfather clause exempted people whose grandfathers had voted - the origin is not a happy one.'),
+    'hazard': (
+        'The intrinsic capacity of something to cause harm, independent of whether anyone is exposed to it. A shark in an aquarium is a hazard; a shark in your bath is a risk.',
+        'Kept strictly separate from risk in regulatory language, and routinely conflated everywhere else.'),
     'Hedley fractionation': (
         'A sequence of chemical extractions that separates soil phosphorus into pools by how easily it can be released - from immediately available to permanently locked away.',
         'The standard soil-science method, and the reason soil scientists never quote total phosphorus alone.'),
@@ -336,6 +390,12 @@ TERMS = {
     'infauna': (
         'Animals living inside the sediment rather than on top of it - worms, clams, the things a grab sample catches.',
         'Latin in- plus fauna. The ones you have to dig for.'),
+    'inoculum': (
+        'A small quantity of living material introduced deliberately to establish a community - a spoonful of healthy sediment, a starter culture.',
+        'Latin inoculare, to graft in. The plural is inocula.'),
+    'invertebrate': (
+        'An animal without a backbone - worms, molluscs, crustaceans, insects. The overwhelming majority of animal species, and nearly everything on a seabed.',
+        'Latin in- (not) plus vertebra. Defined by what it lacks, which tells you who wrote the category.'),
     'isotherm': (
         "A curve showing how much of a substance a material will hold at each concentration, measured at one temperature. The standard way to describe a soil's capacity to hold phosphate.",
         'Greek isos (equal) plus therme (heat) - the temperature is held constant.'),
@@ -378,6 +438,9 @@ TERMS = {
     'macrofauna': (
         'The animals big enough to be caught on a one-millimetre sieve - worms, clams, crustaceans. What a seabed sample is counted as.',
         'Macro, large. Below them are meiofauna, below those, microbes.'),
+    'MARPOL': (
+        'The international convention governing pollution from ships. It sets what a vessel may legally discharge at sea - sewage, greywater, food waste, scrubber washwater - and where.',
+        'MARine POLlution, contracted. Compliance is the baseline, not the absence of discharge.'),
     'meiofauna': (
         'The very small animals between sand grains - nematodes and tiny crustaceans. Too big to be microbes, too small for the sieves used on macrofauna.',
         'Greek meion, smaller.'),
@@ -456,6 +519,9 @@ TERMS = {
     'overløb': (
         'Danish for a sewer overflow - untreated sewage discharged directly when rain overwhelms a combined system.',
         'Over plus løb (run). Denmark has 19,665 registered outfall points.'),
+    'PBT': (
+        'Persistent, Bioaccumulative and Toxic - the three-part test that gets a substance refused outright in some European approvals, with no exposure argument allowed to rescue it.',
+        'vPvB is the stronger version: very Persistent and very Bioaccumulative, where persistence alone carries the case.'),
     'PE': (
         "Population equivalent - the standard unit of sewage load, one person's daily contribution. Industrial discharges are expressed in how many people they equal.",
         'Lets a dairy and a town be added together.'),
@@ -504,6 +570,9 @@ TERMS = {
     'porewater': (
         'The water in the spaces between sediment grains. Its chemistry is often wholly different from the water above, and it is what a buried animal actually lives in.',
         'The pores of the sediment.'),
+    'precautionary principle': (
+        'The idea that action to prevent harm need not wait for full scientific certainty. Written into EU law, and constrained in practice by requirements of proportionality.',
+        'Article 191 of the Treaty on the Functioning of the European Union. Invoked more often than it decides anything.'),
     'priming': (
         'Adding fresh easily-eaten carbon speeds up the decay of old material that was sitting there stable, because the microbes gain the energy to attack it.',
         'As in priming a pump: a small input releases a much larger flow.'),
@@ -528,6 +597,9 @@ TERMS = {
     'radial oxygen loss': (
         'Rooted plants leaking oxygen from their roots into the sediment, which keeps sulphide away from the root. It is powered by photosynthesis, so shade shuts it off.',
         'Radial because it moves outward from the root, not along it.'),
+    'REACH': (
+        "The EU regulation governing industrial chemicals. Its slogan is 'no data, no market' - the duty to supply safety data sits with whoever wants to sell the substance.",
+        'Registration, Evaluation, Authorisation and restriction of CHemicals. The data required scales with tonnage, so small-volume substances are barely characterised.'),
     'recalcitrant': (
         'Resistant to decay. Lignin, humic material, and most synthetic compounds.',
         'Latin recalcitrare, to kick back - literally to dig the heels in.'),
@@ -543,6 +615,9 @@ TERMS = {
     'remineralisation': (
         'Decay: organic matter broken back down to its dissolved inorganic constituents, releasing the nutrients and consuming oxygen.',
         'Turning organic material back into minerals.'),
+    'replication': (
+        'Taking more than one measurement of the same thing, so that variability can be told apart from difference. Without it, one sample is indistinguishable from a whole area.',
+        'The single most common thing missing from environmental monitoring designs.'),
     'residual estimator': (
         'A quantity computed as whatever is left after subtracting everything you did model from a measured total. It is never itself measured, and it absorbs every error in every other term.',
         'Which is why such a figure can come out negative, and why a negative one is the method reporting its own error bars.'),
@@ -570,6 +645,9 @@ TERMS = {
     'SDHI': (
         'A fungicide class blocking succinate dehydrogenase, which is simultaneously complex II of the respiratory chain and a step in the Krebs cycle. Conserved wherever there are mitochondria.',
         'Succinate dehydrogenase inhibitor. The target does two jobs, so blocking it stops two processes.'),
+    'seagrass': (
+        "A true flowering plant that lives submerged in the sea, rooted in sediment - not a seaweed. Eelgrass is Denmark's species.",
+        'Grass-like in appearance only; it is more closely related to lilies than to grass.'),
     'Secchi': (
         'The oldest instrument in oceanography: a white disc lowered until it disappears. The depth at which it vanishes is a measure of water clarity, and the record goes back over a century.',
         'Angelo Secchi, papal astronomer, 1865. Still in use because it is simple and comparable.'),
@@ -594,18 +672,27 @@ TERMS = {
     'sill': (
         'An underwater ridge across the mouth of a basin. Water below the sill depth cannot flow out or be replaced from the side, so it stagnates.',
         'The same word as a door sill - a threshold you have to get over.'),
+    'sonde': (
+        'An instrument lowered into water to record conditions as it descends. The record names which sonde was used, which is what makes instrument changes testable.',
+        'French sonde, a sounding line - the rope with a weight that measured depth before electronics.'),
     'sorption': (
         'A substance sticking to a solid surface, covering both adsorption onto it and absorption into it. Phosphate sorbs to iron oxides, which is how soil holds it.',
         'The umbrella term when you do not want to commit to which of the two is happening.'),
     'speciation': (
         'In chemistry, which chemical form an element is actually in - dissolved, bound to a particle, complexed with an organic molecule. Availability depends on it, and total concentration does not show it.',
         'Nothing to do with the biological sense of new species forming.'),
+    'sterol': (
+        'A class of molecules that stiffen cell membranes - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Every eukaryote makes one, by broadly the same route.',
+        'Which is why azole fungicides, which block that route, cannot be selective for fungi in principle.'),
     'stoichiometry': (
         'The fixed proportions in which substances combine, and so how much of one thing a given amount of another can produce or consume.',
         'Greek stoicheion (element) plus metron (measure).'),
     'stratification': (
         'Water settled into layers that do not mix, because the upper water is warmer or fresher and therefore lighter.',
         'Latin stratum, a layer. It is what makes deep water run out of oxygen.'),
+    'stressor': (
+        'Anything that pushes an organism or system away from the conditions it functions in. The ecological term of art for a cause of harm.',
+        'Borrowed from physiology, where it means the same and was equally vague.'),
     'strobilurin': (
         'A major fungicide class that blocks complex III of the mitochondrial respiratory chain - the machinery by which anything with mitochondria breathes.',
         'Derived from a compound made by the fungus Strobilurus, which uses it against its competitors.'),
@@ -627,9 +714,15 @@ TERMS = {
     'surfactant': (
         'A substance that lowers surface tension and gathers at the air-water boundary. Detergents, and many natural molecules.',
         'Contraction of surface-active agent.'),
+    'Svanemærket': (
+        'The Nordic Swan ecolabel. A lifecycle standard with criteria set by a Nordic board, verified by third parties, tightened periodically, and awarded only to the better performers in a category.',
+        'It restricts substances that are entirely legal, which is what makes its existence evidence about where the legal floor sits.'),
     'swept-area': (
         'How much of the seabed fishing gear has dragged across, expressed as a ratio: 2 means the area was covered twice over in a year.',
         'The standard measure of trawling pressure. Published annually, which cannot show how often a given patch is hit.'),
+    'symbiont': (
+        'One partner in a symbiosis. Often the smaller and less visible one, and often the one a survey does not count.',
+        'From symbiosis: Greek syn (together) plus bios (life).'),
     'symbiosis': (
         'Two species living in close, lasting partnership. It ranges from both benefiting to one exploiting the other, and much of it was invisible to science until molecular methods arrived.',
         'Greek syn (together) plus bios (life).'),
@@ -639,6 +732,9 @@ TERMS = {
     'thatch': (
         'A greasy organic mat that builds up in turf when material is produced faster than it decays. Caused by heavy fertilising, pesticides killing earthworms, and compaction.',
         'The ordinary roofing word. Greenkeepers treat it by restoring the soil fauna, not by feeding the grass less.'),
+    'toxicant': (
+        'A poisonous substance, especially a manufactured one. Distinguished from a toxin, which strictly means a poison made by a living thing.',
+        'The distinction matters in the literature and is routinely ignored elsewhere.'),
     'transect': (
         'A line along which measurements are taken at intervals - here, usually running from the shore into deeper water to find how deep plants still grow.',
         'Latin trans (across) plus secare (to cut).'),
@@ -666,6 +762,9 @@ TERMS = {
     'VMS': (
         'Vessel monitoring system - satellite position reports that fishing vessels are required to transmit, used to map where gear was actually worked.',
         'The record exists; the fine-resolution version is not public.'),
+    'washwater': (
+        'Water used to scrub pollutants out of ship exhaust, then discharged to sea. It is acidic and carries metals and hydrocarbons, and discharging it is legal.',
+        'Exhaust gas cleaning moves the pollution from the air to the water; whether that is an improvement depends on which you were measuring.'),
     'Winkler': (
         'The chemical titration for dissolved oxygen, in use since 1888 and still the reference method against which sensors are checked.',
         'Lajos Winkler, who published it as a doctoral student.'),
@@ -1498,19 +1597,12 @@ H = [
      "Summed biocidal load per catchment against decomposer biomass and "
      "decomposition rate — the sum, not any single substance against its own "
      "threshold, which is the `U1` problem.",
-     "A total biocide load figure for Denmark by catchment. Note also that **which "
-     "compound gets deployed at scale is a commercial decision, not a comparative "
-     "environmental one**. Glyphosate is the case: its herbicide patent expired in "
-     "2000, but engineering crops to survive it turned herbicide and seed into a "
-     "single coupled product, and global use rose roughly fifteenfold between the "
-     "mid-1990s and the mid-2010s. The compound that ended up applied more widely "
-     "than any other in history is the one whose target pathway is shared by plants, "
-     "bacteria and fungi — an antimicrobial deployed at herbicide volumes, chosen "
-     "for a business model rather than for its non-target profile. Denmark does not "
-     "grow those crops, so this is not a direct Danish mechanism; Denmark is "
-     "connected to it through imported feed, and separately restricted glyphosate's "
-     "pre-harvest use. Sales data exists by "
-     "substance nationally; nothing assembles it into an environmental load."),
+     "A total biocide load figure for Denmark by catchment. Sales data exists by "
+     "substance nationally; nothing assembles it into an environmental load. *Why* "
+     "the load has the composition it has is a question about markets rather than "
+     "about water, so it is argued in "
+     "[PROGRAMME.md](#PROGRAMME.md) and deliberately not here — every entry in this "
+     "register has to name an observable in the sea, and that one cannot."),
 
     ("E16", "E", "Conserved targets: \"selective\" is a claim about dose",
      ["O3", "O4", "O6", "O7"],
@@ -3062,7 +3154,8 @@ def main():
     # and glossing those as "acute peaks under chronic means" would be worse than
     # no tooltip at all. Only documents that speak this vocabulary opt in.
     gloss["_docs"] = ["HYPOTHESES.md", "EXPERIMENTS.md", "DATA_QUEUE.md",
-                      "OXYGEN.md", "OBSERVING.md", "AREAS.md"]
+                      "OXYGEN.md", "OBSERVING.md", "AREAS.md",
+                      "PROGRAMME.md", "LIGHT.md"]
     gloss["_terms"] = {t: {"text": a_, "why": b_} for t, (a_, b_) in TERMS.items()}
     write_json(os.path.join(ROOT, "docs", "data", "glossary.json"), gloss)
     log(f"  glossary: {len(gloss) - 2} ids, {len(TERMS)} terms")

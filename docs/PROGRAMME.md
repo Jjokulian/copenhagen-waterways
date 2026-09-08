@@ -277,6 +277,18 @@ Two honest limits. Ponds do not remove dissolved fractions — chloride from roa
 
 ### 4. Where the captured material goes, which the same taxonomy decides
 
+### A note on the menu
+
+One structural point belongs here rather than in the investigation, because it has no observable in the water and every entry there has to have one.
+
+**The set of chemicals available to be used is not chosen by environmental comparison.** It is the output of a registration and commercialisation process. A compound reaches the market because someone patented it, took it through approval, and could sell it; once it is approved and coupled to a delivery system, the scale at which it is applied is set by economics. Comparative non-target profile is a constraint on entry, not the criterion for selection among the entrants.
+
+Glyphosate is the clearest illustration. Its herbicide patent expired in 2000, but engineering crops to survive it made herbicide and seed a single coupled product, and global use rose roughly fifteenfold between the mid-1990s and mid-2010s. So the compound applied more widely than any other in history is the one whose target pathway is shared by plants, bacteria and fungi — an antimicrobial at herbicide volumes. Denmark does not grow those crops and separately restricted glyphosate's pre-harvest use; the Danish connection is imported feed, and it is indirect.
+
+The consequence for anything proposed on this page is concrete: **a chemical-load problem cannot be fixed by choosing better within a menu you did not write.** Substitution moves demand to the next compound on the same list, which was assembled by the same process. That is an argument for acting on total load and on the approval criteria, not for a better ranking of the existing options.
+
+*What this deliberately does not claim.* Nothing about anyone's motives, national character or corporate culture. The agrochemical majors are a four-firm global oligopoly — Bayer, BASF, Syngenta, Corteva — of which two are German, one Swiss and Chinese-owned, and one American, so the common shorthand that this is an American arrangement is not accurate, and the structural argument does not need it. Motive claims are unquantifiable and would make the rest of this project dismissible for a reason unrelated to its evidence. The claim here is about how a menu is assembled, and it stands or falls on the approval record.
+
 Sections 2 and 3 both end in the same objection, and it is a fair one. A treatment wetland concentrates contaminants in its sediment. Extractive aquaculture concentrates them in biomass. Neither is a solution if the answer to *and then what* is *we bank it somewhere and hope*.
 
 The answer is that **the disposal route is decided by the same evolutionary prior that decides the source-control instrument.** It is one principle, applied twice:
@@ -446,6 +458,34 @@ That is a correction to an earlier draft of this page, twice over. The first dra
 - **Prior:** **No prior anywhere in the cascade.** The carbon–fluorine bond is the strongest single bond in organic chemistry.
 - **Sink:** **Never terminates.** The precursors *do* degrade — and they degrade into PFCAs and PFSAs, which the literature calls the *terminal* transformation products, because that is where the chain stops. Complete mineralisation and deep defluorination remain unsolved. Degradation here moves the problem without ending it.
 - **Ask:** **Restrict the mass use, not the molecule.** Reserve it for the cases that pass both tests in the section below.
+
+#### What the law actually asks, and what it does not
+
+It is worth being exact about the terminology, because the argument is often conducted with the wrong words and the distinction that matters is not the one people reach for.
+
+**Hazard is the intrinsic capacity to harm. Risk is that capacity combined with exposure.** Most European chemicals regulation is risk-based, which means a substance known to be hazardous is permitted where exposure is judged low enough. Whether that judgement is right depends on an exposure estimate, and exposure estimates for a substance in wide dispersive use are exactly the thing this project has spent its length showing are weak.
+
+The burden of proof runs the way the vocabulary suggests. REACH's own slogan is *no data, no market* — the duty is on the registrant — but the data required scales with tonnage, existing substances were largely grandfathered in, and ECHA's compliance checks routinely find dossiers incomplete. The principle is proof-of-safety; the practice is closer to **absence of demonstrated harm**, which is a different thing and a much lower bar.
+
+Two places the law is stronger than that, and both are worth knowing:
+
+- **Positive listing.** Pesticides and biocides work the opposite way round: only approved active substances may be used at all. Industrial chemicals under REACH are effectively negative-listed — registered means usable unless someone restricts it.
+
+- **Hazard-based cut-offs.** For plant protection products, approval is refused outright for substances that are carcinogenic, mutagenic, toxic to reproduction, endocrine-disrupting, or **PBT / vPvB** — persistent, bioaccumulative and toxic, or very persistent and very bioaccumulative. No exposure argument rescues them.
+
+> That last criterion is the important one for this section, because **persistence is already the regulatory proxy for an absent evolutionary prior.** *vPvB* is the law's way of saying *nothing has evolved to take this apart*, expressed as a half-life threshold instead of as a claim about biochemistry. The concept this page has been building is not foreign to European law; it is present, subordinate, and applied to individual approvals rather than to whether a substance should be ubiquitous.
+
+#### Why the ecolabels are evidence
+
+There is a straightforward test of whether a regulatory floor matches what people actually want, and Denmark runs it continuously.
+
+**Svanemærket** — the Nordic Swan — is a lifecycle ecolabel with criteria set by a Nordic board, verified by third parties, tightened on a cycle, and awarded only to the better performers in a product category. **Astma-Allergi Danmark's Den Blå Krans** excludes fragrance allergens and specific preservatives. Both restrict substances that are **entirely legal**.
+
+If the legal floor were where consumers wanted it, a label whose whole value proposition is *we removed things the law permits* would have no market. It has a large one, and it has had for decades. That is evidence about the floor rather than about the label.
+
+*The fair objection, and the reason this is not conclusive.* Ecolabels also sell reassurance, distinction and brand, so their existence alone does not prove the floor is too low. What makes the argument more than commercial is *which* substances they exclude: the additions cluster on persistence, allergenicity and endocrine activity — the three places where the risk-based assessment above is weakest, because all three do their damage at doses and over timescales that an exposure estimate handles badly.
+
+It is also worth being accurate about who is being suspected. The instinct to locate this problem in American corporate conduct is common and, for the agrochemical case, factually off: the majors are a four-firm global oligopoly of which two are German, one Swiss and Chinese-owned. The structural argument does not need a villain, and is stronger without one — **and the belief that European regulation already handles it is the more consequential error**, because it is the one that stops people asking.
 
 #### The instrument for a novo-chemical: reserved use
 
