@@ -49,21 +49,26 @@ def main():
     a = o.append
 
     a("# Til landbruget: grundlaget for kravet\n")
-    a("> ## ⚠ UNDER REVISION — en central påstand på denne side var forkert\n")
-    a("> Siden hævdede, at der ikke findes nogen koefficient mellem kvælstof og nogen "
-      "økologisk effekt. **Det er faktuelt forkert, og påstanden trækkes tilbage.**\n")
-    a("> DCE/Aarhus Universitet kører sammen med DHI en modelpakke på **11 mekanistiske "
-      "modeller, der dækker 107 kystvandområder**, med statistiske sammenhænge fra "
-      "kvælstofbelastning over total-N til klorofyl, lyssvækkelse (Kd), ålegræssets "
-      "dybdegrænse og iltsvind — **pr. vandområde**. Grundlaget er vurderet af to "
-      "internationale ekspertpaneler (Herman et al. 2017 og 2023) og af en second "
-      "opinion nedsat med Finansministeriet som formand (november 2024).\n")
-    a("> Fejlen var at rette en revision af **kildeopgørelsen** — hvis kvælstof det er — "
-      "mod den **marine modellering** — hvor meget vandområdet kan tåle. Det er to "
-      "forskellige spørgsmål, og kritikken rammer kun det første.\n")
-    a("> Siden omskrives på grundlag af de faktiske dokumenter. Indtil da: læs den med "
-      "det forbehold. Den præcise kritik, som ekspertpanelet selv rejser, er stærkere "
-      "end den, der stod her.\n")
+    a("> ## Om denne sides p\u00e5stand om koefficienter\n")
+    a("> En tidligere version af denne side sagde, at der *ikke findes nogen "
+      "koefficient mellem kv\u00e6lstof og nogen \u00f8kologisk effekt*. Det er for bredt, "
+      "og det er nu rettet til det, dokumenterne faktisk viser \u2014 en sk\u00e6rpelse, "
+      "ikke en tilbagetr\u00e6kning.\n")
+    a("> **For klorofyl og lyssv\u00e6kkelse findes der en koefficient.** DCE har "
+      "opstillet statistiske relationer, og indsatsbehovet regnes ud af en h\u00e6ldning: "
+      "hvor meget indikatoren \u00e6ndrer sig pr. \u00e6ndring i N-tilf\u00f8rsel.\n")
+    a("> **For iltsvind findes der ingen.** Iltsvindsindikatoren er en *bin\u00e6r "
+      "udl\u00f8ser*. Hvis \u00e9n eller flere iltsvindsindikatorer siger, at vandomr\u00e5det er "
+      "ramt, s\u00e6ttes indsatsbehovet til en fast reduktion p\u00e5 **25 %** af den "
+      "nuv\u00e6rende TN-koncentration \u2014 uanset hvor slemt iltsvindet er, hvor meget "
+      "kv\u00e6lstof der tilf\u00f8res, eller hvordan omr\u00e5det er indrettet. DCE skriver selv, "
+      "hvorfor: tallet er valgt, s\u00e5 det er *st\u00f8rre end de normale \u00e5r-til-\u00e5r "
+      "variationer*, og \u201ddet **vurderes**, at en 25 % reduktion i TN-koncentrationen "
+      "er minimumskrav for at \u00e6ndre systemet\u201d. Det er en fagligt begrundet "
+      "tommelfingerregel, ikke en m\u00e5lt d\u00e6mpning. Den kan hverken falsificeres eller "
+      "kalibreres, fordi der ingen respons-kurve er bag den.\n")
+    a("> Det er iltsvind, der b\u00e6rer den offentlige begrundelse for aftalen. Og "
+      "netop der er koefficienten et sk\u00f8n.\n")
     a("*Denne side er skrevet på dansk og henvender sig til landmænd og deres "
       "organisationer. Resten af sitet er på engelsk.* "
       "*[An English summary follows at the bottom.](#in-english)*\n")

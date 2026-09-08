@@ -1,14 +1,14 @@
 # Til landbruget: grundlaget for kravet
 
-> ## ⚠ UNDER REVISION — en central påstand på denne side var forkert
+> ## Om denne sides påstand om koefficienter
 
-> Siden hævdede, at der ikke findes nogen koefficient mellem kvælstof og nogen økologisk effekt. **Det er faktuelt forkert, og påstanden trækkes tilbage.**
+> En tidligere version af denne side sagde, at der *ikke findes nogen koefficient mellem kvælstof og nogen økologisk effekt*. Det er for bredt, og det er nu rettet til det, dokumenterne faktisk viser — en skærpelse, ikke en tilbagetrækning.
 
-> DCE/Aarhus Universitet kører sammen med DHI en modelpakke på **11 mekanistiske modeller, der dækker 107 kystvandområder**, med statistiske sammenhænge fra kvælstofbelastning over total-N til klorofyl, lyssvækkelse (Kd), ålegræssets dybdegrænse og iltsvind — **pr. vandområde**. Grundlaget er vurderet af to internationale ekspertpaneler (Herman et al. 2017 og 2023) og af en second opinion nedsat med Finansministeriet som formand (november 2024).
+> **For klorofyl og lyssvækkelse findes der en koefficient.** DCE har opstillet statistiske relationer, og indsatsbehovet regnes ud af en hældning: hvor meget indikatoren ændrer sig pr. ændring i N-tilførsel.
 
-> Fejlen var at rette en revision af **kildeopgørelsen** — hvis kvælstof det er — mod den **marine modellering** — hvor meget vandområdet kan tåle. Det er to forskellige spørgsmål, og kritikken rammer kun det første.
+> **For iltsvind findes der ingen.** Iltsvindsindikatoren er en *binær udløser*. Hvis én eller flere iltsvindsindikatorer siger, at vandområdet er ramt, sættes indsatsbehovet til en fast reduktion på **25 %** af den nuværende TN-koncentration — uanset hvor slemt iltsvindet er, hvor meget kvælstof der tilføres, eller hvordan området er indrettet. DCE skriver selv, hvorfor: tallet er valgt, så det er *større end de normale år-til-år variationer*, og ”det **vurderes**, at en 25 % reduktion i TN-koncentrationen er minimumskrav for at ændre systemet”. Det er en fagligt begrundet tommelfingerregel, ikke en målt dæmpning. Den kan hverken falsificeres eller kalibreres, fordi der ingen respons-kurve er bag den.
 
-> Siden omskrives på grundlag af de faktiske dokumenter. Indtil da: læs den med det forbehold. Den præcise kritik, som ekspertpanelet selv rejser, er stærkere end den, der stod her.
+> Det er iltsvind, der bærer den offentlige begrundelse for aftalen. Og netop der er koefficienten et skøn.
 
 *Denne side er skrevet på dansk og henvender sig til landmænd og deres organisationer. Resten af sitet er på engelsk.* *[An English summary follows at the bottom.](#in-english)*
 
