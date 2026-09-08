@@ -80,6 +80,7 @@ def read_casts():
             r = num(row.get("KorrelationsKoefficient"))
             key = (row["ObservationsStedNr"], d, row.get("UndersøgelseNr") or "")
             casts[key] = {
+                "key": key,
                 "station": row["ObservationsStedNr"],
                 "name": (row.get("ObservationsStedNavn") or "").strip(),
                 "year": int(d[:4]), "month": int(d[4:6]),
@@ -89,6 +90,59 @@ def read_casts():
                 "supplier": (row.get("DataleverandørNavn") or "").strip(),
             }
     return list(casts.values()), dropped
+
+
+def read_profiles():
+    """Refit each cast from its own measurements, top half against bottom half.
+
+    ODA publishes one Kd per cast, fitted over the whole profile, and the file
+    also carries the measurements it was fitted to - one row per depth, typically
+    every half metre. Refitting the halves separately asks a question the single
+    number cannot answer: **is the attenuation the same all the way down?**
+
+    If the water were uniform and the instrument ideal, the two halves would agree.
+    They do not, and the direction is the informative part.
+    """
+    p = os.path.join(ODA, "lys.csv.gz")
+    out, cur, buf = {}, None, []
+
+    def slope(zs, ls):
+        n = len(zs)
+        zm = sum(zs) / n
+        lm = sum(ls) / n
+        den = sum((z - zm) ** 2 for z in zs)
+        if den <= 0:
+            return None
+        return sum((z - zm) * (l - lm) for z, l in zip(zs, ls)) / den
+
+    def flush():
+        nonlocal buf
+        if cur is not None and len(buf) >= 8:
+            buf.sort()
+            zs = [b[0] for b in buf]
+            ls = [b[1] for b in buf]
+            if zs[-1] - zs[0] >= 2.0:
+                mid = len(zs) // 2
+                su = slope(zs[:mid + 1], ls[:mid + 1])
+                sl = slope(zs[mid:], ls[mid:])
+                if su is not None and sl is not None and su < 0 and sl < 0:
+                    out[cur] = {"kd_upper": -su, "kd_lower": -sl,
+                                "z0": zs[0], "zmax": zs[-1], "n": len(zs)}
+        buf = []
+
+    with gzip.open(p, "rt", encoding="iso-8859-1") as fh:
+        for row in csv.DictReader(fh, delimiter=";"):
+            key = (row["ObservationsStedNr"], (row.get("Dato") or "").strip(),
+                   row.get("UndersøgelseNr") or "")
+            if key != cur:
+                flush()
+                cur = key
+            z = num(row.get("Dybde (m)"))
+            pct = num(row.get("Lysprocent"))
+            if z is not None and pct is not None and pct > 0:
+                buf.append((z, math.log(pct)))
+    flush()
+    return out
 
 
 def read_depths():
@@ -177,6 +231,24 @@ def analyse():
     withbed = [c for c in season if c["at_bed"] is not None]
     meets = [c for c in withbed if c["at_bed"] >= 100 * REQ_LO]
 
+    prof = read_profiles()
+    log(f"  {len(prof):,} casts refittable in halves")
+    geom, deep = [], []
+    for lo, hi in ((0.0, 0.6), (0.6, 1.1), (1.1, 2.1), (2.1, 3.1),
+                   (3.1, 5.1), (5.1, 30.0)):
+        band = [prof[c["key"]] for c in season
+                if c["key"] in prof and lo <= prof[c["key"]]["z0"] < hi]
+        if len(band) < 150:
+            continue
+        rs = [b["kd_lower"] / b["kd_upper"] for b in band]
+        geom.append({"from": lo, "to": hi, "n": len(band),
+                     "kd_upper": round(statistics.median(b["kd_upper"] for b in band), 3),
+                     "kd_lower": round(statistics.median(b["kd_lower"] for b in band), 3),
+                     "ratio": round(statistics.median(rs), 3),
+                     "steepens": round(100 * sum(1 for r in rs if r > 1) / len(rs), 1)})
+    deep = [c for c in season if c["key"] in prof and prof[c["key"]]["z0"] >= 2.0]
+    shallow = [c for c in season if c["key"] in prof and prof[c["key"]]["z0"] < 2.0]
+
     return {
         "n_casts_total": len(casts), "n_casts_good_fit": len(good),
         "n_growth_season": len(season),
@@ -207,6 +279,19 @@ def analyse():
             "n_with_bottom_depth": len(withbed),
             "n_meeting_11pct": len(meets),
             "share_meeting": round(len(meets) / len(withbed), 3) if withbed else None,
+        },
+        "geometry": geom,
+        "start_depth": {
+            "n_profiles": len(prof),
+            "n_deep_start": len(deep), "n_shallow_start": len(shallow),
+            "z11_deep_start": round(statistics.median(c["z_hi"] for c in deep), 2)
+            if deep else None,
+            "z11_shallow_start": round(statistics.median(c["z_hi"] for c in shallow), 2)
+            if shallow else None,
+            "kd_deep_start": round(statistics.median(c["kd"] for c in deep), 3)
+            if deep else None,
+            "kd_shallow_start": round(statistics.median(c["kd"] for c in shallow), 3)
+            if shallow else None,
         },
         "per_station": per_station,
         "suppliers": dict(collections.Counter(c["supplier"] for c in season).most_common(6)),
@@ -291,6 +376,60 @@ def render(d):
               f"| {s['trend_m_per_decade']:+.2f} |")
         a("")
 
+    g = d.get("geometry") or []
+    sd = d.get("start_depth") or {}
+    if g:
+        a("## The number depends on where the sensor started\n")
+        a("Every figure above rests on Kd, and Kd is a straight line fitted to the "
+          "logarithm of light against depth. That fit assumes attenuation is the "
+          "same all the way down. ODA publishes the measurements the line was "
+          "fitted to, so the assumption can be checked rather than granted: refit "
+          f"the top half of each profile against the bottom half. {sd.get('n_profiles', 0):,} "
+          "casts carry enough points to allow it.\n")
+        a("| profile starts at | casts | Kd top half | Kd bottom half | ratio | "
+          "steepens with depth |")
+        a("|---|---:|---:|---:|---:|---:|")
+        for r in g:
+            hi = "30 m" if r["to"] >= 30 else f"{r['to']:.1f} m"
+            a(f"| {r['from']:.1f} – {hi} | {r['n']:,} | {r['kd_upper']} | "
+              f"{r['kd_lower']} | **{r['ratio']}** | {r['steepens']}% |")
+        a("")
+        a("**The bottom half attenuates less, and the gap closes the deeper the "
+          "profile begins.** That ordering is the whole result. It runs opposite to "
+          "resuspension — a turbid layer over the bed would make the bottom half "
+          "steeper, and it does so in only about a fifth to a quarter of casts, "
+          "outweighed on average by something else.\n")
+        a("The something else is that a PAR sensor counts photons across the whole "
+          "band without distinguishing them, and water absorbs the band unevenly — "
+          "roughly 0.5 per metre at 700 nm against 0.015 per metre at 450 nm. The "
+          "red half of the light is gone within a metre or two, and what continues "
+          "downward is the fraction water attenuates least. So the apparent "
+          "broadband Kd falls with depth **in perfectly uniform water**, purely "
+          "because the surviving spectrum has shifted. If that is the mechanism, "
+          "the effect must vanish for profiles that begin below the red-absorbing "
+          "layer, because the red is already gone. It does: the ratio runs from "
+          f"{g[0]['ratio']} for profiles starting at the surface to {g[-1]['ratio']} "
+          "for those starting below 5 m, monotonically, and the same table computed "
+          "against profile *length* instead of profile *start* is flat.\n")
+        a("> **What follows is that Kd measured this way is not a property of the "
+          "water.** It is a property of the water and the depth window jointly. Two "
+          "casts in identical water, one begun at half a metre and one at three "
+          "metres, return different numbers. The indicator, the target derived from "
+          "it, and every figure on this page inherit that.\n")
+        if sd.get("z11_deep_start") and sd.get("z11_shallow_start"):
+            a(f"Splitting the growth-season casts on where they started: "
+              f"{sd['n_shallow_start']:,} began above 2 m and give a median Kd of "
+              f"{sd['kd_shallow_start']} and a median depth reaching 11% of "
+              f"{sd['z11_shallow_start']} m; {sd['n_deep_start']:,} began below 2 m "
+              f"and give {sd['kd_deep_start']} and {sd['z11_deep_start']} m. "
+              "Neither is the true number. They are two answers from one record, "
+              "separated by a choice nobody documents making.\n")
+        a("The measurement that would separate the two explanations — spectral "
+          "attenuation rather than one broadband coefficient — is not made anywhere "
+          "in the Danish programme. A single number cannot say whether the light "
+          "stopped because something was in the water or because water is red-"
+          "absorbing and the sensor started shallow. That is `Z8` again, one layer "
+          "below where `Z8` states it.\n")
     a("## What this does and does not settle\n")
     a("It settles the arithmetic, which was never in doubt, and it puts a number on "
       "the thing the Kd indicator is a proxy for. What it cannot settle is *why* the "
