@@ -92,6 +92,60 @@ def read_casts():
     return list(casts.values()), dropped
 
 
+def read_secchi():
+    """Secchi depth against bottom depth, and how often the disc was on the bed.
+
+    A Secchi disc cannot be seen deeper than the bottom, so in shallow water the
+    recorded "clarity" is the depth of the seabed and not a property of the water.
+    ODA is honest about it and publishes the flag - SigtTilBund, sight-to-bottom -
+    which is what makes this checkable at all.
+
+    The extract behind this was itself truncated once: run without an explicit
+    period it returned 4,044 rows over two years at 194 stations, against 151,204
+    rows over 1980-2026 at 1,429 stations with the period set. Numbers computed on
+    the truncated file overstated the shallow-water censored share by about a
+    factor of 1.7. See the guard in fetch_oda.py.
+    """
+    p = os.path.join(ODA, "maaledybde.csv.gz")
+    if not os.path.exists(p):
+        return None
+    rows, flag = [], collections.Counter()
+    with gzip.open(p, "rt", encoding="iso-8859-1") as fh:
+        for r in csv.DictReader(fh, delimiter=";"):
+            sec, bot = num(r.get("SigtDybde_m")), num(r.get("BundDybde_m"))
+            d = (r.get("StartDato") or "").strip()
+            if not sec or sec <= 0:
+                continue
+            flag[(r.get("SigtTilBund") or "").strip()] += 1
+            if bot and bot > 0 and len(d) >= 4 and d[:4].isdigit():
+                rows.append((sec, bot, int(d[:4])))
+    if not rows:
+        return None
+    at_bed = lambda rs: 100 * sum(1 for s, b, _ in rs if s >= b - 0.01) / len(rs)
+    bands = []
+    for lo, hi in ((0, 5), (5, 10), (10, 20), (20, 40), (40, 200)):
+        sub = [r for r in rows if lo <= r[1] < hi]
+        if len(sub) < 50:
+            continue
+        bands.append({"from": lo, "to": hi, "n": len(sub),
+                      "median_secchi": round(statistics.median(r[0] for r in sub), 1),
+                      "at_bed_pct": round(at_bed(sub), 1)})
+    eras = []
+    for lo, hi in ((1980, 1995), (1995, 2005), (2005, 2015), (2015, 2027)):
+        sub = [r for r in rows if lo <= r[2] < hi]
+        sh = [r for r in sub if r[1] < 5]
+        if len(sub) < 50:
+            continue
+        eras.append({"from": lo, "to": hi - 1, "n": len(sub),
+                     "at_bed_pct": round(at_bed(sub), 1),
+                     "n_shallow": len(sh),
+                     "shallow_at_bed_pct": round(at_bed(sh), 1) if len(sh) > 30 else None})
+    return {"n_secchi": sum(flag.values()), "flag": dict(flag),
+            "n_paired": len(rows), "years": [min(r[2] for r in rows),
+                                             max(r[2] for r in rows)],
+            "at_bed_pct": round(at_bed(rows), 1), "bands": bands, "eras": eras}
+
+
 def read_profiles():
     """Refit each cast from its own measurements, top half against bottom half.
 
@@ -231,6 +285,7 @@ def analyse():
     withbed = [c for c in season if c["at_bed"] is not None]
     meets = [c for c in withbed if c["at_bed"] >= 100 * REQ_LO]
 
+    secchi = read_secchi()
     prof = read_profiles()
     log(f"  {len(prof):,} casts refittable in halves")
     geom, deep = [], []
@@ -293,6 +348,7 @@ def analyse():
             "kd_shallow_start": round(statistics.median(c["kd"] for c in shallow), 3)
             if shallow else None,
         },
+        "secchi": secchi,
         "per_station": per_station,
         "suppliers": dict(collections.Counter(c["supplier"] for c in season).most_common(6)),
     }
@@ -430,6 +486,53 @@ def render(d):
           "stopped because something was in the water or because water is red-"
           "absorbing and the sensor started shallow. That is `Z8` again, one layer "
           "below where `Z8` states it.\n")
+    sc = d.get("secchi")
+    if sc:
+        a("## The other optical record measures the seabed when the water is shallow\n")
+        a("Kd is not the only transparency number Denmark holds. There is also "
+          f"Secchi depth — a white disc lowered until it disappears — {sc['n_secchi']:,} "
+          f"readings, {sc['n_paired']:,} of them paired with a bottom depth, "
+          f"{sc['years'][0]}–{sc['years'][1]}. It has one hard limit: **a disc cannot "
+          "be seen deeper than the bottom.** Where the water is shallower than the "
+          "water is clear, the number recorded is the depth of the seabed.\n")
+        a("ODA is straightforward about this and publishes the flag — "
+          "`SigtTilBund`, sight-to-bottom — which is the only reason any of this "
+          f"can be checked. It is set on {sc['flag'].get('True', 0):,} of "
+          f"{sc['n_secchi']:,} readings.\n")
+        a("| bottom depth | readings | median Secchi | disc reached the bed |")
+        a("|---|---:|---:|---:|")
+        for b in sc["bands"]:
+            hi = "200 m" if b["to"] >= 200 else f"{b['to']} m"
+            a(f"| {b['from']}–{hi} | {b['n']:,} | {b['median_secchi']} m | "
+              f"**{b['at_bed_pct']}%** |")
+        a("")
+        a("So in water under five metres, better than a third of the readings are "
+          "measurements of bathymetry wearing the units of clarity. Below ten "
+          "metres it essentially stops happening. The censoring is not an error — "
+          "it is what the instrument does — but it is **one-sided**: it can only "
+          "make the water look less clear than it is, never more, and only in the "
+          "shallows.\n")
+        a("**And the censored share is not constant, which is the part that "
+          "matters for any series built from it.**\n")
+        a("| period | readings | disc reached the bed | in water under 5 m |")
+        a("|---|---:|---:|---:|")
+        for e in sc["eras"]:
+            sh = "—" if e["shallow_at_bed_pct"] is None else f"{e['shallow_at_bed_pct']}%"
+            a(f"| {e['from']}–{e['to']} | {e['n']:,} | {e['at_bed_pct']}% | {sh} |")
+        a("")
+        a("A time-varying censored fraction is a time-varying bias, so a Secchi "
+          "trend computed across these eras is partly a trend in how often the "
+          "instrument hit the ground. **Why it varies is not settled here.** "
+          "Cleaner water would raise it, because a disc that can be seen further "
+          "reaches the bed more often; so would a shift of effort toward shallower "
+          "stations; so would a change in field practice. Those are not separable "
+          "from this table, and the direction of the resulting bias is "
+          "uncomfortable: a genuine improvement in clarity partly hides itself, "
+          "because the readings that would show it are the ones that get capped.\n")
+        a("The same caution as the Kd section, arrived at from the other side. "
+          "Neither of Denmark's two transparency records is a clean measurement of "
+          "the water alone — one depends on where the sensor started, the other on "
+          "how deep the sea is underneath it.\n")
     a("## What this does and does not settle\n")
     a("It settles the arithmetic, which was never in doubt, and it puts a number on "
       "the thing the Kd indicator is a proxy for. What it cannot settle is *why* the "

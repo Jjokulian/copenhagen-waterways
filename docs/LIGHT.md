@@ -42,7 +42,7 @@ The second row is the check that matters, and it is the one nobody runs. If a tr
 
 ## And does the light actually reach the bed?
 
-Where the bottom depth under the ship is also recorded (30,806 casts), the share where the seabed receives at least 11% of surface light is **12%**.
+Where the bottom depth under the ship is also recorded (39,094 casts), the share where the seabed receives at least 11% of surface light is **12%**.
 
 ## Station by station
 
@@ -94,6 +94,35 @@ The something else is that a PAR sensor counts photons across the whole band wit
 Splitting the growth-season casts on where they started: 26,662 began above 2 m and give a median Kd of 0.35 and a median depth reaching 11% of 6.31 m; 7,360 began below 2 m and give 0.27 and 8.18 m. Neither is the true number. They are two answers from one record, separated by a choice nobody documents making.
 
 The measurement that would separate the two explanations — spectral attenuation rather than one broadband coefficient — is not made anywhere in the Danish programme. A single number cannot say whether the light stopped because something was in the water or because water is red-absorbing and the sensor started shallow. That is `Z8` again, one layer below where `Z8` states it.
+
+## The other optical record measures the seabed when the water is shallow
+
+Kd is not the only transparency number Denmark holds. There is also Secchi depth — a white disc lowered until it disappears — 144,208 readings, 96,708 of them paired with a bottom depth, 1980–2026. It has one hard limit: **a disc cannot be seen deeper than the bottom.** Where the water is shallower than the water is clear, the number recorded is the depth of the seabed.
+
+ODA is straightforward about this and publishes the flag — `SigtTilBund`, sight-to-bottom — which is the only reason any of this can be checked. It is set on 26,380 of 144,208 readings.
+
+| bottom depth | readings | median Secchi | disc reached the bed |
+|---|---:|---:|---:|
+| 0–5 m | 23,160 | 2.0 m | **36.9%** |
+| 5–10 m | 20,392 | 3.9 m | **10.0%** |
+| 10–20 m | 31,981 | 6.0 m | **0.8%** |
+| 20–40 m | 17,454 | 6.5 m | **0.2%** |
+| 40–200 m | 3,714 | 8.0 m | **0.0%** |
+
+So in water under five metres, better than a third of the readings are measurements of bathymetry wearing the units of clarity. Below ten metres it essentially stops happening. The censoring is not an error — it is what the instrument does — but it is **one-sided**: it can only make the water look less clear than it is, never more, and only in the shallows.
+
+**And the censored share is not constant, which is the part that matters for any series built from it.**
+
+| period | readings | disc reached the bed | in water under 5 m |
+|---|---:|---:|---:|
+| 1980–1994 | 16,460 | 16.6% | 39.3% |
+| 1995–2004 | 24,094 | 9.2% | 29.6% |
+| 2005–2014 | 27,599 | 7.3% | 28.0% |
+| 2015–2026 | 28,555 | 13.6% | 47.2% |
+
+A time-varying censored fraction is a time-varying bias, so a Secchi trend computed across these eras is partly a trend in how often the instrument hit the ground. **Why it varies is not settled here.** Cleaner water would raise it, because a disc that can be seen further reaches the bed more often; so would a shift of effort toward shallower stations; so would a change in field practice. Those are not separable from this table, and the direction of the resulting bias is uncomfortable: a genuine improvement in clarity partly hides itself, because the readings that would show it are the ones that get capped.
+
+The same caution as the Kd section, arrived at from the other side. Neither of Denmark's two transparency records is a clean measurement of the water alone — one depends on where the sensor started, the other on how deep the sea is underneath it.
 
 ## What this does and does not settle
 
