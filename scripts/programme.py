@@ -1069,6 +1069,47 @@ def main():
       "off. Where the structural life has already gone, that assumption is doing a lot "
       "of unexamined work — a bay with no filter feeders, no eelgrass and a loose bed "
       "does not return to 1960 because the load returns to 1960.\n")
+    a("### Why putting life back is not cosmetic\n")
+    a("The obvious case for extractive aquaculture is a mass balance: mussels and "
+      "seaweed take nitrogen up, you harvest them, the nitrogen leaves. True, and the "
+      "weaker half of the argument. It treats a living bay as a filter, and predicts a "
+      "benefit strictly proportional to the area farmed.\n")
+    a("The stronger case is about **who is limited**. Liebig's law says growth is set "
+      "by whichever necessary thing is scarcest — and the number of ways an organism "
+      "can be stopped is the number of things it requires. Large, slow, structured "
+      "life needs a particular substrate, particular partners, particular light, "
+      "particular chemistry, a particular season, and years of quiet in which to "
+      "mature. An opportunist needs carbon, some nutrient, and water.\n")
+    a("So the competition is asymmetric, and not because one is fitter. **The "
+      "low-requirement organism wins by being harder to stop.** Whatever goes wrong, "
+      "it is more likely to have gone wrong for the demanding species than for the "
+      "undemanding one, which is why every kind of damage ends in the same kind of "
+      "community.\n")
+    a("Which means a standing meadow or mussel bed is not a *symptom* of a healthy "
+      "bay. It is a **cause** of one. It draws the surplus down, shades the water, "
+      "filters the plankton, oxygenates and binds the sediment, and shelters the "
+      "grazers that crop what is left. It manufactures scarcity for its competitor — "
+      "it imposes Liebig limitation on the opportunists, which have almost none of "
+      "their own.\n")
+    a("And that is the same fact read backwards. Once the structural life is gone, "
+      "nothing imposes the limitation any more, the surplus stays available, and the "
+      "fast forms keep it. The state holds itself up, which is exactly why the load "
+      "coming off does not bring the bay back.\n")
+    a("> **The two arguments make different predictions, and the difference is "
+      "testable.** Mass balance is linear in area: half the farm removes half the "
+      "nitrogen. Imposed limitation is not — below some threshold of cover nothing "
+      "changes, and above it the state flips and holds. If restoration turns out to be "
+      "linear in area, aquaculture is a filter and should be costed as one. If it is "
+      "threshold-shaped, it is a state change, and a small intervention in the right "
+      "place is worth more than a large one spread thin.\n")
+    a("*The honesty here.* This is well established in shallow lakes, where the "
+      "clear-water plant-dominated state and the turbid algae-dominated state are "
+      "documented alternative stable states with exactly this mechanism behind them. "
+      "The coastal marine analogue is argued from the same ecology and is much less "
+      "firmly demonstrated. It is a mechanism with good foundations, not a measured "
+      "Danish result, and the experiment that would settle it — put it back where "
+      "conditions are said to be adequate, and see whether it holds — is `X10` in "
+      "[EXPERIMENTS.md](#EXPERIMENTS.md).\n")
     for t in [
         "**Extractive aquaculture.** Mussels and macroalgae remove nitrogen as biomass "
         "and are harvested rather than left to decay. At the loads computed for this "

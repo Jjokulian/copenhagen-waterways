@@ -243,7 +243,9 @@ function showTip(el) {
   }
   if (el.tagName === "A") {
     const go = document.createElement("u");
-    go.textContent = "click to read more →";
+    // The tooltip itself is click-through (pointer-events:none) so it cannot get
+    // in the way of the text. The link is the underlined word, so say that.
+    go.textContent = "→ click the word itself for a fuller article";
     tipEl.append(go);
   }
   placeTip(el);

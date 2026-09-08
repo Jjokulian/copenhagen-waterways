@@ -108,24 +108,39 @@ AVENUES = [
 #
 # term -> (what it means, why it is called that)
 TERMS = {
+    'aerobe': (
+        'An organism that needs oxygen to live. Most animals, and many bacteria.',
+        'Greek aer (air) plus bios (life). Its opposite is an anaerobe.'),
     'AIS': (
         'Automatic identification system - the transponder ships broadcast for collision avoidance, which incidentally records where everything went.',
         'Designed for safety, useful as an activity archive.'),
+    'Alcian blue': (
+        'A dye that stains the sticky sugar-based gel algae secrete, which is otherwise transparent. It is the only reason anybody knows the gel is there.',
+        'Without it, transparent exopolymer particles are invisible - which is why they went unnoticed until the 1990s.'),
     'Allee': (
         'Below a certain population density, reproduction fails - mates are not found, spawning does not coincide, group defences stop working. The decline then feeds itself.',
         'Warder Clyde Allee, 1930s. The counterintuitive half of population ecology: rarity itself can be the cause of further rarity.'),
+    'allelopathy': (
+        'One plant chemically suppressing another. Some macrophytes release compounds that inhibit the algae competing with them.',
+        'Greek allelon (of each other) plus pathos (suffering).'),
     'ammonium': (
         'The simplest form of dissolved nitrogen, the form in sewage and in decaying material. Bacteria oxidise it to nitrate, consuming oxygen; in alkaline water it converts to ammonia, which is acutely toxic.',
         'From ammonia, ultimately from the temple of Amun in Egypt, near which the salt was collected.'),
+    'anaerobic': (
+        'Without oxygen - either an environment with none, or an organism that lives without it. Anaerobic decay produces different, often toxic, products.',
+        'Greek an- (without) plus aer. Anaerobiosis is the state; anaerobes are the organisms.'),
     'anammox': (
-        'Bacteria combining ammonium and nitrite directly into nitrogen gas without oxygen. Another route by which nitrogen leaves a system permanently.',
-        'Anaerobic ammonium oxidation, contracted. Only discovered in the 1990s.'),
+        'Bacteria combining ammonium and nitrite directly into nitrogen gas without needing oxygen. Another route by which nitrogen leaves permanently.',
+        'Contraction of anaerobic ammonium oxidation. Only discovered in the 1990s.'),
+    'Andosol': (
+        'A soil formed on volcanic ash. It fixes phosphate more strongly than any other soil type - fertiliser can disappear from availability almost entirely.',
+        'From Japanese an (dark) and do (soil).'),
     'anoxia': (
         'No oxygen at all, as opposed to too little.',
         'Greek an- (without). The step past hypoxia, and chemically a different world - sulphate reduction takes over.'),
     'archaea': (
-        'A third domain of life alongside bacteria and eukaryotes. Superficially like bacteria, biochemically very different, and responsible for much of the methane and ammonia cycling.',
-        'Greek archaios, ancient - they were thought to be the older lineage.'),
+        'A third domain of life alongside bacteria and eukaryotes - superficially bacteria-like, biochemically very different, and responsible for much methane and ammonia cycling.',
+        'Greek archaios, ancient.'),
     'Arenosol': (
         'A sandy soil: little clay, little organic matter, holds almost no water or nutrients, leaches heavily.',
         'Latin arena, sand - the same word as the sand-floored arenas of Rome.'),
@@ -144,9 +159,18 @@ TERMS = {
     'benthos': (
         'Everything living on or in the seabed, taken together.',
         'Greek benthos, the depths.'),
+    'bicarbonate': (
+        "The dissolved form most of the ocean's carbon takes. Plants can use it for photosynthesis, and it buffers the water against pH change.",
+        "The carbonate system's middle state, between dissolved CO2 and carbonate ion."),
     'biocrust': (
         'A living skin of cyanobacteria, lichens and mosses binding a desert soil surface. Break it and the sand mobilises.',
         'Biological soil crust. Its marine counterpart is microphytobenthos.'),
+    'biogenic': (
+        'Made by living things. Biogenic structure means reefs, beds and burrows built by organisms rather than by geology.',
+        'Greek bios (life) plus genes (born of).'),
+    'biomagnification': (
+        'A substance becoming more concentrated at each step up the food chain, because predators accumulate everything their prey had. Mercury and some organics do this; most metals do not.',
+        'Distinct from bioaccumulation, which is build-up within one organism over its life.'),
     'bioturbation': (
         'The churning of sediment by animals burrowing, feeding and irrigating their tunnels. It mixes oxygen down into the bed.',
         'Bio- plus the same turba: life doing the stirring.'),
@@ -159,12 +183,21 @@ TERMS = {
     'brackish': (
         'Water between fresh and fully marine. The Danish straits are brackish, and few species tolerate it, so the communities there are unusually species-poor.',
         'From Dutch brak, salty.'),
+    'bundfauna': (
+        "Danish for seabed animals - the standard term for the soft-bottom fauna survey that is Denmark's main biological measure of seabed condition.",
+        'Bund is bottom. It is what the ODA topic of that name contains.'),
+    'carbonic anhydrase': (
+        'The zinc-containing enzyme that lets an organism convert bicarbonate into usable carbon dioxide. Without zinc, photosynthesis is throttled however much carbon is around.',
+        'Anhydrase: it removes water from carbonic acid.'),
     'CDOM': (
         'Coloured dissolved organic matter - the brown, tea-like tint that dissolved plant material gives water. It absorbs light, especially blue.',
         'Its rise across northern waters is called browning, and it is driven by land use and hydrology rather than nutrients.'),
     'Charney': (
         "A feedback where losing vegetation raises the ground's reflectivity, which weakens the rising air that makes rain, which costs more vegetation.",
         'Jule Charney proposed it for the Sahel in 1975. One of the first climate feedbacks anyone wrote down.'),
+    'chitin': (
+        'The tough material of fungal cell walls and of crustacean and insect shells. After cellulose it is the most abundant biological polymer, and relatively few organisms can digest it.',
+        'Greek chiton, a tunic.'),
     'chlorophyll': (
         'The green pigment that captures light for photosynthesis. Measuring it is the standard way to estimate how much algae is in the water - it is a proxy for biomass, not for health.',
         'Greek chloros (pale green) plus phyllon (leaf).'),
@@ -186,6 +219,9 @@ TERMS = {
     'denitrification': (
         'Bacteria converting nitrate to nitrogen gas, which leaves the water permanently. The only process that actually removes nitrogen from a system.',
         'Undoing nitrification. It needs the nitrate that nitrification makes, so stopping one stops the other.'),
+    'denitrifying': (
+        'Converting nitrate to nitrogen gas, which removes it from the water permanently. The only process that actually gets rid of nitrogen rather than moving it.',
+        'Un-doing nitrification. It requires low oxygen and available carbon.'),
     'detritivore': (
         'An animal that eats dead organic material rather than living prey or plants.',
         'Latin detritus (worn away) plus vorare (to devour).'),
@@ -193,11 +229,14 @@ TERMS = {
         'A single-celled alga that builds itself a rigid glass box out of silica. They need dissolved silicon to grow at all, they are the preferred food of most marine grazers, and they sink fast when they die.',
         'Greek diatomos, cut in two - the shell comes in two halves that fit like a petri dish. The name describes the box, not the organism.'),
     'dinoflagellate': (
-        'A flagellate with two tails and often armour plating. Several species make toxins, and some cause red tides.',
+        'A single-celled alga that swims with two tails and often wears armour plating. Several make toxins, and some cause red tides.',
         'Greek dinos, whirling - they spin as they swim.'),
     'eelgrass': (
         'A true flowering plant that lives fully submerged in the sea, forming meadows on soft bottoms. It roots in the sediment, needs light at the bed, and shelters everything else. Danish: alegras.',
         'Named for its long ribbon leaves. Zostera marina is the Danish species.'),
+    'epibenthic': (
+        'Living on the surface of the seabed rather than buried in it.',
+        'Epi- (upon) plus benthos.'),
     'epiphyte': (
         'A plant or alga growing on another plant, using it as a surface rather than feeding on it.',
         'Greek epi- (upon) plus phyton (plant). On eelgrass they shade the leaf they sit on.'),
@@ -207,6 +246,9 @@ TERMS = {
     'erg': (
         'A sand sea - the dune-covered kind of desert, as opposed to stony or salt desert.',
         "Arabic 'irq, a dune field. What makes it hostile is that the surface moves, not that it is dry."),
+    'eutrophic': (
+        'Over-fed: a water body receiving more nutrient than it can process.',
+        'Greek eu- (well) plus trophe (nourishment) - literally well-nourished, which is why the word sounds like praise and means the opposite.'),
     'eutrophication': (
         'Over-feeding of a water body: so much nutrient that production outruns what the system can process.',
         'Greek eu- (well) plus trophe (nourishment). Literally well-nourished, which is why the word sounds positive and means the opposite.'),
@@ -216,9 +258,12 @@ TERMS = {
     'exopolymer': (
         'Sticky long-chain sugars secreted outside the cell. It binds sediment, forms marine gel, and is what makes water feel slippery.',
         'Exo- (outside) plus polymer. Marine biologists count it as TEP.'),
-    'fedtemøg': (
+    'fedtemog': (
         'Danish, roughly fat-muck: the greasy, foul organic material that accumulates in the water and along the shore. Not a scientific term, and not measured by anything.',
         'Fedt is fat, mog is muck or dung. A word from people who swim, not from a monitoring programme.'),
+    'Feltmåling': (
+        'Danish for field measurement - the ODA category holding instrument profiles taken in the water: CTD casts, light attenuation, oxygen.',
+        'Felt (field) plus måling (measurement).'),
     'Ferralsol': (
         'A deeply weathered tropical soil dominated by iron and aluminium oxides, which lock phosphate up so tightly that fertiliser vanishes from availability within weeks.',
         'Ferrum (iron) plus aluminium: named for what is left after everything else has weathered away.'),
@@ -237,9 +282,21 @@ TERMS = {
     'grab': (
         'A sampling device dropped to the seabed that bites out a fixed area of sediment and brings it up. One grab is one sample, and it is how nearly all seabed fauna data is collected.',
         'It grabs. The fixed area is what makes counts comparable.'),
+    'Hedley fractionation': (
+        'A sequence of chemical extractions that separates soil phosphorus into pools by how easily it can be released - from immediately available to permanently locked away.',
+        'The standard soil-science method, and the reason soil scientists never quote total phosphorus alone.'),
+    'holobiont': (
+        'An organism considered together with all the microbes living in and on it, as one functioning unit - because for many purposes that is what it actually is.',
+        'Greek holos (whole) plus bios. A word that exists because the older picture of an organism turned out to be incomplete.'),
     'humus': (
         'The dark, stable remains of decayed organic matter in soil, after everything easily eaten has gone.',
         'Latin humus, ground or earth - the same root as human and humble.'),
+    'hydrogeology': (
+        'The study of how water moves through rock and soil underground. Nitrogen retention is a hydrogeological quantity as much as a biological one.',
+        'Water plus geology.'),
+    'hydrophobic': (
+        'Water-repelling. Such substances leave the water and gather at surfaces - which is why they concentrate in the microlayer and in fatty tissue.',
+        'Greek hydor (water) plus phobos (fear).'),
     'hypoxia': (
         'Not enough oxygen. Conventionally below 4 mg per litre in marine work, with 2 mg/l as severe.',
         'Greek hypo- (under) plus oxys, the root in oxygen.'),
@@ -249,56 +306,95 @@ TERMS = {
     'iltsvind': (
         'Danish for oxygen depletion - literally oxygen-dwindling. The word used in Danish public debate for what happens when the seabed suffocates.',
         'Ilt is Danish for oxygen, coined by H.C. Orsted from ild, fire.'),
+    'immobilisation': (
+        'The opposite of mineralisation: microbes taking dissolved nutrient out of the water or soil to build their own bodies. High-carbon, low-nitrogen material causes it.',
+        'The nutrient is not destroyed, just made unavailable while it sits inside a bacterium.'),
     'in situ': (
         'In place - an experiment or measurement made where the thing actually lives, rather than in a laboratory.',
         'Latin, literally in position.'),
+    'indsatsbehov': (
+        'Danish for the required effort - the calculated size of the reduction a water body needs to reach its target. The central number of the whole nitrogen policy.',
+        'Indsats (effort, intervention) plus behov (need).'),
     'infauna': (
         'Animals living inside the sediment rather than on top of it - worms, clams, the things a grab sample catches.',
         'Latin in- plus fauna. The ones you have to dig for.'),
+    'isotherm': (
+        "A curve showing how much of a substance a material will hold at each concentration, measured at one temperature. The standard way to describe a soil's capacity to hold phosphate.",
+        'Greek isos (equal) plus therme (heat) - the temperature is held constant.'),
     'Kd': (
         'The light attenuation coefficient: how fast light dies away with depth. Higher Kd means darker at the bottom.',
         'One broadband number standing in for a whole spectrum, which is why its cause cannot be read off it.'),
+    'klapplads': (
+        'Danish for a licensed site where dredged material is dumped at sea. There are 114 of them.',
+        'Klappe, to tip or dump; plads, place.'),
     'labile': (
         'Easily and quickly broken down. Sugars and fresh algal material are labile.',
         'Latin labilis, liable to slip or fall. Its opposite here is recalcitrant.'),
     'Labyrinthula': (
         'The slime-mould-like organism that causes eelgrass wasting disease. It destroyed most Atlantic eelgrass in the 1930s and is still present.',
         'Named for the labyrinth of tracks its cells glide along.'),
+    'labyrinthulid': (
+        'A group of marine organisms that glide along self-made slime tracks and decompose organic matter - and include the one that causes eelgrass wasting disease. Neither fungi nor animals nor plants.',
+        'Named for the labyrinth of tracks their cells move along. Barely studied, and almost certainly under-appreciated.'),
     'Leptosol': (
         'A very shallow soil, under about 25 cm to rock. Almost no capacity to buffer anything.',
         'Greek leptos, thin.'),
     'Liebig': (
         'The law of the minimum: growth is set by whichever necessary thing is scarcest, not by the total of everything supplied. Ten nutrients in surplus and one missing gives you no growth.',
         'Justus von Liebig, the 19th-century chemist who argued it for crops. The name carries none of the meaning, which is why it is worth spelling out.'),
+    'lignin': (
+        'The rigid material that makes wood woody. It is the hardest common biological molecule to break down, and mainly fungi do it.',
+        'Latin lignum, wood. Nitrogen enrichment suppresses the enzymes that degrade it, which is why it accumulates.'),
     'lucinid': (
         'A family of clams that host sulphide-oxidising bacteria in their gills. In seagrass beds they keep the root zone habitable.',
         'The three-way partnership of plant, clam and bacterium was only described in 2012.'),
+    'Lysprocent': (
+        'Danish for light percentage - the share of surface light still present at a given depth, already computed in the ODA record. Eelgrass needs roughly 11 to 14 percent.',
+        'Lys (light) plus procent. It is the number the eelgrass requirement is written in.'),
     'macroalgae': (
         'Seaweed - algae large enough to see, attached to rock or shell rather than drifting.',
         'Macro, large, as against the microscopic plankton.'),
+    'macrofauna': (
+        'The animals big enough to be caught on a one-millimetre sieve - worms, clams, crustaceans. What a seabed sample is counted as.',
+        'Macro, large. Below them are meiofauna, below those, microbes.'),
     'meiofauna': (
-        'The very small animals between sand grains - nematodes, tiny crustaceans - too big to be microbes, too small to be caught by ordinary sieves.',
+        'The very small animals between sand grains - nematodes and tiny crustaceans. Too big to be microbes, too small for the sieves used on macrofauna.',
         'Greek meion, smaller.'),
     'mesocosm': (
         'An experimental container big enough to hold a working piece of an ecosystem, but small enough to control - a tank, an enclosure, a bag in the sea.',
         'Greek mesos (middle) plus kosmos (world): between a test tube and the real thing.'),
+    'mesozooplankton': (
+        'The middle size class of drifting animals, chiefly copepods - between a fifth of a millimetre and two centimetres. The link between algae and fish.',
+        'Greek mesos, middle.'),
     'microlayer': (
         'The top few micrometres of the sea, which concentrate surfactants, fats and hydrophobic pollutants far above their concentration in the bulk water.',
         "It is the layer a swimmer's skin actually passes through."),
+    'micronutrient': (
+        'An element needed in tiny amounts but needed absolutely - iron, zinc, copper, cobalt, molybdenum, selenium. Absence is as fatal as absence of nitrogen.',
+        'As against macronutrients: carbon, nitrogen, phosphorus, and the rest needed in bulk.'),
     'microphytobenthos': (
         'Microscopic algae living on the sediment surface. Their secreted polymer glues the grains together and raises the current needed to erode the bed.',
         'Micro (small) plus phyton (plant) plus benthos (the depths): the tiny plants of the bottom.'),
+    'mineralisation': (
+        'The breakdown of organic material back into simple inorganic compounds - releasing the nutrients that were locked in tissue.',
+        'Turning organic matter back into minerals. Remineralisation is the same word for material that was mineral to start with.'),
     'mor': (
         'Raw, matted, unincorporated humus sitting on top of the soil because the fauna that would mix it in are absent or excluded.',
         'Also from Danish, meaning mould in the other sense. The terrestrial version of an organic mat on the seabed.'),
     'mull': (
         'Humus that soil animals have worked into the mineral soil - crumbly, fast-cycling, well mixed.',
         'From Danish and German muld, mould or loose earth. Its degraded counterpart is mor.'),
+    'mycobiome': (
+        'The fungal community of a place or a host, as distinct from its bacteria. Marine sediments are turning out to hold far more fungal diversity than anyone expected.',
+        'Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.'),
     'mycorrhiza': (
         'The partnership between plant roots and fungi that feeds the plant phosphorus in exchange for carbon. Heavy fertilising suppresses it.',
         'Greek mykes (fungus) plus rhiza (root).'),
+    'målbelastning': (
+        'Danish for target load - how much nitrogen a water body may receive and still meet its environmental objective.',
+        'Mål (target) plus belastning (load).'),
     'necromass': (
-        'Dead biomass. In soil, the dead microbes themselves are a large share of the lasting organic matter.',
+        'Dead biomass. In soil, dead microbes themselves make up a large share of the lasting organic matter.',
         'Greek nekros, corpse.'),
     'nematode': (
         'A roundworm. In sediment they are microscopic, enormously abundant, and among the last animals left when conditions get bad.',
@@ -309,24 +405,36 @@ TERMS = {
     'nitrification': (
         'Bacteria oxidising ammonium to nitrate. It consumes oxygen - 4.57 grams per gram of nitrogen - without anything growing.',
         'From nitre, saltpetre, the old name for nitrate salts.'),
+    'nitrogenase': (
+        'The enzyme that lets some bacteria pull nitrogen straight out of the air. It requires molybdenum or vanadium, and it is destroyed by oxygen.',
+        'The -ase ending marks an enzyme throughout biochemistry.'),
     'NOVANA': (
         "Denmark's national programme for monitoring water and nature. Almost every Danish environmental number ultimately comes from it.",
         'Danish acronym: the national programme for monitoring of the aquatic environment and nature.'),
+    'occlusion': (
+        'Sorbed material becoming physically enclosed inside a mineral, so it can no longer be released at all. The one-way end of sorption.',
+        'Latin occludere, to shut up or close off.'),
     'oligotrophic': (
         'Nutrient-poor, low production, usually clear water.',
         'Greek oligos, few. The other end of the same scale as eutrophic.'),
     'oomycete': (
-        'A fungus-like group including Pythium and Phytophthora - water moulds that swim as spores and attack stressed roots.',
-        'Greek oon (egg) plus mykes (fungus). Not actually fungi, despite living like them.'),
+        'A fungus-like group including Pythium and Phytophthora - water moulds that swim as spores and attack stressed roots. They are not actually fungi despite living like them.',
+        'Greek oon (egg) plus mykes (fungus).'),
     'optode': (
         "An oxygen sensor that measures how a dye's glow is quenched by oxygen. It replaced chemical titration, and the two do not always agree.",
         'Optical electrode.'),
+    'overløb': (
+        'Danish for a sewer overflow - untreated sewage discharged directly when rain overwhelms a combined system.',
+        'Over plus løb (run). Denmark has 19,665 registered outfall points.'),
     'PE': (
         "Population equivalent - the standard unit of sewage load, one person's daily contribution. Industrial discharges are expressed in how many people they equal.",
         'Lets a dairy and a town be added together.'),
     'pelagic': (
         'Of the open water column, as opposed to the bed.',
-        'Greek pelagos, the open sea.'),
+        'Greek pelagos, the open sea. Its counterpart is benthic.'),
+    'peroxidase': (
+        'An enzyme that neutralises reactive oxygen inside a cell. The selenium-dependent version is why selenium is essential.',
+        'It disposes of peroxides, which would otherwise do damage.'),
     'phenology': (
         'The timing of biological events through the year - when things spawn, bloom, migrate - and whether two events that need to coincide still do.',
         'Greek phainein, to appear. The study of when things show up.'),
@@ -336,12 +444,27 @@ TERMS = {
     'photoinhibition': (
         'Too much light damaging the photosynthetic machinery. The ceiling of the light window.',
         'Light doing the inhibiting - the reason clearest is not always best.'),
+    'Phytophthora': (
+        'A genus of water mould that destroys plant roots. The potato blight that caused the Irish famine was one of these.',
+        'Greek: literally the plant-destroyer.'),
     'phytoplankton': (
         'The drifting microscopic plants of the water column - diatoms, flagellates, cyanobacteria. Everything else in the sea ultimately eats them or eats something that did.',
         'Greek phyton (plant) plus planktos (wandering, drifting).'),
+    'phytotoxin': (
+        'A substance that poisons plants. Waterlogged ground makes several of its own - organic acids, ethylene, sulphide, and reduced iron and manganese.',
+        'Greek phyton (plant) plus toxikon (poison).'),
+    'picomolar': (
+        'A concentration of one trillionth of a mole per litre. Vitamins and some trace metals matter to marine life at concentrations this small.',
+        'The prefix pico means a trillionth.'),
+    'picoplankton': (
+        'The smallest plankton, under two thousandths of a millimetre. Too small for most grazers to catch, so what eats them is mostly viruses.',
+        'Pico, a trillionth - here just meaning very small indeed.'),
+    'plankton': (
+        'Anything living in the water column that drifts rather than swims against the current, from bacteria to jellyfish.',
+        'Greek planktos, wandering. It describes a way of life, not a group of relatives.'),
     'polychaete': (
-        'A marine bristle worm. Many build tubes that stabilise sediment; others burrow and mix it. A large part of what a seabed sample contains.',
-        'Greek poly (many) plus chaite (hair) - the bristles along each segment.'),
+        'A marine bristle worm. Many build tubes that stabilise sediment; others burrow and mix it. A large share of what a seabed sample contains.',
+        'Greek poly (many) plus chaite (hair).'),
     'porewater': (
         'The water in the spaces between sediment grains. Its chemistry is often wholly different from the water above, and it is what a buried animal actually lives in.',
         'The pores of the sediment.'),
@@ -357,6 +480,12 @@ TERMS = {
     'pycnocline': (
         'The depth at which density changes sharply, separating lighter water above from denser water below. It acts as a lid: below it, oxygen is not replaced.',
         'Greek pyknos (dense) plus klinein (to slope).'),
+    'Pythium': (
+        'A water mould that rots seedlings and roots, thriving where soil or sediment is waterlogged and low in oxygen.',
+        'The classic damping-off disease of a wet greenhouse.'),
+    'Q10': (
+        'How much faster a biological process runs for every ten degrees of warming. Around two for most decay, meaning respiration roughly doubles.',
+        'A rule of thumb old enough to have no better name.'),
     'radial oxygen loss': (
         'Rooted plants leaking oxygen from their roots into the sediment, which keeps sulphide away from the root. It is powered by photosynthesis, so shade shuts it off.',
         'Radial because it moves outward from the root, not along it.'),
@@ -369,24 +498,48 @@ TERMS = {
     'redox': (
         'Whether the chemistry of a place is oxidising or reducing - broadly, whether oxygen is available. It governs which reactions run and which metals stay put.',
         'Contraction of reduction-oxidation.'),
+    'reductase': (
+        'An enzyme that reduces a compound - adds electrons to it. Nitrate reductase is the one that lets an organism use nitrate.',
+        'Also an enzyme, named for what it does.'),
     'remineralisation': (
         'Decay: organic matter broken back down to its dissolved inorganic constituents, releasing the nutrients and consuming oxygen.',
         'Turning organic material back into minerals.'),
     'residual estimator': (
-        'A quantity computed as what is left after subtracting everything you did model from a measured total. It inherits every error in every part, sign-flipped.',
-        'The number is never measured. It is defined as the remainder, which is why it can come out negative.'),
+        'A quantity computed as whatever is left after subtracting everything you did model from a measured total. It is never itself measured, and it absorbs every error in every other term.',
+        'Which is why such a figure can come out negative, and why a negative one is the method reporting its own error bars.'),
     'resuspension': (
         'Sediment lifted back into the water by waves, currents or gear, after having settled.',
         'It returns buried material, and its chemistry, to circulation.'),
+    'retention': (
+        'The share of nitrogen applied on land that never reaches the sea, because it is taken up, denitrified or stored on the way. The largest single number in the whole account, and one its own producers say cannot be measured directly.',
+        'Latin retinere, to hold back. It is a modelled quantity presented as a map.'),
+    'rhizosphere': (
+        'The thin zone of soil or sediment immediately around a root, chemically and biologically quite unlike the bulk material a few millimetres away.',
+        'Greek rhiza (root) plus sphaira. Where the plant and the microbial world actually meet.'),
+    'råstof': (
+        'Danish for raw material - here, licensed extraction of sand and gravel from the seabed. 305 areas are designated.',
+        'Rå (raw) plus stof (substance).'),
     'salinity': (
         'How much salt is dissolved in water. Open ocean is about 35 grams per kilogram; the Baltic is a fraction of that.',
         'The gradient through Danish waters is one of the sharpest anywhere.'),
     'salting-out': (
         'Substances becoming less soluble as salinity rises, so they come out of solution into films, droplets and aggregates.',
         'Adding salt pushes things out of the water. It is why fats behave differently in the sea than in a lake.'),
+    'saprotroph': (
+        'An organism that feeds on dead material, breaking it down. Most fungi are saprotrophs, and they handle the tough fractions bacteria leave behind.',
+        'Greek sapros (rotten) plus trophe (nourishment).'),
+    'Secchi': (
+        'The oldest instrument in oceanography: a white disc lowered until it disappears. The depth at which it vanishes is a measure of water clarity, and the record goes back over a century.',
+        'Angelo Secchi, papal astronomer, 1865. Still in use because it is simple and comparable.'),
     'sediment sickness': (
         'Ground in which a plant will not grow although the chemistry looks adequate, because of accumulated pathogens, lost symbionts, or autotoxic residues.',
         'Horticulture calls the same thing replant disease and tests it by swapping the soil.'),
+    'sedimentation': (
+        'Particles settling out of the water onto the bed.',
+        'The opposite process to resuspension, and the two together decide what the bed is made of.'),
+    'Sedimentkemi': (
+        'Danish for sediment chemistry - the ODA category holding what has been measured in the bed itself, as opposed to the water above it.',
+        'The category this project repeatedly finds nearly empty of the analytes that matter.'),
     'Shelford': (
         'The law of tolerance: every requirement has a ceiling as well as a floor. Too much of a needed thing kills as surely as too little.',
         'Victor Shelford, an American ecologist, 1913. Liebig gives you the floor; Shelford gives you the roof.'),
@@ -396,6 +549,12 @@ TERMS = {
     'sill': (
         'An underwater ridge across the mouth of a basin. Water below the sill depth cannot flow out or be replaced from the side, so it stagnates.',
         'The same word as a door sill - a threshold you have to get over.'),
+    'sorption': (
+        'A substance sticking to a solid surface, covering both adsorption onto it and absorption into it. Phosphate sorbs to iron oxides, which is how soil holds it.',
+        'The umbrella term when you do not want to commit to which of the two is happening.'),
+    'speciation': (
+        'In chemistry, which chemical form an element is actually in - dissolved, bound to a particle, complexed with an organic molecule. Availability depends on it, and total concentration does not show it.',
+        'Nothing to do with the biological sense of new species forming.'),
     'stoichiometry': (
         'The fixed proportions in which substances combine, and so how much of one thing a given amount of another can produce or consume.',
         'Greek stoicheion (element) plus metron (measure).'),
@@ -408,6 +567,9 @@ TERMS = {
     'sulphide': (
         'The chemical made when bacteria breathe sulphate instead of oxygen. It smells of rotten eggs, is toxic to almost everything, and consumes oxygen the moment it meets any.',
         'Seawater carries so much sulphate that once oxygen runs out, sulphide production is effectively unlimited.'),
+    'sulphidic': (
+        'Containing free sulphide. A sulphidic sediment is one where sulphate reduction has taken over and the bed has turned toxic.',
+        'The condition that follows anoxia in salt water, and does not follow it in fresh.'),
     'suppressive': (
         'A soil whose microbial community actively prevents disease. The property is transferable: mix a little into a diseased soil and it becomes suppressive too.',
         'Suppressive of the pathogen, not of the plant.'),
@@ -417,6 +579,9 @@ TERMS = {
     'swept-area': (
         'How much of the seabed fishing gear has dragged across, expressed as a ratio: 2 means the area was covered twice over in a year.',
         'The standard measure of trawling pressure. Published annually, which cannot show how often a given patch is hit.'),
+    'symbiosis': (
+        'Two species living in close, lasting partnership. It ranges from both benefiting to one exploiting the other, and much of it was invisible to science until molecular methods arrived.',
+        'Greek syn (together) plus bios (life).'),
     'TEP': (
         'Transparent exopolymer particles - sticky invisible gel produced by algae and bacteria, which aggregates into marine snow and, at scale, mucilage.',
         'Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.'),
@@ -426,15 +591,27 @@ TERMS = {
     'transect': (
         'A line along which measurements are taken at intervals - here, usually running from the shore into deeper water to find how deep plants still grow.',
         'Latin trans (across) plus secare (to cut).'),
+    'trophic': (
+        'To do with feeding - who eats whom, and at what level of the food web.',
+        'Greek trophe, nourishment. The same root as eutrophic and auxotroph.'),
     'trophic cascade': (
         'A change at one level of the food web propagating down through the levels beneath it - removing a predator releases its prey, which suppresses the level below.',
         'Greek trophe again, nourishment. Cascade because it falls through the levels.'),
     'turbid': (
         'Cloudy - water with enough suspended material in it to block light.',
         'From Latin turba, a crowd or commotion: stirred-up. The same root gives turbine, a thing spun, and disturb. Cloudiness named after the stirring that causes it.'),
+    'Vandkemi': (
+        'Danish for water chemistry - the ODA category holding nutrient and contaminant concentrations from water samples.',
+        'Straightforwardly water plus chemistry.'),
+    'vandområde': (
+        'Danish for water body - the administrative unit Danish water policy is written in. There are 119 marine ones, and this project argues at length that the unit is not a natural one.',
+        'Vand (water) plus område (area).'),
     'viral shunt': (
         'Viruses bursting bacteria and algae so that their carbon returns to dissolved organic matter instead of being eaten by something larger.',
         'A shunt in the electrical sense: the current is diverted before it reaches the load.'),
+    'virioplankton': (
+        'The viruses drifting in seawater - roughly ten million in every millilitre, and the most numerous biological entities in the ocean.',
+        'Virus plus plankton. Their existence at this scale was only established in 1989.'),
     'VMS': (
         'Vessel monitoring system - satellite position reports that fishing vessels are required to transmit, used to map where gear was actually worked.',
         'The record exists; the fine-resolution version is not public.'),
@@ -2256,6 +2433,27 @@ def render(rows):
       "not five causes. **Counting entries therefore says nothing about weight**, "
       "and a group with fourteen entries is not thereby more important than one "
       "with four.\n")
+    a("**A mechanism has to be conceivable before it can be a hypothesis, and "
+      "conceivability has a history.** The clearest precedent is mycorrhizal "
+      "symbiosis. Something like nine in ten land plants feed through a fungal "
+      "partner; the arrangement is four hundred million years old; and for most "
+      "plants it is the primary organ of nutrient acquisition. It entered the "
+      "scientific picture properly within living memory. Every soil textbook before "
+      "that was wrong about how plants eat, and nobody knew they were wrong — the "
+      "mechanism was not rejected, it was **unimagined**, and no amount of care in "
+      "enumerating the known causes would have produced it.\\n")
+    a("There is good reason to think the marine version of that gap is open right "
+      "now, and that it sits in the same place: fungi, oomycetes and "
+      "labyrinthulids. Molecular surveys keep finding far more fungal diversity in "
+      "marine sediment than anyone expected, the group that causes eelgrass wasting "
+      "disease is one of these, and none of them appears in Danish marine "
+      "monitoring at all (`R11`, `F12`, `T8`). The lucinid clam symbiosis of `T2` "
+      "makes the same point on a smaller scale: it was described in 2012, and "
+      "before that its loss was not a hypothesis anyone could have held.\\n")
+    a("So the honest reading of this register's size is not *we have thought of a "
+      "lot*. It is that the entries are drawn from what the literature has so far "
+      "been able to imagine, and the history of that literature is a history of "
+      "whole functional domains arriving late.\\n")
     a("**Some causes may not separate at all.** Several of these plausibly have no "
       "independent existence and occur only in combination — the light-and-sulphide "
       "interaction of `T1`, the mixture effects of `U1`. Listing them as separable "
@@ -2439,6 +2637,23 @@ def render(rows):
       "bacteria that make it for them. Carbonate "
       "depletion removes calcifiers and no one else. Light starvation removes what "
       "is rooted at depth. Each is a filter with its own specific shape.\n")
+    a("**And the number of ways an organism can be stopped is the number of things "
+      "it requires.** That is Liebig's law read as a counting argument. Large, slow, "
+      "structured life needs a particular substrate, particular partners, particular "
+      "light, particular chemistry, a particular season, and years of quiet in which "
+      "to mature — a dozen windows, any one of which closing is fatal. An "
+      "opportunist needs carbon, some nutrient, and water. Whatever goes wrong, it "
+      "is more likely to have gone wrong for the demanding species, and the "
+      "asymmetry is not about fitness: **the low-requirement organism wins by being "
+      "harder to stop.**\\n")
+    a("Which has a consequence that reverses the usual reading. A standing meadow or "
+      "mussel bed is not a *symptom* of a healthy system — it is a **cause** of one. "
+      "It draws the surplus down, shades the water, filters the plankton, oxygenates "
+      "and binds the sediment, and shelters the grazers. It manufactures scarcity "
+      "for its competitor: it imposes Liebig limitation on organisms that have "
+      "almost none of their own. Read backwards, that is the whole of the hysteresis "
+      "in `H1` — once the structural life is gone nothing imposes the limitation, "
+      "the surplus stays available, and the fast forms keep it.\\n")
     a("But every filter selects in the same direction, because what survives a "
       "filter is whatever had the fewest requirements to begin with — fast, small, "
       "short-lived, unselective, needing no structure and no partner and no "
