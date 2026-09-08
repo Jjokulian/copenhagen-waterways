@@ -18,3 +18,4 @@ __pycache__/
 *.pyc
 data/raw/osm/
 data/raw/weather/
+data/raw/oda/*.csv
