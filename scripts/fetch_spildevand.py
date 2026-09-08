@@ -66,9 +66,31 @@ def parse(raw):
 
 def numeric(features, key):
     """The overflow layers store numbers as numbers; the treatment-plant layers
-    store the same kinds of quantity as strings, and one field name arrives with
-    its encoding already broken ('Ind Vandm\ufffd'). Coerce rather than skip, or
-    four of the six layers silently summarise to nothing."""
+    store the same quantities as strings. Coerce rather than skip, or four of the
+    six layers silently summarise to nothing.
+
+    One field name is also damaged, and the damage is instructive rather than
+    ours. The file is valid UTF-8 throughout - nothing fails to decode. But two
+    neighbouring fields end differently:
+
+        Ud Vandmae   ... 6d c3 a6       a correct two-byte UTF-8 ae-ligature
+        Ind Vandm?   ... 6d ef bf bd    U+FFFD, the replacement character itself
+
+    Every field name in the file is cut at ten bytes, which is the dBASE and
+    shapefile field-name limit, so the data passed through a shapefile on its way
+    here. "Ud Vandm" is eight bytes, so bytes nine and ten hold a complete
+    ae-ligature and it survives. "Ind Vandm" is nine bytes, so byte ten is a lone
+    0xC3 - the first half of the character - which is not valid alone, was
+    replaced with U+FFFD upstream, and was then written back out as perfectly
+    legal UTF-8. The original letter is unrecoverable from this file.
+
+    Worth recording because it inverts the usual lesson. In ISO-8859-1 the Danish
+    letters are one byte each (ae 0xE6, oe 0xF8, aa 0xE5), so a ten-byte
+    truncation could never split one. This failure exists *because* UTF-8 spends
+    two bytes where the older 8-bit encoding spent one. Both are legacy hazards in
+    Danish public data and they are not the same hazard: ODA's CSV exports are
+    ISO-8859-1 and must be decoded as such, while this file is UTF-8 carrying
+    damage done before publication."""
     out = []
     for f in features:
         v = f["properties"].get(key)
