@@ -4,111 +4,51 @@
 
 ## Part one — the problem
 
-### It is not a number. It is a shore.
+### The four words people actually use
 
-The thing that is wrong is not that a percentage is misattributed. It is that there are stretches of Danish coast where, from late summer into autumn, the water goes turbid and the shore goes putrid, and where the structural life that used to be there — eelgrass, weed with holdfasts, the animals that lived in both — has been replaced by mush.
+This page takes its problem statement from the public, not from the monitoring programme, because the monitoring programme measures what it can and the public names what it minds. Across the recorded public argument ([POLITICS.md](#POLITICS.md)) the damage is named with four words, and it is worth noticing that **no one in that record — on any side — says the water is fine.**
 
-Everything downstream of that observation is instrumentation. The observation does not depend on the instrument, and it is worth saying plainly that people who live on such a coast know it is happening long before any monitoring programme is designed to notice.
+| what people call it | what they mean by it | what Denmark measures | where the word and the measurement come apart |
+|---|---|---|---|
+| **iltsvind** | the sea is suffocating | dissolved oxygen below 4 mg/l **in stratified bottom water** | it needs depth and a sealed layer. Køge Bugt is shallow and mixes, so it **cannot register iltsvind however bad it gets** ([CURRENTS.md](#CURRENTS.md)) |
+| **fedtemøg** | greasy, foul water and a shore you do not want to walk on | nothing | there is no instrument. It is not a scientific term and no programme carries it |
+| **fiskedød** | dead fish, visibly, in numbers | no open register | the events happen and are recorded nowhere the public can read |
+| **livet i fjordene** | the structural life is gone | eelgrass depth limit, some bottom fauna | measured — through a light proxy that censors itself in shallow water ([LIGHT.md](#LIGHT.md)) |
 
-### Four reasons the current framing cannot fix it
+**Three of the four have no usable measurement, and the fourth cannot be recorded in the bay next to Copenhagen.** That is not an argument against anyone. It is a statement of what is and is not known about the things people mind, and everything on this page is shaped by it.
 
-1. **One unit, one culprit.** Nitrogen is the only quantity in the account, so it is the only quantity policy can act on. Fat has no nitrogen in it. Toxicants have no nitrogen in them. Neither can be represented, so neither gets addressed. See [CAUSATION.md](#CAUSATION.md).
-2. **A linear instrument on a self-amplifying system.** An apportionment assumes the outcome is a weighted sum of the inputs. Oxygen depletion feeds itself: the dying releases the nutrients that drive the next round. Halving an input in such a system does not halve the outcome, and the record since 1990 shows exactly that.
-3. **What is not measured cannot be acted on.** Benthic fauna is sampled 1 March – 31 May, so the autumn die-off is never observed. Fedtemøg has no national monitoring at all. Overflow mass is a modelled volume times an assumed concentration, quality-controlled against that same concentration. A programme cannot be held to account for what its own instruments are blind to.
-4. **The countable source becomes the blamed source.** Every term that would shift attribution away from something easy to count — atmospheric deposition, sediment regeneration, submarine groundwater, legacy load, temperature, the state of the receiving bay — is precisely a term with no row in the table. That may be an accident of what is measurable. It is still what determines who gets a policy aimed at them.
+### Where it is, which is not only the shore
 
-### Who bears it is not who decides
+The recorded phrase is *fjorde og indre farvande* — fjords and inner waters — and the damage people describe sits in at least four different kinds of place, which do not share a mechanism and will not share a fix:
 
-This is the part that is genuinely political rather than technical.
+- **The shore itself**, where the material lands, smells and is walked past.
+- **The fjords**, enclosed, shallow, slow to exchange, and the places the public argument is mostly about.
+- **The inner waters** — belts, sounds and bays, including the ones like Køge Bugt that retain rather than flush.
+- **The open sea around Denmark**, which people also call dead, and which has no shore attached to it at all.
 
-Of Køge Bugt's combined-sewer basin storage, **92% sits in København, Hvidovre and Tårnby**, along with 47 of the bay's 85 combined overflows. Vallensbæk, Ishøj and Solrød have **zero** combined-sewer overflows — they separated their systems and physically cannot discharge sewage into the bay in a storm. Greve has two.
+[AREAS.md](#AREAS.md) is the reason this matters here: a fix that is true of Denmark is true of nowhere in it. Copenhagen appears throughout Part Two not because the problem is Copenhagen's, but because it is the one place where the flow paths, the constructed drainage and the receiving water are mapped well enough to say *which street, which volume, which site.* Everywhere else gets the same avenues with the specifics missing.
 
-The bay opens to the southeast, so the discharge enters at the northern end and the whole shoreline is downstream of it. **The municipality that built the storage is not the municipality that smells it.**
+### What sits underneath those four words
 
-And the bay does not flush: **73 days** to move water 20 km, against 3.4 for Aarhus Bugt ([CURRENTS.md](#CURRENTS.md)). What arrives, stays.
+The register keeps a separate list, arrived at from the other direction — not what people call the damage but what is actually lost when it happens. The two lists are the same subject in two vocabularies, and the join is the point of this section.
 
-There is no authority whose jurisdiction is the bay. There are ten municipalities, several utilities, a state agency that maps oxygen in stratified bottom water, and a shoreline that belongs to whoever is standing on it. The cost is externalised across an administrative boundary, and the boundary is the reason nobody is answerable.
+| | what is lost | which public word points at it |
+|---|---|---|
+| `T1` | the large, slow, long-lived organisms, and the structure the rest of the community lived inside | *livet i fjordene* |
+| `T2` | the ability to come back — the loss now maintains itself | none. **Nobody has a word for this, and it is the one that decides whether any of the rest is reversible** |
+| `T3` | water fit and pleasant to be in | *fedtemøg* |
+| `T4` | fish, shellfish, and the living made from them | *fiskedød* |
+| `T5` | the shore as a place to be | *fedtemøg*, again |
 
-### How a thing like this becomes public
+Note what falls out of the table. **`iltsvind` is not on it** — oxygen deficit is a mechanism, not a loss, and it appears here only because it is the thing that got measured and so became the public name for everything. And `T2` has no public word at all: there is no everyday term for a system that has stopped being able to recover, which is precisely the state that determines whether spending money on any of Part Two is worth doing.
 
-Nothing above will matter if nobody is angry about it, so it is worth looking at how a chemical story has actually broken through before.
+### What this page can and cannot honestly claim
 
-**Dark Waters** (2019, Todd Haynes, Mark Ruffalo) is the one most people have seen — Rob Bilott's twenty-year case against DuPont over PFOA in Parkersburg, West Virginia. *(Not to be confused with* Dark Water*, singular, which is a horror film.)* Behind it sits a documented record that is far stronger than the dramatisation:
+Because three of the four public words have no measurement, **the solutions below cannot currently verify their own success.** Rainwater rivers, a wetland outlet, treatment and source control can each be built, costed and monitored for the things that *are* instrumented — volumes, loads, concentrations. None of that would tell anyone whether the shore stopped smelling.
 
-| | |
-|---|---|
-| C8 Health Project, 2005–06 | **69,030 participants**, 11 epidemiological studies — one of the largest exposure cohorts ever assembled, and it exists only because a lawsuit forced it |
-| C8 Science Panel, 2012 | "probable link" findings for high cholesterol, thyroid disease, kidney and testicular cancer, pregnancy-induced hypertension and ulcerative colitis |
-| Bilott, *Exposure* (2019) | the primary account |
+That gap is fixable and cheap, and it is the argument for `X19` and `X20` in [EXPERIMENTS.md](#EXPERIMENTS.md): a panel that reports on a schedule including the days nothing happens, and a structured record from the people who have watched the same ground for forty years. Without an outcome record the whole of Part Two is an argument from mechanism, and it should be read as one.
 
-*And the caveat this project owes.* "Probable link" was a **legal** definition — *more likely than not* — agreed as part of a settlement, not a scientific standard. Some of those links have been contested since. That does not undo the finding; it means the finding is an estimator with a known provenance, which is exactly how everything else on this site is treated.
-
-The settlements in the industry section below descend directly from that case. So the film is not decoration here — it is the origin of a demand curve this document later relies on.
-
-#### But the Danish version is better, and it is 100 km from Køge Bugt
-
-In 2021, PFOS from firefighting foam used for years at the **Korsør** fire training ground reached a field by the most ordinary route imaginable: surface water from the site ran to a ditch, and the ditch to a lake. Cattle belonging to the Korsør Kogræsserforening grazed there. The members ate the beef.
-
-**118 people were found with elevated PFOS in their blood**, among the highest levels measured in Denmark. One family was affected across four generations. 145 sites nationally were subsequently flagged for investigation, and residents have taken the municipality to court.
-
-It is the same story as Parkersburg — a fire-training ground, cattle, a small community, blood tests — and it happened here, in Danish, within living memory, by the exact pathway this programme is about: **untreated surface water, led to a ditch.**
-
-**But it does not carry the same weight, and it is worth being honest about why.** Korsør is 118 blood tests. That is a number, and a number about elevated long-term risk, and nobody has ever been moved by a percentile. Parkersburg had something else: over 150 animals dead one at a time, blackened teeth, tumours and deformities, a creek running white with foam, and a discharge pipe pouring green liquid out of a DuPont landfill — **filmed, over years, by the farmer it was happening to.** Wilbur Tennant made the evidence himself because nobody else would. It is visible, individual and unarguable in a way a cohort study can never be.
-
-*One restraint, because this project does not get to be sloppy about mechanism.* The documented signs in those cattle are weight loss, tumours, blackened teeth and deformities. Reading the behavioural changes as neurological damage goes beyond what the record establishes, and PFOA is not principally characterised as a neurotoxicant. The horror in that footage is real without needing that claim.
-
-#### Denmark already has the image, and its name is worse
-
-So the gap is not that Denmark lacks a dystopian picture of what this does. It has one, it is photographed every year, and Danish already has a word for it.
-
-> **Liglagen.** *Corpse shroud.*
-
-Under severe oxygen depletion, white filamentous sulphur bacteria — *Beggiatoa* — spread across the seabed in milky sheets. Aarhus University's own outreach material calls them *havbundens liglagen*, the seabed's corpse shroud, and publishes an exercise for schoolchildren on how to grow one. They appear in late summer. Anything that could swim has left; anything that could not is underneath them.
-
-And the mat is not a symptom sitting on top of the mechanism — **it is the mechanism, made visible.** The bacteria are using oxygen out of the water to convert hydrogen sulphide to sulphate. That is the same sulphide oxygen sink computed in [SEABED.md](#SEABED.md), the one that consumes a water column's worth of oxygen with no nitrogen and no algae involved in it. The white sheet is what that reaction looks like from a boat.
-
-A dead cow with black teeth and a seabed wearing a shroud are the same kind of evidence. One of them was filmed by a farmer and shown in cinemas. The other sits in an annual technical notice and a teaching pack.
-
-**That is a distribution problem, not an evidence problem** — and it is the cheapest thing on this entire page to fix.
-
-#### What Tennant actually did, which is the transferable part
-
-A compilation of his footage would land hard, and something close to it exists: *The Devil We Know* (2018) is a documentary rather than a dramatisation and uses the real material. But the reason it works is worth isolating, because it is a **method**, not a subject.
-
-He filmed **one place, repeatedly, over years, himself.** Not a survey, not a cohort, not a sampling design agreed with anybody. The same fields, the same creek, the same animals, until the sequence became an argument that no cross-sectional study could have made and no press release could deny. He was, in effect, a monitoring programme of one — and he ran it because the official one did not cover what was happening to him.
-
-Which is the exact shape of the cheapest item in this project. [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 8 asks for **fixed coastal cameras with a monthly index, year-round** — a longitudinal record of one shore, made continuously, by the people the shore belongs to. Not a documentary crew arriving in a bad week. The same evidentiary logic Tennant stumbled into: *this place, this often, this long.*
-
-And it is already half-built. `viz/log.html` in this repository is a field logger for a phone, offline, using the flood model's own depth classes — written so an observation from a shore can be recorded with the same vocabulary the model uses. What it lacks is not software. It lacks ten years and a camera on a post.
-
-**Tennant's tapes are not available, and the format is.** He proved the format works. Nobody needs his licence to use it.
-
-*One archive that is open.* The **documents** from that litigation were donated to UCSF's Industry Documents Library — free, fully searchable, two PFAS collections spanning 1961 to 2006, sitting alongside the tobacco and opioid archives. The paper record is public; the visual record is not. That asymmetry, and what it would take to close it, is [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 9 — which also notes that *documenting pollution effects* is a project in its own right and does not belong in a repository about Copenhagen's sewers.
-
-##### Where to start, and what is actually free
-
-| | |
-|---|---|
-| **C8 Science Panel reports** — [c8sciencepanel.org](http://www.c8sciencepanel.org/) | Free, and the primary source rather than the dramatisation. The panel published its own findings openly. |
-| **DR's Korsør coverage** | Free, Danish, and the local case. |
-| ***Dark Waters*** (2019) | Was on DRTV; that listing has expired. The free route in Denmark is **Filmstriben** with a library card, subject to your municipality's quota. Otherwise it is rental. |
-| Bilott, *Exposure* (2019) | Library or purchase. |
-
-*A note on where not to link.* There is a copy of the related documentary on the Internet Archive whose filename carries scene-release tags — an unauthorised rip. A project whose entire argument is that provenance matters cannot link to it, and the credibility cost would be larger than the benefit.
-
-*And on Tennant's own footage.* It is the most valuable material in the whole story and it is **not in the commons.** He shot it himself around 1998-99 and carried it to Taft Stettinius & Hollister in cardboard boxes; he died in 2009, having been diagnosed with cancer, before the litigation resolved. A work authored by an individual is protected for the author's life plus seventy years, which puts it under copyright into the 2070s. Filing something as a court exhibit puts it in the record — it does not waive the copyright, and access is not a licence. *(That is a reading of the position, not legal advice.)*
-
-The encouraging part is that both *Dark Waters* and *The Devil We Know* used it, which means a rights holder exists, can be found, and has said yes before. The ask would go to the family, or through the firm where Bilott still practises — and it would be a request to people who chose to make the record public in the first place, which is a different conversation from asking a studio.
-
-**But it is the wrong effort.** Chasing American footage is borrowing salience when Denmark's own image is annual, local, and photographed by a public university. Getting permission for a seabed photograph from Aarhus is an email. Getting permission for a dead farmer's tapes from an estate and two distributors is a project.
-
-*And on making it commons.* Worth being realistic: Focus Features, part of Universal, holds distribution on a 2019 studio feature and will not place it in the public domain. **The achievable ask is a screening licence, not a commons release** — and it is a normal transaction that distributors grant routinely for non-commercial community and educational screenings. Participant, which produced the film, wound up in April 2024, and its founder kept the library rather than sell it to a buyer who would not maintain its purpose. A skeleton holding company built around social-impact filmmaking is an unusually receptive audience for a request to screen it in a community that is downstream of an outfall.
-
-The transferable lesson is not that a film should be cited. It is that both stories worked because they were about a person, a place and an animal, and never about a molecule. Which is why Part One of this document starts with a shore and a smell rather than with a percentage — and why [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 8 argues that the cheapest useful thing anyone could fund is a camera pointed at a beach, year-round.
-
-### What we would be asking for, said plainly
-
-Not a lower number. A coast where the structural life comes back — where there is eelgrass to walk past, weed with a holdfast instead of a film, and a November shoreline that does not smell of putrefaction. That is the goal. Nitrogen loading is at most a proxy for it, and a poor one, because a system can hit its nitrogen target and stay dead.
+Two things deliberately not on this page. The public argument itself — who said what, when, and whether it was checkable — is [POLITICS.md](#POLITICS.md), and it is a different object of study. And *how pollution becomes visible to the public at all*, which is a real problem and a genuinely separate project, is [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 9.
 
 ## Part two — the solution
 
@@ -718,6 +658,12 @@ A programme that cannot be refuted is not a programme. Each of these would damag
 - **If retention in Køge Bugt disappears on a 1 km regional model**, the accumulation mechanism loses its main quantitative support.
 
 Four of those five need no new instruments and no new money. That is the position this document is arguing from: not that it is right, but that it has been cheap to check for thirty years and nobody has checked.
+
+## What we would be asking for, said plainly
+
+Not a lower number. A coast, a fjord and an inner sea where the structural life comes back — where there is eelgrass to walk past, weed with a holdfast instead of a film, fish worth catching, and a November shoreline that does not smell of putrefaction. That is the goal, and it is `T1` through `T5` said without the letters.
+
+Nitrogen loading is at most a proxy for it, and a poor one, because a system can hit its nitrogen target and stay dead. So can every other single number on this page. **The measure of success is the four words in Part One, and three of them are not yet measured** — which makes building the outcome record the first item, not the last.
 
 ---
 
