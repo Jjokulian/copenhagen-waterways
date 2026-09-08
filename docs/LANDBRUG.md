@@ -1,5 +1,15 @@
 # Til landbruget: grundlaget for kravet
 
+> ## ⚠ UNDER REVISION — en central påstand på denne side var forkert
+
+> Siden hævdede, at der ikke findes nogen koefficient mellem kvælstof og nogen økologisk effekt. **Det er faktuelt forkert, og påstanden trækkes tilbage.**
+
+> DCE/Aarhus Universitet kører sammen med DHI en modelpakke på **11 mekanistiske modeller, der dækker 107 kystvandområder**, med statistiske sammenhænge fra kvælstofbelastning over total-N til klorofyl, lyssvækkelse (Kd), ålegræssets dybdegrænse og iltsvind — **pr. vandområde**. Grundlaget er vurderet af to internationale ekspertpaneler (Herman et al. 2017 og 2023) og af en second opinion nedsat med Finansministeriet som formand (november 2024).
+
+> Fejlen var at rette en revision af **kildeopgørelsen** — hvis kvælstof det er — mod den **marine modellering** — hvor meget vandområdet kan tåle. Det er to forskellige spørgsmål, og kritikken rammer kun det første.
+
+> Siden omskrives på grundlag af de faktiske dokumenter. Indtil da: læs den med det forbehold. Den præcise kritik, som ekspertpanelet selv rejser, er stærkere end den, der stod her.
+
 *Denne side er skrevet på dansk og henvender sig til landmænd og deres organisationer. Resten af sitet er på engelsk.* *[An English summary follows at the bottom.](#in-english)*
 
 > **Hvad dette er, og hvad det ikke er.** Dette er ikke et partsindlæg for landbruget. Projektet her bruger det meste af sin plads på at tage byens egne udledninger fra hinanden — regnbetingede overløb, spildevandsplanens huller, hvad Københavns skybrudsplan faktisk dækker. Det er *samme* metode anvendt på kvælstoftallet, og resultatet er ubelejligt for flere end landbruget.
