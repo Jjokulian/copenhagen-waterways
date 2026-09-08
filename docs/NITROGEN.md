@@ -324,7 +324,24 @@ DCE's iltsvind is dissolved oxygen below 4 mg/l in bottom water, mapped in strat
 
 Vallensbæk, Ishøj and Solrød have **zero** combined-sewer overflows; Greve has two. The shoreline communities separated their systems and physically cannot discharge sewage into the bay in a storm.
 
-**92% of the bay's basin storage** (80,072 of 87,343 m³) sits in København, Hvidovre and Tårnby, along with 47 of 85 combined overflows. The bay opens southeast, so the discharge enters at the northern end and the whole shoreline is downstream of it. **The municipality that built the storage is not the one that smells it.**
+**92% of the bay's basin storage** (80,072 of 87,343 m³) sits in København, Hvidovre and Tårnby, along with 47 of 85 combined overflows. The bay opens southeast, so the discharge enters at the northern end. **The municipality that built the storage is not the one that smells it.**
+
+### But "downstream" is a claim about water, and it has been tested
+
+An earlier version of this section said the whole shoreline is downstream of the northern discharge. That was inferred from the shape of the bay, and this project has a transport analysis that both supports and qualifies it — which the section never cited. [CURRENTS.md](#CURRENTS.md), on 35,064 hours where the rain record and the current record overlap:
+
+| | southward transport in the southern Sound |
+|---|---|
+| baseline, all hours | **42%** |
+| during overflow-scale rain (134 h) | **23.9%** — 18 points *below* baseline |
+| +6 h after the event | 44.1% |
+| **+12 h after the event** | **59.3%** — 17 points *above* |
+
+So the geometry is right about the plume and wrong about the event. **While the city is overflowing, the water runs north** — heavy Copenhagen rain arrives with cyclonic southwesterlies that drive the Sound northward. Southward transport only exceeds baseline about twelve hours later, by which time the plume is diluted and no longer traceable to an outfall. And [CURRENTS.md](#CURRENTS.md) separately finds that **Køge Bugt does not flush**, so what does arrive stays.
+
+That matters for what this whole section can claim. A load entering a bay that does not flush is a different quantity from a load entering one that does — and the timing means an event-based attribution (this overflow, that shoreline) is not supported, while an accumulated one may be.
+
+The same bay carries the largest release nobody argued about. [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) sets the Øresund fixed link's permitted spill — **up to 370,000 m³** of fines into the water column at the bay's northern entrance, 1995–2000 — against the **498 m³** actually released at Lynetteholm before dumping was stopped. Roughly **seven hundred times**, and the larger one was a permit condition met rather than a controversy. Where that material went has never been computed: the current field used above covers 2022–2026 only, and is about twice too slow in the straits by its own calibration.
 
 ### Treatment capacity discharging to the bay
 
