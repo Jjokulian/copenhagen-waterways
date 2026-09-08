@@ -2382,6 +2382,44 @@ H = [
      "UV filter concentrations at bathing beaches across the season, against "
      "visitor numbers.",
      "Marine UV filter monitoring. None in Denmark."),
+    ("J6", "J", "Fragmentation as a source term, and the inventory that omits it",
+     ["O2", "O3", "O7"],
+     "Size and chemistry are independent gates. An intact polymer object is "
+     "unavailable to enzymes and also unavailable to tissue — it can block or "
+     "entangle, but it cannot accumulate inside a cell, because it cannot get in. "
+     "Grinding it to micro and nano scale opens the first gate and leaves the "
+     "second exactly as shut: uptake becomes possible, degradability is unchanged, "
+     "because fragmentation is physical and the bonds are untouched. So the "
+     "hazardous window is *created* by weathering rather than present at "
+     "manufacture, and material becomes more available to organisms as it breaks "
+     "down.\n\nThat makes any process which fragments plastic a source term in its "
+     "own right, separately from the plastic being there. Mechanical recycling's "
+     "core operation is shredding; recycled PET commonly becomes textile fibre, "
+     "which is the most shedding-prone form the material can take and which sheds "
+     "through the wastewater system for the whole service life of the garment, into "
+     "sludge, and in Denmark onto farmland. Tyre wear is fragmentation performed "
+     "continuously by ordinary use.\n\n**And remediation runs the opposite way to "
+     "fragmentation.** Macroplastic can be netted; microplastic above roughly ten "
+     "micrometres can be filtered; nanoplastic cannot be removed from open water or "
+     "sediment by any known method, because at that size it stops behaving like a "
+     "particle that can be strained. Fragmentation is therefore a one-way ratchet "
+     "across an irreversibility threshold, and the processes performing it include "
+     "ones intended as remedies.",
+     "A source inventory built from consumption and littering will systematically "
+     "understate exposure, because it counts material entering the environment and "
+     "not the surface area or particle count it becomes. Sites that fragment "
+     "deliberately — recycling plants, shredders — should read as point sources "
+     "against a diffuse background, which is a testable spatial claim.",
+     "Particle counts and size distributions in wastewater and receiving water "
+     "upstream and downstream of a recycling facility, against a matched reach "
+     "with none. Size distribution matters more than mass: the same mass at "
+     "smaller size is a different exposure.",
+     "Not measured in Denmark for this pathway. A subagent reports that "
+     "Miljøstyrelsen's national microplastic source inventory is dominated by tyre "
+     "wear and contains no recycling or shredding category at all — **unverified "
+     "here, and it should be checked against the source before it is relied on**, "
+     "because an absent category in an inventory is exactly the kind of claim that "
+     "is easy to assert and hard to prove."),
     ("J5", "J", "Microplastic and its biofilm", ["O2", "O3"],
      "Particles that carry a biofilm and sorb hydrophobic organics, concentrating "
      "in the same surface film.",
