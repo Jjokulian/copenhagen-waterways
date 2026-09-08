@@ -255,6 +255,13 @@ rather than by the code:
   notes against another's. Masking them by exact palette colour, by saturation, and by
   near-black and near-white took the best pair's NCC from 0.43 to 0.64. Discarding
   photograph is cheap; admitting overlay is not.
+- **Then exclude everything flat.** Auditing what survived the colour masking found
+  regions of perfect uniformity still in it — 7.1% of indre-by's remaining area, almost
+  all of it dark harbour water. Some are overlay fills that missed the palette test and
+  some are genuinely photographed but featureless: open water, a flat roof, a bare field.
+  The distinction does not matter, because neither carries positional information and
+  both inflate the correlation's denominator. A local-range test catches both without
+  needing to know which is which.
 - **Solve all seven at once.** Sheet-by-sheet placement cannot notice that the frame
   itself is loose. A global bundle adjustment — every overlapping pair as one equation,
   the resident control points as the absolute anchors — produced **11 usable pairs, pair
@@ -273,6 +280,10 @@ Vest 1.0σ and 1.7σ. Bispebjerg's moved furthest — and Bispebjerg is precisel
 whose two points sat at almost the same height, so its northing was never constrained.
 The adjustment corrected the axis that was known to be weak, which is the behaviour that
 makes it believable.
+
+**And it converges.** Re-running the alignment after applying the solution returns
+residual shifts of −1 to +1 m on every sheet, against the 100–360 m corrections it
+originally applied. A registration that did not converge would keep asking to move.
 
 **An independent check, not used in the fitting.** Some of the painted depth lands on
 open water, which is an error — water standing on water. Before the adjustment that was
