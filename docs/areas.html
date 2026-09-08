@@ -96,6 +96,12 @@ h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3
 .plain{font-size:12px;line-height:1.5;color:var(--ink2);
   background:var(--sea);border-radius:5px;padding:8px 9px;margin:6px 0 0}
 .plain b{color:var(--ink)}
+
+.sitefoot{margin:34px 0 0;padding:16px 30px 26px;border-top:1px solid var(--line);
+  font-size:12.5px;line-height:1.6;color:var(--ink3)}
+.sitefoot strong{color:var(--ink2);font-weight:600}
+.sitefoot a{color:var(--accent)}
+.sitefoot p{margin:0 0 5px;max-width:78ch}
 </style>
 
 <header>
@@ -409,3 +415,17 @@ async function explore(id){
   draw();
 }
 </script>
+<footer class="sitefoot">
+  <p><strong>Have data access this project doesn't?</strong> Most of what cannot be
+  answered here is gated rather than hard — PULS overflow volumes, the credential-gated
+  ODA topics, an instrument identity, a sampling time.
+  <a href="IF_YOU_HAVE_THE_DATA.md">If you have data access we don't</a> lists eight
+  blocked items with exactly what unblocks each, and how to clone and run this yourself.
+  Three of them need no credentials at all.</p>
+  <p>Source and full history:
+  <a href="https://github.com/Jjokulian/copenhagen-waterways">copenhagen-waterways</a> ·
+  method: <a href="https://github.com/Jjokulian/statistical-methods">statistical-methods</a>.
+  Errors this project found in itself are left visible in the pages and the git history
+  rather than edited out.</p>
+</footer>
+

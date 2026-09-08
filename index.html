@@ -251,6 +251,12 @@ code.gloss{
   .cardtitle{font-weight:600}
   .card .req{font-family:Archivo,sans-serif;font-size:12.5px;color:var(--muted)}
   .card .rel{font-style:italic}
+
+.sitefoot{margin:34px 0 0;padding:16px 30px 26px;border-top:1px solid var(--line);
+  font-size:12.5px;line-height:1.6;color:var(--ink3)}
+.sitefoot strong{color:var(--ink2);font-weight:600}
+.sitefoot a{color:var(--accent)}
+.sitefoot p{margin:0 0 5px;max-width:78ch}
 </style>
 </head>
 <body>
@@ -279,6 +285,20 @@ code.gloss{
   </main>
 </div>
 
+<footer class="sitefoot">
+  <p><strong>Have data access this project doesn't?</strong> Most of what cannot be
+  answered here is gated rather than hard — PULS overflow volumes, the credential-gated
+  ODA topics, an instrument identity, a sampling time.
+  <a href="#IF_YOU_HAVE_THE_DATA.md">If you have data access we don't</a> lists eight
+  blocked items with exactly what unblocks each, and how to clone and run this yourself.
+  Three of them need no credentials at all.</p>
+  <p>Source and full history:
+  <a href="https://github.com/Jjokulian/copenhagen-waterways">copenhagen-waterways</a> ·
+  method: <a href="https://github.com/Jjokulian/statistical-methods">statistical-methods</a>.
+  Errors this project found in itself are left visible in the pages and the git history
+  rather than edited out.</p>
+</footer>
+
 <script>
 /* The reports are generated as Markdown by the pipeline, and Markdown is the canonical
    form. GitHub Pages serves a .md file as plain text, so this renders it instead of
@@ -299,6 +319,7 @@ const GROUPS = [
     ["OBSERVING.md",    "What Denmark measures, and where"],
     ["PLAN.md",         "The order of work"],
     ["IF_YOU_HAVE_THE_DATA.md", "If you have data access we don't"],
+    ["AGENT_BRIEF.md",  "Standing brief"],
     ["OXYGEN.md",       "What actually removes the oxygen"],
     ["LIGHT.md",        "Is there enough light at the bed?"],
     ["AREAS.md",        "There is no Denmark"],
