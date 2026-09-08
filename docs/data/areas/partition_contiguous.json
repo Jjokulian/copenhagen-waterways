@@ -1,0 +1,214 @@
+{
+ "_what": "Feature-subspace stability with the derived partitions forced to be spatially contiguous, which is the shape the official water bodies already have.",
+ "_why": "Unconstrained derivations may interleave; water bodies cannot. Comparing them was not like for like, and was unfair to the official partition.",
+ "_reading": "RAW ARI IS NOT READABLE HERE. Contiguity alone makes two partitions agree well above chance, and the adjusted Rand index corrects for chance against arbitrary partitions, not contiguous ones. Read lift_over_contiguous_null: agreement minus what two random connected partitions of the same size distribution reach on the same graph. That is what the measurements know beyond what the map already said.",
+ "_graphs": "knn = k nearest neighbours by distance, national, but crosses land. water = the same with edges crossing the OSM coastline removed, so an edge means reachable in a straight line without touching land; only where the coastline extract reaches. knn_same_area is knn restricted to the water graph's stations, so the two are comparable. The coastline is OSM, not the water body polygons, which would reimport the assumption under test.",
+ "knn_k": 6,
+ "requested_groups": 84,
+ "graphs": {
+  "knn": {
+   "stations": 150,
+   "components": 3,
+   "groups": 84,
+   "contiguous_null_ari": 0.337,
+   "results": [
+    {
+     "features_per_half": 1,
+     "pairs": 12,
+     "agreement_between_halves": 0.339,
+     "lift_over_contiguous_null": 0.002,
+     "agreement_with_official": 0.332,
+     "official_lift": -0.005,
+     "prior_strength": {
+      "mean_agreement": 0.339,
+      "alpha": 8.17,
+      "beta": 15.89,
+      "kappa": 24.06,
+      "worth_per_member": 0.339
+     }
+    },
+    {
+     "features_per_half": 2,
+     "pairs": 12,
+     "agreement_between_halves": 0.498,
+     "lift_over_contiguous_null": 0.161,
+     "agreement_with_official": 0.355,
+     "official_lift": 0.018,
+     "prior_strength": {
+      "mean_agreement": 0.498,
+      "alpha": 11.21,
+      "beta": 11.31,
+      "kappa": 22.52,
+      "worth_per_member": 0.498
+     }
+    },
+    {
+     "features_per_half": 3,
+     "pairs": 12,
+     "agreement_between_halves": 0.614,
+     "lift_over_contiguous_null": 0.277,
+     "agreement_with_official": 0.356,
+     "official_lift": 0.019,
+     "prior_strength": {
+      "mean_agreement": 0.614,
+      "alpha": 20.41,
+      "beta": 12.82,
+      "kappa": 33.23,
+      "worth_per_member": 0.614
+     }
+    },
+    {
+     "features_per_half": 4,
+     "pairs": 12,
+     "agreement_between_halves": 0.692,
+     "lift_over_contiguous_null": 0.355,
+     "agreement_with_official": 0.335,
+     "official_lift": -0.002,
+     "prior_strength": {
+      "mean_agreement": 0.692,
+      "alpha": 25.17,
+      "beta": 11.19,
+      "kappa": 36.36,
+      "worth_per_member": 0.692
+     }
+    }
+   ]
+  },
+  "water": {
+   "stations": 25,
+   "components": 8,
+   "groups": 14,
+   "contiguous_null_ari": 0.048,
+   "results": [
+    {
+     "features_per_half": 1,
+     "pairs": 12,
+     "agreement_between_halves": 0.581,
+     "lift_over_contiguous_null": 0.533,
+     "agreement_with_official": 0.242,
+     "official_lift": 0.194,
+     "prior_strength": {
+      "mean_agreement": 0.581,
+      "alpha": 6.38,
+      "beta": 4.6,
+      "kappa": 10.98,
+      "worth_per_member": 0.581
+     }
+    },
+    {
+     "features_per_half": 2,
+     "pairs": 12,
+     "agreement_between_halves": 0.63,
+     "lift_over_contiguous_null": 0.582,
+     "agreement_with_official": 0.223,
+     "official_lift": 0.175,
+     "prior_strength": {
+      "mean_agreement": 0.63,
+      "alpha": 4.91,
+      "beta": 2.88,
+      "kappa": 7.79,
+      "worth_per_member": 0.63
+     }
+    },
+    {
+     "features_per_half": 3,
+     "pairs": 12,
+     "agreement_between_halves": 0.695,
+     "lift_over_contiguous_null": 0.647,
+     "agreement_with_official": 0.198,
+     "official_lift": 0.15,
+     "prior_strength": {
+      "mean_agreement": 0.695,
+      "alpha": 10.44,
+      "beta": 4.58,
+      "kappa": 15.02,
+      "worth_per_member": 0.695
+     }
+    },
+    {
+     "features_per_half": 4,
+     "pairs": 12,
+     "agreement_between_halves": 0.71,
+     "lift_over_contiguous_null": 0.662,
+     "agreement_with_official": 0.213,
+     "official_lift": 0.165,
+     "prior_strength": {
+      "mean_agreement": 0.71,
+      "alpha": 19.24,
+      "beta": 7.86,
+      "kappa": 27.1,
+      "worth_per_member": 0.71
+     }
+    }
+   ]
+  },
+  "knn_same_area": {
+   "stations": 25,
+   "components": 1,
+   "groups": 14,
+   "contiguous_null_ari": 0.046,
+   "results": [
+    {
+     "features_per_half": 1,
+     "pairs": 12,
+     "agreement_between_halves": 0.4,
+     "lift_over_contiguous_null": 0.354,
+     "agreement_with_official": 0.434,
+     "official_lift": 0.388,
+     "prior_strength": {
+      "mean_agreement": 0.4,
+      "alpha": 1.19,
+      "beta": 1.79,
+      "kappa": 2.98,
+      "worth_per_member": 0.4
+     }
+    },
+    {
+     "features_per_half": 2,
+     "pairs": 12,
+     "agreement_between_halves": 0.487,
+     "lift_over_contiguous_null": 0.441,
+     "agreement_with_official": 0.341,
+     "official_lift": 0.295,
+     "prior_strength": {
+      "mean_agreement": 0.487,
+      "alpha": 3.29,
+      "beta": 3.47,
+      "kappa": 6.76,
+      "worth_per_member": 0.487
+     }
+    },
+    {
+     "features_per_half": 3,
+     "pairs": 12,
+     "agreement_between_halves": 0.593,
+     "lift_over_contiguous_null": 0.547,
+     "agreement_with_official": 0.314,
+     "official_lift": 0.268,
+     "prior_strength": {
+      "mean_agreement": 0.593,
+      "alpha": 10.71,
+      "beta": 7.35,
+      "kappa": 18.05,
+      "worth_per_member": 0.593
+     }
+    },
+    {
+     "features_per_half": 4,
+     "pairs": 12,
+     "agreement_between_halves": 0.615,
+     "lift_over_contiguous_null": 0.569,
+     "agreement_with_official": 0.312,
+     "official_lift": 0.266,
+     "prior_strength": {
+      "mean_agreement": 0.615,
+      "alpha": 6.95,
+      "beta": 4.35,
+      "kappa": 11.3,
+      "worth_per_member": 0.615
+     }
+    }
+   ]
+  }
+ }
+}

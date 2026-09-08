@@ -51,7 +51,7 @@ D = os.path.join(ROOT, "docs", "data", "areas")
 # uninterpretable. Pass a count to match the official one and the derived-vs-derived
 # column becomes the control - if agreement collapses there too, the granularity
 # killed the test rather than the official partition failing it.
-NGROUPS = int(sys.argv[1]) if len(sys.argv) > 1 else 12
+NGROUPS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 12
 MIN_MONTHS = 36
 MIN_SHARED = 12
 MAX_STATIONS = 150
