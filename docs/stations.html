@@ -65,6 +65,12 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
 .rlab{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);
   font-variant-numeric:tabular-nums}
 #load{padding:40px 30px;color:var(--ink3)}
+#strips{padding:2px 18px 0}
+.striprow{display:grid;grid-template-columns:64px 1fr;gap:9px;align-items:center;
+  margin-bottom:5px}
+.sl{font-size:10px;line-height:1.25;color:var(--ink3);text-align:right}
+.striprow canvas{height:34px;border-radius:2px;background:var(--sea)}
+#sea canvas,.striprow:last-child canvas{height:26px}
 </style>
 
 <header>
@@ -88,6 +94,12 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
       <input type="range" id="month" min="0" max="563" value="420">
       <b id="mlab"></b>
     </div>
+    <div id="strips">
+      <div class="striprow"><span class="sl">effort<br>per month</span>
+        <canvas id="tl"></canvas></div>
+      <div class="striprow"><span class="sl">by month<br>of year</span>
+        <canvas id="sea"></canvas></div>
+    </div>
     <div class="bar">
       <span><b id="nrep">0</b> of 1,415 stations reported this month</span>
       <span><b id="pct">0%</b> of the archive's stations</span>
@@ -102,6 +114,14 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
     <div class="ramp" id="ramp"></div>
     <div class="rlab"><span id="lo"></span><span id="hi"></span></div>
     <p class="note" id="depthnote"></p>
+
+    <h3>What the dots show</h3>
+    <select id="mode">
+      <option value="value">The measured value</option>
+      <option value="persist">Persistence — months reported in the last 12</option>
+      <option value="season">Seasonal bias — Rayleigh R and peak month</option>
+    </select>
+    <div class="cls" id="modenote"></div>
 
     <h3>Frame</h3>
     <select id="ext">
@@ -185,6 +205,7 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
 <script>
 const D='data/areas/';
 let META,BIN,VARS,ST,WB=null,LAND=null,byMonth=[],dom=[0,1],playing=0;
+let effort=[],seasonal=[],effMax=1,seaMax=1,SEAS=null;
 // Denmark plus a margin. 17 North Sea transect stations sit outside it and
 // stretch the frame five degrees west, which squashes everything else.
 const EXT={dk:[7.9,54.4,15.5,58.0], all:null};
@@ -225,6 +246,27 @@ function loadVar(i){
   byMonth=Array.from({length:META.months},()=>[]);
   for(let k=0;k<n;k++) byMonth[mo[k]].push([si[k],va[k]]);
   // domain from ORDER STATISTICS, not mean and sd: 5th and 95th percentile
+  effort=byMonth.map(r=>r.length);
+  seasonal=new Array(12).fill(0);
+  effort.forEach((c,i)=>seasonal[i%12]+=c);
+  effMax=Math.max(1,...effort); seaMax=Math.max(1,...seasonal);
+  // Per station, circular statistics on month-of-year: Rayleigh's resultant length R
+  // (0 = observations spread evenly round the year, 1 = all in one calendar month),
+  // the mean direction as a peak month, and Z = N*R^2 for the Rayleigh test of
+  // uniformity. Z > 3 is about p < 0.05.
+  const moy=new Map();
+  byMonth.forEach((rows,k)=>{ const j=k%12;
+    for(const [i] of rows){ let a=moy.get(i); if(!a){a=new Array(12).fill(0);moy.set(i,a);}
+      a[j]++; }});
+  SEAS=new Map();
+  moy.forEach((a,i)=>{ const N=a.reduce((p,q)=>p+q,0);
+    if(N<12) return;
+    let C=0,S=0;
+    for(let j=0;j<12;j++){const th=2*Math.PI*j/12; C+=a[j]*Math.cos(th); S+=a[j]*Math.sin(th);}
+    C/=N; S/=N;
+    const R=Math.hypot(C,S);
+    let pk=Math.atan2(S,C); if(pk<0)pk+=2*Math.PI;
+    SEAS.set(i,{R,pk:Math.round(pk*12/(2*Math.PI))%12,N,Z:N*R*R}); });
   const s=Array.from(va).sort((a,b)=>a-b);
   dom=[s[Math.floor(s.length*0.05)], s[Math.floor(s.length*0.95)]];
   $('lo').textContent=fmt(dom[0])+' '+v.unit;
@@ -279,6 +321,16 @@ function draw(){
       c.beginPath(); c.arc(px(s.lon),py(s.lat),1.1,0,7); c.fill();});
     c.globalAlpha=1;
   }
+  // Persistence: in how many of the trailing 12 months did this station report?
+  // A COUNT, not a moving average - a mean over months would assert the months are
+  // one kind of thing, which is the assumption the rest of this site refuses.
+  const MODE=$('mode').value;
+  let persist=null;
+  if(MODE==='persist'){
+    persist=new Map();
+    for(let k=Math.max(0,mi-11);k<=mi;k++)
+      for(const [i] of byMonth[k]) persist.set(i,(persist.get(i)||0)+1);
+  }
   let nbad=0,nsus=0;
   if($('L_meas').checked){
     c.strokeStyle=g.getPropertyValue('--panel').trim(); c.lineWidth=.7;
@@ -286,9 +338,16 @@ function draw(){
       const bad=v<LIM[0]||v>LIM[1]; if(bad)nbad++;
       const sus=!bad&&(v<LIM[2]||v>LIM[3]); if(sus)nsus++;
       if(bad&&!$('L_bad').checked)return;
-      const t=(v-dom[0])/(dom[1]-dom[0]);
+      let t, rad=3.4;
+      if(MODE==='persist'){ t=((persist.get(i)||1)-1)/11; rad=2.2+2.6*Math.max(0,Math.min(1,t)); }
+      else if(MODE==='season'){ const q=SEAS.get(i);
+        if(!q){ c.globalAlpha=.18; t=0; rad=2.2; }
+        else { t=1-q.R; rad=2.2+3.0*q.R; }   // dark+large = strongly seasonal
+      }
+      else t=(v-dom[0])/(dom[1]-dom[0]);
       c.fillStyle=col(Math.max(0,Math.min(1,t)));
-      c.beginPath(); c.arc(px(s.lon),py(s.lat),3.4,0,7); c.fill(); c.stroke();
+      c.beginPath(); c.arc(px(s.lon),py(s.lat),rad,0,7); c.fill(); c.stroke();
+      c.globalAlpha=1;
       if(bad||sus){ c.strokeStyle=g.getPropertyValue(bad?'--warn':'--model').trim();
         c.lineWidth=bad?1.6:1;
         c.beginPath(); c.arc(px(s.lon),py(s.lat),5.6,0,7); c.stroke();
@@ -298,6 +357,37 @@ function draw(){
     .filter(Boolean).join(', ');
   const y=META.year0+Math.floor(mi/12), mo=mi%12+1;
   $('mlab').textContent=y+'-'+String(mo).padStart(2,'0');
+  strip('tl',effort,effMax,mi,mi);
+  strip('sea',seasonal,seaMax,mi,mi%12);
+  const peak=seasonal.indexOf(seaMax), lowI=seasonal.indexOf(Math.min(...seasonal));
+  const MN='Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+  const md=$('mode').value;
+  $('modenote').innerHTML = md==='persist'
+    ? 'Colour and size = how many of the trailing 12 months this station reported. '
+      +'A count, not a moving average. Small pale dots are stations seen once.'
+    : md==='season'
+    ? 'Rayleigh resultant length R on month-of-year. <strong>Large dark dots are '
+      +'strongly seasonal (R near 1, nearly all observations in one calendar month); '
+      +'small pale dots are spread evenly round the year.</strong> Across all '
+      +'variables, 757 of 1,011 stations with 24+ observations are significantly '
+      +'non-uniform (Rayleigh Z&gt;3, p&lt;0.05), and <strong>91% of those peak in '
+      +'June&ndash;September</strong> &mdash; August 300, July 198, September 104, '
+      +'June 85. The distribution is bimodal: 271 stations at R&lt;0.1 against 170 at '
+      +'R&gt;0.8. Faint dots have under 12 records of this variable.'
+      +'<br><br><strong>And the two networks are not exchangeable.</strong> Restricted '
+      +'to June&ndash;September, so season cannot explain it, the 293 summer-peaked '
+      +'stations read a median 6.27&nbsp;mg/l against 7.90 at the 481 year-round ones '
+      +'&mdash; 1.57 lower, Cohen&rsquo;s d 0.66, hypoxia at 2.7&times; the rate. They '
+      +'are sited where the oxygen is worse, which is sensible design and makes the '
+      +'pooled archive a mixture.'
+      +'<br><br><strong>The mixture changes over time.</strong> The summer network was '
+      +'32% of June&ndash;September observations in 2010&ndash;14 and 12% in '
+      +'2015&ndash;19. The pooled median dips to 7.42 in the first block and rebounds '
+      +'to 7.77 in the second; the year-round stations alone go 7.82 to 7.90. '
+      +'<em>Much of the wobble in the pooled record is which network was reporting.</em>'
+    : 'Colour = the value. Sampling effort is in the strips below the map: '
+      +MN[peak]+' carries '+(seaMax/Math.min(...seasonal)).toFixed(1)+'x the '
+      +'observations of '+MN[lowI]+'.';
   $('nrep').textContent=rows.length.toLocaleString();
   $('pct').textContent=(100*rows.length/ST.length).toFixed(1)+'%';
   const e=EXT[$('ext').value];
@@ -306,6 +396,28 @@ function draw(){
     ? off+' stations sit outside this frame — a North Sea transect. Switch to see them, '
       +'at the cost of squashing everything else.'
     : 'Every station is in frame. Denmark is small in it.';
+}
+
+function strip(id,vals,max,mi,hi){
+  const cv=$(id), r=devicePixelRatio||1, w=cv.clientWidth||600, h=cv.clientHeight||34;
+  cv.width=w*r; cv.height=h*r;
+  const c=cv.getContext('2d'); c.setTransform(r,0,0,r,0,0);
+  const g=getComputedStyle(document.documentElement);
+  c.fillStyle=g.getPropertyValue('--sea').trim(); c.fillRect(0,0,w,h);
+  const bw=w/vals.length;
+  vals.forEach((v,i)=>{
+    const bh=Math.max(v?1:0,(h-2)*v/max);
+    c.fillStyle=(i===hi)?g.getPropertyValue('--warn').trim()
+                        :g.getPropertyValue('--v3').trim();
+    c.globalAlpha=(i===hi)?1:.75;
+    c.fillRect(i*bw,h-bh-1,Math.max(bw-.4,.8),bh);});
+  c.globalAlpha=1;
+  c.fillStyle=g.getPropertyValue('--ink3').trim(); c.font='9px ui-sans-serif';
+  if(id==='tl'){ c.textAlign='center';
+    for(let y=1980;y<=2025;y+=10){const i=(y-META.year0)*12;
+      if(i>=0&&i<vals.length) c.fillText(y,i*bw,h-2);} }
+  else { c.textAlign='center';
+    'JFMAMJJASOND'.split('').forEach((m,i)=>c.fillText(m,(i+.5)*bw,h-2)); }
 }
 
 function polys(c,g){
@@ -349,7 +461,9 @@ function idw(c,w,h,rows,g){
 }
 
 function wire(){
-  $('ext').onchange=draw;
+  $('ext').onchange=draw; $('mode').onchange=draw;
+  $('tl').onclick=e=>{const b=e.target.getBoundingClientRect();
+    $('month').value=Math.round((e.clientX-b.left)/b.width*563); draw();};
   ['L_meas','L_gaps','L_wb','L_idw','L_bad','L_land'].forEach(id=>$(id).onchange=()=>{
     if(id==='L_idw'){$('idwctl').hidden=!$('L_idw').checked;
       if(!$('L_idw').checked)$('synth').textContent='';}
