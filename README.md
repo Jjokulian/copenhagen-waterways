@@ -69,6 +69,8 @@ scripts/
   rivermap.py             the flood model read as the city's natural drainage
   programme_map.py        the two figures for the argument page
   programme.py            the argument - kept separate from the investigation
+  landbrug.py             the same audit, in Danish, addressed to farmers
+  export_flood.py         publishes the recovered model as a usable dataset
   rivers3d.py             the 3D scene, the retrofit section, the routing logic
   observations.py         validates and merges field observations
 data/
@@ -88,6 +90,8 @@ docs/
   SOLUTIONS.md            the response, measured from the city's own layers
   OPEN_PROBLEMS.md        what this could not settle, hand-maintained
   PROGRAMME.md            THE ARGUMENT - what ought to be done, labelled as such
+  LANDBRUG.md             the audit in Danish, for the audience it is used against
+  data/flood2012/         the recovered flood model, georeferenced, for QGIS
   river_map.png           where the water wants to go vs what the plan allows
   index.html              renders the Markdown for GitHub Pages
 viz/
