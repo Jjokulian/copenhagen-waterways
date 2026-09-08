@@ -27,6 +27,7 @@ Two Danish-format traps, both silent, both hit already in this project:
 Reads   data/raw/oda/ctd.csv.gz, data/raw/national/marin_overordnet.geojson
 Writes  docs/data/areas/series.json
 """
+import array
 import collections
 import gzip
 import os
@@ -64,7 +65,15 @@ def main():
     """
     polys = load_polygons()
     n = len(polys)
-    acc = collections.defaultdict(list)
+    # array("f") rather than a list: a Python float in a list costs about 60
+    # bytes, the same value here costs 4. The earlier run died at 844 MB holding
+    # these as lists, and the reflex fix - drop the median for a running mean -
+    # was the wrong trade, because this machine allows 4-5 GB and the median was
+    # given up for memory that was never scarce. The container was the defect,
+    # not the statistic. Peak here is the number of retained CTD measurements
+    # times four bytes, plus per-cell overhead: a few hundred MB, bounded by the
+    # size of the extract rather than by anything that can run away.
+    acc = collections.defaultdict(lambda: array.array("f"))
     pos, where = {}, {}
     closed = set()
     reopened = skipped = ncast = 0
@@ -144,14 +153,19 @@ def main():
     keys = sorted({k for k, _, _ in acc})
     for key in keys:
         col = [None] * (n * NMON)
+        counts = [0] * (n * NMON)
         filled = 0
         for (kk, a, m), vals in acc.items():
             if kk != key:
                 continue
-            vals.sort()
-            col[a * NMON + m] = round(vals[len(vals) // 2], 3)
+            v = sorted(vals)                       # array has no .sort()
+            q = len(v)
+            col[a * NMON + m] = round(
+                v[q // 2] if q % 2 else (v[q // 2 - 1] + v[q // 2]) / 2, 3)
+            counts[a * NMON + m] = q
             filled += 1
         series[key] = col
+        series[key + "__n"] = counts       # how many measurements are behind each
         base = key.split("_")[0]
         lab = next(v[1] for v in WANT.values() if v[0] == base)
         unit = next(v[2] for v in WANT.values() if v[0] == base)
@@ -162,7 +176,7 @@ def main():
         log(f"    {key:12} {filled:,} area-months")
 
     write_json(os.path.join(ROOT, "docs", "data", "areas", "series.json"),
-               {"_what": "Monthly median per water body per variable, from the ODA "
+               {"_what": "Monthly median per water body per variable, with the count behind each value in <key>__n, from the ODA "
                          "CTD extract. Arrays are area-major: index = area * months "
                          "+ month, null where nothing was measured.",
                 "_depth": "Variables ending _surf are the shallowest quarter of each "

@@ -1,75 +1,54 @@
 # copenhagen-waterways
 
-## The machine will die if a script is careless with memory
+## Memory: use it, but do not churn it
 
-This runs on a Qubes standalone VM. Memory is **balloon-managed and elastic** —
-it grows automatically to roughly 4 GB, and can reach about 6 GB, but only when the
-other qubes are closed and dom0 is willing. In practice the figure at any moment is
-2.5–3.5 GB total with **under 1.2 GB actually available**.
+**The budget is 4–5 GB.** That is the working figure, not a ceiling to creep up on.
+RAM is balloon-managed and grows toward it, so a slow steady climb is granted where
+a sudden spike may not be — but within that budget, memory is not a scarce resource
+and should not be treated as one.
 
-**The elasticity is a trap, not a safety margin.** The balloon inflates with
-latency, and qmemman has to decide to grant. A process that allocates faster than
-the balloon can respond hits the ceiling that exists *now* rather than the one that
-would exist in a few seconds. So the headroom cannot be planned against — a script
-must be bounded at a size that fits the pessimistic case, and a slow steady climb
-is far safer than a spike even when the totals are identical.
+**Never degrade a method to save memory.** This has already gone wrong once in the
+other direction: a run was killed at 844 MB, and the reflex was to replace an exact
+median with a running mean. That was the wrong trade twice over — the machine had
+gigabytes free, and the actual defect was the *container* rather than the statistic.
+A Python float in a list costs about 60 bytes; the same value in `array("f")` costs
+4. Changing the container kept the median and cut the footprint fifteenfold. If a
+statistic looks unaffordable, the container is usually the reason.
 
-It has already taken the box down once. `series.py` accumulated every CTD cast in a
-dict, reached 541 MB and climbing, and the machine went with journald thrashing on
-memory flush. The rewrite streamed the casts correctly and *still* had to be killed
-at 844 MB, because the output accumulator — a dict keyed over every
-(variable, area, month) holding every value — was unbounded in exactly the same
-way, one level down. Fixing the obvious accumulator is not the same as bounding the
-script.
+So: pick the right statistic first, then make it cheap.
 
-The raw data is far larger than the machine: `ctd.csv.gz` alone is 51.4 million
-rows, the plankton grid ~7 GB, KD490 ~3 GB. So memory discipline is not an
-optimisation here. It is the difference between a result and a reboot.
+**Prefer in place over reallocating.** This is about allocation churn, not headroom.
 
-**Design for a stated peak, and state it.** Every script that touches a raw extract
-declares its expected peak memory in its docstring. If you cannot say what the peak
-is, the design is wrong.
+- numpy: `out += x`, not `out = out + x`. Reuse buffers across a loop rather than
+  allocating per iteration. Choose the narrowest dtype the precision allows.
+- Typed containers over Python object graphs — `array`, `bytes`, numpy — wherever
+  the data is homogeneous numbers. The saving is large and costs nothing.
+- Stream the raw extracts: `for line in fh` over gzip, never `read()` or
+  `readlines()`, and never `json.load()` on a raw file. Not for the ceiling; because
+  building a 51-million-element object graph is slow as well as large.
+- Group-by is a flush, not a dict, where the groups are contiguous — *check that
+  they are* and count any key that reopens rather than assuming.
+- Open one netCDF year at a time and close it.
 
-**Stream; never accumulate over the dataset.**
+**What genuinely must not happen** is an allocation that grows without bound in the
+input and has no idea where it stops. Say what a script's peak depends on: "the
+number of retained CTD measurements times four bytes" is a bound. "Every cast, in a
+dict" is not.
 
-- Iterate `for line in fh` over gzip directly. Never `fh.read()`, never
-  `json.load()` on a raw extract, never `readlines()`.
-- Group-by is a flush, not a dict. Rows for one group are usually contiguous —
-  *check that they are*, then complete each group and discard it as the key
-  changes, and count any key that reopens rather than assuming it cannot.
-- An accumulator keyed over the whole dataset is the same mistake as reading the
-  file, one level down. `{(var, area, month): [every value]}` is unbounded.
-  Reduce as you go: running sum and count, or a fixed-size reservoir per cell.
-- Output grids allocated once at a known size are fine — the coverage bitfield is
-  123 × 564 × 6 bits and costs 52 KB. Fixed and small is not the problem;
-  proportional to input is.
+**Guard long runs at 4.5 GB**, and kill **by PID** — `pkill -f <script>` matches the
+watching shell's own command line and kills the watcher, which has happened four
+times:
 
-**Prefer in-place and fixed-width.**
-
-- numpy: allocate once, operate in place (`out += x`, not `out = out + x`),
-  `float32`/`int16` where the precision is not needed, and never hold two copies
-  of a grid to compare them.
-- Pack results as bytes rather than lists of Python floats. A Python float in a
-  list costs about 60 bytes; the same number as `int16` costs 2.
-- Open one netCDF year at a time and close it. Do not hold a decade.
-
-**Guard the long ones.** Anything expected to run for minutes over a raw extract
-runs in the background with an RSS check that kills it before the kernel does.
-Kill by **PID**, never `pkill -f` on the script name — the pattern matches the
-watching shell's own command line and kills the watcher instead, which has happened
-repeatedly:
-
-    until [ -f OUT ] || ! pgrep -f SCRIPT >/dev/null; do
-      sleep 15
+    until [ -f OUT ]; do
+      sleep 20
       pid=$(pgrep -f "bin/python SCRIPT" | head -1); [ -z "$pid" ] && break
       r=$(ps -o rss= -p "$pid" | awk '{printf "%.0f", $1/1024}')
-      [ "$r" -gt 900 ] && kill "$pid" && echo "ABORT rss ${r}MB" && break
+      [ "$r" -gt 4500 ] && kill "$pid" && echo "ABORT rss ${r}MB" && break
     done
 
-**Scratch space is on disk now, not in RAM.** `TMPDIR` points at
-`~/.cache/claude-tmp` on the 197 GB volume. `/tmp` is a 1 GB tmpfs, so anything
-written there is held in memory and lost on reboot. Do not write large files to
-`/tmp` explicitly.
+**Scratch space is on disk.** `TMPDIR` points at `~/.cache/claude-tmp` on the 197 GB
+volume; `/tmp` is a 1 GB tmpfs, so anything written there is held in RAM and lost on
+reboot.
 
 ## Data format is declared, not guessed
 
