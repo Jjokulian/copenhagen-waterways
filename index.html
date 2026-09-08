@@ -315,6 +315,7 @@ const GROUPS = [
   ]],
   ["The argument", [
     ["RESIDUAL.md",     "The number that was never measured"],
+    ["CATEGORY.md",     "The category that was never measured"],
     ["PROGRAMME.md",    "The problem and the solution"],
     ["LANDBRUG.md",     "Til landbruget \u2014 p\u00e5 dansk"],
   ]],
@@ -336,6 +337,7 @@ const DOCS = GROUPS.flatMap(([, ds]) => ds).filter(([f]) => !f.endsWith(".html")
 const META = {
   "PROGRAMME.md":   {tier:0, why:"What people say is wrong, and what would fix it", after:[]},
   "RESIDUAL.md":    {tier:1, why:"Why a number nobody measured can still decide things", after:[]},
+  "CATEGORY.md":    {tier:1, why:"Why a category nobody measured is still treated as one, and how to price it", after:[], related:["RESIDUAL.md","AREAS.md"]},
   "AREAS.md":       {tier:1, why:"Why a figure true of Denmark is true of nowhere in it", after:[]},
   "OBSERVING.md":   {tier:2, why:"What Denmark measures, where, and how often", after:["AREAS.md"]},
   "DATA_SOURCES.md":{tier:2, why:"Every source the project knows of", after:["OBSERVING.md"]},
