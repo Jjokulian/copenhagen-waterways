@@ -759,7 +759,7 @@ TERMS = {
         'Article 191 of the Treaty on the Functioning of the European Union. Invoked more often than it decides anything.'),
     'priming': (
         'Having machinery already close to what a new situation requires. New biological capabilities almost never arise from nothing - they arise by duplicating and modifying something that already worked - so the distance from existing machinery to the needed function matters more than the supply of mutations.',
-        'Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.'),
+        'Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years, so efflux pumps and degrading enzymes were already in the shared gene pool. Nylon-oligomer digestion appeared within decades of nylon existing, on an entirely synthetic substrate, because amide hydrolysis is ordinary chemistry that everything already does.'),
     'priority effect': (
         'Arriving first being worth more than being well suited. It means the composition of a recovered community records its history as much as its conditions.',
         'The reason a degraded state can persist after the conditions that caused it have gone, with no other mechanism required.'),
@@ -1831,7 +1831,11 @@ H = [
      "Effluent and receiving-water concentrations against fauna condition.",
      "Marine pharmaceutical monitoring. Almost none."),
     ("E9", "E", "PFAS and persistent novo-chemicals", ["O3"],
-     "Compounds with no degradation terminus accumulating in biota and sediment.",
+     "Compounds with no degradation terminus accumulating in biota and sediment. "
+     "For the perfluorinated ones the reason is chemical before it is biological: "
+     "the C–F bond is the strongest in organic chemistry and the fluorines shield "
+     "the carbon backbone, leaving nothing for an enzyme to attack. That inertness "
+     "is the property the materials were selected for.",
      "Monotone accumulation independent of any annual driver.",
      "Biota and sediment time series.",
      "Some biota data exists. Sediment barely."),
@@ -3582,15 +3586,50 @@ def render(rows):
       "worked. So what decides whether a lineage can meet a new condition is not "
       "the supply of mutations but the *distance* from its existing machinery to "
       "the required function.\n")
-    a("The clearest demonstration is a contrast this project already depends on. "
-      "**Antibiotic resistance appears within years**, because the machinery "
+    a("**Antibiotic resistance appears within years**, because the machinery "
       "pre-existed: soil bacteria have competed with antibiotic-producing fungi for "
       "hundreds of millions of years, and efflux pumps and degrading enzymes were "
-      "already sitting in the shared gene pool. **PFAS degradation has not appeared "
-      "in seventy years of global exposure**, because the carbon-fluorine bond has "
-      "no prior anywhere and nothing holds machinery within reach of it. Same "
-      "planet, same microbes, same mutation rates — opposite outcomes, decided "
-      "entirely by what was primed.\n")
+      "already sitting in the shared gene pool. The same holds for a wholly "
+      "synthetic substrate when the chemistry is ordinary — nylon oligomers were "
+      "invented in 1935 and organisms digesting them were isolated by the 1970s, "
+      "because an amide bond is something almost everything already hydrolyses.\n")
+    a("> **A correction, because this page used to run that argument through PFAS "
+      "and the argument does not survive it.** The earlier text said perfluorinated "
+      "compounds resist degradation because the carbon-fluorine bond *has no prior "
+      "anywhere*, and that the contrast with antibiotics was decided *entirely* by "
+      "priming. Both halves are wrong.\n"
+      ">\n"
+      "> There is a prior. Biology both makes and breaks carbon-fluorine bonds: "
+      "*Streptomyces cattleya* synthesises fluoroacetate and 4-fluorothreonine using "
+      "a dedicated fluorinase, fluoroacetate is a natural plant toxin, and "
+      "fluoroacetate dehalogenase — an enzyme whose whole job is cleaving C–F — is "
+      "characterised down to its crystal structure. Monofluorinated carbon is "
+      "within reach of existing machinery and always has been.\n"
+      ">\n"
+      "> And the barrier is not only biological. The C–F bond is the strongest "
+      "single bond in organic chemistry, roughly 480–530 kJ/mol, and it gets "
+      "*stronger* as more fluorines crowd onto the same carbon. In a perfluoroalkyl "
+      "chain the fluorine atoms are small, unpolarisable and packed around the "
+      "carbon backbone, so there is no polarisable handle for an enzyme to attack "
+      "and no exposed carbon to attack it on. **That inertness is not incidental to "
+      "PFAS — it is the property the material was selected for**, first for seals "
+      "and gaskets in uranium enrichment, later for cookware. The persistence and "
+      "the usefulness are the same fact.\n"
+      ">\n"
+      "> So the pair varies two things at once — what machinery existed, and "
+      "whether the substrate is chemically attackable at all — and a comparison "
+      "that moves two variables cannot attribute the outcome to either. PFAS is "
+      "not the control for the priming thesis; it is a case where priming and "
+      "chemistry point the same way and cannot be separated. The claim of "
+      "*entirely* is withdrawn, and the register is weaker for it. That is the "
+      "correct outcome: the same standard applied elsewhere on this site applies "
+      "here.\n"
+      ">\n"
+      "> One narrower statement does survive, and it is what E9 actually needs: no "
+      "organism has been shown to mineralise a perfluoroalkyl chain at rates that "
+      "matter in an environment. Partial reductive defluorination has been reported "
+      "under specific engineered conditions; whole-chain breakdown in the field has "
+      "not.\n")
     a("**And mutation is not random**, which most tellings of this get wrong. Rates "
       "vary by orders of magnitude across a genome with chromatin state, "
       "transcription and sequence context; stress induces mutagenesis in bacteria; "

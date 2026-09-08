@@ -492,7 +492,7 @@
  "E9": {
   "kind": "hypothesis (E)",
   "label": "PFAS and persistent novo-chemicals",
-  "text": "Compounds with no degradation terminus accumulating in biota and sediment."
+  "text": "Compounds with no degradation terminus accumulating in biota and sediment. For the perfluorinated ones the reason is chemical before it is biological: the C–F bond is the strongest in organic chemistry and the fluorines shield the carbon backbone, leaving nothing for an enzyme to attack. That inertness is the property the materials were selected for."
  },
  "E10": {
   "kind": "hypothesis (E)",
@@ -2630,7 +2630,7 @@
   },
   "priming": {
    "text": "Having machinery already close to what a new situation requires. New biological capabilities almost never arise from nothing - they arise by duplicating and modifying something that already worked - so the distance from existing machinery to the needed function matters more than the supply of mutations.",
-   "why": "Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.",
+   "why": "Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years, so efflux pumps and degrading enzymes were already in the shared gene pool. Nylon-oligomer digestion appeared within decades of nylon existing, on an entirely synthetic substrate, because amide hydrolysis is ordinary chemistry that everything already does.",
    "forms": [
     "priming"
    ]
