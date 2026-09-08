@@ -1234,7 +1234,11 @@ GROUPS = [
      "Nutrients arrive, something grows, it dies, its decay consumes oxygen. The "
      "group is organised by where the nutrient comes from — land, air, sea, bed, "
      "or fixed in place — because that is what distinguishes the entries from each "
-     "other. All nine are treated identically."),
+     "other. All ten are treated identically. `A10` is the odd one and worth "
+     "noticing as a type: a pathway opened by a remedy rather than by a neglect. "
+     "`B2` is another - separate stormwater exists because combined sewers were "
+     "the problem - and the register would be improved by whoever finds the rest, "
+     "because that class is systematically under-suspected."),
     ("B", "Oxygen demand that arrived already made",
      "Organic matter imported ready to decay. No growth step, and for most of the "
      "group no nitrogen at any point. **A caution that applies across the whole "
@@ -1543,11 +1547,64 @@ H = [
     ("A3", "A", "Atmospheric deposition on the sea surface", ["O1", "O4"],
      "Reactive N deposited directly onto the water, bypassing every catchment and "
      "every retention term.",
-     "Deposition is spatially smooth and largely foreign in origin, so it should "
-     "appear as a shared component across areas that share no catchment.",
-     "The common factor across water bodies with unrelated catchments.",
+     "Two components with opposite geographies, and treating them as one is the "
+     "error. Oxidised nitrogen travels far, so it is spatially smooth and largely "
+     "foreign in origin, and should appear as a shared component across areas that "
+     "share no catchment. **Reduced nitrogen does not.** Ammonia deposits close to "
+     "where it is released, so its footprint is structured, domestic, and follows "
+     "whatever emits it - livestock housing, slurry, and the exhaust reagent of "
+     "`A10`.",
+     "The common factor across water bodies with unrelated catchments, for the "
+     "oxidised part only. The reduced part should instead track distance from "
+     "domestic sources and be invisible in any smooth national field.",
      "Wet and dry N deposition on a marine grid, monthly. Organic N fraction "
      "specifically, which is generally not reported."),
+    ("A10", "A", "Exhaust-treatment reagent: nitrogen added to remove nitrogen",
+     ["O1", "O4"],
+     "Selective catalytic reduction injects urea solution - AdBlue, 32.5% urea - "
+     "into diesel exhaust, where it decomposes to ammonia and reduces nitrogen "
+     "oxides to harmless N2 and water. The technology works, and the point here is "
+     "not that it fails. It is that **a large mass of reactive nitrogen is "
+     "deliberately introduced into the exhaust stream in order to destroy another "
+     "one**, and the destruction is not complete. Unreacted ammonia leaves as slip, "
+     "worst when the catalyst is cold - short trips, urban driving, winter. Some "
+     "nitrogen leaves as nitrous oxide instead of N2. And SCR systems are "
+     "deliberately disabled in heavy transport to avoid the running cost of the "
+     "reagent, which converts a partial loss into a total one.",
+     "**Note the direction of the causal pathway, because it is the reverse of "
+     "everything else in this register.** Nothing here is a substance that escaped "
+     "a restriction. Euro VI and Euro 6 set nitrogen-oxide limits that diesel "
+     "engines cannot meet by combustion alone, and selective catalytic reduction "
+     "is the near-universal means of compliance, so the volume of urea dispersed "
+     "across the country is set by regulation rather than chosen by anyone. That "
+     "is a statement about the mechanism, not about the merit of the rule - the "
+     "rule addresses a real and serious harm, and nitrogen oxides at the roadside "
+     "are a human health problem that reducing them solves.\n\nWhat follows is "
+     "methodological, and it is a gift. A mandate has a date. Euro VI applied to "
+     "heavy vehicles from 2013-14 and Euro 6 to cars from 2014-15, and the effect "
+     "enters through fleet replacement, so the exposure ramps on a known national "
+     "schedule that is uncorrelated with agricultural policy, weather, or "
+     "catchment. That is a stepped wedge that already ran - the design `X17` "
+     "proposes building deliberately, available retrospectively and for free.\n\n"
+     "The signature is therefore both geographic and temporal: deposition "
+     "structured along road corridors and freight routes, reduced rather than "
+     "oxidised, uncorrelated with agricultural land use, and ramping from the "
+     "mid-2010s on the fleet-turnover curve.",
+     "Reduced against oxidised nitrogen in deposition, along a road-density "
+     "gradient holding agricultural intensity constant. Roadside ammonia is "
+     "directly measurable and the gradient is steep, so this is a cheap "
+     "measurement that nobody appears to make on a marine-relevant grid.",
+     "**The mass is worth stating even roughly, because it is the same order as "
+     "the entire nitrogen argument.** A litre of AdBlue is about 354 g of urea at "
+     "46.6% nitrogen, so roughly 165 g N per litre. Consumption runs a few per cent "
+     "of diesel volume. Applied to Danish road diesel that is an order of "
+     "thousands to low tens of thousands of tonnes of nitrogen a year passing "
+     "through exhaust systems as urea - most of it genuinely becoming N2, but the "
+     "escaping fraction multiplying a very large number. This is arithmetic on "
+     "published unit figures and a fleet volume not verified here; it is offered as "
+     "an order of magnitude that deserves checking, not as a finding. What is "
+     "needed is national AdBlue consumption, a real slip fraction across the fleet "
+     "including tampered systems, and roadside deposition."),
     ("A4", "A", "Point-source discharge of nutrients", ["O1", "O4"],
      "Treatment plants and industry discharging N and P directly.",
      "Step changes at plant upgrades; a distance-decay signal from the outfall.",
@@ -1995,6 +2052,24 @@ H = [
      "6PPD-quinone is not measured in Danish monitoring. Whether Danish "
      "salmonids - sea trout especially - carry the sensitivity is a species "
      "question that the published work does not settle for them."),
+    ("E20", "E", "Fuel oxygenates and additives", ["O3", "O6"],
+     "Petrol and diesel are not one substance. Oxygenates are blended in to make "
+     "combustion more complete - ETBE and MTBE in petrol, ethanol at 5 or 10 per "
+     "cent - along with detergents, lubricity agents for low-sulphur diesel, and "
+     "in some markets metallic additives carrying manganese or iron. The ethers "
+     "are the notable ones for water: highly soluble, barely retarded by soil, and "
+     "detectable by taste and smell at a few micrograms per litre, so a small spill "
+     "travels far and is noticed as a nuisance long before it is a measured "
+     "concentration. Ethanol is itself harmless but acts as a co-solvent, moving "
+     "benzene and the other aromatics further than they would otherwise go.",
+     "A groundwater and stream signature tied to fuel handling - filling stations, "
+     "depots, harbours - rather than to any land use, and arriving at the coast "
+     "through baseflow rather than in storm events.",
+     "Ether and aromatic concentrations along a fuel-infrastructure gradient, "
+     "against the same measured where no such infrastructure drains.",
+     "Groundwater monitoring covers some of these. Whether any of it is reported "
+     "for coastal discharge, as opposed to drinking-water abstraction, is not "
+     "established here."),
     ("E19", "E", "The sentinel species decides what is detectable", ["O3", "O7"],
      "Not a pollutant but a property of how pollutants are found, and `E18` is its "
      "worked example. Sensitivity to 6PPD-quinone varies by orders of magnitude "

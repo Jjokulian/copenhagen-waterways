@@ -182,7 +182,7 @@
  "A": {
   "kind": "group",
   "label": "Nutrient-driven production in place",
-  "text": "Nutrients arrive, something grows, it dies, its decay consumes oxygen. The group is organised by where the nutrient comes from — land, air, sea, bed, or fixed in place — because that is what distinguishes the entries from each other. All nine are treated identically."
+  "text": "Nutrients arrive, something grows, it dies, its decay consumes oxygen. The group is organised by where the nutrient comes from — land, air, sea, bed, or fixed in place — because that is what distinguishes the entries from each other. All ten are treated identically. `A10` is the odd one and worth noticing as a type: a pathway opened by a remedy rather than by a neglect. `B2` is another - separate stormwater exists because combined sewers were the problem - and the register would be improved by whoever finds the rest, because that class is systematically under-suspected."
  },
  "B": {
   "kind": "group",
@@ -278,6 +278,11 @@
   "kind": "hypothesis (A)",
   "label": "Atmospheric deposition on the sea surface",
   "text": "Reactive N deposited directly onto the water, bypassing every catchment and every retention term."
+ },
+ "A10": {
+  "kind": "hypothesis (A)",
+  "label": "Exhaust-treatment reagent: nitrogen added to remove nitrogen",
+  "text": "Selective catalytic reduction injects urea solution - AdBlue, 32.5% urea - into diesel exhaust, where it decomposes to ammonia and reduces nitrogen oxides to harmless N2 and water. The technology works, and the point here is not that it fails. It is that **a large mass of reactive nitrogen is deliberately introduced into the exhaust stream in order to destroy another one**, and the destruction is not complete. Unreacted ammonia leaves as slip, worst when the catalyst is cold - short trips, urban driving, winter. Some nitrogen leaves as nitrous oxide instead of N2. And SCR systems are deliberately disabled in heavy transport to avoid the running cost of the reagent, which converts a partial loss into a total one."
  },
  "A4": {
   "kind": "hypothesis (A)",
@@ -533,6 +538,11 @@
   "kind": "hypothesis (E)",
   "label": "Tyre-wear transformation products",
   "text": "6PPD is an antiozonant put into tyre rubber since the 1960s to stop it cracking. At the tyre surface it reacts with ozone to give 6PPD-quinone, which washes off roads with the rain. The parent compound is unremarkable; the transformation product is acutely lethal to some fish at sub-microgram per litre concentrations - among the most potent aquatic toxicants known. It was identified in 2020, after decades of use, by fractionating road runoff to find what was killing coho salmon returning to urban streams."
+ },
+ "E20": {
+  "kind": "hypothesis (E)",
+  "label": "Fuel oxygenates and additives",
+  "text": "Petrol and diesel are not one substance. Oxygenates are blended in to make combustion more complete - ETBE and MTBE in petrol, ethanol at 5 or 10 per cent - along with detergents, lubricity agents for low-sulphur diesel, and in some markets metallic additives carrying manganese or iron. The ethers are the notable ones for water: highly soluble, barely retarded by soil, and detectable by taste and smell at a few micrograms per litre, so a small spill travels far and is noticed as a nuisance long before it is a measured concentration. Ethanol is itself harmless but acts as a co-solvent, moving benzene and the other aromatics further than they would otherwise go."
  },
  "E19": {
   "kind": "hypothesis (E)",

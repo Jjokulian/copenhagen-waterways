@@ -2,7 +2,7 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it enumerates the mechanisms that could produce the outcomes below, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**162 mechanisms in 17 groups.** No entry here is the subject of the page and the rest its alternatives. The grouping is alphabetical for reference, which is an ordering and not a ranking; the letters carry no priority, and `A1` is first for the same reason `Z8` is last.
+**164 mechanisms in 17 groups.** No entry here is the subject of the page and the rest its alternatives. The grouping is alphabetical for reference, which is an ordering and not a ranking; the letters carry no priority, and `A1` is first for the same reason `Z8` is last.
 
 **Some entries have a political history attached to them and some do not, and that history is not a property of the mechanism.** A mechanism that has been legislated about is not thereby more likely; one that nobody has campaigned on is not thereby more likely either. Where an entry names an industry, a practice or a public work, it names it as the physical source of a flux, in the same way `C4` names an inflow event — the entry is about what enters the water, never about who is at fault for it. Attribution of blame is not a scientific operation and is not performed anywhere on this page.
 
@@ -10,9 +10,9 @@ The register is written down *before* anything is scored, so that the field cann
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 162 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 164 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 162 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 164 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -379,7 +379,7 @@ These are what the hypotheses below are scored against. Each belongs to one or m
 
 ## A. Nutrient-driven production in place
 
-*Nutrients arrive, something grows, it dies, its decay consumes oxygen. The group is organised by where the nutrient comes from — land, air, sea, bed, or fixed in place — because that is what distinguishes the entries from each other. All nine are treated identically.*
+*Nutrients arrive, something grows, it dies, its decay consumes oxygen. The group is organised by where the nutrient comes from — land, air, sea, bed, or fixed in place — because that is what distinguishes the entries from each other. All ten are treated identically. `A10` is the odd one and worth noticing as a type: a pathway opened by a remedy rather than by a neglect. `B2` is another - separate stormwater exists because combined sewers were the problem - and the register would be improved by whoever finds the rest, because that class is systematically under-suspected.*
 
 ### A1 — Danish land-based nitrogen load
 
@@ -411,11 +411,27 @@ P drives the spring bloom, whose sinking biomass sets the organic pool that the 
 
 Reactive N deposited directly onto the water, bypassing every catchment and every retention term.
 
-**Predicts.** Deposition is spatially smooth and largely foreign in origin, so it should appear as a shared component across areas that share no catchment.
+**Predicts.** Two components with opposite geographies, and treating them as one is the error. Oxidised nitrogen travels far, so it is spatially smooth and largely foreign in origin, and should appear as a shared component across areas that share no catchment. **Reduced nitrogen does not.** Ammonia deposits close to where it is released, so its footprint is structured, domestic, and follows whatever emits it - livestock housing, slurry, and the exhaust reagent of `A10`.
 
-**Discriminated by.** The common factor across water bodies with unrelated catchments.
+**Discriminated by.** The common factor across water bodies with unrelated catchments, for the oxidised part only. The reduced part should instead track distance from domestic sources and be invisible in any smooth national field.
 
 **Needs.** Wet and dry N deposition on a marine grid, monthly. Organic N fraction specifically, which is generally not reported.
+
+### A10 — Exhaust-treatment reagent: nitrogen added to remove nitrogen
+
+**Outcomes:** O1, O4
+
+Selective catalytic reduction injects urea solution - AdBlue, 32.5% urea - into diesel exhaust, where it decomposes to ammonia and reduces nitrogen oxides to harmless N2 and water. The technology works, and the point here is not that it fails. It is that **a large mass of reactive nitrogen is deliberately introduced into the exhaust stream in order to destroy another one**, and the destruction is not complete. Unreacted ammonia leaves as slip, worst when the catalyst is cold - short trips, urban driving, winter. Some nitrogen leaves as nitrous oxide instead of N2. And SCR systems are deliberately disabled in heavy transport to avoid the running cost of the reagent, which converts a partial loss into a total one.
+
+**Predicts.** **Note the direction of the causal pathway, because it is the reverse of everything else in this register.** Nothing here is a substance that escaped a restriction. Euro VI and Euro 6 set nitrogen-oxide limits that diesel engines cannot meet by combustion alone, and selective catalytic reduction is the near-universal means of compliance, so the volume of urea dispersed across the country is set by regulation rather than chosen by anyone. That is a statement about the mechanism, not about the merit of the rule - the rule addresses a real and serious harm, and nitrogen oxides at the roadside are a human health problem that reducing them solves.
+
+What follows is methodological, and it is a gift. A mandate has a date. Euro VI applied to heavy vehicles from 2013-14 and Euro 6 to cars from 2014-15, and the effect enters through fleet replacement, so the exposure ramps on a known national schedule that is uncorrelated with agricultural policy, weather, or catchment. That is a stepped wedge that already ran - the design `X17` proposes building deliberately, available retrospectively and for free.
+
+The signature is therefore both geographic and temporal: deposition structured along road corridors and freight routes, reduced rather than oxidised, uncorrelated with agricultural land use, and ramping from the mid-2010s on the fleet-turnover curve.
+
+**Discriminated by.** Reduced against oxidised nitrogen in deposition, along a road-density gradient holding agricultural intensity constant. Roadside ammonia is directly measurable and the gradient is steep, so this is a cheap measurement that nobody appears to make on a marine-relevant grid.
+
+**Needs.** **The mass is worth stating even roughly, because it is the same order as the entire nitrogen argument.** A litre of AdBlue is about 354 g of urea at 46.6% nitrogen, so roughly 165 g N per litre. Consumption runs a few per cent of diesel volume. Applied to Danish road diesel that is an order of thousands to low tens of thousands of tonnes of nitrogen a year passing through exhaust systems as urea - most of it genuinely becoming N2, but the escaping fraction multiplying a very large number. This is arithmetic on published unit figures and a fleet volume not verified here; it is offered as an order of magnitude that deserves checking, not as a finding. What is needed is national AdBlue consumption, a real slip fraction across the fleet including tampered systems, and roadside deposition.
 
 ### A4 — Point-source discharge of nutrients
 
@@ -1044,6 +1060,18 @@ The molecular machinery agricultural biocides attack is shared far beyond the ta
 **Discriminated by.** Concentration in road runoff and receiving water during storms, against mortality in a sensitive species. The road-density gradient is the natural experiment, and it is uncorrelated with agricultural gradients, which makes it unusually separable from most of group A.
 
 **Needs.** 6PPD-quinone is not measured in Danish monitoring. Whether Danish salmonids - sea trout especially - carry the sensitivity is a species question that the published work does not settle for them.
+
+### E20 — Fuel oxygenates and additives
+
+**Outcomes:** O3, O6
+
+Petrol and diesel are not one substance. Oxygenates are blended in to make combustion more complete - ETBE and MTBE in petrol, ethanol at 5 or 10 per cent - along with detergents, lubricity agents for low-sulphur diesel, and in some markets metallic additives carrying manganese or iron. The ethers are the notable ones for water: highly soluble, barely retarded by soil, and detectable by taste and smell at a few micrograms per litre, so a small spill travels far and is noticed as a nuisance long before it is a measured concentration. Ethanol is itself harmless but acts as a co-solvent, moving benzene and the other aromatics further than they would otherwise go.
+
+**Predicts.** A groundwater and stream signature tied to fuel handling - filling stations, depots, harbours - rather than to any land use, and arriving at the coast through baseflow rather than in storm events.
+
+**Discriminated by.** Ether and aromatic concentrations along a fuel-infrastructure gradient, against the same measured where no such infrastructure drains.
+
+**Needs.** Groundwater monitoring covers some of these. Whether any of it is reported for coastal discharge, as opposed to drinking-water abstraction, is not established here.
 
 ### E19 — The sentinel species decides what is detectable
 
