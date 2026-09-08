@@ -257,6 +257,12 @@ code.gloss{
 .sitefoot strong{color:var(--ink2);font-weight:600}
 .sitefoot a{color:var(--accent)}
 .sitefoot p{margin:0 0 5px;max-width:78ch}
+
+ul.chain{margin:16px 0 18px;padding:0;list-style:none;max-width:78ch}
+ul.chain li{margin:0 0 11px;padding-left:15px;border-left:2px solid var(--line);
+  line-height:1.6}
+ul.chain b{color:var(--ink)}
+ul.chain i{font-style:italic}
 </style>
 </head>
 <body>
@@ -953,15 +959,43 @@ const TOOLS = [
 
 function renderMap() {
   const parts = ['<section class="hero">',
-    '<h1>An audit of the Danish coastal water record</h1>',
-    '<p class="lede">Every figure below is recomputed from published data by ' +
-    'scripts in this repository, so each is a statement about method that anyone ' +
-    'can reproduce and check. What it audits is <em>the record</em> — not the sea, ' +
-    'and not what Denmark knows. Those differ: three things this project would ' +
-    'have called unmeasured turned out to be sitting in files nobody here had ' +
-    'opened. So read any "Denmark does not measure X" here as ' +
-    '<em>X is not in what we fetched</em> — ' +
-    '<a href="#KNOWN_AND_UNKNOWN.md">the difference is a whole quadrant wide</a>.</p>',
+    '<h1>The Danish nitrogen argument is a chain. We checked the links.</h1>',
+    '<p class="lede">A field surplus becomes a modelled load, becomes a percentage, ' +
+    'gets allocated to a water body, is judged against a threshold, and shows a ' +
+    'trend. Every link is public. Every one is recomputed here from raw data by ' +
+    'scripts anyone can run. <strong>Four of them do not hold.</strong></p>',
+    '<ul class="chain">',
+    '<li><b>No field is measured.</b> The <i>markoverskud</i> that drives the model ' +
+    'is an accounting residual — register counts times regulatory norm tables, minus ' +
+    'a harvest computed from norm tables. Change a norm and the number moves with no ' +
+    'change in any field: Denmark\u2019s own reports record a step in 1999 and ' +
+    'another in 2012, and publish 2013 twice at 84 and 81 kg N/ha depending on which ' +
+    'register supplied one term. ' +
+    '<a href="#NITROGEN.md">the construction, term by term \u2192</a></li>',
+    '<li><b>The model takes the answer as an input.</b> DCE\u2019s methods chapter ' +
+    'names the field surplus as a key variable of the model that computes the diffuse ' +
+    'load. Chapter 6 of the same report presents the strong linear relation between ' +
+    'those two quantities as a result. ' +
+    '<a href="#NITROGEN.md">both passages, quoted \u2192</a></li>',
+    '<li><b>The boundaries carry no measured signal.</b> Across all 255 feature ' +
+    'subsets, the official water bodies add nothing beyond being a connected region ' +
+    'of their size — lift \u22120.026 to \u22120.014 against a contiguity-matched ' +
+    'null. The same method recovered Henry\u2019s law unprompted from the same data, ' +
+    'so it is not a blunt instrument. <a href="#AREAS.md">how that was tested ' +
+    '\u2192</a></li>',
+    '<li><b>The record is two networks, not one.</b> 293 summer-only stations sit ' +
+    '1.57 mg/l lower than 481 year-round ones <i>in the same months</i>. Their mix ' +
+    'moved from 32% to 12% of observations, and the pooled trend follows the mix ' +
+    'while the year-round subset alone does not. ' +
+    '<a href="docs/stations.html">see it on the map \u2192</a></li>',
+    '</ul>',
+    '<p class="lede"><strong>None of this shows the policy is wrong, or that ' +
+    'agriculture is innocent.</strong> It shows the evidence offered cannot carry the ' +
+    'weight placed on it, and says exactly where each link fails. That includes the ' +
+    'errors this project made itself — marine coverage built from freshwater ' +
+    'monitoring points, an oxygen series labelled mg/l that was ml/l, four nulls ' +
+    'quoted instead of computed. They are left visible in the pages and the history ' +
+    'rather than edited out.</p>',
     '</section>', '<div class="facts">'];
   for (const [n, t, doc] of FACTS)
     // n is a literal in FACTS above and deliberately carries markup; t likewise.
