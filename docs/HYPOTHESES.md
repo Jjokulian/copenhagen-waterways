@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**141 mechanisms in 16 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**148 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 141 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 148 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 141 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 148 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -52,7 +52,7 @@ An organism is a system that maintains itself against entropy using flows. It fa
 | `V4` | **Mechanical destruction and burial** | Structure removed, crushed, smothered, abraded or mobilised. No chemistry required at any point. | closed | closed | D |
 | `V5` | **Biotic attack** | Predation, grazing, disease, parasitism, competition, invasion. Something else does the killing. | closed | bounded, badly catalogued | F, T3, T8, F11 |
 | `V6` | **Loss of a partner or a performed function** | The organisms whose activity the focal organism depends on are gone - symbionts, facilitators, and the ones that were conditioning the environment for everyone. | nearly closed | bounded, badly catalogued | T2, T5, T6, F1, F2, F3 |
-| `V7` | **Failure to replace itself** | The population dies without any individual being killed: no propagules, no connectivity, no settlement cue, wrong timing, too little genetic variation. **The register was almost empty here until the avenues were written down.** | closed | nearly closed | W (added because this avenue was empty) |
+| `V7` | **Failure to replace itself** | The population dies without any individual being killed: no propagules, no connectivity, no settlement cue, wrong timing, too little genetic variation. **The register was almost empty here until the avenues were written down.** | closed | nearly closed | W |
 | `V8` | **Rate exceeded** | The change is survivable in magnitude but not in speed. Adaptation, acclimation, migration and recovery all have rates, and a disturbance returning faster than recovery completes is a different thing from the same disturbance once. | closed | inherits the others | W, H1 |
 
 ### Where this actually closes
@@ -62,6 +62,12 @@ The chemical avenues are the clean case, and they are worth stating exactly beca
 > For any chemical species there are exactly **three** ways it can harm: below the floor of what is needed, above the ceiling of what is tolerated, or present at all where the tolerated amount is zero. That is a partition of the real line against a tolerance window. Nothing can hide between the cases, and there is no fourth.
 
 Liebig's floor and Shelford's ceiling are the first two, and the essential trace metals sit on both — copper is required and copper is a biocide, within about one order of magnitude. The window is the whole story, and *outside the window* is completely enumerated by those three.
+
+**This applies to nitrogen exactly as it applies to copper.** Nitrogen is not a pollutant; it is a requirement with a window, and it has both a floor and a ceiling like every other element on the list. Which means a policy expressed only as *less is better* is a one-tailed treatment of a two-tailed quantity — the same error as *more is better*, pointed the other way.
+
+That is not an argument that Danish coastal water needs more nitrogen. In many places the load is plainly above the optimum and reduction plainly helps. The point is structural and has two consequences. The optimum is a *position in a window*, so the benefit of reduction depends on where an area currently sits, and that position differs by area — which is the argument of [AREAS.md](#AREAS.md) arriving from the chemistry rather than from the statistics. And the window's location depends on everything else in the window with it: `K2` and `K3` say the tolerable amount of nitrogen is a function of the silicon, the phosphorus and the micronutrients present, so there is no single number even for one place.
+
+Nobody has published where each Danish area sits in that window, and the flat 25% rule of the iltsvind trigger assumes the answer is the same everywhere.
 
 **What does not close is the list of chemicals.** Tens of thousands are in commerce and a few dozen are measured (`U4`). So `V1` and `V2` have exhaustive failure modes over an open set of substances: complete on one axis, unbounded on the other, and an avenue is only as closed as its weaker axis.
 
@@ -87,7 +93,11 @@ We do not claim the avenue list is closed either. But it is a much better level 
 
 Oxygen deficit is **one** of these. It is neither necessary nor sufficient for any terminal outcome, and several of the others leave no oxygen signature at all — a poisoned water can be fully oxygenated.
 
-These seven are not claimed to be all of them either, and they are not even cleanly separable from one another: `M7` is partly a special case of `M2`, and `M5` ends by feeding `M3`. They were arrived at by asking what could produce the terminal outcomes, which is a question with no natural stopping point. Treat them as seven routes we could name, not as the routes there are.
+**These are derived, not chosen.** An earlier version of this page listed seven routes arrived at by asking what could produce the terminal outcomes — a question with no natural stopping point, and no principle saying why those seven and not others. They were plausible and arbitrary. Each route is now the instantiation of one or more of the avenues above, and the mapping is what justifies the list.
+
+Running the mapping the other way found the same hole the hypothesis register had: `V7` and `V8` had **no route at all**. A population that fails to replace itself, and a disturbance returning faster than recovery, were not representable anywhere in the structure. `M8` and `M9` exist because the avenues demanded them, which is the second time the procedure has produced something the intuition missed.
+
+They are still not disjoint — `M7` is partly a special case of `M2`, `M5` ends by feeding `M3`, and `M9` is a rate applied to any of the others. Where the mapping to an avenue is poor, it is the route list that should change.
 
 | | route | what it is |
 |---|---|---|
@@ -98,6 +108,8 @@ These seven are not claimed to be all of them either, and they are not even clea
 | `M5` | **Light starvation** | Rooted vegetation shaded out by turbidity, which then removes the thing that was holding the sediment down. |
 | `M6` | **Surface film and gel** | The water itself becomes a different medium: greasy, foaming, mucilaginous. |
 | `M7` | **Reduced chemistry at the bed** | Sulphide and its relatives, toxic in their own right and an oxygen sink besides. The bed becomes hostile before the water column shows anything. |
+| `M8` | **Failure of renewal** | The population is not killed; it fails to replace itself. No propagules, no connectivity, no settlement cue, wrong timing, or too few left to find each other. Every individual can be healthy and the population still ends. |
+| `M9` | **Change faster than response** | The magnitude is survivable and the rate is not. Acclimation, adaptation, migration and recovery all take time, and a disturbance that returns before recovery completes is a different thing from the same disturbance once. |
 
 ### The cascades, and where they converge
 
@@ -112,6 +124,8 @@ Iltsvind is one *kind* of dying out, with one particular chain of consequences. 
 | `M5` **Light starvation** | light at the bed falls below the plant's requirement → rooted vegetation dies → sediment is no longer held → resuspension rises → light falls further | closes through the sediment the plants were holding |
 | `M6` **Surface film and gel** | nutrient imbalance drives carbon overflow → gel and exopolymer are produced → aggregates form, resist grazing, and sink → smothering and decay → more imbalance | closes by being inedible |
 | `M7` **Reduced chemistry at the bed** | sulphide accumulates → fauna die at the sediment surface → irrigation stops → the oxidised surface layer thins → sulphide reaches the water | closes through the loss of the animals that kept the bed oxidised |
+| `M8` **Failure of renewal** | adults are removed or the cue is lost → no successful settlement → the local population thins → fewer propagules produced and fewer partners found → settlement falls further | closes because reproduction is density-dependent, so thinning accelerates |
+| `M9` **Change faster than response** | disturbance returns before recovery completes → the system is permanently in an early successional state → the slow-growing structure-formers never mature → recovery gets slower still | closes by never allowing the slow half of the community to exist |
 
 ### Why they converge
 
@@ -1359,6 +1373,94 @@ Repeated mortality events select the survivors down to a narrow set, and a narro
 **Discriminated by.** Functional diversity indices through time from the fauna record.
 
 **Needs.** Species-level fauna with abundance, which the ODA bundfauna data carries.
+
+## W. Renewal and rate
+
+*A population can end without anything killing an individual, and a system can fail at a magnitude it would survive if it arrived more slowly. This group exists because the categorical avenues had two entries - failure to replace itself, and rate exceeded - with almost nothing under them in a register of 127. That absence was not a judgement that these do not matter; nobody had thought to look.*
+
+### W1 — Propagule supply and connectivity
+
+**Outcomes:** O7, O3
+
+Recolonisation needs propagules to arrive. If the source populations are gone or the currents no longer connect them, a site with perfect conditions stays empty.
+
+**Predicts.** Recovery fails at sites where every measured variable is adequate, and it fails as a function of *distance from a surviving population* rather than of local quality. Constructed changes to circulation (`C8`) can sever connections without changing water quality anywhere.
+
+**Discriminated by.** Recovery rate against distance to the nearest source population and modelled larval connectivity, holding local conditions fixed.
+
+**Needs.** Source population locations, and particle-tracking connectivity from the existing circulation models.
+
+### W2 — Settlement cue failure
+
+**Outcomes:** O7, O3
+
+Larvae of many species choose where to settle using chemical and acoustic cues from existing habitat. A degraded bed does not smell or sound like habitat, so larvae that arrive do not stay.
+
+**Predicts.** A positive feedback with no physiology in it: the absence of the community is itself what prevents the community returning. Explains why restoration sometimes works only above a threshold density.
+
+**Discriminated by.** Settlement rates onto degraded versus conditioned substrate at the same site - the standard settlement assay.
+
+**Needs.** Settlement plates with and without conditioning. Cheap, and connects directly to the sediment-inoculation experiment `X1`.
+
+### W3 — Phenological mismatch
+
+**Outcomes:** O6, O3, O4
+
+Larval release, spawning and the spring bloom are timed by different cues - temperature, photoperiod, stratification onset. Warming moves them at different rates, so the food and the mouths that need it drift apart.
+
+**Predicts.** Recruitment collapses with no change in total production. The classic match-mismatch mechanism, and it is invisible to any indicator computed as a seasonal mean - which is how both Danish indicators are computed.
+
+**Discriminated by.** Timing of bloom peak against timing of larval abundance, over years.
+
+**Needs.** Sub-monthly plankton time series. The sampling frequency is the binding constraint, not the parameters.
+
+### W4 — Allee effects at low density
+
+**Outcomes:** O3, O7
+
+Below a density threshold, reproduction fails - broadcast spawners do not fertilise, mates are not found, group defences stop working.
+
+**Predicts.** The decline becomes self-sustaining below a threshold, so a stressor removed after the threshold is crossed produces no recovery. Indistinguishable from 'the stressor is still present' unless density is the variable examined.
+
+**Discriminated by.** Recruitment per adult against adult density, which should fall rather than flatten at the low end.
+
+**Needs.** Density-resolved reproductive success. The fauna data has densities; the analysis is not run.
+
+### W5 — Recovery slower than the disturbance interval
+
+**Outcomes:** O3, O7
+
+A bed trawled every few months, or dredged on a maintenance cycle, is held permanently in early succession. The slow-growing, structure-forming, long-lived species never reach maturity.
+
+**Predicts.** **The same total disturbance produces a different outcome depending only on its spacing.** An annual effort figure cannot represent this, and annual effort figures are the only ones published. The community is defined by the return interval relative to its own generation times.
+
+**Discriminated by.** Community composition against disturbance *interval*, not annual intensity.
+
+**Needs.** Trawling effort at monthly or finer resolution - which the data-source hunt confirmed is the single most important closed dataset.
+
+### W6 — Change outrunning acclimation
+
+**Outcomes:** O3, O6
+
+Organisms acclimate and populations adapt, and both have rates. A warming or freshening survivable over a century can be lethal over a decade.
+
+**Predicts.** Mortality at magnitudes the tolerance curve says are survivable, because the tolerance curve was measured at equilibrium.
+
+**Discriminated by.** Response to rate of change, holding the magnitude of change fixed.
+
+**Needs.** High-frequency records, which exist, analysed for rates rather than means, which is not done.
+
+### W7 — Too little variation left to respond with
+
+**Outcomes:** O3
+
+Repeated mortality selects survivors down to a narrow genetic and functional set, and a narrow set has fewer ways to meet the next disturbance.
+
+**Predicts.** Declining resilience with no change in any concentration: the same stressor produces a larger effect than it did, and the system's own history is the variable.
+
+**Discriminated by.** Functional and genetic diversity through time, against the effect size of comparable disturbances in different eras.
+
+**Needs.** Long species-level fauna series, which ODA holds; genetic data, which nobody has.
 
 ## Z. The physical fields and their windows
 

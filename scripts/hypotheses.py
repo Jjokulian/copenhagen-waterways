@@ -90,13 +90,13 @@ AVENUES = [
      "The population dies without any individual being killed: no propagules, no "
      "connectivity, no settlement cue, wrong timing, too little genetic variation. "
      "**The register was almost empty here until the avenues were written down.**",
-     "—", "W (added because this avenue was empty)", "closed", "nearly closed"),
+     "M8", "W", "closed", "nearly closed"),
     ("V8", "Rate exceeded",
      "The change is survivable in magnitude but not in speed. Adaptation, "
      "acclimation, migration and recovery all have rates, and a disturbance "
      "returning faster than recovery completes is a different thing from the same "
      "disturbance once.",
-     "—", "W, H1", "closed", "inherits the others"),
+     "M9", "W, H1", "closed", "inherits the others"),
 ]
 
 # Three layers, because collapsing them is how a measurement becomes a goal.
@@ -158,6 +158,14 @@ ROUTES = [
     ("M7", "Reduced chemistry at the bed",
      "Sulphide and its relatives, toxic in their own right and an oxygen sink "
      "besides. The bed becomes hostile before the water column shows anything."),
+    ("M8", "Failure of renewal",
+     "The population is not killed; it fails to replace itself. No propagules, no "
+     "connectivity, no settlement cue, wrong timing, or too few left to find each "
+     "other. Every individual can be healthy and the population still ends."),
+    ("M9", "Change faster than response",
+     "The magnitude is survivable and the rate is not. Acclimation, adaptation, "
+     "migration and recovery all take time, and a disturbance that returns before "
+     "recovery completes is a different thing from the same disturbance once."),
 ]
 
 # Routes we can name and cannot quantify. Listing them is not a rhetorical move: an
@@ -264,6 +272,13 @@ GROUPS = [
      "*induces deficiency* of another by blocking its uptake. Under those three, "
      "\"too much nitrogen\" and \"depleted of something else\" are not opposite "
      "diagnoses. They are the same one."),
+    ("W", "Renewal and rate",
+     "A population can end without anything killing an individual, and a system can "
+     "fail at a magnitude it would survive if it arrived more slowly. This group "
+     "exists because the categorical avenues had two entries - failure to replace "
+     "itself, and rate exceeded - with almost nothing under them in a register of "
+     "127. That absence was not a judgement that these do not matter; nobody had "
+     "thought to look."),
     ("Z", "The physical fields and their windows",
      "Light starvation is the same argument as chemical deficiency, one physical "
      "layer up - and the layer behaves differently in a way that matters. A "
@@ -355,6 +370,16 @@ CASCADES = [
      "sulphide accumulates → fauna die at the sediment surface → irrigation stops → "
      "the oxidised surface layer thins → sulphide reaches the water",
      "closes through the loss of the animals that kept the bed oxidised"),
+    ("M8", "Failure of renewal",
+     "adults are removed or the cue is lost → no successful settlement → the local "
+     "population thins → fewer propagules produced and fewer partners found → "
+     "settlement falls further",
+     "closes because reproduction is density-dependent, so thinning accelerates"),
+    ("M9", "Change faster than response",
+     "disturbance returns before recovery completes → the system is permanently in "
+     "an early successional state → the slow-growing structure-formers never "
+     "mature → recovery gets slower still",
+     "closes by never allowing the slow half of the community to exist"),
 ]
 
 
@@ -1584,6 +1609,80 @@ H = [
      "routes, not merely on nutrients.",
      "Trawling, dumping and contaminant coverage for the areas used as references."),
 
+    # ---- W ----------------------------------------------------------------
+    ("W1", "W", "Propagule supply and connectivity", ["O7", "O3"],
+     "Recolonisation needs propagules to arrive. If the source populations are gone "
+     "or the currents no longer connect them, a site with perfect conditions stays "
+     "empty.",
+     "Recovery fails at sites where every measured variable is adequate, and it "
+     "fails as a function of *distance from a surviving population* rather than of "
+     "local quality. Constructed changes to circulation (`C8`) can sever "
+     "connections without changing water quality anywhere.",
+     "Recovery rate against distance to the nearest source population and modelled "
+     "larval connectivity, holding local conditions fixed.",
+     "Source population locations, and particle-tracking connectivity from the "
+     "existing circulation models."),
+    ("W2", "W", "Settlement cue failure", ["O7", "O3"],
+     "Larvae of many species choose where to settle using chemical and acoustic "
+     "cues from existing habitat. A degraded bed does not smell or sound like "
+     "habitat, so larvae that arrive do not stay.",
+     "A positive feedback with no physiology in it: the absence of the community is "
+     "itself what prevents the community returning. Explains why restoration "
+     "sometimes works only above a threshold density.",
+     "Settlement rates onto degraded versus conditioned substrate at the same site "
+     "- the standard settlement assay.",
+     "Settlement plates with and without conditioning. Cheap, and connects directly "
+     "to the sediment-inoculation experiment `X1`."),
+    ("W3", "W", "Phenological mismatch", ["O6", "O3", "O4"],
+     "Larval release, spawning and the spring bloom are timed by different cues - "
+     "temperature, photoperiod, stratification onset. Warming moves them at "
+     "different rates, so the food and the mouths that need it drift apart.",
+     "Recruitment collapses with no change in total production. The classic "
+     "match-mismatch mechanism, and it is invisible to any indicator computed as a "
+     "seasonal mean - which is how both Danish indicators are computed.",
+     "Timing of bloom peak against timing of larval abundance, over years.",
+     "Sub-monthly plankton time series. The sampling frequency is the binding "
+     "constraint, not the parameters."),
+    ("W4", "W", "Allee effects at low density", ["O3", "O7"],
+     "Below a density threshold, reproduction fails - broadcast spawners do not "
+     "fertilise, mates are not found, group defences stop working.",
+     "The decline becomes self-sustaining below a threshold, so a stressor removed "
+     "after the threshold is crossed produces no recovery. Indistinguishable from "
+     "'the stressor is still present' unless density is the variable examined.",
+     "Recruitment per adult against adult density, which should fall rather than "
+     "flatten at the low end.",
+     "Density-resolved reproductive success. The fauna data has densities; the "
+     "analysis is not run."),
+    ("W5", "W", "Recovery slower than the disturbance interval", ["O3", "O7"],
+     "A bed trawled every few months, or dredged on a maintenance cycle, is held "
+     "permanently in early succession. The slow-growing, structure-forming, "
+     "long-lived species never reach maturity.",
+     "**The same total disturbance produces a different outcome depending only on "
+     "its spacing.** An annual effort figure cannot represent this, and annual "
+     "effort figures are the only ones published. The community is defined by the "
+     "return interval relative to its own generation times.",
+     "Community composition against disturbance *interval*, not annual intensity.",
+     "Trawling effort at monthly or finer resolution - which the data-source hunt "
+     "confirmed is the single most important closed dataset."),
+    ("W6", "W", "Change outrunning acclimation", ["O3", "O6"],
+     "Organisms acclimate and populations adapt, and both have rates. A warming or "
+     "freshening survivable over a century can be lethal over a decade.",
+     "Mortality at magnitudes the tolerance curve says are survivable, because the "
+     "tolerance curve was measured at equilibrium.",
+     "Response to rate of change, holding the magnitude of change fixed.",
+     "High-frequency records, which exist, analysed for rates rather than means, "
+     "which is not done."),
+    ("W7", "W", "Too little variation left to respond with", ["O3"],
+     "Repeated mortality selects survivors down to a narrow genetic and functional "
+     "set, and a narrow set has fewer ways to meet the next disturbance.",
+     "Declining resilience with no change in any concentration: the same stressor "
+     "produces a larger effect than it did, and the system's own history is the "
+     "variable.",
+     "Functional and genetic diversity through time, against the effect size of "
+     "comparable disturbances in different eras.",
+     "Long species-level fauna series, which ODA holds; genetic data, which nobody "
+     "has."),
+
     # ---- Z ----------------------------------------------------------------
     ("Z1", "Z", "Light: too little, and too much", ["O7", "O4", "O3"],
      "The floor is the eelgrass requirement, roughly 11-14% of surface irradiance. "
@@ -1869,6 +1968,24 @@ def render(rows):
       "trace metals sit on both — copper is required and copper is a biocide, "
       "within about one order of magnitude. The window is the whole story, and "
       "*outside the window* is completely enumerated by those three.\n")
+    a("**This applies to nitrogen exactly as it applies to copper.** Nitrogen is "
+      "not a pollutant; it is a requirement with a window, and it has both a floor "
+      "and a ceiling like every other element on the list. Which means a policy "
+      "expressed only as *less is better* is a one-tailed treatment of a two-tailed "
+      "quantity — the same error as *more is better*, pointed the other way.\n")
+    a("That is not an argument that Danish coastal water needs more nitrogen. In "
+      "many places the load is plainly above the optimum and reduction plainly "
+      "helps. The point is structural and has two consequences. The optimum is a "
+      "*position in a window*, so the benefit of reduction depends on where an area "
+      "currently sits, and that position differs by area — which is the argument of "
+      "[AREAS.md](#AREAS.md) arriving from the chemistry rather than from the "
+      "statistics. And the window's location depends on everything else in the "
+      "window with it: `K2` and `K3` say the tolerable amount of nitrogen is a "
+      "function of the silicon, the phosphorus and the micronutrients present, so "
+      "there is no single number even for one place.\n")
+    a("Nobody has published where each Danish area sits in that window, and the "
+      "flat 25% rule of the iltsvind trigger assumes the answer is the same "
+      "everywhere.\n")
     a("**What does not close is the list of chemicals.** Tens of thousands are in "
       "commerce and a few dozen are measured (`U4`). So `V1` and `V2` have "
       "exhaustive failure modes over an open set of substances: complete on one "
@@ -1934,12 +2051,21 @@ def render(rows):
     a("Oxygen deficit is **one** of these. It is neither necessary nor sufficient "
       "for any terminal outcome, and several of the others leave no oxygen "
       "signature at all — a poisoned water can be fully oxygenated.\n")
-    a("These seven are not claimed to be all of them either, and they are not even "
-      "cleanly separable from one another: `M7` is partly a special case of `M2`, "
-      "and `M5` ends by feeding `M3`. They were arrived at by asking what could "
-      "produce the terminal outcomes, which is a question with no natural stopping "
-      "point. Treat them as seven routes we could name, not as the routes there "
-      "are.\n")
+    a("**These are derived, not chosen.** An earlier version of this page listed "
+      "seven routes arrived at by asking what could produce the terminal outcomes — "
+      "a question with no natural stopping point, and no principle saying why those "
+      "seven and not others. They were plausible and arbitrary. Each route is now "
+      "the instantiation of one or more of the avenues above, and the mapping is "
+      "what justifies the list.\n")
+    a("Running the mapping the other way found the same hole the hypothesis "
+      "register had: `V7` and `V8` had **no route at all**. A population that fails "
+      "to replace itself, and a disturbance returning faster than recovery, were "
+      "not representable anywhere in the structure. `M8` and `M9` exist because the "
+      "avenues demanded them, which is the second time the procedure has produced "
+      "something the intuition missed.\n")
+    a("They are still not disjoint — `M7` is partly a special case of `M2`, `M5` "
+      "ends by feeding `M3`, and `M9` is a rate applied to any of the others. Where "
+      "the mapping to an avenue is poor, it is the route list that should change.\n")
     a("| | route | what it is |")
     a("|---|---|---|")
     for i, n, w in ROUTES:
