@@ -1,0 +1,99 @@
+{
+ "_what": "Every distinct feature subset of size 1-4 clustered once, then compared against every disjoint subset (exhaustive, not sampled) and scored on the dimensions it did not use.",
+ "_why": "Agreement between two derived baskets is stability of the DERIVATION and is bounded by how concentrated the space of derivable partitions is - a procedure that ignores the data can score well on it. held_out_lift cannot be earned that way: it asks what baskets built on k dimensions are worth on the dimensions left out.",
+ "_control": "Run with --permuted to shuffle each variable's values across stations within month. Everything except the station-to-value tie is preserved. Whatever agreement survives is the procedure agreeing with itself, and is the floor for every figure here.",
+ "_reading": "derived_vs_derived_lift is over ARI0, two random connected partitions. held_out_lift is the mean-square ratio of the derived partition minus that of the null partitions, on a variable the partition never saw; 0 means the baskets carry nothing about it beyond being connected blobs.",
+ "permuted": true,
+ "stations": 150,
+ "groups": 84,
+ "contiguous_null_ari": 0.368,
+ "variables": [
+  "fluo",
+  "oxy_bed",
+  "oxy_surf",
+  "oxysat_bed",
+  "oxysat_surf",
+  "sal_bed",
+  "sal_surf",
+  "temp_bed",
+  "temp_surf"
+ ],
+ "results": [
+  {
+   "features_per_basket": 1,
+   "subsets": 9,
+   "disjoint_pairs_all": 36,
+   "derived_vs_derived": 0.118,
+   "derived_vs_derived_lift": -0.25,
+   "spread": [
+    0.045,
+    0.158
+   ],
+   "derived_vs_official_lift": -0.227,
+   "held_out_dims": 8,
+   "held_out_scores": 72,
+   "held_out_lift": 0.002,
+   "held_out_spread": [
+    -0.07,
+    0.051
+   ]
+  },
+  {
+   "features_per_basket": 2,
+   "subsets": 36,
+   "disjoint_pairs_all": 378,
+   "derived_vs_derived": 0.117,
+   "derived_vs_derived_lift": -0.251,
+   "spread": [
+    0.048,
+    0.212
+   ],
+   "derived_vs_official_lift": -0.229,
+   "held_out_dims": 7,
+   "held_out_scores": 252,
+   "held_out_lift": 0.003,
+   "held_out_spread": [
+    -0.083,
+    0.054
+   ]
+  },
+  {
+   "features_per_basket": 3,
+   "subsets": 84,
+   "disjoint_pairs_all": 840,
+   "derived_vs_derived": 0.126,
+   "derived_vs_derived_lift": -0.242,
+   "spread": [
+    0.018,
+    0.253
+   ],
+   "derived_vs_official_lift": -0.23,
+   "held_out_dims": 6,
+   "held_out_scores": 504,
+   "held_out_lift": 0.002,
+   "held_out_spread": [
+    -0.071,
+    0.054
+   ]
+  },
+  {
+   "features_per_basket": 4,
+   "subsets": 126,
+   "disjoint_pairs_all": 315,
+   "derived_vs_derived": 0.126,
+   "derived_vs_derived_lift": -0.242,
+   "spread": [
+    0.04,
+    0.224
+   ],
+   "derived_vs_official_lift": -0.231,
+   "held_out_dims": 5,
+   "held_out_scores": 630,
+   "held_out_lift": 0.004,
+   "held_out_spread": [
+    -0.075,
+    0.078
+   ]
+  }
+ ]
+}
