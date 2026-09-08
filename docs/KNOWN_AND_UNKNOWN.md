@@ -42,6 +42,58 @@ what we fetched"** — and the two are not the same claim.
 
 ---
 
+## What the discovery rate tells you
+
+**A known unknown can be priced. An unknown known cannot** — by construction, since
+you would have to know it to count it. So there is only one estimator of its size: **the
+rate at which you keep finding them.**
+
+Ours, in a single day: turbidity and CDOM sitting in a file we held; three ODA topics a
+line apart; a 23 MB public layer we called the most important missing one; a clock-time
+field recorded twice in our own notes; a national sediment programme that ran for five
+years and stopped; and a paper whose measured estuary series refuted a claim we had
+already published. **Six.** Nothing about that rate suggests we are near the end of them.
+
+### The residual-growth test, turned on ourselves
+
+This project's method 6 says: move a part `P` out of a leftover, and the arithmetic
+must give `R_new = R_old − P`. If it doesn't shrink, the leftover was absorbing model
+error and was never a partition.
+
+Apply it to *"what Denmark does not measure."* Each discovery moved a part out. Did the
+leftover shrink by that part? **No — it grew.** Finding a thing you should have known
+raises your estimate of what else you have missed; it does not lower it. A leftover that
+behaves that way was never a partition of the world. It was absorbing our own ignorance,
+and reporting it as a property of Denmark.
+
+### Absence of evidence, priced
+
+*"We looked and found nothing"* supports *"there is nothing"* exactly as far as
+**P(not found | it exists)** is small. That probability is the sensitivity of the
+search, and nobody states it — including us, until now.
+
+Ours was poor: six known-positives missed in one day. So the inference was never
+licensed, whatever the topic. This is the null-discipline rule in a different costume —
+**you do not quote a search's sensitivity, you measure it** — and it has the same fix.
+
+> **Calibrate the search with known positives.** Seed it with things you already know
+> exist and count how many come back. That detection rate is the null for every absence
+> claim built on it. Without it, "not measured" means "not found by an uncharacterised
+> procedure", which supports nothing.
+
+### The two failure modes are symmetric
+
+| | reading | today's cases |
+|---|---|---|
+| **absence → absence** | "we didn't find it" ⇒ "it isn't there" | the six above |
+| **presence → evidence** | "there is a column" ⇒ "there is a measurement" | `hz` on 66 of 123 water bodies, built from freshwater points; 24 GB of six plankton fields that is one field relabelled |
+
+The second is worse, because it *adds* confidence — class 7, and the reason that class is
+separate. But they share a root: **treating the shape of a search result as a property of
+the world.**
+
+---
+
 ## The same map, from three vantage points
 
 The quadrants are not a property of the data. They are a property of who is standing
