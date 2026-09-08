@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Run a long job under a hard kernel-enforced memory cap.
+#
+# The kernel kills the job's own cgroup with SIGKILL the moment it exceeds the
+# limit. No polling, no log-watching, no heuristic about which process is the
+# runaway - the limit belongs to this job and nothing else can be the victim.
+# That is why this replaced an RSS-polling loop that repeatedly killed its own
+# watcher because `pkill -f <script>` matched the watching shell's command line.
+#
+# MemorySwapMax=0 is not optional. With MemoryMax alone the cgroup reclaims into
+# swap instead of dying, so a runaway thrashes 1 GB of swap and takes the machine
+# down slowly rather than being killed quickly. Tested: the same allocation reached
+# 400 MB under a 200 MB cap with swap allowed, and was SIGKILLed at the cap without.
+#
+#   scripts/runbig [-m 4G] -- python3 scripts/series.py
+#
+# Exit 137 means the cap was hit.
+set -euo pipefail
+MAX=4G
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -m|--max) MAX="$2"; shift 2 ;;
+    --) shift; break ;;
+    *) break ;;
+  esac
+done
+[ $# -eq 0 ] && { echo "usage: runbig [-m 4G] -- CMD..." >&2; exit 2; }
+echo "runbig: MemoryMax=$MAX MemorySwapMax=0 -- $*" >&2
+exec systemd-run --user --scope --quiet \
+  -p MemoryMax="$MAX" -p MemorySwapMax=0 -- "$@"

@@ -35,16 +35,44 @@ input and has no idea where it stops. Say what a script's peak depends on: "the
 number of retained CTD measurements times four bytes" is a bound. "Every cast, in a
 dict" is not.
 
-**Guard long runs at 4.5 GB**, and kill **by PID** — `pkill -f <script>` matches the
-watching shell's own command line and kills the watcher, which has happened four
-times:
+**The machine now defends itself, so a runaway is a hint rather than a crash.**
+This was set up after a runaway script took the VM down and cost a session restore.
 
-    until [ -f OUT ]; do
-      sleep 20
-      pid=$(pgrep -f "bin/python SCRIPT" | head -1); [ -z "$pid" ] && break
-      r=$(ps -o rss= -p "$pid" | awk '{printf "%.0f", $1/1024}')
-      [ "$r" -gt 4500 ] && kill "$pid" && echo "ABORT rss ${r}MB" && break
-    done
+`earlyoom` is installed and enabled, and kills on **swap exhaustion**: SIGTERM once
+the 10 GiB swapfile is half consumed, SIGKILL at three quarters. It prefers
+`python3` and avoids the session, the shell and `claude`, and it writes a dated line
+to `/var/log/earlyoom/kills.log` (root-readable only) so a killed job is
+diagnosable instead of vanishing. The non-obvious mechanism: earlyoom acts only when
+memory **and** swap are both under threshold, so making swap the gate means making
+the memory condition permissive (`-m 95,90`), not removing it.
+
+    sudo oom-policy show      # thresholds in force
+    sudo oom-policy swap      # default: let the buffer be used, kill when it goes
+    sudo oom-policy memory    # fallback: kill under ~700 MB available, before paging
+
+Switch to `memory` if the VM ever becomes unresponsive again despite the buffer —
+that would mean the spiral starts before free swap reaches 50%. It is deliberately
+over-protective and will kill jobs that would have finished.
+
+Swap is 10 GiB on root with `vm.swappiness=10`, so it is an emergency buffer rather
+than a working store. It was grown from 1 GiB partly for headroom and partly as a
+diagnostic: with only 1 GiB it was never possible to tell whether swapping worked or
+merely thrashed.
+
+**For a job you already know is large, cap it rather than relying on the net.**
+`scripts/runbig` puts the job in its own cgroup, so the kernel SIGKILLs exactly that
+job at the limit — no heuristic about who the runaway is:
+
+    scripts/runbig -m 4G -- ~/.venvs/marine/bin/python scripts/series.py
+
+Exit 137 means the cap was hit. `MemorySwapMax=0` inside it is not optional: with
+`MemoryMax` alone the cgroup reclaims into swap instead of dying. Measured — the
+same allocation reached 400 MB under a 200 MB cap with swap allowed, and was killed
+at the cap without it.
+
+Do **not** guard long runs with an RSS-polling loop. `pkill -f <script>` matches the
+watching shell's own command line and kills the watcher; that happened four times
+before this was replaced.
 
 **Scratch space is on disk.** `TMPDIR` points at `~/.cache/claude-tmp` on the 197 GB
 volume; `/tmp` is a 1 GB tmpfs, so anything written there is held in RAM and lost on
