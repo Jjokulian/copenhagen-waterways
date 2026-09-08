@@ -2397,7 +2397,7 @@ Stations added, moved and dropped over the record, so a trend can be a trend in 
 
 **Discriminated by.** Recompute every trend on the subset of stations present throughout.
 
-**Needs.** Station start and end dates. Now held: the ODA register carries them.
+**Needs.** Station start and end dates. **Not held, and the register does not carry them.** Only **34 of 1,415** series stations appear in `stations.csv` at all, and `StartDato` equals `SlutDato` on **796,990 of 798,574 rows (99.8%)** — the field is a single sampling-visit date, not a station lifespan. Error class 4, schema conflation: one column name covering two different things. Presence must therefore be derived from the observation record itself, which is what [`hypodrafts/I1.md`](hypodrafts/I1.md) does — it finds **64 stations present in all eight five-year eras**, 8,485 station-months, with the remaining 72.1% of June–September observations being turnover.
 
 ### I2 — Changing analytical method
 
