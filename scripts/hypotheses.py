@@ -169,6 +169,9 @@ TERMS = {
     'bacteria': (
         'Single-celled organisms without a nucleus - the most abundant life on Earth, and in the sea the principal recyclers of everything that dies.',
         'Greek bakterion, a little rod, after the shape of the first ones seen.'),
+    'bacteriophage': (
+        'A virus that infects bacteria. The most numerous biological entities on the planet, and in the sea they lyse a large share of the bacterial population every day.',
+        'Greek phagein, to eat - literally bacteria-eater.'),
     'bathymetry': (
         'The shape of the seabed - underwater topography. It determines which basins can ventilate and which cannot.',
         'Greek bathys (deep) plus metron (measure).'),
@@ -244,6 +247,9 @@ TERMS = {
     'chlorophyll': (
         'The green pigment that captures light for photosynthesis. Measuring it is the standard way to estimate how much algae is in the water - it is a proxy for biomass, not for health.',
         'Greek chloros (pale green) plus phyllon (leaf).'),
+    'Clostridioides difficile': (
+        'The bacterium that takes over a gut whose community antibiotics have cleared. The harm comes from the vacancy rather than from the drug.',
+        'The clearest demonstration that occupancy itself was doing the work.'),
     'cobalamin': (
         'Vitamin B12. Built around a cobalt atom, made only by bacteria and archaea, required by most algae.',
         'Cobalt plus amine, after the metal at its centre.'),
@@ -253,6 +259,9 @@ TERMS = {
     'cold seep': (
         'A seafloor site where methane or sulphide-rich fluid escapes slowly rather than hot. Like a vent, it supports a community running on chemistry rather than light.',
         'Slower, cooler, and more widespread than vents - including in the North Sea.'),
+    'colonisation resistance': (
+        'The protection an established community gives simply by occupying the space and consuming the resources, so that an incomer cannot establish. In gut, skin and root zone it is the main protective function the community performs.',
+        'A function with no product: nothing is made, nothing is secreted. It is visible only when it is removed.'),
     'commensalism': (
         'A relationship in which one partner benefits and the other is unaffected. In practice the middle of a spectrum rather than a distinct category, and the hardest to demonstrate.',
         'Latin com plus mensa, table: eating at the same table.'),
@@ -358,6 +367,9 @@ TERMS = {
     'extremophile': (
         'An organism thriving in conditions that would kill most life - extremes of heat, salt, acidity, pressure or chemistry. The word records our own expectations rather than anything about the organism.',
         'To the organism the conditions are not extreme. They are simply where it lives.'),
+    'faecal microbiota transplant': (
+        'Treating a cleared gut by putting a whole functioning community back, without anyone needing to know which member does the work. Cure rates around ninety per cent.',
+        'The same design as putting healthy sediment into failed sediment - proven in one domain and never tried in the other.'),
     'fedtemog': (
         'Danish, roughly fat-muck: the greasy, foul organic material that accumulates in the water and along the shore. Not a scientific term, and not measured by anything.',
         'Fedt is fat, mog is muck or dung. A word from people who swim, not from a monitoring programme.'),
@@ -472,6 +484,9 @@ TERMS = {
     'Kd': (
         'The light attenuation coefficient: how fast light dies away with depth. Higher Kd means darker at the bottom.',
         'One broadband number standing in for a whole spectrum, which is why its cause cannot be read off it.'),
+    'kill the winner': (
+        'The model in which whichever organism is most abundant is the easiest target for its own specific virus, so cropping falls hardest on the winner and diversity is maintained by predation rather than by competition.',
+        'It makes viruses a structuring force rather than only a destructive one.'),
     'klapplads': (
         'Danish for a licensed site where dredged material is dumped at sea. There are 114 of them.',
         'Klappe, to tip or dump; plads, place.'),
@@ -547,6 +562,9 @@ TERMS = {
     'mor': (
         'Raw, matted, unincorporated humus sitting on top of the soil because the fauna that would mix it in are absent or excluded.',
         'Also from Danish, meaning mould in the other sense. The terrestrial version of an organic mat on the seabed.'),
+    'mucus layer': (
+        'The gel coating animal surfaces exposed to the outside. It is enriched in bacteriophage, which attack incoming bacteria - a defence delivered by something classified as a parasite.',
+        'Which is the pathogen-and-partner distinction failing again, in the place a body meets the world.'),
     'mull': (
         'Humus that soil animals have worked into the mineral soil - crumbly, fast-cycling, well mixed.',
         'From Danish and German muld, mould or loose earth. Its degraded counterpart is mor.'),
@@ -880,6 +898,9 @@ TERMS = {
     'toxicant': (
         'A poisonous substance, especially a manufactured one. Distinguished from a toxin, which strictly means a poison made by a living thing.',
         'The distinction matters in the literature and is routinely ignored elsewhere.'),
+    'transduction': (
+        'Genes moved between bacteria by a virus carrying them from one host to the next. A principal route of horizontal gene transfer, which makes viruses a cause of adaptation as well as of death.',
+        'One of three classical routes, alongside conjugation and taking up loose DNA from the water.'),
     'transect': (
         'A line along which measurements are taken at intervals - here, usually running from the shore into deeper water to find how deep plants still grow.',
         'Latin trans (across) plus secare (to cut).'),
@@ -1950,6 +1971,30 @@ H = [
      "taxonomically agnostic by construction.",
      "Sediment and water eDNA surveys with an open taxonomic frame. None in Danish "
      "routine monitoring, and the categories on the existing forms are why."),
+    ("F14", "F", "Viruses as structure, not only as mortality",
+     ["O4", "O3", "O1", "O2"],
+     "`F11` counts viruses as a killer, which is how they are usually filed. They "
+     "are at least three other things at once. They **structure the community**: "
+     "the most abundant bacterium is the easiest target for its own phage, so "
+     "cropping falls hardest on whoever is winning, and diversity is maintained by "
+     "predation rather than by competition. They **move genes**: transduction by "
+     "phage is a principal vector of the horizontal transfer that makes prokaryotic "
+     "adaptation fast. And in animals they appear to **defend**: mucus layers are "
+     "enriched in phage that attack incoming bacteria, which is a host benefit "
+     "delivered by something classified as a parasite.",
+     "The same entities are simultaneously the largest agent of mortality, the "
+     "thing that keeps any one lineage from taking over, and the delivery mechanism "
+     "for the adaptation that lets prokaryotes outrun everything else. **Which "
+     "means they cannot be scored on one axis at all** — removing viral pressure "
+     "would not simply reduce mortality, it would collapse diversity and slow "
+     "adaptation together.",
+     "Community diversity and gene-transfer rates against viral abundance, rather "
+     "than mortality against viral abundance.",
+     "Marine viral counts and viral community composition. Not measured at any "
+     "Danish station, and the marine RNA virosphere in particular was largely "
+     "undescribed until the last few years. **This is the most likely present "
+     "location of the mycorrhizal gap** — a whole functional layer filed under "
+     "*pathogen* and therefore never examined for what else it does."),
     ("F12", "F", "The micropathogens nobody catalogues", ["O3", "O6", "O7"],
      "Viruses, bacteria, protists, fungi and oomycetes cause mass mortality in "
      "marine organisms routinely - eelgrass wasting, sea star wasting, oyster "
@@ -2709,6 +2754,32 @@ H = [
      "gradient, rather than presence-or-absence of any named organism.",
      "Host-associated microbial and viral community data through a stress gradient. "
      "Absent for every Danish marine species."),
+    ("T11", "T", "Occupancy is the function", ["O3", "O7", "O6"],
+     "A body is an environment, and so is a sediment surface, a leaf, a root, a "
+     "mucus layer. What lives there is competing for space and resources against "
+     "everything else able to live there — so a resident's benefit to its host is "
+     "often not anything it produces. It is that **it is there, and therefore "
+     "something else is not**. This is colonisation resistance, and in gut, skin "
+     "and rhizosphere it is the main protective function the community performs.",
+     "**A function with no product cannot be found by looking for one.** No "
+     "metabolite, no signal, no service — just an occupied niche. It is invisible "
+     "to any survey asking what an organism does, and visible only in what happens "
+     "when it is removed. Which makes it structurally the same problem as `T10`, "
+     "and explains why removals so often surprise: the thing lost was the "
+     "occupancy.",
+     "Invasion or infection success in an intact community against a depleted one, "
+     "with the community otherwise matched. The classic design, and the same one as "
+     "the sediment inoculation of `T5`.",
+     "Challenge experiments on intact versus disturbed communities. Standard method "
+     "in medical and soil microbiology, not applied in Danish marine work. **The "
+     "human case is the strongest evidence in this whole register that the "
+     "mechanism is real and the remedy works.** A course of antibiotics clears the "
+     "gut community, *Clostridioides difficile* moves into the vacancy, and the "
+     "harm comes from the emptiness rather than from the drug. The treatment is "
+     "faecal microbiota transplant — putting a whole functioning community back, "
+     "with cure rates around ninety per cent, and without anyone needing to know "
+     "which member did the work. That is precisely the design of `X1`, already "
+     "proven in one domain and never tried in the sediment."),
     ("T10", "T", "Removing an organism whose role is unknown is not neutral",
      ["O3", "O7", "O6"],
      "Biocides and pest control remove organisms classified as harmful. That "

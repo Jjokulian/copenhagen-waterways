@@ -594,6 +594,11 @@
   "label": "The organisms that fall between the folk categories",
   "text": "Danish marine monitoring is organised as *bundfauna*, *vegetation* and *phytoplankton* — animals, plants, and small green things. That is a folk taxonomy, and it does not match the tree of life. Labyrinthulids, which cause eelgrass wasting disease, are stramenopiles: more closely related to kelp and diatoms than to any fungus, despite living like one. Oomycetes are in the same group. Animals and fungi are sister lineages, so a mushroom is a closer relative of yours than of a plant. Plants, animals and fungi are three branches out of many, and most eukaryotic diversity — nearly all of it marine and microbial — sits in groups with no common name."
  },
+ "F14": {
+  "kind": "hypothesis (F)",
+  "label": "Viruses as structure, not only as mortality",
+  "text": "`F11` counts viruses as a killer, which is how they are usually filed. They are at least three other things at once. They **structure the community**: the most abundant bacterium is the easiest target for its own phage, so cropping falls hardest on whoever is winning, and diversity is maintained by predation rather than by competition. They **move genes**: transduction by phage is a principal vector of the horizontal transfer that makes prokaryotic adaptation fast. And in animals they appear to **defend**: mucus layers are enriched in phage that attack incoming bacteria, which is a host benefit delivered by something classified as a parasite."
+ },
  "F12": {
   "kind": "hypothesis (F)",
   "label": "The micropathogens nobody catalogues",
@@ -929,6 +934,11 @@
   "label": "Pathogen and partner are not kinds of organism",
   "text": "Parasite, commensal and mutualist are positions on a spectrum, not classes of creature, and an organism moves along it with the context. The clearest demonstrations are the largest: mitochondria and chloroplasts were free-living bacteria; roughly eight per cent of the human genome is retroviral in origin; and the protein that builds the mammalian placenta is a captured viral envelope gene, so **mammalian pregnancy runs on a domesticated virus**. In the other direction, most of the viruses and microbes carried by any animal have no characterised effect at all."
  },
+ "T11": {
+  "kind": "hypothesis (T)",
+  "label": "Occupancy is the function",
+  "text": "A body is an environment, and so is a sediment surface, a leaf, a root, a mucus layer. What lives there is competing for space and resources against everything else able to live there — so a resident's benefit to its host is often not anything it produces. It is that **it is there, and therefore something else is not**. This is colonisation resistance, and in gut, skin and rhizosphere it is the main protective function the community performs."
+ },
  "T10": {
   "kind": "hypothesis (T)",
   "label": "Removing an organism whose role is unknown is not neutral",
@@ -1186,6 +1196,13 @@
     "bacterium"
    ]
   },
+  "bacteriophage": {
+   "text": "A virus that infects bacteria. The most numerous biological entities on the planet, and in the sea they lyse a large share of the bacterial population every day.",
+   "why": "Greek phagein, to eat - literally bacteria-eater.",
+   "forms": [
+    "bacteriophage"
+   ]
+  },
   "bathymetry": {
    "text": "The shape of the seabed - underwater topography. It determines which basins can ventilate and which cannot.",
    "why": "Greek bathys (deep) plus metron (measure).",
@@ -1367,6 +1384,13 @@
     "chlorophyll"
    ]
   },
+  "Clostridioides difficile": {
+   "text": "The bacterium that takes over a gut whose community antibiotics have cleared. The harm comes from the vacancy rather than from the drug.",
+   "why": "The clearest demonstration that occupancy itself was doing the work.",
+   "forms": [
+    "clostridioides difficile"
+   ]
+  },
   "cobalamin": {
    "text": "Vitamin B12. Built around a cobalt atom, made only by bacteria and archaea, required by most algae.",
    "why": "Cobalt plus amine, after the metal at its centre.",
@@ -1388,6 +1412,13 @@
    "why": "Slower, cooler, and more widespread than vents - including in the North Sea.",
    "forms": [
     "cold seep"
+   ]
+  },
+  "colonisation resistance": {
+   "text": "The protection an established community gives simply by occupying the space and consuming the resources, so that an incomer cannot establish. In gut, skin and root zone it is the main protective function the community performs.",
+   "why": "A function with no product: nothing is made, nothing is secreted. It is visible only when it is removed.",
+   "forms": [
+    "colonisation resistance"
    ]
   },
   "commensalism": {
@@ -1646,6 +1677,13 @@
     "extremophile"
    ]
   },
+  "faecal microbiota transplant": {
+   "text": "Treating a cleared gut by putting a whole functioning community back, without anyone needing to know which member does the work. Cure rates around ninety per cent.",
+   "why": "The same design as putting healthy sediment into failed sediment - proven in one domain and never tried in the other.",
+   "forms": [
+    "faecal microbiota transplant"
+   ]
+  },
   "fedtemog": {
    "text": "Danish, roughly fat-muck: the greasy, foul organic material that accumulates in the water and along the shore. Not a scientific term, and not measured by anything.",
    "why": "Fedt is fat, mog is muck or dung. A word from people who swim, not from a monitoring programme.",
@@ -1783,7 +1821,8 @@
    "text": "A parasitic worm. Their removal from human populations is implicated in immune dysregulation, which is the standard cautionary case for eliminating an organism whose full role was unknown.",
    "why": "Greek helmins, worm.",
    "forms": [
-    "helminth"
+    "helminth",
+    "helminths"
    ]
   },
   "heterotroph": {
@@ -1924,6 +1963,13 @@
    "why": "One broadband number standing in for a whole spectrum, which is why its cause cannot be read off it.",
    "forms": [
     "kd"
+   ]
+  },
+  "kill the winner": {
+   "text": "The model in which whichever organism is most abundant is the easiest target for its own specific virus, so cropping falls hardest on the winner and diversity is maintained by predation rather than by competition.",
+   "why": "It makes viruses a structuring force rather than only a destructive one.",
+   "forms": [
+    "kill the winner"
    ]
   },
   "klapplads": {
@@ -2105,6 +2151,13 @@
    "forms": [
     "mor",
     "moral"
+   ]
+  },
+  "mucus layer": {
+   "text": "The gel coating animal surfaces exposed to the outside. It is enriched in bacteriophage, which attack incoming bacteria - a defence delivered by something classified as a parasite.",
+   "why": "Which is the pathogen-and-partner distinction failing again, in the place a body meets the world.",
+   "forms": [
+    "mucus layer"
    ]
   },
   "mull": {
@@ -2909,6 +2962,13 @@
    "forms": [
     "toxicant",
     "toxicants"
+   ]
+  },
+  "transduction": {
+   "text": "Genes moved between bacteria by a virus carrying them from one host to the next. A principal route of horizontal gene transfer, which makes viruses a cause of adaptation as well as of death.",
+   "why": "One of three classical routes, alongside conjugation and taking up loose DNA from the water.",
+   "forms": [
+    "transduction"
    ]
   },
   "transect": {

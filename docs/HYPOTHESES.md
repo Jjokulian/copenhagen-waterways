@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**156 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**158 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 156 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 158 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 156 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 158 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -1153,6 +1153,18 @@ Danish marine monitoring is organised as *bundfauna*, *vegetation* and *phytopla
 
 **Needs.** Sediment and water eDNA surveys with an open taxonomic frame. None in Danish routine monitoring, and the categories on the existing forms are why.
 
+### F14 — Viruses as structure, not only as mortality
+
+**Outcomes:** O4, O3, O1, O2
+
+`F11` counts viruses as a killer, which is how they are usually filed. They are at least three other things at once. They **structure the community**: the most abundant bacterium is the easiest target for its own phage, so cropping falls hardest on whoever is winning, and diversity is maintained by predation rather than by competition. They **move genes**: transduction by phage is a principal vector of the horizontal transfer that makes prokaryotic adaptation fast. And in animals they appear to **defend**: mucus layers are enriched in phage that attack incoming bacteria, which is a host benefit delivered by something classified as a parasite.
+
+**Predicts.** The same entities are simultaneously the largest agent of mortality, the thing that keeps any one lineage from taking over, and the delivery mechanism for the adaptation that lets prokaryotes outrun everything else. **Which means they cannot be scored on one axis at all** — removing viral pressure would not simply reduce mortality, it would collapse diversity and slow adaptation together.
+
+**Discriminated by.** Community diversity and gene-transfer rates against viral abundance, rather than mortality against viral abundance.
+
+**Needs.** Marine viral counts and viral community composition. Not measured at any Danish station, and the marine RNA virosphere in particular was largely undescribed until the last few years. **This is the most likely present location of the mycorrhizal gap** — a whole functional layer filed under *pathogen* and therefore never examined for what else it does.
+
 ### F12 — The micropathogens nobody catalogues
 
 **Outcomes:** O3, O6, O7
@@ -1900,6 +1912,18 @@ Parasite, commensal and mutualist are positions on a spectrum, not classes of cr
 **Discriminated by.** Host condition against symbiont community composition under a stress gradient, rather than presence-or-absence of any named organism.
 
 **Needs.** Host-associated microbial and viral community data through a stress gradient. Absent for every Danish marine species.
+
+### T11 — Occupancy is the function
+
+**Outcomes:** O3, O7, O6
+
+A body is an environment, and so is a sediment surface, a leaf, a root, a mucus layer. What lives there is competing for space and resources against everything else able to live there — so a resident's benefit to its host is often not anything it produces. It is that **it is there, and therefore something else is not**. This is colonisation resistance, and in gut, skin and rhizosphere it is the main protective function the community performs.
+
+**Predicts.** **A function with no product cannot be found by looking for one.** No metabolite, no signal, no service — just an occupied niche. It is invisible to any survey asking what an organism does, and visible only in what happens when it is removed. Which makes it structurally the same problem as `T10`, and explains why removals so often surprise: the thing lost was the occupancy.
+
+**Discriminated by.** Invasion or infection success in an intact community against a depleted one, with the community otherwise matched. The classic design, and the same one as the sediment inoculation of `T5`.
+
+**Needs.** Challenge experiments on intact versus disturbed communities. Standard method in medical and soil microbiology, not applied in Danish marine work. **The human case is the strongest evidence in this whole register that the mechanism is real and the remedy works.** A course of antibiotics clears the gut community, *Clostridioides difficile* moves into the vacancy, and the harm comes from the emptiness rather than from the drug. The treatment is faecal microbiota transplant — putting a whole functioning community back, with cure rates around ninety per cent, and without anyone needing to know which member did the work. That is precisely the design of `X1`, already proven in one domain and never tried in the sediment.
 
 ### T10 — Removing an organism whose role is unknown is not neutral
 
