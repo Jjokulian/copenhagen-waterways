@@ -1017,887 +1017,1626 @@
  "_terms": {
   "acetylcholine": {
    "text": "The signalling molecule nerves use at many junctions. Its receptors and the enzyme that clears it are targets for several insecticide classes, and both are universal in animals.",
-   "why": "Acetyl plus choline, its chemical parts."
+   "why": "Acetyl plus choline, its chemical parts.",
+   "forms": [
+    "acetylcholine"
+   ]
   },
   "aerobe": {
    "text": "An organism that needs oxygen to live. Most animals, and many bacteria.",
-   "why": "Greek aer (air) plus bios (life). Its opposite is an anaerobe."
+   "why": "Greek aer (air) plus bios (life). Its opposite is an anaerobe.",
+   "forms": [
+    "aerobe",
+    "aerobes",
+    "aerobic",
+    "aerobical"
+   ]
   },
   "AIS": {
    "text": "Automatic identification system - the transponder ships broadcast for collision avoidance, which incidentally records where everything went.",
-   "why": "Designed for safety, useful as an activity archive."
+   "why": "Designed for safety, useful as an activity archive.",
+   "forms": [
+    "ais",
+    "aised",
+    "aising"
+   ]
   },
   "Alcian blue": {
    "text": "A dye that stains the sticky sugar-based gel algae secrete, which is otherwise transparent. It is the only reason anybody knows the gel is there.",
-   "why": "Without it, transparent exopolymer particles are invisible - which is why they went unnoticed until the 1990s."
+   "why": "Without it, transparent exopolymer particles are invisible - which is why they went unnoticed until the 1990s.",
+   "forms": [
+    "alcian blue"
+   ]
   },
   "algae": {
    "text": "Photosynthetic organisms that are not plants - from single cells drifting in water to seaweeds metres long. Not a single family, just everything green that was left over.",
-   "why": "Latin alga, seaweed. A category defined by exclusion, which is why it holds unrelated things."
+   "why": "Latin alga, seaweed. A category defined by exclusion, which is why it holds unrelated things.",
+   "forms": [
+    "alga",
+    "algae",
+    "algal"
+   ]
   },
   "Allee": {
    "text": "Below a certain population density, reproduction fails - mates are not found, spawning does not coincide, group defences stop working. The decline then feeds itself.",
-   "why": "Warder Clyde Allee, 1930s. The counterintuitive half of population ecology: rarity itself can be the cause of further rarity."
+   "why": "Warder Clyde Allee, 1930s. The counterintuitive half of population ecology: rarity itself can be the cause of further rarity.",
+   "forms": [
+    "allee",
+    "alles"
+   ]
   },
   "allelopathy": {
    "text": "One plant chemically suppressing another. Some macrophytes release compounds that inhibit the algae competing with them.",
-   "why": "Greek allelon (of each other) plus pathos (suffering)."
+   "why": "Greek allelon (of each other) plus pathos (suffering).",
+   "forms": [
+    "allelopathy"
+   ]
   },
   "ammonium": {
    "text": "The simplest form of dissolved nitrogen, the form in sewage and in decaying material. Bacteria oxidise it to nitrate, consuming oxygen; in alkaline water it converts to ammonia, which is acutely toxic.",
-   "why": "From ammonia, ultimately from the temple of Amun in Egypt, near which the salt was collected."
+   "why": "From ammonia, ultimately from the temple of Amun in Egypt, near which the salt was collected.",
+   "forms": [
+    "ammonia",
+    "ammonium"
+   ]
   },
   "anaerobic": {
    "text": "Without oxygen - either an environment with none, or an organism that lives without it. Anaerobic decay produces different, often toxic, products.",
-   "why": "Greek an- (without) plus aer. Anaerobiosis is the state; anaerobes are the organisms."
+   "why": "Greek an- (without) plus aer. Anaerobiosis is the state; anaerobes are the organisms.",
+   "forms": [
+    "anaerobic",
+    "anaerobical"
+   ]
   },
   "anammox": {
    "text": "Bacteria combining ammonium and nitrite directly into nitrogen gas without needing oxygen. Another route by which nitrogen leaves permanently.",
-   "why": "Contraction of anaerobic ammonium oxidation. Only discovered in the 1990s."
+   "why": "Contraction of anaerobic ammonium oxidation. Only discovered in the 1990s.",
+   "forms": [
+    "anammox"
+   ]
   },
   "Andosol": {
    "text": "A soil formed on volcanic ash. It fixes phosphate more strongly than any other soil type - fertiliser can disappear from availability almost entirely.",
-   "why": "From Japanese an (dark) and do (soil)."
+   "why": "From Japanese an (dark) and do (soil).",
+   "forms": [
+    "andosol",
+    "andosols"
+   ]
   },
   "anoxia": {
    "text": "No oxygen at all, as opposed to too little.",
-   "why": "Greek an- (without). The step past hypoxia, and chemically a different world - sulphate reduction takes over."
+   "why": "Greek an- (without). The step past hypoxia, and chemically a different world - sulphate reduction takes over.",
+   "forms": [
+    "anoxia"
+   ]
   },
   "anoxic": {
    "text": "Containing no oxygen at all, as distinct from merely low. In marine sediment the switch to anoxic is also a switch to a different chemistry, producing sulphide.",
-   "why": "Greek an- (without) plus the root of oxygen."
+   "why": "Greek an- (without) plus the root of oxygen.",
+   "forms": [
+    "anoxic"
+   ]
   },
   "archaea": {
    "text": "A third domain of life alongside bacteria and eukaryotes - superficially bacteria-like, biochemically very different, and responsible for much methane and ammonia cycling.",
-   "why": "Greek archaios, ancient."
+   "why": "Greek archaios, ancient.",
+   "forms": [
+    "archaea"
+   ]
   },
   "Arenosol": {
    "text": "A sandy soil: little clay, little organic matter, holds almost no water or nutrients, leaches heavily.",
-   "why": "Latin arena, sand - the same word as the sand-floored arenas of Rome."
+   "why": "Latin arena, sand - the same word as the sand-floored arenas of Rome.",
+   "forms": [
+    "arenosol"
+   ]
   },
   "autoclave": {
    "text": "To sterilise by steam under pressure. Autoclaved material has identical chemistry to the original and no living organisms, which is how you separate a chemical effect from a biological one.",
-   "why": "Greek auto (self) plus Latin clavis (key) - the lid seals itself as pressure rises."
+   "why": "Greek auto (self) plus Latin clavis (key) - the lid seals itself as pressure rises.",
+   "forms": [
+    "autoclave",
+    "autoclaved"
+   ]
   },
   "auxotroph": {
    "text": "An organism that cannot make some essential compound for itself and must obtain it ready-made. Most marine algae are auxotrophs for vitamin B12.",
-   "why": "Greek auxein (to grow) plus trophe (nourishment): needs feeding to grow."
+   "why": "Greek auxein (to grow) plus trophe (nourishment): needs feeding to grow.",
+   "forms": [
+    "auxotroph",
+    "auxotrophs"
+   ]
   },
   "azole": {
    "text": "The largest class of agricultural and medical fungicides. They block sterol synthesis at an enzyme every eukaryote shares, so their selectivity comes from dose and uptake rather than from the target being absent.",
-   "why": "Named for the five-membered nitrogen ring they contain."
+   "why": "Named for the five-membered nitrogen ring they contain.",
+   "forms": [
+    "azole",
+    "azoles"
+   ]
   },
   "bacteria": {
    "text": "Single-celled organisms without a nucleus - the most abundant life on Earth, and in the sea the principal recyclers of everything that dies.",
-   "why": "Greek bakterion, a little rod, after the shape of the first ones seen."
+   "why": "Greek bakterion, a little rod, after the shape of the first ones seen.",
+   "forms": [
+    "bacteria",
+    "bacterial",
+    "bacterium"
+   ]
   },
   "bathymetry": {
    "text": "The shape of the seabed - underwater topography. It determines which basins can ventilate and which cannot.",
-   "why": "Greek bathys (deep) plus metron (measure)."
+   "why": "Greek bathys (deep) plus metron (measure).",
+   "forms": [
+    "bathymetry"
+   ]
   },
   "Beggiatoa": {
    "text": "A sulphide-eating bacterium that forms thick white mats on oxygen-poor sediment. Its presence is a visible sign that the bed has gone sulphidic.",
-   "why": "Named after Francesco Secchi di Beggiato, a 19th-century Italian physician."
+   "why": "Named after Francesco Secchi di Beggiato, a 19th-century Italian physician.",
+   "forms": [
+    "beggiatoa"
+   ]
   },
   "benthic": {
    "text": "Of the seabed - the animals, plants and processes on or in the bottom.",
-   "why": "Greek benthos, the depths."
+   "why": "Greek benthos, the depths.",
+   "forms": [
+    "benthic"
+   ]
   },
   "benthos": {
    "text": "Everything living on or in the seabed, taken together.",
-   "why": "Greek benthos, the depths."
+   "why": "Greek benthos, the depths.",
+   "forms": [
+    "benthic",
+    "benthos"
+   ]
   },
   "bicarbonate": {
    "text": "The dissolved form most of the ocean's carbon takes. Plants can use it for photosynthesis, and it buffers the water against pH change.",
-   "why": "The carbonate system's middle state, between dissolved CO2 and carbonate ion."
+   "why": "The carbonate system's middle state, between dissolved CO2 and carbonate ion.",
+   "forms": [
+    "bicarbonate"
+   ]
   },
   "bioaccumulative": {
    "text": "Building up in an organism faster than it is excreted, so body burden rises over a lifetime. Distinct from biomagnification, which is the further concentration at each step up the food chain.",
-   "why": "One of the three legs of the PBT test, and the reason persistence matters biologically rather than just chemically."
+   "why": "One of the three legs of the PBT test, and the reason persistence matters biologically rather than just chemically.",
+   "forms": [
+    "bioaccumulative"
+   ]
   },
   "biocide": {
    "text": "Any substance intended to kill living things - the umbrella covering pesticides, fungicides, herbicides, antifoulants, disinfectants and wood preservatives.",
-   "why": "Literally life-killer. The word is honest in a way the specific ones are not."
+   "why": "Literally life-killer. The word is honest in a way the specific ones are not.",
+   "forms": [
+    "biocidal",
+    "biocide",
+    "biocides"
+   ]
   },
   "biocrust": {
    "text": "A living skin of cyanobacteria, lichens and mosses binding a desert soil surface. Break it and the sand mobilises.",
-   "why": "Biological soil crust. Its marine counterpart is microphytobenthos."
+   "why": "Biological soil crust. Its marine counterpart is microphytobenthos.",
+   "forms": [
+    "biocrust"
+   ]
   },
   "biogenic": {
    "text": "Made by living things. Biogenic structure means reefs, beds and burrows built by organisms rather than by geology.",
-   "why": "Greek bios (life) plus genes (born of)."
+   "why": "Greek bios (life) plus genes (born of).",
+   "forms": [
+    "biogenic"
+   ]
   },
   "biomagnification": {
    "text": "A substance becoming more concentrated at each step up the food chain, because predators accumulate everything their prey had. Mercury and some organics do this; most metals do not.",
-   "why": "Distinct from bioaccumulation, which is build-up within one organism over its life."
+   "why": "Distinct from bioaccumulation, which is build-up within one organism over its life.",
+   "forms": [
+    "biomagnification"
+   ]
   },
   "bioturbation": {
    "text": "The churning of sediment by animals burrowing, feeding and irrigating their tunnels. It mixes oxygen down into the bed.",
-   "why": "Bio- plus the same turba: life doing the stirring."
+   "why": "Bio- plus the same turba: life doing the stirring.",
+   "forms": [
+    "bioturbation"
+   ]
   },
   "bioturbator": {
    "text": "An animal that churns sediment by burrowing, feeding or irrigating its tunnels, mixing oxygen down into the bed. Worms, clams and shrimp mostly.",
-   "why": "Bio plus Latin turba, a commotion - the same root as turbid and turbine."
+   "why": "Bio plus Latin turba, a commotion - the same root as turbid and turbine.",
+   "forms": [
+    "bioturbator",
+    "bioturbators"
+   ]
   },
   "bivalve": {
    "text": "A shellfish with two hinged shells - mussel, clam, oyster, cockle. Most filter their food from the water, which incidentally clears it.",
-   "why": "Two valves, meaning the two halves of the shell."
+   "why": "Two valves, meaning the two halves of the shell.",
+   "forms": [
+    "bivalve",
+    "bivalves"
+   ]
   },
   "BOD": {
    "text": "Biochemical oxygen demand - the share of COD that microbes will actually consume, usually measured over five days.",
-   "why": "The biologically available part of the oxygen demand."
+   "why": "The biologically available part of the oxygen demand.",
+   "forms": [
+    "bod"
+   ]
   },
   "brackish": {
    "text": "Water between fresh and fully marine. The Danish straits are brackish, and few species tolerate it, so the communities there are unusually species-poor.",
-   "why": "From Dutch brak, salty."
+   "why": "From Dutch brak, salty.",
+   "forms": [
+    "brackish"
+   ]
   },
   "bundfauna": {
    "text": "Danish for seabed animals - the standard term for the soft-bottom fauna survey that is Denmark's main biological measure of seabed condition.",
-   "why": "Bund is bottom. It is what the ODA topic of that name contains."
+   "why": "Bund is bottom. It is what the ODA topic of that name contains.",
+   "forms": [
+    "bundfauna"
+   ]
   },
   "carbonic anhydrase": {
    "text": "The zinc-containing enzyme that lets an organism convert bicarbonate into usable carbon dioxide. Without zinc, photosynthesis is throttled however much carbon is around.",
-   "why": "Anhydrase: it removes water from carbonic acid."
+   "why": "Anhydrase: it removes water from carbonic acid.",
+   "forms": [
+    "carbonic anhydrase"
+   ]
   },
   "CDOM": {
    "text": "Coloured dissolved organic matter - the brown, tea-like tint that dissolved plant material gives water. It absorbs light, especially blue.",
-   "why": "Its rise across northern waters is called browning, and it is driven by land use and hydrology rather than nutrients."
+   "why": "Its rise across northern waters is called browning, and it is driven by land use and hydrology rather than nutrients.",
+   "forms": [
+    "cdom"
+   ]
   },
   "Charney": {
    "text": "A feedback where losing vegetation raises the ground's reflectivity, which weakens the rising air that makes rain, which costs more vegetation.",
-   "why": "Jule Charney proposed it for the Sahel in 1975. One of the first climate feedbacks anyone wrote down."
+   "why": "Jule Charney proposed it for the Sahel in 1975. One of the first climate feedbacks anyone wrote down.",
+   "forms": [
+    "charney"
+   ]
   },
   "chitin": {
    "text": "The tough material of fungal cell walls and of crustacean and insect shells. After cellulose it is the most abundant biological polymer, and relatively few organisms can digest it.",
-   "why": "Greek chiton, a tunic."
+   "why": "Greek chiton, a tunic.",
+   "forms": [
+    "chitin"
+   ]
   },
   "chlorophyll": {
    "text": "The green pigment that captures light for photosynthesis. Measuring it is the standard way to estimate how much algae is in the water - it is a proxy for biomass, not for health.",
-   "why": "Greek chloros (pale green) plus phyllon (leaf)."
+   "why": "Greek chloros (pale green) plus phyllon (leaf).",
+   "forms": [
+    "chlorophyll"
+   ]
   },
   "cobalamin": {
    "text": "Vitamin B12. Built around a cobalt atom, made only by bacteria and archaea, required by most algae.",
-   "why": "Cobalt plus amine, after the metal at its centre."
+   "why": "Cobalt plus amine, after the metal at its centre.",
+   "forms": [
+    "cobalamin"
+   ]
   },
   "COD": {
    "text": "Chemical oxygen demand - how much oxygen a substance will consume when fully oxidised. Measured in the same units as the oxygen it removes.",
-   "why": "The measurement and the effect are the same quantity, which is unusual and useful."
+   "why": "The measurement and the effect are the same quantity, which is unusual and useful.",
+   "forms": [
+    "cod",
+    "codes",
+    "coding"
+   ]
   },
   "copepod": {
    "text": "A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth - and an arthropod, like the insects that insecticides are designed for.",
-   "why": "Greek kope (oar) plus pous (foot)."
+   "why": "Greek kope (oar) plus pous (foot).",
+   "forms": [
+    "copepod",
+    "copepods"
+   ]
   },
   "CTD": {
    "text": "The standard instrument lowered through the water column, recording conductivity, temperature and depth continuously - and usually oxygen too. It gives a profile rather than a single value.",
-   "why": "Named for the three things it measures. Salinity is calculated from conductivity."
+   "why": "Named for the three things it measures. Salinity is calculated from conductivity.",
+   "forms": [
+    "ctd"
+   ]
   },
   "cyanobacteria": {
    "text": "Photosynthetic bacteria, often called blue-green algae though they are not algae. Some fix nitrogen straight from the air, which lets them grow when nitrogen is scarce, and several make toxins.",
-   "why": "Greek kyanos, dark blue."
+   "why": "Greek kyanos, dark blue.",
+   "forms": [
+    "cyanobacteria",
+    "cyanobacterial"
+   ]
   },
   "CYP51": {
    "text": "The enzyme that makes sterols - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Azole fungicides work by blocking it, and every eukaryote has one.",
-   "why": "A cytochrome P450, numbered by family. The number is the only name it has."
+   "why": "A cytochrome P450, numbered by family. The number is the only name it has.",
+   "forms": [
+    "cyp51"
+   ]
   },
   "decomposer": {
    "text": "An organism that breaks down dead material - bacteria, fungi, and the animals that shred it first. Together they are the reason the world is not knee-deep in corpses.",
-   "why": "Named for the job rather than for any relationship between the organisms doing it."
+   "why": "Named for the job rather than for any relationship between the organisms doing it.",
+   "forms": [
+    "decomposer",
+    "decomposers"
+   ]
   },
   "decomposition": {
    "text": "The breakdown of dead material back to simpler substances. It is a relay run by different organisms at each stage, not a single process, which is why removing one link stalls the whole thing.",
-   "why": "Latin de- (apart) plus componere (to put together): the undoing of assembly."
+   "why": "Latin de- (apart) plus componere (to put together): the undoing of assembly.",
+   "forms": [
+    "decomposition"
+   ]
   },
   "denitrification": {
    "text": "Bacteria converting nitrate to nitrogen gas, which leaves the water permanently. The only process that actually removes nitrogen from a system.",
-   "why": "Undoing nitrification. It needs the nitrate that nitrification makes, so stopping one stops the other."
+   "why": "Undoing nitrification. It needs the nitrate that nitrification makes, so stopping one stops the other.",
+   "forms": [
+    "denitrification"
+   ]
   },
   "denitrifying": {
    "text": "Converting nitrate to nitrogen gas, which removes it from the water permanently. The only process that actually gets rid of nitrogen rather than moving it.",
-   "why": "Un-doing nitrification. It requires low oxygen and available carbon."
+   "why": "Un-doing nitrification. It requires low oxygen and available carbon.",
+   "forms": [
+    "denitrifying"
+   ]
   },
   "desertification": {
    "text": "Land degrading toward desert - a process with many causes and one appearance, which is why attributing it to a single culprit went badly wrong for thirty years.",
-   "why": "The parallel this project borrows its cautionary lessons from."
+   "why": "The parallel this project borrows its cautionary lessons from.",
+   "forms": [
+    "desertification"
+   ]
   },
   "detritivore": {
    "text": "An animal that eats dead organic material rather than living prey or plants.",
-   "why": "Latin detritus (worn away) plus vorare (to devour)."
+   "why": "Latin detritus (worn away) plus vorare (to devour).",
+   "forms": [
+    "detritivore",
+    "detritivores"
+   ]
   },
   "diatom": {
    "text": "A single-celled alga that builds itself a rigid glass box out of silica. They need dissolved silicon to grow at all, they are the preferred food of most marine grazers, and they sink fast when they die.",
-   "why": "Greek diatomos, cut in two - the shell comes in two halves that fit like a petri dish. The name describes the box, not the organism."
+   "why": "Greek diatomos, cut in two - the shell comes in two halves that fit like a petri dish. The name describes the box, not the organism.",
+   "forms": [
+    "diatom",
+    "diatoms"
+   ]
   },
   "dinoflagellate": {
    "text": "A single-celled alga that swims with two tails and often wears armour plating. Several make toxins, and some cause red tides.",
-   "why": "Greek dinos, whirling - they spin as they swim."
+   "why": "Greek dinos, whirling - they spin as they swim.",
+   "forms": [
+    "dinoflagellate"
+   ]
   },
   "ECHA": {
    "text": "The European Chemicals Agency, which runs REACH. Its compliance checks routinely find registration dossiers incomplete.",
-   "why": "Based in Helsinki. It evaluates what industry submits rather than testing independently."
+   "why": "Based in Helsinki. It evaluates what industry submits rather than testing independently.",
+   "forms": [
+    "echa"
+   ]
   },
   "ecotoxicology": {
    "text": "The study of how chemicals affect organisms and ecosystems. In regulatory practice it usually means acute mortality tests on a few standard species.",
-   "why": "Ecology plus toxicology - a young field, and its standard methods predate most of what is now known about symbiosis."
+   "why": "Ecology plus toxicology - a young field, and its standard methods predate most of what is now known about symbiosis.",
+   "forms": [
+    "ecotoxicology"
+   ]
   },
   "eelgrass": {
    "text": "A true flowering plant that lives fully submerged in the sea, forming meadows on soft bottoms. It roots in the sediment, needs light at the bed, and shelters everything else. Danish: alegras.",
-   "why": "Named for its long ribbon leaves. Zostera marina is the Danish species."
+   "why": "Named for its long ribbon leaves. Zostera marina is the Danish species.",
+   "forms": [
+    "eelgrass"
+   ]
   },
   "endocrine disruption": {
    "text": "Interference with an organism's hormone system, often at concentrations far below those that kill. Effects show as failed reproduction and altered development rather than as death.",
-   "why": "The endocrine system is the hormonal one - Greek endo (within) plus krinein (to separate)."
+   "why": "The endocrine system is the hormonal one - Greek endo (within) plus krinein (to separate).",
+   "forms": [
+    "endocrine disruption"
+   ]
   },
   "endocrine disruptor": {
    "text": "A substance that interferes with hormone systems, often at concentrations far below those that kill. Effects appear as failed reproduction and altered development rather than as death.",
-   "why": "One of the few grounds on which European approval is refused on hazard alone, without an exposure argument."
+   "why": "One of the few grounds on which European approval is refused on hazard alone, without an exposure argument.",
+   "forms": [
+    "endocrine disruptor"
+   ]
   },
   "epibenthic": {
    "text": "Living on the surface of the seabed rather than buried in it.",
-   "why": "Epi- (upon) plus benthos."
+   "why": "Epi- (upon) plus benthos.",
+   "forms": [
+    "epibenthic"
+   ]
   },
   "epiphyte": {
    "text": "A plant or alga growing on another plant, using it as a surface rather than feeding on it.",
-   "why": "Greek epi- (upon) plus phyton (plant). On eelgrass they shade the leaf they sit on."
+   "why": "Greek epi- (upon) plus phyton (plant). On eelgrass they shade the leaf they sit on.",
+   "forms": [
+    "epiphyte",
+    "epiphytes"
+   ]
   },
   "EQR": {
    "text": "Ecological quality ratio: the observed value divided by the value expected in an unimpacted reference state, scaled so that 1 is pristine.",
-   "why": "An EU device for making incomparable national measurements comparable. Its denominator is modelled, not measured."
+   "why": "An EU device for making incomparable national measurements comparable. Its denominator is modelled, not measured.",
+   "forms": [
+    "eqr"
+   ]
   },
   "erg": {
    "text": "A sand sea - the dune-covered kind of desert, as opposed to stony or salt desert.",
-   "why": "Arabic 'irq, a dune field. What makes it hostile is that the surface moves, not that it is dry."
+   "why": "Arabic 'irq, a dune field. What makes it hostile is that the surface moves, not that it is dry.",
+   "forms": [
+    "erg",
+    "erging"
+   ]
   },
   "essential use": {
    "text": "A proposed rule that the most harmful substances should be permitted only where they are genuinely necessary and no substitute exists - rather than wherever the exposure looks acceptable.",
-   "why": "The concept borrowed from how antibiotics are managed, and the closest existing idea to reserving a chemical rather than banning it."
+   "why": "The concept borrowed from how antibiotics are managed, and the closest existing idea to reserving a chemical rather than banning it.",
+   "forms": [
+    "essential use"
+   ]
   },
   "eukaryote": {
    "text": "An organism whose cells keep their DNA in a nucleus - animals, plants, fungi, and most algae. Bacteria and archaea are the ones that do not.",
-   "why": "Greek eu (well) plus karyon (kernel, nut): properly nucleated."
+   "why": "Greek eu (well) plus karyon (kernel, nut): properly nucleated.",
+   "forms": [
+    "eukaryote",
+    "eukaryotic"
+   ]
   },
   "eutrophic": {
    "text": "Over-fed: a water body receiving more nutrient than it can process.",
-   "why": "Greek eu- (well) plus trophe (nourishment) - literally well-nourished, which is why the word sounds like praise and means the opposite."
+   "why": "Greek eu- (well) plus trophe (nourishment) - literally well-nourished, which is why the word sounds like praise and means the opposite.",
+   "forms": [
+    "eutrophic",
+    "eutrophication"
+   ]
   },
   "eutrophication": {
    "text": "Over-feeding of a water body: so much nutrient that production outruns what the system can process.",
-   "why": "Greek eu- (well) plus trophe (nourishment). Literally well-nourished, which is why the word sounds positive and means the opposite."
+   "why": "Greek eu- (well) plus trophe (nourishment). Literally well-nourished, which is why the word sounds positive and means the opposite.",
+   "forms": [
+    "eutrophication"
+   ]
   },
   "euxinic": {
    "text": "Water that is both oxygen-free and carries free sulphide. The worst case.",
-   "why": "From Pontus Euxinus, the Roman name for the Black Sea, whose deep water has been like this throughout recorded history."
+   "why": "From Pontus Euxinus, the Roman name for the Black Sea, whose deep water has been like this throughout recorded history.",
+   "forms": [
+    "euxinic"
+   ]
   },
   "exopolymer": {
    "text": "Sticky long-chain sugars secreted outside the cell. It binds sediment, forms marine gel, and is what makes water feel slippery.",
-   "why": "Exo- (outside) plus polymer. Marine biologists count it as TEP."
+   "why": "Exo- (outside) plus polymer. Marine biologists count it as TEP.",
+   "forms": [
+    "exopolymer"
+   ]
   },
   "fedtemog": {
    "text": "Danish, roughly fat-muck: the greasy, foul organic material that accumulates in the water and along the shore. Not a scientific term, and not measured by anything.",
-   "why": "Fedt is fat, mog is muck or dung. A word from people who swim, not from a monitoring programme."
+   "why": "Fedt is fat, mog is muck or dung. A word from people who swim, not from a monitoring programme.",
+   "forms": [
+    "fedtemog"
+   ]
   },
   "Feltmåling": {
    "text": "Danish for field measurement - the ODA category holding instrument profiles taken in the water: CTD casts, light attenuation, oxygen.",
-   "why": "Felt (field) plus måling (measurement)."
+   "why": "Felt (field) plus måling (measurement).",
+   "forms": [
+    "feltmåling"
+   ]
   },
   "Ferralsol": {
    "text": "A deeply weathered tropical soil dominated by iron and aluminium oxides, which lock phosphate up so tightly that fertiliser vanishes from availability within weeks.",
-   "why": "Ferrum (iron) plus aluminium: named for what is left after everything else has weathered away."
+   "why": "Ferrum (iron) plus aluminium: named for what is left after everything else has weathered away.",
+   "forms": [
+    "ferralsol",
+    "ferralsols"
+   ]
   },
   "flagellate": {
    "text": "A single-celled organism that swims using a whip-like tail. In these waters they are the algae that take over when diatoms cannot grow, and they are poorly eaten.",
-   "why": "Latin flagellum, a whip."
+   "why": "Latin flagellum, a whip.",
+   "forms": [
+    "flagellate",
+    "flagellates"
+   ]
   },
   "flocculation": {
    "text": "Fine particles and dissolved organic matter clumping together and settling out, which happens abruptly where fresh water meets salt.",
-   "why": "Latin floccus, a tuft of wool. What the clumps look like."
+   "why": "Latin floccus, a tuft of wool. What the clumps look like.",
+   "forms": [
+    "flocculation"
+   ]
   },
   "foraminifera": {
    "text": "Single-celled organisms that build tiny chambered shells. Abundant in sediment, and their shells preserve, which makes them a record of past conditions.",
-   "why": "Latin foramen (hole) plus ferre (to bear) - the shells are perforated."
+   "why": "Latin foramen (hole) plus ferre (to bear) - the shells are perforated.",
+   "forms": [
+    "foraminifera"
+   ]
   },
   "frustule": {
    "text": "The two-part silica shell of a diatom.",
-   "why": "Latin frustulum, a little piece."
+   "why": "Latin frustulum, a little piece.",
+   "forms": [
+    "frustule",
+    "frustules"
+   ]
   },
   "fungi": {
    "text": "A kingdom of life separate from plants and animals, feeding by absorbing what they have digested outside themselves. On land they are the principal decomposers of tough material; in the sea they are barely studied.",
-   "why": "Latin fungus, mushroom - though most fungi never make anything you would recognise as one."
+   "why": "Latin fungus, mushroom - though most fungi never make anything you would recognise as one.",
+   "forms": [
+    "fungal",
+    "fungi"
+   ]
   },
   "fungicide": {
    "text": "A chemical designed to kill fungi. Applied in agriculture by the thousand tonnes, and acting on enzyme systems that fungi share with most other life.",
-   "why": "The -cide ending is Latin caedere, to kill - as in pesticide, biocide, herbicide."
+   "why": "The -cide ending is Latin caedere, to kill - as in pesticide, biocide, herbicide.",
+   "forms": [
+    "fungicide",
+    "fungicides"
+   ]
   },
   "glyphosate": {
    "text": "The world's most used herbicide. Its target enzyme is absent in animals but present in plants, bacteria and fungi, which makes it an antimicrobial as well as a weedkiller.",
-   "why": "From glycine and phosphonate, its chemical parts."
+   "why": "From glycine and phosphonate, its chemical parts.",
+   "forms": [
+    "glyphosate"
+   ]
   },
   "grab": {
    "text": "A sampling device dropped to the seabed that bites out a fixed area of sediment and brings it up. One grab is one sample, and it is how nearly all seabed fauna data is collected.",
-   "why": "It grabs. The fixed area is what makes counts comparable."
+   "why": "It grabs. The fixed area is what makes counts comparable.",
+   "forms": [
+    "grab"
+   ]
   },
   "grandfathered": {
    "text": "Permitted to continue under old rules because it was already in use when new rules arrived. Most industrial chemicals in Europe entered the system this way.",
-   "why": "From American voting law of the 1890s, where a grandfather clause exempted people whose grandfathers had voted - the origin is not a happy one."
+   "why": "From American voting law of the 1890s, where a grandfather clause exempted people whose grandfathers had voted - the origin is not a happy one.",
+   "forms": [
+    "grandfathered"
+   ]
   },
   "hazard": {
    "text": "The intrinsic capacity of something to cause harm, independent of whether anyone is exposed to it. A shark in an aquarium is a hazard; a shark in your bath is a risk.",
-   "why": "Kept strictly separate from risk in regulatory language, and routinely conflated everywhere else."
+   "why": "Kept strictly separate from risk in regulatory language, and routinely conflated everywhere else.",
+   "forms": [
+    "hazard",
+    "hazardous"
+   ]
   },
   "Hedley fractionation": {
    "text": "A sequence of chemical extractions that separates soil phosphorus into pools by how easily it can be released - from immediately available to permanently locked away.",
-   "why": "The standard soil-science method, and the reason soil scientists never quote total phosphorus alone."
+   "why": "The standard soil-science method, and the reason soil scientists never quote total phosphorus alone.",
+   "forms": [
+    "hedley fractionation"
+   ]
   },
   "holobiont": {
    "text": "An organism considered together with all the microbes living in and on it, as one functioning unit - because for many purposes that is what it actually is.",
-   "why": "Greek holos (whole) plus bios. A word that exists because the older picture of an organism turned out to be incomplete."
+   "why": "Greek holos (whole) plus bios. A word that exists because the older picture of an organism turned out to be incomplete.",
+   "forms": [
+    "holobiont"
+   ]
   },
   "humus": {
    "text": "The dark, stable remains of decayed organic matter in soil, after everything easily eaten has gone.",
-   "why": "Latin humus, ground or earth - the same root as human and humble."
+   "why": "Latin humus, ground or earth - the same root as human and humble.",
+   "forms": [
+    "humi",
+    "humus"
+   ]
   },
   "hydrogeology": {
    "text": "The study of how water moves through rock and soil underground. Nitrogen retention is a hydrogeological quantity as much as a biological one.",
-   "why": "Water plus geology."
+   "why": "Water plus geology.",
+   "forms": [
+    "hydrogeology"
+   ]
   },
   "hydrophobic": {
    "text": "Water-repelling. Such substances leave the water and gather at surfaces - which is why they concentrate in the microlayer and in fatty tissue.",
-   "why": "Greek hydor (water) plus phobos (fear)."
+   "why": "Greek hydor (water) plus phobos (fear).",
+   "forms": [
+    "hydrophobic"
+   ]
   },
   "hypoxia": {
    "text": "Not enough oxygen. Conventionally below 4 mg per litre in marine work, with 2 mg/l as severe.",
-   "why": "Greek hypo- (under) plus oxys, the root in oxygen."
+   "why": "Greek hypo- (under) plus oxys, the root in oxygen.",
+   "forms": [
+    "hypoxia"
+   ]
   },
   "hysteresis": {
    "text": "A system that does not retrace its path: the conditions that would restore it are not the conditions that broke it. Easy to enter, hard to leave.",
-   "why": "Greek hysteresis, a shortcoming or lagging behind."
+   "why": "Greek hysteresis, a shortcoming or lagging behind.",
+   "forms": [
+    "hysteresis"
+   ]
   },
   "iltsvind": {
    "text": "Danish for oxygen depletion - literally oxygen-dwindling. The word used in Danish public debate for what happens when the seabed suffocates.",
-   "why": "Ilt is Danish for oxygen, coined by H.C. Orsted from ild, fire."
+   "why": "Ilt is Danish for oxygen, coined by H.C. Orsted from ild, fire.",
+   "forms": [
+    "iltsvind"
+   ]
   },
   "immobilisation": {
    "text": "The opposite of mineralisation: microbes taking dissolved nutrient out of the water or soil to build their own bodies. High-carbon, low-nitrogen material causes it.",
-   "why": "The nutrient is not destroyed, just made unavailable while it sits inside a bacterium."
+   "why": "The nutrient is not destroyed, just made unavailable while it sits inside a bacterium.",
+   "forms": [
+    "immobilisation"
+   ]
   },
   "in situ": {
    "text": "In place - an experiment or measurement made where the thing actually lives, rather than in a laboratory.",
-   "why": "Latin, literally in position."
+   "why": "Latin, literally in position.",
+   "forms": [
+    "in situ"
+   ]
   },
   "indsatsbehov": {
    "text": "Danish for the required effort - the calculated size of the reduction a water body needs to reach its target. The central number of the whole nitrogen policy.",
-   "why": "Indsats (effort, intervention) plus behov (need)."
+   "why": "Indsats (effort, intervention) plus behov (need).",
+   "forms": [
+    "indsatsbehov"
+   ]
   },
   "infauna": {
    "text": "Animals living inside the sediment rather than on top of it - worms, clams, the things a grab sample catches.",
-   "why": "Latin in- plus fauna. The ones you have to dig for."
+   "why": "Latin in- plus fauna. The ones you have to dig for.",
+   "forms": [
+    "infauna",
+    "infaunal"
+   ]
   },
   "inoculum": {
    "text": "A small quantity of living material introduced deliberately to establish a community - a spoonful of healthy sediment, a starter culture.",
-   "why": "Latin inoculare, to graft in. The plural is inocula."
+   "why": "Latin inoculare, to graft in. The plural is inocula.",
+   "forms": [
+    "inocula",
+    "inoculation",
+    "inoculum"
+   ]
   },
   "invertebrate": {
    "text": "An animal without a backbone - worms, molluscs, crustaceans, insects. The overwhelming majority of animal species, and nearly everything on a seabed.",
-   "why": "Latin in- (not) plus vertebra. Defined by what it lacks, which tells you who wrote the category."
+   "why": "Latin in- (not) plus vertebra. Defined by what it lacks, which tells you who wrote the category.",
+   "forms": [
+    "invertebrate",
+    "invertebrates"
+   ]
   },
   "isotherm": {
    "text": "A curve showing how much of a substance a material will hold at each concentration, measured at one temperature. The standard way to describe a soil's capacity to hold phosphate.",
-   "why": "Greek isos (equal) plus therme (heat) - the temperature is held constant."
+   "why": "Greek isos (equal) plus therme (heat) - the temperature is held constant.",
+   "forms": [
+    "isotherm",
+    "isotherms"
+   ]
   },
   "Kd": {
    "text": "The light attenuation coefficient: how fast light dies away with depth. Higher Kd means darker at the bottom.",
-   "why": "One broadband number standing in for a whole spectrum, which is why its cause cannot be read off it."
+   "why": "One broadband number standing in for a whole spectrum, which is why its cause cannot be read off it.",
+   "forms": [
+    "kd"
+   ]
   },
   "klapplads": {
    "text": "Danish for a licensed site where dredged material is dumped at sea. There are 114 of them.",
-   "why": "Klappe, to tip or dump; plads, place."
+   "why": "Klappe, to tip or dump; plads, place.",
+   "forms": [
+    "klapplads"
+   ]
   },
   "Krebs cycle": {
    "text": "The central loop of metabolism, by which cells extract energy from food. Present in essentially all aerobic life.",
-   "why": "Hans Krebs, 1937. Also called the citric acid cycle, after the first compound in it."
+   "why": "Hans Krebs, 1937. Also called the citric acid cycle, after the first compound in it.",
+   "forms": [
+    "krebs cycle"
+   ]
   },
   "labile": {
    "text": "Easily and quickly broken down. Sugars and fresh algal material are labile.",
-   "why": "Latin labilis, liable to slip or fall. Its opposite here is recalcitrant."
+   "why": "Latin labilis, liable to slip or fall. Its opposite here is recalcitrant.",
+   "forms": [
+    "labile",
+    "lability"
+   ]
   },
   "Labyrinthula": {
    "text": "The slime-mould-like organism that causes eelgrass wasting disease. It destroyed most Atlantic eelgrass in the 1930s and is still present.",
-   "why": "Named for the labyrinth of tracks its cells glide along."
+   "why": "Named for the labyrinth of tracks its cells glide along.",
+   "forms": [
+    "labyrinthula"
+   ]
   },
   "labyrinthulid": {
    "text": "A group of marine organisms that glide along self-made slime tracks and decompose organic matter - and include the one that causes eelgrass wasting disease. Neither fungi nor animals nor plants.",
-   "why": "Named for the labyrinth of tracks their cells move along. Barely studied, and almost certainly under-appreciated."
+   "why": "Named for the labyrinth of tracks their cells move along. Barely studied, and almost certainly under-appreciated.",
+   "forms": [
+    "labyrinthulid",
+    "labyrinthulids"
+   ]
   },
   "Leptosol": {
    "text": "A very shallow soil, under about 25 cm to rock. Almost no capacity to buffer anything.",
-   "why": "Greek leptos, thin."
+   "why": "Greek leptos, thin.",
+   "forms": [
+    "leptosol"
+   ]
   },
   "Liebig": {
    "text": "The law of the minimum: growth is set by whichever necessary thing is scarcest, not by the total of everything supplied. Ten nutrients in surplus and one missing gives you no growth.",
-   "why": "Justus von Liebig, the 19th-century chemist who argued it for crops. The name carries none of the meaning, which is why it is worth spelling out."
+   "why": "Justus von Liebig, the 19th-century chemist who argued it for crops. The name carries none of the meaning, which is why it is worth spelling out.",
+   "forms": [
+    "liebig"
+   ]
   },
   "lignin": {
    "text": "The rigid material that makes wood woody. It is the hardest common biological molecule to break down, and mainly fungi do it.",
-   "why": "Latin lignum, wood. Nitrogen enrichment suppresses the enzymes that degrade it, which is why it accumulates."
+   "why": "Latin lignum, wood. Nitrogen enrichment suppresses the enzymes that degrade it, which is why it accumulates.",
+   "forms": [
+    "lignin"
+   ]
   },
   "lucinid": {
    "text": "A family of clams that host sulphide-oxidising bacteria in their gills. In seagrass beds they keep the root zone habitable.",
-   "why": "The three-way partnership of plant, clam and bacterium was only described in 2012."
+   "why": "The three-way partnership of plant, clam and bacterium was only described in 2012.",
+   "forms": [
+    "lucinid"
+   ]
   },
   "Lysprocent": {
    "text": "Danish for light percentage - the share of surface light still present at a given depth, already computed in the ODA record. Eelgrass needs roughly 11 to 14 percent.",
-   "why": "Lys (light) plus procent. It is the number the eelgrass requirement is written in."
+   "why": "Lys (light) plus procent. It is the number the eelgrass requirement is written in.",
+   "forms": [
+    "lysprocent"
+   ]
   },
   "macroalgae": {
    "text": "Seaweed - algae large enough to see, attached to rock or shell rather than drifting.",
-   "why": "Macro, large, as against the microscopic plankton."
+   "why": "Macro, large, as against the microscopic plankton.",
+   "forms": [
+    "macroalgae"
+   ]
   },
   "macrofauna": {
    "text": "The animals big enough to be caught on a one-millimetre sieve - worms, clams, crustaceans. What a seabed sample is counted as.",
-   "why": "Macro, large. Below them are meiofauna, below those, microbes."
+   "why": "Macro, large. Below them are meiofauna, below those, microbes.",
+   "forms": [
+    "macrofauna",
+    "macrofaunal"
+   ]
   },
   "MARPOL": {
    "text": "The international convention governing pollution from ships. It sets what a vessel may legally discharge at sea - sewage, greywater, food waste, scrubber washwater - and where.",
-   "why": "MARine POLlution, contracted. Compliance is the baseline, not the absence of discharge."
+   "why": "MARine POLlution, contracted. Compliance is the baseline, not the absence of discharge.",
+   "forms": [
+    "marpol"
+   ]
   },
   "meiofauna": {
    "text": "The very small animals between sand grains - nematodes and tiny crustaceans. Too big to be microbes, too small for the sieves used on macrofauna.",
-   "why": "Greek meion, smaller."
+   "why": "Greek meion, smaller.",
+   "forms": [
+    "meiofauna"
+   ]
   },
   "mesocosm": {
    "text": "An experimental container big enough to hold a working piece of an ecosystem, but small enough to control - a tank, an enclosure, a bag in the sea.",
-   "why": "Greek mesos (middle) plus kosmos (world): between a test tube and the real thing."
+   "why": "Greek mesos (middle) plus kosmos (world): between a test tube and the real thing.",
+   "forms": [
+    "mesocosm",
+    "mesocosms"
+   ]
   },
   "mesozooplankton": {
    "text": "The middle size class of drifting animals, chiefly copepods - between a fifth of a millimetre and two centimetres. The link between algae and fish.",
-   "why": "Greek mesos, middle."
+   "why": "Greek mesos, middle.",
+   "forms": [
+    "mesozooplankton"
+   ]
   },
   "microbiome": {
    "text": "The community of microbes living in and on an organism, which for many purposes is part of that organism - performing digestion, defence and nutrition it cannot perform alone.",
-   "why": "Micro plus biome. A word that exists because the older picture of an individual organism turned out to be incomplete."
+   "why": "Micro plus biome. A word that exists because the older picture of an individual organism turned out to be incomplete.",
+   "forms": [
+    "microbiome"
+   ]
   },
   "microlayer": {
    "text": "The top few micrometres of the sea, which concentrate surfactants, fats and hydrophobic pollutants far above their concentration in the bulk water.",
-   "why": "It is the layer a swimmer's skin actually passes through."
+   "why": "It is the layer a swimmer's skin actually passes through.",
+   "forms": [
+    "microlayer"
+   ]
   },
   "micronutrient": {
    "text": "An element needed in tiny amounts but needed absolutely - iron, zinc, copper, cobalt, molybdenum, selenium. Absence is as fatal as absence of nitrogen.",
-   "why": "As against macronutrients: carbon, nitrogen, phosphorus, and the rest needed in bulk."
+   "why": "As against macronutrients: carbon, nitrogen, phosphorus, and the rest needed in bulk.",
+   "forms": [
+    "micronutrient",
+    "micronutrients"
+   ]
   },
   "microphytobenthos": {
    "text": "Microscopic algae living on the sediment surface. Their secreted polymer glues the grains together and raises the current needed to erode the bed.",
-   "why": "Micro (small) plus phyton (plant) plus benthos (the depths): the tiny plants of the bottom."
+   "why": "Micro (small) plus phyton (plant) plus benthos (the depths): the tiny plants of the bottom.",
+   "forms": [
+    "microphytobenthos"
+   ]
   },
   "mineralisation": {
    "text": "The breakdown of organic material back into simple inorganic compounds - releasing the nutrients that were locked in tissue.",
-   "why": "Turning organic matter back into minerals. Remineralisation is the same word for material that was mineral to start with."
+   "why": "Turning organic matter back into minerals. Remineralisation is the same word for material that was mineral to start with.",
+   "forms": [
+    "mineralisation"
+   ]
   },
   "mitochondria": {
    "text": "The compartments in which eukaryotic cells carry out respiration. Descended from captured bacteria, and present in fungi, plants and animals alike - which is why respiratory poisons are rarely selective.",
-   "why": "Greek mitos (thread) plus chondros (grain), from how they look under a microscope."
+   "why": "Greek mitos (thread) plus chondros (grain), from how they look under a microscope.",
+   "forms": [
+    "mitochondria",
+    "mitochondrial"
+   ]
   },
   "mor": {
    "text": "Raw, matted, unincorporated humus sitting on top of the soil because the fauna that would mix it in are absent or excluded.",
-   "why": "Also from Danish, meaning mould in the other sense. The terrestrial version of an organic mat on the seabed."
+   "why": "Also from Danish, meaning mould in the other sense. The terrestrial version of an organic mat on the seabed.",
+   "forms": [
+    "mor",
+    "moral"
+   ]
   },
   "mull": {
    "text": "Humus that soil animals have worked into the mineral soil - crumbly, fast-cycling, well mixed.",
-   "why": "From Danish and German muld, mould or loose earth. Its degraded counterpart is mor."
+   "why": "From Danish and German muld, mould or loose earth. Its degraded counterpart is mor.",
+   "forms": [
+    "mull"
+   ]
   },
   "mycobiome": {
    "text": "The fungal community of a place or a host, as distinct from its bacteria. Marine sediments are turning out to hold far more fungal diversity than anyone expected.",
-   "why": "Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent."
+   "why": "Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.",
+   "forms": [
+    "mycobiome"
+   ]
   },
   "mycorrhiza": {
    "text": "The partnership between plant roots and fungi that feeds the plant phosphorus in exchange for carbon. Heavy fertilising suppresses it.",
-   "why": "Greek mykes (fungus) plus rhiza (root)."
+   "why": "Greek mykes (fungus) plus rhiza (root).",
+   "forms": [
+    "mycorrhiza",
+    "mycorrhizal"
+   ]
   },
   "målbelastning": {
    "text": "Danish for target load - how much nitrogen a water body may receive and still meet its environmental objective.",
-   "why": "Mål (target) plus belastning (load)."
+   "why": "Mål (target) plus belastning (load).",
+   "forms": [
+    "målbelastning"
+   ]
   },
   "necromass": {
    "text": "Dead biomass. In soil, dead microbes themselves make up a large share of the lasting organic matter.",
-   "why": "Greek nekros, corpse."
+   "why": "Greek nekros, corpse.",
+   "forms": [
+    "necromass"
+   ]
   },
   "nematode": {
    "text": "A roundworm. In sediment they are microscopic, enormously abundant, and among the last animals left when conditions get bad.",
-   "why": "Greek nema, thread."
+   "why": "Greek nema, thread.",
+   "forms": [
+    "nematode",
+    "nematodes"
+   ]
   },
   "neonicotinoid": {
    "text": "The most widely used insecticide class. It acts on acetylcholine receptors, which every animal with a nervous system has, including all marine invertebrates.",
-   "why": "Nicotine-like, and acting at the same receptor nicotine does."
+   "why": "Nicotine-like, and acting at the same receptor nicotine does.",
+   "forms": [
+    "neonicotinoid",
+    "neonicotinoids"
+   ]
   },
   "nitrate": {
    "text": "The oxidised, stable form of dissolved nitrogen, and the form that leaches from farmland into groundwater and streams.",
-   "why": "Same root as nitre, saltpetre."
+   "why": "Same root as nitre, saltpetre.",
+   "forms": [
+    "nitrate"
+   ]
   },
   "nitrification": {
    "text": "Bacteria oxidising ammonium to nitrate. It consumes oxygen - 4.57 grams per gram of nitrogen - without anything growing.",
-   "why": "From nitre, saltpetre, the old name for nitrate salts."
+   "why": "From nitre, saltpetre, the old name for nitrate salts.",
+   "forms": [
+    "nitrification"
+   ]
   },
   "nitrogenase": {
    "text": "The enzyme that lets some bacteria pull nitrogen straight out of the air. It requires molybdenum or vanadium, and it is destroyed by oxygen.",
-   "why": "The -ase ending marks an enzyme throughout biochemistry."
+   "why": "The -ase ending marks an enzyme throughout biochemistry.",
+   "forms": [
+    "nitrogenase"
+   ]
   },
   "NOVANA": {
    "text": "Denmark's national programme for monitoring water and nature. Almost every Danish environmental number ultimately comes from it.",
-   "why": "Danish acronym: the national programme for monitoring of the aquatic environment and nature."
+   "why": "Danish acronym: the national programme for monitoring of the aquatic environment and nature.",
+   "forms": [
+    "novana"
+   ]
   },
   "occlusion": {
    "text": "Sorbed material becoming physically enclosed inside a mineral, so it can no longer be released at all. The one-way end of sorption.",
-   "why": "Latin occludere, to shut up or close off."
+   "why": "Latin occludere, to shut up or close off.",
+   "forms": [
+    "occlusion"
+   ]
   },
   "oligotrophic": {
    "text": "Nutrient-poor, low production, usually clear water.",
-   "why": "Greek oligos, few. The other end of the same scale as eutrophic."
+   "why": "Greek oligos, few. The other end of the same scale as eutrophic.",
+   "forms": [
+    "oligotrophic"
+   ]
   },
   "oomycete": {
    "text": "A fungus-like group including Pythium and Phytophthora - water moulds that swim as spores and attack stressed roots. They are not actually fungi despite living like them.",
-   "why": "Greek oon (egg) plus mykes (fungus)."
+   "why": "Greek oon (egg) plus mykes (fungus).",
+   "forms": [
+    "oomycete",
+    "oomycetes"
+   ]
   },
   "optode": {
    "text": "An oxygen sensor that measures how a dye's glow is quenched by oxygen. It replaced chemical titration, and the two do not always agree.",
-   "why": "Optical electrode."
+   "why": "Optical electrode.",
+   "forms": [
+    "optode"
+   ]
   },
   "overløb": {
    "text": "Danish for a sewer overflow - untreated sewage discharged directly when rain overwhelms a combined system.",
-   "why": "Over plus løb (run). Denmark has 19,665 registered outfall points."
+   "why": "Over plus løb (run). Denmark has 19,665 registered outfall points.",
+   "forms": [
+    "overløb"
+   ]
   },
   "PBT": {
    "text": "Persistent, Bioaccumulative and Toxic - the three-part test that gets a substance refused outright in some European approvals, with no exposure argument allowed to rescue it.",
-   "why": "vPvB is the stronger version: very Persistent and very Bioaccumulative, where persistence alone carries the case."
+   "why": "vPvB is the stronger version: very Persistent and very Bioaccumulative, where persistence alone carries the case.",
+   "forms": [
+    "pbt"
+   ]
   },
   "PE": {
    "text": "Population equivalent - the standard unit of sewage load, one person's daily contribution. Industrial discharges are expressed in how many people they equal.",
-   "why": "Lets a dairy and a town be added together."
+   "why": "Lets a dairy and a town be added together.",
+   "forms": [
+    "pe",
+    "peal",
+    "peed"
+   ]
   },
   "pelagic": {
    "text": "Of the open water column, as opposed to the bed.",
-   "why": "Greek pelagos, the open sea. Its counterpart is benthic."
+   "why": "Greek pelagos, the open sea. Its counterpart is benthic.",
+   "forms": [
+    "pelagic"
+   ]
   },
   "peroxidase": {
    "text": "An enzyme that neutralises reactive oxygen inside a cell. The selenium-dependent version is why selenium is essential.",
-   "why": "It disposes of peroxides, which would otherwise do damage."
+   "why": "It disposes of peroxides, which would otherwise do damage.",
+   "forms": [
+    "peroxidase"
+   ]
   },
   "pharmacokinetic": {
    "text": "To do with how much of a substance an organism takes up, where it goes, and how fast it is broken down - as opposed to what it does once it arrives.",
-   "why": "Greek pharmakon (drug) plus kinesis (movement). Selectivity that is pharmacokinetic is selectivity of exposure, not of mechanism."
+   "why": "Greek pharmakon (drug) plus kinesis (movement). Selectivity that is pharmacokinetic is selectivity of exposure, not of mechanism.",
+   "forms": [
+    "pharmacokinetic"
+   ]
   },
   "phenology": {
    "text": "The timing of biological events through the year - when things spawn, bloom, migrate - and whether two events that need to coincide still do.",
-   "why": "Greek phainein, to appear. The study of when things show up."
+   "why": "Greek phainein, to appear. The study of when things show up.",
+   "forms": [
+    "phenology"
+   ]
   },
   "phosphate": {
    "text": "The dissolved form of phosphorus. It binds tightly to iron oxides in oxygenated sediment and is released again when the sediment loses its oxygen.",
-   "why": "That release is the single strongest feedback loop in a eutrophic system."
+   "why": "That release is the single strongest feedback loop in a eutrophic system.",
+   "forms": [
+    "phosphate"
+   ]
   },
   "photoinhibition": {
    "text": "Too much light damaging the photosynthetic machinery. The ceiling of the light window.",
-   "why": "Light doing the inhibiting - the reason clearest is not always best."
+   "why": "Light doing the inhibiting - the reason clearest is not always best.",
+   "forms": [
+    "photoinhibition"
+   ]
   },
   "photosystem II": {
    "text": "The protein complex that splits water and starts photosynthesis. Triazine and urea herbicides block it, which makes them equally effective against algae.",
-   "why": "The second of two photosystems, named in the order they were discovered rather than the order they act."
+   "why": "The second of two photosystems, named in the order they were discovered rather than the order they act.",
+   "forms": [
+    "photosystem ii"
+   ]
   },
   "Phytophthora": {
    "text": "A genus of water mould that destroys plant roots. The potato blight that caused the Irish famine was one of these.",
-   "why": "Greek: literally the plant-destroyer."
+   "why": "Greek: literally the plant-destroyer.",
+   "forms": [
+    "phytophthora"
+   ]
   },
   "phytoplankton": {
    "text": "The drifting microscopic plants of the water column - diatoms, flagellates, cyanobacteria. Everything else in the sea ultimately eats them or eats something that did.",
-   "why": "Greek phyton (plant) plus planktos (wandering, drifting)."
+   "why": "Greek phyton (plant) plus planktos (wandering, drifting).",
+   "forms": [
+    "phytoplankton"
+   ]
   },
   "phytotoxin": {
    "text": "A substance that poisons plants. Waterlogged ground makes several of its own - organic acids, ethylene, sulphide, and reduced iron and manganese.",
-   "why": "Greek phyton (plant) plus toxikon (poison)."
+   "why": "Greek phyton (plant) plus toxikon (poison).",
+   "forms": [
+    "phytotoxin",
+    "phytotoxins"
+   ]
   },
   "picomolar": {
    "text": "A concentration of one trillionth of a mole per litre. Vitamins and some trace metals matter to marine life at concentrations this small.",
-   "why": "The prefix pico means a trillionth."
+   "why": "The prefix pico means a trillionth.",
+   "forms": [
+    "picomolar"
+   ]
   },
   "picoplankton": {
    "text": "The smallest plankton, under two thousandths of a millimetre. Too small for most grazers to catch, so what eats them is mostly viruses.",
-   "why": "Pico, a trillionth - here just meaning very small indeed."
+   "why": "Pico, a trillionth - here just meaning very small indeed.",
+   "forms": [
+    "picoplankton"
+   ]
   },
   "plankton": {
    "text": "Anything living in the water column that drifts rather than swims against the current, from bacteria to jellyfish.",
-   "why": "Greek planktos, wandering. It describes a way of life, not a group of relatives."
+   "why": "Greek planktos, wandering. It describes a way of life, not a group of relatives.",
+   "forms": [
+    "plankton"
+   ]
   },
   "polychaete": {
    "text": "A marine bristle worm. Many build tubes that stabilise sediment; others burrow and mix it. A large share of what a seabed sample contains.",
-   "why": "Greek poly (many) plus chaite (hair)."
+   "why": "Greek poly (many) plus chaite (hair).",
+   "forms": [
+    "polychaete"
+   ]
   },
   "porewater": {
    "text": "The water in the spaces between sediment grains. Its chemistry is often wholly different from the water above, and it is what a buried animal actually lives in.",
-   "why": "The pores of the sediment."
+   "why": "The pores of the sediment.",
+   "forms": [
+    "porewater"
+   ]
   },
   "precautionary principle": {
    "text": "The idea that action to prevent harm need not wait for full scientific certainty. Written into EU law, and constrained in practice by requirements of proportionality.",
-   "why": "Article 191 of the Treaty on the Functioning of the European Union. Invoked more often than it decides anything."
+   "why": "Article 191 of the Treaty on the Functioning of the European Union. Invoked more often than it decides anything.",
+   "forms": [
+    "precautionary principle"
+   ]
   },
   "priming": {
    "text": "Adding fresh easily-eaten carbon speeds up the decay of old material that was sitting there stable, because the microbes gain the energy to attack it.",
-   "why": "As in priming a pump: a small input releases a much larger flow."
+   "why": "As in priming a pump: a small input releases a much larger flow.",
+   "forms": [
+    "priming"
+   ]
   },
   "propagule": {
    "text": "Whatever a species uses to start a new individual somewhere else - a larva, a seed, a spore, a fragment.",
-   "why": "Latin propagare, to propagate. The unit of arrival."
+   "why": "Latin propagare, to propagate. The unit of arrival.",
+   "forms": [
+    "propagule",
+    "propagules"
+   ]
   },
   "protist": {
    "text": "A catch-all for single-celled organisms with a nucleus that are not animals, plants or fungi. Includes most marine algae and many parasites.",
-   "why": "Greek protos, first."
+   "why": "Greek protos, first.",
+   "forms": [
+    "protist",
+    "protists"
+   ]
   },
   "pycnocline": {
    "text": "The depth at which density changes sharply, separating lighter water above from denser water below. It acts as a lid: below it, oxygen is not replaced.",
-   "why": "Greek pyknos (dense) plus klinein (to slope)."
+   "why": "Greek pyknos (dense) plus klinein (to slope).",
+   "forms": [
+    "pycnocline"
+   ]
   },
   "pyrethroid": {
    "text": "A synthetic insecticide acting on voltage-gated sodium channels - universal in animals. Crustaceans are extremely sensitive, being arthropods like the intended targets.",
-   "why": "Modelled on pyrethrins from chrysanthemum flowers."
+   "why": "Modelled on pyrethrins from chrysanthemum flowers.",
+   "forms": [
+    "pyrethroid",
+    "pyrethroids"
+   ]
   },
   "Pythium": {
    "text": "A water mould that rots seedlings and roots, thriving where soil or sediment is waterlogged and low in oxygen.",
-   "why": "The classic damping-off disease of a wet greenhouse."
+   "why": "The classic damping-off disease of a wet greenhouse.",
+   "forms": [
+    "pythium"
+   ]
   },
   "Q10": {
    "text": "How much faster a biological process runs for every ten degrees of warming. Around two for most decay, meaning respiration roughly doubles.",
-   "why": "A rule of thumb old enough to have no better name."
+   "why": "A rule of thumb old enough to have no better name.",
+   "forms": [
+    "q10"
+   ]
   },
   "radial oxygen loss": {
    "text": "Rooted plants leaking oxygen from their roots into the sediment, which keeps sulphide away from the root. It is powered by photosynthesis, so shade shuts it off.",
-   "why": "Radial because it moves outward from the root, not along it."
+   "why": "Radial because it moves outward from the root, not along it.",
+   "forms": [
+    "radial oxygen loss"
+   ]
   },
   "REACH": {
    "text": "The EU regulation governing industrial chemicals. Its slogan is 'no data, no market' - the duty to supply safety data sits with whoever wants to sell the substance.",
-   "why": "Registration, Evaluation, Authorisation and restriction of CHemicals. The data required scales with tonnage, so small-volume substances are barely characterised."
+   "why": "Registration, Evaluation, Authorisation and restriction of CHemicals. The data required scales with tonnage, so small-volume substances are barely characterised.",
+   "forms": [
+    "reach",
+    "reached",
+    "reaches",
+    "reaching"
+   ]
   },
   "recalcitrant": {
    "text": "Resistant to decay. Lignin, humic material, and most synthetic compounds.",
-   "why": "Latin recalcitrare, to kick back - literally to dig the heels in."
+   "why": "Latin recalcitrare, to kick back - literally to dig the heels in.",
+   "forms": [
+    "recalcitrant"
+   ]
   },
   "Redfield": {
    "text": "The roughly fixed ratio of carbon to nitrogen to phosphorus in marine plankton, about 106:16:1 by atoms. It lets you convert one nutrient into an expected amount of biomass, or of oxygen demand.",
-   "why": "Alfred Redfield noticed in 1934 that plankton and seawater share the ratio, which is either a coincidence or the plankton setting the chemistry of the ocean."
+   "why": "Alfred Redfield noticed in 1934 that plankton and seawater share the ratio, which is either a coincidence or the plankton setting the chemistry of the ocean.",
+   "forms": [
+    "redfield"
+   ]
   },
   "redox": {
    "text": "Whether the chemistry of a place is oxidising or reducing - broadly, whether oxygen is available. It governs which reactions run and which metals stay put.",
-   "why": "Contraction of reduction-oxidation."
+   "why": "Contraction of reduction-oxidation.",
+   "forms": [
+    "redox"
+   ]
   },
   "reductase": {
    "text": "An enzyme that reduces a compound - adds electrons to it. Nitrate reductase is the one that lets an organism use nitrate.",
-   "why": "Also an enzyme, named for what it does."
+   "why": "Also an enzyme, named for what it does.",
+   "forms": [
+    "reductase"
+   ]
   },
   "remineralisation": {
    "text": "Decay: organic matter broken back down to its dissolved inorganic constituents, releasing the nutrients and consuming oxygen.",
-   "why": "Turning organic material back into minerals."
+   "why": "Turning organic material back into minerals.",
+   "forms": [
+    "remineralisation"
+   ]
   },
   "replication": {
    "text": "Taking more than one measurement of the same thing, so that variability can be told apart from difference. Without it, one sample is indistinguishable from a whole area.",
-   "why": "The single most common thing missing from environmental monitoring designs."
+   "why": "The single most common thing missing from environmental monitoring designs.",
+   "forms": [
+    "replication"
+   ]
   },
   "residual estimator": {
    "text": "A quantity computed as whatever is left after subtracting everything you did model from a measured total. It is never itself measured, and it absorbs every error in every other term.",
-   "why": "Which is why such a figure can come out negative, and why a negative one is the method reporting its own error bars."
+   "why": "Which is why such a figure can come out negative, and why a negative one is the method reporting its own error bars.",
+   "forms": [
+    "residual estimator"
+   ]
   },
   "resuspension": {
    "text": "Sediment lifted back into the water by waves, currents or gear, after having settled.",
-   "why": "It returns buried material, and its chemistry, to circulation."
+   "why": "It returns buried material, and its chemistry, to circulation.",
+   "forms": [
+    "resuspension"
+   ]
   },
   "retention": {
    "text": "The share of nitrogen applied on land that never reaches the sea, because it is taken up, denitrified or stored on the way. The largest single number in the whole account, and one its own producers say cannot be measured directly.",
-   "why": "Latin retinere, to hold back. It is a modelled quantity presented as a map."
+   "why": "Latin retinere, to hold back. It is a modelled quantity presented as a map.",
+   "forms": [
+    "retention"
+   ]
   },
   "rhizosphere": {
    "text": "The thin zone of soil or sediment immediately around a root, chemically and biologically quite unlike the bulk material a few millimetres away.",
-   "why": "Greek rhiza (root) plus sphaira. Where the plant and the microbial world actually meet."
+   "why": "Greek rhiza (root) plus sphaira. Where the plant and the microbial world actually meet.",
+   "forms": [
+    "rhizosphere"
+   ]
   },
   "råstof": {
    "text": "Danish for raw material - here, licensed extraction of sand and gravel from the seabed. 305 areas are designated.",
-   "why": "Rå (raw) plus stof (substance)."
+   "why": "Rå (raw) plus stof (substance).",
+   "forms": [
+    "råstof"
+   ]
   },
   "salinity": {
    "text": "How much salt is dissolved in water. Open ocean is about 35 grams per kilogram; the Baltic is a fraction of that.",
-   "why": "The gradient through Danish waters is one of the sharpest anywhere."
+   "why": "The gradient through Danish waters is one of the sharpest anywhere.",
+   "forms": [
+    "salinity"
+   ]
   },
   "salting-out": {
    "text": "Substances becoming less soluble as salinity rises, so they come out of solution into films, droplets and aggregates.",
-   "why": "Adding salt pushes things out of the water. It is why fats behave differently in the sea than in a lake."
+   "why": "Adding salt pushes things out of the water. It is why fats behave differently in the sea than in a lake.",
+   "forms": [
+    "salting-out"
+   ]
   },
   "saprotroph": {
    "text": "An organism that feeds on dead material, breaking it down. Most fungi are saprotrophs, and they handle the tough fractions bacteria leave behind.",
-   "why": "Greek sapros (rotten) plus trophe (nourishment)."
+   "why": "Greek sapros (rotten) plus trophe (nourishment).",
+   "forms": [
+    "saprotroph"
+   ]
   },
   "SDHI": {
    "text": "A fungicide class blocking succinate dehydrogenase, which is simultaneously complex II of the respiratory chain and a step in the Krebs cycle. Conserved wherever there are mitochondria.",
-   "why": "Succinate dehydrogenase inhibitor. The target does two jobs, so blocking it stops two processes."
+   "why": "Succinate dehydrogenase inhibitor. The target does two jobs, so blocking it stops two processes.",
+   "forms": [
+    "sdhi",
+    "sdhis"
+   ]
   },
   "seagrass": {
    "text": "A true flowering plant that lives submerged in the sea, rooted in sediment - not a seaweed. Eelgrass is Denmark's species.",
-   "why": "Grass-like in appearance only; it is more closely related to lilies than to grass."
+   "why": "Grass-like in appearance only; it is more closely related to lilies than to grass.",
+   "forms": [
+    "seagrass"
+   ]
   },
   "Secchi": {
    "text": "The oldest instrument in oceanography: a white disc lowered until it disappears. The depth at which it vanishes is a measure of water clarity, and the record goes back over a century.",
-   "why": "Angelo Secchi, papal astronomer, 1865. Still in use because it is simple and comparable."
+   "why": "Angelo Secchi, papal astronomer, 1865. Still in use because it is simple and comparable.",
+   "forms": [
+    "secchi"
+   ]
   },
   "sediment sickness": {
    "text": "Ground in which a plant will not grow although the chemistry looks adequate, because of accumulated pathogens, lost symbionts, or autotoxic residues.",
-   "why": "Horticulture calls the same thing replant disease and tests it by swapping the soil."
+   "why": "Horticulture calls the same thing replant disease and tests it by swapping the soil.",
+   "forms": [
+    "sediment sickness"
+   ]
   },
   "sedimentation": {
    "text": "Particles settling out of the water onto the bed.",
-   "why": "The opposite process to resuspension, and the two together decide what the bed is made of."
+   "why": "The opposite process to resuspension, and the two together decide what the bed is made of.",
+   "forms": [
+    "sedimentation"
+   ]
   },
   "Sedimentkemi": {
    "text": "Danish for sediment chemistry - the ODA category holding what has been measured in the bed itself, as opposed to the water above it.",
-   "why": "The category this project repeatedly finds nearly empty of the analytes that matter."
+   "why": "The category this project repeatedly finds nearly empty of the analytes that matter.",
+   "forms": [
+    "sedimentkemi"
+   ]
   },
   "Shelford": {
    "text": "The law of tolerance: every requirement has a ceiling as well as a floor. Too much of a needed thing kills as surely as too little.",
-   "why": "Victor Shelford, an American ecologist, 1913. Liebig gives you the floor; Shelford gives you the roof."
+   "why": "Victor Shelford, an American ecologist, 1913. Liebig gives you the floor; Shelford gives you the roof.",
+   "forms": [
+    "shelford"
+   ]
   },
   "shikimate": {
    "text": "A biochemical pathway that makes aromatic amino acids. Plants, bacteria and fungi have it; animals do not, and must eat those amino acids instead.",
-   "why": "Named after shikimi, the Japanese star anise from which the acid was first isolated."
+   "why": "Named after shikimi, the Japanese star anise from which the acid was first isolated.",
+   "forms": [
+    "shikimate"
+   ]
   },
   "silicate": {
    "text": "Dissolved silicon. Diatoms need it to build their shells, and it comes only from rock weathering, so human activity raises nitrogen and phosphorus but never this.",
-   "why": "The changing ratio is why diatoms give way to flagellates."
+   "why": "The changing ratio is why diatoms give way to flagellates.",
+   "forms": [
+    "silicate"
+   ]
   },
   "sill": {
    "text": "An underwater ridge across the mouth of a basin. Water below the sill depth cannot flow out or be replaced from the side, so it stagnates.",
-   "why": "The same word as a door sill - a threshold you have to get over."
+   "why": "The same word as a door sill - a threshold you have to get over.",
+   "forms": [
+    "sill",
+    "sills"
+   ]
   },
   "sonde": {
    "text": "An instrument lowered into water to record conditions as it descends. The record names which sonde was used, which is what makes instrument changes testable.",
-   "why": "French sonde, a sounding line - the rope with a weight that measured depth before electronics."
+   "why": "French sonde, a sounding line - the rope with a weight that measured depth before electronics.",
+   "forms": [
+    "sonde",
+    "sondes"
+   ]
   },
   "sorption": {
    "text": "A substance sticking to a solid surface, covering both adsorption onto it and absorption into it. Phosphate sorbs to iron oxides, which is how soil holds it.",
-   "why": "The umbrella term when you do not want to commit to which of the two is happening."
+   "why": "The umbrella term when you do not want to commit to which of the two is happening.",
+   "forms": [
+    "sorption"
+   ]
   },
   "speciation": {
    "text": "In chemistry, which chemical form an element is actually in - dissolved, bound to a particle, complexed with an organic molecule. Availability depends on it, and total concentration does not show it.",
-   "why": "Nothing to do with the biological sense of new species forming."
+   "why": "Nothing to do with the biological sense of new species forming.",
+   "forms": [
+    "speciation"
+   ]
   },
   "sterol": {
    "text": "A class of molecules that stiffen cell membranes - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Every eukaryote makes one, by broadly the same route.",
-   "why": "Which is why azole fungicides, which block that route, cannot be selective for fungi in principle."
+   "why": "Which is why azole fungicides, which block that route, cannot be selective for fungi in principle.",
+   "forms": [
+    "sterol"
+   ]
   },
   "stoichiometry": {
    "text": "The fixed proportions in which substances combine, and so how much of one thing a given amount of another can produce or consume.",
-   "why": "Greek stoicheion (element) plus metron (measure)."
+   "why": "Greek stoicheion (element) plus metron (measure).",
+   "forms": [
+    "stoichiometry"
+   ]
   },
   "stratification": {
    "text": "Water settled into layers that do not mix, because the upper water is warmer or fresher and therefore lighter.",
-   "why": "Latin stratum, a layer. It is what makes deep water run out of oxygen."
+   "why": "Latin stratum, a layer. It is what makes deep water run out of oxygen.",
+   "forms": [
+    "stratification"
+   ]
   },
   "stressor": {
    "text": "Anything that pushes an organism or system away from the conditions it functions in. The ecological term of art for a cause of harm.",
-   "why": "Borrowed from physiology, where it means the same and was equally vague."
+   "why": "Borrowed from physiology, where it means the same and was equally vague.",
+   "forms": [
+    "stressor"
+   ]
   },
   "strobilurin": {
    "text": "A major fungicide class that blocks complex III of the mitochondrial respiratory chain - the machinery by which anything with mitochondria breathes.",
-   "why": "Derived from a compound made by the fungus Strobilurus, which uses it against its competitors."
+   "why": "Derived from a compound made by the fungus Strobilurus, which uses it against its competitors.",
+   "forms": [
+    "strobilurin",
+    "strobilurins"
+   ]
   },
   "sublethal": {
    "text": "An effect that does not kill: impaired growth, reproduction, behaviour or immunity. Standard toxicity testing measures death, so sublethal harm is systematically under-recorded.",
-   "why": "Below the lethal dose. The organism is counted as a survivor."
+   "why": "Below the lethal dose. The organism is counted as a survivor.",
+   "forms": [
+    "sublethal"
+   ]
   },
   "sulphate": {
    "text": "The dissolved sulphur compound that makes up a large part of sea salt. Harmless in itself, and the raw material bacteria turn into sulphide once oxygen is gone.",
-   "why": "Seawater holds about 2.7 grams per litre; fresh water holds a hundredth of that."
+   "why": "Seawater holds about 2.7 grams per litre; fresh water holds a hundredth of that.",
+   "forms": [
+    "sulphate"
+   ]
   },
   "sulphide": {
    "text": "The chemical made when bacteria breathe sulphate instead of oxygen. It smells of rotten eggs, is toxic to almost everything, and consumes oxygen the moment it meets any.",
-   "why": "Seawater carries so much sulphate that once oxygen runs out, sulphide production is effectively unlimited."
+   "why": "Seawater carries so much sulphate that once oxygen runs out, sulphide production is effectively unlimited.",
+   "forms": [
+    "sulphide",
+    "sulphides",
+    "sulphidic"
+   ]
   },
   "sulphidic": {
    "text": "Containing free sulphide. A sulphidic sediment is one where sulphate reduction has taken over and the bed has turned toxic.",
-   "why": "The condition that follows anoxia in salt water, and does not follow it in fresh."
+   "why": "The condition that follows anoxia in salt water, and does not follow it in fresh.",
+   "forms": [
+    "sulphidic"
+   ]
   },
   "suppressive": {
    "text": "A soil whose microbial community actively prevents disease. The property is transferable: mix a little into a diseased soil and it becomes suppressive too.",
-   "why": "Suppressive of the pathogen, not of the plant."
+   "why": "Suppressive of the pathogen, not of the plant.",
+   "forms": [
+    "suppressive"
+   ]
   },
   "surfactant": {
    "text": "A substance that lowers surface tension and gathers at the air-water boundary. Detergents, and many natural molecules.",
-   "why": "Contraction of surface-active agent."
+   "why": "Contraction of surface-active agent.",
+   "forms": [
+    "surfactant",
+    "surfactants"
+   ]
   },
   "Svanemærket": {
    "text": "The Nordic Swan ecolabel. A lifecycle standard with criteria set by a Nordic board, verified by third parties, tightened periodically, and awarded only to the better performers in a category.",
-   "why": "It restricts substances that are entirely legal, which is what makes its existence evidence about where the legal floor sits."
+   "why": "It restricts substances that are entirely legal, which is what makes its existence evidence about where the legal floor sits.",
+   "forms": [
+    "svanemærket"
+   ]
   },
   "swept-area": {
    "text": "How much of the seabed fishing gear has dragged across, expressed as a ratio: 2 means the area was covered twice over in a year.",
-   "why": "The standard measure of trawling pressure. Published annually, which cannot show how often a given patch is hit."
+   "why": "The standard measure of trawling pressure. Published annually, which cannot show how often a given patch is hit.",
+   "forms": [
+    "swept-area"
+   ]
   },
   "symbiont": {
    "text": "One partner in a symbiosis. Often the smaller and less visible one, and often the one a survey does not count.",
-   "why": "From symbiosis: Greek syn (together) plus bios (life)."
+   "why": "From symbiosis: Greek syn (together) plus bios (life).",
+   "forms": [
+    "symbiont",
+    "symbionts"
+   ]
   },
   "symbiosis": {
    "text": "Two species living in close, lasting partnership. It ranges from both benefiting to one exploiting the other, and much of it was invisible to science until molecular methods arrived.",
-   "why": "Greek syn (together) plus bios (life)."
+   "why": "Greek syn (together) plus bios (life).",
+   "forms": [
+    "symbiosis"
+   ]
   },
   "TEP": {
    "text": "Transparent exopolymer particles - sticky invisible gel produced by algae and bacteria, which aggregates into marine snow and, at scale, mucilage.",
-   "why": "Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s."
+   "why": "Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.",
+   "forms": [
+    "tep"
+   ]
   },
   "thatch": {
    "text": "A greasy organic mat that builds up in turf when material is produced faster than it decays. Caused by heavy fertilising, pesticides killing earthworms, and compaction.",
-   "why": "The ordinary roofing word. Greenkeepers treat it by restoring the soil fauna, not by feeding the grass less."
+   "why": "The ordinary roofing word. Greenkeepers treat it by restoring the soil fauna, not by feeding the grass less.",
+   "forms": [
+    "thatch"
+   ]
   },
   "toxicant": {
    "text": "A poisonous substance, especially a manufactured one. Distinguished from a toxin, which strictly means a poison made by a living thing.",
-   "why": "The distinction matters in the literature and is routinely ignored elsewhere."
+   "why": "The distinction matters in the literature and is routinely ignored elsewhere.",
+   "forms": [
+    "toxicant",
+    "toxicants"
+   ]
   },
   "transect": {
    "text": "A line along which measurements are taken at intervals - here, usually running from the shore into deeper water to find how deep plants still grow.",
-   "why": "Latin trans (across) plus secare (to cut)."
+   "why": "Latin trans (across) plus secare (to cut).",
+   "forms": [
+    "transect",
+    "transects"
+   ]
   },
   "trophic": {
    "text": "To do with feeding - who eats whom, and at what level of the food web.",
-   "why": "Greek trophe, nourishment. The same root as eutrophic and auxotroph."
+   "why": "Greek trophe, nourishment. The same root as eutrophic and auxotroph.",
+   "forms": [
+    "trophic",
+    "trophication"
+   ]
   },
   "trophic cascade": {
    "text": "A change at one level of the food web propagating down through the levels beneath it - removing a predator releases its prey, which suppresses the level below.",
-   "why": "Greek trophe again, nourishment. Cascade because it falls through the levels."
+   "why": "Greek trophe again, nourishment. Cascade because it falls through the levels.",
+   "forms": [
+    "trophic cascade"
+   ]
   },
   "turbid": {
    "text": "Cloudy - water with enough suspended material in it to block light.",
-   "why": "From Latin turba, a crowd or commotion: stirred-up. The same root gives turbine, a thing spun, and disturb. Cloudiness named after the stirring that causes it."
+   "why": "From Latin turba, a crowd or commotion: stirred-up. The same root gives turbine, a thing spun, and disturb. Cloudiness named after the stirring that causes it.",
+   "forms": [
+    "turbid",
+    "turbidity"
+   ]
   },
   "Vandkemi": {
    "text": "Danish for water chemistry - the ODA category holding nutrient and contaminant concentrations from water samples.",
-   "why": "Straightforwardly water plus chemistry."
+   "why": "Straightforwardly water plus chemistry.",
+   "forms": [
+    "vandkemi"
+   ]
   },
   "vandområde": {
    "text": "Danish for water body - the administrative unit Danish water policy is written in. There are 119 marine ones, and this project argues at length that the unit is not a natural one.",
-   "why": "Vand (water) plus område (area)."
+   "why": "Vand (water) plus område (area).",
+   "forms": [
+    "vandområde"
+   ]
   },
   "viral shunt": {
    "text": "Viruses bursting bacteria and algae so that their carbon returns to dissolved organic matter instead of being eaten by something larger.",
-   "why": "A shunt in the electrical sense: the current is diverted before it reaches the load."
+   "why": "A shunt in the electrical sense: the current is diverted before it reaches the load.",
+   "forms": [
+    "viral shunt"
+   ]
   },
   "virioplankton": {
    "text": "The viruses drifting in seawater - roughly ten million in every millilitre, and the most numerous biological entities in the ocean.",
-   "why": "Virus plus plankton. Their existence at this scale was only established in 1989."
+   "why": "Virus plus plankton. Their existence at this scale was only established in 1989.",
+   "forms": [
+    "virioplankton"
+   ]
   },
   "VMS": {
    "text": "Vessel monitoring system - satellite position reports that fishing vessels are required to transmit, used to map where gear was actually worked.",
-   "why": "The record exists; the fine-resolution version is not public."
+   "why": "The record exists; the fine-resolution version is not public.",
+   "forms": [
+    "vms"
+   ]
   },
   "washwater": {
    "text": "Water used to scrub pollutants out of ship exhaust, then discharged to sea. It is acidic and carries metals and hydrocarbons, and discharging it is legal.",
-   "why": "Exhaust gas cleaning moves the pollution from the air to the water; whether that is an improvement depends on which you were measuring."
+   "why": "Exhaust gas cleaning moves the pollution from the air to the water; whether that is an improvement depends on which you were measuring.",
+   "forms": [
+    "washwater"
+   ]
   },
   "Winkler": {
    "text": "The chemical titration for dissolved oxygen, in use since 1888 and still the reference method against which sensors are checked.",
-   "why": "Lajos Winkler, who published it as a doctoral student."
+   "why": "Lajos Winkler, who published it as a doctoral student.",
+   "forms": [
+    "winkler"
+   ]
   },
   "zooplankton": {
    "text": "The drifting animals - copepods, larvae, jellyfish - that eat phytoplankton and are eaten by fish.",
-   "why": "Greek zoon (animal) plus planktos."
+   "why": "Greek zoon (animal) plus planktos.",
+   "forms": [
+    "zooplankton"
+   ]
   }
  }
 }

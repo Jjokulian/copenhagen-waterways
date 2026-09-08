@@ -145,6 +145,7 @@ const GROUPS = [
     ["DATA_QUEUE.md",   "The fetch queue"],
     ["OBSERVING.md",    "What Denmark measures, and where"],
     ["OXYGEN.md",       "What actually removes the oxygen"],
+    ["LIGHT.md",        "Is there enough light at the bed?"],
     ["AREAS.md",        "There is no Denmark"],
     ["areas.html",      "Map: what is known, where, when"],
     ["SEABED.md",       "The seabed, the wind, and what stays put"],
@@ -289,30 +290,39 @@ function arm(el, cls, key, aria) {
    technical prose into a minefield of dotted underlines; marking the first gives
    a reader the definition at the point they first meet the word, which is when
    they need it. */
+/* Mark glossary terms in the rendered prose.
+
+   Three rules, each learned from a bug.
+
+   1. EVERY match in a text node, not the first. The original called re.exec once
+      per node and abandoned the node if that match was already marked, so a
+      paragraph whose first hit was a common word - nitrogen, carbon, bacteria -
+      lost every rarer term in it. That is why oomycete and labyrinthulid were
+      never marked despite being in the glossary the whole time.
+
+   2. Once per SECTION, not once per document. A reader meeting a word forty
+      screens down needs the definition there, not at its first appearance in a
+      document they may have entered halfway. Headings reset the seen set.
+
+   3. Right to left within a node, because splitText invalidates every offset
+      after the split point. */
 function markTerms(root, terms) {
-  const keys = Object.keys(terms).sort((a, b) => b.length - a.length);
-  if (!keys.length) return 0;
+  // The written forms come from the glossary, not from suffix-guessing here.
+  // scripts/hypotheses.py generates them and keeps only the ones that actually
+  // occur in the documents - which is how "mycorrhizal" reaches "mycorrhiza" and
+  // "fungal" reaches "fungi", neither of which any suffix rule would manage.
+  const lower = new Map();
+  for (const [key, v] of Object.entries(terms))
+    for (const form of (v.forms || [key])) lower.set(form.toLowerCase(), key);
+  const forms = [...lower.keys()].sort((a, b) => b.length - a.length);
+  if (!forms.length) return 0;
   const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const re = new RegExp("\\b(" + keys.map(esc).join("|") + ")(s|es|ity|ation)?\\b", "i");
-  const seen = new Set();
-  const lower = new Map(keys.map(k => [k.toLowerCase(), k]));
+  const re = new RegExp("(?<![\\p{L}])(" + forms.map(esc).join("|")
+                        + ")(?![\\p{L}])", "giu");
+  let seen = new Set();
+  let total = 0;
 
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode(n) {
-      if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-      const bad = n.parentElement.closest("code,pre,a,h1,h2,h3,h4,h5,h6,i,#tip");
-      return bad ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
-    },
-  });
-  const nodes = [];
-  for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
-
-  for (const node of nodes) {
-    const m = re.exec(node.nodeValue);
-    if (!m) continue;
-    const key = lower.get(m[1].toLowerCase());
-    if (!key || seen.has(key)) continue;
-    seen.add(key);
+  const mark = (node, m, key) => {
     const after = node.splitText(m.index);
     after.splitText(m[0].length);
     const link = document.createElement("a");
@@ -323,9 +333,45 @@ function markTerms(root, terms) {
     link.rel = "noopener noreferrer";
     after.parentNode.replaceChild(link, after);
     arm(link, "term", key, `${key}: ${terms[key].text}. Opens Wikipedia.`);
+  };
+
+  const inBlock = block => {
+    const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, {
+      acceptNode(n) {
+        if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const bad = n.parentElement.closest("code,pre,a,h1,h2,h3,h4,h5,h6,#tip");
+        return bad ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      },
+    });
+    const nodes = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+
+    for (const node of nodes) {
+      re.lastIndex = 0;
+      const hits = [];
+      for (const m of node.nodeValue.matchAll(re)) {
+        const key = lower.get(m[1].toLowerCase());
+        if (!key || seen.has(key)) continue;
+        seen.add(key);                 // claim it now so the same word twice in
+        hits.push([m, key]);           // one paragraph is marked only once
+      }
+      // splitText invalidates later offsets, so apply from the end backwards
+      for (let i = hits.length - 1; i >= 0; i--) {
+        mark(node, hits[i][0], hits[i][1]);
+        total++;
+      }
+    }
+  };
+
+  // walk the document top level, resetting at each heading so every section
+  // carries its own definitions
+  for (const el of Array.from(root.children)) {
+    if (/^H[1-6]$/.test(el.tagName)) { seen = new Set(); continue; }
+    inBlock(el);
   }
-  return seen.size;
+  return total;
 }
+
 addEventListener("keydown", e => { if (e.key === "Escape") hideTip(); });
 addEventListener("scroll", hideTip, { passive: true });
 

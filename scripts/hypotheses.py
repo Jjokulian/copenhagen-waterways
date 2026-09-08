@@ -33,6 +33,7 @@ Usage:  python3 scripts/hypotheses.py
 """
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -772,6 +773,48 @@ TERMS = {
         'The drifting animals - copepods, larvae, jellyfish - that eat phytoplankton and are eaten by fish.',
         'Greek zoon (animal) plus planktos.'),
 }
+
+
+# Every written form of a term a reader might meet, generated here rather than
+# guessed by a regex in the browser. Suffix-guessing cannot get "mycorrhizal" from
+# "mycorrhiza" - it needs to drop the final vowel first - and it has no way at all
+# to reach "fungi" from "fungus" or "algae" from "alga".
+IRREGULAR = {
+    "fungi": ["fungus", "fungal"], "bacteria": ["bacterium", "bacterial"],
+    "algae": ["alga", "algal"], "archaea": ["archaeon", "archaeal"],
+    "mitochondria": ["mitochondrion", "mitochondrial"],
+    "meiofauna": ["meiofaunal"], "macrofauna": ["macrofaunal"],
+    "benthos": ["benthic"], "plankton": ["planktonic"],
+    "necromass": [], "erg": ["ergs"],
+}
+
+
+def variants(term):
+    """The forms of one term. Case-insensitive downstream, so all lowercase."""
+    t = term.lower()
+    out = {t}
+    out.update(IRREGULAR.get(t, []))
+    if " " in t or "-" in t:            # multi-word terms take no inflection
+        return sorted(out)
+    stem = t
+    for drop in ("a", "e", "us", "um", "on", "is"):
+        if t.endswith(drop) and len(t) - len(drop) >= 4:
+            stem = t[: -len(drop)]
+            break
+    for w in (t, stem):
+        out |= {w + "s", w + "es", w + "al", w + "ic", w + "ical", w + "ous",
+                w + "ing", w + "ed", w + "ation", w + "ity"}
+    if t.endswith("y"):
+        out.add(t[:-1] + "ies")
+    if t.endswith("us"):
+        out.add(t[:-2] + "i")
+    if t.endswith("a"):
+        out.add(t + "e")                # alga -> algae
+    if t.endswith("um"):
+        out.add(t[:-2] + "a")           # inoculum -> inocula
+    if t.endswith("is"):
+        out.add(t[:-2] + "es")          # symbiosis -> symbioses
+    return sorted(w for w in out if len(w) > 3)
 
 # Three layers, because collapsing them is how a measurement becomes a goal.
 #
@@ -3156,7 +3199,22 @@ def main():
     gloss["_docs"] = ["HYPOTHESES.md", "EXPERIMENTS.md", "DATA_QUEUE.md",
                       "OXYGEN.md", "OBSERVING.md", "AREAS.md",
                       "PROGRAMME.md", "LIGHT.md"]
-    gloss["_terms"] = {t: {"text": a_, "why": b_} for t, (a_, b_) in TERMS.items()}
+    # variants() is generous on purpose - it is easier to over-generate and then
+    # discard than to guess the right morphology. So keep only the forms that
+    # actually occur in the documents; the glossary then carries the words a
+    # reader will really meet, and the browser's regex stays small.
+    corpus = ""
+    for f in gloss["_docs"]:
+        fp = os.path.join(ROOT, "docs", f)
+        if os.path.exists(fp):
+            corpus += open(fp, encoding="utf-8").read().lower() + "\n"
+    present = set(re.findall(r"[a-zæøå]+", corpus))
+    gloss["_terms"] = {}
+    for t, (a_, b_) in TERMS.items():
+        forms = [v for v in variants(t)
+                 if all(w in present for w in v.split()) or v.lower() in corpus]
+        gloss["_terms"][t] = {"text": a_, "why": b_,
+                              "forms": sorted(set(forms) | {t.lower()})}
     write_json(os.path.join(ROOT, "docs", "data", "glossary.json"), gloss)
     log(f"  glossary: {len(gloss) - 2} ids, {len(TERMS)} terms")
     with open(OUT, "w", encoding="utf-8") as f:
