@@ -61,6 +61,37 @@ within cohort, within whatever the members hold in common regardless of basket.
 **Compare against a null that matches the basket's shape.** This is the part that
 gets skipped, and skipping it is how a defensible number comes out backwards.
 
+## The statistic is a model too, and on its own it is circular
+
+The measurement above has a defect that has to be stated before the worked example,
+because it applies to every number on this page.
+
+**The intraclass correlation takes the partition as an input.** So does F<sub>ST</sub>,
+which is the same statistic in population-genetics clothing:
+F<sub>ST</sub> = (H<sub>T</sub> − H<sub>S</sub>) / H<sub>T</sub>, and
+H<sub>S</sub> — the variation *within subpopulations* — cannot be computed until the
+subpopulations have been declared. Citing an F<sub>ST</sub> value as evidence that
+populations are distinct is therefore reasoning in a circle: the number was
+manufactured by assuming them.
+
+In practice the circle is tighter still, because the partition usually comes from the
+**sampling design**. Collect fifty Danes and fifty Dutch and "Danish" and "Dutch" are
+your groups by construction; the statistic then reports on a boundary the fieldwork
+drew. Nor is it one statistic — Wright's original, Nei's G<sub>ST</sub>, Weir and
+Cockerham's θ and Hudson's estimator return different numbers from identical data,
+and the choice of loci and weighting are modelling decisions taken before any of them
+runs. It is an aggregation function over a chosen metric, presented as an observable.
+
+**This is why the null is not a refinement. It is the thing that rescues the
+measurement.**
+
+A circular statistic compared against a *shape-matched null* stops being circular,
+because the null partitions were not chosen to be real. Each number separately is
+contaminated by the assumption; the **difference** between them is not. That is the
+whole argument for the exercise below, and it is why a single reported value — a bare
+F<sub>ST</sub>, a bare ICC, a bare R² between groups — carries almost no information
+about whether the groups are anything.
+
 ## Three nulls, three answers — a worked example
 
 Denmark's marine water bodies, scored for nine measured variables, within month:
@@ -125,7 +156,8 @@ questions, and they are cheap:
    administrative, self-reported?
 2. **What is being attributed to members?** And is that the same kind of thing as
    the rule?
-3. **What is the lift over a same-shaped null?** Not the raw statistic. The lift.
+3. **What is the lift over a same-shaped null?** Not the raw statistic — the raw
+   statistic took the category as an input and cannot testify about it. The lift.
 
 If the answer to 3 is unknown, the category is being used as data when it is a
 model, and any figure computed inside it is a statement about the basket at least as
