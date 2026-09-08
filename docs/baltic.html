@@ -1,0 +1,184 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Baltic below the halocline</title>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --sea:#eceff1; --accent:#2f6a95; --warn:#b4532f; --model:#8a6d3b;
+  --o0:#1a1c20; --o1:#5b3a30; --o2:#a8613c; --o3:#d9a05b; --o4:#a8c4d8; --o5:#2f6a95;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#22252b; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a;
+  --o0:#0a0b0d; --o1:#4a2f27; --o2:#9c5734; --o3:#d69a52; --o4:#7fa8c2; --o5:#8fbcd9;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#22252b; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a;
+  --o0:#0a0b0d; --o1:#4a2f27; --o2:#9c5734; --o3:#d69a52; --o4:#7fa8c2; --o5:#8fbcd9;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:24px 30px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:22px;font-weight:640;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:0 0 5px;max-width:72ch;color:var(--ink2)}
+header a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 310px}
+@media(max-width:940px){.wrap{grid-template-columns:1fr}}
+#stage{padding:14px 10px 0 16px;min-width:0}
+canvas{width:100%;display:block;background:var(--sea);border-radius:3px}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:16px 18px 26px}
+@media(max-width:940px){aside{border-left:0;border-top:1px solid var(--line)}}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);
+  margin:16px 0 7px;font-weight:600}
+h3:first-of-type{margin-top:0}
+select{width:100%;padding:5px 6px;font:inherit;font-size:13px;background:var(--ground);
+  color:var(--ink);border:1px solid var(--line);border-radius:3px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:8px 0 0;font-size:12.5px}
+dt{color:var(--ink3)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
+  border-left:2px solid var(--line);padding-left:9px}
+.warnbox{border-left-color:var(--model);color:var(--model)}
+.ramp{display:flex;height:9px;border-radius:2px;overflow:hidden;margin:6px 0 3px}
+.ramp i{flex:1}
+.rlab{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);
+  font-variant-numeric:tabular-nums}
+.bar{padding:8px 18px 2px;font-size:12px;color:var(--ink2)}
+.bar b{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:6px}
+td,th{text-align:right;padding:3px 4px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left;color:var(--ink3)}
+th{font-weight:600;color:var(--ink3);font-size:11px}
+#load{padding:40px 30px;color:var(--ink3)}
+</style>
+
+<header>
+  <h1>The Baltic below the halocline</h1>
+  <p>Oxygen at the Gotland Deep, central Baltic — roughly 500&nbsp;km east of Denmark,
+  in Swedish waters. <strong>Depth is resolved to one metre here.</strong> The Danish
+  station archive collapses the same axis to two bins, so this is the dimension that
+  view cannot show.</p>
+  <p>It is here because of a question with a clean logical shape: if dead water were a
+  Danish phenomenon, the cause would be contained in Denmark.
+  <a href="stations.html">The Danish station view is here</a>.</p>
+</header>
+
+<div id="load">Loading profiles…</div>
+<div class="wrap" id="app" hidden>
+  <div>
+    <div id="stage"><canvas id="cv"></canvas></div>
+    <div class="bar" id="read"></div>
+  </div>
+  <aside>
+    <h3>Variable</h3>
+    <select id="var">
+      <option value="oxy">Oxygen (mg/l)</option>
+      <option value="to">Temperature (°C)</option>
+      <option value="so">Salinity (g/kg)</option>
+    </select>
+    <div class="ramp" id="ramp"></div>
+    <div class="rlab"><span id="lo"></span><span id="hi"></span></div>
+
+    <h3>What the record says</h3>
+    <table id="tab"></table>
+    <p class="note">Every month of the record, at every depth below 100&nbsp;m, is
+    under 2&nbsp;mg/l. Not seasonal, not episodic — the deep basin does not
+    reoxygenate except when a Major Baltic Inflow pushes dense North Sea water
+    through the Danish straits.</p>
+
+    <h3>Denmark, for comparison</h3>
+    <dl>
+      <dt>near-bed observations</dt><dd>76,926</dd>
+      <dt>median oxygen</dt><dd>8.80 mg/l</dd>
+      <dt>below 2 mg/l</dt><dd>4%</dd>
+      <dt>Gotland below 100 m</dt><dd>100%</dd>
+    </dl>
+    <p class="note">The severity runs opposite to the attention. Two things are being
+    called by one word: permanent basin anoxia beneath a fixed halocline, and seasonal
+    shallow coastal dead water. They are not the same mechanism, and a policy
+    calibrated on one is measured in the other.</p>
+
+    <h3>Provenance</h3>
+    <p class="note warnbox">Copernicus Marine OMI, Baltic reanalysis. <strong>Not an
+    independent production path.</strong> A reanalysis assimilates the same national
+    monitoring data, so this counts as one environment, not a second. Switch to
+    salinity: the halocline that produces the anoxia is visible as the sharp gradient,
+    and it is physics, not nutrient loading.</p>
+  </aside>
+</div>
+
+<script>
+const RAMP=['--o0','--o1','--o2','--o3','--o4','--o5'];
+const DOM={oxy:[0,10],to:[0,18],so:[6,14]};
+let M,B,V={},cur='oxy';
+const $=id=>document.getElementById(id);
+$('ramp').innerHTML=RAMP.map(c=>`<i style="background:var(${c})"></i>`).join('');
+
+Promise.all([fetch('data/baltic/gotland.json').then(r=>r.json()),
+             fetch('data/baltic/gotland.bin').then(r=>r.arrayBuffer())])
+ .then(([m,b])=>{
+  M=m; B=new Float32Array(b);
+  const nt=m.times.length, nz=m.depths.length, per=nt*nz;
+  m.vars.forEach((v,i)=>{V[v]=B.subarray(i*per,(i+1)*per)});
+  $('load').hidden=true; $('app').hidden=false;
+  $('var').onchange=()=>{cur=$('var').value;draw()};
+  addEventListener('resize',draw);
+  matchMedia('(prefers-color-scheme:dark)').addEventListener('change',draw);
+  stats(); draw();
+});
+
+function col(t){const g=getComputedStyle(document.documentElement);
+  const i=Math.max(0,Math.min(RAMP.length-1,Math.floor(t*RAMP.length)));
+  return g.getPropertyValue(RAMP[i]).trim();}
+
+function draw(){
+  const cv=$('cv'), r=devicePixelRatio||1;
+  const w=cv.clientWidth||900, h=Math.round(Math.min(520,w*0.52));
+  cv.width=w*r; cv.height=h*r; cv.style.height=h+'px';
+  const c=cv.getContext('2d'); c.setTransform(r,0,0,r,0,0);
+  const g=getComputedStyle(document.documentElement);
+  c.fillStyle=g.getPropertyValue('--sea').trim(); c.fillRect(0,0,w,h);
+  const nt=M.times.length, nz=M.depths.length, arr=V[cur], [d0,d1]=DOM[cur];
+  const L=52,Tp=8,Bt=22, pw=w-L-8, ph=h-Tp-Bt;
+  for(let i=0;i<nt;i++){
+    const x=L+i*pw/nt, bw=Math.ceil(pw/nt)+.6;
+    for(let j=0;j<nz;j++){
+      const v=arr[i*nz+j]; if(!isFinite(v))continue;
+      c.fillStyle=col(Math.max(0,Math.min(1,(v-d0)/(d1-d0))));
+      c.fillRect(x,Tp+j*ph/nz,bw,Math.ceil(ph/nz)+.6);
+    }
+  }
+  c.strokeStyle=g.getPropertyValue('--line').trim(); c.lineWidth=1;
+  c.fillStyle=g.getPropertyValue('--ink3').trim(); c.font='11px ui-sans-serif';
+  c.textAlign='right';
+  [0,-50,-100,-150,-200,-240].forEach(z=>{
+    const j=M.depths.findIndex(d=>d<=z); if(j<0)return;
+    const y=Tp+j*ph/nz;
+    c.beginPath();c.moveTo(L,y);c.lineTo(w-8,y);c.globalAlpha=.25;c.stroke();c.globalAlpha=1;
+    c.fillText(z+' m',L-6,y+4);});
+  c.textAlign='center';
+  M.times.forEach((t,i)=>{ if(!t.endsWith('-01')||+t.slice(0,4)%5)return;
+    c.fillText(t.slice(0,4),L+i*pw/nt,h-7);});
+  $('lo').textContent=d0; $('hi').textContent=d1+' '+(M.units[cur]||'');
+  $('read').innerHTML='<b>'+nt+'</b> monthly profiles, '+M.times[0]+' to '
+    +M.times[nt-1]+', at <b>'+nz+'</b> depth levels — '
+    +'<b>'+(nt*nz).toLocaleString()+'</b> cells, none aggregated.';
+}
+
+function stats(){
+  const nz=M.depths.length, o=V.oxy, rows=[];
+  [-50,-100,-150,-200].forEach(z=>{
+    const j=M.depths.findIndex(d=>d<=z); if(j<0)return;
+    let n=0,lo=0,med=[];
+    for(let i=0;i<M.times.length;i++){const v=o[i*nz+j];
+      if(!isFinite(v))continue; n++; med.push(v); if(v<2)lo++;}
+    med.sort((a,b)=>a-b);
+    rows.push([z+' m',n,med.length?med[med.length>>1].toFixed(2):'—',
+               n?Math.round(100*lo/n)+'%':'—']);});
+  $('tab').innerHTML='<tr><th>depth</th><th>months</th><th>median</th>'
+    +'<th>&lt;2 mg/l</th></tr>'
+    +rows.map(r=>'<tr>'+r.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('');
+}
+</script>

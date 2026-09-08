@@ -1,0 +1,242 @@
+{
+ "_what": "Every data source this project can display, with its provenance, its error classes and what it cost to make displayable; and every VIEW as a preset over those sources rather than a separate program.",
+ "_why": "Views were being written as one-off pages, which makes a unified viewer a rewrite instead of a merge. A view here is a named set of layers and axes. A future viewer that reads this file gets every existing page as a starting preset, and each old page stays valid as its own entry point.",
+ "_error_classes": {
+  "1": "value error - drift, offset, fouling. RECOVERABLE with a reference or redundancy",
+  "2": "quantisation - rounding, censoring. BOUNDABLE, the fiber is uniform and stated",
+  "3": "aggregation - a collapse we or they performed. COUNTABLE, the fiber is known",
+  "4": "schema conflation - one column pooling incommensurables. NOT boundable",
+  "5": "unfilled field - the column exists and holds a constant. Names its own gap",
+  "6": "absent dimension - no column at all. Not recoverable, not countable",
+  "7": "model-as-datum - a modelled value shaped like a measured one. ADDS false confidence"
+ },
+ "sources": [
+  {
+   "id": "oda_ctd_raw",
+   "title": "ODA CTD, raw extract",
+   "path": "data/raw/oda/ctd.csv.gz",
+   "displayable": false,
+   "records": 53712717,
+   "bytes_uncompressed": 20523767815,
+   "years": "1970-2026",
+   "independence": "one production path (CTD sondes)",
+   "classes": [
+    1,
+    2,
+    4,
+    5,
+    6
+   ],
+   "notes": "9 reported parameters are 3 sensors: salinity is computed from conductivity and temperature, oxygen saturation from oxygen/temperature/salinity, density likewise. Conductivity itself is reported 3,265 times against salinity's 228,060 in an 800k sample. SondeNavn is '999 - Ukendt' on 83% of rows and Proevetagningsudstyr is the constant 'Ketcher'. Dato is YYYYMMDD: there is no time of day in any row, and oxygen has a diel cycle."
+  },
+  {
+   "id": "stations_series",
+   "title": "Per-station monthly medians",
+   "path": "docs/data/areas/stations_series.{json,bin}",
+   "displayable": true,
+   "records": 679422,
+   "stations": 1415,
+   "variables": 9,
+   "months": 564,
+   "year0": 1980,
+   "independence": "same as oda_ctd_raw - not a second environment",
+   "classes": [
+    1,
+    2,
+    3
+   ],
+   "collapsed": {
+    "depth": "896 distinct values -> 2 bins (shallowest/deepest quarter)",
+    "time": "day -> month",
+    "casts": "many -> one median per station-month",
+    "position": "per-measurement coords -> station identity; 56% of raw measurements sit at coordinates differing from their station",
+    "instrument": "dropped",
+    "qa": "dropped"
+   },
+   "ratio_to_raw": "about 3,900:1 by bytes",
+   "notes": "Water-body membership is deliberately NOT in this file."
+  },
+  {
+   "id": "wb_overlay",
+   "title": "Station-to-water-body assignment",
+   "path": "docs/data/areas/station_waterbody_overlay.json",
+   "displayable": true,
+   "classes": [
+    7
+   ],
+   "notes": "A model assumption kept separate from the measurements on purpose. Contiguity-matched testing found it adds nothing beyond being a connected region of its size distribution: derived-vs-official lift -0.026 to -0.014 across all 255 feature subsets."
+  },
+  {
+   "id": "areas",
+   "title": "123 water bodies, geometry and attributes",
+   "path": "docs/data/areas/areas.json",
+   "displayable": true,
+   "classes": [
+    7
+   ],
+   "notes": "The partition under audit. Available as an overlay, never as a unit."
+  },
+  {
+   "id": "gotland",
+   "title": "Gotland Deep profiles, central Baltic",
+   "path": "docs/data/baltic/gotland.{json,bin}",
+   "displayable": true,
+   "profiles": 226,
+   "depths": 240,
+   "depth_range_m": [
+    -240,
+    -1
+   ],
+   "times": "1993-2025",
+   "independence": "NOT independent - a reanalysis assimilates the same national monitoring. One environment, not a second.",
+   "classes": [
+    7
+   ],
+   "notes": "Resolves depth to 1 m, which is the axis the Danish archive collapses to two bins. Every month below 100 m is under 2 mg/l."
+  },
+  {
+   "id": "cmems_grid",
+   "title": "Copernicus gridded ocean colour",
+   "path": "data/raw/cmems/grid/",
+   "displayable": false,
+   "bytes": 25000000000,
+   "files": 87,
+   "regions": {
+    "inner": {
+     "lon": [
+      9.26,
+      13.19
+     ],
+     "lat": [
+      54.41,
+      57.99
+     ],
+     "cells": [
+      223,
+      327
+     ]
+    },
+    "arkona": {
+     "lon": [
+      13.21,
+      15.59
+     ],
+     "lat": [
+      54.41,
+      55.6
+     ],
+     "cells": [
+      135,
+      109
+     ]
+    }
+   },
+   "variables": [
+    "CHL",
+    "DIATO",
+    "DINO",
+    "CYANOBLOOM",
+    "PICO",
+    "NANO",
+    "KD490"
+   ],
+   "cadence": "daily",
+   "independence": "ocean colour IS a separate instrument from CTD",
+   "classes": [
+    1,
+    2,
+    6
+   ],
+   "notes": "NOT YET DISPLAYABLE. 24 GB needs a reduction pipeline. Reduce with monthly MEDIANS, never means, and ship the count of contributing days per cell alongside - the sky-gap denominator is the point, not a footnote."
+  },
+  {
+   "id": "osm_coast",
+   "title": "OSM coastline",
+   "path": "data/raw/osm/coastline.json",
+   "displayable": true,
+   "ways": 1161,
+   "points": 131998,
+   "lon": [
+    10.98,
+    13.66
+   ],
+   "lat": [
+    54.37,
+    56.32
+   ],
+   "classes": [
+    7
+   ],
+   "notes": "Regional only - Zealand, the Sound and the western Baltic. Used to test whether station pairs are reachable without crossing land. Deliberately NOT the water-body polygons, which would reimport the assumption under test."
+  }
+ ],
+ "views": [
+  {
+   "id": "denmark-stations",
+   "title": "Measurements, where they were taken",
+   "page": "stations.html",
+   "status": "live",
+   "axes": [
+    "lon",
+    "lat",
+    "month"
+   ],
+   "sources": [
+    "stations_series",
+    "wb_overlay",
+    "areas"
+   ],
+   "layers": {
+    "station_values": true,
+    "silent_stations": false,
+    "water_bodies": false,
+    "interpolation": false,
+    "outliers": true
+   },
+   "statement": "No basket assumed. Empty sea is empty because nobody measured there."
+  },
+  {
+   "id": "gotland-section",
+   "title": "The Baltic below the halocline",
+   "page": "baltic.html",
+   "status": "live",
+   "axes": [
+    "month",
+    "depth"
+   ],
+   "sources": [
+    "gotland"
+   ],
+   "layers": {
+    "oxygen": true
+   },
+   "statement": "The depth axis the Danish archive does not have."
+  },
+  {
+   "id": "water-bodies",
+   "title": "What is known, where, and when",
+   "page": "areas.html",
+   "status": "live",
+   "axes": [
+    "lon",
+    "lat",
+    "year"
+   ],
+   "sources": [
+    "areas"
+   ],
+   "statement": "The partition under audit, shown on its own terms so it can be compared against the views that refuse it."
+  },
+  {
+   "id": "unified",
+   "title": "One viewer, every preset",
+   "page": null,
+   "status": "planned",
+   "statement": "Reads this file. Every view above becomes an initial setting rather than a separate program: region, axes and layer defaults are the preset, and the old pages stay valid as entry points. Needs: a shared projection with zoom, a layer registry keyed to error class, and the cmems_grid reduction.",
+   "blocked_on": [
+    "cmems_grid reduction pipeline",
+    "zoomable projection shared by all views"
+   ]
+  }
+ ]
+}
