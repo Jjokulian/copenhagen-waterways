@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**154 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**156 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 154 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 156 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 154 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 156 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -1888,6 +1888,30 @@ Oomycetes - the Pythium and Phytophthora group - swim as zoospores, need water, 
 **Discriminated by.** Pathogen abundance against sediment redox, and host mortality against both.
 
 **Needs.** Marine oomycete and labyrinthulid surveys. Essentially none.
+
+### T9 — Pathogen and partner are not kinds of organism
+
+**Outcomes:** O3, O7, O6
+
+Parasite, commensal and mutualist are positions on a spectrum, not classes of creature, and an organism moves along it with the context. The clearest demonstrations are the largest: mitochondria and chloroplasts were free-living bacteria; roughly eight per cent of the human genome is retroviral in origin; and the protein that builds the mammalian placenta is a captured viral envelope gene, so **mammalian pregnancy runs on a domesticated virus**. In the other direction, most of the viruses and microbes carried by any animal have no characterised effect at all.
+
+**Predicts.** **Sign is a property of the relationship, not of the species** — so a survey that lists which organisms are present cannot report the state of the relationships between them, which is where the function lives. And stress flips the sign: `T3` is exactly this, a resident organism becoming lethal when the host is shaded or sulphide-stressed. The same reading applies to `T2`, `T5` and `T6`, where what was lost was a partnership rather than a population.
+
+**Discriminated by.** Host condition against symbiont community composition under a stress gradient, rather than presence-or-absence of any named organism.
+
+**Needs.** Host-associated microbial and viral community data through a stress gradient. Absent for every Danish marine species.
+
+### T10 — Removing an organism whose role is unknown is not neutral
+
+**Outcomes:** O3, O7, O6
+
+Biocides and pest control remove organisms classified as harmful. That classification is made on the harm somebody noticed, and most residents of any host or sediment have never been characterised at all.
+
+**Predicts.** The default assumption that removal is safe unless harm is demonstrated is the same burden-of-proof inversion the chemicals argument turns on, applied to organisms instead of substances. There is precedent for it going wrong: loss of helminths is implicated in human immune dysregulation, and the phages removed alongside their bacterial hosts regulate the community that remains (`F11`).
+
+**Discriminated by.** Community function - decomposition rate, disease resistance, recruitment - before and after a removal, rather than the target organism's abundance.
+
+**Needs.** Baseline community composition before any intervention. Almost never collected, which makes the comparison impossible afterwards by construction.
 
 ## S. The land side: the medium, not the input
 

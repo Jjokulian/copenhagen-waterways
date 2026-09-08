@@ -253,6 +253,9 @@ TERMS = {
     'cold seep': (
         'A seafloor site where methane or sulphide-rich fluid escapes slowly rather than hot. Like a vent, it supports a community running on chemistry rather than light.',
         'Slower, cooler, and more widespread than vents - including in the North Sea.'),
+    'commensalism': (
+        'A relationship in which one partner benefits and the other is unaffected. In practice the middle of a spectrum rather than a distinct category, and the hardest to demonstrate.',
+        'Latin com plus mensa, table: eating at the same table.'),
     'copepod': (
         'A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth - and an arthropod, like the insects that insecticides are designed for.',
         'Greek kope (oar) plus pous (foot).'),
@@ -289,6 +292,9 @@ TERMS = {
     'dinoflagellate': (
         'A single-celled alga that swims with two tails and often wears armour plating. Several make toxins, and some cause red tides.',
         'Greek dinos, whirling - they spin as they swim.'),
+    'dysbiosis': (
+        'A microbial community shifted away from the composition its host functions with. Defined by what it is not, because the healthy state is often uncharacterised.',
+        'Greek dys (bad) plus biosis (way of life).'),
     'ECHA': (
         'The European Chemicals Agency, which runs REACH. Its compliance checks routinely find registration dossiers incomplete.',
         'Based in Helsinki. It evaluates what industry submits rather than testing independently.'),
@@ -310,6 +316,12 @@ TERMS = {
     'endocrine disruptor': (
         'A substance that interferes with hormone systems, often at concentrations far below those that kill. Effects appear as failed reproduction and altered development rather than as death.',
         'One of the few grounds on which European approval is refused on hazard alone, without an exposure argument.'),
+    'endogenous retrovirus': (
+        'A virus that inserted itself into a host genome long ago and stayed, becoming inherited. Roughly eight per cent of human DNA is of this origin.',
+        'One of them supplies the protein that builds the placenta - mammalian pregnancy depends on a domesticated virus.'),
+    'endosymbiosis': (
+        'One organism living inside another, permanently. Mitochondria and chloroplasts are both captured free-living bacteria, so every plant and animal is a former merger.',
+        'The origin of the eukaryotic cell, and the reason the boundary between organism and community is not sharp.'),
     'epibenthic': (
         'Living on the surface of the seabed rather than buried in it.',
         'Epi- (upon) plus benthos.'),
@@ -400,6 +412,9 @@ TERMS = {
     'Hedley fractionation': (
         'A sequence of chemical extractions that separates soil phosphorus into pools by how easily it can be released - from immediately available to permanently locked away.',
         'The standard soil-science method, and the reason soil scientists never quote total phosphorus alone.'),
+    'helminth': (
+        'A parasitic worm. Their removal from human populations is implicated in immune dysregulation, which is the standard cautionary case for eliminating an organism whose full role was unknown.',
+        'Greek helmins, worm.'),
     'heterotroph': (
         'An organism that gets its carbon by consuming organic matter made by something else. All animals and fungi, and most bacteria.',
         'Greek heteros (other): fed by others.'),
@@ -541,6 +556,9 @@ TERMS = {
     'mutational bias': (
         'The fact that mutation is not uniform across a genome. Rates vary with chromatin state, transcription and sequence context; stress induces mutagenesis; recombination concentrates at hotspots.',
         'Variation is structured, and the structure is itself an evolved product of what the lineage has met before - which is priming, one level down.'),
+    'mutualism': (
+        'A relationship in which both partners benefit. The word English lacks is a common antonym for pathogen - we named the harmful relationships and left the rest to be called symbionts, which technically covers all of them.',
+        'The vocabulary itself is biased toward harm, which is worth noticing when reading any list of species.'),
     'mycobiome': (
         'The fungal community of a place or a host, as distinct from its bacteria. Marine sediments are turning out to hold far more fungal diversity than anyone expected.',
         'Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.'),
@@ -589,6 +607,12 @@ TERMS = {
     'overløb': (
         'Danish for a sewer overflow - untreated sewage discharged directly when rain overwhelms a combined system.',
         'Over plus løb (run). Denmark has 19,665 registered outfall points.'),
+    'parasitism': (
+        "A relationship in which one partner benefits at the other's expense. The same organism can be a parasite in one host or one condition and harmless in another.",
+        "Greek parasitos, one who eats beside another - originally a hanger-on at somebody else's dinner."),
+    'pathobiont': (
+        'A resident organism that is harmless most of the time and becomes harmful when conditions change - the host is stressed, the community shifts, a barrier fails.',
+        'The word exists because the pathogen and non-pathogen categories could not hold.'),
     'PBT': (
         'Persistent, Bioaccumulative and Toxic - the three-part test that gets a substance refused outright in some European approvals, with no exposure argument allowed to rescue it.',
         'vPvB is the stronger version: very Persistent and very Bioaccumulative, where persistence alone carries the case.'),
@@ -838,6 +862,9 @@ TERMS = {
     'symbiosis': (
         'Two species living in close, lasting partnership. It ranges from both benefiting to one exploiting the other, and much of it was invisible to science until molecular methods arrived.',
         'Greek syn (together) plus bios (life).'),
+    'syncytin': (
+        'The protein that fuses cells into the layer through which a mammalian placenta exchanges nutrients. It is a viral envelope gene, captured and kept.',
+        'The single clearest case of a pathogen becoming essential.'),
     'TEP': (
         'Transparent exopolymer particles - sticky invisible gel produced by algae and bacteria, which aggregates into marine snow and, at scale, mucilage.',
         'Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.'),
@@ -880,6 +907,9 @@ TERMS = {
     'virioplankton': (
         'The viruses drifting in seawater - roughly ten million in every millilitre, and the most numerous biological entities in the ocean.',
         'Virus plus plankton. Their existence at this scale was only established in 1989.'),
+    'virome': (
+        'All the viruses in or on an organism or in an environment. Most are uncharacterised, including the ones nearly every human carries permanently with no known effect.',
+        'By count the largest part of any microbiome, and the least understood.'),
     'VMS': (
         'Vessel monitoring system - satellite position reports that fishing vessels are required to transmit, used to map where gear was actually worked.',
         'The record exists; the fine-resolution version is not public.'),
@@ -2657,6 +2687,43 @@ H = [
      "comparable disturbances in different eras.",
      "Long species-level fauna series, which ODA holds; genetic data, which nobody "
      "has."),
+
+    ("T9", "T", "Pathogen and partner are not kinds of organism",
+     ["O3", "O7", "O6"],
+     "Parasite, commensal and mutualist are positions on a spectrum, not classes of "
+     "creature, and an organism moves along it with the context. The clearest "
+     "demonstrations are the largest: mitochondria and chloroplasts were "
+     "free-living bacteria; roughly eight per cent of the human genome is retroviral "
+     "in origin; and the protein that builds the mammalian placenta is a captured "
+     "viral envelope gene, so **mammalian pregnancy runs on a domesticated virus**. "
+     "In the other direction, most of the viruses and microbes carried by any "
+     "animal have no characterised effect at all.",
+     "**Sign is a property of the relationship, not of the species** — so a survey "
+     "that lists which organisms are present cannot report the state of the "
+     "relationships between them, which is where the function lives. And stress "
+     "flips the sign: `T3` is exactly this, a resident organism becoming lethal "
+     "when the host is shaded or sulphide-stressed. The same reading applies to "
+     "`T2`, `T5` and `T6`, where what was lost was a partnership rather than a "
+     "population.",
+     "Host condition against symbiont community composition under a stress "
+     "gradient, rather than presence-or-absence of any named organism.",
+     "Host-associated microbial and viral community data through a stress gradient. "
+     "Absent for every Danish marine species."),
+    ("T10", "T", "Removing an organism whose role is unknown is not neutral",
+     ["O3", "O7", "O6"],
+     "Biocides and pest control remove organisms classified as harmful. That "
+     "classification is made on the harm somebody noticed, and most residents of "
+     "any host or sediment have never been characterised at all.",
+     "The default assumption that removal is safe unless harm is demonstrated is "
+     "the same burden-of-proof inversion the chemicals argument turns on, applied "
+     "to organisms instead of substances. There is precedent for it going wrong: "
+     "loss of helminths is implicated in human immune dysregulation, and the phages "
+     "removed alongside their bacterial hosts regulate the community that remains "
+     "(`F11`).",
+     "Community function - decomposition rate, disease resistance, recruitment - "
+     "before and after a removal, rather than the target organism's abundance.",
+     "Baseline community composition before any intervention. Almost never "
+     "collected, which makes the comparison impossible afterwards by construction."),
 
     # ---- Z ----------------------------------------------------------------
     ("Z1", "Z", "Light: too little, and too much", ["O7", "O4", "O3"],
