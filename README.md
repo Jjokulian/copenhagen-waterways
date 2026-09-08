@@ -31,6 +31,7 @@ python3 scripts/waves.py                # -> data/derived/waves.json
 python3 scripts/seabed.py               # -> docs/SEABED.md   (after waves.py)
 python3 scripts/causation.py            # -> docs/CAUSATION.md
 python3 scripts/hypotheses.py           # -> docs/HYPOTHESES.md
+python3 scripts/experiments.py          # -> docs/EXPERIMENTS.md
 python3 scripts/observing.py            # -> docs/OBSERVING.md
 python3 scripts/oxygen.py               # -> docs/OXYGEN.md
 python3 scripts/areas.py                # -> docs/AREAS.md
@@ -90,7 +91,8 @@ docs/
   flood_gap_map.png       one picture of that comparison
   NITROGEN.md             where the marine nitrogen figures come from, generated
   CAUSATION.md            what survives between that figure and a claim about a shore
-  HYPOTHESES.md           71 candidate causes, written down before any of them is scored
+  HYPOTHESES.md           127 candidate causes, written down before any of them is scored
+  EXPERIMENTS.md          12 manipulations with controls and decision rules fixed in advance
   OBSERVING.md            what is measured, where, how often - and whether a "water body" is real
   OXYGEN.md               every route that removes oxygen, priced; and what the indicators conflate
   AREAS.md                one record per marine water body, and what cannot be modelled in each

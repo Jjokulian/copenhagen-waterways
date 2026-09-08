@@ -1,0 +1,2768 @@
+{
+ "_what": "Data sources for testing the 71 hypotheses in data/derived/hypotheses.json. Every source was fetched or queried; the resolution and aggregation fields record what the source actually is, not what it is described as.",
+ "_rule": "Where only an aggregate exists, the aggregation is stated explicitly. That fact is a finding: it tells you which hypotheses Denmark has made untestable.",
+ "sources": [
+  {
+   "id": "ODA-CTD",
+   "hypotheses": [
+    "C1",
+    "C2",
+    "C6",
+    "C7",
+    "G1",
+    "I1",
+    "I2",
+    "I3",
+    "I5",
+    "I6",
+    "H1",
+    "H3"
+   ],
+   "name": "ODA - Hav / Feltmaaling / CTD",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_11_154; extract via getcsv.aspx?type=HentData",
+   "temporal": "per cast, per depth bin (profile)",
+   "spatial": "point, X/Y_UTM32 + lat/lon",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "FDOM",
+    "Fluorescens",
+    "Konduktivitet",
+    "Lyssvaekkelse",
+    "Oxygen indhold",
+    "Oxygenmaetning",
+    "Photometer maaling",
+    "Photometer reference",
+    "Salinitet",
+    "Temperatur",
+    "Turbiditet",
+    "Vaegtfylde"
+   ],
+   "stations": 185,
+   "fields_of_note": [
+    "TekniskAnvisninganvendt",
+    "Proevetagningsudstyr",
+    "SondeNr",
+    "SondeNavn",
+    "KorrektionsFaktor",
+    "OriginalResultat",
+    "KorrigeretResultat",
+    "DataleverandoerNavn",
+    "QA niveau"
+   ],
+   "coverage": "1970s-present (per-station start/end in the Observationssted register)",
+   "past_2012": true,
+   "access": "registration (free email login) + SOAP/CSV scripted extract; already working in this project",
+   "format": "CSV (iso-8859-1)",
+   "size": "~100s MB for the full record",
+   "caveat": "Verified 2026-09-08: the criterion list offers exactly 185 stations and 12 parameters; turbidity and light attenuation are in here, which matters for O4.",
+   "verified": "2026-09-08, direct SOAP query, logged in"
+  },
+  {
+   "id": "ODA-VANDKEMI-HAV",
+   "hypotheses": [
+    "A1",
+    "A2",
+    "A7",
+    "E2",
+    "E11",
+    "E12",
+    "G4",
+    "O4",
+    "I5"
+   ],
+   "name": "ODA - Hav / Vandkemi / Naeringsstof og Miljoefarligt stof",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_10_11",
+   "temporal": "per sample (Startdato + Startklok)",
+   "spatial": "point + GennemsnitsDybde_m per sample",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "Alkalinitet,total TA",
+    "Ammoniak+ammonium-N",
+    "Klorofyl a",
+    "Nitrit+nitrat-N",
+    "Nitrogen,total N",
+    "Ortho-phosphat-P",
+    "Oxygen indhold",
+    "pH",
+    "Phosphor, total-P",
+    "Silicium",
+    "Svovlbrinte (sulfid)"
+   ],
+   "stations": 205,
+   "coverage": "NOVANA era through present",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB",
+   "caveat": "IMPORTANT POSITIVE: pH, total alkalinity AND hydrogen sulphide are all in this table, so G4 and E12 are not the blanks the register assumed. Only 11 parameters and 205 stations, though - no nitrification rate, no DIC, no pCO2.",
+   "verified": "2026-09-08, direct SOAP query"
+  },
+  {
+   "id": "ODA-SEDKEMI-SPOR",
+   "hypotheses": [
+    "H2",
+    "A7",
+    "D3"
+   ],
+   "name": "ODA - Hav / Sedimentkemi / Sporstof",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_12_19",
+   "temporal": "per core, per date",
+   "spatial": "point + SedimentLag Fra/Til (cm)",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "Gloedetab, total",
+    "Nitrogen,total N",
+    "Phosphor, Fe-adsorberet",
+    "Phosphor, total-P",
+    "Toerstof, total",
+    "Vaegtfylde"
+   ],
+   "stations": 18,
+   "coverage": "unknown start - present",
+   "past_2012": null,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "small",
+   "caveat": "ONLY 18 STATIONS NATIONALLY. Loss-on-ignition is the sediment organic pool proxy for H2, and 18 points is not a national coverage. No dating (no Pb-210/Cs-137), so accumulation rates cannot be derived from this.",
+   "verified": "2026-09-08, direct SOAP query"
+  },
+  {
+   "id": "ODA-SEDKEMI-MFS",
+   "hypotheses": [
+    "E6",
+    "E7",
+    "E9",
+    "E10",
+    "H2"
+   ],
+   "name": "ODA - Hav / Sedimentkemi / MFS Sporstof (hazardous substances in sediment)",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_12_107",
+   "temporal": "per core, per date",
+   "spatial": "point + sediment layer depth",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "4-n-octylphenol",
+    "4-Nonylphenol",
+    "4-tert-octylphenol",
+    "Benzylbutylphthalat",
+    "Di(2-ethylhexyl)adipat",
+    "Di(2-ethylhexyl)phthalat",
+    "Dibutylphthalat",
+    "Diisodecyl phthalat",
+    "Diisononylphthalat",
+    "Di-n-octylphthalat",
+    "Gloedetab, total",
+    "Ler+silt fraktion",
+    "Nonylphenol-diethoxylater (NP2EO)",
+    "Nonylphenoler",
+    "Nonylphenol-monoethoxylater (NP1EO)",
+    "Total organisk kulstof",
+    "Toerstof, total"
+   ],
+   "stations": 38,
+   "coverage": "unknown start - present",
+   "past_2012": null,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "small",
+   "caveat": "DECISIVE NEGATIVE FINDING. 38 stations, and the parameter list contains NO metals, NO organotin/TBT, NO PAH and NO pesticides - only phthalates, nonyl/octylphenols and bulk carbon. Danish marine sediment contaminant monitoring, as exposed by ODA, cannot test E6 or E10 at all. The project's prior belief ('sediment measured at 4 of 256 hazardous-substance points') is the wrong number but the right direction: it is 38 stations with the wrong analytes.",
+   "verified": "2026-09-08, direct SOAP query of the Sporstof criterion list with no station filter"
+  },
+  {
+   "id": "ODA-MFS-MUSLING",
+   "hypotheses": [
+    "E6",
+    "E10",
+    "E7",
+    "O3"
+   ],
+   "name": "ODA - Hav / MFS i biota / Musling (Mytilus edulis soft parts)",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_52_153",
+   "temporal": "per sample, per date",
+   "spatial": "point",
+   "aggregation": "per-measurement",
+   "stations": 25,
+   "species": [
+    "Mytilus edulis"
+   ],
+   "organ": [
+    "Bloeddele"
+   ],
+   "parameters_note": "61 substances: Tributyltin, Dibutyltin, Monobutyltin, Triphenyltin (E6); Arsen, Bly, Cadmium, Chrom, Kobber, Kviksoelv, Nikkel, Soelv, Zink (E10); full PAH suite; dioxins/furans; coplanar PCBs; Fedt and Toerstof for normalisation.",
+   "coverage": "unknown start - present",
+   "past_2012": null,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "small",
+   "caveat": "THIS is where Danish marine biocide and metal monitoring actually lives - in mussel tissue at 25 stations, not in sediment. Tissue burden is a different quantity from sediment concentration: it integrates exposure over the animal's life and is confounded by condition index and lipid content, so E6/E10 can be tested but only as an exposure gradient, not as a dose at the bed.",
+   "verified": "2026-09-08, direct SOAP query"
+  },
+  {
+   "id": "ODA-MFS-FISK",
+   "hypotheses": [
+    "E9",
+    "E7",
+    "E10",
+    "F5"
+   ],
+   "name": "ODA - Hav / MFS i biota / Fisk",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_52_130",
+   "temporal": "per sample, per date",
+   "spatial": "point",
+   "aggregation": "per-measurement",
+   "stations": 19,
+   "species": [
+    "Neogobius melanostomus",
+    "Platichthys flesus",
+    "Pleuronectes platessa",
+    "Zoarces viviparus"
+   ],
+   "organ": [
+    "Lever",
+    "Muskel"
+   ],
+   "parameters_note": "91 substances including a full PFAS suite (PFOS, PFOA, PFBS, PFHxS, PFNA, PFDA, ... , HFPO-DA/GenX, 6:2 and 8:2 FTOH), PBDEs, HBCDD, PCBs, dioxins/furans, HCH, DDT/DDE, HCB, Kviksoelv, and WHO-TEQ sums.",
+   "coverage": "unknown start - present",
+   "past_2012": null,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "small",
+   "caveat": "E9 (PFAS) is testable in fish tissue at 19 stations and nowhere else in the Danish marine record. Note Neogobius melanostomus (round goby, an invasive) is one of the four monitored species, which incidentally dates its arrival at those stations.",
+   "verified": "2026-09-08, direct SOAP query"
+  },
+  {
+   "id": "ODA-BUNDFAUNA",
+   "hypotheses": [
+    "F1",
+    "F2",
+    "H3",
+    "O3",
+    "I1",
+    "I3",
+    "D1",
+    "D3"
+   ],
+   "name": "ODA - Hav / Bundfauna / Artsliste + Sediment",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_2_1 (Artsliste), Emne_2_4 (Sediment)",
+   "temporal": "per grab, per date+time",
+   "spatial": "point per grab (own lat/lon and UTM)",
+   "aggregation": "per-measurement",
+   "fields_of_note": [
+    "Proevetagningsudstyr",
+    "Proeveredskabsareal (cm2)",
+    "Antal (stk)",
+    "Biomasse vaadvaegt (g)",
+    "Biomasse toervaegt (g)",
+    "Askefri toervaegt (g)",
+    "Gyldig artsnavn/artskode/taxakode",
+    "Dybde (m)"
+   ],
+   "stations": {
+    "artsliste": "not enumerated this session",
+    "sediment": 83
+   },
+   "coverage": "long, back into the county era",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB",
+   "caveat": "Carries abundance AND three biomass measures per species per grab, which is what a bioturbation-potential index (F2) needs. The paired Sediment topic (grain size / gear) covers only 83 stations.",
+   "verified": "2026-09-08, direct SOAP query of output-field list"
+  },
+  {
+   "id": "ODA-VEGETATION",
+   "hypotheses": [
+    "F3",
+    "O4",
+    "H1"
+   ],
+   "name": "ODA - Hav / Vegetation (aalegraes bundfauna / makroalge / plante)",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_3_180/181/182",
+   "temporal": "per transect survey, per date",
+   "spatial": "transect point",
+   "aggregation": "per-measurement",
+   "coverage": "long",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB",
+   "caveat": "Depth limit and cover by station and year, as F3 requires.",
+   "verified": "2026-09-08, topic tree enumerated"
+  },
+  {
+   "id": "ODA-TILFOERSEL",
+   "hypotheses": [
+    "A1",
+    "A2",
+    "A4",
+    "A5",
+    "A8",
+    "C5",
+    "G2",
+    "H2",
+    "H4"
+   ],
+   "name": "ODA - Naeringsstoftilfoersel til havet (nutrient input to the sea)",
+   "custodian": "DCE, Aarhus Universitet / Miljoestyrelsen",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=a&t=h -> Emne_39_76 (Vand- og naeringsstoftilfoersel), Emne_39_75 (Tilfoersel fordelt)",
+   "temporal": "MONTHLY (output carries Aar and Maaned)",
+   "spatial": "marine reference polygon; 387 references at 4 nested levels (1., 2., 4. orden and Hele landet)",
+   "aggregation": "per-measurement at the level the hypothesis needs (water body x month); the individual stream stations behind it are aggregated away, but those are separately available in ODA-STOFTRANSPORT",
+   "parameters": [
+    "Ammonium-N",
+    "Nitrit+nitrat-N",
+    "Nitrogen,total N",
+    "Ortho-phosphat-P",
+    "Phosphor, total-P",
+    "Vandfoering"
+   ],
+   "source_split": [
+    "Samlet tilfoersel til havet (netto)",
+    "Tilfoersel fra direkte punktkilder",
+    "Tilfoersel fra opland",
+    "Punktkilder fra opland (brutto)",
+    "Renseanlaeg fra opland",
+    "Industri fra opland",
+    "Dambrug fra opland",
+    "Spredt beb. fra opland",
+    "Direkte renseanlaeg",
+    "Direkte industri",
+    "Havbrug",
+    "Tilfoersel via maalt opland",
+    "Tilfoersel via umaalt opland",
+    "Maalt/Umaalt opland km2"
+   ],
+   "coverage": "Opgoerelsesaar 2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2022,2023,2024 (2020 absent)",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "small",
+   "caveat": "THE central A1/A2 series and it is monthly, not annual - this alone falsifies the assumption that Denmark only publishes annual loads. Two gotchas: (1) 2020 is missing from the Opgoerelsesaar list; (2) each Opgoerelsesaar is a re-computation of the whole back-series, so vintages are not interchangeable and a trend must be taken within one vintage. The Havbrug column gives A8 a monthly per-water-body aquaculture nutrient term.",
+   "verified": "2026-09-08, direct SOAP query of criteria and output-field lists"
+  },
+  {
+   "id": "ODA-STOFTRANSPORT",
+   "hypotheses": [
+    "A1",
+    "A2",
+    "B4",
+    "E5",
+    "G2",
+    "C5"
+   ],
+   "name": "ODA - Vandloeb / Stoftransport / Maanedstransport",
+   "custodian": "DCE, Aarhus Universitet / Miljoestyrelsen",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=v&t=h -> Emne_38_67",
+   "temporal": "MONTHLY per station",
+   "spatial": "point, X/Y_UTM32 per station",
+   "aggregation": "monthly sum/flux per station; the individual samples behind it are in ODA Vandloeb Vandkemi",
+   "parameters": [
+    "Ammoniak+ammonium-N",
+    "Ammonium-N",
+    "BI ufortyndet",
+    "BI5",
+    "COD, susp.stof",
+    "Gloedetab,susp.stof",
+    "Jern",
+    "Kalium",
+    "Kemisk iltforbrug",
+    "Nitrat-N",
+    "Nitrit+nitrat-N",
+    "Nitrogen,total N",
+    "Ortho-phosphat-P",
+    "Phosphor, total-P",
+    "Silicium",
+    "Suspenderede stoffer",
+    "Vandfoering"
+   ],
+   "fields_of_note": [
+    "Proevetagningsstrategi",
+    "Antal analyser pr. aar",
+    "Beregnet af ODA",
+    "Oplukningskorrigeret",
+    "Kvalitetskategori"
+   ],
+   "coverage": "long; year is a required criterion",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB",
+   "caveat": "B4 IS TESTABLE and the register was wrong to call it 'almost never done': Suspenderede stoffer, Gloedetab i susp.stof (the organic fraction of the suspended load) and COD are carried monthly at the same stations as total N. 'Antal analyser pr. aar' is the honest sampling-effort field and belongs in any I3 correction.",
+   "verified": "2026-09-08, direct SOAP query"
+  },
+  {
+   "id": "ODA-VANDLOEB-MFS",
+   "hypotheses": [
+    "E7",
+    "E8",
+    "B2",
+    "B5"
+   ],
+   "name": "ODA - Vandloeb / Vandkemi / Miljoefarligt stof",
+   "custodian": "DCE, Aarhus Universitet",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=v&t=h -> Emne_10_3",
+   "temporal": "per sample",
+   "spatial": "point",
+   "aggregation": "per-measurement",
+   "parameters_note": "66 parameters including Glyphosat, (Aminomethyl)phosphonsyre (AMPA), Bentazon, MCPA, Mechlorprop, Azoxystrobin, Carbendazim, Dinitro-o-cresol, 2,6-Dichlorbenzamid; pharmaceuticals Amoxicillin, Doxycyclin, Lincomycin; Bisphenol A; phthalates; metals As, Ba, Pb, Cd, Cr, Cu; Escherichia coli and coliforms; alkalinity.",
+   "coverage": "unknown start - present",
+   "past_2012": null,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "small",
+   "caveat": "This is the FRESHWATER end. It gives E7 and E8 a delivery term (what is in the water arriving at the coast) but no marine concentration, and no marine effect. It is also the only Danish pesticide/pharmaceutical series we could confirm at per-sample resolution.",
+   "verified": "2026-09-08, direct SOAP query"
+  },
+  {
+   "id": "VANDAH",
+   "hypotheses": [
+    "C5",
+    "G2",
+    "A1",
+    "A2",
+    "B4",
+    "B1",
+    "C9"
+   ],
+   "name": "Vandah - hydrometric REST API (Dmp.Hydro.Api)",
+   "custodian": "Danmarks Miljoeportal",
+   "url": "https://vandah.miljoeportal.dk/api/stations?format=json ; https://vandah.miljoeportal.dk/api/water-flows?stationId=..&from=..&to=..&format=json ; OpenAPI at https://vandah.miljoeportal.dk/api/swagger/v1/swagger.json",
+   "temporal": "10-MINUTE (verified: consecutive 23:40 / 23:50 / 00:00 records)",
+   "spatial": "point, UTM32 (EPSG:25832), per station and per measurement point",
+   "aggregation": "per-measurement",
+   "stations": {
+    "total": 2871,
+    "Vandloeb": 1292,
+    "Grundvandsboring": 1433,
+    "Soe": 87,
+    "Pumpestation": 23,
+    "Hav": 17,
+    "Havn": 9,
+    "Draen": 9,
+    "Broend": 1
+   },
+   "coverage": "per-station firstResult/latestResult in the register; example station 19000467 has continuous Vandfoering 2006-01-01..2023-12-31, field discharge measurements from 1977-06-29, and water level to 2026-09-08",
+   "past_2012": true,
+   "access": "OPEN REST API, no key, no registration",
+   "format": "JSON (also csv/gml via ?format=)",
+   "size": "stations register 4.3 MB; a year of 10-min flow for one station is a few MB",
+   "caveat": "Far better than the 'daily discharge per catchment' C5 asked for - it is 10-minute. But Q is a rating-curve product from measured stage, not a measured flux, and the 1,292 stream stations are unevenly distributed relative to the 123 marine water bodies. 17 'Hav' and 9 'Havn' stations also give harbour-basin water level, which is the only harbour instrumentation we found anywhere (see B6).",
+   "verified": "2026-09-08, live GET returning 132 KB of 10-minute discharge for station 19000467, July 2023"
+  },
+  {
+   "id": "VANDA-API",
+   "hypotheses": [
+    "A9",
+    "F7",
+    "F6",
+    "O4"
+   ],
+   "name": "VanDa REST API - the successor surface-water database",
+   "custodian": "Danmarks Miljoeportal / Miljoestyrelsen",
+   "url": "https://vanda-api.miljoeportal.dk/swagger/v1/swagger.json (spec is public); data endpoints e.g. /phytoplankton/search, /phytoplankton/samples/species-results, /phytoplankton/master-data/species/marin, /zooplankton/samples/species-results",
+   "temporal": "per sample",
+   "spatial": "point",
+   "aggregation": "per-measurement",
+   "coverage": "NOVANA phytoplankton and zooplankton, current programme",
+   "past_2012": true,
+   "access": "NOT PUBLIC. The 3.4 MB OpenAPI spec (1,167 paths) is served unauthenticated, but every data GET returns HTTP 401. A Danmarks Miljoeportal account/token is required, provisioned through an organisation's IT coordinator.",
+   "format": "JSON",
+   "size": "unknown",
+   "caveat": "THE KEY STRUCTURAL FINDING FOR A9 AND F7. Danish marine phytoplankton species counts are NOT in ODA - the ODA marine topic tree has no Fytoplankton node at all (lakes do). They are reported to VanDa per DCE technical instruction TA M09, and VanDa's data endpoints are closed. HELCOM's own phytoplankton indicator page states 'Due to national database issues Danish phytoplankton data are not included in this evaluation'. So the species-level composition that would separate F7 from a biomass indicator, and that would test A9's N:P/fixation prediction, is collected by Denmark and reachable by nobody outside the system.",
+   "verified": "2026-09-08: spec fetched (200, 3.4 MB); five data GETs all returned 401"
+  },
+  {
+   "id": "MILJOEGIS-RBU-SAML",
+   "hypotheses": [
+    "B1",
+    "B2",
+    "A4",
+    "B3"
+   ],
+   "name": "MiljoeGIS VP3/VP4 rain-conditioned outfall layers with discharge fields (*_punkt_rbu_saml)",
+   "custodian": "Miljoestyrelsen / MiljoeGIS",
+   "url": "https://wfs2-miljoegis.mim.dk/wfs?service=WFS&request=GetCapabilities ; layers vp3hoering2021:vp3h2021_punkt_rbu_saml (19,657), vp3endelig2022:vp3e2022_punkt_rbu_saml (19,655), vp3gen2024:vp3gen2024_punkt_rbu_saml (21,375), vp3_2endelig2025:vp3_2e2025_punkt_rbu_saml (21,375), vp4basis2026:vp4_ba_26_punkt_rbu_saml (20,640)",
+   "temporal": "one ANNUAL value per point per publication vintage (field 'aar')",
+   "spatial": "point with coordinates",
+   "aggregation": "aggregated: annual total per outfall. Event count, event dates, durations and flow rates are all aggregated away.",
+   "fields_of_note": [
+    "udl_va_sta (water volume)",
+    "udl_bi_sta (BOD)",
+    "udl_co_sta (COD)",
+    "udl_tn_sta (N)",
+    "udl_tp_sta (P)",
+    "udl_*_ba (baseline)",
+    "aar"
+   ],
+   "coverage": "status years ~2019-2024 across five vintages",
+   "past_2012": true,
+   "access": "open WFS, no key",
+   "format": "GML/GeoJSON",
+   "size": "~20k features per layer, low MB",
+   "caveat": "THE MOST IMPORTANT B1 FINDING. The 2019 layer this project already holds (vp3_basis_2019_punkt_rbu_udl) carries only basin volume; the five LATER *_saml vintages carry per-outfall annual discharged volume, BOD, COD, N and P. Check which layer your existing extract came from before treating this as duplicate. Still annual, and the underlying PULS volume is modelled, not measured (dTA DP02 knowledge levels 0-5, uncertainty 30-135%).",
+   "verified": "reported by sub-agent from a live GetCapabilities (1,052,708 bytes) and a GetFeature sample returning aar=2024, udl_va_sta=14102.0, udl_tn_sta=141, owner VEJLE SPILDEVAND A/S"
+  },
+  {
+   "id": "SPILDEVANDSDATA",
+   "hypotheses": [
+    "B1",
+    "B2"
+   ],
+   "name": "spildevandsdata.dk - a PULS extract of overflow and stormwater outfalls",
+   "custodian": "SEGES (funded by Promilleafgiftsfonden), data from PULS",
+   "url": "https://spildevandsdata.dk/ ; https://spildevandsdata.dk/layers/Flleskloakeredeoverlbm3_2.js (4,217 combined-sewer overflow points, 1.19 MB) ; https://spildevandsdata.dk/layers/Regnvandssepareredeudlbm3_1.js (16,185 separate stormwater outfalls, 4.59 MB)",
+   "temporal": "ANNUAL, calendar year 2020 only",
+   "spatial": "point (WGS84)",
+   "aggregation": "aggregated: one annual volume and one annual event count per outfall. No per-event dates or durations.",
+   "fields_of_note": [
+    "Vand_(m3/aar)",
+    "Antal overloeb",
+    "N_(kg/aar)",
+    "P_(kg/aar)",
+    "Bygvaerkstype",
+    "Ejer",
+    "Red areal (ha)"
+   ],
+   "coverage": "2020 only; content digest unchanged in Wayback crawls from Nov 2021 to 2026",
+   "past_2012": true,
+   "access": "open static download, no auth, no API",
+   "format": "GeoJSON embedded in .js",
+   "size": "5.8 MB total",
+   "caveat": "Carries the event COUNT, which the MiljoeGIS *_saml layers do not - so it is the only national source with both volume and frequency per outfall. But it is a frozen 2020 snapshot, and SEGES's own disclaimer calls the data 'ubehandlet' (unprocessed)."
+  },
+  {
+   "id": "PULS",
+   "hypotheses": [
+    "B1",
+    "B2",
+    "B3",
+    "A4",
+    "B5",
+    "E5"
+   ],
+   "name": "PULS - Punktkilder og spildevand",
+   "custodian": "Danmarks Miljoeportal / Miljoestyrelsen",
+   "url": "https://puls.miljoeportal.dk (HTTP 200, CVR-gated login app). api.miljoeportal.dk does not resolve.",
+   "temporal": "annual per point (reported)",
+   "spatial": "point",
+   "aggregation": "annual; PULS records 'antal overloeb' but no flow rate, no peak and no threshold crossing",
+   "coverage": "ongoing",
+   "past_2012": true,
+   "access": "NOT PUBLIC. Read access requires a Miljoeportal account provisioned through an organisation's IT coordinator. No anonymous API. support.miljoeportal.dk returns 403 to automated fetches.",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "This is the register B1 actually needs and it is closed. The public shadows of it are MILJOEGIS-RBU-SAML and SPILDEVANDSDATA. Even inside PULS the volume is modelled, not measured."
+  },
+  {
+   "id": "NYBORG-OVERLOEB",
+   "hypotheses": [
+    "B1"
+   ],
+   "name": "Nyborg Forsyning combined-sewer overflow telemetry (Grafana)",
+   "custodian": "Nyborg Forsyning A/S (ACOWA 'Gekko' telemetry)",
+   "url": "https://overloeb.nfs.as/ ; dashboard JSON https://overloeb.nfs.as/api/dashboards/uid/Ch1ED61Vz",
+   "temporal": "PER EVENT / near-real-time",
+   "spatial": "point per overflow structure",
+   "aggregation": "per-event: Antal (count), Varighed (duration, minutes), Volumen (m3), Recipient",
+   "coverage": "live; historical depth of the backing database not established",
+   "past_2012": null,
+   "access": "the dashboard link is published by the utility itself, but the full Grafana API answered without authentication, which is a misconfiguration rather than a data product. We did not query the backing datasource. Treat as request-only: contact Nyborg Forsyning.",
+   "format": "JSON via Grafana API",
+   "size": "small",
+   "caveat": "Structurally this is exactly what B1 needs - count AND duration AND volume per event - and it exists for exactly one small utility. It is the proof that the data is technically collected and simply not published nationally. Equivalent hostnames guessed for HOFOR, BIOFOS, Aarhus Vand and VandCenter Syd all failed DNS."
+  },
+  {
+   "id": "PUNKTKILDER-RAPPORT",
+   "hypotheses": [
+    "A4",
+    "B3",
+    "B5",
+    "E5"
+   ],
+   "name": "Punktkilderapporten (annual Danish point-source report), Bilag 1 and 2",
+   "custodian": "Styrelsen for Groen Arealomlaegning og Vandmiljoe (SGAV), formerly Miljoestyrelsen",
+   "url": "https://www2.mst.dk/Udgiv/publikationer/2024/12/978-87-7038-686-9.pdf (2023 edition, 1.51 MB) ; https://sgavmst.dk/media/fmhnknvo/punktkilderapporten_2024.pdf (2024) ; 2022: .../2024/02/978-87-7038-600-5.pdf ; 2021: .../2023/03/978-87-7038-492-6.pdf",
+   "temporal": "ANNUAL",
+   "spatial": "named facility + municipality; no coordinates in the tables (those are in PULS/MiljoeGIS)",
+   "aggregation": "per-facility rows, annual. Bilag 1 = 656 treatment plants (Kvaelstof kg, Fosfor kg, BI5 kg, Vand 1000 m3, Belastning PE, Rensekode). Bilag 2 = 116 industrial dischargers (N, P, BI5 mod., COD, Vand).",
+   "coverage": "annual series back to the late 1990s, current through the 2024 edition",
+   "past_2012": true,
+   "access": "open PDF download",
+   "format": "PDF (no CSV/XLSX sibling found)",
+   "size": "~1.5 MB per year",
+   "caveat": "Two things A4 asked for are absent: monthly resolution, and plant UPGRADE DATES. COD is reported for industry but not for treatment plants (BOD5 only), which weakens B3 and E5 for the municipal half."
+  },
+  {
+   "id": "EEA-UWWTD",
+   "hypotheses": [
+    "A4",
+    "B3"
+   ],
+   "name": "Waterbase - UWWTD (Discharge Points, Agglomerations)",
+   "custodian": "European Environment Agency / ETC-ICM",
+   "url": "https://www.eea.europa.eu/en/datahub/datahubitem-view/21874828-fa7a-4e7e-8a0a-52ec7d92f99f (Discharge Points) ; .../7c22ae09-4827-4a7b-a190-1504a22cf094 (Agglomerations)",
+   "temporal": "annual reporting cycles",
+   "spatial": "point with coordinates",
+   "aggregation": "per discharge point per reporting cycle",
+   "coverage": "2013-2014 and 2017-2023; latest edition published Mar 2026",
+   "past_2012": true,
+   "access": "the 'FINAL PUBLIC VERSION' share is open; internal/provisional tiers return HTTP 401 (Eionet login)",
+   "format": "Geopackage / GDB / ESRI:REST / OGC:WMS",
+   "size": "EU-wide, not measured",
+   "caveat": "Existence, coverage and format confirmed; the attribute schema (whether N/P/BOD/COD load fields are present per plant) was NOT confirmed - open the Geopackage before relying on it. The old alias URL .../waterbase-uwwtd-...-7 is HTTP 410 Gone."
+  },
+  {
+   "id": "EEA-INDUSTRY",
+   "hypotheses": [
+    "B5",
+    "E5",
+    "A4"
+   ],
+   "name": "EU Industrial Emissions Portal (formerly E-PRTR / IED reporting)",
+   "custodian": "European Environment Agency",
+   "url": "https://industry.eea.europa.eu/download (302 -> /industrial-emissions/dataset) ; metadata https://sdi.eea.europa.eu/catalogue/srv/api/records/9405f714-8015-4b5b-a63c-280b82861b3d",
+   "temporal": "ANNUAL",
+   "spatial": "point per facility with coordinates",
+   "aggregation": "per facility, per pollutant, per year",
+   "coverage": "2007-2024; version 16.0 published Feb 2026",
+   "past_2012": true,
+   "access": "open direct download, no login",
+   "format": "Excel and CSV/TXT/SQL",
+   "size": "EU-wide, tens of MB+",
+   "caveat": "Annex II reporting THRESHOLDS mean anything below them is structurally invisible - so this sees only the large industrial dischargers, and a slaughterhouse or dairy below threshold does not appear at all. Column names not opened/confirmed."
+  },
+  {
+   "id": "BADEVAND",
+   "hypotheses": [
+    "B6",
+    "B1",
+    "O2"
+   ],
+   "name": "Bathing water quality portal",
+   "custodian": "Miljoestyrelsen/SGAV, front end by DHI",
+   "url": "https://badevand.dk/",
+   "temporal": "per sample in season, plus a seasonal classification",
+   "spatial": "~1,039 named bathing sites (points)",
+   "aggregation": "the public front end shows a categorical daily flag per beach, model-simulated, not measurements",
+   "coverage": "the annual quality classification 1991-2018 is already held in this project's national layer",
+   "past_2012": true,
+   "access": "web/app viewing; no open download or API located; the documentation host support.miljoeportal.dk returns 403",
+   "format": "web",
+   "size": "small",
+   "caveat": "Parameters are E. coli and intestinal enterococci ONLY - Bathing Water Directive hygiene indicators. Useful as an event-timing proxy for B1 (faecal spikes after rain) and as the public-complaint channel for O2. NOT an oxygen, nutrient or organic-matter measurement, so it cannot serve B6 as B6 is stated."
+  },
+  {
+   "id": "DCE-ILTSVIND",
+   "hypotheses": [
+    "O1",
+    "B8",
+    "C4",
+    "F9"
+   ],
+   "name": "DCE/NOVANA iltsvind (oxygen deficit) bulletin series",
+   "custodian": "DCE, Aarhus Universitet + SGAV",
+   "url": "https://sgavmst.dk/vandmiljoe/havet/iltsvind ; individual bulletins e.g. https://dce.au.dk/.../N2025_71.pdf",
+   "temporal": "biweekly, weeks 26-49 each year, plus quarterly syntheses",
+   "spatial": "static maps of affected areas; no coordinates",
+   "aggregation": "AGGREGATE ONLY. Narrative PDF with painted maps. Extent, duration and severity per area are stated in prose and pictures, not as a table.",
+   "coverage": "continuous 2012-2025 confirmed",
+   "past_2012": true,
+   "access": "open PDF download",
+   "format": "PDF",
+   "size": "a few MB per bulletin",
+   "caveat": "This is the authoritative Danish account of where and when oxygen deficit occurred, and it is published in a form that cannot be joined to anything. Digitising it is a real piece of work. The underlying oxygen measurements are in ODA-CTD; the AREA and DURATION judgements are only here."
+  },
+  {
+   "id": "EMEP",
+   "hypotheses": [
+    "A3"
+   ],
+   "name": "EMEP MSC-W modelled deposition",
+   "custodian": "EMEP MSC-W / met.no",
+   "url": "https://thredds.met.no/thredds/catalog/data/EMEP/2025_Reporting/catalog.html ; e.g. https://thredds.met.no/thredds/fileServer/data/EMEP/2025_Reporting/EMEP01_rv5.6_month.2020met_2020emis_rep2025.nc (856 MB) ; annual EMEP01_rv5.6_year.2023met_2023emis.nc (84.5 MB) ; OPeNDAP subsetting available",
+   "temporal": "MONTHLY (also daily and annual files)",
+   "spatial": "0.1 deg x 0.1 deg grid, 520 x 1200 cells, all of Europe including all Danish waters",
+   "aggregation": "MODELLED, but per grid cell per month - not pre-aggregated to national or basin totals",
+   "variables": [
+    "WDEP_OXN",
+    "WDEP_RDN",
+    "DDEP_OXN_m2Grid",
+    "DDEP_RDN_m2Grid",
+    "DDEP_OXN_m2Water_D",
+    "DDEP_RDN_m2Water_D"
+   ],
+   "coverage": "1990-2024",
+   "past_2012": true,
+   "access": "open download, no registration (HTTP fileServer or OPeNDAP)",
+   "format": "NetCDF",
+   "size": "85 MB per annual file, ~900 MB per monthly-resolution year",
+   "caveat": "Best available A3 source and it has dry-deposition-to-WATER variables reported separately from land, which is exactly what deposition onto the sea surface needs. BUT: it is model output, and there is NO ORGANIC NITROGEN variable. A3's specific ask - the organic N fraction - is not in EMEP, not in DCE/DEHM, and not in CAMS.",
+   "verified": "sub-agent: catalogue 200, file 200 with Content-Length, variable list read from the OPeNDAP .dds"
+  },
+  {
+   "id": "DCE-DEPOSITION",
+   "hypotheses": [
+    "A3"
+   ],
+   "name": "DCE 'Atmosfaerisk deposition' NOVANA reports (DEHM model)",
+   "custodian": "DCE, Aarhus Universitet",
+   "url": "https://dce2.au.dk/pub/SR351.pdf (2018 edition, 5.9 MB); series SR30, SR163, SR304, SR351, SR415 ; model page https://envs.au.dk/om-instituttet-1/faglige-omraader/luftforurening-udledninger-og-effekter/overvaagningsprogrammet/luftforureningsmodeller/deposition",
+   "temporal": "ANNUAL",
+   "spatial": "report tables per NAMED water body (Kattegat dansk/svensk del, Nordlige/Sydlige Baelthav, Lillebaelt, Storebaelt, Oeresund, Oestersoeen dansk del, ...); the DEHM model runs on 6 km x 6 km over Denmark and 17 km outside",
+   "aggregation": "AGGREGATE ONLY. What is aggregated away: the 6 km monthly grid values, which the model computes internally and does not publish. The published product is an annual tonnage per named sea area (e.g. 68,000 t N to all 105,000 km2 of Danish waters in 2018).",
+   "coverage": "annual reports at least 2011-2019",
+   "past_2012": true,
+   "access": "open PDF; the deposition page hosts only PNG/PDF maps and tables, NO CSV or NetCDF grid download",
+   "format": "PDF",
+   "size": "~6 MB per report",
+   "caveat": "This is the finding, not the data: Denmark models N deposition onto its sea at 6 km and publishes it as an annual number per named area. Monitored species are listed as inorganic (N, S, Na, Cl, Mg, K, Ca) plus metals and organic POLLUTANTS - no organic-N deposition fraction is modelled or reported."
+  },
+  {
+   "id": "HELCOM-DEPOSITION",
+   "hypotheses": [
+    "A3",
+    "A5"
+   ],
+   "name": "HELCOM atmospheric nitrogen deposition to the Baltic Sea 1990-2023",
+   "custodian": "HELCOM (based on EMEP runs)",
+   "url": "https://helcom.fi/wp-content/uploads/2025/12/Atmospheric-nitrogen-deposition-to-the-Baltic-Sea-1990-2023.pdf",
+   "temporal": "annual",
+   "spatial": "HELCOM sub-basin",
+   "aggregation": "AGGREGATE: per sub-basin per year, with source apportionment by contributing country",
+   "coverage": "1990-2023",
+   "past_2012": true,
+   "access": "open PDF",
+   "format": "PDF",
+   "size": "1.3 MB",
+   "caveat": "Useful for the source-apportionment half of A3's prediction (that deposition is largely foreign in origin). Basin-level, so it cannot be joined to a water body."
+  },
+  {
+   "id": "DMI-METOBS",
+   "hypotheses": [
+    "G2",
+    "G3",
+    "B1",
+    "D7"
+   ],
+   "name": "DMI Open Data - metObs and climateData",
+   "custodian": "Danmarks Meteorologiske Institut",
+   "url": "https://opendataapi.dmi.dk/v2/metObs/collections/observation/items?parameterId=precip_past10min&limit=3 ; stations at /v2/metObs/collections/station/items ; https://opendataapi.dmi.dk/v2/climateData/collections/stationValue/items?parameterId=acc_precip&timeResolution=month",
+   "temporal": "10-MINUTE raw (precip_past10min, precip_dur_past10min, precip_past1h, precip_dur_past1h); climateData offers hour/day/month aggregates",
+   "spatial": "point stations with lat/lon",
+   "aggregation": "metObs is per-measurement; climateData is the QC'd aggregate - say which you used",
+   "coverage": "station network history to 1961 for some stations; live to 2026",
+   "past_2012": true,
+   "access": "open API. NOTE: the documented host dmigw.govcloud.dk has been RETIRED (retirement date 2026-06-30, passed). The working host is opendataapi.dmi.dk. Test queries returned 200 with no API key sent, which contradicts older documentation - confirm current key policy at https://www.dmi.dk/frie-data before building a pipeline.",
+   "format": "GeoJSON over REST, paginated",
+   "size": "paginated",
+   "caveat": "G2's prediction (that the same annual load arrives in fewer, larger events) needs sub-daily rain, and this gives 10-minute. Rain intensity is also the trigger variable for B1."
+  },
+  {
+   "id": "DMI-OCEANOBS",
+   "hypotheses": [
+    "C9",
+    "G6",
+    "C4",
+    "D7"
+   ],
+   "name": "DMI Open Data - oceanObs (sea level)",
+   "custodian": "Danmarks Meteorologiske Institut",
+   "url": "https://opendataapi.dmi.dk/v2/oceanObs/collections/observation/items?parameterId=sealev_dvr&limit=3 ; stations at /v2/oceanObs/collections/station/items",
+   "temporal": "10-MINUTE for modern data; 15-minute by 1990; hourly for digitised historical records",
+   "spatial": "point stations with exact coordinates; ~200 station records",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "sealev_dvr (DVR90 datum)",
+    "sealev_ln (local reference)",
+    "sea_reg (raw gauge)",
+    "tw"
+   ],
+   "coverage": "Esbjerg Havn from 1889-01-01, Hornbaek 1891, Gedser 1891; most others 1969-1990; live to 2026",
+   "past_2012": true,
+   "access": "open API, unauthenticated in testing (same key-policy caveat as DMI-METOBS)",
+   "format": "GeoJSON over REST",
+   "size": "paginated",
+   "caveat": "Multiple station IDs can be the same physical harbour across instrument upgrades (three 'Koebenhavns Havn' IDs with operationFrom 1974, 1984, 1989). A join by name will double-count or invent gaps - merge by location and succession."
+  },
+  {
+   "id": "PSMSL",
+   "hypotheses": [
+    "C9",
+    "G6"
+   ],
+   "name": "PSMSL Revised Local Reference monthly means",
+   "custodian": "Permanent Service for Mean Sea Level",
+   "url": "https://psmsl.org/data/obtaining/rlr.monthly.data/rlr_monthly.zip",
+   "temporal": "MONTHLY means",
+   "spatial": "tide gauge station",
+   "aggregation": "AGGREGATED: monthly mean. Tidal and storm-surge variability is averaged away.",
+   "coverage": "long, into the 1800s for Danish stations; file last modified 2026-08-31",
+   "past_2012": true,
+   "access": "open bulk download",
+   "format": "zipped text",
+   "size": "18.8 MB",
+   "caveat": "Long-baseline trend cross-check only. DMI-OCEANOBS is the per-measurement source."
+  },
+  {
+   "id": "ERA5",
+   "hypotheses": [
+    "G3",
+    "C2",
+    "D7"
+   ],
+   "name": "ERA5 reanalysis, single levels",
+   "custodian": "ECMWF / Copernicus Climate Data Store",
+   "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels",
+   "temporal": "hourly",
+   "spatial": "~0.25 deg global grid",
+   "aggregation": "MODELLED reanalysis, per cell per hour",
+   "coverage": "1940-present",
+   "past_2012": true,
+   "access": "free CDS account + API token",
+   "format": "NetCDF/GRIB",
+   "size": "large",
+   "caveat": "This project already holds 31 years of hourly wind; ERA5 matters mainly as the forcing behind the Copernicus wave hindcasts, and as a way to extend the wind series backwards."
+  },
+  {
+   "id": "ICE",
+   "hypotheses": [
+    "G5"
+   ],
+   "name": "Sea ice for Danish waters - no single confirmed source",
+   "custodian": "SMHI (havsis), Copernicus CDS satellite sea-ice concentration",
+   "url": "https://www.smhi.se/data/oceanografi/havsis (200) ; https://cds.climate.copernicus.eu/datasets/satellite-sea-ice-concentration (200)",
+   "temporal": "daily (satellite product)",
+   "spatial": "25 km satellite grid; SMHI ice charts are polygons",
+   "aggregation": "varies",
+   "coverage": "satellite 1978-present",
+   "past_2012": true,
+   "access": "SMHI open; CDS free account",
+   "format": "NetCDF / charts",
+   "size": "varies",
+   "caveat": "WEAKEST AREA IN THIS SURVEY. DMI's Danish-waters ice archive could not be located (every guessed path 404s; DMI's public ice emphasis is Greenland/Arctic). BSH ice chart paths 404. FMI's Baltic ice season page returned an empty JS shell. 25 km satellite ice concentration is too coarse to resolve the Belts and Sound. Note data.marine.copernicus.eu returns HTTP 200 for arbitrary slugs, so a 200 there is NOT confirmation of a product."
+  },
+  {
+   "id": "IOW-MBI",
+   "hypotheses": [
+    "C4",
+    "A5",
+    "C1"
+   ],
+   "name": "Major Baltic Inflow statistics (Mohrholz)",
+   "custodian": "Leibniz-Institut fuer Ostseeforschung Warnemuende (IOW)",
+   "url": "https://www.iow.de/major-baltic-inflow-statistics-7274.html ; data DOI 10.12754/data-2018-0004 ; method: Mohrholz 2018, Frontiers in Marine Science",
+   "temporal": "DAILY barotropic transport series, plus a discrete event list with dates, volumes and salt import",
+   "spatial": "the Belt/Sound section as a whole - a single transect, not a field",
+   "aggregation": "DERIVED INDEX, computed from sea level, river discharge and Belt/Sound salinity. Not a measured flux.",
+   "coverage": "1886 - January 2024",
+   "past_2012": true,
+   "access": "open download",
+   "format": "ASCII / MATLAB / NetCDF",
+   "size": "~2.1 MiB",
+   "caveat": "This is the standard MBI chronology and C4's 'published inflow record' in full. What does NOT exist: a standalone BSH Baltic-inflow index, or a published Fehmarn Belt / Darss Sill volume-transport product. Belt SECTION transports, as C4 asks for them, were not found anywhere as an open series."
+  },
+  {
+   "id": "CMEMS-BAL-PHY",
+   "hypotheses": [
+    "C1",
+    "C3",
+    "C4",
+    "C6",
+    "G1"
+   ],
+   "name": "Copernicus Marine Baltic Sea Physics Reanalysis",
+   "custodian": "CMEMS / Copernicus Marine Service",
+   "url": "product id BALTICSEA_MULTIYEAR_PHY_003_011",
+   "temporal": "daily / monthly / yearly",
+   "spatial": "2 x 2 km grid, 56 depth levels",
+   "aggregation": "MODELLED (NEMO). Not a measurement.",
+   "coverage": "1993-01-01 to near-real-time",
+   "past_2012": true,
+   "access": "free Copernicus Marine account required",
+   "format": "NetCDF-4",
+   "size": "large",
+   "caveat": "Gives stratification and bottom temperature everywhere, including between the 185 ODA CTD stations - which is what C1 and C3 need for a per-water-body potential energy anomaly. It is a model: validate it against ODA-CTD before using it as evidence. No oxygen in this product; use CMEMS-BAL-BGC."
+  },
+  {
+   "id": "CMEMS-BAL-BGC",
+   "hypotheses": [
+    "O1",
+    "C4",
+    "A1",
+    "A5",
+    "O4"
+   ],
+   "name": "Copernicus Marine Baltic Sea Biogeochemistry Reanalysis",
+   "custodian": "CMEMS",
+   "url": "product id BALTICSEA_MULTIYEAR_BGC_003_012",
+   "temporal": "daily/monthly",
+   "spatial": "2 x 2 km, 56 depth levels",
+   "aggregation": "MODELLED (ERGOM coupled to NEMO)",
+   "variables": [
+    "dissolved oxygen",
+    "chlorophyll",
+    "nutrients",
+    "pH",
+    "Secchi depth"
+   ],
+   "coverage": "1993-present",
+   "past_2012": true,
+   "access": "free account",
+   "format": "NetCDF-4",
+   "size": "large",
+   "caveat": "Directly relevant to O1 and it carries modelled pH, which is otherwise thin for G4. It is an estimate, so it can be a boundary condition or a gap-filler but never the evidence that decides between hypotheses."
+  },
+  {
+   "id": "CMEMS-BAL-WAV",
+   "hypotheses": [
+    "D7",
+    "O2"
+   ],
+   "name": "Copernicus Marine Baltic Sea Wave Reanalysis",
+   "custodian": "CMEMS",
+   "url": "product id BALTICSEA_MULTIYEAR_WAV_003_015 (an older alias BALTICSEA_REANALYSIS_WAV_003_015 also appears)",
+   "temporal": "hourly",
+   "spatial": "2 x 2 km (WAM cycle 4.6/4.7, ERA5-forced)",
+   "aggregation": "MODELLED hindcast",
+   "coverage": "1980-01-01 to ~2026-06-01",
+   "past_2012": true,
+   "access": "free Copernicus Marine account",
+   "format": "NetCDF",
+   "size": "large",
+   "caveat": "Explicitly covers the Danish Belts, Kattegat and Skagerrak. What it adds over this project's wind-derived bed shear: real Hs, period, direction and bottom orbital velocity, which capture fetch, depth-limited shoaling and refraction around sills and islands - the effects a pointwise wind proxy cannot have. Needs stitching with the North Sea product at the Kattegat transition."
+  },
+  {
+   "id": "CMEMS-NWS-WAV",
+   "hypotheses": [
+    "D7",
+    "O2"
+   ],
+   "name": "Copernicus Marine North-West Shelf Wave Reanalysis",
+   "custodian": "CMEMS",
+   "url": "product id NWSHELF_REANALYSIS_WAV_004_015",
+   "temporal": "hourly",
+   "spatial": "0.0135 x 0.0303 deg (~1.5 km), WAVEWATCH III, ERA5-forced",
+   "aggregation": "MODELLED hindcast",
+   "coverage": "1980-01-01 to 2026-04-30",
+   "past_2012": true,
+   "access": "free account",
+   "format": "NetCDF",
+   "size": "large",
+   "caveat": "Domain 46-62.74N, -16 to 13E: covers the Danish North Sea, Skagerrak and the Kattegat approach."
+  },
+  {
+   "id": "ICES-OCEAN",
+   "hypotheses": [
+    "C1",
+    "C4",
+    "C6",
+    "A5"
+   ],
+   "name": "ICES Oceanographic Database",
+   "custodian": "ICES Data Centre",
+   "url": "https://ocean.ices.dk/ ; https://ocean.ices.dk/core/odb ; https://data.ices.dk/",
+   "temporal": "per cast",
+   "spatial": "point with coordinates",
+   "aggregation": "per-measurement (CTD and bottle profiles)",
+   "coverage": "1877-present",
+   "past_2012": true,
+   "access": "open, CC-BY-4.0",
+   "format": "not confirmed (SPA front end)",
+   "size": "unknown",
+   "caveat": "Substantial overlap with ODA - the same Danish stations feed both - so its value is cross-validation and, more importantly, the SWEDISH AND GERMAN side of the Sound and Belts, which A5 needs and which ODA by construction does not have."
+  },
+  {
+   "id": "BSH-MARNET",
+   "hypotheses": [
+    "C4",
+    "C1",
+    "A5"
+   ],
+   "name": "BSH MARNET automatic monitoring network",
+   "custodian": "Bundesamt fuer Seeschifffahrt und Hydrographie",
+   "url": "https://www.bsh.de/EN/TOPICS/Monitoring_systems/MARNET_monitoring_network/marnet_monitoring_network_node.html",
+   "temporal": "hourly",
+   "spatial": "9 automatic stations + 7 buoys, German Bight and western Baltic (Darss Sill, Fehmarn Belt, Arkona)",
+   "aggregation": "per-measurement",
+   "coverage": "long",
+   "past_2012": true,
+   "access": "REGISTRATION required for current data (BSH Insitu Portal); archival data by direct request to dod@bsh.de",
+   "format": "unknown",
+   "size": "unknown",
+   "caveat": "The Darss Sill and Fehmarn Belt stations are the instruments that actually see a Baltic inflow arriving. Not open self-serve."
+  },
+  {
+   "id": "IOW-ODIN",
+   "hypotheses": [
+    "C4",
+    "C1"
+   ],
+   "name": "IOW ODIN2 data portal / Arkona and Darss Sill observatories",
+   "custodian": "IOW Warnemuende",
+   "url": "https://odin2.io-warnemuende.de (302 -> https://odin.iow.de/) ; station page https://www.iow.de/marnet-arkona-sea.html",
+   "temporal": "high frequency",
+   "spatial": "fixed station, T and S at 8 depths (2-43 m)",
+   "aggregation": "per-measurement",
+   "coverage": "long",
+   "past_2012": true,
+   "access": "portal is a JS SPA; download mechanics and access terms UNVERIFIED",
+   "format": "unknown",
+   "size": "unknown",
+   "caveat": "unverified - listed because the station and portal both resolve, but we could not confirm what comes out of it."
+  },
+  {
+   "id": "DDM",
+   "hypotheses": [
+    "C7",
+    "C3",
+    "D7"
+   ],
+   "name": "Danmarks Dybdemodel (Danish Depth Model) v2.0",
+   "custodian": "Klimadatastyrelsen / Danish Hydrographic Office",
+   "url": "https://eng.gst.dk/danish-hydrographic-office/denmark-depth-model/ ; also listed at https://dataforsyningen.dk/data/4817",
+   "temporal": "static composite; source surveys 1993-2024",
+   "spatial": "50 m grid, 98,045 km2 of the Danish EEZ",
+   "aggregation": "AGGREGATED into a single current-state grid; the per-survey dates and accuracies are composited away",
+   "coverage": "surveys 1993-2024",
+   "past_2012": true,
+   "access": "open download; WMS/WCS available",
+   "format": "GeoTIFF, ETRS89/LCC",
+   "size": "large",
+   "caveat": "Best resolution available for Belt and Sound SILL geometry (Drogden, Darss). C7 needs sill depth and the basin volume below the pycnocline, and 50 m gets you there where EMODnet's 115 m does not."
+  },
+  {
+   "id": "EMODNET-BATHY",
+   "hypotheses": [
+    "C7",
+    "C3"
+   ],
+   "name": "EMODnet Bathymetry DTM",
+   "custodian": "EMODnet",
+   "url": "https://emodnet.ec.europa.eu/en/bathymetry",
+   "temporal": "static, 2024 release",
+   "spatial": "1/16 arcmin (~115 m); some HR tiles finer",
+   "aggregation": "AGGREGATED composite of many surveys of varying vintage",
+   "coverage": "covers the Greater North Sea including the Kattegat",
+   "past_2012": true,
+   "access": "open, no registration; WMS/WMTS/WFS/WCS + direct download",
+   "format": "GeoTIFF/NetCDF/XYZ/CSV",
+   "size": "large",
+   "caveat": "Too coarse for narrow sill throats. Use DDM for Danish waters and this for the wider basin."
+  },
+  {
+   "id": "EFAS",
+   "hypotheses": [
+    "C5",
+    "G2"
+   ],
+   "name": "EFAS historical river discharge (LISFLOOD)",
+   "custodian": "Copernicus Emergency Management / EWDS",
+   "url": "https://ewds.climate.copernicus.eu ; dataset 'efas-historical', DOI 10.24381/cds.e3458969",
+   "temporal": "6-hourly",
+   "spatial": "1 x 1 arcmin (~1.5 km) river network",
+   "aggregation": "MODELLED",
+   "coverage": "1992-01-01 to near-real-time (6-day lag)",
+   "past_2012": true,
+   "access": "registration required",
+   "format": "NetCDF/GRIB",
+   "size": "large",
+   "caveat": "Only worth it where Vandah has no station. Verify that the LISFLOOD network actually resolves the specific Danish reaches you need - many Danish streams are below its threshold."
+  },
+  {
+   "id": "HELCOM-PLC",
+   "hypotheses": [
+    "A5",
+    "A1",
+    "A2"
+   ],
+   "name": "HELCOM PLC (Pollution Load Compilation) data portal",
+   "custodian": "HELCOM / Stockholm University Baltic Sea Centre",
+   "url": "https://nest.su.se/helcom_plc/ ; export servlet https://nest.su.se/helcom_plus/selectDataForPLC",
+   "temporal": "ANNUAL (form offers year_begin/year_end, min 1995 max 2024)",
+   "spatial": "per river / monitored area, with river-mouth lat/lon and catchment area; also 'unmonitored areas'",
+   "aggregation": "AGGREGATED to an annual load per river per country. Monthly and per-sample values are aggregated away.",
+   "parameters": [
+    "FLOW",
+    "NTOT",
+    "PTOT",
+    "NNH4",
+    "PPO4",
+    "NNO23",
+    "NNO3",
+    "NNO2",
+    "BOD5",
+    "BOD7",
+    "Cu",
+    "Zn",
+    "Pb",
+    "Ni",
+    "Cd",
+    "Cr",
+    "Hg",
+    "SPM",
+    "COD-Cr",
+    "COD-Mn",
+    "TOC",
+    "AOX",
+    "Oil"
+   ],
+   "countries": [
+    "DK",
+    "EE",
+    "FI",
+    "DE",
+    "LV",
+    "LT",
+    "PL",
+    "RU",
+    "SE"
+   ],
+   "coverage": "1995-2024",
+   "past_2012": true,
+   "access": "open web form; the CSV export GET returned HTTP 200 with a zero-byte body on our unauthenticated attempt, so the EXPORT ITSELF IS UNVERIFIED - the form, its parameter list, its country list and its year range were read directly from the served HTML",
+   "format": "CSV (separator selectable)",
+   "size": "unknown",
+   "caveat": "This is A5's German/Swedish/Polish riverine term and it is annual only. It does not give boundary CONCENTRATION at the Belt and Sound sections, which is what A5 actually asks for - that needs ICES-OCEAN and SHARK."
+  },
+  {
+   "id": "SHARK",
+   "hypotheses": [
+    "A5",
+    "C1",
+    "A9",
+    "F7"
+   ],
+   "name": "SHARK - Swedish marine environmental monitoring data",
+   "custodian": "SMHI",
+   "url": "https://shark.smhi.se/ (sharkweb.smhi.se 301s here). NOTE sharkdata.smhi.se, the API layer, FAILED DNS RESOLUTION on 2026-09-08.",
+   "temporal": "per sample",
+   "spatial": "point",
+   "aggregation": "per-measurement",
+   "coverage": "long",
+   "past_2012": true,
+   "access": "open web portal; API layer unreachable at time of check",
+   "format": "unknown",
+   "size": "unknown",
+   "caveat": "unverified in detail. Matters because it holds the Swedish side of the Sound and Kattegat - the other half of every boundary A5 cares about - and because Swedish phytoplankton IS in HELCOM's assessment while Danish is not."
+  },
+  {
+   "id": "ICES-VMS-SAR",
+   "hypotheses": [
+    "D1",
+    "D6",
+    "O3"
+   ],
+   "name": "ICES WGSFD VMS/logbook swept-area-ratio product",
+   "custodian": "ICES Working Group for Spatial Fisheries Data (WGSFD)",
+   "url": "https://data.ices.dk/vms/API/getSARBy_YearAndMetier4_GeoJSON/{Year}/{Metier4} (verified live with /2021/DRB) ; shapefile variant getSARBy_YearAndMetier4_Shapefile/{Year}/{Metier4} ; submission inventory https://data.ices.dk/vms/inventory ; portal https://www.ices.dk/data/data-portals/Pages/VMS-and-Logbook.aspx",
+   "temporal": "ANNUAL. Year is a required path parameter and there is no month field in this product.",
+   "spatial": "ICES c-square, 0.05 x 0.05 degree, by Metier4 gear code (OTB, TBB, DRB, SDN, SSC, ...)",
+   "aggregation": "AGGREGATED: raw per-vessel VMS pings and logbook records are summed to fishing_hours, SubSurFaceSweptArea and Surface_SweptAreaRatio per c-square per year per gear. Vessel identity and month are aggregated away.",
+   "coverage": "Danish VMS submissions 2009-2024",
+   "past_2012": true,
+   "access": "open, no login, direct GET",
+   "format": "GeoJSON or zipped shapefile",
+   "size": "OTB queries are large (a 60 s fetch timed out); DRB returns quickly",
+   "caveat": "THE BEST D1 SOURCE AND IT IS ANNUAL, NOT MONTHLY. The same API's Logbook and effort/effortmap endpoints DO take a month parameter but require ICES-administrator authentication. Monthly gear-specific VMS effort therefore exists inside ICES and is not public - closing D1 as stated needs a formal ICES/WGSFD data request.",
+   "verified": "sub-agent live GET returning {'year':2021,'c_square':'1400:390:130:1','Metier4':'DRB','fishing_hours':0.61,'SubSurFaceSweptArea':0.022,'Surface_SweptAreaRatio':0.0011}"
+  },
+  {
+   "id": "HELCOM-FISHING-INTENSITY",
+   "hypotheses": [
+    "D1",
+    "O3"
+   ],
+   "name": "HELCOM MADS fishing intensity layers (ICES WGSFD product, HELCOM-processed)",
+   "custodian": "HELCOM Secretariat",
+   "url": "catalogue search https://metadata.helcom.fi/geonetwork/srv/eng/q?any=trawling&fast=index&_content_type=json&resultType=details&from=1&to=20 ; download is two-step: https://maps.helcom.fi/arcgis/rest/services/MADS/tools/GPServer/getAndCompressDataSource/execute?id={uuid}&f=json returns a zip URL, e.g. .../_ags_HELCOM_intensity_total_2013_v2.zip",
+   "temporal": "PER YEAR (field 'Year'), one layer per gear class per year",
+   "spatial": "c-square polygons, EPSG:3035; 5,101 features in the 2013 total-subsurface layer",
+   "aggregation": "AGGREGATED per c-square per year per gear",
+   "fields": [
+    "c_square",
+    "mid_lat",
+    "mid_lon",
+    "SubsurfSAR",
+    "SurfSAR",
+    "totweight",
+    "totvalue",
+    "KWfishingH",
+    "FishingH",
+    "Year",
+    "Reported"
+   ],
+   "coverage": "2009-2016 series (v2, published 2017 from the ICES 2017 data call)",
+   "past_2012": true,
+   "access": "open, no login",
+   "format": "ESRI shapefile in a zip with metadata.xml",
+   "size": "~2.5 MB per layer",
+   "caveat": "TRUE ANNUAL values per gear - unlike EMODnet's 4-year rolling means - which makes this the better layer for a year-by-year D1 test. But it covers the HELCOM area only (Kattegat, Belts, Sound, western Baltic) and NOT Skagerrak or the North Sea, and the series stops at 2016. The separate 'Commercial fisheries bottom trawling' layer is landings per ICES RECTANGLE for 2007 only and is not an effort layer at all.",
+   "verified": "2026-09-08, downloaded and read the .dbf schema and metadata.xml directly"
+  },
+  {
+   "id": "EMODNET-FISHING",
+   "hypotheses": [
+    "D1",
+    "O3"
+   ],
+   "name": "EMODnet Human Activities fishing intensity WFS layers",
+   "custodian": "EMODnet Human Activities (from ICES WGSFD)",
+   "url": "https://ows.emodnet-humanactivities.eu/wfs?service=WFS&version=2.0.0&request=GetCapabilities ; layers emodnet:fishingbottomottertrawls, fishingbeamtrawls, fishingbottomseines, fishingdredges, fishingsubsurface, fishingsurface, fishingpelagic, fishingstaticgears, csquareeffort, csquareeffortbyyear, csquareeffortbyfishtech",
+   "temporal": "published per fo_year (2020, 2021 seen) but the VALUE is a FOUR-YEAR ROLLING MEAN - the avgyears field reads '2015-2018' and '2017-2020'",
+   "spatial": "0.05 deg c-square for the gear layers; 0.5 deg for csquareeffortbyyear",
+   "aggregation": "AGGREGATED twice over: per c-square per gear, and then averaged across four years",
+   "coverage": "ICES WGSFD overviews from ~2009",
+   "past_2012": true,
+   "access": "open WFS, no login",
+   "format": "GeoJSON/GML",
+   "size": "~360,724 records across Europe",
+   "caveat": "Redundant with ICES-VMS-SAR and WORSE for D1, because the four-year averaging destroys exactly the year-to-year variation a before/after test needs. Useful only for mapping. csquareeffortbyyear is annual but at 0.5 degrees, which is useless at Danish scale.",
+   "verified": "2026-09-08, own GetFeature: {'c_squar':'1501:351:497:4','fo_year':'2020','avgyears':'2015-2018','fsh__fo':'Bottom otter trawls','mw_fshn':0.03225} in the Kattegat"
+  },
+  {
+   "id": "GFW",
+   "hypotheses": [
+    "D1",
+    "B7",
+    "D6"
+   ],
+   "name": "Global Fishing Watch apparent fishing effort v3.0",
+   "custodian": "Global Fishing Watch",
+   "url": "https://zenodo.org/records/14982712 (direct file download, no login) ; API https://gateway.api.globalfishingwatch.org/v3/4wings/report (HTTP 401, free token required) ; BigQuery global-fishing-watch.fishing_effort_v3",
+   "temporal": "DAILY (0.01 and 0.1 deg) and MONTHLY (0.1 deg)",
+   "spatial": "0.01 deg or 0.1 deg grid cells",
+   "aggregation": "AGGREGATED: fishing_hours summed per cell x day (or month) x flag x geartype. A separate MMSI-daily file keeps per-vessel/day at 0.1 deg.",
+   "coverage": "2012-2024 (v3.0, released March 2025)",
+   "past_2012": true,
+   "access": "open download (CC BY-NC 4.0 - NON-COMMERCIAL, note the licence); API needs free registration",
+   "format": "zipped CSV",
+   "size": "~26.3 GB total; monthly 0.1 deg is 19-139 MB per year-zip; daily 0.01 deg is 112 MB - 3.4 GB per year-zip",
+   "caveat": "THE ONLY SOURCE THAT GIVES D1 SUB-ANNUAL RESOLUTION, and it pays for it twice: (1) the public gear class 'trawlers' lumps bottom otter, beam and PELAGIC trawls together, so it cannot isolate bottom contact the way an ICES Metier4 code can; (2) it is AIS-only, and many Danish vessels under 15 m carry VMS but not AIS, so the inshore fleet is systematically under-represented - which is precisely the fleet operating in the fjords and coastal water bodies this study is about."
+  },
+  {
+   "id": "DMA-AIS",
+   "hypotheses": [
+    "B7",
+    "D6",
+    "D1"
+   ],
+   "name": "Danish Maritime Authority raw AIS archive",
+   "custodian": "Soefartsstyrelsen",
+   "url": "http://aisdata.ais.dk/ (S3 static site over aisdata.ais.dk.s3.eu-central-1.amazonaws.com; XML bucket listing via ?list-type=2&prefix=). Official page https://www.dma.dk/safety-at-sea/navigational-information/ais-data",
+   "temporal": "PER AIS MESSAGE (sub-minute), packaged as monthly zips for 2006-~2018 and DAILY zips from ~2019",
+   "spatial": "point position per message, Danish shore-station reception footprint (Kattegat, Belts, Sound, Danish North Sea)",
+   "aggregation": "NOT AGGREGATED. Raw per-message: Timestamp, MMSI, lat/lon, Navigational status (includes 'Engaged in fishing' and 'At anchor'), ROT/SOG/COG/Heading, IMO, ship type, length, draught.",
+   "coverage": "2006-03 through 2025-02-26; nothing newer found in the bucket",
+   "past_2012": true,
+   "access": "fully open direct download, no registration",
+   "format": "zipped CSV",
+   "size": "480-770 MB compressed PER DAY in early 2025; older monthly files 0.9-13 GB; multi-TB in total",
+   "caveat": "The single richest B7 and D6 source and the one that requires the most work: you build your own density grid and your own anchoring/fishing extraction. TWO GOTCHAS: the commonly cited host web.ais.dk is BROKEN (TLS cert for *.govcloud.dk expired 2025-06-12, connection reset on GET) - use aisdata.ais.dk; and the archive stops at 2025-02-26, which looks like an unfinished migration."
+  },
+  {
+   "id": "EMODNET-VESSELDENSITY",
+   "hypotheses": [
+    "B7",
+    "D6"
+   ],
+   "name": "EMODnet Human Activities vessel density",
+   "custodian": "EMODnet Human Activities (AIS from CLS/ORBCOMM/vesseltracker)",
+   "url": "https://ows.emodnet-humanactivities.eu/wms?service=wms&version=1.3.0&request=GetCapabilities ; layers vesseldensity_00 .. vesseldensity_12 (by ship-type code) and vesseldensity_allavg",
+   "temporal": "MONTHLY, plus yearly averages",
+   "spatial": "1 km x 1 km raster",
+   "aggregation": "AGGREGATED: hours per km2 per month per ship-type class (13 classes: Other, Fishing, Service, Dredging, Sailing, Pleasure, High-speed, Tug, Passenger, Cargo, Tanker, Military, Unknown)",
+   "coverage": "2017-2024. DOES NOT REACH BACK TO 2012.",
+   "past_2012": true,
+   "access": "open WMS/WCS, no login; GeoTIFF download via the portal",
+   "format": "GeoTIFF",
+   "size": "one raster per month x ship-type",
+   "caveat": "Ready-made and monthly, which DMA-AIS is not. Its own metadata discloses a real 2024 quality problem: 'the AIS data provider experienced a loss of satellite data starting from the month of June [2024]'. Class 3 (Dredging) is a free D2 proxy."
+  },
+  {
+   "id": "OSPAR-ODIMS",
+   "hypotheses": [
+    "D3",
+    "D2",
+    "E10",
+    "E6"
+   ],
+   "name": "OSPAR dumped-materials (dredged material disposal) submissions",
+   "custodian": "OSPAR Commission (ODIMS), from Danish national submissions",
+   "url": "https://odims.ospar.org/en/search/api/submissions/?datastream=dumping_at_sea ; example file .../2023-01/001/ospar_dumping_at_sea_2023_01_001-other-..._2023_Data.zip (324 KB, 8 Excel tables)",
+   "temporal": "PER DUMPING EVENT, within an annual submission",
+   "spatial": "per klapplads (Deposit_Site_Code)",
+   "aggregation": "per-event: Total_Disposed_Dry (tonnes), dredging-activity type, Origin field carrying the Danish MST case number (e.g. 2020-4644)",
+   "coverage": "annual submission packages for 1995, 2014, 2015, 2017-2019, 2021-2023 (gaps: 1996-2013, 2016, 2020, 2024-25)",
+   "past_2012": true,
+   "access": "fully open download, no login",
+   "format": "zipped Excel",
+   "size": "~324 KB per year",
+   "caveat": "THE BEST SEABED-DISTURBANCE SOURCE FOUND. 33 Danish events in 2023 alone, and ~10 of those carry a contaminant load table (Cd, Hg, As, Cr, Cu, Pb, Ni, Zn, TBT, DBT, PAH9/16, PCB7, HCB, DDT/DDE/DDD, N, P) - which makes D3 the one hypothesis in group D that has both the disturbance AND its chemistry. Absence of chemistry on a row means not tested, not clean. Denmark's own OSPAR IA2017 text admits historically inconsistent reporting completeness."
+  },
+  {
+   "id": "MST-KLAP",
+   "hypotheses": [
+    "D3",
+    "D2"
+   ],
+   "name": "Miljoestyrelsen klaptilladelser (dumping permits), individual PDFs",
+   "custodian": "Miljoestyrelsen",
+   "url": "example https://mst.dk/media/q3ifhebz/klaptilladelse-flaadestation-korsoer.pdf (J.nr. 2021-51366, 07.07.2023, 35,000 m3 from Korsoer harbour to klapplads K_033_02, valid 2023-2025)",
+   "temporal": "per permit, with validity dates",
+   "spatial": "named klapplads",
+   "aggregation": "a permit CEILING, not a realised volume",
+   "coverage": "scattered",
+   "past_2012": true,
+   "access": "open PDF where you have the exact link",
+   "format": "PDF",
+   "size": "small",
+   "caveat": "Useful to resolve the OSPAR Origin codes back to a named harbour and a dredging campaign. Not a register - there is no searchable index."
+  },
+  {
+   "id": "MST-RAASTOF-PDF",
+   "hypotheses": [
+    "D4"
+   ],
+   "name": "Miljoestyrelsen extraction volumes for faellesomraader (shared sand/gravel licence areas)",
+   "custodian": "Miljoestyrelsen",
+   "url": "https://mst.dk/media/cc2bwkkv/indvindingsmaengder-for-faellesomraader-2010-2019.pdf (2.1 MB) ; https://mst.dk/media/0sqjx3pr/status-indv-i-faellesomr-4kv-2020_hj-side.pdf",
+   "temporal": "PER QUARTER",
+   "spatial": "per named area code (79 areas, e.g. 548-AA)",
+   "aggregation": "quarterly extracted volume per area (Indvinding m3, Fyldsand m3), plus permitted volume and remaining quota in the 2020 edition",
+   "coverage": "2010-2020 confirmed; no 2021-2024 edition found",
+   "past_2012": true,
+   "access": "open PDF",
+   "format": "PDF tables",
+   "size": "~2 MB",
+   "caveat": "Covers only the 79 FAELLESOMRAADER - shared licence areas - not the 305 total licensed areas this project holds geometry for. Individually licensed single-company areas are not in it. Quarterly is unusually good resolution for a Danish extraction figure; the trade is coverage."
+  },
+  {
+   "id": "DST-RST01",
+   "hypotheses": [
+    "D4"
+   ],
+   "name": "Danmarks Statistik RST01/RST04 raw-material extraction",
+   "custodian": "Danmarks Statistik",
+   "url": "https://www.statistikbanken.dk/RST01 ; API https://api.statbank.dk/v1/tableinfo/RST01",
+   "temporal": "ANNUAL",
+   "spatial": "municipality / region",
+   "aggregation": "AGGREGATE ONLY: annual totals by municipality or region. Per-licence-area detail is aggregated away.",
+   "coverage": "2006-2024",
+   "past_2012": true,
+   "access": "open API",
+   "format": "JSON/CSV",
+   "size": "small",
+   "caveat": "Wrong spatial unit for D4 entirely - a municipality is not a licensed extraction polygon and marine extraction does not sit in a municipality."
+  },
+  {
+   "id": "MARIS",
+   "hypotheses": [
+    "D4"
+   ],
+   "name": "MARIS raw-material extraction API",
+   "custodian": "Miljoestyrelsen (operational backend)",
+   "url": "https://api.raastofindvinding.dk ; OpenAPI at /api/maris-api-v1.json ; GET /v1/extraction-sites (142 records with polygons and licence dates) and /v1/volumes (permitted/remaining quota) answer WITHOUT authentication; GET /v1/extraction-reports (the actual historical extraction series) returns HTTP 401",
+   "temporal": "per report period (the reports endpoint is closed)",
+   "spatial": "polygon per extraction site",
+   "aggregation": "unknown for the closed endpoint",
+   "coverage": "current licences",
+   "past_2012": true,
+   "access": "PARTIALLY OPEN BY APPARENT ACCIDENT. This is an undocumented operational backend, not a published open-data product. The extraction-report time series is gated behind Miljoeportal OAuth.",
+   "format": "JSON",
+   "size": "small",
+   "caveat": "Flagged unverified-for-reuse. Cite MST-RAASTOF-PDF instead, and ask MST before building anything on this."
+  },
+  {
+   "id": "EMODNET-SEABED-USE",
+   "hypotheses": [
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "C8"
+   ],
+   "name": "EMODnet Human Activities seabed-use layers",
+   "custodian": "EMODnet Human Activities",
+   "url": "https://ows.emodnet-humanactivities.eu/wfs (layers: dredging, dredgespoil, dredgespoilpoly, aggregates, aggregateareas, activelicenses, pipelines, pcablesbshcontis/nve/rijks/shom, munitions, munitionspoly, windfarms, windfarmspoly, aquaculture, shellfish, dischargepoints, treatmentplants, portvessels, wasteatports)",
+   "temporal": "varies by layer; mostly a status snapshot",
+   "spatial": "points and polygons",
+   "aggregation": "varies",
+   "coverage": "varies",
+   "past_2012": true,
+   "access": "open WFS, no login",
+   "format": "GeoJSON/GML",
+   "size": "varies",
+   "caveat": "For D5 specifically this is thin: filtered to Denmark, emodnet:pipelines returns only ~5 features (short coastal outfalls) and NO Danish cable layer exists at all - every national cable layer belongs to a non-Danish hydrographic authority. D5 would be a hand-compiled chronology.",
+   "verified": "2026-09-08, own GetCapabilities listing ~160 layers"
+  },
+  {
+   "id": "ENS-STAMDATA",
+   "hypotheses": [
+    "C8"
+   ],
+   "name": "Energistyrelsen Stamdataregister for vindmoeller",
+   "custodian": "Energistyrelsen",
+   "url": "https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over-energisektoren ; map at sologvindinfo.dk/spatialmap ; established offshore farms at https://ens.dk/energikilder/etablerede-havvindmoelleparker",
+   "temporal": "per turbine, with 'dato for oprindelig nettilslutning' (original grid connection date)",
+   "spatial": "point per turbine, UTM coordinates",
+   "aggregation": "per-record",
+   "coverage": "updated bi-monthly",
+   "past_2012": true,
+   "access": "open Excel download",
+   "format": "XLSX",
+   "size": "small",
+   "caveat": "Best C8 source found: per-turbine point plus a real commissioning DATE, which EMODnet's windfarm polygons often leave null (about half the 56 Danish features). Needs manual filtering to offshore and grouping into farm footprints. Nothing comparable exists for the Oeresund and Storebaelt fixed links, Lynetteholm, Nordhavn or harbour works - those are narrative project pages only, and C8 would need hand digitisation from EIA documents."
+  },
+  {
+   "id": "ICES-DOME-SED",
+   "hypotheses": [
+    "E6",
+    "E10",
+    "E7",
+    "H2",
+    "D3",
+    "O3"
+   ],
+   "name": "ICES DOME - contaminants in sediment, Denmark",
+   "custodian": "ICES Data Centre (fed from Danish VanDa/ODA)",
+   "url": "https://dome.ices.dk/download/DownloadContaminantsSediment.ashx?MPROG=&PARAMGROUP=&RLABO=&PURPM=&ALABO=&CNTRY=3762&AREA=&YEARBEGINING=&YEAREND= (CNTRY=3762 is Denmark); portal https://dome.ices.dk/views/ContaminantsSediment.aspx",
+   "temporal": "one row per sample per station per date",
+   "spatial": "point with Latitude/Longitude, plus DEPHU/DEPHL sediment layer",
+   "aggregation": "PER-MEASUREMENT. 45 columns including QFLAG, DETLI, LMQNT, UNCRT, ALABO, METCX, METOA - the full analytical provenance.",
+   "coverage": "1985-2025, 47,019 rows, 440 distinct Danish stations",
+   "past_2012": true,
+   "access": "open direct HTTP GET, no login",
+   "format": "zip containing CSV + format guide + disclaimer",
+   "size": "823 KB zip -> 9.6 MB CSV",
+   "caveat": "THIS IS THE E6/E10 SOURCE AND ITS SHAPE IS THE FINDING. Own analysis of the downloaded file: metals (I-MET, 7,542 rows) run 1985-2016 at 25-38 stations a year, then NOTHING 2017-2021, one campaign in 2022 at 13 stations, and nothing 2023-2025. Organotins including TBTIN and TPTIN (O-MET, 1,689 rows, 269 stations) run 1997-2016 then 2022 only. PAH (O-PAH, 13,342 rows) the same. The ONLY substance group with an unbroken recent sediment record is phthalates and alkylphenols (O-ES, 2007-2025, 22-49 stations a year). So Danish marine sediment metal and biocide monitoring effectively STOPPED IN 2016. Also present: LOIGN (loss on ignition) at 394 stations 1985-2025, which is a far better H2 organic-content series than ODA's 18 stations - but SEDAGE appears at only 2 stations (2000, 2004), so there is no dated-core series here.",
+   "verified": "2026-09-08, downloaded and analysed the CSV directly (own count, not the sub-agent's)"
+  },
+  {
+   "id": "ICES-DOME-BIOTA",
+   "hypotheses": [
+    "E9",
+    "E6",
+    "E10",
+    "E7",
+    "O3"
+   ],
+   "name": "ICES DOME - contaminants in biota, Denmark",
+   "custodian": "ICES Data Centre",
+   "url": "https://dome.ices.dk/download/DownloadContaminantsBiota.ashx?...&CNTRY=3762&YEARBEGINING=2018&YEAREND=2025",
+   "temporal": "per specimen/pool per station per date",
+   "spatial": "point",
+   "aggregation": "per-measurement",
+   "coverage": "the 2018-2025 slice pulled: 667 KB zip -> 7.6 MB CSV, 34,733 rows, 22 distinct PFAS analytes across 85 Danish stations",
+   "past_2012": true,
+   "access": "open, no login",
+   "format": "zip/CSV",
+   "size": "7.6 MB for 2018-2025",
+   "caveat": "E9 is testable in biota and ONLY in biota - searching the parallel sediment file for any PFAS parameter returns zero hits. Denmark monitors PFAS in fish liver, not in the bed."
+  },
+  {
+   "id": "PANGAEA-CORES",
+   "hypotheses": [
+    "H2"
+   ],
+   "name": "PANGAEA - dated sediment cores, Skagerrak/Kattegat",
+   "custodian": "GEOMAR / PANGAEA",
+   "url": "search API https://ws.pangaea.de/es/pangaea/panmd/_search (POST, no key) ; https://doi.pangaea.de/10.1594/PANGAEA.967080 (Pb-210, Cs-137 and Hg from multicorer cores, Spiegel et al. 2024) ; .928272 (predicted sedimentation rates and organic carbon accumulation, North Sea and Skagerrak, Diesing 2021) ; .904068 and .906258 (Erlenkeuser et al. 2019, SE Skagerrak, Pb210 age, Cs137)",
+   "temporal": "per depth in core; derived record covers the last ~100 years",
+   "spatial": "point per core station",
+   "aggregation": "per-measurement",
+   "coverage": "cruises 2019-2021, published through 2025",
+   "past_2012": true,
+   "access": "fully open, CC-BY, ?format=textfile on each DOI",
+   "format": "tab-separated text",
+   "size": "small",
+   "caveat": "Geography is the catch. The nearest stations sit in the Kattegat close to the Swedish coast (e.g. AL561_34-1 at 57.45N, 11.51E). A targeted search for dated cores INSIDE a Danish fjord (Aarhus Bugt, Limfjorden, Mariager, Roskilde, Isefjord) returned nothing. H2's 'dated cores' exist for the open Kattegat/Skagerrak shelf and not for the enclosed waters where the deficit actually is."
+  },
+  {
+   "id": "PANGAEA-POREWATER",
+   "hypotheses": [
+    "E1",
+    "E3",
+    "E12",
+    "A7"
+   ],
+   "name": "PANGAEA - sediment porewater chemistry, Danish and adjacent waters",
+   "custodian": "various (IOW/GEOMAR) via PANGAEA",
+   "url": "https://doi.pangaea.de/10.1594/PANGAEA.314735 and siblings .314730 .314734 .314742-.314744 .326452 .326455 (Fossing 2005, METROL, AARHUS BUGT 56.10N 10.46E, cruise HN04S/HN04F 2004: sulfate, methane, HYDROGEN SULFIDE mmol/l, porosity, TOC per depth) ; https://doi.pangaea.de/10.1594/PANGAEA.987366 (Dale & Lomnitz 2025, Kattegat 57.45N 11.51E and Skagerrak, porewater Fe, Mn, alkalinity per depth to 2.85 m, cruise AL561 2021) ; https://doi.pangaea.de/10.1594/PANGAEA.992619 (Zeller et al. 2026, Fehmarn Belt, porewater pH, Fe, Mn, AVS/CrS)",
+   "temporal": "one campaign each",
+   "spatial": "point per core, per depth",
+   "aggregation": "per-measurement",
+   "coverage": "2004, 2021, 2020 campaigns",
+   "past_2012": "mixed - the Aarhus Bugt sulphide data is 2004 only",
+   "access": "fully open, CC-BY, no login",
+   "format": "tab-separated text",
+   "size": "small",
+   "caveat": "These are the ONLY porewater sulphide and Fe/Mn datasets we could find for Danish or immediately adjacent waters. One-off research cruises, not a monitoring series - good enough to bound E1, E3 and E12 as magnitudes, not to correlate them with anything through time. The Fehmarn Belt stations are on the German side."
+  },
+  {
+   "id": "PANGAEA-BENTHIC-FLUX",
+   "hypotheses": [
+    "A7"
+   ],
+   "name": "PANGAEA - in-situ benthic chamber nutrient flux (BIGO lander)",
+   "custodian": "GEOMAR via PANGAEA",
+   "url": "https://doi.pangaea.de/10.1594/PANGAEA.987349 and https://doi.pangaea.de/10.1594/PANGAEA.987348 (Dale & Lomnitz 2025, stations AL561_24-1 and AL561_17-1, 57.99N 9.24E, August 2021)",
+   "temporal": "per timestep within each chamber incubation",
+   "spatial": "point",
+   "aggregation": "per-measurement (chamber concentration time series, not a flux-only summary)",
+   "coverage": "August 2021, three lander deployments on one cruise",
+   "past_2012": true,
+   "access": "fully open, CC-BY",
+   "format": "tab-separated text",
+   "size": "small",
+   "caveat": "The ONLY benthic flux chamber dataset found for Danish or adjacent waters, anywhere. Three deployments in the Skagerrak off Skagen. A7 - the mechanism that DCE themselves use as an iltsvind indicator - has essentially no direct Danish measurement."
+  },
+  {
+   "id": "NOVANA-PROG",
+   "hypotheses": [
+    "E12",
+    "G4",
+    "A7",
+    "F8",
+    "I4",
+    "H2"
+   ],
+   "name": "NOVANA programme description 2023-2027",
+   "custodian": "Miljoestyrelsen",
+   "url": "https://www2.mst.dk/Udgiv/publikationer/2023/09/978-87-7038-556-5.pdf (6.5 MB, 190 pp)",
+   "temporal": "n/a - this is the design document",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "coverage": "2023-2027",
+   "past_2012": true,
+   "access": "open PDF",
+   "format": "PDF",
+   "size": "6.5 MB",
+   "caveat": "Read as evidence about what is and is not measured. Confirmed from its own text: pH and total alkalinity are measured at the 15 national primary-production stations, ~20 times a year, at 1-2 depths (this is the whole of G4's Danish basis). Hydrogen sulphide is measured only 'naar der er begrundet mistanke om forekomst heraf' - when there is reasonable suspicion it is present - so E12's record is conditional on someone already expecting it. Sediment nutrient pools (total N, total P, Fe-bound P, dry weight, loss on ignition) are taken at 16-19 stations a year across 89 of 109 water bodies, at 7 depths, every Jan-Feb, with NO radiometric dating. And there is no mention anywhere of microbial community composition, 16S rRNA, metagenomics or eDNA - F8 is a confirmed blank by design."
+  },
+  {
+   "id": "SR634",
+   "hypotheses": [
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10"
+   ],
+   "name": "DCE Scientific Report 634 - Miljoefarlige forurenende stoffer 2023",
+   "custodian": "DCE, Aarhus Universitet",
+   "url": "https://dce2.au.dk/pub/SR634.pdf (210 pp)",
+   "temporal": "n/a - annual assessment report",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "coverage": "2023 assessment",
+   "past_2012": true,
+   "access": "open PDF",
+   "format": "PDF",
+   "size": "several MB",
+   "caveat": "The documentary counterpart to ICES-DOME-SED. Table 3.1 (p.47): national marine hazardous-substance control monitoring covers 72 stations across fish, mussels and sediment. In 2023, SEDIMENT WAS SAMPLED AT 30 STATIONS AND FOR ONE SUBSTANCE GROUP ONLY - plasticisers and phenols. Metals, PAH, TBT/organotin and dioxins had ZERO sediment stations in 2023 and were last measured 2020-2022 on 19 stations as an MSFD transect survey, not routine monitoring. Octylphenol was measured at 2 of 66 stations sampled 2018-2023. It also states pesticides are measured in the marine programme only as legacy organochlorines in FISH, and pharmaceuticals only in stream water and wastewater, never marine."
+  },
+  {
+   "id": "ICES-DATRAS",
+   "hypotheses": [
+    "F4",
+    "F5",
+    "F1",
+    "O3"
+   ],
+   "name": "ICES DATRAS - trawl survey database",
+   "custodian": "ICES Data Centre",
+   "url": "https://datras.ices.dk/WebServices/DATRASWebService.asmx ; verified GET https://datras.ices.dk/WebServices/DATRASWebService.asmx/getHHdata?survey=BITS&year=2020&quarter=1 (711 KB XML) ; also getHLdata (length/species per haul), getCAdata (age), getCPUELength/getCPUEAge (indices), getSpecies",
+   "temporal": "PER HAUL, with Year/Month/Day and TimeShot",
+   "spatial": "ShootLat/ShootLong and HaulLat/HaulLong per haul, plus Depth and StatRec",
+   "aggregation": "PER-MEASUREMENT at haul level. getCPUE* endpoints are the aggregated products.",
+   "fields_of_note": [
+    "Survey",
+    "Country",
+    "Ship",
+    "Gear",
+    "HaulDur",
+    "DayNight",
+    "HaulVal",
+    "Depth",
+    "StdSpecRecCode"
+   ],
+   "coverage": "BITS (Baltic incl. Belts, Arkona, Kattegat) and NS-IBTS (North Sea, Skagerrak); decades",
+   "past_2012": true,
+   "access": "open, no authentication",
+   "format": "XML over REST/SOAP",
+   "size": "~700 KB per survey-year-quarter",
+   "caveat": "Underused for this kind of question. It gives F4 an actual fish community per position per date rather than a stock-wide model output, dates the round goby's arrival for F5, and its epibenthos bycatch is a second, independent view of O3. Gear and duration are recorded, so catchability can be conditioned on.",
+   "verified": "2026-09-08, own live GET"
+  },
+  {
+   "id": "ICES-SAG",
+   "hypotheses": [
+    "F4"
+   ],
+   "name": "ICES Stock Assessment Graphs (SAG) web service",
+   "custodian": "ICES",
+   "url": "https://sg.ices.dk/StandardGraphsWebServices.asmx/getListStocks?year=2023 ; https://sg.ices.dk/StandardGraphsWebServices.asmx/getSummaryTable?assessmentKey={key}",
+   "temporal": "ANNUAL",
+   "spatial": "whole stock area (ICES subdivision/subarea), not gridded",
+   "aggregation": "AGGREGATED by design: model-estimated stock-wide SSB (tonnes), F (rate), recruitment, catches, landings, discards, with high/low bounds",
+   "stocks_of_interest": [
+    "cod.27.21 (Kattegat)",
+    "cod.27.22-24",
+    "cod.27.24-32",
+    "her.27.20-24",
+    "ple.27.21-23",
+    "ple.27.24-32",
+    "sol.27.20-24",
+    "spr.27.22-32",
+    "nep.fu.22",
+    "nep.fu.2021",
+    "nep.fu.2324"
+   ],
+   "coverage": "e.g. cod.27.21 runs 1997-2022 in the 2023 assessment",
+   "past_2012": true,
+   "access": "open, no login",
+   "format": "XML (.asmx)",
+   "size": "small",
+   "caveat": "Stock boundaries do not align with the 123 marine water bodies, and stocks were periodically redefined and renamed (cod.27.21 replaced older joint Kattegat-Skagerrak assessments) - check the assessment history before treating a series as continuous."
+  },
+  {
+   "id": "ICES-CATCH",
+   "hypotheses": [
+    "F4"
+   ],
+   "name": "ICES Official Nominal Catch Statistics",
+   "custodian": "ICES",
+   "url": "https://www.ices.dk/data/Documents/CatchStats/OfficialNominalCatches.zip (curl confirms 200; WebFetch spuriously 404s on the same URL)",
+   "temporal": "ANNUAL",
+   "spatial": "ICES subarea/division/subdivision",
+   "aggregation": "AGGREGATE: summed by country, species, area, year. No month, no rectangle, no gear.",
+   "coverage": "2006-2023 in the main file; a companion HistoricalLandings1950-2010.zip exists",
+   "past_2012": true,
+   "access": "open download",
+   "format": "zipped xlsx/csv",
+   "size": "a few MB",
+   "caveat": "Top-level sanity check only."
+  },
+  {
+   "id": "LFST-LANDINGS",
+   "hypotheses": [
+    "F4",
+    "F1"
+   ],
+   "name": "Landbrugs- og Fiskeristyrelsen landings statistics",
+   "custodian": "LFST (fiskeristyrelsen.dk 302s to lfst.dk)",
+   "url": "https://lfst.dk/fiskeriet-i-tal/landinger ; weekly industrial-fishery tables https://fiskeristatistik.lfst.dk/stat/industri/ugetabel26.html",
+   "temporal": "WEEKLY for the industrifisk tables",
+   "spatial": "by landing PORT, not by ICES rectangle",
+   "aggregation": "weekly sums per port per species per vessel flag",
+   "coverage": "2009-2026, current",
+   "past_2012": true,
+   "access": "open HTML tables",
+   "format": "HTML",
+   "size": "small",
+   "caveat": "'Industrifisk' is the reduction fishery (sandeel, sprat) only - NOT total Danish landings. A Danish landings series by ICES rectangle and month, which is what F4 would really want, was NOT found as an open download; it lives in ICES InterCatch / RDB-FishFrame or behind a request to LFST/DTU Aqua."
+  },
+  {
+   "id": "GBIF",
+   "hypotheses": [
+    "F5",
+    "F6",
+    "F9",
+    "F10",
+    "F7"
+   ],
+   "name": "GBIF occurrence API (dominated by the Danish national portal Arter.dk)",
+   "custodian": "GBIF; Danish dataset by Miljoestyrelsen/Arter.dk",
+   "url": "https://api.gbif.org/v1/occurrence/search?scientificName=Mnemiopsis%20leidyi&country=DK ; datasetKey 963a6b96-4d22-4428-86e4-afee52cf4a8e (Species recordings from the Danish National Portal Arter.dk, 1,036,093 DK occurrence records, last modified 2026-08-25)",
+   "temporal": "PER OBSERVATION with its own eventDate",
+   "spatial": "per observation with its own lat/lon (add &hasCoordinate=true)",
+   "aggregation": "per-observation",
+   "verified_counts": {
+    "Mnemiopsis leidyi DK": 104,
+    "Magallana gigas DK": 549,
+    "Neogobius melanostomus DK": 784,
+    "Cyanea capillata DK": 612,
+    "Aurelia aurita DK": 592
+   },
+   "coverage": "actively updated to 2026",
+   "past_2012": true,
+   "access": "open API + Darwin Core Archive download",
+   "format": "JSON / DwC-A",
+   "size": "small per query",
+   "caveat": "This IS the Danish invasive-species register in practice (arter.dk sources from invasive-arter.dk). But it is presence-only and effort-unstandardised: no absences, no survey design. It can date an arrival (F5) and it cannot measure an abundance (F6). Naturbasen, a separate Danish silo, does NOT share to GBIF."
+  },
+  {
+   "id": "OBIS",
+   "hypotheses": [
+    "F5",
+    "F6",
+    "F7",
+    "O3"
+   ],
+   "name": "OBIS occurrence API",
+   "custodian": "OBIS / IOC-UNESCO",
+   "url": "https://api.obis.org/v3/occurrence?scientificname=Mnemiopsis%20leidyi&geometry=POLYGON((8 54.5,15 54.5,15 58,8 58,8 54.5)) (returned total 39 for that bbox) ; https://api.obis.org/v3/statistics",
+   "temporal": "per observation",
+   "spatial": "per observation with coordinates",
+   "aggregation": "per-observation",
+   "coverage": "long",
+   "past_2012": true,
+   "access": "open API",
+   "format": "JSON",
+   "size": "small per query",
+   "caveat": "A Danish bounding box pulls in Swedish and German port-sampling records - filter carefully."
+  },
+  {
+   "id": "HAEDAT",
+   "hypotheses": [
+    "F7",
+    "F9"
+   ],
+   "name": "HAEDAT - Harmful Algae Event Database",
+   "custodian": "IOC-UNESCO / IODE",
+   "url": "https://haedat.iode.org/ ; search at /events/search/ with Denmark as a filterable country (option value 11)",
+   "temporal": "per EVENT",
+   "spatial": "by locality/area description, not point coordinates",
+   "aggregation": "event records, not measurements",
+   "coverage": "ICES area since 1985",
+   "past_2012": true,
+   "access": "web search viewer only; no bulk download or API confirmed. A member login exists, suggesting gated enhanced access.",
+   "format": "web",
+   "size": "~14,000 events globally",
+   "caveat": "The only HAB event record we could confirm for Denmark, and it is a browsable list rather than a dataset. Pairs badly with anything: no coordinates, no toxin concentrations."
+  },
+  {
+   "id": "FIMUS-STRANDINGS",
+   "hypotheses": [
+    "F10",
+    "F9"
+   ],
+   "name": "Beredskabet for havpattedyr - Danish marine mammal stranding records",
+   "custodian": "Fiskeri- og Soefartsmuseet, Esbjerg",
+   "url": "https://fimus.dk/naturhistorie/beredskabet-for-havpattedyr/",
+   "temporal": "per stranding event",
+   "spatial": "per event location",
+   "aggregation": "the PUBLIC product is annual PDF 'beredskabsrapporter' (2019-2024 listed); the per-event records are not published",
+   "coverage": "systematic registration since ~1991",
+   "past_2012": true,
+   "access": "REQUEST ONLY. The page directs enquiries to named museum staff by email. No download, no map, no API.",
+   "format": "PDF summaries",
+   "size": "small",
+   "caveat": "F10's register exists and is 35 years long and is not published. This is the cleanest example in this survey of a Danish dataset that is collected, curated and unreachable."
+  },
+  {
+   "id": "DTU-MUSLING",
+   "hypotheses": [
+    "F1"
+   ],
+   "name": "DTU Aqua blue mussel stock assessments, Limfjorden",
+   "custodian": "DTU Aqua",
+   "url": "https://www.aqua.dtu.dk/-/media/institutter/aqua/nyheder/2024-filer/muslingefiskeri-i-limfjorden-status-paa-viden-notat-april-2024.pdf (2.7 MB)",
+   "temporal": "per survey year",
+   "spatial": "Limfjorden as a whole in the published figures",
+   "aggregation": "AGGREGATE: a stock estimate in tonnes for the fjord. Per-station, per-haul survey data is not published.",
+   "coverage": "long series cited in the notat (e.g. 1,173,000 t in 1997 down to 62,000 t)",
+   "past_2012": true,
+   "access": "open PDF; per-station data would need a direct DTU Aqua request",
+   "format": "PDF",
+   "size": "a few MB",
+   "caveat": "F1's 'filter-feeder biomass' is available as a whole-fjord number and nothing finer. ODA-BUNDFAUNA carries Mytilus biomass per grab, which is the per-measurement route to the same quantity - it is just not a stock assessment."
+  },
+  {
+   "id": "DST-AKV11",
+   "hypotheses": [
+    "A8"
+   ],
+   "name": "Danmarks Statistik AKV11 - aquaculture",
+   "custodian": "Danmarks Statistik",
+   "url": "https://api.statbank.dk/v1/tableinfo/AKV11 ; retired predecessor AKV1 covers 2009 onward",
+   "temporal": "ANNUAL",
+   "spatial": "none - national totals by farm-type category",
+   "aggregation": "AGGREGATE ONLY: national tonnage and value by farm type ('Sea farms' = havbrug, 'Mussel and oyster farms'), species and year. Every individual farm is aggregated away.",
+   "coverage": "2021-2024 in AKV11; 2009+ in the retired AKV1",
+   "past_2012": true,
+   "access": "open API",
+   "format": "JSON/CSV",
+   "size": "small",
+   "caveat": "A8 asks for per-farm production and feed by month at 26 sites. Denmark publishes a national annual tonnage by farm type. The gap is four orders of magnitude of resolution."
+  },
+  {
+   "id": "MST-HAVBRUG",
+   "hypotheses": [
+    "A8"
+   ],
+   "name": "Miljoestyrelsen havbrug permits and egenkontrol reporting",
+   "custodian": "Miljoestyrelsen",
+   "url": "https://mst.dk/erhverv/groen-produktion-og-affald/akvakultur/havbrug ; example permit decision https://www2.mst.dk/Udgiv/Annonceringer/2023/20230314-afgoerelse-afslag-paa-ansoegning-om-miljoegodkendelse-og-placeringstilladelse-havbruget-blue-ocean.pdf (22.4 MB)",
+   "temporal": "annual reporting deadlines (15 Feb, 1 Jun, 1 Sep)",
+   "spatial": "per licensed site",
+   "aggregation": "the completed per-farm egenkontrol and production submissions are NOT published; only the reporting TEMPLATES and individual permit decisions are",
+   "coverage": "ongoing",
+   "past_2012": true,
+   "access": "permit PDFs open; the actual per-farm submissions are REQUEST-ONLY (aktindsigt to mst@mst.dk)",
+   "format": "PDF",
+   "size": "up to tens of MB per permit",
+   "caveat": "Permit PDFs give site metadata and capacity ceilings, not monthly actuals. Note that ODA-TILFOERSEL already carries a monthly Havbrug nutrient column per marine water body, which is the only monthly aquaculture term that exists in open form."
+  },
+  {
+   "id": "WFD-DEFINITIONS",
+   "hypotheses": [
+    "I4"
+   ],
+   "name": "EU WFD intercalibration decisions and Danish miljoemaal bekendtgoerelser, with adoption dates",
+   "custodian": "European Commission / Miljoeministeriet",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008D0915 (2008/915/EC, adopted 30 Oct 2008) ; CELEX:32013D0480 (2013/480/EU, 20 Sep 2013, repeals 2008/915) ; CELEX:32018D0229 ((EU) 2018/229, 12 Feb 2018, repeals 2013/480, in force) ; https://www.retsinformation.dk/eli/lta/2014/1398 (BEK 1398 of 15 Dec 2014) ; /eli/lta/2023/796 (13 Jun 2023) ; /eli/lta/2025/1668 (8 Dec 2025) ; vandplaner 2009-2015 finalised 30 Oct 2014; vandomraadeplaner 2015-2021 adopted 27 Jun 2016; 2021-2027 adopted 15 Jun 2023, revised 18 Dec 2025",
+   "temporal": "dated legal instruments",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "coverage": "2008-2025",
+   "past_2012": true,
+   "access": "open",
+   "format": "HTML/PDF",
+   "size": "small",
+   "caveat": "Gives I4 exactly what it needs for the EQR boundaries: three successive Commission decisions with adoption dates that repeal each other. GOTCHA: retsinformation.dk returns 403 to WebFetch but 200 to curl with a browser User-Agent. What is NOT dated the same way: the DVFI/DKI benthic index and the eelgrass depth-limit indicator, whose methodology changed inside technical background reports accompanying each planning cycle rather than in a titled, dated instrument."
+  },
+  {
+   "id": "SGD-LIT",
+   "hypotheses": [
+    "A6"
+   ],
+   "name": "Danish submarine groundwater discharge - the two campaigns that exist",
+   "custodian": "University of Copenhagen / GEUS",
+   "url": "Haider et al. 2015, Hydrogeology Journal 23(2):217-233, DOI 10.1007/s10040-014-1195-0 (Ringkoebing Fjord) ; Duque et al. 2019, Water 11(9):1842, DOI 10.3390/w11091842 (open access) ; Hinsby et al., Baltic Sea Science Congress 2019 abstract on pub.geus.dk (Horsens Fjord pockmarks + Rn-222 survey)",
+   "temporal": "repeated seasonal campaigns 2011-2019 at Ringkoebing; one survey at Horsens",
+   "spatial": "seepage meter transects, EM31 terrain conductivity, airborne EM",
+   "aggregation": "per-measurement within each campaign",
+   "coverage": "Ringkoebing Fjord and Horsens Fjord only",
+   "past_2012": true,
+   "access": "papers open/paywalled; the Horsens radon data is a conference abstract only, not archived",
+   "format": "papers",
+   "size": "n/a",
+   "caveat": "A6 said 'this is a known blank'. It is narrower than blank: two fjords, one of them only as an unarchived abstract. No radium-isotope survey anywhere in Denmark; a PANGAEA search returns Finnish, Polish and German Baltic SGD datasets and no Danish one. There is no coastwide survey, so A6 stays unranked."
+  },
+  {
+   "id": "METHANE-LIT",
+   "hypotheses": [
+    "E4"
+   ],
+   "name": "Kattegat methane seeps (boblerev) - the literature",
+   "custodian": "various",
+   "url": "Joergensen, Bang & Blackburn 1992, MEPS 83:103-112, DOI 10.3354/meps083103 ; Jensen et al. 1994/95, Bulletin of the Geological Society of Denmark, DOI 10.37570/bgsd-1995-41-07 (~65 seeps over 30x70 m at one Vendsyssel site, total flow ~110 L/h) ; GEUS Bulletin 26 (2012) DOI 10.34194/geusb.v26.4743 (Laesoe Trindel, Natura 2000 habitat 1180 mapping) ; EGU25-18527 (2025)",
+   "temporal": "one flux measurement, 1990s",
+   "spatial": "one site",
+   "aggregation": "n/a",
+   "coverage": "1990s flux; habitat mapping 2012; active geological interest 2025",
+   "past_2012": false,
+   "access": "open/paywalled papers",
+   "format": "papers",
+   "size": "n/a",
+   "caveat": "The seeps are real, located and currently studied as geology. The only quantified FLUX is a single 1990s point measurement at one intertidal Vendsyssel site. E4's oxygen-consumption claim cannot be evaluated against anything."
+  },
+  {
+   "id": "D2-GAP",
+   "hypotheses": [
+    "D2"
+   ],
+   "name": "Danish navigation dredging permits - no working public register",
+   "custodian": "Miljoestyrelsen (Kystdirektoratet merged into MST on 29 Aug 2024)",
+   "url": "https://mst.dk/offentliggoerelser (200, but results render client-side; the reverse-engineered payload shows oldestYear 2024-01-01). kyst.dk case and document URLs all 302 to https://mst.dk/erhverv/kyster-og-klimatilpasning - the old archive is effectively dead. search.mst.dk exposes only /api/News/Search. dma.mst.dk covers industrial approvals, not soeterritoriet.",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "coverage": "the current register claims coverage only from 2024",
+   "past_2012": false,
+   "access": "no programmatic access; would need headless-browser automation, an aktindsigt request to Miljoestyrelsen, or Wayback archaeology of pre-2024 kyst.dk",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "The 2024 agency merger broke the permit archive. D2 - which the register calls 'localised, dated, permitted, therefore highly testable' - is currently the least testable item in group D, for purely administrative reasons. Partial substitutes: OSPAR-ODIMS carries the dredging-activity type behind each disposal event, and EMODNET-VESSELDENSITY class 3 is a dredger-traffic proxy."
+  },
+  {
+   "id": "B8-GAP",
+   "hypotheses": [
+    "B8",
+    "F9",
+    "F10"
+   ],
+   "name": "Danish environmental incident / spill / fish-kill registers - confirmed absent in open form",
+   "custodian": "various",
+   "url": "https://www.forsvaret.dk/da/opgaver/nationale-opgaver/havmiljo/ (200, describes the surveillance, links to no database) ; https://www.forsvaret.dk/da/doegnrapporter/ (200, JS-rendered, archive depth unconfirmed) ; www2.forsvaret.dk (DEAD, curl timeout) ; stopolien.dk (DEAD, connection refused) ; dma.mst.dk (permits/tilsyn, not incidents) ; meldinger.fvst.dk (internal case portal)",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "coverage": "SOK annual marine-pollution reports are documented to have existed with structured dated incident counts for 2008-2011 (e.g. 348 incidents / 66 confirmed shipping spills in 2011, down from 356/72 in 2010), on a host that no longer answers",
+   "past_2012": false,
+   "access": "FOI / aktindsigt to Forsvaret, Miljoestyrelsen, or per-municipality",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "Mechanical negative, not a search failure: all 902 layer names across 30 workspaces on wfs2-miljoegis.mim.dk were inspected and grepped for uheld, spild, forurening, olie and punktkild - zero matches. opendata.dk returns 4 results for 'forurening', all air quality. No central fiskedoed register exists. B8 predicts events that are 'under-reported by construction' and Denmark has arranged not to report them at all."
+  },
+  {
+   "id": "F8-GAP",
+   "hypotheses": [
+    "F8"
+   ],
+   "name": "Microbial community composition in Danish coastal waters - confirmed blank",
+   "custodian": "n/a",
+   "url": "evidence: NOVANA-PROG contains no mention of microbial community composition, 16S rRNA, metagenomics or eDNA. One academic counter-example: Riemann & Middelboe 2002, Aquatic Microbial Ecology 27:219-232, DOI 10.3354/ame027219, a single study with older DNA-fingerprinting methods.",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "coverage": "none",
+   "past_2012": false,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "F8's claim - that what remains after the slow and long-lived are gone is whatever turns nutrient into biomass fastest, and that this is indistinguishable from health under a chlorophyll indicator - is untestable in Denmark because the composition is never measured."
+  }
+ ],
+ "by_hypothesis": {
+  "A1": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-TILFOERSEL",
+    "ODA-STOFTRANSPORT",
+    "VANDAH",
+    "ODA-VANDKEMI-HAV",
+    "ODA-CTD",
+    "CMEMS-BAL-PHY"
+   ],
+   "note": "Fully served, and better than the register assumed. ODA's 'Naeringsstoftilfoersel til havet' module gives N flux per marine water body per MONTH for assessment vintages 2011-2024, split into catchment vs direct point sources. Summer chlorophyll and oxygen by depth are in ODA marine. The missing term is N-limitation days, which must be computed from the DIN:DIP ratio rather than read off."
+  },
+  "A2": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-TILFOERSEL",
+    "ODA-STOFTRANSPORT",
+    "ODA-VANDKEMI-HAV"
+   ],
+   "note": "Same monthly module carries total-P and orthophosphate. Spring chlorophyll is in ODA-VANDKEMI-HAV with all months present - the seasonal window is DCE's indicator choice, not a property of the data, so A2's discriminating test can be run."
+  },
+  "A3": {
+   "status": "partial",
+   "source_ids": [
+    "EMEP",
+    "DCE-DEPOSITION",
+    "HELCOM-DEPOSITION"
+   ],
+   "note": "EMEP MSC-W gives monthly wet and dry N deposition on a 0.1 degree grid 1990-2024, with dry deposition to WATER reported as its own variable. Denmark's own 6 km DEHM product is published only as annual tonnages per named sea area. The ORGANIC N FRACTION, which A3 names specifically, is in none of them - EMEP, DEHM and CAMS all carry only oxidised and reduced inorganic N."
+  },
+  "A4": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "PUNKTKILDER-RAPPORT",
+    "MILJOEGIS-RBU-SAML",
+    "EEA-UWWTD",
+    "EEA-INDUSTRY",
+    "ODA-TILFOERSEL"
+   ],
+   "note": "Per-plant N, P and BOD5 exist for all 656 Danish treatment plants, ANNUALLY, in the Punktkilderapport appendix. Monthly per-plant discharge was not found anywhere. Plant UPGRADE DATES - the natural experiment A4 depends on - were found in no source at all; that is the binding constraint, not the resolution."
+  },
+  "A5": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-TILFOERSEL",
+    "HELCOM-PLC",
+    "ICES-OCEAN",
+    "SHARK",
+    "CMEMS-BAL-BGC",
+    "IOW-MBI",
+    "BSH-MARNET"
+   ],
+   "note": "Two halves, both incomplete. Cross-border riverine load: HELCOM PLC, annual per river 1995-2024. Boundary CONCENTRATION at the Belt and Sound sections: ICES-OCEAN and SHARK hold Swedish and German profiles, but neither was verified in detail and SHARK's API host failed DNS. Boundary TRANSPORT: only the IOW derived index; no Belt section volume-transport series was found open anywhere."
+  },
+  "A6": {
+   "status": "none_found",
+   "source_ids": [
+    "SGD-LIT"
+   ],
+   "note": "Two site-specific research campaigns (Ringkoebing Fjord, and Horsens Fjord as an unarchived conference abstract). No coastwide radon or radium survey exists. Remains unranked."
+  },
+  "A7": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-SEDKEMI-SPOR",
+    "ICES-DOME-SED",
+    "PANGAEA-BENTHIC-FLUX",
+    "ODA-VANDKEMI-HAV",
+    "NOVANA-PROG"
+   ],
+   "note": "The DIP seasonality proxy is fully computable from ODA marine water chemistry. Direct benthic flux measurement in Danish or adjacent waters amounts to three BIGO lander deployments on one 2021 Skagerrak cruise. Sediment organic content is at 18 ODA stations, or 394 stations via DOME loss-on-ignition."
+  },
+  "A8": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-TILFOERSEL",
+    "MST-HAVBRUG",
+    "DST-AKV11",
+    "ODA-BUNDFAUNA",
+    "ODA-SEDKEMI-SPOR"
+   ],
+   "note": "ODA's Tilfoersel module carries a monthly HAVBRUG nutrient column per marine water body - unexpectedly good. Per-farm production and feed by month is not published: Danmarks Statistik gives a national annual tonnage by farm type, and the completed egenkontrol submissions are aktindsigt-only. The sediment and fauna transects radiating from each of the 26 sites, which is what A8's test needs, do not exist."
+  },
+  "A9": {
+   "status": "none_found",
+   "source_ids": [
+    "VANDA-API",
+    "SHARK",
+    "ICES-DOME-SED"
+   ],
+   "note": "Denmark collects marine phytoplankton species counts under NOVANA technical instruction TA M09 and reports them to VanDa, not ODA. VanDa's data endpoints return 401. HELCOM's own phytoplankton indicator states Danish data is excluded 'due to national database issues'. No N-fixation rate measurement was found for Danish waters at all. A9 is the strongest internal objection to A1 and it cannot be evaluated."
+  },
+  "B1": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "MILJOEGIS-RBU-SAML",
+    "SPILDEVANDSDATA",
+    "PULS",
+    "NYBORG-OVERLOEB",
+    "VANDAH",
+    "DMI-METOBS",
+    "BADEVAND"
+   ],
+   "note": "PER-EVENT VOLUME AND DURATION DO NOT EXIST NATIONALLY. What exists: an annual discharged volume per outfall (five MiljoeGIS *_saml vintages, status years ~2019-2024, with BOD/COD/N/P) and an annual volume plus EVENT COUNT per outfall for 2020 only (spildevandsdata.dk). One utility - Nyborg Forsyning - publishes count, duration and volume per event for its own structures, which proves the measurement is feasible. The PULS volume is modelled, not measured, at documented uncertainties of 30-135%."
+  },
+  "B2": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "MILJOEGIS-RBU-SAML",
+    "SPILDEVANDSDATA"
+   ],
+   "note": "Same annual-only shape as B1, for 16,185 separate stormwater outfalls. The chemistry half of B2 - hydrocarbons, tyre wear, 6PPD-quinone, metals in road runoff - has NO Danish dataset at all, so the test that would separate B2 from B1 by signature cannot be run."
+  },
+  "B3": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "PUNKTKILDER-RAPPORT",
+    "MILJOEGIS-RBU-SAML",
+    "EEA-UWWTD"
+   ],
+   "note": "Per-plant BOD5 annually for 656 plants. COD is reported for industry but NOT for treatment plants in the Danish report, so B3's organic-load term is BOD-only unless EEA Waterbase turns out to carry COD."
+  },
+  "B4": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-STOFTRANSPORT",
+    "VANDAH"
+   ],
+   "note": "The register calls this 'almost never done'. It is done: ODA's monthly Stoftransport carries Suspenderede stoffer, Gloedetab i susp.stof (the organic fraction of the suspended load) and Kemisk iltforbrug at the same stream stations, in the same months, as total N. B4's discriminating test - POC flux measured alongside N flux at the same stations - is directly runnable."
+  },
+  "B5": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "PUNKTKILDER-RAPPORT",
+    "EEA-INDUSTRY",
+    "ODA-TILFOERSEL"
+   ],
+   "note": "Per-company annual N, P, BOD and COD for 116 Danish industrial dischargers, plus the EU Industrial Emissions Portal 2007-2024. Both annual, and the EU portal has reporting thresholds that hide everything small."
+  },
+  "B6": {
+   "status": "none_found",
+   "source_ids": [
+    "BADEVAND",
+    "VANDAH",
+    "ODA-VANDKEMI-HAV"
+   ],
+   "note": "No harbour water quality dataset. badevand.dk measures E. coli and enterococci only. VANDAH has 9 'Havn' stations but they measure water LEVEL. The 205 ODA marine chemistry stations are not sited in harbour basins. B6's 'extreme local deficit in harbours' is untested and untestable from open data."
+  },
+  "B7": {
+   "status": "partial",
+   "source_ids": [
+    "DMA-AIS",
+    "EMODNET-VESSELDENSITY",
+    "GFW"
+   ],
+   "note": "The traffic half is excellent: raw per-message AIS 2006-2025 from the Danish Maritime Authority, plus ready-made 1 km monthly vessel density 2017-2024 in 13 ship-type classes. The DISCHARGE half - scrubber washwater volumes, sewage, greywater under MARPOL - does not exist in any source found. B7 can be tested as a traffic-density correlate and not as a mass balance."
+  },
+  "B8": {
+   "status": "none_found",
+   "source_ids": [
+    "B8-GAP",
+    "DCE-ILTSVIND"
+   ],
+   "note": "No Danish environmental incident register, no spill register, no fish-kill register in open form. Mechanically confirmed: 902 MiljoeGIS layer names grepped for uheld/spild/forurening/olie return zero. The one series that had dated incident counts (SOK annual reports, 2008-2011) is on a dead host."
+  },
+  "C1": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "CMEMS-BAL-PHY",
+    "ICES-OCEAN"
+   ],
+   "note": "185 ODA CTD stations with temperature and salinity by depth; the 2 km 56-level Baltic reanalysis fills between them. Potential energy anomaly is directly computable."
+  },
+  "C2": {
+   "status": "covered",
+   "source_ids": [
+    "DMI-METOBS",
+    "ERA5"
+   ],
+   "note": "31 years of hourly wind already held; DMI metObs and ERA5 extend and validate it."
+  },
+  "C3": {
+   "status": "partial",
+   "source_ids": [
+    "CMEMS-BAL-PHY",
+    "DDM",
+    "EMODNET-BATHY",
+    "VANDAH",
+    "ODA-TILFOERSEL"
+   ],
+   "note": "No published per-water-body residence time for the 123 Danish marine water bodies was found. It is derivable - 50 m bathymetry for volume, monthly freshwater input per marine reference from ODA, and the 2 km reanalysis for exchange - but it is a modelling job, not a download. C3's point, that a load coefficient not normalised by flushing time is wrong, therefore stands unaddressed in the official work for want of a number nobody publishes."
+  },
+  "C4": {
+   "status": "partial",
+   "source_ids": [
+    "IOW-MBI",
+    "CMEMS-BAL-PHY",
+    "BSH-MARNET",
+    "IOW-ODIN",
+    "ODA-CTD"
+   ],
+   "note": "The published inflow chronology exists in full: Mohrholz/IOW, 1886-2024, daily barotropic transport plus a discrete event list, open. The BELT SECTION TRANSPORTS C4 also asks for do not - no BSH inflow index and no Fehmarn Belt or Darss Sill volume-transport product was found open. The Darss Sill and Fehmarn Belt instruments that would give it are behind BSH registration."
+  },
+  "C5": {
+   "status": "covered",
+   "source_ids": [
+    "VANDAH",
+    "ODA-TILFOERSEL",
+    "ODA-STOFTRANSPORT",
+    "EFAS"
+   ],
+   "note": "Better than asked. C5 wanted daily discharge per catchment; Vandah serves 10-MINUTE discharge per station, open API, no key, 1,292 stream stations, with per-station coverage metadata. ODA-TILFOERSEL additionally gives monthly freshwater volume per marine water body, so the buoyancy term can be separated from the concentration term exactly as C5 requires."
+  },
+  "C6": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "CMEMS-BAL-PHY"
+   ],
+   "note": "Bottom temperature by station and date is in the CTD record. The register's point stands: it is available and the official statistical models carry surface temperature only."
+  },
+  "C7": {
+   "status": "covered",
+   "source_ids": [
+    "DDM",
+    "EMODNET-BATHY"
+   ],
+   "note": "Danmarks Dybdemodel v2.0 at 50 m over 98,045 km2 of the EEZ resolves the sills. Basin volume below the pycnocline is then a computation against the CTD profiles."
+  },
+  "C8": {
+   "status": "partial",
+   "source_ids": [
+    "ENS-STAMDATA",
+    "EMODNET-SEABED-USE",
+    "MILJOEGIS-RBU-SAML"
+   ],
+   "note": "Offshore wind is well covered: per-turbine points with original grid-connection dates from Energistyrelsen. Everything else in C8's list - the Oeresund link, Storebaelt, Lynetteholm, Nordhavn, harbour works, land reclamation - exists only as narrative project pages. No Danish register of marine construction footprints with dates was found. The before-and-after natural experiment is possible for wind farms and would need hand digitisation for the rest."
+  },
+  "C9": {
+   "status": "covered",
+   "source_ids": [
+    "DMI-OCEANOBS",
+    "PSMSL"
+   ],
+   "note": "10-minute sea level per station from DMI, back to 1889 at Esbjerg and 1891 at Hornbaek and Gedser. Gotcha: the same harbour appears under several station IDs across instrument upgrades."
+  },
+  "D1": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "ICES-VMS-SAR",
+    "HELCOM-FISHING-INTENSITY",
+    "GFW",
+    "EMODNET-FISHING",
+    "DMA-AIS"
+   ],
+   "note": "THE MONTHLY LAYER D1 ASKS FOR IS NOT PUBLIC. Three products, each conceding something: (1) ICES WGSFD swept-area ratio, 0.05 degree c-square, per gear metier, ANNUAL, 2009-2024, open - the best of them; (2) HELCOM's copy of the same, true annual values per gear, but HELCOM area only and stopping at 2016; (3) Global Fishing Watch, DAILY at 0.01 degree 2012-2024, but AIS-only (missing the inshore under-15 m fleet that works the fjords) and its 'trawlers' class lumps bottom and pelagic gear. EMODnet's version is worse than all three because it publishes four-year rolling means. Monthly gear-specific VMS effort exists inside ICES behind administrator authentication; closing D1 as stated needs a formal WGSFD data request. Alternatively it could be rebuilt from raw Danish AIS, which is open and multi-terabyte."
+  },
+  "D2": {
+   "status": "none_found",
+   "source_ids": [
+    "D2-GAP",
+    "OSPAR-ODIMS",
+    "EMODNET-SEABED-USE"
+   ],
+   "note": "The Kystdirektoratet-into-Miljoestyrelsen merger of Aug 2024 broke the permit archive; the replacement register claims coverage only from 2024 and renders client-side. Dredging dates, volumes and locations are not obtainable programmatically. Partial substitutes: the dredging-activity type behind each OSPAR disposal event, and EMODnet vessel-density class 3 (Dredging) as a traffic proxy."
+  },
+  "D3": {
+   "status": "covered",
+   "source_ids": [
+    "OSPAR-ODIMS",
+    "MST-KLAP",
+    "ODA-SEDKEMI-SPOR",
+    "ICES-DOME-SED"
+   ],
+   "note": "The one hypothesis in group D that is properly served. OSPAR ODIMS gives per-EVENT disposed tonnage per klapplads with the Danish case number, and about 30% of events carry a contaminant load table including metals, TBT, PAH and PCB. Gaps in the submission years (1996-2013, 2016, 2020, 2024-25) are the main limitation."
+  },
+  "D4": {
+   "status": "partial",
+   "source_ids": [
+    "MST-RAASTOF-PDF",
+    "MARIS",
+    "DST-RST01",
+    "EMODNET-SEABED-USE"
+   ],
+   "note": "Quarterly extracted volume per area exists for 2010-2020 - but only for the 79 faellesomraader, not the 305 licensed areas whose polygons this project holds. Danmarks Statistik gives municipality annual totals, which is the wrong spatial unit for a marine extraction area. The MARIS extraction-report endpoint that would close this returns 401."
+  },
+  "D5": {
+   "status": "none_found",
+   "source_ids": [
+    "EMODNET-SEABED-USE"
+   ],
+   "note": "No Danish cable layer exists on EMODnet at all, and emodnet:pipelines filtered to Denmark returns about five short coastal outfalls. Energinet is bot-blocked; Energistyrelsen publishes narrative project pages. A route-and-date register for D5 would have to be hand-compiled."
+  },
+  "D6": {
+   "status": "partial",
+   "source_ids": [
+    "DMA-AIS",
+    "EMODNET-VESSELDENSITY",
+    "GFW"
+   ],
+   "note": "Derivable but not ready-made: raw Danish AIS carries Navigational status 'At anchor' per message, so anchoring events can be extracted, at the cost of processing terabytes. No open Danish anchorage-polygon dataset was found - ENC/S-57 chart vectors are typically licensed."
+  },
+  "D7": {
+   "status": "covered",
+   "source_ids": [
+    "CMEMS-BAL-WAV",
+    "CMEMS-NWS-WAV",
+    "DMI-METOBS",
+    "ODA-CTD"
+   ],
+   "note": "Two hourly wave hindcasts at ~2 km and ~1.5 km cover the Belts, Kattegat, Sound and Danish North Sea from 1980. They add real Hs, period, direction and bottom orbital velocity over this project's wind-derived bed shear proxy - i.e. fetch, shoaling and refraction around sills. What is still missing is the OTHER side of D7's test: an observational record of shore fouling to correlate the modelled shear against."
+  },
+  "E1": {
+   "status": "partial",
+   "source_ids": [
+    "PANGAEA-POREWATER",
+    "ODA-VANDKEMI-HAV",
+    "ICES-DOME-SED"
+   ],
+   "note": "Porewater sulphide exists for Aarhus Bugt from a single 2004 METROL cruise, per depth, open on PANGAEA. Water-column sulphide is in ODA marine chemistry but, per the NOVANA programme text, is measured only when its presence is already suspected. No sediment redox or sulphide monitoring series exists."
+  },
+  "E2": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-VANDKEMI-HAV",
+    "ODA-CTD"
+   ],
+   "note": "Ammonium by station, date and depth is in ODA marine chemistry alongside oxygen. The nitrification RATE is not measured, so the 4.57 g O2 per g N demand has to be inferred stoichiometrically rather than observed."
+  },
+  "E3": {
+   "status": "partial",
+   "source_ids": [
+    "PANGAEA-POREWATER"
+   ],
+   "note": "Porewater Fe and Mn per depth exist for two Kattegat/Skagerrak stations from a 2021 cruise, and for the Fehmarn Belt (German side) from 2020. Three cores is not a Danish record."
+  },
+  "E4": {
+   "status": "none_found",
+   "source_ids": [
+    "METHANE-LIT"
+   ],
+   "note": "The Kattegat bubbling reefs are mapped as Natura 2000 habitat and are under active geological study, but the only quantified methane flux is a single 1990s measurement at one Vendsyssel intertidal site. No coastal methane flux record."
+  },
+  "E5": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "PUNKTKILDER-RAPPORT",
+    "EEA-INDUSTRY",
+    "MILJOEGIS-RBU-SAML",
+    "ODA-STOFTRANSPORT"
+   ],
+   "note": "COD is measured, annually, per industrial site (116 Danish companies) and per outfall in the MiljoeGIS *_saml layers, and monthly at stream stations in ODA. E5's actual complaint - that discharge COD is never carried into a marine oxygen budget - is a modelling omission, not a data gap: the numbers exist and nobody sums them against the deficit."
+  },
+  "E6": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "ICES-DOME-SED",
+    "ODA-MFS-MUSLING",
+    "ODA-SEDKEMI-MFS",
+    "OSPAR-ODIMS"
+   ],
+   "note": "SEDIMENT BIOCIDE MONITORING STOPPED. Own analysis of the ICES DOME Danish sediment file: organotins including TBT and TPT run 1997-2016 at 25-38 stations a year, then nothing until one 2022 campaign at 10 stations, then nothing. The current ODA sediment hazardous-substance table (38 stations) contains no organotin at all - only phthalates and alkylphenols. Where biocides ARE still monitored is mussel tissue, at 25 stations, which measures exposure rather than dose at the bed. The project's prior belief that sediment is measured at 4 of 256 points is the wrong arithmetic and the right conclusion."
+  },
+  "E7": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-VANDLOEB-MFS",
+    "ICES-DOME-BIOTA",
+    "SR634"
+   ],
+   "note": "Modern, current-use pesticides are monitored in Danish STREAMS (glyphosate, AMPA, bentazone, MCPA, azoxystrobin, carbendazim and others, per sample, per station). In the MARINE programme, per SR634's own text, only legacy banned organochlorines are measured, and only in fish. So the delivery term is measurable and the marine exposure is not - which leaves E7 confounded with A1 exactly as the hypothesis predicts."
+  },
+  "E8": {
+   "status": "none_found",
+   "source_ids": [
+    "ODA-VANDLOEB-MFS",
+    "SR634"
+   ],
+   "note": "Pharmaceuticals are measured in stream water and in wastewater effluent, never in marine water or marine sediment. SR634 lists marine quality standards for some pharmaceuticals and nowhere states that marine samples are taken."
+  },
+  "E9": {
+   "status": "partial",
+   "source_ids": [
+    "ICES-DOME-BIOTA",
+    "ODA-MFS-FISK"
+   ],
+   "note": "A full PFAS suite is measured in fish liver at 19 ODA stations / 85 stations in the DOME 2018-2025 slice, 22 distinct analytes. Searching the parallel DOME sediment file for any PFAS parameter returns ZERO rows - there is no Danish marine sediment PFAS dataset. E9's 'monotone accumulation' can be tested in biota only."
+  },
+  "E10": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "ICES-DOME-SED",
+    "ODA-MFS-MUSLING",
+    "OSPAR-ODIMS"
+   ],
+   "note": "Same shape as E6 and confirmed by direct analysis of the DOME file: sediment metals run 1985-2016 at 25-38 stations a year, then nothing 2017-2021, one 2022 campaign at 13 stations, nothing 2023-2025. Metals ARE still measured in mussel tissue at 25 stations. E10's test - sediment metal concentration against fauna composition - can only be run on data that stops in 2016."
+  },
+  "E11": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-VANDKEMI-HAV",
+    "ODA-CTD"
+   ],
+   "note": "Ammonium, pH and temperature are all in the same ODA marine record, so un-ionised ammonia is directly calculable per sample per depth. This appears to be simply undone rather than impossible."
+  },
+  "E12": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-VANDKEMI-HAV",
+    "PANGAEA-POREWATER",
+    "NOVANA-PROG"
+   ],
+   "note": "Svovlbrinte (sulfid) IS an ODA marine water-chemistry parameter, which the register did not expect. The catch is in NOVANA's own words: it is measured only when there is reasonable suspicion it is present, during the iltsvind surveys. So its absence in the record is not evidence of absence in the water. Porewater sulphide exists only for Aarhus Bugt 2004."
+  },
+  "F1": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-BUNDFAUNA",
+    "DTU-MUSLING",
+    "ICES-DATRAS",
+    "EMODNET-SEABED-USE"
+   ],
+   "note": "Filter-feeder biomass per grab (wet, dry and ash-free dry weight, by species) is in ODA bundfauna - that is the per-measurement route. Formal shellfish STOCK assessments are published as whole-fjord tonnages in DTU Aqua notats, with per-station survey data available only on request."
+  },
+  "F2": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-BUNDFAUNA"
+   ],
+   "note": "Species-level abundance and three biomass measures per grab is exactly what a bioturbation potential index needs. The other half - sediment oxygen penetration depth - is not measured anywhere in the Danish record, so the feedback F2 describes can be indexed on one side only."
+  },
+  "F3": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-VEGETATION",
+    "ODA-CTD"
+   ],
+   "note": "Eelgrass depth limit and cover by station and year in ODA vegetation; light attenuation and turbidity in the CTD record at 185 stations. The lag test that would set the direction of causation is runnable."
+  },
+  "F4": {
+   "status": "partial",
+   "source_ids": [
+    "ICES-SAG",
+    "ICES-DATRAS",
+    "ICES-CATCH",
+    "LFST-LANDINGS"
+   ],
+   "note": "Stock assessments (SSB, F, recruitment) are open and annual for all the Danish-relevant stocks; DATRAS gives the underlying per-haul fish community with positions and dates, which is better than F4 asked for. What is NOT open is Danish landings by ICES rectangle and month - that lives in ICES InterCatch / RDB-FishFrame or behind a request to LFST. Stock areas also do not align with the 123 marine water bodies."
+  },
+  "F5": {
+   "status": "covered",
+   "source_ids": [
+    "GBIF",
+    "OBIS",
+    "ICES-DATRAS",
+    "ODA-MFS-FISK"
+   ],
+   "note": "GBIF's Danish national portal dataset (1,036,093 DK records, updated to 2026) gives per-observation dates and coordinates for Mnemiopsis leidyi (104), Magallana gigas (549) and Neogobius melanostomus (784). DATRAS dates the round goby's arrival in standardised trawl hauls. Presence-only with unstandardised effort, so arrival dates yes, abundance trends no."
+  },
+  "F6": {
+   "status": "none_found",
+   "source_ids": [
+    "GBIF",
+    "VANDA-API"
+   ],
+   "note": "No Danish jellyfish monitoring programme exists. The only signal is opportunistic citizen sightings in GBIF (Cyanea capillata 612, Aurelia aurita 592), which have no effort denominator and no absences. Marine zooplankton is collected under NOVANA and sits in VanDa behind a 401."
+  },
+  "F7": {
+   "status": "none_found",
+   "source_ids": [
+    "VANDA-API",
+    "HAEDAT",
+    "ICES-DOME-SED",
+    "SHARK"
+   ],
+   "note": "Same structural blockage as A9: Danish marine phytoplankton species counts go to VanDa, whose data endpoints are closed, and HELCOM excludes Danish phytoplankton from its Baltic assessment for that reason. HAEDAT lists Danish HAB events but as browsable descriptions without coordinates or toxin concentrations. F7's exact claim - that kills happen at chlorophyll levels the indicator scores as acceptable - needs the species identity the indicator throws away, and that identity is unreachable."
+  },
+  "F8": {
+   "status": "none_found",
+   "source_ids": [
+    "F8-GAP",
+    "NOVANA-PROG"
+   ],
+   "note": "Confirmed blank by design. The NOVANA programme document mentions no microbial community composition, no 16S rRNA, no metagenomics, no eDNA."
+  },
+  "F9": {
+   "status": "none_found",
+   "source_ids": [
+    "B8-GAP",
+    "FIMUS-STRANDINGS",
+    "DCE-ILTSVIND",
+    "GBIF"
+   ],
+   "note": "No marine mortality event register in open form. Fish kills are not centrally recorded. The DCE iltsvind bulletins narrate some mortality events in prose."
+  },
+  "F10": {
+   "status": "none_found",
+   "source_ids": [
+    "FIMUS-STRANDINGS",
+    "GBIF"
+   ],
+   "note": "Denmark has run a systematic marine mammal stranding response since about 1991. Its records are published as annual PDF summaries; the per-event data with dates and positions is request-only from museum staff. Seabird and seal die-off datasets could not be confirmed at all."
+  },
+  "G1": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "CMEMS-BAL-PHY"
+   ],
+   "note": "Bottom temperature by station and date, long, in the CTD record; the reanalysis extends it spatially. G1's proposed test - estimating the load coefficient within temperature strata - needs nothing that is missing."
+  },
+  "G2": {
+   "status": "covered",
+   "source_ids": [
+    "DMI-METOBS",
+    "VANDAH",
+    "ODA-STOFTRANSPORT",
+    "ODA-TILFOERSEL"
+   ],
+   "note": "10-minute rainfall from DMI, 10-minute discharge from Vandah, monthly flux per station from ODA. G2's specific statistic - the fraction of annual flux delivered in the top decile of days - is computable at daily resolution and better."
+  },
+  "G3": {
+   "status": "covered",
+   "source_ids": [
+    "DMI-METOBS",
+    "ERA5"
+   ],
+   "note": "Held already; DMI and ERA5 extend it."
+  },
+  "G4": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-VANDKEMI-HAV",
+    "NOVANA-PROG",
+    "CMEMS-BAL-BGC"
+   ],
+   "note": "Thinner than it looks and thicker than the register assumed. pH and total alkalinity ARE both ODA marine parameters - but per the NOVANA programme they are taken only at the 15 national primary-production stations, about 20 times a year, at 1-2 depths, as an ancillary to primary-production incubations. Two carbonate variables at 15 stations is a weak basis for a Danish acidification trend, and there is no DIC or pCO2 to close the system."
+  },
+  "G5": {
+   "status": "partial",
+   "source_ids": [
+    "ICE",
+    "DMI-METOBS"
+   ],
+   "note": "The weakest area in this survey. SMHI's ice service and the Copernicus satellite ice concentration product both exist, but 25 km satellite resolution cannot resolve the Belts and Sound, and no Danish-waters ice chart archive could be located at DMI, BSH or FMI. G5's test - ice extent against bloom timing - would need the bloom timing from VanDa as well, which is closed."
+  },
+  "G6": {
+   "status": "covered",
+   "source_ids": [
+    "DMI-OCEANOBS",
+    "PSMSL",
+    "DDM"
+   ],
+   "note": "Long per-measurement tide gauge records; the exchange-volume reconstruction is then a computation against the 50 m bathymetry."
+  },
+  "H1": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-TILFOERSEL",
+    "ODA-VEGETATION",
+    "ODA-BUNDFAUNA",
+    "ODA-CTD",
+    "ICES-DOME-SED"
+   ],
+   "note": "The paired series exist and are long enough to have both a declining and a recovering phase: monthly load per water body 2011-2024 (and older vintages), eelgrass depth limit by year, oxygen by depth. H1's test - whether the load-response relation differs between the two phases - is runnable with what is here. It has, as the register says, not been published."
+  },
+  "H2": {
+   "status": "partial",
+   "source_ids": [
+    "ICES-DOME-SED",
+    "ODA-SEDKEMI-SPOR",
+    "PANGAEA-CORES",
+    "ODA-TILFOERSEL",
+    "NOVANA-PROG"
+   ],
+   "note": "Sediment organic content is well covered: loss on ignition at 394 Danish stations 1985-2025 in ICES DOME, plus NOVANA sediment nutrient pools at 16-19 stations a year across 89 of 109 water bodies at 7 depths. ACCUMULATION RATES AND DATED CORES ARE THE GAP: DOME has SEDAGE at 2 stations only, NOVANA does no radiometric dating at all, and PANGAEA's Pb-210/Cs-137 cores are in the open Kattegat and Skagerrak with none inside a Danish fjord. So the cumulative-load-with-fitted-decay test can be run against a bulk organic pool but not calibrated against a real chronology."
+  },
+  "H3": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-BUNDFAUNA"
+   ],
+   "note": "Long species-level fauna with abundance and biomass. Testing whether the fitted coefficient changes across eras is a statistical exercise on data that is present - subject to the I1 station-turnover correction."
+  },
+  "H4": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-TILFOERSEL",
+    "ODA-VANDKEMI-HAV",
+    "ODA-BUNDFAUNA"
+   ],
+   "note": "The 123 water bodies supply the load gradient and ODA supplies the response, both monthly. A non-parametric fit is entirely possible; the official method's three simulated points is a choice, not a constraint."
+  },
+  "I1": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "ODA-BUNDFAUNA",
+    "ODA-VANDKEMI-HAV",
+    "VANDAH"
+   ],
+   "note": "ODA's Observationssted register carries per-station start and end dates; Vandah's station register carries firstResult and latestResult per parameter per measurement point, which is the same correction for the freshwater side."
+  },
+  "I2": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "ODA-SEDKEMI-SPOR",
+    "ODA-BUNDFAUNA"
+   ],
+   "note": "Verified directly this session: the CTD output field list contains Proevetagningsudstyr, SondeNr, SondeNavn AND TekniskAnvisninganvendt. The sediment and fauna tables carry Proevetagningsudstyr, Analysemetode, AnalyseLaboratorium, Detektionsgraense and Maaleusikkerhed. Every ingredient of an instrument-change test is in the record."
+  },
+  "I3": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "ODA-VANDKEMI-HAV",
+    "ODA-STOFTRANSPORT"
+   ],
+   "note": "Every visit carries its date. ODA's monthly transport table additionally carries 'Antal analyser pr. aar' as an explicit effort field."
+  },
+  "I4": {
+   "status": "covered",
+   "source_ids": [
+    "WFD-DEFINITIONS"
+   ],
+   "note": "Three successive Commission intercalibration decisions with adoption and repeal dates (2008/915/EC, 2013/480/EU, (EU) 2018/229), plus the Danish miljoemaal bekendtgoerelser and the three planning cycles with their adoption dates. Caveat: the DVFI/DKI and eelgrass depth-limit indicator revisions are documented inside technical background reports rather than as dated instruments, so those transition dates are softer."
+  },
+  "I5": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD"
+   ],
+   "note": "OriginalResultat, KorrigeretResultat and KorrektionsFaktor are all in the CTD output field list. Recomputing everything on OriginalResultat is a straight re-run."
+  },
+  "I6": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "ODA-BUNDFAUNA",
+    "ODA-SEDKEMI-SPOR"
+   ],
+   "note": "DataleverandoerNavn and TekniskAnvisninganvendt confirmed present in the CTD field list; Dataleverandoer and Dataansvarlig in the fauna and sediment tables. The 2007 custodian change is testable against named suppliers."
+  }
+ },
+ "gaps": [
+  {
+   "hypothesis": "A3",
+   "missing": "Organic nitrogen deposition. EMEP, DCE/DEHM and CAMS all report only oxidised and reduced inorganic N. No product anywhere carries the organic fraction A3 names."
+  },
+  {
+   "hypothesis": "A4",
+   "missing": "Treatment plant upgrade dates. Found in no source. Without them A4's natural-experiment design has no events to align on. Also: monthly per-plant discharge does not exist; only annual."
+  },
+  {
+   "hypothesis": "A5",
+   "missing": "Nutrient concentration and volume transport AT the Belt and Sound sections. The riverine cross-border load is annual (HELCOM PLC); the boundary concentration was not verified; no open Belt section transport series exists."
+  },
+  {
+   "hypothesis": "A6",
+   "missing": "Any Danish coastwide submarine groundwater discharge survey. Two fjord case studies exist; one of them only as an unarchived conference abstract. No radium isotope work at all."
+  },
+  {
+   "hypothesis": "A7",
+   "missing": "Benthic flux chamber measurements. Three BIGO lander deployments on one 2021 Skagerrak cruise is the entire Danish-adjacent record for a mechanism DCE themselves treat as central."
+  },
+  {
+   "hypothesis": "A8",
+   "missing": "Per-farm production and feed use by month for the 26 licensed havbrug, and sediment/fauna transects radiating from each site. Only a national annual tonnage by farm type is published; the egenkontrol submissions are aktindsigt-only."
+  },
+  {
+   "hypothesis": "A9",
+   "missing": "Marine phytoplankton species counts (closed in VanDa, HTTP 401) and any N-fixation rate measurement (does not exist for Danish waters). The strongest internal objection to A1 is unrankable."
+  },
+  {
+   "hypothesis": "B1",
+   "missing": "Per-outfall overflow volume AND duration PER EVENT. Nationally there is only an annual volume per outfall, plus an annual event count for 2020 alone. One utility publishes per-event data for its own structures. PULS itself is login-gated and its volumes are modelled at 30-135% uncertainty, not measured."
+  },
+  {
+   "hypothesis": "B2",
+   "missing": "Road-runoff chemistry - hydrocarbons, tyre wear, 6PPD-quinone, metals. No Danish dataset. The signature test that would separate B2 from B1 cannot be run."
+  },
+  {
+   "hypothesis": "B3",
+   "missing": "Monthly per-plant COD. Danish reporting gives BOD5 only for treatment plants, and only annually."
+  },
+  {
+   "hypothesis": "B6",
+   "missing": "Harbour basin water quality of any kind. No oxygen, no organic content, no nutrients inside Danish harbour basins in any open source."
+  },
+  {
+   "hypothesis": "B7",
+   "missing": "Scrubber washwater, sewage and greywater discharge volumes from shipping. Traffic density is excellent; the discharge term does not exist."
+  },
+  {
+   "hypothesis": "B8",
+   "missing": "A dated, located environmental incident register, a spill register, and a fish-kill register. All three confirmed absent in open form; the historic SOK oil-spill series is on a dead host."
+  },
+  {
+   "hypothesis": "C3",
+   "missing": "Published per-water-body residence time for the 123 marine water bodies. Derivable but not published - which is why load coefficients go unnormalised."
+  },
+  {
+   "hypothesis": "C4",
+   "missing": "Belt and Sound section volume transports. The Mohrholz index covers the inflow chronology; the section transports themselves are not open, and the Darss Sill / Fehmarn Belt instruments are behind BSH registration."
+  },
+  {
+   "hypothesis": "C8",
+   "missing": "A dated, georeferenced register of Danish marine construction other than wind farms. Oeresund link, Storebaelt, Lynetteholm, Nordhavn, reclamation and harbour works exist only as narrative pages."
+  },
+  {
+   "hypothesis": "D1",
+   "missing": "MONTHLY gear-specific bottom trawling effort. Open products are annual (ICES WGSFD 0.05 deg 2009-2024; HELCOM per-gear annual but stopping 2016) or sub-annual but gear-ambiguous and AIS-only (Global Fishing Watch daily 0.01 deg 2012-2024, 'trawlers' lumping bottom and pelagic, blind to the inshore under-15 m fleet). Monthly VMS effort exists inside ICES behind administrator authentication."
+  },
+  {
+   "hypothesis": "D2",
+   "missing": "Navigation dredging permits with dates, volumes and locations. Broken by the Aug 2024 agency merger; the replacement register claims coverage only from 2024 and is JS-only."
+  },
+  {
+   "hypothesis": "D4",
+   "missing": "Extracted volume for the 226 licensed areas that are not faellesomraader, and any volumes after 2020. The MARIS extraction-report endpoint that holds them returns 401."
+  },
+  {
+   "hypothesis": "D5",
+   "missing": "Cable and pipeline route geometry with installation dates for Denmark. EMODnet has no Danish cable layer and about five Danish pipeline features."
+  },
+  {
+   "hypothesis": "D6",
+   "missing": "Designated anchorage polygons as open data, and ready-made anchoring event extractions. Derivable from raw AIS at terabyte scale."
+  },
+  {
+   "hypothesis": "D7",
+   "missing": "An observational record of shore fouling to test the modelled bed shear against. The forcing side is now well covered; the outcome side (O2) has no dataset at all."
+  },
+  {
+   "hypothesis": "E1",
+   "missing": "Sediment redox and sulphide as a monitoring series. One 2004 Aarhus Bugt cruise is the whole porewater record."
+  },
+  {
+   "hypothesis": "E3",
+   "missing": "Porewater Fe(II) and Mn. Three cores, two cruises, none inside a Danish fjord."
+  },
+  {
+   "hypothesis": "E4",
+   "missing": "Any Danish coastal methane flux record beyond one 1990s point measurement at one site."
+  },
+  {
+   "hypothesis": "E6",
+   "missing": "Sediment biocide concentrations after 2016. Organotins including TBT ran 1997-2016 then one 2022 campaign; the current ODA sediment table contains no organotin at all. Only mussel tissue continues."
+  },
+  {
+   "hypothesis": "E7",
+   "missing": "Modern, current-use pesticides in marine water or sediment. The marine programme measures only legacy organochlorines, and only in fish."
+  },
+  {
+   "hypothesis": "E8",
+   "missing": "Pharmaceuticals in marine water or sediment. Measured in streams and in wastewater effluent, never in the sea."
+  },
+  {
+   "hypothesis": "E9",
+   "missing": "PFAS in marine sediment. Zero rows in the ICES DOME Danish sediment file. Biota only."
+  },
+  {
+   "hypothesis": "E10",
+   "missing": "Sediment metals after 2016 (one 2022 campaign aside). The fauna-versus-metals test can only be run on a record that ends nine years ago."
+  },
+  {
+   "hypothesis": "E12",
+   "missing": "Systematic sulphide measurement. It is an ODA parameter, but NOVANA measures it only when its presence is already suspected, so absence in the record is not evidence of absence in the water."
+  },
+  {
+   "hypothesis": "F1",
+   "missing": "Per-station shellfish stock survey data. Published only as whole-fjord tonnages."
+  },
+  {
+   "hypothesis": "F2",
+   "missing": "Sediment oxygen penetration depth. Not measured anywhere in the Danish record, so F2's feedback can be indexed on the fauna side only."
+  },
+  {
+   "hypothesis": "F4",
+   "missing": "Danish landings by ICES rectangle and month. Inside ICES InterCatch / RDB-FishFrame or behind an LFST request."
+  },
+  {
+   "hypothesis": "F6",
+   "missing": "Any Danish jellyfish monitoring. Only unstandardised citizen sightings."
+  },
+  {
+   "hypothesis": "F7",
+   "missing": "Marine phytoplankton species composition and HAB toxin measurements. Species counts closed in VanDa; HAEDAT has events without coordinates or concentrations."
+  },
+  {
+   "hypothesis": "F8",
+   "missing": "Microbial community composition. Confirmed absent from the NOVANA programme by design."
+  },
+  {
+   "hypothesis": "F9",
+   "missing": "A marine mortality event register with species and date. Does not exist in open form."
+  },
+  {
+   "hypothesis": "F10",
+   "missing": "Per-event stranding records with dates and positions. Collected systematically since ~1991 and published only as annual PDF summaries; raw records are request-only."
+  },
+  {
+   "hypothesis": "G4",
+   "missing": "A carbonate chemistry series worth the name. pH and total alkalinity at 15 stations, ~20 times a year, 1-2 depths, with no DIC or pCO2 to close the system."
+  },
+  {
+   "hypothesis": "G5",
+   "missing": "A Danish-waters ice chart archive. Not located at DMI, BSH or FMI; satellite products are too coarse for the Belts and Sound."
+  },
+  {
+   "hypothesis": "H2",
+   "missing": "Dated sediment cores with accumulation rates inside Danish fjords. DOME has SEDAGE at 2 stations, NOVANA does no radiometric dating, and PANGAEA's Pb-210/Cs-137 cores are all in the open Kattegat and Skagerrak."
+  },
+  {
+   "hypothesis": "O2",
+   "missing": "(outcome, not a hypothesis) There is no dataset of observed shore fouling anywhere - no reports, no dates, no positions. Every hypothesis whose outcome is O2 (B1, B2, B6, B7, B8, C8, D1, D3, D7, E12, F3, F8, F9, F10) is therefore testable only on its driver side."
+  }
+ ],
+ "_caveats": {
+  "how_this_was_searched": "Seven parallel research passes plus direct work by the lead: (1) fisheries and vessel activity, (2) sewage and point sources, (3) atmosphere and climate, (4) marine physics and the Baltic, (5) contaminants and sediment, (6) biology and species, (7) seabed works and permits. Every source below was fetched or queried; nothing is listed because it ought to exist. Where a source could not be confirmed it is marked unverified in its caveat and the attempt is described.",
+  "what_the_lead_verified_personally": "The entire ODA module inventory (by authenticated SOAP query of the topic tree, criteria panes and output-field lists for the Hav, Vandloeb and Naeringsstoftilfoersel modules); the Vandah hydrometry API including a live 10-minute discharge extract; the VanDa REST API's public OpenAPI spec and its 401 on every data endpoint; the HELCOM MADS fishing-intensity download chain and shapefile schema; the EMODnet Human Activities WFS layer inventory and two GetFeature samples; ICES DATRAS haul data; and the ICES DOME Danish sediment file, downloaded and analysed row by row (47,019 rows, 440 stations) rather than taken on report.",
+  "the_shape_of_the_finding": "Denmark's marine record is much stronger than the hypothesis register assumed on the LOAD side and much weaker on the DISTURBANCE and TOXICITY sides. Nutrient load is monthly per water body with a source split. Freshwater discharge is 10-minute. Riverine organic carbon is monthly and was assumed absent. Against that: sediment metals and biocides stop in 2016; phytoplankton species counts are closed behind a login; overflow is annual and modelled; trawling effort is annual; and there is no observation of the shore-fouling outcome at all.",
+  "the_2012_test": "The brief asked whether sources extend past 2012, because the official models stop there. Most do. The exceptions that matter: sediment metals and organotins in ICES DOME effectively stop in 2016 (one 2022 campaign aside); HELCOM's per-gear fishing intensity stops at 2016; spildevandsdata.dk is frozen at 2020; the MST extraction volume tables stop at 2020; EMODnet vessel density starts in 2017 and cannot reach back to 2012; and the Danish AIS archive stops at 2025-02-26.",
+  "aggregation_is_itself_the_finding": "Where only an aggregate exists, the aggregation is recorded in the source record. The pattern is consistent: Denmark publishes the annual total per unit and withholds the event. Overflow volume per year, not per event. Deposition per named sea area per year, not per grid cell per month. Extraction per municipality per year, not per licensed area. Trawling effort per year, not per month. Aquaculture per country per year, not per farm.",
+  "not_pursued": "LER (Ledningsejerregistret) remains off limits by this project's own rule. We did not attempt to scrape any login-gated system (PULS, VanDa, MARIS extraction-reports, BSH Insitu). We noted but did not query the Nyborg Forsyning Grafana datasource that answered without authentication - that is a misconfiguration, not a data product, and it should be approached by asking the utility.",
+  "known_unverified": [
+   "HELCOM PLC: the form, its 23 parameters, 9 countries and 1995-2024 year range were read from the served HTML, but the CSV export GET returned 200 with a zero-byte body - the export itself is unverified.",
+   "SHARK (SMHI): shark.smhi.se resolves; the API host sharkdata.smhi.se failed DNS on 2026-09-08.",
+   "IOW ODIN2: the portal resolves and redirects to odin.iow.de; its download mechanics were not confirmed.",
+   "EEA Waterbase-UWWTD: existence, coverage and format confirmed; the per-plant attribute schema was not.",
+   "EMODnet Chemistry: emodnet.ec.europa.eu was unreachable from one research pass (timeouts on a resolving host) while reachable from another - the human-activities WFS worked for the lead. Retry the chemistry portal specifically.",
+   "Copernicus Marine product pages return HTTP 200 for arbitrary slugs, so a 200 there is not confirmation. The product IDs listed were read from returned page content, not inferred from status codes.",
+   "GESLA-3: gesla.org now redirects to a numeric WordPress subdomain with a broken certificate and 404s on the data file. Treat as a lapsed domain; do not rely on it.",
+   "DMI Open Data: all test queries succeeded with no API key sent, which contradicts the older documented key requirement. Confirm current policy at dmi.dk/frie-data before building a pipeline. The old host dmigw.govcloud.dk is retired.",
+   "MARIS (api.raastofindvinding.dk): answers some endpoints without authentication but is an undocumented operational backend, not a published product. Flagged unverified-for-reuse."
+  ],
+  "web_search_budget": "The session's WebSearch budget (200 calls) was exhausted during the research passes. Several leads were closed by direct curl instead; a few are marked unverified specifically because search was unavailable to finish them - notably DHI Vandudsigten, HOFOR and Aarhus Vand overflow pages, Geodatastyrelsen chart data, Energinet's own map, and GEUS MARTA.",
+  "generated": "2026-09-08"
+ }
+}
