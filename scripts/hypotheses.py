@@ -157,6 +157,9 @@ TERMS = {
     'autoclave': (
         'To sterilise by steam under pressure. Autoclaved material has identical chemistry to the original and no living organisms, which is how you separate a chemical effect from a biological one.',
         'Greek auto (self) plus Latin clavis (key) - the lid seals itself as pressure rises.'),
+    'autotroph': (
+        'An organism that builds its body from carbon dioxide rather than from other organisms. Plants and algae by photosynthesis, and many bacteria by chemistry.',
+        'Greek autos (self) plus trophe (nourishment): self-feeding.'),
     'auxotroph': (
         'An organism that cannot make some essential compound for itself and must obtain it ready-made. Most marine algae are auxotrophs for vitamin B12.',
         'Greek auxein (to grow) plus trophe (nourishment): needs feeding to grow.'),
@@ -184,6 +187,9 @@ TERMS = {
     'bioaccumulative': (
         'Building up in an organism faster than it is excreted, so body burden rises over a lifetime. Distinct from biomagnification, which is the further concentration at each step up the food chain.',
         'One of the three legs of the PBT test, and the reason persistence matters biologically rather than just chemically.'),
+    'bioavailability': (
+        'The fraction of a substance an organism can actually take up, as against how much is present. Phosphate locked to iron oxide is present and unavailable; so is iron bound to organic molecules.',
+        'The reason a total concentration can be almost uninformative about whether anything is short of it.'),
     'biocide': (
         'Any substance intended to kill living things - the umbrella covering pesticides, fungicides, herbicides, antifoulants, disinfectants and wood preservatives.',
         'Literally life-killer. The word is honest in a way the specific ones are not.'),
@@ -226,6 +232,12 @@ TERMS = {
     'Charney': (
         "A feedback where losing vegetation raises the ground's reflectivity, which weakens the rising air that makes rain, which costs more vegetation.",
         'Jule Charney proposed it for the Sahel in 1975. One of the first climate feedbacks anyone wrote down.'),
+    'chemolithotroph': (
+        'An organism that lives on energy from inorganic chemical reactions - oxidising hydrogen, sulphide, ammonium, iron or methane. No light, no eating.',
+        'Chemo (chemical) plus litho (rock) plus troph (feeding). A way of making a living that has no eukaryotic equivalent at all.'),
+    'chemosynthesis': (
+        'Building organic matter using energy from chemical reactions instead of from light. The counterpart to photosynthesis, and far older.',
+        'It is how the primary producers at hydrothermal vents live, and it is why sulphide can be an energy source rather than only a poison.'),
     'chitin': (
         'The tough material of fungal cell walls and of crustacean and insect shells. After cellulose it is the most abundant biological polymer, and relatively few organisms can digest it.',
         'Greek chiton, a tunic.'),
@@ -238,6 +250,9 @@ TERMS = {
     'COD': (
         'Chemical oxygen demand - how much oxygen a substance will consume when fully oxidised. Measured in the same units as the oxygen it removes.',
         'The measurement and the effect are the same quantity, which is unusual and useful.'),
+    'cold seep': (
+        'A seafloor site where methane or sulphide-rich fluid escapes slowly rather than hot. Like a vent, it supports a community running on chemistry rather than light.',
+        'Slower, cooler, and more widespread than vents - including in the North Sea.'),
     'copepod': (
         'A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth - and an arthropod, like the insects that insecticides are designed for.',
         'Greek kope (oar) plus pous (foot).'),
@@ -245,8 +260,8 @@ TERMS = {
         'The standard instrument lowered through the water column, recording conductivity, temperature and depth continuously - and usually oxygen too. It gives a profile rather than a single value.',
         'Named for the three things it measures. Salinity is calculated from conductivity.'),
     'cyanobacteria': (
-        'Photosynthetic bacteria, often called blue-green algae though they are not algae. Some fix nitrogen straight from the air, which lets them grow when nitrogen is scarce, and several make toxins.',
-        'Greek kyanos, dark blue.'),
+        'Photosynthetic bacteria, often called blue-green algae although they are not algae. Some fix nitrogen directly from the air, which lets them grow when nitrogen is scarce, and several make toxins.',
+        'The ancestor of one of them was captured and became the chloroplast, which is how plants photosynthesise at all.'),
     'CYP51': (
         'The enzyme that makes sterols - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Azole fungicides work by blocking it, and every eukaryote has one.',
         'A cytochrome P450, numbered by family. The number is the only name it has.'),
@@ -322,6 +337,9 @@ TERMS = {
     'exopolymer': (
         'Sticky long-chain sugars secreted outside the cell. It binds sediment, forms marine gel, and is what makes water feel slippery.',
         'Exo- (outside) plus polymer. Marine biologists count it as TEP.'),
+    'extremophile': (
+        'An organism thriving in conditions that would kill most life - extremes of heat, salt, acidity, pressure or chemistry. The word records our own expectations rather than anything about the organism.',
+        'To the organism the conditions are not extreme. They are simply where it lives.'),
     'fedtemog': (
         'Danish, roughly fat-muck: the greasy, foul organic material that accumulates in the water and along the shore. Not a scientific term, and not measured by anything.',
         'Fedt is fat, mog is muck or dung. A word from people who swim, not from a monitoring programme.'),
@@ -352,6 +370,9 @@ TERMS = {
     'fungicide': (
         'A chemical designed to kill fungi. Applied in agriculture by the thousand tonnes, and acting on enzyme systems that fungi share with most other life.',
         'The -cide ending is Latin caedere, to kill - as in pesticide, biocide, herbicide.'),
+    'generation time': (
+        'How long between one generation and the next. It sets the ceiling on how fast a population can adapt, and it differs between a marine bacterium and an eelgrass meadow by roughly five orders of magnitude.',
+        'The single most important number in deciding who wins under a novel pressure.'),
     'glyphosate': (
         "The world's most used herbicide. Its target enzyme is absent in animals but present in plants, bacteria and fungi, which makes it an antimicrobial as well as a weedkiller.",
         'From glycine and phosphonate, its chemical parts.'),
@@ -367,9 +388,15 @@ TERMS = {
     'Hedley fractionation': (
         'A sequence of chemical extractions that separates soil phosphorus into pools by how easily it can be released - from immediately available to permanently locked away.',
         'The standard soil-science method, and the reason soil scientists never quote total phosphorus alone.'),
+    'heterotroph': (
+        'An organism that gets its carbon by consuming organic matter made by something else. All animals and fungi, and most bacteria.',
+        'Greek heteros (other): fed by others.'),
     'holobiont': (
         'An organism considered together with all the microbes living in and on it, as one functioning unit - because for many purposes that is what it actually is.',
         'Greek holos (whole) plus bios. A word that exists because the older picture of an organism turned out to be incomplete.'),
+    'horizontal gene transfer': (
+        'Genes moving sideways between unrelated organisms rather than down from parent to offspring. Bacteria do it routinely, which is why a resistance evolved once can appear everywhere.',
+        'The reason prokaryotic adaptation is not limited by the lineage that happened to invent it. Eukaryotes have almost no equivalent.'),
     'humus': (
         'The dark, stable remains of decayed organic matter in soil, after everything easily eaten has gone.',
         'Latin humus, ground or earth - the same root as human and humble.'),
@@ -379,6 +406,9 @@ TERMS = {
     'hydrophobic': (
         'Water-repelling. Such substances leave the water and gather at surfaces - which is why they concentrate in the microlayer and in fatty tissue.',
         'Greek hydor (water) plus phobos (fear).'),
+    'hydrothermal vent': (
+        'A seafloor hot spring where water heated by rock emerges carrying hydrogen sulphide and metals. The communities around them run entirely on chemical energy, with no sunlight anywhere in the food chain.',
+        'Discovered in 1977, which overturned the assumption that all life ultimately depends on the sun.'),
     'hypoxia': (
         'Not enough oxygen. Conventionally below 4 mg per litre in marine work, with 2 mg/l as severe.',
         'Greek hypo- (under) plus oxys, the root in oxygen.'),
@@ -490,6 +520,9 @@ TERMS = {
     'mull': (
         'Humus that soil animals have worked into the mineral soil - crumbly, fast-cycling, well mixed.',
         'From Danish and German muld, mould or loose earth. Its degraded counterpart is mor.'),
+    'mutation rate': (
+        'How often the genetic code changes when it is copied. Combined with population size it sets how much variation a lineage generates per unit time, and therefore how quickly it can meet something new.',
+        'A large population with a short generation explores more possibilities in a year than a small slow one does in a century.'),
     'mycobiome': (
         'The fungal community of a place or a host, as distinct from its bacteria. Marine sediments are turning out to hold far more fungal diversity than anyone expected.',
         'Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.'),
@@ -595,6 +628,9 @@ TERMS = {
     'priming': (
         'Adding fresh easily-eaten carbon speeds up the decay of old material that was sitting there stable, because the microbes gain the energy to attack it.',
         'As in priming a pump: a small input releases a much larger flow.'),
+    'prokaryote': (
+        'An organism whose cell has no nucleus - bacteria and archaea. They run essentially every chemical transformation in the sea that is not photosynthesis or animal respiration.',
+        'Greek pro (before) plus karyon (kernel): named for lacking the thing eukaryotes have, which tells you who was doing the naming.'),
     'propagule': (
         'Whatever a species uses to start a new individual somewhere else - a larva, a seed, a spore, a fragment.',
         'Latin propagare, to propagate. The unit of arrival.'),
@@ -613,6 +649,9 @@ TERMS = {
     'Q10': (
         'How much faster a biological process runs for every ten degrees of warming. Around two for most decay, meaning respiration roughly doubles.',
         'A rule of thumb old enough to have no better name.'),
+    'r-selected': (
+        'Organisms that bet on speed and numbers - short lives, fast growth, many offspring, few requirements. They dominate disturbed and unstable conditions.',
+        'From r, the growth-rate term in the population equation. Its counterpart is K-selected: slow, large, long-lived, competitive in stable conditions.'),
     'radial oxygen loss': (
         'Rooted plants leaking oxygen from their roots into the sediment, which keeps sulphide away from the root. It is powered by photosynthesis, so shade shuts it off.',
         'Radial because it moves outward from the root, not along it.'),
@@ -640,6 +679,9 @@ TERMS = {
     'residual estimator': (
         'A quantity computed as whatever is left after subtracting everything you did model from a measured total. It is never itself measured, and it absorbs every error in every other term.',
         'Which is why such a figure can come out negative, and why a negative one is the method reporting its own error bars.'),
+    'resistance': (
+        'The evolved ability to survive a dose that would once have been lethal. Its appearance is simultaneously evidence that the organism was exposed and that the exposure was selecting.',
+        'The same phenomenon in bacteria facing antibiotics, fungi facing fungicides, and weeds facing herbicides - and for the same reason.'),
     'resuspension': (
         'Sediment lifted back into the water by waves, currents or gear, after having settled.',
         'It returns buried material, and its chemistry, to circulation.'),
@@ -679,6 +721,9 @@ TERMS = {
     'Sedimentkemi': (
         'Danish for sediment chemistry - the ODA category holding what has been measured in the bed itself, as opposed to the water above it.',
         'The category this project repeatedly finds nearly empty of the analytes that matter.'),
+    'selection pressure': (
+        "Any condition that kills or hinders some individuals more than others, so that the survivors' traits become more common. Applying a biocide is applying one deliberately.",
+        'A dose too low to kill outright is not neutral - it is the regime in which selection is strongest, because it kills enough to matter and spares enough to breed.'),
     'Shelford': (
         'The law of tolerance: every requirement has a ceiling as well as a floor. Too much of a needed thing kills as surely as too little.',
         'Victor Shelford, an American ecologist, 1913. Liebig gives you the floor; Shelford gives you the roof.'),
@@ -698,8 +743,8 @@ TERMS = {
         'A substance sticking to a solid surface, covering both adsorption onto it and absorption into it. Phosphate sorbs to iron oxides, which is how soil holds it.',
         'The umbrella term when you do not want to commit to which of the two is happening.'),
     'speciation': (
-        'In chemistry, which chemical form an element is actually in - dissolved, bound to a particle, complexed with an organic molecule. Availability depends on it, and total concentration does not show it.',
-        'Nothing to do with the biological sense of new species forming.'),
+        'In chemistry, which chemical form an element is in - dissolved, bound to a particle, complexed with an organic molecule. Toxicity and availability both depend on it, and a total measurement hides it.',
+        'Nothing to do with the biological sense of new species arising.'),
     'sterol': (
         'A class of molecules that stiffen cell membranes - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Every eukaryote makes one, by broadly the same route.',
         'Which is why azole fungicides, which block that route, cannot be selective for fungi in principle.'),
@@ -751,6 +796,9 @@ TERMS = {
     'TEP': (
         'Transparent exopolymer particles - sticky invisible gel produced by algae and bacteria, which aggregates into marine snow and, at scale, mucilage.',
         'Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.'),
+    'terminal electron acceptor': (
+        'The molecule an organism finally dumps electrons onto to extract energy from food. Oxygen is the best, and when it runs out life switches down a ladder - nitrate, manganese, iron, sulphate, then carbon dioxide.',
+        'Each step yields less energy, and each produces a different waste product. The sulphate step is why marine anoxia turns toxic.'),
     'thatch': (
         'A greasy organic mat that builds up in turf when material is produced faster than it decays. Caused by heavy fertilising, pesticides killing earthworms, and compaction.',
         'The ordinary roofing word. Greenkeepers treat it by restoring the soil fauna, not by feeding the grass less.'),
@@ -879,7 +927,7 @@ ROUTES = [
      "Oxygen is the famous instance and the only one the requirement acts on, but "
      "it is an instance: silicon, light at the bed, carbonate ion, cobalamin, "
      "thiamine, available iron and edible particles of the right size all belong "
-     "here, and group K works through them. **A depletion is selective, not "
+     "here, and group `K` works through them. **A depletion is selective, not "
      "general** - it removes whoever needed the missing thing and releases whoever "
      "did not."),
     ("M2", "Toxic exposure",
@@ -1597,7 +1645,7 @@ H = [
     ("E10", "E", "Heavy metals", ["O3"],
      "From harbours, industry, dumping and historic contamination.",
      "Localised, persistent, and redistributed by exactly the dredging and dumping "
-     "in group D.",
+     "in group `D`.",
      "Sediment metal concentration against fauna composition.",
      "Sediment metals. Four national points."),
     ("E11", "E", "Ammonia toxicity", ["O3", "O6"],
@@ -1795,7 +1843,7 @@ H = [
      "Carbon is retained in the microbial loop instead of reaching anything larger, "
      "so the same primary production supports less higher life and leaves more "
      "dissolved organic matter behind - which is the substrate for the gel of group "
-     "J and for the oxygen demand of `M1`. A shunted system looks productive and "
+     "`J` and for the oxygen demand of `M1`. A shunted system looks productive and "
      "feeds nothing.",
      "Viral abundance and lysis rate against the share of production reaching "
      "mesozooplankton - the ratio, not either alone.",
@@ -1989,7 +2037,7 @@ H = [
      "Si comes from rock weathering, so human activity does not raise it, while N "
      "and P have risen severalfold. When Si runs out first, diatoms are replaced by "
      "flagellates and cyanobacteria - poorly grazed, prone to harmful blooms, and "
-     "the principal producers of the gel in group J. Enhanced production also buries "
+     "the principal producers of the gel in group `J`. Enhanced production also buries "
      "Si faster, so the depletion reinforces itself.",
      "Total biomass need not change at all; the *composition* does. This is a "
      "mechanism where reducing nitrogen genuinely helps, for a reason that has "
@@ -2136,7 +2184,7 @@ H = [
      "Seagrass beds host lucinid clams whose gill bacteria oxidise sulphide, keeping "
      "the rhizosphere habitable. Plant, clam and bacterium are a three-way "
      "partnership.",
-     "Lose the clams - to trawling, to hypoxia, to anything in group D - and the "
+     "Lose the clams - to trawling, to hypoxia, to anything in group `D` - and the "
      "seagrass loses its sulphide protection **with no change in any nutrient**. "
      "This is the mycorrhizal story with the partner outside the plant, and it makes "
      "vegetation loss a consequence of fauna loss rather than of water quality.",
@@ -2407,7 +2455,7 @@ H = [
      "the surface microlayer.",
      "The same fat load produces more film and aggregate in salt water than in "
      "fresh - a candidate reason greasiness is a marine and brackish complaint, and "
-     "a link between group B's imported fat and group J's surface film.",
+     "a link between group `B`'s imported fat and group `J`'s surface film.",
      "Partitioning of lipid between dissolved, particulate and microlayer fractions "
      "across the salinity gradient.",
      "Lipid fractionation by salinity. Not measured."),
@@ -2777,7 +2825,7 @@ def render(rows):
     a("**It is not a partition.** The groups sit at different levels of "
       "abstraction and cut across each other. Some entries are mechanisms, some are "
       "conditions that let a mechanism operate, some are descriptions of a state, "
-      "and some — group I especially — are not about the sea at all but about the "
+      "and some — group `I` especially — are not about the sea at all but about the "
       "instrument. They do not tile anything.\n")
     a("**The entries are not independent.** Sulphur alone appears as an oxygen "
       "sink (`E1`), as reduced bed chemistry (`M7`), as the reason the marine "
@@ -2882,10 +2930,32 @@ def render(rows):
       "*position in a window*, so the benefit of reduction depends on where an area "
       "currently sits, and that position differs by area — which is the argument of "
       "[AREAS.md](#AREAS.md) arriving from the chemistry rather than from the "
-      "statistics. And the window's location depends on everything else in the "
-      "window with it: `K2` and `K3` say the tolerable amount of nitrogen is a "
-      "function of the silicon, the phosphorus and the micronutrients present, so "
-      "there is no single number even for one place.\n")
+      "statistics.\n")
+    a("**And the window is not a property of the substance. It is a property of the "
+      "whole mixture.** Both ends move with everything else present, by at least "
+      "four routes, and none of them is exotic:\n")
+    a("- **Bioavailability.** What matters is the fraction an organism can actually "
+      "take up, not the total. Phosphate bound to iron oxide is present and "
+      "unavailable (`S4`); iron bound to organic ligands is present and unavailable "
+      "(`K6`); metal toxicity depends on speciation rather than concentration. A "
+      "measurement of the total says almost nothing about where in the window the "
+      "organism is.\n")
+    a("- **Antagonism.** Excess of one nutrient blocks uptake of another and induces "
+      "a deficiency that looks nothing like enrichment — high nitrogen suppressing "
+      "copper and boron, high phosphorus inducing zinc deficiency (`K3`). The "
+      "floor of one element rises because the ceiling of another was crossed.\n")
+    a("- **Ratios rather than amounts.** Whether nitrogen limits at all depends on "
+      "the silicon and phosphorus beside it, and the community that results depends "
+      "on the ratio rather than the total (`K1`, `K2`).\n")
+    a("- **Conditions.** pH decides how much ammonium is the toxic un-ionised "
+      "form; redox decides whether iron holds phosphate or releases it; "
+      "temperature moves every rate. The chemistry's window sits inside the "
+      "physical window of group `Z`.\n")
+    a("So there is no single tolerable figure for nitrogen even in one place on one "
+      "day, and a national number is a summary of a quantity that does not exist. "
+      "This is also why `U1`, mixture effects, is not a fringe caveat: **the "
+      "mixture is what sets the window**, and testing substances one at a time "
+      "against fixed thresholds assumes precisely what is false.\n")
     a("Nobody has published where each Danish area sits in that window, and the "
       "flat 25% rule of the iltsvind trigger assumes the answer is the same "
       "everywhere.\n")
@@ -2909,7 +2979,7 @@ def render(rows):
     a("So the exhaustive treatment here is a small cross-product — **fields × "
       "dimensions × the same two failure modes** — and all three factors are "
       "enumerable. That makes it the most nearly closable part of the register, and "
-      "group **Z** exists to work through it. Denmark already measures most of the "
+      "group `Z` exists to work through it. Denmark already measures most of the "
       "fields; what is missing is mostly the extra dimensions, which is a cheaper "
       "gap to close than any other on this page.\n")
     a("**`V4` and `V5` close better than the chemical ones, for a reason worth "
@@ -2923,7 +2993,7 @@ def render(rows):
       "finite inventory of gear — trawl, dredge, anchor, propeller, cable plough, "
       "extraction head, dumped spoil, construction plant. Then storms, ice, "
       "currents, and the bioturbators and bioeroders. That is close to a complete "
-      "enumeration, and it is why group D can be checked nearly to the end.\n")
+      "enumeration, and it is why group `D` can be checked nearly to the end.\n")
     a("For biotic attack the set is bounded but **badly catalogued**, and the gap "
       "is concentrated at the small end: viruses, bacteria, protists, fungi and "
       "oomycetes. Marine virioplankton runs to roughly ten million particles per "
@@ -3044,6 +3114,76 @@ def render(rows):
       "everyone. That is the same failure this project attributes to the nitrogen "
       "account, and it is available to us on exactly the same terms.\n")
 
+    a("### Who makes the window, and how fast they can move it\n")
+    a("One more layer under all of this, and it is the one that decides the "
+      "direction of everything above.\n")
+    a("**A tolerance window is not a constant of nature. It is an evolved "
+      "property** — the accumulated result of every ancestor that met a condition "
+      "and survived it. So the window is made by life, and it can move. What "
+      "decides how fast it moves is a short list: **generation time, population "
+      "size, mutation rate, whether genes can be traded sideways between "
+      "lineages, and whether any prior encounter with the substance exists to have "
+      "left machinery behind.**\n")
+    a("Those five differ across organisms by orders of magnitude, and they differ "
+      "in the *same direction* as everything else in this section. A marine "
+      "bacterium divides in hours, lives at a billion cells per millilitre, and can "
+      "acquire a working gene from an unrelated species by horizontal transfer. An "
+      "eelgrass meadow, a mussel bed, a long-lived bivalve: generations in years, "
+      "populations in thousands, and no mechanism for borrowing an adaptation from "
+      "a neighbour at all.\n")
+    a("> **So under any sustained novel pressure, the ceiling rises for the fast "
+      "and stays put for the slow.** The gap between them widens by itself, without "
+      "the pressure needing to increase. That is the asymmetry of requirements "
+      "again, one level down and running on a clock.\n")
+    a("Which reframes what a biocide programme is. **Applying a compound at "
+      "national scale is an evolutionary selection experiment**, and the winners "
+      "are decided in advance by that list of five: shortest generations, largest "
+      "populations, genes that travel sideways. Precisely the organisms nobody "
+      "intended to favour. The azole-resistant *Aspergillus* arising from "
+      "agricultural fungicide use (`E15`) is not an unlucky side effect — it is the "
+      "experiment working exactly as its design requires, and the resistance is "
+      "simultaneously proof of exposure and proof of selection.\n")
+    a("### How wide the window really is, and what that costs the argument\n")
+    a("It is worth going to the far end of this, because it disciplines a phrase "
+      "this project has used loosely.\n")
+    a("At hydrothermal vents and cold seeps there are dense, productive, "
+      "structurally complex communities living with **no sunlight at any point in "
+      "the food chain**. The primary producers are chemolithotrophs oxidising "
+      "hydrogen sulphide, hydrogen or methane, and the tube worms and clams above "
+      "them are hosts to bacterial symbionts doing the chemistry inside their "
+      "tissues. Sulphide, which is the poison in `M7` and `E12` and the thing that "
+      "kills eelgrass from below in `T1`, is there the *energy source*.\n")
+    a("So the window for **life** is enormously wider than the window for **the "
+      "life we are talking about**. Anoxic, sulphidic, lightless water is not "
+      "outside the range of the possible; it is an ancient and entirely viable mode "
+      "of living, and it predates the oxygenated one by a long way.\n")
+    a("> Which means *dead water* is the wrong phrase, and this project should stop "
+      "reaching for it. **A degraded Danish bay is not lifeless. It has reverted to "
+      "an older configuration** — one that needs fewer of the recent innovations, "
+      "runs on chemistry rather than light, and supports biomass without supporting "
+      "structure. That is what the convergence above is converging on, and it is "
+      "not a failure of life. It is a failure of the particular arrangement we "
+      "arrived in the middle of and depend on.\n")
+    a("Stating it that way costs the rhetoric something and is worth it, because "
+      "the alternative invites an easy and correct rebuttal — *there is plenty of "
+      "life in that water* — which is true, and which a careless argument has no "
+      "answer to. The claim that survives is narrower and harder to dismiss: not "
+      "that life ends, but that **the slow, structured, long-lived, oxygen- and "
+      "light-dependent part of it does**, and that this part is the one carrying "
+      "everything anybody values.\n")
+
+    a("It also sharpens the dose argument. A concentration too low to kill the "
+      "target is not thereby harmless: **sublethal is the regime where selection is "
+      "strongest**, because it kills enough to matter and spares enough to breed. "
+      "Which is why total load and ubiquity matter more than per-application "
+      "concentration, and why the antibiotic instrument — reserve it, do not "
+      "disperse it — is the right shape of response.\n")
+    a("And it is the exact argument behind the evolutionary-prior framework in "
+      "[PROGRAMME.md](#PROGRAMME.md). A molecule life has met before has left "
+      "machinery for handling it somewhere in the biosphere; a genuinely novel one "
+      "has not, and there is no prior to draw on. The difference between those two "
+      "is not chemistry — it is history.\n")
+
     a("It also explains why the state maintains itself. The survivors of the filter "
       "are precisely the organisms that do not perform the functions — irrigating "
       "sediment, filtering water, holding it down, providing structure, "
@@ -3065,6 +3205,52 @@ def render(rows):
     a("This is also why a well-measured route is not thereby the route taken. Oxygen "
       "is the best-instrumented of the seven by a wide margin. That is a fact about "
       "Danish monitoring, not about Danish water.\n")
+
+    a("### Who actually runs the chemistry\n")
+    a("A note on which organisms this register is about, because the categories in "
+      "use mislead. Eukaryotes — plants, animals, fungi, and the microbial "
+      "supergroups with no common name — dominate two things: the catalogue of "
+      "described species, and visible form. On every other measure the prokaryotes "
+      "win, and it is not close.\n")
+    a("**Metabolically it is not a contest.** Eukaryotes do essentially two things: "
+      "aerobic respiration, and oxygenic photosynthesis borrowed wholesale from a "
+      "captured cyanobacterium. Bacteria and archaea do everything else. Every "
+      "redox step in this entire register is theirs — nitrification, "
+      "denitrification, anammox, sulphate reduction, sulphide oxidation, iron and "
+      "manganese reduction, methanogenesis, methane oxidation. The electron "
+      "acceptor cascade of `R5`, the sediment phosphate release of `R6`, the "
+      "nitrogen sink that flips to a source under hypoxia — all prokaryotic, and "
+      "**none of it done by anything any Danish marine survey counts**.\n")
+    a("The species count runs the other way — roughly two million described "
+      "eukaryotes against some twenty thousand formally described prokaryotes — but "
+      "that is an artefact of the species concept and of what will grow in a dish. "
+      "Over ninety-nine per cent of prokaryotes will not, and they do not have "
+      "biological species in the first place.\n")
+    a("**And this axis does close.** Metabolic type is a cross-product of four "
+      "short, enumerable factors, which is the same shape of argument as the "
+      "chemical window:\n")
+    a("| factor | the options | |")
+    a("|---|---|---|")
+    a("| Energy source | light, or chemical reaction | *photo-* / *chemo-* |")
+    a("| Electron donor | inorganic, or organic | *litho-* / *organo-* |")
+    a("| Carbon source | CO₂, or organic carbon | *auto-* / *hetero-* |")
+    a("| Terminal electron acceptor | O₂ → NO₃⁻ → Mn(IV) → Fe(III) → SO₄²⁻ → S⁰ → "
+      "CO₂ | in falling energy yield |")
+    a("")
+    a("Eight combinations of the first three, of which about six are realised in "
+      "nature, times a terminal-acceptor list that is essentially complete for "
+      "natural waters. **That is an exhaustive classification of how anything makes "
+      "a living**, and unlike the taxonomy it does not depend on anyone having "
+      "named the organism. It is the right level at which to argue about "
+      "biogeochemistry, and the wrong level is the one the monitoring forms use.\n")
+    a("The taxonomic list, for completeness and with the caveat that the eukaryote "
+      "part is genuinely unsettled: **Bacteria**; **Archaea**; and **Eukarya**, "
+      "which divides into Amorphea (animals and fungi together, plus amoebae), "
+      "Archaeplastida (plants and the green and red algae), SAR (stramenopiles, "
+      "alveolates, rhizarians — diatoms, kelp, oomycetes, labyrinthulids, "
+      "dinoflagellates, ciliates, foraminifera), and several smaller groups whose "
+      "placement moves between papers. **Viruses** sit outside the tree entirely and "
+      "are, by `F11`, a major agent of mortality regardless.\n")
 
     a("### Every requirement, put through the oxygen questions\n")
     a("Oxygen is famous for having a feedback loop. That is a fact about how much "
@@ -3149,7 +3335,7 @@ def render(rows):
     a("- **Checking whether the baseline was ever real.** Fairhead and Leach found "
       "that forest patches in Guinea, read as relics of a destroyed forest, had been "
       "*created* by the villagers living in them. The causal arrow was backwards and "
-      "the error lay in the assumed original state. That is group L, and it is the "
+      "the error lay in the assumed original state. That is group `L`, and it is the "
       "class of hypothesis this project was missing entirely until the parallel was "
       "pointed out.\n")
     a("The parallel is structural and it is not an argument that either narrative is "

@@ -67,7 +67,7 @@
  "M1": {
   "kind": "route",
   "label": "Depletion of something essential",
-  "text": "Anything life requires falls below what some part of the community needs. Oxygen is the famous instance and the only one the requirement acts on, but it is an instance: silicon, light at the bed, carbonate ion, cobalamin, thiamine, available iron and edible particles of the right size all belong here, and group K works through them. **A depletion is selective, not general** - it removes whoever needed the missing thing and releases whoever did not."
+  "text": "Anything life requires falls below what some part of the community needs. Oxygen is the famous instance and the only one the requirement acts on, but it is an instance: silicon, light at the bed, carbonate ion, cobalamin, thiamine, available iron and edible particles of the right size all belong here, and group `K` works through them. **A depletion is selective, not general** - it removes whoever needed the missing thing and releases whoever did not."
  },
  "M2": {
   "kind": "route",
@@ -692,7 +692,7 @@
  "K1": {
   "kind": "hypothesis (K)",
   "label": "Silicon depletion and the diatom-to-flagellate shift",
-  "text": "Diatoms build frustules of silica and cannot grow without dissolved silicon. Si comes from rock weathering, so human activity does not raise it, while N and P have risen severalfold. When Si runs out first, diatoms are replaced by flagellates and cyanobacteria - poorly grazed, prone to harmful blooms, and the principal producers of the gel in group J. Enhanced production also buries Si faster, so the depletion reinforces itself."
+  "text": "Diatoms build frustules of silica and cannot grow without dissolved silicon. Si comes from rock weathering, so human activity does not raise it, while N and P have risen severalfold. When Si runs out first, diatoms are replaced by flagellates and cyanobacteria - poorly grazed, prone to harmful blooms, and the principal producers of the gel in group `J`. Enhanced production also buries Si faster, so the depletion reinforces itself."
  },
  "K2": {
   "kind": "hypothesis (K)",
@@ -1144,6 +1144,13 @@
     "autoclaved"
    ]
   },
+  "autotroph": {
+   "text": "An organism that builds its body from carbon dioxide rather than from other organisms. Plants and algae by photosynthesis, and many bacteria by chemistry.",
+   "why": "Greek autos (self) plus trophe (nourishment): self-feeding.",
+   "forms": [
+    "autotroph"
+   ]
+  },
   "auxotroph": {
    "text": "An organism that cannot make some essential compound for itself and must obtain it ready-made. Most marine algae are auxotrophs for vitamin B12.",
    "why": "Greek auxein (to grow) plus trophe (nourishment): needs feeding to grow.",
@@ -1210,6 +1217,13 @@
    "why": "One of the three legs of the PBT test, and the reason persistence matters biologically rather than just chemically.",
    "forms": [
     "bioaccumulative"
+   ]
+  },
+  "bioavailability": {
+   "text": "The fraction of a substance an organism can actually take up, as against how much is present. Phosphate locked to iron oxide is present and unavailable; so is iron bound to organic molecules.",
+   "why": "The reason a total concentration can be almost uninformative about whether anything is short of it.",
+   "forms": [
+    "bioavailability"
    ]
   },
   "biocide": {
@@ -1314,6 +1328,20 @@
     "charney"
    ]
   },
+  "chemolithotroph": {
+   "text": "An organism that lives on energy from inorganic chemical reactions - oxidising hydrogen, sulphide, ammonium, iron or methane. No light, no eating.",
+   "why": "Chemo (chemical) plus litho (rock) plus troph (feeding). A way of making a living that has no eukaryotic equivalent at all.",
+   "forms": [
+    "chemolithotroph"
+   ]
+  },
+  "chemosynthesis": {
+   "text": "Building organic matter using energy from chemical reactions instead of from light. The counterpart to photosynthesis, and far older.",
+   "why": "It is how the primary producers at hydrothermal vents live, and it is why sulphide can be an energy source rather than only a poison.",
+   "forms": [
+    "chemosynthesis"
+   ]
+  },
   "chitin": {
    "text": "The tough material of fungal cell walls and of crustacean and insect shells. After cellulose it is the most abundant biological polymer, and relatively few organisms can digest it.",
    "why": "Greek chiton, a tunic.",
@@ -1344,6 +1372,13 @@
     "coding"
    ]
   },
+  "cold seep": {
+   "text": "A seafloor site where methane or sulphide-rich fluid escapes slowly rather than hot. Like a vent, it supports a community running on chemistry rather than light.",
+   "why": "Slower, cooler, and more widespread than vents - including in the North Sea.",
+   "forms": [
+    "cold seep"
+   ]
+  },
   "copepod": {
    "text": "A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth - and an arthropod, like the insects that insecticides are designed for.",
    "why": "Greek kope (oar) plus pous (foot).",
@@ -1360,8 +1395,8 @@
    ]
   },
   "cyanobacteria": {
-   "text": "Photosynthetic bacteria, often called blue-green algae though they are not algae. Some fix nitrogen straight from the air, which lets them grow when nitrogen is scarce, and several make toxins.",
-   "why": "Greek kyanos, dark blue.",
+   "text": "Photosynthetic bacteria, often called blue-green algae although they are not algae. Some fix nitrogen directly from the air, which lets them grow when nitrogen is scarce, and several make toxins.",
+   "why": "The ancestor of one of them was captured and became the chloroplast, which is how plants photosynthesise at all.",
    "forms": [
     "cyanobacteria",
     "cyanobacterial"
@@ -1430,7 +1465,8 @@
    "text": "A single-celled alga that swims with two tails and often wears armour plating. Several make toxins, and some cause red tides.",
    "why": "Greek dinos, whirling - they spin as they swim.",
    "forms": [
-    "dinoflagellate"
+    "dinoflagellate",
+    "dinoflagellates"
    ]
   },
   "ECHA": {
@@ -1517,6 +1553,7 @@
    "why": "Greek eu (well) plus karyon (kernel). Bacteria and archaea are the ones that do not.",
    "forms": [
     "eukaryote",
+    "eukaryotes",
     "eukaryotic"
    ]
   },
@@ -1547,6 +1584,13 @@
    "why": "Exo- (outside) plus polymer. Marine biologists count it as TEP.",
    "forms": [
     "exopolymer"
+   ]
+  },
+  "extremophile": {
+   "text": "An organism thriving in conditions that would kill most life - extremes of heat, salt, acidity, pressure or chemistry. The word records our own expectations rather than anything about the organism.",
+   "why": "To the organism the conditions are not extreme. They are simply where it lives.",
+   "forms": [
+    "extremophile"
    ]
   },
   "fedtemog": {
@@ -1625,6 +1669,13 @@
     "fungicides"
    ]
   },
+  "generation time": {
+   "text": "How long between one generation and the next. It sets the ceiling on how fast a population can adapt, and it differs between a marine bacterium and an eelgrass meadow by roughly five orders of magnitude.",
+   "why": "The single most important number in deciding who wins under a novel pressure.",
+   "forms": [
+    "generation time"
+   ]
+  },
   "glyphosate": {
    "text": "The world's most used herbicide. Its target enzyme is absent in animals but present in plants, bacteria and fungi, which makes it an antimicrobial as well as a weedkiller.",
    "why": "From glycine and phosphonate, its chemical parts.",
@@ -1661,11 +1712,25 @@
     "hedley fractionation"
    ]
   },
+  "heterotroph": {
+   "text": "An organism that gets its carbon by consuming organic matter made by something else. All animals and fungi, and most bacteria.",
+   "why": "Greek heteros (other): fed by others.",
+   "forms": [
+    "heterotroph"
+   ]
+  },
   "holobiont": {
    "text": "An organism considered together with all the microbes living in and on it, as one functioning unit - because for many purposes that is what it actually is.",
    "why": "Greek holos (whole) plus bios. A word that exists because the older picture of an organism turned out to be incomplete.",
    "forms": [
     "holobiont"
+   ]
+  },
+  "horizontal gene transfer": {
+   "text": "Genes moving sideways between unrelated organisms rather than down from parent to offspring. Bacteria do it routinely, which is why a resistance evolved once can appear everywhere.",
+   "why": "The reason prokaryotic adaptation is not limited by the lineage that happened to invent it. Eukaryotes have almost no equivalent.",
+   "forms": [
+    "horizontal gene transfer"
    ]
   },
   "humus": {
@@ -1688,6 +1753,13 @@
    "why": "Greek hydor (water) plus phobos (fear).",
    "forms": [
     "hydrophobic"
+   ]
+  },
+  "hydrothermal vent": {
+   "text": "A seafloor hot spring where water heated by rock emerges carrying hydrogen sulphide and metals. The communities around them run entirely on chemical energy, with no sunlight anywhere in the food chain.",
+   "why": "Discovered in 1977, which overturned the assumption that all life ultimately depends on the sun.",
+   "forms": [
+    "hydrothermal vent"
    ]
   },
   "hypoxia": {
@@ -1921,8 +1993,7 @@
    "text": "An element needed in tiny amounts but needed absolutely - iron, zinc, copper, cobalt, molybdenum, selenium. Absence is as fatal as absence of nitrogen.",
    "why": "As against macronutrients: carbon, nitrogen, phosphorus, and the rest needed in bulk.",
    "forms": [
-    "micronutrient",
-    "micronutrients"
+    "micronutrient"
    ]
   },
   "microphytobenthos": {
@@ -1960,6 +2031,13 @@
    "why": "From Danish and German muld, mould or loose earth. Its degraded counterpart is mor.",
    "forms": [
     "mull"
+   ]
+  },
+  "mutation rate": {
+   "text": "How often the genetic code changes when it is copied. Combined with population size it sets how much variation a lineage generates per unit time, and therefore how quickly it can meet something new.",
+   "why": "A large population with a short generation explores more possibilities in a year than a small slow one does in a century.",
+   "forms": [
+    "mutation rate"
    ]
   },
   "mycobiome": {
@@ -2214,6 +2292,15 @@
     "priming"
    ]
   },
+  "prokaryote": {
+   "text": "An organism whose cell has no nucleus - bacteria and archaea. They run essentially every chemical transformation in the sea that is not photosynthesis or animal respiration.",
+   "why": "Greek pro (before) plus karyon (kernel): named for lacking the thing eukaryotes have, which tells you who was doing the naming.",
+   "forms": [
+    "prokaryote",
+    "prokaryotes",
+    "prokaryotic"
+   ]
+  },
   "propagule": {
    "text": "Whatever a species uses to start a new individual somewhere else - a larva, a seed, a spore, a fragment.",
    "why": "Latin propagare, to propagate. The unit of arrival.",
@@ -2257,6 +2344,13 @@
    "why": "A rule of thumb old enough to have no better name.",
    "forms": [
     "q10"
+   ]
+  },
+  "r-selected": {
+   "text": "Organisms that bet on speed and numbers - short lives, fast growth, many offspring, few requirements. They dominate disturbed and unstable conditions.",
+   "why": "From r, the growth-rate term in the population equation. Its counterpart is K-selected: slow, large, long-lived, competitive in stable conditions.",
+   "forms": [
+    "r-selected"
    ]
   },
   "radial oxygen loss": {
@@ -2323,6 +2417,13 @@
    "why": "Which is why such a figure can come out negative, and why a negative one is the method reporting its own error bars.",
    "forms": [
     "residual estimator"
+   ]
+  },
+  "resistance": {
+   "text": "The evolved ability to survive a dose that would once have been lethal. Its appearance is simultaneously evidence that the organism was exposed and that the exposure was selecting.",
+   "why": "The same phenomenon in bacteria facing antibiotics, fungi facing fungicides, and weeds facing herbicides - and for the same reason.",
+   "forms": [
+    "resistance"
    ]
   },
   "resuspension": {
@@ -2417,6 +2518,13 @@
     "sedimentkemi"
    ]
   },
+  "selection pressure": {
+   "text": "Any condition that kills or hinders some individuals more than others, so that the survivors' traits become more common. Applying a biocide is applying one deliberately.",
+   "why": "A dose too low to kill outright is not neutral - it is the regime in which selection is strongest, because it kills enough to matter and spares enough to breed.",
+   "forms": [
+    "selection pressure"
+   ]
+  },
   "Shelford": {
    "text": "The law of tolerance: every requirement has a ceiling as well as a floor. Too much of a needed thing kills as surely as too little.",
    "why": "Victor Shelford, an American ecologist, 1913. Liebig gives you the floor; Shelford gives you the roof.",
@@ -2462,8 +2570,8 @@
    ]
   },
   "speciation": {
-   "text": "In chemistry, which chemical form an element is actually in - dissolved, bound to a particle, complexed with an organic molecule. Availability depends on it, and total concentration does not show it.",
-   "why": "Nothing to do with the biological sense of new species forming.",
+   "text": "In chemistry, which chemical form an element is in - dissolved, bound to a particle, complexed with an organic molecule. Toxicity and availability both depend on it, and a total measurement hides it.",
+   "why": "Nothing to do with the biological sense of new species arising.",
    "forms": [
     "speciation"
    ]
@@ -2591,6 +2699,13 @@
    "why": "Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.",
    "forms": [
     "tep"
+   ]
+  },
+  "terminal electron acceptor": {
+   "text": "The molecule an organism finally dumps electrons onto to extract energy from food. Oxygen is the best, and when it runs out life switches down a ladder - nitrate, manganese, iron, sulphate, then carbon dioxide.",
+   "why": "Each step yields less energy, and each produces a different waste product. The sulphate step is why marine anoxia turns toxic.",
+   "forms": [
+    "terminal electron acceptor"
    ]
   },
   "thatch": {

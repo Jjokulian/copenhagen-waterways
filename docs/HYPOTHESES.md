@@ -14,7 +14,7 @@ There are 154 entries below. That number should not be read as a decomposition o
 
 Three further problems, which matter for what can be concluded:
 
-**It is not a partition.** The groups sit at different levels of abstraction and cut across each other. Some entries are mechanisms, some are conditions that let a mechanism operate, some are descriptions of a state, and some — group I especially — are not about the sea at all but about the instrument. They do not tile anything.
+**It is not a partition.** The groups sit at different levels of abstraction and cut across each other. Some entries are mechanisms, some are conditions that let a mechanism operate, some are descriptions of a state, and some — group `I` especially — are not about the sea at all but about the instrument. They do not tile anything.
 
 **The entries are not independent.** Sulphur alone appears as an oxygen sink (`E1`), as reduced bed chemistry (`M7`), as the reason the marine electron-acceptor cascade differs from the freshwater one (`R5`), as the release mechanism for sediment phosphate (`R6`), and as the poison that kills eelgrass from below (`T1`). That is one element seen from five sides, not five causes. **Counting entries therefore says nothing about weight**, and a group with fourteen entries is not thereby more important than one with four.
 
@@ -71,7 +71,19 @@ Liebig's floor and Shelford's ceiling, and the essential trace metals sit on bot
 
 **This applies to nitrogen exactly as it applies to copper.** Nitrogen is not a pollutant; it is a requirement with a window, and it has both a floor and a ceiling like every other element on the list. Which means a policy expressed only as *less is better* is a one-tailed treatment of a two-tailed quantity — the same error as *more is better*, pointed the other way.
 
-That is not an argument that Danish coastal water needs more nitrogen. In many places the load is plainly above the optimum and reduction plainly helps. The point is structural and has two consequences. The optimum is a *position in a window*, so the benefit of reduction depends on where an area currently sits, and that position differs by area — which is the argument of [AREAS.md](#AREAS.md) arriving from the chemistry rather than from the statistics. And the window's location depends on everything else in the window with it: `K2` and `K3` say the tolerable amount of nitrogen is a function of the silicon, the phosphorus and the micronutrients present, so there is no single number even for one place.
+That is not an argument that Danish coastal water needs more nitrogen. In many places the load is plainly above the optimum and reduction plainly helps. The point is structural and has two consequences. The optimum is a *position in a window*, so the benefit of reduction depends on where an area currently sits, and that position differs by area — which is the argument of [AREAS.md](#AREAS.md) arriving from the chemistry rather than from the statistics.
+
+**And the window is not a property of the substance. It is a property of the whole mixture.** Both ends move with everything else present, by at least four routes, and none of them is exotic:
+
+- **Bioavailability.** What matters is the fraction an organism can actually take up, not the total. Phosphate bound to iron oxide is present and unavailable (`S4`); iron bound to organic ligands is present and unavailable (`K6`); metal toxicity depends on speciation rather than concentration. A measurement of the total says almost nothing about where in the window the organism is.
+
+- **Antagonism.** Excess of one nutrient blocks uptake of another and induces a deficiency that looks nothing like enrichment — high nitrogen suppressing copper and boron, high phosphorus inducing zinc deficiency (`K3`). The floor of one element rises because the ceiling of another was crossed.
+
+- **Ratios rather than amounts.** Whether nitrogen limits at all depends on the silicon and phosphorus beside it, and the community that results depends on the ratio rather than the total (`K1`, `K2`).
+
+- **Conditions.** pH decides how much ammonium is the toxic un-ionised form; redox decides whether iron holds phosphate or releases it; temperature moves every rate. The chemistry's window sits inside the physical window of group `Z`.
+
+So there is no single tolerable figure for nitrogen even in one place on one day, and a national number is a summary of a quantity that does not exist. This is also why `U1`, mixture effects, is not a fringe caveat: **the mixture is what sets the window**, and testing substances one at a time against fixed thresholds assumes precisely what is false.
 
 Nobody has published where each Danish area sits in that window, and the flat 25% rule of the iltsvind trigger assumes the answer is the same everywhere.
 
@@ -81,11 +93,11 @@ Nobody has published where each Danish area sits in that window, and the flat 25
 
 But a field is not a chemical, and the difference matters. **A chemical has one axis: how much. A field has several, each carrying its own floor and ceiling.** Light is not only how much, but of what wavelengths, for how long, and when — and browning changes the second without changing the first, while turbidity changes the third at depth without changing the calendar. Temperature has a window and, separately, a maximum rate of change. Hydrodynamic energy has a floor as well as a ceiling: too little and filter feeders starve, too much and everything is abraded off.
 
-So the exhaustive treatment here is a small cross-product — **fields × dimensions × the same two failure modes** — and all three factors are enumerable. That makes it the most nearly closable part of the register, and group **Z** exists to work through it. Denmark already measures most of the fields; what is missing is mostly the extra dimensions, which is a cheaper gap to close than any other on this page.
+So the exhaustive treatment here is a small cross-product — **fields × dimensions × the same two failure modes** — and all three factors are enumerable. That makes it the most nearly closable part of the register, and group `Z` exists to work through it. Denmark already measures most of the fields; what is missing is mostly the extra dimensions, which is a cheaper gap to close than any other on this page.
 
 **`V4` and `V5` close better than the chemical ones, for a reason worth stating.** Destruction and attack are both done *by* something, and the set of possible agents is drawn from the biota. That set is bounded by what exists. The chemical set is not: substances are manufactured, tens of thousands are in commerce, and the list grows every year by decision. One set is discovered, the other is invented, and only the invented one is genuinely unbounded.
 
-For physical destruction the agent list is startlingly short. Humans, with a finite inventory of gear — trawl, dredge, anchor, propeller, cable plough, extraction head, dumped spoil, construction plant. Then storms, ice, currents, and the bioturbators and bioeroders. That is close to a complete enumeration, and it is why group D can be checked nearly to the end.
+For physical destruction the agent list is startlingly short. Humans, with a finite inventory of gear — trawl, dredge, anchor, propeller, cable plough, extraction head, dumped spoil, construction plant. Then storms, ice, currents, and the bioturbators and bioeroders. That is close to a complete enumeration, and it is why group `D` can be checked nearly to the end.
 
 For biotic attack the set is bounded but **badly catalogued**, and the gap is concentrated at the small end: viruses, bacteria, protists, fungi and oomycetes. Marine virioplankton runs to roughly ten million particles per millilitre and lyses a large share of the bacterial standing stock every day, and Danish marine monitoring counts none of it. The limit here is record-keeping rather than principle, which is a better problem to have than the chemical one.
 
@@ -107,7 +119,7 @@ They are still not disjoint — `M7` is partly a special case of `M2`, `M5` ends
 
 | | route | what it is |
 |---|---|---|
-| `M1` | **Depletion of something essential** | Anything life requires falls below what some part of the community needs. Oxygen is the famous instance and the only one the requirement acts on, but it is an instance: silicon, light at the bed, carbonate ion, cobalamin, thiamine, available iron and edible particles of the right size all belong here, and group K works through them. **A depletion is selective, not general** - it removes whoever needed the missing thing and releases whoever did not. |
+| `M1` | **Depletion of something essential** | Anything life requires falls below what some part of the community needs. Oxygen is the famous instance and the only one the requirement acts on, but it is an instance: silicon, light at the bed, carbonate ion, cobalamin, thiamine, available iron and edible particles of the right size all belong here, and group `K` works through them. **A depletion is selective, not general** - it removes whoever needed the missing thing and releases whoever did not. |
 | `M2` | **Toxic exposure** | Something is poisoned. The dose makes the poison, so this route is acutely sensitive to peak concentration rather than to any annual mean — and annual means are what is reported. Leaves a fully oxygenated dead water. |
 | `M3` | **Physical destruction and burial** | The habitat removed, crushed, dredged or covered. Needs no chemistry at all. |
 | `M4` | **Food-web restructuring** | Removal or addition of a species changes what everything else does. Overfishing, invasion, disease. |
@@ -159,6 +171,34 @@ Together those mean the search radius has to include things that do not look lik
 
 > And the Yellowstone wolves are worth keeping in mind for a second reason. That cascade — wolves to elk to willow to beaver to the shape of the rivers — became the standard textbook illustration, and it has since been substantially challenged: the elk decline had other causes running at the same time, and the willow recovery was patchy and confounded. A compelling cascade narrative outran its evidence, in a well-studied system, watched by everyone. That is the same failure this project attributes to the nitrogen account, and it is available to us on exactly the same terms.
 
+### Who makes the window, and how fast they can move it
+
+One more layer under all of this, and it is the one that decides the direction of everything above.
+
+**A tolerance window is not a constant of nature. It is an evolved property** — the accumulated result of every ancestor that met a condition and survived it. So the window is made by life, and it can move. What decides how fast it moves is a short list: **generation time, population size, mutation rate, whether genes can be traded sideways between lineages, and whether any prior encounter with the substance exists to have left machinery behind.**
+
+Those five differ across organisms by orders of magnitude, and they differ in the *same direction* as everything else in this section. A marine bacterium divides in hours, lives at a billion cells per millilitre, and can acquire a working gene from an unrelated species by horizontal transfer. An eelgrass meadow, a mussel bed, a long-lived bivalve: generations in years, populations in thousands, and no mechanism for borrowing an adaptation from a neighbour at all.
+
+> **So under any sustained novel pressure, the ceiling rises for the fast and stays put for the slow.** The gap between them widens by itself, without the pressure needing to increase. That is the asymmetry of requirements again, one level down and running on a clock.
+
+Which reframes what a biocide programme is. **Applying a compound at national scale is an evolutionary selection experiment**, and the winners are decided in advance by that list of five: shortest generations, largest populations, genes that travel sideways. Precisely the organisms nobody intended to favour. The azole-resistant *Aspergillus* arising from agricultural fungicide use (`E15`) is not an unlucky side effect — it is the experiment working exactly as its design requires, and the resistance is simultaneously proof of exposure and proof of selection.
+
+### How wide the window really is, and what that costs the argument
+
+It is worth going to the far end of this, because it disciplines a phrase this project has used loosely.
+
+At hydrothermal vents and cold seeps there are dense, productive, structurally complex communities living with **no sunlight at any point in the food chain**. The primary producers are chemolithotrophs oxidising hydrogen sulphide, hydrogen or methane, and the tube worms and clams above them are hosts to bacterial symbionts doing the chemistry inside their tissues. Sulphide, which is the poison in `M7` and `E12` and the thing that kills eelgrass from below in `T1`, is there the *energy source*.
+
+So the window for **life** is enormously wider than the window for **the life we are talking about**. Anoxic, sulphidic, lightless water is not outside the range of the possible; it is an ancient and entirely viable mode of living, and it predates the oxygenated one by a long way.
+
+> Which means *dead water* is the wrong phrase, and this project should stop reaching for it. **A degraded Danish bay is not lifeless. It has reverted to an older configuration** — one that needs fewer of the recent innovations, runs on chemistry rather than light, and supports biomass without supporting structure. That is what the convergence above is converging on, and it is not a failure of life. It is a failure of the particular arrangement we arrived in the middle of and depend on.
+
+Stating it that way costs the rhetoric something and is worth it, because the alternative invites an easy and correct rebuttal — *there is plenty of life in that water* — which is true, and which a careless argument has no answer to. The claim that survives is narrower and harder to dismiss: not that life ends, but that **the slow, structured, long-lived, oxygen- and light-dependent part of it does**, and that this part is the one carrying everything anybody values.
+
+It also sharpens the dose argument. A concentration too low to kill the target is not thereby harmless: **sublethal is the regime where selection is strongest**, because it kills enough to matter and spares enough to breed. Which is why total load and ubiquity matter more than per-application concentration, and why the antibiotic instrument — reserve it, do not disperse it — is the right shape of response.
+
+And it is the exact argument behind the evolutionary-prior framework in [PROGRAMME.md](#PROGRAMME.md). A molecule life has met before has left machinery for handling it somewhere in the biosphere; a genuinely novel one has not, and there is no prior to draw on. The difference between those two is not chemistry — it is history.
+
 It also explains why the state maintains itself. The survivors of the filter are precisely the organisms that do not perform the functions — irrigating sediment, filtering water, holding it down, providing structure, detoxifying sulphide — whose loss made conditions worse in the first place.
 
 They converge. Whichever chain runs, the organisms left standing are the ones with the highest maximum growth rate, the lowest resource requirement, the shortest generation time and the least dependence on structure — fast, small, unselective, ungrazed. Every route ends in the same place, and that place is what the word *primordial soup* is reaching for: not an absence of life but an abundance of the lowest forms of it, which is why it registers as high biomass and high productivity on instruments built to treat those as health.
@@ -166,6 +206,27 @@ They converge. Whichever chain runs, the organisms left standing are the ones wi
 > **The terminal state is multiply realisable, so observing it identifies no cause.** A dead, greasy, over-productive water looks the same whether it was suffocated, poisoned, dredged, fished out, shaded, gelled or soured. Attribution has to come from the *discriminating* observables — the ones each hypothesis below names — and never from the end state, however carefully the end state is measured.
 
 This is also why a well-measured route is not thereby the route taken. Oxygen is the best-instrumented of the seven by a wide margin. That is a fact about Danish monitoring, not about Danish water.
+
+### Who actually runs the chemistry
+
+A note on which organisms this register is about, because the categories in use mislead. Eukaryotes — plants, animals, fungi, and the microbial supergroups with no common name — dominate two things: the catalogue of described species, and visible form. On every other measure the prokaryotes win, and it is not close.
+
+**Metabolically it is not a contest.** Eukaryotes do essentially two things: aerobic respiration, and oxygenic photosynthesis borrowed wholesale from a captured cyanobacterium. Bacteria and archaea do everything else. Every redox step in this entire register is theirs — nitrification, denitrification, anammox, sulphate reduction, sulphide oxidation, iron and manganese reduction, methanogenesis, methane oxidation. The electron acceptor cascade of `R5`, the sediment phosphate release of `R6`, the nitrogen sink that flips to a source under hypoxia — all prokaryotic, and **none of it done by anything any Danish marine survey counts**.
+
+The species count runs the other way — roughly two million described eukaryotes against some twenty thousand formally described prokaryotes — but that is an artefact of the species concept and of what will grow in a dish. Over ninety-nine per cent of prokaryotes will not, and they do not have biological species in the first place.
+
+**And this axis does close.** Metabolic type is a cross-product of four short, enumerable factors, which is the same shape of argument as the chemical window:
+
+| factor | the options | |
+|---|---|---|
+| Energy source | light, or chemical reaction | *photo-* / *chemo-* |
+| Electron donor | inorganic, or organic | *litho-* / *organo-* |
+| Carbon source | CO₂, or organic carbon | *auto-* / *hetero-* |
+| Terminal electron acceptor | O₂ → NO₃⁻ → Mn(IV) → Fe(III) → SO₄²⁻ → S⁰ → CO₂ | in falling energy yield |
+
+Eight combinations of the first three, of which about six are realised in nature, times a terminal-acceptor list that is essentially complete for natural waters. **That is an exhaustive classification of how anything makes a living**, and unlike the taxonomy it does not depend on anyone having named the organism. It is the right level at which to argue about biogeochemistry, and the wrong level is the one the monitoring forms use.
+
+The taxonomic list, for completeness and with the caveat that the eukaryote part is genuinely unsettled: **Bacteria**; **Archaea**; and **Eukarya**, which divides into Amorphea (animals and fungi together, plus amoebae), Archaeplastida (plants and the green and red algae), SAR (stramenopiles, alveolates, rhizarians — diatoms, kelp, oomycetes, labyrinthulids, dinoflagellates, ciliates, foraminifera), and several smaller groups whose placement moves between papers. **Viruses** sit outside the tree entirely and are, by `F11`, a major agent of mortality regardless.
 
 ### Every requirement, put through the oxygen questions
 
@@ -806,7 +867,7 @@ Compounds with no degradation terminus accumulating in biota and sediment.
 
 From harbours, industry, dumping and historic contamination.
 
-**Predicts.** Localised, persistent, and redistributed by exactly the dredging and dumping in group D.
+**Predicts.** Localised, persistent, and redistributed by exactly the dredging and dumping in group `D`.
 
 **Discriminated by.** Sediment metal concentration against fauna composition.
 
@@ -1026,7 +1087,7 @@ Seal, bird or fish die-offs depositing large local organic loads.
 
 Marine viruses run to about ten million particles per millilitre and lyse a large share of the bacterial and algal standing stock every day. Lysis does not pass carbon up the food chain - it returns it to dissolved and colloidal organic matter, to be respired by bacteria again. That short-circuit is the viral shunt.
 
-**Predicts.** Carbon is retained in the microbial loop instead of reaching anything larger, so the same primary production supports less higher life and leaves more dissolved organic matter behind - which is the substrate for the gel of group J and for the oxygen demand of `M1`. A shunted system looks productive and feeds nothing.
+**Predicts.** Carbon is retained in the microbial loop instead of reaching anything larger, so the same primary production supports less higher life and leaves more dissolved organic matter behind - which is the substrate for the gel of group `J` and for the oxygen demand of `M1`. A shunted system looks productive and feeds nothing.
 
 **Discriminated by.** Viral abundance and lysis rate against the share of production reaching mesozooplankton - the ratio, not either alone.
 
@@ -1292,7 +1353,7 @@ When the large and slow are gone, what remains are r-selected bacteria that prod
 
 **Outcomes:** O4, O2, O8, O1
 
-Diatoms build frustules of silica and cannot grow without dissolved silicon. Si comes from rock weathering, so human activity does not raise it, while N and P have risen severalfold. When Si runs out first, diatoms are replaced by flagellates and cyanobacteria - poorly grazed, prone to harmful blooms, and the principal producers of the gel in group J. Enhanced production also buries Si faster, so the depletion reinforces itself.
+Diatoms build frustules of silica and cannot grow without dissolved silicon. Si comes from rock weathering, so human activity does not raise it, while N and P have risen severalfold. When Si runs out first, diatoms are replaced by flagellates and cyanobacteria - poorly grazed, prone to harmful blooms, and the principal producers of the gel in group `J`. Enhanced production also buries Si faster, so the depletion reinforces itself.
 
 **Predicts.** Total biomass need not change at all; the *composition* does. This is a mechanism where reducing nitrogen genuinely helps, for a reason that has nothing to do with oxygen and that the chlorophyll indicator cannot see, because it counts biomass and the change is in who the biomass is.
 
@@ -1702,7 +1763,7 @@ Eelgrass detoxifies sediment sulphide by leaking oxygen from its roots into the 
 
 Seagrass beds host lucinid clams whose gill bacteria oxidise sulphide, keeping the rhizosphere habitable. Plant, clam and bacterium are a three-way partnership.
 
-**Predicts.** Lose the clams - to trawling, to hypoxia, to anything in group D - and the seagrass loses its sulphide protection **with no change in any nutrient**. This is the mycorrhizal story with the partner outside the plant, and it makes vegetation loss a consequence of fauna loss rather than of water quality.
+**Predicts.** Lose the clams - to trawling, to hypoxia, to anything in group `D` - and the seagrass loses its sulphide protection **with no change in any nutrient**. This is the mycorrhizal story with the partner outside the plant, and it makes vegetation loss a consequence of fauna loss rather than of water quality.
 
 **Discriminated by.** Lucinid presence and sulphide-oxidising activity in beds that persist against beds that failed, at matched water quality.
 
@@ -1962,7 +2023,7 @@ Dissolved organic matter and clay from fresh water flocculate on meeting salt an
 
 Salting-out: dissolved organics, and lipids especially, are less soluble at high ionic strength and partition preferentially into films, aggregates and the surface microlayer.
 
-**Predicts.** The same fat load produces more film and aggregate in salt water than in fresh - a candidate reason greasiness is a marine and brackish complaint, and a link between group B's imported fat and group J's surface film.
+**Predicts.** The same fat load produces more film and aggregate in salt water than in fresh - a candidate reason greasiness is a marine and brackish complaint, and a link between group `B`'s imported fat and group `J`'s surface film.
 
 **Discriminated by.** Partitioning of lipid between dissolved, particulate and microlayer fractions across the salinity gradient.
 
@@ -2154,7 +2215,7 @@ What it corrected with is worth copying:
 
 - **Longer, spatially replicated measurement.** Satellite records showed the Sahel greening while the desertification narrative was at its peak. The measurement reversed the finding. Here that is 6,288 stations and the full record rather than 29 stations and a window closing in 2012.
 
-- **Checking whether the baseline was ever real.** Fairhead and Leach found that forest patches in Guinea, read as relics of a destroyed forest, had been *created* by the villagers living in them. The causal arrow was backwards and the error lay in the assumed original state. That is group L, and it is the class of hypothesis this project was missing entirely until the parallel was pointed out.
+- **Checking whether the baseline was ever real.** Fairhead and Leach found that forest patches in Guinea, read as relics of a destroyed forest, had been *created* by the villagers living in them. The causal arrow was backwards and the error lay in the assumed original state. That is group `L`, and it is the class of hypothesis this project was missing entirely until the parallel was pointed out.
 
 The parallel is structural and it is not an argument that either narrative is false. Land degradation in the Sahel is real in places, and nutrient enrichment in Danish water is real in places. What the desertification literature establishes is that a real problem, a confident single-cause story, and a wrong attribution coexist comfortably for decades — and that the cost of the error is paid by whoever the available culprit turns out to be.
 
