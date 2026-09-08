@@ -187,7 +187,7 @@
  "B": {
   "kind": "group",
   "label": "Oxygen demand that arrived already made",
-  "text": "Organic matter imported ready to decay. No growth step, and for most of the group no nitrogen at any point."
+  "text": "Organic matter imported ready to decay. No growth step, and for most of the group no nitrogen at any point. **A caution that applies across the whole group: what is published is annual mass, and annual mass cannot represent a pulse.** The same tonnage delivered evenly over a year and delivered in twenty storms are different events biologically - the first is diluted below any threshold, the second can strip the oxygen from a receiving basin in hours and is gone before the next scheduled sampling. So a small annual figure here is not evidence of a small effect, and ranking these entries by their annual loads would be ranking them by the property that matters least."
  },
  "C": {
   "kind": "group",
@@ -317,7 +317,7 @@
  "B2": {
   "kind": "hypothesis (B)",
   "label": "Separate stormwater",
-  "text": "Road and roof runoff carrying organics, hydrocarbons, tyre wear and metals through a pipe that was built to skip treatment."
+  "text": "Two mechanisms in one pipe, and the second is the larger. First, what the rain picks up: road and roof runoff carrying organics, hydrocarbons, tyre wear and metals through a pipe built to skip treatment. Second, **what the system has been storing since the last storm.** Pipes and detention basins accumulate settled solids between events and go anoxic while they sit, so the deposit is reduced, sulphide-bearing and immediately oxygen-demanding on contact with seawater. A large storm scours it and delivers it as a pulse. The pipe is not only a conveyor of dilute runoff; it is a sink that periodically empties. Misconnected foul drains put sewage into the same store, so a separate system is not thereby a clean one."
  },
  "B3": {
   "kind": "hypothesis (B)",

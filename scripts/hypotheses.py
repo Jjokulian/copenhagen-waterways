@@ -1237,7 +1237,15 @@ GROUPS = [
      "other. All nine are treated identically."),
     ("B", "Oxygen demand that arrived already made",
      "Organic matter imported ready to decay. No growth step, and for most of the "
-     "group no nitrogen at any point."),
+     "group no nitrogen at any point. **A caution that applies across the whole "
+     "group: what is published is annual mass, and annual mass cannot represent a "
+     "pulse.** The same tonnage delivered evenly over a year and delivered in "
+     "twenty storms are different events biologically - the first is diluted below "
+     "any threshold, the second can strip the oxygen from a receiving basin in "
+     "hours and is gone before the next scheduled sampling. So a small annual "
+     "figure here is not evidence of a small effect, and ranking these entries by "
+     "their annual loads would be ranking them by the property that matters "
+     "least."),
     ("C", "Physical control of resupply",
      "Oxygen deficit is a balance. Half of it is whether the water is refilled."),
     ("D", "Physical disturbance of the bed",
@@ -1593,13 +1601,29 @@ H = [
      "per-outfall discharge volume.",
      "Per-outfall overflow volume and duration per event. Denmark has 19,665 "
      "registered outfalls and this is the single most valuable missing series."),
-    ("B2", "B", "Separate stormwater", ["O1", "O2", "O9"],
-     "Road and roof runoff carrying organics, hydrocarbons, tyre wear and metals "
-     "through a pipe that was built to skip treatment.",
-     "Event-timed like B1 but chemically distinct - hydrocarbons and 6PPD-quinone "
-     "rather than faecal indicators.",
-     "Faecal indicator against hydrocarbon signature in the same event.",
-     "Per-outfall stormwater volume; road-runoff chemistry."),
+    ("B2", "B", "Separate stormwater", ["O1", "O2", "O9", "O3"],
+     "Two mechanisms in one pipe, and the second is the larger. First, what the "
+     "rain picks up: road and roof runoff carrying organics, hydrocarbons, tyre "
+     "wear and metals through a pipe built to skip treatment. Second, **what the "
+     "system has been storing since the last storm.** Pipes and detention basins "
+     "accumulate settled solids between events and go anoxic while they sit, so "
+     "the deposit is reduced, sulphide-bearing and immediately oxygen-demanding on "
+     "contact with seawater. A large storm scours it and delivers it as a pulse. "
+     "The pipe is not only a conveyor of dilute runoff; it is a sink that "
+     "periodically empties. Misconnected foul drains put sewage into the same "
+     "store, so a separate system is not thereby a clean one.",
+     "Concentration peaks at the onset of an event and decays through it - the "
+     "first flush - so load per event scales with the length of the preceding dry "
+     "spell and the peak shear reached, not with rainfall volume alone. A pulse "
+     "arrives as reduced material and turbidity together, so oxygen falls and "
+     "light falls in the same hours.",
+     "First-flush concentration against the event mean, at the same outfall. "
+     "Sediment stock in basins before and after a large storm. Reduced-sulphur "
+     "signature in what is discharged, which separates a scoured in-system deposit "
+     "from freshly washed-off road surface.",
+     "Event-resolved concentration and volume at the outfall, and basin sediment "
+     "surveys. Annual totals exist (278.3 million m3/yr over 16,185 outfalls) and "
+     "cannot test this."),
     ("B3", "B", "Treatment plant organic load", ["O1", "O5"],
      "Continuous discharge of residual COD and BOD from 750 plants.",
      "Steady rather than event-driven; scales with population equivalent.",
