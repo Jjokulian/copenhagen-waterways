@@ -623,13 +623,13 @@
  ],
  "streams": [
   {
-   "key": "ctd",
-   "label": "CTD profiles",
+   "key": "lys",
+   "label": "Light attenuation",
    "note": ""
   },
   {
-   "key": "lys",
-   "label": "Light attenuation",
+   "key": "ctd",
+   "label": "CTD profiles",
    "note": ""
   },
   {
@@ -659,21 +659,21 @@
    "label": "Light attenuation Kd",
    "scale": 1000,
    "unit": "per m",
-   "filled": 2705
+   "filled": 21062
   },
   {
    "key": "secchi",
    "label": "Secchi depth",
    "scale": 100,
    "unit": "m",
-   "filled": 4361
+   "filled": 36478
   },
   {
    "key": "bottom",
    "label": "Bottom depth",
    "scale": 100,
    "unit": "m",
-   "filled": 3532
+   "filled": 29799
   }
  ],
  "annual_only": {
