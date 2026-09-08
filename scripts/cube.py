@@ -155,45 +155,86 @@ def mon(datestr):
     return (y - Y0) * 12 + (m - 1)
 
 
-def scan_oda(fname, station_col, date_col, idx, nareas):
-    """One pass per topic, collapsing straight into area-months so a 51-million-row
-    file never lands in memory."""
+def scan_oda(fname, station_col, date_col, polys, lon_col=None, lat_col=None,
+             pooled=None):
+    """One pass per topic, collecting positions and presence together.
+
+    The obvious design - build a station register once, then look topics up in it -
+    does not work here, and the way it fails is silent. ODA's Observationssted
+    register holds 6,258 marine stations; the CTD extract names 1,527; **35 of them
+    are in both**. They are different universes, so a lookup against the register
+    matched almost nothing and every stream came back empty rather than wrong.
+
+    So each topic file supplies its own coordinates. CTD and light carry Bredde and
+    Laengde per row; Maaledybde carries neither usable pair, so its stations are
+    positioned from the pool the other topics built, which works because they are
+    largely the same monitoring stations.
+    """
     p = os.path.join(RAW, "oda", fname)
     if not os.path.exists(p):
-        return None, 0
-    bits = [bytearray(NMON) for _ in range(nareas)]
-    n = 0
-    # csv.DictReader builds a dict per row, which over 51 million CTD rows costs
-    # more than everything else here combined. Only two columns are needed, so
-    # split the line and index them, and collapse to (station, year-month) before
-    # any further work - the CTD file is one row per depth, so the same cell is
-    # hit dozens of times per cast.
+        return None, 0, {}
+    months = collections.defaultdict(set)
+    pos = {}
     with gzip.open(p, "rt", encoding="iso-8859-1") as fh:
         head = fh.readline().rstrip("\r\n").split(";")
         try:
             si, di = head.index(station_col), head.index(date_col)
         except ValueError:
-            log(f"    columns {station_col}/{date_col} not found in {fname}")
-            return None, 0
-        need = max(si, di)
+            log(f"    {fname}: no {station_col}/{date_col}")
+            return None, 0, {}
+        xi = head.index(lon_col) if lon_col and lon_col in head else None
+        yi = head.index(lat_col) if lat_col and lat_col in head else None
+        ncol = len(head)
         seen = set()
+        skipped = 0
+        # ODA quotes every field. csv.DictReader strips the quotes; splitting on
+        # ";" does not, so "19890830" fails to parse as a date and the whole topic
+        # silently yields nothing. Strip them. And because a quoted field could in
+        # principle contain a separator - which would shift every index after it -
+        # rows whose field count does not match the header are counted and
+        # skipped rather than read at the wrong offsets.
+        def uq(v):
+            v = v.strip()
+            return v[1:-1] if len(v) > 1 and v[0] == '"' and v[-1] == '"' else v
         for line in fh:
-            f = line.split(";")
-            if len(f) <= need:
+            f = line.rstrip("\r\n").split(";")
+            if len(f) != ncol:
+                skipped += 1
                 continue
-            key = (f[si], f[di][:6])
+            st = uq(f[si])
+            dat = uq(f[di])
+            key = (st, dat[:6])
             if key in seen:
                 continue
             seen.add(key)
-            k = idx.get(f[si].strip())
-            if k is None:
-                continue
-            m = mon(f[di])
+            m = mon(dat)
             if m is None:
                 continue
+            months[st].add(m)
+            if xi is not None and st not in pos:
+                lo, la = num(uq(f[xi])), num(uq(f[yi]))
+                if lo and la and 3 < lo < 16 and 53 < la < 59:
+                    pos[st] = (lo, la)
+    if pooled:
+        for st in months:
+            if st not in pos and st in pooled:
+                pos[st] = pooled[st]
+    bits = [bytearray(NMON) for _ in range(len(polys))]
+    placed = 0
+    where = {}
+    for st, ms in months.items():
+        if st not in pos:
+            continue
+        k = locate(polys, *pos[st])
+        if k is None:
+            continue
+        where[st] = k
+        placed += 1
+        for m in ms:
             bits[k][m] = 1
-            n += 1
-    return bits, n
+    log(f"      {len(months):,} stations, {placed:,} placed in a water body"
+        + (f", {skipped:,} rows skipped on field count" if skipped else ""))
+    return bits, sum(sum(b) for b in bits), pos
 
 
 def monthly_median(fname, station_col, date_col, value_col, idx, nareas, dedupe=None):
@@ -247,8 +288,7 @@ def main():
     polys = load_polygons()
     n = len(polys)
     log(f"  {n} water bodies")
-    idx = station_areas(polys)
-    log(f"  {len(idx):,} marine stations placed")
+    pooled = {}
 
     # ---- presence streams -------------------------------------------------
     streams, layers = [], []
@@ -257,18 +297,22 @@ def main():
         streams.append({"key": key, "label": label, "note": note})
         layers.append(bits)
 
-    for key, label, fn, sc, dc in (
-            ("ctd", "CTD profiles", "ctd.csv.gz", "ObservationsStedNr", "Dato"),
-            ("lys", "Light attenuation", "lys.csv.gz", "ObservationsStedNr", "Dato"),
+    # Order matters: the two topics that carry their own coordinates run first and
+    # build the pool that positions the third.
+    for key, label, fn, sc, dc, lo, la in (
+            ("lys", "Light attenuation", "lys.csv.gz", "ObservationsStedNr", "Dato",
+             "Længde", "Bredde"),
+            ("ctd", "CTD profiles", "ctd.csv.gz", "ObservationsStedNr", "Dato",
+             "Længde", "Bredde"),
             ("secchi", "Secchi and bottom depth", "maaledybde.csv.gz",
-             "ObservationsstedNr", "StartDato")):
-        bits, cnt = scan_oda(fn, sc, dc, idx, n)
+             "ObservationsstedNr", "StartDato", None, None)):
+        log(f"    {key} ...")
+        bits, cells, pos = scan_oda(fn, sc, dc, polys, lo, la, pooled)
+        pooled.update(pos)
         if bits is None:
-            log(f"    {key:8} MISSING {fn}")
             continue
         add(key, label, bits)
-        log(f"    {key:8} {cnt:,} rows -> "
-            f"{sum(sum(b) for b in bits):,} area-months")
+        log(f"    {key:8} {cells:,} area-months")
 
     # Streams whose source publishes only a span or an annual figure. They are
     # recorded as coverage over their stated window, and flagged, so the map can
@@ -333,7 +377,9 @@ def main():
              "StartDato", "SigtDybde_m", 100, "m", None),
             ("bottom", "Bottom depth", "maaledybde.csv.gz", "ObservationsstedNr",
              "StartDato", "BundDybde_m", 100, "m", None)):
-        acc = monthly_median(fn, sc, dc, vc, idx, n, ded)
+        where = {st: locate(polys, *xy) for st, xy in pooled.items()}
+        where = {st: k for st, k in where.items() if k is not None}
+        acc = monthly_median(fn, sc, dc, vc, where, n, ded)
         if acc is None:
             continue
         blob, filled = pack_vals(acc, n, scale)

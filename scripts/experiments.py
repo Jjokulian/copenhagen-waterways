@@ -353,6 +353,46 @@ X = [
      "because seven PDFs happened to be recoverable, which is archaeology rather "
      "than method."),
 
+    ("X22", "Find the baskets, instead of accepting the ones that were drawn",
+     "analysis",
+     ["L5", "I4", "A1", "Z8"], "desk",
+     "The Copenhagen map does not aggregate into administrative units. Its units "
+     "are functional - a catchment is the ground that drains to one point, a flow "
+     "path is where water actually goes - so the boundaries are consequences of "
+     "the terrain rather than decisions about it. The marine map has no equivalent: "
+     "it inherits 123 water bodies drawn for administration, and every statistic "
+     "computed in them inherits that drawing. The question nobody asks is whether "
+     "those lines are where the sea changes.",
+     "Nothing physical. The satellite record supplies a field with no station bias "
+     "at all - daily 1 km ocean colour since 1997, every pixel measured the same "
+     "way on the same day - so the partition can be derived from the water rather "
+     "than imposed on it.",
+     "**The null already exists and was measured**: similarity of log Kd490 against "
+     "separation, pooled over 144 days, giving r = 0.97 at 1 km, 0.74 at 12 km, "
+     "0.50 at 31 km. Two points 12 km apart should agree at 0.74 wherever they "
+     "are. So take pairs at a fixed separation that straddle an official boundary "
+     "and pairs at the same separation that do not. A boundary that is real shows "
+     "*less* agreement across it than the curve predicts; one that agrees more "
+     "than the curve predicts is splitting water that behaves as one thing.",
+     "The gridded record already fetched, and the 123 polygons. Then the harder "
+     "half: cluster the field on its own temporal correlation structure and "
+     "compare the discovered partition to the official one - not to score it, but "
+     "to produce a map of where the two disagree.",
+     "Boundaries that pass → the units are doing real work and aggregation inside "
+     "them is defensible, which would be a genuine finding *for* the current "
+     "framework. Boundaries that fail → named, located, and quantified in "
+     "correlation units rather than argued about. A discovered partition that cuts "
+     "across the official one → the strongest possible version of the argument, "
+     "because it says not merely that the baskets are wrong but where the right "
+     "ones are.",
+     "Two limits stated in advance. The satellite sees the surface, and its "
+     "retrieval fails hardest in exactly the fjords where the boundaries are "
+     "densest, so the test is strongest in open water and weakest where it would "
+     "matter most. And a partition discovered from one variable is a partition for "
+     "that variable: the baskets for light need not be the baskets for oxygen, and "
+     "finding that they differ would itself dispose of the idea that one set of "
+     "lines can serve every purpose."),
+
     ("X8", "Are the trends in the sea or in the instruments?", "analysis",
      ["I1", "I2", "I3", "I5", "I6", "L3"], "desk",
      "The raw record carries the supplier, the sampling gear, the sonde, the "

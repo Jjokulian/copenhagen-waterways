@@ -1,0 +1,682 @@
+{
+ "_what": "Coverage cube for the 4D map. One bit per area, month and stream in cube.bin; one Int16 per area and month in each val_*.bin, divided by the variable's scale, with -32768 meaning no data.",
+ "_order": "Bits are packed area-major within each stream, months least-significant-bit first, ceil(months/8) bytes per area.",
+ "year0": 1980,
+ "year1": 2026,
+ "months": 564,
+ "areas": [
+  {
+   "id": "DKCOAST1",
+   "name": "Roskilde Fjord, ydre",
+   "km2": 71.37
+  },
+  {
+   "id": "DKCOAST2",
+   "name": "Roskilde Fjord, indre",
+   "km2": 51.78
+  },
+  {
+   "id": "DKCOAST6",
+   "name": "Nordlige Øresund",
+   "km2": 355.68
+  },
+  {
+   "id": "DKCOAST16",
+   "name": "Korsør Nor",
+   "km2": 7.79
+  },
+  {
+   "id": "DKCOAST17",
+   "name": "Basnæs Nor",
+   "km2": 9.46
+  },
+  {
+   "id": "DKCOAST18",
+   "name": "Holsteinborg Nor",
+   "km2": 6.47
+  },
+  {
+   "id": "DKCOAST24",
+   "name": "Isefjord, ydre",
+   "km2": 227.88
+  },
+  {
+   "id": "DKCOAST25",
+   "name": "Skælskør Fjord og Nor",
+   "km2": 5.2
+  },
+  {
+   "id": "DKCOAST28",
+   "name": "Sejerø Bugt",
+   "km2": 821.0
+  },
+  {
+   "id": "DKCOAST29",
+   "name": "Kalundborg Fjord",
+   "km2": 75.72
+  },
+  {
+   "id": "DKCOAST34",
+   "name": "Smålandsfarvandet, syd",
+   "km2": 247.05
+  },
+  {
+   "id": "DKCOAST35",
+   "name": "Karrebæk Fjord",
+   "km2": 15.73
+  },
+  {
+   "id": "DKCOAST36",
+   "name": "Dybsø Fjord",
+   "km2": 17.04
+  },
+  {
+   "id": "DKCOAST37",
+   "name": "Avnø Fjord",
+   "km2": 40.71
+  },
+  {
+   "id": "DKCOAST38",
+   "name": "Guldborgsund",
+   "km2": 51.25
+  },
+  {
+   "id": "DKCOAST44",
+   "name": "Hjelm Bugt",
+   "km2": 343.37
+  },
+  {
+   "id": "DKCOAST45",
+   "name": "Grønsund",
+   "km2": 100.5
+  },
+  {
+   "id": "DKCOAST47",
+   "name": "Præstø Fjord",
+   "km2": 21.85
+  },
+  {
+   "id": "DKCOAST49",
+   "name": "Stege Nor",
+   "km2": 5.1
+  },
+  {
+   "id": "DKCOAST56",
+   "name": "Østersøen, Bornholm",
+   "km2": 211.38
+  },
+  {
+   "id": "DKCOAST57",
+   "name": "Østersøen, Christiansø",
+   "km2": 18.87
+  },
+  {
+   "id": "DKCOAST59",
+   "name": "Nærå Strand",
+   "km2": 4.78
+  },
+  {
+   "id": "DKCOAST62",
+   "name": "Lillestrand",
+   "km2": 6.05
+  },
+  {
+   "id": "DKCOAST68",
+   "name": "Lindelse Nor",
+   "km2": 6.84
+  },
+  {
+   "id": "DKCOAST72",
+   "name": "Kløven",
+   "km2": 10.03
+  },
+  {
+   "id": "DKCOAST74",
+   "name": "Bredningen",
+   "km2": 0.26
+  },
+  {
+   "id": "DKCOAST80",
+   "name": "Gamborg Fjord",
+   "km2": 10.24
+  },
+  {
+   "id": "DKCOAST82",
+   "name": "Aborg Minde Nor",
+   "km2": 0.17
+  },
+  {
+   "id": "DKCOAST83",
+   "name": "Holckenhavn Fjord",
+   "km2": 0.54
+  },
+  {
+   "id": "DKCOAST84",
+   "name": "Kerteminde Fjord",
+   "km2": 3.31
+  },
+  {
+   "id": "DKCOAST85",
+   "name": "Kertinge Nor",
+   "km2": 5.34
+  },
+  {
+   "id": "DKCOAST86",
+   "name": "Nyborg Fjord",
+   "km2": 7.97
+  },
+  {
+   "id": "DKCOAST87",
+   "name": "Helnæs Bugt",
+   "km2": 66.63
+  },
+  {
+   "id": "DKCOAST89",
+   "name": "Lunkebugten",
+   "km2": 10.61
+  },
+  {
+   "id": "DKCOAST92",
+   "name": "Odense Fjord, ydre",
+   "km2": 45.81
+  },
+  {
+   "id": "DKCOAST93",
+   "name": "Odense Fjord, Seden Strand",
+   "km2": 15.36
+  },
+  {
+   "id": "DKCOAST95",
+   "name": "Storebælt, SV",
+   "km2": 164.02
+  },
+  {
+   "id": "DKCOAST96",
+   "name": "Storebælt, NV",
+   "km2": 116.3
+  },
+  {
+   "id": "DKCOAST101",
+   "name": "Genner Bugt",
+   "km2": 5.01
+  },
+  {
+   "id": "DKCOAST102",
+   "name": "Åbenrå Fjord",
+   "km2": 32.62
+  },
+  {
+   "id": "DKCOAST103",
+   "name": "Als Fjord",
+   "km2": 34.99
+  },
+  {
+   "id": "DKCOAST104",
+   "name": "Als Sund",
+   "km2": 5.54
+  },
+  {
+   "id": "DKCOAST105",
+   "name": "Augustenborg Fjord",
+   "km2": 15.03
+  },
+  {
+   "id": "DKCOAST106",
+   "name": "Haderslev Fjord",
+   "km2": 5.13
+  },
+  {
+   "id": "DKCOAST107",
+   "name": "Juvre Dyb",
+   "km2": 127.95
+  },
+  {
+   "id": "DKCOAST108",
+   "name": "Avnø Vig",
+   "km2": 0.36
+  },
+  {
+   "id": "DKCOAST109",
+   "name": "Hejlsminde Nor",
+   "km2": 1.92
+  },
+  {
+   "id": "DKCOAST110",
+   "name": "Nybøl Nor",
+   "km2": 7.9
+  },
+  {
+   "id": "DKCOAST111",
+   "name": "Lister Dyb",
+   "km2": 205.34
+  },
+  {
+   "id": "DKCOAST113",
+   "name": "Flensborg Fjord, indre",
+   "km2": 12.89
+  },
+  {
+   "id": "DKCOAST114",
+   "name": "Flensborg Fjord, ydre",
+   "km2": 149.87
+  },
+  {
+   "id": "DKCOAST119",
+   "name": "Vesterhavet, syd",
+   "km2": 655.2
+  },
+  {
+   "id": "DKCOAST120",
+   "name": "Knudedyb",
+   "km2": 158.49
+  },
+  {
+   "id": "DKCOAST122",
+   "name": "Vejle Fjord, ydre",
+   "km2": 91.99
+  },
+  {
+   "id": "DKCOAST123",
+   "name": "Vejle Fjord, indre",
+   "km2": 16.27
+  },
+  {
+   "id": "DKCOAST124",
+   "name": "Kolding Fjord, indre",
+   "km2": 4.83
+  },
+  {
+   "id": "DKCOAST125",
+   "name": "Kolding Fjord, ydre",
+   "km2": 10.09
+  },
+  {
+   "id": "DKCOAST127",
+   "name": "Horsens Fjord, ydre",
+   "km2": 32.57
+  },
+  {
+   "id": "DKCOAST128",
+   "name": "Horsens Fjord, indre",
+   "km2": 45.6
+  },
+  {
+   "id": "DKCOAST129",
+   "name": "Nissum Fjord, ydre",
+   "km2": 32.65
+  },
+  {
+   "id": "DKCOAST131",
+   "name": "Nissum Fjord, Felsted Kog",
+   "km2": 10.41
+  },
+  {
+   "id": "DKCOAST132",
+   "name": "Ringkøbing Fjord",
+   "km2": 279.39
+  },
+  {
+   "id": "DKCOAST133",
+   "name": "Vesterhavet, nord",
+   "km2": 214.57
+  },
+  {
+   "id": "DKCOAST136",
+   "name": "Randers Fjord, indre",
+   "km2": 7.13
+  },
+  {
+   "id": "DKCOAST137",
+   "name": "Randers Fjord, ydre",
+   "km2": 18.1
+  },
+  {
+   "id": "DKCOAST138",
+   "name": "Hevring Bugt",
+   "km2": 459.5
+  },
+  {
+   "id": "DKCOAST139",
+   "name": "Anholt",
+   "km2": 211.58
+  },
+  {
+   "id": "DKCOAST140",
+   "name": "Djursland Øst",
+   "km2": 175.22
+  },
+  {
+   "id": "DKCOAST141",
+   "name": "Ebeltoft Vig",
+   "km2": 84.51
+  },
+  {
+   "id": "DKCOAST142",
+   "name": "Stavns Fjord",
+   "km2": 16.03
+  },
+  {
+   "id": "DKCOAST144",
+   "name": "Knebel Vig",
+   "km2": 7.42
+  },
+  {
+   "id": "DKCOAST145",
+   "name": "Kalø Vig",
+   "km2": 77.74
+  },
+  {
+   "id": "DKCOAST146",
+   "name": "Norsminde Fjord",
+   "km2": 1.79
+  },
+  {
+   "id": "DKCOAST147",
+   "name": "Århus Bugt og Begtrup Vig",
+   "km2": 231.61
+  },
+  {
+   "id": "DKCOAST154",
+   "name": "Kattegat, Læsø",
+   "km2": 609.35
+  },
+  {
+   "id": "DKCOAST232",
+   "name": "Nissum Bredning",
+   "km2": 238.16
+  },
+  {
+   "id": "DKCOAST235",
+   "name": "Nibe Bredning og Langerak",
+   "km2": 165.89
+  },
+  {
+   "id": "DKCOAST238",
+   "name": "Halkær Bredning",
+   "km2": 13.39
+  },
+  {
+   "id": "DKCOAST157",
+   "name": "Bjørnholms Bugt, Riisgårde Bredning, Skive Fjord og Lovns Bredning",
+   "km2": 222.09
+  },
+  {
+   "id": "DKCOAST158",
+   "name": "Hjarbæk Fjord",
+   "km2": 24.48
+  },
+  {
+   "id": "DKCOAST159",
+   "name": "Mariager Fjord, indre",
+   "km2": 17.6
+  },
+  {
+   "id": "DKCOAST160",
+   "name": "Mariager Fjord, ydre",
+   "km2": 27.83
+  },
+  {
+   "id": "DKCOAST200",
+   "name": "Kattegat, Nordsjælland",
+   "km2": 721.22
+  },
+  {
+   "id": "DKCOAST204",
+   "name": "Jammerland Bugt og Musholm Bugt",
+   "km2": 290.36
+  },
+  {
+   "id": "DKCOAST205",
+   "name": "Kattegat, Nordsjælland >20 m",
+   "km2": 554.63
+  },
+  {
+   "id": "DKCOAST206",
+   "name": "Smålandsfarvandet, åbne del",
+   "km2": 1217.93
+  },
+  {
+   "id": "DKCOAST207",
+   "name": "Nakskov Fjord",
+   "km2": 50.35
+  },
+  {
+   "id": "DKCOAST208",
+   "name": "Femerbælt",
+   "km2": 199.08
+  },
+  {
+   "id": "DKCOAST209",
+   "name": "Rødsand og Bredningen",
+   "km2": 242.36
+  },
+  {
+   "id": "DKCOAST212",
+   "name": "Faaborg Fjord",
+   "km2": 10.65
+  },
+  {
+   "id": "DKCOAST214",
+   "name": "Det sydfynske Øhav",
+   "km2": 437.44
+  },
+  {
+   "id": "DKCOAST231",
+   "name": "Lillebælt, Snævringen",
+   "km2": 59.72
+  },
+  {
+   "id": "DKCOAST219",
+   "name": "Århus Bugt syd, Samsø og Nordlige Bælthav",
+   "km2": 1835.6
+  },
+  {
+   "id": "DKCOAST221",
+   "name": "Skagerrak",
+   "km2": 990.7
+  },
+  {
+   "id": "DKCOAST222",
+   "name": "Kattegat, Aalborg Bugt",
+   "km2": 1052.52
+  },
+  {
+   "id": "DKCOAST225",
+   "name": "Nordlige Kattegat, Ålbæk Bugt",
+   "km2": 458.44
+  },
+  {
+   "id": "DKCOAST130",
+   "name": "Nissum Fjord, mellem",
+   "km2": 19.78
+  },
+  {
+   "id": "DKCOAST236",
+   "name": "Thisted Bredning",
+   "km2": 150.99
+  },
+  {
+   "id": "DKCOAST233",
+   "name": "Kås Bredning og Venø Bugt",
+   "km2": 295.99
+  },
+  {
+   "id": "DKCOAST234",
+   "name": "Løgstør Bredning",
+   "km2": 407.46
+  },
+  {
+   "id": "DKCOAST224",
+   "name": "Nordlige Lillebælt",
+   "km2": 275.3
+  },
+  {
+   "id": "DKCOAST217",
+   "name": "Lillebælt, Bredningen",
+   "km2": 288.1
+  },
+  {
+   "id": "DKCOAST201",
+   "name": "Køge Bugt",
+   "km2": 562.38
+  },
+  {
+   "id": "DKCOAST90",
+   "name": "Langelandssund",
+   "km2": 228.56
+  },
+  {
+   "id": "DKCOAST165",
+   "name": "Isefjord, indre",
+   "km2": 85.87
+  },
+  {
+   "id": "DKCOAST216",
+   "name": "Lillebælt, syd",
+   "km2": 1148.63
+  },
+  {
+   "id": "DKCOAST48",
+   "name": "Stege Bugt",
+   "km2": 131.8
+  },
+  {
+   "id": "DKCOAST46",
+   "name": "Fakse Bugt",
+   "km2": 551.04
+  },
+  {
+   "id": "DKCOAST121",
+   "name": "Grådyb",
+   "km2": 124.04
+  },
+  {
+   "id": "DKCOAST58",
+   "name": "Bornholm, 12 sm",
+   "km2": 3831.36
+  },
+  {
+   "id": "DKCOAST100",
+   "name": "Lillebælt, syd 12 sm",
+   "km2": 482.19
+  },
+  {
+   "id": "DKCOAST116",
+   "name": "Lillebælt, Als-Ærø 12 sm",
+   "km2": 65.66
+  },
+  {
+   "id": "DKCOAST163",
+   "name": "Nordlige Kattegat, 12 sm",
+   "km2": 2495.78
+  },
+  {
+   "id": "DKCOAST203",
+   "name": "Storebælt, nord 12 sm",
+   "km2": 686.77
+  },
+  {
+   "id": "DKCOAST148",
+   "name": "Anholt, 12 sm",
+   "km2": 1526.14
+  },
+  {
+   "id": "DKCOAST210",
+   "name": "Femerbælt, 12 sm",
+   "km2": 496.99
+  },
+  {
+   "id": "DKCOAST211",
+   "name": "Østersøen, 12 sm",
+   "km2": 1880.81
+  },
+  {
+   "id": "DKCOAST218",
+   "name": "Vesterhavet, 12 sm",
+   "km2": 3703.08
+  },
+  {
+   "id": "DKCOAST220",
+   "name": "Kattegat, SV 12 sm",
+   "km2": 1766.79
+  },
+  {
+   "id": "DKCOAST223",
+   "name": "Skagerrak, 12 sm",
+   "km2": 4248.61
+  },
+  {
+   "id": "DKCOAST215",
+   "name": "Storebælt, syd 12 sm",
+   "km2": 572.63
+  },
+  {
+   "id": "DKCOAST202",
+   "name": "Kattegat, SØ 12 sm",
+   "km2": 1315.75
+  },
+  {
+   "id": "DKCOAST11",
+   "name": "Øresund, 12 sm",
+   "km2": 169.67
+  }
+ ],
+ "streams": [
+  {
+   "key": "ctd",
+   "label": "CTD profiles",
+   "note": ""
+  },
+  {
+   "key": "lys",
+   "label": "Light attenuation",
+   "note": ""
+  },
+  {
+   "key": "secchi",
+   "label": "Secchi and bottom depth",
+   "note": ""
+  },
+  {
+   "key": "bathing",
+   "label": "Bathing water class",
+   "note": "Published as an annual class. The bit marks the bathing season of each year in the stated span, not months anyone sampled."
+  },
+  {
+   "key": "model",
+   "label": "DCE statistical model",
+   "note": "Fitted once over a window. The bit marks the fitting window, which is not observation."
+  },
+  {
+   "key": "hz",
+   "label": "Hazardous substances",
+   "note": "Sparse campaigns; the span is stated, the individual dates are not in this extract."
+  }
+ ],
+ "variables": [
+  {
+   "key": "kd",
+   "label": "Light attenuation Kd",
+   "scale": 1000,
+   "unit": "per m",
+   "filled": 2705
+  },
+  {
+   "key": "secchi",
+   "label": "Secchi depth",
+   "scale": 100,
+   "unit": "m",
+   "filled": 4361
+  },
+  {
+   "key": "bottom",
+   "label": "Bottom depth",
+   "scale": 100,
+   "unit": "m",
+   "filled": 3532
+  }
+ ],
+ "annual_only": {
+  "outfalls": "The published extract carries cubic metres per year and a count of overflows per year. Nothing finer exists outside the CVR-gated PULS application, so the map shows no time axis for it rather than a total spread over months. This is B1's missing series, drawn as the hole it is."
+ }
+}

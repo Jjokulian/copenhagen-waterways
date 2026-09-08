@@ -10,13 +10,13 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 ## Three kinds of work, which are not interchangeable
 
-**Constructive and investigative — `experiment`** (11 of 21 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+**Constructive and investigative — `experiment`** (11 of 22 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
 
-**Investigative — `measurement`** (5 of 21 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+**Investigative — `measurement`** (5 of 22 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
 
-**Build the means of measurement — `instrument`** (3 of 21 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
+**Build the means of measurement — `instrument`** (3 of 22 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
 
-**Armchair — `analysis`** (2 of 21 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+**Armchair — `analysis`** (3 of 22 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
 
 Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
 
@@ -27,9 +27,9 @@ Naming them separately matters because they are not substitutes and they are not
 | `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X18, X2, X7, X19, X20, X9, X10, X12, X14, X15, X16 |
 | `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11, X13 |
 | `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5, X17 |
-| `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X21, X8 |
+| `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X21, X22, X8 |
 
-**14 of 21 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
+**15 of 22 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
 
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
@@ -400,6 +400,24 @@ Denmark has 20,402 outfalls with a position, an annual volume and a reported red
 **Decide, in advance.** Catchments reproducing the published areas within a stated error → per-outfall connected area for the whole country, which is what B1 and B2 need and neither has. Systematic failure in some region or sewer type → that is informative too, because it localises where terrain stops predicting the network. Failure everywhere → the inference does not work and the register stays the only route.
 
 *It produces a plausible network, not the real one, and every use must say so. But 97 of 98 municipalities currently have no catchment map at all, and a plausible one with a stated error beats nothing. Copenhagen's exists only because seven PDFs happened to be recoverable, which is archaeology rather than method.*
+
+### X22 — Find the baskets, instead of accepting the ones that were drawn
+
+`analysis`
+
+**Bears on:** [`L5`](#HYPOTHESES.md) The reference sites are not references, [`I4`](#HYPOTHESES.md) Changing indicator definition, [`A1`](#HYPOTHESES.md) Danish land-based nitrogen load, [`Z8`](#HYPOTHESES.md) The attenuation budget is never partitioned
+
+The Copenhagen map does not aggregate into administrative units. Its units are functional - a catchment is the ground that drains to one point, a flow path is where water actually goes - so the boundaries are consequences of the terrain rather than decisions about it. The marine map has no equivalent: it inherits 123 water bodies drawn for administration, and every statistic computed in them inherits that drawing. The question nobody asks is whether those lines are where the sea changes.
+
+**Manipulate.** Nothing physical. The satellite record supplies a field with no station bias at all - daily 1 km ocean colour since 1997, every pixel measured the same way on the same day - so the partition can be derived from the water rather than imposed on it.
+
+**Control.** **The null already exists and was measured**: similarity of log Kd490 against separation, pooled over 144 days, giving r = 0.97 at 1 km, 0.74 at 12 km, 0.50 at 31 km. Two points 12 km apart should agree at 0.74 wherever they are. So take pairs at a fixed separation that straddle an official boundary and pairs at the same separation that do not. A boundary that is real shows *less* agreement across it than the curve predicts; one that agrees more than the curve predicts is splitting water that behaves as one thing.
+
+**Measure.** The gridded record already fetched, and the 123 polygons. Then the harder half: cluster the field on its own temporal correlation structure and compare the discovered partition to the official one - not to score it, but to produce a map of where the two disagree.
+
+**Decide, in advance.** Boundaries that pass → the units are doing real work and aggregation inside them is defensible, which would be a genuine finding *for* the current framework. Boundaries that fail → named, located, and quantified in correlation units rather than argued about. A discovered partition that cuts across the official one → the strongest possible version of the argument, because it says not merely that the baskets are wrong but where the right ones are.
+
+*Two limits stated in advance. The satellite sees the surface, and its retrieval fails hardest in exactly the fjords where the boundaries are densest, so the test is strongest in open water and weakest where it would matter most. And a partition discovered from one variable is a partition for that variable: the baskets for light need not be the baskets for oxygen, and finding that they differ would itself dispose of the idea that one set of lines can serve every purpose.*
 
 ### X8 — Are the trends in the sea or in the instruments?
 
