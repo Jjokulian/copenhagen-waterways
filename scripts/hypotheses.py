@@ -40,6 +40,65 @@ from common import DERIVED, ROOT, log, write_json
 
 OUT = os.path.join(ROOT, "docs", "HYPOTHESES.md")
 
+
+# The categorical layer, above the routes.
+#
+# Enumerating mechanisms one at a time has no stopping rule - the register went
+# from 71 to 127 in an afternoon and would go further. Enumerating the *kinds* of
+# way a living thing can fail is a smaller problem, and it gives a procedure: for
+# each avenue, each requirement, and each functional group, ask whether an instance
+# is in the register. Gaps then show up by construction rather than by luck.
+#
+# An organism is a system that maintains itself against entropy using flows. It can
+# fail because a flow it needs stops, because something arrives that harms it,
+# because the field it sits in leaves its tolerable range, because it is physically
+# destroyed, because something eats or infects it, because a partner it depends on
+# goes, because it fails to replace itself, or because the change outruns its
+# capacity to adjust. We do not claim that list is closed either - but it is a far
+# better level at which to attempt closure than the level of instances.
+# Each avenue has two axes, and they close differently. "modes" is whether the
+# ways of failing along that axis can be enumerated; "entities" is whether the
+# things it can happen to can be. An avenue is only as closed as its weaker axis.
+AVENUES = [
+    ("V1", "Deficiency",
+     "A required input falls below what is needed. Energy, an element, light, an "
+     "edible particle, a vitamin, a service performed by something else.",
+     "M1", "K, R1, A (as its inverse)", "closed", "OPEN"),
+    ("V2", "Excess and toxicity",
+     "An input exceeds what can be tolerated - including too much of a required "
+     "thing. Shelford's ceiling, not Liebig's floor.",
+     "M2", "E, K8, A (nutrients as stressor)", "closed", "OPEN"),
+    ("V3", "Condition outside the envelope",
+     "A physicochemical field - temperature, salinity, pH, redox, pressure, "
+     "hydrodynamic energy - moves outside the range the organism tolerates. "
+     "Distinct from V2 because it is a state, not a substance arriving.",
+     "M1, M7", "C, G, K10", "closed", "nearly closed"),
+    ("V4", "Mechanical destruction and burial",
+     "Structure removed, crushed, smothered, abraded or mobilised. No chemistry "
+     "required at any point.",
+     "M3", "D", "closed", "closed"),
+    ("V5", "Biotic attack",
+     "Predation, grazing, disease, parasitism, competition, invasion. Something "
+     "else does the killing.",
+     "M4", "F, T3, T8, F11", "closed", "bounded, badly catalogued"),
+    ("V6", "Loss of a partner or a performed function",
+     "The organisms whose activity the focal organism depends on are gone - "
+     "symbionts, facilitators, and the ones that were conditioning the environment "
+     "for everyone.",
+     "M4, M7", "T2, T5, T6, F1, F2, F3", "nearly closed", "bounded, badly catalogued"),
+    ("V7", "Failure to replace itself",
+     "The population dies without any individual being killed: no propagules, no "
+     "connectivity, no settlement cue, wrong timing, too little genetic variation. "
+     "**The register was almost empty here until the avenues were written down.**",
+     "—", "W (added because this avenue was empty)", "closed", "nearly closed"),
+    ("V8", "Rate exceeded",
+     "The change is survivable in magnitude but not in speed. Adaptation, "
+     "acclimation, migration and recovery all have rates, and a disturbance "
+     "returning faster than recovery completes is a different thing from the same "
+     "disturbance once.",
+     "—", "W, H1", "closed", "inherits the others"),
+]
+
 # Three layers, because collapsing them is how a measurement becomes a goal.
 #
 # TERMINAL is what anyone actually values. Nobody values a dissolved gas
@@ -74,9 +133,14 @@ TERMINAL = [
 ]
 
 ROUTES = [
-    ("M1", "Oxygen deficit",
-     "Respiration and chemical demand exceed resupply. Well measured, heavily "
-     "modelled, and the only route the requirement acts on."),
+    ("M1", "Depletion of something essential",
+     "Anything life requires falls below what some part of the community needs. "
+     "Oxygen is the famous instance and the only one the requirement acts on, but "
+     "it is an instance: silicon, light at the bed, carbonate ion, cobalamin, "
+     "thiamine, available iron and edible particles of the right size all belong "
+     "here, and group K works through them. **A depletion is selective, not "
+     "general** - it removes whoever needed the missing thing and releases whoever "
+     "did not."),
     ("M2", "Toxic exposure",
      "Something is poisoned. The dose makes the poison, so this route is acutely "
      "sensitive to peak concentration rather than to any annual mean — and annual "
@@ -246,11 +310,13 @@ GROUPS = [
 # that makes attribution hard, and it is why the terminal state carries almost no
 # information about which route produced it.
 CASCADES = [
-    ("M1", "Oxygen deficit",
-     "demand exceeds resupply → sensitive fauna die → burrowing and irrigation stop "
-     "→ the sediment goes anoxic → sulphide and phosphate are released → production "
-     "rises → demand rises",
-     "closes on itself through the sediment"),
+    ("M1", "Depletion of something essential (oxygen shown)",
+     "demand exceeds resupply → the organisms that needed it die → the functions "
+     "they performed stop → conditions worsen for whoever is left → in the oxygen "
+     "case: burrowing and irrigation stop, the sediment goes anoxic, sulphide and "
+     "phosphate are released, production rises, demand rises",
+     "closes on itself through whatever the lost organisms were doing - for oxygen, "
+     "through the sediment they were ventilating"),
     ("M2", "Toxic exposure",
      "sensitive species die first → grazers and filter feeders are lost "
      "disproportionately, being larger and longer-lived → nothing crops the fast "
@@ -782,13 +848,21 @@ H = [
      "Vegetation depth limit against turbidity, with the direction of causation "
      "tested by lag.",
      "Eelgrass depth limit and cover by station and year. In ODA vegetation."),
-    ("F4", "F", "Overfishing and trophic cascade", ["O4", "O3"],
-     "Removing predatory fish releases zooplanktivores, which release "
-     "phytoplankton.",
-     "Chlorophyll rises with no nutrient change; the signal is in the fish, and "
-     "fishing effort is documented.",
-     "Chlorophyll against fish stock assessments, controlling for load.",
-     "ICES stock assessments; Danish landings by area and year."),
+    ("F4", "F", "Trophic cascade from a removal far away", ["O4", "O3", "O1"],
+     "Removing one level releases the next and suppresses the one below that. The "
+     "Baltic case is documented: cod were fished down through the 1980s and 90s, "
+     "sprat were released, their grazing suppressed the large copepods, and the "
+     "system moved into a state that has not reverted. Cod and sprat now appear to "
+     "hold each other in alternative stable configurations.",
+     "**The cause is displaced from the effect in trophic distance and in time.** A "
+     "fishery removes a predator; two levels down and fifteen years later the "
+     "plankton community is different, and nothing in the water chemistry ever "
+     "changed. Any search for causes confined to water quality cannot find this, "
+     "and a load coefficient fitted through such a period absorbs it.",
+     "Chlorophyll and zooplankton composition against stock assessments, with lags "
+     "of years, holding nutrient load fixed.",
+     "ICES stock assessments and Danish landings by area and year - both open, and "
+     "already in the fetch queue."),
     ("F5", "F", "Invasive species", ["O4", "O3"],
      "Comb jelly, Pacific oyster, round goby and others restructuring the food web.",
      "Step changes at arrival dates, spreading spatially from an introduction point.",
@@ -823,6 +897,35 @@ H = [
      "Local, sudden, and a direct route to shore fouling.",
      "Stranding and die-off records.",
      "Stranding networks. Partial."),
+
+    ("F11", "F", "Viral lysis and the viral shunt", ["O1", "O2", "O4"],
+     "Marine viruses run to about ten million particles per millilitre and lyse a "
+     "large share of the bacterial and algal standing stock every day. Lysis does "
+     "not pass carbon up the food chain - it returns it to dissolved and colloidal "
+     "organic matter, to be respired by bacteria again. That short-circuit is the "
+     "viral shunt.",
+     "Carbon is retained in the microbial loop instead of reaching anything larger, "
+     "so the same primary production supports less higher life and leaves more "
+     "dissolved organic matter behind - which is the substrate for the gel of group "
+     "J and for the oxygen demand of `M1`. A shunted system looks productive and "
+     "feeds nothing.",
+     "Viral abundance and lysis rate against the share of production reaching "
+     "mesozooplankton - the ratio, not either alone.",
+     "Marine viral counts. Standard method since the 1990s; not in Danish "
+     "monitoring at any station."),
+    ("F12", "F", "The micropathogens nobody catalogues", ["O3", "O6", "O7"],
+     "Viruses, bacteria, protists, fungi and oomycetes cause mass mortality in "
+     "marine organisms routinely - eelgrass wasting, sea star wasting, oyster "
+     "herpesvirus, crustacean and bivalve pathogens. The set of possible attackers "
+     "is bounded by the biota, but the catalogue is worst exactly at the small end.",
+     "A mortality event with no chemical or oxygen signature and no obvious "
+     "predator. Attribution defaults to whatever *was* measured, which is a "
+     "guarantee that pathogens are under-attributed rather than evidence they are "
+     "unimportant.",
+     "Pathogen screening of mortality events at the time they occur, which requires "
+     "someone to be looking within days.",
+     "A marine mortality event response capability. Denmark has none for "
+     "invertebrates."),
 
     # ---- G ----------------------------------------------------------------
     ("G1", "G", "Warming", ["O1", "O3", "O4", "O6"],
@@ -1193,6 +1296,21 @@ H = [
      "curve predicts.",
      "Pathogen abundance against sediment redox, and host mortality against both.",
      "Marine oomycete and labyrinthulid surveys. Essentially none."),
+
+    ("R11", "R", "Marine fungi, the decomposers nobody counts", ["O1", "O2", "O3"],
+     "Fungi are the principal degraders of refractory material on land - lignin, "
+     "chitin, cellulose - and the reason a forest floor does not simply accumulate. "
+     "Marine fungi exist, are diverse, degrade the same recalcitrant fractions, and "
+     "are absent from essentially every marine monitoring programme including "
+     "Denmark's.",
+     "A whole functional guild in the decay relay of R3 is unobserved. If the "
+     "recalcitrant fraction is accumulating - which R4 predicts under nitrogen "
+     "enrichment - the organisms that would have degraded it are the ones nobody is "
+     "looking at, and their loss would be invisible by construction.",
+     "Fungal biomass and community composition in sediment against the recalcitrant "
+     "organic fraction. Standard molecular methods; the question is simply not "
+     "asked.",
+     "Marine fungal surveys. Essentially none in Danish waters."),
 
     # ---- S ----------------------------------------------------------------
     ("S1", "S", "Retention is a property of the medium and varies by an order of "
@@ -1577,6 +1695,86 @@ def render(rows):
     for i, n, w in TERMINAL:
         a(f"| `{i}` | **{n}** | {w} |")
     a("")
+    a("### The categorical avenues\n")
+    a("Enumerating mechanisms one at a time has no stopping rule. Enumerating the "
+      "*kinds* of way a living thing can fail is a smaller problem, and it converts "
+      "exhaustiveness from a hope into a procedure: for each avenue, each "
+      "requirement, and each functional group, ask whether an instance is in the "
+      "register. Gaps then appear by construction rather than by luck.\n")
+    a("An organism is a system that maintains itself against entropy using flows. "
+      "It fails when a flow it needs stops, when something arrives that harms it, "
+      "when the field it sits in leaves its tolerable range, when it is physically "
+      "destroyed, when something eats or infects it, when a partner goes, when it "
+      "fails to replace itself, or when the change outruns its capacity to "
+      "adjust.\n")
+    a("| | avenue | | failure modes | the things it happens to | where it lives below |")
+    a("|---|---|---|---|---|---|")
+    for i, n, w, rt, gr, cm, ce in AVENUES:
+        a(f"| `{i}` | **{n}** | {w} | {cm} | {ce} | {gr} |")
+    a("")
+    a("### Where this actually closes\n")
+    a("The chemical avenues are the clean case, and they are worth stating exactly "
+      "because they are the only place the argument reaches genuine "
+      "exhaustiveness.\n")
+    a("> For any chemical species there are exactly **three** ways it can harm: "
+      "below the floor of what is needed, above the ceiling of what is tolerated, "
+      "or present at all where the tolerated amount is zero. That is a partition of "
+      "the real line against a tolerance window. Nothing can hide between the "
+      "cases, and there is no fourth.\n")
+    a("Liebig's floor and Shelford's ceiling are the first two, and the essential "
+      "trace metals sit on both — copper is required and copper is a biocide, "
+      "within about one order of magnitude. The window is the whole story, and "
+      "*outside the window* is completely enumerated by those three.\n")
+    a("**What does not close is the list of chemicals.** Tens of thousands are in "
+      "commerce and a few dozen are measured (`U4`). So `V1` and `V2` have "
+      "exhaustive failure modes over an open set of substances: complete on one "
+      "axis, unbounded on the other, and an avenue is only as closed as its weaker "
+      "axis.\n")
+    a("`V3` is the most nearly closed of all, and is the one worth pushing on. The "
+      "physicochemical fields an organism sits in are a short list — temperature, "
+      "salinity, pressure, pH, redox potential, light, hydrodynamic energy, "
+      "dissolved gas tension — each with a window and the same three failure modes. "
+      "Both axes are nearly enumerable, which is unusual and useful: it means the "
+      "conditions avenue can be checked almost to completion, and Denmark measures "
+      "most of these already.\n")
+    a("**`V4` and `V5` close better than the chemical ones, for a reason worth "
+      "stating.** Destruction and attack are both done *by* something, and the set "
+      "of possible agents is drawn from the biota. That set is bounded by what "
+      "exists. The chemical set is not: substances are manufactured, tens of "
+      "thousands are in commerce, and the list grows every year by decision. One "
+      "set is discovered, the other is invented, and only the invented one is "
+      "genuinely unbounded.\n")
+    a("For physical destruction the agent list is startlingly short. Humans, with a "
+      "finite inventory of gear — trawl, dredge, anchor, propeller, cable plough, "
+      "extraction head, dumped spoil, construction plant. Then storms, ice, "
+      "currents, and the bioturbators and bioeroders. That is close to a complete "
+      "enumeration, and it is why group D can be checked nearly to the end.\n")
+    a("For biotic attack the set is bounded but **badly catalogued**, and the gap "
+      "is concentrated at the small end: viruses, bacteria, protists, fungi and "
+      "oomycetes. Marine virioplankton runs to roughly ten million particles per "
+      "millilitre and lyses a large share of the bacterial standing stock every "
+      "day, and Danish marine monitoring counts none of it. The limit here is "
+      "record-keeping rather than principle, which is a better problem to have than "
+      "the chemical one.\n")
+    a("`V6` remains the hardest: the failure modes are enumerable and the organisms "
+      "are bounded, but the *relationships between them* are not, and a partnership "
+      "nobody has described cannot be missed from a list. The lucinid clam "
+      "symbiosis of `T2` was published in 2012; before that, its loss was an "
+      "unrepresentable cause.\n")
+
+    a("**This immediately found a hole.** `V7`, failure to replace itself, had "
+      "almost no instances in a register of 127 — no propagule supply, no "
+      "connectivity, no settlement cues, no phenological mismatch, no Allee "
+      "effects. A population can go extinct locally without a single individual "
+      "being killed by anything on the list, and the register could not represent "
+      "it. `V8`, rate exceedance, was similarly thin: a disturbance returning "
+      "faster than recovery completes is not the same thing as the same disturbance "
+      "once, and nothing said so. Group **W** exists because these two avenues were "
+      "empty, which is the procedure working.\n")
+    a("We do not claim the avenue list is closed either. But it is a much better "
+      "level at which to attempt closure than the level of instances, and unlike "
+      "the instance list it suggests where to look next.\n")
+
     a("### Routes — the sufficient paths to those outcomes\n")
     a("Oxygen deficit is **one** of these. It is neither necessary nor sufficient "
       "for any terminal outcome, and several of the others leave no oxygen "
@@ -1601,6 +1799,54 @@ def render(rows):
     for i, n, chain, why in CASCADES:
         a(f"| `{i}` **{n}** | {chain} | {why} |")
     a("")
+    a("### Why they converge\n")
+    a("The convergence is not a coincidence and it is not vagueness about the "
+      "damage. It follows from what a depletion actually does.\n")
+    a("**A depletion does not kill indiscriminately. It removes exactly those "
+      "organisms that required the missing thing, and releases those that did "
+      "not.** Oxygen depletion kills aerobes and releases anaerobes. Silicon "
+      "depletion removes diatoms and releases flagellates. Cobalamin depletion "
+      "removes the auxotrophs and leaves the bacteria that make it. Carbonate "
+      "depletion removes calcifiers and no one else. Light starvation removes what "
+      "is rooted at depth. Each is a filter with its own specific shape.\n")
+    a("But every filter selects in the same direction, because what survives a "
+      "filter is whatever had the fewest requirements to begin with — fast, small, "
+      "short-lived, unselective, needing no structure and no partner and no "
+      "particular chemistry. Run any filter and you enrich for that. Run several "
+      "and you enrich harder.\n")
+    a("> So it is not that all damage looks alike. It is that **all selection runs "
+      "the same way**, and the endpoint is the set of organisms that no filter "
+      "removes. That is what the phrase *primordial soup* is reaching for, and it "
+      "is why an outcome can be reached from a dozen unrelated directions and look "
+      "identical from every one of them.\n")
+    a("### The cause need not be near the effect\n")
+    a("A cascade moves the cause away from the effect, in two directions at once.\n")
+    a("**In trophic distance.** Remove a predator and the change appears two levels "
+      "down. The Baltic cod collapse of the 1980s and 90s released sprat, whose "
+      "grazing suppressed the large copepods, and the plankton community that "
+      "resulted has not reverted. Nothing in the water chemistry moved. A search "
+      "for causes confined to water quality cannot find this, and a coefficient "
+      "fitted across the period absorbs it silently.\n")
+    a("**In time.** The removal can be decades old and permanent. If the current "
+      "state is held in place by a predator fished out in 1990, no measurement "
+      "taken now — of anything — will contain the cause.\n")
+    a("Together those mean the search radius has to include things that do not look "
+      "like water quality at all: fishing effort, stone extraction, a bridge, a "
+      "disease outbreak in a bivalve, a species introduced from a ballast tank.\n")
+    a("> And the Yellowstone wolves are worth keeping in mind for a second reason. "
+      "That cascade — wolves to elk to willow to beaver to the shape of the rivers "
+      "— became the standard textbook illustration, and it has since been "
+      "substantially challenged: the elk decline had other causes running at the "
+      "same time, and the willow recovery was patchy and confounded. A compelling "
+      "cascade narrative outran its evidence, in a well-studied system, watched by "
+      "everyone. That is the same failure this project attributes to the nitrogen "
+      "account, and it is available to us on exactly the same terms.\n")
+
+    a("It also explains why the state maintains itself. The survivors of the filter "
+      "are precisely the organisms that do not perform the functions — irrigating "
+      "sediment, filtering water, holding it down, providing structure, "
+      "detoxifying sulphide — whose loss made conditions worse in the first "
+      "place.\n")
     a("They converge. Whichever chain runs, the organisms left standing are the ones "
       "with the highest maximum growth rate, the lowest resource requirement, the "
       "shortest generation time and the least dependence on structure — fast, small, "
@@ -1749,6 +1995,9 @@ def main():
                     "from five sides. Any ranking over this field is a ranking "
                     "within the field, not a decomposition of reality.",
         },
+        "avenues": [{"id": i, "name": n, "what": w, "routes": r, "groups": g,
+                     "modes_closed": cm, "entities_closed": ce}
+                    for i, n, w, r, g, cm, ce in AVENUES],
         "terminal": [{"id": i, "name": n, "what": w} for i, n, w in TERMINAL],
         "routes": [{"id": i, "name": n, "what": w} for i, n, w in ROUTES],
         "cascades": [{"route": i, "name": n, "chain": c, "closes": w}

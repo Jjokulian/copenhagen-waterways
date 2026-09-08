@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**127 mechanisms in 15 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**130 mechanisms in 15 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 127 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 130 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 127 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 130 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -38,6 +38,47 @@ Nobody values a dissolved gas concentration. An earlier version of this page lis
 | `T4` | **Provisioning lost** | Fish, shellfish and the livelihoods on them. |
 | `T5` | **The shore lost as a place** | Smell, appearance, and the ordinary use of a coastline. |
 
+### The categorical avenues
+
+Enumerating mechanisms one at a time has no stopping rule. Enumerating the *kinds* of way a living thing can fail is a smaller problem, and it converts exhaustiveness from a hope into a procedure: for each avenue, each requirement, and each functional group, ask whether an instance is in the register. Gaps then appear by construction rather than by luck.
+
+An organism is a system that maintains itself against entropy using flows. It fails when a flow it needs stops, when something arrives that harms it, when the field it sits in leaves its tolerable range, when it is physically destroyed, when something eats or infects it, when a partner goes, when it fails to replace itself, or when the change outruns its capacity to adjust.
+
+| | avenue | | failure modes | the things it happens to | where it lives below |
+|---|---|---|---|---|---|
+| `V1` | **Deficiency** | A required input falls below what is needed. Energy, an element, light, an edible particle, a vitamin, a service performed by something else. | closed | OPEN | K, R1, A (as its inverse) |
+| `V2` | **Excess and toxicity** | An input exceeds what can be tolerated - including too much of a required thing. Shelford's ceiling, not Liebig's floor. | closed | OPEN | E, K8, A (nutrients as stressor) |
+| `V3` | **Condition outside the envelope** | A physicochemical field - temperature, salinity, pH, redox, pressure, hydrodynamic energy - moves outside the range the organism tolerates. Distinct from V2 because it is a state, not a substance arriving. | closed | nearly closed | C, G, K10 |
+| `V4` | **Mechanical destruction and burial** | Structure removed, crushed, smothered, abraded or mobilised. No chemistry required at any point. | closed | closed | D |
+| `V5` | **Biotic attack** | Predation, grazing, disease, parasitism, competition, invasion. Something else does the killing. | closed | bounded, badly catalogued | F, T3, T8, F11 |
+| `V6` | **Loss of a partner or a performed function** | The organisms whose activity the focal organism depends on are gone - symbionts, facilitators, and the ones that were conditioning the environment for everyone. | nearly closed | bounded, badly catalogued | T2, T5, T6, F1, F2, F3 |
+| `V7` | **Failure to replace itself** | The population dies without any individual being killed: no propagules, no connectivity, no settlement cue, wrong timing, too little genetic variation. **The register was almost empty here until the avenues were written down.** | closed | nearly closed | W (added because this avenue was empty) |
+| `V8` | **Rate exceeded** | The change is survivable in magnitude but not in speed. Adaptation, acclimation, migration and recovery all have rates, and a disturbance returning faster than recovery completes is a different thing from the same disturbance once. | closed | inherits the others | W, H1 |
+
+### Where this actually closes
+
+The chemical avenues are the clean case, and they are worth stating exactly because they are the only place the argument reaches genuine exhaustiveness.
+
+> For any chemical species there are exactly **three** ways it can harm: below the floor of what is needed, above the ceiling of what is tolerated, or present at all where the tolerated amount is zero. That is a partition of the real line against a tolerance window. Nothing can hide between the cases, and there is no fourth.
+
+Liebig's floor and Shelford's ceiling are the first two, and the essential trace metals sit on both — copper is required and copper is a biocide, within about one order of magnitude. The window is the whole story, and *outside the window* is completely enumerated by those three.
+
+**What does not close is the list of chemicals.** Tens of thousands are in commerce and a few dozen are measured (`U4`). So `V1` and `V2` have exhaustive failure modes over an open set of substances: complete on one axis, unbounded on the other, and an avenue is only as closed as its weaker axis.
+
+`V3` is the most nearly closed of all, and is the one worth pushing on. The physicochemical fields an organism sits in are a short list — temperature, salinity, pressure, pH, redox potential, light, hydrodynamic energy, dissolved gas tension — each with a window and the same three failure modes. Both axes are nearly enumerable, which is unusual and useful: it means the conditions avenue can be checked almost to completion, and Denmark measures most of these already.
+
+**`V4` and `V5` close better than the chemical ones, for a reason worth stating.** Destruction and attack are both done *by* something, and the set of possible agents is drawn from the biota. That set is bounded by what exists. The chemical set is not: substances are manufactured, tens of thousands are in commerce, and the list grows every year by decision. One set is discovered, the other is invented, and only the invented one is genuinely unbounded.
+
+For physical destruction the agent list is startlingly short. Humans, with a finite inventory of gear — trawl, dredge, anchor, propeller, cable plough, extraction head, dumped spoil, construction plant. Then storms, ice, currents, and the bioturbators and bioeroders. That is close to a complete enumeration, and it is why group D can be checked nearly to the end.
+
+For biotic attack the set is bounded but **badly catalogued**, and the gap is concentrated at the small end: viruses, bacteria, protists, fungi and oomycetes. Marine virioplankton runs to roughly ten million particles per millilitre and lyses a large share of the bacterial standing stock every day, and Danish marine monitoring counts none of it. The limit here is record-keeping rather than principle, which is a better problem to have than the chemical one.
+
+`V6` remains the hardest: the failure modes are enumerable and the organisms are bounded, but the *relationships between them* are not, and a partnership nobody has described cannot be missed from a list. The lucinid clam symbiosis of `T2` was published in 2012; before that, its loss was an unrepresentable cause.
+
+**This immediately found a hole.** `V7`, failure to replace itself, had almost no instances in a register of 127 — no propagule supply, no connectivity, no settlement cues, no phenological mismatch, no Allee effects. A population can go extinct locally without a single individual being killed by anything on the list, and the register could not represent it. `V8`, rate exceedance, was similarly thin: a disturbance returning faster than recovery completes is not the same thing as the same disturbance once, and nothing said so. Group **W** exists because these two avenues were empty, which is the procedure working.
+
+We do not claim the avenue list is closed either. But it is a much better level at which to attempt closure than the level of instances, and unlike the instance list it suggests where to look next.
+
 ### Routes — the sufficient paths to those outcomes
 
 Oxygen deficit is **one** of these. It is neither necessary nor sufficient for any terminal outcome, and several of the others leave no oxygen signature at all — a poisoned water can be fully oxygenated.
@@ -46,7 +87,7 @@ These seven are not claimed to be all of them either, and they are not even clea
 
 | | route | what it is |
 |---|---|---|
-| `M1` | **Oxygen deficit** | Respiration and chemical demand exceed resupply. Well measured, heavily modelled, and the only route the requirement acts on. |
+| `M1` | **Depletion of something essential** | Anything life requires falls below what some part of the community needs. Oxygen is the famous instance and the only one the requirement acts on, but it is an instance: silicon, light at the bed, carbonate ion, cobalamin, thiamine, available iron and edible particles of the right size all belong here, and group K works through them. **A depletion is selective, not general** - it removes whoever needed the missing thing and releases whoever did not. |
 | `M2` | **Toxic exposure** | Something is poisoned. The dose makes the poison, so this route is acutely sensitive to peak concentration rather than to any annual mean — and annual means are what is reported. Leaves a fully oxygenated dead water. |
 | `M3` | **Physical destruction and burial** | The habitat removed, crushed, dredged or covered. Needs no chemistry at all. |
 | `M4` | **Food-web restructuring** | Removal or addition of a species changes what everything else does. Overfishing, invasion, disease. |
@@ -60,13 +101,37 @@ Iltsvind is one *kind* of dying out, with one particular chain of consequences. 
 
 | route | the cascade | why it does not stop |
 |---|---|---|
-| `M1` **Oxygen deficit** | demand exceeds resupply → sensitive fauna die → burrowing and irrigation stop → the sediment goes anoxic → sulphide and phosphate are released → production rises → demand rises | closes on itself through the sediment |
+| `M1` **Depletion of something essential (oxygen shown)** | demand exceeds resupply → the organisms that needed it die → the functions they performed stop → conditions worsen for whoever is left → in the oxygen case: burrowing and irrigation stop, the sediment goes anoxic, sulphide and phosphate are released, production rises, demand rises | closes on itself through whatever the lost organisms were doing - for oxygen, through the sediment they were ventilating |
 | `M2` **Toxic exposure** | sensitive species die first → grazers and filter feeders are lost disproportionately, being larger and longer-lived → nothing crops the fast growers → biomass turns over faster → more material to decay | closes through the loss of control from above |
 | `M3` **Physical destruction** | structure removed → the biostabilising surface skin is broken → sediment mobilises → abrasion and burial kill the neighbours → nothing settles on a moving bed → the skin is not rebuilt | closes through substrate mobility, the same way a desert holds itself open once its crust is broken |
 | `M4` **Food-web restructuring** | a predator or grazer is removed → its prey is released → the level below that is suppressed → primary producers are uncontrolled | closes through trophic release |
 | `M5` **Light starvation** | light at the bed falls below the plant's requirement → rooted vegetation dies → sediment is no longer held → resuspension rises → light falls further | closes through the sediment the plants were holding |
 | `M6` **Surface film and gel** | nutrient imbalance drives carbon overflow → gel and exopolymer are produced → aggregates form, resist grazing, and sink → smothering and decay → more imbalance | closes by being inedible |
 | `M7` **Reduced chemistry at the bed** | sulphide accumulates → fauna die at the sediment surface → irrigation stops → the oxidised surface layer thins → sulphide reaches the water | closes through the loss of the animals that kept the bed oxidised |
+
+### Why they converge
+
+The convergence is not a coincidence and it is not vagueness about the damage. It follows from what a depletion actually does.
+
+**A depletion does not kill indiscriminately. It removes exactly those organisms that required the missing thing, and releases those that did not.** Oxygen depletion kills aerobes and releases anaerobes. Silicon depletion removes diatoms and releases flagellates. Cobalamin depletion removes the auxotrophs and leaves the bacteria that make it. Carbonate depletion removes calcifiers and no one else. Light starvation removes what is rooted at depth. Each is a filter with its own specific shape.
+
+But every filter selects in the same direction, because what survives a filter is whatever had the fewest requirements to begin with — fast, small, short-lived, unselective, needing no structure and no partner and no particular chemistry. Run any filter and you enrich for that. Run several and you enrich harder.
+
+> So it is not that all damage looks alike. It is that **all selection runs the same way**, and the endpoint is the set of organisms that no filter removes. That is what the phrase *primordial soup* is reaching for, and it is why an outcome can be reached from a dozen unrelated directions and look identical from every one of them.
+
+### The cause need not be near the effect
+
+A cascade moves the cause away from the effect, in two directions at once.
+
+**In trophic distance.** Remove a predator and the change appears two levels down. The Baltic cod collapse of the 1980s and 90s released sprat, whose grazing suppressed the large copepods, and the plankton community that resulted has not reverted. Nothing in the water chemistry moved. A search for causes confined to water quality cannot find this, and a coefficient fitted across the period absorbs it silently.
+
+**In time.** The removal can be decades old and permanent. If the current state is held in place by a predator fished out in 1990, no measurement taken now — of anything — will contain the cause.
+
+Together those mean the search radius has to include things that do not look like water quality at all: fishing effort, stone extraction, a bridge, a disease outbreak in a bivalve, a species introduced from a ballast tank.
+
+> And the Yellowstone wolves are worth keeping in mind for a second reason. That cascade — wolves to elk to willow to beaver to the shape of the rivers — became the standard textbook illustration, and it has since been substantially challenged: the elk decline had other causes running at the same time, and the willow recovery was patchy and confounded. A compelling cascade narrative outran its evidence, in a well-studied system, watched by everyone. That is the same failure this project attributes to the nitrogen account, and it is available to us on exactly the same terms.
+
+It also explains why the state maintains itself. The survivors of the filter are precisely the organisms that do not perform the functions — irrigating sediment, filtering water, holding it down, providing structure, detoxifying sulphide — whose loss made conditions worse in the first place.
 
 They converge. Whichever chain runs, the organisms left standing are the ones with the highest maximum growth rate, the lowest resource requirement, the shortest generation time and the least dependence on structure — fast, small, unselective, ungrazed. Every route ends in the same place, and that place is what the word *primordial soup* is reaching for: not an absence of life but an abundance of the lowest forms of it, which is why it registers as high biomass and high productivity on instruments built to treat those as health.
 
@@ -783,17 +848,17 @@ Rooted vegetation produces oxygen, stabilises sediment and competes for nutrient
 
 **Needs.** Eelgrass depth limit and cover by station and year. In ODA vegetation.
 
-### F4 — Overfishing and trophic cascade
+### F4 — Trophic cascade from a removal far away
 
-**Outcomes:** O4, O3
+**Outcomes:** O4, O3, O1
 
-Removing predatory fish releases zooplanktivores, which release phytoplankton.
+Removing one level releases the next and suppresses the one below that. The Baltic case is documented: cod were fished down through the 1980s and 90s, sprat were released, their grazing suppressed the large copepods, and the system moved into a state that has not reverted. Cod and sprat now appear to hold each other in alternative stable configurations.
 
-**Predicts.** Chlorophyll rises with no nutrient change; the signal is in the fish, and fishing effort is documented.
+**Predicts.** **The cause is displaced from the effect in trophic distance and in time.** A fishery removes a predator; two levels down and fifteen years later the plankton community is different, and nothing in the water chemistry ever changed. Any search for causes confined to water quality cannot find this, and a load coefficient fitted through such a period absorbs it.
 
-**Discriminated by.** Chlorophyll against fish stock assessments, controlling for load.
+**Discriminated by.** Chlorophyll and zooplankton composition against stock assessments, with lags of years, holding nutrient load fixed.
 
-**Needs.** ICES stock assessments; Danish landings by area and year.
+**Needs.** ICES stock assessments and Danish landings by area and year - both open, and already in the fetch queue.
 
 ### F5 — Invasive species
 
@@ -866,6 +931,30 @@ Seal, bird or fish die-offs depositing large local organic loads.
 **Discriminated by.** Stranding and die-off records.
 
 **Needs.** Stranding networks. Partial.
+
+### F11 — Viral lysis and the viral shunt
+
+**Outcomes:** O1, O2, O4
+
+Marine viruses run to about ten million particles per millilitre and lyse a large share of the bacterial and algal standing stock every day. Lysis does not pass carbon up the food chain - it returns it to dissolved and colloidal organic matter, to be respired by bacteria again. That short-circuit is the viral shunt.
+
+**Predicts.** Carbon is retained in the microbial loop instead of reaching anything larger, so the same primary production supports less higher life and leaves more dissolved organic matter behind - which is the substrate for the gel of group J and for the oxygen demand of `M1`. A shunted system looks productive and feeds nothing.
+
+**Discriminated by.** Viral abundance and lysis rate against the share of production reaching mesozooplankton - the ratio, not either alone.
+
+**Needs.** Marine viral counts. Standard method since the 1990s; not in Danish monitoring at any station.
+
+### F12 — The micropathogens nobody catalogues
+
+**Outcomes:** O3, O6, O7
+
+Viruses, bacteria, protists, fungi and oomycetes cause mass mortality in marine organisms routinely - eelgrass wasting, sea star wasting, oyster herpesvirus, crustacean and bivalve pathogens. The set of possible attackers is bounded by the biota, but the catalogue is worst exactly at the small end.
+
+**Predicts.** A mortality event with no chemical or oxygen signature and no obvious predator. Attribution defaults to whatever *was* measured, which is a guarantee that pathogens are under-attributed rather than evidence they are unimportant.
+
+**Discriminated by.** Pathogen screening of mortality events at the time they occur, which requires someone to be looking within days.
+
+**Needs.** A marine mortality event response capability. Denmark has none for invertebrates.
 
 ## G. Climate and long-term drivers
 
@@ -1446,6 +1535,18 @@ Retention is treated as a fixed fraction. If the mechanisms behind it - denitrif
 ## R. Decay, and the community that does it
 
 *Decomposition ecology has spent a century on the question this project is asking: what happens when organic matter arrives faster than it can be processed, and what breaks when the processors go. Almost none of it appears in marine nutrient policy, which treats decay as a rate constant. It is a relay of organisms, and relays stall. The soil and horticultural literature is the better guide here, and the one difference that does not transfer - the sulphate reservoir - turns out to explain why marine anoxia is a different and worse thing than freshwater anoxia.*
+
+### R11 — Marine fungi, the decomposers nobody counts
+
+**Outcomes:** O1, O2, O3
+
+Fungi are the principal degraders of refractory material on land - lignin, chitin, cellulose - and the reason a forest floor does not simply accumulate. Marine fungi exist, are diverse, degrade the same recalcitrant fractions, and are absent from essentially every marine monitoring programme including Denmark's.
+
+**Predicts.** A whole functional guild in the decay relay of R3 is unobserved. If the recalcitrant fraction is accumulating - which R4 predicts under nitrogen enrichment - the organisms that would have degraded it are the ones nobody is looking at, and their loss would be invisible by construction.
+
+**Discriminated by.** Fungal biomass and community composition in sediment against the recalcitrant organic fraction. Standard molecular methods; the question is simply not asked.
+
+**Needs.** Marine fungal surveys. Essentially none in Danish waters.
 
 ### R1 — The C:N threshold, and fat as a nitrogen sink
 
