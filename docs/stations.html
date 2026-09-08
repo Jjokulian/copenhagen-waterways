@@ -122,12 +122,24 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
       region of its size.</div>
 
     <label><input type="checkbox" id="L_bad" checked>
-      Physically impossible values <span class="tag t-meas">MEASURED</span></label>
-    <div class="cls">Class 1: value error, ringed rather than removed. 764 of 679,422
-      station-months fall outside what the chemistry permits — 0.11%, and
-      <strong>all of it in oxygen</strong> (0.31% near-bed, 0.49% surface). Salinity and
-      temperature are clean. The regulated variable is the one with impossible
-      readings.</div>
+      Outliers, ringed not removed <span class="tag t-meas">HEALTH SIGN</span></label>
+    <div class="cls">An archive with no impossible values is either clean or silently
+      trimmed, and <strong>you cannot tell which from inside it</strong>. These are the
+      proof it was not trimmed. Amber = beyond the chemistry but explicable; red =
+      gross. Of 599 oxygen values above 15&nbsp;mg/l, 517 sit between 15 and 20 with a
+      median of 16.2 — bloom supersaturation, not error. An earlier version of this
+      page called them all impossible and was wrong.</div>
+    <p class="note">Only errors that land <em>outside</em> plausible bounds are ever
+    visible; a decimal slip turning 0.86 into 8.6 is invisible forever. So the ~78
+    gross values are a <strong>lower bound</strong> on the gross-error rate and the only
+    observable sample from that process. Trimming them destroys the sole estimator of
+    the archive's own error rate while making it look cleaner — an operation that
+    increases apparent confidence, which is class 7.</p>
+    <p class="note">Two mechanisms readable in the tail: six bed values at exactly
+    −0.1&nbsp;mg/l give the sensor's zero offset at anoxia, free. Fourteen clustered
+    tightly at −9.4 to −10.3 are not scattered noise but the signature of a
+    <strong>missing-data code leaking through as a value</strong>. Neither survives a
+    cleaning pass.</p>
 
     <label><input type="checkbox" id="L_idw">
       Interpolate between stations <span class="tag t-you">YOU ADDED THIS</span></label>
@@ -162,8 +174,14 @@ let META,BIN,VARS,ST,WB=null,byMonth=[],dom=[0,1],playing=0;
 const $=id=>document.getElementById(id);
 // what the chemistry permits. Values outside are drawn, not dropped: a deleted
 // outlier is an unrecorded decision, which is the error this whole site is about.
-const BOUND={oxy:[0,15],oxysat:[0,200],sal:[0,40],temp:[-2,30],fluo:[0,Infinity]};
-let LIM=[-Infinity,Infinity];
+// Two bands, because they are different findings. PLAUSIBLE is what the chemistry
+// allows; SUSPECT is beyond it but explicable (bloom supersaturation, sensor zero
+// offset at anoxia); GROSS is neither. An earlier version of this page called the
+// whole tail impossible and was wrong - 86% of oxygen values above 15 mg/l sit
+// between 15 and 20, median 16.2, which a cold-water bloom reaches.
+const BOUND={oxy:[0,20,0,15],oxysat:[0,250,0,200],sal:[0,45,0,40],
+             temp:[-2,32,-2,30],fluo:[-1,Infinity,0,Infinity]};
+let LIM=[-Infinity,Infinity,-Infinity,Infinity];
 
 Promise.all([
   fetch(D+'stations_series.json').then(r=>r.json()),
@@ -192,7 +210,7 @@ function loadVar(i){
   dom=[s[Math.floor(s.length*0.05)], s[Math.floor(s.length*0.95)]];
   $('lo').textContent=fmt(dom[0])+' '+v.unit;
   $('hi').textContent=fmt(dom[1])+' '+v.unit;
-  LIM=BOUND[v.key.split('_')[0]]||[-Infinity,Infinity];
+  LIM=BOUND[v.key.split('_')[0]]||[-Infinity,Infinity,-Infinity,Infinity];
   $('depthnote').textContent='Depth: '+v.depth+'. The cast had hundreds of readings; '
     +'this is one number for the shallowest or deepest quarter of it.';
 }
@@ -234,20 +252,23 @@ function draw(){
       c.beginPath(); c.arc(px(s.lon),py(s.lat),1.1,0,7); c.fill();});
     c.globalAlpha=1;
   }
-  let nbad=0;
+  let nbad=0,nsus=0;
   if($('L_meas').checked){
     c.strokeStyle=g.getPropertyValue('--panel').trim(); c.lineWidth=.7;
     rows.forEach(([i,v])=>{const s=ST[i]; if(!s)return;
       const bad=v<LIM[0]||v>LIM[1]; if(bad)nbad++;
+      const sus=!bad&&(v<LIM[2]||v>LIM[3]); if(sus)nsus++;
       if(bad&&!$('L_bad').checked)return;
       const t=(v-dom[0])/(dom[1]-dom[0]);
       c.fillStyle=col(Math.max(0,Math.min(1,t)));
       c.beginPath(); c.arc(px(s.lon),py(s.lat),3.4,0,7); c.fill(); c.stroke();
-      if(bad){ c.strokeStyle=g.getPropertyValue('--warn').trim(); c.lineWidth=1.6;
+      if(bad||sus){ c.strokeStyle=g.getPropertyValue(bad?'--warn':'--model').trim();
+        c.lineWidth=bad?1.6:1;
         c.beginPath(); c.arc(px(s.lon),py(s.lat),5.6,0,7); c.stroke();
         c.strokeStyle=g.getPropertyValue('--panel').trim(); c.lineWidth=.7;}});
   }
-  $('badn').textContent=nbad?nbad+' impossible':'';
+  $('badn').textContent=[nbad?nbad+' gross':'',nsus?nsus+' beyond-chemistry':'']
+    .filter(Boolean).join(', ');
   const y=META.year0+Math.floor(mi/12), mo=mi%12+1;
   $('mlab').textContent=y+'-'+String(mo).padStart(2,'0');
   $('nrep').textContent=rows.length.toLocaleString();
