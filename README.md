@@ -30,6 +30,7 @@ python3 scripts/nitrogen.py             # -> docs/NITROGEN.md
 python3 scripts/waves.py                # -> data/derived/waves.json
 python3 scripts/seabed.py               # -> docs/SEABED.md   (after waves.py)
 python3 scripts/causation.py            # -> docs/CAUSATION.md
+./scripts/setup_venv.sh                 # NetCDF/satellite stack, if needed
 python3 scripts/hypotheses.py           # -> docs/HYPOTHESES.md
 python3 scripts/experiments.py          # -> docs/EXPERIMENTS.md
 python3 scripts/fetch_queue.py          # -> docs/DATA_QUEUE.md

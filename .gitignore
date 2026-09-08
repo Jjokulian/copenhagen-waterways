@@ -19,3 +19,5 @@ __pycache__/
 data/raw/osm/
 data/raw/weather/
 data/raw/oda/*.csv
+# python venv for the marine/NetCDF stack; recreate with scripts/setup_venv.sh
+.venv*/
