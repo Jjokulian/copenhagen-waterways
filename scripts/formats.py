@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+"""What each source's bytes actually mean, declared rather than guessed.
+
+Two silent format bugs cost this project real work in one day. `float("8,47")`
+raised, a bare `except` returned None, and every coordinate in a 2.4-million-row
+file vanished so that the file read as empty rather than broken. Then a fast split
+left `'"19890830"'` quoted, the date never parsed, and a coverage cube reported
+zero for three streams without erroring. Both were guesses about format that
+happened to be wrong.
+
+So: every source declares its format, and the declaration is checked against the
+bytes instead of trusted.
+
+**On the thousands separator, which turns out not to be a problem.** The worry is
+that "8,473" might be eight thousand four hundred and seventy-three. It is not,
+and the reason is stronger than a heuristic: grouping separators are a *display*
+convention. They appear in reports, HTML tables and PDFs, and essentially never in
+a machine export, because the export is written by a serialiser rather than a
+formatter.
+
+Checked rather than assumed, over about 950,000 rows of three ODA extracts:
+
+    lys.csv.gz          400,000 rows    0 grouped
+    maaledybde.csv.gz   151,167 rows    0 grouped
+    ctd.csv.gz          400,000 rows    0 grouped
+
+Every value that *looked* grouped under a naive pattern - 39,196 of them in the
+light file alone - was a decimal with exactly three places, which is what a
+coordinate or a corrected result looks like.
+
+That gives a rule with no ambiguity left in it:
+
+  * **One separator: it is the decimal separator.** Always, whatever follows it.
+    A three-digit tail is not evidence of grouping; it is evidence of three
+    decimal places.
+  * **Two or more separators, or `.` and `,` in the same number: grouping.** This
+    is the only ambiguous case, and it does not occur in any machine export here.
+    Where it does occur, the stream was formatted for a human and needs a
+    declaration rather than a parser.
+
+`audit()` counts the second case. It is a validator, not a fallback: if it ever
+fires on a source declared machine-readable, the declaration is wrong and the
+right response is to look, not to add a branch.
+"""
+import re
+
+# Two or more separators, or a mixture of both characters. The only real evidence
+# of grouping, and the only case a single-separator rule cannot decide.
+GROUPED = re.compile(r"^-?\d+[.,]\d+[.,]|^-?[\d.]*\.[\d,]*,|^-?[\d,]*,[\d.]*\.")
+
+FORMATS = {
+    "oda": {
+        "what": "Overfladevandsdatabasen CSV extracts",
+        "encoding": "iso-8859-1", "delimiter": ";", "quote": '"',
+        "decimal": ",", "grouping": None,
+        "date": "YYYYMMDD",
+        "traps": ["Every field is quoted; a split that does not unquote leaves "
+                  "dates unparseable.",
+                  "Decimal comma; float() raises rather than returning something "
+                  "wrong, so a bare except empties the column.",
+                  "The station list is period-dependent: with no period set the "
+                  "server returns only the currently active network.",
+                  "Column count varies across rows in a few thousandths of a "
+                  "percent; those rows must be skipped, not read at shifted "
+                  "offsets."],
+    },
+    "geojson_dk": {
+        "what": "Danish national GeoJSON layers (vandplandata, MiljøGIS)",
+        "encoding": "utf-8", "delimiter": None, "quote": None,
+        "decimal": ".", "grouping": None, "date": "YYYY-MM-DD",
+        "traps": ["Coordinate order is lon,lat and the CRS is declared in the "
+                  "file; some Danish layers are EPSG:25832 and some 4326."],
+    },
+    "spildevandsdata": {
+        "what": "spildevandsdata.dk Leaflet layer exports (a PULS extract)",
+        "encoding": "utf-8", "delimiter": None, "quote": None,
+        "decimal": ".", "grouping": None, "date": None,
+        "traps": ["Overflow layers store numbers as numbers and the treatment "
+                  "plant layers store the same quantities as strings.",
+                  "Field names are truncated to ten BYTES by an upstream "
+                  "shapefile step, which split a two-byte UTF-8 character and "
+                  "froze U+FFFD into one name permanently."],
+    },
+    "geus_gpkg": {
+        "what": "GEUS GeoPackage (seabed substrate)",
+        "encoding": "utf-8", "delimiter": None, "quote": None,
+        "decimal": ".", "grouping": None, "date": None,
+        "traps": ["Geometry is MultiPolygon ZM - type 3006 - so every point "
+                  "carries four doubles. Reading two yields no polygons and no "
+                  "error."],
+    },
+    "cmems": {
+        "what": "Copernicus Marine NetCDF",
+        "encoding": None, "delimiter": None, "quote": None,
+        "decimal": ".", "grouping": None, "date": "ISO-8601",
+        "traps": ["Some OMI datasets publish no original files, so get() reports "
+                  "success having written nothing; omi-arco still has the data.",
+                  "Several products are reanalysis or the in-situ TAC regridded, "
+                  "so they are downstream of the same national measurements and "
+                  "are not independent checks."],
+    },
+}
+
+
+def num(v, source="oda"):
+    """Parse one numeric field according to the source's declared format."""
+    if v is None:
+        return None
+    s = str(v).strip()
+    if len(s) > 1 and s[0] == '"' and s[-1] == '"':
+        s = s[1:-1].strip()
+    if not s:
+        return None
+    dec = FORMATS.get(source, {}).get("decimal", ".")
+    if dec == ",":
+        s = s.replace(",", ".")
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def audit(values, source="oda"):
+    """Check a sample of raw fields against the declaration.
+
+    Returns counts, not a verdict. `grouped` is the one that matters: a non-zero
+    count on a source declared machine-readable means the declaration is wrong.
+    """
+    out = {"n": 0, "numeric": 0, "grouped": 0, "wrong_separator": 0,
+           "tail3": 0, "examples": []}
+    dec = FORMATS.get(source, {}).get("decimal", ".")
+    other = "." if dec == "," else ","
+    for v in values:
+        s = str(v).strip().strip('"').strip()
+        out["n"] += 1
+        if not s or not (s[0].isdigit() or s[0] == "-"):
+            continue
+        if not re.match(r"^-?\d+([.,]\d+)*$", s):
+            continue
+        out["numeric"] += 1
+        if GROUPED.match(s):
+            out["grouped"] += 1
+            if len(out["examples"]) < 5:
+                out["examples"].append(s)
+            continue
+        if other in s:
+            out["wrong_separator"] += 1
+        if re.match(r"^-?\d+[.,]\d{3}$", s):
+            out["tail3"] += 1
+    return out
