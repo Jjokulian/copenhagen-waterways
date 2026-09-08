@@ -164,9 +164,26 @@ def dk_date(iso):
     return f"{p[2]}-{p[1]}-{p[0]}" if len(p) == 3 else iso
 
 
-def set_period(frm, to):
+def set_period(frm, to, allow_default=False):
+    """Set the extract period. Refuses to do nothing quietly.
+
+    The comment below at the call site says "set the period first, always", and
+    that instruction was a comment rather than code, so a run without --from and
+    --to sailed straight past it and took ODA's default. That default is the
+    CURRENTLY ACTIVE network, and it cost the maaledybde extract 42 of its 44
+    years - 4,044 rows over 2025-2026 at 194 stations, where the record holds
+    1983-2024 at up to 1,505 - and the result looked like a complete small file
+    rather than a truncated large one. Nothing distinguishes the two downstream,
+    which is why this now raises instead of returning."""
     if not frm and not to:
-        return
+        if allow_default:
+            log("  WARNING: no period set; taking ODA's default, which is the "
+                "currently active network only, NOT the full record")
+            return
+        raise SystemExit(
+            "refusing to extract with no period: ODA would silently return only "
+            "the currently active network. Pass --from/--to (or --years N), or "
+            "--allow-default if you genuinely want the active subset.")
     oda.call("SCL2_DatePicked", lists={"textFields": {
         "SCL2PeriodFrom": dk_date(frm), "SCL2PeriodTo": dk_date(to)}}, pause=0.8)
     oda.call("HentData_KritChanged", pause=0.6)
@@ -259,7 +276,7 @@ def split_periods(frm, to, years):
     return out
 
 
-def run(topic, frm, to, years, limit, max_mb):
+def run(topic, frm, to, years, limit, max_mb, allow_default=False):
     os.makedirs(DEST, exist_ok=True)
     spec = TOPICS[topic]
     log(f"logging in as {EMAIL}")
@@ -286,7 +303,7 @@ def run(topic, frm, to, years, limit, max_mb):
     # record - so listing before setting the period silently discards seven eighths
     # of the history, which is exactly the era this project cares about. Set the
     # period first, always.
-    set_period(frm, to)
+    set_period(frm, to, allow_default=allow_default)
     stations = station_list(field_id, sltype)
     log(f"  {len(stations):,} stations offered for {frm or 'start'}..{to or 'end'}")
     reg = os.path.join(DEST, f"{topic}_stations.tsv")
@@ -386,10 +403,13 @@ def main(argv):
                     help="split the period into chunks of this many years "
                          "(needs --from and --to); 0 requests it in one go")
     ap.add_argument("--limit", type=int, default=0, help="stop after N stations")
+    ap.add_argument("--allow-default", action="store_true",
+                    help="extract with no period, taking ODA's currently-active "
+                         "network only. Almost never what you want.")
     ap.add_argument("--max-mb", type=int, default=2000,
                     help="stop before the output exceeds this many MB")
     a = ap.parse_args(argv)
-    return run(a.topic, a.frm, a.to, a.years, a.limit, a.max_mb)
+    return run(a.topic, a.frm, a.to, a.years, a.limit, a.max_mb, a.allow_default)
 
 
 if __name__ == "__main__":
