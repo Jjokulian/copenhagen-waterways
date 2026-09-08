@@ -214,6 +214,39 @@ h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3
 .gaps li{margin-bottom:5px}
 .none{color:var(--ink3);font-style:italic;font-size:12.5px}
 .hint{padding:0 18px 18px;color:var(--ink3);font-size:12px;max-width:70ch}
+
+/* explorer */
+#explore h4{margin:16px 0 6px;font-size:12.5px;letter-spacing:.03em;
+  text-transform:uppercase;color:var(--ink3);font-weight:640}
+.cov{margin:0 0 9px}
+.covlab{font-size:12px;color:var(--ink2);margin-bottom:2px}
+.covlab b{font-weight:500;color:var(--warn);font-size:11px;cursor:help}
+.covrow{display:flex;align-items:center;gap:6px;margin:1px 0}
+.covrow span{width:38px;flex:0 0 auto;font-size:10.5px;color:var(--ink3)}
+.covcells{display:grid;grid-template-columns:repeat(47,1fr);gap:1px;flex:1 1 auto}
+.covcells.s12{grid-template-columns:repeat(12,1fr)}
+.covcells i{display:block;height:9px;background:var(--k3);border-radius:1px}
+.annual{font-size:11.5px;color:var(--ink2);border-left:2px solid var(--warn);
+  padding-left:7px;margin:8px 0}
+.pick{display:flex;gap:6px;margin:4px 0 10px}
+.pick select{flex:1 1 0;min-width:0;font:inherit;font-size:11.5px;padding:3px 4px;
+  background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px}
+.pane{margin:0 0 8px}
+.plab{font-size:11.5px;color:var(--ink2);margin-bottom:1px}
+.spark{width:100%;height:44px;display:block}
+.spark .pts circle{fill:var(--k3)}
+.scale{display:flex;justify-content:space-between;font-size:10px;color:var(--ink3)}
+.tnote{font-size:11px;color:var(--ink3);margin:2px 0 10px;line-height:1.45}
+.scat{position:relative;margin:6px 0 4px;padding:0 0 14px 4px}
+.scat svg{width:100%;max-width:230px;height:auto;display:block;
+  border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+.scat .pts circle{fill:var(--k2);opacity:.75}
+.axl{font-size:10px;color:var(--ink3)}
+.axl.y{position:absolute;left:-2px;top:0;transform-origin:0 0;
+  transform:rotate(90deg) translateY(-100%);white-space:nowrap}
+.plain{font-size:12px;line-height:1.5;color:var(--ink2);
+  background:var(--sea);border-radius:5px;padding:8px 9px;margin:6px 0 0}
+.plain b{color:var(--ink)}
 </style>
 
 <header>
@@ -342,7 +375,182 @@ function select(id){
     <div class="tl">${tl}${ax}</div>
     <h3>What cannot be modelled here</h3>
     ${a.gaps.length ? "<ul class='gaps'>" + a.gaps.map(g => "<li>"+esc(g)+"</li>").join("")
-      + "</ul>" : "<p class='none'>Nothing flagged.</p>"}`;
+      + "</ul>" : "<p class='none'>Nothing flagged.</p>"}
+    <h3>Explore the measurements</h3>
+    <div id="explore"><p class="none">loading…</p></div>`;
+  explore(id);
+}
+
+/* ------------------------------------------------------------------ explorer
+   A map that shows where data exists and will not let you look at it is opaque.
+   This loads the monthly series for the selected area and lets two variables be
+   put against each other.
+
+   Deliberately NOT a dual-axis chart. Two quantities on one frame with two
+   different scales is the most reliable way to manufacture a relationship that
+   is not there - the reader compares the drawn lines, and the drawing was
+   chosen. Instead: two panels, one scale each, sharing a time axis, plus a
+   scatter where the relationship can actually be read. */
+let CUBE = null, SERIES = null, loading = null;
+
+async function loadData(){
+  if (SERIES) return;
+  if (!loading) loading = (async () => {
+    const [cj, cb, sj] = await Promise.all([
+      fetch("data/areas/cube.json").then(r => r.json()),
+      fetch("data/areas/cube.bin").then(r => r.arrayBuffer()),
+      fetch("data/areas/series.json").then(r => r.json()),
+    ]);
+    CUBE = {meta: cj, bits: new Uint8Array(cb),
+            idx: Object.fromEntries(cj.areas.map((a,i) => [a.id, i]))};
+    SERIES = sj;
+  })();
+  await loading;
+}
+
+// bits are area-major within each stream, months LSB-first, ceil(months/8) per area
+function hasData(streamIdx, areaIdx, month){
+  const per = Math.ceil(CUBE.meta.months / 8);
+  const base = (streamIdx * CUBE.meta.areas.length + areaIdx) * per;
+  return (CUBE.bits[base + (month >> 3)] >> (month & 7)) & 1;
+}
+
+function coverageGrid(ai){
+  const M = CUBE.meta.months, Y0 = CUBE.meta.year0, ny = M / 12;
+  let out = "";
+  CUBE.meta.streams.forEach((st, si) => {
+    const perYear = [], perMonth = new Array(12).fill(0);
+    for (let y = 0; y < ny; y++){
+      let c = 0;
+      for (let m = 0; m < 12; m++){
+        if (hasData(si, ai, y*12 + m)) { c++; perMonth[m]++; }
+      }
+      perYear.push(c);
+    }
+    const tot = perYear.reduce((a,b) => a+b, 0);
+    if (!tot) return;
+    const cells = perYear.map((c,y) =>
+      `<i style="opacity:${c ? 0.18 + 0.82*c/12 : 0}" title="${Y0+y}: ${c} month${
+        c===1?"":"s"}"></i>`).join("");
+    const maxm = Math.max(...perMonth);
+    const seas = perMonth.map((c,m) =>
+      `<i style="opacity:${c ? 0.18 + 0.82*c/maxm : 0}" title="${
+        ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m]
+      }: ${c} year${c===1?"":"s"}"></i>`).join("");
+    out += `<div class="cov"><div class="covlab">${esc(st.label)}${
+      st.note ? ` <b title="${esc(st.note)}">declared, not sampled</b>` : ""}</div>
+      <div class="covrow"><span>years</span><div class="covcells">${cells}</div></div>
+      <div class="covrow"><span>season</span><div class="covcells s12">${seas}</div></div></div>`;
+  });
+  return out || `<p class="none">No stream in the cube reaches this area.</p>`;
+}
+
+function seriesFor(ai){
+  const M = CUBE.meta.months;
+  return SERIES.variables.map(v => {
+    const col = SERIES.series[v.key], n = SERIES.series[v.key + "__n"] || [];
+    const vals = col.slice(ai*M, (ai+1)*M), cnt = n.slice(ai*M, (ai+1)*M);
+    const have = vals.filter(x => x != null).length;
+    return {...v, vals, cnt, have};
+  }).filter(v => v.have >= 6);
+}
+
+function spark(v, w, h){
+  const M = CUBE.meta.months, pts = [];
+  let lo = Infinity, hi = -Infinity;
+  for (const x of v.vals) if (x != null){ if (x<lo) lo=x; if (x>hi) hi=x; }
+  if (!isFinite(lo)) return "";
+  if (hi === lo) { hi = lo + 1; }
+  for (let m = 0; m < M; m++){
+    const x = v.vals[m];
+    if (x == null) continue;
+    pts.push(`${(m/(M-1)*w).toFixed(1)},${(h - (x-lo)/(hi-lo)*h).toFixed(1)}`);
+  }
+  const dots = pts.map(p => `<circle cx="${p.split(",")[0]}" cy="${p.split(",")[1]}" r="1.1"/>`).join("");
+  return `<svg viewBox="0 0 ${w} ${h}" class="spark" role="img"
+    aria-label="${esc(v.label)} ${esc(v.depth)}, ${v.have} months">
+    <g class="pts">${dots}</g></svg>
+    <div class="scale"><span>${hi.toFixed(2)}</span><span>${lo.toFixed(2)} ${esc(v.unit)}</span></div>`;
+}
+
+/* Plain language, because "r = +0.49" is a spell rather than a sentence. */
+function plainR(r, n, a, b){
+  const s = Math.abs(r), dir = r >= 0 ? "the other tends to be high too"
+                                      : "the other tends to be low";
+  const strength = s < 0.2 ? "barely at all" : s < 0.4 ? "weakly"
+    : s < 0.6 ? "moderately" : s < 0.8 ? "strongly" : "very strongly";
+  const shrink = 1 - Math.sqrt(Math.max(0, 1 - r*r));
+  return `<p class="plain">Across the <b>${n}</b> months where both were measured
+    here, when <b>${esc(a)}</b> is above its own average, <b>${esc(b)}</b> ${dir} —
+    ${strength} (r = ${r>=0?"+":""}${r.toFixed(2)}).
+    Knowing one shrinks the error in guessing the other by
+    <b>${(100*shrink).toFixed(0)}%</b> against just guessing its average.
+    ${n < 24 ? "<b>Twelve to twenty-four points is very little</b>; a correlation this size arises by chance easily at that sample size." : ""}
+    It says nothing about which causes which, or whether a third thing drives both —
+    both are seasonal, and season alone will correlate almost anything with
+    anything.</p>`;
+}
+
+function compare(vs, ka, kb){
+  const A = vs.find(v => v.key === ka), B = vs.find(v => v.key === kb);
+  if (!A || !B || ka === kb) return "";
+  const xs = [], ys = [];
+  for (let m = 0; m < A.vals.length; m++){
+    if (A.vals[m] != null && B.vals[m] != null){ xs.push(A.vals[m]); ys.push(B.vals[m]); }
+  }
+  if (xs.length < 6) return `<p class="none">Only ${xs.length} month${
+    xs.length===1?"":"s"} have both. Too few to compare.</p>`;
+  const mean = a => a.reduce((x,y)=>x+y,0)/a.length;
+  const mx = mean(xs), my = mean(ys);
+  let sxy=0, sxx=0, syy=0;
+  for (let i=0;i<xs.length;i++){ const dx=xs[i]-mx, dy=ys[i]-my; sxy+=dx*dy; sxx+=dx*dx; syy+=dy*dy; }
+  const r = sxy / Math.sqrt(sxx*syy || 1);
+  const x0=Math.min(...xs), x1=Math.max(...xs), y0=Math.min(...ys), y1=Math.max(...ys);
+  const pts = xs.map((x,i) => `<circle cx="${((x-x0)/((x1-x0)||1)*100).toFixed(1)}"
+    cy="${(100-(ys[i]-y0)/((y1-y0)||1)*100).toFixed(1)}" r="1.6"/>`).join("");
+  const lab = v => `${v.label} ${v.depth}`;
+  return `<div class="scat"><svg viewBox="-6 -6 112 112" role="img"
+      aria-label="scatter of ${esc(lab(A))} against ${esc(lab(B))}">
+      <g class="pts">${pts}</g></svg>
+      <div class="axl x">${esc(lab(A))} →</div><div class="axl y">${esc(lab(B))} →</div>
+    </div>${plainR(r, xs.length, lab(A), lab(B))}`;
+}
+
+async function explore(id){
+  const host = $("#explore");
+  try { await loadData(); } catch(e){
+    host.innerHTML = `<p class="none">Could not load the series data.</p>`; return;
+  }
+  const ai = CUBE.idx[id];
+  if (ai == null){ host.innerHTML = `<p class="none">Not in the cube.</p>`; return; }
+  const vs = seriesFor(ai);
+  const ann = CUBE.meta.annual_only || {};
+  let html = `<h4>When each stream actually measured</h4>${coverageGrid(ai)}`;
+  for (const k in ann) html += `<p class="annual"><b>${esc(k)}: annual only.</b> ${esc(ann[k])}</p>`;
+  if (!vs.length){
+    host.innerHTML = html + `<p class="none">No monthly series with at least six
+      months reaches this area, so there is nothing here to plot.</p>`;
+    return;
+  }
+  const opts = vs.map(v => `<option value="${v.key}">${esc(v.label)} ${esc(v.depth)} · ${v.have} mo</option>`).join("");
+  html += `<h4>Put two against each other</h4>
+    <div class="pick"><select id="va">${opts}</select><select id="vb">${opts}</select></div>
+    <div id="panes"></div>`;
+  host.innerHTML = html;
+  const va = $("#va"), vb = $("#vb");
+  vb.selectedIndex = Math.min(1, vs.length-1);
+  const draw = () => {
+    const A = vs.find(v => v.key === va.value), B = vs.find(v => v.key === vb.value);
+    $("#panes").innerHTML =
+      `<div class="pane"><div class="plab">${esc(A.label)} ${esc(A.depth)}</div>${spark(A,300,44)}</div>
+       <div class="pane"><div class="plab">${esc(B.label)} ${esc(B.depth)}</div>${spark(B,300,44)}</div>
+       <div class="tnote">Both panels share the same ${CUBE.meta.year0}–${CUBE.meta.year1}
+         span, each with its own scale. They are drawn apart on purpose: one frame
+         with two scales lets the drawing decide how related they look.</div>
+       ${compare(vs, va.value, vb.value)}`;
+  };
+  va.onchange = vb.onchange = draw;
+  draw();
 }
 </script>
 """
