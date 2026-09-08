@@ -52,13 +52,50 @@ def uq(v):
 
 
 def main():
+    """Stream one cast at a time.
+
+    The first version of this held every cast in a dict and then processed them,
+    which reached 541 MB against 737 MB free and took the machine down with it.
+    Rows for one cast are contiguous in the file - checked, 61,534 cast-runs over
+    six million rows with none reopened after closing - so a cast can be completed
+    and discarded as its key changes, and peak memory becomes one cast plus the
+    output grid. The contiguity assumption is asserted rather than trusted: a key
+    that reappears after closing is counted and reported.
+    """
     polys = load_polygons()
     n = len(polys)
-    hdr = None
-    casts = collections.defaultdict(list)     # (station,date) -> [(depth,param,val)]
-    pos = {}
+    acc = collections.defaultdict(list)
+    pos, where = {}, {}
+    closed = set()
+    reopened = skipped = ncast = 0
+    cur, rows = None, []
+
+    def flush():
+        nonlocal rows
+        if not rows or cur is None:
+            rows = []
+            return
+        st, m = cur[0], cur[2]
+        k = where.get(st)
+        if k is None and st in pos:
+            k = locate(polys, *pos[st])
+            where[st] = k
+        if k is not None:
+            depths = sorted({d for d, _, _ in rows})
+            lo_cut = depths[0] + (depths[-1] - depths[0]) * 0.25
+            hi_cut = depths[-1] - (depths[-1] - depths[0]) * 0.25
+            for d, par, v in rows:
+                key, _lab, _u, split = WANT[par]
+                if not split:
+                    acc[(key, k, m)].append(v)
+                    continue
+                if d <= lo_cut:
+                    acc[(key + "_surf", k, m)].append(v)
+                if d >= hi_cut:
+                    acc[(key + "_bed", k, m)].append(v)
+        rows = []
+
     p = os.path.join("data", "raw", "oda", "ctd.csv.gz")
-    skipped = 0
     with gzip.open(p, "rt", encoding="iso-8859-1") as fh:
         hdr = fh.readline().rstrip("\r\n").split(";")
         ix = {c: i for i, c in enumerate(hdr)}
@@ -73,52 +110,35 @@ def main():
             if len(f) != nc:
                 skipped += 1
                 continue
+            st, dat = uq(f[ix["ObservationsStedNr"]]), uq(f[ix["Dato"]])
+            if (st, dat) != (cur[0], cur[1]) if cur else True:
+                flush()
+                if (st, dat) in closed:
+                    reopened += 1
+                closed.add((st, dat))
+                m = mon(dat)
+                cur = (st, dat, m)
+                ncast += 1
+            if cur[2] is None:
+                continue
             par = uq(f[ix["Parameter"]])
             if par not in WANT:
                 continue
-            st, dat = uq(f[ix["ObservationsStedNr"]]), uq(f[ix["Dato"]])
-            m = mon(dat)
-            if m is None:
-                continue
+            if st not in pos:
+                lo, la = num(uq(f[ix["Længde"]])), num(uq(f[ix["Bredde"]]))
+                if lo and la and 3 < lo < 16 and 53 < la < 59:
+                    pos[st] = (lo, la)
             v = num(uq(f[ix["KorrigeretResultat"]]))
             if v is None:
                 v = num(uq(f[ix["OriginalResultat"]]))
             d = num(uq(f[ix["Dybde (m)"]]))
             if v is None or d is None:
                 continue
-            if st not in pos:
-                lo, la = num(uq(f[ix["Længde"]])), num(uq(f[ix["Bredde"]]))
-                if lo and la and 3 < lo < 16 and 53 < la < 59:
-                    pos[st] = (lo, la)
-            casts[(st, dat, m)].append((d, par, v))
-    log(f"  {len(casts):,} casts, {len(pos):,} stations, {skipped:,} rows skipped")
-
-    where = {}
-    for st, xy in pos.items():
-        k = locate(polys, *xy)
-        if k is not None:
-            where[st] = k
-    log(f"  {len(where):,} stations placed in a water body")
-
-    acc = collections.defaultdict(list)
-    for (st, dat, m), rows in casts.items():
-        k = where.get(st)
-        if k is None:
-            continue
-        depths = sorted({d for d, _, _ in rows})
-        if not depths:
-            continue
-        lo_cut = depths[0] + (depths[-1] - depths[0]) * 0.25
-        hi_cut = depths[-1] - (depths[-1] - depths[0]) * 0.25
-        for d, par, v in rows:
-            key, label, unit, split = WANT[par]
-            if not split:
-                acc[(key, k, m)].append(v)
-                continue
-            if d <= lo_cut:
-                acc[(key + "_surf", k, m)].append(v)
-            if d >= hi_cut:
-                acc[(key + "_bed", k, m)].append(v)
+            rows.append((d, par, v))
+    flush()
+    log(f"  {ncast:,} casts, {len(pos):,} stations, {skipped:,} rows skipped"
+        + (f", {reopened:,} casts REOPENED (contiguity broken)" if reopened else ""))
+    log(f"  {sum(1 for v in where.values() if v is not None):,} stations placed")
 
     series, meta = {}, []
     keys = sorted({k for k, _, _ in acc})
