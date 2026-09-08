@@ -23,6 +23,33 @@ Checked rather than assumed, over about 950,000 rows of three ODA extracts:
     lys.csv.gz          400,000 rows    0 grouped
     maaledybde.csv.gz   151,167 rows    0 grouped
 
+ODA ctd.csv.gz MIXES UNITS WITHIN A PARAMETER COLUMN, AND ONE OF THEM MATTERS.
+Full-file scan, 53,710,760 rows, 0 malformed, 17 named Parameter values:
+
+    Konduktivitet   mS/cm 4,425,685   mS/m   743,747   <-- FACTOR OF 100, UNFLAGGED
+    Vaegtfylde      g/l   3,412,290   kg/m3  917,384   <-- cosmetic: same magnitude
+    Fluorescens     Ingen 6,783,693   ug/l        83   <-- 97 rows, plus 14 'Ikke oplyst'
+
+Only conductivity is a hazard: 14% of its rows are in mS/m and converting the column
+without reading Enhed per row is a hundredfold error on that seventh. Density is mixed
+in NAME only - 1 g/l and 1 kg/m3 are the same quantity - so it costs nothing but will
+fail a naive equality check on the unit string. Always read Enhed per row; never per
+column, and never per file.
+
+ROW COUNTS, for anyone sizing a job (same scan):
+    Temperatur 7,501,421 | Salinitet 7,474,645 | Oxygen indhold 7,147,012
+    Fluorescens 6,783,790 | Oxygenmaetning 6,598,319 | Lysdaempning 5,217,377
+    Konduktivitet 5,169,432 | Vaegtfylde 4,329,674 | Turbiditet 1,076,915
+    FDOM 890,921 | Photometer maaling 576,179 | Photometer reference 531,071
+    pH 237,496 | Stroemhastighed 84,734 | Stroemretning 84,572
+    Farvestof 4,601 | Dihydrogensulfid 2,601
+
+Turbiditet and FDOM are worth naming because this project spent a long time treating
+turbidity and CDOM as absent. They are not absent. Turbiditet runs 1994-2026 over 252
+stations; FDOM only from 2021-04-19 over 211. Neither reaches the derived monthly cube.
+Neither is an independent production path either - same cast, same vessel, often the
+same sonde as the oxygen channel.
+
 SECCHI IS RIGHT-CENSORED AT THE BED, AND THE CENSORING IS 59x STRONGER IN SHALLOW
 WATER. Verified over the 96,708 rows carrying both SigtDybde_m and BundDybde_m:
 SigtTilBund - the disc was still visible on the bottom - is True on 21.36% of readings
