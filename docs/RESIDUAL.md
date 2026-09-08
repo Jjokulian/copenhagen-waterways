@@ -95,6 +95,53 @@ ever, in principle.
 That is not a criticism of anyone's work. It is a property of the arithmetic. It becomes a
 criticism only when such a number is handed a legal obligation.
 
+### Except across time, as the account grows — and that is a real test
+
+The section above is true at one moment and too strong across several, and the
+difference is worth having because it is the only test of a residual that exists.
+
+A residual cannot be checked against an independent measurement of itself. It **can**
+be checked against what happens when somebody measures one more of the parts.
+
+    R  =  Total  −  Σ(known parts)
+
+Measure a new part *P* that was previously inside the leftover. The arithmetic makes a
+prediction, and it is exact:
+
+> **R_new = R_old − P**
+
+The residual must shrink by precisely the size of what was moved out of it. Nothing
+else may move. If the total is unchanged and *P* has simply been named and quantified,
+that is the whole of what should happen.
+
+Three failures, each diagnostic:
+
+- **The residual does not shrink.** Then it was not the sum of the unmeasured parts.
+  It was absorbing something else — model error, unit mismatch, a scaling factor —
+  and *P* was never inside it.
+- **The residual shrinks by less than P.** Something was double-counted: *P* overlapped
+  a part already named, so the account was never a partition.
+- **The total moves instead.** The "total" was itself estimated in a way that depends
+  on the parts, and the account is circular. This is the same circularity as a
+  variance statistic that takes its own partition as an input — see
+  [CATEGORY.md](#CATEGORY.md).
+
+**So a residual is not unfalsifiable. It is unfalsifiable *at a point in time*.** Give
+it a history — successive versions of the account, as pathways get measured — and it
+makes a checkable prediction at every revision. A residual that has survived several
+such additions, shrinking correctly each time, has earned considerably more than one
+that has never been tested. A residual that has been recomputed repeatedly without
+ever moving has been telling you something for years.
+
+This also says what to ask for, and it is cheap: **not the current number, but the
+sequence.** What was the leftover in each published version, what was measured in
+between, and does the arithmetic close? That is an archival question, answerable from
+documents that already exist, and it requires no new fieldwork.
+
+It is the same move as the feature-space test in [CATEGORY.md](#CATEGORY.md), applied
+to a number rather than a category: **a quantity that cannot be checked against
+anything can still be checked against what happens when the measured space grows.**
+
 ### When it comes out impossible, that is the error bars talking
 
 Sometimes a shop's stocktake finds *more* stock than the records allow. Negative
