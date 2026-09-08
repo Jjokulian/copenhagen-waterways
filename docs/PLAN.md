@@ -187,6 +187,15 @@ that the 69.6% attribution is a residual over an area 51% modelled, not a measur
 **Outstanding:** GRUNDLAGET's F2/F3/F4/Q4 remain unverified against primary DCE and DHI
 documents, and will not be applied on a subagent's word.
 
+**And a standing rule this stage needs, learned the hard way.** Finding one bad
+argument in one document does not establish that a claim is unevidenced. The
+nitrogen attribution's circular figure was found, published, and then had to be
+narrowed within the hour, because DCE qualify that figure themselves on the next
+page and a paired-catchment study exists that would not be circular. **Before
+reporting that a link fails, ask what the strongest version of the case would be
+and whether it was looked for.** The sourcing a document presents is not the only
+evidence there is for what it claims.
+
 ---
 
 ## The rule that governs all seven

@@ -85,6 +85,12 @@ which is the whole argument for measuring rather than quoting.
   variables are three sensors.
 - **Do not fabricate.** "Not established" is a valid and expected answer. A source you
   cannot verify is a source you say you could not verify.
+- **Steelman before you report a failure.** A bad argument in a document does not mean
+  there are no good ones elsewhere. Ask what the strongest version of the case would
+  be, look for it, and say whether you looked. This project published a circularity
+  finding and had to narrow it within the hour: the authors qualified the figure
+  themselves on the next page, and a paired-catchment study existed that nobody here
+  had read.
 
 ## 5. What may be emitted
 

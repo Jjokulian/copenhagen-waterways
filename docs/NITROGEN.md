@@ -84,6 +84,37 @@ as a result:
 the correlation is reported as a finding.** This does not make the attribution wrong.
 It makes Figur 6.7 D unable to evidence it.
 
+#### And that is a much narrower claim than it first looks
+
+We checked one figure in one report and stopped. Two things found afterwards, both
+of which cut against the simple reading:
+
+**DCE qualify the figure themselves, on the very next page.** Immediately after
+presenting the relation, SR353 says that not all fjord catchments respond equally
+quickly — Mariager Fjord and parts of Limfjorden reduced their diffuse load *less* than
+*"relationen vist i Figur 6.7 D indikerer"*, citing Windolf et al. 2012b and 2012c.
+They are pointing at the figure's limits, not resting on it.
+
+**A non-circular design exists and we have not read it.** Windolf, Blicher-Mathiesen,
+Carstensen & Kronvang (2012c), *Environmental Science and Policy* 24: 24–33 —
+*"Changes in nitrogen loads to estuaries following implementation of Governmental
+Action Plans in Denmark: **a paired catchment and estuary approach** for analysing
+regional responses."* A paired design is precisely the thing that is not circular.
+Separately, Bøgestrand et al. (2009) evaluated DK-QNP and found a regional bias —
+overestimating in western Denmark, underestimating in the east — which SR353 now
+corrects for. So model evaluation exists, and we had not looked for it.
+
+**So the established claim is narrow:** *one figure, in one monitoring report, is
+structurally unable to support the inference it is used for.* The claim **not**
+established is that the attribution lacks evidence. Testing that would mean reading
+Windolf 2010/2011/2012a–c and Bøgestrand 2009 and asking whether DK-QNP is validated
+against gauged catchments held out of its fitting — which is the honest next step and
+is not done.
+
+This is worth stating plainly because it is the error this project audits, committed
+here: **we found one bad argument and let it stand for the case.** A bad argument in a
+source does not mean there are no good ones.
+
 #### What "field surplus" is, in facts and observations
 
 It is an accounting identity, not a measurement. From
