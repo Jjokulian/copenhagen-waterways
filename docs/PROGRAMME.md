@@ -42,6 +42,14 @@ The register keeps a separate list, arrived at from the other direction — not 
 
 Note what falls out of the table. **`iltsvind` is not on it** — oxygen deficit is a mechanism, not a loss, and it appears here only because it is the thing that got measured and so became the public name for everything. And `T2` has no public word at all: there is no everyday term for a system that has stopped being able to recover, which is precisely the state that determines whether spending money on any of Part Two is worth doing.
 
+### Why the current framing does not reach those four words
+
+> **This section is a placeholder and is marked as one.** An earlier version gave four reasons the present framing cannot fix the problem. They were reasonable arguments and they are gone, for two faults. They arrived with no context, so a reader had no idea what was being argued against. And they were **too narrow** — four objections, written before most of the investigation existed, standing in for a critique that has since grown well past them.
+>
+> What belongs here is not a fixed list of objections. It is the **synthesis of the findings**, drawn from the investigation pages and from the register, and weighted toward the ones that carry a political consequence — because those are the ones where being wrong costs something. That synthesis needs the field to be scored before it can be written honestly, and the field is not scored yet: [HYPOTHESES.md](#HYPOTHESES.md) states the mechanisms and explicitly declines to rank them.
+>
+> Writing it earlier would mean assembling whichever findings happen to exist into an argument and calling it a conclusion, which is the failure this site was built to notice. So it stays empty, visibly, until there is something to put in it.
+
 ### What this page can and cannot honestly claim
 
 Because three of the four public words have no measurement, **the solutions below cannot currently verify their own success.** Rainwater rivers, a wetland outlet, treatment and source control can each be built, costed and monitored for the things that *are* instrumented — volumes, loads, concentrations. None of that would tell anyone whether the shore stopped smelling.

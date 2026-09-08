@@ -109,6 +109,26 @@ code.gloss{
   border-top:1px solid var(--rule,#d7dee6); color:var(--ink-2,#3d4a58)}
 #tip i{display:block; font-style:normal; font-size:11px; letter-spacing:.06em;
   text-transform:uppercase; color:var(--muted,#66727f); margin-bottom:5px}
+  /* Reading map. Laid out with grid and flow only - no computed positions, so it
+     degrades to a readable stack at any width instead of to overlapping boxes. */
+  .crumbs{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;margin:0 0 1.6rem;padding:.55rem .8rem;
+    border:1px solid var(--rule);border-radius:6px;font-family:Archivo,sans-serif;font-size:13.5px}
+  .crumbs i{color:var(--muted);font-style:normal;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px}
+  .crumbs span{display:inline-flex;gap:.4rem;align-items:baseline;flex-wrap:wrap}
+  .routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin:1rem 0 2rem}
+  .route{border:1px solid var(--rule);border-radius:6px;padding:.8rem .9rem}
+  .route b{font-family:Archivo,sans-serif;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
+  .route ol{margin:.5rem 0 0;padding-left:1.15rem}
+  .route li{margin:.2rem 0}
+  h3.tier{display:flex;align-items:center;gap:.6rem;margin:2rem 0 .8rem;font-size:15px}
+  h3.tier span{display:inline-grid;place-items:center;width:1.55rem;height:1.55rem;flex:0 0 auto;
+    border-radius:50%;background:var(--rule);font-family:Archivo,sans-serif;font-size:12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:.8rem}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:.75rem .85rem}
+  .card p{margin:.35rem 0 0;font-size:14.5px}
+  .cardtitle{font-weight:600}
+  .card .req{font-family:Archivo,sans-serif;font-size:12.5px;color:var(--muted)}
+  .card .rel{font-style:italic}
 </style>
 </head>
 <body>
@@ -157,6 +177,9 @@ const GROUPS = [
     ["REGISTER.md",     "Register of claimed structures"],
     ["DATA_SOURCES.md", "Where the data comes from"],
   ]],
+  ["Related, on its own", [
+    ["EXPOSURE.md",     "Documenting what pollution does to a body"],
+  ]],
   ["The public record", [
     ["POLITICS.md",     "What was actually said"],
   ]],
@@ -167,8 +190,76 @@ const GROUPS = [
   ]],
 ];
 const DOCS = GROUPS.flatMap(([, ds]) => ds).filter(([f]) => !f.endsWith(".html"));
+
+/* The sidebar lists what exists. It does not say what to read first, and with two
+   dozen documents a flat list stops being an overview and becomes an inventory.
+   META adds the two things a list cannot carry: what question each page answers,
+   and which pages have to be read before it makes sense.
+
+   `after` is a dependency, not a suggestion - the page assumes you already have
+   that idea. `related` is the weaker edge, and it exists because some pages belong
+   to this reading without any page needing them: EXPOSURE.md is a documentation
+   project in its own right, connected to everything here and a prerequisite for
+   nothing. Collapsing the two would either bury it or falsely gate something on it.
+   `tier` is derived from `after` and only used to lay the map out. Edges are kept
+   sparse on purpose: naming five prerequisites is the same as naming none. */
+const META = {
+  "PROGRAMME.md":   {tier:0, why:"What people say is wrong, and what would fix it", after:[]},
+  "RESIDUAL.md":    {tier:1, why:"Why a number nobody measured can still decide things", after:[]},
+  "AREAS.md":       {tier:1, why:"Why a figure true of Denmark is true of nowhere in it", after:[]},
+  "OBSERVING.md":   {tier:2, why:"What Denmark measures, where, and how often", after:["AREAS.md"]},
+  "DATA_SOURCES.md":{tier:2, why:"Every source the project knows of", after:["OBSERVING.md"]},
+  "DATA_QUEUE.md":  {tier:2, why:"The same sources sorted by how hard they are to get", after:["DATA_SOURCES.md"]},
+  "NITROGEN.md":    {tier:3, why:"What the sea actually receives, and how that figure is made", after:["RESIDUAL.md"]},
+  "CAUSATION.md":   {tier:3, why:"Granting the figure, does the chain from it hold?", after:["NITROGEN.md"]},
+  "OXYGEN.md":      {tier:3, why:"What removes the oxygen, arithmetic only", after:["CAUSATION.md"]},
+  "LIGHT.md":       {tier:3, why:"Is there enough light at the bed, and is the number trustworthy?", after:["OBSERVING.md"]},
+  "CURRENTS.md":    {tier:3, why:"Where the water goes, and which bays retain rather than flush", after:["AREAS.md"]},
+  "SEABED.md":      {tier:3, why:"What the wind lifts off the bed, and what stays put", after:["CURRENTS.md"]},
+  "FLOOD_GAP.md":   {tier:3, why:"Does Copenhagen's cloudburst plan go where the water goes?", after:[]},
+  "REGISTER.md":    {tier:3, why:"The claimed drainage structures, checked one by one", after:["FLOOD_GAP.md"]},
+  "HYPOTHESES.md":  {tier:4, why:"Every mechanism that could produce these outcomes, none privileged", after:["OXYGEN.md","AREAS.md"]},
+  "EXPERIMENTS.md": {tier:4, why:"What would actually settle it - and what it would cost", after:["HYPOTHESES.md"]},
+  "OPEN_PROBLEMS.md":{tier:4, why:"What we could not answer, and why", after:["HYPOTHESES.md"], related:["EXPOSURE.md"]},
+  "SOLUTIONS.md":   {tier:4, why:"What would stop it, judged on evidence", after:["HYPOTHESES.md"]},
+  "POLITICS.md":    {tier:5, why:"What was said out loud, verbatim and dated", after:["RESIDUAL.md"]},
+  "LANDBRUG.md":    {tier:5, why:"The same argument, addressed to farmers, in Danish", after:["NITROGEN.md"]},
+  "EXPOSURE.md":    {tier:6, why:"What high exposure does to a living body, and why almost nobody has recorded it", after:[], related:["OPEN_PROBLEMS.md","PROGRAMME.md"]},
+};
+const TIERS = [
+  "Start here",
+  "The two ideas everything else runs into",
+  "What is measured, and where",
+  "What those measurements say",
+  "The whole field, and what would settle it",
+  "What was said, and to whom",
+  "Related, and a dependency of nothing",
+];
+/* Named routes, because different readers want different things and a dependency
+   graph does not tell you where to enter it. */
+const ROUTES = [
+  ["In ten minutes", ["PROGRAMME.md","RESIDUAL.md","AREAS.md"]],
+  ["Checking the work", ["OBSERVING.md","AREAS.md","LIGHT.md","HYPOTHESES.md","EXPERIMENTS.md"]],
+  ["What was actually claimed", ["POLITICS.md","RESIDUAL.md","NITROGEN.md","CAUSATION.md"]],
+  ["My local water", ["AREAS.md","CURRENTS.md","SEABED.md","PROGRAMME.md"]],
+];
+const titleOf = f => (DOCS.find(([x]) => x === f) || [, f])[1];
+const leadsTo = f => Object.keys(META).filter(k => (META[k].after || []).includes(f));
+const linked = f => Array.from(new Set([].concat(
+  (META[f] && META[f].related) || [],
+  Object.keys(META).filter(k => ((META[k].related) || []).includes(f)))));
 const navEl = document.getElementById("nav");
 const docEl = document.getElementById("doc");
+
+{
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = "#map";
+  a.dataset.file = "map";
+  a.textContent = "Reading map — what to read first";
+  li.appendChild(a);
+  navEl.appendChild(li);
+}
 
 for (const [heading, docs] of GROUPS) {
   if (heading !== GROUPS[0][0]) {
@@ -196,7 +287,8 @@ for (const [heading, docs] of GROUPS) {
 
 function current() {
   const want = decodeURIComponent(location.hash.slice(1));
-  return DOCS.some(([f]) => f === want) ? want : DOCS[0][0];
+  if (want === "map") return "map";
+  return DOCS.some(([f]) => f === want) ? want : "map";
 }
 
 
@@ -380,15 +472,85 @@ function markTerms(root, terms) {
 addEventListener("keydown", e => { if (e.key === "Escape") hideTip(); });
 addEventListener("scroll", hideTip, { passive: true });
 
+function esc(t) {
+  const d = document.createElement("div");
+  d.textContent = t;
+  return d.innerHTML;
+}
+
+function renderMap() {
+  const parts = ['<h1>Reading map</h1>',
+    '<p>Two dozen documents, and a list of them is an inventory rather than an ' +
+    'overview. This is the same set arranged by <b>what has to be read first</b>. ' +
+    'An arrow means the later page assumes an idea the earlier one establishes — ' +
+    'it is a dependency, not a recommendation.</p>',
+    '<h2>If you only want one path</h2>', '<div class="routes">'];
+  for (const [name, path] of ROUTES) {
+    parts.push('<div class="route"><b>' + esc(name) + '</b><ol>');
+    for (const f of path)
+      parts.push('<li><a href="#' + f + '">' + esc(titleOf(f)) + '</a></li>');
+    parts.push('</ol></div>');
+  }
+  parts.push('</div>', '<h2>Everything, by what it depends on</h2>');
+  for (let t = 0; t < TIERS.length; t++) {
+    const inTier = Object.keys(META).filter(f => META[f].tier === t);
+    if (!inTier.length) continue;
+    parts.push('<h3 class="tier"><span>' + t + '</span> ' + esc(TIERS[t]) + '</h3>');
+    parts.push('<div class="cards">');
+    for (const f of inTier) {
+      const m = META[f];
+      const req = (m.after || []).map(x =>
+        '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+      parts.push(
+        '<div class="card"><a class="cardtitle" href="#' + f + '">' +
+        esc(titleOf(f)) + '</a><p>' + esc(m.why) + '</p>' +
+        (req ? '<p class="req">read after ' + req + '</p>'
+             : '<p class="req">no prerequisites</p>') +
+        (linked(f).length
+          ? '<p class="req rel">related: ' + linked(f).map(x =>
+              '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ") + '</p>'
+          : '') + '</div>');
+    }
+    parts.push('</div>');
+  }
+  parts.push('<p class="status">The map is hand-maintained in <code>index.html</code>. ' +
+    'A page missing from it is a page nobody has placed yet, not a page that stands alone.</p>');
+  return parts.join("");
+}
+
+function crumbs(file) {
+  const m = META[file];
+  if (!m) return "";
+  const after = (m.after || []).map(x =>
+    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+  const next = leadsTo(file).map(x =>
+    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+  const rel = linked(file).map(x =>
+    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+  if (!after && !next && !rel) return "";
+  return '<nav class="crumbs">' +
+    (after ? '<span><i>read after</i> ' + after + '</span>' : '') +
+    (next ? '<span><i>leads to</i> ' + next + '</span>' : '') +
+    (rel ? '<span><i>related</i> ' + rel + '</span>' : '') +
+    '<span><a href="#map">reading map</a></span></nav>';
+}
+
 async function show() {
   const file = current();
   for (const a of navEl.querySelectorAll("a"))
     a.toggleAttribute("aria-current", a.dataset.file === file);
+  if (file === "map") {
+    docEl.innerHTML = renderMap();
+    hideTip();
+    document.title = "Reading map — Copenhagen Waterways";
+    window.scrollTo(0, 0);
+    return;
+  }
   docEl.innerHTML = '<p class="status">Loading…</p>';
   try {
     const r = await fetch(file, { cache: "no-cache" });
     if (!r.ok) throw new Error(`${file} — HTTP ${r.status}`);
-    docEl.innerHTML = marked.parse(await r.text(), { gfm: true });
+    docEl.innerHTML = crumbs(file) + marked.parse(await r.text(), { gfm: true });
     // tables carry long Danish system names; let each scroll rather than the page
     for (const t of docEl.querySelectorAll("table")) {
       const w = document.createElement("div");

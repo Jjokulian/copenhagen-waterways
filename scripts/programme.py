@@ -282,6 +282,29 @@ def main():
       "that has stopped being able to recover, which is precisely the state that "
       "determines whether spending money on any of Part Two is worth doing.\n")
 
+    a("### Why the current framing does not reach those four words\n")
+    a("> **This section is a placeholder and is marked as one.** An earlier version "
+      "gave four reasons the present framing cannot fix the problem. They were "
+      "reasonable arguments and they are gone, for two faults. They arrived with no "
+      "context, so a reader had no idea what was being argued against. And they "
+      "were **too narrow** — four objections, written before most of the "
+      "investigation existed, standing in for a critique that has since grown well "
+      "past them.\n"
+      ">\n"
+      "> What belongs here is not a fixed list of objections. It is the "
+      "**synthesis of the findings**, drawn from the investigation pages and from "
+      "the register, and weighted toward the ones that carry a political "
+      "consequence — because those are the ones where being wrong costs something. "
+      "That synthesis needs the field to be scored before it can be written "
+      "honestly, and the field is not scored yet: "
+      "[HYPOTHESES.md](#HYPOTHESES.md) states the mechanisms and explicitly "
+      "declines to rank them.\n"
+      ">\n"
+      "> Writing it earlier would mean assembling whichever findings happen to "
+      "exist into an argument and calling it a conclusion, which is the failure "
+      "this site was built to notice. So it stays empty, visibly, until there is "
+      "something to put in it.\n")
+
     a("### What this page can and cannot honestly claim\n")
     a("Because three of the four public words have no measurement, **the solutions "
       "below cannot currently verify their own success.** Rainwater rivers, a "
