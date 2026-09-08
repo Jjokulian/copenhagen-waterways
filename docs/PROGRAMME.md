@@ -15,18 +15,18 @@ This page takes its problem statement from the public, not from the monitoring p
 | **fiskedød** | dead fish, visibly, in numbers | no open register | the events happen and are recorded nowhere the public can read |
 | **livet i fjordene** | the structural life is gone | eelgrass depth limit, some bottom fauna | measured — through a light proxy that censors itself in shallow water ([LIGHT.md](#LIGHT.md)) |
 
-**Three of the four have no usable measurement, and the fourth cannot be recorded in the bay next to Copenhagen.** That is not an argument against anyone. It is a statement of what is and is not known about the things people mind, and everything on this page is shaped by it.
+**Three of the four have no usable measurement, and the fourth cannot be recorded in the bay next to Copenhagen.** Everything on this page is shaped by that: the things people mind are, for the most part, unmeasured, and any solution below has to be judged without being able to watch them improve.
 
-### Where it is, which is not only the shore
+### Where it is
 
-The recorded phrase is *fjorde og indre farvande* — fjords and inner waters — and the damage people describe sits in at least four different kinds of place, which do not share a mechanism and will not share a fix:
+The phrase in the record is *fjorde og indre farvande* — fjords and inner waters. The places people describe fall into four kinds, and they share neither a mechanism nor a fix:
 
-- **The shore itself**, where the material lands, smells and is walked past.
-- **The fjords**, enclosed, shallow, slow to exchange, and the places the public argument is mostly about.
-- **The inner waters** — belts, sounds and bays, including the ones like Køge Bugt that retain rather than flush.
-- **The open sea around Denmark**, which people also call dead, and which has no shore attached to it at all.
+- **Fjords** — enclosed, shallow, slow to exchange, and the setting for most of the public argument.
+- **Inner waters** — the belts, sounds and bays, including ones like Køge Bugt that hold water rather than exchange it.
+- **The open sea around Denmark**, which people also call dead.
+- **The shoreline**, where material from any of the above lands, sits and smells, and where most people meet the problem directly.
 
-[AREAS.md](#AREAS.md) is the reason this matters here: a fix that is true of Denmark is true of nowhere in it. Copenhagen appears throughout Part Two not because the problem is Copenhagen's, but because it is the one place where the flow paths, the constructed drainage and the receiving water are mapped well enough to say *which street, which volume, which site.* Everywhere else gets the same avenues with the specifics missing.
+[AREAS.md](#AREAS.md) is why the distinction earns a section: a fix that is true of Denmark is true of nowhere in it. Copenhagen carries the specifics in Part Two because it is the one place where the flow paths, the constructed drainage and the receiving water are mapped closely enough to name *which street, which volume, which site.* The same avenues apply elsewhere with the particulars still to be filled in.
 
 ### What sits underneath those four words
 

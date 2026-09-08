@@ -237,27 +237,28 @@ def main():
       "shallow water ([LIGHT.md](#LIGHT.md)) |")
     a("")
     a("**Three of the four have no usable measurement, and the fourth cannot be "
-      "recorded in the bay next to Copenhagen.** That is not an argument against "
-      "anyone. It is a statement of what is and is not known about the things "
-      "people mind, and everything on this page is shaped by it.\n")
+      "recorded in the bay next to Copenhagen.** Everything on this page is shaped "
+      "by that: the things people mind are, for the most part, unmeasured, and any "
+      "solution below has to be judged without being able to watch them "
+      "improve.\n")
 
-    a("### Where it is, which is not only the shore\n")
-    a("The recorded phrase is *fjorde og indre farvande* — fjords and inner waters "
-      "— and the damage people describe sits in at least four different kinds of "
-      "place, which do not share a mechanism and will not share a fix:\n")
-    a("- **The shore itself**, where the material lands, smells and is walked past.\n"
-      "- **The fjords**, enclosed, shallow, slow to exchange, and the places the "
-      "public argument is mostly about.\n"
-      "- **The inner waters** — belts, sounds and bays, including the ones like "
-      "Køge Bugt that retain rather than flush.\n"
-      "- **The open sea around Denmark**, which people also call dead, and which "
-      "has no shore attached to it at all.\n")
-    a("[AREAS.md](#AREAS.md) is the reason this matters here: a fix that is true of "
-      "Denmark is true of nowhere in it. Copenhagen appears throughout Part Two not "
-      "because the problem is Copenhagen's, but because it is the one place where "
-      "the flow paths, the constructed drainage and the receiving water are mapped "
-      "well enough to say *which street, which volume, which site.* Everywhere else "
-      "gets the same avenues with the specifics missing.\n")
+    a("### Where it is\n")
+    a("The phrase in the record is *fjorde og indre farvande* — fjords and inner "
+      "waters. The places people describe fall into four kinds, and they share "
+      "neither a mechanism nor a fix:\n")
+    a("- **Fjords** — enclosed, shallow, slow to exchange, and the setting for most "
+      "of the public argument.\n"
+      "- **Inner waters** — the belts, sounds and bays, including ones like Køge "
+      "Bugt that hold water rather than exchange it.\n"
+      "- **The open sea around Denmark**, which people also call dead.\n"
+      "- **The shoreline**, where material from any of the above lands, sits and "
+      "smells, and where most people meet the problem directly.\n")
+    a("[AREAS.md](#AREAS.md) is why the distinction earns a section: a fix that is "
+      "true of Denmark is true of nowhere in it. Copenhagen carries the specifics "
+      "in Part Two because it is the one place where the flow paths, the "
+      "constructed drainage and the receiving water are mapped closely enough to "
+      "name *which street, which volume, which site.* The same avenues apply "
+      "elsewhere with the particulars still to be filled in.\n")
 
     a("### What sits underneath those four words\n")
     a("The register keeps a separate list, arrived at from the other direction — "
