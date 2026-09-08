@@ -320,6 +320,7 @@ const GROUPS = [
     ["PLAN.md",         "The order of work"],
     ["IF_YOU_HAVE_THE_DATA.md", "If you have data access we don't"],
     ["AGENT_BRIEF.md",  "Standing brief"],
+    ["KNOWN_AND_UNKNOWN.md", "What is known, by whom"],
     ["OXYGEN.md",       "What actually removes the oxygen"],
     ["LIGHT.md",        "Is there enough light at the bed?"],
     ["AREAS.md",        "There is no Denmark"],
@@ -952,12 +953,15 @@ const TOOLS = [
 
 function renderMap() {
   const parts = ['<section class="hero">',
-    '<h1>What Denmark knows about its own coastal water</h1>',
-    '<p class="lede">An open audit of what the national monitoring actually ' +
-    'measures, and what can honestly be concluded from it. The figures below are ' +
-    'recomputed from the published data by scripts in this repository — each one ' +
-    'is a statement about method that anyone can reproduce and check, not a claim ' +
-    'about what nobody has measured.</p>',
+    '<h1>An audit of the Danish coastal water record</h1>',
+    '<p class="lede">Every figure below is recomputed from published data by ' +
+    'scripts in this repository, so each is a statement about method that anyone ' +
+    'can reproduce and check. What it audits is <em>the record</em> — not the sea, ' +
+    'and not what Denmark knows. Those differ: three things this project would ' +
+    'have called unmeasured turned out to be sitting in files nobody here had ' +
+    'opened. So read any "Denmark does not measure X" here as ' +
+    '<em>X is not in what we fetched</em> — ' +
+    '<a href="#KNOWN_AND_UNKNOWN.md">the difference is a whole quadrant wide</a>.</p>',
     '</section>', '<div class="facts">'];
   for (const [n, t, doc] of FACTS)
     // n is a literal in FACTS above and deliberately carries markup; t likewise.
