@@ -3,263 +3,688 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Copenhagen Waterways</title>
+<title>Copenhagen Waterways — reports</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <style>
   :root{
     --ground:#f4f6f8;--surface:#fcfdfe;--sunk:#eaeef3;
-    --ink:#111820;--ink-2:#3d4a58;--muted:#66727f;--rule:#d7dee6;
-    --accent:#2a6fa8;--built:#c9861a;
-    --shadow:0 1px 2px rgba(16,28,42,.06),0 10px 28px -14px rgba(16,28,42,.2);
+    --ink:#111820;--ink-2:#3d4a58;--muted:#66727f;--rule:#d7dee6;--accent:#2a6fa8;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --ground:#0d141d;--surface:#141d28;--sunk:#101822;
-    --ink:#e8eef4;--ink-2:#c0cbd7;--muted:#8896a5;--rule:#25313e;
-    --accent:#4f97ce;--built:#c98422;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.7);
+    --ink:#e8eef4;--ink-2:#c0cbd7;--muted:#8896a5;--rule:#25313e;--accent:#4f97ce;
   }}
   :root[data-theme="dark"]{
     --ground:#0d141d;--surface:#141d28;--sunk:#101822;
-    --ink:#e8eef4;--ink-2:#c0cbd7;--muted:#8896a5;--rule:#25313e;
-    --accent:#4f97ce;--built:#c98422;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -16px rgba(0,0,0,.7);
+    --ink:#e8eef4;--ink-2:#c0cbd7;--muted:#8896a5;--rule:#25313e;--accent:#4f97ce;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--ground);color:var(--ink);
-    font:400 17px/1.6 "Source Serif 4",Georgia,serif}
-  .wrap{max-width:820px;margin:0 auto;padding:76px 26px 90px}
-  h1,h2,.eyebrow,.card h3,.mono{font-family:Archivo,"Helvetica Neue",Arial,sans-serif}
-  .mono,code{font-family:"IBM Plex Mono",ui-monospace,monospace}
-  .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);margin:0 0 18px}
-  h1{font-size:clamp(34px,5.6vw,54px);font-weight:700;letter-spacing:-.026em;line-height:1.05;
-    margin:0 0 20px;text-wrap:balance}
-  .standfirst{font-size:19px;color:var(--ink-2);margin:0 0 14px;max-width:60ch}
-  .standfirst strong{font-weight:600;color:var(--ink)}
-  h2{font-size:12.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
-    color:var(--muted);margin:56px 0 20px;padding-top:26px;border-top:1px solid var(--rule)}
-  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
-  a.card{display:block;text-decoration:none;color:inherit;background:var(--surface);
-    border:1px solid var(--rule);border-radius:8px;padding:20px 22px;box-shadow:var(--shadow);
-    transition:border-color .15s ease,transform .15s ease}
-  a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translateY(-1px)}
-  a.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .card h3{margin:0 0 6px;font-size:16.5px;font-weight:600;letter-spacing:-.005em}
-  .card p{margin:0;font-size:14.5px;line-height:1.5;color:var(--muted)}
-  .card .tag{display:inline-block;margin-top:11px;font-family:"IBM Plex Mono",monospace;
-    font-size:11px;color:var(--accent);letter-spacing:.02em}
-  .note{background:var(--sunk);border-radius:8px;padding:18px 22px;font-size:15px;
-    color:var(--ink-2);margin:22px 0 0}
-  .note p{margin:0 0 10px}.note p:last-child{margin:0}
-  ul{padding-left:0;list-style:none;margin:0}
-  li{position:relative;padding-left:20px;margin-bottom:11px;font-size:15.5px;color:var(--ink-2)}
-  li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:1.5px;
-    background:var(--muted)}
-  code{background:var(--sunk);padding:1px 6px;border-radius:3px;font-size:12.5px}
-  footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--rule);
-    color:var(--muted);font-size:14px}
+    font:400 16.5px/1.62 "Source Serif 4",Georgia,serif}
+  .shell{max-width:1080px;margin:0 auto;padding:0 24px 90px;
+    display:grid;grid-template-columns:230px 1fr;gap:46px}
+  nav{position:sticky;top:0;align-self:start;padding:44px 0 0;max-height:100vh;overflow-y:auto}
+  nav a.home{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:17px;
+    color:var(--ink);text-decoration:none;letter-spacing:-.02em;margin:0 0 22px}
+  nav a.home:hover{color:var(--accent)}
+  .navlabel{font-family:Archivo,sans-serif;font-size:10.5px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  nav ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:3px}
+  nav li a{display:block;padding:7px 11px;border-radius:5px;text-decoration:none;
+    font-family:Archivo,sans-serif;font-size:14px;color:var(--ink-2);line-height:1.35}
+  nav li a:hover{background:var(--sunk);color:var(--ink)}
+  nav li a[aria-current="page"]{background:var(--sunk);color:var(--accent);font-weight:600}
+  nav li a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  nav li.navgroup{font-family:Archivo,sans-serif;font-size:10.5px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    margin:18px 0 6px;padding:12px 11px 0;border-top:1px solid var(--rule)}
+  main{padding:44px 0 0;min-width:0}
+  #doc{max-width:70ch}
+  #doc h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4.4vw,40px);font-weight:700;
+    letter-spacing:-.024em;line-height:1.1;margin:0 0 20px;text-wrap:balance}
+  #doc h2{font-family:Archivo,sans-serif;font-size:13px;font-weight:600;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--muted);margin:44px 0 16px;
+    padding-top:22px;border-top:1px solid var(--rule)}
+  #doc h3{font-family:Archivo,sans-serif;font-size:18.5px;font-weight:600;
+    letter-spacing:-.01em;margin:30px 0 10px}
+  #doc p{margin:0 0 16px}
+  #doc ul,#doc ol{margin:0 0 16px;padding-left:22px}
+  #doc li{margin-bottom:8px}
+  #doc a{color:var(--accent)}
+  #doc code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--sunk);
+    padding:1px 6px;border-radius:3px}
+  #doc blockquote{margin:16px 0;padding:2px 0 2px 18px;border-left:3px solid var(--rule);
+    color:var(--ink-2)}
+  .tablewrap{overflow-x:auto;margin:20px 0}
+  #doc table{border-collapse:collapse;width:100%;font-family:Archivo,sans-serif;
+    font-size:13.5px;font-variant-numeric:tabular-nums;min-width:420px}
+  #doc th,#doc td{text-align:left;padding:8px 14px 8px 0;border-bottom:1px solid var(--rule);
+    vertical-align:baseline}
+  #doc th{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted)}
+  #doc td:nth-child(n+2){font-family:"IBM Plex Mono",monospace;font-size:12.5px}
+  #doc img{max-width:100%;height:auto;border-radius:6px;border:1px solid var(--rule)}
+  #doc hr{border:0;border-top:1px solid var(--rule);margin:34px 0}
+  .status{color:var(--muted);font-family:Archivo,sans-serif;font-size:14.5px}
+  @media (max-width:800px){
+    .shell{grid-template-columns:1fr;gap:0;padding-bottom:70px}
+    nav{position:static;max-height:none;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+    nav ul{grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;
+      margin-bottom:14px}
+    main{padding-top:28px}
+  }
+
+/* Glossary tooltips. Every `M1`, `V3`, `K8` in a generated document is a
+   reference into docs/data/glossary.json, which is emitted from the same source
+   the documents are - so a definition lives in one place and every mention of it
+   anywhere on the site stays in step. Hover or keyboard focus both open it. */
+.term{
+  cursor:help; border-bottom:1px dotted var(--muted,#66727f);
+  border-bottom-color:color-mix(in srgb, currentColor 35%, transparent);
+}
+.term:hover,.term:focus{border-bottom-style:solid}
+a.term{color:inherit; text-decoration:none}
+#tip u{display:block; margin-top:7px; text-decoration:none; font-size:11.5px;
+  color:var(--muted,#66727f)}
+#glosshint{margin:0 0 18px; padding:9px 12px; border-left:3px solid var(--rule,#d7dee6);
+  color:var(--ink-2,#3d4a58); font-size:13px; background:var(--sunk,#eaeef3);
+  border-radius:0 5px 5px 0}
+code.gloss{
+  cursor:help; border-bottom:1px dotted currentColor;
+  text-decoration:none; outline-offset:2px;
+}
+#tip{
+  position:absolute; z-index:60; max-width:min(46ch,88vw);
+  padding:10px 12px; border:1px solid var(--rule,#d7dee6);
+  border-radius:7px; background:var(--surface,#fff); color:var(--ink,#111820);
+  box-shadow:0 2px 4px rgba(16,28,42,.07),0 12px 30px -12px rgba(16,28,42,.28);
+  font-size:13px; line-height:1.5; pointer-events:none;
+}
+#tip[hidden]{display:none}
+#tip b{display:block; font-weight:640; margin-bottom:3px}
+#tip em{display:block; font-style:normal; margin-top:7px; padding-top:7px;
+  border-top:1px solid var(--rule,#d7dee6); color:var(--ink-2,#3d4a58)}
+#tip i{display:block; font-style:normal; font-size:11px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--muted,#66727f); margin-bottom:5px}
+  /* Landing. The hero and the three figures carry the page; everything below is
+     the reading map, reached by scrolling rather than by a second navigation. */
+  .hero{margin:.5rem 0 2rem;max-width:34em}
+  .hero h1{font-size:clamp(28px,4.4vw,42px);line-height:1.12;margin:0 0 .7rem;text-wrap:balance}
+  .lede{font-size:17px;line-height:1.55;color:var(--ink-2);margin:0}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:1rem;margin:0 0 2.6rem}
+  .fact{border-top:2px solid var(--accent);padding:.85rem .1rem 0}
+  .fact b{display:block;font-family:Archivo,sans-serif;font-size:clamp(26px,3.4vw,34px);
+    line-height:1.05;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+  .fact p{margin:.5rem 0 .6rem;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+  .fact a{font-family:Archivo,sans-serif;font-size:12.5px;letter-spacing:.03em}
+
+  /* Reading map. Laid out with grid and flow only - no computed positions, so it
+     degrades to a readable stack at any width instead of to overlapping boxes. */
+  .crumbs{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;margin:0 0 1.6rem;padding:.55rem .8rem;
+    border:1px solid var(--rule);border-radius:6px;font-family:Archivo,sans-serif;font-size:13.5px}
+  .crumbs i{color:var(--muted);font-style:normal;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px}
+  .crumbs span{display:inline-flex;gap:.4rem;align-items:baseline;flex-wrap:wrap}
+  .routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin:1rem 0 2rem}
+  .route{border:1px solid var(--rule);border-radius:6px;padding:.8rem .9rem}
+  .route b{font-family:Archivo,sans-serif;font-size:13px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
+  .route ol{margin:.5rem 0 0;padding-left:1.15rem}
+  .route li{margin:.2rem 0}
+  h3.tier{display:flex;align-items:center;gap:.6rem;margin:2rem 0 .8rem;font-size:15px}
+  h3.tier span{display:inline-grid;place-items:center;width:1.55rem;height:1.55rem;flex:0 0 auto;
+    border-radius:50%;background:var(--rule);font-family:Archivo,sans-serif;font-size:12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:.8rem}
+  .card{border:1px solid var(--rule);border-radius:6px;padding:.75rem .85rem}
+  .card p{margin:.35rem 0 0;font-size:14.5px}
+  .cardtitle{font-weight:600}
+  .card .req{font-family:Archivo,sans-serif;font-size:12.5px;color:var(--muted)}
+  .card .rel{font-style:italic}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <p class="eyebrow">København · spildevand, skybrud og udledning</p>
-  <h1>Copenhagen Waterways</h1>
-  <p class="standfirst">
-    What runs under Copenhagen: the sewer system, the cloudburst infrastructure built to
-    keep rain out of it, and the points where both end up in the harbour. Assembled from
-    open data, with the provenance of every figure kept.
-  </p>
-  <p class="standfirst">
-    Including the city's 2012 cloudburst model, <strong>recovered from the seven PDFs it was
-    published in</strong> after the georeferencing had been stripped out.
-  </p>
-
-  <h2>Read</h2>
-  <div class="grid">
-    <a class="card" href="docs/#FLOOD_GAP.md">
-      <h3>Does the plan go where the water goes?</h3>
-      <p>All seven sheets recovered and placed, consistent to 23 m. 85.8% of modelled
-      flooding has something planned within 200 m; 38.3% has anything built.</p>
-      <span class="tag">read →</span>
-    </a>
-    <a class="card" href="docs/#NITROGEN.md">
-      <h3>What the sea actually receives</h3>
-      <p>Ten of twenty nitrogen pathways carry no number, the validation is circular, and
-      the oxygen debt from sulphate can exceed the water's own oxygen 225-fold.</p>
-      <span class="tag">read →</span>
-    </a>
-    <a class="card" href="docs/#CAUSATION.md">
-      <h3>The chain from nitrogen to fedtemøg</h3>
-      <p>&ldquo;Agriculture causes 70%&rdquo; is one published share multiplied by four
-      coefficients nobody has computed &mdash; and the load halved while the damage did not.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#HYPOTHESES.md">
-      <h3>The field of hypotheses</h3>
-      <p>At least 160 ways to wreck a Danish shore, written down before any of them is
-      scored — and the list grew by three quarters in one afternoon, which is the best
-      evidence we have that it is still incomplete.
-      The official nutrient hypothesis is A1, given no privilege.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#EXPERIMENTS.md">
-      <h3>Experiments, not studies</h3>
-      <p>Twelve manipulations with controls and decision rules fixed in advance,
-      including what result would count against us. Seven need no institution; the
-      most consequential needs no fieldwork at all.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#OBSERVING.md">
-      <h3>What Denmark measures, and where</h3>
-      <p>The models that set the nitrogen coefficient cover 5.7&#37; of the sea and all of it
-      is fjord. Their acceptance threshold sits below the noise floor of their own
-      variable search, and a &ldquo;water body&rdquo; explains 7.9&#37; of the variation inside it.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#OXYGEN.md">
-      <h3>What actually removes the oxygen</h3>
-      <p>Every route that consumes oxygen, priced from balanced equations. Fat costs
-      2.87&nbsp;kg O&#8322; per kg and needs no nitrogen and no growth step. Eight ways to
-      wreck a shore; the indicators tell two of them apart.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#AREAS.md">
-      <h3>There is no Denmark</h3>
-      <p>One record per marine water body instead of a national aggregate. 44 of 123 carry
-      neither a fitted model nor a single repeated marine observation &mdash; 56&#37; of the
-      sea &mdash; and still receive a requirement.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#SEABED.md">
-      <h3>The seabed, the wind, and what stays put</h3>
-      <p>31 years of hourly wind turned into bed shear stress. A dead seabed resuspends
-      up to seven times more often than a living one, and hardest in autumn.</p>
-      <span class="tag">read →</span>
-    </a>
-    <a class="card" href="docs/#CURRENTS.md">
-      <h3>Where the water goes</h3>
-      <p>K&oslash;ge Bugt takes 73 days to move water 20 km; Aarhus Bugt takes 3.4. The bay
-      that registers no oxygen depletion is the one that never flushes.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#SOLUTIONS.md">
-      <h3>What would actually stop it</h3>
-      <p>90.7% of Copenhagen is on a combined sewer, and the plan takes 2.3% of it off.
-      13 structures hold a quarter of the country&rsquo;s recorded storage.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#OPEN_PROBLEMS.md">
-      <h3>Open problems</h3>
-      <p>Fifteen open questions — the convergence, the potency term, the autumn
-      die-off — with what would settle each.</p>
-      <span class="tag">read →</span>
-    </a>
-    <a class="card" href="docs/#REGISTER.md">
-      <h3>Register of claimed structures</h3>
-      <p>Every basin, tunnel and outfall with its stated volume and the document that claims
-      it — plus the 262 the plan never describes.</p>
-      <span class="tag">read →</span>
-    </a>
-    <a class="card" href="docs/#DATA_SOURCES.md">
-      <h3>Where the data comes from</h3>
-      <p>What is public, what is paywalled, what does not exist in open form, and what each
-      source is actually good for.</p>
-      <span class="tag">read →</span>
-    </a>
-    <a class="card" href="docs/#RESIDUAL.md">
-      <h3>The number that was never measured</h3>
-      <p>How a leftover becomes a fact. A shop counting its stock, why subtracting
-      accumulates error instead of cancelling it, and the five small steps from
-      &ldquo;total minus the modelled parts&rdquo; to &ldquo;agriculture causes 70% of the
-      fedtem&oslash;g&rdquo;. Nitrogen is the example, not the subject.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/#PROGRAMME.md">
-      <h3>The problem and the solution</h3>
-      <p>The argument, kept separate from the investigation: rainwater rivers on the
-      alignments the flood model already found, an outlet that is not the sea, gravity
-      treatment that removes 95% of tyre wear, and what to ban.</p>
-      <span class="tag">read &rarr;</span>
-    </a>
-    <a class="card" href="docs/areas.html">
-      <h3>What is known, where, and when</h3>
-      <p>All 123 marine water bodies, coloured by how much is actually known about each,
-      with the years every stream of observation covers. The red line is 2012 &mdash; where
-      the fitted window ends and the thing it must explain begins.</p>
-      <span class="tag">open the map &rarr;</span>
-    </a>
-    <a class="card" href="viz/rivers3d.html">
-      <h3>Rainwater rivers, in 3D</h3>
-      <p>The proposal on the real city: 210 km of alignments that could carry a river,
-      the interceptor retrofit where they cannot, and where the water ends up.</p>
-      <span class="tag">open &rarr;</span>
-    </a>
-    <a class="card" href="docs/#LANDBRUG.md">
-      <h3>Til landbruget &mdash; p&aring; dansk</h3>
-      <p>Samme revision, henvendt til dem den bruges imod. Der er ingen n&aelig;vner,
-      ingen potensfaktor, og ingen bev&aelig;gelse i yderpunkterne efter 35 &aring;r
-      &mdash; og fire krav, hvoraf tre er krav om m&aring;ling.</p>
-      <span class="tag">l&aelig;s &rarr;</span>
-    </a>
-    <a class="card" href="docs/flood_gap_map.png">
-      <h3>The map, as one picture</h3>
-      <p>Modelled flood depth, works planned but unbuilt, works built or started, and the
-      four places with deep water and nothing nearby.</p>
-      <span class="tag">full size →</span>
-    </a>
-  </div>
-
-  <h2>Use</h2>
-  <div class="grid">
-    <a class="card" href="viz/">
-      <h3>Interactive map</h3>
-      <p>Sewer catchments, cloudburst basins and tunnels, discharge points, and the
-      recovered flood overlays. Click anything for its record.</p>
-      <span class="tag">~13 MB · desktop</span>
-    </a>
-    <a class="card" href="viz/log.html">
-      <h3>Rain field log</h3>
-      <p>Record observed depth, flow and whether the drain is surcharging, in the model's
-      own six depth classes, so an observation lands in the same vocabulary as the model.
-      Works offline once loaded. Nobody is using it yet.</p>
-      <span class="tag">phone &middot; needs HTTPS</span>
-    </a>
-    <a class="card" href="docs/data/flood2012/">
-      <h3>Download the recovered flood model</h3>
-      <p>All seven sheets as georeferenced rasters &mdash; PNG, world file and .prj, so
-      they open straight in QGIS. The only public copy with the coordinates put back.</p>
-      <span class="tag">1.1 MB &middot; EPSG:4326</span>
-    </a>
-    <a class="card" href="viz/georef.html">
-      <h3>Add control points to N&oslash;rrebro</h3>
-      <p>Six sheets are tied together to 23 m. N&oslash;rrebro is the one that would not
-      correlate with any neighbour, so it still sits where the automatic pass left it.</p>
-      <span class="tag">the last loose end</span>
-    </a>
-  </div>
-
-  <div class="note">
-    <p><strong>The field log needs a secure origin.</strong> Browsers only give a page your
-    location over HTTPS or on <code>localhost</code> — so on a phone it works from this
-    site, but not from a laptop's <code>http://192.168.x.x</code>.</p>
-  </div>
-
-  <h2>Reproduce it</h2>
-  <ul>
-    <li>Standard-library Python 3 and a browser. No dependencies, no API keys, nothing
-    authenticated.</li>
-    <li><code>./run.sh</code> fetches 28 GIS layers, crawls the plan, recovers the flood
-    sheets, and rebuilds every figure on this site.</li>
-    <li>Re-running is cheap — every fetch step caches, and the crawl is deliberately
-    slow-paced against a municipal server.</li>
-  </ul>
-
-  <footer>
-    Sources: Københavns Kommune via opendata.dk · Miljøstyrelsen's national water-plan
-    services · Spildevandsplan 2018. Attribute all three if you republish.
-  </footer>
+<div class="shell">
+  <nav>
+    <a class="home" href="../">← Copenhagen Waterways</a>
+    <p class="navlabel">Reports</p>
+    <ul id="nav"></ul>
+    <p class="navlabel">Also</p>
+    <ul>
+      <li><a href="flood_gap_map.png">The map, full size</a></li>
+      <li><a href="../viz/">Interactive map</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div id="doc"><p class="status">Loading…</p></div>
+  </main>
 </div>
+
+<script>
+/* The reports are generated as Markdown by the pipeline, and Markdown is the canonical
+   form. GitHub Pages serves a .md file as plain text, so this renders it instead of
+   asking anyone to read a raw table. */
+/* Three groups, deliberately, one per object of study. Everything under "Investigation"
+   reports what the data supports and stops. "The public record" studies what was said
+   out loud, which is a different object with a different evidentiary standard - a
+   statement can be checked against the document behind it, never against the sea.
+   "The argument" says what ought to be done, which is a third kind of claim. */
+const GROUPS = [
+  ["Investigation", [
+    ["FLOOD_GAP.md",    "Does the plan go where the water goes?"],
+    ["NITROGEN.md",     "What the sea actually receives"],
+    ["CAUSATION.md",    "The chain from nitrogen to fedtem\u00f8g"],
+    ["HYPOTHESES.md",   "The field of hypotheses"],
+    ["EXPERIMENTS.md",  "Experiments, not studies"],
+    ["DATA_QUEUE.md",   "The fetch queue"],
+    ["OBSERVING.md",    "What Denmark measures, and where"],
+    ["OXYGEN.md",       "What actually removes the oxygen"],
+    ["LIGHT.md",        "Is there enough light at the bed?"],
+    ["AREAS.md",        "There is no Denmark"],
+    ["areas.html",      "Map: what is known, where, when"],
+    ["SEABED.md",       "The seabed, the wind, and what stays put"],
+    ["CURRENTS.md",     "Where the water goes"],
+    ["SOLUTIONS.md",    "What would actually stop it"],
+    ["OPEN_PROBLEMS.md","Open problems"],
+    ["REGISTER.md",     "Register of claimed structures"],
+    ["DATA_SOURCES.md", "Where the data comes from"],
+  ]],
+  ["Related, on its own", [
+    ["EXPOSURE.md",     "Documenting what pollution does to a body"],
+  ]],
+  ["The public record", [
+    ["POLITICS.md",     "What was actually said"],
+  ]],
+  ["The argument", [
+    ["RESIDUAL.md",     "The number that was never measured"],
+    ["PROGRAMME.md",    "The problem and the solution"],
+    ["LANDBRUG.md",     "Til landbruget \u2014 p\u00e5 dansk"],
+  ]],
+];
+const DOCS = GROUPS.flatMap(([, ds]) => ds).filter(([f]) => !f.endsWith(".html"));
+
+/* The sidebar lists what exists. It does not say what to read first, and with two
+   dozen documents a flat list stops being an overview and becomes an inventory.
+   META adds the two things a list cannot carry: what question each page answers,
+   and which pages have to be read before it makes sense.
+
+   `after` is a dependency, not a suggestion - the page assumes you already have
+   that idea. `related` is the weaker edge, and it exists because some pages belong
+   to this reading without any page needing them: EXPOSURE.md is a documentation
+   project in its own right, connected to everything here and a prerequisite for
+   nothing. Collapsing the two would either bury it or falsely gate something on it.
+   `tier` is derived from `after` and only used to lay the map out. Edges are kept
+   sparse on purpose: naming five prerequisites is the same as naming none. */
+const META = {
+  "PROGRAMME.md":   {tier:0, why:"What people say is wrong, and what would fix it", after:[]},
+  "RESIDUAL.md":    {tier:1, why:"Why a number nobody measured can still decide things", after:[]},
+  "AREAS.md":       {tier:1, why:"Why a figure true of Denmark is true of nowhere in it", after:[]},
+  "OBSERVING.md":   {tier:2, why:"What Denmark measures, where, and how often", after:["AREAS.md"]},
+  "DATA_SOURCES.md":{tier:2, why:"Every source the project knows of", after:["OBSERVING.md"]},
+  "DATA_QUEUE.md":  {tier:2, why:"The same sources sorted by how hard they are to get", after:["DATA_SOURCES.md"]},
+  "NITROGEN.md":    {tier:3, why:"What the sea actually receives, and how that figure is made", after:["RESIDUAL.md"]},
+  "CAUSATION.md":   {tier:3, why:"Granting the figure, does the chain from it hold?", after:["NITROGEN.md"]},
+  "OXYGEN.md":      {tier:3, why:"What removes the oxygen, arithmetic only", after:["CAUSATION.md"]},
+  "LIGHT.md":       {tier:3, why:"Is there enough light at the bed, and is the number trustworthy?", after:["OBSERVING.md"]},
+  "CURRENTS.md":    {tier:3, why:"Where the water goes, and which bays retain rather than flush", after:["AREAS.md"]},
+  "SEABED.md":      {tier:3, why:"What the wind lifts off the bed, and what stays put", after:["CURRENTS.md"]},
+  "FLOOD_GAP.md":   {tier:3, why:"Does Copenhagen's cloudburst plan go where the water goes?", after:[]},
+  "REGISTER.md":    {tier:3, why:"The claimed drainage structures, checked one by one", after:["FLOOD_GAP.md"]},
+  "HYPOTHESES.md":  {tier:4, why:"Every mechanism that could produce these outcomes, none privileged", after:["OXYGEN.md","AREAS.md"]},
+  "EXPERIMENTS.md": {tier:4, why:"What would actually settle it - and what it would cost", after:["HYPOTHESES.md"]},
+  "OPEN_PROBLEMS.md":{tier:4, why:"What we could not answer, and why", after:["HYPOTHESES.md"], related:["EXPOSURE.md"]},
+  "SOLUTIONS.md":   {tier:4, why:"What would stop it, judged on evidence", after:["HYPOTHESES.md"]},
+  "POLITICS.md":    {tier:5, why:"What was said out loud, verbatim and dated", after:["RESIDUAL.md"]},
+  "LANDBRUG.md":    {tier:5, why:"The same argument, addressed to farmers, in Danish", after:["NITROGEN.md"]},
+  "EXPOSURE.md":    {tier:6, why:"What high exposure does to a living body, and why almost nobody has recorded it", after:[], related:["OPEN_PROBLEMS.md","PROGRAMME.md"]},
+};
+const TIERS = [
+  "Start here",
+  "The two ideas everything else runs into",
+  "What is measured, and where",
+  "What those measurements say",
+  "The whole field, and what would settle it",
+  "What was said, and to whom",
+  "Related, and a dependency of nothing",
+];
+/* Named routes, because different readers want different things and a dependency
+   graph does not tell you where to enter it. */
+const ROUTES = [
+  ["In ten minutes", ["PROGRAMME.md","RESIDUAL.md","AREAS.md"]],
+  ["Checking the work", ["OBSERVING.md","AREAS.md","LIGHT.md","HYPOTHESES.md","EXPERIMENTS.md"]],
+  ["What was actually claimed", ["POLITICS.md","RESIDUAL.md","NITROGEN.md","CAUSATION.md"]],
+  ["My local water", ["AREAS.md","CURRENTS.md","SEABED.md","PROGRAMME.md"]],
+];
+/* The page is served from the repository root; the documents it renders live in
+   docs/. The hash stays a bare filename (#PROGRAMME.md) because that is what a reader
+   sees and shares - only the fetch URL is prefixed, and it is prefixed in exactly one
+   place so the two can never drift apart. */
+const DOCS_DIR = "docs/";
+const urlOf = f => DOCS_DIR + f;
+const titleOf = f => (DOCS.find(([x]) => x === f) || [, f])[1];
+const leadsTo = f => Object.keys(META).filter(k => (META[k].after || []).includes(f));
+const linked = f => Array.from(new Set([].concat(
+  (META[f] && META[f].related) || [],
+  Object.keys(META).filter(k => ((META[k].related) || []).includes(f)))));
+const navEl = document.getElementById("nav");
+const docEl = document.getElementById("doc");
+
+{
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = "#map";
+  a.dataset.file = "map";
+  a.textContent = "Start here";
+  li.appendChild(a);
+  navEl.appendChild(li);
+}
+
+for (const [heading, docs] of GROUPS) {
+  if (heading !== GROUPS[0][0]) {
+    const h = document.createElement("li");
+    h.className = "navgroup";
+    h.textContent = heading;
+    navEl.appendChild(h);
+  }
+  for (const [file, label] of docs) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    // An .html entry is a page of its own, not a document the reader renders.
+    if (file.endsWith(".html")) {
+      a.href = urlOf(file);
+      a.className = "external";
+    } else {
+      a.href = "#" + file;
+      a.dataset.file = file;
+    }
+    a.textContent = label;
+    li.appendChild(a);
+    navEl.appendChild(li);
+  }
+}
+
+function current() {
+  const want = decodeURIComponent(location.hash.slice(1));
+  if (want === "map") return "map";
+  return DOCS.some(([f]) => f === want) ? want : "map";
+}
+
+
+/* ---- glossary tooltips ------------------------------------------------- */
+let GLOSS = null;
+const tipEl = Object.assign(document.createElement("div"),
+                            {id: "tip", hidden: true});
+document.body.appendChild(tipEl);
+
+async function glossary() {
+  if (GLOSS) return GLOSS;
+  try {
+    const r = await fetch(DOCS_DIR + "data/glossary.json", { cache: "force-cache" });
+    GLOSS = r.ok ? await r.json() : {};
+  } catch { GLOSS = {}; }
+  return GLOSS;
+}
+
+function placeTip(el) {
+  const r = el.getBoundingClientRect();
+  tipEl.hidden = false;
+  const t = tipEl.getBoundingClientRect();
+  // prefer below; flip above when it would run off the viewport
+  let top = r.bottom + scrollY + 8;
+  if (r.bottom + t.height + 16 > innerHeight && r.top > t.height + 16)
+    top = r.top + scrollY - t.height - 8;
+  let left = r.left + scrollX;
+  left = Math.min(left, scrollX + innerWidth - t.width - 12);
+  tipEl.style.top = top + "px";
+  tipEl.style.left = Math.max(scrollX + 8, left) + "px";
+}
+
+function showTip(el) {
+  const key = el.dataset.gloss || el.textContent.trim();
+  const g = el.classList.contains("term")
+    ? (GLOSS._terms || {})[key] : (GLOSS || {})[key];
+  if (!g) return;
+  tipEl.innerHTML = "";
+  const kind = document.createElement("i");
+  kind.textContent = g.kind || "term";
+  const label = document.createElement("b");
+  label.textContent = g.label || key;
+  const body = document.createElement("span");
+  body.textContent = g.text;
+  tipEl.append(kind, label, body);
+  if (g.why) {                       // why it is called that, when that helps
+    const why = document.createElement("em");
+    why.textContent = g.why;
+    tipEl.append(why);
+  }
+  if (el.tagName === "A") {
+    const go = document.createElement("u");
+    // The tooltip itself is click-through (pointer-events:none) so it cannot get
+    // in the way of the text. The link is the underlined word, so say that.
+    go.textContent = "→ click the word itself for a fuller article";
+    tipEl.append(go);
+  }
+  placeTip(el);
+}
+const hideTip = () => { tipEl.hidden = true; };
+
+async function decorate(root, file) {
+  const g = await glossary();
+  // Only documents that speak this vocabulary. Register ids are short and collide
+  // with real identifiers elsewhere - REGISTER.md lists outfalls named U2 and U4.
+  if (!g._docs || !g._docs.includes(file)) return;
+  for (const el of root.querySelectorAll("code")) {
+    const id = el.textContent.trim();
+    if (!g[id] || el.closest("pre")) continue;
+    arm(el, "gloss", id, `${id}: ${g[id].label}. ${g[id].text}`);
+  }
+  const n = markTerms(root, g._terms || {});
+  if (n || root.querySelector(".gloss")) {
+    const hint = document.createElement("p");
+    hint.id = "glosshint";
+    hint.textContent = "Underlined words and codes have definitions — hover or "
+      + "tab to one to read it. Terms link out to a fuller article. Anything not "
+      + "underlined and unfamiliar is worth looking up; this page cannot mark "
+      + "every word somebody has not met before.";
+    root.insertBefore(hint, root.firstChild);
+  }
+}
+
+function arm(el, cls, key, aria) {
+  el.classList.add(cls);
+  el.dataset.gloss = key;
+  el.tabIndex = 0;
+  el.setAttribute("aria-label", aria);
+  el.addEventListener("mouseenter", () => showTip(el));
+  el.addEventListener("focus", () => showTip(el));
+  el.addEventListener("mouseleave", hideTip);
+  el.addEventListener("blur", hideTip);
+}
+
+/* Mark the FIRST occurrence of each term only. Marking every one turns a page of
+   technical prose into a minefield of dotted underlines; marking the first gives
+   a reader the definition at the point they first meet the word, which is when
+   they need it. */
+/* Mark glossary terms in the rendered prose.
+
+   Three rules, each learned from a bug.
+
+   1. EVERY match in a text node, not the first. The original called re.exec once
+      per node and abandoned the node if that match was already marked, so a
+      paragraph whose first hit was a common word - nitrogen, carbon, bacteria -
+      lost every rarer term in it. That is why oomycete and labyrinthulid were
+      never marked despite being in the glossary the whole time.
+
+   2. Once per SECTION, not once per document. A reader meeting a word forty
+      screens down needs the definition there, not at its first appearance in a
+      document they may have entered halfway. Headings reset the seen set.
+
+   3. Right to left within a node, because splitText invalidates every offset
+      after the split point. */
+function markTerms(root, terms) {
+  // The written forms come from the glossary, not from suffix-guessing here.
+  // scripts/hypotheses.py generates them and keeps only the ones that actually
+  // occur in the documents - which is how "mycorrhizal" reaches "mycorrhiza" and
+  // "fungal" reaches "fungi", neither of which any suffix rule would manage.
+  const lower = new Map();
+  for (const [key, v] of Object.entries(terms))
+    for (const form of (v.forms || [key])) lower.set(form.toLowerCase(), key);
+  const forms = [...lower.keys()].sort((a, b) => b.length - a.length);
+  if (!forms.length) return 0;
+  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp("(?<![\\p{L}])(" + forms.map(esc).join("|")
+                        + ")(?![\\p{L}])", "giu");
+  let seen = new Set();
+  let total = 0;
+
+  const mark = (node, m, key) => {
+    const after = node.splitText(m.index);
+    after.splitText(m[0].length);
+    const link = document.createElement("a");
+    link.textContent = after.nodeValue;
+    link.href = "https://en.wikipedia.org/wiki/Special:Search?search="
+              + encodeURIComponent(key);
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    after.parentNode.replaceChild(link, after);
+    arm(link, "term", key, `${key}: ${terms[key].text}. Opens Wikipedia.`);
+  };
+
+  const inBlock = block => {
+    const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, {
+      acceptNode(n) {
+        if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const bad = n.parentElement.closest("code,pre,a,h1,h2,h3,h4,h5,h6,#tip");
+        return bad ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      },
+    });
+    const nodes = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+
+    for (const node of nodes) {
+      re.lastIndex = 0;
+      const hits = [];
+      for (const m of node.nodeValue.matchAll(re)) {
+        const key = lower.get(m[1].toLowerCase());
+        if (!key || seen.has(key)) continue;
+        seen.add(key);                 // claim it now so the same word twice in
+        hits.push([m, key]);           // one paragraph is marked only once
+      }
+      // splitText invalidates later offsets, so apply from the end backwards
+      for (let i = hits.length - 1; i >= 0; i--) {
+        mark(node, hits[i][0], hits[i][1]);
+        total++;
+      }
+    }
+  };
+
+  // walk the document top level, resetting at each heading so every section
+  // carries its own definitions
+  for (const el of Array.from(root.children)) {
+    if (/^H[1-6]$/.test(el.tagName)) { seen = new Set(); continue; }
+    inBlock(el);
+  }
+  return total;
+}
+
+addEventListener("keydown", e => { if (e.key === "Escape") hideTip(); });
+addEventListener("scroll", hideTip, { passive: true });
+
+function esc(t) {
+  const d = document.createElement("div");
+  d.textContent = t;
+  return d.innerHTML;
+}
+
+/* Three figures, each generated by a script in this repository and each linking to
+   the page that derives it. They lead because a table of contents tells a first-time
+   reader nothing about why any of this exists. */
+const FACTS = [
+  ["56%", "of Danish sea area — 44 water bodies, 24,605 km² — has neither a fitted " +
+          "model nor a single repeated marine observation in the open data. Every " +
+          "one of them still carries a requirement.", "AREAS.md"],
+  ["5.7%", "is how much of the sea the statistical models actually cover: 2,492 km² " +
+           "of 43,579. All of it is fjord.", "OBSERVING.md"],
+  ["−3.5 → +20.5", "per cent per decade. One light record, one stretch of water, " +
+           "eight defensible ways to compute the trend, and both signs among them.",
+   "LIGHT.md"],
+];
+/* The public names the damage in four words. Set against what is measured, three of
+   them have nothing behind them at all. */
+const WORDS = [
+  ["iltsvind", "the sea is suffocating",
+   "oxygen below 4 mg/l <b>in stratified bottom water</b>",
+   "needs depth and a sealed layer — Køge Bugt is shallow and mixes, so it cannot " +
+   "register iltsvind however bad it gets", "CURRENTS.md"],
+  ["fedtemøg", "greasy, foul water and a shore you would rather not walk on",
+   "<b>nothing</b>", "there is no instrument, and it is not a scientific term", ""],
+  ["fiskedød", "dead fish, visibly, in numbers",
+   "<b>no open register</b>", "the events happen and are recorded nowhere the " +
+   "public can read", ""],
+  ["livet i fjordene", "the structural life is gone",
+   "eelgrass depth limit, some bottom fauna",
+   "measured — through a light proxy that censors itself in shallow water",
+   "LIGHT.md"],
+];
+
+/* Carried over from the landing page this file replaced. These are things to use
+   rather than documents to read, so they are not in META and have no place in the
+   dependency graph. */
+const TOOLS = [
+  ["docs/areas.html", "What is known, where, and when",
+   "All 123 marine water bodies coloured by how much is actually known about each, " +
+   "with the years every stream of observation covers. The red line is 2012 — where " +
+   "the fitted window ends and the thing it must explain begins.", ""],
+  ["viz/rivers3d.html", "Rainwater rivers, in 3D",
+   "The proposal on the real city: 210 km of alignments that could carry a river, " +
+   "the interceptor retrofit where they cannot, and where the water ends up.", ""],
+  ["viz/", "Interactive map",
+   "Sewer catchments, cloudburst basins and tunnels, discharge points, and the " +
+   "recovered flood overlays. Click anything for its record.", "~13 MB · desktop"],
+  ["viz/log.html", "Rain field log",
+   "Record observed depth, flow and whether the drain is surcharging, in the model's " +
+   "own six depth classes, so an observation lands in the same vocabulary as the " +
+   "model. Works offline once loaded, and needs HTTPS for location.", "phone"],
+  ["docs/data/flood2012/", "The recovered flood model",
+   "All seven 2012 cloudburst sheets as georeferenced rasters — PNG, world file and " +
+   ".prj — so they open straight in QGIS. The only public copy with the coordinates " +
+   "put back.", "1.1 MB · EPSG:4326"],
+  ["viz/georef.html", "Add control points to Nørrebro",
+   "Six sheets are tied together to 23 m. Nørrebro is the one that would not " +
+   "correlate with any neighbour, so it still sits where the automatic pass left " +
+   "it.", "the last loose end"],
+];
+
+function renderMap() {
+  const parts = ['<section class="hero">',
+    '<h1>What Denmark knows about its own coastal water</h1>',
+    '<p class="lede">An open audit of what the national monitoring actually ' +
+    'measures, where, and what can honestly be concluded from it. Every figure ' +
+    'below is produced by a script in this repository from public data, and links ' +
+    'to the page that derives it.</p>',
+    '</section>', '<div class="facts">'];
+  for (const [n, t, doc] of FACTS)
+    parts.push('<div class="fact"><b>' + esc(n) + '</b><p>' + t + '</p>' +
+      (doc ? '<a href="#' + doc + '">' + esc(titleOf(doc)) + ' →</a>' : '') + '</div>');
+  parts.push('</div>');
+
+  parts.push('<h2>The four words, and what stands behind them</h2>',
+    '<p>The damage is named in public with four words. Set each against what is ' +
+    'actually measured and three of them have nothing behind them — while the ' +
+    'fourth cannot be recorded in the bay next to Copenhagen.</p>',
+    '<div class="tablewrap"><table><thead><tr><th>what people call it</th>' +
+    '<th>what they mean</th><th>what is measured</th>' +
+    '<th>where the two come apart</th></tr></thead><tbody>');
+  for (const [w, mean, meas, gap, doc] of WORDS)
+    parts.push('<tr><td><b>' + esc(w) + '</b></td><td>' + esc(mean) + '</td><td>' +
+      meas + '</td><td>' + gap +
+      (doc ? ' (<a href="#' + doc + '">' + esc(titleOf(doc)) + '</a>)' : '') +
+      '</td></tr>');
+  parts.push('</tbody></table></div>');
+
+  parts.push('<h2>Where to start</h2>',
+    '<p>Two dozen documents, and a list of them is an inventory rather than an ' +
+    'overview. Four ways in, depending on what you came for.</p>',
+    '<div class="routes">');
+  for (const [name, path] of ROUTES) {
+    parts.push('<div class="route"><b>' + esc(name) + '</b><ol>');
+    for (const f of path)
+      parts.push('<li><a href="#' + f + '">' + esc(titleOf(f)) + '</a></li>');
+    parts.push('</ol></div>');
+  }
+  parts.push('</div>', '<h2>Everything, by what it depends on</h2>',
+    '<p>The same set arranged by <b>what has to be read first</b>. An edge means ' +
+    'the later page assumes an idea the earlier one establishes — a dependency, ' +
+    'not a recommendation. <i>Related</i> is the weaker link: worth reading ' +
+    'alongside, required by nothing.</p>');
+  for (let t = 0; t < TIERS.length; t++) {
+    const inTier = Object.keys(META).filter(f => META[f].tier === t);
+    if (!inTier.length) continue;
+    parts.push('<h3 class="tier"><span>' + t + '</span> ' + esc(TIERS[t]) + '</h3>');
+    parts.push('<div class="cards">');
+    for (const f of inTier) {
+      const m = META[f];
+      const req = (m.after || []).map(x =>
+        '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+      parts.push(
+        '<div class="card"><a class="cardtitle" href="#' + f + '">' +
+        esc(titleOf(f)) + '</a><p>' + esc(m.why) + '</p>' +
+        (req ? '<p class="req">read after ' + req + '</p>'
+             : '<p class="req">no prerequisites</p>') +
+        (linked(f).length
+          ? '<p class="req rel">related: ' + linked(f).map(x =>
+              '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ") + '</p>'
+          : '') + '</div>');
+    }
+    parts.push('</div>');
+  }
+  parts.push('<h2>Things to use</h2>',
+    '<p>Not documents. These are the interactive pieces, and they open as pages of ' +
+    'their own rather than in this reader.</p>', '<div class="cards">');
+  for (const [href, name, what, note] of TOOLS)
+    parts.push('<div class="card"><a class="cardtitle" href="' + href + '">' +
+      esc(name) + ' →</a><p>' + esc(what) + '</p>' +
+      (note ? '<p class="req">' + esc(note) + '</p>' : '') + '</div>');
+  parts.push('</div>');
+
+  parts.push('<p class="status">The map is hand-maintained in <code>index.html</code>. ' +
+    'A page missing from it is a page nobody has placed yet, not a page that stands alone.</p>');
+  return parts.join("");
+}
+
+function crumbs(file) {
+  const m = META[file];
+  if (!m) return "";
+  const after = (m.after || []).map(x =>
+    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+  const next = leadsTo(file).map(x =>
+    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+  const rel = linked(file).map(x =>
+    '<a href="#' + x + '">' + esc(titleOf(x)) + '</a>').join(", ");
+  if (!after && !next && !rel) return "";
+  return '<nav class="crumbs">' +
+    (after ? '<span><i>read after</i> ' + after + '</span>' : '') +
+    (next ? '<span><i>leads to</i> ' + next + '</span>' : '') +
+    (rel ? '<span><i>related</i> ' + rel + '</span>' : '') +
+    '<span><a href="#map">reading map</a></span></nav>';
+}
+
+async function show() {
+  const file = current();
+  for (const a of navEl.querySelectorAll("a"))
+    a.toggleAttribute("aria-current", a.dataset.file === file);
+  if (file === "map") {
+    docEl.innerHTML = renderMap();
+    hideTip();
+    document.title = "Reading map — Copenhagen Waterways";
+    window.scrollTo(0, 0);
+    return;
+  }
+  docEl.innerHTML = '<p class="status">Loading…</p>';
+  try {
+    const r = await fetch(urlOf(file), { cache: "no-cache" });
+    if (!r.ok) throw new Error(`${file} — HTTP ${r.status}`);
+    docEl.innerHTML = crumbs(file) + marked.parse(await r.text(), { gfm: true });
+    // tables carry long Danish system names; let each scroll rather than the page
+    for (const t of docEl.querySelectorAll("table")) {
+      const w = document.createElement("div");
+      w.className = "tablewrap";
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    }
+    hideTip();
+    decorate(docEl, file);
+    document.title = (DOCS.find(([f]) => f === file) || [, "Reports"])[1]
+      + " — Copenhagen Waterways";
+    window.scrollTo(0, 0);
+  } catch (e) {
+    docEl.innerHTML = `<p class="status">Could not load ${file}: ${e.message}. `
+      + `The generated reports live beside this page in <code>docs/</code>.</p>`;
+  }
+}
+addEventListener("hashchange", show);
+show();
+</script>
 </body>
 </html>
