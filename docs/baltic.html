@@ -57,9 +57,10 @@ th{font-weight:600;color:var(--ink3);font-size:11px}
 <header>
   <h1>The Baltic below the halocline</h1>
   <p>Oxygen at the Gotland Deep, central Baltic — roughly 500&nbsp;km east of Denmark,
-  in Swedish waters. <strong>Depth is resolved to one metre here.</strong> The Danish
+  in Swedish waters. <strong>Depth is gridded to one metre here.</strong> The Danish
   station archive collapses the same axis to two bins, so this is the dimension that
-  view cannot show.</p>
+  view cannot show — at the cost, stated below, that the fine vertical structure is
+  interpolated rather than measured.</p>
   <p>It is here because of a question with a clean logical shape: if dead water were a
   Danish phenomenon, the cause would be contained in Denmark.
   <a href="stations.html">The Danish station view is here</a>.</p>
@@ -84,9 +85,28 @@ th{font-weight:600;color:var(--ink3);font-size:11px}
     <h3>What the record says</h3>
     <table id="tab"></table>
     <p class="note">Every month of the record, at every depth below 100&nbsp;m, is
-    under 2&nbsp;mg/l. Not seasonal, not episodic — the deep basin does not
-    reoxygenate except when a Major Baltic Inflow pushes dense North Sea water
-    through the Danish straits.</p>
+    under 2&nbsp;mg/l. Not seasonal, not episodic.</p>
+
+    <h3>Four things to read off it</h3>
+    <p class="note"><strong>1. The oxygen boundary is the salinity boundary.</strong>
+    The top of the &lt;2&nbsp;mg/l layer sits at a median of &minus;73&nbsp;m; the
+    halocline, taken as the steepest salinity gradient, sits at &minus;69&nbsp;m. They
+    are the same surface. Switch the selector to salinity and you are looking at the
+    cause. A density gradient, not a nutrient gradient.</p>
+    <p class="note"><strong>2. It does not move.</strong> Across five-year blocks the
+    boundary sits at &minus;75, &minus;75, &minus;73, &minus;72, &minus;71&nbsp;m and
+    the halocline at &minus;65 to &minus;70&nbsp;m. No expansion, no contraction, over
+    the whole usable record.</p>
+    <p class="note"><strong>3. One event interrupts it, and it decays.</strong> Oxygen
+    at &minus;200&nbsp;m: 0.05&nbsp;mg/l in 2014, <strong>1.38 in 2015</strong>, 1.11 in
+    2016, 0.36 in 2017, back to 0.05 in 2018. That is the 2014&ndash;16 Major Baltic
+    Inflow — dense North Sea water pushed through the Danish straits by sustained
+    westerly wind. It is the only thing in 30 years that reoxygenated the deep basin,
+    it is weather, and it was gone in three years.</p>
+    <p class="note warnbox"><strong>4. The record is not as long as it looks.</strong>
+    226 of 385 months carry a profile, and <strong>every year from 1993 to 2005 has
+    three or fewer</strong>. The dense record is 2006&ndash;2024. The left third of this
+    plot is thin data drawn wide.</p>
 
     <h3>Denmark, for comparison</h3>
     <dl>
@@ -101,11 +121,17 @@ th{font-weight:600;color:var(--ink3);font-size:11px}
     calibrated on one is measured in the other.</p>
 
     <h3>Provenance</h3>
-    <p class="note warnbox">Copernicus Marine OMI, Baltic reanalysis. <strong>Not an
-    independent production path.</strong> A reanalysis assimilates the same national
-    monitoring data, so this counts as one environment, not a second. Switch to
-    salinity: the halocline that produces the anoxia is visible as the sharp gradient,
-    and it is physics, not nutrient loading.</p>
+    <p class="note warnbox">Copernicus Marine OMI, <strong>in-situ observations
+    reprocessed</strong> — not a reanalysis. An earlier version of this page said
+    reanalysis and was wrong; the file's own attributes read "from Observations
+    Reprocessing", source <code>INSITU_BAL_...DISCRETE...</code>. So these are real
+    profiles, taken by Swedish, Estonian and Latvian programmes rather than Danish ones
+    — a genuinely different set of ships, operators and laboratories, though the same
+    class of instrument.</p>
+    <p class="note warnbox">But: "measurements have been <strong>regridded</strong> on a
+    regular grid with monthly timestep and 1&nbsp;m vertical step". The vertical
+    smoothness is interpolation between discrete samples, not 240 independent
+    measurements per profile. Class 3, theirs, and stated in their own metadata.</p>
   </aside>
 </div>
 
