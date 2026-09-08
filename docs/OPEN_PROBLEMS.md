@@ -329,3 +329,47 @@ sheet in `viz/georef.html`, or read off any map, and `scripts/floodmaps.py geore
 the rest and reports its own residual.
 
 Still the smallest item on this list, and still the only one needing no new data.
+
+## 14. The flood model predates a substantial part of the city it is used to plan
+
+The 2012 sheets model a 2010 scenario on 2010 imagery. Copenhagen has since built
+Nordhavn, most of Ørestad, Sluseholmen and Teglholmen in Sydhavn, and a good deal of
+Refshaleøen and the Amager waterfront — much of it on reclaimed or re-levelled ground,
+all of it impervious, none of it in the model.
+
+**Quantified against today's sewer catchments:** 37 of 766 catchments, holding **344 ha
+of impervious surface (8.1% of the city's total)**, fall outside every one of the seven
+sheet footprints. The largest sit at Nordhavn, Refshaleøen, Ørestad Syd and the
+south-western edge.
+
+And the composition gives it away. Across the city, catchments of the type
+*Separatkloakeret, tag- og vejvand til recipient* are 14.4% of impervious area. Among the
+catchments the model never covered they are **65.3% — a 4.5× enrichment.** New districts
+are built separately sewered. So the ground outside the model is disproportionately the
+ground built after it.
+
+**Why it matters in both directions.** Those districts add impervious surface, so runoff
+that the model never routed; and they sit on made ground at engineered levels, so the
+terrain the model used is wrong there even where it has coverage. Every figure in
+[FLOOD_GAP.md](#FLOOD_GAP.md) is therefore a statement about the 2010 city. The plan
+built on it is being delivered into a 2026 one.
+
+**What would settle it.** A re-run of the hydraulic model on current terrain and current
+impervious cover — which the city presumably could do in an afternoon and has not
+published. Failing that, the 344 ha can at least be flagged rather than silently omitted.
+
+### The time dimension, which is the more interesting version
+
+Everything here is a snapshot compared against another snapshot: a 2010 model against a
+2018 plan, read in 2026. The materials for a fourth dimension are partly present and
+unused — `skp_veje_tunneller_kk` carries `forventet_ibrugtagning`, an expected
+in-service year running from 2014 to 2038; `lar_registreringer` carries permit and
+in-use status per installation; the sewer layer carries *status* and *plan* side by side.
+
+What is missing is the historical spine: when each basin, outfall, tunnel and reclamation
+actually entered service over the last thirty years. With that, the same maps become a
+sequence — and the questions worth asking are sequence questions. Did the shoreline's
+condition change when a given basin came online? Does overflow frequency track
+construction, or rainfall, or neither?
+
+---
