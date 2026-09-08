@@ -103,7 +103,21 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
     <div class="rlab"><span id="lo"></span><span id="hi"></span></div>
     <p class="note" id="depthnote"></p>
 
+    <h3>Frame</h3>
+    <select id="ext">
+      <option value="dk">Denmark</option>
+      <option value="all">All stations, including the North Sea transect</option>
+    </select>
+    <div class="cls" id="cropped"></div>
+
     <h3>Layers, by what they are</h3>
+
+    <label><input type="checkbox" id="L_land" checked>
+      Land <span class="tag t-mod">REFERENCE</span></label>
+    <div class="cls">Cartography, not measurement — here so the dots can be placed by
+      eye. It is the union of the national land catchments, filled without strokes so
+      no administrative boundary is drawn. <strong>Not</strong> derived from the water
+      body polygons, whose seaward edges are the boundary under audit.</div>
 
     <label><input type="checkbox" id="L_meas" checked>
       Station values <span class="tag t-meas">MEASURED</span></label>
@@ -170,7 +184,10 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
 
 <script>
 const D='data/areas/';
-let META,BIN,VARS,ST,WB=null,byMonth=[],dom=[0,1],playing=0;
+let META,BIN,VARS,ST,WB=null,LAND=null,byMonth=[],dom=[0,1],playing=0;
+// Denmark plus a margin. 17 North Sea transect stations sit outside it and
+// stretch the frame five degrees west, which squashes everything else.
+const EXT={dk:[7.9,54.4,15.5,58.0], all:null};
 const $=id=>document.getElementById(id);
 // what the chemistry permits. Values outside are drawn, not dropped: a deleted
 // outlier is an unrecorded decision, which is the error this whole site is about.
@@ -186,8 +203,10 @@ let LIM=[-Infinity,Infinity,-Infinity,Infinity];
 Promise.all([
   fetch(D+'stations_series.json').then(r=>r.json()),
   fetch(D+'stations_series.bin').then(r=>r.arrayBuffer()),
-  fetch(D+'areas.json').then(r=>r.json()).catch(()=>null)
-]).then(([m,b,a])=>{
+  fetch(D+'areas.json').then(r=>r.json()).catch(()=>null),
+  fetch('data/geo/dk_land.json').then(r=>r.json()).catch(()=>null)
+]).then(([m,b,a,l])=>{
+  LAND=l&&l.rings?l.rings:null;
   META=m; BIN=b; VARS=m.variables; ST=m.stations; WB=a&&a.geometry?a.geometry:null;
   const sel=$('var');
   VARS.forEach((v,i)=>{const o=document.createElement('option');
@@ -223,8 +242,10 @@ function col(t){const g=getComputedStyle(document.documentElement);
 // equirectangular; Denmark is small enough that this is not the error that matters
 let PJ={};
 function project(w,h){
+  const e=EXT[$('ext').value];
   const lo=ST.map(s=>s.lon),la=ST.map(s=>s.lat);
-  const x0=Math.min(...lo),x1=Math.max(...lo),y0=Math.min(...la),y1=Math.max(...la);
+  const x0=e?e[0]:Math.min(...lo), y0=e?e[1]:Math.min(...la),
+        x1=e?e[2]:Math.max(...lo), y1=e?e[3]:Math.max(...la);
   const k=Math.cos((y0+y1)/2*Math.PI/180), pad=18;
   const sx=(w-2*pad)/((x1-x0)*k), sy=(h-2*pad)/(y1-y0), s=Math.min(sx,sy);
   PJ={x0,y0,x1,y1,k,s,pad,
@@ -243,6 +264,12 @@ function draw(){
   const mi=+$('month').value, rows=byMonth[mi]||[];
   const have=new Map(rows);
 
+  if($('L_land').checked && LAND){
+    c.fillStyle=g.getPropertyValue('--ground').trim();
+    LAND.forEach(r=>{ c.beginPath();
+      r.forEach((p,i)=>i?c.lineTo(px(p[0]),py(p[1])):c.moveTo(px(p[0]),py(p[1])));
+      c.closePath(); c.fill(); });          // fill, never stroke: overlapping
+  }                                          // catchments merge into one land mass
   if($('L_idw').checked) idw(c,w,h,rows,g);
   if($('L_wb').checked && WB) polys(c,g);
 
@@ -273,6 +300,12 @@ function draw(){
   $('mlab').textContent=y+'-'+String(mo).padStart(2,'0');
   $('nrep').textContent=rows.length.toLocaleString();
   $('pct').textContent=(100*rows.length/ST.length).toFixed(1)+'%';
+  const e=EXT[$('ext').value];
+  const off=e?ST.filter(s=>s.lon<e[0]||s.lon>e[2]||s.lat<e[1]||s.lat>e[3]).length:0;
+  $('cropped').textContent = off
+    ? off+' stations sit outside this frame — a North Sea transect. Switch to see them, '
+      +'at the cost of squashing everything else.'
+    : 'Every station is in frame. Denmark is small in it.';
 }
 
 function polys(c,g){
@@ -316,7 +349,8 @@ function idw(c,w,h,rows,g){
 }
 
 function wire(){
-  ['L_meas','L_gaps','L_wb','L_idw','L_bad'].forEach(id=>$(id).onchange=()=>{
+  $('ext').onchange=draw;
+  ['L_meas','L_gaps','L_wb','L_idw','L_bad','L_land'].forEach(id=>$(id).onchange=()=>{
     if(id==='L_idw'){$('idwctl').hidden=!$('L_idw').checked;
       if(!$('L_idw').checked)$('synth').textContent='';}
     draw();});
