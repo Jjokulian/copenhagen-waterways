@@ -743,7 +743,7 @@ Gear dragged across the bed destroys structure and fauna directly, and resuspend
 
 **Discriminated by.** Fauna and sediment redox against trawling effort at fine spatial resolution.
 
-**Needs.** VMS/AIS-derived trawling effort rasters by month. Exists at EU level; the single most important missing layer in this whole register.
+**Needs.** VMS/AIS-derived trawling effort. **Obtainable:** ICES/HELCOM swept-area ratio, figshare 20310255, **23.1 MB, CC BY 4.0**, 0.05° c-square, quarterly, 2016–2021, covering 1,392 of 1,415 stations. Not fetched. Design in [`hypodrafts/D1.md`](hypodrafts/D1.md).
 
 ### D2 — Navigation dredging
 
@@ -2397,7 +2397,7 @@ Stations added, moved and dropped over the record, so a trend can be a trend in 
 
 **Discriminated by.** Recompute every trend on the subset of stations present throughout.
 
-**Needs.** Station start and end dates. **Not held, and the register does not carry them.** Only **34 of 1,415** series stations appear in `stations.csv` at all, and `StartDato` equals `SlutDato` on **796,990 of 798,574 rows (99.8%)** — the field is a single sampling-visit date, not a station lifespan. Error class 4, schema conflation: one column name covering two different things. Presence must therefore be derived from the observation record itself, which is what [`hypodrafts/I1.md`](hypodrafts/I1.md) does — it finds **64 stations present in all eight five-year eras**, 8,485 station-months, with the remaining 72.1% of June–September observations being turnover.
+**Needs.** Station start and end dates. **Not held.** The register carries 34 of 1,415 series stations, and `StartDato` = `SlutDato` on 99.8% of rows — a visit date, not a lifespan. Presence has to come from the observation record: [`hypodrafts/I1.md`](hypodrafts/I1.md).
 
 ### I2 — Changing analytical method
 
@@ -2409,7 +2409,7 @@ Winkler titration to optode sondes for oxygen; changing chlorophyll methods. Dif
 
 **Discriminated by.** Result against sampling gear and sonde, which the raw record names.
 
-**Needs.** Prøvetagningsudstyr, SondeNr, SondeNavn per measurement. In the ODA CTD record and, as far as we can tell, used by nobody.
+**Needs.** SondeNr per measurement — the probe *number* is the identifier, and a changeover is when a bias shift has cause. **Present but mostly unfilled:** `999` on 83.5%, `Prøvetagningsudstyr` the constant `Ketcher` on 100%, `Prøvetager` blank on 87% (1.2M-row sample). The usable **16.5%** carries 33 real probes and is where I2 is testable.
 
 ### I3 — Changing sampling frequency and season
 
@@ -2421,7 +2421,7 @@ A deficit indicator built from the worst month is biased by how often you sample
 
 **Discriminated by.** Indicator against sampling effort per station-season.
 
-**Needs.** Date of every visit per station. In the raw record.
+**Needs.** Date of every visit per station — in the raw record. But `Dato` is `YYYYMMDD`: **there is no time of day in any of 53.7M rows, and no column for it.** Oxygen has a diel cycle and daylight at 55°N runs 7–17 h, so the diel phase sampled shifts with season. Class 6, absent dimension: that half of I3 is **unscoreable, not unsupported**. A NOVANA technical instruction may bound the sampling hour — unchecked, and it would move this to class 2.
 
 ### I4 — Changing indicator definition
 
@@ -2458,6 +2458,18 @@ The 2007 structural reform moved monitoring from the counties to the state; the 
 **Discriminated by.** Result against DataLeverandoer and TekniskAnvisninganvendt.
 
 **Needs.** Both fields are in the raw record. Also held.
+
+### I7 — Batch defects in ingest or processing
+
+**Outcomes:** O1, O4
+
+A defect introduced once, downstream of the instrument and upstream of the archive, hits every record in one batch — not one station's method, not one custodian's era.
+
+**Predicts.** Implausible values clustered tightly in time across stations sharing no geography and no custodian, contradicted by a co-reported channel that did not pass through the same step.
+
+**Discriminated by.** Cross-channel consistency within station-month: a concentration that disagrees with its own saturation, temperature and salinity.
+
+**Needs.** Nothing new. **Worked case found:** 11 station-months of negative oxygen, all in **May–June 2005**, across **6 stations, 4 water bodies and 4 custodian prefixes**, spanning 6–75 km in the Øresund approaches. Co-reported saturation reads 100–108% and the magnitudes match Weiss solubility — the water was oxygenated and the sign inverted. Four custodians with tight geography points at a shared regional processing step rather than one desk; n=6, so a lead. Flagged, not removed, in [`data/areas/flags.json`](data/areas/flags.json).
 
 ## Borrowed from a field that already made this mistake
 

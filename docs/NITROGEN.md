@@ -64,6 +64,91 @@ Reported nitrogen divided by reported volume must fall within **10–12 mg/l** f
 
 The check tests conformity to the assumed concentration, not accuracy. A genuinely high measured first-flush concentration would be flagged as a mistake. **The assumed concentration cannot be falsified by data collected under it.**
 
+### The model's deciding input is itself a residual, and the field is never measured
+
+DCE's DK-QNP model computes the diffuse nitrogen load over the ungauged part of the
+country. Its own methods chapter names the key input:
+
+> *"En vigtig modelvariabel i DK-QNP modellen til beregning af tilførsel af total
+> diffus kvælstof er det årligt beregnede kvælstofoverskud på 'mark-niveau'."*
+> — Thodsen et al. 2019, [DCE SR353](https://dce2.au.dk/pub/SR353.pdf), p.34
+
+The **field surplus** (*markoverskud*). And chapter 6 of the same report presents this
+as a result:
+
+> *"Der er således — for perioden som helhed — en meget stærk, signifikant lineær
+> relation mellem det nationale markoverskud og den samlede, normaliserede
+> kvælstoftransport fra diffuse kilder (Figur 6.7, D)."*
+
+**A variable that is an input to the model is correlated with the model's output, and
+the correlation is reported as a finding.** This does not make the attribution wrong.
+It makes Figur 6.7 D unable to evidence it.
+
+#### What "field surplus" is, in facts and observations
+
+It is an accounting identity, not a measurement. From
+[DCE SR120](https://dce2.au.dk/pub/SR120.pdf) Table 3.4, kg N/ha, whole country:
+
+| | 1991 | 2005 | 2013 |
+|---|---|---|---|
+| mineral fertiliser | 141 | 71 | 74 |
+| manure + sludge | 91 | 84 | 87 |
+| biological fixation | 16 | 15 | 16 |
+| seed | 2 | 2 | 2 |
+| atmospheric deposition | 22 | 16 | 13 |
+| **total supplied** | **272** | **189** | **192** |
+| harvested nitrogen | 124 | 106 | 110 |
+| **= field surplus** | **148** | **87** | **84** |
+
+And SR120's Bilag 3 says what each term is made of:
+
+- **mineral fertiliser** — national sales statistics, **minus an estimated 5,000 t N**
+  assumed to go to public grounds, forests and private gardens. A stated constant.
+- **manure** — livestock **counts** by category, times a nutrient content per category
+  that follows *"de til enhver tid gældende normer"* — **the norms in force at the
+  time**, set by regulation.
+- **yields** — the harvest census, with roughage known to be overestimated, so an
+  assumed **10% shrinkage** for maize, grass and catch crops and **15%** for permanent
+  grass.
+- **crop nitrogen content** — **norm tables** from the *Fodermiddeltabeller* of 1992,
+  1995 and 2000, with cereals corrected annually from analyses by the pig industry's
+  own research centre.
+- **atmospheric deposition** — modelled.
+
+**No field is observed at any point.** Every term is a register count or an area times
+a regulatory coefficient, and the surplus is what is left over. Nitrogen never touches
+an instrument.
+
+#### The consequence is documented in the sources themselves
+
+Because the coefficients are administrative, the number moves when they move, with no
+change in any field.
+
+- **1999**: the nitrogen norm was cut 10%, dropping the quota by ~40,000 t N, while
+  grass norms changed simultaneously, raising it ~15,000 t N. SR120 calls the result a
+  *"spring"* — a step — in the compiled series.
+- **2012**: the method for nutrients removed at harvest changed from dry-matter yield
+  to feed units, and SR120 records that the net-input figures *"er steget lidt ift. de
+  tidligere opgørelser"* — rose, from the method change.
+- **2013**: the same year is published **twice**, differing only in which register the
+  fertiliser figure came from — **84 kg N/ha** from the *gødningsregnskaber*, **81**
+  from Danmarks Statistik.
+
+That last one sets the scale. The surplus fell 148 → 84 kg N/ha over 22 years, about
+−2.9 kg/ha/yr. **Choosing which register to read is worth roughly one year of the
+trend.** Small against the whole decline; not small against a year of it, and it is
+never carried as an uncertainty.
+
+New Zealand's OVERSEER is the same pattern with an audit attached: successive versions
+raised modelled nitrogen leaching by up to 60% with no change in on-farm practice, and
+a 2021 review panel would not say whether the tool could tell a rise from a fall.
+
+**So the chain reads:** norm tables × register counts → *markoverskud*, a residual →
+input to DK-QNP → diffuse load over the ungauged area → summed into total diffuse
+transport → correlated with *markoverskud* → "a very strong, significant linear
+relation". Each step is defensible alone. The composite cannot evidence what the last
+step is used to evidence.
+
 ### And the estimator can return impossible values
 
 In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment. A residual whose error can exceed its own signal is published to one decimal place with no error bar.
