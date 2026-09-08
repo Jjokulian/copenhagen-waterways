@@ -258,6 +258,69 @@ X = [
      "That it has never been done here, for a phenomenon the public reports "
      "constantly, is the finding."),
 
+    ("X19", "A panel that reports nothing on the days nothing happens",
+     "measurement",
+     ["T1", "T3", "T5", "J2", "O7"], "small",
+     "The outcomes anyone actually cares about - greasy water, a foul shore, a bed "
+     "with nothing structural left on it - are not measured by any Danish "
+     "programme. There is no instrument for fedtemøg; the glossary entry says so, "
+     "and it is not an oversight so much as a category the monitoring was never "
+     "built to hold. The only observers are the people who swim, walk and fish "
+     "there, and their observations are currently discarded as anecdote.",
+     "Nothing is manipulated. What is built is a reporting scheme, and its whole "
+     "design rests on one decision: **a fixed panel that reports on a schedule, "
+     "including on the days there is nothing to report.**",
+     "That null is the control and the entire difference between a dataset and a "
+     "complaints inbox. Open reporting - tell us when it is bad - produces a map "
+     "of attention, and attention follows news coverage, so the resulting series "
+     "measures publicity. A panel with a denominator produces a rate. It is the "
+     "same failure as the satellite matchups: the observations that exist must not "
+     "be selected on the variable being measured.",
+     "Per visit: position and time (a photograph carries both in EXIF, and "
+     "fedtemøg is visible, so the image is a record of the outcome rather than a "
+     "report about it); an ordinal odour intensity on a fixed scale, as used in "
+     "odour-nuisance regulation; water appearance; whether anything structural is "
+     "growing; and the null when none of it applies. Plus one control question "
+     "about something unrelated to the outcome, to detect when a panel's reporting "
+     "effort is rising rather than the phenomenon.",
+     "A rate per site per fortnight that can be laid against overflow events, "
+     "rainfall and the satellite fields → the outcome variable finally has a time "
+     "series. Reports that track news coverage rather than weather or discharge → "
+     "the panel is measuring attention and the design has failed, which is itself "
+     "worth knowing before anyone builds a bigger one.",
+     "Cheap, and the cheapest part is the phone people already carry. The "
+     "expensive part is recruiting observers who will keep reporting nothing, "
+     "which is the part every citizen-science scheme underestimates."),
+
+    ("X20", "Ask the people with the longest baseline, about dated events",
+     "measurement",
+     ["T1", "T4", "W2", "D1"], "small",
+     "Commercial and recreational fishermen hold the longest continuous "
+     "observation of the Danish seabed that exists - decades of hauling gear "
+     "across specific ground - and none of it is recorded anywhere as observation. "
+     "Landings are recorded; what the bottom looked and smelled like is not.",
+     "Nothing. Structured interview against a chart, with the questions fixed in "
+     "advance and the answers timestamped and positioned.",
+     "The known failure mode is shifting baseline syndrome: each generation's "
+     "normal is the previous generation's decline, so 'how was it back then' "
+     "reliably understates change and does so more the older the respondent. The "
+     "mitigation is to anchor every question on a **dated specific event** - what "
+     "came up in that haul, in that autumn, on that ground - rather than on a "
+     "remembered general state. Where two people fished the same ground in the "
+     "same years, their accounts are a replicate.",
+     "Position and year of specific hauls; what was on the gear; bottom type as "
+     "felt through the gear; smell; and the year a ground stopped being worth "
+     "fishing, which is a sharper memory than any gradual change.",
+     "Dated accounts that agree between independent respondents on the same ground "
+     "→ a reconstructed history for places with no monitoring at all, testable "
+     "against trawl-track records and the iltsvind bulletins. Accounts that "
+     "disagree or that smooth into a single declining narrative regardless of "
+     "ground → shifting baseline is dominating and the method gives history rather "
+     "than data.",
+     "This is the one item on the page that gets harder every year for a reason "
+     "unrelated to funding, and it shares that with X18: the people who fished "
+     "before the change are ageing out, and the baseline goes with them."),
+
     ("X8", "Are the trends in the sea or in the instruments?", "analysis",
      ["I1", "I2", "I3", "I5", "I6", "L3"], "desk",
      "The raw record carries the supplier, the sampling gear, the sonde, the "

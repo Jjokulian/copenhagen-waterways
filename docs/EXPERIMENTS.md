@@ -10,13 +10,13 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 ## Three kinds of work, which are not interchangeable
 
-**Constructive and investigative — `experiment`** (11 of 18 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+**Constructive and investigative — `experiment`** (11 of 20 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
 
-**Investigative — `measurement`** (3 of 18 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+**Investigative — `measurement`** (5 of 20 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
 
-**Build the means of measurement — `instrument`** (3 of 18 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
+**Build the means of measurement — `instrument`** (3 of 20 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
 
-**Armchair — `analysis`** (1 of 18 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+**Armchair — `analysis`** (1 of 20 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
 
 Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
 
@@ -24,12 +24,12 @@ Naming them separately matters because they are not substitutes and they are not
 
 | | | experiments |
 |---|---|---|
-| `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X18, X2, X7, X9, X10, X12, X14, X15, X16 |
+| `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X18, X2, X7, X19, X20, X9, X10, X12, X14, X15, X16 |
 | `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11, X13 |
 | `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5, X17 |
 | `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X8 |
 
-**11 of 18 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
+**13 of 20 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
 
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
@@ -106,6 +106,42 @@ The greasiness people report after swimming is a property of the sea-surface mic
 **Decide, in advance.** Enrichment factors well above one on calm days, correlating with reported greasiness → the phenomenon is real, located, and has a chemical signature that can then be traced to a source. No enrichment → look elsewhere, and group J shrinks.
 
 *Glass-plate microlayer sampling is a 1970s technique costing almost nothing. That it has never been done here, for a phenomenon the public reports constantly, is the finding.*
+
+### X19 — A panel that reports nothing on the days nothing happens
+
+`measurement`
+
+**Bears on:** [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light, [`T3`](#HYPOTHESES.md) Wasting disease with stress-modulated virulence, [`T5`](#HYPOTHESES.md) Loss of sediment suppressiveness, [`J2`](#HYPOTHESES.md) Sea-surface microlayer enrichment, [`O7`](#HYPOTHESES.md) Loss of rooted vegetation
+
+The outcomes anyone actually cares about - greasy water, a foul shore, a bed with nothing structural left on it - are not measured by any Danish programme. There is no instrument for fedtemøg; the glossary entry says so, and it is not an oversight so much as a category the monitoring was never built to hold. The only observers are the people who swim, walk and fish there, and their observations are currently discarded as anecdote.
+
+**Manipulate.** Nothing is manipulated. What is built is a reporting scheme, and its whole design rests on one decision: **a fixed panel that reports on a schedule, including on the days there is nothing to report.**
+
+**Control.** That null is the control and the entire difference between a dataset and a complaints inbox. Open reporting - tell us when it is bad - produces a map of attention, and attention follows news coverage, so the resulting series measures publicity. A panel with a denominator produces a rate. It is the same failure as the satellite matchups: the observations that exist must not be selected on the variable being measured.
+
+**Measure.** Per visit: position and time (a photograph carries both in EXIF, and fedtemøg is visible, so the image is a record of the outcome rather than a report about it); an ordinal odour intensity on a fixed scale, as used in odour-nuisance regulation; water appearance; whether anything structural is growing; and the null when none of it applies. Plus one control question about something unrelated to the outcome, to detect when a panel's reporting effort is rising rather than the phenomenon.
+
+**Decide, in advance.** A rate per site per fortnight that can be laid against overflow events, rainfall and the satellite fields → the outcome variable finally has a time series. Reports that track news coverage rather than weather or discharge → the panel is measuring attention and the design has failed, which is itself worth knowing before anyone builds a bigger one.
+
+*Cheap, and the cheapest part is the phone people already carry. The expensive part is recruiting observers who will keep reporting nothing, which is the part every citizen-science scheme underestimates.*
+
+### X20 — Ask the people with the longest baseline, about dated events
+
+`measurement`
+
+**Bears on:** [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light, [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`W2`](#HYPOTHESES.md) Settlement cue failure, [`D1`](#HYPOTHESES.md) Bottom trawling
+
+Commercial and recreational fishermen hold the longest continuous observation of the Danish seabed that exists - decades of hauling gear across specific ground - and none of it is recorded anywhere as observation. Landings are recorded; what the bottom looked and smelled like is not.
+
+**Manipulate.** Nothing. Structured interview against a chart, with the questions fixed in advance and the answers timestamped and positioned.
+
+**Control.** The known failure mode is shifting baseline syndrome: each generation's normal is the previous generation's decline, so 'how was it back then' reliably understates change and does so more the older the respondent. The mitigation is to anchor every question on a **dated specific event** - what came up in that haul, in that autumn, on that ground - rather than on a remembered general state. Where two people fished the same ground in the same years, their accounts are a replicate.
+
+**Measure.** Position and year of specific hauls; what was on the gear; bottom type as felt through the gear; smell; and the year a ground stopped being worth fishing, which is a sharper memory than any gradual change.
+
+**Decide, in advance.** Dated accounts that agree between independent respondents on the same ground → a reconstructed history for places with no monitoring at all, testable against trawl-track records and the iltsvind bulletins. Accounts that disagree or that smooth into a single declining narrative regardless of ground → shifting baseline is dominating and the method gives history rather than data.
+
+*This is the one item on the page that gets harder every year for a reason unrelated to funding, and it shares that with X18: the people who fished before the change are ageing out, and the baseline goes with them.*
 
 ### X9 — Does anything happen after an overflow?
 
