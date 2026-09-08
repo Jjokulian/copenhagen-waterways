@@ -22,6 +22,20 @@ Checked rather than assumed, over about 950,000 rows of three ODA extracts:
 
     lys.csv.gz          400,000 rows    0 grouped
     maaledybde.csv.gz   151,167 rows    0 grouped
+
+SECCHI IS RIGHT-CENSORED AT THE BED, AND THE CENSORING IS 59x STRONGER IN SHALLOW
+WATER. Verified over the 96,708 rows carrying both SigtDybde_m and BundDybde_m:
+SigtTilBund - the disc was still visible on the bottom - is True on 21.36% of readings
+where the bottom is at or above 10 m, and on 0.36% of readings deeper than 10 m. In
+shallow water the disc hits bottom before it disappears, so the recorded value is a
+lower bound on clarity, not a measurement of it.
+
+Consequence for anyone using this file: a regression of Secchi depth on bottom depth,
+or any comparison of clarity between shallow and deep stations, is partly a
+measurement of the censoring. Fit it censored (Tobit, or a survival model with
+SigtTilBund as the event indicator) or restrict to SigtTilBund = False and say that
+the restriction removes the clearest shallow water. Substituting the bottom depth for
+the missing value, or dropping the flagged rows silently, both manufacture the result.
     ctd.csv.gz          400,000 rows    0 grouped
 
 Every value that *looked* grouped under a naive pattern - 39,196 of them in the
