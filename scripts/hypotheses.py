@@ -301,6 +301,9 @@ TERMS = {
     'eelgrass': (
         'A true flowering plant that lives fully submerged in the sea, forming meadows on soft bottoms. It roots in the sediment, needs light at the bed, and shelters everything else. Danish: alegras.',
         'Named for its long ribbon leaves. Zostera marina is the Danish species.'),
+    'efflux pump': (
+        'A protein that pushes unwanted molecules back out of a cell. Bacteria carry them for their own reasons and they confer resistance to many drugs as a side effect - which is why resistance can appear almost immediately.',
+        'The machinery was already there. Selection only had to favour it.'),
     'endocrine disruption': (
         "Interference with an organism's hormone system, often at concentrations far below those that kill. Effects show as failed reproduction and altered development rather than as death.",
         'The endocrine system is the hormonal one - Greek endo (within) plus krinein (to separate).'),
@@ -370,6 +373,9 @@ TERMS = {
     'fungicide': (
         'A chemical designed to kill fungi. Applied in agriculture by the thousand tonnes, and acting on enzyme systems that fungi share with most other life.',
         'The -cide ending is Latin caedere, to kill - as in pesticide, biocide, herbicide.'),
+    'gene duplication': (
+        'A copy of a gene arising, leaving one to keep doing the original job while the other is free to change. The main route by which genuinely new functions appear.',
+        'It is why what already exists constrains what can evolve next.'),
     'generation time': (
         'How long between one generation and the next. It sets the ceiling on how fast a population can adapt, and it differs between a marine bacterium and an eelgrass meadow by roughly five orders of magnitude.',
         'The single most important number in deciding who wins under a novel pressure.'),
@@ -526,6 +532,9 @@ TERMS = {
     'mutation rate': (
         'How often the genetic code changes when it is copied. Combined with population size it sets how much variation a lineage generates per unit time, and therefore how quickly it can meet something new.',
         'A large population with a short generation explores more possibilities in a year than a small slow one does in a century.'),
+    'mutational bias': (
+        'The fact that mutation is not uniform across a genome. Rates vary with chromatin state, transcription and sequence context; stress induces mutagenesis; recombination concentrates at hotspots.',
+        'Variation is structured, and the structure is itself an evolved product of what the lineage has met before - which is priming, one level down.'),
     'mycobiome': (
         'The fungal community of a place or a host, as distinct from its bacteria. Marine sediments are turning out to hold far more fungal diversity than anyone expected.',
         'Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.'),
@@ -632,8 +641,8 @@ TERMS = {
         'The idea that action to prevent harm need not wait for full scientific certainty. Written into EU law, and constrained in practice by requirements of proportionality.',
         'Article 191 of the Treaty on the Functioning of the European Union. Invoked more often than it decides anything.'),
     'priming': (
-        'Adding fresh easily-eaten carbon speeds up the decay of old material that was sitting there stable, because the microbes gain the energy to attack it.',
-        'As in priming a pump: a small input releases a much larger flow.'),
+        'Having machinery already close to what a new situation requires. New biological capabilities almost never arise from nothing - they arise by duplicating and modifying something that already worked - so the distance from existing machinery to the needed function matters more than the supply of mutations.',
+        'Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.'),
     'prokaryote': (
         'An organism whose cell has no nucleus - bacteria and archaea. They run essentially every chemical transformation in the sea that is not photosynthesis or animal respiration.',
         'Greek pro (before) plus karyon (kernel): named for lacking the thing eukaryotes have, which tells you who was doing the naming.'),
@@ -667,6 +676,9 @@ TERMS = {
     'recalcitrant': (
         'Resistant to decay. Lignin, humic material, and most synthetic compounds.',
         'Latin recalcitrare, to kick back - literally to dig the heels in.'),
+    'recombination': (
+        'The shuffling of genetic material during sexual reproduction. It concentrates at particular locations rather than falling evenly, and mate choice ahead of it is under selection - so none of it is a lottery.',
+        'The popular picture of random variation is wrong at every stage of this.'),
     'Redfield': (
         'The roughly fixed ratio of carbon to nitrogen to phosphorus in marine plankton, about 106:16:1 by atoms. It lets you convert one nutrient into an expected amount of biomass, or of oxygen demand.',
         'Alfred Redfield noticed in 1934 that plankton and seawater share the ratio, which is either a coincidence or the plankton setting the chemistry of the ocean.'),
@@ -3193,26 +3205,64 @@ def render(rows):
       "direction of everything above.\n")
     a("**A tolerance window is not a constant of nature. It is an evolved "
       "property** — the accumulated result of every ancestor that met a condition "
-      "and survived it. So the window is made by life, and it can move. What "
-      "decides how fast it moves is a short list: **generation time, population "
-      "size, mutation rate, whether genes can be traded sideways between "
-      "lineages, and whether any prior encounter with the substance exists to have "
-      "left machinery behind.**\n")
-    a("Those five differ across organisms by orders of magnitude, and they differ "
-      "in the *same direction* as everything else in this section. A marine "
-      "bacterium divides in hours, lives at a billion cells per millilitre, and can "
-      "acquire a working gene from an unrelated species by horizontal transfer. An "
+      "and survived it. So the window is made by life, and it can move. Four things "
+      "decide how fast, and they are not equally weighted:\n")
+    a("| | | |")
+    a("|---|---|---|")
+    a("| **What is primed** | Is there existing machinery already close to "
+      "sufficient? | The dominant term, and the one usually left out |")
+    a("| **Mutational bias** | *Where* variation arises, not how much | Mutation is "
+      "not uniform, and recombination is not random |")
+    a("| **Mutation rate** | How much raw variation per copy | Matters least on its "
+      "own |")
+    a("| **Generational turnover** | How often selection gets to act | Differs "
+      "across organisms by five orders of magnitude |")
+    a("")
+    a("**Priming carries most of the weight.** New capabilities almost never arise "
+      "from nothing; they arise by duplicating and modifying something that already "
+      "worked. So what decides whether a lineage can meet a new condition is not "
+      "the supply of mutations but the *distance* from its existing machinery to "
+      "the required function.\n")
+    a("The clearest demonstration is a contrast this project already depends on. "
+      "**Antibiotic resistance appears within years**, because the machinery "
+      "pre-existed: soil bacteria have competed with antibiotic-producing fungi for "
+      "hundreds of millions of years, and efflux pumps and degrading enzymes were "
+      "already sitting in the shared gene pool. **PFAS degradation has not appeared "
+      "in seventy years of global exposure**, because the carbon-fluorine bond has "
+      "no prior anywhere and nothing holds machinery within reach of it. Same "
+      "planet, same microbes, same mutation rates — opposite outcomes, decided "
+      "entirely by what was primed.\n")
+    a("**And mutation is not random**, which most tellings of this get wrong. Rates "
+      "vary by orders of magnitude across a genome with chromatin state, "
+      "transcription and sequence context; stress induces mutagenesis in bacteria; "
+      "recombination concentrates at hotspots rather than falling evenly; and "
+      "meiosis, hybridisation and mate choice are themselves under selection and "
+      "in no sense a lottery. Horizontal transfer is biased hardest of all — it "
+      "delivers whatever the local gene pool happens to hold. Variation is "
+      "**structured**, and the structure is itself an evolved product of what the "
+      "lineage has met before. Which is priming again, one level down.\n")
+    a("These differ across organisms in the *same direction* as everything else in "
+      "this section. A marine bacterium divides in hours, lives at a billion cells "
+      "per millilitre, and can acquire a working gene from an unrelated species. An "
       "eelgrass meadow, a mussel bed, a long-lived bivalve: generations in years, "
       "populations in thousands, and no mechanism for borrowing an adaptation from "
       "a neighbour at all.\n")
+    a("It also settles a phrase used loosely above. Calling a degraded bay "
+      "*reverted to an older configuration* is right only when the state it lands "
+      "in is one life is thoroughly primed for — anoxic sulphidic chemistry is "
+      "ancient, universally primed, and reachable in days, so that really is "
+      "reversion. A system pushed by something with no prior is not reverting to "
+      "anything; there is no configuration waiting. **Whether a disturbance produces "
+      "reversion or produces nothing at all is decided by what is primed**, not by "
+      "how hard it is pushed.\n")
     a("> **So under any sustained novel pressure, the ceiling rises for the fast "
       "and stays put for the slow.** The gap between them widens by itself, without "
       "the pressure needing to increase. That is the asymmetry of requirements "
       "again, one level down and running on a clock.\n")
     a("Which reframes what a biocide programme is. **Applying a compound at "
       "national scale is an evolutionary selection experiment**, and the winners "
-      "are decided in advance by that list of five: shortest generations, largest "
-      "populations, genes that travel sideways. Precisely the organisms nobody "
+      "are decided in advance by those four terms: best primed, most biased "
+      "toward the useful variation, fastest turnover. Precisely the organisms nobody "
       "intended to favour. The azole-resistant *Aspergillus* arising from "
       "agricultural fungicide use (`E15`) is not an unlucky side effect — it is the "
       "experiment working exactly as its design requires, and the resistance is "

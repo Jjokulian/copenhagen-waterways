@@ -1498,6 +1498,13 @@
     "eelgrass"
    ]
   },
+  "efflux pump": {
+   "text": "A protein that pushes unwanted molecules back out of a cell. Bacteria carry them for their own reasons and they confer resistance to many drugs as a side effect - which is why resistance can appear almost immediately.",
+   "why": "The machinery was already there. Selection only had to favour it.",
+   "forms": [
+    "efflux pump"
+   ]
+  },
   "endocrine disruption": {
    "text": "Interference with an organism's hormone system, often at concentrations far below those that kill. Effects show as failed reproduction and altered development rather than as death.",
    "why": "The endocrine system is the hormonal one - Greek endo (within) plus krinein (to separate).",
@@ -1668,6 +1675,13 @@
    "forms": [
     "fungicide",
     "fungicides"
+   ]
+  },
+  "gene duplication": {
+   "text": "A copy of a gene arising, leaving one to keep doing the original job while the other is free to change. The main route by which genuinely new functions appear.",
+   "why": "It is why what already exists constrains what can evolve next.",
+   "forms": [
+    "gene duplication"
    ]
   },
   "generation time": {
@@ -2048,6 +2062,13 @@
     "mutation rate"
    ]
   },
+  "mutational bias": {
+   "text": "The fact that mutation is not uniform across a genome. Rates vary with chromatin state, transcription and sequence context; stress induces mutagenesis; recombination concentrates at hotspots.",
+   "why": "Variation is structured, and the structure is itself an evolved product of what the lineage has met before - which is priming, one level down.",
+   "forms": [
+    "mutational bias"
+   ]
+  },
   "mycobiome": {
    "text": "The fungal community of a place or a host, as distinct from its bacteria. Marine sediments are turning out to hold far more fungal diversity than anyone expected.",
    "why": "Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.",
@@ -2302,8 +2323,8 @@
    ]
   },
   "priming": {
-   "text": "Adding fresh easily-eaten carbon speeds up the decay of old material that was sitting there stable, because the microbes gain the energy to attack it.",
-   "why": "As in priming a pump: a small input releases a much larger flow.",
+   "text": "Having machinery already close to what a new situation requires. New biological capabilities almost never arise from nothing - they arise by duplicating and modifying something that already worked - so the distance from existing machinery to the needed function matters more than the supply of mutations.",
+   "why": "Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.",
    "forms": [
     "priming"
    ]
@@ -2391,6 +2412,13 @@
    "why": "Latin recalcitrare, to kick back - literally to dig the heels in.",
    "forms": [
     "recalcitrant"
+   ]
+  },
+  "recombination": {
+   "text": "The shuffling of genetic material during sexual reproduction. It concentrates at particular locations rather than falling evenly, and mate choice ahead of it is under selection - so none of it is a lottery.",
+   "why": "The popular picture of random variation is wrong at every stage of this.",
+   "forms": [
+    "recombination"
    ]
   },
   "Redfield": {

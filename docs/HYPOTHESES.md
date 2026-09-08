@@ -202,13 +202,28 @@ So the convergence argument survives with a boundary drawn around it. It describ
 
 One more layer under all of this, and it is the one that decides the direction of everything above.
 
-**A tolerance window is not a constant of nature. It is an evolved property** — the accumulated result of every ancestor that met a condition and survived it. So the window is made by life, and it can move. What decides how fast it moves is a short list: **generation time, population size, mutation rate, whether genes can be traded sideways between lineages, and whether any prior encounter with the substance exists to have left machinery behind.**
+**A tolerance window is not a constant of nature. It is an evolved property** — the accumulated result of every ancestor that met a condition and survived it. So the window is made by life, and it can move. Four things decide how fast, and they are not equally weighted:
 
-Those five differ across organisms by orders of magnitude, and they differ in the *same direction* as everything else in this section. A marine bacterium divides in hours, lives at a billion cells per millilitre, and can acquire a working gene from an unrelated species by horizontal transfer. An eelgrass meadow, a mussel bed, a long-lived bivalve: generations in years, populations in thousands, and no mechanism for borrowing an adaptation from a neighbour at all.
+| | | |
+|---|---|---|
+| **What is primed** | Is there existing machinery already close to sufficient? | The dominant term, and the one usually left out |
+| **Mutational bias** | *Where* variation arises, not how much | Mutation is not uniform, and recombination is not random |
+| **Mutation rate** | How much raw variation per copy | Matters least on its own |
+| **Generational turnover** | How often selection gets to act | Differs across organisms by five orders of magnitude |
+
+**Priming carries most of the weight.** New capabilities almost never arise from nothing; they arise by duplicating and modifying something that already worked. So what decides whether a lineage can meet a new condition is not the supply of mutations but the *distance* from its existing machinery to the required function.
+
+The clearest demonstration is a contrast this project already depends on. **Antibiotic resistance appears within years**, because the machinery pre-existed: soil bacteria have competed with antibiotic-producing fungi for hundreds of millions of years, and efflux pumps and degrading enzymes were already sitting in the shared gene pool. **PFAS degradation has not appeared in seventy years of global exposure**, because the carbon-fluorine bond has no prior anywhere and nothing holds machinery within reach of it. Same planet, same microbes, same mutation rates — opposite outcomes, decided entirely by what was primed.
+
+**And mutation is not random**, which most tellings of this get wrong. Rates vary by orders of magnitude across a genome with chromatin state, transcription and sequence context; stress induces mutagenesis in bacteria; recombination concentrates at hotspots rather than falling evenly; and meiosis, hybridisation and mate choice are themselves under selection and in no sense a lottery. Horizontal transfer is biased hardest of all — it delivers whatever the local gene pool happens to hold. Variation is **structured**, and the structure is itself an evolved product of what the lineage has met before. Which is priming again, one level down.
+
+These differ across organisms in the *same direction* as everything else in this section. A marine bacterium divides in hours, lives at a billion cells per millilitre, and can acquire a working gene from an unrelated species. An eelgrass meadow, a mussel bed, a long-lived bivalve: generations in years, populations in thousands, and no mechanism for borrowing an adaptation from a neighbour at all.
+
+It also settles a phrase used loosely above. Calling a degraded bay *reverted to an older configuration* is right only when the state it lands in is one life is thoroughly primed for — anoxic sulphidic chemistry is ancient, universally primed, and reachable in days, so that really is reversion. A system pushed by something with no prior is not reverting to anything; there is no configuration waiting. **Whether a disturbance produces reversion or produces nothing at all is decided by what is primed**, not by how hard it is pushed.
 
 > **So under any sustained novel pressure, the ceiling rises for the fast and stays put for the slow.** The gap between them widens by itself, without the pressure needing to increase. That is the asymmetry of requirements again, one level down and running on a clock.
 
-Which reframes what a biocide programme is. **Applying a compound at national scale is an evolutionary selection experiment**, and the winners are decided in advance by that list of five: shortest generations, largest populations, genes that travel sideways. Precisely the organisms nobody intended to favour. The azole-resistant *Aspergillus* arising from agricultural fungicide use (`E15`) is not an unlucky side effect — it is the experiment working exactly as its design requires, and the resistance is simultaneously proof of exposure and proof of selection.
+Which reframes what a biocide programme is. **Applying a compound at national scale is an evolutionary selection experiment**, and the winners are decided in advance by those four terms: best primed, most biased toward the useful variation, fastest turnover. Precisely the organisms nobody intended to favour. The azole-resistant *Aspergillus* arising from agricultural fungicide use (`E15`) is not an unlucky side effect — it is the experiment working exactly as its design requires, and the resistance is simultaneously proof of exposure and proof of selection.
 
 ### How wide the window really is, and what that costs the argument
 
