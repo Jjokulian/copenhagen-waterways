@@ -3,8 +3,8 @@
  "_why": "A null test is conditioned on the features chosen and cannot say whether a grouping is a property of the places or of what happened to be measured. Agreement between derivations from disjoint feature subsets can, and assumes no partition at all.",
  "_reading": "agreement_between_halves is the adjusted Rand index: 0 is what two random partitions of the same shape reach, 1 is identity. Rising with features_per_half means the derivations converge; flat and near zero means there is nothing to converge on.",
  "_prior_strength": "What a basket is worth as a Bayesian prior. Pooling the members of a group gives a prior MEAN; nothing in the membership rule gives it a concentration, and Beta(a,b) priors are pseudo-counts where a+b is what the prior is worth in observations. worth_per_member is the corrective: a group of n members is worth about worth_per_member * n pseudo-observations, not n. kappa is a separate quantity - how well the agreement itself is pinned down across draws - and is not the pooling licence.",
- "_limit": "One clustering method (average linkage on 1 - correlation), one granularity (12 groups), and only the stations measured on every variable - which are the best-observed ones, so this is the friendliest case rather than a representative one. The Beta fit is exact only where the functional being predicted is a proportion; for a continuous one the same role is played by a normal-normal shrinkage weight and worth_per_member scales a precision rather than a count.",
- "groups": 12,
+ "_limit": "One clustering method (average linkage on 1 - correlation), one granularity (84 groups), and only the stations measured on every variable - which are the best-observed ones, so this is the friendliest case rather than a representative one. The Beta fit is exact only where the functional being predicted is a proportion; for a continuous one the same role is played by a normal-normal shrinkage weight and worth_per_member scales a precision rather than a count.",
+ "groups": 84,
  "stations": 150,
  "official_groups_here": 84,
  "variables": [
@@ -22,61 +22,61 @@
   {
    "features_per_half": 1,
    "pairs": 12,
-   "agreement_between_halves": 0.236,
-   "best": 0.737,
-   "worst": -0.027,
-   "agreement_with_official": 0.069,
+   "agreement_between_halves": 0.309,
+   "best": 0.568,
+   "worst": 0.15,
+   "agreement_with_official": 0.313,
    "prior_strength": {
-    "mean_agreement": 0.238,
-    "alpha": 0.93,
-    "beta": 2.98,
-    "kappa": 3.91,
-    "worth_per_member": 0.238
+    "mean_agreement": 0.309,
+    "alpha": 3.02,
+    "beta": 6.76,
+    "kappa": 9.78,
+    "worth_per_member": 0.309
    }
   },
   {
    "features_per_half": 2,
    "pairs": 12,
-   "agreement_between_halves": 0.333,
-   "best": 0.51,
-   "worst": 0.24,
-   "agreement_with_official": 0.101,
+   "agreement_between_halves": 0.424,
+   "best": 0.663,
+   "worst": 0.259,
+   "agreement_with_official": 0.414,
    "prior_strength": {
-    "mean_agreement": 0.333,
-    "alpha": 7.47,
-    "beta": 14.93,
-    "kappa": 22.39,
-    "worth_per_member": 0.333
+    "mean_agreement": 0.424,
+    "alpha": 6.51,
+    "beta": 8.84,
+    "kappa": 15.35,
+    "worth_per_member": 0.424
    }
   },
   {
    "features_per_half": 3,
    "pairs": 12,
-   "agreement_between_halves": 0.359,
-   "best": 0.486,
-   "worst": 0.22,
-   "agreement_with_official": 0.093,
+   "agreement_between_halves": 0.471,
+   "best": 0.639,
+   "worst": 0.319,
+   "agreement_with_official": 0.398,
    "prior_strength": {
-    "mean_agreement": 0.359,
-    "alpha": 10.88,
-    "beta": 19.43,
-    "kappa": 30.3,
-    "worth_per_member": 0.359
+    "mean_agreement": 0.471,
+    "alpha": 12.4,
+    "beta": 13.95,
+    "kappa": 26.34,
+    "worth_per_member": 0.471
    }
   },
   {
    "features_per_half": 4,
    "pairs": 12,
-   "agreement_between_halves": 0.462,
-   "best": 0.738,
-   "worst": 0.314,
-   "agreement_with_official": 0.117,
+   "agreement_between_halves": 0.576,
+   "best": 0.735,
+   "worst": 0.431,
+   "agreement_with_official": 0.436,
    "prior_strength": {
-    "mean_agreement": 0.462,
-    "alpha": 8.23,
-    "beta": 9.6,
-    "kappa": 17.84,
-    "worth_per_member": 0.462
+    "mean_agreement": 0.576,
+    "alpha": 17.04,
+    "beta": 12.56,
+    "kappa": 29.6,
+    "worth_per_member": 0.576
    }
   }
  ]
