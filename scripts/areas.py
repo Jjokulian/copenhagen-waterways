@@ -457,6 +457,87 @@ def render(props, rec, ch):
       "neglected to perform. It appears to require a registered business or "
       "authority, which means a private citizen cannot obtain it at all.\n")
 
+    a("## Two meanings of \"a body of water\", and the switch between them\n")
+    a("\"Roskilde Fjord\" is not an arbitrary line on a map, and it is worth saying "
+      "so plainly before objecting to anything. It names a real hydrographic "
+      "object: water largely bounded by land, with exchange restricted to a narrow "
+      "mouth. That is a **claim about enclosure**, it is physical, and it is "
+      "true.\n")
+    a("The assessment then uses the same word to mean something else entirely: "
+      "that a measurement taken anywhere in it stands for the whole of it. That is "
+      "a **claim about homogeneity**, and it is statistical. One sense is about "
+      "where the water is bounded; the other is about whether the water inside "
+      "those bounds is alike. Nothing carries you from the first to the second, "
+      "and the name does the carrying unnoticed because the same three words serve "
+      "both.\n")
+    a("**And the physics runs against the transfer, not with it.** Restricted "
+      "exchange is exactly what *preserves* a gradient. A basin with freshwater "
+      "entering at its head and a sill at its mouth holds a salinity, "
+      "residence-time and oxygen gradient along its length precisely because it "
+      "does not flush; open water erases such differences by mixing. So the better "
+      "the enclosure, the weaker the homogeneity assumption becomes. The two "
+      "senses are not merely distinct — **they pull in opposite directions**, and "
+      "the enclosures that most deserve their names are the ones least entitled to "
+      "be treated as single units.\n")
+    a("The partition half-concedes this without following it through. Roskilde "
+      "Fjord appears here as two water bodies, `DKCOAST1` (ydre, 71 km²) and "
+      "`DKCOAST2` (indre, 52 km²) — an admission that one enclosure is at least "
+      "two units. Nothing states why two is the right number, what test would have "
+      "produced three, or what measurement would settle it. A boundary drawn "
+      "somewhere inside a fjord is a hypothesis about where the water changes, and "
+      "it is the kind of hypothesis this project can actually test: `X22` in "
+      "[EXPERIMENTS.md](#EXPERIMENTS.md) sets out how, using pairs of measurements "
+      "at matched separation either side of a line.\n")
+    a("> The practical rule that follows, and the reason the station-level series "
+      "exist: **the unit of observation is a position.** Everything else — this "
+      "page included — is an aggregate computed inside somebody's polygon, and "
+      "should be read as a statement about that polygon as much as about the "
+      "sea.\n")
+
+    a("### The switch, measured in the fjord it is named after\n")
+    a("The station-level series make this checkable rather than arguable. Both "
+      "halves of Roskilde Fjord carry several stations, so for any month where "
+      "three or more measured, the disagreement *between* stations can be set "
+      "against the variation *across* months — which is the signal anyone is trying "
+      "to detect.\n")
+    a("| variable | basket | months with 3+ stations | spread between stations, "
+      "same month | spread across months | ratio |")
+    a("|---|---|---:|---:|---:|---:|")
+    for row in (("bottom oxygen", "indre `DKCOAST2`", 221, "sd 1.82, median range "
+                 "**3.35 mg/l**", "2.80", "**0.65**"),
+                ("bottom oxygen", "ydre `DKCOAST1`", 113, "sd 0.81, range 0.80",
+                 "3.20", "0.25"),
+                ("surface salinity", "indre `DKCOAST2`", 222,
+                 "sd 0.49, range 1.06", "1.71", "0.29"),
+                ("surface salinity", "ydre `DKCOAST1`", 114,
+                 "sd 1.07, range 2.08", "1.22", "**0.88**"),
+                ("bottom temperature", "indre `DKCOAST2`", 224, "sd 1.64", "5.36",
+                 "0.31"),
+                ("bottom temperature", "ydre `DKCOAST1`", 113, "sd 0.44", "6.64",
+                 "0.07")):
+        a("| " + " | ".join(str(x) for x in row) + " |")
+    a("")
+    a("**The inner fjord's own stations disagree about bottom oxygen by a median of "
+      "3.35 mg/l within a single month.** The iltsvind criterion is oxygen below "
+      "4 mg/l in bottom water. So the disagreement between stations inside one "
+      "water body is very nearly the whole width of the threshold, and whether that "
+      "body \"has iltsvind\" can depend on which of its own stations is read. The "
+      "ratio says the same thing in another way: the spread between stations is "
+      "**65% of the size of the entire seasonal signal** the monitoring exists to "
+      "measure.\n")
+    a("**And the two halves fail on different variables.** The inner fjord is "
+      "unreliable for oxygen (0.65) and well behaved for salinity (0.29); the outer "
+      "fjord is the reverse — fine for oxygen (0.25), poor for salinity (0.88). "
+      "That is not a ranking of two baskets. It is a demonstration that **no single "
+      "partition can serve both variables**, because the water is organised "
+      "differently depending on what you measure. A boundary that is real for "
+      "salinity is arbitrary for oxygen, and drawing one set of lines and using it "
+      "for everything is the error, rather than drawing them in the wrong place.\n")
+    a("Computed from `docs/data/areas/stations_series.*`, which carry no partition "
+      "at all — the water-body assignment used here is loaded separately from "
+      "`station_waterbody_overlay.json`, on purpose, so that using it is a "
+      "deliberate act.\n")
+
     a("## The cum hoc estimate, across areas instead of across years\n")
     a("A national time series has one unit of replication. The areas have "
       f"{ch['n_areas']}. So the only place an effect size can actually be estimated "

@@ -176,7 +176,8 @@ def main():
         log(f"    {key:12} {filled:,} area-months")
 
     write_json(os.path.join(ROOT, "docs", "data", "areas", "series.json"),
-               {"_what": "Monthly median per water body per variable, with the count behind each value in <key>__n, from the ODA "
+               {"_assumption": "**Aggregated through a model assumption.** Every figure here is summed or averaged inside a VP3 water body — an administrative polygon drawn for the Water Framework Directive, not a boundary anyone has shown the sea to respect. Whether the water changes where these lines are is an open question (X22), so a number here is a statement about that partition as much as about the sea. Station-level series, which carry no partition, are in stations_series.*",
+                "_what": "Monthly median per water body per variable, with the count behind each value in <key>__n, from the ODA "
                          "CTD extract. Arrays are area-major: index = area * months "
                          "+ month, null where nothing was measured.",
                 "_depth": "Variables ending _surf are the shallowest quarter of each "

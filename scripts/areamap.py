@@ -270,6 +270,13 @@ h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3
       aria-label="Map of Danish marine water bodies"></svg></div>
   <aside id="panel"><p class="none">Loading…</p></aside>
 </div>
+<p class="hint"><b>The water bodies on this map are a model assumption, not a
+feature of the sea.</b> They are administrative polygons drawn for the Water
+Framework Directive. Every figure computed inside one — including the colour — is a
+statement about that partition as much as about the water, and whether the sea
+changes where these lines run is an open question rather than a settled one. Even a
+name as obviously singular as “Roskilde Fjord” is a claim about the water and not a
+fact about it.</p>
 <p class="hint"><b>Colour is coverage by two named layers, and nothing wider.</b>
 “Fitted model” means DCE (2015) published a statistical relation between nutrient
 load and an indicator for this area, fitted on 1990–2012 data. “Repeated

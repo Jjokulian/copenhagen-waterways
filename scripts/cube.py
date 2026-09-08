@@ -390,7 +390,8 @@ def main():
         log(f"    val_{key}.bin {len(blob):,} bytes, {filled:,} filled cells")
 
     write_json(os.path.join(OUT, "cube.json"), {
-        "_what": "Coverage cube for the 4D map. One bit per area, month and stream "
+        "_assumption": "**Aggregated through a model assumption.** Every figure here is summed or averaged inside a VP3 water body — an administrative polygon drawn for the Water Framework Directive, not a boundary anyone has shown the sea to respect. Whether the water changes where these lines are is an open question (X22), so a number here is a statement about that partition as much as about the sea. Station-level series, which carry no partition, are in stations_series.*",
+                "_what": "Coverage cube for the 4D map. One bit per area, month and stream "
                  "in cube.bin; one Int16 per area and month in each val_*.bin, "
                  "divided by the variable's scale, with -32768 meaning no data.",
         "_order": "Bits are packed area-major within each stream, months "
