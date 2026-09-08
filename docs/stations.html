@@ -89,6 +89,25 @@ table.key b{color:var(--ink);font-weight:600}
 .k-bar{display:inline-block;width:16px;height:11px;margin-top:2px;
   background:linear-gradient(90deg,var(--v3) 60%,var(--warn) 60%)}
 b.k-hi{color:var(--warn)}
+#detail{margin:8px 18px 4px;padding:11px 13px;background:var(--panel);
+  border:1px solid var(--line);border-radius:4px}
+.dhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.dhead b{font-size:13.5px}
+.dgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+@media(max-width:620px){.dgrid{grid-template-columns:1fr}}
+.dl{display:block;font-size:10px;color:var(--ink3);margin-bottom:2px;
+  text-transform:uppercase;letter-spacing:.06em}
+#detail canvas{width:100%;height:46px;background:var(--sea);border-radius:2px}
+#dstats{grid-template-columns:auto 1fr auto 1fr;gap:2px 10px;margin-top:9px;
+  font-size:12px}
+#dquirks{margin-top:8px;font-size:11.5px;line-height:1.5}
+#dquirks p{margin:0 0 4px;border-left:2px solid var(--warn);padding-left:8px;
+  color:var(--warn)}
+#dquirks p.ok{border-left-color:var(--line);color:var(--ink3)}
+#dseries{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:8px 14px;margin-top:4px}
+#dseries canvas{width:100%;height:40px;background:var(--sea);border-radius:2px}
+#dseries .dl em{font-style:normal;color:var(--ink2);font-variant-numeric:tabular-nums}
 #strips{padding:2px 18px 0}
 .striprow{display:grid;grid-template-columns:64px 1fr;gap:9px;align-items:center;
   margin-bottom:5px}
@@ -123,6 +142,20 @@ b.k-hi{color:var(--warn)}
         <canvas id="tl"></canvas></div>
       <div class="striprow"><span class="sl">by month<br>of year</span>
         <canvas id="sea"></canvas></div>
+    </div>
+    <div id="detail" hidden>
+      <div class="dhead"><b id="dtitle"></b><button id="dclose">close</button></div>
+      <div class="dgrid">
+        <div><span class="dl">observations per year</span>
+          <canvas id="dyr"></canvas></div>
+        <div><span class="dl">by month of year</span>
+          <canvas id="dmoy"></canvas></div>
+      </div>
+      <dl id="dstats"></dl>
+      <div id="dquirks"></div>
+      <span class="dl" style="margin-top:11px">measured values, whole record —
+        red marks sit outside the plausible band and are drawn on the centre line</span>
+      <div id="dseries"></div>
     </div>
     <div class="bar">
       <span><b id="nrep">0</b> of 1,415 stations reported this month</span>
@@ -264,7 +297,10 @@ b.k-hi{color:var(--warn)}
 <script>
 const D='data/areas/';
 let META,BIN,VARS,ST,WB=null,LAND=null,byMonth=[],dom=[0,1],playing=0;
-let effort=[],seasonal=[],effMax=1,seaMax=1,SEAS=null;
+let effort=[],seasonal=[],effMax=1,seaMax=1,SEAS=null,IDX=null,SEL=null;
+// stations whose oxygen sign flipped in a single 2005 ingest batch
+const FLIP=new Set(['93110001','93110002','97200012','97230001',
+                    '97300002','97120014']);
 // Denmark plus a margin. 17 North Sea transect stations sit outside it and
 // stretch the frame five degrees west, which squashes everything else.
 const EXT={dk:[7.9,54.4,15.5,58.0], all:null};
@@ -293,8 +329,34 @@ Promise.all([
     o.value=i; o.textContent=v.label+(v.depth?' — '+v.depth:''); sel.appendChild(o);});
   sel.value=4; sel.onchange=()=>{loadVar(+sel.value);draw()};
   $('load').hidden=true; $('app').hidden=false;
-  loadVar(4); wire(); draw();
+  buildIndex(); loadVar(4); wire(); draw();
 });
+
+// Every station, every variable, once. 679k records - cheap, and it lets a click
+// answer questions about a station that the currently displayed variable cannot.
+let RAW=null;
+function buildIndex(){
+  IDX=new Map(); RAW={};
+  VARS.forEach(v=>{
+    const n=v.n,o=v.offset, key=v.key.split('_')[0], lim=BOUND[key]||[-1/0,1/0,-1/0,1/0];
+    const si=new Uint16Array(BIN.slice(o,o+2*n));
+    const mo=new Uint16Array(BIN.slice(o+2*n,o+4*n));
+    const va=new Float32Array(BIN.slice(o+4*n,o+8*n));
+    RAW[v.key]={si,mo,va};
+    for(let k=0;k<n;k++){
+      let e=IDX.get(si[k]);
+      if(!e){e={total:0,byYear:new Map(),moy:new Array(12).fill(0),
+               perVar:{},gross:0,sus:0}; IDX.set(si[k],e);}
+      e.total++;
+      const y=META.year0+Math.floor(mo[k]/12);
+      e.byYear.set(y,(e.byYear.get(y)||0)+1);
+      e.moy[mo[k]%12]++;
+      e.perVar[v.key]=(e.perVar[v.key]||0)+1;
+      const x=va[k];
+      if(x<lim[0]||x>lim[1]) e.gross++;
+      else if(x<lim[2]||x>lim[3]) e.sus++;
+    }});
+}
 
 // one variable at a time: n uint16 station, n uint16 month, n float32 value
 function loadVar(i){
@@ -406,6 +468,9 @@ function draw(){
       else t=(v-dom[0])/(dom[1]-dom[0]);
       c.fillStyle=col(Math.max(0,Math.min(1,t)));
       c.beginPath(); c.arc(px(s.lon),py(s.lat),rad,0,7); c.fill(); c.stroke();
+      if(i===SEL){ c.strokeStyle=g.getPropertyValue('--ink').trim(); c.lineWidth=2;
+        c.beginPath(); c.arc(px(s.lon),py(s.lat),rad+4.5,0,7); c.stroke();
+        c.strokeStyle=g.getPropertyValue('--panel').trim(); c.lineWidth=.7; }
       c.globalAlpha=1;
       if(bad||sus){ c.strokeStyle=g.getPropertyValue(bad?'--warn':'--model').trim();
         c.lineWidth=bad?1.6:1;
@@ -455,6 +520,119 @@ function draw(){
     ? off+' stations sit outside this frame — a North Sea transect. Switch to see them, '
       +'at the cost of squashing everything else.'
     : 'Every station is in frame. Denmark is small in it.';
+}
+
+function mini(id,vals,labels){
+  const cv=$(id), r=devicePixelRatio||1, w=cv.clientWidth||300, h=cv.clientHeight||46;
+  cv.width=w*r; cv.height=h*r;
+  const c=cv.getContext('2d'); c.setTransform(r,0,0,r,0,0);
+  const g=getComputedStyle(document.documentElement);
+  c.fillStyle=g.getPropertyValue('--sea').trim(); c.fillRect(0,0,w,h);
+  const mx=Math.max(1,...vals), bw=w/vals.length;
+  c.fillStyle=g.getPropertyValue('--v3').trim();
+  vals.forEach((v,i)=>{const bh=Math.max(v?1:0,(h-11)*v/mx);
+    c.fillRect(i*bw,h-11-bh,Math.max(bw-.6,.9),bh);});
+  c.fillStyle=g.getPropertyValue('--ink3').trim(); c.font='9px ui-sans-serif';
+  c.textAlign='center';
+  labels.forEach(([i,t])=>c.fillText(t,(i+.5)*bw,h-2));
+  c.textAlign='right'; c.fillText(mx,w-1,9);
+}
+
+function series(i,key){
+  const {si,mo,va}=RAW[key], out=[];
+  for(let k=0;k<si.length;k++) if(si[k]===i) out.push([mo[k],va[k]]);
+  return out.sort((a,b)=>a[0]-b[0]);
+}
+
+// One variable's actual values over the station's whole record. This is the data
+// interface: counts tell you when someone visited, values tell you what they found.
+function spark(cv,rows,key,unit){
+  const r=devicePixelRatio||1, w=cv.clientWidth||300, h=cv.clientHeight||40;
+  cv.width=w*r; cv.height=h*r;
+  const c=cv.getContext('2d'); c.setTransform(r,0,0,r,0,0);
+  const g=getComputedStyle(document.documentElement);
+  c.fillStyle=g.getPropertyValue('--sea').trim(); c.fillRect(0,0,w,h);
+  if(!rows.length) return;
+  const lim=BOUND[key.split('_')[0]]||[-1/0,1/0,-1/0,1/0];
+  const ok=rows.filter(([,v])=>v>=lim[0]&&v<=lim[1]).map(([,v])=>v).sort((a,b)=>a-b);
+  if(!ok.length) return;
+  const lo=ok[Math.floor(ok.length*0.02)], hi=ok[Math.ceil(ok.length*0.98)-1];
+  const sp=(hi-lo)||1, M=META.months;
+  rows.forEach(([m,v])=>{
+    const bad=v<lim[0]||v>lim[1];
+    const x=4+(w-8)*m/M, y=h-3-(h-9)*Math.max(0,Math.min(1,(v-lo)/sp));
+    c.fillStyle=bad?g.getPropertyValue('--warn').trim():g.getPropertyValue('--v3').trim();
+    c.globalAlpha=bad?1:.7;
+    c.beginPath(); c.arc(x,bad?h/2:y,bad?2.2:1.5,0,7); c.fill();});
+  c.globalAlpha=1;
+  c.fillStyle=g.getPropertyValue('--ink3').trim(); c.font='9px ui-sans-serif';
+  c.textAlign='left'; c.fillText(hi.toFixed(1),3,9);
+  c.fillText(lo.toFixed(1),3,h-3);
+  c.textAlign='right'; c.fillText(unit,w-3,9);
+}
+
+function showDetail(i){
+  const st=ST[i], e=IDX.get(i);
+  $('detail').hidden=false;
+  if(!e){$('dtitle').textContent='Station '+st.id+' — no series';
+    $('dstats').innerHTML=''; $('dquirks').innerHTML=''; return;}
+  const y0=META.year0, y1=y0+Math.ceil(META.months/12);
+  const yrs=[]; for(let y=y0;y<y1;y++) yrs.push(e.byYear.get(y)||0);
+  const ylab=[]; for(let y=1980;y<y1;y+=10) ylab.push([y-y0,y]);
+  mini('dyr',yrs,ylab);
+  mini('dmoy',e.moy,'JFMAMJJASOND'.split('').map((m,k)=>[k,m]));
+  // circular statistics on this station's month-of-year counts
+  let C=0,S=0; const N=e.moy.reduce((a,b)=>a+b,0);
+  for(let j=0;j<12;j++){const th=2*Math.PI*j/12;
+    C+=e.moy[j]*Math.cos(th); S+=e.moy[j]*Math.sin(th);}
+  C/=N; S/=N;
+  const R=Math.hypot(C,S), Z=N*R*R;
+  let pk=Math.atan2(S,C); if(pk<0)pk+=2*Math.PI;
+  const MN='Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+  const pkm=MN[Math.round(pk*12/(2*Math.PI))%12];
+  const active=[...e.byYear.keys()].sort((a,b)=>a-b);
+  const nv=Object.keys(e.perVar).length;
+  $('dtitle').textContent='Station '+st.id+'  ·  '+st.lon.toFixed(3)+', '
+    +st.lat.toFixed(3);
+  const cls = Z<=3 ? 'no seasonal bias detectable'
+    : R>0.5 ? 'strongly seasonal, peaks '+pkm
+    : 'mildly seasonal, peaks '+pkm;
+  $('dstats').innerHTML=
+    '<dt>observations</dt><dd>'+e.total.toLocaleString()+'</dd>'
+   +'<dt>variables</dt><dd>'+nv+' of '+VARS.length+'</dd>'
+   +'<dt>years active</dt><dd>'+active[0]+'–'+active[active.length-1]+'</dd>'
+   +'<dt>years with data</dt><dd>'+active.length+'</dd>'
+   +'<dt>Rayleigh R</dt><dd>'+R.toFixed(2)+'</dd>'
+   +'<dt>Rayleigh Z</dt><dd>'+Z.toFixed(1)+(Z>3?' *':'')+'</dd>';
+  const q=[];
+  q.push('<p class="'+(Z>3?'':'ok')+'">'+cls
+    +(Z>3?' (Z>3, distinguishable from uniform)':' (Z≤3)')+'</p>');
+  const gaps=[]; for(let k=1;k<active.length;k++)
+    if(active[k]-active[k-1]>2) gaps.push(active[k-1]+'–'+active[k]);
+  if(gaps.length) q.push('<p>Gap'+(gaps.length>1?'s':'')+' of more than two years: '
+    +gaps.join(', ')+'.</p>');
+  if(e.gross) q.push('<p>'+e.gross+' value'+(e.gross>1?'s':'')
+    +' outside what the chemistry permits — ringed on the map, never removed.</p>');
+  if(e.sus) q.push('<p class="ok">'+e.sus+' beyond the plausible band but explicable '
+    +'(bloom supersaturation, sensor zero offset at anoxia).</p>');
+  if(FLIP.has(st.id)) q.push('<p><strong>Known defect.</strong> This station carries '
+    +'negative oxygen in May–June 2005. Six stations share it in that one two-month '
+    +'window, the co-reported saturation reads 100–108%, and the magnitude matches the '
+    +'Weiss solubility equation — so it is a sign flip from a single ingest batch, not '
+    +'a measurement.</p>');
+  if(nv<VARS.length) q.push('<p class="ok">Carries '+nv+' of '+VARS.length
+    +' variables; the rest were never measured here.</p>');
+  $('dquirks').innerHTML=q.join('');
+  // small multiples: every variable this station actually carries
+  const box=$('dseries'); box.innerHTML='';
+  VARS.forEach(v=>{
+    if(!e.perVar[v.key]) return;
+    const rows=series(i,v.key);
+    const d=document.createElement('div');
+    d.innerHTML='<span class="dl">'+v.label+(v.depth?' · '+v.depth:'')
+      +' <em>'+e.perVar[v.key]+'</em></span><canvas></canvas>';
+    box.appendChild(d);
+    spark(d.querySelector('canvas'),rows,v.key,v.unit);});
 }
 
 function strip(id,vals,max,mi,hi){
@@ -521,6 +699,16 @@ function idw(c,w,h,rows,g){
 
 function wire(){
   $('ext').onchange=draw; $('mode').onchange=draw;
+  $('dclose').onclick=()=>{SEL=null;$('detail').hidden=true;draw();};
+  $('cv').onclick=e=>{
+    const b=e.target.getBoundingClientRect();
+    const mx=e.clientX-b.left, my=e.clientY-b.top;
+    let best=null,bd=1e9;
+    ST.forEach((s,i)=>{const dx=px(s.lon)-mx, dy=py(s.lat)-my, d=dx*dx+dy*dy;
+      if(d<bd){bd=d;best=i;}});
+    if(bd>144){SEL=null;$('detail').hidden=true;}      // 12 px
+    else {SEL=best; showDetail(best);}
+    draw();};
   $('tl').onclick=e=>{const b=e.target.getBoundingClientRect();
     $('month').value=Math.round((e.clientX-b.left)/b.width*563); draw();};
   ['L_meas','L_gaps','L_wb','L_idw','L_bad','L_land'].forEach(id=>$(id).onchange=()=>{

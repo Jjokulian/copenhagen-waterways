@@ -196,6 +196,29 @@
    "statement": "No basket assumed. Empty sea is empty because nobody measured there."
   },
   {
+   "id": "station-detail",
+   "title": "One station, its whole record",
+   "page": "stations.html#click-a-dot",
+   "status": "live",
+   "axes": [
+    "month",
+    "value"
+   ],
+   "sources": [
+    "stations_series"
+   ],
+   "statement": "The unit is one station rather than the map's population of them. Counts say when someone visited; the value series says what they found. Reached by clicking a dot, and a preset of the unified viewer when that exists.",
+   "shows": [
+    "observations per year",
+    "month-of-year distribution",
+    "Rayleigh R, Z and peak month for that station alone",
+    "measured value series per variable, whole record",
+    "gaps over two years",
+    "values outside the plausible band, drawn not dropped",
+    "known defects, e.g. the six stations in the May-June 2005 sign flip"
+   ]
+  },
+  {
    "id": "gotland-section",
    "title": "The Baltic below the halocline",
    "page": "baltic.html",
