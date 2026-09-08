@@ -508,16 +508,20 @@ function startSpy(items) {
   const order = new Map(items.map((i, n) => [i.el, n]));
   const band = NARROW.matches ? 58 : 14;
   const inBand = new Set();
-  spy = new IntersectionObserver(entries => {
-    for (const e of entries)
-      e.isIntersecting ? inBand.add(e.target) : inBand.delete(e.target);
+  const resolve = () => {
     let deepest = -1;
     for (const el of inBand) deepest = Math.max(deepest, order.get(el));
     if (deepest < 0) deepest = above(items, band);
     setActive(deepest < 0 ? null : items[deepest].id);
+  };
+  spy = new IntersectionObserver(entries => {
+    for (const e of entries)
+      e.isIntersecting ? inBand.add(e.target) : inBand.delete(e.target);
+    resolve();
   }, { rootMargin: `-${band}px 0px -68% 0px`, threshold: 0 });
   for (const i of items) spy.observe(i.el);
-}
+  resolve();   // the observer's first answer is a frame away, and a document
+}              // reopened halfway down should not be nowhere until then
 
 function goTo(section) {
   const el = section && document.getElementById(section);
@@ -851,8 +855,10 @@ const FACTS = [
 const WORDS = [
   ["iltsvind", "the sea is suffocating",
    "oxygen below 4 mg/l <b>in stratified bottom water</b>",
-   "needs depth and a sealed layer — Køge Bugt is shallow and mixes, so it cannot " +
-   "register iltsvind however bad it gets", "CURRENTS.md"],
+   "needs depth and a sealed layer — Køge Bugt is shallow, mixes, and has no " +
+   "iltsvind on record, 2023 and 2025 included. Whether the criterion is " +
+   "structurally unreachable there is our inference, not a settled fact",
+   "CURRENTS.md"],
   ["fedtemøg", "greasy, foul water and a shore you would rather not walk on",
    "<b>nothing</b>", "there is no instrument, and it is not a scientific term", ""],
   ["fiskedød", "dead fish, visibly, in numbers",

@@ -10,7 +10,7 @@ This page takes its problem statement from the public, not from the monitoring p
 
 | what people call it | what they mean by it | what Denmark measures | where the word and the measurement come apart |
 |---|---|---|---|
-| **iltsvind** | the sea is suffocating | dissolved oxygen below 4 mg/l **in stratified bottom water** | it needs depth and a sealed layer. Køge Bugt is shallow and mixes, so it **cannot register iltsvind however bad it gets** ([CURRENTS.md](#CURRENTS.md)) |
+| **iltsvind** | the sea is suffocating | dissolved oxygen below 4 mg/l **in stratified bottom water** | it needs depth and a sealed layer. Køge Bugt is shallow, mixes, and has no iltsvind on record — including 2023 and 2025 ([CURRENTS.md](#CURRENTS.md)). Whether the criterion is *structurally* unreachable there is our inference and is not settled |
 | **fedtemøg** | greasy, foul water and a shore you do not want to walk on | nothing | there is no instrument. It is not a scientific term and no programme carries it |
 | **fiskedød** | dead fish, visibly, in numbers | no open register | the events happen and are recorded nowhere the public can read |
 | **livet i fjordene** | the structural life is gone | eelgrass depth limit, some bottom fauna | measured — through a light proxy that censors itself in shallow water ([LIGHT.md](#LIGHT.md)) |
