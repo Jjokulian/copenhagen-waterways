@@ -373,3 +373,43 @@ condition change when a given basin came online? Does overflow frequency track
 construction, or rainfall, or neither?
 
 ---
+
+## 15. The transport experiments that were already run, and nobody read
+
+[CURRENTS.md](#CURRENTS.md) could not establish whether material from the Copenhagen side
+reaches Køge Bugt. The best it managed was a statistical lag — during overflow-scale rain
+the Sound runs *north*, and twelve hours later it runs south, on 145 event-hours of a
+four-year record. That is suggestive and thin.
+
+It is also unnecessary, because the experiment has been run several times with a known
+quantity of sediment released at a known place on known dates.
+
+| | Øresund fixed link | Lynetteholm |
+|---|---|---|
+| When | 1995–2000 | 2021–22 |
+| Material | dredged seabed, Drogden and Saltholm | harbour gytje |
+| Volume | **7.4 million m³ dredged** | 2 million m³ planned to be dumped |
+| Released to the water | spill limit **5%, up to 370,000 m³** | **498 m³** before it was stopped |
+| Where | the northern entrance to Køge Bugt | Køge Bugt, by permit |
+| Outcome | limit reported met, *nulløsning* judged met | dumping dropped entirely; material built into the peninsula instead |
+| Attention | project's own monitoring programme | national controversy, Swedish objection under the Espoo Convention |
+
+**The asymmetry is the finding.** The permitted spill from the Øresund link — up to
+370,000 m³ of fines put into the water column at the mouth of Køge Bugt over five years —
+is on the order of **seven hundred times** what was actually dumped at Lynetteholm before
+the dumping was stopped. The recent, smaller project was halted after a political fight.
+The older, far larger one was a permit condition that was met.
+
+This is not an argument that the Øresund link was mishandled; its spill was measured
+against a limit and reported within it, which is more than most of the discharges in this
+project can say. It is an argument about **what gets looked at**. A release becomes
+controversial when it is called dumping and invisible when it is called spill.
+
+**What would settle it.** Sediment cores from Køge Bugt, dated. Fine material released at
+the Drogden end between 1995 and 2000, and again from harbour works since, should appear
+as datable horizons if the transport is real — and should be absent if it is not. That is
+a direct test of the convergence claim in item 1, using events that have already
+happened, and it needs a boat and a lab rather than a model.
+
+Provenance for both events is in `data/manual/monitoring.json` under
+`sediment_release_events`.

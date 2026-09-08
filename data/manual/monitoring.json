@@ -318,5 +318,30 @@
    "status": "UNVERIFIED HERE - and unverifiable from any published series, which is the point",
    "consistent_with": "Local news reports of heavy summer visitor pressure and litter; the put-and-take fishery leased to Solrød Sportsfisker Klub Regnbuen; and the poor-circulation setting above."
   }
+ },
+ "sediment_release_events": {
+  "_what": "Large, dated, quantified releases of seabed sediment into the waters between Copenhagen and Køge Bugt. Each is a transport experiment that was run without anyone treating it as one.",
+  "oresund_fixed_link": {
+   "period": "1995-2000",
+   "dredged_m3": 7400000,
+   "spill_limit_pct_of_dredged": 5,
+   "spill_limit_m3": 370000,
+   "requirement": "the 'nulløsning' - the link must not change water flow through the sound, which required compensatory dredging to offset the piers and embankments",
+   "location": "Drogden and around Saltholm - the northern entrance to Køge Bugt",
+   "outcome_as_reported": "the 5% spill limit was met and the nulløsning judged met and sustainable",
+   "attention": "monitored under the project's own environmental programme; no sustained public controversy"
+  },
+  "lynetteholm": {
+   "period": "2021-2022",
+   "planned_dump_m3": 2000000,
+   "material": "gytje - soft organic seabed material dredged from Copenhagen harbour",
+   "destination": "Køge Bugt, by permit",
+   "first_dumped_m3": 498,
+   "outcome": "politically stopped; the parties behind the project dropped the dumping entirely and the material was instead built into the peninsula's foundation",
+   "transboundary": "Sweden objected under the Espoo Convention; the protest letter was not presented to the Danish Parliament by the transport minister before the enabling act was passed",
+   "attention": "sustained national controversy, multiple parties, front-page coverage"
+  },
+  "the_asymmetry": "The permitted spill from the Øresund link - up to 370,000 m3 of fines released into the water column at the northern entrance to Køge Bugt, over five years - is roughly 740 times the volume actually dumped at Lynetteholm before the dumping was stopped, and it happened twenty-five years earlier with no comparable scrutiny. The recent project was halted; the older, larger one was a permit condition that was met.",
+  "why_it_matters": "These are natural tracer experiments. Sediment was released at a known place, in a known quantity, on known dates. If Køge Bugt accumulates material transported from the Copenhagen side, those events should be visible in its sediment record. Nobody appears to have looked, and for the older ones nobody was looking at the time."
  }
 }
