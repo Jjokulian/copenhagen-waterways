@@ -406,9 +406,15 @@ TERMS = {
     'faecal microbiota transplant': (
         'Treating a cleared gut by putting a whole functioning community back, without anyone needing to know which member does the work. Cure rates around ninety per cent.',
         'The same design as putting healthy sediment into failed sediment - proven in one domain and never tried in the other.'),
-    'fedtemog': (
+    'fedtemøg': (
         'Danish, roughly fat-muck: the greasy, foul organic material that accumulates in the water and along the shore. Not a scientific term, and not measured by anything.',
-        'Fedt is fat, mog is muck or dung. A word from people who swim, not from a monitoring programme.'),
+        'Fedt is fat, møg is muck or dung - a word from people who swim, not from a monitoring programme. The same fedt carries skidefedt, literally shitting-fat, which means excellent. Danish attaches the identical root to the best thing and the worst thing on the same beach.'),
+    'badevand': (
+        'Danish for bathing water. The one marine variable Denmark measures densely, at many stations, for a long time, because it is a public-health duty rather than an ecological one.',
+        'It tests for E. coli and enterococci - faecal indicator bacteria. So the best-replicated marine record in the country counts faeces, and everything about algae, fat or the seabed is inferred from something else.'),
+    'dynd': (
+        'Danish for mud or ooze - the soft organic-rich seabed that holds fine material and gives it up again when the water moves. GEUS maps it as a substrate class: dynd og sandet dynd, mud and sandy mud.',
+        'Related to English dung through the same Germanic root: what settles and rots.'),
     'Feltmåling': (
         'Danish for field measurement - the ODA category holding instrument profiles taken in the water: CTD casts, light attenuation, oxygen.',
         'Felt (field) plus måling (measurement).'),
@@ -1050,6 +1056,11 @@ IRREGULAR = {
     "meiofauna": ["meiofaunal"], "macrofauna": ["macrofaunal"],
     "benthos": ["benthic"], "plankton": ["planktonic"],
     "necromass": [], "erg": ["ergs"],
+    # The corpus writes these with Danish letters; an ASCII key never matches and
+    # the tooltip dies silently, which is how fedtemøg went unglossed on a site
+    # whose subject it is.
+    "fedtemøg": ["fedtemog", "fedtemøget"],
+    "iltsvind": ["iltsvindet"],
 }
 
 
