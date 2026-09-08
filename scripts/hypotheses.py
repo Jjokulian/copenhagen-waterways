@@ -175,6 +175,9 @@ TERMS = {
     'bacteria': (
         'Single-celled organisms without a nucleus - the most abundant life on Earth, and in the sea the principal recyclers of everything that dies.',
         'Greek bakterion, a little rod, after the shape of the first ones seen.'),
+    'bacteriocin': (
+        'A protein weapon one bacterium makes to kill closely related bacteria. Narrower than an antibiotic and aimed at competitors for the same niche.',
+        'The diagonal of the microbial war: same against same, because the closest competitor is the most direct threat.'),
     'bacteriophage': (
         'A virus that infects bacteria. The most numerous biological entities on the planet, and in the sea they lyse a large share of the bacterial population every day.',
         'Greek phagein, to eat - literally bacteria-eater.'),
@@ -286,6 +289,9 @@ TERMS = {
     'CRISPR': (
         'A bacterial immune system that stores fragments of past viral infections and uses them to recognise and cut the same virus again. Repurposed as the standard gene-editing tool.',
         'An antiviral of bacterial variety - and, like restriction enzymes before it, a weapon captured from the bacteria-phage war and turned into laboratory equipment.'),
+    'cross-protection': (
+        'Deliberately infecting a plant with a mild virus strain so a severe one cannot establish. Deployed against citrus and papaya viruses.',
+        'Vaccination by occupancy rather than by immunity - and it works in organisms that have no immune system to vaccinate.'),
     'cryopreservation': (
         'Freezing living material so that it can be revived later. It is how a community can be banked while it still works, against a future when it does not.',
         'The only technique in this project that buys time rather than information.'),
@@ -304,6 +310,9 @@ TERMS = {
     'decomposition': (
         'The breakdown of dead material back to simpler substances. It is a relay run by different organisms at each stage, not a single process, which is why removing one link stalls the whole thing.',
         'Latin de- (apart) plus componere (to put together): the undoing of assembly.'),
+    'defective interfering particle': (
+        'A virus genome missing part of itself, which cannot replicate alone but hijacks the machinery of complete viruses and outcompetes them.',
+        'A parasite of a parasite, and one of the ways a viral infection limits itself.'),
     'denitrification': (
         'Bacteria converting nitrate to nitrogen gas, which leaves the water permanently. The only process that actually removes nitrogen from a system.',
         'Undoing nitrification. It needs the nitrate that nitrification makes, so stopping one stops the other.'),
@@ -448,6 +457,9 @@ TERMS = {
     'Great Oxidation Event': (
         'The point around 2.4 billion years ago when oxygen produced by cyanobacteria accumulated in the atmosphere, poisoning most of the biosphere that had produced it and making all later aerobic life possible.',
         'The largest mass extinction there has ever been, caused by a waste product. It is also the clearest case of adapted survivors remaking the conditions for everything after them.'),
+    'griseofulvin': (
+        'An antifungal drug made by a Penicillium mould to kill other fungi.',
+        "One fungus's weapon against its relatives, borrowed for human medicine."),
     'hazard': (
         'The intrinsic capacity of something to cause harm, independent of whether anyone is exposed to it. A shark in an aquarium is a hazard; a shark in your bath is a risk.',
         'Kept strictly separate from risk in regulatory language, and routinely conflated everywhere else.'),
@@ -622,6 +634,9 @@ TERMS = {
     'mycobiome': (
         'The fungal community of a place or a host, as distinct from its bacteria. Marine sediments are turning out to hold far more fungal diversity than anyone expected.',
         'Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.'),
+    'mycoparasitism': (
+        'A fungus parasitising another fungus. It is how Trichoderma protects crops, and it is the fungal diagonal of the same matrix.',
+        'Fungi against fungi, sold in a bag.'),
     'mycorrhiza': (
         'The partnership between plant roots and fungi that feeds the plant phosphorus in exchange for carbon. Heavy fertilising suppresses it.',
         'Greek mykes (fungus) plus rhiza (root).'),
@@ -925,6 +940,9 @@ TERMS = {
     'sulphidic': (
         'Containing free sulphide. A sulphidic sediment is one where sulphate reduction has taken over and the bed has turned toxic.',
         'The condition that follows anoxia in salt water, and does not follow it in fresh.'),
+    'superinfection exclusion': (
+        'A cell already infected by one virus resisting infection by another. The resident virus defends its host, in its own interest.',
+        'Virus against virus - and the basis of deliberately infecting a crop with a mild strain to keep a severe one out.'),
     'suppressive': (
         'A soil whose microbial community actively prevents disease. The property is transferable: mix a little into a diseased soil and it becomes suppressive too.',
         'Suppressive of the pathogen, not of the plant.'),
@@ -982,6 +1000,9 @@ TERMS = {
     'turbid': (
         'Cloudy - water with enough suspended material in it to block light.',
         'From Latin turba, a crowd or commotion: stirred-up. The same root gives turbine, a thing spun, and disturb. Cloudiness named after the stirring that causes it.'),
+    'Type VI secretion system': (
+        'A molecular spear one bacterium uses to inject toxins into a neighbour on contact. Bacteria do not only poison each other chemically; they stab.',
+        'Contact-dependent, targeted, and aimed overwhelmingly at close relatives competing for the same space.'),
     'Vandkemi': (
         'Danish for water chemistry - the ODA category holding nutrient and contaminant concentrations from water samples.',
         'Straightforwardly water plus chemistry.'),
@@ -2858,7 +2879,22 @@ H = [
      "*Streptomyces*); viruses make antibacterials, which is phage therapy; viruses "
      "make antifungals, and a mycovirus that weakens chestnut blight is a deployed "
      "biocontrol agent; and bacteria make antivirals — restriction enzymes, CRISPR, "
-     "and a fast-growing list of anti-phage systems. Most strikingly, several "
+     "and a fast-growing list of anti-phage systems.\n\n"
+     "**And the diagonal of that matrix — same against same — is the most complete "
+     "row of all**, which is not a curiosity. Bacteria against bacteria is most of "
+     "the pharmacy, plus bacteriocins and the secretion systems with which they "
+     "physically stab each other. Fungi against fungi gives griseofulvin, the "
+     "echinocandins, and the strobilurins — named for the fungus that makes them to "
+     "kill other fungi — as well as *Trichoderma*, sold commercially, which "
+     "parasitises its relatives directly. Virus against virus is superinfection "
+     "exclusion, defective interfering particles, and mild-strain cross-protection, "
+     "which is deployed in agriculture against citrus and papaya viruses.\n\n"
+     "The reason the diagonal is richest is the same reason it is useful: **the "
+     "closest competitor is the most effective antagonist**, because niche overlap "
+     "is maximal. Anything that can exclude a pathogen by needing exactly what it "
+     "needs is doing colonisation resistance and chemical warfare at once, which "
+     "makes the diagonal the natural place to look for an agent under `T11`. "
+     "Most strikingly, several "
      "components of our own innate immunity are homologous to those bacterial "
      "anti-phage systems, so the vertebrate immune system is itself partly a "
      "captured weapon from that war.",

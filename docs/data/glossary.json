@@ -942,7 +942,7 @@
  "T12": {
   "kind": "hypothesis (T)",
   "label": "Defence is outsourced, because the host cannot win the race",
-  "text": "Pasteur and Joubert saw microbes suppressing each other in 1877, and Fleming's *Penicillium* was the same phenomenon fifty years later. Nearly every antibiotic in use is a weapon taken off that battlefield — mostly from soil actinomycetes, which have been fighting fungi and each other for hundreds of millions of years. There is no reason the war stops at fungi and bacteria: phage against bacteria, bacteria against phage, fungi against both, all of them at generation times the host cannot approach. The matrix fills in almost completely and most of it is documented: fungi make antibacterials (penicillin); bacteria make antifungals (nystatin, amphotericin, both from *Streptomyces*); viruses make antibacterials, which is phage therapy; viruses make antifungals, and a mycovirus that weakens chestnut blight is a deployed biocontrol agent; and bacteria make antivirals — restriction enzymes, CRISPR, and a fast-growing list of anti-phage systems. Most strikingly, several components of our own innate immunity are homologous to those bacterial anti-phage systems, so the vertebrate immune system is itself partly a captured weapon from that war."
+  "text": "Pasteur and Joubert saw microbes suppressing each other in 1877, and Fleming's *Penicillium* was the same phenomenon fifty years later. Nearly every antibiotic in use is a weapon taken off that battlefield — mostly from soil actinomycetes, which have been fighting fungi and each other for hundreds of millions of years. There is no reason the war stops at fungi and bacteria: phage against bacteria, bacteria against phage, fungi against both, all of them at generation times the host cannot approach. The matrix fills in almost completely and most of it is documented: fungi make antibacterials (penicillin); bacteria make antifungals (nystatin, amphotericin, both from *Streptomyces*); viruses make antibacterials, which is phage therapy; viruses make antifungals, and a mycovirus that weakens chestnut blight is a deployed biocontrol agent; and bacteria make antivirals — restriction enzymes, CRISPR, and a fast-growing list of anti-phage systems. **And the diagonal of that matrix — same against same — is the most complete row of all**, which is not a curiosity. Bacteria against bacteria is most of the pharmacy, plus bacteriocins and the secretion systems with which they physically stab each other. Fungi against fungi gives griseofulvin, the echinocandins, and the strobilurins — named for the fungus that makes them to kill other fungi — as well as *Trichoderma*, sold commercially, which parasitises its relatives directly. Virus against virus is superinfection exclusion, defective interfering particles, and mild-strain cross-protection, which is deployed in agriculture against citrus and papaya viruses. The reason the diagonal is richest is the same reason it is useful: **the closest competitor is the most effective antagonist**, because niche overlap is maximal. Anything that can exclude a pathogen by needing exactly what it needs is doing colonisation resistance and chemical warfare at once, which makes the diagonal the natural place to look for an agent under `T11`. Most strikingly, several components of our own innate immunity are homologous to those bacterial anti-phage systems, so the vertebrate immune system is itself partly a captured weapon from that war."
  },
  "T11": {
   "kind": "hypothesis (T)",
@@ -1221,6 +1221,13 @@
     "bacterium"
    ]
   },
+  "bacteriocin": {
+   "text": "A protein weapon one bacterium makes to kill closely related bacteria. Narrower than an antibiotic and aimed at competitors for the same niche.",
+   "why": "The diagonal of the microbial war: same against same, because the closest competitor is the most direct threat.",
+   "forms": [
+    "bacteriocin"
+   ]
+  },
   "bacteriophage": {
    "text": "A virus that infects bacteria. The most numerous biological entities on the planet, and in the sea they lyse a large share of the bacterial population every day.",
    "why": "Greek phagein, to eat - literally bacteria-eater.",
@@ -1489,6 +1496,13 @@
     "crispr"
    ]
   },
+  "cross-protection": {
+   "text": "Deliberately infecting a plant with a mild virus strain so a severe one cannot establish. Deployed against citrus and papaya viruses.",
+   "why": "Vaccination by occupancy rather than by immunity - and it works in organisms that have no immune system to vaccinate.",
+   "forms": [
+    "cross-protection"
+   ]
+  },
   "cryopreservation": {
    "text": "Freezing living material so that it can be revived later. It is how a community can be banked while it still works, against a future when it does not.",
    "why": "The only technique in this project that buys time rather than information.",
@@ -1531,6 +1545,13 @@
    "why": "Latin de- (apart) plus componere (to put together): the undoing of assembly.",
    "forms": [
     "decomposition"
+   ]
+  },
+  "defective interfering particle": {
+   "text": "A virus genome missing part of itself, which cannot replicate alone but hijacks the machinery of complete viruses and outcompetes them.",
+   "why": "A parasite of a parasite, and one of the ways a viral infection limits itself.",
+   "forms": [
+    "defective interfering particle"
    ]
   },
   "denitrification": {
@@ -1881,6 +1902,13 @@
    "why": "The largest mass extinction there has ever been, caused by a waste product. It is also the clearest case of adapted survivors remaking the conditions for everything after them.",
    "forms": [
     "great oxidation event"
+   ]
+  },
+  "griseofulvin": {
+   "text": "An antifungal drug made by a Penicillium mould to kill other fungi.",
+   "why": "One fungus's weapon against its relatives, borrowed for human medicine.",
+   "forms": [
+    "griseofulvin"
    ]
   },
   "hazard": {
@@ -2302,6 +2330,13 @@
    "why": "Myco (fungus) on the pattern of microbiome. The word is recent because the recognition is recent.",
    "forms": [
     "mycobiome"
+   ]
+  },
+  "mycoparasitism": {
+   "text": "A fungus parasitising another fungus. It is how Trichoderma protects crops, and it is the fungal diagonal of the same matrix.",
+   "why": "Fungi against fungi, sold in a bag.",
+   "forms": [
+    "mycoparasitism"
    ]
   },
   "mycorrhiza": {
@@ -3035,6 +3070,13 @@
     "sulphidic"
    ]
   },
+  "superinfection exclusion": {
+   "text": "A cell already infected by one virus resisting infection by another. The resident virus defends its host, in its own interest.",
+   "why": "Virus against virus - and the basis of deliberately infecting a crop with a mild strain to keep a severe one out.",
+   "forms": [
+    "superinfection exclusion"
+   ]
+  },
   "suppressive": {
    "text": "A soil whose microbial community actively prevents disease. The property is transferable: mix a little into a diseased soil and it becomes suppressive too.",
    "why": "Suppressive of the pathogen, not of the plant.",
@@ -3173,6 +3215,13 @@
    "forms": [
     "turbid",
     "turbidity"
+   ]
+  },
+  "Type VI secretion system": {
+   "text": "A molecular spear one bacterium uses to inject toxins into a neighbour on contact. Bacteria do not only poison each other chemically; they stab.",
+   "why": "Contact-dependent, targeted, and aimed overwhelmingly at close relatives competing for the same space.",
+   "forms": [
+    "type vi secretion system"
    ]
   },
   "Vandkemi": {
