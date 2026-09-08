@@ -428,6 +428,10 @@ is what exists today for 97 of 98 municipalities.
 The view should show the **basis** rather than the output. For every area and every year:
 what was actually measured, by whom, how often, and which of the modelled quantities rest
 on it. A map of model outputs is a map of somebody's confidence. A map of what was measured
-is a map of what is known, and the two differ most exactly where it matters — which is the
-finding [AREAS.md](#AREAS.md) already reports for the 56% of sea area carrying neither a
-model nor an observation.
+is a map of what is known, and the two differ most exactly where it matters.
+
+[AREAS.md](#AREAS.md) counts that gap, and carries a correction worth reading alongside
+this item: absence is reported there as a count over a named corpus rather than as a share
+of the sea, because a share of an absence is only meaningful when the category named is as
+narrow as the search performed. Of ODA's 6,258 positioned marine stations, every water body
+holds at least one; 22 hold none visited in ten or more distinct years.

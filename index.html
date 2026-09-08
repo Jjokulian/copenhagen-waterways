@@ -31,8 +31,7 @@
   /* Sidebar rules are scoped to #sitenav. A bare `nav` selector also matched the
      .crumbs strip inside the article, which made it sticky halfway down the page. */
   #sitenav{position:sticky;top:0;align-self:start;padding:44px 0 0;max-height:100vh;
-    overflow-y:auto;overscroll-behavior:contain;
-    transition:opacity .16s ease,transform .16s ease,visibility .16s}
+    overflow-y:auto;overscroll-behavior:contain}
   #sitenav a.home{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:17px;
     color:var(--ink);text-decoration:none;letter-spacing:-.02em;margin:0 0 18px}
   #sitenav a.home:hover{color:var(--accent)}
@@ -143,10 +142,12 @@
     /* The sidebar is a drawer rather than a strip of the page: it is the contents
        of one document now, and a reader on a phone wants the first paragraph
        before they want a list of the sections. */
-    #sitenav{position:fixed;top:var(--bar);left:0;right:0;bottom:0;z-index:45;
-      max-height:none;padding:18px 16px 48px;background:var(--ground);
-      visibility:hidden;opacity:0;transform:translateY(-5px)}
-    body.navopen #sitenav{visibility:visible;opacity:1;transform:none}
+    /* Shown and hidden outright rather than faded: a panel that only appears once
+       an animation has finished is a panel that does not appear at all wherever
+       animation is throttled. */
+    #sitenav{display:none;position:fixed;top:var(--bar);left:0;right:0;bottom:0;
+      z-index:45;max-height:none;padding:18px 16px 48px;background:var(--ground)}
+    body.navopen #sitenav{display:block}
     body.navopen{overflow:hidden}
     #sitenav li a{padding:9px 11px}
     #nav li.lvl3 a{padding:7px 11px 7px 22px}
@@ -168,7 +169,7 @@
     .hint-short{display:inline}
   }
   @media (prefers-reduced-motion:reduce){
-    #sitenav,.bars,.bars::before,.bars::after,.fold > summary::after{transition:none}
+    .bars,.bars::before,.bars::after,.fold > summary::after{transition:none}
   }
 
 
@@ -483,9 +484,21 @@ function keepInView(a) {
   else if (r.bottom > box.bottom - 4) sitenav.scrollTop += r.bottom - box.bottom + 4;
 }
 
-/* A band across the top of the viewport; the deepest heading inside it wins. When
-   the band is empty - a long section whose heading is already above it - the last
-   answer stands, which is what a reader means by "where am I". */
+/* A band across the top of the viewport; the deepest heading inside it wins. The
+   band is usually empty - most sections are taller than it - and it is empty from
+   the first frame when a section link opens the document halfway down, so the
+   answer is worked out from the headings themselves in that case. Their positions
+   run in document order, so that is a binary search and not a scan of 203. */
+function above(items, y) {
+  let lo = 0, hi = items.length - 1, found = -1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (items[mid].el.getBoundingClientRect().top <= y) { found = mid; lo = mid + 1; }
+    else hi = mid - 1;
+  }
+  return found;
+}
+
 function startSpy(items) {
   if (spy) spy.disconnect();
   spyItems = items;
@@ -493,14 +506,16 @@ function startSpy(items) {
   hereEl.textContent = hereLabel;
   if (!items.length || typeof IntersectionObserver !== "function") return;
   const order = new Map(items.map((i, n) => [i.el, n]));
+  const band = NARROW.matches ? 58 : 14;
   const inBand = new Set();
   spy = new IntersectionObserver(entries => {
     for (const e of entries)
       e.isIntersecting ? inBand.add(e.target) : inBand.delete(e.target);
     let deepest = -1;
     for (const el of inBand) deepest = Math.max(deepest, order.get(el));
-    if (deepest >= 0) setActive(items[deepest].id);
-  }, { rootMargin: `-${NARROW.matches ? 58 : 14}px 0px -68% 0px`, threshold: 0 });
+    if (deepest < 0) deepest = above(items, band);
+    setActive(deepest < 0 ? null : items[deepest].id);
+  }, { rootMargin: `-${band}px 0px -68% 0px`, threshold: 0 });
   for (const i of items) spy.observe(i.el);
 }
 
