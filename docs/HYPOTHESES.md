@@ -1,8 +1,10 @@
 # The field of hypotheses
 
-Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
+Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it enumerates the mechanisms that could produce the outcomes below, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**160 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**160 mechanisms in 17 groups.** No entry here is the subject of the page and the rest its alternatives. The grouping is alphabetical for reference, which is an ordering and not a ranking; the letters carry no priority, and `A1` is first for the same reason `Z8` is last.
+
+**Some entries have a political history attached to them and some do not, and that history is not a property of the mechanism.** A mechanism that has been legislated about is not thereby more likely; one that nobody has campaigned on is not thereby more likely either. Where an entry names an industry, a practice or a public work, it names it as the physical source of a flux, in the same way `C4` names an inflow event — the entry is about what enters the water, never about who is at fault for it. Attribution of blame is not a scientific operation and is not performed anywhere on this page.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
@@ -339,7 +341,7 @@ These are what the hypotheses below are scored against. Each belongs to one or m
 
 ## A. Nutrient-driven production in place
 
-*Nutrients arrive, something grows, it dies, its decay consumes oxygen. The official hypothesis is A1; the rest of the group are its siblings and are treated no differently.*
+*Nutrients arrive, something grows, it dies, its decay consumes oxygen. The group is organised by where the nutrient comes from — land, air, sea, bed, or fixed in place — because that is what distinguishes the entries from each other. All nine are treated identically.*
 
 ### A1 — Danish land-based nitrogen load
 

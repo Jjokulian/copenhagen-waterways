@@ -182,7 +182,7 @@
  "A": {
   "kind": "group",
   "label": "Nutrient-driven production in place",
-  "text": "Nutrients arrive, something grows, it dies, its decay consumes oxygen. The official hypothesis is A1; the rest of the group are its siblings and are treated no differently."
+  "text": "Nutrients arrive, something grows, it dies, its decay consumes oxygen. The group is organised by where the nutrient comes from — land, air, sea, bed, or fixed in place — because that is what distinguishes the entries from each other. All nine are treated identically."
  },
  "B": {
   "kind": "group",
@@ -1225,7 +1225,8 @@
    "text": "A protein weapon one bacterium makes to kill closely related bacteria. Narrower than an antibiotic and aimed at competitors for the same niche.",
    "why": "The diagonal of the microbial war: same against same, because the closest competitor is the most direct threat.",
    "forms": [
-    "bacteriocin"
+    "bacteriocin",
+    "bacteriocins"
    ]
   },
   "bacteriophage": {
