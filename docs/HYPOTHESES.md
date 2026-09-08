@@ -543,7 +543,7 @@ Two mechanisms in one pipe, and the second is the larger. First, what the rain p
 
 **Discriminated by.** First-flush concentration against the event mean, at the same outfall. Sediment stock in basins before and after a large storm. Reduced-sulphur signature in what is discharged, which separates a scoured in-system deposit from freshly washed-off road surface.
 
-**Needs.** Event-resolved concentration and volume at the outfall, and basin sediment surveys. Annual totals exist (278.3 million m3/yr over 16,185 outfalls) and cannot test this.
+**Needs.** Event-resolved concentration and volume at the outfall, and basin sediment surveys. Annual totals exist (278.3 million m3/yr over 16,185 outfalls) and cannot test this. One figure bearing directly on the settling basins is already published: Miljøstyrelsen's microplastic inventory estimates that only **10–20% of stormwater microplastic is retained**, because only some stormwater sewers have settling lagoons at all — so the basins are neither reliably present nor, where present, efficient.
 
 ### B3 — Treatment plant organic load
 
@@ -1071,7 +1071,7 @@ The molecular machinery agricultural biocides attack is shared far beyond the ta
 
 **Discriminated by.** Concentration in road runoff and receiving water during storms, against mortality in a sensitive species. The road-density gradient is the natural experiment, and it is uncorrelated with agricultural gradients, which makes it unusually separable from most of group A.
 
-**Needs.** 6PPD-quinone is not measured in Danish monitoring. Whether Danish salmonids - sea trout especially - carry the sensitivity is a species question that the published work does not settle for them.
+**Needs.** 6PPD-quinone is not measured in Danish monitoring. Whether Danish salmonids - sea trout especially - carry the sensitivity is a species question that the published work does not settle for them. Worth noting that the carrier is not a minor stream: Miljøstyrelsen's own inventory makes tyre wear the largest single source of microplastic reaching Danish water, at 60.2% of the aquatic total, so the particles delivering this compound are already the best-quantified particles in the country.
 
 ### E20 — Fuel oxygenates and additives
 
@@ -1475,7 +1475,9 @@ That makes any process which fragments plastic a source term in its own right, s
 
 **Discriminated by.** Particle counts and size distributions in wastewater and receiving water upstream and downstream of a recycling facility, against a matched reach with none. Size distribution matters more than mass: the same mass at smaller size is a different exposure.
 
-**Needs.** Not measured in Denmark for this pathway. A subagent reports that Miljøstyrelsen's national microplastic source inventory is dominated by tyre wear and contains no recycling or shredding category at all — **unverified here, and it should be checked against the source before it is relied on**, because an absent category in an inventory is exactly the kind of claim that is easy to assert and hard to prove.
+**Needs.** Not measured in Denmark for this pathway, and the absence is now checked against the source rather than asserted. Miljøstyrelsen's national inventory (Lassen et al. 2015, Environmental Project 1793) puts total Danish microplastic release at 5,500–13,900 t/year, of which 600–3,100 t/year ultimately reaches the aquatic environment. Of that aquatic share, tyres are **60.2%**, footwear 7.4%, and paint plus ship paint together 11.4%. Its categories are: personal care products, raw materials for plastics production, paints, blasting abrasives, rubber granules, tyres, textiles, ship paints, road markings, building materials, footwear, cooking utensils, and two residual 'other' lines.
+
+**There is no recycling or shredding category, and the near-miss makes the gap sharper rather than softer.** 'Rubber granules' is in the list — but it is granulate *made from* recycled tyres and counted for what it sheds in use, on artificial turf. The recycling operation's own release is nowhere: the product is inventoried, the process is not. So the inventory does count fragmentation performed by ordinary use and does not count fragmentation performed deliberately. The report is also from 2015, before Danish mechanical recycling capacity grew, and it says of its own coverage that dust from tyres, paint polishing and vinyl abrasion is typically too small to have been captured by the studies available.
 
 ### J5 — Microplastic and its biofilm
 

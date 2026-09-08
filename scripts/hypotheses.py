@@ -1697,7 +1697,11 @@ H = [
      "from freshly washed-off road surface.",
      "Event-resolved concentration and volume at the outfall, and basin sediment "
      "surveys. Annual totals exist (278.3 million m3/yr over 16,185 outfalls) and "
-     "cannot test this."),
+     "cannot test this. One figure bearing directly on the settling basins is "
+     "already published: Miljøstyrelsen's microplastic inventory estimates that "
+     "only **10–20% of stormwater microplastic is retained**, because only some "
+     "stormwater sewers have settling lagoons at all — so the basins are neither "
+     "reliably present nor, where present, efficient."),
     ("B3", "B", "Treatment plant organic load", ["O1", "O5"],
      "Continuous discharge of residual COD and BOD from 750 plants.",
      "Steady rather than event-driven; scales with population equivalent.",
@@ -2066,7 +2070,11 @@ H = [
      "it unusually separable from most of group A.",
      "6PPD-quinone is not measured in Danish monitoring. Whether Danish "
      "salmonids - sea trout especially - carry the sensitivity is a species "
-     "question that the published work does not settle for them."),
+     "question that the published work does not settle for them. Worth noting that "
+     "the carrier is not a minor stream: Miljøstyrelsen's own inventory makes tyre "
+     "wear the largest single source of microplastic reaching Danish water, at "
+     "60.2% of the aquatic total, so the particles delivering this compound are "
+     "already the best-quantified particles in the country."),
     ("E20", "E", "Fuel oxygenates and additives", ["O3", "O6"],
      "Petrol and diesel are not one substance. Oxygenates are blended in to make "
      "combustion more complete - ETBE and MTBE in petrol, ethanol at 5 or 10 per "
@@ -2414,12 +2422,25 @@ H = [
      "upstream and downstream of a recycling facility, against a matched reach "
      "with none. Size distribution matters more than mass: the same mass at "
      "smaller size is a different exposure.",
-     "Not measured in Denmark for this pathway. A subagent reports that "
-     "Miljøstyrelsen's national microplastic source inventory is dominated by tyre "
-     "wear and contains no recycling or shredding category at all — **unverified "
-     "here, and it should be checked against the source before it is relied on**, "
-     "because an absent category in an inventory is exactly the kind of claim that "
-     "is easy to assert and hard to prove."),
+     "Not measured in Denmark for this pathway, and the absence is now checked "
+     "against the source rather than asserted. Miljøstyrelsen's national inventory "
+     "(Lassen et al. 2015, Environmental Project 1793) puts total Danish "
+     "microplastic release at 5,500–13,900 t/year, of which 600–3,100 t/year "
+     "ultimately reaches the aquatic environment. Of that aquatic share, tyres are "
+     "**60.2%**, footwear 7.4%, and paint plus ship paint together 11.4%. Its "
+     "categories are: personal care products, raw materials for plastics "
+     "production, paints, blasting abrasives, rubber granules, tyres, textiles, "
+     "ship paints, road markings, building materials, footwear, cooking utensils, "
+     "and two residual 'other' lines.\n\n**There is no recycling or shredding "
+     "category, and the near-miss makes the gap sharper rather than softer.** "
+     "'Rubber granules' is in the list — but it is granulate *made from* recycled "
+     "tyres and counted for what it sheds in use, on artificial turf. The recycling "
+     "operation's own release is nowhere: the product is inventoried, the process "
+     "is not. So the inventory does count fragmentation performed by ordinary use "
+     "and does not count fragmentation performed deliberately. The report is also "
+     "from 2015, before Danish mechanical recycling capacity grew, and it says of "
+     "its own coverage that dust from tyres, paint polishing and vinyl abrasion is "
+     "typically too small to have been captured by the studies available."),
     ("J5", "J", "Microplastic and its biofilm", ["O2", "O3"],
      "Particles that carry a biofilm and sorb hydrophobic organics, concentrating "
      "in the same surface film.",
