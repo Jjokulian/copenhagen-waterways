@@ -1,0 +1,2571 @@
+{
+ "_what": "Data sources for the hypothesis groups the first pass never saw: J1-J8 (surface film, gel and greasy water), K1-K14 (depletion and imbalance of what life requires), L1-L6 (baseline and counterfactual), R1-R10 (decay and decomposition), S1-S6 (the land side), T1-T8 (sediment sickness), and D8-D11. The register grew from 71 to 127 hypotheses; this file covers the 56 that were added. It is a companion to data_sources.json, not a replacement, and it cross-references that file's source ids where a source there also serves a new hypothesis.",
+ "_rule": "Measurement resolution, not aggregate. Every source was fetched or queried. Where only an aggregate exists, what was aggregated away is stated. Where nothing was found, the searches that found nothing are recorded, because a confirmed absence is a finding about what Denmark has chosen not to be able to know.",
+ "_scope": "Covered here: J1-J8, K1-K14, L1-L6, R1-R10, S1-S6, T1-T8, D8-D11. Deliberately NOT re-found: the ODA marine topics, the VP3 national layers, ICES DOME sediment contaminants, Vandah hydrometry, ICES WGSFD swept-area-ratio and OSPAR ODIMS, all of which are in data_sources.json. But the ODA marine topics WERE re-examined at field level for the specific fields these hypotheses need, and that re-examination produced this file's most consequential findings.",
+ "sources": [
+  {
+   "id": "ODA-MAALEDYBDE",
+   "hypotheses": [
+    "K11",
+    "L3",
+    "T1"
+   ],
+   "name": "ODA - Hav / Maaledybde (Secchi depth and bottom depth)",
+   "custodian": "DCE, Aarhus Universitet / Miljoestyrelsen (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_53_159; extract via getcsv.aspx?type=HentData",
+   "temporal": "per station visit (Startdato/SlutDato)",
+   "spatial": "point, X/Y_UTM32",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "BundDybde_m",
+    "SigtDybde_m",
+    "SigtTilBund",
+    "SigtDybdeMedVandkikkert",
+    "ObservatoerHoejde_m"
+   ],
+   "stations": {
+    "offered with no period": 194,
+    "offered with period 1970-2026": 1505
+   },
+   "fields_of_note": [
+    "TekniskAnvisninganvendt",
+    "MaaleDybdeNr",
+    "Proevetager"
+   ],
+   "coverage": "verified 2026-09-08: with a period set (DD-MM-YYYY) a sample of 8 stations returns 2,286 rows spanning 1983-03-16 to 2024-09-24 with every year present; with NO period the whole 194-station default network returns 4,044 rows confined to 2025-2026",
+   "past_2012": true,
+   "access": "registration (free email login) + scripted SOAP/CSV extract; working in this project",
+   "format": "CSV (iso-8859-1)",
+   "size": "small",
+   "caveat": "A WHOLE TOPIC THE EARLIER PASS DID NOT SEE. Secchi depth is in ODA, per visit, PAIRED WITH BOTTOM DEPTH at the same station - which is exactly the pair K11 needs and the pair nobody forms. Two warnings: (1) the Y_UTM32 column is emitted twice under the header 'X_UTM32' and 'X_UTM321', so northing is missing from the CSV as delivered and must be recovered from the Observationssted register; (2) the topic looks two years deep and is forty-two: an unfiltered extract returns only 2025-2026, and only a period given in DD-MM-YYYY reveals the record back to March 1983 (see ODA-SECCHI-LONG and the date-format caveat).  STATION COUNT: see ODA-STATION-COUNTS-CORRECTION - the smaller figure is the network reporting under the portal's default period, the larger is the historical register.",
+   "verified": "2026-09-08, authenticated SOAP topic open; a 194-station unfiltered extract (4,044 rows, 3,952 with a Secchi value) and an 8-station period-filtered extract (2,286 rows, 1983-2024) both parsed row by row"
+  },
+  {
+   "id": "ODA-LYSSVAEKKELSE",
+   "hypotheses": [
+    "K11",
+    "T1",
+    "D8"
+   ],
+   "name": "ODA - Hav / Feltmaaling / Lyssvaekkelse (light attenuation profiles)",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_11_155",
+   "temporal": "per profile, per depth step",
+   "spatial": "point; the measurement carries its own MaalingX_UTM32 / MalingY_UTM32 separate from the station",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "LyssvaekkelsesKoefficient (Kd)",
+    "Lysprocent (percent of surface irradiance at that depth)",
+    "ZMin",
+    "ZMax",
+    "YIntercept",
+    "KorrelationsKoefficient",
+    "StandardAfvigelse",
+    "Dybde (m)"
+   ],
+   "stations": {
+    "offered with no period": 189,
+    "offered with period 1970-2026": 566
+   },
+   "coverage": "verified 2026-09-08: 161,594 rows for the 189 default-network stations, every one carrying both Kd and Lysprocent, confined to 2025-2026; with a period set, a sample of 8 stations returns 5,463 rows spanning 2014-08-14 to 2024-09-24",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB for the full record",
+   "caveat": "THE DECISIVE K11 SOURCE, and it is better than the hypothesis assumed. K11 asks for 'Kd with water depth, which together give light at the bed'. ODA does not merely carry Kd - it carries LYSPROCENT, the fitted percentage of surface irradiance already evaluated at each measured depth, plus the regression's ZMin, ZMax, intercept, correlation and standard deviation, so the quality of every Kd fit is auditable. Joined to ODA-MAALEDYBDE's BundDybde_m, or to the vegetation transect's own depth, light at the bed against the 11-14% eelgrass requirement is a join, not a new measurement. The Kd record is shallower than the Secchi record: 8 sampled stations run 2014-2024, against 1983-2024 for Secchi. That is why DCE's own M06 instruction keeps Secchi in parallel and publishes a conversion - use it to carry K11 back before 2014.  STATION COUNT: see ODA-STATION-COUNTS-CORRECTION - the smaller figure is the network reporting under the portal's default period, the larger is the historical register.",
+   "verified": "2026-09-08, authenticated extract of all 189 default stations (161,594 rows) plus an 8-station period-filtered extract (5,463 rows, 2014-2024); field list read from the output pane"
+  },
+  {
+   "id": "ODA-BUNDFAUNA-SEDIMENT",
+   "hypotheses": [
+    "D10",
+    "D8",
+    "R7",
+    "T7",
+    "R3"
+   ],
+   "name": "ODA - Hav / Bundfauna / Sediment (grain size and sediment character at the fauna stations)",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_2_4",
+   "temporal": "per grab, per date and time",
+   "spatial": "point per station with Laengde/Bredde",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "Mudder",
+    "Ler",
+    "Silt",
+    "Sand, fint",
+    "Sand, mellem",
+    "Sand, groft",
+    "Grus, fint",
+    "Grus, groft",
+    "Sten",
+    "Karakter dybde (cm)",
+    "Farve",
+    "Lugt",
+    "Oxideret lag (mm)"
+   ],
+   "stations": {
+    "offered with no period": 83,
+    "offered with period 1970-2026": 3596
+   },
+   "fields_of_note": [
+    "Proevetagningsudstyr (Ekman, Haps, Kajak, Smoerstikke)",
+    "Proeveredskabsareal (cm2)",
+    "Proevetagningsnummer",
+    "Proevenummer",
+    "Konserveringsmetode"
+   ],
+   "coverage": "not established this session (see the ODA-DATE-FORMAT caveat)",
+   "past_2012": null,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "small",
+   "caveat": "D10 ASKED FOR EXACTLY THIS AND IT EXISTS. Nine grain-size fractions from mud to stones, per grab, per date, at 83 stations, at the same places as the fauna - so 'sediment grain size by station and date' is a query, not a field campaign. Two further fields nobody uses: 'Oxideret lag (mm)', the measured depth of the oxidised surface layer, which is a direct sediment redox observation and the closest thing in Danish monitoring to a T7 variable; and 'Lugt', a recorded sediment smell, which is where hydrogen sulphide is noticed and not measured. What is NOT here: loss on ignition, total organic carbon and surface-sediment chlorophyll. So R3's 'sediment organic content with matched fauna at the same stations' is NOT satisfied at these 83 - organic content lives in Sedimentkemi at 18 stations, a different set.  STATION COUNT: see ODA-STATION-COUNTS-CORRECTION - the smaller figure is the network reporting under the portal's default period, the larger is the historical register.",
+   "verified": "2026-09-08, authenticated topic open; criteria and all 36 output fields enumerated"
+  },
+  {
+   "id": "ODA-BUNDFAUNA-REPLICATES",
+   "hypotheses": [
+    "D9",
+    "D11",
+    "K14",
+    "T2",
+    "K10"
+   ],
+   "name": "ODA - Hav / Bundfauna / Artsliste, at replicate-grab resolution",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_2_1",
+   "temporal": "per grab, per date",
+   "spatial": "PER GRAB - each replicate carries its own Proevetagnings Breddegrad / Laengdegrad and X/Y_UTM, not the station's",
+   "aggregation": "per-measurement, and finer than the register believed",
+   "parameters": [
+    "Antal (stk)",
+    "Biomasse vaadvaegt (g)",
+    "Biomasse toervaegt (g)",
+    "Askefri toervaegt (g)",
+    "Dybde (m)"
+   ],
+   "stations": {
+    "offered with no period": 78,
+    "offered with period 1970-2026": 3468
+   },
+   "verified_counts": {
+    "taxa_offered": 511,
+    "phyla_offered": 15,
+    "gear": [
+     "Haps",
+     "Smoerstikke"
+    ],
+    "replicates_per_station_visit_observed": "7 to 10",
+    "gear_area_cm2": 143
+   },
+   "coverage": "not established this session; the two stations extracted returned 2025 only under the default (no-period) query",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB",
+   "caveat": "THIS FALSIFIES D9's OWN PREMISE. D9 says 'Present design gives one grab per station'. It does not. A live extract of two stations returned 10 replicate Haps grabs at station 90000958 on 2025-05-07 and 7 at station 90000961 on 2025-03-24, each replicate with its own latitude and longitude tens to hundreds of metres apart and a stated gear area of 143 cm2. Within-station spatial variance of abundance and of biomass - which is D9's entire discriminator, mosaic versus homogenised flat - is therefore computable from data already reachable. The same rows give K14 its functional-diversity input (511 taxa, three biomass measures) and D11 its stabiliser/destabiliser ratio once traits are joined. NOTE the counts: 78 stations in the species list, not the hundreds the vegetation topics offer, and 511 taxa is a working list rather than a full Danish marine checklist.  STATION COUNT: see ODA-STATION-COUNTS-CORRECTION - the smaller figure is the network reporting under the portal's default period, the larger is the historical register.",
+   "verified": "2026-09-08, authenticated extract of 2 stations (43 rows, 16.7 KB) parsed row by row; taxon and gear lists read from the criterion panes"
+  },
+  {
+   "id": "ODA-BUNDFAUNA-LUCINIDER",
+   "hypotheses": [
+    "T2"
+   ],
+   "name": "ODA bundfauna taxon list - the sulphide-oxidising bivalves are in it",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_2_1, criterion 'BundfaunaartKode'",
+   "temporal": "n/a (a code list)",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "Of the 511 taxa the Artsliste criterion offers, the T2 taxa present are Lucinoma borealis and Thyasira flexuosa. Also present and relevant elsewhere: Arctica islandica, Abra alba/nitida/prismatica, Amphiura filiformis/chiajei, Corbula gibba, Lanice conchilega, Mya arenaria, Mytilus edulis, Tellimya ferruginosa and seven Nephtys species. Absent from the list: Loripes lucinalis, Thyasira sarsi, Myrtea spinifera.",
+   "coverage": "current code list, 2026-09-08",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "T2 says the lucinid records are 'in the ODA fauna data if anyone looks for it'. Verified: they are. Lucinoma borealis and Thyasira flexuosa are both selectable taxa, so their abundance and biomass by station and date can be extracted directly. The limit is not the taxonomy, it is the design: the 78 soft-bottom Artsliste stations are NOT placed inside eelgrass beds, so 'lucinid presence in beds that persist against beds that failed' cannot be answered from ODA alone - it needs the fauna stations joined to the vegetation transects by position, and most will not coincide.",
+   "verified": "2026-09-08, full 511-entry taxon list read from the authenticated criterion pane and searched"
+  },
+  {
+   "id": "ODA-VEGETATION-FELTER",
+   "hypotheses": [
+    "K11",
+    "L4",
+    "T4",
+    "T3",
+    "K12",
+    "L6"
+   ],
+   "name": "ODA - Hav / Vegetation, at field level (three separate topics)",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_3_180 (Aalegraes bundfauna), Emne_3_181 (Aalegraes makroalge), Emne_3_182 (Aalegraes plante)",
+   "temporal": "per transect survey, per date",
+   "spatial": "transect with Start and Slut X/Y_UTM32 AND WGS84, plus per-observation Dybde (m) and its own end coordinates",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "Daekningsgrad (%) per species",
+    "Maks dybdegraense",
+    "Hoveddistributions dybdegraense",
+    "Daekningsgrad af bloedbund (%)",
+    "Daekningsgrad af blomster kransnaalalger (%)",
+    "Daekningsgrad af drivende makroalger (%)",
+    "Daekningsgrad af epifytter (%)",
+    "Vanddybde maks (m)",
+    "Bundtype",
+    "Maks dybde begraenset af"
+   ],
+   "stations": {
+    "aalegraes_bundfauna": "31 with no period, 1091 with period 1970-2026",
+    "aalegraes_makroalge": "120 with no period, 810 with period",
+    "aalegraes_plante": "345 with no period, 1990 with period"
+   },
+   "coverage": "not established this session",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB",
+   "caveat": "All three topics share one 53-field schema. TWO DEPTH LIMITS ARE CARRIED, not one - 'Maks dybdegraense' and 'Hoveddistributions dybdegraense' - and the Danish indicator uses only the main-distribution one, so K11's threshold test can be run against either. 'Maks dybde begraenset af' names WHY the transect stopped, which is the field that separates a depth limit set by light from one set by substrate, and it is exactly the distinction K11 needs. Epiphyte cover and drifting-macroalgae cover are separate columns, which matters for T1 and T3 because both shade the plant. WHAT IS ABSENT and matters: no shoot density, no biomass, no tissue chemistry of any kind. So K3 (tissue micronutrients) and T1 (tissue sulphide) have no monitoring source in Denmark at all - the vegetation programme measures how much of the plant is there and how deep, never what is in it.  STATION COUNT: see ODA-STATION-COUNTS-CORRECTION - the smaller figure is the network reporting under the portal's default period, the larger is the historical register.",
+   "verified": "2026-09-08, authenticated topic open for all three; station counts and all 53 output fields enumerated per topic"
+  },
+  {
+   "id": "ODA-AFFALD-PLASTIK",
+   "hypotheses": [
+    "J5"
+   ],
+   "name": "ODA - Hav / Marint affald and Plastik i biota (schema present, no data exposed)",
+   "custodian": "DCE, Aarhus Universitet",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_59_188 (Affaldstype code list), Emne_59_189 (beach litter by item), Emne_59_190 (beach litter, 224 Danish item codes as columns), Emne_60_1 (Plastik i biota)",
+   "temporal": "per beach survey, per date (designed)",
+   "spatial": "point with X/Y_UTM32 and WGS84, plus an EUBeachCode (designed)",
+   "aggregation": "designed as per-item counts per survey",
+   "parameters_note": "Emne_60_1 carries a per-individual plastic-ingestion schema - Fragmenter, Skumplast, Film og folie, Traade og fibre, Industripellets, Andet affald, each in both stk and g, alongside Naebhoejde, Naeblaengde, Hovedlaengde, Vingelaengde - i.e. the OSPAR fulmar stomach-contents protocol.",
+   "stations": 0,
+   "coverage": "NONE. Every criterion in Emne_59_189, Emne_59_190 and Emne_60_1 offered zero options: no stations, no countries, no beach codes, no species.",
+   "past_2012": false,
+   "access": "registration + scripted extract; there is nothing to extract",
+   "format": "CSV",
+   "size": "empty",
+   "caveat": "A CONFIRMED STRUCTURAL BLANK, and a precise one. Denmark has built the tables for marine litter and for plastic in biota, down to a 224-code Danish beach-litter item list and the full OSPAR fulmar protocol, and exposes no rows through them. For J5 this means the microlitter question cannot be approached through ODA at any resolution - not because the concept is missing but because the register is empty. Note also that all of this is MACRO litter by item count; there is no microplastic size class and no water-column sample in the schema at all.",
+   "verified": "2026-09-08, authenticated topic open for all four nodes; criterion option lists returned empty (0 options) for every filter"
+  },
+  {
+   "id": "ODA-MARINE-NEGATIVES",
+   "hypotheses": [
+    "D8",
+    "K3",
+    "K5",
+    "K6",
+    "K9",
+    "J1",
+    "J2",
+    "J3",
+    "J4",
+    "J7",
+    "S4"
+   ],
+   "name": "The complete ODA marine parameter space - what is provably not in it",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h - the whole Hav topic tree, enumerated",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "The Hav module has exactly ten root topics: Bundfauna, Vegetation, Vandkemi, Feltmaaling, Sedimentkemi, Observationssted, MFS i biota, Maaledybde, Marint affald, Plastik i biota. There is no Fytoplankton node, no Zooplankton node, no Mikrobiologi node and no Planteanalyse/vaevskemi node anywhere in it.",
+   "coverage": "current, 2026-09-08",
+   "past_2012": true,
+   "access": "registration",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "Enumerated rather than assumed, and it settles a row of hypotheses at once. (1) SURFACE-SEDIMENT CHLOROPHYLL is in neither sediment topic - Sedimentkemi/Sporstof offers six parameters (Gloedetab, total N, Fe-adsorbed P, total P, dry matter, density) at 18 stations and Sedimentkemi/MFS offers TOC, loss on ignition and clay+silt fraction at 38, so D8's microphytobenthic biomass term has no Danish monitoring source. (2) No sediment P FRACTIONATION - total P and one Fe-adsorbed fraction is the whole of it, which is S4's point made for us. (3) No tissue elemental analysis of any primary producer, so K3 has nothing. (4) No dissolved trace metals, no iron speciation, no selenium, no B12, no thiamine in the marine water column - K5, K6, K9 have nothing. (5) Nothing surface-active: no TEP, no surfactant, no UV filter, no oil-in-water, no DOC and no TOC in the water column, so J1, J2, J3, J4 and J7 have no Danish monitoring source at all. The marine water-chemistry topic is eleven parameters wide, full stop.",
+   "verified": "2026-09-08, authenticated enumeration of all ten Hav root topics, their leaf topics, and the full criterion option lists for Vandkemi (11 parameters, 205 stations), Sedimentkemi/Sporstof (6, 18 stations) and both sediment topics"
+  },
+  {
+   "id": "ODA-SI-N-P",
+   "hypotheses": [
+    "K1",
+    "K2",
+    "K7"
+   ],
+   "name": "ODA marine water chemistry as a ratio source - Si, N, P, pH and alkalinity in one table",
+   "custodian": "DCE, Aarhus Universitet (NOVANA)",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_10_11, criterion 'Parameter'",
+   "temporal": "per sample (Startdato + Startklok), with GennemsnitsDybde_m per sample",
+   "spatial": "point, X/Y_UTM32, plus a separate ProeveX/Y_UTM32 per sample",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "Silicium",
+    "Nitrogen,total N",
+    "Nitrit+nitrat-N",
+    "Ammoniak+ammonium-N",
+    "Phosphor, total-P",
+    "Ortho-phosphat-P",
+    "Klorofyl a",
+    "pH",
+    "Alkalinitet,total TA",
+    "Oxygen indhold",
+    "Svovlbrinte (sulfid)"
+   ],
+   "stations": {
+    "offered with no period": 205,
+    "offered with period 1970-2026": 1125
+   },
+   "coverage": "verified 2026-09-08 by extraction: station 93000001 (300 Kattegat, aabne del) returns 18,653 rows for 2000-01-25 to 2012-12-18 alone",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "tens of MB",
+   "caveat": "TWO HYPOTHESES BECOME ARITHMETIC. K1 and K2 ask for dissolved silicate alongside N and P at the same stations and dates: it is one table, one query, 205 stations, and the Si:N ratio has simply never been formed. K7 asks for 'two of pH, alkalinity, DIC or pCO2 together': pH and total alkalinity are both here, and salinity and temperature come from ODA-CTD at the same stations, so aragonite and calcite saturation are computable with CO2SYS. The honest limits on K7: pH and alkalinity are far sparser than the nutrients in the same extract (63 rows each against 234 for total N in one two-station sample), the pH scale and the alkalinity method are not stated in the parameter name, and a pH measured on the NBS scale in an estuary carries a saturation-state error that can exceed the signal. The limit on K1/K2 is not the chemistry at all - it is that the species-level phytoplankton counts that would say who the biomass is are in VanDa behind HTTP 401.  STATION COUNT: see ODA-STATION-COUNTS-CORRECTION - the smaller figure is the network reporting under the portal's default period, the larger is the historical register.",
+   "verified": "2026-09-08, authenticated extract; 1,823 rows over two stations for 2025-2026 and 18,653 rows for one station 2000-2012, parameter distribution counted per parameter"
+  },
+  {
+   "id": "ICES-PHYTO-OBIS",
+   "hypotheses": [
+    "K1",
+    "K2",
+    "A9",
+    "F7"
+   ],
+   "name": "ICES Phytoplankton Community dataset, Danish subset, reachable through OBIS",
+   "custodian": "ICES Data Centre (DOME), republished by OBIS/EurOBIS",
+   "url": "https://api.obis.org/v3/occurrence?datasetid=46c52e34-73b7-45e6-a2ac-742e4c2058c5&areaid=49 (areaid 49 = Denmark: all); year counts at https://api.obis.org/v3/statistics/years with the same filters",
+   "temporal": "per record, eventDate and eventTime; 1979-2023, 45 distinct years",
+   "spatial": "point lat/lon per sample, depth on many records",
+   "aggregation": "per-measurement at the occurrence level - one row per species identification per sample event, with eventID grouping the taxa from one water sample. BUT ABUNDANCE IS AGGREGATED AWAY: organismQuantity, individualCount and sampleSizeValue are all null.",
+   "parameters": [
+    "scientificName",
+    "class/order/family/genus",
+    "eventDate",
+    "eventTime",
+    "decimalLatitude",
+    "decimalLongitude",
+    "depth (partial)"
+   ],
+   "verified_counts": {
+    "Danish records": 240671,
+    "worldwide in the dataset": 2289704,
+    "2010": 14585,
+    "2015": 10307,
+    "2020": 10925,
+    "2023": 6740
+   },
+   "coverage": "1979-2023",
+   "past_2012": true,
+   "access": "open REST API, no key",
+   "format": "JSON, Darwin Core Occurrence",
+   "size": "240,671 Danish records",
+   "caveat": "THIS PARTLY REOPENS THE PREVIOUS PASS'S HARDEST NEGATIVE. That pass concluded Danish marine phytoplankton species counts are collected by Denmark and reachable by nobody, because ODA has no phytoplankton node and VanDa returns 401. Species-level COMPOSITION turns out to be reachable after all, by a route nobody looks down: Denmark reports to ICES DOME, DOME feeds OBIS, and OBIS serves 240,671 Danish phytoplankton occurrences from 1979 to 2023 with dates and coordinates, including identifications like Coscinodiscus granii, Skeletonema marinoi, Pseudo-nitzschia seriata and Mesodinium rubrum. WHAT IS STILL MISSING IS THE NUMBER. The Darwin Core occurrence schema carries presence, not cells per litre; DOME holds the counts as an extendedMeasurementOrFact extension that neither OBIS nor GBIF exposes. So K1's diatom SHARE of the community and K2's composition-against-ratio test both need abundance, and abundance needs a direct DOME extraction with an ICES account. That is a much smaller obstacle than 'the data is closed', and it is the single most valuable follow-up in this pass.",
+   "verified": "2026-09-08, sub-agent: OBIS area lookup confirming areaid 49; dataset located by search; occurrence count query 200 returning 240,671; year statistics 200 returning 1979-2023; individual records fetched and the null abundance fields confirmed"
+  },
+  {
+   "id": "ICES-DOME-EXTRACTION-GAP",
+   "hypotheses": [
+    "K1",
+    "K2",
+    "K8",
+    "K9"
+   ],
+   "name": "ICES DOME direct extraction - where the numbers are, and why they did not come out",
+   "custodian": "ICES Data Centre",
+   "url": "https://dome.ices.dk redirects (302) to https://ices.dk/data/data-portals/Pages/DOME.aspx, a landing page with no API; /Extraction, /API and /Menu/Contaminants all 404",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "the measured values - phytoplankton cells per litre, and contaminant determinand concentrations - that OBIS and GBIF strip when they republish DOME as occurrences",
+   "coverage": "n/a",
+   "past_2012": null,
+   "access": "an ICES account and the interactive extraction UI; no anonymous route found",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "Worth stating plainly because it recurs three times in this file. ICES DOME holds the quantities; OBIS and GBIF hold the occurrences derived from them. Every count in this file that comes through OBIS or GBIF - 240,671 phytoplankton records, 409,490 zoobenthos records, 7,017 Danish contaminant-in-biota records - is a record of WHAT was found, not HOW MUCH. The selenium of K9, the trace-metal gradient of K8 and the diatom share of K1 all sit one authenticated extraction away.",
+   "verified": "2026-09-08, sub-agent: the portal redirect and four 404s recorded; the empty facts/extensions fields confirmed on more than twenty sampled Danish records in both aggregators"
+  },
+  {
+   "id": "ICES-ZOOBENTHOS-OBIS",
+   "hypotheses": [
+    "K14",
+    "K10",
+    "D11",
+    "D9"
+   ],
+   "name": "ICES Zoobenthos Community dataset, Danish subset, through OBIS",
+   "custodian": "ICES Data Centre (DOME) / OBIS",
+   "url": "https://api.obis.org/v3/occurrence?datasetid=8acba7e7-2e50-4490-8328-b78a30472508&areaid=49",
+   "temporal": "per sample, 1979-2023",
+   "spatial": "point lat/lon per sample",
+   "aggregation": "per-measurement at occurrence level; abundance and biomass are aggregated away by the same DOME-to-OBIS transform as above",
+   "parameters": [
+    "scientificName",
+    "aphiaID",
+    "eventDate",
+    "decimalLatitude",
+    "decimalLongitude",
+    "depth (partial)"
+   ],
+   "verified_counts": {
+    "Danish records": 409490,
+    "2017": 57740,
+    "2023": 35815
+   },
+   "coverage": "1979-2023",
+   "past_2012": true,
+   "access": "open REST API",
+   "format": "JSON, Darwin Core",
+   "size": "409,490 Danish records",
+   "caveat": "An independent confirmation and an independent access path for the fauna record this project already reaches through ODA, and a useful cross-check on scale: 409,490 Danish benthic occurrences across 45 years. Use ODA for the analysis, because ODA carries the counts and the three biomass measures and the replicate structure that OBIS strips; use this to see what ODA's 78 Artsliste stations look like against the whole Danish benthic record.",
+   "verified": "2026-09-08, sub-agent: occurrence count 200 returning 409,490; year statistics 200 confirming 1979-2023"
+  },
+  {
+   "id": "DCE-TA-M06-LYS",
+   "hypotheses": [
+    "K11",
+    "L3",
+    "O4"
+   ],
+   "name": "NOVANA technical instruction M06 - Lyssvaekkelse: how Kd and Secchi are actually measured",
+   "custodian": "DCE / Aarhus Universitet, marint fagdatacenter",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_M06_Lyssvaekkelse_ver3.pdf (200, 667,948 bytes, ~28 pp); index at https://ecos.au.dk/forskningraadgivning/fagdatacentre/marint-fagdatacenter/gaeldende-tekniske-anvisninger",
+   "temporal": "current protocol, version 3",
+   "spatial": "all Danish marine NOVANA stations",
+   "aggregation": "a protocol, not data - but it fixes what the data means",
+   "parameters": [
+    "Kd from a discrete-depth PAR profile (the primary method)",
+    "Secchi depth zS",
+    "a documented water-type-dependent empirical conversion between them"
+   ],
+   "coverage": "the current programme",
+   "past_2012": true,
+   "access": "open PDF",
+   "format": "PDF",
+   "size": "668 KB",
+   "caveat": "READ THIS BEFORE COMPUTING ANYTHING FOR K11. It settles two things the data alone does not. First, Kd is measured from a light-sensor profile and Secchi is kept in parallel deliberately, 'on stations with long time series of Secchi depth' and as an instrument-failure fallback - which is why the Secchi series runs decades deeper than the Kd series in ODA. Second, it publishes the zS-to-Kd conversion, so the long Secchi record can be carried into a light-at-the-bed calculation on the same footing as the modern Kd. That combination is what makes K11's threshold test runnable over four decades instead of one.",
+   "verified": "2026-09-08, sub-agent: PDF downloaded 200 (667,948 bytes), converted with pdftotext and grepped - 18 matching lines including the method description and the conversion procedure"
+  },
+  {
+   "id": "DCE-TA-M12-M18-GAP",
+   "hypotheses": [
+    "K3",
+    "T1",
+    "F3"
+   ],
+   "name": "NOVANA technical instructions M18 (eelgrass) and M12 (macroalgae) - what the vegetation programme does not measure",
+   "custodian": "DCE / Aarhus Universitet",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_M18_AalegraesVer4.pdf (200, 546,781 bytes, 27 pp); https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_M12_Makroalger_paa_kystnaer_haardbund_ver3.pdf (200, 462,493 bytes)",
+   "temporal": "current protocols",
+   "spatial": "all Danish marine vegetation stations",
+   "aggregation": "protocols",
+   "parameters_note": "Both cover cover percentage, depth distribution and depth limit, shoot density and species composition. NEITHER mentions tissue chemical analysis: no nitrogen, phosphorus or carbon content, no dry-weight nutrient content, no micronutrients.",
+   "coverage": "the current programme",
+   "past_2012": true,
+   "access": "open PDF",
+   "format": "PDF",
+   "size": "~1 MB for both",
+   "caveat": "K3's diagnostic is the standard horticultural one - measure what is in the tissue along a nutrient gradient - and the protocols confirm by their own text that Denmark does not do it. The marine vegetation programme maps how much plant is where and how deep, and never analyses the plant. Nothing in NOVANA would detect a copper, zinc, boron or magnesium deficiency induced by macronutrient excess, and nothing in it would detect sulphide in eelgrass tissue either, which is T1's variable. A PANGAEA search for Danish Zostera tissue nitrogen and phosphorus content returned no Denmark-specific dataset, so if this exists at all it is scattered in uncatalogued literature.",
+   "verified": "2026-09-08, sub-agent: both PDFs downloaded 200, converted with pdftotext and grepped for kvaelstof, fosfor, kulstof, naeringsstof, kemisk analyse and toerstof - one incidental mention of nutrient loading as a pressure, no tissue-analysis protocol; PANGAEA search 200 with top results inspected"
+  },
+  {
+   "id": "DMI-RADIA-GLOB",
+   "hypotheses": [
+    "K11"
+   ],
+   "name": "DMI Open Data metObs - global radiation (radia_glob)",
+   "custodian": "Danmarks Meteorologiske Institut",
+   "url": "https://opendataapi.dmi.dk/v2/metObs/collections/observation/items?parameterId=radia_glob",
+   "temporal": "hourly per station",
+   "spatial": "Danish land and coastal weather stations (e.g. 06116, 06126, 06136, 06149, 06156, 06174) plus Greenland and the Faroes",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "radia_glob - global surface irradiance, W/m2"
+   ],
+   "coverage": "confirmed populated for 2011 and 2015 and live to the present; a 1990 query returned zero features, so this endpoint does not reach the 1986 start DMI's documentation claims - older radiation data presumably sits in the separate climate archive",
+   "past_2012": true,
+   "access": "open REST, no key needed for the queries tested",
+   "format": "GeoJSON",
+   "size": "millions of hourly readings",
+   "caveat": "The surface-irradiance half of K11. The join is not free: these are land and coastal met stations, not the marine stations where Kd is measured, so light at the bed needs a nearest-station match or an interpolation, and the error that introduces should be carried through to the 11-14% threshold rather than hidden. Note that ODA's own Lyssvaekkelse topic already publishes Lysprocent - the fitted percentage of surface irradiance at each measured depth - which for many purposes removes the need for this join entirely.",
+   "verified": "2026-09-08, sub-agent: live queries 200 returning real features for the present, 2015 and 2011, and zero features for 1990"
+  },
+  {
+   "id": "BIOTIC-MARLIN",
+   "hypotheses": [
+    "K14",
+    "D11",
+    "F2"
+   ],
+   "name": "BIOTIC - Biological Traits Information Catalogue",
+   "custodian": "Marine Biological Association (MarLIN), UK",
+   "url": "https://biotic.marlin.ac.uk/ (the old https://www.marlin.ac.uk/biotic 301-redirects here); query and export interface at https://biotic.marlin.ac.uk/get (200)",
+   "temporal": "static reference, periodically updated",
+   "spatial": "NE Atlantic and North Sea benthic species, overlapping the Danish fauna substantially",
+   "aggregation": "one trait profile per taxon",
+   "parameters_note": "over 40 trait categories per species including feeding mode, mobility, bioturbation mode, reproduction and longevity",
+   "coverage": "species catalogue, not Danish-specific",
+   "past_2012": null,
+   "access": "free, with an export interface",
+   "format": "web database with a 'Get Traits' export; the exact file format was not confirmed",
+   "size": "unknown record count",
+   "caveat": "K14 and D11 both say the fauna data exists and the trait assignment is a desk exercise. This is the desk. BIOTIC is live, is built for exactly this join - its own description says it can be downloaded and linked to benthic survey data - and it covers the North Sea species pool that ODA's 511-taxon list is drawn from. Two cautions: the export format was not confirmed, and a spot check that a common Danish species has a populated profile was not completed. Note also that WoRMS attributes, Polytraits and EMODnet Biology could not be reached at all from this environment - every VLIZ-hosted host at 193.191.134.34 refused connections while api.obis.org worked throughout - so their absence from this file is a network failure, not a finding.",
+   "verified": "2026-09-08, sub-agent: redirect chain to 200; the trait-count and downloadability claims read from the site; the export page 200"
+  },
+  {
+   "id": "K5-K6-K13-GAP",
+   "hypotheses": [
+    "K5",
+    "K6",
+    "K13"
+   ],
+   "name": "Cobalamin, iron speciation and particle size spectra in Danish waters - none found",
+   "custodian": "n/a",
+   "url": "searched PANGAEA for 'cobalamin vitamin B12 Baltic seawater', 'dissolved cobalt Baltic Sea seawater', 'particle size spectrum seston Denmark Kattegat Belt Sea', 'Mytilus larval condition index seston food availability Denmark'; GEOTRACES IDP2021 at https://www.bodc.ac.uk/geotraces/data/idp2021/ (formats confirmed, station index 404)",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: marine B12 and dissolved cobalt (K5); dissolved and ligand-bound iron speciation (K6); seston particle size spectra and larval condition indices (K13)",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "Three hypotheses, no Danish data, with different degrees of confidence. K5 is a fairly solid absence: PANGAEA returns no Danish or Baltic water-column B12, the nearest cobalt work is Finnish sediment porewater (Virtasalo et al. 2022), and ODA's eleven marine parameters contain neither. One lead worth pulling: ENA study PRJEB59221 is a 41-run 'Coastal Vitamin B1 dynamics' study in Roskilde Fjord from 2020, which is thiamine rather than cobalamin but is the only Danish marine vitamin work of any kind we found. K6 is UNVERIFIED rather than absent - GEOTRACES formats were confirmed but the station index could not be opened, so Baltic coverage is unchecked, though the field's transects are known to be North Atlantic and Arctic. K13 is 'not found by keyword search', not proven absent: the nearest particle-spectrum and larval-condition work is German (Kiel Fjord), and DTU Aqua's mussel-culture research may hold Danish material that PANGAEA does not index.",
+   "verified": "UNVERIFIED as data - 2026-09-08, sub-agent: four PANGAEA searches 200 with top results inspected; GEOTRACES landing page fetched and two guessed index paths 404"
+  },
+  {
+   "id": "K7-CARBONATE-CONTEXT",
+   "hypotheses": [
+    "K7"
+   ],
+   "name": "The carbonate-system context around Denmark - no Danish station, neighbours' lines only",
+   "custodian": "ICOS Ocean Thematic Centre; SOCAT",
+   "url": "https://meta.icos-cp.eu/sparql (SPARQL over stationentry:OS - 38 ocean stations, country codes IE, BE, DE, ES, FI, FR, IT, NO, SE, GB and no DK); https://socat.info and https://socat.info/socatfiles/v2026/",
+   "temporal": "ICOS ongoing; SOCAT v2026 current",
+   "spatial": "the nearest ICOS ocean stations to Danish water are DE-SOOP-Finnmaid, a German FerryBox on the Travemuende-Helsinki route that transits the western Baltic, and the Swedish SE-OES and SE-TAV",
+   "aggregation": "underway and mooring fCO2 at cruise resolution",
+   "parameters_note": "surface fCO2 and pCO2",
+   "coverage": "ICOS: zero Danish stations, confirmed. SOCAT: site and file-naming pattern confirmed live, Danish-waters coverage NOT quantified.",
+   "past_2012": true,
+   "access": "open",
+   "format": "SPARQL/JSON; TSV per cruise plus gridded products",
+   "size": "not measured",
+   "caveat": "K7 needs two of pH, alkalinity, DIC and pCO2 together, and the good news is elsewhere in this file: ODA carries pH AND total alkalinity at 205 marine stations, so aragonite saturation is computable from Danish monitoring today. This entry records what would validate that calculation and does not exist domestically. Denmark operates no ICOS ocean station - confirmed by enumerating all 38 - so any independent pCO2 check on Danish waters comes off a German ferry line or Swedish moorings. Whether any SOCAT track actually crosses the Kattegat, the Belts or the Sound is the obvious next check: fetch SOCATv2026Tracks_Region.tsv and filter to a Danish bounding box.",
+   "verified": "2026-09-08, sub-agent: ICOS SPARQL 200, all 38 ocean stations enumerated with no DK; socat.info 200 and the v2026 track file path confirmed by a 301 to the real location, not downloaded"
+  },
+  {
+   "id": "K4-M74-GAP",
+   "hypotheses": [
+    "K4"
+   ],
+   "name": "Thiamine deficiency and M74 - no Danish assay, and the Swedish series not opened",
+   "custodian": "n/a",
+   "url": "https://www.slu.se/en/departments/aquatic-resources/ (200; the database listing shows KUL, NORS and SERS, none M74); https://ices-library.figshare.com (202) and its search (403)",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "the ICES WGBAST reports are known to publish M74 frequency per river per year, which is already aggregated away from the per-female measurement",
+   "parameters_note": "wanted: thiamine status in fish eggs and prey species",
+   "coverage": "unresolved",
+   "past_2012": true,
+   "access": "blocked in this pass",
+   "format": "probably PDF report tables rather than structured data",
+   "size": "n/a",
+   "caveat": "K4 says Swedish and Finnish work exists and Danish marine monitoring has none. The second half is confirmed - nothing in ODA measures thiamine, and no Danish assay was found. The first half could not be opened: SLU's public database listing has no M74 product and the ICES report repository refused automated access. Note that even when opened, WGBAST publishes M74 frequency per river per year, so the per-female measurement K4's discriminator wants is aggregated away before publication. The one Danish thread: ENA study PRJEB59221, 'Coastal Vitamin B1 dynamics', Roskilde Fjord 2020, 41 sequencing runs - vitamin B1 is thiamine, and this is a Danish coastal study of its cycling.",
+   "verified": "UNVERIFIED - 2026-09-08, sub-agent: SLU page fetched with no M74 content; ICES library 202 and 403"
+  },
+  {
+   "id": "K12-STENREV-GAP",
+   "hypotheses": [
+    "K12",
+    "L6",
+    "D5"
+   ],
+   "name": "Danish stone-reef removal and restoration as data - not located",
+   "custodian": "n/a",
+   "url": "https://mst.dk (200, no stenrev content in the fetched text; /natur-vand/natur/stenrev 404); https://naturstyrelsen.dk (200); EU LIFE public database, a guessed project reference 500 and the search endpoint returning nothing to a URL query",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: stone extraction volumes and locations for the stenfiskeri era, and restoration coordinates, tonnages and dates for Blue Reef / Laesoe Trindel and the Roskilde Fjord reefs",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "K12 says reef restoration is a dated, located intervention and therefore testable, and it is - but not from a download. Neither the removal nor the restoration is published as data. GEUS Marta starts in 1980, after the stenfiskeri era, and holds no extraction volumes. Zenodo returns nothing for Laesoe Trindel. Given how well documented the Blue Reef work is in the literature (Dahl, Stenberg and colleagues), the coordinates and tonnages almost certainly exist in project reports; they were not found in open form. A WARNING FOR THE NEXT PASS: mst.dk exposes an endpoint at /api/search that returns Lorem-ipsum placeholder content - a stub or decoy, not a search API. Do not cite anything from it.",
+   "verified": "UNVERIFIED - 2026-09-08, sub-agent: the fetches and status codes above, and the placeholder response inspected and discarded"
+  },
+  {
+   "id": "ICES-CONTAM-BIOTA-OBIS",
+   "hypotheses": [
+    "K8",
+    "K9",
+    "E10",
+    "E6"
+   ],
+   "name": "ICES DOME contaminants and biological effects in biota, Danish subset, through OBIS and GBIF",
+   "custodian": "ICES Data Centre (DOME), republished by OBIS and GBIF",
+   "url": "https://api.obis.org/v3/occurrence?datasetid=ba3fc1a0-5ad0-4621-8712-e01292d9872c&areaid=49 ; https://api.gbif.org/v1/occurrence/search?datasetKey=51d1b2f1-21fd-4c65-be26-ffd8311ec4ef&country=DK",
+   "temporal": "per sampling event, eventDate; a sampled record dated 2015-10-27",
+   "spatial": "point lat/lon per sample, e.g. 56.036N 8.141E",
+   "aggregation": "per-measurement at organism level. THE CONCENTRATION IS AGGREGATED AWAY: the determinand values DOME holds are not exposed by either aggregator - the facts and extensions fields were empty on every one of more than twenty sampled Danish records.",
+   "parameters": [
+    "species (e.g. Mya arenaria)",
+    "individualCount",
+    "sex",
+    "eventDate",
+    "decimalLatitude",
+    "decimalLongitude"
+   ],
+   "verified_counts": {
+    "OBIS Danish records": 7017,
+    "GBIF country=DK records": 5661
+   },
+   "coverage": "past 2012 and current",
+   "past_2012": true,
+   "access": "open REST APIs",
+   "format": "JSON, Darwin Core",
+   "size": "about 7,000 Danish records",
+   "caveat": "An independent confirmation of the earlier pass's finding that Danish marine contaminant monitoring lives in biota, with a scale attached. Its own field list - individualCount and sex, no determinand column - confirms this is a biota programme and not a water-column one. For K8 and K9 the value is entirely potential: the selenium, copper, zinc and mercury numbers are in DOME and come out only through an authenticated extraction.",
+   "verified": "2026-09-08, sub-agent: OBIS count 200 returning 7,017; GBIF count 200 returning 5,661; empty facts and extensions confirmed on sampled records in both"
+  },
+  {
+   "id": "DOME-METALS-WATERCOLUMN-GAP",
+   "hypotheses": [
+    "K8",
+    "K6"
+   ],
+   "name": "Dissolved trace metals in the Danish marine water column - confirmed absent",
+   "custodian": "n/a",
+   "url": "https://api.obis.org/v3/dataset?q=metal (200, total 0); also q=chemical and q=contaminant; cross-checked against the enumerated ODA marine parameter lists",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: dissolved Cu, Zn, Mn, Ni, Se or B in Danish seawater",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "Three independent lines agree. ODA's marine water chemistry is eleven parameters and contains no metal. ODA's marine sediment contaminant topic carries no metals either, which the earlier pass established. An OBIS dataset search for metals returns nothing. So routine Danish marine monitoring measures no dissolved trace metal in the water column at all, and the only route to a Danish marine metal number is mussel or fish tissue. K8's point is that both tails of an essential-and-toxic element kill; Denmark measures neither tail in the medium the organism lives in.",
+   "verified": "UNVERIFIED as data - 2026-09-08, sub-agent: OBIS dataset searches 200 with zero results; cross-checked against the parameter lists the lead enumerated in ODA"
+  },
+  {
+   "id": "GEUS-JORDART25K",
+   "hypotheses": [
+    "S1"
+   ],
+   "name": "Danmarks Digitale Jordartskort 1:25.000 (v7.1)",
+   "custodian": "GEUS - De Nationale Geologiske Undersoegelser for Danmark og Groenland",
+   "url": "https://dataverse.geus.dk/dataset.xhtml?persistentId=doi:10.22008/FK2/SQI9ZB (v7.1); earlier vintages doi:10.22008/FK2/HBP9VA (v7.0), doi:10.22008/FK2/BTOJEC (v6.0)",
+   "temporal": "static polygon map; hand-auger campaigns of various dates, latest revision 2026",
+   "spatial": "1:25,000 polygons drawn from auger points every 100-200 m to ~1 m depth; 93.2% of the Danish land area",
+   "aggregation": "AGGREGATED: the individual auger points are generalised into 82 genesis classes as polygons. The point observations behind the lines are not published.",
+   "parameters": [
+    "surface geology genesis class (82 categories: moraine clay, meltwater sand, aeolian sand, ...)"
+   ],
+   "coverage": "93.2% of Denmark; completion ongoing",
+   "past_2012": true,
+   "access": "open download, CC-BY 4.0",
+   "format": "ArcGIS Pro package (76.8 MB) / QGIS package (107.6 MB) + ~31 MB documentation",
+   "size": "~216 MB total",
+   "caveat": "This is a geological ORIGIN map, not a leaching map and not the agronomic JB classification. It gives S1 the medium at close to field resolution - which is more than the national retention argument uses - but it carries no leaching measurement, so on its own it can only stratify, never validate.",
+   "verified": "2026-09-08, sub-agent: GEUS Dataverse search API 200 (JSON listing all three vintages); dataset landing pages 200"
+  },
+  {
+   "id": "LOOP",
+   "hypotheses": [
+    "S1",
+    "S2",
+    "S6"
+   ],
+   "name": "LOOP - Landovervaagningsoplandene (agricultural catchment monitoring with root-zone and drain leaching)",
+   "custodian": "AU Ecoscience fagdatacenter for stofudvaskning fra dyrkede arealer, with GEUS for groundwater",
+   "url": "https://ecos.au.dk/forskningraadgivning/fagdatacentre/au-ecoscience-fagdatacenter-for-stofudvaskning-fra-dyrkede-arealer (protocols, 200, 82,733 bytes); annual reports e.g. https://dce2.au.dk/pub/SR305.pdf (200, 9,044,591 bytes)",
+   "temporal": "sampling is per suction-cell / per drain sample; the PUBLISHED product is per hydrological year",
+   "spatial": "6 small catchments (Hoejvads Rende, Lillebaek, Hulebaek, Odderbaek, Bolbro Baek, Horndrup Baek), split clay vs sand, with named drain stations and soil-water stations inside each",
+   "aggregation": "AGGREGATE in the public form: flow-weighted annual mean concentration and annual N transport per station. The individual sample dates are aggregated away in the PDF; the raw per-date rows are stated by the technical instructions to live in ODA.",
+   "parameters": [
+    "NO3-N",
+    "total N",
+    "total P",
+    "drainage volume",
+    "groundwater level and redox",
+    "soil texture at station level",
+    "Olsen-P (fosfortal) per field, year 2000",
+    "depth-profiled soil P 0-25/25-50/50-100 cm from 2004"
+   ],
+   "coverage": "1989/90 to present; the SR series is annual (SR205, SR273, SR305, SR352, ...)",
+   "past_2012": true,
+   "access": "protocols and annual reports open; the per-date raw data is in ODA behind the same free login this project already holds",
+   "format": "PDF reports; ODA CSV for the raw",
+   "size": "~9-16 MB per annual report",
+   "caveat": "THE ONLY DANISH SOURCE THAT ACTUALLY DOES S1's EXPERIMENT. LOOP measures leaching from clay catchments and sand catchments under real management and reports them separately - SR305 gives -0.27 mg N/l/yr on clay against -0.58 on sand for 1990/91-2015/16, plus station-paired soil-water against drain-water nitrate. Two limits: it is six catchments, not a national validation of a national map; and the published resolution is annual per station, so the event structure that would connect leaching to rainfall is aggregated away. It also contains the ONLY field-resolution Danish soil phosphorus data we could find anywhere: Olsen-P on all 731 fields in the LOOP catchments in 2000, 1,365 measurements. FOLLOW-UP WORTH DOING: the raw LOOP rows are reachable with the ODA credentials this project already uses - the sub-agent was blocked only because it had no login.",
+   "verified": "2026-09-08, sub-agent: fagdatacenter page 200; SR305 downloaded (9.04 MB) and read with pdftotext, station tables and the 1,365-measurement sentence confirmed verbatim"
+  },
+  {
+   "id": "GEUS-NRETENTION",
+   "hypotheses": [
+    "S6",
+    "S1"
+   ],
+   "name": "National nitrogen retention maps for Denmark, version 2026",
+   "custodian": "GEUS / Aarhus Universitet for Styrelsen for Groen Arealomlaegning og Vandmiljoe",
+   "url": "https://doi.org/10.22008/FK2/UYOOK1 (v2026); doi:10.22008/FK2/O4XLAQ (2025); doi:10.22008/FK2/JLINZY (2023)",
+   "temporal": "one vintage per publication; v2026 reflects end-2025 conditions",
+   "spatial": "100 m model grid, generalised into contiguous regions of at least 50 ha of similar value; surface-water retention on irregular contribution catchments",
+   "aggregation": "AGGREGATED: the 100 m cells are averaged into >=50 ha zones. It is also MODEL OUTPUT, not measurement.",
+   "parameters": [
+    "TotalRetention_regioner (% N removed source to coast)",
+    "Grundvandsretention_regioner",
+    "Overfladevandsretention",
+    "TotalRetention_standardafvigelse_regioner"
+   ],
+   "coverage": "all of Denmark; three dated vintages 2023, 2025, 2026",
+   "past_2012": true,
+   "access": "open download, CC-BY 4.0",
+   "format": "GeoTIFF, 4 files x 63 MB",
+   "size": "252 MB zipped",
+   "caveat": "S6 asks whether the retention coefficient is constant. This is the map the regulation uses, it publishes its own STANDARD DEVIATION layer, and it exists in three separately dated vintages - so the sensitivity of the national indsatsbehov to the retention estimate can be computed directly, and the vintages can be differenced. What it is NOT is a retention estimate fitted separately by era: the differences between vintages are model revisions and added virkemidler, not evidence that retention capacity has fallen. S6's actual test - refit the same catchment flux data by period - needs no new data at all and remains undone.",
+   "verified": "2026-09-08, sub-agent: DCE news page 200; Dataverse landing page 200; search API 200 (46,452 bytes) listing all three vintages"
+  },
+  {
+   "id": "GEUS-JORDART200K",
+   "hypotheses": [
+    "S1"
+   ],
+   "name": "Jordartskort over Danmark 1:200.000",
+   "custodian": "GEUS",
+   "url": "https://doi.org/10.22008/FK2/AAEEMN",
+   "temporal": "static compilation",
+   "spatial": "1:200,000, national, 12 classes, positional uncertainty to 200 m",
+   "aggregation": "heavily generalised; borings and exposures aggregated into 12 classes",
+   "parameters": [
+    "surface geology class (12 categories)"
+   ],
+   "coverage": "100% of Denmark",
+   "past_2012": true,
+   "access": "open",
+   "format": "MapInfo 13.9 MB / Shapefile 18.7 MB / PDF",
+   "size": "up to 147 MB",
+   "caveat": "National context only. At 1:200,000 it cannot discriminate the field-scale contrast S1 is about; it is listed so the resolution choice is explicit rather than accidental.",
+   "verified": "2026-09-08, sub-agent: curl -L on the DOI returned 200, 204,932 bytes; Dataverse page confirmed file list"
+  },
+  {
+   "id": "GEUS-HAVBUNDSSEDIMENT",
+   "hypotheses": [
+    "S5",
+    "D10",
+    "R7",
+    "L6"
+   ],
+   "name": "Havbundssedimentkort - seabed surface sediment map of Danish waters",
+   "custodian": "GEUS",
+   "url": "https://dataverse.geus.dk/dataset.xhtml?persistentId=doi:10.22008/FK2/LCNVVP",
+   "temporal": "production 2020 (update of 2014), published 2023; a single vintage, not a series",
+   "spatial": "Danish territorial waters; resolution follows survey density, interpolated between acoustic lines calibrated on grab samples",
+   "aggregation": "AGGREGATED: a class for the top 0.5 m only. The grab samples behind it are not delivered, and there is no thickness attribute.",
+   "parameters": [
+    "surface sediment type class"
+   ],
+   "coverage": "Danish waters",
+   "past_2012": true,
+   "access": "open download with attribution; embedding in apps requires the GEUS WMS/WFS instead",
+   "format": "ArcGIS Pro package 41.8 MB / QGIS package 182.8 MB",
+   "size": "up to 183 MB",
+   "caveat": "Two hypotheses hit the same wall here. S5 needs the THICKNESS of the reactive layer and this map gives only what the top half metre is made of. D10 needs grain size THROUGH TIME and this is one vintage - the time series it cannot provide is exactly what ODA-BUNDFAUNA-SEDIMENT can, at 83 stations. Use them together: GEUS for the field, ODA for the change.",
+   "verified": "2026-09-08, sub-agent: Dataverse search API 200; dataset page confirmed the 0.5 m classification depth and the absence of a thickness attribute"
+  },
+  {
+   "id": "GEUS-KVARTAERTYKKELSE",
+   "hypotheses": [
+    "S5"
+   ],
+   "name": "Kvartaerets tykkelse i Danmark (Quaternary thickness)",
+   "custodian": "GEUS",
+   "url": "https://dataverse.geus.dk/dataset.xhtml?persistentId=doi:10.22008/FK2/INDSBA",
+   "temporal": "static, built on the 2008 terrain model",
+   "spatial": "7.9-16.77E, 54.48-57.9N - Denmark plus Kattegat, the inner Danish waters and the seas around Bornholm",
+   "aggregation": "AGGREGATED to a single number per cell: the whole Quaternary column, till and meltwater and post-glacial mud together",
+   "parameters": [
+    "total Quaternary thickness (m)"
+   ],
+   "coverage": "Denmark and adjoining shallow waters",
+   "past_2012": true,
+   "access": "open, CC-BY 4.0",
+   "format": "GeoTIFF + ArcGIS package",
+   "size": "2.5 MB total, the raster itself 221 KB",
+   "caveat": "The closest open thing to a marine sediment-thickness layer, and it aggregates away precisely the distinction S5 depends on: soft reactive Holocene mud against the consolidated till underneath. A Holocene mud-thickness product for Danish waters was searched for and not found. The NAG-TEC 'Total Sediment Thickness' compilation (doi:10.22008/FK2/P9XHV9) was checked and ruled out - it measures basin fill to acoustic basement, kilometres, the wrong quantity entirely.",
+   "verified": "2026-09-08, sub-agent: Dataverse search API 200; dataset page confirmed bounding box, method and file sizes"
+  },
+  {
+   "id": "S2-GAP",
+   "hypotheses": [
+    "S2",
+    "S3"
+   ],
+   "name": "Danish soil phosphorus status by area - confirmed absent as open data",
+   "custodian": "n/a",
+   "url": "searched: dataverse.geus.dk API (fosfortal, DGT, phosphorus saturation, phosphorus sorption), lbst.dk (404 on /landbrug/goedning-og-husdyrgodkendelser/fosforregulering), https://sgav.dk (200, no phosphorus content surfaced)",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "n/a",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "S2 states 'Denmark holds this; it is not carried into the marine argument.' The first half could not be confirmed in open form. No fosfortal / Pt-tal / DGT-P / degree-of-phosphorus-saturation / fosforklasse layer by municipality, catchment or ID15 opland was found on GEUS Dataverse or on the agencies' own sites. The only field-resolution Danish soil P we located anywhere is the year-2000 Olsen-P survey inside the six LOOP catchments. So the legacy-P argument, which is the strongest land-side reason a load reduction produces no marine response, currently has no national evidence base that anyone outside the ministries can inspect. Also absent: any sorption-DESORPTION isotherm dataset for Danish soils (S3), which exists only as individual papers.",
+   "verified": "UNVERIFIED as data - 2026-09-08, sub-agent ran the searches above; the absence is what was verified, not a source"
+  },
+  {
+   "id": "S1-PAPERS",
+   "hypotheses": [
+    "S1",
+    "S3",
+    "S4"
+   ],
+   "name": "The Danish soil-and-sediment process papers that stand in for the missing datasets",
+   "custodian": "various (AU Agroecology, SDU, KU)",
+   "url": "https://doi.org/10.1097/ss.0b013e31822391bc (Vendelboe et al. 2011, colloid and P leaching from undisturbed cores along a natural clay gradient); https://doi.org/10.2134/jeq2011.0067 (Heiberg et al. 2012, vivianite precipitation and phosphate sorption after iron reduction); https://doi.org/10.1111/j.1475-2743.1998.tb00607.x (Simmelsgaard 1998, effect of crop, N level, soil type and drainage on nitrate leaching); https://doi.org/10.4319/lo.1995.40.5.0908 (Jensen et al. 1995, phosphorus cycling in Aarhus Bay sediment)",
+   "temporal": "per experiment",
+   "spatial": "cores and plots, not networks",
+   "aggregation": "published results only; no deposited data table found for any of the four",
+   "parameters_note": "clay content against leached colloid and P (S1); redox-driven phosphate sorption and vivianite (S3); nitrate leaching by soil type and drainage class (S1); sequential P fractionation of marine sediment (S4)",
+   "coverage": "1995-2012",
+   "past_2012": false,
+   "access": "all four paywalled; metadata confirmed via Crossref",
+   "format": "journal articles",
+   "size": "n/a",
+   "caveat": "These are PAPERS, not sources, and that is the finding. Every mechanism S1, S3 and S4 name has been demonstrated on Danish material by Danish groups, and none of it exists as a reusable dataset. Jensen et al. 1995 in particular is the sequential fractionation of marine sediment phosphorus that S4 asks for, applied to Aarhus Bay thirty years ago and never made routine.",
+   "verified": "2026-09-08, sub-agent: Crossref API 200 for all four DOIs, titles, authors and dates confirmed; full texts not obtained"
+  },
+  {
+   "id": "L1-GAP",
+   "hypotheses": [
+    "L1",
+    "L3"
+   ],
+   "name": "Dated diatom or pigment stratigraphy from Danish coastal sediment - confirmed absent from the open repositories",
+   "custodian": "n/a",
+   "url": "https://www.pangaea.de/advanced/search.php?q=... - 15+ term combinations covering Kattegat, Belt Sea, Aarhus Bugt, Limfjorden, Roskilde Fjord, Mariager Fjord, Odense Fjord, Skive Fjord and Bornholm Basin crossed with diatom, pigment, Pb-210 and Cs-137",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: diatom assemblage or pigment stratigraphy with Pb-210/Cs-137 dating from a Danish coastal core",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "THE SINGLE MOST CONSEQUENTIAL GAP IN THIS PASS. L1 asks for the independent evidence that would say whether the modelled reference condition ever existed, and the standard method for producing it - a dated core with diatom or pigment stratigraphy - returns nothing for Danish coastal waters in PANGAEA. Three near-misses sharpen the point rather than soften it: Andren's Baltic diatom cores are at Gotland, not Denmark; the Seidenkrantz group at Aarhus has published exactly this method with Cs-137 and Pb-210 dating and diatoms - for Ameralik Fjord in Greenland (PANGAEA.785207, .785336); and the one recent Odense Fjord core (PANGAEA.983163, 55.4524N 10.4929E, 2023) is a resuspension and N-fixation study with no dating and no diatoms. The method exists in Denmark, the Danish coast is not where it has been pointed, and the target Denmark is spending against therefore rests on a model with no independent check.",
+   "verified": "UNVERIFIED as data - 2026-09-08, sub-agent: 15+ PANGAEA searches, all HTTP 200 with JSON results inspected by title and coordinate; the three near-miss datasets fetched individually and rejected on content"
+  },
+  {
+   "id": "EU-INTERCAL-2013-480",
+   "hypotheses": [
+    "L2",
+    "I4"
+   ],
+   "name": "Commission Decision 2013/480/EU - WFD intercalibration, Baltic GIG coastal types",
+   "custodian": "European Commission / EUR-Lex",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013D0480",
+   "temporal": "decision of 20 September 2013, in force",
+   "spatial": "Baltic GIG coastal types BC6-BC9, explicitly naming the Danish and German western Baltic coast (BC8) and the south-eastern Danish coast (BC6)",
+   "aggregation": "EQR boundary values per intercalibration type. No station data.",
+   "parameters": [
+    "eelgrass depth-limit EQR High/Good and Good/Moderate boundaries with their metre values",
+    "macroalgae and angiosperm EQR boundaries"
+   ],
+   "coverage": "current legal basis for Danish coastal classification",
+   "past_2012": true,
+   "access": "open",
+   "format": "HTML and PDF legal text",
+   "size": "882,647 bytes as fetched",
+   "caveat": "L2 says the target is a choice rather than a measurement, and here the choice is written down: for type BC8, Denmark and Germany, open coast, the eelgrass depth-limit boundaries are EQR 0.90 High/Good and 0.74 Good/Moderate, corresponding to 8.5 m and 7 m. Those two numbers are the whole of the difference between a water body that passes and one that does not, and they are an agreement. THE CHLOROPHYLL BOUNDARY IS NOT IN THE FETCHED TEXT - it is deferred to an Annex II that did not resolve, so the 0.6 EQR chain L2 names specifically is still unconfirmed. Warning for anyone repeating this: Decision 2018/229/EU, which is easy to reach for, is rivers and lakes only.",
+   "verified": "2026-09-08, sub-agent: EUR-Lex 200, 882,647 bytes; the BC8 row '0,90 0,74 8,5 7' and the BC6 description confirmed verbatim in the body. 2018/229/EU also fetched (200, 1,410,937 bytes) and ruled out."
+  },
+  {
+   "id": "L2-DERIVATION",
+   "hypotheses": [
+    "L2",
+    "L3"
+   ],
+   "name": "The Danish reference-condition derivation chain, as papers",
+   "custodian": "NERI / DCE, Aarhus Universitet",
+   "url": "https://doi.org/10.1007/s10750-009-9867-9 (Carstensen & Henriksen 2009, phytoplankton biomass response to nitrogen inputs: a method for WFD boundary setting applied to Danish coastal waters); https://doi.org/10.1007/978-90-481-3385-7_21 (Henriksen 2009, reference conditions for phytoplankton at Danish WFD intercalibration sites); https://doi.org/10.1016/j.seares.2008.10.003 (Henriksen 2009, long-term phytoplankton change in Kattegat, Belt Sea, the Sound and western Baltic); https://doi.org/10.1007/bf02804910 (Conley et al. 2002, the Danish national aquatic monitoring programme)",
+   "temporal": "2002-2009",
+   "spatial": "national",
+   "aggregation": "methods and synthesis, not data",
+   "parameters_note": "chlorophyll-a reference values, the load-to-chlorophyll model behind the boundary, and the design rationale of the monitoring network",
+   "coverage": "the derivation still in use",
+   "past_2012": false,
+   "access": "ALL FOUR PAYWALLED. Unpaywall reports is_oa false with no OA location for each.",
+   "format": "journal articles and a book chapter",
+   "size": "n/a",
+   "caveat": "L2's discriminator is 'the sensitivity of the national indsatsbehov to the reference model's assumptions and to the EQR value - a one-line calculation nobody publishes'. The reason nobody publishes it is visible here: the assumptions live in four closed publications, three of them by the same two authors, and none of them has an open data or code deposit. The existence and authorship of all four were confirmed through Crossref; the contents were not read, so nothing in the register should be scored against them yet.",
+   "verified": "2026-09-08, sub-agent: Crossref API 200 for all four with author lists; Unpaywall API 200 returning is_oa false and best_oa_location null for each. CONTENT UNVERIFIED."
+  },
+  {
+   "id": "HORSENS-EELGRASS-TRANSPLANT",
+   "hypotheses": [
+    "L4",
+    "T4",
+    "K12",
+    "F3"
+   ],
+   "name": "Bisholt, outer Horsens Fjord - large-scale eelgrass transplant with bare-bottom and natural-bed controls",
+   "custodian": "Syddansk Universitet, Institut for Biologi (Steinfurth, Lange, Oncken, Kristensen, Quintana, Flindt)",
+   "url": "https://findresearcher.sdu.dk/ws/files/202101802/m687p065.pdf (open-access mirror, 200, 2,337,507 bytes); DOI https://doi.org/10.3354/meps14007. The publisher copy at int-res.com returns 401 to automated fetches - use the SDU mirror.",
+   "temporal": "transplanted July 2017; benthic fauna sampled September 2018, November 2018, May 2019, August 2019",
+   "spatial": "three treatments with their own coordinates: bare bottom 55.829440N 9.9959E, transplanted eelgrass 55.829447N 9.9924E, natural donor meadow 55.829447N 10.000024E",
+   "aggregation": "four random replicates per habitat per sampling occasion, reported as summary statistics in the paper. The per-replicate rows are NOT deposited anywhere.",
+   "parameters": [
+    "species richness",
+    "abundance",
+    "Shannon-Wiener H'",
+    "Pielou's J'",
+    "biomass",
+    "feeding-group composition",
+    "eelgrass dry biomass g DW m-2"
+   ],
+   "coverage": "2017-2019",
+   "past_2012": true,
+   "access": "open access CC-BY for the paper; no data deposit",
+   "format": "10-page PDF with tabulated summary statistics",
+   "size": "2.3 MB",
+   "caveat": "L4 SAYS RESTORATION TRIALS ARE DECISIVE EVIDENCE AND ARE NOT TREATED AS SUCH. Here is one, and it is a real controlled experiment: a dated, located transplant with a disturbance control and a reference meadow, sampled four times over two years. It is the strongest single L4 result in this pass. Two things it is not. It measures FAUNA recovery, not eelgrass survival against sediment condition, so it does not run T4's test - transplant into failed ground with and without inoculation from a functioning bed - which remains undone in Denmark. And the per-replicate data is not deposited; the fuller methodology sits in Lange's 2020 SDU PhD dissertation, which was not retrieved.",
+   "verified": "2026-09-08, sub-agent: Unpaywall 200 pointing to the SDU mirror; PDF downloaded (2,337,507 bytes), pages read directly, coordinates and dates extracted from the text"
+  },
+  {
+   "id": "L4-DEPOSIT-GAP",
+   "hypotheses": [
+    "L4",
+    "T4",
+    "K12"
+   ],
+   "name": "Named Danish restoration projects with no deposited data - NOVAGRASS, ReMAPP, Laesoe Trindel/Blue Reef",
+   "custodian": "n/a",
+   "url": "https://zenodo.org/api/records?q=%22NOVAGRASS%22 ; ...q=%22ReMAPP%22 ; ...q=%22L%C3%A6s%C3%B8+Trindel%22 - each HTTP 200 with hits.total=0. https://bios.au.dk/en/research/novagrass now 404s.",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: planting locations, dates, densities, survival and controls",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "Denmark's three best-known marine restoration efforts - the national eelgrass project NOVAGRASS, ReMAPP, and the Laesoe Trindel stone-reef rebuild - return zero records from the largest general-purpose research data repository, and NOVAGRASS's own project page is gone. K12 says reef restoration 'is a dated, located intervention' and therefore testable; it is, but only by someone who can obtain the dates and locations from the projects themselves. Note the domain novagrass.dk is an unrelated gardening magazine - do not cite it.",
+   "verified": "UNVERIFIED as data - 2026-09-08, sub-agent: three Zenodo API queries returned 200 with total 0; the AU project page returned 404 after redirect"
+  },
+  {
+   "id": "EMODNET-SEABED-HABITATS",
+   "hypotheses": [
+    "L6",
+    "L5",
+    "D10",
+    "K12"
+   ],
+   "name": "EMODnet Seabed Habitats - EUSeaMap/HELCOM HUB modelled habitat map, and the ground-truth layer beside it",
+   "custodian": "EMODnet Seabed Habitats consortium (JNCC-coordinated)",
+   "url": "https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_view/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=emodnet_view:eusm_helcom_2023_full&bbox=8.5,54.5,13,57.5,EPSG:4326&outputFormat=application/json ; ground-truth layer emodnet_view:eunisMaps_full",
+   "temporal": "one model version (2023). NO TIME SERIES.",
+   "spatial": "polygons over the whole western Baltic including Danish Kattegat, Belts and Sound",
+   "aggregation": "MODEL OUTPUT per polygon. What is aggregated away: the point samples that trained the four input models (substrate, energy, biozone, salinity) are not delivered with the polygon - only the combined class code.",
+   "parameters": [
+    "EUNIS 2019 code",
+    "HELCOM HUB code",
+    "MSFD broad habitat type",
+    "substrate",
+    "energy",
+    "biozone",
+    "salinity class"
+   ],
+   "coverage": "current modelled state only",
+   "past_2012": true,
+   "access": "open WFS, no key",
+   "format": "GeoJSON / GML",
+   "size": "23,554 features in one Danish-waters bounding box",
+   "caveat": "L6 SAYS THE DEGRADED BED IS ENSHRINED AS A HABITAT TYPE, AND THIS IS WHERE IT HAPPENS - with an extra twist the hypothesis did not anticipate. The classification for Danish waters is a MODEL: 23,554 polygons predicted from environmental covariates. When the same bounding box is put to EMODnet's compiled GROUND-TRUTHED survey layer, it returns 18 features and every one of them is German. So for the Kattegat and the Belts, Denmark's habitat classification rests on prediction rather than on observation, which means L6's positive case - an area classified as sand whose history shows structure - cannot even be checked against a survey, only against a model that was itself fitted to the present state. That is the shifting baseline made administrative twice over.",
+   "verified": "2026-09-08, sub-agent: WFS GetCapabilities 200 (502,839 bytes, 133 layers); GetFeature on the modelled layer 200 with totalFeatures 23,554 and real HELCOM HUB attributes; GetFeature on eunisMaps_full over a wider Danish box 200 with 18 features, all gui DE000010/DE000011"
+  },
+  {
+   "id": "GEUS-MARTA",
+   "hypotheses": [
+    "L6",
+    "K12",
+    "D4"
+   ],
+   "name": "GEUS Marta - marine raw material database (sand, gravel, stone)",
+   "custodian": "GEUS",
+   "url": "http://data.geus.dk/geusmap/ows/25832.jsp?mapname=marta&service=WMS&request=GetCapabilities (200, 23,526 bytes, 21 layers); viewer at http://data.geus.dk/geusmap/?mapname=marta",
+   "temporal": "survey data from 1980 onward per GEUS's own description",
+   "spatial": "surveyed Danish marine areas; layers include survey lines, point data, sediment samples, seabed images and video",
+   "aggregation": "per survey line and per sample where the layer allows",
+   "parameters": [
+    "seismic survey lines",
+    "sediment samples",
+    "resource classification (proven/probable/speculative)",
+    "seabed images and video",
+    "habitat reports"
+   ],
+   "coverage": "1980-present",
+   "past_2012": true,
+   "access": "open WMS",
+   "format": "WMS/WFS layers plus PDF reports",
+   "size": "21 layers",
+   "caveat": "Chased for L6's historical seabed structure and it does not reach it. Marta is a resource database for licensing extraction, starting in 1980, and GEUS's own page states it holds no historical extraction volumes. The Danish stenfiskeri period - stone taken off the seabed for construction from roughly 1900 to the 1980s, which is K12's mechanism - is therefore before Marta's first record and is not in it. It does carry a marta_report_habitat layer and seabed video that were not opened, which is the most promising unexplored lead for L6.",
+   "verified": "2026-09-08, sub-agent: WMS GetCapabilities 200, 23,526 bytes, layer names enumerated; the GEUS product page fetched and the absence of extraction volumes confirmed in its text"
+  },
+  {
+   "id": "L6-GAP",
+   "hypotheses": [
+    "L6",
+    "K12"
+   ],
+   "name": "Historical Danish seabed structure - charts, stenfiskeri records and oyster beds, not located",
+   "custodian": "n/a",
+   "url": "searched: GEUS Marta (no extraction volumes), EMODnet ground-truth habitat layer (no Danish features), Zenodo (no restoration deposits). Danish historic sea charts at Geodatastyrelsen/Rigsarkivet and Limfjorden oyster-bed records were NOT successfully located.",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: digitised historic sea charts, stone-extraction volumes and locations 1900-1980s, historic oyster and mussel bed maps",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "L6 needs history and history is what the classification key discards. Three routes were tried and none delivered. This is the gap most likely to be closable by an archive request rather than by a download: the Soekortarkivet holdings and the Limfjorden oyster records are physical or semi-digitised, not absent.",
+   "verified": "UNVERIFIED - 2026-09-08, sub-agent searched the routes listed above within its budget"
+  },
+  {
+   "id": "HOLMER-SULFIDE-FIGSHARE",
+   "hypotheses": [
+    "T1"
+   ],
+   "name": "Sulfide intrusion and detoxification in Zostera marina - the raw data",
+   "custodian": "Hasler-Sheetal & Holmer, Institut for Biologi, Syddansk Universitet",
+   "url": "https://doi.org/10.6084/m9.figshare.1378709.v4 (file raw_data.xlsx, 104,233 bytes); paper https://doi.org/10.1371/journal.pone.0129136",
+   "temporal": "field collection July-August 2012; mesocosm sampled weekly over four weeks",
+   "spatial": "three named Danish sites with coordinates: Svenstrup Strand 55.4686N 9.7550E, Kertinge Nor 55.4486N 10.5575E, Dalby Bay 55.5186N 10.6181E",
+   "aggregation": "per-turf rows, n=5 per site for tissue sulfur speciation; weekly porewater in the mesocosm",
+   "parameters": [
+    "porewater sulfide",
+    "porewater nutrients",
+    "eelgrass tissue sulfur speciation (sulfide, elemental S, thiols)",
+    "sulfur isotopic signature"
+   ],
+   "coverage": "one field campaign, 2012",
+   "past_2012": false,
+   "access": "open, Figshare, no login",
+   "format": "single .xlsx",
+   "size": "104 KB",
+   "caveat": "THIS IS THE ONLY DANISH DATASET WE FOUND THAT CARRIES EELGRASS TISSUE SULPHIDE AT ALL, and it is one campaign at three sites in one summer. It gives two of T1's three legs - tissue sulphide and porewater sulphide, measured together - and not the third: LIGHT AT THE BED WAS NOT MEASURED at the field sites. Since ODA-LYSSVAEKKELSE now supplies light at 189 stations, the gap in T1 is no longer 'light is not measured' but 'the tissue sulphide has only ever been measured at three points, once'.",
+   "verified": "2026-09-08, sub-agent: PLOS article fetched and the data availability statement read; Figshare API 200 confirming the file, its size and version"
+  },
+  {
+   "id": "OBIS-GBIF-LUCINIDER",
+   "hypotheses": [
+    "T2"
+   ],
+   "name": "OBIS and GBIF occurrence counts for the sulphide-oxidising bivalves in Danish waters",
+   "custodian": "OBIS; GBIF",
+   "url": "https://api.obis.org/v3/occurrence?scientificname=<name>&areaid=49 (areaid 49 = Denmark: all); https://api.obis.org/v3/statistics/years?scientificname=<name>&areaid=49 ; https://api.gbif.org/v1/occurrence/search?scientificName=<name>&country=DK",
+   "temporal": "per occurrence, with eventDate",
+   "spatial": "per occurrence, decimal lat/lon and depth",
+   "aggregation": "per-measurement. What is aggregated away: HABITAT. Nothing in the occurrence record says whether the animal was inside a seagrass bed.",
+   "parameters": [
+    "scientificName",
+    "eventDate",
+    "lat/lon",
+    "depth",
+    "individualCount",
+    "samplingProtocol",
+    "institutionCode"
+   ],
+   "verified_counts": {
+    "Lucinoma borealis": "OBIS 324 (1907-2024, peak 138 in 2021) / GBIF 373",
+    "Thyasira flexuosa": "OBIS 7,542 (1907-2024, continuous, 973 in 2017) / GBIF 7,636",
+    "Myrtea spinifera": "OBIS 21 (2010 only) / GBIF 22",
+    "Loripes lucinalis": "0 / 0",
+    "Thyasira sarsi": "0 / 0"
+   },
+   "coverage": "1907-2024",
+   "past_2012": true,
+   "access": "open REST APIs, no key",
+   "format": "JSON",
+   "size": "n/a",
+   "caveat": "T2 IS PARTLY ANSWERABLE RIGHT NOW. The sulphide-oxidising bivalves are present in Danish waters in numbers and over more than a century: Thyasira flexuosa continuously, Lucinoma borealis with a marked rise after 2015 that is more likely recording effort than ecology. Myrtea spinifera has a single sampling year, 2010 - a one-off survey, not a series. Two taxa return zero and should be checked against WoRMS synonymy before being called absent. The binding limit is the same one as in ODA: the records do not say whether the animal was in a seagrass bed, so 'lucinids in beds that persist against beds that failed' needs a spatial join to the vegetation transects, not another query.",
+   "verified": "2026-09-08, sub-agent: six OBIS and six GBIF queries, all 200, counts as stated; OBIS area lookup 200 confirming areaid 49"
+  },
+  {
+   "id": "LABYRINTHULA-DK",
+   "hypotheses": [
+    "T3",
+    "T8"
+   ],
+   "name": "Labyrinthula in Denmark - one qPCR site and fifteen metabarcoding hits",
+   "custodian": "Bockelmann et al. (GEOMAR-led European survey); OBIS aggregating KTH and ARMS-MBON",
+   "url": "https://doi.org/10.1371/journal.pone.0062169 (open access); https://api.obis.org/v3/occurrence?scientificname=Labyrinthula&areaid=49",
+   "temporal": "qPCR at the Danish site May-August 2011; OBIS records July 2013 to March 2014 and an ARMS deployment 2019-2020",
+   "spatial": "qPCR: Lemvig, Limfjorden. OBIS points at 56.664N 11.822E, 54.765N 12.659E, 55.434N 14.813E, 57.257N 11.142E.",
+   "aggregation": "qPCR reported per site per date on pooled leaf tissue, n=18-21 - the per-shoot values are aggregated away. OBIS records are per-detection but are 18S OTUs, not infections.",
+   "parameters": [
+    "Labyrinthula zosterae qPCR copy number per leaf area",
+    "genus-level 18S detections"
+   ],
+   "coverage": "2011; 2013-2014; 2019-2020",
+   "past_2012": true,
+   "access": "open",
+   "format": "journal article; JSON API",
+   "size": "n/a",
+   "caveat": "T3 says Labyrinthula screening in Danish eelgrass is 'not routine'. It is not merely non-routine: it is ONE SITE, ONCE - Lemvig in the summer of 2011, inside a European survey led from Kiel. The OBIS hits are genus-level DNA in water or sediment, not a diagnosis on a plant, and OBIS returns zero for the species L. zosterae in Denmark. So the pathogen half of T3's discriminator exists as a single data point and the host-stress half exists nowhere alongside it.",
+   "verified": "2026-09-08, sub-agent: PLOS full text fetched, Danish site, dates and n confirmed; OBIS genus query 200 returning 15 records listed individually, species query 200 returning 0"
+  },
+  {
+   "id": "ENA-MGNIFY-DK-SEDIMENT",
+   "hypotheses": [
+    "T5",
+    "T6",
+    "F8"
+   ],
+   "name": "Danish marine sediment microbial sequence data in ENA and MGnify",
+   "custodian": "ENA/EBI; MGnify; submitting institutions including Aarhus Universitet",
+   "url": "https://www.ebi.ac.uk/ena/portal/api/search?result=sample&query=country=%22Denmark%22%20AND%20environment_biome%3D%22*sediment*%22&fields=accession,sample_title,country,lat,lon,collection_date,environment_biome&format=json ; https://www.ebi.ac.uk/metagenomics/api/v1/studies/MGYS00004017",
+   "temporal": "collection dates found from 2011-03-22 to 2023-03-08",
+   "spatial": "per sample, with lat/lon; named sites include station M5 in Aarhus Bay (56.1033N 10.4578E) and Aarhus Harbour (56.1676N 10.2239E)",
+   "aggregation": "per-sample rows",
+   "parameters_note": "16S amplicon and shotgun metagenome of bulk sediment, with environment_biome, lat/lon and collection date",
+   "verified_counts": {
+    "ENA samples country=Denmark with a sediment biome": 1459,
+    "PRJNA1176456 (Baltic/Kattegat sediment 16S)": 149,
+    "MGnify MGYS00004017 (Aarhus Bay M5)": 62
+   },
+   "coverage": "2011-2023",
+   "past_2012": true,
+   "access": "open REST APIs, no login",
+   "format": "JSON; raw reads via ENA",
+   "size": "n/a",
+   "caveat": "T5 says sediment microbial community composition does not exist here. It does - 1,459 Danish sediment BioSamples with coordinates and dates - but not for the question T5 asks. Every confirmed site is open, unvegetated basin or harbour sediment, principally the Aarhus Bay M5 monitoring station. None is eelgrass rhizosphere, so T6 has nothing at all, and T5's transfer assay - does sediment from a functioning bed confer resistance - has neither the material nor the baseline. Note the query that works: environment_biome, not target_gene; the obvious 16S-plus-country query returns human microbiome and industrial drainage.",
+   "verified": "2026-09-08, sub-agent: ENA portal API 200 with count 1,459; PRJNA1176456 run count 149 confirmed; MGnify study API 200 confirming 62 samples, centre name Aarhus University, linked ENA study PRJNA454851 cross-checked at 62"
+  },
+  {
+   "id": "PANGAEA-AARHUS-ORGANICACIDS",
+   "hypotheses": [
+    "T7",
+    "R5",
+    "R2"
+   ],
+   "name": "PANGAEA - Aarhus Bay porewater organic acids, sulphate, methane and sulphate reduction rates",
+   "custodian": "Henrik Fossing and Bo Barker Jorgensen, Aarhus Universitet",
+   "url": "https://doi.pangaea.de/10.1594/PANGAEA.327788 and .327787 (organic acids); the wider series via https://www.pangaea.de/advanced/search.php?q=Aarhus+Bay+porewater (87 datasets); examples .755851, .760625, .326453, .314769",
+   "temporal": "cores dated 2003-09-28, 2004-12-13 and 2009-10-06 across the series; both organic-acid cores taken on 2004-12-13",
+   "spatial": "named coring stations in Aarhus Bay with coordinates, e.g. HN04F-173GC at 56.11776N 10.34655E and HN04F-165GC at 56.10345N 10.45785E",
+   "aggregation": "per-measurement: one row per depth interval within one dated core",
+   "parameters": [
+    "acetate",
+    "lactate",
+    "formate",
+    "propionate",
+    "acetate methanogenesis production rate",
+    "acetate utilisation rate",
+    "sulfate",
+    "sulfate reduction rate",
+    "methane",
+    "dissolved inorganic carbon",
+    "d13C-DIC",
+    "ammonium",
+    "chloride",
+    "porosity",
+    "wet bulk density"
+   ],
+   "coverage": "2003-2009",
+   "past_2012": false,
+   "access": "open, DOI-resolvable, tabular download",
+   "format": "tab-delimited",
+   "size": "small per core; 87 datasets in the series",
+   "caveat": "T7 asks for porewater organic acids alongside sulphide and calls it rare. It is not absent: acetate, lactate, formate and propionate are published for Aarhus Bay at depth resolution, openly, with coordinates and dates. R5's electron-acceptor ladder is likewise measured here - sulphate, sulphate reduction rate and methane in the same cores. Three real limits. It is ONE BAY, and R5's discriminator is a SALINITY GRADIENT across the Danish straits, which one bay cannot provide. It is unvegetated basin sediment, not a seagrass rhizosphere. And no dissolved Fe(II) or Mn(II) speciation was found for any Danish site after repeated searching - the Fe/Mn extraction datasets that surface are all Black Sea - so T7's reduced-metals half and R6's Fe:S ratios have no Danish data.",
+   "verified": "2026-09-08, sub-agent: PANGAEA search 200 with totalCount 87; metadata JSON-LD fetched for six individual DOIs, all 200, coordinates, dates and parameter lists read; follow-up searches for Danish Fe/Mn porewater returned only Black Sea datasets"
+  },
+  {
+   "id": "HALOPHYTOPHTHORA-LIMFJORD",
+   "hypotheses": [
+    "T8"
+   ],
+   "name": "Marine oomycetes isolated from Zostera marina, including Limfjorden",
+   "custodian": "Man in 't Veld et al. 2018 (Netherlands-led, multi-country)",
+   "url": "https://doi.org/10.1007/s10658-018-1561-1 ; open-access copy via https://research.rug.nl/en/publications/74f2b8a7-77c5-464b-b5fd-fc3fa381d631",
+   "temporal": "collection dates not surfaced",
+   "spatial": "Limfjorden (Denmark) among sites in Germany, Sweden, the Netherlands, France and the USA",
+   "aggregation": "per isolate, species identity; no per-site isolate counts extracted and no structured strain table found",
+   "parameters_note": "Halophytophthora spp. and Phytophthora spp. isolated from eelgrass, including a new species P. chesapeakensis",
+   "coverage": "one multi-country survey",
+   "past_2012": true,
+   "access": "green open access via the Groningen repository",
+   "format": "journal article PDF, ~2.6 MB",
+   "size": "n/a",
+   "caveat": "The entire Danish marine-oomycete record, as far as we can establish: one Limfjorden site inside a Dutch-led survey. T8's actual claim is that anoxia SELECTS these organisms, and nothing in this paper measures redox, so the causal half is untested rather than unsupported. T8 remains the thinnest-evidenced hypothesis in the T group.",
+   "verified": "2026-09-08, sub-agent: Crossref 200; Semantic Scholar 200 returning an open-access PDF location; the Groningen repository page fetched 200 and 'Limfjord (Denmark)' confirmed in the site list"
+  },
+  {
+   "id": "DANISH-PORTALS-BLOCKED",
+   "hypotheses": [
+    "T1",
+    "T4",
+    "L4"
+   ],
+   "name": "Danish research-portal infrastructure is closed to automated retrieval",
+   "custodian": "n/a",
+   "url": "pure.au.dk, orbit.dtu.dk, findresearcher.sdu.dk (search interfaces) and int-res.com all returned HTTP 401/403 with Cloudflare bot-check pages to automated fetches. NOTE the exception that matters: a DIRECT file path under findresearcher.sdu.dk/ws/files/... served the Horsens PDF at 200.",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "n/a",
+   "coverage": "n/a",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "Recorded because it shaped this pass and will shape the next one. The Danish universities' publication repositories cannot be searched programmatically, and Inter-Research, which publishes much of the relevant marine ecology, blocks fetches entirely. The workaround that worked: resolve the DOI through the Unpaywall API to get a direct file path in a repository, then fetch that path. Anything in this file marked unverified for content on a Danish paper failed for this reason and not because the work does not exist.",
+   "verified": "2026-09-08, sub-agents: repeated 401/403 Cloudflare responses from all four hosts; one successful direct-file fetch demonstrating the workaround"
+  },
+  {
+   "id": "CDSE-SENTINEL1",
+   "hypotheses": [
+    "J6"
+   ],
+   "name": "Sentinel-1 GRD SAR over Danish waters, Copernicus Data Space Ecosystem",
+   "custodian": "ESA / Copernicus",
+   "url": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products?$filter=Collection/Name eq 'SENTINEL-1' and OData.CSC.Intersects(area=geography'SRID=4326;POLYGON((8 54.5,16 54.5,16 58,8 58,8 54.5))') and contains(Name,'GRD') - the legacy /resto/api/collections/Sentinel1/search.json endpoint is retired (404); use OData or /stac",
+   "temporal": "per scene, with acquisition start and end timestamps; near-daily revisit with S1A/S1C overlap",
+   "spatial": "per-scene footprint polygon, ~250 x 170 km IW frames covering the Danish EEZ, Kattegat, the Belts, the western Baltic and the North Sea approaches",
+   "aggregation": "per-measurement at scene level; each scene is independently processable to per-pixel backscatter",
+   "parameters": [
+    "C-band radar backscatter (VV/VH or HH/HV by mode)",
+    "footprint polygon",
+    "acquisition timestamp"
+   ],
+   "coverage": "2014-10-03T16:52:34Z to 2026-09-07T16:53:01Z, continuous",
+   "past_2012": true,
+   "access": "open; metadata query needs no login, download needs a free CDSE account",
+   "format": "SAFE / COG GeoTIFF, OData and STAC JSON metadata",
+   "size": "58,380 GRD products in the Danish-waters query window; 300-900 MB each",
+   "caveat": "J6 says 'Sentinel-1 SAR is free and covers the whole period. This one is testable now.' Confirmed, with the qualification that matters: this is IMAGERY, not detections. 58,380 scenes over Danish waters from October 2014 is the raw material for a dark-spot slick detection, and running that detection is a piece of work, not a download. Twelve years of near-daily coverage against the AIS traffic this project already holds is nonetheless the most tractable untested hypothesis in the whole J group.",
+   "verified": "2026-09-08, sub-agent: OData query 200 with @odata.count 58,380; earliest and latest scenes confirmed by $orderby on ContentDate/Start; STAC root 200"
+  },
+  {
+   "id": "HELCOM-OILSPILLS",
+   "hypotheses": [
+    "J6",
+    "B7",
+    "B8"
+   ],
+   "name": "HELCOM detected spills of mineral oil and other substances - aerial surveillance, per observation",
+   "custodian": "HELCOM Map and Data Service",
+   "url": "https://maps.helcom.fi/arcgis/rest/services/MADS/tools/GPServer/getAndCompressDataSource/execute?id=345c9b95-6e9c-44a4-b02a-ee4304cccffc&f=json which resolves to https://maps.helcom.fi/arcgis/rest/directories/arcgisoutput/MADS/tools_GPServer/_ags_IllegalOilDischarges_project.zip",
+   "temporal": "PER EVENT, with Date (dd.mm.yyyy) and Time_UTC (hh:mm)",
+   "spatial": "per spill, own latitude and longitude",
+   "aggregation": "per-measurement: one row per identified spill",
+   "parameters": [
+    "HELCOM_ID",
+    "Country",
+    "Year",
+    "Spill_ID",
+    "FlightType",
+    "Wind_speed (m/s)",
+    "Wind_direc (deg)",
+    "Latitude",
+    "Longitude",
+    "Length_km",
+    "Width_km",
+    "Area_km2",
+    "Spill_cat",
+    "EstimVol_m3",
+    "Vol_Category",
+    "Type_Subst",
+    "Polluter",
+    "Remarks",
+    "Date",
+    "Time_UTC"
+   ],
+   "verified_counts": {
+    "total_rows": 6123,
+    "Denmark": 918,
+    "Sweden": 2524,
+    "Finland": 882,
+    "Germany": 670,
+    "Estonia": 535,
+    "Poland": 460,
+    "Latvia": 131,
+    "Russia": 2,
+    "Lithuania": 1
+   },
+   "coverage": "1998-2025; fixed-wing aerial surveillance, and since 2014 non-oil substances too",
+   "past_2012": true,
+   "access": "public; a click-through disclaimer fronts an ArcGIS GP service that is directly queryable",
+   "format": "zipped ESRI Shapefile, 426,468 bytes",
+   "size": "6,123 rows, 918 of them Danish",
+   "caveat": "A GENUINELY PER-EVENT DANISH SURFACE-FILM OBSERVATION SERIES, 918 records over 27 years, WITH WIND SPEED AND DIRECTION AT THE MOMENT OF DETECTION - which is what J6 needs to model whether a film persisted, and which J2's calm-weather prediction can also be tested against. Two honest limits: 'Country' records the surveilling nation rather than the water's ownership; and per-record quality varies, one inspected Danish record (DK-9 off Hornbaek) carrying the remark 'LAT/LONG does not correspond with the description and cannot be verified'. Use this rather than HELCOM's HOLAS3 'Oil slicks and spills' pressure layer (id b4fb29d5-182f-4a90-9bc1-4e2b0d0df681), which bins the same events onto a 1 km grid, backfills missing volumes with the dataset mean, log-transforms and normalises, and covers only 2016-2021 - every event date, time and wind value is discarded.",
+   "verified": "2026-09-08, sub-agent: metadata found via HELCOM GeoNetwork (uuid 345c9b95-...); the download chain reverse-engineered and the shapefile actually downloaded (426,468 bytes); the .dbf parsed directly, 6,123 rows and 20 fields, country tally and 1998-2025 range confirmed for the Danish subset"
+  },
+  {
+   "id": "EMSA-CLEANSEANET-GAP",
+   "hypotheses": [
+    "J6"
+   ],
+   "name": "EMSA CleanSeaNet oil-slick detections - restricted to national authorities",
+   "custodian": "European Maritime Safety Agency",
+   "url": "https://www.emsa.europa.eu/csn-menu.html (200, 179,617 bytes)",
+   "temporal": "near-real-time (service)",
+   "spatial": "all EU coastal waters including Denmark",
+   "aggregation": "not characterisable from outside",
+   "parameters_note": "satellite-derived slick detections and alerts",
+   "coverage": "unknown publicly",
+   "past_2012": null,
+   "access": "RESTRICTED. The page states each coastal State reaches the service through a dedicated interface and analysed images go to national contact points - for Denmark, Miljoestyrelsen and Soevaernet. No public detection layer, no downloadable dataset.",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "The exact shape J6 predicts: the satellite imagery is free and the interpretation of it is not. Denmark's own operational oil-slick detections exist and are visible to two Danish authorities. The HELCOM aerial-surveillance series above is the public shadow of this, and it is aircraft rather than satellite.",
+   "verified": "2026-09-08, sub-agent: page fetched 200 and the access statement read verbatim; two guessed sub-paths 404"
+  },
+  {
+   "id": "BOKNIS-ECK-SML",
+   "hypotheses": [
+    "J1",
+    "J2"
+   ],
+   "name": "Seasonal variation of the sea-surface microlayer at Boknis Eck, Kiel Bight",
+   "custodian": "GEOMAR Helmholtz-Zentrum fuer Ozeanforschung Kiel (Dreshchinskii & Engel 2017)",
+   "url": "https://doi.pangaea.de/10.1594/PANGAEA.882194",
+   "temporal": "monthly, 2012-03-13 to 2013-11-05",
+   "spatial": "one station, 54.538N 10.047E - Kiel Bight, western Baltic, 60-100 km from the Danish coast",
+   "aggregation": "per-measurement: paired microlayer (Garrett screen) and sub-surface (Niskin, 1 m) samples per visit",
+   "parameters": [
+    "TEP",
+    "CSP (Coomassie stainable particles)",
+    "carbohydrates",
+    "amino acids",
+    "chlorophyll a",
+    "bacterial abundance",
+    "wind speed"
+   ],
+   "coverage": "April 2012 - November 2013; ended, not ongoing",
+   "past_2012": true,
+   "access": "open, PANGAEA, CC-BY",
+   "format": "tab-delimited",
+   "size": "two linked datasets",
+   "caveat": "THE NEAREST THING TO J1 AND J2 THAT EXISTS, and it is German. It does both hypotheses' discriminating test at once - microlayer against bulk water at the same station, with TEP measured and wind recorded - and it does it 60-100 km from Denmark, monthly, for twenty months, ending in 2013. It is the proof that the method is routine and cheap and that nobody in Denmark has run it.",
+   "verified": "2026-09-08, sub-agent: PANGAEA search hit; JSON-LD metadata 200 confirming title, temporal and spatial coverage; HTML landing page 200 (38,069 bytes) confirming the parameter list"
+  },
+  {
+   "id": "J1-J2-J3-GAP",
+   "hypotheses": [
+    "J1",
+    "J2",
+    "J3"
+   ],
+   "name": "TEP, sea-surface microlayer and surfactants in Danish waters - confirmed absent, twice over",
+   "custodian": "n/a",
+   "url": "searched: PANGAEA advanced search across a dozen query sets (transparent exopolymer particles + Kattegat/Denmark/Baltic; Alcian blue + Baltic; sea surface microlayer + Denmark/Kattegat; Garrett screen + Baltic; glass plate sampler; surfactant + Denmark; linear alkylbenzene sulfonate + Baltic; surfactants + Baltic Sea); HELCOM GeoNetwork full text (count 0 for 'transparent exopolymer'); Dryad API (total 0); Zenodo; and the enumerated ODA parameter lists",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: TEP by Alcian blue; microlayer against bulk with wind; LAS or non-ionic surfactant concentration",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "THREE HYPOTHESES, ZERO DANISH MEASUREMENTS, AND THE SEARCH WAS RUN TWICE WITH DIFFERENT QUERY SETS. Every genuine Baltic TEP, microlayer and surfactant dataset that surfaces is German - Boknis Eck, Eckernfoerde, the METEOR cruises, Engel's and Wurl's groups - and the handful of PANGAEA hits mentioning Denmark are Kiel laboratory mesocosms using 'natural seawater', not Danish field samples. On the surfactant side the absence is not merely in research but in the register: ODA's marine water chemistry (11 parameters), marine sediment trace substances (17), biota (61-91) and the stream module (66, which does carry pesticides, pharmaceuticals and bisphenol A) contain no surfactant of any kind, and HELCOM's hazardous-substances programme is metals, POPs and radionuclides. So J3's prediction that greasiness scales with population equivalent rather than agriculture has no measurement anywhere that could test it. One thread left open: whether a Miljoestyrelsen 'Kortlaegning af kemiske stoffer' survey ever measured LAS in Danish effluent could not be checked - mst.dk publication paths returned 403/404 and the search budget ran out.",
+   "verified": "UNVERIFIED as data - 2026-09-08, two independent sub-passes with disjoint query sets, all searches HTTP 200 with result lists inspected by title and coordinate"
+  },
+  {
+   "id": "HEREON-UVFILTERS",
+   "hypotheses": [
+    "J4"
+   ],
+   "name": "Organic UV stabilisers and UV filters in North Sea and Baltic sediment, 2015-2017",
+   "custodian": "Helmholtz-Zentrum Hereon (Apel, Joerss & Ebinghaus 2018)",
+   "url": "https://doi.pangaea.de/10.1594/PANGAEA.895397",
+   "temporal": "per station, 2015-10-02T11:25 to 2017-09-10T15:10",
+   "spatial": "51.72-58.13N, 4.11-14.54E; THREE STATIONS LOGGED AS KATTEGAT at 57.29-57.58N, 11.24-11.49E",
+   "aggregation": "per-measurement: one sediment sample per station, box corer or van Veen grab",
+   "parameters": [
+    "Benzophenone-3 / oxybenzone",
+    "Octocrylene",
+    "Avobenzone (BM-DBM)",
+    "Ethylhexyl methoxycinnamate / octinoxate",
+    "4MBC",
+    "BP-12",
+    "EHS",
+    "HMS",
+    "IAMC",
+    "HALS-445",
+    "EHT",
+    "UV-360",
+    "and others - 19 substances"
+   ],
+   "coverage": "one campaign, ~34 stations",
+   "past_2012": true,
+   "access": "open, PANGAEA, CC-BY",
+   "format": "tab-delimited, 37,320 bytes",
+   "size": "1,205 data points",
+   "caveat": "This upgrades J4 from nothing to something, and the something is the wrong matrix in almost the right place. All four UV filters J4 names are measured, and three stations are in the Kattegat - but it is SEDIMENT, not water, and certainly not the bathing-water surface film at the beach in August that J4 is about; and the Kattegat stations sit nearer the Swedish shore. J4's actual prediction - UV filter concentration at Danish bathing beaches across the season against visitor numbers - has no data and, given that badevand.dk measures only E. coli and enterococci, no collection route either.",
+   "verified": "2026-09-08, sub-agent: four PANGAEA searches converged; full tab file fetched 200 (37,320 bytes) and the three Kattegat stations plus the 19-substance list read from it"
+  },
+  {
+   "id": "EMODNET-LITTER-DK",
+   "hypotheses": [
+    "J5"
+   ],
+   "name": "EMODnet Chemistry marine litter - Danish beach and seafloor records, and the microlitter blank beside them",
+   "custodian": "EMODnet Chemistry (WFS hosted by OGS; ERDDAP by EMODnet)",
+   "url": "https://nodc.ogs.it/geoserver/Litter/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=Litter:bl_beach_surveys_lit&CQL_FILTER=beach_code%20LIKE%20%27DK%25%27&outputFormat=application/json ; https://erddap.emodnet-chemistry.eu/erddap/tabledap/BEACH_LITTER ; .../SEAFLOOR_LITTER_BALTIC",
+   "temporal": "per survey date; seafloor Baltic subset 2011-02-28 to 2024-11-20",
+   "spatial": "93 Danish beach sites with point coordinates; seafloor litter per haul with ship, gear, station and haul number",
+   "aggregation": "per-measurement: one row per litter item category per survey per beach, or per haul",
+   "parameters": [
+    "beach_code",
+    "sur_date",
+    "ItemCode (UNEP/MARLIN categories including PL23 resin pellets)",
+    "ItemName",
+    "counts",
+    "SurveyCode",
+    "Ship",
+    "Gear",
+    "LT_Weight",
+    "LT_Items"
+   ],
+   "verified_counts": {
+    "Danish beach sites": 93,
+    "beach litter rows beach_code LIKE DK%": 25096,
+    "Marine LitterWatch citizen-science rows MLWDK%": 2460,
+    "ERDDAP BEACH_LITTER rows country_code=DK": 60719,
+    "ERDDAP SEAFLOOR_LITTER_BALTIC rows Country=DK": 3290,
+    "global beach litter layer": 1517639
+   },
+   "coverage": "MSFD monitoring plus Marine LitterWatch citizen science, past 2012 and current",
+   "past_2012": true,
+   "access": "open WFS and open ERDDAP, no login",
+   "format": "GeoJSON via WFS; JSON/CSV/NetCDF via ERDDAP",
+   "size": "~64,000 Danish rows across the two routes",
+   "caveat": "DENMARK COUNTS ITS LITTER AND DOES NOT MEASURE ITS MICROPLASTIC. Sixty thousand Danish beach-litter item rows and 3,290 seafloor-litter hauls, all at genuine measurement resolution, and they are macro items on a shore or in a trawl. The dedicated microlitter net-trawl transect layer (Litter:microlitter_survey_transects_181002_metadata, 3,607 tows worldwide with mesh size, net opening and position) contains ZERO Danish records, and EMODnet's floating-microlitter product (30,533 rows) has no Danish contributor at all - no Denmark, no DTU, no GEUS, no DHI. PANGAEA returns 4 hits for 'microplastic Denmark' and 1 for 'microplastic Kattegat', none of them a Danish marine microplastic dataset. So J5's discriminator, microplastic counts in microlayer versus bulk water, is unreachable at both ends: no microlayer sampling (see J1-J2-J3-GAP) and no water-column microplastic.",
+   "verified": "2026-09-08, sub-agent: WFS GetCapabilities 200; CQL-filtered GetFeature counts as stated; ERDDAP tabledap and .das endpoints 200 with distinct-country queries confirming DK; the microlitter transect layer queried for Denmark and returning 0; the floating-microlitter file grepped across all 30,533 rows with no Danish match"
+  },
+  {
+   "id": "ASMALA-ROSKILDE-DOC",
+   "hypotheses": [
+    "J7",
+    "R1",
+    "R7"
+   ],
+   "name": "Roskilde Fjord water-column DOC, TOC, nutrients, chlorophyll and DOM optics, 2014-2015",
+   "custodian": "Aarhus Universitet and GTK (Asmala, Haraguchi, Markager, Massicotte, Riemann, Staehr, Carstensen 2018)",
+   "url": "https://doi.pangaea.de/10.1594/PANGAEA.895734",
+   "temporal": "36 sampling dates, roughly every three weeks, 2014-04-28 to 2015-11-25",
+   "spatial": "8 stations in Roskilde Fjord, 55.650-55.937N 11.887-12.121E",
+   "aggregation": "per-measurement: 215 station-date rows",
+   "parameters": [
+    "DOC",
+    "TOC",
+    "delta13C-DOC",
+    "nitrate+nitrite",
+    "ammonium",
+    "phosphate",
+    "silicate",
+    "total N",
+    "total P",
+    "salinity",
+    "temperature",
+    "pH",
+    "chlorophyll a",
+    "UV-Vis absorption 230-440 nm",
+    "fluorescence peaks T, A, M, C",
+    "humification index",
+    "SUVA254"
+   ],
+   "coverage": "one fjord, one full annual cycle plus part of a second",
+   "past_2012": true,
+   "access": "open, PANGAEA, CC-BY",
+   "format": "tab-delimited, 93,066 bytes",
+   "size": "215 rows x ~47 parameters, 7,907 data points",
+   "caveat": "J7 NEEDS DOC AND DENMARK HAS SOME - just not in the monitoring. ODA's marine water chemistry has no DOC and no TOC; this dataset, by DCE-adjacent authors including Markager and Carstensen, has both, with the DOM optical proxies (SUVA254, humification index, fluorescence peaks) that distinguish fresh exudate from refractory material. That is J7's discriminator almost exactly, and R1's C:N argument gets a marine test bed from it too. The limits are severe: one fjord, twenty months ending in 2015, and roughly three-weekly sampling, which is coarse against a bloom collapse - the event J7 is about could fall between two visits. CoastDOM v.1 (https://doi.pangaea.de/10.1594/PANGAEA.964012, 1978-2022, 1.29 million points) contains 408 'Roskilde' mentions and appears mostly to repackage this same dataset rather than add Danish coverage.",
+   "verified": "2026-09-08, sub-agent: JSON-LD metadata 200 confirming authors, dates and bounding box; full tab file downloaded 200 (93,066 bytes) and the 36 unique dates and 215 rows counted from it; CoastDOM downloaded in full (24,216,748 bytes) and grepped"
+  },
+  {
+   "id": "ENA-DK-COASTAL-16S",
+   "hypotheses": [
+    "J8",
+    "F8",
+    "T5"
+   ],
+   "name": "Danish coastal-water microbial sequence data in ENA",
+   "custodian": "European Nucleotide Archive (EBI); depositors include Danish universities",
+   "url": "https://www.ebi.ac.uk/ena/portal/api/search?result=read_run&query=country%3D%22Denmark%22%20AND%20environment_biome%3D%22*coastal*%22&fields=run_accession,sample_title,study_accession,collection_date,lat,lon,target_gene,library_strategy&format=json&limit=500",
+   "temporal": "per run, collection_date 2019-09-26 to 2023-01-02",
+   "spatial": "per run, lat/lon; named sites include Roskilde Fjord (55.713, 12.067), Elsinore, and a Danish beach at 56.273, 10.470",
+   "aggregation": "per-measurement: one row per sequencing run",
+   "parameters_note": "16S rRNA amplicon, shotgun metagenome, metatranscriptome, and nifH diazotroph amplicons in some studies",
+   "verified_counts": {
+    "runs": 436,
+    "studies": 6,
+    "PRJEB65366": "30 runs, beach sand, 2019",
+    "PRJEB59221": "41 runs, coastal vitamin B1 dynamics, Roskilde Fjord, 2020",
+    "PRJNA1114736": "4 runs, Baltic rock-surface biofilm, 2020",
+    "PRJNA1272138": "65 runs, aquatic MIMARKS survey, 2022-2023",
+    "PRJNA1110172": "129 runs, Zostera marina decomposition including surrounding seawater, Elsinore, 2022",
+    "PRJNA1489428": "167 runs, seagrass leaf nitrogen fixation and microbial communities, Roskilde and Julbaek, 2022"
+   },
+   "coverage": "2019-2023",
+   "past_2012": true,
+   "access": "open REST API, no login",
+   "format": "FASTQ plus tabular metadata",
+   "size": "436 runs",
+   "caveat": "THIS PARTLY REOPENS THE PREVIOUS PASS'S F8 GAP, and the distinction is worth stating precisely. Danish marine microbial community composition is absent from MONITORING - there is no microbiology node anywhere in ODA - and that remains true. It is not absent from the RECORD: 436 sequencing runs across six projects, with dates and coordinates, exist in ENA for Danish coastal water. For J8 that means bacterial community composition against diversity is approachable, though most of these projects target seagrass-associated or biofilm communities rather than open-water plankton, and none measures exopolymer production, which is the other half of J8's discriminator. NOTE FOR ANYONE REPEATING THIS: the query matters more than the data. Filtering on country plus target_gene=16S returns 1,013 runs that are overwhelmingly human vaginal microbiome and woodchip-bioreactor drainage; a sub-pass using that query concluded 'none found'. The environment_biome filter is the one that works. PRJEB59221 is also directly relevant to K5 - it is a Roskilde Fjord vitamin B1 cycling study.",
+   "verified": "2026-09-08, sub-agent: ENA portal API 200 returning 436 records; grouped by study and each study's title fetched and confirmed; the narrow-query false negative reproduced and documented"
+  },
+  {
+   "id": "ODENSE-FJORD-CN",
+   "hypotheses": [
+    "R1",
+    "D8",
+    "A9"
+   ],
+   "name": "Sediment resuspension and pelagic nitrogen fixation, Odense Fjord - core incubations with C:N and DIN",
+   "custodian": "Syddansk Universitet (Schlangen, Loscher, Attard, Sorensen, Riemann), Estuarine Coastal and Shelf Science 327, 109566 (2025)",
+   "url": "https://doi.pangaea.de/10.1594/PANGAEA.983171 (the paired sediment-characteristics file .983163 returned 503 on three attempts and is unconfirmed)",
+   "temporal": "June, July, August and September 2023",
+   "spatial": "one station, Kaerby Fed, Odense Fjord, 55.4524N 10.4929E",
+   "aggregation": "per-treatment, per-month, triplicate with standard deviation per row",
+   "parameters": [
+    "N2 fixation rate (nmol/l/day)",
+    "DIN",
+    "DIP",
+    "POC",
+    "PON",
+    "C/N ratio",
+    "resuspension-intensity treatment"
+   ],
+   "coverage": "one fjord, four months of 2023",
+   "past_2012": true,
+   "access": "open, PANGAEA",
+   "format": "tab-delimited",
+   "size": "small",
+   "caveat": "The only Danish dataset found that puts a measured organic C:N and a simultaneous DIN response in the same rows. It approaches R1 sideways - the carbon is resuspended from the bed rather than discharged with a known C:N - so it tests the mechanism without running R1's experiment. It also happens to be a Danish N-fixation rate measurement, which the previous pass recorded as non-existent for A9.",
+   "verified": "2026-09-08, sub-agent: textfile fetched 200 with the full parameter list confirmed"
+  },
+  {
+   "id": "EU-IED-TOC",
+   "hypotheses": [
+    "R1",
+    "B3",
+    "B5"
+   ],
+   "name": "EU Industrial Emissions / E-PRTR reporting - Total Organic Carbon to water, and the absence of fat",
+   "custodian": "European Environment Agency",
+   "url": "https://industry.eea.europa.eu/ ; metadata https://sdi.eea.europa.eu/catalogue/srv/api/records/657ac3cb-affa-4295-a4a9-27b4f539adab ; metadata PDF https://sdi.eea.europa.eu/catalogue/api/records/657ac3cb-affa-4295-a4a9-27b4f539adab/attachments/EEA_Industrial_Reporting_Metadata_v16.pdf (200, 1,426,051 bytes, 38 pp); bulk https://sdi.eea.europa.eu/datashare/s/sptXqwkQr5g7Bp5/download",
+   "temporal": "annual, 2007-2024 (version 16.0, February 2026)",
+   "spatial": "per facility",
+   "aggregation": "facility x year x pollutant x medium, above Annex II thresholds only. Below the 50,000 kg/yr TOC-to-water threshold a facility is simply absent.",
+   "parameters_note": "TOC to water IS an Annex II pollutant and real TOC/Water correction records appear in the metadata document. Fat, oil and grease is NOT in the Annex II list - confirmed by grep, zero matches for fat or grease in the whole 38-page specification.",
+   "coverage": "2007-2024",
+   "past_2012": true,
+   "access": "open bulk download; the portal itself is a JS app whose search backend is internal-only, so query it through the bulk file rather than the site",
+   "format": "CSV bulk; the whole EU",
+   "size": "not measured; the Danish-facility TOC subset was not isolated within budget",
+   "caveat": "R1 NEEDS THE C:N OF WHAT IS DISCHARGED AND THIS IS THE ONLY CARBON NUMBER IN THE SYSTEM. Two findings, both important and both partial. Organic carbon IS reported to water for large industry - so a C:N can be formed for those facilities, for the first time. But the reporting rules allow TOC to be CALCULATED AS COD/3 rather than measured, which means the ratio may be an arithmetic transform of the COD already known rather than an independent quantity - check the method flag before believing any C:N built from it. And fat is not a reported pollutant anywhere in the EU scheme, so an input with zero nitrogen and high carbon, which is R1's whole subject, is invisible by construction.",
+   "verified": "2026-09-08, sub-agent: catalogue search 200; ISO19139 XML fetched 200 (54,318 bytes); metadata PDF downloaded 200, converted and grepped - TOC/Water records found, fat and grease returning zero matches"
+  },
+  {
+   "id": "R1-FEDT-GAP",
+   "hypotheses": [
+    "R1",
+    "B3"
+   ],
+   "name": "Fat and lipid as a reported Danish discharge parameter - unresolved",
+   "custodian": "n/a",
+   "url": "https://www.retsinformation.dk/eli/lta/2021/1393 (bekendtgoerelse om spildevandstilladelser) returns 200 with a 4,932-byte single-page-app shell and no body text; WebFetch on the same URL returns 403; three guessed API paths return the same shell",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: whether Danish discharge permits mandate a measured fat or oil-and-grease concentration, and whether food-industry dischargers report one",
+   "coverage": "unresolved",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "THE MOST IMPORTANT UNANSWERED QUESTION IN THE R GROUP. R1's claim is that a zero-nitrogen carbon input lowers the measured nitrogen, which would make a fat-loaded water read as less eutrophic while being more degraded. Whether Denmark measures the fat at all could not be established: the executive order's annexes are behind a JavaScript app that serves no text to any fetch, and no search route around it worked. Note the distinction that must be resolved: a fedtudskiller (grease separator) is an infrastructure requirement in many permits, which is not the same as a reported concentration. The way to settle it is one named facility's actual udledningstilladelse, not the regulation.",
+   "verified": "UNVERIFIED - 2026-09-08, sub-agent: retsinformation 200 with shell only, WebFetch 403, three API guesses returning the shell, two search engines bot-blocked"
+  },
+  {
+   "id": "FOSSING-METROL-AARHUS",
+   "hypotheses": [
+    "R5",
+    "T7",
+    "E12"
+   ],
+   "name": "METROL Aarhus Bay cores - porewater sulphate, methane, hydrogen sulphide, TOC and TN by depth",
+   "custodian": "Henrik Fossing, Aarhus Universitet (EU FP5 METROL)",
+   "url": "https://doi.org/10.1594/PANGAEA.314744 and ~16 sibling cores including .314743, .314742, .314735, .314734, .314730, .326452-.326456, .316069-.316078",
+   "temporal": "cruises HN04S and HN04F on 2004-03-29, and HN05S in 2005. A single campaign, not a series.",
+   "spatial": "Aarhus Bay, 56.10-56.12N 10.34-10.48E, 15 m water depth - genuinely Danish coastal water",
+   "aggregation": "per-measurement: one row per depth interval within one dated core",
+   "parameters": [
+    "sulfate (mmol/l)",
+    "methane in sediment (umol/cm3)",
+    "methane in porewater (mmol/l)",
+    "HYDROGEN SULPHIDE H2S (mmol/l)",
+    "wet bulk density",
+    "water content",
+    "porosity",
+    "total N per volume",
+    "total organic carbon per volume",
+    "in-situ temperature"
+   ],
+   "coverage": "2004-2005; no post-2012 repeat found at this site",
+   "past_2012": false,
+   "access": "open, PANGAEA, CC-BY",
+   "format": "tab-delimited",
+   "size": "891 data points in the example core; ~16 cores",
+   "caveat": "R5 asks for porewater sulphide and methane by station and calls it rarely measured. In Aarhus Bay it was measured thoroughly, openly and at depth resolution - twenty years ago. Two limits define what R5 can and cannot do with it. It is ONE BAY, and R5's discriminator is explicitly a SALINITY GRADIENT across the Danish straits, which one bay cannot supply. And it stops in 2005, so nothing here can speak to change. Combined with the AL561 Kattegat-Skagerrak transect and the Fossing organic-acid cores, the Danish porewater record is three campaigns, all before or around 2021, none repeated.",
+   "verified": "2026-09-08, sub-agent: PANGAEA search 200 returning the HN04/HN05 series; full metadata and data for PANGAEA.314744 fetched 200 with 891 data points and the parameter list confirmed"
+  },
+  {
+   "id": "AL561-KATTEGAT-SKAGERRAK",
+   "hypotheses": [
+    "R5",
+    "R6",
+    "R7",
+    "A7",
+    "T7"
+   ],
+   "name": "ALKOR AL561 (APOC) - Kattegat to Skagerrak particulate and porewater geochemistry with in-situ benthic chamber fluxes",
+   "custodian": "GEOMAR (Dale, Lomnitz) with AWI, HEREON, UHH - APOC project",
+   "url": "https://doi.org/10.1594/PANGAEA.987329 (particulate), .987353 (porewater), .987348 (benthic chamber flux); 15 stations across DOIs 987329-987366, plus .987508 hydrochemistry",
+   "temporal": "cruise 2021-08-02 to 2021-08-13; published 2025",
+   "spatial": "15 stations from 57.45N 11.51E in the Kattegat to 58.75N 10.22E in the Skagerrak - the Danish straits system, though several stations lie nearer the Swedish and Norwegian sides",
+   "aggregation": "per-measurement: per depth interval in each core, and per timestep in each chamber deployment",
+   "parameters": [
+    "TOC %",
+    "TN %",
+    "TS % total sulfur",
+    "CaCO3 %",
+    "porosity",
+    "porewater alkalinity, Ba, B, Br, Ca, Cl, DISSOLVED Fe, K, Li, Mg, Mn, NH4, NO2, NO3, PO4, Si, SO4, Sr",
+    "in-situ benthic chamber time series of NH4, PO4, Fe and alkalinity flux"
+   ],
+   "coverage": "one cruise, 15 stations, 2021",
+   "past_2012": true,
+   "access": "open, PANGAEA, CC-BY, one file per station per measurement type",
+   "format": "tab-delimited",
+   "size": "a few hundred data points per file",
+   "caveat": "THE BEST RECENT SEDIMENT-BIOGEOCHEMISTRY DATASET FOR THE DANISH STRAITS, and it answers three hypotheses partially and none completely. R6 wants Fe:S against phosphate release rate: the phosphate RELEASE RATE is here, measured in situ by benthic chamber, which is rare and valuable - but the sulphur is bulk %S and the iron is dissolved porewater Fe, not a sequential extraction, so the Fe:S ratio R6 needs cannot be computed. R7 wants sediment organic carbon along a salinity transect from a river mouth: TOC is here along a BASIN transect, which is the wrong axis. And it is one cruise. Note it also supplies A7 with benthic chamber nutrient fluxes at 15 stations, against the three lander deployments the previous pass found.",
+   "verified": "2026-09-08, sub-agent: PANGAEA search 200 identifying 15 AL561 station files; particulate (450 points), porewater (426 points) and benthic-chamber datasets each fetched 200 with parameter lists confirmed"
+  },
+  {
+   "id": "BORNHOLM-SEDEX",
+   "hypotheses": [
+    "R6",
+    "S4",
+    "H2"
+   ],
+   "name": "IODP 347-M0065 Bornholm Basin - sequential phosphorus extraction (SEDEX)",
+   "custodian": "Dijkstra, Hagens, Egger & Slomp, Utrecht University; IODP Expedition 347",
+   "url": "https://doi.org/10.1594/PANGAEA.880132",
+   "temporal": "core recovered 2013-10-23/24",
+   "spatial": "55.468N 15.477E - Bornholm Basin, the basin Denmark shares with Sweden, Poland and Germany",
+   "aggregation": "per-measurement: one row per composite depth interval",
+   "parameters": [
+    "P exchangeable",
+    "P iron-bound",
+    "P authigenic",
+    "P detrital",
+    "Ca-P",
+    "P organic"
+   ],
+   "coverage": "one borehole",
+   "past_2012": true,
+   "access": "open, PANGAEA, CC-BY",
+   "format": "tab-delimited",
+   "size": "563 data points",
+   "caveat": "S4 says sequential fractionation of marine sediment phosphorus is a seventy-year-old method that is not routine in marine monitoring, and this is what non-routine looks like: it has been done properly next to Denmark, once, by a Dutch group on an IODP core. It gives R6 the iron-bound P fraction and gives S4 its worked example. It does not give R6 the iron and sulphur speciation that would pair with it. Jilbert et al. 2011 (https://doi.org/10.1594/PANGAEA.775277, 636 points, 7 Baltic stations 2009, TN, TOC, Fe-P, organic P, total P) is the regional companion, but only one of its stations is near Danish water and it predates 2012.",
+   "verified": "2026-09-08, sub-agent: textfile fetched 200 with 563 data points and the P-fraction list confirmed; the Jilbert dataset fetched 200 with 636 points"
+  },
+  {
+   "id": "R6-FE-S-GAP",
+   "hypotheses": [
+    "R6",
+    "T7"
+   ],
+   "name": "Paired sequential iron AND sulphur extraction on Danish sediment - confirmed absent",
+   "custodian": "n/a",
+   "url": "searched PANGAEA for 'sequential extraction iron sulfur phosphorus Baltic sediment' and 'Dale Wallmann iron sulfur sequential extraction Skagerrak Kattegat'; also 'Aarhus Bay iron manganese porewater', 'Fossing iron manganese sediment' and 'Kattegat porewater dissolved iron manganese'",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: AVS, CRS/pyrite S and ascorbate/dithionite Fe fractions in the same sediment, plus dissolved Fe(II) and Mn(II) porewater speciation",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "R6 is the mechanism that makes the marine phosphorus feedback stronger than the freshwater one - sulphide precipitating FeS and stripping the iron that would bind phosphate - and its discriminator is the Fe:S and Fe:P ratio against phosphate release. Every ingredient exists separately near Denmark: SEDEX phosphorus at Bornholm, bulk sulphur and dissolved iron on AL561, phosphate release rate in the AL561 chambers. Nothing puts sequential Fe and sequential S in the same sample. The searches that surface Fe/S extraction datasets return the Black Sea and the Amazon shelf. The same searches settle T7's other half: no dissolved Fe(II) or Mn(II) porewater speciation for any Danish site, and no ethylene anywhere.",
+   "verified": "UNVERIFIED as data - 2026-09-08, sub-agent: repeated PANGAEA searches 200, 10-20 top hits inspected per query by title and coordinate"
+  },
+  {
+   "id": "R7-TOC-MAP-GAP",
+   "hypotheses": [
+    "R7",
+    "R3",
+    "H2"
+   ],
+   "name": "A sediment organic-carbon map for Danish waters - confirmed absent from the national products",
+   "custodian": "n/a",
+   "url": "https://eng.geus.dk/mineral-resources/danish-raw-materials/seabed-sediment-map (fetched, classification scheme read); https://eng.geus.dk/products-services-facilities/data-and-maps/marine-raw-material-database-marta (fetched); EMODnet Geology landing page reached after redirect at http://emodnet.ec.europa.eu/en/geology/",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: TOC or loss on ignition in Danish seabed sediment as a mapped layer",
+   "coverage": "none found",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "R7 CALLS ITS DATA 'OBTAINABLE' AND IT IS NOT. GEUS's national seabed sediment map classifies the top 0.5 m into about seven texture classes at 1:250,000, and its only organic-content content is the qualitative threshold that 'mud' means more than 10% fine organic matter. MARTA, the marine raw-material database, has grain size and resource class and no organic field at all. EMODnet Geology's organic-carbon layer is listed as Phase V, under development. So sediment organic carbon along a salinity transect from a Danish river mouth has to be measured, not queried - and the only Danish sediment organic content that exists at station resolution is ODA Sedimentkemi's loss on ignition at 18 stations and TOC at 38, neither of which is arranged as a transect and neither of which coincides with the 83 fauna-sediment stations. That last point is R3's obstacle stated exactly.",
+   "verified": "2026-09-08, sub-agent: both GEUS product pages fetched and their parameter descriptions read; EMODnet Geology page 200 after redirect with the organic-carbon layer described as under development"
+  },
+  {
+   "id": "R2-R4-R8-R9-R10-GAP",
+   "hypotheses": [
+    "R2",
+    "R4",
+    "R8",
+    "R9",
+    "R10"
+   ],
+   "name": "Five decomposition experiments that have never been run in Danish water",
+   "custodian": "n/a",
+   "url": "searched PANGAEA (priming, 13C labelling incubation sediment, Baltic/Kattegat/Skagerrak priming, lignin phenol sediment Baltic Kattegat, Tea Bag Index Denmark, litter bag decomposition transplant salinity estuary marine) and Crossref (priming effect organic matter decomposition marine sediment Denmark; nitrogen enrichment litter decomposition recalcitrant lignin coastal; lipid solubility salting out seawater partitioning; home field advantage decomposition marine sediment; cross-transplant incubation salinity gradient decomposition)",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters_note": "wanted: sediment priming incubations (R2); litter-bag or incubation decay of characterised recalcitrant fractions along a nutrient gradient (R4); lipid partitioning by salinity (R8); local versus novel material decay assays (R9); cross-transplant incubations across the salinity front (R10)",
+   "coverage": "none found for Denmark; none found for marine systems at all for R8, R9 and R10",
+   "past_2012": null,
+   "access": "n/a",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "FIVE HYPOTHESES, FIVE STANDARD SOIL-SCIENCE EXPERIMENTS, NONE OF THEM RUN IN THE SEA HERE. The near-misses locate the boundary precisely. R2: a real marine priming experiment exists - 13C-labelled algal protein added to natural sediment and tracked over 400 days - at 54.05N 7.97E in the German Bight (https://doi.org/10.1594/PANGAEA.962949, 3,393 points), just outside Danish water, with no Danish equivalent. R4: a genuine lignin-phenol depth record exists in the Gotland Basin (https://doi.org/10.1594/PANGAEA.942648, 744 points, vanillin, syringaldehyde, vanillic, syringic, p-coumaric and ferulic acids) - Swedish waters, one site, and not arranged along a nutrient gradient; every nitrogen-by-lignin study that surfaces is terrestrial. R8: seawater salting-out has been measured properly, for dinitrobenzaldehydes and nitrotoluenes, never for lipids. R9: the Tea Bag Index protocol has been deployed in tidal wetlands in the Americas and never in Denmark. R10: a Crossref search for cross-transplant decomposition across a salinity gradient returns salinity-gradient POWER GENERATION and no biology at all. Each of these is a cheap experiment. That is the finding.",
+   "verified": "UNVERIFIED as data - 2026-09-08, sub-agent: all searches HTTP 200 with top results inspected by title; the two near-miss datasets fetched and confirmed"
+  },
+  {
+   "id": "ODA-STATION-COUNTS-CORRECTION",
+   "hypotheses": [
+    "D9",
+    "D10",
+    "K1",
+    "K11",
+    "L3",
+    "L5",
+    "R3",
+    "T2",
+    "K14"
+   ],
+   "name": "ODA station counts are period-dependent - the numbers in data_sources.json are the wrong ones",
+   "custodian": "DCE, Aarhus Universitet (ODA)",
+   "url": "https://odaforalle.au.dk/ - compare the ObservationsstedNr criterion list before and after SCL2_DatePicked with SCL2PeriodFrom=01-01-1970 and SCL2PeriodTo=31-12-2026",
+   "temporal": "n/a - this is a property of the portal, not a dataset",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "verified_counts": {
+    "Feltmaaling / CTD (Emne_11_154)": "185 with no period, 1,527 with 1970-2026",
+    "Vandkemi (Emne_10_11)": "205 with no period, 1,125 with 1970-2026",
+    "Bundfauna Artsliste (Emne_2_1)": "78 with no period, 3,468 with 1970-2026",
+    "Bundfauna Sediment (Emne_2_4)": "83 with no period, 3,596 with 1970-2026",
+    "Aalegraes plante (Emne_3_182)": "345 with no period, 1,990 with 1970-2026",
+    "Aalegraes makroalge (Emne_3_181)": "120 with no period, 810 with 1970-2026",
+    "Aalegraes bundfauna (Emne_3_180)": "31 with no period, 1,091 with 1970-2026",
+    "Lyssvaekkelse (Emne_11_155)": "189 with no period, 566 with 1970-2026",
+    "Maaledybde (Emne_53_159)": "194 with no period, 1,505 with 1970-2026",
+    "Sedimentkemi Sporstof (Emne_12_19)": "18 with no period, 39 with 1970-2026",
+    "Sedimentkemi MFS (Emne_12_107)": "38 with no period, 542 with 1970-2026",
+    "MFS i biota Musling (Emne_52_153)": "25 with no period, 327 with 1970-2026",
+    "MFS i biota Fisk (Emne_52_130)": "19 with no period, 113 with 1970-2026"
+   },
+   "coverage": "n/a",
+   "past_2012": true,
+   "access": "registration",
+   "format": "n/a",
+   "size": "n/a",
+   "caveat": "THIS CORRECTS THE EXISTING FILE AND SHOULD BE READ BEFORE ANY OF ITS STATION COUNTS ARE QUOTED. ODA's station criterion list is filtered by the period currently set, and with no period set it offers only the stations active in the recent default window. Every station count in data_sources.json was read from the criterion pane in that default state, so every one of them is the CURRENT network rather than the RECORD: CTD is 1,527 stations historically, not 185; marine water chemistry 1,125, not 205; the soft-bottom fauna species list 3,468, not 78; the fauna sediment topic 3,596, not 83. THREE OF THE EARLIER FILE'S HEADLINE NEGATIVES CHANGE SHAPE. 'Danish marine sediment contaminant monitoring, as exposed by ODA, cannot test E6 or E10 at all - 38 stations with the wrong analytes' is 542 stations historically, still with the wrong analytes, so the analyte objection stands and the coverage objection does not. 'Metals live in mussel tissue at 25 stations' is 327 stations historically. The PFAS-in-fish topic is 113, not 19. The one indictment that survives almost intact is sediment chemistry: 18 stations now, 39 ever. The general rule: a default-state count is the right number for a question about what is being monitored today and the wrong number for a question about the historical record, which is what L3, L5 and every trend hypothesis actually ask.",
+   "verified": "2026-09-08, direct authenticated comparison for nine marine topics, each with a fresh session and an explicit period, counts as tabulated"
+  },
+  {
+   "id": "ODA-SECCHI-LONG",
+   "hypotheses": [
+    "L3",
+    "K11",
+    "O4"
+   ],
+   "name": "The Danish Secchi record in ODA, once the period is set - 1983 to 2024, continuous",
+   "custodian": "DCE, Aarhus Universitet / Miljoestyrelsen",
+   "url": "https://odaforalle.au.dk/ topic.aspx?id=h&t=h -> Emne_53_159, with SCL2PeriodFrom=01-01-1970 and SCL2PeriodTo=31-12-2024 in DD-MM-YYYY",
+   "temporal": "per station visit",
+   "spatial": "point per station",
+   "aggregation": "per-measurement",
+   "parameters": [
+    "SigtDybde_m",
+    "BundDybde_m",
+    "SigtTilBund",
+    "SigtDybdeMedVandkikkert",
+    "ObservatoerHoejde_m"
+   ],
+   "verified_counts": {
+    "stations offered with the period set": 1503,
+    "rows from a sample of 8 stations": 2286,
+    "date range": "1983-03-16 to 2024-09-24",
+    "years present": "every year 1983 through 2024 without a gap"
+   },
+   "coverage": "1983-2024 continuous on the eight stations sampled",
+   "past_2012": true,
+   "access": "registration + scripted extract",
+   "format": "CSV",
+   "size": "not measured for the full network",
+   "caveat": "L3 ASKS FOR THE LONGEST AVAILABLE SERIES AND THIS IS PROBABLY IT. Eight stations returned an unbroken annual Secchi record from March 1983 to September 2024 - forty-two years, per visit, paired with bottom depth. Set against it, the Kd series in the Lyssvaekkelse topic on eight stations runs only 2014-2024, which is why DCE's own technical instruction M06 keeps Secchi in parallel 'on stations with long time series of Secchi depth' and publishes a conversion. For K11 that means light at the bed can be reconstructed back to 1983 through the conversion rather than only back to 2014. For L3 it means the start-year sensitivity surface can be computed on a real Danish optical series that begins before the nutrient peak had passed, which is the whole point of the hypothesis. Neither number is a full-network extract; both are eight-station samples and should be redone across all 1,503 before being published.",
+   "verified": "2026-09-08, authenticated extract with an explicit DD-MM-YYYY period: 2,286 rows over 8 stations, per-year counts tabulated from 1983 to 2024"
+  }
+ ],
+ "by_hypothesis": {
+  "J1": {
+   "status": "none_found",
+   "source_ids": [
+    "J1-J2-J3-GAP",
+    "BOKNIS-ECK-SML",
+    "ODA-MARINE-NEGATIVES"
+   ],
+   "note": "No TEP measurement exists for Danish water, searched twice with disjoint query sets across PANGAEA, HELCOM, Dryad and Zenodo. The nearest is GEOMAR's Boknis Eck series in Kiel Bight, 60-100 km away, which measured TEP monthly in the microlayer and the bulk water for twenty months and stopped in 2013. The method is Alcian blue and it is cheap; the gap is a choice."
+  },
+  "J2": {
+   "status": "none_found",
+   "source_ids": [
+    "J1-J2-J3-GAP",
+    "BOKNIS-ECK-SML",
+    "HELCOM-OILSPILLS"
+   ],
+   "note": "No Danish sea-surface microlayer sampling of any kind. The PANGAEA hits that mention Denmark are Kiel laboratory mesocosms using natural seawater, not Danish field samples. One partial substitute for the calm-weather prediction: the HELCOM aerial-surveillance spill records carry wind speed and direction at the moment of detection, so film persistence against wind can be tested on oil films even though it cannot be tested on the biogenic film J2 is about."
+  },
+  "J3": {
+   "status": "none_found",
+   "source_ids": [
+    "J1-J2-J3-GAP",
+    "ODA-MARINE-NEGATIVES"
+   ],
+   "note": "No surfactant is measured anywhere in the Danish system - not in ODA marine water (11 parameters), marine sediment (17), biota (61-91) or the stream module (66, which does carry pesticides, pharmaceuticals and bisphenol A), and not in HELCOM's hazardous-substances programme. J3's prediction that greasiness scales with population equivalent rather than agriculture has no measurement that could test it."
+  },
+  "J4": {
+   "status": "partial",
+   "source_ids": [
+    "HEREON-UVFILTERS",
+    "BADEVAND"
+   ],
+   "note": "One dataset measures all four UV filters J4 names, including three Kattegat stations - but in sediment, in 2015-2017, on the Swedish side. J4 is about the bathing beach in August, and badevand.dk measures only E. coli and enterococci, so there is neither a measurement nor a collection route for the water at the place and season the hypothesis is about."
+  },
+  "J5": {
+   "status": "partial",
+   "source_ids": [
+    "EMODNET-LITTER-DK",
+    "ODA-AFFALD-PLASTIK"
+   ],
+   "note": "Denmark counts its litter at true measurement resolution - about 64,000 Danish rows across EMODnet's beach and seafloor litter products - and measures no microplastic. EMODnet's microlitter net-trawl layer has zero Danish tows and its floating-microlitter product has no Danish contributor at all. ODA has built tables for marine litter and for plastic in biota, down to the OSPAR fulmar protocol, and exposes zero rows through them. J5's discriminator, microplastic in the microlayer against the bulk, fails at both ends."
+  },
+  "J6": {
+   "status": "covered",
+   "source_ids": [
+    "CDSE-SENTINEL1",
+    "HELCOM-OILSPILLS",
+    "EMSA-CLEANSEANET-GAP",
+    "DMA-AIS",
+    "EMODNET-VESSELDENSITY"
+   ],
+   "note": "THE MOST ACTIONABLE FINDING IN GROUP J. Two independent routes. 58,380 Sentinel-1 GRD scenes cover Danish waters continuously from October 2014, free, and the register is right that this makes J6 testable now - the caveat being that detection is work, not a download. And HELCOM's aerial surveillance already provides 918 Danish per-event spill records from 1998 to 2025, each with position, time, area, estimated volume, polluter type AND WIND SPEED AND DIRECTION at detection. Against the AIS traffic this project already holds, J6's discriminator can be run today. What is closed is the operational satellite detection product: CleanSeaNet goes to Miljoestyrelsen and Soevaernet and to nobody else."
+  },
+  "J7": {
+   "status": "partial",
+   "source_ids": [
+    "ASMALA-ROSKILDE-DOC",
+    "ODA-MARINE-NEGATIVES",
+    "VANDA-API"
+   ],
+   "note": "ODA's marine water chemistry has no DOC and no TOC, so the monitoring cannot see J7's variable at all. One academic dataset can: Roskilde Fjord, 8 stations, 36 dates in 2014-2015, DOC and TOC with the DOM optical proxies (SUVA254, humification index, fluorescence peaks) that separate fresh exudate from refractory material. Three-weekly sampling is coarse against a bloom collapse, and pairing it with bloom PHASE still needs the phytoplankton counts that sit behind VanDa's 401 or an ICES DOME extraction."
+  },
+  "J8": {
+   "status": "partial",
+   "source_ids": [
+    "ENA-DK-COASTAL-16S",
+    "ODA-MARINE-NEGATIVES",
+    "F8-GAP"
+   ],
+   "note": "Refines rather than overturns the earlier F8 blank. Danish marine microbial community composition is absent from MONITORING - ODA has no microbiology node - and present in the RECORD: 436 sequencing runs across six projects for Danish coastal water in ENA, 2019-2023, with dates and coordinates. Most target seagrass-associated or biofilm communities rather than open-water plankton, and none measures exopolymer production, which is the other half of J8's discriminator."
+  },
+  "K1": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-SI-N-P",
+    "ICES-PHYTO-OBIS",
+    "ICES-DOME-EXTRACTION-GAP",
+    "VANDA-API"
+   ],
+   "note": "BOTH HALVES MOVED. Dissolved silicate sits in the same ODA table as N and P at the same stations and dates, so the Si:N ratio K1 says is almost never reported is one query away. And the species composition the earlier pass declared unreachable is reachable after all: 240,671 Danish phytoplankton occurrences, 1979-2023, through ICES DOME's feed into OBIS. What is still missing is the cell count - OBIS and GBIF strip the abundance extension - so the diatom SHARE needs an authenticated ICES DOME extraction. That is the single highest-value follow-up in this pass."
+  },
+  "K2": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-SI-N-P",
+    "ICES-PHYTO-OBIS",
+    "ICES-DOME-EXTRACTION-GAP"
+   ],
+   "note": "Same position as K1 and the same obstacle. Simultaneous N, P and Si are there; species presence is there; the biomass share that would let composition be regressed on the ratios with absolute concentration held fixed is one extraction away."
+  },
+  "K3": {
+   "status": "none_found",
+   "source_ids": [
+    "DCE-TA-M12-M18-GAP",
+    "ODA-VEGETATION-FELTER",
+    "ODA-MARINE-NEGATIVES"
+   ],
+   "note": "CONFIRMED ABSENT FROM THE PROTOCOLS THEMSELVES. NOVANA's eelgrass (M18) and macroalgae (M12) technical instructions cover cover percentage, depth limit, shoot density and species composition and contain no tissue chemistry of any kind - no C, N or P content, let alone Cu, Zn, B, Mn or Mg. The vegetation programme maps how much plant is where and never analyses the plant, so nothing in Danish monitoring could detect an antagonism-induced micronutrient deficiency."
+  },
+  "K4": {
+   "status": "none_found",
+   "source_ids": [
+    "K4-M74-GAP",
+    "ENA-DK-COASTAL-16S"
+   ],
+   "note": "No Danish thiamine assay. The Swedish M74 series could not be opened - SLU's database listing has no M74 product and the ICES report repository refused automated access - and even when opened, WGBAST publishes frequency per river per year, so the per-female measurement is aggregated away before publication. One Danish thread exists: ENA study PRJEB59221, 'Coastal Vitamin B1 dynamics', Roskilde Fjord 2020."
+  },
+  "K5": {
+   "status": "none_found",
+   "source_ids": [
+    "K5-K6-K13-GAP",
+    "ODA-MARINE-NEGATIVES"
+   ],
+   "note": "No marine B12 and no dissolved cobalt for Danish or Baltic water; the nearest cobalt work is Finnish sediment porewater. ODA's eleven marine parameters contain neither."
+  },
+  "K6": {
+   "status": "none_found",
+   "source_ids": [
+    "K5-K6-K13-GAP",
+    "AL561-KATTEGAT-SKAGERRAK",
+    "R6-FE-S-GAP"
+   ],
+   "note": "No iron speciation for Danish water. GEOTRACES formats were confirmed but its station index could not be opened, so Baltic coverage is unchecked rather than proven absent. The AL561 Kattegat-Skagerrak cruise does carry dissolved porewater Fe at 15 stations, which is sediment rather than water column and total rather than ligand-bound - K6's whole point is that the available fraction is the quantity, and the available fraction is measured nowhere here."
+  },
+  "K7": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-SI-N-P",
+    "ODA-CTD",
+    "K7-CARBONATE-CONTEXT",
+    "CMEMS-BAL-BGC"
+   ],
+   "note": "ANSWERABLE NOW FROM DATA ALREADY REACHED. K7 needs two of pH, alkalinity, DIC and pCO2; ODA carries pH and total alkalinity in the same marine table at 1,125 historical stations, and salinity and temperature come from the CTD topic at the same places, so aragonite and calcite saturation are a CO2SYS call away. Three honest caveats: pH and alkalinity are far sparser in the extract than the nutrients, the pH scale and alkalinity method are not stated in the parameter name, and Denmark operates no ICOS ocean station - all 38 were enumerated - so there is no domestic pCO2 series to validate the calculation against."
+  },
+  "K8": {
+   "status": "partial",
+   "source_ids": [
+    "ICES-CONTAM-BIOTA-OBIS",
+    "DOME-METALS-WATERCOLUMN-GAP",
+    "ODA-MFS-MUSLING",
+    "ICES-DOME-EXTRACTION-GAP"
+   ],
+   "note": "The gradient exists only in tissue. Routine Danish marine monitoring measures NO dissolved trace metal in the water column at all - confirmed against ODA's eleven marine parameters and against an OBIS dataset search returning zero. Metals live in mussel tissue at 25 stations, and the 7,017 Danish contaminant-in-biota records reachable through OBIS carry the organism but not the concentration. So K8's full-gradient dose-response has an exposure proxy and no dose."
+  },
+  "K9": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "ICES-CONTAM-BIOTA-OBIS",
+    "ICES-DOME-EXTRACTION-GAP",
+    "ODA-MFS-FISK"
+   ],
+   "note": "Mercury is measured in Danish fish and mussel tissue; selenium was not confirmed as a determinand anywhere, and the aggregators that expose the Danish biota records strip every concentration value. The Se:Hg ratio K9 needs would follow from an ICES DOME extraction if selenium turns out to be in the determinand list, and that check was not completed."
+  },
+  "K10": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-CTD",
+    "ODA-BUNDFAUNA-REPLICATES",
+    "ICES-ZOOBENTHOS-OBIS",
+    "CMEMS-BAL-PHY"
+   ],
+   "note": "Fully served and needs no new data. Salinity by station, date and depth is in the CTD topic at 1,527 historical stations; species-level fauna with abundance is in the Artsliste topic; K10's discriminator is community composition against salinity VARIANCE rather than mean, which is a computation on both."
+  },
+  "K11": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-LYSSVAEKKELSE",
+    "ODA-MAALEDYBDE",
+    "ODA-SECCHI-LONG",
+    "ODA-VEGETATION-FELTER",
+    "DCE-TA-M06-LYS",
+    "DMI-RADIA-GLOB"
+   ],
+   "note": "THE CLEAREST WIN IN THIS PASS. K11 says Kd and depth are both in the record and the product is rarely formed. It is better than that: ODA's Lyssvaekkelse topic publishes LYSPROCENT, the fitted percentage of surface irradiance already evaluated at each measured depth, alongside Kd and the regression diagnostics, at 566 historical stations; the Maaledybde topic pairs Secchi with bottom depth at 1,503; the vegetation topics give the depth limit and, in 'Maks dybde begraenset af', the reason the transect stopped - which is what separates a light-limited depth limit from a substrate-limited one. DCE's own M06 instruction publishes the Secchi-to-Kd conversion, and Secchi runs continuously from 1983 while Kd starts around 2014. Light at the bed against the 11-14% requirement, per area, over four decades, is a join."
+  },
+  "K12": {
+   "status": "none_found",
+   "source_ids": [
+    "K12-STENREV-GAP",
+    "GEUS-MARTA",
+    "L4-DEPOSIT-GAP",
+    "EMODNET-SEABED-USE"
+   ],
+   "note": "Neither the removal nor the restoration is published as data. GEUS Marta begins in 1980, after the stenfiskeri era, and holds no extraction volumes; Zenodo returns nothing for Laesoe Trindel; the ministries' own sites surface no stenrev dataset. K12 is testable in principle - a reef rebuild is a dated, located intervention - and the dates and locations have to be obtained from the projects."
+  },
+  "K13": {
+   "status": "none_found",
+   "source_ids": [
+    "K5-K6-K13-GAP",
+    "VANDA-API"
+   ],
+   "note": "No Danish seston particle-size spectrum and no filter-feeder larval condition index found; the nearest work is German. Treat as not-found-by-keyword rather than proven absent - DTU Aqua's mussel research is a plausible unindexed holder."
+  },
+  "K14": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-BUNDFAUNA-REPLICATES",
+    "ODA-BUNDFAUNA-LUCINIDER",
+    "ICES-ZOOBENTHOS-OBIS",
+    "BIOTIC-MARLIN"
+   ],
+   "note": "ANSWERABLE NOW. K14 says the fauna data carries species-level abundance and it does - 511 taxa, counts and three biomass measures per grab, at 3,468 historical stations, with 409,490 Danish benthic occurrences visible independently through OBIS as a cross-check. The missing half is a trait table, and BIOTIC is live, built for exactly this join, and covers the North Sea species pool. Functional diversity through time is a desk exercise, as the hypothesis says."
+  },
+  "L1": {
+   "status": "none_found",
+   "source_ids": [
+    "L1-GAP",
+    "PANGAEA-CORES",
+    "ODA-SEDKEMI-SPOR"
+   ],
+   "note": "THE MOST CONSEQUENTIAL GAP IN THIS PASS. Fifteen PANGAEA searches across every named Danish water body crossed with diatom, pigment, Pb-210 and Cs-137 return no dated stratigraphy from a Danish coastal core. The near-misses sharpen it: Andren's Baltic diatom cores are at Gotland; the Aarhus group that has published exactly this method pointed it at Ameralik Fjord in Greenland; the one recent Odense Fjord core is undated with no diatoms. The reference condition Denmark spends against therefore has no independent check, and the method to build one exists in the country."
+  },
+  "L2": {
+   "status": "partial",
+   "source_ids": [
+    "EU-INTERCAL-2013-480",
+    "L2-DERIVATION",
+    "WFD-DEFINITIONS"
+   ],
+   "note": "The choice is written down and the derivation is not. Decision 2013/480/EU gives the eelgrass depth-limit boundaries for the Danish and German open coast - EQR 0.90 High/Good and 0.74 Good/Moderate, 8.5 m and 7 m - which is the whole difference between passing and failing, agreed rather than measured. The chlorophyll boundary is deferred to an unresolved Annex II, and the four papers that document the Danish reference model are all paywalled with no open data or code. L2's one-line sensitivity calculation is unpublishable by an outsider for that reason."
+  },
+  "L3": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-SECCHI-LONG",
+    "ODA-STATION-COUNTS-CORRECTION",
+    "L2-DERIVATION",
+    "L1-GAP",
+    "ICES-OCEAN"
+   ],
+   "note": "MUCH BETTER THAN THE REGISTER ASSUMED, AND FOR AN UNEXPECTED REASON. L3 says almost every Danish series begins in the 1970s or later, at the loading maximum. The Secchi record in ODA runs unbroken from March 1983 at per-visit resolution, and the historical network is five to forty times larger than the counts in the earlier file suggested. So the start-year sensitivity surface can be computed on a real Danish optical series across four decades. What is still missing is the pre-monitoring evidence, which is L1's gap: without a dated core, there is no way to know whether even 1983 is near a peak or already past one."
+  },
+  "L4": {
+   "status": "partial",
+   "source_ids": [
+    "HORSENS-EELGRASS-TRANSPLANT",
+    "L4-DEPOSIT-GAP",
+    "ODA-VEGETATION-FELTER"
+   ],
+   "note": "The decisive evidence L4 asks for exists, once, and is not deposited. The Bisholt transplant in outer Horsens Fjord is a genuine controlled experiment - eelgrass planted July 2017, three treatments with their own coordinates including a bare-bottom disturbance control and a natural donor meadow, fauna sampled four times across 2018-2019 - published open access with summary statistics and no per-replicate data. Denmark's three best-known restoration efforts, NOVAGRASS, ReMAPP and Laesoe Trindel, return zero deposits from Zenodo and NOVAGRASS's own project page now 404s."
+  },
+  "L5": {
+   "status": "none_found",
+   "source_ids": [
+    "EMODNET-SEABED-HABITATS",
+    "ICES-VMS-SAR",
+    "OSPAR-ODIMS"
+   ],
+   "note": "THE WEAKEST-COVERED HYPOTHESIS IN THIS PASS. The list of Danish areas actually used as reference or least-disturbed sites was not located, so the cross-reference against trawling, dumping and contaminant coverage that L5 asks for could not be started. The ingredients for the second half are all in the earlier file - swept-area ratio, dumping submissions, contaminant coverage - and the first half, the list, is what is missing."
+  },
+  "L6": {
+   "status": "partial",
+   "source_ids": [
+    "EMODNET-SEABED-HABITATS",
+    "GEUS-MARTA",
+    "L6-GAP",
+    "GEUS-HAVBUNDSSEDIMENT",
+    "ODA-BUNDFAUNA-SEDIMENT"
+   ],
+   "note": "L6 is right and worse than it says. The habitat classification for Danish waters is reachable - 23,554 EUNIS/HELCOM HUB polygons over the Kattegat and the Belts - and it is a MODEL, predicted from environmental covariates. Queried for the same box, EMODnet's compiled ground-truthed survey layer returns 18 features and every one is German. So the degraded bed is not merely typed by its present state; for Danish waters it is typed by a model fitted to that present state, with no Danish survey polygons underneath. The history that would make a positive case - charts, stenfiskeri records, oyster beds - was not located and is likely an archive request rather than a download."
+  },
+  "R1": {
+   "status": "partial",
+   "source_ids": [
+    "EU-IED-TOC",
+    "ODA-STOFTRANSPORT",
+    "ASMALA-ROSKILDE-DOC",
+    "ODENSE-FJORD-CN",
+    "R1-FEDT-GAP",
+    "PUNKTKILDER-RAPPORT"
+   ],
+   "note": "A C:N CAN NOW BE FORMED FOR PART OF THE PROBLEM. Monthly riverine total N and COD are already at the same stations in ODA Stoftransport, and organic carbon to water is a reported Annex II pollutant for large EU industry - so a discharge C:N exists for the first time. Two things spoil it. TOC in that scheme may be calculated as COD/3 rather than measured, so the ratio can be an arithmetic restatement of what is already known; check the method flag. And FAT IS NOT A REPORTED POLLUTANT ANYWHERE - confirmed by grep across the whole EU specification - so an input with high carbon and zero nitrogen, which is R1's entire subject, is invisible by construction. Whether Danish permits require a measured fat concentration could not be established: the executive order's annexes sit behind a JavaScript app that serves no text."
+  },
+  "R2": {
+   "status": "none_found",
+   "source_ids": [
+    "R2-R4-R8-R9-R10-GAP",
+    "PANGAEA-AARHUS-ORGANICACIDS"
+   ],
+   "note": "No Danish marine priming experiment. A real one exists 100 km away in the German Bight - 13C-labelled algal protein added to natural sediment and tracked over 400 days - which shows the experiment is standard and that nobody has run it here."
+  },
+  "R3": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-BUNDFAUNA-SEDIMENT",
+    "ODA-BUNDFAUNA-REPLICATES",
+    "ODA-SEDKEMI-SPOR",
+    "R7-TOC-MAP-GAP"
+   ],
+   "note": "THE OBSTACLE IS A JOIN, NOT A MEASUREMENT, AND THE JOIN DOES NOT CLOSE. R3 needs deposited organic matter and its processing state against macrofaunal biomass at the same stations. The fauna is there with three biomass measures. The paired sediment topic at the same stations carries nine grain-size fractions, an oxidised-layer depth and a recorded smell - and NO loss on ignition and NO organic carbon. Organic content lives in Sedimentkemi at 18 and 38 stations, a different and much smaller set, and GEUS's national seabed products carry no TOC layer at all. So the two halves exist and sit at different places."
+  },
+  "R4": {
+   "status": "none_found",
+   "source_ids": [
+    "R2-R4-R8-R9-R10-GAP"
+   ],
+   "note": "No marine litter-bag or incubation study of characterised recalcitrant fractions along a nutrient gradient, Danish or otherwise. A genuine lignin-phenol depth record exists in the Gotland Basin - one site, Swedish waters, no nutrient gradient - and every nitrogen-by-lignin study that surfaces is terrestrial."
+  },
+  "R5": {
+   "status": "partial",
+   "source_ids": [
+    "FOSSING-METROL-AARHUS",
+    "PANGAEA-AARHUS-ORGANICACIDS",
+    "AL561-KATTEGAT-SKAGERRAK",
+    "ODA-VANDKEMI-HAV",
+    "METHANE-LIT"
+   ],
+   "note": "The measurements exist and the design does not. Porewater sulphate, methane AND hydrogen sulphide are published at depth resolution for Aarhus Bay from the 2004-2005 METROL cruises, and the AL561 cruise adds a 2021 Kattegat-to-Skagerrak transect. R5's discriminator is explicitly sulphide and methane production against SALINITY ALONG THE DANISH GRADIENT, and what exists is one bay plus one basin transect, neither of which spans the fresh-to-marine transition R5 is about. Note that ODA's marine water chemistry does carry Svovlbrinte as a parameter, so the water-column end is in the monitoring even though the sediment end is not."
+  },
+  "R6": {
+   "status": "partial",
+   "source_ids": [
+    "BORNHOLM-SEDEX",
+    "AL561-KATTEGAT-SKAGERRAK",
+    "R6-FE-S-GAP",
+    "ODA-SEDKEMI-SPOR"
+   ],
+   "note": "Every ingredient exists separately and nothing puts them in the same sample. Sequential phosphorus fractionation has been done properly at Bornholm, once, by a Dutch group on an IODP core. In-situ benthic phosphate RELEASE RATES exist at 15 Kattegat-Skagerrak stations. ODA's sediment topic carries an Fe-adsorbed P fraction at 18 stations. What does not exist for any Danish site is a paired sequential iron and sulphur extraction - AVS, pyrite S, ascorbate and dithionite Fe - so the Fe:S ratio R6 is built on cannot be computed."
+  },
+  "R7": {
+   "status": "partial",
+   "source_ids": [
+    "R7-TOC-MAP-GAP",
+    "AL561-KATTEGAT-SKAGERRAK",
+    "ODA-SEDKEMI-MFS",
+    "GEUS-HAVBUNDSSEDIMENT",
+    "ASMALA-ROSKILDE-DOC"
+   ],
+   "note": "R7 CALLS ITS DATA OBTAINABLE AND IT IS NOT. GEUS's national seabed sediment map classifies the top half metre into about seven texture classes and its only organic content is the qualitative rule that mud means over 10% fine organic matter; MARTA has no organic field; EMODnet Geology's organic-carbon layer is still under development. Danish sediment organic carbon at station resolution is ODA's 18 loss-on-ignition and 38 TOC stations, which are not arranged as a river-mouth transect. AL561 gives TOC along a transect - the wrong one, basin rather than estuarine."
+  },
+  "R8": {
+   "status": "none_found",
+   "source_ids": [
+    "R2-R4-R8-R9-R10-GAP"
+   ],
+   "note": "Seawater salting-out has been measured properly - for dinitrobenzaldehydes and nitrotoluenes. Never for lipids, anywhere. R8 is the link between group B's imported fat and group J's surface film and it rests on an experiment nobody has run."
+  },
+  "R9": {
+   "status": "none_found",
+   "source_ids": [
+    "R2-R4-R8-R9-R10-GAP"
+   ],
+   "note": "No comparative decay assay of local against novel material in a marine setting. The standardised Tea Bag Index protocol has been deployed in tidal wetlands in the Americas and never in Denmark."
+  },
+  "R10": {
+   "status": "none_found",
+   "source_ids": [
+    "R2-R4-R8-R9-R10-GAP",
+    "ODA-CTD"
+   ],
+   "note": "A Crossref search for cross-transplant decomposition across a salinity gradient returns salinity-gradient POWER GENERATION and no biology at all. The salinity gradient itself is fully measured in ODA-CTD; the incubation is not run."
+  },
+  "S1": {
+   "status": "partial",
+   "source_ids": [
+    "LOOP",
+    "GEUS-JORDART25K",
+    "GEUS-JORDART200K",
+    "S1-PAPERS",
+    "GEUS-NRETENTION"
+   ],
+   "note": "DENMARK ACTUALLY RUNS S1's EXPERIMENT, IN SIX CATCHMENTS. LOOP measures leaching from clay and sandy catchments under real management and reports them separately - SR305 gives -0.27 mg N/l/yr on clay against -0.58 on sand across 1990/91-2015/16, plus station-paired soil-water against drain-water nitrate. The medium is mapped at 1:25,000 by genesis class over 93% of the country. Two limits: six catchments is not a national validation of a national map, and the published resolution is annual per station so the event structure is aggregated away. THE FOLLOW-UP THAT MATTERS: the LOOP technical instructions state the raw per-date rows are in ODA, and this project already holds the ODA login the sub-agent lacked."
+  },
+  "S2": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "LOOP",
+    "S2-GAP"
+   ],
+   "note": "S2 says Denmark holds soil P status and does not carry it into the marine argument. The first half could not be confirmed in open form: no fosfortal, DGT-P, degree-of-saturation or fosforklasse layer by municipality, catchment or ID15 opland exists publicly. The only field-resolution Danish soil P found anywhere is the year-2000 Olsen-P survey of all 731 fields in the six LOOP catchments, 1,365 measurements, published as a sentence in a PDF. The legacy-P argument - the strongest land-side reason a load cut produces no marine response - has no inspectable national evidence base."
+  },
+  "S3": {
+   "status": "none_found",
+   "source_ids": [
+    "S1-PAPERS",
+    "S2-GAP"
+   ],
+   "note": "No sorption-desorption isotherm dataset for Danish soils. The mechanism has been demonstrated on Danish material by Danish groups - Heiberg et al. 2012 on redox-driven phosphate sorption and vivianite - and exists only as papers."
+  },
+  "S4": {
+   "status": "none_found",
+   "source_ids": [
+    "S1-PAPERS",
+    "BORNHOLM-SEDEX",
+    "ODA-SEDKEMI-SPOR",
+    "ODA-MARINE-NEGATIVES"
+   ],
+   "note": "S4's point made for us. ODA's marine sediment phosphorus is total P plus one Fe-adsorbed fraction and nothing else. Sequential fractionation of marine sediment P has been done on Danish material once, in Aarhus Bay in 1995, and next door at Bornholm on an IODP core in 2013 by a Dutch group. It is a seventy-year-old method and it is not routine."
+  },
+  "S5": {
+   "status": "aggregate_only",
+   "source_ids": [
+    "GEUS-KVARTAERTYKKELSE",
+    "GEUS-HAVBUNDSSEDIMENT",
+    "DDM",
+    "EMODNET-BATHY"
+   ],
+   "note": "Bathymetry is held. Sediment thickness is not, in the sense S5 needs. The seabed sediment map carries no thickness at all; the Quaternary thickness raster covers Danish waters but aggregates till and Holocene mud into one column, which is precisely the distinction between reactive and inert that S5 depends on; the NAG-TEC compilation measures basin fill to acoustic basement, kilometres, the wrong quantity. No Holocene mud-thickness product for Danish waters exists."
+  },
+  "S6": {
+   "status": "covered",
+   "source_ids": [
+    "GEUS-NRETENTION",
+    "ODA-TILFOERSEL",
+    "ODA-STOFTRANSPORT",
+    "LOOP"
+   ],
+   "note": "S6's own text says it requires no new measurement at all, and that is right. The national retention map is downloadable in three dated vintages WITH ITS OWN STANDARD-DEVIATION LAYER, so the sensitivity of the indsatsbehov to the retention estimate is computable; the monthly catchment flux series that would be refitted by era is already in ODA. What does not exist is anyone having done it: the vintage differences are model revisions and added virkemidler, not evidence that retention capacity has fallen."
+  },
+  "T1": {
+   "status": "partial",
+   "source_ids": [
+    "HOLMER-SULFIDE-FIGSHARE",
+    "ODA-LYSSVAEKKELSE",
+    "ODA-VANDKEMI-HAV",
+    "DCE-TA-M12-M18-GAP",
+    "PANGAEA-AARHUS-ORGANICACIDS"
+   ],
+   "note": "THE GAP HAS MOVED AND SHRUNK. T1 needs tissue sulphide, porewater sulphide and light at the bed at the same stations, and says monitoring does not do it. Light at the bed is now clearly available at 566 stations. Water-column hydrogen sulphide is an ODA parameter. Porewater sulphide is published for Aarhus Bay. TISSUE SULPHIDE HAS BEEN MEASURED IN DENMARK EXACTLY ONCE - three sites, one summer, 2012, five turfs each, by Hasler-Sheetal and Holmer - and light was not measured alongside it. So the binding constraint is no longer that light is unmeasured; it is that the plant has been analysed three times."
+  },
+  "T2": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-BUNDFAUNA-LUCINIDER",
+    "OBIS-GBIF-LUCINIDER",
+    "ODA-BUNDFAUNA-REPLICATES",
+    "ODA-VEGETATION-FELTER"
+   ],
+   "note": "T2 SAYS THE RECORDS ARE IN THE ODA FAUNA DATA IF ANYONE LOOKS, AND THEY ARE. Lucinoma borealis and Thyasira flexuosa are both selectable taxa in the 511-entry Artsliste list, so their abundance and biomass by station and date extract directly; OBIS and GBIF independently confirm 324-373 Danish Lucinoma records and over 7,500 Thyasira flexuosa records back to 1907. The limit is design, not taxonomy: the soft-bottom fauna stations are not placed inside seagrass beds and the occurrence records do not say whether the animal was in one, so 'beds that persist against beds that failed' needs a spatial join between the fauna stations and the vegetation transects, and most will not coincide."
+  },
+  "T3": {
+   "status": "partial",
+   "source_ids": [
+    "LABYRINTHULA-DK",
+    "ODA-VEGETATION-FELTER",
+    "DCE-TA-M12-M18-GAP"
+   ],
+   "note": "Not merely non-routine: ONE SITE, ONCE. Lemvig in Limfjorden, summer 2011, inside a European qPCR survey led from Kiel, reported as site-by-date means with the per-shoot values aggregated away. The fifteen OBIS Labyrinthula records for Denmark are genus-level 18S detections in water or sediment, not diagnoses on a plant, and OBIS returns zero for L. zosterae. The host-stress half of T3's discriminator exists nowhere alongside the pathogen half."
+  },
+  "T4": {
+   "status": "partial",
+   "source_ids": [
+    "HORSENS-EELGRASS-TRANSPLANT",
+    "L4-DEPOSIT-GAP",
+    "ENA-MGNIFY-DK-SEDIMENT"
+   ],
+   "note": "Trials exist; T4's design does not. The Horsens Fjord transplant is real, dated, located and controlled, and it measures FAUNA recovery. Nobody in Denmark has run the test T4 actually specifies - transplant into failed ground with and without sediment inoculation from a functioning bed - which is the marine version of the standard horticultural replant-disease assay and would cost very little."
+  },
+  "T5": {
+   "status": "partial",
+   "source_ids": [
+    "ENA-MGNIFY-DK-SEDIMENT",
+    "ENA-DK-COASTAL-16S",
+    "F8-GAP"
+   ],
+   "note": "T5 says sediment microbial community composition does not exist here; 1,459 Danish sediment BioSamples with coordinates and dates say otherwise. But every confirmed site is open basin or harbour sediment, principally the Aarhus Bay M5 station - none is eelgrass rhizosphere. So the composition exists and the comparison T5 needs, functioning bed against failed bed, has no material at either end, and the transfer assay has not been attempted."
+  },
+  "T6": {
+   "status": "none_found",
+   "source_ids": [
+    "ENA-MGNIFY-DK-SEDIMENT",
+    "DCE-TA-M12-M18-GAP"
+   ],
+   "note": "No rhizosphere community along a nutrient gradient for Denmark, and no tissue chemistry that would index host stress. T6 is the least-evidenced hypothesis in the T group after T8."
+  },
+  "T7": {
+   "status": "partial",
+   "source_ids": [
+    "PANGAEA-AARHUS-ORGANICACIDS",
+    "FOSSING-METROL-AARHUS",
+    "ODA-BUNDFAUNA-SEDIMENT",
+    "R6-FE-S-GAP"
+   ],
+   "note": "Half of T7 turns out to be published and open. Acetate, lactate, formate and propionate are measured at depth resolution in Aarhus Bay cores from December 2004, alongside sulphate reduction rates and methane - so 'porewater organic acids' is not the blank T7 assumes. The other half is genuinely absent: no dissolved Fe(II) or Mn(II) speciation for any Danish site after repeated searching, and no ethylene anywhere. One unexpected proxy: ODA's fauna-sediment topic records 'Oxideret lag (mm)', the measured depth of the oxidised surface layer, at every grab."
+  },
+  "T8": {
+   "status": "partial",
+   "source_ids": [
+    "HALOPHYTOPHTHORA-LIMFJORD",
+    "LABYRINTHULA-DK"
+   ],
+   "note": "The entire Danish marine oomycete record is one Limfjorden site inside a Dutch-led multi-country isolation survey. T8's actual claim is that anoxia selects these organisms, and nothing in that paper measures redox, so the causal half is untested rather than unsupported."
+  },
+  "D8": {
+   "status": "none_found",
+   "source_ids": [
+    "ODA-BUNDFAUNA-SEDIMENT",
+    "ODA-MARINE-NEGATIVES",
+    "CMEMS-BAL-WAV"
+   ],
+   "note": "BOTH VARIABLES ABSENT. Sediment erodibility has never been measured in Danish monitoring - no cohesive strength meter, no flume - and SURFACE-SEDIMENT CHLOROPHYLL is in neither ODA sediment topic, confirmed by enumerating both parameter lists. So D8's microphytobenthic biomass term has no Danish source at all. Two partial substitutes exist and should be named as substitutes: the fauna-sediment topic's nine grain-size fractions and its 'Oxideret lag (mm)', and modelled bed shear stress from the wave reanalyses already held."
+  },
+  "D9": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-BUNDFAUNA-REPLICATES",
+    "ODA-BUNDFAUNA-SEDIMENT",
+    "ODA-STATION-COUNTS-CORRECTION"
+   ],
+   "note": "D9's OWN PREMISE IS WRONG AND THAT MAKES IT TESTABLE. The hypothesis states 'Present design gives one grab per station'. A live extract returned 10 replicate Haps grabs at one station on 2025-05-07 and 7 at another on 2025-03-24, each replicate with ITS OWN latitude and longitude and a stated gear area of 143 cm2. Within-station spatial variance of abundance and biomass - mosaic against homogenised flat, which is the entire discriminator - is computable from data already reachable, across 3,468 historical stations. This is the most actionable single finding in the D group."
+  },
+  "D10": {
+   "status": "covered",
+   "source_ids": [
+    "ODA-BUNDFAUNA-SEDIMENT",
+    "GEUS-HAVBUNDSSEDIMENT",
+    "ODA-STATION-COUNTS-CORRECTION"
+   ],
+   "note": "ANSWERABLE NOW. D10 asks for sediment grain size by station and date and calls it collected historically but rarely analysed as a time series. ODA's fauna-sediment topic carries nine fractions from mud to stones per grab per date at 3,596 historical stations. GEUS's national map is one vintage and cannot give change; ODA can. The time series is a query."
+  },
+  "D11": {
+   "status": "partial",
+   "source_ids": [
+    "ODA-BUNDFAUNA-REPLICATES",
+    "BIOTIC-MARLIN",
+    "ODA-BUNDFAUNA-SEDIMENT",
+    "ODA-MARINE-NEGATIVES"
+   ],
+   "note": "Half of D11 is a desk exercise and the other half has no data. The bioturbator-to-biostabiliser biomass ratio can be built today: species-level abundance and three biomass measures from ODA, joined to BIOTIC's forty trait categories. What cannot be done is testing that ratio against MEASURED ERODIBILITY, because erodibility is measured nowhere in Denmark - the same blank that stops D8."
+  }
+ },
+ "gaps": [
+  {
+   "hypothesis": "L1",
+   "missing": "A dated sediment core with diatom or pigment stratigraphy from anywhere on the Danish coast. Fifteen PANGAEA searches across every named Danish water body crossed with diatom, pigment, Pb-210 and Cs-137 return nothing. The method is standard, the Aarhus group has published it - on Ameralik Fjord in Greenland. The reference condition Denmark is spending against therefore has no independent check, and this is the gap most worth closing."
+  },
+  {
+   "hypothesis": "J1",
+   "missing": "Any TEP measurement in Danish water. Searched twice with disjoint query sets. The nearest is GEOMAR's Boknis Eck series, monthly, 60-100 km away, which ended in 2013. Alcian blue is cheap and standard."
+  },
+  {
+   "hypothesis": "J2",
+   "missing": "Any sea-surface microlayer sample from Danish water. The PANGAEA records that mention Denmark are Kiel laboratory mesocosms."
+  },
+  {
+   "hypothesis": "J3",
+   "missing": "Any surfactant measurement, marine or in receiving waters. Confirmed against all four ODA modules and HELCOM's hazardous-substances programme. Whether a Miljoestyrelsen chemical survey ever measured LAS in Danish effluent is the one thread left unpulled - mst.dk publication paths returned 403 and 404."
+  },
+  {
+   "hypothesis": "J4",
+   "missing": "UV filters in Danish bathing water, in bathing season. The one dataset that measures all four compounds is sediment, 2015-2017, three Kattegat stations on the Swedish side. badevand.dk measures only E. coli and enterococci, so there is not even a collection route."
+  },
+  {
+   "hypothesis": "J5",
+   "missing": "Water-column or microlayer microplastic in Danish waters. EMODnet's microlitter net-trawl layer has zero Danish tows; its floating-microlitter product has no Danish contributor; ODA's plastic-in-biota table is built and empty. What exists is 64,000 rows of macro litter."
+  },
+  {
+   "hypothesis": "J7",
+   "missing": "DOC in Danish marine monitoring. ODA's marine water chemistry is eleven parameters and none of them is organic carbon. The only Danish marine DOC series is one fjord, twenty months, ending 2015."
+  },
+  {
+   "hypothesis": "K1",
+   "missing": "Phytoplankton CELL COUNTS. The composition is reachable through ICES DOME's feed into OBIS - 240,671 Danish occurrences, 1979-2023 - but OBIS and GBIF strip the abundance extension, so the diatom share needs an authenticated ICES DOME extraction. This is the highest-value follow-up in the pass and it is one account away, not closed."
+  },
+  {
+   "hypothesis": "K3",
+   "missing": "Tissue elemental analysis of any Danish marine primary producer. Confirmed absent from the NOVANA protocols themselves: M18 and M12 measure cover, depth limit, shoot density and species and analyse nothing."
+  },
+  {
+   "hypothesis": "K4",
+   "missing": "Any Danish thiamine assay, and access to the Swedish M74 series. Even in the Swedish record the published unit is frequency per river per year, so the per-female measurement is aggregated away."
+  },
+  {
+   "hypothesis": "K5",
+   "missing": "Marine B12 and dissolved cobalt for Danish or Baltic water."
+  },
+  {
+   "hypothesis": "K6",
+   "missing": "Iron speciation in Danish water. Total dissolved Fe exists in AL561 porewater; the available fraction, which is K6's whole point, is measured nowhere. GEOTRACES Baltic coverage remains unchecked rather than proven absent."
+  },
+  {
+   "hypothesis": "K8",
+   "missing": "Dissolved trace metals in the Danish marine water column. Not one, anywhere in routine monitoring. The gradient exists only as tissue burden in mussels."
+  },
+  {
+   "hypothesis": "K9",
+   "missing": "Selenium in Danish marine biota, and the Se:Hg ratio. Mercury is measured; selenium was not confirmed as a determinand, and the aggregators strip every concentration."
+  },
+  {
+   "hypothesis": "K12",
+   "missing": "Danish stone extraction volumes and locations for the stenfiskeri era, and reef restoration coordinates, tonnages and dates. GEUS Marta begins in 1980, after the removals, and holds no extraction volumes."
+  },
+  {
+   "hypothesis": "K13",
+   "missing": "Seston particle size spectra and filter-feeder larval condition indices for Denmark."
+  },
+  {
+   "hypothesis": "L2",
+   "missing": "The chlorophyll EQR boundary chain and the reference model's assumptions. The eelgrass boundaries are in Decision 2013/480/EU and readable; the chlorophyll boundary is deferred to an Annex II that did not resolve, and all four papers documenting the Danish derivation are paywalled with no data or code deposit."
+  },
+  {
+   "hypothesis": "L4",
+   "missing": "Per-replicate data from any Danish restoration trial. The Horsens Fjord transplant is published as summary statistics; NOVAGRASS, ReMAPP and Laesoe Trindel return zero deposits from Zenodo and NOVAGRASS's project page now 404s."
+  },
+  {
+   "hypothesis": "L5",
+   "missing": "The list of Danish areas actually used as reference or least-disturbed sites. Without it the cross-reference against trawling, dumping and contaminant coverage cannot begin. This is the least-covered hypothesis in the pass."
+  },
+  {
+   "hypothesis": "L6",
+   "missing": "Historical Danish seabed structure - digitised sea charts, stenfiskeri records, oyster bed maps - and, unexpectedly, ground-truth habitat survey polygons. EMODnet's compiled survey layer returns 18 features for the Danish Kattegat and Belts and every one is German, so the Danish habitat classification rests on a model fitted to the present state."
+  },
+  {
+   "hypothesis": "R1",
+   "missing": "Fat as a discharge parameter. Confirmed absent from the entire EU Annex II pollutant list. Whether Danish permits require a measured fat concentration could not be established because retsinformation.dk serves no text to any fetch; settle it with one named facility's udledningstilladelse. Note also that reported TOC may be calculated as COD/3 rather than measured."
+  },
+  {
+   "hypothesis": "R2",
+   "missing": "Any Danish marine sediment priming experiment. One exists 100 km away in the German Bight."
+  },
+  {
+   "hypothesis": "R3",
+   "missing": "Sediment organic content AT the fauna stations. The fauna-sediment topic carries grain size and no loss on ignition; loss on ignition lives in a different, much smaller station set; and GEUS's national seabed products carry no TOC layer at all."
+  },
+  {
+   "hypothesis": "R4",
+   "missing": "Decay of characterised recalcitrant fractions along a nutrient gradient, marine, anywhere. The one Baltic lignin-phenol record is a single Gotland site with no gradient."
+  },
+  {
+   "hypothesis": "R5",
+   "missing": "Porewater sulphide and methane ALONG THE DANISH SALINITY GRADIENT. The measurements exist for one bay in 2004-2005 and one basin transect in 2021; the fresh-to-marine transition R5 is about is not spanned by either."
+  },
+  {
+   "hypothesis": "R6",
+   "missing": "Paired sequential iron and sulphur extraction - AVS, pyrite S, ascorbate and dithionite Fe - on any Danish sediment. Every ingredient exists separately; nothing puts them in one sample, so the Fe:S ratio cannot be computed."
+  },
+  {
+   "hypothesis": "R7",
+   "missing": "Sediment organic carbon along a salinity transect from a Danish river mouth, and a Danish sediment TOC map of any kind. R7's claim that this is obtainable is wrong."
+  },
+  {
+   "hypothesis": "R8",
+   "missing": "Lipid partitioning by salinity. Seawater salting-out has been measured for nitroaromatics and never for lipids, anywhere."
+  },
+  {
+   "hypothesis": "R9",
+   "missing": "Comparative decay of local against novel material in a marine setting. The Tea Bag Index has never been deployed in Denmark."
+  },
+  {
+   "hypothesis": "R10",
+   "missing": "Cross-transplant incubations across the salinity front. A literature search returns salinity-gradient power generation and no biology."
+  },
+  {
+   "hypothesis": "S2",
+   "missing": "Danish soil phosphorus status by area. No fosfortal, DGT-P, saturation degree or fosforklasse layer exists in open form at any spatial unit. The only field-resolution soil P found anywhere is a year-2000 Olsen-P survey of 731 fields in six catchments, published as a sentence in a PDF."
+  },
+  {
+   "hypothesis": "S3",
+   "missing": "Sorption-desorption isotherms for Danish soils. The mechanism is demonstrated in papers and exists as no dataset."
+  },
+  {
+   "hypothesis": "S4",
+   "missing": "Fractionated sediment phosphorus. ODA gives total P and one Fe-adsorbed fraction. Sequential fractionation has been applied to Danish marine sediment once, in 1995."
+  },
+  {
+   "hypothesis": "S5",
+   "missing": "Holocene mud thickness for Danish waters. The seabed map has no thickness; the Quaternary raster merges till and mud; NAG-TEC measures to basement."
+  },
+  {
+   "hypothesis": "T1",
+   "missing": "Eelgrass TISSUE sulphide. Measured in Denmark once - three sites, one summer, 2012, five turfs each. The light-at-the-bed half of T1's triad turns out to be well covered, so the plant is now the binding constraint."
+  },
+  {
+   "hypothesis": "T3",
+   "missing": "Labyrinthula screening beyond one site. Lemvig, summer 2011, in a Kiel-led European survey, reported as site-by-date means. Nothing measures host stress alongside it."
+  },
+  {
+   "hypothesis": "T4",
+   "missing": "A transplant trial with sediment treatment - inoculation from a functioning bed against none. The marine replant-disease assay has not been run in Denmark, and it is cheap."
+  },
+  {
+   "hypothesis": "T5",
+   "missing": "Sediment microbial community from inside a seagrass bed, and any transfer assay. 1,459 Danish sediment BioSamples exist and every confirmed site is open basin or harbour sediment."
+  },
+  {
+   "hypothesis": "T6",
+   "missing": "Rhizosphere community composition along a nutrient gradient. Nothing at all."
+  },
+  {
+   "hypothesis": "T7",
+   "missing": "Dissolved Fe(II) and Mn(II) porewater speciation for any Danish site, and ethylene anywhere. Organic acids turn out to be published for Aarhus Bay, so this is the remaining half."
+  },
+  {
+   "hypothesis": "T8",
+   "missing": "Any pairing of oomycete or labyrinthulid abundance with sediment redox. The whole Danish marine oomycete record is one Limfjorden site in a Dutch-led survey that measures no redox."
+  },
+  {
+   "hypothesis": "D8",
+   "missing": "Sediment erodibility (cohesive strength meter or flume) AND surface-sediment chlorophyll. Neither is measured anywhere in Denmark; both parameter lists were enumerated to confirm it. This is the only hypothesis in the D group with no Danish data at either end."
+  },
+  {
+   "hypothesis": "D11",
+   "missing": "Measured erodibility to test the stabiliser/destabiliser ratio against. The ratio itself can be built today from ODA fauna joined to BIOTIC traits."
+  }
+ ],
+ "_caveats": {
+  "how_this_was_searched": "Six parallel research passes - the land side, baseline and counterfactual, sediment sickness, surface film, nutrient depletion, and decay - plus direct authenticated work by the lead inside ODA. The sub-agents had no ODA login; the lead did, and used it. Nothing is listed because it ought to exist.",
+  "what_the_lead_verified_personally": "The complete ODA Hav topic tree, enumerated node by node: ten root topics, their leaves, every criterion option list and every output-field list. Three topics the earlier pass never opened - Maaledybde, Marint affald and Plastik i biota. Live data extracts parsed row by row: 43 rows of bundfauna across two stations, 4,044 rows of Maaledybde, 161,594 rows of Lyssvaekkelse, 1,823 rows of marine water chemistry across two stations, 18,653 rows for one Kattegat station over 2000-2012, and period-filtered samples establishing the Secchi record back to March 1983. The station-count correction was measured directly for nine topics with a fresh session each time.",
+  "ODA_DATE_FORMAT": "OPERATIONAL WARNING THAT AFFECTS THIS PROJECT'S OWN CODE. ODA's period criterion accepts DD-MM-YYYY and silently returns ZERO ROWS for YYYY-MM-DD. scripts/fetch_oda.py set_period() sends 'yyyy-mm-dd', so any run of it with --from and --to produced an empty extract that looks exactly like 'there is no data for this period'. The whole marine record appeared to start in 2025 until the format was changed. Fix set_period() before the next extract, and re-check any conclusion drawn from a dated fetch_oda run.",
+  "ODA_STATION_COUNTS": "SECOND OPERATIONAL WARNING, AND IT CHANGES NUMBERS IN THE EARLIER FILE. The station criterion list is filtered by the period currently set. With no period set it offers only the currently reporting network. Every station count in data_sources.json was read in that default state and is therefore the current network, not the record - CTD 185 against 1,527 historically, marine water chemistry 205 against 1,125, bundfauna 78 against 3,468, sediment MFS 38 against 542, mussel tissue 25 against 327. See source ODA-STATION-COUNTS-CORRECTION.",
+  "the_shape_of_the_finding": "The first pass found Denmark strong on LOAD and weak on DISTURBANCE and TOXICITY. This pass finds a third pattern: Denmark is strong on GEOMETRY and blank on CHEMISTRY OF LIVING THINGS. Light, depth, grain size, cover, species identity, spatial position - all measured at fine resolution and mostly unused. Anything requiring an analysis of tissue or of a molecule that is not a nutrient - eelgrass tissue sulphide, plant micronutrients, TEP, surfactants, DOC, B12, thiamine, iron speciation, selenium, sediment chlorophyll - is absent, and absent by design rather than by accident: the technical instructions say what is measured and tissue chemistry is not in them.",
+  "the_answerable_now_list": "The hypotheses that turn out to be testable from data this project can already reach, with no new source and no new measurement: K11 (light at the bed, from ODA Lysprocent plus bottom depth plus the vegetation depth limits, back to 1983 via the published Secchi conversion); D9 (within-station spatial variance of fauna, from the 7-10 replicate grabs per visit that each carry their own coordinates); D10 (grain size time series, from nine fractions per grab at 3,596 historical stations); K14 and half of D11 (functional diversity, from 511 species-level taxa with three biomass measures joined to BIOTIC traits); K7 (aragonite saturation, from ODA pH plus total alkalinity plus CTD salinity and temperature); K10 (community against salinity variance); S6 (retention refitted by era, from flux data already held); L3 (start-year sensitivity on a 42-year Secchi series); and T2's presence half (Lucinoma borealis and Thyasira flexuosa are both in the ODA taxon list). J6 is one processing step away rather than one query.",
+  "the_one_extraction_that_would_unlock_most": "An authenticated ICES DOME extraction. Danish phytoplankton composition turns out to be reachable through DOME's feed into OBIS - 240,671 occurrences, 1979-2023 - but the aggregators strip the cell counts. Those counts would move K1, K2, A9 and F7 from partial to testable in one step, and the same extraction would supply the contaminant concentrations that K8 and K9 need. It requires an ICES account, not a negotiation.",
+  "what_this_pass_could_not_reach": "The Danish universities' publication repositories (pure.au.dk, orbit.dtu.dk, findresearcher.sdu.dk search interfaces) and Inter-Research all return 401/403 Cloudflare challenges to automated fetches; the workaround that worked is to resolve a DOI through Unpaywall to a direct file path and fetch that. retsinformation.dk serves no body text to any fetch, which is why R1's fat question is unresolved. All VLIZ-hosted infrastructure (marinespecies.org, emodnet-biology.eu) refused connections throughout, so WoRMS traits and Polytraits are unverified rather than absent. mst.dk exposes an /api/search endpoint returning Lorem-ipsum placeholder content - do not cite it.",
+  "corrections_to_the_earlier_file": "Four. (1) Station counts throughout are default-state, not historical - see ODA-STATION-COUNTS-CORRECTION. (2) 'Danish marine phytoplankton species counts are reachable by nobody outside the system' is too strong: composition is reachable through ICES DOME into OBIS, only the abundance is not. (3) The F8 microbial blank holds for monitoring but not for the record - 436 Danish coastal sequencing runs exist in ENA. (4) A9's 'no N-fixation rate measurement exists for Danish waters' is contradicted by the 2023 Odense Fjord dataset, which reports N2 fixation rates directly.",
+  "cross_references_to_data_sources_json": [
+   "BADEVAND",
+   "CMEMS-BAL-BGC",
+   "CMEMS-BAL-PHY",
+   "CMEMS-BAL-WAV",
+   "DDM",
+   "DMA-AIS",
+   "EMODNET-BATHY",
+   "EMODNET-SEABED-USE",
+   "EMODNET-VESSELDENSITY",
+   "F8-GAP",
+   "ICES-OCEAN",
+   "ICES-VMS-SAR",
+   "METHANE-LIT",
+   "ODA-CTD",
+   "ODA-MFS-FISK",
+   "ODA-MFS-MUSLING",
+   "ODA-SEDKEMI-MFS",
+   "ODA-SEDKEMI-SPOR",
+   "ODA-STOFTRANSPORT",
+   "ODA-TILFOERSEL",
+   "ODA-VANDKEMI-HAV",
+   "OSPAR-ODIMS",
+   "PANGAEA-CORES",
+   "PUNKTKILDER-RAPPORT",
+   "VANDA-API",
+   "WFD-DEFINITIONS"
+  ]
+ }
+}

@@ -225,6 +225,20 @@ def stream_csv(out_fh, skip_header, budget_mb, timeout=900):
     return rows, written, None
 
 
+def halve(a, b):
+    """Split one period in two. Returns [] once it is down to a single day."""
+    if not a or not b:
+        return []
+    import datetime as dt
+    d0 = dt.date(*map(int, a.split("-")))
+    d1 = dt.date(*map(int, b.split("-")))
+    if (d1 - d0).days < 1:
+        return []
+    mid = d0 + (d1 - d0) // 2
+    nxt = mid + dt.timedelta(days=1)
+    return [(a, mid.isoformat()), (nxt.isoformat(), b)]
+
+
 def split_periods(frm, to, years):
     """Slice the requested span into chunks of `years`, or one open request.
 
@@ -265,8 +279,14 @@ def run(topic, frm, to, years, limit, max_mb):
         return 1
     field_id, sltype = crit[key]
 
+    # The station list is period-dependent, and the default state offers only the
+    # CURRENTLY ACTIVE network. For CTD that is 185 stations against 1,527 in the
+    # record - so listing before setting the period silently discards seven eighths
+    # of the history, which is exactly the era this project cares about. Set the
+    # period first, always.
+    set_period(frm, to)
     stations = station_list(field_id, sltype)
-    log(f"  {len(stations):,} stations offered")
+    log(f"  {len(stations):,} stations offered for {frm or 'start'}..{to or 'end'}")
     reg = os.path.join(DEST, f"{topic}_stations.tsv")
     with open(reg, "w", encoding="utf-8") as f:
         f.write("checkbox\tnr\tname\n")
@@ -305,10 +325,17 @@ def run(topic, frm, to, years, limit, max_mb):
     oda.call("HentData_KritChanged", pause=0.8)
     select_all_output(panes["HentData_FillDataRun"])
 
-    periods = split_periods(frm, to, years)
+    # A work queue rather than a fixed list: a period the server refuses to stream
+    # is halved and both halves go back on the queue. Data density varies enormously
+    # across the record - the 1970s are thin and the 2000s are not - so a single
+    # chunk size is either wasteful early or refused late.
+    queue = list(reversed(split_periods(frm, to, years)))
     rows_total = bytes_total = 0
+    done = 0
     with gzip.open(out, "wb", compresslevel=6) as fh:   # replace, never grow
-        for n, (a, b) in enumerate(periods, 1):
+        while queue:
+            a, b = queue.pop()
+            n = done + 1
             if a or b:
                 set_period(a, b)
                 select_all_output(panes["HentData_FillDataRun"])
@@ -316,9 +343,13 @@ def run(topic, frm, to, years, limit, max_mb):
             # before that, it describes the whole record and is always true.
             c, o = oda.call("HentData_KritChanged", pause=0.6)
             if "HentDataStor=true" in o:
-                log(f"  [{n}] {a or 'start'}..{b or 'end'} is too large to stream. "
-                    f"getcsv.aspx returns an error for these, and the portal wants "
-                    f"the extract ordered instead. Narrow --years and retry.")
+                halves = halve(a, b)
+                if halves:
+                    log(f"  [{n}] {a}..{b} too large to stream; splitting")
+                    queue.extend(reversed(halves))
+                    continue
+                log(f"  [{n}] {a}..{b} too large to stream and cannot be split "
+                    f"further. The portal wants this ordered rather than streamed.")
                 return 2
             room = min((max_mb - bytes_total) * 10, free_mb(DEST) - MIN_FREE_MB)
             if room <= 0:
@@ -326,14 +357,15 @@ def run(topic, frm, to, years, limit, max_mb):
                     f"({bytes_total:,.0f} MB written, "
                     f"{free_mb(DEST):,.0f} MB free)")
                 break
-            rows, nbytes, err = stream_csv(fh, skip_header=(n > 1), budget_mb=room)
+            rows, nbytes, err = stream_csv(fh, skip_header=(done > 0), budget_mb=room)
             if err:
                 log(f"  [{n}] {err}")
                 return 3
             rows_total += rows
-            bytes_total = os.path.getsize(out) / 1e6 if os.path.exists(out) else 0
+            done += 1
             fh.flush()
-            log(f"  [{n}/{len(periods)}] {a or 'start'}..{b or 'end'}: "
+            bytes_total = os.path.getsize(out) / 1e6 if os.path.exists(out) else 0
+            log(f"  [{n}, {len(queue)} left] {a or 'start'}..{b or 'end'}: "
                 f"{rows:,} rows, {nbytes/1e6:,.1f} MB raw "
                 f"({rows_total:,} rows, {bytes_total:,.0f} MB on disk)")
             time.sleep(2.0)

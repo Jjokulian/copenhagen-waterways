@@ -76,6 +76,39 @@
       margin-bottom:14px}
     main{padding-top:28px}
   }
+
+/* Glossary tooltips. Every `M1`, `V3`, `K8` in a generated document is a
+   reference into docs/data/glossary.json, which is emitted from the same source
+   the documents are - so a definition lives in one place and every mention of it
+   anywhere on the site stays in step. Hover or keyboard focus both open it. */
+.term{
+  cursor:help; border-bottom:1px dotted var(--muted,#66727f);
+  border-bottom-color:color-mix(in srgb, currentColor 35%, transparent);
+}
+.term:hover,.term:focus{border-bottom-style:solid}
+a.term{color:inherit; text-decoration:none}
+#tip u{display:block; margin-top:7px; text-decoration:none; font-size:11.5px;
+  color:var(--muted,#66727f)}
+#glosshint{margin:0 0 18px; padding:9px 12px; border-left:3px solid var(--rule,#d7dee6);
+  color:var(--ink-2,#3d4a58); font-size:13px; background:var(--sunk,#eaeef3);
+  border-radius:0 5px 5px 0}
+code.gloss{
+  cursor:help; border-bottom:1px dotted currentColor;
+  text-decoration:none; outline-offset:2px;
+}
+#tip{
+  position:absolute; z-index:60; max-width:min(46ch,88vw);
+  padding:10px 12px; border:1px solid var(--rule,#d7dee6);
+  border-radius:7px; background:var(--surface,#fff); color:var(--ink,#111820);
+  box-shadow:0 2px 4px rgba(16,28,42,.07),0 12px 30px -12px rgba(16,28,42,.28);
+  font-size:13px; line-height:1.5; pointer-events:none;
+}
+#tip[hidden]{display:none}
+#tip b{display:block; font-weight:640; margin-bottom:3px}
+#tip em{display:block; font-style:normal; margin-top:7px; padding-top:7px;
+  border-top:1px solid var(--rule,#d7dee6); color:var(--ink-2,#3d4a58)}
+#tip i{display:block; font-style:normal; font-size:11px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--muted,#66727f); margin-bottom:5px}
 </style>
 </head>
 <body>
@@ -160,6 +193,140 @@ function current() {
   return DOCS.some(([f]) => f === want) ? want : DOCS[0][0];
 }
 
+
+/* ---- glossary tooltips ------------------------------------------------- */
+let GLOSS = null;
+const tipEl = Object.assign(document.createElement("div"),
+                            {id: "tip", hidden: true});
+document.body.appendChild(tipEl);
+
+async function glossary() {
+  if (GLOSS) return GLOSS;
+  try {
+    const r = await fetch("data/glossary.json", { cache: "force-cache" });
+    GLOSS = r.ok ? await r.json() : {};
+  } catch { GLOSS = {}; }
+  return GLOSS;
+}
+
+function placeTip(el) {
+  const r = el.getBoundingClientRect();
+  tipEl.hidden = false;
+  const t = tipEl.getBoundingClientRect();
+  // prefer below; flip above when it would run off the viewport
+  let top = r.bottom + scrollY + 8;
+  if (r.bottom + t.height + 16 > innerHeight && r.top > t.height + 16)
+    top = r.top + scrollY - t.height - 8;
+  let left = r.left + scrollX;
+  left = Math.min(left, scrollX + innerWidth - t.width - 12);
+  tipEl.style.top = top + "px";
+  tipEl.style.left = Math.max(scrollX + 8, left) + "px";
+}
+
+function showTip(el) {
+  const key = el.dataset.gloss || el.textContent.trim();
+  const g = el.classList.contains("term")
+    ? (GLOSS._terms || {})[key] : (GLOSS || {})[key];
+  if (!g) return;
+  tipEl.innerHTML = "";
+  const kind = document.createElement("i");
+  kind.textContent = g.kind || "term";
+  const label = document.createElement("b");
+  label.textContent = g.label || key;
+  const body = document.createElement("span");
+  body.textContent = g.text;
+  tipEl.append(kind, label, body);
+  if (g.why) {                       // why it is called that, when that helps
+    const why = document.createElement("em");
+    why.textContent = g.why;
+    tipEl.append(why);
+  }
+  if (el.tagName === "A") {
+    const go = document.createElement("u");
+    go.textContent = "click to read more →";
+    tipEl.append(go);
+  }
+  placeTip(el);
+}
+const hideTip = () => { tipEl.hidden = true; };
+
+async function decorate(root, file) {
+  const g = await glossary();
+  // Only documents that speak this vocabulary. Register ids are short and collide
+  // with real identifiers elsewhere - REGISTER.md lists outfalls named U2 and U4.
+  if (!g._docs || !g._docs.includes(file)) return;
+  for (const el of root.querySelectorAll("code")) {
+    const id = el.textContent.trim();
+    if (!g[id] || el.closest("pre")) continue;
+    arm(el, "gloss", id, `${id}: ${g[id].label}. ${g[id].text}`);
+  }
+  const n = markTerms(root, g._terms || {});
+  if (n || root.querySelector(".gloss")) {
+    const hint = document.createElement("p");
+    hint.id = "glosshint";
+    hint.textContent = "Underlined words and codes have definitions — hover or "
+      + "tab to one to read it. Terms link out to a fuller article. Anything not "
+      + "underlined and unfamiliar is worth looking up; this page cannot mark "
+      + "every word somebody has not met before.";
+    root.insertBefore(hint, root.firstChild);
+  }
+}
+
+function arm(el, cls, key, aria) {
+  el.classList.add(cls);
+  el.dataset.gloss = key;
+  el.tabIndex = 0;
+  el.setAttribute("aria-label", aria);
+  el.addEventListener("mouseenter", () => showTip(el));
+  el.addEventListener("focus", () => showTip(el));
+  el.addEventListener("mouseleave", hideTip);
+  el.addEventListener("blur", hideTip);
+}
+
+/* Mark the FIRST occurrence of each term only. Marking every one turns a page of
+   technical prose into a minefield of dotted underlines; marking the first gives
+   a reader the definition at the point they first meet the word, which is when
+   they need it. */
+function markTerms(root, terms) {
+  const keys = Object.keys(terms).sort((a, b) => b.length - a.length);
+  if (!keys.length) return 0;
+  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp("\\b(" + keys.map(esc).join("|") + ")(s|es|ity|ation)?\\b", "i");
+  const seen = new Set();
+  const lower = new Map(keys.map(k => [k.toLowerCase(), k]));
+
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n) {
+      if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      const bad = n.parentElement.closest("code,pre,a,h1,h2,h3,h4,h5,h6,i,#tip");
+      return bad ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  const nodes = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+
+  for (const node of nodes) {
+    const m = re.exec(node.nodeValue);
+    if (!m) continue;
+    const key = lower.get(m[1].toLowerCase());
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    const after = node.splitText(m.index);
+    after.splitText(m[0].length);
+    const link = document.createElement("a");
+    link.textContent = after.nodeValue;
+    link.href = "https://en.wikipedia.org/wiki/Special:Search?search="
+              + encodeURIComponent(key);
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    after.parentNode.replaceChild(link, after);
+    arm(link, "term", key, `${key}: ${terms[key].text}. Opens Wikipedia.`);
+  }
+  return seen.size;
+}
+addEventListener("keydown", e => { if (e.key === "Escape") hideTip(); });
+addEventListener("scroll", hideTip, { passive: true });
+
 async function show() {
   const file = current();
   for (const a of navEl.querySelectorAll("a"))
@@ -176,6 +343,8 @@ async function show() {
       t.parentNode.insertBefore(w, t);
       w.appendChild(t);
     }
+    hideTip();
+    decorate(docEl, file);
     document.title = (DOCS.find(([f]) => f === file) || [, "Reports"])[1]
       + " — Copenhagen Waterways";
     window.scrollTo(0, 0);

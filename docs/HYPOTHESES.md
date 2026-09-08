@@ -131,7 +131,7 @@ Iltsvind is one *kind* of dying out, with one particular chain of consequences. 
 
 The convergence is not a coincidence and it is not vagueness about the damage. It follows from what a depletion actually does.
 
-**A depletion does not kill indiscriminately. It removes exactly those organisms that required the missing thing, and releases those that did not.** Oxygen depletion kills aerobes and releases anaerobes. Silicon depletion removes diatoms and releases flagellates. Cobalamin depletion removes the auxotrophs and leaves the bacteria that make it. Carbonate depletion removes calcifiers and no one else. Light starvation removes what is rooted at depth. Each is a filter with its own specific shape.
+**A depletion does not kill indiscriminately. It removes exactly those organisms that required the missing thing, and releases those that did not.** Oxygen depletion kills aerobes and releases anaerobes. Silicon depletion removes diatoms and releases flagellates. Cobalamin depletion removes the algae that cannot make vitamin B12 for themselves and leaves the bacteria that make it for them. Carbonate depletion removes calcifiers and no one else. Light starvation removes what is rooted at depth. Each is a filter with its own specific shape.
 
 But every filter selects in the same direction, because what survives a filter is whatever had the fewest requirements to begin with — fast, small, short-lived, unselective, needing no structure and no partner and no particular chemistry. Run any filter and you enrich for that. Run several and you enrich harder.
 
@@ -1258,7 +1258,7 @@ Thiamine deficiency causes mass mortality of fry and adults; Baltic salmon M74 s
 
 **Outcomes:** O4, O8
 
-Most eukaryotic algae are B12 auxotrophs and depend on bacteria to supply it. The vitamin, and the cobalt at its centre, is a limiting resource produced by one part of the community for another.
+Most algae cannot make vitamin B12 for themselves and have to get it ready-made from bacteria — they are *auxotrophs* for it. The vitamin, and the cobalt at its centre, is a limiting resource produced by one part of the community for another.
 
 **Predicts.** Change the bacterial community and you change what algae can grow, with no change in any nutrient that is measured.
 
