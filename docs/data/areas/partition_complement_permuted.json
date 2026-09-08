@@ -1,0 +1,251 @@
+{
+ "_what": "Each feature subset's basketing compared against the basketing built from every dimension it left out.",
+ "_why": "An arbitrary other subset may itself produce a garbage basketing, so agreeing with it establishes nothing; the complement is the strongest alternative available. And a MEAN over pairs lets bad baskets vote - if random k-combinations mostly do not produce good baskets, the mean measures what bad baskets have in common. The distribution answers whether random k-combinations are good basket creation at all.",
+ "_reading": "Read the spread, not the centre. A high median with a tight spread means most k-combinations find the same structure. A low median with a long right tail means most are junk and a few specific dimensions carry everything - in which case the identity of those dimensions is the finding, and any average over subsets is a popularity contest.",
+ "_per_pair": "ARI is an aggregate over all station pairs, so a distribution of ARIs still rests on a mean one level down. per_pair holds the undigested version: for each of the station pairs, how many of the subset/complement trials agreed about it, and how many bundled it together. A bimodal agreement histogram means the kind-classification is decided for most pairs and contested for a few; a flat one means the features decide the answer.",
+ "per_pair": {
+  "pairs": 11175,
+  "trials": 255,
+  "agreement_by_decile": [
+   0,
+   12,
+   21,
+   34,
+   36,
+   41,
+   75,
+   103,
+   157,
+   10696
+  ],
+  "bundled_together_by_decile": [
+   10816,
+   194,
+   84,
+   43,
+   21,
+   7,
+   6,
+   2,
+   2,
+   0
+  ]
+ },
+ "permuted": true,
+ "stations": 150,
+ "groups": 84,
+ "contiguous_null_ari": 0.368,
+ "variables": [
+  "fluo",
+  "oxy_bed",
+  "oxy_surf",
+  "oxysat_bed",
+  "oxysat_surf",
+  "sal_bed",
+  "sal_surf",
+  "temp_bed",
+  "temp_surf"
+ ],
+ "results": [
+  {
+   "features_in_basket": 1,
+   "subsets": 9,
+   "of_possible": 9,
+   "complement_size": 8,
+   "complement_agreement": {
+    "min": 0.064,
+    "q25": 0.102,
+    "median": 0.129,
+    "q75": 0.138,
+    "max": 0.152,
+    "mean": 0.115
+   },
+   "best": [
+    {
+     "features": "oxy_surf",
+     "ari": 0.152
+    },
+    {
+     "features": "oxysat_bed",
+     "ari": 0.14
+    },
+    {
+     "features": "oxy_bed",
+     "ari": 0.138
+    }
+   ],
+   "worst": [
+    {
+     "features": "temp_surf",
+     "ari": 0.102
+    },
+    {
+     "features": "fluo",
+     "ari": 0.074
+    },
+    {
+     "features": "sal_surf",
+     "ari": 0.064
+    }
+   ],
+   "vs_official": {
+    "min": 0.115,
+    "q25": 0.127,
+    "median": 0.135,
+    "q75": 0.147,
+    "max": 0.199,
+    "mean": 0.141
+   }
+  },
+  {
+   "features_in_basket": 2,
+   "subsets": 36,
+   "of_possible": 36,
+   "complement_size": 7,
+   "complement_agreement": {
+    "min": 0.072,
+    "q25": 0.1,
+    "median": 0.118,
+    "q75": 0.153,
+    "max": 0.175,
+    "mean": 0.122
+   },
+   "best": [
+    {
+     "features": "oxy_surf+oxysat_bed",
+     "ari": 0.175
+    },
+    {
+     "features": "sal_bed+temp_bed",
+     "ari": 0.171
+    },
+    {
+     "features": "oxy_surf+sal_surf",
+     "ari": 0.166
+    }
+   ],
+   "worst": [
+    {
+     "features": "fluo+temp_bed",
+     "ari": 0.078
+    },
+    {
+     "features": "oxysat_surf+sal_surf",
+     "ari": 0.075
+    },
+    {
+     "features": "fluo+oxysat_surf",
+     "ari": 0.072
+    }
+   ],
+   "vs_official": {
+    "min": 0.103,
+    "q25": 0.126,
+    "median": 0.139,
+    "q75": 0.15,
+    "max": 0.169,
+    "mean": 0.139
+   }
+  },
+  {
+   "features_in_basket": 3,
+   "subsets": 84,
+   "of_possible": 84,
+   "complement_size": 6,
+   "complement_agreement": {
+    "min": 0.062,
+    "q25": 0.101,
+    "median": 0.124,
+    "q75": 0.152,
+    "max": 0.222,
+    "mean": 0.127
+   },
+   "best": [
+    {
+     "features": "oxy_surf+oxysat_bed+sal_bed",
+     "ari": 0.222
+    },
+    {
+     "features": "oxy_bed+oxy_surf+oxysat_surf",
+     "ari": 0.196
+    },
+    {
+     "features": "oxysat_bed+sal_bed+temp_bed",
+     "ari": 0.193
+    }
+   ],
+   "worst": [
+    {
+     "features": "oxy_surf+temp_bed+temp_surf",
+     "ari": 0.073
+    },
+    {
+     "features": "fluo+oxy_bed+temp_surf",
+     "ari": 0.07
+    },
+    {
+     "features": "fluo+oxysat_bed+oxysat_surf",
+     "ari": 0.062
+    }
+   ],
+   "vs_official": {
+    "min": 0.074,
+    "q25": 0.126,
+    "median": 0.139,
+    "q75": 0.153,
+    "max": 0.183,
+    "mean": 0.138
+   }
+  },
+  {
+   "features_in_basket": 4,
+   "subsets": 126,
+   "of_possible": 126,
+   "complement_size": 5,
+   "complement_agreement": {
+    "min": 0.058,
+    "q25": 0.1,
+    "median": 0.126,
+    "q75": 0.159,
+    "max": 0.244,
+    "mean": 0.129
+   },
+   "best": [
+    {
+     "features": "fluo+oxysat_bed+sal_bed+temp_bed",
+     "ari": 0.244
+    },
+    {
+     "features": "oxy_surf+oxysat_bed+oxysat_surf+temp_surf",
+     "ari": 0.234
+    },
+    {
+     "features": "fluo+oxysat_bed+temp_bed+temp_surf",
+     "ari": 0.231
+    }
+   ],
+   "worst": [
+    {
+     "features": "oxy_surf+oxysat_bed+sal_surf+temp_bed",
+     "ari": 0.062
+    },
+    {
+     "features": "fluo+oxy_surf+oxysat_bed+temp_bed",
+     "ari": 0.06
+    },
+    {
+     "features": "oxy_bed+oxysat_bed+sal_surf+temp_surf",
+     "ari": 0.058
+    }
+   ],
+   "vs_official": {
+    "min": 0.098,
+    "q25": 0.123,
+    "median": 0.137,
+    "q75": 0.151,
+    "max": 0.193,
+    "mean": 0.137
+   }
+  }
+ ]
+}

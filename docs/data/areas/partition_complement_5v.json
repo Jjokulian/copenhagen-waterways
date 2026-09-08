@@ -1,0 +1,147 @@
+{
+ "_what": "Each feature subset's basketing compared against the basketing built from every dimension it left out.",
+ "_why": "An arbitrary other subset may itself produce a garbage basketing, so agreeing with it establishes nothing; the complement is the strongest alternative available. And a MEAN over pairs lets bad baskets vote - if random k-combinations mostly do not produce good baskets, the mean measures what bad baskets have in common. The distribution answers whether random k-combinations are good basket creation at all.",
+ "_reading": "Read the spread, not the centre. A high median with a tight spread means most k-combinations find the same structure. A low median with a long right tail means most are junk and a few specific dimensions carry everything - in which case the identity of those dimensions is the finding, and any average over subsets is a popularity contest.",
+ "_per_pair": "ARI is an aggregate over all station pairs, so a distribution of ARIs still rests on a mean one level down. per_pair holds the undigested version: for each of the station pairs, how many of the subset/complement trials agreed about it, and how many bundled it together. A bimodal agreement histogram means the kind-classification is decided for most pairs and contested for a few; a flat one means the features decide the answer.",
+ "per_pair": {
+  "pairs": 11175,
+  "trials": 15,
+  "agreement_by_decile": [
+   10,
+   6,
+   37,
+   23,
+   30,
+   21,
+   48,
+   39,
+   115,
+   10846
+  ],
+  "bundled_together_by_decile": [
+   10825,
+   88,
+   82,
+   28,
+   35,
+   10,
+   26,
+   11,
+   24,
+   46
+  ]
+ },
+ "permuted": false,
+ "stations": 150,
+ "groups": 84,
+ "contiguous_null_ari": 0.368,
+ "variables": [
+  "fluo",
+  "oxy_bed",
+  "oxy_surf",
+  "temp_bed",
+  "temp_surf"
+ ],
+ "results": [
+  {
+   "features_in_basket": 1,
+   "subsets": 5,
+   "of_possible": 5,
+   "complement_size": 4,
+   "complement_agreement": {
+    "min": 0.401,
+    "q25": 0.494,
+    "median": 0.504,
+    "q75": 0.557,
+    "max": 0.622,
+    "mean": 0.516
+   },
+   "best": [
+    {
+     "features": "temp_bed",
+     "ari": 0.622
+    },
+    {
+     "features": "temp_surf",
+     "ari": 0.557
+    },
+    {
+     "features": "oxy_bed",
+     "ari": 0.504
+    }
+   ],
+   "worst": [
+    {
+     "features": "oxy_bed",
+     "ari": 0.504
+    },
+    {
+     "features": "oxy_surf",
+     "ari": 0.494
+    },
+    {
+     "features": "fluo",
+     "ari": 0.401
+    }
+   ],
+   "vs_official": {
+    "min": 0.273,
+    "q25": 0.28,
+    "median": 0.287,
+    "q75": 0.349,
+    "max": 0.402,
+    "mean": 0.318
+   }
+  },
+  {
+   "features_in_basket": 2,
+   "subsets": 10,
+   "of_possible": 10,
+   "complement_size": 3,
+   "complement_agreement": {
+    "min": 0.491,
+    "q25": 0.543,
+    "median": 0.578,
+    "q75": 0.593,
+    "max": 0.695,
+    "mean": 0.571
+   },
+   "best": [
+    {
+     "features": "oxy_surf+temp_bed",
+     "ari": 0.695
+    },
+    {
+     "features": "oxy_bed+temp_surf",
+     "ari": 0.593
+    },
+    {
+     "features": "fluo+temp_surf",
+     "ari": 0.593
+    }
+   ],
+   "worst": [
+    {
+     "features": "oxy_bed+temp_bed",
+     "ari": 0.543
+    },
+    {
+     "features": "fluo+temp_bed",
+     "ari": 0.507
+    },
+    {
+     "features": "oxy_bed+oxy_surf",
+     "ari": 0.491
+    }
+   ],
+   "vs_official": {
+    "min": 0.254,
+    "q25": 0.293,
+    "median": 0.326,
+    "q75": 0.369,
+    "max": 0.402,
+    "mean": 0.33
+   }
+  }
+ ]
+}
