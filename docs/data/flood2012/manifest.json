@@ -1,0 +1,161 @@
+{
+ "name": "Copenhagen 2012 cloudburst flood model, georeferenced",
+ "what": "Modelled inundation depth for a 100-year rainfall event on the 2010 city, from Københavns Kommune's Skybrudsplan. Recovered from the seven published PDF sheets, whose geospatial metadata had been stripped, and placed back on the map.",
+ "crs": "EPSG:4326",
+ "pixel_values": {
+  "1": "0.05-0.1 m",
+  "2": "0.1-0.2 m",
+  "3": "0.2-0.5 m",
+  "4": "0.5-1 m",
+  "5": "1-2 m",
+  "6": "over 2 m"
+ },
+ "pixel_value_0": "no modelled flooding, or outside the sheet",
+ "provenance": [
+  "Depth bands read by exact match against the printed legend palette.",
+  "Scale from each sheet's own scale bar, via the PDF text layer.",
+  "Position: an ensemble water cross-correlation for four sheets; control points located on a web map by a resident for three; then sheet-to-sheet image registration on masked gradient images and a bundle adjustment over all seven together."
+ ],
+ "accuracy": "Mutually consistent to 23 m RMS across overlapping sheets, tied to the ground by control points with standard errors of 58-91 m. Nørrebro is the exception: no overlapping pair produced a usable correlation peak and it has no control points, so it keeps its original automatic position and is not known to be consistent with the rest.",
+ "caveats": [
+  "The model is a 2012 calculation of a 2010 scenario. Nordhavn, most of Ørestad, Sluseholmen and Teglholmen, and much of Refshaleøen have been built since and are not in it - 344 ha of today's impervious surface, 8.1% of the city, lies outside every sheet.",
+  "The sheets paint depth over lakes and the harbour as well as over land. Water standing on water is not modelled flooding; filter it against a water layer if that matters to you.",
+  "This is a recovery of a published figure, not a hydraulic model run. Errors in the recovery are ours, not the city's."
+ ],
+ "licence": "The underlying model is Københavns Kommune's, published as open data via opendata.dk. This georeferencing is offered on the same terms. Attribute both.",
+ "sheets": {
+  "amager": {
+   "raster": "amager.png",
+   "world_file": "amager.pgw",
+   "size_px": [
+    2255,
+    3068
+   ],
+   "bounds_wgs84": {
+    "west": 12.576750108238622,
+    "east": 12.643985680914891,
+    "south": 55.628371127135544,
+    "north": 55.679981963930906
+   },
+   "m_per_px": 1.8727,
+   "method": "assisted: resident-reported control points + correlation refinement",
+   "standard_error_m": 58,
+   "bundle_applied": true
+  },
+  "bispebjerg": {
+   "raster": "bispebjerg.png",
+   "world_file": "bispebjerg.pgw",
+   "size_px": [
+    3231,
+    2056
+   ],
+   "bounds_wgs84": {
+    "west": 12.467644494392621,
+    "east": 12.581629696174417,
+    "south": 55.688671003765684,
+    "north": 55.72953223774315
+   },
+   "m_per_px": 2.2124,
+   "method": "assisted: resident-reported control points + correlation check",
+   "standard_error_m": 91,
+   "bundle_applied": true
+  },
+  "indre-by": {
+   "raster": "indre-by.png",
+   "world_file": "indre-by.pgw",
+   "size_px": [
+    2255,
+    3068
+   ],
+   "bounds_wgs84": {
+    "west": 12.56276058468574,
+    "east": 12.610386558931912,
+    "south": 55.66300846017128,
+    "north": 55.699560432119185
+   },
+   "m_per_px": 1.3263,
+   "method": "autoref: ensemble water cross-correlation",
+   "standard_error_m": null,
+   "bundle_applied": true
+  },
+  "kbhvest": {
+   "raster": "kbhvest.png",
+   "world_file": "kbhvest.pgw",
+   "size_px": [
+    2255,
+    3068
+   ],
+   "bounds_wgs84": {
+    "west": 12.440855934046182,
+    "east": 12.571979593809747,
+    "south": 55.62831166762314,
+    "north": 55.72889629115863
+   },
+   "m_per_px": 3.6496,
+   "method": "assisted: resident-reported control points + correlation check",
+   "standard_error_m": 58,
+   "bundle_applied": true
+  },
+  "ladegaardsaaen": {
+   "raster": "ladegaardsaaen.png",
+   "world_file": "ladegaardsaaen.pgw",
+   "size_px": [
+    2255,
+    3069
+   ],
+   "bounds_wgs84": {
+    "west": 12.51218651855881,
+    "east": 12.574747467307265,
+    "south": 55.65562623572882,
+    "north": 55.70365614855194
+   },
+   "m_per_px": 1.7422,
+   "method": "autoref: ensemble water cross-correlation",
+   "standard_error_m": null,
+   "bundle_applied": true
+  },
+  "norrebro": {
+   "raster": "norrebro.png",
+   "world_file": "norrebro.pgw",
+   "size_px": [
+    2255,
+    3088
+   ],
+   "bounds_wgs84": {
+    "west": 12.509555543869267,
+    "east": 12.54388631306775,
+    "south": 55.674426736469954,
+    "north": 55.700946668672366
+   },
+   "m_per_px": 0.956,
+   "method": "autoref: ensemble water cross-correlation",
+   "standard_error_m": null,
+   "bundle_applied": false
+  },
+  "osterbro": {
+   "raster": "osterbro.png",
+   "world_file": "osterbro.pgw",
+   "size_px": [
+    2255,
+    3088
+   ],
+   "bounds_wgs84": {
+    "west": 12.555141607570482,
+    "east": 12.598511154166633,
+    "south": 55.686799605306874,
+    "north": 55.72030183849977
+   },
+   "m_per_px": 1.2077,
+   "method": "autoref: ensemble water cross-correlation",
+   "standard_error_m": null,
+   "bundle_applied": true
+  }
+ },
+ "bundle_adjustment": {
+  "pair_rms_m": 22.6,
+  "pairs_used": 11,
+  "unconstrained": [
+   "norrebro"
+  ]
+ }
+}
