@@ -253,6 +253,9 @@ TERMS = {
     'chlorophyll': (
         'The green pigment that captures light for photosynthesis. Measuring it is the standard way to estimate how much algae is in the water - it is a proxy for biomass, not for health.',
         'Greek chloros (pale green) plus phyllon (leaf).'),
+    'classical biological control': (
+        'Introducing one organism to suppress another. It works, and its failures are the standard cautionary tale, because an agent that does not stay on its intended target cannot be recalled.',
+        'The reason a release needs host specificity demonstrated rather than assumed.'),
     'Clostridioides difficile': (
         'The bacterium that takes over a gut whose community antibiotics have cleared. The harm comes from the vacancy rather than from the drug.',
         'The clearest demonstration that occupancy itself was doing the work.'),
@@ -274,6 +277,9 @@ TERMS = {
     'copepod': (
         'A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth - and an arthropod, like the insects that insecticides are designed for.',
         'Greek kope (oar) plus pous (foot).'),
+    'counterfactual': (
+        'What would have happened without the thing you are studying. Most environmental arguments lack one, because the treatment was applied everywhere at once and there is nothing left to compare against.',
+        'The reason a staggered rollout is worth more than a simultaneous one, even when the simultaneous one is easier.'),
     'CRISPR': (
         'A bacterial immune system that stores fragments of past viral infections and uses them to recognise and cut the same virus again. Repurposed as the standard gene-editing tool.',
         'An antiviral of bacterial variety - and, like restriction enzymes before it, a weapon captured from the bacteria-phage war and turned into laboratory equipment.'),
@@ -337,6 +343,9 @@ TERMS = {
     'endogenous retrovirus': (
         'A virus that inserted itself into a host genome long ago and stayed, becoming inherited. Roughly eight per cent of human DNA is of this origin.',
         'One of them supplies the protein that builds the placenta - mammalian pregnancy depends on a domesticated virus.'),
+    'endophyte': (
+        "A fungus or bacterium living inside a plant's tissues without causing disease, often conferring resistance to pests or stress on its host.",
+        'Greek endon (within) plus phyton (plant). Another partnership invisible to a survey that counts plants.'),
     'endosymbiosis': (
         'One organism living inside another, permanently. Mitochondria and chloroplasts are both captured free-living bacteria, so every plant and animal is a former merger.',
         'The origin of the eukaryotic cell, and the reason the boundary between organism and community is not sharp.'),
@@ -607,6 +616,9 @@ TERMS = {
     'målbelastning': (
         'Danish for target load - how much nitrogen a water body may receive and still meet its environmental objective.',
         'Mål (target) plus belastning (load).'),
+    'natural experiment': (
+        'A change imposed by circumstance rather than by a researcher, which happens to create a comparison. Dated construction works, staggered policy adoption and closures all qualify.',
+        'The nearest thing to an experiment available when the system is too large to manipulate on purpose.'),
     'necromass': (
         'Dead biomass. In soil, dead microbes themselves make up a large share of the lasting organic matter.',
         'Greek nekros, corpse.'),
@@ -718,6 +730,9 @@ TERMS = {
     'priming': (
         'Having machinery already close to what a new situation requires. New biological capabilities almost never arise from nothing - they arise by duplicating and modifying something that already worked - so the distance from existing machinery to the needed function matters more than the supply of mutations.',
         'Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.'),
+    'probiotic': (
+        'A live organism given deliberately to establish or restore a community. Used in aquaculture in place of antibiotics for the same reason it works in a gut.',
+        'Literally for-life, coined against antibiotic, against-life.'),
     'prokaryote': (
         'An organism whose cell has no nucleus - bacteria and archaea. They run essentially every chemical transformation in the sea that is not photosynthesis or animal respiration.',
         'Greek pro (before) plus karyon (kernel): named for lacking the thing eukaryotes have, which tells you who was doing the naming.'),
@@ -859,6 +874,9 @@ TERMS = {
     'speciation': (
         'In chemistry, which chemical form an element is in - dissolved, bound to a particle, complexed with an organic molecule. Toxicity and availability both depend on it, and a total measurement hides it.',
         'Nothing to do with the biological sense of new species arising.'),
+    'stepped wedge': (
+        'A trial design in which every participant eventually receives the treatment, but the order is randomised. Each is its own control before crossover, and a control for the others after.',
+        'It makes a randomised comparison possible where withholding the treatment from anyone would be politically or ethically impossible.'),
     'sterol': (
         'A class of molecules that stiffen cell membranes - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Every eukaryote makes one, by broadly the same route.',
         'Which is why azole fungicides, which block that route, cannot be selective for fungi in principle.'),
@@ -910,6 +928,9 @@ TERMS = {
     'syncytin': (
         'The protein that fuses cells into the layer through which a mammalian placenta exchanges nutrients. It is a viral envelope gene, captured and kept.',
         'The single clearest case of a pathogen becoming essential.'),
+    'take-all decline': (
+        'A wheat disease that subsides on its own if the same field is cropped long enough, because Pseudomonas populations build up in the soil until they suppress it.',
+        'Suppressive soil arising spontaneously - the field cures itself, given time and no fumigation.'),
     'TEP': (
         'Transparent exopolymer particles - sticky invisible gel produced by algae and bacteria, which aggregates into marine snow and, at scale, mucilage.',
         'Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.'),
@@ -931,6 +952,9 @@ TERMS = {
     'transect': (
         'A line along which measurements are taken at intervals - here, usually running from the shore into deeper water to find how deep plants still grow.',
         'Latin trans (across) plus secare (to cut).'),
+    'Trichoderma': (
+        'A soil fungus sold commercially to protect crops, working partly by producing antifungal compounds and partly by occupying the space a pathogen would need.',
+        'An ordinary agricultural product that is also a working demonstration of colonisation resistance.'),
     'trophic': (
         'To do with feeding - who eats whom, and at what level of the food web.',
         'Greek trophe, nourishment. The same root as eutrophic and auxotroph.'),
@@ -967,6 +991,9 @@ TERMS = {
     'Winkler': (
         'The chemical titration for dissolved oxygen, in use since 1888 and still the reference method against which sensors are checked.',
         'Lajos Winkler, who published it as a doctoral student.'),
+    'Wolbachia': (
+        'A bacterium introduced into mosquito populations to block dengue transmission. Released across whole cities and among the most successful vector-control interventions of the past decade.',
+        'The flagship case of replacing a pesticide with an occupant rather than a poison.'),
     'zooplankton': (
         'The drifting animals - copepods, larvae, jellyfish - that eat phytoplankton and are eaten by fish.',
         'Greek zoon (animal) plus planktos.'),

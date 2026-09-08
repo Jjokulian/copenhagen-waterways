@@ -93,7 +93,7 @@ docs/
   NITROGEN.md             where the marine nitrogen figures come from, generated
   CAUSATION.md            what survives between that figure and a claim about a shore
   HYPOTHESES.md           159 candidate causes, written down before any of them is scored
-  EXPERIMENTS.md          16 proposals with controls and decision rules fixed in advance
+  EXPERIMENTS.md          17 proposals with controls and decision rules fixed in advance
   DATA_QUEUE.md           80 sources sorted by friction: fetch now, held, one form away, closed
   OBSERVING.md            what is measured, where, how often - and whether a "water body" is real
   OXYGEN.md               every route that removes oxygen, priced; and what the indicators conflate

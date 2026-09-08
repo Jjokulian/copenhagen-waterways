@@ -1056,7 +1056,8 @@
    "text": "A group of soil bacteria that produce most of the antibiotics in clinical use. They have been fighting fungi and each other for hundreds of millions of years, and the pharmacy is their armoury.",
    "why": "The narrow sample of the microbial war that modern medicine happens to have read. The marine equivalent is close to unexplored.",
    "forms": [
-    "actinomycete"
+    "actinomycete",
+    "actinomycetes"
    ]
   },
   "aerobe": {
@@ -1403,6 +1404,13 @@
     "chlorophyll"
    ]
   },
+  "classical biological control": {
+   "text": "Introducing one organism to suppress another. It works, and its failures are the standard cautionary tale, because an agent that does not stay on its intended target cannot be recalled.",
+   "why": "The reason a release needs host specificity demonstrated rather than assumed.",
+   "forms": [
+    "classical biological control"
+   ]
+  },
   "Clostridioides difficile": {
    "text": "The bacterium that takes over a gut whose community antibiotics have cleared. The harm comes from the vacancy rather than from the drug.",
    "why": "The clearest demonstration that occupancy itself was doing the work.",
@@ -1453,6 +1461,13 @@
    "forms": [
     "copepod",
     "copepods"
+   ]
+  },
+  "counterfactual": {
+   "text": "What would have happened without the thing you are studying. Most environmental arguments lack one, because the treatment was applied everywhere at once and there is nothing left to compare against.",
+   "why": "The reason a staggered rollout is worth more than a simultaneous one, even when the simultaneous one is easier.",
+   "forms": [
+    "counterfactual"
    ]
   },
   "CRISPR": {
@@ -1605,6 +1620,13 @@
    "why": "One of them supplies the protein that builds the placenta - mammalian pregnancy depends on a domesticated virus.",
    "forms": [
     "endogenous retrovirus"
+   ]
+  },
+  "endophyte": {
+   "text": "A fungus or bacterium living inside a plant's tissues without causing disease, often conferring resistance to pests or stress on its host.",
+   "why": "Greek endon (within) plus phyton (plant). Another partnership invisible to a survey that counts plants.",
+   "forms": [
+    "endophyte"
    ]
   },
   "endosymbiosis": {
@@ -2264,6 +2286,13 @@
     "målbelastning"
    ]
   },
+  "natural experiment": {
+   "text": "A change imposed by circumstance rather than by a researcher, which happens to create a comparison. Dated construction works, staggered policy adoption and closures all qualify.",
+   "why": "The nearest thing to an experiment available when the system is too large to manipulate on purpose.",
+   "forms": [
+    "natural experiment"
+   ]
+  },
   "necromass": {
    "text": "Dead biomass. In soil, dead microbes themselves make up a large share of the lasting organic matter.",
    "why": "Greek nekros, corpse.",
@@ -2528,6 +2557,14 @@
    "why": "Antibiotic resistance appeared in years because soil bacteria had competed with antibiotic-making fungi for hundreds of millions of years. PFAS degradation has not appeared in seventy, because nothing holds machinery within reach of a carbon-fluorine bond.",
    "forms": [
     "priming"
+   ]
+  },
+  "probiotic": {
+   "text": "A live organism given deliberately to establish or restore a community. Used in aquaculture in place of antibiotics for the same reason it works in a gut.",
+   "why": "Literally for-life, coined against antibiotic, against-life.",
+   "forms": [
+    "probiotic",
+    "probiotics"
    ]
   },
   "prokaryote": {
@@ -2870,6 +2907,13 @@
     "speciation"
    ]
   },
+  "stepped wedge": {
+   "text": "A trial design in which every participant eventually receives the treatment, but the order is randomised. Each is its own control before crossover, and a control for the others after.",
+   "why": "It makes a randomised comparison possible where withholding the treatment from anyone would be politically or ethically impossible.",
+   "forms": [
+    "stepped wedge"
+   ]
+  },
   "sterol": {
    "text": "A class of molecules that stiffen cell membranes - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Every eukaryote makes one, by broadly the same route.",
    "why": "Which is why azole fungicides, which block that route, cannot be selective for fungi in principle.",
@@ -2995,6 +3039,13 @@
     "syncytin"
    ]
   },
+  "take-all decline": {
+   "text": "A wheat disease that subsides on its own if the same field is cropped long enough, because Pseudomonas populations build up in the soil until they suppress it.",
+   "why": "Suppressive soil arising spontaneously - the field cures itself, given time and no fumigation.",
+   "forms": [
+    "take-all decline"
+   ]
+  },
   "TEP": {
    "text": "Transparent exopolymer particles - sticky invisible gel produced by algae and bacteria, which aggregates into marine snow and, at scale, mucilage.",
    "why": "Stained with Alcian blue to be seen at all, which is why it went unnoticed until the 1990s.",
@@ -3045,6 +3096,13 @@
    "forms": [
     "transect",
     "transects"
+   ]
+  },
+  "Trichoderma": {
+   "text": "A soil fungus sold commercially to protect crops, working partly by producing antifungal compounds and partly by occupying the space a pathogen would need.",
+   "why": "An ordinary agricultural product that is also a working demonstration of colonisation resistance.",
+   "forms": [
+    "trichoderma"
    ]
   },
   "trophic": {
@@ -3131,6 +3189,13 @@
    "why": "Lajos Winkler, who published it as a doctoral student.",
    "forms": [
     "winkler"
+   ]
+  },
+  "Wolbachia": {
+   "text": "A bacterium introduced into mosquito populations to block dengue transmission. Released across whole cities and among the most successful vector-control interventions of the past decade.",
+   "why": "The flagship case of replacing a pesticide with an occupant rather than a poison.",
+   "forms": [
+    "wolbachia"
    ]
   },
   "zooplankton": {

@@ -487,6 +487,28 @@ If the legal floor were where consumers wanted it, a label whose whole value pro
 
 It is also worth being accurate about who is being suspected. The instinct to locate this problem in American corporate conduct is common and, for the agrochemical case, factually off: the majors are a four-firm global oligopoly of which two are German, one Swiss and Chinese-owned. The structural argument does not need a villain, and is stronger without one — **and the belief that European regulation already handles it is the more consequential error**, because it is the one that stops people asking.
 
+#### Occupying the niche instead of poisoning it
+
+There is a route that follows directly from how defence actually works in nature, and it is neither speculative nor new. If a resident community's main protective function is **occupancy** — being there, so that something else is not — then the alternative to killing a pest is **filling the space with something benign first**.
+
+It is already deployed, at scale, and the flagship case is not marginal. *Wolbachia* introduced into mosquito populations blocks dengue transmission and has been released across whole cities; it is among the most successful vector-control interventions of the past decade. In agriculture, *Bacillus* and *Trichoderma* preparations are ordinary commercial products. In soil, take-all decline in wheat happens by itself: crop the same field long enough and *Pseudomonas* populations build up until the disease subsides without anyone doing anything. Aquaculture is replacing antibiotics with probiotics for the same reason.
+
+Four advantages, and they follow from the mechanism rather than from enthusiasm:
+
+| | |
+|---|---|
+| **No target to mutate** | A biocide is one molecular target, so it selects for whoever can change it. Exclusion offers nothing to alter — an incomer has to out-compete a whole community for resources it also needs. |
+| **Idempotent** | The niche is occupied or it is not. No dose to escalate, no residue, no gradient for anything to adapt along. |
+| **Self-maintaining** | If the organism establishes, it does not need reapplying. |
+| **Has a prior by construction** | The agent is something life already made, so the degradation question that governs every novo-chemical does not arise. |
+*And one disadvantage that is worse than any of those is good, so it has to be said first in any proposal rather than last.* **An introduced organism cannot be recalled.** A chemical eventually degrades, or at worst persists unchanged; an organism reproduces, spreads, and evolves after release. The history of classical biological control contains real disasters, all of them from agents that did not stay on their intended target. And `T9` applies with full force: pathogen and mutualist are positions rather than kinds, so an organism benign in the context it was tested in can move along that spectrum in the context it was released into.
+
+> Which gives a clean symmetry with this section's other argument, and it is worth holding both at once. **A novel chemical has no evolutionary prior and never degrades. A novel organism has a prior and never stops.** Both are irreversible, in different ways, and neither irreversibility is a reason to prefer the other by default. The test for an introduction is therefore the same shape as the test for a novo-chemical — host specificity demonstrated rather than assumed, and a bounded release rather than a dispersive one — and where the candidate is *already resident* and merely being restored to abundance, as in sediment inoculation, that test is largely already passed.
+
+And there is a second reason to do it this way, which has nothing to do with ecology. **A substitution can be rolled out; a ban can only be imposed.** Because nobody has to absorb a loss to make it happen, it can be introduced catchment by catchment on a staggered schedule — which is simultaneously the intervention and the experiment. Each area is compared against its own record before it crosses over and against the areas that have not yet crossed, and no one is withheld from the treatment, only scheduled later. That design is `X17` in [EXPERIMENTS.md](#EXPERIMENTS.md), and it supplies the one thing the chemical argument has never had: **a counterfactual, at the scale the argument is made**. Every Danish catchment has been sprayed for decades, so there is currently nothing to compare against.
+
+The agronomic outcome has to be measured with the same weight as the marine one, and published whichever way it falls. If biological substitution costs yield, that is a number this argument has to carry — not something for the people who farm to discover afterwards.
+
 #### The instrument for a novo-chemical: reserved use
 
 The instrument is the one used for antibiotics, and for the same reason. The harm from antibiotics never came from the molecule; it came from **volume and ubiquity**, which is what breeds resistance. So the response was not to ban them. It was to reserve them for cases where nothing else works, and to stop putting them in livestock feed as a growth promoter.

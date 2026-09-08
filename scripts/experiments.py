@@ -376,6 +376,41 @@ X = [
      "power, and the honest version of this proposal budgets for servicing rather "
      "than pretending a buoy is unattended infrastructure."),
 
+    ("X17", "Take the fungicides away, region by region, without ruining anyone",
+     "experiment", ["E13", "E14", "E15", "E16", "E17", "R3", "R11", "T12"],
+     "programme",
+     "The register cannot say what agricultural biocides do to marine decomposers, "
+     "because the counterfactual does not exist: every Danish catchment has been "
+     "sprayed for decades. A ban would create one and would also be economic "
+     "suicide for the people asked to absorb it, so it will not happen and should "
+     "not.",
+     "Substitute rather than prohibit. Replace chemical control with biological "
+     "control — the occupancy route — catchment by catchment on a **staggered "
+     "schedule with the order randomised**, until every participating area has "
+     "crossed over.",
+     "A stepped wedge is its own control twice over. Each catchment is compared "
+     "against its own record before crossover, and against the catchments that have "
+     "not yet crossed. **Nobody is withheld from the treatment** — they receive it "
+     "later — which is what makes it politically and ethically possible where a "
+     "control group would not be.",
+     "In the sea: decomposition rate of standard material, sediment fungal biomass, "
+     "benthic fauna, sediment organic content. On land, and with equal weight: "
+     "yield, input cost, disease incidence and farm margin.",
+     "Marine decomposition recovers where crossover has happened and not where it "
+     "has not → the biocide route of `E13` is real at landscape scale, and the "
+     "substitution is the remedy. Nothing changes in the sea → the marine biocide "
+     "hypothesis fails its largest test and this project should say so loudly. "
+     "**And the agronomic outcome is a result in its own right, whichever way it "
+     "falls** — if yields drop, that is the number the argument has to carry, not a "
+     "detail to be discovered later by the people who farm.",
+     "This is the only design here that is simultaneously an intervention, a "
+     "national experiment, and survivable for the people inside it. It also "
+     "supplies what nothing else can: **a real counterfactual for the chemical "
+     "argument**, at the scale the argument is made. Denmark already has the "
+     "administrative machinery — pesticide taxation, action plans, and protection "
+     "zones around wellfields where spraying is restricted — so the instrument "
+     "exists and only the randomisation and the marine measurement would be new."),
+
     ("X13", "Does the muck build up because nothing is eating it?", "experiment",
      ["E13", "E14", "E15", "R3", "R11"], "lab",
      "Turfgrass thatch - a greasy organic mat - forms when pesticides kill the "
