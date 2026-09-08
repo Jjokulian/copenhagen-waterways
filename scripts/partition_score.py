@@ -13,7 +13,14 @@ The statistic is the intraclass correlation, computed **within month**:
 
 read as: pick two stations at random in the same month. If they are in the same
 basket, how much more alike are they than two stations picked without regard to
-basket? ICC 1 means membership tells you everything, 0 means it tells you nothing.
+basket?
+
+CHANCE HERE IS 0.5, NOT 0. What is computed is the mean-square ratio
+MSB / (MSB + MSW), not the ANOVA estimator (MSB - MSW) / (MSB + (k-1) MSW). Under
+random labels both mean squares are unbiased for the same variance, so the ratio
+tends to one half - simulated at 0.4988 over 20 runs of 150 stations in 12 random
+groups. A raw value near 0.5 therefore means the partition tells you NOTHING, and
+only the lift over a shape-matched null is readable on its own. See docs/GLOSSARY.md.
 
 **Within month is the whole trick.** Every station in Denmark shares a season. Pool
 across months and the seasonal signal lands in the between-basket term, and every
@@ -175,7 +182,12 @@ def main():
     write_json(os.path.join(D, "partition_score.json"), {
         "_what": "How much of the between-station variation each variable's values "
                  "are explained by water-body membership, within month.",
-        "_reading": "ICC 1 = two stations in the same basket agree completely and "
+        "_reading": "CHANCE IS 0.5, NOT 0: this is the mean-square ratio "
+                    "MSB/(MSB+MSW), not the ANOVA ICC, and under random labels both "
+                    "mean squares estimate the same variance so the ratio tends to "
+                    "one half (simulated 0.4988). Read 'lift' - the difference from "
+                    "the compact null - not the raw value. 1 = two stations in the "
+                    "same basket agree completely and "
                     "membership tells you everything; 0 = membership tells you "
                     "nothing beyond the month.",
         "_controls": "shuffled = station labels permuted with basket sizes kept, "
