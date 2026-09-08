@@ -108,6 +108,9 @@ AVENUES = [
 #
 # term -> (what it means, why it is called that)
 TERMS = {
+    'acetylcholine': (
+        'The signalling molecule nerves use at many junctions. Its receptors and the enzyme that clears it are targets for several insecticide classes, and both are universal in animals.',
+        'Acetyl plus choline, its chemical parts.'),
     'aerobe': (
         'An organism that needs oxygen to live. Most animals, and many bacteria.',
         'Greek aer (air) plus bios (life). Its opposite is an anaerobe.'),
@@ -150,6 +153,9 @@ TERMS = {
     'auxotroph': (
         'An organism that cannot make some essential compound for itself and must obtain it ready-made. Most marine algae are auxotrophs for vitamin B12.',
         'Greek auxein (to grow) plus trophe (nourishment): needs feeding to grow.'),
+    'azole': (
+        'The largest class of agricultural and medical fungicides. They block sterol synthesis at an enzyme every eukaryote shares, so their selectivity comes from dose and uptake rather than from the target being absent.',
+        'Named for the five-membered nitrogen ring they contain.'),
     'Beggiatoa': (
         'A sulphide-eating bacterium that forms thick white mats on oxygen-poor sediment. Its presence is a visible sign that the bed has gone sulphidic.',
         'Named after Francesco Secchi di Beggiato, a 19th-century Italian physician.'),
@@ -208,7 +214,7 @@ TERMS = {
         'Chemical oxygen demand - how much oxygen a substance will consume when fully oxidised. Measured in the same units as the oxygen it removes.',
         'The measurement and the effect are the same quantity, which is unusual and useful.'),
     'copepod': (
-        'A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth.',
+        'A small shrimp-like crustacean, a millimetre or two long, and the main link between algae and fish. Probably the most numerous animal on Earth - and an arthropod, like the insects that insecticides are designed for.',
         'Greek kope (oar) plus pous (foot).'),
     'CTD': (
         'The standard instrument lowered through the water column, recording conductivity, temperature and depth continuously - and usually oxygen too. It gives a profile rather than a single value.',
@@ -216,6 +222,9 @@ TERMS = {
     'cyanobacteria': (
         'Photosynthetic bacteria, often called blue-green algae though they are not algae. Some fix nitrogen straight from the air, which lets them grow when nitrogen is scarce, and several make toxins.',
         'Greek kyanos, dark blue.'),
+    'CYP51': (
+        'The enzyme that makes sterols - cholesterol in animals, ergosterol in fungi, phytosterols in plants. Azole fungicides work by blocking it, and every eukaryote has one.',
+        'A cytochrome P450, numbered by family. The number is the only name it has.'),
     'denitrification': (
         'Bacteria converting nitrate to nitrogen gas, which leaves the water permanently. The only process that actually removes nitrogen from a system.',
         'Undoing nitrification. It needs the nitrate that nitrification makes, so stopping one stops the other.'),
@@ -231,9 +240,15 @@ TERMS = {
     'dinoflagellate': (
         'A single-celled alga that swims with two tails and often wears armour plating. Several make toxins, and some cause red tides.',
         'Greek dinos, whirling - they spin as they swim.'),
+    'ecotoxicology': (
+        'The study of how chemicals affect organisms and ecosystems. In regulatory practice it usually means acute mortality tests on a few standard species.',
+        'Ecology plus toxicology - a young field, and its standard methods predate most of what is now known about symbiosis.'),
     'eelgrass': (
         'A true flowering plant that lives fully submerged in the sea, forming meadows on soft bottoms. It roots in the sediment, needs light at the bed, and shelters everything else. Danish: alegras.',
         'Named for its long ribbon leaves. Zostera marina is the Danish species.'),
+    'endocrine disruption': (
+        "Interference with an organism's hormone system, often at concentrations far below those that kill. Effects show as failed reproduction and altered development rather than as death.",
+        'The endocrine system is the hormonal one - Greek endo (within) plus krinein (to separate).'),
     'epibenthic': (
         'Living on the surface of the seabed rather than buried in it.',
         'Epi- (upon) plus benthos.'),
@@ -279,6 +294,9 @@ TERMS = {
     'frustule': (
         'The two-part silica shell of a diatom.',
         'Latin frustulum, a little piece.'),
+    'glyphosate': (
+        "The world's most used herbicide. Its target enzyme is absent in animals but present in plants, bacteria and fungi, which makes it an antimicrobial as well as a weedkiller.",
+        'From glycine and phosphonate, its chemical parts.'),
     'grab': (
         'A sampling device dropped to the seabed that bites out a fixed area of sediment and brings it up. One grab is one sample, and it is how nearly all seabed fauna data is collected.',
         'It grabs. The fixed area is what makes counts comparable.'),
@@ -327,6 +345,9 @@ TERMS = {
     'klapplads': (
         'Danish for a licensed site where dredged material is dumped at sea. There are 114 of them.',
         'Klappe, to tip or dump; plads, place.'),
+    'Krebs cycle': (
+        'The central loop of metabolism, by which cells extract energy from food. Present in essentially all aerobic life.',
+        'Hans Krebs, 1937. Also called the citric acid cycle, after the first compound in it.'),
     'labile': (
         'Easily and quickly broken down. Sugars and fresh algal material are labile.',
         'Latin labilis, liable to slip or fall. Its opposite here is recalcitrant.'),
@@ -366,6 +387,9 @@ TERMS = {
     'mesozooplankton': (
         'The middle size class of drifting animals, chiefly copepods - between a fifth of a millimetre and two centimetres. The link between algae and fish.',
         'Greek mesos, middle.'),
+    'microbiome': (
+        'The community of microbes living in and on an organism, which for many purposes is part of that organism - performing digestion, defence and nutrition it cannot perform alone.',
+        'Micro plus biome. A word that exists because the older picture of an individual organism turned out to be incomplete.'),
     'microlayer': (
         'The top few micrometres of the sea, which concentrate surfactants, fats and hydrophobic pollutants far above their concentration in the bulk water.',
         "It is the layer a swimmer's skin actually passes through."),
@@ -378,6 +402,9 @@ TERMS = {
     'mineralisation': (
         'The breakdown of organic material back into simple inorganic compounds - releasing the nutrients that were locked in tissue.',
         'Turning organic matter back into minerals. Remineralisation is the same word for material that was mineral to start with.'),
+    'mitochondria': (
+        'The compartments in which eukaryotic cells carry out respiration. Descended from captured bacteria, and present in fungi, plants and animals alike - which is why respiratory poisons are rarely selective.',
+        'Greek mitos (thread) plus chondros (grain), from how they look under a microscope.'),
     'mor': (
         'Raw, matted, unincorporated humus sitting on top of the soil because the fauna that would mix it in are absent or excluded.',
         'Also from Danish, meaning mould in the other sense. The terrestrial version of an organic mat on the seabed.'),
@@ -399,6 +426,9 @@ TERMS = {
     'nematode': (
         'A roundworm. In sediment they are microscopic, enormously abundant, and among the last animals left when conditions get bad.',
         'Greek nema, thread.'),
+    'neonicotinoid': (
+        'The most widely used insecticide class. It acts on acetylcholine receptors, which every animal with a nervous system has, including all marine invertebrates.',
+        'Nicotine-like, and acting at the same receptor nicotine does.'),
     'nitrate': (
         'The oxidised, stable form of dissolved nitrogen, and the form that leaches from farmland into groundwater and streams.',
         'Same root as nitre, saltpetre.'),
@@ -435,6 +465,9 @@ TERMS = {
     'peroxidase': (
         'An enzyme that neutralises reactive oxygen inside a cell. The selenium-dependent version is why selenium is essential.',
         'It disposes of peroxides, which would otherwise do damage.'),
+    'pharmacokinetic': (
+        'To do with how much of a substance an organism takes up, where it goes, and how fast it is broken down - as opposed to what it does once it arrives.',
+        'Greek pharmakon (drug) plus kinesis (movement). Selectivity that is pharmacokinetic is selectivity of exposure, not of mechanism.'),
     'phenology': (
         'The timing of biological events through the year - when things spawn, bloom, migrate - and whether two events that need to coincide still do.',
         'Greek phainein, to appear. The study of when things show up.'),
@@ -444,6 +477,9 @@ TERMS = {
     'photoinhibition': (
         'Too much light damaging the photosynthetic machinery. The ceiling of the light window.',
         'Light doing the inhibiting - the reason clearest is not always best.'),
+    'photosystem II': (
+        'The protein complex that splits water and starts photosynthesis. Triazine and urea herbicides block it, which makes them equally effective against algae.',
+        'The second of two photosystems, named in the order they were discovered rather than the order they act.'),
     'Phytophthora': (
         'A genus of water mould that destroys plant roots. The potato blight that caused the Irish famine was one of these.',
         'Greek: literally the plant-destroyer.'),
@@ -480,6 +516,9 @@ TERMS = {
     'pycnocline': (
         'The depth at which density changes sharply, separating lighter water above from denser water below. It acts as a lid: below it, oxygen is not replaced.',
         'Greek pyknos (dense) plus klinein (to slope).'),
+    'pyrethroid': (
+        'A synthetic insecticide acting on voltage-gated sodium channels - universal in animals. Crustaceans are extremely sensitive, being arthropods like the intended targets.',
+        'Modelled on pyrethrins from chrysanthemum flowers.'),
     'Pythium': (
         'A water mould that rots seedlings and roots, thriving where soil or sediment is waterlogged and low in oxygen.',
         'The classic damping-off disease of a wet greenhouse.'),
@@ -528,6 +567,9 @@ TERMS = {
     'saprotroph': (
         'An organism that feeds on dead material, breaking it down. Most fungi are saprotrophs, and they handle the tough fractions bacteria leave behind.',
         'Greek sapros (rotten) plus trophe (nourishment).'),
+    'SDHI': (
+        'A fungicide class blocking succinate dehydrogenase, which is simultaneously complex II of the respiratory chain and a step in the Krebs cycle. Conserved wherever there are mitochondria.',
+        'Succinate dehydrogenase inhibitor. The target does two jobs, so blocking it stops two processes.'),
     'Secchi': (
         'The oldest instrument in oceanography: a white disc lowered until it disappears. The depth at which it vanishes is a measure of water clarity, and the record goes back over a century.',
         'Angelo Secchi, papal astronomer, 1865. Still in use because it is simple and comparable.'),
@@ -543,6 +585,9 @@ TERMS = {
     'Shelford': (
         'The law of tolerance: every requirement has a ceiling as well as a floor. Too much of a needed thing kills as surely as too little.',
         'Victor Shelford, an American ecologist, 1913. Liebig gives you the floor; Shelford gives you the roof.'),
+    'shikimate': (
+        'A biochemical pathway that makes aromatic amino acids. Plants, bacteria and fungi have it; animals do not, and must eat those amino acids instead.',
+        'Named after shikimi, the Japanese star anise from which the acid was first isolated.'),
     'silicate': (
         'Dissolved silicon. Diatoms need it to build their shells, and it comes only from rock weathering, so human activity raises nitrogen and phosphorus but never this.',
         'The changing ratio is why diatoms give way to flagellates.'),
@@ -561,6 +606,12 @@ TERMS = {
     'stratification': (
         'Water settled into layers that do not mix, because the upper water is warmer or fresher and therefore lighter.',
         'Latin stratum, a layer. It is what makes deep water run out of oxygen.'),
+    'strobilurin': (
+        'A major fungicide class that blocks complex III of the mitochondrial respiratory chain - the machinery by which anything with mitochondria breathes.',
+        'Derived from a compound made by the fungus Strobilurus, which uses it against its competitors.'),
+    'sublethal': (
+        'An effect that does not kill: impaired growth, reproduction, behaviour or immunity. Standard toxicity testing measures death, so sublethal harm is systematically under-recorded.',
+        'Below the lethal dose. The organism is counted as a survivor.'),
     'sulphate': (
         'The dissolved sulphur compound that makes up a large part of sea salt. Harmless in itself, and the raw material bacteria turn into sulphide once oxygen is gone.',
         'Seawater holds about 2.7 grams per litre; fresh water holds a hundredth of that.'),
@@ -776,7 +827,21 @@ GROUPS = [
      "mechanically."),
     ("E", "Chemical demand and toxicity",
      "Oxygen consumed by chemistry rather than biology, and life removed by poison "
-     "rather than by suffocation."),
+     "rather than by suffocation. One thing governs the toxic half of the group and "
+     "is worth stating before any of it: "
+     "**a biocide's molecular target is almost always ancient and shared.** "
+     "Selectivity is a matter of dose, uptake and metabolism, not of the target "
+     "being absent elsewhere. Azole fungicides inhibit the sterol enzyme CYP51, "
+     "which every eukaryote has. Strobilurins block complex III of the "
+     "mitochondrial respiratory chain, and SDHIs block complex II, which is also a "
+     "Krebs-cycle enzyme - so both are respiratory poisons for anything that "
+     "breathes. Neonicotinoids act on acetylcholine receptors and pyrethroids on "
+     "sodium channels, both universal in animals, and for these purposes a copepod "
+     "is an insect. Triazine herbicides block photosystem II, which is what an alga "
+     "photosynthesises with. Glyphosate's target is absent in animals but present "
+     "in plants, bacteria and fungi, which makes it an antimicrobial. Naming a "
+     "compound after the taxon it is sold to kill describes the market, not the "
+     "biochemistry."),
     ("F", "Biological structure and feedback",
      "What the community itself does to the water, and what its loss stops doing."),
     ("G", "Climate and long-term drivers",
@@ -1435,6 +1500,47 @@ H = [
      "threshold, which is the `U1` problem.",
      "A total biocide load figure for Denmark by catchment. Sales data exists by "
      "substance nationally; nothing assembles it into an environmental load."),
+
+    ("E16", "E", "Conserved targets: \"selective\" is a claim about dose",
+     ["O3", "O4", "O6", "O7"],
+     "The molecular machinery agricultural biocides attack is shared far beyond the "
+     "taxon on the label. Azoles inhibit CYP51, the sterol enzyme of every "
+     "eukaryote, and other cytochrome P450s including the vertebrate ones that make "
+     "steroid hormones. Strobilurins block respiratory complex III and SDHIs block "
+     "complex II, which is simultaneously a Krebs-cycle enzyme - conserved wherever "
+     "there are mitochondria. Neonicotinoids act on acetylcholine receptors and "
+     "pyrethroids on voltage-gated sodium channels, both universal in animals. "
+     "Triazines block photosystem II, which is what algae photosynthesise with.",
+     "**Selectivity is pharmacokinetic, not mechanistic** - a matter of who takes "
+     "the dose up and how fast they break it down, not of the target being absent. "
+     "So the marine effect is not a surprising off-target finding requiring special "
+     "evidence; it is the default expectation, and its absence would be what needed "
+     "explaining. Two consequences bite hard here: for a sodium-channel or "
+     "acetylcholine poison **a copepod is an insect**, and copepods are the base of "
+     "the food web; and for a photosystem II inhibitor **an alga is a weed**.",
+     "Body burdens and sublethal endpoints in non-target marine taxa chosen by "
+     "*target conservation* rather than by convenience - copepods for the "
+     "neuroactives, algae for the photosynthesis inhibitors, fungi and sterol "
+     "synthesis for the azoles.",
+     "Marine concentrations of the actual high-tonnage compounds, with endpoints "
+     "matched to their mechanism. Danish marine monitoring covers few of them and "
+     "tests mortality rather than the conserved pathway."),
+    ("E17", "E", "The microbiome is the exposed organ", ["O3", "O7", "O6"],
+     "Animals and plants carry the target taxa inside them. A fungicide reaching a "
+     "marine invertebrate meets that animal's fungal and bacterial symbionts; a "
+     "shikimate-pathway herbicide meets its gut bacteria. The host's own cells may "
+     "be untouched while the organisms it depends on are not.",
+     "**A host can be killed through its symbionts, and no toxicity test on the "
+     "host would see it.** This is the same structure as `T2`, where seagrass "
+     "depends on clams that depend on sulphide-oxidising bacteria - three organisms "
+     "and only one of them visible in a survey. It also predicts that damage "
+     "appears as failure to thrive, failure to reproduce, or susceptibility to "
+     "disease rather than as acute mortality, which is precisely what standard "
+     "ecotoxicology is worst at detecting.",
+     "Symbiont community composition and function in exposed versus unexposed "
+     "hosts, with host survival as a *secondary* endpoint rather than the primary "
+     "one.",
+     "Host-associated microbial community data for Danish marine organisms. None."),
 
     # ---- F ----------------------------------------------------------------
     ("F1", "F", "Loss of filter feeders", ["O4", "O1"],

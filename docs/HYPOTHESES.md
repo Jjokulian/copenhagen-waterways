@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**151 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**153 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 151 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 153 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 151 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 153 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -685,7 +685,7 @@ Burrowing fauna destabilise sediment; microphytobenthos and tube-builders stabil
 
 ## E. Chemical demand and toxicity
 
-*Oxygen consumed by chemistry rather than biology, and life removed by poison rather than by suffocation.*
+*Oxygen consumed by chemistry rather than biology, and life removed by poison rather than by suffocation. One thing governs the toxic half of the group and is worth stating before any of it: **a biocide's molecular target is almost always ancient and shared.** Selectivity is a matter of dose, uptake and metabolism, not of the target being absent elsewhere. Azole fungicides inhibit the sterol enzyme CYP51, which every eukaryote has. Strobilurins block complex III of the mitochondrial respiratory chain, and SDHIs block complex II, which is also a Krebs-cycle enzyme - so both are respiratory poisons for anything that breathes. Neonicotinoids act on acetylcholine receptors and pyrethroids on sodium channels, both universal in animals, and for these purposes a copepod is an insect. Triazine herbicides block photosystem II, which is what an alga photosynthesises with. Glyphosate's target is absent in animals but present in plants, bacteria and fungi, which makes it an antimicrobial. Naming a compound after the taxon it is sold to kill describes the market, not the biochemistry.*
 
 ### E1 — Sulphide oxidation
 
@@ -866,6 +866,30 @@ Household, agricultural and industrial biocides reach the same water and act on 
 **Discriminated by.** Summed biocidal load per catchment against decomposer biomass and decomposition rate — the sum, not any single substance against its own threshold, which is the `U1` problem.
 
 **Needs.** A total biocide load figure for Denmark by catchment. Sales data exists by substance nationally; nothing assembles it into an environmental load.
+
+### E16 — Conserved targets: "selective" is a claim about dose
+
+**Outcomes:** O3, O4, O6, O7
+
+The molecular machinery agricultural biocides attack is shared far beyond the taxon on the label. Azoles inhibit CYP51, the sterol enzyme of every eukaryote, and other cytochrome P450s including the vertebrate ones that make steroid hormones. Strobilurins block respiratory complex III and SDHIs block complex II, which is simultaneously a Krebs-cycle enzyme - conserved wherever there are mitochondria. Neonicotinoids act on acetylcholine receptors and pyrethroids on voltage-gated sodium channels, both universal in animals. Triazines block photosystem II, which is what algae photosynthesise with.
+
+**Predicts.** **Selectivity is pharmacokinetic, not mechanistic** - a matter of who takes the dose up and how fast they break it down, not of the target being absent. So the marine effect is not a surprising off-target finding requiring special evidence; it is the default expectation, and its absence would be what needed explaining. Two consequences bite hard here: for a sodium-channel or acetylcholine poison **a copepod is an insect**, and copepods are the base of the food web; and for a photosystem II inhibitor **an alga is a weed**.
+
+**Discriminated by.** Body burdens and sublethal endpoints in non-target marine taxa chosen by *target conservation* rather than by convenience - copepods for the neuroactives, algae for the photosynthesis inhibitors, fungi and sterol synthesis for the azoles.
+
+**Needs.** Marine concentrations of the actual high-tonnage compounds, with endpoints matched to their mechanism. Danish marine monitoring covers few of them and tests mortality rather than the conserved pathway.
+
+### E17 — The microbiome is the exposed organ
+
+**Outcomes:** O3, O7, O6
+
+Animals and plants carry the target taxa inside them. A fungicide reaching a marine invertebrate meets that animal's fungal and bacterial symbionts; a shikimate-pathway herbicide meets its gut bacteria. The host's own cells may be untouched while the organisms it depends on are not.
+
+**Predicts.** **A host can be killed through its symbionts, and no toxicity test on the host would see it.** This is the same structure as `T2`, where seagrass depends on clams that depend on sulphide-oxidising bacteria - three organisms and only one of them visible in a survey. It also predicts that damage appears as failure to thrive, failure to reproduce, or susceptibility to disease rather than as acute mortality, which is precisely what standard ecotoxicology is worst at detecting.
+
+**Discriminated by.** Symbiont community composition and function in exposed versus unexposed hosts, with host survival as a *secondary* endpoint rather than the primary one.
+
+**Needs.** Host-associated microbial community data for Danish marine organisms. None.
 
 ## F. Biological structure and feedback
 
