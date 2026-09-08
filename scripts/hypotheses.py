@@ -200,6 +200,32 @@ GROUPS = [
      "*induces deficiency* of another by blocking its uptake. Under those three, "
      "\"too much nitrogen\" and \"depleted of something else\" are not opposite "
      "diagnoses. They are the same one."),
+    ("T", "Sediment sickness: symbionts, pathogens and why nothing grows back",
+     "Horticulture has a name for ground where a plant will not grow although the "
+     "nutrients are adequate: replant disease, or soil sickness. Its causes are "
+     "biological - accumulated specialist pathogens, autotoxic exudates, and the "
+     "loss of the symbionts and the suppressive microbial community that made the "
+     "plant resilient. The sea has the same thing, it has been documented largely by "
+     "Danish researchers, and it does not appear in the assessment because the "
+     "assessment measures the medium's chemistry and not its biology."),
+    ("S", "The land side: the medium, not the input",
+     "Retention - the fraction of applied nutrient that never reaches the sea - is "
+     "the largest single number in the whole account, and GEUS state it *\"kan i "
+     "praksis ikke måles direkte\"*. It is a property of soil and hydrogeology, and "
+     "soil properties vary over metres. The tropical-soil literature is the "
+     "cautionary case: phosphate fixation by iron and aluminium oxides in Ferralsols "
+     "and Andosols is the *same reaction* as the marine sediment phosphate trap, and "
+     "seventy years of work on it has produced a vocabulary - sorption capacity, "
+     "saturation, occlusion, hysteresis - that marine assessment does not use."),
+    ("R", "Decay, and the community that does it",
+     "Decomposition ecology has spent a century on the question this project is "
+     "asking: what happens when organic matter arrives faster than it can be "
+     "processed, and what breaks when the processors go. Almost none of it appears "
+     "in marine nutrient policy, which treats decay as a rate constant. It is a "
+     "relay of organisms, and relays stall. The soil and horticultural literature is "
+     "the better guide here, and the one difference that does not transfer - the "
+     "sulphate reservoir - turns out to explain why marine anoxia is a different and "
+     "worse thing than freshwater anoxia."),
     ("L", "The baseline and the counterfactual",
      "Not rival causes of degradation, but rival accounts of whether the degradation "
      "and its remedy are correctly specified at all. The reference condition is a "
@@ -231,9 +257,11 @@ CASCADES = [
      "growers → biomass turns over faster → more material to decay",
      "closes through the loss of control from above"),
     ("M3", "Physical destruction",
-     "structure removed → no refuge, no hard substrate, no shelter from flow → only "
-     "opportunists recolonise → no structure is rebuilt",
-     "closes by removing the thing that would have to regrow"),
+     "structure removed → the biostabilising surface skin is broken → sediment "
+     "mobilises → abrasion and burial kill the neighbours → nothing settles on a "
+     "moving bed → the skin is not rebuilt",
+     "closes through substrate mobility, the same way a desert holds itself open "
+     "once its crust is broken"),
     ("M4", "Food-web restructuring",
      "a predator or grazer is removed → its prey is released → the level below that "
      "is suppressed → primary producers are uncontrolled",
@@ -601,6 +629,57 @@ H = [
      "Shore fouling reports against modelled bed shear stress.",
      "Wave hindcast. Partially held: bed shear already modelled from 31 years of "
      "wind."),
+
+    ("D8", "D", "Loss of biostabilisation, and the mobile bed", ["O3", "O4", "O7"],
+     "Benthic diatoms and cyanobacteria secrete extracellular polymer that glues the "
+     "sediment surface, raising the critical erosion threshold by a measured factor "
+     "of two to five. It is the marine homologue of desert biocrust - the fragile "
+     "living skin that holds an *erg* still - and it is destroyed by the same thing: "
+     "surface disturbance.",
+     "**A seabed can become a desert without being poisoned or suffocated.** Once "
+     "the skin is broken the bed mobilises, abrasion and burial kill the neighbours, "
+     "and the damage propagates laterally - the crust-and-vehicle-track story "
+     "exactly. The state then holds itself, because mobility prevents recolonisation "
+     "and recolonisation is what would restabilise it.",
+     "Critical erosion threshold and microphytobenthic biomass against disturbance "
+     "history, rather than against nutrients.",
+     "Sediment erodibility measurement (cohesive strength meter or flume) with "
+     "matched chlorophyll in the surface sediment. Standard methods; not in Danish "
+     "monitoring."),
+    ("D9", "D", "Fertility islands lost to homogenisation", ["O3", "O7"],
+     "Desert vegetation traps sand and concentrates nutrients into mounds with "
+     "barren interspace - a two-phase mosaic where almost all the biological "
+     "activity is in a small fraction of the area. Mussel beds, tube-worm fields and "
+     "eelgrass do the same on a seabed.",
+     "Removing the structure does not average the system; it collapses it to the "
+     "barren phase, which is a lower-productivity *stable* state rather than an "
+     "intermediate one. A survey reporting means across an area cannot see the "
+     "difference between a mosaic and its barren half.",
+     "Spatial variance of fauna and organic matter, not their mean. A mosaic and a "
+     "homogenised flat can share a mean and differ completely in variance.",
+     "Fauna sampled with enough spatial replication to estimate variance within an "
+     "area. Present design gives one grab per station."),
+    ("D10", "D", "Winnowing and armouring", ["O3", "O1"],
+     "Currents remove fine sediment and its organic matter, leaving a coarse lag - "
+     "the marine desert pavement. The bed that remains has different chemistry, "
+     "different permeability and different fauna.",
+     "Sediment composition shifts permanently with no change in supply, and the "
+     "organic matter removed is deposited somewhere else, concentrating demand "
+     "elsewhere.",
+     "Grain size distribution through time at fixed stations.",
+     "Sediment grain size by station and date. Collected historically; rarely "
+     "analysed as a time series."),
+    ("D11", "D", "Stabilisers against destabilisers", ["O3", "O4"],
+     "Burrowing fauna destabilise sediment; microphytobenthos and tube-builders "
+     "stabilise it. Which side dominates decides whether the bed is erodible at all, "
+     "and the two respond differently to every stressor in this register.",
+     "Erodibility is a biological property with a sign that can flip. Neither side "
+     "of the balance appears in nutrient assessment, so a bed can change from "
+     "stable to mobile with no measured change in anything.",
+     "The ratio of bioturbating to biostabilising biomass against measured "
+     "erodibility.",
+     "Species-level fauna with functional traits assigned. The fauna data exists in "
+     "ODA; the trait assignment is a desk exercise."),
 
     # ---- E ----------------------------------------------------------------
     ("E1", "E", "Sulphide oxidation", ["O1"],
@@ -1023,6 +1102,301 @@ H = [
      "produces a larger effect than it once did.",
      "Functional diversity indices through time from the fauna record.",
      "Species-level fauna with abundance, which the ODA bundfauna data carries."),
+
+    # ---- T ----------------------------------------------------------------
+    ("T1", "T", "Sulphide intrusion, gated by light", ["O7", "O3"],
+     "Eelgrass detoxifies sediment sulphide by leaking oxygen from its roots into "
+     "the rhizosphere - radial oxygen loss, the same mechanism wetland plants use. "
+     "That leak is powered by photosynthesis. Under low light it weakens, sulphide "
+     "enters the roots and rhizome, and the plant is poisoned from below.",
+     "**A light-and-sulphide interaction that is neither a nutrient effect nor a "
+     "water-column oxygen effect.** Both indicators can read acceptably while the "
+     "plant dies, because the lethal condition is in the sediment and the trigger is "
+     "at the surface. Explains dieback in water whose measured oxygen never fell.",
+     "Sulphide in eelgrass tissue against light at the bed and sediment sulphide - "
+     "the three together, which is the whole point.",
+     "Tissue sulphide, porewater sulphide, and light at the bed at the same "
+     "stations. Danish research groups have done this; monitoring does not."),
+    ("T2", "T", "Loss of the sulphide-detoxifying symbiosis", ["O7", "O3"],
+     "Seagrass beds host lucinid clams whose gill bacteria oxidise sulphide, keeping "
+     "the rhizosphere habitable. Plant, clam and bacterium are a three-way "
+     "partnership.",
+     "Lose the clams - to trawling, to hypoxia, to anything in group D - and the "
+     "seagrass loses its sulphide protection **with no change in any nutrient**. "
+     "This is the mycorrhizal story with the partner outside the plant, and it makes "
+     "vegetation loss a consequence of fauna loss rather than of water quality.",
+     "Lucinid presence and sulphide-oxidising activity in beds that persist against "
+     "beds that failed, at matched water quality.",
+     "Infaunal bivalve records within seagrass beds. In the ODA fauna data if "
+     "anyone looks for it."),
+    ("T3", "T", "Wasting disease with stress-modulated virulence", ["O7"],
+     "*Labyrinthula zosterae* destroyed most Atlantic eelgrass in the 1930s and is "
+     "still present. Virulence depends on host condition: plants under low light, "
+     "heat or sulphide stress are far more susceptible.",
+     "The proximate cause of death is a pathogen; the reason it succeeded is a "
+     "stressor. Attribution to either alone is wrong, and a survey recording only "
+     "the die-off sees neither.",
+     "Pathogen prevalence alongside host stress indicators, rather than either "
+     "alone.",
+     "Labyrinthula screening in Danish eelgrass. Not routine."),
+    ("T4", "T", "Marine replant failure: negative sediment feedback", ["O7", "O3"],
+     "Restoration plantings fail in sediment whose chemistry looks adequate - the "
+     "marine form of replant disease. Candidate causes are the accumulated "
+     "pathogens, the missing symbionts of T2, the lost binding of D8, and autotoxic "
+     "residues.",
+     "Recovery is blocked by a property of the *medium* rather than of the water, so "
+     "improving water quality produces nothing. Directly testable, and the test is "
+     "the same one horticulture uses: does the plant grow in this ground, and does "
+     "it grow if you replace or inoculate the ground?",
+     "Transplant trials into failed sites, with and without sediment inoculation "
+     "from a functioning bed.",
+     "Restoration trials with sediment treatments. A handful of Danish eelgrass "
+     "trials exist; this design does not."),
+    ("T5", "T", "Loss of sediment suppressiveness", ["O7", "O3"],
+     "Some soils suppress disease purely through their microbial community, and "
+     "suppressiveness is transferable - mix 1-10% of a suppressive soil into a "
+     "conducive one and it becomes suppressive. Anaerobiosis and fumigation destroy "
+     "it.",
+     "A sediment can lose a protective property that no chemical measurement "
+     "detects, and regain it only by re-inoculation. If marine sediments behave the "
+     "same way, sediment transplantation is a plausible intervention nobody has "
+     "tried.",
+     "Whether sediment from a healthy bed confers resistance when mixed into a "
+     "failed one - the standard transfer assay.",
+     "Sediment microbial community composition, and transfer experiments. Neither "
+     "exists here."),
+    ("T6", "T", "Enrichment dissolving the partnership", ["O7", "O4"],
+     "High phosphorus suppresses mycorrhizal colonisation: a well-fed plant stops "
+     "maintaining the symbiosis that was feeding it and protecting its roots.",
+     "Enrichment removes resilience through a *partner* rather than through an ion - "
+     "the same shape as the antagonism of K3, one level up in biological "
+     "organisation. A nutrient-rich system can be less able to withstand stress "
+     "precisely because it is nutrient-rich.",
+     "Symbiont abundance along a nutrient gradient, and host stress tolerance with "
+     "and without the symbiont.",
+     "Rhizosphere community composition along the gradient. Not measured."),
+    ("T7", "T", "Anaerobic phytotoxins other than sulphide", ["O7", "O3"],
+     "Waterlogged soil generates organic acids, ethylene, and reduced iron and "
+     "manganese at toxic concentrations - a suite of phytotoxins well known in "
+     "agronomy and distinct from oxygen shortage itself.",
+     "Plants die in anoxic sediment for several reasons at once, only one of which "
+     "is lack of oxygen. A model with an oxygen term and nothing else attributes all "
+     "of it to oxygen.",
+     "Porewater organic acids and reduced metals alongside sulphide.",
+     "Porewater chemistry beyond the standard nutrients. Rare."),
+    ("T8", "T", "Anaerobic conditions select the pathogens", ["O7", "O3", "O6"],
+     "Oomycetes - the Pythium and Phytophthora group - swim as zoospores, need "
+     "water, and thrive where roots are stressed and oxygen is low. Marine "
+     "oomycetes and labyrinthulids exist and are barely studied.",
+     "Hypoxia does not only weaken the host; it favours the pathogen. Two effects in "
+     "the same direction, so the observed damage exceeds what an oxygen-tolerance "
+     "curve predicts.",
+     "Pathogen abundance against sediment redox, and host mortality against both.",
+     "Marine oomycete and labyrinthulid surveys. Essentially none."),
+
+    # ---- S ----------------------------------------------------------------
+    ("S1", "S", "Retention is a property of the medium and varies by an order of "
+     "magnitude", ["O1", "O4"],
+     "Denmark is split between sandy glacial outwash in western Jutland - low clay, "
+     "low organic matter, low exchange capacity, high leaching, the Arenosol case - "
+     "and clayey moraine in the east. The same application leaches very differently "
+     "from each.",
+     "A single national retention figure, or a coefficient fitted to national "
+     "averages, describes nowhere. The regulatory pressure assigned to an individual "
+     "farm is a soil model output wearing a water-policy label, for a quantity its "
+     "own producers say cannot be measured directly.",
+     "Measured leaching from paired sites on contrasting soils under the same "
+     "management - which is the only thing that would validate the map.",
+     "Soil type at field resolution with matched drainage measurements. The soil map "
+     "exists; the paired validation largely does not."),
+    ("S2", "S", "Phosphorus saturation, and legacy leakage", ["O1", "O4"],
+     "Sorption sites are finite. Degree of phosphorus saturation is already used in "
+     "Dutch and Danish regulation, and soils in high-livestock areas are saturated "
+     "after decades of manure. Past that point, applied P goes straight to runoff.",
+     "**Legacy P leaks regardless of current application.** Stopping today does not "
+     "stop the flux, so a load reduction produces no response for reasons that have "
+     "nothing to do with the sea - which is indistinguishable, from the marine end, "
+     "from the sediment legacy of H2 or the missing precondition of L4.",
+     "Degree of phosphorus saturation by catchment against measured P flux, and the "
+     "flux's response to application changes.",
+     "Soil P status by area. Denmark holds this; it is not carried into the marine "
+     "argument."),
+    ("S3", "S", "Sorption is hysteretic - a ratchet on the land side too", ["O4"],
+     "Phosphate enters the sorbed and occluded pools far more readily than it "
+     "leaves. In the most weathered soils occlusion is effectively irreversible.",
+     "The land stores nutrient on a different timescale from the one policy operates "
+     "on, in both directions - slow to fill and slow to empty. Symmetrical with the "
+     "iron shuttle in the sediment, and for the same mineralogical reason.",
+     "Desorption isotherms alongside the sorption ones, which are the half usually "
+     "measured.",
+     "Sorption-desorption experiments on Danish soils. Standard method."),
+    ("S4", "S", "Total is not available", ["O1", "O4"],
+     "Soil science distinguishes resin, bicarbonate, hydroxide, acid and residual "
+     "phosphorus pools by sequential extraction, because total P says almost nothing "
+     "about what an organism can get. Marine sediment P is generally reported as a "
+     "bulk total.",
+     "A sediment can be P-rich and P-poor at once. Any budget built on totals "
+     "mis-states both the stock and the flux, and the error is not small.",
+     "Sequential fractionation of marine sediment phosphorus, the standard soil "
+     "method applied to the bed.",
+     "Fractionated sediment P. The method is seventy years old and is not routine "
+     "in marine monitoring."),
+    ("S5", "S", "Buffering scales with the volume of reactive medium", ["O1", "O3"],
+     "The Leptosol lesson: a soil under 25 cm deep has almost no capacity to absorb "
+     "a shock, because buffering is proportional to the volume of material doing the "
+     "buffering.",
+     "Shallow water bodies and thin sediment layers swing further on the same load, "
+     "so depth belongs in the load coefficient rather than as a covariate - and the "
+     "areas most likely to be shallow are the ones people swim in.",
+     "Response amplitude against water depth and sediment thickness, at matched "
+     "load per unit area.",
+     "Bathymetry and sediment thickness per area. Bathymetry is held; sediment "
+     "thickness is not."),
+    ("S6", "S", "Retention capacity is saturable, so the coefficient is not "
+     "constant", ["O1", "O4"],
+     "Retention is treated as a fixed fraction. If the mechanisms behind it - "
+     "denitrification capacity, sorption sites, organic matter - are finite and have "
+     "been loaded for decades, the fraction falls over time.",
+     "The same application delivers more to the sea now than it did in 1990, so a "
+     "coefficient fitted on the early record over-states present retention and "
+     "under-states present delivery. Fitting a constant to a declining quantity also "
+     "produces exactly the systematic drift DCE report in their own TN models.",
+     "Retention estimated separately by era, rather than fitted once across the "
+     "whole record.",
+     "The same catchment flux data, split by period. Requires no new measurement at "
+     "all."),
+
+    ("L6", "L", "The degraded bed is classified as its own habitat type",
+     ["O3", "O7"],
+     "A chronically trawled seabed and a naturally sandy one look the same in a "
+     "sediment sample, and habitat classification records both as sand. The "
+     "flattened state is then enshrined as a habitat *type* with its own expected "
+     "community, against which it scores as healthy.",
+     "The most thoroughly degraded areas are graded against the standard their own "
+     "degradation set. This is the shifting baseline made administrative, and it is "
+     "not a metaphor - it is what a classification key does when it types states "
+     "rather than histories.",
+     "Habitat classification against disturbance history, not against present "
+     "sediment. Any area classified as sand whose historical charts or fisheries "
+     "records show structure is a positive case.",
+     "Historical seabed charts, old fisheries records, and trawling effort - the "
+     "history, which is exactly what a classification key discards."),
+
+    # ---- R ----------------------------------------------------------------
+    ("R1", "R", "The C:N threshold, and fat as a nitrogen sink", ["O1", "O2", "O4"],
+     "Decomposer microbes build biomass near C:N 8-10 at about 40% carbon-use "
+     "efficiency, so there is a threshold near C:N 25: below it decay releases "
+     "mineral nitrogen, above it decay consumes it. Straw at C:N 80 starves the next "
+     "crop. Fat has no nitrogen at all.",
+     "**An input with zero nitrogen content lowers measured nitrogen**, because the "
+     "bacteria decomposing it scavenge dissolved N from the water to build "
+     "themselves. A fat-loaded water can read as less eutrophic on the regulated "
+     "indicator while being more degraded, and the direction of that bias is "
+     "opposite to what everyone assumes.",
+     "Dissolved inorganic nitrogen drawdown following organic-carbon inputs of known "
+     "C:N, against inputs of the same carbon with nitrogen in them.",
+     "C:N of the material actually discharged, not just its N and COD separately. "
+     "Both numbers exist in discharge monitoring and the ratio is never formed."),
+    ("R2", "R", "Priming of the old sediment pool by fresh carbon", ["O1"],
+     "Adding labile carbon to soil accelerates decomposition of the old recalcitrant "
+     "pool, because the microbes gain the energy to attack the hard fraction. "
+     "Decades of soil science; not applied to marine sediment in assessment.",
+     "An input's oxygen demand exceeds its own COD, because it unlocks stored "
+     "carbon. The measured load understates its effect, and the sediment legacy of "
+     "H2 stops being an inert stock.",
+     "Oxygen demand following a labile input, against the input's own COD.",
+     "Sediment incubation experiments with and without labile addition. Standard "
+     "method, not run here."),
+    ("R3", "R", "The decay relay stalls when a stage is removed", ["O2", "O1", "O3"],
+     "Decomposition is a relay - leaching, fragmentation by detritivores, microbial "
+     "catabolism, humification - and removing a link leaves material unprocessed. "
+     "Australian cattle dung sat on the ground until dung beetles were imported.",
+     "The terrestrial homologue is **thatch** in turfgrass: a greasy organic mat "
+     "that forms when production outruns decomposition, whose classic causes are "
+     "heavy nitrogen, pesticides that kill earthworms, and compaction - and which is "
+     "treated by restoring the fauna, not by feeding the grass less. Also mull humus "
+     "turning to mor: fauna-worked and incorporated, becoming raw and matted. If "
+     "fedtemøg is a stalled relay, it forms when the *fragmenters* go, which is what "
+     "hypoxia, trawling and toxicants each do independently of any nutrient.",
+     "Deposited organic matter and its processing state against macrofaunal biomass, "
+     "not against nutrient load.",
+     "Sediment organic content with matched fauna, at the same stations. Both are in "
+     "the ODA record and are not analysed together."),
+    ("R4", "R", "Nitrogen enrichment retards decay of the recalcitrant fraction",
+     ["O1", "O2"],
+     "Well established in soil: nitrogen accelerates decay of labile litter but "
+     "suppresses the lignin-degrading enzymes of white-rot fungi, so recalcitrant "
+     "material decays *slower* under high nitrogen and the persistent pool grows.",
+     "Enrichment builds the refractory reservoir even as it speeds the easy "
+     "fraction - so nutrient loading and sediment legacy are not two independent "
+     "problems but one, with a sign nobody has checked in the sea.",
+     "Decay rate of refractory versus labile marine organic matter along a nutrient "
+     "gradient.",
+     "Litter-bag or incubation studies with characterised organic fractions. Common "
+     "in soil science, rare in marine work."),
+    ("R5", "R", "The terminal electron acceptor cascade, and why salt changes it",
+     ["O1", "O3"],
+     "Decay runs down a ladder of electron acceptors - O₂, then nitrate, then "
+     "manganese, then iron, then sulphate, then CO₂ - each yielding less energy. "
+     "Freshwater carries 5-30 mg/L of sulphate and so passes it quickly to "
+     "methanogenesis. Seawater carries 2,700 mg/L, a hundred to five hundred times "
+     "more, and sulphate reducers outcompete methanogens for hydrogen and acetate.",
+     "**Marine anoxia poisons as well as suffocates; freshwater anoxia mostly just "
+     "suffocates.** Anoxic lake sediment makes methane. Anoxic marine sediment makes "
+     "sulphide, without limit, because the reservoir is effectively infinite. Every "
+     "intuition carried over from freshwater eutrophication understates the marine "
+     "case by exactly this mechanism.",
+     "Sulphide and methane production rates against salinity along the Danish "
+     "gradient, which spans the transition.",
+     "Porewater sulphide and methane by station. Rarely measured."),
+    ("R6", "R", "Sulphide locks the iron that would hold the phosphate", ["O1", "O4"],
+     "Sulphide precipitates FeS, removing the iron oxides that bind phosphate in "
+     "oxic sediment. A salt-specific step, because freshwater lacks the sulphate to "
+     "make enough sulphide.",
+     "Marine sediments release far more phosphate under anoxia than freshwater ones, "
+     "so the Baltic phosphorus feedback is strong *because of the salt*. Combined "
+     "with the iron shuttle, each episode leaves less iron and less binding capacity "
+     "than the last.",
+     "Sediment Fe:S and Fe:P ratios against phosphate release rate.",
+     "Sequential iron and sulphur extraction on sediment. Not routine here."),
+    ("R7", "R", "Estuarine flocculation deposits river carbon at the coast",
+     ["O1", "O2"],
+     "Dissolved organic matter and clay from fresh water flocculate on meeting salt "
+     "and drop out of suspension, concentrated in the mixing zone.",
+     "Riverine organic carbon does not disperse - it is deposited in a band right at "
+     "the coast, which places the oxygen demand exactly where the shallow, stratified "
+     "water and the bathing beaches are. A load figure at the river mouth therefore "
+     "understates the local concentration of its effect.",
+     "Sediment organic carbon along a salinity transect from each river mouth.",
+     "Sediment organic content with matched salinity. Obtainable."),
+    ("R8", "R", "Lipids are less soluble in seawater", ["O2"],
+     "Salting-out: dissolved organics, and lipids especially, are less soluble at "
+     "high ionic strength and partition preferentially into films, aggregates and "
+     "the surface microlayer.",
+     "The same fat load produces more film and aggregate in salt water than in "
+     "fresh - a candidate reason greasiness is a marine and brackish complaint, and "
+     "a link between group B's imported fat and group J's surface film.",
+     "Partitioning of lipid between dissolved, particulate and microlayer fractions "
+     "across the salinity gradient.",
+     "Lipid fractionation by salinity. Not measured."),
+    ("R9", "R", "Home-field advantage, and novel material", ["O1", "O2"],
+     "Litter decomposes fastest in the community adapted to it. Material a community "
+     "has never encountered - novel chemicals, invasive species' tissue, synthetic "
+     "polymers - decomposes slower and accumulates.",
+     "Accumulation with no change in loading rate, simply because what arrives has "
+     "changed. Connects the novo-chemical argument to the decay argument: a "
+     "substance with no degradation terminus is a decay relay with no final stage.",
+     "Decay rate of local versus novel organic material in the same water.",
+     "Comparative decomposition assays. Not run."),
+    ("R10", "R", "Osmotic discontinuity for the decomposers themselves", ["O1"],
+     "Freshwater and marine decomposer communities are different organisms, and "
+     "neither functions well in the other's water. The salinity front is a "
+     "discontinuity in the decomposition machinery, not only in the chemistry.",
+     "Organic matter crossing the front is briefly processed by neither community, "
+     "so the mixing zone is a decay bottleneck as well as a deposition zone - "
+     "compounding R7 at the same place.",
+     "Decomposition rate as a function of salinity, holding material constant.",
+     "Cross-transplant incubations. Not run."),
 
     # ---- L ----------------------------------------------------------------
     ("L1", "L", "The reference condition never existed", ["O4", "O7"],
