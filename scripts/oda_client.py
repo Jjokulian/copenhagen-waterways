@@ -82,20 +82,33 @@ def envelope(method, dtree=None, lists=None):
             f'</varTrees></xmlDoc></{method}></soap:Body></soap:Envelope>')
 
 
-def call(method, dtree=None, lists=None, pause=1.0, timeout=120):
+def call(method, dtree=None, lists=None, pause=1.0, timeout=300, tries=4):
+    """One SOAP call, with patience.
+
+    Selecting 1,527 stations makes the server do real work before it answers, and
+    a slow answer is not a failed one - an unretried read timeout throws away an
+    hour of downloading. Retries back off, and only on transport errors: an HTTP
+    error is a real answer and is returned as one."""
     body = envelope(method, dtree, lists).encode("utf-8")
-    req = urllib.request.Request(SVC, data=body, headers={
-        "Content-Type": "text/xml; charset=utf-8",
-        "SOAPAction": NS + "/" + method,
-        "User-Agent": UA,
-    })
-    try:
-        with _op.open(req, timeout=timeout) as r:
-            out = r.read().decode("utf-8", "replace")
-            code = r.status
-    except urllib.error.HTTPError as e:
-        out = e.read().decode("utf-8", "replace")
-        code = e.code
+    for attempt in range(tries):
+        req = urllib.request.Request(SVC, data=body, headers={
+            "Content-Type": "text/xml; charset=utf-8",
+            "SOAPAction": NS + "/" + method,
+            "User-Agent": UA,
+        })
+        try:
+            with _op.open(req, timeout=timeout) as r:
+                out = r.read().decode("utf-8", "replace")
+                code = r.status
+            break
+        except urllib.error.HTTPError as e:
+            out = e.read().decode("utf-8", "replace")
+            code = e.code
+            break
+        except Exception:
+            if attempt == tries - 1:
+                raise
+            time.sleep(5 * (attempt + 1))
     time.sleep(pause)
     return code, out
 

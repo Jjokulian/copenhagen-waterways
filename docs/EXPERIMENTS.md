@@ -10,11 +10,11 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 ## Three kinds of work, which are not interchangeable
 
-**Constructive and investigative — `experiment`** (9 of 12 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+**Constructive and investigative — `experiment`** (10 of 13 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
 
-**Investigative — `measurement`** (2 of 12 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+**Investigative — `measurement`** (2 of 13 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
 
-**Armchair — `analysis`** (1 of 12 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+**Armchair — `analysis`** (1 of 13 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
 
 Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
 
@@ -23,11 +23,11 @@ Naming them separately matters because they are not substitutes and they are not
 | | | experiments |
 |---|---|---|
 | `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X2, X7, X9, X10, X12 |
-| `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11 |
+| `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11, X13 |
 | `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5 |
 | `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X8 |
 
-**7 of 12 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
+**7 of 13 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
 
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
@@ -212,6 +212,24 @@ Gel and exopolymer are hypothesised to come from carbon overflow when cells fix 
 **Decide, in advance.** TEP peaks at skewed ratios rather than at high totals → the gel is a ratio phenomenon, and a policy that moves one nutrient alone can increase it. TEP tracks total supply → it is an enrichment phenomenon after all, and reducing load reduces it.
 
 *Directly tests whether the intervention could make one outcome worse while improving another.*
+
+### X13 — Does the muck build up because nothing is eating it?
+
+`experiment`
+
+**Bears on:** [`E13`](#HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](#HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](#HYPOTHESES.md) Total biocide load, whatever its source, [`R3`](#HYPOTHESES.md) The decay relay stalls when a stage is removed, [`R11`](#HYPOTHESES.md) Marine fungi, the decomposers nobody counts
+
+Turfgrass thatch - a greasy organic mat - forms when pesticides kill the earthworms and microbes that would incorporate the material. If fedtemøg is the same failure in sediment, then organic matter accumulates because the decomposers are gone, not because more is arriving.
+
+**Manipulate.** Litter bags of standardised organic material buried in sediment mesocosms dosed with an environmentally realistic fungicide concentration, and with a veterinary avermectin, at several doses.
+
+**Control.** Undosed sediment, and autoclaved sediment as the zero-biology floor. **The organic supply is identical in every treatment** - which is the whole point, because it makes the nutrient hypothesis unable to explain any difference that appears.
+
+**Measure.** Mass loss from the litter bags over months; fungal and bacterial biomass; oxygen consumption; and whether a visible mat forms.
+
+**Decide, in advance.** Decay slows with dose while supply is held constant → the accumulation route is biocidal rather than nutritional, `E13` holds, and fedtemøg has a cause that no nitrogen policy touches. Decay is unaffected → the marine decomposers are not sensitive at realistic concentrations, and the thatch analogy fails where it matters, which is worth publishing too.
+
+*The cleanest discriminator in the register: two hypotheses that predict the same observed outcome are separated by holding the input fixed and varying only the processors. Standard litter-bag method, standard mesocosms, and the dose figures come from published sales and residue data.*
 
 ## Programme — Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment.
 

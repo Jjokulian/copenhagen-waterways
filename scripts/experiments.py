@@ -291,6 +291,31 @@ X = [
      "that ratio is computable. It does not → drop the argument.",
      "The dead-shell control matters: mussel beds change flow as well as filtering, "
      "and the two effects have different policy implications."),
+
+    ("X13", "Does the muck build up because nothing is eating it?", "experiment",
+     ["E13", "E14", "E15", "R3", "R11"], "lab",
+     "Turfgrass thatch - a greasy organic mat - forms when pesticides kill the "
+     "earthworms and microbes that would incorporate the material. If fedtemøg is "
+     "the same failure in sediment, then organic matter accumulates because the "
+     "decomposers are gone, not because more is arriving.",
+     "Litter bags of standardised organic material buried in sediment mesocosms "
+     "dosed with an environmentally realistic fungicide concentration, and with a "
+     "veterinary avermectin, at several doses.",
+     "Undosed sediment, and autoclaved sediment as the zero-biology floor. **The "
+     "organic supply is identical in every treatment** - which is the whole point, "
+     "because it makes the nutrient hypothesis unable to explain any difference "
+     "that appears.",
+     "Mass loss from the litter bags over months; fungal and bacterial biomass; "
+     "oxygen consumption; and whether a visible mat forms.",
+     "Decay slows with dose while supply is held constant → the accumulation route "
+     "is biocidal rather than nutritional, `E13` holds, and fedtemøg has a cause "
+     "that no nitrogen policy touches. Decay is unaffected → the marine decomposers "
+     "are not sensitive at realistic concentrations, and the thatch analogy fails "
+     "where it matters, which is worth publishing too.",
+     "The cleanest discriminator in the register: two hypotheses that predict the "
+     "same observed outcome are separated by holding the input fixed and varying "
+     "only the processors. Standard litter-bag method, standard mesocosms, and the "
+     "dose figures come from published sales and residue data."),
 ]
 
 

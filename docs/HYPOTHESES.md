@@ -2,15 +2,15 @@
 
 Showing that a claim rests on poor grounds reduces its political actionability. It does not show the claim is wrong, and it does not tell you what is right. So this page does the other thing: it puts the official hypothesis into a field of rivals, all of them stated at full strength, so that each can be related to the same evidence and scored.
 
-**148 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
+**151 mechanisms in 17 groups.** The nutrient-load hypothesis is **A1**. It is stated as strongly as we can state it, and it is not privileged anywhere below.
 
 The register is written down *before* anything is scored, so that the field cannot be quietly trimmed to whatever the data turned out to support. Each entry names the signature it would leave and the measurement that would separate it from its neighbours. Where that measurement does not exist in Denmark, the entry says so — a hypothesis nobody can test is not thereby false, it is **unranked**, and a ranking that omits its unranked members is a ranking of what was convenient to measure.
 
 ## This list is not exhaustive, and we have no way to know how far off it is
 
-There are 148 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
+There are 151 entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 148 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** The first version had 71 entries and was written to be thorough. It reached 151 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -830,6 +830,42 @@ Sulphide toxic to fauna in its own right, and the source of the smell people act
 **Discriminated by.** Porewater and bottom-water sulphide against fauna and complaint records.
 
 **Needs.** Sulphide measurements. Rare.
+
+### E13 — Biocides that remove the decomposers themselves
+
+**Outcomes:** O2, O1, O3
+
+Not toxicity in general, but toxicity aimed at the guild whose job is to break organic matter down. Fungicides are applied by the thousand tonnes and are designed to kill fungi; fungi are the organisms that degrade the tough fractions - lignin, chitin - that bacteria leave behind.
+
+**Predicts.** **This is the thatch mechanism, and thatch is what fedtemøg looks like on land.** A greasy organic mat forms on turf when production outruns decomposition, and the classic causes are heavy nitrogen *and pesticides that kill the earthworms and microbes doing the incorporating*. Greenkeepers treat it by restoring the soil life. If the same holds in sediment, organic matter accumulates with no change in nutrient supply at all — the input is normal and the processing has stopped.
+
+**Discriminated by.** Decomposition rate of standard organic material along a biocide gradient, with fungal and bacterial biomass measured alongside. The discriminator against the nutrient hypothesis is that supply is held constant.
+
+**Needs.** Fungicide concentrations in sediment, and fungal biomass. Neither is measured in Danish marine monitoring, and `R11` records that the fungi are not counted anywhere.
+
+### E14 — Veterinary antiparasitics in manure
+
+**Outcomes:** O2, O1, O3
+
+Avermectins given to livestock pass through the animal and remain active in its dung. Dung from treated cattle is measurably slower to break down because the insects that break it down are killed by the residue - documented since the 1980s.
+
+**Predicts.** A worked, published example of exactly the mechanism above, on land, in agriculture: **the material is not different, the organisms that process it are gone.** That dung goes on fields, and what runs off fields reaches water. The register has no other entry where the terrestrial case is this well established.
+
+**Discriminated by.** Antiparasitic residues in manure, runoff and sediment, against decomposition rate of standard material.
+
+**Needs.** Veterinary pharmaceutical residues in Danish soil, runoff or sediment. Not routinely measured.
+
+### E15 — Total biocide load, whatever its source
+
+**Outcomes:** O3, O2, O1
+
+Household, agricultural and industrial biocides reach the same water and act on the same organisms. Antifoulants, wood preservatives, agricultural fungicides and insecticides, disinfectants, veterinary products, and the antibacterials in ordinary consumer goods.
+
+**Predicts.** **For the effect, only the load matters; the source split is politically interesting and mechanistically irrelevant.** That is the exact inverse of how nitrogen is handled, where the source split is the entire public argument and the effect coefficient does not exist. Here there is a plausible effect and nobody has added the load up. And there is hard evidence the agricultural fraction does reach environmental organisms at active concentrations: azole-resistant *Aspergillus* has arisen in the Netherlands and Denmark from agricultural azole use, which means those fungicides are selecting on non-target environmental fungal populations. Resistance is proof of exposure.
+
+**Discriminated by.** Summed biocidal load per catchment against decomposer biomass and decomposition rate — the sum, not any single substance against its own threshold, which is the `U1` problem.
+
+**Needs.** A total biocide load figure for Denmark by catchment. Sales data exists by substance nationally; nothing assembles it into an environmental load.
 
 ## F. Biological structure and feedback
 
@@ -1825,7 +1861,7 @@ Adding labile carbon to soil accelerates decomposition of the old recalcitrant p
 
 Decomposition is a relay - leaching, fragmentation by detritivores, microbial catabolism, humification - and removing a link leaves material unprocessed. Australian cattle dung sat on the ground until dung beetles were imported.
 
-**Predicts.** The terrestrial homologue is **thatch** in turfgrass: a greasy organic mat that forms when production outruns decomposition, whose classic causes are heavy nitrogen, pesticides that kill earthworms, and compaction - and which is treated by restoring the fauna, not by feeding the grass less. Also mull humus turning to mor: fauna-worked and incorporated, becoming raw and matted. If fedtemøg is a stalled relay, it forms when the *fragmenters* go, which is what hypoxia, trawling and toxicants each do independently of any nutrient.
+**Predicts.** The terrestrial homologue is **thatch** in turfgrass: a greasy organic mat that forms when production outruns decomposition, whose classic causes are heavy nitrogen, pesticides that kill earthworms, and compaction - and which is treated by restoring the fauna, not by feeding the grass less. Also mull humus turning to mor: fauna-worked and incorporated, becoming raw and matted. If fedtemøg is a stalled relay, it forms when the *fragmenters* go, which is what hypoxia, trawling and toxicants each do independently of any nutrient. The chemical route to that is `E13`, `E14` and `E15`; this entry is the mechanism, those are the agents.
 
 **Discriminated by.** Deposited organic matter and its processing state against macrofaunal biomass, not against nutrient load.
 

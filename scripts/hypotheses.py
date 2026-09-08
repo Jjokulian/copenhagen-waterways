@@ -1383,6 +1383,59 @@ H = [
      "Porewater and bottom-water sulphide against fauna and complaint records.",
      "Sulphide measurements. Rare."),
 
+    ("E13", "E", "Biocides that remove the decomposers themselves",
+     ["O2", "O1", "O3"],
+     "Not toxicity in general, but toxicity aimed at the guild whose job is to "
+     "break organic matter down. Fungicides are applied by the thousand tonnes and "
+     "are designed to kill fungi; fungi are the organisms that degrade the tough "
+     "fractions - lignin, chitin - that bacteria leave behind.",
+     "**This is the thatch mechanism, and thatch is what fedtemøg looks like on "
+     "land.** A greasy organic mat forms on turf when production outruns "
+     "decomposition, and the classic causes are heavy nitrogen *and pesticides that "
+     "kill the earthworms and microbes doing the incorporating*. Greenkeepers treat "
+     "it by restoring the soil life. If the same holds in sediment, organic matter "
+     "accumulates with no change in nutrient supply at all — the input is normal "
+     "and the processing has stopped.",
+     "Decomposition rate of standard organic material along a biocide gradient, "
+     "with fungal and bacterial biomass measured alongside. The discriminator "
+     "against the nutrient hypothesis is that supply is held constant.",
+     "Fungicide concentrations in sediment, and fungal biomass. Neither is measured "
+     "in Danish marine monitoring, and `R11` records that the fungi are not counted "
+     "anywhere."),
+    ("E14", "E", "Veterinary antiparasitics in manure", ["O2", "O1", "O3"],
+     "Avermectins given to livestock pass through the animal and remain active in "
+     "its dung. Dung from treated cattle is measurably slower to break down because "
+     "the insects that break it down are killed by the residue - documented since "
+     "the 1980s.",
+     "A worked, published example of exactly the mechanism above, on land, in "
+     "agriculture: **the material is not different, the organisms that process it "
+     "are gone.** That dung goes on fields, and what runs off fields reaches water. "
+     "The register has no other entry where the terrestrial case is this well "
+     "established.",
+     "Antiparasitic residues in manure, runoff and sediment, against decomposition "
+     "rate of standard material.",
+     "Veterinary pharmaceutical residues in Danish soil, runoff or sediment. Not "
+     "routinely measured."),
+    ("E15", "E", "Total biocide load, whatever its source", ["O3", "O2", "O1"],
+     "Household, agricultural and industrial biocides reach the same water and act "
+     "on the same organisms. Antifoulants, wood preservatives, agricultural "
+     "fungicides and insecticides, disinfectants, veterinary products, and the "
+     "antibacterials in ordinary consumer goods.",
+     "**For the effect, only the load matters; the source split is politically "
+     "interesting and mechanistically irrelevant.** That is the exact inverse of "
+     "how nitrogen is handled, where the source split is the entire public argument "
+     "and the effect coefficient does not exist. Here there is a plausible effect "
+     "and nobody has added the load up. And there is hard evidence the agricultural "
+     "fraction does reach environmental organisms at active concentrations: "
+     "azole-resistant *Aspergillus* has arisen in the Netherlands and Denmark from "
+     "agricultural azole use, which means those fungicides are selecting on "
+     "non-target environmental fungal populations. Resistance is proof of exposure.",
+     "Summed biocidal load per catchment against decomposer biomass and "
+     "decomposition rate — the sum, not any single substance against its own "
+     "threshold, which is the `U1` problem.",
+     "A total biocide load figure for Denmark by catchment. Sales data exists by "
+     "substance nationally; nothing assembles it into an environmental load."),
+
     # ---- F ----------------------------------------------------------------
     ("F1", "F", "Loss of filter feeders", ["O4", "O1"],
      "Mussel and oyster beds clearing the water column; their removal leaves the "
@@ -1995,7 +2048,9 @@ H = [
      "treated by restoring the fauna, not by feeding the grass less. Also mull humus "
      "turning to mor: fauna-worked and incorporated, becoming raw and matted. If "
      "fedtemøg is a stalled relay, it forms when the *fragmenters* go, which is what "
-     "hypoxia, trawling and toxicants each do independently of any nutrient.",
+     "hypoxia, trawling and toxicants each do independently of any nutrient. The "
+     "chemical route to that is `E13`, `E14` and `E15`; this entry is the mechanism, "
+     "those are the agents.",
      "Deposited organic matter and its processing state against macrofaunal biomass, "
      "not against nutrient load.",
      "Sediment organic content with matched fauna, at the same stations. Both are in "

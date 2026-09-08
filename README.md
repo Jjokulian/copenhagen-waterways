@@ -92,8 +92,8 @@ docs/
   flood_gap_map.png       one picture of that comparison
   NITROGEN.md             where the marine nitrogen figures come from, generated
   CAUSATION.md            what survives between that figure and a claim about a shore
-  HYPOTHESES.md           148 candidate causes, written down before any of them is scored
-  EXPERIMENTS.md          12 manipulations with controls and decision rules fixed in advance
+  HYPOTHESES.md           151 candidate causes, written down before any of them is scored
+  EXPERIMENTS.md          13 manipulations with controls and decision rules fixed in advance
   DATA_QUEUE.md           80 sources sorted by friction: fetch now, held, one form away, closed
   OBSERVING.md            what is measured, where, how often - and whether a "water body" is real
   OXYGEN.md               every route that removes oxygen, priced; and what the indicators conflate
