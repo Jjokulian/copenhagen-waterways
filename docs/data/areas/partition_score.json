@@ -1,0 +1,278 @@
+{
+ "_what": "How much of the between-station variation each variable's values are explained by water-body membership, within month.",
+ "_reading": "ICC 1 = two stations in the same basket agree completely and membership tells you everything; 0 = membership tells you nothing beyond the month.",
+ "_controls": "shuffled = station labels permuted with basket sizes kept, which is what zero looks like under this sampling design. latitude_bands = equal-count horizontal stripes ignoring hydrography; a partition that cannot beat stripes is not encoding much. size_matched_compact = baskets with the same size distribution as the real ones, grown from random seeds by nearest neighbour: compact blobs of the right sizes that follow no hydrography. It is the only control that varies one thing at a time, and lift_over_compact is the number to read - the other two disagree with each other.",
+ "_limit": "Stations are not placed at random and are denser in some baskets than others, so this scores the partition AS SAMPLED rather than the partition. It cannot distinguish a well-drawn basket from a basket whose stations happen to sit close together.",
+ "results": [
+  {
+   "variable": "oxysat_surf",
+   "label": "Oxygen saturation",
+   "depth": "near the surface",
+   "unit": "%",
+   "water_bodies": {
+    "icc": 0.924,
+    "months": 530,
+    "between_ms": 556.2363,
+    "within_ms": 45.9361
+   },
+   "shuffled": {
+    "icc": 0.859,
+    "months": 531,
+    "between_ms": 555.4577,
+    "within_ms": 91.0429
+   },
+   "latitude_bands": {
+    "icc": 0.516,
+    "months": 531,
+    "between_ms": 295.3241,
+    "within_ms": 277.2367
+   },
+   "size_matched_compact": {
+    "icc": 0.522,
+    "runs": 3,
+    "spread": 0.178
+   },
+   "lift_over_compact": 0.402
+  },
+  {
+   "variable": "oxy_surf",
+   "label": "Oxygen",
+   "depth": "near the surface",
+   "unit": "mg/l",
+   "water_bodies": {
+    "icc": 0.878,
+    "months": 553,
+    "between_ms": 5.1479,
+    "within_ms": 0.7182
+   },
+   "shuffled": {
+    "icc": 0.782,
+    "months": 551,
+    "between_ms": 4.6859,
+    "within_ms": 1.3063
+   },
+   "latitude_bands": {
+    "icc": 0.55,
+    "months": 553,
+    "between_ms": 3.0131,
+    "within_ms": 2.4637
+   },
+   "size_matched_compact": {
+    "icc": 0.595,
+    "runs": 3,
+    "spread": 0.111
+   },
+   "lift_over_compact": 0.283
+  },
+  {
+   "variable": "oxysat_bed",
+   "label": "Oxygen saturation",
+   "depth": "near the bed",
+   "unit": "%",
+   "water_bodies": {
+    "icc": 0.81,
+    "months": 529,
+    "between_ms": 1127.615,
+    "within_ms": 265.2014
+   },
+   "shuffled": {
+    "icc": 0.658,
+    "months": 530,
+    "between_ms": 962.7461,
+    "within_ms": 500.7852
+   },
+   "latitude_bands": {
+    "icc": 0.585,
+    "months": 530,
+    "between_ms": 794.4816,
+    "within_ms": 564.0726
+   },
+   "size_matched_compact": {
+    "icc": 0.672,
+    "runs": 3,
+    "spread": 0.034
+   },
+   "lift_over_compact": 0.138
+  },
+  {
+   "variable": "sal_surf",
+   "label": "Salinity",
+   "depth": "near the surface",
+   "unit": "‰",
+   "water_bodies": {
+    "icc": 0.968,
+    "months": 557,
+    "between_ms": 101.7332,
+    "within_ms": 3.3201
+   },
+   "shuffled": {
+    "icc": 0.531,
+    "months": 556,
+    "between_ms": 53.1991,
+    "within_ms": 47.0573
+   },
+   "latitude_bands": {
+    "icc": 0.679,
+    "months": 557,
+    "between_ms": 67.9849,
+    "within_ms": 32.1526
+   },
+   "size_matched_compact": {
+    "icc": 0.844,
+    "runs": 3,
+    "spread": 0.065
+   },
+   "lift_over_compact": 0.124
+  },
+  {
+   "variable": "sal_bed",
+   "label": "Salinity",
+   "depth": "near the bed",
+   "unit": "‰",
+   "water_bodies": {
+    "icc": 0.916,
+    "months": 557,
+    "between_ms": 98.3481,
+    "within_ms": 9.0013
+   },
+   "shuffled": {
+    "icc": 0.538,
+    "months": 556,
+    "between_ms": 56.8987,
+    "within_ms": 48.847
+   },
+   "latitude_bands": {
+    "icc": 0.64,
+    "months": 557,
+    "between_ms": 67.1199,
+    "within_ms": 37.7906
+   },
+   "size_matched_compact": {
+    "icc": 0.798,
+    "runs": 3,
+    "spread": 0.035
+   },
+   "lift_over_compact": 0.118
+  },
+  {
+   "variable": "temp_surf",
+   "label": "Temperature",
+   "depth": "near the surface",
+   "unit": "°C",
+   "water_bodies": {
+    "icc": 0.83,
+    "months": 558,
+    "between_ms": 4.124,
+    "within_ms": 0.8421
+   },
+   "shuffled": {
+    "icc": 0.51,
+    "months": 558,
+    "between_ms": 2.4584,
+    "within_ms": 2.3602
+   },
+   "latitude_bands": {
+    "icc": 0.618,
+    "months": 558,
+    "between_ms": 2.9528,
+    "within_ms": 1.8269
+   },
+   "size_matched_compact": {
+    "icc": 0.734,
+    "runs": 3,
+    "spread": 0.039
+   },
+   "lift_over_compact": 0.096
+  },
+  {
+   "variable": "oxy_bed",
+   "label": "Oxygen",
+   "depth": "near the bed",
+   "unit": "mg/l",
+   "water_bodies": {
+    "icc": 0.79,
+    "months": 553,
+    "between_ms": 10.1286,
+    "within_ms": 2.7001
+   },
+   "shuffled": {
+    "icc": 0.639,
+    "months": 551,
+    "between_ms": 8.3393,
+    "within_ms": 4.7197
+   },
+   "latitude_bands": {
+    "icc": 0.602,
+    "months": 553,
+    "between_ms": 7.4511,
+    "within_ms": 4.9173
+   },
+   "size_matched_compact": {
+    "icc": 0.698,
+    "runs": 3,
+    "spread": 0.012
+   },
+   "lift_over_compact": 0.092
+  },
+  {
+   "variable": "temp_bed",
+   "label": "Temperature",
+   "depth": "near the bed",
+   "unit": "°C",
+   "water_bodies": {
+    "icc": 0.81,
+    "months": 558,
+    "between_ms": 11.4654,
+    "within_ms": 2.6882
+   },
+   "shuffled": {
+    "icc": 0.523,
+    "months": 558,
+    "between_ms": 7.6074,
+    "within_ms": 6.9386
+   },
+   "latitude_bands": {
+    "icc": 0.625,
+    "months": 558,
+    "between_ms": 8.8778,
+    "within_ms": 5.3163
+   },
+   "size_matched_compact": {
+    "icc": 0.766,
+    "runs": 3,
+    "spread": 0.035
+   },
+   "lift_over_compact": 0.044
+  },
+  {
+   "variable": "fluo",
+   "label": "Fluorescence (chlorophyll proxy)",
+   "depth": "whole cast",
+   "unit": "rel",
+   "water_bodies": {
+    "icc": 0.725,
+    "months": 511,
+    "between_ms": 97.2414,
+    "within_ms": 36.8382
+   },
+   "shuffled": {
+    "icc": 0.404,
+    "months": 510,
+    "between_ms": 54.0936,
+    "within_ms": 79.6805
+   },
+   "latitude_bands": {
+    "icc": 0.564,
+    "months": 512,
+    "between_ms": 76.3346,
+    "within_ms": 59.0818
+   },
+   "size_matched_compact": {
+    "icc": 0.775,
+    "runs": 3,
+    "spread": 0.109
+   },
+   "lift_over_compact": -0.05
+  }
+ ]
+}

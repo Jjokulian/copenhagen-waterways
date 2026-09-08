@@ -78,6 +78,36 @@ The station-level series make this checkable rather than arguable. Both halves o
 
 Computed from `docs/data/areas/stations_series.*`, which carry no partition at all — the water-body assignment used here is loaded separately from `station_waterbody_overlay.json`, on purpose, so that using it is a deliberate act.
 
+## What are the baskets predictive FOR? — and how easily that question is answered wrongly
+
+A partition is not right or wrong in general; it is predictive *for a variable*. So the question is what the water bodies encode, and the statistic is the **intraclass correlation** computed within month: pick two stations at random in the same month — if they are in the same water body, how much more alike are they than two picked without regard to it? One means membership tells you everything; zero means it tells you nothing beyond the season.
+
+Within month is essential. Every station in Denmark shares a season, so pooling across months puts the seasonal signal into the between-basket term and makes every partition look excellent, including an absurd one.
+
+**The result depends almost entirely on what it is compared against, and three reasonable comparisons give three different answers.** This section reports that rather than a ranking, because an earlier version of this page reported the ranking and it was wrong.
+
+| variable | real | shuffled | latitude stripes | size- and shape-matched | **lift over the last** |
+|---|---:|---:|---:|---:|---:|
+| surface oxygen saturation | 0.924 | 0.859 | 0.516 | 0.522 | **+0.402** |
+| surface oxygen | 0.878 | 0.782 | 0.550 | 0.595 | **+0.283** |
+| bottom oxygen saturation | 0.810 | 0.658 | 0.585 | 0.672 | +0.138 |
+| surface salinity | 0.968 | 0.531 | 0.679 | 0.844 | +0.124 |
+| bottom salinity | 0.916 | 0.538 | 0.640 | 0.798 | +0.118 |
+| surface temperature | 0.830 | 0.510 | 0.618 | 0.734 | +0.096 |
+| bottom oxygen | 0.790 | 0.639 | 0.602 | 0.698 | +0.092 |
+| bottom temperature | 0.810 | 0.523 | 0.625 | 0.766 | +0.044 |
+| fluorescence | 0.725 | 0.404 | 0.564 | 0.775 | **−0.050** |
+
+The three nulls answer three different questions. **Shuffled** permutes station labels while keeping basket sizes, so it destroys geography and keeps the size structure; against it, salinity wins by a distance. **Latitude stripes** are equal-count horizontal bands, so they keep compactness and equal sizes but ignore hydrography; against them, surface oxygen saturation wins. **Size- and shape-matched** baskets have the same size distribution as the real ones and are grown from random seeds by nearest neighbour, so they are compact blobs of the right sizes following no hydrography at all — the only control that varies one thing at a time.
+
+Against that last one the ordering **reverses**: oxygen gains most, salinity gains little, and fluorescence goes negative — random compact blobs of the same sizes predict it *better* than the official partition does.
+
+There is a coherent reading. Salinity is spatially smooth, so any compact grouping predicts it well (0.844 from random blobs) and the real boundaries have little left to add. Oxygen is spatially rough, so blobs do poorly and boundaries that follow enclosure carry real information. A partition's value is not how well it predicts, but **how much better it predicts than the shape of it alone would**.
+
+> **A correction, and the reason this section is written as a caution.** An earlier version said the water bodies "encode salinity strongly and oxygen almost not at all", from the shuffled control alone. Against a null matching both size and shape that is backwards. The claim was defensible, reproducible, and wrong — and it survived exactly as long as it took to compute a second control. Any single number here would have been publishable; the disagreement between the nulls is the finding.
+
+> One further limit bounding every row: stations are not placed at random and are far denser in some baskets than others, so this scores the partition *as sampled*. It cannot distinguish a well-drawn basket from one whose stations happen to sit close together.
+
 ## The cum hoc estimate, across areas instead of across years
 
 A national time series has one unit of replication. The areas have 65. So the only place an effect size can actually be estimated is across them.
