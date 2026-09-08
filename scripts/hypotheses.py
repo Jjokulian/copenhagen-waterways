@@ -322,6 +322,9 @@ TERMS = {
     'erg': (
         'A sand sea - the dune-covered kind of desert, as opposed to stony or salt desert.',
         "Arabic 'irq, a dune field. What makes it hostile is that the surface moves, not that it is dry."),
+    'error threshold': (
+        'The mutation rate above which a lineage can no longer preserve its own information and collapses. RNA viruses sit just below it, which is the fastest possible search that still permits replication.',
+        'Deliberately pushing a virus over it is a real antiviral strategy, called lethal mutagenesis.'),
     'essential use': (
         'A proposed rule that the most harmful substances should be permitted only where they are genuinely necessary and no substitute exists - rather than wherever the exposure looks acceptable.',
         'The concept borrowed from how antibiotics are managed, and the closest existing idea to reserving a chemical rather than banning it.'),
@@ -472,6 +475,9 @@ TERMS = {
     'Leptosol': (
         'A very shallow soil, under about 25 cm to rock. Almost no capacity to buffer anything.',
         'Greek leptos, thin.'),
+    'lethal mutagenesis': (
+        'Pushing a virus above its error threshold on purpose, so that it mutates itself out of existence. It works because the strategy that makes RNA viruses fast is also the thing that can be turned against them.',
+        'One of the few antiviral approaches that a pathogen cannot straightforwardly evolve around.'),
     'Liebig': (
         'The law of the minimum: growth is set by whichever necessary thing is scarcest, not by the total of everything supplied. Ten nutrients in surplus and one missing gives you no growth.',
         'Justus von Liebig, the 19th-century chemist who argued it for crops. The name carries none of the meaning, which is why it is worth spelling out.'),
@@ -634,6 +640,9 @@ TERMS = {
     'polychaete': (
         'A marine bristle worm. Many build tubes that stabilise sediment; others burrow and mix it. A large share of what a seabed sample contains.',
         'Greek poly (many) plus chaite (hair).'),
+    'polymerase': (
+        "The enzyme that copies genetic material. How accurately it does so sets a lineage's mutation rate, and therefore which of the two adaptive strategies is available to it.",
+        'From polymer plus -ase, the enzyme ending.'),
     'porewater': (
         'The water in the spaces between sediment grains. Its chemistry is often wholly different from the water above, and it is what a buried animal actually lives in.',
         'The pores of the sediment.'),
@@ -646,6 +655,9 @@ TERMS = {
     'prokaryote': (
         'An organism whose cell has no nucleus - bacteria and archaea. They run essentially every chemical transformation in the sea that is not photosynthesis or animal respiration.',
         'Greek pro (before) plus karyon (kernel): named for lacking the thing eukaryotes have, which tells you who was doing the naming.'),
+    'proofreading': (
+        'The error-correcting step a polymerase performs while copying genetic material. RNA viruses mostly lack it, which is why they mutate orders of magnitude faster than anything cellular.',
+        'The absence is not a defect. It is what makes their strategy possible.'),
     'propagule': (
         'Whatever a species uses to start a new individual somewhere else - a larva, a seed, a spore, a fragment.',
         'Latin propagare, to propagate. The unit of arrival.'),
@@ -664,6 +676,9 @@ TERMS = {
     'Q10': (
         'How much faster a biological process runs for every ten degrees of warming. Around two for most decay, meaning respiration roughly doubles.',
         'A rule of thumb old enough to have no better name.'),
+    'quasispecies': (
+        'A population that exists as a cloud of related variants rather than as a defined genotype, because it mutates faster than selection can purify it. Selection then acts on the cloud rather than on any individual sequence.',
+        'The normal condition for RNA viruses, and the reason a virus is better thought of as a distribution than as a thing.'),
     'r-selected': (
         'Organisms that bet on speed and numbers - short lives, fast growth, many offspring, few requirements. They dominate disturbed and unstable conditions.',
         'From r, the growth-rate term in the population equation. Its counterpart is K-selected: slow, large, long-lived, competitive in stable conditions.'),
@@ -859,6 +874,9 @@ TERMS = {
     'viral shunt': (
         'Viruses bursting bacteria and algae so that their carbon returns to dissolved organic matter instead of being eaten by something larger.',
         'A shunt in the electrical sense: the current is diverted before it reaches the load.'),
+    'virion': (
+        'A single complete virus particle outside a cell. Marine water holds roughly ten million of them per millilitre.',
+        'The unit you would count, as against the infection, which is what they do.'),
     'virioplankton': (
         'The viruses drifting in seawater - roughly ten million in every millilitre, and the most numerous biological entities in the ocean.',
         'Virus plus plankton. Their existence at this scale was only established in 1989.'),
@@ -3213,8 +3231,8 @@ def render(rows):
       "sufficient? | The dominant term, and the one usually left out |")
     a("| **Mutational bias** | *Where* variation arises, not how much | Mutation is "
       "not uniform, and recombination is not random |")
-    a("| **Mutation rate** | How much raw variation per copy | Matters least on its "
-      "own |")
+    a("| **Mutation rate** | How much raw variation per copy | Secondary for "
+      "cellular life — **and the whole strategy for some things** |")
     a("| **Generational turnover** | How often selection gets to act | Differs "
       "across organisms by five orders of magnitude |")
     a("")
@@ -3241,6 +3259,28 @@ def render(rows):
       "delivers whatever the local gene pool happens to hold. Variation is "
       "**structured**, and the structure is itself an evolved product of what the "
       "lineage has met before. Which is priming again, one level down.\n")
+    a("**The exception is real and it is not small: RNA viruses adapt the opposite "
+      "way round.** Their polymerase does not proofread, so they mutate several "
+      "orders of magnitude faster than anything cellular — close to the highest "
+      "rate that still permits replication at all. The consequence is that most "
+      "progeny are non-viable and die immediately, and the lineage exists not as a "
+      "genotype but as a *cloud* of variants around one, with selection acting on "
+      "the cloud. With populations of billions inside a single host and generations "
+      "in hours, the waste is affordable and the sequence space explored per day is "
+      "enormous.\n")
+    a("So there are two adaptive strategies, and they are near-opposites. One "
+      "conserves and modifies what already works, and is limited by priming. The "
+      "other searches by brute force and pays for it in dead offspring, and is "
+      "limited by how high the mutation rate can go before replication fails. **For "
+      "the second, rate is not a secondary term — it is the entire mechanism**, and "
+      "it is tuned right up against its own ceiling.\n")
+    a("That has a consequence this register should carry, because it applies to "
+      "`T3`, `F11` and `F12`. **A pathogen adapts faster than its host, "
+      "structurally and always** — not because it is cleverer but because it sits "
+      "at the far end of every one of the four terms while its host sits at the "
+      "near end. Eelgrass meets its wasting disease with generations in years; the "
+      "pathogen answers in days. Any argument that assumes host and parasite are "
+      "racing on comparable terms is wrong before it starts.\n")
     a("These differ across organisms in the *same direction* as everything else in "
       "this section. A marine bacterium divides in hours, lives at a billion cells "
       "per millilitre, and can acquire a working gene from an unrelated species. An "

@@ -208,7 +208,7 @@ One more layer under all of this, and it is the one that decides the direction o
 |---|---|---|
 | **What is primed** | Is there existing machinery already close to sufficient? | The dominant term, and the one usually left out |
 | **Mutational bias** | *Where* variation arises, not how much | Mutation is not uniform, and recombination is not random |
-| **Mutation rate** | How much raw variation per copy | Matters least on its own |
+| **Mutation rate** | How much raw variation per copy | Secondary for cellular life — **and the whole strategy for some things** |
 | **Generational turnover** | How often selection gets to act | Differs across organisms by five orders of magnitude |
 
 **Priming carries most of the weight.** New capabilities almost never arise from nothing; they arise by duplicating and modifying something that already worked. So what decides whether a lineage can meet a new condition is not the supply of mutations but the *distance* from its existing machinery to the required function.
@@ -216,6 +216,12 @@ One more layer under all of this, and it is the one that decides the direction o
 The clearest demonstration is a contrast this project already depends on. **Antibiotic resistance appears within years**, because the machinery pre-existed: soil bacteria have competed with antibiotic-producing fungi for hundreds of millions of years, and efflux pumps and degrading enzymes were already sitting in the shared gene pool. **PFAS degradation has not appeared in seventy years of global exposure**, because the carbon-fluorine bond has no prior anywhere and nothing holds machinery within reach of it. Same planet, same microbes, same mutation rates — opposite outcomes, decided entirely by what was primed.
 
 **And mutation is not random**, which most tellings of this get wrong. Rates vary by orders of magnitude across a genome with chromatin state, transcription and sequence context; stress induces mutagenesis in bacteria; recombination concentrates at hotspots rather than falling evenly; and meiosis, hybridisation and mate choice are themselves under selection and in no sense a lottery. Horizontal transfer is biased hardest of all — it delivers whatever the local gene pool happens to hold. Variation is **structured**, and the structure is itself an evolved product of what the lineage has met before. Which is priming again, one level down.
+
+**The exception is real and it is not small: RNA viruses adapt the opposite way round.** Their polymerase does not proofread, so they mutate several orders of magnitude faster than anything cellular — close to the highest rate that still permits replication at all. The consequence is that most progeny are non-viable and die immediately, and the lineage exists not as a genotype but as a *cloud* of variants around one, with selection acting on the cloud. With populations of billions inside a single host and generations in hours, the waste is affordable and the sequence space explored per day is enormous.
+
+So there are two adaptive strategies, and they are near-opposites. One conserves and modifies what already works, and is limited by priming. The other searches by brute force and pays for it in dead offspring, and is limited by how high the mutation rate can go before replication fails. **For the second, rate is not a secondary term — it is the entire mechanism**, and it is tuned right up against its own ceiling.
+
+That has a consequence this register should carry, because it applies to `T3`, `F11` and `F12`. **A pathogen adapts faster than its host, structurally and always** — not because it is cleverer but because it sits at the far end of every one of the four terms while its host sits at the near end. Eelgrass meets its wasting disease with generations in years; the pathogen answers in days. Any argument that assumes host and parasite are racing on comparable terms is wrong before it starts.
 
 These differ across organisms in the *same direction* as everything else in this section. A marine bacterium divides in hours, lives at a billion cells per millilitre, and can acquire a working gene from an unrelated species. An eelgrass meadow, a mussel bed, a long-lived bivalve: generations in years, populations in thousands, and no mechanism for borrowing an adaptation from a neighbour at all.
 

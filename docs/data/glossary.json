@@ -1549,6 +1549,13 @@
     "erging"
    ]
   },
+  "error threshold": {
+   "text": "The mutation rate above which a lineage can no longer preserve its own information and collapses. RNA viruses sit just below it, which is the fastest possible search that still permits replication.",
+   "why": "Deliberately pushing a virus over it is a real antiviral strategy, called lethal mutagenesis.",
+   "forms": [
+    "error threshold"
+   ]
+  },
   "essential use": {
    "text": "A proposed rule that the most harmful substances should be permitted only where they are genuinely necessary and no substitute exists - rather than wherever the exposure looks acceptable.",
    "why": "The concept borrowed from how antibiotics are managed, and the closest existing idea to reserving a chemical rather than banning it.",
@@ -1916,6 +1923,13 @@
    "why": "Greek leptos, thin.",
    "forms": [
     "leptosol"
+   ]
+  },
+  "lethal mutagenesis": {
+   "text": "Pushing a virus above its error threshold on purpose, so that it mutates itself out of existence. It works because the strategy that makes RNA viruses fast is also the thing that can be turned against them.",
+   "why": "One of the few antiviral approaches that a pathogen cannot straightforwardly evolve around.",
+   "forms": [
+    "lethal mutagenesis"
    ]
   },
   "Liebig": {
@@ -2308,6 +2322,13 @@
     "polychaete"
    ]
   },
+  "polymerase": {
+   "text": "The enzyme that copies genetic material. How accurately it does so sets a lineage's mutation rate, and therefore which of the two adaptive strategies is available to it.",
+   "why": "From polymer plus -ase, the enzyme ending.",
+   "forms": [
+    "polymerase"
+   ]
+  },
   "porewater": {
    "text": "The water in the spaces between sediment grains. Its chemistry is often wholly different from the water above, and it is what a buried animal actually lives in.",
    "why": "The pores of the sediment.",
@@ -2336,6 +2357,13 @@
     "prokaryote",
     "prokaryotes",
     "prokaryotic"
+   ]
+  },
+  "proofreading": {
+   "text": "The error-correcting step a polymerase performs while copying genetic material. RNA viruses mostly lack it, which is why they mutate orders of magnitude faster than anything cellular.",
+   "why": "The absence is not a defect. It is what makes their strategy possible.",
+   "forms": [
+    "proofreading"
    ]
   },
   "propagule": {
@@ -2381,6 +2409,13 @@
    "why": "A rule of thumb old enough to have no better name.",
    "forms": [
     "q10"
+   ]
+  },
+  "quasispecies": {
+   "text": "A population that exists as a cloud of related variants rather than as a defined genotype, because it mutates faster than selection can purify it. Selection then acts on the cloud rather than on any individual sequence.",
+   "why": "The normal condition for RNA viruses, and the reason a virus is better thought of as a distribution than as a thing.",
+   "forms": [
+    "quasispecies"
    ]
   },
   "r-selected": {
@@ -2853,6 +2888,13 @@
    "why": "A shunt in the electrical sense: the current is diverted before it reaches the load.",
    "forms": [
     "viral shunt"
+   ]
+  },
+  "virion": {
+   "text": "A single complete virus particle outside a cell. Marine water holds roughly ten million of them per millilitre.",
+   "why": "The unit you would count, as against the infection, which is what they do.",
+   "forms": [
+    "virion"
    ]
   },
   "virioplankton": {
