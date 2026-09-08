@@ -51,6 +51,19 @@ table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:6px}
 td,th{text-align:right;padding:3px 4px;border-bottom:1px solid var(--line)}
 th:first-child,td:first-child{text-align:left;color:var(--ink3)}
 th{font-weight:600;color:var(--ink3);font-size:11px}
+table.key{border-collapse:collapse;font-size:11.5px;line-height:1.45;color:var(--ink2)}
+table.key td{vertical-align:top;padding:4px 0}
+table.key td:first-child{width:26px;padding-right:8px}
+table.key b{color:var(--ink);font-weight:600}
+.k-cell{display:inline-block;width:11px;height:11px;background:var(--o1);margin-top:3px}
+.k-ramp{display:inline-block;width:18px;height:10px;margin-top:3px;border-radius:2px;
+  background:linear-gradient(90deg,var(--o0),var(--o1),var(--o2),var(--o3),var(--o4),var(--o5))}
+.k-gap{display:inline-block;width:16px;height:11px;background:var(--sea);
+  border:1px solid var(--line);margin-top:2px}
+.k-line{display:inline-block;width:16px;height:11px;margin-top:2px;
+  border-top:1px solid var(--ink3);border-bottom:1px solid var(--ink3);opacity:.5}
+.k-yr{display:inline-block;width:16px;margin-top:2px;font-size:9px;color:var(--ink3)}
+.k-yr:before{content:"2010"}
 #load{padding:40px 30px;color:var(--ink3)}
 </style>
 
@@ -81,6 +94,28 @@ th{font-weight:600;color:var(--ink3);font-size:11px}
     </select>
     <div class="ramp" id="ramp"></div>
     <div class="rlab"><span id="lo"></span><span id="hi"></span></div>
+
+    <h3>Key — what every mark means</h3>
+    <table class="key">
+      <tr><td><span class="k-cell"></span></td><td><b>One cell</b> — one month, one
+        metre of depth. 226 profiles &times; 240 levels. Time runs left to right,
+        depth downward.</td></tr>
+      <tr><td><span class="k-ramp"></span></td><td><b>Near-black &rarr; brown &rarr;
+        orange &rarr; tan &rarr; blue</b> — low to high. For oxygen the dark end is
+        anoxic and the blue end is well-oxygenated, so <b>the dark band is the dead
+        layer</b> and its upper edge is the oxycline.</td></tr>
+      <tr><td><span class="k-gap"></span></td><td><b>Flat background colour</b> — no
+        profile that month. <b>Not zero, and not interpolated across:</b> 159 of 385
+        months are blank, nearly all of them before 2006.</td></tr>
+      <tr><td><span class="k-line"></span></td><td><b>Horizontal rules</b> — depth at
+        0, 50, 100, 150, 200 and 240&nbsp;m, labelled at the left.</td></tr>
+      <tr><td><span class="k-yr"></span></td><td><b>Numbers along the bottom</b> —
+        years, every fifth. Spacing is per profile, not per calendar month, so thin
+        years occupy the same width as dense ones.</td></tr>
+    </table>
+    <p class="note">Switch the selector to salinity and the same plot shows the
+    halocline: a sharp horizontal boundary at about the same depth as the top of the
+    dark oxygen band. That coincidence is the whole finding.</p>
 
     <h3>What the record says</h3>
     <table id="tab"></table>

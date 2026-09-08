@@ -65,6 +65,30 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
 .rlab{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);
   font-variant-numeric:tabular-nums}
 #load{padding:40px 30px;color:var(--ink3)}
+table.key{border-collapse:collapse;font-size:11.5px;line-height:1.45;color:var(--ink2)}
+table.key td{vertical-align:top;padding:4px 0}
+table.key td:first-child{width:26px;padding-right:8px}
+table.key b{color:var(--ink);font-weight:600}
+.k-dot{display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--v3);border:.7px solid var(--panel);margin:3px 0 0 4px}
+.k-dot.big{width:15px;height:15px;margin-left:1px}
+.k-dot.faint{opacity:.2}
+.k-dot.grey{width:5px;height:5px;background:var(--ink3);opacity:.45;margin-left:6px}
+.k-ring{display:inline-block;width:14px;height:14px;border-radius:50%;
+  background:var(--v2);margin:2px 0 0 2px}
+.k-ring.amber{box-shadow:0 0 0 1.6px var(--model)}
+.k-ring.red{box-shadow:0 0 0 2px var(--warn)}
+.k-ramp{display:inline-block;width:18px;height:9px;margin-top:3px;border-radius:2px;
+  background:linear-gradient(90deg,var(--v0),var(--v2),var(--v4x))}
+.k-land{display:inline-block;width:16px;height:11px;background:var(--ground);
+  border:1px solid var(--line);margin-top:2px}
+.k-wb{display:inline-block;width:16px;height:11px;border:1px solid var(--model);
+  margin-top:2px;opacity:.7}
+.k-idw{display:inline-block;width:16px;height:11px;background:var(--v2);opacity:.42;
+  margin-top:2px}
+.k-bar{display:inline-block;width:16px;height:11px;margin-top:2px;
+  background:linear-gradient(90deg,var(--v3) 60%,var(--warn) 60%)}
+b.k-hi{color:var(--warn)}
 #strips{padding:2px 18px 0}
 .striprow{display:grid;grid-template-columns:64px 1fr;gap:9px;align-items:center;
   margin-bottom:5px}
@@ -187,6 +211,41 @@ button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
         <input type="range" id="rad" min="10" max="250" value="60"></label>
       <p class="note warnbox" id="idwwarn"></p>
     </div>
+
+    <h3>Key — what every mark means</h3>
+    <table class="key">
+      <tr><td><span class="k-dot"></span></td><td><b>Filled dot</b> — one station, at
+        its own position, in the selected month. What it is coloured and sized by is
+        set under <em>What the dots show</em>: the measured value, persistence, or
+        seasonal bias.</td></tr>
+      <tr><td><span class="k-ramp"></span></td><td><b>Pale to dark</b> — low to high,
+        always. Value mode: 5th to 95th percentile of that variable. Persistence: 1 to
+        12 months reported. Seasonal bias: Rayleigh R from 0 to 1.</td></tr>
+      <tr><td><span class="k-dot big"></span></td><td><b>Bigger dot</b> — more, in the
+        two count modes: more months reported, or more seasonal. Size is constant in
+        value mode.</td></tr>
+      <tr><td><span class="k-dot faint"></span></td><td><b>Faint dot</b> — too few
+        records of this variable to characterise (under 12). Not zero; unknown.</td></tr>
+      <tr><td><span class="k-ring amber"></span></td><td><b>Amber ring</b> — beyond
+        what the chemistry permits but explicable: bloom supersaturation, sensor zero
+        offset at anoxia.</td></tr>
+      <tr><td><span class="k-ring red"></span></td><td><b>Red ring</b> — gross value,
+        no benign reading available. Ringed, never removed.</td></tr>
+      <tr><td><span class="k-dot grey"></span></td><td><b>Small grey dot</b> — a
+        station that exists and reported <em>nothing</em> this month. Off by default,
+        and it is most of the map.</td></tr>
+      <tr><td><span class="k-land"></span></td><td><b>Solid ground colour</b> — land.
+        Reference only, filled without strokes so no administrative boundary shows.</td></tr>
+      <tr><td><span class="k-wb"></span></td><td><b>Thin amber outline</b> — a water
+        body. A model boundary, drawn only when asked for.</td></tr>
+      <tr><td><span class="k-idw"></span></td><td><b>Soft translucent squares</b> —
+        interpolation you switched on. Every one is invented; none is in the
+        archive.</td></tr>
+      <tr><td><span class="k-bar"></span></td><td><b>Strip bars</b> — observation
+        counts. Upper strip: per month across the record, click to jump. Lower strip:
+        the same counts folded to month of year. <b class="k-hi">The highlighted bar</b>
+        is where you are now.</td></tr>
+    </table>
 
     <h3>What this view destroys anyway</h3>
     <dl>
@@ -342,7 +401,7 @@ function draw(){
       if(MODE==='persist'){ t=((persist.get(i)||1)-1)/11; rad=2.2+2.6*Math.max(0,Math.min(1,t)); }
       else if(MODE==='season'){ const q=SEAS.get(i);
         if(!q){ c.globalAlpha=.18; t=0; rad=2.2; }
-        else { t=1-q.R; rad=2.2+3.0*q.R; }   // dark+large = strongly seasonal
+        else { t=q.R; rad=2.2+3.0*q.R; }     // dark AND large = strongly seasonal
       }
       else t=(v-dom[0])/(dom[1]-dom[0]);
       c.fillStyle=col(Math.max(0,Math.min(1,t)));
