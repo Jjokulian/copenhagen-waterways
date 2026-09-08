@@ -1,0 +1,311 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Measurements, where they were taken</title>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --sea:#eceff1; --accent:#2f6a95; --warn:#b4532f; --model:#8a6d3b;
+  --v0:#eaf0f4; --v1:#b9d0de; --v2:#7aa9c6; --v3:#42799f; --v4:#1e4c६d;
+  --v4x:#1e4c6d;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#22252b; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a;
+  --v0:#262a31; --v1:#33505f; --v2:#4d7b96; --v3:#79a9c6; --v4x:#b6d6e8;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#22252b; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a;
+  --v0:#262a31; --v1:#33505f; --v2:#4d7b96; --v3:#79a9c6; --v4x:#b6d6e8;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:24px 30px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:22px;font-weight:640;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:0 0 4px;max-width:70ch;color:var(--ink2)}
+header a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 320px}
+@media(max-width:940px){.wrap{grid-template-columns:1fr}}
+#stage{position:relative;padding:12px 8px 0 14px;min-width:0}
+canvas{width:100%;display:block;border-radius:3px;background:var(--sea)}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:16px 18px 26px}
+@media(max-width:940px){aside{border-left:0;border-top:1px solid var(--line)}}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);
+  margin:16px 0 7px;font-weight:600}
+h3:first-of-type{margin-top:0}
+label{display:block;font-size:13px;margin:0 0 5px;cursor:pointer}
+label input{margin-right:7px;vertical-align:-1px}
+select,input[type=range]{width:100%;font:inherit;font-size:13px}
+select{padding:5px 6px;background:var(--ground);color:var(--ink);
+  border:1px solid var(--line);border-radius:3px}
+.cls{font-size:11px;color:var(--ink3);margin:-3px 0 9px 22px;line-height:1.4}
+.tag{display:inline-block;font-size:10px;letter-spacing:.05em;padding:1px 5px;
+  border-radius:3px;font-weight:600;vertical-align:1px}
+.t-meas{background:#2f6a9522;color:var(--accent)}
+.t-agg{background:#8b8d9722;color:var(--ink3)}
+.t-mod{background:#8a6d3b22;color:var(--model)}
+.t-you{background:#b4532f22;color:var(--warn)}
+.bar{display:flex;justify-content:space-between;align-items:baseline;
+  padding:8px 14px;font-size:12px;color:var(--ink2);gap:14px;flex-wrap:wrap}
+.bar b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0;font-size:12.5px}
+dt{color:var(--ink3)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
+  border-left:2px solid var(--line);padding-left:9px}
+.warnbox{border-left-color:var(--warn);color:var(--warn)}
+.scrub{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;
+  padding:6px 18px 12px}
+.scrub b{font-variant-numeric:tabular-nums;font-size:13px;min-width:6.5ch}
+button{font:inherit;font-size:12px;padding:3px 9px;border:1px solid var(--line);
+  background:var(--ground);color:var(--ink);border-radius:3px;cursor:pointer}
+.ramp{display:flex;height:9px;border-radius:2px;overflow:hidden;margin:5px 0 3px}
+.ramp i{flex:1}
+.rlab{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);
+  font-variant-numeric:tabular-nums}
+#load{padding:40px 30px;color:var(--ink3)}
+</style>
+
+<header>
+  <h1>Measurements, where they were taken</h1>
+  <p>Every marine measurement in this archive, at the position it was recorded, for the
+  month it was recorded. <strong>Nothing is aggregated into a water body and nothing is
+  interpolated between points.</strong> Empty sea is empty because nobody measured
+  there, not because the value is low.</p>
+  <p>Layers are labelled by what kind of thing they are. Only one of them is
+  measurement. <a href="areas.html">The water-body view is here</a> — it is the thing
+  this page exists to be compared against.</p>
+</header>
+
+<div id="load">Loading 5.3 MB of station series…</div>
+
+<div class="wrap" id="app" hidden>
+  <div>
+    <div id="stage"><canvas id="cv"></canvas></div>
+    <div class="scrub">
+      <button id="play">▶</button>
+      <input type="range" id="month" min="0" max="563" value="420">
+      <b id="mlab"></b>
+    </div>
+    <div class="bar">
+      <span><b id="nrep">0</b> of 1,415 stations reported this month</span>
+      <span><b id="pct">0%</b> of the archive's stations</span>
+      <span id="badn" style="color:var(--warn)"></span>
+      <span id="synth"></span>
+    </div>
+  </div>
+
+  <aside>
+    <h3>Variable</h3>
+    <select id="var"></select>
+    <div class="ramp" id="ramp"></div>
+    <div class="rlab"><span id="lo"></span><span id="hi"></span></div>
+    <p class="note" id="depthnote"></p>
+
+    <h3>Layers, by what they are</h3>
+
+    <label><input type="checkbox" id="L_meas" checked>
+      Station values <span class="tag t-meas">MEASURED</span></label>
+    <div class="cls">Class 1–2: sensor value, quantised. Recoverable or boundable
+      error. One dot = one station-month median.</div>
+
+    <label><input type="checkbox" id="L_gaps">
+      Stations that reported nothing <span class="tag t-meas">MEASURED</span></label>
+    <div class="cls">Absence, drawn. Usually invisible on a map, and it is most of
+      the map.</div>
+
+    <label><input type="checkbox" id="L_wb">
+      Water body polygons <span class="tag t-mod">MODEL</span></label>
+    <div class="cls">Class 7: model-as-datum. A drawn boundary, not an observation.
+      Feature-subspace stability found it adds nothing beyond being a connected
+      region of its size.</div>
+
+    <label><input type="checkbox" id="L_bad" checked>
+      Physically impossible values <span class="tag t-meas">MEASURED</span></label>
+    <div class="cls">Class 1: value error, ringed rather than removed. 764 of 679,422
+      station-months fall outside what the chemistry permits — 0.11%, and
+      <strong>all of it in oxygen</strong> (0.31% near-bed, 0.49% surface). Salinity and
+      temperature are clean. The regulated variable is the one with impossible
+      readings.</div>
+
+    <label><input type="checkbox" id="L_idw">
+      Interpolate between stations <span class="tag t-you">YOU ADDED THIS</span></label>
+    <div class="cls">Inverse-distance weighting. It invents every pixel between the
+      dots. Nothing here comes from the archive — the controls are yours and so is
+      the result.</div>
+    <div id="idwctl" hidden>
+      <label style="font-size:12px;color:var(--ink3)">power <span id="pv">2.0</span>
+        <input type="range" id="pow" min="5" max="60" value="20"></label>
+      <label style="font-size:12px;color:var(--ink3)">reach <span id="rv">60 km</span>
+        <input type="range" id="rad" min="10" max="250" value="60"></label>
+      <p class="note warnbox" id="idwwarn"></p>
+    </div>
+
+    <h3>What this view destroys anyway</h3>
+    <dl>
+      <dt>depth</dt><dd>896 → 2 bins</dd>
+      <dt>time</dt><dd>day → month</dd>
+      <dt>casts</dt><dd>→ 1 median</dd>
+      <dt>instrument</dt><dd>dropped</dd>
+      <dt>time of day</dt><dd>never recorded</dd>
+    </dl>
+    <p class="note">Class 3 aggregation, ours, at roughly 3,900:1 against the raw
+    archive. Countable, and counted here rather than left implicit. The measurement-level
+    store that would remove it is about 800&nbsp;MB.</p>
+  </aside>
+</div>
+
+<script>
+const D='data/areas/';
+let META,BIN,VARS,ST,WB=null,byMonth=[],dom=[0,1],playing=0;
+const $=id=>document.getElementById(id);
+// what the chemistry permits. Values outside are drawn, not dropped: a deleted
+// outlier is an unrecorded decision, which is the error this whole site is about.
+const BOUND={oxy:[0,15],oxysat:[0,200],sal:[0,40],temp:[-2,30],fluo:[0,Infinity]};
+let LIM=[-Infinity,Infinity];
+
+Promise.all([
+  fetch(D+'stations_series.json').then(r=>r.json()),
+  fetch(D+'stations_series.bin').then(r=>r.arrayBuffer()),
+  fetch(D+'areas.json').then(r=>r.json()).catch(()=>null)
+]).then(([m,b,a])=>{
+  META=m; BIN=b; VARS=m.variables; ST=m.stations; WB=a&&a.geometry?a.geometry:null;
+  const sel=$('var');
+  VARS.forEach((v,i)=>{const o=document.createElement('option');
+    o.value=i; o.textContent=v.label+(v.depth?' — '+v.depth:''); sel.appendChild(o);});
+  sel.value=4; sel.onchange=()=>{loadVar(+sel.value);draw()};
+  $('load').hidden=true; $('app').hidden=false;
+  loadVar(4); wire(); draw();
+});
+
+// one variable at a time: n uint16 station, n uint16 month, n float32 value
+function loadVar(i){
+  const v=VARS[i], n=v.n, o=v.offset;
+  const si=new Uint16Array(BIN.slice(o,o+2*n));
+  const mo=new Uint16Array(BIN.slice(o+2*n,o+4*n));
+  const va=new Float32Array(BIN.slice(o+4*n,o+8*n));
+  byMonth=Array.from({length:META.months},()=>[]);
+  for(let k=0;k<n;k++) byMonth[mo[k]].push([si[k],va[k]]);
+  // domain from ORDER STATISTICS, not mean and sd: 5th and 95th percentile
+  const s=Array.from(va).sort((a,b)=>a-b);
+  dom=[s[Math.floor(s.length*0.05)], s[Math.floor(s.length*0.95)]];
+  $('lo').textContent=fmt(dom[0])+' '+v.unit;
+  $('hi').textContent=fmt(dom[1])+' '+v.unit;
+  LIM=BOUND[v.key.split('_')[0]]||[-Infinity,Infinity];
+  $('depthnote').textContent='Depth: '+v.depth+'. The cast had hundreds of readings; '
+    +'this is one number for the shallowest or deepest quarter of it.';
+}
+const fmt=x=>Math.abs(x)>=100?x.toFixed(0):Math.abs(x)>=10?x.toFixed(1):x.toFixed(2);
+const RAMP=['--v0','--v1','--v2','--v3','--v4x'];
+$('ramp').innerHTML=RAMP.map(c=>`<i style="background:var(${c})"></i>`).join('');
+function col(t){const g=getComputedStyle(document.documentElement);
+  const i=Math.max(0,Math.min(4,Math.floor(t*5)));return g.getPropertyValue(RAMP[i]).trim();}
+
+// equirectangular; Denmark is small enough that this is not the error that matters
+let PJ={};
+function project(w,h){
+  const lo=ST.map(s=>s.lon),la=ST.map(s=>s.lat);
+  const x0=Math.min(...lo),x1=Math.max(...lo),y0=Math.min(...la),y1=Math.max(...la);
+  const k=Math.cos((y0+y1)/2*Math.PI/180), pad=18;
+  const sx=(w-2*pad)/((x1-x0)*k), sy=(h-2*pad)/(y1-y0), s=Math.min(sx,sy);
+  PJ={x0,y0,x1,y1,k,s,pad,
+    ox:pad+((w-2*pad)-(x1-x0)*k*s)/2, oy:pad+((h-2*pad)-(y1-y0)*s)/2};
+}
+const px=l=>PJ.ox+(l-PJ.x0)*PJ.k*PJ.s;
+const py=l=>PJ.oy+(PJ.y1-l)*PJ.s;
+
+function draw(){
+  const cv=$('cv'), r=devicePixelRatio||1;
+  const w=cv.clientWidth||900, h=Math.round(w*0.60);
+  cv.width=w*r; cv.height=h*r; cv.style.height=h+'px';
+  const c=cv.getContext('2d'); c.setTransform(r,0,0,r,0,0); c.clearRect(0,0,w,h);
+  project(w,h);
+  const g=getComputedStyle(document.documentElement);
+  const mi=+$('month').value, rows=byMonth[mi]||[];
+  const have=new Map(rows);
+
+  if($('L_idw').checked) idw(c,w,h,rows,g);
+  if($('L_wb').checked && WB) polys(c,g);
+
+  if($('L_gaps').checked){
+    c.fillStyle=g.getPropertyValue('--ink3').trim(); c.globalAlpha=.30;
+    ST.forEach((s,i)=>{ if(have.has(i))return;
+      c.beginPath(); c.arc(px(s.lon),py(s.lat),1.1,0,7); c.fill();});
+    c.globalAlpha=1;
+  }
+  let nbad=0;
+  if($('L_meas').checked){
+    c.strokeStyle=g.getPropertyValue('--panel').trim(); c.lineWidth=.7;
+    rows.forEach(([i,v])=>{const s=ST[i]; if(!s)return;
+      const bad=v<LIM[0]||v>LIM[1]; if(bad)nbad++;
+      if(bad&&!$('L_bad').checked)return;
+      const t=(v-dom[0])/(dom[1]-dom[0]);
+      c.fillStyle=col(Math.max(0,Math.min(1,t)));
+      c.beginPath(); c.arc(px(s.lon),py(s.lat),3.4,0,7); c.fill(); c.stroke();
+      if(bad){ c.strokeStyle=g.getPropertyValue('--warn').trim(); c.lineWidth=1.6;
+        c.beginPath(); c.arc(px(s.lon),py(s.lat),5.6,0,7); c.stroke();
+        c.strokeStyle=g.getPropertyValue('--panel').trim(); c.lineWidth=.7;}});
+  }
+  $('badn').textContent=nbad?nbad+' impossible':'';
+  const y=META.year0+Math.floor(mi/12), mo=mi%12+1;
+  $('mlab').textContent=y+'-'+String(mo).padStart(2,'0');
+  $('nrep').textContent=rows.length.toLocaleString();
+  $('pct').textContent=(100*rows.length/ST.length).toFixed(1)+'%';
+}
+
+function polys(c,g){
+  c.strokeStyle=g.getPropertyValue('--model').trim(); c.lineWidth=.7; c.globalAlpha=.55;
+  const walk=o=>{ if(!o)return;
+    if(Array.isArray(o)&&typeof o[0]==='number')return;
+    if(Array.isArray(o)&&Array.isArray(o[0])&&typeof o[0][0]==='number'){
+      c.beginPath(); o.forEach((p,i)=>i?c.lineTo(px(p[0]),py(p[1])):c.moveTo(px(p[0]),py(p[1])));
+      c.stroke(); return;}
+    if(Array.isArray(o)) o.forEach(walk);
+    else if(o.coordinates) walk(o.coordinates);
+    else if(o.geometry) walk(o.geometry);
+    else if(o.features) o.features.forEach(walk);
+    else Object.values(o).forEach(walk);};
+  walk(WB); c.globalAlpha=1;
+}
+
+// Inverse-distance weighting. Every pixel it draws is invented by the reader.
+function idw(c,w,h,rows,g){
+  const p=+$('pow').value/10, reach=+$('rad').value, CELL=7;
+  const pts=rows.map(([i,v])=>{const s=ST[i];return s?[px(s.lon),py(s.lat),v]:null})
+                .filter(Boolean);
+  let cells=0;
+  // px -> degrees of latitude -> km. PJ.s is px per degree of latitude.
+  const KM=110.57/PJ.s;
+  for(let y=0;y<h;y+=CELL) for(let x=0;x<w;x+=CELL){
+    let num=0,den=0;
+    for(const [ax,ay,v] of pts){
+      const d=Math.hypot(x-ax,y-ay)*KM; if(d>reach)continue;
+      const wgt=1/Math.pow(Math.max(d,.4),p); num+=wgt*v; den+=wgt;}
+    if(!den)continue;
+    cells++;
+    const t=Math.max(0,Math.min(1,(num/den-dom[0])/(dom[1]-dom[0])));
+    c.globalAlpha=.42; c.fillStyle=col(t); c.fillRect(x,y,CELL,CELL);}
+  c.globalAlpha=1;
+  $('synth').innerHTML='<b style="color:var(--warn)">'+cells.toLocaleString()
+    +'</b> invented cells from <b>'+pts.length+'</b> measurements';
+  $('idwwarn').textContent='You are looking at '+cells.toLocaleString()+' coloured cells '
+    +'generated from '+pts.length+' measurements. Ratio '
+    +(pts.length?Math.round(cells/pts.length):0)+':1. None of it is in the archive.';
+}
+
+function wire(){
+  ['L_meas','L_gaps','L_wb','L_idw','L_bad'].forEach(id=>$(id).onchange=()=>{
+    if(id==='L_idw'){$('idwctl').hidden=!$('L_idw').checked;
+      if(!$('L_idw').checked)$('synth').textContent='';}
+    draw();});
+  $('month').oninput=draw;
+  $('pow').oninput=()=>{$('pv').textContent=(+$('pow').value/10).toFixed(1);draw()};
+  $('rad').oninput=()=>{$('rv').textContent=$('rad').value+' km';draw()};
+  $('play').onclick=()=>{ if(playing){clearInterval(playing);playing=0;$('play').textContent='▶';}
+    else{$('play').textContent='❚❚'; playing=setInterval(()=>{
+      const m=$('month'); m.value=(+m.value+1)%564; draw();},110);}};
+  addEventListener('resize',draw);
+  matchMedia('(prefers-color-scheme:dark)').addEventListener('change',draw);
+}
+</script>

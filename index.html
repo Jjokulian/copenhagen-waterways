@@ -269,6 +269,7 @@ code.gloss{
     <p class="navlabel">Also</p>
     <ul>
       <li><a href="docs/areas.html">What is known, where, when — all of Denmark</a></li>
+      <li><a href="docs/stations.html">Measurements, where they were taken — no water bodies</a></li>
       <li><a href="viz/">Copenhagen at full detail — the standard, reached once</a></li>
       <li><a href="docs/flood_gap_map.png">Copenhagen flood gap, single image</a></li>
     </ul>
@@ -300,6 +301,7 @@ const GROUPS = [
     ["LIGHT.md",        "Is there enough light at the bed?"],
     ["AREAS.md",        "There is no Denmark"],
     ["areas.html",      "Map: what is known, where, when"],
+    ["stations.html",   "Map: measurements, no baskets"],
     ["SEABED.md",       "The seabed, the wind, and what stays put"],
     ["CURRENTS.md",     "Where the water goes"],
     ["SOLUTIONS.md",    "What would actually stop it"],
@@ -884,6 +886,12 @@ const TOOLS = [
    "All 123 marine water bodies coloured by how much is actually known about each, " +
    "with the years every stream of observation covers. The red line is 2012 — where " +
    "the fitted window ends and the thing it must explain begins.", ""],
+  ["docs/stations.html", "Measurements, where they were taken",
+   "The same archive with the water bodies removed: every station-month at the "
+   + "position it was recorded, nothing aggregated and nothing interpolated. Layers "
+   + "are labelled by what kind of thing they are - measured, model, or added by you "
+   + "- and interpolation is a control you switch on, with a count of how many cells "
+   + "it invented. Empty sea is empty because nobody measured there.", ""],
   ["viz/rivers3d.html", "Rainwater rivers, in 3D",
    "The proposal on the real city: 210 km of alignments that could carry a river, " +
    "the interceptor retrofit where they cannot, and where the water ends up.", ""],
