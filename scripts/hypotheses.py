@@ -1041,7 +1041,7 @@ GROUPS = [
      "own floor and ceiling. Light is not only how much, but of what wavelengths, "
      "for how long, and when. So the exhaustive treatment of the physical avenue is "
      "a small cross-product - the fields are enumerable, their dimensions are "
-     "enumerable, and each dimension admits exactly the same three failure modes as "
+     "enumerable, and each dimension admits exactly the same two failure modes as "
      "a chemical does. This is the most nearly closable part of the whole register, "
      "and among the least examined."),
     ("T", "Sediment sickness: symbionts, pathogens and why nothing grows back",
@@ -2859,15 +2859,18 @@ def render(rows):
     a("The chemical avenues are the clean case, and they are worth stating exactly "
       "because they are the only place the argument reaches genuine "
       "exhaustiveness.\n")
-    a("> For any chemical species there are exactly **three** ways it can harm: "
-      "below the floor of what is needed, above the ceiling of what is tolerated, "
-      "or present at all where the tolerated amount is zero. That is a partition of "
-      "the real line against a tolerance window. Nothing can hide between the "
-      "cases, and there is no fourth.\n")
-    a("Liebig's floor and Shelford's ceiling are the first two, and the essential "
-      "trace metals sit on both — copper is required and copper is a biocide, "
-      "within about one order of magnitude. The window is the whole story, and "
-      "*outside the window* is completely enumerated by those three.\n")
+    a("> For any chemical species there are exactly **two** ways it can harm: "
+      "**below the floor** of what is needed, or **above the ceiling** of what is "
+      "tolerated. That is a partition of the real line by an interval. Nothing can "
+      "hide between the cases and there is no third.\n")
+    a("Liebig's floor and Shelford's ceiling, and the essential trace metals sit on "
+      "both — copper is required and copper is a biocide, within about one order of "
+      "magnitude. What differs between substances is not the number of failure "
+      "modes but **where the interval's ends are**. A substance nothing needs has "
+      "its floor at zero, so only the ceiling can be crossed. A substance harmful "
+      "at any dose has its ceiling at zero, so only that side exists. Both are the "
+      "same two rules with an endpoint at the origin, and treating either as a "
+      "separate case is a wobble rather than a subtlety.\n")
     a("**This applies to nitrogen exactly as it applies to copper.** Nitrogen is "
       "not a pollutant; it is a requirement with a window, and it has both a floor "
       "and a ceiling like every other element on the list. Which means a policy "
@@ -2904,7 +2907,7 @@ def render(rows):
       "Hydrodynamic energy has a floor as well as a ceiling: too little and filter "
       "feeders starve, too much and everything is abraded off.\n")
     a("So the exhaustive treatment here is a small cross-product — **fields × "
-      "dimensions × the same three failure modes** — and all three factors are "
+      "dimensions × the same two failure modes** — and all three factors are "
       "enumerable. That makes it the most nearly closable part of the register, and "
       "group **Z** exists to work through it. Denmark already measures most of the "
       "fields; what is missing is mostly the extra dimensions, which is a cheaper "

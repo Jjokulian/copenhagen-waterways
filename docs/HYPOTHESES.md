@@ -65,9 +65,9 @@ An organism is a system that maintains itself against entropy using flows. It fa
 
 The chemical avenues are the clean case, and they are worth stating exactly because they are the only place the argument reaches genuine exhaustiveness.
 
-> For any chemical species there are exactly **three** ways it can harm: below the floor of what is needed, above the ceiling of what is tolerated, or present at all where the tolerated amount is zero. That is a partition of the real line against a tolerance window. Nothing can hide between the cases, and there is no fourth.
+> For any chemical species there are exactly **two** ways it can harm: **below the floor** of what is needed, or **above the ceiling** of what is tolerated. That is a partition of the real line by an interval. Nothing can hide between the cases and there is no third.
 
-Liebig's floor and Shelford's ceiling are the first two, and the essential trace metals sit on both — copper is required and copper is a biocide, within about one order of magnitude. The window is the whole story, and *outside the window* is completely enumerated by those three.
+Liebig's floor and Shelford's ceiling, and the essential trace metals sit on both — copper is required and copper is a biocide, within about one order of magnitude. What differs between substances is not the number of failure modes but **where the interval's ends are**. A substance nothing needs has its floor at zero, so only the ceiling can be crossed. A substance harmful at any dose has its ceiling at zero, so only that side exists. Both are the same two rules with an endpoint at the origin, and treating either as a separate case is a wobble rather than a subtlety.
 
 **This applies to nitrogen exactly as it applies to copper.** Nitrogen is not a pollutant; it is a requirement with a window, and it has both a floor and a ceiling like every other element on the list. Which means a policy expressed only as *less is better* is a one-tailed treatment of a two-tailed quantity — the same error as *more is better*, pointed the other way.
 
@@ -81,7 +81,7 @@ Nobody has published where each Danish area sits in that window, and the flat 25
 
 But a field is not a chemical, and the difference matters. **A chemical has one axis: how much. A field has several, each carrying its own floor and ceiling.** Light is not only how much, but of what wavelengths, for how long, and when — and browning changes the second without changing the first, while turbidity changes the third at depth without changing the calendar. Temperature has a window and, separately, a maximum rate of change. Hydrodynamic energy has a floor as well as a ceiling: too little and filter feeders starve, too much and everything is abraded off.
 
-So the exhaustive treatment here is a small cross-product — **fields × dimensions × the same three failure modes** — and all three factors are enumerable. That makes it the most nearly closable part of the register, and group **Z** exists to work through it. Denmark already measures most of the fields; what is missing is mostly the extra dimensions, which is a cheaper gap to close than any other on this page.
+So the exhaustive treatment here is a small cross-product — **fields × dimensions × the same two failure modes** — and all three factors are enumerable. That makes it the most nearly closable part of the register, and group **Z** exists to work through it. Denmark already measures most of the fields; what is missing is mostly the extra dimensions, which is a cheaper gap to close than any other on this page.
 
 **`V4` and `V5` close better than the chemical ones, for a reason worth stating.** Destruction and attack are both done *by* something, and the set of possible agents is drawn from the biota. That set is bounded by what exists. The chemical set is not: substances are manufactured, tens of thousands are in commerce, and the list grows every year by decision. One set is discovered, the other is invented, and only the invented one is genuinely unbounded.
 
@@ -1546,7 +1546,7 @@ Repeated mortality selects survivors down to a narrow genetic and functional set
 
 ## Z. The physical fields and their windows
 
-*Light starvation is the same argument as chemical deficiency, one physical layer up - and the layer behaves differently in a way that matters. A chemical has one axis: how much. A field has several, and each carries its own floor and ceiling. Light is not only how much, but of what wavelengths, for how long, and when. So the exhaustive treatment of the physical avenue is a small cross-product - the fields are enumerable, their dimensions are enumerable, and each dimension admits exactly the same three failure modes as a chemical does. This is the most nearly closable part of the whole register, and among the least examined.*
+*Light starvation is the same argument as chemical deficiency, one physical layer up - and the layer behaves differently in a way that matters. A chemical has one axis: how much. A field has several, and each carries its own floor and ceiling. Light is not only how much, but of what wavelengths, for how long, and when. So the exhaustive treatment of the physical avenue is a small cross-product - the fields are enumerable, their dimensions are enumerable, and each dimension admits exactly the same two failure modes as a chemical does. This is the most nearly closable part of the whole register, and among the least examined.*
 
 ### Z1 — Light: too little, and too much
 

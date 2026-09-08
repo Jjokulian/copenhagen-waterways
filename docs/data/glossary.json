@@ -237,7 +237,7 @@
  "Z": {
   "kind": "group",
   "label": "The physical fields and their windows",
-  "text": "Light starvation is the same argument as chemical deficiency, one physical layer up - and the layer behaves differently in a way that matters. A chemical has one axis: how much. A field has several, and each carries its own floor and ceiling. Light is not only how much, but of what wavelengths, for how long, and when. So the exhaustive treatment of the physical avenue is a small cross-product - the fields are enumerable, their dimensions are enumerable, and each dimension admits exactly the same three failure modes as a chemical does. This is the most nearly closable part of the whole register, and among the least examined."
+  "text": "Light starvation is the same argument as chemical deficiency, one physical layer up - and the layer behaves differently in a way that matters. A chemical has one axis: how much. A field has several, and each carries its own floor and ceiling. Light is not only how much, but of what wavelengths, for how long, and when. So the exhaustive treatment of the physical avenue is a small cross-product - the fields are enumerable, their dimensions are enumerable, and each dimension admits exactly the same two failure modes as a chemical does. This is the most nearly closable part of the whole register, and among the least examined."
  },
  "T": {
   "kind": "group",
