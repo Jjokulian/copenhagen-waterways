@@ -62,6 +62,8 @@ TOPICS = {
     "ctd":      {"emne": "Emne_11_154", "what": "Feltmåling / CTD profiles"},
     "lys":      {"emne": "Emne_11_155", "what": "Feltmåling / light attenuation"},
     "iltkor":   {"emne": "Emne_11_156", "what": "Feltmåling / oxygen correction"},
+    "maaledybde": {"emne": "Emne_53_159",
+                   "what": "Måledybde - Secchi depth paired with bottom depth"},
 }
 
 

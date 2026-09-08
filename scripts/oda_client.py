@@ -26,7 +26,11 @@ SVC = BASE + "Services.asmx"
 NS = "http://MonoRail.carlbro.dk"
 UA = "copenhagen-waterways research (github.com/Jjokulian/copenhagen-waterways)"
 
-JAR = os.path.join(os.path.expanduser("~"), ".oda-session-cookies")
+# One session per concurrent job. The server keeps topic, criterion and
+# aggregation state per session, so two jobs sharing a cookie would silently
+# reconfigure each other's form mid-run.
+JAR = os.environ.get("ODA_SESSION",
+                     os.path.join(os.path.expanduser("~"), ".oda-session-cookies"))
 _jar = http.cookiejar.MozillaCookieJar(JAR)
 try:
     _jar.load(ignore_discard=True)
