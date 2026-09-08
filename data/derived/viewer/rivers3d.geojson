@@ -31720,15 +31720,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 41400.0,
+    "area_m2": 64900.0,
     "length_m": 420,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.532895,
-     55.729215
+     12.531483,
+     55.722839
     ]
    }
   },
@@ -31737,15 +31737,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 35600.0,
-    "length_m": 450,
+    "area_m2": 61100.0,
+    "length_m": 410,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.469521,
-     55.683622
+     12.530923,
+     55.724859
     ]
    }
   },
@@ -31754,15 +31754,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 28400.0,
-    "length_m": 520,
+    "area_m2": 38000.0,
+    "length_m": 270,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.559512,
-     55.716972
+     12.642011,
+     55.658099
     ]
    }
   },
@@ -31771,15 +31771,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 23300.0,
-    "length_m": 300,
+    "area_m2": 33400.0,
+    "length_m": 280,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.54767,
-     55.711169
+     12.457408,
+     55.706687
     ]
    }
   },
@@ -31788,15 +31788,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 21300.0,
-    "length_m": 230,
+    "area_m2": 31900.0,
+    "length_m": 460,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454233,
-     55.707878
+     12.639003,
+     55.660998
     ]
    }
   },
@@ -31805,15 +31805,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 20600.0,
-    "length_m": 210,
+    "area_m2": 23600.0,
+    "length_m": 400,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.565135,
-     55.723236
+     12.556393,
+     55.713979
     ]
    }
   },
@@ -31822,15 +31822,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 20600.0,
+    "area_m2": 19700.0,
     "length_m": 380,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.567442,
-     55.669808
+     12.567049,
+     55.668166
     ]
    }
   },
@@ -31839,15 +31839,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 20400.0,
-    "length_m": 220,
+    "area_m2": 18900.0,
+    "length_m": 420,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.456914,
-     55.707337
+     12.550701,
+     55.661499
     ]
    }
   },
@@ -31856,15 +31856,49 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 19200.0,
+    "area_m2": 17100.0,
+    "length_m": 310,
+    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.555334,
+     55.665787
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "gap",
+    "role": "missing",
+    "area_m2": 16200.0,
+    "length_m": 200,
+    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.480775,
+     55.720519
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "gap",
+    "role": "missing",
+    "area_m2": 15400.0,
     "length_m": 320,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.535421,
-     55.725561
+     12.470024,
+     55.683175
     ]
    }
   },
@@ -31873,15 +31907,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 18700.0,
-    "length_m": 430,
+    "area_m2": 14200.0,
+    "length_m": 200,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.551229,
-     55.663154
+     12.491451,
+     55.709886
     ]
    }
   },
@@ -31890,15 +31924,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 17500.0,
-    "length_m": 290,
+    "area_m2": 13100.0,
+    "length_m": 220,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.578937,
-     55.714962
+     12.545382,
+     55.707978
     ]
    }
   },
@@ -31907,49 +31941,15 @@
    "properties": {
     "kind": "gap",
     "role": "missing",
-    "area_m2": 16700.0,
-    "length_m": 230,
+    "area_m2": 13100.0,
+    "length_m": 170,
     "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.483149,
-     55.723394
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "kind": "gap",
-    "role": "missing",
-    "area_m2": 14700.0,
-    "length_m": 240,
-    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.582552,
-     55.712678
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "kind": "gap",
-    "role": "missing",
-    "area_m2": 11600.0,
-    "length_m": 230,
-    "note": "flood path deeper than 0.5 m with no surface route within 100 m — a river is indicated here and none is planned"
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.642507,
-     55.657498
+     12.560226,
+     55.681338
     ]
    }
   },
@@ -32704,8 +32704,8 @@
   "open_channel_km": 209.7,
   "interceptor_km": 71.2,
   "gaps": 14,
-  "flood_path_km2": 5.636,
-  "near_surface_pct": 56.9,
+  "flood_path_km2": 5.932,
+  "near_surface_pct": 53.5,
   "diversion_nodes": 39,
   "nyborg_note": "Fortum Waste Solutions, Nyborg (the former Kommunekemi, founded 1971) is where Danish practice already sends spent PFAS media. Secondary sources describe capture on granular activated carbon and ion-exchange resin followed by high-temperature incineration above 1,200 °C. **This project has not verified that.** It is a reported practice, not a measured performance, and the difference is the whole subject of this section."
  }

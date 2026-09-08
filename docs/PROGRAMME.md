@@ -124,7 +124,7 @@ Seven things. They are ordered by how much evidence stands behind them, not by h
 
 The 2012 flood model is usually read as a risk map. It is also a survey: at 10 m resolution, it is a record of where water in Copenhagen goes when you stop forcing it into a pipe. That is the natural drainage network of the city, and it has already been mapped.
 
-**What this covers.** The 2012 model was published as seven PDF sheets with the georeferencing stripped out. Four registered automatically against the water in them. The other three — Amager, Bispebjerg, København Vest — were placed from control points reported by a resident, who found marked dots on a web map one at a time. **All seven are now placed**, and everything below is **5.64 km² of modelled flood path** across the whole city.
+**What this covers.** The 2012 model was published as seven PDF sheets with the georeferencing stripped out. Four registered automatically against the water in them. The other three — Amager, Bispebjerg, København Vest — were placed from control points reported by a resident, who found marked dots on a web map one at a time. **All seven are now placed**, and everything below is **5.93 km² of modelled flood path** across the whole city.
 
 The three assisted sheets are good to roughly ±90–140 m against 20–30 m for the automatic four, so treat the 50 m proximity band on those as indicative and the 200 m band as sound. Provenance and per-sheet accuracy are in `data/derived/floodmaps/_georef.json`.
 
@@ -132,12 +132,12 @@ Measured against it:
 
 | | Share of the *inner-city* modelled flood path |
 |---|---:|
-| Within 100 m of a planned **surface** route | **57%** |
-| Within 100 m of a planned **pipe** | 26% |
-| Within 100 m of anything in the plan | 69% |
-| **With no surface route within 100 m** | **43%** |
+| Within 100 m of a planned **surface** route | **54%** |
+| Within 100 m of a planned **pipe** | 20% |
+| Within 100 m of anything in the plan | 64% |
+| **With no surface route within 100 m** | **46%** |
 
-So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **57% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
+So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **54% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
 
 **What is missing is the connection.** A skybrudsvej is designed against a hundred-year event: it activates when the system is already overwhelmed, a handful of times a decade. Ordinary heavy rain — the rain that actually causes overflows, many times a year — still goes down the gully into the combined pipe exactly as before. The surface network was built to protect the city from water, not to protect the sea from the city.
 
@@ -153,9 +153,9 @@ Not every alignment can be a river. A dense street with no room to lose, a junct
 
 What this buys is the thing that matters: **there is no longer a mixture to overflow.** An overflow structure on a foul-only sewer has nothing to spill in a storm, because the storm is not in that pipe. It is more expensive per metre than a channel and far cheaper than a parallel corridor, and it is the reason the proposal does not have to stop where the street narrows.
 
-On this project's classification, **26% of the modelled flood path already has a planned pipe within 100 m** — those alignments are the retrofit candidates, because the trench is going to be opened anyway.
+On this project's classification, **20% of the modelled flood path already has a planned pipe within 100 m** — those alignments are the retrofit candidates, because the trench is going to be opened anyway.
 
-And where no alignment exists — the 43% — the model names the places. 14 corridor candidates come out of it: stretches with more than 0.5 m of modelled water, no surface route within 100 m, and enough length to be a channel rather than a puddle. They are circled on the map and listed in `data/derived/rivermap.json`.
+And where no alignment exists — the 46% — the model names the places. 14 corridor candidates come out of it: stretches with more than 0.5 m of modelled water, no surface route within 100 m, and enough length to be a channel rather than a puddle. They are circled on the map and listed in `data/derived/rivermap.json`.
 
 ### 2. An outlet that is not the sea
 

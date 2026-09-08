@@ -6,13 +6,13 @@ Covers **amager, bispebjerg, indre-by, kbhvest, ladegaardsaaen, norrebro, osterb
 
 ## The headline
 
-Across 5.636 km² of modelled flooding **on land** at 0.1 m or deeper (the sheets also paint 1.556 km² over lakes and the harbour, excluded here):
+Across 5.932 km² of modelled flooding **on land** at 0.1 m or deeper (the sheets also paint 1.212 km² over lakes and the harbour, excluded here):
 
 | Distance | Near *any* planned work | Near something **built or started** |
 |---|---:|---:|
-| within 50 m | 54.9% | 16.8% |
-| within 100 m | 71.9% | 25.9% |
-| within 200 m | 86.0% | 40.1% |
+| within 50 m | 49.5% | 15.9% |
+| within 100 m | 67.4% | 23.6% |
+| within 200 m | 85.8% | 38.3% |
 
 The plan is aimed correctly and is largely unbuilt. Nine tenths of the modelled flooding has something planned within 200 m of it; barely a third has anything that has actually broken ground. The gap between those two columns is the backlog, and it is most of the plan.
 
@@ -22,91 +22,90 @@ Read the distances as generous. Being 50 m from a cloudburst road is not the sam
 
 | Band | Area (m²) |
 |---|---:|
-| 0.05-0.1 m | 4,456,800 |
-| 0.1-0.2 m | 1,512,900 |
-| 0.2-0.5 m | 1,809,100 |
-| 0.5-1 m | 1,543,300 |
-| 1-2 m | 614,800 |
-| >2 m | 156,000 |
+| 0.05-0.1 m | 4,545,600 |
+| 0.1-0.2 m | 1,635,100 |
+| 0.2-0.5 m | 1,885,200 |
+| 0.5-1 m | 1,658,600 |
+| 1-2 m | 608,800 |
+| >2 m | 144,500 |
 
 ## Is the registration trustworthy?
 
-Open water is 15.8% of the study area. If the sheets were placed wrongly, flooding would land in the harbour at about that rate. It lands there much less often, at every depth:
+Open water is 15.5% of the study area. If the sheets were placed wrongly, flooding would land in the harbour at about that rate. It lands there much less often, at every depth:
 
 | Band | Share falling in open water |
 |---|---:|
-| 0.05-0.1 m | 11.5% |
-| 0.1-0.2 m | 18.8% |
-| 0.2-0.5 m | 27.5% |
-| 0.5-1 m | 22.1% |
-| 1-2 m | 6.8% |
-| >2 m | 19.0% |
+| 0.05-0.1 m | 9.4% |
+| 0.1-0.2 m | 11.3% |
+| 0.2-0.5 m | 24.0% |
+| 0.5-1 m | 16.0% |
+| 1-2 m | 7.4% |
+| >2 m | 24.2% |
 
 **FAIL** - modelled flooding avoids open water, which is independent evidence that the georeferencing is right. It also rules out the deepest band (a dark navy) being confused with dark harbour water: it is the *least* likely of all bands to fall in water.
 
 ## What is underneath it
 
-Sewer catchments cover 47% of the study area and contain 66% of the flooding. Shares below are of that portion.
+Sewer catchments cover 49% of the study area and contain 70% of the flooding. Shares below are of that portion.
 
 | System | Share of area | Share of flooding | Ratio |
 |---|---:|---:|---:|
-| Fælleskloakeret | 81.2% | 93.6% | 1.15× |
-| Separatkloakeret, tag- og vejvand til recipient | 14.5% | 3.7% | 0.26× |
-| Spildevandskloakeret | 1.8% | 1.3% | 0.74× |
-| 3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand | 2.4% | 1.3% | 0.53× |
-| unspecified | 1.8% | 1.2% | 0.65× |
-| Fælleskloakeret, vejvand til recipient | 0.0% | 0.1% | 5.1× |
-| Separatkloakeretopland tilkoblet fællessystemet | 0.0% | 0.0% | 0.88× |
-| Separatkloakeret, vejvand til recipient | 0.3% | 0.0% | 0.18× |
+| Fælleskloakeret | 81.2% | 92.9% | 1.14× |
+| Separatkloakeret, tag- og vejvand til recipient | 14.5% | 4.2% | 0.29× |
+| unspecified | 1.8% | 2.3% | 1.24× |
+| 3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand | 2.4% | 1.0% | 0.41× |
+| Spildevandskloakeret | 1.8% | 0.9% | 0.48× |
+| Separatkloakeretopland tilkoblet fællessystemet | 0.0% | 0.0% | 0.23× |
+| Fælleskloakeret, vejvand til recipient | 0.0% | 0.0% | 0.65× |
 
 93% of this flooding sits over combined sewer, where stormwater and sewage share one pipe - so that standing water is mixed with sewage. But note the ratio: 87% of the mapped area is combined sewer too. Flooding is **not** concentrated over combined sewers; the inner city is simply built that way almost everywhere. The consequence is real, the correlation is not.
 
 ## Places with deep water and nothing planned nearby
 
-50 clusters of at least 4,000 m², at 0.2 m or deeper, more than 100 m from any planned work — 544,300 m² holding roughly 384,575 m³.
+60 clusters of at least 4,000 m², at 0.2 m or deeper, more than 100 m from any planned work — 726,900 m² holding roughly 540,340 m³.
 
 | lat, lon | Area (m²) | Max depth | Implied volume (m³) | Nearest planned work |
 |---|---:|---|---:|---:|
-| 55.70785, 12.45431 | 20,600 | 1-2 m | 30,900 | 101 m |
-| 55.70730, 12.45703 | 19,800 | 1-2 m | 29,475 | 101 m |
-| 55.72971, 12.53310 | 27,700 | 1-2 m | 25,300 | 104 m |
-| 55.67014, 12.58188 | 54,300 | 0.2-0.5 m | 19,005 | 105 m |
-| 55.66938, 12.56721 | 27,500 | >2 m | 18,120 | 151 m |
-| 55.72336, 12.48291 | 23,200 | >2 m | 17,515 | 327 m |
-| 55.71700, 12.45516 | 10,100 | >2 m | 15,250 | 108 m |
-| 55.66312, 12.55137 | 19,900 | 0.5-1 m | 14,445 | 227 m |
-| 55.72559, 12.53515 | 9,700 | 1-2 m | 10,680 | 101 m |
-| 55.66736, 12.57777 | 27,700 | 0.2-0.5 m | 9,695 | 101 m |
-| 55.70583, 12.56090 | 18,700 | 1-2 m | 9,485 | 101 m |
-| 55.68604, 12.45851 | 6,000 | 1-2 m | 9,000 | 500 m |
-| 55.70031, 12.50747 | 12,200 | 1-2 m | 8,895 | 105 m |
-| 55.72807, 12.55993 | 15,200 | 0.5-1 m | 8,640 | 120 m |
-| 55.65799, 12.46250 | 11,500 | 0.5-1 m | 8,625 | 800 m |
-| 55.65290, 12.58380 | 6,700 | 1-2 m | 8,035 | 104 m |
-| 55.73158, 12.57740 | 12,900 | 1-2 m | 7,985 | 520 m |
-| 55.71466, 12.58014 | 7,700 | >2 m | 6,815 | 102 m |
-| 55.64612, 12.52305 | 8,900 | 0.5-1 m | 6,675 | 105 m |
-| 55.64708, 12.58257 | 7,700 | >2 m | 6,125 | 160 m |
-| 55.65958, 12.63980 | 8,100 | 0.5-1 m | 6,075 | 104 m |
-| 55.71113, 12.54822 | 6,400 | 1-2 m | 6,070 | 102 m |
-| 55.71706, 12.49878 | 9,100 | 0.5-1 m | 5,905 | 390 m |
-| 55.71025, 12.50615 | 8,400 | 0.5-1 m | 5,900 | 227 m |
-| 55.72542, 12.47547 | 11,900 | 0.5-1 m | 5,805 | 714 m |
-| 55.67465, 12.48627 | 7,100 | 0.5-1 m | 5,325 | 104 m |
-| 55.73046, 12.57854 | 6,800 | 1-2 m | 5,235 | 440 m |
-| 55.71727, 12.49582 | 6,900 | 1-2 m | 4,980 | 336 m |
-| 55.69475, 12.46156 | 6,300 | 0.5-1 m | 4,725 | 133 m |
-| 55.72454, 12.56671 | 4,500 | >2 m | 4,385 | 108 m |
-| 55.72241, 12.47596 | 6,800 | 1-2 m | 4,205 | 385 m |
-| 55.72017, 12.47885 | 4,700 | 1-2 m | 4,160 | 135 m |
-| 55.72279, 12.47873 | 10,000 | 0.5-1 m | 4,140 | 384 m |
-| 55.72257, 12.48339 | 6,800 | 0.5-1 m | 3,740 | 308 m |
-| 55.64925, 12.54865 | 10,600 | 0.2-0.5 m | 3,710 | 223 m |
-| 55.67120, 12.48302 | 9,600 | 0.2-0.5 m | 3,360 | 101 m |
-| 55.64594, 12.61387 | 4,500 | 1-2 m | 3,255 | 101 m |
-| 55.69703, 12.59439 | 5,500 | 0.5-1 m | 3,245 | 184 m |
-| 55.64547, 12.60949 | 4,300 | 0.5-1 m | 3,225 | 101 m |
-| 55.69174, 12.46358 | 4,100 | 0.5-1 m | 3,075 | 128 m |
+| 55.72290, 12.53138 | 50,800 | >2 m | 71,655 | 101 m |
+| 55.70664, 12.45752 | 32,700 | 1-2 m | 48,750 | 101 m |
+| 55.66095, 12.63908 | 31,900 | 0.5-1 m | 23,925 | 158 m |
+| 55.72523, 12.52924 | 21,300 | 1-2 m | 17,325 | 101 m |
+| 55.66784, 12.56694 | 24,900 | >2 m | 16,810 | 109 m |
+| 55.70254, 12.55894 | 28,700 | 1-2 m | 14,505 | 101 m |
+| 55.70075, 12.52425 | 18,700 | >2 m | 14,430 | 101 m |
+| 55.66144, 12.55070 | 19,400 | 0.5-1 m | 14,350 | 239 m |
+| 55.72082, 12.55669 | 12,100 | >2 m | 13,315 | 109 m |
+| 55.72051, 12.48088 | 19,200 | 0.5-1 m | 13,240 | 104 m |
+| 55.66570, 12.55535 | 16,900 | >2 m | 12,845 | 105 m |
+| 55.70960, 12.49145 | 21,700 | 0.5-1 m | 12,795 | 101 m |
+| 55.71605, 12.45591 | 8,000 | >2 m | 12,100 | 104 m |
+| 55.64879, 12.64341 | 6,000 | >2 m | 11,900 | 101 m |
+| 55.67075, 12.58307 | 33,800 | 0.2-0.5 m | 11,830 | 105 m |
+| 55.72383, 12.53375 | 7,500 | 1-2 m | 10,650 | 101 m |
+| 55.72505, 12.56437 | 5,600 | >2 m | 9,745 | 110 m |
+| 55.70811, 12.45342 | 6,200 | 1-2 m | 9,300 | 150 m |
+| 55.68514, 12.45947 | 5,900 | 1-2 m | 8,850 | 450 m |
+| 55.71296, 12.55571 | 7,500 | 1-2 m | 8,640 | 101 m |
+| 55.65711, 12.46348 | 11,500 | 0.5-1 m | 8,625 | 754 m |
+| 55.72834, 12.57469 | 12,800 | 1-2 m | 7,950 | 160 m |
+| 55.70715, 12.50319 | 12,200 | 0.5-1 m | 7,910 | 101 m |
+| 55.65622, 12.59288 | 6,300 | >2 m | 7,675 | 102 m |
+| 55.69873, 12.51780 | 14,200 | 0.5-1 m | 7,370 | 104 m |
+| 55.67077, 12.63434 | 17,100 | 0.5-1 m | 6,825 | 433 m |
+| 55.67075, 12.48303 | 19,100 | 0.2-0.5 m | 6,685 | 101 m |
+| 55.69632, 12.50418 | 10,700 | 0.5-1 m | 6,185 | 102 m |
+| 55.66806, 12.57809 | 17,400 | 0.2-0.5 m | 6,090 | 147 m |
+| 55.72217, 12.47277 | 12,200 | 0.5-1 m | 5,910 | 529 m |
+| 55.67390, 12.48707 | 7,500 | 0.5-1 m | 5,625 | 104 m |
+| 55.69163, 12.55143 | 7,400 | 0.5-1 m | 5,550 | 110 m |
+| 55.71948, 12.47630 | 13,000 | 0.5-1 m | 5,310 | 109 m |
+| 55.72010, 12.47886 | 5,300 | >2 m | 4,865 | 104 m |
+| 55.71777, 12.51975 | 8,900 | 0.5-1 m | 4,835 | 226 m |
+| 55.70127, 12.50407 | 8,300 | 1-2 m | 4,765 | 137 m |
+| 55.71342, 12.48756 | 8,100 | 0.5-1 m | 4,715 | 156 m |
+| 55.66729, 12.63892 | 13,300 | 0.2-0.5 m | 4,655 | 242 m |
+| 55.64996, 12.54820 | 13,300 | 0.2-0.5 m | 4,655 | 180 m |
+| 55.71053, 12.49679 | 8,600 | 0.5-1 m | 4,450 | 102 m |
 
 Four is a small number, and that is the finding: the plan's *coverage* is good. Volumes are the depth-band midpoint times area, so they are indicative only.
 

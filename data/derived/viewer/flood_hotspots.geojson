@@ -6,142 +6,14 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.454312,
-     55.707852
+     12.531384,
+     55.722899
     ]
    },
    "properties": {
-    "area_m2": 20600,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 30900,
-    "distance_to_nearest_planned_work_m": 101
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.457029,
-     55.707304
-    ]
-   },
-   "properties": {
-    "area_m2": 19800,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 29475,
-    "distance_to_nearest_planned_work_m": 101
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.533096,
-     55.729708
-    ]
-   },
-   "properties": {
-    "area_m2": 27700,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 25300,
-    "distance_to_nearest_planned_work_m": 104
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.581883,
-     55.670138
-    ]
-   },
-   "properties": {
-    "area_m2": 54300,
-    "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 19005,
-    "distance_to_nearest_planned_work_m": 105
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.567209,
-     55.66938
-    ]
-   },
-   "properties": {
-    "area_m2": 27500,
+    "area_m2": 50800,
     "max_depth_band": ">2",
-    "implied_volume_m3": 18120,
-    "distance_to_nearest_planned_work_m": 151
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.482913,
-     55.723361
-    ]
-   },
-   "properties": {
-    "area_m2": 23200,
-    "max_depth_band": ">2",
-    "implied_volume_m3": 17515,
-    "distance_to_nearest_planned_work_m": 327
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.455162,
-     55.716998
-    ]
-   },
-   "properties": {
-    "area_m2": 10100,
-    "max_depth_band": ">2",
-    "implied_volume_m3": 15250,
-    "distance_to_nearest_planned_work_m": 108
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.551371,
-     55.663124
-    ]
-   },
-   "properties": {
-    "area_m2": 19900,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 14445,
-    "distance_to_nearest_planned_work_m": 227
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.535147,
-     55.725593
-    ]
-   },
-   "properties": {
-    "area_m2": 9700,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 10680,
+    "implied_volume_m3": 71655,
     "distance_to_nearest_planned_work_m": 101
    }
   },
@@ -150,14 +22,14 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.577769,
-     55.667363
+     12.457522,
+     55.706638
     ]
    },
    "properties": {
-    "area_m2": 27700,
-    "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 9695,
+    "area_m2": 32700,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 48750,
     "distance_to_nearest_planned_work_m": 101
    }
   },
@@ -166,558 +38,14 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.560899,
-     55.705831
+     12.639083,
+     55.660953
     ]
    },
    "properties": {
-    "area_m2": 18700,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 9485,
-    "distance_to_nearest_planned_work_m": 101
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.458512,
-     55.686037
-    ]
-   },
-   "properties": {
-    "area_m2": 6000,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 9000,
-    "distance_to_nearest_planned_work_m": 500
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.507471,
-     55.700307
-    ]
-   },
-   "properties": {
-    "area_m2": 12200,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 8895,
-    "distance_to_nearest_planned_work_m": 105
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.55993,
-     55.728066
-    ]
-   },
-   "properties": {
-    "area_m2": 15200,
+    "area_m2": 31900,
     "max_depth_band": "0.5-1",
-    "implied_volume_m3": 8640,
-    "distance_to_nearest_planned_work_m": 120
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.462504,
-     55.657995
-    ]
-   },
-   "properties": {
-    "area_m2": 11500,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 8625,
-    "distance_to_nearest_planned_work_m": 800
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.583805,
-     55.6529
-    ]
-   },
-   "properties": {
-    "area_m2": 6700,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 8035,
-    "distance_to_nearest_planned_work_m": 104
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.577403,
-     55.731581
-    ]
-   },
-   "properties": {
-    "area_m2": 12900,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 7985,
-    "distance_to_nearest_planned_work_m": 520
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.580136,
-     55.714664
-    ]
-   },
-   "properties": {
-    "area_m2": 7700,
-    "max_depth_band": ">2",
-    "implied_volume_m3": 6815,
-    "distance_to_nearest_planned_work_m": 102
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.52305,
-     55.646123
-    ]
-   },
-   "properties": {
-    "area_m2": 8900,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 6675,
-    "distance_to_nearest_planned_work_m": 105
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.582565,
-     55.647075
-    ]
-   },
-   "properties": {
-    "area_m2": 7700,
-    "max_depth_band": ">2",
-    "implied_volume_m3": 6125,
-    "distance_to_nearest_planned_work_m": 160
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.639804,
-     55.659576
-    ]
-   },
-   "properties": {
-    "area_m2": 8100,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 6075,
-    "distance_to_nearest_planned_work_m": 104
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.548223,
-     55.711131
-    ]
-   },
-   "properties": {
-    "area_m2": 6400,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 6070,
-    "distance_to_nearest_planned_work_m": 102
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.498777,
-     55.717061
-    ]
-   },
-   "properties": {
-    "area_m2": 9100,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 5905,
-    "distance_to_nearest_planned_work_m": 390
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.50615,
-     55.710248
-    ]
-   },
-   "properties": {
-    "area_m2": 8400,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 5900,
-    "distance_to_nearest_planned_work_m": 227
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.475467,
-     55.725422
-    ]
-   },
-   "properties": {
-    "area_m2": 11900,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 5805,
-    "distance_to_nearest_planned_work_m": 714
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.48627,
-     55.674647
-    ]
-   },
-   "properties": {
-    "area_m2": 7100,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 5325,
-    "distance_to_nearest_planned_work_m": 104
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.578543,
-     55.730463
-    ]
-   },
-   "properties": {
-    "area_m2": 6800,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 5235,
-    "distance_to_nearest_planned_work_m": 440
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.49582,
-     55.717266
-    ]
-   },
-   "properties": {
-    "area_m2": 6900,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 4980,
-    "distance_to_nearest_planned_work_m": 336
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.461562,
-     55.694749
-    ]
-   },
-   "properties": {
-    "area_m2": 6300,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 4725,
-    "distance_to_nearest_planned_work_m": 133
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.566709,
-     55.724542
-    ]
-   },
-   "properties": {
-    "area_m2": 4500,
-    "max_depth_band": ">2",
-    "implied_volume_m3": 4385,
-    "distance_to_nearest_planned_work_m": 108
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.475957,
-     55.722405
-    ]
-   },
-   "properties": {
-    "area_m2": 6800,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 4205,
-    "distance_to_nearest_planned_work_m": 385
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.478852,
-     55.720172
-    ]
-   },
-   "properties": {
-    "area_m2": 4700,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 4160,
-    "distance_to_nearest_planned_work_m": 135
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.478727,
-     55.722792
-    ]
-   },
-   "properties": {
-    "area_m2": 10000,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 4140,
-    "distance_to_nearest_planned_work_m": 384
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.483394,
-     55.722574
-    ]
-   },
-   "properties": {
-    "area_m2": 6800,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 3740,
-    "distance_to_nearest_planned_work_m": 308
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.548647,
-     55.649251
-    ]
-   },
-   "properties": {
-    "area_m2": 10600,
-    "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 3710,
-    "distance_to_nearest_planned_work_m": 223
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.483023,
-     55.6712
-    ]
-   },
-   "properties": {
-    "area_m2": 9600,
-    "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 3360,
-    "distance_to_nearest_planned_work_m": 101
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.613873,
-     55.645944
-    ]
-   },
-   "properties": {
-    "area_m2": 4500,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 3255,
-    "distance_to_nearest_planned_work_m": 101
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.594394,
-     55.697033
-    ]
-   },
-   "properties": {
-    "area_m2": 5500,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 3245,
-    "distance_to_nearest_planned_work_m": 184
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.609489,
-     55.645472
-    ]
-   },
-   "properties": {
-    "area_m2": 4300,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 3225,
-    "distance_to_nearest_planned_work_m": 101
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.463576,
-     55.691736
-    ]
-   },
-   "properties": {
-    "area_m2": 4100,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 3075,
-    "distance_to_nearest_planned_work_m": 128
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.499977,
-     55.714568
-    ]
-   },
-   "properties": {
-    "area_m2": 5800,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 3030,
-    "distance_to_nearest_planned_work_m": 180
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.539739,
-     55.696496
-    ]
-   },
-   "properties": {
-    "area_m2": 4700,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 2815,
-    "distance_to_nearest_planned_work_m": 102
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.562373,
-     55.716361
-    ]
-   },
-   "properties": {
-    "area_m2": 5300,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 2655,
-    "distance_to_nearest_planned_work_m": 101
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.588394,
-     55.662356
-    ]
-   },
-   "properties": {
-    "area_m2": 7500,
-    "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 2625,
-    "distance_to_nearest_planned_work_m": 128
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.631786,
-     55.668196
-    ]
-   },
-   "properties": {
-    "area_m2": 7300,
-    "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 2555,
+    "implied_volume_m3": 23925,
     "distance_to_nearest_planned_work_m": 158
    }
   },
@@ -726,14 +54,14 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.56523,
-     55.717635
+     12.529237,
+     55.725225
     ]
    },
    "properties": {
-    "area_m2": 5100,
-    "max_depth_band": "0.5-1",
-    "implied_volume_m3": 2265,
+    "area_m2": 21300,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 17325,
     "distance_to_nearest_planned_work_m": 101
    }
   },
@@ -742,15 +70,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.602431,
-     55.655447
+     12.566937,
+     55.667842
     ]
    },
    "properties": {
-    "area_m2": 4600,
-    "max_depth_band": "1-2",
-    "implied_volume_m3": 2245,
-    "distance_to_nearest_planned_work_m": 184
+    "area_m2": 24900,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 16810,
+    "distance_to_nearest_planned_work_m": 109
    }
   },
   {
@@ -758,15 +86,799 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.56031,
-     55.73195
+     12.558943,
+     55.702538
+    ]
+   },
+   "properties": {
+    "area_m2": 28700,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 14505,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.524254,
+     55.700747
+    ]
+   },
+   "properties": {
+    "area_m2": 18700,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 14430,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.550697,
+     55.661438
+    ]
+   },
+   "properties": {
+    "area_m2": 19400,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 14350,
+    "distance_to_nearest_planned_work_m": 239
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.556694,
+     55.720825
+    ]
+   },
+   "properties": {
+    "area_m2": 12100,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 13315,
+    "distance_to_nearest_planned_work_m": 109
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.480879,
+     55.720506
+    ]
+   },
+   "properties": {
+    "area_m2": 19200,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 13240,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.555348,
+     55.665699
+    ]
+   },
+   "properties": {
+    "area_m2": 16900,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 12845,
+    "distance_to_nearest_planned_work_m": 105
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.491445,
+     55.709599
+    ]
+   },
+   "properties": {
+    "area_m2": 21700,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 12795,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.455912,
+     55.716052
+    ]
+   },
+   "properties": {
+    "area_m2": 8000,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 12100,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.643414,
+     55.648794
+    ]
+   },
+   "properties": {
+    "area_m2": 6000,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 11900,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.583075,
+     55.670746
+    ]
+   },
+   "properties": {
+    "area_m2": 33800,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 11830,
+    "distance_to_nearest_planned_work_m": 105
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.533749,
+     55.723828
+    ]
+   },
+   "properties": {
+    "area_m2": 7500,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 10650,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.564372,
+     55.725055
+    ]
+   },
+   "properties": {
+    "area_m2": 5600,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 9745,
+    "distance_to_nearest_planned_work_m": 110
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.453422,
+     55.708105
+    ]
+   },
+   "properties": {
+    "area_m2": 6200,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 9300,
+    "distance_to_nearest_planned_work_m": 150
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.459474,
+     55.685141
+    ]
+   },
+   "properties": {
+    "area_m2": 5900,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 8850,
+    "distance_to_nearest_planned_work_m": 450
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.555709,
+     55.712956
+    ]
+   },
+   "properties": {
+    "area_m2": 7500,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 8640,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.46348,
+     55.657107
+    ]
+   },
+   "properties": {
+    "area_m2": 11500,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 8625,
+    "distance_to_nearest_planned_work_m": 754
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.574685,
+     55.728342
+    ]
+   },
+   "properties": {
+    "area_m2": 12800,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 7950,
+    "distance_to_nearest_planned_work_m": 160
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.503186,
+     55.707152
+    ]
+   },
+   "properties": {
+    "area_m2": 12200,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 7910,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.592883,
+     55.656216
+    ]
+   },
+   "properties": {
+    "area_m2": 6300,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 7675,
+    "distance_to_nearest_planned_work_m": 102
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.517805,
+     55.698725
+    ]
+   },
+   "properties": {
+    "area_m2": 14200,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 7370,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.634343,
+     55.670768
+    ]
+   },
+   "properties": {
+    "area_m2": 17100,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 6825,
+    "distance_to_nearest_planned_work_m": 433
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.483034,
+     55.670753
+    ]
+   },
+   "properties": {
+    "area_m2": 19100,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 6685,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.504175,
+     55.696318
+    ]
+   },
+   "properties": {
+    "area_m2": 10700,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 6185,
+    "distance_to_nearest_planned_work_m": 102
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.578088,
+     55.668058
+    ]
+   },
+   "properties": {
+    "area_m2": 17400,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 6090,
+    "distance_to_nearest_planned_work_m": 147
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.472771,
+     55.722173
+    ]
+   },
+   "properties": {
+    "area_m2": 12200,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 5910,
+    "distance_to_nearest_planned_work_m": 529
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.487073,
+     55.673905
+    ]
+   },
+   "properties": {
+    "area_m2": 7500,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 5625,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.551431,
+     55.691626
+    ]
+   },
+   "properties": {
+    "area_m2": 7400,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 5550,
+    "distance_to_nearest_planned_work_m": 110
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.476299,
+     55.719479
+    ]
+   },
+   "properties": {
+    "area_m2": 13000,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 5310,
+    "distance_to_nearest_planned_work_m": 109
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.478859,
+     55.720097
+    ]
+   },
+   "properties": {
+    "area_m2": 5300,
+    "max_depth_band": ">2",
+    "implied_volume_m3": 4865,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.519749,
+     55.71777
+    ]
+   },
+   "properties": {
+    "area_m2": 8900,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 4835,
+    "distance_to_nearest_planned_work_m": 226
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.50407,
+     55.701272
+    ]
+   },
+   "properties": {
+    "area_m2": 8300,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 4765,
+    "distance_to_nearest_planned_work_m": 137
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48756,
+     55.713416
+    ]
+   },
+   "properties": {
+    "area_m2": 8100,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 4715,
+    "distance_to_nearest_planned_work_m": 156
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.638919,
+     55.667292
+    ]
+   },
+   "properties": {
+    "area_m2": 13300,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 4655,
+    "distance_to_nearest_planned_work_m": 242
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.548198,
+     55.649958
+    ]
+   },
+   "properties": {
+    "area_m2": 13300,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 4655,
+    "distance_to_nearest_planned_work_m": 180
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.496787,
+     55.710527
+    ]
+   },
+   "properties": {
+    "area_m2": 8600,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 4450,
+    "distance_to_nearest_planned_work_m": 102
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.557557,
+     55.725558
+    ]
+   },
+   "properties": {
+    "area_m2": 7200,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 4320,
+    "distance_to_nearest_planned_work_m": 110
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.537959,
+     55.693355
+    ]
+   },
+   "properties": {
+    "area_m2": 9000,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 4310,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.541214,
+     55.698928
+    ]
+   },
+   "properties": {
+    "area_m2": 8800,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 4280,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.56961,
+     55.71648
+    ]
+   },
+   "properties": {
+    "area_m2": 5400,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 4250,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.476144,
+     55.716926
+    ]
+   },
+   "properties": {
+    "area_m2": 4800,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 4235,
+    "distance_to_nearest_planned_work_m": 141
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.640216,
+     55.669903
+    ]
+   },
+   "properties": {
+    "area_m2": 12100,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 4235,
+    "distance_to_nearest_planned_work_m": 498
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.473249,
+     55.719167
+    ]
+   },
+   "properties": {
+    "area_m2": 6800,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 4205,
+    "distance_to_nearest_planned_work_m": 360
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.55958,
+     55.713205
+    ]
+   },
+   "properties": {
+    "area_m2": 7900,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 4005,
+    "distance_to_nearest_planned_work_m": 187
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.524847,
+     55.716808
+    ]
+   },
+   "properties": {
+    "area_m2": 7000,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 3730,
+    "distance_to_nearest_planned_work_m": 160
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.614243,
+     55.647365
+    ]
+   },
+   "properties": {
+    "area_m2": 4300,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 3670,
+    "distance_to_nearest_planned_work_m": 104
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.519481,
+     55.70603
+    ]
+   },
+   "properties": {
+    "area_m2": 5600,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 3435,
+    "distance_to_nearest_planned_work_m": 102
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.591163,
+     55.696175
+    ]
+   },
+   "properties": {
+    "area_m2": 4300,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 2825,
+    "distance_to_nearest_planned_work_m": 110
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.535169,
+     55.701588
+    ]
+   },
+   "properties": {
+    "area_m2": 5400,
+    "max_depth_band": "1-2",
+    "implied_volume_m3": 2645,
+    "distance_to_nearest_planned_work_m": 101
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.507113,
+     55.701911
+    ]
+   },
+   "properties": {
+    "area_m2": 4200,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 2190,
+    "distance_to_nearest_planned_work_m": 177
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.557601,
+     55.728712
     ]
    },
    "properties": {
     "area_m2": 4600,
     "max_depth_band": "0.5-1",
     "implied_volume_m3": 2050,
-    "distance_to_nearest_planned_work_m": 279
+    "distance_to_nearest_planned_work_m": 280
    }
   },
   {
@@ -774,15 +886,15 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.55579,
-     55.653941
+     12.637517,
+     55.669186
     ]
    },
    "properties": {
-    "area_m2": 4600,
+    "area_m2": 5500,
     "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 1610,
-    "distance_to_nearest_planned_work_m": 350
+    "implied_volume_m3": 1925,
+    "distance_to_nearest_planned_work_m": 435
    }
   },
   {
@@ -790,15 +902,63 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.593977,
-     55.64084
+     12.51963,
+     55.716671
     ]
    },
    "properties": {
-    "area_m2": 4400,
+    "area_m2": 4800,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 1800,
+    "distance_to_nearest_planned_work_m": 112
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.640557,
+     55.670837
+    ]
+   },
+   "properties": {
+    "area_m2": 5000,
     "max_depth_band": "0.2-0.5",
-    "implied_volume_m3": 1540,
-    "distance_to_nearest_planned_work_m": 104
+    "implied_volume_m3": 1750,
+    "distance_to_nearest_planned_work_m": 715
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.554248,
+     55.652331
+    ]
+   },
+   "properties": {
+    "area_m2": 4200,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 1470,
+    "distance_to_nearest_planned_work_m": 470
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.56271,
+     55.658929
+    ]
+   },
+   "properties": {
+    "area_m2": 4000,
+    "max_depth_band": "0.2-0.5",
+    "implied_volume_m3": 1400,
+    "distance_to_nearest_planned_work_m": 280
    }
   }
  ]

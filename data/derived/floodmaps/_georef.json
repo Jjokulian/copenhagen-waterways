@@ -10,32 +10,39 @@
   "m_per_px_from_scalebar": 1.8727,
   "scale_check": "Control points fitted freely reproduce the scale bar to +0.3% in latitude and +2.7% in longitude, so the reported positions carry no systematic bias. The bounds below use the scale bar's scale and fit position only.",
   "bounds_wgs84": {
-   "west": 12.576608,
-   "east": 12.64384357267627,
-   "south": 55.627447163204636,
-   "north": 55.679058
+   "west": 12.576750108238622,
+   "east": 12.643985680914891,
+   "south": 55.628371127135544,
+   "north": 55.679981963930906
   },
   "corners_for_maplibre": [
    [
-    12.576608,
-    55.679058
+    12.576750108238622,
+    55.679981963930906
    ],
    [
-    12.64384357267627,
-    55.679058
+    12.643985680914891,
+    55.679981963930906
    ],
    [
-    12.64384357267627,
-    55.627447163204636
+    12.643985680914891,
+    55.628371127135544
    ],
    [
-    12.576608,
-    55.627447163204636
+    12.576750108238622,
+    55.628371127135544
    ]
   ],
   "image": "data/derived/floodmaps/amager.depth.png",
   "confident": true,
-  "caveat": "Placed to about +-60-90 m, against 20-30 m for the auto-registered sheets. Adequate for the 100 m and 200 m proximity bands in FLOOD_GAP.md; treat the 50 m band on this sheet as indicative."
+  "caveat": "Placed to about +-60-90 m, against 20-30 m for the auto-registered sheets. Adequate for the 100 m and 200 m proximity bands in FLOOD_GAP.md; treat the 50 m band on this sheet as indicative.",
+  "bundle": {
+   "applied": true,
+   "shift_east_m": 9,
+   "shift_north_m": 103,
+   "pair_rms_m": 23.0,
+   "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
+  }
  },
  "bispebjerg": {
   "method": "assisted: resident-reported control points + correlation check",
@@ -48,32 +55,39 @@
   "m_per_px_from_scalebar": 2.2124,
   "scale_check": "Two control points. Their x baseline reproduces the scale bar to +1.4%. They sit at almost the same height on the sheet, so they carry little independent vertical information, but with the scale fixed each one still implies a full position and the two agree to 50 m in longitude and 175 m in latitude. The water correlation is weak on this sheet - it is inland and the mask is thin - and lands 56 m away, which is corroboration rather than evidence.",
   "bounds_wgs84": {
-   "west": 12.47035,
-   "east": 12.584335201781796,
-   "south": 55.691908766022536,
-   "north": 55.73277
+   "west": 12.467644494392621,
+   "east": 12.581629696174417,
+   "south": 55.688671003765684,
+   "north": 55.72953223774315
   },
   "corners_for_maplibre": [
    [
-    12.47035,
-    55.73277
+    12.467644494392621,
+    55.72953223774315
    ],
    [
-    12.584335201781796,
-    55.73277
+    12.581629696174417,
+    55.72953223774315
    ],
    [
-    12.584335201781796,
-    55.691908766022536
+    12.581629696174417,
+    55.688671003765684
    ],
    [
-    12.47035,
-    55.691908766022536
+    12.467644494392621,
+    55.688671003765684
    ]
   ],
   "image": "data/derived/floodmaps/bispebjerg.depth.png",
   "confident": true,
-  "caveat": "Placed to roughly +-136 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m."
+  "caveat": "Placed to roughly +-136 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m.",
+  "bundle": {
+   "applied": true,
+   "shift_east_m": -170,
+   "shift_north_m": -360,
+   "pair_rms_m": 23.0,
+   "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
+  }
  },
  "indre-by": {
   "method": "autoref: ensemble water cross-correlation",
@@ -83,27 +97,27 @@
   "best_iou": 0.374,
   "m_per_px_from_scalebar": 1.3263,
   "bounds_wgs84": {
-   "west": 12.564721133129309,
-   "east": 12.61234710737548,
-   "south": 55.66495564366584,
-   "north": 55.70150761561375
+   "west": 12.56276058468574,
+   "east": 12.610386558931912,
+   "south": 55.66300846017128,
+   "north": 55.699560432119185
   },
   "corners_for_maplibre": [
    [
-    12.564721133129309,
-    55.70150761561375
+    12.56276058468574,
+    55.699560432119185
    ],
    [
-    12.61234710737548,
-    55.70150761561375
+    12.610386558931912,
+    55.699560432119185
    ],
    [
-    12.61234710737548,
-    55.66495564366584
+    12.610386558931912,
+    55.66300846017128
    ],
    [
-    12.564721133129309,
-    55.66495564366584
+    12.56276058468574,
+    55.66300846017128
    ]
   ],
   "image": "data/derived/floodmaps/indre-by.depth.png",
@@ -163,7 +177,14 @@
     "iou": 0.182,
     "water_fraction": 0.0498
    }
-  ]
+  ],
+  "bundle": {
+   "applied": true,
+   "shift_east_m": -123,
+   "shift_north_m": -217,
+   "pair_rms_m": 23.0,
+   "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
+  }
  },
  "kbhvest": {
   "method": "assisted: resident-reported control points + correlation check",
@@ -176,32 +197,39 @@
   "m_per_px_from_scalebar": 3.6496,
   "scale_check": "Two control points agreeing to 104 m in longitude and 54 m in latitude, one of them reported by the observer as poorly placed. The water correlation sits 282 m north, almost entirely in latitude, but this sheet's water mask is only 0.8% of its area, so the correlation is the weaker witness and the control points are preferred.",
   "bounds_wgs84": {
-   "west": 12.4399,
-   "east": 12.571023659763565,
-   "south": 55.62920537646451,
-   "north": 55.72979
+   "west": 12.440855934046182,
+   "east": 12.571979593809747,
+   "south": 55.62831166762314,
+   "north": 55.72889629115863
   },
   "corners_for_maplibre": [
    [
-    12.4399,
-    55.72979
+    12.440855934046182,
+    55.72889629115863
    ],
    [
-    12.571023659763565,
-    55.72979
+    12.571979593809747,
+    55.72889629115863
    ],
    [
-    12.571023659763565,
-    55.62920537646451
+    12.571979593809747,
+    55.62831166762314
    ],
    [
-    12.4399,
-    55.62920537646451
+    12.440855934046182,
+    55.62831166762314
    ]
   ],
   "image": "data/derived/floodmaps/kbhvest.depth.png",
   "confident": true,
-  "caveat": "Placed to roughly +-87 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m."
+  "caveat": "Placed to roughly +-87 m against 20-30 m for the automatically registered sheets. Adequate for the 200 m proximity band in FLOOD_GAP.md and indicative at 50 m.",
+  "bundle": {
+   "applied": true,
+   "shift_east_m": 60,
+   "shift_north_m": -99,
+   "pair_rms_m": 23.0,
+   "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
+  }
  },
  "ladegaardsaaen": {
   "method": "autoref: ensemble water cross-correlation",
@@ -211,27 +239,27 @@
   "best_iou": 0.148,
   "m_per_px_from_scalebar": 1.7422,
   "bounds_wgs84": {
-   "west": 12.512583162162445,
-   "east": 12.5751441109109,
-   "south": 55.65726140956776,
-   "north": 55.705291322390885
+   "west": 12.51218651855881,
+   "east": 12.574747467307265,
+   "south": 55.65562623572882,
+   "north": 55.70365614855194
   },
   "corners_for_maplibre": [
    [
-    12.512583162162445,
-    55.705291322390885
+    12.51218651855881,
+    55.70365614855194
    ],
    [
-    12.5751441109109,
-    55.705291322390885
+    12.574747467307265,
+    55.70365614855194
    ],
    [
-    12.5751441109109,
-    55.65726140956776
+    12.574747467307265,
+    55.65562623572882
    ],
    [
-    12.512583162162445,
-    55.65726140956776
+    12.51218651855881,
+    55.65562623572882
    ]
   ],
   "image": "data/derived/floodmaps/ladegaardsaaen.depth.png",
@@ -291,7 +319,14 @@
     "iou": 0.141,
     "water_fraction": 0.0118
    }
-  ]
+  ],
+  "bundle": {
+   "applied": true,
+   "shift_east_m": -25,
+   "shift_north_m": -182,
+   "pair_rms_m": 23.0,
+   "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
+  }
  },
  "norrebro": {
   "method": "autoref: ensemble water cross-correlation",
@@ -381,7 +416,11 @@
     "iou": 0.412,
     "water_fraction": 0.0108
    }
-  ]
+  ],
+  "bundle": {
+   "applied": false,
+   "why": "no overlapping pair produced a peak that stood clear of its surroundings, and this sheet has no control points, so the bundle could not touch it. It keeps its original automatic position and is now the one sheet not known to be consistent with the rest."
+  }
  },
  "osterbro": {
   "method": "autoref: ensemble water cross-correlation",
@@ -391,27 +430,27 @@
   "best_iou": 0.343,
   "m_per_px_from_scalebar": 1.2077,
   "bounds_wgs84": {
-   "west": 12.55824929387788,
-   "east": 12.601618840474032,
-   "south": 55.68801080875036,
-   "north": 55.72151304194326
+   "west": 12.555141607570482,
+   "east": 12.598511154166633,
+   "south": 55.686799605306874,
+   "north": 55.72030183849977
   },
   "corners_for_maplibre": [
    [
-    12.55824929387788,
-    55.72151304194326
+    12.555141607570482,
+    55.72030183849977
    ],
    [
-    12.601618840474032,
-    55.72151304194326
+    12.598511154166633,
+    55.72030183849977
    ],
    [
-    12.601618840474032,
-    55.68801080875036
+    12.598511154166633,
+    55.686799605306874
    ],
    [
-    12.55824929387788,
-    55.68801080875036
+    12.555141607570482,
+    55.686799605306874
    ]
   ],
   "image": "data/derived/floodmaps/osterbro.depth.png",
@@ -471,6 +510,13 @@
     "iou": 0.239,
     "water_fraction": 0.047
    }
-  ]
+  ],
+  "bundle": {
+   "applied": true,
+   "shift_east_m": -195,
+   "shift_north_m": -135,
+   "pair_rms_m": 23.0,
+   "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
+  }
  }
 }

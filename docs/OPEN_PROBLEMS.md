@@ -233,102 +233,90 @@ loadings against the eelgrass record.
 
 ---
 
-## 13. The flood sheets — placed, at two different accuracies
+## 13. The flood sheets — solved by matching the photographs to each other
 
-**All seven are now placed.** Four registered automatically against the water painted in
-them, to 13–28 m. The other three — Amager, Bispebjerg, København Vest — were placed from
-control points reported by a resident who located marked dots on a web map.
+**All seven placed, and now mutually consistent to 23 m.**
 
-| Sheet | Method | Points | Standard error |
-|---|---|---:|---:|
-| ladegaardsaaen, osterbro, norrebro, indre-by | automatic | — | 13–28 m |
-| amager | assisted | 6 | 58 m |
-| kbhvest | assisted | 2 | 58 m |
-| bispebjerg | assisted | 2 | 91 m |
+The sheets are tiles of one aerial survey, so where two overlap the pixels depict the same
+ground. That makes registration an image-to-image problem rather than a landmark hunt —
+and image-to-image is the thing that works. `scripts/floodalign.py` resamples an
+overlapping pair onto a common metric grid, discards everything that was *drawn* rather
+than photographed, reduces both to gradient magnitude, locally normalises, and runs a
+masked normalised cross-correlation by FFT over every offset.
 
-The assisted sheets carry a real check rather than a hope. Amager's six points, fitted
-freely, reproduce the sheet's own scale bar to +0.3% in latitude and +2.7% in longitude;
-Bispebjerg's two reproduce it to +1.4% across their baseline. That is what rules out a
-systematic bias in where somebody clicks. Where the water correlation is strong it
-corroborates — 90 m on Amager, 56 m on Bispebjerg — and where it is weak it is
-explicitly the lesser witness: København Vest's water mask is 0.8% of the sheet, and its
-correlation optimum sits 282 m from the control points, so the points win.
+Three details did the work, and each was suggested by someone looking at the problem
+rather than by the code:
 
-**What this changed, and it is uncomfortable.** Flood path area went from 1.52 km² to
-**5.64 km²**. Modelled flooding within 200 m of a planned work fell from 90.5% to
-**86.0%**, within 100 m from 82.6% to **71.9%**, and the share with any *surface* route
-within 100 m from 72% to **57%**. Corridor candidates went from 4 to **33**. The four
-sheets that registered easily were the inner-city ones, and they were also the
-best-served ones — so every headline number in this project was flattering the plan until
-the other three arrived.
+- **Match structure, not tone.** Gradient magnitude survives a change of season, exposure
+  or print. It lifted a typical pair's peak-to-rival ratio from 12.7 to 16.0 while
+  returning the identical shift.
+- **Exclude everything drawn.** The depth palette, the black *Oplandsgrænser* outline and
+  the legend are each sheet's *own* annotation, so leaving them in correlates one sheet's
+  notes against another's. Masking them by exact palette colour, by saturation, and by
+  near-black and near-white took the best pair's NCC from 0.43 to 0.64. Discarding
+  photograph is cheap; admitting overlay is not.
+- **Solve all seven at once.** Sheet-by-sheet placement cannot notice that the frame
+  itself is loose. A global bundle adjustment — every overlapping pair as one equation,
+  the resident control points as the absolute anchors — produced **11 usable pairs, pair
+  residuals of 23 m RMS and 41 m worst.**
 
-**What remains.** Treat the 50 m proximity band on the three assisted sheets as
-indicative; the 200 m band is sound everywhere. Two more control points on Bispebjerg,
-placed at different heights on the sheet rather than along one line, would take it from
-91 m to something nearer 50 m.
+### What it revealed about the earlier work
 
-### Why this was not automated, and how it could be
+The four automatically registered sheets were **not** mutually consistent: pairwise they
+disagreed by 100–190 m. Their advertised "13–28 m" was *agreement between detectors*,
+never accuracy, and detectors agreeing on a wrong answer is a thing that happens. Every
+one of them moved: østerbro by 195 m east and 135 m south, indre-by by 123 and 217,
+ladegårdsåen by 25 and 182.
 
-The obvious objection is that a computer should be able to match a street grid. It was
-tried here and it does not work, for a reason worth writing down: **a dense uniform mesh
-carries almost no positional information.** Rasterising the OSM road network against the
-sheet's flood painting — which is very nearly a picture of the wet streets — gives a
-correlation peak of 0.051 whose nearest rival outside 150 m is 0.046. A ratio of 1.12 is
-not a peak; at any offset, some streets line up with some streets. The same defect
-defeats building footprints in a regular block plan.
+The control points held up. Amager moved 0.2σ in easting and 1.8σ in northing; København
+Vest 1.0σ and 1.7σ. Bispebjerg's moved furthest — and Bispebjerg is precisely the sheet
+whose two points sat at almost the same height, so its northing was never constrained.
+The adjustment corrected the axis that was known to be weak, which is the behaviour that
+makes it believable.
 
-What *does* carry position is anything rare and irregular: a coastline, a lake, a
-harbour. That is why the four sheets with water registered automatically and the three
-without needed a person.
+**An independent check, not used in the fitting.** Some of the painted depth lands on
+open water, which is an error — water standing on water. Before the adjustment that was
+1.56 km²; after, **1.21 km²**, a 22% reduction. Nothing about the bundle optimised for
+it; it uses the city's own water polygons, which the alignment never saw.
 
-**The right automated route exists and is free.** These are aerial photographs, so the
-correct reference is another aerial photograph with known georeferencing — not a vector
-layer. SDFI / Dataforsyningen publishes GeoDanmark Ortofoto as WMS and WMTS under an
-open licence, **including historical spring imagery covering 2004–2011**, which is the
-era of these sheets. Image-to-image registration against orthophotography of the same
-years would place all seven to a few metres and would need no human at all. It requires
-a free API key, which is the only reason it was not done here.
+### What it changed
 
-That is the honest state of it: not a hard problem, an unregistered one.
+| | Before all seven | After the adjustment |
+|---|---:|---:|
+| Flood path on land | 1.52 km² | **5.93 km²** |
+| Within 200 m of a planned work | 90.5% | **85.8%** |
+| Within 100 m | 82.6% | **67.4%** |
+| With a surface route within 100 m | 72% | **53.5%** |
+| Corridor candidates | 4 | **33** |
+
+### What remains
+
+**Nørrebro is the one sheet the adjustment could not touch.** Every pairing with it came
+out flat — peak-to-rival ratios of 1.02 to 1.06 — so it has no usable pair, and it has no
+control points either. It keeps its original automatic position and is now the only sheet
+not known to be consistent with the rest. Why it refuses to correlate is unresolved; it
+is the smallest sheet and the most heavily painted of the inner four, but neither fully
+explains it.
+
+Two control points on Nørrebro would settle it, or the orthophoto route below would settle
+everything at once.
+
+### The route that would have avoided all of this
+
+These are aerial photographs, so the right reference is another aerial photograph with
+known georeferencing. SDFI / Dataforsyningen publishes GeoDanmark Ortofoto as WMS and
+WMTS under an open licence, **including historical spring imagery for 2004–2011**, the era
+of these sheets. The machinery in `floodalign.py` would work unchanged against it and
+would place all seven absolutely rather than relatively, to a few metres, with no human
+and no anchors. It needs a free API key.
+
+The earlier attempt to match the OSM road network is kept here as a negative result: peak
+0.051 against a nearest rival of 0.046, a ratio of 1.12. A dense uniform mesh carries
+almost no positional information, because at any offset some streets line up with some
+streets. What carries position is whatever is rare and irregular — which is why the
+sheets with coastline registered themselves and the inland ones did not.
 
 ---
-**What the automatic attempt established**, before the assisted one succeeded — it is
-what made the assisted attempt cheap. `scripts/floodcheck.py` came out of it.
-
-- **The scale bar is right.** Measured directly off the render: 534 px for 1000 m on
-  Amager, 1:14,745. The 2× error that once put Amager in the wrong place is genuinely
-  fixed, and scale is not the problem.
-- **A sheet is a zoom, not a catchment.** The Amager sheet covers 4.2 × 5.7 km; the
-  Amager og Christianshavn cloudburst catchment is 9.2 × 9.5 km. The sheet is a portion
-  of its catchment, framed for A3. This is probably why matching against catchment
-  outlines failed — the two were never the same shape.
-- **The sea is painted, in exact palette colour.** A sample of open water returns
-  (154, 199, 224) with zero variance — the 0.2–0.5 m band. So water can be pulled
-  cleanly out of the band classification already on disk instead of guessed at from
-  colour heuristics, and doing so lifted the best IoU from 0.08 to 0.25.
-- **A family of candidate positions is ruled out.** Every high-scoring position put
-  Øresund down the sheet's full eastern edge. The sheet's bottom-right corner is
-  unambiguously suburban — housing, allotments, a running track, a railway — with the
-  coast entering only at the top-right. Those positions are wrong regardless of what
-  they score.
-- **And no scoring rule settled it.** IoU rewards agreeing water but is indifferent to
-  putting open sea where the sheet shows houses. A ±1 matched filter overcorrects and
-  parks the frame where there is no water at all. ZNCC behaves sensibly and peaks at
-  0.43, but not at a position that survives looking at it. Precision — of the water the
-  sheet paints, how much is real — reaches 1.00, and reaches it at many positions,
-  because a sea blob slides along a coast.
-
-**Why the assisted route worked.** With no rotation and the scale fixed by the sheet's
-own scale bar, a single control point already implies a complete position — so two points
-are two independent estimates plus a consistency check, and six only improve on two by a
-factor of the square root of three. The expensive part was never the number of points. It
-was having any at all.
-The obstacle is not the mathematics and no longer the extraction; it is that recognising
-*this beach, that stadium* and giving each a coordinate is a human act. Two points per
-sheet in `viz/georef.html`, or read off any map, and `scripts/floodmaps.py georef` does
-the rest and reports its own residual.
-
-Still the smallest item on this list, and still the only one needing no new data.
 
 ## 14. The flood model predates a substantial part of the city it is used to plan
 
