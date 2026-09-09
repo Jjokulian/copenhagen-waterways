@@ -178,14 +178,24 @@ async function load(){
     paint:{"line-color":"#1e2933","line-width":["interpolate",["linear"],["zoom"],11,.4,16,2.2]}});
 
   // ---- buildings
+  /* Two layers over one source, split by footprint, so the machine is not asked to
+     extrude nineteen thousand buildings while the camera is looking at the whole
+     city. Far out, only the ones that make a skyline are drawn; the small ones
+     arrive as you come down to the street where they are the only thing that reads.
+     `a` is the footprint in square metres, written by scripts/rivers3d.py. */
   map.addSource("buildings",{type:"geojson", data:buildings});
+  const extrude = {
+    "fill-extrusion-color":["interpolate",["linear"],["get","h"],
+      3,"#232f3a", 12,"#2c3945", 30,"#3a4956", 60,"#4b5c6b"],
+    "fill-extrusion-height":["get","h"],
+    "fill-extrusion-base":0,
+    "fill-extrusion-opacity":.92};
+  const BIG = 600;                       // square metres: a block rather than a house
   map.addLayer({id:"buildings",source:"buildings",type:"fill-extrusion",
-    paint:{
-      "fill-extrusion-color":["interpolate",["linear"],["get","h"],
-        3,"#232f3a", 12,"#2c3945", 30,"#3a4956", 60,"#4b5c6b"],
-      "fill-extrusion-height":["get","h"],
-      "fill-extrusion-base":0,
-      "fill-extrusion-opacity":.92}});
+    filter:[">=",["coalesce",["get","a"],9999],BIG], paint:extrude});
+  map.addLayer({id:"buildings-small",source:"buildings",type:"fill-extrusion",
+    minzoom:14.5,
+    filter:["<",["coalesce",["get","a"],9999],BIG], paint:extrude});
 
   // ---- the recovered flood model, as image overlays where sheets registered
   const flood = [];
@@ -193,7 +203,8 @@ async function load(){
     const fm = await getJSON(DATA+"floodmaps.json");
     for(const [k,g] of Object.entries(fm)){
       if(!g || !g.corners_for_maplibre) continue;
-      map.addSource("fp-"+k,{type:"image", url:DATA+k+".depth.png",
+      // display copy, per scripts/flood_web.py - see the note in viz/index.html
+      map.addSource("fp-"+k,{type:"image", url:DATA+k+".depth.web.png",
         coordinates:g.corners_for_maplibre});
       map.addLayer({id:"fp-"+k, source:"fp-"+k, type:"raster",
         layout:{visibility:"none"}, paint:{"raster-opacity":.55}});
@@ -273,6 +284,7 @@ function buildUI(flood){
       const ids = L.id === "floodpaths" ? flood
                 : L.id === "open_channel" ? ["open_channel","open_channel-glow"]
                 : L.id === "wetland" ? ["wetland","wetland-line"]
+                : L.id === "buildings" ? ["buildings","buildings-small"]
                 : L.id === "water" ? ["water","coast"]
                 : [L.id];
       for(const id of ids) if(map.getLayer(id)) map.setLayoutProperty(id,"visibility",v);

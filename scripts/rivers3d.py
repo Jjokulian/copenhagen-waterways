@@ -133,8 +133,12 @@ def build_buildings():
             continue
         if ring[0] != ring[-1]:
             ring.append(ring[0])
+        # `a` is the footprint in square metres, carried so the viewer can decide
+        # what to draw at a given zoom rather than drawing all 19,000 at every zoom.
+        # A skyline needs the large ones; the small ones are only legible close up.
         feats.append({"type": "Feature",
-                      "properties": {"h": round(min(max(h, 3.0), 120.0), 1)},
+                      "properties": {"h": round(min(max(h, 3.0), 120.0), 1),
+                                     "a": int(_ring_area(ring))},
                       "geometry": {"type": "Polygon", "coordinates": [ring]}})
     out = {"type": "FeatureCollection", "features": feats}
     p = os.path.join(VIEWER, "buildings3d.geojson")

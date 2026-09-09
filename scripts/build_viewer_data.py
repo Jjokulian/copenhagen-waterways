@@ -124,6 +124,9 @@ def main():
             if os.path.exists(src):
                 import shutil
                 shutil.copy2(src, os.path.join(outdir, f"{k}.depth.png"))
+                web = src.replace(".depth.png", ".depth.web.png")
+                if os.path.exists(web):
+                    shutil.copy2(web, os.path.join(outdir, f"{k}.depth.web.png"))
     else:
         log("  -- no georeferenced flood sheets yet (viz/georef.html -> floodmaps.py georef)")
 

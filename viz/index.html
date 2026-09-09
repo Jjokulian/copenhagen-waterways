@@ -311,7 +311,11 @@ async function loadExtras(){
   }else{
     for(const k of sheets){
       const g=geo[k];
-      map.addSource("flood-"+k,{type:"image",url:B+k+".depth.png",coordinates:g.corners_for_maplibre});
+      /* The display copy, not the dataset: a quarter of the linear size, which is
+         still finer than the 10 m grid the model was computed on. Loading all seven
+         at full size is 193 MB of texture and it is what made this viewer crawl.
+         scripts/flood_web.py writes these; the full sheets stay for QGIS. */
+      map.addSource("flood-"+k,{type:"image",url:B+k+".depth.web.png",coordinates:g.corners_for_maplibre});
       map.addLayer({id:"flood-"+k,source:"flood-"+k,type:"raster",
         paint:{"raster-opacity":.85},layout:{visibility:"visible"}});
       FLOOD.push("flood-"+k);
