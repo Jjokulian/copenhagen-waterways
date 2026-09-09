@@ -861,6 +861,82 @@ def main():
       "the nutrient too, in the form the sediment lets go of. Not one of these routes "
       "is representable in a load ledger written in tonnes of nitrogen a year: they "
       "are oxygen demand, not nitrogen supply, and they land in hours.\n")
+    w = []
+    wa = w.append
+    wa("**Oxygen is not the consequence. It is the one consequence that has a "
+       "stoichiometry.** The paragraph above prices the flush in grams of O₂ per "
+       "gram because that is the channel the ledger can be argued in — every route "
+       "there converts to a number an accounting can hold. That is a property of "
+       "the instrument, not of the event. What actually leaves the basin acts along "
+       "several routes at once, and the oxygen one is simply the only one anybody "
+       "can carry through an arithmetic.\n")
+    wa("**Start with the route that needs no chain at all: it is the substance.** "
+       "What comes out is fat, solids, fibre, wipes and the sediment they were "
+       "lying in. A person who meets that in the water is not encountering a "
+       "downstream effect of an oxygen deficit — they are encountering the "
+       "discharge, diluted. Dilution changes the concentration and not the "
+       "identity. **That is *fedtemøg* in the sense the word is actually used**, "
+       "and on this page's own count it is one of the three public words with no "
+       "instrument behind it. The most direct route in the list is the one nothing "
+       "measures.\n")
+    wa("The rest, with what each acts on and whether anything in Denmark records "
+       "it:\n")
+    wa("| The flush also delivers | Which acts on | Recorded by |")
+    wa("|---|---|---|")
+    for a_, b_, c_ in [
+        ("Oxygen demand — COD, ammonium, sulphide, fat",
+         "dissolved oxygen, and everything that needs it",
+         "**yes** — the oxygen series, at station-months"),
+        ("The material itself — fat, solids, fibre, wipes",
+         "what a person meets at the shore",
+         "**nothing**"),
+        ("Odour",
+         "whether the place is usable",
+         "**nothing**"),
+        ("Pathogens",
+         "bathing risk, for the days after",
+         "partly — bathing water, in season, at designated points only"),
+        ("Unionised ammonia (NH₃, set by pH and temperature)",
+         "gill-breathing animals, directly and quickly",
+         "as total ammonium sometimes; as toxicity, no"),
+        ("Phosphate, released as the sediment reduces ([`A2`](#HYPOTHESES.md))",
+         "production weeks later, elsewhere",
+         "in some series; never attributed to an event"),
+        ("Turbidity, and the light it takes ([LIGHT.md](#LIGHT.md))",
+         "eelgrass, which needs light to keep sulphide out ([`T1`](#HYPOTHESES.md))",
+         "Secchi — which this project found **right-censored** at shallow stations"),
+        ("An organic blanket on the bed",
+         "benthic fauna, and the skin that stabilises sediment "
+         "([`D8`](#HYPOTHESES.md))",
+         "bundfauna surveys, infrequent and rarely after an event"),
+        ("Metals, PAH, tyre wear, microplastics",
+         "a food chain, over years",
+         "well in pond effluent, almost nowhere in a receiving water"),
+        ("A kill, and then the decay of what it killed "
+         "([CAUSATION.md](#CAUSATION.md))",
+         "the standing stock, which becomes the next oxygen demand",
+         "**nothing** — no open register of fish kills"),
+        ("Timing — a pulse into warm, stratified, still water",
+         "everything above, at the worst hour of the year for it",
+         "no instrument has a time axis this short"),
+    ]:
+        wa(f"| {a_} | {b_} | {c_} |")
+    wa("")
+    wa("Read down the third column. **One route is measured well, two partly, two "
+       "by records that exist but cannot see an event, and six not at all** — and "
+       "the six include both the direct human encounter and the kill. An annual "
+       "nitrogen "
+       "ledger sees none of the eleven. An oxygen series sees the first and reports "
+       "it as a monthly value at a station that may be kilometres away.\n")
+    wa("*What this does not say:* that any of these happened at any Danish "
+       "overflow. "
+       "Nothing here quantifies a single event, and several rows are mechanisms "
+       "rather than findings. What it establishes is narrower and harder to argue "
+       "with — **the event is wider than the instrument**, so a defence of the "
+       "current framing that rests on the oxygen record is a defence that has "
+       "already discarded most of the question.\n")
+    a(fold("The flush does more than take oxygen — eleven routes it also takes, and "
+           "how many of them anything in Denmark records", "\n".join(w)))
     a("*Does not establish:* what any particular basin holds. Nobody in this project "
       "has measured basin sediment, and the composition would be site-specific if "
       "they had. What the arithmetic does establish is that a delayed, concentrated, "
