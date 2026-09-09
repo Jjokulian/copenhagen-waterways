@@ -610,6 +610,11 @@ function startSpy(items) {
 function goTo(section) {
   const el = section && document.getElementById(section);
   if (!el) return false;
+  /* A section can sit inside a folded piece of working. Scrolling to something the
+     reader cannot see is worse than not scrolling at all, so anything on the way
+     down to it is opened first - and left open, because the reader asked for it. */
+  for (let d = el.closest("details"); d; d = d.parentElement.closest("details"))
+    d.open = true;
   el.scrollIntoView({ behavior: MOTION.matches ? "smooth" : "auto", block: "start" });
   setActive(section);
   return true;

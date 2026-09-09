@@ -572,9 +572,9 @@ def main():
     ]:
         a(f"- **{h}** {t}")
     a("")
-    w = []
-    wa = w.append
-    wa("**A small pipe blocks. That is its failure mode, and it is the right one to "
+    fb = []
+    fa = fb.append
+    fa("**A small pipe blocks. That is its failure mode, and it is the right one to "
        "have.** A combined sewer that blocks backs sewage into a basement. A rain "
        "line that blocks puts rainwater on the street it came from — visible, "
        "local, and nobody's floor. The design question is therefore not whether it "
@@ -583,7 +583,7 @@ def main():
        "shot from shaft to shaft, **no point on the line is more than half a "
        "spacing from an opening**, and a jetting hose can be put in at either "
        "end.\n")
-    wa("What actually accumulates, in order of how much of it there is:\n")
+    fa("What actually accumulates, in order of how much of it there is:\n")
     for h, t in [
         ("Street grit and winter sand.",
          "The largest mass, and it is caught before the pipe if the gully keeps its "
@@ -606,9 +606,9 @@ def main():
          "the construction method that makes it cheap is also the one that gives "
          "roots nothing to enter."),
     ]:
-        wa(f"- **{h}** {t}")
-    wa("")
-    wa("**And a small pipe is better at keeping itself clean than a large one**, "
+        fa(f"- **{h}** {t}")
+    fa("")
+    fa("**And a small pipe is better at keeping itself clean than a large one**, "
        "which is the part that reads backwards. A gravity line scours at roughly "
        "0.6–0.75 m/s, and velocity comes from filling the bore. A line sized for "
        "the ordinary rain fills often; a line sized for the hundred-year storm runs "
@@ -617,7 +617,7 @@ def main():
        "is the self-cleansing one — the design condition is that the scouring "
        "velocity is reached at some stated frequency, not that the pipe is "
        "large.\n")
-    wa("Three more that belong in the same list, because they are what would "
+    fa("Three more that belong in the same list, because they are what would "
        "actually be argued about:\n")
     for h, t in [
         ("Frost, and low points.",
@@ -639,9 +639,9 @@ def main():
          "means the expected dry-weather flow is known — but it is a real cost of "
          "the greywater idea and it belongs beside its benefits."),
     ]:
-        wa(f"- **{h}** {t}")
-    wa("")
-    wa("**And the air matters as much as the water**, which is the part that "
+        fa(f"- **{h}** {t}")
+    fa("")
+    fa("**And the air matters as much as the water**, which is the part that "
        "connects blockage to the thing everybody has heard of. Fat does not build "
        "up in a fast pipe; it comes out against a cold wall at the waterline, and "
        "in a concrete sewer it *saponifies* — the free fatty acids take up calcium "
@@ -663,15 +663,15 @@ def main():
          "has to be re-made through or around the pan, and it is easier to design "
          "in than to retrofit into a lid somebody already cast."),
     ]:
-        wa(f"- **{h}** {t}")
-    wa("")
-    wa("*None of this is settled here.* Cover depth, gradient, diameter and the "
+        fa(f"- **{h}** {t}")
+    fa("")
+    fa("*None of this is settled here.* Cover depth, gradient, diameter and the "
        "cleaning interval are design outputs, and this project has computed none of "
        "them. What it can say is which of them decide the outcome, which is the "
        "list above.\n")
     a(fold("Technical concerns about a small rain line — what makes it block, why a "
            "smaller pipe blocks less, and the one detector greywater costs you",
-           "\n".join(w)))
+           "\n".join(fb)))
     a("#### Never full is also never scoured, and that decides which pipe gets which "
       "stream\n")
     a("Taking the rain out of a combined sewer leaves a pipe sized for rain carrying "
@@ -801,21 +801,21 @@ def main():
       f"{fs['people_matched_by_amager_at_median_wet_hour']/1000:.0f} thousand. The two "
       "streams are not the same size and were never comparable; putting them in one "
       "pipe is what makes the small one uncontrollable.\n")
-    w = []
-    wa = w.append
-    wa("Rain is the measured side. Hourly ERA5 precipitation over Copenhagen, "
+    fb = []
+    fa = fb.append
+    fa("Rain is the measured side. Hourly ERA5 precipitation over Copenhagen, "
        f"{rr['years']} years, {rr['hours']:,} hours, already fetched for the wave "
        "work and recomputed by `scripts/streams.py`:\n")
-    wa("| | |")
-    wa("|---|---:|")
-    wa(f"| Mean annual rainfall | {rr['mean_annual_mm']:.0f} mm |")
-    wa(f"| Hours a year with any rain | {rr['wet_hours_per_year']:.0f} |")
-    wa(f"| Median hour that has rain in it | {rr['median_wet_hour_mm']:.1f} mm |")
-    wa(f"| Hours a year at or above 2 mm | {rr['hours_per_year_at_or_above_mm']['2']:.0f} |")
-    wa(f"| Hours a year at or above 5 mm | {rr['hours_per_year_at_or_above_mm']['5']:.1f} |")
-    wa(f"| Wettest hour in the record | {rr['max_hour_mm']:.1f} mm |")
-    wa("")
-    wa("**The last row is a warning about the instrument, not a fact about "
+    fa("| | |")
+    fa("|---|---:|")
+    fa(f"| Mean annual rainfall | {rr['mean_annual_mm']:.0f} mm |")
+    fa(f"| Hours a year with any rain | {rr['wet_hours_per_year']:.0f} |")
+    fa(f"| Median hour that has rain in it | {rr['median_wet_hour_mm']:.1f} mm |")
+    fa(f"| Hours a year at or above 2 mm | {rr['hours_per_year_at_or_above_mm']['2']:.0f} |")
+    fa(f"| Hours a year at or above 5 mm | {rr['hours_per_year_at_or_above_mm']['5']:.1f} |")
+    fa(f"| Wettest hour in the record | {rr['max_hour_mm']:.1f} mm |")
+    fa("")
+    fa("**The last row is a warning about the instrument, not a fact about "
        "Copenhagen.** ERA5 is a reanalysis on a grid cell tens of kilometres across, "
        "and a cell mean cannot produce a cloudburst: the July 2011 event dropped "
        "more in two hours over the city than anything in this record does in one. "
@@ -824,13 +824,13 @@ def main():
        "10 mm design hour above is a stated convention sitting deliberately above "
        "what the reanalysis can resolve. Cloudburst intensities have to come from "
        "the rain-gauge network (SVK), which this project has not fetched.\n")
-    wa("The foul side carries no population figure on purpose. Nobody here has "
+    fa("The foul side carries no population figure on purpose. Nobody here has "
        "sourced one for the island, so the comparison is written as an equivalence — "
        "*how many people's morning peak* a hectare of rain matches — which needs no "
        "census. The dry-weather flow per person and the peak factor are design "
        "conventions and are named as such.\n")
     a(fold("The rain record behind those rates — 31 years of hourly Copenhagen "
-           "rainfall, and why its wettest hour is an artefact", "\n".join(w)))
+           "rainfall, and why its wettest hour is an artefact", "\n".join(fb)))
     a("**So the basins retire.** A spare basin is an organ of the combined system: it "
       "exists to hold a mixture back until the plant can take it. Take the rain out "
       "and there is no mixture, the foul flow arrives at the rate it is produced, and "
@@ -877,16 +877,16 @@ def main():
       "the nutrient too, in the form the sediment lets go of. Not one of these routes "
       "is representable in a load ledger written in tonnes of nitrogen a year: they "
       "are oxygen demand, not nitrogen supply, and they land in hours.\n")
-    w = []
-    wa = w.append
-    wa("**Oxygen is not the consequence. It is the one consequence that has a "
+    fb = []
+    fa = fb.append
+    fa("**Oxygen is not the consequence. It is the one consequence that has a "
        "stoichiometry.** The paragraph above prices the flush in grams of O₂ per "
        "gram because that is the channel the ledger can be argued in — every route "
        "there converts to a number an accounting can hold. That is a property of "
        "the instrument, not of the event. What actually leaves the basin acts along "
        "several routes at once, and the oxygen one is simply the only one anybody "
        "can carry through an arithmetic.\n")
-    wa("**Start with the route that needs no chain at all: it is the substance.** "
+    fa("**Start with the route that needs no chain at all: it is the substance.** "
        "What comes out is fat, solids, fibre, wipes and the sediment they were "
        "lying in. A person who meets that in the water is not encountering a "
        "downstream effect of an oxygen deficit — they are encountering the "
@@ -895,10 +895,10 @@ def main():
        "and on this page's own count it is one of the three public words with no "
        "instrument behind it. The most direct route in the list is the one nothing "
        "measures.\n")
-    wa("The rest, with what each acts on and whether anything in Denmark records "
+    fa("The rest, with what each acts on and whether anything in Denmark records "
        "it:\n")
-    wa("| The flush also delivers | Which acts on | Recorded by |")
-    wa("|---|---|---|")
+    fa("| The flush also delivers | Which acts on | Recorded by |")
+    fa("|---|---|---|")
     for a_, b_, c_ in [
         ("Oxygen demand — COD, ammonium, sulphide, fat",
          "dissolved oxygen, and everything that needs it",
@@ -936,15 +936,15 @@ def main():
          "everything above, at the worst hour of the year for it",
          "no instrument has a time axis this short"),
     ]:
-        wa(f"| {a_} | {b_} | {c_} |")
-    wa("")
-    wa("Read down the third column. **One route is measured well, two partly, two "
+        fa(f"| {a_} | {b_} | {c_} |")
+    fa("")
+    fa("Read down the third column. **One route is measured well, two partly, two "
        "by records that exist but cannot see an event, and six not at all** — and "
        "the six include both the direct human encounter and the kill. An annual "
        "nitrogen "
        "ledger sees none of the eleven. An oxygen series sees the first and reports "
        "it as a monthly value at a station that may be kilometres away.\n")
-    wa("*What this does not say:* that any of these happened at any Danish "
+    fa("*What this does not say:* that any of these happened at any Danish "
        "overflow. "
        "Nothing here quantifies a single event, and several rows are mechanisms "
        "rather than findings. What it establishes is narrower and harder to argue "
@@ -952,7 +952,7 @@ def main():
        "current framing that rests on the oxygen record is a defence that has "
        "already discarded most of the question.\n")
     a(fold("The flush does more than take oxygen — eleven routes it also takes, and "
-           "how many of them anything in Denmark records", "\n".join(w)))
+           "how many of them anything in Denmark records", "\n".join(fb)))
     a("*Does not establish:* what any particular basin holds. Nobody in this project "
       "has measured basin sediment, and the composition would be site-specific if "
       "they had. What the arithmetic does establish is that a delayed, concentrated, "
@@ -1009,33 +1009,33 @@ def main():
       "date.**\n")
     kk = mon["karlstrup_kalkgrav"]
     st = kk["official_status"]
-    w = []
-    wa = w.append
-    wa("I originally rejected it as \"Zealand's clearest lake\", which is what the "
+    fb = []
+    fa = fb.append
+    fa("I originally rejected it as \"Zealand's clearest lake\", which is what the "
        "encyclopedia says. That claim carries no citation and no year. A resident who "
        "knows the place reports algal growth, an odour, a declining fishery where "
        "there had been a fishing culture, and accumulated plastic waste.\n")
-    wa("So the useful question is not whether the lake is clean. It is **what would "
+    fa("So the useful question is not whether the lake is clean. It is **what would "
        "have told us either way**, and the answer is close to nothing:\n")
-    wa("| | |")
-    wa("|---|---|")
-    wa(f"| Registered as | {kk['water_body']['registered_as']} "
+    fa("| | |")
+    fa("|---|---|")
+    fa(f"| Registered as | {kk['water_body']['registered_as']} "
        f"({kk['water_body']['id']}), {kk['water_body']['area_km2']} km², "
        f"catchment {kk['water_body']['catchment']} |")
-    wa(f"| Ecological status | **{st['ecological_status']}** — assessed on the "
+    fa(f"| Ecological status | **{st['ecological_status']}** — assessed on the "
        "phytoplankton element only, from chlorophyll |")
-    wa(f"| Chemical status | **{st['chemical_status']}** |")
-    wa(f"| Data window | **{st['data_window']}** |")
-    wa("| Bathing-water sampling | none — it is not a designated bathing water; the "
+    fa(f"| Chemical status | **{st['chemical_status']}** |")
+    fa(f"| Data window | **{st['data_window']}** |")
+    fa("| Bathing-water sampling | none — it is not a designated bathing water; the "
        "four within 3 km are all coastal |")
-    wa("| Litter, plastic, odour, fish kills | **not monitored by anything** |")
-    wa("")
-    wa("A lake carrying one number, from a chlorophyll series that ended around 2018, "
+    fa("| Litter, plastic, odour, fish kills | **not monitored by anything** |")
+    fa("")
+    fa("A lake carrying one number, from a chlorophyll series that ended around 2018, "
        "with chemical status never determined and no instrument at all for the things "
        "the resident describes. That is the same failure this project keeps finding: "
        "the condition people can smell is the condition nothing measures.\n")
     a(fold("The evaluation — is the lake actually clean? Nothing published can settle "
-           "it, and this is everything that was checked", "\n".join(w)))
+           "it, and this is everything that was checked", "\n".join(fb)))
     a("And there is a better reason to reject the site, which does not depend on how "
       "clean it is now. The lake is 14 m deep with **poor circulation** — cold water "
       "immediately below a warm surface layer. That is precisely the configuration "
@@ -1053,36 +1053,36 @@ def main():
     a("Everything the quarry only pretended to offer is actually there: the polder is "
       "already pumped, already public, fed by gravity from the island above it, and "
       "shallow, wide and vegetated — which is the shape settling and uptake want.\n")
-    w = []
-    wa = w.append
-    wa("| | |")
-    wa("|---|---|")
-    wa(f"| Area | ~{VESTAMAGER_HA:,.0f} ha, held below sea level |")
-    wa("| Hydraulics | already a pumped polder — the pumps, dyke and channels exist |")
-    wa("| Feed | gravity, from an island that sits above it |")
-    wa("| Shape | shallow, wide and vegetated — what settling and uptake actually "
+    fb = []
+    fa = fb.append
+    fa("| | |")
+    fa("|---|---|")
+    fa(f"| Area | ~{VESTAMAGER_HA:,.0f} ha, held below sea level |")
+    fa("| Hydraulics | already a pumped polder — the pumps, dyke and channels exist |")
+    fa("| Feed | gravity, from an island that sits above it |")
+    fa("| Shape | shallow, wide and vegetated — what settling and uptake actually "
        "want |")
-    wa("| Ownership | public |")
-    wa("")
-    wa("**And Amager is a third of the problem.** Splitting Copenhagen's "
+    fa("| Ownership | public |")
+    fa("")
+    fa("**And Amager is a third of the problem.** Splitting Copenhagen's "
        "combined-sewered impervious area by island:\n")
-    wa("| | Impervious hectares on the combined system |")
-    wa("|---|---:|")
-    wa(f"| **Amager** — upstream of the polder, no harbour to cross | **{am:,.0f} ha "
+    fa("| | Impervious hectares on the combined system |")
+    fa("|---|---:|")
+    fa(f"| **Amager** — upstream of the polder, no harbour to cross | **{am:,.0f} ha "
        f"({am/(am+ml)*100:.0f}%)** |")
-    wa(f"| Mainland Copenhagen | {ml:,.0f} ha ({ml/(am+ml)*100:.0f}%) |")
-    wa("")
-    wa("Stormwater treatment wetlands are conventionally sized at a few per cent of "
+    fa(f"| Mainland Copenhagen | {ml:,.0f} ha ({ml/(am+ml)*100:.0f}%) |")
+    fa("")
+    fa("Stormwater treatment wetlands are conventionally sized at a few per cent of "
        "the impervious area draining to them. For Amager's share that is:\n")
-    wa("| Sizing | Treatment area | Share of Vestamager |")
-    wa("|---|---:|---:|")
+    fa("| Sizing | Treatment area | Share of Vestamager |")
+    fa("|---|---:|---:|")
     for f_, lbl in ((0.01, "1% — a lean wet pond"), (0.02, "2%"), (0.03, "3%"),
                     (0.05, "5% — generous, wetland-type")):
-        wa(f"| {lbl} | {am*f_:,.0f} ha | **{am*f_/VESTAMAGER_HA*100:.1f}%** |")
-    wa("")
+        fa(f"| {lbl} | {am*f_:,.0f} ha | **{am*f_/VESTAMAGER_HA*100:.1f}%** |")
+    fa("")
     a(fold(f"The evaluation — the polder's own numbers, Amager's {am/(am+ml)*100:.0f}% "
            "share of the combined-sewered city, and what a wetland for it would need",
-           "\n".join(w)))
+           "\n".join(fb)))
     a(f"**Between half a per cent and three per cent of the polder would do it.** That "
       "is the difference between this and the quarry: the quarry was two orders of "
       "magnitude too small and the wrong shape; this is two orders of magnitude larger "
@@ -1257,39 +1257,48 @@ def main():
 
     # ---- 4
     a("### 4. Where the captured material goes, which the same taxonomy decides\n")
-    a("### A note on the menu\n")
-    a("One structural point belongs here rather than in the investigation, because "
-      "it has no observable in the water and every entry there has to have one.\n")
-    a("**The set of chemicals available to be used is not chosen by environmental "
-      "comparison.** It is the output of a registration and commercialisation "
-      "process. A compound reaches the market because someone patented it, took it "
-      "through approval, and could sell it; once it is approved and coupled to a "
-      "delivery system, the scale at which it is applied is set by economics. "
-      "Comparative non-target profile is a constraint on entry, not the criterion "
-      "for selection among the entrants.\n")
-    a("Glyphosate is the clearest illustration. Its herbicide patent expired in "
-      "2000, but engineering crops to survive it made herbicide and seed a single "
-      "coupled product, and global use rose roughly fifteenfold between the "
-      "mid-1990s and mid-2010s. So the compound applied more widely than any other "
-      "in history is the one whose target pathway is shared by plants, bacteria and "
-      "fungi — an antimicrobial at herbicide volumes. Denmark does not grow those "
-      "crops and separately restricted glyphosate's pre-harvest use; the Danish "
-      "connection is imported feed, and it is indirect.\n")
-    a("The consequence for anything proposed on this page is concrete: **a "
-      "chemical-load problem cannot be fixed by choosing better within a menu you "
-      "did not write.** Substitution moves demand to the next compound on the same "
-      "list, which was assembled by the same process. That is an argument for "
-      "acting on total load and on the approval criteria, not for a better ranking "
-      "of the existing options.\n")
-    a("*What this deliberately does not claim.* Nothing about anyone's motives, "
-      "national character or corporate culture. The agrochemical majors are a "
-      "four-firm global oligopoly — Bayer, BASF, Syngenta, Corteva — of which two "
-      "are German, one Swiss and Chinese-owned, and one American, so the "
-      "common shorthand that this is an American arrangement is not accurate, and "
-      "the structural argument does not need it. Motive claims are unquantifiable "
-      "and would make the rest of this project dismissible for a reason unrelated "
-      "to its evidence. The claim here is about how a menu is assembled, and it "
-      "stands or falls on the approval record.\n")
+    # The digression about how the menu of chemicals is assembled is structurally
+    # load-bearing and sat, unfolded and under an opaque heading, between section 4's
+    # title and section 4's subject. It is the same content, moved behind one line
+    # that says what it concludes.
+    fb = []
+    fa = fb.append
+    fa("One structural point belongs here rather than in the investigation, because "
+       "it has no observable in the water and every entry there has to have one.\n")
+    fa("**The set of chemicals available to be used is not chosen by environmental "
+       "comparison.** It is the output of a registration and commercialisation "
+       "process. A compound reaches the market because someone patented it, took it "
+       "through approval, and could sell it; once it is approved and coupled to a "
+       "delivery system, the scale at which it is applied is set by economics. "
+       "Comparative non-target profile is a constraint on entry, not the criterion "
+       "for selection among the entrants.\n")
+    fa("Glyphosate is the clearest illustration. Its herbicide patent expired in "
+       "2000, but engineering crops to survive it made herbicide and seed a single "
+       "coupled product, and global use rose roughly fifteenfold between the "
+       "mid-1990s and mid-2010s. So the compound applied more widely than any other "
+       "in history is the one whose target pathway is shared by plants, bacteria and "
+       "fungi — an antimicrobial at herbicide volumes. Denmark does not grow those "
+       "crops and separately restricted glyphosate's pre-harvest use; the Danish "
+       "connection is imported feed, and it is indirect.\n")
+    fa("The consequence for anything proposed on this page is concrete: **a "
+       "chemical-load problem cannot be fixed by choosing better within a menu you "
+       "did not write.** Substitution moves demand to the next compound on the same "
+       "list, which was assembled by the same process. That is an argument for "
+       "acting on total load and on the approval criteria, not for a better ranking "
+       "of the existing options.\n")
+    fa("*What this deliberately does not claim.* Nothing about anyone's motives, "
+       "national character or corporate culture. The agrochemical majors are a "
+       "four-firm global oligopoly — Bayer, BASF, Syngenta, Corteva — of which two "
+       "are German, one Swiss and Chinese-owned, and one American, so the "
+       "common shorthand that this is an American arrangement is not accurate, and "
+       "the structural argument does not need it. Motive claims are unquantifiable "
+       "and would make the rest of this project dismissible for a reason unrelated "
+       "to its evidence. The claim here is about how a menu is assembled, and it "
+       "stands or falls on the approval record.\n")
+
+    MENU_FOLD = fold("Why the list of chemicals to choose between is not a list of "
+                     "the best ones — and why substitution therefore does not fix a "
+                     "chemical-load problem", "\n".join(fb))
 
     a("Sections 2 and 3 both end in the same objection, and it is a fair one. A "
       "treatment wetland concentrates contaminants in its sediment. Extractive "
@@ -1321,32 +1330,33 @@ def main():
       "intercepting the material on land: not only that it is easier to catch there, "
       "but that once caught, it stays caught.\n")
 
-    a("#### And destruction has to mean destruction\n")
-    a("The other half needs a specification, because burning a fluorinated compound "
-      "badly does not destroy it — it makes different fluorinated compounds. The "
-      "carbon–fluorine bond is the strongest single bond in organic chemistry, which is "
-      "both why PFAS persists and why the conditions are extreme:\n")
-    a("| Route | Conditions | Destruction | The catch |")
-    a("|---|---|---|---|")
+    fb = []
+    fa = fb.append
+    fa("The other half needs a specification, because burning a fluorinated compound "
+       "badly does not destroy it — it makes different fluorinated compounds. The "
+       "carbon–fluorine bond is the strongest single bond in organic chemistry, which is "
+       "both why PFAS persists and why the conditions are extreme:\n")
+    fa("| Route | Conditions | Destruction | The catch |")
+    fa("|---|---|---|---|")
     for route, cond, eff, catch in DESTRUCTION:
         a(f"| {route} | {cond} | **{eff}** | {catch} |")
-    a("")
-    a("So *incinerate it* is not the policy, and neither is a temperature on a permit. "
-      "**Roughly burning a fluorinated compound is worse than not burning it.**\n")
-    a("The failure mode is specific and it is not a leak. Below the destruction "
-      "condition the parent molecule disappears — a plant measuring only the parent "
-      "reports success — while the fluorine leaves as volatile and ultrafine species "
-      "through the stack. C₂F₆ has an atmospheric lifetime of the order of ten thousand "
-      "years. CHF₃ is a greenhouse gas thousands of times more potent than CO₂. Partial "
-      "combustion takes a water-borne problem that was at least *localised* and converts "
-      "it into an airborne one that is global and permanent. That is a worse outcome "
-      "than leaving it in the ground.\n")
+    fa("")
+    fa("So *incinerate it* is not the policy, and neither is a temperature on a permit. "
+       "**Roughly burning a fluorinated compound is worse than not burning it.**\n")
+    fa("The failure mode is specific and it is not a leak. Below the destruction "
+       "condition the parent molecule disappears — a plant measuring only the parent "
+       "reports success — while the fluorine leaves as volatile and ultrafine species "
+       "through the stack. C₂F₆ has an atmospheric lifetime of the order of ten thousand "
+       "years. CHF₃ is a greenhouse gas thousands of times more potent than CO₂. Partial "
+       "combustion takes a water-borne problem that was at least *localised* and converts "
+       "it into an airborne one that is global and permanent. That is a worse outcome "
+       "than leaving it in the ground.\n")
 
-    a("##### The verification is a fluorine mass balance, not a temperature\n")
-    a("If the parent compound can vanish while the fluorine escapes, then measuring the "
-      "parent compound proves nothing. The test has to follow the element:\n")
-    a("| Measure | What it catches |")
-    a("|---|---|")
+    fa("##### The verification is a fluorine mass balance, not a temperature\n")
+    fa("If the parent compound can vanish while the fluorine escapes, then measuring the "
+       "parent compound proves nothing. The test has to follow the element:\n")
+    fa("| Measure | What it catches |")
+    fa("|---|---|")
     for m, w in [
         ("**Total fluorine in**, on the feed", "the denominator. Without it there is no "
          "balance and no claim."),
@@ -1360,52 +1370,52 @@ def main():
         ("**The unaccounted remainder**", "presumed emitted. This is the number that "
          "matters and it is the one nobody reports."),
     ]:
-        a(f"| {m} | {w} |")
-    a("")
-    a("A plant that cannot close its fluorine balance is not destroying PFAS. It is "
-      "relocating it, and the new location is the atmosphere.\n")
-    a("There is also a route with no stack at all. **Mechanochemical destruction** — "
-      "milling PFAS with phosphate or silicate salts — recovers close to the full "
-      "fluorine content as potassium or sodium fluoride at ambient temperature. No "
-      "combustion, therefore no flue gas, therefore no products of incomplete "
-      "combustion. It is laboratory and pilot scale rather than municipal scale, and it "
-      "is the most direct answer to the objection above.\n")
-    a("Which loops back to why the source-control instrument for PFAS is a use "
-      "restriction rather than a treatment requirement. Destruction only works on a "
-      "**collected, concentrated** stream. PFAS dispersed through textiles, packaging "
-      "and coatings is never collected, so there is nothing to feed the furnace. "
-      "**The taxonomy decides not only the disposal route but whether collection is "
-      "possible at all** — and where it is not, the only lever left is upstream.\n")
-    a("##### Does the capacity already exist? Not established.\n")
-    a("Danish practice reportedly already runs this route: PFAS is concentrated onto "
-      "granular activated carbon or ion-exchange resin, and the spent media go as "
-      "hazardous waste to Fortum Waste Solutions in Nyborg — the former Kommunekemi — "
-      "for incineration above 1,200 °C. Miljøstyrelsen published a feasibility study on "
-      "on-site ion exchange with regeneration and destruction in 2024.\n")
-    a("**None of that has been verified here, and it should not be assumed.** What "
-      "exists is a reported practice and a reported temperature, from secondary "
-      "sources. What would establish the capability is the list above: the plant's "
-      "permitted conditions, and a fluorine mass balance across it. Danish waste-sector "
-      "reporting describes PFAS as an open problem for incineration plants rather than "
-      "a solved one, which is a reason to check rather than to assume.\n")
-    a("The same caution applies locally and more sharply. **ARC / Amager Bakke** is a "
-      "municipal energy-from-waste plant on Amager, owned by five of the municipalities "
-      "that discharge into the bay, and it is the obvious thing to point at. Municipal "
-      "EfW typically operates below the destruction condition. Pointing the flagged "
-      "stream at it because it is nearby and municipally owned would be exactly the "
-      "*roughly burn it* failure.\n")
-    a("> The design consequence: **the destruction branch is the one part of this "
-      "programme that must not be built on an assumption.** Everything else degrades "
-      "gracefully if it is half-right. This one, done half-right, is worse than not "
-      "doing it.\n")
+        fa(f"| {m} | {w} |")
+    fa("")
+    fa("A plant that cannot close its fluorine balance is not destroying PFAS. It is "
+       "relocating it, and the new location is the atmosphere.\n")
+    fa("There is also a route with no stack at all. **Mechanochemical destruction** — "
+       "milling PFAS with phosphate or silicate salts — recovers close to the full "
+       "fluorine content as potassium or sodium fluoride at ambient temperature. No "
+       "combustion, therefore no flue gas, therefore no products of incomplete "
+       "combustion. It is laboratory and pilot scale rather than municipal scale, and it "
+       "is the most direct answer to the objection above.\n")
+    fa("Which loops back to why the source-control instrument for PFAS is a use "
+       "restriction rather than a treatment requirement. Destruction only works on a "
+       "**collected, concentrated** stream. PFAS dispersed through textiles, packaging "
+       "and coatings is never collected, so there is nothing to feed the furnace. "
+       "**The taxonomy decides not only the disposal route but whether collection is "
+       "possible at all** — and where it is not, the only lever left is upstream.\n")
+    fa("##### Does the capacity already exist? Not established.\n")
+    fa("Danish practice reportedly already runs this route: PFAS is concentrated onto "
+       "granular activated carbon or ion-exchange resin, and the spent media go as "
+       "hazardous waste to Fortum Waste Solutions in Nyborg — the former Kommunekemi — "
+       "for incineration above 1,200 °C. Miljøstyrelsen published a feasibility study on "
+       "on-site ion exchange with regeneration and destruction in 2024.\n")
+    fa("**None of that has been verified here, and it should not be assumed.** What "
+       "exists is a reported practice and a reported temperature, from secondary "
+       "sources. What would establish the capability is the list above: the plant's "
+       "permitted conditions, and a fluorine mass balance across it. Danish waste-sector "
+       "reporting describes PFAS as an open problem for incineration plants rather than "
+       "a solved one, which is a reason to check rather than to assume.\n")
+    fa("The same caution applies locally and more sharply. **ARC / Amager Bakke** is a "
+       "municipal energy-from-waste plant on Amager, owned by five of the municipalities "
+       "that discharge into the bay, and it is the obvious thing to point at. Municipal "
+       "EfW typically operates below the destruction condition. Pointing the flagged "
+       "stream at it because it is nearby and municipally owned would be exactly the "
+       "*roughly burn it* failure.\n")
+    fa("> The design consequence: **the destruction branch is the one part of this "
+       "programme that must not be built on an assumption.** Everything else degrades "
+       "gracefully if it is half-right. This one, done half-right, is worse than not "
+       "doing it.\n")
 
-    a("##### And the fluorine is worth money, which is the same measurement\n")
-    a("Destroying PFAS properly produces fluoride — captured in the scrubber as calcium "
-      "fluoride, or recovered directly as KF by the mechanochemical route. **Fluorspar "
-      "is on the EU critical raw materials list**, it is the feedstock for essentially "
-      "all fluorochemistry including pharmaceuticals, and its reserves are being mined "
-      "down.\n")
-    a("Which produces an unusually clean alignment:\n")
+    fa("##### And the fluorine is worth money, which is the same measurement\n")
+    fa("Destroying PFAS properly produces fluoride — captured in the scrubber as calcium "
+       "fluoride, or recovered directly as KF by the mechanochemical route. **Fluorspar "
+       "is on the EU critical raw materials list**, it is the feedstock for essentially "
+       "all fluorochemistry including pharmaceuticals, and its reserves are being mined "
+       "down.\n")
+    fa("Which produces an unusually clean alignment:\n")
     for t in [
         "**the proof of destruction and the product are the same measurement.** "
         "Fluorine you can weigh in the residue is fluorine that did not go up the "
@@ -1422,14 +1432,19 @@ def main():
         "building the thing properly rather than cheaply.",
     ]:
         a(f"- {t}")
-    a("")
-    a("*The caveats, because this is the part most likely to be over-sold.* Recovery as "
-      "a saleable grade is demonstrated at laboratory and pilot scale, not at municipal "
-      "scale. Scrubber residues from hazardous-waste incineration are themselves "
-      "hazardous and Denmark currently exports air-pollution-control residue rather "
-      "than using it. And an economic case for importing waste is an argument that runs "
-      "away from you very easily — it is only a good one while the balance is closed "
-      "and audited, which is the entire condition.\n")
+    fa("")
+    fa("*The caveats, because this is the part most likely to be over-sold.* Recovery as "
+       "a saleable grade is demonstrated at laboratory and pilot scale, not at municipal "
+       "scale. Scrubber residues from hazardous-waste incineration are themselves "
+       "hazardous and Denmark currently exports air-pollution-control residue rather "
+       "than using it. And an economic case for importing waste is an argument that runs "
+       "away from you very easily — it is only a good one while the balance is closed "
+       "and audited, which is the entire condition.\n")
+
+    a(fold("Burning a fluorinated compound badly does not destroy it — the "
+           "specification that would, the fluorine mass balance that "
+           "verifies it, and why this is the one branch that must not be "
+           "built on an assumption", "\n".join(fb)))
 
     a("#### The dredged material has somewhere to go, and it is already being asked for\n")
     a("A wetland and its forebay have to be dredged, and section 4's threshold test says "
@@ -1481,6 +1496,14 @@ def main():
       "of preference — it follows from what the substance is.\n\n")
 
     # ---- 5
+    a("**One more thing decides whether any of this is enough, and it is not in the "
+      "water.** Every route above chooses where a substance ends up. None of them "
+      "chooses which substances exist to be routed — that list is assembled "
+      "somewhere else, by a process with no environmental comparison in it, which "
+      "is why the next section is about source control rather than about better "
+      "sorting.\n")
+    a(MENU_FOLD)
+
     a("### 5. Source control, sorted by what life has met before\n")
     a("The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says nitrogen "
       "produces mush rather than meadow because the organisms that would have used it "

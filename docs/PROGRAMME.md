@@ -461,18 +461,6 @@ A pond cell is the same material in a place with an operator, a schedule and a l
 
 ### 4. Where the captured material goes, which the same taxonomy decides
 
-### A note on the menu
-
-One structural point belongs here rather than in the investigation, because it has no observable in the water and every entry there has to have one.
-
-**The set of chemicals available to be used is not chosen by environmental comparison.** It is the output of a registration and commercialisation process. A compound reaches the market because someone patented it, took it through approval, and could sell it; once it is approved and coupled to a delivery system, the scale at which it is applied is set by economics. Comparative non-target profile is a constraint on entry, not the criterion for selection among the entrants.
-
-Glyphosate is the clearest illustration. Its herbicide patent expired in 2000, but engineering crops to survive it made herbicide and seed a single coupled product, and global use rose roughly fifteenfold between the mid-1990s and mid-2010s. So the compound applied more widely than any other in history is the one whose target pathway is shared by plants, bacteria and fungi — an antimicrobial at herbicide volumes. Denmark does not grow those crops and separately restricted glyphosate's pre-harvest use; the Danish connection is imported feed, and it is indirect.
-
-The consequence for anything proposed on this page is concrete: **a chemical-load problem cannot be fixed by choosing better within a menu you did not write.** Substitution moves demand to the next compound on the same list, which was assembled by the same process. That is an argument for acting on total load and on the approval criteria, not for a better ranking of the existing options.
-
-*What this deliberately does not claim.* Nothing about anyone's motives, national character or corporate culture. The agrochemical majors are a four-firm global oligopoly — Bayer, BASF, Syngenta, Corteva — of which two are German, one Swiss and Chinese-owned, and one American, so the common shorthand that this is an American arrangement is not accurate, and the structural argument does not need it. Motive claims are unquantifiable and would make the rest of this project dismissible for a reason unrelated to its evidence. The claim here is about how a menu is assembled, and it stands or falls on the approval record.
-
 Sections 2 and 3 both end in the same objection, and it is a fair one. A treatment wetland concentrates contaminants in its sediment. Extractive aquaculture concentrates them in biomass. Neither is a solution if the answer to *and then what* is *we bank it somewhere and hope*.
 
 The answer is that **the disposal route is decided by the same evolutionary prior that decides the source-control instrument.** It is one principle, applied twice:
@@ -496,14 +484,18 @@ Metals buried in **marine** sediment are held as sulphides in anoxic mud, and th
 
 **Soil does not resuspend under storm waves.** A terrestrial sink is terminal in a way a marine one is not. Which is a second, independent argument for intercepting the material on land: not only that it is easier to catch there, but that once caught, it stays caught.
 
-#### And destruction has to mean destruction
+| High-temperature incineration | >1,100 °C, 2–3 s residence, excess oxygen | **>99.99% mineralisation for AFFF and similar wastes** | Below that, the parent compound disappears but products of incomplete combustion form — perfluorocarboxylic acids, perfluoroalkanes, C₂F₆, CHF₃. Ordinary municipal waste incineration is **not** this. |
+| Supercritical water oxidation | 650 °C, 22 MPa, ~11% excess O₂, 10–11 s | **>99.999% for all 12 PFAAs measured** | Also produces small volatile organofluorines including trifluoromethane, a potent greenhouse gas. Emerging, not yet at municipal scale. |
+- **the proof of destruction and the product are the same measurement.** Fluorine you can weigh in the residue is fluorine that did not go up the stack. A plant with a closed balance has both a compliance case and something to sell; a plant without one has neither, and the absence is visible on the same spreadsheet.
+- **it makes the failure mode economically legible.** Under a temperature-based permit, incomplete combustion is invisible and costs the operator nothing. Under a fluorine balance it shows up as lost product.
+- **and it makes the facility an export service rather than a cost centre.** Destruction capacity that can prove its balance is a scarce thing that other countries need, and the feedstock is a waste stream people pay to be rid of. That is a genuine industrial prospect and it is the argument that would fund building the thing properly rather than cheaply.
+<details class="work">
+<summary>Burning a fluorinated compound badly does not destroy it — the specification that would, the fluorine mass balance that verifies it, and why this is the one branch that must not be built on an assumption</summary>
 
 The other half needs a specification, because burning a fluorinated compound badly does not destroy it — it makes different fluorinated compounds. The carbon–fluorine bond is the strongest single bond in organic chemistry, which is both why PFAS persists and why the conditions are extreme:
 
 | Route | Conditions | Destruction | The catch |
 |---|---|---|---|
-| High-temperature incineration | >1,100 °C, 2–3 s residence, excess oxygen | **>99.99% mineralisation for AFFF and similar wastes** | Below that, the parent compound disappears but products of incomplete combustion form — perfluorocarboxylic acids, perfluoroalkanes, C₂F₆, CHF₃. Ordinary municipal waste incineration is **not** this. |
-| Supercritical water oxidation | 650 °C, 22 MPa, ~11% excess O₂, 10–11 s | **>99.999% for all 12 PFAAs measured** | Also produces small volatile organofluorines including trifluoromethane, a potent greenhouse gas. Emerging, not yet at municipal scale. |
 
 So *incinerate it* is not the policy, and neither is a temperature on a permit. **Roughly burning a fluorinated compound is worse than not burning it.**
 
@@ -543,11 +535,10 @@ Destroying PFAS properly produces fluoride — captured in the scrubber as calci
 
 Which produces an unusually clean alignment:
 
-- **the proof of destruction and the product are the same measurement.** Fluorine you can weigh in the residue is fluorine that did not go up the stack. A plant with a closed balance has both a compliance case and something to sell; a plant without one has neither, and the absence is visible on the same spreadsheet.
-- **it makes the failure mode economically legible.** Under a temperature-based permit, incomplete combustion is invisible and costs the operator nothing. Under a fluorine balance it shows up as lost product.
-- **and it makes the facility an export service rather than a cost centre.** Destruction capacity that can prove its balance is a scarce thing that other countries need, and the feedstock is a waste stream people pay to be rid of. That is a genuine industrial prospect and it is the argument that would fund building the thing properly rather than cheaply.
 
 *The caveats, because this is the part most likely to be over-sold.* Recovery as a saleable grade is demonstrated at laboratory and pilot scale, not at municipal scale. Scrubber residues from hazardous-waste incineration are themselves hazardous and Denmark currently exports air-pollution-control residue rather than using it. And an economic case for importing waste is an argument that runs away from you very easily — it is only a good one while the balance is closed and audited, which is the entire condition.
+
+</details>
 
 #### The dredged material has somewhere to go, and it is already being asked for
 
@@ -577,6 +568,23 @@ It settles the objection raised against extractive aquaculture and against treat
 
 It does not settle the cost, the logistics, or who pays for dredging a pond every fifteen years. Those are real and they are ordinary. The point is only that the material has somewhere to go, and that which somewhere is not a matter of preference — it follows from what the substance is.
 
+
+**One more thing decides whether any of this is enough, and it is not in the water.** Every route above chooses where a substance ends up. None of them chooses which substances exist to be routed — that list is assembled somewhere else, by a process with no environmental comparison in it, which is why the next section is about source control rather than about better sorting.
+
+<details class="work">
+<summary>Why the list of chemicals to choose between is not a list of the best ones — and why substitution therefore does not fix a chemical-load problem</summary>
+
+One structural point belongs here rather than in the investigation, because it has no observable in the water and every entry there has to have one.
+
+**The set of chemicals available to be used is not chosen by environmental comparison.** It is the output of a registration and commercialisation process. A compound reaches the market because someone patented it, took it through approval, and could sell it; once it is approved and coupled to a delivery system, the scale at which it is applied is set by economics. Comparative non-target profile is a constraint on entry, not the criterion for selection among the entrants.
+
+Glyphosate is the clearest illustration. Its herbicide patent expired in 2000, but engineering crops to survive it made herbicide and seed a single coupled product, and global use rose roughly fifteenfold between the mid-1990s and mid-2010s. So the compound applied more widely than any other in history is the one whose target pathway is shared by plants, bacteria and fungi — an antimicrobial at herbicide volumes. Denmark does not grow those crops and separately restricted glyphosate's pre-harvest use; the Danish connection is imported feed, and it is indirect.
+
+The consequence for anything proposed on this page is concrete: **a chemical-load problem cannot be fixed by choosing better within a menu you did not write.** Substitution moves demand to the next compound on the same list, which was assembled by the same process. That is an argument for acting on total load and on the approval criteria, not for a better ranking of the existing options.
+
+*What this deliberately does not claim.* Nothing about anyone's motives, national character or corporate culture. The agrochemical majors are a four-firm global oligopoly — Bayer, BASF, Syngenta, Corteva — of which two are German, one Swiss and Chinese-owned, and one American, so the common shorthand that this is an American arrangement is not accurate, and the structural argument does not need it. Motive claims are unquantifiable and would make the rest of this project dismissible for a reason unrelated to its evidence. The claim here is about how a menu is assembled, and it stands or falls on the approval record.
+
+</details>
 
 ### 5. Source control, sorted by what life has met before
 
