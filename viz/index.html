@@ -297,6 +297,185 @@ function buildUI(){
  * check it. Both are optional: the overlays only exist once control points have been
  * set in georef.html, and observations only once someone has walked in the rain.
  */
+/* ---------------------------------------------------------------- nudge mode ---
+ * The sheets are placed to 58-91 m against the ground, and a person who knows the
+ * city can see where they should be far faster than a correlation can. So: pick a
+ * sheet, drag it, read off the offset. Nothing here writes to the dataset - it
+ * produces the numbers, and scripts/apply_offsets.py is what applies them.
+ *
+ * Translation only. Scale and rotation are also wrong on some sheets, but a person
+ * dragging can honestly judge a shift and cannot honestly judge a 2% scale error,
+ * and a control that invites a judgement nobody can make is worse than no control.
+ */
+const NUDGE = {on:false, sheets:[], home:{}, off:{}, pick:null, drag:null,
+               opacity:0.85};
+
+function nudgeOffsetMetres(k){
+  const o = NUDGE.off[k];
+  if(!o) return {dx:0, dy:0};
+  const lat = NUDGE.home[k][0][1] * Math.PI/180;
+  return {dx: o[0] * 111320 * Math.cos(lat), dy: o[1] * 110540};
+}
+
+function nudgeSave(){
+  const out = {};
+  for(const k of NUDGE.sheets){
+    const o = NUDGE.off[k];
+    if(o && (Math.abs(o[0])>1e-9 || Math.abs(o[1])>1e-9)){
+      const m = nudgeOffsetMetres(k);
+      out[k] = {dlon:+o[0].toFixed(8), dlat:+o[1].toFixed(8),
+                dx_m:+m.dx.toFixed(1), dy_m:+m.dy.toFixed(1)};
+    }
+  }
+  try{ localStorage.setItem("floodNudge", JSON.stringify(out, null, 1)); }catch(e){}
+  return out;
+}
+
+function nudgeApply(k){
+  const src = map.getSource("flood-"+k);
+  if(!src) return;
+  const o = NUDGE.off[k] || [0,0];
+  src.setCoordinates(NUDGE.home[k].map(c => [c[0]+o[0], c[1]+o[1]]));
+  if(NUDGE.pick === k) nudgeOutline(k);
+}
+
+function nudgeOutline(k){
+  const o = NUDGE.off[k] || [0,0];
+  const ring = NUDGE.home[k].map(c => [c[0]+o[0], c[1]+o[1]]);
+  ring.push(ring[0]);
+  const data = {type:"Feature", geometry:{type:"LineString", coordinates:ring}};
+  if(map.getSource("nudge-outline")) map.getSource("nudge-outline").setData(data);
+  else{
+    map.addSource("nudge-outline",{type:"geojson",data});
+    map.addLayer({id:"nudge-outline",source:"nudge-outline",type:"line",
+      paint:{"line-color":"#e8a33d","line-width":2,"line-dasharray":[3,2]}});
+  }
+}
+
+function nudgeReport(){
+  const box = document.getElementById("nudgebox");
+  if(!box) return;
+  const rows = NUDGE.sheets.map(k => {
+    const m = nudgeOffsetMetres(k);
+    const moved = Math.hypot(m.dx, m.dy) > 0.5;
+    const sel = NUDGE.pick === k;
+    return `<div style="display:flex;gap:6px;align-items:baseline;
+      ${sel?"color:#e8a33d;font-weight:600":""}">
+      <button data-nudge="${k}" style="all:unset;cursor:pointer;flex:1">${sel?"▸ ":"  "}${k}</button>
+      <span style="font-variant-numeric:tabular-nums">${moved?`${m.dx>=0?"+":""}${m.dx.toFixed(0)} E, ${m.dy>=0?"+":""}${m.dy.toFixed(0)} N m`:"—"}</span></div>`;
+  }).join("");
+  /* You cannot line a sheet up against streets you cannot see through it, so the
+     opacity control belongs here rather than in a preferences menu somewhere. */
+  box.innerHTML = `<div style="margin-bottom:4px">Pick a sheet, then drag the map, or
+    use the arrow keys (1 m, shift 10 m).</div>${rows}
+    <label style="display:flex;gap:6px;align-items:center;margin-top:6px">
+      <span>see-through</span>
+      <input type="range" id="nudgeop" min="15" max="95" value="${Math.round(NUDGE.opacity*100)}"
+        style="flex:1"></label>
+    <div style="margin-top:6px;display:flex;gap:8px">
+      <button id="nudgecopy" style="all:unset;cursor:pointer;color:#58a6ff">copy offsets</button>
+      <button id="nudgereset" style="all:unset;cursor:pointer;color:#8b949e">reset all</button>
+    </div><div id="nudgecopied" class="sub"></div>`;
+  const op = document.getElementById("nudgeop");
+  op.oninput = () => {
+    NUDGE.opacity = +op.value/100;
+    for(const k of NUDGE.sheets)
+      if(map.getLayer("flood-"+k))
+        map.setPaintProperty("flood-"+k,"raster-opacity",NUDGE.opacity);
+  };
+  box.querySelectorAll("[data-nudge]").forEach(b => b.onclick = () => {
+    NUDGE.pick = b.dataset.nudge;
+    nudgeOutline(NUDGE.pick);
+    nudgeReport();
+  });
+  document.getElementById("nudgecopy").onclick = () => {
+    const out = nudgeSave();
+    const box = document.getElementById("nudgecopied");
+    if(!Object.keys(out).length){ box.textContent = "nothing moved yet"; return; }
+    const text = JSON.stringify(out, null, 1);
+    navigator.clipboard?.writeText(text).catch(()=>{});
+    /* Clipboard access can be refused, and this is the one number that has to
+       survive the trip out of the browser - so show it as selectable text too. */
+    box.innerHTML = "<div>paste this back to have it applied</div>" +
+      "<textarea readonly style=\"width:100%;height:110px;background:#0d1117;" +
+      "color:#c9d1d9;border:1px solid #30363d;font:11px/1.4 monospace\"></textarea>";
+    const ta = box.querySelector("textarea");
+    ta.value = text; ta.focus(); ta.select();
+  };
+  document.getElementById("nudgereset").onclick = () => {
+    NUDGE.off = {};
+    for(const k of NUDGE.sheets) nudgeApply(k);
+    nudgeReport();
+    nudgeSave();
+  };
+}
+
+function nudgeInit(){
+  const cb = document.getElementById("nudgemode");
+  if(!cb) return;
+  cb.onchange = () => {
+    NUDGE.on = cb.checked;
+    document.getElementById("nudgebox").style.display = NUDGE.on ? "block" : "none";
+    if(NUDGE.on){
+      NUDGE.pick = NUDGE.pick || NUDGE.sheets[0];
+      nudgeOutline(NUDGE.pick);
+      nudgeReport();
+      for(const k of NUDGE.sheets)
+        if(map.getLayer("flood-"+k))
+          map.setPaintProperty("flood-"+k,"raster-opacity",NUDGE.opacity);
+    }else{
+      for(const k of NUDGE.sheets)
+        if(map.getLayer("flood-"+k))
+          map.setPaintProperty("flood-"+k,"raster-opacity",0.85);
+    }
+    if(map.getLayer("nudge-outline"))
+      map.setLayoutProperty("nudge-outline","visibility", NUDGE.on ? "visible" : "none");
+  };
+  const canvas = map.getCanvas();
+  canvas.addEventListener("mousedown", e => {
+    if(!NUDGE.on || !NUDGE.pick) return;
+    NUDGE.drag = map.unproject([e.offsetX, e.offsetY]);
+    map.dragPan.disable();
+  });
+  canvas.addEventListener("mousemove", e => {
+    if(!NUDGE.drag) return;
+    const now = map.unproject([e.offsetX, e.offsetY]);
+    const k = NUDGE.pick, o = NUDGE.off[k] || [0,0];
+    NUDGE.off[k] = [o[0] + (now.lng - NUDGE.drag.lng), o[1] + (now.lat - NUDGE.drag.lat)];
+    NUDGE.drag = now;
+    nudgeApply(k);
+    nudgeReport();
+    nudgeSave();
+  });
+  window.addEventListener("mouseup", () => {
+    if(!NUDGE.drag) return;
+    NUDGE.drag = null;
+    map.dragPan.enable();
+  });
+  window.addEventListener("keydown", e => {
+    if(!NUDGE.on || !NUDGE.pick) return;
+    if(/^(INPUT|TEXTAREA)$/.test((e.target.tagName||""))) return;
+    const m = e.shiftKey ? 10 : 1;                    // metres per press
+    const lat = NUDGE.home[NUDGE.pick][0][1] * Math.PI/180;
+    const sy = m/110540, sx = m/(111320*Math.cos(lat));
+    const d = {ArrowLeft:[-sx,0], ArrowRight:[sx,0],
+               ArrowUp:[0,sy], ArrowDown:[0,-sy]}[e.key];
+    if(!d) return;
+    e.preventDefault();
+    const k = NUDGE.pick, o = NUDGE.off[k] || [0,0];
+    NUDGE.off[k] = [o[0]+d[0], o[1]+d[1]];
+    nudgeApply(k);
+    nudgeReport();
+    nudgeSave();
+  });
+  // survive a reload: a person adjusting seven sheets should not lose six of them
+  try{
+    const saved = JSON.parse(localStorage.getItem("floodNudge") || "{}");
+    for(const [k,v] of Object.entries(saved))
+      if(NUDGE.home[k]){ NUDGE.off[k] = [v.dlon, v.dlat]; nudgeApply(k); }
+  }catch(e){}
+}
+
 async function loadExtras(){
   const host=document.getElementById("extras");
   let rows="<h2>Recovered flood model (2012)</h2>";
@@ -324,7 +503,13 @@ async function loadExtras(){
       <span class="sw" style="background:#4a9de8"></span><span>Modelled flood depth</span>
       <span class="count">${sheets.length} sheets</span></label>
       <div class="sub" style="margin:2px 0 0">100-year event, 2012 calculations,
-      recovered from PDF. ${sheets.join(", ")}.</div>`;
+      recovered from PDF. ${sheets.join(", ")}.</div>
+      <label class="row"><input type="checkbox" id="nudgemode">
+      <span class="sw" style="background:#e8a33d"></span><span>Move sheets (debug)</span></label>
+      <div id="nudgebox" class="sub" style="display:none;margin:4px 0 0"></div>`;
+    NUDGE.sheets = sheets;
+    NUDGE.home = Object.fromEntries(sheets.map(k =>
+      [k, geo[k].corners_for_maplibre.map(c => c.slice())]));
   }
 
   let spots=null;
@@ -377,6 +562,7 @@ async function loadExtras(){
   const ot=document.getElementById("obstoggle");
   if(ot) ot.onchange=e=>
     map.setLayoutProperty("obs","visibility",e.target.checked?"visible":"none");
+  nudgeInit();
 }
 
 async function loadStats(){
