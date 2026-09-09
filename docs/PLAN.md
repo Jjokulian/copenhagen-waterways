@@ -1,6 +1,6 @@
 # The order of work
 
-Seven stages, in order, each with a gate that must be passed before the next one means
+Eight stages, in order, each with a gate that must be passed before the next one means
 anything. This page exists because the project drifted: a great deal of method was
 built at stage 3 and stage 4 was never started, and without the order written down
 that is invisible.
@@ -16,6 +16,7 @@ that is invisible.
 | 5 | Mechanistic scoring | stability across independent measure-spaces | **not started** |
 | 6 | Solution in its own spatiality | the unit follows the mechanism | **premature** |
 | 7 | Relation to the social argument | claims in circulation, and what would move them | **partly** |
+| 8 | **Try things** | the stages above are *exhausted*, not skipped | **the last step, and only reachable from here** |
 
 ---
 
@@ -238,7 +239,48 @@ evidence there is for what it claims.
 
 ---
 
-## The rule that governs all seven
+## 8. Try things — and why this is the last step, not the first
+
+At the end of the sequence, and only at the end, something becomes legitimate that would
+have been evasion at any earlier point: **stop trying to establish the cause, intervene,
+and read the outcome.**
+
+[PLACES.md](PLACES.md) sets out what that would look like — a funded portfolio of trials
+in named places, with pre-stated outcomes and four conditions that stop it functioning
+as delay. This section is about *when you are entitled to it*.
+
+**The entitlement is earned by the stages above, and every one of them is doing work in
+the trial.** Skip them and the trial is unreadable:
+
+| without stage | the trial fails because |
+|---|---|
+| **1** hypothesis landscape | you cannot say what else it might have been, so a success attributes itself to whatever you already believed |
+| **2** data sources | you do not know whether the response variable exists — three of four public complaints here have no instrument |
+| **3** the view, held open | **you have no *before*.** A trial without a baseline reads nothing, and the baseline is the expensive half |
+| **4** the triage | you do not know which mechanisms are unreachable, so you cannot tell "the trial failed" from "the trial could never have shown it" |
+| **5** mechanistic scoring | you have no null, so a change of the size weather produces reads as a result |
+| **6** its own spatiality | you run one trial nationally, when the land-to-estuary coefficient varies twenty-six-fold and one catchment in ten does not respond at all |
+| **7** the social argument | a result lands in a discourse that has no way to receive it, and is read as whichever side funded it |
+
+**So this is not the analysis failing.** It is the analysis returning a specific,
+defensible answer: *here is the boundary of what observation can settle, and it is
+closer than anyone assumed.* Forty of 166 mechanisms are unscoreable and twenty more
+need an experiment — **36% of the field was never reachable this way**, and no amount of
+further modelling moves it.
+
+Past that boundary, intervening is not a retreat from method. It is the only remaining
+method, and it is a good one: setting a variable cuts every backdoor path by
+construction, which is precisely what an observational study on an archive with no
+time-of-day column cannot do.
+
+**The order is the argument.** "Just try things" said first is an excuse for not
+knowing. Said last, after the field has been enumerated, the data characterised, the
+view held open, the triage done and the spatiality established, it is the correct next
+move — and the preceding work is what makes the result legible when it arrives.
+
+---
+
+## The rule that governs all eight
 
 Any output of this project takes the form of a coefficient with its qualifiers, or a
 count with its individuation rule stated. **Not a verdict.** The procedure has no

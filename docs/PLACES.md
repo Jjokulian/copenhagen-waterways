@@ -152,6 +152,8 @@ Three things follow from reading by place rather than by mechanism.
 
 ## The meta-solution: buy the experiments
 
+**This is the last step of the solution scope, not a shortcut past it** — see [PLAN.md stage 8](PLAN.md) for why the entitlement is earned by the seven stages before it. Said first, "just try things" is an excuse for not knowing. Said after the field is enumerated, the data characterised, the triage done and the spatiality established, it is the correct next move.
+
 Everything above points at one instrument rather than many. **Fund trials of solution
 models, in named places, with pre-stated outcomes — and let the results decide.**
 

@@ -315,35 +315,44 @@ h2.sec{font-size:17px;font-weight:640;letter-spacing:-.01em;margin:26px 0 8px}
    out loud, which is a different object with a different evidentiary standard - a
    statement can be checked against the document behind it, never against the sea.
    "The argument" says what ought to be done, which is a third kind of claim. */
+/* Five groups, not one. "Investigation" had grown to 29 entries holding maps, method
+   notes, the hypothesis triage and the solutions together, which is an inventory
+   rather than a menu. The split is by what a reader wants: what the water is doing,
+   how that was checked, where to look, what to do, and what the data is. */
 const GROUPS = [
-  ["Investigation", [
-    ["FLOOD_GAP.md",    "Does the plan go where the water goes?"],
-    ["NITROGEN.md",     "What the sea actually receives"],
-    ["CONSTRUCTED.md",  "Constructions, held against measurements"],
-    ["CAUSATION.md",    "The chain from nitrogen to fedtem\u00f8g"],
-    ["HYPOTHESES.md",   "The field of hypotheses"],
-    ["EXPERIMENTS.md",  "Experiments, not studies"],
-    ["DATA_QUEUE.md",   "The fetch queue"],
-    ["OBSERVING.md",    "What Denmark measures, and where"],
+  ["What the water is doing", [
     ["PLACES.md",       "Places, not categories"],
-    ["PLAN.md",         "The order of work"],
+    ["NITROGEN.md",     "What the sea actually receives"],
+    ["OXYGEN.md",       "What actually removes the oxygen"],
+    ["CURRENTS.md",     "Where the water goes"],
+    ["SEABED.md",       "The seabed, the wind, and what stays put"],
+    ["LIGHT.md",        "Is there enough light at the bed?"],
+    ["CAUSATION.md",    "The chain from nitrogen to fedtem\u00f8g"],
+    ["FLOOD_GAP.md",    "Does the plan go where the water goes?"],
+  ]],
+  ["Maps", [
+    ["stations.html",   "Measurements, where they were taken"],
+    ["baltic.html",     "The Baltic below the halocline"],
+    ["areas.html",      "What is known, where, and when"],
+  ]],
+  ["How it was checked", [
+    ["AREAS.md",        "There is no Denmark"],
+    ["CONSTRUCTED.md",  "Constructions, held against measurements"],
+    ["KNOWN_AND_UNKNOWN.md", "What is known, by whom"],
+    ["HYPOTHESES.md",   "The field of hypotheses"],
     ["hypodrafts/TRIAGE.md", "All 166 hypotheses, triaged"],
     ["hypodrafts/AUDIT.md",  "The drafts, audited"],
-    ["IF_YOU_HAVE_THE_DATA.md", "If you have data access we don't"],
+    ["PLAN.md",         "The order of work"],
     ["AGENT_BRIEF.md",  "Standing brief"],
-    ["KNOWN_AND_UNKNOWN.md", "What is known, by whom"],
-    ["OXYGEN.md",       "What actually removes the oxygen"],
-    ["LIGHT.md",        "Is there enough light at the bed?"],
-    ["AREAS.md",        "There is no Denmark"],
-    ["areas.html",      "Map: what is known, where, when"],
-    ["stations.html",   "Map: measurements, no baskets"],
-    ["baltic.html",     "Map: the Baltic below the halocline"],
-    ["SEABED.md",       "The seabed, the wind, and what stays put"],
-    ["CURRENTS.md",     "Where the water goes"],
-    ["SOLUTIONS.md",    "What would actually stop it"],
+    ["EXPERIMENTS.md",  "Experiments, not studies"],
     ["OPEN_PROBLEMS.md","Open problems"],
-    ["REGISTER.md",     "Register of claimed structures"],
+  ]],
+  ["The data", [
+    ["OBSERVING.md",    "What Denmark measures, and where"],
     ["DATA_SOURCES.md", "Where the data comes from"],
+    ["DATA_QUEUE.md",   "The fetch queue"],
+    ["IF_YOU_HAVE_THE_DATA.md", "If you have data access we don\u2019t"],
+    ["REGISTER.md",     "Register of claimed structures"],
   ]],
   ["Related, on its own", [
     ["EXPOSURE.md",     "Documenting what pollution does to a body"],
@@ -352,9 +361,10 @@ const GROUPS = [
     ["POLITICS.md",     "What was actually said"],
   ]],
   ["The argument", [
+    ["PROGRAMME.md",    "The problem and the solution"],
+    ["SOLUTIONS.md",    "What would actually stop it"],
     ["RESIDUAL.md",     "The number that was never measured"],
     ["CATEGORY.md",     "The category that was never measured"],
-    ["PROGRAMME.md",    "The problem and the solution"],
     ["LANDBRUG.md",     "Til landbruget \u2014 p\u00e5 dansk"],
   ]],
 ];
@@ -391,6 +401,7 @@ const META = {
   "HYPOTHESES.md":  {tier:4, why:"Every mechanism that could produce these outcomes, none privileged", after:["OXYGEN.md","AREAS.md"]},
   "EXPERIMENTS.md": {tier:4, why:"What would actually settle it - and what it would cost", after:["HYPOTHESES.md"]},
   "OPEN_PROBLEMS.md":{tier:4, why:"What we could not answer, and why", after:["HYPOTHESES.md"], related:["EXPOSURE.md"]},
+  "PLACES.md":      {tier:4, why:"Where a bad state is claimed, what is measured there, and what would be enough to fix it", after:["NITROGEN.md","CURRENTS.md","AREAS.md"], related:["PROGRAMME.md"]},
   "SOLUTIONS.md":   {tier:4, why:"What would stop it, judged on evidence", after:["HYPOTHESES.md"]},
   "POLITICS.md":    {tier:5, why:"What was said out loud, verbatim and dated", after:["RESIDUAL.md"]},
   "LANDBRUG.md":    {tier:5, why:"The same argument, addressed to farmers, in Danish", after:["NITROGEN.md"]},
@@ -1140,7 +1151,11 @@ function renderMap() {
     '<a href="docs/stations.html">see it on the map \u2192</a></li>',
     '</ul>',
     '<p class="lede">Each link above has its working, its null and its limits in ' +
-    '<a href="#NITROGEN.md">what the sea actually receives</a>.</p>',
+    '<a href="#NITROGEN.md">what the sea actually receives</a>. And for the question ' +
+    'that follows from all of it \u2014 <i>so where, and what would actually help?</i> ' +
+    '\u2014 <a href="#PLACES.md">Places, not categories</a> takes the coasts one at a ' +
+    'time. One is four times worse than anywhere else and is not the one anybody ' +
+    'argues about.</p>',
     '</section>', '<div class="facts">'];
   for (const [n, t, doc] of FACTS)
     // n is a literal in FACTS above and deliberately carries markup; t likewise.
