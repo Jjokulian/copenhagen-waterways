@@ -593,6 +593,19 @@ addEventListener("pointerdown", e => {
 const sheetMode = () => !finePointer;
 
 let GLOSS = null;
+let CODES = null;
+/* The hypothesis field is written in shorthand - A1, I3, O4, T2, "group C" - which
+   means nothing to a reader who has not opened a 2,500-line source document. This is
+   the second glossary because the first matches on LETTER boundaries, and "A1" inside
+   "A12" would pass that test. Codes need a boundary that excludes digits too. */
+async function codes() {
+  if (CODES) return CODES;
+  try {
+    const r = await fetch(DOCS_DIR + "data/hypo_glossary.json", { cache: "force-cache" });
+    CODES = r.ok ? (await r.json()).terms || {} : {};
+  } catch { CODES = {}; }
+  return CODES;
+}
 const tipEl = Object.assign(document.createElement("div"),
                             {id: "tip", hidden: true});
 document.body.appendChild(tipEl);
@@ -706,6 +719,11 @@ tipEl.addEventListener("pointerdown", armTip);
 tipEl.addEventListener("scroll", armTip, { passive: true });
 
 async function decorate(root, file) {
+  // Codes first, and on their own document list: REGISTER.md numbers outfalls U2/U4
+  // and GRUNDLAGET.md numbers its own findings F1-F4, both of which collide.
+  const c = await fetch(DOCS_DIR + "data/hypo_glossary.json", { cache: "force-cache" })
+    .then(r => r.ok ? r.json() : null).catch(() => null);
+  if (c && (c._docs || []).includes(file)) markCodes(root, c.terms || {});
   const g = await glossary();
   // Only documents that speak this vocabulary. Register ids are short and collide
   // with real identifiers elsewhere - REGISTER.md lists outfalls named U2 and U4.
@@ -784,6 +802,63 @@ function arm(el, cls, key, aria) {
 
    3. Right to left within a node, because splitText invalidates every offset
       after the split point. */
+/* Mark hypothesis ids, group letters and the coded outcomes. Same once-per-section
+   rule as the prose glossary, but every occurrence in a table is marked rather than
+   only the first: a triage table is 166 rows of pure shorthand, and a reader landing
+   on row 140 is not helped by a definition attached to row 3. */
+function markCodes(root, terms) {
+  if (!terms || !Object.keys(terms).length) return 0;
+  // reject A1.14 and K1.57 - plan numbers, not hypotheses
+  const re = /(?<![A-Za-z0-9])(group [A-Z]|[A-Z][0-9]{1,2})(?![A-Za-z0-9]|\.\d)/g;
+  let total = 0, seen = new Set();
+  const blocks = [];
+  let cur = [];
+  for (const el of root.children) {
+    if (/^H[1-6]$/.test(el.tagName)) { if (cur.length) blocks.push(cur); cur = []; }
+    cur.push(el);
+  }
+  if (cur.length) blocks.push(cur);
+  for (const block of blocks) {
+    seen = new Set();
+    for (const el of block) {
+      const inTable = el.tagName === "TABLE";
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+        acceptNode(n) {
+          if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return n.parentElement.closest("code,pre,a,#tip")
+            ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        },
+      });
+      const nodes = [];
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+      for (const node of nodes) {
+        const hits = [];
+        for (const m of node.nodeValue.matchAll(re)) {
+          const key = m[1];
+          if (!terms[key]) continue;
+          if (!inTable) { if (seen.has(key)) continue; seen.add(key); }
+          hits.push(m);
+        }
+        for (let i = hits.length - 1; i >= 0; i--) {
+          const m = hits[i], v = terms[m[1]];
+          const after = node.splitText(m.index);
+          after.splitText(m[0].length);
+          const sp = document.createElement("span");
+          sp.textContent = after.nodeValue;
+          after.parentNode.replaceChild(sp, after);
+          const body = v.kind === "AMBIGUOUS"
+            ? v.senses.map(x => `[${x.kind}] ${x.label}`).join("  \u2014  ")
+              + "  \u2014  AMBIGUOUS in the source: this code carries two meanings."
+            : `${v.kind}: ${v.label}` + (v.note ? ". " + v.note : "");
+          arm(sp, "term", m[1], `${m[1]} \u2014 ${body}`);
+          total++;
+        }
+      }
+    }
+  }
+  return total;
+}
+
 function markTerms(root, terms) {
   // The written forms come from the glossary, not from suffix-guessing here.
   // scripts/hypotheses.py generates them and keeps only the ones that actually

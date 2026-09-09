@@ -1,0 +1,973 @@
+{
+ "_what": "Shorthand used across these pages - hypothesis ids, group letters, and the coded terminal outcomes, avenues, observables and routes.",
+ "_ambiguous": "These codes carry two meanings in the source and both are given: T1, T2, T3, T4, T5. A terminal outcome and a hypothesis in group T share each of them. The collision is a defect in the shorthand, not in this glossary.",
+ "_excluded": "REGISTER.md numbers outfalls U2/U4 and GRUNDLAGET.md numbers findings F1-F4, both colliding with hypotheses of the same name.",
+ "_regex": "(?<![A-Za-z0-9])(group [A-Z]|[A-Z][0-9]{1,2})(?![A-Za-z0-9]|\\.\\d)",
+ "_docs": [
+  "DATA_QUEUE.md",
+  "EXPERIMENTS.md",
+  "HYPOTHESES.md",
+  "IF_YOU_HAVE_THE_DATA.md",
+  "LIGHT.md",
+  "PLAN.md",
+  "PROGRAMME.md",
+  "hypodrafts/AUDIT.md",
+  "hypodrafts/B1.md",
+  "hypodrafts/C1.md",
+  "hypodrafts/C4.md",
+  "hypodrafts/D1.md",
+  "hypodrafts/D7.md",
+  "hypodrafts/F3.md",
+  "hypodrafts/G1.md",
+  "hypodrafts/I3.md",
+  "hypodrafts/L3.md",
+  "hypodrafts/TRIAGE.md",
+  "hypodrafts/Z8.md",
+  "openproblems/J1.md",
+  "openproblems/R6.md"
+ ],
+ "terms": {
+  "A1": {
+   "kind": "hypothesis",
+   "label": "Danish land-based nitrogen load"
+  },
+  "A2": {
+   "kind": "hypothesis",
+   "label": "Phosphorus load"
+  },
+  "A3": {
+   "kind": "hypothesis",
+   "label": "Atmospheric deposition on the sea surface"
+  },
+  "A10": {
+   "kind": "hypothesis",
+   "label": "Exhaust-treatment reagent: nitrogen added to remove nitrogen"
+  },
+  "A4": {
+   "kind": "hypothesis",
+   "label": "Point-source discharge of nutrients"
+  },
+  "A5": {
+   "kind": "hypothesis",
+   "label": "Advected nutrients from outside Denmark"
+  },
+  "A6": {
+   "kind": "hypothesis",
+   "label": "Submarine groundwater discharge"
+  },
+  "A7": {
+   "kind": "hypothesis",
+   "label": "Sediment nutrient regeneration"
+  },
+  "A8": {
+   "kind": "hypothesis",
+   "label": "Marine aquaculture"
+  },
+  "A9": {
+   "kind": "hypothesis",
+   "label": "Nitrogen fixation"
+  },
+  "B1": {
+   "kind": "hypothesis",
+   "label": "Combined sewer overflow"
+  },
+  "B2": {
+   "kind": "hypothesis",
+   "label": "Separate stormwater"
+  },
+  "B3": {
+   "kind": "hypothesis",
+   "label": "Treatment plant organic load"
+  },
+  "B4": {
+   "kind": "hypothesis",
+   "label": "Riverine particulate organic carbon"
+  },
+  "B5": {
+   "kind": "hypothesis",
+   "label": "Industrial organic discharge"
+  },
+  "B6": {
+   "kind": "hypothesis",
+   "label": "Harbour and fish-processing waste"
+  },
+  "B7": {
+   "kind": "hypothesis",
+   "label": "Shipping discharges"
+  },
+  "B8": {
+   "kind": "hypothesis",
+   "label": "Direct manure and slurry entry"
+  },
+  "C1": {
+   "kind": "hypothesis",
+   "label": "Stratification strength"
+  },
+  "C2": {
+   "kind": "hypothesis",
+   "label": "Wind work"
+  },
+  "C3": {
+   "kind": "hypothesis",
+   "label": "Residence time"
+  },
+  "C4": {
+   "kind": "hypothesis",
+   "label": "Baltic inflow events"
+  },
+  "C5": {
+   "kind": "hypothesis",
+   "label": "Freshwater discharge buoyancy"
+  },
+  "C6": {
+   "kind": "hypothesis",
+   "label": "Water temperature and solubility"
+  },
+  "C7": {
+   "kind": "hypothesis",
+   "label": "Bathymetry, sills and depth"
+  },
+  "C8": {
+   "kind": "hypothesis",
+   "label": "Constructed change to circulation"
+  },
+  "C9": {
+   "kind": "hypothesis",
+   "label": "Sea level and tidal change"
+  },
+  "D1": {
+   "kind": "hypothesis",
+   "label": "Bottom trawling"
+  },
+  "D2": {
+   "kind": "hypothesis",
+   "label": "Navigation dredging"
+  },
+  "D3": {
+   "kind": "hypothesis",
+   "label": "Dredged-material dumping"
+  },
+  "D4": {
+   "kind": "hypothesis",
+   "label": "Sand and gravel extraction"
+  },
+  "D5": {
+   "kind": "hypothesis",
+   "label": "Cable and pipeline works"
+  },
+  "D6": {
+   "kind": "hypothesis",
+   "label": "Anchoring and propeller wash"
+  },
+  "D7": {
+   "kind": "hypothesis",
+   "label": "Storm-driven resuspension"
+  },
+  "D8": {
+   "kind": "hypothesis",
+   "label": "Loss of biostabilisation, and the mobile bed"
+  },
+  "D9": {
+   "kind": "hypothesis",
+   "label": "Fertility islands lost to homogenisation"
+  },
+  "D10": {
+   "kind": "hypothesis",
+   "label": "Winnowing and armouring"
+  },
+  "D11": {
+   "kind": "hypothesis",
+   "label": "Stabilisers against destabilisers"
+  },
+  "E1": {
+   "kind": "hypothesis",
+   "label": "Sulphide oxidation"
+  },
+  "E2": {
+   "kind": "hypothesis",
+   "label": "Nitrification demand"
+  },
+  "E3": {
+   "kind": "hypothesis",
+   "label": "Iron and manganese oxidation"
+  },
+  "E4": {
+   "kind": "hypothesis",
+   "label": "Methane oxidation"
+  },
+  "E5": {
+   "kind": "hypothesis",
+   "label": "Direct chemical oxygen demand of discharges"
+  },
+  "E6": {
+   "kind": "hypothesis",
+   "label": "Biocides and antifoulants"
+  },
+  "E7": {
+   "kind": "hypothesis",
+   "label": "Pesticides and degradation products"
+  },
+  "E8": {
+   "kind": "hypothesis",
+   "label": "Pharmaceuticals and personal care products"
+  },
+  "E9": {
+   "kind": "hypothesis",
+   "label": "PFAS and persistent novo-chemicals"
+  },
+  "E10": {
+   "kind": "hypothesis",
+   "label": "Heavy metals"
+  },
+  "E11": {
+   "kind": "hypothesis",
+   "label": "Ammonia toxicity"
+  },
+  "E12": {
+   "kind": "hypothesis",
+   "label": "Hydrogen sulphide toxicity"
+  },
+  "E13": {
+   "kind": "hypothesis",
+   "label": "Biocides that remove the decomposers themselves"
+  },
+  "E14": {
+   "kind": "hypothesis",
+   "label": "Veterinary antiparasitics in manure"
+  },
+  "E15": {
+   "kind": "hypothesis",
+   "label": "Total biocide load, whatever its source"
+  },
+  "E16": {
+   "kind": "hypothesis",
+   "label": "Conserved targets: \"selective\" is a claim about dose"
+  },
+  "E18": {
+   "kind": "hypothesis",
+   "label": "Tyre-wear transformation products"
+  },
+  "E20": {
+   "kind": "hypothesis",
+   "label": "Fuel oxygenates and additives"
+  },
+  "E19": {
+   "kind": "hypothesis",
+   "label": "The sentinel species decides what is detectable"
+  },
+  "E17": {
+   "kind": "hypothesis",
+   "label": "The microbiome is the exposed organ"
+  },
+  "F1": {
+   "kind": "hypothesis",
+   "label": "Loss of filter feeders"
+  },
+  "F2": {
+   "kind": "hypothesis",
+   "label": "Loss of bioturbators"
+  },
+  "F3": {
+   "kind": "hypothesis",
+   "label": "Loss of eelgrass and macroalgae"
+  },
+  "F4": {
+   "kind": "hypothesis",
+   "label": "Trophic cascade from a removal far away"
+  },
+  "F5": {
+   "kind": "hypothesis",
+   "label": "Invasive species"
+  },
+  "F6": {
+   "kind": "hypothesis",
+   "label": "Jellyfish blooms"
+  },
+  "F7": {
+   "kind": "hypothesis",
+   "label": "Harmful algal blooms specifically"
+  },
+  "F8": {
+   "kind": "hypothesis",
+   "label": "Microbial shift to fast-growing forms"
+  },
+  "F9": {
+   "kind": "hypothesis",
+   "label": "Disease and parasite mass mortality"
+  },
+  "F10": {
+   "kind": "hypothesis",
+   "label": "Vertebrate mass mortality"
+  },
+  "F11": {
+   "kind": "hypothesis",
+   "label": "Viral lysis and the viral shunt"
+  },
+  "F13": {
+   "kind": "hypothesis",
+   "label": "The organisms that fall between the folk categories"
+  },
+  "F14": {
+   "kind": "hypothesis",
+   "label": "Viruses as structure, not only as mortality"
+  },
+  "F12": {
+   "kind": "hypothesis",
+   "label": "The micropathogens nobody catalogues"
+  },
+  "G1": {
+   "kind": "hypothesis",
+   "label": "Warming"
+  },
+  "G2": {
+   "kind": "hypothesis",
+   "label": "Changing precipitation and runoff timing"
+  },
+  "G3": {
+   "kind": "hypothesis",
+   "label": "Changing wind climatology"
+  },
+  "G4": {
+   "kind": "hypothesis",
+   "label": "Acidification"
+  },
+  "G5": {
+   "kind": "hypothesis",
+   "label": "Changing ice cover"
+  },
+  "G6": {
+   "kind": "hypothesis",
+   "label": "Sea level rise"
+  },
+  "H1": {
+   "kind": "hypothesis",
+   "label": "Alternative stable states and hysteresis"
+  },
+  "H2": {
+   "kind": "hypothesis",
+   "label": "Sediment legacy"
+  },
+  "H3": {
+   "kind": "hypothesis",
+   "label": "Loss of resilience through diversity loss"
+  },
+  "H4": {
+   "kind": "hypothesis",
+   "label": "Subsidy-stress"
+  },
+  "J1": {
+   "kind": "hypothesis",
+   "label": "Transparent exopolymer particles and marine gel"
+  },
+  "J2": {
+   "kind": "hypothesis",
+   "label": "Sea-surface microlayer enrichment"
+  },
+  "J3": {
+   "kind": "hypothesis",
+   "label": "Surfactants from detergents and personal care"
+  },
+  "J4": {
+   "kind": "hypothesis",
+   "label": "Sunscreen and UV filters"
+  },
+  "J9": {
+   "kind": "hypothesis",
+   "label": "Fragmentation as a source term, and the inventory that omits it"
+  },
+  "J5": {
+   "kind": "hypothesis",
+   "label": "Microplastic and its biofilm"
+  },
+  "J6": {
+   "kind": "hypothesis",
+   "label": "Oil and hydrocarbon films"
+  },
+  "J7": {
+   "kind": "hypothesis",
+   "label": "Exudate from senescing blooms"
+  },
+  "J8": {
+   "kind": "hypothesis",
+   "label": "Bacterial exopolymer from fast-growing communities"
+  },
+  "K1": {
+   "kind": "hypothesis",
+   "label": "Silicon depletion and the diatom-to-flagellate shift"
+  },
+  "K2": {
+   "kind": "hypothesis",
+   "label": "Stoichiometric imbalance decides who grows"
+  },
+  "K3": {
+   "kind": "hypothesis",
+   "label": "Macronutrient excess inducing micronutrient deficiency"
+  },
+  "K4": {
+   "kind": "hypothesis",
+   "label": "Thiamine (B1) deficiency"
+  },
+  "K5": {
+   "kind": "hypothesis",
+   "label": "Cobalamin (B12) and cobalt limitation"
+  },
+  "K6": {
+   "kind": "hypothesis",
+   "label": "Iron bioavailability"
+  },
+  "K7": {
+   "kind": "hypothesis",
+   "label": "Carbonate ion depletion"
+  },
+  "K8": {
+   "kind": "hypothesis",
+   "label": "The narrow window between deficient and toxic"
+  },
+  "K9": {
+   "kind": "hypothesis",
+   "label": "Selenium"
+  },
+  "K10": {
+   "kind": "hypothesis",
+   "label": "Salinity change and osmotic cost"
+  },
+  "K11": {
+   "kind": "hypothesis",
+   "label": "Light as a depleted resource"
+  },
+  "K12": {
+   "kind": "hypothesis",
+   "label": "Loss of habitat-forming structure"
+  },
+  "K13": {
+   "kind": "hypothesis",
+   "label": "Food depletion for filter feeders and larvae"
+  },
+  "K14": {
+   "kind": "hypothesis",
+   "label": "Genetic and functional diversity depletion"
+  },
+  "W1": {
+   "kind": "hypothesis",
+   "label": "Propagule supply and connectivity"
+  },
+  "W2": {
+   "kind": "hypothesis",
+   "label": "Settlement cue failure"
+  },
+  "W3": {
+   "kind": "hypothesis",
+   "label": "Phenological mismatch"
+  },
+  "W4": {
+   "kind": "hypothesis",
+   "label": "Allee effects at low density"
+  },
+  "W5": {
+   "kind": "hypothesis",
+   "label": "Recovery slower than the disturbance interval"
+  },
+  "W6": {
+   "kind": "hypothesis",
+   "label": "Change outrunning acclimation"
+  },
+  "W8": {
+   "kind": "hypothesis",
+   "label": "Whoever founds the community keeps it"
+  },
+  "W7": {
+   "kind": "hypothesis",
+   "label": "Too little variation left to respond with"
+  },
+  "Z1": {
+   "kind": "hypothesis",
+   "label": "Light: too little, and too much"
+  },
+  "Z2": {
+   "kind": "hypothesis",
+   "label": "Light quality, not quantity: browning"
+  },
+  "Z3": {
+   "kind": "hypothesis",
+   "label": "Photoperiod and timing as a cue"
+  },
+  "Z4": {
+   "kind": "hypothesis",
+   "label": "Temperature: window, and rate"
+  },
+  "Z5": {
+   "kind": "hypothesis",
+   "label": "Hydrodynamic energy has a floor as well as a ceiling"
+  },
+  "Z6": {
+   "kind": "hypothesis",
+   "label": "Sound, as a cue and as a stressor"
+  },
+  "Z7": {
+   "kind": "hypothesis",
+   "label": "Electromagnetic fields"
+  },
+  "Z8": {
+   "kind": "hypothesis",
+   "label": "The attenuation budget is never partitioned"
+  },
+  "Z9": {
+   "kind": "hypothesis",
+   "label": "Epiphyte shading, which bypasses the water column"
+  },
+  "Z10": {
+   "kind": "hypothesis",
+   "label": "Mineral plumes from works"
+  },
+  "Z11": {
+   "kind": "hypothesis",
+   "label": "The weakened host"
+  },
+  "T1": {
+   "kind": "AMBIGUOUS",
+   "label": "Sulphide intrusion, gated by light / A living seabed lost",
+   "senses": [
+    {
+     "kind": "hypothesis",
+     "label": "Sulphide intrusion, gated by light"
+    },
+    {
+     "kind": "terminal outcome",
+     "label": "A living seabed lost",
+     "note": "The large, slow, long-lived organisms gone, and with them the structure the rest of the community sits in."
+    }
+   ]
+  },
+  "T2": {
+   "kind": "AMBIGUOUS",
+   "label": "Loss of the sulphide-detoxifying symbiosis / A degraded state that maintains itself",
+   "senses": [
+    {
+     "kind": "hypothesis",
+     "label": "Loss of the sulphide-detoxifying symbiosis"
+    },
+    {
+     "kind": "terminal outcome",
+     "label": "A degraded state that maintains itself",
+     "note": "The feedback closed: the loss of vegetation, filter feeders and bioturbators each make the conditions that removed them more likely. This is…"
+    }
+   ]
+  },
+  "T3": {
+   "kind": "AMBIGUOUS",
+   "label": "Wasting disease with stress-modulated virulence / Water unfit or unpleasant to be in",
+   "senses": [
+    {
+     "kind": "hypothesis",
+     "label": "Wasting disease with stress-modulated virulence"
+    },
+    {
+     "kind": "terminal outcome",
+     "label": "Water unfit or unpleasant to be in",
+     "note": "Greasy, foul, foaming, or unsafe. The outcome people experience directly, and the reason any of this is politically live."
+    }
+   ]
+  },
+  "T4": {
+   "kind": "AMBIGUOUS",
+   "label": "Marine replant failure: negative sediment feedback / Provisioning lost",
+   "senses": [
+    {
+     "kind": "hypothesis",
+     "label": "Marine replant failure: negative sediment feedback"
+    },
+    {
+     "kind": "terminal outcome",
+     "label": "Provisioning lost",
+     "note": "Fish, shellfish and the livelihoods on them."
+    }
+   ]
+  },
+  "T5": {
+   "kind": "AMBIGUOUS",
+   "label": "Loss of sediment suppressiveness / The shore lost as a place",
+   "senses": [
+    {
+     "kind": "hypothesis",
+     "label": "Loss of sediment suppressiveness"
+    },
+    {
+     "kind": "terminal outcome",
+     "label": "The shore lost as a place",
+     "note": "Smell, appearance, and the ordinary use of a coastline."
+    }
+   ]
+  },
+  "T6": {
+   "kind": "hypothesis",
+   "label": "Enrichment dissolving the partnership"
+  },
+  "T7": {
+   "kind": "hypothesis",
+   "label": "Anaerobic phytotoxins other than sulphide"
+  },
+  "T8": {
+   "kind": "hypothesis",
+   "label": "Anaerobic conditions select the pathogens"
+  },
+  "T9": {
+   "kind": "hypothesis",
+   "label": "Pathogen and partner are not kinds of organism"
+  },
+  "T12": {
+   "kind": "hypothesis",
+   "label": "Defence is outsourced, because the host cannot win the race"
+  },
+  "T11": {
+   "kind": "hypothesis",
+   "label": "Occupancy is the function"
+  },
+  "T10": {
+   "kind": "hypothesis",
+   "label": "Removing an organism whose role is unknown is not neutral"
+  },
+  "S1": {
+   "kind": "hypothesis",
+   "label": "Retention is a property of the medium and varies by an order of magnitude"
+  },
+  "S2": {
+   "kind": "hypothesis",
+   "label": "Phosphorus saturation, and legacy leakage"
+  },
+  "S3": {
+   "kind": "hypothesis",
+   "label": "Sorption is hysteretic - a ratchet on the land side too"
+  },
+  "S4": {
+   "kind": "hypothesis",
+   "label": "Total is not available"
+  },
+  "S5": {
+   "kind": "hypothesis",
+   "label": "Buffering scales with the volume of reactive medium"
+  },
+  "S6": {
+   "kind": "hypothesis",
+   "label": "Retention capacity is saturable, so the coefficient is not constant"
+  },
+  "R11": {
+   "kind": "hypothesis",
+   "label": "Marine fungi, the decomposers nobody counts"
+  },
+  "R1": {
+   "kind": "hypothesis",
+   "label": "The C:N threshold, and fat as a nitrogen sink"
+  },
+  "R2": {
+   "kind": "hypothesis",
+   "label": "Priming of the old sediment pool by fresh carbon"
+  },
+  "R3": {
+   "kind": "hypothesis",
+   "label": "The decay relay stalls when a stage is removed"
+  },
+  "R4": {
+   "kind": "hypothesis",
+   "label": "Nitrogen enrichment retards decay of the recalcitrant fraction"
+  },
+  "R5": {
+   "kind": "hypothesis",
+   "label": "The terminal electron acceptor cascade, and why salt changes it"
+  },
+  "R6": {
+   "kind": "hypothesis",
+   "label": "Sulphide locks the iron that would hold the phosphate"
+  },
+  "R7": {
+   "kind": "hypothesis",
+   "label": "Estuarine flocculation deposits river carbon at the coast"
+  },
+  "R8": {
+   "kind": "hypothesis",
+   "label": "Lipids are less soluble in seawater"
+  },
+  "R9": {
+   "kind": "hypothesis",
+   "label": "Home-field advantage, and novel material"
+  },
+  "R10": {
+   "kind": "hypothesis",
+   "label": "Osmotic discontinuity for the decomposers themselves"
+  },
+  "L6": {
+   "kind": "hypothesis",
+   "label": "The degraded bed is classified as its own habitat type"
+  },
+  "L1": {
+   "kind": "hypothesis",
+   "label": "The reference condition never existed"
+  },
+  "L2": {
+   "kind": "hypothesis",
+   "label": "The reference is a model output treated as a fact"
+  },
+  "L3": {
+   "kind": "hypothesis",
+   "label": "The trend depends on the start year"
+  },
+  "L4": {
+   "kind": "hypothesis",
+   "label": "Recovery is blocked by something other than the driver"
+  },
+  "L5": {
+   "kind": "hypothesis",
+   "label": "The reference sites are not references"
+  },
+  "I1": {
+   "kind": "hypothesis",
+   "label": "Changing station network"
+  },
+  "I2": {
+   "kind": "hypothesis",
+   "label": "Changing analytical method"
+  },
+  "I3": {
+   "kind": "hypothesis",
+   "label": "Changing sampling frequency and season"
+  },
+  "I4": {
+   "kind": "hypothesis",
+   "label": "Changing indicator definition"
+  },
+  "I5": {
+   "kind": "hypothesis",
+   "label": "Changing correction factors"
+  },
+  "I6": {
+   "kind": "hypothesis",
+   "label": "Changing custodian"
+  },
+  "I7": {
+   "kind": "hypothesis",
+   "label": "Batch defects in ingest or processing"
+  },
+  "group A": {
+   "kind": "group",
+   "label": "Nutrient-driven production in place"
+  },
+  "group B": {
+   "kind": "group",
+   "label": "Oxygen demand that arrived already made"
+  },
+  "group C": {
+   "kind": "group",
+   "label": "Physical control of resupply"
+  },
+  "group D": {
+   "kind": "group",
+   "label": "Physical disturbance of the bed"
+  },
+  "group E": {
+   "kind": "group",
+   "label": "Chemical demand and toxicity"
+  },
+  "group F": {
+   "kind": "group",
+   "label": "Biological structure and feedback"
+  },
+  "group G": {
+   "kind": "group",
+   "label": "Climate and long-term drivers"
+  },
+  "group H": {
+   "kind": "group",
+   "label": "State, memory and regime"
+  },
+  "group J": {
+   "kind": "group",
+   "label": "Surface film, gel and the greasy water itself"
+  },
+  "group K": {
+   "kind": "group",
+   "label": "Depletion and imbalance of what life requires"
+  },
+  "group W": {
+   "kind": "group",
+   "label": "Renewal and rate"
+  },
+  "group Z": {
+   "kind": "group",
+   "label": "The physical fields and their windows"
+  },
+  "group T": {
+   "kind": "group",
+   "label": "Sediment sickness: symbionts, pathogens and why nothing grows back"
+  },
+  "group S": {
+   "kind": "group",
+   "label": "The land side: the medium, not the input"
+  },
+  "group R": {
+   "kind": "group",
+   "label": "Decay, and the community that does it"
+  },
+  "group L": {
+   "kind": "group",
+   "label": "The baseline and the counterfactual"
+  },
+  "group I": {
+   "kind": "group",
+   "label": "Observation and measurement"
+  },
+  "V1": {
+   "kind": "avenue",
+   "label": "Deficiency",
+   "note": "A required input falls below what is needed. Energy, an element, light, an edible particle, a vitamin, a service performed by something else…"
+  },
+  "V2": {
+   "kind": "avenue",
+   "label": "Excess and toxicity",
+   "note": "An input exceeds what can be tolerated - including too much of a required thing. Shelford's ceiling, not Liebig's floor."
+  },
+  "V3": {
+   "kind": "avenue",
+   "label": "Condition outside the envelope",
+   "note": "A physicochemical field - temperature, salinity, pH, redox, pressure, hydrodynamic energy - moves outside the range the organism tolerates. …"
+  },
+  "V4": {
+   "kind": "avenue",
+   "label": "Mechanical destruction and burial",
+   "note": "Structure removed, crushed, smothered, abraded or mobilised. No chemistry required at any point."
+  },
+  "V5": {
+   "kind": "avenue",
+   "label": "Biotic attack",
+   "note": "Predation, grazing, disease, parasitism, competition, invasion. Something else does the killing."
+  },
+  "V6": {
+   "kind": "avenue",
+   "label": "Loss of a partner or a performed function",
+   "note": "The organisms whose activity the focal organism depends on are gone - symbionts, facilitators, and the ones that were conditioning the envir…"
+  },
+  "V7": {
+   "kind": "avenue",
+   "label": "Failure to replace itself",
+   "note": "The population dies without any individual being killed: no propagules, no connectivity, no settlement cue, wrong timing, too little genetic…"
+  },
+  "V8": {
+   "kind": "avenue",
+   "label": "Rate exceeded",
+   "note": "The change is survivable in magnitude but not in speed. Adaptation, acclimation, migration and recovery all have rates, and a disturbance re…"
+  },
+  "M1": {
+   "kind": "route",
+   "label": "Depletion of something essential",
+   "note": "Anything life requires falls below what some part of the community needs. Oxygen is the famous instance and the only one the requirement act…"
+  },
+  "M2": {
+   "kind": "route",
+   "label": "Toxic exposure",
+   "note": "Something is poisoned. The dose makes the poison, so this route is acutely sensitive to peak concentration rather than to any annual mean — …"
+  },
+  "M3": {
+   "kind": "route",
+   "label": "Physical destruction and burial",
+   "note": "The habitat removed, crushed, dredged or covered. Needs no chemistry at all."
+  },
+  "M4": {
+   "kind": "route",
+   "label": "Food-web restructuring",
+   "note": "Removal or addition of a species changes what everything else does. Overfishing, invasion, disease."
+  },
+  "M5": {
+   "kind": "route",
+   "label": "Light starvation",
+   "note": "Rooted vegetation shaded out by turbidity, which then removes the thing that was holding the sediment down."
+  },
+  "M6": {
+   "kind": "route",
+   "label": "Surface film and gel",
+   "note": "The water itself becomes a different medium: greasy, foaming, mucilaginous."
+  },
+  "M7": {
+   "kind": "route",
+   "label": "Reduced chemistry at the bed",
+   "note": "Sulphide and its relatives, toxic in their own right and an oxygen sink besides. The bed becomes hostile before the water column shows anyth…"
+  },
+  "M8": {
+   "kind": "route",
+   "label": "Failure of renewal",
+   "note": "The population is not killed; it fails to replace itself. No propagules, no connectivity, no settlement cue, wrong timing, or too few left t…"
+  },
+  "M9": {
+   "kind": "route",
+   "label": "Change faster than response",
+   "note": "The magnitude is survivable and the rate is not. Acclimation, adaptation, migration and recovery all take time, and a disturbance that retur…"
+  },
+  "U1": {
+   "kind": "code",
+   "label": "Mixture and cocktail effects",
+   "note": "Toxicity is assessed one substance at a time against one threshold at a time. Real exposure is simultaneous, and effects combine additively …"
+  },
+  "U2": {
+   "kind": "code",
+   "label": "Acute peaks under chronic means",
+   "note": "The dose makes the poison, and the dose that kills arrives in an event. Monitoring reports means over months; an outfall discharging for six…"
+  },
+  "U3": {
+   "kind": "code",
+   "label": "Floor and ceiling effects",
+   "note": "Where a community has already lost its sensitive members, adding stress produces no further measurable change — so the most degraded places …"
+  },
+  "U4": {
+   "kind": "code",
+   "label": "Substances on no monitoring list",
+   "note": "Tens of thousands of chemicals are in commerce; a few dozen are measured. A substance absent from the list is absent from every finding, wha…"
+  },
+  "U5": {
+   "kind": "code",
+   "label": "Sublethal and transgenerational effects",
+   "note": "Impaired reproduction, behaviour and development leave no corpse to count. The survey counts individuals present, not individuals functionin…"
+  },
+  "O1": {
+   "kind": "observable",
+   "label": "Oxygen deficit",
+   "note": "Dissolved oxygen below 4 or 2 mg/L, by depth, duration and extent. An observable on route M1, not an outcome. Nobody values a gas concentrat…"
+  },
+  "O2": {
+   "kind": "observable",
+   "label": "Fedtemøg",
+   "note": "Greasy organic matter in the water and on the shore. It has at least three manifestations and they are not the same measurement: O2a accumul…"
+  },
+  "O3": {
+   "kind": "observable",
+   "label": "Loss of higher benthic life",
+   "note": "The large, slow, long-lived animals going. Reachable by suffocation, poisoning, burial or physical destruction."
+  },
+  "O4": {
+   "kind": "observable",
+   "label": "Turbidity and phytoplankton biomass",
+   "note": "Chlorophyll and light attenuation. Measures of quantity, standing in for claims about composition."
+  },
+  "O5": {
+   "kind": "observable",
+   "label": "Foam",
+   "note": "Persistent foam on the water and along the strandline. A surfactant and protein phenomenon, and a different measurement from either greasine…"
+  },
+  "O6": {
+   "kind": "observable",
+   "label": "Mass mortality events",
+   "note": "Fish kills, and die-offs of any other conspicuous group. Sudden, dateable, and the clearest possible evidence that *something* happened — re…"
+  },
+  "O7": {
+   "kind": "observable",
+   "label": "Loss of rooted vegetation",
+   "note": "Eelgrass and macroalgal depth limit and cover. The WFD's own biological indicator, and the one that has conspicuously failed to recover as l…"
+  },
+  "O8": {
+   "kind": "observable",
+   "label": "Visible discolouration",
+   "note": "Water turned brown, red or milky. What people photograph and report, and what the chlorophyll indicator averages away."
+  },
+  "O9": {
+   "kind": "observable",
+   "label": "Bathing water failure",
+   "note": "Closures and quality downgrades. The one outcome Denmark measures densely, over a long period, at 1,026 points."
+  }
+ }
+}
