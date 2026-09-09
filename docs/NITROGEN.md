@@ -374,6 +374,22 @@ What a biogas plant does supply is the thing the manure never otherwise has: **a
 - **Destroy it, which is literally a reduction.** Nitrify then **denitrify** the liquid fraction and the nitrogen leaves as N₂ — inert, and out of the reactive pool for good. This is the only true removal available, and it is the same reaction a constructed wetland performs slowly and for free. It costs energy, and a badly run plant emits N₂O instead, which trades a water problem for a climate one.
 - **Burn the fibre.** Destroys organic nitrogen and recovers phosphorus in ash, at the cost of flue-gas treatment. It is the P route more than the N route.
 
+### What the law does to the herd, if the arithmetic binds
+
+The instruments are in the public record rather than in this analysis: L5 passed 119–34 on 3 September 2026 and puts **per-catchment nitrogen quotas on individual holdings from 2027**, with *frivillig arealomlægning* — voluntary land conversion — as the Tripartite's main engine and the quota model described by its own architects as the safety net under it ([POLITICS.md](#POLITICS.md)). **This project has not read the statute**, so what follows is inference from those instruments and from the balance above, and it is offered as a prediction that can be checked rather than as a reading of the law.
+
+**A quota bites on mineral fertiliser first, because manure is not optional.** The bag is the free variable: a holding that must apply less nitrogen buys less of it. The slurry is already there, produced daily by animals that exist, and it has to be spread, stored, sold or processed. So the first years of a tightening quota look like a fertiliser reduction and leave the herd untouched.
+
+**The constraint transfers when the quota falls below what the manure alone supplies.** At that point the arithmetic offers exactly four moves: fewer animals, more hectares to spread on, more nitrogen leaving in the crop, or **the manure nitrogen leaving the holding**. And this is where the design of the Tripartite matters more than its rhetoric: its main engine takes land *out* — wetland conversion, afforestation, set-aside — which raises manure nitrogen per remaining hectare with no change in any herd. **An area policy becomes a livestock policy without ever naming livestock.**
+
+So yes: a byproduct that has to leave is the predictable consequence, and the market for it already half exists — inter-farm slurry contracts, separation plants, and the stripping route above, whose output is a concentrated ammonium salt that travels. **A quota is a demand curve for nitrogen capture**, in the same way the liability settlements are a demand curve for destruction ([PROGRAMME.md](#PROGRAMME.md)) — regulation creating an industry rather than only a cost.
+
+Three things have to be said with it, because each of them can make the prediction wrong:
+
+- **The quota is per catchment, so the export has to cross a catchment line.** Moving slurry from one farm to its neighbour changes whose paperwork it is and not what the receiving water gets. Only nitrogen that leaves the catchment — or leaves the reactive pool altogether — is a reduction where it is being counted.
+- **The pressure is capped by design.** The agreement fixes a *braklægningspunkt*, a maximum regulatory pressure, which is exactly the point at which the squeeze on land would start forcing the herd. Where that point is set decides whether any of the above ever happens.
+- **And the load may not follow the input.** This document's own comparison puts pass-through from field surplus to measured load between zero and about a third, varying by catchment and zero at Mariager. A herd reduction is an input reduction, and an input reduction is not yet a load reduction — which is the same objection this project makes to the standard account, applied to a measure it would otherwise be tempted to endorse.
+
 So the answer to *can biogas fix it* is: not by itself, and yes as infrastructure. **Digestion without a nitrogen step returns every kilogram to the same fields in a more available form.** With separation and stripping, or with denitrification, the same plant becomes the only place in the chain where the nitrogen can be made to go somewhere else — which is the honest version of the claim that the herd sets a floor: it sets one **unless the manure nitrogen is given an exit that is not a field.**
 
 ## 3. Nitrogen mass is the wrong currency
