@@ -212,6 +212,88 @@ def koege_basins():
     return {"m3": r["vol"], "outfalls": r["rbu"], "name": r["n"]}
 
 
+
+def livestock_section():
+    """The animals, put back into an argument that is conducted in kg per hectare.
+
+    Every count here is official and live (scripts/livestock.py); the nitrogen
+    comparison is derived and says so. The last two paragraphs are a value rather
+    than a finding, and are labelled as one - this page is licensed for argument and
+    that licence does not extend to pretending an ethical claim is an inference.
+    """
+    L = read_json(os.path.join(DERIVED, "livestock.json"))
+    cl = read_json(os.path.join(DERIVED, "cropland.json"))["years"]["2025"]
+    o = []
+    a = o.append
+    a("### The word the framing leaves out\n")
+    a("Every number above is in kilograms of nitrogen per hectare, which is a way of "
+      "not saying what the kilograms came out of. So, from the official counts "
+      "rather than from anyone's rhetoric:\n")
+    a("| | |")
+    a("|---|---:|")
+    a(f"| Pigs standing in Denmark, at a moment ({L['pigs_standing_period']}) | "
+      f"**{L['pigs_standing']/1e6:.1f} million** |")
+    a(f"| Pigs slaughtered or exported live, in a year ({L['pigs_through_period']}) | "
+      f"**{L['pigs_through_per_year']/1e6:.1f} million** |")
+    a(f"| Cattle standing ({L['cattle_period']}) | {L['cattle_standing']/1e6:.2f} "
+      "million |")
+    a(f"| Pig meat produced in a year | "
+      f"{L['pig_meat_million_kg_per_year']/1000:.2f} million tonnes |")
+    a(f"| People living in Denmark ({L['people_period']}) | "
+      f"{L['people']/1e6:.2f} million |")
+    a("")
+    a("**The stock and the throughput are different numbers, and the difference is "
+      "the fact.** A Danish pig lives about six months, so the population at any "
+      f"instant — {L['pigs_standing']/1e6:.1f} million — is a fraction of the "
+      f"{L['pigs_through_per_year']/1e6:.0f} million that pass through in a year. "
+      "Quoting one for the other, in either direction, is the commonest error in "
+      "this argument: the higher figure describes a rate and the lower one a "
+      "standing biomass, and the nitrogen follows the rate.\n")
+    a("**Because that is what the nitrogen is.** An animal is a device for turning "
+      "feed into meat and excrement, and the excrement is the load. Taking the field "
+      f"balance's manure figure at the current area, **about "
+      f"{L['manure_n_kt_per_year']:,.0f} kt of manure nitrogen goes onto Danish land "
+      f"in a year**, against **{L['human_sewage_n_kt_per_year'][0]:,.0f}–"
+      f"{L['human_sewage_n_kt_per_year'][1]:,.0f} kt** in the sewage of everyone who "
+      f"lives here — a factor of about **{L['manure_over_human']:.0f}**, before a "
+      "treatment plant removes most of the human half and nothing removes the other. "
+      "*Derived, and marked as such:* the manure figure is a norm product times an "
+      "area, and the human figure uses a stated per-person convention, so both can "
+      "be redone with different assumptions and neither is a measurement of a "
+      "river.\n")
+    a("**And the land is the same fact in another unit.** "
+      f"{cl['central_pct']:.0f}% of Danish farmland grows feed and "
+      f"{cl['direct_food_pct']:.1f}% grows food people eat directly, which is why "
+      "the mineral fertiliser is not a separate story: most of it is spread to grow "
+      "what the animals eat. [NITROGEN.md](#NITROGEN.md) works the attribution "
+      "through, and the conclusion it reaches is that **the herd is behind most of "
+      "the nitrogen applied to Danish soil — the manure directly, and the majority "
+      "of the bag through what it is spread on.**\n")
+    a("So the public argument is conducted as a dispute about fertiliser policy, "
+      "quotas and farmers, and the arithmetic underneath it is a question about how "
+      "many animals a country of six million people keeps, and what happens to what "
+      "they excrete. **That sentence is never the one anybody says**, and every "
+      "instrument in the debate is shaped by its absence: a quota regulates the bag "
+      "first, because the bag is the part that can be reduced without anybody "
+      "deciding anything about animals.\n")
+    a("> **A value, stated as one.** The author of this page would like the herd to "
+      "be smaller for a reason that has nothing to do with fjords: an animal that "
+      "lives half a year in confinement and is one of thirty-two million is owed "
+      "something the arrangement cannot give it. **That is not a finding and nothing "
+      "in this project measures it.** It is stated here rather than left implied, "
+      "because a reader is entitled to know which conclusions are carried by "
+      "evidence and which by the person writing — and because the two reasons point "
+      "the same way, which is worth noticing but proves nothing on its own.\n")
+    a("It does have one consequence that *is* analytic, and it belongs in the "
+      "solution scope: **instruments differ in whether they touch the herd at all.** "
+      "A quota met by exporting processed manure nitrogen out of the catchment "
+      "delivers the fjord and leaves the animals where they are. A smaller herd "
+      "delivers both. A reader who holds only the first goal should still want to "
+      "know which of the two they are buying, and the current framing does not "
+      "make that visible.\n")
+    return "\n".join(o)
+
+
 def fold(summary, body):
     """Put a run of evidence behind one line that says what is in it.
 
@@ -274,8 +356,9 @@ gas concentration does not address. **A framing that measures oxygen cannot repo
 progress on three of the four things people are actually complaining about**, and
 [Køge Bugt](#PLACES.md) is the case: the loudest claim in the country, and among the
 best-oxygenated waters in it, with no registered *iltsvind* in 2023 or 2025.
+"""
 
-### What this changes about Part Two
+PART_TWO_TURN = """### What this changes about Part Two
 
 Not much, and that is the point. **Every intervention below was chosen to act on what
 arrives rather than on what it causes** — keeping rainwater out of the combined system,
@@ -391,6 +474,8 @@ def main():
     # exactly what would have happened to the version written straight into
     # docs/PROGRAMME.md.
     a(FRAMING_GAP)
+    a(livestock_section())
+    a(PART_TWO_TURN)
 
 
     a("### What this page can and cannot honestly claim\n")

@@ -90,6 +90,30 @@ progress on three of the four things people are actually complaining about**, an
 [Køge Bugt](#PLACES.md) is the case: the loudest claim in the country, and among the
 best-oxygenated waters in it, with no registered *iltsvind* in 2023 or 2025.
 
+### The word the framing leaves out
+
+Every number above is in kilograms of nitrogen per hectare, which is a way of not saying what the kilograms came out of. So, from the official counts rather than from anyone's rhetoric:
+
+| | |
+|---|---:|
+| Pigs standing in Denmark, at a moment (2026K3) | **12.2 million** |
+| Pigs slaughtered or exported live, in a year (2025) | **32.0 million** |
+| Cattle standing (2026K2) | 1.41 million |
+| Pig meat produced in a year | 1.84 million tonnes |
+| People living in Denmark (2026K3) | 6.03 million |
+
+**The stock and the throughput are different numbers, and the difference is the fact.** A Danish pig lives about six months, so the population at any instant — 12.2 million — is a fraction of the 32 million that pass through in a year. Quoting one for the other, in either direction, is the commonest error in this argument: the higher figure describes a rate and the lower one a standing biomass, and the nitrogen follows the rate.
+
+**Because that is what the nitrogen is.** An animal is a device for turning feed into meat and excrement, and the excrement is the load. Taking the field balance's manure figure at the current area, **about 226 kt of manure nitrogen goes onto Danish land in a year**, against **27–30 kt** in the sewage of everyone who lives here — a factor of about **9**, before a treatment plant removes most of the human half and nothing removes the other. *Derived, and marked as such:* the manure figure is a norm product times an area, and the human figure uses a stated per-person convention, so both can be redone with different assumptions and neither is a measurement of a river.
+
+**And the land is the same fact in another unit.** 68% of Danish farmland grows feed and 4.7% grows food people eat directly, which is why the mineral fertiliser is not a separate story: most of it is spread to grow what the animals eat. [NITROGEN.md](#NITROGEN.md) works the attribution through, and the conclusion it reaches is that **the herd is behind most of the nitrogen applied to Danish soil — the manure directly, and the majority of the bag through what it is spread on.**
+
+So the public argument is conducted as a dispute about fertiliser policy, quotas and farmers, and the arithmetic underneath it is a question about how many animals a country of six million people keeps, and what happens to what they excrete. **That sentence is never the one anybody says**, and every instrument in the debate is shaped by its absence: a quota regulates the bag first, because the bag is the part that can be reduced without anybody deciding anything about animals.
+
+> **A value, stated as one.** The author of this page would like the herd to be smaller for a reason that has nothing to do with fjords: an animal that lives half a year in confinement and is one of thirty-two million is owed something the arrangement cannot give it. **That is not a finding and nothing in this project measures it.** It is stated here rather than left implied, because a reader is entitled to know which conclusions are carried by evidence and which by the person writing — and because the two reasons point the same way, which is worth noticing but proves nothing on its own.
+
+It does have one consequence that *is* analytic, and it belongs in the solution scope: **instruments differ in whether they touch the herd at all.** A quota met by exporting processed manure nitrogen out of the catchment delivers the fjord and leaves the animals where they are. A smaller herd delivers both. A reader who holds only the first goal should still want to know which of the two they are buying, and the current framing does not make that visible.
+
 ### What this changes about Part Two
 
 Not much, and that is the point. **Every intervention below was chosen to act on what
