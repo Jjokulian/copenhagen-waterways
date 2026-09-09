@@ -263,6 +263,7 @@ ul.chain li{margin:0 0 11px;padding-left:15px;border-left:2px solid var(--line);
   line-height:1.6}
 ul.chain b{color:var(--ink)}
 ul.chain i{font-style:italic}
+h2.sec{font-size:17px;font-weight:640;letter-spacing:-.01em;margin:26px 0 8px}
 </style>
 </head>
 <body>
@@ -960,12 +961,35 @@ const TOOLS = [
 
 function renderMap() {
   const parts = ['<section class="hero">',
-    '<h1>The Danish nitrogen argument is a chain. We checked the links.</h1>',
+    '<h1>166 explanations for dead Danish coastal water. 24 can be tested.</h1>',
+    '<p class="lede">This project enumerated every mechanism it could find that would ' +
+    'leave a Danish fjord lifeless \u2014 nutrients, toxicants, trawling, sediment ' +
+    'chemistry, warming, disease, and a hundred and sixty more \u2014 then asked, one ' +
+    'by one, which could actually be tested against data that exists. ' +
+    '<strong>Twenty-four can. Forty cannot be tested at all, because the deciding ' +
+    'measurement has no column anywhere. Twenty more need an experiment nobody has ' +
+    'run.</strong></p>',
+    '<p class="lede"><strong>And none of the twenty-four is a nutrient hypothesis.</strong> ' +
+    'Every entry in that group is waiting on a data fetch, unscoreable, or unestablished. ' +
+    'The mechanisms that <i>can</i> be tested today are mostly about physics \u2014 or ' +
+    'about the monitoring archive itself. <b>So nutrients did not win an argument ' +
+    'against the alternatives. Nutrients are the group that has a monitoring ' +
+    'programme, and sixty of the rival explanations have never been in a position to ' +
+    'compete.</b> <a href="#PLAN.md">the triage, all 166 rows \u2192</a></p>',
+    '<p class="lede">That is not a claim that nutrients are innocent, or that the ' +
+    'policy is wrong. It is a claim about what the evidence can currently bear \u2014 ' +
+    'and it is checkable, because every figure here is recomputed from published data ' +
+    'by scripts in this repository. <a href="#KNOWN_AND_UNKNOWN.md">Including the ' +
+    'errors we made ourselves</a>: marine coverage we built out of freshwater ' +
+    'monitoring points, an oxygen series we labelled mg/l that was ml/l, four nulls we ' +
+    'quoted instead of computing, and a station category three of our own analyses ' +
+    'defined three different ways. They are left visible in the pages and the history ' +
+    'rather than edited out.</p>',
+    '<h2 class="sec">The specific case: the chain behind the nitrogen figure</h2>',
     '<p class="lede">A field surplus becomes a modelled load, becomes a percentage, ' +
     'gets allocated to a water body, is judged against a threshold, and shows a ' +
-    'trend. Every link is public. Every one is recomputed here from raw data by ' +
-    'scripts anyone can run. <strong>Three do not hold, and a fourth rests on ' +
-    'less than it appears to.</strong></p>',
+    'trend. Every link is public and recomputed here. <strong>Three do not hold, and ' +
+    'a fourth rests on less than it appears to.</strong></p>',
     '<ul class="chain">',
     '<li><b>No field is measured.</b> The <i>markoverskud</i> that drives the model ' +
     'is an accounting residual — register counts times regulatory norm tables, minus ' +
@@ -997,22 +1021,8 @@ function renderMap() {
     'while the year-round subset alone does not. ' +
     '<a href="docs/stations.html">see it on the map \u2192</a></li>',
     '</ul>',
-    '<p class="lede"><strong>And the nutrient hypothesis never won a contest.</strong> ' +
-    'All 166 hypotheses in this project\u2019s own field have now been triaged against ' +
-    'the data that exists. <b>24 are testable now. Not one of them is in the nutrient ' +
-    'group.</b> Every entry in that group is blocked on a fetch, unscoreable, or ' +
-    'unestablished \u2014 while 40 hypotheses are unscoreable outright because the ' +
-    'deciding dimension has no column anywhere, and 20 more need an experiment. ' +
-    '<b>Sixty of them have never been in a position to compete.</b> Nutrients are not ' +
-    'the surviving explanation; nutrients are the group with a monitoring programme. ' +
-    '<a href="#PLAN.md">the triage \u2192</a></p>',
-    '<p class="lede"><strong>None of this shows the policy is wrong, or that ' +
-    'agriculture is innocent.</strong> It shows the evidence offered cannot carry the ' +
-    'weight placed on it, and says exactly where each link fails. That includes the ' +
-    'errors this project made itself — marine coverage built from freshwater ' +
-    'monitoring points, an oxygen series labelled mg/l that was ml/l, four nulls ' +
-    'quoted instead of computed. They are left visible in the pages and the history ' +
-    'rather than edited out.</p>',
+    '<p class="lede">Each link above has its working, its null and its limits in ' +
+    '<a href="#NITROGEN.md">what the sea actually receives</a>.</p>',
     '</section>', '<div class="facts">'];
   for (const [n, t, doc] of FACTS)
     // n is a literal in FACTS above and deliberately carries markup; t likewise.
