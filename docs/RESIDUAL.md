@@ -124,7 +124,7 @@ Three failures, each diagnostic:
 - **The total moves instead.** The "total" was itself estimated in a way that depends
   on the parts, and the account is circular. This is the same circularity as a
   variance statistic that takes its own partition as an input — see
-  [CATEGORY.md](#CATEGORY.md).
+  [CATEGORY.md](CATEGORY.md).
 
 **So a residual is not unfalsifiable. It is unfalsifiable *at a point in time*.** Give
 it a history — successive versions of the account, as pathways get measured — and it
@@ -138,7 +138,7 @@ sequence.** What was the leftover in each published version, what was measured i
 between, and does the arithmetic close? That is an archival question, answerable from
 documents that already exist, and it requires no new fieldwork.
 
-It is the same move as the feature-space test in [CATEGORY.md](#CATEGORY.md), applied
+It is the same move as the feature-space test in [CATEGORY.md](CATEGORY.md), applied
 to a number rather than a category: **a quantity that cannot be checked against
 anything can still be checked against what happens when the measured space grows.**
 
@@ -215,7 +215,7 @@ agriculture" to compare it against. If there were, nobody would compute it as a 
 **And then it climbs the ladder.** *69.6% of the land-based waterborne term* becomes
 *agriculture causes 70% of the nitrogen*, becomes *70% of the oxygen depletion*, becomes
 *70% of the mess on the beach*. Two of those steps cross links where **no coefficient has
-ever been calculated** — the audit of that chain is in [CAUSATION.md](#CAUSATION.md).
+ever been calculated** — the audit of that chain is in [CAUSATION.md](CAUSATION.md).
 
 There is a second detail worth knowing, because it shows the same instinct in a different
 place. The oxygen-depletion requirement in the Danish method is not derived from any

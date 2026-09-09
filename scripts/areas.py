@@ -446,7 +446,7 @@ def render(props, rec, ch):
       "has no marine observation* names a category — marine observation — far wider "
       "than the two layers actually searched. The leftover after subtracting what "
       "we happened to find is then reported as though it were measured, which is "
-      "the operation [RESIDUAL.md](#RESIDUAL.md) is about, and it does not become "
+      "the operation [RESIDUAL.md](RESIDUAL.md) is about, and it does not become "
       "acceptable because we are the ones doing it.\n"
       ">\n"
       "> So absence is reported here as a count over a named corpus, and the corpus "
@@ -505,7 +505,7 @@ def render(props, rec, ch):
       "produced three, or what measurement would settle it. A boundary drawn "
       "somewhere inside a fjord is a hypothesis about where the water changes, and "
       "it is the kind of hypothesis this project can actually test: `X22` in "
-      "[EXPERIMENTS.md](#EXPERIMENTS.md) sets out how, using pairs of measurements "
+      "[EXPERIMENTS.md](EXPERIMENTS.md) sets out how, using pairs of measurements "
       "at matched separation either side of a line.\n")
     a("> The practical rule that follows, and the reason the station-level series "
       "exist: **the unit of observation is a position.** Everything else — this "

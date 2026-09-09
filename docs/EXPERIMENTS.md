@@ -37,7 +37,7 @@ Naming them separately matters because they are not substitutes and they are not
 
 `experiment`
 
-**Bears on:** [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`T5`](#HYPOTHESES.md) Loss of sediment suppressiveness, [`T2`](#HYPOTHESES.md) Loss of the sulphide-detoxifying symbiosis, [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light
+**Bears on:** [`T4`](HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`T5`](HYPOTHESES.md) Loss of sediment suppressiveness, [`T2`](HYPOTHESES.md) Loss of the sulphide-detoxifying symbiosis, [`T1`](HYPOTHESES.md) Sulphide intrusion, gated by light
 
 Restoration plantings fail in sediment whose chemistry looks adequate. Horticulture calls this replant disease and tests it the obvious way.
 
@@ -57,7 +57,7 @@ The human analogue has already worked through the same problem. Faecal transplan
 
 `measurement`
 
-**Bears on:** [`T5`](#HYPOTHESES.md) Loss of sediment suppressiveness, [`T11`](#HYPOTHESES.md) Occupancy is the function, [`W8`](#HYPOTHESES.md) Whoever founds the community keeps it, [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`L1`](#HYPOTHESES.md) The reference condition never existed
+**Bears on:** [`T5`](HYPOTHESES.md) Loss of sediment suppressiveness, [`T11`](HYPOTHESES.md) Occupancy is the function, [`W8`](HYPOTHESES.md) Whoever founds the community keeps it, [`T4`](HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`L1`](HYPOTHESES.md) The reference condition never existed
 
 Restoring a community needs a source, and the best source is the same community from a matched setting. Medicine has reached the same conclusion and acted on it: stool banks exist, and the frontier is autologous banking - freezing a person's own community *before* the antibiotic. The marine equivalent of the autologous half is impossible after the fact, and the donor half degrades a little every year as more sites fail.
 
@@ -75,7 +75,7 @@ Restoring a community needs a source, and the best source is the same community 
 
 `experiment`
 
-**Bears on:** [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light, [`K11`](#HYPOTHESES.md) Light as a depleted resource
+**Bears on:** [`T1`](HYPOTHESES.md) Sulphide intrusion, gated by light, [`K11`](HYPOTHESES.md) Light as a depleted resource
 
 Eelgrass keeps sulphide out by leaking oxygen from its roots, powered by photosynthesis. If the leak is the mechanism, shading kills by poisoning rather than by starving.
 
@@ -93,7 +93,7 @@ Eelgrass keeps sulphide out by leaking oxygen from its roots, powered by photosy
 
 `measurement`
 
-**Bears on:** [`J2`](#HYPOTHESES.md) Sea-surface microlayer enrichment, [`J3`](#HYPOTHESES.md) Surfactants from detergents and personal care, [`J1`](#HYPOTHESES.md) Transparent exopolymer particles and marine gel, [`J6`](#HYPOTHESES.md) Oil and hydrocarbon films
+**Bears on:** [`J2`](HYPOTHESES.md) Sea-surface microlayer enrichment, [`J3`](HYPOTHESES.md) Surfactants from detergents and personal care, [`J1`](HYPOTHESES.md) Transparent exopolymer particles and marine gel, [`J6`](HYPOTHESES.md) Oil and hydrocarbon films
 
 The greasiness people report after swimming is a property of the sea-surface microlayer, which concentrates surfactants and lipids by orders of magnitude over the bulk water. Denmark has never sampled it.
 
@@ -111,7 +111,7 @@ The greasiness people report after swimming is a property of the sea-surface mic
 
 `measurement`
 
-**Bears on:** [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light, [`T3`](#HYPOTHESES.md) Wasting disease with stress-modulated virulence, [`T5`](#HYPOTHESES.md) Loss of sediment suppressiveness, [`J2`](#HYPOTHESES.md) Sea-surface microlayer enrichment, [`O7`](#HYPOTHESES.md) Loss of rooted vegetation
+**Bears on:** [`T1`](HYPOTHESES.md) Sulphide intrusion, gated by light, [`T3`](HYPOTHESES.md) Wasting disease with stress-modulated virulence, [`T5`](HYPOTHESES.md) Loss of sediment suppressiveness, [`J2`](HYPOTHESES.md) Sea-surface microlayer enrichment, [`O7`](HYPOTHESES.md) Loss of rooted vegetation
 
 The outcomes anyone actually cares about - greasy water, a foul shore, a bed with nothing structural left on it - are not measured by any Danish programme. There is no instrument for fedtemøg; the glossary entry says so, and it is not an oversight so much as a category the monitoring was never built to hold. The only observers are the people who swim, walk and fish there, and their observations are currently discarded as anecdote.
 
@@ -129,7 +129,7 @@ The outcomes anyone actually cares about - greasy water, a foul shore, a bed wit
 
 `measurement`
 
-**Bears on:** [`T1`](#HYPOTHESES.md) Sulphide intrusion, gated by light, [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`W2`](#HYPOTHESES.md) Settlement cue failure, [`D1`](#HYPOTHESES.md) Bottom trawling
+**Bears on:** [`T1`](HYPOTHESES.md) Sulphide intrusion, gated by light, [`T4`](HYPOTHESES.md) Marine replant failure: negative sediment feedback, [`W2`](HYPOTHESES.md) Settlement cue failure, [`D1`](HYPOTHESES.md) Bottom trawling
 
 Commercial and recreational fishermen hold the longest continuous observation of the Danish seabed that exists - decades of hauling gear across specific ground - and none of it is recorded anywhere as observation. Landings are recorded; what the bottom looked and smelled like is not.
 
@@ -147,7 +147,7 @@ Commercial and recreational fishermen hold the longest continuous observation of
 
 `measurement`
 
-**Bears on:** [`B1`](#HYPOTHESES.md) Combined sewer overflow, [`B2`](#HYPOTHESES.md) Separate stormwater, [`U2`](#HYPOTHESES.md) Acute peaks under chronic means, [`O9`](#HYPOTHESES.md) Bathing water failure
+**Bears on:** [`B1`](HYPOTHESES.md) Combined sewer overflow, [`B2`](HYPOTHESES.md) Separate stormwater, [`U2`](HYPOTHESES.md) Acute peaks under chronic means, [`O9`](HYPOTHESES.md) Bathing water failure
 
 Denmark has 19,665 rain-conditioned outfalls and no per-event record of what they discharge or what follows. Monthly sampling cannot see a six-hour event.
 
@@ -165,7 +165,7 @@ Denmark has 19,665 rain-conditioned outfalls and no per-event record of what the
 
 `experiment`
 
-**Bears on:** [`L4`](#HYPOTHESES.md) Recovery is blocked by something other than the driver, [`H1`](#HYPOTHESES.md) Alternative stable states and hysteresis, [`T4`](#HYPOTHESES.md) Marine replant failure: negative sediment feedback
+**Bears on:** [`L4`](HYPOTHESES.md) Recovery is blocked by something other than the driver, [`H1`](HYPOTHESES.md) Alternative stable states and hysteresis, [`T4`](HYPOTHESES.md) Marine replant failure: negative sediment feedback
 
 A target can be unreachable because the driver is still too high, or because something else is missing. From the outside these look identical, and thirty years of unexplained non-recovery sit between them.
 
@@ -183,7 +183,7 @@ A target can be unreachable because the driver is still too high, or because som
 
 `experiment`
 
-**Bears on:** [`F1`](#HYPOTHESES.md) Loss of filter feeders, [`F2`](#HYPOTHESES.md) Loss of bioturbators
+**Bears on:** [`F1`](HYPOTHESES.md) Loss of filter feeders, [`F2`](HYPOTHESES.md) Loss of bioturbators
 
 Filter-feeder loss is hypothesised to raise chlorophyll with no change in nutrient supply, which would make restoration an alternative to load reduction rather than a complement.
 
@@ -201,7 +201,7 @@ Filter-feeder loss is hypothesised to raise chlorophyll with no change in nutrie
 
 `instrument`
 
-**Bears on:** [`I1`](#HYPOTHESES.md) Changing station network, [`I3`](#HYPOTHESES.md) Changing sampling frequency and season, [`H1`](#HYPOTHESES.md) Alternative stable states and hysteresis, [`C1`](#HYPOTHESES.md) Stratification strength, [`M1`](#HYPOTHESES.md) Depletion of something essential
+**Bears on:** [`I1`](HYPOTHESES.md) Changing station network, [`I3`](HYPOTHESES.md) Changing sampling frequency and season, [`H1`](HYPOTHESES.md) Alternative stable states and hysteresis, [`C1`](HYPOTHESES.md) Stratification strength, [`M1`](HYPOTHESES.md) Depletion of something essential
 
 The national assessment attaches one number to each water body, and the marine programme puts a median of one station in each - so the homogeneity that the whole framework assumes cannot be tested with the data that framework produces. Bathing water suggests a water body explains about 8% of the variation inside it, but bathing water measures faecal indicators, not the variables at issue.
 
@@ -219,7 +219,7 @@ The national assessment attaches one number to each water body, and the marine p
 
 `instrument`
 
-**Bears on:** [`I3`](#HYPOTHESES.md) Changing sampling frequency and season, [`I4`](#HYPOTHESES.md) Changing indicator definition, [`U2`](#HYPOTHESES.md) Acute peaks under chronic means, [`M1`](#HYPOTHESES.md) Depletion of something essential
+**Bears on:** [`I3`](HYPOTHESES.md) Changing sampling frequency and season, [`I4`](HYPOTHESES.md) Changing indicator definition, [`U2`](HYPOTHESES.md) Acute peaks under chronic means, [`M1`](HYPOTHESES.md) Depletion of something essential
 
 The oxygen indicator is the share of time oxygen sits below a threshold in the worst month, computed from six years of data, yielding one value per water body per six years. Nobody has measured what that collapse discards, because doing so needs a continuous record to compare against.
 
@@ -237,7 +237,7 @@ The oxygen indicator is the share of time oxygen sits below a threshold in the w
 
 `instrument`
 
-**Bears on:** [`I2`](#HYPOTHESES.md) Changing analytical method, [`I5`](#HYPOTHESES.md) Changing correction factors, [`I6`](#HYPOTHESES.md) Changing custodian
+**Bears on:** [`I2`](HYPOTHESES.md) Changing analytical method, [`I5`](HYPOTHESES.md) Changing correction factors, [`I6`](HYPOTHESES.md) Changing custodian
 
 Any distributed network is worthless if its readings cannot be tied to the national record, and cheap sensors drift and foul. This is the calibration that makes X14 and X15 admissible rather than interesting.
 
@@ -257,7 +257,7 @@ Any distributed network is worthless if its readings cannot be tied to the natio
 
 `experiment`
 
-**Bears on:** [`R1`](#HYPOTHESES.md) The C:N threshold, and fat as a nitrogen sink, [`B1`](#HYPOTHESES.md) Combined sewer overflow
+**Bears on:** [`R1`](HYPOTHESES.md) The C:N threshold, and fat as a nitrogen sink, [`B1`](HYPOTHESES.md) Combined sewer overflow
 
 Fat has no nitrogen, so bacteria decomposing it must take nitrogen from the water. If so, a fat-loaded water reads as *less* eutrophic on the regulated indicator while being more degraded.
 
@@ -275,7 +275,7 @@ Fat has no nitrogen, so bacteria decomposing it must take nitrogen from the wate
 
 `experiment`
 
-**Bears on:** [`R2`](#HYPOTHESES.md) Priming of the old sediment pool by fresh carbon, [`H2`](#HYPOTHESES.md) Sediment legacy
+**Bears on:** [`R2`](HYPOTHESES.md) Priming of the old sediment pool by fresh carbon, [`H2`](HYPOTHESES.md) Sediment legacy
 
 Priming: labile carbon gives microbes the energy to attack the recalcitrant pool, so an input's oxygen demand can exceed its own COD.
 
@@ -293,7 +293,7 @@ Priming: labile carbon gives microbes the energy to attack the recalcitrant pool
 
 `experiment`
 
-**Bears on:** [`K1`](#HYPOTHESES.md) Silicon depletion and the diatom-to-flagellate shift, [`K2`](#HYPOTHESES.md) Stoichiometric imbalance decides who grows, [`J1`](#HYPOTHESES.md) Transparent exopolymer particles and marine gel
+**Bears on:** [`K1`](HYPOTHESES.md) Silicon depletion and the diatom-to-flagellate shift, [`K2`](HYPOTHESES.md) Stoichiometric imbalance decides who grows, [`J1`](HYPOTHESES.md) Transparent exopolymer particles and marine gel
 
 Si comes only from weathering, so N and P have risen and Si has not. If Si limits, the community shifts away from diatoms toward the flagellates and gel-formers.
 
@@ -311,7 +311,7 @@ Si comes only from weathering, so N and P have risen and Si has not. If Si limit
 
 `experiment`
 
-**Bears on:** [`J1`](#HYPOTHESES.md) Transparent exopolymer particles and marine gel, [`K2`](#HYPOTHESES.md) Stoichiometric imbalance decides who grows, [`A9`](#HYPOTHESES.md) Nitrogen fixation
+**Bears on:** [`J1`](HYPOTHESES.md) Transparent exopolymer particles and marine gel, [`K2`](HYPOTHESES.md) Stoichiometric imbalance decides who grows, [`A9`](HYPOTHESES.md) Nitrogen fixation
 
 Gel and exopolymer are hypothesised to come from carbon overflow when cells fix carbon they cannot balance with N or P.
 
@@ -329,7 +329,7 @@ Gel and exopolymer are hypothesised to come from carbon overflow when cells fix 
 
 `experiment`
 
-**Bears on:** [`E13`](#HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](#HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](#HYPOTHESES.md) Total biocide load, whatever its source, [`R3`](#HYPOTHESES.md) The decay relay stalls when a stage is removed, [`R11`](#HYPOTHESES.md) Marine fungi, the decomposers nobody counts
+**Bears on:** [`E13`](HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](HYPOTHESES.md) Total biocide load, whatever its source, [`R3`](HYPOTHESES.md) The decay relay stalls when a stage is removed, [`R11`](HYPOTHESES.md) Marine fungi, the decomposers nobody counts
 
 Turfgrass thatch - a greasy organic mat - forms when pesticides kill the earthworms and microbes that would incorporate the material. If fedtemøg is the same failure in sediment, then organic matter accumulates because the decomposers are gone, not because more is arriving.
 
@@ -349,7 +349,7 @@ Turfgrass thatch - a greasy organic mat - forms when pesticides kill the earthwo
 
 `experiment`
 
-**Bears on:** [`D1`](#HYPOTHESES.md) Bottom trawling, [`D8`](#HYPOTHESES.md) Loss of biostabilisation, and the mobile bed, [`D11`](#HYPOTHESES.md) Stabilisers against destabilisers, [`E1`](#HYPOTHESES.md) Sulphide oxidation
+**Bears on:** [`D1`](HYPOTHESES.md) Bottom trawling, [`D8`](HYPOTHESES.md) Loss of biostabilisation, and the mobile bed, [`D11`](HYPOTHESES.md) Stabilisers against destabilisers, [`E1`](HYPOTHESES.md) Sulphide oxidation
 
 Trawling is hypothesised to destroy the biostabilising surface skin and release sulphide. Both are measurable, and the disturbance can be applied on purpose.
 
@@ -367,7 +367,7 @@ Trawling is hypothesised to destroy the biostabilising surface skin and release 
 
 `experiment`
 
-**Bears on:** [`E13`](#HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](#HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](#HYPOTHESES.md) Total biocide load, whatever its source, [`A2`](#HYPOTHESES.md) Phosphorus load, [`G2`](#HYPOTHESES.md) Changing precipitation and runoff timing, [`O1`](#HYPOTHESES.md) Oxygen deficit
+**Bears on:** [`E13`](HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](HYPOTHESES.md) Total biocide load, whatever its source, [`A2`](HYPOTHESES.md) Phosphorus load, [`G2`](HYPOTHESES.md) Changing precipitation and runoff timing, [`O1`](HYPOTHESES.md) Oxygen deficit
 
 The load account carries nitrogen and phosphorus. Everything else that is spread — organic carbon, copper and zinc from feed, antiparasitics, antibiotics, resistance genes, pathogens — is unpriced, and its fate is genuinely unknown rather than known to be small. A field is a reactor: labile carbon is respired there, so the default assumption is that little arrives. But rain onto freshly spread ground, frozen or saturated soil, tile drains and macropores are documented bypasses, and **Denmark's own monitoring cannot see any of it**, because it samples on a calendar rather than on events and measures a determinand list that does not include the payload.
 
@@ -379,13 +379,13 @@ The load account carries nitrogen and phosphorus. Everything else that is spread
 
 **Decide, in advance.** **Markers and copper rise sharply in the days after spreading and scale with livestock density → the payload bypasses the soil**, the second channel is real and measurable, and the determinand list of the national programme is missing a term rather than merely being coarse. **Markers stay at baseline through the window → the soil reactor holds**, what reaches the sea from a field is essentially nitrate, and the nitrogen framing is right about *what arrives* even where this project disputes how much. **That second outcome is the one worth pre-committing to publish**, because it argues against the suspicion that motivated the design.
 
-*The instrument is constructed in [SENSING.md](#SENSING.md) and the full protocol - hypotheses that can lose, the decision rules fixed before the first sample, the twelve matched pairs and what invalidates the whole thing rather than answering it - is [SETTLE.md](#SETTLE.md). This is the cheapest unbought answer in the whole document. The instruments are ordinary autosamplers and a lab list, the timing is fixed by a calendar everyone already knows, and the comparison catchments exist. It is also the one design here whose *negative* result would materially strengthen the official account — which is a reason to run it, not a reason to avoid it. **Grab sampling cannot substitute:** this project's own sources report that transport computed from grab samples was underestimated in all three streams of the 2018 GUDP study, and an event is exactly what a fortnightly visit misses.*
+*The instrument is constructed in [SENSING.md](SENSING.md) and the full protocol - hypotheses that can lose, the decision rules fixed before the first sample, the twelve matched pairs and what invalidates the whole thing rather than answering it - is [SETTLE.md](SETTLE.md). This is the cheapest unbought answer in the whole document. The instruments are ordinary autosamplers and a lab list, the timing is fixed by a calendar everyone already knows, and the comparison catchments exist. It is also the one design here whose *negative* result would materially strengthen the official account — which is a reason to run it, not a reason to avoid it. **Grab sampling cannot substitute:** this project's own sources report that transport computed from grab samples was underestimated in all three streams of the 2018 GUDP study, and an event is exactly what a fortnightly visit misses.*
 
 ### X17 — Take the fungicides away, region by region, without ruining anyone
 
 `experiment`
 
-**Bears on:** [`E13`](#HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](#HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](#HYPOTHESES.md) Total biocide load, whatever its source, [`E16`](#HYPOTHESES.md) Conserved targets: "selective" is a claim about dose, [`E17`](#HYPOTHESES.md) The microbiome is the exposed organ, [`R3`](#HYPOTHESES.md) The decay relay stalls when a stage is removed, [`R11`](#HYPOTHESES.md) Marine fungi, the decomposers nobody counts, [`T12`](#HYPOTHESES.md) Defence is outsourced, because the host cannot win the race
+**Bears on:** [`E13`](HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](HYPOTHESES.md) Total biocide load, whatever its source, [`E16`](HYPOTHESES.md) Conserved targets: "selective" is a claim about dose, [`E17`](HYPOTHESES.md) The microbiome is the exposed organ, [`R3`](HYPOTHESES.md) The decay relay stalls when a stage is removed, [`R11`](HYPOTHESES.md) Marine fungi, the decomposers nobody counts, [`T12`](HYPOTHESES.md) Defence is outsourced, because the host cannot win the race
 
 The register cannot say what agricultural biocides do to marine decomposers, because the counterfactual does not exist: every Danish catchment has been sprayed for decades. A ban would create one and would also be economic suicide for the people asked to absorb it, so it will not happen and should not.
 
@@ -397,7 +397,7 @@ The register cannot say what agricultural biocides do to marine decomposers, bec
 
 **Decide, in advance.** Marine decomposition recovers where crossover has happened and not where it has not → the biocide route of `E13` is real at landscape scale, and the substitution is the remedy. Nothing changes in the sea → the marine biocide hypothesis fails its largest test and this project should say so loudly. **And the agronomic outcome is a result in its own right, whichever way it falls** — if yields drop, that is the number the argument has to carry, not a detail to be discovered later by the people who farm.
 
-*This is the only design here that is simultaneously an intervention, a national experiment, and survivable for the people inside it. It also supplies what nothing else can: **a real counterfactual for the chemical argument**, at the scale the argument is made. Denmark already has the administrative machinery — pesticide taxation, action plans, and protection zones around wellfields where spraying is restricted — so the instrument exists and only the randomisation and the marine measurement would be new. The general form of that observation is the meta-solution in [PLACES.md](#PLACES.md): a country that does one thing everywhere has spent the contrast that would have told it whether the thing worked, and the staggered order here is how you buy it back without withholding anything from anyone.*
+*This is the only design here that is simultaneously an intervention, a national experiment, and survivable for the people inside it. It also supplies what nothing else can: **a real counterfactual for the chemical argument**, at the scale the argument is made. Denmark already has the administrative machinery — pesticide taxation, action plans, and protection zones around wellfields where spraying is restricted — so the instrument exists and only the randomisation and the marine measurement would be new. The general form of that observation is the meta-solution in [PLACES.md](PLACES.md): a country that does one thing everywhere has spent the contrast that would have told it whether the thing worked, and the staggered order here is how you buy it back without withholding anything from anyone.*
 
 ## Desk — No fieldwork at all. The data already exists; the analysis has not been run.
 
@@ -405,7 +405,7 @@ The register cannot say what agricultural biocides do to marine decomposers, bec
 
 `analysis`
 
-**Bears on:** [`B1`](#HYPOTHESES.md) Combined sewer overflow, [`B2`](#HYPOTHESES.md) Separate stormwater, [`B3`](#HYPOTHESES.md) Treatment plant organic load, [`A4`](#HYPOTHESES.md) Point-source discharge of nutrients
+**Bears on:** [`B1`](HYPOTHESES.md) Combined sewer overflow, [`B2`](HYPOTHESES.md) Separate stormwater, [`B3`](HYPOTHESES.md) Treatment plant organic load, [`A4`](HYPOTHESES.md) Point-source discharge of nutrients
 
 Denmark has 20,402 outfalls with a position, an annual volume and a reported reduced impervious area, and no published map of which ground drains to which. The pipe geometry exists in a national register that is not open, so the network cannot be looked up. It may be inferable.
 
@@ -423,7 +423,7 @@ Denmark has 20,402 outfalls with a position, an annual volume and a reported red
 
 `analysis`
 
-**Bears on:** [`L5`](#HYPOTHESES.md) The reference sites are not references, [`I4`](#HYPOTHESES.md) Changing indicator definition, [`A1`](#HYPOTHESES.md) Danish land-based nitrogen load, [`Z8`](#HYPOTHESES.md) The attenuation budget is never partitioned
+**Bears on:** [`L5`](HYPOTHESES.md) The reference sites are not references, [`I4`](HYPOTHESES.md) Changing indicator definition, [`A1`](HYPOTHESES.md) Danish land-based nitrogen load, [`Z8`](HYPOTHESES.md) The attenuation budget is never partitioned
 
 The Copenhagen map does not aggregate into administrative units. Its units are functional - a catchment is the ground that drains to one point, a flow path is where water actually goes - so the boundaries are consequences of the terrain rather than decisions about it. The marine map has no equivalent: it inherits 123 water bodies drawn for administration, and every statistic computed in them inherits that drawing. The question nobody asks is whether those lines are where the sea changes.
 
@@ -441,7 +441,7 @@ The Copenhagen map does not aggregate into administrative units. Its units are f
 
 `analysis`
 
-**Bears on:** [`I1`](#HYPOTHESES.md) Changing station network, [`I2`](#HYPOTHESES.md) Changing analytical method, [`I3`](#HYPOTHESES.md) Changing sampling frequency and season, [`I5`](#HYPOTHESES.md) Changing correction factors, [`I6`](#HYPOTHESES.md) Changing custodian, [`L3`](#HYPOTHESES.md) The trend depends on the start year
+**Bears on:** [`I1`](HYPOTHESES.md) Changing station network, [`I2`](HYPOTHESES.md) Changing analytical method, [`I3`](HYPOTHESES.md) Changing sampling frequency and season, [`I5`](HYPOTHESES.md) Changing correction factors, [`I6`](HYPOTHESES.md) Changing custodian, [`L3`](HYPOTHESES.md) The trend depends on the start year
 
 The raw record carries the supplier, the sampling gear, the sonde, the technical instruction, and both the original and corrected result with the factor applied. No published analysis uses them.
 

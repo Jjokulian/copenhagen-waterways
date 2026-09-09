@@ -383,7 +383,7 @@ def render(d):
       "bloom on it. Warmer water holds less; a column that does not turn over does not "
       "refill. None of those is a candidate variable, so whatever share belongs to them "
       "has nowhere to go but into the coefficients on the variables that are there. The "
-      "enumeration is in [OXYGEN.md](#OXYGEN.md).\n")
+      "enumeration is in [OXYGEN.md](OXYGEN.md).\n")
     a("The oxygen requirement itself comes from no regression at all. It is a **binary "
       "trigger** on an indicator that is the share of time oxygen sits below 4 mg/L and "
       "2 mg/L **in the single month where low-oxygen days are most numerous**, computed "

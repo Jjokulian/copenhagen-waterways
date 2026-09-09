@@ -122,7 +122,7 @@ nitrogen reduction sized on a national residual will not change a shoreline that
 already at 10.3 mg/l.
 
 *Cause-agnostic and available now:* the interventions in
-[PROGRAMME.md](#PROGRAMME.md) that act on what arrives rather than on what it causes —
+[PROGRAMME.md](PROGRAMME.md) that act on what arrives rather than on what it causes —
 keeping rainwater out of the combined system, an outlet that is not the bay, and source
 control on what the water carries. These change the delivered load whatever the
 mechanism downstream, and their case does not rest on the nitrogen chain.

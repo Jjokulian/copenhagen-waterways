@@ -119,7 +119,7 @@ def main():
       "coincides with the overflow season. Over 31 years of rainfall it does not: rain "
       "intense enough to overflow a combined sewer peaks in **June to August**, because "
       "intensity in Denmark is convective. Resuspension peaks in **October to January**. "
-      "See [CURRENTS.md](#CURRENTS.md) — the two are separated by a residence time, not "
+      "See [CURRENTS.md](CURRENTS.md) — the two are separated by a residence time, not "
       "simultaneous, and the sequence is deposit in summer, mobilise in autumn.\n")
     a("Note the ratio column: biology protects most in summer (nearly 9× in July) and least "
       "in a January gale. Losing the benthos costs you most in the calm season; in a storm "

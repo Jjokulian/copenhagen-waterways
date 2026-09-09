@@ -120,7 +120,7 @@ genetics, pharmaceutical chemistry, stable isotopes and optics fail in unrelated
 so a source assignment that survives all five is not an artefact of any one of them.
 A signal visible in one dimension and absent from the other four is noise wearing a
 name — and the discipline that says so is the same one this project applies to
-[partitions and baskets](../README.md): **a boundary that holds under every metric you
+[partitions and baskets](https://github.com/Jjokulian/statistical-methods): **a boundary that holds under every metric you
 try is the only kind worth calling real.**
 
 That has a practical consequence for the network below. The dense tier measures the

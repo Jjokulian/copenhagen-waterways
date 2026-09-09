@@ -38,7 +38,7 @@ was about double. Meanwhile 2025 came in at roughly a third of 2024's area. Neit
 absence of a trend nor the size of the year-to-year swing has an accepted explanation.
 
 Three candidates — legacy lag, warming, loss of assimilative state — are laid out in
-[CAUSATION.md](#CAUSATION.md). Lag fails on elapsed time. The other two have no term
+[CAUSATION.md](CAUSATION.md). Lag fails on elapsed time. The other two have no term
 anywhere in a source apportionment, because neither is a source.
 
 **Why it matters.** This is the only empirical test of the nitrogen-dominant model that
@@ -138,7 +138,7 @@ structured citizen-reporting scheme running year-round rather than in summer.
 ## 9. There is no visual record of what high concentrations actually do
 
 Danish monitoring produces concentrations. It does not produce images of consequence, and
-the two are not substitutes. **This became its own page: [EXPOSURE.md](#EXPOSURE.md).**
+the two are not substitutes. **This became its own page: [EXPOSURE.md](EXPOSURE.md).**
 It is related reading and a dependency of nothing — no argument on this site rests on it.
 
 ## 10. Fat, and everything else with no nitrogen in it
@@ -305,7 +305,7 @@ ground built after it.
 **Why it matters in both directions.** Those districts add impervious surface, so runoff
 that the model never routed; and they sit on made ground at engineered levels, so the
 terrain the model used is wrong there even where it has coverage. Every figure in
-[FLOOD_GAP.md](#FLOOD_GAP.md) is therefore a statement about the 2010 city. The plan
+[FLOOD_GAP.md](FLOOD_GAP.md) is therefore a statement about the 2010 city. The plan
 built on it is being delivered into a 2026 one.
 
 **What would settle it.** A re-run of the hydraulic model on current terrain and current
@@ -330,7 +330,7 @@ construction, or rainfall, or neither?
 
 ## 15. The transport experiments that were already run, and nobody read
 
-[CURRENTS.md](#CURRENTS.md) could not establish whether material from the Copenhagen side
+[CURRENTS.md](CURRENTS.md) could not establish whether material from the Copenhagen side
 reaches Køge Bugt. The best it managed was a statistical lag — during overflow-scale rain
 the Sound runs *north*, and twelve hours later it runs south, on 145 event-hours of a
 four-year record. That is suggestive and thin.
@@ -430,7 +430,7 @@ what was actually measured, by whom, how often, and which of the modelled quanti
 on it. A map of model outputs is a map of somebody's confidence. A map of what was measured
 is a map of what is known, and the two differ most exactly where it matters.
 
-[AREAS.md](#AREAS.md) counts that gap, and carries a correction worth reading alongside
+[AREAS.md](AREAS.md) counts that gap, and carries a correction worth reading alongside
 this item: absence is reported there as a count over a named corpus rather than as a share
 of the sea, because a share of an absence is only meaningful when the category named is as
 narrow as the search performed. Of ODA's 6,258 positioned marine stations, every water body

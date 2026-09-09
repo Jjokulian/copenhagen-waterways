@@ -8,7 +8,7 @@ The material is 92 verbatim public statements about the Danish nitrogen agreemen
 
 **Naming is not blaming.** Identifying who said what, and when, is the whole point of a record and is done here exactly. Assigning motive, bad faith or fault is not a scientific operation and is not attempted anywhere on this page. Where a sentence is observed to differ from the document behind it, that is an observation about two texts. It is not an accusation, and it does not become one by being repeated.
 
-**A property of the reasoning is not a property of the sea.** This is the central idea of [RESIDUAL.md](#RESIDUAL.md) and the constraint that matters most here. *The stated basis for this claim is thinner than the claim* is a fact about a document. *The sea is fine* is a fact about water. The first never implies the second, in either political direction.
+**A property of the reasoning is not a property of the sea.** This is the central idea of [RESIDUAL.md](RESIDUAL.md) and the constraint that matters most here. *The stated basis for this claim is thinner than the claim* is a fact about a document. *The sea is fine* is a fact about water. The first never implies the second, in either political direction.
 
 > **So, explicitly: nothing on this page is a claim about the condition of Danish coastal water.** Not one sentence below should be read as evidence that the marine environment is in better shape than anyone says, or in worse shape. A page about sentences cannot produce a finding about a fjord, and any reading that extracts one from here has crossed a line this page draws on purpose.
 
@@ -141,7 +141,7 @@ The mirror-image flag, `contests_model_basis`, lands on 7 statements: six from a
 
 ## 4. The ladder, with dates on it
 
-[RESIDUAL.md](#RESIDUAL.md) describes a five-rung ladder by which a carefully qualified technical quantity becomes a claim about the world, each step small and individually defensible. This record contains the rungs as actual dated sentences, which is the reason it was collected.
+[RESIDUAL.md](RESIDUAL.md) describes a five-rung ladder by which a carefully qualified technical quantity becomes a claim about the world, each step small and individually defensible. This record contains the rungs as actual dated sentences, which is the reason it was collected.
 
 The regulation rests on two different modelled quantities and the ladder has to keep them apart, because eliding them would be the same error one level up:
 
@@ -196,7 +196,7 @@ One more figure that looks inconsistent and is not: Greenpeace stated in June 20
 
 ## 6. The 69.6 %, and the five places it is stated as a fact
 
-The share attributed to agriculture is a **residual**: modelled natural background and reported point sources are subtracted from the load, and what remains is routed through the modelled retention map and called agriculture. [RESIDUAL.md](#RESIDUAL.md) is about why that class of number cannot be checked against anything, ever, in principle, and [NITROGEN.md](#NITROGEN.md) takes the apportionment apart line by line. This page's only job is to record how the figure is spoken.
+The share attributed to agriculture is a **residual**: modelled natural background and reported point sources are subtracted from the load, and what remains is routed through the modelled retention map and called agriculture. [RESIDUAL.md](RESIDUAL.md) is about why that class of number cannot be checked against anything, ever, in principle, and [NITROGEN.md](NITROGEN.md) takes the apportionment apart line by line. This page's only job is to record how the figure is spoken.
 
 Four of the five statements carrying the `estimator_treated_as_estimand` flag concern this share - the fifth is the ministry sentence in the ladder above, which is about a different modelled quantity. All four state the share with no qualification at all:
 
@@ -1206,5 +1206,5 @@ What it does establish, and what is checkable by anyone with the same sources:
 
 - The collection is skewed toward the government and the agreement parties by about 2.1 to 1, contains no official floor transcript, and is empty of substantive numerical claims from two of the three parties that voted against.
 
-The last of those is the one that most limits everything above it. **A record of public statements is an instrument, and this instrument is not evenly pointed.** Group `I` of [HYPOTHESES.md](#HYPOTHESES.md) applies to it exactly as it applies to a monitoring network: what you find depends on where you looked, and the cheapest way to improve this page is not more analysis of these 92 sentences but the Folketing transcript that could not be fetched.
+The last of those is the one that most limits everything above it. **A record of public statements is an instrument, and this instrument is not evenly pointed.** Group `I` of [HYPOTHESES.md](HYPOTHESES.md) applies to it exactly as it applies to a monitoring network: what you find depends on where you looked, and the cheapest way to improve this page is not more analysis of these 92 sentences but the Folketing transcript that could not be fetched.
 

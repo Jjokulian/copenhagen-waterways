@@ -301,7 +301,7 @@ def livestock_section():
       f"{cl['central_pct']:.0f}% of Danish farmland grows feed and "
       f"{cl['direct_food_pct']:.1f}% grows food people eat directly, which is why "
       "the mineral fertiliser is not a separate story: most of it is spread to grow "
-      "what the animals eat. [NITROGEN.md](#NITROGEN.md) works the attribution "
+      "what the animals eat. [NITROGEN.md](NITROGEN.md) works the attribution "
       "through, and the conclusion it reaches is that **the herd is behind most of "
       "the nitrogen applied to Danish soil — the manure directly, and the majority "
       "of the bag through what it is spread on.**\n")
@@ -323,7 +323,7 @@ def livestock_section():
       "anything, sulphide, the copper and zinc that go into feed, the veterinary "
       "antibiotics and antiparasitics that go into the animals, whatever resistance "
       "those select for, hormones, pathogens, and the disinfectants used to clean "
-      "the barn. [OXYGEN.md](#OXYGEN.md) prices four of those routes in grams of O₂ "
+      "the barn. [OXYGEN.md](OXYGEN.md) prices four of those routes in grams of O₂ "
       "per gram and notes that **none of them needs nitrogen to work**. The load "
       "account carries the nitrogen and the phosphorus. Everything else in the list "
       "is either uncounted or, in the case of the antiparasitics, held in a sales "
@@ -389,7 +389,7 @@ def livestock_section():
       "to be right. The animal kilogram is a fertiliser *and* an oxygen demand *and* "
       "a delivery vehicle for everything else in the mixture, and two of those three "
       "act without waiting for a growing season. That is [§3 of "
-      "NITROGEN.md](#NITROGEN.md) — nitrogen mass is the wrong currency — with the "
+      "NITROGEN.md](NITROGEN.md) — nitrogen mass is the wrong currency — with the "
       "two sources named.\n")
     a("It has a direct consequence for the instrument. **A quota written in "
       "kilograms of nitrogen treats the two as interchangeable, so a holding can "
@@ -450,7 +450,7 @@ def livestock_section():
       "small.** An unmeasured quantity is not a zero, and it is not a large number "
       "either.\n")
     a("**So it is an open problem, and it has a design.** [`X23` in "
-      "EXPERIMENTS.md](#EXPERIMENTS.md) states it: flow-triggered samplers on "
+      "EXPERIMENTS.md](EXPERIMENTS.md) states it: flow-triggered samplers on "
       "paired stream catchments through the spreading window and again in an autumn "
       "window when spreading is forbidden, matched on soil and drainage and "
       "contrasted on livestock density, measuring the payload rather than only the "
@@ -463,10 +463,10 @@ def livestock_section():
       "GUDP study, and an event is exactly what a fortnightly visit misses.\n")
     a("And the dense version — a node on every stream that reaches the sea, so that "
       "no result anywhere has to be extrapolated to a place nobody visited — is "
-      "constructed in [SENSING.md](#SENSING.md), down to the sensors, the "
+      "constructed in [SENSING.md](SENSING.md), down to the sensors, the "
       "fingerprint that separates a pig from a person from a road, and what it "
       "would cost. It comes to about the price of twenty streets. "
-      "**[The protocol is written out](#SETTLE.md)**: three hypotheses stated so "
+      "**[The protocol is written out](SETTLE.md)**: three hypotheses stated so "
       "they can lose, the decision rules fixed before the first sample, twelve "
       "matched catchment pairs, and a pilot inside the reach of one association.\n")
     a("The three things that would settle it are cheap and none of them is being "
@@ -519,7 +519,7 @@ it does **not** establish, because this section has already had to be rewritten 
 for claiming past its evidence.
 
 **1. The nutrient account never beat the alternatives; it is the one with a monitoring
-programme.** All 166 mechanisms in [the register](#HYPOTHESES.md) have been
+programme.** All 166 mechanisms in [the register](HYPOTHESES.md) have been
 [triaged](hypodrafts/TRIAGE.md) against the data that exists. Twenty-four are testable
 now — **and not one of them is in the nutrient group.** Every entry there is blocked on
 a fetch, unscoreable, or unestablished. Forty mechanisms cannot be tested at all
@@ -541,7 +541,7 @@ was not real. Measured estuary nitrogen fell 24–62% over the same period.
 at national scale. That is an aggregate over catchments whose individual pass-through
 ranges from zero to a third. **The strength of the national fit is not evidence that
 the local coefficient is stable — it is what aggregation does to a variable one.** The
-same shape appears twice more here: [water bodies](#AREAS.md) that carry no signal
+same shape appears twice more here: [water bodies](AREAS.md) that carry no signal
 within themselves, and a national oxygen trend that [tracks which stations were
 reporting](stations.html).
 
@@ -555,7 +555,7 @@ be separated from it* — the category is a mixture by its own definition.
 *Fiskedød* has no open register. *Livet i fjordene* is a claim about structure that a
 gas concentration does not address. **A framing that measures oxygen cannot report
 progress on three of the four things people are actually complaining about**, and
-[Køge Bugt](#PLACES.md) is the case: the loudest claim in the country, and among the
+[Køge Bugt](PLACES.md) is the case: the loudest claim in the country, and among the
 best-oxygenated waters in it, with no registered *iltsvind* in 2023 or 2025.
 """
 
@@ -568,7 +568,7 @@ whichever of 166 mechanisms dominates, which is why they survive a finding that 
 field cannot be resolved.
 
 What the findings do change is the *order*: [Places, not
-categories](#PLACES.md) takes the coasts one at a time, because one is four times worse
+categories](PLACES.md) takes the coasts one at a time, because one is four times worse
 than anywhere else and is not the one anybody argues about — and because a trial at
 Mariager says nothing about Lillebælt when the land-to-estuary coefficient varies
 twenty-six-fold between them.
@@ -602,7 +602,7 @@ def main():
     a("This page takes its problem statement from the public, not from the "
       "monitoring programme, because the monitoring programme measures what it can "
       "and the public names what it minds. Across the recorded public argument "
-      "([POLITICS.md](#POLITICS.md)) the damage is named with four words, and it is "
+      "([POLITICS.md](POLITICS.md)) the damage is named with four words, and it is "
       "worth noticing that **no one in that record — on any side — says the water "
       "is fine.**\n")
     a("| what people call it | what they mean by it | what Denmark measures | where the word and the measurement come apart |")
@@ -610,7 +610,7 @@ def main():
     a("| **iltsvind** | the sea is suffocating | dissolved oxygen below 4 mg/l **in "
       "stratified bottom water** | it needs depth and a sealed layer. Køge Bugt is "
       "shallow, mixes, and has no iltsvind on record — including 2023 and 2025 "
-      "([CURRENTS.md](#CURRENTS.md)). Whether the criterion is *structurally* "
+      "([CURRENTS.md](CURRENTS.md)). Whether the criterion is *structurally* "
       "unreachable there is our inference and is not settled |")
     a("| **fedtemøg** | greasy, foul water and a shore you do not want to walk on | "
       "nothing | there is no instrument. It is not a scientific term and no "
@@ -619,7 +619,7 @@ def main():
       "events happen and are recorded nowhere the public can read |")
     a("| **livet i fjordene** | the structural life is gone | eelgrass depth limit, "
       "some bottom fauna | measured — through a light proxy that censors itself in "
-      "shallow water ([LIGHT.md](#LIGHT.md)) |")
+      "shallow water ([LIGHT.md](LIGHT.md)) |")
     a("")
     a("**Three of the four have no usable measurement, and the fourth cannot be "
       "recorded in the bay next to Copenhagen.** Everything on this page is shaped "
@@ -638,7 +638,7 @@ def main():
       "- **The open sea around Denmark**, which people also call dead.\n"
       "- **The shoreline**, where material from any of the above lands, sits and "
       "smells, and where most people meet the problem directly.\n")
-    a("[AREAS.md](#AREAS.md) is why the distinction earns a section: a fix that is "
+    a("[AREAS.md](AREAS.md) is why the distinction earns a section: a fix that is "
       "true of Denmark is true of nowhere in it. Copenhagen carries the specifics "
       "in Part Two because it is the one place where the flow paths, the "
       "constructed drainage and the receiving water are mapped closely enough to "
@@ -687,16 +687,16 @@ def main():
       "concentrations. None of that would tell anyone whether the shore stopped "
       "smelling.\n")
     a("That gap is fixable and cheap, and it is the argument for `X19` and `X20` in "
-      "[EXPERIMENTS.md](#EXPERIMENTS.md): a panel that reports on a schedule "
+      "[EXPERIMENTS.md](EXPERIMENTS.md): a panel that reports on a schedule "
       "including the days nothing happens, and a structured record from the people "
       "who have watched the same ground for forty years. Without an outcome record "
       "the whole of Part Two is an argument from mechanism, and it should be read "
       "as one.\n")
     a("Two things deliberately not on this page. The public argument itself — who "
-      "said what, when, and whether it was checkable — is [POLITICS.md](#POLITICS.md), "
+      "said what, when, and whether it was checkable — is [POLITICS.md](POLITICS.md), "
       "and it is a different object of study. And *how pollution becomes visible to "
       "the public at all*, which is a real problem and a genuinely separate project, "
-      "is [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 9.\n")
+      "is [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) item 9.\n")
 
     # ================================================================ SOLUTION
     a("## Part two — the solution\n")
@@ -774,7 +774,7 @@ def main():
       f"already drawn the river network: **{riv['near_surface_conveyance_pct']:.0f}% of "
       "the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is "
       "169 km of surface conveyance against 71 km of pipe "
-      "([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not "
+      "([SOLUTIONS.md](SOLUTIONS.md)). The idea is not missing. The alignments are not "
       "missing.\n")
     a("**What is missing is the connection.** A skybrudsvej is designed against a "
       "hundred-year event: it activates when the system is already overwhelmed, a "
@@ -880,7 +880,7 @@ def main():
           "where its structures are, to the centimetre in the vertical, and its own "
           "record does not say what any of them is: which lid is a sewer manhole, "
           "which is a gully pot, which belongs to water, gas or telecom. That is "
-          "the [unfilled-field class](#CONSTRUCTED.md) of this project's error "
+          "the [unfilled-field class](CONSTRUCTED.md) of this project's error "
           "taxonomy, in the register a contractor would plan from — and it is the "
           "concrete form of the objection above. The instrument that would answer "
           "it is the utility register, which is not open.\n")
@@ -1220,13 +1220,13 @@ def main():
     a("**And what is held between flushes is not the water that went in.** A basin "
       "holding settled sewage solids goes anoxic in the sediment within days, and "
       "what leaves in the flush is the reduced product of everything that settled "
-      "since the last one. [OXYGEN.md](#OXYGEN.md) prices those routes and none of "
+      "since the last one. [OXYGEN.md](OXYGEN.md) prices those routes and none of "
       "them is fertilisation: organic matter that arrived already made consumes "
       "**1.0 g O₂ per g COD** with no growth step, ammonium consumes **4.57 g O₂ per "
       "g N** as a reductant rather than a nutrient, sulphide out of reduced sediment "
       "**2.00 g O₂ per g S**, and fat about **2.9 g O₂ per g** — all of it immediate, "
       "and all of it arriving as a pulse rather than a season. The same anoxia "
-      "releases iron-bound phosphate ([`A2`](#HYPOTHESES.md)), so the flush delivers "
+      "releases iron-bound phosphate ([`A2`](HYPOTHESES.md)), so the flush delivers "
       "the nutrient too, in the form the sediment lets go of. Not one of these routes "
       "is representable in a load ledger written in tonnes of nitrogen a year: they "
       "are oxygen demand, not nitrogen supply, and they land in hours.\n")
@@ -1268,21 +1268,21 @@ def main():
         ("Unionised ammonia (NH₃, set by pH and temperature)",
          "gill-breathing animals, directly and quickly",
          "as total ammonium sometimes; as toxicity, no"),
-        ("Phosphate, released as the sediment reduces ([`A2`](#HYPOTHESES.md))",
+        ("Phosphate, released as the sediment reduces ([`A2`](HYPOTHESES.md))",
          "production weeks later, elsewhere",
          "in some series; never attributed to an event"),
-        ("Turbidity, and the light it takes ([LIGHT.md](#LIGHT.md))",
-         "eelgrass, which needs light to keep sulphide out ([`T1`](#HYPOTHESES.md))",
+        ("Turbidity, and the light it takes ([LIGHT.md](LIGHT.md))",
+         "eelgrass, which needs light to keep sulphide out ([`T1`](HYPOTHESES.md))",
          "Secchi — which this project found **right-censored** at shallow stations"),
         ("An organic blanket on the bed",
          "benthic fauna, and the skin that stabilises sediment "
-         "([`D8`](#HYPOTHESES.md))",
+         "([`D8`](HYPOTHESES.md))",
          "bundfauna surveys, infrequent and rarely after an event"),
         ("Metals, PAH, tyre wear, microplastics",
          "a food chain, over years",
          "well in pond effluent, almost nowhere in a receiving water"),
         ("A kill, and then the decay of what it killed "
-         "([CAUSATION.md](#CAUSATION.md))",
+         "([CAUSATION.md](CAUSATION.md))",
          "the standing stock, which becomes the next oxygen demand",
          "**nothing** — no open register of fish kills"),
         ("Timing — a pulse into warm, stratified, still water",
@@ -1310,7 +1310,7 @@ def main():
       "has measured basin sediment, and the composition would be site-specific if "
       "they had. What the arithmetic does establish is that a delayed, concentrated, "
       "reduced discharge cannot be priced by the quantity the accounting measures — "
-      "which is the same failure as [the annual average](#RESIDUAL.md), one storey "
+      "which is the same failure as [the annual average](RESIDUAL.md), one storey "
       "down.\n")
     a("**If the treated effluent is still not good enough for the water it enters, "
       "that is an argument about where the outlet is, not about how many basins "
@@ -1647,10 +1647,10 @@ def main():
       "operator.\n")
     a("The difference is what happens next. Sediment on a seabed is not at rest: a "
       "storm, a trawl, a propeller or a dredging campaign lifts it back into the "
-      "water, and [OXYGEN.md](#OXYGEN.md) prices that route at **2.00 g O₂ per g of "
+      "water, and [OXYGEN.md](OXYGEN.md) prices that route at **2.00 g O₂ per g of "
       "sulphide** oxidised on the way up — a demand that needs no nitrogen and "
       "appears in no load ledger. Anoxic sediment also releases the iron-bound "
-      "phosphate it was holding ([`A2`](#HYPOTHESES.md)). And the metals, PAH, tyre "
+      "phosphate it was holding ([`A2`](HYPOTHESES.md)). And the metals, PAH, tyre "
       "wear and microplastics that came off the street are then in a food chain "
       "instead of in a bucket.\n")
     a("A pond cell is the same material in a place with an operator, a schedule and "
@@ -1724,7 +1724,7 @@ def main():
 
     a("#### Why burial actually works on land and not in the bay\n")
     a("This is the part that makes the first half of the principle more than a hope, "
-      "and it comes straight out of [SEABED.md](#SEABED.md).\n")
+      "and it comes straight out of [SEABED.md](SEABED.md).\n")
     a("Metals buried in **marine** sediment are held as sulphides in anoxic mud, and "
       "they are released again on re-oxidation. A dead bed crosses the resuspension "
       "threshold several times more often than a living one, so the marine sink is a "
@@ -1910,7 +1910,7 @@ def main():
     a(MENU_FOLD)
 
     a("### 5. Source control, sorted by what life has met before\n")
-    a("The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says nitrogen "
+    a("The subsidy–stress argument in [CAUSATION.md](CAUSATION.md) says nitrogen "
       "produces mush rather than meadow because the organisms that would have used it "
       "well are gone. If that is right, the substances that removed them sit upstream "
       "of the nutrient problem, and no amount of nutrient policy reaches them.\n")
@@ -2091,7 +2091,7 @@ def main():
       "intervention and the experiment. Each area is compared against its own "
       "record before it crosses over and against the areas that have not yet "
       "crossed, and no one is withheld from the treatment, only scheduled later. "
-      "That design is `X17` in [EXPERIMENTS.md](#EXPERIMENTS.md), and it supplies "
+      "That design is `X17` in [EXPERIMENTS.md](EXPERIMENTS.md), and it supplies "
       "the one thing the chemical argument has never had: **a counterfactual, at "
       "the scale the argument is made**. Every Danish catchment has been sprayed "
       "for decades, so there is currently nothing to compare against.\n")
@@ -2165,7 +2165,7 @@ def main():
       f"maximum observed of {zn[2]:,.0f}. The flux is not small.\n")
     a("**The sink is conditional, and the condition is failing.** Metals bury as "
       "sulphides in anoxic sediment and come back out on re-oxidation. "
-      "[SEABED.md](#SEABED.md) computes that a dead bed crosses the resuspension "
+      "[SEABED.md](SEABED.md) computes that a dead bed crosses the resuspension "
       "threshold several times more often than a living one. So sediment is not a "
       "terminal sink — it is a store that the same degradation we are worried about "
       "keeps re-opening. Burial only counts while the bed stays intact, which ties "
@@ -2242,7 +2242,7 @@ def main():
       "firmly demonstrated. It is a mechanism with good foundations, not a measured "
       "Danish result, and the experiment that would settle it — put it back where "
       "conditions are said to be adequate, and see whether it holds — is `X10` in "
-      "[EXPERIMENTS.md](#EXPERIMENTS.md).\n")
+      "[EXPERIMENTS.md](EXPERIMENTS.md).\n")
     for t in [
         "**Extractive aquaculture.** Mussels and macroalgae remove nitrogen as biomass "
         "and are harvested rather than left to decay. At the loads computed for this "
@@ -2253,7 +2253,7 @@ def main():
         "habitat in one organism. Turbidity is the binding constraint, which links it "
         "directly to items 1 and 3.",
         "**Leave the bed alone where it is recovering.** A living bed resuspends "
-        "several times less often than a dead one ([SEABED.md](#SEABED.md)), so bed "
+        "several times less often than a dead one ([SEABED.md](SEABED.md)), so bed "
         "integrity is not only a fisheries question — it changes how often the "
         "accumulated sulphide and metals come back into the water.",
         "**Harvest as a use, not a disposal.** Extracted biomass that is too "
@@ -2357,7 +2357,7 @@ def main():
       "a ban** — and it happens to be the one that produces the counterfactual. A "
       "municipality that stops buying a compound, on a date, with the date written "
       "down, has created exactly the contrast that "
-      "[`X17`](#EXPERIMENTS.md) says does not exist and cannot be bought.\n")
+      "[`X17`](EXPERIMENTS.md) says does not exist and cannot be bought.\n")
     a("The brittleness is worth naming because it is systemic rather than "
       "particular. **Harmonisation puts the decision at the slowest level and "
       "removes the variation that would inform it**, and the two failures "
@@ -2598,7 +2598,7 @@ def main():
       "cases a revenue rather than a cost.\n")
     a("It matters for a reason beyond willingness. Every entry here creates a place "
       "that did something different, on a date — which is the "
-      "[counterfactual](#PLACES.md) the whole field is short of. A voluntary "
+      "[counterfactual](PLACES.md) the whole field is short of. A voluntary "
       "contributor is not a smaller version of a regulated one. It is the control "
       "arm.\n")
     a("| Who | What they can start | What it costs them | What it would show |")
@@ -2624,7 +2624,7 @@ def main():
          "the date down. Put everyday rain from one street on the surface route "
          "already designed",
          "procurement effort; one street's civil works",
-         "the use-restriction lever that [survives harmonisation](#PROGRAMME.md), "
+         "the use-restriction lever that [survives harmonisation](PROGRAMME.md), "
          "and the first street-scale before-and-after in the country"),
         ("**A utility**",
          "Instrument one large overflow structure for flow rather than for events, "
@@ -2636,7 +2636,7 @@ def main():
          "Ask what happens to the infill on their own pitch, and put the answer in "
          "the contract at renewal",
          "nothing, at renewal",
-         "whether the return obligation in [EXTERNALITY.md](#EXTERNALITY.md) is "
+         "whether the return obligation in [EXTERNALITY.md](EXTERNALITY.md) is "
          "administratively real or only elegant"),
         ("**A housing association**",
          "Disconnect roofs from the combined sewer into a courtyard basin or a "
@@ -2655,7 +2655,7 @@ def main():
          "the only route to an instrument for *fedtemøg*, which is one of the three "
          "public words with nothing behind it"),
         ("**Anyone with data access this project lacks**",
-         "Run the queries in [IF_YOU_HAVE_THE_DATA.md](#IF_YOU_HAVE_THE_DATA.md) "
+         "Run the queries in [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) "
          "and publish what comes back",
          "an afternoon and a login",
          "sixty-one of the 166 mechanisms are blocked on a fetch, not on a thought"),
@@ -2685,7 +2685,7 @@ def main():
       "measurement has no column anywhere; twenty more need an experiment nobody "
       "has run. No amount of further collection reaches those sixty.\n")
     a("So the entitlement is earned, and the instrument is the one "
-      "[PLACES.md](#PLACES.md) sets out: **fund trials of solution models, in named "
+      "[PLACES.md](PLACES.md) sets out: **fund trials of solution models, in named "
       "places, with pre-stated outcomes, and let the results decide** — with the "
       "anti-delay conditions attached there, because this argument is also exactly "
       "what somebody who wanted to stall would say.\n")

@@ -2026,7 +2026,7 @@ H = [
      "substance nationally; nothing assembles it into an environmental load. *Why* "
      "the load has the composition it has is a question about markets rather than "
      "about water, so it is argued in "
-     "[PROGRAMME.md](#PROGRAMME.md) and deliberately not here — every entry in this "
+     "[PROGRAMME.md](PROGRAMME.md) and deliberately not here — every entry in this "
      "register has to name an observable in the sea, and that one cannot."),
 
     ("E16", "E", "Conserved targets: \"selective\" is a claim about dose",
@@ -3479,7 +3479,7 @@ def render(rows):
       "the form \"mechanism X accounts for n% of the problem\" would require the "
       "field to be complete, disjoint and independent, and it is none of the three. "
       "Making that claim anyway would be the residual-estimator error of "
-      "[RESIDUAL.md](#RESIDUAL.md) committed one level up — treating what is left "
+      "[RESIDUAL.md](RESIDUAL.md) committed one level up — treating what is left "
       "over after our own enumeration as if it were a measurement of the world.\n")
     a("What the register is for is narrower and still worth having. It converts "
       "*the cause is X* into *X is one of at least a hundred and twenty-seven, and "
@@ -3543,7 +3543,7 @@ def render(rows):
       "helps. The point is structural and has two consequences. The optimum is a "
       "*position in a window*, so the benefit of reduction depends on where an area "
       "currently sits, and that position differs by area — which is the argument of "
-      "[AREAS.md](#AREAS.md) arriving from the chemistry rather than from the "
+      "[AREAS.md](AREAS.md) arriving from the chemistry rather than from the "
       "statistics.\n")
     a("**And the window is not a property of the substance. It is a property of the "
       "whole mixture.** Both ends move with everything else present, by at least "
@@ -4018,7 +4018,7 @@ def render(rows):
       "concentration, and why the antibiotic instrument — reserve it, do not "
       "disperse it — is the right shape of response.\n")
     a("And it is the exact argument behind the evolutionary-prior framework in "
-      "[PROGRAMME.md](#PROGRAMME.md). A molecule life has met before has left "
+      "[PROGRAMME.md](PROGRAMME.md). A molecule life has met before has left "
       "machinery for handling it somewhere in the biosphere; a genuinely novel one "
       "has not, and there is no prior to draw on. The difference between those two "
       "is not chemistry — it is history.\n")

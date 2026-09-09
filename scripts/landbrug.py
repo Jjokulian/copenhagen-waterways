@@ -314,9 +314,9 @@ def main():
       "scrutiny to urban discharge, where the numbers are worse. And it ends with four "
       "demands, three of which are demands for measurement rather than for a different "
       "answer.\n")
-    a("The full audit is in [NITROGEN.md](#NITROGEN.md) and "
-      "[CAUSATION.md](#CAUSATION.md); the argument about what to build instead is in "
-      "[PROGRAMME.md](#PROGRAMME.md).\n")
+    a("The full audit is in [NITROGEN.md](NITROGEN.md) and "
+      "[CAUSATION.md](CAUSATION.md); the argument about what to build instead is in "
+      "[PROGRAMME.md](PROGRAMME.md).\n")
     a("*Denne side er skrevet af en ikke-modersmålstalende og bør læses igennem af en "
       "dansker, før den citeres.*")
 

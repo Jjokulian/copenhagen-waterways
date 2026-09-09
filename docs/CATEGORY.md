@@ -1,7 +1,7 @@
 # The category that was never measured
 
 Hand-written rather than generated. This is the companion to
-[RESIDUAL.md](#RESIDUAL.md), and the same shape of mistake one column to the left.
+[RESIDUAL.md](RESIDUAL.md), and the same shape of mistake one column to the left.
 That page is about a *number* nobody measured being treated as one. This is about a
 *category* nobody measured being treated as one.
 
@@ -186,7 +186,7 @@ each has a membership rule doing one job and an attribution doing another:
 - **Diagnosis codes.** A membership rule built for billing, used as a phenotype.
 - **Deprivation by postcode.** An area statistic attributed to the individuals in it
   — which is the ecological fallacy, and the same error
-  [AREAS.md](#AREAS.md) reports for Denmark.
+  [AREAS.md](AREAS.md) reports for Denmark.
 
 ## What to demand instead
 
@@ -206,8 +206,8 @@ much as about the world.
 
 ---
 
-*Companion pages: [RESIDUAL.md](#RESIDUAL.md) for the same error committed on a
-number, [AREAS.md](#AREAS.md) for the measured Danish case, `X22` in
-[EXPERIMENTS.md](#EXPERIMENTS.md) for the test that would settle it here. And the
+*Companion pages: [RESIDUAL.md](RESIDUAL.md) for the same error committed on a
+number, [AREAS.md](AREAS.md) for the measured Danish case, `X22` in
+[EXPERIMENTS.md](EXPERIMENTS.md) for the test that would settle it here. And the
 obvious self-application: this project sorts 165 mechanisms into 17 groups, which is
 a partition nobody has scored either.*

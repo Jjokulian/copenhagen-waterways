@@ -6,14 +6,14 @@
 
 ### The four words people actually use
 
-This page takes its problem statement from the public, not from the monitoring programme, because the monitoring programme measures what it can and the public names what it minds. Across the recorded public argument ([POLITICS.md](#POLITICS.md)) the damage is named with four words, and it is worth noticing that **no one in that record — on any side — says the water is fine.**
+This page takes its problem statement from the public, not from the monitoring programme, because the monitoring programme measures what it can and the public names what it minds. Across the recorded public argument ([POLITICS.md](POLITICS.md)) the damage is named with four words, and it is worth noticing that **no one in that record — on any side — says the water is fine.**
 
 | what people call it | what they mean by it | what Denmark measures | where the word and the measurement come apart |
 |---|---|---|---|
-| **iltsvind** | the sea is suffocating | dissolved oxygen below 4 mg/l **in stratified bottom water** | it needs depth and a sealed layer. Køge Bugt is shallow, mixes, and has no iltsvind on record — including 2023 and 2025 ([CURRENTS.md](#CURRENTS.md)). Whether the criterion is *structurally* unreachable there is our inference and is not settled |
+| **iltsvind** | the sea is suffocating | dissolved oxygen below 4 mg/l **in stratified bottom water** | it needs depth and a sealed layer. Køge Bugt is shallow, mixes, and has no iltsvind on record — including 2023 and 2025 ([CURRENTS.md](CURRENTS.md)). Whether the criterion is *structurally* unreachable there is our inference and is not settled |
 | **fedtemøg** | greasy, foul water and a shore you do not want to walk on | nothing | there is no instrument. It is not a scientific term and no programme carries it |
 | **fiskedød** | dead fish, visibly, in numbers | no open register | the events happen and are recorded nowhere the public can read |
-| **livet i fjordene** | the structural life is gone | eelgrass depth limit, some bottom fauna | measured — through a light proxy that censors itself in shallow water ([LIGHT.md](#LIGHT.md)) |
+| **livet i fjordene** | the structural life is gone | eelgrass depth limit, some bottom fauna | measured — through a light proxy that censors itself in shallow water ([LIGHT.md](LIGHT.md)) |
 
 **Three of the four have no usable measurement, and the fourth cannot be recorded in the bay next to Copenhagen.** Everything on this page is shaped by that: the things people mind are, for the most part, unmeasured, and any solution below has to be judged without being able to watch them improve.
 
@@ -26,7 +26,7 @@ The phrase in the record is *fjorde og indre farvande* — fjords and inner wate
 - **The open sea around Denmark**, which people also call dead.
 - **The shoreline**, where material from any of the above lands, sits and smells, and where most people meet the problem directly.
 
-[AREAS.md](#AREAS.md) is why the distinction earns a section: a fix that is true of Denmark is true of nowhere in it. Copenhagen carries the specifics in Part Two because it is the one place where the flow paths, the constructed drainage and the receiving water are mapped closely enough to name *which street, which volume, which site.* The same avenues apply elsewhere with the particulars still to be filled in.
+[AREAS.md](AREAS.md) is why the distinction earns a section: a fix that is true of Denmark is true of nowhere in it. Copenhagen carries the specifics in Part Two because it is the one place where the flow paths, the constructed drainage and the receiving water are mapped closely enough to name *which street, which volume, which site.* The same avenues apply elsewhere with the particulars still to be filled in.
 
 ### What sits underneath those four words
 
@@ -51,7 +51,7 @@ it does **not** establish, because this section has already had to be rewritten 
 for claiming past its evidence.
 
 **1. The nutrient account never beat the alternatives; it is the one with a monitoring
-programme.** All 166 mechanisms in [the register](#HYPOTHESES.md) have been
+programme.** All 166 mechanisms in [the register](HYPOTHESES.md) have been
 [triaged](hypodrafts/TRIAGE.md) against the data that exists. Twenty-four are testable
 now — **and not one of them is in the nutrient group.** Every entry there is blocked on
 a fetch, unscoreable, or unestablished. Forty mechanisms cannot be tested at all
@@ -73,7 +73,7 @@ was not real. Measured estuary nitrogen fell 24–62% over the same period.
 at national scale. That is an aggregate over catchments whose individual pass-through
 ranges from zero to a third. **The strength of the national fit is not evidence that
 the local coefficient is stable — it is what aggregation does to a variable one.** The
-same shape appears twice more here: [water bodies](#AREAS.md) that carry no signal
+same shape appears twice more here: [water bodies](AREAS.md) that carry no signal
 within themselves, and a national oxygen trend that [tracks which stations were
 reporting](stations.html).
 
@@ -87,7 +87,7 @@ be separated from it* — the category is a mixture by its own definition.
 *Fiskedød* has no open register. *Livet i fjordene* is a claim about structure that a
 gas concentration does not address. **A framing that measures oxygen cannot report
 progress on three of the four things people are actually complaining about**, and
-[Køge Bugt](#PLACES.md) is the case: the loudest claim in the country, and among the
+[Køge Bugt](PLACES.md) is the case: the loudest claim in the country, and among the
 best-oxygenated waters in it, with no registered *iltsvind* in 2023 or 2025.
 
 ### The word the framing leaves out
@@ -116,7 +116,7 @@ Every number above is in kilograms of nitrogen per hectare, which is a way of no
 
 **Because that is what the nitrogen is.** An animal is a device for turning feed into meat and excrement, and the excrement is the load. Taking the field balance's manure figure at the current area, **about 226 kt of manure nitrogen goes onto Danish land in a year**, against **27–30 kt** in the sewage of everyone who lives here — a factor of about **9**, before a treatment plant removes most of the human half and nothing removes the other. *Derived, and marked as such:* the manure figure is a norm product times an area, and the human figure uses a stated per-person convention, so both can be redone with different assumptions and neither is a measurement of a river.
 
-**And the land is the same fact in another unit.** 68% of Danish farmland grows feed and 4.7% grows food people eat directly, which is why the mineral fertiliser is not a separate story: most of it is spread to grow what the animals eat. [NITROGEN.md](#NITROGEN.md) works the attribution through, and the conclusion it reaches is that **the herd is behind most of the nitrogen applied to Danish soil — the manure directly, and the majority of the bag through what it is spread on.**
+**And the land is the same fact in another unit.** 68% of Danish farmland grows feed and 4.7% grows food people eat directly, which is why the mineral fertiliser is not a separate story: most of it is spread to grow what the animals eat. [NITROGEN.md](NITROGEN.md) works the attribution through, and the conclusion it reaches is that **the herd is behind most of the nitrogen applied to Danish soil — the manure directly, and the majority of the bag through what it is spread on.**
 
 So the public argument is conducted as a dispute about fertiliser policy, quotas and farmers, and the arithmetic underneath it is a question about how many animals a country of six million people keeps, and what happens to what they excrete. **That sentence is never the one anybody says**, and every instrument in the debate is shaped by its absence: a quota regulates the bag first, because the bag is the part that can be reduced without anybody deciding anything about animals.
 
@@ -124,7 +124,7 @@ So the public argument is conducted as a dispute about fertiliser policy, quotas
 
 Two things follow from counting the animals, and the second one is the structural point of this whole document arriving from an unexpected direction.
 
-**First: nitrogen is one constituent of a mixture, and it is the only one the ledger prices.** What leaves an animal is not nitrogen, it is faeces — phosphorus and potassium, organic carbon that is oxygen demand by another name, ammonium that consumes oxygen as a reductant rather than feeding anything, sulphide, the copper and zinc that go into feed, the veterinary antibiotics and antiparasitics that go into the animals, whatever resistance those select for, hormones, pathogens, and the disinfectants used to clean the barn. [OXYGEN.md](#OXYGEN.md) prices four of those routes in grams of O₂ per gram and notes that **none of them needs nitrogen to work**. The load account carries the nitrogen and the phosphorus. Everything else in the list is either uncounted or, in the case of the antiparasitics, held in a sales register at quarterly resolution with no measurement of what became of them — which this project has already recorded as one of its open gaps.
+**First: nitrogen is one constituent of a mixture, and it is the only one the ledger prices.** What leaves an animal is not nitrogen, it is faeces — phosphorus and potassium, organic carbon that is oxygen demand by another name, ammonium that consumes oxygen as a reductant rather than feeding anything, sulphide, the copper and zinc that go into feed, the veterinary antibiotics and antiparasitics that go into the animals, whatever resistance those select for, hormones, pathogens, and the disinfectants used to clean the barn. [OXYGEN.md](OXYGEN.md) prices four of those routes in grams of O₂ per gram and notes that **none of them needs nitrogen to work**. The load account carries the nitrogen and the phosphorus. Everything else in the list is either uncounted or, in the case of the antiparasitics, held in a sales register at quarterly resolution with no measurement of what became of them — which this project has already recorded as one of its open gaps.
 
 **Second, and this is the part that should be uncomfortable for the argument in section 2: slurry storage is a basin.** Danish rules require months of storage capacity and forbid spreading through the autumn and winter, so the material accumulates in a covered tank, goes anoxic exactly as a sewer basin does, and is then emptied onto fields in a short legal window in spring. **Stored, reduced, concentrated, and released on a schedule.** The only difference from the flush this document spends section 2 attacking is what opens the valve: rainfall there, a calendar and a regulation here.
 
@@ -144,7 +144,7 @@ Put the two sources side by side at the same nitrogen mass — one kilogram of N
 | **How much has to be applied** | what the crop needs | more, because only 70–85% of it counts as available, so the rest is soil pool and later leaching |
 | **What is lost to the air** | little, except from urea | a substantial ammonia fraction at spreading, some of which comes back down on land and water |
 
-**So the same number in the account is not the same event in the water.** The mineral kilogram is a fertiliser and nothing else: it does harm by feeding something, which requires the something to be there and the light to be right. The animal kilogram is a fertiliser *and* an oxygen demand *and* a delivery vehicle for everything else in the mixture, and two of those three act without waiting for a growing season. That is [§3 of NITROGEN.md](#NITROGEN.md) — nitrogen mass is the wrong currency — with the two sources named.
+**So the same number in the account is not the same event in the water.** The mineral kilogram is a fertiliser and nothing else: it does harm by feeding something, which requires the something to be there and the light to be right. The animal kilogram is a fertiliser *and* an oxygen demand *and* a delivery vehicle for everything else in the mixture, and two of those three act without waiting for a growing season. That is [§3 of NITROGEN.md](NITROGEN.md) — nitrogen mass is the wrong currency — with the two sources named.
 
 It has a direct consequence for the instrument. **A quota written in kilograms of nitrogen treats the two as interchangeable, so a holding can meet it by swapping a bag kilogram for a slurry kilogram** and, on the account, have complied — while increasing every constituent the account does not carry. That is not a hypothetical failure mode. It is the direction the arithmetic already pushes, because the slurry is there and has to go somewhere and the bag is the part that can be cut.
 
@@ -164,9 +164,9 @@ So on the evidence available here, the sequence is not *faeces beats nitrogen*. 
 
 **Which is a statement about instruments, not about magnitudes.** Nobody in this project can say whether channel two is a tenth of channel one or a hundredth, because **the measurements do not exist**: Danish marine metal and biocide monitoring lives largely in mussel tissue at twenty-five stations, avermectin residues in Danish manure, soil, runoff or sediment are recorded here as *missing entirely*, and no stream in this project's data has been sampled for COD on the days after a spreading window. The honest position is the uncomfortable one: **the second channel is unpriced, not small.** An unmeasured quantity is not a zero, and it is not a large number either.
 
-**So it is an open problem, and it has a design.** [`X23` in EXPERIMENTS.md](#EXPERIMENTS.md) states it: flow-triggered samplers on paired stream catchments through the spreading window and again in an autumn window when spreading is forbidden, matched on soil and drainage and contrasted on livestock density, measuring the payload rather than only the nutrients — and using faecal sterols and host-specific markers, which is what turns a concentration into an attribution. **The spreading window is the manipulation**; it happens every spring and is applied to the whole country at once, so the experiment is mostly a matter of being there with a sampler when it does. Grab sampling cannot substitute: this project's own sources report transport underestimated in all three streams of the 2018 GUDP study, and an event is exactly what a fortnightly visit misses.
+**So it is an open problem, and it has a design.** [`X23` in EXPERIMENTS.md](EXPERIMENTS.md) states it: flow-triggered samplers on paired stream catchments through the spreading window and again in an autumn window when spreading is forbidden, matched on soil and drainage and contrasted on livestock density, measuring the payload rather than only the nutrients — and using faecal sterols and host-specific markers, which is what turns a concentration into an attribution. **The spreading window is the manipulation**; it happens every spring and is applied to the whole country at once, so the experiment is mostly a matter of being there with a sampler when it does. Grab sampling cannot substitute: this project's own sources report transport underestimated in all three streams of the 2018 GUDP study, and an event is exactly what a fortnightly visit misses.
 
-And the dense version — a node on every stream that reaches the sea, so that no result anywhere has to be extrapolated to a place nobody visited — is constructed in [SENSING.md](#SENSING.md), down to the sensors, the fingerprint that separates a pig from a person from a road, and what it would cost. It comes to about the price of twenty streets. **[The protocol is written out](#SETTLE.md)**: three hypotheses stated so they can lose, the decision rules fixed before the first sample, twelve matched catchment pairs, and a pilot inside the reach of one association.
+And the dense version — a node on every stream that reaches the sea, so that no result anywhere has to be extrapolated to a place nobody visited — is constructed in [SENSING.md](SENSING.md), down to the sensors, the fingerprint that separates a pig from a person from a road, and what it would cost. It comes to about the price of twenty streets. **[The protocol is written out](SETTLE.md)**: three hypotheses stated so they can lose, the decision rules fixed before the first sample, twelve matched catchment pairs, and a pilot inside the reach of one association.
 
 The three things that would settle it are cheap and none of them is being done: that event-based sampling in the days after spreading, copper and zinc with veterinary residues in stream and marine sediment rather than in mussels alone, and the rendering and slurry-tank volumes that would say how much material is in the system in the first place. Until then the correct sentence is **not** *the faeces are the problem*. It is: **the account has one channel, the source has two, and only the first has ever been weighed.**
 
@@ -183,7 +183,7 @@ whichever of 166 mechanisms dominates, which is why they survive a finding that 
 field cannot be resolved.
 
 What the findings do change is the *order*: [Places, not
-categories](#PLACES.md) takes the coasts one at a time, because one is four times worse
+categories](PLACES.md) takes the coasts one at a time, because one is four times worse
 than anywhere else and is not the one anybody argues about — and because a trial at
 Mariager says nothing about Lillebælt when the land-to-estuary coefficient varies
 twenty-six-fold between them.
@@ -192,9 +192,9 @@ twenty-six-fold between them.
 
 Because three of the four public words have no measurement, **the solutions below cannot currently verify their own success.** Rainwater rivers, a wetland outlet, treatment and source control can each be built, costed and monitored for the things that *are* instrumented — volumes, loads, concentrations. None of that would tell anyone whether the shore stopped smelling.
 
-That gap is fixable and cheap, and it is the argument for `X19` and `X20` in [EXPERIMENTS.md](#EXPERIMENTS.md): a panel that reports on a schedule including the days nothing happens, and a structured record from the people who have watched the same ground for forty years. Without an outcome record the whole of Part Two is an argument from mechanism, and it should be read as one.
+That gap is fixable and cheap, and it is the argument for `X19` and `X20` in [EXPERIMENTS.md](EXPERIMENTS.md): a panel that reports on a schedule including the days nothing happens, and a structured record from the people who have watched the same ground for forty years. Without an outcome record the whole of Part Two is an argument from mechanism, and it should be read as one.
 
-Two things deliberately not on this page. The public argument itself — who said what, when, and whether it was checkable — is [POLITICS.md](#POLITICS.md), and it is a different object of study. And *how pollution becomes visible to the public at all*, which is a real problem and a genuinely separate project, is [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) item 9.
+Two things deliberately not on this page. The public argument itself — who said what, when, and whether it was checkable — is [POLITICS.md](POLITICS.md), and it is a different object of study. And *how pollution becomes visible to the public at all*, which is a real problem and a genuinely separate project, is [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) item 9.
 
 ## Part two — the solution
 
@@ -229,7 +229,7 @@ Measured against it:
 | Within 100 m of anything in the plan | 64% |
 | **With no surface route within 100 m** | **46%** |
 
-So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **54% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](#SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
+So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **54% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
 
 **What is missing is the connection.** A skybrudsvej is designed against a hundred-year event: it activates when the system is already overwhelmed, a handful of times a decade. Ordinary heavy rain — the rain that actually causes overflows, many times a year — still goes down the gully into the combined pipe exactly as before. The surface network was built to protect the city from water, not to protect the sea from the city.
 
@@ -257,7 +257,7 @@ It is not free of the thing it avoids. **Open-cut finds an unmapped cable; a bor
 
 **And the density of that problem can now be counted rather than asserted.** The city publishes its own structures — 123,806 gully gratings and 85,816 manholes and wells, each with an elevation, maintained to 2026. Inside the combined-sewered catchments that is **102,483 gratings and 73,317 chambers**, against 1,296 km of street: **a grating about every 13 m and a chamber about every 18 m.** A bore is not threading an empty metre. It is threading a metre with a lid in it every twenty paces, and each lid is a thing that goes down.
 
-**The same register also shows what it does not know.** Both layers carry a type column — `ristetype`, `broendtype` — and it is empty on **100% of the gratings and 94% of the wells.** The city knows where its structures are, to the centimetre in the vertical, and its own record does not say what any of them is: which lid is a sewer manhole, which is a gully pot, which belongs to water, gas or telecom. That is the [unfilled-field class](#CONSTRUCTED.md) of this project's error taxonomy, in the register a contractor would plan from — and it is the concrete form of the objection above. The instrument that would answer it is the utility register, which is not open.
+**The same register also shows what it does not know.** Both layers carry a type column — `ristetype`, `broendtype` — and it is empty on **100% of the gratings and 94% of the wells.** The city knows where its structures are, to the centimetre in the vertical, and its own record does not say what any of them is: which lid is a sewer manhole, which is a gully pot, which belongs to water, gas or telecom. That is the [unfilled-field class](CONSTRUCTED.md) of this project's error taxonomy, in the register a contractor would plan from — and it is the concrete form of the objection above. The instrument that would answer it is the utility register, which is not open.
 
 > **[The arrangement in three dimensions →](section3d.html)** — the same street at its real sizes: the bored line, the sewer left where it is, the shaft with its pan, and the liner. Every dimension is a named parameter that says whether it is measured or merely stated, and all of them move. It also answers the question this section keeps circling — whether a pipe that carries the flow is still fast enough to carry its own grit.
 
@@ -362,7 +362,7 @@ The foul side carries no population figure on purpose. Nobody here has sourced o
 
 > **[What it would look like from the bank →](rainwater_river.html)** — an artist's impression of the same arrangement at eye level: the pipes handing the rain to an open channel, the channel as a river through the city, and the reed cells on Amager that settle what the streets gave it. It is drawn because *light treatment on Amager* is easy to hear as sewage ponds in a bird reserve, and it is not that: what runs in it is rain, the sediment the rain carries, and — in the scenario where what people put down a drain is dealt with at source — the water from a shower or a washing machine. The toilet and the kitchen stay in a different pipe, which is drawn beside it.
 
-**And what is held between flushes is not the water that went in.** A basin holding settled sewage solids goes anoxic in the sediment within days, and what leaves in the flush is the reduced product of everything that settled since the last one. [OXYGEN.md](#OXYGEN.md) prices those routes and none of them is fertilisation: organic matter that arrived already made consumes **1.0 g O₂ per g COD** with no growth step, ammonium consumes **4.57 g O₂ per g N** as a reductant rather than a nutrient, sulphide out of reduced sediment **2.00 g O₂ per g S**, and fat about **2.9 g O₂ per g** — all of it immediate, and all of it arriving as a pulse rather than a season. The same anoxia releases iron-bound phosphate ([`A2`](#HYPOTHESES.md)), so the flush delivers the nutrient too, in the form the sediment lets go of. Not one of these routes is representable in a load ledger written in tonnes of nitrogen a year: they are oxygen demand, not nitrogen supply, and they land in hours.
+**And what is held between flushes is not the water that went in.** A basin holding settled sewage solids goes anoxic in the sediment within days, and what leaves in the flush is the reduced product of everything that settled since the last one. [OXYGEN.md](OXYGEN.md) prices those routes and none of them is fertilisation: organic matter that arrived already made consumes **1.0 g O₂ per g COD** with no growth step, ammonium consumes **4.57 g O₂ per g N** as a reductant rather than a nutrient, sulphide out of reduced sediment **2.00 g O₂ per g S**, and fat about **2.9 g O₂ per g** — all of it immediate, and all of it arriving as a pulse rather than a season. The same anoxia releases iron-bound phosphate ([`A2`](HYPOTHESES.md)), so the flush delivers the nutrient too, in the form the sediment lets go of. Not one of these routes is representable in a load ledger written in tonnes of nitrogen a year: they are oxygen demand, not nitrogen supply, and they land in hours.
 
 <details class="work">
 <summary>The flush does more than take oxygen — eleven routes it also takes, and how many of them anything in Denmark records</summary>
@@ -380,11 +380,11 @@ The rest, with what each acts on and whether anything in Denmark records it:
 | Odour | whether the place is usable | **nothing** |
 | Pathogens | bathing risk, for the days after | partly — bathing water, in season, at designated points only |
 | Unionised ammonia (NH₃, set by pH and temperature) | gill-breathing animals, directly and quickly | as total ammonium sometimes; as toxicity, no |
-| Phosphate, released as the sediment reduces ([`A2`](#HYPOTHESES.md)) | production weeks later, elsewhere | in some series; never attributed to an event |
-| Turbidity, and the light it takes ([LIGHT.md](#LIGHT.md)) | eelgrass, which needs light to keep sulphide out ([`T1`](#HYPOTHESES.md)) | Secchi — which this project found **right-censored** at shallow stations |
-| An organic blanket on the bed | benthic fauna, and the skin that stabilises sediment ([`D8`](#HYPOTHESES.md)) | bundfauna surveys, infrequent and rarely after an event |
+| Phosphate, released as the sediment reduces ([`A2`](HYPOTHESES.md)) | production weeks later, elsewhere | in some series; never attributed to an event |
+| Turbidity, and the light it takes ([LIGHT.md](LIGHT.md)) | eelgrass, which needs light to keep sulphide out ([`T1`](HYPOTHESES.md)) | Secchi — which this project found **right-censored** at shallow stations |
+| An organic blanket on the bed | benthic fauna, and the skin that stabilises sediment ([`D8`](HYPOTHESES.md)) | bundfauna surveys, infrequent and rarely after an event |
 | Metals, PAH, tyre wear, microplastics | a food chain, over years | well in pond effluent, almost nowhere in a receiving water |
-| A kill, and then the decay of what it killed ([CAUSATION.md](#CAUSATION.md)) | the standing stock, which becomes the next oxygen demand | **nothing** — no open register of fish kills |
+| A kill, and then the decay of what it killed ([CAUSATION.md](CAUSATION.md)) | the standing stock, which becomes the next oxygen demand | **nothing** — no open register of fish kills |
 | Timing — a pulse into warm, stratified, still water | everything above, at the worst hour of the year for it | no instrument has a time axis this short |
 
 Read down the third column. **One route is measured well, two partly, two by records that exist but cannot see an event, and six not at all** — and the six include both the direct human encounter and the kill. An annual nitrogen ledger sees none of the eleven. An oxygen series sees the first and reports it as a monthly value at a station that may be kilometres away.
@@ -393,7 +393,7 @@ Read down the third column. **One route is measured well, two partly, two by rec
 
 </details>
 
-*Does not establish:* what any particular basin holds. Nobody in this project has measured basin sediment, and the composition would be site-specific if they had. What the arithmetic does establish is that a delayed, concentrated, reduced discharge cannot be priced by the quantity the accounting measures — which is the same failure as [the annual average](#RESIDUAL.md), one storey down.
+*Does not establish:* what any particular basin holds. Nobody in this project has measured basin sediment, and the composition would be site-specific if they had. What the arithmetic does establish is that a delayed, concentrated, reduced discharge cannot be priced by the quantity the accounting measures — which is the same failure as [the annual average](RESIDUAL.md), one storey down.
 
 **If the treated effluent is still not good enough for the water it enters, that is an argument about where the outlet is, not about how many basins there are.** A plant whose effluent a bay cannot absorb should discharge into a water that can hold it and work on it — the same terminal-water logic, applied to the small stream instead of the large one. What it should not do is keep the shore as its default outlet on the grounds that the pipe already goes there.
 
@@ -563,7 +563,7 @@ The disposal argument in the next section is about a quantity nobody had sized, 
 
 The objection that a pond banks contaminants is right, and it is not an argument against the pond. **The city's surface load settles somewhere in every version of this**, including the one where nothing is built. Left to the outfall, it settles on the seabed of the bay it discharges into — which is banking too, in a basin nobody can drain, with no schedule and no operator.
 
-The difference is what happens next. Sediment on a seabed is not at rest: a storm, a trawl, a propeller or a dredging campaign lifts it back into the water, and [OXYGEN.md](#OXYGEN.md) prices that route at **2.00 g O₂ per g of sulphide** oxidised on the way up — a demand that needs no nitrogen and appears in no load ledger. Anoxic sediment also releases the iron-bound phosphate it was holding ([`A2`](#HYPOTHESES.md)). And the metals, PAH, tyre wear and microplastics that came off the street are then in a food chain instead of in a bucket.
+The difference is what happens next. Sediment on a seabed is not at rest: a storm, a trawl, a propeller or a dredging campaign lifts it back into the water, and [OXYGEN.md](OXYGEN.md) prices that route at **2.00 g O₂ per g of sulphide** oxidised on the way up — a demand that needs no nitrogen and appears in no load ledger. Anoxic sediment also releases the iron-bound phosphate it was holding ([`A2`](HYPOTHESES.md)). And the metals, PAH, tyre wear and microplastics that came off the street are then in a food chain instead of in a bucket.
 
 A pond cell is the same material in a place with an operator, a schedule and a lorry. That is the whole of the claim — not that treatment makes the load disappear, but that it decides **where the load accumulates and whether anyone can lift it out again**. The condition attached is the one in the objections: a cell that is never dredged is the seabed with a fence around it.
 
@@ -586,7 +586,7 @@ The answer is that **the disposal route is decided by the same evolutionary prio
 
 #### Why burial actually works on land and not in the bay
 
-This is the part that makes the first half of the principle more than a hope, and it comes straight out of [SEABED.md](#SEABED.md).
+This is the part that makes the first half of the principle more than a hope, and it comes straight out of [SEABED.md](SEABED.md).
 
 Metals buried in **marine** sediment are held as sulphides in anoxic mud, and they are released again on re-oxidation. A dead bed crosses the resuspension threshold several times more often than a living one, so the marine sink is a store that storms keep re-opening — conditional on exactly the bed integrity that is failing.
 
@@ -696,7 +696,7 @@ The consequence for anything proposed on this page is concrete: **a chemical-loa
 
 ### 5. Source control, sorted by what life has met before
 
-The subsidy–stress argument in [CAUSATION.md](#CAUSATION.md) says nitrogen produces mush rather than meadow because the organisms that would have used it well are gone. If that is right, the substances that removed them sit upstream of the nutrient problem, and no amount of nutrient policy reaches them.
+The subsidy–stress argument in [CAUSATION.md](CAUSATION.md) says nitrogen produces mush rather than meadow because the organisms that would have used it well are gone. If that is right, the substances that removed them sit upstream of the nutrient problem, and no amount of nutrient policy reaches them.
 
 The useful way to sort those substances is **not by how toxic they are**, and not by half-life either. It is by whether life has an **evolutionary prior** for them — and, where it does not, whether the substance *breaks down into something it does*.
 
@@ -805,7 +805,7 @@ Four advantages, and they follow from the mechanism rather than from enthusiasm:
 
 > Which gives a clean symmetry with this section's other argument, and it is worth holding both at once. **A novel chemical has no evolutionary prior and never degrades. A novel organism has a prior and never stops.** Both are irreversible, in different ways, and neither irreversibility is a reason to prefer the other by default. The test for an introduction is therefore the same shape as the test for a novo-chemical — host specificity demonstrated rather than assumed, and a bounded release rather than a dispersive one — and where the candidate is *already resident* and merely being restored to abundance, as in sediment inoculation, that test is largely already passed.
 
-And there is a second reason to do it this way, which has nothing to do with ecology. **A substitution can be rolled out; a ban can only be imposed.** Because nobody has to absorb a loss to make it happen, it can be introduced catchment by catchment on a staggered schedule — which is simultaneously the intervention and the experiment. Each area is compared against its own record before it crosses over and against the areas that have not yet crossed, and no one is withheld from the treatment, only scheduled later. That design is `X17` in [EXPERIMENTS.md](#EXPERIMENTS.md), and it supplies the one thing the chemical argument has never had: **a counterfactual, at the scale the argument is made**. Every Danish catchment has been sprayed for decades, so there is currently nothing to compare against.
+And there is a second reason to do it this way, which has nothing to do with ecology. **A substitution can be rolled out; a ban can only be imposed.** Because nobody has to absorb a loss to make it happen, it can be introduced catchment by catchment on a staggered schedule — which is simultaneously the intervention and the experiment. Each area is compared against its own record before it crosses over and against the areas that have not yet crossed, and no one is withheld from the treatment, only scheduled later. That design is `X17` in [EXPERIMENTS.md](EXPERIMENTS.md), and it supplies the one thing the chemical argument has never had: **a counterfactual, at the scale the argument is made**. Every Danish catchment has been sprayed for decades, so there is currently nothing to compare against.
 
 The agronomic outcome has to be measured with the same weight as the marine one, and published whichever way it falls. If biological substitution costs yield, that is a number this argument has to carry — not something for the people who farm to discover afterwards.
 
@@ -842,7 +842,7 @@ So: *banned as a mass-adopted material, reserved for special products in special
 
 Zinc is the largest metal term in the Danish stormwater typetal by an order of magnitude — **170 µg/l** in combined overflow and 130 µg/l in separate stormwater, against 16 and 9 for copper, with a maximum observed of 400. The flux is not small.
 
-**The sink is conditional, and the condition is failing.** Metals bury as sulphides in anoxic sediment and come back out on re-oxidation. [SEABED.md](#SEABED.md) computes that a dead bed crosses the resuspension threshold several times more often than a living one. So sediment is not a terminal sink — it is a store that the same degradation we are worried about keeps re-opening. Burial only counts while the bed stays intact, which ties metal policy directly to bed integrity and to trawling. The two cannot be argued separately.
+**The sink is conditional, and the condition is failing.** Metals bury as sulphides in anoxic sediment and come back out on re-oxidation. [SEABED.md](SEABED.md) computes that a dead bed crosses the resuspension threshold several times more often than a living one. So sediment is not a terminal sink — it is a store that the same degradation we are worried about keeps re-opening. Burial only counts while the bed stays intact, which ties metal policy directly to bed integrity and to trawling. The two cannot be argued separately.
 
 **And adaptation has a specific price.** Communities do become metal-tolerant; the phenomenon is well documented and has a name, pollution-induced community tolerance. But tolerance at the community level is achieved by **losing the sensitive species**, and the sensitive ones are disproportionately the slow, structural, long-lived organisms. *Life adapts* and *the higher life is replaced by the simple life* are the same sentence read two ways — which is the mechanism this whole document is about, arriving from a different direction.
 
@@ -872,11 +872,11 @@ And that is the same fact read backwards. Once the structural life is gone, noth
 
 > **The two arguments make different predictions, and the difference is testable.** Mass balance is linear in area: half the farm removes half the nitrogen. Imposed limitation is not — below some threshold of cover nothing changes, and above it the state flips and holds. If restoration turns out to be linear in area, aquaculture is a filter and should be costed as one. If it is threshold-shaped, it is a state change, and a small intervention in the right place is worth more than a large one spread thin.
 
-*The honesty here.* This is well established in shallow lakes, where the clear-water plant-dominated state and the turbid algae-dominated state are documented alternative stable states with exactly this mechanism behind them. The coastal marine analogue is argued from the same ecology and is much less firmly demonstrated. It is a mechanism with good foundations, not a measured Danish result, and the experiment that would settle it — put it back where conditions are said to be adequate, and see whether it holds — is `X10` in [EXPERIMENTS.md](#EXPERIMENTS.md).
+*The honesty here.* This is well established in shallow lakes, where the clear-water plant-dominated state and the turbid algae-dominated state are documented alternative stable states with exactly this mechanism behind them. The coastal marine analogue is argued from the same ecology and is much less firmly demonstrated. It is a mechanism with good foundations, not a measured Danish result, and the experiment that would settle it — put it back where conditions are said to be adequate, and see whether it holds — is `X10` in [EXPERIMENTS.md](EXPERIMENTS.md).
 
 - **Extractive aquaculture.** Mussels and macroalgae remove nitrogen as biomass and are harvested rather than left to decay. At the loads computed for this bay, single-digit km² would match the overflow nitrogen. It is the only intervention on this list that removes what is already in the water rather than reducing what is added.
 - **Eelgrass, where the light allows it.** Uptake, sediment stabilisation and habitat in one organism. Turbidity is the binding constraint, which links it directly to items 1 and 3.
-- **Leave the bed alone where it is recovering.** A living bed resuspends several times less often than a dead one ([SEABED.md](#SEABED.md)), so bed integrity is not only a fisheries question — it changes how often the accumulated sulphide and metals come back into the water.
+- **Leave the bed alone where it is recovering.** A living bed resuspends several times less often than a dead one ([SEABED.md](SEABED.md)), so bed integrity is not only a fisheries question — it changes how often the accumulated sulphide and metals come back into the water.
 - **Harvest as a use, not a disposal.** Extracted biomass that is too contaminated for human consumption still has uses where accumulation is acceptable — which is a question about what we are willing to do with it, not a technical obstacle.
 
 *The disposal question* — extractive aquaculture concentrates metals and organic contaminants in the harvest — is answered in section 4, and the answer splits the harvest rather than the idea. Biomass carrying deep-prior metals has a threshold below which it re-enters the terrestrial cycle; biomass carrying cadmium or mercury does not, because those biomagnify and have no prior. So where a harvest goes has to be settled by assay, before it is scaled, not after.
@@ -922,7 +922,7 @@ But *banning a product from the market* and *refusing to buy or permit it* are d
 | **A region or a utility** | override an EU authorisation | make use conditions in discharge permits and abstraction-zone rules — Denmark's own restricted-spraying zones around wellfields are exactly this instrument |
 | **A member state** | unilaterally close its market | tax, restrict a *use*, and apply for a derogation or safeguard. Denmark has done the first two — pesticide taxation, and the pre-harvest glyphosate restriction cited in section 5 |
 
-**So the achievable local instrument is a use and purchase restriction, not a ban** — and it happens to be the one that produces the counterfactual. A municipality that stops buying a compound, on a date, with the date written down, has created exactly the contrast that [`X17`](#EXPERIMENTS.md) says does not exist and cannot be bought.
+**So the achievable local instrument is a use and purchase restriction, not a ban** — and it happens to be the one that produces the counterfactual. A municipality that stops buying a compound, on a date, with the date written down, has created exactly the contrast that [`X17`](EXPERIMENTS.md) says does not exist and cannot be bought.
 
 The brittleness is worth naming because it is systemic rather than particular. **Harmonisation puts the decision at the slowest level and removes the variation that would inform it**, and the two failures compound: the safeguard route exists but demands evidence of harm to a standard that is hard to reach precisely because nobody was allowed to vary the treatment. That circle — *no derogation without evidence, no evidence without a derogation* — is the same shape as the nutrient argument on this page, where the contest was never run and the winner was announced anyway. It is an argument for keeping the use and procurement levers deliberately open at every level below the market, not for leaving the EU's, which does the one thing no city can.
 
@@ -1036,19 +1036,19 @@ The same test distinguishes the good version of the fluorspar argument from the 
 
 The table above is a list of asks addressed to people who would have to be persuaded, funded or compelled. It is the slow half. This is the other one: **things that can be started by whoever already owns the ground, the asset or the decision** — no new authority, no statutory change, and in several cases a revenue rather than a cost.
 
-It matters for a reason beyond willingness. Every entry here creates a place that did something different, on a date — which is the [counterfactual](#PLACES.md) the whole field is short of. A voluntary contributor is not a smaller version of a regulated one. It is the control arm.
+It matters for a reason beyond willingness. Every entry here creates a place that did something different, on a date — which is the [counterfactual](PLACES.md) the whole field is short of. A voluntary contributor is not a smaller version of a regulated one. It is the control arm.
 
 | Who | What they can start | What it costs them | What it would show |
 |---|---|---|---|
 | **A farmer with a coastal outfall** | Run the uptake as well as the discharge: mussel lines or macroalgae in front of the catchment they farm. The nitrogen that left the field is harvested as biomass rather than argued about | capital and a licence — and it is a **crop**, with feed, fertiliser and food markets at the end of it | whether extractive aquaculture removes at the loads that actually arrive here, which section 3 says is the weaker of its two arguments and the one nobody has measured locally |
 | **A landowner upstream** | Take a wet corner out of production and let it be a wetland again — the measure section 6 argues for, at the only scale where it needs nobody's permission | the margin on the worst field on the farm | retention on a real catchment, against its own record |
-| **A municipality** | Refuse a compound in its own procurement and on its own ground, and write the date down. Put everyday rain from one street on the surface route already designed | procurement effort; one street's civil works | the use-restriction lever that [survives harmonisation](#PROGRAMME.md), and the first street-scale before-and-after in the country |
+| **A municipality** | Refuse a compound in its own procurement and on its own ground, and write the date down. Put everyday rain from one street on the surface route already designed | procurement effort; one street's civil works | the use-restriction lever that [survives harmonisation](PROGRAMME.md), and the first street-scale before-and-after in the country |
 | **A utility** | Instrument one large overflow structure for flow rather than for events, and publish the series | one sensor package and the will to publish it | whether the concentration argument or the volume argument is right — which is the largest single uncertainty in this document |
-| **A sports club or a school** | Ask what happens to the infill on their own pitch, and put the answer in the contract at renewal | nothing, at renewal | whether the return obligation in [EXTERNALITY.md](#EXTERNALITY.md) is administratively real or only elegant |
+| **A sports club or a school** | Ask what happens to the infill on their own pitch, and put the answer in the contract at renewal | nothing, at renewal | whether the return obligation in [EXTERNALITY.md](EXTERNALITY.md) is administratively real or only elegant |
 | **A housing association** | Disconnect roofs from the combined sewer into a courtyard basin or a raingarden; agree a fixture standard for what may go to the rain line | a courtyard's worth of work, often already funded as climate adaptation | the greywater case in section 2, at a scale where the plumbing is one owner's decision |
 | **A boat club** | Mechanical hull cleaning instead of antifouling, for the club's own moorings | a haul-out routine | whether occupying the niche beats poisoning it, on copper, in one harbour |
 | **Anyone with a phone** | Record what the shore looked like, dated and located — the [field log](../viz/log.html) exists for exactly this | an evening | the only route to an instrument for *fedtemøg*, which is one of the three public words with nothing behind it |
-| **Anyone with data access this project lacks** | Run the queries in [IF_YOU_HAVE_THE_DATA.md](#IF_YOU_HAVE_THE_DATA.md) and publish what comes back | an afternoon and a login | sixty-one of the 166 mechanisms are blocked on a fetch, not on a thought |
+| **Anyone with data access this project lacks** | Run the queries in [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) and publish what comes back | an afternoon and a login | sixty-one of the 166 mechanisms are blocked on a fetch, not on a thought |
 
 **The farmer row is the one worth arguing about**, so it is stated plainly rather than buried in a table. The standard framing sets the farm against the bay: the farm emits, the bay receives, and the instrument is a restriction on the farm. Extractive aquaculture is the only intervention in this document that **puts the removal in the same hands as the emission and pays for it** — the same business harvests what left the field, and sells it. That does not make the emission acceptable and it is not an offset scheme; the nitrogen still has to come down. It makes the remedy a crop rather than a penalty, which is a different politics from the one that has produced two decades of deadlock — and it is testable on one farm, in one season, by one person who decides to.
 
@@ -1056,7 +1056,7 @@ It matters for a reason beyond willingness. Every entry here creates a place tha
 
 **This is the last step of the solution scope and not a shortcut past it.** Said first, *just try things* is the oldest way to avoid an argument. Said after the hypotheses have been laid out, the data queued, the constructions held against the measurements and the field triaged, it is something else: the recognition that **the observational route to an answer may not exist**. Forty of the 166 mechanisms cannot be scored at all, because the deciding measurement has no column anywhere; twenty more need an experiment nobody has run. No amount of further collection reaches those sixty.
 
-So the entitlement is earned, and the instrument is the one [PLACES.md](#PLACES.md) sets out: **fund trials of solution models, in named places, with pre-stated outcomes, and let the results decide** — with the anti-delay conditions attached there, because this argument is also exactly what somebody who wanted to stall would say.
+So the entitlement is earned, and the instrument is the one [PLACES.md](PLACES.md) sets out: **fund trials of solution models, in named places, with pre-stated outcomes, and let the results decide** — with the anti-delay conditions attached there, because this argument is also exactly what somebody who wanted to stall would say.
 
 What this page adds is the shape of the bill. Two properties make it affordable to be wrong:
 

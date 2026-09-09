@@ -80,7 +80,7 @@ water is unchanged either way.
 **And it belongs beside it** because it answers the question the rest of the site keeps
 raising and cannot settle: what would it take for a harm nobody is measuring to become
 visible at all. That is the same question as `X19` and `X20` in
-[EXPERIMENTS.md](#EXPERIMENTS.md), asked at a different scale.
+[EXPERIMENTS.md](EXPERIMENTS.md), asked at a different scale.
 
 ## What would go in it
 

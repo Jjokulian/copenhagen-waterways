@@ -239,7 +239,7 @@ def main():
       "per catchment, not per municipality, not per sub-basin. Everything is "
       "carried at the resolution it was taken: a position, a time, and where it "
       "exists a depth.\n")
-    a("That is not fastidiousness. [OBSERVING.md](#OBSERVING.md) establishes that a "
+    a("That is not fastidiousness. [OBSERVING.md](OBSERVING.md) establishes that a "
       "water body explains **7.9%** of the variation in the one variable Denmark "
       "measures densely enough to check, and that two stations inside one share "
       "about four percent of their year-to-year variance. A source already summed "

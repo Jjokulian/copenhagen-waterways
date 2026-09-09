@@ -589,10 +589,10 @@ X = [
      "arrives* even where this project disputes how much. **That second outcome is "
      "the one worth pre-committing to publish**, because it argues against the "
      "suspicion that motivated the design.",
-     "The instrument is constructed in [SENSING.md](#SENSING.md) and the full "
+     "The instrument is constructed in [SENSING.md](SENSING.md) and the full "
      "protocol - hypotheses that can lose, the decision rules fixed before the "
      "first sample, the twelve matched pairs and what invalidates the whole thing "
-     "rather than answering it - is [SETTLE.md](#SETTLE.md). "
+     "rather than answering it - is [SETTLE.md](SETTLE.md). "
      "This is the cheapest unbought answer in the whole document. The instruments "
      "are ordinary autosamplers and a lab list, the timing is fixed by a calendar "
      "everyone already knows, and the comparison catchments exist. It is also the "
@@ -638,7 +638,7 @@ X = [
      "zones around wellfields where spraying is restricted — so the instrument "
      "exists and only the randomisation and the marine measurement would be new. "
      "The general form of that observation is the meta-solution in "
-     "[PLACES.md](#PLACES.md): a country that does one thing everywhere has spent "
+     "[PLACES.md](PLACES.md): a country that does one thing everywhere has spent "
      "the contrast that would have told it whether the thing worked, and the "
      "staggered order here is how you buy it back without withholding anything "
      "from anyone."),
@@ -737,7 +737,7 @@ def render(rows, hyp):
         for xid, title, kind, settles, _, why, manip, ctrl, meas, decide, note in rs:
             a(f"### {xid} — {title}\n")
             a(f"`{kind}`\n")
-            named = ", ".join(f"[`{h}`](#HYPOTHESES.md) {titles.get(h, '')}"
+            named = ", ".join(f"[`{h}`](HYPOTHESES.md) {titles.get(h, '')}"
                               for h in settles)
             a(f"**Bears on:** {named}\n")
             a(f"{why}\n")

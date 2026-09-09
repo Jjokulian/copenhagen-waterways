@@ -1,7 +1,7 @@
 # Triage of the hypothesis field
 
 PLAN.md stage 4 says the triage is "most of the work" and that stage 5 is meaningless
-until it exists. This is it: **all 166 lettered hypotheses in [HYPOTHESES.md](HYPOTHESES.md)**,
+until it exists. This is it: **all 166 lettered hypotheses in [HYPOTHESES.md](../HYPOTHESES.md)**,
 each in exactly one class, with the specific blocker.
 
 Nineteen already have a draft or an open-problem entry; those are marked and cite it rather
@@ -388,7 +388,7 @@ world but not in Denmark* as unscoreable **for this archive**, which is a statem
 Denmark's monitoring rather than about nature. Three entries I could not place at all are
 marked *not established* rather than guessed.
 
-And per [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md): **every "not measured" in this table
+And per [KNOWN_AND_UNKNOWN.md](../KNOWN_AND_UNKNOWN.md): **every "not measured" in this table
 should be read as "not found by a search whose sensitivity nobody has characterised."** Six
 things this project called absent turned out to exist in one day. The unscoreable column is
 an upper bound on what is missing, not a measurement of it.

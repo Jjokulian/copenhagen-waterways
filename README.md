@@ -94,6 +94,8 @@ scripts/
   landbrug.py             the same audit, in Danish, addressed to farmers
   export_flood.py         publishes the recovered model as a usable dataset
   flood_web.py            display copies of the sheets, 16x less texture
+  check_links.py          every link, resolved as each reader resolves it
+  check_generated.py      nothing hand-edited into a generated file
   rivers3d.py             the 3D scene, the retrofit section, the routing logic
   observations.py         validates and merges field observations
 data/

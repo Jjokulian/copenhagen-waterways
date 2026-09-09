@@ -376,13 +376,13 @@ What a biogas plant does supply is the thing the manure never otherwise has: **a
 
 ### What the law does to the herd, if the arithmetic binds
 
-The instruments are in the public record rather than in this analysis: L5 passed 119–34 on 3 September 2026 and puts **per-catchment nitrogen quotas on individual holdings from 2027**, with *frivillig arealomlægning* — voluntary land conversion — as the Tripartite's main engine and the quota model described by its own architects as the safety net under it ([POLITICS.md](#POLITICS.md)). **This project has not read the statute**, so what follows is inference from those instruments and from the balance above, and it is offered as a prediction that can be checked rather than as a reading of the law.
+The instruments are in the public record rather than in this analysis: L5 passed 119–34 on 3 September 2026 and puts **per-catchment nitrogen quotas on individual holdings from 2027**, with *frivillig arealomlægning* — voluntary land conversion — as the Tripartite's main engine and the quota model described by its own architects as the safety net under it ([POLITICS.md](POLITICS.md)). **This project has not read the statute**, so what follows is inference from those instruments and from the balance above, and it is offered as a prediction that can be checked rather than as a reading of the law.
 
 **A quota bites on mineral fertiliser first, because manure is not optional.** The bag is the free variable: a holding that must apply less nitrogen buys less of it. The slurry is already there, produced daily by animals that exist, and it has to be spread, stored, sold or processed. So the first years of a tightening quota look like a fertiliser reduction and leave the herd untouched.
 
 **The constraint transfers when the quota falls below what the manure alone supplies.** At that point the arithmetic offers exactly four moves: fewer animals, more hectares to spread on, more nitrogen leaving in the crop, or **the manure nitrogen leaving the holding**. And this is where the design of the Tripartite matters more than its rhetoric: its main engine takes land *out* — wetland conversion, afforestation, set-aside — which raises manure nitrogen per remaining hectare with no change in any herd. **An area policy becomes a livestock policy without ever naming livestock.**
 
-So yes: a byproduct that has to leave is the predictable consequence, and the market for it already half exists — inter-farm slurry contracts, separation plants, and the stripping route above, whose output is a concentrated ammonium salt that travels. **A quota is a demand curve for nitrogen capture**, in the same way the liability settlements are a demand curve for destruction ([PROGRAMME.md](#PROGRAMME.md)) — regulation creating an industry rather than only a cost.
+So yes: a byproduct that has to leave is the predictable consequence, and the market for it already half exists — inter-farm slurry contracts, separation plants, and the stripping route above, whose output is a concentrated ammonium salt that travels. **A quota is a demand curve for nitrogen capture**, in the same way the liability settlements are a demand curve for destruction ([PROGRAMME.md](PROGRAMME.md)) — regulation creating an industry rather than only a cost.
 
 Three things have to be said with it, because each of them can make the prediction wrong:
 
@@ -476,7 +476,7 @@ Vallensbæk, Ishøj and Solrød have **zero** combined-sewer overflows; Greve ha
 
 ### But "downstream" is a claim about water, and it has been tested
 
-An earlier version of this section said the whole shoreline is downstream of the northern discharge. That was inferred from the shape of the bay, and this project has a transport analysis that both supports and qualifies it — which the section never cited. [CURRENTS.md](#CURRENTS.md), on 35,064 hours where the rain record and the current record overlap:
+An earlier version of this section said the whole shoreline is downstream of the northern discharge. That was inferred from the shape of the bay, and this project has a transport analysis that both supports and qualifies it — which the section never cited. [CURRENTS.md](CURRENTS.md), on 35,064 hours where the rain record and the current record overlap:
 
 | | southward transport in the southern Sound |
 |---|---|
@@ -485,11 +485,11 @@ An earlier version of this section said the whole shoreline is downstream of the
 | +6 h after the event | 44.1% |
 | **+12 h after the event** | **59.3%** — 17 points *above* |
 
-So the geometry is right about the plume and wrong about the event. **While the city is overflowing, the water runs north** — heavy Copenhagen rain arrives with cyclonic southwesterlies that drive the Sound northward. Southward transport only exceeds baseline about twelve hours later, by which time the plume is diluted and no longer traceable to an outfall. And [CURRENTS.md](#CURRENTS.md) separately finds that **Køge Bugt does not flush**, so what does arrive stays.
+So the geometry is right about the plume and wrong about the event. **While the city is overflowing, the water runs north** — heavy Copenhagen rain arrives with cyclonic southwesterlies that drive the Sound northward. Southward transport only exceeds baseline about twelve hours later, by which time the plume is diluted and no longer traceable to an outfall. And [CURRENTS.md](CURRENTS.md) separately finds that **Køge Bugt does not flush**, so what does arrive stays.
 
 That matters for what this whole section can claim. A load entering a bay that does not flush is a different quantity from a load entering one that does — and the timing means an event-based attribution (this overflow, that shoreline) is not supported, while an accumulated one may be.
 
-The same bay carries the largest release nobody argued about. [OPEN_PROBLEMS.md](#OPEN_PROBLEMS.md) sets the Øresund fixed link's permitted spill — **up to 370,000 m³** of fines into the water column at the bay's northern entrance, 1995–2000 — against the **498 m³** actually released at Lynetteholm before dumping was stopped. Roughly **seven hundred times**, and the larger one was a permit condition met rather than a controversy. Where that material went has never been computed: the current field used above covers 2022–2026 only, and is about twice too slow in the straits by its own calibration.
+The same bay carries the largest release nobody argued about. [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) sets the Øresund fixed link's permitted spill — **up to 370,000 m³** of fines into the water column at the bay's northern entrance, 1995–2000 — against the **498 m³** actually released at Lynetteholm before dumping was stopped. Roughly **seven hundred times**, and the larger one was a permit condition met rather than a controversy. Where that material went has never been computed: the current field used above covers 2022–2026 only, and is about twice too slow in the straits by its own calibration.
 
 ### Treatment capacity discharging to the bay
 

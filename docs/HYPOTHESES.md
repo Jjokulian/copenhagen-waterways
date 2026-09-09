@@ -28,7 +28,7 @@ So the honest reading of this register's size is not *we have thought of a lot*.
 
 **Some causes may not separate at all.** Several of these plausibly have no independent existence and occur only in combination — the light-and-sulphide interaction of `T1`, the mixture effects of `U1`. Listing them as separable items imposes a structure the world may not have.
 
-> **The consequence for scoring.** Any ranking computed over this field is a ranking *within the field*, not a decomposition of reality. A statement of the form "mechanism X accounts for n% of the problem" would require the field to be complete, disjoint and independent, and it is none of the three. Making that claim anyway would be the residual-estimator error of [RESIDUAL.md](#RESIDUAL.md) committed one level up — treating what is left over after our own enumeration as if it were a measurement of the world.
+> **The consequence for scoring.** Any ranking computed over this field is a ranking *within the field*, not a decomposition of reality. A statement of the form "mechanism X accounts for n% of the problem" would require the field to be complete, disjoint and independent, and it is none of the three. Making that claim anyway would be the residual-estimator error of [RESIDUAL.md](RESIDUAL.md) committed one level up — treating what is left over after our own enumeration as if it were a measurement of the world.
 
 What the register is for is narrower and still worth having. It converts *the cause is X* into *X is one of at least a hundred and twenty-seven, and here is the observable that would tell it apart from its neighbours*. It is written down before anything is scored so that it cannot be trimmed afterwards to whatever the data happened to support. Absence from this list is not evidence of absence, and additions are wanted.
 
@@ -73,7 +73,7 @@ Liebig's floor and Shelford's ceiling, and the essential trace metals sit on bot
 
 **This applies to nitrogen exactly as it applies to copper.** Nitrogen is not a pollutant; it is a requirement with a window, and it has both a floor and a ceiling like every other element on the list. Which means a policy expressed only as *less is better* is a one-tailed treatment of a two-tailed quantity — the same error as *more is better*, pointed the other way.
 
-That is not an argument that Danish coastal water needs more nitrogen. In many places the load is plainly above the optimum and reduction plainly helps. The point is structural and has two consequences. The optimum is a *position in a window*, so the benefit of reduction depends on where an area currently sits, and that position differs by area — which is the argument of [AREAS.md](#AREAS.md) arriving from the chemistry rather than from the statistics.
+That is not an argument that Danish coastal water needs more nitrogen. In many places the load is plainly above the optimum and reduction plainly helps. The point is structural and has two consequences. The optimum is a *position in a window*, so the benefit of reduction depends on where an area currently sits, and that position differs by area — which is the argument of [AREAS.md](AREAS.md) arriving from the chemistry rather than from the statistics.
 
 **And the window is not a property of the substance. It is a property of the whole mixture.** Both ends move with everything else present, by at least four routes, and none of them is exotic:
 
@@ -293,7 +293,7 @@ Stating it that way costs the rhetoric something and is worth it, because the al
 
 It also sharpens the dose argument. A concentration too low to kill the target is not thereby harmless: **sublethal is the regime where selection is strongest**, because it kills enough to matter and spares enough to breed. Which is why total load and ubiquity matter more than per-application concentration, and why the antibiotic instrument — reserve it, do not disperse it — is the right shape of response.
 
-And it is the exact argument behind the evolutionary-prior framework in [PROGRAMME.md](#PROGRAMME.md). A molecule life has met before has left machinery for handling it somewhere in the biosphere; a genuinely novel one has not, and there is no prior to draw on. The difference between those two is not chemistry — it is history.
+And it is the exact argument behind the evolutionary-prior framework in [PROGRAMME.md](PROGRAMME.md). A molecule life has met before has left machinery for handling it somewhere in the biosphere; a genuinely novel one has not, and there is no prior to draw on. The difference between those two is not chemistry — it is history.
 
 It also explains why the state maintains itself. The survivors of the filter are precisely the organisms that do not perform the functions — irrigating sediment, filtering water, holding it down, providing structure, detoxifying sulphide — whose loss made conditions worse in the first place.
 
@@ -1047,7 +1047,7 @@ Household, agricultural and industrial biocides reach the same water and act on 
 
 **Discriminated by.** Summed biocidal load per catchment against decomposer biomass and decomposition rate — the sum, not any single substance against its own threshold, which is the `U1` problem.
 
-**Needs.** A total biocide load figure for Denmark by catchment. Sales data exists by substance nationally; nothing assembles it into an environmental load. *Why* the load has the composition it has is a question about markets rather than about water, so it is argued in [PROGRAMME.md](#PROGRAMME.md) and deliberately not here — every entry in this register has to name an observable in the sea, and that one cannot.
+**Needs.** A total biocide load figure for Denmark by catchment. Sales data exists by substance nationally; nothing assembles it into an environmental load. *Why* the load has the composition it has is a question about markets rather than about water, so it is argued in [PROGRAMME.md](PROGRAMME.md) and deliberately not here — every entry in this register has to name an observable in the sea, and that one cannot.
 
 ### E16 — Conserved targets: "selective" is a claim about dose
 

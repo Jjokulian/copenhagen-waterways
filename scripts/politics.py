@@ -257,7 +257,7 @@ def render(d, a):
       "observation about two texts. It is not an accusation, and it does not become one "
       "by being repeated.\n")
     w("**A property of the reasoning is not a property of the sea.** This is the central "
-      "idea of [RESIDUAL.md](#RESIDUAL.md) and the constraint that matters most here. "
+      "idea of [RESIDUAL.md](RESIDUAL.md) and the constraint that matters most here. "
       "*The stated basis for this claim is thinner than the claim* is a fact about a "
       "document. *The sea is fine* is a fact about water. The first never implies the "
       "second, in either political direction.\n")
@@ -462,7 +462,7 @@ def render(d, a):
 
     # ------------------------------------------------------------------ the ladder
     w("## 4. The ladder, with dates on it\n")
-    w("[RESIDUAL.md](#RESIDUAL.md) describes a five-rung ladder by which a carefully "
+    w("[RESIDUAL.md](RESIDUAL.md) describes a five-rung ladder by which a carefully "
       "qualified technical quantity becomes a claim about the world, each step small "
       "and individually defensible. This record contains the rungs as actual dated "
       "sentences, which is the reason it was collected.\n")
@@ -577,8 +577,8 @@ def render(d, a):
     w("The share attributed to agriculture is a **residual**: modelled natural "
       "background and reported point sources are subtracted from the load, and what "
       "remains is routed through the modelled retention map and called agriculture. "
-      "[RESIDUAL.md](#RESIDUAL.md) is about why that class of number cannot be checked "
-      "against anything, ever, in principle, and [NITROGEN.md](#NITROGEN.md) takes the "
+      "[RESIDUAL.md](RESIDUAL.md) is about why that class of number cannot be checked "
+      "against anything, ever, in principle, and [NITROGEN.md](NITROGEN.md) takes the "
       "apportionment apart line by line. This page's only job is to record how the "
       "figure is spoken.\n")
     w("Four of the five statements carrying the `estimator_treated_as_estimand` flag "
@@ -830,7 +830,7 @@ def render(d, a):
       "of the three parties that voted against.\n")
     w("The last of those is the one that most limits everything above it. **A record of "
       "public statements is an instrument, and this instrument is not evenly pointed.** "
-      "Group `I` of [HYPOTHESES.md](#HYPOTHESES.md) applies to it exactly as it applies "
+      "Group `I` of [HYPOTHESES.md](HYPOTHESES.md) applies to it exactly as it applies "
       "to a monitoring network: what you find depends on where you looked, and the "
       "cheapest way to improve this page is not more analysis of these 92 sentences but "
       "the Folketing transcript that could not be fetched.\n")
