@@ -364,13 +364,20 @@ def build_scene():
 # --------------------------------------------------------------------- section
 
 def svg_section():
-    """The retrofit: drop the sewer, put the stormwater line in the space above it."""
-    W, H = 960, 500
-    GROUND = 120
+    """The retrofit: a shallow rain line, how it gets in, and the shaft that serves it.
+
+    Three panels rather than two, because the argument in PROGRAMME.md now leads with
+    the light version - leave the sewer where it is - and the detail that makes it
+    buildable is the shaft, not the pipe. The heavy variant (drop the sewer a metre)
+    stays in the prose; it needs no drawing once the light one is drawn.
+    """
+    W, H = 1180, 560
+    GROUND = 132
+    BROWN, BLUE, SOIL = "#7d3a30", "#2f7fb5", "#e6ded2"
     s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
-         f'height="{H}" role="img" aria-label="Street cross-section: the existing '
-         f'combined sewer, and the retrofit that drops it and inserts a stormwater '
-         f'line above it">',
+         f'height="{H}" role="img" aria-label="Street cross-section: the combined '
+         f'sewer now, the shallow rain line that leaves it in place, and the '
+         f'two-storey shaft with a liftable watertight pan that serves both">',
          '<style>'
          '.t{font:600 13px system-ui,sans-serif;fill:#1c2a33}'
          '.s{font:11px system-ui,sans-serif;fill:#55666f}'
@@ -380,74 +387,111 @@ def svg_section():
          '</style>',
          f'<rect width="{W}" height="{H}" fill="#fbfcfd"/>']
 
-    for x0, title, colour in ((30, "NOW", "#8e2318"), (510, "RETROFIT", "#1f7a5a")):
+    def head(x0, title, colour, sub):
         s.append(f'<text class="h" x="{x0}" y="34" fill="{colour}">{title}</text>')
-        # ground and soil
-        s.append(f'<rect x="{x0}" y="{GROUND}" width="420" height="330" fill="#e6ded2"/>')
-        s.append(f'<rect x="{x0}" y="{GROUND-12}" width="420" height="12" fill="#63707a"/>')
-        s.append(f'<text class="s" x="{x0+8}" y="{GROUND-38}">street surface</text>')
-        # gully + manhole
-        s.append(f'<rect x="{x0+60}" y="{GROUND-12}" width="26" height="12" fill="#2b3840"/>')
-        s.append(f'<text class="s" x="{x0+96}" y="{GROUND+18}">gully &amp; manhole</text>')
-        s.append(f'<path d="M{x0+8},{GROUND-32} L{x0+8},{GROUND-14}" stroke="#8b98a2" '
-                 f'stroke-width="1" fill="none"/>')
+        s.append(f'<text class="s" x="{x0}" y="52">{sub}</text>')
 
-    # ---------- NOW: one pipe
+    def street(x0, w):
+        s.append(f'<rect x="{x0}" y="{GROUND}" width="{w}" height="352" fill="{SOIL}"/>')
+        s.append(f'<rect x="{x0}" y="{GROUND-12}" width="{w}" height="12" fill="#63707a"/>')
+        s.append(f'<text class="s" x="{x0+6}" y="{GROUND-20}">street surface</text>')
+
+    def pipe(cx, cy, r, fill, stroke, lines):
+        s.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{fill}" stroke="{stroke}" '
+                 f'stroke-width="3"/>')
+        y = cy - (len(lines) - 1) * 8 + 4
+        for ln in lines:
+            s.append(f'<text class="t" x="{cx}" y="{y}" text-anchor="middle" '
+                     f'fill="#fff">{ln}</text>')
+            y += 16
+
+    def caption(x0, y, lines):
+        for ln in lines:
+            s.append(f'<text class="s" x="{x0}" y="{y}">{ln}</text>')
+            y += 17
+
+    # ---------------------------------------------------------------- NOW
     x0 = 30
-    s.append(f'<rect x="{x0+58}" y="{GROUND}" width="30" height="150" fill="#c8bda9"/>')
-    s.append(f'<circle cx="{x0+200}" cy="{GROUND+180}" r="44" fill="#7d3a30" '
-             f'stroke="#5a2620" stroke-width="3"/>')
-    s.append(f'<text class="t" x="{x0+200}" y="{GROUND+176}" text-anchor="middle" '
-             f'fill="#fff">combined</text>')
-    s.append(f'<text class="t" x="{x0+200}" y="{GROUND+192}" text-anchor="middle" '
-             f'fill="#fff">sewer</text>')
-    s.append(f'<path d="M{x0+73},{GROUND+150} L{x0+73},{GROUND+180} L{x0+156},{GROUND+180}" '
-             f'stroke="#7d3a30" stroke-width="9" fill="none"/>')
-    s.append(f'<path d="M{x0+400},{GROUND} L{x0+400},{GROUND+180} L{x0+246},{GROUND+180}" '
+    head(x0, "NOW", "#8e2318", "one pipe, and it fills")
+    street(x0, 330)
+    s.append(f'<rect x="{x0+52}" y="{GROUND-12}" width="26" height="12" fill="#2b3840"/>')
+    s.append(f'<rect x="{x0+54}" y="{GROUND}" width="22" height="152" fill="#c8bda9"/>')
+    s.append(f'<text class="n" x="{x0+86}" y="{GROUND+16}">gully &amp; shaft</text>')
+    pipe(x0 + 175, GROUND + 182, 42, BROWN, "#5a2620", ["combined", "sewer"])
+    s.append(f'<path d="M{x0+65},{GROUND+152} L{x0+65},{GROUND+182} L{x0+133},{GROUND+182}" '
+             f'stroke="{BROWN}" stroke-width="9" fill="none"/>')
+    s.append(f'<path d="M{x0+310},{GROUND} L{x0+310},{GROUND+182} L{x0+219},{GROUND+182}" '
              f'stroke="#a8705f" stroke-width="6" fill="none"/>')
-    s.append(f'<text class="n" x="{x0+394}" y="{GROUND+40}" text-anchor="end">house drain</text>')
-    s.append(f'<text class="s" x="{x0+8}" y="{GROUND+270}">Rain and sewage share the pipe.</text>')
-    s.append(f'<text class="s" x="{x0+8}" y="{GROUND+287}">When it fills, the mixture leaves</text>')
-    s.append(f'<text class="s" x="{x0+8}" y="{GROUND+304}">through an overflow, untreated.</text>')
+    s.append(f'<text class="n" x="{x0+304}" y="{GROUND+38}" text-anchor="end">house drain</text>')
+    caption(x0, GROUND + 286, ["Rain and sewage share the pipe.",
+                               "When it fills, the mixture leaves",
+                               "through an overflow, untreated."])
 
-    # ---------- RETROFIT: two pipes, stacked
-    x0 = 510
-    s.append(f'<rect x="{x0+58}" y="{GROUND}" width="30" height="86" fill="#c8bda9"/>')
-    # new stormwater line, in the space between manhole and sewer
-    s.append(f'<circle cx="{x0+200}" cy="{GROUND+112}" r="36" fill="#2f7fb5" '
-             f'stroke="#1d5a85" stroke-width="3"/>')
-    s.append(f'<text class="t" x="{x0+200}" y="{GROUND+108}" text-anchor="middle" '
-             f'fill="#fff">rain</text>')
-    s.append(f'<text class="t" x="{x0+200}" y="{GROUND+124}" text-anchor="middle" '
-             f'fill="#fff">only</text>')
-    s.append(f'<path d="M{x0+73},{GROUND+86} L{x0+73},{GROUND+112} L{x0+164},{GROUND+112}" '
-             f'stroke="#2f7fb5" stroke-width="9" fill="none"/>')
-    # sewer, dropped
-    s.append(f'<circle cx="{x0+200}" cy="{GROUND+232}" r="44" fill="#7d3a30" '
-             f'stroke="#5a2620" stroke-width="3"/>')
-    s.append(f'<text class="t" x="{x0+200}" y="{GROUND+228}" text-anchor="middle" '
-             f'fill="#fff">foul</text>')
-    s.append(f'<text class="t" x="{x0+200}" y="{GROUND+244}" text-anchor="middle" '
-             f'fill="#fff">sewer</text>')
-    # the 1 m drop, dimensioned
-    s.append(f'<path class="dim" d="M{x0+300},{GROUND+180} L{x0+300},{GROUND+232}"/>')
-    s.append(f'<path class="dim" d="M{x0+294},{GROUND+180} L{x0+306},{GROUND+180}"/>')
-    s.append(f'<path class="dim" d="M{x0+294},{GROUND+232} L{x0+306},{GROUND+232}"/>')
-    s.append(f'<text class="s" x="{x0+312}" y="{GROUND+212}">dropped ~1 m</text>')
-    s.append(f'<path d="M{x0+244},{GROUND+180} L{x0+296},{GROUND+180}" stroke="#8b98a2" '
-             f'stroke-width="1" stroke-dasharray="4 3" fill="none"/>')
-    s.append(f'<text class="n" x="{x0+244}" y="{GROUND+174}">old invert</text>')
-    s.append(f'<path d="M{x0+400},{GROUND} L{x0+400},{GROUND+232} L{x0+246},{GROUND+232}" '
+    # -------------------------------------------------------- LIGHT RETROFIT
+    x0 = 420
+    head(x0, "THE LIGHT VERSION", "#1f7a5a", "the sewer is not touched")
+    street(x0, 330)
+    s.append(f'<rect x="{x0+52}" y="{GROUND-12}" width="26" height="12" fill="#2b3840"/>')
+    s.append(f'<rect x="{x0+54}" y="{GROUND}" width="22" height="238" fill="#c8bda9"/>')
+    pipe(x0 + 175, GROUND + 76, 27, BLUE, "#1d5a85", ["rain"])
+    s.append(f'<path d="M{x0+65},{GROUND+62} L{x0+65},{GROUND+76} L{x0+146},{GROUND+76}" '
+             f'stroke="{BLUE}" stroke-width="9" fill="none"/>')
+    s.append(f'<rect x="{x0+54}" y="{GROUND+86}" width="22" height="5" fill="#8b98a2"/>')
+    s.append(f'<text class="n" x="{x0+86}" y="{GROUND+94}">pan: the floor of the '
+             f'upper storey</text>')
+    pipe(x0 + 175, GROUND + 182, 42, BROWN, "#5a2620", ["foul", "sewer"])
+    s.append(f'<path class="dim" d="M{x0+232},{GROUND+140} L{x0+232},{GROUND+182}" '
+             f'stroke-dasharray="4 3"/>')
+    s.append(f'<text class="n" x="{x0+240}" y="{GROUND+166}">same invert as before</text>')
+    s.append(f'<path d="M{x0+310},{GROUND} L{x0+310},{GROUND+182} L{x0+219},{GROUND+182}" '
              f'stroke="#a8705f" stroke-width="6" fill="none"/>')
-    s.append(f'<text class="n" x="{x0+394}" y="{GROUND+40}" text-anchor="end">house drain</text>')
-    s.append(f'<text class="n" x="{x0+200}" y="{GROUND+62}" text-anchor="middle">'
-             f'shallower and smaller than the sewer</text>')
-    s.append(f'<text class="s" x="{x0+8}" y="{GROUND+300}">Same trench, same street. The '
-             f'vertical space</text>')
-    s.append(f'<text class="s" x="{x0+8}" y="{GROUND+317}">between the manhole and the '
-             f'sewer is where</text>')
-    s.append(f'<text class="s" x="{x0+8}" y="{GROUND+334}">the rain line goes.</text>')
+    s.append(f'<text class="n" x="{x0+304}" y="{GROUND+38}" text-anchor="end">house drain,</text>')
+    s.append(f'<text class="n" x="{x0+304}" y="{GROUND+52}" text-anchor="end">unchanged</text>')
+    caption(x0, GROUND + 286, ["The gully moves to the rain line; nothing",
+                               "on the foul side moves at all. Bored shaft",
+                               "to shaft, so the road opens at the shafts."])
 
+    # ------------------------------------------------------------ THE SHAFT
+    x0 = 810
+    head(x0, "THE SHAFT", "#1c2a33", "two storeys, one opening")
+    street(x0, 330)
+    LX, RX = x0 + 96, x0 + 186          # shaft walls
+    s.append(f'<rect x="{LX}" y="{GROUND}" width="{RX-LX}" height="300" fill="#fbfcfd" '
+             f'stroke="#8b98a2" stroke-width="2"/>')
+    s.append(f'<rect x="{LX-6}" y="{GROUND-12}" width="{RX-LX+12}" height="12" fill="#2b3840"/>')
+    s.append(f'<text class="n" x="{RX+10}" y="{GROUND+4}">cover</text>')
+    # upper storey: the rain line and the pan
+    PAN = GROUND + 118
+    s.append(f'<rect x="{LX-70}" y="{PAN-26}" width="70" height="26" fill="{BLUE}" '
+             f'stroke="#1d5a85" stroke-width="2"/>')
+    s.append(f'<text class="n" x="{LX-70}" y="{PAN-34}">rain line</text>')
+    s.append(f'<path d="M{LX+2},{PAN} L{RX-2},{PAN-10}" stroke="#55666f" '
+             f'stroke-width="6" fill="none"/>')
+    s.append(f'<text class="s" x="{RX+10}" y="{PAN-4}">watertight pan,</text>')
+    s.append(f'<text class="s" x="{RX+10}" y="{PAN+13}">falling to the pipe</text>')
+    # the lift
+    s.append(f'<path d="M{LX+30},{PAN-24} L{LX+30},{PAN-66}" stroke="#1f7a5a" '
+             f'stroke-width="2" fill="none" marker-end="url(#up)"/>')
+    s.append(f'<path d="M{LX+6},{PAN-72} L{RX-6},{PAN-82}" stroke="#1f7a5a" '
+             f'stroke-width="4" stroke-dasharray="6 4" fill="none"/>')
+    s.append(f'<text class="n" x="{RX+10}" y="{PAN-76}">lifted, to enter</text>')
+    # lower storey
+    s.append(f'<path d="M{LX-70},{GROUND+250} L{RX+70},{GROUND+250}" stroke="{BROWN}" '
+             f'stroke-width="26" fill="none"/>')
+    s.append(f'<text class="n" x="{LX-70}" y="{GROUND+282}">foul sewer, live below</text>')
+    for k in range(5):                                  # ladder
+        yy = PAN + 22 + k * 24
+        s.append(f'<path d="M{RX-26},{yy} L{RX-6},{yy}" stroke="#8b98a2" '
+                 f'stroke-width="2" fill="none"/>')
+    caption(x0, GROUND + 320, ["Gravity holds the pan down, which is the",
+                               "wrong way round for a surcharged sewer:",
+                               "it has to be seated by back-pressure, not",
+                               "lifted by it. Sealing this storey also closes",
+                               "one of the sewer's vents."])
+
+    s.append('<defs><marker id="up" viewBox="0 0 10 10" refX="5" refY="5" '
+             'markerWidth="5" markerHeight="5" orient="auto-start-reverse">'
+             '<path d="M0,0 L10,5 L0,10 z" fill="#1f7a5a"/></marker></defs>')
     s.append(f'<text class="n" x="{W-30}" y="{H-14}" text-anchor="end">Schematic. Depths '
              f'and diameters are illustrative; the arrangement is the point.</text>')
     s.append("</svg>")

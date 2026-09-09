@@ -45,6 +45,7 @@ python3 scripts/solutions.py            # -> docs/SOLUTIONS.md
 python3 scripts/rivermap.py             # -> docs/river_map.png
 python3 scripts/programme_map.py        # -> docs/*.svg
 python3 scripts/rivers3d.py             # -> viewer bundle + 2 SVGs
+python3 scripts/streams.py              # -> data/derived/streams.json
 python3 scripts/programme.py            # -> docs/PROGRAMME.md
 
 python3 -m http.server 8000             # then open http://localhost:8000/viz/
@@ -75,6 +76,7 @@ scripts/
   currents.py             retention, transport and the overflow-hour test
   solutions.py            what the city plans against what it has done
   rivermap.py             the flood model read as the city's natural drainage
+  streams.py              the rain stream and the foul stream, as rates
   programme_map.py        the two figures for the argument page
   programme.py            the argument - kept separate from the investigation
   landbrug.py             the same audit, in Danish, addressed to farmers

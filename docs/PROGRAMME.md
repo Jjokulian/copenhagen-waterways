@@ -159,6 +159,21 @@ What this buys is the thing that matters: **there is no longer a mixture to over
 
 It works because **the new line does not have to carry the cloudburst.** The cloudburst already has a route — the surface network in the previous section, designed for exactly that event. What has to come out of the combined system is the ordinary rain that fills it many times a year. Sizing for the frequent rain rather than the hundred-year one is a much smaller pipe, and it turns the question from *can a storm sewer be fitted here* into *which rain do we take out of the sea* — a priced decision with a return period on it, rather than a structural impossibility. The residue is explicit: rain above that size still meets sewage in the old pipe and can still spill, so this variant reduces overflow frequency and volume, and does not abolish them the way a full separation does.
 
+**And it does not have to be dug in.** The expensive part of urban pipework is the trench: the road opened along its whole length, the traffic, the reinstatement, and everything else in the ground found the hard way. A shallow line can be **bored or driven instead** — a pit at one manhole, a pit at the next, and the pipe pushed through the ground between them, taking the soil into the pipe as it goes to be augered or flushed out behind it. The road is then opened only at the manholes, which are the places the work has to happen anyway. For a gravity line the technique has to be one that holds a grade of millimetres per metre over the shot — pilot-tube guided boring rather than free-steered drilling — and the shots are short, manhole to manhole.
+
+It is not free of the thing it avoids. **Open-cut finds an unmapped cable; a bore hits it.** Working blind in the busiest metre of the ground raises the value of everything that says what is down there — the utility register, a survey, and a trial hole at each crossing — so the method makes the information problem below more acute rather than less.
+
+**The junction is where this gets interesting: one shaft, two floors.** At every existing street connection the shaft carries on through the new rain line rather than stopping at it. At rain-line level a **watertight pan forms the floor of that storey**: what comes off the street lands on it and is turned into the rain pipe, while the shaft below it stays a shaft. To reach the sewer, the pan is lifted — held down by its own weight the rest of the time — and the manhole is a manhole again. One opening in the road, one asset to maintain, the gully keeps its sand trap, and nothing about access to the foul sewer is given up.
+
+Four conditions decide whether that detail is sound, and they are stated here as conditions rather than as answers:
+
+- **It must not be liftable from below.** A pan held by gravity seals downward and is defeated by pressure upward — which is exactly the fault case, a surcharged sewer, and would put foul water into the rain line at every manhole at once. The seat has to be latched, or shaped so back-pressure seats it harder rather than lifting it. This is the same invariant as the outlet above: the separation is physical or it is not there.
+- **It is a sump, so it is on a cleaning schedule or it is a problem.** Grit and leaves collect on a flat pan. Emptied with the gully, that is a feature and the first thing the rain line would otherwise carry. Not emptied, it is the basin argument again at the scale of one shaft.
+- **Sealing a storey removes a vent.** A foul sewer is ventilated through its shafts, and a watertight floor at rain level closes one. The ventilation has to be re-made deliberately, or hydrogen sulphide accumulates in the place nobody now opens.
+- **Entry gets harder, not easier.** Lifting a pan while standing over a live sewer, possibly with rain running in, is a confined-space job with a new step in it. It needs a lifting point, a way to secure the pan open, and a rule about when the storey above can be running.
+
+*What this is:* an arrangement and a construction method, not a design. No clearance has been checked, no diameter or gradient computed, and it concerns an asset owned by a utility that would have to decide it. It is here because it changes what the retrofit costs — and because the two-storey shaft is the detail that makes the light version buildable at the point where every street already connects.
+
 **What decides between the two is the first metre under the street, and this project cannot see it.** Water mains, district heating, gas, telecom and the gully leads themselves occupy that zone, and whether a new line clears them — with frost cover above and a continuous fall to its outlet — is a question the utility register answers and no public dataset here does. So the section is drawn as an arrangement, not as a design, and the sizing above is stated as the decision to be taken rather than as a diameter. Both variants stay on the public side of the property line; neither requires entering a building, which is the thing that makes conventional separation slow.
 
 On this project's classification, **20% of the modelled flood path already has a planned pipe within 100 m** — those alignments are the retrofit candidates, because the trench is going to be opened anyway.
@@ -170,6 +185,28 @@ And where no alignment exists — the 46% — the model names the places. 14 cor
 ![Where a raindrop goes now, and where it would go](system_flow.svg)
 
 Section 1 does not improve the combined system. It ends it, and what is left is **two systems with different jobs**. A foul line: small, steady, running every hour of the year, going to a treatment plant. And a rain line: intermittent, far larger at the moment it arrives, carrying the surface of the city rather than the inside of a building. Everything below follows from keeping those two apart, and most of the existing argument about basins and overflows is an argument about the mixture that no longer exists.
+
+**How much larger is worth doing in rates rather than in adjectives, because a year is exactly the window that hides it.** Sewage is produced at roughly the rate people live: taking the ordinary design figures — 130 litres per person per day, and a morning peak of 2× that — a thousand people peak at about 3 litres a second, and they do it at the same hour every day, which is a load a plant can be built for. Rain is not like that. Against 31 years of hourly rainfall over Copenhagen, **one hectare of paved surface in a 10 mm hour matches the morning peak of about 7,385 people**. Amager's 1,052 combined-sewered impervious hectares come to **23 m³/s — the morning peak of 7.8 million people**, from an island. Even the *median* hour with rain in it, three tenths of a millimetre, is 0.70 m³/s: the morning peak of 233 thousand. The two streams are not the same size and were never comparable; putting them in one pipe is what makes the small one uncontrollable.
+
+<details class="work">
+<summary>The rain record behind those rates — 31 years of hourly Copenhagen rainfall, and why its wettest hour is an artefact</summary>
+
+Rain is the measured side. Hourly ERA5 precipitation over Copenhagen, 31 years, 271,752 hours, already fetched for the wave work and recomputed by `scripts/streams.py`:
+
+| | |
+|---|---:|
+| Mean annual rainfall | 677 mm |
+| Hours a year with any rain | 1402 |
+| Median hour that has rain in it | 0.3 mm |
+| Hours a year at or above 2 mm | 40 |
+| Hours a year at or above 5 mm | 1.7 |
+| Wettest hour in the record | 11.9 mm |
+
+**The last row is a warning about the instrument, not a fact about Copenhagen.** ERA5 is a reanalysis on a grid cell tens of kilometres across, and a cell mean cannot produce a cloudburst: the July 2011 event dropped more in two hours over the city than anything in this record does in one. So the record is used here for **ordinary rain**, which is what the system is being sized for and what actually causes the overflows, and the 10 mm design hour above is a stated convention sitting deliberately above what the reanalysis can resolve. Cloudburst intensities have to come from the rain-gauge network (SVK), which this project has not fetched.
+
+The foul side carries no population figure on purpose. Nobody here has sourced one for the island, so the comparison is written as an equivalence — *how many people's morning peak* a hectare of rain matches — which needs no census. The dry-weather flow per person and the peak factor are design conventions and are named as such.
+
+</details>
 
 **So the basins retire.** A spare basin is an organ of the combined system: it exists to hold a mixture back until the plant can take it. Take the rain out and there is no mixture, the foul flow arrives at the rate it is produced, and the plant treats it as it comes. A basin then has nothing to buffer. It is not the instrument for the rain stream either, and the scale says why: the entire registered spare-basin volume on **Køge Bugt** — every basin in the water body, across 865 rain-conditioned outfalls — is **14,377 m³**. One hour of 10 mm of rain on Amager's 1,052 combined-sewered impervious hectares alone is about **84,120 m³** at a runoff coefficient of 0.8. The whole registered basin volume of the bay is about 10 minutes of that one hour, from one island. Basins were never storage for the rain; they are a device for postponing a spill.
 
@@ -310,6 +347,32 @@ What that buys, from the pond literature:
 **95% of tyre wear material, by letting water sit still.** That is the strongest single number in this document, and it is the answer to the objection that separated stormwater would just be pollution with a shorter pipe.
 
 Two honest limits. Ponds do not remove dissolved fractions — chloride from road salt, dissolved copper, PFAS — so they are a complement to source control and not a substitute for it. And their performance depends entirely on the sediment being *removed* periodically rather than left to accumulate and eventually scour, which is the identical failure mode as the sewer basins. A pond that is never dredged becomes the thing it was built to prevent.
+
+#### How big, and the answer is: that depends on whether you store first
+
+If the removal mechanism is gravity, the size of the machine is set by one number — how fast a grain falls — and a pond catches what has time to reach the bottom while the water crosses it. Settling velocity goes with the **square** of grain size, so the pond that catches sand is trivial and the pond that catches silt is not. Taking Amager's 1,052 combined-sewered impervious hectares as the catchment and Stokes settling in still water at 10 °C:
+
+| Grain | Falls at | Pond area to catch it **at the design hour** | The same filter **fed steadily all year** |
+|---|---:|---:|---:|
+| 100 µm | 24.77 m/h | 0.3 ha | 26 m² |
+| 50 µm | 6.19 m/h | 1.4 ha | 105 m² |
+| 20 µm | 0.99 m/h | 8.5 ha | 656 m² |
+| 10 µm | 0.25 m/h | 34.0 ha | 2,624 m² |
+| 5 µm | 0.06 m/h | 135.8 ha | 10,495 m² |
+
+**The two right-hand columns are the same filter, and they differ by two orders of magnitude.** A pond sized to take 23 m³/s as it arrives needs 8.5 ha to catch 20 µm silt. The same pond, fed at a steady rate with the same water spread over the year, needs 656 m² — a quarter of a football pitch. **So the design variable is not filter area. It is storage** — somewhere to put the hour so the filter can have the week. That is the argument for the polder in one line: Vestamager is not primarily a treatment area, it is 2,000 ha of the thing that makes a small treatment area work, and the pond sizing in the previous section sits comfortably between the two columns.
+
+It also settles how the ponds are run. Cells in **rotation**, fed by gravity, with one cell out of service being drained and dredged while the others take the flow: with *n* cells that costs a factor of *n*/(*n*−1) in area — a quarter more for four cells, an eighth more for eight — which is affordable at these sizes and is the only way the periodic-removal condition above gets met in practice rather than in a maintenance plan. A cell that cannot be taken offline will not be cleaned.
+
+*Stated, not measured:* the runoff coefficient, the design hour, and Stokes settling in still water. Real ponds are not still — wind and short-circuiting both cut capture — so these areas are **floors**, and the measured removal efficiencies in the table above are the thing to trust for what a built pond achieves. `scripts/streams.py` writes the arithmetic.
+
+#### Where the load ends up is a choice, and the sea is the other option
+
+The objection that a pond banks contaminants is right, and it is not an argument against the pond. **The city's surface load settles somewhere in every version of this**, including the one where nothing is built. Left to the outfall, it settles on the seabed of the bay it discharges into — which is banking too, in a basin nobody can drain, with no schedule and no operator.
+
+The difference is what happens next. Sediment on a seabed is not at rest: a storm, a trawl, a propeller or a dredging campaign lifts it back into the water, and [OXYGEN.md](#OXYGEN.md) prices that route at **2.00 g O₂ per g of sulphide** oxidised on the way up — a demand that needs no nitrogen and appears in no load ledger. Anoxic sediment also releases the iron-bound phosphate it was holding ([`A2`](#HYPOTHESES.md)). And the metals, PAH, tyre wear and microplastics that came off the street are then in a food chain instead of in a bucket.
+
+A pond cell is the same material in a place with an operator, a schedule and a lorry. That is the whole of the claim — not that treatment makes the load disappear, but that it decides **where the load accumulates and whether anyone can lift it out again**. The condition attached is the one in the objections: a cell that is never dredged is the seabed with a fence around it.
 
 ### 4. Where the captured material goes, which the same taxonomy decides
 

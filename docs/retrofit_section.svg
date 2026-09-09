@@ -1,49 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" role="img" aria-label="Street cross-section: the existing combined sewer, and the retrofit that drops it and inserts a stormwater line above it">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 560" width="1180" height="560" role="img" aria-label="Street cross-section: the combined sewer now, the shallow rain line that leaves it in place, and the two-storey shaft with a liftable watertight pan that serves both">
 <style>.t{font:600 13px system-ui,sans-serif;fill:#1c2a33}.s{font:11px system-ui,sans-serif;fill:#55666f}.n{font:italic 10.5px system-ui,sans-serif;fill:#7a8892}.h{font:700 12px system-ui,sans-serif;letter-spacing:.09em}.dim{stroke:#8b98a2;stroke-width:1;fill:none}</style>
-<rect width="960" height="500" fill="#fbfcfd"/>
+<rect width="1180" height="560" fill="#fbfcfd"/>
 <text class="h" x="30" y="34" fill="#8e2318">NOW</text>
-<rect x="30" y="120" width="420" height="330" fill="#e6ded2"/>
-<rect x="30" y="108" width="420" height="12" fill="#63707a"/>
-<text class="s" x="38" y="82">street surface</text>
-<rect x="90" y="108" width="26" height="12" fill="#2b3840"/>
-<text class="s" x="126" y="138">gully &amp; manhole</text>
-<path d="M38,88 L38,106" stroke="#8b98a2" stroke-width="1" fill="none"/>
-<text class="h" x="510" y="34" fill="#1f7a5a">RETROFIT</text>
-<rect x="510" y="120" width="420" height="330" fill="#e6ded2"/>
-<rect x="510" y="108" width="420" height="12" fill="#63707a"/>
-<text class="s" x="518" y="82">street surface</text>
-<rect x="570" y="108" width="26" height="12" fill="#2b3840"/>
-<text class="s" x="606" y="138">gully &amp; manhole</text>
-<path d="M518,88 L518,106" stroke="#8b98a2" stroke-width="1" fill="none"/>
-<rect x="88" y="120" width="30" height="150" fill="#c8bda9"/>
-<circle cx="230" cy="300" r="44" fill="#7d3a30" stroke="#5a2620" stroke-width="3"/>
-<text class="t" x="230" y="296" text-anchor="middle" fill="#fff">combined</text>
-<text class="t" x="230" y="312" text-anchor="middle" fill="#fff">sewer</text>
-<path d="M103,270 L103,300 L186,300" stroke="#7d3a30" stroke-width="9" fill="none"/>
-<path d="M430,120 L430,300 L276,300" stroke="#a8705f" stroke-width="6" fill="none"/>
-<text class="n" x="424" y="160" text-anchor="end">house drain</text>
-<text class="s" x="38" y="390">Rain and sewage share the pipe.</text>
-<text class="s" x="38" y="407">When it fills, the mixture leaves</text>
-<text class="s" x="38" y="424">through an overflow, untreated.</text>
-<rect x="568" y="120" width="30" height="86" fill="#c8bda9"/>
-<circle cx="710" cy="232" r="36" fill="#2f7fb5" stroke="#1d5a85" stroke-width="3"/>
-<text class="t" x="710" y="228" text-anchor="middle" fill="#fff">rain</text>
-<text class="t" x="710" y="244" text-anchor="middle" fill="#fff">only</text>
-<path d="M583,206 L583,232 L674,232" stroke="#2f7fb5" stroke-width="9" fill="none"/>
-<circle cx="710" cy="352" r="44" fill="#7d3a30" stroke="#5a2620" stroke-width="3"/>
-<text class="t" x="710" y="348" text-anchor="middle" fill="#fff">foul</text>
-<text class="t" x="710" y="364" text-anchor="middle" fill="#fff">sewer</text>
-<path class="dim" d="M810,300 L810,352"/>
-<path class="dim" d="M804,300 L816,300"/>
-<path class="dim" d="M804,352 L816,352"/>
-<text class="s" x="822" y="332">dropped ~1 m</text>
-<path d="M754,300 L806,300" stroke="#8b98a2" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
-<text class="n" x="754" y="294">old invert</text>
-<path d="M910,120 L910,352 L756,352" stroke="#a8705f" stroke-width="6" fill="none"/>
-<text class="n" x="904" y="160" text-anchor="end">house drain</text>
-<text class="n" x="710" y="182" text-anchor="middle">shallower and smaller than the sewer</text>
-<text class="s" x="518" y="420">Same trench, same street. The vertical space</text>
-<text class="s" x="518" y="437">between the manhole and the sewer is where</text>
-<text class="s" x="518" y="454">the rain line goes.</text>
-<text class="n" x="930" y="486" text-anchor="end">Schematic. Depths and diameters are illustrative; the arrangement is the point.</text>
+<text class="s" x="30" y="52">one pipe, and it fills</text>
+<rect x="30" y="132" width="330" height="352" fill="#e6ded2"/>
+<rect x="30" y="120" width="330" height="12" fill="#63707a"/>
+<text class="s" x="36" y="112">street surface</text>
+<rect x="82" y="120" width="26" height="12" fill="#2b3840"/>
+<rect x="84" y="132" width="22" height="152" fill="#c8bda9"/>
+<text class="n" x="116" y="148">gully &amp; shaft</text>
+<circle cx="205" cy="314" r="42" fill="#7d3a30" stroke="#5a2620" stroke-width="3"/>
+<text class="t" x="205" y="310" text-anchor="middle" fill="#fff">combined</text>
+<text class="t" x="205" y="326" text-anchor="middle" fill="#fff">sewer</text>
+<path d="M95,284 L95,314 L163,314" stroke="#7d3a30" stroke-width="9" fill="none"/>
+<path d="M340,132 L340,314 L249,314" stroke="#a8705f" stroke-width="6" fill="none"/>
+<text class="n" x="334" y="170" text-anchor="end">house drain</text>
+<text class="s" x="30" y="418">Rain and sewage share the pipe.</text>
+<text class="s" x="30" y="435">When it fills, the mixture leaves</text>
+<text class="s" x="30" y="452">through an overflow, untreated.</text>
+<text class="h" x="420" y="34" fill="#1f7a5a">THE LIGHT VERSION</text>
+<text class="s" x="420" y="52">the sewer is not touched</text>
+<rect x="420" y="132" width="330" height="352" fill="#e6ded2"/>
+<rect x="420" y="120" width="330" height="12" fill="#63707a"/>
+<text class="s" x="426" y="112">street surface</text>
+<rect x="472" y="120" width="26" height="12" fill="#2b3840"/>
+<rect x="474" y="132" width="22" height="238" fill="#c8bda9"/>
+<circle cx="595" cy="208" r="27" fill="#2f7fb5" stroke="#1d5a85" stroke-width="3"/>
+<text class="t" x="595" y="212" text-anchor="middle" fill="#fff">rain</text>
+<path d="M485,194 L485,208 L566,208" stroke="#2f7fb5" stroke-width="9" fill="none"/>
+<rect x="474" y="218" width="22" height="5" fill="#8b98a2"/>
+<text class="n" x="506" y="226">pan: the floor of the upper storey</text>
+<circle cx="595" cy="314" r="42" fill="#7d3a30" stroke="#5a2620" stroke-width="3"/>
+<text class="t" x="595" y="310" text-anchor="middle" fill="#fff">foul</text>
+<text class="t" x="595" y="326" text-anchor="middle" fill="#fff">sewer</text>
+<path class="dim" d="M652,272 L652,314" stroke-dasharray="4 3"/>
+<text class="n" x="660" y="298">same invert as before</text>
+<path d="M730,132 L730,314 L639,314" stroke="#a8705f" stroke-width="6" fill="none"/>
+<text class="n" x="724" y="170" text-anchor="end">house drain,</text>
+<text class="n" x="724" y="184" text-anchor="end">unchanged</text>
+<text class="s" x="420" y="418">The gully moves to the rain line; nothing</text>
+<text class="s" x="420" y="435">on the foul side moves at all. Bored shaft</text>
+<text class="s" x="420" y="452">to shaft, so the road opens at the shafts.</text>
+<text class="h" x="810" y="34" fill="#1c2a33">THE SHAFT</text>
+<text class="s" x="810" y="52">two storeys, one opening</text>
+<rect x="810" y="132" width="330" height="352" fill="#e6ded2"/>
+<rect x="810" y="120" width="330" height="12" fill="#63707a"/>
+<text class="s" x="816" y="112">street surface</text>
+<rect x="906" y="132" width="90" height="300" fill="#fbfcfd" stroke="#8b98a2" stroke-width="2"/>
+<rect x="900" y="120" width="102" height="12" fill="#2b3840"/>
+<text class="n" x="1006" y="136">cover</text>
+<rect x="836" y="224" width="70" height="26" fill="#2f7fb5" stroke="#1d5a85" stroke-width="2"/>
+<text class="n" x="836" y="216">rain line</text>
+<path d="M908,250 L994,240" stroke="#55666f" stroke-width="6" fill="none"/>
+<text class="s" x="1006" y="246">watertight pan,</text>
+<text class="s" x="1006" y="263">falling to the pipe</text>
+<path d="M936,226 L936,184" stroke="#1f7a5a" stroke-width="2" fill="none" marker-end="url(#up)"/>
+<path d="M912,178 L990,168" stroke="#1f7a5a" stroke-width="4" stroke-dasharray="6 4" fill="none"/>
+<text class="n" x="1006" y="174">lifted, to enter</text>
+<path d="M836,382 L1066,382" stroke="#7d3a30" stroke-width="26" fill="none"/>
+<text class="n" x="836" y="414">foul sewer, live below</text>
+<path d="M970,272 L990,272" stroke="#8b98a2" stroke-width="2" fill="none"/>
+<path d="M970,296 L990,296" stroke="#8b98a2" stroke-width="2" fill="none"/>
+<path d="M970,320 L990,320" stroke="#8b98a2" stroke-width="2" fill="none"/>
+<path d="M970,344 L990,344" stroke="#8b98a2" stroke-width="2" fill="none"/>
+<path d="M970,368 L990,368" stroke="#8b98a2" stroke-width="2" fill="none"/>
+<text class="s" x="810" y="452">Gravity holds the pan down, which is the</text>
+<text class="s" x="810" y="469">wrong way round for a surcharged sewer:</text>
+<text class="s" x="810" y="486">it has to be seated by back-pressure, not</text>
+<text class="s" x="810" y="503">lifted by it. Sealing this storey also closes</text>
+<text class="s" x="810" y="520">one of the sewer's vents.</text>
+<defs><marker id="up" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f7a5a"/></marker></defs>
+<text class="n" x="1150" y="546" text-anchor="end">Schematic. Depths and diameters are illustrative; the arrangement is the point.</text>
 </svg>
