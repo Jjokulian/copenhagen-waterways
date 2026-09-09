@@ -649,8 +649,21 @@ function armTip() {
 
 function showTip(el) {
   const key = el.dataset.gloss || el.textContent.trim();
-  const g = el.classList.contains("term")
-    ? (GLOSS._terms || {})[key] : (GLOSS || {})[key];
+  // Three vocabularies now, and the lookup has to say which. The codes pass came
+  // last and inherited class "term", so it was silently looked up in the prose
+  // glossary, found nothing, and returned - marked in the DOM and dead on hover.
+  let g;
+  if (el.classList.contains("hypocode")) {
+    const t = (CODES || {})[key];
+    if (t) g = t.kind === "AMBIGUOUS"
+      ? {kind: "ambiguous code", label: key,
+         text: t.senses.map(x => `${x.label} (${x.kind})`).join("  ·  ")
+               + "  —  this code carries two meanings in the source."}
+      : {kind: t.kind, label: t.label, text: t.note || ""};
+  } else {
+    g = el.classList.contains("term")
+      ? (GLOSS._terms || {})[key] : (GLOSS || {})[key];
+  }
   if (!g) return;
   const sheet = sheetMode();
   const article = el.tagName === "A" ? el.href : "";
@@ -718,22 +731,37 @@ function hideTip() {
 tipEl.addEventListener("pointerdown", armTip);
 tipEl.addEventListener("scroll", armTip, { passive: true });
 
+/* A page whose only marked things are codes still needs to say so, and it sits on the
+   far side of the prose glossary's early return. */
+function codeHint(root) {
+  if (root.querySelector("#glosshint")) return;
+  const p = document.createElement("p");
+  p.id = "glosshint";
+  p.textContent = "Underlined codes are hypothesis ids, group letters and outcome "
+    + "codes \u2014 tap, hover or tab to one for what it means.";
+  root.prepend(p);
+}
+
 async function decorate(root, file) {
   // Codes first, and on their own document list: REGISTER.md numbers outfalls U2/U4
   // and GRUNDLAGET.md numbers its own findings F1-F4, both of which collide.
   const c = await fetch(DOCS_DIR + "data/hypo_glossary.json", { cache: "force-cache" })
     .then(r => r.ok ? r.json() : null).catch(() => null);
-  if (c && (c._docs || []).includes(file)) markCodes(root, c.terms || {});
+  let codeHits = 0;
+  if (c) {
+    CODES = c.terms || {};              // showTip reads this global, so set it
+    if ((c._docs || []).includes(file)) codeHits = markCodes(root, CODES);
+  }
   const g = await glossary();
   // Only documents that speak this vocabulary. Register ids are short and collide
   // with real identifiers elsewhere - REGISTER.md lists outfalls named U2 and U4.
-  if (!g._docs || !g._docs.includes(file)) return;
+  if (!g._docs || !g._docs.includes(file)) { if (codeHits) codeHint(root); return; }
   for (const el of root.querySelectorAll("code")) {
     const id = el.textContent.trim();
     if (!g[id] || el.closest("pre")) continue;
     arm(el, "gloss", id, `${id}: ${g[id].label}. ${g[id].text}`);
   }
-  const n = markTerms(root, g._terms || {});
+  const n = markTerms(root, g._terms || {}) + codeHits;
   if (n || root.querySelector(".gloss")) {
     const hint = document.createElement("p");
     hint.id = "glosshint";
@@ -850,6 +878,7 @@ function markCodes(root, terms) {
             ? v.senses.map(x => `[${x.kind}] ${x.label}`).join("  \u2014  ")
               + "  \u2014  AMBIGUOUS in the source: this code carries two meanings."
             : `${v.kind}: ${v.label}` + (v.note ? ". " + v.note : "");
+          sp.classList.add("hypocode");
           arm(sp, "term", m[1], `${m[1]} \u2014 ${body}`);
           total++;
         }
