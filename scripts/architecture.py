@@ -112,6 +112,66 @@ def in_box(x, y):
     return BOX[0] <= x <= BOX[2] and BOX[1] <= y <= BOX[3]
 
 
+def street_metres(cats):
+    """Road centreline inside the combined-sewered catchments, by island.
+
+    The bore runs manhole to manhole under a street, so the length of the job is a
+    length of street rather than an area. OSM is the only road geometry this project
+    has fetched, and the copy here carries no tags - service roads, alleys and paths
+    are in it and cannot be told from a carriageway - so **this is an upper bound**,
+    and it is the honest one to quote: a real programme would work down from it as
+    the utility rules streets out, not up from a guess.
+
+    Returns metres, or None if the OSM extract is not present in this clone.
+    """
+    path = os.path.join(RAW, "osm", "roads.json")
+    if not os.path.exists(path):
+        return None
+    CELL = 0.004                                   # ~250 m: index, not geometry
+    grid, polys = {}, []
+    for c in cats:
+        if not (c["c"].startswith("combined") or c["c"] == "separate_into_combined"):
+            continue
+        for ring in c["g"]:
+            xs = [q[0] for q in ring]
+            ys = [q[1] for q in ring]
+            b = (min(xs), min(ys), max(xs), max(ys))
+            polys.append((ring, b, c["i"]))
+            for i in range(int(b[0] / CELL), int(b[2] / CELL) + 1):
+                for j in range(int(b[1] / CELL), int(b[3] / CELL) + 1):
+                    grid.setdefault((i, j), []).append(len(polys) - 1)
+
+    def hit(x, y):
+        for k in grid.get((int(x / CELL), int(y / CELL)), ()):
+            ring, b, isl = polys[k]
+            if not (b[0] <= x <= b[2] and b[1] <= y <= b[3]):
+                continue
+            ins = False
+            for a in range(len(ring)):
+                xi, yi = ring[a - 1]
+                xj, yj = ring[a]
+                if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+                    ins = not ins
+            if ins:
+                return isl
+        return None
+
+    R = 6371000.0
+    out = {"amager": 0.0, "mainland": 0.0, "all_roads_in_extract": 0.0}
+    for w in read_json(path):
+        for a in range(len(w) - 1):
+            x1, y1 = w[a]
+            x2, y2 = w[a + 1]
+            mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+            d = math.hypot((x2 - x1) * math.cos(math.radians(my)) * math.pi / 180 * R,
+                           (y2 - y1) * math.pi / 180 * R)
+            out["all_roads_in_extract"] += d
+            isl = hit(mx, my)
+            if isl:
+                out[isl] += d
+    return {k: round(v) for k, v in out.items()}
+
+
 def main():
     codes = read_json(os.path.join(MANUAL, "codelists.json"))["bygvaerkstype"]
     streams = read_json(os.path.join(DERIVED, "streams.json"))
@@ -204,6 +264,12 @@ def main():
             if len(pts) >= 2:
                 coast.append([[round(x, 5), round(y, 5)] for x, y in pts])
 
+    streets = street_metres(cats)
+    if streets:
+        log(f"  street inside combined catchments: "
+            f"{(streets['amager'] + streets['mainland'])/1000:,.0f} km "
+            f"(of {streets['all_roads_in_extract']/1000:,.0f} km in the extract)")
+
     out = {
         "_what": "Where the separated architecture would act, on the sewer layer "
                  "the city actually has.",
@@ -236,6 +302,11 @@ def main():
             # to know what they were computed on.
             "ponds_basis_ha": streams["amager"]["combined_sewered_impervious_ha"],
         },
+        "street_m": streets,
+        "_street_note": "Road centreline inside the combined catchments, from the "
+                        "OSM extract. The copy here has no tags, so paths and "
+                        "service roads are included and this is an upper bound on "
+                        "the length of street a rain line would follow.",
         "polder": {"ha": VESTAMAGER_HA,
                    "ring": [[12.548, 55.618], [12.585, 55.607], [12.612, 55.588],
                             [12.606, 55.571], [12.575, 55.566], [12.548, 55.578],

@@ -294,6 +294,9 @@ def main():
     riv = read_json(os.path.join(DERIVED, "rivermap.json"))
     ret = read_json(os.path.join(DERIVED, "currents_index.json"))["retention"]
     mon = read_json(os.path.join(MANUAL, "monitoring.json"))
+    st2 = read_json(os.path.join(DERIVED, "streams.json"))
+    # written by scripts/architecture.py, which has to run before this
+    arch = read_json(os.path.join(ROOT, "docs", "data", "architecture.json"))
     vol = mon["national_volumes_m3_per_year"]
     tt = mon["typetal_nutrients_mg_per_l"]
 
@@ -473,7 +476,8 @@ def main():
     a("**Drop the foul sewer by about a metre and put a rain-only line into the space "
       "above it.** Same trench, same street, same gully. The manhole connects to the "
       "new line instead of the old one; the house drains stay on the foul sewer, which "
-      "is now deeper and, with the rain taken out, never full.\n")
+      "is now deeper and, with the rain taken out, never full — which is a mixed "
+      "blessing, and the next section but one is about why.\n")
     a("What this buys is the thing that matters: **there is no longer a mixture to "
       "overflow.** An overflow structure on a foul-only sewer has nothing to spill in a "
       "storm, because the storm is not in that pipe. It is more expensive per metre than "
@@ -507,6 +511,21 @@ def main():
       "anyway. For a gravity line the technique has to be one that holds a grade of "
       "millimetres per metre over the shot — pilot-tube guided boring rather than "
       "free-steered drilling — and the shots are short, manhole to manhole.\n")
+    a("**And the length of the job is a length of street, which can be counted.** "
+      f"Road centreline inside Copenhagen's combined-sewered catchments comes to "
+      f"**{(arch['street_m']['amager']+arch['street_m']['mainland'])/1000:,.0f} km** "
+      f"({arch['street_m']['amager']/1000:,.0f} of it on Amager) — about "
+      f"{(arch['street_m']['amager']+arch['street_m']['mainland'])/arch['totals']['combined']['ha']:,.0f} "
+      "m of street for every impervious hectare drained. At a manhole every 80 m "
+      "that is on the order of **16,000 shots**, and not one of them needs a new "
+      "pit: a shot starts and ends at a shaft that is already there. *Upper bound* — "
+      "the road extract carries no classification, so paths and service roads are "
+      "counted with the carriageways, and a real programme works down from that "
+      "figure as streets are ruled out rather than up from a guess. What a metre "
+      "costs is the utility's number and not this project's; "
+      "[the architecture view](architecture.html) takes a rate and gives back the "
+      "total, the figure per person equivalent, and what that is a year over the "
+      "life of the asset.\n")
     a("It is not free of the thing it avoids. **Open-cut finds an unmapped cable; a "
       "bore hits it.** Working blind in the busiest metre of the ground raises the "
       "value of everything that says what is down there — the utility register, a "
@@ -547,6 +566,152 @@ def main():
     ]:
         a(f"- **{h}** {t}")
     a("")
+    w = []
+    wa = w.append
+    wa("**A small pipe blocks. That is its failure mode, and it is the right one to "
+       "have.** A combined sewer that blocks backs sewage into a basement. A rain "
+       "line that blocks puts rainwater on the street it came from — visible, "
+       "local, and nobody's floor. The design question is therefore not whether it "
+       "can block but whether the blockage is findable and reachable, and the "
+       "construction method settles most of that before anything else does: with a "
+       "shot from shaft to shaft, **no point on the line is more than half a "
+       "spacing from an opening**, and a jetting hose can be put in at either "
+       "end.\n")
+    wa("What actually accumulates, in order of how much of it there is:\n")
+    for h, t in [
+        ("Street grit and winter sand.",
+         "The largest mass, and it is caught before the pipe if the gully keeps its "
+         "sand trap — which it does, because the gully is not being rebuilt. The pan "
+         "in the shaft is a second trap, and it is a *designed* one: material that "
+         "settles there is material that reached the one place in the system with a "
+         "lid, a lorry and a schedule."),
+        ("Leaves.",
+         "Seasonal, and an argument for street sweeping before the autumn rather "
+         "than for a larger pipe. A leaf mat is a surface problem at the grating "
+         "far more often than a blockage inside the line."),
+        ("Fat and fibre, if greywater is admitted.",
+         "Laundry lint and kitchen fat are what actually build the deposits people "
+         "picture, and they come from fixtures rather than from streets. This is "
+         "the second argument for the fixture standard above: the kitchen sink is "
+         "the one greywater fixture that should stay on the foul line."),
+        ("Roots.",
+         "A shallow line under a street with trees. Root entry is a joint problem, "
+         "and a bored or driven line is fused or welded rather than socketed — so "
+         "the construction method that makes it cheap is also the one that gives "
+         "roots nothing to enter."),
+    ]:
+        wa(f"- **{h}** {t}")
+    wa("")
+    wa("**And a small pipe is better at keeping itself clean than a large one**, "
+       "which is the part that reads backwards. A gravity line scours at roughly "
+       "0.6–0.75 m/s, and velocity comes from filling the bore. A line sized for "
+       "the ordinary rain fills often; a line sized for the hundred-year storm runs "
+       "as a trickle in a wide invert almost every time it runs at all, and drops "
+       "its load. Sizing for the frequent rain is not only the cheaper choice, it "
+       "is the self-cleansing one — the design condition is that the scouring "
+       "velocity is reached at some stated frequency, not that the pipe is "
+       "large.\n")
+    wa("Three more that belong in the same list, because they are what would "
+       "actually be argued about:\n")
+    for h, t in [
+        ("Frost, and low points.",
+         "A shallow line with standing water in a sag is a freeze plug. The "
+         "requirement is cover and continuous fall — no sag between shafts — which "
+         "is the same requirement that the guided-boring method exists to meet."),
+        ("Deformation at installation.",
+         "Driving a pipe through mixed urban fill can leave voids and joint offsets, "
+         "and an offset is a sediment trap for the life of the asset. That is what "
+         "post-installation CCTV and a laser profile are for, as an acceptance test "
+         "rather than as a maintenance activity."),
+        ("Misconnection — and the detector that greywater costs you.",
+         "In every separated system somebody's foul pipe ends up in the rain line. "
+         "The cheapest detector for that is the simplest: **a rain line should be "
+         "dry in dry weather**, so anything flowing is a misconnection. Admitting "
+         "greywater deliberately puts a legitimate dry-weather flow into that pipe "
+         "and takes the test away. It does not make detection impossible — flow "
+         "with the wrong chemistry is still detectable, and the fixture standard "
+         "means the expected dry-weather flow is known — but it is a real cost of "
+         "the greywater idea and it belongs beside its benefits."),
+    ]:
+        wa(f"- **{h}** {t}")
+    wa("")
+    wa("**And the air matters as much as the water**, which is the part that "
+       "connects blockage to the thing everybody has heard of. Fat does not build "
+       "up in a fast pipe; it comes out against a cold wall at the waterline, and "
+       "in a concrete sewer it *saponifies* — the free fatty acids take up calcium "
+       "out of the pipe and become soap, which is solid, sticky and no longer "
+       "anything a jet of water dissolves. That reaction wants three things: fat, "
+       "lime, and long slow contact. A rain line supplies none of them if the "
+       "kitchen stays on the foul side; it supplies all three if it does not.\n")
+    for h, t in [
+        ("The rain line has to breathe too.",
+         "Danish street gullies carry a water seal, and a line whose every inlet is "
+         "sealed is a closed pipe of standing humid air. With rain alone that is "
+         "tolerable. With a greywater baseflow it is a weak foul pipe with no "
+         "ventilation, which is a biofilm and an odour complaint — so admitting "
+         "greywater means providing air, at the shafts, deliberately."),
+        ("The pan closes a shaft that was doing that job.",
+         "This is the fourth condition on the two-storey shaft, arriving from the "
+         "other direction: the foul sewer below is ventilated through its shafts, "
+         "and a watertight floor at rain level takes one out of service. The vent "
+         "has to be re-made through or around the pan, and it is easier to design "
+         "in than to retrofit into a lid somebody already cast."),
+    ]:
+        wa(f"- **{h}** {t}")
+    wa("")
+    wa("*None of this is settled here.* Cover depth, gradient, diameter and the "
+       "cleaning interval are design outputs, and this project has computed none of "
+       "them. What it can say is which of them decide the outcome, which is the "
+       "list above.\n")
+    a(fold("Technical concerns about a small rain line — what makes it block, why a "
+           "smaller pipe blocks less, and the one detector greywater costs you",
+           "\n".join(w)))
+    a("#### Never full is also never scoured, and that decides which pipe gets which "
+      "stream\n")
+    a("Taking the rain out of a combined sewer leaves a pipe sized for rain carrying "
+      "only sewage. **The same sentence read the other way is the problem:** a bore "
+      "that never fills never reaches a scouring velocity, so solids settle, the "
+      "flow goes septic in the deposit, and sulphide comes off it — which is odour "
+      "and, at the crown, corrosion of the concrete itself. Fat behaves the same "
+      "way: it comes out of solution against a cold wall and builds at the "
+      "waterline, and a slow warm film is exactly where it builds fastest. The "
+      "lumps people picture in a sewer are not a plumbing curiosity, they are what "
+      "an oversized pipe does with a small flow over years.\n")
+    a("It also loses a ventilation mechanism nobody counts. Storm flow is a piston: "
+      "it pushes the air in front of it and drags fresh air behind it, and a "
+      "combined system ventilates itself several times a year on that alone. Take "
+      "the rain out and the air in the pipe stops moving with it — in the same "
+      "system that has just become more septic. The retrofit therefore has to say "
+      "how the foul line breathes, and the two-storey shaft above makes that "
+      "sharper rather than softer, because a watertight pan closes a shaft that was "
+      "part of the answer.\n")
+    a("Which is why the arrangement question is really **which pipe gets which "
+      "stream**, and there are three answers, not one:\n")
+    a("| | What is built | What it costs | What it gets wrong |")
+    a("|---|---|---|---|")
+    a("| **Light** | a small bored rain line above; the old pipe keeps the sewage | "
+      "cheapest — nothing on private ground | the old pipe is now enormously "
+      "oversized for what it carries |")
+    a("| **Heavy** | drop the sewer a metre, rain line into the space | a relaid "
+      "sewer under live connections | pays for relaying, and then relays the same "
+      "wrong diameter unless it is downsized on the way |")
+    a("| **Swapped** | keep the big pipe for the rain it was sized for; bore a small "
+      "new **foul** line | every house drain has to be moved onto it | the work "
+      "crosses the property line, which is what makes separation slow |")
+    a("**And there is a fourth that takes the good half of each.** The old combined "
+      "sewer does not have to be abandoned at its diameter: it can be **lined down "
+      "to a foul-sized bore from the same shafts**, using the pipe that is there as "
+      "the duct. The rain goes in the new shallow line, the sewage goes in a bore "
+      "sized to scour itself, no house drain moves, and no trench is opened for "
+      "either. It is the same trenchless logic applied twice — once to add a pipe, "
+      "once to shrink one — and it is the arrangement this section would actually "
+      "argue for.\n")
+    a("*Stated, not established:* this project has not costed lining, has not "
+      "checked the condition of any sewer that would receive it, and has computed "
+      "no diameters. What the argument does establish is the **criterion**: a pipe "
+      "should be sized for the stream it carries, and the retrofit that leaves a "
+      "rain-sized pipe carrying sewage has solved the overflow and created a "
+      "maintenance liability in the same move.\n")
     a("*What this is:* an arrangement and a construction method, not a design. No "
       "clearance has been checked, no diameter or gradient computed, and it concerns "
       "an asset owned by a utility that would have to decide it. It is here because "
@@ -575,7 +740,6 @@ def main():
 
     # ---- 2
     kb = koege_basins()
-    st2 = read_json(os.path.join(DERIVED, "streams.json"))
     rr, fl, fs = st2["rain_record"], st2["amager"]["flow_m3_s"], st2["foul_stated"]
     sp = amager_split()
     am, ml = sp["Amager"], sp["mainland"]

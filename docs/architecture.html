@@ -147,6 +147,19 @@ select{width:100%;font:inherit;font-size:13px;padding:5px 6px;background:var(--g
   <dl id="pondm" style="margin-top:8px"></dl>
   <p class="note" id="pondnote"></p>
 
+  <h3>The job, in metres <span class="tag t-meas">MEASURED</span></h3>
+  <dl id="jobm"></dl>
+  <label for="spacing" style="margin-top:10px">Manhole spacing, metres</label>
+  <input type="range" id="spacing" min="40" max="120" value="80" step="10">
+  <div class="rangerow"><span>one bore shot per</span><b id="spacingval">80 m</b></div>
+  <label for="rate" style="margin-top:8px">Cost per metre of bored line, kr</label>
+  <input type="range" id="rate" min="1000" max="14000" value="4000" step="500">
+  <div class="rangerow"><span>your rate</span><b id="rateval">4,000 kr/m</b></div>
+  <label for="life" style="margin-top:8px">Written off over, years</label>
+  <input type="range" id="life" min="10" max="60" value="30" step="5">
+  <div class="rangerow"><span>life</span><b id="lifeval">30 years</b></div>
+  <p class="note" id="jobnote"></p>
+
   <h3>Assumptions <span class="stated">stated, not measured</span></h3>
   <label for="greyshare">Share of household water that is not toilet</label>
   <input type="range" id="greyshare" min="0" max="80" value="55" step="5">
@@ -498,6 +511,29 @@ function numbers(s) {
              + ` <span style="color:var(--ink3)">(${fmt(hours, 1)} h of buffer)</span>`]);
   pr.push([`Of the polder`, `${fmt(peak / D.polder.ha * 100, 2)}%`]);
   $("#pondm").innerHTML = pr.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+  // ---- the job, in metres of street rather than in hectares of city
+  const m = s.scope === "amager" ? D.street_m.amager
+                                 : D.street_m.amager + D.street_m.mainland;
+  const spacing = +$("#spacing").value, rate = +$("#rate").value,
+        life = +$("#life").value;
+  const cost = m * rate;
+  const jr = [
+    ["Street inside those catchments", `<b>${fmt(m / 1000)}</b> km`],
+    ["Street per impervious hectare", `${fmt(m / k.ha)} m`],
+    [`Bore shots, at ${spacing} m`, `<b>${fmt(m / spacing)}</b>`],
+    ["Pits to dig", `none new — the shots start and end at the manholes that are there`],
+    ["At your rate", `<b>${fmt(cost / 1e9, 2)}</b> bn kr`],
+    ["Per person equivalent", `${fmt(cost / k.pe)} kr`],
+    [`Per person equivalent, per year over ${life}`, `<b>${fmt(cost / k.pe / life)}</b> kr`],
+  ];
+  $("#jobm").innerHTML = jr.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+  $("#jobnote").innerHTML = "The kilometres are <b>measured</b> — road centreline "
+    + "inside the combined catchments — but the OSM extract carries no road class, so "
+    + "paths and service roads are in it and the length is an <b>upper bound</b>. The "
+    + "rate is <b>yours</b>: this project has no price for bored pipe and does not "
+    + "pretend to. Set it to what a utility quotes and the last row is the number that "
+    + "settles whether this is cheap.";
+
   $("#pondnote").innerHTML = "The two areas are the same filter. What separates them is "
     + "<b>storage</b>: somewhere to put the hour so the filter can have the week. That is "
     + "what the polder is, and what a reused basin is a down payment on.";
@@ -555,10 +591,17 @@ $("#scope").addEventListener("click", e => {
 document.addEventListener("change", e => {
   if (e.target.matches("#s-sep,#s-grey,#s-basin,#grain")) redraw();
 });
-$("#greyshare").addEventListener("input", () => {
-  $("#greyval").textContent = $("#greyshare").value + "%";
-  redraw();
-});
+const SLIDERS = [
+  ["#greyshare", "#greyval", v => v + "%"],
+  ["#spacing", "#spacingval", v => v + " m"],
+  ["#rate", "#rateval", v => (+v).toLocaleString() + " kr/m"],
+  ["#life", "#lifeval", v => v + " years"],
+];
+for (const [inp, out, fmtv] of SLIDERS)
+  $(inp).addEventListener("input", () => {
+    $(out).textContent = fmtv($(inp).value);
+    redraw();
+  });
 
 /* Hit-testing on the catchment rings, so a reader can ask any polygon what it is
    rather than reading a colour off a key. */
