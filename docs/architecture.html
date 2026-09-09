@@ -1,0 +1,603 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The separated architecture</title>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --sea:#eceff1; --accent:#2f6a95; --warn:#b4532f; --model:#8a6d3b;
+  --new:#1f7a5a; --gone:#9aa0a6; --combined:#a45a48; --foul:#7d5a4f;
+  --sep:#7aa9c6; --three:#4d7b96; --pond:#2f8f6b;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#20242a; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a;
+  --new:#5fbf98; --gone:#6b7076; --combined:#d08b76; --foul:#b08e80;
+  --sep:#6f9cb8; --three:#4d7b96; --pond:#57bd97;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#20242a; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a;
+  --new:#5fbf98; --gone:#6b7076; --combined:#d08b76; --foul:#b08e80;
+  --sep:#6f9cb8; --three:#4d7b96; --pond:#57bd97;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:24px 30px 16px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:22px;font-weight:640;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:0 0 6px;max-width:78ch;color:var(--ink2)}
+a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px}
+@media(max-width:1000px){.wrap{grid-template-columns:1fr}}
+main{padding:14px 10px 40px 18px;min-width:0}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:16px 18px 30px;
+  align-self:start;position:sticky;top:0;max-height:100vh;overflow:auto}
+@media(max-width:1000px){aside{border-left:0;border-top:1px solid var(--line);
+  position:static;max-height:none}}
+h2{font-size:15px;font-weight:640;margin:22px 0 4px}
+h2:first-child{margin-top:2px}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);
+  margin:18px 0 7px;font-weight:600}
+h3:first-of-type{margin-top:0}
+p.lead{margin:0 0 10px;color:var(--ink2);max-width:80ch}
+figure{margin:0 0 10px}
+figcaption{font-size:11.5px;color:var(--ink3);margin-top:6px;max-width:80ch}
+svg.graph{width:100%;height:auto;display:block;background:var(--panel);
+  border:1px solid var(--line);border-radius:4px}
+canvas{width:100%;display:block;border:1px solid var(--line);border-radius:4px;
+  background:var(--sea)}
+label{display:block;font-size:13px;margin:0 0 5px;cursor:pointer}
+label input{margin-right:7px;vertical-align:-1px}
+.cls{font-size:11px;color:var(--ink3);margin:-3px 0 9px 22px;line-height:1.4}
+.tag{display:inline-block;font-size:10px;letter-spacing:.05em;padding:1px 5px;
+  border-radius:3px;font-weight:600;vertical-align:1px}
+.t-meas{background:#2f6a9522;color:var(--accent)}
+.t-plan{background:#8a6d3b22;color:var(--model)}
+.t-prop{background:#1f7a5a22;color:var(--new)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:12.5px}
+dt{color:var(--ink3)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+dd b{font-weight:640}
+.delta{color:var(--new)}
+.note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
+  border-left:2px solid var(--line);padding-left:9px}
+.note b{color:var(--ink2)}
+.key{display:flex;gap:7px;align-items:baseline;font-size:12px;margin:0 0 5px}
+.sw{width:12px;height:12px;border-radius:2px;flex:0 0 auto;translate:0 2px}
+.sw.line{height:0;border-top:2px solid}
+#tip{position:fixed;z-index:9;pointer-events:none;display:none;max-width:270px;
+  background:var(--panel);border:1px solid var(--line);border-radius:4px;
+  padding:7px 9px;font-size:12px;box-shadow:0 4px 14px #0002}
+#tip b{display:block;margin-bottom:2px}
+#tip dl{font-size:11.5px}
+.seg{display:flex;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;
+  margin:0 0 8px}
+.seg button{flex:1 1 0;font:inherit;font-size:12.5px;padding:6px 4px;cursor:pointer;
+  background:var(--ground);color:var(--ink2);border:0;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff;font-weight:600}
+input[type=range]{width:100%}
+.rangerow{display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);
+  margin:8px 0 0}
+.rangerow b{color:var(--ink);font-variant-numeric:tabular-nums}
+select{width:100%;font:inherit;font-size:13px;padding:5px 6px;background:var(--ground);
+  color:var(--ink);border:1px solid var(--line);border-radius:3px}
+.stated{color:var(--model)}
+</style>
+
+<header>
+  <h1>The separated architecture — where it happens, and what moves</h1>
+  <p>Two pictures of one proposal. <b>The graph</b> is the architecture: what connects
+  to what, which pipes change job, and which structures stop having one. <b>The map</b>
+  is where it lands on the city that exists — every sewer catchment coloured by whether
+  rain and sewage share a pipe in it today.</p>
+  <p>Everything drawn from a register is labelled <span class="tag t-meas">MEASURED</span>,
+  everything from the city's own plan <span class="tag t-plan">PLAN</span>, and everything
+  this project is proposing <span class="tag t-prop">PROPOSED</span>. The scenario panel
+  recomputes the consequences live; every assumption it uses is named and adjustable.
+  <a href="../index.html#PROGRAMME.md">The argument this draws →</a></p>
+</header>
+
+<div class="wrap">
+<main>
+  <h2>1 — The architecture</h2>
+  <p class="lead">Water sources on the left, the sea on the right. A line that is
+  <b style="color:var(--gone)">grey</b> is a path that stops being used in the scenario;
+  <b style="color:var(--new)">green</b> is new; red dashed is a path that must not exist
+  and is drawn so it can be checked for.</p>
+  <figure>
+    <svg class="graph" id="graph" viewBox="0 0 980 470" role="img"
+         aria-label="Directed graph of the combined system and the separated one"></svg>
+    <figcaption id="gcap"></figcaption>
+  </figure>
+
+  <h2>2 — Where it happens</h2>
+  <p class="lead">Every sewer catchment in Copenhagen and the inner suburbs, coloured by
+  what its pipes do today. The proposal acts on one colour.</p>
+  <figure>
+    <canvas id="map"></canvas>
+    <figcaption>Municipal sewer-catchment layer (<code>sp_kloakoplande</code>), national
+    outfall register, and the city's cloudburst basins. The polder and its cells are
+    drawn schematically — nobody has surveyed a cell boundary, and the outline is an
+    indication of position, not a proposal for a shape.</figcaption>
+  </figure>
+</main>
+
+<aside>
+  <h3>Scenario</h3>
+  <div class="seg" id="scope">
+    <button data-scope="city" aria-pressed="true">Whole city</button>
+    <button data-scope="amager" aria-pressed="false">Amager only</button>
+  </div>
+  <label><input type="checkbox" id="s-sep" checked> Rain taken out of the combined system</label>
+  <div class="cls">The proposal. Section 1 of the argument: gullies to a rain line,
+  the foul pipe keeps the buildings.</div>
+  <label><input type="checkbox" id="s-grey"> Greywater to the rain line</label>
+  <div class="cls">The “bad chemicals banned” case: everything but the toilet may be
+  plumbed to the rain line, by fixture standard.</div>
+  <label><input type="checkbox" id="s-basin"> Retired basins repurposed as storage</label>
+  <div class="cls">The spare basins have nothing to buffer once the mixture is gone.
+  Either they are stranded, or they become buffer on the rain line.</div>
+
+  <h3>What moves <span class="tag t-meas">MEASURED</span></h3>
+  <dl id="metrics"></dl>
+
+  <h3>The filter, sized <span class="tag t-prop">PROPOSED</span></h3>
+  <select id="grain"></select>
+  <dl id="pondm" style="margin-top:8px"></dl>
+  <p class="note" id="pondnote"></p>
+
+  <h3>Assumptions <span class="stated">stated, not measured</span></h3>
+  <label for="greyshare">Share of household water that is not toilet</label>
+  <input type="range" id="greyshare" min="0" max="80" value="55" step="5">
+  <div class="rangerow"><span>greywater share</span><b id="greyval">55%</b></div>
+  <p class="note">Design hour <b>10 mm</b>, runoff coefficient <b>0.8</b>, dry-weather
+  sewage <b>130 l per person-equivalent per day</b>, morning peak <b>2×</b>. Settling is
+  Stokes in still water at 10 °C, so pond areas are floors. None of these five is a
+  measurement from this project.</p>
+
+  <h3>Map layers</h3>
+  <div id="layers"></div>
+
+  <h3>Key</h3>
+  <div id="key"></div>
+  <p class="note">Impervious area, person equivalents, plant and the planned class are
+  attributes of the catchment layer. A catchment with no recorded class is drawn
+  hollow rather than guessed at.</p>
+</aside>
+</div>
+<div id="tip"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const fmt = (n, d = 0) => n.toLocaleString(undefined, {minimumFractionDigits: d,
+                                                      maximumFractionDigits: d});
+let D = null;
+
+/* The five stated conventions. They live here rather than in the data file because
+   the point of the panel is that a reader can move them and watch the consequence,
+   and a number you can move is a number you can see the weight of. */
+const DWF_L = 130, PEAK = 2.0;
+
+/* ---------------------------------------------------------------- the graph ---- */
+/* Hand-laid rather than force-directed: the columns carry meaning (source, street,
+   pipe, works, receiver) and a spring layout would throw that away for prettiness. */
+const NODES = {
+  roof:   [70,  60, "Roof and street", "impervious area"],
+  build:  [70, 250, "Buildings", "person equivalents"],
+  gully:  [235, 60, "Gully", "and its sand trap"],
+  drain:  [235, 250, "House drain", ""],
+  comb:   [420, 150, "Combined sewer", "one pipe, both streams"],
+  rain:   [420, 40, "Rain line", "new, shallow, bored"],
+  foul:   [420, 300, "Foul sewer", "same pipe, one stream"],
+  basin:  [610, 190, "Spare basin", "holds, then spills"],
+  cells:  [610, 40, "Wetland cells", "in rotation, dredged"],
+  works:  [610, 330, "Treatment works", ""],
+  cso:    [800, 190, "Overflow structure", ""],
+  term:   [800, 40, "Terminal water", "the polder"],
+  out:    [800, 330, "Outfall", "treated effluent"],
+  sea:    [800, 430, "THE SEA", ""],
+};
+/* [from, to, when] - `when` is a function of the scenario, returning
+   "on" | "off" | "new" | "never", which is also the drawing order of importance. */
+const EDGES = [
+  ["roof", "gully", () => "on"],
+  ["build", "drain", () => "on"],
+  ["gully", "comb", s => s.sep ? "off" : "on"],
+  ["gully", "rain", s => s.sep ? "new" : "hide"],
+  ["drain", "comb", s => s.sep ? "off" : "on"],
+  ["drain", "foul", s => s.sep ? "new" : "hide"],
+  ["drain", "rain", s => (s.sep && s.grey) ? "new" : "hide"],
+  ["comb", "basin", s => s.sep ? "off" : "on"],
+  ["comb", "works", s => s.sep ? "off" : "on"],
+  ["basin", "cso", s => s.sep ? "off" : "on"],
+  ["basin", "works", s => s.sep ? "off" : "on"],
+  ["cso", "sea", s => s.sep ? "off" : "on"],
+  ["rain", "basin", s => (s.sep && s.basin) ? "new" : "hide"],
+  ["basin", "cells", s => (s.sep && s.basin) ? "new" : "hide"],
+  ["rain", "cells", s => s.sep ? "new" : "hide"],
+  ["cells", "term", s => s.sep ? "new" : "hide"],
+  ["foul", "works", s => s.sep ? "new" : "hide"],
+  ["works", "out", () => "on"],
+  ["out", "sea", () => "on"],
+  ["foul", "rain", s => s.sep ? "never" : "hide"],
+];
+const EDGE_LABEL = {
+  "drain>rain": "greywater, by fixture standard",
+  "rain>basin": "the retired basin, reused as buffer",
+  "foul>rain": "must not exist: a surcharged sewer lifting a pan",
+  "cells>term": "gravity",
+};
+
+function drawGraph(s) {
+  const svg = $("#graph");
+  const P = [];
+  const colour = {on: "var(--ink2)", off: "var(--gone)", new: "var(--new)",
+                  never: "var(--warn)"};
+  for (const [a, b, when] of EDGES) {
+    const st = when(s);
+    if (st === "hide") continue;
+    const [ax, ay] = NODES[a], [bx, by] = NODES[b];
+    const x1 = ax + 132, y1 = ay + 22, x2 = bx, y2 = by + 22;
+    const mid = (x1 + x2) / 2;
+    const dash = st === "never" ? '6 4' : st === "off" ? '3 4' : '';
+    P.push(`<path d="M${x1},${y1} C${mid},${y1} ${mid},${y2} ${x2 - 8},${y2}" `
+      + `fill="none" stroke="${colour[st]}" stroke-width="${st === "new" ? 2.4 : 1.6}" `
+      + `${dash ? `stroke-dasharray="${dash}"` : ""} marker-end="url(#a-${st})" `
+      + `opacity="${st === "off" ? .55 : 1}"/>`);
+    const lab = EDGE_LABEL[a + ">" + b];
+    if (lab && st !== "hide")
+      P.push(`<text x="${mid}" y="${(y1 + y2) / 2 - 6}" text-anchor="middle" `
+        + `font-size="10.5" fill="${colour[st]}" font-style="italic">${lab}</text>`);
+  }
+  const dead = n => s.sep && ["comb", "cso"].includes(n)
+    || (s.sep && n === "basin" && !s.basin);
+  const born = n => s.sep && ["rain", "cells", "term", "foul"].includes(n);
+  for (const [id, [x, y, t, sub]] of Object.entries(NODES)) {
+    const off = dead(id), nw = born(id);
+    const stroke = off ? "var(--gone)" : nw ? "var(--new)" : "var(--line)";
+    const fill = id === "sea" ? "var(--sea)" : "var(--panel)";
+    P.push(`<rect x="${x}" y="${y}" width="132" height="44" rx="5" fill="${fill}" `
+      + `stroke="${stroke}" stroke-width="${nw ? 2 : 1.2}" `
+      + `opacity="${off ? .5 : 1}"/>`);
+    P.push(`<text x="${x + 66}" y="${y + (sub ? 19 : 27)}" text-anchor="middle" `
+      + `font-size="12" font-weight="600" fill="${off ? "var(--gone)" : "var(--ink)"}">`
+      + `${t}</text>`);
+    if (sub) P.push(`<text x="${x + 66}" y="${y + 33}" text-anchor="middle" `
+      + `font-size="10" fill="var(--ink3)">${sub}</text>`);
+    if (off) P.push(`<text x="${x + 66}" y="${y + 56}" text-anchor="middle" `
+      + `font-size="9.5" fill="var(--gone)" letter-spacing=".05em">`
+      + `${id === "basin" ? "STRANDED" : "NO LONGER USED"}</text>`);
+  }
+  const marks = ["on", "off", "new", "never"].map(k =>
+    `<marker id="a-${k}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" `
+    + `markerHeight="6" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" `
+    + `stroke="${colour[k]}" stroke-width="1.6"/></marker>`).join("");
+  svg.innerHTML = `<defs>${marks}</defs>` + P.join("");
+  $("#gcap").textContent = s.sep
+    ? ("Separated. The combined sewer keeps its trench and loses its rain; the "
+       + "overflow structure has nothing to spill; the basin is "
+       + (s.basin ? "reused as buffer on the rain line." : "stranded — nothing buffers a stream that no longer exists."))
+    : "Today. One pipe carries both streams, and the overflow is the relief valve.";
+}
+
+/* ------------------------------------------------------------------ the map ---- */
+const LAYERS = [
+  ["combined", "Combined catchments", "MEASURED", true],
+  ["other", "Separated and foul-only", "MEASURED", true],
+  ["plan", "Where the city already plans a change", "PLAN", true],
+  ["cso", "Combined-sewer outfall structures", "MEASURED", true],
+  ["sep", "Separate stormwater outlets", "MEASURED", false],
+  ["basins", "Cloudburst basins, built or planned", "MEASURED", false],
+  ["polder", "The polder and its cells", "PROPOSED", true],
+];
+const on = {};
+const cv = $("#map"), cx = cv.getContext("2d");
+let PROJ = null;
+
+function project() {
+  const [w, e] = [D.box[0], D.box[2]], [s, n] = [D.box[1], D.box[3]];
+  const W = cv.clientWidth || 900, H = MAPH;
+  const k = Math.cos((s + n) / 2 * Math.PI / 180);
+  const sc = Math.min(W / ((e - w) * k), H / (n - s));
+  const ox = (W - (e - w) * k * sc) / 2, oy = (H - (n - s) * sc) / 2;
+  return {x: lon => ox + (lon - w) * k * sc, y: lat => oy + (n - lat) * sc, sc};
+}
+
+const CLS_COLOUR = {
+  combined: "var(--combined)", combined_road_out: "var(--combined)",
+  separate_into_combined: "var(--combined)",
+  foul_only: "var(--foul)", separate: "var(--sep)", separate_road: "var(--sep)",
+  three_pipe: "var(--three)", part_separate: "var(--sep)", unknown: null,
+};
+const css = v => getComputedStyle(document.body).getPropertyValue(v.slice(4, -1)).trim();
+
+/* The map is sized in CSS pixels and the backing store is scaled to the device, so
+   every coordinate below is a CSS pixel and the hit-testing can share the projection
+   with the drawing. The height follows the width rather than being fixed, because
+   the city is wider than it is tall and a fixed box would letterbox it. */
+let MAPH = 620;
+
+function drawMap(s) {
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  const W = cv.clientWidth || 900;
+  MAPH = Math.max(420, Math.min(760, Math.round(W * 0.62)));
+  cv.width = W * dpr;
+  cv.height = MAPH * dpr;
+  cv.style.height = MAPH + "px";
+  cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  PROJ = project();
+  const p = PROJ;
+  cx.clearRect(0, 0, W, MAPH);
+
+  cx.lineWidth = 1;
+  cx.strokeStyle = css("var(--ink3)") + "66";
+  for (const line of D.coast) {
+    cx.beginPath();
+    line.forEach(([x, y], i) => i ? cx.lineTo(p.x(x), p.y(y)) : cx.moveTo(p.x(x), p.y(y)));
+    cx.stroke();
+  }
+
+  for (const c of D.catchments) {
+    const comb = c.c.startsWith("combined") || c.c === "separate_into_combined";
+    const inScope = s.scope === "city" || c.i === "amager";
+    if (comb && !on.combined) continue;
+    if (!comb && !on.other) continue;
+    const col = CLS_COLOUR[c.c];
+    cx.beginPath();
+    for (const ring of c.g)
+      ring.forEach(([x, y], i) => i ? cx.lineTo(p.x(x), p.y(y)) : cx.moveTo(p.x(x), p.y(y)));
+    cx.closePath();
+    if (col) {
+      cx.fillStyle = css(col) + (comb ? (s.sep && inScope ? "cc" : "88") : "55");
+      cx.fill();
+    }
+    cx.strokeStyle = css("var(--line)");
+    cx.lineWidth = .6;
+    cx.stroke();
+    if (on.plan && c.p !== c.c) {                 // the city's own intention
+      cx.strokeStyle = css("var(--model)");
+      cx.lineWidth = 1.8;
+      cx.stroke();
+    }
+    if (comb && s.sep && inScope) {               // what the proposal acts on
+      cx.strokeStyle = css("var(--new)");
+      cx.lineWidth = 1.4;
+      cx.stroke();
+    }
+  }
+
+  if (on.polder) {
+    const r = D.polder.ring;
+    cx.beginPath();
+    r.forEach(([x, y], i) => i ? cx.lineTo(p.x(x), p.y(y)) : cx.moveTo(p.x(x), p.y(y)));
+    cx.closePath();
+    cx.fillStyle = css("var(--pond)") + "33";
+    cx.fill();
+    cx.setLineDash([7, 5]);
+    cx.strokeStyle = css("var(--pond)");
+    cx.lineWidth = 2;
+    cx.stroke();
+    cx.setLineDash([]);
+    // the cells, drawn as what they are: a schematic handful, not a layout
+    const cxx = r.reduce((a, q) => a + q[0], 0) / r.length;
+    const cyy = r.reduce((a, q) => a + q[1], 0) / r.length;
+    for (let i = 0; i < 4; i++) {
+      const bx = p.x(cxx) - 34 + (i % 2) * 36, by = p.y(cyy) - 14 + ((i / 2) | 0) * 22;
+      cx.fillStyle = css("var(--pond)") + (i === 3 ? "44" : "aa");
+      cx.fillRect(bx, by, 30, 17);
+    }
+    cx.fillStyle = css("var(--ink2)");
+    cx.font = "11px ui-sans-serif,system-ui,sans-serif";
+    cx.fillText("cells in rotation — one offline", p.x(cxx) - 40, p.y(cyy) + 42);
+    cx.fillText("schematic", p.x(cxx) - 40, p.y(cyy) + 56);
+  }
+
+  for (const o of D.outfalls) {
+    if (o.cs ? !on.cso : !on.sep) continue;
+    const dead = o.cs && s.sep;
+    cx.beginPath();
+    cx.arc(p.x(o.x), p.y(o.y), o.cs ? 4 : 2.4, 0, 7);
+    cx.fillStyle = dead ? css("var(--gone)") + "99"
+      : css(o.cs ? "var(--warn)" : "var(--sep)");
+    cx.fill();
+    if (dead) {                                    // struck through: inert, not removed
+      cx.strokeStyle = css("var(--gone)");
+      cx.lineWidth = 1.2;
+      cx.beginPath();
+      cx.moveTo(p.x(o.x) - 5, p.y(o.y) - 5);
+      cx.lineTo(p.x(o.x) + 5, p.y(o.y) + 5);
+      cx.stroke();
+    }
+  }
+  if (on.basins) {
+    cx.fillStyle = css("var(--accent)") + "cc";
+    for (const b of D.basins) {
+      cx.beginPath();
+      cx.rect(p.x(b.x) - 3, p.y(b.y_) - 3, 6, 6);
+      cx.fill();
+    }
+  }
+}
+
+/* ---------------------------------------------------------------- the numbers -- */
+function stock(s) {
+  const cs = D.catchments.filter(c =>
+    (s.scope === "city" || c.i === "amager"));
+  const comb = cs.filter(c => c.c.startsWith("combined") || c.c === "separate_into_combined");
+  const ha = comb.reduce((a, c) => a + c.ha, 0);
+  const pe = comb.reduce((a, c) => a + c.pe, 0);
+  const planned = comb.filter(c => c.p !== c.c).reduce((a, c) => a + c.ha, 0);
+  // Outfalls are points and carry no catchment id, so scope them by position: the
+  // Amager view keeps the ones east of the harbour line and south of Christianshavn.
+  const inScope = o => s.scope === "city" || (o.x > 12.56 && o.y < 55.685);
+  const cso = D.outfalls.filter(o => o.cs && inScope(o));
+  return {
+    ha, pe, planned,
+    cso: cso.length,
+    basin_m3: cso.reduce((a, o) => a + o.sb + o.fb, 0),
+  };
+}
+
+function numbers(s) {
+  const k = stock(s);
+  const Q = k.ha * 1e4 * (D.rain.design_mm_h / 1000) * D.rain.runoff_c / 3600;
+  const dwf = k.pe * DWF_L / 1000 / 86400;
+  const grey = s.grey ? +$("#greyshare").value / 100 : 0;
+  const foul = dwf * (1 - grey), base = dwf * grey;
+  const rows = [
+    ["Combined-sewered impervious area", `<b>${fmt(k.ha)}</b> ha`],
+    ["Connected person equivalents", `<b>${fmt(k.pe)}</b>`],
+    ["Already planned to change, by the city", `${fmt(k.planned)} ha `
+      + `<span class="${k.planned / k.ha < .2 ? "" : "delta"}">`
+      + `(${fmt(k.planned / k.ha * 100, 1)}%)</span>`],
+  ];
+  if (s.sep) {
+    rows.push(["Rain taken out of the sewer, design hour", `<b class="delta">${fmt(Q, 1)}</b> m³/s`]);
+    rows.push(["Overflow structures with nothing to spill", `<b class="delta">${fmt(k.cso)}</b>`]);
+    rows.push(["Basin volume behind them", `${fmt(k.basin_m3)} m³`]);
+    rows.push([s.basin ? "Reused as buffer on the rain line"
+                       : "Stranded — nothing left to buffer",
+      s.basin ? `<b class="delta">${fmt(k.basin_m3 / Q / 3600, 1)}</b> h of the design hour`
+              : `<span style="color:var(--gone)">${fmt(k.basin_m3)} m³ idle</span>`]);
+  }
+  rows.push(["Foul flow, dry weather", `${fmt(foul, 2)} m³/s`]);
+  rows.push(["Foul flow, morning peak", `${fmt(foul * PEAK, 2)} m³/s`]);
+  if (s.grey) {
+    rows.push(["Moved off the plant", `<b class="delta">−${fmt(grey * 100)}%</b> `
+      + `(${fmt(base, 2)} m³/s)`]);
+    rows.push(["…which arrives on the rain line as", `<b class="delta">baseflow</b>, `
+      + `${fmt(base * 86400)} m³/day`]);
+  }
+  rows.push(["Rain, at the design hour, against foul peak",
+    `<b>${fmt(Q / (foul * PEAK), 0)}×</b>`]);
+  $("#metrics").innerHTML = rows.map(([a, b]) =>
+    `<dt>${a}</dt><dd>${b}</dd>`).join("");
+
+  // ---- the filter
+  const g = D.rain.ponds.find(p => p.grain_um === +$("#grain").value);
+  const scale = k.ha / D.rain.ponds_basis_ha;
+  const peak = g.area_ha_at_design_hour * scale;
+  const steady = g.area_ha_if_fed_steadily * scale;
+  /* A deliberately crude attenuation: if the reused basins hold h hours of the
+     design flow, the same volume can leave over (1 + h) hours, so the area the
+     filter needs falls by that factor - bounded below by the steady-fed area,
+     which no amount of storage can beat. It is a first-order statement about what
+     storage buys, not a routing model. */
+  const hours = k.basin_m3 / (Q * 3600);
+  const buffered = s.sep && s.basin
+    ? Math.max(steady, peak / (1 + hours)) : null;
+  const pr = [
+    [`Falls at`, `${fmt(g.settling_m_per_h, 2)} m/h`],
+    [`Pond area, fed the design hour as it arrives`, `<b>${fmt(peak, 1)}</b> ha`],
+    [`Pond area, fed steadily all year`, `${fmt(steady * 1e4)} m²`],
+  ];
+  if (buffered !== null)
+    pr.push([`With the reused basins in front of it`,
+             `<b class="delta">${fmt(buffered, 1)}</b> ha`
+             + ` <span style="color:var(--ink3)">(${fmt(hours, 1)} h of buffer)</span>`]);
+  pr.push([`Of the polder`, `${fmt(peak / D.polder.ha * 100, 2)}%`]);
+  $("#pondm").innerHTML = pr.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+  $("#pondnote").innerHTML = "The two areas are the same filter. What separates them is "
+    + "<b>storage</b>: somewhere to put the hour so the filter can have the week. That is "
+    + "what the polder is, and what a reused basin is a down payment on.";
+}
+
+/* --------------------------------------------------------------- interaction --- */
+function scenario() {
+  return {
+    scope: $("#scope button[aria-pressed=true]").dataset.scope,
+    sep: $("#s-sep").checked,
+    grey: $("#s-grey").checked,
+    basin: $("#s-basin").checked,
+  };
+}
+function redraw() {
+  const s = scenario();
+  drawGraph(s);
+  drawMap(s);
+  numbers(s);
+}
+
+function buildPanels() {
+  $("#layers").innerHTML = LAYERS.map(([id, t, kind, def]) =>
+    `<label><input type="checkbox" data-layer="${id}"${def ? " checked" : ""}> ${t} `
+    + `<span class="tag t-${kind === "MEASURED" ? "meas" : kind === "PLAN" ? "plan" : "prop"}">`
+    + `${kind}</span></label>`).join("");
+  for (const [id, , , def] of LAYERS) on[id] = def;
+  $("#layers").addEventListener("change", e => {
+    on[e.target.dataset.layer] = e.target.checked;
+    redraw();
+  });
+  $("#key").innerHTML = [
+    ["var(--combined)", "Rain and sewage in one pipe — what the proposal acts on"],
+    ["var(--foul)", "Sewage only; rain is already elsewhere"],
+    ["var(--sep)", "Separated: roof and road water to a receiving water"],
+    ["var(--three)", "Three pipes: sewage, roof water and road water apart"],
+    ["var(--model)", "Outlined: the city's own plan changes this catchment"],
+    ["var(--warn)", "Combined-sewer outfall structure"],
+    ["var(--pond)", "Proposed: the polder and its cells"],
+  ].map(([c, t]) => `<div class="key"><span class="sw" style="background:${c}"></span>`
+    + `<span>${t}</span></div>`).join("");
+  $("#grain").innerHTML = D.rain.ponds.map(p =>
+    `<option value="${p.grain_um}"${p.grain_um === 20 ? " selected" : ""}>`
+    + `${p.grain_um} µm — ${p.grain_um >= 50 ? "sand" : p.grain_um >= 20 ? "coarse silt"
+       : p.grain_um >= 10 ? "silt" : "fine silt"}</option>`).join("");
+}
+
+addEventListener("resize", () => D && redraw());
+$("#scope").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  for (const x of $("#scope").children) x.setAttribute("aria-pressed", x === b);
+  redraw();
+});
+document.addEventListener("change", e => {
+  if (e.target.matches("#s-sep,#s-grey,#s-basin,#grain")) redraw();
+});
+$("#greyshare").addEventListener("input", () => {
+  $("#greyval").textContent = $("#greyshare").value + "%";
+  redraw();
+});
+
+/* Hit-testing on the catchment rings, so a reader can ask any polygon what it is
+   rather than reading a colour off a key. */
+const tip = $("#tip");
+cv.addEventListener("mousemove", ev => {
+  if (!D || !PROJ) return;
+  const r = cv.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  let hit = null;
+  for (const c of D.catchments) {
+    for (const ring of c.g) {
+      let inside = false;
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const xi = PROJ.x(ring[i][0]), yi = PROJ.y(ring[i][1]);
+        const xj = PROJ.x(ring[j][0]), yj = PROJ.y(ring[j][1]);
+        if ((yi > my) !== (yj > my) && mx < (xj - xi) * (my - yi) / (yj - yi) + xi)
+          inside = !inside;
+      }
+      if (inside) { hit = c; break; }
+    }
+    if (hit) break;
+  }
+  if (!hit) { tip.style.display = "none"; return; }
+  tip.style.display = "block";
+  tip.style.left = Math.min(innerWidth - 280, ev.clientX + 14) + "px";
+  tip.style.top = (ev.clientY + 14) + "px";
+  tip.innerHTML = `<b>${hit.l || "unlabelled catchment"}</b><dl>`
+    + `<dt>Today</dt><dd>${D.classes[hit.c] || hit.c}</dd>`
+    + `<dt>In the plan</dt><dd>${hit.p === hit.c ? "unchanged" : (D.classes[hit.p] || hit.p)}</dd>`
+    + `<dt>Impervious</dt><dd>${fmt(hit.ha, 1)} ha</dd>`
+    + `<dt>Person equiv.</dt><dd>${fmt(hit.pe)}</dd>`
+    + `<dt>Plant</dt><dd>${hit.pl || "—"}</dd>`
+    + `<dt>Island</dt><dd>${hit.i === "amager" ? "Amager" : "mainland"}</dd></dl>`;
+});
+cv.addEventListener("mouseleave", () => { tip.style.display = "none"; });
+
+fetch("data/architecture.json").then(r => r.json()).then(d => {
+  D = d;
+  buildPanels();
+  redraw();
+});
+</script>

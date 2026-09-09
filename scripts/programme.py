@@ -583,6 +583,12 @@ def main():
     hour_m3 = amager_ha * 1e4 * RAIN_MM_H / 1000 * RUNOFF_C
     a("### 2. An outlet that is not the sea\n")
     a("![Where a raindrop goes now, and where it would go](system_flow.svg)\n")
+    a("> **[The same architecture, on the city →](architecture.html)** — the graph "
+      "with every path that changes, and a map of which sewer catchments it acts "
+      "on, each one carrying its own impervious area, person equivalents and the "
+      "city's own plan for it. The scenarios in it are the ones argued below: rain "
+      "out of the sewer, greywater moved to the rain line, the retired basins "
+      "reused or stranded.\n")
     a("Section 1 does not improve the combined system. It ends it, and what is left "
       "is **two systems with different jobs**. A foul line: small, steady, running "
       "every hour of the year, going to a treatment plant. And a rain line: "
