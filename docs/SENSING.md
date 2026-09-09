@@ -254,6 +254,57 @@ samplers rotating around a network of hundreds of nodes is the realistic shape.
 
 ---
 
+## Does it really have to be bottles?
+
+Partly, and less every year — but the honest answer has three tiers rather than one,
+and the middle tier is the one that changes the economics.
+
+**What genuinely needs a laboratory today.** The discriminating chemistry: faecal
+sterols by GC-MS, host-specific markers and crAssphage by qPCR, veterinary residues by
+LC-MS/MS, nitrate isotopes by IRMS. These are extractions, chromatography and mass
+spectrometry. **Nothing you can bolt to a culvert does them**, and anybody who says
+otherwise is selling something. So attribution, today, means a bottle.
+
+**What is already automated and is not bottles at all.** Everything reagentless: level,
+turbidity, conductivity, temperature, optical oxygen, chlorophyll and fDOM run
+continuously for months on a battery. UV nitrate needs no reagent either — it is
+expensive rather than manual. And wet-chemistry nutrient analysers run nitrate and
+phosphate hourly in situ for weeks, which trades a bottle round for a **reagent refill**
+— a different chore, on a calmer schedule, and one that can be done on the same visit
+the sensor is cleaned on.
+
+**What is being automated now, expensively.** Robotic molecular samplers that filter,
+preserve and in some cases run the assay in place exist and are deployed — for harmful
+algae and for eDNA. They cost more than everything else on this page combined, which
+means they belong at a handful of anchor sites rather than at eight hundred. **The
+trajectory is clear and the price is not there yet**, and a plan that assumed otherwise
+would be planning on a press release.
+
+### Which changes what the bottles are *for*
+
+> **Bottles calibrate the network. They do not monitor it.**
+
+That is the sentence that makes the arithmetic bearable. At a site, a season of
+event bottles establishes the local relation between the cheap continuous dimensions —
+fluorescence, turbidity, conductivity — and the laboratory panel. Once that relation
+holds, **the sensors carry the estimate between calibrations** and the bottles fall
+back to validation: a handful a year to confirm the relation has not drifted, and a
+fresh round whenever something changes upstream.
+
+So the bottle count scales with **sites × recalibrations**, not with events forever,
+and the cost curve bends down after the first year or two rather than running flat.
+[The network page](network.html) has that as two dials — how long the calibration phase
+lasts, and what fraction of the sampling continues afterwards — because the honest
+answer depends on how stable the relation turns out to be, and nobody knows that yet
+for a Danish stream.
+
+**And if the relation never stabilises at a site, that is a result rather than a
+setback.** It would mean the payload arrives in forms the cheap sensors cannot see,
+which is worth knowing and is exactly the kind of thing a monitoring programme designed
+around a fixed determinand list would never discover.
+
+---
+
 ## What that costs, at three sizes
 
 > **[Dial it yourself →](network.html)** — the density on a map of Denmark, what each

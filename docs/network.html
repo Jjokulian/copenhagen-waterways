@@ -62,10 +62,12 @@ dd b{font-weight:640}
 
 <header>
   <h1>Design the network</h1>
-  <p>Dial the density, choose what each node carries, and watch what it costs. The
-  scatter is random inside Denmark — <b>it is a picture of a density, not a siting
-  plan</b>: real nodes go where streams meet the sea, and choosing those places is
-  the one part of this that needs a map nobody has published.</p>
+  <p>Dial the density, choose what each node carries, and watch what it costs. Two
+  populations, because they are different machines: <b>inland</b> nodes on the streams
+  that deliver, and <b>marine</b> nodes in the fjords, belts and coastal waters that
+  receive. The scatter is random — <b>it is a picture of a density, not a siting
+  plan</b> — and the marine one is drawn inside the 123 water bodies the state
+  actually recognises, all 43,579 km² of them.</p>
   <p>Every price is a <b>stated range</b> from
   <a href="../index.html#SENSING.md">the shopping list</a>, not a quotation, and every
   one of them is a slider here because the argument should survive somebody replacing
@@ -79,19 +81,30 @@ dd b{font-weight:640}
     <figcaption id="cap"></figcaption>
   </div>
   <aside>
-    <h3>Density</h3>
-    <input type="range" id="n" min="1" max="2000" value="120" step="1">
-    <div class="rangerow"><span>nodes</span><b id="nv">120</b></div>
-    <div class="rangerow"><span>one node per</span><b id="spacing">—</b></div>
-    <div class="seg" id="preset" style="margin-top:9px">
-      <button data-n="2" data-samp="1" data-bot="40">Pair</button>
-      <button data-n="24" data-samp="3" data-bot="40">Experiment</button>
-      <button data-n="120" data-samp="8" data-bot="40">Regional</button>
-      <button data-n="800" data-samp="20" data-bot="30">Every outlet</button>
-    </div>
-
-    <h3>What each node carries</h3>
+    <h3>Inland — the streams that deliver</h3>
+    <input type="range" id="n" min="0" max="2000" value="120" step="1">
+    <div class="rangerow"><span>stream nodes</span><b id="nv">120</b></div>
+    <div class="rangerow"><span>one per</span><b id="spacing">—</b></div>
     <div id="sensors"></div>
+
+    <h3>Marine — the water that receives</h3>
+    <input type="range" id="m" min="0" max="1200" value="150" step="1">
+    <div class="rangerow"><span>marine nodes</span><b id="mv">150</b></div>
+    <div class="rangerow"><span>one per</span><b id="mspacing">—</b></div>
+    <div id="msensors"></div>
+    <label class="ck" style="margin-top:6px"><input type="checkbox" id="nearbed" checked>
+      A second string near the bed<span class="p" id="nearbedp"></span></label>
+    <p class="note">The oxygen argument on this site is a <b>near-bed</b> argument, and
+    the national archive collapses depth to two bins. A surface-only mooring reproduces
+    exactly the gap this project spent its length complaining about — so the second
+    string is on by default and it roughly doubles the wet part of the node.</p>
+
+    <div class="seg" id="preset" style="margin-top:10px">
+      <button data-n="2" data-m="2" data-samp="1" data-bot="40">Pair</button>
+      <button data-n="24" data-m="12" data-samp="3" data-bot="40">Experiment</button>
+      <button data-n="120" data-m="60" data-samp="8" data-bot="40">Regional</button>
+      <button data-n="800" data-m="400" data-samp="20" data-bot="30">Everywhere</button>
+    </div>
     <div class="rangerow"><span>share of nodes with the fluorometer</span>
       <b id="fdomv">100%</b></div>
     <input type="range" id="fdom" min="0" max="100" value="100" step="5">
@@ -103,14 +116,29 @@ dd b{font-weight:640}
     <div class="rangerow"><span>bottles analysed per sampler per year</span><b id="botv">40</b></div>
     <input type="range" id="bot" min="0" max="200" value="40" step="5">
     <div class="rangerow"><span>which is</span><b id="totbot">—</b></div>
+    <div class="rangerow"><span>calibration years, at that rate</span><b id="calv">2</b></div>
+    <input type="range" id="cal" min="0" max="10" value="2" step="1">
+    <div class="rangerow"><span>bottles afterwards, as a share</span><b id="steadyv">30%</b></div>
+    <input type="range" id="steady" min="0" max="100" value="30" step="5">
+    <p class="note">Bottles are how the cheap continuous sensors get <b>calibrated</b>
+    at a site, not how it is monitored forever. Once the local relation between
+    fluorescence, turbidity and the laboratory panel is established, the sensors carry
+    the estimate and the bottles drop to validation. If that relation never
+    stabilises, the site keeps sampling — and that is a finding too.</p>
     <div class="rangerow"><span>price per bottle</span><b id="botpv">2,500 kr</b></div>
     <input type="range" id="botp" min="500" max="5000" value="2500" step="100">
 
     <h3>Keeping it alive</h3>
     <div class="rangerow"><span>service visits per node per year</span><b id="visv">4</b></div>
     <input type="range" id="vis" min="0" max="12" value="4" step="1">
-    <div class="rangerow"><span>cost per visit</span><b id="vispv">1,200 kr</b></div>
+    <div class="rangerow"><span>cost per inland visit</span><b id="vispv">1,200 kr</b></div>
     <input type="range" id="visp" min="0" max="4000" value="1200" step="100">
+    <div class="rangerow"><span>cost per marine visit — a boat, not a bicycle</span>
+      <b id="mvispv">6,000 kr</b></div>
+    <input type="range" id="mvisp" min="0" max="25000" value="6000" step="500">
+    <div class="rangerow"><span>marine service visits per node per year</span>
+      <b id="mvisv">3</b></div>
+    <input type="range" id="mvis" min="0" max="12" value="3" step="1">
     <div class="rangerow"><span>node failures replaced per year</span><b id="failv">8%</b></div>
     <input type="range" id="fail" min="0" max="40" value="8" step="1">
     <div class="rangerow"><span>years of operation</span><b id="yrv">10</b></div>
@@ -151,10 +179,35 @@ const SENSORS = [
   {id: "logger", t: "Logger, radio, power, enclosure", lo: 1900, hi: 5700, on: true,
    fixed: true, why: "the boring part that decides whether it survives a winter"},
 ];
+/* The marine node is a different machine and the difference is mostly the water:
+   a mooring or a frame, an anti-fouling strategy that is not optional, and a boat
+   at the other end of every service visit. Biofouling is the binding constraint on
+   marine deployment - this project's own X16 says so - not the sensor price. */
+const MARINE = [
+  {id: "mdo", t: "Dissolved oxygen — optical", lo: 4000, hi: 12000, on: true,
+   why: "the whole argument, near the bed"},
+  {id: "mctd", t: "Conductivity, temperature, depth", lo: 3000, hi: 12000, on: true,
+   why: "salinity is the stratification, and stratification is the mechanism"},
+  {id: "mturb", t: "Turbidity", lo: 1500, hi: 6000, on: true,
+   why: "resuspension, and light at the bed"},
+  {id: "mchl", t: "Chlorophyll fluorescence", lo: 6000, hi: 18000, on: true,
+   why: "the bloom, at the hour rather than the month"},
+  {id: "mfdom", t: "fDOM — tryptophan", lo: 9000, hi: 22000, on: false, disc: true,
+   why: "the fingerprint dimension, in the receiving water"},
+  {id: "mnut", t: "Nutrient analyser — reagent, in situ", lo: 40000, hi: 120000,
+   on: false,
+   why: "nitrate and phosphate hourly instead of monthly. It swaps bottle trips for "
+        + "reagent refills, which is a different chore rather than no chore"},
+  {id: "mmoor", t: "Mooring, frame, buoy, anti-fouling", lo: 6000, hi: 20000, on: true,
+   fixed: true, why: "the part that decides whether it is there in September"},
+  {id: "mlog", t: "Logger, telemetry, power", lo: 2500, hi: 8000, on: true,
+   fixed: true, why: "and a marine node often has no LoRa gateway in range"},
+];
 const SAMPLER = {lo: 25000, hi: 60000};
 const KIT_PER_10 = {lo: 7000, hi: 15000};
 
 let RINGS = null, LAND_KM2 = 43000, PROJ = null, PTS = [];
+let SEA = [], SEA_KM2 = 43579, MPTS = [], SEA_GRID = null;
 
 /* A deterministic generator, so that moving a price slider does not reshuffle the map
    underneath the number. The scatter is a picture of a density and it should hold
@@ -175,6 +228,53 @@ function inLand(x, y) {
   }
   return inside;
 }
+/* Rejection sampling into 123 polygons would test every polygon for every candidate
+   point, so the bounding boxes go in a coarse grid first. Same trick as the catchment
+   work in scripts/architecture.py, for the same reason: the geometry is fine and the
+   index does not have to be. */
+function seaIndex() {
+  const CELL = 0.25, g = {};
+  SEA.forEach((poly, i) => {
+    const b = poly.b;
+    for (let x = Math.floor(b[0] / CELL); x <= Math.floor(b[2] / CELL); x++)
+      for (let y = Math.floor(b[1] / CELL); y <= Math.floor(b[3] / CELL); y++)
+        (g[x + "," + y] || (g[x + "," + y] = [])).push(i);
+  });
+  return {CELL, g};
+}
+function inSea(x, y) {
+  const k = Math.floor(x / SEA_GRID.CELL) + "," + Math.floor(y / SEA_GRID.CELL);
+  for (const i of SEA_GRID.g[k] || []) {
+    const p = SEA[i];
+    if (x < p.b[0] || x > p.b[2] || y < p.b[1] || y > p.b[3]) continue;
+    for (const ring of p.rings) {
+      let c = false;
+      for (let a = 0, j = ring.length - 1; a < ring.length; j = a++) {
+        const xi = ring[a][0], yi = ring[a][1], xj = ring[j][0], yj = ring[j][1];
+        if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c;
+      }
+      if (c) return true;
+    }
+  }
+  return false;
+}
+function scatterSea(n) {
+  const r = rng(773311);
+  const out = [];
+  let w = 999, s2 = 999, e = -999, nn = -999;
+  for (const p of SEA) {
+    w = Math.min(w, p.b[0]); s2 = Math.min(s2, p.b[1]);
+    e = Math.max(e, p.b[2]); nn = Math.max(nn, p.b[3]);
+  }
+  let guard = 0;
+  while (out.length < n && guard < n * 400 + 5000) {
+    guard++;
+    const x = w + r() * (e - w), y = s2 + r() * (nn - s2);
+    if (inSea(x, y)) out.push([x, y]);
+  }
+  return out;
+}
+
 function scatter(n) {
   const r = rng(20260909);
   const out = [];
@@ -227,12 +327,30 @@ function draw() {
   cv.style.height = PROJ.H + "px";
   cx.setTransform(dpr, 0, 0, dpr, 0, 0);
   cx.clearRect(0, 0, PROJ.W, PROJ.H);
+  cx.fillStyle = css("--sea");
+  cx.strokeStyle = css("--accent") + "33";
+  cx.lineWidth = 0.6;
+  for (const p of SEA) for (const ring of p.rings) {
+    cx.beginPath();
+    ring.forEach(([x, y], i) => i ? cx.lineTo(PROJ.x(x), PROJ.y(y))
+                                  : cx.moveTo(PROJ.x(x), PROJ.y(y)));
+    cx.closePath();
+    cx.fill();
+    cx.stroke();
+  }
   cx.fillStyle = css("--land");
   for (const ring of RINGS) {
     cx.beginPath();
     ring.forEach(([x, y], i) => i ? cx.lineTo(PROJ.x(x), PROJ.y(y))
                                   : cx.moveTo(PROJ.x(x), PROJ.y(y)));
     cx.closePath();
+    cx.fill();
+  }
+  cx.fillStyle = css("--accent");
+  const mr = MPTS.length > 400 ? 1.8 : MPTS.length > 120 ? 2.6 : 3.8;
+  for (const [x, y] of MPTS) {
+    cx.beginPath();
+    cx.arc(PROJ.x(x), PROJ.y(y), mr, 0, 7);
     cx.fill();
   }
   const share = +$("#fdom").value / 100;
@@ -258,9 +376,33 @@ function nodeCost() {
   return {base, withF};
 }
 
+function marineCost() {
+  let c = 0;
+  for (const s of MARINE) {
+    const el = $("#s-" + s.id);
+    if (s.fixed || (el && el.checked)) c += +$("#p-" + s.id).value;
+  }
+  // a second string near the bed repeats the wet sensors, not the mooring or the logger
+  if ($("#nearbed").checked)
+    for (const s of MARINE)
+      if (!s.fixed && $("#s-" + s.id) && $("#s-" + s.id).checked)
+        c += +$("#p-" + s.id).value * 0.9;
+  return c;
+}
+
+function marineSurfaceOnly() {
+  let c = 0;
+  for (const s of MARINE) {
+    const el = $("#s-" + s.id);
+    if (s.fixed || (el && el.checked)) c += +$("#p-" + s.id).value;
+  }
+  return c;
+}
+
 function recompute(redraw) {
   const n = +$("#n").value;
-  if (redraw) PTS = scatter(n);
+  const m = +$("#m").value;
+  if (redraw) { PTS = scatter(n); MPTS = scatterSea(m); }
   const share = +$("#fdom").value / 100;
   const {base, withF} = nodeCost();
   const capitalNodes = n * base + Math.round(n * share) * withF;
@@ -268,26 +410,44 @@ function recompute(redraw) {
   
   const capitalSamp = samplers * ((SAMPLER.lo + SAMPLER.hi) / 2);
   const kit = Math.ceil(n / 10) * ((KIT_PER_10.lo + KIT_PER_10.hi) / 2);
-  const capital = capitalNodes + capitalSamp + kit;
+  const mUnit = marineCost();
+  const capitalMarine = m * mUnit;
+  const capital = capitalNodes + capitalSamp + kit + capitalMarine;
 
   // Bottles come from samplers, not from nodes: a node without a sampler produces a
   // series and never a sample. Tying them to the wrong thing is how a plan of this
   // kind gets its laboratory bill wrong by an order of magnitude.
-  const bottles = samplers * +$("#bot").value;
+  const bottlesCal = samplers * +$("#bot").value;
+  const steady = +$("#steady").value / 100;
+  const calYears = Math.min(+$("#cal").value, +$("#yr").value);
+  const bottlesSteady = bottlesCal * steady;
+  // average per year over the chosen horizon: calibration at full rate, then validation
+  const yrsTot = Math.max(1, +$("#yr").value);
+  const bottles = (bottlesCal * calYears + bottlesSteady * (yrsTot - calYears)) / yrsTot;
   const lab = bottles * +$("#botp").value;
   const service = n * +$("#vis").value * +$("#visp").value;
-  const fail = capitalNodes * (+$("#fail").value / 100);
-  const annual = lab + service + fail;
+  const mservice = m * +$("#mvis").value * +$("#mvisp").value;
+  const fail = (capitalNodes + capitalMarine) * (+$("#fail").value / 100);
+  const annual = lab + service + mservice + fail;
   const years = +$("#yr").value;
   const total = capital + annual * years;
 
   const spacingKm = Math.sqrt(LAND_KM2 / Math.max(1, n));
+  const mSpacingKm = Math.sqrt(SEA_KM2 / Math.max(1, m));
   $("#nv").textContent = fmt(n);
+  $("#mv").textContent = fmt(m);
+  $("#mspacing").textContent = fmt(mSpacingKm, 1) + " km × " + fmt(mSpacingKm, 1)
+    + " km of sea";
+  $("#mvisv").textContent = $("#mvis").value;
+  $("#mvispv").textContent = fmt(+$("#mvisp").value) + " kr";
+  $("#nearbedp").textContent = "+" + kr(mUnit - marineSurfaceOnly());
   $("#spacing").textContent = fmt(spacingKm, 1) + " km × " + fmt(spacingKm, 1) + " km";
   $("#fdomv").textContent = fmt(share * 100) + "%";
   $("#sampv").textContent = $("#samp").value;
   $("#botv").textContent = $("#bot").value;
-  $("#totbot").textContent = fmt(bottles) + " bottles a year";
+  $("#totbot").textContent = fmt(bottlesCal) + " → " + fmt(bottlesSteady) + " a year";
+  $("#calv").textContent = $("#cal").value;
+  $("#steadyv").textContent = fmt(steady * 100) + "%";
   $("#botpv").textContent = fmt(+$("#botp").value) + " kr";
   $("#visv").textContent = $("#vis").value;
   $("#vispv").textContent = fmt(+$("#visp").value) + " kr";
@@ -295,16 +455,18 @@ function recompute(redraw) {
   $("#yrv").textContent = years;
 
   $("#cost").innerHTML = [
-    ["Nodes", kr(capitalNodes)],
+    ["Stream nodes", kr(capitalNodes)],
+    ["Marine nodes", kr(capitalMarine)],
     [`Samplers (${samplers})`, kr(capitalSamp)],
     ["Shared kit", kr(kit)],
     ["<b>Capital</b>", "<b class='big'>" + kr(capital) + "</b>"],
-    [`Laboratory — ${fmt(bottles)} bottles/yr`, kr(lab)],
-    ["Servicing", kr(service)],
+    [`Laboratory — ${fmt(bottles)} bottles/yr, averaged`, kr(lab)],
+    ["Servicing — inland", kr(service)],
+    ["Servicing — marine, by boat", kr(mservice)],
     ["Replacing failures", kr(fail)],
     ["<b>Per year</b>", "<b class='big'>" + kr(annual) + "</b>"],
     [`<b>Over ${years} years</b>`, "<b class='big'>" + kr(total) + "</b>"],
-    ["Per node, all in", kr(total / Math.max(1, n))],
+    ["Per node, all in", kr(total / Math.max(1, n + m))],
   ].map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
 
   const house = 4e6, shot = 4e5;
@@ -338,14 +500,43 @@ function recompute(redraw) {
   if (redraw) draw();
 }
 
-fetch("data/geo/dk_land.json").then(r => r.json()).then(d => {
+Promise.all([
+  fetch("data/geo/dk_land.json").then(r => r.json()),
+  fetch("data/areas/areas.json").then(r => r.json()),
+]).then(([d, A]) => {
   RINGS = d.rings.filter(r => r.length > 3);
-  BBOX = bboxOf(RINGS);
+  // the 123 marine water bodies the state recognises, with their own areas
+  SEA = Object.entries(A.geometry || {}).map(([id, rings]) => {
+    const rs = (Array.isArray(rings[0][0]) ? rings : [rings])
+      .filter(r => r && r.length > 3);
+    let w = 999, s2 = 999, e = -999, n2 = -999;
+    for (const r of rs) for (const [x, y] of r) {
+      if (x < w) w = x; if (x > e) e = x;
+      if (y < s2) s2 = y; if (y > n2) n2 = y;
+    }
+    return {id, rings: rs, b: [w, s2, e, n2]};
+  }).filter(p => p.rings.length);
+  SEA_GRID = seaIndex();
+  SEA_KM2 = Math.round(Object.values(A.areas || {}).reduce((a, x) => a + (x.a || 0), 0));
+  BBOX = bboxOf(RINGS.concat(SEA.flatMap(p => p.rings)));
   LAND_KM2 = Math.round(RINGS.reduce((a, r) => a + ringAreaKm2(r), 0));
-  $("#cap").textContent = "Denmark as the union of its main catchments, simplified to "
-    + "about 200 m — " + fmt(LAND_KM2) + " km² of land. Green: a node carrying the "
-    + "fluorometer. Amber: a node without it. The scatter is random and deterministic, "
-    + "so it holds still while you change a price.";
+  $("#cap").textContent = fmt(LAND_KM2) + " km² of land, from the union of the main "
+    + "catchments, and " + fmt(SEA_KM2) + " km² of sea, from the 123 marine water "
+    + "bodies the water plans define. Green and amber: stream nodes, with and without "
+    + "the fluorometer. Blue: marine nodes. The scatter is random and deterministic, "
+    + "so it holds still while you change a price — and it is a density, not a siting "
+    + "plan.";
+  const rows = list => list.filter(s => !s.fixed).map(s =>
+    `<label class="ck"><input type="checkbox" id="s-${s.id}"${s.on ? " checked" : ""}>`
+    + `${s.t}<span class="p" id="v-${s.id}"></span></label>`
+    + `<input type="range" id="p-${s.id}" min="${s.lo}" max="${s.hi}" `
+    + `value="${Math.round((s.lo + s.hi) / 2)}" step="100">`).join("")
+    + list.filter(s => s.fixed).map(s =>
+      `<label class="ck" style="color:var(--ink3)">${s.t}`
+      + `<span class="p" id="v-${s.id}"></span></label>`
+      + `<input type="range" id="p-${s.id}" min="${s.lo}" max="${s.hi}" `
+      + `value="${Math.round((s.lo + s.hi) / 2)}" step="100">`).join("");
+  $("#msensors").innerHTML = rows(MARINE);
   $("#sensors").innerHTML = SENSORS.filter(s => !s.fixed).map(s =>
     `<label class="ck"><input type="checkbox" id="s-${s.id}"${s.on ? " checked" : ""}>`
     + `${s.t}<span class="p" id="v-${s.id}"></span></label>`
@@ -356,7 +547,7 @@ fetch("data/geo/dk_land.json").then(r => r.json()).then(d => {
       + `<span class="p" id="v-${s.id}"></span></label>`
       + `<input type="range" id="p-${s.id}" min="${s.lo}" max="${s.hi}" `
       + `value="${Math.round((s.lo + s.hi) / 2)}" step="100">`).join("");
-  for (const s of SENSORS) {
+  for (const s of SENSORS.concat(MARINE)) {
     const p = $("#p-" + s.id);
     const show = () => { $("#v-" + s.id).textContent = fmt(+p.value) + " kr"; };
     show();
@@ -365,12 +556,16 @@ fetch("data/geo/dk_land.json").then(r => r.json()).then(d => {
     if (c) c.addEventListener("change", () => recompute(false));
   }
   PTS = scatter(+$("#n").value);
+  MPTS = scatterSea(+$("#m").value);
   recompute(true);
 });
 
 $("#n").addEventListener("input", () => recompute(true));
+$("#m").addEventListener("input", () => recompute(true));
+$("#nearbed").addEventListener("change", () => recompute(false));
 $("#fdom").addEventListener("input", () => recompute(true));
-for (const id of ["samp", "bot", "botp", "vis", "visp", "fail", "yr"])
+for (const id of ["samp", "bot", "botp", "cal", "steady", "vis", "visp", "mvis",
+                  "mvisp", "fail", "yr"])
   $("#" + id).addEventListener("input", () => recompute(false));
 $("#preset").addEventListener("click", e => {
   const b = e.target.closest("button");
@@ -379,6 +574,7 @@ $("#preset").addEventListener("click", e => {
      reproduces the costing of the corresponding stage in SETTLE.md rather than
      quietly disagreeing with it. */
   $("#n").value = b.dataset.n;
+  if (b.dataset.m) $("#m").value = b.dataset.m;
   if (b.dataset.samp) $("#samp").value = b.dataset.samp;
   if (b.dataset.bot) $("#bot").value = b.dataset.bot;
   for (const x of $("#preset").children)
