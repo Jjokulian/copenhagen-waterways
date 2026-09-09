@@ -176,6 +176,42 @@ So: **a house to find out, and a few salaries a year to keep knowing.** The firs
 number is startlingly small. The second is the one a proposal has to be honest about,
 because it is the one that gets cut in year three and takes the series with it.
 
+### And the whole of it?
+
+This page prices one question. The obvious next one is what it would cost to settle
+the *field* — not the faecal channel alone, but enough of the twenty-three designs in
+[EXPERIMENTS.md](EXPERIMENTS.md) to leave the Danish sea argument with measurements
+where it currently has models. Adding up what this project has actually costed, and
+marking clearly what it has not:
+
+| Block | What it buys | Stated cost |
+|---|---|---:|
+| **This experiment** | whether the payload reaches the water, and whose it is | 3–5 M |
+| **The standing stream network** | the same question everywhere, permanently, no extrapolation | 8.8 M hardware |
+| **Instrumenting the 13 largest overflow structures** | flow rather than event counts — the largest single uncertainty on this site | ~1 M |
+| **The cheap marine tier** — `X14`, `X15`, `X16` | oxygen and temperature at many points instead of monthly at few | 1–3 M |
+| **The missing instruments** — `X19`, `X20` | a *fedtemøg* index and a structured record of what people have watched for forty years. Three of the four public words have no instrument; these are two of them | small — a panel and a protocol |
+| **The desk work** — `X8`, `X21`, `X22` | analyses on data that already exists and has never been run | **nothing but time** |
+| **A trials portfolio** — the meta-solution in [PROGRAMME.md](PROGRAMME.md) | whether the interventions work, in named places, reversibly | 6–24 M |
+
+**Capital, in the order of 20–40 M DKK.** Which is a large villa, or a small apartment
+building, or about one kilometre of urban motorway — and it is *not* the same as an
+upper-middle-class house: that figure buys the decisive single experiment, not the
+programme. Plus **5–10 M a year** to service, sample and keep custody, which is the
+number that decides whether any of it survives to be a time series.
+
+**And three honest deductions from that total.**
+
+- **Ship time is not in it.** The autumn benthic extension and anything offshore needs
+  a vessel and an institution, and this project cannot price either.
+- **Some of it cannot be bought at all.** Forty of the 166 mechanisms in the register
+  are unscoreable because the deciding measurement has no column anywhere; money buys
+  the instrument, not the decades of record it should have been collecting.
+- **And the cheapest block is the one nobody has done.** Three designs need no
+  fieldwork and no funding — the data exists and the analysis has never been run. If
+  the argument is that this is all too expensive, that block is the counter-example
+  sitting in the open.
+
 ---
 
 ## 7. Who could do which part
