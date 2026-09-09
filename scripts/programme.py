@@ -193,6 +193,69 @@ TREATMENT = [
 ]
 
 
+FRAMING_GAP = """### Why the current framing does not reach those four words
+
+The four words name losses. The public framing names one mechanism — nitrogen, to
+oxygen, to damage — and then measures the mechanism. Five findings say why that does
+not reach the losses. Each is recomputed on these pages, and each is stated with what
+it does **not** establish, because this section has already had to be rewritten twice
+for claiming past its evidence.
+
+**1. The nutrient account never beat the alternatives; it is the one with a monitoring
+programme.** All 166 mechanisms in [the register](#HYPOTHESES.md) have been
+[triaged](hypodrafts/TRIAGE.md) against the data that exists. Twenty-four are testable
+now — **and not one of them is in the nutrient group.** Every entry there is blocked on
+a fetch, unscoreable, or unestablished. Forty mechanisms cannot be tested at all
+because the deciding measurement has no column anywhere, and twenty more need an
+experiment nobody has run. **Sixty of them have never been in a position to compete.**
+*Does not establish:* that nutrients are innocent. It establishes that the contest
+people believe has happened has not happened.
+
+**2. The deciding number is usable as a sign and not as a coefficient.** *Markoverskud*
+— the field surplus that drives the model — fell 40–53% across ten studied catchments.
+The measured diffuse load fell by **10–14 kg N/ha where the surplus fell 30–52**, by
+**3–5 where it fell 24–50**, and at Mariager by **nothing at all**. Pass-through runs
+from zero to about a third. A load reduction predicted from a surplus reduction is
+overestimated threefold to tenfold, or entirely. *Does not establish:* that the decline
+was not real. Measured estuary nitrogen fell 24–62% over the same period.
+
+**3. The national relation is tight because the local coefficient varies.** DCE report
+*"en meget stærk, signifikant lineær relation"* between field surplus and diffuse load
+at national scale. That is an aggregate over catchments whose individual pass-through
+ranges from zero to a third. **The strength of the national fit is not evidence that
+the local coefficient is stable — it is what aggregation does to a variable one.** The
+same shape appears twice more here: [water bodies](#AREAS.md) that carry no signal
+within themselves, and a national oxygen trend that [tracks which stations were
+reporting](stations.html).
+
+**4. The method does not produce an annual share.** The background/anthropogenic split
+is made **only on five-year averages**, because DCE state it is too uncertain year by
+year. Any yearly movement in a published percentage interpolates a quinquennial split.
+And the diffuse term is defined to include scattered dwellings *because they could not
+be separated from it* — the category is a mixture by its own definition.
+
+**5. Three of the four words have no instrument.** *Fedtemøg* has no measurement.
+*Fiskedød* has no open register. *Livet i fjordene* is a claim about structure that a
+gas concentration does not address. **A framing that measures oxygen cannot report
+progress on three of the four things people are actually complaining about**, and
+[Køge Bugt](#PLACES.md) is the case: the loudest claim in the country, and among the
+best-oxygenated waters in it, with no registered *iltsvind* in 2023 or 2025.
+
+### What this changes about Part Two
+
+Not much, and that is the point. **Every intervention below was chosen to act on what
+arrives rather than on what it causes** — keeping rainwater out of the combined system,
+an outlet that is not the bay, source control on what the water carries. Those hold
+whichever of 166 mechanisms dominates, which is why they survive a finding that the
+field cannot be resolved.
+
+What the findings do change is the *order*: [Places, not
+categories](#PLACES.md) takes the coasts one at a time, because one is four times worse
+than anywhere else and is not the one anybody argues about — and because a trial at
+Mariager says nothing about Lillebælt when the land-to-estuary coefficient varies
+twenty-six-fold between them.
+"""
+
 def main():
     riv = read_json(os.path.join(DERIVED, "rivermap.json"))
     ret = read_json(os.path.join(DERIVED, "currents_index.json"))["retention"]
@@ -284,28 +347,14 @@ def main():
       "that has stopped being able to recover, which is precisely the state that "
       "determines whether spending money on any of Part Two is worth doing.\n")
 
-    a("### Why the current framing does not reach those four words\n")
-    a("> **This section is a placeholder and is marked as one.** An earlier version "
-      "gave four reasons the present framing cannot fix the problem. They were "
-      "reasonable arguments and they are gone, for two faults. They arrived with no "
-      "context, so a reader had no idea what was being argued against. And they "
-      "were **too narrow** — four objections, written before most of the "
-      "investigation existed, standing in for a critique that has since grown well "
-      "past them.\n"
-      ">\n"
-      "> What belongs here is not a fixed list of objections. It is the "
-      "**synthesis of the findings**, drawn from the investigation pages and from "
-      "the register, and weighted toward the ones that carry a political "
-      "consequence — because those are the ones where being wrong costs something. "
-      "That synthesis needs the field to be scored before it can be written "
-      "honestly, and the field is not scored yet: "
-      "[HYPOTHESES.md](#HYPOTHESES.md) states the mechanisms and explicitly "
-      "declines to rank them.\n"
-      ">\n"
-      "> Writing it earlier would mean assembling whichever findings happen to "
-      "exist into an argument and calling it a conclusion, which is the failure "
-      "this site was built to notice. So it stays empty, visibly, until there is "
-      "something to put in it.\n")
+    # The five findings and the paragraph after them are prose, not computed: they are
+    # the reading of everything else on the site, and the numbers in them are quoted
+    # from the pages that derive them. They live in the generator rather than in the
+    # markdown so that regenerating the page cannot silently delete them - which is
+    # exactly what would have happened to the version written straight into
+    # docs/PROGRAMME.md.
+    a(FRAMING_GAP)
+
 
     a("### What this page can and cannot honestly claim\n")
     a("Because three of the four public words have no measurement, **the solutions "
@@ -396,6 +445,33 @@ def main():
       "storm, because the storm is not in that pipe. It is more expensive per metre than "
       "a channel and far cheaper than a parallel corridor, and it is the reason the "
       "proposal does not have to stop where the street narrows.\n")
+    a("**But the drawing above is the heavy version of the idea, and it should not be "
+      "the first one tried.** The lighter version is to leave the sewer exactly where "
+      "it is and thread a small rain line into the space that already exists between "
+      "the street and the pipe. Nothing on the foul side is touched: the sewer keeps "
+      "its depth, every house drain keeps its connection, and the only change is that "
+      "the gullies are cut off the sewer and put onto the new line. That is strictly "
+      "less work than dropping a sewer under live connections.\n")
+    a("It works because **the new line does not have to carry the cloudburst.** The "
+      "cloudburst already has a route — the surface network in the previous section, "
+      "designed for exactly that event. What has to come out of the combined system is "
+      "the ordinary rain that fills it many times a year. Sizing for the frequent rain "
+      "rather than the hundred-year one is a much smaller pipe, and it turns the "
+      "question from *can a storm sewer be fitted here* into *which rain do we take out "
+      "of the sea* — a priced decision with a return period on it, rather than a "
+      "structural impossibility. The residue is explicit: rain above that size still "
+      "meets sewage in the old pipe and can still spill, so this variant reduces "
+      "overflow frequency and volume, and does not abolish them the way a full "
+      "separation does.\n")
+    a("**What decides between the two is the first metre under the street, and this "
+      "project cannot see it.** Water mains, district heating, gas, telecom and the "
+      "gully leads themselves occupy that zone, and whether a new line clears them — "
+      "with frost cover above and a continuous fall to its outlet — is a question the "
+      "utility register answers and no public dataset here does. So the section is "
+      "drawn as an arrangement, not as a design, and the sizing above is stated as the "
+      "decision to be taken rather than as a diameter. Both variants stay on the public "
+      "side of the property line; neither requires entering a building, which is the "
+      "thing that makes conventional separation slow.\n")
     a(f"On this project's classification, **{riv['near_buried_conveyance_pct']:.0f}% of "
       "the modelled flood path already has a planned pipe within 100 m** — those "
       "alignments are the retrofit candidates, because the trench is going to be opened "
@@ -410,10 +486,16 @@ def main():
     # ---- 2
     a("### 2. An outlet that is not the sea\n")
     a("![Where a raindrop goes now, and where it would go](system_flow.svg)\n")
-    a("A basin that overflows to the sea is a delay, not a solution. It holds the water "
-      "until it fills, and then it releases both the water and the sediment that "
-      "settled in it during every previous event — on a flow threshold, which is why "
-      "the annual-average accounting cannot see it.\n")
+    a("A basin that overflows to the sea is a delay, not a solution — and the delay is "
+      "where the material concentrates. Most rain fills the basin without ever "
+      "spilling it: the water is held, drains back to the plant, and what it carried "
+      "settles out and stays. So the store builds through every event that does "
+      "**not** flush, and it leaves in the one that does. The overflow releases the "
+      "water of that storm together with the accumulated sediment of all the quiet "
+      "ones before it — the same behaviour a toilet has, and for the same reason. "
+      "It is a flow threshold, which is why the annual-average accounting cannot see "
+      "it: the ledger averages a quantity that is delivered in the few hours a year "
+      "the threshold is crossed.\n")
     a("The alternative is a terminal water: an outlet that is a lake, a watercourse, a "
       "wetland or a quarry rather than the bay.\n")
     a("![Køge Bugt: what drains into it](koege_bugt_system.svg)\n")

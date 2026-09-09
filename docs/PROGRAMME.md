@@ -75,7 +75,7 @@ ranges from zero to a third. **The strength of the national fit is not evidence 
 the local coefficient is stable — it is what aggregation does to a variable one.** The
 same shape appears twice more here: [water bodies](#AREAS.md) that carry no signal
 within themselves, and a national oxygen trend that [tracks which stations were
-reporting](docs/stations.html).
+reporting](stations.html).
 
 **4. The method does not produce an annual share.** The background/anthropogenic split
 is made **only on five-year averages**, because DCE state it is too uncertain year by
@@ -155,6 +155,12 @@ Not every alignment can be a river. A dense street with no room to lose, a junct
 
 What this buys is the thing that matters: **there is no longer a mixture to overflow.** An overflow structure on a foul-only sewer has nothing to spill in a storm, because the storm is not in that pipe. It is more expensive per metre than a channel and far cheaper than a parallel corridor, and it is the reason the proposal does not have to stop where the street narrows.
 
+**But the drawing above is the heavy version of the idea, and it should not be the first one tried.** The lighter version is to leave the sewer exactly where it is and thread a small rain line into the space that already exists between the street and the pipe. Nothing on the foul side is touched: the sewer keeps its depth, every house drain keeps its connection, and the only change is that the gullies are cut off the sewer and put onto the new line. That is strictly less work than dropping a sewer under live connections.
+
+It works because **the new line does not have to carry the cloudburst.** The cloudburst already has a route — the surface network in the previous section, designed for exactly that event. What has to come out of the combined system is the ordinary rain that fills it many times a year. Sizing for the frequent rain rather than the hundred-year one is a much smaller pipe, and it turns the question from *can a storm sewer be fitted here* into *which rain do we take out of the sea* — a priced decision with a return period on it, rather than a structural impossibility. The residue is explicit: rain above that size still meets sewage in the old pipe and can still spill, so this variant reduces overflow frequency and volume, and does not abolish them the way a full separation does.
+
+**What decides between the two is the first metre under the street, and this project cannot see it.** Water mains, district heating, gas, telecom and the gully leads themselves occupy that zone, and whether a new line clears them — with frost cover above and a continuous fall to its outlet — is a question the utility register answers and no public dataset here does. So the section is drawn as an arrangement, not as a design, and the sizing above is stated as the decision to be taken rather than as a diameter. Both variants stay on the public side of the property line; neither requires entering a building, which is the thing that makes conventional separation slow.
+
 On this project's classification, **20% of the modelled flood path already has a planned pipe within 100 m** — those alignments are the retrofit candidates, because the trench is going to be opened anyway.
 
 And where no alignment exists — the 46% — the model names the places. 14 corridor candidates come out of it: stretches with more than 0.5 m of modelled water, no surface route within 100 m, and enough length to be a channel rather than a puddle. They are circled on the map and listed in `data/derived/rivermap.json`.
@@ -163,7 +169,7 @@ And where no alignment exists — the 46% — the model names the places. 14 cor
 
 ![Where a raindrop goes now, and where it would go](system_flow.svg)
 
-A basin that overflows to the sea is a delay, not a solution. It holds the water until it fills, and then it releases both the water and the sediment that settled in it during every previous event — on a flow threshold, which is why the annual-average accounting cannot see it.
+A basin that overflows to the sea is a delay, not a solution — and the delay is where the material concentrates. Most rain fills the basin without ever spilling it: the water is held, drains back to the plant, and what it carried settles out and stays. So the store builds through every event that does **not** flush, and it leaves in the one that does. The overflow releases the water of that storm together with the accumulated sediment of all the quiet ones before it — the same behaviour a toilet has, and for the same reason. It is a flow threshold, which is why the annual-average accounting cannot see it: the ledger averages a quantity that is delivered in the few hours a year the threshold is crossed.
 
 The alternative is a terminal water: an outlet that is a lake, a watercourse, a wetland or a quarry rather than the bay.
 
