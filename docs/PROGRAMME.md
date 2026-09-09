@@ -100,7 +100,17 @@ Every number above is in kilograms of nitrogen per hectare, which is a way of no
 | Pigs slaughtered or exported live, in a year (2025) | **32.0 million** |
 | Cattle standing (2026K2) | 1.41 million |
 | Pig meat produced in a year | 1.84 million tonnes |
+| Sows standing (2026K3) | 927 thousand |
+| **Born in a year** — *estimated, two ways, below* | **35–43 million** |
+| **Died before reaching a slaughterhouse** — *estimated* | **8–11 million** |
 | People living in Denmark (2026K3) | 6.03 million |
+
+**The official throughput does not count the ones that die on the way.** *Slaughtered or exported live* means exactly that: 32.0 million animals arrived at a slaughterhouse or on a lorry. Pigs that died in the barn are in no open series this project has found — they leave as rendering tonnage, which is the number to ask for and one nobody publishes beside the herd. So the two estimated rows above are **derived on stated conventions**, by two routes that are meant to check each other:
+
+- **From the sow herd.** 927 thousand sows at 38–42 liveborn per sow-year → **35–39 million born**.
+- **From the throughput.** 32.0 million arriving, grossed up for a 20–25% loss before slaughter → **40–43 million born**.
+
+**The two do not quite meet, and that is worth leaving visible** rather than splitting the difference: the sow route gives a lower figure than the throughput route, so either productivity sits at the top of its range or mortality sits at the bottom of its. What both routes agree on is the order of the missing number — **something like 8 to 11 million pigs a year die before the count that gets published**, which is between a quarter and a third as many again as the figure everyone quotes. They ate, they excreted, and their nitrogen is in the manure figure whether or not they appear in the production statistics.
 
 **The stock and the throughput are different numbers, and the difference is the fact.** A Danish pig lives about six months, so the population at any instant — 12.2 million — is a fraction of the 32 million that pass through in a year. Quoting one for the other, in either direction, is the commonest error in this argument: the higher figure describes a rate and the lower one a standing biomass, and the nitrogen follows the rate.
 

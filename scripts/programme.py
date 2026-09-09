@@ -239,9 +239,45 @@ def livestock_section():
       "million |")
     a(f"| Pig meat produced in a year | "
       f"{L['pig_meat_million_kg_per_year']/1000:.2f} million tonnes |")
+    a(f"| Sows standing ({L['pigs_standing_period']}) | "
+      f"{L['sows_standing']/1e3:,.0f} thousand |")
+    a(f"| **Born in a year** — *estimated, two ways, below* | "
+      f"**{min(L['born_per_year_from_sows'])/1e6:.0f}–"
+      f"{max(L['born_per_year_from_throughput'])/1e6:.0f} million** |")
+    a(f"| **Died before reaching a slaughterhouse** — *estimated* | "
+      f"**{L['died_before_slaughter_per_year'][0]/1e6:.0f}–"
+      f"{L['died_before_slaughter_per_year'][1]/1e6:.0f} million** |")
     a(f"| People living in Denmark ({L['people_period']}) | "
       f"{L['people']/1e6:.2f} million |")
     a("")
+    a("**The official throughput does not count the ones that die on the way.** "
+      f"*Slaughtered or exported live* means exactly that: {L['pigs_through_per_year']/1e6:.1f} "
+      "million animals arrived at a slaughterhouse or on a lorry. Pigs that died in "
+      "the barn are in no open series this project has found — they leave as "
+      "rendering tonnage, which is the number to ask for and one nobody publishes "
+      "beside the herd. So the two estimated rows above are **derived on stated "
+      "conventions**, by two routes that are meant to check each other:\n")
+    a(f"- **From the sow herd.** {L['sows_standing']/1e3:,.0f} thousand sows at "
+      f"{L['liveborn_per_sow_year_stated'][0]:.0f}–"
+      f"{L['liveborn_per_sow_year_stated'][1]:.0f} liveborn per sow-year → "
+      f"**{L['born_per_year_from_sows'][0]/1e6:.0f}–"
+      f"{L['born_per_year_from_sows'][1]/1e6:.0f} million born**.\n"
+      f"- **From the throughput.** {L['pigs_through_per_year']/1e6:.1f} million "
+      f"arriving, grossed up for a "
+      f"{L['died_before_slaughter_share_stated'][0]*100:.0f}–"
+      f"{L['died_before_slaughter_share_stated'][1]*100:.0f}% loss before slaughter "
+      f"→ **{L['born_per_year_from_throughput'][0]/1e6:.0f}–"
+      f"{L['born_per_year_from_throughput'][1]/1e6:.0f} million born**.\n")
+    a("**The two do not quite meet, and that is worth leaving visible** rather than "
+      "splitting the difference: the sow route gives a lower figure than the "
+      "throughput route, so either productivity sits at the top of its range or "
+      "mortality sits at the bottom of its. What both routes agree on is the order "
+      f"of the missing number — **something like {L['died_before_slaughter_per_year'][0]/1e6:.0f} "
+      f"to {L['died_before_slaughter_per_year'][1]/1e6:.0f} million pigs a year die "
+      "before the count that gets published**, which is between a quarter and a "
+      "third as many again as the figure everyone quotes. They ate, they excreted, "
+      "and their nitrogen is in the manure figure whether or not they appear in the "
+      "production statistics.\n")
     a("**The stock and the throughput are different numbers, and the difference is "
       "the fact.** A Danish pig lives about six months, so the population at any "
       f"instant — {L['pigs_standing']/1e6:.1f} million — is a fraction of the "
