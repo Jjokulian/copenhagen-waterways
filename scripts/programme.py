@@ -461,6 +461,11 @@ def livestock_section():
       "sampler when it does. Grab sampling cannot substitute: this project's own "
       "sources report transport underestimated in all three streams of the 2018 "
       "GUDP study, and an event is exactly what a fortnightly visit misses.\n")
+    a("And the dense version — a node on every stream that reaches the sea, so that "
+      "no result anywhere has to be extrapolated to a place nobody visited — is "
+      "constructed in [SENSING.md](#SENSING.md), down to the sensors, the "
+      "fingerprint that separates a pig from a person from a road, and what it "
+      "would cost. It comes to about the price of twenty streets.\n")
     a("The three things that would settle it are cheap and none of them is being "
       "done: that event-based sampling in the days after spreading, copper and "
       "zinc with veterinary residues in stream and marine sediment rather than in "
