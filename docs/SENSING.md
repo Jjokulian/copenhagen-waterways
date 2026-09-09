@@ -176,6 +176,61 @@ One person can build one in an evening. The hard part was never the electronics.
 
 ---
 
+## The shopping list
+
+Everything above as a list of things to buy, because a cost is only real when it is a
+purchase order. **Part names are examples of the class, not endorsements, and no price
+here is a quotation** — they are the stated ranges a buyer should expect to find and
+then replace with what a supplier actually says.
+
+### The node — what one stream costs
+
+| | Example of the class | What it is for | DKK |
+|---|---|---|---:|
+| **Stage, ultrasonic** | MaxBotix HRXL-WR class, IP67, mounted above the water on a bridge or culvert | Level → discharge, via a rating curve. **Mounted in air, so it cannot foul** — which is why it beats a pressure transducer for an unattended node | 900–1,800 |
+| *or* **Stage, pressure** | vented submersible transducer, 0–2 m | Where there is no overhead mounting. Vented cable, or it reads the weather | 1,200–3,000 |
+| **Turbidity, nephelometric** | ISO 7027 90° module; with a wiper if the budget reaches | The carrier for everything particulate. **The cheap analog boards sold for hobby use are presence/absence at best** — say so in the data or do not fit one | 1,500–6,000 |
+| **Conductivity + temperature** | Atlas Scientific EZO-EC with a K=1.0 probe, or an industrial two-electrode cell | Separates dilution from delivery, and every other reading needs the temperature | 600–2,000 |
+| **Dissolved oxygen, optical** | luminescent/optical DO probe — **not** a galvanic membrane cell, which drifts and dies | The consequence, measured at the same minute as the cause | 3,000–9,000 |
+| **fDOM, tryptophan channel** | Turner Cyclops-7F class, tryptophan configuration, with a humic-like channel if affordable | The one fingerprint dimension that runs continuously. **This is the difference between a turbidity network and a fingerprint network** | 9,000–22,000 |
+| **Logger + radio** | ESP32 with LoRaWAN, or with LTE-M/NB-IoT where no gateway is in range; RTC, microSD, watchdog | Logs locally *and* transmits. The radio is the least reliable part | 400–1,200 |
+| **Power** | 10–20 W panel, MPPT controller, 12 V LiFePO₄ 20 Ah | Sized for December, not July | 800–2,500 |
+| **Enclosure and mount** | IP67 box, cable glands, stainless bracket, desiccant, anti-theft | Survives a winter and a curious passer-by | 700–2,000 |
+
+**A node without fDOM: 5,000–12,000 DKK. With it: 15,000–30,000.**
+
+### The kit a group shares
+
+| | Why | DKK |
+|---|---|---:|
+| Formazin turbidity standards, EC calibration solutions, DO zero solution | **A reading without a calibration record is not data.** This is the least glamorous line and the one that decides whether the network is admissible | 2,000–5,000 |
+| A reference sonde, borrowed or shared, for co-location | [`X16`](EXPERIMENTS.md) — the check that ties cheap readings to the national record | 15,000–60,000, or borrowed |
+| Spare probes, cable, glands, desiccant, one spare node | Field repairs happen in February in the rain | 5,000–10,000 |
+
+### The sampler, which is where the answer comes from
+
+| | | DKK |
+|---|---|---:|
+| Automatic sampler, 12–24 bottles, flow- and turbidity-triggered | Teledyne ISCO or Hach AS950 class; a used one is a perfectly good used one | 25,000–60,000 |
+| Bottle analysis — sterols, host markers, crAssphage, acesulfame, one veterinary residue, Cu/Zn, COD/BOD, nutrients, δ¹⁵N + δ¹⁸O | **The real cost of the experiment.** Not every bottle needs the full panel; the cheap determinands go on all of them and the fingerprint on the ones the continuous tier says matter | 1,500–4,000 per bottle |
+
+### What that means for the experiment on the next page
+
+| | Quantity | DKK |
+|---|---:|---:|
+| Nodes with fDOM, 12 matched pairs | 24 | 360,000–720,000 |
+| Samplers, rotating | 8 | 200,000–480,000 |
+| Shared kit, three regional sets | 3 | 60,000–200,000 |
+| Bottles analysed over two seasons | ~600 | 900,000–2,400,000 |
+| **Hardware and laboratory, total** | | **1.5–3.8 M DKK** |
+
+**So the sensors are not the expensive part — the bottles are**, and the bottles are
+the part that cannot be economised without losing the attribution the whole design
+exists for. A node is a weekend and a few thousand kroner. The laboratory is the
+commitment.
+
+---
+
 ## Tier 2 — the sampler that answers the question
 
 An automatic sampler, triggered by tier 1 when stage or turbidity crosses a threshold,

@@ -129,6 +129,12 @@ somewhere:
 From the bill of materials in [SENSING.md](SENSING.md), at stated prices rather than
 quotations:
 
+**The purchase order is in [SENSING.md](SENSING.md)** — every sensor, an example part
+of its class, and what to expect to pay. The short version: a node is 5,000–12,000 DKK
+without the fluorometer and 15,000–30,000 with it, and **the sensors are not the
+expensive part. The laboratory bottles are** — 1,500–4,000 DKK each, and they are the
+line that cannot be economised without losing the attribution the design exists for.
+
 | Phase | What | Stated cost |
 |---|---|---:|
 | **Pilot** — one season, 3 pairs | 6 nodes with fDOM, 2 samplers, ~60 bottles | **~0.4–0.6 M DKK** |
