@@ -142,6 +142,42 @@ programme costing orders of magnitude more and producing **no test**.
 
 ---
 
+### The number, put beside things that are not science
+
+Because the figure is easy to lose next to a research budget, here it is next to
+things people actually price:
+
+| | Stated cost |
+|---|---:|
+| The **pilot** — three pairs, one season | ~0.5 M DKK, the price of a small flat outside the cities |
+| The **experiment that settles it** — 12 pairs, two years | **3–5 M DKK, the price of a cheap house** |
+| The **standing national network**, hardware | ~8.8 M DKK |
+| One bored street shot, from the retrofit costing on this site | 0.16–0.64 M DKK |
+
+**So the decisive experiment costs about what a house costs, and the capital for a
+national network costs about what a good house in Copenhagen costs.** That is the
+honest headline and it should be uncomfortable: the argument has run for forty years,
+and the measurement that would settle a central part of it has never been bought at a
+price a single wealthy person could pay.
+
+**But do not mistake the capital for the programme.** Hardware is the cheap half and
+saying otherwise is how these schemes die:
+
+- **Servicing.** 800 nodes at four visits a year is on the order of **3–4 M DKK a
+  year** — which is to say two to four people, permanently. A sensor that nobody
+  visits produces confident wrong numbers, which is worse than no sensor.
+- **Laboratory.** The tier-2 bottles at 1,500–4,000 DKK each are the largest single
+  line in the experiment budget, and the only one that cannot be economised without
+  losing the attribution.
+- **Custody.** Somebody has to keep the archive, the calibration histories and the
+  pre-registration for a decade, and that is a job rather than a server.
+
+So: **a house to find out, and a few salaries a year to keep knowing.** The first
+number is startlingly small. The second is the one a proposal has to be honest about,
+because it is the one that gets cut in year three and takes the series with it.
+
+---
+
 ## 7. Who could do which part
 
 | | Can do |
