@@ -354,6 +354,56 @@ def livestock_section():
       "that **the two systems have the same shape**, so an accounting that cannot "
       "price a pulse is not failing at the margin of this problem. It is failing at "
       "both ends of it.\n")
+    a("#### Which means a kilogram is not a kilogram\n")
+    a("Put the two sources side by side at the same nitrogen mass — one kilogram of "
+      "N as calcium ammonium nitrate, one kilogram of N as slurry — and the ledger "
+      "records them identically. They are not identical, and the differences all "
+      "run one way:\n")
+    a("| | A kilogram of N from a bag | A kilogram of N from an animal |")
+    a("|---|---|---|")
+    for a_, b_, c_ in [
+        ("What else arrives with it", "essentially nothing",
+         "organic carbon, phosphorus, potassium, sulphide, copper and zinc from "
+         "feed, veterinary residues, pathogens"),
+        ("How it becomes oxygen demand",
+         "**only if something grows** — through biomass, at 19.7 g O₂ per g N, "
+         "conditional on light, season and every other requirement",
+         "**partly without anything growing**: the organic fraction is 1.0 g O₂ per "
+         "g COD on arrival, and ammonium takes 4.57 g O₂ per g N as a reductant "
+         "whether or not it ever feeds a cell"),
+        ("How it travels", "dissolved, with drainage, spread over the season",
+         "partly as particles, in the first heavy rain after a spreading window — "
+         "a slug rather than a season"),
+        ("How much has to be applied", "what the crop needs",
+         "more, because only 70–85% of it counts as available, so the rest is soil "
+         "pool and later leaching"),
+        ("What is lost to the air", "little, except from urea",
+         "a substantial ammonia fraction at spreading, some of which comes back "
+         "down on land and water"),
+    ]:
+        a(f"| **{a_}** | {b_} | {c_} |")
+    a("")
+    a("**So the same number in the account is not the same event in the water.** "
+      "The mineral kilogram is a fertiliser and nothing else: it does harm by "
+      "feeding something, which requires the something to be there and the light "
+      "to be right. The animal kilogram is a fertiliser *and* an oxygen demand *and* "
+      "a delivery vehicle for everything else in the mixture, and two of those three "
+      "act without waiting for a growing season. That is [§3 of "
+      "NITROGEN.md](#NITROGEN.md) — nitrogen mass is the wrong currency — with the "
+      "two sources named.\n")
+    a("It has a direct consequence for the instrument. **A quota written in "
+      "kilograms of nitrogen treats the two as interchangeable, so a holding can "
+      "meet it by swapping a bag kilogram for a slurry kilogram** and, on the "
+      "account, have complied — while increasing every constituent the account does "
+      "not carry. That is not a hypothetical failure mode. It is the direction the "
+      "arithmetic already pushes, because the slurry is there and has to go "
+      "somewhere and the bag is the part that can be cut.\n")
+    a("*What this does not establish.* Nothing here measures comparative leaching, "
+      "and once a nitrate ion is dissolved in a stream its origin is unrecoverable "
+      "and irrelevant — a nitrate is a nitrate. The claim is about **what "
+      "accompanies each kilogram and how it arrives**, not about the ion, and it "
+      "rests on the route table in OXYGEN.md rather than on any measurement this "
+      "project has made of a Danish field.\n")
     a("> **A value, stated as one.** The author of this page would like the herd to "
       "be smaller for a reason that has nothing to do with fjords: an animal that "
       "lives half a year in confinement and is one of thirty-two million is owed "
