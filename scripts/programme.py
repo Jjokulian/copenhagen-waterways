@@ -193,6 +193,25 @@ TREATMENT = [
 ]
 
 
+# A design storm rather than a measurement: 10 mm in an hour is ordinary heavy rain
+# in Copenhagen, well below a cloudburst, and 0.8 is the conventional runoff
+# coefficient for paved surface. Both are stated so the arithmetic below can be
+# redone with other numbers - nothing here rests on the exact pair.
+RAIN_MM_H, RUNOFF_C = 10.0, 0.8
+
+
+def koege_basins():
+    """Registered spare-basin volume and rain-conditioned outfalls on Køge Bugt.
+
+    From the national outfall register by way of docs/data/areas/areas.json, which
+    is the published copy and is in the repository - `vol` is summed `vol_sb`.
+    Registered, so it is a floor: a basin nobody entered is a basin that is not here.
+    """
+    r = read_json(os.path.join(ROOT, "docs", "data", "areas", "areas.json"))
+    r = r["areas"]["DKCOAST201"]
+    return {"m3": r["vol"], "outfalls": r["rbu"], "name": r["n"]}
+
+
 def fold(summary, body):
     """Put a run of evidence behind one line that says what is in it.
 
@@ -499,10 +518,35 @@ def main():
           "are circled on the map and listed in `data/derived/rivermap.json`.\n")
 
     # ---- 2
+    kb = koege_basins()
+    sp = amager_split()
+    am, ml = sp["Amager"], sp["mainland"]
+    amager_ha = am
+    hour_m3 = amager_ha * 1e4 * RAIN_MM_H / 1000 * RUNOFF_C
     a("### 2. An outlet that is not the sea\n")
     a("![Where a raindrop goes now, and where it would go](system_flow.svg)\n")
-    a("A basin that overflows to the sea is a delay, not a solution — and the delay is "
-      "where the material concentrates. Most rain fills the basin without ever "
+    a("Section 1 does not improve the combined system. It ends it, and what is left "
+      "is **two systems with different jobs**. A foul line: small, steady, running "
+      "every hour of the year, going to a treatment plant. And a rain line: "
+      "intermittent, far larger at the moment it arrives, carrying the surface of the "
+      "city rather than the inside of a building. Everything below follows from "
+      "keeping those two apart, and most of the existing argument about basins and "
+      "overflows is an argument about the mixture that no longer exists.\n")
+    a("**So the basins retire.** A spare basin is an organ of the combined system: it "
+      "exists to hold a mixture back until the plant can take it. Take the rain out "
+      "and there is no mixture, the foul flow arrives at the rate it is produced, and "
+      "the plant treats it as it comes. A basin then has nothing to buffer. It is not "
+      "the instrument for the rain stream either, and the scale says why: the entire "
+      f"registered spare-basin volume on **{kb['name']}** — every basin in the water "
+      f"body, across {kb['outfalls']:,} rain-conditioned outfalls — is "
+      f"**{kb['m3']:,.0f} m³**. One hour of {RAIN_MM_H:.0f} mm of rain on Amager's "
+      f"{amager_ha:,.0f} combined-sewered impervious hectares alone is about "
+      f"**{hour_m3:,.0f} m³** at a runoff coefficient of {RUNOFF_C}. The whole "
+      f"registered basin volume of the bay is about {kb['m3']/hour_m3*60:.0f} minutes "
+      "of that one hour, from one island. Basins were never storage for the rain; "
+      "they are a device for postponing a spill.\n")
+    a("**And postponement is where the material concentrates**, which is the reason "
+      "not to answer this with more of them. Most rain fills a basin without ever "
       "spilling it: the water is held, drains back to the plant, and what it carried "
       "settles out and stays. So the store builds through every event that does "
       "**not** flush, and it leaves in the one that does. The overflow releases the "
@@ -530,8 +574,42 @@ def main():
       "reduced discharge cannot be priced by the quantity the accounting measures — "
       "which is the same failure as [the annual average](#RESIDUAL.md), one storey "
       "down.\n")
-    a("The alternative is a terminal water: an outlet that is a lake, a watercourse, a "
-      "wetland or a quarry rather than the bay.\n")
+    a("**If the treated effluent is still not good enough for the water it enters, "
+      "that is an argument about where the outlet is, not about how many basins "
+      "there are.** A plant whose effluent a bay cannot absorb should discharge into "
+      "a water that can hold it and work on it — the same terminal-water logic, "
+      "applied to the small stream instead of the large one. What it should not do is "
+      "keep the shore as its default outlet on the grounds that the pipe already "
+      "goes there.\n")
+    a("**The stream that actually needs somewhere to go is the rain.** It is the "
+      "larger one, it arrives all at once, and what it carries is the city's surface: "
+      "road sediment, metals, tyre wear, PAH, microplastics, road salt, litter — the "
+      "general pollution of a city and the flush of everything that settled on it "
+      "since the last rain. That is a different problem from sewage and it wants a "
+      "different receiver: shallow, wide, vegetated, and able to keep what it "
+      "settles.\n")
+    a("**And it must stay unconnected.** The proposal below receives rain and never "
+      "sewage. A break, a blockage or a misconnection is the one path by which foul "
+      "water could reach it, so the separation has to be **physical rather than "
+      "administrative**: no cross-connection to open in an emergency, and a fault "
+      "that fails toward the plant or toward holding rather than toward the polder. "
+      "A receiving water that can be used as an overflow once will be used as one "
+      "again.\n")
+    a("**A note on household plumbing, and an argument against leaving it to the "
+      "household.** Once there are two pipes in the street a building can put a "
+      "fixture on either one, and greywater — a shower, a washing machine, a sink — "
+      "would sit oddly well on the rain line, where the worst thing in it is soap. "
+      "Every litre moved that way is a litre the plant does not treat, and it makes "
+      "the foul flow smaller and steadier, which is the direction everything else "
+      "here pushes. It should still be a **fixture standard rather than a "
+      "householder's discretion**: a pipe whose contents depend on who owns the "
+      "building is a pipe nobody can characterise, and *you may put mild things down "
+      "the rain line* is in practice a licence to put anything down it — emptying a "
+      "bucket out of the window, with plumbing attached. If greywater is admitted it "
+      "is admitted by rule and for named fixtures, and the wetland is then sized "
+      "knowing it has surfactants to deal with, rather than finding out.\n")
+    a("The alternative is therefore a terminal water for the rain: an outlet that is "
+      "a lake, a watercourse, a wetland or a quarry rather than the bay.\n")
     a("![Køge Bugt: what drains into it](koege_bugt_system.svg)\n")
     a("*Real: coastline, combined-sewer catchments, overflow structures, treatment "
       "plants, and the chalk quarry discussed below. Green and dashed: proposal, not "
@@ -582,8 +660,6 @@ def main():
       "the opposite: shallow, wide, and vegetated.\n")
 
     # ---- Vestamager
-    sp = amager_split()
-    am, ml = sp["Amager"], sp["mainland"]
     a("#### Case two: Vestamager, which is the right shape\n")
     a("Behind the Amager dyke is a polder. Between 1939 and 1943 a 14 km dyke four "
       "metres high was built across a shallow bay, channels were dug, and about "

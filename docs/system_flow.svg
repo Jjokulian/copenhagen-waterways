@@ -13,8 +13,8 @@
 <text x="117.5" y="282" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">rain + sewage, one pipe</text>
 <rect x="30" y="336" width="175" height="78" rx="7" fill="#f6e3e0" stroke="#c0392b" stroke-width="1.4"/>
 <text x="117.5" y="356" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">basin</text>
-<text x="117.5" y="374" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">holds it — until it fills,</text>
-<text x="117.5" y="387" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">then scours what settled</text>
+<text x="117.5" y="374" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">settles between spills,</text>
+<text x="117.5" y="387" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">hands over the store in one</text>
 <path d="M117,140 L117,164" stroke="#8e2318" stroke-width="2" marker-end="url(#a)"/>
 <path d="M117,218 L117,242" stroke="#8e2318" stroke-width="2" marker-end="url(#a)"/>
 <path d="M117,308 L117,334" stroke="#8e2318" stroke-width="2" marker-end="url(#a)"/>
@@ -34,8 +34,9 @@
 <text x="632.5" y="186" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">surface channel</text>
 <text x="632.5" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">a river, not a gully</text>
 <rect x="545" y="256" width="175" height="64" rx="7" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.4"/>
-<text x="632.5" y="276" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">wetland / basin</text>
-<text x="632.5" y="294" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">settles and takes up</text>
+<text x="632.5" y="276" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">wetland</text>
+<text x="632.5" y="294" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">settles and takes up,</text>
+<text x="632.5" y="307" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">dredged on a schedule</text>
 <path d="M632,140 L632,164" stroke="#1f7a5a" stroke-width="2" marker-end="url(#a)"/>
 <path d="M632,230 L632,254" stroke="#1f7a5a" stroke-width="2" marker-end="url(#a)"/>
 <rect x="545" y="346" width="175" height="78" rx="7" fill="#e2f1ea" stroke="#1f7a5a" stroke-width="1.4"/>
@@ -45,7 +46,8 @@
 <path d="M632,320 L632,344" stroke="#1f7a5a" stroke-width="2" marker-end="url(#a)"/>
 <rect x="770" y="166" width="175" height="64" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
 <text x="857.5" y="186" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">sewer</text>
-<text x="857.5" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">sewage only, always full</text>
+<text x="857.5" y="204" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">sewage only, never full;</text>
+<text x="857.5" y="217" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">the spare basins retire</text>
 <rect x="770" y="256" width="175" height="64" rx="7" fill="#eef3f6" stroke="#b9c8d2" stroke-width="1.4"/>
 <text x="857.5" y="276" text-anchor="middle" font="600 13px system-ui" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1c2a33">treatment works</text>
 <text x="857.5" y="294" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#55666f">never bypassed</text>

@@ -279,7 +279,8 @@ def cmd_flow():
     s += box(30, y + 156, 175, 64, "combined sewer",
              ["rain + sewage, one pipe"], "#f6e3e0", "#c0392b")
     s += box(30, y + 248, 175, 78, "basin",
-             ["holds it — until it fills,", "then scours what settled"], "#f6e3e0", "#c0392b")
+             ["settles between spills,", "hands over the store in one"], "#f6e3e0",
+             "#c0392b")
     s.append(arrow(117, y + 52, 117, y + 76, "#8e2318"))
     s.append(arrow(117, y + 130, 117, y + 154, "#8e2318"))
     s.append(arrow(117, y + 220, 117, y + 246, "#8e2318"))
@@ -299,8 +300,8 @@ def cmd_flow():
     s += box(545, y, 175, 52, "rain on a street", None, "#eef3f6", "#b9c8d2")
     s += box(545, y + 78, 175, 64, "surface channel",
              ["a river, not a gully"], "#e2f1ea", "#1f7a5a")
-    s += box(545, y + 168, 175, 64, "wetland / basin",
-             ["settles and takes up"], "#e2f1ea", "#1f7a5a")
+    s += box(545, y + 168, 175, 64, "wetland",
+             ["settles and takes up,", "dredged on a schedule"], "#e2f1ea", "#1f7a5a")
     s.append(arrow(632, y + 52, 632, y + 76, "#1f7a5a"))
     s.append(arrow(632, y + 142, 632, y + 166, "#1f7a5a"))
     s += box(545, y + 258, 175, 78, "terminal water",
@@ -308,7 +309,8 @@ def cmd_flow():
              "#e2f1ea", "#1f7a5a")
     s.append(arrow(632, y + 232, 632, y + 256, "#1f7a5a"))
     s += box(770, y + 78, 175, 64, "sewer",
-             ["sewage only, always full"], "#eef3f6", "#b9c8d2")
+             ["sewage only, never full;", "the spare basins retire"], "#eef3f6",
+             "#b9c8d2")
     s += box(770, y + 168, 175, 64, "treatment works",
              ["never bypassed"], "#eef3f6", "#b9c8d2")
     s.append(arrow(857, y + 142, 857, y + 166))
