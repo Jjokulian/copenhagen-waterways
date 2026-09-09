@@ -40,6 +40,16 @@ from programme import RAIN_MM_H, RUNOFF_C, amager_split, VESTAMAGER_HA
 # Stated conventions. Both are design figures in ordinary use; neither is measured here.
 DWF_L_PER_PERSON_DAY = 130.0
 MORNING_PEAK_FACTOR = 2.0
+# What the rain carries, and what a pond keeps of it. The concentration is a
+# convention - urban stormwater is usually quoted somewhere between 50 and 300 mg/l
+# of suspended solids and this sits in the middle of that. The capture fraction is
+# the low end of the MEASURED pond range quoted in PROGRAMME.md (76-84% across 72
+# North American ponds, 81% in a Swedish wetland, 84% at a Norwegian highway pond),
+# so the tonnage below is a floor rather than a hope. The bulk density is for
+# settled solids in place, dry mass basis.
+TSS_MG_PER_L = 150.0
+POND_CAPTURE = 0.76
+SEDIMENT_T_PER_M3 = 1.2
 # Stokes, 10 degC: dynamic viscosity of water, and the grain and water densities.
 MU, RHO_S, RHO_W, G = 1.307e-3, 2650.0, 999.7, 9.81
 GRAINS_UM = (100, 50, 20, 10, 5)
@@ -114,6 +124,13 @@ def main():
             "area_ha_if_fed_steadily": annual_m3 / (v * 8760) / 1e4,
         })
 
+    # The other end of the pond: what it takes out, and therefore what leaves on a
+    # lorry. This is the quantity the disposal argument in PROGRAMME.md section 4 is
+    # about, and it had never been sized.
+    tss_t = annual_m3 * TSS_MG_PER_L / 1e6                     # tonnes of solids/yr
+    caught_t = tss_t * POND_CAPTURE
+    caught_m3 = caught_t / SEDIMENT_T_PER_M3
+
     out = {
         "_what": "The rain stream and the foul stream as rates, for Amager.",
         "rain_record": {
@@ -151,6 +168,16 @@ def main():
                 flow(pct(wet, 50)) / peak_1000 * 1000,
         },
         "ponds": ponds,
+        "sediment": {
+            "tss_mg_per_l_stated": TSS_MG_PER_L,
+            "capture_fraction_stated": POND_CAPTURE,
+            "bulk_density_t_per_m3_stated": SEDIMENT_T_PER_M3,
+            "solids_arriving_t_per_year": tss_t,
+            "solids_caught_t_per_year": caught_t,
+            "solids_caught_m3_per_year": caught_m3,
+            "t_per_impervious_ha_per_year": caught_t / ha,
+            "m3_per_impervious_ha_per_year": caught_m3 / ha,
+        },
         "_stated": ("Runoff coefficient, dry-weather flow per person and the morning "
                     "peak factor are design conventions, not measurements from this "
                     "project. Settling is Stokes in still water at 10 degC, so the "
@@ -164,6 +191,8 @@ def main():
     log(f"  Amager {ha:,.0f} impervious ha -> {design_q:.1f} m3/s in a "
         f"{RAIN_MM_H:.0f} mm hour = the morning peak of "
         f"{design_q/peak_1000*1000:,.0f} people")
+    log(f"  sediment caught: {caught_t:,.0f} t/yr = {caught_m3:,.0f} m3/yr "
+        f"({caught_t/ha:.2f} t per impervious ha)")
     for r in ponds:
         log(f"  {r['grain_um']:>4} um  v={r['settling_m_per_h']:7.2f} m/h  "
             f"peak-fed {r['area_ha_at_design_hour']:8.1f} ha  "

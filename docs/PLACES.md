@@ -214,6 +214,18 @@ not. Where randomisation is not available — and often it will not be — the r
 still leaves the weaker but real design: matched places, read against their own
 histories.
 
+**And the lever this is available on is narrower than it sounds, which is worth
+knowing before anyone promises it.** Product bans are harmonised at EU level, so no
+city and no region can close a market — that is the one instrument nobody local can
+start, and [the programme page says why that row sits at the wrong
+level](PROGRAMME.md). What is left below it is purchase, permission and use: a
+household not buying, a municipality refusing a compound in its own procurement or on
+its own ground, a utility writing a condition into a discharge permit, a state taxing
+a use or restricting it. Those are weaker instruments than a ban and they are the ones
+that make places differ — so they are the ones that generate the counterfactual, and
+they should be defended as an information instrument and not only as a local
+preference.
+
 None of this weakens the anti-delay conditions below. Plurality is not everybody
 waiting to see what the neighbours got; it is different places acting **at the same
 time in different ways**, on a clock that runs whether or not the results are

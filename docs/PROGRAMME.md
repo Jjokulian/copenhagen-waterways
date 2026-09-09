@@ -449,6 +449,14 @@ If the removal mechanism is gravity, the size of the machine is set by one numbe
 
 It also settles how the ponds are run. Cells in **rotation**, fed by gravity, with one cell out of service being drained and dredged while the others take the flow: with *n* cells that costs a factor of *n*/(*n*−1) in area — a quarter more for four cells, an eighth more for eight — which is affordable at these sizes and is the only way the periodic-removal condition above gets met in practice rather than in a maintenance plan. A cell that cannot be taken offline will not be cleaned.
 
+#### What leaves on a lorry, and how often
+
+The disposal argument in the next section is about a quantity nobody had sized, so here it is. Rain carries suspended solids at something like **150 mg/l** off paved surface — a stated convention, in the middle of the range usually quoted — and a pond keeps at least **76%** of them, which is the low end of the measured range in the table above. On Amager's 1,052 impervious hectares that is **649 tonnes a year**, or about 541 m³ settled in place; across the whole combined city, **2,128 tonnes** and 1,773 m³.
+
+**Which sets the cadence, and it is slower than the word *dredging* suggests.** Spread over the lean 11 ha sizing from the table above, that is **about 5 mm a year** of accumulation. A cell reaches a hundred millimetres in roughly two decades. So the rotation is not a permanent industrial operation in a nature park — it is a cell out of service for a season, on a cycle measured in years, with the material leaving on ordinary lorries. That is the difference between this and the sewage works the phrase *light treatment* keeps summoning.
+
+**And it is the local end of a much larger question.** Where those tonnes go is decided by assay rather than by category — deep-prior metals below a threshold become soil, cadmium and mercury do not, and a novo-chemical has to be destroyed rather than buried, which is the taxonomy in the next section. Denmark has no facility whose fluorine balance has been shown to close, and building one is a decade of permitting and construction, which is why [the industry question](#is-this-a-cost-or-is-it-an-industry) is not a coda to this document but a scheduling constraint on it. This is the quantity that would make it concrete: a few thousand tonnes a year, from one city, of material whose destination nobody has yet had to decide.
+
 *Stated, not measured:* the runoff coefficient, the design hour, and Stokes settling in still water. Real ponds are not still — wind and short-circuiting both cut capture — so these areas are **floors**, and the measured removal efficiencies in the table above are the thing to trust for what a built pond achieves. `scripts/streams.py` writes the arithmetic.
 
 #### Where the load ends up is a choice, and the sea is the other option
@@ -796,8 +804,27 @@ The interventions above split cleanly by timescale, and the split is the argumen
 | Screen extraction sites for terminal storage | **months** |
 | Connect everyday rain to the existing surface network | **years** |
 | Build the missing corridors and their treatment ponds | **years** |
-| Product bans through REACH | **2–3 years, already started** |
+| Product bans through REACH | **2–3 years, already started — and see below, because that row is at the wrong level** |
 | Genuine network separation | **decades — 13 of 300 catchments are planned for it** |
+
+#### The REACH row is at the wrong level, and that is a structural point
+
+A restriction under REACH is a decision about **market access**, taken once, for four hundred and fifty million people. It is the right instrument for the thing it does and it is the only row in that table nobody local can start. Which is worth saying plainly, because the rest of this document argues that acting in different places in different ways is how anything gets learned, and here is an instrument built to make that impossible on purpose: **a single market is a market where the same products are available everywhere, which is the definition of no contrast.**
+
+But *banning a product from the market* and *refusing to buy or permit it* are different acts, and only the first is harmonised. What is left to the lower levels is not nothing:
+
+| Level | Cannot | Can |
+|---|---|---|
+| **A household** | affect what is sold | not buy it — which is the whole of the greywater argument in section 1: what goes down the drain is chosen at the point of purchase |
+| **A city** | ban a product from its shops | refuse it in its own procurement, forbid its use on land it owns, and attach conditions to leases, permits and contracts. Copenhagen already does a version of this on its own ground |
+| **A region or a utility** | override an EU authorisation | make use conditions in discharge permits and abstraction-zone rules — Denmark's own restricted-spraying zones around wellfields are exactly this instrument |
+| **A member state** | unilaterally close its market | tax, restrict a *use*, and apply for a derogation or safeguard. Denmark has done the first two — pesticide taxation, and the pre-harvest glyphosate restriction cited in section 5 |
+
+**So the achievable local instrument is a use and purchase restriction, not a ban** — and it happens to be the one that produces the counterfactual. A municipality that stops buying a compound, on a date, with the date written down, has created exactly the contrast that [`X17`](#EXPERIMENTS.md) says does not exist and cannot be bought.
+
+The brittleness is worth naming because it is systemic rather than particular. **Harmonisation puts the decision at the slowest level and removes the variation that would inform it**, and the two failures compound: the safeguard route exists but demands evidence of harm to a standard that is hard to reach precisely because nobody was allowed to vary the treatment. That circle — *no derogation without evidence, no evidence without a derogation* — is the same shape as the nutrient argument on this page, where the contest was never run and the winner was announced anyway. It is an argument for keeping the use and procurement levers deliberately open at every level below the market, not for leaving the EU's, which does the one thing no city can.
+
+*What this does not claim.* This project has not read the case law, and the boundary between a lawful national use restriction and an unlawful barrier to trade is exactly where the arguing happens. The point stands at the level of design rather than of legal advice: **the levers that survive harmonisation are purchase, permission and use, and those are the levers that make places differ.**
 
 Which produces an uncomfortable conclusion for everyone. The people who want urgent action have to accept that the physical fix is a generational programme. The people who want to wait for better evidence have to accept that the evidence is cheap, available, and has been declined for decades.
 

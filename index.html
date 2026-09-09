@@ -1376,6 +1376,17 @@ function resolveLinks(root, file) {
   const base = DOCS_DIR + file.split("/").slice(0, -1).join("/") + "/";
   for (const a of root.querySelectorAll("a[href]")) {
     const raw = a.getAttribute("href");
+    /* Two conventions share the bare-hash form in these documents, because both are
+       right on GitHub: "#HYPOTHESES.md" means another document, and
+       "#some-heading" means a heading of this one. The first is already a reader
+       link; the second has to become one, or the router reads the slug as a
+       filename, fails to find it, and shows the map instead. */
+    if (raw && raw[0] === "#" && raw.length > 1) {
+      const frag = raw.slice(1);
+      if (!DOCS.some(([f]) => f === frag) && frag.indexOf("::") < 0)
+        a.setAttribute("href", "#" + file + "::" + frag);
+      continue;
+    }
     if (!isLocal(raw)) continue;
     const cut = raw.indexOf("#");
     const path = cut < 0 ? raw : raw.slice(0, cut);
