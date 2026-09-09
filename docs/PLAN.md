@@ -12,7 +12,7 @@ that is invisible.
 | 1 | Hypothesis landscape | broad enough that no test is a two-horse race | **done, with a stated flaw** |
 | 2 | Data sources | provenance separated; independence counted | **done** |
 | 3 | The view, held open | no basket assumed; destruction stated | **partly** |
-| 4 | Testing hypotheses against data | each has an observable consequence and a null | **not started** |
+| 4 | Testing hypotheses against data | each has an observable consequence and a null | **triage done, 19 drafts written, none run** |
 | 5 | Mechanistic scoring | stability across independent measure-spaces | **not started** |
 | 6 | Solution in its own spatiality | the unit follows the mechanism | **premature** |
 | 7 | Relation to the social argument | claims in circulation, and what would move them | **partly** |
@@ -107,7 +107,47 @@ Each hypothesis needs three things before it can be tested, and most will fail a
   no row in the archive carries a clock time.* These get marked **unscoreable**, not
   scored zero. An absent dimension is not evidence of absence.
 
-**Gate:** stage 5 is meaningless until this triage exists.
+**The triage now exists** — [`hypodrafts/TRIAGE.md`](hypodrafts/TRIAGE.md), all 166
+lettered hypotheses, one row each.
+
+| class | n | share |
+|---|---:|---:|
+| blocked on a named fetch | 61 | 37% |
+| **unscoreable** | 40 | 24% |
+| **testable now** | **24** | **14%** |
+| needs an experiment | 20 | 12% |
+| blocked on measurement resolution | 18 | 11% |
+| not established | 3 | 2% |
+
+**Four things the shape says.**
+
+**One fetch unblocks nine.** ODA `vandkemi` (`Emne_10_11`) is named in the blocker for
+A1, A2, A5, A7, B4, E2, E11, K1, K2 — and it is the topic `fetch_oda.py` advertises in
+its docstring and never implements. (`iltkor` is worse: declared in `TOPICS` and never
+fetched at all, the only one of five with no file on disk.)
+
+**Not one hypothesis in group A is testable now.** All ten are blocked, unscoreable or
+unestablished. The testable-now set is 6 from group I — hypotheses about the archive
+itself — plus 5 from C, 3 from Z. **The archive can see physics and audit itself, and
+cannot see biology or chemistry.**
+
+**The largest blocking dimension is not nutrients.** Microbial, viral and fungal
+community composition alone makes 12 hypotheses unscoreable, and toxicant concentration
+in a marine matrix another 7. **Those two are 19 of the 40**, and neither is expensive
+to start measuring.
+
+**And 36% of the field is beyond any reanalysis of existing data** — unscoreable plus
+experiment. Which reframes the public argument: nutrients did not defeat the
+alternatives. **Nutrients are the group with a monitoring programme, and sixty
+hypotheses have never been in a position to compete.**
+
+Two caveats, both stated in the file. The classification is itself an untested
+partition. And per [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), every "not measured"
+here means "not found by a search whose sensitivity nobody has characterised" — six
+things this project called absent turned out to exist in a single day, so **the
+unscoreable column is an upper bound, not a measurement.**
+
+**Gate:** stage 5 can now proceed on the 24.
 
 ---
 
