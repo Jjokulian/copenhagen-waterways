@@ -717,6 +717,40 @@ def main():
       "resolution, it is a record of where water in Copenhagen goes when you stop "
       "forcing it into a pipe. That is the natural drainage network of the city, and it "
       "has already been mapped.\n")
+    tc_path = os.path.join(DERIVED, "terraincheck.json")
+    if os.path.exists(tc_path):
+        tc = read_json(tc_path)
+        w50 = tc["windows"]["50"]
+        w200 = tc["windows"]["200"]
+        a("**And it has now been held against something independent, with a null "
+          "result worth reading carefully.** Denmark's national elevation model is "
+          "available on a token, so the recovered sheets can be asked the obvious "
+          "question: does the modelled water sit where the ground is low? Scored "
+          "against the median terrain of its own neighbourhood — the only comparison "
+          "that means anything, since a citywide one would merely rediscover that "
+          "Copenhagen slopes — **modelled flooding sits "
+          f"{w50['flooded_median_m']:+.2f} m relative to its own 50 m surroundings "
+          f"against {w50['background_median_m']:+.2f} m for random land**, and "
+          f"{w50['flooded_below_local_pct']:.0f}% of it is below local ground against "
+          f"{w50['background_below_local_pct']:.0f}% of the background. At 200 m the "
+          "two are identical again. **On this evidence the flood extent has no "
+          "detectable relationship to local terrain lows** "
+          "(`scripts/terraincheck.py`).\n")
+        a("*Which is a finding about the test, not yet about the model.* The sheets "
+          "are mutually consistent to 23 m but tied to the ground with standard "
+          "errors of **58–91 m**, and a 50 m window compares against terrain the "
+          "sheet may simply not be over. A relationship that exists at the scale of "
+          "a street depression would be erased by that offset before it could be "
+          "measured. So the honest reading is: **the georeferencing, not the model, "
+          "is what currently limits the check** — which puts a number on what "
+          "[more control points](../viz/georef.html) would buy, and it is the first "
+          "time this project has been able to say what they are worth.\n")
+        a("Two other readings stay open and are not resolved here. The sheets are the "
+          "output of a hydraulic model of the **sewer network** as well as the "
+          "surface, so their extent may legitimately follow pipe capacity rather "
+          "than topography — in which case the flood map is a drainage map and this "
+          "null is the expected answer. And the elevation model is bare earth, "
+          "interpolated under buildings, which is not where street water runs.\n")
     a("**What this covers.** The 2012 model was published as seven PDF sheets with the "
       "georeferencing stripped out. Four registered automatically against the water in "
       "them. The other three — Amager, Bispebjerg, København Vest — were placed from "

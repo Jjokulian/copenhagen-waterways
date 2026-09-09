@@ -83,6 +83,8 @@ scripts/
   rivermap.py             the flood model read as the city's natural drainage
   cropland.py             what Danish farmland grows, and so what the N is for
   livestock.py            the herd, the throughput, and that in nitrogen
+  manure.py               animal units against declared land, per business
+  terraincheck.py         the 2012 flood sheets against the national DEM
   streams.py              the rain stream and the foul stream, as rates
   fetch_structures.py     the city's gully gratings and manholes, paged from WFS
   architecture.py         where the separated architecture acts, per catchment
