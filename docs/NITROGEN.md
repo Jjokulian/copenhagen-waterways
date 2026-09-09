@@ -345,6 +345,37 @@ nitrogen in transit, foreign inflow to shared waters — lands inside B's leftov
 named agriculture by subtraction. That is the substantive weakness of the ~70%, and it
 is separate from, and larger than, the circularity in §2.
 
+## 2c. Whose nitrogen is it, and can the ledger say?
+
+A question that gets asked constantly and has no answer downstream: **how much of this is because Denmark keeps animals?** The apportionment above has no livestock term. Diffuse load is one bucket — cultivated land *including scattered dwellings*, by DCE's own definition — and no measurement in a stream could separate the fractions anyway. A nitrate ion that passed through a pig is the same ion as one out of a bag. **The question cannot be answered by measuring, only by accounting**, and the accounting has two halves.
+
+**Half one: what is applied.** From the field balance above — manure and sludge **87 kg N/ha** against mineral fertiliser **74** in 2013, out of 192 supplied. Manure has been the larger of the two since about 2000; in 1991 it was mineral 141 against manure 91. So a little under half of the nitrogen put on Danish fields arrives as manure, and that half is not optional in the way a bag is: it exists because the animals do, and it has to be spread, exported or processed.
+
+**Half two: what the rest is spread on.** Mineral fertiliser on a barley field grown for pigs is nitrogen spent on livestock as surely as the slurry beside it. Danish crop statistics record what was grown rather than what it was fed to, so this is a range on a stated rule rather than a number (`scripts/cropland.py`, from Statistics Denmark table AFG6):
+
+| | 1990 | 2000 | 2010 | 2025 |
+|---|---:|---:|---:|---:|
+| Grass, whole-crop and fodder roots — **unambiguously feed** | 15.4% | 17.0% | 21.4% | 18.7% |
+| …plus cereals and pulses to maturity | 75.7% | 75.0% | 77.3% | 67.5% |
+| …plus rapeseed, whose meal is feed | 85.3% | 78.8% | 83.5% | 73.7% |
+| **Potatoes, sugar beet, horticulture — food people eat** | 4.8% | 4.5% | 3.7% | 4.7% |
+
+**Between two thirds and three quarters of Danish farmland grows feed, and under five per cent of it grows food that people eat directly** — 4.7% in 2025, against 4.8% in 1990. The shares have barely moved in thirty-five years. Set that beside half one and the input-side answer is not close: **the herd is behind most of the nitrogen applied to Danish soil — the manure directly, and the majority of the mineral fertiliser through what it is spread on.**
+
+*What this does not establish.* An input share is not a load share. This project's own comparison of *markoverskud* against measured load puts pass-through between **zero and about a third**, varying by catchment, so a share of what is applied cannot be converted into a share of what arrives. And the classification above is ours: the statistics do not record what a crop was fed to, cereals are the load-bearing assumption, and a reader who thinks Danish grain is mostly milled rather than fed should use the 18.7% floor instead.
+
+### Which is why biogas is a carbon technology and not a nitrogen one
+
+The obvious hope is that digestion deals with it. It does not. **Anaerobic digestion removes carbon, not nitrogen**: methane and CO₂ leave, and essentially all the nitrogen stays in the digestate — with *more* of it as ammonium than before, because digestion mineralises organic N. That is useful as fertiliser value and it is the opposite of removal. **The field is still the endpoint.**
+
+What a biogas plant does supply is the thing the manure never otherwise has: **a collection point**. The manure is already gathered, homogenised and pumped, which is where nitrogen can be taken out — and there are only three kinds of exit:
+
+- **Capture it as a product.** Separate the digestate into fibre and liquid, then strip ammonia from the liquid into an ammonium salt — a concentrated, transportable fertiliser that can leave the catchment or displace Haber-Bosch nitrogen. The nitrogen is not destroyed; it is made portable, which is what the field balance needs.
+- **Destroy it, which is literally a reduction.** Nitrify then **denitrify** the liquid fraction and the nitrogen leaves as N₂ — inert, and out of the reactive pool for good. This is the only true removal available, and it is the same reaction a constructed wetland performs slowly and for free. It costs energy, and a badly run plant emits N₂O instead, which trades a water problem for a climate one.
+- **Burn the fibre.** Destroys organic nitrogen and recovers phosphorus in ash, at the cost of flue-gas treatment. It is the P route more than the N route.
+
+So the answer to *can biogas fix it* is: not by itself, and yes as infrastructure. **Digestion without a nitrogen step returns every kilogram to the same fields in a more available form.** With separation and stripping, or with denitrification, the same plant becomes the only place in the chain where the nitrogen can be made to go somewhere else — which is the honest version of the claim that the herd sets a floor: it sets one **unless the manure nitrogen is given an exit that is not a field.**
+
 ## 3. Nitrogen mass is the wrong currency
 
 Oxygen depletion is the damage. Nitrogen is one route to it. Converting everything to oxygen demand — Redfield stoichiometry, which is chemistry rather than judgement:

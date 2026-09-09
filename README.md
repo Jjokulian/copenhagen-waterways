@@ -45,6 +45,7 @@ python3 scripts/solutions.py            # -> docs/SOLUTIONS.md
 python3 scripts/rivermap.py             # -> docs/river_map.png
 python3 scripts/programme_map.py        # -> docs/*.svg
 python3 scripts/rivers3d.py             # -> viewer bundle + 2 SVGs
+python3 scripts/cropland.py             # -> data/derived/cropland.json
 python3 scripts/streams.py              # -> data/derived/streams.json
 python3 scripts/fetch_structures.py     # -> data/raw/structures/*.json
 python3 scripts/architecture.py         # -> docs/data/architecture.json
@@ -79,6 +80,7 @@ scripts/
   currents.py             retention, transport and the overflow-hour test
   solutions.py            what the city plans against what it has done
   rivermap.py             the flood model read as the city's natural drainage
+  cropland.py             what Danish farmland grows, and so what the N is for
   streams.py              the rain stream and the foul stream, as rates
   fetch_structures.py     the city's gully gratings and manholes, paged from WFS
   architecture.py         where the separated architecture acts, per catchment
