@@ -136,6 +136,31 @@
   .crumbrow span{display:inline-flex;gap:.4rem;align-items:baseline;flex-wrap:wrap}
   .hint-short{display:none}
 
+  /* A case is a verdict of three sentences standing on three tables, and a reader
+     wants the tables second. `details.work` is that evidence: folded at every
+     width, because the reason to fold is the length of the working and not the
+     size of the screen, and it is the one fold on the site that a wide screen does
+     not force open. The summary carries the finding, so what is deferred is the
+     working rather than the conclusion. Written as a real <details> by the
+     generators, so GitHub folds it identically. */
+  details.work{margin:1.5rem 0;padding:.15rem 0 .15rem 1rem;
+    border-left:2px solid var(--rule)}
+  details.work[open]{border-left-color:var(--accent)}
+  details.work > summary{display:flex;gap:.5rem;align-items:baseline;cursor:pointer;
+    list-style:none;font-family:Archivo,sans-serif;font-size:13.5px;line-height:1.45;
+    color:var(--ink-2)}
+  details.work > summary::-webkit-details-marker{display:none}
+  details.work > summary:hover{color:var(--accent)}
+  details.work > summary:focus-visible{outline:2px solid var(--accent);
+    outline-offset:3px;border-radius:3px}
+  details.work > summary::after{content:"";flex:0 0 auto;width:.42rem;height:.42rem;
+    margin:0 .1rem 0 auto;border-right:1.5px solid var(--muted);
+    border-bottom:1.5px solid var(--muted);transform:translateY(-2px) rotate(45deg);
+    transition:transform .15s ease}
+  details.work[open] > summary::after{transform:translateY(1px) rotate(-135deg)}
+  details.work[open] > summary{margin-bottom:.7rem}
+  details.work > :last-child{margin-bottom:.2rem}
+
   @media (max-width:800px){
     .shell{grid-template-columns:1fr;gap:0;padding:calc(var(--bar) + 10px) 16px 70px}
     .topbar{display:flex}
@@ -170,7 +195,8 @@
     .hint-short{display:inline}
   }
   @media (prefers-reduced-motion:reduce){
-    .bars,.bars::before,.bars::after,.fold > summary::after{transition:none}
+    .bars,.bars::before,.bars::after,.fold > summary::after,
+    details.work > summary::after{transition:none}
   }
 
 /* Glossary tooltips. Every `M1`, `V3`, `K8` in a generated document is a

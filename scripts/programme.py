@@ -193,6 +193,21 @@ TREATMENT = [
 ]
 
 
+def fold(summary, body):
+    """Put a run of evidence behind one line that says what is in it.
+
+    A case here is a verdict of three sentences standing on three tables, and the
+    tables are the part a reader wants second. `<details>` is native on GitHub and
+    styled by the reader, so the page reads the same in both places. The summary
+    carries the finding rather than a label - what is deferred is the working, and
+    a fold that hides its own conclusion would be hiding evidence rather than
+    ordering it. The blank lines are load-bearing: without them the markdown
+    inside an HTML block is not parsed as markdown.
+    """
+    return ('<details class="work">\n<summary>' + summary + "</summary>\n\n"
+            + body.strip("\n") + "\n\n</details>\n")
+
+
 FRAMING_GAP = """### Why the current framing does not reach those four words
 
 The four words name losses. The public framing names one mechanism — nitrogen, to
@@ -527,33 +542,37 @@ def main():
       "**600,000 m³ a year** and discharges it into the bay. As hydraulic geometry it "
       "looks close to ideal: a deep hole below sea level, next to the shore, with the "
       "pumping installed.\n")
-    a("**It is the wrong site, and my first reason for saying so was out of date.** "
-      "I originally rejected it as \"Zealand's clearest lake\", which is what the "
-      "encyclopedia says. That claim carries no citation and no year. A resident who "
-      "knows the place reports algal growth, an odour, a declining fishery where there "
-      "had been a fishing culture, and accumulated plastic waste.\n")
-    a("So the useful question is not whether the lake is clean. It is **what would "
-      "have told us either way**, and the answer is close to nothing:\n")
+    a("**It is the wrong site — and the first reason I gave for saying so was out of "
+      "date.**\n")
     kk = mon["karlstrup_kalkgrav"]
     st = kk["official_status"]
-    a("| | |")
-    a("|---|---|")
-    a(f"| Registered as | {kk['water_body']['registered_as']} "
-      f"({kk['water_body']['id']}), {kk['water_body']['area_km2']} km², "
-      f"catchment {kk['water_body']['catchment']} |")
-    a(f"| Ecological status | **{st['ecological_status']}** — assessed on the "
-      "phytoplankton element only, from chlorophyll |")
-    a(f"| Chemical status | **{st['chemical_status']}** |")
-    a(f"| Data window | **{st['data_window']}** |")
-    a("| Bathing-water sampling | none — it is not a designated bathing water; the four "
-      "within 3 km are all coastal |")
-    a("| Litter, plastic, odour, fish kills | **not monitored by anything** |")
-    a("")
-    a("A lake carrying one number, from a chlorophyll series that ended around 2018, "
-      "with chemical status never determined and no instrument at all for the things "
-      "the resident describes. **The disagreement about its condition cannot be "
-      "settled from published data**, and that is the same failure this project keeps "
-      "finding: the condition people can smell is the condition nothing measures.\n")
+    w = []
+    wa = w.append
+    wa("I originally rejected it as \"Zealand's clearest lake\", which is what the "
+       "encyclopedia says. That claim carries no citation and no year. A resident who "
+       "knows the place reports algal growth, an odour, a declining fishery where "
+       "there had been a fishing culture, and accumulated plastic waste.\n")
+    wa("So the useful question is not whether the lake is clean. It is **what would "
+       "have told us either way**, and the answer is close to nothing:\n")
+    wa("| | |")
+    wa("|---|---|")
+    wa(f"| Registered as | {kk['water_body']['registered_as']} "
+       f"({kk['water_body']['id']}), {kk['water_body']['area_km2']} km², "
+       f"catchment {kk['water_body']['catchment']} |")
+    wa(f"| Ecological status | **{st['ecological_status']}** — assessed on the "
+       "phytoplankton element only, from chlorophyll |")
+    wa(f"| Chemical status | **{st['chemical_status']}** |")
+    wa(f"| Data window | **{st['data_window']}** |")
+    wa("| Bathing-water sampling | none — it is not a designated bathing water; the "
+       "four within 3 km are all coastal |")
+    wa("| Litter, plastic, odour, fish kills | **not monitored by anything** |")
+    wa("")
+    wa("A lake carrying one number, from a chlorophyll series that ended around 2018, "
+       "with chemical status never determined and no instrument at all for the things "
+       "the resident describes. That is the same failure this project keeps finding: "
+       "the condition people can smell is the condition nothing measures.\n")
+    a(fold("The evaluation — is the lake actually clean? Nothing published can settle "
+           "it, and this is everything that was checked", "\n".join(w)))
     a("And there is a better reason to reject the site, which does not depend on how "
       "clean it is now. The lake is 14 m deep with **poor circulation** — cold water "
       "immediately below a warm surface layer. That is precisely the configuration "
@@ -570,31 +589,39 @@ def main():
       "metres high was built across a shallow bay, channels were dug, and about "
       f"**{VESTAMAGER_HA/100:.0f} km² was pumped dry**. Two pump stations still keep it "
       "that way. It is Kalvebod Fælled, now part of Naturpark Amager.\n")
-    a("Everything the quarry only pretended to offer is actually there:\n")
-    a("| | |")
-    a("|---|---|")
-    a(f"| Area | ~{VESTAMAGER_HA:,.0f} ha, held below sea level |")
-    a("| Hydraulics | already a pumped polder — the pumps, dyke and channels exist |")
-    a("| Feed | gravity, from an island that sits above it |")
-    a("| Shape | shallow, wide and vegetated — what settling and uptake actually want |")
-    a("| Ownership | public |")
-    a("")
-    a("**And Amager is a third of the problem.** Splitting Copenhagen's "
-      "combined-sewered impervious area by island:\n")
-    a("| | Impervious hectares on the combined system |")
-    a("|---|---:|")
-    a(f"| **Amager** — upstream of the polder, no harbour to cross | **{am:,.0f} ha "
-      f"({am/(am+ml)*100:.0f}%)** |")
-    a(f"| Mainland Copenhagen | {ml:,.0f} ha ({ml/(am+ml)*100:.0f}%) |")
-    a("")
-    a("Stormwater treatment wetlands are conventionally sized at a few per cent of the "
-      "impervious area draining to them. For Amager's share that is:\n")
-    a("| Sizing | Treatment area | Share of Vestamager |")
-    a("|---|---:|---:|")
+    a("Everything the quarry only pretended to offer is actually there: the polder is "
+      "already pumped, already public, fed by gravity from the island above it, and "
+      "shallow, wide and vegetated — which is the shape settling and uptake want.\n")
+    w = []
+    wa = w.append
+    wa("| | |")
+    wa("|---|---|")
+    wa(f"| Area | ~{VESTAMAGER_HA:,.0f} ha, held below sea level |")
+    wa("| Hydraulics | already a pumped polder — the pumps, dyke and channels exist |")
+    wa("| Feed | gravity, from an island that sits above it |")
+    wa("| Shape | shallow, wide and vegetated — what settling and uptake actually "
+       "want |")
+    wa("| Ownership | public |")
+    wa("")
+    wa("**And Amager is a third of the problem.** Splitting Copenhagen's "
+       "combined-sewered impervious area by island:\n")
+    wa("| | Impervious hectares on the combined system |")
+    wa("|---|---:|")
+    wa(f"| **Amager** — upstream of the polder, no harbour to cross | **{am:,.0f} ha "
+       f"({am/(am+ml)*100:.0f}%)** |")
+    wa(f"| Mainland Copenhagen | {ml:,.0f} ha ({ml/(am+ml)*100:.0f}%) |")
+    wa("")
+    wa("Stormwater treatment wetlands are conventionally sized at a few per cent of "
+       "the impervious area draining to them. For Amager's share that is:\n")
+    wa("| Sizing | Treatment area | Share of Vestamager |")
+    wa("|---|---:|---:|")
     for f_, lbl in ((0.01, "1% — a lean wet pond"), (0.02, "2%"), (0.03, "3%"),
                     (0.05, "5% — generous, wetland-type")):
-        a(f"| {lbl} | {am*f_:,.0f} ha | **{am*f_/VESTAMAGER_HA*100:.1f}%** |")
-    a("")
+        wa(f"| {lbl} | {am*f_:,.0f} ha | **{am*f_/VESTAMAGER_HA*100:.1f}%** |")
+    wa("")
+    a(fold(f"The evaluation — the polder's own numbers, Amager's {am/(am+ml)*100:.0f}% "
+           "share of the combined-sewered city, and what a wetland for it would need",
+           "\n".join(w)))
     a(f"**Between half a per cent and three per cent of the polder would do it.** That "
       "is the difference between this and the quarry: the quarry was two orders of "
       "magnitude too small and the wrong shape; this is two orders of magnitude larger "

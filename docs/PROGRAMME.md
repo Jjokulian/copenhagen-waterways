@@ -183,7 +183,12 @@ The alternative is a terminal water: an outlet that is a lake, a watercourse, a 
 
 **Case one: a flooded chalk quarry.** Karlstrup Kalkgrav sits behind Solrød Strand, separated from Køge Bugt by the motorway. Its water level is held **four metres below sea level** by a pump station that already removes about **600,000 m³ a year** and discharges it into the bay. As hydraulic geometry it looks close to ideal: a deep hole below sea level, next to the shore, with the pumping installed.
 
-**It is the wrong site, and my first reason for saying so was out of date.** I originally rejected it as "Zealand's clearest lake", which is what the encyclopedia says. That claim carries no citation and no year. A resident who knows the place reports algal growth, an odour, a declining fishery where there had been a fishing culture, and accumulated plastic waste.
+**It is the wrong site — and the first reason I gave for saying so was out of date.**
+
+<details class="work">
+<summary>The evaluation — is the lake actually clean? Nothing published can settle it, and this is everything that was checked</summary>
+
+I originally rejected it as "Zealand's clearest lake", which is what the encyclopedia says. That claim carries no citation and no year. A resident who knows the place reports algal growth, an odour, a declining fishery where there had been a fishing culture, and accumulated plastic waste.
 
 So the useful question is not whether the lake is clean. It is **what would have told us either way**, and the answer is close to nothing:
 
@@ -196,7 +201,9 @@ So the useful question is not whether the lake is clean. It is **what would have
 | Bathing-water sampling | none — it is not a designated bathing water; the four within 3 km are all coastal |
 | Litter, plastic, odour, fish kills | **not monitored by anything** |
 
-A lake carrying one number, from a chlorophyll series that ended around 2018, with chemical status never determined and no instrument at all for the things the resident describes. **The disagreement about its condition cannot be settled from published data**, and that is the same failure this project keeps finding: the condition people can smell is the condition nothing measures.
+A lake carrying one number, from a chlorophyll series that ended around 2018, with chemical status never determined and no instrument at all for the things the resident describes. That is the same failure this project keeps finding: the condition people can smell is the condition nothing measures.
+
+</details>
 
 And there is a better reason to reject the site, which does not depend on how clean it is now. The lake is 14 m deep with **poor circulation** — cold water immediately below a warm surface layer. That is precisely the configuration that stratifies and goes anoxic under nutrient load. Directing stormwater into it would reproduce Køge Bugt in miniature, in fresh water, half a kilometre inland. **A deep, still hole is a bad treatment basin.** What treatment wants is the opposite: shallow, wide, and vegetated.
 
@@ -204,7 +211,10 @@ And there is a better reason to reject the site, which does not depend on how cl
 
 Behind the Amager dyke is a polder. Between 1939 and 1943 a 14 km dyke four metres high was built across a shallow bay, channels were dug, and about **20 km² was pumped dry**. Two pump stations still keep it that way. It is Kalvebod Fælled, now part of Naturpark Amager.
 
-Everything the quarry only pretended to offer is actually there:
+Everything the quarry only pretended to offer is actually there: the polder is already pumped, already public, fed by gravity from the island above it, and shallow, wide and vegetated — which is the shape settling and uptake want.
+
+<details class="work">
+<summary>The evaluation — the polder's own numbers, Amager's 31% share of the combined-sewered city, and what a wetland for it would need</summary>
 
 | | |
 |---|---|
@@ -229,6 +239,8 @@ Stormwater treatment wetlands are conventionally sized at a few per cent of the 
 | 2% | 21 ha | **1.1%** |
 | 3% | 32 ha | **1.6%** |
 | 5% — generous, wetland-type | 53 ha | **2.6%** |
+
+</details>
 
 **Between half a per cent and three per cent of the polder would do it.** That is the difference between this and the quarry: the quarry was two orders of magnitude too small and the wrong shape; this is two orders of magnitude larger than needed and exactly the right shape.
 
