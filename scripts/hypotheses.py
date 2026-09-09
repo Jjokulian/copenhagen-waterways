@@ -4249,8 +4249,29 @@ def main():
     # the documents carrying their definitions inline.
     gloss = {}
 
+    # A plain dict here let the last writer win. TERMINAL defines T1-T5 and group T
+    # defines hypotheses T1-T5, so the hypothesis loop - which runs last - silently
+    # replaced all five terminal outcomes. PROGRAMME.md uses T1-T5 as outcomes and
+    # got "Sulphide intrusion, gated by light" on hover for two months. A key
+    # collision resolved by insertion order, with no error, in the codebase whose
+    # subject is exactly that.
+    collisions = []
+
     def add(i, kind, label, text):
-        gloss[i] = {"kind": kind, "label": label, "text": " ".join(text.split())}
+        e = {"kind": kind, "label": label, "text": " ".join(text.split())}
+        if i in gloss:
+            prev = gloss[i]
+            senses = prev.get("senses", [prev]) + [e]
+            gloss[i] = {"kind": "AMBIGUOUS",
+                        "label": " / ".join(x["label"] for x in senses),
+                        "text": "This code carries more than one meaning in the source: "
+                                + "; ".join(f"{x['label']} ({x['kind']})" for x in senses)
+                                + ".",
+                        "senses": senses}
+            if i not in collisions:
+                collisions.append(i)
+        else:
+            gloss[i] = e
 
     for i, n, w in TERMINAL:
         add(i, "terminal outcome", n, w)
@@ -4266,6 +4287,10 @@ def main():
         add(g, "group", n, t)
     for h, g, t, o, m, p_, d_, nd in rows:
         add(h, f"hypothesis ({g})", t, m)
+
+    if collisions:
+        log(f"  NOTE: {len(collisions)} code(s) carry two meanings and are emitted with "
+            f"both: {', '.join(collisions)}")
 
     # Scoped on purpose. Register ids are short and collide with real identifiers
     # elsewhere on the site - REGISTER.md lists sewer outfalls called U2 and U4,

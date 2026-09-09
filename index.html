@@ -679,6 +679,12 @@ function showTip(el) {
       ? (GLOSS._terms || {})[key] : (GLOSS || {})[key];
   }
   if (!g) return;
+  // Either glossary may hold a code with more than one meaning. Show all of them:
+  // picking one by insertion order is how T1-T5 came to read as hypotheses on a
+  // page that uses them as outcomes.
+  if (g.kind === "AMBIGUOUS" && g.senses)
+    g = {kind: "two meanings", label: key,
+         text: g.senses.map(x => `${x.label} — ${x.kind}`).join("   ·   ")};
   const sheet = sheetMode();
   const article = el.tagName === "A" ? el.href : "";
   tipEl.dataset.mode = sheet ? "sheet" : "hover";
