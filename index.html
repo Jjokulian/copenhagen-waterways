@@ -1043,7 +1043,9 @@ const TOOLS = [
    "All 123 marine water bodies coloured by how much is actually known about each, " +
    "with the years every stream of observation covers. The red line is 2012 — where " +
    "the fitted window ends and the thing it must explain begins.", ""],
-  ["docs/IF_YOU_HAVE_THE_DATA.md", "If you have data access we don't",
+  /* the one entry here that is a document rather than a page of its own: it is
+     listed with the tools because it is addressed to someone about to use them */
+  ["#IF_YOU_HAVE_THE_DATA.md", "If you have data access we don't",
    "A handover for anyone with a login, a field sheet or an internal series. Eight "
    + "blocked items with exactly what unblocks each - three of which need no "
    + "credentials at all and are simply not done - plus how to clone, run, add a "
@@ -1297,6 +1299,47 @@ function firstSentence(text) {
   return t.slice(0, cut) + (cut < t.length ? "…" : "");
 }
 
+/* The documents are written to be read on GitHub as well as in here, and their
+   relative links are therefore written from docs/ - but this reader renders them
+   from the repository root, one directory up. Left alone, ../viz/rivers3d.html
+   walks off the site entirely (github.io/viz/... rather than
+   github.io/copenhagen-waterways/viz/...) and river_map.png asks for a file that
+   is not at the root. So every relative href and src is resolved against the
+   document's own directory, and a link that names a document this reader can show
+   is turned into a hash link rather than a fetch of the raw markdown. */
+const normalise = p => {
+  const out = [];
+  for (const seg of p.split("/")) {
+    if (seg === "" || seg === ".") continue;
+    if (seg === "..") out.pop(); else out.push(seg);
+  }
+  return out.join("/");
+};
+const isLocal = u => u && !/^([a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(u);
+
+function resolveLinks(root, file) {
+  const base = DOCS_DIR + file.split("/").slice(0, -1).join("/") + "/";
+  for (const a of root.querySelectorAll("a[href]")) {
+    const raw = a.getAttribute("href");
+    if (!isLocal(raw)) continue;
+    const cut = raw.indexOf("#");
+    const path = cut < 0 ? raw : raw.slice(0, cut);
+    if (!path) continue;                       // a bare #fragment, already local
+    const p = normalise(base + path);
+    const doc = p.startsWith(DOCS_DIR) ? p.slice(DOCS_DIR.length) : null;
+    /* A markdown anchor is dropped on purpose when the target is a document the
+       reader renders: its section ids are derived from heading text here and do
+       not have to agree with the ones GitHub generates, so a wrong section is a
+       worse landing than the top of the right page. */
+    a.setAttribute("href",
+      doc && DOCS.some(([f]) => f === doc) ? "#" + doc : p + raw.slice(cut < 0 ? raw.length : cut));
+  }
+  for (const img of root.querySelectorAll("img[src]")) {
+    const raw = img.getAttribute("src");
+    if (isLocal(raw)) img.setAttribute("src", normalise(base + raw));
+  }
+}
+
 // the title first, then where the page sits: the crumbs say nothing until the
 // reader knows what "this" is
 function placeCrumbs(file) {
@@ -1356,6 +1399,7 @@ async function show() {
     const r = await fetch(urlOf(file), { cache: "no-cache" });
     if (!r.ok) throw new Error(`${file} — HTTP ${r.status}`);
     docEl.innerHTML = marked.parse(await r.text(), { gfm: true });
+    resolveLinks(docEl, file);
     // tables carry long Danish system names; let each scroll rather than the page
     for (const t of docEl.querySelectorAll("table")) {
       const w = document.createElement("div");

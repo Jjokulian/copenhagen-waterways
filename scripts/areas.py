@@ -651,8 +651,9 @@ def render(props, rec, ch):
     a("")
     a("The full record for each area — every pressure, every stream with its years, "
       "and the written-out list of what cannot be modelled there — is in "
-      "[`data/derived/areas.json`](data/derived/areas.json), and drawn with its "
-      "timeline on [the map](areas.html).\n")
+      "`data/derived/areas.json`, which `scripts/areas.py` writes locally and the "
+      "repository does not ship, and drawn with its timeline on "
+      "[the map](areas.html).\n")
 
     a("## What this is not\n")
     a("It is not a causal model per area. It is the ledger you need before you can "

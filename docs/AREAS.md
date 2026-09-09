@@ -253,7 +253,7 @@ This tests a sewage-driven outcome against sewage pressure — bathing quality a
 | 0.3 | Bredningen | · | — | — | 17 | 2,800 | 3 |
 | 0.2 | Aborg Minde Nor | · | — | — | 51 | 17,800 | 3 |
 
-The full record for each area — every pressure, every stream with its years, and the written-out list of what cannot be modelled there — is in [`data/derived/areas.json`](data/derived/areas.json), and drawn with its timeline on [the map](areas.html).
+The full record for each area — every pressure, every stream with its years, and the written-out list of what cannot be modelled there — is in `data/derived/areas.json`, which `scripts/areas.py` writes locally and the repository does not ship, and drawn with its timeline on [the map](areas.html).
 
 ## What this is not
 
