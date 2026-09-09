@@ -172,6 +172,86 @@ def street_metres(cats):
     return {k: round(v) for k, v in out.items()}
 
 
+def plan_pipe_ends():
+    """How close the planned cloudburst pipes come to a receiving water, at their ends.
+
+    Asked because the argument leans on "20% of the flood path has a planned pipe
+    within 100 m", and a reader can fairly hear that as *a pipe that already goes
+    somewhere*. It does not: `skp_veje_tunneller_kk` is a segmented network, not a
+    set of routed lines, so a segment's end is usually another segment rather than an
+    outlet. This measures exactly that, and the honest use of the numbers is as
+    evidence about the LAYER - it cannot say where any route discharges. Distance is
+    to the coastline and the harbour polygon, whichever is nearer.
+
+    Returns None if the plan layer or the harbour extract is missing.
+    """
+    plan = os.path.join(RAW, "skp_veje_tunneller_kk.geojson")
+    if not os.path.exists(plan):
+        return None
+    pts = []
+    for f in read_json(os.path.join(DERIVED, "viewer", "coast.geojson"))["features"]:
+        g = f["geometry"]
+        parts = [g["coordinates"]] if g["type"] == "LineString" else g["coordinates"]
+        for line in parts:
+            pts += [(float(x), float(y)) for x, y, *_ in line]
+    hv = os.path.join(RAW, "havn.geojson")
+    if os.path.exists(hv):
+        def walk(c):
+            if isinstance(c[0], (int, float)):
+                pts.append((float(c[0]), float(c[1])))
+            else:
+                for q in c:
+                    walk(q)
+        for f in read_json(hv)["features"]:
+            if f.get("geometry"):
+                walk(f["geometry"]["coordinates"])
+    CELL, R = 0.01, 6371000.0
+    grid = {}
+    for x, y in pts:
+        grid.setdefault((int(x / CELL), int(y / CELL)), []).append((x, y))
+
+    def nearest(x, y, rings=4):
+        best = float("inf")
+        i0, j0 = int(x / CELL), int(y / CELL)
+        for r in range(rings + 1):
+            for i in range(i0 - r, i0 + r + 1):
+                for j in range(j0 - r, j0 + r + 1):
+                    if r and max(abs(i - i0), abs(j - j0)) != r:
+                        continue
+                    for cx, cy in grid.get((i, j), ()):
+                        d = math.hypot(
+                            (cx - x) * math.cos(math.radians(y)) * math.pi / 180 * R,
+                            (cy - y) * math.pi / 180 * R)
+                        best = min(best, d)
+            if best < r * CELL * 0.5 * 111000:
+                break
+        return best
+
+    ds = []
+    for f in read_json(plan)["features"]:
+        if (f["properties"].get("typologi") or "") != "Skybrudsledning":
+            continue
+        g = f.get("geometry") or {}
+        parts = ([g["coordinates"]] if g.get("type") == "LineString"
+                 else g.get("coordinates", []))
+        ends = [q for line in parts if len(line) > 1 for q in (line[0], line[-1])]
+        if ends:
+            ds.append(min(nearest(q[0], q[1]) for q in ends))
+    if not ds:
+        return None
+    ds.sort()
+    return {
+        "n": len(ds),
+        "median_m": round(ds[len(ds) // 2]),
+        "within_50m": sum(1 for x in ds if x <= 50),
+        "within_200m": sum(1 for x in ds if x <= 200),
+        "within_500m": sum(1 for x in ds if x <= 500),
+        "_means": "Evidence about the plan layer, which is segmented. It is NOT a "
+                  "statement about where any cloudburst route discharges - that is "
+                  "in the project pages, one at a time, and is not established here.",
+    }
+
+
 def main():
     codes = read_json(os.path.join(MANUAL, "codelists.json"))["bygvaerkstype"]
     streams = read_json(os.path.join(DERIVED, "streams.json"))
@@ -265,6 +345,11 @@ def main():
                 coast.append([[round(x, 5), round(y, 5)] for x, y in pts])
 
     streets = street_metres(cats)
+    ends = plan_pipe_ends()
+    if ends:
+        log(f"  planned cloudburst pipe segments: {ends['n']}, "
+            f"{ends['within_50m']} with an end within 50 m of water, "
+            f"median {ends['median_m']:,} m")
     if streets:
         log(f"  street inside combined catchments: "
             f"{(streets['amager'] + streets['mainland'])/1000:,.0f} km "
@@ -303,6 +388,7 @@ def main():
             "ponds_basis_ha": streams["amager"]["combined_sewered_impervious_ha"],
         },
         "street_m": streets,
+        "plan_pipe_ends": ends,
         "_street_note": "Road centreline inside the combined catchments, from the "
                         "OSM extract. The copy here has no tags, so paths and "
                         "service roads are included and this is an upper bound on "

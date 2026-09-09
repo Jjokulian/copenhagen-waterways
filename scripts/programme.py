@@ -728,9 +728,26 @@ def main():
       "side of the property line; neither requires entering a building, which is the "
       "thing that makes conventional separation slow.\n")
     a(f"On this project's classification, **{riv['near_buried_conveyance_pct']:.0f}% of "
-      "the modelled flood path already has a planned pipe within 100 m** — those "
-      "alignments are the retrofit candidates, because the trench is going to be opened "
-      "anyway.\n")
+      "the modelled flood path has a planned pipe within 100 m** — and that sentence "
+      "has to be read narrowly, because it is a statement about **alignment and "
+      "nothing else**. A *skybrudsledning* is conveyance for the extreme event: "
+      "sized for it, and aimed at getting water off the city quickly, which means "
+      "the nearest water that will take it. **It is not a river through the city to "
+      "an inland settling ground, and that is the difference this whole section is "
+      "about.** What a shared alignment buys is the trench, the corridor reservation "
+      "and the disruption — which are the expensive parts. It does not buy the pipe, "
+      "the diameter or the outlet.\n")
+    if arch.get("plan_pipe_ends"):
+        pe = arch["plan_pipe_ends"]
+        a("And where each planned pipe discharges is not in the layer. The plan "
+          f"geometry is **segmented rather than routed**: of {pe['n']} planned "
+          f"cloudburst pipe segments, {pe['within_50m']} have an end within 50 m of "
+          f"the shore or the harbour and the median segment's nearest end is "
+          f"{pe['median_m']/1000:,.1f} km from water. That measures the "
+          "segmentation, not the destinations — a segment normally ends at the next "
+          "segment. Tracing where any given route actually comes out means reading "
+          "the project pages one at a time, and it is exactly what would decide "
+          "whether an alignment can be reused as it stands or only as a trench.\n")
     if riv["corridors"]:
         a(f"And where no alignment exists — the {riv['no_surface_route_pct']:.0f}% — the "
           f"model names the places. {len(riv['corridors'])} corridor candidates come out "
