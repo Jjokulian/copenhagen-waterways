@@ -240,9 +240,11 @@ def render(hz):
       "and a water killed by something else, because the *only* fauna instrument is a "
       "soft-bottom survey run 1 March–31 May — after the winter, before the summer, "
       "and months after an autumn kill.\n")
-    a(f"And the toxicant column is not monitored either. Of Denmark's "
+    a(f"And the toxicant column is not monitored either — not in this layer. Of "
+      f"Denmark's "
       f"{hz['n_wb']} marine water bodies, **{hz['with_points']} have a "
-      f"hazardous-substance monitoring point** and {hz['without']} have none, covering "
+      f"hazardous-substance monitoring point in the water-plan register** and "
+      f"{hz['without']} have none, covering "
       f"{hz['area_without']:,.0f} km² — {hz['pct_without']:.0f}% of the sea. Across all "
       f"{hz['total_points']} points nationally, the matrices measured are biota "
       f"{hz['biota']}, water {hz['water']}, and **sediment {hz['sediment']}**.\n")

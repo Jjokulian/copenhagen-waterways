@@ -92,7 +92,7 @@ Take the three things the chain conflates — nitrogen loaded, oxygen low, highe
 
 Reading down the last column: the indicator set fires on low oxygen and on high chlorophyll. It cannot see the difference between a water killed by nutrients and a water killed by something else, because the *only* fauna instrument is a soft-bottom survey run 1 March–31 May — after the winter, before the summer, and months after an autumn kill.
 
-And the toxicant column is not monitored either. Of Denmark's 123 marine water bodies, **66 have a hazardous-substance monitoring point** and 57 have none, covering 30,696 km² — 70% of the sea. Across all 256 points nationally, the matrices measured are biota 253, water 174, and **sediment 5**.
+And the toxicant column is not monitored either — not in this layer. Of Denmark's 123 marine water bodies, **0 have a hazardous-substance monitoring point in the water-plan register** and 123 have none, covering 43,579 km² — 100% of the sea. Across all 256 points nationally, the matrices measured are biota 253, water 174, and **sediment 5**.
 
 Sediment is where persistent toxicants accumulate, and where a benthic animal actually lives. In the water-plan layer it is flagged at five of those 256 points; biota carries almost all of the rest.
 

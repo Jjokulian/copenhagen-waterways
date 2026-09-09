@@ -1,0 +1,5 @@
+#!/bin/sh
+# Generated files should not be edited directly: the next run of their generator
+# deletes the edit. This checks the weak version of that rule - if a generated file
+# is in the commit, its generator should be too. Override with --no-verify.
+exec python3 scripts/check_generated.py --staged
