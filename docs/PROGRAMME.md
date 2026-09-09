@@ -165,6 +165,8 @@ It works because **the new line does not have to carry the cloudburst.** The clo
 
 It is not free of the thing it avoids. **Open-cut finds an unmapped cable; a bore hits it.** Working blind in the busiest metre of the ground raises the value of everything that says what is down there — the utility register, a survey, and a trial hole at each crossing — so the method makes the information problem below more acute rather than less.
 
+> **[The arrangement in three dimensions →](section3d.html)** — the same street at its real sizes: the bored line, the sewer left where it is, the shaft with its pan, and the liner. Every dimension is a named parameter that says whether it is measured or merely stated, and all of them move. It also answers the question this section keeps circling — whether a pipe that carries the flow is still fast enough to carry its own grit.
+
 **The junction is where this gets interesting: one shaft, two floors.** At every existing street connection the shaft carries on through the new rain line rather than stopping at it. At rain-line level a **watertight pan forms the floor of that storey**: what comes off the street lands on it and is turned into the rain pipe, while the shaft below it stays a shaft. To reach the sewer, the pan is lifted — held down by its own weight the rest of the time — and the manhole is a manhole again. One opening in the road, one asset to maintain, the gully keeps its sand trap, and nothing about access to the foul sewer is given up.
 
 Four conditions decide whether that detail is sound, and they are stated here as conditions rather than as answers:

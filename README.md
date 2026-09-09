@@ -47,6 +47,7 @@ python3 scripts/programme_map.py        # -> docs/*.svg
 python3 scripts/rivers3d.py             # -> viewer bundle + 2 SVGs
 python3 scripts/streams.py              # -> data/derived/streams.json
 python3 scripts/architecture.py         # -> docs/data/architecture.json
+python3 scripts/section3d.py            # -> docs/data/section3d.json
 python3 scripts/programme.py            # -> docs/PROGRAMME.md
 
 python3 -m http.server 8000             # then open http://localhost:8000/viz/
@@ -79,6 +80,7 @@ scripts/
   rivermap.py             the flood model read as the city's natural drainage
   streams.py              the rain stream and the foul stream, as rates
   architecture.py         where the separated architecture acts, per catchment
+  section3d.py            dimensions for the retrofit model, with their kinds
   programme_map.py        the two figures for the argument page
   programme.py            the argument - kept separate from the investigation
   landbrug.py             the same audit, in Danish, addressed to farmers
@@ -109,6 +111,7 @@ docs/
   OPEN_PROBLEMS.md        what this could not settle, hand-maintained
   PROGRAMME.md            THE ARGUMENT - what ought to be done, labelled as such
   LANDBRUG.md             the audit in Danish, for the audience it is used against
+  section3d.html          the retrofit in 3D, dimensioned, with the hydraulic check
   architecture.html       the separated architecture: the graph, and the map of
                           which catchments it acts on
   data/flood2012/         the recovered flood model, georeferenced, for QGIS

@@ -1,0 +1,634 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The retrofit, dimensioned</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --accent:#2f6a95; --warn:#b4532f; --model:#8a6d3b; --new:#1f7a5a;
+  --scene:#eceff1; --soil:#d9cfbe; --road:#5b646b;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a; --new:#5fbf98;
+  --scene:#1a1d22; --soil:#3a352c; --road:#2b3036;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --accent:#8fbcd9; --warn:#e0866a; --model:#c8a76a; --new:#5fbf98;
+  --scene:#1a1d22; --soil:#3a352c; --road:#2b3036;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:22px 28px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:22px;font-weight:640;letter-spacing:-.01em}
+header p{margin:0 0 5px;max-width:82ch;color:var(--ink2)}
+a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 350px}
+@media(max-width:1040px){.wrap{grid-template-columns:1fr}}
+#stage{position:relative;background:var(--scene);min-width:0}
+#stage canvas{display:block;width:100%;height:100%}
+#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lab{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;
+  font-size:11.5px;color:var(--ink2);background:color-mix(in srgb,var(--panel) 86%,transparent);
+  border:1px solid var(--line);border-radius:3px;padding:1px 5px;
+  font-variant-numeric:tabular-nums}
+.lab.dim{color:var(--ink3);border-style:dashed}
+.lab.call{cursor:pointer;pointer-events:auto;border-color:var(--warn);color:var(--warn);
+  font-weight:600}
+.lab.call.on{background:var(--warn);color:#fff}
+.hint{position:absolute;left:12px;bottom:10px;font-size:11.5px;color:var(--ink3)}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:15px 17px 40px;
+  max-height:100vh;overflow:auto}
+@media(max-width:1040px){aside{border-left:0;border-top:1px solid var(--line);
+  max-height:none}}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);
+  margin:18px 0 7px;font-weight:600}
+h3:first-of-type{margin-top:0}
+.seg{display:flex;border:1px solid var(--line);border-radius:4px;overflow:hidden;
+  margin:0 0 9px}
+.seg button{flex:1 1 0;font:inherit;font-size:12.5px;padding:6px 3px;cursor:pointer;
+  background:var(--ground);color:var(--ink2);border:0;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff;font-weight:600}
+.par{margin:0 0 11px}
+.par .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.par label{font-size:12.5px;color:var(--ink2);cursor:pointer}
+.par b{font-size:12.5px;font-variant-numeric:tabular-nums}
+.par input{width:100%;margin:2px 0 0}
+.par .why{font-size:11px;color:var(--ink3);line-height:1.45;margin:2px 0 0;display:none}
+.par.open .why{display:block}
+.tag{display:inline-block;font-size:9.5px;letter-spacing:.05em;padding:0 4px;
+  border-radius:3px;font-weight:700;vertical-align:1px}
+.t-stated{background:#8a6d3b22;color:var(--model)}
+.t-meas{background:#2f6a9522;color:var(--accent)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:12.5px}
+dt{color:var(--ink3)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.ok{color:var(--new);font-weight:640}
+.bad{color:var(--warn);font-weight:640}
+.note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
+  border-left:2px solid var(--line);padding-left:9px}
+.calls{list-style:none;margin:0;padding:0}
+.calls li{border-top:1px solid var(--line);padding:7px 0}
+.calls button{display:block;width:100%;text-align:left;font:inherit;font-size:12.5px;
+  background:none;border:0;color:var(--ink);cursor:pointer;padding:0;font-weight:600}
+.calls p{margin:4px 0 0;font-size:11.5px;color:var(--ink2);line-height:1.5;display:none}
+.calls li.on p{display:block}
+.calls li.on button{color:var(--warn)}
+.key{display:flex;gap:7px;align-items:baseline;font-size:12px;margin:0 0 4px}
+.sw{width:12px;height:12px;border-radius:2px;flex:0 0 auto;translate:0 2px}
+</style>
+
+<header>
+  <h1>The retrofit, dimensioned</h1>
+  <p>The arrangement argued in <a href="../index.html#PROGRAMME.md">the programme</a>,
+  drawn at its real sizes: a shallow rain line bored shaft to shaft, the existing sewer
+  left where it is, and the two-storey shaft with the watertight pan that serves both.
+  Drag to orbit, scroll to zoom.</p>
+  <p><b>This is an arrangement with stated dimensions, not a design.</b> Thirteen of the
+  fourteen numbers below are ordinary design conventions adopted so the geometry can
+  exist — they are marked <span class="tag t-stated">STATED</span> and every one of them
+  is adjustable. One is <span class="tag t-meas">MEASURED</span> from this project's own
+  data. Nobody has surveyed a Copenhagen street for this, and the model does not pretend
+  otherwise.</p>
+</header>
+
+<div class="wrap">
+  <div id="stage"><div id="labels"></div>
+    <div class="hint">drag to orbit · scroll to zoom · shift-drag to pan</div></div>
+  <aside>
+    <h3>Arrangement</h3>
+    <div class="seg" id="arr">
+      <button data-arr="lined" aria-pressed="true">Lined</button>
+      <button data-arr="light" aria-pressed="false">Light</button>
+      <button data-arr="heavy" aria-pressed="false">Heavy</button>
+    </div>
+    <p class="note" id="arrnote"></p>
+
+    <h3>View</h3>
+    <div class="seg" id="view">
+      <button data-view="section" aria-pressed="true">Section</button>
+      <button data-view="along" aria-pressed="false">Along</button>
+      <button data-view="over" aria-pressed="false">Over</button>
+    </div>
+    <label style="font-size:12.5px;color:var(--ink2)">
+      <input type="checkbox" id="dims" checked> dimensions and labels</label>
+
+    <h3>Does the pipe work? <span class="tag t-stated">STATED INPUTS</span></h3>
+    <dl id="hyd"></dl>
+    <p class="note" id="hydnote"></p>
+
+    <h3>Concerns, on the geometry</h3>
+    <ul class="calls" id="calls"></ul>
+
+    <h3>Dimensions</h3>
+    <p class="note" style="margin-top:0">Click a name to see why the number is what it
+    is. Every one of them moves the model.</p>
+    <div id="params"></div>
+
+    <h3>Key</h3>
+    <div id="key"></div>
+  </aside>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const fmt = (n, d = 0) => n.toLocaleString(undefined,
+  {minimumFractionDigits: d, maximumFractionDigits: d});
+const css = v => getComputedStyle(document.body).getPropertyValue(v).trim();
+
+let P = {}, DEF = [], arrangement = "lined", showDims = true, active = null;
+
+/* ---------------------------------------------------------------- hydraulics --
+   Manning, in the only form that matters here: a pipe is right when it carries the
+   design flow AND still moves fast enough to carry its own grit. Those two pull in
+   opposite directions, which is the whole argument for sizing to the frequent rain
+   rather than to the storm. */
+function circular(theta, D, n, S) {          // theta = wetted angle, radians
+  const A = D * D / 8 * (theta - Math.sin(theta));
+  const Pw = D * theta / 2;
+  const R = Pw > 0 ? A / Pw : 0;
+  return {A, Q: A ? (1 / n) * A * Math.pow(R, 2 / 3) * Math.sqrt(S) : 0};
+}
+function hydraulics(p) {
+  const D = p.dn_rain / 1000, S = p.slope_rain / 1000, n = p.manning_n;
+  const Q = p.ha_served * 1e4 * (p.rain_mm_h / 1000) * p.runoff_c / 3600;
+  const full = circular(2 * Math.PI - 1e-9, D, n, S);
+  let lo = 1e-6, hi = 2 * Math.PI - 1e-9;      // bisect for the depth that passes Q
+  for (let i = 0; i < 60; i++) {
+    const mid = (lo + hi) / 2;
+    if (circular(mid, D, n, S).Q < Q) lo = mid; else hi = mid;
+  }
+  const th = (lo + hi) / 2, part = circular(th, D, n, S);
+  const depth = D / 2 * (1 - Math.cos(th / 2));
+  /* Past full bore the free-surface arithmetic stops meaning anything: the line is
+     surcharged and running under pressure, which is a different design case and
+     the honest thing to report rather than a velocity. */
+  const over = Q > full.Q;
+  const v = over ? Q / (Math.PI * D * D / 4) : (part.A > 0 ? Q / part.A : 0);
+  // the smallest 25 mm step that both passes the flow and reaches scouring velocity
+  let best = null;
+  for (let dn = 100; dn <= 1200; dn += 25) {
+    const d = dn / 1000, f = circular(2 * Math.PI - 1e-9, d, n, S);
+    if (f.Q < Q * 1.25) continue;              // 25% freeboard on capacity
+    let a = 1e-6, b = 2 * Math.PI - 1e-9;
+    for (let i = 0; i < 60; i++) {
+      const m = (a + b) / 2;
+      if (circular(m, d, n, S).Q < Q) a = m; else b = m;
+    }
+    const pp = circular((a + b) / 2, d, n, S);
+    if (pp.A > 0 && Q / pp.A >= p.v_clean) { best = dn; break; }
+  }
+  return {Q, Qfull: full.Q, fill: over ? 1 : (D ? depth / D : 0), v, best, over,
+          clean: !over && v >= p.v_clean};
+}
+
+/* ------------------------------------------------------------------- geometry --
+   Metres, Y up, Z along the street. The soil is translucent rather than cut away:
+   a section that only works from one angle is a drawing, and this has to stay
+   readable while it is turned. */
+let scene, camera, renderer, root, raf = null;
+const LABELS = [];      // {el, pos, kind}
+const CALLOUTS = [
+  {id: "pan", t: "The pan, and which way pressure comes from",
+   p: "Gravity seals it downward. A surcharged sewer pushes up, which is the fault "
+    + "case, so the seat has to latch or be shaped so back-pressure closes it "
+    + "harder. Nothing else in this model matters if this detail is wrong."},
+  {id: "trap", t: "The sand trap is the first line, and it already exists",
+   p: "The gully keeps its trap because the gully is not being rebuilt. Street grit "
+    + "is the largest mass the line would otherwise carry, and it is caught before "
+    + "the pipe."},
+  {id: "vent", t: "Sealing a storey closes a vent",
+   p: "A foul sewer breathes through its shafts, and a watertight floor at rain "
+    + "level takes one out of service — in a system that has just lost the storm "
+    + "piston that ventilated it. The vent has to be re-made through or around the "
+    + "pan, and it is drawn here as a separate duct."},
+  {id: "liner", t: "Lining the sewer down to the stream it now carries",
+   p: "Rain out of a rain-sized pipe leaves sewage in a bore that never fills and "
+    + "so never scours. Pulled through from the same shafts, a foul-sized liner "
+    + "restores the velocity, keeps every house drain where it is, and opens no "
+    + "trench. The annulus is grouted."},
+  {id: "shot", t: "One shot, no new pits",
+   p: "The bore starts and ends at shafts that are already in the street, so the "
+    + "road is opened where the work has to happen anyway. Guided boring holds the "
+    + "grade; free-steered drilling does not."},
+  {id: "sag", t: "Frost, and the sag that must not be there",
+   p: "A shallow line with standing water in a low point is a freeze plug. Cover "
+    + "and continuous fall are the same requirement the boring method exists to "
+    + "meet, and the gradient slider is where you can break it."},
+  {id: "house", t: "The house drain nobody touches",
+   p: "It stays on the old pipe at its old depth in both the light and lined "
+    + "arrangements. That is what keeps the work on the public side of the property "
+    + "line — and it is the thing the swapped arrangement gives up."},
+];
+
+function mat(colour, opts) {
+  return new THREE.MeshLambertMaterial(Object.assign({color: colour}, opts || {}));
+}
+function pipe(dnMM, len, colour, opts) {
+  const r = dnMM / 2000;
+  const g = new THREE.Group();
+  const wall = Math.max(0.012, r * 0.09);
+  const outer = new THREE.Mesh(
+    new THREE.CylinderGeometry(r + wall, r + wall, len, 40, 1, true),
+    mat(colour, Object.assign({side: THREE.DoubleSide}, opts)));
+  outer.rotation.x = Math.PI / 2;
+  g.add(outer);
+  const bore = new THREE.Mesh(
+    new THREE.CylinderGeometry(r, r, len, 40, 1, true),
+    mat(0x111417, {side: THREE.BackSide, transparent: true, opacity: .55}));
+  bore.rotation.x = Math.PI / 2;
+  g.add(bore);
+  for (const s of [-1, 1]) {                       // ring at each cut end
+    const ring = new THREE.Mesh(new THREE.RingGeometry(r, r + wall, 40),
+                                mat(colour, {side: THREE.DoubleSide}));
+    ring.position.z = s * len / 2;
+    g.add(ring);
+  }
+  return g;
+}
+function box(w, h, d, colour, opts) {
+  return new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat(colour, opts));
+}
+function label(text, pos, kind) {
+  const el = document.createElement("div");
+  el.className = "lab" + (kind === "dim" ? " dim" : kind === "call" ? " call" : "");
+  el.textContent = text;
+  if (kind === "call") el.addEventListener("click", () => focusCall(text));
+  $("#labels").appendChild(el);
+  LABELS.push({el, pos, kind});
+  return el;
+}
+function dimLine(a, b, text) {
+  const g = new THREE.BufferGeometry().setFromPoints([a, b]);
+  const l = new THREE.Line(g, new THREE.LineBasicMaterial({color: 0x8b98a2}));
+  l.userData.dim = true;
+  root.add(l);
+  label(text, a.clone().lerp(b, .5), "dim");
+}
+
+function build() {
+  if (root) scene.remove(root);
+  for (const l of LABELS) l.el.remove();
+  LABELS.length = 0;
+  root = new THREE.Group();
+  scene.add(root);
+
+  const L = P.spacing, halfL = L / 2;
+  const dnR = P.dn_rain / 1000, dnS = P.dn_sewer / 1000;
+  const drop = arrangement === "heavy" ? 1.0 : 0.0;
+  const invS = -(P.invert_sewer + drop);
+  const cS = invS + dnS / 2;                          // sewer centreline
+  // In the heavy arrangement the rain line takes the space the sewer left; in the
+  // others it sits under the cover depth, which is what makes it cheap.
+  const cR = arrangement === "heavy" ? -(P.invert_sewer) + dnR / 2
+                                     : -(P.cover + dnR / 2);
+  const fall = P.slope_rain / 1000 * L;
+
+  root.add(Object.assign(box(14, 6, L, parseInt(css("--soil").slice(1), 16),
+    {transparent: true, opacity: .30, depthWrite: false}),
+    {position: new THREE.Vector3(0, -3.05, 0)}));
+  root.add(Object.assign(box(14, .1, L, parseInt(css("--road").slice(1), 16)),
+    {position: new THREE.Vector3(0, -.05, 0)}));
+  for (const s of [-1, 1])                            // kerbs
+    root.add(Object.assign(box(.3, .18, L, 0x9aa2a8),
+      {position: new THREE.Vector3(s * 5.9, .04, 0)}));
+
+  // ---- the rain line, laid to a grade
+  const rain = pipe(P.dn_rain, L, 0x2f7fb5);
+  rain.position.set(0, cR + fall / 2, 0);
+  rain.rotation.x = Math.atan2(fall, L);
+  root.add(rain);
+  label("rain line  DN" + P.dn_rain, new THREE.Vector3(0, cR + dnR / 2 + .35, -halfL * .35));
+
+  // ---- the old sewer, and what is inside it
+  const sewer = pipe(P.dn_sewer, L, 0x7d3a30);
+  sewer.position.set(1.0, cS, 0);
+  root.add(sewer);
+  label(arrangement === "heavy" ? "sewer, dropped 1.0 m  DN" + P.dn_sewer
+                                : "existing sewer  DN" + P.dn_sewer,
+        new THREE.Vector3(1.0, cS - dnS / 2 - .4, halfL * .3));
+  if (arrangement === "lined") {
+    const lin = pipe(P.dn_liner, L, 0x1f7a5a);
+    lin.position.set(1.0, invS + P.dn_liner / 2000, 0);
+    root.add(lin);
+    label("foul bore, lined in  DN" + P.dn_liner,
+          new THREE.Vector3(1.0, invS + P.dn_liner / 1000 + .28, -halfL * .1));
+    label("4 · lining", new THREE.Vector3(1.0, cS + dnS / 2 + .2, halfL * .15), "call");
+  }
+
+  // ---- shafts at both ends: the shot runs between them
+  const rSh = P.shaft_id / 2000;
+  for (const s of [-1, 1]) {
+    const z = s * halfL;
+    const wall = new THREE.Mesh(
+      new THREE.CylinderGeometry(rSh + .09, rSh + .09, Math.abs(invS), 36, 1, true),
+      mat(0x9aa2a8, {side: THREE.DoubleSide, transparent: true, opacity: .5}));
+    wall.position.set(0, invS / 2, z);
+    root.add(wall);
+    const cover = new THREE.Mesh(new THREE.CylinderGeometry(rSh * .62, rSh * .62, .07, 28),
+                                 mat(0x2b3840));
+    cover.position.set(0, .04, z);
+    root.add(cover);
+    // the pan: the floor of the upper storey, falling to the rain line
+    const pan = new THREE.Mesh(new THREE.CylinderGeometry(rSh, rSh, .05, 32),
+                               mat(0xb0b7bd));
+    pan.position.set(0, cR - dnR / 2 + .06 + (s < 0 ? fall * 0 : fall), z);
+    pan.rotation.x = 0.10 * -s;
+    root.add(pan);
+    const eye = new THREE.Mesh(new THREE.TorusGeometry(.09, .022, 8, 20), mat(0x6b7076));
+    eye.position.copy(pan.position);
+    eye.position.y += .1;
+    root.add(eye);
+    if (s < 0) {
+      label("1 · the pan", pan.position.clone().add(new THREE.Vector3(-rSh - .5, .1, 0)),
+            "call");
+      label("3 · ventilation", new THREE.Vector3(rSh + .55, -0.7, z), "call");
+      label("5 · one shot, no new pit", new THREE.Vector3(0, .55, z + 1.2), "call");
+    }
+    // the vent, re-made around the pan
+    const vent = new THREE.Mesh(new THREE.CylinderGeometry(.05, .05,
+      Math.abs(invS) - .2, 12), mat(0x1f7a5a));
+    vent.position.set(rSh * .72, invS / 2 - .1, z);
+    root.add(vent);
+  }
+  // the bore itself, between the two shafts
+  const shot = new THREE.Line(new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, cR, -halfL), new THREE.Vector3(0, cR + fall, halfL)]),
+    new THREE.LineDashedMaterial({color: 0x1f7a5a, dashSize: 1.2, gapSize: .8}));
+  shot.computeLineDistances();
+  root.add(shot);
+
+  // ---- gully, its trap, and the lead into the shaft
+  const gz = -halfL + L * .28;
+  root.add(Object.assign(box(.42, .06, .42, 0x2b3840),
+    {position: new THREE.Vector3(-5.5, 0, gz)}));
+  const trap = new THREE.Mesh(new THREE.CylinderGeometry(.28, .28, .95, 20),
+                              mat(0x8a8f95, {transparent: true, opacity: .75}));
+  trap.position.set(-5.5, -.5, gz);
+  root.add(trap);
+  const lead = pipe(160, 5.5, 0x2f7fb5);
+  lead.rotation.y = Math.PI / 2;
+  lead.position.set(-2.75, cR + .05, gz);
+  root.add(lead);
+  label("2 · sand trap", new THREE.Vector3(-5.5, -1.15, gz), "call");
+
+  // ---- the house drain, which nobody touches
+  const hd = pipe(P.dn_house, 5.6, 0xa8705f);
+  hd.rotation.y = Math.PI / 2;
+  hd.rotation.z = -0.18;
+  hd.position.set(4.0, cS + .9, halfL * .45);
+  root.add(hd);
+  label("7 · house drain", new THREE.Vector3(6.2, cS + 1.4, halfL * .45), "call");
+  label("6 · fall, and no sag", new THREE.Vector3(0, cR - dnR / 2 - .45, halfL * .62),
+        "call");
+
+  // ---- dimensions
+  if (showDims) {
+    const z0 = -halfL * .72;
+    dimLine(new THREE.Vector3(-1.6, 0, z0), new THREE.Vector3(-1.6, cR + dnR / 2, z0),
+            fmt(P.cover, 2) + " m cover");
+    dimLine(new THREE.Vector3(-2.4, 0, z0), new THREE.Vector3(-2.4, invS, z0),
+            fmt(Math.abs(invS), 2) + " m to sewer invert");
+    dimLine(new THREE.Vector3(-rSh, .25, -halfL), new THREE.Vector3(rSh, .25, -halfL),
+            "shaft ø" + fmt(P.shaft_id) + " mm");
+    dimLine(new THREE.Vector3(2.6, cR, -halfL), new THREE.Vector3(2.6, cR + fall, halfL),
+            fmt(P.spacing) + " m shot · " + fmt(fall * 1000) + " mm fall");
+  }
+}
+
+/* -------------------------------------------------------------------- viewer -- */
+const VIEWS = {
+  section: {th: 0.02, ph: 1.30, r: 1.15},
+  along:   {th: 1.52, ph: 1.15, r: 1.05},
+  over:    {th: 0.60, ph: 0.35, r: 1.30},
+};
+let sph = {th: 0.02, ph: 1.30, r: 30}, target = new THREE.Vector3(0, -2, 0);
+
+function setView(v) {
+  const k = VIEWS[v];
+  sph.th = k.th;
+  sph.ph = k.ph;
+  sph.r = Math.max(14, P.spacing * k.r * 0.55 + 10);
+  target.set(0, -P.invert_sewer / 2 - .5, 0);
+}
+function place() {
+  camera.position.set(
+    target.x + sph.r * Math.sin(sph.ph) * Math.sin(sph.th),
+    target.y + sph.r * Math.cos(sph.ph),
+    target.z + sph.r * Math.sin(sph.ph) * Math.cos(sph.th));
+  camera.lookAt(target);
+}
+function tick() {
+  raf = null;
+  place();
+  renderer.render(scene, camera);
+  const st = $("#stage").getBoundingClientRect();
+  for (const l of LABELS) {
+    if (!showDims && l.kind !== "call") { l.el.style.display = "none"; continue; }
+    const v = l.pos.clone().project(camera);
+    const vis = v.z < 1 && Math.abs(v.x) < 1.15 && Math.abs(v.y) < 1.15;
+    l.el.style.display = vis ? "block" : "none";
+    l.el.style.left = ((v.x + 1) / 2 * st.width) + "px";
+    l.el.style.top = ((-v.y + 1) / 2 * st.height) + "px";
+  }
+}
+const draw = () => { if (!raf) raf = requestAnimationFrame(tick); };
+
+function resize() {
+  const st = $("#stage");
+  const w = st.clientWidth, h = Math.max(430, Math.min(760, w * 0.66));
+  st.style.height = h + "px";
+  renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  draw();
+}
+
+function focusCall(text) {
+  const n = parseInt(text, 10);
+  const li = document.querySelectorAll("#calls li")[n - 1];
+  if (li) li.querySelector("button").click();
+}
+
+/* ---------------------------------------------------------------------- panel -- */
+function readParams() {
+  const p = {};
+  for (const d of DEF) p[d.key] = +$("#p-" + d.key).value;
+  return p;
+}
+function hydPanel() {
+  const h = hydraulics(P);
+  $("#hyd").innerHTML = [
+    ["Design flow to this shot", `${fmt(h.Q * 1000, 1)} l/s`],
+    ["Full-bore capacity, DN" + P.dn_rain, `${fmt(h.Qfull * 1000, 0)} l/s`],
+    ["Fills the bore to", h.over ? `<span class="bad">surcharged</span>`
+                                 : `${fmt(h.fill * 100, 0)}%`],
+    [h.over ? "Would have to move at" : "Velocity at that depth",
+     `<span class="${h.clean ? "ok" : "bad"}">${fmt(h.v, 2)} m/s</span>`
+     + (h.over ? ' <span class="bad">— it will back up instead</span>' : "")],
+    ["Self-cleansing needs", `${fmt(P.v_clean, 2)} m/s`],
+    ["Smallest DN that does both", h.best ? `<b>DN${h.best}</b>` : "—"],
+  ].map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+  $("#hydnote").innerHTML = h.over
+    ? "<b>The bore is exceeded.</b> At this diameter and grade the design flow does "
+      + "not fit as a free surface: the line runs full and under pressure, which is "
+      + "a different design case and, at a shallow depth under a street, one that "
+      + "pushes water back up the gully leads. "
+      + (h.best ? `DN${h.best} carries it with a free surface and still scours.`
+                : "No diameter in range fixes it at this gradient.")
+    : h.clean
+    ? "At this size and grade the design rain both fits and scours. <b>Note how much "
+      + "smaller than a storm sewer that is</b> — the surface network carries the "
+      + "cloudburst, so this pipe only has to carry the rain that overflows the "
+      + "system many times a year."
+    : `<b>This is the failure the section warns about.</b> The pipe passes the flow `
+      + `and does not scour: ${fmt(h.fill * 100, 0)}% full at ${fmt(h.v, 2)} m/s, so `
+      + `grit lays down between events. `
+      + (h.best ? `DN${h.best} would carry the same flow fast enough. `
+                : `No diameter in range does both at this gradient — the gradient is `
+                  + `what has to change. `)
+      + "An oversized rain line is not a safe margin, it is a maintenance liability.";
+}
+function apply() {
+  P = readParams();
+  build();
+  hydPanel();
+  draw();
+}
+
+fetch("data/section3d.json").then(r => r.json()).then(d => {
+  DEF = d.params;
+  $("#params").innerHTML = DEF.map(x => `
+    <div class="par" id="par-${x.key}">
+      <div class="top"><label for="p-${x.key}">${x.label}
+        <span class="tag ${x.kind === "MEASURED" ? "t-meas" : "t-stated"}">${x.kind}</span>
+      </label><b id="v-${x.key}"></b></div>
+      <input type="range" id="p-${x.key}" min="${x.lo}" max="${x.hi}"
+             step="${x.step}" value="${x.v}">
+      <p class="why">${x.note}</p>
+    </div>`).join("");
+  $("#calls").innerHTML = CALLOUTS.map((c, i) =>
+    `<li data-id="${c.id}"><button>${i + 1} · ${c.t}</button><p>${c.p}</p></li>`).join("");
+  $("#key").innerHTML = [
+    ["#2f7fb5", "The new rain line, and the gully lead into it"],
+    ["#7d3a30", "The existing combined sewer, untouched"],
+    ["#1f7a5a", "New: the foul bore lined into it, the vent, the shot"],
+    ["#a8705f", "House drain — unchanged in this arrangement"],
+    ["#b0b7bd", "The pan, and the shaft it sits in"],
+  ].map(([c, t]) => `<div class="key"><span class="sw" style="background:${c}"></span>`
+    + `<span>${t}</span></div>`).join("");
+
+  const stage = $("#stage");
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(38, 1.5, 0.5, 900);
+  renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+  stage.insertBefore(renderer.domElement, $("#labels"));
+  scene.add(new THREE.AmbientLight(0xffffff, .78));
+  const sun = new THREE.DirectionalLight(0xffffff, .55);
+  sun.position.set(-30, 40, 45);
+  scene.add(sun);
+  const sun2 = new THREE.DirectionalLight(0xffffff, .3);
+  sun2.position.set(30, 10, -35);
+  scene.add(sun2);
+
+  for (const d of DEF) {
+    const inp = $("#p-" + d.key), out = $("#v-" + d.key);
+    const show = () => {
+      const v = +inp.value;
+      out.textContent = (d.step && d.step < 1 ? fmt(v, 2) : fmt(v))
+        + (d.unit === "-" ? "" : " " + d.unit);
+    };
+    show();
+    inp.addEventListener("input", () => { show(); apply(); });
+    $("#par-" + d.key).querySelector("label").addEventListener("click", e => {
+      if (e.target.tagName !== "INPUT") $("#par-" + d.key).classList.toggle("open");
+    });
+  }
+  P = readParams();
+  setView("section");
+  build();
+  hydPanel();
+  resize();
+});
+
+addEventListener("resize", () => renderer && resize());
+$("#arr").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  for (const x of $("#arr").children) x.setAttribute("aria-pressed", x === b);
+  arrangement = b.dataset.arr;
+  $("#arrnote").innerHTML = {
+    lined: "<b>Lined.</b> The rain line is bored in above; the old sewer is lined "
+      + "down to a foul-sized bore from the same shafts. Each stream gets a pipe "
+      + "sized for it, no house drain moves, and no trench is opened.",
+    light: "<b>Light.</b> Only the rain line is new. Cheapest, and it leaves the old "
+      + "sewer carrying sewage in a bore sized for rain — which never fills and so "
+      + "never scours.",
+    heavy: "<b>Heavy.</b> The sewer is relaid a metre deeper and the rain line takes "
+      + "the space above it. It pays for relaying under live connections, and unless "
+      + "the diameter is cut on the way it relays the same problem.",
+  }[arrangement];
+  build();
+  draw();
+});
+$("#view").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  for (const x of $("#view").children) x.setAttribute("aria-pressed", x === b);
+  setView(b.dataset.view);
+  draw();
+});
+$("#dims").addEventListener("change", e => {
+  showDims = e.target.checked;
+  build();
+  draw();
+});
+$("#calls").addEventListener("click", e => {
+  const li = e.target.closest("li");
+  if (!li) return;
+  const on = li.classList.contains("on");
+  for (const x of $("#calls").children) x.classList.remove("on");
+  if (!on) li.classList.add("on");
+  active = on ? null : li.dataset.id;
+  for (const l of LABELS)
+    if (l.kind === "call")
+      l.el.classList.toggle("on", !on && l.el.textContent.startsWith(
+        String([...$("#calls").children].indexOf(li) + 1)));
+  draw();
+});
+
+/* Orbit, written out rather than imported: OrbitControls is not in the UMD build,
+   and forty lines here is cheaper than a second dependency. */
+(function orbit() {
+  const st = $("#stage");
+  let down = null;
+  st.addEventListener("mousedown", e => {
+    down = {x: e.clientX, y: e.clientY, th: sph.th, ph: sph.ph,
+            t: target.clone(), shift: e.shiftKey};
+  });
+  addEventListener("mouseup", () => { down = null; });
+  addEventListener("mousemove", e => {
+    if (!down) return;
+    const dx = e.clientX - down.x, dy = e.clientY - down.y;
+    if (down.shift) {
+      target.copy(down.t);
+      target.y += dy * sph.r / 900;
+      target.x -= dx * sph.r / 900 * Math.cos(sph.th);
+      target.z += dx * sph.r / 900 * Math.sin(sph.th);
+    } else {
+      sph.th = down.th - dx * 0.006;
+      sph.ph = Math.min(1.55, Math.max(0.12, down.ph - dy * 0.005));
+    }
+    draw();
+  });
+  st.addEventListener("wheel", e => {
+    e.preventDefault();
+    sph.r = Math.min(300, Math.max(6, sph.r * (1 + Math.sign(e.deltaY) * 0.09)));
+    draw();
+  }, {passive: false});
+})();
+</script>

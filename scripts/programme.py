@@ -531,6 +531,12 @@ def main():
       "value of everything that says what is down there — the utility register, a "
       "survey, and a trial hole at each crossing — so the method makes the "
       "information problem below more acute rather than less.\n")
+    a("> **[The arrangement in three dimensions →](section3d.html)** — the same "
+      "street at its real sizes: the bored line, the sewer left where it is, the "
+      "shaft with its pan, and the liner. Every dimension is a named parameter that "
+      "says whether it is measured or merely stated, and all of them move. It also "
+      "answers the question this section keeps circling — whether a pipe that "
+      "carries the flow is still fast enough to carry its own grit.\n")
     a("**The junction is where this gets interesting: one shaft, two floors.** At "
       "every existing street connection the shaft carries on through the new rain "
       "line rather than stopping at it. At rain-line level a **watertight pan forms "
