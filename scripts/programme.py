@@ -404,6 +404,59 @@ def livestock_section():
       "accompanies each kilogram and how it arrives**, not about the ion, and it "
       "rests on the route table in OXYGEN.md rather than on any measurement this "
       "project has made of a Danish field.\n")
+    a("#### The inference this invites, and why it does not follow\n")
+    a("Read the three sections above quickly and an attractive conclusion suggests "
+      "itself: *the agricultural damage is mostly the faeces, not the nitrogen.* "
+      "**That does not follow, and it is worth saying why at length, because the "
+      "shape of it is exactly what this project keeps catching other people "
+      "doing.**\n")
+    a("The missing step is soil. Slurry is not discharged into a stream; it is "
+      "spread on a field, and the field is a reactor. **Labile organic carbon is "
+      "largely respired there** — weeks to months, mostly to CO₂ — so the oxygen "
+      "demand that would have been so damaging in water is spent on land, where it "
+      "does no harm to a fjord. Ammonium nitrifies. What survives the soil and "
+      "reaches the sea in quantity is the mobile, conservative fraction, and that "
+      "fraction is dominated by **nitrate** — which acts by fertilising, exactly as "
+      "the standard account says.\n")
+    a("So on the evidence available here, the sequence is not *faeces beats "
+      "nitrogen*. It is:\n")
+    for h, t in [
+        ("The nitrogen route is real and probably does dominate what arrives.",
+         "The standard account is right about the pathway. This document's quarrel "
+         "with it is about the size of the coefficient, the residual construction, "
+         "and the sixty mechanisms that never competed — not about whether nitrate "
+         "fertilises."),
+        ("The faecal payload is a second channel that nobody prices at all.",
+         "Copper and zinc, veterinary antiparasitics and antibiotics, resistance "
+         "genes, hormones, pathogens. These do **not** respire away in a soil the "
+         "way carbon does: the metals are conservative and the residues are "
+         "designed to persist. Whatever reaches water, stays."),
+        ("And its route to water is episodic rather than seasonal.",
+         "Slurry that meets heavy rain, frozen or saturated ground, a tile drain or "
+         "a macropore arrives close to intact. That is the case where the payload "
+         "acts *as* faeces rather than as nitrate — and it is the least measured "
+         "thing in the entire chain."),
+    ]:
+        a(f"- **{h}** {t}")
+    a("")
+    a("**Which is a statement about instruments, not about magnitudes.** Nobody in "
+      "this project can say whether channel two is a tenth of channel one or a "
+      "hundredth, because **the measurements do not exist**: Danish marine metal "
+      "and biocide monitoring lives largely in mussel tissue at twenty-five "
+      "stations, avermectin residues in Danish manure, soil, runoff or sediment are "
+      "recorded here as *missing entirely*, and no stream in this project's data has "
+      "been sampled for COD on the days after a spreading window. The honest "
+      "position is the uncomfortable one: **the second channel is unpriced, not "
+      "small.** An unmeasured quantity is not a zero, and it is not a large number "
+      "either.\n")
+    a("The three things that would settle it are cheap and none of them is being "
+      "done: event-based stream sampling in the days after spreading, copper and "
+      "zinc with veterinary residues in stream and marine sediment rather than in "
+      "mussels alone, and the rendering and slurry-tank volumes that would say how "
+      "much material is in the system in the first place. Until then the correct "
+      "sentence is **not** *the faeces are the problem*. It is: **the account has "
+      "one channel, the source has two, and only the first has ever been "
+      "weighed.**\n")
     a("> **A value, stated as one.** The author of this page would like the herd to "
       "be smaller for a reason that has nothing to do with fjords: an animal that "
       "lives half a year in confinement and is one of thirty-two million is owed "
