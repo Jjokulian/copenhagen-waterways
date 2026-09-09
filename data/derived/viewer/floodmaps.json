@@ -330,6 +330,79 @@
   },
   "spread_all_m": 27.8
  },
+ "norrebro": {
+  "method": "assisted: two resident-reported control points, scale confirmed by the sheet's own scale bar",
+  "control_points": 2,
+  "control_point_list": [
+   {
+    "pixel": [
+     341,
+     299
+    ],
+    "lon": 12.552761,
+    "lat": 55.709409,
+    "what": "circular building"
+   },
+   {
+    "pixel": [
+     382,
+     866
+    ],
+    "lon": 12.552931,
+    "lat": 55.704538,
+    "what": "reader-identified feature"
+   }
+  ],
+  "control_point_scatter_m": {
+   "longitude": 28.5,
+   "latitude": 0.175
+  },
+  "standard_error_m": 14.3,
+  "m_per_px_from_scalebar": 0.956,
+  "m_per_px_from_control_points": 0.9563,
+  "scale_check": "The two points are 567 px apart vertically (542 m) and only 41 px horizontally (39 m). The vertical baseline implies 0.9563 m/px against the scale bar's 0.9560 - agreement to +0.03%, an independent confirmation of the scale. The horizontal baseline is too short to carry scale information (it implies 0.26 m/px, which is 73% wrong) and is not used. Both points are therefore placed with the scale bar's scale, and only position is fitted.",
+  "bounds_wgs84": {
+   "west": 12.5473424,
+   "east": 12.581673169198483,
+   "south": 55.68545606779759,
+   "north": 55.711976
+  },
+  "corners_for_maplibre": [
+   [
+    12.5473424,
+    55.711976
+   ],
+   [
+    12.581673169198483,
+    55.711976
+   ],
+   [
+    12.581673169198483,
+    55.68545606779759
+   ],
+   [
+    12.5473424,
+    55.68545606779759
+   ]
+  ],
+  "image": "data/derived/floodmaps/norrebro.depth.png",
+  "confident": true,
+  "caveat": "Latitude is excellent - the two points agree to 0.18 m and the scale is independently confirmed. Longitude rests on the individual pixel readings, since the horizontal baseline is 39 m; the two points disagree by 28.5 m there, so treat east-west placement as +-15 m. That is better than the other assisted sheets (+-136 m bispebjerg, +-87 m kbhvest) and comparable to the auto-registered ones.",
+  "supersedes": {
+   "bounds_wgs84": {
+    "west": 12.509555543869267,
+    "east": 12.54388631306775,
+    "south": 55.674426736469954,
+    "north": 55.700946668672366
+   },
+   "why": "The autoref ensemble accepted a majority of three variants whose spread was measured over the agreeing subset only (12.7 m, the tightest in the set) while the spread across all six was 3,115 m. The rejected minority was right. Control points move the sheet 2.39 km east and 1.23 km north, to within 433 m of the 'adapt 12% K16' variant the ensemble discarded."
+  },
+  "verification": "Visual check run. The sheet's own title reads 'Oversvommelseskort for Norrebro vandopland ved en 100 ars haendelse'. Under this registration Osterbro Stadion and Faelledparken fall at 76% across and 32% down, and the Sortedam lakes at 49% across and 81% down - both match the photographed features.",
+  "bundle": {
+   "applied": false,
+   "why": "Superseded by control points."
+  }
+ },
  "osterbro": {
   "method": "autoref: ensemble water cross-correlation",
   "agree": 6,
