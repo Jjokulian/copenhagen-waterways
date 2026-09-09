@@ -431,6 +431,12 @@ What that buys, from the pond literature:
 
 **95% of tyre wear material, by letting water sit still.** That is the strongest single number in this document, and it is the answer to the objection that separated stormwater would just be pollution with a shorter pipe.
 
+<div class="embedfig">
+<iframe src="rainwater_river.html?embed=1" loading="lazy" title="An artist’s impression: the rain above ground, and the reed cells that settle what the streets gave it"></iframe>
+</div>
+
+> **[What it would look like from the bank →](rainwater_river.html)** — the same arrangement at eye level, and the answer to the objection this section actually meets, which is a picture rather than an argument: *light treatment on Amager* is heard as sewage ponds in a bird reserve. It is not that. What runs in it is rain, the sediment the rain carries, and — in the scenario where what people put down a drain is dealt with at source — the water from a shower or a washing machine. The toilet and the kitchen are in a different pipe, and that pipe is drawn too.
+
 Two honest limits. Ponds do not remove dissolved fractions — chloride from road salt, dissolved copper, PFAS — so they are a complement to source control and not a substitute for it. And their performance depends entirely on the sediment being *removed* periodically rather than left to accumulate and eventually scour, which is the identical failure mode as the sewer basins. A pond that is never dredged becomes the thing it was built to prevent.
 
 #### How big, and the answer is: that depends on whether you store first
@@ -976,6 +982,8 @@ What this page adds is the shape of the bill. Two properties make it affordable 
 | Mussel or macroalgae line, 1 ha, in front of one catchment | 150,000 | 600,000 | uptake at the loads that actually arrive — and it is a crop |
 | Rewetting one wet corner, 1 ha | 20,000 | 100,000 | retention on a real catchment against its own record |
 | Mechanical hull cleaning for one club's moorings | 50,000 | 200,000 | occupying the niche instead of poisoning it, on copper |
+
+> **[Which catchments, and how much of the city →](architecture.html)** — the architecture view scopes a trial before it is priced: every combined catchment with its impervious area, its person equivalents and the city's own plan for it, and scenario switches that recompute what comes out of the sewer, how many overflow structures go quiet, and what the retired basins are worth as storage.
 
 ### And the documentation, which is now the cheap half
 

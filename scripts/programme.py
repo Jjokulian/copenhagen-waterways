@@ -1182,6 +1182,24 @@ def main():
     a("**95% of tyre wear material, by letting water sit still.** That is the strongest "
       "single number in this document, and it is the answer to the objection that "
       "separated stormwater would just be pollution with a shorter pipe.\n")
+    # The impression is embedded rather than only linked, because the objection this
+    # section keeps meeting is not an argument, it is a picture: sewage ponds in a
+    # bird reserve. The frame is hidden on a narrow screen by the reader's CSS, and
+    # the link below it is what a phone gets - and what GitHub gets, since it strips
+    # the iframe and keeps the link.
+    a('<div class="embedfig">\n'
+      '<iframe src="rainwater_river.html?embed=1" loading="lazy" '
+      'title="An artist\u2019s impression: the rain above ground, and the reed cells '
+      'that settle what the streets gave it"></iframe>\n'
+      '</div>\n')
+    a("> **[What it would look like from the bank →](rainwater_river.html)** — the "
+      "same arrangement at eye level, and the answer to the objection this section "
+      "actually meets, which is a picture rather than an argument: *light treatment "
+      "on Amager* is heard as sewage ponds in a bird reserve. It is not that. What "
+      "runs in it is rain, the sediment the rain carries, and — in the scenario "
+      "where what people put down a drain is dealt with at source — the water from "
+      "a shower or a washing machine. The toilet and the kitchen are in a different "
+      "pipe, and that pipe is drawn too.\n")
     a("Two honest limits. Ponds do not remove dissolved fractions — chloride from road "
       "salt, dissolved copper, PFAS — so they are a complement to source control and "
       "not a substitute for it. And their performance depends entirely on the sediment "
@@ -2352,6 +2370,12 @@ def main():
     ]:
         a(f"| {unit} | {lo} | {hi} | {settles} |")
     a("")
+    a("> **[Which catchments, and how much of the city →](architecture.html)** — the "
+      "architecture view scopes a trial before it is priced: every combined "
+      "catchment with its impervious area, its person equivalents and the city's "
+      "own plan for it, and scenario switches that recompute what comes out of the "
+      "sewer, how many overflow structures go quiet, and what the retired basins "
+      "are worth as storage.\n")
     a("### And the documentation, which is now the cheap half\n")
     a("| Instrument | Hardware, per station | What it records |")
     a("|---|---:|---|")

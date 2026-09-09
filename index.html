@@ -136,6 +136,15 @@
   .crumbrow span{display:inline-flex;gap:.4rem;align-items:baseline;flex-wrap:wrap}
   .hint-short{display:none}
 
+  /* A page embedded inside a document. It is shown only where there is room for it
+     to be worth loading: on a phone the same thing is one tap away as a link, which
+     is why the markdown always carries that link as well and this only ever hides
+     an extra. */
+  .embedfig{margin:1.6rem 0 1.2rem;border:1px solid var(--rule);border-radius:6px;
+    overflow:hidden;background:var(--ground)}
+  .embedfig iframe{display:block;width:100%;height:min(76vh,700px);border:0}
+  @media (max-width:860px){ .embedfig{display:none} }
+
   /* A case is a verdict of three sentences standing on three tables, and a reader
      wants the tables second. `details.work` is that evidence: folded at every
      width, because the reason to fold is the length of the working and not the
@@ -1400,9 +1409,14 @@ function resolveLinks(root, file) {
     a.setAttribute("href",
       doc && DOCS.some(([f]) => f === doc) ? "#" + doc : p + raw.slice(cut < 0 ? raw.length : cut));
   }
-  for (const img of root.querySelectorAll("img[src]")) {
+  for (const img of root.querySelectorAll("img[src], iframe[src]")) {
     const raw = img.getAttribute("src");
-    if (isLocal(raw)) img.setAttribute("src", normalise(base + raw));
+    /* An embedded page keeps its query string: ?embed=1 is how it knows to drop its
+       own header when it is inside a document rather than being one. */
+    if (!isLocal(raw)) continue;
+    const q = raw.indexOf("?");
+    img.setAttribute("src", q < 0 ? normalise(base + raw)
+      : normalise(base + raw.slice(0, q)) + raw.slice(q));
   }
 }
 

@@ -35,6 +35,15 @@ a{color:var(--accent)}
 .lab.no{color:#8a3a24;border-color:#8a3a2455;background:#fff4f0dd}
 .hint{position:absolute;left:12px;bottom:10px;font-size:11.5px;color:#3d474d;
   background:#ffffffb0;padding:2px 7px;border-radius:3px}
+/* Embedded in the argument page, the scene keeps its controls and loses its
+   preamble: the document around it has already said what it is, and repeating a
+   header inside a frame wastes the half of the viewport the picture needs. */
+body.embed header{display:none}
+body.embed aside{padding:12px 15px 22px}
+body.embed .out{position:absolute;right:10px;top:9px;font-size:11.5px;
+  background:#fffefbdd;border:1px solid #00000018;border-radius:3px;padding:2px 7px}
+.out{display:none}
+body.embed .out{display:block}
 aside{background:var(--panel);border-left:1px solid var(--line);padding:15px 17px 40px;
   max-height:100vh;overflow:auto}
 @media(max-width:1040px){aside{border-left:0;border-top:1px solid var(--line);max-height:none}}
@@ -76,6 +85,7 @@ label.ck{display:block;font-size:12.5px;color:var(--ink2);margin:0 0 5px;cursor:
 
 <div class="wrap">
   <div id="stage"><div id="labels"></div>
+    <a class="out" href="rainwater_river.html" target="_top">open full page →</a>
     <div class="hint">drag to look · scroll to zoom</div></div>
   <aside>
     <h3>Where to stand</h3>
@@ -119,6 +129,7 @@ label.ck{display:block;font-size:12.5px;color:var(--ink2);margin:0 0 5px;cursor:
 <script>
 const $ = s => document.querySelector(s);
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (/(^|[?&])embed(=|&|$)/.test(location.search)) document.body.classList.add("embed");
 
 const IN_WATER = [
   ["#7fa8bd", "Rain, off roofs and streets"],
