@@ -92,6 +92,39 @@ which is the whole argument for measuring rather than quoting.
   themselves on the next page, and a paired-catchment study existed that nobody here
   had read.
 
+## 4b. Stated conventions
+
+A category everyone uses and nobody defines is the applefication failure in its purest
+form. Three drafts in this project split the stations into *summer-peaked* and
+*year-round* and got **293/481, 282/480 and 426/427** — all defensible arithmetic on
+different unstated rules, one of them arithmetically impossible.
+
+**The station seasonality convention, from here on:**
+
+> Classify on the Rayleigh statistic **Z = N·R²**, never on raw R.
+>
+> - **seasonal** — Z > 3 (about p < 0.05) *and* mean direction in June–September
+> - **year-round** — Z ≤ 3 *and* N ≥ 24, so the test had the power to reject
+> - **neither** — everything else. **A station with too few observations is not
+>   year-round; it is unclassified.**
+>
+> State the variable basis, since it changes the answer: on all nine variables,
+> 885 / 254 / 276. On `oxy_bed` alone, 357 / 271 / 699.
+
+**Why Z and not R.** R is 1 whenever a station has a single observation — the direction
+is perfectly concentrated because there is only one of it. `oxy_bed` has **254 stations
+with exactly one observation**, and a raw-R rule with no minimum put all of them in the
+"strongly seasonal" group, where they were 39% of it and 57% had three observations or
+fewer. The statistic was measuring scarcity. **Z = N·R² fixes this without an arbitrary
+cutoff**, because a single observation gives Z = 1 and fails on its own.
+
+The general rule this is an instance of:
+
+> **If a category decides a result, its definition is part of the result.** Write it
+> down, state the parameter that moves it, and report what the answer is under the
+> alternatives. A category used by three analyses under three unstated rules is not one
+> category.
+
 ## 5. What may be emitted
 
 A coefficient, at a stated level of organisation, against a stated null, for a named

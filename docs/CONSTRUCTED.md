@@ -40,6 +40,7 @@ where they fail**, and they fail in a way that a good sign hides.
 | **`SigtDybde_m`, Secchi depth** | `BundDybde_m`, bottom depth, 96,708 paired rows | seen-to-bottom on **21.36%** of readings ≤10 m and **0.36%** deeper | right-censored, **59× more in shallow water**; any clarity-vs-depth comparison is partly the censoring |
 | **ρ\*, the mean-square ratio reported as ICC** | its own null, simulated | null is **0.5**, not 0 | every raw value was unreadable as published |
 | **ARI across mismatched granularities** | its attainable maximum | max **0.132** at 12 groups vs 84 | an observed 0.117 was 88% of ceiling, not near-floor |
+| **"summer-peaked" vs "year-round" stations** — ours, a category | its own definition, varied | three analyses gave **293/481, 282/480, 426/427**; the last is impossible, since only 488 `oxy_bed` stations have ≥24 observations | **the category was never defined.** Under a raw-R rule with no minimum, **254 stations with one observation** score R=1 and became 39% of the "seasonal" group |
 
 Ours are marked as ours. Four of the ten entries are this project's own constructions
 failing its own check, which is the point of keeping the register rather than a list of
