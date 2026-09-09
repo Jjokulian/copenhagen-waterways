@@ -10,13 +10,13 @@ So every entry below states its decision rule **before** anyone runs it, includi
 
 ## Three kinds of work, which are not interchangeable
 
-**Constructive and investigative — `experiment`** (11 of 22 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
+**Constructive and investigative — `experiment`** (12 of 23 below). You change one thing and watch what follows. It *creates* the evidence, and it is the only kind that can establish causation, because the control is what rules out the alternatives. It costs money, time, access and usually permission.
 
-**Investigative — `measurement`** (5 of 22 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
+**Investigative — `measurement`** (5 of 23 below). You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.
 
-**Build the means of measurement — `instrument`** (3 of 22 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
+**Build the means of measurement — `instrument`** (3 of 23 below). You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: **a network can be pointed at the assumptions of the existing monitoring**, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.
 
-**Armchair — `analysis`** (3 of 22 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
+**Armchair — `analysis`** (3 of 23 below). You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. **Almost everything this project has produced is of this kind.** That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.
 
 Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.
 
@@ -26,10 +26,10 @@ Naming them separately matters because they are not substitutes and they are not
 |---|---|---|
 | `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | X1, X18, X2, X7, X19, X20, X9, X10, X12, X14, X15, X16 |
 | `lab` | A university lab, standard methods, one to two seasons. | X3, X4, X6, X11, X13 |
-| `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5, X17 |
+| `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | X5, X23, X17 |
 | `desk` | No fieldwork at all. The data already exists; the analysis has not been run. | X21, X22, X8 |
 
-**15 of 22 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
+**15 of 23 need no institution.** Two need no fieldwork or none of their own. The most consequential — X8, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.
 
 ## Small — A person with a boat, a season, and a few thousand kroner. No institution required.
 
@@ -362,6 +362,24 @@ Trawling is hypothesised to destroy the biostabilising surface skin and release 
 **Decide, in advance.** A sulphide and oxygen-demand pulse after the pass → trawling is an oxygen sink as well as a physical one, and belongs in the oxygen budget. Erosion threshold falls and recovers slowly → D8, and the recovery time constant is the number that decides whether current effort is sustainable.
 
 *Requires a cooperative vessel and a closed area. Yields the one number - recovery time - that the whole trawling argument turns on.*
+
+### X23 — Does the faecal load reach the water, or is it spent in the soil?
+
+`experiment`
+
+**Bears on:** [`E13`](#HYPOTHESES.md) Biocides that remove the decomposers themselves, [`E14`](#HYPOTHESES.md) Veterinary antiparasitics in manure, [`E15`](#HYPOTHESES.md) Total biocide load, whatever its source, [`A2`](#HYPOTHESES.md) Phosphorus load, [`G2`](#HYPOTHESES.md) Changing precipitation and runoff timing, [`O1`](#HYPOTHESES.md) Oxygen deficit
+
+The load account carries nitrogen and phosphorus. Everything else that is spread — organic carbon, copper and zinc from feed, antiparasitics, antibiotics, resistance genes, pathogens — is unpriced, and its fate is genuinely unknown rather than known to be small. A field is a reactor: labile carbon is respired there, so the default assumption is that little arrives. But rain onto freshly spread ground, frozen or saturated soil, tile drains and macropores are documented bypasses, and **Denmark's own monitoring cannot see any of it**, because it samples on a calendar rather than on events and measures a determinand list that does not include the payload.
+
+**Manipulate.** Nothing is manipulated: the spreading window is the manipulation, it happens every spring, and it is applied to the whole country at once. What is added is **event-based sampling** — flow-triggered automatic samplers on paired stream catchments, taking a series through the rising limb and the falling limb of each storm from February to April, and again in an autumn window when no spreading is permitted.
+
+**Control.** Three controls, and the design needs all of them. **Time:** the same streams outside the spreading window. **Space:** catchments matched on soil, drainage and area but contrasting in livestock density, which is where the national register earns its place. **And source:** faecal sterols and host-specific microbial markers separate pig manure from human sewage and from soil organic matter, which is what turns a concentration into an attribution.
+
+**Measure.** Per event: COD and BOD, particulate organic carbon, ammonium, total N and P, copper and zinc, coprostanol with a pig-specific marker, one antiparasitic residue, and discharge at the same minute so the result is a load and not a concentration.
+
+**Decide, in advance.** **Markers and copper rise sharply in the days after spreading and scale with livestock density → the payload bypasses the soil**, the second channel is real and measurable, and the determinand list of the national programme is missing a term rather than merely being coarse. **Markers stay at baseline through the window → the soil reactor holds**, what reaches the sea from a field is essentially nitrate, and the nitrogen framing is right about *what arrives* even where this project disputes how much. **That second outcome is the one worth pre-committing to publish**, because it argues against the suspicion that motivated the design.
+
+*This is the cheapest unbought answer in the whole document. The instruments are ordinary autosamplers and a lab list, the timing is fixed by a calendar everyone already knows, and the comparison catchments exist. It is also the one design here whose *negative* result would materially strengthen the official account — which is a reason to run it, not a reason to avoid it. **Grab sampling cannot substitute:** this project's own sources report that transport computed from grab samples was underestimated in all three streams of the 2018 GUDP study, and an event is exactly what a fortnightly visit misses.*
 
 ### X17 — Take the fungicides away, region by region, without ruining anyone
 

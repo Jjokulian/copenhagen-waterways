@@ -553,6 +553,52 @@ X = [
      "power, and the honest version of this proposal budgets for servicing rather "
      "than pretending a buoy is unattended infrastructure."),
 
+    ("X23", "Does the faecal load reach the water, or is it spent in the soil?",
+     "experiment", ["E13", "E14", "E15", "A2", "G2", "O1"], "programme",
+     "The load account carries nitrogen and phosphorus. Everything else that is "
+     "spread — organic carbon, copper and zinc from feed, antiparasitics, "
+     "antibiotics, resistance genes, pathogens — is unpriced, and its fate is "
+     "genuinely unknown rather than known to be small. A field is a reactor: labile "
+     "carbon is respired there, so the default assumption is that little arrives. "
+     "But rain onto freshly spread ground, frozen or saturated soil, tile drains "
+     "and macropores are documented bypasses, and **Denmark's own monitoring cannot "
+     "see any of it**, because it samples on a calendar rather than on events and "
+     "measures a determinand list that does not include the payload.",
+     "Nothing is manipulated: the spreading window is the manipulation, it happens "
+     "every spring, and it is applied to the whole country at once. What is added "
+     "is **event-based sampling** — flow-triggered automatic samplers on paired "
+     "stream catchments, taking a series through the rising limb and the falling "
+     "limb of each storm from February to April, and again in an autumn window when "
+     "no spreading is permitted.",
+     "Three controls, and the design needs all of them. **Time:** the same streams "
+     "outside the spreading window. **Space:** catchments matched on soil, drainage "
+     "and area but contrasting in livestock density, which is where the national "
+     "register earns its place. **And source:** faecal sterols and host-specific "
+     "microbial markers separate pig manure from human sewage and from soil organic "
+     "matter, which is what turns a concentration into an attribution.",
+     "Per event: COD and BOD, particulate organic carbon, ammonium, total N and P, "
+     "copper and zinc, coprostanol with a pig-specific marker, one antiparasitic "
+     "residue, and discharge at the same minute so the result is a load and not a "
+     "concentration.",
+     "**Markers and copper rise sharply in the days after spreading and scale with "
+     "livestock density → the payload bypasses the soil**, the second channel is "
+     "real and measurable, and the determinand list of the national programme is "
+     "missing a term rather than merely being coarse. **Markers stay at baseline "
+     "through the window → the soil reactor holds**, what reaches the sea from a "
+     "field is essentially nitrate, and the nitrogen framing is right about *what "
+     "arrives* even where this project disputes how much. **That second outcome is "
+     "the one worth pre-committing to publish**, because it argues against the "
+     "suspicion that motivated the design.",
+     "This is the cheapest unbought answer in the whole document. The instruments "
+     "are ordinary autosamplers and a lab list, the timing is fixed by a calendar "
+     "everyone already knows, and the comparison catchments exist. It is also the "
+     "one design here whose *negative* result would materially strengthen the "
+     "official account — which is a reason to run it, not a reason to avoid it. "
+     "**Grab sampling cannot substitute:** this project's own sources report that "
+     "transport computed from grab samples was underestimated in all three streams "
+     "of the 2018 GUDP study, and an event is exactly what a fortnightly visit "
+     "misses."),
+
     ("X17", "Take the fungicides away, region by region, without ruining anyone",
      "experiment", ["E13", "E14", "E15", "E16", "E17", "R3", "R11", "T12"],
      "programme",
