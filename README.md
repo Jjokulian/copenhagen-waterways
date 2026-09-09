@@ -110,6 +110,8 @@ docs/
   SOLUTIONS.md            the response, measured from the city's own layers
   OPEN_PROBLEMS.md        what this could not settle, hand-maintained
   PROGRAMME.md            THE ARGUMENT - what ought to be done, labelled as such
+  EXTERNALITY.md          a deposit with an uncapped tail, and the supply
+                          landscape it would produce - argument, hand-written
   LANDBRUG.md             the audit in Danish, for the audience it is used against
   section3d.html          the retrofit in 3D, dimensioned, with the hydraulic check
   rainwater_river.html    what it would look like from the bank - an impression

@@ -1778,6 +1778,13 @@ def main():
       "It is the only formulation that matches what the substance actually is — "
       "irreplaceable in a few places, and irretrievable everywhere else.\n")
 
+    a("> **And there is a way to arrive at reserved use without a prohibition.** "
+      "Price the failure to return rather than the sale: a deposit whose tail is "
+      "uncapped makes a substance that never degrades uneconomic to place on the "
+      "market, and it does it through a member state's tax code rather than "
+      "through the harmonised market. It also turns *free of the substance* from a "
+      "marketing claim into a fiscal declaration, which is auditable and "
+      "punishable. [The externality expense economy →](EXTERNALITY.md)\n")
     a("#### Two caveats on the metals, which are this project's own findings\n")
     hz = mon["hazardous_substances"]
     zn, cu = hz["typetal_ug_per_l"]["Zink"], hz["typetal_ug_per_l"]["Kobber"]
@@ -1997,6 +2004,13 @@ def main():
       "level of design rather than of legal advice: **the levers that survive "
       "harmonisation are purchase, permission and use, and those are the levers "
       "that make places differ.**\n")
+    a("> There is a fourth lever of that kind, and it is fiscal rather than "
+      "prohibitive: a levy that behaves as a **deposit with an uncapped tail**, "
+      "keyed to what a substance does when it disperses, and wrapped in a lease so "
+      "that somebody still owns the thing. It is set nationally, it is "
+      "border-adjustable, and it prices non-return rather than banning sale — which "
+      "is why it survives harmonisation. "
+      "[The externality expense economy →](EXTERNALITY.md)\n")
     a("Which produces an uncomfortable conclusion for everyone. The people who want "
       "urgent action have to accept that the physical fix is a generational programme. "
       "The people who want to wait for better evidence have to accept that the evidence "
@@ -2160,6 +2174,14 @@ def main():
       "the legacy stock and the reserved uses, not to a projected flow. A destruction "
       "industry scaled to a *continuing* input is not a clean-up industry — it is a "
       "disposal service for a business model that should have ended.\n")
+    a("There is also an instrument that would create the missing demand directly, "
+      "rather than waiting for a court to. A purchase levy that is refunded on "
+      "return, and billed in full and non-conservatively when the object does not "
+      "come back, puts the price of unmanaged dispersal above the price of managed "
+      "destruction **on the day of sale** — which is the demand curve this section "
+      "says the sector does not have. It is set nationally, so it is available "
+      "where a product ban is not. [The externality expense economy "
+      "→](EXTERNALITY.md)\n")
     a("The same test distinguishes the good version of the fluorspar argument from the "
       "bad one. Recovering fluorine from a **finite legacy stock** is mining a waste "
       "dump, which is unambiguously good. Recovering it from an **ongoing production "

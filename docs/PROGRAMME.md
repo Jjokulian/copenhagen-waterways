@@ -736,6 +736,8 @@ Note what the second prong catches that the first does not. Firefighting foam ha
 
 So: *banned as a mass-adopted material, reserved for special products in special facilities.* That is not a compromise between banning and permitting. It is the only formulation that matches what the substance actually is — irreplaceable in a few places, and irretrievable everywhere else.
 
+> **And there is a way to arrive at reserved use without a prohibition.** Price the failure to return rather than the sale: a deposit whose tail is uncapped makes a substance that never degrades uneconomic to place on the market, and it does it through a member state's tax code rather than through the harmonised market. It also turns *free of the substance* from a marketing claim into a fiscal declaration, which is auditable and punishable. [The externality expense economy →](EXTERNALITY.md)
+
 #### Two caveats on the metals, which are this project's own findings
 
 Zinc is the largest metal term in the Danish stormwater typetal by an order of magnitude — **170 µg/l** in combined overflow and 130 µg/l in separate stormwater, against 16 and 9 for copper, with a maximum observed of 400. The flux is not small.
@@ -826,6 +828,8 @@ The brittleness is worth naming because it is systemic rather than particular. *
 
 *What this does not claim.* This project has not read the case law, and the boundary between a lawful national use restriction and an unlawful barrier to trade is exactly where the arguing happens. The point stands at the level of design rather than of legal advice: **the levers that survive harmonisation are purchase, permission and use, and those are the levers that make places differ.**
 
+> There is a fourth lever of that kind, and it is fiscal rather than prohibitive: a levy that behaves as a **deposit with an uncapped tail**, keyed to what a substance does when it disperses, and wrapped in a lease so that somebody still owns the thing. It is set nationally, it is border-adjustable, and it prices non-return rather than banning sale — which is why it survives harmonisation. [The externality expense economy →](EXTERNALITY.md)
+
 Which produces an uncomfortable conclusion for everyone. The people who want urgent action have to accept that the physical fix is a generational programme. The people who want to wait for better evidence have to accept that the evidence is cheap, available, and has been declined for decades.
 
 **Is it solvable in a year?** Not the infrastructure. But the *measurement* is a season's work, the *operating* changes — basin emptying, grease enforcement, release timing — are a year's work and would act on exactly the pulsed, threshold-triggered discharge that the annual accounting is blind to. If the concentration in the register carries through to load, then a year of operational change on a few dozen structures is not a small intervention at all. Nobody knows whether it does, because nobody has measured it. That is the single most actionable sentence in this document.
@@ -912,6 +916,8 @@ Build import-fed destruction capacity in Denmark and you create a domestic const
 The antidote is a sequencing condition, and it should be written down before anything is built:
 
 > **Source restriction leads; destruction capacity follows.** Capacity sized to the legacy stock and the reserved uses, not to a projected flow. A destruction industry scaled to a *continuing* input is not a clean-up industry — it is a disposal service for a business model that should have ended.
+
+There is also an instrument that would create the missing demand directly, rather than waiting for a court to. A purchase levy that is refunded on return, and billed in full and non-conservatively when the object does not come back, puts the price of unmanaged dispersal above the price of managed destruction **on the day of sale** — which is the demand curve this section says the sector does not have. It is set nationally, so it is available where a product ban is not. [The externality expense economy →](EXTERNALITY.md)
 
 The same test distinguishes the good version of the fluorspar argument from the bad one. Recovering fluorine from a **finite legacy stock** is mining a waste dump, which is unambiguously good. Recovering it from an **ongoing production stream** is a subsidy to that production, dressed as circularity.
 
