@@ -184,7 +184,8 @@
    "shift_north_m": -217,
    "pair_rms_m": 23.0,
    "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
-  }
+  },
+  "spread_all_m": 510.6
  },
  "kbhvest": {
   "method": "assisted: resident-reported control points + correlation check",
@@ -326,7 +327,8 @@
    "shift_north_m": -182,
    "pair_rms_m": 23.0,
    "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
-  }
+  },
+  "spread_all_m": 27.8
  },
  "norrebro": {
   "method": "autoref: ensemble water cross-correlation",
@@ -360,7 +362,7 @@
    ]
   ],
   "image": "data/derived/floodmaps/norrebro.depth.png",
-  "confident": true,
+  "confident": false,
   "variants": [
    {
     "variant": "blue K16",
@@ -420,7 +422,9 @@
   "bundle": {
    "applied": false,
    "why": "no overlapping pair produced a peak that stood clear of its surroundings, and this sheet has no control points, so the bundle could not touch it. It keeps its original automatic position and is now the one sheet not known to be consistent with the rest."
-  }
+  },
+  "spread_all_m": 3114.6,
+  "confidence_withdrawn": "Recomputed 9 Sep 2026. spread_m is measured over the agreeing variants only and is therefore small by construction; the spread over ALL variants is 3115 m. Agreement was 3/6, a bare minimum, and the bundle adjustment could not touch this sheet. The displayed position is the majority of three; the three rejected variants place it up to 2.6 km east, nearer where the district actually is. TREAT THIS SHEET AS UNREGISTERED until control points are placed with viz/georef.html."
  },
  "osterbro": {
   "method": "autoref: ensemble water cross-correlation",
@@ -517,6 +521,7 @@
    "shift_north_m": -135,
    "pair_rms_m": 23.0,
    "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
-  }
+  },
+  "spread_all_m": 27.3
  }
 }

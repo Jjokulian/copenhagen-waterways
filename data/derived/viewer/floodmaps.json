@@ -184,7 +184,8 @@
    "shift_north_m": -217,
    "pair_rms_m": 23.0,
    "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
-  }
+  },
+  "spread_all_m": 510.6
  },
  "kbhvest": {
   "method": "assisted: resident-reported control points + correlation check",
@@ -326,101 +327,8 @@
    "shift_north_m": -182,
    "pair_rms_m": 23.0,
    "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
-  }
- },
- "norrebro": {
-  "method": "autoref: ensemble water cross-correlation",
-  "agree": 3,
-  "variants_run": 6,
-  "spread_m": 12.7,
-  "best_iou": 0.412,
-  "m_per_px_from_scalebar": 0.956,
-  "bounds_wgs84": {
-   "west": 12.509555543869267,
-   "east": 12.54388631306775,
-   "south": 55.674426736469954,
-   "north": 55.700946668672366
   },
-  "corners_for_maplibre": [
-   [
-    12.509555543869267,
-    55.700946668672366
-   ],
-   [
-    12.54388631306775,
-    55.700946668672366
-   ],
-   [
-    12.54388631306775,
-    55.674426736469954
-   ],
-   [
-    12.509555543869267,
-    55.674426736469954
-   ]
-  ],
-  "image": "data/derived/floodmaps/norrebro.depth.png",
-  "confident": true,
-  "variants": [
-   {
-    "variant": "blue K16",
-    "ok": true,
-    "lon_nw": 12.510529898294413,
-    "lat_nw": 55.702068841969364,
-    "z": 4.19,
-    "iou": 0.267,
-    "water_fraction": 0.0027
-   },
-   {
-    "variant": "blue K8",
-    "ok": true,
-    "lon_nw": 12.551939961363093,
-    "lat_nw": 55.71546621704571,
-    "z": 4.26,
-    "iou": 0.072,
-    "water_fraction": 0.0041
-   },
-   {
-    "variant": "blue loose K16",
-    "ok": true,
-    "lon_nw": 12.509555543869267,
-    "lat_nw": 55.700969570168226,
-    "z": 4.33,
-    "iou": 0.406,
-    "water_fraction": 0.0076
-   },
-   {
-    "variant": "adapt 6% K16",
-    "ok": true,
-    "lon_nw": 12.509555543869267,
-    "lat_nw": 55.700832161193084,
-    "z": 4.37,
-    "iou": 0.377,
-    "water_fraction": 0.0066
-   },
-   {
-    "variant": "adapt 12% K16",
-    "ok": true,
-    "lon_nw": 12.544388714568216,
-    "lat_nw": 55.708527063801036,
-    "z": 4.51,
-    "iou": 0.109,
-    "water_fraction": 0.0088
-   },
-   {
-    "variant": "adapt 8% K8",
-    "ok": true,
-    "lon_nw": 12.509555543869267,
-    "lat_nw": 55.701038274655794,
-    "z": 4.47,
-    "iou": 0.412,
-    "water_fraction": 0.0108
-   }
-  ],
-  "bundle": {
-   "applied": false,
-   "why": "no overlapping pair produced a peak that stood clear of its surroundings, and this sheet has no control points, so the bundle could not touch it. It keeps its original automatic position and is now the one sheet not known to be consistent with the rest."
-  }
+  "spread_all_m": 27.8
  },
  "osterbro": {
   "method": "autoref: ensemble water cross-correlation",
@@ -517,6 +425,7 @@
    "shift_north_m": -135,
    "pair_rms_m": 23.0,
    "method": "global bundle adjustment over all overlapping sheet pairs, matched photograph-to-photograph on masked gradient images, anchored by the resident control points"
-  }
+  },
+  "spread_all_m": 27.3
  }
 }

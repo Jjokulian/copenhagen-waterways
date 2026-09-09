@@ -38,6 +38,7 @@ Usage:
     python3 scripts/floodmaps.py check [sheet ...]
     python3 scripts/floodmaps.py status
 """
+import itertools
 import json
 import math
 import re
@@ -426,11 +427,25 @@ def cmd_autoref(args):
         # Thresholds set by inspecting the overlays: kbhvest passed a looser bar at
         # 57 m spread / IoU 0.117, and its magenta water outlines visibly do not track
         # the photographed water. Accepting it would have shipped a wrong registration.
-        confident = res["agree"] >= 3 and res["spread_m"] <= 40 and res["best_iou"] >= 0.12
+        # spread_m is measured over the AGREEING variants only, so it is small by
+        # construction once agreement has selected a cluster - a statistic conditioned
+        # on the thing it is meant to test. norrebro shipped with the tightest
+        # agreeing-spread in the set (12.7 m) and a 3,115 m spread across all variants,
+        # on a bare 3/6 agreement, and was published as confident. Require a majority,
+        # and measure the spread over EVERY variant that ran.
+        oks = [v for v in res["variants"] if v.get("ok")]
+        spread_all = 0.0
+        for a, b in itertools.combinations(oks, 2):
+            dx = (a["lon_nw"] - b["lon_nw"]) * floodreg.LONM
+            dy = (a["lat_nw"] - b["lat_nw"]) * floodreg.LATM
+            spread_all = max(spread_all, (dx * dx + dy * dy) ** 0.5)
+        confident = (res["agree"] >= 4 and res["spread_m"] <= 40
+                     and res["best_iou"] >= 0.12 and spread_all <= 600)
         out[sheet] = {
             "method": "autoref: ensemble water cross-correlation",
             "agree": res["agree"], "variants_run": res["variants_run"],
-            "spread_m": res["spread_m"], "best_iou": res["best_iou"],
+            "spread_m": res["spread_m"], "spread_all_m": round(spread_all, 1),
+            "best_iou": res["best_iou"],
             "m_per_px_from_scalebar": round(mpp, 4),
             "bounds_wgs84": {"west": west, "east": east, "south": south, "north": north},
             "corners_for_maplibre": [[west, north], [east, north], [east, south], [west, south]],
