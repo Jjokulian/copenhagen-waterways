@@ -256,6 +256,12 @@ samplers rotating around a network of hundreds of nodes is the realistic shape.
 
 ## What that costs, at three sizes
 
+> **[Dial it yourself →](network.html)** — the density on a map of Denmark, what each
+> node carries, the sampler ratio, the bottle price, the servicing interval and the
+> years, with the total moving as you change them. The presets reproduce the stages
+> in [SETTLE.md](SETTLE.md).
+
+
 Every Danish stream that reaches the sea is the target that removes extrapolation
 entirely. These are stated arithmetic, not a budget anybody has approved.
 

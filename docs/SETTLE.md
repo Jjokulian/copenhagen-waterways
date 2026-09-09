@@ -188,7 +188,9 @@ is the one somebody can actually decide to spend. The full experiment is only wo
 funding if this comes back clean, and if it does not, the money saved is the whole
 three to five million.
 
-**A staged path, with a decision at each step:**
+**A staged path, with a decision at each step** — and it is
+[dialable on a map](network.html), where each preset below reproduces the row beside
+it:
 
 | Stage | Scope | Cost | The question it answers |
 |---|---|---:|---|

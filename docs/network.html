@@ -1,0 +1,389 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design the network</title>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --sea:#e7edf0; --land:#e3e0d7; --accent:#2f6a95; --warn:#b4532f;
+  --new:#1f7a5a; --model:#8a6d3b;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#1b2026; --land:#2a2a26; --accent:#8fbcd9; --warn:#e0866a;
+  --new:#5fbf98; --model:#c8a76a;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#1b2026; --land:#2a2a26; --accent:#8fbcd9; --warn:#e0866a;
+  --new:#5fbf98; --model:#c8a76a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:22px 28px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:22px;font-weight:640;letter-spacing:-.01em}
+header p{margin:0 0 5px;max-width:82ch;color:var(--ink2)}
+a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 360px}
+@media(max-width:1040px){.wrap{grid-template-columns:1fr}}
+#stage{position:relative;min-width:0;padding:12px 8px 0 16px}
+canvas{width:100%;display:block;border:1px solid var(--line);border-radius:4px;
+  background:var(--sea)}
+figcaption{font-size:11.5px;color:var(--ink3);margin:6px 0 14px;max-width:80ch}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:15px 17px 40px;
+  max-height:100vh;overflow:auto}
+@media(max-width:1040px){aside{border-left:0;border-top:1px solid var(--line);
+  max-height:none}}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);
+  margin:18px 0 7px;font-weight:600}
+h3:first-of-type{margin-top:0}
+label.ck{display:block;font-size:13px;margin:0 0 4px;cursor:pointer}
+label.ck input{margin-right:7px;vertical-align:-1px}
+label.ck .p{float:right;color:var(--ink3);font-variant-numeric:tabular-nums;font-size:12px}
+.rangerow{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink2);
+  margin:9px 0 0}
+.rangerow b{color:var(--ink);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;margin:2px 0 0}
+dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:12.5px}
+dt{color:var(--ink3)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+dd b{font-weight:640}
+.big{font-size:15px}
+.note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
+  border-left:2px solid var(--line);padding-left:9px}
+.note b{color:var(--ink2)}
+.warnnote{border-left-color:var(--warn);color:var(--warn)}
+.seg{display:flex;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin:0 0 9px}
+.seg button{flex:1 1 0;font:inherit;font-size:12.5px;padding:6px 3px;cursor:pointer;
+  background:var(--ground);color:var(--ink2);border:0;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff;font-weight:600}
+</style>
+
+<header>
+  <h1>Design the network</h1>
+  <p>Dial the density, choose what each node carries, and watch what it costs. The
+  scatter is random inside Denmark — <b>it is a picture of a density, not a siting
+  plan</b>: real nodes go where streams meet the sea, and choosing those places is
+  the one part of this that needs a map nobody has published.</p>
+  <p>Every price is a <b>stated range</b> from
+  <a href="../index.html#SENSING.md">the shopping list</a>, not a quotation, and every
+  one of them is a slider here because the argument should survive somebody replacing
+  them. The protocol these nodes would serve is
+  <a href="../index.html#SETTLE.md">Fingerprinting Denmark</a>.</p>
+</header>
+
+<div class="wrap">
+  <div id="stage">
+    <canvas id="map"></canvas>
+    <figcaption id="cap"></figcaption>
+  </div>
+  <aside>
+    <h3>Density</h3>
+    <input type="range" id="n" min="1" max="2000" value="120" step="1">
+    <div class="rangerow"><span>nodes</span><b id="nv">120</b></div>
+    <div class="rangerow"><span>one node per</span><b id="spacing">—</b></div>
+    <div class="seg" id="preset" style="margin-top:9px">
+      <button data-n="2" data-samp="1" data-bot="40">Pair</button>
+      <button data-n="24" data-samp="3" data-bot="40">Experiment</button>
+      <button data-n="120" data-samp="8" data-bot="40">Regional</button>
+      <button data-n="800" data-samp="20" data-bot="30">Every outlet</button>
+    </div>
+
+    <h3>What each node carries</h3>
+    <div id="sensors"></div>
+    <div class="rangerow"><span>share of nodes with the fluorometer</span>
+      <b id="fdomv">100%</b></div>
+    <input type="range" id="fdom" min="0" max="100" value="100" step="5">
+    <p class="note" id="discrim"></p>
+
+    <h3>Sampling and laboratory</h3>
+    <div class="rangerow"><span>nodes per automatic sampler</span><b id="sampv">8</b></div>
+    <input type="range" id="samp" min="1" max="60" value="8" step="1">
+    <div class="rangerow"><span>bottles analysed per sampler per year</span><b id="botv">40</b></div>
+    <input type="range" id="bot" min="0" max="200" value="40" step="5">
+    <div class="rangerow"><span>which is</span><b id="totbot">—</b></div>
+    <div class="rangerow"><span>price per bottle</span><b id="botpv">2,500 kr</b></div>
+    <input type="range" id="botp" min="500" max="5000" value="2500" step="100">
+
+    <h3>Keeping it alive</h3>
+    <div class="rangerow"><span>service visits per node per year</span><b id="visv">4</b></div>
+    <input type="range" id="vis" min="0" max="12" value="4" step="1">
+    <div class="rangerow"><span>cost per visit</span><b id="vispv">1,200 kr</b></div>
+    <input type="range" id="visp" min="0" max="4000" value="1200" step="100">
+    <div class="rangerow"><span>node failures replaced per year</span><b id="failv">8%</b></div>
+    <input type="range" id="fail" min="0" max="40" value="8" step="1">
+    <div class="rangerow"><span>years of operation</span><b id="yrv">10</b></div>
+    <input type="range" id="yr" min="1" max="25" value="10" step="1">
+
+    <h3>What it costs</h3>
+    <dl id="cost"></dl>
+    <p class="note" id="compare"></p>
+    <p class="note warnnote" id="honest"></p>
+  </aside>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const fmt = (n, d = 0) => n.toLocaleString(undefined,
+  {minimumFractionDigits: d, maximumFractionDigits: d});
+const kr = n => n >= 1e6 ? fmt(n / 1e6, 2) + " M kr"
+              : n >= 1e4 ? fmt(Math.round(n / 1000)) + " k kr" : fmt(n) + " kr";
+
+/* The sensor list is the shopping list in SENSING.md, one row each, with the mid of
+   its stated range as the default price and the range itself as the slider bounds.
+   `disc` marks the dimensions that discriminate a source rather than measure a total,
+   because switching those off changes what the network can answer, not just what it
+   costs. */
+const SENSORS = [
+  {id: "stage", t: "Stage — ultrasonic", lo: 900, hi: 1800, on: true,
+   why: "no discharge, no load"},
+  {id: "turb", t: "Turbidity — nephelometric", lo: 1500, hi: 6000, on: true,
+   why: "the carrier for everything particulate"},
+  {id: "ect", t: "Conductivity + temperature", lo: 600, hi: 2000, on: true,
+   why: "dilution against delivery"},
+  {id: "do", t: "Dissolved oxygen — optical", lo: 3000, hi: 9000, on: true,
+   why: "the consequence, at the same minute"},
+  {id: "fdom", t: "fDOM — tryptophan", lo: 9000, hi: 22000, on: true, disc: true,
+   why: "the one fingerprint dimension that runs continuously"},
+  {id: "no3", t: "Nitrate — UV spectrometer", lo: 60000, hi: 150000, on: false,
+   why: "the determinand the whole argument is about, at a price that is why nobody has it everywhere"},
+  {id: "logger", t: "Logger, radio, power, enclosure", lo: 1900, hi: 5700, on: true,
+   fixed: true, why: "the boring part that decides whether it survives a winter"},
+];
+const SAMPLER = {lo: 25000, hi: 60000};
+const KIT_PER_10 = {lo: 7000, hi: 15000};
+
+let RINGS = null, LAND_KM2 = 43000, PROJ = null, PTS = [];
+
+/* A deterministic generator, so that moving a price slider does not reshuffle the map
+   underneath the number. The scatter is a picture of a density and it should hold
+   still while the reader reads it. */
+function rng(seed) {
+  let s = seed >>> 0;
+  return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296;
+}
+function inLand(x, y) {
+  let inside = false;
+  for (const ring of RINGS) {
+    let c = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) c = !c;
+    }
+    if (c) inside = !inside;          // even-odd across all rings: holes cancel
+  }
+  return inside;
+}
+function scatter(n) {
+  const r = rng(20260909);
+  const out = [];
+  const [w, s, e, nn] = BBOX;
+  let guard = 0;
+  while (out.length < n && guard < n * 400 + 5000) {
+    guard++;
+    const x = w + r() * (e - w), y = s + r() * (nn - s);
+    if (inLand(x, y)) out.push([x, y]);
+  }
+  return out;
+}
+
+let BBOX = [8, 54.5, 13, 57.8];
+function bboxOf(rings) {
+  let w = 999, s = 999, e = -999, n = -999;
+  for (const ring of rings) for (const [x, y] of ring) {
+    if (x < w) w = x;
+    if (x > e) e = x;
+    if (y < s) s = y;
+    if (y > n) n = y;
+  }
+  return [w, s, e, n];
+}
+function ringAreaKm2(ring) {
+  // spherical excess is overkill at this size; equirectangular with a cos(lat) factor
+  let a = 0;
+  const k = Math.cos((BBOX[1] + BBOX[3]) / 2 * Math.PI / 180);
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++)
+    a += (ring[j][0] * k * ring[i][1] - ring[i][0] * k * ring[j][1]);
+  return Math.abs(a / 2) * 111.32 * 111.32;
+}
+
+function project(cv) {
+  const [w, s, e, n] = BBOX;
+  const W = cv.clientWidth || 900, H = Math.max(420, Math.min(760, W * 0.74));
+  const k = Math.cos((s + n) / 2 * Math.PI / 180);
+  const sc = Math.min(W / ((e - w) * k), H / (n - s)) * 0.96;
+  const ox = (W - (e - w) * k * sc) / 2, oy = (H - (n - s) * sc) / 2;
+  return {W, H, x: lon => ox + (lon - w) * k * sc, y: lat => oy + (n - lat) * sc};
+}
+const css = v => getComputedStyle(document.body).getPropertyValue(v).trim();
+
+function draw() {
+  const cv = $("#map"), cx = cv.getContext("2d");
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  PROJ = project(cv);
+  cv.width = PROJ.W * dpr;
+  cv.height = PROJ.H * dpr;
+  cv.style.height = PROJ.H + "px";
+  cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cx.clearRect(0, 0, PROJ.W, PROJ.H);
+  cx.fillStyle = css("--land");
+  for (const ring of RINGS) {
+    cx.beginPath();
+    ring.forEach(([x, y], i) => i ? cx.lineTo(PROJ.x(x), PROJ.y(y))
+                                  : cx.moveTo(PROJ.x(x), PROJ.y(y)));
+    cx.closePath();
+    cx.fill();
+  }
+  const share = +$("#fdom").value / 100;
+  PTS.forEach(([x, y], i) => {
+    const full = i / PTS.length < share;
+    cx.beginPath();
+    cx.arc(PROJ.x(x), PROJ.y(y), PTS.length > 600 ? 1.6 : PTS.length > 150 ? 2.4 : 3.6,
+           0, 7);
+    cx.fillStyle = full ? css("--new") : css("--model");
+    cx.fill();
+  });
+}
+
+function nodeCost() {
+  let base = 0, withF = 0;
+  for (const s of SENSORS) {
+    const el = $("#s-" + s.id);
+    if (s.fixed || (el && el.checked)) {
+      const p = +$("#p-" + s.id).value;
+      if (s.id === "fdom") withF += p; else base += p;
+    }
+  }
+  return {base, withF};
+}
+
+function recompute(redraw) {
+  const n = +$("#n").value;
+  if (redraw) PTS = scatter(n);
+  const share = +$("#fdom").value / 100;
+  const {base, withF} = nodeCost();
+  const capitalNodes = n * base + Math.round(n * share) * withF;
+  const samplers = Math.ceil(n / +$("#samp").value);
+  
+  const capitalSamp = samplers * ((SAMPLER.lo + SAMPLER.hi) / 2);
+  const kit = Math.ceil(n / 10) * ((KIT_PER_10.lo + KIT_PER_10.hi) / 2);
+  const capital = capitalNodes + capitalSamp + kit;
+
+  // Bottles come from samplers, not from nodes: a node without a sampler produces a
+  // series and never a sample. Tying them to the wrong thing is how a plan of this
+  // kind gets its laboratory bill wrong by an order of magnitude.
+  const bottles = samplers * +$("#bot").value;
+  const lab = bottles * +$("#botp").value;
+  const service = n * +$("#vis").value * +$("#visp").value;
+  const fail = capitalNodes * (+$("#fail").value / 100);
+  const annual = lab + service + fail;
+  const years = +$("#yr").value;
+  const total = capital + annual * years;
+
+  const spacingKm = Math.sqrt(LAND_KM2 / Math.max(1, n));
+  $("#nv").textContent = fmt(n);
+  $("#spacing").textContent = fmt(spacingKm, 1) + " km × " + fmt(spacingKm, 1) + " km";
+  $("#fdomv").textContent = fmt(share * 100) + "%";
+  $("#sampv").textContent = $("#samp").value;
+  $("#botv").textContent = $("#bot").value;
+  $("#totbot").textContent = fmt(bottles) + " bottles a year";
+  $("#botpv").textContent = fmt(+$("#botp").value) + " kr";
+  $("#visv").textContent = $("#vis").value;
+  $("#vispv").textContent = fmt(+$("#visp").value) + " kr";
+  $("#failv").textContent = $("#fail").value + "%";
+  $("#yrv").textContent = years;
+
+  $("#cost").innerHTML = [
+    ["Nodes", kr(capitalNodes)],
+    [`Samplers (${samplers})`, kr(capitalSamp)],
+    ["Shared kit", kr(kit)],
+    ["<b>Capital</b>", "<b class='big'>" + kr(capital) + "</b>"],
+    [`Laboratory — ${fmt(bottles)} bottles/yr`, kr(lab)],
+    ["Servicing", kr(service)],
+    ["Replacing failures", kr(fail)],
+    ["<b>Per year</b>", "<b class='big'>" + kr(annual) + "</b>"],
+    [`<b>Over ${years} years</b>`, "<b class='big'>" + kr(total) + "</b>"],
+    ["Per node, all in", kr(total / Math.max(1, n))],
+  ].map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+
+  const house = 4e6, shot = 4e5;
+  $("#compare").innerHTML = `That is <b>${fmt(total / house, 2)}</b> houses at 4 M kr, `
+    + `or <b>${fmt(total / shot, 1)}</b> bored street shots at 0.4 M — the unit this `
+    + `site costs its own retrofit in. Coverage: one node per `
+    + `${fmt(spacingKm, 1)} km of country, against a national programme that samples `
+    + `240 stream stations on a calendar.`;
+
+  const noF = share < 1;
+  const noDisc = !$("#s-fdom").checked;
+  $("#discrim").innerHTML = noDisc
+    ? "<b>Without the fluorometer this is a turbidity network.</b> It tells you "
+      + "<i>when</i> something moved and never <i>what</i> — every attribution then "
+      + "waits for a bottle, and the bottles are the expensive part."
+    : noF
+    ? "<b>A mixed network.</b> The fluorometer nodes can be read continuously; the "
+      + "rest are triggers that tell a sampler when to fire. That is usually the "
+      + "right trade, and it is why the share is a dial rather than a switch."
+    : "<b>Every node carries the continuous fingerprint dimension.</b> Expensive, and "
+      + "the only configuration where the network says something between bottles.";
+
+  if (bottles > 2000)
+    $("#cost").innerHTML += "<dt style='color:var(--warn)'>Laboratory capacity</dt>"
+      + "<dd style='color:var(--warn)'>" + fmt(bottles) + "/yr is past one lab</dd>";
+  $("#honest").innerHTML = "<b>What this does not model.</b> Siting — the scatter is "
+    + "random and real nodes go where streams reach the sea. Access, permission and "
+    + "the landowner at each culvert. The laboratory's capacity, which is a real "
+    + "constraint above a few thousand bottles a year. And the custody of the "
+    + "archive, which is a job rather than a line item.";
+  if (redraw) draw();
+}
+
+fetch("data/geo/dk_land.json").then(r => r.json()).then(d => {
+  RINGS = d.rings.filter(r => r.length > 3);
+  BBOX = bboxOf(RINGS);
+  LAND_KM2 = Math.round(RINGS.reduce((a, r) => a + ringAreaKm2(r), 0));
+  $("#cap").textContent = "Denmark as the union of its main catchments, simplified to "
+    + "about 200 m — " + fmt(LAND_KM2) + " km² of land. Green: a node carrying the "
+    + "fluorometer. Amber: a node without it. The scatter is random and deterministic, "
+    + "so it holds still while you change a price.";
+  $("#sensors").innerHTML = SENSORS.filter(s => !s.fixed).map(s =>
+    `<label class="ck"><input type="checkbox" id="s-${s.id}"${s.on ? " checked" : ""}>`
+    + `${s.t}<span class="p" id="v-${s.id}"></span></label>`
+    + `<input type="range" id="p-${s.id}" min="${s.lo}" max="${s.hi}" `
+    + `value="${Math.round((s.lo + s.hi) / 2)}" step="100">`).join("")
+    + SENSORS.filter(s => s.fixed).map(s =>
+      `<label class="ck" style="color:var(--ink3)">${s.t}`
+      + `<span class="p" id="v-${s.id}"></span></label>`
+      + `<input type="range" id="p-${s.id}" min="${s.lo}" max="${s.hi}" `
+      + `value="${Math.round((s.lo + s.hi) / 2)}" step="100">`).join("");
+  for (const s of SENSORS) {
+    const p = $("#p-" + s.id);
+    const show = () => { $("#v-" + s.id).textContent = fmt(+p.value) + " kr"; };
+    show();
+    p.addEventListener("input", () => { show(); recompute(false); });
+    const c = $("#s-" + s.id);
+    if (c) c.addEventListener("change", () => recompute(false));
+  }
+  PTS = scatter(+$("#n").value);
+  recompute(true);
+});
+
+$("#n").addEventListener("input", () => recompute(true));
+$("#fdom").addEventListener("input", () => recompute(true));
+for (const id of ["samp", "bot", "botp", "vis", "visp", "fail", "yr"])
+  $("#" + id).addEventListener("input", () => recompute(false));
+$("#preset").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  /* A preset sets the sampler ratio as well as the node count, so that each one
+     reproduces the costing of the corresponding stage in SETTLE.md rather than
+     quietly disagreeing with it. */
+  $("#n").value = b.dataset.n;
+  if (b.dataset.samp) $("#samp").value = b.dataset.samp;
+  if (b.dataset.bot) $("#bot").value = b.dataset.bot;
+  for (const x of $("#preset").children)
+    x.setAttribute("aria-pressed", x === b);
+  recompute(true);
+});
+addEventListener("resize", () => RINGS && draw());
+</script>
