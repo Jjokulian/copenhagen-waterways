@@ -385,6 +385,63 @@ The same bay carries the largest release nobody argued about. [OPEN_PROBLEMS.md]
 
 
 
+
+def manure_check(M):
+    """The prediction in 2c, checked against two open registers instead of waited on."""
+    o = []
+    w = o.append
+    lim = M["over_limit"]
+    w("### The prediction is checkable, and the check has been run\n")
+    w("*A quota transfers the constraint to the manure only when a holding's own land "
+      "cannot take what its animals produce.* That is not something to wait for: both "
+      "halves are in open registers and they join on the company number. The "
+      "livestock register carries **animal units** — `DE`, the unit the manure "
+      "regulation itself uses — against the business that runs each site; the "
+      "field-parcel register carries the same business's declared hectares. "
+      "`scripts/manure.py` fetches both and divides.\n")
+    w(f"| | |\n|---|---:|")
+    w(f"| Livestock sites | {M['sites']:,} |")
+    w(f"| Businesses keeping animals | {M['cvrs_with_animals']:,} |")
+    w(f"| …of which also declare land | **{M['cvrs_with_both']:,}** |")
+    w(f"| Animal units, national | {M['animal_units_total']:,.0f} |")
+    w(f"| …on businesses that declare land | {M['animal_units_on_matched']:,.0f} "
+      f"({M['animal_units_on_matched']/M['animal_units_total']*100:.0f}%) |")
+    w(f"| Median animal units per declared hectare | "
+      f"{M['percentiles_de_per_ha']['50']:.2f} |")
+    w(f"| 90th percentile | {M['percentiles_de_per_ha']['90']:.2f} |")
+    w(f"| 99th percentile | {M['percentiles_de_per_ha']['99']:.1f} |")
+    w("")
+    a14, a17 = lim["1.4"], lim["1.7"]
+    w(f"**Above the classic harmony limit of 1.4 animal units per hectare sit "
+      f"{a14['businesses']:,} businesses — {a14['share_of_businesses_pct']:.0f}% of "
+      f"those with land — and they hold "
+      f"{a14['share_of_herd_pct']:.0f}% of the national herd.** At 1.7 it is "
+      f"{a17['businesses']:,} businesses and {a17['share_of_herd_pct']:.0f}% of the "
+      "herd. Read that plainly: **roughly half the animals in Denmark are on farms "
+      "whose own declared land cannot take their own manure.** The export the law "
+      "would force is not a future consequence of a quota. It is the arrangement "
+      "already in place, held together by inter-farm contracts — and those contracts "
+      "are the one part of it that is not public.\n")
+    w("*What this does not establish.* Declared area is land declared for area "
+      "support, which is not the same as every hectare a business may spread on: "
+      "rented-in land can be missing, and a business that buys spreading capacity "
+      "from a neighbour looks land-poor here and is compliant in law. "
+      f"{100 - M['cvrs_with_both']/M['cvrs_with_animals']*100:.0f}% of "
+      "animal-keeping businesses declare no land at all in this join, which is "
+      "either genuine landlessness or a failed match through holding companies. And "
+      "the thresholds are the pre-2017 harmony units: Denmark now regulates in "
+      "kilograms of nitrogen per hectare, so these indicate the pressure rather than "
+      "test compliance.\n")
+    w("*Provenance.* Both layers are open and need no key. They were located and "
+      "documented by the sibling project "
+      "[danish-livestock](https://github.com/Jjokulian), which mapped all 57,860 "
+      "sites; this project fetches them from the same primary source rather than "
+      "copying its data, and the two traps it found — an encoding the server lies "
+      "about, and herd-size columns that do not partition — are handled in "
+      "`scripts/manure.py` because of that documentation.\n")
+    return "\n".join(o)
+
+
 def whose_nitrogen(cl):
     """Section 2c: the question the load apportionment cannot answer, and the two
     halves of the input side that can be counted instead."""
@@ -469,6 +526,9 @@ def whose_nitrogen(cl):
     ]:
         w(f"- **{h}** {t}")
     w("")
+    mp = os.path.join(DERIVED, "manure.json")
+    if os.path.exists(mp):
+        w(manure_check(read_json(mp)))
     w("### What the law does to the herd, if the arithmetic binds\n")
     w("The instruments are in the public record rather than in this analysis: L5 "
       "passed 119–34 on 3 September 2026 and puts **per-catchment nitrogen quotas on "
