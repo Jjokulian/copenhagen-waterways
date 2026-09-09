@@ -465,7 +465,10 @@ def livestock_section():
       "no result anywhere has to be extrapolated to a place nobody visited — is "
       "constructed in [SENSING.md](#SENSING.md), down to the sensors, the "
       "fingerprint that separates a pig from a person from a road, and what it "
-      "would cost. It comes to about the price of twenty streets.\n")
+      "would cost. It comes to about the price of twenty streets. "
+      "**[The protocol is written out](#SETTLE.md)**: three hypotheses stated so "
+      "they can lose, the decision rules fixed before the first sample, twelve "
+      "matched catchment pairs, and a pilot inside the reach of one association.\n")
     a("The three things that would settle it are cheap and none of them is being "
       "done: that event-based sampling in the days after spreading, copper and "
       "zinc with veterinary residues in stream and marine sediment rather than in "

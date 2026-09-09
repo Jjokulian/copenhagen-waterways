@@ -589,9 +589,10 @@ X = [
      "arrives* even where this project disputes how much. **That second outcome is "
      "the one worth pre-committing to publish**, because it argues against the "
      "suspicion that motivated the design.",
-     "The dense version of this - a node on every stream that reaches the sea, and "
-     "the fingerprint panel behind it - is constructed and costed in "
-     "[SENSING.md](#SENSING.md). "
+     "The instrument is constructed in [SENSING.md](#SENSING.md) and the full "
+     "protocol - hypotheses that can lose, the decision rules fixed before the "
+     "first sample, the twelve matched pairs and what invalidates the whole thing "
+     "rather than answering it - is [SETTLE.md](#SETTLE.md). "
      "This is the cheapest unbought answer in the whole document. The instruments "
      "are ordinary autosamplers and a lab list, the timing is fixed by a calendar "
      "everyone already knows, and the comparison catchments exist. It is also the "

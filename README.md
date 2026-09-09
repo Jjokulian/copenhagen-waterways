@@ -115,6 +115,10 @@ docs/
   CURRENTS.md             where the water goes, generated
   SOLUTIONS.md            the response, measured from the city's own layers
   OPEN_PROBLEMS.md        what this could not settle, hand-maintained
+  SENSING.md              the faecal fingerprint, and the network that would
+                          measure it everywhere - construction, hand-written
+  SETTLE.md               the protocol that would settle it: hypotheses that can
+                          lose, decision rules fixed in advance - hand-written
   PROGRAMME.md            THE ARGUMENT - what ought to be done, labelled as such
   EXTERNALITY.md          a deposit with an uncapped tail, and the supply
                           landscape it would produce - argument, hand-written
