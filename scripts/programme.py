@@ -2218,6 +2218,181 @@ def main():
     a("")
 
     # ================================================================ HONEST
+    # -------------------------------------------------------- WHO CAN CONTRIBUTE
+    a("## Who can contribute without being told to\n")
+    a("The table above is a list of asks addressed to people who would have to be "
+      "persuaded, funded or compelled. It is the slow half. This is the other one: "
+      "**things that can be started by whoever already owns the ground, the asset "
+      "or the decision** — no new authority, no statutory change, and in several "
+      "cases a revenue rather than a cost.\n")
+    a("It matters for a reason beyond willingness. Every entry here creates a place "
+      "that did something different, on a date — which is the "
+      "[counterfactual](#PLACES.md) the whole field is short of. A voluntary "
+      "contributor is not a smaller version of a regulated one. It is the control "
+      "arm.\n")
+    a("| Who | What they can start | What it costs them | What it would show |")
+    a("|---|---|---|---|")
+    for who, what, cost, show in [
+        ("**A farmer with a coastal outfall**",
+         "Run the uptake as well as the discharge: mussel lines or macroalgae in "
+         "front of the catchment they farm. The nitrogen that left the field is "
+         "harvested as biomass rather than argued about",
+         "capital and a licence — and it is a **crop**, with feed, fertiliser and "
+         "food markets at the end of it",
+         "whether extractive aquaculture removes at the loads that actually arrive "
+         "here, which section 3 says is the weaker of its two arguments and the one "
+         "nobody has measured locally"),
+        ("**A landowner upstream**",
+         "Take a wet corner out of production and let it be a wetland again — the "
+         "measure section 6 argues for, at the only scale where it needs nobody's "
+         "permission",
+         "the margin on the worst field on the farm",
+         "retention on a real catchment, against its own record"),
+        ("**A municipality**",
+         "Refuse a compound in its own procurement and on its own ground, and write "
+         "the date down. Put everyday rain from one street on the surface route "
+         "already designed",
+         "procurement effort; one street's civil works",
+         "the use-restriction lever that [survives harmonisation](#PROGRAMME.md), "
+         "and the first street-scale before-and-after in the country"),
+        ("**A utility**",
+         "Instrument one large overflow structure for flow rather than for events, "
+         "and publish the series",
+         "one sensor package and the will to publish it",
+         "whether the concentration argument or the volume argument is right — "
+         "which is the largest single uncertainty in this document"),
+        ("**A sports club or a school**",
+         "Ask what happens to the infill on their own pitch, and put the answer in "
+         "the contract at renewal",
+         "nothing, at renewal",
+         "whether the return obligation in [EXTERNALITY.md](#EXTERNALITY.md) is "
+         "administratively real or only elegant"),
+        ("**A housing association**",
+         "Disconnect roofs from the combined sewer into a courtyard basin or a "
+         "raingarden; agree a fixture standard for what may go to the rain line",
+         "a courtyard's worth of work, often already funded as climate adaptation",
+         "the greywater case in section 2, at a scale where the plumbing is one "
+         "owner's decision"),
+        ("**A boat club**",
+         "Mechanical hull cleaning instead of antifouling, for the club's own moorings",
+         "a haul-out routine",
+         "whether occupying the niche beats poisoning it, on copper, in one harbour"),
+        ("**Anyone with a phone**",
+         "Record what the shore looked like, dated and located — the "
+         "[field log](../viz/log.html) exists for exactly this",
+         "an evening",
+         "the only route to an instrument for *fedtemøg*, which is one of the three "
+         "public words with nothing behind it"),
+        ("**Anyone with data access this project lacks**",
+         "Run the queries in [IF_YOU_HAVE_THE_DATA.md](#IF_YOU_HAVE_THE_DATA.md) "
+         "and publish what comes back",
+         "an afternoon and a login",
+         "sixty-one of the 166 mechanisms are blocked on a fetch, not on a thought"),
+    ]:
+        a(f"| {who} | {what} | {cost} | {show} |")
+    a("")
+    a("**The farmer row is the one worth arguing about**, so it is stated plainly "
+      "rather than buried in a table. The standard framing sets the farm against "
+      "the bay: the farm emits, the bay receives, and the instrument is a "
+      "restriction on the farm. Extractive aquaculture is the only intervention in "
+      "this document that **puts the removal in the same hands as the emission and "
+      "pays for it** — the same business harvests what left the field, and sells "
+      "it. That does not make the emission acceptable and it is not an offset "
+      "scheme; the nitrogen still has to come down. It makes the remedy a crop "
+      "rather than a penalty, which is a different politics from the one that has "
+      "produced two decades of deadlock — and it is testable on one farm, in one "
+      "season, by one person who decides to.\n")
+
+    # ------------------------------------------------------------ META-SOLUTION
+    a("## The last step: stop analysing and try things\n")
+    a("**This is the last step of the solution scope and not a shortcut past it.** "
+      "Said first, *just try things* is the oldest way to avoid an argument. Said "
+      "after the hypotheses have been laid out, the data queued, the constructions "
+      "held against the measurements and the field triaged, it is something else: "
+      "the recognition that **the observational route to an answer may not exist**. "
+      "Forty of the 166 mechanisms cannot be scored at all, because the deciding "
+      "measurement has no column anywhere; twenty more need an experiment nobody "
+      "has run. No amount of further collection reaches those sixty.\n")
+    a("So the entitlement is earned, and the instrument is the one "
+      "[PLACES.md](#PLACES.md) sets out: **fund trials of solution models, in named "
+      "places, with pre-stated outcomes, and let the results decide** — with the "
+      "anti-delay conditions attached there, because this argument is also exactly "
+      "what somebody who wanted to stall would say.\n")
+    a("What this page adds is the shape of the bill. Two properties make it "
+      "affordable to be wrong:\n")
+    a("- **Non-destructive.** Every trial below is reversible. A mussel line comes "
+      "up, a wet corner drains again, a bored pipe is capped, a monitoring station "
+      "is unbolted. Nothing here changes a coast irreversibly, which means the cost "
+      "of a failed trial is the capital and not the place.\n"
+      "- **Instrumented, so the failure is legible.** The reason trials of this kind "
+      "usually settle nothing is that nobody measured beyond what the public could "
+      "already see. Sensors are now the cheap part.\n")
+    a("### What it would cost to just try it\n")
+    a("**Stated, not quoted.** No tender has been sought and none of these figures "
+      "came from a supplier. They are order-of-magnitude, in Danish kroner, meant "
+      "to be replaced by a utility's real numbers — and published in this form "
+      "precisely so that replacing them is easy and the argument survives it.\n")
+    a("| Trial unit | Low | High | What it settles |")
+    a("|---|---:|---:|---|")
+    for unit, lo, hi, settles in [
+        ("One bored rain line, shaft to shaft (80 m)", "160,000", "640,000",
+         "whether the light retrofit works in a real street, at 2,000–8,000 kr/m"),
+        ("Cutting one street's gullies over, with the two-storey shafts",
+         "100,000", "300,000", "the junction detail, under traffic"),
+        ("One shallow treatment cell, 1 ha, in an existing polder", "300,000",
+         "1,200,000", "capture, planting and the dredging cadence"),
+        ("Repurposing one spare basin as rain-line buffer", "200,000", "1,000,000",
+         "whether the retired basins are an asset or a stranded cost"),
+        ("Mussel or macroalgae line, 1 ha, in front of one catchment", "150,000",
+         "600,000", "uptake at the loads that actually arrive — and it is a crop"),
+        ("Rewetting one wet corner, 1 ha", "20,000", "100,000",
+         "retention on a real catchment against its own record"),
+        ("Mechanical hull cleaning for one club's moorings", "50,000", "200,000",
+         "occupying the niche instead of poisoning it, on copper"),
+    ]:
+        a(f"| {unit} | {lo} | {hi} | {settles} |")
+    a("")
+    a("### And the documentation, which is now the cheap half\n")
+    a("| Instrument | Hardware, per station | What it records |")
+    a("|---|---:|---|")
+    for inst, price, what in [
+        ("Multiparameter sonde — oxygen, temperature, conductivity, turbidity",
+         "15,000–60,000", "the variables the national programme samples monthly, "
+         "at minutes"),
+        ("Logger, telemetry and solar", "5,000–15,000",
+         "the series arriving without anybody visiting"),
+        ("Mount, enclosure, anti-fouling wiper", "3,000–10,000",
+         "whether it is still reading in August"),
+        ("Level and velocity at an overflow structure", "25,000–80,000",
+         "**flow**, which is the single largest uncertainty in this document"),
+    ]:
+        a(f"| {inst} | {price} | {what} |")
+    a("")
+    a("**Software is assumed free.** Not because it is worthless but because "
+      "ingestion, storage, alerting and a public page are now a weekend of work for "
+      "one competent person with a model to help, and the trajectory is going one "
+      "way. This project is itself the evidence: everything on this site was "
+      "generated from public data by scripts in one repository, and the scripts are "
+      "not the expensive part.\n")
+    a("**The recurring cost is not the hardware, and pretending otherwise is how "
+      "these schemes die.** A water sensor fouls. It needs cleaning and "
+      "recalibration on a schedule of weeks in summer, and a series nobody "
+      "maintained is worse than no series because it looks like data. Budget the "
+      "visits, or fit the wiper and budget fewer of them, but budget them.\n")
+    a("### Which makes the whole proposal one sentence\n")
+    a("> **This solution page could be implemented on trial, non-destructively, at "
+      "roughly 1–4 million kroner per site**, with the effects documented beyond "
+      "what the public can see for **25,000–150,000 kroner of sensing hardware per "
+      "site** — and every part of it removable if it fails. That is the price of "
+      "finding out, against a national programme that is expensive, recurring, "
+      "irreversible within a year, and produces no test.\n")
+    a("*The comparison is the argument, and it is not close.* A portfolio of six "
+      "trials with a dozen instrumented stations is a few million kroner — the "
+      "order of a single junction rebuild — and it would produce the first "
+      "before-and-after evidence this coast has ever had. **The expensive half of "
+      "that design already exists**: forty years of near-bed oxygen at 1,415 "
+      "stations is the *before*, and it is paid for.\n")
+
     a("## What would make this wrong\n")
     a("A programme that cannot be refuted is not a programme. Each of these would "
       "damage the argument above, and each is testable:\n")
