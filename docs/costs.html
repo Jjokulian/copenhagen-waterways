@@ -52,6 +52,8 @@ dd b{font-weight:640} .big{font-size:15px}
 .note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
   border-left:2px solid var(--line);padding-left:9px}
 .note b{color:var(--ink2)}
+label.ck{display:block;font-size:12.5px;margin:0 0 4px;cursor:pointer;color:var(--ink2)}
+label.ck input{margin-right:7px;vertical-align:-1px}
 </style>
 
 <header>
@@ -60,6 +62,11 @@ dd b{font-weight:640} .big{font-size:15px}
   the other half of the argument: not what it costs to <i>find out</i>, but what it
   costs to <b>do</b> — taking Copenhagen's everyday rain out of the combined sewer,
   street by street, on the catchments that actually exist.</p>
+  <p><b>Eleven municipalities line this water</b> — København, Frederiksberg, Tårnby,
+  Dragør, Hvidovre, Brøndby, Vallensbæk, Ishøj, Greve, Solrød and Køge — and
+  <b>1,117,636 people live in them</b>, which is <b>18.5% of Denmark</b> (Statistics
+  Denmark, 2026 Q3). Whatever this buys or fails to buy, that is the number of people
+  who would live differently beside it.</p>
   <p>Every quantity on the left is measured — impervious area, person equivalents,
   street length, gullies and chambers come from the municipal sewer layer, the OSM road
   extract and the city's own structure register. <b>Every price on the right is a
@@ -85,6 +92,9 @@ dd b{font-weight:640} .big{font-size:15px}
       <b id="sharev">100%</b></div>
     <div class="rangerow"><span>which is</span><b id="picked">—</b></div>
     <p class="note" id="concentration"></p>
+
+    <h3>What is in the scenario</h3>
+    <div id="include"></div>
 
     <h3>How it is built</h3>
     <div class="seg" id="arr">
@@ -120,6 +130,27 @@ dd b{font-weight:640} .big{font-size:15px}
     <input type="range" id="pwet" min="10" max="400" value="70" step="10">
     <div class="rangerow"><span>wetland sizing, % of impervious area</span><b id="wetv">2%</b></div>
     <input type="range" id="wet" min="0" max="6" value="2" step="1">
+    <div class="rangerow"><span>conveyance to the terminal water, per metre</span>
+      <b id="pconv">7,000 kr</b></div>
+    <input type="range" id="pcon" min="1000" max="30000" value="7000" step="500">
+    <div class="rangerow"><span>its length</span><b id="conkmv">12 km</b></div>
+    <input type="range" id="conkm" min="0" max="60" value="12" step="1">
+    <div class="rangerow"><span>repurposing one basin</span><b id="pbasv">400,000 kr</b></div>
+    <input type="range" id="pbas" min="0" max="3000000" value="400000" step="50000">
+    <div class="rangerow"><span>disconnecting one building's roof</span>
+      <b id="proofv">25,000 kr</b></div>
+    <input type="range" id="proof" min="0" max="150000" value="25000" step="2500">
+    <div class="rangerow"><span>share of buildings replumbed</span><b id="plshv">40%</b></div>
+    <input type="range" id="plsh" min="0" max="100" value="40" step="5">
+    <div class="rangerow"><span>greywater separation inside, per building</span>
+      <b id="pgreyv">70,000 kr</b></div>
+    <input type="range" id="pgrey" min="0" max="400000" value="70000" step="5000">
+    <div class="rangerow"><span>share of those that also get it</span><b id="grshv">25%</b></div>
+    <input type="range" id="grsh" min="0" max="100" value="25" step="5">
+    <div class="rangerow"><span>rewetting and uptake, per hectare</span><b id="psrcv">120,000 kr</b></div>
+    <input type="range" id="psrc" min="0" max="600000" value="120000" step="10000">
+    <div class="rangerow"><span>hectares of it</span><b id="srchav">300 ha</b></div>
+    <input type="range" id="srcha" min="0" max="3000" value="300" step="50">
 
     <h3>Over how long</h3>
     <div class="rangerow"><span>years of programme</span><b id="yrv">25</b></div>
@@ -144,6 +175,38 @@ const kr = n => n >= 1e9 ? fmt(n / 1e9, 2) + " bn kr"
 const css = v => getComputedStyle(document.body).getPropertyValue(v).trim();
 
 let D = null, COMB = [], PROJ = null, arr = "light", where = "all";
+
+/* The seven sections of the programme, as things that can be switched on and off,
+   because the argument is that they are separable: each acts on what arrives rather
+   than on what causes it, so a scenario that buys three of them is not a broken
+   version of a scenario that buys seven. */
+const INCLUDE = [
+  {id: "line", t: "Take the rain out — the new line", on: true,
+   why: "section 1: the pipe or the channel that carries everyday rain"},
+  {id: "gully", t: "Cut the gullies over", on: true,
+   why: "every street inlet moved from the sewer to the rain line"},
+  {id: "shaft", t: "The two-storey shafts", on: true,
+   why: "the pan that lets one opening serve both systems"},
+  {id: "sewer", t: "Deal with the old sewer", on: true,
+   why: "lining it down, or relaying it deeper — nothing, in the light arrangement"},
+  {id: "cells", t: "Treatment cells at the receiving end", on: true,
+   why: "section 3: settling what the streets gave it"},
+  {id: "conv", t: "Conveyance to a terminal water", on: true,
+   why: "section 2: getting there without discharging to the bay on the way"},
+  {id: "basin", t: "Repurpose the retired basins", on: false,
+   why: "storage in front of the filters, instead of a stranded asset"},
+  {id: "source", t: "Source control — rewetting and uptake", on: false,
+   why: "sections 5 and 6, at whatever scale the sliders say"},
+  {id: "plumb", t: "Replumb buildings — roofs, and greywater where it suits", on: false,
+   why: "the household half of section 2: a downpipe onto the rain line, and the "
+        + "fixture standard that decides what may follow it"},
+  {id: "mon", t: "Instrument it", on: true,
+   why: "the monitoring that would show whether any of it worked"},
+];
+const on = id => {
+  const el = document.querySelector("#i-" + id);
+  return el ? el.checked : false;
+};
 
 function scoped() {
   const list = COMB.filter(c => where === "all" || c.i === where);
@@ -218,15 +281,29 @@ function recompute(redraw) {
   const bored = +$("#bore").value / 100;
   const pipeM = metres * (1 - surf);
   const chM = metres * surf;
-  const cPipe = pipeM * (bored * +$("#pbore").value + (1 - bored) * +$("#pcut").value);
-  const cCh = chM * +$("#pch").value;
-  const cGul = gullies * +$("#pgul").value;
-  const cShaft = shafts * +$("#psh").value;
-  const cLine = arr === "lined" ? metres * +$("#plin").value : 0;
-  const cDrop = arr === "heavy" ? pipeM * +$("#pcut").value * 0.55 : 0;
-  const wetHa = ha * (+$("#wet").value / 100);
+  const cPipe = on("line")
+    ? pipeM * (bored * +$("#pbore").value + (1 - bored) * +$("#pcut").value) : 0;
+  const cCh = on("line") ? chM * +$("#pch").value : 0;
+  const cGul = on("gully") ? gullies * +$("#pgul").value : 0;
+  const cShaft = on("shaft") ? shafts * +$("#psh").value : 0;
+  const cLine = on("sewer") && arr === "lined" ? metres * +$("#plin").value : 0;
+  const cDrop = on("sewer") && arr === "heavy" ? pipeM * +$("#pcut").value * 0.55 : 0;
+  const wetHa = on("cells") ? ha * (+$("#wet").value / 100) : 0;
   const cWet = wetHa * 1e4 * +$("#pwet").value;
-  const total = cPipe + cCh + cGul + cShaft + cLine + cDrop + cWet;
+  const conM = on("conv") ? +$("#conkm").value * 1000 : 0;
+  const cConv = conM * +$("#pcon").value;
+  const basins = Math.round(D.outfall_totals.combined_structures * (ha / haAll));
+  const cBasin = on("basin") ? basins * +$("#pbas").value : 0;
+  const cSrc = on("source") ? +$("#srcha").value * +$("#psrc").value : 0;
+  const bld = sel.out.reduce((a, c) => a + (c.bu || 0), 0);
+  const plumbed = Math.round(bld * (+$("#plsh").value / 100));
+  const greyed = Math.round(plumbed * (+$("#grsh").value / 100));
+  const cPlumb = on("plumb")
+    ? plumbed * +$("#proof").value + greyed * +$("#pgrey").value : 0;
+  // monitoring is the sensing tool's number, apportioned to this share of the country
+  const cMon = on("mon") ? 750e6 * (ha / 43522 / 100 + 0.02) : 0;
+  const total = cPipe + cCh + cGul + cShaft + cLine + cDrop + cWet + cConv + cBasin
+    + cSrc + cPlumb + cMon;
   const years = +$("#yr").value;
 
   const Q = ha * 1e4 * (D.rain.design_mm_h / 1000) * D.rain.runoff_c / 3600;
@@ -239,8 +316,13 @@ function recompute(redraw) {
   $("#yrv").textContent = years;
   for (const [id, unit] of [["pbore", " kr"], ["pcut", " kr"], ["pch", " kr"],
                             ["pgul", " kr"], ["psh", " kr"], ["plin", " kr"],
-                            ["pwet", " kr"]])
+                            ["pwet", " kr"], ["pcon", " kr"], ["pbas", " kr"],
+                            ["psrc", " kr"], ["proof", " kr"], ["pgrey", " kr"]])
     $("#" + id + "v").textContent = fmt(+$("#" + id).value) + unit;
+  $("#conkmv").textContent = $("#conkm").value + " km";
+  $("#srchav").textContent = $("#srcha").value + " ha";
+  $("#plshv").textContent = $("#plsh").value + "%";
+  $("#grshv").textContent = $("#grsh").value + "%";
   $("#picked").textContent = fmt(sel.out.length) + " of " + fmt(sel.list.length)
     + " catchments";
 
@@ -253,6 +335,11 @@ function recompute(redraw) {
       : arr === "heavy" ? ["Relaying the sewer a metre deeper", kr(cDrop)]
       : ["The old sewer, untouched", "0 kr"],
     [`Treatment cells — ${fmt(wetHa, 1)} ha`, kr(cWet)],
+    [`Conveyance to a terminal water — ${fmt(conM / 1000)} km`, kr(cConv)],
+    [`Repurposing ~${fmt(basins)} basins`, kr(cBasin)],
+    [`Replumbing — ${fmt(plumbed)} roofs, ${fmt(greyed)} with greywater`, kr(cPlumb)],
+    [`Source control — ${fmt(+$("#srcha").value)} ha`, kr(cSrc)],
+    ["Instrumenting it, over 25 years", kr(cMon)],
     ["<b>Capital</b>", "<b class='big'>" + kr(total) + "</b>"],
     [`Per year over ${years}`, kr(total / years)],
   ].map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
@@ -275,6 +362,7 @@ function recompute(redraw) {
     ["Overflow structures in that share", "~" + fmt(D.outfall_totals.combined_structures * csoShare)],
     ["Basin volume it retires", fmt(D.outfall_totals.combined_basin_m3 * csoShare) + " m³"],
     ["People connected to it", fmt(pe)],
+    ["Buildings inside it", fmt(bld)],
   ].map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
 
   const top = sel.out.length, all = sel.list.length;
@@ -299,6 +387,10 @@ fetch("data/architecture.json").then(r => r.json()).then(d => {
   $("#cap").textContent = "The " + fmt(COMB.length) + " combined-sewered catchments of "
     + "Copenhagen and the inner suburbs. Filled: in the selected scope. The rest are "
     + "drawn faint, because a programme that stops somewhere should show where.";
+  $("#include").innerHTML = INCLUDE.map(x =>
+    `<label class="ck" title="${x.why}"><input type="checkbox" id="i-${x.id}"`
+    + `${x.on ? " checked" : ""}> ${x.t}</label>`).join("");
+  $("#include").addEventListener("change", () => recompute(false));
   recompute(true);
 });
 
@@ -318,7 +410,8 @@ $("#arr").addEventListener("click", e => {
 });
 $("#share").addEventListener("input", () => recompute(true));
 for (const id of ["bore", "surf", "pbore", "pcut", "pch", "pgul", "psh", "plin",
-                  "pwet", "wet", "yr"])
+                  "pwet", "wet", "pcon", "conkm", "pbas", "psrc", "srcha", "proof",
+                  "plsh", "pgrey", "grsh", "yr"])
   $("#" + id).addEventListener("input", () => recompute(false));
 addEventListener("resize", () => D && recompute(true));
 </script>

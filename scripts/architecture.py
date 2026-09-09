@@ -176,6 +176,68 @@ def structures(cats):
     return out
 
 
+def buildings(cats):
+    """Count buildings into the catchments they stand in, from the OSM extract.
+
+    Any scheme that is priced per property needs a denominator, and PE is not one:
+    person equivalents count load, not addresses. The extract is 45 MB of Overpass
+    JSON and this box has a few hundred MB of RAM, so it is scanned as a byte stream
+    for the bounding box each element already carries rather than parsed - the
+    centroid of a building's bbox is well inside the building at this scale.
+
+    Adds `bu` to each catchment. Returns the total counted, or None if no extract.
+    """
+    import re
+    path = os.path.join(RAW, "osm", "buildings.json")
+    if not os.path.exists(path):
+        return None
+    CELL = 0.004
+    grid, polys = {}, []
+    for n, c in enumerate(cats):
+        for ring in c["g"]:
+            xs = [q[0] for q in ring]
+            ys = [q[1] for q in ring]
+            b = (min(xs), min(ys), max(xs), max(ys))
+            polys.append((ring, b, n))
+            for i in range(int(b[0] / CELL), int(b[2] / CELL) + 1):
+                for j in range(int(b[1] / CELL), int(b[3] / CELL) + 1):
+                    grid.setdefault((i, j), []).append(len(polys) - 1)
+
+    def hit(x, y):
+        for k in grid.get((int(x / CELL), int(y / CELL)), ()):
+            ring, b, n = polys[k]
+            if not (b[0] <= x <= b[2] and b[1] <= y <= b[3]):
+                continue
+            ins = False
+            for a in range(len(ring)):
+                xi, yi = ring[a - 1]
+                xj, yj = ring[a]
+                if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+                    ins = not ins
+            if ins:
+                return n
+        return None
+
+    pat = re.compile(rb'"minlat":\s*([\d.]+),\s*"minlon":\s*([\d.]+),'
+                     rb'\s*"maxlat":\s*([\d.]+),\s*"maxlon":\s*([\d.]+)')
+    total, placed, tail = 0, 0, b""
+    with open(path, "rb") as f:
+        while True:
+            chunk = f.read(1 << 22)
+            if not chunk:
+                break
+            buf = tail + chunk
+            for m in pat.finditer(buf):
+                total += 1
+                a, b_, c_, d = (float(x) for x in m.groups())
+                n = hit((b_ + d) / 2, (a + c_) / 2)
+                if n is not None:
+                    cats[n]["bu"] = cats[n].get("bu", 0) + 1
+                    placed += 1
+            tail = buf[-200:]
+    return {"in_extract": total, "in_a_catchment": placed}
+
+
 def street_metres(cats):
     """Road centreline inside the combined-sewered catchments, by island.
 
@@ -408,6 +470,10 @@ def main():
             if len(pts) >= 2:
                 coast.append([[round(x, 5), round(y, 5)] for x, y in pts])
 
+    bld = buildings(cats)
+    if bld:
+        log(f"  buildings: {bld['in_extract']:,} in the extract, "
+            f"{bld['in_a_catchment']:,} inside a catchment")
     struct = structures(cats)
     if struct:
         for k, v in struct.items():
@@ -459,6 +525,7 @@ def main():
         },
         "street_m": streets,
         "structures": struct,
+        "buildings": bld,
         "plan_pipe_ends": ends,
         "_street_note": "Road centreline inside the combined catchments, from the "
                         "OSM extract. The copy here has no tags, so paths and "
