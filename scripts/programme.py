@@ -854,6 +854,16 @@ def main():
       "It is a flow threshold, which is why the annual-average accounting cannot see "
       "it: the ledger averages a quantity that is delivered in the few hours a year "
       "the threshold is crossed.\n")
+    a("> **[What it would look like from the bank →](rainwater_river.html)** — an "
+      "artist's impression of the same arrangement at eye level: the pipes handing "
+      "the rain to an open channel, the channel as a river through the city, and "
+      "the reed cells on Amager that settle what the streets gave it. It is drawn "
+      "because *light treatment on Amager* is easy to hear as sewage ponds in a "
+      "bird reserve, and it is not that: what runs in it is rain, the sediment the "
+      "rain carries, and — in the scenario where what people put down a drain is "
+      "dealt with at source — the water from a shower or a washing machine. The "
+      "toilet and the kitchen stay in a different pipe, which is drawn beside "
+      "it.\n")
     a("**And what is held between flushes is not the water that went in.** A basin "
       "holding settled sewage solids goes anoxic in the sediment within days, and "
       "what leaves in the flush is the reduced product of everything that settled "

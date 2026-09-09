@@ -1,0 +1,557 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The rain, above ground</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --accent:#2f6a95; --warn:#b4532f; --new:#1f7a5a; --model:#8a6d3b;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --accent:#8fbcd9; --warn:#e0866a; --new:#5fbf98; --model:#c8a76a;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --accent:#8fbcd9; --warn:#e0866a; --new:#5fbf98; --model:#c8a76a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:22px 28px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:23px;font-weight:640;letter-spacing:-.01em}
+header p{margin:0 0 5px;max-width:84ch;color:var(--ink2)}
+a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 330px}
+@media(max-width:1040px){.wrap{grid-template-columns:1fr}}
+#stage{position:relative;min-width:0;background:#cfd9dd}
+#stage canvas{display:block;width:100%;height:100%}
+#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lab{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-size:11.5px;
+  color:#1c1d22;background:#fffefbdd;border:1px solid #00000018;border-radius:3px;
+  padding:1px 6px;box-shadow:0 1px 4px #0000001a}
+.lab.big{font-size:12.5px;font-weight:640}
+.lab.no{color:#8a3a24;border-color:#8a3a2455;background:#fff4f0dd}
+.hint{position:absolute;left:12px;bottom:10px;font-size:11.5px;color:#3d474d;
+  background:#ffffffb0;padding:2px 7px;border-radius:3px}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:15px 17px 40px;
+  max-height:100vh;overflow:auto}
+@media(max-width:1040px){aside{border-left:0;border-top:1px solid var(--line);max-height:none}}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);
+  margin:18px 0 7px;font-weight:600}
+h3:first-of-type{margin-top:0}
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:4px;
+  overflow:hidden;margin:0 0 9px}
+.seg button{flex:1 1 33%;font:inherit;font-size:12.5px;padding:6px 3px;cursor:pointer;
+  background:var(--ground);color:var(--ink2);border:0;border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff;font-weight:600}
+ul.what{list-style:none;margin:0;padding:0;font-size:12.5px}
+ul.what li{display:flex;gap:8px;align-items:baseline;padding:3px 0}
+ul.what .dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto;translate:0 1px}
+ul.what.no li{color:var(--warn)}
+ul.what.no .dot{border:1.5px solid var(--warn);background:none}
+label.ck{display:block;font-size:12.5px;color:var(--ink2);margin:0 0 5px;cursor:pointer}
+.note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
+  border-left:2px solid var(--line);padding-left:9px}
+.note b{color:var(--ink2)}
+</style>
+
+<header>
+  <h1>The rain, above ground</h1>
+  <p>What section 2 of the argument would actually look like: the pipes hand the rain
+  to a channel instead of to the sewer, the channel runs as a river through the city,
+  and it ends in shallow reed cells on Amager that settle what the streets gave it.
+  <b>This is an artist's impression.</b> The arrangement is the proposal; the shapes,
+  the routes, the buildings and the birds are invented. Nothing here is a survey.</p>
+  <p>It exists to settle one confusion. <b>This is not sewage.</b> What runs in this
+  channel is rain, the sediment the rain drags off the streets, and — in the scenario
+  where the chemicals people put down drains are dealt with at source — the water from
+  a shower or a washing machine. The toilet and the kitchen never enter it. They stay
+  in a pipe that goes to a treatment works, which is the dark line at the edge of this
+  scene and the only thing in it that smells.
+  <a href="../index.html#PROGRAMME.md">The argument →</a></p>
+</header>
+
+<div class="wrap">
+  <div id="stage"><div id="labels"></div>
+    <div class="hint">drag to look · scroll to zoom</div></div>
+  <aside>
+    <h3>Where to stand</h3>
+    <div class="seg" id="view">
+      <button data-v="over" aria-pressed="true">Whole run</button>
+      <button data-v="inlet" aria-pressed="false">A street inlet</button>
+      <button data-v="river" aria-pressed="false">The river</button>
+      <button data-v="cells" aria-pressed="false">The reed cells</button>
+      <button data-v="outlet" aria-pressed="false">The outlet</button>
+      <button data-v="dredge" aria-pressed="false">The cell being cleaned</button>
+    </div>
+    <label class="ck"><input type="checkbox" id="spin"> drift slowly</label>
+    <label class="ck"><input type="checkbox" id="silt" checked> show what the rain
+      carries</label>
+    <label class="ck"><input type="checkbox" id="lbl" checked> labels</label>
+
+    <h3>What is in this water</h3>
+    <ul class="what" id="yes"></ul>
+    <h3>What is not</h3>
+    <ul class="what no" id="no"></ul>
+
+    <h3>Why it can look like this</h3>
+    <p class="note" style="margin-top:0">A stormwater pond is not a sewage works
+    because the two are removing different things. Sewage treatment breaks down
+    dissolved and biological load, which needs aeration, energy and sludge handling.
+    <b>Street runoff carries its pollution attached to particles</b> — metals, PAH,
+    tyre wear, microplastics — and particles fall out of still water on their own.
+    The machine is gravity, reeds and time.</p>
+    <p class="note">Which is also why the cells are shallow, wide and planted rather
+    than deep and still, and why one of them is always out of service being dredged.
+    <b>A cell that is never dredged becomes the thing it was built to prevent</b> —
+    that is the condition attached to the whole idea, and it is drawn here rather
+    than left in a maintenance plan.</p>
+    <p class="note"><b>Held against the same standard as everything else here:</b>
+    this picture establishes nothing. It is what the proposal would look like if it
+    worked, drawn so that “light treatment on Amager” stops meaning “sewage ponds in
+    a bird reserve”, which it never did.</p>
+  </aside>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const IN_WATER = [
+  ["#7fa8bd", "Rain, off roofs and streets"],
+  ["#a08f6d", "The sediment it drags with it — and the metals, tyre wear and "
+            + "microplastics attached to that sediment"],
+  ["#8fbfa8", "Shower and washing-machine water, in the scenario where what goes "
+            + "down a drain is dealt with at source"],
+  ["#c9d3d8", "Soap, which is the worst of it"],
+];
+const NOT_IN_WATER = [
+  ["Toilet waste"], ["Kitchen fat and food waste"],
+  ["Anything from a fixture the standard does not name"],
+  ["The combined sewer's overflow — there is nothing left to overflow"],
+];
+
+/* ------------------------------------------------------------------- scene ---- */
+let scene, camera, renderer, clock, water = [], silt = null, labels = [];
+let spin = false, showSilt = true, showLab = true;
+const R = 1;                                    // one unit = one metre, roughly
+
+const CURVE_PTS = [                             // the river, meandering to Amager
+  [-96, 0, -70], [-72, 0, -58], [-54, 0, -40], [-40, 0, -18], [-30, 0, 4],
+  [-16, 0, 20], [2, 0, 30], [20, 0, 34], [38, 0, 32], [54, 0, 26],
+];
+let curve = null;
+
+function tex(kind) {
+  const c = document.createElement("canvas");
+  c.width = c.height = 128;
+  const x = c.getContext("2d");
+  if (kind === "water") {
+    x.fillStyle = "#4d8296";
+    x.fillRect(0, 0, 128, 128);
+    x.strokeStyle = "#ffffff2e";
+    x.lineWidth = 2;
+    for (let i = 0; i < 16; i++) {
+      x.beginPath();
+      for (let j = 0; j <= 128; j += 8)
+        x.lineTo(j, i * 8 + Math.sin(j / 12 + i) * 2.4);
+      x.stroke();
+    }
+  } else {                                        // reed bed / grass
+    x.fillStyle = "#6f8f63";
+    x.fillRect(0, 0, 128, 128);
+    for (let i = 0; i < 900; i++) {
+      x.fillStyle = ["#7fa06f", "#5d7d54", "#8caa77"][i % 3];
+      x.fillRect(Math.random() * 128, Math.random() * 128, 2, 3);
+    }
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  return t;
+}
+const M = (c, o) => new THREE.MeshLambertMaterial(Object.assign({color: c}, o || {}));
+
+function ribbon(curve3, halfW, y, material, samples) {
+  const N = samples || 220;
+  const pos = [], uv = [], idx = [];
+  const up = new THREE.Vector3(0, 1, 0);
+  for (let i = 0; i <= N; i++) {
+    const t = i / N;
+    const p = curve3.getPoint(t), tg = curve3.getTangent(t);
+    const side = new THREE.Vector3().crossVectors(tg, up).normalize()
+      .multiplyScalar(halfW * (0.75 + 0.45 * Math.sin(t * 9)));
+    pos.push(p.x - side.x, y, p.z - side.z, p.x + side.x, y, p.z + side.z);
+    uv.push(0, t * 26, 1, t * 26);
+    if (i < N) {
+      const a = i * 2;
+      idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2);
+    }
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  return new THREE.Mesh(g, material);
+}
+
+function label(text, v, cls) {
+  const el = document.createElement("div");
+  el.className = "lab" + (cls ? " " + cls : "");
+  el.textContent = text;
+  $("#labels").appendChild(el);
+  labels.push({el, pos: v});
+}
+
+function reeds(cx, cz, rx, rz, n, colour) {
+  const g = new THREE.Group();
+  const geo = new THREE.ConeGeometry(0.28, 2.1, 4);
+  const mm = M(colour || 0x6f8f63);
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * Math.PI * 2, r = 0.86 + Math.random() * 0.2;
+    const m = new THREE.Mesh(geo, mm);
+    m.position.set(cx + Math.cos(a) * rx * r, 0.9, cz + Math.sin(a) * rz * r);
+    m.rotation.z = (Math.random() - .5) * .25;
+    m.scale.y = .7 + Math.random() * .8;
+    g.add(m);
+  }
+  return g;
+}
+
+function cell(cx, cz, rx, rz, drained) {
+  const g = new THREE.Group();
+  const bowl = new THREE.Mesh(new THREE.CylinderGeometry(1, .82, .9, 40),
+                              M(drained ? 0x8d7f6a : 0x6d7f6a));
+  bowl.scale.set(rx, 1, rz);
+  bowl.position.set(cx, -.45, cz);
+  g.add(bowl);
+  if (!drained) {
+    const w = new THREE.Mesh(new THREE.CircleGeometry(1, 44),
+      new THREE.MeshLambertMaterial({map: tex("water"), transparent: true,
+                                     opacity: .88}));
+    w.rotation.x = -Math.PI / 2;
+    w.scale.set(rx * .97, rz * .97, 1);
+    w.position.set(cx, .04, cz);
+    water.push(w.material);
+    g.add(w);
+    // a few floating leaves, so the surface is not a mirror
+    for (let i = 0; i < 26; i++) {
+      const a = Math.random() * 7, r = Math.sqrt(Math.random());
+      const leaf = new THREE.Mesh(new THREE.CircleGeometry(.5 + Math.random() * .6, 7),
+                                  M(0x5f8a63, {transparent: true, opacity: .85}));
+      leaf.rotation.x = -Math.PI / 2;
+      leaf.position.set(cx + Math.cos(a) * rx * r * .9, .06,
+                        cz + Math.sin(a) * rz * r * .9);
+      g.add(leaf);
+    }
+  }
+  g.add(reeds(cx, cz, rx, rz, 90));
+  return g;
+}
+
+function build() {
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xcfd9dd);
+  scene.fog = new THREE.Fog(0xcfd9dd, 120, 400);
+  curve = new THREE.CatmullRomCurve3(CURVE_PTS.map(p => new THREE.Vector3(...p)),
+                                     false, "catmullrom", .5);
+
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(600, 600),
+    new THREE.MeshLambertMaterial({map: tex("grass")}));
+  ground.material.map.repeat.set(60, 60);
+  ground.rotation.x = -Math.PI / 2;
+  ground.position.y = -.02;
+  scene.add(ground);
+
+  // ---- the city, abstracted: it is the source, not the subject
+  const blocks = new THREE.Group();
+  for (let i = 0; i < 190; i++) {
+    const bx = -150 + Math.random() * 120, bz = -160 + Math.random() * 150;
+    if (Math.abs(bx + 60) < 16 && bz > -90) continue;      // keep the valley clear
+    const w = 7 + Math.random() * 12, d = 7 + Math.random() * 12;
+    const h = 9 + Math.random() * 17;
+    const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d),
+                             M([0xb9b0a4, 0xc2b8a8, 0xada496][i % 3]));
+    b.position.set(bx, h / 2, bz);
+    blocks.add(b);
+    const roof = new THREE.Mesh(new THREE.BoxGeometry(w * 1.04, .5, d * 1.04),
+                                M([0x8d6a5c, 0x7d6156, 0x9a7566][i % 3]));
+    roof.position.set(bx, h + .2, bz);
+    blocks.add(roof);
+  }
+  scene.add(blocks);
+  label("the city that drains to it", new THREE.Vector3(-110, 26, -120), "big");
+
+  // ---- the channel: bank, then water, and the pipes handing over to it
+  const bank = ribbon(curve, 7.4, .02, M(0x9d9276));
+  scene.add(bank);
+  const wmat = new THREE.MeshLambertMaterial({map: tex("water"), transparent: true,
+                                              opacity: .9});
+  wmat.map.repeat.set(1, 1);
+  water.push(wmat);
+  scene.add(ribbon(curve, 5.2, .12, wmat));
+  for (let i = 0; i < 34; i++) {                            // planting along it
+    const t = .04 + Math.random() * .92;
+    const p = curve.getPoint(t), tg = curve.getTangent(t);
+    const s = new THREE.Vector3().crossVectors(tg, new THREE.Vector3(0, 1, 0))
+      .normalize().multiplyScalar(6.2 * (Math.random() < .5 ? -1 : 1));
+    scene.add(reeds(p.x + s.x, p.z + s.z, 1.6, 1.6, 12));
+    if (i % 5 === 0) {                                      // a willow
+      const tr = new THREE.Mesh(new THREE.CylinderGeometry(.35, .5, 4.5, 7),
+                                M(0x6d5b4a));
+      tr.position.set(p.x + s.x * 1.5, 2.2, p.z + s.z * 1.5);
+      scene.add(tr);
+      const cr = new THREE.Mesh(new THREE.SphereGeometry(3.2, 12, 9), M(0x5f8352));
+      cr.position.set(p.x + s.x * 1.5, 5.6, p.z + s.z * 1.5);
+      cr.scale.y = .78;
+      scene.add(cr);
+    }
+  }
+  // the afferents: this is where a pipe stops being the system and becomes a source
+  for (let k = 0; k < 7; k++) {
+    const t = .06 + k * .12;
+    const p = curve.getPoint(t), tg = curve.getTangent(t);
+    const s = new THREE.Vector3().crossVectors(tg, new THREE.Vector3(0, 1, 0))
+      .normalize().multiplyScalar(k % 2 ? 6.6 : -6.6);
+    const mouth = new THREE.Mesh(new THREE.CylinderGeometry(.55, .55, 2.4, 18, 1, true),
+                                 M(0x8e959b, {side: THREE.DoubleSide}));
+    mouth.rotation.z = Math.PI / 2;
+    mouth.rotation.y = Math.atan2(tg.x, tg.z);
+    mouth.position.set(p.x + s.x, 1.5, p.z + s.z);
+    scene.add(mouth);
+    const fall = new THREE.Mesh(new THREE.CylinderGeometry(.34, .5, 1.5, 12),
+                                M(0x9fc4d2, {transparent: true, opacity: .72}));
+    fall.position.set(p.x + s.x * .8, .78, p.z + s.z * .8);
+    scene.add(fall);
+    const ring = new THREE.Mesh(new THREE.RingGeometry(.7, 1.5, 22),
+                                M(0xdfeff4, {transparent: true, opacity: .5}));
+    ring.rotation.x = -Math.PI / 2;
+    ring.position.set(p.x + s.x * .8, .14, p.z + s.z * .8);
+    scene.add(ring);
+    if (k === 1)
+      label("a street's pipe, handing over", new THREE.Vector3(p.x + s.x, 4.2,
+                                                              p.z + s.z));
+  }
+  label("rain, and what it carried off the street",
+        curve.getPoint(.3).add(new THREE.Vector3(0, 7, 0)), "big");
+
+  // ---- the reed cells on Amager, one of them out of service
+  const CELLS = [[74, 10, 15, 11, false], [96, 22, 16, 12, false],
+                 [92, -6, 14, 10, false], [116, 8, 15, 11, true],
+                 [118, 32, 13, 10, false]];
+  for (const [cx, cz, rx, rz, dry] of CELLS) scene.add(cell(cx, cz, rx, rz, dry));
+  label("shallow, wide, planted — the machine is gravity and time",
+        new THREE.Vector3(92, 9, 10), "big");
+  label("one cell out of service, being dredged",
+        new THREE.Vector3(116, 6, 8));
+  // the dredging: a tidy, temporary, ordinary operation
+  const dig = new THREE.Mesh(new THREE.BoxGeometry(4.5, 2.6, 2.4), M(0xc0902f));
+  dig.position.set(112, 1.3, 2);
+  scene.add(dig);
+  const arm = new THREE.Mesh(new THREE.BoxGeometry(6.5, .5, .5), M(0xa87c26));
+  arm.position.set(116, 3.1, 2);
+  arm.rotation.z = -.4;
+  scene.add(arm);
+  const lorry = new THREE.Mesh(new THREE.BoxGeometry(7, 2.6, 2.6), M(0x6f7a80));
+  lorry.position.set(104, 1.3, -2);
+  scene.add(lorry);
+
+  // boardwalk and the people who would use it
+  for (let i = 0; i < 22; i++) {
+    const b = new THREE.Mesh(new THREE.BoxGeometry(2.2, .16, 5), M(0x8a7454));
+    b.position.set(60 + i * 3.2, .5, 20 - i * .7);
+    scene.add(b);
+  }
+  for (const [px, pz] of [[76, 16], [79, 15], [104, 26]]) {
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(.28, .3, 1.5, 8),
+                                M([0x37506b, 0x7a3f3a, 0x3f5f4a][px % 3]));
+    body.position.set(px, 1.35, pz);
+    scene.add(body);
+    const head = new THREE.Mesh(new THREE.SphereGeometry(.28, 10, 8), M(0xc9a68a));
+    head.position.set(px, 2.3, pz);
+    scene.add(head);
+  }
+  // birds: the reserve is the reason the cells are shaped this way
+  for (let i = 0; i < 26; i++) {
+    const bx = 70 + Math.random() * 60, bz = -12 + Math.random() * 52;
+    const b = new THREE.Mesh(new THREE.SphereGeometry(.42, 8, 6),
+                             M(i % 4 ? 0xf2efe6 : 0x39424a));
+    b.scale.set(1.5, .8, .8);
+    b.position.set(bx, .45 + (i % 5 === 0 ? 6 + Math.random() * 9 : 0), bz);
+    scene.add(b);
+  }
+  label("the birds were the reason for the shape, not an obstacle to it",
+        new THREE.Vector3(96, 13, 40));
+
+  // ---- the terminal water at the end, and the sea beyond it
+  const term = new THREE.Mesh(new THREE.CircleGeometry(1, 48),
+    new THREE.MeshLambertMaterial({map: tex("water"), transparent: true, opacity: .92}));
+  term.rotation.x = -Math.PI / 2;
+  term.scale.set(46, 34, 1);
+  term.position.set(178, .06, 30);
+  water.push(term.material);
+  scene.add(term);
+  label("the outlet is a water that holds it, not the bay",
+        new THREE.Vector3(178, 8, 30), "big");
+
+  // ---- and the pipe that is not here: sewage, buried, going somewhere else
+  const foul = new THREE.Mesh(new THREE.BoxGeometry(230, .9, 1.6), M(0x4a3f3c));
+  foul.position.set(-10, .45, -104);
+  scene.add(foul);
+  const works = new THREE.Group();
+  for (let i = 0; i < 3; i++) {
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(7, 7, 3, 24), M(0x8b8f93));
+    t.position.set(112 + i * 17, 1.5, -104);
+    works.add(t);
+  }
+  scene.add(works);
+  label("sewage — a separate pipe, to a treatment works. It is not in the river.",
+        new THREE.Vector3(30, 5, -104), "no");
+
+  // ---- what the rain carries, moving
+  const N = 520;
+  const arr = new Float32Array(N * 3), state = [];
+  for (let i = 0; i < N; i++) {
+    state.push({t: Math.random(), settle: 0, cell: Math.floor(Math.random() * 3)});
+    arr[i * 3] = 0;
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(arr, 3));
+  silt = new THREE.Points(g, new THREE.PointsMaterial({color: 0x9c8a63, size: .55}));
+  silt.userData.state = state;
+  scene.add(silt);
+
+  scene.add(new THREE.AmbientLight(0xffffff, .82));
+  const sun = new THREE.DirectionalLight(0xfff4e2, .62);
+  sun.position.set(-60, 90, 40);
+  scene.add(sun);
+  const fill = new THREE.DirectionalLight(0xcfe0ea, .35);
+  fill.position.set(80, 40, -60);
+  scene.add(fill);
+}
+
+/* ------------------------------------------------------------------- camera --- */
+const VIEWS = {
+  over:   {at: [30, 0, -10], r: 250, th: -0.9, ph: 0.62},
+  inlet:  {at: [-42, 2, -20], r: 34, th: -1.5, ph: 1.15},
+  river:  {at: [-10, 2, 24], r: 46, th: -2.2, ph: 1.18},
+  cells:  {at: [95, 2, 12], r: 78, th: -1.0, ph: 0.95},
+  outlet: {at: [150, 2, 28], r: 96, th: -1.3, ph: 0.9},
+  dredge: {at: [114, 2, 6], r: 40, th: -1.9, ph: 1.05},
+};
+let cam = Object.assign({}, VIEWS.over), target = new THREE.Vector3(30, 0, -10);
+function setView(v) {
+  const k = VIEWS[v];
+  cam.r = k.r;
+  cam.th = k.th;
+  cam.ph = k.ph;
+  target.set(...k.at);
+}
+function place() {
+  camera.position.set(
+    target.x + cam.r * Math.sin(cam.ph) * Math.sin(cam.th),
+    target.y + cam.r * Math.cos(cam.ph),
+    target.z + cam.r * Math.sin(cam.ph) * Math.cos(cam.th));
+  camera.lookAt(target);
+}
+
+function frame() {
+  requestAnimationFrame(frame);
+  const dt = Math.min(.05, clock.getDelta());
+  if (!REDUCED) for (const m of water) if (m.map) m.map.offset.y -= dt * .06;
+  if (spin) cam.th += dt * .06;
+  if (silt) {
+    silt.visible = showSilt;
+    const pos = silt.geometry.attributes.position.array;
+    for (let i = 0; i < silt.userData.state.length; i++) {
+      const s = silt.userData.state[i];
+      if (s.settle > 0) {                           // in a cell: sinking, then still
+        s.settle = Math.max(0, s.settle - dt * .35);
+        pos[i * 3 + 1] = .05 + s.settle * 1.2;
+        continue;
+      }
+      s.t += dt * (REDUCED ? 0 : .022);
+      if (s.t >= 1) {                               // arrives, and stops there
+        const c = [[74, 10], [96, 22], [92, -6]][s.cell];
+        pos[i * 3] = c[0] + (Math.random() - .5) * 22;
+        pos[i * 3 + 2] = c[1] + (Math.random() - .5) * 16;
+        s.settle = 1;
+        s.t = Math.random() * .06;
+        continue;
+      }
+      const p = curve.getPoint(s.t);
+      pos[i * 3] = p.x + (Math.random() - .5) * 6;
+      pos[i * 3 + 1] = .35 + Math.sin(s.t * 30 + i) * .2;
+      pos[i * 3 + 2] = p.z + (Math.random() - .5) * 6;
+    }
+    silt.geometry.attributes.position.needsUpdate = true;
+  }
+  place();
+  renderer.render(scene, camera);
+  const st = $("#stage").getBoundingClientRect();
+  for (const l of labels) {
+    if (!showLab) { l.el.style.display = "none"; continue; }
+    const v = l.pos.clone().project(camera);
+    const on = v.z < 1 && Math.abs(v.x) < 1.1 && Math.abs(v.y) < 1.1;
+    l.el.style.display = on ? "block" : "none";
+    l.el.style.left = ((v.x + 1) / 2 * st.width) + "px";
+    l.el.style.top = ((-v.y + 1) / 2 * st.height) + "px";
+  }
+}
+
+function resize() {
+  const st = $("#stage");
+  const w = st.clientWidth, h = Math.max(460, Math.min(780, w * 0.62));
+  st.style.height = h + "px";
+  renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+
+$("#yes").innerHTML = IN_WATER.map(([c, t]) =>
+  `<li><span class="dot" style="background:${c}"></span><span>${t}</span></li>`).join("");
+$("#no").innerHTML = NOT_IN_WATER.map(([t]) =>
+  `<li><span class="dot"></span><span>${t}</span></li>`).join("");
+
+const stage = $("#stage");
+renderer = new THREE.WebGLRenderer({antialias: true});
+camera = new THREE.PerspectiveCamera(42, 1.6, .5, 900);
+clock = new THREE.Clock();
+stage.insertBefore(renderer.domElement, $("#labels"));
+build();
+setView("over");
+resize();
+frame();
+
+addEventListener("resize", resize);
+$("#view").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  for (const x of $("#view").children) x.setAttribute("aria-pressed", x === b);
+  setView(b.dataset.v);
+});
+$("#spin").addEventListener("change", e => { spin = e.target.checked; });
+$("#silt").addEventListener("change", e => { showSilt = e.target.checked; });
+$("#lbl").addEventListener("change", e => { showLab = e.target.checked; });
+
+(function orbit() {
+  let down = null;
+  stage.addEventListener("mousedown", e => {
+    down = {x: e.clientX, y: e.clientY, th: cam.th, ph: cam.ph};
+  });
+  addEventListener("mouseup", () => { down = null; });
+  addEventListener("mousemove", e => {
+    if (!down) return;
+    cam.th = down.th - (e.clientX - down.x) * .005;
+    cam.ph = Math.min(1.5, Math.max(.16, down.ph - (e.clientY - down.y) * .004));
+  });
+  stage.addEventListener("wheel", e => {
+    e.preventDefault();
+    cam.r = Math.min(520, Math.max(12, cam.r * (1 + Math.sign(e.deltaY) * .09)));
+  }, {passive: false});
+})();
+</script>

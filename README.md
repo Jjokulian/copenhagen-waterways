@@ -112,6 +112,7 @@ docs/
   PROGRAMME.md            THE ARGUMENT - what ought to be done, labelled as such
   LANDBRUG.md             the audit in Danish, for the audience it is used against
   section3d.html          the retrofit in 3D, dimensioned, with the hydraulic check
+  rainwater_river.html    what it would look like from the bank - an impression
   architecture.html       the separated architecture: the graph, and the map of
                           which catchments it acts on
   data/flood2012/         the recovered flood model, georeferenced, for QGIS
