@@ -112,6 +112,70 @@ def in_box(x, y):
     return BOX[0] <= x <= BOX[2] and BOX[1] <= y <= BOX[3]
 
 
+
+def structures(cats):
+    """Gully gratings and manholes, counted into the catchments they stand in.
+
+    From scripts/fetch_structures.py. Two things about this layer are worth carrying
+    forward rather than smoothing over. It has a **z coordinate on every point**, so
+    the city has a dense elevation sample along its own streets. And it has a type
+    column - `ristetype`, `broendtype` - which is **empty**: every one of the 123,806
+    gratings and 94% of the 85,816 wells says only that a structure is there. So this
+    can say how many and where, and cannot say what any of them is. That is the
+    unfilled-field class in this project's error taxonomy, in the city's own register.
+    """
+    d = os.path.join(RAW, "structures")
+    if not os.path.exists(os.path.join(d, "rist.json")):
+        return None
+    CELL = 0.004
+    grid, polys = {}, []
+    for n, c in enumerate(cats):
+        for ring in c["g"]:
+            xs = [q[0] for q in ring]
+            ys = [q[1] for q in ring]
+            b = (min(xs), min(ys), max(xs), max(ys))
+            polys.append((ring, b, n))
+            for i in range(int(b[0] / CELL), int(b[2] / CELL) + 1):
+                for j in range(int(b[1] / CELL), int(b[3] / CELL) + 1):
+                    grid.setdefault((i, j), []).append(len(polys) - 1)
+
+    def hit(x, y):
+        for k in grid.get((int(x / CELL), int(y / CELL)), ()):
+            ring, b, n = polys[k]
+            if not (b[0] <= x <= b[2] and b[1] <= y <= b[3]):
+                continue
+            ins = False
+            for a in range(len(ring)):
+                xi, yi = ring[a - 1]
+                xj, yj = ring[a]
+                if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+                    ins = not ins
+            if ins:
+                return n
+        return None
+
+    out = {}
+    for layer, key in (("rist", "ri"), ("broend", "br")):
+        pts = read_json(os.path.join(d, layer + ".json"))
+        typed = sum(1 for q in pts if q[3])
+        dates = sorted(q[4] for q in pts if q[4])
+        n_in = 0
+        for lon, lat, z, t, dt in pts:
+            n = hit(lon, lat)
+            if n is None:
+                continue
+            cats[n][key] = cats[n].get(key, 0) + 1
+            n_in += 1
+        out[layer] = {
+            "total": len(pts), "in_a_catchment": n_in,
+            "typed": typed, "type_field_empty_pct": 100 * (1 - typed / len(pts)),
+            "first": dates[0] if dates else None, "last": dates[-1] if dates else None,
+            "median_date": dates[len(dates) // 2] if dates else None,
+        }
+        del pts
+    return out
+
+
 def street_metres(cats):
     """Road centreline inside the combined-sewered catchments, by island.
 
@@ -344,6 +408,12 @@ def main():
             if len(pts) >= 2:
                 coast.append([[round(x, 5), round(y, 5)] for x, y in pts])
 
+    struct = structures(cats)
+    if struct:
+        for k, v in struct.items():
+            log(f"  {k}: {v['total']:,} points, {v['in_a_catchment']:,} inside a "
+                f"catchment, type column empty on {v['type_field_empty_pct']:.0f}%, "
+                f"registered {v['first']} to {v['last']}")
     streets = street_metres(cats)
     ends = plan_pipe_ends()
     if ends:
@@ -388,6 +458,7 @@ def main():
             "ponds_basis_ha": streams["amager"]["combined_sewered_impervious_ha"],
         },
         "street_m": streets,
+        "structures": struct,
         "plan_pipe_ends": ends,
         "_street_note": "Road centreline inside the combined catchments, from the "
                         "OSM extract. The copy here has no tags, so paths and "

@@ -177,6 +177,7 @@ select{width:100%;font:inherit;font-size:13px;padding:5px 6px;background:var(--g
   <p class="note">Impervious area, person equivalents, plant and the planned class are
   attributes of the catchment layer. A catchment with no recorded class is drawn
   hollow rather than guessed at.</p>
+  <p class="note" id="structnote"></p>
 </aside>
 </div>
 <div id="tip"></div>
@@ -449,6 +450,8 @@ function stock(s) {
     ha, pe, planned,
     cso: cso.length,
     basin_m3: cso.reduce((a, o) => a + o.sb + o.fb, 0),
+    ri: comb.reduce((a, c) => a + (c.ri || 0), 0),
+    br: comb.reduce((a, c) => a + (c.br || 0), 0),
   };
 }
 
@@ -461,11 +464,14 @@ function numbers(s) {
   const rows = [
     ["Combined-sewered impervious area", `<b>${fmt(k.ha)}</b> ha`],
     ["Connected person equivalents", `<b>${fmt(k.pe)}</b>`],
+    ["Gully gratings in them", `<b>${fmt(k.ri)}</b>`],
+    ["Manholes and wells in them", `<b>${fmt(k.br)}</b>`],
     ["Already planned to change, by the city", `${fmt(k.planned)} ha `
       + `<span class="${k.planned / k.ha < .2 ? "" : "delta"}">`
       + `(${fmt(k.planned / k.ha * 100, 1)}%)</span>`],
   ];
   if (s.sep) {
+    rows.push(["Gullies to cut over to the new line", `<b class="delta">${fmt(k.ri)}</b>`]);
     rows.push(["Rain taken out of the sewer, design hour", `<b class="delta">${fmt(Q, 1)}</b> m³/s`]);
     rows.push(["Overflow structures with nothing to spill", `<b class="delta">${fmt(k.cso)}</b>`]);
     rows.push(["Basin volume behind them", `${fmt(k.basin_m3)} m³`]);
@@ -575,6 +581,16 @@ function buildPanels() {
     ["var(--pond)", "Proposed: the polder and its cells"],
   ].map(([c, t]) => `<div class="key"><span class="sw" style="background:${c}"></span>`
     + `<span>${t}</span></div>`).join("");
+  if (D.structures) {
+    const r = D.structures.rist, b = D.structures.broend;
+    $("#structnote").innerHTML = "Gratings and wells are the city's own GeoDanmark "
+      + `objects: <b>${fmt(r.total)}</b> gratings and <b>${fmt(b.total)}</b> wells, `
+      + `each with an elevation, registered between ${r.first.slice(0, 4)} and `
+      + `${b.last.slice(0, 4)}. Both layers carry a <i>type</i> column and it is `
+      + `<b>empty on ${fmt(r.type_field_empty_pct, 0)}%</b> of gratings and `
+      + `<b>${fmt(b.type_field_empty_pct, 0)}%</b> of wells — so this says how many `
+      + "and where, and cannot say what any single one of them is.";
+  }
   $("#grain").innerHTML = D.rain.ponds.map(p =>
     `<option value="${p.grain_um}"${p.grain_um === 20 ? " selected" : ""}>`
     + `${p.grain_um} µm — ${p.grain_um >= 50 ? "sand" : p.grain_um >= 20 ? "coarse silt"
@@ -633,6 +649,8 @@ cv.addEventListener("mousemove", ev => {
     + `<dt>In the plan</dt><dd>${hit.p === hit.c ? "unchanged" : (D.classes[hit.p] || hit.p)}</dd>`
     + `<dt>Impervious</dt><dd>${fmt(hit.ha, 1)} ha</dd>`
     + `<dt>Person equiv.</dt><dd>${fmt(hit.pe)}</dd>`
+    + `<dt>Gully gratings</dt><dd>${fmt(hit.ri || 0)}</dd>`
+    + `<dt>Manholes, wells</dt><dd>${fmt(hit.br || 0)}</dd>`
     + `<dt>Plant</dt><dd>${hit.pl || "—"}</dd>`
     + `<dt>Island</dt><dd>${hit.i === "amager" ? "Amager" : "mainland"}</dd></dl>`;
 });

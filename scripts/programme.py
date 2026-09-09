@@ -521,7 +521,11 @@ def main():
       "pit: a shot starts and ends at a shaft that is already there. *Upper bound* — "
       "the road extract carries no classification, so paths and service roads are "
       "counted with the carriageways, and a real programme works down from that "
-      "figure as streets are ruled out rather than up from a guess. What a metre "
+      "figure as streets are ruled out rather than up from a guess. The same "
+      "scope in structures rather than in metres: **about 102,000 gully gratings "
+      "to cut over and 73,000 chambers standing in the way of, or available to, "
+      "the work** — which is the number a programme is actually planned in. What a "
+      "metre "
       "costs is the utility's number and not this project's; "
       "[the architecture view](architecture.html) takes a rate and gives back the "
       "total, the figure per person equivalent, and what that is a year over the "
@@ -531,6 +535,35 @@ def main():
       "value of everything that says what is down there — the utility register, a "
       "survey, and a trial hole at each crossing — so the method makes the "
       "information problem below more acute rather than less.\n")
+    if arch.get("structures"):
+        st_r = arch["structures"]["rist"]
+        st_b = arch["structures"]["broend"]
+        ri = sum(c.get("ri", 0) for c in arch["catchments"]
+                 if c["c"].startswith("combined") or c["c"] == "separate_into_combined")
+        br = sum(c.get("br", 0) for c in arch["catchments"]
+                 if c["c"].startswith("combined") or c["c"] == "separate_into_combined")
+        km = (arch["street_m"]["amager"] + arch["street_m"]["mainland"]) / 1000
+        a("**And the density of that problem can now be counted rather than "
+          "asserted.** The city publishes its own structures — "
+          f"{st_r['total']:,} gully gratings and {st_b['total']:,} manholes and "
+          "wells, each with an elevation, maintained to "
+          f"{st_b['last'][:4]}. Inside the combined-sewered catchments that is "
+          f"**{ri:,} gratings and {br:,} chambers**, against {km:,.0f} km of "
+          f"street: **a grating about every {km*1000/ri:.0f} m and a chamber about "
+          f"every {km*1000/br:.0f} m.** A bore is not threading an empty metre. It "
+          "is threading a metre with a lid in it every twenty paces, and each lid "
+          "is a thing that goes down.\n")
+        a("**The same register also shows what it does not know.** Both layers "
+          "carry a type column — `ristetype`, `broendtype` — and it is empty on "
+          f"**{st_r['type_field_empty_pct']:.0f}% of the gratings and "
+          f"{st_b['type_field_empty_pct']:.0f}% of the wells.** The city knows "
+          "where its structures are, to the centimetre in the vertical, and its own "
+          "record does not say what any of them is: which lid is a sewer manhole, "
+          "which is a gully pot, which belongs to water, gas or telecom. That is "
+          "the [unfilled-field class](#CONSTRUCTED.md) of this project's error "
+          "taxonomy, in the register a contractor would plan from — and it is the "
+          "concrete form of the objection above. The instrument that would answer "
+          "it is the utility register, which is not open.\n")
     a("> **[The arrangement in three dimensions →](section3d.html)** — the same "
       "street at its real sizes: the bored line, the sewer left where it is, the "
       "shaft with its pan, and the liner. Every dimension is a named parameter that "
