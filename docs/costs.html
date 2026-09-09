@@ -1,0 +1,324 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What the transformation costs</title>
+<style>
+:root{
+  --ground:#f6f5f2; --panel:#fffefb; --ink:#1c1d22; --ink2:#54565f; --ink3:#8b8d97;
+  --line:#dedcd6; --sea:#eceff1; --accent:#2f6a95; --warn:#b4532f; --new:#1f7a5a;
+  --model:#8a6d3b; --combined:#a45a48; --dim:#c9c6bf;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#20242a; --accent:#8fbcd9; --warn:#e0866a; --new:#5fbf98;
+  --model:#c8a76a; --combined:#d08b76; --dim:#3a3d43;
+}}
+:root[data-theme="dark"]{
+  --ground:#15161a; --panel:#1c1e23; --ink:#e9e8e4; --ink2:#a6a8b1; --ink3:#70737d;
+  --line:#2c2f36; --sea:#20242a; --accent:#8fbcd9; --warn:#e0866a; --new:#5fbf98;
+  --model:#c8a76a; --combined:#d08b76; --dim:#3a3d43;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{padding:22px 28px 14px;border-bottom:1px solid var(--line)}
+h1{margin:0 0 6px;font-size:22px;font-weight:640;letter-spacing:-.01em}
+header p{margin:0 0 5px;max-width:82ch;color:var(--ink2)}
+a{color:var(--accent)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 360px}
+@media(max-width:1040px){.wrap{grid-template-columns:1fr}}
+#stage{padding:12px 8px 0 16px;min-width:0}
+canvas{width:100%;display:block;border:1px solid var(--line);border-radius:4px;
+  background:var(--sea)}
+figcaption{font-size:11.5px;color:var(--ink3);margin:6px 0 14px;max-width:80ch}
+aside{background:var(--panel);border-left:1px solid var(--line);padding:15px 17px 40px;
+  max-height:100vh;overflow:auto}
+@media(max-width:1040px){aside{border-left:0;border-top:1px solid var(--line);max-height:none}}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);
+  margin:18px 0 7px;font-weight:600}
+h3:first-of-type{margin-top:0}
+.seg{display:flex;border:1px solid var(--line);border-radius:4px;overflow:hidden;margin:0 0 9px}
+.seg button{flex:1 1 0;font:inherit;font-size:12.5px;padding:6px 3px;cursor:pointer;
+  background:var(--ground);color:var(--ink2);border:0;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff;font-weight:600}
+.rangerow{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink2);
+  margin:9px 0 0;gap:8px}
+.rangerow b{color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+input[type=range]{width:100%;margin:2px 0 0}
+dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:12.5px}
+dt{color:var(--ink3)} dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+dd b{font-weight:640} .big{font-size:15px}
+.note{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:10px 0 0;
+  border-left:2px solid var(--line);padding-left:9px}
+.note b{color:var(--ink2)}
+</style>
+
+<header>
+  <h1>What the transformation costs</h1>
+  <p>The companion to <a href="../index.html#SENSING.md">the sensing costing</a>, for
+  the other half of the argument: not what it costs to <i>find out</i>, but what it
+  costs to <b>do</b> — taking Copenhagen's everyday rain out of the combined sewer,
+  street by street, on the catchments that actually exist.</p>
+  <p>Every quantity on the left is measured — impervious area, person equivalents,
+  street length, gullies and chambers come from the municipal sewer layer, the OSM road
+  extract and the city's own structure register. <b>Every price on the right is a
+  stated range and a slider</b>, because none of them is a quotation and the argument
+  should survive somebody replacing them with real ones.
+  <a href="../index.html#PROGRAMME.md">The proposal being costed →</a></p>
+</header>
+
+<div class="wrap">
+  <div id="stage">
+    <canvas id="map"></canvas>
+    <figcaption id="cap"></figcaption>
+  </div>
+  <aside>
+    <h3>How much of the city</h3>
+    <div class="seg" id="where">
+      <button data-w="all" aria-pressed="true">All</button>
+      <button data-w="amager">Amager</button>
+      <button data-w="mainland">Mainland</button>
+    </div>
+    <input type="range" id="share" min="1" max="100" value="100" step="1">
+    <div class="rangerow"><span>of the combined-sewered area, biggest first</span>
+      <b id="sharev">100%</b></div>
+    <div class="rangerow"><span>which is</span><b id="picked">—</b></div>
+    <p class="note" id="concentration"></p>
+
+    <h3>How it is built</h3>
+    <div class="seg" id="arr">
+      <button data-a="light" aria-pressed="true">Light</button>
+      <button data-a="lined">Lined</button>
+      <button data-a="heavy">Heavy</button>
+    </div>
+    <div class="rangerow"><span>share of the length bored, not dug</span><b id="borev">80%</b></div>
+    <input type="range" id="bore" min="0" max="100" value="80" step="5">
+    <div class="rangerow"><span>share that can be an open channel instead of a pipe</span>
+      <b id="surfv">30%</b></div>
+    <input type="range" id="surf" min="0" max="80" value="30" step="5">
+    <p class="note">54% of the modelled flood path already has a planned surface route
+    within 100 m, so a third of the length being channel rather than pipe is
+    conservative rather than optimistic — but a channel needs width, and where the
+    street has none this dial is what pays for the pipe instead.</p>
+
+    <h3>Unit prices <span style="color:var(--model)">stated, not quoted</span></h3>
+    <div class="rangerow"><span>bored line, per metre</span><b id="pborev">4,000 kr</b></div>
+    <input type="range" id="pbore" min="1000" max="14000" value="4000" step="250">
+    <div class="rangerow"><span>open-cut line, per metre</span><b id="pcutv">12,000 kr</b></div>
+    <input type="range" id="pcut" min="3000" max="30000" value="12000" step="500">
+    <div class="rangerow"><span>open channel, per metre</span><b id="pchv">9,000 kr</b></div>
+    <input type="range" id="pch" min="1000" max="40000" value="9000" step="500">
+    <div class="rangerow"><span>cutting one gully over</span><b id="pgulv">6,000 kr</b></div>
+    <input type="range" id="pgul" min="1000" max="25000" value="6000" step="500">
+    <div class="rangerow"><span>the pan and the second storey, per shaft</span>
+      <b id="pshv">18,000 kr</b></div>
+    <input type="range" id="psh" min="3000" max="60000" value="18000" step="1000">
+    <div class="rangerow"><span>lining the old sewer, per metre</span><b id="plinv">5,000 kr</b></div>
+    <input type="range" id="plin" min="1000" max="20000" value="5000" step="250">
+    <div class="rangerow"><span>treatment cells, per m²</span><b id="pwetv">70 kr</b></div>
+    <input type="range" id="pwet" min="10" max="400" value="70" step="10">
+    <div class="rangerow"><span>wetland sizing, % of impervious area</span><b id="wetv">2%</b></div>
+    <input type="range" id="wet" min="0" max="6" value="2" step="1">
+
+    <h3>Over how long</h3>
+    <div class="rangerow"><span>years of programme</span><b id="yrv">25</b></div>
+    <input type="range" id="yr" min="1" max="50" value="25" step="1">
+
+    <h3>What it costs</h3>
+    <dl id="cost"></dl>
+    <p class="note" id="per"></p>
+    <h3>And what it buys</h3>
+    <dl id="buys"></dl>
+    <p class="note" id="honest"></p>
+  </aside>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const fmt = (n, d = 0) => n.toLocaleString(undefined,
+  {minimumFractionDigits: d, maximumFractionDigits: d});
+const kr = n => n >= 1e9 ? fmt(n / 1e9, 2) + " bn kr"
+              : n >= 1e6 ? fmt(n / 1e6, 1) + " M kr"
+              : n >= 1e4 ? fmt(Math.round(n / 1000)) + " k kr" : fmt(n) + " kr";
+const css = v => getComputedStyle(document.body).getPropertyValue(v).trim();
+
+let D = null, COMB = [], PROJ = null, arr = "light", where = "all";
+
+function scoped() {
+  const list = COMB.filter(c => where === "all" || c.i === where);
+  list.sort((a, b) => b.ha - a.ha);
+  const tot = list.reduce((a, c) => a + c.ha, 0);
+  const want = tot * (+$("#share").value / 100);
+  const out = [];
+  let cum = 0;
+  for (const c of list) {
+    if (cum >= want) break;
+    out.push(c);
+    cum += c.ha;
+  }
+  return {list, out, tot, cum};
+}
+
+function project(cv) {
+  const [w, s, e, n] = D.box;
+  const W = cv.clientWidth || 900, H = Math.max(380, Math.min(680, W * 0.6));
+  const k = Math.cos((s + n) / 2 * Math.PI / 180);
+  const sc = Math.min(W / ((e - w) * k), H / (n - s));
+  const ox = (W - (e - w) * k * sc) / 2, oy = (H - (n - s) * sc) / 2;
+  return {W, H, x: lon => ox + (lon - w) * k * sc, y: lat => oy + (n - lat) * sc};
+}
+
+function draw(sel) {
+  const cv = $("#map"), cx = cv.getContext("2d");
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  PROJ = project(cv);
+  cv.width = PROJ.W * dpr;
+  cv.height = PROJ.H * dpr;
+  cv.style.height = PROJ.H + "px";
+  cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cx.clearRect(0, 0, PROJ.W, PROJ.H);
+  cx.lineWidth = 1;
+  cx.strokeStyle = css("--ink3") + "55";
+  for (const line of D.coast) {
+    cx.beginPath();
+    line.forEach(([x, y], i) => i ? cx.lineTo(PROJ.x(x), PROJ.y(y))
+                                  : cx.moveTo(PROJ.x(x), PROJ.y(y)));
+    cx.stroke();
+  }
+  const on = new Set(sel.out.map(c => c.l));
+  for (const c of COMB) {
+    cx.beginPath();
+    for (const ring of c.g)
+      ring.forEach(([x, y], i) => i ? cx.lineTo(PROJ.x(x), PROJ.y(y))
+                                    : cx.moveTo(PROJ.x(x), PROJ.y(y)));
+    cx.closePath();
+    const inScope = where === "all" || c.i === where;
+    cx.fillStyle = on.has(c.l) && inScope ? css("--combined") + "cc" : css("--dim") + "77";
+    cx.fill();
+    cx.strokeStyle = css("--line");
+    cx.lineWidth = .5;
+    cx.stroke();
+  }
+}
+
+function recompute(redraw) {
+  const sel = scoped();
+  const ha = sel.out.reduce((a, c) => a + c.ha, 0);
+  const pe = sel.out.reduce((a, c) => a + c.pe, 0);
+  const gullies = sel.out.reduce((a, c) => a + (c.ri || 0), 0);
+  const shafts = sel.out.reduce((a, c) => a + (c.br || 0), 0);
+  // street length is held per island, so it is apportioned by impervious area, which
+  // is the same assumption the m-per-hectare figure on the argument page rests on
+  const streetAll = D.street_m.amager + D.street_m.mainland;
+  const haAll = COMB.reduce((a, c) => a + c.ha, 0);
+  const metres = streetAll * (ha / haAll);
+
+  const surf = +$("#surf").value / 100;
+  const bored = +$("#bore").value / 100;
+  const pipeM = metres * (1 - surf);
+  const chM = metres * surf;
+  const cPipe = pipeM * (bored * +$("#pbore").value + (1 - bored) * +$("#pcut").value);
+  const cCh = chM * +$("#pch").value;
+  const cGul = gullies * +$("#pgul").value;
+  const cShaft = shafts * +$("#psh").value;
+  const cLine = arr === "lined" ? metres * +$("#plin").value : 0;
+  const cDrop = arr === "heavy" ? pipeM * +$("#pcut").value * 0.55 : 0;
+  const wetHa = ha * (+$("#wet").value / 100);
+  const cWet = wetHa * 1e4 * +$("#pwet").value;
+  const total = cPipe + cCh + cGul + cShaft + cLine + cDrop + cWet;
+  const years = +$("#yr").value;
+
+  const Q = ha * 1e4 * (D.rain.design_mm_h / 1000) * D.rain.runoff_c / 3600;
+  const csoShare = ha / haAll;
+
+  $("#sharev").textContent = $("#share").value + "%";
+  $("#borev").textContent = $("#bore").value + "%";
+  $("#surfv").textContent = $("#surf").value + "%";
+  $("#wetv").textContent = $("#wet").value + "%";
+  $("#yrv").textContent = years;
+  for (const [id, unit] of [["pbore", " kr"], ["pcut", " kr"], ["pch", " kr"],
+                            ["pgul", " kr"], ["psh", " kr"], ["plin", " kr"],
+                            ["pwet", " kr"]])
+    $("#" + id + "v").textContent = fmt(+$("#" + id).value) + unit;
+  $("#picked").textContent = fmt(sel.out.length) + " of " + fmt(sel.list.length)
+    + " catchments";
+
+  $("#cost").innerHTML = [
+    [`Bored and dug line — ${fmt(pipeM / 1000)} km`, kr(cPipe)],
+    [`Open channel — ${fmt(chM / 1000)} km`, kr(cCh)],
+    [`Gullies cut over — ${fmt(gullies)}`, kr(cGul)],
+    [`Shafts given a second storey — ${fmt(shafts)}`, kr(cShaft)],
+    arr === "lined" ? ["Lining the old sewer", kr(cLine)]
+      : arr === "heavy" ? ["Relaying the sewer a metre deeper", kr(cDrop)]
+      : ["The old sewer, untouched", "0 kr"],
+    [`Treatment cells — ${fmt(wetHa, 1)} ha`, kr(cWet)],
+    ["<b>Capital</b>", "<b class='big'>" + kr(total) + "</b>"],
+    [`Per year over ${years}`, kr(total / years)],
+  ].map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+
+  $("#per").innerHTML = pe > 0
+    ? `<b>${kr(total / pe)} per person equivalent</b>, or <b>${fmt(total / pe / years)} `
+      + `kr a person a year</b> over ${years} years, across ${fmt(pe)} people connected `
+      + `to the part of the system being changed. For scale: a <i>thorough</i> national `
+      + `sensing network — inland and marine, near-bed, fingerprint panel, run `
+      + `permanently — comes to roughly <b>0.5–1 bn kr over 25 years</b> in `
+      + `<a href="network.html">the network tool</a>, almost all of it operations. `
+      + `That is <b>${fmt(0.75e9 / Math.max(total, 1) * 100, 0)}% of this</b> — `
+      + `knowing costs about a tenth of doing.`
+    : "Select some catchments.";
+
+  $("#buys").innerHTML = [
+    ["Impervious area taken off the sewer", fmt(ha) + " ha"],
+    ["Rain removed at the design hour", fmt(Q, 1) + " m³/s"],
+    ["Share of the combined city", fmt(csoShare * 100, 1) + "%"],
+    ["Overflow structures in that share", "~" + fmt(D.outfall_totals.combined_structures * csoShare)],
+    ["Basin volume it retires", fmt(D.outfall_totals.combined_basin_m3 * csoShare) + " m³"],
+    ["People connected to it", fmt(pe)],
+  ].map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+
+  const top = sel.out.length, all = sel.list.length;
+  $("#concentration").innerHTML = `The impervious area is <b>concentrated</b>: the `
+    + `largest ${fmt(top)} catchments carry ${fmt($("#share").value)}% of it. `
+    + `Sixteen of the 303 carry a quarter, and 42 carry half — <b>which is the case `
+    + `for doing a part of this rather than none of it</b>.`;
+
+  $("#honest").innerHTML = "<b>What this does not model.</b> Land purchase and the "
+    + "value of what a channel takes; traffic management, which is often a third of an "
+    + "urban civils bill; the utility register that decides whether a bore is possible "
+    + "at all; and anything under a listed square. Street length is apportioned by "
+    + "impervious area rather than measured per catchment. <b>Every number here is a "
+    + "floor.</b>";
+  if (redraw) draw(sel);
+}
+
+fetch("data/architecture.json").then(r => r.json()).then(d => {
+  D = d;
+  COMB = d.catchments.filter(c => c.c.startsWith("combined")
+                                  || c.c === "separate_into_combined");
+  $("#cap").textContent = "The " + fmt(COMB.length) + " combined-sewered catchments of "
+    + "Copenhagen and the inner suburbs. Filled: in the selected scope. The rest are "
+    + "drawn faint, because a programme that stops somewhere should show where.";
+  recompute(true);
+});
+
+$("#where").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  for (const x of $("#where").children) x.setAttribute("aria-pressed", x === b);
+  where = b.dataset.w;
+  recompute(true);
+});
+$("#arr").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  for (const x of $("#arr").children) x.setAttribute("aria-pressed", x === b);
+  arr = b.dataset.a;
+  recompute(false);
+});
+$("#share").addEventListener("input", () => recompute(true));
+for (const id of ["bore", "surf", "pbore", "pcut", "pch", "pgul", "psh", "plin",
+                  "pwet", "wet", "yr"])
+  $("#" + id).addEventListener("input", () => recompute(false));
+addEventListener("resize", () => D && recompute(true));
+</script>

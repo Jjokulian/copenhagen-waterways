@@ -126,6 +126,7 @@ docs/
   section3d.html          the retrofit in 3D, dimensioned, with the hydraulic check
   rainwater_river.html    what it would look like from the bank - an impression
   network.html            dial the sensing network's density and watch the cost
+  costs.html              the other half: what it costs to do, on the real catchments
   architecture.html       the separated architecture: the graph, and the map of
                           which catchments it acts on
   data/flood2012/         the recovered flood model, georeferenced, for QGIS

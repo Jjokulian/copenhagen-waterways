@@ -322,6 +322,16 @@ entirely. These are stated arithmetic, not a budget anybody has approved.
 | **A club or a municipality** | 40 | 320,000 | 5 × 20,000 | 2 × 40,000 | **~500,000 DKK** |
 | **Every outlet in the country** | 800 | 6.4 M | 80 × 20,000 | 20 × 40,000 | **~8.8 M DKK** |
 
+> **And that last figure is the smallest of three numbers, which is why it should not
+> be the headline.** 8.8 M is *inland hardware only*. Add marine moorings in the
+> fjords and belts, a near-bed string on each, and the servicing and laboratory that
+> keep them meaningful, and [the network tool](network.html) puts a thorough permanent
+> network at **0.5–1 bn DKK over 25 years — almost all of it operations, not
+> instruments.** Against the Copenhagen retrofit costed at 2.6–10.4 bn, that is **on
+> the order of a tenth**: knowing costs about ten per cent of doing. Neither
+> negligible nor absurd — a normal monitoring fraction on a capital programme, and a
+> decision rather than a rounding error.
+
 For comparison, the same page that argues for this puts a single bored pipe shot at
 160,000–640,000 DKK. **The national network is the price of about twenty streets.**
 
