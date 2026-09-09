@@ -148,6 +148,61 @@ programme costing orders of magnitude more and producing **no test**.
 
 ---
 
+### The proof of concept, which tests the instrument and not the hypothesis
+
+**One pair of catchments, one spreading season, and a deliberately narrow question.**
+The distinction matters more than the money: a single pair cannot answer whether the
+payload reaches Danish water — the sample is one pair and the result would be a number
+people fight over. What it *can* do is establish that the method works, which is what
+has to be true before anybody buys twenty-four of anything.
+
+**What it has to prove, and the go/no-go on each:**
+
+| | Passes if | Fails if |
+|---|---|---|
+| **A cheap node survives** | one node returns a continuous record through a Danish February, with gaps that are explainable | the enclosure floods, the panel ices, or the radio drops the winter |
+| **Its readings mean something** | co-located against a reference sonde, turbidity and EC track it within a stated tolerance and the drift is characterisable | drift is larger than the seasonal signal, in which case the continuous tier is a trigger only and must be described as one |
+| **The trigger catches events** | the sampler fires on the rising limb and fills bottles across the storm, unattended, three times | it fires on noise, or misses the events the rain record says happened |
+| **The panel discriminates *here*** | the sterol ratio and host markers separate this catchment's slurry from its sewage effluent and from its soil | **this is the one that kills the national design.** If the end members are not separable in one Danish catchment, twelve pairs will not fix it |
+| **The chain closes** | a reading taken at a culvert appears in a public series with its calibration state attached | anything in the path needs a person to copy a file |
+
+**Note the fourth row.** It is the only test whose failure means *do not build the
+national network*, and it costs about thirty thousand kroner to run. Everything else
+on this page is downstream of it, which is an argument for doing it first and alone.
+
+**What it costs, item by item:**
+
+| | | DKK |
+|---|---|---:|
+| 2 nodes with fDOM | one high-density catchment and its match | 30,000–60,000 |
+| 1 automatic sampler | rotated between the two, or fixed on the high-density one | 25,000–60,000 |
+| Calibration standards, spares, mounts | the shared kit, smallest version | 7,000–15,000 |
+| Reference sonde for co-location | **borrowed** from a utility or a department, which most will lend for a season | 0, or 15,000–60,000 to buy |
+| End-member samples — 3 slurry tanks, 1 plant effluent, 1 road gully, 2 soils | full fingerprint panel on each. **This is the row that decides the fourth test** | 18,000–28,000 |
+| Event bottles — 3 events × 8 | full panel on 8 of them, cheap determinands on the rest | 25,000–60,000 |
+| Servicing, travel, a server | one person, twenty visits, a small VM | 5,000–10,000 |
+| **Total** | one pair, one season, one person | **110,000–230,000 DKK** |
+
+**Which is a used car, not a house** — and it is the number that matters, because it
+is the one somebody can actually decide to spend. The full experiment is only worth
+funding if this comes back clean, and if it does not, the money saved is the whole
+three to five million.
+
+**A staged path, with a decision at each step:**
+
+| Stage | Scope | Cost | The question it answers |
+|---|---|---:|---|
+| **0 — one node** | a single stream, no sampler | 15,000–30,000 | does the hardware survive and report? |
+| **1 — proof of concept** | one pair, one season, one sampler | 110,000–230,000 | does the method discriminate, here? |
+| **2 — regional** | three pairs, both windows | 0.4–0.6 M | is the effect visible at all, and how variable? |
+| **3 — the experiment** | twelve pairs, two years | 3–5 M | which of the three hypotheses is right |
+| **4 — the network** | every outlet that reaches the sea | 8.8 M + operating | the same answer everywhere, permanently |
+
+**No stage is wasted if the next one is never funded.** Stage 0 is a real series from a
+real stream. Stage 1 is a publishable methods result either way. Stage 2 is a regional
+finding. That property is not an accident of the costing — it is the reason to stage
+it like this rather than to write one large proposal that has to be accepted whole.
+
 ### The number, put beside things that are not science
 
 Because the figure is easy to lose next to a research budget, here it is next to
