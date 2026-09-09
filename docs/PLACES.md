@@ -164,6 +164,61 @@ environmental peculiarities that have no column. Given that 40 of 166 mechanisms
 are unscoreable and another 20 need an experiment anyway, **the observational route to
 an answer may not exist**, and a trial does not require one.
 
+### Plurality is the instrument, not the fallback
+
+Trying several things reads as what you do when you cannot decide. Here it is the
+opposite. **Difference between places is the only thing that makes any of this
+identifiable**, and a country that does one thing everywhere has removed the
+possibility of finding out whether it worked.
+
+A single national instrument applied everywhere at once is a design with one arm.
+Every catchment gets the same treatment in the same years, so whatever happens next
+happens to all of them together, and no estimator can recover a contrast that was
+never created. [`X17`](EXPERIMENTS.md) states the specific case: every Danish
+catchment has been sprayed for decades, so for that mechanism there is nothing to
+compare against — **the counterfactual does not exist at any price until somebody
+stops somewhere.**
+
+The corollary is uncomfortable for both sides of the argument. Uniformity is what a
+fair regulation looks like and it is also what an uninformative experiment looks like:
+**applying one instrument everywhere buys equity and spends information.** This
+project has already met that trade three times in the data — a national relation that
+is tight *because* the local coefficient varies, [water bodies](AREAS.md) that carry
+no signal within themselves, and a national oxygen trend that tracks which stations
+were reporting. Aggregation is what destroyed the contrast in each case. Doing one
+thing nationally is aggregation applied to policy.
+
+**Which is why the refusals count as much as the adoptions.** A municipality that
+declines the standard instrument and does something else is not an obstacle to the
+programme — *it is the control arm*, on the condition that somebody writes down what
+it declined, what it did instead, and from when. "Here they refused these things and
+tried those; we did these, so somewhere there is the documented absence of them" is a
+study design. Unrecorded, the same situation is only variation, and variation nobody
+dated is indistinguishable from noise.
+
+So the register is the cheap half of the meta-solution and it should exist before the
+first trial is funded. Four fields, and none of them needs new instrumentation:
+
+| | |
+|---|---|
+| **Who did what, where, from when** | including who declined, and what they did instead — a refusal with a date is a control arm; a refusal without one is nothing |
+| **What each place expected** | stated before it started, so a result can disagree with it |
+| **What reads it out** | the existing series wherever possible. The 1,415-station oxygen record is the *before* for most of them, already paid for |
+| **The rule that decides** | written before the results. Plurality without a pre-stated decision rule does not produce an answer, it produces ninety-eight stories and a fight about which one counts |
+
+And there is a sharper version available whenever more places are willing than there is
+money for. **Let the lot decide which willing place goes first.** That is the whole
+difference between a natural experiment and an experiment, it costs nothing, and it
+removes the objection that the places which volunteer are not like the places which do
+not. Where randomisation is not available — and often it will not be — the register
+still leaves the weaker but real design: matched places, read against their own
+histories.
+
+None of this weakens the anti-delay conditions below. Plurality is not everybody
+waiting to see what the neighbours got; it is different places acting **at the same
+time in different ways**, on a clock that runs whether or not the results are
+convenient.
+
 **Denmark is unusually well placed to do this, and the reason is concrete.** A trial
 needs a *before*. Denmark has forty years of near-bed oxygen at 1,415 stations, which is
 a baseline almost nowhere else has. The design that fits is Before-After-Control-Impact:

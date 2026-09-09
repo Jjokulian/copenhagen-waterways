@@ -586,7 +586,12 @@ X = [
      "argument**, at the scale the argument is made. Denmark already has the "
      "administrative machinery — pesticide taxation, action plans, and protection "
      "zones around wellfields where spraying is restricted — so the instrument "
-     "exists and only the randomisation and the marine measurement would be new."),
+     "exists and only the randomisation and the marine measurement would be new. "
+     "The general form of that observation is the meta-solution in "
+     "[PLACES.md](#PLACES.md): a country that does one thing everywhere has spent "
+     "the contrast that would have told it whether the thing worked, and the "
+     "staggered order here is how you buy it back without withholding anything "
+     "from anyone."),
 
     ("X13", "Does the muck build up because nothing is eating it?", "experiment",
      ["E13", "E14", "E15", "R3", "R11"], "lab",
