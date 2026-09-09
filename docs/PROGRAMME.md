@@ -44,11 +44,65 @@ Note what falls out of the table. **`iltsvind` is not on it** — oxygen deficit
 
 ### Why the current framing does not reach those four words
 
-> **This section is a placeholder and is marked as one.** An earlier version gave four reasons the present framing cannot fix the problem. They were reasonable arguments and they are gone, for two faults. They arrived with no context, so a reader had no idea what was being argued against. And they were **too narrow** — four objections, written before most of the investigation existed, standing in for a critique that has since grown well past them.
->
-> What belongs here is not a fixed list of objections. It is the **synthesis of the findings**, drawn from the investigation pages and from the register, and weighted toward the ones that carry a political consequence — because those are the ones where being wrong costs something. That synthesis needs the field to be scored before it can be written honestly, and the field is not scored yet: [HYPOTHESES.md](#HYPOTHESES.md) states the mechanisms and explicitly declines to rank them.
->
-> Writing it earlier would mean assembling whichever findings happen to exist into an argument and calling it a conclusion, which is the failure this site was built to notice. So it stays empty, visibly, until there is something to put in it.
+The four words name losses. The public framing names one mechanism — nitrogen, to
+oxygen, to damage — and then measures the mechanism. Five findings say why that does
+not reach the losses. Each is recomputed on these pages, and each is stated with what
+it does **not** establish, because this section has already had to be rewritten twice
+for claiming past its evidence.
+
+**1. The nutrient account never beat the alternatives; it is the one with a monitoring
+programme.** All 166 mechanisms in [the register](#HYPOTHESES.md) have been
+[triaged](hypodrafts/TRIAGE.md) against the data that exists. Twenty-four are testable
+now — **and not one of them is in the nutrient group.** Every entry there is blocked on
+a fetch, unscoreable, or unestablished. Forty mechanisms cannot be tested at all
+because the deciding measurement has no column anywhere, and twenty more need an
+experiment nobody has run. **Sixty of them have never been in a position to compete.**
+*Does not establish:* that nutrients are innocent. It establishes that the contest
+people believe has happened has not happened.
+
+**2. The deciding number is usable as a sign and not as a coefficient.** *Markoverskud*
+— the field surplus that drives the model — fell 40–53% across ten studied catchments.
+The measured diffuse load fell by **10–14 kg N/ha where the surplus fell 30–52**, by
+**3–5 where it fell 24–50**, and at Mariager by **nothing at all**. Pass-through runs
+from zero to about a third. A load reduction predicted from a surplus reduction is
+overestimated threefold to tenfold, or entirely. *Does not establish:* that the decline
+was not real. Measured estuary nitrogen fell 24–62% over the same period.
+
+**3. The national relation is tight because the local coefficient varies.** DCE report
+*"en meget stærk, signifikant lineær relation"* between field surplus and diffuse load
+at national scale. That is an aggregate over catchments whose individual pass-through
+ranges from zero to a third. **The strength of the national fit is not evidence that
+the local coefficient is stable — it is what aggregation does to a variable one.** The
+same shape appears twice more here: [water bodies](#AREAS.md) that carry no signal
+within themselves, and a national oxygen trend that [tracks which stations were
+reporting](docs/stations.html).
+
+**4. The method does not produce an annual share.** The background/anthropogenic split
+is made **only on five-year averages**, because DCE state it is too uncertain year by
+year. Any yearly movement in a published percentage interpolates a quinquennial split.
+And the diffuse term is defined to include scattered dwellings *because they could not
+be separated from it* — the category is a mixture by its own definition.
+
+**5. Three of the four words have no instrument.** *Fedtemøg* has no measurement.
+*Fiskedød* has no open register. *Livet i fjordene* is a claim about structure that a
+gas concentration does not address. **A framing that measures oxygen cannot report
+progress on three of the four things people are actually complaining about**, and
+[Køge Bugt](#PLACES.md) is the case: the loudest claim in the country, and among the
+best-oxygenated waters in it, with no registered *iltsvind* in 2023 or 2025.
+
+### What this changes about Part Two
+
+Not much, and that is the point. **Every intervention below was chosen to act on what
+arrives rather than on what it causes** — keeping rainwater out of the combined system,
+an outlet that is not the bay, source control on what the water carries. Those hold
+whichever of 166 mechanisms dominates, which is why they survive a finding that the
+field cannot be resolved.
+
+What the findings do change is the *order*: [Places, not
+categories](#PLACES.md) takes the coasts one at a time, because one is four times worse
+than anywhere else and is not the one anybody argues about — and because a trial at
+Mariager says nothing about Lillebælt when the land-to-estuary coefficient varies
+twenty-six-fold between them.
 
 ### What this page can and cannot honestly claim
 
