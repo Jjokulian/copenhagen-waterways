@@ -150,6 +150,67 @@ Three things follow from reading by place rather than by mechanism.
    166 mechanisms is dominant. **Those are worth doing under uncertainty in a way that a
    precisely-targeted intervention is not.**
 
+## The meta-solution: buy the experiments
+
+Everything above points at one instrument rather than many. **Fund trials of solution
+models, in named places, with pre-stated outcomes — and let the results decide.**
+
+**Why this is not a slogan.** Intervention is the only thing that identifies a cause
+*without enumerating the confounders*. When you set a variable rather than observe it,
+every backdoor path is cut by construction — no adjustment set, no need to name the
+environmental peculiarities that have no column. Given that 40 of 166 mechanisms here
+are unscoreable and another 20 need an experiment anyway, **the observational route to
+an answer may not exist**, and a trial does not require one.
+
+**Denmark is unusually well placed to do this, and the reason is concrete.** A trial
+needs a *before*. Denmark has forty years of near-bed oxygen at 1,415 stations, which is
+a baseline almost nowhere else has. The design that fits is Before-After-Control-Impact:
+intervene in one place, leave a matched place alone, and read both against their own
+history. **The expensive half of that design already exists and is paid for.**
+
+**What the portfolio would look like**, taken from the places above rather than invented:
+
+| where | trial | reads out on |
+|---|---|---|
+| **Mariager** | deep-water exchange | bottom oxygen and sulphide, existing stations, 1–2 years |
+| **Lillebælt / Sydfynske Øhav** | catchment nitrogen reduction, at intensity | the one place the standard account predicts it should work |
+| **Køge Bugt** | an instrument for *fedtemøg* | nothing can be judged there until the complaint is measurable |
+| any | source control on what the water carries | delivered load, whichever mechanism dominates |
+
+**The economics are the argument.** A national reduction is expensive, recurring,
+irreversible within a year, and produces **no test**. A portfolio of trials is cheap
+against it, reversible, and every result is permanent — it holds whoever is in office
+and whatever the next model says. The value-of-information case is standard decision
+analysis: where the intervention cost is large and the attribution uncertain by a
+factor, information is worth a substantial fraction of the intervention.
+
+### The objection that would sink it, stated plainly
+
+**Exactly this argument is what somebody who simply wants to delay would make.** "More
+research is needed" is the oldest way to stall a regulation, and the fact that it is
+sometimes true is what makes it effective. There is a large economic interest in delay
+here, and a proposal to experiment instead of act serves that interest whether or not it
+means to.
+
+So the proposal is only honest if it is built so it **cannot** function as delay:
+
+- **a pre-committed timetable**, with the regulation as the default if the trials do not
+  report by it — the burden of delivery on the trials, not on the regulator;
+- **pre-registered outcomes**, chosen before the trial starts, so a null result cannot be
+  reinterpreted afterwards;
+- **published protocols and data**, so a failed trial is visible rather than quietly
+  dropped;
+- **and no reduction in what is already measured** while it runs.
+
+Without those four, this is a delaying tactic with a methodology section. With them it is
+the only instrument on the table that produces an answer rather than a compliance figure.
+
+**And it is worth being clear about what it does not claim.** A trial that works at
+Mariager says nothing about Lillebælt — the transfer coefficient between land and
+estuary already varies twenty-six-fold between bays, and one catchment in ten responds
+to nitrogen not at all. **Places would have to be tried separately, which is the whole
+argument of this page.**
+
 **Limits.** The table aggregates into official water-body names, which this project's
 own testing says are not real units — it locates observations, it does not characterise
 places. Coverage is uneven: 10 stations at Odense against 170 in Smålandsfarvandet.
