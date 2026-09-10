@@ -260,6 +260,37 @@ the detection limit are to be reported as measured, negatives included — yet t
 **not one negative value in 1.8 million rows**, so either that was never followed or
 the numbers were cleaned before ODA received them.
 
+**`KorrektionsFaktor` is not one thing.** `KorrigeretResultat` is exactly
+`OriginalResultat × KorrektionsFaktor` — verified on 199,999 of 199,999 rows carrying
+all three — so a wrong factor corrupts the value silently and by construction. But what
+the factor *means* differs per parameter, and the technical instructions say so:
+
+* **Oxygen** ([Kap. 4](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap04.doc)):
+  genuine instrument bias compensation. *"Faktor: O₂-Winkler/O₂-elektrode"* — the
+  electrochemical sonde is checked against a Winkler iodometric titration on a bottle
+  from 1 m, and if they disagree by more than 0.3 mg O₂/l the entire profile is
+  multiplied by the ratio. Where the Winkler bottle fell inside a gradient, the profile
+  is corrected instead by *the mean factor from other stations the same day* — so some
+  corrected oxygen carries a calibration derived at a different station.
+* **Fluorescence** ([Kap. 2](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap02.doc)):
+  **not** bias compensation, and its large factors are correct. The instruction states
+  that a fluorescence signal *"kan derfor ikke direkte omsættes til en pigment
+  koncentration, selvom mange fabrikater i deres programmer angiver, at udlæsninger er
+  i µg Chl l⁻¹"* — the manufacturers' claim is wrong — and that fluorescence per
+  chlorophyll varies biologically, so *"et varierende FChl forhold [er] ikke et udtryk
+  for instrument problemer"*. The factor is a unit conversion plus a live calibration
+  against measured chlorophyll. Its 156,974 rows (2.3%) outside 0.5–2.0, to a maximum
+  of 201×, are data and not faults. **Do not filter fluorescence on this column.**
+* **CTD temperature, conductivity, pressure** ([Kap. 1](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap01.doc)):
+  calibration coefficients live inside the sensor, estimated by the manufacturer or the
+  institution, with annual recalibration and tank and in-situ checks. **No post-hoc
+  multiplicative factor is described.** So the 606 temperature rows with a factor up to
+  80×, and the 79 salinity rows up to 2346×, are not a documented procedure applied
+  badly — they have no basis in the instruction at all.
+
+A physical range check will not catch a bad factor: 0.5 applied to 18 °C gives 9 °C,
+an unremarkable Danish sea temperature that happens to be wrong.
+
 **A workaround worth knowing.** 99% of `kemi` station-days carry a single clock time,
 and 123,866 of 155,182 `ctd` station-days (80%) have a matching `kemi` visit. A station-day
 is effectively one moment, so the clock can be lent from one extract to the other —
