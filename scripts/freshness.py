@@ -126,7 +126,7 @@ def order(steps):
 
 
 def status(steps, lock):
-    stale, edited, unbuilt, ok = [], [], [], []
+    stale, rebuilt, edited, unbuilt, ok = [], [], [], [], []
     for s in steps:
         rec = lock["steps"].get(s["script"])
         ins = {p: digest(p) for p in list(s["inputs"]) + [s["script"]]}
@@ -136,13 +136,21 @@ def status(steps, lock):
             continue
         moved = [p for p, v in ins.items() if rec["inputs"].get(p) != v]
         touched = [p for p, v in outs.items() if rec["outputs"].get(p) != v]
-        if moved:
+        # Three different states, and conflating them is the error this file
+        # exists to prevent. Input AND output both moved: somebody reran the
+        # generator without --accept, and calling that a hand-edit is a false
+        # alarm of exactly the kind that trains a reader to ignore the check.
+        # Output moved and input did not: nothing but a person could have done
+        # that, and rerunning would destroy it.
+        if moved and touched:
+            rebuilt.append((s, touched))
+        elif moved:
             stale.append((s, moved))
-        if touched:
+        elif touched:
             edited.append((s, touched))
-        if not moved and not touched:
+        else:
             ok.append(s)
-    return stale, edited, unbuilt, ok
+    return stale, rebuilt, edited, unbuilt, ok
 
 
 def record(lock, s):
@@ -182,7 +190,7 @@ def main(argv):
         log(f"  recorded {len(steps)} step(s) as built")
         return 0
 
-    stale, edited, unbuilt, ok = status(steps, lock)
+    stale, rebuilt, edited, unbuilt, ok = status(steps, lock)
     for s, outs in unbuilt:
         log(f"  NEVER BUILT  {s['script']} -> {', '.join(outs) or '(no record)'}")
     for s, outs in edited:
@@ -190,11 +198,14 @@ def main(argv):
         log(f"               differs from what {s['script']} last wrote. "
             "Rerunning DESTROYS that edit -")
         log("               move the text into the generator first.")
+    for s, outs in rebuilt:
+        log(f"  REBUILT      {s['script']} was rerun since the last accepted "
+            "build - --accept records it, --fix reruns it to be certain")
     for s, moved in stale:
         log(f"  STALE        {s['script']}")
         log(f"               its input changed: {', '.join(moved[:3])}"
             + (f" (+{len(moved)-3} more)" if len(moved) > 3 else ""))
-    if not stale and not edited and not unbuilt:
+    if not stale and not rebuilt and not edited and not unbuilt:
         log(f"  every declared output follows from its inputs ({len(ok)} step(s))")
         return 0
 
@@ -203,7 +214,10 @@ def main(argv):
             log("\n  refusing to rerun while a generated file carries a hand-edit: "
                 "that is the one case where rerunning loses work")
             return 1
-        todo = {s["script"] for s, _ in stale} | {s["script"] for s, _ in unbuilt}
+        # a rebuilt step is rerun too: it costs a run and makes the state certain,
+        # where --accept would be taking the rerun on trust
+        todo = ({s["script"] for s, _ in stale} | {s["script"] for s, _ in rebuilt}
+                | {s["script"] for s, _ in unbuilt})
         # anything downstream of a rebuilt step is stale too, by construction
         changed = True
         while changed:

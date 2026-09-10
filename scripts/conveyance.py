@@ -34,6 +34,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from common import DERIVED, RAW, ROOT, log, read_json
+from figures import provenance
 
 SRC = os.path.join(RAW, "skp_veje_tunneller_kk.geojson")
 OUT = os.path.join(DERIVED, "conveyance.json")
@@ -54,12 +55,14 @@ def main():
     d = read_json(SRC)
     by = collections.Counter()
     n = collections.Counter()
+    nogeom = 0          # counted, so the provenance can say what it dropped
     for f in d["features"]:
         g = f.get("geometry") or {}
         parts = g.get("coordinates") or []
         if g.get("type") == "LineString":
             parts = [parts]
         elif g.get("type") != "MultiLineString":
+            nogeom += 1
             continue
         t = (f["properties"].get("typologi") or "ukendt").strip()
         by[t] += sum(seg_km(p) for p in parts)
@@ -83,6 +86,59 @@ def main():
         "unclassified_km": round(other, 1),
         "total_km": round(surface + pipe + other, 1),
         "surface_to_pipe": round(surface / pipe, 2) if pipe else None,
+    }
+    # What each figure counted as the same thing, written by the code that did
+    # the counting. Three published figures for this quantity disagreed and all
+    # rested on the same layer and the same graph; they differed only here, in
+    # which typologies were treated as one class. So the class is recorded, and
+    # so are the other defensible classes and what each would have given.
+    mix = by.get("mix", 0.0)
+    total = surface + pipe + other
+    nsurf = sum(n[k] for k in SURFACE)
+    npipe = sum(n[k] for k in PIPE)
+    nall = sum(n.values()) + nogeom     # every feature in the layer
+    out["features_in_layer"] = nall
+    out["features_without_line_geometry"] = nogeom
+    out["mix_km"] = round(mix, 1)
+    out["surface_plus_mix_km"] = round(surface + mix, 1)
+    alt = [("surface only: Skybrudsveje, Groenne veje, Forsinkelsesveje",
+            round(surface, 1)),
+           ("surface plus mixed alignment", round(surface + mix, 1)),
+           ("every alignment in the layer, pipe included", round(total, 1))]
+    code = "scripts/conveyance.py:main"
+    out["_provenance"] = {
+        "surface_km": provenance(
+            counts_as="an alignment whose typologi is Skybrudsveje, Groenne veje "
+                      "or Forsinkelsesveje - water carried where a person can see "
+                      "it. 'mix' is NOT counted: it carries water on the surface "
+                      "only in part, and nothing in the layer says which part.",
+            calculation="sum of segment lengths over every LineString of those "
+                        "features, each segment = hypot(dlon x 111.320 x cos(lat), "
+                        "dlat x 110.574) km",
+            code=code, unit="km", n_in=nall, n_used=nsurf,
+            excluded=[("feature with no line geometry - nothing to measure", nogeom), ("typologi 'mix' - surface only in part", n.get("mix", 0)),
+                      ("typologi 'Skybrudsledning' - pipe, counted separately", npipe)],
+            alternatives=alt),
+        "surface_plus_mix_km": provenance(
+            counts_as="the surface typologies AND 'mix' - every alignment that "
+                      "could carry water on the surface for some of its length",
+            calculation="surface_km + the summed length of typologi 'mix'",
+            code=code, unit="km", n_in=nall, n_used=nsurf + n.get("mix", 0),
+            excluded=[("feature with no line geometry - nothing to measure", nogeom), ("typologi 'Skybrudsledning' - pipe", npipe)],
+            alternatives=alt),
+        "pipe_km": provenance(
+            counts_as="an alignment whose typologi is Skybrudsledning - water in "
+                      "a pipe, out of sight",
+            calculation="sum of segment lengths over those features, as above",
+            code=code, unit="km", n_in=nall, n_used=npipe,
+            excluded=[("feature with no line geometry - nothing to measure", nogeom), ("every surface and mixed typologi", nall - npipe)]),
+        "surface_to_pipe": provenance(
+            counts_as="the surface-only class against the pipe class - the ratio "
+                      "changes with the surface definition, so it carries it",
+            calculation="surface_km / pipe_km",
+            code=code, n_in=nall, n_used=nsurf + npipe,
+            alternatives=[("surface only / pipe", round(surface / pipe, 2)),
+                          ("surface plus mix / pipe", round((surface + mix) / pipe, 2))]),
     }
     os.makedirs(DERIVED, exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:

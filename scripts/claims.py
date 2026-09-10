@@ -209,6 +209,69 @@ def graph_for(cid, nodes, claims, depth=2):
     return "\n".join(out)
 
 
+def justification(cid, c):
+    """How a claim's number was counted, if computed - or judged, if assessed.
+
+    The dependency graph shows what a claim stands on. It does not show how the
+    counting was done, and that is where disagreement actually lives: 168.1, 209.0
+    and 280.0 km of conveyance all rest on the same layer and the same script, and
+    differ only in what was treated as the same thing. So a computed claim shows
+    the class, the calculation, the rows in and used, the exclusions, and the other
+    defensible definitions with what each would give - all written by the script
+    that did the work, which is the only party that knows. An assessed claim has no
+    code to read, so it shows what a person wrote: what it counts, why it is
+    believed, how confident, and what would change it."""
+    d = read_json(SRC)
+    out = []
+    if c.get("basis") == "computed":
+        provs = []
+        for name, r in d.get("figures", {}).items():
+            if r.get("claim") != cid:
+                continue
+            f = os.path.join(ROOT, r["file"])
+            if not os.path.exists(f):
+                continue
+            p = (json.load(open(f, encoding="utf-8")).get("_provenance")
+                 or {}).get(r["path"])
+            if p:
+                provs.append((name, r, p))
+        out.append("**Computed** — the chain is what was coded, and the script that "
+                   "computes it records how it counted.")
+        if not provs:
+            out += ["", "*The script behind this does not yet record how it counted "
+                    "it. That is a gap in the justification, not a property of the "
+                    "number.*"]
+        for name, r, p in provs:
+            out += ["", f"**`{name}`** — `{r['file']}` → `{r['path']}`", ""]
+            out.append(f"- **Counted as the same thing:** {p['counts_as']}")
+            out.append(f"- **Calculation:** {p['calculation']}")
+            if p.get("n_in") is not None and p.get("n_used") is not None:
+                out.append(f"- **Rows:** {p['n_in']:,} in, {p['n_used']:,} used")
+            for e in p.get("excluded") or []:
+                out.append(f"- **Excluded:** {e['reason']} ({e['n']:,})")
+            if p.get("alternatives"):
+                out.append("- **Other defensible definitions, and what each gives:** "
+                           + "; ".join(f"{a['definition']} → {a['value']}"
+                                       for a in p["alternatives"]))
+            src = p["code"].split(":")[0]
+            out.append(f"- **Code:** [`{p['code']}`](../{src})")
+    else:
+        a = c.get("assessment")
+        out.append("**Assessed** — no script computes this. It is a reading or a "
+                   "judgement, assessed by a person.")
+        if not a:
+            out += ["", "*Assessment not yet written.*"]
+        else:
+            out.append("")
+            for k, lab in (("counts_as", "What it counts"),
+                           ("reasoning", "Why it is believed"),
+                           ("confidence", "How confident"),
+                           ("would_change", "What would change it")):
+                if a.get(k):
+                    out.append(f"- **{lab}:** {a[k]}")
+    return out
+
+
 def foundation(cid, summary=None):
     """A drop-in fold for any generator: the claim's graph and what would break it."""
     d, nodes, claims = load()
@@ -225,6 +288,7 @@ def foundation(cid, summary=None):
         lab = (n.get("label") or n.get("claim", ""))[:70].replace("\\n", " ")
         body.append(f"- **{kind}** — {lab}"
                     + (f". {n['detail']}" if n.get("detail") else ""))
+    body += [""] + justification(cid, c)
     if c.get("note"):
         body += ["", c["note"]]
     return ('<details class="work">\n<summary>' + head + "\n\n"
@@ -294,6 +358,9 @@ def main(argv):
                 lab = (n.get("label") or n.get("claim", ""))[:80].replace("\\n", " ")
                 w(f"- **{kind}** — {lab}"
                   + (f". {n['detail']}" if n.get("detail") else ""))
+            w()
+            for line in justification(cid, c):
+                w(line)
             if c.get("note"):
                 w()
                 w(f"> {c['note']}")

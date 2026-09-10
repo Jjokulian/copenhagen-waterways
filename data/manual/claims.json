@@ -163,7 +163,8 @@
     "file": "data/derived/enums.json",
     "path": "kemi.rows",
     "fmt": "{:,}"
-   }
+   },
+   "basis": "computed"
   },
   {
    "id": "C-WORKDAY",
@@ -176,7 +177,8 @@
     "D-KEMI",
     "A-SHAPE"
    ],
-   "note": "Nearly assumption-free: the same visits compared with themselves, only the hour redrawn. Does NOT claim the sea has such a cycle."
+   "note": "Nearly assumption-free: the same visits compared with themselves, only the hour redrawn. Does NOT claim the sea has such a cycle.",
+   "basis": "computed"
   },
   {
    "id": "C-DIURNAL-BOUND",
@@ -195,7 +197,8 @@
     "file": "data/derived/detectable.json",
     "path": "detection_limit_mg_l",
     "fmt": "{:g}"
-   }
+   },
+   "basis": "computed"
   },
   {
    "id": "C-PREDAWN",
@@ -207,7 +210,14 @@
     "D-KEMI",
     "C-WORKDAY"
    ],
-   "note": "Not a finding about the sea. A statement about when people are willing to be on a boat."
+   "note": "Not a finding about the sea. A statement about when people are willing to be on a boat.",
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "surface oxygen samples taken with the sun below the horizon - night and civil twilight - at a station's own position and instant",
+    "reasoning": "684 of 91,072 surface oxygen samples. Spread over 57 years and about a thousand stations, that cannot characterise a minimum at any one place.",
+    "confidence": "High that the minimum is undersampled. The word 'nothing' is strong: the 684 exist, they are simply too thin to constrain anything local.",
+    "would_change": "Moored continuous sensors, or one season of deliberate pre-dawn sampling at a handful of stations."
+   }
   },
   {
    "id": "C-DEPTH-UNTIMED",
@@ -217,7 +227,8 @@
    "rests_on": [
     "D-CTD"
    ],
-   "note": "Verified against ODA's own output-field list, not inferred from our extract."
+   "note": "Verified against ODA's own output-field list, not inferred from our extract.",
+   "basis": "computed"
   },
   {
    "id": "C-DEPTH-BORROW",
@@ -230,7 +241,8 @@
     "A-BORROW",
     "G-CLOCK"
    ],
-   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact."
+   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact.",
+   "basis": "computed"
   },
   {
    "id": "C-MANURE",
@@ -242,7 +254,8 @@
     "D-MARKER",
     "X-MANURE"
    ],
-   "note": "QUALIFIED by C-DE-VOID: the threshold has no legal force. The physical statement, that this manure must leave the holding, stands."
+   "note": "QUALIFIED by C-DE-VOID: the threshold has no legal force. The physical statement, that this manure must leave the holding, stands.",
+   "basis": "computed"
   },
   {
    "id": "C-DE-VOID",
@@ -252,7 +265,14 @@
    "rests_on": [
     "D-BEK931"
    ],
-   "note": "Read from the regulation itself. Qualifies C-MANURE, which is framed on DE/ha thresholds."
+   "note": "Read from the regulation itself. Qualifies C-MANURE, which is framed on DE/ha thresholds.",
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "occurrences of dyreenhed (the animal unit) as a regulatory unit in the operative text of BEK 931/2024",
+    "reasoning": "Read from retsinformation's primary text: 0 occurrences of dyreenhed, 38 of harmoniareal. §14 binds on 170 kg organic nitrogen per hectare of harmoniareal; §26 stk. 3 keeps the 230 kg permissions only as a transitional provision.",
+    "confidence": "High for BEK 931 itself, which was read here. Medium for the general statement that the animal unit has no legal force: the other instruments (BEK 673, BEK 677, LOV 759) were read by the incidence agent and not by a second reader.",
+    "would_change": "An operative regulation setting a limit in dyreenheder, or a court or agency reading that the unit still binds through another route."
+   }
   },
   {
    "id": "C-NO-BUFFER",
@@ -264,7 +284,8 @@
     "X-SOCIAL",
     "C-DE-VOID"
    ],
-   "note": "A FLOOR, not a count. 76.3% of the herd is on businesses filing no accounts, and the filers are the large end."
+   "note": "A FLOOR, not a count. 76.3% of the herd is on businesses filing no accounts, and the filers are the large end.",
+   "basis": "computed"
   },
   {
    "id": "C-SIDIN",
@@ -280,7 +301,8 @@
     "file": "data/derived/rescore.json",
     "path": "tests.K1_si_din_molar_surface.2025.median",
     "fmt": "{:.2f}"
-   }
+   },
+   "basis": "computed"
   },
   {
    "id": "C-K1-BLOCKED",
@@ -290,7 +312,14 @@
    "rests_on": [
     "G-SPECIES"
    ],
-   "note": "A blocker behind a blocker: K1 was listed as waiting on the vandkemi fetch, which has happened."
+   "note": "A blocker behind a blocker: K1 was listed as waiting on the vandkemi fetch, which has happened.",
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "phytoplankton assemblage counts at stations where Si:DIN is measured",
+    "reasoning": "The water-chemistry fetch carries no species counts; OBIS eMoF, which may, has not been fetched.",
+    "confidence": "High that it is not in hand. Unassessed whether it exists at the needed resolution.",
+    "would_change": "Fetching OBIS eMoF for the Danish stations and finding assemblage data co-located with nutrients."
+   }
   },
   {
    "id": "C-FLOOD-AREA",
@@ -306,7 +335,8 @@
     "file": "data/derived/floodgap.json",
     "path": "flooded_area_km2",
     "fmt": "{:.3f}"
-   }
+   },
+   "basis": "computed"
   },
   {
    "id": "C-DRAIN-ROUTE",
@@ -316,7 +346,14 @@
    "rests_on": [
     "G-DRAIN"
    ],
-   "note": "Approximable from terrain, but the approximation is untested and there is nothing to test it against."
+   "note": "Approximable from terrain, but the approximation is untested and there is nothing to test it against.",
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "a mapped point where a tile drain discharges to a watercourse",
+    "reasoning": "No national outfall layer exists; draenkort are private paper records. Searched, and recorded in DATA_SOURCES.md.",
+    "confidence": "High that no national layer exists. The terrain approximation - outfall where a drained parcel's flow path meets the stream - is untested.",
+    "would_change": "Digitised draenkort for one test catchment, against which the terrain approximation can be scored."
+   }
   },
   {
    "id": "C-CONVEYANCE",
@@ -335,7 +372,8 @@
    "appears_in": [
     "index.html"
    ],
-   "note": "Three figures for this quantity were published and none was derived: 210 km on the landing page, 169 km in two documents, and a layer measuring 280 km. All three are defensible under different definitions of 'surface' and nothing said which was in use. 210 was surface plus mix (209.0); 169 was surface alone (168.1). The pipe figure, 71, was right to the kilometre."
+   "note": "Three figures for this quantity were published and none was derived: 210 km on the landing page, 169 km in two documents, and a layer measuring 280 km. All three are defensible under different definitions of 'surface' and nothing said which was in use. 210 was surface plus mix (209.0); 169 was surface alone (168.1). The pipe figure, 71, was right to the kilometre.",
+   "basis": "computed"
   }
  ],
  "_figures": "A claim may declare where its number came from. claims.py then reads the live value and refuses to write the page if the sentence no longer matches it. Provenance says what a claim rests on; this says whether it still does.",
@@ -375,6 +413,19 @@
    "path": "ctd.rows",
    "fmt": "{:,}",
    "claim": "C-DEPTH-UNTIMED"
+  },
+  "mix_km": {
+   "file": "data/derived/conveyance.json",
+   "path": "mix_km",
+   "fmt": "{:.1f}",
+   "claim": "C-CONVEYANCE"
+  },
+  "surface_plus_mix_km": {
+   "file": "data/derived/conveyance.json",
+   "path": "surface_plus_mix_km",
+   "fmt": "{:.1f}",
+   "claim": "C-CONVEYANCE"
   }
- }
+ },
+ "_basis": "Every claim is COMPUTED - a script produces the number and records how it counted it - or ASSESSED: a reading or a judgement that no script can re-derive, assessed by a person in its 'assessment' field."
 }
