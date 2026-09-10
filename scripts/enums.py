@@ -139,8 +139,19 @@ def main(argv):
         out[name] = rec
 
     os.makedirs(DERIVED, exist_ok=True)
+    # Merge, do not replace. Running this on one extract used to overwrite the
+    # whole register with that one entry, so `enums.py ctd` silently destroyed
+    # what `enums.py kemi` had found - and nothing said so, because a file with
+    # one key in it looks exactly like a file that only ever had one key.
+    prev = {}
+    if os.path.exists(OUT):
+        try:
+            prev = json.load(open(OUT, encoding="utf-8"))
+        except ValueError:
+            prev = {}
+    prev.update(out)
     with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=1, ensure_ascii=False)
+        json.dump(prev, f, indent=1, ensure_ascii=False)
         f.write("\n")
     log(f"\nwrote {os.path.relpath(OUT)}")
     return 0

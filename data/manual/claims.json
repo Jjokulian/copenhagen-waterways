@@ -10,80 +10,302 @@
   "external": "somebody else's published number, used as input"
  },
  "nodes": [
-  {"id": "D-KEMI", "kind": "held", "label": "ODA vandkemi\\n1,805,827 rows, 1970-2026", "detail": "Fetched 2026-09-10. Carries Startklok on 100.0% of rows. 14 of 147 parameters appear under more than one unit."},
-  {"id": "D-CTD", "kind": "held", "label": "ODA CTD\\n53,710,760 rows", "detail": "Oxygen, temperature, salinity at depth. NO clock field: ODA offers none for this topic."},
-  {"id": "D-CHR", "kind": "held", "label": "CHR livestock sites\\n57,860", "detail": "Animal units per site, joined to Marker parcels on CVR."},
-  {"id": "D-MARKER", "kind": "held", "label": "Marker parcels\\n616,411", "detail": "Declared hectares per CVR."},
-  {"id": "D-ACCOUNTS", "kind": "held", "label": "Filed accounts\\n1,630 businesses", "detail": "From the sibling project danish-livestock. A SAMPLE: 76.3% of the herd and 81.0% of farmland is on businesses filing nothing."},
-  {"id": "D-BEK931", "kind": "external", "label": "BEK 931/2024", "detail": "Read from retsinformation's primary text. 'dyreenhed' occurs zero times; 38 occurrences of 'harmoniareal'."},
-  {"id": "D-SHEETS", "kind": "held", "label": "2012 flood sheets\\n7 orthophoto sheets", "detail": "Recovered from PDF. Placed with 14-91 m stated error; meridian convergence of ~2.95 deg is NOT modelled."},
-  {"id": "G-CLOCK", "kind": "gap", "label": "CTD visit times\\nNOT HELD", "detail": "Cruise logs or field sheets. Slot: data/dropin/ctd_visit_times.csv."},
-  {"id": "G-PREDAWN", "kind": "gap", "label": "Pre-dawn sampling\\nNEVER TAKEN", "detail": "684 night and twilight samples in 91,072. The value an oxygen threshold is about is essentially unobserved."},
-  {"id": "G-DRAIN", "kind": "gap", "label": "Drain outfalls\\nDO NOT EXIST", "detail": "No national layer. Private paper draenkort."},
-  {"id": "G-SPECIES", "kind": "gap", "label": "Phytoplankton counts\\nNOT HELD", "detail": "OBIS eMoF. Blocks the assemblage half of K1 and K2."},
-  {"id": "S-DETECT", "kind": "synthetic", "label": "Imposed diurnal signal\\non the real schedule", "detail": "scripts/detectable.py. Real times, positions and visits; stipulated signal."},
-  {"id": "A-SHAPE", "kind": "assumption", "label": "Signal shape tracks\\nsun elevation", "detail": "The shape photosynthesis would impose. If the real cycle has another shape the recovery figure changes."},
-  {"id": "A-NOISE", "kind": "assumption", "label": "Noise Gaussian,\\n0.629 mg/l", "detail": "Measured from single-sun-bin cells so the signal cannot inflate it. Gaussianity is stipulated."},
-  {"id": "A-BORROW", "kind": "assumption", "label": "A station-day is\\none moment", "detail": "99% of kemi station-days carry a single Startklok. UNCHECKED against field sheets."},
-  {"id": "X-CYCLES", "kind": "script", "label": "cycles.py", "detail": "Fixed effects in a moving window at each station; sun, moon, tide, temperature."},
-  {"id": "X-DETECT", "kind": "script", "label": "detectable.py", "detail": "Synthetic recovery on the real schedule."},
-  {"id": "X-MANURE", "kind": "script", "label": "manure.py", "detail": "CHR x Marker on CVR."},
-  {"id": "X-SOCIAL", "kind": "script", "label": "socialcontext.py", "detail": "Policy incidence from the regulations and the accounts."},
-  {"id": "X-RESCORE", "kind": "script", "label": "rescore.py", "detail": "Availability matrix and tests for the nine hypotheses."},
-  {"id": "X-FLOODGAP", "kind": "script", "label": "floodgap.py", "detail": "Flood path against the cloudburst plan."}
+  {
+   "id": "D-KEMI",
+   "kind": "held",
+   "label": "ODA vandkemi\\n1,805,827 rows, 1970-2026",
+   "detail": "Fetched 2026-09-10. Carries Startklok on 100.0% of rows. 14 of 147 parameters appear under more than one unit."
+  },
+  {
+   "id": "D-CTD",
+   "kind": "held",
+   "label": "ODA CTD\\n53,710,760 rows",
+   "detail": "Oxygen, temperature, salinity at depth. NO clock field: ODA offers none for this topic."
+  },
+  {
+   "id": "D-CHR",
+   "kind": "held",
+   "label": "CHR livestock sites\\n57,860",
+   "detail": "Animal units per site, joined to Marker parcels on CVR."
+  },
+  {
+   "id": "D-MARKER",
+   "kind": "held",
+   "label": "Marker parcels\\n616,411",
+   "detail": "Declared hectares per CVR."
+  },
+  {
+   "id": "D-ACCOUNTS",
+   "kind": "held",
+   "label": "Filed accounts\\n1,630 businesses",
+   "detail": "From the sibling project danish-livestock. A SAMPLE: 76.3% of the herd and 81.0% of farmland is on businesses filing nothing."
+  },
+  {
+   "id": "D-BEK931",
+   "kind": "external",
+   "label": "BEK 931/2024",
+   "detail": "Read from retsinformation's primary text. 'dyreenhed' occurs zero times; 38 occurrences of 'harmoniareal'."
+  },
+  {
+   "id": "D-SHEETS",
+   "kind": "held",
+   "label": "2012 flood sheets\\n7 orthophoto sheets",
+   "detail": "Recovered from PDF. Placed with 14-91 m stated error; meridian convergence of ~2.95 deg is NOT modelled."
+  },
+  {
+   "id": "G-CLOCK",
+   "kind": "gap",
+   "label": "CTD visit times\\nNOT HELD",
+   "detail": "Cruise logs or field sheets. Slot: data/dropin/ctd_visit_times.csv."
+  },
+  {
+   "id": "G-PREDAWN",
+   "kind": "gap",
+   "label": "Pre-dawn sampling\\nNEVER TAKEN",
+   "detail": "684 night and twilight samples in 91,072. The value an oxygen threshold is about is essentially unobserved."
+  },
+  {
+   "id": "G-DRAIN",
+   "kind": "gap",
+   "label": "Drain outfalls\\nDO NOT EXIST",
+   "detail": "No national layer. Private paper draenkort."
+  },
+  {
+   "id": "G-SPECIES",
+   "kind": "gap",
+   "label": "Phytoplankton counts\\nNOT HELD",
+   "detail": "OBIS eMoF. Blocks the assemblage half of K1 and K2."
+  },
+  {
+   "id": "S-DETECT",
+   "kind": "synthetic",
+   "label": "Imposed diurnal signal\\non the real schedule",
+   "detail": "scripts/detectable.py. Real times, positions and visits; stipulated signal."
+  },
+  {
+   "id": "A-SHAPE",
+   "kind": "assumption",
+   "label": "Signal shape tracks\\nsun elevation",
+   "detail": "The shape photosynthesis would impose. If the real cycle has another shape the recovery figure changes."
+  },
+  {
+   "id": "A-NOISE",
+   "kind": "assumption",
+   "label": "Noise Gaussian,\\n0.629 mg/l",
+   "detail": "Measured from single-sun-bin cells so the signal cannot inflate it. Gaussianity is stipulated."
+  },
+  {
+   "id": "A-BORROW",
+   "kind": "assumption",
+   "label": "A station-day is\\none moment",
+   "detail": "99% of kemi station-days carry a single Startklok. UNCHECKED against field sheets."
+  },
+  {
+   "id": "X-CYCLES",
+   "kind": "script",
+   "label": "cycles.py",
+   "detail": "Fixed effects in a moving window at each station; sun, moon, tide, temperature."
+  },
+  {
+   "id": "X-DETECT",
+   "kind": "script",
+   "label": "detectable.py",
+   "detail": "Synthetic recovery on the real schedule."
+  },
+  {
+   "id": "X-MANURE",
+   "kind": "script",
+   "label": "manure.py",
+   "detail": "CHR x Marker on CVR."
+  },
+  {
+   "id": "X-SOCIAL",
+   "kind": "script",
+   "label": "socialcontext.py",
+   "detail": "Policy incidence from the regulations and the accounts."
+  },
+  {
+   "id": "X-RESCORE",
+   "kind": "script",
+   "label": "rescore.py",
+   "detail": "Availability matrix and tests for the nine hypotheses."
+  },
+  {
+   "id": "X-FLOODGAP",
+   "kind": "script",
+   "label": "floodgap.py",
+   "detail": "Flood path against the cloudburst plan."
+  }
  ],
  "claims": [
-  {"id": "C-CLOCK-EXISTS", "kind": "measured", "page": "PLAN.md",
+  {
+   "id": "C-CLOCK-EXISTS",
+   "kind": "measured",
+   "page": "PLAN.md",
    "claim": "The archive carries a clock time. Startklok is present on 100.0% of 1,805,827 water-chemistry rows.",
-   "rests_on": ["D-KEMI"],
-   "note": "Corrects a claim this project made for weeks, that no row in the archive carried a clock time. That was true of the CTD extract and inferred from the absence of a download."},
-  {"id": "C-WORKDAY", "kind": "simulated", "page": "METHOD_LAB.md",
+   "rests_on": [
+    "D-KEMI"
+   ],
+   "note": "Corrects a claim this project made for weeks, that no row in the archive carried a clock time. That was true of the CTD extract and inferred from the absence of a download.",
+   "value_from": {
+    "file": "data/derived/enums.json",
+    "path": "kemi.rows",
+    "fmt": "{:,}"
+   }
+  },
+  {
+   "id": "C-WORKDAY",
+   "kind": "simulated",
+   "page": "METHOD_LAB.md",
    "claim": "The 09:00-15:00 sampling window loses about three quarters of a diurnal signal of any amplitude.",
-   "rests_on": ["S-DETECT", "X-DETECT", "D-KEMI", "A-SHAPE"],
-   "note": "Nearly assumption-free: the same visits compared with themselves, only the hour redrawn. Does NOT claim the sea has such a cycle."},
-  {"id": "C-DIURNAL-BOUND", "kind": "bounded", "page": "METHOD_LAB.md",
+   "rests_on": [
+    "S-DETECT",
+    "X-DETECT",
+    "D-KEMI",
+    "A-SHAPE"
+   ],
+   "note": "Nearly assumption-free: the same visits compared with themselves, only the hour redrawn. Does NOT claim the sea has such a cycle."
+  },
+  {
+   "id": "C-DIURNAL-BOUND",
+   "kind": "bounded",
+   "page": "METHOD_LAB.md",
    "claim": "The surface diurnal oxygen amplitude is below roughly 0.35 to 0.5 mg/l.",
-   "rests_on": ["C-WORKDAY", "X-CYCLES", "D-KEMI", "A-NOISE", "A-SHAPE"],
-   "note": "A bound, not a null. Void if the signal has a shape unlike sun elevation, or if the noise is far from Gaussian."},
-  {"id": "C-PREDAWN", "kind": "gap", "page": "OPEN_PROBLEMS.md",
+   "rests_on": [
+    "C-WORKDAY",
+    "X-CYCLES",
+    "D-KEMI",
+    "A-NOISE",
+    "A-SHAPE"
+   ],
+   "note": "A bound, not a null. Void if the signal has a shape unlike sun elevation, or if the noise is far from Gaussian.",
+   "value_from": {
+    "file": "data/derived/detectable.json",
+    "path": "detection_limit_mg_l",
+    "fmt": "{:g}"
+   }
+  },
+  {
+   "id": "C-PREDAWN",
+   "kind": "gap",
+   "page": "OPEN_PROBLEMS.md",
    "claim": "Nothing in the archive constrains the pre-dawn oxygen minimum, which is the value a threshold is about.",
-   "rests_on": ["G-PREDAWN", "D-KEMI", "C-WORKDAY"],
-   "note": "Not a finding about the sea. A statement about when people are willing to be on a boat."},
-  {"id": "C-DEPTH-UNTIMED", "kind": "measured", "page": "IF_YOU_HAVE_THE_DATA.md",
+   "rests_on": [
+    "G-PREDAWN",
+    "D-KEMI",
+    "C-WORKDAY"
+   ],
+   "note": "Not a finding about the sea. A statement about when people are willing to be on a boat."
+  },
+  {
+   "id": "C-DEPTH-UNTIMED",
+   "kind": "measured",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
    "claim": "Oxygen at depth cannot be placed in the day: 53.7 million CTD measurements carry a date and no hour.",
-   "rests_on": ["D-CTD"],
-   "note": "Verified against ODA's own output-field list, not inferred from our extract."},
-  {"id": "C-DEPTH-BORROW", "kind": "provisional", "page": "METHOD_LAB.md",
+   "rests_on": [
+    "D-CTD"
+   ],
+   "note": "Verified against ODA's own output-field list, not inferred from our extract."
+  },
+  {
+   "id": "C-DEPTH-BORROW",
+   "kind": "provisional",
+   "page": "METHOD_LAB.md",
    "claim": "80% of CTD station-days can borrow a clock from a same-day water-chemistry bottle.",
-   "rests_on": ["D-CTD", "D-KEMI", "A-BORROW", "G-CLOCK"],
-   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact."},
-  {"id": "C-MANURE", "kind": "measured", "page": "NITROGEN.md",
+   "rests_on": [
+    "D-CTD",
+    "D-KEMI",
+    "A-BORROW",
+    "G-CLOCK"
+   ],
+   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact."
+  },
+  {
+   "id": "C-MANURE",
+   "kind": "measured",
+   "page": "NITROGEN.md",
    "claim": "2,662 businesses - 28% of those declaring land - hold animal units above 1.4 DE per declared hectare, and 56% of the national herd.",
-   "rests_on": ["D-CHR", "D-MARKER", "X-MANURE"],
-   "note": "QUALIFIED by C-DE-VOID: the threshold has no legal force. The physical statement, that this manure must leave the holding, stands."},
-  {"id": "C-DE-VOID", "kind": "measured", "page": "INCIDENCE.md",
+   "rests_on": [
+    "D-CHR",
+    "D-MARKER",
+    "X-MANURE"
+   ],
+   "note": "QUALIFIED by C-DE-VOID: the threshold has no legal force. The physical statement, that this manure must leave the holding, stands."
+  },
+  {
+   "id": "C-DE-VOID",
+   "kind": "measured",
+   "page": "INCIDENCE.md",
    "claim": "Danish nitrogen rules do not count animals. The animal unit has no legal force; the binding ceiling is 170 kg organic N per hectare of harmoniareal.",
-   "rests_on": ["D-BEK931"],
-   "note": "Read from the regulation itself. Qualifies C-MANURE, which is framed on DE/ha thresholds."},
-  {"id": "C-NO-BUFFER", "kind": "bounded", "page": "INCIDENCE.md",
+   "rests_on": [
+    "D-BEK931"
+   ],
+   "note": "Read from the regulation itself. Qualifies C-MANURE, which is framed on DE/ha thresholds."
+  },
+  {
+   "id": "C-NO-BUFFER",
+   "kind": "bounded",
+   "page": "INCIDENCE.md",
    "claim": "At least 154 animal-keeping holdings are both exposed and thin, with a median 1.9 years of equity at current loss rates.",
-   "rests_on": ["D-ACCOUNTS", "X-SOCIAL", "C-DE-VOID"],
-   "note": "A FLOOR, not a count. 76.3% of the herd is on businesses filing no accounts, and the filers are the large end."},
-  {"id": "C-SIDIN", "kind": "measured", "page": "OPEN_PROBLEMS.md",
+   "rests_on": [
+    "D-ACCOUNTS",
+    "X-SOCIAL",
+    "C-DE-VOID"
+   ],
+   "note": "A FLOOR, not a count. 76.3% of the herd is on businesses filing no accounts, and the filers are the large end."
+  },
+  {
+   "id": "C-SIDIN",
+   "kind": "measured",
+   "page": "OPEN_PROBLEMS.md",
    "claim": "Surface Si:DIN has risen from a median of 1.11 in 1985 to 3.41 in 2025, contradicting the premise of hypothesis K1.",
-   "rests_on": ["D-KEMI", "X-RESCORE"],
-   "note": "The DRIVER only. The assemblage response remains unscoreable - see G-SPECIES."},
-  {"id": "C-K1-BLOCKED", "kind": "gap", "page": "OPEN_PROBLEMS.md",
+   "rests_on": [
+    "D-KEMI",
+    "X-RESCORE"
+   ],
+   "note": "The DRIVER only. The assemblage response remains unscoreable - see G-SPECIES.",
+   "value_from": {
+    "file": "data/derived/rescore.json",
+    "path": "tests.K1_si_din_molar_surface.2025.median",
+    "fmt": "{:.2f}"
+   }
+  },
+  {
+   "id": "C-K1-BLOCKED",
+   "kind": "gap",
+   "page": "OPEN_PROBLEMS.md",
    "claim": "Whether the diatom share actually fell cannot be scored.",
-   "rests_on": ["G-SPECIES"],
-   "note": "A blocker behind a blocker: K1 was listed as waiting on the vandkemi fetch, which has happened."},
-  {"id": "C-FLOOD-AREA", "kind": "measured", "page": "FLOOD_GAP.md",
+   "rests_on": [
+    "G-SPECIES"
+   ],
+   "note": "A blocker behind a blocker: K1 was listed as waiting on the vandkemi fetch, which has happened."
+  },
+  {
+   "id": "C-FLOOD-AREA",
+   "kind": "measured",
+   "page": "FLOOD_GAP.md",
    "claim": "5.847 km2 of modelled flooding on land at 0.1 m or deeper.",
-   "rests_on": ["D-SHEETS", "X-FLOODGAP"],
-   "note": "Depends on a sheet placement that does not model the ~2.95 degree meridian convergence, which displaces corners by 94-350 m - four to ten times the stated registration error."},
-  {"id": "C-DRAIN-ROUTE", "kind": "gap", "page": "DATA_SOURCES.md",
+   "rests_on": [
+    "D-SHEETS",
+    "X-FLOODGAP"
+   ],
+   "note": "Depends on a sheet placement that does not model the ~2.95 degree meridian convergence, which displaces corners by 94-350 m - four to ten times the stated registration error.",
+   "value_from": {
+    "file": "data/derived/floodgap.json",
+    "path": "flooded_area_km2",
+    "fmt": "{:.3f}"
+   }
+  },
+  {
+   "id": "C-DRAIN-ROUTE",
+   "kind": "gap",
+   "page": "DATA_SOURCES.md",
    "claim": "Where a field's nitrogen enters the stream network cannot be established.",
-   "rests_on": ["G-DRAIN"],
-   "note": "Approximable from terrain, but the approximation is untested and there is nothing to test it against."}
- ]
+   "rests_on": [
+    "G-DRAIN"
+   ],
+   "note": "Approximable from terrain, but the approximation is untested and there is nothing to test it against."
+  }
+ ],
+ "_figures": "A claim may declare where its number came from. claims.py then reads the live value and refuses to write the page if the sentence no longer matches it. Provenance says what a claim rests on; this says whether it still does."
 }

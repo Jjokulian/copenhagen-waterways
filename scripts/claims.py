@@ -81,9 +81,53 @@ def load():
     return d, nodes, claims
 
 
-def validate(nodes, claims):
-    """Dangling references, and cycles. Returns a list of problems."""
+def dig(obj, path):
+    for k in path.split("."):
+        if isinstance(obj, list):
+            return None
+        if not isinstance(obj, dict) or k not in obj:
+            return None
+        obj = obj[k]
+    return obj
+
+
+def check_figures(claims):
+    """Does the number in the sentence still match the number in the data?
+
+    Provenance says what a claim rests on. This says whether it still does. A
+    claim may declare value_from = {file, path}, and the sentence must contain
+    the value that path currently holds - so a figure that drifted from the data
+    under it fails the build instead of being published.
+
+    This is the half the dependency graph did not cover. The graph would have
+    kept saying FLOOD_GAP rests on the sheets and the script, correctly, while
+    the sentence said 5.932 and the data said 5.847."""
     bad = []
+    for cid, c in claims.items():
+        v = c.get("value_from")
+        if not v:
+            continue
+        f = os.path.join(ROOT, v["file"])
+        if not os.path.exists(f):
+            if not v.get("optional"):
+                bad.append(f"{cid}: {v['file']} does not exist, so its figure "
+                           "cannot be checked")
+            continue
+        cur = dig(json.load(open(f, encoding="utf-8")), v["path"])
+        if cur is None:
+            bad.append(f"{cid}: {v['path']} not found in {v['file']}")
+            continue
+        shown = v.get("fmt", "{}").format(cur)
+        if shown not in c["claim"]:
+            bad.append(f"{cid}: the claim says something other than {shown}, "
+                       f"which is what {v['file']}:{v['path']} holds now. "
+                       "The sentence has drifted from its data.")
+    return bad
+
+
+def validate(nodes, claims):
+    """Dangling references, cycles, and figures that no longer match their source."""
+    bad = list(check_figures(claims))
     known = set(nodes) | set(claims)
     for cid, c in claims.items():
         for r in c["rests_on"]:
