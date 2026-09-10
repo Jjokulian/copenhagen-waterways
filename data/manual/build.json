@@ -111,10 +111,17 @@
     "data/derived/detectable.json",
     "data/derived/rescore.json",
     "data/derived/enums.json",
-    "index.html"
+    "index.html",
+    "data/derived/convergence.json",
+    "data/derived/cycles.json",
+    "data/derived/manure.json",
+    "data/derived/socialcontext.json",
+    "data/derived/depth_clock.json",
+    "data/derived/pins/BEK931-2024.txt"
    ],
    "outputs": [
-    "docs/CLAIMS.md"
+    "docs/CLAIMS.md",
+    "docs/SOURCES.md"
    ]
   },
   {
@@ -153,6 +160,16 @@
    ],
    "outputs": [
     "data/derived/conveyance.json"
+   ]
+  },
+  {
+   "script": "scripts/convergence.py",
+   "inputs": [
+    "data/derived/floodmaps/_georef.json",
+    "docs/data/flood2012/manifest.json"
+   ],
+   "outputs": [
+    "data/derived/convergence.json"
    ]
   }
  ]

@@ -25,7 +25,7 @@ different objects:
             why it is believed, how confident, what would change it - in the
             claim register.
 
-THE RATCHET. A bare number in prose with neither kind of justification is not
+THE RATCHET THAT WAS HERE, AND WHY IT WENT. A bare number in prose with neither kind of justification is not
 allowed in. Every document has a baseline count of such numbers, recorded in
 data/manual/figure_debt.json, and the build FAILS if any document goes above its
 baseline. So a new unreferenced number is a hard error from the moment the
@@ -65,7 +65,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import ROOT, log
 
 REG = os.path.join(ROOT, "data", "manual", "claims.json")
-BASELINE = os.path.join(ROOT, "data", "manual", "figure_debt.json")
 # The register itself states each claim once, in full - its numbers ARE the
 # claims. Counting them as unreferenced would be asking the index to cite itself.
 EXEMPT = {"docs/CLAIMS.md"}
@@ -139,38 +138,15 @@ def fig(name, fmt=None):
     return f"[{s}](CLAIMS.md#{r['claim']})" if r.get("claim") else s
 
 
-LINK = re.compile(r"\[([^\]]+)\]\(CLAIMS\.md#([A-Za-z0-9\-_]+)\)")
-# A quantity: any number with a unit after it, whatever its size - "28%",
-# "4 mg/l", "500 km" are exactly what a reader quotes - plus any bare number
-# large or precise enough to be one (thousands separator, decimal, four digits).
-# The first version required the second shape for everything, so every integer
-# percentage on the site walked straight past the ratchet.
-UNIT = (r"km²|km2|km|m²|%|pp|kt|kg|mg/l|µg/l|mg|MB|GB|ha|DE|rows|stations|"
-        r"businesses|holdings|sites|parcels|sources|hypotheses|samples|years")
-QUANTITY = re.compile(
-    r"(?<![\w.#/-])("
-    r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+\.\d+|\d{4,}"
-    r"|\d+(?=\s*(?:" + UNIT + r")(?![a-zA-Z]))"
-    r")")
-YEARISH = re.compile(r"^(19|20)\d{2}$")
 
+import live
 
-def _numbers(text):
-    rest = LINK.sub(lambda m: " " * len(m.group(0)), text)
-    rest = re.sub(r"`[^`\n]*`", " ", rest)
-    rest = re.sub(r"^\s{4,}.*$", " ", rest, flags=re.M)
-    rest = re.sub(r"^(\|.*\|)$", " ", rest, flags=re.M)
-    rest = re.sub(r"https?://\S+", " ", rest)
-    return [m.group(1) for m in QUANTITY.finditer(rest)
-            if not YEARISH.match(m.group(1))]
+CLAIMLINK = re.compile(r"\[([^\]]+)\]\((?:\.\./)*CLAIMS\.md#([A-Za-z0-9\-_]+)\)")
+SRCLINK = re.compile(r"\[([^\]]+)\]\((?:\.\./)*SOURCES\.md#(F-[0-9a-f]{10})\)")
 
 
 def _landing_prose(html):
-    """The reader-facing text of index.html: its long string literals.
-
-    index.html is not generated, so fig() cannot reach it. A number there is
-    accounted for when it is the live value of a registered figure whose claim
-    lists index.html in appears_in - which claims.py then checks stays true."""
+    """The reader-facing text of index.html: its long string literals."""
     lits = re.findall(r'"((?:[^"\\]|\\.){30,400})"', html)
     return "\n".join(l for l in lits
                      if re.search(r"[a-z]{3,}\s+[a-z]{3,}", l)
@@ -178,6 +154,9 @@ def _landing_prose(html):
 
 
 def _landing_accounted():
+    """index.html is not generated, so fig() cannot reach it. A number there is
+    justified when it is the live value of a registered figure whose claim lists
+    index.html in appears_in - which claims.py separately keeps true."""
     ok = set()
     claims = {c["id"]: c for c in _reg().get("claims", [])}
     for name, r in _reg().get("figures", {}).items():
@@ -191,32 +170,36 @@ def _landing_accounted():
 
 
 def check(rel, text=None):
-    """(hard failures, unreferenced numbers) for one document."""
+    """(broken justifications, unjustified numbers) for one document."""
     path = os.path.join(ROOT, rel)
     text = text if text is not None else open(path, encoding="utf-8").read()
     claims = {c["id"] for c in _reg().get("claims", [])}
+    entries = live.load_index().get("entries", {})
     hard = [f"{rel}: {s} links to {cid}, which is not a claim"
-            for s, cid in LINK.findall(text) if cid not in claims]
-    if rel in EXEMPT:
+            for s, cid in CLAIMLINK.findall(text) if cid not in claims]
+    hard += [f"{rel}: {s} links to {fid}, which SOURCES.md does not hold"
+             for s, fid in SRCLINK.findall(text) if fid not in entries]
+    if rel in live.EXEMPT:
         return hard, []
     if rel == "index.html":
         ok = _landing_accounted()
-        return hard, [n for n in _numbers(_landing_prose(text)) if n not in ok]
-    return hard, _numbers(text)
+        return hard, [b for b in live.bare_numbers(_landing_prose(text))
+                      if b[1] not in ok]
+    return hard, live.bare_numbers(text)
 
 
 def targets():
-    return sorted(os.path.relpath(p, ROOT)
-                  for p in glob.glob(os.path.join(ROOT, "docs", "*.md"))) + ["index.html"]
+    docs = glob.glob(os.path.join(ROOT, "docs", "**", "*.md"), recursive=True)
+    return sorted(os.path.relpath(p, ROOT).replace(os.sep, "/") for p in docs) \
+        + ["index.html"]
 
 
-def census():
-    out, hard = {}, []
-    for rel in targets():
-        h, d = check(rel)
-        hard += h
-        out[rel] = d
-    return out, hard
+def staged():
+    import subprocess
+    r = subprocess.run(["git", "diff", "--cached", "--name-only"], cwd=ROOT,
+                       capture_output=True, text=True)
+    names = set(r.stdout.split())
+    return [t for t in targets() if t in names]
 
 
 def find(q):
@@ -238,69 +221,41 @@ def find(q):
 
 
 def main(argv):
+    """Every number must have a chain of justification. No allowance.
+
+        figures.py                  the whole site; exit 1 if any number is bare
+        figures.py --staged         only the documents being committed (the hook)
+        figures.py --find 168.1     is this number already registered?
+    """
     if argv and argv[0] == "--find":
         if len(argv) < 2:
             log("usage: figures.py --find <value>")
             return 2
         hits = find(argv[1])
         log("\n".join(hits) if hits else
-            f"  nothing registered holds {argv[1]}. Register it in "
-            "data/manual/claims.json - a computed figure with file and path, "
-            "or an assessed claim with its reasoning.")
+            f"  nothing registered holds {argv[1]}. Load it with live_json() in "
+            "its generator, or register it in data/manual/claims.json.")
         return 0
-
-    counts, hard = census()
-    base = json.load(open(BASELINE, encoding="utf-8")) if os.path.exists(BASELINE) \
-        else None
-
-    if "--census" in argv or base is None or "--ratchet" in argv:
-        rows = sorted(((len(v), k) for k, v in counts.items() if v), reverse=True)
-        for n, k in rows[:20]:
-            log(f"  {n:>5}  {k}")
-        log(f"  {sum(len(v) for v in counts.values())} unreferenced number(s)")
-
-    if base is None or "--ratchet" in argv:
-        old = (base or {}).get("docs", {})
-        new = {}
-        for k, v in counts.items():
-            n = len(v)
-            new[k] = min(n, old[k]) if k in old else n
-        lowered = [k for k in new if k in old and new[k] < old[k]]
-        with open(BASELINE, "w", encoding="utf-8") as f:
-            json.dump({"_what": "Unreferenced numbers each document is allowed "
-                                "to carry. The build fails above these. They "
-                                "only go down: --ratchet never raises one.",
-                       "total": sum(new.values()), "docs": new},
-                      f, indent=1, sort_keys=True)
-            f.write("\n")
-        log(f"\n  baseline {'written' if base is None else 'ratcheted'}: "
-            f"{sum(new.values())} total"
-            + (f"; lowered for {len(lowered)} document(s)" if lowered else ""))
-        return 1 if hard else 0
-
-    over = []
-    docs = base.get("docs", {})
-    for k, v in counts.items():
-        allowed = docs.get(k, 0)
-        if len(v) > allowed:
-            over.append((k, len(v), allowed, v))
-    for h in hard:
+    docs = staged() if "--staged" in argv else targets()
+    total, failing, hard_all = 0, [], []
+    for rel in docs:
+        hard, bare = check(rel)
+        hard_all += hard
+        if bare:
+            failing.append((rel, bare))
+            total += len(bare)
+    for h in hard_all:
         log("  BROKEN   " + h)
-    for k, n, allowed, v in over:
-        log(f"  REFUSED  {k}: {n} unreferenced number(s), baseline {allowed}")
-        extra = [x for x in v]
-        log(f"           new ones are among: {', '.join(extra[-min(5, n-allowed):])}")
-        log("           For each: `python3 scripts/figures.py --find <value>` to "
-            "reuse a registered figure, or register it - computed (file + path, "
-            "via fig()) or assessed (a claim with its reasoning).")
-    if over or hard:
-        return 1
-    total = sum(len(v) for v in counts.values())
-    log(f"  no new unreferenced numbers ({total} carried as debt, "
-        f"baseline {base.get('total')})")
-    if total < base.get("total", total):
-        log("  debt has gone down - run --ratchet to lock it in")
-    return 0
+    for rel, bare in sorted(failing, key=lambda x: -len(x[1])):
+        ex = ", ".join(b[1] for b in bare[:4])
+        log(f"  {len(bare):>5}  {rel:<34} e.g. {ex}")
+    if not failing and not hard_all:
+        log(f"  every number in {len(docs)} document(s) has a chain of justification")
+        return 0
+    log(f"\n  {total} number(s) in {len(failing)} document(s) have no chain of "
+        "justification. Each must come through live_json(), fig(), or - if it is "
+        "an identifier - be written as `code`.")
+    return 1
 
 
 if __name__ == "__main__":

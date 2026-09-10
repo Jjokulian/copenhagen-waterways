@@ -1,60 +1,79 @@
 #!/usr/bin/env python3
-"""What every claim rests on, as a graph, checked for the circularity it would hide.
+"""What every claim rests on, as a graph - and whether what it says is still true.
 
 Prose hides dependency. A sentence saying the diurnal amplitude is below half a
 milligram reads like a measurement, and it is a bound derived from a synthetic
 recovery run on a real schedule under a stipulated signal shape and a noise model
-- four different kinds of thing, one of which is not data at all. A reader cannot
-see that, and neither can the author six weeks later.
+- four different kinds of thing, one of which is not data at all. So every
+substantive claim is registered with the graph of what it rests on, drawn beside
+it, with node shape and colour carrying the kind.
 
-So every substantive claim is registered with the graph of what it stands on, and
-the graph is drawn beside the claim rather than described. Node shape and colour
-carry the kind, because the kind is the whole point: a claim resting on a
-stipulation is a different object from one resting on a measurement, however
-similar the two sentences look.
+THE GRAPH IS CHECKED FOR CYCLES. A cycle in a claim graph is circular reasoning
+made visible, and this refuses to write a page containing one.
 
-  held        a dataset on disk, with its faults
-  external    somebody else's published number, used as input
-  gap         data that exists and we cannot reach, or that nobody has measured
-  synthetic   generated to test the method - licenses claims about the
-              INSTRUMENT and never about the world
-  assumption  stipulated, not measured. The claim is void if it is wrong
-  script      the code
-  claim       a statement on a page, which may rest on other claims
+LIVE TEXT. No number is typed into a claim, a note, an assessment or a node
+description. Each is a placeholder resolved when the page is built:
 
-THE GRAPH IS CHECKED FOR CYCLES, which is the point of building it rather than
-writing the dependencies in a list. A cycle in a claim graph is circular
-reasoning made visible: A rests on B rests on A. That failure is silent in prose
-and fatal in argument, and this refuses to generate a page containing one.
+  {fig:name}                    a registered figure, read live from its data file
+  {fig:name|.2f}                the same, formatted
+  {calc:a / (a + b) * 100|.1f}  arithmetic over registered figures, rendered as a
+                                calculation with each operand linked
+  {count:SOURCE:term}           occurrences of a term in a pinned document's text
+  {read:SOURCE:170|divideret med 170 kg}
+                                a number read from a pinned document, held only
+                                while the phrase is still present in it
+  {was:COMMIT:FILE:210}         what this site said at a past commit, verified
+                                against git so a misquotation is refused
+  {param:name}                  a stated value, shown as a choice with its reason
 
-Diagrams are mermaid, which GitHub renders natively and index.html renders
-through mermaid.js, so one source of truth serves both readers.
+The page is written through write_doc(), so a number typed straight into any of
+those texts stops it being written, exactly as it would for any other page.
 
-    python3 scripts/claims.py           # writes docs/CLAIMS.md
-    python3 scripts/claims.py --check   # validate only, for the pre-commit hook
+STALENESS. A justification is itself a claim, and it goes stale when anything it
+rested on changes. Each claim records what it SAW when someone last confirmed it:
+the resolved value of every placeholder in its text, its note, its assessment and
+the descriptions of what it rests on, and the hash of every pinned document it
+reads. When any of that changes the claim is STALE and the page is not written
+until someone reads it again and runs --reassess. A number that updates silently
+inside prose that no longer follows from it is the failure this exists for.
 
-Other generators embed a single claim's foundation with foundation(claim_id).
+    python3 scripts/claims.py                   build the page; refuse if stale
+    python3 scripts/claims.py --check           validate only
+    python3 scripts/claims.py --reassess C-ID --by NAME     (or: all)
+    python3 scripts/claims.py --recheck         refetch pinned documents
+    python3 scripts/claims.py --repin SOURCE    adopt a document that changed
+
+A confirmation is somebody's act, so --reassess requires --by.
 """
+import ast
+import datetime
+import hashlib
 import json
 import os
+import re
+import subprocess
 import sys
+import tempfile
+import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from common import ROOT, log, read_json
+from common import ROOT, log, read_json, write_doc
+import live
 
 SRC = os.path.join(ROOT, "data", "manual", "claims.json")
 OUT = os.path.join(ROOT, "docs", "CLAIMS.md")
+PINS = os.path.join(ROOT, "data", "derived", "pins")
+UA = "copenhagen-waterways research (github.com/Jjokulian/copenhagen-waterways)"
 
-# shape carries kind, so the graph is readable without the legend
 SHAPE = {
-    "held":       ('[("', '")]'),      # cylinder: a store
+    "held":       ('[("', '")]'),
     "external":   ('[("', '")]'),
-    "gap":        ('{{"', '"}}'),      # hexagon: absent
-    "synthetic":  ('>"', '"]'),        # flag: made up on purpose
-    "assumption": ('{"', '"}'),        # rhombus: a decision
-    "script":     ('["', '"]'),        # box: code
-    "claim":      ('("', '")'),        # rounded: a statement
+    "gap":        ('{{"', '"}}'),
+    "synthetic":  ('>"', '"]'),
+    "assumption": ('{"', '"}'),
+    "script":     ('["', '"]'),
+    "claim":      ('("', '")'),
 }
 STYLE = {
     "held":       "fill:#1c4e70,stroke:#58a6ff,color:#e6edf3",
@@ -74,34 +93,282 @@ KIND_NOTE = {
 }
 
 
+class Refused(Exception):
+    pass
+
+
 def load():
     d = read_json(SRC)
-    nodes = {n["id"]: n for n in d["nodes"]}
-    claims = {c["id"]: c for c in d["claims"]}
-    return d, nodes, claims
+    return d, {n["id"]: n for n in d["nodes"]}, {c["id"]: c for c in d["claims"]}
 
 
+def save(d):
+    with open(SRC, "w", encoding="utf-8") as f:
+        json.dump(d, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+
+
+# ------------------------------------------------------------ pinned documents ---
+def _fetch(url):
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=90) as r:
+        return r.read()
+
+
+def _extract(raw):
+    if raw[:4] != b"%PDF":
+        return raw.decode("utf-8", "replace")
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as t:
+        t.write(raw)
+        name = t.name
+    try:
+        r = subprocess.run(["pdftotext", "-enc", "UTF-8", name, "-"],
+                           capture_output=True)
+        return r.stdout.decode("utf-8", "replace")
+    finally:
+        os.remove(name)
+
+
+def pin_text(d, sid):
+    """The text of a document as it was when pinned. Fetched and verified if not
+    cached; refused if the live document no longer matches the pin."""
+    p = os.path.join(PINS, sid + ".txt")
+    if not os.path.exists(p):
+        s = d["sources"][sid]
+        text = _extract(_fetch(s["url"]))
+        if hashlib.sha256(text.encode()).hexdigest() != s["sha256"]:
+            raise Refused(f"{sid}: the live document no longer matches its pin and no "
+                          f"pinned copy is cached. Run --recheck, read it, then "
+                          f"--repin {sid}.")
+        os.makedirs(PINS, exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            f.write(text)
+    return open(p, encoding="utf-8").read()
+
+
+def recheck(d):
+    today = datetime.date.today().isoformat()
+    for sid, s in d.get("sources", {}).items():
+        try:
+            text = _extract(_fetch(s["url"]))
+        except Exception as e:                      # a source going dark is news too
+            s["checked"], s["status"] = today, f"could not fetch: {type(e).__name__}"
+            log(f"  {sid}: {s['status']}")
+            continue
+        s["checked"] = today
+        if hashlib.sha256(text.encode()).hexdigest() == s["sha256"]:
+            s["status"] = "unchanged since pinned"
+        else:
+            s["status"] = "CHANGED since pinned"
+            os.makedirs(PINS, exist_ok=True)
+            with open(os.path.join(PINS, sid + ".new.txt"), "w", encoding="utf-8") as f:
+                f.write(text)
+        log(f"  {sid}: {s['status']}")
+    save(d)
+
+
+def repin(d, sid):
+    p = os.path.join(PINS, sid + ".new.txt")
+    if not os.path.exists(p):
+        raise Refused(f"{sid}: nothing to adopt - run --recheck first")
+    text = open(p, encoding="utf-8").read()
+    s = d["sources"][sid]
+    s["sha256"] = hashlib.sha256(text.encode()).hexdigest()
+    s["retrieved"] = datetime.date.today().isoformat()
+    s["status"] = "re-pinned; every claim reading it must be reassessed"
+    os.replace(p, os.path.join(PINS, sid + ".txt"))
+    save(d)
+
+
+# ----------------------------------------------------------------- live text ---
+PH = re.compile(r"\{(fig|calc|count|read|was|param):([^{}]+)\}")
+
+
+def _meta(d, sid):
+    s = d["sources"][sid]
+    return {k: s.get(k) for k in ("title", "url", "retrieved", "sha256",
+                                  "checked", "status")}
+
+
+def _path(r):
+    return r["path"] if isinstance(r["path"], list) else r["path"].split(".")
+
+
+def _figure(d, name, cache):
+    r = d.get("figures", {}).get(name)
+    if r is None:
+        raise Refused(f"figure '{name}' is not registered in claims.json")
+    f = r["file"]
+    if f not in cache:
+        full = os.path.join(ROOT, f)
+        if not os.path.exists(full):
+            raise Refused(f"figure '{name}' reads {f}, which is not built")
+        cache[f] = live.live_json(full)
+    node = cache[f]
+    for k in _path(r):
+        try:
+            node = node[int(k)] if isinstance(node, list) else node[k]
+        except (KeyError, IndexError, ValueError, TypeError):
+            raise Refused(f"figure '{name}': {r['path']} not found in {f}")
+    return node, r.get("fmt", "{}")
+
+
+_OPS = {ast.Add: lambda a, b: a + b, ast.Sub: lambda a, b: a - b,
+        ast.Mult: lambda a, b: a * b, ast.Div: lambda a, b: a / b}
+
+
+def _calc(d, expr, cache):
+    def ev(n):
+        if isinstance(n, ast.Expression):
+            return ev(n.body)
+        if isinstance(n, ast.BinOp) and type(n.op) in _OPS:
+            return _OPS[type(n.op)](ev(n.left), ev(n.right))
+        if isinstance(n, ast.UnaryOp) and isinstance(n.op, ast.USub):
+            return -ev(n.operand)
+        if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)) \
+                and not isinstance(n.value, bool):
+            return n.value
+        if isinstance(n, ast.Name):
+            return _figure(d, n.id, cache)[0]
+        raise Refused(f"calc '{expr}': only + - * / over registered figures")
+    try:
+        return ev(ast.parse(expr, mode="eval"))
+    except SyntaxError:
+        raise Refused(f"calc '{expr}' does not parse")
+
+
+def _git_show(commit, file):
+    r = subprocess.run(["git", "show", f"{commit}:{file}"], cwd=ROOT,
+                       capture_output=True)
+    if r.returncode != 0:
+        raise Refused(f"{file} does not exist at {commit}")
+    return r.stdout.decode("utf-8", "replace")
+
+
+def _norm(t):
+    return re.sub(r"\s+", " ", t)
+
+
+def resolve(d, text, cache):
+    """Placeholders -> justified numbers. (text with live markers, {placeholder: shown})."""
+    seen = {}
+
+    def rep(m):
+        kind, arg, key = m.group(1), m.group(2).strip(), m.group(0)
+        if kind == "fig":
+            name, _, spec = arg.partition("|")
+            v, fmt = _figure(d, name.strip(), cache)
+            s = ("{:" + spec + "}").format(v) if spec else fmt.format(v)
+        elif kind == "calc":
+            expr, _, spec = arg.partition("|")
+            v = _calc(d, expr.strip(), cache)
+            s = ("{:" + (spec or "g") + "}").format(v)
+        elif kind == "count":
+            sid, _, term = arg.partition(":")
+            n = len(re.findall(re.escape(term), pin_text(d, sid), re.I))
+            s = live.reading(sid, "count", term, n, f"{n:,}", _meta(d, sid))
+        elif kind == "read":
+            sid, _, rest = arg.partition(":")
+            shown, _, phrase = rest.partition("|")
+            if not phrase or _norm(phrase) not in _norm(pin_text(d, sid)):
+                raise Refused(f"{key}: the pinned text of {sid} does not contain "
+                              f"'{phrase}', so this reading is unsupported")
+            s = live.reading(sid, "phrase", phrase, shown, shown, _meta(d, sid))
+        elif kind == "was":
+            parts = arg.split(":", 2)
+            if len(parts) != 3:
+                raise Refused(f"{key}: expected {{was:COMMIT:FILE:TEXT}}")
+            commit, file, shown = parts
+            if shown not in _git_show(commit, file):
+                raise Refused(f"{key}: {file} at {commit} does not contain '{shown}'"
+                              " - a misquotation")
+            s = live.quoted(commit, file, shown)
+        else:
+            p = d.get("params", {}).get(arg)
+            if p is None:
+                raise Refused(f"{key}: no such parameter in claims.json")
+            s = live.stated(arg, p["value"], p["shown"], p["reason"])
+        seen[key] = live.strip_marks(s)
+        return s
+    return PH.sub(rep, text), seen
+
+
+def plain(d, text, cache):
+    return live.strip_marks(resolve(d, text, cache)[0])
+
+
+# ---------------------------------------------------------------- staleness ---
+def _texts(c, nodes):
+    """Every text rendered in a claim's section - what a confirmation covers."""
+    t = {"claim": c["claim"], "note": c.get("note", "")}
+    for k, v in (c.get("assessment") or {}).items():
+        t["assessment." + k] = v
+    for r in c["rests_on"]:
+        n = nodes.get(r)
+        if n:
+            t[r + ".label"] = n.get("label", "")
+            t[r + ".detail"] = n.get("detail", "")
+    return t
+
+
+def observe(d, c, nodes, cache):
+    saw = {}
+    texts = _texts(c, nodes)
+    for field, text in texts.items():
+        for k, v in resolve(d, text, cache)[1].items():
+            saw[f"{field} {k}"] = v
+    for sid in set(re.findall(r"\{(?:count|read):([^:{}]+):", " ".join(texts.values()))):
+        s = d["sources"][sid]
+        saw[f"pinned {sid}"] = s["sha256"][:16] + (
+            " CHANGED" if "CHANGED" in (s.get("status") or "") else "")
+    return saw
+
+
+def staleness(d, nodes, claims, cache):
+    out = []
+    for cid, c in claims.items():
+        try:
+            now = observe(d, c, nodes, cache)
+        except Refused as e:
+            out.append(f"{cid}: {e}")
+            continue
+        conf = c.get("confirmed")
+        if not conf:
+            out.append(f"{cid}: never confirmed. Read it, then: "
+                       f"claims.py --reassess {cid} --by <name>")
+            continue
+        was = conf.get("saw", {})
+        diff = sorted(k for k in set(was) | set(now) if was.get(k) != now.get(k))
+        if diff:
+            ex = "; ".join(f"{k}: {was.get(k)} -> {now.get(k)}" for k in diff[:3])
+            out.append(f"{cid}: STALE since it was confirmed {conf.get('on')} - "
+                       f"{ex}. Read it again, then --reassess {cid}")
+    return out
+
+
+def reassess(d, c, nodes, by):
+    c["confirmed"] = {"on": datetime.date.today().isoformat(), "by": by,
+                      "saw": observe(d, c, nodes, {})}
+
+
+# --------------------------------------------------------------- validation ---
 def dig(obj, path):
-    for k in path.split("."):
+    for k in (path if isinstance(path, list) else path.split(".")):
         if isinstance(obj, list):
-            return None
+            try:
+                obj = obj[int(k)]
+                continue
+            except (ValueError, IndexError):
+                return None
         if not isinstance(obj, dict) or k not in obj:
             return None
         obj = obj[k]
     return obj
 
 
-def check_figures(claims):
-    """Does the number in the sentence still match the number in the data?
-
-    Provenance says what a claim rests on. This says whether it still does. A
-    claim may declare value_from = {file, path}, and the sentence must contain
-    the value that path currently holds - so a figure that drifted from the data
-    under it fails the build instead of being published.
-
-    This is the half the dependency graph did not cover. The graph would have
-    kept saying FLOOD_GAP rests on the sheets and the script, correctly, while
-    the sentence said 5.932 and the data said 5.847."""
+def check_figures(d, claims, cache):
+    """value_from/appears_in: the live value must appear wherever it is stated,
+    including index.html, which nothing generates and so only this can reach."""
     bad = []
     for cid, c in claims.items():
         v = c.get("value_from")
@@ -110,46 +377,31 @@ def check_figures(claims):
         f = os.path.join(ROOT, v["file"])
         if not os.path.exists(f):
             if not v.get("optional"):
-                bad.append(f"{cid}: {v['file']} does not exist, so its figure "
-                           "cannot be checked")
+                bad.append(f"{cid}: {v['file']} does not exist")
             continue
         cur = dig(json.load(open(f, encoding="utf-8")), v["path"])
         if cur is None:
             bad.append(f"{cid}: {v['path']} not found in {v['file']}")
             continue
         shown = v.get("fmt", "{}").format(cur)
-        if shown not in c["claim"]:
-            bad.append(f"{cid}: the claim says something other than {shown}, "
-                       f"which is what {v['file']}:{v['path']} holds now. "
-                       "The sentence has drifted from its data.")
-        # A figure is usually stated in more than one place, and index.html is
-        # the least checked surface on the site: it is hand-maintained, it is not
-        # generated by anything, and it is the first thing a reader sees. It said
-        # 210 km of alignments where two documents said 169 and the layer
-        # measures 280, all three typed by hand. appears_in closes that: the live
-        # value must be present in every file that states it, generated or not.
+        if shown not in plain(d, c["claim"], cache):
+            bad.append(f"{cid}: the claim does not show {shown}, the current value "
+                       f"of {v['file']}:{v['path']}")
         for where in c.get("appears_in", []):
             wp = os.path.join(ROOT, where)
-            if not os.path.exists(wp):
-                bad.append(f"{cid}: appears_in names {where}, which is missing")
-                continue
-            txt = open(wp, encoding="utf-8", errors="replace").read()
-            if shown not in txt:
+            if not os.path.exists(wp) or shown not in open(wp, encoding="utf-8").read():
                 bad.append(f"{cid}: {where} does not contain {shown}, the current "
-                           f"value of {v['file']}:{v['path']}. A hand-maintained "
-                           "page has drifted from the data.")
+                           f"value of {v['file']}:{v['path']}")
     return bad
 
 
-def validate(nodes, claims):
-    """Dangling references, cycles, and figures that no longer match their source."""
-    bad = list(check_figures(claims))
+def validate(d, nodes, claims, cache):
+    bad = []
     known = set(nodes) | set(claims)
     for cid, c in claims.items():
         for r in c["rests_on"]:
             if r not in known:
                 bad.append(f"{cid} rests on {r}, which is not defined")
-    # depth-first cycle detection over claim-to-claim edges
     WHITE, GREY, BLACK = 0, 1, 2
     colour = {cid: WHITE for cid in claims}
 
@@ -163,76 +415,61 @@ def validate(nodes, claims):
             elif colour[r] == WHITE:
                 walk(r, path + [cid])
         colour[cid] = BLACK
-
     for cid in claims:
         if colour[cid] == WHITE:
             walk(cid, [])
+    bad += check_figures(d, claims, cache)
+    bad += staleness(d, nodes, claims, cache)
     return bad
 
 
-def _node_line(nid, node):
-    kind = node.get("kind", "claim")
+# ------------------------------------------------------------------ the page ---
+def _node_line(nid, kind, label):
     o, c = SHAPE.get(kind, SHAPE["claim"])
-    label = node["label"] if "label" in node else node["claim"][:60]
-    # mermaid does not read \n inside a quoted label - it would print literally
     label = label.replace("\\n", " · ").replace("\n", " · ").replace('"', "'")
-    return f'  {nid}{o}{label}{c}'
+    return f"  {nid}{o}{label}{c}"
 
 
-def graph_for(cid, nodes, claims, depth=2):
-    """Mermaid for one claim and everything under it."""
+def graph_for(cid, nodes, claims, lab, depth=2):
     seen, edges = {}, []
 
-    def add(nid, d):
-        if nid in seen or d < 0:
+    def add(nid, dd):
+        if nid in seen or dd < 0:
             return
         n = nodes.get(nid) or claims.get(nid)
         if not n:
             return
-        seen[nid] = n if nid in nodes else dict(n, kind="claim",
-                                                label=n["claim"][:58] + "...")
+        seen[nid] = n.get("kind", "claim") if nid in nodes else "claim"
         for r in (claims.get(nid, {}).get("rests_on") or []):
             edges.append((r, nid))
-            add(r, d - 1)
-
+            add(r, dd - 1)
     add(cid, depth)
     out = ["```mermaid", "graph BT"]
-    for nid, n in seen.items():
-        out.append(_node_line(nid, n))
+    for nid, kind in seen.items():
+        out.append(_node_line(nid, kind, lab(nid)))
     for a, b in dict.fromkeys(edges):
         if a in seen and b in seen:
             out.append(f"  {a} --> {b}")
-    for nid, n in seen.items():
-        k = n.get("kind", "claim")
-        out.append(f"  style {nid} {STYLE.get(k, STYLE['claim'])}")
+    for nid, kind in seen.items():
+        out.append(f"  style {nid} {STYLE.get(kind, STYLE['claim'])}")
     out.append("```")
     return "\n".join(out)
 
 
-def justification(cid, c):
-    """How a claim's number was counted, if computed - or judged, if assessed.
-
-    The dependency graph shows what a claim stands on. It does not show how the
-    counting was done, and that is where disagreement actually lives: 168.1, 209.0
-    and 280.0 km of conveyance all rest on the same layer and the same script, and
-    differ only in what was treated as the same thing. So a computed claim shows
-    the class, the calculation, the rows in and used, the exclusions, and the other
-    defensible definitions with what each would give - all written by the script
-    that did the work, which is the only party that knows. An assessed claim has no
-    code to read, so it shows what a person wrote: what it counts, why it is
-    believed, how confident, and what would change it."""
-    d = read_json(SRC)
+def justification(d, cid, c, cache):
     out = []
     if c.get("basis") == "computed":
         provs = []
         for name, r in d.get("figures", {}).items():
             if r.get("claim") != cid:
                 continue
-            f = os.path.join(ROOT, r["file"])
-            if not os.path.exists(f):
+            full = os.path.join(ROOT, r["file"])
+            if not os.path.exists(full):
                 continue
-            p = (json.load(open(f, encoding="utf-8")).get("_provenance")
-                 or {}).get(r["path"])
+            if r["file"] not in cache:
+                cache[r["file"]] = live.live_json(full)
+            prov = cache[r["file"]].get("_provenance") or {}
+            p = prov.get(".".join(_path(r)))
             if p:
                 provs.append((name, r, p))
         out.append("**Computed** — the chain is what was coded, and the script that "
@@ -242,7 +479,7 @@ def justification(cid, c):
                     "it. That is a gap in the justification, not a property of the "
                     "number.*"]
         for name, r, p in provs:
-            out += ["", f"**`{name}`** — `{r['file']}` → `{r['path']}`", ""]
+            out += ["", f"**`{name}`** — `{r['file']}` → `{'.'.join(_path(r))}`", ""]
             out.append(f"- **Counted as the same thing:** {p['counts_as']}")
             out.append(f"- **Calculation:** {p['calculation']}")
             if p.get("n_in") is not None and p.get("n_used") is not None:
@@ -251,7 +488,7 @@ def justification(cid, c):
                 out.append(f"- **Excluded:** {e['reason']} ({e['n']:,})")
             if p.get("alternatives"):
                 out.append("- **Other defensible definitions, and what each gives:** "
-                           + "; ".join(f"{a['definition']} → {a['value']}"
+                           + "; ".join(f"{a['definition']} → {a['value']:g}"
                                        for a in p["alternatives"]))
             src = p["code"].split(":")[0]
             out.append(f"- **Code:** [`{p['code']}`](../{src})")
@@ -263,118 +500,143 @@ def justification(cid, c):
             out += ["", "*Assessment not yet written.*"]
         else:
             out.append("")
-            for k, lab in (("counts_as", "What it counts"),
-                           ("reasoning", "Why it is believed"),
-                           ("confidence", "How confident"),
-                           ("would_change", "What would change it")):
+            for k, labl in (("counts_as", "What it counts"),
+                            ("reasoning", "Why it is believed"),
+                            ("confidence", "How confident"),
+                            ("would_change", "What would change it")):
                 if a.get(k):
-                    out.append(f"- **{lab}:** {a[k]}")
+                    out.append(f"- **{labl}:** {resolve(d, a[k], cache)[0]}")
+    conf = c.get("confirmed") or {}
+    out += ["", f"*Confirmed {conf.get('on', 'never')} by {conf.get('by', 'nobody')}. "
+            "If anything shown here changes, this claim is refused until it is read "
+            "again.*"]
     return out
-
-
-def foundation(cid, summary=None):
-    """A drop-in fold for any generator: the claim's graph and what would break it."""
-    d, nodes, claims = load()
-    c = claims.get(cid)
-    if not c:
-        return ""
-    head = summary or f"What this rests on ({KIND_NOTE.get(c['kind'], c['kind'])})"
-    body = [graph_for(cid, nodes, claims), ""]
-    for r in c["rests_on"]:
-        n = nodes.get(r) or claims.get(r)
-        if not n:
-            continue
-        kind = n.get("kind", "claim")
-        lab = (n.get("label") or n.get("claim", ""))[:70].replace("\\n", " ")
-        body.append(f"- **{kind}** — {lab}"
-                    + (f". {n['detail']}" if n.get("detail") else ""))
-    body += [""] + justification(cid, c)
-    if c.get("note"):
-        body += ["", c["note"]]
-    return ('<details class="work">\n<summary>' + head + "\n\n"
-            + "\n".join(body) + "\n\n</details>\n")
 
 
 def main(argv):
     d, nodes, claims = load()
-    bad = validate(nodes, claims)
+    if "--recheck" in argv:
+        recheck(d)
+        return 0
+    if "--repin" in argv:
+        try:
+            repin(d, argv[argv.index("--repin") + 1])
+        except Refused as e:
+            log("  " + str(e))
+            return 1
+        return 0
+    if "--reassess" in argv:
+        target = argv[argv.index("--reassess") + 1]
+        by = argv[argv.index("--by") + 1] if "--by" in argv else None
+        if not by:
+            log("  --reassess needs --by <name>: a confirmation is somebody's")
+            return 2
+        ids = list(claims) if target == "all" else [target]
+        for i in ids:
+            try:
+                reassess(d, claims[i], nodes, by)
+            except Refused as e:
+                log(f"  {i}: {e}")
+                return 1
+        save(d)
+        log(f"  confirmed {len(ids)} claim(s) as of today, by {by}")
+        return 0
+
+    cache = {}
+    bad = validate(d, nodes, claims, cache)
     for b in bad:
         log("  " + b)
     if bad:
-        log(f"\n{len(bad)} problem(s) — refusing to write a page with a broken graph")
+        log(f"\n  {len(bad)} problem(s) - refusing to write the page")
         return 1
-    log(f"  {len(nodes)} nodes, {len(claims)} claims, no cycles")
+    log(f"  {len(nodes)} nodes, {len(claims)} claims: no cycles, every one "
+        "confirmed and current")
     if "--check" in argv:
         return 0
 
+    def lab(nid):
+        if nid in nodes:
+            return plain(d, nodes[nid].get("label", nid), cache)
+        return plain(d, claims[nid]["claim"], cache)[:58] + "..."
+
     o = []
-    def w(s=""):
-        o.append(s)
+    w = o.append
     w("# What each claim rests on")
-    w()
-    w("*Generated by `scripts/claims.py` from `data/manual/claims.json`. The graph")
-    w("is checked for cycles before this page is written: a cycle in a claim graph")
-    w("is circular reasoning, and the generator refuses to produce a page containing")
-    w("one.*")
-    w()
-    w("Prose hides dependency. *The surface diurnal amplitude is below half a")
-    w("milligram* reads like a measurement. It is a bound, derived from a synthetic")
-    w("recovery run on a real sampling schedule, under a stipulated signal shape and")
-    w("a noise model — four kinds of thing, one of which is not data at all. The")
-    w("sentence cannot show you that. A graph can.")
-    w()
+    w("")
+    w("*Generated by `scripts/claims.py` from `data/manual/claims.json`. No number on "
+      "this page is typed: every one is resolved from data, a pinned document, a "
+      "past commit or a stated parameter, and links to where it came from. Each "
+      "claim also records what it saw when it was last confirmed, and the page is "
+      "refused if anything has changed since.*")
+    w("")
+    w("Prose hides dependency. *The surface diurnal amplitude is below half a "
+      "milligram* reads like a measurement. It is a bound, derived from a synthetic "
+      "recovery run on a real sampling schedule, under a stipulated signal shape and "
+      "a noise model — four kinds of thing, one of which is not data at all. The "
+      "sentence cannot show you that. A graph can.")
+    w("")
     w("### How to read the shapes")
-    w()
+    w("")
     w("| shape | kind | what it means for the claim above it |")
     w("|---|---|---|")
-    w("| cylinder, blue | **held** | a dataset on disk, with whatever faults [DATA_SOURCES.md](DATA_SOURCES.md) records |")
-    w("| cylinder, purple | **external** | somebody else's published number, taken as input |")
-    w("| hexagon, red dashed | **gap** | data that exists and we cannot reach, or that nobody has measured. A claim resting on one of these is a statement about ignorance |")
-    w("| flag, amber | **synthetic** | generated to test the method. Licenses claims about the *instrument*, never about the world |")
-    w("| rhombus, amber dashed | **assumption** | stipulated rather than measured. **The claim is void if it is wrong** |")
+    w("| cylinder, blue | **held** | a dataset on disk, with whatever faults "
+      "[DATA_SOURCES.md](DATA_SOURCES.md) records |")
+    w("| cylinder, purple | **external** | somebody else's published document, "
+      "pinned by its hash |")
+    w("| hexagon, red dashed | **gap** | data that exists and we cannot reach, or that "
+      "nobody has measured |")
+    w("| flag, amber | **synthetic** | generated to test the method. Licenses claims "
+      "about the *instrument*, never about the world |")
+    w("| rhombus, amber dashed | **assumption** | stipulated rather than measured. "
+      "**The claim is void if it is wrong** |")
     w("| box, grey | **script** | the code that does the work |")
-    w("| rounded, green | **claim** | a statement on a page, which may rest on other claims |")
-    w()
+    w("| rounded, green | **claim** | a statement on a page, which may rest on other "
+      "claims |")
+    w("")
     w("---")
-    w()
+    w("")
     by_page = {}
     for cid, c in claims.items():
         by_page.setdefault(c.get("page", "—"), []).append((cid, c))
     for page in sorted(by_page):
         w(f"## {page}")
-        w()
+        w("")
         for cid, c in by_page[page]:
-            w(f"### {c['claim']}")
-            w()
+            w(f'<a id="{cid}"></a>')
+            w(f"### {resolve(d, c['claim'], cache)[0]}")
+            w("")
             w(f"`{cid}` · **{c['kind']}** — {KIND_NOTE.get(c['kind'], '')}")
-            w()
-            w(graph_for(cid, nodes, claims))
-            w()
+            w("")
+            w(graph_for(cid, nodes, claims, lab))
+            w("")
             for r in c["rests_on"]:
-                n = nodes.get(r) or claims.get(r)
-                if not n:
-                    continue
-                kind = n.get("kind", "claim")
-                lab = (n.get("label") or n.get("claim", ""))[:80].replace("\\n", " ")
-                w(f"- **{kind}** — {lab}"
-                  + (f". {n['detail']}" if n.get("detail") else ""))
-            w()
-            for line in justification(cid, c):
+                n = nodes.get(r)
+                if n:
+                    label = resolve(d, n.get("label", r), cache)[0].replace("\\n", " ")
+                    detail = resolve(d, n.get("detail", ""), cache)[0]
+                    w(f"- **{n.get('kind')}** — {label}" + (f". {detail}" if detail else ""))
+                elif r in claims:
+                    w(f"- **claim** — [{plain(d, claims[r]['claim'], cache)[:80]}…]"
+                      f"(CLAIMS.md#{r})")
+            w("")
+            for line in justification(d, cid, c, cache):
                 w(line)
             if c.get("note"):
-                w()
-                w(f"> {c['note']}")
-            w()
+                w("")
+                w(f"> {resolve(d, c['note'], cache)[0]}")
+            w("")
     w("---")
-    w()
+    w("")
     w("## What is missing from this register")
-    w()
-    w("It covers the claims this project has examined, not every sentence it has")
-    w("written. A claim absent from here is not endorsed by its absence — it simply")
-    w("has not been put through this yet, and that is the honest state of it.")
-    w()
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write("\n".join(o).rstrip("\n") + "\n")
+    w("")
+    w("It covers the claims this project has examined, not every sentence it has "
+      "written. A claim absent from here is not endorsed by its absence — it simply "
+      "has not been put through this yet.")
+    try:
+        write_doc(OUT, "\n".join(o).rstrip("\n") + "\n")
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
     log(f"wrote {os.path.relpath(OUT, ROOT)}")
     return 0
 

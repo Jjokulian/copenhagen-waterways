@@ -112,9 +112,11 @@ def main():
                       "or Forsinkelsesveje - water carried where a person can see "
                       "it. 'mix' is NOT counted: it carries water on the surface "
                       "only in part, and nothing in the layer says which part.",
+            # the formula is the literal code, so it is written as code: its two
+            # constants are km per degree, a spherical approximation, not claims
             calculation="sum of segment lengths over every LineString of those "
-                        "features, each segment = hypot(dlon x 111.320 x cos(lat), "
-                        "dlat x 110.574) km",
+                        "features, each segment `hypot(dlon * 111.320 * cos(lat), "
+                        "dlat * 110.574)` km",
             code=code, unit="km", n_in=nall, n_used=nsurf,
             excluded=[("feature with no line geometry - nothing to measure", nogeom), ("typologi 'mix' - surface only in part", n.get("mix", 0)),
                       ("typologi 'Skybrudsledning' - pipe, counted separately", npipe)],

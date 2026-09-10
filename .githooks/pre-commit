@@ -8,9 +8,10 @@ python3 scripts/claims.py --check || exit 1
 # an output whose input changed is a published number that no longer follows
 # from its data; a hand-edit in a generated file is the opposite problem
 python3 scripts/freshness.py || exit 1
-# a fig() link pointing at a claim that does not exist is a broken
-# justification and fails; a bare number with none is counted, not fatal
-python3 scripts/figures.py || exit 1
+# every number in a document being committed must have a chain of
+# justification - through live_json(), fig(), or written as `code` if it is an
+# identifier. No allowance: one bare number refuses the commit.
+python3 scripts/figures.py --staged || exit 1
 # Links are checked whole rather than per-commit: a link breaks because of what the
 # other file did, so staging is the wrong unit for it.
 exec python3 scripts/check_links.py

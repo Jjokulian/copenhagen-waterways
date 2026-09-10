@@ -10,8 +10,10 @@ of true north depending on the sheet.
 
 The sheets were placed true-north-up. Over a half-diagonal of 1.8 to 6.9 km that
 mislocates the corners by 94 to 350 m, against quoted registration errors of 14
-to 91 m. **The unmodelled rotation is four to ten times the error the pipeline
-reports for itself** - which is what a residual looks like when the model cannot
+to 91 m. **The unmodelled rotation is 2.4 to 7.5 times the error the pipeline
+reports for itself** (per sheet: data/derived/convergence.json). An earlier
+version of this docstring said four to ten times, worked out loosely by hand;
+the first stored figures contradicted it - which is what a residual looks like when the model cannot
 represent the transform: the fit absorbs the rotation into a wrong scale and a
 wrong offset, and then reports the leftovers as its accuracy.
 
@@ -101,25 +103,64 @@ def rotate(path, width, height, dry):
         with open(path, "w") as f:
             for v in (A2, D2, B2, E2, C2, F2):
                 f.write(f"{v:.12f}\n")
-    return gamma
+    return {"sheet": os.path.basename(path)[:-4], "gamma_deg": round(gamma, 3),
+            "corner_shift_m": round(shift, 1)}
 
 
 def main(argv):
     dry = "--dry-run" in argv
     from PIL import Image
-    n = 0
+    n, res = 0, []
     for p in sorted(glob.glob(os.path.join(DEST, "*.pgw"))):
         png = p[:-4] + ".png"
         if not os.path.exists(png):
             continue
         with Image.open(png) as im:
             w, h = im.size
-        if rotate(p, w, h, dry) is not None:
+        r = rotate(p, w, h, dry)
+        if r is not None:
             n += 1
+            res.append(r)
+    _record(res)
     log(f"\n{'would rotate' if dry else 'rotated'} {n} world file(s)")
     if not dry:
         log("now run scripts/terraincheck.py - it is the independent test")
     return 0
+
+
+def _record(res):
+    """The figures CLAIMS.md quotes about the unmodelled rotation, written down so
+    they are data and not a remembered printout: per sheet the convergence and the
+    corner displacement it causes, against the registration error the pipeline
+    reports for itself."""
+    import json
+    geo = os.path.join(ROOT, "data", "derived", "floodmaps", "_georef.json")
+    g = json.load(open(geo, encoding="utf-8")) if os.path.exists(geo) else {}
+    for r in res:
+        rec = g.get(r["sheet"], {})
+        err = rec.get("standard_error_m") or rec.get("spread_m")
+        r["stated_error_m"] = err
+        r["shift_over_error"] = round(r["corner_shift_m"] / err, 1) if err else None
+    ratios = [r["shift_over_error"] for r in res if r["shift_over_error"]]
+    out = {
+        "_what": "Meridian convergence per flood sheet and the corner displacement it "
+                 "causes when a grid-north sheet is placed true-north-up.",
+        "sheets": res,
+        "n_sheets": len(res),
+        "gamma_min_deg": min(r["gamma_deg"] for r in res),
+        "gamma_max_deg": max(r["gamma_deg"] for r in res),
+        "shift_min_m": min(r["corner_shift_m"] for r in res),
+        "shift_max_m": max(r["corner_shift_m"] for r in res),
+        "stated_error_min_m": min(r["stated_error_m"] for r in res if r["stated_error_m"]),
+        "stated_error_max_m": max(r["stated_error_m"] for r in res if r["stated_error_m"]),
+        "shift_over_error_min": min(ratios),
+        "shift_over_error_max": max(ratios),
+    }
+    p = os.path.join(ROOT, "data", "derived", "convergence.json")
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=1)
+        f.write("\n")
+    log(f"wrote {os.path.relpath(p, ROOT)}")
 
 
 if __name__ == "__main__":

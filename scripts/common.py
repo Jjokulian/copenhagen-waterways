@@ -24,6 +24,7 @@ BBOX = (7.0, 54.4, 15.6, 58.0)
 
 
 def log(*a):
+    a = tuple(__import__("live").strip_marks(x) if isinstance(x, str) else x for x in a)
     print(*a, file=sys.stderr, flush=True)
 
 
@@ -53,7 +54,8 @@ def write_json(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     tmp = path + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(obj, f, ensure_ascii=False, indent=1)
+        f.write(__import__("live").strip_marks(
+            json.dumps(obj, ensure_ascii=False, indent=1)))
     os.replace(tmp, path)
 
 
@@ -147,6 +149,11 @@ def write_doc(path, text):
     welds two paragraphs together - which is what happens when a string is escaped
     twice, once for the generator and once for whatever wrote the generator. It has
     happened here more than once and is invisible in review, so it is checked."""
+    # The compiler. Every number must carry a chain of justification: live
+    # markers become links to docs/SOURCES.md, fig() links go to CLAIMS.md, and
+    # any quantity left bare stops the document from being written at all.
+    from live import compile_doc
+    text = compile_doc(path, text)
     bad = text.count("\\n")
     if bad:
         import re as _re

@@ -13,44 +13,44 @@
   {
    "id": "D-KEMI",
    "kind": "held",
-   "label": "ODA vandkemi\\n1,805,827 rows, 1970-2026",
-   "detail": "Fetched 2026-09-10. Carries Startklok on 100.0% of rows. 14 of 147 parameters appear under more than one unit."
+   "label": "ODA vandkemi\\n{fig:kemi_rows} rows, 1970-2026",
+   "detail": "Fetched 2026-09-10. Carries Startklok on nearly every row, and several of its parameters appear under more than one unit - see DATA_SOURCES.md."
   },
   {
    "id": "D-CTD",
    "kind": "held",
-   "label": "ODA CTD\\n53,710,760 rows",
+   "label": "ODA CTD\\n{fig:ctd_rows} rows",
    "detail": "Oxygen, temperature, salinity at depth. NO clock field: ODA offers none for this topic."
   },
   {
    "id": "D-CHR",
    "kind": "held",
-   "label": "CHR livestock sites\\n57,860",
+   "label": "CHR livestock sites\\n{fig:manure_sites}",
    "detail": "Animal units per site, joined to Marker parcels on CVR."
   },
   {
    "id": "D-MARKER",
    "kind": "held",
-   "label": "Marker parcels\\n616,411",
+   "label": "Marker parcels\\ndeclared hectares per CVR",
    "detail": "Declared hectares per CVR."
   },
   {
    "id": "D-ACCOUNTS",
    "kind": "held",
-   "label": "Filed accounts\\n1,630 businesses",
-   "detail": "From the sibling project danish-livestock. A SAMPLE: 76.3% of the herd and 81.0% of farmland is on businesses filing nothing."
+   "label": "Filed accounts\\n{fig:accounts_filed} businesses",
+   "detail": "From the sibling project danish-livestock. A SAMPLE: {calc:filers_none_de / herd_total_de * 100|.1f}% of the herd and {calc:ha_none / ha_total * 100|.1f}% of farmland is on businesses filing nothing."
   },
   {
    "id": "D-BEK931",
    "kind": "external",
    "label": "BEK 931/2024",
-   "detail": "Read from retsinformation's primary text. 'dyreenhed' occurs zero times; 38 occurrences of 'harmoniareal'."
+   "detail": "Pinned by the sha256 of its text. dyreenhed occurs {count:BEK931-2024:dyreenhed} times in it; harmoniareal {count:BEK931-2024:harmoniareal}."
   },
   {
    "id": "D-SHEETS",
    "kind": "held",
-   "label": "2012 flood sheets\\n7 orthophoto sheets",
-   "detail": "Recovered from PDF. Placed with 14-91 m stated error; meridian convergence of ~2.95 deg is NOT modelled."
+   "label": "2012 flood sheets\\n{fig:conv_n_sheets} orthophoto sheets",
+   "detail": "Recovered from PDF. Placed with {fig:conv_stated_error_min_m}-{fig:conv_stated_error_max_m} m stated error; the meridian convergence is NOT modelled."
   },
   {
    "id": "G-CLOCK",
@@ -62,7 +62,7 @@
    "id": "G-PREDAWN",
    "kind": "gap",
    "label": "Pre-dawn sampling\\nNEVER TAKEN",
-   "detail": "684 night and twilight samples in 91,072. The value an oxygen threshold is about is essentially unobserved."
+   "detail": "{calc:predawn_night_n + predawn_twilight_n|,} night and twilight samples in {fig:surface_o2_n}. The value an oxygen threshold is about is essentially unobserved."
   },
   {
    "id": "G-DRAIN",
@@ -91,14 +91,14 @@
   {
    "id": "A-NOISE",
    "kind": "assumption",
-   "label": "Noise Gaussian,\\n0.629 mg/l",
+   "label": "Noise Gaussian,\\n{fig:det_noise} mg/l",
    "detail": "Measured from single-sun-bin cells so the signal cannot inflate it. Gaussianity is stipulated."
   },
   {
    "id": "A-BORROW",
    "kind": "assumption",
    "label": "A station-day is\\none moment",
-   "detail": "99% of kemi station-days carry a single Startklok. UNCHECKED against field sheets."
+   "detail": "UNCHECKED: whether a cast and a bottle on the same station-day share a moment."
   },
   {
    "id": "X-CYCLES",
@@ -139,8 +139,8 @@
   {
    "id": "D-SKYBRUDSVEJE",
    "kind": "held",
-   "label": "skp_veje_tunneller_kk · 976 alignments",
-   "detail": "The cloudburst plan's roads and pipes, with a typologi per feature. 280.0 km end to end."
+   "label": "skp_veje_tunneller_kk · {fig:layer_features} alignments",
+   "detail": "The cloudburst plan's roads and pipes, with a typologi per feature. {fig:total_km} km end to end."
   },
   {
    "id": "X-CONVEYANCE",
@@ -154,7 +154,7 @@
    "id": "C-CLOCK-EXISTS",
    "kind": "measured",
    "page": "PLAN.md",
-   "claim": "The archive carries a clock time. Startklok is present on 100.0% of 1,805,827 water-chemistry rows.",
+   "claim": "The archive carries a clock time. Startklok is present on {calc:kemi_startklok / kemi_rows * 100|.1f}% of {fig:kemi_rows} water-chemistry rows - all but {calc:kemi_rows - kemi_startklok|,}.",
    "rests_on": [
     "D-KEMI"
    ],
@@ -164,13 +164,23 @@
     "path": "kemi.rows",
     "fmt": "{:,}"
    },
-   "basis": "computed"
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {calc:kemi_startklok / kemi_rows * 100|.1f}": "100.0",
+     "claim {fig:kemi_rows}": "1,805,827",
+     "claim {calc:kemi_rows - kemi_startklok|,}": "22",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+    }
+   }
   },
   {
    "id": "C-WORKDAY",
    "kind": "simulated",
    "page": "METHOD_LAB.md",
-   "claim": "The 09:00-15:00 sampling window loses about three quarters of a diurnal signal of any amplitude.",
+   "claim": "The 09:00-15:00 sampling window loses {calc:(1 - det_rec_hi / det_even_hi) * 100|.0f}% of a diurnal signal - and about the same share at every amplitude large enough to recover above the noise.",
    "rests_on": [
     "S-DETECT",
     "X-DETECT",
@@ -178,13 +188,21 @@
     "A-SHAPE"
    ],
    "note": "Nearly assumption-free: the same visits compared with themselves, only the hour redrawn. Does NOT claim the sea has such a cycle.",
-   "basis": "computed"
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {calc:(1 - det_rec_hi / det_even_hi) * 100|.0f}": "73",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+    }
+   }
   },
   {
    "id": "C-DIURNAL-BOUND",
    "kind": "bounded",
    "page": "METHOD_LAB.md",
-   "claim": "The surface diurnal oxygen amplitude is below roughly 0.35 to 0.5 mg/l.",
+   "claim": "The surface diurnal oxygen amplitude is below roughly {calc:det_imp_lo + (det_obs - det_rec_lo) / (det_rec_hi - det_rec_lo) * (det_imp_hi - det_imp_lo)|.2f} to {fig:det_limit} mg/l.",
    "rests_on": [
     "C-WORKDAY",
     "X-CYCLES",
@@ -192,13 +210,24 @@
     "A-NOISE",
     "A-SHAPE"
    ],
-   "note": "A bound, not a null. Void if the signal has a shape unlike sun elevation, or if the noise is far from Gaussian.",
+   "note": "A bound, not a null. The lower figure interpolates between the two tested amplitudes the observed spread falls between; the upper is the first tested amplitude recovered above it. An earlier version gave the lower figure as {was:e8ec308:docs/CLAIMS.md:0.35}, interpolated by hand from older runs. Void if the signal has a shape unlike sun elevation, or if the noise is far from Gaussian.",
    "value_from": {
     "file": "data/derived/detectable.json",
     "path": "detection_limit_mg_l",
     "fmt": "{:g}"
    },
-   "basis": "computed"
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {calc:det_imp_lo + (det_obs - det_rec_lo) / (det_rec_hi - det_rec_lo) * (det_imp_hi - det_imp_lo)|.2f}": "0.36",
+     "claim {fig:det_limit}": "0.5",
+     "note {was:e8ec308:docs/CLAIMS.md:0.35}": "0.35",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "A-NOISE.label {fig:det_noise}": "0.6286"
+    }
+   }
   },
   {
    "id": "C-PREDAWN",
@@ -214,54 +243,97 @@
    "basis": "assessed",
    "assessment": {
     "counts_as": "surface oxygen samples taken with the sun below the horizon - night and civil twilight - at a station's own position and instant",
-    "reasoning": "684 of 91,072 surface oxygen samples. Spread over 57 years and about a thousand stations, that cannot characterise a minimum at any one place.",
-    "confidence": "High that the minimum is undersampled. The word 'nothing' is strong: the 684 exist, they are simply too thin to constrain anything local.",
+    "reasoning": "{fig:predawn_night_n} night and {fig:predawn_twilight_n} twilight samples, of {fig:surface_o2_n}. Spread across the whole record since 1970 and all the stations that sampled, that cannot characterise a minimum at any one place.",
+    "confidence": "High that the minimum is undersampled. The word 'nothing' is strong: the {calc:predawn_night_n + predawn_twilight_n|,} exist, they are simply too thin to constrain anything local.",
     "would_change": "Moored continuous sensors, or one season of deliberate pre-dawn sampling at a handful of stations."
+   },
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "assessment.reasoning {fig:predawn_night_n}": "324",
+     "assessment.reasoning {fig:predawn_twilight_n}": "360",
+     "assessment.reasoning {fig:surface_o2_n}": "91,072",
+     "assessment.confidence {calc:predawn_night_n + predawn_twilight_n|,}": "684",
+     "G-PREDAWN.detail {calc:predawn_night_n + predawn_twilight_n|,}": "684",
+     "G-PREDAWN.detail {fig:surface_o2_n}": "91,072",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+    }
    }
   },
   {
    "id": "C-DEPTH-UNTIMED",
    "kind": "measured",
    "page": "IF_YOU_HAVE_THE_DATA.md",
-   "claim": "Oxygen at depth cannot be placed in the day: 53.7 million CTD measurements carry a date and no hour.",
+   "claim": "Oxygen at depth cannot be placed in the day: {fig:ctd_rows} CTD measurements carry a date and no hour.",
    "rests_on": [
     "D-CTD"
    ],
    "note": "Verified against ODA's own output-field list, not inferred from our extract.",
-   "basis": "computed"
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:ctd_rows}": "53,710,760",
+     "D-CTD.label {fig:ctd_rows}": "53,710,760"
+    }
+   }
   },
   {
    "id": "C-DEPTH-BORROW",
    "kind": "provisional",
    "page": "METHOD_LAB.md",
-   "claim": "80% of CTD station-days can borrow a clock from a same-day water-chemistry bottle.",
+   "claim": "{fig:depth_borrowed} oxygen measurements at depth were placed in time with a clock borrowed from a same-day water-chemistry bottle; {fig:depth_none} had no such bottle to borrow from.",
    "rests_on": [
     "D-CTD",
     "D-KEMI",
     "A-BORROW",
     "G-CLOCK"
    ],
-   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact.",
-   "basis": "computed"
+   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact. The two counts are not a share of one population: the first is counted after depth_clock.py's quality filters and the second before them, so their ratio is not the fraction that can borrow a clock. An earlier version said {was:e8ec308:docs/CLAIMS.md:80%} of station-days, a figure computed by hand and never stored.",
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:depth_borrowed}": "6,085,887",
+     "claim {fig:depth_none}": "1,054,275",
+     "note {was:e8ec308:docs/CLAIMS.md:80%}": "80%",
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+    }
+   }
   },
   {
    "id": "C-MANURE",
    "kind": "measured",
    "page": "NITROGEN.md",
-   "claim": "2,662 businesses - 28% of those declaring land - hold animal units above 1.4 DE per declared hectare, and 56% of the national herd.",
+   "claim": "{fig:manure_14_businesses} businesses - {fig:manure_14_share_biz}% of those declaring land - hold animal units above {param:harmony_1_4} DE per declared hectare, and {fig:manure_14_share_herd}% of the national herd.",
    "rests_on": [
     "D-CHR",
     "D-MARKER",
     "X-MANURE"
    ],
    "note": "QUALIFIED by C-DE-VOID: the threshold has no legal force. The physical statement, that this manure must leave the holding, stands.",
-   "basis": "computed"
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:manure_14_businesses}": "2,662",
+     "claim {fig:manure_14_share_biz}": "28",
+     "claim {param:harmony_1_4}": "1.4",
+     "claim {fig:manure_14_share_herd}": "56",
+     "D-CHR.label {fig:manure_sites}": "57,860"
+    }
+   }
   },
   {
    "id": "C-DE-VOID",
    "kind": "measured",
    "page": "INCIDENCE.md",
-   "claim": "Danish nitrogen rules do not count animals. The animal unit has no legal force; the binding ceiling is 170 kg organic N per hectare of harmoniareal.",
+   "claim": "Danish nitrogen rules do not count animals. The animal unit has no legal force; the binding ceiling is {read:BEK931-2024:170|divideret med 170 kg} kg organic N per hectare of harmoniareal.",
    "rests_on": [
     "D-BEK931"
    ],
@@ -269,29 +341,55 @@
    "basis": "assessed",
    "assessment": {
     "counts_as": "occurrences of dyreenhed (the animal unit) as a regulatory unit in the operative text of BEK 931/2024",
-    "reasoning": "Read from retsinformation's primary text: 0 occurrences of dyreenhed, 38 of harmoniareal. §14 binds on 170 kg organic nitrogen per hectare of harmoniareal; §26 stk. 3 keeps the 230 kg permissions only as a transitional provision.",
+    "reasoning": "Read from retsinformation's primary text: dyreenhed occurs {count:BEK931-2024:dyreenhed} times, harmoniareal {count:BEK931-2024:harmoniareal}. § 14 binds on {read:BEK931-2024:170|divideret med 170 kg} kg organic nitrogen per hectare of harmoniareal; § 26 stk. 3 keeps the {read:BEK931-2024:230|230 kg kvælstof} kg permissions only as a transitional provision.",
     "confidence": "High for BEK 931 itself, which was read here. Medium for the general statement that the animal unit has no legal force: the other instruments (BEK 673, BEK 677, LOV 759) were read by the incidence agent and not by a second reader.",
     "would_change": "An operative regulation setting a limit in dyreenheder, or a court or agency reading that the unit still binds through another route."
+   },
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {read:BEK931-2024:170|divideret med 170 kg}": "170",
+     "assessment.reasoning {count:BEK931-2024:dyreenhed}": "0",
+     "assessment.reasoning {count:BEK931-2024:harmoniareal}": "38",
+     "assessment.reasoning {read:BEK931-2024:170|divideret med 170 kg}": "170",
+     "assessment.reasoning {read:BEK931-2024:230|230 kg kvælstof}": "230",
+     "D-BEK931.detail {count:BEK931-2024:dyreenhed}": "0",
+     "D-BEK931.detail {count:BEK931-2024:harmoniareal}": "38",
+     "pinned BEK931-2024": "dfcd26d1b5aa26fa"
+    }
    }
   },
   {
    "id": "C-NO-BUFFER",
    "kind": "bounded",
    "page": "INCIDENCE.md",
-   "claim": "At least 154 animal-keeping holdings are both exposed and thin, with a median 1.9 years of equity at current loss rates.",
+   "claim": "At least {fig:nobuf_n} animal-keeping holdings are both exposed and thin, with a median {fig:nobuf_years} years of equity at current loss rates.",
    "rests_on": [
     "D-ACCOUNTS",
     "X-SOCIAL",
     "C-DE-VOID"
    ],
-   "note": "A FLOOR, not a count. 76.3% of the herd is on businesses filing no accounts, and the filers are the large end.",
-   "basis": "computed"
+   "note": "A FLOOR, not a count. {calc:filers_none_de / herd_total_de * 100|.1f}% of the herd is on businesses filing no accounts, and the filers are the large end.",
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:nobuf_n}": "154",
+     "claim {fig:nobuf_years}": "1.9",
+     "note {calc:filers_none_de / herd_total_de * 100|.1f}": "76.3",
+     "D-ACCOUNTS.label {fig:accounts_filed}": "1,630",
+     "D-ACCOUNTS.detail {calc:filers_none_de / herd_total_de * 100|.1f}": "76.3",
+     "D-ACCOUNTS.detail {calc:ha_none / ha_total * 100|.1f}": "81.0"
+    }
+   }
   },
   {
    "id": "C-SIDIN",
    "kind": "measured",
    "page": "OPEN_PROBLEMS.md",
-   "claim": "Surface Si:DIN has risen from a median of 1.11 in 1985 to 3.41 in 2025, contradicting the premise of hypothesis K1.",
+   "claim": "Surface Si:DIN has risen from a median of {fig:sidin_1985} in 1985 to {fig:sidin_2025} in 2025, contradicting the premise of hypothesis K1.",
    "rests_on": [
     "D-KEMI",
     "X-RESCORE"
@@ -302,7 +400,16 @@
     "path": "tests.K1_si_din_molar_surface.2025.median",
     "fmt": "{:.2f}"
    },
-   "basis": "computed"
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:sidin_1985}": "1.11",
+     "claim {fig:sidin_2025}": "3.41",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+    }
+   }
   },
   {
    "id": "C-K1-BLOCKED",
@@ -319,24 +426,47 @@
     "reasoning": "The water-chemistry fetch carries no species counts; OBIS eMoF, which may, has not been fetched.",
     "confidence": "High that it is not in hand. Unassessed whether it exists at the needed resolution.",
     "would_change": "Fetching OBIS eMoF for the Danish stations and finding assemblage data co-located with nutrients."
+   },
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {}
    }
   },
   {
    "id": "C-FLOOD-AREA",
    "kind": "measured",
    "page": "FLOOD_GAP.md",
-   "claim": "5.847 km2 of modelled flooding on land at 0.1 m or deeper.",
+   "claim": "{fig:flood_km2} km² of modelled flooding on land at {param:flood_depth_min} m or deeper.",
    "rests_on": [
     "D-SHEETS",
     "X-FLOODGAP"
    ],
-   "note": "Depends on a sheet placement that does not model the ~2.95 degree meridian convergence, which displaces corners by 94-350 m - four to ten times the stated registration error.",
+   "note": "Depends on a sheet placement that does not model the meridian convergence of {fig:conv_gamma_min_deg}-{fig:conv_gamma_max_deg} degrees, which displaces corners by {fig:conv_shift_min_m|.0f}-{fig:conv_shift_max_m|.0f} m - {fig:conv_shift_over_error_min} to {fig:conv_shift_over_error_max} times the registration error the pipeline states for each sheet. An earlier version of this note said {was:e8ec308:docs/CLAIMS.md:four to ten times}, worked out loosely by hand; the first stored figures contradicted it.",
    "value_from": {
     "file": "data/derived/floodgap.json",
     "path": "flooded_area_km2",
     "fmt": "{:.3f}"
    },
-   "basis": "computed"
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:flood_km2}": "5.847",
+     "claim {param:flood_depth_min}": "0.1",
+     "note {fig:conv_gamma_min_deg}": "2.897",
+     "note {fig:conv_gamma_max_deg}": "2.982",
+     "note {fig:conv_shift_min_m|.0f}": "94",
+     "note {fig:conv_shift_max_m|.0f}": "350",
+     "note {fig:conv_shift_over_error_min}": "2.4",
+     "note {fig:conv_shift_over_error_max}": "7.5",
+     "note {was:e8ec308:docs/CLAIMS.md:four to ten times}": "four to ten times",
+     "D-SHEETS.label {fig:conv_n_sheets}": "7",
+     "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91"
+    }
+   }
   },
   {
    "id": "C-DRAIN-ROUTE",
@@ -353,13 +483,18 @@
     "reasoning": "No national outfall layer exists; draenkort are private paper records. Searched, and recorded in DATA_SOURCES.md.",
     "confidence": "High that no national layer exists. The terrain approximation - outfall where a drained parcel's flow path meets the stream - is untested.",
     "would_change": "Digitised draenkort for one test catchment, against which the terrain approximation can be scored."
+   },
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {}
    }
   },
   {
    "id": "C-CONVEYANCE",
    "kind": "measured",
    "page": "index.html",
-   "claim": "The cloudburst plan holds 209.0 km of alignment that could carry water on the surface — 168.1 km classed as surface conveyance plus 40.9 km of mixed alignment — against 71.0 km of pipe.",
+   "claim": "The cloudburst plan holds {fig:surface_plus_mix_km} km of alignment that could carry water on the surface - {fig:surface_km|.1f} km classed as surface conveyance plus {fig:mix_km} km of mixed alignment - against {fig:pipe_km|.1f} km of pipe.",
    "rests_on": [
     "D-SKYBRUDSVEJE",
     "X-CONVEYANCE"
@@ -372,8 +507,25 @@
    "appears_in": [
     "index.html"
    ],
-   "note": "Three figures for this quantity were published and none was derived: 210 km on the landing page, 169 km in two documents, and a layer measuring 280 km. All three are defensible under different definitions of 'surface' and nothing said which was in use. 210 was surface plus mix (209.0); 169 was surface alone (168.1). The pipe figure, 71, was right to the kilometre.",
-   "basis": "computed"
+   "note": "Three figures for this quantity were published and none was derived: {was:0288f8e:index.html:210} km on the landing page, {was:408ab8d:scripts/programme.py:169} km in two documents, and a layer measuring {fig:total_km} km. All three are defensible under different definitions of 'surface' and nothing said which was in use: the first was surface plus mix ({fig:surface_plus_mix_km}), the second surface alone ({fig:surface_km|.1f}). The pipe figure was right to the kilometre.",
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-10",
+    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:surface_plus_mix_km}": "209.0",
+     "claim {fig:surface_km|.1f}": "168.1",
+     "claim {fig:mix_km}": "40.9",
+     "claim {fig:pipe_km|.1f}": "71.0",
+     "note {was:0288f8e:index.html:210}": "210",
+     "note {was:408ab8d:scripts/programme.py:169}": "169",
+     "note {fig:total_km}": "280.0",
+     "note {fig:surface_plus_mix_km}": "209.0",
+     "note {fig:surface_km|.1f}": "168.1",
+     "D-SKYBRUDSVEJE.label {fig:layer_features}": "976",
+     "D-SKYBRUDSVEJE.detail {fig:total_km}": "280.0"
+    }
+   }
   }
  ],
  "_figures": "A claim may declare where its number came from. claims.py then reads the live value and refuses to write the page if the sentence no longer matches it. Provenance says what a claim rests on; this says whether it still does.",
@@ -425,7 +577,290 @@
    "path": "surface_plus_mix_km",
    "fmt": "{:.1f}",
    "claim": "C-CONVEYANCE"
+  },
+  "kemi_startklok": {
+   "file": "data/derived/enums.json",
+   "path": "kemi.nonblank.Startklok",
+   "fmt": "{:,}",
+   "claim": "C-CLOCK-EXISTS"
+  },
+  "surface_o2_n": {
+   "file": "data/derived/cycles.json",
+   "path": "results.o2.n",
+   "fmt": "{:,}",
+   "claim": "C-PREDAWN"
+  },
+  "predawn_night_n": {
+   "file": "data/derived/cycles.json",
+   "path": "results.o2.by_window.10.sun.night.n",
+   "fmt": "{:,}",
+   "claim": "C-PREDAWN"
+  },
+  "predawn_twilight_n": {
+   "file": "data/derived/cycles.json",
+   "path": "results.o2.by_window.10.sun.twilight.n",
+   "fmt": "{:,}",
+   "claim": "C-PREDAWN"
+  },
+  "manure_14_businesses": {
+   "file": "data/derived/manure.json",
+   "path": [
+    "over_limit",
+    "1.4",
+    "businesses"
+   ],
+   "fmt": "{:,}",
+   "claim": "C-MANURE"
+  },
+  "manure_14_share_biz": {
+   "file": "data/derived/manure.json",
+   "path": [
+    "over_limit",
+    "1.4",
+    "share_of_businesses_pct"
+   ],
+   "fmt": "{:.0f}",
+   "claim": "C-MANURE"
+  },
+  "manure_14_share_herd": {
+   "file": "data/derived/manure.json",
+   "path": [
+    "over_limit",
+    "1.4",
+    "share_of_herd_pct"
+   ],
+   "fmt": "{:.0f}",
+   "claim": "C-MANURE"
+  },
+  "manure_sites": {
+   "file": "data/derived/manure.json",
+   "path": "sites",
+   "fmt": "{:,}",
+   "claim": "C-MANURE"
+  },
+  "nobuf_n": {
+   "file": "data/derived/socialcontext.json",
+   "path": "intersection.n_both",
+   "fmt": "{:,}",
+   "claim": "C-NO-BUFFER"
+  },
+  "nobuf_years": {
+   "file": "data/derived/socialcontext.json",
+   "path": "intersection.median_years_of_equity",
+   "fmt": "{:.1f}",
+   "claim": "C-NO-BUFFER"
+  },
+  "accounts_filed": {
+   "file": "data/derived/socialcontext.json",
+   "path": "accounts_sample.n_filed",
+   "fmt": "{:,}",
+   "claim": "C-NO-BUFFER"
+  },
+  "filers_none_de": {
+   "file": "data/derived/socialcontext.json",
+   "path": [
+    "visibility",
+    "by_accounts",
+    "False",
+    "de"
+   ],
+   "fmt": "{:,.0f}",
+   "claim": "C-NO-BUFFER"
+  },
+  "herd_total_de": {
+   "file": "data/derived/socialcontext.json",
+   "path": "visibility.total_de",
+   "fmt": "{:,.0f}",
+   "claim": "C-NO-BUFFER"
+  },
+  "ha_none": {
+   "file": "data/derived/socialcontext.json",
+   "path": [
+    "hectares",
+    "by_accounts",
+    "False",
+    "ha"
+   ],
+   "fmt": "{:,.0f}",
+   "claim": "C-NO-BUFFER"
+  },
+  "ha_total": {
+   "file": "data/derived/socialcontext.json",
+   "path": "hectares.total_ha",
+   "fmt": "{:,.0f}",
+   "claim": "C-NO-BUFFER"
+  },
+  "sidin_1985": {
+   "file": "data/derived/rescore.json",
+   "path": [
+    "tests",
+    "K1_si_din_molar_surface",
+    "1985",
+    "median"
+   ],
+   "fmt": "{:.2f}",
+   "claim": "C-SIDIN"
+  },
+  "sidin_2025": {
+   "file": "data/derived/rescore.json",
+   "path": [
+    "tests",
+    "K1_si_din_molar_surface",
+    "2025",
+    "median"
+   ],
+   "fmt": "{:.2f}",
+   "claim": "C-SIDIN"
+  },
+  "conv_gamma_min_deg": {
+   "file": "data/derived/convergence.json",
+   "path": "gamma_min_deg",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_gamma_max_deg": {
+   "file": "data/derived/convergence.json",
+   "path": "gamma_max_deg",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_shift_min_m": {
+   "file": "data/derived/convergence.json",
+   "path": "shift_min_m",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_shift_max_m": {
+   "file": "data/derived/convergence.json",
+   "path": "shift_max_m",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_shift_over_error_min": {
+   "file": "data/derived/convergence.json",
+   "path": "shift_over_error_min",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_shift_over_error_max": {
+   "file": "data/derived/convergence.json",
+   "path": "shift_over_error_max",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_n_sheets": {
+   "file": "data/derived/convergence.json",
+   "path": "n_sheets",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_stated_error_min_m": {
+   "file": "data/derived/convergence.json",
+   "path": "stated_error_min_m",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "conv_stated_error_max_m": {
+   "file": "data/derived/convergence.json",
+   "path": "stated_error_max_m",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "total_km": {
+   "file": "data/derived/conveyance.json",
+   "path": "total_km",
+   "fmt": "{:.1f}",
+   "claim": "C-CONVEYANCE"
+  },
+  "layer_features": {
+   "file": "data/derived/conveyance.json",
+   "path": "features_in_layer",
+   "fmt": "{:,}",
+   "claim": "C-CONVEYANCE"
+  },
+  "depth_borrowed": {
+   "file": "data/derived/depth_clock.json",
+   "path": "clock_source.borrowed",
+   "fmt": "{:,}",
+   "claim": "C-DEPTH-BORROW"
+  },
+  "depth_none": {
+   "file": "data/derived/depth_clock.json",
+   "path": "clock_source.none",
+   "fmt": "{:,}",
+   "claim": "C-DEPTH-BORROW"
+  },
+  "det_imp_lo": {
+   "file": "data/derived/detectable.json",
+   "path": "runs.4.imposed",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
+  },
+  "det_rec_lo": {
+   "file": "data/derived/detectable.json",
+   "path": "runs.4.recovered_real_hours",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
+  },
+  "det_imp_hi": {
+   "file": "data/derived/detectable.json",
+   "path": "runs.5.imposed",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
+  },
+  "det_rec_hi": {
+   "file": "data/derived/detectable.json",
+   "path": "runs.5.recovered_real_hours",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
+  },
+  "det_even_hi": {
+   "file": "data/derived/detectable.json",
+   "path": "runs.5.recovered_even_hours",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
+  },
+  "det_obs": {
+   "file": "data/derived/detectable.json",
+   "path": "observed_real_spread_mg_l",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
+  },
+  "det_limit": {
+   "file": "data/derived/detectable.json",
+   "path": "detection_limit_mg_l",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
+  },
+  "det_noise": {
+   "file": "data/derived/detectable.json",
+   "path": "noise_sd_mg_l",
+   "fmt": "{:g}",
+   "claim": "C-DIURNAL-BOUND"
   }
  },
- "_basis": "Every claim is COMPUTED - a script produces the number and records how it counted it - or ASSESSED: a reading or a judgement that no script can re-derive, assessed by a person in its 'assessment' field."
+ "_basis": "Every claim is COMPUTED - a script produces the number and records how it counted it - or ASSESSED: a reading or a judgement that no script can re-derive, assessed by a person in its 'assessment' field.",
+ "_live": "No number is typed into this file. Claim, note, assessment and node texts use placeholders - {fig:}, {calc:}, {count:}, {read:}, {was:}, {param:} - resolved by claims.py when the page is built. See its docstring.",
+ "sources": {
+  "BEK931-2024": {
+   "title": "BEK 931/2024, retsinformation",
+   "url": "https://www.retsinformation.dk/eli/lta/2024/931/dan/pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "dfcd26d1b5aa26fa46950e0500e579cecadaef01a05f5a553e52b3eeac5db771",
+   "checked": "2026-09-10",
+   "status": "unchanged since pinned"
+  }
+ },
+ "params": {
+  "harmony_1_4": {
+   "value": 1.4,
+   "shown": "1.4",
+   "reason": "The classic pre-2017 harmony limit, used by manure.py (LIMITS) as an indicator of manure pressure. It has no legal force now - see C-DE-VOID - and is used here as a physical indicator only."
+  },
+  "flood_depth_min": {
+   "value": 0.1,
+   "shown": "0.1",
+   "reason": "The depth from which floodgap.py counts a cell as flooded on land. The 2012 sheets also paint a thinner band below it, which this area leaves out."
+  }
+ }
 }

@@ -75,12 +75,18 @@ def scan(path, sample_numeric=200000):
     rng = random.Random(0)          # deterministic: the audit must be repeatable
     opener = gzip.open if path.endswith(".gz") else open
     counts, over, numsample = {}, set(), collections.defaultdict(list)
+    # Non-blank values per column, counted exactly. "Startklok is present on
+    # 100.0% of rows" was once computed by hand and never recorded, so the claim
+    # carrying it had nothing to be checked against. It is recorded now.
+    nonblank = collections.Counter()
     rows = 0
     with opener(path, "rb") as fh:
         rd = csv.DictReader(io.TextIOWrapper(fh, encoding="latin-1"), delimiter=";")
         for row in rd:
             rows += 1
             for k, v in row.items():
+                if k is not None and v is not None and v.strip():
+                    nonblank[k] += 1
                 if k is None or k in over:
                     continue
                 c = counts.setdefault(k, collections.Counter())
@@ -99,7 +105,7 @@ def scan(path, sample_numeric=200000):
                     j = rng.randrange(rows)
                     if j < sample_numeric:
                         res[j] = row.get(k)
-    return rows, counts, over, numsample
+    return rows, counts, over, numsample, nonblank
 
 
 def main(argv):
@@ -114,9 +120,10 @@ def main(argv):
     for path in files:
         name = os.path.basename(path).split(".")[0]
         log(f"\n{'='*70}\n{name}  ({os.path.getsize(path)/1e6:.0f} MB)")
-        rows, counts, over, numsample = scan(path, sample_numeric=sample)
+        rows, counts, over, numsample, nonblank = scan(path, sample_numeric=sample)
         log(f"{rows:,} rows, {len(counts)} columns")
-        rec = {"rows": rows, "categorical": {}, "high_cardinality": {}}
+        rec = {"rows": rows, "categorical": {}, "high_cardinality": {},
+               "nonblank": dict(nonblank)}
         for col in counts:
             if col in over:
                 s = numeric_summary(numsample.get(col, []))

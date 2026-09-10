@@ -1,0 +1,1417 @@
+{
+ "docs": {
+  "docs/CLAIMS.md": [
+   "F-0924f4dc60",
+   "F-0cea4d0ae6",
+   "F-105ab3dbee",
+   "F-17d442d3cc",
+   "F-1bae49478e",
+   "F-1db71ebd1c",
+   "F-22cd06a85c",
+   "F-2335163685",
+   "F-242af2c4af",
+   "F-251bf614e7",
+   "F-2e379d9d80",
+   "F-348096b730",
+   "F-35e8d8dd04",
+   "F-3d9ed6cb7b",
+   "F-3e1120ac9a",
+   "F-43048d49f9",
+   "F-44a0407afe",
+   "F-46d5cbc06a",
+   "F-4df017f985",
+   "F-501f30a23e",
+   "F-54f0bb8a6f",
+   "F-566c0ca9ca",
+   "F-5b51d1bbc4",
+   "F-5d2b7845e5",
+   "F-61c333ef46",
+   "F-6583b32c6f",
+   "F-65d38500a4",
+   "F-67c693fb74",
+   "F-689525a824",
+   "F-69a096a761",
+   "F-6cb3924cbc",
+   "F-6d47856cfe",
+   "F-71574efd11",
+   "F-73f3cb2e7b",
+   "F-760c9bed36",
+   "F-777b25e425",
+   "F-7857d6fb97",
+   "F-7b56edc8a8",
+   "F-7cdc1eac31",
+   "F-83543218b1",
+   "F-83f4ce7e89",
+   "F-857821cb67",
+   "F-8aa919444b",
+   "F-8b13c8e0be",
+   "F-8b70ef0282",
+   "F-8b8e87634f",
+   "F-8c083c10c8",
+   "F-8c39a542a2",
+   "F-8e4f79cce0",
+   "F-8e90e830e5",
+   "F-8ebae27cb6",
+   "F-91bbc1443d",
+   "F-91d55572e3",
+   "F-94530fd3a4",
+   "F-9a148c0237",
+   "F-9a776cb143",
+   "F-9fa9c3c21c",
+   "F-9fb352c7ee",
+   "F-a04b5dbab1",
+   "F-a9f12a0e4f",
+   "F-ab2d7eefd2",
+   "F-acd4e9416b",
+   "F-ad67b02b0c",
+   "F-b0a5d8b741",
+   "F-b26a658bdb",
+   "F-ba3e051cdc",
+   "F-bb5f71323f",
+   "F-bd0568af5a",
+   "F-bdf08e6967",
+   "F-bee3b38975",
+   "F-c20885b069",
+   "F-c2385140c2",
+   "F-cb7e7c7b57",
+   "F-d04d245a78",
+   "F-d0ec8d3e5b",
+   "F-d1ed488da6",
+   "F-d4ab94d60c",
+   "F-d849fa0786",
+   "F-d9c9804616",
+   "F-dc51124c36",
+   "F-e16250dbae",
+   "F-e1c8031e9d",
+   "F-e630ea6fa6",
+   "F-e6348875d1",
+   "F-e7d6dac80e",
+   "F-ecd882cc1d",
+   "F-f022c280a4",
+   "F-f082811835",
+   "F-f3e1dcfbb0",
+   "F-f6aed45f21",
+   "F-f7741a6ef7",
+   "F-f7b709b120",
+   "F-fc0fde2bc8",
+   "F-fc9935fe72",
+   "F-fdfa079bf0",
+   "F-fe2d6055d5"
+  ]
+ },
+ "entries": {
+  "F-0924f4dc60": {
+   "src": [
+    "quote",
+    "e8ec308",
+    "docs/CLAIMS.md",
+    "80%"
+   ],
+   "value": "80%"
+  },
+  "F-0cea4d0ae6": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_to_pipe.alternatives.0.value"
+   ],
+   "value": 2.37
+  },
+  "F-105ab3dbee": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.excluded.0.n"
+   ],
+   "value": 2
+  },
+  "F-17d442d3cc": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "n_sheets"
+   ],
+   "value": 7
+  },
+  "F-1bae49478e": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "noise_sd_mg_l"
+   ],
+   "value": 0.6286
+  },
+  "F-1db71ebd1c": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "runs.5.imposed"
+   ],
+   "value": 0.5
+  },
+  "F-22cd06a85c": {
+   "src": [
+    "leaf",
+    "data/derived/enums.json",
+    "kemi.nonblank.Startklok"
+   ],
+   "value": 1805805
+  },
+  "F-2335163685": {
+   "src": [
+    "leaf",
+    "data/derived/floodgap.json",
+    "flooded_area_km2"
+   ],
+   "value": 5.847
+  },
+  "F-242af2c4af": {
+   "src": [
+    "leaf",
+    "data/derived/cycles.json",
+    "results.o2.by_window.10.sun.twilight.n"
+   ],
+   "value": 360
+  },
+  "F-251bf614e7": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.alternatives.0.value"
+   ],
+   "value": 168.1
+  },
+  "F-2e379d9d80": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_plus_mix_km.n_used"
+   ],
+   "value": 752
+  },
+  "F-348096b730": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "shift_max_m"
+   ],
+   "value": 349.7
+  },
+  "F-35e8d8dd04": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "total_km"
+   ],
+   "value": 280.0
+  },
+  "F-3d9ed6cb7b": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_plus_mix_km.alternatives.2.value"
+   ],
+   "value": 280.0
+  },
+  "F-3e1120ac9a": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "stated_error_max_m"
+   ],
+   "value": 91
+  },
+  "F-43048d49f9": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.alternatives.2.value"
+   ],
+   "value": 280.0
+  },
+  "F-44a0407afe": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "shift_over_error_min"
+   ],
+   "value": 2.4
+  },
+  "F-46d5cbc06a": {
+   "src": [
+    "leaf",
+    "data/derived/rescore.json",
+    "tests.K1_si_din_molar_surface.1985.median"
+   ],
+   "value": 1.108
+  },
+  "F-4df017f985": {
+   "src": [
+    "leaf",
+    "data/derived/enums.json",
+    "ctd.rows"
+   ],
+   "value": 53710760
+  },
+  "F-501f30a23e": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "gamma_min_deg"
+   ],
+   "value": 2.897
+  },
+  "F-54f0bb8a6f": {
+   "src": [
+    "leaf",
+    "data/derived/cycles.json",
+    "results.o2.by_window.10.sun.night.n"
+   ],
+   "value": 324
+  },
+  "F-566c0ca9ca": {
+   "src": [
+    "leaf",
+    "data/derived/depth_clock.json",
+    "clock_source.none"
+   ],
+   "value": 1054275
+  },
+  "F-5b51d1bbc4": {
+   "src": [
+    "leaf",
+    "data/derived/socialcontext.json",
+    "hectares.by_accounts.False.ha"
+   ],
+   "value": 2124014.900000007
+  },
+  "F-5d2b7845e5": {
+   "src": [
+    "op",
+    "/",
+    [
+     [
+      "leaf",
+      "data/derived/socialcontext.json",
+      "hectares.by_accounts.False.ha"
+     ],
+     [
+      "leaf",
+      "data/derived/socialcontext.json",
+      "hectares.total_ha"
+     ]
+    ],
+    [
+     2124014.900000007,
+     2621089.8
+    ]
+   ],
+   "value": 0.8103556390933294
+  },
+  "F-61c333ef46": {
+   "src": [
+    "op",
+    "/",
+    [
+     [
+      "leaf",
+      "data/derived/enums.json",
+      "kemi.nonblank.Startklok"
+     ],
+     [
+      "leaf",
+      "data/derived/enums.json",
+      "kemi.rows"
+     ]
+    ],
+    [
+     1805805,
+     1805827
+    ]
+   ],
+   "value": 0.9999878172161564
+  },
+  "F-6583b32c6f": {
+   "src": [
+    "nary",
+    "*",
+    [
+     [
+      "op",
+      "/",
+      [
+       [
+        "op",
+        "-",
+        [
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "observed_real_spread_mg_l"
+         ],
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "runs.4.recovered_real_hours"
+         ]
+        ],
+        [
+         0.0294,
+         0.0148
+        ]
+       ],
+       [
+        "op",
+        "-",
+        [
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "runs.5.recovered_real_hours"
+         ],
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "runs.4.recovered_real_hours"
+         ]
+        ],
+        [
+         0.0416,
+         0.0148
+        ]
+       ]
+      ],
+      [
+       0.014599999999999998,
+       0.026799999999999997
+      ]
+     ],
+     [
+      "op",
+      "-",
+      [
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "runs.5.imposed"
+       ],
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "runs.4.imposed"
+       ]
+      ],
+      [
+       0.5,
+       0.2
+      ]
+     ]
+    ],
+    [
+     0.5447761194029851,
+     0.3
+    ]
+   ],
+   "value": 0.16343283582089552
+  },
+  "F-65d38500a4": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "observed_real_spread_mg_l"
+   ],
+   "value": 0.0294
+  },
+  "F-67c693fb74": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_plus_mix_km.excluded.0.n"
+   ],
+   "value": 2
+  },
+  "F-689525a824": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.excluded.1.n"
+   ],
+   "value": 114
+  },
+  "F-69a096a761": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "runs.4.imposed"
+   ],
+   "value": 0.2
+  },
+  "F-6cb3924cbc": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "runs.5.recovered_even_hours"
+   ],
+   "value": 0.1561
+  },
+  "F-6d47856cfe": {
+   "src": [
+    "leaf",
+    "data/derived/cycles.json",
+    "results.o2.n"
+   ],
+   "value": 91072
+  },
+  "F-71574efd11": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.pipe_km.n_used"
+   ],
+   "value": 222
+  },
+  "F-73f3cb2e7b": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_plus_mix_km.alternatives.1.value"
+   ],
+   "value": 209.0
+  },
+  "F-760c9bed36": {
+   "src": [
+    "nary",
+    "+",
+    [
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.4.imposed"
+     ],
+     [
+      "nary",
+      "*",
+      [
+       [
+        "op",
+        "/",
+        [
+         [
+          "op",
+          "-",
+          [
+           [
+            "leaf",
+            "data/derived/detectable.json",
+            "observed_real_spread_mg_l"
+           ],
+           [
+            "leaf",
+            "data/derived/detectable.json",
+            "runs.4.recovered_real_hours"
+           ]
+          ],
+          [
+           0.0294,
+           0.0148
+          ]
+         ],
+         [
+          "op",
+          "-",
+          [
+           [
+            "leaf",
+            "data/derived/detectable.json",
+            "runs.5.recovered_real_hours"
+           ],
+           [
+            "leaf",
+            "data/derived/detectable.json",
+            "runs.4.recovered_real_hours"
+           ]
+          ],
+          [
+           0.0416,
+           0.0148
+          ]
+         ]
+        ],
+        [
+         0.014599999999999998,
+         0.026799999999999997
+        ]
+       ],
+       [
+        "op",
+        "-",
+        [
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "runs.5.imposed"
+         ],
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "runs.4.imposed"
+         ]
+        ],
+        [
+         0.5,
+         0.2
+        ]
+       ]
+      ],
+      [
+       0.5447761194029851,
+       0.3
+      ]
+     ]
+    ],
+    [
+     0.2,
+     0.16343283582089552
+    ]
+   ],
+   "value": 0.36343283582089553
+  },
+  "F-777b25e425": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "pipe_km"
+   ],
+   "value": 71.0
+  },
+  "F-7857d6fb97": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_to_pipe.n_used"
+   ],
+   "value": 860
+  },
+  "F-7b56edc8a8": {
+   "src": [
+    "leaf",
+    "data/derived/manure.json",
+    "sites"
+   ],
+   "value": 57860
+  },
+  "F-7cdc1eac31": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "mix_km"
+   ],
+   "value": 40.9
+  },
+  "F-83543218b1": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "surface_plus_mix_km"
+   ],
+   "value": 209.0
+  },
+  "F-83f4ce7e89": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_plus_mix_km.n_in"
+   ],
+   "value": 976
+  },
+  "F-857821cb67": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "stated_error_min_m"
+   ],
+   "value": 14.3
+  },
+  "F-8aa919444b": {
+   "src": [
+    "quote",
+    "e8ec308",
+    "docs/CLAIMS.md",
+    "four to ten times"
+   ],
+   "value": "four to ten times"
+  },
+  "F-8b13c8e0be": {
+   "src": [
+    "nary",
+    "*",
+    [
+     [
+      "op",
+      "/",
+      [
+       [
+        "leaf",
+        "data/derived/socialcontext.json",
+        "hectares.by_accounts.False.ha"
+       ],
+       [
+        "leaf",
+        "data/derived/socialcontext.json",
+        "hectares.total_ha"
+       ]
+      ],
+      [
+       2124014.900000007,
+       2621089.8
+      ]
+     ],
+     [
+      "const",
+      100
+     ]
+    ],
+    [
+     0.8103556390933294,
+     100
+    ]
+   ],
+   "value": 81.03556390933294
+  },
+  "F-8b70ef0282": {
+   "src": [
+    "op",
+    "/",
+    [
+     [
+      "leaf",
+      "data/derived/socialcontext.json",
+      "visibility.by_accounts.False.de"
+     ],
+     [
+      "leaf",
+      "data/derived/socialcontext.json",
+      "visibility.total_de"
+     ]
+    ],
+    [
+     1858480.5800000047,
+     2434652.09
+    ]
+   ],
+   "value": 0.7633454437426437
+  },
+  "F-8b8e87634f": {
+   "src": [
+    "op",
+    "-",
+    [
+     [
+      "const",
+      1
+     ],
+     [
+      "op",
+      "/",
+      [
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "runs.5.recovered_real_hours"
+       ],
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "runs.5.recovered_even_hours"
+       ]
+      ],
+      [
+       0.0416,
+       0.1561
+      ]
+     ]
+    ],
+    [
+     1,
+     0.2664958360025625
+    ]
+   ],
+   "value": 0.7335041639974376
+  },
+  "F-8c083c10c8": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.n_used"
+   ],
+   "value": 638
+  },
+  "F-8c39a542a2": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "surface_km"
+   ],
+   "value": 168.1
+  },
+  "F-8e4f79cce0": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.pipe_km.excluded.0.n"
+   ],
+   "value": 2
+  },
+  "F-8e90e830e5": {
+   "src": [
+    "nary",
+    "*",
+    [
+     [
+      "op",
+      "/",
+      [
+       [
+        "leaf",
+        "data/derived/socialcontext.json",
+        "visibility.by_accounts.False.de"
+       ],
+       [
+        "leaf",
+        "data/derived/socialcontext.json",
+        "visibility.total_de"
+       ]
+      ],
+      [
+       1858480.5800000047,
+       2434652.09
+      ]
+     ],
+     [
+      "const",
+      100
+     ]
+    ],
+    [
+     0.7633454437426437,
+     100
+    ]
+   ],
+   "value": 76.33454437426437
+  },
+  "F-8ebae27cb6": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "detection_limit_mg_l"
+   ],
+   "value": 0.5
+  },
+  "F-91bbc1443d": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_to_pipe.alternatives.1.value"
+   ],
+   "value": 2.94
+  },
+  "F-91d55572e3": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_plus_mix_km.alternatives.0.value"
+   ],
+   "value": 168.1
+  },
+  "F-94530fd3a4": {
+   "src": [
+    "leaf",
+    "data/derived/manure.json",
+    "over_limit.1.4.share_of_businesses_pct"
+   ],
+   "value": 27.959247978153556
+  },
+  "F-9a148c0237": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "runs.4.recovered_real_hours"
+   ],
+   "value": 0.0148
+  },
+  "F-9a776cb143": {
+   "src": [
+    "reading",
+    "BEK931-2024",
+    "count",
+    "harmoniareal",
+    {
+     "checked": "2026-09-10",
+     "retrieved": "2026-09-10",
+     "sha256": "dfcd26d1b5aa26fa46950e0500e579cecadaef01a05f5a553e52b3eeac5db771",
+     "status": "unchanged since pinned",
+     "title": "BEK 931/2024, retsinformation",
+     "url": "https://www.retsinformation.dk/eli/lta/2024/931/dan/pdf"
+    }
+   ],
+   "value": 38
+  },
+  "F-9fa9c3c21c": {
+   "src": [
+    "leaf",
+    "data/derived/enums.json",
+    "kemi.rows"
+   ],
+   "value": 1805827
+  },
+  "F-9fb352c7ee": {
+   "src": [
+    "op",
+    "-",
+    [
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.5.recovered_real_hours"
+     ],
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.4.recovered_real_hours"
+     ]
+    ],
+    [
+     0.0416,
+     0.0148
+    ]
+   ],
+   "value": 0.026799999999999997
+  },
+  "F-a04b5dbab1": {
+   "src": [
+    "leaf",
+    "data/derived/socialcontext.json",
+    "intersection.median_years_of_equity"
+   ],
+   "value": 1.929047907822923
+  },
+  "F-a9f12a0e4f": {
+   "src": [
+    "op",
+    "/",
+    [
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.5.recovered_real_hours"
+     ],
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.5.recovered_even_hours"
+     ]
+    ],
+    [
+     0.0416,
+     0.1561
+    ]
+   ],
+   "value": 0.2664958360025625
+  },
+  "F-ab2d7eefd2": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "shift_min_m"
+   ],
+   "value": 93.5
+  },
+  "F-acd4e9416b": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.n_in"
+   ],
+   "value": 976
+  },
+  "F-ad67b02b0c": {
+   "src": [
+    "leaf",
+    "data/derived/socialcontext.json",
+    "accounts_sample.n_filed"
+   ],
+   "value": 1630
+  },
+  "F-b0a5d8b741": {
+   "src": [
+    "op",
+    "-",
+    [
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "observed_real_spread_mg_l"
+     ],
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.4.recovered_real_hours"
+     ]
+    ],
+    [
+     0.0294,
+     0.0148
+    ]
+   ],
+   "value": 0.014599999999999998
+  },
+  "F-b26a658bdb": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.pipe_km.n_in"
+   ],
+   "value": 976
+  },
+  "F-ba3e051cdc": {
+   "src": [
+    "leaf",
+    "data/derived/socialcontext.json",
+    "visibility.total_de"
+   ],
+   "value": 2434652.09
+  },
+  "F-bb5f71323f": {
+   "src": [
+    "reading",
+    "BEK931-2024",
+    "phrase",
+    "divideret med 170 kg",
+    {
+     "checked": "2026-09-10",
+     "retrieved": "2026-09-10",
+     "sha256": "dfcd26d1b5aa26fa46950e0500e579cecadaef01a05f5a553e52b3eeac5db771",
+     "status": "unchanged since pinned",
+     "title": "BEK 931/2024, retsinformation",
+     "url": "https://www.retsinformation.dk/eli/lta/2024/931/dan/pdf"
+    }
+   ],
+   "value": "170"
+  },
+  "F-bd0568af5a": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "shift_over_error_max"
+   ],
+   "value": 7.5
+  },
+  "F-bdf08e6967": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_plus_mix_km.excluded.1.n"
+   ],
+   "value": 222
+  },
+  "F-bee3b38975": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_to_pipe.n_in"
+   ],
+   "value": 976
+  },
+  "F-c20885b069": {
+   "src": [
+    "op",
+    "-",
+    [
+     [
+      "leaf",
+      "data/derived/enums.json",
+      "kemi.rows"
+     ],
+     [
+      "leaf",
+      "data/derived/enums.json",
+      "kemi.nonblank.Startklok"
+     ]
+    ],
+    [
+     1805827,
+     1805805
+    ]
+   ],
+   "value": 22
+  },
+  "F-c2385140c2": {
+   "src": [
+    "nary",
+    "*",
+    [
+     [
+      "op",
+      "-",
+      [
+       [
+        "const",
+        1
+       ],
+       [
+        "op",
+        "/",
+        [
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "runs.5.recovered_real_hours"
+         ],
+         [
+          "leaf",
+          "data/derived/detectable.json",
+          "runs.5.recovered_even_hours"
+         ]
+        ],
+        [
+         0.0416,
+         0.1561
+        ]
+       ]
+      ],
+      [
+       1,
+       0.2664958360025625
+      ]
+     ],
+     [
+      "const",
+      100
+     ]
+    ],
+    [
+     0.7335041639974376,
+     100
+    ]
+   ],
+   "value": 73.35041639974375
+  },
+  "F-cb7e7c7b57": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "features_in_layer"
+   ],
+   "value": 976
+  },
+  "F-d04d245a78": {
+   "src": [
+    "stated",
+    "flood_depth_min",
+    "The depth from which floodgap.py counts a cell as flooded on land. The 2012 sheets also paint a thinner band below it, which this area leaves out."
+   ],
+   "value": 0.1
+  },
+  "F-d0ec8d3e5b": {
+   "src": [
+    "nary",
+    "*",
+    [
+     [
+      "op",
+      "/",
+      [
+       [
+        "leaf",
+        "data/derived/enums.json",
+        "kemi.nonblank.Startklok"
+       ],
+       [
+        "leaf",
+        "data/derived/enums.json",
+        "kemi.rows"
+       ]
+      ],
+      [
+       1805805,
+       1805827
+      ]
+     ],
+     [
+      "const",
+      100
+     ]
+    ],
+    [
+     0.9999878172161564,
+     100
+    ]
+   ],
+   "value": 99.99878172161564
+  },
+  "F-d1ed488da6": {
+   "src": [
+    "leaf",
+    "data/derived/socialcontext.json",
+    "intersection.n_both"
+   ],
+   "value": 154
+  },
+  "F-d4ab94d60c": {
+   "src": [
+    "leaf",
+    "data/derived/depth_clock.json",
+    "clock_source.borrowed"
+   ],
+   "value": 6085887
+  },
+  "F-d849fa0786": {
+   "src": [
+    "quote",
+    "e8ec308",
+    "docs/CLAIMS.md",
+    "0.35"
+   ],
+   "value": "0.35"
+  },
+  "F-d9c9804616": {
+   "src": [
+    "leaf",
+    "data/derived/socialcontext.json",
+    "visibility.by_accounts.False.de"
+   ],
+   "value": 1858480.5800000047
+  },
+  "F-dc51124c36": {
+   "src": [
+    "reading",
+    "BEK931-2024",
+    "count",
+    "dyreenhed",
+    {
+     "checked": "2026-09-10",
+     "retrieved": "2026-09-10",
+     "sha256": "dfcd26d1b5aa26fa46950e0500e579cecadaef01a05f5a553e52b3eeac5db771",
+     "status": "unchanged since pinned",
+     "title": "BEK 931/2024, retsinformation",
+     "url": "https://www.retsinformation.dk/eli/lta/2024/931/dan/pdf"
+    }
+   ],
+   "value": 0
+  },
+  "F-e16250dbae": {
+   "src": [
+    "leaf",
+    "data/derived/detectable.json",
+    "runs.5.recovered_real_hours"
+   ],
+   "value": 0.0416
+  },
+  "F-e1c8031e9d": {
+   "src": [
+    "op",
+    "-",
+    [
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.5.imposed"
+     ],
+     [
+      "leaf",
+      "data/derived/detectable.json",
+      "runs.4.imposed"
+     ]
+    ],
+    [
+     0.5,
+     0.2
+    ]
+   ],
+   "value": 0.3
+  },
+  "F-e630ea6fa6": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.excluded.2.n"
+   ],
+   "value": 222
+  },
+  "F-e6348875d1": {
+   "src": [
+    "leaf",
+    "data/derived/rescore.json",
+    "tests.K1_si_din_molar_surface.2025.median"
+   ],
+   "value": 3.412
+  },
+  "F-e7d6dac80e": {
+   "src": [
+    "stated",
+    "harmony_1_4",
+    "The classic pre-2017 harmony limit, used by manure.py (LIMITS) as an indicator of manure pressure. It has no legal force now - see C-DE-VOID - and is used here as a physical indicator only."
+   ],
+   "value": 1.4
+  },
+  "F-ecd882cc1d": {
+   "src": [
+    "op",
+    "/",
+    [
+     [
+      "op",
+      "-",
+      [
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "observed_real_spread_mg_l"
+       ],
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "runs.4.recovered_real_hours"
+       ]
+      ],
+      [
+       0.0294,
+       0.0148
+      ]
+     ],
+     [
+      "op",
+      "-",
+      [
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "runs.5.recovered_real_hours"
+       ],
+       [
+        "leaf",
+        "data/derived/detectable.json",
+        "runs.4.recovered_real_hours"
+       ]
+      ],
+      [
+       0.0416,
+       0.0148
+      ]
+     ]
+    ],
+    [
+     0.014599999999999998,
+     0.026799999999999997
+    ]
+   ],
+   "value": 0.5447761194029851
+  },
+  "F-f022c280a4": {
+   "src": [
+    "quote",
+    "0288f8e",
+    "index.html",
+    "210"
+   ],
+   "value": "210"
+  },
+  "F-f082811835": {
+   "src": [
+    "leaf",
+    "data/derived/manure.json",
+    "over_limit.1.4.share_of_herd_pct"
+   ],
+   "value": 56.17034588297172
+  },
+  "F-f3e1dcfbb0": {
+   "src": [
+    "quote",
+    "408ab8d",
+    "scripts/programme.py",
+    "169"
+   ],
+   "value": "169"
+  },
+  "F-f6aed45f21": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.surface_km.alternatives.1.value"
+   ],
+   "value": 209.0
+  },
+  "F-f7741a6ef7": {
+   "src": [
+    "leaf",
+    "data/derived/manure.json",
+    "over_limit.1.4.businesses"
+   ],
+   "value": 2662
+  },
+  "F-f7b709b120": {
+   "src": [
+    "leaf",
+    "data/derived/socialcontext.json",
+    "hectares.total_ha"
+   ],
+   "value": 2621089.8
+  },
+  "F-fc0fde2bc8": {
+   "src": [
+    "leaf",
+    "data/derived/convergence.json",
+    "gamma_max_deg"
+   ],
+   "value": 2.982
+  },
+  "F-fc9935fe72": {
+   "src": [
+    "leaf",
+    "data/derived/conveyance.json",
+    "_provenance.pipe_km.excluded.1.n"
+   ],
+   "value": 754
+  },
+  "F-fdfa079bf0": {
+   "src": [
+    "reading",
+    "BEK931-2024",
+    "phrase",
+    "230 kg kvælstof",
+    {
+     "checked": "2026-09-10",
+     "retrieved": "2026-09-10",
+     "sha256": "dfcd26d1b5aa26fa46950e0500e579cecadaef01a05f5a553e52b3eeac5db771",
+     "status": "unchanged since pinned",
+     "title": "BEK 931/2024, retsinformation",
+     "url": "https://www.retsinformation.dk/eli/lta/2024/931/dan/pdf"
+    }
+   ],
+   "value": "230"
+  },
+  "F-fe2d6055d5": {
+   "src": [
+    "nary",
+    "+",
+    [
+     [
+      "leaf",
+      "data/derived/cycles.json",
+      "results.o2.by_window.10.sun.night.n"
+     ],
+     [
+      "leaf",
+      "data/derived/cycles.json",
+      "results.o2.by_window.10.sun.twilight.n"
+     ]
+    ],
+    [
+     324,
+     360
+    ]
+   ],
+   "value": 684
+  }
+ }
+}
