@@ -30,12 +30,25 @@ deliberate and checkable rather than a coincidence of file existence.
     python3 scripts/unlock.py               validate, then run what is unblocked
     python3 scripts/unlock.py --doc         rewrite docs/IF_YOU_HAVE_THE_DATA.md
 
-A NOTE ON WHAT NOT TO SEND. Do not send anything whose licence you would be
-breaking, and do not send personal data. LER is excluded on purpose and stays
-excluded: the cable and pipe register is provisioned for excavation safety, and
-this project has no excavation to be safe about. If a slot below would require
-you to break an agreement to fill it, leave it empty - the gap is a finding in
-its own right and the page says so.
+WHAT THIS DOES AND DOES NOT DECIDE. This file documents what data would answer
+which question, and in what shape. It does not decide whether anybody may use it
+for that. Those are different questions and they belong to different people: the
+utility of a dataset is a technical fact about the topic, and permission is a
+legal matter for whoever holds the access.
+
+An earlier version of this script left the cable and pipe register out on the
+grounds that it is provisioned for excavation safety and this project has no
+excavation. That was the wrong call. What a register was BUILT for does not
+determine what it is USEFUL for, and pre-emptively deleting the entry hides the
+question from the only people who could answer it - a holder deciding whether
+their access covers this, or a lawmaker deciding whether it should. So the slot
+is documented, the analysis it would unlock is stated, and the permission
+question is named as the holder's rather than settled here.
+
+Nothing is transmitted. The file goes in a gitignored directory on the machine
+running the code, is read locally, and is never committed or uploaded. That is a
+materially different act from sending a dataset to anyone, and the earlier
+version overstated the risk by writing as though it were not.
 """
 import json
 import os
@@ -106,6 +119,64 @@ SLOTS = {
         "who": "anyone with an ODA login and the MFS topics enabled",
         "consumers": [],
     },
+    "LER": {
+        "file": "ler_ledninger.geojson",
+        "shape": "GeoJSON, EPSG:25832, LineString per pipe with at least "
+                 "{diameter_mm, material, invert_start_m, invert_end_m, type} "
+                 "where type distinguishes faelles / spildevand / regnvand",
+        "unlocks": "A real hydraulic model of the Copenhagen sewer instead of a "
+                   "catchment-level spill estimate. Without pipe geometry and "
+                   "connectivity, overflow can be predicted as whether and "
+                   "roughly how much, never as when within an event - and the "
+                   "timing is where the flush dynamic lives.",
+        "who": "Ledningsejerregistret; the utilities that own the lines; "
+               "Klimadatastyrelsen provisions access",
+        "permission": "Provisioned for excavation safety. Whether a given "
+                      "access covers hydraulic analysis is the holder's "
+                      "question, not this project's - it is recorded here "
+                      "because the data would answer the question, which is a "
+                      "separate fact from whether anyone may ask it that way.",
+        "consumers": [],
+    },
+    "UTILITY-HYDRAULIC-MODEL": {
+        "file": "sewer_model_results.csv",
+        "shape": "one row per node or outfall per timestep: node_id;lon;lat;"
+                 "time;flow_m3s;depth_m;overflow_m3",
+        "unlocks": "The comparison this project cannot make: its own predicted "
+                   "spill against a calibrated commercial model of the same "
+                   "network. Agreement would validate a method that needs no "
+                   "pipe data; disagreement would localise exactly where "
+                   "topography stops being enough.",
+        "who": "HOFOR, BIOFOS and the consultancies that built the models",
+        "consumers": [],
+    },
+    "SLURRY-CONTRACTS": {
+        "file": "slurry_agreements.csv",
+        "shape": "supplier_cvr;receiver_cvr;year;tonnes;n_kg;p_kg  (a receiving "
+                 "parcel id instead of receiver_cvr is more useful still)",
+        "unlocks": "Where the manure from the 581 landless pig holdings - "
+                   "406,192 animal units - actually goes. It leaves the farm by "
+                   "contract, and the contracts are in no public register, so "
+                   "the nitrogen is attributed to a holding that never spread "
+                   "it.",
+        "who": "Landbrugsstyrelsen; the parties to the agreements",
+        "consumers": [],
+    },
+    "DEFENCE-BATHYMETRY": {
+        "file": "bathymetry_hires.tif",
+        "shape": "GeoTIFF, EPSG:25832, one band of depth in metres, negative "
+                 "down; any grid finer than the 50 m public model is useful",
+        "unlocks": "Bed morphology at the scale that decides where "
+                   "resuspension and sulphidic sediment actually sit. The "
+                   "public depth model is too coarse to separate a trawled "
+                   "furrow from a natural hollow.",
+        "who": "Soevaernet and the national hydrographic survey; some holdings "
+               "are restricted",
+        "permission": "Some of this is restricted for reasons that have nothing "
+                      "to do with the environment. Recorded because it is "
+                      "useful, not because it is available.",
+        "consumers": [],
+    },
     "FIELD-SHEETS-CLOCK": {
         "file": "ctd_visit_times.csv",
         "shape": "station;date;time_utc  - one row per cast",
@@ -115,7 +186,7 @@ SLOTS = {
                    "station-days can borrow a time from a same-day bottle; the "
                    "field sheets would settle the rest and check that borrowing.",
         "who": "DCE, or whoever holds the original cruise logs",
-        "consumers": [],
+        "consumers": ["scripts/depth_clock.py"],
     },
 }
 
@@ -291,11 +362,20 @@ def cmd_doc():
     w("pages regenerate with your data in them, and you can see whether it moves any")
     w("conclusion - which is the only thing worth knowing.")
     w()
-    w("**Do not send anything you would be breaking a licence or an agreement to")
-    w("send, and do not send personal data.** LER, the cable and pipe register, is")
-    w("excluded on purpose and stays excluded: it is provisioned for excavation")
-    w("safety and this project has no excavation to be safe about. A slot you cannot")
-    w("fill without breaching something should stay empty. The gap is a finding.")
+    w("**Nothing is transmitted, and nothing here decides what you may use.** The")
+    w("file is read on your machine and is never committed or uploaded — which is a")
+    w("materially different act from sending a dataset to anyone. What this page")
+    w("records is that a given dataset *would answer* a given question, and in what")
+    w("shape. Whether your access permits that use is a legal question belonging to")
+    w("you, or to whoever granted it; it is not settled here and this project is not")
+    w("in a position to settle it.")
+    w()
+    w("That distinction is why entries appear below that this project could never")
+    w("use itself, including registers provisioned for an entirely different")
+    w("purpose. What a register was built for does not determine what it is useful")
+    w("for. Leaving such an entry out would hide the question from the only people")
+    w("who can answer it — a holder deciding whether their access covers this, or a")
+    w("lawmaker deciding whether it should.")
     w()
     w("---")
     w()
@@ -313,10 +393,19 @@ def cmd_doc():
         w(f"**Shape.** `{sl['shape']}`")
         w()
         w(f"**Who plausibly holds it.** {sl['who']}")
+        if sl.get("permission"):
+            w()
+            w(f"**Permission.** {sl['permission']}")
         if src and src.get("hypotheses"):
             w()
             w(f"**Hypotheses waiting on it.** {' '.join(src['hypotheses'][:12])}")
-        if not sl["consumers"]:
+        if sl["consumers"]:
+            w()
+            w("**The analysis is already written.** `" + "`, `".join(sl["consumers"])
+              + "` runs today on the best clock available and will use yours the")
+            w("moment the file is here - nobody has to write anything for your data")
+            w("to be used, and you can see at once whether it changes the answer.")
+        else:
             w()
             w("*No script consumes this yet.* The slot exists so the data can arrive")
             w("before the analysis is written - the shape is fixed in advance so the")

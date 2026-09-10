@@ -53,11 +53,20 @@ The file stays on your machine. Nothing is uploaded. What changes is that the
 pages regenerate with your data in them, and you can see whether it moves any
 conclusion - which is the only thing worth knowing.
 
-**Do not send anything you would be breaking a licence or an agreement to
-send, and do not send personal data.** LER, the cable and pipe register, is
-excluded on purpose and stays excluded: it is provisioned for excavation
-safety and this project has no excavation to be safe about. A slot you cannot
-fill without breaching something should stay empty. The gap is a finding.
+**Nothing is transmitted, and nothing here decides what you may use.** The
+file is read on your machine and is never committed or uploaded — which is a
+materially different act from sending a dataset to anyone. What this page
+records is that a given dataset *would answer* a given question, and in what
+shape. Whether your access permits that use is a legal question belonging to
+you, or to whoever granted it; it is not settled here and this project is not
+in a position to settle it.
+
+That distinction is why entries appear below that this project could never
+use itself, including registers provisioned for an entirely different
+purpose. What a register was built for does not determine what it is useful
+for. Leaving such an entry out would hide the question from the only people
+who can answer it — a holder deciding whether their access covers this, or a
+lawmaker deciding whether it should.
 
 ---
 
@@ -132,6 +141,58 @@ analysis can be written against something real rather than imagined.
 before the analysis is written - the shape is fixed in advance so the
 analysis can be written against something real rather than imagined.
 
+### `ler_ledninger.geojson` — LER
+
+**Unlocks.** A real hydraulic model of the Copenhagen sewer instead of a catchment-level spill estimate. Without pipe geometry and connectivity, overflow can be predicted as whether and roughly how much, never as when within an event - and the timing is where the flush dynamic lives.
+
+**Shape.** `GeoJSON, EPSG:25832, LineString per pipe with at least {diameter_mm, material, invert_start_m, invert_end_m, type} where type distinguishes faelles / spildevand / regnvand`
+
+**Who plausibly holds it.** Ledningsejerregistret; the utilities that own the lines; Klimadatastyrelsen provisions access
+
+**Permission.** Provisioned for excavation safety. Whether a given access covers hydraulic analysis is the holder's question, not this project's - it is recorded here because the data would answer the question, which is a separate fact from whether anyone may ask it that way.
+
+*No script consumes this yet.* The slot exists so the data can arrive
+before the analysis is written - the shape is fixed in advance so the
+analysis can be written against something real rather than imagined.
+
+### `sewer_model_results.csv` — UTILITY-HYDRAULIC-MODEL
+
+**Unlocks.** The comparison this project cannot make: its own predicted spill against a calibrated commercial model of the same network. Agreement would validate a method that needs no pipe data; disagreement would localise exactly where topography stops being enough.
+
+**Shape.** `one row per node or outfall per timestep: node_id;lon;lat;time;flow_m3s;depth_m;overflow_m3`
+
+**Who plausibly holds it.** HOFOR, BIOFOS and the consultancies that built the models
+
+*No script consumes this yet.* The slot exists so the data can arrive
+before the analysis is written - the shape is fixed in advance so the
+analysis can be written against something real rather than imagined.
+
+### `slurry_agreements.csv` — SLURRY-CONTRACTS
+
+**Unlocks.** Where the manure from the 581 landless pig holdings - 406,192 animal units - actually goes. It leaves the farm by contract, and the contracts are in no public register, so the nitrogen is attributed to a holding that never spread it.
+
+**Shape.** `supplier_cvr;receiver_cvr;year;tonnes;n_kg;p_kg  (a receiving parcel id instead of receiver_cvr is more useful still)`
+
+**Who plausibly holds it.** Landbrugsstyrelsen; the parties to the agreements
+
+*No script consumes this yet.* The slot exists so the data can arrive
+before the analysis is written - the shape is fixed in advance so the
+analysis can be written against something real rather than imagined.
+
+### `bathymetry_hires.tif` — DEFENCE-BATHYMETRY
+
+**Unlocks.** Bed morphology at the scale that decides where resuspension and sulphidic sediment actually sit. The public depth model is too coarse to separate a trawled furrow from a natural hollow.
+
+**Shape.** `GeoTIFF, EPSG:25832, one band of depth in metres, negative down; any grid finer than the 50 m public model is useful`
+
+**Who plausibly holds it.** Soevaernet and the national hydrographic survey; some holdings are restricted
+
+**Permission.** Some of this is restricted for reasons that have nothing to do with the environment. Recorded because it is useful, not because it is available.
+
+*No script consumes this yet.* The slot exists so the data can arrive
+before the analysis is written - the shape is fixed in advance so the
+analysis can be written against something real rather than imagined.
+
 ### `ctd_visit_times.csv` — FIELD-SHEETS-CLOCK
 
 **Unlocks.** A clock on oxygen AT DEPTH. The water-chemistry topic carries a time on every row and CTD carries none, so 53.7M profile measurements have a date and no hour. 80% of CTD station-days can borrow a time from a same-day bottle; the field sheets would settle the rest and check that borrowing.
@@ -140,9 +201,9 @@ analysis can be written against something real rather than imagined.
 
 **Who plausibly holds it.** DCE, or whoever holds the original cruise logs
 
-*No script consumes this yet.* The slot exists so the data can arrive
-before the analysis is written - the shape is fixed in advance so the
-analysis can be written against something real rather than imagined.
+**The analysis is already written.** `scripts/depth_clock.py` runs today on the best clock available and will use yours the
+moment the file is here - nobody has to write anything for your data
+to be used, and you can see at once whether it changes the answer.
 
 ---
 
@@ -244,7 +305,7 @@ free registration nobody has done; *blocked* means not open.
 | `blocked` | **MST-HAVBRUG** | `A8` | Miljoestyrelsen havbrug permits and egenkontrol reporting |
 | `blocked` | **NYBORG-OVERLOEB** | `B1` | Nyborg Forsyning combined-sewer overflow telemetry (Grafana) |
 
-**89 gated sources, 6 with a slot.**
+**89 gated sources, 10 with a slot.**
 
 If you hold one of the others and it is worth a slot, the shape is cheap to
 add - the cost is agreeing what the file should look like, not writing the
