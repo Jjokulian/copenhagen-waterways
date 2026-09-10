@@ -2,14 +2,14 @@
 
 The source register records what exists. It does not say what to do on Monday. This is the same information sorted by friction: what can be downloaded now, what is behind a credential we already hold, what needs a free registration nobody has done, and what is genuinely closed.
 
-**145 sources.** *Unlocks* counts hypotheses that this source serves and that nothing easier serves — a crude priority signal, and meant to be.
+**148 sources.** *Unlocks* counts hypotheses that this source serves and that nothing easier serves — a crude priority signal, and meant to be.
 
 | tier | | sources |
 |---|---|---:|
 | `open` | Fetch it now | 59 |
 | `held` | Gated, but we hold the key | 22 |
 | `account` | One free registration away | 30 |
-| `blocked` | Not open | 34 |
+| `blocked` | Not open | 37 |
 
 - **ODA / Overfladevandsdatabasen** — email login, scripted SOAP extract working in scripts/oda_client.py
 - **Dataforsyningen** — API token on this machine, orthophoto WMS verified
@@ -146,7 +146,7 @@ The source register records what exists. It does not say what to do on Monday. T
 | **OSPAR-ODIMS** | — | **region** | OSPAR dumped-materials (dredged material disposal) submissions |
 | **VANDAH** | — | position | Vandah - hydrometric REST API (Dmp.Hydro.Api) |
 
-## Not open — 34
+## Not open — 37
 
 *Request-only, FOI, institutional provisioning, or unverified. These are the ones worth arguing about publicly, because for several of them the measurement exists and the public cannot see it.*
 
@@ -163,7 +163,10 @@ The source register records what exists. It does not say what to do on Monday. T
 | **BIOTIC-MARLIN** | — | ? | BIOTIC - Biological Traits Information Catalogue |
 | **CMEMS-BAL-WAV** | — | ? | Copernicus Marine Baltic Sea Wave Reanalysis |
 | **D2-GAP** | — | ? | Danish navigation dredging permits - no working public register |
+| **DAI-KYSTVANDOPLANDE** | — | **region** | Danmarks Arealinformation - kystvandoplande and deloplande, the catchment units nitrogen |
 | **DANISH-PORTALS-BLOCKED** | — | ? | Danish research-portal infrastructure is closed to automated retrieval |
+| **DK-DRAENKORT-AU** | — | position | Kortlaegning af draenede arealer i Danmark - national map of potentially drained agricul |
+| **DK-DRAENUDLOEB** | — | ? | Draenudloeb and drain pipe networks - the outfalls themselves |
 | **DOME-METALS-WATERCOLUMN-GAP** | — | ? | Dissolved trace metals in the Danish marine water column - confirmed absent |
 | **EMSA-CLEANSEANET-GAP** | — | ? | EMSA CleanSeaNet oil-slick detections - restricted to national authorities |
 | **F8-GAP** | — | ? | Microbial community composition in Danish coastal waters - confirmed blank |
@@ -195,10 +198,10 @@ That is not fastidiousness. [OBSERVING.md](OBSERVING.md) establishes that a wate
 
 | indexed by | sources | |
 |---|---:|---|
-| position | 68 | a place something was measured |
-| **region** | 15 | somebody's aggregate; usable, but never as a measurement |
+| position | 69 | a place something was measured |
+| **region** | 16 | somebody's aggregate; usable, but never as a measurement |
 | mixed | 12 | carries both; take the position field |
-| ? | 50 | not stated clearly enough to tell |
+| ? | 51 | not stated clearly enough to tell |
 
 The region-indexed sources are often the only version that exists, and several matter a great deal — the monthly nutrient input series is per marine reference polygon, and there is no per-outfall alternative. They enter the panel labelled as somebody's aggregate of a measurement, and never as the measurement.
 

@@ -1831,6 +1831,68 @@
    "size": "not measured for the full network",
    "caveat": "L3 ASKS FOR THE LONGEST AVAILABLE SERIES AND THIS IS PROBABLY IT. Eight stations returned an unbroken annual Secchi record from March 1983 to September 2024 - forty-two years, per visit, paired with bottom depth. Set against it, the Kd series in the Lyssvaekkelse topic on eight stations runs only 2014-2024, which is why DCE's own technical instruction M06 keeps Secchi in parallel 'on stations with long time series of Secchi depth' and publishes a conversion. For K11 that means light at the bed can be reconstructed back to 1983 through the conversion rather than only back to 2014. For L3 it means the start-year sensitivity surface can be computed on a real Danish optical series that begins before the nutrient peak had passed, which is the whole point of the hypothesis. Neither number is a full-network extract; both are eight-station samples and should be redone across all 1,503 before being published.",
    "verified": "2026-09-08, authenticated extract with an explicit DD-MM-YYYY period: 2,286 rows over 8 stations, per-year counts tabulated from 1983 to 2024"
+  },
+  {
+   "id": "DK-DRAENKORT-AU",
+   "hypotheses": [
+    "S1",
+    "S6"
+   ],
+   "name": "Kortlaegning af draenede arealer i Danmark - national map of potentially drained agricultural land",
+   "custodian": "Aarhus Universitet, DCA - Nationalt Center for Foedevarer og Jordbrug, for Miljoestyrelsen",
+   "url": "https://dcapub.au.dk/djfpublikation/djfpdf/DCArapport135.pdf  (report; raster distribution route NOT yet located)",
+   "temporal": "single epoch, no time series",
+   "spatial": "raster, 30.4 m",
+   "aggregation": "per-cell probability/classification",
+   "parameters": [
+    "drained / not drained"
+   ],
+   "coverage": "verified 2026-09-10 from the report: 52% of Danish agricultural land classified as drained, stated accuracy 79%. Modelled statistically from topography, soil, satellite imagery and land use - it is NOT a map of pipes.",
+   "why_it_matters": "Tile-drained land bypasses the riparian zone and much of the groundwater residence time, so it skips most denitrification. The same kilogram of field surplus therefore delivers very differently depending on this one bit. It is the spatially varying form of the surface-versus-drain routing fraction, and without it that fraction is a single national guess.",
+   "tier": "account",
+   "blocker": "The report is open. The raster itself was not reachable through arealdata-api.miljoeportal.dk (404), miljoegis3.mim.dk (404), or wfs2-miljoegis.mim.dk/dai (present but does not carry it). Danmarks Arealinformation hosts >1500 layers behind a viewer; the download route needs finding, and AU may distribute it directly."
+  },
+  {
+   "id": "DK-DRAENUDLOEB",
+   "hypotheses": [
+    "S1",
+    "S6"
+   ],
+   "name": "Draenudloeb and drain pipe networks - the outfalls themselves",
+   "custodian": "private: landowners, drainage associations (landvindings- og pumpelag); Hedeselskabet digitises commercially",
+   "url": "https://www.hedeselskabet.dk/draenkort",
+   "temporal": "n/a",
+   "spatial": "n/a",
+   "aggregation": "n/a",
+   "parameters": [
+    "outfall position",
+    "pipe network"
+   ],
+   "coverage": "verified 2026-09-10: NO national dataset exists. Historic draenkort are paper, held by farmers, and their survival is itself a known problem in the Danish farming press.",
+   "why_it_matters": "Where a drain discharges decides which watercourse - and therefore which ODA station - a field's nitrogen reaches.",
+   "tier": "blocked",
+   "workaround": "The outfall does not have to be mapped to be placed. A tile drain discharges to the nearest watercourse downslope, so its outfall is approximable as the point where a drained parcel's DEM flow path meets the stream network. The pipe layout decides where ALONG the reach it enters, which is finer than the nitrogen question needs."
+  },
+  {
+   "id": "DAI-KYSTVANDOPLANDE",
+   "hypotheses": [
+    "S1",
+    "S6"
+   ],
+   "name": "Danmarks Arealinformation - kystvandoplande and deloplande, the catchment units nitrogen regulation allocates by",
+   "custodian": "Miljoestyrelsen / Danmarks Miljoeportal",
+   "url": "https://wfs2-miljoegis.mim.dk/dai/ows?service=WFS&version=2.0.0&request=GetCapabilities",
+   "temporal": "per planning period",
+   "spatial": "polygon",
+   "aggregation": "per catchment",
+   "parameters": [
+    "theme-vp2_2016nbel12_deloplande",
+    "theme-husdyr2018_19_kystvandoplande",
+    "theme-efterafgroedekrav2018_19",
+    "theme-husdyr_delopl_soer_risiko"
+   ],
+   "coverage": "verified 2026-09-10: endpoint answers, 23 layers, no credential. These are the units the requirement is allocated in, so they are both the join key for policy incidence and the external truth a DEM-derived catchment delineation must reproduce.",
+   "tier": "open"
   }
  ],
  "by_hypothesis": {
