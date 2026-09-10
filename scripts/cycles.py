@@ -58,9 +58,20 @@ SRC = os.path.join(RAW, "oda", "kemi.csv.gz")
 TEMPS = os.path.join(DERIVED, "surface_temp.csv.gz")
 OUT = os.path.join(DERIVED, "cycles.json")
 
-PARAMS = {"Oxygen indhold": ("o2", "mg/l", 0.0, 25.0),
-          "Oxygenmætning": ("sat", "%", 0.0, 250.0),
-          "Klorofyl a": ("chl", "µg/l", 0.0, 500.0)}
+# (key, unit reported, THE UNIT THE ARCHIVE MUST SAY, low, high)
+#
+# The unit is checked per row, not assumed. enums.py found 14 of 147 parameters
+# carrying more than one unit, and two of them are not strays: Orthophosphat is
+# 565 rows in ug/l against 353 in mg/l, and integrated primary production is
+# split between mg/(m2*d) and mg/(m3*d), which are not even convertible without
+# a depth. Chlorophyll is 185,313 rows in ug/l and exactly one in mg/l - a
+# thousandfold error that no range filter can see, because a plausible mg/l
+# value is also a plausible ug/l value. Oxygen and saturation are single-unit
+# today; this guard is here so that stops being something anyone has to
+# remember.
+PARAMS = {"Oxygen indhold": ("o2", "mg/l", "mg/l", 0.0, 25.0),
+          "Oxygenmætning": ("sat", "%", "pct", 0.0, 250.0),
+          "Klorofyl a": ("chl", "µg/l", "µg/l", 0.0, 500.0)}
 MAX_DEPTH = 3.0
 # Teknisk anvisning for marin overvaagning, Kap. 5 (Kaas & Markager 1998),
 # "Pelagiale parametre - proevetagning i felten", settles what these mean:
@@ -164,7 +175,7 @@ def main(argv):
     pos, store = {}, {k: [] for _, (k, _, _, _) in
                       [(p, PARAMS[p]) for p in PARAMS]}
     rows = dropped = 0
-    skipped = {"type": 0, "censored": 0}
+    skipped = {"type": 0, "censored": 0, "unit": 0}
     log(f"reading {os.path.relpath(SRC)}")
     with gzip.open(SRC, "rb") as fh:
         for row in csv.DictReader(io.TextIOWrapper(fh, encoding="latin-1"),
@@ -173,7 +184,10 @@ def main(argv):
             spec = PARAMS.get(row.get("Parameter"))
             if not spec:
                 continue
-            key, _, lo, hi = spec
+            key, _, unit_required, lo, hi = spec
+            if (row.get("Enhed") or "").strip() != unit_required:
+                skipped["unit"] += 1
+                continue
             k = parse_klok(row.get("Startklok"))
             d = (row.get("Startdato") or "").strip()
             if not k or len(d) != 8 or not d.isdigit():
@@ -240,12 +254,14 @@ def main(argv):
            "_types_kept": sorted(POINT_TYPES),
            "skipped_depth_integrated": skipped["type"],
            "skipped_censored_detection_limit": skipped["censored"],
+           "skipped_wrong_unit": skipped["unit"],
            "windows_days": list(WINDOWS), "dropped_impossible": dropped,
            "temperature_station_days": len(temps), "results": {}}
 
     log(f"\nexcluded: {skipped['type']:,} depth-integrated or pooled samples, "
-        f"{skipped['censored']:,} at or beyond a detection limit")
-    for pname, (key, unit, _, _) in PARAMS.items():
+        f"{skipped['censored']:,} at or beyond a detection limit, "
+        f"{skipped['unit']:,} carrying the wrong unit")
+    for pname, (key, unit, _, _, _) in PARAMS.items():
         s = store[key]
         if not s:
             continue

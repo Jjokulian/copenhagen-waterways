@@ -25,8 +25,13 @@ with a 99th percentile of 2003 and looked like a truncated fetch. A summary from
 a head sample is not a summary, and this file exists to catch exactly that kind
 of quiet wrongness, so it should not have contained one.
 
-    python3 scripts/enums.py              # every extract
-    python3 scripts/enums.py kemi lys     # named ones
+    python3 scripts/enums.py                    # every extract
+    python3 scripts/enums.py kemi lys           # named ones
+    python3 scripts/enums.py ctd --sample=50000 # smaller reservoir
+
+The reservoir is per high-cardinality column, so on a 34-column extract the
+default of 200,000 is several hundred megabytes of strings. This machine has
+about 1 GB free, so the big one takes --sample.
 
 Writes data/derived/enums.json.
 """
@@ -100,13 +105,16 @@ def scan(path, sample_numeric=200000):
 def main(argv):
     files = sorted(glob.glob(os.path.join(RAW, "oda", "*.csv.gz")))
     files += [p for p in glob.glob(os.path.join(RAW, "oda", "*.csv"))]
-    if argv:
-        files = [f for f in files if any(a in os.path.basename(f) for a in argv)]
+    sample = next((int(a.split("=", 1)[1]) for a in argv
+                   if a.startswith("--sample=")), 200000)
+    named = [a for a in argv if not a.startswith("--")]
+    if named:
+        files = [f for f in files if any(a in os.path.basename(f) for a in named)]
     out = {}
     for path in files:
         name = os.path.basename(path).split(".")[0]
         log(f"\n{'='*70}\n{name}  ({os.path.getsize(path)/1e6:.0f} MB)")
-        rows, counts, over, numsample = scan(path)
+        rows, counts, over, numsample = scan(path, sample_numeric=sample)
         log(f"{rows:,} rows, {len(counts)} columns")
         rec = {"rows": rows, "categorical": {}, "high_cardinality": {}}
         for col in counts:
