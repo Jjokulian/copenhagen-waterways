@@ -374,6 +374,27 @@ What a biogas plant does supply is the thing the manure never otherwise has: **a
 - **Destroy it, which is literally a reduction.** Nitrify then **denitrify** the liquid fraction and the nitrogen leaves as N₂ — inert, and out of the reactive pool for good. This is the only true removal available, and it is the same reaction a constructed wetland performs slowly and for free. It costs energy, and a badly run plant emits N₂O instead, which trades a water problem for a climate one.
 - **Burn the fibre.** Destroys organic nitrogen and recovers phosphorus in ash, at the cost of flue-gas treatment. It is the P route more than the N route.
 
+### The prediction is checkable, and the check has been run
+
+*A quota transfers the constraint to the manure only when a holding's own land cannot take what its animals produce.* That is not something to wait for: both halves are in open registers and they join on the company number. The livestock register carries **animal units** — `DE`, the unit the manure regulation itself uses — against the business that runs each site; the field-parcel register carries the same business's declared hectares. `scripts/manure.py` fetches both and divides.
+
+| | |
+|---|---:|
+| Livestock sites | 57,860 |
+| Businesses keeping animals | 16,449 |
+| …of which also declare land | **9,521** |
+| Animal units, national | 2,434,652 |
+| …on businesses that declare land | 1,809,689 (74%) |
+| Median animal units per declared hectare | 0.67 |
+| 90th percentile | 2.54 |
+| 99th percentile | 18.2 |
+
+**Above the classic harmony limit of 1.4 animal units per hectare sit 2,662 businesses — 28% of those with land — and they hold 56% of the national herd.** At 1.7 it is 2,023 businesses and 47% of the herd. Read that plainly: **roughly half the animals in Denmark are on farms whose own declared land cannot take their own manure.** The export the law would force is not a future consequence of a quota. It is the arrangement already in place, held together by inter-farm contracts — and those contracts are the one part of it that is not public.
+
+*What this does not establish.* Declared area is land declared for area support, which is not the same as every hectare a business may spread on: rented-in land can be missing, and a business that buys spreading capacity from a neighbour looks land-poor here and is compliant in law. 42% of animal-keeping businesses declare no land at all in this join, which is either genuine landlessness or a failed match through holding companies. And the thresholds are the pre-2017 harmony units: Denmark now regulates in kilograms of nitrogen per hectare, so these indicate the pressure rather than test compliance.
+
+*Provenance.* Both layers are open and need no key. They were located and documented by the sibling project [danish-livestock](https://github.com/Jjokulian), which mapped all 57,860 sites; this project fetches them from the same primary source rather than copying its data, and the two traps it found — an encoding the server lies about, and herd-size columns that do not partition — are handled in `scripts/manure.py` because of that documentation.
+
 ### What the law does to the herd, if the arithmetic binds
 
 The instruments are in the public record rather than in this analysis: L5 passed 119–34 on 3 September 2026 and puts **per-catchment nitrogen quotas on individual holdings from 2027**, with *frivillig arealomlægning* — voluntary land conversion — as the Tripartite's main engine and the quota model described by its own architects as the safety net under it ([POLITICS.md](POLITICS.md)). **This project has not read the statute**, so what follows is inference from those instruments and from the balance above, and it is offered as a prediction that can be checked rather than as a reading of the law.

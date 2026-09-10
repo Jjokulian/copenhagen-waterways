@@ -103,10 +103,33 @@ Each hypothesis needs three things before it can be tested, and most will fail a
 - **testable now** — consequence, source and null all available
 - **testable with vandkemi** — blocked on one fetch
 - **testable only at measurement resolution** — blocked on stage 3's remaining half
-- **unscoreable** — the deciding dimension has no column and never did. *Time of day is
-  the worked example: oxygen swings diurnally, daylight at 55°N runs 7 to 17 hours, and
-  no row in the archive carries a clock time.* These get marked **unscoreable**, not
-  scored zero. An absent dimension is not evidence of absence.
+- **unscoreable** — the deciding dimension has no column and never did. *Microbial,
+  viral and fungal community composition is the worked example: it decides 12
+  hypotheses and no Danish marine programme has ever measured it.* These get marked
+  **unscoreable**, not scored zero. An absent dimension is not evidence of absence.
+
+> **The example this list used to give was wrong, and correcting it added a class.**
+> Time of day stood here as the worked example, on the claim that *no row in the
+> archive carries a clock time*. That was true of what was on disk when it was
+> written — the CTD extract, which has only `Dato`. It is not true of the archive.
+> ODA's water-chemistry topic carries `Startklok` on **100.0% of 1.8 million rows**,
+> and the technical instruction requires it ([Kap. 5, Kaas & Markager
+> 1998](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap05.doc);
+> *"Prøvetagningsdato og tidspunkt i UTC"*). Nobody checked a topic that had not been
+> fetched, and the absence of a column was inferred from the absence of a download.
+>
+> What replaced it is not "scoreable after all". With the sun's true elevation
+> computed per sample — a clock hour is not a light level at 55°N, where 09:00 in
+> December is a sun 1.4° above the horizon and 09:00 in June is 34.3° — surface
+> oxygen saturation does track the sun, monotonically, by about 1.5 percentage
+> points. But **96% of samples are taken between 09:00 and 15:00**. The pre-dawn
+> minimum, which is the value an oxygen threshold is actually about, is essentially
+> never visited.
+>
+> So time of day belongs in a class this list did not have: **the dimension is
+> recorded, and the sampling design never goes where it matters.** That is not an
+> absent column and it is not a testable question. It is a statement about when
+> people are willing to be on a boat, and no reanalysis of the archive can fix it.
 
 **The triage now exists** — [`hypodrafts/TRIAGE.md`](hypodrafts/TRIAGE.md), all 166
 lettered hypotheses, one row each.
@@ -122,10 +145,17 @@ lettered hypotheses, one row each.
 
 **Four things the shape says.**
 
-**One fetch unblocks nine.** ODA `vandkemi` (`Emne_10_11`) is named in the blocker for
-A1, A2, A5, A7, B4, E2, E11, K1, K2 — and it is the topic `fetch_oda.py` advertises in
-its docstring and never implements. (`iltkor` is worse: declared in `TOPICS` and never
-fetched at all, the only one of five with no file on disk.)
+**One fetch unblocks nine — and it has now been done.** ODA `vandkemi` (`Emne_10_11`)
+is named in the blocker for A1, A2, A5, A7, B4, E2, E11, K1, K2. It was the topic
+`fetch_oda.py` advertised in its docstring and never listed in `TOPICS`: the gap
+between a comment and a dict was most of the reason group A had no numbers. It needed
+no credential the project did not already hold. **1,805,827 rows, 1,126 stations, 147
+parameters, 1970–2026** — total N, total P, ortho-P, nitrite+nitrate, ammonium,
+chlorophyll a, silicon, and 156,971 oxygen measurements each carrying a depth. The
+table above is therefore stale by nine, and re-scoring those nine against the data
+rather than against its absence is the next piece of work. (`iltkor` is still worse:
+declared in `TOPICS` and never fetched at all, the only one of five with no file on
+disk.)
 
 **Not one hypothesis in group A is testable now.** All ten are blocked, unscoreable or
 unestablished. The testable-now set is 6 from group I — hypotheses about the archive
