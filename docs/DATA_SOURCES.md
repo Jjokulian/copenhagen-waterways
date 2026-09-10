@@ -205,6 +205,66 @@ depth classes as the 2012 model so the two compare directly, and flag drains tha
 Stored in `data/manual/observations.geojson`, hand-collected, never overwritten by a
 fetch script.
 
+## 10. ODA — what the archive does not warn you about  *(fetched; read this before using it)*
+
+Four extracts are on disk: `kemi` (water chemistry, 1,805,827 rows), `ctd`
+(53,710,760), `lys` (light attenuation, 2,370,091) and `maaledybde` (151,203), all
+spanning 1970–2026 and none truncated. `scripts/enums.py` counts every distinct value
+of every column of each, because reading the top few values of a column is how a rare
+sentinel survives. What it found is below. None of it is documented in the download.
+
+**Units are per row, not per parameter. 14 of 147 parameters carry more than one.**
+Not all of them are strays. `Orthophosphat` is 565 rows in µg/l against 353 in mg/l —
+38% of them a thousandfold from the rest. Integrated primary production splits 5,068
+mg/(m²·d) against 62,831 mg/(m³·d), *per area against per volume*, which cannot be
+reconciled at all without a depth. PFAS sums run ng/l against µg/l. `Klorofyl a` is
+185,313 rows in µg/l and exactly one in mg/l — and no range filter can catch that,
+because a plausible mg/l value is also a plausible µg/l value. **Check `Enhed` on
+every row.** Oxygen (mg/l), saturation (pct) and total nitrogen (µg/l) are
+single-valued throughout, which is luck rather than a guarantee.
+
+**Sentinels, undeclared.** `YIntercept` is `9999999` where the source lacked it,
+admitted only in a free-text note on the row itself. `GennemsnitsDybde_m` is exactly
+`99` on 4,332 rows — a real depth in the Skagerrak and a suspicious round number
+everywhere else, with nothing distinguishing the two. `BundDybde_m` reaches 2300 m at
+Læsø rende, a Kattegat trench about 50 m deep, and 292.3 m at a station named
+`Hirtshals 15 m`, where the station's own name refutes the value. `Lysprocent` exceeds
+110% of surface light on 21,348 rows and peaks at 58,438. Oxygen saturation reaches
+90,972%.
+
+**Censoring hidden behind column names that do not say so.** `ResultatAttribut` is
+`<` on 85,035 rows, where `Resultat` holds *the detection limit, not the measurement* —
+read as a value it biases the parameter high. (`ikke påvist`, 80 rows, is different and
+is a real measured zero: all 80 are PFAS sums that were analysed and found empty.)
+`SigtTilBund` is true on 26,380 Secchi readings, meaning the disc reached the bottom
+and the water was clearer than the number says. `SigtDybdeMedVandkikkert` marks 6,104
+readings taken through a water telescope, a different instrument.
+
+**Columns that carry nothing.** `TekniskAnvisningAnvendt` and `Afsluttet` are
+single-valued across every row of every extract, so neither can be used to filter for
+protocol compliance — which is the only reason anyone reaches for them.
+
+**Sample type decides what a depth means.** Per [Teknisk anvisning for marin
+overvågning, Kap. 5](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap05.doc)
+a `Blandingsprøve` is several bottles at *the same depth*, pooled — not over time and
+not over depth — so it behaves as a point sample. A `Dybdeintegreret prøve` integrates
+0–10 m, 0–25 m or the whole photic zone; 2,265 of them carry a nominal depth of 3 m or
+less and will enter a surface filter as though they were point measurements. An
+integral is not a measurement at its midpoint.
+
+**Two things the instruction requires that the archive does not deliver.** Times are
+to be reported in UTC (*"Prøvetagningsdato og tidspunkt i UTC"*) — useful, because
+`Startklok` is present on 100.0% of `kemi` rows and absent from every other topic, and
+ODA offers no clock field at all for `ctd`, `lys` or `maaledybde`. And values below
+the detection limit are to be reported as measured, negatives included — yet there is
+**not one negative value in 1.8 million rows**, so either that was never followed or
+the numbers were cleaned before ODA received them.
+
+**A workaround worth knowing.** 99% of `kemi` station-days carry a single clock time,
+and 123,866 of 155,182 `ctd` station-days (80%) have a matching `kemi` visit. A station-day
+is effectively one moment, so the clock can be lent from one extract to the other —
+which is the only route to putting a time on oxygen at depth.
+
 ## Practical notes
 
 * `pip` is unavailable and RAM is ~1 GB, so every script is standard-library only and

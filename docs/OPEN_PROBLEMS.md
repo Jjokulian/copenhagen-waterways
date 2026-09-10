@@ -435,3 +435,95 @@ this item: absence is reported there as a count over a named corpus rather than 
 of the sea, because a share of an absence is only meaningful when the category named is as
 narrow as the search performed. Of ODA's 6,258 positioned marine stations, every water body
 holds at least one; 22 hold none visited in ten or more distinct years.
+
+## 17. The archive can see the day, and never visits the part that matters
+
+The water-chemistry extract carries a clock time on **100.0% of 1,805,827 rows**, which
+this project had recorded as absent — see the correction in [PLAN.md](PLAN.md), where
+time of day stood as the worked example of a dimension with no column. It has one. The
+absence had been inferred from an extract that was never fetched.
+
+A clock hour is not a light level at 55.7°N, so the sun's true elevation is computed per
+sample from its own position and instant (`scripts/daylight.py`, NOAA series validated
+against published Copenhagen solstice figures). The difference is the whole point: **09:00
+on 21 December is a sun 1.4° above the horizon; 09:00 on 21 June is 34.3°.** The winter
+*peak* sampling hour, 13:00, gets 10.1° — a third of what the summer "early" hour gets.
+
+Pooled, oxygen falls as the sun rises. That is solubility: high sun means summer means
+warm water. Held inside a moving window at each station — a continuous seasonal control,
+not calendar months, because a month is a step function laid over a process with no steps
+and its walls fall in the middle of the spring and autumn turns — the picture separates:
+
+| | deviation from the station's own local mean |
+|---|---|
+| oxygen **concentration** vs sun elevation | flat, within ±0.02 mg/l on a mean near 10 |
+| oxygen **saturation** vs sun elevation | −0.48, −0.38, −0.25, +0.09, **+1.06 %** across five bins |
+
+Saturation shows it because it divides out the solubility that hides it in concentration.
+About 1.5 percentage points from low sun to high, monotone across five bins and stable
+across four window widths (±10 to ±45 days). The diurnal signal is real and it was
+invisible in the wrong units.
+
+**And it does not matter, for the reason that makes this an open problem.** 96% of samples
+are taken between 09:00 and 15:00. The measured gradient describes the middle of the day.
+The pre-dawn minimum — the value an oxygen threshold is actually *about* — is essentially
+never visited: 324 night and 360 twilight samples against 91,072. So the dimension is
+recorded, the water does not swing much inside the window that is sampled, and nothing in
+the archive constrains the hours that decide whether a threshold was crossed. **This is not
+a missing column and not a testable question. It is a statement about when people are
+willing to be on a boat, and no reanalysis fixes it.** Closing it needs moored sensors, or
+one season of deliberate pre-dawn sampling.
+
+Two cycles were tested alongside the sun and are reported as nulls. **The moon does
+nothing detectable** — every oxygen term within ±0.02 mg/l, and the saturation terms flip
+sign between window widths. That is the expected answer: full moonlight is 0.1–0.3 lux
+against 100,000 for sun, about a millionth, and cannot drive photosynthesis at any level
+these instruments resolve. **The spring–neap cycle is suggestive and no more**: neap comes
+out highest in oxygen at every window width (+0.021, +0.024, +0.034, +0.040 mg/l), which is
+a consistent sign on a tiny effect. Lunar phase is *forcing*, not water level, and
+inferring height from phase would be a model of the moon presented as a measurement of the
+sea. DMI's oceanObs sea-level series would settle it and is an open fetch.
+
+## 18. One fetch was supposed to unblock nine. It unblocked two.
+
+[PLAN.md](PLAN.md) said the ODA `vandkemi` fetch was the blocker for A1, A2, A5, A7, B4,
+E2, E11, K1 and K2. The fetch has run. `scripts/rescore.py` checks, per hypothesis, which
+of the variables its consequence needs are now in hand — and the answer is not nine:
+
+| | |
+|---|---|
+| **testable now** | 2 — A5, E2 |
+| **partly unblocked; a second blocker was behind the first** | **7** |
+
+**A blocker can hide a blocker.** A1 and A2 need river load, which lives on a different
+ODA endpoint that `fetch_oda.py` cannot currently reach — `run()` hardcodes the Hav one.
+A7's "without a matching river input" clause needs the same. K1 needs phytoplankton
+counts and K2 a species assemblage, neither held. E11 needs temperature and salinity in
+the same bottle. B4 is worst: it needs *stream* stations, and this is the marine topic, so
+riverine POC was never going to be in it — its 19,114 suspended-solids rows stop in 2017
+and sit at 110 stations. While the first lock was shut, nobody had to notice the second.
+**That is the finding, and it generalises: a triage counts the blocker someone wrote down,
+not the number of locks on the door.**
+
+Of what *is* now answerable, two results and one capability:
+
+**K1's driver moved the opposite way from the hypothesis.** K1 predicts Si:DIN falls, so
+diatoms lose to flagellates. Surface Si:DIN has **risen**, substantially and monotonically
+over four decades — median 1.11 in 1985 with 48% of samples below the silicon-limitation
+threshold of 1, against 3.41 in 2025 with 12% below it. The mechanism is not mysterious:
+DIN fell because nitrogen management acted on it, and silicon is geological and did not.
+So a hypothesis blocked for years on a fetch turns out to have its premise contradicted
+by the first look at the data. The assemblage half remains unscoreable; this is the
+driver, and saying otherwise would be the error this project keeps finding in other
+people's work.
+
+**A7's weak form is supported.** Median ortho-phosphate below 15 m runs from 17.0 µg/l in
+April to **28.0 µg/l in October**, a 65% rise through the summer into autumn — the
+signature of release from sediment under stratification. The strong form, that it happens
+*without* a matching river input, still needs the endpoint the code cannot reach.
+
+**E11 is answerable in principle, which was not known.** 25,988 bottles carry both pH and
+ammonium. The un-ionised fraction, the toxic one, comes out at a median of 0.685 µg/l,
+a 95th percentile of 5.8 and a maximum of 883 — indicative only, because the salinity and
+in-situ temperature corrections to the dissociation constant are not applied and are not
+negligible in a fjord.
