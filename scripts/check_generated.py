@@ -73,6 +73,41 @@ def check(files, gen):
     return bad
 
 
+def classify(before, after):
+    """Split a regeneration diff into prose that would be LOST and numbers that
+    are merely STALE.
+
+    These are not the same thing and conflating them cost this project two days
+    of wrong figures. The old version counted every removed line over 46
+    characters as something regeneration "would remove", which is what a line
+    reads like when only its digits changed - so a routine "the inputs moved,
+    rerun me" was reported in the same words as "you are about to destroy
+    hand-written prose". The safe-looking response to both is not to regenerate,
+    and that is exactly the wrong response to the first: docs/FLOOD_GAP.md sat
+    for two days quoting 5.932 km2 of modelled flooding when the Noerrebro sheet
+    had been re-registered underneath it and the true figure was 5.847, along
+    with a proximity headline that had moved by more than two points.
+
+    A removed line counts as merely stale when the regenerated text contains a
+    line identical to it once every run of digits is blanked. Anything else is
+    prose with no replacement, and must be ported into the generator before
+    regenerating - which is the rule the rest of this file exists to enforce."""
+    import difflib
+    import re
+    d = list(difflib.unified_diff(before.split("\n"), after.split("\n"),
+                                  n=0, lineterm=""))
+    def skeleton(line):
+        return re.sub(r"[0-9][0-9.,]*", "#", line[1:])
+    removed = [l for l in d if l.startswith("-") and not l.startswith("---")
+               and len(l) > 46]
+    added = {skeleton(l) for l in d
+             if l.startswith("+") and not l.startswith("+++")}
+    lost, changed = [], []
+    for l in removed:
+        (changed if skeleton(l) in added else lost).append(l)
+    return lost, changed
+
+
 def main():
     gen = generated_map()
     arg = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -211,21 +246,27 @@ def main():
             if r.returncode != 0:
                 skipped.append((f, by[0], (r.stderr or "").strip().split("\n")[-1][:90]))
             elif after != before.rstrip("\n"):
-                # count what the regeneration would remove
-                import difflib
-                d = list(difflib.unified_diff(before.split("\n"), after.split("\n"),
-                                              n=0, lineterm=""))
-                lost = [l for l in d if l.startswith("-") and not l.startswith("---")
-                        and len(l) > 46]
-                bad.append((f, by[0], len(lost), lost[:2]))
+                lost, changed = classify(before, after)
+                bad.append((f, by[0], lost, changed))
             git("checkout", "--", f)
             print(("  ok      " if (f, by[0]) not in [(x[0], x[1]) for x in bad]
                    else "  DIFFERS ") + f)
         print()
-        for f, g, n, sample in bad:
-            print(f"{f}: regenerating with {g} would remove {n} substantial line(s)")
-            for l in sample:
-                print(f"    {l[1:100]}")
+        for f, g, lost, changed in bad:
+            if changed and not lost:
+                print(f"{f}: STALE. {len(changed)} line(s) differ only in their "
+                      f"numbers - regenerate with {g}.")
+            elif lost and changed:
+                print(f"{f}: {len(lost)} line(s) would be LOST and {len(changed)} "
+                      f"are only stale numbers. Port the lost prose into {g} "
+                      f"first, then regenerate.")
+            else:
+                print(f"{f}: {len(lost)} line(s) would be LOST. Port them into "
+                      f"{g} before regenerating.")
+            for l in lost[:2]:
+                print(f"    LOST    {l[1:100]}")
+            for l in changed[:2]:
+                print(f"    stale   {l[1:100]}")
         for f, g, err in skipped:
             print(f"{f}: {g} did not run here — {err}")
         if not bad:

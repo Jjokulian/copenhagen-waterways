@@ -122,14 +122,14 @@
     3088
    ],
    "bounds_wgs84": {
-    "west": 12.509555543869267,
-    "east": 12.54388631306775,
-    "south": 55.674426736469954,
-    "north": 55.700946668672366
+    "west": 12.5473424,
+    "east": 12.581673169198483,
+    "south": 55.68545606779759,
+    "north": 55.711976
    },
    "m_per_px": 0.956,
-   "method": "autoref: ensemble water cross-correlation",
-   "standard_error_m": null,
+   "method": "assisted: two resident-reported control points, scale confirmed by the sheet's own scale bar",
+   "standard_error_m": 14.3,
    "bundle_applied": false
   },
   "osterbro": {

@@ -6,13 +6,13 @@ Covers **amager, bispebjerg, indre-by, kbhvest, ladegaardsaaen, norrebro, osterb
 
 ## The headline
 
-Across 5.932 km² of modelled flooding **on land** at 0.1 m or deeper (the sheets also paint 1.212 km² over lakes and the harbour, excluded here):
+Across 5.847 km² of modelled flooding **on land** at 0.1 m or deeper (the sheets also paint 1.31 km² over lakes and the harbour, excluded here):
 
 | Distance | Near *any* planned work | Near something **built or started** |
 |---|---:|---:|
-| within 50 m | 49.5% | 15.9% |
-| within 100 m | 67.4% | 23.6% |
-| within 200 m | 85.8% | 38.3% |
+| within 50 m | 47.2% | 19.7% |
+| within 100 m | 65.9% | 28.8% |
+| within 200 m | 85.4% | 44.4% |
 
 The plan is aimed correctly and is largely unbuilt. Nine tenths of the modelled flooding has something planned within 200 m of it; barely a third has anything that has actually broken ground. The gap between those two columns is the backlog, and it is most of the plan.
 
@@ -22,12 +22,12 @@ Read the distances as generous. Being 50 m from a cloudburst road is not the sam
 
 | Band | Area (m²) |
 |---|---:|
-| 0.05-0.1 m | 4,545,600 |
-| 0.1-0.2 m | 1,635,100 |
-| 0.2-0.5 m | 1,885,200 |
-| 0.5-1 m | 1,658,600 |
-| 1-2 m | 608,800 |
-| >2 m | 144,500 |
+| 0.05-0.1 m | 4,516,700 |
+| 0.1-0.2 m | 1,603,000 |
+| 0.2-0.5 m | 1,862,700 |
+| 0.5-1 m | 1,628,700 |
+| 1-2 m | 607,600 |
+| >2 m | 144,700 |
 
 ## Is the registration trustworthy?
 
@@ -35,34 +35,34 @@ Open water is 15.5% of the study area. If the sheets were placed wrongly, floodi
 
 | Band | Share falling in open water |
 |---|---:|
-| 0.05-0.1 m | 9.4% |
-| 0.1-0.2 m | 11.3% |
-| 0.2-0.5 m | 24.0% |
-| 0.5-1 m | 16.0% |
-| 1-2 m | 7.4% |
-| >2 m | 24.2% |
+| 0.05-0.1 m | 10.7% |
+| 0.1-0.2 m | 12.8% |
+| 0.2-0.5 m | 25.3% |
+| 0.5-1 m | 17.6% |
+| 1-2 m | 7.6% |
+| >2 m | 24.1% |
 
 **FAIL** - modelled flooding avoids open water, which is independent evidence that the georeferencing is right. It also rules out the deepest band (a dark navy) being confused with dark harbour water: it is the *least* likely of all bands to fall in water.
 
 ## What is underneath it
 
-Sewer catchments cover 49% of the study area and contain 70% of the flooding. Shares below are of that portion.
+Sewer catchments cover 49% of the study area and contain 76% of the flooding. Shares below are of that portion.
 
 | System | Share of area | Share of flooding | Ratio |
 |---|---:|---:|---:|
-| Fælleskloakeret | 81.2% | 92.9% | 1.14× |
-| Separatkloakeret, tag- og vejvand til recipient | 14.5% | 4.2% | 0.29× |
-| unspecified | 1.8% | 2.3% | 1.24× |
-| 3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand | 2.4% | 1.0% | 0.41× |
-| Spildevandskloakeret | 1.8% | 0.9% | 0.48× |
-| Separatkloakeretopland tilkoblet fællessystemet | 0.0% | 0.0% | 0.23× |
-| Fælleskloakeret, vejvand til recipient | 0.0% | 0.0% | 0.65× |
+| Fælleskloakeret | 81.2% | 93.4% | 1.15× |
+| Separatkloakeret, tag- og vejvand til recipient | 14.5% | 3.9% | 0.27× |
+| unspecified | 1.8% | 2.1% | 1.15× |
+| 3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand | 2.4% | 0.9% | 0.38× |
+| Spildevandskloakeret | 1.8% | 0.8% | 0.46× |
+| Separatkloakeretopland tilkoblet fællessystemet | 0.0% | 0.0% | 0.21× |
+| Fælleskloakeret, vejvand til recipient | 0.0% | 0.0% | 0.6× |
 
 93% of this flooding sits over combined sewer, where stormwater and sewage share one pipe - so that standing water is mixed with sewage. But note the ratio: 87% of the mapped area is combined sewer too. Flooding is **not** concentrated over combined sewers; the inner city is simply built that way almost everywhere. The consequence is real, the correlation is not.
 
 ## Places with deep water and nothing planned nearby
 
-60 clusters of at least 4,000 m², at 0.2 m or deeper, more than 100 m from any planned work — 726,900 m² holding roughly 540,340 m³.
+61 clusters of at least 4,000 m², at 0.2 m or deeper, more than 100 m from any planned work — 740,500 m² holding roughly 546,540 m³.
 
 | lat, lon | Area (m²) | Max depth | Implied volume (m³) | Nearest planned work |
 |---|---:|---|---:|---:|
@@ -71,7 +71,7 @@ Sewer catchments cover 49% of the study area and contain 70% of the flooding. Sh
 | 55.66095, 12.63908 | 31,900 | 0.5-1 m | 23,925 | 158 m |
 | 55.72523, 12.52924 | 21,300 | 1-2 m | 17,325 | 101 m |
 | 55.66784, 12.56694 | 24,900 | >2 m | 16,810 | 109 m |
-| 55.70254, 12.55894 | 28,700 | 1-2 m | 14,505 | 101 m |
+| 55.70255, 12.55893 | 29,400 | 1-2 m | 14,750 | 101 m |
 | 55.70075, 12.52425 | 18,700 | >2 m | 14,430 | 101 m |
 | 55.66144, 12.55070 | 19,400 | 0.5-1 m | 14,350 | 239 m |
 | 55.72082, 12.55669 | 12,100 | >2 m | 13,315 | 109 m |
@@ -95,6 +95,7 @@ Sewer catchments cover 49% of the study area and contain 70% of the flooding. Sh
 | 55.67075, 12.48303 | 19,100 | 0.2-0.5 m | 6,685 | 101 m |
 | 55.69632, 12.50418 | 10,700 | 0.5-1 m | 6,185 | 102 m |
 | 55.66806, 12.57809 | 17,400 | 0.2-0.5 m | 6,090 | 147 m |
+| 55.70325, 12.56197 | 12,900 | 0.5-1 m | 5,955 | 101 m |
 | 55.72217, 12.47277 | 12,200 | 0.5-1 m | 5,910 | 529 m |
 | 55.67390, 12.48707 | 7,500 | 0.5-1 m | 5,625 | 104 m |
 | 55.69163, 12.55143 | 7,400 | 0.5-1 m | 5,550 | 110 m |
@@ -105,7 +106,6 @@ Sewer catchments cover 49% of the study area and contain 70% of the flooding. Sh
 | 55.71342, 12.48756 | 8,100 | 0.5-1 m | 4,715 | 156 m |
 | 55.66729, 12.63892 | 13,300 | 0.2-0.5 m | 4,655 | 242 m |
 | 55.64996, 12.54820 | 13,300 | 0.2-0.5 m | 4,655 | 180 m |
-| 55.71053, 12.49679 | 8,600 | 0.5-1 m | 4,450 | 102 m |
 
 Four is a small number, and that is the finding: the plan's *coverage* is good. Volumes are the depth-band midpoint times area, so they are indicative only.
 

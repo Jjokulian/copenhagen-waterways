@@ -86,14 +86,14 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.558943,
-     55.702538
+     12.558927,
+     55.702555
     ]
    },
    "properties": {
-    "area_m2": 28700,
+    "area_m2": 29400,
     "max_depth_band": "1-2",
-    "implied_volume_m3": 14505,
+    "implied_volume_m3": 14750,
     "distance_to_nearest_planned_work_m": 101
    }
   },
@@ -463,6 +463,22 @@
     "max_depth_band": "0.2-0.5",
     "implied_volume_m3": 6090,
     "distance_to_nearest_planned_work_m": 147
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.561966,
+     55.703248
+    ]
+   },
+   "properties": {
+    "area_m2": 12900,
+    "max_depth_band": "0.5-1",
+    "implied_volume_m3": 5955,
+    "distance_to_nearest_planned_work_m": 101
    }
   },
   {

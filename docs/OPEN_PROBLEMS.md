@@ -242,30 +242,64 @@ originally applied. A registration that did not converge would keep asking to mo
 
 **An independent check, not used in the fitting.** Some of the painted depth lands on
 open water, which is an error — water standing on water. Before the adjustment that was
-1.56 km²; after, **1.21 km²**, a 22% reduction. Nothing about the bundle optimised for
-it; it uses the city's own water polygons, which the alignment never saw.
+1.56 km²; after, 1.21 km². Nothing about the bundle optimised for it; it uses the city's
+own water polygons, which the alignment never saw.
 
 ### What it changed
 
-| | Before all seven | After the adjustment |
-|---|---:|---:|
-| Flood path on land | 1.52 km² | **5.93 km²** |
-| Within 200 m of a planned work | 90.5% | **85.8%** |
-| Within 100 m | 82.6% | **67.4%** |
-| With a surface route within 100 m | 72% | **53.5%** |
-| Corridor candidates | 4 | **33** |
+The third column is the current state, after Nørrebro was re-registered from two
+reader-supplied control points. The middle column is kept because the difference between
+it and the third is the size of one sheet's placement — which is the point.
+
+| | Before all seven | After the adjustment | **Now** |
+|---|---:|---:|---:|
+| Flood path on land | 1.52 km² | 5.93 km² | **5.85 km²** |
+| Painted over open water | 1.56 km² | 1.21 km² | **1.31 km²** |
+| Within 200 m of a planned work | 90.5% | 85.8% | **85.4%** |
+| Within 100 m | 82.6% | 67.4% | **65.9%** |
+| With a surface route within 100 m | 72% | 53.5% | **50.1%** |
+| Corridor candidates | 4 | 33 | **33** |
+
+**The surface-route figure has now crossed a line that mattered rhetorically.** At 53.5%
+it was a majority and [PROGRAMME.md](PROGRAMME.md) could say the city had already drawn
+most of the river network. At 50.1% it is a coin flip. The finding survives — half the
+modelled flood path does have a planned surface alignment beside it, which is still far
+more than this project expected before it looked — but "most" is no longer the right word
+and the argument should not lean on it.
+
+<details class="work">
+<summary>These figures were stale for two days, and the tool that should have caught it said the opposite.</summary>
+
+Nørrebro was re-registered on 9 September. `floodgap.py`, `rivermap.py` and
+`export_flood.py` all read the georeferencing and none was rerun, so every number above
+was computed from a superseded placement of one sheet. The regeneration is deterministic
+— two runs byte-identical — so this was staleness, not noise.
+
+What kept it stale is the interesting part. `check_generated.py --regen` reported that
+regenerating `FLOOD_GAP.md` "would remove 10 substantial line(s)", which reads as a
+warning that hand-written prose is about to be destroyed. Every one of those ten lines
+was a line whose *numbers* had changed and which the regeneration replaced. The tool
+counted a removal without checking whether a replacement was added, so "your output is
+stale, rerun me" and "you are about to lose work" were reported in the same words — and
+the cautious response to the second is the wrong response to the first.
+
+`check_generated.py` now separates them: a removed line whose text is identical once
+every run of digits is blanked is reported as **stale**, and only a removal with no
+counterpart is reported as **lost**.
+
+</details>
 
 ### What remains
 
-**Nørrebro is the one sheet the adjustment could not touch.** Every pairing with it came
-out flat — peak-to-rival ratios of 1.02 to 1.06 — so it has no usable pair, and it has no
-control points either. It keeps its original automatic position and is now the only sheet
-not known to be consistent with the rest. Why it refuses to correlate is unresolved; it
-is the smallest sheet and the most heavily painted of the inner four, but neither fully
-explains it.
+**Nørrebro is settled — by exactly the route this section asked for.** When this was
+written, every pairing with Nørrebro came out flat (peak-to-rival ratios of 1.02 to 1.06),
+so it had no usable pair and no control points, and it was the only sheet not known to be
+consistent with the rest. This section said *two control points on Nørrebro would settle
+it*. Two reader-supplied control points arrived and did. Why it refused to correlate is
+still unresolved — it is the smallest sheet and the most heavily painted of the inner
+four, and neither fully explains it — but the placement no longer depends on the answer.
 
-Two control points on Nørrebro would settle it, or the orthophoto route below would settle
-everything at once.
+The orthophoto route below would still settle everything at once, and independently.
 
 ### The route that would have avoided all of this
 
