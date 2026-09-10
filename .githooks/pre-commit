@@ -3,6 +3,8 @@
 # deletes the edit. This checks the weak version of that rule - if a generated file
 # is in the commit, its generator should be too. Override with --no-verify.
 python3 scripts/check_generated.py --staged || exit 1
+# a cycle in the claim graph is circular reasoning; refuse the commit
+python3 scripts/claims.py --check || exit 1
 # Links are checked whole rather than per-commit: a link breaks because of what the
 # other file did, so staging is the wrong unit for it.
 exec python3 scripts/check_links.py
