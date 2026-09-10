@@ -48,7 +48,8 @@
    "script": "scripts/programme.py",
    "inputs": [
     "data/derived/rivermap.json",
-    "data/derived/floodgap.json"
+    "data/derived/floodgap.json",
+    "data/derived/conveyance.json"
    ],
    "outputs": [
     "docs/PROGRAMME.md"

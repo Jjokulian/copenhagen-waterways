@@ -13,6 +13,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from figures import fig
 from common import DERIVED, ROOT, log, read_json
 
 MANUAL = os.path.join(ROOT, "data", "manual")
@@ -798,7 +799,8 @@ def main():
     a(f"So the surprise is a positive one. Across the inner city, Copenhagen has "
       f"already drawn the river network: **{riv['near_surface_conveyance_pct']:.0f}% of "
       "the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is "
-      "169 km of surface conveyance against 71 km of pipe "
+      f"{fig('surface_km')} km of surface conveyance against {fig('pipe_km')} km "
+      f"of pipe, {fig('surface_ratio')} to 1 "
       "([SOLUTIONS.md](SOLUTIONS.md)). The idea is not missing. The alignments are not "
       "missing.\n")
     a("**What is missing is the connection.** A skybrudsvej is designed against a "

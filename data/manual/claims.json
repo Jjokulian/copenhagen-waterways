@@ -338,5 +338,43 @@
    "note": "Three figures for this quantity were published and none was derived: 210 km on the landing page, 169 km in two documents, and a layer measuring 280 km. All three are defensible under different definitions of 'surface' and nothing said which was in use. 210 was surface plus mix (209.0); 169 was surface alone (168.1). The pipe figure, 71, was right to the kilometre."
   }
  ],
- "_figures": "A claim may declare where its number came from. claims.py then reads the live value and refuses to write the page if the sentence no longer matches it. Provenance says what a claim rests on; this says whether it still does."
+ "_figures": "A claim may declare where its number came from. claims.py then reads the live value and refuses to write the page if the sentence no longer matches it. Provenance says what a claim rests on; this says whether it still does.",
+ "figures": {
+  "surface_km": {
+   "file": "data/derived/conveyance.json",
+   "path": "surface_km",
+   "fmt": "{:g}",
+   "claim": "C-CONVEYANCE"
+  },
+  "pipe_km": {
+   "file": "data/derived/conveyance.json",
+   "path": "pipe_km",
+   "fmt": "{:g}",
+   "claim": "C-CONVEYANCE"
+  },
+  "surface_ratio": {
+   "file": "data/derived/conveyance.json",
+   "path": "surface_to_pipe",
+   "fmt": "{:g}",
+   "claim": "C-CONVEYANCE"
+  },
+  "flood_km2": {
+   "file": "data/derived/floodgap.json",
+   "path": "flooded_area_km2",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
+  },
+  "kemi_rows": {
+   "file": "data/derived/enums.json",
+   "path": "kemi.rows",
+   "fmt": "{:,}",
+   "claim": "C-CLOCK-EXISTS"
+  },
+  "ctd_rows": {
+   "file": "data/derived/enums.json",
+   "path": "ctd.rows",
+   "fmt": "{:,}",
+   "claim": "C-DEPTH-UNTIMED"
+  }
+ }
 }

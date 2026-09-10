@@ -241,7 +241,7 @@ Measured against it:
 | Within 100 m of anything in the plan | 62% |
 | **With no surface route within 100 m** | **50%** |
 
-So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **50% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe ([SOLUTIONS.md](SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
+So the surprise is a positive one. Across the inner city, Copenhagen has already drawn the river network: **50% of the flood paths there have a surface alignment planned beside them.** The city's cloudburst plan is [168.1](CLAIMS.md#C-CONVEYANCE) km of surface conveyance against [71](CLAIMS.md#C-CONVEYANCE) km of pipe, [2.37](CLAIMS.md#C-CONVEYANCE) to 1 ([SOLUTIONS.md](SOLUTIONS.md)). The idea is not missing. The alignments are not missing.
 
 **What is missing is the connection.** A skybrudsvej is designed against a hundred-year event: it activates when the system is already overwhelmed, a handful of times a decade. Ordinary heavy rain — the rain that actually causes overflows, many times a year — still goes down the gully into the combined pipe exactly as before. The surface network was built to protect the city from water, not to protect the sea from the city.
 

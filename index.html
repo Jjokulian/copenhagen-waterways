@@ -147,7 +147,18 @@
   @media (max-width:860px){ .embedfig{display:none} }
 
   /* A case is a verdict of three sentences standing on three tables, and a reader
-     wants the tables second. `.mermaid-fig{margin:14px 0;overflow-x:auto;text-align:center}
+     wants the tables second. `a.figure{border-bottom:1px dotted currentColor;text-decoration:none;cursor:help}
+a.figure::after{content:"\\2299";font-size:.7em;vertical-align:super;opacity:.55;margin-left:1px}
+#justify{position:fixed;right:0;top:0;bottom:0;width:min(460px,92vw);z-index:60;
+  background:#0d1117;border-left:1px solid #30363d;box-shadow:-8px 0 24px #0008;
+  display:flex;flex-direction:column}
+#justify header{display:flex;align-items:center;gap:8px;padding:10px 12px;
+  border-bottom:1px solid #30363d;font-size:12px;color:#8b949e}
+#justify header b{color:#c9d1d9;font-weight:600}
+#justify button{margin-left:auto;all:unset;cursor:pointer;color:#8b949e;padding:0 6px}
+.justify-body{overflow:auto;padding:12px 14px;font-size:13px}
+.justify-body h3{font-size:14px;margin:0 0 8px}
+.mermaid-fig{margin:14px 0;overflow-x:auto;text-align:center}
 .mermaid-fig svg{max-width:100%;height:auto}
 .mermaid-failed{font-size:11px;color:#8b949e;border-left:2px solid #e8a33d;padding-left:8px}
 details.work` is that evidence: folded at every
@@ -1437,6 +1448,17 @@ function resolveLinks(root, file) {
        reader renders: its section ids are derived from heading text here and do
        not have to agree with the ones GitHub generates, so a wrong section is a
        worse landing than the top of the right page. */
+    /* A figure carries its justification with it. fig() in scripts/figures.py
+       renders every live number as a link to the claim that accounts for it, so
+       the anchor is the one case where dropping it would throw away the point:
+       the id names a claim, not a heading, and the reader opens it beside the
+       text rather than navigating away from the sentence it belongs to. */
+    const anchor = cut < 0 ? "" : raw.slice(cut + 1);
+    if (doc === "CLAIMS.md" && /^C-[A-Z0-9-]+$/.test(anchor)) {
+      a.classList.add("figure");
+      a.dataset.claim = anchor;
+      a.title = "What this number rests on";
+    }
     a.setAttribute("href",
       doc && DOCS.some(([f]) => f === doc) ? "#" + doc : p + raw.slice(cut < 0 ? raw.length : cut));
   }
@@ -1518,6 +1540,47 @@ async function drawMermaid(root) {
   }
 }
 
+/* The justification panel. A number that cannot say where it came from is the
+   failure this whole apparatus exists for, so the answer has to be one click away
+   from the number itself and must not navigate the reader out of the sentence.
+   On GitHub the same link degrades to what it looks like: a jump to the claim. */
+let claimsText = null;
+async function openJustification(id) {
+  const panel = document.getElementById("justify");
+  const body = panel.querySelector(".justify-body");
+  panel.hidden = false;
+  body.innerHTML = '<p class="status">Loading…</p>';
+  try {
+    if (claimsText === null) {
+      const r = await fetch(DOCS_DIR + "CLAIMS.md", { cache: "no-cache" });
+      claimsText = r.ok ? await r.text() : "";
+    }
+    /* Slice the claim's own section. The id sits on the line under its heading,
+       so walk back to the heading and forward to the next one. */
+    const lines = claimsText.split("\n");
+    let at = lines.findIndex(l => l.indexOf("`" + id + "`") === 0 ||
+                                  l.indexOf("`" + id + "` ·") >= 0);
+    if (at < 0) { body.innerHTML = "<p>No registered justification for " + id + ".</p>"; return; }
+    let start = at;
+    while (start > 0 && !lines[start].startsWith("### ")) start--;
+    let end = start + 1;
+    while (end < lines.length && !lines[end].startsWith("### ") &&
+           !lines[end].startsWith("## ")) end++;
+    body.innerHTML = marked.parse(lines.slice(start, end).join("\n"), { gfm: true });
+    await drawMermaid(body);
+    resolveLinks(body, "CLAIMS.md");
+  } catch (e) {
+    body.innerHTML = "<p>Could not load the justification.</p>";
+  }
+}
+
+document.addEventListener("click", e => {
+  const a = e.target.closest("a.figure");
+  if (!a) return;
+  e.preventDefault();
+  openJustification(a.dataset.claim);
+});
+
 async function show() {
   const { file, section } = current();
   setNav(false);
@@ -1571,5 +1634,11 @@ async function show() {
 addEventListener("hashchange", show);
 show();
 </script>
+<aside id="justify" hidden>
+  <header><b>What this number rests on</b>
+    <button onclick="document.getElementById('justify').hidden=true"
+            title="close">\u2715</button></header>
+  <div class="justify-body"></div>
+</aside>
 </body>
 </html>
