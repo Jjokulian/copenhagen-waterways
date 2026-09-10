@@ -21,3 +21,7 @@ data/raw/weather/
 data/raw/oda/*.csv
 # python venv for the marine/NetCDF stack; recreate with scripts/setup_venv.sh
 .venv*/
+
+# hand-in slots: never commit somebody else's licensed data
+data/dropin/*
+!data/dropin/README.md
