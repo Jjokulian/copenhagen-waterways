@@ -193,7 +193,11 @@ def main(argv):
                 "sun": sun_bin(solar_elevation(lat, lon, utc)),
                 "moon": moon_bin(moon_altitude(lat, lon, utc), frac),
                 "tide": spring_neap(frac),
-                "temp": temp_bin(temps.get((st, f"{d[:4]}-{d[4:6]}-{d[6:]}"))),
+                # Both extracts write the date as YYYYMMDD. An earlier version
+                # hyphenated it here before the lookup and every join missed,
+                # which showed up as "0% joined to a temperature" rather than as
+                # an error - the analysis ran to completion with an empty axis.
+                "temp": temp_bin(temps.get((st, d))),
             }
             store[key].append((st, day.toordinal(), v, bins))
             if sum(len(s) for s in store.values()) % 50000 == 0:
@@ -214,6 +218,12 @@ def main(argv):
         if not s:
             continue
         matched = sum(1 for r in s if r[3]["temp"] is not None)
+        if temps and not matched:
+            raise SystemExit(
+                f"{pname}: a temperature table with {len(temps):,} station-days "
+                "joined to nothing. That is a key mismatch, not an absence of "
+                "data - check the date format on both sides before trusting any "
+                "other axis in this run.")
         log(f"\n=== {pname}  ({len(s):,} surface samples, "
             f"{100*matched/len(s):.0f}% joined to a temperature)")
         res = {"n": len(s), "unit": unit,
