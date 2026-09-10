@@ -172,8 +172,7 @@ def deviations(samples, window, key):
 
 def main(argv):
     temps = load_temps()
-    pos, store = {}, {k: [] for _, (k, _, _, _) in
-                      [(p, PARAMS[p]) for p in PARAMS]}
+    pos, store = {}, {spec[0]: [] for spec in PARAMS.values()}
     rows = dropped = 0
     skipped = {"type": 0, "censored": 0, "unit": 0}
     log(f"reading {os.path.relpath(SRC)}")
