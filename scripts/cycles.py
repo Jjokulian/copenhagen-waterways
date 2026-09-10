@@ -62,6 +62,21 @@ PARAMS = {"Oxygen indhold": ("o2", "mg/l", 0.0, 25.0),
           "Oxygenmætning": ("sat", "%", 0.0, 250.0),
           "Klorofyl a": ("chl", "µg/l", 0.0, 500.0)}
 MAX_DEPTH = 3.0
+# Teknisk anvisning for marin overvaagning, Kap. 5 (Kaas & Markager 1998),
+# "Pelagiale parametre - proevetagning i felten", settles what these mean:
+#   Enkeltproeve     one bottle at one depth
+#   Blandingsproeve  "Hvis en vanddybde repraesenteres af vand taget med flere
+#                    vandhentere, skal vandet fra disse vandhentere blandes" -
+#                    several bottles at the SAME depth, pooled. Not over time,
+#                    not over depth, so it still refers to one depth and is kept.
+#   Dybdeintegreret  integrated over 0-10 m, 0-25 m, or the whole photic zone.
+#                    2,265 of these carry a nominal depth of 3 m or less and
+#                    would enter a surface filter as if they were point samples,
+#                    and 2,870 report a depth of 99, which is a sentinel.
+#                    Excluded: an integral is not a measurement at its midpoint.
+# The instruction also says nutrients are measured on single samples precisely
+# so a result can be tied to one depth, temperature and salinity.
+POINT_TYPES = {"Enkeltprøve", "Blandingsprøve"}
 WINDOWS = (10, 20, 30, 45)
 
 
@@ -149,6 +164,7 @@ def main(argv):
     pos, store = {}, {k: [] for _, (k, _, _, _) in
                       [(p, PARAMS[p]) for p in PARAMS]}
     rows = dropped = 0
+    skipped = {"type": 0, "censored": 0}
     log(f"reading {os.path.relpath(SRC)}")
     with gzip.open(SRC, "rb") as fh:
         for row in csv.DictReader(io.TextIOWrapper(fh, encoding="latin-1"),
@@ -168,6 +184,17 @@ def main(argv):
             except ValueError:
                 continue
             if dep > MAX_DEPTH:
+                continue
+            if row.get("Prøvetype") not in POINT_TYPES:
+                skipped["type"] += 1
+                continue
+            # "<" means Resultat carries the DETECTION LIMIT, not the
+            # measurement - 85,035 rows of it. Reading a bound as a value biases
+            # the parameter high, so these are counted and dropped rather than
+            # quietly averaged in. "ikke paavist" is a real zero (all 80 are
+            # PFAS sums with nothing detected) but is not one of these three.
+            if (row.get("ResultatAttribut") or "").strip() in ("<", ">"):
+                skipped["censored"] += 1
                 continue
             if not (lo <= v <= hi):
                 dropped += 1
@@ -210,9 +237,14 @@ def main(argv):
                            "grazer behaviour or spring-neap mixing, not light.",
            "_tide_caveat": "Lunar phase is forcing. Water level is not inferred; "
                            "DMI oceanObs is the observation that would close it.",
+           "_types_kept": sorted(POINT_TYPES),
+           "skipped_depth_integrated": skipped["type"],
+           "skipped_censored_detection_limit": skipped["censored"],
            "windows_days": list(WINDOWS), "dropped_impossible": dropped,
            "temperature_station_days": len(temps), "results": {}}
 
+    log(f"\nexcluded: {skipped['type']:,} depth-integrated or pooled samples, "
+        f"{skipped['censored']:,} at or beyond a detection limit")
     for pname, (key, unit, _, _) in PARAMS.items():
         s = store[key]
         if not s:
