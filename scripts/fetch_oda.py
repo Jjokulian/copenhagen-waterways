@@ -32,7 +32,7 @@ replaced rather than filled without care is the constraint, not an afterthought.
 Topics (Hav):
     stations   Observationssted   the register: id, name, water body, UTM32, dates
     ctd        Feltmaaling/CTD    oxygen, temperature, salinity by depth
-    kemi       Vandkemi           nutrients and chlorophyll
+    kemi       Vandkemi           nutrients, chlorophyll and hazardous substances
     sediment   Sedimentkemi       what is in the bed
     fauna      Bundfauna          the soft-bottom survey
 
@@ -62,6 +62,14 @@ TOPICS = {
     "ctd":      {"emne": "Emne_11_154", "what": "Feltmåling / CTD profiles"},
     "lys":      {"emne": "Emne_11_155", "what": "Feltmåling / light attenuation"},
     "iltkor":   {"emne": "Emne_11_156", "what": "Feltmåling / oxygen correction"},
+    # The topic this file's own docstring advertised for a year without listing.
+    # Read off the tree rather than guessed: topic.aspx?id=h&t=h, then
+    # topic_TabClick tab=hent-tab gives the Hav roots (Vandkemi is node 10_0),
+    # then EmneNodeClick on 10_0 gives its one child. It is the fetch that
+    # unblocks nine hypotheses in hypodrafts/TRIAGE.md - A1, A2, A5, A7, B4, E2,
+    # E11, K1, K2 - none of which had any other route to a number.
+    "kemi":     {"emne": "Emne_10_11",
+                 "what": "Vandkemi / Næringsstof og Miljøfarligt stof"},
     "maaledybde": {"emne": "Emne_53_159",
                    "what": "Måledybde - Secchi depth paired with bottom depth"},
 }
