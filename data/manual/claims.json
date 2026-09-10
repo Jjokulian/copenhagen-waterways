@@ -135,6 +135,18 @@
    "kind": "script",
    "label": "floodgap.py",
    "detail": "Flood path against the cloudburst plan."
+  },
+  {
+   "id": "D-SKYBRUDSVEJE",
+   "kind": "held",
+   "label": "skp_veje_tunneller_kk · 976 alignments",
+   "detail": "The cloudburst plan's roads and pipes, with a typologi per feature. 280.0 km end to end."
+  },
+  {
+   "id": "X-CONVEYANCE",
+   "kind": "script",
+   "label": "conveyance.py",
+   "detail": "Measures alignment length by typologi instead of quoting it."
   }
  ],
  "claims": [
@@ -305,6 +317,25 @@
     "G-DRAIN"
    ],
    "note": "Approximable from terrain, but the approximation is untested and there is nothing to test it against."
+  },
+  {
+   "id": "C-CONVEYANCE",
+   "kind": "measured",
+   "page": "index.html",
+   "claim": "The cloudburst plan holds 209.0 km of alignment that could carry water on the surface — 168.1 km classed as surface conveyance plus 40.9 km of mixed alignment — against 71.0 km of pipe.",
+   "rests_on": [
+    "D-SKYBRUDSVEJE",
+    "X-CONVEYANCE"
+   ],
+   "value_from": {
+    "file": "data/derived/conveyance.json",
+    "path": "surface_km",
+    "fmt": "{:g}"
+   },
+   "appears_in": [
+    "index.html"
+   ],
+   "note": "Three figures for this quantity were published and none was derived: 210 km on the landing page, 169 km in two documents, and a layer measuring 280 km. All three are defensible under different definitions of 'surface' and nothing said which was in use. 210 was surface plus mix (209.0); 169 was surface alone (168.1). The pipe figure, 71, was right to the kilometre."
   }
  ],
  "_figures": "A claim may declare where its number came from. claims.py then reads the live value and refuses to write the page if the sentence no longer matches it. Provenance says what a claim rests on; this says whether it still does."

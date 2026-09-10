@@ -355,6 +355,29 @@ graph BT
 
 > Corrects a claim this project made for weeks, that no row in the archive carried a clock time. That was true of the CTD extract and inferred from the absence of a download.
 
+## index.html
+
+### The cloudburst plan holds 209.0 km of alignment that could carry water on the surface — 168.1 km classed as surface conveyance plus 40.9 km of mixed alignment — against 71.0 km of pipe.
+
+`C-CONVEYANCE` · **measured** — rests on measurement
+
+```mermaid
+graph BT
+  C-CONVEYANCE("The cloudburst plan holds 209.0 km of alignment that could...")
+  D-SKYBRUDSVEJE[("skp_veje_tunneller_kk · 976 alignments")]
+  X-CONVEYANCE["conveyance.py"]
+  D-SKYBRUDSVEJE --> C-CONVEYANCE
+  X-CONVEYANCE --> C-CONVEYANCE
+  style C-CONVEYANCE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-SKYBRUDSVEJE fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-CONVEYANCE fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — skp_veje_tunneller_kk · 976 alignments. The cloudburst plan's roads and pipes, with a typologi per feature. 280.0 km end to end.
+- **script** — conveyance.py. Measures alignment length by typologi instead of quoting it.
+
+> Three figures for this quantity were published and none was derived: 210 km on the landing page, 169 km in two documents, and a layer measuring 280 km. All three are defensible under different definitions of 'surface' and nothing said which was in use. 210 was surface plus mix (209.0); 169 was surface alone (168.1). The pipe figure, 71, was right to the kilometre.
+
 ---
 
 ## What is missing from this register

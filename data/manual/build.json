@@ -3,47 +3,156 @@
  "_why": "docs/FLOOD_GAP.md is generated, was never hand-edited, and published a wrong number for two days because data/derived/floodmaps/_georef.json changed underneath it and floodgap.py was not rerun. No rule this project had would have caught that.",
  "_honest": "Hand-written, so exactly as complete as it is. A script whose inputs are not listed here is never reported stale, and the failure mode is silence - run --list to see the coverage rather than assuming it.",
  "steps": [
-  {"script": "scripts/floodgap.py",
-   "inputs": ["data/derived/floodmaps/_georef.json", "data/derived/floodmaps/_sheets.json"],
-   "outputs": ["data/derived/floodgap.json", "docs/FLOOD_GAP.md", "docs/flood_gap_map.png", "data/derived/viewer/flood_hotspots.geojson"]},
-  {"script": "scripts/rivermap.py",
-   "inputs": ["data/derived/floodmaps/_georef.json"],
-   "outputs": ["data/derived/rivermap.json", "docs/river_map.png"]},
-  {"script": "scripts/export_flood.py",
-   "inputs": ["data/derived/floodmaps/_georef.json"],
-   "outputs": ["docs/data/flood2012/manifest.json"]},
-  {"script": "scripts/build_viewer_data.py",
-   "inputs": ["data/derived/floodmaps/_georef.json"],
-   "outputs": ["data/derived/viewer/floodmaps.json"]},
-  {"script": "scripts/programme.py",
-   "inputs": ["data/derived/rivermap.json", "data/derived/floodgap.json"],
-   "outputs": ["docs/PROGRAMME.md"]},
-  {"script": "scripts/nitrogen.py",
-   "inputs": ["data/derived/manure.json", "data/derived/cropland.json"],
-   "outputs": ["docs/NITROGEN.md"]},
-  {"script": "scripts/cycles.py",
-   "inputs": ["data/raw/oda/kemi.csv.gz", "data/derived/surface_temp.csv.gz"],
-   "outputs": ["data/derived/cycles.json"]},
-  {"script": "scripts/surface_temp.py",
-   "inputs": ["data/raw/oda/ctd.csv.gz"],
-   "outputs": ["data/derived/surface_temp.csv.gz"]},
-  {"script": "scripts/detectable.py",
-   "inputs": ["data/raw/oda/kemi.csv.gz"],
-   "outputs": ["data/derived/detectable.json"]},
-  {"script": "scripts/methodlab.py",
-   "inputs": ["data/derived/detectable.json"],
-   "outputs": ["docs/METHOD_LAB.md"]},
-  {"script": "scripts/claims.py",
-   "inputs": ["data/manual/claims.json"],
-   "outputs": ["docs/CLAIMS.md"]},
-  {"script": "scripts/unlock.py",
-   "inputs": ["data/manual/data_sources.json", "data/manual/data_sources_2.json"],
-   "outputs": ["docs/IF_YOU_HAVE_THE_DATA.md"]},
-  {"script": "scripts/fetch_queue.py",
-   "inputs": ["data/manual/data_sources.json", "data/manual/data_sources_2.json"],
-   "outputs": ["docs/DATA_QUEUE.md"]},
-  {"script": "scripts/rescore.py",
-   "inputs": ["data/raw/oda/kemi.csv.gz"],
-   "outputs": ["data/derived/rescore.json"]}
+  {
+   "script": "scripts/floodgap.py",
+   "inputs": [
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/floodmaps/_sheets.json"
+   ],
+   "outputs": [
+    "data/derived/floodgap.json",
+    "docs/FLOOD_GAP.md",
+    "docs/flood_gap_map.png",
+    "data/derived/viewer/flood_hotspots.geojson"
+   ]
+  },
+  {
+   "script": "scripts/rivermap.py",
+   "inputs": [
+    "data/derived/floodmaps/_georef.json"
+   ],
+   "outputs": [
+    "data/derived/rivermap.json",
+    "docs/river_map.png"
+   ]
+  },
+  {
+   "script": "scripts/export_flood.py",
+   "inputs": [
+    "data/derived/floodmaps/_georef.json"
+   ],
+   "outputs": [
+    "docs/data/flood2012/manifest.json"
+   ]
+  },
+  {
+   "script": "scripts/build_viewer_data.py",
+   "inputs": [
+    "data/derived/floodmaps/_georef.json"
+   ],
+   "outputs": [
+    "data/derived/viewer/floodmaps.json"
+   ]
+  },
+  {
+   "script": "scripts/programme.py",
+   "inputs": [
+    "data/derived/rivermap.json",
+    "data/derived/floodgap.json"
+   ],
+   "outputs": [
+    "docs/PROGRAMME.md"
+   ]
+  },
+  {
+   "script": "scripts/nitrogen.py",
+   "inputs": [
+    "data/derived/manure.json",
+    "data/derived/cropland.json"
+   ],
+   "outputs": [
+    "docs/NITROGEN.md"
+   ]
+  },
+  {
+   "script": "scripts/cycles.py",
+   "inputs": [
+    "data/raw/oda/kemi.csv.gz",
+    "data/derived/surface_temp.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/cycles.json"
+   ]
+  },
+  {
+   "script": "scripts/surface_temp.py",
+   "inputs": [
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/surface_temp.csv.gz"
+   ]
+  },
+  {
+   "script": "scripts/detectable.py",
+   "inputs": [
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/detectable.json"
+   ]
+  },
+  {
+   "script": "scripts/methodlab.py",
+   "inputs": [
+    "data/derived/detectable.json"
+   ],
+   "outputs": [
+    "docs/METHOD_LAB.md"
+   ]
+  },
+  {
+   "script": "scripts/claims.py",
+   "inputs": [
+    "data/manual/claims.json",
+    "data/derived/conveyance.json",
+    "data/derived/floodgap.json",
+    "data/derived/detectable.json",
+    "data/derived/rescore.json",
+    "data/derived/enums.json",
+    "index.html"
+   ],
+   "outputs": [
+    "docs/CLAIMS.md"
+   ]
+  },
+  {
+   "script": "scripts/unlock.py",
+   "inputs": [
+    "data/manual/data_sources.json",
+    "data/manual/data_sources_2.json"
+   ],
+   "outputs": [
+    "docs/IF_YOU_HAVE_THE_DATA.md"
+   ]
+  },
+  {
+   "script": "scripts/fetch_queue.py",
+   "inputs": [
+    "data/manual/data_sources.json",
+    "data/manual/data_sources_2.json"
+   ],
+   "outputs": [
+    "docs/DATA_QUEUE.md"
+   ]
+  },
+  {
+   "script": "scripts/rescore.py",
+   "inputs": [
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/rescore.json"
+   ]
+  },
+  {
+   "script": "scripts/conveyance.py",
+   "inputs": [
+    "data/raw/skp_veje_tunneller_kk.geojson"
+   ],
+   "outputs": [
+    "data/derived/conveyance.json"
+   ]
+  }
  ]
 }
