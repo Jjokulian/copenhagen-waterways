@@ -301,7 +301,13 @@ def _expand(w):
         return [w]
     import glob
     return [os.path.relpath(p, ROOT) + sep + part
-            for p in sorted(glob.glob(os.path.join(ROOT, path)))]
+            for p in sorted(glob.glob(os.path.join(ROOT, path)))
+            if not part or _sha(os.path.relpath(p, ROOT) + sep + part) not in ("missing", _EMPTY)]
+
+
+# the hash of an empty part ({}): a fragment that adds nothing to what is watched
+# (a claims fragment with no params) is not a change to it
+_EMPTY = hashlib.sha256(b"{}").hexdigest()[:16]
 
 
 def observe(c):

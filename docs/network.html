@@ -68,10 +68,11 @@ dd b{font-weight:640}
   receive. The scatter is random — <b>it is a picture of a density, not a siting
   plan</b> — and the marine one is drawn inside the 123 water bodies the state
   actually recognises, all 43,579 km² of them.</p>
-  <p>Every price is a <b>stated range</b> from
-  <a href="../index.html#SENSING.md">the shopping list</a>, not a quotation, and every
-  one of them is a slider here because the argument should survive somebody replacing
-  them. The protocol these nodes would serve is
+  <p>Every default price here has <b>no source</b>: they came from a shopping list on
+  <a href="../index.html#SENSING.md">SENSING</a> that was retired because none of its
+  prices had one. Each is a slider so that somebody can replace it with a quotation;
+  until then the totals are illustrations, not estimates. The protocol these nodes
+  would serve is
   <a href="../index.html#SETTLE.md">Fingerprinting Denmark</a>.</p>
 </header>
 
@@ -158,8 +159,9 @@ const fmt = (n, d = 0) => n.toLocaleString(undefined,
 const kr = n => n >= 1e6 ? fmt(n / 1e6, 2) + " M kr"
               : n >= 1e4 ? fmt(Math.round(n / 1000)) + " k kr" : fmt(n) + " kr";
 
-/* The sensor list is the shopping list in SENSING.md, one row each, with the mid of
-   its stated range as the default price and the range itself as the slider bounds.
+/* One row per sensor. The default prices and slider bounds have no source: the SENSING
+   shopping list they came from is retired (see ARCHIVE.md). They are placeholders, to
+   be replaced by quotations.
    `disc` marks the dimensions that discriminate a source rather than measure a total,
    because switching those off changes what the network can answer, not just what it
    costs. */

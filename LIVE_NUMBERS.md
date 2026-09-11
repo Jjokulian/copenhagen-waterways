@@ -436,8 +436,37 @@ Found in the METHOD_LAB pilot:
 - A claim already in the main register is marked on a page only if it is
   registered for that page. Otherwise the page's own claim rests on it, and the
   register change goes to the parent.
+- A retired claim's `from` is the page path under `docs/` (`hypodrafts/K1.md`),
+  and its `file` the repository path (`docs/hypodrafts/K1.md`).
+- Texts that are rendered - a claim, its `because`, `note`, `holder`, a node's
+  `label` and `detail`, a retired claim's `why` - are checked like a page: a
+  number in them needs a placeholder, or is an identifier set as code. A
+  confirmation's by-line is shown verbatim as code, so it may hold anything.
+- A `said` phrase is matched against the pinned text as extracted: tags are set
+  aside and entities read as characters, but in a JSON or API pin the markup and
+  escapes are part of the text. A response that changes on every request cannot
+  be pinned; cite the register entry that records it, and say so.
 - One claim, one span per page. A second span with the same ID is refused,
   since only one wording can be confirmed; merge them or make two claims.
+- A published table that cannot be justified is retired like a sentence: one
+  retired claim whose passage runs from a phrase in its header row to one in
+  its last row, replaced by what can be justified. A dropped vague word ("much
+  of") that changes what is asserted is a retirement; one that changes nothing
+  is an edit.
+- Retired claims are confirmed twice, and the second time only after
+  `claims.py` has written ARCHIVE.md - the parent does that round. An agent
+  confirms each retired claim once, by id. Never `--reassess all`: it would
+  sign every other agent's claims.
+- Two numbers read from the same quoted phrase share an identity. Read each
+  from its own phrase (`{read:SRC:119|119 medlemmer ...}`, `{read:SRC:34|mens
+  34 stemte imod}`).
+- Node ids carry their kind in the prefix only by convention (`D-` held data,
+  `H-` history, `E-` external, `U-` untraced, `A-` assumption, `X-` script,
+  `G-` gap); the checker reads `kind`. A page generator writing its own
+  `data/derived` file is part of the page, not a producer.
+- An agent working a page runs its builds and confirmations in the foreground,
+  with a long timeout, and finishes: ending a turn to wait on a background loop
+  leaves the page half-confirmed and nobody to finish it.
 - Confirming takes two rounds for anything newly marked. The first build
   records the wording and refuses; confirm against it; build again.
 
