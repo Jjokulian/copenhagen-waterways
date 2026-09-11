@@ -448,6 +448,10 @@ def observe(d, c, nodes, cache):
     # the claim, the claim's own texts, and what each thing it rests on says
     for page, said in _said_on(c["id"]).items():
         saw[f"said on {page}"] = said
+    # a hypothesis, observable or outcome the claim names: it leans on that entry, so
+    # it goes stale when the entry's content changes (its data needs excepted)
+    for i in sorted(_refs_named(c)):
+        saw[f"hypothesis {i}"] = _ref_digest(i)
     saw["texts"] = _digest({k: c.get(k) for k in OWN})
     allc = {x["id"]: x for x in d.get("claims", [])}
     for r in c["rests_on"]:
@@ -467,7 +471,32 @@ OWN = ("claim", "because", "holder", "stance", "kind", "rests_on", "note",
        "assessment", "page", "said_on")
 # Observed only since 2026-09-11. A confirmation made before recorded none of these,
 # so their absence there means "not observed then", not "changed since".
-_LATER = re.compile(r"texts$|rests on |node ")
+_LATER = re.compile(r"texts$|rests on |node |hypothesis ")
+_HYP = {}
+
+
+def _refs_named(c):
+    """Register IDs a claim names: {ref:} in its own texts, and checked references in
+    the wording a page says it in (an ID set as code is a name, not a reference)."""
+    import refs
+    reg = refs.registry()
+    texts = [c.get(k) or "" for k in ("claim", "because", "note", "holder")]
+    texts += [v for v in (c.get("assessment") or {}).values() if isinstance(v, str)]
+    out = {m.split("|")[0].strip() for t in texts for m in re.findall(r"\{ref:([^{}]+)\}", t)}
+    for said in _said_on(c["id"]).values():
+        out |= {m.group(1) for m in refs.TOKEN.finditer(said)
+                if m.group(1) in reg and said[max(0, m.start() - 1):m.start()] != "`"}
+    return out
+
+
+def _ref_digest(i):
+    """What a claim leans on in a register entry: everything but its data needs."""
+    if "d" not in _HYP:
+        _HYP["d"] = read_json(os.path.join(ROOT, "data", "derived", "hypotheses.json"))
+    found = [{k: v for k, v in e.items() if k != "needs"}
+             for fam in _HYP["d"].values() if isinstance(fam, list)
+             for e in fam if isinstance(e, dict) and e.get("id") == i]
+    return _digest(found) if found else "missing"
 
 
 def _digest(x):

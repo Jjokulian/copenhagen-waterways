@@ -382,6 +382,23 @@ kept because the site steelmans rather than strawmans - is credited to its
 `untraced` node saying where the trail ran out. **Never fabricate a
 justification.** Record what could be found and nothing more.
 
+**Hypotheses are not claims.** A hypothesis in `docs/HYPOTHESES.md` says that a
+mechanism is possible or plausible; its justification is the mechanism and the
+reasoning behind it, not a measurement. The owner: "It is hypo-thesis, it is
+some notion of how things may work together, some foundational justification for
+why we may believe this a possible or perhaps plausible explanatory dynamic." So:
+
+- No hypothesis is retired, and none is marked as a claim.
+- A hypothesis carries no measurement. What the data holds for it is a claim
+  like any other and lives on an evidence page, linked from the hypothesis.
+- A constant of the mechanism - a stoichiometry, a seawater concentration, the
+  threshold that defines an outcome - is part of the plausibility argument and
+  stays, as a stated or derived value with its source.
+- References to hypotheses are live (`live.ref`, `{ref:}`): the title shown is
+  the current one, and a page citing an ID that no longer exists is refused. A
+  claim that names a hypothesis, observable or outcome records that entry, and
+  goes stale when its content - anything but its data needs - changes.
+
 **Retire and replace.** When a published claim cannot be justified:
 
 1. Add it to the register as a retired claim: kind `historical`, page

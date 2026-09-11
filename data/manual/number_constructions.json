@@ -345,10 +345,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in how a confirmation's by-line is shown on CLAIMS.md - verbatim, as code; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: claims.py changed only in what a claim's confirmation records - the register entries it names; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "60161a51463c2608"
+     "scripts/claims.py": "7e97fa99980414b6"
     }
    }
   },
@@ -386,10 +386,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in how a confirmation's by-line is shown on CLAIMS.md - verbatim, as code; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: claims.py changed only in what a claim's confirmation records - the register entries it names; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "60161a51463c2608"
+     "scripts/claims.py": "7e97fa99980414b6"
     }
    }
   },
