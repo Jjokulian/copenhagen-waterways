@@ -2095,7 +2095,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "GeoServer, ~481 layers, no authentication.",
      "texts": "f9a598956b4fd55c"
@@ -2123,7 +2123,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "— national, 47 layers, no auth.",
      "texts": "8f61a4ead36f7c25"
@@ -2151,7 +2151,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Storm surge dike lines at 2.63 m and 2.85 m | 101 MB of the 131 MB raw total. Coastal flooding, not rainfall — peripheral to this project.",
      "texts": "dd4597860008ec2e"
@@ -2177,7 +2177,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Derived from PULS (see §3), so it is the open shadow of a database that is not itself open.",
      "texts": "df665336fa40a8bf"
@@ -2205,7 +2205,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "are not in it — they belong to the separate-sewer outfall list and our reading is flagged `inferred: true`. Do not report those two as fact.",
      "texts": "73dd38c37ca3601f"
@@ -2233,7 +2233,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Three layers have no municipality column and would silently come back empty without the bbox fallback.",
      "texts": "de936ef483a39514"
@@ -2259,7 +2259,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The support host `support.miljoeportal.dk` returns 403 to automated fetches, and the `b0902-prod-dist-app.azurewebsites.net` geoserver quoted in older guides no longer resolves. The Miljøstyrelsen dTA PDFs are the reliable documentation.",
      "texts": "ad2296a1ed78fe9b"
@@ -2285,7 +2285,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The project map on each page renders through `cowi.mapcentia.com/api/v2/` (a MapCentia GC2 instance). Its SQL endpoint answers trivial queries but returns nothing for schema introspection, so per-project geometry is not reachable that way.",
      "texts": "e4099cee73fb19eb"
@@ -2313,7 +2313,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The utility that owns and operates the system. Publishes project descriptions and figures — tunnel lengths, diameters, pump capacities, storage volumes — but no GIS downloads. `hofor.dk` is a citation source for the manual register, not a data source. It directs pipe-location requests to LER.",
      "texts": "b0ceb76abd7af4ca"
@@ -2341,7 +2341,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "is up and serves DHM (Danmarks Højdemodel), including the 0.4 m terrain model, via WMS/WCS. A free API token is required.",
      "texts": "b77a93693a3db471"
@@ -2369,7 +2369,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "on opendata.dk: the output of Copenhagen's 2D surface flood model",
      "texts": "5a5b8a583c15d7f3"
@@ -2397,7 +2397,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The georeferencing is genuinely absent, not merely unadvertised — the files contain no `/Measure`, `/GPTS`, `/LPTS`, `/Viewport` or projection string, compressed or otherwise.",
      "texts": "41f7367882d08366"
@@ -2423,7 +2423,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "guessing it put Amager out by",
      "texts": "038185facc4fc755"
@@ -2451,7 +2451,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "on Indre By the entire \"1-2 m\" band was legend, nothing else.",
      "texts": "214bcf0b8fb41f30"
@@ -2479,7 +2479,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The palest band is nearly white and matches every pale roof on colour alone. Its blue cast (B-R = +8) separates it: 363,940 raw matches on Indre By, 18,393 real.",
      "texts": "ac27e408c6683a02"
@@ -2505,7 +2505,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Registering on water and then testing against the drawn outline gives 13.6% coverage against an 11% chance level.",
      "texts": "618aa23ce40319ea"
@@ -2531,7 +2531,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The sheets do not share one orthophoto. Exposures differ enough that a water detector tuned on Indre By finds 0.1% of Bispebjerg, whose lakes render near-black with no blue cast at all.",
      "texts": "726e0e33466a9e5f"
@@ -2559,7 +2559,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "So a modelled 0.2 m at a corner is never checked against the 0.4 m that is actually there because a gully has been blocked since",
      "texts": "ef501167491233da"
@@ -2589,7 +2589,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "There is no open dataset of where water is actually seen standing or running in Copenhagen streets. The gap is structural rather than accidental: Miljøstyrelsen's technical standard (dTA DP02, section 3.1.1) defines model calibration as measurement *at the overflow structure* — five clearly separable overflow events. Calibration happens inside the pipes. Nothing in the reporting chain observes a street surface.",
      "texts": "f92bdb79af8febb9"
@@ -2618,7 +2618,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Four extracts are on disk: `kemi` (water chemistry, 1,805,827 rows), `ctd` (53,710,760), `lys` (light attenuation, 2,370,091) and `maaledybde` (151,203), all spanning 1970–2026 and none truncated. `scripts/enums.py` counts every distinct value of every column of each, because reading the top few values of a column is how a rare sentinel survives. What it found is below. None of it is documented in the download.",
      "texts": "1c86485056264140"
@@ -2646,7 +2646,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Units are per row, not per parameter. 14 of 147 parameters carry more than one. Not all of them are strays. `Orthophosphat` is 565 rows in µg/l against 353 in mg/l — 38% of them a thousandfold from the rest. Integrated primary production splits 5,068 mg/(m²·d) against 62,831 mg/(m³·d), *per area against per volume*, which cannot be reconciled at all without a depth. PFAS sums run ng/l against µg/l. `Klorofyl a` is 185,313 rows in µg/l and exactly one in mg/l — and no range filter can catch that, because a plausible mg/l value is also a plausible µg/l value. Check `Enhed` on every row. Oxygen (mg/l), saturation (pct) and total nitrogen (µg/l) are single-valued throughout, which is luck rather than a guarantee.",
      "texts": "c49c66fb649382b4"
@@ -2676,7 +2676,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Sentinels, undeclared. `YIntercept` is `9999999` where the source lacked it, admitted only in a free-text note on the row itself. `GennemsnitsDybde_m` is exactly `99` on 4,332 rows — a real depth in the Skagerrak and a suspicious round number everywhere else, with nothing distinguishing the two. `BundDybde_m` reaches 2300 m at Læsø rende, a Kattegat trench about 50 m deep, and 292.3 m at a station named `Hirtshals 15 m`, where the station's own name refutes the value. `Lysprocent` exceeds 110% of surface light on 21,348 rows and peaks at 58,438. Oxygen saturation reaches",
      "texts": "105b58bc5731b69d"
@@ -2704,7 +2704,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "a `Blandingsprøve` is several bottles at *the same depth*, pooled — not over time and not over depth — so it behaves as a point sample. A `Dybdeintegreret prøve` integrates 0–10 m, 0–25 m or the whole photic zone; 2,265 of them carry a nominal depth of 3 m or less and will enter a surface filter as though they were point measurements. An integral is not a measurement at its midpoint.",
      "texts": "1f4aaa59b926ce76"
@@ -2732,7 +2732,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "And values below the detection limit are to be reported as measured, negatives included — yet there is not one negative value in 1.8 million rows, so either that was never followed or the numbers were cleaned before ODA received them.",
      "texts": "6d9b206ba0a71b41"
@@ -2760,7 +2760,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "`OriginalResultat × KorrektionsFaktor` — verified on 199,999 of 199,999 rows carrying all three",
      "texts": "9244c47a26ffdf77"
@@ -2788,7 +2788,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "against measured chlorophyll. Its 156,974 rows (2.3%) outside 0.5–2.0, to a maximum of 201×, are data and not faults.",
      "texts": "707a87bd916a8d50"
@@ -2816,7 +2816,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "No post-hoc multiplicative factor is described. So the 606 temperature rows with a factor up to 80×, and the 79 salinity rows up to 2346×, are not a documented procedure applied badly — they have no basis in the instruction at all.",
      "texts": "6edf556f6a8866df"
@@ -2845,7 +2845,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "`pip` is unavailable and RAM is ~1 GB, so every script is standard-library only and the viewer loads MapLibre from a CDN. No GDAL, no geopandas. * Nothing here is authenticated. Re-running the fetch scripts reproduces `data/raw/` from scratch; only `data/manual/` is hand-authored.",
      "texts": "3f66abe3b30bdcac"
@@ -2873,7 +2873,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Licensing: the Copenhagen layers are published as open data via opendata.dk; the Miljøstyrelsen layers are public-sector open data. Attribute both if you republish.",
      "texts": "99eef1cf4c769624"
@@ -2901,7 +2901,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Querying it without genuine intent to dig would be a misuse of the register, and the returned data is licensed for that dig, not for republication.",
      "texts": "9b53751e7655072c"
@@ -2929,7 +2929,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Two things the instruction requires that the archive does not deliver. Times are to be reported in UTC (*\"Prøvetagningsdato og tidspunkt i UTC",
      "texts": "ee450ae5470bdfff"
@@ -2957,7 +2957,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "A workaround worth knowing. 99% of `kemi` station-days carry a single clock time, and 123,866 of 155,182 `ctd` station-days (80%) have a matching `kemi` visit. A station-day is effectively one moment, so the clock can be lent from one extract to the other — which is the only route to putting a time on oxygen at depth.",
      "texts": "e192d7f5eb6a807b"
@@ -2985,7 +2985,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "gives the national median concentrations for overflow water",
      "texts": "7cc68699c298c31c"
@@ -3013,7 +3013,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Records use the same six depth classes as the 2012 model so the two compare directly",
      "texts": "1f012e2f1622b3e0"
@@ -3041,7 +3041,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "single-valued across every row of every extract, so neither can be used to filter for protocol compliance — which is the only reason anyone reaches for them.",
      "texts": "39c40c4e3c8c753c"

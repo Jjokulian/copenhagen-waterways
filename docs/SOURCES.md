@@ -52231,6 +52231,2876 @@ Each of these was read out of an external document whose text is pinned by its s
 
 What this site said at a past commit. A quotation of the past is permanently true, so it never goes stale; each is verified against `git show` at that commit, so a misquotation is refused.
 
+<a id="F-57452739ef"></a>
+### As published at `00a157f` in `docs/SOLUTIONS.md`
+
+`F-57452739ef` · **quoted from an earlier version** · 19,665
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/SOLUTIONS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SOLUTIONS.md)
+- **Located by:** `The national pollutant concentrations … only discharges without prior settling` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-17de2ec352"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-17de2ec352` · **quoted from an earlier version** · 51
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `the social frame … not a measurement` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5c8f267a2a"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-5c8f267a2a` · **quoted from an earlier version** · 1.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-04be4087f0"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-04be4087f0` · **quoted from an earlier version** · 1.06
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Nørrebro is settled … depends on the answer` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dea69687b6"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-dea69687b6` · **quoted from an earlier version** · 1.12
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The earlier attempt to match the OSM road network … and the inland ones did not` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d1bacba6f2"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-d1bacba6f2` · **quoted from an earlier version** · 1.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Fetched, with provenance separated rather than pooled … national geodata` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-254ff9ef5f"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-254ff9ef5f` · **quoted from an earlier version** · 5.932
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `The number moved … to *half*` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ff7aedf287"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-ff7aedf287` · **quoted from an earlier version** · 40
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Decomposer microbes build biomass near … starves the next crop.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ca3dcf2fe6"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-ca3dcf2fe6` · **quoted from an earlier version** · 40
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Area of Danish inner waters affected by oxygen depletion … severely depleted in August` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3cd3662ddc"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-3cd3662ddc` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `One figure bearing directly on the settling basins is already published … nor, where present, efficient.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cbfef015df"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-cbfef015df` · **quoted from an earlier version** · 8.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9341c8788f"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-9341c8788f` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `These figures were stale for two days … are the second` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-be34a55e93"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-be34a55e93` · **quoted from an earlier version** · 766
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Quantified against the sewer catchments when this item was written … the ground built after it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-08e62059ca"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-08e62059ca` · **quoted from an earlier version** · 80
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `LOOP catchments show … No term in any published account carries this` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-14066c06f7"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-14066c06f7` · **quoted from an earlier version** · 4,332
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Sentinels, undeclared … oxygen saturation` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-436fd48a44"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-436fd48a44` · **quoted from an earlier version** · 2.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Pigs are landless … that do declare land` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f2e2b1af58"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-f2e2b1af58` · **quoted from an earlier version** · 0.89
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aa48a0993a"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-aa48a0993a` · **quoted from an earlier version** · 22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `counts that gap, and carries a correction worth reading … hold none visited in ten or more distinct years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-09768c1a38"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-09768c1a38` · **quoted from an earlier version** · 610
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Pigs are landless … that do declare land` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-63e716a00f"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-63e716a00f` · **quoted from an earlier version** · 170
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `The binding rule is … derogation lapsed in` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a30c704679"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-a30c704679` · **quoted from an earlier version** · 30
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `each yielding less energy. Freshwater carries … a hundred to five hundred times more` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a974961834"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-a974961834` · **quoted from an earlier version** · 344
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which the city presumably could do in an afternoon … flagged rather than silently` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f0fd4bc492"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-f0fd4bc492` · **quoted from an earlier version** · 100
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `spent thirty-five years and a great deal of money running it … it is not in dispute` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9671fd3016"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-9671fd3016` · **quoted from an earlier version** · 23
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-215a1646dd"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-215a1646dd` · **quoted from an earlier version** · 165
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `A litre of AdBlue is about … g N per litre.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1b8d8a98d6"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-1b8d8a98d6` · **quoted from an earlier version** · 3.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `One place is … anybody argues about.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e781b13e7c"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-e781b13e7c` · **quoted from an earlier version** · 0.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `That is the expected answer: full moonlight is … about a millionth` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9497333aea"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-9497333aea` · **quoted from an earlier version** · 27,934
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-47fb2bfb91"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-47fb2bfb91` · **quoted from an earlier version** · 0.50
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2f9d16037f"></a>
+### As published at `00a157f` in `docs/SOLUTIONS.md`
+
+`F-2f9d16037f` · **quoted from an earlier version** · 4.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/SOLUTIONS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SOLUTIONS.md)
+- **Located by:** `So after however many years of the policy … it is a statement about scale` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-43ce7dc7aa"></a>
+### As published at `00a157f` in `docs/POLITICS.md`
+
+`F-43ce7dc7aa` · **quoted from an earlier version** · 1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/POLITICS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/POLITICS.md)
+- **Located by:** `That cuts both ways and it is worth being blunt … none of them claims that it is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3510231805"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-3510231805` · **quoted from an earlier version** · 182
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0a7b643ebb"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-0a7b643ebb` · **quoted from an earlier version** · 123
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-20a8a2da87"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-20a8a2da87` · **quoted from an earlier version** · 9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `The only free current field covering Danish waters … The Danish straits are narrower than that` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-407b33bb39"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-407b33bb39` · **quoted from an earlier version** · 12.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d70797e852"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-d70797e852` · **quoted from an earlier version** · 0.051
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The earlier attempt to match the OSM road network … and the inland ones did not` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f32b84ebe1"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-f32b84ebe1` · **quoted from an earlier version** · 0.45
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `On beef the two are indistinguishable … already below any threshold that binds` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-feeaadb4d5"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-feeaadb4d5` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `each yielding less energy. Freshwater carries … a hundred to five hundred times more` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-612dc9f3ec"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-612dc9f3ec` · **quoted from an earlier version** · 135
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-05e6585f07"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-05e6585f07` · **quoted from an earlier version** · 32
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `This table is the reason the page is organised the way it is … which is what extensive cattle on owned land is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7d764ed0da"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-7d764ed0da` · **quoted from an earlier version** · 190
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-822964083f"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-822964083f` · **quoted from an earlier version** · 5.68
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The comparison can be made from Miljøstyrelsen's own numbers … g C per g COD` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cf62f799d5"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-cf62f799d5` · **quoted from an earlier version** · 581
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Pigs are landless … that do declare land` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-212b5abff9"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-212b5abff9` · **quoted from an earlier version** · 1.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-00a199d28d"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-00a199d28d` · **quoted from an earlier version** · 50
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `spent thirty-five years and a great deal of money running it … it is not in dispute` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-691c4c7409"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-691c4c7409` · **quoted from an earlier version** · 23
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Ours, in a single day … near the end of them` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4a1ef5bb76"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-4a1ef5bb76` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Aarhus Bugt registers oxygen depletion every year … extreme case in this set` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-94fc70c373"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-94fc70c373` · **quoted from an earlier version** · 1.21
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-116406bb71"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-116406bb71` · **quoted from an earlier version** · 8.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The highest-density holdings in the register are extreme … against a single declared` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b8b7ab769f"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-b8b7ab769f` · **quoted from an earlier version** · 34
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `A dairy holding whose largest crop is grass certainly has … The direction is robust and the magnitudes are not` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1158f59e22"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-1158f59e22` · **quoted from an earlier version** · 8.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Quantified against the sewer catchments when this item was written … the ground built after it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4df9a80c4a"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-4df9a80c4a` · **quoted from an earlier version** · 1,990
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `The ODA topic tree holds … Three one-line entries` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-71832f98ad"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-71832f98ad` · **quoted from an earlier version** · 50.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0e1c353d32"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-0e1c353d32` · **quoted from an earlier version** · 1.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0650e3db8e"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-0650e3db8e` · **quoted from an earlier version** · 9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The one-off payment is not a like-for-like substitute … reverses a gap of that size` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c97e073737"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-c97e073737` · **quoted from an earlier version** · 1.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-802385db55"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-802385db55` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `This table is the reason the page is organised the way it is … which is what extensive cattle on owned land is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-be709f3d57"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-be709f3d57` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-460e524ef6"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-460e524ef6` · **quoted from an earlier version** · 45
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Two omissions set the scale of the gap … implies internal recycling supplies most of it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd442470a4"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-bd442470a4` · **quoted from an earlier version** · 3.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-12680dd2ad"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-12680dd2ad` · **quoted from an earlier version** · 13
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6a142b8522"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-6a142b8522` · **quoted from an earlier version** · 1.56
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Before the adjustment that was … the alignment never saw` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6cdd07bbc8"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-6cdd07bbc8` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `The Leptosol lesson: a soil under … has almost no capacity to absorb a shock` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-32d173d82d"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-32d173d82d` · **quoted from an earlier version** · 50.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The surface-route figure has crossed a line that mattered rhetorically … the argument should not lean on it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-002366c04c"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-002366c04c` · **quoted from an earlier version** · 80
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Decomposer microbes build biomass near … starves the next crop.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a5cf7bc335"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-a5cf7bc335` · **quoted from an earlier version** · 0.64
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-58c0ac2c52"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-58c0ac2c52` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `toxicants and metals, which remove grazers and filter feeders … the light from whatever might recolonise` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b079da3f70"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-b079da3f70` · **quoted from an earlier version** · 200
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-31d5fb62bb"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-31d5fb62bb` · **quoted from an earlier version** · 28
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2b5b87f7dd"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-2b5b87f7dd` · **quoted from an earlier version** · 65.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3e377e6603"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-3e377e6603` · **quoted from an earlier version** · 30
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `What replaced it is four separate requirements … from manure and other organic fertiliser` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-136753e7c3"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-136753e7c3` · **quoted from an earlier version** · 50
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Sentinels, undeclared … oxygen saturation` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b54789fe7e"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-b54789fe7e` · **quoted from an earlier version** · 31
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `That document said the resuspension season … the error is worth keeping visible` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3c6b5dcee0"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-3c6b5dcee0` · **quoted from an earlier version** · 68
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `An early version of this analysis found … it fits the other findings` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cfca9d85da"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-cfca9d85da` · **quoted from an earlier version** · 6,258
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `counts that gap, and carries a correction worth reading … hold none visited in ten or more distinct years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dad5cb4690"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-dad5cb4690` · **quoted from an earlier version** · 1.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cb328b2e3c"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-cb328b2e3c` · **quoted from an earlier version** · 1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `CMEMS publishes a Baltic regional … the one to re-test first` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-356798e4a8"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-356798e4a8` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd482e3aaf"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-bd482e3aaf` · **quoted from an earlier version** · 0.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `That is the expected answer: full moonlight is … about a millionth` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d1368bf61e"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-d1368bf61e` · **quoted from an earlier version** · 147
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `One fetch unblocks nine … no file on disk` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8c48736296"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-8c48736296` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f6852500cc"></a>
+### As published at `00a157f` in `docs/POLITICS.md`
+
+`F-f6852500cc` · **quoted from an earlier version** · 2.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/POLITICS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/POLITICS.md)
+- **Located by:** `The collection is skewed toward the government … parties that voted against` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7589aa271c"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-7589aa271c` · **quoted from an earlier version** · 3.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `The severity ranking and the attention ranking are different … on twenty years of data` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-502df08ca9"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-502df08ca9` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Nobody has published where each Danish area sits in that window … assumes the answer is the same everywhere` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a4286f9161"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-a4286f9161` · **quoted from an earlier version** · 2.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The first thing to get right, because almost every summary gets it wrong … what was checked here is the present tense of it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-178c15f552"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-178c15f552` · **quoted from an earlier version** · 1,327
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `Denmark is unusually well placed to do this … a baseline almost nowhere else has` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dcea923264"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-dcea923264` · **quoted from an earlier version** · 47
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Fetched, with provenance separated rather than pooled … national geodata` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-44d4413af7"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-44d4413af7` · **quoted from an earlier version** · 1,392
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `swept-area ratio, figshare … stations. Not fetched.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a17d20fea6"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-a17d20fea6` · **quoted from an earlier version** · 72
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ca470bf05"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-9ca470bf05` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The ratio above understates route B … only the one that switches off in autumn is measured` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ee236ca78c"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-ee236ca78c` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The testable-now set is … cannot see biology or chemistry` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f529392747"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-f529392747` · **quoted from an earlier version** · 110
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Above that line three things happen at once … on the far side of the step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2b5e40449"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-a2b5e40449` · **quoted from an earlier version** · 2.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-40b20ba569"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-40b20ba569` · **quoted from an earlier version** · 230
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `The binding rule is … derogation lapsed in` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-fc289ca7e5"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-fc289ca7e5` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Sediment biocide concentrations. Sediment is measured at … points in the national water-plan register.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1f76e6afde"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-1f76e6afde` · **quoted from an earlier version** · 1.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-04880aedc0"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-04880aedc0` · **quoted from an earlier version** · 883
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which was not known … are not negligible in a fjord` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e3abd219df"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-e3abd219df` · **quoted from an earlier version** · 0.36
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `On beef the two are indistinguishable … already below any threshold that binds` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0a5926f8bf"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-0a5926f8bf` · **quoted from an earlier version** · 2.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `So the choice being fought over is a real choice … is fixed by what grows on the farm` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1f178ce28a"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-1f178ce28a` · **quoted from an earlier version** · 195
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-06e78f1740"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-06e78f1740` · **quoted from an earlier version** · 193
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4ceffbaddc"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-4ceffbaddc` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The testable-now set is … cannot see biology or chemistry` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-01fbc16417"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-01fbc16417` · **quoted from an earlier version** · 67.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1b8e255def"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-1b8e255def` · **quoted from an earlier version** · 1.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The first thing to get right, because almost every summary gets it wrong … what was checked here is the present tense of it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d3d06f0d94"></a>
+### As published at `00a157f` in `docs/SOLUTIONS.md`
+
+`F-d3d06f0d94` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/SOLUTIONS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SOLUTIONS.md)
+- **Located by:** `The national pollutant concentrations … only discharges without prior settling` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-eda68b75ef"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-eda68b75ef` · **quoted from an earlier version** · 0.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3b566efe58"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-3b566efe58` · **quoted from an earlier version** · 83.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `This page said … the full count says otherwise` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1a32eac0a8"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-1a32eac0a8` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `bottom oxygen and sulphide, existing stations … years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f8764696dd"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-f8764696dd` · **quoted from an earlier version** · 24
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `LOOP catchments show … No term in any published account carries this` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9d05611d66"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-9d05611d66` · **quoted from an earlier version** · 22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Aarhus Bugt registers oxygen depletion every year … extreme case in this set` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0f95472e55"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-0f95472e55` · **quoted from an earlier version** · 8.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `comes out mid-range at … weak evidence either way` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd9c2d417b"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-bd9c2d417b` · **quoted from an earlier version** · 90
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `LOOP catchments show … No term in any published account carries this` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-23f51bf30e"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-23f51bf30e` · **quoted from an earlier version** · 100
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-36ef9fd397"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-36ef9fd397` · **quoted from an earlier version** · 100
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4fda0ee921"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-4fda0ee921` · **quoted from an earlier version** · 0.375
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The comparison can be made from Miljøstyrelsen's own numbers … g C per g COD` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-24bb1652c2"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-24bb1652c2` · **quoted from an earlier version** · 665
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4a3df87b4c"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-4a3df87b4c` · **quoted from an earlier version** · 1.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-42c41a7596"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-42c41a7596` · **quoted from an earlier version** · 15.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8f42920c00"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-8f42920c00` · **quoted from an earlier version** · 1.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0365dcb0d4"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-0365dcb0d4` · **quoted from an earlier version** · 1.31
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-fbab421ebe"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-fbab421ebe` · **quoted from an earlier version** · 65.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Quantified against the sewer catchments when this item was written … the ground built after it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-067b618675"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-067b618675` · **quoted from an earlier version** · 53.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `The number moved … to *half*` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5016564861"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-5016564861` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `suppressiveness is transferable - mix … of a suppressive soil into a conducive one` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2cdccce5fa"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-2cdccce5fa` · **quoted from an earlier version** · 23.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `swept-area ratio, figshare … stations. Not fetched.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7b18fe1abb"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-7b18fe1abb` · **quoted from an earlier version** · 0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-07f46ebcfb"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-07f46ebcfb` · **quoted from an earlier version** · 17,836
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which this project had once recorded as absent … instant or says why there is none` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4d242c950f"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-4d242c950f` · **quoted from an earlier version** · 0.43
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1fea09d61a"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-1fea09d61a` · **quoted from an earlier version** · 354
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `A litre of AdBlue is about … g N per litre.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3ba4240672"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-3ba4240672` · **quoted from an earlier version** · 0.81
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-725453582e"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-725453582e` · **quoted from an earlier version** · 1.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-09ac4f7aea"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-09ac4f7aea` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Decomposer microbes build biomass near … starves the next crop.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-28a77f075a"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-28a77f075a` · **quoted from an earlier version** · 5.847
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `The number moved … to *half*` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-510363fc3e"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-510363fc3e` · **quoted from an earlier version** · 944
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d6456b1caf"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-d6456b1caf` · **quoted from an earlier version** · 5.85
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-629d2ae439"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-629d2ae439` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `toxicants and metals, which remove grazers and filter feeders … the light from whatever might recolonise` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5231fdcfb2"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-5231fdcfb2` · **quoted from an earlier version** · 1.21
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Before the adjustment that was … the alignment never saw` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6191134ff7"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-6191134ff7` · **quoted from an earlier version** · 22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-620f48484c"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-620f48484c` · **quoted from an earlier version** · 344
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which carries a construction year per building … without a hydraulic model` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b5645212c3"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-b5645212c3` · **quoted from an earlier version** · 14.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Quantified against the sewer catchments when this item was written … the ground built after it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-18846e2ce8"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-18846e2ce8` · **quoted from an earlier version** · 46.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `A litre of AdBlue is about … g N per litre.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-127921e7bf"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-127921e7bf` · **quoted from an earlier version** · 6.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `of the Danish herd is in Jutland … carrying the highest mandatory percentage` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-491ff9067e"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-491ff9067e` · **quoted from an earlier version** · 2,700
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `each yielding less energy. Freshwater carries … a hundred to five hundred times more` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b588c626af"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-b588c626af` · **quoted from an earlier version** · 5.93
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aa0f43b053"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-aa0f43b053` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Fetched, with provenance separated rather than pooled … national geodata` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8ea6edb0e1"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-8ea6edb0e1` · **quoted from an earlier version** · 20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `One figure bearing directly on the settling basins is already published … nor, where present, efficient.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e298d5c639"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-e298d5c639` · **quoted from an earlier version** · 55
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `spent thirty-five years and a great deal of money running it … it is not in dispute` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bf72d60964"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-bf72d60964` · **quoted from an earlier version** · 27
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Their known unknowns are stated openly … negative values in dry years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aa1f0dc13a"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-aa1f0dc13a` · **quoted from an earlier version** · 3.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `So the choice being fought over is a real choice … is fixed by what grows on the farm` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-eda7820282"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-eda7820282` · **quoted from an earlier version** · 27,934
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which this project had once recorded as absent … instant or says why there is none` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b68b2b36bc"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-b68b2b36bc` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `reported that regenerating would … which the regeneration replaced` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-29f693e9d1"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-29f693e9d1` · **quoted from an earlier version** · 2.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e0df2375a6"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-e0df2375a6` · **quoted from an earlier version** · 50.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `The number moved … to *half*` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-65ae44d2c2"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-65ae44d2c2` · **quoted from an earlier version** · 20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Area of Danish inner waters affected by oxygen depletion … severely depleted in August` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e83a10de03"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-e83a10de03` · **quoted from an earlier version** · 7.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aa12686e87"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-aa12686e87` · **quoted from an earlier version** · 0.86
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d796cc7f8a"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-d796cc7f8a` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5ae0497bce"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-5ae0497bce` · **quoted from an earlier version** · 1.02
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Nørrebro is settled … depends on the answer` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a71fd1fce8"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-a71fd1fce8` · **quoted from an earlier version** · 4.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Quantified against the sewer catchments when this item was written … the ground built after it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8f472445be"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-8f472445be` · **quoted from an earlier version** · 1,415
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `swept-area ratio, figshare … stations. Not fetched.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-be552b4187"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-be552b4187` · **quoted from an earlier version** · 0.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0814518758"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-0814518758` · **quoted from an earlier version** · 123
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `there is a column … one field relabelled` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d5e8412c77"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-d5e8412c77` · **quoted from an earlier version** · 1.08
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1e297a038f"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-1e297a038f` · **quoted from an earlier version** · 2.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4b0ca1653d"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-4b0ca1653d` · **quoted from an earlier version** · 1.52
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b2d0689674"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-b2d0689674` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `These are not in conflict. … whether it is dead` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9097ff60f1"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-9097ff60f1` · **quoted from an earlier version** · 0.05
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `swept-area ratio, figshare … stations. Not fetched.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8a2bab2ff1"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-8a2bab2ff1` · **quoted from an earlier version** · 69.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `the social frame … not a measurement` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-797cea801c"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-797cea801c` · **quoted from an earlier version** · 8.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `This table is the reason the page is organised the way it is … which is what extensive cattle on owned land is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-143b0f1777"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-143b0f1777` · **quoted from an earlier version** · 1.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `An earlier version of this page, written before the clock was sorted out … longer holds` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e7a9d51961"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-e7a9d51961` · **quoted from an earlier version** · 8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `LOOP catchments show … No term in any published account carries this` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-63e6b13b8b"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-63e6b13b8b` · **quoted from an earlier version** · 1.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-36ac3737cd"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-36ac3737cd` · **quoted from an earlier version** · 24
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `there is a column … one field relabelled` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a97b96ef16"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-a97b96ef16` · **quoted from an earlier version** · 217
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-678a62452a"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-678a62452a` · **quoted from an earlier version** · 3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `toxicants and metals, which remove grazers and filter feeders … the light from whatever might recolonise` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c702778f41"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-c702778f41` · **quoted from an earlier version** · 8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Decomposer microbes build biomass near … starves the next crop.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a5d47120ed"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-a5d47120ed` · **quoted from an earlier version** · 1,392
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `called EU trawling effort … stations` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-be03d93d24"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-be03d93d24` · **quoted from an earlier version** · 70
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `It does establish that the number is not what it is presented as … The second is not a measurement of anything` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0d0bff37bc"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-0d0bff37bc` · **quoted from an earlier version** · 344
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Quantified against the sewer catchments when this item was written … the ground built after it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dba2ac86fa"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-dba2ac86fa` · **quoted from an earlier version** · 9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `drawn down inside a dense bloom, where pH can rise above … High` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5cc6030cce"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-5cc6030cce` · **quoted from an earlier version** · 800
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Our own pipeline still destroys at roughly … which the machine can hold` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c349c3e5ca"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-c349c3e5ca` · **quoted from an earlier version** · 0.685
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which was not known … are not negligible in a fjord` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d73b0d6d91"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-d73b0d6d91` · **quoted from an earlier version** · 175
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Above that line three things happen at once … on the far side of the step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c353ee65e1"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-c353ee65e1` · **quoted from an earlier version** · 8.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3924bcfa5e"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-3924bcfa5e` · **quoted from an earlier version** · 72
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b3119c8fac"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-b3119c8fac` · **quoted from an earlier version** · 0.20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The profile, stated as a profile … last filed accounts` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d6cd1ae2dc"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-d6cd1ae2dc` · **quoted from an earlier version** · 47
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Area of Danish inner waters affected by oxygen depletion … severely depleted in August` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5005cd4e83"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-5005cd4e83` · **quoted from an earlier version** · 62,069
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d032e21132"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-d032e21132` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The ratio above understates route B … only the one that switches off in autumn is measured` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-548594d929"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-548594d929` · **quoted from an earlier version** · 1.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `So the choice being fought over is a real choice … is fixed by what grows on the farm` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4aa892945c"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-4aa892945c` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `No national figure exists for how much leaves the system … the reporting unit is nitrogen` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3caeeb7e93"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-3caeeb7e93` · **quoted from an earlier version** · 11
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-148efbea4a"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-148efbea4a` · **quoted from an earlier version** · 34.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d4de02059e"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-d4de02059e` · **quoted from an earlier version** · 1.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** ``Prøvetager` blank on … M-row sample)` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-caf73f33e2"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-caf73f33e2` · **quoted from an earlier version** · 11
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `The floor is the eelgrass requirement … of surface irradiance.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3b4135b23c"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-3b4135b23c` · **quoted from an earlier version** · 1.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9c196c6ccb"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-9c196c6ccb` · **quoted from an earlier version** · 2300
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Sentinels, undeclared … oxygen saturation` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-310b03352c"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-310b03352c` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f7c4272eed"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-f7c4272eed` · **quoted from an earlier version** · 7,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Area of Danish inner waters affected by oxygen depletion … severely depleted in August` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9f7ca9edd5"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-9f7ca9edd5` · **quoted from an earlier version** · 35
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `LOOP catchments show … No term in any published account carries this` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5a7b28a81a"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-5a7b28a81a` · **quoted from an earlier version** · 2.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `This does not weaken the case … the residence time is the measured part` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d569a03f01"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-d569a03f01` · **quoted from an earlier version** · 53.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-edc8b56627"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-edc8b56627` · **quoted from an earlier version** · 10.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Above that line three things happen at once … on the far side of the step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-be33c5a85a"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-be33c5a85a` · **quoted from an earlier version** · 1.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e40c66aa27"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-e40c66aa27` · **quoted from an earlier version** · 24
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `An early version of this analysis found … it fits the other findings` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3b990cad3f"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-3b990cad3f` · **quoted from an earlier version** · 1.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab83990606"></a>
+### As published at `00a157f` in `docs/SOLUTIONS.md`
+
+`F-ab83990606` · **quoted from an earlier version** · 1.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/SOLUTIONS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SOLUTIONS.md)
+- **Located by:** `So after however many years of the policy … it is a statement about scale` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9f3ec8ed86"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-9f3ec8ed86` · **quoted from an earlier version** · 9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `drawn down far enough to push pH above … which is the carbon entry` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-596e7b9e06"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-596e7b9e06` · **quoted from an earlier version** · 37
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Quantified against the sewer catchments when this item was written … the ground built after it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ffafe8b02a"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-ffafe8b02a` · **quoted from an earlier version** · 406,192
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Pigs are landless … that do declare land` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-73f5cea0ed"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-73f5cea0ed` · **quoted from an earlier version** · 26
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `And the cattle derogation is gone … has missed the largest single step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dfb646be94"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-dfb646be94` · **quoted from an earlier version** · 1,805,827
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `One fetch unblocks nine … no file on disk` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b1f72e7f87"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-b1f72e7f87` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Decomposer microbes build biomass near … starves the next crop.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2fe30ea921"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-2fe30ea921` · **quoted from an earlier version** · 156,971
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `One fetch unblocks nine … no file on disk` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-89783a76b8"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-89783a76b8` · **quoted from an earlier version** · 16.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8515a5efea"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-8515a5efea` · **quoted from an earlier version** · 1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `suppressiveness is transferable - mix … of a suppressive soil into a conducive one` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-429d38c88d"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-429d38c88d` · **quoted from an earlier version** · 11
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `is a resource with a hard requirement … of surface irradiance for eelgrass` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5d6150782c"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-5d6150782c` · **quoted from an earlier version** · 148
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `This table is the reason the page is organised the way it is … which is what extensive cattle on owned land is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d9c8e8bd32"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-d9c8e8bd32` · **quoted from an earlier version** · 3,700
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Area of Danish inner waters affected by oxygen depletion … severely depleted in August` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-08289ef870"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-08289ef870` · **quoted from an earlier version** · 182
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `version of this page said … counted together` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dd5bdbb70a"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-dd5bdbb70a` · **quoted from an earlier version** · 14
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `is a resource with a hard requirement … of surface irradiance for eelgrass` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c5683c5b7d"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-c5683c5b7d` · **quoted from an earlier version** · 1.31
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Before the adjustment that was … the alignment never saw` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ed88a8cb50"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-ed88a8cb50` · **quoted from an earlier version** · 20,402
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `each with a position, an annual volume … no map of the` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-51e492988e"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-51e492988e` · **quoted from an earlier version** · 129,913
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which this project had once recorded as absent … instant or says why there is none` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7f0ccc8800"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-7f0ccc8800` · **quoted from an earlier version** · 66
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `there is a column … one field relabelled` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd69d97f95"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-bd69d97f95` · **quoted from an earlier version** · 230
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `And the cattle derogation is gone … has missed the largest single step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aa95863635"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-aa95863635` · **quoted from an earlier version** · 9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5f96ffe71a"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-5f96ffe71a` · **quoted from an earlier version** · 1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `bottom oxygen and sulphide, existing stations … years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-09f977fb0d"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-09f977fb0d` · **quoted from an earlier version** · 24
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `is not a picture of Danish farming under … a floor on the fragility of the whole` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-43c6195e99"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-43c6195e99` · **quoted from an earlier version** · 1.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The first thing to get right, because almost every summary gets it wrong … what was checked here is the present tense of it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4d9f42a7c7"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-4d9f42a7c7` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `The severity ranking and the attention ranking are different … on twenty years of data` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-01e789f963"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-01e789f963` · **quoted from an earlier version** · 0.37
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `of the Danish herd is in Jutland … carrying the highest mandatory percentage` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1ada3d9329"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-1ada3d9329` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Our own pipeline still destroys at roughly … which the machine can hold` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a468f0060c"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-a468f0060c` · **quoted from an earlier version** · 38
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-52c9611390"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-52c9611390` · **quoted from an earlier version** · 135
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Their known unknowns are stated openly … negative values in dry years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4752a235fc"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-4752a235fc` · **quoted from an earlier version** · 256
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Sediment biocide concentrations. Sediment is measured at … points in the national water-plan register.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0d40ae78d5"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-0d40ae78d5` · **quoted from an earlier version** · 0.046
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The earlier attempt to match the OSM road network … and the inland ones did not` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62a3917947"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-62a3917947` · **quoted from an earlier version** · 1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The ratio above understates route B … only the one that switches off in autumn is measured` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0269081a46"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-0269081a46` · **quoted from an earlier version** · 0.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f70a80138c"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-f70a80138c` · **quoted from an earlier version** · 85.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-71f60ca6d3"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-71f60ca6d3` · **quoted from an earlier version** · 3,900
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Our own pipeline still destroys at roughly … which the machine can hold` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6c08a3c5d5"></a>
+### As published at `00a157f` in `docs/PLACES.md`
+
+`F-6c08a3c5d5` · **quoted from an earlier version** · 46
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
+- **Located by:** `Denmark is unusually well placed to do this … a baseline almost nowhere else has` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-343978237f"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-343978237f` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Their known unknowns are stated openly … negative values in dry years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bf4f9739e6"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-bf4f9739e6` · **quoted from an earlier version** · 76
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4a7f424be0"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-4a7f424be0` · **quoted from an earlier version** · 1.56
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b2ee6fdf43"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-b2ee6fdf43` · **quoted from an earlier version** · 129,913
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7d93642577"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-7d93642577` · **quoted from an earlier version** · 59
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The alternative that lets a holding buy its way out costs a livestock holding … than an arable one` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a53b810721"></a>
+### As published at `00a157f` in `docs/SOLUTIONS.md`
+
+`F-a53b810721` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/SOLUTIONS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SOLUTIONS.md)
+- **Located by:** `The national pollutant concentrations … only discharges without prior settling` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-386011298b"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-386011298b` · **quoted from an earlier version** · 23.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `called EU trawling effort … stations` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8e04236ba3"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-8e04236ba3` · **quoted from an earlier version** · 65
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Two omissions set the scale of the gap … implies internal recycling supplies most of it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2c5f8f6741"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-2c5f8f6741` · **quoted from an earlier version** · 14
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `The floor is the eelgrass requirement … of surface irradiance.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d1ea9579f2"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-d1ea9579f2` · **quoted from an earlier version** · 100,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `That is the expected answer: full moonlight is … about a millionth` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5d1f8bbb86"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-5d1f8bbb86` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `The one-off payment is not a like-for-like substitute … reverses a gap of that size` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0f6c123160"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-0f6c123160` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `toxicants and metals, which remove grazers and filter feeders … the light from whatever might recolonise` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c59f03f6fc"></a>
+### As published at `00a157f` in `docs/CURRENTS.md`
+
+`F-c59f03f6fc` · **quoted from an earlier version** · 1.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
+- **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cf653e60cd"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-cf653e60cd` · **quoted from an earlier version** · 30
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Their known unknowns are stated openly … negative values in dry years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-22b16e123b"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-22b16e123b` · **quoted from an earlier version** · 3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Fetched, with provenance separated rather than pooled … national geodata` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9bb3305693"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-9bb3305693` · **quoted from an earlier version** · 90.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1975a461f5"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-1975a461f5` · **quoted from an earlier version** · 1,415
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `called EU trawling effort … stations` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6929581234"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-6929581234` · **quoted from an earlier version** · 70
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The consequence for the … leave routes B and C running` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4cd9c2c37a"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-4cd9c2c37a` · **quoted from an earlier version** · 2.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** `Warmer water holds less oxygen and respires faster … saturation per °C` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6dbd62492b"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-6dbd62492b` · **quoted from an earlier version** · 69.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `It does establish that the number is not what it is presented as … The second is not a measurement of anything` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2833111e4d"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-2833111e4d` · **quoted from an earlier version** · 3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The ratio above understates route B … only the one that switches off in autumn is measured` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9cf0ef51cb"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-9cf0ef51cb` · **quoted from an earlier version** · 22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `So the choice being fought over is a real choice … is fixed by what grows on the farm` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-329c68a870"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-329c68a870` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `All three series exist and are published … only that two published series be plotted against each other` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3b44305a3a"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-3b44305a3a` · **quoted from an earlier version** · 1,126
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `One fetch unblocks nine … no file on disk` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0bfb8ab8f8"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-0bfb8ab8f8` · **quoted from an earlier version** · 56
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d20a616afe"></a>
+### As published at `00a157f` in `docs/POLITICS.md`
+
+`F-d20a616afe` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/POLITICS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/POLITICS.md)
+- **Located by:** `That cuts both ways and it is worth being blunt … none of them claims that it is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-06e2129d8e"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-06e2129d8e` · **quoted from an earlier version** · 17
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Three environments … carrying a named instrument are up to` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-34ff485d39"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-34ff485d39` · **quoted from an earlier version** · 14.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `Above that line three things happen at once … on the far side of the step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7ccad751a5"></a>
+### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
+
+`F-7ccad751a5` · **quoted from an earlier version** · 90,972
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
+- **Located by:** `Sentinels, undeclared … oxygen saturation` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ca6f395002"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-ca6f395002` · **quoted from an earlier version** · 896
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Our own pipeline still destroys at roughly … which the machine can hold` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0bc81fa430"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-0bc81fa430` · **quoted from an earlier version** · 85.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2f73196abc"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-2f73196abc` · **quoted from an earlier version** · 5.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which was not known … are not negligible in a fjord` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-46ed87d1af"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-46ed87d1af` · **quoted from an earlier version** · 41
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b0a6350909"></a>
+### As published at `00a157f` in `docs/POLITICS.md`
+
+`F-b0a6350909` · **quoted from an earlier version** · 7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/POLITICS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/POLITICS.md)
+- **Located by:** `That cuts both ways and it is worth being blunt … none of them claims that it is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-68a118e653"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-68a118e653` · **quoted from an earlier version** · 170
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `And the cattle derogation is gone … has missed the largest single step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f7115fc116"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-f7115fc116` · **quoted from an earlier version** · 0.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `The two pathways are the same size. Only one of them is counted … of a national nitrogen total` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d26123a9de"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-d26123a9de` · **quoted from an earlier version** · 82.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d569a51a3f"></a>
+### As published at `00a157f` in `docs/HYPOTHESES.md`
+
+`F-d569a51a3f` · **quoted from an earlier version** · 87
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/HYPOTHESES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/HYPOTHESES.md)
+- **Located by:** ``Prøvetager` blank on … M-row sample)` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62a5a6dd81"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-62a5a6dd81` · **quoted from an earlier version** · 0.45
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `This table is the reason the page is organised the way it is … which is what extensive cattle on owned land is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bdccf3f877"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-bdccf3f877` · **quoted from an earlier version** · 97
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `A dairy holding whose largest crop is grass certainly has … The direction is robust and the magnitudes are not` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-117d00eb14"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-117d00eb14` · **quoted from an earlier version** · 53.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `Fetched, with provenance separated rather than pooled … national geodata` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b52d9b28ad"></a>
+### As published at `00a157f` in `docs/PLAN.md`
+
+`F-b52d9b28ad` · **quoted from an earlier version** · 3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/PLAN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLAN.md)
+- **Located by:** `The testable-now set is … cannot see biology or chemistry` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1b3853e014"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-1b3853e014` · **quoted from an earlier version** · 25,988
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `which was not known … are not negligible in a fjord` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8d0be497d9"></a>
+### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
+
+`F-8d0be497d9` · **quoted from an earlier version** · 53.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
+- **Located by:** `The surface-route figure has crossed a line that mattered rhetorically … the argument should not lean on it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c7a8e08807"></a>
+### As published at `00a157f` in `docs/INCIDENCE.md`
+
+`F-c7a8e08807` · **quoted from an earlier version** · 80
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
+- **Located by:** `What replaced it is four separate requirements … from manure and other organic fertiliser` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a0b21cde9b"></a>
+### As published at `00a157f` in `docs/CAUSATION.md`
+
+`F-a0b21cde9b` · **quoted from an earlier version** · 11,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
+- **Located by:** `Area of Danish inner waters affected by oxygen depletion … severely depleted in August` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-013bf53f48"></a>
 ### As published at `0138743` in `docs/hypodrafts/Z8.md`
 

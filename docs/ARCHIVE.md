@@ -371,6 +371,338 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Not replaced** — nothing that could be justified was found to say in its place.
 
+## CAUSATION.md
+
+<a id="C-PC-CA-OLD-ASYM"></a>
+### Every term that would shift blame away from a countable source has no row.
+
+`C-PC-CA-OLD-ASYM` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-ASYM">And it establishes an asymmetry in what gets counted. Every term that would shift blame away from a countable source — deposition, regeneration, groundwater, legacy, temperature, state — is precisely a term with no row. That may be coincidence of what is easy to measure. It is worth noticing that the easy measurements and the politically actionable ones are the same set</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-ASYM "What this claim rests on")</sup>
+
+**Why it was retired:** Deposition has a row in this project's register; the absence is from the apportionment quoted.
+
+**Replaced by:** [`C-PC-CA-ASYMMETRY`](CLAIMS.md#C-PC-CA-ASYMMETRY) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-CAVEAT"></a>
+### The last year's extent was roughly a third of the year before, so extent is governed by the year's physics.
+
+`C-PC-CA-OLD-CAVEAT` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-CAVEAT">The series is NOT monotonically worsening. Interannual variance is very large - 2025 was roughly a third of 2024 by area. That variance is itself the finding: extent is governed by the physics of the individual year, not by the slow trend in load. 2025 is the reason to be careful with this argument, and also the reason it points where it does. A system whose worst outcome swings threefold between consecutive years, under a load that barely moves between them, is a system governed by the physics and the state of the individual year — wind, stratification, temperature, what the bed is made of — with load as a slow background term. Note also that the load series is *flow-normalised*: the weather signal is deliberately removed from the input and is the dominant signal in the output</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-CAVEAT "What this claim rests on")</sup>
+
+**Why it was retired:** The last year's area has no pinned source; DCE's account of wind and temperature is now cited instead.
+
+**Replaced by:** [`C-PC-CA-WEATHER`](CLAIMS.md#C-PC-CA-WEATHER) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-CHAIN"></a>
+### Fedtemøg sits at the end of a chain from nitrogen through oxygen depletion and the loss of higher life.
+
+`C-PC-CA-OLD-CHAIN` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-CHAIN">Nitrogen → oxygen depletion | no coefficient | NOT COMPUTED | Nitrogen is one of at least six oxygen sinks. There is no potency term: a kilogram in February into a mixed column counts the same as a kilogram in July under a pycnocline. No ventilation term, no state variable. | | Oxygen depletion → loss of higher life | no coefficient | NOT COMPUTED | Hypoxia is one route among several — toxicants, trawling, turbidity, sulphide exposure, physical loss of habitat. The soft-bottom survey runs from the start of March to the end of May, so the autumn kill is never observed, only its aftermath. | | Loss of higher life → fedtemøg on a shore | no coefficient | NOT MEASURED AT ALL | Fedtemøg has no national monitoring — not extent, not biomass, not duration. And it needs retention, stranding wind and a shore, which are properties of the receiving bay, not of the source</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-CHAIN "What this claim rests on")</sup>
+
+**Why it was retired:** Fedtemøg is algal growth, not the end of an oxygen-and-die-off chain, so the rows described the wrong chain.
+
+**Replaced by:** [`C-PC-CA-L3`](CLAIMS.md#C-PC-CA-L3), [`C-PC-CA-L4`](CLAIMS.md#C-PC-CA-L4), [`C-PC-CA-EVERYLINK`](CLAIMS.md#C-PC-CA-EVERYLINK) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-COMPUT"></a>
+### State-dependence is the mechanism, and this project's own computations support it.
+
+`C-PC-CA-OLD-COMPUT` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-COMPUT">State-dependence, stated as the mechanism The third explanation deserves its own statement, because it is the one this project's own computations support</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-COMPUT "What this claim rests on")</sup>
+
+**Why it was retired:** No computation of this project tests state-dependence; it is a set of hypotheses in the register.
+
+**Replaced by:** [`C-PC-CA-SUBSIDY`](CLAIMS.md#C-PC-CA-SUBSIDY), [`C-PC-CA-FSTATE`](CLAIMS.md#C-PC-CA-FSTATE) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-CONSEQ"></a>
+### Removing nitrogen entirely would close one route to fedtemøg and leave two running.
+
+`C-PC-CA-OLD-CONSEQ` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-CONSEQ">The consequence for the [70](SOURCES.md#F-6929581234)%. A necessary condition for one branch is not a cause of the outcome. Removing nitrogen entirely would close route A and leave routes B and C running</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-CONSEQ "What this claim rests on")</sup>
+
+**Why it was retired:** For fedtemøg, which is grown, nitrogen is on the only route; the argument holds for oxygen depletion.
+
+**Replaced by:** [`C-PC-CA-CONSEQUENCE`](CLAIMS.md#C-PC-CA-CONSEQUENCE) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-COUNTED"></a>
+### Only the nitrogen route is counted, at a stated fraction of a national nitrogen total.
+
+`C-PC-CA-OLD-COUNTED` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-COUNTED">The two pathways are the same size. Only one of them is counted, and that one is counted at [0.6](SOURCES.md#F-f7115fc116)% of a national nitrogen total</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-COUNTED "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: the fraction was carried as a quotation of the page's own past; it is now computed from the register.
+
+**Replaced by:** [`C-PC-CA-CSO`](CLAIMS.md#C-PC-CA-CSO) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-DIFFERENT"></a>
+### Only the ceiling is the question the public sentence is asking.
+
+`C-PC-CA-OLD-DIFFERENT` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-DIFFERENT">They answer different questions, and only the second one is the question the public sentence is asking</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-DIFFERENT "What this claim rests on")</sup>
+
+**Why it was retired:** The public sentence it referred to is not in any source held.
+
+**Replaced by:** [`C-PC-CA-DIFFERENT`](CLAIMS.md#C-PC-CA-DIFFERENT) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-ESTABLISH"></a>
+### The public share of fedtemøg is the residual multiplied by four coefficients that have never been computed.
+
+`C-PC-CA-OLD-ESTABLISH` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-ESTABLISH">It does establish that the number is not what it is presented as. "[69.6](SOURCES.md#F-6dbd62492b)% of nitrogen" is a residual of models over one term of an open account. "[70](SOURCES.md#F-be03d93d24)% of fedtemøg" is that residual multiplied by four coefficients that have never been computed. The first is a defensible piece of bookkeeping. The second is not a measurement of anything</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-ESTABLISH "What this claim rests on")</sup>
+
+**Why it was retired:** The public share of fedtemøg is not in any source held, and 'never been computed' is wider than what was searched.
+
+**Replaced by:** [`C-PC-CA-ESTABLISH`](CLAIMS.md#C-PC-CA-ESTABLISH) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-EXPLAIN"></a>
+### Legacy lag is stated years long, eelgrass is down by a stated share, and warming has strengthened while nitrogen fell.
+
+`C-PC-CA-OLD-EXPLAIN` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-EXPLAIN">LOOP catchments show [8](SOURCES.md#F-e7a9d51961)-[24](SOURCES.md#F-f8764696dd) years between a management change and a detectable decline in stream nitrogen. 1990-2025 is [35](SOURCES.md#F-9f7ca9edd5) years - longer than the longest observed lag - so lag cannot carry the whole gap. | | Warming | SUPPORTED, INDEPENDENT | DCE names bottom-water temperature above the long-term mean as a contributing factor. Warmer water holds less oxygen and respires faster. This has strengthened while nitrogen fell. It is not represented anywhere in a source apportionment. | | Loss of assimilative state | MECHANISTICALLY SUPPORTED, UNQUANTIFIED | Eelgrass down [80](SOURCES.md#F-08e62059ca)-[90](SOURCES.md#F-bd9c2d417b)% from historical extent; filtration capacity lost; benthos repeatedly killed; denitrification switching to DNRA under anoxia; a loose bed resuspending several times more often (see SEABED.md). The same load does more damage than it did in 1990. No term in any published account carries this</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-EXPLAIN "What this claim rests on")</sup>
+
+**Why it was retired:** The lag, the eelgrass loss and the warming trend have no pinned source; DCE's statements and the register's hypotheses replace them.
+
+**Replaced by:** [`C-PC-CA-LAG`](CLAIMS.md#C-PC-CA-LAG), [`C-PC-CA-WARMING`](CLAIMS.md#C-PC-CA-WARMING), [`C-PC-CA-STATE`](CLAIMS.md#C-PC-CA-STATE) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-FAILS"></a>
+### The legacy-lag explanation fails because the elapsed time exceeds the longest measured lag.
+
+`C-PC-CA-OLD-FAILS` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-FAILS">It is also the one that fails on its own terms, because the elapsed time exceeds the longest lag anyone has measured</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-FAILS "What this claim rests on")</sup>
+
+**Why it was retired:** It rested on a lag length with no pinned source.
+
+**Replaced by:** [`C-PC-CA-ONLYFIRST`](CLAIMS.md#C-PC-CA-ONLYFIRST) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-FAT"></a>
+### Fedtemøg means fat filth and the fat is literal; sewage fat is its precursor, and one utility's fat tonnage gives its scale.
+
+`C-PC-CA-OLD-FAT` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-FAT">is not a metaphor. It means fat filth, and the fat is literal. Sewage carries fats, oils and grease continuously, and the sewer accumulates them into the deposits Danish utilities call fedtpropper — the same thing an English-speaking utility calls a fatberg. As a fedtemøg precursor, fat has an uncomfortable set of properties: | Property | Value | Consequence | |---|---|---| | Nitrogen content | [0](SOURCES.md#F-7b18fe1abb)% | Triglycerides are carbon, hydrogen and oxygen. A nitrogen accounting cannot see this material at all — not under-count it, *not see it*. | | Carbon content | ~[76](SOURCES.md#F-bf4f9739e6)% by mass | Roughly twice the carbon density of algal dry matter. | | Oxygen demand | ~[2.9](SOURCES.md#F-a2b5e40449) g `O₂` per g | Against ~[1.1](SOURCES.md#F-63e6b13b8b) for carbohydrate and ~[1.5](SOURCES.md#F-3b4135b23c) for protein. Fat is the most oxygen-expensive common organic material there is. | | Density | below water | It floats. It does not settle out of the way; it goes to the surface and then to a shore. | | Solubility | none | It does not dilute. It coalesces. | | Degradation | slow, and slower without oxygen | It persists long enough to travel, and longest exactly where the water is already anoxic. | And its release is threshold-triggered. A fedtprop is a deposit on a pipe wall. It leaves when the flow is high enough to scour it — which is the same condition, in the same hours, as a combined sewer overflow. The material is retained through every dry day of the year and exported during precisely the hours when the flow bypasses the treatment works. So the annual accounting is doubly wrong for this material. It is invisible to the nitrogen unit, and its export is concentrated in the event tail that a modelled-annual-volume × fixed-concentration method averages away. Scale, as far as it can be established. One Danish utility reported receiving [25](SOURCES.md#F-be709f3d57) tonnes of fat at its treatment plant in a single year, alongside [193](SOURCES.md#F-06e78f1740) tonnes of screenings. That is one utility, one year, and — the important part — it counts only what *reached the works*. Every hour the system is in overflow is an hour that stream is going somewhere else. There is no national figure, no monitoring, and no unit in which it would be reported</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-FAT "What this claim rests on")</sup>
+
+**Why it was retired:** Fedtemøg is filamentous brown algae, as the pinned Danish Wikipedia article defines it, so the fat is not literal; the fat tonnages had no source.
+
+**Replaced by:** [`C-PC-CA-FEDT-DEF`](CLAIMS.md#C-PC-CA-FEDT-DEF), [`C-PC-CA-FAT`](CLAIMS.md#C-PC-CA-FAT) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-FOOTER"></a>
+### Bounds marked as this project's own are labelled as such.
+
+`C-PC-CA-OLD-FOOTER` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-FOOTER">Sources for the load and outcome series, with URLs, are in `data/manual/monitoring.json` under `load_trend_vs_outcome`. The pathway enumeration is in `data/manual/nitrogen_pathways.json`. Bounds marked as ours are constructed here and labelled as such</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-FOOTER "What this claim rests on")</sup>
+
+**Why it was retired:** No row of the pathway register carries the flag that would label them.
+
+**Replaced by:** [`C-PC-CA-FOOTER`](CLAIMS.md#C-PC-CA-FOOTER) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-FRATIO"></a>
+### In productive coastal water in summer the f-ratio is low, so most of a late-summer bloom's nitrogen was not delivered that summer.
+
+`C-PC-CA-OLD-FRATIO` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-FRATIO">This is not a speculative mechanism. It is the standard distinction in marine biogeochemistry between new production — running on nutrients newly supplied from outside the productive layer — and regenerated production, running on nutrients recycled in place. Their ratio has a name, the f-ratio, and in productive coastal water in summer it is low: most of the production is regenerated, not new. Which means the sentence "this bloom was caused by X% agriculture" is making a claim about the minority term. The majority of the nitrogen in a late-summer bloom was not delivered that summer by anyone. It was released by the previous round of dying</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-FRATIO "What this claim rests on")</sup>
+
+**Why it was retired:** The pinned article associates high f-ratios with productive systems and low ones with oligotrophic food webs; no Danish measurement is held.
+
+**Replaced by:** [`C-PC-CA-FRATIO`](CLAIMS.md#C-PC-CA-FRATIO), [`C-PC-CA-MINORITY`](CLAIMS.md#C-PC-CA-MINORITY) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-HEAD4"></a>
+### A bloom is mostly not made of what was delivered.
+
+`C-PC-CA-OLD-HEAD4` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-HEAD4">The bloom is mostly not made of what was delivered</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-HEAD4 "What this claim rests on")</sup>
+
+**Why it was retired:** 'Mostly' rested on a low f-ratio for productive coastal water that the pinned article does not support.
+
+**Replaced by:** [`C-PC-CA-FRATIO`](CLAIMS.md#C-PC-CA-FRATIO) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-HOOK"></a>
+### Agriculture is not off the hook, and reductions have documented local benefits.
+
+`C-PC-CA-OLD-HOOK` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-HOOK">It does not establish that agriculture is off the hook. Multiplying unknown fractions yields an unknown, not a small one. Agriculture is plausibly still the largest single nitrogen contributor, the load is real, and reductions have documented local benefits</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-HOOK "What this claim rests on")</sup>
+
+**Why it was retired:** The documented local benefits were not cited.
+
+**Replaced by:** [`C-PC-CA-NOTHOOK`](CLAIMS.md#C-PC-CA-NOTHOOK) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-INTERVENTION"></a>
+### Land-based nitrogen supply fell from a stated load to about half, airborne nitrogen fell as much, and this is the largest intervention in modern Danish policy.
+
+`C-PC-CA-OLD-INTERVENTION` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-INTERVENTION">spent thirty-five years and a great deal of money running it. The intervention. Flow-normalised total nitrogen supply from Danish land areas to the sea has fallen from about [100](SOURCES.md#F-f0fd4bc492) kt N/yr in 1990 to about [55](SOURCES.md#F-e298d5c639) kt — a reduction of roughly [50](SOURCES.md#F-00a199d28d)%. Airborne nitrogen to Danish sea areas is down by about the same. This is the largest environmental intervention in modern Danish policy and it is not in dispute</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-INTERVENTION "What this claim rests on")</sup>
+
+**Why it was retired:** The load figures were transcribed from a summary page this project could not read, the airborne figure has no source, and 'the largest' has nothing behind it; DCE's pinned report gives the reduction.
+
+**Replaced by:** [`C-PC-CA-TEST`](CLAIMS.md#C-PC-CA-TEST), [`C-PC-CA-REDUCTION`](CLAIMS.md#C-PC-CA-REDUCTION) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-JUXTA"></a>
+### Recent September extents were at or above the levels of earlier record years, and no trend in the extremes is detectable against a halved input.
+
+`C-PC-CA-OLD-JUXTA` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-JUXTA">Put side by side: Land-based nitrogen supply is down about half since 1990. September oxygen-depletion extent in 2023 and 2024 was at or above the level of 1989, 2000 and 2002, when the load was roughly double. No trend in the extremes is detectable against a halved input. If nitrogen load were the dominant control on oxygen depletion, halving it should have moved the extremes. It did not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-JUXTA "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's own notes put both recent years below the record year, no trend test was run, and 'it did not' asserts a result nobody here computed.
+
+**Replaced by:** [`C-PC-CA-JUXTA`](CLAIMS.md#C-PC-CA-JUXTA) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-KOEGE"></a>
+### In Køge Bugt the trigger is probably not nutrients.
+
+`C-PC-CA-OLD-KOEGE` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-KOEGE">And in Køge Bugt, the trigger is probably not nutrients The loop above still starts with growth. A bay receiving a large, pulsed delivery of sewage solids and fat can enter it further along — the organic material and the oxygen demand arrive together, already made, and the die-off that releases the internal store can be the *first* step rather than the third. That is a different causal shape from the one the accounting models, it produces the same shore, and it would be attributed to nitrogen by any method that only counts nitrogen</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-KOEGE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Probably' had nothing behind it; the mechanism is a hypothesis in the register.
+
+**Replaced by:** [`C-PC-CA-E5`](CLAIMS.md#C-PC-CA-E5) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-MST"></a>
+### The carbon comparison uses Miljøstyrelsen's own typetal.
+
+`C-PC-CA-OLD-MST` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-MST">The comparison can be made from Miljøstyrelsen's own numbers. Every discharge type in the typetal table carries both an organic load (COD) and a nitrogen load. Route A's carbon is what that nitrogen could produce at Redfield stoichiometry — [5.68](SOURCES.md#F-822964083f) g C per g N. Route B's carbon is what the water is already carrying — [0.375](SOURCES.md#F-4fda0ee921) g C per g COD</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-MST "What this claim rests on")</sup>
+
+**Why it was retired:** The nutrient typetal are transcribed in this project's register without a pinned source, so whose numbers they are is not established here.
+
+**Replaced by:** [`C-PC-CA-TYPETAL-INTRO`](CLAIMS.md#C-PC-CA-TYPETAL-INTRO) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-OMISSIONS"></a>
+### Deposition is absent from every published apportionment, and one study implies internal recycling supplies most of what production needs.
+
+`C-PC-CA-OLD-OMISSIONS` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-OMISSIONS">Two omissions set the scale of the gap. Atmospheric deposition to Danish marine waters is [45](SOURCES.md#F-460e524ef6)–[65](SOURCES.md#F-8e04236ba3) kt N/yr — comparable to the entire land-based term, falling on the water directly, and absent from every published apportionment. Sediment regeneration is not a source at all in the accounting frame, yet one study puts net advection at around a tenth of what annual primary production requires, which implies internal recycling supplies most of it</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-OMISSIONS "What this claim rests on")</sup>
+
+**Why it was retired:** 'Every published apportionment' is wider than the apportionment quoted, and the study was never named.
+
+**Replaced by:** [`C-PC-CA-DEPOSITION`](CLAIMS.md#C-PC-CA-DEPOSITION), [`C-PC-CA-REGEN`](CLAIMS.md#C-PC-CA-REGEN) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-ONLYROUTE"></a>
+### Killing what is there is the only route that explains more decay in a year of lower delivery.
+
+`C-PC-CA-OLD-ONLYROUTE` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-ONLYROUTE">This route is the one the nutrient frame cannot even represent as a question. It has no source, no load, no unit. And it is the only route that explains why the same bay can produce more decaying material in a year when *less* was delivered</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-ONLYROUTE "What this claim rests on")</sup>
+
+**Why it was retired:** 'The only route' has nothing behind it.
+
+**Replaced by:** [`C-PC-CA-ROUTEC`](CLAIMS.md#C-PC-CA-ROUTEC) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-PERGRAM"></a>
+### Direct organic matter is worth more per gram; nitrogen in November grows nothing, and the two routes have opposite seasons.
+
+`C-PC-CA-OLD-PERGRAM` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-PERGRAM">The ratio above understates route B, because the two carbons are not interchangeable: [1](SOURCES.md#F-62a3917947). Route A carbon is conditional. It requires a phototroph that is present, in a growing season, with light reaching it, and with phosphorus and silicon in supportive ratio. Nitrogen delivered in November grows nothing. [2](SOURCES.md#F-d032e21132). Route B carbon is unconditional. It is already organic matter. It settles, it decays, and it consumes oxygen in the dark in December exactly as well as in July. [3](SOURCES.md#F-2833111e4d). Route B arrives where it is discharged. Route A carbon is produced wherever the light and the season allowed, which may be nowhere near the shore that receives the consequence. [4](SOURCES.md#F-9ca470bf05). Route B arrives in pulses, on the flow threshold — the same events that scour a basin and resuspend its accumulated sludge. Route A is a slow background. Which inverts the seasonal argument. Nitrogen's effectiveness at producing shore biomass is highest in spring and summer and close to zero in late autumn. Direct organic matter's effectiveness is flat across the year, and its delivery peaks in autumn and winter with the rain. The two pathways have opposite seasonality, and only the one that switches off in autumn is measured</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-PERGRAM "What this claim rests on")</sup>
+
+**Why it was retired:** 'Grows nothing' and 'exactly as well' overstate, and the rain's autumn-and-winter peak has no source here.
+
+**Replaced by:** [`C-PC-CA-PG-1`](CLAIMS.md#C-PC-CA-PG-1), [`C-PC-CA-PG-2`](CLAIMS.md#C-PC-CA-PG-2), [`C-PC-CA-SEASON`](CLAIMS.md#C-PC-CA-SEASON) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-ROUTES"></a>
+### Nitrogen is necessary for one pathway to fedtemøg, not for the outcome, which has three routes.
+
+`C-PC-CA-OLD-ROUTES` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-ROUTES">Nitrogen is necessary for one pathway, not for the outcome Section 2 treats the argument as a chain and asks for each link's coefficient. That concedes too much, because it accepts the shape. The published framing is > nitrogen → primary production → biomass → the mush on the shore and that is one branch of a tree, not the trunk. There are at least three routes to the same endpoint, and nitrogen is a necessary condition for exactly one of them</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-ROUTES "What this claim rests on")</sup>
+
+**Why it was retired:** Fedtemøg is grown, so growth is its route and nitrogen is on it; the three routes are routes to oxygen depletion.
+
+**Replaced by:** [`C-PC-CA-GROWN`](CLAIMS.md#C-PC-CA-GROWN), [`C-PC-CA-ROUTES`](CLAIMS.md#C-PC-CA-ROUTES) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-SENS"></a>
+### Each item is a reason the same nitrogen does more damage now, and nitrogen sensitivity is a derived property of a damaged system.
+
+`C-PC-CA-OLD-SENS` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-SENS">Every item on that list is a reason the *same* kilogram of nitrogen does more damage in 2025 than it did in 1990. None of them appears in a source apportionment, because none of them is a source. Nitrogen sensitivity is a derived property of a damaged system, and the accounting treats it as a</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-SENS "What this claim rests on")</sup>
+
+**Why it was retired:** Stated as established; it holds only if the hypotheses do.
+
+**Replaced by:** [`C-PC-CA-SENS`](CLAIMS.md#C-PC-CA-SENS) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-SENTENCE"></a>
+### The public sentence is that agriculture causes a stated share of fedtemøg, and that is how the figure enters public argument.
+
+`C-PC-CA-OLD-SENTENCE` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-SENTENCE">That sentence, or a close variant, is how the figure enters public argument. It is a claim about an outcome on a shore. The number behind it is a share of one term in one account. Between the two lie four links, and this document asks what coefficient each one has</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-SENTENCE "What this claim rests on")</sup>
+
+**Why it was retired:** No source this project holds says it: the pinned record joins agriculture's nitrogen to fedtemøg without a share, and gives the share without the outcome.
+
+**Replaced by:** [`C-PC-CA-PUBLIC`](CLAIMS.md#C-PC-CA-PUBLIC), [`C-PC-CA-JOIN`](CLAIMS.md#C-PC-CA-JOIN) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-STATE-LIST"></a>
+### Toxicants, disturbance, hypoxia, eelgrass loss and turbidity have driven the state term down, with the bed eroding severalfold more easily and resuspending several times more often.
+
+`C-PC-CA-OLD-STATE-LIST` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-STATE-LIST">toxicants and metals, which remove grazers and filter feeders — the very organisms that would otherwise convert the subsidy into structure [2](SOURCES.md#F-629d2ae439). physical disturbance of the bed, which removes the binding fauna and drops the erosion threshold roughly fivefold (SEABED.md) [3](SOURCES.md#F-678a62452a). each hypoxic event, which kills the benthos and makes the next event cheaper [4](SOURCES.md#F-0f6c123160). the loss of eelgrass, which removed both the uptake capacity and the sediment stabilisation at once [5](SOURCES.md#F-58c0ac2c52). turbidity from a bed that now resuspends several times more often, which keeps the light from whatever might recolonise</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-STATE-LIST "What this claim rests on")</sup>
+
+**Why it was retired:** Stated as established, with multipliers that have no source; each item is a hypothesis in the register.
+
+**Replaced by:** [`C-PC-CA-S1`](CLAIMS.md#C-PC-CA-S1), [`C-PC-CA-S2`](CLAIMS.md#C-PC-CA-S2), [`C-PC-CA-S5`](CLAIMS.md#C-PC-CA-S5) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-STRONGEST"></a>
+### That decades of data cannot distinguish the readings is the strongest single argument that the accounting measures the wrong thing.
+
+`C-PC-CA-OLD-STRONGEST` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-STRONGEST">That thirty-five years of data cannot distinguish them is the strongest single argument that the accounting is measuring the wrong thing</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-STRONGEST "What this claim rests on")</sup>
+
+**Why it was retired:** 'The strongest single argument' was not argued.
+
+**Replaced by:** [`C-PC-CA-CANNOT`](CLAIMS.md#C-PC-CA-CANNOT) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-TABLE"></a>
+### A table of September extents for several years, with notes.
+
+`C-PC-CA-OLD-TABLE` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-TABLE">Area of Danish inner waters affected by oxygen depletion, mid/late September, as reported by DCE: | Year | September extent | | |---|---:|---| | 1989 | — | September extent comparable to 2023 | | 2000 | — | September extent comparable to 2023 | | 2002 | — | largest recorded; still the maximum of the series | | 2023 | ~[7,500](SOURCES.md#F-f7c4272eed) km² | largest in [20](SOURCES.md#F-65ae44d2c2) years; second-largest September on record, exceeded only by 2002 | | 2024 | ~[11,000](SOURCES.md#F-a0b21cde9b) km² | [47](SOURCES.md#F-d6cd1ae2dc)% larger than 2023 by these extents; second-largest ever recorded, exceeded only by 2002 | | 2025 | ~[3,700](SOURCES.md#F-d9c8e8bd32) km² | far smaller area, but early onset and a high severe fraction - over [40](SOURCES.md#F-ca3dcf2fe6)% of the affected area severely depleted in August</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** The earliest rows, one year's area and the last row have no pinned source; what DCE's pinned notes state is restated.
+
+**Replaced by:** [`C-PC-CA-OUTCOME`](CLAIMS.md#C-PC-CA-OUTCOME) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-TESTS"></a>
+### All the series for the tests are published, nobody has published the regression, and most tests need no new data.
+
+`C-PC-CA-OLD-TESTS` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-TESTS">All three series exist and are published. Nobody has published the regression. | | Whether state-dependence is real | The same regression with an interaction term, or simply: does a given load produce more hypoxia now than in 1990, holding weather constant? Answerable from existing DCE series. | | Whether the denominator can be closed | Two of the [10](SOURCES.md#F-329c68a870) empty rows are tractable with standard methods — submarine groundwater discharge via radon/radium tracers, internal regeneration via benthic flux chambers. Both are routine elsewhere. | | Whether the potency term matters | Weight existing load figures by season and receiving-water stratification. Even a crude weighting beats the current implicit equal weight everywhere. | | Whether fedtemøg has the season everyone assumes | Fixed coastal cameras, monthly index, year-round. The cheapest item on this list by an order of magnitude, and the only claim here that is currently unfalsifiable in either direction. | None of these needs new instruments. Four of the five need no new data at all — only that two published series be plotted against each other</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-TESTS "What this claim rests on")</sup>
+
+**Why it was retired:** Whether the series are published and whether anyone has published the regression were not established, and two of the five tests need new measurements.
+
+**Replaced by:** [`C-PC-CA-T1`](CLAIMS.md#C-PC-CA-T1), [`C-PC-CA-T3`](CLAIMS.md#C-PC-CA-T3), [`C-PC-CA-T5`](CLAIMS.md#C-PC-CA-T5), [`C-PC-CA-THREE`](CLAIMS.md#C-PC-CA-THREE) — each opens what it rests on.
+
+<a id="C-PC-CA-OLD-THIRD"></a>
+### The loop is why the same load can produce record damage one year and a third of it the next.
+
+`C-PC-CA-OLD-THIRD` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-CA-OLD-THIRD">None of that is exotic or contested. It is the ordinary behaviour of a system with positive feedback, and it is why the same load can produce record damage in one year and a third of it in the next</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-CA-OLD-THIRD "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's notes explain the season's development by wind and temperature; nothing here ties the swings to the loop, and the ratio came from an unpinned figure.
+
+**Replaced by:** [`C-PC-CA-FEEDBACK`](CLAIMS.md#C-PC-CA-FEEDBACK), [`C-PC-CA-DCE-WEATHER`](CLAIMS.md#C-PC-CA-DCE-WEATHER) — each opens what it rests on.
+
 ## CLAIMS.md
 
 <a id="C-FA-OLD-NOTE"></a>
@@ -383,6 +715,173 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** Its justification was not recorded properly: the ratio was worked out loosely by hand and never stored, and the first stored figures contradicted it. The note now gives the ratio as floodgap.py and convergence.py compute it.
 
 **Replaced by:** [`C-FLOOD-AREA`](CLAIMS.md#C-FLOOD-AREA) — each opens what it rests on.
+
+## CURRENTS.md
+
+<a id="C-CS-OLD-BALTICFIELD"></a>
+### A Baltic regional reanalysis exists at roughly a kilometre, behind free registration.
+
+`C-CS-OLD-BALTICFIELD` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-BALTICFIELD">CMEMS publishes a Baltic regional reanalysis at roughly [1](SOURCES.md#F-cb328b2e3c) km behind free registration. Everything here would be worth redoing on it, and the retention result is the one to re-test first</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-BALTICFIELD "What this claim rests on")</sup>
+
+**Why it was retired:** Its resolution was a quotation of the page; the product's own description gives one nautical mile.
+
+**Replaced by:** [`C-CS-NEED-FIELD`](CLAIMS.md#C-CS-NEED-FIELD) — each opens what it rests on.
+
+<a id="C-CS-OLD-CALIB"></a>
+### Against published peak speeds, the open-water points are about right and the narrow straits come out several times too slow.
+
+`C-CS-OLD-CALIB` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-CALIB">Before using it for anything, here is the peak speed it produces against published values: | Point | Model peak | Published peak | Ratio | |---|---:|---:|---:| | koege_bugt | [0.50](SOURCES.md#F-47fb2bfb91) m/s | [0.4](SOURCES.md#F-be552b4187) m/s | [0.8](SOURCES.md#F-0269081a46)× | | oresund_s | [0.89](SOURCES.md#F-f2e2b1af58) m/s | [1.5](SOURCES.md#F-5c8f267a2a) m/s | [1.7](SOURCES.md#F-725453582e)× | | drogden | [0.89](SOURCES.md#F-f2e2b1af58) m/s | [1.7](SOURCES.md#F-725453582e) m/s | [1.9](SOURCES.md#F-c59f03f6fc)× | | oresund_n | [0.81](SOURCES.md#F-3ba4240672) m/s | [1.5](SOURCES.md#F-5c8f267a2a) m/s | [1.9](SOURCES.md#F-c59f03f6fc)× | | fehmarn | [1.08](SOURCES.md#F-d5e8412c77) m/s | [1.2](SOURCES.md#F-3b990cad3f) m/s | [1.1](SOURCES.md#F-212b5abff9)× | | storebaelt | [0.86](SOURCES.md#F-aa12686e87) m/s | [1.8](SOURCES.md#F-1f76e6afde) m/s | [2.1](SOURCES.md#F-29f693e9d1)× | The open-water points are about right; the narrow straits come out [1.7](SOURCES.md#F-725453582e)–[2.1](SOURCES.md#F-29f693e9d1) times too slow, which is what a [9](SOURCES.md#F-aa95863635) km grid does to a [4](SOURCES.md#F-8c48736296) km channel. So nothing below uses an absolute speed. Everything is a ratio, a sign, or a timing, and each is stated with the reason it survives the calibration error</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-CALIB "What this claim rests on")</sup>
+
+**Why it was retired:** The published peak speeds it compares against are written into the script with no source held, so neither the ratios nor 'about right' can be justified; and the flushing time does use a speed.
+
+**Replaced by:** [`C-CS-PEAKS`](CLAIMS.md#C-CS-PEAKS), [`C-CS-GRID`](CLAIMS.md#C-CS-GRID), [`C-CS-METRIC`](CLAIMS.md#C-CS-METRIC) — each opens what it rests on.
+
+<a id="C-CS-OLD-CRITERION"></a>
+### Aarhus Bugt registers iltsvind every year, and Køge Bugt, shallow and mixed, cannot qualify under a criterion that requires stratified bottom water.
+
+`C-CS-OLD-CRITERION` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-CRITERION">Aarhus Bugt registers oxygen depletion every year. Køge Bugt is recorded as having none, including in 2023 and 2025. And Aarhus Bugt flushes [22](SOURCES.md#F-9d05611d66) times faster. That is not a contradiction, because the two things are not the same phenomenon. DCE's iltsvind criterion is dissolved oxygen below [4](SOURCES.md#F-4a1ef5bb76) mg/l in stratified bottom water — which requires depth and a sealed layer, and Aarhus Bugt has both. Køge Bugt is shallow and mixes, so it cannot qualify however bad it gets. But retention of surface material, floating mats and fine sediment is a *different* property, and on that one Køge Bugt is the extreme case in this set</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-CRITERION "What this claim rests on")</sup>
+
+**Why it was retired:** 'Every year' rests on two surveys; DCE define iltsvind by the concentration alone, stratification only making it likelier, so 'cannot qualify however bad it gets' is wrong; that Køge Bugt is shallow and mixes has no source held.
+
+**Replaced by:** [`C-CS-ILT-DEF`](CLAIMS.md#C-CS-ILT-DEF), [`C-CS-ILT-OBS`](CLAIMS.md#C-CS-ILT-OBS), [`C-CS-INVERT`](CLAIMS.md#C-CS-INVERT) — each opens what it rests on.
+
+<a id="C-CS-OLD-DENSITY"></a>
+### The Sound is strongly stratified, Baltic water on top and Kattegat water beneath, which a depth-averaged current hides.
+
+`C-CS-OLD-DENSITY` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-DENSITY">The Sound is strongly stratified — Baltic water out on top, Kattegat water in underneath. A single depth-averaged current hides that a plume and the bottom water can be going opposite ways at the same hour</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-DENSITY "What this claim rests on")</sup>
+
+**Why it was retired:** No source held says the Sound is strongly stratified with Kattegat water beneath, and whether the field's current is depth-averaged was not established.
+
+**Replaced by:** [`C-CS-NEED-DENSITY`](CLAIMS.md#C-CS-NEED-DENSITY) — each opens what it rests on.
+
+<a id="C-CS-OLD-GRID"></a>
+### The only free current field covering Danish waters is a global model on a coarse grid, and the straits are narrower than that.
+
+`C-CS-OLD-GRID` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-GRID">The only free current field covering Danish waters is a global model on a roughly [9](SOURCES.md#F-20a8a2da87) km grid. The Danish straits are narrower than that</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-GRID "What this claim rests on")</sup>
+
+**Why it was retired:** The grid step was a quotation of the page and differs from what Open-Meteo states; that this is the only free field has no source held.
+
+**Replaced by:** [`C-CS-GRID`](CLAIMS.md#C-CS-GRID) — each opens what it rests on.
+
+<a id="C-CS-OLD-INSTRUMENT"></a>
+### The national instrument measures a property Køge Bugt does not have and not the one it has most.
+
+`C-CS-OLD-INSTRUMENT` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-INSTRUMENT">The national instrument measures the property Køge Bugt does not have, and does not measure the property it has more of than anywhere else here</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-INSTRUMENT "What this claim rests on")</sup>
+
+**Why it was retired:** It rests on the retired criterion: the definition does not require stratification, so it is not a property Køge Bugt lacks.
+
+**Replaced by:** [`C-CS-INVERT`](CLAIMS.md#C-CS-INVERT) — each opens what it rests on.
+
+<a id="C-CS-OLD-NOFLUSH"></a>
+### Køge Bugt does not flush, and the metric used survives the field's speed error.
+
+`C-CS-OLD-NOFLUSH` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-NOFLUSH">The result: Køge Bugt does not flush The metric is the residual current divided by the mean speed — how much of the water's motion actually goes somewhere. A calibration error in speed cancels out of a ratio of two speeds, so this number survives the problem above</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-NOFLUSH "What this claim rests on")</sup>
+
+**Why it was retired:** Every point in the field flushes in a finite time and Køge Bugt takes longest; and the flushing time in days, unlike the ratio, keeps the speed error.
+
+**Replaced by:** [`C-CS-METRIC`](CLAIMS.md#C-CS-METRIC), [`C-CS-FLUSH`](CLAIMS.md#C-CS-FLUSH) — each opens what it rests on.
+
+<a id="C-CS-OLD-SAMEMECH"></a>
+### The two large lag results share one simple mechanism, which is why they are reported.
+
+`C-CS-OLD-SAMEMECH` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-SAMEMECH">results are both large and both have the same simple mechanism behind them, which is why they are reported</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-SAMEMECH "What this claim rests on")</sup>
+
+**Why it was retired:** The mechanism named was the retired south-westerly and north-west veer.
+
+**Replaced by:** [`C-CS-FEW`](CLAIMS.md#C-CS-FEW) — each opens what it rests on.
+
+<a id="C-CS-OLD-SEABED"></a>
+### SEABED.md said the resuspension season coincides with the overflow season, which is wrong over the long rain record.
+
+`C-CS-OLD-SEABED` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-SEABED">That document said the resuspension season coincides with the overflow season. Over [31](SOURCES.md#F-b54789fe7e) years of rainfall that is wrong, and the error is worth keeping visible</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-SEABED "What this claim rests on")</sup>
+
+**Why it was retired:** Page history, which the page no longer narrates; and the seasonal table beside it was built from the few years the current record covers, not the long rain record it named. The seasons are now computed from the whole weather record.
+
+**Replaced by:** [`C-CS-SEASONS`](CLAIMS.md#C-CS-SEASONS) — each opens what it rests on.
+
+<a id="C-CS-OLD-SEASONTABLE"></a>
+### Overflow rain peaks in summer and the autumn is wetter in total but gentler, with stranding winds from October to January.
+
+`C-CS-OLD-SEASONTABLE` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-SEASONTABLE">Rain intense enough to overflow a combined sewer (≥[10](SOURCES.md#F-310b03352c) mm in [6](SOURCES.md#F-356798e4a8) h) | Jun–Aug, [3.0](SOURCES.md#F-bd442470a4)–[8.2](SOURCES.md#F-c353ee65e1) h/yr; near zero Jan–Apr | | Total rainfall | flat, [38](SOURCES.md#F-a468f0060c)–[72](SOURCES.md#F-3924bcfa5e) mm/month, slight Jun–Aug and Oct maxima | | Wave-driven bed resuspension | Oct–Jan, [2.0](SOURCES.md#F-1e297a038f) times July | | Strong onshore wind (stranding) | Oct–Jan | Overflow *events* are driven by intensity, and intensity in Denmark is convective, and convection is summer. The autumn is wetter in total but gentler</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-SEASONTABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Built from the few overlapping years; its total-rainfall row was a quotation of the page; no stored result gives the stranding-wind season; and over the whole record summer, not autumn, is the wetter season in total.
+
+**Replaced by:** [`C-CS-SEASONS`](CLAIMS.md#C-CS-SEASONS) — each opens what it rests on.
+
+<a id="C-CS-OLD-SEQUENCE"></a>
+### A deposit-then-mobilise sequence: summer overflow into a warm, weakly mixed bay, decay in place, and autumn resuspension of a bed loosened by anoxia.
+
+`C-CS-OLD-SEQUENCE` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-SEQUENCE">This does not weaken the case — it sharpens it into a deposit-then-mobilise sequence: - June–August: cloudbursts overflow the combined system. Sewage solids, fat and basin sludge are discharged into a warm, weakly-mixed, retentive bay. - The bay holds it. Flushing time is on the order of months, so the material settles locally rather than being exported. - Through late summer: it decays in place, in the warmest water of the year, with the oxygen demand and the smell that implies. - October–January: the gales arrive. The bed — now looser for having been anoxic — resuspends [2.0](SOURCES.md#F-5a7b28a81a) times as often as in July, and the same wind that lifts it drives it onto the western shore. Delivery in summer and arrival on the shore in autumn are not in conflict. They are the two ends of a months-long residence time, and the residence time is the measured part</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-SEQUENCE "What this claim rests on")</sup>
+
+**Why it was retired:** Several steps have no support here: that the bay is warm and weakly mixed, that the material decays in place with an oxygen demand and a smell, and that the bed is looser for having been anoxic.
+
+**Replaced by:** [`C-CS-SEQUENCE`](CLAIMS.md#C-CS-SEQUENCE) — each opens what it rests on.
+
+<a id="C-CS-OLD-SWLY"></a>
+### Heavy rain in Copenhagen arrives with cyclonic south-westerlies, which drive the Sound north.
+
+`C-CS-OLD-SWLY` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-SWLY">Which is physically obvious once seen: heavy rain in Copenhagen arrives with cyclonic southwesterlies, and those drive the Sound north</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-SWLY "What this claim rests on")</sup>
+
+**Why it was retired:** The wind record contradicts it: in overflow-scale rain hours the wind is less often from the south-west or west than in all hours.
+
+**Replaced by:** [`C-CS-RAIN-WIND`](CLAIMS.md#C-CS-RAIN-WIND) — each opens what it rests on.
+
+<a id="C-CS-OLD-SYSTEM"></a>
+### The reversal comes on a timescale set by the same weather system that caused the discharge.
+
+`C-CS-OLD-SYSTEM` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-SYSTEM">So the mechanism is neither the simple claim nor its refutation. It is a lag. The discharge happens under northward flow and the transport reverses roughly half a day later, on a timescale set by the same weather system that caused the discharge</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-SYSTEM "What this claim rests on")</sup>
+
+**Why it was retired:** No weather system was identified; what the record shows is westerly wind in the hours after such rain.
+
+**Replaced by:** [`C-CS-LAG-READ`](CLAIMS.md#C-CS-LAG-READ) — each opens what it rests on.
+
+<a id="C-CS-OLD-VEER"></a>
+### The southward flow after the rain is the post-frontal veer to the north-west.
+
+`C-CS-OLD-VEER` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-VEER">That is the post-frontal wind veer: the front passes, the wind swings to the northwest, and the water reverses while the plume is still in it</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-VEER "What this claim rests on")</sup>
+
+**Why it was retired:** In the wind record the hours after such rain are more often from the south-west and west, not the north-west, and no front was identified.
+
+**Replaced by:** [`C-CS-LAG`](CLAIMS.md#C-CS-LAG) — each opens what it rests on.
+
+<a id="C-CS-OLD-VORTEX"></a>
+### Det Sydfynske Øhav is mid-range, and the shared vortex description of the two bays is not supported.
+
+`C-CS-OLD-VORTEX` · retired 2026-09-11 from [CURRENTS.md](CURRENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-VORTEX">comes out mid-range at [8.7](SOURCES.md#F-0f95472e55) days — retentive, but nothing like Køge Bugt. It does register iltsvind. On this evidence the two bays are not the same case, and the shared vortex description is not supported by this model. A coarse grid cannot resolve an archipelago, so this is weak evidence either way</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-VORTEX "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the 'shared vortex description' is held; the rest stands, reworded.
+
+**Replaced by:** [`C-CS-SYDFYN`](CLAIMS.md#C-CS-SYDFYN) — each opens what it rests on.
 
 ## DATA_SOURCES.md
 
@@ -771,6 +1270,1233 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-DS-VP3-SERVER`](CLAIMS.md#C-DS-VP3-SERVER) — each opens what it rests on.
 
+## HYPOTHESES.md
+
+<a id="C-HY-OLD-B2-BASINS"></a>
+### The inventory shows the settling basins are neither reliably present nor, where present, efficient.
+
+`C-HY-OLD-B2-BASINS` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-B2-BASINS">One figure bearing directly on the settling basins is already published: Miljøstyrelsen's microplastic inventory estimates that only [10](SOURCES.md#F-3cd3662ddc)–[20](SOURCES.md#F-8ea6edb0e1)% of stormwater microplastic is retained, because only some stormwater sewers have settling lagoons at all — so the basins are neither reliably present nor, where present, efficient.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-B2-BASINS "What this claim rests on")</sup>
+
+**Why it was retired:** The inventory's figure is an average over all stormwater. It supports that basins are not reliably present; it does not show that the ones that exist are inefficient.
+
+**Replaced by:** [`C-HY-B2-MST`](CLAIMS.md#C-HY-B2-MST) — each opens what it rests on.
+
+<a id="C-HY-OLD-C6"></a>
+### Oxygen saturation falls by a stated share per degree of warming.
+
+`C-HY-OLD-C6` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-C6">Warmer water holds less oxygen and respires faster: roughly −[2.3](SOURCES.md#F-4cd9c2c37a)% saturation per °C</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-C6 "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-CHEM"></a>
+### The water-chemistry clock values were never fetched.
+
+`C-HY-OLD-CHEM` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-CHEM">But ODA marine water chemistry (`Emne_10_11`) is recorded in our own enumeration, twice, as carrying `Startdato + Startklok` — a clock time per sample, never fetched.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-CHEM "What this claim rests on")</sup>
+
+**Why it was retired:** Out of date: the water-chemistry extract has since been fetched, and its clock values examined.
+
+**Replaced by:** [`C-HY-I3-CHEMCLOCK`](CLAIMS.md#C-HY-I3-CHEMCLOCK) — each opens what it rests on.
+
+<a id="C-HY-OLD-D1"></a>
+### The HELCOM swept-area layers come at a stated grid resolution and cover nearly every series station.
+
+`C-HY-OLD-D1` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-D1">swept-area ratio, figshare `20310255`, [23.1](SOURCES.md#F-2cdccce5fa) MB, `CC BY 4.0`, [0.05](SOURCES.md#F-9097ff60f1)° c-square, quarterly, 2016–2021, covering [1,392](SOURCES.md#F-44d4413af7) of [1,415](SOURCES.md#F-8f472445be) stations. Not fetched.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-D1 "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: the grid resolution and the station coverage were typed, and the figshare record states neither. Its files, period and quarterly layers can be read there.
+
+**Replaced by:** [`C-HY-D1-FIGSHARE`](CLAIMS.md#C-HY-D1-FIGSHARE) — each opens what it rests on.
+
+<a id="C-HY-OLD-E6"></a>
+### Sediment is measured at a few of the national hazardous-substance points.
+
+`C-HY-OLD-E6` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-E6">Sediment biocide concentrations. Sediment is measured at [5](SOURCES.md#F-fc289ca7e5) of the [256](SOURCES.md#F-4752a235fc) hazardous-substance points in the national water-plan register.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-E6 "What this claim rests on")</sup>
+
+**Why it was retired:** True of the layer, but read beside a marine hypothesis it misleads: every point in the layer is in a lake or a river, so for the sea the count is none.
+
+**Replaced by:** [`C-HY-E6-FRESHWATER`](CLAIMS.md#C-HY-E6-FRESHWATER) — each opens what it rests on.
+
+<a id="C-HY-OLD-I2-SAMPLE"></a>
+### Prøvetager is blank on most rows of a sample of the CTD extract.
+
+`C-HY-OLD-I2-SAMPLE` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-I2-SAMPLE">`Prøvetager` blank on [87](SOURCES.md#F-d569a51a3f)% ([1.2](SOURCES.md#F-d4de02059e)M-row sample)</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-I2-SAMPLE "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: the share came from a sample of the extract that no script stores, and the full enumeration does not count blank samplers.
+
+**Replaced by:** [`C-HY-I2-SONDE`](CLAIMS.md#C-HY-I2-SONDE) — each opens what it rests on.
+
+<a id="C-HY-OLD-K11"></a>
+### Eelgrass needs a stated share of surface irradiance.
+
+`C-HY-OLD-K11` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-K11">is a resource with a hard requirement - roughly [11](SOURCES.md#F-429d38c88d)-[14](SOURCES.md#F-dd5bdbb70a)% of surface irradiance for eelgrass</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-K11 "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-LITRE"></a>
+### A litre of AdBlue carries a stated mass of urea and of nitrogen.
+
+`C-HY-OLD-LITRE` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-LITRE">A litre of AdBlue is about [354](SOURCES.md#F-1fea09d61a) g of urea at [46.6](SOURCES.md#F-18846e2ce8)% nitrogen, so roughly [165](SOURCES.md#F-215a1646dd) g N per litre.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-LITRE "What this claim rests on")</sup>
+
+**Why it was retired:** The per-litre figures assumed a density of the fluid that no pinned source states. The page now gives them per kilogram, computed from the pinned composition and standard atomic weights.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-NINE"></a>
+### AtzA and TriA differ at a stated number of amino acids out of a stated length.
+
+`C-HY-OLD-NINE` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-NINE">they differ at nine amino acids out of some four hundred and seventy-five — and they catalyse *different reactions*, one stripping a chlorine and the other stripping an amine. Nine substitutions is the distance between one novel capability and another.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-NINE "What this claim rests on")</sup>
+
+**Why it was retired:** The count of differing amino acids and the length of the protein are not in the pinned source, which gives only the share of identical sequence; the page keeps that share.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-PH-EL"></a>
+### Inside a dense bloom pH can rise above a stated value.
+
+`C-HY-OLD-PH-EL` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-PH-EL">drawn down inside a dense bloom, where pH can rise above [9](SOURCES.md#F-dba2ac86fa). | High</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-PH-EL "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-PH-PR"></a>
+### A bloom can push pH above a stated value.
+
+`C-HY-OLD-PH-PR` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-PH-PR">drawn down far enough to push pH above [9](SOURCES.md#F-9f3ec8ed86) — which is the carbon entry</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-PH-PR "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-R1"></a>
+### Decomposers build biomass at a stated C:N and efficiency, giving a stated threshold, and straw sits at a stated C:N.
+
+`C-HY-OLD-R1` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-R1">Decomposer microbes build biomass near C:N [8](SOURCES.md#F-c702778f41)-[10](SOURCES.md#F-b1f72e7f87) at about [40](SOURCES.md#F-ff7aedf287)% carbon-use efficiency, so there is a threshold near C:N [25](SOURCES.md#F-09ac4f7aea): below it decay releases mineral nitrogen, above it decay consumes it. Straw at C:N [80](SOURCES.md#F-002366c04c) starves the next crop.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-R1 "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-R5"></a>
+### Freshwater carries a stated range of sulphate, and seawater a stated multiple of it.
+
+`C-HY-OLD-R5` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-R5">each yielding less energy. Freshwater carries [5](SOURCES.md#F-feeaadb4d5)-[30](SOURCES.md#F-a30c704679) mg/L of sulphate and so passes it quickly to methanogenesis. Seawater carries [2,700](SOURCES.md#F-491ff9067e) mg/L, a hundred to five hundred times more</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-R5 "What this claim rests on")</sup>
+
+**Why it was retired:** The freshwater range and the multiple have no source here. Seawater's sulphate is now computed from the pinned composition of seawater; the freshwater side is kept in words.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-RULE"></a>
+### A flat percentage rule of the iltsvind trigger assumes the answer is the same everywhere.
+
+`C-HY-OLD-RULE` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-RULE">Nobody has published where each Danish area sits in that window, and the flat [25](SOURCES.md#F-502df08ca9)% rule of the iltsvind trigger assumes the answer is the same everywhere</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-RULE "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: the percentage rule it named has no source anywhere in the repository. The national definition of iltsvind, which does have one, makes the same point.
+
+**Replaced by:** [`C-HY-ONE-THRESHOLD`](CLAIMS.md#C-HY-ONE-THRESHOLD) — each opens what it rests on.
+
+<a id="C-HY-OLD-S5"></a>
+### A Leptosol is a soil under a stated depth.
+
+`C-HY-OLD-S5` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-S5">The Leptosol lesson: a soil under [25](SOURCES.md#F-6cdd07bbc8) cm deep has almost no capacity to absorb a shock</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-S5 "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-T5"></a>
+### A stated small share of suppressive soil makes a conducive soil suppressive.
+
+`C-HY-OLD-T5` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-T5">suppressiveness is transferable - mix [1](SOURCES.md#F-8515a5efea)-[10](SOURCES.md#F-5016564861)% of a suppressive soil into a conducive one</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-T5 "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-HY-OLD-Z1"></a>
+### The eelgrass floor is a stated share of surface irradiance.
+
+`C-HY-OLD-Z1` · retired 2026-09-11 from [HYPOTHESES.md](HYPOTHESES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-HY-OLD-Z1">The floor is the eelgrass requirement, roughly [11](SOURCES.md#F-caf73f33e2)-[14](SOURCES.md#F-2c5f8f6741)% of surface irradiance.</span><sup class="claim-mark">[†](ARCHIVE.md#C-HY-OLD-Z1 "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+## INCIDENCE.md
+
+<a id="C-IN-OLD-2017"></a>
+### The animal unit stopped being a regulatory unit in a named year.
+
+`C-IN-OLD-2017` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-2017">The animal unit stopped being a regulatory unit in 2017. What the current requirements are charged on is a *base area* of cereals, maize, rape and pulses — and grass is not in it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-2017 "What this claim rests on")</sup>
+
+**Why it was retired:** The year had no source this project holds; the conclusions repeated it. What can be shown is present tense: the word dyreenhed does not occur in the three regulations that carry the current requirements.
+
+**Replaced by:** [`C-IN-NOANIMALS-HEAD`](CLAIMS.md#C-IN-NOANIMALS-HEAD), [`C-IN-K1`](CLAIMS.md#C-IN-K1) — each opens what it rests on.
+
+<a id="C-IN-OLD-AFTERNOON"></a>
+### One named business could be worked out from the registers in an afternoon.
+
+`C-IN-OLD-AFTERNOON` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-AFTERNOON">Anyone can look up a CVR number, read the filed accounts, see the animal units and the declared hectares, and work out what this page works out for one named business in an afternoon</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-AFTERNOON "What this claim rests on")</sup>
+
+**Why it was retired:** How long it would take was not measured.
+
+**Replaced by:** [`C-IN-PUBLIC`](CLAIMS.md#C-IN-PUBLIC) — each opens what it rests on.
+
+<a id="C-IN-OLD-ALMOSTCERT"></a>
+### The extremes are almost certainly findings about the join.
+
+`C-IN-OLD-ALMOSTCERT` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ALMOSTCERT">Those are not findings about farming. They are almost certainly findings about the</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ALMOSTCERT "What this claim rests on")</sup>
+
+**Why it was retired:** The check that would settle it, the CVR ownership graph, has not been run.
+
+**Replaced by:** [`C-IN-JOIN`](CLAIMS.md#C-IN-JOIN) — each opens what it rests on.
+
+<a id="C-IN-OLD-BANK"></a>
+### Equity ratio is the single number a bank looks at.
+
+`C-IN-OLD-BANK` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-BANK">is the single number a bank looks at</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-BANK "What this claim rests on")</sup>
+
+**Why it was retired:** What banks look at was not sourced.
+
+**Replaced by:** [`C-IN-EQRATIO-DEF`](CLAIMS.md#C-IN-EQRATIO-DEF) — each opens what it rests on.
+
+<a id="C-IN-OLD-BECAUSEVOL"></a>
+### Every other catchment carries no targeted requirement because the voluntary round covered the need there.
+
+`C-IN-OLD-BECAUSEVOL` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-BECAUSEVOL">carries none, because the subsidised voluntary round covered the need there</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-BECAUSEVOL "What this claim rests on")</sup>
+
+**Why it was retired:** Why the other catchments carry none is not stated in anything this project holds.
+
+**Replaced by:** [`C-IN-ANNEX-INTRO`](CLAIMS.md#C-IN-ANNEX-INTRO) — each opens what it rests on.
+
+<a id="C-IN-OLD-BEEFSAME"></a>
+### On beef, organic and conventional stocking are indistinguishable, and extensive beef is below any binding threshold.
+
+`C-IN-OLD-BEEFSAME` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-BEEFSAME">On beef the two are indistinguishable ([0.36](SOURCES.md#F-e3abd219df) against [0.45](SOURCES.md#F-f32b84ebe1)), which is what you would expect: extensive beef is already below any threshold that binds</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-BEEFSAME "What this claim rests on")</sup>
+
+**Why it was retired:** The organic beef median is lower than the conventional, and the conventional median sits above the lower threshold, not below every binding one.
+
+**Replaced by:** [`C-IN-ORG-DENSITY`](CLAIMS.md#C-IN-ORG-DENSITY) — each opens what it rests on.
+
+<a id="C-IN-OLD-BESTCOND"></a>
+### The most pressured type is in the best financial condition; beef is extensive cattle on owned land.
+
+`C-IN-OLD-BESTCOND` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-BESTCOND">This table is the reason the page is organised the way it is. The type under the most regulatory pressure is the one in the best financial condition. Dairy has the highest stocking density of any type, the smallest catch-crop base area, and the lowest loss rate ([5](SOURCES.md#F-802385db55)% of the [148](SOURCES.md#F-5d6150782c) dairy filings carrying a profit figure), the lowest share with negative equity, and a median profit per hectare [8.9](SOURCES.md#F-797cea801c) times that of beef. Beef and other cattle have the *highest* median equity ratio ([0.45](SOURCES.md#F-62a5a6dd81)) and simultaneously the highest loss rate of any real farming type ([32](SOURCES.md#F-05e6585f07)%) — a combination that describes an asset-rich, income-poor holding, which is what extensive cattle on owned land is</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-BESTCOND "What this claim rests on")</sup>
+
+**Why it was retired:** 'Best financial condition' conflated the fewest loss-makers with solvency: dairy's median equity ratio is second lowest of the types. And ownership is not in the registers fetched.
+
+**Replaced by:** [`C-IN-DAIRY-BEST`](CLAIMS.md#C-IN-DAIRY-BEST) — each opens what it rests on.
+
+<a id="C-IN-OLD-BOTHWAYS"></a>
+### Published retention evidence exists in both directions.
+
+`C-IN-OLD-BOTHWAYS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-BOTHWAYS">Published evidence exists in both directions and this project has not obtained the retention grid</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-BOTHWAYS "What this claim rests on")</sup>
+
+**Why it was retired:** It rested on the unsourced IFRO figures.
+
+**Replaced by:** [`C-IN-G-RET`](CLAIMS.md#C-IN-G-RET) — each opens what it rests on.
+
+<a id="C-IN-OLD-BRAKQUOTE"></a>
+### The braklægningspunkt was fixed on a stated day, with a quoted phrase.
+
+`C-IN-OLD-BRAKQUOTE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-BRAKQUOTE">The braklægningspunkt fixed: *"det maksimale reguleringstryk i de enkelte vandoplande</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-BRAKQUOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The quoted phrase is in no document this project holds; the pinned press release of that day records a partial agreement on the coming nitrogen regulation, which is what the row now says.
+
+**Replaced by:** [`C-IN-T-PARTIAL`](CLAIMS.md#C-IN-T-PARTIAL) — each opens what it rests on.
+
+<a id="C-IN-OLD-BRAKROW"></a>
+### The braklægningspunkt is described as set per catchment, in a partial agreement of a stated day.
+
+`C-IN-OLD-BRAKROW` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-BRAKROW">and there may be no single number: it is described as set per catchment. | The 2025-06-18 *delaftale* and the implementing act</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-BRAKROW "What this claim rests on")</sup>
+
+**Why it was retired:** 'Described as set per catchment' has no source here, and the pinned press release dates the partial agreement a day later than the page did.
+
+**Replaced by:** [`C-IN-G-BRAK`](CLAIMS.md#C-IN-G-BRAK) — each opens what it rests on.
+
+<a id="C-IN-OLD-CERTAINLY"></a>
+### A grass-led dairy holding certainly has cereal area, and the direction of the base split is robust.
+
+`C-IN-OLD-CERTAINLY` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-CERTAINLY">A dairy holding whose largest crop is grass certainly has cereal area too, so the true base share for dairy is higher than [34](SOURCES.md#F-b8b7ab769f)% and the true share for pigs lower than [97](SOURCES.md#F-bdccf3f877)%. The direction is robust and the magnitudes are not</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-CERTAINLY "What this claim rests on")</sup>
+
+**Why it was retired:** Neither 'certainly' nor 'robust' is shown: classing by the largest crop can overstate the gap by an amount not measured.
+
+**Replaced by:** [`C-IN-BASE-LIMIT`](CLAIMS.md#C-IN-BASE-LIMIT) — each opens what it rests on.
+
+<a id="C-IN-OLD-CO2E"></a>
+### The CO2e tax is not law, no bill was found, and the government plans one for a stated year.
+
+`C-IN-OLD-CO2E` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-CO2E">Out of scope, and it is not law. It is a separate instrument with a different base — modelled greenhouse-gas emissions from digestion and manure handling, not nitrogen — and therefore a different incidence, which this page does not compute. It exists as a political agreement; no implementing bill was located in the Folketing record, and the government's own stated plan is to introduce one in 2027 for entry into force in 2030. Nothing on this page should be read as covering it, and nothing on this page assumes it. | An implementing bill, if one is introduced. Until then every farm-type cost analysis of it — and there are several in circulation — is an analysis of a proposal, generally at rates and without the basic deduction that the agreement actually specifies</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-CO2E "What this claim rests on")</sup>
+
+**Why it was retired:** The bill's status, the government's timetable and the other analyses' assumptions have no source here.
+
+**Replaced by:** [`C-IN-G-CO2E`](CLAIMS.md#C-IN-G-CO2E) — each opens what it rests on.
+
+<a id="C-IN-OLD-COUNT"></a>
+### Section 7 is a count.
+
+`C-IN-OLD-COUNT` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-COUNT">an absence is reported as a count over a named corpus. Here is the count</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-COUNT "What this claim rests on")</sup>
+
+**Why it was retired:** What follows is a list of questions, not a count.
+
+**Replaced by:** [`C-IN-GAPS-INTRO`](CLAIMS.md#C-IN-GAPS-INTRO) — each opens what it rests on.
+
+<a id="C-IN-OLD-CROPEXT"></a>
+### The sibling project's crop-farmer extension is in progress.
+
+`C-IN-OLD-CROPEXT` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-CROPEXT">crop-farmer extension, in progress</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-CROPEXT "What this claim rests on")</sup>
+
+**Why it was retired:** The sibling project's work was not checked here.
+
+**Replaced by:** [`C-IN-G-ARABLE`](CLAIMS.md#C-IN-G-ARABLE) — each opens what it rests on.
+
+<a id="C-IN-OLD-CYCLICAL"></a>
+### The accounts are measured at a cyclical high.
+
+`C-IN-OLD-CYCLICAL` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-CYCLICAL">The accounts are measured at a cyclical high. Over the three filed years</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-CYCLICAL "What this claim rests on")</sup>
+
+**Why it was retired:** No price or market series was read to place these years in a cycle; what the accounts show is balance sheets strengthening over three years.
+
+**Replaced by:** [`C-IN-STRENGTHENED`](CLAIMS.md#C-IN-STRENGTHENED) — each opens what it rests on.
+
+<a id="C-IN-OLD-DAIRYPREDICTED"></a>
+### NITROGEN.md already predicted that selling land raises a land-squeezed holding's loading.
+
+`C-IN-OLD-DAIRYPREDICTED` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-DAIRYPREDICTED">There is a second reason dairy should decline, and it is the mechanism the manure section of NITROGEN.md already predicted</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-DAIRYPREDICTED "What this claim rests on")</sup>
+
+**Why it was retired:** NITROGEN.md does not state this mechanism; the arithmetic stands on its own.
+
+**Replaced by:** [`C-IN-DAIRY-UP`](CLAIMS.md#C-IN-DAIRY-UP) — each opens what it rests on.
+
+<a id="C-IN-OLD-DEBATE"></a>
+### The allocation model is the choice being fought over and the one the industry is arguing about.
+
+`C-IN-OLD-DEBATE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-DEBATE">So the choice being fought over is a real choice for arable and a largely settled question for cattle. Picking a different quota-allocation model changes what a specialised arable holding loses by a factor of [2.1](SOURCES.md#F-0a5926f8bf); it moves a cattle holding by [22](SOURCES.md#F-9cf0ef51cb)% of its mean loss and leaves it, in all six cases, losing [1.7](SOURCES.md#F-548594d929) to [3.0](SOURCES.md#F-aa1f0dc13a) times what the arable holding does. The instrument the industry is arguing about is not the instrument that decides cattle's position — the base area is, and the base area is fixed by what grows on the farm</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-DEBATE "What this claim rests on")</sup>
+
+**Why it was retired:** Who argues about the allocation models, and how, was not traced to any source here; what the table shows is how much each type moves across them. The conclusions repeated it.
+
+**Replaced by:** [`C-IN-NORESCUE-READ`](CLAIMS.md#C-IN-NORESCUE-READ), [`C-IN-K4`](CLAIMS.md#C-IN-K4) — each opens what it rests on.
+
+<a id="C-IN-OLD-DEBTSTORY"></a>
+### An early version found beef carrying a stated share of its debt short-term against dairy, read as dairy mortgage-financed and beef on the overdraft.
+
+`C-IN-OLD-DEBTSTORY` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-DEBTSTORY">An early version of this analysis found that beef holdings carried [68](SOURCES.md#F-3c6b5dcee0)% of their debt short-term against [24](SOURCES.md#F-e40c66aa27)% for dairy, and read that as dairy being mortgage-financed while beef lives on the overdraft. It is a plausible story and it fits the other findings</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-DEBTSTORY "What this claim rests on")</sup>
+
+**Why it was retired:** Page history, and its two figures were typed with nothing storing them. The current table shows why no debt-composition figure is used.
+
+**Replaced by:** [`C-IN-DEBT-SUM`](CLAIMS.md#C-IN-DEBT-SUM), [`C-IN-DEBT-GONE`](CLAIMS.md#C-IN-DEBT-GONE) — each opens what it rests on.
+
+<a id="C-IN-OLD-DEROGYEARS"></a>
+### The cattle derogation ran for a stated number of years, and its end was the largest single step.
+
+`C-IN-OLD-DEROGYEARS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-DEROGYEARS">And the cattle derogation is gone. Denmark's *kvægundtagelse* permitted [230](SOURCES.md#F-bd69d97f95) kg N/ha on qualifying cattle holdings for twenty-two years. It expired on 2024-07-31 and was not renewed, so those holdings dropped to [170](SOURCES.md#F-68a118e653) — a [26](SOURCES.md#F-73f5cea0ed)% cut in what may be spread, already delivered, before `L 5` was drafted. Any account of the burden on Danish dairy that starts in 2026 has missed the largest single step</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-DEROGYEARS "What this claim rests on")</sup>
+
+**Why it was retired:** How long the derogation ran had no source this project holds, and 'the largest single step' compared steps nobody measured. BEK 931's entry into force, its single ceiling and its transitional provision are pinned.
+
+**Replaced by:** [`C-IN-DEROG`](CLAIMS.md#C-IN-DEROG) — each opens what it rests on.
+
+<a id="C-IN-OLD-ENGINE"></a>
+### Voluntary land conversion is the Tripartite's declared main engine.
+
+`C-IN-OLD-ENGINE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ENGINE">The Tripartite's declared main engine is not the quota. It is voluntary land conversion, bought with money</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ENGINE "What this claim rests on")</sup>
+
+**Why it was retired:** No declaration naming it the main engine is held here; the pinned DM Bio article gives the land figures.
+
+**Replaced by:** [`C-IN-TARGETS`](CLAIMS.md#C-IN-TARGETS) — each opens what it rests on.
+
+<a id="C-IN-OLD-ENGINEBUYS"></a>
+### The engine buys intensive land not at all.
+
+`C-IN-OLD-ENGINEBUYS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ENGINEBUYS">The engine buys extensive land cheaply and intensive land not at all</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ENGINEBUYS "What this claim rests on")</sup>
+
+**Why it was retired:** The payment is offered for intensive land too; it is poor value there, not absent.
+
+**Replaced by:** [`C-IN-K8`](CLAIMS.md#C-IN-K8) — each opens what it rests on.
+
+<a id="C-IN-OLD-ENTIRE"></a>
+### A landless holding's entire nitrogen position is a contract to place slurry on another's land.
+
+`C-IN-OLD-ENTIRE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ENTIRE">and its entire nitrogen position is a contract to place slurry on somebody else's harmoniareal</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ENTIRE "What this claim rests on")</sup>
+
+**Why it was retired:** Manure can be dealt with other ways as well; placement is the usual route, not shown to be the only one.
+
+**Replaced by:** [`C-IN-CONTRACT-MECH`](CLAIMS.md#C-IN-CONTRACT-MECH) — each opens what it rests on.
+
+<a id="C-IN-OLD-ESCAPELIVE"></a>
+### The quota-cut alternative costs a livestock holding more per hectare than an arable one.
+
+`C-IN-OLD-ESCAPELIVE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ESCAPELIVE">The alternative that lets a holding buy its way out costs a livestock holding [59](SOURCES.md#F-7d93642577)% more per hectare than an arable one</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ESCAPELIVE "What this claim rests on")</sup>
+
+**Why it was retired:** The price steps at the upper threshold, not between livestock and arable holdings; a livestock holding below the line pays the lower rate.
+
+**Replaced by:** [`C-IN-ESCAPE`](CLAIMS.md#C-IN-ESCAPE) — each opens what it rests on.
+
+<a id="C-IN-OLD-EVERYHOLDING"></a>
+### Every holding files a fertiliser account.
+
+`C-IN-OLD-EVERYHOLDING` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-EVERYHOLDING">which is filed by every holding and is not open</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-EVERYHOLDING "What this claim rests on")</sup>
+
+**Why it was retired:** Who must file it was not read.
+
+**Replaced by:** [`C-IN-G-KGN`](CLAIMS.md#C-IN-G-KGN) — each opens what it rests on.
+
+<a id="C-IN-OLD-EXEMPTLAND"></a>
+### Section 4 measures how much land sits behind the organic exemption.
+
+`C-IN-OLD-EXEMPTLAND` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-EXEMPTLAND">That is not a marginal advantage of the kind arithmetic produces. It is a statutory exemption from two of the four instruments, and section 4 measures how much land sits behind it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-EXEMPTLAND "What this claim rests on")</sup>
+
+**Why it was retired:** Section 4 counts organic cattle holdings and their animal units, not the land behind the exemption.
+
+**Replaced by:** [`C-IN-EXEMPT-WEIGHT`](CLAIMS.md#C-IN-EXEMPT-WEIGHT) — each opens what it rests on.
+
+<a id="C-IN-OLD-EXTREME"></a>
+### The national density percentile is far above any operating farm, and a handful of businesses run thousands of animal units on one hectare.
+
+`C-IN-OLD-EXTREME` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-EXTREME">The highest-density holdings in the register are extreme: [8.8](SOURCES.md#F-116406bb71) animal units per declared hectare at the 90th percentile for poultry, and a national 99th percentile far above any density that could be an operating farm. A handful are, on the face of it, businesses running [thousands of animal units against a single declared</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-EXTREME "What this claim rests on")</sup>
+
+**Why it was retired:** Neither the national percentile nor the count of such businesses is stored; the poultry percentile is.
+
+**Replaced by:** [`C-IN-EXTREME`](CLAIMS.md#C-IN-EXTREME) — each opens what it rests on.
+
+<a id="C-IN-OLD-FARMSPERSONS"></a>
+### Most Danish farms are natural persons.
+
+`C-IN-OLD-FARMSPERSONS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-FARMSPERSONS">Most Danish farms are natural persons. `Enkeltmandsvirksomhed` — sole proprietorship — is not a company with limited liability and a boardroom; it is one human being, and the CVR register carries their name, their home address and their telephone number, because for a sole trader those are the same thing as the</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-FARMSPERSONS "What this claim rests on")</sup>
+
+**Why it was retired:** The count behind it covers businesses keeping animals, not Danish farms; arable holdings' legal forms were not counted.
+
+**Replaced by:** [`C-IN-PERSONS`](CLAIMS.md#C-IN-PERSONS) — each opens what it rests on.
+
+<a id="C-IN-OLD-FEEDSCOWS"></a>
+### The cereals and maize dairy must use for its percentage are the fraction that feeds the cows.
+
+`C-IN-OLD-FEEDSCOWS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-FEEDSCOWS">which is the fraction that feeds the cows</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-FEEDSCOWS "What this claim rests on")</sup>
+
+**Why it was retired:** What a dairy holding's cereals and maize are used for is not in the data.
+
+**Replaced by:** [`C-IN-DAIRY-BASE`](CLAIMS.md#C-IN-DAIRY-BASE) — each opens what it rests on.
+
+<a id="C-IN-OLD-FIFTYBN"></a>
+### The excluded filings are horse-keeping, property, fish-farming, wholesale and holding companies, the largest with assets over a stated sum.
+
+`C-IN-OLD-FIFTYBN` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-FIFTYBN">They are not noise to be tidied away — they are horse-keeping businesses, property-letting companies, fish farms, livestock wholesalers and non-financial holding companies that appear in the register because they happen to hold a livestock site. Left in, the largest of them has assets of over fifty billion kroner and would have set every mean on this page by itself</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-FIFTYBN "What this claim rests on")</sup>
+
+**Why it was retired:** The size of the largest excluded filing was typed and is not stored anywhere, and the list of what the excluded businesses are was not counted; what the code states is the industry codes it keeps.
+
+**Replaced by:** [`C-IN-EXCLUDED`](CLAIMS.md#C-IN-EXCLUDED) — each opens what it rests on.
+
+<a id="C-IN-OLD-FLOOR"></a>
+### The filers are the most capitalised and professionally financed end, so section 6's fragility is a floor on the whole.
+
+`C-IN-OLD-FLOOR` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-FLOOR">is not a picture of Danish farming under stress. It is a picture of the largest, most capitalised, most professionally financed [24](SOURCES.md#F-09f977fb0d)% of it — the end most likely to have a term loan, a treasurer and a buffer. Every fragility figure in section 6 should be read as a floor on the fragility of the whole</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-FLOOR "What this claim rests on")</sup>
+
+**Why it was retired:** 'Most capitalised' and 'a floor on the fragility of the whole' assume the unfiled majority is weaker; nothing in the data shows that, and section 6 itself says the rest is not known to be in better condition.
+
+**Replaced by:** [`C-IN-BIAS`](CLAIMS.md#C-IN-BIAS) — each opens what it rests on.
+
+<a id="C-IN-OLD-GRADIENTS"></a>
+### The ladder's gradients differ by more than its levels.
+
+`C-IN-OLD-GRADIENTS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-GRADIENTS">The gradients differ by more than the levels do</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-GRADIENTS "What this claim rests on")</sup>
+
+**Why it was retired:** Not computed.
+
+**Replaced by:** [`C-IN-LADDER-READ`](CLAIMS.md#C-IN-LADDER-READ) — each opens what it rests on.
+
+<a id="C-IN-OLD-GRAPHQL"></a>
+### The sibling project holds the ownership register's GraphQL schema.
+
+`C-IN-OLD-GRAPHQL` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-GRAPHQL">The sibling project holds the GraphQL schema and has not fetched it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-GRAPHQL "What this claim rests on")</sup>
+
+**Why it was retired:** The sibling project's holdings were not checked here.
+
+**Replaced by:** [`C-IN-G-OWN`](CLAIMS.md#C-IN-G-OWN) — each opens what it rests on.
+
+<a id="C-IN-OLD-GRAZED"></a>
+### The payment differs in tax treatment, some converted land can still be grazed, and no discount rate reverses the gap.
+
+`C-IN-OLD-GRAZED` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-GRAZED">The one-off payment is not a like-for-like substitute for an annual margin: it is capital against income, the tax treatment differs, the land retains some residual value and some of it can still be grazed. The ratio above is a comparison of magnitudes, not a discounted valuation, and a reader who wants the second should build it. It is printed because the magnitudes differ by a factor of [4](SOURCES.md#F-5d1f8bbb86) between the two cattle sectors at the rates each would be offered, and [9](SOURCES.md#F-0650e3db8e) at the same rate — and no discount rate reverses a gap of that size</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-GRAZED "What this claim rests on")</sup>
+
+**Why it was retired:** The tax treatment and grazing conditions were not read, and the effect of discounting was not computed.
+
+**Replaced by:** [`C-IN-PAYBACK-LIMIT`](CLAIMS.md#C-IN-PAYBACK-LIMIT) — each opens what it rests on.
+
+<a id="C-IN-OLD-IFRO"></a>
+### Published IFRO figures put Ringkøbing Fjord at higher retention than Odense Fjord, and the institutions describe the mechanism.
+
+`C-IN-OLD-IFRO` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-IFRO">On retention, this page states less than it would like to. The instrument weights by modelled nitrogen retention, and the common summary — that sandy west Jutland is the low-retention part of Denmark — is not established here and there is published evidence against it. IFRO's paired figures put Ringkøbing Fjord, in the sandy west, at *higher* retention than Odense Fjord's outer catchment on Funen, with the difference in delivery to the coast coming from higher leaching rather than lower retention. The producing institutions describe the mechanism as transport path length and redox depth rather than soil texture. Two catchments are not a national gradient, and this project has not obtained the retention grid, so it asserts no pattern</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-IFRO "What this claim rests on")</sup>
+
+**Why it was retired:** The paired IFRO figures and the institutions' description of the mechanism were cited with no source this project holds; the gaps table's 'published evidence exists in both directions' rested on them.
+
+**Replaced by:** [`C-IN-RETENTION`](CLAIMS.md#C-IN-RETENTION), [`C-IN-G-RET`](CLAIMS.md#C-IN-G-RET) — each opens what it rests on.
+
+<a id="C-IN-OLD-JUTLAND"></a>
+### A stated share of the herd is in Jutland, and the region with the least of it holds several top-percentage catchments.
+
+`C-IN-OLD-JUTLAND` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-JUTLAND">of the Danish herd is in Jutland, and the region carrying the least of it — Sjælland at [6.7](SOURCES.md#F-127921e7bf)%, median [0.37](SOURCES.md#F-01e789f963) DE/ha — contains several of the catchments carrying the highest mandatory percentage</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-JUTLAND "What this claim rests on")</sup>
+
+**Why it was retired:** The three regions summed are Syddanmark, Midtjylland and Nordjylland, and Syddanmark includes Funen, so the share is not Jutland's; and Region Sjælland holds the second-least of the herd, Region Hovedstaden the least.
+
+**Replaced by:** [`C-IN-WEST`](CLAIMS.md#C-IN-WEST) — each opens what it rests on.
+
+<a id="C-IN-OLD-LIQUID"></a>
+### The herd is the most liquid large asset a livestock holding has.
+
+`C-IN-OLD-LIQUID` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-LIQUID">It is the most liquid large asset a livestock holding has</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-LIQUID "What this claim rests on")</sup>
+
+**Why it was retired:** Liquidity of the asset classes was not measured.
+
+**Replaced by:** [`C-IN-BIOASSETS`](CLAIMS.md#C-IN-BIOASSETS) — each opens what it rests on.
+
+<a id="C-IN-OLD-LISTEDFIRST"></a>
+### The missing transfer regulation is listed first in section 7.
+
+`C-IN-OLD-LISTEDFIRST` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-LISTEDFIRST">the regulation that would say on what terms is the single document whose absence most changes this page's conclusions, and it is listed first in</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-LISTEDFIRST "What this claim rests on")</sup>
+
+**Why it was retired:** It is not first in section 7's list.
+
+**Replaced by:** [`C-IN-TRADE-WHY`](CLAIMS.md#C-IN-TRADE-WHY) — each opens what it rests on.
+
+<a id="C-IN-OLD-MISREPORT"></a>
+### Per-ID15 allocation is widely misreported.
+
+`C-IN-OLD-MISREPORT` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-MISREPORT">a detail that is widely misreported</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-MISREPORT "What this claim rests on")</sup>
+
+**Why it was retired:** No survey of reporting was made.
+
+**Replaced by:** [`C-IN-ID15`](CLAIMS.md#C-IN-ID15) — each opens what it rests on.
+
+<a id="C-IN-OLD-MOSTRESILIENT"></a>
+### The filers are therefore the most resilient end.
+
+`C-IN-OLD-MOSTRESILIENT` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-MOSTRESILIENT">it is the large end, and it is therefore the most resilient end</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-MOSTRESILIENT "What this claim rests on")</sup>
+
+**Why it was retired:** Size was taken for resilience; nothing shows it.
+
+**Replaced by:** [`C-IN-READ-S2`](CLAIMS.md#C-IN-READ-S2) — each opens what it rests on.
+
+<a id="C-IN-OLD-MUSTNOT"></a>
+### Sole proprietorships and partnerships must not file accounts.
+
+`C-IN-OLD-MUSTNOT` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-MUSTNOT">filing duty follows the legal form. A limited company (`Anpartsselskab`, ApS) or a public company (`Aktieselskab`, A/S) must file an annual report, and it is published in full and machine-readable. A sole proprietorship (`Enkeltmandsvirksomhed`) and, in the ordinary case, a partnership (`Interessentskab`, I/S) must not and does not. Danish agriculture is overwhelmingly the second kind</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-MUSTNOT "What this claim rests on")</sup>
+
+**Why it was retired:** They have no duty to publish accounts; they are not barred from doing so, as 'must not' said.
+
+**Replaced by:** [`C-IN-FILING`](CLAIMS.md#C-IN-FILING) — each opens what it rests on.
+
+<a id="C-IN-OLD-NAMES"></a>
+### The listed catchments are not the west-Jutland livestock belt.
+
+`C-IN-OLD-NAMES` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-NAMES">This is not the west-Jutland livestock belt</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-NAMES "What this claim rests on")</sup>
+
+**Why it was retired:** Annex 1 also lists Juvre Dyb and Knudedyb, west-Jutland waters, and several east-Jutland fjords; what holds is that most of its catchments are Zealand, Funen and Sønderjylland's inner waters.
+
+**Replaced by:** [`C-IN-NAMES`](CLAIMS.md#C-IN-NAMES) — each opens what it rests on.
+
+<a id="C-IN-OLD-NOTDENSITY"></a>
+### Dairy is the most exposed, not because of density.
+
+`C-IN-OLD-NOTDENSITY` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-NOTDENSITY">Dairy is the most exposed enterprise type, and not because of density</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-NOTDENSITY "What this claim rests on")</sup>
+
+**Why it was retired:** The item then gave the density figure as half the reason; 'not because of density alone' is what the argument supports.
+
+**Replaced by:** [`C-IN-K2`](CLAIMS.md#C-IN-K2) — each opens what it rests on.
+
+<a id="C-IN-OLD-NOTTHEORY"></a>
+### The mechanism is not this project's theory, and the report puts it exactly this way.
+
+`C-IN-OLD-NOTTHEORY` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-NOTTHEORY">That is not this project's theory. It is the mechanism the technical basis for the new regulation states in its own words. The DCA/Aarhus University NUAR report — the analysis behind the discharge-based model — puts it exactly this way</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-NOTTHEORY "What this claim rests on")</sup>
+
+**Why it was retired:** The mechanism was measured on the registers here before it was compared with the report; what holds is that the report states it too.
+
+**Replaced by:** [`C-IN-NUAR-MECH`](CLAIMS.md#C-IN-NUAR-MECH) — each opens what it rests on.
+
+<a id="C-IN-OLD-OKOLOGISK"></a>
+### Økologisk Landsforening's director stated that the association had tried to stop conventional farms buying organic farms' unused quotas.
+
+`C-IN-OLD-OKOLOGISK` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-OKOLOGISK">Økologisk Landsforening's director stated after the December 2025 agreement that the association had worked *"for, at konventionelle landbrug ikke skal have mulighed for at købe de kvælstofudledningskvoter, som økologer ikke bruger, fordi de udleder langt mindre kvælstof"* — to stop conventional farms buying the nitrogen quotas organic farms do not use — and that *"[d]et var der ikke stemning for blandt de politiske partier"*. An argument to prohibit a purchase is only made about a purchase someone expects to be possible</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-OKOLOGISK "What this claim rests on")</sup>
+
+**Why it was retired:** The statement was quoted without a recorded source, and no pinned document holds it, so neither the words nor the inference drawn from them can be justified here. NUAR's modelling of trading, which is pinned, stands on its own.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-IN-OLD-ONEPART"></a>
+### The placement contracts are the one non-public part, and the single largest unmeasured quantity.
+
+`C-IN-OLD-ONEPART` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ONEPART">Those contracts are the one part of this arrangement that is not public. They are not in the CVR register, not in the field-parcel register and not in the livestock register. This is the single largest unmeasured quantity in the whole incidence question, and it is a private contract rather than a missing dataset — so no fetch fixes it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ONEPART "What this claim rests on")</sup>
+
+**Why it was retired:** Other parts are not public either - the fertiliser accounts, section 7 says - and 'the single largest unmeasured quantity' compared quantities nobody measured.
+
+**Replaced by:** [`C-IN-CONTRACTS-PRIVATE`](CLAIMS.md#C-IN-CONTRACTS-PRIVATE) — each opens what it rests on.
+
+<a id="C-IN-OLD-ONLYPOS"></a>
+### Organic is the only type positive in every column of NUAR's table.
+
+`C-IN-OLD-ONLYPOS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ONLYPOS">That is the only enterprise type in the table with a positive sign in every column</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ONLYPOS "What this claim rests on")</sup>
+
+**Why it was retired:** Extensified holdings are also positive in every column.
+
+**Replaced by:** [`C-IN-ORG-NUAR`](CLAIMS.md#C-IN-ORG-NUAR) — each opens what it rests on.
+
+<a id="C-IN-OLD-ONTOP"></a>
+### The discharge quota arrives on top of the catch-crop requirements, not instead of them.
+
+`C-IN-OLD-ONTOP` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ONTOP">So the requirements measured in section 3 through section 5 are the ones that actually bind this year, and the discharge quota arrives on top of them, not instead of them</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ONTOP "What this claim rests on")</sup>
+
+**Why it was retired:** §57 repeals the old fertiliser act and keeps its rules only for planning periods up to 2026-2027; from then the new act governs, which is instead of the old requirements, not on top of them.
+
+**Replaced by:** [`C-IN-NOTYET`](CLAIMS.md#C-IN-NOTYET) — each opens what it rests on.
+
+<a id="C-IN-OLD-PIGSLANDLESS"></a>
+### Pigs are landless.
+
+`C-IN-OLD-PIGSLANDLESS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-PIGSLANDLESS">Pigs are landless. [581](SOURCES.md#F-cf62f799d5) pig holdings hold [406,192](SOURCES.md#F-ffafe8b02a) animal units with no declared hectare underneath them at all — [2.0](SOURCES.md#F-436fd48a44) times the surplus carried by the [610](SOURCES.md#F-09768c1a38) pig holdings that do declare land</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-PIGSLANDLESS "What this claim rests on")</sup>
+
+**Why it was retired:** Most pig animal units stand on declared land; what holds is that most of the landless herd is pigs.
+
+**Replaced by:** [`C-IN-PIGS-LANDLESS`](CLAIMS.md#C-IN-PIGS-LANDLESS) — each opens what it rests on.
+
+<a id="C-IN-OLD-PROFILE"></a>
+### The typical exposed-and-thin holding is a pig holding of a stated size range with a loss already filed.
+
+`C-IN-OLD-PROFILE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-PROFILE">The profile, stated as a profile: a pig holding of a few hundred to a few thousand animal units, either landless or stocked above the higher manure threshold, with an equity ratio under [0.20](SOURCES.md#F-b3119c8fac) and a loss already on the last filed accounts</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-PROFILE "What this claim rests on")</sup>
+
+**Why it was retired:** The size range was typed with no source, and a filed loss describes fewer than half the cohort; what holds is that most of the cohort is pigs.
+
+**Replaced by:** [`C-IN-PROFILE`](CLAIMS.md#C-IN-PROFILE) — each opens what it rests on.
+
+<a id="C-IN-OLD-REFORM"></a>
+### Almost every summary gets it wrong; the animal unit ceased to count at a dated reform, a date that is Landbrugsstyrelsen's.
+
+`C-IN-OLD-REFORM` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-REFORM">The first thing to get right, because almost every summary gets it wrong: the Danish nitrogen rules no longer count animals. The *dyreenhed* — animal unit — ceased to be a regulatory unit with the reform of 2017-08-01, and the [1.4](SOURCES.md#F-43c6195e99), [1.7](SOURCES.md#F-1b8e255def) and [2.3](SOURCES.md#F-a4286f9161) DE/ha harmony ceilings went with it. The date is Landbrugsstyrelsen's; what was checked here is the present tense of it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-REFORM "What this claim rests on")</sup>
+
+**Why it was retired:** No survey of summaries was made, and the reform date was attributed to Landbrugsstyrelsen with no source this project holds. The present-tense check, the word's absence from the regulations, stands.
+
+**Replaced by:** [`C-IN-NOANIMALS`](CLAIMS.md#C-IN-NOANIMALS) — each opens what it rests on.
+
+<a id="C-IN-OLD-REGISTERED"></a>
+### Scheme commitments are administered by the state and their areas registered.
+
+`C-IN-OLD-REGISTERED` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-REGISTERED">The commitments are administered by the state and the areas are registered</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-REGISTERED "What this claim rests on")</sup>
+
+**Why it was retired:** How the commitments are administered and published was not checked.
+
+**Replaced by:** [`C-IN-G-UPTAKE`](CLAIMS.md#C-IN-G-UPTAKE) — each opens what it rests on.
+
+<a id="C-IN-OLD-RENTED"></a>
+### Rented-in land can be missing from declared area.
+
+`C-IN-OLD-RENTED` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-RENTED">rented-in land can be missing, and a business buying spreading capacity from a neighbour looks land-poor here and is compliant in law</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-RENTED "What this claim rests on")</sup>
+
+**Why it was retired:** Parcels are declared by whoever farms them, so rented-in land is normally declared; what can be missing is land used without being declared. The same passage called the historic density a 'pre-2017' unit, a date with no source here.
+
+**Replaced by:** [`C-IN-SEC3-LIMITS`](CLAIMS.md#C-IN-SEC3-LIMITS) — each opens what it rests on.
+
+<a id="C-IN-OLD-RETMAP"></a>
+### A new retention map was published on a stated day by GEUS and Aarhus University.
+
+`C-IN-OLD-RETMAP` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-RETMAP">The new retentionskort published by GEUS and Aarhus University</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-RETMAP "What this claim rests on")</sup>
+
+**Why it was retired:** Its date and publishers have no source this project holds; section 7 repeated them. The regulation's use of retention by ID15 area is pinned (BEK 131/2026 §6 stk. 3); the map itself was not obtained.
+
+**Replaced by:** [`C-IN-RETENTION`](CLAIMS.md#C-IN-RETENTION), [`C-IN-G-RET`](CLAIMS.md#C-IN-G-RET) — each opens what it rests on.
+
+<a id="C-IN-OLD-REVENUE"></a>
+### The Revenue tag is present on a stated share of filings.
+
+`C-IN-OLD-REVENUE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-REVENUE">is a separate tag present on about one filing in twenty, because a Danish class B company may omit it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-REVENUE "What this claim rests on")</sup>
+
+**Why it was retired:** How many filings carry the tag was typed and is not stored.
+
+**Replaced by:** [`C-IN-GROSS`](CLAIMS.md#C-IN-GROSS) — each opens what it rests on.
+
+<a id="C-IN-OLD-ROUTES"></a>
+### The only routes to non-filers' finances are the farm accountancy survey and advisory benchmarking.
+
+`C-IN-OLD-ROUTES` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-ROUTES">The only routes are the farm accountancy survey (*Regnskabsstatistik for jordbrug*, a sample, published in aggregate) or the advisory sector's benchmarking, which is not open</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-ROUTES "What this claim rests on")</sup>
+
+**Why it was retired:** Neither source was checked.
+
+**Replaced by:** [`C-IN-G-NONFILERS`](CLAIMS.md#C-IN-G-NONFILERS) — each opens what it rests on.
+
+<a id="C-IN-OLD-SANDY"></a>
+### The kommune table names one belt: the sandy west and south of Jutland.
+
+`C-IN-OLD-SANDY` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-SANDY">names one belt: the sandy west and south of Jutland, plus Sønderjylland</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-SANDY "What this claim rests on")</sup>
+
+**Why it was retired:** Soil texture is not in the data; the kommune names give the geography, not the soil.
+
+**Replaced by:** [`C-IN-WESTBELT`](CLAIMS.md#C-IN-WESTBELT) — each opens what it rests on.
+
+<a id="C-IN-OLD-SIBLINGFETCH"></a>
+### The sibling project is extending its fetch to crop holdings.
+
+`C-IN-OLD-SIBLINGFETCH` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-SIBLINGFETCH">The sibling project is extending the fetch to crop holdings and that > work is in progress; it is not in this data</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-SIBLINGFETCH "What this claim rests on")</sup>
+
+**Why it was retired:** The state of the sibling project's work was not checked here.
+
+**Replaced by:** [`C-IN-NO-ARABLE-BS`](CLAIMS.md#C-IN-NO-ARABLE-BS) — each opens what it rests on.
+
+<a id="C-IN-OLD-SIZED"></a>
+### The requirement is sized to a catchment's remaining need after the voluntary round.
+
+`C-IN-OLD-SIZED` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-SIZED">The requirement is sized to a *catchment's* remaining reduction need after the voluntary round, and it is charged on the *base area*, which is cereals. A catchment of Zealand arable land has a large base area, few animals, and — on the evidence of it appearing on this list — a need the voluntary round did not meet</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-SIZED "What this claim rests on")</sup>
+
+**Why it was retired:** How the requirement is sized is stated in nothing this project holds, and the reading that a listed catchment's need survived the voluntary round rested on it.
+
+**Replaced by:** [`C-IN-DESIGN`](CLAIMS.md#C-IN-DESIGN) — each opens what it rests on.
+
+<a id="C-IN-OLD-SOLVENT"></a>
+### Dairy, the most pressured type, is the most solvent, and beef has the worst balance sheets.
+
+`C-IN-OLD-SOLVENT` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-SOLVENT">The enterprise type under the most regulatory pressure — dairy — is also the most solvent in the accounts that exist. The type with the worst balance sheets — beef and other cattle — is the least pressured</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-SOLVENT "What this claim rests on")</sup>
+
+**Why it was retired:** By median equity ratio beef has the strongest balance sheets of the types and dairy the second weakest. What the accounts show is dairy with the fewest loss-makers and negative-equity balance sheets, and beef with the highest loss rate of the farming types: weak income on a strong balance sheet. The conclusions repeated 'most solvent'.
+
+**Replaced by:** [`C-IN-SUMMARY`](CLAIMS.md#C-IN-SUMMARY), [`C-IN-K3`](CLAIMS.md#C-IN-K3) — each opens what it rests on.
+
+<a id="C-IN-OLD-SQUEEZE"></a>
+### The dairy holding has slightly too many cows for its fields, and the wrong crops on them.
+
+`C-IN-OLD-SQUEEZE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-SQUEEZE">The dairy holding has fields; it has slightly too many cows for them, and the wrong crops on them</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-SQUEEZE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Slightly' understates it - the median dairy holding with accounts carries about two animal units per declared hectare against the historic line - and 'the wrong crops' was a judgement where the fact is that most of its land is outside the base.
+
+**Replaced by:** [`C-IN-DAIRY-SQUEEZE`](CLAIMS.md#C-IN-DAIRY-SQUEEZE) — each opens what it rests on.
+
+<a id="C-IN-OLD-TENCATCH"></a>
+### The report states the pattern repeats across a stated number of other catchments.
+
+`C-IN-OLD-TENCATCH` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-TENCATCH">The report states the pattern repeats across the other ten catchments analysed</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-TENCATCH "What this claim rests on")</sup>
+
+**Why it was retired:** The report says the pattern recurs in its other coastal catchments; it does not count them in that passage.
+
+**Replaced by:** [`C-IN-NUAR-NOTE`](CLAIMS.md#C-IN-NUAR-NOTE) — each opens what it rests on.
+
+<a id="C-IN-OLD-THREEKEY"></a>
+### The first three of the four requirements all key on the same two thresholds.
+
+`C-IN-OLD-THREEKEY` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-THREEKEY">What replaced it is four separate requirements, and the first three all key on the same two thresholds — [30](SOURCES.md#F-3e377e6603) and [80](SOURCES.md#F-c7a8e08807) kilograms of nitrogen per hectare of *harmoniareal*, from manure and other organic fertiliser</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-THREEKEY "What this claim rests on")</sup>
+
+**Why it was retired:** Only the compulsory and the livestock catch crops turn on the two thresholds; the manure ceiling is a flat rate and the targeted requirement is set per catchment.
+
+**Replaced by:** [`C-IN-FOUR`](CLAIMS.md#C-IN-FOUR) — each opens what it rests on.
+
+<a id="C-IN-OLD-THREEPROV"></a>
+### Three of LOV 759's provisions decide incidence, all read rather than taken from coverage.
+
+`C-IN-OLD-THREEPROV` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-THREEPROV">Three of its provisions decide incidence, and all three were read here rather than taken from coverage of them</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-THREEPROV "What this claim rests on")</sup>
+
+**Why it was retired:** More than three provisions are quoted (§6, §11, §57, §65); they are now quoted from the pinned text.
+
+**Replaced by:** [`C-IN-LOV759`](CLAIMS.md#C-IN-LOV759) — each opens what it rests on.
+
+<a id="C-IN-OLD-THREESTEP"></a>
+### Above the upper threshold three things happen at once, including the livestock catch crops.
+
+`C-IN-OLD-THREESTEP` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-THREESTEP">Above that line three things happen at once: the compulsory catch-crop percentage rises from [10.7](SOURCES.md#F-edc8b56627)% to [14.7](SOURCES.md#F-34ff485d39)%, the livestock catch-crop requirement applies on top, and the quota-reduction escape valve reprices from [110](SOURCES.md#F-f529392747) to [175](SOURCES.md#F-d73b0d6d91) kg N per hectare. The instrument does not tighten gradually with density. It steps, and dairy is almost entirely on the far side of the step</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-THREESTEP "What this claim rests on")</sup>
+
+**Why it was retired:** The livestock catch-crop requirement applies from the lower threshold, not the upper one; above the upper line two things change, the compulsory percentage and the price of the quota-cut alternative (`BEK 673/2026 §4 stk. 3-4`, §24). The same slip, 'three of the four requirements step up at once', stood in section 1, section 3's opening, section 6 and the conclusions.
+
+**Replaced by:** [`C-IN-DAIRY-OVER`](CLAIMS.md#C-IN-DAIRY-OVER), [`C-IN-S3-INTRO`](CLAIMS.md#C-IN-S3-INTRO), [`C-IN-OVERLAP-DEF`](CLAIMS.md#C-IN-OVERLAP-DEF), [`C-IN-CH-MANURE`](CLAIMS.md#C-IN-CH-MANURE), [`C-IN-K2`](CLAIMS.md#C-IN-K2) — each opens what it rests on.
+
+<a id="C-IN-OLD-TILLAEG"></a>
+### A tillægsaftale on a stated day exempted vegetable-growing areas from the new model in a stated year.
+
+`C-IN-OLD-TILLAEG` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-TILLAEG">A *tillægsaftale* exempting vegetable-growing areas from the new model in</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-TILLAEG "What this claim rests on")</sup>
+
+**Why it was retired:** The date and the scope are in no source this project holds; the pinned TV 2 report of 2026-09-03 has Venstre describing a tillægsaftale that secured an exception for vegetable producers.
+
+**Replaced by:** [`C-IN-T-TILLAEG`](CLAIMS.md#C-IN-T-TILLAEG) — each opens what it rests on.
+
+<a id="C-IN-OLD-TRANSFERABLE"></a>
+### Discharge quotas are transferable.
+
+`C-IN-OLD-TRANSFERABLE` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-TRANSFERABLE">And discharge quotas are transferable. §6 stk. 4, last sentence</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-TRANSFERABLE "What this claim rests on")</sup>
+
+**Why it was retired:** §6 stk. 4 lets the minister set rules on transfer; it does not make quotas transferable by itself.
+
+**Replaced by:** [`C-IN-TRANSFER`](CLAIMS.md#C-IN-TRANSFER) — each opens what it rests on.
+
+<a id="C-IN-OLD-UNREAD"></a>
+### The transfer terms live in an implementing regulation the page has not read; the statement is much stronger than 'not established'.
+
+`C-IN-OLD-UNREAD` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-UNREAD">Those live in an implementing regulation this page has not read. So the honest statement is narrower than "there is a market" and much stronger than "not established": the act contemplates transfer and creates the power to permit it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-UNREAD "What this claim rests on")</sup>
+
+**Why it was retired:** Whether that regulation exists yet was not established, so it cannot be said to hold the terms.
+
+**Replaced by:** [`C-IN-TRANSFER-TERMS`](CLAIMS.md#C-IN-TRANSFER-TERMS) — each opens what it rests on.
+
+<a id="C-IN-OLD-VERBATIM"></a>
+### POLITICS.md holds the political record verbatim.
+
+`C-IN-OLD-VERBATIM` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-VERBATIM">is collected verbatim, dated and sourced</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-VERBATIM "What this claim rests on")</sup>
+
+**Why it was retired:** Whether that page quotes every statement verbatim is its own claim to make, not this page's.
+
+**Replaced by:** [`C-IN-RECORDS`](CLAIMS.md#C-IN-RECORDS) — each opens what it rests on.
+
+<a id="C-IN-OLD-WHYLOSS"></a>
+### The report says a small base area is why cattle carries the largest loss.
+
+`C-IN-OLD-WHYLOSS` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-WHYLOSS">and the report says a small base area is why cattle carries the largest loss</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-WHYLOSS "What this claim rests on")</sup>
+
+**Why it was retired:** The report names a smaller base area alongside a larger discharge, not as the sole reason.
+
+**Replaced by:** [`C-IN-TWO-ROUTES`](CLAIMS.md#C-IN-TWO-ROUTES) — each opens what it rests on.
+
+<a id="C-IN-OLD-WHYSMALL"></a>
+### The strengthening is why the no-buffer cohort is small, and after two poor years it would be materially larger.
+
+`C-IN-OLD-WHYSMALL` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-WHYSMALL">That is why the no-buffer cohort is as small as it is, and it means the same measurement taken after two poor years would find a materially larger one</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-WHYSMALL "What this claim rests on")</sup>
+
+**Why it was retired:** A counterfactual nobody ran.
+
+**Replaced by:** [`C-IN-REBUILT`](CLAIMS.md#C-IN-REBUILT) — each opens what it rests on.
+
+<a id="C-IN-OLD-YIELD"></a>
+### Winter wheat and spring barley yields respond to applied nitrogen over the range a quota would move it.
+
+`C-IN-OLD-YIELD` · retired 2026-09-11 from [INCIDENCE.md](INCIDENCE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IN-OLD-YIELD">and both are cereals whose yield responds to applied nitrogen over the range a quota would move it</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-YIELD "What this claim rests on")</sup>
+
+**Why it was retired:** The agronomic yield response was not sourced.
+
+**Replaced by:** [`C-IN-CROPS`](CLAIMS.md#C-IN-CROPS) — each opens what it rests on.
+
+## KNOWN_AND_UNKNOWN.md
+
+<a id="C-KP-OLD-ACCIDENT"></a>
+### A day later the estimator was run again by accident, with one fetch and one audit.
+
+`C-KP-OLD-ACCIDENT` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-ACCIDENT">A day later, the estimator was run again by accident — one fetch and one audit — and it came back higher, not lower</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-ACCIDENT "What this claim rests on")</sup>
+
+**Why it was retired:** The circumstances of the second list are not recorded; its date is.
+
+**Replaced by:** [`C-KP-RATE`](CLAIMS.md#C-KP-RATE) — each opens what it rests on.
+
+<a id="C-KP-OLD-ALLTHREE"></a>
+### All three were simply not looked for.
+
+`C-KP-OLD-ALLTHREE` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-ALLTHREE">None of those was hidden. All three were simply not looked for</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-ALLTHREE "What this claim rests on")</sup>
+
+**Why it was retired:** The list above it held four items, not three.
+
+**Replaced by:** [`C-KP-NOTHIDDEN`](CLAIMS.md#C-KP-NOTHIDDEN) — each opens what it rests on.
+
+<a id="C-KP-OLD-COPERNICUS"></a>
+### International data centres hold effort, wave and optical layers that are open and unfetched.
+
+`C-KP-OLD-COPERNICUS` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-COPERNICUS">hold effort, wave and optical layers that are open and unfetched</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-COPERNICUS "What this claim rests on")</sup>
+
+**Why it was retired:** Some Copernicus optical products are now held on disk.
+
+**Replaced by:** [`C-KP-CONNECTORS`](CLAIMS.md#C-KP-CONNECTORS) — each opens what it rests on.
+
+<a id="C-KP-OLD-DEROG"></a>
+### The derogation lapsed in a stated year.
+
+`C-KP-OLD-DEROG` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-DEROG">The binding rule is [170](SOURCES.md#F-63e716a00f) kg N/ha, and the [230](SOURCES.md#F-40b20ba569) kg derogation lapsed in</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-DEROG "What this claim rests on")</sup>
+
+**Why it was retired:** No pinned source records when the derogation lapsed.
+
+**Replaced by:** [`C-KP-T-DE`](CLAIMS.md#C-KP-T-DE) — each opens what it rests on.
+
+<a id="C-KP-OLD-EELGRASS"></a>
+### The eelgrass topic holds a stated number of stations over a stated span.
+
+`C-KP-OLD-EELGRASS` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-EELGRASS">The ODA topic tree holds Ålegræs plante ([1,990](SOURCES.md#F-4df9a80c4a) stations, 1970–2026), makroalge and bundfauna. None is in the fetch script. Three one-line entries</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-EELGRASS "What this claim rests on")</sup>
+
+**Why it was retired:** The station count and span were typed; the source register records the topics, not their size.
+
+**Replaced by:** [`C-KP-VEGETATION`](CLAIMS.md#C-KP-VEGETATION) — each opens what it rests on.
+
+<a id="C-KP-OLD-FIELDSHEET"></a>
+### Every field sheet had a time of day.
+
+`C-KP-OLD-FIELDSHEET` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-FIELDSHEET">every field sheet had one</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-FIELDSHEET "What this claim rests on")</sup>
+
+**Why it was retired:** Whether every sheet recorded a time is not known; the instruction asks for it.
+
+**Replaced by:** [`C-KP-CTD-NOCLOCK`](CLAIMS.md#C-KP-CTD-NOCLOCK) — each opens what it rests on.
+
+<a id="C-KP-OLD-FLOODSHARE"></a>
+### A headline proximity share crossed from most to half when the flood figures were rerun.
+
+`C-KP-OLD-FLOODSHARE` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-FLOODSHARE">The number moved — [5.932](SOURCES.md#F-254ff9ef5f) to [5.847](SOURCES.md#F-28a77f075a) km², and a headline proximity share from [53.5](SOURCES.md#F-067b618675)% to [50.1](SOURCES.md#F-e0df2375a6)%, which crosses from *most* to *half*</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-FLOODSHARE "What this claim rests on")</sup>
+
+**Why it was retired:** The proximity-share figures are recorded only in a commit message.
+
+**Replaced by:** [`C-KP-FLOOD-STALE`](CLAIMS.md#C-KP-FLOOD-STALE) — each opens what it rests on.
+
+<a id="C-KP-OLD-FLOODTWO"></a>
+### Three scripts read a corrected georeferencing and none was rerun, for two days.
+
+`C-KP-OLD-FLOODTWO` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-FLOODTWO">Three scripts read a georeferencing that had been corrected; none was rerun; and every flood figure on this site was computed from a superseded placement of one sheet for two days</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-FLOODTWO "What this claim rests on")</sup>
+
+**Why it was retired:** The count of scripts and the two days are recorded only in a commit message.
+
+**Replaced by:** [`C-KP-FLOOD-STALE`](CLAIMS.md#C-KP-FLOOD-STALE) — each opens what it rests on.
+
+<a id="C-KP-OLD-FOURTH"></a>
+### Within an hour of publishing, a fourth unknown known surfaced: the unfetched water-chemistry topic.
+
+`C-KP-OLD-FOURTH` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-FOURTH">Within an hour of publishing this page a fourth unknown known surfaced, and it was partly ours: the topic enumeration records marine water chemistry (`Emne_10_11`) as carrying `Startdato + Startklok`, twice, and we have never fetched it</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-FOURTH "What this claim rests on")</sup>
+
+**Why it was retired:** The page's own history; the topic has since been fetched.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KP-OLD-HZ"></a>
+### A hazardous-substance column on a stated share of water bodies, and a plankton field relabelled.
+
+`C-KP-OLD-HZ` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-HZ">there is a column" ⇒ "there is a measurement" | `hz` on [66](SOURCES.md#F-7f0ccc8800) of [123](SOURCES.md#F-0814518758) water bodies, built from freshwater points; [24](SOURCES.md#F-36ac3737cd) GB of six plankton fields that is one field relabelled</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-HZ "What this claim rests on")</sup>
+
+**Why it was retired:** The water-body count describes an assignment no longer made, and the plankton figure is garbled and unsourced.
+
+**Replaced by:** [`C-KP-FM-PRESENCE`](CLAIMS.md#C-KP-FM-PRESENCE) — each opens what it rests on.
+
+<a id="C-KP-OLD-MONTHS"></a>
+### Nine hypotheses were blocked on the water-chemistry topic for months, and one dict entry fixed it.
+
+`C-KP-OLD-MONTHS` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-MONTHS">nine hypotheses were blocked on it for months | named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict. No credential we lacked. One dict entry</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-MONTHS "What this claim rests on")</sup>
+
+**Why it was retired:** "For months" cannot be right - the project was days old - and the rest is the fetch script's history.
+
+**Replaced by:** [`C-KP-T-TOPIC-BLOCK`](CLAIMS.md#C-KP-T-TOPIC-BLOCK), [`C-KP-T-TOPIC`](CLAIMS.md#C-KP-T-TOPIC) — each opens what it rests on.
+
+<a id="C-KP-OLD-NINE"></a>
+### This project built its analysis on nine CTD parameters, and turbidity and CDOM bear on hypotheses marked as needing new measurement.
+
+`C-KP-OLD-NINE` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-NINE">This project built its analysis on nine. Turbidity and coloured dissolved organic matter are directly relevant to hypotheses we had marked as needing new measurement</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-NINE "What this claim rests on")</sup>
+
+**Why it was retired:** Which hypotheses were so marked is not recorded; the variables the series carry are read live.
+
+**Replaced by:** [`C-KP-CTD-PARAMS`](CLAIMS.md#C-KP-CTD-PARAMS) — each opens what it rests on.
+
+<a id="C-KP-OLD-NORMS"></a>
+### A norm change and a harvest-method change are documented in DCE's reports and do not travel downstream.
+
+`C-KP-OLD-NORMS` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-NORMS">norm change and the 2012 harvest-method change are documented in DCE's own reports — and do not travel downstream as uncertainty on the numbers they moved</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-NORMS "What this claim rests on")</sup>
+
+**Why it was retired:** No pinned document or register entry here records either change.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KP-OLD-RETENTION"></a>
+### The authority's stated uncertainties: retention, component uncertainties and a negative estimator in dry years.
+
+`C-KP-OLD-RETENTION` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-RETENTION">Their known unknowns are stated openly and honestly, which deserves saying: retention carries ±[6](SOURCES.md#F-343978237f)–[27](SOURCES.md#F-bf72d60964) percentage points, component uncertainties run [30](SOURCES.md#F-cf653e60cd)–[135](SOURCES.md#F-52c9611390)%, and the estimator is described in the literature as returning meaningless negative values in dry years</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-RETENTION "What this claim rests on")</sup>
+
+**Why it was retired:** The figures come from monitoring-register entries with no recorded source (see NITROGEN.md's retired claims).
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KP-OLD-SEDPROG"></a>
+### Denmark ran a national sediment sulphide and iron method from 1998 to 2003 and discontinued it.
+
+`C-KP-OLD-SEDPROG` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SEDPROG">Denmark wrote a national standard method for sediment sulphide front, sulphide buffer capacity, oxidised iron and iron-bound phosphorus — NOVA teknisk anvisning kap. 14 (1998) — ran it from 1998 to 2003, and discontinued it. The register said no iron speciation existed for any Danish site. That is wrong for 1998–2003 and right for everything since. A measurement programme that existed and stopped is a fifth kind of unknown known, and the hardest to find, because nothing in the current archive records that it ever ran</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SEDPROG "What this claim rests on")</sup>
+
+**Why it was retired:** Contradicted by this project's own [R6](openproblems/R6.md "Sulphide locks the iron that would hold the phosphate") draft, which records the measurements again in 2017-2018; no pinned document states the method or an end to it.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KP-OLD-SENTINELS"></a>
+### Undeclared sentinels: an intercept code, a round depth, a depth far beyond the water, an impossible saturation.
+
+`C-KP-OLD-SENTINELS` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SENTINELS">Sentinels, undeclared | averaged | `9999999` for a missing intercept, depth `99` on [4,332](SOURCES.md#F-14066c06f7) rows, [2300](SOURCES.md#F-9c196c6ccb) m of water in a [50](SOURCES.md#F-136753e7c3) m trench, [90,972](SOURCES.md#F-7ccad751a5)% oxygen saturation</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SENTINELS "What this claim rests on")</sup>
+
+**Why it was retired:** The intercept sentinel never occurs in the column (DATA_SOURCES.md) and the depth figures were typed; the counted round depths, the Hirtshals station and the saturation maximum replace them.
+
+**Replaced by:** [`C-KP-T-SENTINEL`](CLAIMS.md#C-KP-T-SENTINEL) — each opens what it rests on.
+
+<a id="C-KP-OLD-SINGLEDAY"></a>
+### Six unknown knowns were found in a single day.
+
+`C-KP-OLD-SINGLEDAY` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SINGLEDAY">Ours, in a single day: turbidity and CDOM sitting in a file we held; three ODA topics a line apart; a [23](SOURCES.md#F-691c4c7409) MB public layer we called the most important missing one; a clock-time field recorded twice in our own notes; a national sediment programme that ran for five years and stopped; and a paper whose measured estuary series refuted a claim we had already published. Six. Nothing about that rate suggests we are near the end of them</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SINGLEDAY "What this claim rests on")</sup>
+
+**Why it was retired:** "In a single day" is not what the record shows, and two of the six have since proved wrong in their details: the fishing layer's coverage and the sediment programme's end.
+
+**Replaced by:** [`C-KP-RATE`](CLAIMS.md#C-KP-RATE) — each opens what it rests on.
+
+<a id="C-KP-OLD-SIXONEDAY"></a>
+### Six known positives were missed in one day.
+
+`C-KP-OLD-SIXONEDAY` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SIXONEDAY">Ours was poor: six known-positives missed in one day</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SIXONEDAY "What this claim rests on")</sup>
+
+**Why it was retired:** "In one day" is not what the record shows.
+
+**Replaced by:** [`C-KP-SENSITIVITY`](CLAIMS.md#C-KP-SENSITIVITY) — each opens what it rests on.
+
+<a id="C-KP-OLD-SONDEHIST"></a>
+### An earlier version gave a different share for the placeholder probe number.
+
+`C-KP-OLD-SONDEHIST` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SONDEHIST">This page said [83.5](SOURCES.md#F-3b566efe58)% until its numbers were checked: that was a sample of the extract, and the full count says otherwise</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SONDEHIST "What this claim rests on")</sup>
+
+**Why it was retired:** The page's own history; the share is read from the full count.
+
+**Replaced by:** [`C-KP-SONDE`](CLAIMS.md#C-KP-SONDE) — each opens what it rests on.
+
+<a id="C-KP-OLD-TENLINES"></a>
+### The check reported a stated number of substantial lines, all of them changed numbers.
+
+`C-KP-OLD-TENLINES` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-TENLINES">reported that regenerating would *"remove [10](SOURCES.md#F-b68b2b36bc) substantial lines"* — which reads as your prose is about to be destroyed. All ten were lines whose numbers had changed and which the regeneration replaced</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-TENLINES "What this claim rests on")</sup>
+
+**Why it was retired:** The count of lines was never recorded in a file.
+
+**Replaced by:** [`C-KP-GUARD`](CLAIMS.md#C-KP-GUARD) — each opens what it rests on.
+
+<a id="C-KP-OLD-THREEDEMOS"></a>
+### There were three demonstrations of unknown knowns from a single day of work.
+
+`C-KP-OLD-THREEDEMOS` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-THREEDEMOS">And we have three demonstrations from a single day of work</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-THREEDEMOS "What this claim rests on")</sup>
+
+**Why it was retired:** The list below it held four items, and "a single day" is not what the record shows.
+
+**Replaced by:** [`C-KP-UNKNOWN-KNOWN`](CLAIMS.md#C-KP-UNKNOWN-KNOWN) — each opens what it rests on.
+
+<a id="C-KP-OLD-THREEUS"></a>
+### The three unknown knowns above were found by accident in one day.
+
+`C-KP-OLD-THREEUS` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-THREEUS">above were found by accident, in one day, and there is no reason to think that rate has stopped</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-THREEUS "What this claim rests on")</sup>
+
+**Why it was retired:** "The three above" and "in one day" match neither the lists nor the record.
+
+**Replaced by:** [`C-KP-US`](CLAIMS.md#C-KP-US) — each opens what it rests on.
+
+<a id="C-KP-OLD-TRAWL"></a>
+### The trawling-effort layer HYPOTHESES.md called the most important missing one has a stated size, licence and station coverage.
+
+`C-KP-OLD-TRAWL` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-TRAWL">called EU trawling effort *"the single most important missing layer in this whole register."* It is [23.1](SOURCES.md#F-386011298b) MB, `CC BY 4.0`, and covers [1,392](SOURCES.md#F-a5d47120ed) of our [1,415](SOURCES.md#F-1975a461f5) stations</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-TRAWL "What this claim rests on")</sup>
+
+**Why it was retired:** HYPOTHESES.md no longer says it, and the size, licence and station coverage have no stored source; the pinned record gives the dataset and its span.
+
+**Replaced by:** [`C-KP-FISHING`](CLAIMS.md#C-KP-FISHING) — each opens what it rests on.
+
 ## METHOD_LAB.md
 
 <a id="C-ML-OLD-BORROW-SHARE"></a>
@@ -1123,7 +2849,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 > <span class="claim" data-claim="C-NI-OLD-L5">The instruments are in the public record rather than in this analysis: `L5` passed [119](SOURCES.md#F-2a586cc01c)–[34](SOURCES.md#F-537c4044e3) on 3 September 2026 and puts per-catchment nitrogen quotas on individual holdings from</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD-L5 "What this claim rests on")</sup>
 
-**Why it was retired:** The vote count is not in anything pinned, and the start year differs between the pinned reports - a quota from one year in the ministry's announcement, a year later in a report of the June agreement.
+**Why it was retired:** Retired because neither the vote count nor the start year could be found in a pinned source at the time, and the pinned reports seemed to disagree on the year. POLITICS.md has since pinned both - TV 2's count, and 2027 and 2028 as two steps of the law rather than two dates for one - and the replacement states them.
 
 **Replaced by:** [`C-NI-L5`](CLAIMS.md#C-NI-L5) — each opens what it rests on.
 
@@ -1767,6 +3493,624 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Not replaced** — nothing that could be justified was found to say in its place.
 
+## OPEN_PROBLEMS.md
+
+<a id="C-OP-OLD-1-CLAIM"></a>
+### Wind-driven transport meets the Baltic outflow and the convergence makes Køge Bugt a collecting basin.
+
+`C-OP-OLD-1-CLAIM` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-1-CLAIM">Wind-driven southward surface transport meets the northward Baltic outflow, and the convergence accumulates fine sediment and floating material in Køge Bugt. The bay functions as a collecting basin for material mobilised elsewhere, not only for its own</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-1-CLAIM "What this claim rests on")</sup>
+
+**Why it was retired:** Stated as a finding under the heading 'The claim', though nothing on the site establishes it; it is the open question the item is about.
+
+**Replaced by:** [`C-OP-1-OPEN`](CLAIMS.md#C-OP-1-OPEN) — each opens what it rests on.
+
+<a id="C-OP-OLD-1-HOURLY"></a>
+### The CMEMS reanalysis gives hourly currents at adequate resolution.
+
+`C-OP-OLD-1-HOURLY` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-1-HOURLY">Baltic Sea physics reanalysis — Copernicus Marine (CMEMS) has current fields at adequate resolution, behind free registration. With hourly currents plus the wind record already fetched, a particle-tracking run would show directly whether Køge Bugt is a convergence zone and where its material comes from</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-1-HOURLY "What this claim rests on")</sup>
+
+**Why it was retired:** The reanalysis in the register is daily, not hourly, and its resolution was not checked; the hourly field this project holds is a different, short record.
+
+**Replaced by:** [`C-OP-1-SETTLE`](CLAIMS.md#C-OP-1-SETTLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-10-FEDT"></a>
+### Fedtemøg names a material, and fat carries no nitrogen.
+
+`C-OP-OLD-10-FEDT` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-10-FEDT">names a material. Triglycerides contain no nitrogen at all</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-10-FEDT "What this claim rests on")</sup>
+
+**Why it was retired:** Wrong about the word: fedtemøg names rotting filamentous brown algae (Danish Wikipedia, pinned), not a material in the discharge. The fat arithmetic stands, as the replacement states it.
+
+**Replaced by:** [`C-OP-10-FAT`](CLAIMS.md#C-OP-10-FAT) — each opens what it rests on.
+
+<a id="C-OP-OLD-10-FLOAT"></a>
+### Fat floats rather than settles, does not disperse, and is released from sewers on a flow threshold in the hours flow bypasses treatment.
+
+`C-OP-OLD-10-FLOAT` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-10-FLOAT">float rather than settle, and do not disperse. Sewers accumulate them as fedtpropper and release them on a flow threshold — the same hours in which the flow bypasses the treatment works</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-10-FLOAT "What this claim rests on")</sup>
+
+**Why it was retired:** No source was found for the floating and dispersal, or for release on a flow threshold in the bypass hours.
+
+**Replaced by:** [`C-OP-10-SEWERS`](CLAIMS.md#C-OP-10-SEWERS) — each opens what it rests on.
+
+<a id="C-OP-OLD-10-RECORDS"></a>
+### Utilities already record fedtprop clearing, which would give the retention side.
+
+`C-OP-OLD-10-RECORDS` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-10-RECORDS">Utilities already record fedtprop clearing operations; those records would give the retention side</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-10-RECORDS "What this claim rests on")</sup>
+
+**Why it was retired:** No such records were found or cited.
+
+**Replaced by:** [`C-OP-10-SETTLE`](CLAIMS.md#C-OP-10-SETTLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-10-UTILITY"></a>
+### No national figure exists for fat leaving the system; one utility reported a tonnage; the reporting unit is nitrogen.
+
+`C-OP-OLD-10-UTILITY` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-10-UTILITY">No national figure exists for how much leaves the system. One utility reported [25](SOURCES.md#F-4aa892945c) tonnes of fat arriving at its works in a year, which counts only the fraction that did *not* overflow. There is no unit in which this would be reported, because the reporting unit is nitrogen</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-10-UTILITY "What this claim rests on")</sup>
+
+**Why it was retired:** The utility and its figure were never recorded, the absence was stated of everything, and the reporting unit is not nitrogen alone: DP02's type values carry COD and `BI5` as well.
+
+**Replaced by:** [`C-OP-10-NOFIGURE`](CLAIMS.md#C-OP-10-NOFIGURE), [`C-OP-10-UNIT`](CLAIMS.md#C-OP-10-UNIT) — each opens what it rests on.
+
+<a id="C-OP-OLD-11-KEY"></a>
+### Global Fishing Watch publishes AIS fishing effort subject to an access key.
+
+`C-OP-OLD-11-KEY` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-11-KEY">AIS-derived fishing effort — Global Fishing Watch publishes it, subject to an access key</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-11-KEY "What this claim rests on")</sup>
+
+**Why it was retired:** The data are an open download; only the API needs a free token. Its trawler class and AIS-only coverage limit what it says about bottom contact.
+
+**Replaced by:** [`C-OP-11-SETTLE`](CLAIMS.md#C-OP-11-SETTLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-12-MESOCOSM"></a>
+### Mesocosm work on the question exists in the literature.
+
+`C-OP-OLD-12-MESOCOSM` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-12-MESOCOSM">Mesocosm work exists in the literature</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-12-MESOCOSM "What this claim rests on")</sup>
+
+**Why it was retired:** No source was given.
+
+**Replaced by:** [`C-OP-12-SETTLE`](CLAIMS.md#C-OP-12-SETTLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-12-TIMELINE"></a>
+### Eelgrass partly recovered after the wasting disease, declined again later, and only the nutrient explanation has been pursued.
+
+`C-OP-OLD-12-TIMELINE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-12-TIMELINE">Eelgrass partially recovered from the 1940s to the 1960s after the 1930s wasting disease, then declined again in the 1980s. That failure-to-recover window coincides with rising industrial and agricultural chemical loading as well as with nutrients, and only the nutrient explanation has been seriously pursued</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-12-TIMELINE "What this claim rests on")</sup>
+
+**Why it was retired:** The recovery and renewed decline, their dates, and what has been 'seriously pursued' have no source here; only the large-scale losses of the wasting disease are sourced.
+
+**Replaced by:** [`C-OP-12-LOSS`](CLAIMS.md#C-OP-12-LOSS), [`C-OP-12-OPEN`](CLAIMS.md#C-OP-12-OPEN) — each opens what it rests on.
+
+<a id="C-OP-OLD-12-WELLFOUNDED"></a>
+### The toxicant mechanism is well founded.
+
+`C-OP-OLD-12-WELLFOUNDED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-12-WELLFOUNDED">The mechanism is well founded</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-12-WELLFOUNDED "What this claim rests on")</sup>
+
+**Why it was retired:** No source was given that it is well founded; it is now stated as the proposal it is.
+
+**Replaced by:** [`C-OP-12-MECH`](CLAIMS.md#C-OP-12-MECH) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-BEFORE"></a>
+### Painted depth on open water fell after the adjustment, measured against the city's water polygons.
+
+`C-OP-OLD-13-BEFORE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-BEFORE">Before the adjustment that was [1.56](SOURCES.md#F-6a142b8522) km²; after, [1.21](SOURCES.md#F-5231fdcfb2) km²; now [1.31](SOURCES.md#F-c5683c5b7d) km². Nothing about the bundle optimised for it; it uses the city's own water polygons, which the alignment never saw</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-BEFORE "What this claim rests on")</sup>
+
+**Why it was retired:** The before and after areas are history quoted from an earlier version.
+
+**Replaced by:** [`C-OP-13-WATER`](CLAIMS.md#C-OP-13-WATER) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-CHANGED"></a>
+### The flood figures before all seven sheets, after the adjustment, and now.
+
+`C-OP-OLD-13-CHANGED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-CHANGED">The third column is the current state, read from `floodgap.py` and `rivermap.py`, after Nørrebro was re-registered from two reader-supplied control points. The first two columns are quoted from the version of this page that recorded them; the difference between the second and the third is the size of one sheet's placement — which is the point. | | Before all seven | After the adjustment | Now | |---|---:|---:|---:| | Flood path on land | [1.52](SOURCES.md#F-4b0ca1653d) km² | [5.93](SOURCES.md#F-b588c626af) km² | [5.85](SOURCES.md#F-d6456b1caf) km² | | Painted over open water | [1.56](SOURCES.md#F-4a7f424be0) km² | [1.21](SOURCES.md#F-94fc70c373) km² | [1.31](SOURCES.md#F-0365dcb0d4) km² | | Within [200](SOURCES.md#F-b079da3f70) m of a planned work | [90.5](SOURCES.md#F-9bb3305693)% | [85.8](SOURCES.md#F-0bc81fa430)% | [85.4](SOURCES.md#F-f70a80138c)% | | Within [100](SOURCES.md#F-36ef9fd397) m | [82.6](SOURCES.md#F-d26123a9de)% | [67.4](SOURCES.md#F-01fbc16417)% | [65.9](SOURCES.md#F-2b5b87f7dd)% | | With a surface route nearby (`NEAR_M` in `rivermap.py`) | [72](SOURCES.md#F-a17d20fea6)% | [53.5](SOURCES.md#F-d569a03f01)% | [50.1](SOURCES.md#F-71832f98ad)% | | Corridor candidates</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-CHANGED "What this claim rests on")</sup>
+
+**Why it was retired:** The first two columns were quoted from an earlier version of the page and never stored.
+
+**Replaced by:** [`C-OP-13-TABLE`](CLAIMS.md#C-OP-13-TABLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-CONVERGED"></a>
+### The residual shifts are small against the corrections the adjustment originally applied.
+
+`C-OP-OLD-13-CONVERGED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-CONVERGED">corrections it originally applied. A registration that did not converge would keep asking to move</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-CONVERGED "What this claim rests on")</sup>
+
+**Why it was retired:** The size of the original corrections is history quoted from an earlier version.
+
+**Replaced by:** [`C-OP-13-CONVERGES`](CLAIMS.md#C-OP-13-CONVERGES) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-DETAILS"></a>
+### Three details made the registration work, with the metrics measured when it was first run.
+
+`C-OP-OLD-13-DETAILS` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-DETAILS">Three details did the work, and each was suggested by someone looking at the problem rather than by the code. The measurements in this list and the next subsection are as recorded when the adjustment was first run, quoted from that version of this page. - Match structure, not tone. Gradient magnitude survives a change of season, exposure or print. It lifted a typical pair's peak-to-rival ratio from [12.7](SOURCES.md#F-407b33bb39) to [16.0](SOURCES.md#F-89783a76b8) while returning the identical shift. - Exclude everything drawn. The depth palette, the black *Oplandsgrænser* outline and the legend are each sheet's *own* annotation, so leaving them in correlates one sheet's notes against another's. Masking them by exact palette colour, by saturation, and by near-black and near-white took the best pair's NCC from [0.43](SOURCES.md#F-4d242c950f) to [0.64](SOURCES.md#F-a5cf7bc335). Discarding photograph is cheap; admitting overlay is not. - Then exclude everything flat. Auditing what survived the colour masking found regions of perfect uniformity still in it — [7.1](SOURCES.md#F-e83a10de03)% of indre-by's remaining area, almost all of it dark harbour water. Some are overlay fills that missed the palette test and some are genuinely photographed but featureless: open water, a flat roof, a bare field. The distinction does not matter, because neither carries positional information and both inflate the correlation's denominator. A local-range test catches both without needing to know which is which. - Solve all seven at once. Sheet-by-sheet placement cannot notice that the frame itself is loose. A global bundle adjustment — every overlapping pair as one equation, the resident control points as the absolute anchors — now uses [11](SOURCES.md#F-3caeeb7e93) usable pairs, with pair residuals of [23](SOURCES.md#F-9671fd3016) m RMS; the worst pair was [41](SOURCES.md#F-46ed87d1af) m off when it was first solved</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-DETAILS "What this claim rests on")</sup>
+
+**Why it was retired:** History of how the registration was developed, with figures quoted from an earlier version of the page rather than stored; the method is now stated from the code.
+
+**Replaced by:** [`C-OP-13-PLACED`](CLAIMS.md#C-OP-13-PLACED) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-NORREBRO"></a>
+### Nørrebro was settled by the route the section asked for; it is the smallest and most heavily painted inner sheet.
+
+`C-OP-OLD-13-NORREBRO` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-NORREBRO">Nørrebro is settled — by exactly the route this section asked for. When this was written, every pairing with Nørrebro came out flat (peak-to-rival ratios of [1.02](SOURCES.md#F-5ae0497bce) to [1.06](SOURCES.md#F-04be4087f0)), so it had no usable pair and no control points, and it was the only sheet not known to be consistent with the rest. This section said *two control points on Nørrebro would settle it*. Two reader-supplied control points arrived and did. Why it refused to correlate is still unresolved — it is the smallest sheet and the most heavily painted of the inner four, and neither fully explains it — but the placement no longer depends on the answer</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-NORREBRO "What this claim rests on")</sup>
+
+**Why it was retired:** History of the section's own request, and 'smallest' and 'most heavily painted' were not measured.
+
+**Replaced by:** [`C-OP-13-NORREBRO`](CLAIMS.md#C-OP-13-NORREBRO) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-ORTHO"></a>
+### The national orthophoto service openly serves imagery of the sheets' era and would place all seven.
+
+`C-OP-OLD-13-ORTHO` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-ORTHO">These are aerial photographs, so the right reference is another aerial photograph with known georeferencing. SDFI / Dataforsyningen publishes GeoDanmark Ortofoto as WMS and WMTS under an open licence, including historical spring imagery for 2004–2011, the era of these sheets. The machinery in `floodalign.py` would work unchanged against it and would place all seven absolutely rather than relatively, to a few metres, with no human and no anchors. It needs a free API key</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-ORTHO "What this claim rests on")</sup>
+
+**Why it was retired:** That the national service offers imagery of the sheets' era under an open licence with a free key has no source in this project's registers.
+
+**Replaced by:** [`C-OP-13-ORTHO`](CLAIMS.md#C-OP-13-ORTHO) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-OSM"></a>
+### The attempt to match the OSM road network failed, with the peak ratios it measured.
+
+`C-OP-OLD-13-OSM` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-OSM">The earlier attempt to match the OSM road network is kept here as a negative result: peak [0.051](SOURCES.md#F-d70797e852) against a nearest rival of [0.046](SOURCES.md#F-0d40ae78d5), a ratio of [1.12](SOURCES.md#F-dea69687b6). A dense uniform mesh carries almost no positional information, because at any offset some streets line up with some streets. What carries position is whatever is rare and irregular — which is why the sheets with coastline registered themselves and the inland ones did not</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-OSM "What this claim rests on")</sup>
+
+**Why it was retired:** History of an attempt, with figures quoted from an earlier version; the general reason it fails is kept.
+
+**Replaced by:** [`C-OP-13-OSM`](CLAIMS.md#C-OP-13-OSM) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-REVEALED"></a>
+### The four automatically registered sheets were not mutually consistent, and the control points held up.
+
+`C-OP-OLD-13-REVEALED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-REVEALED">The four automatically registered sheets were not mutually consistent: pairwise they disagreed by [100](SOURCES.md#F-23f51bf30e)–[190](SOURCES.md#F-7d764ed0da) m. Their advertised "[13](SOURCES.md#F-12680dd2ad)–[28](SOURCES.md#F-31d5fb62bb) m" was *agreement between detectors*, never accuracy, and detectors agreeing on a wrong answer is a thing that happens. Every one of them moved: østerbro by [195](SOURCES.md#F-1f178ce28a) m east and [135](SOURCES.md#F-612dc9f3ec) m south, indre-by by [123](SOURCES.md#F-0a7b643ebb) and [217](SOURCES.md#F-a97b96ef16), ladegårdsåen by [25](SOURCES.md#F-d796cc7f8a) and [182](SOURCES.md#F-3510231805). The control points held up. Amager moved [0.2](SOURCES.md#F-eda68b75ef)σ in easting and [1.8](SOURCES.md#F-0e1c353d32)σ in northing; København Vest [1.0](SOURCES.md#F-c97e073737)σ and [1.7](SOURCES.md#F-be33c5a85a)σ. Bispebjerg's moved furthest — and Bispebjerg is precisely the sheet whose two points sat at almost the same height, so its northing was never constrained. The adjustment corrected the axis that was known to be weak, which is the behaviour that makes it believable</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-REVEALED "What this claim rests on")</sup>
+
+**Why it was retired:** History of the earlier placements and how far each moved, quoted from an earlier version and never stored: floodalign.json was not committed.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-OP-OLD-13-RHETORIC"></a>
+### The surface-route figure crossed a line that mattered to what another page could say.
+
+`C-OP-OLD-13-RHETORIC` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-RHETORIC">The surface-route figure has crossed a line that mattered rhetorically. At [53.5](SOURCES.md#F-8d0be497d9)% it was a majority and PROGRAMME.md could say the city had already drawn most of the river network. At [50.1](SOURCES.md#F-32d173d82d)% it is a coin flip. The finding survives — about half the modelled flood path does have a planned surface alignment beside it, which is still far more than this project expected before it looked — but "most" is no longer the right word and the argument should not lean on it</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-RHETORIC "What this claim rests on")</sup>
+
+**Why it was retired:** History of what another page once said; the current figure and its reading are kept.
+
+**Replaced by:** [`C-OP-13-SURFACE`](CLAIMS.md#C-OP-13-SURFACE) — each opens what it rests on.
+
+<a id="C-OP-OLD-13-STALE"></a>
+### The flood figures were stale for two days, and the generated-page check reported it as lost work.
+
+`C-OP-OLD-13-STALE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-13-STALE">These figures were stale for two days, and the tool that should have caught it said the opposite. Nørrebro was re-registered in September 2026. `floodgap.py`, `rivermap.py` and `export_flood.py` all read the georeferencing and none was rerun, so every number above was computed from a superseded placement of one sheet. The regeneration is deterministic — two runs byte-identical — so this was staleness, not noise. What kept it stale is the interesting part. `check_generated.py --regen` reported that regenerating `FLOOD_GAP.md` "would remove [10](SOURCES.md#F-9341c8788f) substantial line(s)", which reads as a warning that hand-written prose is about to be destroyed. Every one of those lines was a line whose *numbers* had changed and which the regeneration replaced. The tool counted a removal without checking whether a replacement was added, so "your output is stale, rerun me" and "you are about to lose work" were reported in the same words — and the cautious response to the second is the wrong response to the first. `check_generated.py` now separates them: a removed line whose text is identical once every run of digits is blanked is reported as stale, and only a removal with no counterpart is reported as lost. That was the first step; the page generators that read every number from its data are the second</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-13-STALE "What this claim rests on")</sup>
+
+**Why it was retired:** History of this project's tooling; the lesson is built into the engine.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-OP-OLD-14-AFTERNOON"></a>
+### The city could re-run its model in an afternoon and has not published it.
+
+`C-OP-OLD-14-AFTERNOON` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-14-AFTERNOON">which the city presumably could do in an afternoon and has not published. Failing that, the [344](SOURCES.md#F-a974961834) ha can at least be flagged rather than silently</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-14-AFTERNOON "What this claim rests on")</sup>
+
+**Why it was retired:** Speculation about the city with nothing behind it, and the area to flag was the retired count.
+
+**Replaced by:** [`C-OP-14-SETTLE`](CLAIMS.md#C-OP-14-SETTLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-14-IMAGERY"></a>
+### The sheets model an earlier scenario on imagery of the same year, and the districts built since are all impervious and none of them in the model.
+
+`C-OP-OLD-14-IMAGERY` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-14-IMAGERY">sheets model a 2010 scenario on 2010 imagery. Copenhagen has since built Nordhavn, most of Ørestad, Sluseholmen and Teglholmen in Sydhavn, and a good deal of Refshaleøen and the Amager waterfront — much of it on reclaimed or re-levelled ground, all of it impervious, none of it in the model</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-14-IMAGERY "What this claim rests on")</sup>
+
+**Why it was retired:** The imagery's year is not established, and 'all impervious, none in the model' rests on the retired count.
+
+**Replaced by:** [`C-OP-14-DATE`](CLAIMS.md#C-OP-14-DATE), [`C-OP-14-SINCE`](CLAIMS.md#C-OP-14-SINCE) — each opens what it rests on.
+
+<a id="C-OP-OLD-14-QUANT"></a>
+### A count of catchments and impervious hectares outside the sheets, and their enrichment in separately sewered types.
+
+`C-OP-OLD-14-QUANT` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-14-QUANT">Quantified against the sewer catchments when this item was written — a computation run once and never stored by a script, so the figures are quoted from that version of the page: [37](SOURCES.md#F-596e7b9e06) of [766](SOURCES.md#F-be34a55e93) catchments, holding [344](SOURCES.md#F-0d0bff37bc) ha of impervious surface ([8.1](SOURCES.md#F-1158f59e22)% of the city's total), fell outside every one of the seven sheet footprints. The largest sit at Nordhavn, Refshaleøen, Ørestad Syd and the south-western edge. And the composition gives it away. Across the city, catchments of the type *Separatkloakeret, tag- og vejvand til recipient* were [14.4](SOURCES.md#F-b5645212c3)% of impervious area. Among the catchments the model never covered they were [65.3](SOURCES.md#F-fbab421ebe)% — a [4.5](SOURCES.md#F-a71fd1fce8)× enrichment. New districts are built separately sewered. So the ground outside the model is disproportionately the ground built after it</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-14-QUANT "What this claim rests on")</sup>
+
+**Why it was retired:** Computed once and never stored by a script, so its justification was not recorded properly; the figures were quoted from an earlier version.
+
+**Replaced by:** [`C-OP-14-GAP`](CLAIMS.md#C-OP-14-GAP) — each opens what it rests on.
+
+<a id="C-OP-OLD-14-UNUSED"></a>
+### The comparison is of stated years, and the layers with dates are unused.
+
+`C-OP-OLD-14-UNUSED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-14-UNUSED">Everything here is a snapshot compared against another snapshot: a 2010 model against a 2018 plan, read in 2026. The materials for a fourth dimension are partly present and unused — `skp_veje_tunneller_kk` carries `forventet_ibrugtagning`, an expected in-service year running from 2014 to 2038; `lar_registreringer` carries permit and in-use status per installation; the sewer layer carries *status* and *plan* side by side</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-14-UNUSED "What this claim rests on")</sup>
+
+**Why it was retired:** The years of the model and the plan were not sourced, and 'unused' was wrong: build_viewer_data.py, architecture.py and conveyance.py read the in-service year.
+
+**Replaced by:** [`C-OP-14-SNAPSHOT`](CLAIMS.md#C-OP-14-SNAPSHOT), [`C-OP-14-LAYERS`](CLAIMS.md#C-OP-14-LAYERS) — each opens what it rests on.
+
+<a id="C-OP-OLD-15-PROV"></a>
+### Provenance for both events is in the monitoring register.
+
+`C-OP-OLD-15-PROV` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-15-PROV">Provenance for both events is in `data/manual/monitoring.json` under `sediment_release_events</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-15-PROV "What this claim rests on")</sup>
+
+**Why it was retired:** The register section named carries no source for the events.
+
+**Replaced by:** [`C-OP-15-WHERE`](CLAIMS.md#C-OP-15-WHERE) — each opens what it rests on.
+
+<a id="C-OP-OLD-15-RUN"></a>
+### The transport experiment has been run several times with known quantities, places and dates.
+
+`C-OP-OLD-15-RUN` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-15-RUN">It is also unnecessary, because the experiment has been run several times with a known quantity of sediment released at a known place on known dates</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-15-RUN "What this claim rests on")</sup>
+
+**Why it was retired:** The releases' quantities and dates are in a register that cites no source, and 'several times' counts two.
+
+**Replaced by:** [`C-OP-15-EVENTS`](CLAIMS.md#C-OP-15-EVENTS) — each opens what it rests on.
+
+<a id="C-OP-OLD-16-AREAS"></a>
+### AREAS.md carries a correction, and as it reported every water body holds a station while some hold none visited in ten years.
+
+`C-OP-OLD-16-AREAS` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-16-AREAS">counts that gap, and carries a correction worth reading alongside this item: absence is reported there as a count over a named corpus rather than as a share of the sea, because a share of an absence is only meaningful when the category named is as narrow as the search performed. As that page reported when this item was written: of ODA's [6,258](SOURCES.md#F-cfca9d85da) positioned marine stations, every water body holds at least one; [22](SOURCES.md#F-aa48a0993a) hold none visited in ten or more distinct years</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-16-AREAS "What this claim rests on")</sup>
+
+**Why it was retired:** Page history, and the counts were quoted from an earlier version of this page.
+
+**Replaced by:** [`C-OP-16-AREAS`](CLAIMS.md#C-OP-16-AREAS) — each opens what it rests on.
+
+<a id="C-OP-OLD-16-BBR"></a>
+### The BBR register would reproduce the `item-14` impervious count for every municipality.
+
+`C-OP-OLD-16-BBR` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-16-BBR">which carries a construction year per building. That makes impervious change since any date computable nationally rather than by hand — item 14's [344](SOURCES.md#F-620f48484c) ha, for every municipality, without a hydraulic model</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-16-BBR "What this claim rests on")</sup>
+
+**Why it was retired:** It pointed at the retired impervious count.
+
+**Replaced by:** [`C-OP-16-BBR`](CLAIMS.md#C-OP-16-BBR) — each opens what it rests on.
+
+<a id="C-OP-OLD-16-BURIED"></a>
+### Combined systems were largely laid in buried watercourses, and culverted streams are where the sewers are.
+
+`C-OP-OLD-16-BURIED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-16-BURIED">Combined systems were largely laid in buried watercourses, so surface flow accumulation over a DEM is a prior on where the pipes run, not merely a separate question. - Historic maps, for the same reason: the streams that were culverted are where the sewers are</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-16-BURIED "What this claim rests on")</sup>
+
+**Why it was retired:** No source that combined systems were largely laid in buried watercourses.
+
+**Replaced by:** [`C-OP-16-TERRAIN`](CLAIMS.md#C-OP-16-TERRAIN), [`C-OP-16-MAPS`](CLAIMS.md#C-OP-16-MAPS) — each opens what it rests on.
+
+<a id="C-OP-OLD-16-EACH"></a>
+### Every outfall carries an annual volume, and nowhere is there a map of what drains to them.
+
+`C-OP-OLD-16-EACH` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-16-EACH">each with a position, an annual volume, and a *reduced impervious area* behind it. What it does not hold — anywhere — is which ground drains to which outfall. So the country has [20,402](SOURCES.md#F-ed88a8cb50) catalogued spouts and no map of the</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-16-EACH "What this claim rests on")</sup>
+
+**Why it was retired:** Not every outfall carries an annual volume, and 'anywhere' and the national absence were stated without a search.
+
+**Replaced by:** [`C-OP-16-ENDPOINTS`](CLAIMS.md#C-OP-16-ENDPOINTS), [`C-OP-16-NOTAPS`](CLAIMS.md#C-OP-16-NOTAPS) — each opens what it rests on.
+
+<a id="C-OP-OLD-16-EUROPE"></a>
+### The utility register is complete, and the same is almost certainly true of most European cities.
+
+`C-OP-OLD-16-EUROPE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-16-EUROPE">the data exists, is complete, is maintained by law, and is unavailable — and the same is almost certainly true of most European cities</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-16-EUROPE "What this claim rests on")</sup>
+
+**Why it was retired:** Completeness and the European generalisation have nothing behind them.
+
+**Replaced by:** [`C-OP-16-LER`](CLAIMS.md#C-OP-16-LER) — each opens what it rests on.
+
+<a id="C-OP-OLD-16-NOWHERE"></a>
+### The drainage reconstruction exists for Copenhagen and nowhere else.
+
+`C-OP-OLD-16-NOWHERE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-16-NOWHERE">that reconstruction exists for Copenhagen and nowhere else, and it only exists there because seven PDFs happened to be published and the georeferencing happened to be recoverable from them. That is not a method. It is a lucky archaeology</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-16-NOWHERE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Nowhere else' is an absence stated of all Denmark with no search.
+
+**Replaced by:** [`C-OP-16-ONECITY`](CLAIMS.md#C-OP-16-ONECITY) — each opens what it rests on.
+
+<a id="C-OP-OLD-16-PLANS"></a>
+### Every municipality's plan is published in formats from WMS to scans, some are held, and nobody has assembled them.
+
+`C-OP-OLD-16-PLANS` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-16-PLANS">Every Danish municipality must adopt and publish a *spildevandsplan*, and they carry catchment maps. Ninety-eight municipalities, published independently, in formats ranging from a WMS layer to a scanned appendix. Some are already in `data/raw/plan_html/`. Nobody has assembled them</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-16-PLANS "What this claim rests on")</sup>
+
+**Why it was retired:** The formats were not surveyed, data/raw/plan_html holds Copenhagen's plan only, and 'nobody' rests on no search.
+
+**Replaced by:** [`C-OP-16-PLANS`](CLAIMS.md#C-OP-16-PLANS) — each opens what it rests on.
+
+<a id="C-OP-OLD-17-BOAT"></a>
+### The unsampled hours are a statement about when people are willing to be on a boat.
+
+`C-OP-OLD-17-BOAT` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-17-BOAT">It is a statement about when people are willing to be on a boat, and no reanalysis fixes it</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-17-BOAT "What this claim rests on")</sup>
+
+**Why it was retired:** The working-hours pattern is measured; people's willingness to be on a boat is not.
+
+**Replaced by:** [`C-OP-17-UNCONSTRAINED`](CLAIMS.md#C-OP-17-UNCONSTRAINED) — each opens what it rests on.
+
+<a id="C-OP-OLD-17-EARLIER"></a>
+### An earlier version reported a clean monotone rise of saturation with the sun.
+
+`C-OP-OLD-17-EARLIER` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-17-EARLIER">An earlier version of this page, written before the clock was sorted out, reported a clean monotone rise of about [1.5](SOURCES.md#F-143b0f1777) percentage points from low sun to high; with the filled-in defaults removed and every instant converted by one rule, that no longer holds</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-17-EARLIER "What this claim rests on")</sup>
+
+**Why it was retired:** Page history.
+
+**Replaced by:** [`C-OP-17-HIGHSUN`](CLAIMS.md#C-OP-17-HIGHSUN) — each opens what it rests on.
+
+<a id="C-OP-OLD-17-LUX"></a>
+### Full moonlight against sunlight in typed lux values, about a millionth.
+
+`C-OP-OLD-17-LUX` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-17-LUX">That is the expected answer: full moonlight is [0.1](SOURCES.md#F-e781b13e7c)–[0.3](SOURCES.md#F-bd482e3aaf) lux against [100,000](SOURCES.md#F-d1ea9579f2) for sun, about a millionth</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-17-LUX "What this claim rests on")</sup>
+
+**Why it was retired:** The lux values were typed with no source; they are now read from a pinned table.
+
+**Replaced by:** [`C-OP-17-MOON`](CLAIMS.md#C-OP-17-MOON) — each opens what it rests on.
+
+<a id="C-OP-OLD-17-PLAN"></a>
+### The absence of clock values was once recorded and corrected, and every script now reads the clock through clock.py.
+
+`C-OP-OLD-17-PLAN` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-17-PLAN">which this project had once recorded as absent; see the correction in PLAN.md. But a clock value is not always a time. `scripts/clockzone.py` tests every supplier and era at the summer-time changes: of [129,913](SOURCES.md#F-51e492988e) sampling visits, [27,934](SOURCES.md#F-eda7820282) carry a filled-in default rather than a time, and [17,836](SOURCES.md#F-07f46ebcfb) come from suppliers whose clock convention is mixed. Only the rest can be placed against the sun, and every script now reads the clock through `scripts/clock.py`, which returns one UTC instant or says why there is none</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-17-PLAN "What this claim rests on")</sup>
+
+**Why it was retired:** Page history, and 'every script' is broader than the code: daylight.py still reads the raw clock column for its fixed readings.
+
+**Replaced by:** [`C-OP-17-CLOCK`](CLAIMS.md#C-OP-17-CLOCK), [`C-OP-17-CLOCKPY`](CLAIMS.md#C-OP-17-CLOCKPY) — each opens what it rests on.
+
+<a id="C-OP-OLD-17-POOLED"></a>
+### Pooled, oxygen falls as the sun rises.
+
+`C-OP-OLD-17-POOLED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-17-POOLED">Pooled, oxygen falls as the sun rises. That is solubility: high sun means summer means warm water</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-17-POOLED "What this claim rests on")</sup>
+
+**Why it was retired:** No pooled result is stored.
+
+**Replaced by:** [`C-OP-17-WINDOW`](CLAIMS.md#C-OP-17-WINDOW) — each opens what it rests on.
+
+<a id="C-OP-OLD-18-E11"></a>
+### That [E11](HYPOTHESES.md "Ammonia toxicity") is answerable was not known, and the uncorrected dissociation terms are not negligible in a fjord.
+
+`C-OP-OLD-18-E11` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-18-E11">which was not known. [25,988](SOURCES.md#F-1b3853e014) bottles carry both pH and ammonium. The un-ionised fraction, the toxic one, comes out at a median of [0.685](SOURCES.md#F-c349c3e5ca) µg/l, a 95th percentile of [5.8](SOURCES.md#F-2f73196abc) and a maximum of [883](SOURCES.md#F-04880aedc0) — indicative only, because the salinity and in-situ temperature corrections to the dissociation constant are not applied and are not negligible in a fjord</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-18-E11 "What this claim rests on")</sup>
+
+**Why it was retired:** Page history, and the size of the corrections has no source here.
+
+**Replaced by:** [`C-OP-18-E11`](CLAIMS.md#C-OP-18-E11) — each opens what it rests on.
+
+<a id="C-OP-OLD-18-K1"></a>
+### An earlier version called the rise monotonic; DIN fell because management acted on it while silicon did not.
+
+`C-OP-OLD-18-K1` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-18-K1">An earlier version of this page called the rise monotonic and the premise contradicted, comparing a low year with a high one. DIN did fall because nitrogen management acted on it, and silicon is geological and did</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-18-K1 "What this claim rests on")</sup>
+
+**Why it was retired:** Page history, and the causes of the DIN and silicon trends are not in the stored test.
+
+**Replaced by:** [`C-OP-18-K1`](CLAIMS.md#C-OP-18-K1) — each opens what it rests on.
+
+<a id="C-OP-OLD-18-NOTICE"></a>
+### While the first lock was shut, nobody had to notice the second.
+
+`C-OP-OLD-18-NOTICE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-18-NOTICE">While the first lock was shut, nobody had to notice the second</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-18-NOTICE "What this claim rests on")</sup>
+
+**Why it was retired:** An assertion about people with nothing behind it.
+
+**Replaced by:** [`C-OP-18-TRIAGE`](CLAIMS.md#C-OP-18-TRIAGE) — each opens what it rests on.
+
+<a id="C-OP-OLD-18-PLANSAID"></a>
+### PLAN.md said the vandkemi fetch was the blocker for the listed hypotheses.
+
+`C-OP-OLD-18-PLANSAID` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-18-PLANSAID">said the ODA `vandkemi` fetch was the blocker for `A1`, `A2`, `A5`, `A7`, `B4`, `E2`, `E11`, `K1` and `K2`. The fetch has run</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-18-PLANSAID "What this claim rests on")</sup>
+
+**Why it was retired:** History of another page; the set of hypotheses comes from rescore.py's own list.
+
+**Replaced by:** [`C-OP-18-SET`](CLAIMS.md#C-OP-18-SET) — each opens what it rests on.
+
+<a id="C-OP-OLD-2-ACCEPTED"></a>
+### Neither the missing trend nor the swing has an accepted explanation.
+
+`C-OP-OLD-2-ACCEPTED` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-2-ACCEPTED">Neither the absence of a trend nor the size of the year-to-year swing has an accepted explanation</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-2-ACCEPTED "What this claim rests on")</sup>
+
+**Why it was retired:** A statement about the whole literature with no search behind it.
+
+**Replaced by:** [`C-OP-2-NOTREND`](CLAIMS.md#C-OP-2-NOTREND) — each opens what it rests on.
+
+<a id="C-OP-OLD-2-ALLDCE"></a>
+### All three series for the regression are published by DCE, and the regression has not been published.
+
+`C-OP-OLD-2-ALLDCE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-2-ALLDCE">All three series are published by DCE. No new data, no new instruments. The regression appears not to have been published</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-2-ALLDCE "What this claim rests on")</sup>
+
+**Why it was retired:** Wind work is not a DCE series, and the absence of a published regression was stated without a recorded search.
+
+**Replaced by:** [`C-OP-2-SETTLE`](CLAIMS.md#C-OP-2-SETTLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-2-LEVEL"></a>
+### Recent extents were at or above those of the record years, when the load was near its higher level.
+
+`C-OP-OLD-2-LEVEL` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-2-LEVEL">above the level of 1989, 2000 and 2002, when the load was near the higher of those</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-2-LEVEL "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's 2024 note ranks that year second, surpassed only by 2002, so neither recent year was at or above 2002; and the loads of the earlier years were not stored or cited.
+
+**Replaced by:** [`C-OP-2-EXTENT`](CLAIMS.md#C-OP-2-EXTENT) — each opens what it rests on.
+
+<a id="C-OP-OLD-2-ONLYTEST"></a>
+### The load-outcome comparison is the only empirical test of the nitrogen-dominant model anyone has run.
+
+`C-OP-OLD-2-ONLYTEST` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-2-ONLYTEST">This is the only empirical test of the nitrogen-dominant model that anyone has actually run, and it has been running since</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-2-ONLYTEST "What this claim rests on")</sup>
+
+**Why it was retired:** 'The only test anyone has run' rests on no search.
+
+**Replaced by:** [`C-OP-2-MATTERS`](CLAIMS.md#C-OP-2-MATTERS) — each opens what it rests on.
+
+<a id="C-OP-OLD-3-PROBABLY"></a>
+### The report of no oxygen depletion in Køge Bugt is probably accurate.
+
+`C-OP-OLD-3-PROBABLY` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-3-PROBABLY">That is probably accurate — the bay is shallow and may never stratify long enough to qualify</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-3-PROBABLY "What this claim rests on")</sup>
+
+**Why it was retired:** 'Probably accurate' had nothing behind it.
+
+**Replaced by:** [`C-OP-3-AMBIG`](CLAIMS.md#C-OP-3-AMBIG) — each opens what it rests on.
+
+<a id="C-OP-OLD-4-ANYWHERE"></a>
+### None of the fractions an oxygen depletion potential needs is computed anywhere.
+
+`C-OP-OLD-4-ANYWHERE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-4-ANYWHERE">Each is a fraction. None is computed anywhere</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-4-ANYWHERE "What this claim rests on")</sup>
+
+**Why it was retired:** An absence stated of everything.
+
+**Replaced by:** [`C-OP-4-ODP`](CLAIMS.md#C-OP-4-ODP) — each opens what it rests on.
+
+<a id="C-OP-OLD-4-GWP"></a>
+### Nitrogen accounting has no equivalent of GWP, and mixing across a summer pycnocline is four orders of magnitude weaker.
+
+`C-OP-OLD-4-GWP` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-4-GWP">Nitrogen accounting has no equivalent of GWP. A kilogram delivered in February into a mixed column counts identically to a kilogram delivered in July into a stratified fjord, though vertical mixing across a summer pycnocline is roughly four orders of magnitude weaker</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-4-GWP "What this claim rests on")</sup>
+
+**Why it was retired:** An absence stated of all nitrogen accounting with no search, and the size of the mixing contrast has no source.
+
+**Replaced by:** [`C-OP-4-POTENCY`](CLAIMS.md#C-OP-4-POTENCY) — each opens what it rests on.
+
+<a id="C-OP-OLD-5-NOBODY"></a>
+### Almost nobody does flow-proportional overflow sampling.
+
+`C-OP-OLD-5-NOBODY` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-5-NOBODY">It is defined, it is the best method in their hierarchy, and almost nobody does it</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-5-NOBODY "What this claim rests on")</sup>
+
+**Why it was retired:** No count of structures measured at that level was found.
+
+**Replaced by:** [`C-OP-5-SETTLE`](CLAIMS.md#C-OP-5-SETTLE) — each opens what it rests on.
+
+<a id="C-OP-OLD-6-MEANINGLESS"></a>
+### Until the two pathways are filled no percentage is meaningful.
+
+`C-OP-OLD-6-MEANINGLESS` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-6-MEANINGLESS">Until at least these two are filled, no denominator exists and no percentage is meaningful</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-6-MEANINGLESS "What this claim rests on")</sup>
+
+**Why it was retired:** Overstated: a share of the quantified pathways is meaningful as such; it is not a share of the supply.
+
+**Replaced by:** [`C-OP-6-DENOM`](CLAIMS.md#C-OP-6-DENOM) — each opens what it rests on.
+
+<a id="C-OP-OLD-6-REGEN"></a>
+### Internal regeneration is measured in Danish waters, never compiled into a budget, and probably the largest single supply.
+
+`C-OP-OLD-6-REGEN` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-6-REGEN">measurable with benthic flux chambers, and done in Danish waters, just never compiled into a nutrient budget. Probably the largest single supply to</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-6-REGEN "What this claim rests on")</sup>
+
+**Why it was retired:** Neither the Danish flux measurements nor 'the largest single supply' has a source here, and 'never compiled' was stated without a search.
+
+**Replaced by:** [`C-OP-6-A7`](CLAIMS.md#C-OP-6-A7) — each opens what it rests on.
+
+<a id="C-OP-OLD-7-RATCHET"></a>
+### Each year's hypoxia removes more of the structural life, by a ratchet that is never measured.
+
+`C-OP-OLD-7-RATCHET` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-7-RATCHET">and therefore the ratchet by which each year's hypoxia removes more of the structural life — is never measured</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-7-RATCHET "What this claim rests on")</sup>
+
+**Why it was retired:** It asserted that the ratchet exists; nothing measured shows it.
+
+**Replaced by:** [`C-OP-7-AFTERMATH`](CLAIMS.md#C-OP-7-AFTERMATH) — each opens what it rests on.
+
+<a id="C-OP-OLD-8-NONE"></a>
+### There is no systematic national monitoring of the shore condition at all; what exists is bathing water, beach management and complaints.
+
+`C-OP-OLD-8-NONE` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-8-NONE">There is no systematic national monitoring of the shore condition at all — not extent, not biomass, not duration, not odour. What exists is bathing-water sampling in the bathing season, municipal beach management and complaints, all concentrated where and when people are on beaches</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-8-NONE "What this claim rests on")</sup>
+
+**Why it was retired:** An absence stated of everything, and the municipal management and complaints were not looked at.
+
+**Replaced by:** [`C-OP-8-NONE`](CLAIMS.md#C-OP-8-NONE) — each opens what it rests on.
+
+<a id="C-OP-OLD-9"></a>
+### Danish monitoring produces no images of consequence, and no argument on the site rests on the exposure page.
+
+`C-OP-OLD-9` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-9">Danish monitoring produces concentrations. It does not produce images of consequence, and the two are not substitutes. This became its own page: EXPOSURE.md. It is related reading and a dependency of nothing — no argument on this site rests on it</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-9 "What this claim rests on")</sup>
+
+**Why it was retired:** Stated of all Danish monitoring; replaced by what this project profiled, with 'no argument' checked against the claims register.
+
+**Replaced by:** [`C-OP-9`](CLAIMS.md#C-OP-9) — each opens what it rests on.
+
+<a id="C-OP-OLD-INTRO"></a>
+### The page's numbers were read from data or quoted from the version of the page that first published them.
+
+`C-OP-OLD-INTRO` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OP-OLD-INTRO">the questions are prose, but every number in them is read from the data it describes, or quoted from the version of this page that first</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-INTRO "What this claim rests on")</sup>
+
+**Why it was retired:** A quotation of the page's own past is not a justification; the page now reads every number from its data.
+
+**Replaced by:** [`C-OP-INTRO`](CLAIMS.md#C-OP-INTRO) — each opens what it rests on.
+
 ## OXYGEN.md
 
 <a id="C-OB-OLD-OX-ACCOUNTING"></a>
@@ -2010,6 +4354,727 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** DCE give the window's reason: it follows the EU-intercalibrated chlorophyll indicator, and with spring excluded nitrogen is the variable most often selected. The page reversed the cause, imputed a purpose, and misquoted the sentence's word order.
 
 **Replaced by:** [`C-OB-OX-CHL`](CLAIMS.md#C-OB-OX-CHL) — each opens what it rests on.
+
+## PLACES.md
+
+<a id="C-PC-OLD-ANYBODY"></a>
+### One place is several times worse than anywhere else, and not the one anybody argues about.
+
+`C-PC-OLD-ANYBODY` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-ANYBODY">One place is [3.9](SOURCES.md#F-1b8d8a98d6) times worse than anywhere else, and it is not the one anybody argues about.</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-ANYBODY "What this claim rests on")</sup>
+
+**Why it was retired:** It compared Mariager with the next region only, called that 'anywhere else', and 'not the one anybody argues about' is a statement about all public argument that no source surveys; the pinned press names Mariager too.
+
+**Replaced by:** [`C-PC-RATIO`](CLAIMS.md#C-PC-RATIO) — each opens what it rests on.
+
+<a id="C-PC-OLD-BALTIC"></a>
+### Forced downwelling and deep-water oxygenation have been run at basin scale in Byfjorden and trialled in the Baltic.
+
+`C-PC-OLD-BALTIC` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-BALTIC">This is engineering with precedent: forced downwelling and artificial deep-water oxygenation have been run at basin scale in Sweden's Byfjorden and trialled in the Baltic. Cost and side effects are real and are not assessed here</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-BALTIC "What this claim rests on")</sup>
+
+**Why it was retired:** The By Fjord experiment is real and now pinned, but for the Baltic the pinned work is a model calculation for the Bornholm Basin, not a trial; and 'cost and side effects are real' had nothing behind it.
+
+**Replaced by:** [`C-PC-BYFJORD`](CLAIMS.md#C-PC-BYFJORD), [`C-PC-BORNHOLM`](CLAIMS.md#C-PC-BORNHOLM), [`C-PC-MAR-COST`](CLAIMS.md#C-PC-MAR-COST) — each opens what it rests on.
+
+<a id="C-PC-OLD-CHEAPEST"></a>
+### An instrument for fedtemøg costs almost nothing and is the cheapest unblocking step on this coast.
+
+`C-PC-OLD-CHEAPEST` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-CHEAPEST">which costs almost nothing:* there is no instrument for the thing people are actually complaining about. Before proposing a fix for *fedtemøg*, somebody has to be able to say whether it got better. That is the cheapest unblocking step on this coast and it is not a modelling problem</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-CHEAPEST "What this claim rests on")</sup>
+
+**Why it was retired:** No cost was estimated for it or for anything it is compared with.
+
+**Replaced by:** [`C-PC-KOEGE-INSTRUMENT`](CLAIMS.md#C-PC-KOEGE-INSTRUMENT) — each opens what it rests on.
+
+<a id="C-PC-OLD-CONTESTED"></a>
+### Køge Bugt is the most publicly contested coastal water in Denmark.
+
+`C-PC-OLD-CONTESTED` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-CONTESTED">greasy water, a shore people would rather not walk on, fish kills. The most publicly contested coastal water in Denmark, and the one nearest the largest population</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-CONTESTED "What this claim rests on")</sup>
+
+**Why it was retired:** No survey of public argument supports 'most publicly contested'; what was recorded is the four words used for the damage.
+
+**Replaced by:** [`C-PC-KOEGE-WORDS`](CLAIMS.md#C-PC-KOEGE-WORDS) — each opens what it rests on.
+
+<a id="C-PC-OLD-ECONOMICS"></a>
+### A portfolio of trials is cheap against a national reduction, and standard value-of-information analysis makes information worth a substantial fraction of the intervention.
+
+`C-PC-OLD-ECONOMICS` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-ECONOMICS">The economics are the argument. A national reduction is expensive, recurring, irreversible within a year, and produces no test. A portfolio of trials is cheap against it, reversible, and every result is permanent — it holds whoever is in office and whatever the next model says. The value-of-information case is standard decision analysis: where the intervention cost is large and the attribution uncertain by a factor, information is worth a substantial fraction of the intervention</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-ECONOMICS "What this claim rests on")</sup>
+
+**Why it was retired:** No cost or value of information was computed or cited.
+
+**Replaced by:** [`C-PC-ECONOMICS`](CLAIMS.md#C-PC-ECONOMICS) — each opens what it rests on.
+
+<a id="C-PC-OLD-HEADING-KOEGE"></a>
+### Køge Bugt is the loudest claim, and the measurement disagrees about what is wrong.
+
+`C-PC-OLD-HEADING-KOEGE` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-HEADING-KOEGE">the loudest claim, and the measurement disagrees about what is</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-HEADING-KOEGE "What this claim rests on")</sup>
+
+**Why it was retired:** 'The loudest claim' rests on no survey of public argument.
+
+**Replaced by:** [`C-PC-KOEGE-NOCONFLICT`](CLAIMS.md#C-PC-KOEGE-NOCONFLICT) — each opens what it rests on.
+
+<a id="C-PC-OLD-HEADING-LBJ"></a>
+### Lillebælt and Det Sydfynske Øhav are the ones with a case.
+
+`C-PC-OLD-HEADING-LBJ` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-HEADING-LBJ">the second tier, and the ones with a case</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-HEADING-LBJ "What this claim rests on")</sup>
+
+**Why it was retired:** 'The ones with a case' asserted that the nutrient account fits there, which was not checked.
+
+**Replaced by:** [`C-PC-LBJ-TEST`](CLAIMS.md#C-PC-LBJ-TEST) — each opens what it rests on.
+
+<a id="C-PC-OLD-HEADING-MAR"></a>
+### Mariager Fjord is the worst measured, and nitrogen does not reach it.
+
+`C-PC-OLD-HEADING-MAR` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-HEADING-MAR">the worst measured, and nitrogen does not reach it</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-HEADING-MAR "What this claim rests on")</sup>
+
+**Why it was retired:** 'Nitrogen does not reach it' rested on a study this project could not read; the readable source says the catchment's load fell less than expected.
+
+**Replaced by:** [`C-PC-MAR-CAUSE`](CLAIMS.md#C-PC-MAR-CAUSE) — each opens what it rests on.
+
+<a id="C-PC-OLD-IRON"></a>
+### Free sulphide in the water column is what remains after the sediment's iron buffer is spent.
+
+`C-PC-OLD-IRON` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-IRON">Free sulphide in the water column is what remains after the sediment's iron buffer is spent</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-IRON "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: a mechanism stated as fact with no source; what can be sourced is that sediment sulphide reaches Mariager's water column.
+
+**Replaced by:** [`C-PC-MAR-SULPHIDE`](CLAIMS.md#C-PC-MAR-SULPHIDE) — each opens what it rests on.
+
+<a id="C-PC-OLD-LBJ"></a>
+### Lillebælt and Det Sydfynske Øhav are an order of magnitude above the national pattern, on the largest station counts in the table.
+
+`C-PC-OLD-LBJ` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-LBJ">Not Mariager's severity, but an order of magnitude above the national pattern, and on the largest station counts in the table</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-LBJ "What this claim rests on")</sup>
+
+**Why it was retired:** No national pattern was computed, and several regions in the table have more stations than either.
+
+**Replaced by:** [`C-PC-LBJ`](CLAIMS.md#C-PC-LBJ) — each opens what it rests on.
+
+<a id="C-PC-OLD-LBJ-FIT"></a>
+### Lillebælt and Det Sydfynske Øhav are stratified, sheltered waters with substantial catchments, the combination the nutrient hypothesis predicts.
+
+`C-PC-OLD-LBJ-FIT` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-LBJ-FIT">These are stratified, sheltered waters with substantial catchments — which is the combination the nutrient hypothesis actually predicts. If the standard account is right anywhere, it is here, and this is where a nitrogen intervention should be tested rather than assumed. That is a testable proposition and it is not tested in this project</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-LBJ-FIT "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: the description of the two waters has no source here; what the hypothesis predicts is now read from the register.
+
+**Replaced by:** [`C-PC-LBJ-TEST`](CLAIMS.md#C-PC-LBJ-TEST) — each opens what it rests on.
+
+<a id="C-PC-OLD-LBJROW"></a>
+### Lillebælt and Det Sydfynske Øhav are the one place the standard account predicts nitrogen reduction should work.
+
+`C-PC-OLD-LBJROW` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-LBJROW">the one place the standard account predicts it should work</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-LBJROW "What this claim rests on")</sup>
+
+**Why it was retired:** Whether these waters fit the hypothesis was not checked.
+
+**Replaced by:** [`C-PC-PORTFOLIO`](CLAIMS.md#C-PC-PORTFOLIO) — each opens what it rests on.
+
+<a id="C-PC-OLD-NINETYEIGHT"></a>
+### Plurality without a decision rule produces a stated number of stories.
+
+`C-PC-OLD-NINETYEIGHT` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-NINETYEIGHT">does not produce an answer, it produces ninety-eight stories and a fight about which one counts</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-NINETYEIGHT "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: a count of places typed in words, with no source.
+
+**Replaced by:** [`C-PC-REG-RULE`](CLAIMS.md#C-PC-REG-RULE) — each opens what it rests on.
+
+<a id="C-PC-OLD-NOCONFLICT"></a>
+### The bay is shallow and mixes readily, so it may never meet a criterion defined for stratified bottom water; it is not suffocating, and may be dead.
+
+`C-PC-OLD-NOCONFLICT` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-NOCONFLICT">These are not in conflict. They are answers to different questions. The bay is shallow and mixes readily, so it may never meet a criterion defined as *oxygen below [4](SOURCES.md#F-b2d0689674) mg/l in stratified bottom water* while still having anoxic sediment, sulphate reduction and a fouled shoreline. The measurement says the bay is not suffocating. It says nothing about whether it is dead</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-NOCONFLICT "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's definition does not mention stratification, and that the bay mixes readily is provisional; the replacement says what the oxygen record does and does not cover.
+
+**Replaced by:** [`C-PC-KOEGE-NOCONFLICT`](CLAIMS.md#C-PC-KOEGE-NOCONFLICT) — each opens what it rests on.
+
+<a id="C-PC-OLD-NORESPONSE"></a>
+### Nitrogen reduction has been tried at scale in Mariager's catchment and produced no measurable response in the fjord.
+
+`C-PC-OLD-NORESPONSE` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-NORESPONSE">The evidence available says this has already been tried at scale and produced no measurable response in this fjord within twenty years</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-NORESPONSE "What this claim rests on")</sup>
+
+**Why it was retired:** It rested on the unread study; the readable source says the catchment's load fell less than expected, and nothing here measures the fjord's response.
+
+**Replaced by:** [`C-PC-MAR-N`](CLAIMS.md#C-PC-MAR-N) — each opens what it rests on.
+
+<a id="C-PC-OLD-NOTHINGOXYGEN"></a>
+### A nitrogen reduction will not change a shoreline already at a high median oxygen.
+
+`C-PC-OLD-NOTHINGOXYGEN` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-NOTHINGOXYGEN">because oxygen is not the measured problem here. A nitrogen reduction sized on a national residual will not change a shoreline that is already at a median of</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-NOTHINGOXYGEN "What this claim rests on")</sup>
+
+**Why it was retired:** The median is near-bed oxygen, not a measure of the shoreline, and nothing here shows what a nitrogen reduction would do to the shore.
+
+**Replaced by:** [`C-PC-KOEGE-NOTOXYGEN`](CLAIMS.md#C-PC-KOEGE-NOTOXYGEN) — each opens what it rests on.
+
+<a id="C-PC-OLD-NOTORIOUS"></a>
+### Mariager Fjord is a fjord that died, and the site of Denmark's most notorious fish kill.
+
+`C-PC-OLD-NOTORIOUS` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-NOTORIOUS">a fjord that died. It is the site of Denmark's most notorious fish kill</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-NOTORIOUS "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: neither 'a fjord that died' nor 'most notorious' has a source; the pinned description says the basin leads to iltsvind and fish kills in some summers.
+
+**Replaced by:** [`C-PC-MAR-SILL`](CLAIMS.md#C-PC-MAR-SILL) — each opens what it rests on.
+
+<a id="C-PC-OLD-NOTREALUNITS"></a>
+### This project's testing says the water bodies are not real units.
+
+`C-PC-OLD-NOTREALUNITS` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-NOTREALUNITS">this project's own testing says the water bodies are not real units</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-NOTREALUNITS "What this claim rests on")</sup>
+
+**Why it was retired:** Overstated: the test shows the official water bodies do no better than random regions of the same sizes, not that they are unreal.
+
+**Replaced by:** [`C-PC-LIMITS`](CLAIMS.md#C-PC-LIMITS) — each opens what it rests on.
+
+<a id="C-PC-OLD-NOWHERE"></a>
+### Denmark's near-bed oxygen record is a baseline almost nowhere else has.
+
+`C-PC-OLD-NOWHERE` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-NOWHERE">Denmark is unusually well placed to do this, and the reason is concrete. A trial needs a *before*. Denmark has [46](SOURCES.md#F-6c08a3c5d5) years of near-bed oxygen at [1,327](SOURCES.md#F-178c15f552) stations, which is a baseline almost nowhere else has</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-NOWHERE "What this claim rests on")</sup>
+
+**Why it was retired:** No comparison with other countries' records was made.
+
+**Replaced by:** [`C-PC-BEFORE`](CLAIMS.md#C-PC-BEFORE) — each opens what it rests on.
+
+<a id="C-PC-OLD-OLDEST"></a>
+### 'More research is needed' is the oldest way to stall a regulation, and there is a large economic interest in delay here.
+
+`C-PC-OLD-OLDEST` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-OLDEST">is the oldest way to stall a regulation, and the fact that it is sometimes true is what makes it effective. There is a large economic interest in delay here</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-OLDEST "What this claim rests on")</sup>
+
+**Why it was retired:** 'The oldest' and 'large' have nothing behind them; the objection stands in its milder form.
+
+**Replaced by:** [`C-PC-OBJECTION`](CLAIMS.md#C-PC-OBJECTION) — each opens what it rests on.
+
+<a id="C-PC-OLD-ONETWO"></a>
+### A deep-water exchange trial at Mariager would read out within a stated number of years.
+
+`C-PC-OLD-ONETWO` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-ONETWO">bottom oxygen and sulphide, existing stations, [[1](SOURCES.md#F-5f96ffe71a)–[2](SOURCES.md#F-1a32eac0a8) years</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-ONETWO "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: the duration has no source.
+
+**Replaced by:** [`C-PC-PORTFOLIO`](CLAIMS.md#C-PC-PORTFOLIO) — each opens what it rests on.
+
+<a id="C-PC-OLD-ONLY"></a>
+### Intervention is the only thing that identifies a cause without enumerating confounders, and it cuts every backdoor path.
+
+`C-PC-OLD-ONLY` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-ONLY">Intervention is the only thing that identifies a cause *without enumerating the confounders*. When you set a variable rather than observe it, every backdoor path is cut by construction</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-ONLY "What this claim rests on")</sup>
+
+**Why it was retired:** Overstated: other designs can identify causes too, and an intervention cuts backdoor paths only where its assignment is randomised.
+
+**Replaced by:** [`C-PC-META-WHY`](CLAIMS.md#C-PC-META-WHY) — each opens what it rests on.
+
+<a id="C-PC-OLD-ONLYDIFF"></a>
+### Difference between places is the only thing that makes any of this identifiable.
+
+`C-PC-OLD-ONLYDIFF` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-ONLYDIFF">Difference between places is the only thing that makes any of this identifiable</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-ONLYDIFF "What this claim rests on")</sup>
+
+**Why it was retired:** Overstated: 'the only thing' has nothing behind it; the argument needs only that it is what makes it identifiable here.
+
+**Replaced by:** [`C-PC-PLURAL-1`](CLAIMS.md#C-PC-PLURAL-1) — each opens what it rests on.
+
+<a id="C-PC-OLD-ONLYINSTR"></a>
+### With its conditions, experimentation is the only instrument on the table that produces an answer.
+
+`C-PC-OLD-ONLYINSTR` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-ONLYINSTR">With them it is the only instrument on the table that produces an answer rather than a compliance figure</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-ONLYINSTR "What this claim rests on")</sup>
+
+**Why it was retired:** 'The only instrument' was not argued.
+
+**Replaced by:** [`C-PC-WITHOUT`](CLAIMS.md#C-PC-WITHOUT) — each opens what it rests on.
+
+<a id="C-PC-OLD-PHYSICAL"></a>
+### Both candidate explanations at Mariager are physical, and the nitrogen lever was pulled with nothing moving.
+
+`C-PC-OLD-PHYSICAL` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-PHYSICAL">So the honest statement is that the two candidate explanations are both physical: a sill that prevents exchange, and an aquifer that delays whatever the land does by decades. Neither is addressed by a nitrogen target, and the paper's own data says the nitrogen lever was pulled and nothing moved</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-PHYSICAL "What this claim rests on")</sup>
+
+**Why it was retired:** The aquifer explanation and 'nothing moved' came from the unread study, and the readable source contradicts 'nothing moved'.
+
+**Replaced by:** [`C-PC-MAR-TWO`](CLAIMS.md#C-PC-MAR-TWO) — each opens what it rests on.
+
+<a id="C-PC-OLD-RANKINGS"></a>
+### The severity and attention rankings differ, and Mariager demonstrably does not fit the nutrient story on twenty years of data.
+
+`C-PC-OLD-RANKINGS` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-RANKINGS">The severity ranking and the attention ranking are different. Mariager is [3.9](SOURCES.md#F-7589aa271c) times worse than anywhere and is not the subject of a national argument. Køge Bugt is among the best-oxygenated waters in the country and is the subject of one. [2](SOURCES.md#F-4d9f42a7c7). The place where the standard account is most likely right is not the place it is most loudly applied. Lillebælt and the Sydfynske Øhav fit the nutrient story; Mariager demonstrably does not, on twenty years of data</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-RANKINGS "What this claim rests on")</sup>
+
+**Why it was retired:** No attention ranking was measured, and 'demonstrably does not' rested on the unread study.
+
+**Replaced by:** [`C-PC-FOR-1`](CLAIMS.md#C-PC-FOR-1), [`C-PC-FOR-2`](CLAIMS.md#C-PC-FOR-2) — each opens what it rests on.
+
+<a id="C-PC-OLD-THREETIMES"></a>
+### This project met the equity-for-information trade three times in its data.
+
+`C-PC-OLD-THREETIMES` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-THREETIMES">This project has already met that trade three times in the data — a national relation that is tight *because* the local coefficient varies, water bodies that carry no signal within themselves, and a national oxygen trend that tracks which stations were reporting. Aggregation is what destroyed the contrast in each case</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-THREETIMES "What this claim rests on")</sup>
+
+**Why it was retired:** Of the three cases, one rested on the unread catchment study and one - a national oxygen trend tracking which stations reported - has no record here; the water-body case stands.
+
+**Replaced by:** [`C-PC-PLURAL-MET`](CLAIMS.md#C-PC-PLURAL-MET) — each opens what it rests on.
+
+<a id="C-PC-OLD-THREEWORDS"></a>
+### Three of the four public words - fedtemøg, fiskedød and livet i fjordene - have no instrument.
+
+`C-PC-OLD-THREEWORDS` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-THREEWORDS">Three of the four words the public uses have no instrument behind them at all — *fedtemøg* has no measurement, *fiskedød* has no open register, and *livet i fjordene* is a claim about structure that oxygen does not address. So for this place</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-THREEWORDS "What this claim rests on")</sup>
+
+**Why it was retired:** The recorded public word is 'liv i fjorden', not 'livet i fjordene', and the absence of a fedtemøg series is an absence from the sources surveyed.
+
+**Replaced by:** [`C-PC-KOEGE-THREE`](CLAIMS.md#C-PC-KOEGE-THREE) — each opens what it rests on.
+
+<a id="C-PC-OLD-TWENTYSIX"></a>
+### The land-to-estuary coefficient varies severalfold between bays, and one catchment in ten does not respond to nitrogen.
+
+`C-PC-OLD-TWENTYSIX` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-TWENTYSIX">the transfer coefficient between land and estuary already varies twenty-six-fold between bays, and one catchment in ten responds to nitrogen not at all</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-TWENTYSIX "What this claim rests on")</sup>
+
+**Why it was retired:** Both figures came from the unread catchment study.
+
+**Replaced by:** [`C-PC-NOTCLAIM`](CLAIMS.md#C-PC-NOTCLAIM) — each opens what it rests on.
+
+<a id="C-PC-OLD-WINDOLF"></a>
+### A catchment study found Mariager showed no response at all to nitrogen reductions, attributed to old oxic groundwater in chalk aquifers.
+
+`C-PC-OLD-WINDOLF` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-WINDOLF">What is known about cause, and it is unusually definite. Windolf et al. (2012) studied ten catchments over twenty years. Eight responded to reductions in agricultural nitrogen surplus within five years. Mariager showed no response at all — high diffuse loads throughout, and the highest intercept in the study. The authors attribute it to old, oxic groundwater in chalk aquifers, where nitrate survives instead of being denitrified. The fjord is also a deep silled basin, so its bottom water exchanges rarely</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-WINDOLF "What this claim rests on")</sup>
+
+**Why it was retired:** The study (Windolf and colleagues) could not be read here; the only readable source, DCE's SR353, says Mariager's catchment reduced its diffuse load less than the relation indicates - not no response - and gives no cause.
+
+**Replaced by:** [`C-PC-MAR-CAUSE`](CLAIMS.md#C-PC-MAR-CAUSE) — each opens what it rests on.
+
+<a id="C-PC-OLD-WORST"></a>
+### No iltsvind was registered in Køge Bugt even in the worst iltsvind year in two decades.
+
+`C-PC-OLD-WORST` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PC-OLD-WORST">DCE report no registered iltsvind here in 2023 or 2025 — including 2023, the worst iltsvind year in two decades</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-WORST "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's note calls that September's extent the second largest registered, not the worst.
+
+**Replaced by:** [`C-PC-KOEGE-DCE`](CLAIMS.md#C-PC-KOEGE-DCE) — each opens what it rests on.
+
+## PLAN.md
+
+<a id="C-KP-OLD-182"></a>
+### An earlier version of the plan gave a different count of mechanisms.
+
+`C-KP-OLD-182` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-182">version of this page said [182](SOURCES.md#F-08289ef870) mechanisms, which is what the hypotheses and the group headings come to when they are counted together</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-182 "What this claim rests on")</sup>
+
+**Why it was retired:** The page's own history; the count it corrected is read live.
+
+**Replaced by:** [`C-KP-LANDSCAPE`](CLAIMS.md#C-KP-LANDSCAPE) — each opens what it rests on.
+
+<a id="C-KP-OLD-26FOLD"></a>
+### The land-to-estuary coefficient varies by a stated factor, and one catchment in ten does not respond.
+
+`C-KP-OLD-26FOLD` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-26FOLD">you run one trial nationally, when the land-to-estuary coefficient varies twenty-six-fold and one catchment in ten does not respond at all</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-26FOLD "What this claim rests on")</sup>
+
+**Why it was retired:** Both figures rest on per-catchment numbers typed into constructed.py with no traceable source.
+
+**Replaced by:** [`C-KP-WHY-S6`](CLAIMS.md#C-KP-WHY-S6) — each opens what it rests on.
+
+<a id="C-KP-OLD-CHEAP"></a>
+### Neither of the two largest blocking dimensions is expensive to start measuring.
+
+`C-KP-OLD-CHEAP` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-CHEAP">and neither is expensive to start measuring</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-CHEAP "What this claim rests on")</sup>
+
+**Why it was retired:** No cost estimate stands behind it.
+
+**Replaced by:** [`C-KP-DIMENSIONS`](CLAIMS.md#C-KP-DIMENSIONS) — each opens what it rests on.
+
+<a id="C-KP-OLD-DESTROY"></a>
+### The pipeline's destruction ratio and the size of the store that would remove it.
+
+`C-KP-OLD-DESTROY` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-DESTROY">Our own pipeline still destroys at roughly [3,900](SOURCES.md#F-71f60ca6d3) to one — depth [896](SOURCES.md#F-ca6f395002) values to [2](SOURCES.md#F-1ada3d9329) bins, day to month, casts to one median, instrument dropped. The store that removes it is about [800](SOURCES.md#F-5cc6030cce) MB, which the machine can hold</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-DESTROY "What this claim rests on")</sup>
+
+**Why it was retired:** The ratio, the depth count and the store size were measured once and never stored; no script reproduces them.
+
+**Replaced by:** [`C-KP-COLLAPSE`](CLAIMS.md#C-KP-COLLAPSE) — each opens what it rests on.
+
+<a id="C-KP-OLD-DRIFT"></a>
+### The plan exists because the project drifted, with stage four never started.
+
+`C-KP-OLD-DRIFT` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-DRIFT">This page exists because the project drifted: a great deal of method was built at stage 3 and stage 4 was never started, and without the order written down that is invisible</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-DRIFT "What this claim rests on")</sup>
+
+**Why it was retired:** Out of date: stage four has started - the triage is done and drafts are written - so "stage four was never started" no longer holds.
+
+**Replaced by:** [`C-KP-ORDER`](CLAIMS.md#C-KP-ORDER) — each opens what it rests on.
+
+<a id="C-KP-OLD-EXAMPLE"></a>
+### The worked example of an absent dimension used to be time of day, and correcting it added a class.
+
+`C-KP-OLD-EXAMPLE` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-EXAMPLE">The example this list used to give was wrong, and correcting it added a class. > Time of day stood here as the worked example, on the claim that *no row in the > archive carries a clock time*. That was true of what was on disk when it was > written — the CTD extract, which has only `Dato`. It is not true of the archive. > ODA's water-chemistry topic carries a clock value on every genuine row of its > [1.8](SOURCES.md#F-8f42920c00) million — the [22](SOURCES.md#F-6191134ff7) without one are fragments of a broken note field — and the > technical instruction requires it ([Kap. 5, Kaas & Markager > 1998](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap05.doc); > *"Prøvetagningsdato og tidspunkt i UTC"*). Nobody checked a topic that had not been > fetched, and the absence of a column was inferred from the absence of a download. > A clock value is not always a time, though: `scripts/clockzone.py` finds filled-in > defaults on [27,934](SOURCES.md#F-9497333aea) of [129,913](SOURCES.md#F-b2ee6fdf43) sampling visits, and a convention that changes by era > (DATA_SOURCES.md). > > What replaced it is not "scoreable after all". With the sun's true elevation > computed per sample — a clock hour is not a light level at [56](SOURCES.md#F-0bfb8ab8f8)°N, where 09:00 on > the winter solstice is a sun [1.4](SOURCES.md#F-dad5cb4690)° above the horizon and 09:00 on the > summer solstice is [34.4](SOURCES.md#F-148efbea4a)° — surface oxygen saturation sits above its > local mean in the high-sun bin at every window width (OPEN_PROBLEMS.md > item 17); an earlier version said it tracked the sun monotonically, by about [1.5](SOURCES.md#F-4a3df87b4c) > percentage points, which no longer holds once the clock is read correctly. And in the > record since 2002 the 5th and 95th percentiles of observed sampling times are > [8.1](SOURCES.md#F-cbfef015df) h and [15.6](SOURCES.md#F-42c41a7596) h local time; of [62,069](SOURCES.md#F-5005cd4e83) surface oxygen > samples with an observed time, [665](SOURCES.md#F-24bb1652c2) were taken at night and [944](SOURCES.md#F-510363fc3e) in twilight. > The pre-dawn minimum, which is the value an oxygen threshold is actually about, is > essentially never visited. > > So time of day belongs in a class this list did not have: the dimension is > recorded, and the sampling design never goes where it matters. That is not an > absent column and it is not a testable question. It is a statement about when > people are willing to be on a boat, and no reanalysis of the archive can fix it</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-EXAMPLE "What this claim rests on")</sup>
+
+**Why it was retired:** The page narrated its own correction, cited the technical instruction's field-sampling chapter where the phrase is in the nutrients chapter, and kept an earlier result it said no longer holds; the findings stand without the history.
+
+**Replaced by:** [`C-KP-TIMEOFDAY`](CLAIMS.md#C-KP-TIMEOFDAY), [`C-KP-CLOCK`](CLAIMS.md#C-KP-CLOCK), [`C-KP-SAMPLING-HOURS`](CLAIMS.md#C-KP-SAMPLING-HOURS) — each opens what it rests on.
+
+<a id="C-KP-OLD-FOURNULLS"></a>
+### Four times in this project the quoted null was wrong.
+
+`C-KP-OLD-FOURNULLS` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-FOURNULLS">separate times in this project the quoted null was wrong, once in the direction that favoured our own finding</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-FOURNULLS "What this claim rests on")</sup>
+
+**Why it was retired:** No record identifies the four cases.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KP-OLD-GAP"></a>
+### Stage four is the gap: nothing built so far tests a hypothesis.
+
+`C-KP-OLD-GAP` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-GAP">This is the gap. Everything built so far tests *the basketing*, not any hypothesis. Feature-subspace stability, the complement test, the four null corrections — all of it establishes what the units are and whether a partition means anything. None of it has been pointed at a mechanism</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-GAP "What this claim rests on")</sup>
+
+**Why it was retired:** No longer true: the triage is done and drafts test individual hypotheses against the data.
+
+**Replaced by:** [`C-KP-STAGE4`](CLAIMS.md#C-KP-STAGE4) — each opens what it rests on.
+
+<a id="C-KP-OLD-GROUPS"></a>
+### The testable-now set comes from three groups, and the archive cannot see biology or chemistry.
+
+`C-KP-OLD-GROUPS` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-GROUPS">The testable-now set is [6](SOURCES.md#F-ee236ca78c) from group I — hypotheses about the archive itself — plus [5](SOURCES.md#F-4ceffbaddc) from C, [3](SOURCES.md#F-b52d9b28ad) from Z. The archive can see physics and audit itself, and cannot see biology or chemistry</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-GROUPS "What this claim rests on")</sup>
+
+**Why it was retired:** Incomplete - the testable-now set also draws on other groups - and "cannot see" overstates it: the groups on oxygen demand, depletion and the land side each have some testable.
+
+**Replaced by:** [`C-KP-GROUPS`](CLAIMS.md#C-KP-GROUPS) — each opens what it rests on.
+
+<a id="C-KP-OLD-HENRY"></a>
+### The scoring machinery is validated: it recovered Henry's law unprompted and found the water bodies add nothing.
+
+`C-KP-OLD-HENRY` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-HENRY">and the machinery is already built and validated: - the method recovered Henry's law unprompted from station data pointed at a different question, and kept recovering it after every derived channel was removed. That is a positive control on ground truth in the same dataset. - the same method, same run, found the official water bodies add nothing beyond being connected regions of their size. A detector with demonstrated sensitivity that returns a null is informative. That is what makes stage 5 possible at all</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-HENRY "What this claim rests on")</sup>
+
+**Why it was retired:** No stored run records the recovery of Henry's law; the water-body result is recorded on LANDING.md, not as a validation of this procedure.
+
+**Replaced by:** [`C-KP-POSITIVE-CONTROL`](CLAIMS.md#C-KP-POSITIVE-CONTROL), [`C-KP-BOUNDARIES6`](CLAIMS.md#C-KP-BOUNDARIES6) — each opens what it rests on.
+
+<a id="C-KP-OLD-MISSING"></a>
+### The water-chemistry extract was missing and blocking.
+
+`C-KP-OLD-MISSING` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-MISSING">Was missing and blocking: ODA `vandkemi` (nitrogen and phosphorus) — the one variable the whole comparison needed. It has since been fetched; see stage</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-MISSING "What this claim rests on")</sup>
+
+**Why it was retired:** The page's own history; the extract is held and listed above.
+
+**Replaced by:** [`C-KP-ODA`](CLAIMS.md#C-KP-ODA) — each opens what it rests on.
+
+<a id="C-KP-OLD-MONITORED"></a>
+### Nutrients are the group with a monitoring programme.
+
+`C-KP-OLD-MONITORED` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-MONITORED">Which reframes the public argument: nutrients did not defeat the alternatives. Nutrients are the group with a monitoring programme, and sixty hypotheses have never been in a position to compete</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-MONITORED "What this claim rests on")</sup>
+
+**Why it was retired:** "The group with a monitoring programme" implies the others have none, which the source register does not support.
+
+**Replaced by:** [`C-KP-REFRAME`](CLAIMS.md#C-KP-REFRAME) — each opens what it rests on.
+
+<a id="C-KP-OLD-MOSTDEV"></a>
+### PROGRAMME.md is the most developed document here.
+
+`C-KP-OLD-MOSTDEV` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-MOSTDEV">already proposes interventions and is the most developed document here — which is precisely the drift this page records</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-MOSTDEV "What this claim rests on")</sup>
+
+**Why it was retired:** "The most developed document" has no measure behind it.
+
+**Replaced by:** [`C-KP-PROGRAMME`](CLAIMS.md#C-KP-PROGRAMME) — each opens what it rests on.
+
+<a id="C-KP-OLD-NIGHT"></a>
+### The archive's clock never visits the night.
+
+`C-KP-OLD-NIGHT` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-NIGHT">an observational study on an archive whose clock never visits the night cannot do</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-NIGHT "What this claim rests on")</sup>
+
+**Why it was retired:** The archive does visit the night, rarely: the counted surface oxygen samples include night and twilight ones.
+
+**Replaced by:** [`C-KP-INTERVENE`](CLAIMS.md#C-KP-INTERVENE) — each opens what it rests on.
+
+<a id="C-KP-OLD-NITRO"></a>
+### NITROGEN.md establishes that the agricultural share is a residual over a stated modelled share of the area.
+
+`C-KP-OLD-NITRO` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-NITRO">the social frame; NITROGEN.md establishes that the [69.6](SOURCES.md#F-8a2bab2ff1)% attribution is a residual over an area [51](SOURCES.md#F-17de2ec352)% modelled, not a measurement</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-NITRO "What this claim rests on")</sup>
+
+**Why it was retired:** The modelled share comes from a register entry with no source; NITROGEN.md and RESIDUAL.md now say only that the area is part measured, part modelled.
+
+**Replaced by:** [`C-KP-STAGE7`](CLAIMS.md#C-KP-STAGE7) — each opens what it rests on.
+
+<a id="C-KP-OLD-ONCE"></a>
+### The failure mode of ghost references was committed and corrected once.
+
+`C-KP-OLD-ONCE` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-ONCE">the failure mode this project has already committed and corrected once</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-ONCE "What this claim rests on")</sup>
+
+**Why it was retired:** No record identifies the case.
+
+**Replaced by:** [`C-KP-STAGE7-WHAT`](CLAIMS.md#C-KP-STAGE7-WHAT) — each opens what it rests on.
+
+<a id="C-KP-OLD-ONEFETCH"></a>
+### One fetch unblocks nine hypotheses, and it has been done.
+
+`C-KP-OLD-ONEFETCH` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-ONEFETCH">One fetch unblocks nine — and it has now been done. ODA `vandkemi` (`Emne_10_11`) is named in the blocker for `A1`, `A2`, `A5`, `A7`, `B4`, `E2`, `E11`, `K1` and `K2`. It was the topic `fetch_oda.py` advertised in its docstring and never listed in `TOPICS`: the gap between a comment and a dict was most of the reason group A had no numbers. It needed no credential the project did not already hold. [1,805,827](SOURCES.md#F-dfb646be94) rows, [1,126](SOURCES.md#F-3b44305a3a) stations, [147](SOURCES.md#F-d1368bf61e) parameters, 1970–2026 — total N, total P, ortho-P, nitrite+nitrate, ammonium, chlorophyll a, silicon, and [156,971](SOURCES.md#F-2fe30ea921) oxygen measurements each carrying a depth. The table above is therefore stale by nine, and they have since been re-scored against the data rather than against its absence — see OPEN_PROBLEMS.md item 18. (`iltkor` is still worse: declared in `TOPICS` and never fetched at all, the only one of five with no file on disk</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-ONEFETCH "What this claim rests on")</sup>
+
+**Why it was retired:** Overstated: re-scoring against the fetched extract unblocked fewer than nine (OPEN_PROBLEMS.md); the station count was typed; the fetch history is the project's, not the reader's; and the topics number six, not five.
+
+**Replaced by:** [`C-KP-VANDKEMI`](CLAIMS.md#C-KP-VANDKEMI), [`C-KP-ILTKOR`](CLAIMS.md#C-KP-ILTKOR) — each opens what it rests on.
+
+<a id="C-KP-OLD-PLACES"></a>
+### PLACES.md sets out a funded portfolio of trials with four conditions.
+
+`C-KP-OLD-PLACES` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-PLACES">a funded portfolio of trials in named places, with pre-stated outcomes and four conditions that stop it functioning as delay</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-PLACES "What this claim rests on")</sup>
+
+**Why it was retired:** A description of another page, kept there; this page links to it.
+
+**Replaced by:** [`C-KP-PLACES-LINK`](CLAIMS.md#C-KP-PLACES-LINK) — each opens what it rests on.
+
+<a id="C-KP-OLD-SENSORS"></a>
+### The CTD channels this project used come from a stated number of sensors.
+
+`C-KP-OLD-SENSORS` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SENSORS">CTD channels are three sensors: salinity is computed from conductivity and temperature, oxygen saturation from oxygen, temperature and salinity</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SENSORS "What this claim rests on")</sup>
+
+**Why it was retired:** No count of the sensors behind the channels was made; what can be said is which channels are computed from which.
+
+**Replaced by:** [`C-KP-DERIVED-CHANNELS`](CLAIMS.md#C-KP-DERIVED-CHANNELS) — each opens what it rests on.
+
+<a id="C-KP-OLD-SIXINADAY"></a>
+### Six things this project called absent turned out to exist in a single day.
+
+`C-KP-OLD-SIXINADAY` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SIXINADAY">things this project called absent turned out to exist in a single day</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SIXINADAY "What this claim rests on")</sup>
+
+**Why it was retired:** "In a single day" is not what the record shows; the lists are dated in their commits.
+
+**Replaced by:** [`C-KP-CAVEATS`](CLAIMS.md#C-KP-CAVEATS) — each opens what it rests on.
+
+<a id="C-KP-OLD-SNAPSHOT"></a>
+### The triage counts were as the triage stood when the section was written.
+
+`C-KP-OLD-SNAPSHOT` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SNAPSHOT">The counts below are as that triage stood when this section was written</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SNAPSHOT "What this claim rests on")</sup>
+
+**Why it was retired:** The table is read from the triage as it stands.
+
+**Replaced by:** [`C-KP-TRIAGE`](CLAIMS.md#C-KP-TRIAGE) — each opens what it rests on.
+
+<a id="C-KP-OLD-SOURCES"></a>
+### The data sources held, with a CTD span and counts of Copernicus indicators and of the independent ones.
+
+`C-KP-OLD-SOURCES` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-SOURCES">Fetched, with provenance separated rather than pooled: - ODA: [53.7](SOURCES.md#F-117d00eb14) M CTD measurements, [47](SOURCES.md#F-dcea923264) years, plus secchi, lys, maaledybde, and the water-chemistry extract (`vandkemi`, [1.8](SOURCES.md#F-d1bacba6f2) M rows) - CMEMS: [6](SOURCES.md#F-aa0f43b053) indicators — only [3](SOURCES.md#F-22b16e123b) are independent of national collection; the other [3](SOURCES.md#F-22b16e123b) are reanalysis or in-situ TAC, i.e. the same Danish data wearing a European label. Counted as [3](SOURCES.md#F-22b16e123b), not [6](SOURCES.md#F-aa0f43b053). - GEUS Jupiter, OSM coastline, national geodata</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-SOURCES "What this claim rests on")</sup>
+
+**Why it was retired:** The CTD span was typed and disagrees with the extract, whose dates start earlier; the Copernicus counts match no stored count - the register lists six products, four of them model reanalyses; and nothing here recorded the last line's sources as fetched.
+
+**Replaced by:** [`C-KP-ODA`](CLAIMS.md#C-KP-ODA), [`C-KP-CMEMS`](CLAIMS.md#C-KP-CMEMS) — each opens what it rests on.
+
+<a id="C-KP-OLD-STORY"></a>
+### The nitrogen attribution's circular figure was found, published and narrowed within the hour.
+
+`C-KP-OLD-STORY` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-STORY">circular figure was found, published, and then had to be narrowed within the hour, because DCE qualify that figure themselves on the next page and a paired-catchment study exists that would not be circular</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-STORY "What this claim rests on")</sup>
+
+**Why it was retired:** The paired-catchment study it leans on cannot be read here (NITROGEN.md), and the story is this project's history, not the rule.
+
+**Replaced by:** [`C-KP-RULE7`](CLAIMS.md#C-KP-RULE7) — each opens what it rests on.
+
+<a id="C-KP-OLD-UNUSED"></a>
+### Satellite and Secchi data are fetched and unused, and a small share of measurements carry a named instrument.
+
+`C-KP-OLD-UNUSED` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-UNUSED">Three environments today; satellite and Secchi are fetched and unused; the [17](SOURCES.md#F-06e2129d8e)% of measurements carrying a named instrument are up to</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-UNUSED "What this claim rests on")</sup>
+
+**Why it was retired:** Satellite and Secchi data are used (light.py, matchup.py), and most CTD rows carry a named probe, not a small share.
+
+**Replaced by:** [`C-KP-MEASURE-SPACES`](CLAIMS.md#C-KP-MEASURE-SPACES) — each opens what it rests on.
+
+<a id="C-KP-OLD-UNVERIFIED"></a>
+### Named items of GRUNDLAGET remain unverified against primary documents.
+
+`C-KP-OLD-UNVERIFIED` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KP-OLD-UNVERIFIED">remain unverified against primary DCE and DHI documents, and will not be applied on a subagent's word</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-UNVERIFIED "What this claim rests on")</sup>
+
+**Why it was retired:** Which of GRUNDLAGET's items remain unchecked is GRUNDLAGET's to say; the rule stands.
+
+**Replaced by:** [`C-KP-OUTSTANDING`](CLAIMS.md#C-KP-OUTSTANDING) — each opens what it rests on.
+
+## POLITICS.md
+
+<a id="C-PO-OLD-DHI-INTERVAL"></a>
+### The DCE/AU method report behind the requirement states an interval for it.
+
+`C-PO-OLD-DHI-INTERVAL` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-DHI-INTERVAL">The DCE/AU method report that produces the requirement does state one, and states in its own text that the accuracy of a target load cannot be established in the ordinary way because there is no documentation of the correct one. That interval survives inside the technical literature and does not appear in a single public sentence here, on any side</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-DHI-INTERVAL "What this claim rests on")</sup>
+
+**Why it was retired:** The pinned report sets out how an uncertainty could be estimated, from the spread between its two model types, and computes a model-technical part; no stated interval was found in it, so 'does state one' overstated it. It is DHI's report as much as DCE's.
+
+**Replaced by:** [`C-PO-DHI-UNCERTAINTY`](CLAIMS.md#C-PO-DHI-UNCERTAINTY) — each opens what it rests on.
+
+<a id="C-PO-OLD-EMPTY"></a>
+### The collection holds no substantive numerical claim from a counted share of the parties that voted against.
+
+`C-PO-OLD-EMPTY` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-EMPTY">The collection is skewed toward the government and the agreement parties by about [2.1](SOURCES.md#F-f6852500cc) to 1, contains no official floor transcript, and is empty of substantive numerical claims from [two of the three parties that voted against</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-EMPTY "What this claim rests on")</sup>
+
+**Why it was retired:** Its count was carried only as a quotation of the page itself; its justification was not recorded properly. The replacement names the parties.
+
+**Replaced by:** [`C-PO-EST-SKEW`](CLAIMS.md#C-PO-EST-SKEW) — each opens what it rests on.
+
+<a id="C-PO-OLD-FDKDATE"></a>
+### The FødevareDanmark release is dated from a stated first-reading date.
+
+`C-PO-OLD-FDKDATE` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-FDKDATE">One date is approximate. The FødevareDanmark release states only that it followed the first reading *i sidste uge*; first reading was 2026-08-13, so the entry is dated 2026-08-20 with that inference marked</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-FDKDATE "What this claim rests on")</sup>
+
+**Why it was retired:** The first-reading date it gave is in no source this project holds or could pin, and the pinned release carries its own dateline, a day later than the date inferred.
+
+**Replaced by:** [`C-PO-FDK-DATE`](CLAIMS.md#C-PO-FDK-DATE) — each opens what it rests on.
+
+<a id="C-PO-OLD-LARGEST"></a>
+### The best-documented objections come in part from the leader of the largest party that voted against.
+
+`C-PO-OLD-LARGEST` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-LARGEST">That cuts both ways and it is worth being blunt about the direction it cuts most often. The best-documented objections in this record - [7](SOURCES.md#F-b0a6350909) statements, [6](SOURCES.md#F-d20a616afe) from agricultural and food organisations and [1](SOURCES.md#F-43ce7dc7aa) from the leader of the largest party that voted against - are objections to the reasoning: that model outputs cannot bear the regulatory weight put on them. Whether those objections are sound or not, they do not entail that the water is in acceptable condition, and, as it happens, none of them claims that it is</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-LARGEST "What this claim rests on")</sup>
+
+**Why it was retired:** No source in the record or the pinned documents gives the parties' seats, so 'the largest party that voted against' had no recorded justification; the replacement names the party.
+
+**Replaced by:** [`C-PO-CONTESTS-REASONING`](CLAIMS.md#C-PO-CONTESTS-REASONING) — each opens what it rests on.
+
+<a id="C-PO-OLD-LARGEST2"></a>
+### The leader of the largest opposing party states the objective as common ground, and a count of the state claims describes the water as poor.
+
+`C-PO-OLD-LARGEST2` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-LARGEST2">What can be said from the record: the leader of the largest opposing party states the environmental objective as common ground - *"Vi vil også have en grøn omstilling om landbruget, vi vil også have rent drikkevand, rene fjorde og havmiljø, men omstillingen skal være baseret på sund fornuft"* - and no statement in this collection, from any speaker, asserts that Danish coastal water is in acceptable condition. Six of the seven `state_claim` entries describe the water as in poor condition - from a minister, an SF spokesperson, a think tank, and a joint count by two environmental organisations - and the seventh is a minister characterising his opponents rather than the sea. Not one statement in the record disputes any of them</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-LARGEST2 "What this claim rests on")</sup>
+
+**Why it was retired:** 'The largest opposing party' had no source for seat counts, and the count of state claims was carried only as a quotation of the page itself; its justification was not recorded properly.
+
+**Replaced by:** [`C-PO-COMMON-GROUND`](CLAIMS.md#C-PO-COMMON-GROUND) — each opens what it rests on.
+
+<a id="C-PO-OLD-MOSTLY"></a>
+### Most of the public argument was value language.
+
+`C-PO-OLD-MOSTLY` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-MOSTLY">Nothing follows from this table. It is here because leaving it out would make the record look more technical than the argument was, and the argument was mostly this</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-MOSTLY "What this claim rests on")</sup>
+
+**Why it was retired:** No count or measure supports it: the collection's classes have no class for value language, and no statement was counted as one.
+
+**Replaced by:** [`C-PO-VALUE-TABLE`](CLAIMS.md#C-PO-VALUE-TABLE) — each opens what it rests on.
+
+<a id="C-PO-OLD-TWOOFSEVEN"></a>
+### A stated number of the state claims point at something a programme records.
+
+`C-PO-OLD-TWOOFSEVEN` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-TWOOFSEVEN">The monitoring programme. | Two of the seven point at something a programme records. The rest are summaries or figures of speech, and are not the worse for it</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-TWOOFSEVEN "What this claim rests on")</sup>
+
+**Why it was retired:** Its count was carried only as a quotation of the page itself; its justification was not recorded properly. The replacement names the two statements.
+
+**Replaced by:** [`C-PO-CHECK-STATE`](CLAIMS.md#C-PO-CHECK-STATE) — each opens what it rests on.
+
+<a id="C-PO-OLD-TYPO"></a>
+### A stated number of the quotations carry a spelling or typography oddity.
+
+`C-PO-OLD-TYPO` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-TYPO">what is verified is that the publication printed those words, not that the official transcript contains them. Three of the quotes carry a spelling or typography oddity from the rendering, left as found and flagged</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-TYPO "What this claim rests on")</sup>
+
+**Why it was retired:** Its count was carried only as a quotation of the page itself; its justification was not recorded properly. The replacement counts the notes that say so.
+
+**Replaced by:** [`C-PO-TYPO`](CLAIMS.md#C-PO-TYPO) — each opens what it rests on.
+
+<a id="C-PO-OLD-WORST"></a>
+### The under-representation is worst for a counted share of the parties that voted against.
+
+`C-PO-OLD-WORST` · retired 2026-09-11 from [POLITICS.md](POLITICS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PO-OLD-WORST">None of that makes the imbalance harmless: a reader should assume the contesting case is under-represented here, and that the under-representation is worst for two of the three parties that voted against. Dansk Folkeparti and Borgernes Parti voted against `L5` and the record contains no substantive claim from either about the nitrogen figures. Moderaterne is a government party to the agreement and the record contains no separate statement from it at all</span><sup class="claim-mark">[†](ARCHIVE.md#C-PO-OLD-WORST "What this claim rests on")</sup>
+
+**Why it was retired:** Its count was carried only as a quotation of the page itself, never derived; its justification was not recorded properly. The replacement names the parties by a rule over the record.
+
+**Replaced by:** [`C-PO-UNDERREP`](CLAIMS.md#C-PO-UNDERREP) — each opens what it rests on.
 
 ## PROGRAMME.md
 
@@ -3190,6 +6255,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-PG-4-HOLME`](CLAIMS.md#C-PG-4-HOLME) — each opens what it rests on.
 
+<a id="C-PG-OLD-SUBSTANCE-FEDT"></a>
+### The discharged material itself, diluted, is fedtemøg in the sense the word is used.
+
+`C-PG-OLD-SUBSTANCE-FEDT` · retired 2026-09-11 from [PROGRAMME.md](PROGRAMME.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-PG-OLD-SUBSTANCE-FEDT">Start with the route that needs no chain at all: it is the substance. What comes out is fat, solids, fibre, wipes and the sediment they were lying in. A person who meets that in the water is not encountering a downstream effect of an oxygen deficit — they are encountering the discharge, diluted. That is *fedtemøg* in the sense the word is actually used</span><sup class="claim-mark">[†](ARCHIVE.md#C-PG-OLD-SUBSTANCE-FEDT "What this claim rests on")</sup>
+
+**Why it was retired:** Wrong about the word: fedtemøg names filamentous brown algae that grow on stones and mussels, tear loose and rot at the water's edge (Danish Wikipedia, pinned), not the discharged material.
+
+**Replaced by:** [`C-PG-2-SUBSTANCE`](CLAIMS.md#C-PG-2-SUBSTANCE) — each opens what it rests on.
+
 <a id="C-PG-OLD-SUBSTNOW"></a>
 ### Substitutes for PFAS firefighting foam now exist.
 
@@ -3598,6 +6674,129 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** One of the three, the agreement between a person and an algorithm, is no longer supported by stored data.
 
 **Replaced by:** [`C-LR-R-LOADBEARING`](CLAIMS.md#C-LR-R-LOADBEARING) — each opens what it rests on.
+
+## SOLUTIONS.md
+
+<a id="C-CS-OLD-S-APPLIED"></a>
+### Miljøstyrelsen applies the typetal to every discharge point, and the same report notes the highest metal concentrations in basin sludge.
+
+`C-CS-OLD-S-APPLIED` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-APPLIED">The national pollutant concentrations — the typetal, which Miljøstyrelsen applies to [19,665](SOURCES.md#F-57452739ef) discharge points — come from [6](SOURCES.md#F-d3d06f0d94) combined-overflow stations and [5](SOURCES.md#F-a53b810721) stormwater stations, in catchments *deliberately chosen* to represent households and residential areas, and explicitly excluding industrial areas and heavily trafficked roads. The same report notes the highest median metal concentrations in sludge from basins, and the typetal explicitly cover only discharges without prior settling</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-APPLIED "What this claim rests on")</sup>
+
+**Why it was retired:** No document held says Miljøstyrelsen applies the typetal to every point - that count is the register's; and the report does not note the highest metal concentrations in basin sludge: it says a significant share of the adsorbing substances is caught in basin sediment.
+
+**Replaced by:** [`C-CS-S-TYPETAL`](CLAIMS.md#C-CS-S-TYPETAL) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-CENTURIES"></a>
+### At the confirmed pace, disconnection is a multi-century programme.
+
+`C-CS-OLD-S-CENTURIES` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-CENTURIES">So after however many years of the policy, between [1.4](SOURCES.md#F-ab83990606)% (confirmed in use) and [4.5](SOURCES.md#F-2f9d16037f)% (registered) of the relevant area has been taken off the pipe. At the pace implied by the confirmed figure this is a multi-century programme, and nothing about that is a criticism of infiltration as a technique — it is a statement about scale</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-CENTURIES "What this claim rests on")</sup>
+
+**Why it was retired:** A pace needs a start date and a rate, and neither is held; the timescale was a quotation of the page.
+
+**Replaced by:** [`C-CS-S-LAR`](CLAIMS.md#C-CS-S-LAR) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-CENTURY"></a>
+### The combined sewer is the single most consequential fact about the city and the sea, a plumbing decision made a century ago.
+
+`C-CS-OLD-S-CENTURY` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-CENTURY">It is the single most consequential fact about the city's relationship with the sea, and it is not a fact about agriculture, nutrients or nitrogen. It is a plumbing decision made [a century ago</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-CENTURY "What this claim rests on")</sup>
+
+**Why it was retired:** No analysis here ranks the city's facts, and the date was a quotation of the page with no source behind it.
+
+**Replaced by:** [`C-CS-S-PLUMBING`](CLAIMS.md#C-CS-S-PLUMBING) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-EVERYTHING"></a>
+### Everything else on the site measures the problem; this page measures the response.
+
+`C-CS-OLD-S-EVERYTHING` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-EVERYTHING">Everything else here measures the problem; this measures the response</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-EVERYTHING "What this claim rests on")</sup>
+
+**Why it was retired:** Not so of every other page: several are about the evidence itself, and PROGRAMME argues for responses.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-CS-OLD-S-GREASE"></a>
+### Grease separators are already a legal requirement for food businesses.
+
+`C-CS-OLD-S-GREASE` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-GREASE">Grease separators are already a legal requirement for food businesses. Enforcement is regulatory</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-GREASE "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the legal requirement was found.
+
+**Replaced by:** [`C-CS-S-FAT`](CLAIMS.md#C-CS-S-FAT) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-HANDFUL"></a>
+### The cloudburst plan is designed against a hundred-year event, and a skybrudsvej activates a handful of times a decade.
+
+`C-CS-OLD-S-HANDFUL` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-HANDFUL">The cloudburst plan is designed against a hundred-year event. A skybrudsvej is a route for water that has nowhere else to go — it activates when the system is already overwhelmed, [a handful of times a decade</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-HANDFUL "What this claim rests on")</sup>
+
+**Why it was retired:** How often a skybrudsvej activates is not stated in any source held, and the design event is stated for the city's flood scenarios, not the plan as a whole.
+
+**Replaced by:** [`C-CS-S-DESIGN`](CLAIMS.md#C-CS-S-DESIGN) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-HOLDBACK"></a>
+### The plan on the books holds water back rather than routing it away.
+
+`C-CS-OLD-S-HOLDBACK` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-HOLDBACK">The infrastructure problem cannot be fixed quickly by anyone, and the plan on the books does not attempt it — it holds water back rather than routing it away</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-HOLDBACK "What this claim rests on")</sup>
+
+**Why it was retired:** Contradicted by the page itself: the cloudburst plan is mostly surface routes that carry water away. What stands is that the sewer plan leaves most combined catchments combined.
+
+**Replaced by:** [`C-CS-S-SPLIT`](CLAIMS.md#C-CS-S-SPLIT) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-HUNDRED"></a>
+### Overflows are not a hundred-year phenomenon; they happen on ordinary heavy rain many times a year.
+
+`C-CS-OLD-S-HUNDRED` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-HUNDRED">Overflows are not a hundred-year phenomenon. They happen on ordinary heavy rain, many times a year, and that rain still goes down the gully into the combined pipe exactly as it always did</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-HUNDRED "What this claim rests on")</sup>
+
+**Why it was retired:** Its figure was a quotation of the page; how often overflows happen is now read from the national layer's overflow count.
+
+**Replaced by:** [`C-CS-S-OFTEN`](CLAIMS.md#C-CS-S-OFTEN) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-NEVER"></a>
+### Sampling the largest structures has never been done because nobody is required to.
+
+`C-CS-OLD-S-NEVER` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-NEVER">It has never been done because nobody is required to</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-NEVER "What this claim rests on")</sup>
+
+**Why it was retired:** No source says it has never been done, or why.
+
+**Replaced by:** [`C-CS-S-MEASURE`](CLAIMS.md#C-CS-S-MEASURE) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-PLASTIC"></a>
+### In ocean plastic a small minority of rivers carries most of the input, and a uniform per-river assumption is wrong by an order of magnitude.
+
+`C-CS-OLD-S-PLASTIC` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-PLASTIC">The same structure is well known in the ocean-plastic literature, where a small minority of rivers carries the large majority of the input, and any uniform per-river assumption is wrong by an order of magnitude. There is no reason a sewer network should be more evenly behaved than a river network, and this register says it is not</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-PLASTIC "What this claim rests on")</sup>
+
+**Why it was retired:** No source was cited and the order-of-magnitude figure was a quotation of the page; the readable study gives the concentration directly.
+
+**Replaced by:** [`C-CS-S-PLASTIC`](CLAIMS.md#C-CS-S-PLASTIC), [`C-CS-S-ANALOGY`](CLAIMS.md#C-CS-S-ANALOGY) — each opens what it rests on.
+
+<a id="C-CS-OLD-S-TAILARG"></a>
+### The typetal sampling removed the tail on purpose and was then multiplied across every discharge point.
+
+`C-CS-OLD-S-TAILARG` · retired 2026-09-11 from [SOLUTIONS.md](SOLUTIONS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CS-OLD-S-TAILARG">Put those together. In a heavy-tailed distribution the mean is set by the tail, so an estimate of the mean is an estimate of the tail. This sampling design removed the tail on purpose, then used the remainder to estimate the mean, then multiplied it by every discharge point in the country</span><sup class="claim-mark">[†](ARCHIVE.md#C-CS-OLD-S-TAILARG "What this claim rests on")</sup>
+
+**Why it was retired:** It joins two different distributions: the tail is in the stored volume, while the typetal sample chose catchment types, not small structures; and no document held shows the typetal multiplied across every point.
+
+**Replaced by:** [`C-CS-S-TAILARG`](CLAIMS.md#C-CS-S-TAILARG) — each opens what it rests on.
 
 ## index.html
 

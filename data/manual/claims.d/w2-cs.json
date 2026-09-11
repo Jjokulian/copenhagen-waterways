@@ -1739,7 +1739,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The only free current field covering Danish waters is a global model on a roughly 9 km grid. The Danish straits are narrower than that",
      "texts": "ab11c05724a795aa"
@@ -1769,7 +1769,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Before using it for anything, here is the peak speed it produces against published values: | Point | Model peak | Published peak | Ratio | |---|---:|---:|---:| | koege_bugt | 0.50 m/s | 0.4 m/s | 0.8× | | oresund_s | 0.89 m/s | 1.5 m/s | 1.7× | | drogden | 0.89 m/s | 1.7 m/s | 1.9× | | oresund_n | 0.81 m/s | 1.5 m/s | 1.9× | | fehmarn | 1.08 m/s | 1.2 m/s | 1.1× | | storebaelt | 0.86 m/s | 1.8 m/s | 2.1× | The open-water points are about right; the narrow straits come out 1.7–2.1 times too slow, which is what a 9 km grid does to a 4 km channel. So nothing below uses an absolute speed. Everything is a ratio, a sign, or a timing, and each is stated with the reason it survives the calibration error",
      "texts": "8197c5bc13e29fcd"
@@ -1798,7 +1798,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The result: Køge Bugt does not flush The metric is the residual current divided by the mean speed — how much of the water's motion actually goes somewhere. A calibration error in speed cancels out of a ratio of two speeds, so this number survives the problem above",
      "texts": "edc38c6f72dfeb2e"
@@ -1828,7 +1828,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Aarhus Bugt registers oxygen depletion every year. Køge Bugt is recorded as having none, including in 2023 and 2025. And Aarhus Bugt flushes 22 times faster. That is not a contradiction, because the two things are not the same phenomenon. DCE's iltsvind criterion is dissolved oxygen below 4 mg/l in stratified bottom water — which requires depth and a sealed layer, and Aarhus Bugt has both. Køge Bugt is shallow and mixes, so it cannot qualify however bad it gets. But retention of surface material, floating mats and fine sediment is a *different* property, and on that one Køge Bugt is the extreme case in this set",
      "texts": "ebccc989c18e048f"
@@ -1856,7 +1856,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The national instrument measures the property Køge Bugt does not have, and does not measure the property it has more of than anywhere else here",
      "texts": "5d91693861e87c15"
@@ -1884,7 +1884,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "comes out mid-range at 8.7 days — retentive, but nothing like Køge Bugt. It does register iltsvind. On this evidence the two bays are not the same case, and the shared vortex description is not supported by this model. A coarse grid cannot resolve an archipelago, so this is weak evidence either way",
      "texts": "3eddac2b40da7be2"
@@ -1912,7 +1912,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Which is physically obvious once seen: heavy rain in Copenhagen arrives with cyclonic southwesterlies, and those drive the Sound north",
      "texts": "fa113be03e494103"
@@ -1940,7 +1940,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "That is the post-frontal wind veer: the front passes, the wind swings to the northwest, and the water reverses while the plume is still in it",
      "texts": "c8a1f19a00941a94"
@@ -1968,7 +1968,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "So the mechanism is neither the simple claim nor its refutation. It is a lag. The discharge happens under northward flow and the transport reverses roughly half a day later, on a timescale set by the same weather system that caused the discharge",
      "texts": "e3c53ce766a655a3"
@@ -1996,7 +1996,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "results are both large and both have the same simple mechanism behind them, which is why they are reported",
      "texts": "35379b636fd4cbc0"
@@ -2024,7 +2024,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "That document said the resuspension season coincides with the overflow season. Over 31 years of rainfall that is wrong, and the error is worth keeping visible",
      "texts": "de800ed5e090f64b"
@@ -2052,7 +2052,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Rain intense enough to overflow a combined sewer (≥10 mm in 6 h) | Jun–Aug, 3.0–8.2 h/yr; near zero Jan–Apr | | Total rainfall | flat, 38–72 mm/month, slight Jun–Aug and Oct maxima | | Wave-driven bed resuspension | Oct–Jan, 2.0 times July | | Strong onshore wind (stranding) | Oct–Jan | Overflow *events* are driven by intensity, and intensity in Denmark is convective, and convection is summer. The autumn is wetter in total but gentler",
      "texts": "7478fd6e02dbbbeb"
@@ -2080,7 +2080,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "This does not weaken the case — it sharpens it into a deposit-then-mobilise sequence: - June–August: cloudbursts overflow the combined system. Sewage solids, fat and basin sludge are discharged into a warm, weakly-mixed, retentive bay. - The bay holds it. Flushing time is on the order of months, so the material settles locally rather than being exported. - Through late summer: it decays in place, in the warmest water of the year, with the oxygen demand and the smell that implies. - October–January: the gales arrive. The bed — now looser for having been anoxic — resuspends 2.0 times as often as in July, and the same wind that lifts it drives it onto the western shore. Delivery in summer and arrival on the shore in autumn are not in conflict. They are the two ends of a months-long residence time, and the residence time is the measured part",
      "texts": "3ef81b73de9f1819"
@@ -2108,7 +2108,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "CMEMS publishes a Baltic regional reanalysis at roughly 1 km behind free registration. Everything here would be worth redoing on it, and the retention result is the one to re-test first",
      "texts": "084754919dbcf832"
@@ -2136,7 +2136,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The Sound is strongly stratified — Baltic water out on top, Kattegat water in underneath. A single depth-averaged current hides that a plume and the bottom water can be going opposite ways at the same hour",
      "texts": "8b0e42424f007151"
@@ -2162,7 +2162,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Everything else here measures the problem; this measures the response",
      "texts": "fbae26aec98103ea"
@@ -2190,7 +2190,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "It is the single most consequential fact about the city's relationship with the sea, and it is not a fact about agriculture, nutrients or nitrogen. It is a plumbing decision made [a century ago",
      "texts": "91e5e4750278d1af"
@@ -2218,7 +2218,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "So after however many years of the policy, between 1.4% (confirmed in use) and 4.5% (registered) of the relevant area has been taken off the pipe. At the pace implied by the confirmed figure this is a multi-century programme, and nothing about that is a criticism of infiltration as a technique — it is a statement about scale",
      "texts": "46d43007dae5642e"
@@ -2246,7 +2246,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The cloudburst plan is designed against a hundred-year event. A skybrudsvej is a route for water that has nowhere else to go — it activates when the system is already overwhelmed, [a handful of times a decade",
      "texts": "56ed190fa150cab8"
@@ -2274,7 +2274,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Overflows are not a hundred-year phenomenon. They happen on ordinary heavy rain, many times a year, and that rain still goes down the gully into the combined pipe exactly as it always did",
      "texts": "be2c502da6ba384f"
@@ -2302,7 +2302,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The national pollutant concentrations — the typetal, which Miljøstyrelsen applies to 19,665 discharge points — come from 6 combined-overflow stations and 5 stormwater stations, in catchments *deliberately chosen* to represent households and residential areas, and explicitly excluding industrial areas and heavily trafficked roads. The same report notes the highest median metal concentrations in sludge from basins, and the typetal explicitly cover only discharges without prior settling",
      "texts": "61fab5dceeedfa7b"
@@ -2330,7 +2330,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Put those together. In a heavy-tailed distribution the mean is set by the tail, so an estimate of the mean is an estimate of the tail. This sampling design removed the tail on purpose, then used the remainder to estimate the mean, then multiplied it by every discharge point in the country",
      "texts": "c88afc2a67972a47"
@@ -2359,7 +2359,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The same structure is well known in the ocean-plastic literature, where a small minority of rivers carries the large majority of the input, and any uniform per-river assumption is wrong by an order of magnitude. There is no reason a sewer network should be more evenly behaved than a river network, and this register says it is not",
      "texts": "2bbed146e0b141b2"
@@ -2387,7 +2387,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "It has never been done because nobody is required to",
      "texts": "3b148e746335b3ba"
@@ -2415,7 +2415,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Grease separators are already a legal requirement for food businesses. Enforcement is regulatory",
      "texts": "6e722e71faf3ffb7"
@@ -2443,7 +2443,7 @@
    "rests_on": [],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The infrastructure problem cannot be fixed quickly by anyone, and the plan on the books does not attempt it — it holds water back rather than routing it away",
      "texts": "5cc26dbf97fb3102"
