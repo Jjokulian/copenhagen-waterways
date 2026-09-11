@@ -426,7 +426,13 @@ why we may believe this a possible or perhaps plausible explanatory dynamic." So
 
 Wording that was never committed was never published: change it, no archive
 entry. A published claim reworded but still justified - it says the same
-thing, better - is not retired either: it is still claimed. `scripts/claims.py` writes both `docs/CLAIMS.md` and `docs/ARCHIVE.md`.
+thing, better - is not retired either: it is still claimed. But anything
+published that the page no longer claims is archived, even a number believed
+true: "checked once by hand; nothing held reproduces it" is a reason to retire,
+and the archive is where that is said. Nothing published is quietly deleted:
+`python3 scripts/archive_audit.py` lists every published sentence with a number
+that the working tree no longer says and no retired claim archives - run it
+before committing. `scripts/claims.py` writes both `docs/CLAIMS.md` and `docs/ARCHIVE.md`.
 
 Found in the METHOD_LAB pilot:
 
