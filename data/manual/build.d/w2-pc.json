@@ -1,0 +1,33 @@
+{
+ "_what": "Fork w2-pc: the inputs PLACES.md and CAUSATION.md now read, including the claims fragment their spans are checked against and the documents pinned for them.",
+ "steps": [
+  {
+   "script": "scripts/pages/places.py",
+   "inputs": [
+    "data/derived/station_places.json",
+    "data/derived/hypotheses.json",
+    "data/derived/triage.json",
+    "data/manual/claims.d/w2-pc.json"
+   ],
+   "outputs": [
+    "docs/PLACES.md"
+   ]
+  },
+  {
+   "script": "scripts/causation.py",
+   "inputs": [
+    "data/manual/nitrogen_pathways.json",
+    "data/manual/monitoring.json",
+    "data/derived/landbrug.json",
+    "data/derived/meta_facts.json",
+    "data/manual/claims.d/w2-pc.json",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/SR353.txt",
+    "data/derived/pins/PC-DCE-ILT-2024.txt"
+   ],
+   "outputs": [
+    "docs/CAUSATION.md"
+   ]
+  }
+ ]
+}

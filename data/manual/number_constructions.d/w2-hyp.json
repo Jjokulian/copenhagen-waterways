@@ -1,0 +1,109 @@
+{
+ "constructions": [
+  {
+   "id": "K-HY-EVIDENCE",
+   "title": "Layer counts, solstice day lengths and the sign-flip geometry the hypotheses page computes",
+   "covers": {
+    "file": "data/derived/hypotheses_evidence.json",
+    "fields": {
+     "layers.aquaculture": {
+      "kind": "counted",
+      "is": "Features of the national marine aquaculture discharge layer `punkt_havdam_udl.geojson`, as fetched."
+     },
+     "layers.dumping": {
+      "kind": "counted",
+      "is": "Features of the licensed dumping-ground layer `klappladser.geojson`, as fetched."
+     },
+     "layers.extraction": {
+      "kind": "counted",
+      "is": "Features of the raw-material extraction layer `raastofomr.geojson`, as fetched."
+     },
+     "layers.treatment": {
+      "kind": "counted",
+      "is": "Features of the treatment-plant discharge layer `punkt_rens_udl.geojson`, as fetched."
+     },
+     "daylight.lat": {
+      "kind": "stipulated",
+      "is": "The latitude the day lengths are computed at: a round value in the middle of Danish waters, chosen in `DAYLIGHT` in `scripts/hypotheses.py`."
+     },
+     "daylight.lon": {
+      "kind": "stipulated",
+      "is": "The longitude used with it, chosen the same way."
+     },
+     "daylight.shortest_h": {
+      "kind": "computed",
+      "is": "Hours from sunrise to sunset on the shorter of the solstice days in `daylight.days`, from `sun_events()` in `scripts/daylight.py`."
+     },
+     "daylight.longest_h": {
+      "kind": "computed",
+      "is": "Hours from sunrise to sunset on the longer of those days, computed the same way."
+     },
+     "sign_flips.stations": {
+      "kind": "counted",
+      "is": "Distinct stations among the rows `docs/data/areas/flags.json` flags `batch_sign_flip`."
+     },
+     "sign_flips.water_bodies": {
+      "kind": "counted",
+      "is": "Distinct water bodies those stations fall in, by `docs/data/areas/station_waterbody_overlay.json`."
+     },
+     "sign_flips.prefixes": {
+      "kind": "counted",
+      "is": "Distinct leading prefixes of those station numbers, of the length `_sign_flips()` in `scripts/hypotheses.py` takes."
+     },
+     "sign_flips.km_min": {
+      "kind": "computed",
+      "is": "The shortest great-circle distance between two of those stations, from their positions in `docs/data/areas/stations_series.json`."
+     },
+     "sign_flips.km_max": {
+      "kind": "computed",
+      "is": "The longest such distance."
+     }
+    }
+   },
+   "what": "Facts the hypotheses page and its data page state about the national layers, the length of the day at the solstices, and the flagged sign-flip stations.",
+   "model": "`load_values()` in `scripts/hypotheses.py` counts the features of each layer named in `LAYERS`, reading each small layer whole; asks `sun_events()` in `scripts/daylight.py` for sunrise and sunset on each day in `DAYLIGHT` at its latitude and longitude; and, for the stations `flags.json` flags as a batch sign flip, counts their water bodies and prefixes and the great-circle distances between their series positions.",
+   "assumptions": [
+    "One feature is one site, ground, area or plant.",
+    "Sunrise and sunset are where the centre of the sun crosses the geometric horizon, as `sun_events()` finds them; refraction is not applied.",
+    "A station's series position is where its samples were taken."
+   ],
+   "justified": [
+    {
+     "text": "The counts are of the fetched layers' features, read whole.",
+     "ref": "scripts/hypotheses.py"
+    },
+    {
+     "text": "The day lengths come from the project's own solar code, the one that places samples against the sun.",
+     "ref": "scripts/daylight.py"
+    },
+    {
+     "text": "The stations are the ones the flag record names; the record itself is the evidence for the flag.",
+     "ref": "docs/data/areas/flags.json"
+    }
+   ],
+   "gaps": [
+    "Nothing checks whether one physical site appears as more than one feature.",
+    "What a station-number prefix encodes is not verified: the flag record calls them custodians."
+   ],
+   "void_if": [
+    "a layer is refetched, or the flag record changes, and the page is not rebuilt"
+   ],
+   "licenses": "How many features each layer holds, how long the solstice days are at that latitude, and how the flagged stations are spread.",
+   "not_licensed": "That the flagged stations share a custodian, or that every licensed site is in use.",
+   "watches": [
+    "scripts/hypotheses.py",
+    "scripts/daylight.py",
+    "docs/data/areas/flags.json"
+   ],
+   "confirmed": {
+    "by": "fork w2-hyp (written against _layer_counts(), _daylight() and _sign_flips() in hypotheses.py and sun_events() in daylight.py; the counts match the fetched layers' features and the day lengths and distances were recomputed by hand. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/hypotheses.py": "c5c1c6b1bb14e174",
+     "scripts/daylight.py": "84c11f42cb7e2cab",
+     "docs/data/areas/flags.json": "bc135e9dd068497f"
+    }
+   }
+  }
+ ]
+}

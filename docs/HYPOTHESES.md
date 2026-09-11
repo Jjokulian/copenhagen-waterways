@@ -12,7 +12,7 @@ The register is written down *before* anything is scored, so that the field cann
 
 There are [166](SOURCES.md#F-7cc847c6a4) entries below. That number should not be read as a decomposition of the problem, and the field should not be read as closed.
 
-**The direct evidence that it is incomplete is its own history.** The first version had [71](SOURCES.md#F-bee553f05a) entries and was written to be thorough. It reached [127](SOURCES.md#F-595b2862fe) within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete, and there is no reason to think the next conversation would add fewer.
+**The direct evidence that it is incomplete is its own history.** <span class="claim" data-claim="C-HY-GROWTH">The first version had [71](SOURCES.md#F-bee553f05a) entries and was written to be thorough. It reached [127](SOURCES.md#F-595b2862fe) within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete</span><sup class="claim-mark">[†](CLAIMS.md#C-HY-GROWTH "What this claim rests on")</sup>, and there is no reason to think the next conversation would add fewer.
 
 Three further problems, which matter for what can be concluded:
 
@@ -87,7 +87,7 @@ That is not an argument that Danish coastal water needs more nitrogen. In many p
 
 So there is no single tolerable figure for nitrogen even in one place on one day, and a national number is a summary of a quantity that does not exist. This is also why [U1](HYPOTHESES.md "Mixture and cocktail effects"), mixture effects, is not a fringe caveat: **the mixture is what sets the window**, and testing substances one at a time against fixed thresholds assumes precisely what is false.
 
-Nobody has published where each Danish area sits in that window, and the flat [25](SOURCES.md#F-a7de46f39f)% rule of the iltsvind trigger assumes the answer is the same everywhere.
+Nobody has published where each Danish area sits in that window, and <span class="claim" data-claim="C-HY-ONE-THRESHOLD">iltsvind is defined nationally by oxygen concentration alone, which assumes the tolerable level is the same everywhere</span><sup class="claim-mark">[†](CLAIMS.md#C-HY-ONE-THRESHOLD "What this claim rests on")</sup>.
 
 **What does not close is the list of chemicals.** Tens of thousands are in commerce and a few dozen are measured ([U4](HYPOTHESES.md "Substances on no monitoring list")). So [V1](HYPOTHESES.md "Deficiency") and [V2](HYPOTHESES.md "Excess and toxicity") have exhaustive failure modes over an open set of substances: complete on one axis, unbounded on the other, and an avenue is only as closed as its weaker axis.
 
@@ -105,7 +105,7 @@ For biotic attack the set is bounded but **badly catalogued**, and the gap is co
 
 [V6](HYPOTHESES.md "Loss of a partner or a performed function") remains the hardest: the failure modes are enumerable and the organisms are bounded, but the *relationships between them* are not, and a partnership nobody has described cannot be missed from a list. The lucinid clam symbiosis of [T2](HYPOTHESES.md "A degraded state that maintains itself") was published in 2012; before that, its loss was an unrepresentable cause.
 
-**This immediately found a hole.** [V7](HYPOTHESES.md "Failure to replace itself"), failure to replace itself, had almost no instances in a register of [127](SOURCES.md#F-40d7d2d71f) — no propagule supply, no connectivity, no settlement cues, no phenological mismatch, no Allee effects. A population can go extinct locally without a single individual being killed by anything on the list, and the register could not represent it. [V8](HYPOTHESES.md "Rate exceeded"), rate exceedance, was similarly thin: a disturbance returning faster than recovery completes is not the same thing as the same disturbance once, and nothing said so. Group **W** exists because these two avenues were empty, which is the procedure working.
+**This immediately found a hole.** [V7](HYPOTHESES.md "Failure to replace itself"), failure to replace itself, had almost no instances in the register as it then stood — no propagule supply, no connectivity, no settlement cues, no phenological mismatch, no Allee effects. A population can go extinct locally without a single individual being killed by anything on the list, and the register could not represent it. [V8](HYPOTHESES.md "Rate exceeded"), rate exceedance, was similarly thin: a disturbance returning faster than recovery completes is not the same thing as the same disturbance once, and nothing said so. Group **W** exists because these two avenues were empty, which is the procedure working.
 
 We do not claim the avenue list is closed either. But it is a much better level at which to attempt closure than the level of instances, and unlike the instance list it suggests where to look next.
 
@@ -186,7 +186,7 @@ Take the two great gases and run them against each other.
 
 The asymmetry is complete and it is not a coincidence. Respiration and photosynthesis are the same reaction run in opposite directions, so every corpse that decays *relieves* a carbon shortage and *deepens* an oxygen one. A carbon dioxide shortage cures itself, because everything that dies of it puts the carbon back. An oxygen shortage is fed by its own casualties.
 
-This is not hypothetical at either end. Inside a dense bloom, <span class="chem" data-chem="CO2" title="carbon dioxide">CO₂</span> really is drawn down far enough to push pH above [9](SOURCES.md#F-541476145e) — which is the carbon entry in the element sweep below, and the reason a bloom can poison water by consuming carbon rather than by producing anything. It corrects within a day, as soon as respiration resumes. Bottom-water oxygen depletion does not correct at all; it compounds.
+This is not hypothetical at either end. Inside a dense bloom, <span class="chem" data-chem="CO2" title="carbon dioxide">CO₂</span> really is drawn down far enough to push pH up sharply — which is the carbon entry in the element sweep below, and the reason a bloom can poison water by consuming carbon rather than by producing anything. It corrects within a day, as soon as respiration resumes. Bottom-water oxygen depletion does not correct at all; it compounds.
 
 **And the sign of that feedback depends on light and mixing, not on biology alone.** In shallow lit water the survivors of an oxygen crash are photosynthetic, so daylight restores oxygen and the system oscillates rather than ratchets. Below a pycnocline in the dark the survivors are sulphate reducers and methanogens, whose metabolism restores nothing and adds a poison. Same depletion, same selection logic, opposite outcome — decided by whether photons reach the survivors.
 
@@ -221,7 +221,7 @@ One more layer under all of this, and it is the one that decides the direction o
 >
 > There is a prior. Biology both makes and breaks carbon-fluorine bonds: *Streptomyces cattleya* synthesises fluoroacetate and `4-fluorothreonine` using a dedicated fluorinase, fluoroacetate is a natural plant toxin, and fluoroacetate dehalogenase — an enzyme whose whole job is cleaving C–F — is characterised down to its crystal structure. Monofluorinated carbon is within reach of existing machinery and always has been.
 >
-> And the barrier is not only biological. The C–F bond is the strongest single bond in organic chemistry, roughly [480](SOURCES.md#F-04325d4d1c)–[530](SOURCES.md#F-b010462b65) kJ/mol, and it gets *stronger* as more fluorines crowd onto the same carbon. In a perfluoroalkyl chain the fluorine atoms are small, unpolarisable and packed around the carbon backbone, so there is no polarisable handle for an enzyme to attack and no exposed carbon to attack it on. **That inertness is not incidental to PFAS — it is the property the material was selected for**, first for seals and gaskets in uranium enrichment, later for cookware. The persistence and the usefulness are the same fact.
+> And the barrier is not only biological. The C–F bond is the strongest single bond in organic chemistry, roughly [481](SOURCES.md#F-0040a76512)–[544](SOURCES.md#F-bd8f07087a) kJ/mol, and it gets *stronger* as more fluorines crowd onto the same carbon. In a perfluoroalkyl chain the fluorine atoms are small, unpolarisable and packed around the carbon backbone, so there is no polarisable handle for an enzyme to attack and no exposed carbon to attack it on. **That inertness is not incidental to PFAS — it is the property the material was selected for**, first for seals and gaskets in uranium enrichment, later for cookware. The persistence and the usefulness are the same fact.
 >
 > So the pair varies two things at once — what machinery existed, and whether the substrate is chemically attackable at all — and a comparison that moves two variables cannot attribute the outcome to either. PFAS is not the control for the priming thesis; it is a case where priming and chemistry point the same way and cannot be separated. The claim of *entirely* is withdrawn, and the register is weaker for it. That is the correct outcome: the same standard applied elsewhere on this site applies here.
 >
@@ -257,7 +257,7 @@ It is still not perfectly clean, and the register should say so rather than clai
 
 Atrazine is a triazine herbicide introduced in 1958. Bacteria now degrade it completely — a six-enzyme route, `atzA` through `atzF`, that opens the ring to cyanuric acid and takes it on to carbon dioxide and ammonia. The genes sit on self-transmissible plasmids and near-identical sequences turn up on different continents, so the pathway did not merely arise: it **assembled from enzymes recruited off existing jobs and then spread globally, within about forty years.**
 
-And the first step carries the measurement priming has otherwise lacked. `AtzA`, the atrazine chlorohydrolase, and `TriA`, the melamine deaminase, are [98](SOURCES.md#F-fdc443bf67)% identical proteins — they differ at nine amino acids out of some four hundred and seventy-five — and they catalyse *different reactions*, one stripping a chlorine and the other stripping an amine. **Nine substitutions is the distance between one novel capability and another.** That is what "the distance from existing machinery to the required function" means when it is put in units, and it is why the supply of mutations is not the limiting term: nine is nothing, if you are already standing in the right place.
+And the first step carries the measurement priming has otherwise lacked. `AtzA`, the atrazine chlorohydrolase, and `TriA`, the melamine deaminase, are [98](SOURCES.md#F-84d87fba5e)% identical proteins — a handful of amino acids apart — and they catalyse *different reactions*, one stripping a chlorine and the other stripping an amine. **A handful of substitutions is the distance between one novel capability and another.** That is what "the distance from existing machinery to the required function" means when it is put in units, and it is why the supply of mutations is not the limiting term: nine is nothing, if you are already standing in the right place.
 
 It also closes a loop back to [A10](HYPOTHESES.md "Exhaust-treatment reagent: nitrogen added to remove nitrogen"). The ladder that atrazine degradation descends — melamine, ammeline, ammelide, cyanuric acid, biuret, urea — is the same ladder that urea *climbs* when it polymerises on a cold catalyst in a diesel exhaust. The bacteria that would take those deposits apart are common, and they are common because of a herbicide.
 
@@ -330,11 +330,11 @@ Oxygen is famous for having a feedback loop. That is a fact about how much atten
 
 | | requirement | can it deplete? | the loop | evidence |
 |---|---|---|---|---|
-| `C` | **Carbon** — <span class="chem" data-chem="CO2" title="carbon dioxide">CO₂</span> and bicarbonate; the vast DIC pool | Rarely limiting in bulk, but drawn down inside a dense bloom, where pH can rise above [9](SOURCES.md#F-0b007a9ded). | High pH shifts ammonium toward un-ionised ammonia, which is acutely toxic. A bloom therefore poisons the water by consuming carbon — a kill with no hypoxia in it at all. | established |
+| `C` | **Carbon** — <span class="chem" data-chem="CO2" title="carbon dioxide">CO₂</span> and bicarbonate; the vast DIC pool | Rarely limiting in bulk, but drawn down inside a dense bloom, where pH can rise steeply. | High pH shifts ammonium toward un-ionised ammonia, which is acutely toxic. A bloom therefore poisons the water by consuming carbon — a kill with no hypoxia in it at all. | established |
 | `O` | **Oxygen** — dissolved gas, resupplied from air and photosynthesis | Yes, and it is the one the requirement acts on. | The known one: deficit kills fauna, fauna stop irrigating the bed, the bed goes anoxic, phosphate and sulphide are released, production rises, demand rises. | established |
 | `N` | **Nitrogen** — nitrate, ammonium, organic N | Yes — drawn to near zero in summer surface water, which is what N-limitation means. | **Two loops, in opposite directions.** Hypoxia stops nitrification, which starves denitrification of nitrate, so the sediment stops permanently removing N and starts releasing ammonium instead: the bed flips from an N sink to an N source. And as N falls relative to P, cyanobacterial fixation rises and puts N back — so reducing the load can increase the internal supply while selecting for the least desirable producers. | established |
 | `P` | **Phosphorus** — phosphate, largely bound to iron oxides in oxic sediment | Yes, and famously reversible. | The best-documented loop in the whole system, better than the oxygen–fauna one: anoxia reduces Fe(III) to Fe(II), the iron-bound phosphate dissolves, production rises, oxygen falls, more phosphate is released. Denmark's own assessment cites this to explain why the Skive and Lovns phosphorus models fail. | established |
-| `S` | **Sulphur** — sulphate, ~[2.7](SOURCES.md#F-e4c4bea666) g/L — effectively unlimited | Never depleted. Its abundance is the problem. | Once oxygen and nitrate are gone, sulphate becomes the terminal electron acceptor, and there is so much of it that sulphide production is unbounded. Sulphide kills fauna, fauna stop irrigating, the oxidised surface layer thins, more sulphide reaches the water. This is why marine hypoxia is worse than freshwater hypoxia: the ocean carries its own poison reservoir. | established |
+| `S` | **Sulphur** — sulphate, ~[2.7](SOURCES.md#F-7912b55a0d) g/kg — effectively unlimited | Never depleted. Its abundance is the problem. | Once oxygen and nitrate are gone, sulphate becomes the terminal electron acceptor, and there is so much of it that sulphide production is unbounded. Sulphide kills fauna, fauna stop irrigating, the oxidised surface layer thins, more sulphide reaches the water. This is why marine hypoxia is worse than freshwater hypoxia: the ocean carries its own poison reservoir. | established |
 | `Si` | **Silicon** — dissolved silicate, supplied only by rock weathering | Yes — and uniquely, human activity does not replace it. | Enhanced production buries silica faster in diatom frustules; the Si:N ratio falls; diatoms give way to flagellates and cyanobacteria, which need no Si, are poorly grazed, and produce the gel. Less grazing means more sinking organic matter, which means more of the hypoxia that started it. | established |
 | `Fe` | **Iron** — required for photosynthesis and nitrate reduction; also the sediment's phosphate trap | Coastal water is iron-rich in total, but the *sediment's* iron pool is depletable and its bioavailability depends on redox and organic ligands. | The iron shuttle: repeated anoxia reduces and mobilises sediment iron, which is exported or buried elsewhere. The bed permanently loses its capacity to bind phosphate, so each hypoxic episode leaves the system more prone to the next. A ratchet rather than a cycle — this one does not reverse when oxygen returns. | established |
 | `Mn` | **Manganese** — enzyme cofactor; redox-cycling like iron | Cycles between oxidation states with the redox front rather than depleting. | Shares the iron shuttle, and its oxides also consume oxygen on reoxidation. | established |
@@ -345,8 +345,8 @@ Oxygen is famous for having a feedback loop. That is a fact about how much atten
 | `Zn` | **Zinc** — cofactor for carbonic anhydrase, needed for carbon uptake | Can limit in some marine settings; some diatoms substitute cadmium for it. | Zinc limitation impairs carbon acquisition, which interacts with the carbon drawdown loop above. Weakly studied in coastal water. | partly |
 | `Se` | **Selenium** — glutathione peroxidase; protective against mercury | Deficiency documented in other systems; the essential-to-toxic window is among the narrowest of any element. | Interacts with mercury burden, so neither is interpretable alone. | partly |
 | `B1` | **Thiamine** — vitamin, not an element, but a hard requirement | Yes. Baltic salmon M74 syndrome is mass fry mortality from thiamine deficiency, documented since the 1970s. | Deficiency is transmitted through the diet, so it follows the same community shift as silicon depletion, at a life stage no survey counts. | established |
-| `K` | **Potassium** — ~[400](SOURCES.md#F-3371f128f9) mg/L in seawater | No. Never limiting. | None. | n/a |
-| `Mg` | **Magnesium** — ~[1.3](SOURCES.md#F-651654dca1) g/L in seawater | No. | None. | n/a |
+| `K` | **Potassium** — ~[400](SOURCES.md#F-540b0a2249) mg/kg in seawater | No. Never limiting. | None. | n/a |
+| `Mg` | **Magnesium** — ~[1.3](SOURCES.md#F-2277f0280a) g/kg in seawater | No. | None. | n/a |
 | `Cl` | **Chlorine** — the dominant anion in seawater | No. | None. | n/a |
 
 Three things fall out of that table.
@@ -355,7 +355,7 @@ Three things fall out of that table.
 
 **Two of the loops run against the policy.** Hypoxia stops nitrification and so disables denitrification, flipping the sediment from a nitrogen sink to a nitrogen source; and falling N relative to P selects for cyanobacteria, which fix nitrogen from the air. Both mean the internal supply can rise while the external load falls — which is a candidate explanation, on their own mechanism, for why thirty-five years of load reduction has not produced the expected recovery.
 
-**Sulphur is the one that makes marine hypoxia different.** Seawater carries [2.7](SOURCES.md#F-a9e4a5a346) g/L of sulphate. Once oxygen and nitrate are exhausted it becomes the terminal electron acceptor, and the supply is effectively unlimited — so the sea manufactures its own poison, without limit, as soon as the oxygen goes. Freshwater has no comparable reservoir.
+**Sulphur is the one that makes marine hypoxia different.** Seawater carries about [2.7](SOURCES.md#F-7912b55a0d) g/kg of sulphate. Once oxygen and nitrate are exhausted it becomes the terminal electron acceptor, and the supply is effectively unlimited — so the sea manufactures its own poison, without limit, as soon as the oxygen goes. Freshwater has no comparable reservoir.
 
 ### Routes we can name and cannot quantify
 
@@ -375,7 +375,7 @@ These are what the hypotheses below are scored against. Each belongs to one or m
 
 | | observable | what it is |
 |---|---|---|
-| `O1` | **Oxygen deficit** | Dissolved oxygen below [4](SOURCES.md#F-1b02ab3f86) or [2](SOURCES.md#F-bcf90ce30f) mg/L, by depth, duration and extent. **An observable on route [M1](HYPOTHESES.md "Depletion of something essential"), not an outcome.** Nobody values a gas concentration; it earns its place only through what it causes, and it is neither necessary nor sufficient for any of T1-T5. |
+| `O1` | **Oxygen deficit** | Dissolved oxygen below [4](SOURCES.md#F-cf14a00b21) or [2](SOURCES.md#F-1ceed0aafd) mg/L, by depth, duration and extent. **An observable on route [M1](HYPOTHESES.md "Depletion of something essential"), not an outcome.** Nobody values a gas concentration; it earns its place only through what it causes, and it is neither necessary nor sufficient for any of T1-T5. |
 | `O2` | **Fedtemøg** | Greasy organic matter in the water and on the shore. It has at least three manifestations and they are not the same measurement: **O2a** accumulation at the waterline, a transport-and-deposition outcome; **O2b** the greasy film on skin after swimming, which is a property of the water column and of the sea-surface microlayer, present without any shore deposit and reported at different times of year; **O2c** the smell, which is a chemical signature (sulphide, amines, volatile fatty acids) and the thing the public actually reports. Denmark measures none of the three. |
 | `O3` | **Loss of higher benthic life** | The large, slow, long-lived animals going. Reachable by suffocation, poisoning, burial or physical destruction. |
 | `O4` | **Turbidity and phytoplankton biomass** | Chlorophyll and light attenuation. Measures of quantity, standing in for claims about composition. |
@@ -383,7 +383,7 @@ These are what the hypotheses below are scored against. Each belongs to one or m
 | `O6` | **Mass mortality events** | Fish kills, and die-offs of any other conspicuous group. Sudden, dateable, and the clearest possible evidence that *something* happened — reachable by hypoxia, toxin, pathogen or heat. |
 | `O7` | **Loss of rooted vegetation** | Eelgrass and macroalgal depth limit and cover. The WFD's own biological indicator, and the one that has conspicuously failed to recover as loads fell. |
 | `O8` | **Visible discolouration** | Water turned brown, red or milky. What people photograph and report, and what the chlorophyll indicator averages away. |
-| `O9` | **Bathing water failure** | Closures and quality downgrades. The one outcome Denmark measures densely, over a long period, at [1,026](SOURCES.md#F-aee9bd61e1) points. |
+| `O9` | **Bathing water failure** | Closures and quality downgrades. The one outcome Denmark measures densely, over a long period ([what the data holds](HYPOTHESIS_DATA.md#O9)). |
 
 ## A. Nutrient-driven production in place
 
@@ -429,9 +429,9 @@ Reactive N deposited directly onto the water, bypassing every catchment and ever
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit"), [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass")
 
-Selective catalytic reduction injects urea solution - AdBlue, [32.5](SOURCES.md#F-bae15f02d3)% urea - into diesel exhaust, where it decomposes to ammonia and reduces nitrogen oxides to harmless <span class="chem" data-chem="N2" title="dinitrogen gas">N₂</span> and water.
+Selective catalytic reduction injects urea solution - AdBlue, [32.5](SOURCES.md#F-492e40b543)% urea - into diesel exhaust, where it decomposes to ammonia and reduces nitrogen oxides to harmless <span class="chem" data-chem="N2" title="dinitrogen gas">N₂</span> and water.
 
-**The composition is worth stating plainly, because it makes the entry obvious.** `AUS 32` under `ISO 22241` is two ingredients: [32.5](SOURCES.md#F-6026be9800)% urea, [67.5](SOURCES.md#F-c7a23a3d29)% demineralised water. Urea, `CO(NH2)2`, is [46.6](SOURCES.md#F-842474d0c4)% nitrogen by mass, so the fluid is [15.1](SOURCES.md#F-2e24a604a3)% nitrogen — against [28](SOURCES.md#F-49939f0bc0)–[32](SOURCES.md#F-e604eeacbb)% for the liquid UAN fertilisers spread on fields. **AdBlue is a half-strength fertiliser solution distributed through the fuel network**, and urease, the enzyme that converts urea to ammonium, is present in essentially all soil and water and acts within hours. Anything reaching ground as liquid — spillage at filling points, tank rinsing, disposal — is fertiliser arriving by that route, with no combustion involved at all. That is a second pathway entirely separate from slip, and neither is measured.
+**The composition is worth stating plainly, because it makes the entry obvious.** `AUS 32` under `ISO 22241` is two ingredients: [32.5](SOURCES.md#F-492e40b543)% urea, [67.5](SOURCES.md#F-492e40b543)% demineralised water. Urea, `CO(NH2)2`, is [46.6](SOURCES.md#F-00f96001f6)% nitrogen by mass, so the fluid is [15.2](SOURCES.md#F-1c5433a022)% nitrogen — against [28](SOURCES.md#F-558b6e1b0f)–[32](SOURCES.md#F-558b6e1b0f)% for the liquid UAN fertilisers spread on fields. **AdBlue is a half-strength fertiliser solution distributed through the fuel network**, and urease, the enzyme that converts urea to ammonium, is present in essentially all soil and water and acts within hours. Anything reaching ground as liquid — spillage at filling points, tank rinsing, disposal — is fertiliser arriving by that route, with no combustion involved at all. That is a second pathway entirely separate from slip, and neither is measured.
 
 In the exhaust the decomposition is two steps, and the failure sits in the second: thermolysis gives ammonia plus isocyanic acid, then hydrolysis on the catalyst gives a second ammonia and <span class="chem" data-chem="CO2" title="carbon dioxide">CO₂</span>. If the catalyst is cold the isocyanic acid polymerises instead — biuret, cyanuric acid, melamine — which is what urea deposits in an exhaust system are made of. The technology works, and the point here is not that it fails. It is that **a large mass of reactive nitrogen is deliberately introduced into the exhaust stream in order to destroy another one**, and the destruction is not complete. Unreacted ammonia leaves as slip, worst when the catalyst is cold - short trips, urban driving, winter. Some nitrogen leaves as nitrous oxide instead of <span class="chem" data-chem="N2" title="dinitrogen gas">N₂</span>. And SCR systems are deliberately disabled in heavy transport to avoid the running cost of the reagent, which converts a partial loss into a total one.
 
@@ -443,7 +443,7 @@ The signature is therefore both geographic and temporal: deposition structured a
 
 **Discriminated by.** Reduced against oxidised nitrogen in deposition, along a road-density gradient holding agricultural intensity constant. Roadside ammonia is directly measurable and the gradient is steep, so this is a cheap measurement that nobody appears to make on a marine-relevant grid.
 
-**Needs.** **The mass is worth stating even roughly, because it is the same order as the entire nitrogen argument.** A litre of AdBlue is about [354](SOURCES.md#F-23228e8387) g of urea at [46.6](SOURCES.md#F-7d974b2f72)% nitrogen, so roughly [165](SOURCES.md#F-17f4d0fc97) g N per litre. Consumption runs a few per cent of diesel volume. Applied to Danish road diesel that is an order of thousands to low tens of thousands of tonnes of nitrogen a year passing through exhaust systems as urea - most of it genuinely becoming <span class="chem" data-chem="N2" title="dinitrogen gas">N₂</span>, but the escaping fraction multiplying a very large number. This is arithmetic on published unit figures and a fleet volume not verified here; it is offered as an order of magnitude that deserves checking, not as a finding. What is needed is national AdBlue consumption, a real slip fraction across the fleet including tampered systems, and roadside deposition.
+**Needs.** **The mass is worth stating even roughly, because it is the same order as the entire nitrogen argument.** A kilogram of AdBlue carries [325](SOURCES.md#F-1eb45d1232) g of urea at [46.6](SOURCES.md#F-00f96001f6)% nitrogen, so roughly [152](SOURCES.md#F-bd227ab006) g N per kilogram of fluid. Consumption runs a few per cent of diesel volume. Applied to Danish road diesel that is an order of thousands to low tens of thousands of tonnes of nitrogen a year passing through exhaust systems as urea - most of it genuinely becoming <span class="chem" data-chem="N2" title="dinitrogen gas">N₂</span>, but the escaping fraction multiplying a very large number. This is arithmetic on published unit figures and a fleet volume not verified here; it is offered as an order of magnitude that deserves checking, not as a finding. What is needed is national AdBlue consumption, a real slip fraction across the fleet including tampered systems, and roadside deposition.
 
 ### [A4](HYPOTHESES.md "Point-source discharge of nutrients") — Point-source discharge of nutrients
 
@@ -501,9 +501,9 @@ Net-pen fish farms discharging dissolved nutrients and particulate feed and faec
 
 **Predicts.** Sharp local gradient in sediment organic content and fauna within a few hundred metres; seasonal with the production cycle.
 
-**Discriminated by.** Sediment and fauna transects radiating from each of the [26](SOURCES.md#F-b6c05c61c3) licensed sites.
+**Discriminated by.** Sediment and fauna transects radiating from each licensed site.
 
-**Needs.** Per-farm production and feed use by month; sediment stations near farms.
+**Needs.** Per-farm production and feed use by month; sediment stations near farms. [What the data holds →](HYPOTHESIS_DATA.md#A8)
 
 ### [A9](HYPOTHESES.md "Nitrogen fixation") — Nitrogen fixation
 
@@ -525,13 +525,13 @@ Cyanobacteria fixing atmospheric N, adding nitrogen the load account cannot see 
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit"), [O2](HYPOTHESES.md "Fedtemøg"), [O3](HYPOTHESES.md "Loss of higher benthic life"), [O9](HYPOTHESES.md "Bathing water failure"), [O5](HYPOTHESES.md "Foam")
 
-Rain overwhelms a combined system and raw sewage discharges directly: organics, fat, faecal solids, at [1](SOURCES.md#F-f6324158bc) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> demand per g COD.
+Rain overwhelms a combined system and raw sewage discharges directly: organics, fat, faecal solids, at [1](SOURCES.md#F-e8c64a3b0a) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> demand per g COD.
 
 **Predicts.** Event-timed. Deficit and shore fouling follow rainfall by hours to days, not seasons, and concentrate near outfalls.
 
 **Discriminated by.** Oxygen and shore condition in the days after overflow events, against per-outfall discharge volume.
 
-**Needs.** Per-outfall overflow volume and duration per event. Denmark has [19,665](SOURCES.md#F-1dcf8ae5fb) registered outfalls and this is the single most valuable missing series.
+**Needs.** Per-outfall overflow volume and duration per event - the single most valuable missing series. [What the data holds →](HYPOTHESIS_DATA.md#B1)
 
 ### [B2](HYPOTHESES.md "Separate stormwater") — Separate stormwater
 
@@ -543,19 +543,19 @@ Two mechanisms in one pipe, and the second is the larger. First, what the rain p
 
 **Discriminated by.** First-flush concentration against the event mean, at the same outfall. Sediment stock in basins before and after a large storm. Reduced-sulphur signature in what is discharged, which separates a scoured in-system deposit from freshly washed-off road surface.
 
-**Needs.** Event-resolved concentration and volume at the outfall, and basin sediment surveys. Annual totals exist ([278.3](SOURCES.md#F-b3003d7d80) million m3/yr, summed over the [15,159](SOURCES.md#F-db2e05e3d9) of [16,185](SOURCES.md#F-f88f6ae3cd) separate-stormwater outfalls that report a volume) and cannot test this. One figure bearing directly on the settling basins is already published: Miljøstyrelsen's microplastic inventory estimates that only **[10](SOURCES.md#F-e889159395)–[20](SOURCES.md#F-c0412f76c7)% of stormwater microplastic is retained**, because only some stormwater sewers have settling lagoons at all — so the basins are neither reliably present nor, where present, efficient.
+**Needs.** Event-resolved concentration and volume at the outfall, and basin sediment surveys. Annual totals exist and cannot test this; one published estimate bears directly on the settling basins. [What the data holds →](HYPOTHESIS_DATA.md#B2)
 
 ### [B3](HYPOTHESES.md "Treatment plant organic load") — Treatment plant organic load
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit"), [O5](HYPOTHESES.md "Foam")
 
-Continuous discharge of residual COD and BOD from [750](SOURCES.md#F-870f487260) plants.
+Continuous discharge of residual COD and BOD from treatment plants.
 
 **Predicts.** Steady rather than event-driven; scales with population equivalent.
 
 **Discriminated by.** Deficit against PE density, controlling for treatment stage.
 
-**Needs.** Per-plant monthly COD/BOD discharge.
+**Needs.** Per-plant monthly COD/BOD discharge. [What the data holds →](HYPOTHESIS_DATA.md#B3)
 
 ### [B4](HYPOTHESES.md "Riverine particulate organic carbon") — Riverine particulate organic carbon
 
@@ -643,7 +643,7 @@ Mixing energy that breaks stratification and re-ventilates the bottom.
 
 **Discriminated by.** Cumulative wind work over the stratified season against deficit.
 
-**Needs.** Hourly wind. Already held: [31](SOURCES.md#F-bec24964f0) years.
+**Needs.** Hourly wind. Already held. [What the data holds →](HYPOTHESIS_DATA.md#C2)
 
 ### [C3](HYPOTHESES.md "Residence time") — Residence time
 
@@ -685,7 +685,7 @@ River flow stratifying the surface independently of what it carries.
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit")
 
-Warmer water holds less oxygen and respires faster: roughly −[2.3](SOURCES.md#F-808fb11b49)% saturation per °C, and demand rising with Q10.
+Warmer water holds less oxygen and respires faster, with demand rising with Q10.
 
 **Predicts.** Deficit rises with bottom temperature even at constant organic supply.
 
@@ -743,7 +743,7 @@ Gear dragged across the bed destroys structure and fauna directly, and resuspend
 
 **Discriminated by.** Fauna and sediment redox against trawling effort at fine spatial resolution.
 
-**Needs.** VMS/AIS-derived trawling effort. **Obtainable:** ICES/HELCOM swept-area ratio, figshare `20310255`, **[23.1](SOURCES.md#F-a2a460cdab) MB, `CC BY 4.0`**, [0.05](SOURCES.md#F-2c3229b81b)° c-square, quarterly, 2016–2021, covering [1,392](SOURCES.md#F-584404c498) of [1,415](SOURCES.md#F-a4be86e0ba) stations. Not fetched. Design in [`hypodrafts/D1.md`](hypodrafts/D1.md).
+**Needs.** VMS/AIS-derived trawling effort. **Obtainable:** the ICES/HELCOM swept-area layers on figshare (`20310255`), not fetched. Design in [`hypodrafts/D1.md`](hypodrafts/D1.md). [What the data holds →](HYPOTHESIS_DATA.md#D1)
 
 ### [D2](HYPOTHESES.md "Navigation dredging") — Navigation dredging
 
@@ -761,25 +761,25 @@ Channel maintenance removing the bed and suspending it.
 
 **Outcomes:** [O3](HYPOTHESES.md "Loss of higher benthic life"), [O1](HYPOTHESES.md "Oxygen deficit"), [O2](HYPOTHESES.md "Fedtemøg")
 
-Sediment, and whatever is in it, deposited at [114](SOURCES.md#F-1d7a7eb3c3) licensed grounds.
+Sediment, and whatever is in it, deposited at licensed dumping grounds.
 
 **Predicts.** Burial of fauna at the ground; a plume; contaminants redistributed.
 
 **Discriminated by.** Fauna and sediment chemistry at and downstream of dumping grounds against dumping volume and date.
 
-**Needs.** Per-ground dumping volume, date and material chemistry.
+**Needs.** Per-ground dumping volume, date and material chemistry. [What the data holds →](HYPOTHESIS_DATA.md#D3)
 
 ### [D4](HYPOTHESES.md "Sand and gravel extraction") — Sand and gravel extraction
 
 **Outcomes:** [O3](HYPOTHESES.md "Loss of higher benthic life"), [O1](HYPOTHESES.md "Oxygen deficit")
 
-Removal of the bed itself at [305](SOURCES.md#F-15672d2ec5) licensed areas.
+Removal of the bed itself at licensed extraction areas.
 
 **Predicts.** Permanent habitat loss; persistent turbidity; altered local hydrodynamics.
 
 **Discriminated by.** Fauna inside against outside extraction areas, over time.
 
-**Needs.** Per-area extracted volume by year. Permits are public; volumes less so.
+**Needs.** Per-area extracted volume by year. Permits are public; volumes less so. [What the data holds →](HYPOTHESIS_DATA.md#D4)
 
 ### [D5](HYPOTHESES.md "Cable and pipeline works") — Cable and pipeline works
 
@@ -815,7 +815,7 @@ Waves stirring the bed in shallow water, releasing reduced material and moving d
 
 **Discriminated by.** Shore fouling reports against modelled bed shear stress.
 
-**Needs.** Wave hindcast. Partially held: bed shear already modelled from [31](SOURCES.md#F-f68411560b) years of wind.
+**Needs.** Wave hindcast. Partially held: bed shear already modelled from the wind record. [What the data holds →](HYPOTHESIS_DATA.md#C2)
 
 ### [D8](HYPOTHESES.md "Loss of biostabilisation, and the mobile bed") — Loss of biostabilisation, and the mobile bed
 
@@ -873,7 +873,7 @@ Burrowing fauna destabilise sediment; microphytobenthos and tube-builders stabil
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit")
 
-Reduced sulphur from anoxic sediment consuming [2](SOURCES.md#F-00f398cb68) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> per g S the moment it meets oxygenated water.
+Reduced sulphur from anoxic sediment consuming [2](SOURCES.md#F-5320d7e8e5) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> per g S the moment it meets oxygenated water.
 
 **Predicts.** A large, fast oxygen sink that is entirely decoupled from current-year nutrient supply, and is triggered by disturbance.
 
@@ -885,7 +885,7 @@ Reduced sulphur from anoxic sediment consuming [2](SOURCES.md#F-00f398cb68) g <s
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit")
 
-Ammonium oxidised to nitrate, consuming [4.57](SOURCES.md#F-265981ecad) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> per g N with no biology of interest in between.
+Ammonium oxidised to nitrate, consuming [4.57](SOURCES.md#F-8412cafaa5) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> per g N with no biology of interest in between.
 
 **Predicts.** Nitrogen exerting oxygen demand *chemically*, so an N reduction helps here for a reason unrelated to [A1](hypodrafts/A1.md "Danish land-based nitrogen load") - and the two are not distinguished.
 
@@ -909,7 +909,7 @@ Reduced metals from sediment consuming oxygen on contact.
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit")
 
-Methane from anoxic sediment consuming [4](SOURCES.md#F-2893d02f50) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> per g on its way up.
+Methane from anoxic sediment consuming [4](SOURCES.md#F-845bc5868c) g <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span> per g on its way up.
 
 **Predicts.** Seep-associated, localised, and invisible to nutrient accounting.
 
@@ -939,7 +939,7 @@ TBT historically, copper and modern boosters now, killing benthic life directly 
 
 **Discriminated by.** Fauna and sediment biocide concentration together at the same stations.
 
-**Needs.** Sediment biocide concentrations. Sediment is measured at [5](SOURCES.md#F-21ba8df2cc) of the [256](SOURCES.md#F-b5b1f7dcbe) hazardous-substance points in the national water-plan register.
+**Needs.** Sediment biocide concentrations, at sea. [What the data holds →](HYPOTHESIS_DATA.md#E6)
 
 ### [E7](openproblems/E7.md "Pesticides and degradation products") — Pesticides and degradation products
 
@@ -1071,13 +1071,13 @@ The molecular machinery agricultural biocides attack is shared far beyond the ta
 
 **Discriminated by.** Concentration in road runoff and receiving water during storms, against mortality in a sensitive species. The road-density gradient is the natural experiment, and it is uncorrelated with agricultural gradients, which makes it unusually separable from most of group A.
 
-**Needs.** `6PPD-quinone` is not measured in Danish monitoring. Whether Danish salmonids - sea trout especially - carry the sensitivity is a species question that the published work does not settle for them. Worth noting that the carrier is not a minor stream: Miljøstyrelsen's own inventory makes tyre wear the largest single source of microplastic reaching Danish water, at [60.2](SOURCES.md#F-641ffb3a1a)% of the aquatic total, so the particles delivering this compound are already the best-quantified particles in the country.
+**Needs.** `6PPD-quinone` is not measured in Danish monitoring. Whether Danish salmonids - sea trout especially - carry the sensitivity is a species question that the published work does not settle for them. Worth noting that the carrier is not a minor stream: Miljøstyrelsen's own inventory makes tyre wear the largest single source of microplastic reaching Danish water, so the particles delivering this compound are already the best-quantified particles in the country. [What the data holds →](HYPOTHESIS_DATA.md#E18)
 
 ### [E20](HYPOTHESES.md "Fuel oxygenates and additives") — Fuel oxygenates and additives
 
 **Outcomes:** [O3](HYPOTHESES.md "Loss of higher benthic life"), [O6](HYPOTHESES.md "Mass mortality events")
 
-Petrol and diesel are not one substance. Oxygenates are blended in to make combustion more complete - ETBE and MTBE in petrol, ethanol at [5](SOURCES.md#F-2e95489ac1) or [10](SOURCES.md#F-f2cc6fe5bf) per cent - along with detergents, lubricity agents for low-sulphur diesel, and in some markets metallic additives carrying manganese or iron. The ethers are the notable ones for water: highly soluble, barely retarded by soil, and detectable by taste and smell at a few micrograms per litre, so a small spill travels far and is noticed as a nuisance long before it is a measured concentration. Ethanol is itself harmless but acts as a co-solvent, moving benzene and the other aromatics further than they would otherwise go.
+Petrol and diesel are not one substance. Oxygenates are blended in to make combustion more complete - ETBE and MTBE in petrol, ethanol in the [E5](HYPOTHESES.md "Direct chemical oxygen demand of discharges") and [E10](HYPOTHESES.md "Heavy metals") blends - along with detergents, lubricity agents for low-sulphur diesel, and in some markets metallic additives carrying manganese or iron. The ethers are the notable ones for water: highly soluble, barely retarded by soil, and detectable by taste and smell at a few micrograms per litre, so a small spill travels far and is noticed as a nuisance long before it is a measured concentration. Ethanol is itself harmless but acts as a co-solvent, moving benzene and the other aromatics further than they would otherwise go.
 
 **Predicts.** A groundwater and stream signature tied to fuel handling - filling stations, depots, harbours - rather than to any land use, and arriving at the coast through baseflow rather than in storm events.
 
@@ -1407,7 +1407,7 @@ The same nutrient is a subsidy at low dose and a stressor at high, so the respon
 
 **Discriminated by.** Non-parametric response of production and diversity to load.
 
-**Needs.** Load and response across a wide gradient - which the [123](SOURCES.md#F-173d507c7a) areas supply.
+**Needs.** Load and response across a wide gradient - which the marine water bodies supply. [What the data holds →](HYPOTHESIS_DATA.md#H4)
 
 ## J. Surface film, gel and the greasy water itself
 
@@ -1475,9 +1475,9 @@ That makes any process which fragments plastic a source term in its own right, s
 
 **Discriminated by.** Particle counts and size distributions in wastewater and receiving water upstream and downstream of a recycling facility, against a matched reach with none. Size distribution matters more than mass: the same mass at smaller size is a different exposure.
 
-**Needs.** Not measured in Denmark for this pathway, and the absence is now checked against the source rather than asserted. Miljøstyrelsen's national inventory (Lassen et al. 2015, Environmental Project `1793`) puts total Danish microplastic release at [5,500](SOURCES.md#F-f176ceddca)–[13,900](SOURCES.md#F-b4bc64ff36) t/year, of which [600](SOURCES.md#F-e0af8d6bbb)–[3,100](SOURCES.md#F-a67a96fc33) t/year ultimately reaches the aquatic environment. Of that aquatic share, tyres are **[60.2](SOURCES.md#F-bc037b1876)%**, footwear [7.4](SOURCES.md#F-2d47348774)%, and paint plus ship paint together [11.4](SOURCES.md#F-623bb6b70b)%. Its categories are: personal care products, raw materials for plastics production, paints, blasting abrasives, rubber granules, tyres, textiles, ship paints, road markings, building materials, footwear, cooking utensils, and two residual 'other' lines.
+**Needs.** Not measured in Denmark for this pathway, and the absence is now checked against the source rather than asserted. Miljøstyrelsen's national inventory (Lassen et al. 2015, Environmental Project `1793`) quantifies Danish microplastic release by source. Its categories are: personal care products, raw materials for plastics production, paints, blasting abrasives, rubber granules, tyres, textiles, ship paints, road markings, building materials, footwear, cooking utensils, and two residual 'other' lines.
 
-**There is no recycling or shredding category, and the near-miss makes the gap sharper rather than softer.** 'Rubber granules' is in the list — but it is granulate *made from* recycled tyres and counted for what it sheds in use, on artificial turf. The recycling operation's own release is nowhere: the product is inventoried, the process is not. So the inventory does count fragmentation performed by ordinary use and does not count fragmentation performed deliberately. The report is also from 2015, before Danish mechanical recycling capacity grew, and it says of its own coverage that dust from tyres, paint polishing and vinyl abrasion is typically too small to have been captured by the studies available.
+**There is no recycling or shredding category, and the near-miss makes the gap sharper rather than softer.** 'Rubber granules' is in the list — but it is granulate *made from* recycled tyres and counted for what it sheds in use, on artificial turf. The recycling operation's own release is nowhere: the product is inventoried, the process is not. So the inventory does count fragmentation performed by ordinary use and does not count fragmentation performed deliberately. The report is also from 2015, before Danish mechanical recycling capacity grew, and it says of its own coverage that dust from tyres, paint polishing and vinyl abrasion is typically too small to have been captured by the studies available. [What the data holds →](HYPOTHESIS_DATA.md#J9)
 
 ### [J5](HYPOTHESES.md "Microplastic and its biofilm") — Microplastic and its biofilm
 
@@ -1547,13 +1547,13 @@ Diatoms build frustules of silica and cannot grow without dissolved silicon. Si 
 
 **Outcomes:** [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass"), [O2](HYPOTHESES.md "Fedtemøg"), [O8](HYPOTHESES.md "Visible discolouration")
 
-Redfield C:N:P at [106](SOURCES.md#F-ba36c5b463):[16](SOURCES.md#F-a3f5854987):1 and roughly Si:N at [1](SOURCES.md#F-991a53be8c):1 for diatoms are requirements, not averages. Skewing the ratios changes which organisms can complete their life cycle, independently of how much of anything there is.
+Redfield C:N:P at [106](SOURCES.md#F-fa1bf80bf8):[16](SOURCES.md#F-fa1bf80bf8):1 and, for diatoms, Si:N at [15](SOURCES.md#F-2c8ffebf10):[16](SOURCES.md#F-2c8ffebf10) (Redfield-Brzezinski) are requirements, not averages. Skewing the ratios changes which organisms can complete their life cycle, independently of how much of anything there is.
 
 **Predicts.** Community composition tracks ratios; total biomass tracks absolute supply. A policy that moves one nutrient alone necessarily moves every ratio it appears in, and the direction of that effect is not signed in advance.
 
-**Discriminated by.** Community composition against N:P and Si:N, with absolute concentrations held fixed - which the [123](SOURCES.md#F-173d507c7a) areas make possible.
+**Discriminated by.** Community composition against N:P and Si:N, with absolute concentrations held fixed - which the marine water bodies make possible.
 
-**Needs.** Simultaneous N, P and Si with species-level counts.
+**Needs.** Simultaneous N, P and Si with species-level counts. [What the data holds →](HYPOTHESIS_DATA.md#H4)
 
 ### [K3](HYPOTHESES.md "Macronutrient excess inducing micronutrient deficiency") — Macronutrient excess inducing micronutrient deficiency
 
@@ -1655,7 +1655,7 @@ The Danish straits are a salinity gradient, and every organism in them sits near
 
 **Outcomes:** [O7](HYPOTHESES.md "Loss of rooted vegetation"), [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass")
 
-Distinct from turbidity as a symptom: for a rooted plant, light at the bed is a resource with a hard requirement - roughly [11](SOURCES.md#F-6924bdb204)-[14](SOURCES.md#F-7f2498a2c1)% of surface irradiance for eelgrass - and below it the plant does not grow slowly, it dies.
+Distinct from turbidity as a symptom: for a rooted plant, light at the bed is a resource with a hard requirement - a minimum share of surface irradiance for eelgrass - and below it the plant does not grow slowly, it dies.
 
 **Predicts.** A threshold, not a gradient. Explains why vegetation recovery is abrupt and why intermediate improvement produces no response at all.
 
@@ -1701,7 +1701,7 @@ Repeated mortality events select the survivors down to a narrow set, and a narro
 
 ## W. Renewal and rate
 
-*A population can end without anything killing an individual, and a system can fail at a magnitude it would survive if it arrived more slowly. This group exists because the categorical avenues had two entries - failure to replace itself, and rate exceeded - with almost nothing under them in a register of [127](SOURCES.md#F-c1cca1ada0). That absence was not a judgement that these do not matter; nobody had thought to look.*
+*A population can end without anything killing an individual, and a system can fail at a magnitude it would survive if it arrived more slowly. This group exists because the categorical avenues had two entries - failure to replace itself, and rate exceeded - with almost nothing under them in a register of the register as it then stood. That absence was not a judgement that these do not matter; nobody had thought to look.*
 
 ### [W1](HYPOTHESES.md "Propagule supply and connectivity") — Propagule supply and connectivity
 
@@ -1807,7 +1807,7 @@ Repeated mortality selects survivors down to a narrow genetic and functional set
 
 **Outcomes:** [O7](HYPOTHESES.md "Loss of rooted vegetation"), [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass"), [O3](HYPOTHESES.md "Loss of higher benthic life")
 
-The floor is the eelgrass requirement, roughly [11](SOURCES.md#F-5f72f1ce6c)-[14](SOURCES.md#F-86ea44b26b)% of surface irradiance. The ceiling is real too: photoinhibition and UV damage at the surface, which is why some species do worse in the clearest water.
+The floor is the eelgrass requirement, a minimum share of surface irradiance. The ceiling is real too: photoinhibition and UV damage at the surface, which is why some species do worse in the clearest water.
 
 **Predicts.** Both tails, as with every window. A management target expressed only as *more light is better* is the same error as a nutrient target expressed only as *less is better*.
 
@@ -1861,7 +1861,7 @@ Too much and organisms are dislodged, abraded and buried; too little and filter 
 
 **Discriminated by.** Bed shear stress distribution against community composition - the whole distribution, since both tails matter.
 
-**Needs.** Wave and current modelling. Bed shear already computed here from [31](SOURCES.md#F-474b6268ab) years of wind.
+**Needs.** Wave and current modelling. Bed shear already computed here from the wind record. [What the data holds →](HYPOTHESIS_DATA.md#C2)
 
 ### [Z6](HYPOTHESES.md "Sound, as a cue and as a stressor") — Sound, as a cue and as a stressor
 
@@ -1991,7 +1991,7 @@ Restoration plantings fail in sediment whose chemistry looks adequate - the mari
 
 **Outcomes:** [O7](HYPOTHESES.md "Loss of rooted vegetation"), [O3](HYPOTHESES.md "Loss of higher benthic life")
 
-Some soils suppress disease purely through their microbial community, and suppressiveness is transferable - mix [1](SOURCES.md#F-907b817c89)-[10](SOURCES.md#F-2541a9ab9a)% of a suppressive soil into a conducive one and it becomes suppressive. Anaerobiosis and fumigation destroy it.
+Some soils suppress disease purely through their microbial community, and suppressiveness is transferable - mix a small share of a suppressive soil into a conducive one and it becomes suppressive. Anaerobiosis and fumigation destroy it.
 
 **Predicts.** A sediment can lose a protective property that no chemical measurement detects, and regain it only by re-inoculation. If marine sediments behave the same way, sediment transplantation is a plausible intervention nobody has tried.
 
@@ -2151,7 +2151,7 @@ Soil science distinguishes resin, bicarbonate, hydroxide, acid and residual phos
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit"), [O3](HYPOTHESES.md "Loss of higher benthic life")
 
-The Leptosol lesson: a soil under [25](SOURCES.md#F-63d4a31ba2) cm deep has almost no capacity to absorb a shock, because buffering is proportional to the volume of material doing the buffering.
+The Leptosol lesson: a shallow soil over rock has almost no capacity to absorb a shock, because buffering is proportional to the volume of material doing the buffering.
 
 **Predicts.** Shallow water bodies and thin sediment layers swing further on the same load, so depth belongs in the load coefficient rather than as a covariate - and the areas most likely to be shallow are the ones people swim in.
 
@@ -2191,7 +2191,7 @@ Fungi are the principal degraders of refractory material on land - lignin, chiti
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit"), [O2](HYPOTHESES.md "Fedtemøg"), [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass")
 
-Decomposer microbes build biomass near C:N [8](SOURCES.md#F-2e68a6f745)-[10](SOURCES.md#F-10c53c2869) at about [40](SOURCES.md#F-b35e6dda08)% carbon-use efficiency, so there is a threshold near C:N [25](SOURCES.md#F-07499bcc04): below it decay releases mineral nitrogen, above it decay consumes it. Straw at C:N [80](SOURCES.md#F-4e5883afe7) starves the next crop. Fat has no nitrogen at all.
+Decomposer microbes build biomass at a low C:N and respire much of the carbon they take in, so there is a threshold C:N: below it decay releases mineral nitrogen, above it decay consumes it. Straw, far above the threshold, starves the next crop. Fat has no nitrogen at all.
 
 **Predicts.** **An input with zero nitrogen content lowers measured nitrogen**, because the bacteria decomposing it scavenge dissolved N from the water to build themselves. A fat-loaded water can read as less eutrophic on the regulated indicator while being more degraded, and the direction of that bias is opposite to what everyone assumes.
 
@@ -2239,7 +2239,7 @@ Well established in soil: nitrogen accelerates decay of labile litter but suppre
 
 **Outcomes:** [O1](HYPOTHESES.md "Oxygen deficit"), [O3](HYPOTHESES.md "Loss of higher benthic life")
 
-Decay runs down a ladder of electron acceptors - <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span>, then nitrate, then manganese, then iron, then sulphate, then <span class="chem" data-chem="CO2" title="carbon dioxide">CO₂</span> - each yielding less energy. Freshwater carries [5](SOURCES.md#F-b6b0aed04a)-[30](SOURCES.md#F-1acfc787ce) mg/L of sulphate and so passes it quickly to methanogenesis. Seawater carries [2,700](SOURCES.md#F-1ea61608da) mg/L, a hundred to five hundred times more, and sulphate reducers outcompete methanogens for hydrogen and acetate.
+Decay runs down a ladder of electron acceptors - <span class="chem" data-chem="O2" title="oxygen (dissolved, as a molecule)">O₂</span>, then nitrate, then manganese, then iron, then sulphate, then <span class="chem" data-chem="CO2" title="carbon dioxide">CO₂</span> - each yielding less energy. Freshwater carries little sulphate and so passes it quickly to methanogenesis. Seawater carries about [2,700](SOURCES.md#F-d06bc3b802) mg/kg, far more, and sulphate reducers outcompete methanogens for hydrogen and acetate.
 
 **Predicts.** **Marine anoxia poisons as well as suffocates; freshwater anoxia mostly just suffocates.** Anoxic lake sediment makes methane. Anoxic marine sediment makes sulphide, without limit, because the reservoir is effectively infinite. Every intuition carried over from freshwater eutrophication understates the marine case by exactly this mechanism.
 
@@ -2339,7 +2339,7 @@ Environmental targets are set against a modelled pre-impact state. If that state
 
 **Outcomes:** [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass"), [O7](HYPOTHESES.md "Loss of rooted vegetation")
 
-Denmark's chlorophyll target is computed by ensemble modelling of a reference situation, then scaled by an EU-agreed ratio of [0.6](SOURCES.md#F-ca17d119b3). Both halves are choices, and neither is a measurement.
+Denmark's chlorophyll target is computed by ensemble modelling of a reference situation, then scaled by an EU-agreed ratio of [0.6](SOURCES.md#F-03924c3609). Both halves are choices, and neither is a measurement.
 
 **Predicts.** The requirement moves when the model or the ratio is revised, with no change in the sea. This is the residual-estimator problem relocated to the target instead of the source.
 
@@ -2397,7 +2397,7 @@ Stations added, moved and dropped over the record, so a trend can be a trend in 
 
 **Discriminated by.** Recompute every trend on the subset of stations present throughout.
 
-**Needs.** Station start and end dates. **Not held.** The register carries [34](SOURCES.md#F-9fee8eb468) of [1,415](SOURCES.md#F-a65709e687) series stations, and `StartDato` = `SlutDato` on [99.8](SOURCES.md#F-3dbeb389fb)% of rows — a visit date, not a lifespan. Presence has to come from the observation record: [`hypodrafts/I1.md`](hypodrafts/I1.md).
+**Needs.** Station start and end dates. **Not held**: the register's dates are visit dates, not lifespans. Presence has to come from the observation record: [`hypodrafts/I1.md`](hypodrafts/I1.md). [What the data holds →](HYPOTHESIS_DATA.md#I1)
 
 ### [I2](HYPOTHESES.md "Changing analytical method") — Changing analytical method
 
@@ -2409,7 +2409,7 @@ Winkler titration to optode sondes for oxygen; changing chlorophyll methods. Dif
 
 **Discriminated by.** Result against sampling gear and sonde, which the raw record names.
 
-**Needs.** SondeNr per measurement — the probe *number* is the identifier, and a changeover is when a bias shift has cause. **Present, and mostly filled:** `999` (probe unknown) on [25.6](SOURCES.md#F-18d47162ce)% of the full CTD extract, `Prøvetagningsudstyr` the constant `Ketcher` on [99.9](SOURCES.md#F-6b91d6fce0)%, `Prøvetager` blank on [87](SOURCES.md#F-c88a0de97f)% ([1.2](SOURCES.md#F-30c4b18f7e)M-row sample). The usable **[74.4](SOURCES.md#F-24782dd4c7)%** carries [81](SOURCES.md#F-9c2bc4c9bc) identified probes and is where [I2](HYPOTHESES.md "Changing analytical method") is testable.
+**Needs.** SondeNr per measurement — the probe *number* is the identifier, and a changeover is when a bias shift has cause. **Present, and mostly filled**; where it is filled is where [I2](HYPOTHESES.md "Changing analytical method") is testable. [What the data holds →](HYPOTHESIS_DATA.md#I2)
 
 ### [I3](hypodrafts/I3.md "Changing sampling frequency and season") — Changing sampling frequency and season
 
@@ -2421,7 +2421,7 @@ A deficit indicator built from the worst month is biased by how often you sample
 
 **Discriminated by.** Indicator against sampling effort per station-season.
 
-**Needs.** Date of every visit per station — in the raw record. But `Dato` is `YYYYMMDD`: **there is no time of day in any of [53.7](SOURCES.md#F-4c570f3335)M rows, and no column for it.** Oxygen has a diel cycle and daylight at [55](SOURCES.md#F-8a26cacd3a)°N runs [7](SOURCES.md#F-6c12a04eac)–[17](SOURCES.md#F-3fd556a8ee) h, so the diel phase sampled shifts with season. Class 6 **for the CTD extract**. But ODA marine water chemistry (`Emne_10_11`) is recorded in our own enumeration, twice, as carrying `Startdato + **Startklok**` — a clock time per sample, never fetched. If chemistry shares cruises with CTD, it bounds the sampling hour and this becomes class 2.
+**Needs.** Date of every visit per station — in the raw record. But `Dato` is `YYYYMMDD`: **the CTD extract has no time of day, and no column for it.** Oxygen has a diel cycle and daylight at [55](SOURCES.md#F-36b30a135c)°N runs [7](SOURCES.md#F-2ad04809f0)–[17](SOURCES.md#F-174fa66b89) h, so the diel phase sampled shifts with season. Class 6 **for the CTD extract**. The water-chemistry extract carries a clock value per sample; if chemistry shares cruises with CTD, it bounds the sampling hour and this becomes class 2. [What the data holds →](HYPOTHESIS_DATA.md#I3)
 
 ### [I4](HYPOTHESES.md "Changing indicator definition") — Changing indicator definition
 
@@ -2469,7 +2469,7 @@ A defect introduced once, downstream of the instrument and upstream of the archi
 
 **Discriminated by.** Cross-channel consistency within station-month: a concentration that disagrees with its own saturation, temperature and salinity.
 
-**Needs.** Nothing new. **Worked case found:** [11](SOURCES.md#F-c8b8b1dcfd) station-months of negative oxygen, all in **May–June 2005**, across **[6](SOURCES.md#F-4ed890d0d9) stations, [4](SOURCES.md#F-5538c1e648) water bodies and [4](SOURCES.md#F-91c171b936) custodian prefixes**, spanning [6](SOURCES.md#F-413495952e)–[75](SOURCES.md#F-b5c1ad7c90) km in the Øresund approaches. Co-reported saturation reads [100](SOURCES.md#F-a92340b4e9)–[108](SOURCES.md#F-dc3abb3da5)% and the magnitudes match Weiss solubility — the water was oxygenated and the sign inverted. Four custodians with tight geography points at a shared regional processing step rather than one desk; n=[6](SOURCES.md#F-4ed890d0d9), so a lead. Flagged, not removed, in [`data/areas/flags.json`](data/areas/flags.json).
+**Needs.** Nothing new. **A worked case was found**: negative oxygen in one two-month window in the Øresund approaches, where the water was in fact oxygenated and the sign inverted - a lead towards a shared processing step. Flagged, not removed, in [`data/areas/flags.json`](data/areas/flags.json). [What the data holds →](HYPOTHESIS_DATA.md#I7)
 
 ## Borrowed from a field that already made this mistake
 
@@ -2479,7 +2479,7 @@ What it corrected with is worth copying:
 
 - **Non-equilibrium dynamics.** Ellis and Swift showed that in arid systems rainfall variance dominates density-dependent processes, so *carrying capacity* and *overstocking* were the wrong model class rather than the wrong numbers. That objection took longest to land and mattered most. Here it is [H1](HYPOTHESES.md "Alternative stable states and hysteresis") and [H4](HYPOTHESES.md "Subsidy-stress").
 
-- **Longer, spatially replicated measurement.** Satellite records showed the Sahel greening while the desertification narrative was at its peak. The measurement reversed the finding. Here that is [6,288](SOURCES.md#F-1acb8bcb68) stations and the full record rather than [29](SOURCES.md#F-33b77c6a1d) stations and a window closing in 2012.
+- **Longer, spatially replicated measurement.** Satellite records showed the Sahel greening while the desertification narrative was at its peak. The measurement reversed the finding. Here that is [6,288](SOURCES.md#F-1acb8bcb68) stations and the full record rather than [29](SOURCES.md#F-d19671c79f) stations and a window closing in 2012.
 
 - **Checking whether the baseline was ever real.** Fairhead and Leach found that forest patches in Guinea, read as relics of a destroyed forest, had been *created* by the villagers living in them. The causal arrow was backwards and the error lay in the assumed original state. That is group `L`, and it is the class of hypothesis this project was missing entirely until the parallel was pointed out.
 

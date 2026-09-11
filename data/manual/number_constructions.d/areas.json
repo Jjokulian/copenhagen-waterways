@@ -478,10 +478,10 @@
     "data/derived/hypotheses.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long; what changed is the text of two entries (B2, E6), now filled from data. The count method is untouched. 2026-09-11; not yet read by the project owner)",
+    "by": "fork w2-hyp (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long, with every id and title unchanged; what changed is text inside entries. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "data/derived/hypotheses.json": "994878a3bcb72481"
+     "data/derived/hypotheses.json": "bf741395d16fdb52"
     }
    }
   }

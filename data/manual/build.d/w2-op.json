@@ -1,0 +1,19 @@
+{
+ "_what": "Inputs of OPEN_PROBLEMS.md added by fork w2-op (2026-09-11): the claims register it marks against, the pins it reads, and the current field it already read without declaring it.",
+ "steps": [
+  {
+   "script": "scripts/pages/open_problems.py",
+   "inputs": [
+    "data/derived/currents_transport.json",
+    "data/manual/claims.json",
+    "data/manual/claims.d/w2-op.json",
+    "data/derived/claim_spans.json",
+    "data/derived/pins/OP-WIKI-LUX.txt",
+    "data/derived/pins/OP-WIKI-KOMMUNER.txt"
+   ],
+   "outputs": [
+    "docs/OPEN_PROBLEMS.md"
+   ]
+  }
+ ]
+}

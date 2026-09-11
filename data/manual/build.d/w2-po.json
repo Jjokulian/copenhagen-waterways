@@ -1,0 +1,37 @@
+{
+ "_what": "Build step inputs fork w2-po added to POLITICS.md: its claims fragment, construction fragment and the pinned source pages.",
+ "steps": [
+  {
+   "script": "scripts/politics.py",
+   "inputs": [
+    "data/manual/claims.d/w2-po.json",
+    "data/manual/number_constructions.d/w2-po.json",
+    "data/derived/pins/PO-AAA256E2.txt",
+    "data/derived/pins/PO-B75F2381.txt",
+    "data/derived/pins/PO-F064554D.txt",
+    "data/derived/pins/PO-64EF563D.txt",
+    "data/derived/pins/PO-6F185AEE.txt",
+    "data/derived/pins/PO-F01870FD.txt",
+    "data/derived/pins/PO-4646A8EE.txt",
+    "data/derived/pins/PO-D6C1D4AF.txt",
+    "data/derived/pins/PO-820BD1A8.txt",
+    "data/derived/pins/PO-729ED65B.txt",
+    "data/derived/pins/PO-D9832227.txt",
+    "data/derived/pins/PO-4FEA7DCD.txt",
+    "data/derived/pins/PO-EA91CE9E.txt",
+    "data/derived/pins/PO-6AC2C1B9.txt",
+    "data/derived/pins/PO-F08A29CB.txt",
+    "data/derived/pins/PO-CB115071.txt",
+    "data/derived/pins/PO-37C01E54.txt",
+    "data/derived/pins/PO-88F1B4F1.txt",
+    "data/derived/pins/PO-E44E93FE.txt",
+    "data/derived/pins/PO-2268435C.txt",
+    "data/derived/pins/PO-E8780710.txt"
+   ],
+   "outputs": [
+    "docs/POLITICS.md",
+    "data/derived/politics.json"
+   ]
+  }
+ ]
+}

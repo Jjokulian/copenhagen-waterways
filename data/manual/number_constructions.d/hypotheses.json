@@ -72,10 +72,10 @@
     "scripts/formats.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: the only change to hypotheses.py since the last reading is two sentences now filled from data - the stormwater volume total and the sediment points - and the VALUES that read them; the evidence-writing code is untouched, verified by hashing the file with that change undone, which matches what was last read. 2026-09-11; not yet read by the project owner)",
+    "by": "fork w2-hyp (re-read hypotheses.py: _register_facts(), which writes the register fields this declares, is identical to the version before this change, verified by diff; the evidence file gained layer counts, solstice day lengths and sign-flip geometry, declared in K-HY-EVIDENCE. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/hypotheses.py": "74332be27932b538",
+     "scripts/hypotheses.py": "c5c1c6b1bb14e174",
      "scripts/formats.py": "4d546353a50a2668"
     }
    }

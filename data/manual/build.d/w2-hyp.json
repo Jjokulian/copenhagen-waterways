@@ -1,0 +1,33 @@
+{
+ "steps": [
+  {
+   "script": "scripts/hypotheses.py",
+   "inputs": [
+    "docs/data/areas/flags.json",
+    "docs/data/areas/station_waterbody_overlay.json",
+    "data/raw/national/punkt_havdam_udl.geojson",
+    "data/raw/national/klappladser.geojson",
+    "data/raw/national/raastofomr.geojson",
+    "data/raw/national/punkt_rens_udl.geojson",
+    "data/derived/areas.json",
+    "scripts/daylight.py",
+    "data/manual/claims.d/w2-hyp.json",
+    "data/manual/number_constructions.d/w2-hyp.json",
+    "data/derived/pins/HY-MST-1793.txt",
+    "data/derived/pins/HY-WIKI-DEF.txt",
+    "data/derived/pins/HY-WIKI-UAN.txt",
+    "data/derived/pins/HY-WIKI-SEAWATER.txt",
+    "data/derived/pins/HY-WIKI-ATZA.txt",
+    "data/derived/pins/HY-WIKI-COD.txt",
+    "data/derived/pins/HY-FIGSHARE-D1.txt",
+    "data/derived/pins/NI-DCE-ILT-2023.txt",
+    "data/derived/pins/WIKI-REDFIELD.txt",
+    "data/derived/pins/PG-WIKI-CF.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt"
+   ],
+   "outputs": [
+    "docs/HYPOTHESIS_DATA.md"
+   ]
+  }
+ ]
+}

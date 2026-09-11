@@ -4304,21 +4304,29 @@
    "kind": "argued",
    "stance": "ours",
    "page": "PROGRAMME.md",
-   "claim": "The most direct route needs no chain: the discharged material itself, diluted, is fedtemøg in the sense the word is used, and nothing measures it.",
-   "because": "Dilution changes concentration, not identity; the absence of an instrument is that of Part one.",
+   "claim": "The most direct route needs no chain: the discharged material itself, diluted, fouls water and shore; it is not fedtemøg, which names filamentous brown algae that grow, tear loose and rot at the water's edge.",
+   "because": "Dilution changes concentration, not identity; the absence of an instrument is that of Part one. What fedtemøg is, is Danish Wikipedia's definition, pinned.",
    "rests_on": [
-    "C-PG-UNMEASURED"
+    "C-PG-UNMEASURED",
+    "E-PC-FEDT-DEF",
+    "E-PC-FEDT-GROW"
    ],
    "basis": "assessed",
    "confirmed": {
     "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (rewritten after fork w2-pc's finding, read against the pinned Danish Wikipedia definition: the discharge fouls water and shore, and fedtemøg names rotting filamentous algae, not the discharge; the published wording is retired to the archive. 2026-09-11; not yet read by the project owner)",
     "saw": {
-     "said on PROGRAMME.md": "**Start with the route that needs no chain at all: it is the substance.** What comes out is fat, solids, fibre, wipes and the sediment they were lying in. A person who meets that in the water is not encountering a downstream effect of an oxygen deficit — they are encountering the discharge, diluted. **That is *fedtemøg* in the sense the word is actually used**, and on this page's own count it is one of the three public words with no instrument behind it.",
-     "texts": "deea60a8745e18fb",
-     "rests on C-PG-UNMEASURED": "ffc93583ed7b149b"
+     "said on PROGRAMME.md": "**Start with the route that needs no chain at all: it is the substance.** What comes out is fat, solids, fibre, wipes and the sediment they were lying in. A person who meets that in the water is not encountering a downstream effect of an oxygen deficit — they are encountering the discharge, diluted. It is not what the word *fedtemøg* names: that is filamentous brown algae that grow on stones and mussels, tear loose and rot at the water's edge. The discharge fouls water and shore in its own right.",
+     "texts": "4dc9bdf453281604",
+     "rests on C-PG-UNMEASURED": "ffc93583ed7b149b",
+     "node E-PC-FEDT-DEF": "222ba88eb2180ce8",
+     "pinned PC-WIKI-FEDTEMOEG": "e09cd37f6cc2a612",
+     "node E-PC-FEDT-GROW": "c7f03591adf3306a"
     }
-   }
+   },
+   "replaces": [
+    "C-PG-OLD-SUBSTANCE-FEDT"
+   ]
   },
   {
    "id": "C-PG-2-REST",
@@ -11222,6 +11230,34 @@
     "saw": {
      "said on ARCHIVE.md": "Four of those five need no new instruments and no new money. That is the position this document is arguing from: not that it is right, but that it has been cheap to check for thirty years and nobody has checked",
      "texts": "43323cf2a76a8fde"
+    }
+   }
+  },
+  {
+   "id": "C-PG-OLD-SUBSTANCE-FEDT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The discharged material itself, diluted, is fedtemøg in the sense the word is used.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "PROGRAMME.md",
+    "commit": "00a157f",
+    "file": "docs/PROGRAMME.md",
+    "begin": "Start with the route that needs no chain at all",
+    "end": "in the sense the word is actually used",
+    "why": "Wrong about the word: fedtemøg names filamentous brown algae that grow on stones and mussels, tear loose and rot at the water's edge (Danish Wikipedia, pinned), not the discharged material."
+   },
+   "replaced_by": [
+    "C-PG-2-SUBSTANCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Start with the route that needs no chain at all: it is the substance. What comes out is fat, solids, fibre, wipes and the sediment they were lying in. A person who meets that in the water is not encountering a downstream effect of an oxygen deficit — they are encountering the discharge, diluted. That is *fedtemøg* in the sense the word is actually used",
+     "texts": "9c50ec3e227cbe02"
     }
    }
   }

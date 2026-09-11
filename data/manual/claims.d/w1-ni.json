@@ -385,7 +385,7 @@
    "label": "Effektivt Landbrug:\\nthe regulation moved",
    "source": "POL-EL-20260623",
    "said": "kvælstofhammeren rammer i",
-   "detail": "Reporting the government's June agreement: the regulation now hits a year later than first announced."
+   "detail": "Reporting the government's June agreement: the kvælstofhammer, the regulation's sharper step, cannot strike before 2028."
   },
   {
    "id": "E-NI-GP-BRAK",
@@ -1712,13 +1712,13 @@
    "basis": "assessed",
    "confirmed": {
     "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on NITROGEN.md": "*What this does not establish.* Declared area is land declared for area support, which is not the same as every hectare a business may spread on: rented-in land can be missing, and a business that buys spreading capacity from a neighbour looks land-poor here and is compliant in law. 42% of animal-keeping businesses have no more than one declared hectare in this join, which is either genuine landlessness or a failed match through holding companies. And the thresholds are the old harmony units: Denmark now regulates in kilograms of nitrogen per hectare, so these indicate the pressure rather than test compliance.",
      "texts": "c3d08349eb3523f2",
      "node X-MANURE": "2893dee3c11aca68",
      "node D-MARKER": "1fb78a4a370f7570",
-     "rests on C-DE-VOID": "b2c0083018413865"
+     "rests on C-DE-VOID": "9f3e1433c0918590"
     }
    }
   },
@@ -1750,13 +1750,14 @@
    "kind": "attributed",
    "stance": "theirs",
    "page": "NITROGEN.md",
-   "claim": "The fertilisation law `L 5` passed with a broad majority; the ministry said holdings would get a nitrogen quota set by what their catchment must cut and called the quota model a safety net under the Tripartite's land conversion; a later report says the regulation now starts a year later than first announced.",
-   "because": "Their statements, as reported; none gives the law's text, which was not read.",
+   "claim": "The fertilisation law `L 5` passed on 2026-09-03 by {read:POL-TV2-20260903:119|119 medlemmer af Folketinget stemte for loven} votes to {read:POL-TV2-20260903:34|mens 34 stemte imod}; the ministry said holdings would get a nitrogen quota set by what their catchment must cut and called the quota model a safety net under the Tripartite's land conversion; emission-based regulation replaces field regulation from 2027, and its sharper step, the kvælstofhammer, cannot strike before 2028.",
+   "because": "Their statements, as reported: the vote from TV 2's report, the quota and the safety net from the ministry's announcement, the two steps as the POLITICS page reads the record. None gives the law's text, which was not read.",
    "rests_on": [
     "E-NI-TV2-L5",
+    "E-PO-VOTE",
     "E-NI-MGTP-QUOTA",
     "E-NI-MGTP-NET",
-    "E-NI-EL-2028"
+    "C-PO-RUNG4"
    ],
    "basis": "assessed",
    "holder": "TV 2 (2026-09-03), the Ministry for the Green Tripartite (2025-12-03) and Effektivt Landbrug (2026-06-23)",
@@ -1765,17 +1766,19 @@
    ],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (rewritten against TV 2's pinned report - 119 for, 34 against - and POLITICS's C-PO-RUNG4: emission-based regulation from 2027 and the kvælstofhammer not before 2028 are two steps of the law, not a disputed date; the old 'a year later' reading dropped. 2026-09-11; not yet read by the project owner)",
     "saw": {
-     "said on NITROGEN.md": "The instruments are in the public record rather than in this analysis. `L 5`, the fertilisation law, passed on 2026-09-03 with what TV 2 called *\"et massivt politisk flertal\"* — a massive political majority. The ministry's December 2025 announcement gives each holding a quota for its discharges set by how much its catchment must cut, from 2027 (*\"en kvote for deres udledninger ud fra\"*), and calls the agreement a safety net under the Tripartite's land conversion (*\"et sikkerhedsnet under den\"*). A June 2026 report of the government's agreement says the regulation now hits in 2028 rather than 2027 ([POLITICS.md](POLITICS.md)).",
-     "texts": "95b9d9c562e11f38",
-     "node E-NI-TV2-L5": "80f04a15e244eee4",
+     "claim {read:POL-TV2-20260903:119|119 medlemmer af Folketinget stemte for loven}": "119",
+     "claim {read:POL-TV2-20260903:34|mens 34 stemte imod}": "34",
      "pinned POL-TV2-20260903": "7e35b90adf8a8d5e",
+     "said on NITROGEN.md": "The instruments are in the public record rather than in this analysis. `L 5`, the fertilisation law, passed on 2026-09-03, 119 medlemmer af Folketinget stemte for loven, mens 34 stemte imod (TV 2) — what TV 2 called *\"et massivt politisk flertal\"*, a massive political majority. The ministry's December 2025 announcement gives each holding a quota for its discharges set by how much its catchment must cut, from 2027 (*\"en kvote for deres udledninger ud fra\"*), and calls the agreement a safety net under the Tripartite's land conversion (*\"et sikkerhedsnet under den\"*). Under the law, emission-based regulation replaces field regulation from 2027, and its sharper step, the kvælstofhammer, cannot strike before 2028 ([POLITICS.md](POLITICS.md)).",
+     "texts": "820c28f9b74f0e65",
+     "node E-NI-TV2-L5": "80f04a15e244eee4",
+     "node E-PO-VOTE": "ede79b5f9b6d2568",
      "node E-NI-MGTP-QUOTA": "4d0069272216fa73",
      "pinned POL-MGTP-20251203": "938b1db4d9fc02b5",
      "node E-NI-MGTP-NET": "5c48b834e4c2af4d",
-     "node E-NI-EL-2028": "5006521971821abc",
-     "pinned POL-EL-20260623": "a70d1b8024cdb7ce"
+     "rests on C-PO-RUNG4": "28a2596bd9ac5e77"
     }
    }
   },
@@ -1832,12 +1835,12 @@
    "basis": "assessed",
    "confirmed": {
     "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: C-NI-L5 under it now gives the vote from TV 2 and the law's 2027 and 2028 steps; the per-catchment quota this argument rests on is unchanged, so it still follows. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on NITROGEN.md": "**The constraint transfers when the quota falls below what the manure alone supplies.** At that point the arithmetic offers exactly four moves: fewer animals, more hectares to spread on, more nitrogen leaving in the crop, or **the manure nitrogen leaving the holding**. And this is where the design of the Tripartite matters more than its rhetoric: its main engine takes land *out* — wetland conversion, afforestation, set-aside — which raises manure nitrogen per remaining hectare with no change in any herd. **An area policy becomes a livestock policy without ever naming livestock.**",
      "texts": "f6a153f4e9fa7cc7",
      "rests on C-NI-PREDICT-MINERAL": "dd08022ed8f958b6",
-     "rests on C-NI-L5": "95b9d9c562e11f38"
+     "rests on C-NI-L5": "820c28f9b74f0e65"
     }
    }
   },
@@ -1877,11 +1880,11 @@
    "basis": "assessed",
    "confirmed": {
     "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: C-NI-L5 under it now gives the vote from TV 2 and the law's 2027 and 2028 steps; the per-catchment quota this argument rests on is unchanged, so it still follows. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on NITROGEN.md": "**The quota is per catchment, so the export has to cross a catchment line.** Moving slurry from one farm to its neighbour changes whose paperwork it is and not what the receiving water gets. Only nitrogen that leaves the catchment — or leaves the reactive pool altogether — is a reduction where it is being counted.",
      "texts": "35b575a53bceb996",
-     "rests on C-NI-L5": "95b9d9c562e11f38"
+     "rests on C-NI-L5": "820c28f9b74f0e65"
     }
    }
   },
@@ -3273,7 +3276,7 @@
     "file": "docs/NITROGEN.md",
     "begin": "The instruments are in the public record",
     "end": "on individual holdings from",
-    "why": "The vote count is not in anything pinned, and the start year differs between the pinned reports - a quota from one year in the ministry's announcement, a year later in a report of the June agreement."
+    "why": "Retired because neither the vote count nor the start year could be found in a pinned source at the time, and the pinned reports seemed to disagree on the year. POLITICS.md has since pinned both - TV 2's count, and 2027 and 2028 as two steps of the law rather than two dates for one - and the replacement states them."
    },
    "replaced_by": [
     "C-NI-L5"

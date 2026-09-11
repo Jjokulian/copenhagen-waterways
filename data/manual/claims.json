@@ -277,9 +277,10 @@
    "rests_on": [
     "G-PREDAWN",
     "D-KEMI",
-    "C-WORKDAY"
+    "X-CYCLES",
+    "D-ML-CLOCKCONV"
    ],
-   "note": "Not a finding about the sea. A statement about when people are willing to be on a boat.",
+   "note": "Not a finding about the sea. It reflects when sampling is done.",
    "basis": "assessed",
    "assessment": {
     "counts_as": "surface oxygen samples whose clock is an observed time, taken with the sun below the horizon - night and civil twilight - at a station's own position and instant",
@@ -288,8 +289,8 @@
     "would_change": "Moored continuous sensors, or one season of deliberate pre-dawn sampling at a handful of stations."
    },
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (re-read against the new clock and Monte Carlo results, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (revised from fork w2-op's proposal and read against what it rests on: C-PREDAWN now rests on the observed sampling hours instead of C-WORKDAY and no longer states a motive; C-SIDIN and C-K1-BLOCKED lose the page history from their notes; each states its reasoning. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "assessment.reasoning {fig:predawn_night_n}": "665",
      "assessment.reasoning {fig:predawn_twilight_n}": "944",
@@ -297,9 +298,16 @@
      "assessment.confidence {calc:predawn_night_n + predawn_twilight_n|,}": "1,609",
      "G-PREDAWN.detail {calc:predawn_night_n + predawn_twilight_n|,}": "1,609",
      "G-PREDAWN.detail {fig:surface_o2_n}": "62,069",
-     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "texts": "6166785886794b35",
+     "node G-PREDAWN": "547309bf89fbfbcc",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node X-CYCLES": "bd95d60d0d6bcb33",
+     "node D-ML-CLOCKCONV": "3feebe7299751b53"
     }
-   }
+   },
+   "stance": "ours",
+   "because": "G-PREDAWN counts the night and twilight samples among the surface oxygen samples whose clock is an observed time, from cycles.py's sun classes; clock_convention.json gives the hours at which samples were observed. The minimum falls before dawn, when almost none were taken, so nothing in the archive constrains it."
   },
   {
    "id": "C-DEPTH-UNTIMED",
@@ -374,7 +382,7 @@
    "basis": "computed",
    "confirmed": {
     "on": "2026-09-11",
-    "by": "Claude (read fork w1-ni's revision: stance and reasoning added, C-DE-VOID - already named in the note as its qualifier - now among what it rests on; the counts and wording of the claim read against manure.py's join. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "claim {fig:manure_14_businesses}": "2,662",
      "claim {fig:manure_14_share_biz}": "28",
@@ -385,7 +393,7 @@
      "node D-CHR": "eb34b0ed55ee3978",
      "node D-MARKER": "1fb78a4a370f7570",
      "node X-MANURE": "2893dee3c11aca68",
-     "rests on C-DE-VOID": "b2c0083018413865"
+     "rests on C-DE-VOID": "9f3e1433c0918590"
     }
    }
   },
@@ -395,19 +403,22 @@
    "page": "INCIDENCE.md",
    "claim": "Danish nitrogen rules do not count animals. The animal unit has no legal force; the binding ceiling is {read:BEK931-2024:170|divideret med 170 kg} kg organic N per hectare of harmoniareal.",
    "rests_on": [
-    "D-BEK931"
+    "D-BEK931",
+    "E-IN-B931-CEIL",
+    "E-IN-B673-S3",
+    "E-IN-B677-S3"
    ],
    "note": "Read from the regulation itself. Qualifies C-MANURE, which is framed on DE/ha thresholds.",
    "basis": "assessed",
    "assessment": {
     "counts_as": "occurrences of dyreenhed (the animal unit) as a regulatory unit in the operative text of BEK 931/2024",
-    "reasoning": "Read from retsinformation's primary text: dyreenhed occurs {count:BEK931-2024:dyreenhed} times, harmoniareal {count:BEK931-2024:harmoniareal}. § 14 binds on {read:BEK931-2024:170|divideret med 170 kg} kg organic nitrogen per hectare of harmoniareal; § 26 stk. 3 keeps the {read:BEK931-2024:230|230 kg kvælstof} kg permissions only as a transitional provision.",
-    "confidence": "High for BEK 931 itself, which was read here. Medium for the general statement that the animal unit has no legal force: the other instruments (BEK 673, BEK 677, LOV 759) were read by the incidence agent and not by a second reader.",
+    "reasoning": "Read from retsinformation's primary text: dyreenhed occurs {count:BEK931-2024:dyreenhed} times, harmoniareal {count:BEK931-2024:harmoniareal}. § 14 binds on {read:BEK931-2024:170|divideret med 170 kg} kg organic nitrogen per hectare of harmoniareal; § 26 stk. 3 continues the old order's conditions (`§ 15 stk. 3-12` and § 25) for holdings that held the {read:BEK931-2024:230|230 kg kvælstof} kg permission; it does not continue the permission itself (`§ 15 stk. 1-2`).",
+    "confidence": "High: BEK 931, BEK 673 and BEK 677 are pinned and searched each time a page is built, and LOV 759 is pinned. The general statement that the animal unit has no legal force rests on those texts; other instruments were not searched.",
     "would_change": "An operative regulation setting a limit in dyreenheder, or a court or agency reading that the unit still binds through another route."
    },
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "claim {read:BEK931-2024:170|divideret med 170 kg}": "170",
      "assessment.reasoning {count:BEK931-2024:dyreenhed}": "0",
@@ -416,9 +427,18 @@
      "assessment.reasoning {read:BEK931-2024:230|230 kg kvælstof}": "230",
      "D-BEK931.detail {count:BEK931-2024:dyreenhed}": "0",
      "D-BEK931.detail {count:BEK931-2024:harmoniareal}": "38",
-     "pinned BEK931-2024": "dfcd26d1b5aa26fa"
+     "pinned BEK931-2024": "dfcd26d1b5aa26fa",
+     "texts": "9f3e1433c0918590",
+     "node D-BEK931": "68380b056cddcaa6",
+     "node E-IN-B931-CEIL": "8e050903c2bfd6d7",
+     "node E-IN-B673-S3": "7e2f890628e9dbe3",
+     "pinned BEK673-2026": "ab9e90fdf0bde76b",
+     "node E-IN-B677-S3": "e13b1ebce667631b",
+     "pinned BEK677-2026": "55304f99a724dd26"
     }
-   }
+   },
+   "stance": "ours",
+   "because": "Read from the pinned regulations: the word dyreenhed does not occur in BEK 931, BEK 673 or BEK 677, and BEK 931 §14 sets the ceiling in kilograms of organic nitrogen per hectare of harmoniareal."
   },
   {
    "id": "C-NO-BUFFER",
@@ -433,17 +453,23 @@
    "note": "A FLOOR, not a count. {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}% of the herd is on businesses filing no accounts, and the filers are the large end.",
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "claim {fig:nobuf_n}": "154",
      "claim {fig:nobuf_years}": "1.9",
      "note {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}": "76.3",
      "D-ACCOUNTS.label {fig:accounts_filed}": "1,630",
      "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}": "76.3",
-     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:ha_none / ha_total * 100|.1f}": "81.0"
+     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:ha_none / ha_total * 100|.1f}": "81.0",
+     "texts": "dc4067e2763391a7",
+     "node D-ACCOUNTS": "c55f26444116abca",
+     "node X-SOCIAL": "55bc633a2c9c2130",
+     "rests on C-DE-VOID": "9f3e1433c0918590"
     }
-   }
+   },
+   "stance": "ours",
+   "because": "Counted by intersection() in socialcontext.py over the filed accounts: holdings at or above the indicative upper-threshold line or landless, with an equity ratio below the stated line. A floor on the count, because the businesses that file nothing cannot be counted."
   },
   {
    "id": "C-SIDIN",
@@ -454,7 +480,7 @@
     "D-KEMI",
     "X-RESCORE"
    ],
-   "note": "The DRIVER only. The assemblage response remains unscoreable - see G-SPECIES. An earlier version said the rise contradicted the premise of the hypothesis, comparing a low year with a high one.",
+   "note": "The DRIVER only. The assemblage response remains unscoreable - see G-SPECIES.",
    "value_from": {
     "file": "data/derived/rescore.json",
     "path": "tests.K1_si_din_molar_surface.2025.median",
@@ -462,16 +488,22 @@
    },
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (re-read after writing its hypothesis references as checked entities, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (revised from fork w2-op's proposal and read against what it rests on: C-PREDAWN now rests on the observed sampling hours instead of C-WORKDAY and no longer states a motive; C-SIDIN and C-K1-BLOCKED lose the page history from their notes; each states its reasoning. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "claim {fig:sidin_1985}": "1.11",
      "claim {fig:sidin_2025}": "3.41",
      "claim {fig:sidin_1994}": "1.05",
      "claim {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
-     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "hypothesis K1": "8df5f45d3e4fc152",
+     "texts": "67d9a2eb82f53de7",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node X-RESCORE": "979c0e7191811ad6"
     }
-   }
+   },
+   "stance": "ours",
+   "because": "rescore.py takes the median molar Si:DIN of surface cells, year by year, from the water-chemistry extract; the years named are read from its output. The median pools every month, so it cannot isolate the pre-bloom pool the hypothesis is about."
   },
   {
    "id": "C-K1-BLOCKED",
@@ -481,7 +513,7 @@
    "rests_on": [
     "G-SPECIES"
    ],
-   "note": "A blocker behind a blocker: {ref:K1} was listed as waiting on the vandkemi fetch, which has happened.",
+   "note": "{ref:K1}'s assemblage half needs phytoplankton counts, which are not held: the water-chemistry fetch did not supply them, and the CMEMS plankton-type files are satellite retrievals, not counts.",
    "basis": "assessed",
    "assessment": {
     "counts_as": "phytoplankton assemblage counts at stations where Si:DIN is measured",
@@ -490,14 +522,19 @@
     "would_change": "Fetching OBIS eMoF for the Danish stations and finding assemblage data co-located with nutrients."
    },
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (re-read after writing its hypothesis references as checked entities, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (revised from fork w2-op's proposal and read against what it rests on: C-PREDAWN now rests on the observed sampling hours instead of C-WORKDAY and no longer states a motive; C-SIDIN and C-K1-BLOCKED lose the page history from their notes; each states its reasoning. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "note {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
      "G-SPECIES.detail {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
-     "G-SPECIES.detail {ref:K2}": "K2: Stoichiometric imbalance decides who grows"
+     "G-SPECIES.detail {ref:K2}": "K2: Stoichiometric imbalance decides who grows",
+     "hypothesis K1": "8df5f45d3e4fc152",
+     "texts": "f115af8dbc0a3b2e",
+     "node G-SPECIES": "ca9417ac17657dbd"
     }
-   }
+   },
+   "stance": "ours",
+   "because": "Scoring a fall in the diatom share needs counts of diatoms against other phytoplankton; no such series is held."
   },
   {
    "id": "C-FLOOD-AREA",

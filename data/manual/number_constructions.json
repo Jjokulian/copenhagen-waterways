@@ -345,10 +345,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in what a claim's confirmation records - the register entries it names; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: claims.py changed only in letting a stipulated rule stand on its stated reasoning, as an argued claim can; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "7e97fa99980414b6"
+     "scripts/claims.py": "8b308de091504daf"
     }
    }
   },
@@ -386,10 +386,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in what a claim's confirmation records - the register entries it names; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: claims.py changed only in letting a stipulated rule stand on its stated reasoning, as an argued claim can; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "7e97fa99980414b6"
+     "scripts/claims.py": "8b308de091504daf"
     }
    }
   },
@@ -467,7 +467,7 @@
     "data/manual/claims.d/*.json#params"
    ],
    "confirmed": {
-    "by": "fork w1-pg (re-read: the new fragment data/manual/claims.d/w1-pg.json holds no params, so no stated value was added or changed; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read every params block in the claims fragments: the only stated values added are w1-lr's IUPAC atomic weights of carbon, hydrogen and nitrogen, each with its reason; the wave-2 fragments that made this stale add none. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "data/manual/claims.json#params": "762634f9547c3c3b",
@@ -484,6 +484,13 @@
      "data/manual/claims.d/w1-ni.json#params": "missing",
      "data/manual/claims.d/w1-ob.json#params": "missing",
      "data/manual/claims.d/w1-pg.json#params": "missing",
+     "data/manual/claims.d/w2-cs.json#params": "missing",
+     "data/manual/claims.d/w2-hyp.json#params": "44136fa355b3678a",
+     "data/manual/claims.d/w2-in.json#params": "missing",
+     "data/manual/claims.d/w2-kp.json#params": "missing",
+     "data/manual/claims.d/w2-op.json#params": "missing",
+     "data/manual/claims.d/w2-pc.json#params": "missing",
+     "data/manual/claims.d/w2-po.json#params": "missing",
      "data/manual/claims.d/water.json#params": "missing"
     }
    }
@@ -661,13 +668,13 @@
     "scripts/rivermap.py"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "fork w2-cs (re-read solutions.py: compute() and every constant it uses are identical to the version last read, checked by comparing their syntax trees; only page() changed - rewritten for checked claims - and the unused commit constant was replaced by the path to outfalls.json. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/conveyance.py": "84c7ccecce69230f",
      "scripts/figures.py": "ac3cebdb3d20ce7b",
      "data/raw/skp_veje_tunneller_kk.geojson": "802de7e3314172f8",
-     "scripts/solutions.py": "6dc153443dead1de",
+     "scripts/solutions.py": "84338edb81d29722",
      "scripts/rivermap.py": "eae940ce0c09aa37"
     }
    }
@@ -1181,10 +1188,10 @@
     "../danish-livestock/docs/data-sources.md"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "fork w2-in (re-read: socialcontext.py's compute part - read_registers() through compute() and main() - is identical to the version last read, verified by diff; only the page-writing part was rewritten into checked claims and the self-quotation helper removed. The fields covered are written by the unchanged code. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/socialcontext.py": "2e64ab1e9f631e41",
+     "scripts/socialcontext.py": "4cb7546c41711811",
      "../danish-livestock/data/chr_2024.json": "6dec4ea4405d56e5",
      "../danish-livestock/data/land_by_cvr.json": "5abc496953b6ac82",
      "../danish-livestock/data/cvr_raw.jsonl": "f77642e911523557",
@@ -1501,12 +1508,12 @@
     "docs/hypodrafts/K1.md"
    ],
    "confirmed": {
-    "by": "Claude (re-read: HYPOTHESES.md changed only in two sentences outside K1 - B2's stormwater volume total and E6's sediment points, now filled from data. hypotheses.py, which writes the page, was verified by hash to differ only in those two sentences and the values they read, so the K1 section this declaration cites is unchanged. 2026-09-11; not yet read by the project owner)",
+    "by": "fork w2-hyp (re-read: HYPOTHESES.md changed in other entries only - measurements moved to HYPOTHESIS_DATA.md, constants read from pins; the K1 section this declaration cites is identical apart from link targets, verified by comparing it with the committed page. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/rescore.py": "0f053842cbb98d60",
      "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3",
-     "docs/HYPOTHESES.md": "e5afa2fff502c434",
+     "docs/HYPOTHESES.md": "4ece3f8f0ef80d64",
      "docs/hypodrafts/K1.md": "8993a26b5b6217ab"
     }
    }

@@ -1,0 +1,2856 @@
+{
+ "_what": "Fork w2-po: POLITICS.md's claims, the pinned pages of every statement's source, and the passages retired from it.",
+ "sources": {
+  "PO-AAA256E2": {
+   "title": "mgtp.dk, 2025-06-19: oeget-regulering-af-kvaelstofudledning",
+   "url": "https://mgtp.dk/nyheder/2025/jun/oeget-regulering-af-kvaelstofudledning",
+   "retrieved": "2026-09-11",
+   "sha256": "2bedcf7b649de12fa48403372619c2842e4ffbbd078e05d025c2e300e8d869fc",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-B75F2381": {
+   "title": "mgtp.dk, 2026-06-19: stor-reduktion-af-kvaelstofudledningen-fra-landbruget-skal-genoprette-",
+   "url": "https://mgtp.dk/nyheder/2026/jun/stor-reduktion-af-kvaelstofudledningen-fra-landbruget-skal-genoprette-livet-under-vandoverfladen",
+   "retrieved": "2026-09-11",
+   "sha256": "54ba0189df814d9e12af25d8f9281e6c80910ec07e5dd5e5cb2aab47c327b298",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-F064554D": {
+   "title": "dr.dk, 2026-08-28: minister-staar-fast-trods-kritik-loven-skal-gennemfoeres-i-aar",
+   "url": "https://www.dr.dk/nyheder/indland/minister-staar-fast-trods-kritik-loven-skal-gennemfoeres-i-aar",
+   "retrieved": "2026-09-11",
+   "sha256": "16d028bacf30c14eeddc6d0b36eaa8ccd749b4f5b2d83742a1f4419fe0e7d786",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-64EF563D": {
+   "title": "dknyt.dk, 2026-08-31: 923a6ca1-9d0c-43aa-86ff-eac6d502e6f9",
+   "url": "https://www.dknyt.dk/ritzau/923a6ca1-9d0c-43aa-86ff-eac6d502e6f9",
+   "retrieved": "2026-09-11",
+   "sha256": "1caf1e669ec20f8883e6746bc85878945ba30b3e414f7f50de056950913328b8",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-6F185AEE": {
+   "title": "maskinbladet.dk, 2026-08-31: 92751-ministeren-for-mange-har-gjort-for-lidt-i-for-lang-tid",
+   "url": "https://www.maskinbladet.dk/artikel/92751-ministeren-for-mange-har-gjort-for-lidt-i-for-lang-tid",
+   "retrieved": "2026-09-11",
+   "sha256": "5771738aaeff4d518a3595c88b6bc6b9c69ae93c82d675437e5b8ae158ae8a33",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-F01870FD": {
+   "title": "dr.dk, 2026-09-01: folketinget-friholder-groentsager-fra-kvaelstofregulering",
+   "url": "https://www.dr.dk/nyheder/politik/folketinget-friholder-groentsager-fra-kvaelstofregulering",
+   "retrieved": "2026-09-11",
+   "sha256": "8787415b167090212705ff8017498b86a4f39b4b93e49d1ef25b602ec43a0d77",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-4646A8EE": {
+   "title": "effektivtlandbrug.landbrugnet.dk, 2026-09-03: folketinget-vedtager-goedskningsloven-l5",
+   "url": "https://effektivtlandbrug.landbrugnet.dk/artikler/politik/124629/folketinget-vedtager-goedskningsloven-l5",
+   "retrieved": "2026-09-11",
+   "sha256": "6d638e4597666e84a238ea0ae08edc79a1447d4bc190b7169da3783fe036e156",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-D6C1D4AF": {
+   "title": "altinget.dk, 2026-09-03: ministeren-tog-bladet-fra-munden-da-kvaelstofloven-skulle-vedtages-man",
+   "url": "https://www.altinget.dk/foedevarer/artikel/ministeren-tog-bladet-fra-munden-da-kvaelstofloven-skulle-vedtages-man-kan-godt-lade-som-om-at-virkeligheden-er-noget-andet-men-det-er-den-ikke",
+   "retrieved": "2026-09-11",
+   "sha256": "12fa96047a39f47e2e438d373da1db5db18ee13ebf11a20d80131dfa709c3caa",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-820BD1A8": {
+   "title": "maskinbladet.dk, 2026-08-31, 2026-09-03: 92804-godskningsloven-vedtaget",
+   "url": "https://www.maskinbladet.dk/artikel/92804-godskningsloven-vedtaget",
+   "retrieved": "2026-09-11",
+   "sha256": "2a86c4af9f77e1da30eb366593f6cdea4f1c511cfa2d17238462c0dd788c8fd5",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-729ED65B": {
+   "title": "altinget.dk, 2025-12-03: regeringen-lander-historisk-kvaelstofaftale-dansk-landbrug-kommer-til-",
+   "url": "https://www.altinget.dk/artikel/regeringen-lander-historisk-kvaelstofaftale-dansk-landbrug-kommer-til-at-staa-over-for-en-kaempe-opgave",
+   "retrieved": "2026-09-11",
+   "sha256": "5ff9d170251c7c4acc7e5814f04b3765bc7719996364c305df2f67c5c98c7806",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-D9832227": {
+   "title": "kristeligt-dagblad.dk, 2026-09-03: folketinget-vedtager-omstridt-lov-om-kvaelstofregulering",
+   "url": "https://www.kristeligt-dagblad.dk/danmark/folketinget-vedtager-omstridt-lov-om-kvaelstofregulering",
+   "retrieved": "2026-09-11",
+   "sha256": "776144cadf8f7537cd966580836fa993a5d326eea45ccb17e90c24ba3356b0a5",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-4FEA7DCD": {
+   "title": "effektivtlandbrug.landbrugnet.dk, 2026-09-03: goedskningslov-vedtaget-efter-haard-borgerlig-strid",
+   "url": "https://effektivtlandbrug.landbrugnet.dk/artikler/politik/124624/goedskningslov-vedtaget-efter-haard-borgerlig-strid",
+   "retrieved": "2026-09-11",
+   "sha256": "ceb65c85177cc8683460ae1357786c33cb330848372dace19d0f6ff0fcfbec68",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-EA91CE9E": {
+   "title": "tidende.dk, 2026-09-03: 169918",
+   "url": "https://tidende.dk/politik/omdiskuteret-lov-vedtaget/169918",
+   "retrieved": "2026-09-11",
+   "sha256": "274ac05687e7250cd5dba26fb9f4e06a63370df73bec674c27cc664bdc0d96cb",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-6AC2C1B9": {
+   "title": "kristeligt-dagblad.dk, 2026-09-01: folketinget-friholder-groentsager-fra-kvaelstofregulering-i-2027",
+   "url": "https://www.kristeligt-dagblad.dk/danmark/folketinget-friholder-groentsager-fra-kvaelstofregulering-i-2027",
+   "retrieved": "2026-09-11",
+   "sha256": "e1392793cb3b608e881099fa646be9e3a18ecb54908c7b60149d1a306957a09a",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-F08A29CB": {
+   "title": "dn.dk, 2025-12-03: ny-kvaelstofaftale-er-et-vigtigt-skridt-mod-bedre-havmiljo-og-natur",
+   "url": "https://www.dn.dk/nyheder/2025/ny-kvaelstofaftale-er-et-vigtigt-skridt-mod-bedre-havmiljo-og-natur/",
+   "retrieved": "2026-09-11",
+   "sha256": "2b10dade14733a6e78aa8687c21cf8877b81f910f0b8a1ecf7f59c1436bb9c72",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-CB115071": {
+   "title": "sportsfiskeren.dk, 2025-12-03: ny-kvaelstofaftale-et-stort-skridt-for-havmiljoeet-men-arealomlaegning",
+   "url": "https://www.sportsfiskeren.dk/natur-og-fiskeripolitik/nyheder/2025/12/ny-kvaelstofaftale-et-stort-skridt-for-havmiljoeet-men-arealomlaegning-kan-blive-forsinket",
+   "retrieved": "2026-09-11",
+   "sha256": "a50c9cace2e74d9fb1aaace9acca8062428eaf603d2e2fc3462125ed5d282d87",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-37C01E54": {
+   "title": "lf.dk, 2025-12-03: kvaelstofaftale-er-et-unoedvendigt-benspaend-for-dansk-landbrug",
+   "url": "https://lf.dk/aktuelt/artikler/2025/kvaelstofaftale-er-et-unoedvendigt-benspaend-for-dansk-landbrug/",
+   "retrieved": "2026-09-11",
+   "sha256": "610dcc55b7d4f9eecf499a646d6020bea7d9cbccd91129c806203c9563debc24",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-88F1B4F1": {
+   "title": "effektivtlandbrug.landbrugnet.dk, 2025-12-05: rystet-over-tilvalg-af-modeller-og-fravalg-af-faglighed-i-den-nye-kvae",
+   "url": "https://effektivtlandbrug.landbrugnet.dk/artikler/politik/118267/rystet-over-tilvalg-af-modeller-og-fravalg-af-faglighed-i-den-nye-kvaelstofaftal",
+   "retrieved": "2026-09-11",
+   "sha256": "ae333d1283a289988a6af3ad3ca3b2e0402e35181a63c38e4f086b37fc266c01",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-E44E93FE": {
+   "title": "okonu.dk, 2025-12-03: ny-kvaelstofaftale-er-landet-og-hverken-lf-eller-oekologisk-landsforen",
+   "url": "https://okonu.dk/politik-og-udvikling/ny-kvaelstofaftale-er-landet-og-hverken-lf-eller-oekologisk-landsforening-er-glade",
+   "retrieved": "2026-09-11",
+   "sha256": "8573a904149b8b7ed0013ab2dde89ff9f6797bd9161c14f6c1beba13a1dce060",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-2268435C": {
+   "title": "via.ritzau.dk, 2025-08-27: nyt-retentionskort-er-nu-tilgaengeligt",
+   "url": "https://via.ritzau.dk/pressemeddelelse/14544861/nyt-retentionskort-er-nu-tilgaengeligt?publisherId=13559834&lang=da",
+   "retrieved": "2026-09-11",
+   "sha256": "c064e5713478a3f40bae98fc93f854a918ff1f3b72404a09908b005e5c53f08b",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "PO-E8780710": {
+   "title": "denmark.representation.ec.europa.eu, 2026-01-30: danmark-opfordres-til-sikre-overholdelse-af-vandrammedirektivet-2026-0",
+   "url": "https://denmark.representation.ec.europa.eu/news/danmark-opfordres-til-sikre-overholdelse-af-vandrammedirektivet-2026-01-30_da",
+   "retrieved": "2026-09-11",
+   "sha256": "f31929cbdd8b64c479d5abf7ca725dfb9b53b52fcca91aec662626ec0bae64e4",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "D-PO-RECORD",
+   "kind": "held",
+   "label": "The collected public statements\\ndata/manual/politics.json",
+   "detail": "Every public statement and party position collected by fetching and extracting the cited pages on the collection date, each with the collector's claim class, flags and note. Its source pages are pinned in data/derived/pins/."
+  },
+  {
+   "id": "D-PO-CAVEATS",
+   "kind": "held",
+   "label": "The collection's own caveats",
+   "detail": "The `_caveats` of data/manual/politics.json: what could not be retrieved (the floor transcript, text behind a paywall), how the requirement and the agricultural share are built, and where party positions were sought."
+  },
+  {
+   "id": "D-PO-TALLIES",
+   "kind": "held",
+   "label": "Tallies over the record\\ndata/derived/politics.json",
+   "detail": "Counted by politics.py from the record: statements by camp, class, flag and publisher, the notes flagging spelling or typography, quotations giving an interval, and the check of each quotation against its pinned source."
+  },
+  {
+   "id": "X-PO-POLITICS",
+   "kind": "script",
+   "label": "politics.py",
+   "detail": "Counts the tallies; assigns each statement to a camp by its id prefix; checks every quotation against the pinned copy of its source page; reads every figure a speaker states from a pinned copy and refuses one it cannot; finds the parties that voted against with no claim about the figures."
+  },
+  {
+   "id": "A-PO-CLASSES",
+   "kind": "assumption",
+   "label": "The collector's classes\\nand flags are readings",
+   "detail": "Each statement's claim class and flags were assigned by the collector at capture. They are readings of the text, not checked against anything else, and another reader could class some differently."
+  },
+  {
+   "id": "A-PO-CAMPS",
+   "kind": "assumption",
+   "label": "Camps by id prefix",
+   "detail": "A statement's camp is set by its id prefix in politics.py, a mechanical rule: a speaker is counted in the camp of the body the prefix names."
+  },
+  {
+   "id": "U-PO-TRANSCRIPT",
+   "kind": "untraced",
+   "label": "Trail ends: no floor transcript",
+   "detail": "Per the collection's record of its capture, ft.dk and folketingstidende.dk render the debate text through JavaScript and the PDF path was refused behind Cloudflare. Not re-tried in this pass (2026-09-11). Every chamber quotation is therefore checked against a press page, not the official record."
+  },
+  {
+   "id": "U-PO-FIRSTREADING",
+   "kind": "untraced",
+   "label": "Trail ends: the first-reading date",
+   "detail": "The collection's note gives a date for the bill's first reading with no source. The pinned pages were searched on 2026-09-11 for that reading and its date; the FødevareDanmark release says only that it was the week before, and no pinned page gives the day."
+  },
+  {
+   "id": "E-PO-VOTE",
+   "kind": "external",
+   "source": "POL-TV2-20260903",
+   "said": "medlemmer af Folketinget stemte for loven",
+   "label": "TV 2 live: the vote on the bill",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-VOTELIST",
+   "kind": "external",
+   "source": "PO-4646A8EE",
+   "said": "Peter Juel-Jensen (V), Søren Gade (V), Preben Bang Henriksen (V), Anni Matthiesen (V), Amanda Heitmann (V)",
+   "label": "Effektivt Landbrug: how the votes fell",
+   "detail": "The list of those voting for and against, by party, with the Venstre members who voted against by name; Dansk Folkeparti, Danmarksdemokraterne and Borgernes Parti among those against."
+  },
+  {
+   "id": "E-PO-V18",
+   "kind": "external",
+   "source": "PO-64EF563D",
+   "said": "Venstre-folketingsmedlemmer dog stemme imod lovforslaget",
+   "label": "Ritzau: Venstre members against their party's bill",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-L5-2027",
+   "kind": "external",
+   "source": "PO-4646A8EE",
+   "said": "erstattes den nuværende markregulering af en udledningsbaseret regulering",
+   "label": "Effektivt Landbrug: what the law replaces, and from when",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-HAMMER",
+   "kind": "external",
+   "source": "POL-EL-20260623",
+   "said": "den såkaldte kvælstofhammer ikke kan ramme før",
+   "label": "Effektivt Landbrug: the kvælstofhammer deferred",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-GEUS-RET",
+   "kind": "external",
+   "source": "PO-2268435C",
+   "said": "Kvælstofretentionen kan i praksis ikke måles direkte",
+   "label": "GEUS and Aarhus University: retention cannot be measured directly",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-GEUS-FACIT",
+   "kind": "external",
+   "source": "PO-2268435C",
+   "said": "ikke en facitliste",
+   "label": "GEUS: the map is decision support, not an answer key",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-DHI-ACC",
+   "kind": "external",
+   "source": "DHI-MODEL-DEL1-2015",
+   "said": "kan man ikke på traditionel vis bestemme, hvor sikkert modellerne estimerer målbelastningen",
+   "label": "DHI and Aarhus University (DCE): why the target load's accuracy cannot be established",
+   "detail": "Method report for Naturstyrelsen, part one, December 2014, revised 2015; its authors are from DHI and Aarhus University (DCE)."
+  },
+  {
+   "id": "E-PO-DHI-ENS",
+   "kind": "external",
+   "source": "DHI-MODEL-DEL1-2015",
+   "said": "Den bedste metode til at bestemme usikkerheder på modelscenarier er ved ensemble modellering",
+   "label": "DHI and Aarhus University (DCE): uncertainty from the spread between models",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-MGTP-MAAL",
+   "kind": "external",
+   "source": "POL-MGTP-20251203",
+   "said": "i takt med, at der kommer nye målinger af, hvor meget kvælstofudledning vandmiljøet kan klare",
+   "label": "The ministry: quotas adjusted as new measurements arrive",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-MGTP-PKG",
+   "kind": "external",
+   "source": "POL-MGTP-20251203",
+   "said": "kvælstofreguleringen og den aftalte spildevandsindsats",
+   "label": "The ministry: the fraction attached to the package",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-MGTP-HUG",
+   "kind": "external",
+   "source": "PO-B75F2381",
+   "said": "Den nye model ventes med ét hug at fjerne to tredjedele af de udledninger",
+   "label": "The ministry: the fraction attached to the model",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-RABJERG-ILT",
+   "kind": "external",
+   "source": "PO-B75F2381",
+   "said": "for meget kvælstof på landbrugets marker har ført til iltsvind",
+   "label": "The minister: nitrogen has led to oxygen depletion",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-SO-EVT",
+   "kind": "external",
+   "source": "POL-SO-2024",
+   "said": "evt. iltsvind",
+   "label": "The second opinion: possibly oxygen depletion",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-SO-44",
+   "kind": "external",
+   "source": "POL-SO-2024",
+   "said": "Danmark ikke kan anvende artikel",
+   "label": "The second opinion: the postponement-article assessment",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-SO-EUD",
+   "kind": "external",
+   "source": "POL-SO-2024",
+   "said": "EU-Domstolen ikke har taget direkte stilling til spørgsmålet",
+   "label": "The second opinion: the Court has not ruled",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-SO-ROBUST",
+   "kind": "external",
+   "source": "POL-SO-2024",
+   "said": "den danske tilgang til opgørelse af kvælstofindsatsbehovet er robust",
+   "label": "The second opinion: the approach is robust",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-EC-GENERAL",
+   "kind": "external",
+   "source": "PO-E8780710",
+   "said": "forpligtelsen til at foretage regelmæssige revisioner af vandtilladelser",
+   "label": "The Commission: what the infringement concerns",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-EC-PERMITS",
+   "kind": "external",
+   "source": "PO-E8780710",
+   "said": "I Danmark revideres vandindvindingstilladelser ikke",
+   "label": "The Commission: the Danish paragraph, on abstraction permits",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-GP-ILT",
+   "kind": "external",
+   "source": "POL-GP-20260825",
+   "said": "har skabt voldsomt iltsvind og livløse danske fjorde",
+   "label": "Greenpeace: nitrogen has created oxygen depletion",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-GP-EXPERTS",
+   "kind": "external",
+   "source": "POL-GP-20250619",
+   "said": "Eksperter peger imidlertid på, at det reelle behov for at sænke kvælstofudledningerne er på den gode side af",
+   "label": "Greenpeace: experts point to a higher need",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-GP-ESTIMAT",
+   "kind": "external",
+   "source": "POL-GP-20250619",
+   "said": "et estimat",
+   "label": "Greenpeace: its total as an estimate",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-RITZAU-EXPERTS",
+   "kind": "external",
+   "source": "POL-TV2-20251203",
+   "said": "Forskere vurderer dog, at der er behov for en reduktion på",
+   "label": "Ritzau via TV 2: what researchers assess",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-EL-MAAL",
+   "kind": "external",
+   "source": "POL-EL-20260623",
+   "said": "Ifølge Mars-databasen er der i skrivende stund indtegnet indsatser",
+   "label": "Effektivt Landbrug: the target stated as målet",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-DANVA",
+   "kind": "external",
+   "source": "DANVA-2024",
+   "said": "naturlige baggrundskilder, som bidrager med",
+   "label": "DANVA: the natural-background share beside the agricultural one",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-STOJBERG",
+   "kind": "external",
+   "source": "PO-820BD1A8",
+   "said": "vi vil også have rent drikkevand, rene fjorde og havmiljø, men omstillingen skal være baseret på sund fornuft",
+   "label": "Inger Støjberg: the objective as common ground",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-ROSENKILDE",
+   "kind": "external",
+   "source": "PO-820BD1A8",
+   "said": "Vi når ikke at opfylde EU vandrammedirektiv med vedtagelsen af",
+   "label": "Alternativet: the bill will not meet the directive",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-EL-DMBIO",
+   "kind": "external",
+   "source": "POL-DMBIO-2026",
+   "said": "Enhedslisten er ikke med i aftalen om Grøn Trepart",
+   "label": "Enhedslisten: outside the tripartite",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-OKOLOGI",
+   "kind": "external",
+   "source": "PO-E44E93FE",
+   "said": "ønsker vi maksimalt pres på udledning af kvælstof til vandmiljøet",
+   "label": "Økologisk Landsforening: maximal pressure on discharge",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-LOSE",
+   "kind": "external",
+   "source": "PO-729ED65B",
+   "said": "Det er en meget, meget hård regulering i dele af landet",
+   "label": "Stephanie Lose: a very hard regulation in parts of the country",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-DR-PARA",
+   "kind": "external",
+   "source": "POL-DR-20260827",
+   "said": "anerkender, at grundlaget for at beregne udvaskningen af kvælstof ved produktion af grøntsager er dårligere",
+   "label": "DR's paraphrase of the minister",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-TV2-PARA",
+   "kind": "external",
+   "source": "POL-TV2-20260903",
+   "said": "giver landbruget skylden for, at vandmiljøet flere steder i Danmark har det svært",
+   "label": "TV 2's paraphrase of an MP",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-FDK-WEEK",
+   "kind": "external",
+   "source": "POL-FDK-2026",
+   "said": "I sidste uge førstebehandlede Folketinget en ny gødskningslov",
+   "label": "FødevareDanmark: the first reading was the week before",
+   "detail": ""
+  },
+  {
+   "id": "E-PO-FDK-TITLE",
+   "kind": "external",
+   "source": "POL-FDK-2026",
+   "said": "Nye kvælstofkrav til landbruget bygger på tal fra bondestenalderen",
+   "label": "FødevareDanmark: the release and its dateline",
+   "detail": ""
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-PO-SCOPE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "This page studies the public sentences about the nitrogen policy - what was asserted, by whom, when, and what kind of claim each is - and borrows no other page's conclusion about whether they were right.",
+   "because": "The page's sections are the record of the sentences, their classification and readings of them; none imports a finding about the water from another page.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Every other page here studies the sea, or studies how a public claim about the sea was assembled out of measurements. This page studies a third thing: **the sentences**. Not whether they were right - other pages do that, and this one borrows none of their conclusions - but what precisely was asserted, by whom, on what date, and what kind of claim each assertion is.",
+     "texts": "facb8a3cb665ced2"
+    }
+   }
+  },
+  {
+   "id": "C-PO-MATERIAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The record is the collected verbatim public statements about the nitrogen agreement, the Green Tripartite and the law `L5` the Folketing passed; speakers and publishers are counted from it, every statement is printed, and every figure a speaker states links to a pinned copy of its page.",
+   "because": "politics.py counts statements, speakers and publishers from the collection and prints all of them; the vote is read from TV 2's pinned live page; the build reads each figure in a quotation from its source's pinned copy and refuses one it cannot.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "D-PO-TALLIES",
+    "X-PO-POLITICS",
+    "E-PO-VOTE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The material is 92 verbatim public statements about the Danish nitrogen agreement of 2025-12-03, the Green Tripartite it implements, and the law `L5` (`gødskningsloven`) that the Folketing passed 119–34 on 2026-09-03. They come from 49 distinct speakers across 18 publishers, and were collected on 2026-09-08 by fetching and extracting the cited pages. All of them are printed below in full. Every figure a speaker states is linked to a pinned copy of the page it was read from.",
+     "texts": "f46a8b217f2d3334",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node X-PO-POLITICS": "026003bbede4c337",
+     "node E-PO-VOTE": "ede79b5f9b6d2568",
+     "pinned POL-TV2-20260903": "7e35b90adf8a8d5e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RULE-NAMING",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The page records who said what and when, and attributes no motive, bad faith or fault; a difference between a sentence and its source is an observation about two texts.",
+   "because": "Motive cannot be read off a text; recording the text, the speaker and the date exactly is what a record can do.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**Naming is not blaming.** Identifying who said what, and when, is the whole point of a record and is done here exactly. Assigning motive, bad faith or fault is not a scientific operation and is not attempted anywhere on this page. Where a sentence is observed to differ from the document behind it, that is an observation about two texts. It is not an accusation, and it does not become one by being repeated.",
+     "texts": "bd6c73b975db3d75"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RULE-SEA",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "A property of the reasoning behind a claim is not a property of the sea: a thin basis for a claim does not show the sea is fine, in either political direction.",
+   "because": "The support a document gives a sentence and the condition of the water the sentence describes are different objects; evidence about the first says nothing about the second.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**A property of the reasoning is not a property of the sea.** This is the central idea of [RESIDUAL.md](RESIDUAL.md) and the constraint that matters most here. *The stated basis for this claim is thinner than the claim* is a fact about a document. *The sea is fine* is a fact about water. The first never implies the second, in either political direction.",
+     "texts": "568418b44da001a0"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NOT-SEA",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Nothing on this page is a claim about the condition of Danish coastal water.",
+   "because": "The page examines sentences and documents only; none of its sections measures the water or reports its state as a finding of its own.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**So, explicitly: nothing on this page is a claim about the condition of Danish coastal water.** Not one sentence below should be read as evidence that the marine environment is in better shape than anyone says, or in worse shape. A page about sentences cannot produce a finding about a fjord, and any reading that extracts one from here has crossed a line this page draws on purpose.",
+     "texts": "737e3888f118458e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CONTESTS-REASONING",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The best-documented objections in the record - the statements flagged as contesting the model basis, from agricultural and food organisations and from the leader of Danmarksdemokraterne, which voted against - object to the reasoning, and none of them claims the water is in acceptable condition.",
+   "because": "Counted from the collection's flags; each flagged quotation read for what it objects to, and none asserts that the water's state is acceptable. Danmarksdemokraterne's vote against is in Effektivt Landbrug's pinned list of votes.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "D-PO-TALLIES",
+    "A-PO-CLASSES",
+    "E-PO-VOTELIST"
+   ],
+   "replaces": [
+    "C-PO-OLD-LARGEST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "That cuts both ways and it is worth being blunt about the direction it cuts most often. The best-documented objections in this record - 7 statements, 6 from agricultural and food organisations and 1 from the leader of Danmarksdemokraterne, which voted against - are objections to the **reasoning**: that model outputs cannot bear the regulatory weight put on them. Whether those objections are sound or not, they do not entail that the water is in acceptable condition, and, as it happens, **none of them claims that it is**.",
+     "texts": "80a778019131bef0",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5",
+     "node E-PO-VOTELIST": "e73ce7e04a50ab33",
+     "pinned PO-4646A8EE": "6d638e4597666e84"
+    }
+   }
+  },
+  {
+   "id": "C-PO-DEFECTS-FIRST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "A collection quoted only where convenient becomes the thing it audits, so the record's defects are set out before any reading of it.",
+   "because": "Setting out the skew and the gaps first lets a reader discount every later reading by them.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "A collection of public statements that is quoted only where convenient becomes the thing it audits. So the defects come first.",
+     "texts": "ebae61841b587718"
+    }
+   }
+  },
+  {
+   "id": "C-PO-SKEW",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The government and the parties inside the agreement account for about twice as many statements as the parties outside it and the agricultural and food organisations together.",
+   "because": "Counted by camp from the collection, camps assigned by statement id prefix; the ratio is the one sum over the other.",
+   "rests_on": [
+    "D-PO-TALLIES",
+    "A-PO-CAMPS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The government and the parties inside the agreement account for **49 of 92**. The parties that stood outside it or voted against `L5` account for **9**, and the agricultural and food organisations for **14**. That is a ratio of roughly 2.1 to 1.",
+     "texts": "1ac946d71da45ffb",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node A-PO-CAMPS": "573abda30cda7b36"
+    }
+   }
+  },
+  {
+   "id": "C-PO-SKEW-CAUSES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Part of the skew is real and part an artefact of the method: ministries publish press releases where opposition parties often do not, almost no party published a standalone release on the agreement, and most of the chamber voted for `L5`.",
+   "because": "The collection's caveats record the missing party releases and the questionnaire used instead; the vote count is read from TV 2's pinned page.",
+   "rests_on": [
+    "D-PO-CAVEATS",
+    "E-PO-VOTE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Some of that is real and some of it is an artefact of the method. Ministries publish press releases and opposition parties often do not; the collection notes that almost no party published a standalone release on the 2025-12-03 agreement, so several party positions had to be taken from chamber reporting and from one pre-election questionnaire. And 119 of the 153 votes cast on `L5` were in favour, so a record proportioned to the chamber would lean the same way.",
+     "texts": "fdf2e83a9ed52f56",
+     "node D-PO-CAVEATS": "e803548fb012c535",
+     "node E-PO-VOTE": "ede79b5f9b6d2568",
+     "pinned POL-TV2-20260903": "7e35b90adf8a8d5e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-UNDERREP",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The under-representation is worst for the parties that voted against `L5` and have no claim in the record about the figures - Dansk Folkeparti and Borgernes Parti - and Moderaterne, a government party, has no separate statement at all.",
+   "because": "Computed in politics.py: the parties the collection records as voting against, less those with a number or certainty claim or a statement contesting the model basis; the votes against are in Effektivt Landbrug's pinned list. No statement names Moderaterne as its party, and the build stops if one does.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "X-PO-POLITICS",
+    "E-PO-VOTELIST"
+   ],
+   "replaces": [
+    "C-PO-OLD-WORST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "None of that makes the imbalance harmless: **a reader should assume the contesting case is under-represented here, and that the under-representation is worst for Dansk Folkeparti and Borgernes Parti.** They voted against `L5`, and the record contains no claim from either about the nitrogen figures. Moderaterne is a government party to the agreement and the record contains no separate statement from it at all.",
+     "texts": "09afc96b407be02a",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node X-PO-POLITICS": "026003bbede4c337",
+     "node E-PO-VOTELIST": "e73ce7e04a50ab33",
+     "pinned PO-4646A8EE": "6d638e4597666e84"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NGO",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The environmental organisations' statements are counted separately; every one argues the regulation should be at least as strict as it is, and Greenpeace argues the target is too low by a wide margin.",
+   "because": "Counted by camp; the organisations' quotations read for their direction; Greenpeace's higher figure is in its pinned release.",
+   "rests_on": [
+    "D-PO-TALLIES",
+    "D-PO-RECORD",
+    "E-PO-GP-EXPERTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The environmental organisations are counted separately for the same reason: they contribute 12 statements and they are not a neutral party either. Every one of them argues the regulation should be at least as strict as it is, and one - Greenpeace - argues the target itself is too low by a wide margin. A record that reads as \"industry against everyone\" would be a false picture of a record in which the environmental case is also over-represented relative to the chamber.",
+     "texts": "acdefd51185c4beb",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node E-PO-GP-EXPERTS": "27f160630c354a6f",
+     "pinned POL-GP-20250619": "a871f4b715fe7872"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OKOLOGI",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "POLITICS.md",
+   "claim": "Økologisk Landsforening contests the agreement from the other end: it wanted maximal pressure on discharge and objected that conventional farms may buy organic farmers' unused quotas.",
+   "because": "Its own words, in the pinned release that carries its statement.",
+   "rests_on": [
+    "E-PO-OKOLOGI"
+   ],
+   "holder": "Økologisk Landsforening",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "One more asymmetry, in the opposite direction, which matters for reading section 7: **the agricultural side is not one voice.** Økologisk Landsforening is counted among the agriculture and food organisations and contests the agreement from the other end - it wanted *maksimalt pres* on discharge and objected that conventional farms may buy organic farmers' unused quotas.",
+     "texts": "6e233da504bcd833",
+     "node E-PO-OKOLOGI": "64ea4b605fa6fd29",
+     "pinned PO-E44E93FE": "8573a904149b8b7e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NO-TRANSCRIPT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "No floor transcript could be retrieved, so every chamber quotation is a quotation of a press rendering: what is verified is that the publication printed the words, not that the official transcript holds them.",
+   "because": "The collection records that the Folketing's sites render the debate through JavaScript and refused the PDF; every chamber quotation's source is a press page, now pinned and checked.",
+   "rests_on": [
+    "D-PO-CAVEATS",
+    "U-PO-TRANSCRIPT",
+    "X-PO-POLITICS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The collection records that `ft.dk` and `folketingstidende.dk` render the debate text through JavaScript and that the PDF path returns `403` behind Cloudflare. **Every quotation here from the floor of the Folketing is therefore a quotation of a press rendering** - TV2, Ritzau, Maskinbladet, Effektivt Landbrug, Kristeligt Dagblad, Tidende - and not of the official record. Those renderings are ordinarily reliable and they are cited individually below, but the distinction is real: what is verified is that the publication printed those words, not that the official transcript contains them.",
+     "texts": "76a95a0f4f4c8f95",
+     "node D-PO-CAVEATS": "e803548fb012c535",
+     "node U-PO-TRANSCRIPT": "a75c54c5eee4d99a",
+     "node X-PO-POLITICS": "026003bbede4c337"
+    }
+   }
+  },
+  {
+   "id": "C-PO-TYPO",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Some quotations carry a spelling or typography oddity from the rendering, left as found and flagged in their notes; the page counts them.",
+   "because": "Counted in politics.py: the collection's notes that mention spelling or typography.",
+   "rests_on": [
+    "D-PO-TALLIES",
+    "D-PO-RECORD"
+   ],
+   "replaces": [
+    "C-PO-OLD-TYPO"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Of the quotations, 2 carry a spelling or typography oddity from the rendering, left as found and flagged in their notes.",
+     "texts": "d05b67c7cd4e83d1",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NO-PARAPHRASE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Paraphrase is never printed as quotation: where a publication paraphrases a speaker, the sentence is recorded as what the publication wrote.",
+   "because": "Every statement in the collection is marked verbatim; DR's and TV 2's paraphrases sit in the entries' notes, attributed to the publications, and both are in their pinned pages.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "E-PO-DR-PARA",
+    "E-PO-TV2-PARA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**Paraphrase is never printed as quotation.** DR writes that the minister *anerkender, at grundlaget for at beregne udvaskningen af kvælstof ved produktion af grøntsager er dårligere* than for grain; TV2 writes that a Conservative MP *giver landbruget skylden*. Neither sentence is the speaker's, so neither is attributed to a speaker here. They are recorded as what the publication wrote.",
+     "texts": "331357f8e4bcff85",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node E-PO-DR-PARA": "e4a6334054ec596f",
+     "pinned POL-DR-20260827": "3c4503256602e0b9",
+     "node E-PO-TV2-PARA": "515f9d9078e4aaed",
+     "pinned POL-TV2-20260903": "7e35b90adf8a8d5e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-PAYWALL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The Altinget entries were captured above a paywall - headline, standfirst and pull-quote text only - and no argument on the page rests on them.",
+   "because": "The collection's caveat records the paywall; none of the page's claims rests on those entries.",
+   "rests_on": [
+    "D-PO-CAVEATS",
+    "D-PO-TALLIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**Entries captured above a paywall: 3.** The Altinget entries (`rabjerg-2026-09-03-b`, `rabjerg-2026-09-03-c`, `lose-2025-12-03`) are headline, standfirst and pull-quote text only; the surrounding sentences could not be read. They are printed, marked, and **no argument on this page rests on them**.",
+     "texts": "87240560401bd63d",
+     "node D-PO-CAVEATS": "e803548fb012c535",
+     "node D-PO-TALLIES": "13c001790d78f1bb"
+    }
+   }
+  },
+  {
+   "id": "C-PO-UNDATED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Danmarks Naturfredningsforening's campaign page carrying its agricultural share was undated at capture, and is left out of the dated sequence.",
+   "because": "The collection records no date for that entry; the share is read from the pinned page.",
+   "rests_on": [
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**One entry has no date.** Danmarks Naturfredningsforening's campaign page carrying the 69 % figure was undated at capture, so it cannot be placed in any chronology, and it is not used in the dated sequence in section 4.",
+     "texts": "bde413bd8e5f0771",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-TOTALS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Of the three competing totals, two are quoted in statements in the record; the third is only in the collection's caveat and the Effektivt Landbrug article that states it as the target, and is carried through the arithmetic with that provenance.",
+   "because": "Read against the record: the Greenpeace and Ritzau statements quote their totals; no statement quotes the third, which Effektivt Landbrug's pinned article states as målet.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "D-PO-CAVEATS",
+    "E-PO-EL-MAAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**Two of the three competing totals are quoted in the record; one is not.** The figures 13,780 t and 14,800 t are each quoted in a statement below. The third, 12,776 t, appears in the collection's own caveat and **no statement in this record quotes it**; it is stated as *målet* in the Effektivt Landbrug article of 2026-06-23 that one entry is taken from, and is read from there. It is carried through the arithmetic in section 5 with that provenance attached, and no further.",
+     "texts": "815640339a7a1de6",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node D-PO-CAVEATS": "e803548fb012c535",
+     "node E-PO-EL-MAAL": "7ebf1fa0da1506c1",
+     "pinned POL-EL-20260623": "a70d1b8024cdb7ce"
+    }
+   }
+  },
+  {
+   "id": "C-PO-UNNAMED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Ritzau reports that researchers assess the need at one total and Greenpeace that experts point to a need above a higher one; neither names a researcher or a report, so from the record the two are equally uncheckable and point in opposite directions.",
+   "because": "Both phrases are in the pinned pages, and neither page names a source for them.",
+   "rests_on": [
+    "E-PO-RITZAU-EXPERTS",
+    "E-PO-GP-EXPERTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**Both sides cite unnamed experts for a total.** Ritzau reports that *forskere vurderer* the need is 14,800 t; Greenpeace reports that *eksperter peger imidlertid på* a real need above 20,000 t. Neither names a researcher or cites a report. From this record alone, the two are exactly equally uncheckable, and they point in opposite directions.",
+     "texts": "a654f17c92a74d11",
+     "node E-PO-RITZAU-EXPERTS": "79e049b3be0028e3",
+     "pinned POL-TV2-20251203": "41e84da9d0975d25",
+     "node E-PO-GP-EXPERTS": "27f160630c354a6f",
+     "pinned POL-GP-20250619": "a871f4b715fe7872"
+    }
+   }
+  },
+  {
+   "id": "C-PO-FDK-DATE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The collection dates the FødevareDanmark release by inference from a first-reading date it does not source; the pinned release carries its own dateline and says only that the first reading was the week before.",
+   "because": "The collection's date and note; the release's own dateline and wording, in its pinned copy. No pinned page gives the first reading's day.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "E-PO-FDK-TITLE",
+    "E-PO-FDK-WEEK",
+    "U-PO-FIRSTREADING"
+   ],
+   "replaces": [
+    "C-PO-OLD-FDKDATE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**One date is approximate.** The collection dates the FødevareDanmark release 2026-08-20 by inference, from a date for the bill's first reading that it gives without a source. The pinned release carries its own date, 2026-08-21, and says only that the Folketing first read the bill *i sidste uge*.",
+     "texts": "91fa53e711e42ade",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node E-PO-FDK-TITLE": "aa6ad4353fc22091",
+     "pinned POL-FDK-2026": "c53e2dc63625ecae",
+     "node E-PO-FDK-WEEK": "cb687f1159b38620",
+     "node U-PO-FIRSTREADING": "190311dd606f4458"
+    }
+   }
+  },
+  {
+   "id": "C-PO-AGENT-LOG",
+   "kind": "code",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The collecting run's working log exists and is not cited: it is marked unverified, and an agent's report is not a primary document.",
+   "because": "The file is in the repository at data/agents/politics.transcript.txt; no claim on the page rests on it.",
+   "rests_on": [
+    "X-PO-POLITICS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**A working transcript exists and is not evidence.** `data/agents/politics.transcript.txt` is the collecting run's own working log. It is marked unverified and nothing in it is cited here, on this site's standing rule that an agent's report is not a primary document.",
+     "texts": "18373610b5b3ec83",
+     "node X-PO-POLITICS": "026003bbede4c337"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NOTHING-EXCLUDED",
+   "kind": "code",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Every collected statement is printed in the record section, each marked verbatim in the source data, with elisions shown and explained.",
+   "because": "politics.py prints every statement in the collection; the tallies count the verbatim marks.",
+   "rests_on": [
+    "X-PO-POLITICS",
+    "D-PO-TALLIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "All 92 collected statements are printed in section 10, including the entries that are least convenient in either direction. Nothing was dropped for being off-message, off-topic or embarrassing to any side. Every one of the 92 is marked `verbatim` in the source data - the collection contains no paraphrase presented as a quotation - and where a quote elides text the elision is shown as `[...]` with the note saying what was skipped.",
+     "texts": "5c1e409c55802167",
+     "node X-PO-POLITICS": "026003bbede4c337",
+     "node D-PO-TALLIES": "13c001790d78f1bb"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OUTLETS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Most statements come from the responsible ministry's site and the farming trade press; that is a sample of the outlets that published verbatim wording on these dates, not a balanced sample of Danish media.",
+   "because": "Counted by publisher domain from the collection.",
+   "rests_on": [
+    "D-PO-TALLIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "15 come from the responsible ministry's own site and 18 from the farming trade press (Effektivt Landbrug and Maskinbladet), which carry both the industry's statements and the minister's. That is not a balanced sample of Danish media; it is a sample of the outlets that published verbatim wording on these dates.",
+     "texts": "90aa6358edbe4168",
+     "node D-PO-TALLIES": "13c001790d78f1bb"
+    }
+   }
+  },
+  {
+   "id": "C-PO-FIVE-KINDS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "A tonnage, a causal chain, a description of a seabed, a statement that the science is settled and a statement that the law requires something are five kinds of claim with different truth conditions, and public argument often answers one with another.",
+   "because": "Each would be checked against a different thing: a document, a counterfactual, a monitoring record, the technical literature, the law.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The single most useful thing a record like this can do is refuse to treat all assertions as the same kind of object. A tonnage, a causal chain, a description of a seabed, a statement that the science is settled, and a statement that the law requires something are five different claims with five different truth conditions, and public argument routinely answers one with another.",
+     "texts": "010487ff72f6f4c8"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CLASSES-OWN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The classification of the statements into claim classes is the collection's own, applied at capture.",
+   "because": "Each statement's class is a field of the collection, set by its collector.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "A-PO-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The classification below is the collection's own, applied at capture time.",
+     "texts": "b6b2cca3b0f0218b",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CHECK-NUMBER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "No statement in the record attaches a numerical interval to any figure.",
+   "because": "politics.py searches every quotation for a sign or a numeric range, and stops the page if one appears.",
+   "rests_on": [
+    "X-PO-POLITICS",
+    "D-PO-TALLIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Checkable in principle. **No statement in the record attaches a numerical interval to any figure.**",
+     "texts": "dc1ddee5cce0a646",
+     "node X-PO-POLITICS": "026003bbede4c337",
+     "node D-PO-TALLIES": "13c001790d78f1bb"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CHECK-CAUSAL",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Causal claims are not checkable now: nobody is constructing the counterfactual, and the monitoring is not designed to yield one.",
+   "because": "A claim that a policy caused an outcome needs the same catchments without it; monitoring records only what happened.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Not checkable now. Nobody is constructing the counterfactual, and the monitoring is not designed to yield one.",
+     "texts": "3ba1732d6e8ec4a5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CHECK-STATE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Of the state claims, the joint count of oxygen-depleted coastal waters and a minister's remark about record oxygen depletion point at something a programme records; the rest are summaries or figures of speech.",
+   "because": "Read against the collection's state_claim quotations: the count by two organisations and 'rekord i iltsvind' name monitored quantities; the others describe the water in general terms or characterise opponents.",
+   "rests_on": [
+    "D-PO-RECORD"
+   ],
+   "replaces": [
+    "C-PO-OLD-TWOOFSEVEN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The joint count of oxygen-depleted coastal waters and a minister's *rekord i iltsvind* point at something a programme records. The rest are summaries or figures of speech, and are not the worse for it.",
+     "texts": "9b9d00af0a1db1d8",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CHECK-CERTAINTY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Certainty claims are the most checkable class, since the technical documents are public, and the disagreement there is least about what the documents say and most about the weight they bear.",
+   "because": "The documents the certainty claims cite are public and pinned here; the contesting statements accept what they say and dispute its use.",
+   "rests_on": [
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The most checkable class here, and the one where the disagreement is least about what the documents say and most about what weight they bear.",
+     "texts": "5cf6bba2307a0164",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CHECK-NECESSITY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Necessity claims are partly checkable, and one assertion in the record records its own gap in the same paragraph.",
+   "because": "The second opinion's assessment that the directive's postponement article cannot be used sits beside its note that the Court has not ruled on the point, in its pinned text.",
+   "rests_on": [
+    "E-PO-SO-44",
+    "E-PO-SO-EUD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Partly checkable. One assertion in the record records its own gap in the same paragraph.",
+     "texts": "88dd4c8f641ea5ac",
+     "node E-PO-SO-44": "9006915b62abf247",
+     "pinned POL-SO-2024": "cca8c9d3ee64b348",
+     "node E-PO-SO-EUD": "3ad56add3b6c1b0d"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NO-INTERVAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Hedging words are common and correctly used, and one minister says the policy does not reach the whole way, but no statement gives a sign, a range or the spread the underlying document reports.",
+   "because": "politics.py's interval search over every quotation; the hedging words are read from the quotations themselves.",
+   "rests_on": [
+    "X-PO-POLITICS",
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**No figure in this record carries an interval.** 14 statements assert a number. Hedging *words* are common and are used correctly - `skønnes`, `ca.`, `et estimat`, `op til`, `vurderer` - and one minister says outright that the policy does not reach the whole way. But across all 92 statements there is not a single `±`, not a single range, and not a single figure given with the spread the underlying document reports.",
+     "texts": "0d750a6d470717f3",
+     "node X-PO-POLITICS": "026003bbede4c337",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-DHI-UNCERTAINTY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The method report behind the requirement, by DHI and Aarhus University (DCE), sets out how an uncertainty could be estimated from the spread between its two model types, and states that the accuracy of a target load cannot be established in the ordinary way; that qualification appears in no public sentence in the record.",
+   "because": "Both statements are in the pinned report; the record's quotations were searched, and the one that mentions the target load calls its models fit for purpose.",
+   "rests_on": [
+    "E-PO-DHI-ACC",
+    "E-PO-DHI-ENS",
+    "D-PO-RECORD"
+   ],
+   "replaces": [
+    "C-PO-OLD-DHI-INTERVAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The method report behind the requirement, by DHI and Aarhus University (DCE), sets out how an uncertainty could be estimated - from the spread between its two model types, where both cover a water body - and states in its own text that the accuracy of a target load cannot be established in the ordinary way, because there is no documentation of the correct one. That qualification survives inside the technical literature and does not appear in a single public sentence here, on any side.",
+     "texts": "e492193f6431e632",
+     "node E-PO-DHI-ACC": "5fb3828b194c1c56",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f",
+     "node E-PO-DHI-ENS": "c74d6bef5db0ace7",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CAUSAL-UNCHECKABLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The largest class, causal claims, is the least checkable: each needs a counterfactual nothing in the monitoring is designed to produce - a limit on checking the sentence, not a statement about the sea.",
+   "because": "Counted by class; the argument is the counterfactual one.",
+   "rests_on": [
+    "D-PO-TALLIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**The largest class is the least checkable.** 28 statements assert that nitrogen causes an outcome, or that the policy will cause one. Deciding any of them needs a counterfactual - the same catchments, the same years, without the measure - and nothing in the Danish monitoring programme is designed to produce one. That is a limitation on *checking the sentence*, and again it is not a statement about what the sea will do.",
+     "texts": "da3364d78d594050",
+     "node D-PO-TALLIES": "13c001790d78f1bb"
+    }
+   }
+  },
+  {
+   "id": "C-PO-VALUE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Value judgements in the record are not defective claims; the failure mode is a value claim wearing a number's clothes.",
+   "because": "A value judgement does not pretend to be checkable; the harm is in a judgement presented as a measured figure.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**Value judgements are not defective claims.** `makværk`, `en falliterklæring`, `en stjernestund for folkestyret`, `noget nær perfekt`, `grundlæggende uanstændigt`, `et stort og vigtigt skridt` - none of these is checkable and none of them is pretending to be. They are collected in section 9 without comment. The failure mode is not that politicians make value claims; it is a value claim wearing a number's clothes, and that is what sections 4 to 6 are about.",
+     "texts": "7d6911be1e7003d5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-SPREAD",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The flag for a modelled quantity stated as measured lands on statements from the ministry, environmental organisations, a broadcaster's fact-checking desk and the water utilities' trade body - not on one side.",
+   "because": "Counted by camp from the collection's flags; the listed statements are the flagged ones.",
+   "rests_on": [
+    "D-PO-TALLIES",
+    "A-PO-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The flag this site cares about most is `estimator_treated_as_estimand`, and it lands on 5 statements. **They do not come from one side.** One is the responsible ministry's; the rest are 2 environmental organisations, the public broadcaster's own fact-checking desk, and the trade body for Danish water utilities:",
+     "texts": "865af8718c87269e",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-FINDING",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Restating a modelled quantity as a measured one is what happens to a number that travels, whoever carries it.",
+   "because": "It is found among people whose interests point in opposite directions and at a desk whose job is checking claims, so it is not a partisan habit.",
+   "rests_on": [
+    "C-PO-EST-SPREAD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "That distribution is the finding. Restating a modelled quantity as a measured one is not a partisan manoeuvre and not a habit of government communication. It is what happens to a number that travels, and it happens to everyone who carries it, including people whose interests point in opposite directions and including a desk whose entire job is checking claims.",
+     "texts": "2926a96ffcf172be",
+     "rests on C-PO-EST-SPREAD": "865af8718c87269e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CONTEST-FLAGS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The flag for contesting the model basis lands on agricultural and food organisations and on Inger Støjberg; the flag for acknowledged uncertainty lands mostly on the institutions that built the models.",
+   "because": "Counted by camp from the collection's flags.",
+   "rests_on": [
+    "D-PO-TALLIES",
+    "A-PO-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The mirror-image flag, `contests_model_basis`, lands on 7 statements: 6 from agricultural and food organisations, and 1 from Inger Støjberg of Danmarksdemokraterne. `uncertainty_acknowledged` lands on 5, and 3 of those 5 are the institutions that built the models - GEUS and Aarhus University - with a fourth from a broadcaster's climate correspondent and a fifth from the minister, about one crop.",
+     "texts": "ba5b18ab04e57cb4",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-LADDER-INTRO",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The record contains the rungs of the ladder RESIDUAL.md describes, as dated sentences.",
+   "because": "Each rung in the table is a dated quotation matched to one step of that ladder.",
+   "rests_on": [
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "[RESIDUAL.md](RESIDUAL.md) describes a five-rung ladder by which a carefully qualified technical quantity becomes a claim about the world, each step small and individually defensible. This record contains the rungs as actual dated sentences, which is the reason it was collected.",
+     "texts": "1774dc23959f47f3",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-TWO-QUANTITIES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The regulation rests on two different modelled quantities, the target load and the retention map, and the ladder keeps them apart.",
+   "because": "One sets how much reduction is needed, the other which holdings carry it; conflating them would repeat the ladder's error one level up.",
+   "rests_on": [
+    "E-PO-GEUS-RET",
+    "E-PO-DHI-ACC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The regulation rests on two different modelled quantities and the ladder has to keep them apart, because eliding them would be the same error one level up:",
+     "texts": "11282ae71aaeba67",
+     "node E-PO-GEUS-RET": "58ea21c3ca3c5b6f",
+     "pinned PO-2268435C": "c064e5713478a3f4",
+     "node E-PO-DHI-ACC": "5fb3828b194c1c56",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f"
+    }
+   }
+  },
+  {
+   "id": "C-PO-MAI",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The target load is how much nitrogen a water body can receive and still reach good status: a marine-model output that sets how much reduction is needed.",
+   "because": "The method report computes it with models, and states why its accuracy cannot be established in the ordinary way.",
+   "rests_on": [
+    "E-PO-DHI-ACC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**`målbelastning` / MAI** - how much nitrogen a water body can receive and still reach good status. A marine-model output. It sets *how much* reduction is needed nationally and per water body.",
+     "texts": "b15d8a74ce3dc785",
+     "node E-PO-DHI-ACC": "5fb3828b194c1c56",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RETENTION",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The retention map gives what fraction of nitrogen leaving a field is removed before the coast: a catchment-model output that sets which holdings carry the pressure.",
+   "because": "GEUS and Aarhus University describe the map as modelled, since retention cannot be measured directly.",
+   "rests_on": [
+    "E-PO-GEUS-RET",
+    "E-PO-GEUS-FACIT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**the retention map** - what fraction of nitrogen leaving a field is removed before it reaches the coast. A catchment-model output. It sets *which holdings* carry the pressure.",
+     "texts": "188050c42e5bbc8d",
+     "node E-PO-GEUS-RET": "58ea21c3ca3c5b6f",
+     "pinned PO-2268435C": "c064e5713478a3f4",
+     "node E-PO-GEUS-FACIT": "054bfdb21187c38b"
+    }
+   }
+  },
+  {
+   "id": "C-PO-BOTH-MODELLED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Both regulating quantities are model outputs and neither is measured.",
+   "because": "Each is shown to be modelled in its own claim.",
+   "rests_on": [
+    "C-PO-MAI",
+    "C-PO-RETENTION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Both are model outputs. Neither is measured. They are different numbers and the rows below say which is which.",
+     "texts": "a87f796a9d593b5a",
+     "rests on C-PO-MAI": "b15d8a74ce3dc785",
+     "rests on C-PO-RETENTION": "188050c42e5bbc8d"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG0",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "POLITICS.md",
+   "claim": "The institutions that produce the retention map state that the regulated quantity, retention, is not directly measurable.",
+   "because": "Their words, in their pinned press release.",
+   "rests_on": [
+    "E-PO-GEUS-RET"
+   ],
+   "holder": "GEUS and Aarhus University",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The producing institutions state that the regulated quantity cannot in practice be measured directly",
+     "texts": "28e6ab1a6aa7f587",
+     "node E-PO-GEUS-RET": "58ea21c3ca3c5b6f",
+     "pinned PO-2268435C": "c064e5713478a3f4"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG0B",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "POLITICS.md",
+   "claim": "The target load's own authors state why its accuracy cannot be established in the usual way.",
+   "because": "Their words, in the pinned method report.",
+   "rests_on": [
+    "E-PO-DHI-ACC"
+   ],
+   "holder": "DHI and Aarhus University (DCE)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The other quantity's own authors, on why its accuracy cannot be established in the usual way. Not from this collection - it is from the method report, audited elsewhere in this repository",
+     "texts": "a71190ab853efad0",
+     "node E-PO-DHI-ACC": "5fb3828b194c1c56",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG1",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "POLITICS.md",
+   "claim": "The retention map was labelled decision support, not an answer key, by its project leader before it became a basis for per-holding quotas.",
+   "because": "His words are in the pinned release; the agreement that made the map a basis for quotas is dated after it in the record.",
+   "rests_on": [
+    "E-PO-GEUS-FACIT",
+    "D-PO-RECORD"
+   ],
+   "holder": "Anker Lajer Højberg, GEUS",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The model output, labelled by its project leader as decision support before it became a basis for per-holding quotas on 2025-12-03",
+     "texts": "993a97fcecc2fc0e",
+     "node E-PO-GEUS-FACIT": "054bfdb21187c38b",
+     "pinned PO-2268435C": "c064e5713478a3f4",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG2",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The ministry's release describes updates to how much nitrogen the water can tolerate - the modelled target load - with the ordinary Danish word for measurements.",
+   "because": "The sentence is in the ministry's pinned release; what it describes is the target load, a model output.",
+   "rests_on": [
+    "E-PO-MGTP-MAAL",
+    "C-PO-MAI"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "*How much the water environment can tolerate* is the modelled target load. The sentence describes its updates with the ordinary Danish word for measurements",
+     "texts": "8f0d8278383d5ac4",
+     "node E-PO-MGTP-MAAL": "c08d40fe5eac2148",
+     "pinned POL-MGTP-20251203": "938b1db4d9fc02b5",
+     "rests on C-PO-MAI": "b15d8a74ce3dc785"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG3",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The minister states the chain from nitrogen to oxygen depletion with no other driver named.",
+   "because": "His pinned words name nitrogen from fields as the cause and name no other driver; the collection flags the sentence so.",
+   "rests_on": [
+    "E-PO-RABJERG-ILT",
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The causal chain stated with no other driver named - not stratification, weather, atmospheric deposition or transboundary load",
+     "texts": "c0b96a4897c7dfd8",
+     "node E-PO-RABJERG-ILT": "1ead716b50269f09",
+     "pinned PO-B75F2381": "54ba0189df814d9e",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG4",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Under `L5`, emission-based regulation replaces field regulation from 2027, and its sharper step, the kvælstofhammer, cannot strike before 2028.",
+   "because": "What the law replaces and from when is in Effektivt Landbrug's pinned article on the vote; the deferral of the kvælstofhammer is in its pinned June article.",
+   "rests_on": [
+    "E-PO-L5-2027",
+    "E-PO-HAMMER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "emission-based regulation replaces field regulation from 2027, its sharper step, the *kvælstofhammer*, not before 2028",
+     "texts": "28a2596bd9ac5e77",
+     "node E-PO-L5-2027": "674a19f4a35b4a62",
+     "pinned PO-4646A8EE": "6d638e4597666e84",
+     "node E-PO-HAMMER": "7546815db4a3a10f",
+     "pinned POL-EL-20260623": "a70d1b8024cdb7ce"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG4B",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "`L5` places a legal obligation on individual holdings, sized to the modelled quantities above.",
+   "because": "The law replaces field regulation with emission-based regulation per catchment, and the emission targets are the modelled ones.",
+   "rests_on": [
+    "C-PO-RUNG4",
+    "C-PO-TWO-QUANTITIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "A legal obligation on individual holdings, sized to the above",
+     "texts": "672c186adac35aa9",
+     "rests on C-PO-RUNG4": "28a2596bd9ac5e77",
+     "rests on C-PO-TWO-QUANTITIES": "11282ae71aaeba67"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NOT-CHAIN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The five rungs are sentences in date order, not a demonstrated chain of influence; what the order shows is that the qualification was public, in Danish, before the sentences that dropped it.",
+   "because": "Nothing in the record shows that any speaker read the rung below; the dates are all that is shown, and why the qualification did not travel is not something the record can answer.",
+   "rests_on": [
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**This is five sentences in date order. It is not a demonstrated chain of influence.** Nothing here shows that anyone at any rung read the rung below it, and no such claim is made. What the ordering shows is that the qualification was available in public, in Danish, from the institutions that produced the numbers, before the sentences that dropped it were written. Why it did not travel is not something this record can answer, and speculating would be exactly the move the page refuses.",
+     "texts": "00c1ad470ac2158f",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG2-LOAD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Rung two is the load-bearing one, and it is a word choice in a subordinate clause, not an argument anybody made.",
+   "because": "The sentence is about how often quotas are adjusted; the move lies in calling updates to a model output measurements.",
+   "rests_on": [
+    "C-PO-RUNG2"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Rung `2` is the load-bearing one, as it is in RESIDUAL. Notice that it is not an argument anybody made and lost - it is a **word choice**, in a subordinate clause, in a sentence about something else (how often quotas get adjusted). Nobody wrote *we hereby treat the model output as a measurement*. The move happens in the choice of `målinger`, and there is nothing in the sentence for a reader to disagree with.",
+     "texts": "a37ea1bf238b2dd4",
+     "rests on C-PO-RUNG2": "8f0d8278383d5ac4"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RUNG2-HONEST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The same clause also states a genuine limitation honestly: the quotas are adjusted as knowledge improves.",
+   "because": "Its other half, in the pinned release, promises the adjustment.",
+   "rests_on": [
+    "E-PO-MGTP-MAAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "And the exact same clause is, in its other half, a genuine limitation stated honestly: the quotas *are* adjusted as knowledge improves, which is more than many regulations promise. Both things are true of one sentence.",
+     "texts": "086ad8f36ef61275",
+     "node E-PO-MGTP-MAAL": "c08d40fe5eac2148",
+     "pinned POL-MGTP-20251203": "938b1db4d9fc02b5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-INDSATSBEHOV",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The requirement the argument is denominated in is modelled, not measured - a target load subtracted from a projected load - and the famous two-thirds fraction is stated with none of the three circulating totals attached.",
+   "because": "The collection's caveat states how the requirement is built; the ministry's pinned release gives the fraction without a total.",
+   "rests_on": [
+    "D-PO-CAVEATS",
+    "E-PO-MGTP-PKG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "`Indsatsbehov` is the quantity the whole public argument is denominated in. It is not measured: it is a modelled target load subtracted from a modelled projection of what the load will be in 2027. The famous claim is that the agreement delivers **two thirds** of it. Three different totals circulate, and the fraction is stated with none of them attached.",
+     "texts": "c21f4f89b282673d",
+     "node D-PO-CAVEATS": "e803548fb012c535",
+     "node E-PO-MGTP-PKG": "09855dd7f288e8f2",
+     "pinned POL-MGTP-20251203": "938b1db4d9fc02b5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-DEN-A",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The smallest total is stated as the target in the Effektivt Landbrug article behind one entry and in the collection's caveat, and no statement quotes it.",
+   "because": "Read in the pinned article and the collection.",
+   "rests_on": [
+    "E-PO-EL-MAAL",
+    "D-PO-CAVEATS",
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "stated as *målet* in the Effektivt Landbrug article of 2026-06-23 behind `rabjerg-2026-06-23`, and in the collection's own caveat; no statement in the record quotes it",
+     "texts": "2961aeab5ac49caa",
+     "node E-PO-EL-MAAL": "7ebf1fa0da1506c1",
+     "pinned POL-EL-20260623": "a70d1b8024cdb7ce",
+     "node D-PO-CAVEATS": "e803548fb012c535",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-DEN-B",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "POLITICS.md",
+   "claim": "Greenpeace quotes its total as an estimate.",
+   "because": "Its word, in its pinned release.",
+   "rests_on": [
+    "E-PO-GP-ESTIMAT"
+   ],
+   "holder": "Greenpeace Danmark",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "quoted by Greenpeace, 2025-06-19, as *et estimat*",
+     "texts": "63b39b3402caf52f",
+     "node E-PO-GP-ESTIMAT": "21272bc9cb0fd36e",
+     "pinned POL-GP-20250619": "a871f4b715fe7872"
+    }
+   }
+  },
+  {
+   "id": "C-PO-DEN-C",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "POLITICS.md",
+   "claim": "Ritzau quotes its total as what researchers assess.",
+   "because": "Its words, in the pinned page carrying the Ritzau report.",
+   "rests_on": [
+    "E-PO-RITZAU-EXPERTS"
+   ],
+   "holder": "Ritzau",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "quoted by Ritzau, 2025-12-03, as what *forskere vurderer*",
+     "texts": "629abbeb90dbc0bd",
+     "node E-PO-RITZAU-EXPERTS": "79e049b3be0028e3",
+     "pinned POL-TV2-20251203": "41e84da9d0975d25"
+    }
+   }
+  },
+  {
+   "id": "C-PO-TWO-THIRDS-READ",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Read honestly, the arithmetic says two things, and the first favours the ministry's claim.",
+   "because": "The package clears two thirds against every total; the regulation alone does not.",
+   "rests_on": [
+    "C-PO-PKG",
+    "C-PO-SUBJECT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Two thirds is 66.7%. Read the table honestly and it says two things, and the first one favours the claim:",
+     "texts": "43429a112e61d6d3",
+     "rests on C-PO-PKG": "81e5871885bdb6a6",
+     "rests on C-PO-SUBJECT": "7203afd14052a0f8"
+    }
+   }
+  },
+  {
+   "id": "C-PO-PKG",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The combined nitrogen-and-wastewater reduction is more than two thirds of every one of the three circulating totals.",
+   "because": "Computed from the ministry's pinned reduction and each total read from its own pinned source.",
+   "rests_on": [
+    "E-PO-MGTP-PKG",
+    "E-PO-EL-MAAL",
+    "E-PO-GP-ESTIMAT",
+    "E-PO-RITZAU-EXPERTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**The claim survives the ambiguity, for the package as a whole.** 10,100 t is more than two thirds of every one of the three totals - 68.2% of the largest, 79.1% of the smallest. Whichever total the ministry had in mind, *more than two thirds* is arithmetically true of the combined nitrogen-and-wastewater package. The missing denominator is a defect of the sentence, not a defect of its arithmetic, and it would be unfair to imply otherwise.",
+     "texts": "81e5871885bdb6a6",
+     "node E-PO-MGTP-PKG": "09855dd7f288e8f2",
+     "pinned POL-MGTP-20251203": "938b1db4d9fc02b5",
+     "node E-PO-EL-MAAL": "7ebf1fa0da1506c1",
+     "pinned POL-EL-20260623": "a70d1b8024cdb7ce",
+     "node E-PO-GP-ESTIMAT": "21272bc9cb0fd36e",
+     "pinned POL-GP-20250619": "a871f4b715fe7872",
+     "node E-PO-RITZAU-EXPERTS": "79e049b3be0028e3",
+     "pinned POL-TV2-20251203": "41e84da9d0975d25"
+    }
+   }
+  },
+  {
+   "id": "C-PO-SUBJECT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The nitrogen regulation alone reaches two thirds of none of the three totals; the December 2025 release attaches the fraction to the package and the June 2026 release attaches it to the regulation model.",
+   "because": "Computed from the pinned figures; both releases' wording is pinned.",
+   "rests_on": [
+    "E-PO-MGTP-PKG",
+    "E-PO-MGTP-HUG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**It does not survive a change of subject.** The nitrogen regulation on its own is 7,900 t, and that is 61.8% of the smallest total and 53.4% of the largest. **On the ministry's own published figures, the nitrogen regulation alone does not reach two thirds of any of the three totals.** The 2025-12-03 release attaches the fraction correctly, to `kvælstofreguleringen og den aftalte spildevandsindsats` together. The 2026-06-19 release from the successor ministry says *\"Den nye model ventes med ét hug at fjerne to tredjedele af de udledninger, vi skal have væk\"* - and *den nye model* is the regulation model, not the package.",
+     "texts": "7203afd14052a0f8",
+     "node E-PO-MGTP-PKG": "09855dd7f288e8f2",
+     "pinned POL-MGTP-20251203": "938b1db4d9fc02b5",
+     "node E-PO-MGTP-HUG": "c87a1a723b06f983",
+     "pinned PO-B75F2381": "54ba0189df814d9e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-TRANSFORM",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The same fraction, in two releases half a year apart, is attached to a different subject with no figure changed; whether loose drafting or a different referent, the record does not settle.",
+   "because": "Both releases are pinned; nothing in the record says which was meant.",
+   "rests_on": [
+    "C-PO-SUBJECT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "That is the transformation this site exists to notice, and here it is in a form anyone can check with a calculator: **the same fraction, in releases dated 2025-12-03 and 2026-06-19, attached to a different subject, with no figure changed.** Whether the second sentence is loose drafting or a different intended referent is not something the record settles, and this page does not guess.",
+     "texts": "02d818ef2a48f9c3",
+     "rests on C-PO-SUBJECT": "7203afd14052a0f8"
+    }
+   }
+  },
+  {
+   "id": "C-PO-GP52",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Greenpeace's June 2025 percentage measures the June 2025 package against its own total and does not contradict the December figures.",
+   "because": "Its percentage and total are read from its pinned release and multiplied here; the December figures are a different package at a different date.",
+   "rests_on": [
+    "E-PO-GP-ESTIMAT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "One more figure that looks inconsistent and is not: Greenpeace stated in June 2025 that the regulation reaches *op til 52 procent* of the way, against a total of 13,780 t. That is the June 2025 package, before December's, and 52% of 13,780 t is 7,166 t. It is a different measure of a different agreement at a different date, and it does not contradict the December figures. Scoring a point off it would be the same error as the one this section describes.",
+     "texts": "c549c16fe3255ee0",
+     "node E-PO-GP-ESTIMAT": "21272bc9cb0fd36e",
+     "pinned POL-GP-20250619": "a871f4b715fe7872"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RESIDUAL",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The share attributed to agriculture is a residual: modelled background and reported point sources subtracted from the load, the rest routed through the retention map.",
+   "because": "The collection's caveat and DANVA's pinned sentence give the construction; NITROGEN.md takes it apart line by line.",
+   "rests_on": [
+    "D-PO-CAVEATS",
+    "E-PO-DANVA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The share attributed to agriculture is a **residual**: modelled natural background and reported point sources are subtracted from the load, and what remains is routed through the modelled retention map and called agriculture. [RESIDUAL.md](RESIDUAL.md) is about why that class of number cannot be checked against anything, ever, in principle, and [NITROGEN.md](NITROGEN.md) takes the apportionment apart line by line. This page's only job is to record how the figure is spoken.",
+     "texts": "57da8db9680a62b6",
+     "node D-PO-CAVEATS": "e803548fb012c535",
+     "node E-PO-DANVA": "49b348199720715c",
+     "pinned DANVA-2024": "cce512d654be929c"
+    }
+   }
+  },
+  {
+   "id": "C-PO-SHARE-STATED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Most of the statements flagged as stating a modelled quantity as measured concern the agricultural share, and all of those state it with no qualification.",
+   "because": "Counted from the collection's flags; the share statements read for qualification.",
+   "rests_on": [
+    "D-PO-TALLIES",
+    "D-PO-RECORD",
+    "A-PO-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "4 of the 5 statements carrying the `estimator_treated_as_estimand` flag concern this share - the remaining one is the ministry sentence in the ladder above, which is about a different modelled quantity. All 4 state the share with no qualification at all:",
+     "texts": "8c9ef84f61aa52aa",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-VERBS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The verbs in those statements - comes from, the latest figures show, according to data, it is scientifically documented - are verbs of observation applied to a subtraction.",
+   "because": "Read in the quoted statements, all checked against their pinned pages.",
+   "rests_on": [
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The verbs are worth reading closely, because they are the whole content of the flag. `stammer fra` - comes from. `viser de seneste tal` - the latest figures show. `Ifølge data fra Miljøstyrelsen og Aarhus Universitet kommer 91,7 %` - according to data, 91.7% comes from. `det er videnskabeligt dokumenteret` - it is scientifically documented. Each is a verb of observation applied to a subtraction, and `mere præcist` in front of a residual quoted to one decimal place is the clearest single instance in the collection.",
+     "texts": "a5133bd46674cc16",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NOT-WRONG",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "None of this shows the agricultural share is wrong: a residual can be close to the truth but cannot be confirmed to be.",
+   "because": "Being unconfirmable is a different property from being wrong.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**First: none of this shows the figure is wrong.** A residual can be close to the truth. It cannot be *confirmed* to be, which is a different property, and the whole argument of RESIDUAL is about the difference. Nothing in this section licenses the sentence *agriculture's share is smaller than they say*, and anybody who reads it that way has committed the identical error in the opposite direction.",
+     "texts": "9c705f1b1f2e2146"
+    }
+   }
+  },
+  {
+   "id": "C-PO-DANVA",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "DANVA's own sentence gives the natural-background share beside the agricultural one, so the residual's construction is visible in it, though the qualification does not survive into the reading.",
+   "because": "The sentence is in DANVA's pinned page.",
+   "rests_on": [
+    "E-PO-DANVA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**Second: the qualification exists and is public.** DANVA's own sentence supplies the arithmetic that makes the residual visible - `naturlige baggrundskilder, som bidrager med 22,1 %` - in the same breath as the 69.6%. The 22.1% is itself a model output and it is the subtrahend that determines the 69.6%. A reader who knows what a residual is can see the whole construction in that one sentence. That is the qualification surviving in the text and not surviving in the reading.",
+     "texts": "ea074a7f5160f272",
+     "node E-PO-DANVA": "49b348199720715c",
+     "pinned DANVA-2024": "cce512d654be929c"
+    }
+   }
+  },
+  {
+   "id": "C-PO-S7-INTRO",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The record does not support reading one side of Danish politics as careless with model outputs and the other not.",
+   "because": "The restatement of modelled quantities as measured is found on both sides.",
+   "rests_on": [
+    "C-PO-EST-SPREAD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "This section exists because it would be easy to write the previous three and leave the impression that one side of Danish politics is careless with model outputs and the other is not. The record does not support that, in either direction, and the reasons are worth setting out precisely.",
+     "texts": "b29888c27a7f8871",
+     "rests on C-PO-EST-SPREAD": "865af8718c87269e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-CONTEST-ALL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The statements flagged as contesting the model basis are all about reasoning, and none asserts the sea is fine.",
+   "because": "Each flagged quotation read in full.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "A-PO-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**The 7 statements flagged `contests_model_basis` are all about reasoning, and none of them asserts the sea is fine.** Here is what they say:",
+     "texts": "12e6837f6ab0b070",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-FOUR-OBJECTIONS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Read as a set, the contesting statements make four distinct objections: a decision-support map used as an answer key, low reported explanatory power, measurement that may later contradict a model, and a reference condition from before Danish agriculture.",
+   "because": "Read in the pinned quotations; the reference condition's age is FødevareDanmark's, read from its pinned release.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "E-PO-FDK-TITLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Read as a set, these make four distinct objections, and they are not the same objection: that a decision-support map is being used as an answer key for individual holdings; that the model's own reported explanatory power is low relative to the decisions taken on it; that physical measurement might later contradict a model on which a farm has already been closed; and that the reference condition the target is derived from lies 6,000 years back, before Danish agriculture existed. Whether any of them is correct is a question about documents, and it is not answered here or anywhere else on this site by counting who said them.",
+     "texts": "5ee290a5ab567523",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node E-PO-FDK-TITLE": "aa6ad4353fc22091",
+     "pinned POL-FDK-2026": "c53e2dc63625ecae"
+    }
+   }
+  },
+  {
+   "id": "C-PO-COMMON-GROUND",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Danmarksdemokraterne's leader states the environmental objective as common ground; no statement asserts that Danish coastal water is in acceptable condition; every state claim but one describes it as poor, the exception characterising opponents, and none is disputed.",
+   "because": "Her words are in the pinned page; the vote against in the pinned list; the state claims read in the collection.",
+   "rests_on": [
+    "E-PO-STOJBERG",
+    "E-PO-VOTELIST",
+    "D-PO-RECORD"
+   ],
+   "replaces": [
+    "C-PO-OLD-LARGEST2"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "What can be said from the record: **the leader of Danmarksdemokraterne, which voted against `L5`, states the environmental objective as common ground** - *\"Vi vil også have en grøn omstilling om landbruget, vi vil også have rent drikkevand, rene fjorde og havmiljø, men omstillingen skal være baseret på sund fornuft\"* - and no statement in this collection, from any speaker, asserts that Danish coastal water is in acceptable condition. Every `state_claim` entry but one describes the water as in poor condition - from a minister, an SF spokesperson, a think tank, and a joint count by two environmental organisations - and the exception is a minister characterising his opponents rather than the sea. **Not one statement in the record disputes any of them.**",
+     "texts": "cd2be9bc39050c02",
+     "node E-PO-STOJBERG": "82bd3a0592f4f5ee",
+     "pinned PO-820BD1A8": "2a86c4af9f77e1da",
+     "node E-PO-VOTELIST": "e73ce7e04a50ab33",
+     "pinned PO-4646A8EE": "6d638e4597666e84",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-DISAGREEMENT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The disagreement recorded is not about the state of the sea but about whether model outputs can carry legal consequences, and how the cost should fall.",
+   "because": "No statement disputes the water's poor condition, and the objections that are made are to the reasoning.",
+   "rests_on": [
+    "C-PO-COMMON-GROUND",
+    "C-PO-CONTEST-ALL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "So the public disagreement recorded here is **not a disagreement about the state of the sea.** It is a disagreement about whether particular model outputs can carry particular legal consequences, and about how the cost should fall. That is a more tractable disagreement than the one the shouting implies, and noticing it is the most useful thing this collection does.",
+     "texts": "08fa8e08ff9570ed",
+     "rests on C-PO-COMMON-GROUND": "cd2be9bc39050c02",
+     "rests on C-PO-CONTEST-ALL": "12e6837f6ab0b070"
+    }
+   }
+  },
+  {
+   "id": "C-PO-SYMMETRY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The measure is contested from both ends: Alternativet said `L5` will not meet the Water Framework Directive and voted for it; Enhedslisten, outside the tripartite, criticises it and voted for it; Greenpeace puts the real requirement far higher; and it passed.",
+   "because": "Each position is in its pinned page; the votes are in the pinned list.",
+   "rests_on": [
+    "E-PO-ROSENKILDE",
+    "E-PO-EL-DMBIO",
+    "E-PO-GP-EXPERTS",
+    "E-PO-VOTELIST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**The symmetry runs the other way too.** The objection that the framework is *insufficient* is made from the other end by Alternativet, which stated in the chamber that `L5` will not meet the Water Framework Directive and voted for it anyway; by Enhedslisten, which is not in the tripartite, criticises its reliance on voluntary conversion, and also voted for it; and by Greenpeace, which puts the real requirement above 20,000 t against the government's estimate. One measure, contested from both directions, passed 119–34.",
+     "texts": "0eec01418a2e8833",
+     "node E-PO-ROSENKILDE": "f67223eb8ecf00cb",
+     "pinned PO-820BD1A8": "2a86c4af9f77e1da",
+     "node E-PO-EL-DMBIO": "617eaf8262f9529b",
+     "pinned POL-DMBIO-2026": "9dfe80a5e2f36ddb",
+     "node E-PO-GP-EXPERTS": "27f160630c354a6f",
+     "pinned POL-GP-20250619": "a871f4b715fe7872",
+     "node E-PO-VOTELIST": "e73ce7e04a50ab33",
+     "pinned PO-4646A8EE": "6d638e4597666e84"
+    }
+   }
+  },
+  {
+   "id": "C-PO-HEDGE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The second opinion writes 'possibly' oxygen depletion into its definition of eutrophication; a minister and Greenpeace both drop the qualifier.",
+   "because": "All three passages are in their pinned pages.",
+   "rests_on": [
+    "E-PO-SO-EVT",
+    "E-PO-RABJERG-ILT",
+    "E-PO-GP-ILT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**And the hedge is dropped on both sides.** The technical document behind the policy writes `evt. iltsvind` - *possibly* oxygen depletion - inside its own definition of eutrophication. In the public sentences the *evt.* is gone: a minister says too much nitrogen *har ført til iltsvind*, and Greenpeace says decades of nitrogen pollution *har skabt voldsomt iltsvind og livløse danske fjorde*. Same dropped qualifier, opposite politics.",
+     "texts": "8a38173fb304d56a",
+     "node E-PO-SO-EVT": "1afbd6262f970b2b",
+     "pinned POL-SO-2024": "cca8c9d3ee64b348",
+     "node E-PO-RABJERG-ILT": "1ead716b50269f09",
+     "pinned PO-B75F2381": "54ba0189df814d9e",
+     "node E-PO-GP-ILT": "f111c6035c176a39",
+     "pinned POL-GP-20260825": "c390c4b4f3721408"
+    }
+   }
+  },
+  {
+   "id": "C-PO-NECESSITY-COUNT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Some statements assert that the policy is required, and some carry the flag asserting that EU law leaves no discretion.",
+   "because": "Counted from the collection's classes and flags.",
+   "rests_on": [
+    "D-PO-TALLIES",
+    "A-PO-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "19 statements assert that the policy is required - by the directive, by law, or by circumstance. 2 carry the flag `eu_obligation_asserted`, and read together they are a small lesson in reading a citation.",
+     "texts": "008450f7bc6d7d50",
+     "node D-PO-TALLIES": "13c001790d78f1bb",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-SO-44",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "POLITICS.md",
+   "claim": "The Ministry of the Environment assesses that Denmark cannot use the directive's postponement article to delay good status beyond its deadline, and the same box notes the Court has not ruled on the point; the limit travels no further than the box.",
+   "because": "Both are in the pinned second opinion; none of the record's necessity statements repeats the note.",
+   "rests_on": [
+    "E-PO-SO-44",
+    "E-PO-SO-EUD",
+    "D-PO-RECORD"
+   ],
+   "holder": "Miljøministeriet, in the second opinion",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The Ministry of the Environment's assessment, in the *second opinion* of September 2024, is that Denmark cannot use `Article 4(4)` of the Water Framework Directive to postpone good status beyond 2027-12-22, so the necessary measures must be complete before then. **The same box adds:** *\"Det bemærkes, at EU-Domstolen ikke har taget direkte stilling til spørgsmålet.\"* An assertion that the law leaves no discretion, recording in its own text that the Court has not ruled on the point. That is not a contradiction and it is not a criticism of the ministry - it is a legal assessment doing exactly what a legal assessment should, which is to state its own limit. What is notable is that the limit travels no further than the box.",
+     "texts": "752f3e9539ac63cb",
+     "node E-PO-SO-44": "9006915b62abf247",
+     "pinned POL-SO-2024": "cca8c9d3ee64b348",
+     "node E-PO-SO-EUD": "3ad56add3b6c1b0d",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-INFR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The Commission's infringement case against Denmark concerns the directive's implementation and, for Denmark, water abstraction permits that are not reviewed; it does not mention nitrogen.",
+   "because": "In the Commission's pinned text the Danish paragraph is about abstraction permits; the text names no nitrogen, nitrate or nutrient.",
+   "rests_on": [
+    "E-PO-EC-GENERAL",
+    "E-PO-EC-PERMITS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The second is a real infringement procedure. On 2026-01-30 the European Commission opened cases against Denmark, Italy and Luxembourg over the Water Framework Directive - `INFR(2025)2209` in Denmark's case. **That case concerns the review of water abstraction permits, not the nitrogen `indsatsbehov`.** Same directive, different obligation. It is recorded here precisely so that it is not available as evidence for something it is not evidence for, in either direction.",
+     "texts": "5bceb237871a9569",
+     "node E-PO-EC-GENERAL": "f27684bf68f83c60",
+     "pinned PO-E8780710": "f31929cbdd8b64c4",
+     "node E-PO-EC-PERMITS": "9134f07ae7d83a1b"
+    }
+   }
+  },
+  {
+   "id": "C-PO-ROBUST",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The certainty claim the record cites as settled is the second opinion's summary that the Danish approach is robust, a statement about a method, not about any catchment's figure.",
+   "because": "The statements flagged as citing settled science are the second opinion's own and a minister's citing it; the summary is in its pinned text.",
+   "rests_on": [
+    "E-PO-SO-ROBUST",
+    "D-PO-RECORD",
+    "A-PO-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The most-invoked certainty claim is the *second opinion*'s own summary: that Danish experts and an international panel find the Danish approach to computing the `indsatsbehov` **robust**, and broadly endorse the choices and assumptions made. That sentence says what it says. It is a statement about the robustness of a *method*; it is not a statement about the numerical accuracy of any individual catchment's figure, and the regulation acts on catchments and on holdings. Distinguishing those two readings is a matter of reading the sentence, not of doubting the panel.",
+     "texts": "a0856ca90b5ccdce",
+     "node E-PO-SO-ROBUST": "4cefd1f792222e89",
+     "pinned POL-SO-2024": "cca8c9d3ee64b348",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node A-PO-CLASSES": "9d134125cb7f3cb5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-S9-INTRO",
+   "kind": "code",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The value-language table is collected without comment; every entry is verbatim and printed again in the record.",
+   "because": "politics.py takes the entries from the collection and prints them in both places.",
+   "rests_on": [
+    "X-PO-POLITICS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Collected without comment, because a record that quoted only the checkable sentences would be a curated record. All are verbatim; all are printed again in context in section 10.",
+     "texts": "8f980340009660ef",
+     "node X-PO-POLITICS": "026003bbede4c337"
+    }
+   }
+  },
+  {
+   "id": "C-PO-VALUE-TABLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Nothing follows from the value-language table; it is there so that the record does not look more technical than the argument was.",
+   "because": "A record that quoted only the checkable sentences would be a curated record.",
+   "rests_on": [],
+   "replaces": [
+    "C-PO-OLD-MOSTLY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Nothing follows from this table. It is here because leaving it out would make the record look more technical than the argument was.",
+     "texts": "cefb5505d810fa67"
+    }
+   }
+  },
+  {
+   "id": "C-PO-RECORD",
+   "kind": "code",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The record prints every statement in date order: the quotation is the source's own wording, the gloss a translation made here and a quotation of nobody, elisions marked, odd spelling left as found, and every figure in a quotation linked to the phrase in its source's pinned copy.",
+   "because": "politics.py prints the collection's statements and reads each figure from the pinned copy of its source; the glosses are the collection's own translations.",
+   "rests_on": [
+    "X-PO-POLITICS",
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "All 92 statements, in date order. **Every `quote_da` is the source's own wording**, copied from the page or PDF cited. **Every gloss is a translation supplied here and is a quotation of nobody.** Elisions inside a quote are marked `[...]` and the note says what was skipped. Odd spelling and typography in a source is left as found and flagged. A number inside a quotation links to the phrase in the pinned copy of its source that contains it.",
+     "texts": "59ff55fc166cbe80",
+     "node X-PO-POLITICS": "026003bbede4c337",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-QUOTES-CHECKED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Every quotation's source page is pinned and each quotation is checked against it: most are found word for word, the rest in part - at least six consecutive words of every passage.",
+   "because": "politics.py checks every passage of every quotation against its pinned copy and stops the page if one falls short.",
+   "rests_on": [
+    "X-PO-POLITICS",
+    "D-PO-TALLIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Every quotation's source page is pinned here, and the build checks each quotation against it: 85 of the 92 are found word for word in the pinned copy, and the other 7 in part - at least six consecutive words of every passage between elisions.",
+     "texts": "e022966ac75b1853",
+     "node X-PO-POLITICS": "026003bbede4c337",
+     "node D-PO-TALLIES": "13c001790d78f1bb"
+    }
+   }
+  },
+  {
+   "id": "C-PO-POSITIONS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The positions table is the collection's summary of where each party and body stood; the vote column is the third reading, which passed.",
+   "because": "The collection's positions; the vote read from TV 2's pinned page.",
+   "rests_on": [
+    "D-PO-RECORD",
+    "E-PO-VOTE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "From the collection's own summary of positions. `in_agreement` refers to the December 2025 nitrogen agreement or the 2024 Green Tripartite as stated; the `L5` column is the third-reading vote of 2026-09-03, which passed 119–34.",
+     "texts": "9327baeadc91206f",
+     "node D-PO-RECORD": "03b13115b53cff28",
+     "node E-PO-VOTE": "ede79b5f9b6d2568",
+     "pinned POL-TV2-20260903": "7e35b90adf8a8d5e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-THREE-ROWS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Enhedslisten and Alternativet criticise the tripartite and voted for `L5`; five named Venstre MPs voted against their party's bill while its economy minister called the regulation very hard in parts of the country; Landbrug & Fødevarer signed the 2024 tripartite and opposes the 2025 distribution model.",
+   "because": "The votes and names are in Effektivt Landbrug's pinned list, Venstre's split in Ritzau's pinned report, the minister's words in Altinget's pinned article, the organisations' positions in the collection.",
+   "rests_on": [
+    "E-PO-VOTELIST",
+    "E-PO-V18",
+    "E-PO-LOSE",
+    "E-PO-EL-DMBIO",
+    "D-PO-RECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Three rows repay reading against each other. **Enhedslisten and Alternativet are not in the Green Tripartite, criticise it as insufficient, and both voted for `L5`.** **5 Venstre MPs voted against their own party's bill** - Søren Gade, Anni Matthiesen, Preben Bang Henriksen, Peter Juel-Jensen and Amanda Heitmann - while the party's own economy minister had called the regulation *meget, meget hård* in parts of the country. And **Landbrug & Fødevarer signed the June 2024 tripartite and opposes the December 2025 distribution model**, on the ground that it is harder than what that tripartite presupposed. None of those is a contradiction; each is a position with a shape, and flattening them into two sides would lose the shape.",
+     "texts": "2f8e682d99603600",
+     "node E-PO-VOTELIST": "e73ce7e04a50ab33",
+     "pinned PO-4646A8EE": "6d638e4597666e84",
+     "node E-PO-V18": "49a4230da9769965",
+     "pinned PO-64EF563D": "1caf1e669ec20f88",
+     "node E-PO-LOSE": "8f35b5020ae1ef4b",
+     "pinned PO-729ED65B": "5ff9d170251c7c4a",
+     "node E-PO-EL-DMBIO": "617eaf8262f9529b",
+     "pinned POL-DMBIO-2026": "9dfe80a5e2f36ddb",
+     "node D-PO-RECORD": "03b13115b53cff28"
+    }
+   }
+  },
+  {
+   "id": "C-PO-S12-NOT-SEA",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The page establishes nothing about the condition of Danish coastal water; every observation on it is about a text, a date or arithmetic on published figures.",
+   "because": "The page's scope, and the record, in which nobody claims the water is fine.",
+   "rests_on": [
+    "C-PO-NOT-SEA",
+    "C-PO-COMMON-GROUND"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**It does not establish anything whatsoever about the condition of Danish coastal water.** Not one finding here is a finding about a fjord. Every observation on this page is an observation about a text, a date, or a piece of arithmetic on published figures, and none of them travels to the sea. If a reader leaves this page believing the marine environment is in better condition than the government says, this page has been misread - and so has the record, in which nobody at all makes that claim.",
+     "texts": "95622bc863c70b00",
+     "rests on C-PO-NOT-SEA": "737e3888f118458e",
+     "rests on C-PO-COMMON-GROUND": "cd2be9bc39050c02"
+    }
+   }
+  },
+  {
+   "id": "C-PO-S12-NO-BAD-FAITH",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The page establishes no bad faith: a word choice, a fraction reattached, a residual quoted to a decimal are the ordinary ways numbers behave when they travel.",
+   "because": "Motive is not read off texts.",
+   "rests_on": [
+    "C-PO-RULE-NAMING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**It does not establish that anyone acted in bad faith, and it makes no attempt to.** A word choice in a subordinate clause is not a deception; a fraction attached to a different subject in a later release is not a lie; a residual quoted to one decimal place by a fact-checking desk is not corruption. These are the ordinary ways numbers behave when they travel, which is why they are worth cataloguing rather than prosecuting.",
+     "texts": "1c02e68495ce64b0",
+     "rests on C-PO-RULE-NAMING": "bd6c73b975db3d75"
+    }
+   }
+  },
+  {
+   "id": "C-PO-S12-NOT-POLICY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The page does not establish that the policy is right or wrong; that needs a counterfactual nobody is building and a judgement about cost that is not a scientific question.",
+   "because": "The counterfactual argument, and the nature of a judgement about cost.",
+   "rests_on": [
+    "C-PO-CHECK-CAUSAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "**It does not establish that the policy is right or wrong.** That would need the counterfactual nobody is building, and a judgement about cost that is not a scientific question at all.",
+     "texts": "3d9ea65e126aed80",
+     "rests on C-PO-CHECK-CAUSAL": "3ba1732d6e8ec4a5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-RETENTION",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The retention map's producers said in public that retention cannot be measured directly and the map is decision support, before the agreement made it a basis for per-holding quotas; the target load's corresponding statement is in its authors' method report.",
+   "because": "The rungs of the ladder, each pinned.",
+   "rests_on": [
+    "C-PO-RUNG0",
+    "C-PO-RUNG1",
+    "C-PO-RUNG0B"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The institutions that produced the retention map stated in public, in Danish, that the quantity cannot in practice be measured directly and that the map is a decision-support tool and not an answer key. Both statements are dated 2025-08-27. The agreement that made the map a basis for per-holding quotas is dated 2025-12-03. The corresponding statement about the other regulating quantity, the target load, is in its authors' method report (2014, revised 2015) rather than in this collection.",
+     "texts": "8ffc9d7f54198154",
+     "rests on C-PO-RUNG0": "28e6ab1a6aa7f587",
+     "rests on C-PO-RUNG1": "993a97fcecc2fc0e",
+     "rests on C-PO-RUNG0B": "a71190ab853efad0"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-MAALINGER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The ministry's release describes updates to a modelled target load as new measurements.",
+   "because": "The ladder's second rung.",
+   "rests_on": [
+    "C-PO-RUNG2"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The responsible ministry's press release describes updates to a modelled target load as `nye målinger`.",
+     "texts": "22a5a499590babe4",
+     "rests on C-PO-RUNG2": "8f0d8278383d5ac4"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-TWOTHIRDS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "On the ministry's own figures, more than two thirds holds for the combined package against all three totals and not for the regulation alone against any; a later release attaches the fraction to the regulation model.",
+   "because": "The arithmetic of section five.",
+   "rests_on": [
+    "C-PO-PKG",
+    "C-PO-SUBJECT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "On that ministry's own published figures, *more than two thirds* holds for the combined package against all three circulating totals (68.2% to 79.1%), and does not hold for the nitrogen regulation alone against any of them (53.4% to 61.8%). A later release attaches the fraction to the regulation model.",
+     "texts": "db127aeef0b043be",
+     "rests on C-PO-PKG": "81e5871885bdb6a6",
+     "rests on C-PO-SUBJECT": "7203afd14052a0f8"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-NOINTERVAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Across all the statements, no figure is given with an interval, by anyone.",
+   "because": "The interval search.",
+   "rests_on": [
+    "C-PO-CHECK-NUMBER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Across all 92 statements, no figure is given with an interval, by anyone.",
+     "texts": "8eb72a79762aeb60",
+     "rests on C-PO-CHECK-NUMBER": "dc1ddee5cce0a646"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-BOTHSIDES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "Restating a modelled share as an observed one is done by the ministry, environmental organisations, a broadcaster's fact-checking desk and a utilities trade body; it is not a property of one side.",
+   "because": "The flag's distribution.",
+   "rests_on": [
+    "C-PO-EST-SPREAD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "Restating a modelled share as an observed one is done by the ministry, by 2 environmental organisations, by a broadcaster's fact-checking desk and by a utilities trade body. It is not a property of one side.",
+     "texts": "76b7f7e92a72d529",
+     "rests on C-PO-EST-SPREAD": "865af8718c87269e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-NOSEAFINE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "No statement asserts that the sea is in acceptable condition, and the objections made are to reasoning rather than to the diagnosis.",
+   "because": "Sections one and seven.",
+   "rests_on": [
+    "C-PO-COMMON-GROUND",
+    "C-PO-CONTEST-ALL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "No statement in the record asserts that the sea is in acceptable condition, and the objections that are made are objections to reasoning rather than to the diagnosis.",
+     "texts": "373c9dfade730ad6",
+     "rests on C-PO-COMMON-GROUND": "cd2be9bc39050c02",
+     "rests on C-PO-CONTEST-ALL": "12e6837f6ab0b070"
+    }
+   }
+  },
+  {
+   "id": "C-PO-EST-SKEW",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "The collection is skewed toward the government and the agreement parties by about two to one, holds no official floor transcript, and holds no claim about the figures from Dansk Folkeparti and Borgernes Parti.",
+   "because": "Section one.",
+   "rests_on": [
+    "C-PO-SKEW",
+    "C-PO-NO-TRANSCRIPT",
+    "C-PO-UNDERREP"
+   ],
+   "replaces": [
+    "C-PO-OLD-EMPTY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The collection is skewed toward the government and the agreement parties by about 2.1 to 1, contains no official floor transcript, and holds no claim about the figures from Dansk Folkeparti and Borgernes Parti.",
+     "texts": "56f3ea1f37890e22",
+     "rests on C-PO-SKEW": "1ac946d71da45ffb",
+     "rests on C-PO-NO-TRANSCRIPT": "76a95a0f4f4c8f95",
+     "rests on C-PO-UNDERREP": "09afc96b407be02a"
+    }
+   }
+  },
+  {
+   "id": "C-PO-INSTRUMENT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "POLITICS.md",
+   "claim": "A record of public statements is an instrument, and this one is unevenly pointed; the cheapest improvement is the Folketing transcript that could not be fetched.",
+   "because": "What the record finds depends on where it looked, as group I of the hypotheses says of a monitoring network.",
+   "rests_on": [
+    "C-PO-EST-SKEW",
+    "U-PO-TRANSCRIPT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-po (read each claim against its wording on POLITICS.md as recorded, and against the collection and the pinned pages its nodes cite; the engine checked every pinned phrase and every archive passage; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on POLITICS.md": "The last of those is the one that most limits everything above it. **A record of public statements is an instrument, and this instrument is not evenly pointed.** Group `I` of [HYPOTHESES.md](HYPOTHESES.md) applies to it exactly as it applies to a monitoring network: what you find depends on where you looked, and the cheapest way to improve this page is not more analysis of these 92 sentences but the Folketing transcript that could not be fetched.",
+     "texts": "4bbb39a075eda966",
+     "rests on C-PO-EST-SKEW": "56f3ea1f37890e22",
+     "node U-PO-TRANSCRIPT": "a75c54c5eee4d99a"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-LARGEST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The best-documented objections come in part from the leader of the largest party that voted against.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "That cuts both ways and it is worth being blunt",
+    "end": "none of them claims that it is",
+    "why": "No source in the record or the pinned documents gives the parties' seats, so 'the largest party that voted against' had no recorded justification; the replacement names the party."
+   },
+   "replaced_by": [
+    "C-PO-CONTESTS-REASONING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That cuts both ways and it is worth being blunt about the direction it cuts most often. The best-documented objections in this record - 7 statements, 6 from agricultural and food organisations and 1 from the leader of the largest party that voted against - are objections to the reasoning: that model outputs cannot bear the regulatory weight put on them. Whether those objections are sound or not, they do not entail that the water is in acceptable condition, and, as it happens, none of them claims that it is",
+     "texts": "3cd608bbd9908818"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-LARGEST2",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The leader of the largest opposing party states the objective as common ground, and a count of the state claims describes the water as poor.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "What can be said from the record:",
+    "end": "disputes any of them",
+    "why": "'The largest opposing party' had no source for seat counts, and the count of state claims was carried only as a quotation of the page itself; its justification was not recorded properly."
+   },
+   "replaced_by": [
+    "C-PO-COMMON-GROUND"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "What can be said from the record: the leader of the largest opposing party states the environmental objective as common ground - *\"Vi vil også have en grøn omstilling om landbruget, vi vil også have rent drikkevand, rene fjorde og havmiljø, men omstillingen skal være baseret på sund fornuft\"* - and no statement in this collection, from any speaker, asserts that Danish coastal water is in acceptable condition. Six of the seven `state_claim` entries describe the water as in poor condition - from a minister, an SF spokesperson, a think tank, and a joint count by two environmental organisations - and the seventh is a minister characterising his opponents rather than the sea. Not one statement in the record disputes any of them",
+     "texts": "4e62a4289a859e0c"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-WORST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The under-representation is worst for a counted share of the parties that voted against.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "None of that makes the imbalance harmless",
+    "end": "no separate statement from it at all",
+    "why": "Its count was carried only as a quotation of the page itself, never derived; its justification was not recorded properly. The replacement names the parties by a rule over the record."
+   },
+   "replaced_by": [
+    "C-PO-UNDERREP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "None of that makes the imbalance harmless: a reader should assume the contesting case is under-represented here, and that the under-representation is worst for two of the three parties that voted against. Dansk Folkeparti and Borgernes Parti voted against `L5` and the record contains no substantive claim from either about the nitrogen figures. Moderaterne is a government party to the agreement and the record contains no separate statement from it at all",
+     "texts": "91434315fbfb62c8"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-TYPO",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of the quotations carry a spelling or typography oddity.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "what is verified is that the publication printed those words",
+    "end": "left as found and flagged",
+    "why": "Its count was carried only as a quotation of the page itself; its justification was not recorded properly. The replacement counts the notes that say so."
+   },
+   "replaced_by": [
+    "C-PO-TYPO"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "what is verified is that the publication printed those words, not that the official transcript contains them. Three of the quotes carry a spelling or typography oddity from the rendering, left as found and flagged",
+     "texts": "320399f09ad8c4f5"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-TWOOFSEVEN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of the state claims point at something a programme records.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "The monitoring programme.",
+    "end": "not the worse for it",
+    "why": "Its count was carried only as a quotation of the page itself; its justification was not recorded properly. The replacement names the two statements."
+   },
+   "replaced_by": [
+    "C-PO-CHECK-STATE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The monitoring programme. | Two of the seven point at something a programme records. The rest are summaries or figures of speech, and are not the worse for it",
+     "texts": "a41ec103186e02f1"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-EMPTY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The collection holds no substantive numerical claim from a counted share of the parties that voted against.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "The collection is skewed toward the government",
+    "end": "parties that voted against",
+    "why": "Its count was carried only as a quotation of the page itself; its justification was not recorded properly. The replacement names the parties."
+   },
+   "replaced_by": [
+    "C-PO-EST-SKEW"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The collection is skewed toward the government and the agreement parties by about 2.1 to 1, contains no official floor transcript, and is empty of substantive numerical claims from [two of the three parties that voted against",
+     "texts": "27ad17ad99d5135e"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-FDKDATE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The FødevareDanmark release is dated from a stated first-reading date.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "One date is approximate.",
+    "end": "with that inference marked",
+    "why": "The first-reading date it gave is in no source this project holds or could pin, and the pinned release carries its own dateline, a day later than the date inferred."
+   },
+   "replaced_by": [
+    "C-PO-FDK-DATE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "One date is approximate. The FødevareDanmark release states only that it followed the first reading *i sidste uge*; first reading was 2026-08-13, so the entry is dated 2026-08-20 with that inference marked",
+     "texts": "150062f5caf38e40"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-DHI-INTERVAL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The DCE/AU method report behind the requirement states an interval for it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "The DCE/AU method report that produces the requirement",
+    "end": "on any side",
+    "why": "The pinned report sets out how an uncertainty could be estimated, from the spread between its two model types, and computes a model-technical part; no stated interval was found in it, so 'does state one' overstated it. It is DHI's report as much as DCE's."
+   },
+   "replaced_by": [
+    "C-PO-DHI-UNCERTAINTY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The DCE/AU method report that produces the requirement does state one, and states in its own text that the accuracy of a target load cannot be established in the ordinary way because there is no documentation of the correct one. That interval survives inside the technical literature and does not appear in a single public sentence here, on any side",
+     "texts": "9f75fe211d2690f4"
+    }
+   }
+  },
+  {
+   "id": "C-PO-OLD-MOSTLY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Most of the public argument was value language.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "POLITICS.md",
+    "commit": "00a157f",
+    "file": "docs/POLITICS.md",
+    "begin": "Nothing follows from this table.",
+    "end": "the argument was mostly this",
+    "why": "No count or measure supports it: the collection's classes have no class for value language, and no statement was counted as one."
+   },
+   "replaced_by": [
+    "C-PO-VALUE-TABLE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Nothing follows from this table. It is here because leaving it out would make the record look more technical than the argument was, and the argument was mostly this",
+     "texts": "7be390cdf2fb41cc"
+    }
+   }
+  }
+ ]
+}

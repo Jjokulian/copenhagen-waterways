@@ -671,7 +671,8 @@ def structure(d, nodes, claims, allc=None):
         for o in c.get("replaces", []):
             if o not in allc or not allc[o].get("retired"):
                 bad.append(f"{cid} replaces {o}, which is not a retired claim")
-        if not rs and not c.get("retired") and not (c.get("kind") == "argued"
+        # an argument, or a rule this project sets itself, may stand on its reasoning alone
+        if not rs and not c.get("retired") and not (c.get("kind") in ("argued", "stipulated")
                                                      and c.get("because")):
             bad.append(f"{cid}: rests on nothing. Name what it rests on - or, if nothing "
                        "could be found, an untraced node saying what was searched")

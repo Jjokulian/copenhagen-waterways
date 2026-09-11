@@ -1,0 +1,2454 @@
+{
+ "_what": "Fork w2-cs (wave 2 of the claims sweep): CURRENTS.md and SOLUTIONS.md.",
+ "sources": {
+  "OM-MARINE": {
+   "title": "Open-Meteo, Marine Weather API documentation",
+   "url": "https://open-meteo.com/en/docs/marine-weather-api",
+   "retrieved": "2026-09-11",
+   "sha256": "78412adba861711083ac9e5b49c81760ae354a62a6f51f6ad169e7e1d6585283",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "WIKI-ORESUND": {
+   "title": "Wikipedia, Øresund",
+   "url": "https://en.wikipedia.org/wiki/%C3%98resund",
+   "retrieved": "2026-09-11",
+   "sha256": "b5697262d14e80c21e3058d91cc5cbe7d63ea9489340df88189510919633cdae",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "CMEMS-BAL-STAC": {
+   "title": "Copernicus Marine, Baltic Sea Physics Reanalysis (BALTICSEA_MULTIYEAR_PHY_003_011), product metadata",
+   "url": "https://stac.marine.copernicus.eu/metadata/BALTICSEA_MULTIYEAR_PHY_003_011/product.stac.json",
+   "retrieved": "2026-09-11",
+   "sha256": "af19cff76c8ac358a59cbc1cda6e08314540848382eeba24c842735ad1403c89",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "MEIJER-2021": {
+   "title": "Meijer, van Emmerik, van der Ent, Schmidt & Lebreton (2021), More than 1000 rivers account for 80% of global riverine plastic emissions into the ocean, Science Advances - Europe PMC full text",
+   "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8087412/fullTextXML",
+   "retrieved": "2026-09-11",
+   "sha256": "844edaf7a003fbe2ae4c48fc59c0c91bc552ccd349139869006cbc6e6867b70c",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "X-CS-CURRENTS",
+   "kind": "script",
+   "label": "currents.py",
+   "detail": "Fetches the Open-Meteo current field and the ERA5 wind, computes retention per point, the wind index, transport by rain band and lag, and the rain climate over the whole weather record; writes CURRENTS.md."
+  },
+  {
+   "id": "X-CS-SOLUTIONS",
+   "kind": "script",
+   "label": "solutions.py",
+   "detail": "Reads Københavns Kommune's catchment and infiltration layers, the cloudburst lengths and the national overflow register and layer; writes SOLUTIONS.md."
+  },
+  {
+   "id": "D-CS-CURRENTS",
+   "kind": "held",
+   "label": "Current field at\\nnine points",
+   "detail": "data/raw/marine: hourly current speed and direction at the points named in currents.py, from the Open-Meteo Marine API; results in data/derived/currents_validate.json, currents_index.json and currents_transport.json."
+  },
+  {
+   "id": "D-CS-WEATHER",
+   "kind": "held",
+   "label": "Copenhagen weather\\nrecord, ERA5",
+   "detail": "data/raw/weather: hourly wind speed, direction and precipitation at one ERA5 grid point near Copenhagen, fetched by the wave work; the rain climate is in data/derived/currents_rain.json."
+  },
+  {
+   "id": "D-CS-WAVES",
+   "kind": "held",
+   "label": "Wave-driven bed\\nresuspension by month",
+   "detail": "data/derived/waves.json, from the seabed work: how often wave shear on the bed exceeds a threshold, by depth and month."
+  },
+  {
+   "id": "D-CS-KKLAYERS",
+   "kind": "held",
+   "label": "Københavns Kommune\\nlayers",
+   "detail": "sp_kloakoplande (catchments with current and planned sewer type), lar_registreringer (infiltration installations) and the cloudburst alignments, from the city's WFS; counted in data/derived/solutions.json and conveyance.json."
+  },
+  {
+   "id": "D-CS-REGISTER",
+   "kind": "held",
+   "label": "National overflow\\nregister and layer",
+   "detail": "punkt_rbu_udl, every rain-dependent discharge point with its basin volume where recorded; and the overflow layer from spildevandsdata.dk with a yearly overflow count per structure (data/derived/outfalls.json)."
+  },
+  {
+   "id": "A-CS-EVENT",
+   "kind": "assumption",
+   "label": "Overflow-scale rain\\nis a rain threshold",
+   "detail": "An hour counts as overflow-scale when the rain over the preceding hours set in currents.py reaches the threshold set there. No overflow was observed; if sewers overflow at other rain, the counts move."
+  },
+  {
+   "id": "A-CS-COARSE",
+   "kind": "assumption",
+   "label": "The field is too\\ncoarse for the straits",
+   "detail": "Its speeds in the narrow straits are not trusted, so ratios, signs and timings are used; the one speed-based figure, a flushing time in days, keeps the field's speed error at that point."
+  },
+  {
+   "id": "E-CS-OM-RES",
+   "kind": "external",
+   "label": "Open-Meteo: the\\ncurrent field's resolution",
+   "detail": "Open-Meteo's documentation of its marine API gives the resolution at which it computes ocean currents, and says accuracy at the coast is limited.",
+   "source": "OM-MARINE",
+   "said": "Tides and ocean currents are computed at"
+  },
+  {
+   "id": "E-CS-ORESUND-WIDTH",
+   "kind": "external",
+   "label": "Wikipedia: the\\nØresund's width",
+   "detail": "The strait's width, narrowest to widest.",
+   "source": "WIKI-ORESUND",
+   "said": "its width varies from"
+  },
+  {
+   "id": "E-CS-ORESUND-WATER",
+   "kind": "external",
+   "label": "Wikipedia: the\\nØresund's surface stream",
+   "detail": "The surface stream is often northbound, from the Baltic, and can change from one day to the next.",
+   "source": "WIKI-ORESUND",
+   "said": "the surface stream is often northbound"
+  },
+  {
+   "id": "E-CS-ORESUND-SAL",
+   "kind": "external",
+   "label": "Wikipedia: Kattegat\\nand Baltic salinity",
+   "detail": "The Øresund lies between the saline Kattegat and the far less salty Baltic.",
+   "source": "WIKI-ORESUND",
+   "said": "has a salinity of more than"
+  },
+  {
+   "id": "E-CS-CMEMS-BAL",
+   "kind": "external",
+   "label": "Copernicus Marine:\\nBaltic reanalysis",
+   "detail": "The product description gives the native horizontal resolution of the Baltic physics reanalysis.",
+   "source": "CMEMS-BAL-STAC",
+   "said": "nautical mile horizontal resolution"
+  },
+  {
+   "id": "E-CS-MEIJER",
+   "kind": "external",
+   "label": "Meijer et al.:\\nrivers and ocean plastic",
+   "detail": "A global model of riverine plastic emission to the ocean, and how concentrated it is among rivers.",
+   "source": "MEIJER-2021",
+   "said": "global riverine plastic emissions into the ocean"
+  },
+  {
+   "id": "E-CS-MEIJER-OUTLETS",
+   "kind": "external",
+   "label": "Meijer et al.:\\nthe outlets modelled",
+   "detail": "How many river and stream outlets the model includes.",
+   "source": "MEIJER-2021",
+   "said": "outlets of rivers and streams included in our model"
+  },
+  {
+   "id": "E-CS-TYPETAL-HIGHER",
+   "kind": "external",
+   "label": "Typetal report: heavier\\ncatchments carry more",
+   "detail": "Industrial areas and heavily trafficked roads typically have a higher content of hazardous substances than ordinary residential areas.",
+   "source": "TYPETAL22",
+   "said": "der typisk vil have et højere indhold af MFS end fra almindelige boligområder"
+  },
+  {
+   "id": "E-CS-DP02-TYPETAL",
+   "kind": "external",
+   "label": "DP02: loads computed\\nwith typetal",
+   "detail": "Among the data required in PULS, the substance loads are computed with typetal from the imported water volume.",
+   "source": "DP02",
+   "said": "Beregnes med typetal ved import af vandmængden"
+  },
+  {
+   "id": "E-CS-ILT23-AARHUS",
+   "kind": "external",
+   "label": "DCE 2023: the hardest-hit\\nareas in October",
+   "detail": "Early in October the hardest-hit areas included Mariager Fjord and Aarhus Bugt.",
+   "source": "NI-DCE-ILT-2023",
+   "said": "var de hårdest ramte iltsvindsområder Mariager Fjord, Aarhus Bugt"
+  },
+  {
+   "id": "E-CS-ILT25-AARHUS",
+   "kind": "external",
+   "label": "DCE 2025: Aarhus Bugt\\nlate in November",
+   "detail": "Only sporadic moderate iltsvind remained, in coastal waters of the Aarhus Bugt area among others.",
+   "source": "NI-DCE-ILT-2025",
+   "said": "sporadiske forekomster af moderat iltsvind i kystvande i Aarhus Bugt området"
+  },
+  {
+   "id": "E-CS-ILT-STRAT",
+   "kind": "external",
+   "label": "DCE: where\\niltsvind develops",
+   "detail": "Iltsvind can develop at the bottom, especially where the water column is layered.",
+   "source": "NI-DCE-ILT-2023",
+   "said": "især i områder, hvor vandsøjlen er lagdelt"
+  },
+  {
+   "id": "E-CS-ILT23-SYD",
+   "kind": "external",
+   "label": "DCE 2023: Det\\nSydfynske Øhav",
+   "detail": "Named among the hardest-hit areas in early October.",
+   "source": "NI-DCE-ILT-2023",
+   "said": "det sydlige Lillebælt, Det Sydfynske Øhav og Marstal Bugt"
+  },
+  {
+   "id": "E-CS-ILT25-SYD",
+   "kind": "external",
+   "label": "DCE 2025: Det\\nSydfynske Øhav",
+   "detail": "Severe iltsvind late in October in the deep western part of the Ærø basin.",
+   "source": "NI-DCE-ILT-2025",
+   "said": "I Det Sydfynske Øhav var der sidst i oktober kraftigt iltsvind"
+  },
+  {
+   "id": "U-CS-PEAKS",
+   "kind": "untraced",
+   "label": "Trail ends: no source for\\nthe published peak speeds",
+   "detail": "Searched 2026-09-11: currents.py writes peak surface speeds for several points under a comment naming published and pilot-guide values, with no citation; the data-source registers and the pins hold none."
+  },
+  {
+   "id": "U-CS-ROUTING",
+   "kind": "untraced",
+   "label": "Trail ends: where a reconnected\\ncatchment's rain goes",
+   "detail": "Only the category's name, in sp_kloakoplande, says the separated catchment is connected to the combined system; no pipe routing was checked, 2026-09-11."
+  },
+  {
+   "id": "U-CS-GREASE",
+   "kind": "untraced",
+   "label": "Trail ends: whether grease\\nseparators are required",
+   "detail": "Searched 2026-09-11: the Danish and English Wikipedia pages on grease separators, and HOFOR's and Københavns Kommune's sites at the addresses tried, which did not exist. No source was found for a legal requirement on food businesses."
+  },
+  {
+   "id": "U-CS-SETTLE",
+   "kind": "untraced",
+   "label": "Trail ends: what settles\\nin Køge Bugt",
+   "detail": "Nothing held measures overflow solids in Køge Bugt's sediment or their later resuspension; searched this repository's data sources and pins, 2026-09-11."
+  },
+  {
+   "id": "U-CS-WINDNORTH",
+   "kind": "untraced",
+   "label": "Trail ends: what drives the\\nSound north in the rain",
+   "detail": "The wind in overflow-scale rain hours is not dominated by the south-westerlies once named; no stored result tests another driver such as sea level or the Baltic outflow, 2026-09-11."
+  },
+  {
+   "id": "U-CS-FIELDDEPTH",
+   "kind": "untraced",
+   "label": "Trail ends: surface or\\ndepth-averaged current",
+   "detail": "Whether the Open-Meteo current is a surface or a depth-averaged current is not stated in the pinned documentation, 2026-09-11."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-CS-DATA",
+   "kind": "code",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "CURRENTS.md is generated by currents.py from the Open-Meteo Marine API's hourly currents for 2022-2026 and the hourly ERA5 wind and rain record, both free and keyless.",
+   "because": "cmd_fetch requests the marine API from MARINE_START to MARINE_END and the archive API for the Baltic wind; the Copenhagen wind and rain are the wave work's ERA5 files, whose period rain_climate() reads.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "D-CS-WEATHER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "Generated by `scripts/currents.py`. Currents from the Open-Meteo Marine API, hourly, 2022-2026; wind and rain from the ERA5 archive, hourly, 1995-2025. Both free and keyless.",
+     "texts": "586e4b2a4c03a9c5",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16"
+    }
+   }
+  },
+  {
+   "id": "C-CS-GRID",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The current field is computed at about eight kilometres while the Øresund narrows to a few, so the field cannot resolve the narrow straits; what follows rests on ratios, signs and timings, and the one speed-based figure keeps the field's speed error.",
+   "because": "Open-Meteo gives the resolution and Wikipedia the Øresund's narrowest width; a channel narrower than the grid step is represented by cells that are part land or open water.",
+   "rests_on": [
+    "E-CS-OM-RES",
+    "E-CS-ORESUND-WIDTH",
+    "A-CS-COARSE"
+   ],
+   "replaces": [
+    "C-CS-OLD-GRID",
+    "C-CS-OLD-CALIB"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "Open-Meteo computes its ocean currents at 0.08° (about 8 km), and the Øresund narrows to 4 km. A field that coarse cannot resolve the narrow straits, so what follows rests on ratios, signs and timings; the one figure that uses a speed - a flushing time in days - carries whatever speed error the field has.",
+     "texts": "010a8dca515e97b6",
+     "node E-CS-OM-RES": "8ba6fdb6a5a78767",
+     "pinned OM-MARINE": "78412adba8617110",
+     "node E-CS-ORESUND-WIDTH": "849b80c3a0d962fe",
+     "pinned WIKI-ORESUND": "b5697262d14e80c2",
+     "node A-CS-COARSE": "90f1396f9c2950a4"
+    }
+   }
+  },
+  {
+   "id": "C-CS-PEAKS",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The table gives the peak speed the field reaches at each point; the published peak speeds the script sets beside them have no source held, so that comparison is not used.",
+   "because": "cmd_validate takes each point's maximum speed over the record; the published values in the script carry no citation.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "U-CS-PEAKS"
+   ],
+   "replaces": [
+    "C-CS-OLD-CALIB"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "The peak speed the field reaches at each point is below. The script sets these beside peak speeds it records as published, but no source for those is held, so that comparison is not used here.",
+     "texts": "df68785e27b39cb7",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node U-CS-PEAKS": "bdd44cad7cab87ee"
+    }
+   }
+  },
+  {
+   "id": "C-CS-METRIC",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The measure used is the residual current divided by the mean speed, from which a speed error common to both cancels; the flushing time in days is the distance over the residual alone and keeps the field's speed error.",
+   "because": "cmd_index computes each point's mean speed, the vector mean current (the residual) and their ratio, and the flushing time as the stated distance over the residual.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "A-CS-COARSE"
+   ],
+   "replaces": [
+    "C-CS-OLD-NOFLUSH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "The measure is the **residual current divided by the mean speed** - how much of the water's motion actually goes somewhere. A speed error common to both cancels out of that ratio. The flushing time in days is the distance over the residual alone, so it keeps whatever speed error the field has at that point.",
+     "texts": "12e6ffa14b7435db",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node A-CS-COARSE": "90f1396f9c2950a4"
+    }
+   }
+  },
+  {
+   "id": "C-CS-FLUSH",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "In the current field Køge Bugt takes the longest of the points to move water the stated distance - many times longer than Aarhus Bugt - and has both the lowest mean speed and the smallest residual in the set.",
+   "because": "Read from currents_index.json. The ratio of the two flushing times is the ratio of the two residuals, so a speed error the same at both points cancels, but not one that differs between them.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "A-CS-COARSE",
+    "C-CS-METRIC"
+   ],
+   "replaces": [
+    "C-CS-OLD-NOFLUSH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**In this field Køge Bugt takes 73 days to move water 20 km, and Aarhus Bugt takes 3.4** - a factor of 22. Køge Bugt has both the lowest mean speed in the set and the smallest residual: the water moves and ends up close to where it started.",
+     "texts": "21c4725bec1063c6",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node A-CS-COARSE": "90f1396f9c2950a4",
+     "rests on C-CS-METRIC": "12e6ffa14b7435db"
+    }
+   }
+  },
+  {
+   "id": "C-CS-BELT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The Great Belt's long flushing time comes from strong reversing flow with little net, unlike Køge Bugt, which is slow and close to net-zero; only the second is retention.",
+   "because": "The Belt's mean speed is several times Køge Bugt's while its residual is small, so its water moves back and forth; Køge Bugt's small residual comes with the lowest mean speed.",
+   "rests_on": [
+    "C-CS-FLUSH",
+    "D-CS-CURRENTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "*One caveat.* A low residual can also mean strong reversing flow with little net - which is what the Great Belt's 23 days is. The Belt has 2.7× Køge Bugt's mean speed: it moves water back and forth vigorously and averages out. Køge Bugt is slow *and* close to net-zero, and only the second of these is retention of the kind asked about here.",
+     "texts": "5a95e8a3a22eb20d",
+     "rests on C-CS-FLUSH": "21c4725bec1063c6",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4"
+    }
+   }
+  },
+  {
+   "id": "C-CS-ILT-DEF",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "CURRENTS.md",
+   "claim": "DCE call it iltsvind when the oxygen concentration is below a threshold, and it develops at the bottom especially where the water column is stratified.",
+   "because": "Their autumn notes define iltsvind by the concentration alone, with moderate and severe bands, and say it develops at the bottom especially in layered water.",
+   "rests_on": [
+    "E-NI-DCE-DEF",
+    "E-CS-ILT-STRAT"
+   ],
+   "holder": "DCE, Aarhus University (iltsvind notes, 2023 and 2025)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "DCE call it iltsvind when the oxygen concentration is below 4 mg/l, and it develops at the bottom especially where the water column is stratified.",
+     "texts": "991349bc97321f82",
+     "node E-NI-DCE-DEF": "cda08de1e8e7e5ad",
+     "pinned NI-DCE-ILT-2025": "d2250411494901b5",
+     "node E-CS-ILT-STRAT": "8b217795ece8b6b1",
+     "pinned NI-DCE-ILT-2023": "f5a0f9f2d3140e18"
+    }
+   }
+  },
+  {
+   "id": "C-CS-ILT-OBS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "CURRENTS.md",
+   "claim": "In DCE's autumn surveys Aarhus Bugt was among the hardest-hit areas in October 2023 and had sporadic moderate iltsvind late in November 2025; in both years no iltsvind was registered in Køge Bugt.",
+   "because": "Stated in the two notes, each naming the areas.",
+   "rests_on": [
+    "E-CS-ILT23-AARHUS",
+    "E-CS-ILT25-AARHUS",
+    "E-NI-DCE-ILT-2023",
+    "E-NI-DCE-ILT-2025"
+   ],
+   "holder": "DCE, Aarhus University (iltsvind notes, 2023 and 2025)",
+   "replaces": [
+    "C-CS-OLD-CRITERION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "In DCE's autumn surveys Aarhus Bugt was among the hardest-hit areas in October 2023 and still had sporadic moderate iltsvind late in November 2025; in both years DCE registered no iltsvind in Køge Bugt.",
+     "texts": "547bc503c2e3ff70",
+     "node E-CS-ILT23-AARHUS": "61c5120e37ade4b4",
+     "pinned NI-DCE-ILT-2023": "f5a0f9f2d3140e18",
+     "node E-CS-ILT25-AARHUS": "3dc4d26657986429",
+     "pinned NI-DCE-ILT-2025": "d2250411494901b5",
+     "node E-NI-DCE-ILT-2023": "9e47d11e844d1d31",
+     "node E-NI-DCE-ILT-2025": "129f185a8ef5bc3b"
+    }
+   }
+  },
+  {
+   "id": "C-CS-INVERT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The oxygen survey and the retention table rank different properties - a bottom concentration, likeliest in layered water, against whether the water goes anywhere, on which Køge Bugt is the extreme case here - so a water can keep what it receives without registering iltsvind.",
+   "because": "Follows from DCE's definition and from the table: nothing in the definition measures residence.",
+   "rests_on": [
+    "C-CS-ILT-DEF",
+    "C-CS-ILT-OBS",
+    "C-CS-FLUSH"
+   ],
+   "replaces": [
+    "C-CS-OLD-CRITERION",
+    "C-CS-OLD-INSTRUMENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "So the survey and this table rank different properties. Iltsvind is a concentration at the bottom, likeliest where the water is layered; the table ranks whether the water goes anywhere, and on that Køge Bugt is the extreme case in this set. A water can keep what it receives without registering iltsvind, and a survey that counts iltsvind would not show it.",
+     "texts": "050e5e9a2b9d9d74",
+     "rests on C-CS-ILT-DEF": "991349bc97321f82",
+     "rests on C-CS-ILT-OBS": "547bc503c2e3ff70",
+     "rests on C-CS-FLUSH": "21c4725bec1063c6"
+    }
+   }
+  },
+  {
+   "id": "C-CS-SYDFYN",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "Det Sydfynske Øhav is retentive in the field but far from Køge Bugt, and DCE found iltsvind there in 2023 and 2025, so the two bays are not the same case - weak evidence, as the field cannot resolve an archipelago.",
+   "because": "Its flushing time is read from currents_index.json; the iltsvind from the two notes.",
+   "rests_on": [
+    "D-CS-CURRENTS",
+    "E-CS-ILT23-SYD",
+    "E-CS-ILT25-SYD",
+    "A-CS-COARSE"
+   ],
+   "replaces": [
+    "C-CS-OLD-VORTEX"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**Det Sydfynske Øhav** comes out at 8.7 days - retentive, but far from Køge Bugt - and DCE's surveys found iltsvind there in both years. On this evidence the two bays are not the same case. A field this coarse cannot resolve an archipelago, so this is weak evidence either way.",
+     "texts": "a8bbd60df007b15d",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node E-CS-ILT23-SYD": "776a487bcc7584ec",
+     "pinned NI-DCE-ILT-2023": "f5a0f9f2d3140e18",
+     "node E-CS-ILT25-SYD": "4611cb6130a365e5",
+     "pinned NI-DCE-ILT-2025": "d2250411494901b5",
+     "node A-CS-COARSE": "90f1396f9c2950a4"
+    }
+   }
+  },
+  {
+   "id": "C-CS-INDEX-PLAN",
+   "kind": "code",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The plan was to regress the strait flow on a wind-driven Baltic filling index and use the long wind record to extend the current record; it does not hold.",
+   "because": "cmd_index fits the index against the northern Sound flow; the wind record's length is read from the rain climate.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-WEATHER",
+    "C-CS-INDEX"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "The plan was to regress the strait flow on a wind-driven Baltic filling index and, if it held, use the 31-year wind record to extend the current record. It does not hold.",
+     "texts": "315b8e0e9835442f",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16",
+     "rests on C-CS-INDEX": "f3d83299ab3dc7a6"
+    }
+   }
+  },
+  {
+   "id": "C-CS-INDEX",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The best index window is a day, with a weak correlation and sign agreement little better than even, and the correlation falls away at longer windows.",
+   "because": "cmd_index correlates the windowed basin wind stress with the northern Sound flow for each window and keeps the best.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "D-CS-WEATHER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "Best correlation is **r = 0.44 at a 24 hour window**, with sign agreement of only **61%** over 34,968 hours. The correlation falls away at the longer windows - 336 h gives 0.01, 504 h gives -0.05, 720 h gives -0.07.",
+     "texts": "f3d83299ab3dc7a6",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16"
+    }
+   }
+  },
+  {
+   "id": "C-CS-INDEX-READ",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "A day-long optimum is a local wind response, not a basin filling and draining over weeks; either that memory is not the dominant control or this product cannot see it, and the extension over the long record is not available.",
+   "because": "A basin that fills and drains over weeks would correlate best at windows of weeks; the correlation falls instead.",
+   "rests_on": [
+    "C-CS-INDEX"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "A 24-hour optimum is a local wind response, not a basin filling and draining over weeks. Either the multi-week Baltic memory is not the dominant control on the Sound, or this coarse product cannot see it. **The extension over the long wind record is not available on this data**, and everything about currents here is as long as the current record.",
+     "texts": "58265be6d56d78fa",
+     "rests on C-CS-INDEX": "f3d83299ab3dc7a6"
+    }
+   }
+  },
+  {
+   "id": "C-CS-TEST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "Køge Bugt lies south of Copenhagen and the southern Sound's residual current runs away from it, so overflow transport there can only happen in particular hours, which the overlap of the rain and current records lets be tested.",
+   "because": "The points' coordinates in currents.py put Køge Bugt south of the Copenhagen weather point; the residual bearing at the southern Sound point is read from currents_index.json.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "Køge Bugt lies south of Copenhagen, and the residual current at the southern Sound point runs toward 43°, away from it. So the claim can only hold in particular hours: the hours in which the city overflows would have to be hours in which the water runs south. The rain record and the current record overlap for 35,064 hours, so this can be tested directly.",
+     "texts": "eeb335a25ac78dad",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4"
+    }
+   }
+  },
+  {
+   "id": "C-CS-BASELINE",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "Across the overlap hours the southern Sound runs south a minority of the time.",
+   "because": "cmd_transport counts the hours in which the along-strait flow at the southern Sound point is southward.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "Across all of them the southern Sound runs south **42%** of the time.",
+     "texts": "a9a77409034e8354",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4"
+    }
+   }
+  },
+  {
+   "id": "C-CS-RAIN-NORTH",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "During the rain the water at the southern Sound point runs north more often than usual, and the more so the harder it rains.",
+   "because": "cmd_transport bins the overlap hours by the preceding hours' rain and compares each band's southward share with the baseline.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "D-CS-WEATHER",
+    "A-CS-EVENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**During the rain, the water runs north**, and the harder it rains the more so: at overflow-scale rainfall, southward transport is 18 points below the baseline.",
+     "texts": "86f06e0024db56d8",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16",
+     "node A-CS-EVENT": "74e9527798a9182d"
+    }
+   }
+  },
+  {
+   "id": "C-CS-RAIN-WIND",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "In the hours of overflow-scale rain the wind is less often from the south-west or west than in all hours, so south-westerlies do not explain the northward flow; what does is not established here.",
+   "because": "rain_climate() gives the wind sector distribution over the whole record, for all hours and for the overflow-scale hours.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-WEATHER",
+    "A-CS-EVENT",
+    "U-CS-WINDNORTH"
+   ],
+   "replaces": [
+    "C-CS-OLD-SWLY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "The wind record does not show south-westerlies that would explain this simply: over 31 years, in the hours of overflow-scale rain the wind is from the south-west or west 33% of the time, against 41% of all hours. What drives the Sound north in those hours is not established here.",
+     "texts": "3d84c0777ff104df",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16",
+     "node A-CS-EVENT": "74e9527798a9182d",
+     "node U-CS-WINDNORTH": "d4eaf976147fef7a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-LAG",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "About half a day after overflow-scale rain the southern Sound runs south well above its baseline, and in the wind record the hours after such rain are mostly westerly.",
+   "because": "cmd_transport shifts the event hours by each lag; rain_climate() gives the wind sectors at the same lags over the whole record.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "D-CS-WEATHER",
+    "A-CS-EVENT"
+   ],
+   "replaces": [
+    "C-CS-OLD-VEER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**12 hours after an overflow-scale event, southward transport runs 59% - +17 points above baseline.** In the wind record the hours after such rain are the westerly ones: 12 hours later the wind is from the south-west or west 62% of the time.",
+     "texts": "ee86509c70b8a395",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16",
+     "node A-CS-EVENT": "74e9527798a9182d"
+    }
+   }
+  },
+  {
+   "id": "C-CS-LAG-READ",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The transport is a lag: the discharge happens under northward flow, and the flow reverses about half a day later, in the westerly weather that follows the rain.",
+   "because": "Both halves are in the tables; that the westerly weather reverses the flow is an interpretation the data fit but do not test.",
+   "rests_on": [
+    "C-CS-RAIN-NORTH",
+    "C-CS-LAG"
+   ],
+   "replaces": [
+    "C-CS-OLD-SYSTEM"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "So the transport is neither the simple claim nor its refutation but a lag: the discharge happens under northward flow, and the flow reverses about half a day later, in the westerly weather that follows the rain.",
+     "texts": "f95a1002d1e31828",
+     "rests on C-CS-RAIN-NORTH": "86f06e0024db56d8",
+     "rests on C-CS-LAG": "ee86509c70b8a395"
+    }
+   }
+  },
+  {
+   "id": "C-CS-FEW",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The lag result rests on few event-hours, every lag was tested, and a longer current record would settle it.",
+   "because": "The event-hour count is in the lag table; with few hours, one large result among several tested lags could arise by chance.",
+   "rests_on": [
+    "D-CS-CURRENTS",
+    "C-CS-LAG"
+   ],
+   "replaces": [
+    "C-CS-OLD-SAMEMECH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "*Statistical honesty:* this rests on 145 event-hours, and every lag in the table was tested; the 0-hour and 12-hour results are both large. A longer current record would settle it.",
+     "texts": "32b4bf6bf04a4f72",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "rests on C-CS-LAG": "ee86509c70b8a395"
+    }
+   }
+  },
+  {
+   "id": "C-CS-SEASONS",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "Over the whole weather record, overflow-scale rain comes mostly in the summer months, total rainfall varies much less by month, and wave-driven resuspension is most frequent from autumn into winter.",
+   "because": "rain_climate() over the whole record gives rain and overflow-scale hours by month; waves.json gives resuspension by month at the middle depth for a bed without biology.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-WEATHER",
+    "D-CS-WAVES",
+    "A-CS-EVENT"
+   ],
+   "replaces": [
+    "C-CS-OLD-SEABED",
+    "C-CS-OLD-SEASONTABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "Over the 31 years of the Copenhagen weather record, rain intense enough to overflow a combined sewer (at least 10 mm in 6 hours) comes mostly in **Jun, Jul, Aug**, 4.2-5.1 hours a year in each, against at most 3.0 in any other month. Total rainfall varies much less, 38-72 mm a month. Wave-driven bed resuspension is most frequent in **Oct, Nov, Dec, Jan**.",
+     "texts": "f1c9e1148950c73c",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16",
+     "node D-CS-WAVES": "5032ceca705073e9",
+     "node A-CS-EVENT": "74e9527798a9182d"
+    }
+   }
+  },
+  {
+   "id": "C-CS-SEQUENCE",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "If overflow solids settle where they are discharged, the seasons line up into delivery in the rain season, residence of months in the most retentive water here, and resuspension in the gales; only the seasons and the flushing time are computed.",
+   "because": "The seasons and the flushing time come from the claims beneath; that the material settles in Køge Bugt and is resuspended later is not measured.",
+   "rests_on": [
+    "C-CS-SEASONS",
+    "C-CS-FLUSH",
+    "U-CS-SETTLE"
+   ],
+   "replaces": [
+    "C-CS-OLD-SEQUENCE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "If the overflow's solids settle where they are discharged, the seasons line up into a sequence: delivery in the rain season into the most retentive water in this set, a residence time of months, and resuspension in the gales. The seasons and the flushing time are computed here; that the discharged material settles in Køge Bugt and is lifted again later is not measured.",
+     "texts": "b594aea929d54f31",
+     "rests on C-CS-SEASONS": "f1c9e1148950c73c",
+     "rests on C-CS-FLUSH": "21c4725bec1063c6",
+     "node U-CS-SETTLE": "8b6e4ff77a123c39"
+    }
+   }
+  },
+  {
+   "id": "C-CS-JOINT",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "Over the years the current record covers, overflow-scale rain with southward flow is rare - a few hours a year - too few for an annual average or calendar sampling to represent.",
+   "because": "cmd_transport counts, by month, the overflow-scale hours in which the southern Sound runs south, divided by the years present.",
+   "rests_on": [
+    "X-CS-CURRENTS",
+    "D-CS-CURRENTS",
+    "D-CS-WEATHER",
+    "A-CS-EVENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "These are the years the current record covers, and the numbers are small. The joint condition is rare - 8.1 hours a year in all. If transport toward Køge Bugt happens in so few hours, an annual-average accounting cannot represent it, and neither can monitoring that samples on a calendar.",
+     "texts": "ec652726c858b4b4",
+     "node X-CS-CURRENTS": "7c49494b284a0a7b",
+     "node D-CS-CURRENTS": "575fe2cf2ba7fad4",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16",
+     "node A-CS-EVENT": "74e9527798a9182d"
+    }
+   }
+  },
+  {
+   "id": "C-CS-NEED-FIELD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "A field that resolves the straits exists - Copernicus Marine's Baltic reanalysis at about one nautical mile - and the analysis is worth redoing on it, retention first.",
+   "because": "Its resolution is stated in the product description; finer than the straits, unlike the field used here.",
+   "rests_on": [
+    "E-CS-CMEMS-BAL",
+    "C-CS-GRID"
+   ],
+   "replaces": [
+    "C-CS-OLD-BALTICFIELD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**A current field that resolves the straits.** Copernicus Marine publishes a Baltic reanalysis at 1 nautical mile resolution. Everything here would be worth redoing on it, the retention result first.",
+     "texts": "dca8c148e31a611f",
+     "node E-CS-CMEMS-BAL": "989aa4a7214aab89",
+     "pinned CMEMS-BAL-STAC": "af19cff76c8ac358",
+     "rests on C-CS-GRID": "010a8dca515e97b6"
+    }
+   }
+  },
+  {
+   "id": "C-CS-NEED-TRACK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "Retention is a summary statistic; where released material ends up needs trajectories, which need a resolving field.",
+   "because": "A residual current says whether water leaves on average, not where a particular release goes.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**Particle tracking.** Retention is a summary statistic. Where material released off Amager ends up needs trajectories, which need the field above.",
+     "texts": "35749b95d7442594"
+    }
+   }
+  },
+  {
+   "id": "C-CS-NEED-LONGER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "With the wind index failed, the current record cannot be extended backwards, so the event counts stay small.",
+   "because": "The extension was to come from the index.",
+   "rests_on": [
+    "C-CS-INDEX-READ"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**A longer current record.** The wind index failed, so the current record cannot be extended backwards, and the event counts stay small.",
+     "texts": "358dbc6a40407a9b",
+     "rests on C-CS-INDEX-READ": "58265be6d56d78fa"
+    }
+   }
+  },
+  {
+   "id": "C-CS-NEED-DENSITY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CURRENTS.md",
+   "claim": "The Sound lies between saline Kattegat and brackish Baltic water, with a surface stream often northbound from the Baltic, so one current per point cannot show whether a plume and the water beneath it move differently.",
+   "because": "Wikipedia gives the salinities and the surface stream; whether the field's current is a surface or a depth-averaged one was not established.",
+   "rests_on": [
+    "E-CS-ORESUND-SAL",
+    "E-CS-ORESUND-WATER",
+    "U-CS-FIELDDEPTH"
+   ],
+   "replaces": [
+    "C-CS-OLD-DENSITY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CURRENTS.md": "**Density.** The Sound lies between the Kattegat, at more than 30 PSU, and the Baltic, at around 7 PSU, and its surface stream is often northbound from the Baltic. One current per point cannot show whether a plume and the water beneath it are moving differently.",
+     "texts": "560db850344c7df6",
+     "node E-CS-ORESUND-SAL": "d0c45df44f16fbc4",
+     "pinned WIKI-ORESUND": "b5697262d14e80c2",
+     "node E-CS-ORESUND-WATER": "85a222e03f1b5c6c",
+     "node U-CS-FIELDDEPTH": "6ef88b4217e01376"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-SOURCE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "SOLUTIONS.md is generated by solutions.py from Københavns Kommune's catchment and cloudburst layers and the national overflow register.",
+   "because": "compute() reads the city's layers and the national register and writes solutions.json; page() writes the page from it.",
+   "rests_on": [
+    "X-CS-SOLUTIONS",
+    "D-CS-KKLAYERS",
+    "D-CS-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Generated by `scripts/solutions.py` from Københavns Kommune's own catchment and cloudburst layers and the national overflow register.",
+     "texts": "cb5b8a76faa48a07",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a",
+     "node D-CS-REGISTER": "2f9451587c357940"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-COMBINED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Rain on a Copenhagen street mostly goes into the same pipe as the sewage, and when that pipe fills the mixture leaves through an overflow without treatment.",
+   "because": "Most of the city's impervious area drains to the combined system; a combined-sewer overflow releases that flow when the pipe is full.",
+   "rests_on": [
+    "C-CS-S-SHARE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Rain that falls on a Copenhagen street mostly does not go to a river. It goes into the same pipe as the sewage, and when that pipe fills, the mixture leaves through an overflow structure without passing a treatment works.",
+     "texts": "8de5494c5b1952eb",
+     "rests on C-CS-S-SHARE": "8776fc407a57729a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-SHARE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Most of the city's population equivalent and impervious area sits on a combined system.",
+   "because": "Summed by sewer type over the catchment layer.",
+   "rests_on": [
+    "X-CS-SOLUTIONS",
+    "D-CS-KKLAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "**90.7% of the city's population equivalent, and 81.4% of its impervious area, sits on a combined system.** That is 3,447 hectares of roof and pavement whose runoff is, by design, mixed with sewage before it can go anywhere.",
+     "texts": "8776fc407a57729a",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-PLUMBING",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The combined sewer is a fact about plumbing, not about agriculture, nutrients or nitrogen.",
+   "because": "What mixes rain with sewage is the pipe network, whatever the load in either.",
+   "rests_on": [
+    "C-CS-S-SHARE"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-CENTURY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "It is a fact about plumbing, not about agriculture, nutrients or nitrogen.",
+     "texts": "ee434351a0b97fe2",
+     "rests on C-CS-S-SHARE": "8776fc407a57729a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-PLAN-INTRO",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Every catchment carries a current and a planned sewer type, and most combined catchments stay combined in the plan.",
+   "because": "Counted over the catchment layer's two fields.",
+   "rests_on": [
+    "X-CS-SOLUTIONS",
+    "D-CS-KKLAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Every catchment carries both a current sewer type and a planned one. Of the **300 combined catchments**:",
+     "texts": "e3670489e2f89d96",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-RECONNECT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "A catchment separated inside but reconnected to the combined system still sends its rain to the combined pipe.",
+   "because": "The category's own name says it is connected to the combined system; the routing was not checked.",
+   "rests_on": [
+    "D-CS-KKLAYERS",
+    "U-CS-ROUTING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "separated inside the catchment - **and reconnected to the combined system.** The rain is still in the sewage pipe by the time it reaches an overflow.",
+     "texts": "72c032ae69ae422a",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a",
+     "node U-CS-ROUTING": "5a696afadc4a6c3e"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-MIDDLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Separating the pipes within a catchment and joining them again upstream of the overflow changes nothing at the outfall.",
+   "because": "What reaches the overflow is the joined flow.",
+   "rests_on": [
+    "C-CS-S-RECONNECT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The middle row is the finding, and the category's own name says it. Separating the pipes within a catchment and joining them again upstream of the overflow changes what happens inside the block and nothing at the outfall.",
+     "texts": "7ef7017dd0363cb7",
+     "rests on C-CS-S-RECONNECT": "72c032ae69ae422a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-NET",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Net of the reconnected category, only a small share of the combined area leaves the combined system in the plan.",
+   "because": "Combined area now, less combined area planned, less the area planned as reconnected.",
+   "rests_on": [
+    "X-CS-SOLUTIONS",
+    "D-CS-KKLAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "By impervious area: combined drops from 3,447 ha to 3,169 ha, but 197 ha of that goes into the reconnected category. **Net area actually leaving the combined system: about 80 ha, or 2.3%.**",
+     "texts": "51b73654fec2823a",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-LAR-WHAT",
+   "kind": "code",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The city registers local infiltration installations individually, with the disconnected area in square metres.",
+   "because": "lar_registreringer holds one record per installation with its disconnected area.",
+   "rests_on": [
+    "X-CS-SOLUTIONS",
+    "D-CS-KKLAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The other route off the combined system is local infiltration - soakaways, rain gardens, green roofs - each of which takes a specific area of roof or pavement off the sewer. The city registers them individually, with the disconnected area in square metres.",
+     "texts": "ce303de845e607ab",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-LAR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Only a few per cent of the combined-sewered area has been taken off the pipe by registered infiltration, and less is confirmed in use.",
+   "because": "Disconnected area, and the part confirmed in use, over the combined-sewered impervious area.",
+   "rests_on": [
+    "X-CS-SOLUTIONS",
+    "D-CS-KKLAYERS"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-CENTURIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "So between 1.4% (confirmed in use) and 4.5% (registered) of the relevant area has been taken off the pipe. That is a statement about scale, not a criticism of infiltration as a technique.",
+     "texts": "ec79fa0b15712b6f",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-SURFACE-WHAT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The cloudburst plan is mostly surface alignments - channels, green roads, retention streets - designed and partly built.",
+   "because": "The lengths by type, and the delivery dates, are conveyance.py's.",
+   "rests_on": [
+    "C-CONVEYANCE",
+    "D-CS-KKLAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The cloudburst plan is not mostly pipes. It is mostly surface: streets reshaped into channels, green roads, squares that hold water - rainwater rivers at city scale, designed and partly built.",
+     "texts": "f90eafb8f718d8bf",
+     "rests on C-CONVEYANCE": "0b5f8e0fea6bad2d",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-RATIO",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The cloudburst plan has more than twice as much surface conveyance as pipe.",
+   "because": "Surface and pipe lengths from conveyance.py.",
+   "rests_on": [
+    "C-CONVEYANCE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "**168 km of surface conveyance against 71 km of pipe - 2.4 to 1.** The idea is not missing from Copenhagen's plan; it is the plan's dominant form. Lengths are those of `scripts/conveyance.py`, the one length table for this layer.",
+     "texts": "d276e18f468b5e93",
+     "rests on C-CONVEYANCE": "0b5f8e0fea6bad2d"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-DESIGN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The city's flood scenarios for the cloudburst plan are for a hundred-year event, and a cloudburst route carries water only when the pipes are overwhelmed, so ordinary heavy rain still goes into the combined pipe.",
+   "because": "The scenario sheets name the event; the routes are drawn for the extreme event.",
+   "rests_on": [
+    "C-ML-FLOOD-MODEL",
+    "C-PG-1-CONNECTION",
+    "E-ML-FLOOD-SHEET"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-HANDFUL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The city's flood scenarios for the cloudburst plan are for a 100-year event. A skybrudsvej carries water only when the pipes are already overwhelmed; ordinary heavy rain still goes into the combined pipe.",
+     "texts": "d9b0caa30970930f",
+     "rests on C-ML-FLOOD-MODEL": "32e850a8ca7d8929",
+     "rests on C-PG-1-CONNECTION": "bbe2d60b2ab94a66",
+     "node E-ML-FLOOD-SHEET": "6632fd49d9ae8e13",
+     "pinned FLOOD2012-AMAGER": "1045cc4c84324598"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-OFTEN",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "In the national layer, the combined-sewer structures that report it record overflows several times a year at the median.",
+   "because": "The layer's overflow count is a number of overflows a year, by DP02; its median is taken over the structures that fill it in.",
+   "rests_on": [
+    "D-CS-REGISTER",
+    "E-NI-DP02-FIELDS"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-HUNDRED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Overflows are counted in years, not centuries: in the national layer, the 2,541 combined-sewer overflow structures that fill in the count report a median of 6 overflows a year.",
+     "texts": "c731748eed64924b",
+     "node D-CS-REGISTER": "2f9451587c357940",
+     "node E-NI-DP02-FIELDS": "0d20df026831c6e2",
+     "pinned DP02": "d6578834b1ace154"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-DIFFERENT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The surface network answers the flood risk to the city, a different problem with a different design storm from overflows.",
+   "because": "One is sized to a hundred-year event, the other happens several times a year.",
+   "rests_on": [
+    "C-CS-S-DESIGN",
+    "C-CS-S-OFTEN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The surface network answers the flood risk to the city, which is a different problem with a different design storm.",
+     "texts": "c827162fa4536fe6",
+     "rests on C-CS-S-DESIGN": "d9b0caa30970930f",
+     "rests on C-CS-S-OFTEN": "c731748eed64924b"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-EVERYDAY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The everyday-rain component - green roads and registered infiltration - is small against the combined area that needs disconnecting.",
+   "because": "Green-road length from conveyance.py, infiltration and combined area from solutions.json.",
+   "rests_on": [
+    "C-CONVEYANCE",
+    "C-CS-S-LAR",
+    "C-CS-S-SHARE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The everyday-rain component is the green roads and the infiltration - 61 km and 156 ha respectively - against 3,447 ha that needs disconnecting.",
+     "texts": "d169dfa1d0d2ee93",
+     "rests on C-CONVEYANCE": "0b5f8e0fea6bad2d",
+     "rests on C-CS-S-LAR": "ec79fa0b15712b6f",
+     "rests on C-CS-S-SHARE": "8776fc407a57729a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-DELIVERY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "On the city's own dates, part of the network is in service, more is scheduled over the next decade and more, and some has no date.",
+   "because": "conveyance.py sums lengths by expected-in-service year.",
+   "rests_on": [
+    "C-CONVEYANCE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Delivery, on the city's own expected-in-service dates: **56 km by the end of 2025**, 148 km scheduled through 2038, and 76 km with no date at all.",
+     "texts": "5621a6acb247a952",
+     "rests on C-CONVEYANCE": "0b5f8e0fea6bad2d"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-REGISTER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Of the national register's rain-dependent discharge points, few carry a recorded basin volume, and among those the distribution is extreme.",
+   "because": "Counted over punkt_rbu_udl.",
+   "rests_on": [
+    "D-CS-REGISTER",
+    "X-CS-SOLUTIONS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The national register holds **19,665 rain-dependent discharge points** across 97 municipalities (680 of them inside the Copenhagen clip used elsewhere here). Only **1,328** of them carry a recorded basin volume; the other 18,337 have the field empty. Among those that do have a number, the distribution is extreme:",
+     "texts": "d870f25e5f72762d",
+     "node D-CS-REGISTER": "2f9451587c357940",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-TAIL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "A small share of the structures holds a large share of the recorded volume: a heavy tail.",
+   "because": "Volumes sorted, largest first, and the cumulative share at each share of structures.",
+   "rests_on": [
+    "D-CS-REGISTER",
+    "X-CS-SOLUTIONS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "**13 structures hold 24% of the recorded volume.** The largest is 42,000 m³; the median is 250 m³. That is a heavy tail.",
+     "texts": "255d1c4c61c21cc3",
+     "node D-CS-REGISTER": "2f9451587c357940",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-TYPETAL",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "SOLUTIONS.md",
+   "claim": "The typetal come from a few combined-overflow and stormwater stations in household catchments, cover only discharges without prior treatment such as settling in basins, and not industrial areas or heavily trafficked roads, which typically carry more; and a significant share of the adsorbing substances is caught in basin sediment.",
+   "because": "Their report states the stations, the choice of household catchments, what the typetal exclude and why, and the finding on basin sediment.",
+   "rests_on": [
+    "C-NI-TYPETAL-BASIS",
+    "E-NI-TYPETAL-SEDIMENT",
+    "E-CS-TYPETAL-HIGHER"
+   ],
+   "holder": "Miljøstyrelsen / DHI, typetal report (2022)",
+   "replaces": [
+    "C-CS-OLD-S-APPLIED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The national concentrations for hazardous substances in these discharges - the typetal - come from **6 combined-overflow stations and 5 stormwater stations** in catchments chosen to represent households and residential areas. They cover only discharges without prior treatment such as settling in basins, and not industrial areas or heavily trafficked roads, which the report says typically carry more; and the report finds that a significant share of the adsorbing substances is caught in basin sediment.",
+     "texts": "303b562cf71b836d",
+     "rests on C-NI-TYPETAL-BASIS": "c434e834e9f6ff71",
+     "node E-NI-TYPETAL-SEDIMENT": "dc69c4bf57840c5e",
+     "pinned TYPETAL22": "f9e89eea09ad4512",
+     "node E-CS-TYPETAL-HIGHER": "3a4e06c79d0f112c"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-TAILARG",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "A national load built as volume times the typetal rests on the typical residential case while the stored volume is concentrated in a few structures; whether the load is also concentrated is not measured.",
+   "because": "DP02 has PULS compute loads from the water volume with the typetal; the typetal describe household catchments; the volume tail is in the register.",
+   "rests_on": [
+    "C-CS-S-TAIL",
+    "C-CS-S-TYPETAL",
+    "E-CS-DP02-TYPETAL"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-TAILARG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Put those together. The stored volume is concentrated in a few structures; the concentrations describe the typical residential case and leave out the discharge types the report itself expects to carry more. A national load built as volume times typetal therefore rests on the typical case. Whether the load, like the volume, is concentrated in a few structures is not measured.",
+     "texts": "3796618886de9a31",
+     "rests on C-CS-S-TAIL": "255d1c4c61c21cc3",
+     "rests on C-CS-S-TYPETAL": "303b562cf71b836d",
+     "node E-CS-DP02-TYPETAL": "2cc120f2731d92cf",
+     "pinned DP02": "d6578834b1ace154"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-PLASTIC",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "SOLUTIONS.md",
+   "claim": "In a global model of riverine plastic emission, a small minority of the modelled river outlets accounts for most of the plastic reaching the ocean.",
+   "because": "Their model's counts of outlets and of the rivers carrying most of the emission.",
+   "rests_on": [
+    "E-CS-MEIJER",
+    "E-CS-MEIJER-OUTLETS"
+   ],
+   "holder": "Meijer, van Emmerik, van der Ent, Schmidt & Lebreton (2021), Science Advances",
+   "replaces": [
+    "C-CS-OLD-S-PLASTIC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "A similar concentration is documented for plastic in rivers: of 100,887 river outlets in a global model, 1656 account for 80% of the plastic emitted to the ocean ([Meijer et al., *Science Advances*, 2021](https://doi.org/10.1126/sciadv.aaz5803)).",
+     "texts": "2fedcaaedbe65a94",
+     "node E-CS-MEIJER": "7e173e867df8ab1a",
+     "pinned MEIJER-2021": "844edaf7a003fbe2",
+     "node E-CS-MEIJER-OUTLETS": "df5456eade4e88a5"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-ANALOGY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "A sewer network need not be more evenly behaved than a river network, and this register's storage is not.",
+   "because": "The storage tail is measured; the river case shows such concentration is common in drainage networks, not that sewers share it.",
+   "rests_on": [
+    "C-CS-S-PLASTIC",
+    "C-CS-S-TAIL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "A sewer network need not be more evenly behaved than a river network, and this register's storage is not.",
+     "texts": "b4fa80b3a3d86929",
+     "rests on C-CS-S-PLASTIC": "2fedcaaedbe65a94",
+     "rests on C-CS-S-TAIL": "255d1c4c61c21cc3"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-TRACTABLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The concentration makes a typical-case estimate weak and the problem tractable: if a few structures dominate, a few interventions cover most of it.",
+   "because": "Conditional on the load following the volume, which is not measured.",
+   "rests_on": [
+    "C-CS-S-TAIL",
+    "C-CS-S-TAILARG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The concentration in section 5 cuts both ways. It is what makes a typical-case estimate weak, and it is also what makes the problem tractable: if a few structures dominate, a few interventions cover most of it.",
+     "texts": "9b28730a2ebd3f95",
+     "rests on C-CS-S-TAIL": "255d1c4c61c21cc3",
+     "rests on C-CS-S-TAILARG": "3796618886de9a31"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-TIMESCALES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The timescales in the table are this page's estimates from what each step involves, not from a costed plan.",
+   "because": "Equipment, an operating procedure and regulation take less time than construction; no costing was done.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "The timescales below are this page's estimates, from what each step involves - equipment, an operating procedure, regulation, construction - not from any costed plan.",
+     "texts": "c2d329c553e54018"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-MEASURE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Flow-proportional sampling on the largest structures is the measurement-based method, the best in Miljøstyrelsen's hierarchy, with far less uncertainty than a simple mass balance.",
+   "because": "DP02 lists the methods with their uncertainty on the discharged load.",
+   "rests_on": [
+    "E-NI-DP02-LEVELS",
+    "E-DS-DP02-MEASURED",
+    "C-CS-S-TAIL"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-NEVER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Flow-proportional samplers on the largest 13 structures. That is videnniveau 5, the best method in Miljøstyrelsen's own hierarchy, at 30% uncertainty instead of 135% for a simple mass balance.",
+     "texts": "197674fcdfb6f19a",
+     "node E-NI-DP02-LEVELS": "da061f0f067c5b47",
+     "pinned DP02": "d6578834b1ace154",
+     "node E-DS-DP02-MEASURED": "019482890f540cf4",
+     "pinned DTA-DP02-2024": "d6578834b1ace154",
+     "rests on C-CS-S-TAIL": "255d1c4c61c21cc3"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-PULS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "PULS already holds the number of overflows a year and no flow rate, which is a decision about the format, not a limit of the instruments.",
+   "because": "DP02's required fields for an overflow; flow is measured where `level 5` is used, so the instruments exist.",
+   "rests_on": [
+    "C-NI-PULS-FIELDS",
+    "E-DS-DP02-MEASURED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "PULS already holds the number of overflows a year. No flow rate is recorded at all, which is a decision about the format, not a limit of the instruments.",
+     "texts": "cf13e90f3043c9eb",
+     "rests on C-NI-PULS-FIELDS": "c05b9b3c7a5c5614",
+     "node E-DS-DP02-MEASURED": "019482890f540cf4",
+     "pinned DTA-DP02-2024": "d6578834b1ace154"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-BASINS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Material caught in basin sediment can be carried out when a high flow scours it, and removing it in advance is an operating procedure, not construction.",
+   "because": "The typetal report finds much adsorbing material in basin sediment; release is a threshold in flow.",
+   "rests_on": [
+    "C-NI-THRESHOLD",
+    "E-NI-TYPETAL-SEDIMENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Material caught in basin sediment can be carried out when a high flow scours it. Removing it in advance is an operating procedure, not construction.",
+     "texts": "2a7eb4bf592e57fe",
+     "rests on C-NI-THRESHOLD": "62506ede74ffab3a",
+     "node E-NI-TYPETAL-SEDIMENT": "dc69c4bf57840c5e",
+     "pinned TYPETAL22": "f9e89eea09ad4512"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-FAT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "A grease separator sits at the business, so intercepting fat is regulation and enforcement, not construction.",
+   "because": "Where the device sits decides who acts; whether it is already required was not found.",
+   "rests_on": [
+    "U-CS-GREASE"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-GREASE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "A grease separator sits at the business, so this is regulation and enforcement, not construction.",
+     "texts": "2670a0de9b75200f",
+     "node U-CS-GREASE": "b11ab5d8c94e9c71"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-ROW-DISCONNECT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Roof and pavement disconnection has reached a few per cent of the combined area.",
+   "because": "The registered and confirmed shares.",
+   "rests_on": [
+    "C-CS-S-LAR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "1.4-4.5% done.",
+     "texts": "1e8ecb220a80cbbe",
+     "rests on C-CS-S-LAR": "ec79fa0b15712b6f"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-ROW-SEPARATE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Few of the combined catchments are planned for genuine separation.",
+   "because": "Counted over the catchment layer.",
+   "rests_on": [
+    "C-CS-S-PLAN-INTRO"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "13 of the 300 combined catchments are planned for it.",
+     "texts": "f70f9fadee725969",
+     "rests on C-CS-S-PLAN-INTRO": "e3670489e2f89d96"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-SPLIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Measurement could be addressed within a season and would show which slow intervention is worth the money; the infrastructure cannot be fixed quickly, and the sewer plan leaves most combined catchments combined.",
+   "because": "Measurement is equipment on a few structures; separation and disconnection are construction across the city, and the plan's counts show how little is planned.",
+   "rests_on": [
+    "C-CS-S-MEASURE",
+    "C-CS-S-PLAN-INTRO",
+    "C-CS-S-NET"
+   ],
+   "replaces": [
+    "C-CS-OLD-S-HOLDBACK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "So the answer to *how fast* splits in two. **The measurement problem could be addressed within a season**, and until it is, nobody can say which of the slow interventions is worth the money. **The infrastructure problem cannot be fixed quickly by anyone**, and the sewer plan on the books leaves most combined catchments combined.",
+     "texts": "966abd6df7229a4a",
+     "rests on C-CS-S-MEASURE": "197674fcdfb6f19a",
+     "rests on C-CS-S-PLAN-INTRO": "e3670489e2f89d96",
+     "rests on C-CS-S-NET": "51b73654fec2823a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-FIRST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "Which is the case for measuring the largest structures first, to learn whether the load is as concentrated as the volume.",
+   "because": "Follows from the two claims beneath: the measurement is cheap and decides the rest.",
+   "rests_on": [
+    "C-CS-S-TAILARG",
+    "C-CS-S-MEASURE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Which is the case for doing the cheap thing first. Instrument the tail, find out whether a handful of structures dominates the load the way a handful dominates the volume, and the argument about what to build next becomes an argument with evidence in it.",
+     "texts": "8400e8726045c796",
+     "rests on C-CS-S-TAILARG": "3796618886de9a31",
+     "rests on C-CS-S-MEASURE": "197674fcdfb6f19a"
+    }
+   }
+  },
+  {
+   "id": "C-CS-S-SOURCES",
+   "kind": "code",
+   "stance": "ours",
+   "page": "SOLUTIONS.md",
+   "claim": "The page's sources are the city's WFS layers, the Miljøgis and national registers and the national overflow layer, with typetal and knowledge levels from monitoring.json and lengths from conveyance.py.",
+   "because": "The files solutions.py and conveyance.py read.",
+   "rests_on": [
+    "X-CS-SOLUTIONS",
+    "D-CS-KKLAYERS",
+    "D-CS-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-cs (read each claim, its reasoning and what it rests on against the page wording as recorded; code claims against currents.py and solutions.py; figures against currents_*.json, currents_rain.json, waves.json, solutions.json, conveyance.json and outfalls.json; the engine checked every pinned phrase. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on SOLUTIONS.md": "Sources: `sp_kloakoplande`, `lar_registreringer` and `skp_veje_tunneller_kk` from Københavns Kommune's WFS; `vp3_basis_2019_punkt_rbu_udl` from Miljøgis; the national register `punkt_rbu_udl`; the national overflow layer from spildevandsdata.dk. Typetal and knowledge-level provenance in `data/manual/monitoring.json`. Lengths are computed from the geometries by `scripts/conveyance.py`; areas and volumes are the values the publishers recorded.",
+     "texts": "84b73b222914eb82",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node D-CS-KKLAYERS": "e93a434be5fd4b8a",
+     "node D-CS-REGISTER": "2f9451587c357940"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-GRID",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The only free current field covering Danish waters is a global model on a coarse grid, and the straits are narrower than that.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "The only free current field covering Danish waters",
+    "end": "The Danish straits are narrower than that",
+    "why": "The grid step was a quotation of the page and differs from what Open-Meteo states; that this is the only free field has no source held."
+   },
+   "replaced_by": [
+    "C-CS-GRID"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The only free current field covering Danish waters is a global model on a roughly 9 km grid. The Danish straits are narrower than that",
+     "texts": "ab11c05724a795aa"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-CALIB",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Against published peak speeds, the open-water points are about right and the narrow straits come out several times too slow.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "Before using it for",
+    "end": "reason it survives the calibration error",
+    "why": "The published peak speeds it compares against are written into the script with no source held, so neither the ratios nor 'about right' can be justified; and the flushing time does use a speed."
+   },
+   "replaced_by": [
+    "C-CS-PEAKS",
+    "C-CS-GRID",
+    "C-CS-METRIC"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Before using it for anything, here is the peak speed it produces against published values: | Point | Model peak | Published peak | Ratio | |---|---:|---:|---:| | koege_bugt | 0.50 m/s | 0.4 m/s | 0.8× | | oresund_s | 0.89 m/s | 1.5 m/s | 1.7× | | drogden | 0.89 m/s | 1.7 m/s | 1.9× | | oresund_n | 0.81 m/s | 1.5 m/s | 1.9× | | fehmarn | 1.08 m/s | 1.2 m/s | 1.1× | | storebaelt | 0.86 m/s | 1.8 m/s | 2.1× | The open-water points are about right; the narrow straits come out 1.7–2.1 times too slow, which is what a 9 km grid does to a 4 km channel. So nothing below uses an absolute speed. Everything is a ratio, a sign, or a timing, and each is stated with the reason it survives the calibration error",
+     "texts": "8197c5bc13e29fcd"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-NOFLUSH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Køge Bugt does not flush, and the metric used survives the field's speed error.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "The result: Køge Bugt does not flush",
+    "end": "so this number survives the problem above",
+    "why": "Every point in the field flushes in a finite time and Køge Bugt takes longest; and the flushing time in days, unlike the ratio, keeps the speed error."
+   },
+   "replaced_by": [
+    "C-CS-METRIC",
+    "C-CS-FLUSH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The result: Køge Bugt does not flush The metric is the residual current divided by the mean speed — how much of the water's motion actually goes somewhere. A calibration error in speed cancels out of a ratio of two speeds, so this number survives the problem above",
+     "texts": "edc38c6f72dfeb2e"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-CRITERION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Aarhus Bugt registers iltsvind every year, and Køge Bugt, shallow and mixed, cannot qualify under a criterion that requires stratified bottom water.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "Aarhus Bugt registers oxygen depletion every year",
+    "end": "extreme case in this set",
+    "why": "'Every year' rests on two surveys; DCE define iltsvind by the concentration alone, stratification only making it likelier, so 'cannot qualify however bad it gets' is wrong; that Køge Bugt is shallow and mixes has no source held."
+   },
+   "replaced_by": [
+    "C-CS-ILT-DEF",
+    "C-CS-ILT-OBS",
+    "C-CS-INVERT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Aarhus Bugt registers oxygen depletion every year. Køge Bugt is recorded as having none, including in 2023 and 2025. And Aarhus Bugt flushes 22 times faster. That is not a contradiction, because the two things are not the same phenomenon. DCE's iltsvind criterion is dissolved oxygen below 4 mg/l in stratified bottom water — which requires depth and a sealed layer, and Aarhus Bugt has both. Køge Bugt is shallow and mixes, so it cannot qualify however bad it gets. But retention of surface material, floating mats and fine sediment is a *different* property, and on that one Køge Bugt is the extreme case in this set",
+     "texts": "ebccc989c18e048f"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-INSTRUMENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The national instrument measures a property Køge Bugt does not have and not the one it has most.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "The national instrument measures",
+    "end": "more of than anywhere else here",
+    "why": "It rests on the retired criterion: the definition does not require stratification, so it is not a property Køge Bugt lacks."
+   },
+   "replaced_by": [
+    "C-CS-INVERT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The national instrument measures the property Køge Bugt does not have, and does not measure the property it has more of than anywhere else here",
+     "texts": "5d91693861e87c15"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-VORTEX",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Det Sydfynske Øhav is mid-range, and the shared vortex description of the two bays is not supported.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "comes out mid-range at",
+    "end": "weak evidence either way",
+    "why": "No source for the 'shared vortex description' is held; the rest stands, reworded."
+   },
+   "replaced_by": [
+    "C-CS-SYDFYN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "comes out mid-range at 8.7 days — retentive, but nothing like Køge Bugt. It does register iltsvind. On this evidence the two bays are not the same case, and the shared vortex description is not supported by this model. A coarse grid cannot resolve an archipelago, so this is weak evidence either way",
+     "texts": "3eddac2b40da7be2"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-SWLY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Heavy rain in Copenhagen arrives with cyclonic south-westerlies, which drive the Sound north.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "Which is physically obvious once seen",
+    "end": "drive the Sound north",
+    "why": "The wind record contradicts it: in overflow-scale rain hours the wind is less often from the south-west or west than in all hours."
+   },
+   "replaced_by": [
+    "C-CS-RAIN-WIND"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Which is physically obvious once seen: heavy rain in Copenhagen arrives with cyclonic southwesterlies, and those drive the Sound north",
+     "texts": "fa113be03e494103"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-VEER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The southward flow after the rain is the post-frontal veer to the north-west.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "That is the post-frontal wind veer",
+    "end": "while the plume is still in it",
+    "why": "In the wind record the hours after such rain are more often from the south-west and west, not the north-west, and no front was identified."
+   },
+   "replaced_by": [
+    "C-CS-LAG"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That is the post-frontal wind veer: the front passes, the wind swings to the northwest, and the water reverses while the plume is still in it",
+     "texts": "c8a1f19a00941a94"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-SYSTEM",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The reversal comes on a timescale set by the same weather system that caused the discharge.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "So the mechanism is neither the simple claim nor its refutation",
+    "end": "the same weather system that caused the discharge",
+    "why": "No weather system was identified; what the record shows is westerly wind in the hours after such rain."
+   },
+   "replaced_by": [
+    "C-CS-LAG-READ"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So the mechanism is neither the simple claim nor its refutation. It is a lag. The discharge happens under northward flow and the transport reverses roughly half a day later, on a timescale set by the same weather system that caused the discharge",
+     "texts": "e3c53ce766a655a3"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-SAMEMECH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The two large lag results share one simple mechanism, which is why they are reported.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "results are both large and both have the same simple mechanism",
+    "end": "which is why they are reported",
+    "why": "The mechanism named was the retired south-westerly and north-west veer."
+   },
+   "replaced_by": [
+    "C-CS-FEW"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "results are both large and both have the same simple mechanism behind them, which is why they are reported",
+     "texts": "35379b636fd4cbc0"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-SEABED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "SEABED.md said the resuspension season coincides with the overflow season, which is wrong over the long rain record.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "That document said the resuspension season",
+    "end": "the error is worth keeping visible",
+    "why": "Page history, which the page no longer narrates; and the seasonal table beside it was built from the few years the current record covers, not the long rain record it named. The seasons are now computed from the whole weather record."
+   },
+   "replaced_by": [
+    "C-CS-SEASONS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That document said the resuspension season coincides with the overflow season. Over 31 years of rainfall that is wrong, and the error is worth keeping visible",
+     "texts": "de800ed5e090f64b"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-SEASONTABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Overflow rain peaks in summer and the autumn is wetter in total but gentler, with stranding winds from October to January.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "Rain intense enough to overflow a combined sewer",
+    "end": "wetter in total but gentler",
+    "why": "Built from the few overlapping years; its total-rainfall row was a quotation of the page; no stored result gives the stranding-wind season; and over the whole record summer, not autumn, is the wetter season in total."
+   },
+   "replaced_by": [
+    "C-CS-SEASONS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Rain intense enough to overflow a combined sewer (≥10 mm in 6 h) | Jun–Aug, 3.0–8.2 h/yr; near zero Jan–Apr | | Total rainfall | flat, 38–72 mm/month, slight Jun–Aug and Oct maxima | | Wave-driven bed resuspension | Oct–Jan, 2.0 times July | | Strong onshore wind (stranding) | Oct–Jan | Overflow *events* are driven by intensity, and intensity in Denmark is convective, and convection is summer. The autumn is wetter in total but gentler",
+     "texts": "7478fd6e02dbbbeb"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-SEQUENCE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A deposit-then-mobilise sequence: summer overflow into a warm, weakly mixed bay, decay in place, and autumn resuspension of a bed loosened by anoxia.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "This does not weaken the case",
+    "end": "the residence time is the measured part",
+    "why": "Several steps have no support here: that the bay is warm and weakly mixed, that the material decays in place with an oxygen demand and a smell, and that the bed is looser for having been anoxic."
+   },
+   "replaced_by": [
+    "C-CS-SEQUENCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This does not weaken the case — it sharpens it into a deposit-then-mobilise sequence: - June–August: cloudbursts overflow the combined system. Sewage solids, fat and basin sludge are discharged into a warm, weakly-mixed, retentive bay. - The bay holds it. Flushing time is on the order of months, so the material settles locally rather than being exported. - Through late summer: it decays in place, in the warmest water of the year, with the oxygen demand and the smell that implies. - October–January: the gales arrive. The bed — now looser for having been anoxic — resuspends 2.0 times as often as in July, and the same wind that lifts it drives it onto the western shore. Delivery in summer and arrival on the shore in autumn are not in conflict. They are the two ends of a months-long residence time, and the residence time is the measured part",
+     "texts": "3ef81b73de9f1819"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-BALTICFIELD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A Baltic regional reanalysis exists at roughly a kilometre, behind free registration.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "CMEMS publishes a Baltic regional",
+    "end": "the one to re-test first",
+    "why": "Its resolution was a quotation of the page; the product's own description gives one nautical mile."
+   },
+   "replaced_by": [
+    "C-CS-NEED-FIELD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "CMEMS publishes a Baltic regional reanalysis at roughly 1 km behind free registration. Everything here would be worth redoing on it, and the retention result is the one to re-test first",
+     "texts": "084754919dbcf832"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-DENSITY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The Sound is strongly stratified, Baltic water on top and Kattegat water beneath, which a depth-averaged current hides.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CURRENTS.md",
+    "commit": "00a157f",
+    "file": "docs/CURRENTS.md",
+    "begin": "The Sound is strongly stratified",
+    "end": "at the same hour",
+    "why": "No source held says the Sound is strongly stratified with Kattegat water beneath, and whether the field's current is depth-averaged was not established."
+   },
+   "replaced_by": [
+    "C-CS-NEED-DENSITY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The Sound is strongly stratified — Baltic water out on top, Kattegat water in underneath. A single depth-averaged current hides that a plume and the bottom water can be going opposite ways at the same hour",
+     "texts": "8b0e42424f007151"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-EVERYTHING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Everything else on the site measures the problem; this page measures the response.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "Everything else here measures the problem",
+    "end": "this measures the response",
+    "why": "Not so of every other page: several are about the evidence itself, and PROGRAMME argues for responses."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Everything else here measures the problem; this measures the response",
+     "texts": "fbae26aec98103ea"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-CENTURY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The combined sewer is the single most consequential fact about the city and the sea, a plumbing decision made a century ago.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "It is the single most consequential fact",
+    "end": "a century ago",
+    "why": "No analysis here ranks the city's facts, and the date was a quotation of the page with no source behind it."
+   },
+   "replaced_by": [
+    "C-CS-S-PLUMBING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It is the single most consequential fact about the city's relationship with the sea, and it is not a fact about agriculture, nutrients or nitrogen. It is a plumbing decision made [a century ago",
+     "texts": "91e5e4750278d1af"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-CENTURIES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "At the confirmed pace, disconnection is a multi-century programme.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "So after however many years of the policy",
+    "end": "it is a statement about scale",
+    "why": "A pace needs a start date and a rate, and neither is held; the timescale was a quotation of the page."
+   },
+   "replaced_by": [
+    "C-CS-S-LAR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So after however many years of the policy, between 1.4% (confirmed in use) and 4.5% (registered) of the relevant area has been taken off the pipe. At the pace implied by the confirmed figure this is a multi-century programme, and nothing about that is a criticism of infiltration as a technique — it is a statement about scale",
+     "texts": "46d43007dae5642e"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-HANDFUL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The cloudburst plan is designed against a hundred-year event, and a skybrudsvej activates a handful of times a decade.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "The cloudburst plan is designed against",
+    "end": "a handful of times a decade",
+    "why": "How often a skybrudsvej activates is not stated in any source held, and the design event is stated for the city's flood scenarios, not the plan as a whole."
+   },
+   "replaced_by": [
+    "C-CS-S-DESIGN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The cloudburst plan is designed against a hundred-year event. A skybrudsvej is a route for water that has nowhere else to go — it activates when the system is already overwhelmed, [a handful of times a decade",
+     "texts": "56ed190fa150cab8"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-HUNDRED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Overflows are not a hundred-year phenomenon; they happen on ordinary heavy rain many times a year.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "Overflows are not a",
+    "end": "exactly as it always did",
+    "why": "Its figure was a quotation of the page; how often overflows happen is now read from the national layer's overflow count."
+   },
+   "replaced_by": [
+    "C-CS-S-OFTEN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Overflows are not a hundred-year phenomenon. They happen on ordinary heavy rain, many times a year, and that rain still goes down the gully into the combined pipe exactly as it always did",
+     "texts": "be2c502da6ba384f"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-APPLIED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Miljøstyrelsen applies the typetal to every discharge point, and the same report notes the highest metal concentrations in basin sludge.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "The national pollutant concentrations",
+    "end": "only discharges without prior settling",
+    "why": "No document held says Miljøstyrelsen applies the typetal to every point - that count is the register's; and the report does not note the highest metal concentrations in basin sludge: it says a significant share of the adsorbing substances is caught in basin sediment."
+   },
+   "replaced_by": [
+    "C-CS-S-TYPETAL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The national pollutant concentrations — the typetal, which Miljøstyrelsen applies to 19,665 discharge points — come from 6 combined-overflow stations and 5 stormwater stations, in catchments *deliberately chosen* to represent households and residential areas, and explicitly excluding industrial areas and heavily trafficked roads. The same report notes the highest median metal concentrations in sludge from basins, and the typetal explicitly cover only discharges without prior settling",
+     "texts": "61fab5dceeedfa7b"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-TAILARG",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The typetal sampling removed the tail on purpose and was then multiplied across every discharge point.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "Put those together. In a heavy-tailed",
+    "end": "every discharge point in the country",
+    "why": "It joins two different distributions: the tail is in the stored volume, while the typetal sample chose catchment types, not small structures; and no document held shows the typetal multiplied across every point."
+   },
+   "replaced_by": [
+    "C-CS-S-TAILARG"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Put those together. In a heavy-tailed distribution the mean is set by the tail, so an estimate of the mean is an estimate of the tail. This sampling design removed the tail on purpose, then used the remainder to estimate the mean, then multiplied it by every discharge point in the country",
+     "texts": "c88afc2a67972a47"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-PLASTIC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "In ocean plastic a small minority of rivers carries most of the input, and a uniform per-river assumption is wrong by an order of magnitude.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "The same structure is well known in the ocean-plastic literature",
+    "end": "this register says it is not",
+    "why": "No source was cited and the order-of-magnitude figure was a quotation of the page; the readable study gives the concentration directly."
+   },
+   "replaced_by": [
+    "C-CS-S-PLASTIC",
+    "C-CS-S-ANALOGY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The same structure is well known in the ocean-plastic literature, where a small minority of rivers carries the large majority of the input, and any uniform per-river assumption is wrong by an order of magnitude. There is no reason a sewer network should be more evenly behaved than a river network, and this register says it is not",
+     "texts": "2bbed146e0b141b2"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-NEVER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Sampling the largest structures has never been done because nobody is required to.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "It has never been done because",
+    "end": "nobody is required to",
+    "why": "No source says it has never been done, or why."
+   },
+   "replaced_by": [
+    "C-CS-S-MEASURE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It has never been done because nobody is required to",
+     "texts": "3b148e746335b3ba"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-GREASE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Grease separators are already a legal requirement for food businesses.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "Grease separators are already a legal requirement",
+    "end": "Enforcement is regulatory",
+    "why": "No source for the legal requirement was found."
+   },
+   "replaced_by": [
+    "C-CS-S-FAT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Grease separators are already a legal requirement for food businesses. Enforcement is regulatory",
+     "texts": "6e722e71faf3ffb7"
+    }
+   }
+  },
+  {
+   "id": "C-CS-OLD-S-HOLDBACK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The plan on the books holds water back rather than routing it away.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "SOLUTIONS.md",
+    "commit": "00a157f",
+    "file": "docs/SOLUTIONS.md",
+    "begin": "The infrastructure problem cannot be fixed quickly",
+    "end": "rather than routing it away",
+    "why": "Contradicted by the page itself: the cloudburst plan is mostly surface routes that carry water away. What stands is that the sewer plan leaves most combined catchments combined."
+   },
+   "replaced_by": [
+    "C-CS-S-SPLIT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The infrastructure problem cannot be fixed quickly by anyone, and the plan on the books does not attempt it — it holds water back rather than routing it away",
+     "texts": "5cc26dbf97fb3102"
+    }
+   }
+  }
+ ]
+}

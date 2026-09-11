@@ -1,0 +1,38 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/plan.py",
+   "inputs": [
+    "data/derived/meta_facts.json",
+    "data/derived/enums.json",
+    "data/derived/clock_convention.json",
+    "data/derived/cycles.json",
+    "data/derived/triage.json",
+    "data/derived/ds_facts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypotheses.json",
+    "data/manual/claims.d/w2-kp.json"
+   ],
+   "outputs": [
+    "docs/PLAN.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/known_and_unknown.py",
+   "inputs": [
+    "data/derived/enums.json",
+    "data/derived/convergence.json",
+    "data/derived/meta_facts.json",
+    "data/derived/ds_facts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/triage.json",
+    "data/derived/pins/BEK931-2024.txt",
+    "data/derived/pins/KP-DRAENKORT-DCA135.txt",
+    "data/manual/claims.d/w2-kp.json"
+   ],
+   "outputs": [
+    "docs/KNOWN_AND_UNKNOWN.md"
+   ]
+  }
+ ]
+}

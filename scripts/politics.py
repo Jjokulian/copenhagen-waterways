@@ -33,9 +33,11 @@ from data/manual/politics.json, written to data/derived/politics.json and read b
 live. A figure a speaker or a publication stated is read from a pinned copy of the
 document it came from (sources in data/manual/claims.d/politics.json, copies in
 data/derived/pins/), and a number inside a quotation is linked to the phrase in that
-copy that contains it. What cannot be read that way is carried as a quotation of this
-page's own committed text (WAS): honest - it says the site once printed it - but
-circular, and counted in the build log as a debt.
+copy that contains it. Every quotation's source page is pinned too, and the build checks
+each quotation against its copy. Nothing is carried as a quotation of this page's own
+past: a figure that cannot be read from a pinned document is refused. Every assertion
+the page makes is a checked claim (data/manual/claims.d/w2-po.json), marked by the
+anchors in CLAIM_SPANS once the page is rendered.
 
 Reads   data/manual/politics.json  (statements and public positions, collected
                                     2026-09-08 by curl + text extraction of the cited
@@ -60,10 +62,7 @@ import live
 SRC = os.path.join(MANUAL, "politics.json")
 OUT = os.path.join(ROOT, "docs", "POLITICS.md")
 TALLIES = os.path.join(DERIVED, "politics.json")
-# The commit whose POLITICS.md the self-quotations are verified against.
-WAS_COMMIT = "8b14517"
 _REG = {}
-_DEBT = []
 
 MONTHS = ["", "January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
@@ -183,6 +182,7 @@ def analyse(d):
             by_flag[f][s["_camp"]] += 1
     domains = collections.Counter(urllib.parse.urlparse(s["source_url"]).netloc for s in st)
     share = [s for s in st if SHARE_RX.search(s["quote_da"])]
+    qc = _quote_check(st)
     return {
         "_what": "Tallies over the public statements in data/manual/politics.json, "
                  "counted by scripts/politics.py.",
@@ -198,6 +198,13 @@ def analyse(d):
         "domains": [{"domain": k, "n": n}
                     for k, n in sorted(domains.items(), key=lambda kv: (-kv[1], kv[0]))],
         "n_share": len(share),
+        # the collection's notes that flag a spelling or typography oddity in the source
+        "n_typography": sum(1 for s in st if re.search(r"[Ss]pelling|[Tt]ypograph", s.get("note") or "")),
+        # quotations giving a figure with an interval: a sign, or a numeric range
+        "n_interval": sum(1 for s in st if re.search(r"±|\d\s*[-–]\s*\d|mellem \d", s["quote_da"])),
+        "n_quote_pinned": qc["pinned"],
+        "n_quote_verbatim": qc["verbatim"],
+        "n_quote_part": qc["part"],
         "n_share_flagged": sum(1 for s in share
                                if "estimator_treated_as_estimand" in s["flags"]),
         "collected": d["_collected"],
@@ -205,36 +212,46 @@ def analyse(d):
 
 
 # ------------------------------------------------------------------ checked entities
-def WAS(shown):
-    """A number this page printed before it could be read from a pinned source, carried
-    as a quotation of the page's committed text. A debt: counted in the build log."""
-    _DEBT.append(shown)
-    return live.was(WAS_COMMIT, "docs/POLITICS.md", shown)   # shown: a locator, @@ at the value
+def _flatpin(sid):
+    """A pinned page as a reader reads it: tags set aside, entities as characters."""
+    k = "flat:" + sid
+    if k not in _REG:
+        _REG[k] = re.sub(r"\s+", " ", _claims._flat(_claims.pin_text(_cl(), sid)))
+    return _REG[k]
 
 
-def WAS_AT(text, a, b, tok):
-    """A number inside a statement's quotation that its pinned source does not carry:
-    located in this page's committed text by the statement's own words around it,
-    widening until the phrase finds exactly one place. The value comes out of git and
-    must equal the one in the quotation."""
-    left = re.findall(r"\S+", text[max(0, a - 300):a])
-    right = re.findall(r"\S+", text[b:b + 300])
-    glue_l = a > 0 and not text[a - 1].isspace()
-    glue_r = b < len(text) and not text[b].isspace()
-    for k in range(1, 10):
-        before = " ".join(left[-k:]) if left else ""
-        after = " ".join(right[:k]) if right else ""
-        loc = (before + ("" if glue_l else " ") if before else "") + live.SLOT \
-            + (("" if glue_r else " ") + after if after else "")
-        try:
-            m = live.was(WAS_COMMIT, "docs/POLITICS.md", loc)
-        except live.Unjustified:
+def _quote_check(st):
+    """Every quotation against the pinned copy of the page it came from. A passage (the
+    text between elisions) is found word for word, or at least six consecutive words of
+    it are; anything weaker, or a source page not pinned, stops the page being written."""
+    out, bad = {"pinned": 0, "verbatim": 0, "part": 0}, []
+    for s in st:
+        sid = _sid_of(s["source_url"])
+        if not sid:
+            bad.append(f"{s['id']}: its source page is not pinned")
             continue
-        if live.strip_marks(m) == tok:
-            _DEBT.append(tok)
-            return m
-    raise live.Unjustified(f"politics: '{tok}' in a statement's quotation could not be "
-                           "located in the committed page")
+        pin = _flatpin(sid)
+        out["pinned"] += 1
+        segs = [x for x in (re.sub(r"\s+", " ", _claims._flat(q)).strip(" \"'“”«».,;:")
+                            for q in re.split(r"\[\.\.\.\]|\[…\]|…", s["quote_da"])) if x]
+        whole = True
+        for seg in segs:
+            if seg in pin:
+                continue
+            whole = False
+            w, best = seg.split(), 0
+            for i in range(len(w)):
+                for j in range(len(w), i + best, -1):
+                    if " ".join(w[i:j]) in pin:
+                        best = j - i
+                        break
+            if best < min(6, len(w)):
+                bad.append(f"{s['id']}: a passage of its quotation is not in the pinned {sid}")
+        out["verbatim" if whole else "part"] += 1
+    if bad:
+        raise live.Unjustified("politics: quotations the pinned sources do not carry:\n  "
+                               + "\n  ".join(bad))
+    return out
 
 
 def _cl():
@@ -359,7 +376,7 @@ def _link(text, danish, reads=None, known=None):
     """Every refused number in text, linked: to a reading of the statement's pinned
     source (reads), to a figure already read (known), or, failing both, to this page's
     committed text."""
-    orig = text                           # context for locating, before any marker
+    orig = text                           # for a refusal's context, before any marker
     for a, b, tok in reversed(_spans(text)):
         v = _val(tok, danish)
         if known and v in known:
@@ -370,7 +387,8 @@ def _link(text, danish, reads=None, known=None):
             sid, ph = reads[v]
             m = live.reading(sid, "phrase", ph, v, tok, _meta(sid))
         else:
-            m = WAS_AT(orig, a, b, tok)
+            raise live.Unjustified(f"politics: '{tok}' in '{orig[max(0, a - 60):b + 40]}' "
+                                   "is read from no pinned document")
         text = text[:a] + m + text[b:]
     return text
 
@@ -385,11 +403,12 @@ def gtext(s, text, known=None):
     return _link(idents(iso_dates(text)), False, reads=_quote_reads(s), known=known)
 
 
-def ntext(st, text, known=None):
+def ntext(st, text, known=None, s=None):
     """The collection's own notes and summaries: dates as ISO, statement ids as code,
-    and the figures they repeat linked to where they were read."""
+    and the figures they repeat linked to where they were read - a figure already read,
+    or one the note's own statement's pinned source carries."""
     t = _ids_rx(st).sub(lambda m: f"`{m.group(0)}`", idents(iso_dates(text)))
-    return _link(t, False, known=known)
+    return _link(t, False, reads=_quote_reads(s) if s else None, known=known)
 
 
 # --------------------------------------------------------------------------- render
@@ -407,6 +426,16 @@ def render():
         return f"{n / den * 100:.1f}%"
 
     camps, classes, flags = a["camps"], a["classes"], a["flags"]
+    # parties that voted against L5 with no claim in the record about the figures: no
+    # number or certainty claim, and nothing contesting the model basis
+    against = [p["party"] for p in d["public_positions"] if (p["voted_on_L5"] or "").startswith("imod")]
+    figures_said = {s.get("party") for s in st
+                    if s["claim_class"] in ("number_claim", "certainty_claim")
+                    or "contests_model_basis" in s["flags"]}
+    silent = [re.sub(r"\s*\(.*\)$", "", p) for p in against if p not in figures_said]
+    silent_txt = " and ".join(silent) if len(silent) < 3 else ", ".join(silent[:-1]) + " and " + silent[-1]
+    if any((s.get("party") or "").startswith("Moderaterne") for s in st):
+        raise SystemExit("politics: Moderaterne now has a statement - reword section 1.1")
     fc = a["flag_camps"]
     dom = {e["domain"]: e["n"] for e in a["domains"]}
     n = a["n_statements"]
@@ -433,6 +462,7 @@ def render():
     VEG = RD("POL-DR-20260827", 0.3, "cirka 0,3 procent af det samlede danske landbrugsareal")
     F6000 = RD("POL-FDK-2026", 6000, "6.000 år")
     ALT20 = RD("POL-DMBIO-2026", 20, "fejlet gennem 20 år")
+    V18 = RD("PO-64EF563D", 18, "5 ud af 18 Venstre-folketingsmedlemmer")
     vote = f"{V119}–{V34}"
     DENOMINATORS = [
         (D12776, "stated as *målet* in the Effektivt Landbrug article of 2026-06-23 behind "
@@ -458,7 +488,7 @@ def render():
         "dr-andersen-2026-09-03": {69.6: DR696},
         "danva-2024-696": {22.1: S221, 69.6: S696, 91.7: S917},
     }
-    POSITIONS = {20000: G20000, 13780: D13780, 6000: F6000, 20: ALT20, 5: V5}
+    POSITIONS = {20000: G20000, 13780: D13780, 6000: F6000, 20: ALT20, 5: V5, 18: V18}
     day_context = {
         "2024-09-24": "the *second opinion* on the technical basis, chaired by Finansministeriet",
         "2025-06-19": "the set-aside point and the regulatory ceiling agreed",
@@ -478,15 +508,16 @@ def render():
         "number_claim": (
             "The document the figure comes from, and the interval that document states.",
             "Checkable in principle. **No statement in the record attaches a numerical "
-            f"interval to any figure** - not one of the {n}."),
+            "interval to any figure.**"),
         "causal_claim": (
             "A counterfactual: the same catchment, over the same years, without the policy.",
             "Not checkable now. Nobody is constructing the counterfactual, and the "
             "monitoring is not designed to yield one."),
         "state_claim": (
             "The monitoring programme.",
-            f"{WAS("monitoring programme. | @@ point at something")} point at something a programme records. The rest "
-            "are summaries or figures of speech, and are not the worse for it."),
+            "The joint count of oxygen-depleted coastal waters and a minister's *rekord i "
+            "iltsvind* point at something a programme records. The rest are summaries or "
+            "figures of speech, and are not the worse for it."),
         "certainty_claim": (
             "The technical documents, which are public.",
             "The most checkable class here, and the one where the disagreement is least "
@@ -535,7 +566,7 @@ def render():
     w("That cuts both ways and it is worth being blunt about the direction it cuts most "
       f"often. The best-documented objections in this record - {contest_n} statements, "
       f"{contest_ag} from agricultural and food organisations and {contest_out} from the "
-      "leader of the largest party that voted against - are objections to the "
+      "leader of Danmarksdemokraterne, which voted against - are objections to the "
       "**reasoning**: that model outputs cannot bear the regulatory weight put on them. "
       "Whether those objections are sound or not, they do not entail that the water is "
       "in acceptable condition, and, as it happens, **none of them claims that it is**. "
@@ -571,9 +602,8 @@ def render():
       "`L5` were in favour, so a record proportioned to the chamber would lean the same "
       "way. None of that makes the imbalance harmless: **a reader should assume the "
       "contesting case is under-represented here, and that the under-representation is "
-      f"worst for {WAS("worst for @@.** Dansk")}.** Dansk "
-      "Folkeparti and Borgernes Parti voted against `L5` and the record contains no "
-      "substantive claim from either about the nitrogen figures. Moderaterne is a "
+      f"worst for {silent_txt}.** They voted against `L5`, and the record contains no "
+      "claim from either about the nitrogen figures. Moderaterne is a "
       "government party to the agreement and the record contains no separate statement "
       "from it at all.\n")
     w("The environmental organisations are counted separately for the same reason: they "
@@ -598,9 +628,9 @@ def render():
       "Kristeligt Dagblad, Tidende - and not of the official record. Those renderings "
       "are ordinarily reliable and they are cited individually below, but the "
       "distinction is real: what is verified is that the publication printed those "
-      f"words, not that the official transcript contains them. "
-      f"{WAS("contains them. @@ carry a")} carry a spelling or typography oddity from the "
-      "rendering, left as found and flagged.\n")
+      "words, not that the official transcript contains them. "
+      f"Of the quotations, {a['n_typography']} carry a spelling or typography oddity from "
+      "the rendering, left as found and flagged in their notes.\n")
     w("Two related exclusions follow from the same problem, and both are stated in the "
       "entries themselves rather than silently applied:\n")
     w("- **Paraphrase is never printed as quotation.** DR writes that the minister "
@@ -609,7 +639,7 @@ def render():
       "Conservative MP *giver landbruget skylden*. Neither sentence is the speaker's, "
       "so neither is attributed to a speaker here. They are recorded as what the "
       "publication wrote.\n")
-    w(f"- **{paywalled} entries were captured above a paywall.** The Altinget entries "
+    w(f"- **Entries captured above a paywall: {paywalled}.** The Altinget entries "
       "(`rabjerg-2026-09-03-b`, `rabjerg-2026-09-03-c`, `lose-2025-12-03`) are "
       "headline, standfirst and pull-quote text only; the surrounding sentences could "
       "not be read. They are printed, marked, and **no argument on this page rests on "
@@ -628,12 +658,13 @@ def render():
       "attached, and no further.\n")
     w("- **Both sides cite unnamed experts for a total.** Ritzau reports that "
       f"*forskere vurderer* the need is {D14800:,.0f} t; Greenpeace reports that "
-      f"*eksperter peger på* a real need above {G20000:,.0f} t. Neither names a researcher "
+      f"*eksperter peger imidlertid på* a real need above {G20000:,.0f} t. Neither names a researcher "
       "or cites a report. From this record alone, the two are exactly equally "
       "uncheckable, and they point in opposite directions.\n")
-    w("- **One date is approximate.** The FødevareDanmark release states only that it "
-      "followed the first reading *i sidste uge*; first reading was 2026-08-13, so the "
-      "entry is dated 2026-08-20 with that inference marked.\n")
+    w("- **One date is approximate.** The collection dates the FødevareDanmark release "
+      "2026-08-20 by inference, from a date for the bill's first reading that it gives "
+      "without a source. The pinned release carries its own date, 2026-08-21, and says "
+      "only that the Folketing first read the bill *i sidste uge*.\n")
     w("- **A working transcript exists and is not evidence.** "
       "`data/agents/politics.transcript.txt` is the collecting run's own working log. "
       "It is marked unverified and nothing in it is cited here, on this site's standing "
@@ -680,12 +711,13 @@ def render():
       "and are used correctly - `skønnes`, `ca.`, `et estimat`, `op til`, `vurderer` - "
       "and one minister says outright that the policy does not reach the whole way. But "
       f"across all {n} statements there is not a single `±`, not a single range, and not "
-      "a single figure given with the spread the underlying document reports. The "
-      "DCE/AU method report that produces the requirement does state one, and states in "
-      "its own text that the accuracy of a target load cannot be established in the "
-      "ordinary way because there is no documentation of the correct one. That interval "
-      "survives inside the technical literature and does not appear in a single public "
-      "sentence here, on any side.\n")
+      "a single figure given with the spread the underlying document reports. "
+      "The method report behind the requirement, by DHI and Aarhus University (DCE), sets "
+      "out how an uncertainty could be estimated - from the spread between its two model "
+      "types, where both cover a water body - and states in its own text that the accuracy "
+      "of a target load cannot be established in the ordinary way, because there is no "
+      "documentation of the correct one. That qualification survives inside the technical "
+      "literature and does not appear in a single public sentence here, on any side.\n")
     w(f"**The largest class is the least checkable.** {classes['causal_claim']} "
       "statements assert that nitrogen causes an outcome, or that the policy will cause "
       "one. Deciding any of them needs a counterfactual - the same catchments, the same "
@@ -752,10 +784,11 @@ def render():
     w("|---|---|---|---|---|")
     w("| `0` | *\"Kvælstofretentionen kan i praksis ikke måles direkte.\"* | GEUS and "
       "Aarhus University, 2025-08-27 | retention | The producing institutions state "
-      "that the regulated quantity is not directly measurable |")
+      "that the regulated quantity cannot in practice be measured directly |")
     w("| `0'` | *\"Da der ikke findes dokumentation for den 'rigtige' målbelastning, "
       "kan man ikke på traditionel vis bestemme, hvor sikkert modellerne estimerer "
-      "målbelastningen.\"* | DCE/AU method report, 2015 | målbelastning | The other "
+      "målbelastningen.\"* | DHI and Aarhus University (DCE) method report, 2014, revised "
+      "2015 | målbelastning | The other "
       "quantity's own authors, on why its accuracy cannot be established in the usual "
       "way. Not from this collection - it is from the method report, audited elsewhere "
       "in this repository |")
@@ -773,7 +806,8 @@ def render():
       "Madsen, 2026-06-19 | both | The causal chain stated with no other driver "
       "named - not stratification, weather, atmospheric deposition or transboundary "
       "load |")
-    w(f"| `4` | `L5` passed {vote}; per-catchment quotas from 2027 | Folketinget, "
+    w(f"| `4` | `L5` passed {vote}; emission-based regulation replaces field regulation "
+      "from 2027, its sharper step, the *kvælstofhammer*, not before 2028 | Folketinget, "
       "2026-09-03 | both | A legal obligation on individual holdings, sized to the "
       "above |")
     w("")
@@ -921,16 +955,16 @@ def render():
       "before Danish agriculture existed. Whether any of them is correct is a question "
       "about documents, and it is not answered here or anywhere else on this site by "
       "counting who said them.\n")
-    w("What can be said from the record: **the leader of the largest opposing party "
-      "states the environmental objective as common ground** - *\"Vi vil også have en "
+    w("What can be said from the record: **the leader of Danmarksdemokraterne, which voted "
+      "against `L5`, states the environmental objective as common ground** - *\"Vi vil også have en "
       "grøn omstilling om landbruget, vi vil også have rent drikkevand, rene fjorde og "
       "havmiljø, men omstillingen skal være baseret på sund fornuft\"* - and no "
       "statement in this collection, from any speaker, asserts that Danish coastal "
-      f"water is in acceptable condition. {WAS("condition. @@ `state_claim`")} `state_claim` "
-      "entries describe the water as in poor condition - from a minister, an SF "
-      "spokesperson, a think tank, and a joint count by two environmental "
-      "organisations - and the seventh is a minister characterising his opponents "
-      "rather than the sea. **Not one statement in the record disputes any of them.**\n")
+      "water is in acceptable condition. Every `state_claim` entry but one describes the "
+      "water as in poor condition - from a minister, an SF spokesperson, a think tank, and "
+      "a joint count by two environmental organisations - and the exception is a minister "
+      "characterising his opponents rather than the sea. **Not one statement in the record "
+      "disputes any of them.**\n")
     w("So the public disagreement recorded here is **not a disagreement about the state "
       "of the sea.** It is a disagreement about whether particular model outputs can "
       "carry particular legal consequences, and about how the cost should fall. That is "
@@ -1007,8 +1041,7 @@ def render():
           f"| *{qtext(s, q)}* | {gtext(s, g)} |")
     w("")
     w("Nothing follows from this table. It is here because leaving it out would make "
-      "the record look more technical than the argument was, and the argument was "
-      "mostly this.\n")
+      "the record look more technical than the argument was.\n")
 
     # ------------------------------------------------------------------ the record
     w("## 10. The record\n")
@@ -1018,6 +1051,10 @@ def render():
       "`[...]` and the note says what was skipped. Odd spelling and typography in a "
       "source is left as found and flagged. A number inside a quotation links to the "
       "phrase in the pinned copy of its source that contains it.\n")
+    w(f"Every quotation's source page is pinned here, and the build checks each quotation "
+      f"against it: {a['n_quote_verbatim']} of the {n} are found word for word in the pinned "
+      f"copy, and the other {a['n_quote_part']} in part - at least six consecutive words of "
+      "every passage between elisions.\n")
     order = sorted(st, key=lambda s: (s["date"] or "9999", s["id"]))
     last_day = None
     for s in order:
@@ -1043,7 +1080,7 @@ def render():
         meta.append(f"`{s['id']}`")
         w(" · ".join(meta) + "  ")
         if s.get("note"):
-            w(f"*Note:* {ntext(st, s['note'], NOTES.get(s['id']))}")
+            w(f"*Note:* {ntext(st, s['note'], NOTES.get(s['id']), s)}")
         w("")
 
     # ------------------------------------------------------------- party positions
@@ -1096,8 +1133,8 @@ def render():
       "decision-support tool and not an answer key. Both statements are dated "
       "2025-08-27. The agreement that made the map a basis for per-holding quotas is "
       "dated 2025-12-03. The corresponding statement about the other regulating "
-      "quantity, the target load, is in its authors' 2015 method report rather than in "
-      "this collection.\n")
+      "quantity, the target load, is in its authors' method report (2014, revised 2015) "
+      "rather than in this collection.\n")
     w("- The responsible ministry's press release describes updates to a modelled target "
       "load as `nye målinger`.\n")
     w("- On that ministry's own published figures, *more than two thirds* holds for the "
@@ -1113,8 +1150,8 @@ def render():
       "and the objections that are made are objections to reasoning rather than to the "
       "diagnosis.\n")
     w("- The collection is skewed toward the government and the agreement parties by "
-      f"about {skew:.1f} to 1, contains no official floor transcript, and is empty of "
-      f"substantive numerical claims from {WAS("claims from @@. The")}.\n")
+      f"about {skew:.1f} to 1, contains no official floor transcript, and holds no claim "
+      f"about the figures from {silent_txt}.\n")
     w("The last of those is the one that most limits everything above it. **A record of "
       "public statements is an instrument, and this instrument is not evenly pointed.** "
       "Group `I` of [HYPOTHESES.md](HYPOTHESES.md) applies to it exactly as it applies "
@@ -1122,7 +1159,139 @@ def render():
       f"cheapest way to improve this page is not more analysis of these {n} sentences "
       "but the Folketing transcript that could not be fetched.\n")
 
-    return "\n".join(o) + "\n"
+    if a["n_interval"]:
+        raise SystemExit("politics: a quotation now carries an interval - sections 2 and 12 "
+                         "say none does; read it and reword")
+    return _mark_claims("\n".join(o) + "\n")
+
+
+# Every assertion on the page is a checked claim (claims.d/w2-po.json), marked by anchors
+# in the rendered text: a phrase unique on the page marks its whole paragraph (a list or
+# quote marker stays outside), or a phrase and an end phrase mark a span inside one
+# paragraph - a table cell, or one sentence of several.
+CLAIM_SPANS = [
+    ("C-PO-SCOPE", "Every other page here studies the sea, or studies how a public claim"),
+    ("C-PO-MATERIAL", "verbatim public statements about the Danish nitrogen"),
+    ("C-PO-RULE-NAMING", "**Naming is not blaming.** Identifying who said what"),
+    ("C-PO-RULE-SEA", "**A property of the reasoning is not a property of the sea.** This is"),
+    ("C-PO-NOT-SEA", "**So, explicitly: nothing on this page is a claim"),
+    ("C-PO-CONTESTS-REASONING", "That cuts both ways and it is worth being blunt", "none of them claims that it is**."),
+    ("C-PO-DEFECTS-FIRST", "A collection of public statements that is quoted only where convenient"),
+    ("C-PO-SKEW", "The government and the parties inside the agreement account for"),
+    ("C-PO-SKEW-CAUSES", "Some of that is real and some of it is an artefact", "would lean the same way."),
+    ("C-PO-UNDERREP", "None of that makes the imbalance harmless:", "no separate statement from it at all."),
+    ("C-PO-NGO", "The environmental organisations are counted separately"),
+    ("C-PO-OKOLOGI", "One more asymmetry, in the opposite direction"),
+    ("C-PO-NO-TRANSCRIPT", "The collection records that `ft.dk`", "not that the official transcript contains them."),
+    ("C-PO-TYPO", "Of the quotations,", "flagged in their notes."),
+    ("C-PO-NO-PARAPHRASE", "**Paraphrase is never printed as quotation.**"),
+    ("C-PO-PAYWALL", "**Entries captured above a paywall:"),
+    ("C-PO-UNDATED", "**One entry has no date.**"),
+    ("C-PO-TOTALS", "**Two of the three competing totals are quoted in the record; one is not.**"),
+    ("C-PO-UNNAMED", "**Both sides cite unnamed experts for a total.**"),
+    ("C-PO-FDK-DATE", "**One date is approximate.**"),
+    ("C-PO-AGENT-LOG", "**A working transcript exists and is not evidence.**"),
+    ("C-PO-NOTHING-EXCLUDED", "collected statements are printed in section 10"),
+    ("C-PO-OUTLETS", "come from the responsible ministry's own site and"),
+    ("C-PO-FIVE-KINDS", "The single most useful thing a record like this can do"),
+    ("C-PO-CLASSES-OWN", "The classification below is the collection's own"),
+    ("C-PO-CHECK-NUMBER", "Checkable in principle.", "interval to any figure.**"),
+    ("C-PO-CHECK-CAUSAL", "Not checkable now.", "not designed to yield one."),
+    ("C-PO-CHECK-STATE", "The joint count of oxygen-depleted coastal waters", "not the worse for it."),
+    ("C-PO-CHECK-CERTAINTY", "The most checkable class here", "what weight they bear."),
+    ("C-PO-CHECK-NECESSITY", "Partly checkable.", "in the same paragraph."),
+    ("C-PO-NO-INTERVAL", "**No figure in this record carries an interval.**", "the spread the underlying document reports."),
+    ("C-PO-DHI-UNCERTAINTY", "The method report behind the requirement, by DHI", "on any side."),
+    ("C-PO-CAUSAL-UNCHECKABLE", "**The largest class is the least checkable.**"),
+    ("C-PO-VALUE", "**Value judgements are not defective claims.**"),
+    ("C-PO-EST-SPREAD", "The flag this site cares about most is"),
+    ("C-PO-EST-FINDING", "That distribution is the finding."),
+    ("C-PO-CONTEST-FLAGS", "The mirror-image flag, `contests_model_basis`"),
+    ("C-PO-LADDER-INTRO", "describes a five-rung ladder by which"),
+    ("C-PO-TWO-QUANTITIES", "The regulation rests on two different modelled quantities"),
+    ("C-PO-MAI", "how much nitrogen a water body can receive"),
+    ("C-PO-RETENTION", "what fraction of nitrogen leaving a field is removed"),
+    ("C-PO-BOTH-MODELLED", "Both are model outputs. Neither is measured."),
+    ("C-PO-RUNG0", "The producing institutions state that the regulated quantity cannot", "be measured directly"),
+    ("C-PO-RUNG0B", "The other quantity's own authors, on why", "audited elsewhere in this repository"),
+    ("C-PO-RUNG1", "The model output, labelled by its project leader", "per-holding quotas on 2025-12-03"),
+    ("C-PO-RUNG2", "*How much the water environment can tolerate* is", "the ordinary Danish word for measurements"),
+    ("C-PO-RUNG3", "The causal chain stated with no other driver", "transboundary load"),
+    ("C-PO-RUNG4", "emission-based regulation replaces field regulation", "not before 2028"),
+    ("C-PO-RUNG4B", "A legal obligation on individual holdings", "sized to the above"),
+    ("C-PO-NOT-CHAIN", "**This is five sentences in date order."),
+    ("C-PO-RUNG2-LOAD", "is the load-bearing one, as it is in RESIDUAL."),
+    ("C-PO-RUNG2-HONEST", "And the exact same clause is, in its other half"),
+    ("C-PO-INDSATSBEHOV", "is the quantity the whole public argument is denominated in"),
+    ("C-PO-DEN-A", "stated as *målet* in the Effektivt Landbrug article of 2026-06-23 behind", "no statement in the record quotes it"),
+    ("C-PO-DEN-B", "quoted by Greenpeace, 2025-06-19, as", "*et estimat*"),
+    ("C-PO-DEN-C", "quoted by Ritzau, 2025-12-03, as what", "*forskere vurderer*"),
+    ("C-PO-TWO-THIRDS-READ", "Read the table honestly and it says two things"),
+    ("C-PO-PKG", "for the package as a whole.**"),
+    ("C-PO-SUBJECT", "survive a change of subject"),
+    ("C-PO-TRANSFORM", "That is the transformation this site exists to notice"),
+    ("C-PO-GP52", "One more figure that looks inconsistent and is not"),
+    ("C-PO-RESIDUAL", "The share attributed to agriculture is a **residual**"),
+    ("C-PO-SHARE-STATED", "flag concern this share"),
+    ("C-PO-VERBS", "The verbs are worth reading closely"),
+    ("C-PO-NOT-WRONG", "**First: none of this shows the figure is wrong.**"),
+    ("C-PO-DANVA", "**Second: the qualification exists and is public.**"),
+    ("C-PO-S7-INTRO", "This section exists because it would be easy"),
+    ("C-PO-CONTEST-ALL", "are all about reasoning, and none of them asserts the sea is fine."),
+    ("C-PO-FOUR-OBJECTIONS", "Read as a set, these make four distinct objections"),
+    ("C-PO-COMMON-GROUND", "What can be said from the record:"),
+    ("C-PO-DISAGREEMENT", "So the public disagreement recorded here is"),
+    ("C-PO-SYMMETRY", "**The symmetry runs the other way too.**"),
+    ("C-PO-HEDGE", "**And the hedge is dropped on both sides.**"),
+    ("C-PO-NECESSITY-COUNT", "statements assert that the policy is required"),
+    ("C-PO-SO-44", "The Ministry of the Environment's assessment, in the *second opinion*"),
+    ("C-PO-INFR", "The second is a real infringement procedure."),
+    ("C-PO-ROBUST", "The most-invoked certainty claim is"),
+    ("C-PO-S9-INTRO", "Collected without comment, because a record that quoted only"),
+    ("C-PO-VALUE-TABLE", "Nothing follows from this table."),
+    ("C-PO-RECORD", "statements, in date order. **Every `quote_da`"),
+    ("C-PO-QUOTES-CHECKED", "Every quotation's source page is pinned here"),
+    ("C-PO-POSITIONS", "From the collection's own summary of positions."),
+    ("C-PO-THREE-ROWS", "Three rows repay reading against each other."),
+    ("C-PO-S12-NOT-SEA", "**It does not establish anything whatsoever about the condition"),
+    ("C-PO-S12-NO-BAD-FAITH", "**It does not establish that anyone acted in bad faith"),
+    ("C-PO-S12-NOT-POLICY", "**It does not establish that the policy is right or wrong.**"),
+    ("C-PO-EST-RETENTION", "The institutions that produced the retention map stated in public"),
+    ("C-PO-EST-MAALINGER", "The responsible ministry's press release describes updates"),
+    ("C-PO-EST-TWOTHIRDS", "holds for the combined package against all three circulating totals"),
+    ("C-PO-EST-NOINTERVAL", "no figure is given with an interval, by anyone."),
+    ("C-PO-EST-BOTHSIDES", "Restating a modelled share as an observed one is done by"),
+    ("C-PO-EST-NOSEAFINE", "No statement in the record asserts that the sea is in acceptable condition,"),
+    ("C-PO-EST-SKEW", "The collection is skewed toward the government and the agreement parties"),
+    ("C-PO-INSTRUMENT", "The last of those is the one that most limits everything above it."),
+]
+
+
+def _mark_claims(text):
+    """Insert the claim markers the anchors name. An anchor must occur exactly once, and
+    a span must stay inside one paragraph."""
+    for cid, key, *end in CLAIM_SPANS:
+        n = text.count(key)
+        if n != 1:
+            raise live.Unjustified(f"politics: claim {cid}'s anchor occurs {n} times: '{key}'")
+        i = text.index(key)
+        if end:
+            j = text.find(end[0], i)
+            if j < 0 or "\n\n" in text[i:j]:
+                raise live.Unjustified(f"politics: claim {cid}'s span leaves its paragraph")
+            a, b = i, j + len(end[0])
+        else:
+            a = text.rfind("\n\n", 0, i)
+            a = 0 if a < 0 else a + 2
+            m = re.match(r"(?:> |- |\d+\. )", text[a:])
+            if m:
+                a += m.end()
+            b = text.find("\n\n", i)
+            b = len(text) if b < 0 else b
+            while text[b - 1] in " \n":
+                b -= 1
+        text = text[:a] + live.claim_begin(cid) + text[a:b] + live.CLAIM_END + text[b:]
+    return text
 
 
 def main():
@@ -1132,8 +1301,6 @@ def main():
         log(str(e))
         return 1
     log(f"wrote {os.path.relpath(OUT, ROOT)}")
-    log(f"  carried as self-quotation of the committed page: {len(_DEBT)} "
-        f"({', '.join(sorted(set(_DEBT)))})")
     return 0
 
 

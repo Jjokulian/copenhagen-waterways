@@ -318,10 +318,10 @@
     "scripts/solutions.py"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "fork w2-cs (re-read solutions.py: compute() and every constant it uses are identical to the version last read, checked by comparing their syntax trees; only page() changed - rewritten for checked claims - and the unused commit constant was replaced by the path to outfalls.json. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/solutions.py": "6dc153443dead1de"
+     "scripts/solutions.py": "84338edb81d29722"
     }
    }
   },

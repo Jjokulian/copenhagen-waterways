@@ -7878,7 +7878,7 @@
 - **What this field is:** Points in `sw_mfs_tilstand` whose water-body code `eusurfacew` begins `DKCOAS` - the marine ones.
 - **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [OXYGEN.md](OXYGEN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [OXYGEN.md](OXYGEN.md)
 
 <a id="F-076f9f4115"></a>
 ### `data/derived/areas.json` › `hazardous_layer.lake`
@@ -7889,7 +7889,7 @@
 - **What this field is:** Points in `sw_mfs_tilstand` whose water-body code `eusurfacew` begins `DKLAKE`.
 - **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md), [OXYGEN.md](OXYGEN.md)
+- **Used in:** [AREAS.md](AREAS.md), [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [OXYGEN.md](OXYGEN.md)
 
 <a id="F-9edac16b2c"></a>
 ### `data/derived/areas.json` › `hazardous_layer.points`
@@ -7900,7 +7900,7 @@
 - **What this field is:** Every point in the national hazardous-substance layer `sw_mfs_tilstand`.
 - **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md), [OXYGEN.md](OXYGEN.md)
+- **Used in:** [AREAS.md](AREAS.md), [CLAIMS.md](CLAIMS.md), [OXYGEN.md](OXYGEN.md)
 
 <a id="F-0b7a823dec"></a>
 ### `data/derived/areas.json` › `hazardous_layer.river`
@@ -7911,7 +7911,7 @@
 - **What this field is:** Points in `sw_mfs_tilstand` whose water-body code `eusurfacew` begins `DKRIVE`.
 - **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md), [OXYGEN.md](OXYGEN.md)
+- **Used in:** [AREAS.md](AREAS.md), [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [OXYGEN.md](OXYGEN.md)
 
 <a id="F-655cb351e2"></a>
 ### `data/derived/areas.json` › `summary.sea_km2`
@@ -9604,6 +9604,369 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
+<a id="F-85bf55f3a5"></a>
+### `data/derived/currents_rain.json` › `event_threshold_mm`
+
+`F-85bf55f3a5` · **read from data** · 10
+
+- **Kind:** stipulated · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Rain over `RAIN_WINDOW_H` hours, in mm, at or above which an hour counts as overflow-scale: `EVENT_MM` in the script.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-d507caf662"></a>
+### `data/derived/currents_rain.json` › `months.Apr.overflow_scale_h_per_yr`
+
+`F-d507caf662` · **read from data** · 0.2
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-168bef4b20"></a>
+### `data/derived/currents_rain.json` › `months.Apr.rain_mm`
+
+`F-168bef4b20` · **read from data** · 38
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-2813adbc34"></a>
+### `data/derived/currents_rain.json` › `months.Aug.overflow_scale_h_per_yr`
+
+`F-2813adbc34` · **read from data** · 5.1
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-cac0b667d0"></a>
+### `data/derived/currents_rain.json` › `months.Aug.rain_mm`
+
+`F-cac0b667d0` · **read from data** · 72.2
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-4516edac46"></a>
+### `data/derived/currents_rain.json` › `months.Dec.overflow_scale_h_per_yr`
+
+`F-4516edac46` · **read from data** · 0.8
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-91a204534d"></a>
+### `data/derived/currents_rain.json` › `months.Dec.rain_mm`
+
+`F-91a204534d` · **read from data** · 55.3
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-55ffde7cdb"></a>
+### `data/derived/currents_rain.json` › `months.Feb.overflow_scale_h_per_yr`
+
+`F-55ffde7cdb` · **read from data** · 0.7
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-e1797e0fed"></a>
+### `data/derived/currents_rain.json` › `months.Feb.rain_mm`
+
+`F-e1797e0fed` · **read from data** · 46.5
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-48e56ebdec"></a>
+### `data/derived/currents_rain.json` › `months.Jan.overflow_scale_h_per_yr`
+
+`F-48e56ebdec` · **read from data** · 1
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-385329c5ae"></a>
+### `data/derived/currents_rain.json` › `months.Jan.rain_mm`
+
+`F-385329c5ae` · **read from data** · 54.7
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-c81a483b01"></a>
+### `data/derived/currents_rain.json` › `months.Jul.overflow_scale_h_per_yr`
+
+`F-c81a483b01` · **read from data** · 4.9
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-26e9f1274f"></a>
+### `data/derived/currents_rain.json` › `months.Jul.rain_mm`
+
+`F-26e9f1274f` · **read from data** · 71
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-5247917a47"></a>
+### `data/derived/currents_rain.json` › `months.Jun.overflow_scale_h_per_yr`
+
+`F-5247917a47` · **read from data** · 4.2
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-8dfa69684d"></a>
+### `data/derived/currents_rain.json` › `months.Jun.rain_mm`
+
+`F-8dfa69684d` · **read from data** · 65.5
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-ec9e9d0135"></a>
+### `data/derived/currents_rain.json` › `months.Mar.overflow_scale_h_per_yr`
+
+`F-ec9e9d0135` · **read from data** · 0.5
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-d97a6871d6"></a>
+### `data/derived/currents_rain.json` › `months.Mar.rain_mm`
+
+`F-d97a6871d6` · **read from data** · 43.2
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-52aa6d228e"></a>
+### `data/derived/currents_rain.json` › `months.May.overflow_scale_h_per_yr`
+
+`F-52aa6d228e` · **read from data** · 1.2
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-0fa639fd84"></a>
+### `data/derived/currents_rain.json` › `months.May.rain_mm`
+
+`F-0fa639fd84` · **read from data** · 55.4
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-c7138f4cf0"></a>
+### `data/derived/currents_rain.json` › `months.Nov.overflow_scale_h_per_yr`
+
+`F-c7138f4cf0` · **read from data** · 1
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-179ea6d0a9"></a>
+### `data/derived/currents_rain.json` › `months.Nov.rain_mm`
+
+`F-179ea6d0a9` · **read from data** · 52.9
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-6b94e5e1de"></a>
+### `data/derived/currents_rain.json` › `months.Oct.overflow_scale_h_per_yr`
+
+`F-6b94e5e1de` · **read from data** · 3
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-6da2ca1d8d"></a>
+### `data/derived/currents_rain.json` › `months.Oct.rain_mm`
+
+`F-6da2ca1d8d` · **read from data** · 67.3
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-fd77db5cfc"></a>
+### `data/derived/currents_rain.json` › `months.Sep.overflow_scale_h_per_yr`
+
+`F-fd77db5cfc` · **read from data** · 3
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-6cd09bd9ec"></a>
+### `data/derived/currents_rain.json` › `months.Sep.rain_mm`
+
+`F-6cd09bd9ec` · **read from data** · 54.9
+
+- **Kind:** modelled · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-9bee91d66e"></a>
+### `data/derived/currents_rain.json` › `rain_window_h`
+
+`F-9bee91d66e` · **read from data** · 6
+
+- **Kind:** stipulated · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Hours of antecedent rain summed to judge whether a combined sewer fills: `RAIN_WINDOW_H` in the script.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-097da29586"></a>
+### `data/derived/currents_rain.json` › `wind_after_event.0.pct.SW`
+
+`F-097da29586` · **read from data** · 16.7
+
+- **Kind:** share · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Of those hours, the percentage whose wind comes from that compass sector.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-739b78c4b9"></a>
+### `data/derived/currents_rain.json` › `wind_after_event.0.pct.W`
+
+`F-739b78c4b9` · **read from data** · 15.9
+
+- **Kind:** share · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Of those hours, the percentage whose wind comes from that compass sector.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-4c7d379c9d"></a>
+### `data/derived/currents_rain.json` › `wind_after_event.12.pct.SW`
+
+`F-4c7d379c9d` · **read from data** · 26.3
+
+- **Kind:** share · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Of those hours, the percentage whose wind comes from that compass sector.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-50a7602409"></a>
+### `data/derived/currents_rain.json` › `wind_after_event.12.pct.W`
+
+`F-50a7602409` · **read from data** · 35.2
+
+- **Kind:** share · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Of those hours, the percentage whose wind comes from that compass sector.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-414640d3a5"></a>
+### `data/derived/currents_rain.json` › `wind_all_hours.pct.SW`
+
+`F-414640d3a5` · **read from data** · 18.9
+
+- **Kind:** share · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Of those hours, the percentage whose wind comes from that compass sector (eight sectors, each centred on its point).
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-f108969d3e"></a>
+### `data/derived/currents_rain.json` › `wind_all_hours.pct.W`
+
+`F-f108969d3e` · **read from data** · 22.2
+
+- **Kind:** share · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Of those hours, the percentage whose wind comes from that compass sector (eight sectors, each centred on its point).
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-c876192c07"></a>
+### `data/derived/currents_rain.json` › `years`
+
+`F-c876192c07` · **read from data** · 31
+
+- **Kind:** counted · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **What this field is:** Calendar years present in the hourly Copenhagen weather record the script reads.
+- **Produced by:** [`scripts/currents.py`](../scripts/currents.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-9e5569fe2c"></a>
 ### `data/derived/currents_transport.json` › `bands.0.hours`
 
@@ -10004,16 +10367,6 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
-<a id="F-ce6f2983b0"></a>
-### `data/derived/currents_transport.json` › `event_threshold_mm`
-
-`F-ce6f2983b0` · **read from data** · 10
-
-- **Kind:** stipulated · made by [`K-WATER-CURRENTS-TRANSPORT`](#K-WATER-CURRENTS-TRANSPORT)
-- **What this field is:** Rain over that window, in mm, that counts as an overflow-scale event.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
 <a id="F-529cbb0c4f"></a>
 ### `data/derived/currents_transport.json` › `lag.0.hours`
 
@@ -10244,26 +10597,6 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
-<a id="F-e4d993f3aa"></a>
-### `data/derived/currents_validate.json` › `points.0.published_peak_ms`
-
-`F-e4d993f3aa` · **read from data** · 0.4
-
-- **Kind:** stipulated · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
-- **What this field is:** A published peak speed for the strait, written into the script for comparison.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
-<a id="F-69beb74b3d"></a>
-### `data/derived/currents_validate.json` › `points.0.underestimate_factor`
-
-`F-69beb74b3d` · **read from data** · 0.8
-
-- **Kind:** computed · made by [`K-DRAFTSA-CURRENTS`](#K-DRAFTSA-CURRENTS)
-- **What this field is:** The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
 <a id="F-88027b2588"></a>
 ### `data/derived/currents_validate.json` › `points.1.max_ms`
 
@@ -10271,16 +10604,6 @@
 
 - **Kind:** modelled · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
 - **What this field is:** Peak current speed, in m/s, at the model grid cell nearest the point, over the fetched hourly record.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
-<a id="F-33a1f58cd6"></a>
-### `data/derived/currents_validate.json` › `points.1.published_peak_ms`
-
-`F-33a1f58cd6` · **read from data** · 1.5
-
-- **Kind:** stipulated · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
-- **What this field is:** A published peak speed for the strait, written into the script for comparison.
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
@@ -10292,7 +10615,7 @@
 - **Kind:** computed · made by [`K-DRAFTSA-CURRENTS`](#K-DRAFTSA-CURRENTS)
 - **What this field is:** The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md), [NITROGEN.md](NITROGEN.md)
+- **Used in:** [NITROGEN.md](NITROGEN.md)
 
 <a id="F-a88365ae92"></a>
 ### `data/derived/currents_validate.json` › `points.2.max_ms`
@@ -10304,16 +10627,6 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
-<a id="F-3ecf3385b5"></a>
-### `data/derived/currents_validate.json` › `points.2.published_peak_ms`
-
-`F-3ecf3385b5` · **read from data** · 1.7
-
-- **Kind:** stipulated · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
-- **What this field is:** A published peak speed for the strait, written into the script for comparison.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
 <a id="F-014acc7128"></a>
 ### `data/derived/currents_validate.json` › `points.2.underestimate_factor`
 
@@ -10322,7 +10635,7 @@
 - **Kind:** computed · made by [`K-DRAFTSA-CURRENTS`](#K-DRAFTSA-CURRENTS)
 - **What this field is:** The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [TRIAGE.md](TRIAGE.md)
 
 <a id="F-92daab4a64"></a>
 ### `data/derived/currents_validate.json` › `points.3.max_ms`
@@ -10334,23 +10647,13 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
-<a id="F-9cbeb32a99"></a>
-### `data/derived/currents_validate.json` › `points.3.published_peak_ms`
+<a id="F-1bb94a9230"></a>
+### `data/derived/currents_validate.json` › `points.4.max_ms`
 
-`F-9cbeb32a99` · **read from data** · 1.5
+`F-1bb94a9230` · **read from data** · 0.611
 
-- **Kind:** stipulated · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
-- **What this field is:** A published peak speed for the strait, written into the script for comparison.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
-<a id="F-eec7fd8db5"></a>
-### `data/derived/currents_validate.json` › `points.3.underestimate_factor`
-
-`F-eec7fd8db5` · **read from data** · 1.9
-
-- **Kind:** computed · made by [`K-DRAFTSA-CURRENTS`](#K-DRAFTSA-CURRENTS)
-- **What this field is:** The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
+- **Kind:** modelled · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
+- **What this field is:** Peak current speed, in m/s, at the model grid cell nearest the point, over the fetched hourly record.
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
@@ -10364,26 +10667,6 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
-<a id="F-c723c5426e"></a>
-### `data/derived/currents_validate.json` › `points.5.published_peak_ms`
-
-`F-c723c5426e` · **read from data** · 1.2
-
-- **Kind:** stipulated · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
-- **What this field is:** A published peak speed for the strait, written into the script for comparison.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
-<a id="F-3e79137a54"></a>
-### `data/derived/currents_validate.json` › `points.5.underestimate_factor`
-
-`F-3e79137a54` · **read from data** · 1.1
-
-- **Kind:** computed · made by [`K-DRAFTSA-CURRENTS`](#K-DRAFTSA-CURRENTS)
-- **What this field is:** The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
 <a id="F-011e26027f"></a>
 ### `data/derived/currents_validate.json` › `points.6.max_ms`
 
@@ -10391,16 +10674,6 @@
 
 - **Kind:** modelled · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
 - **What this field is:** Peak current speed, in m/s, at the model grid cell nearest the point, over the fetched hourly record.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
-<a id="F-a67197a919"></a>
-### `data/derived/currents_validate.json` › `points.6.published_peak_ms`
-
-`F-a67197a919` · **read from data** · 1.8
-
-- **Kind:** stipulated · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
-- **What this field is:** A published peak speed for the strait, written into the script for comparison.
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CURRENTS.md](CURRENTS.md)
 
@@ -10412,7 +10685,27 @@
 - **Kind:** computed · made by [`K-DRAFTSA-CURRENTS`](#K-DRAFTSA-CURRENTS)
 - **What this field is:** The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CURRENTS.md](CURRENTS.md), [NITROGEN.md](NITROGEN.md)
+- **Used in:** [NITROGEN.md](NITROGEN.md)
+
+<a id="F-f6aef439b9"></a>
+### `data/derived/currents_validate.json` › `points.7.max_ms`
+
+`F-f6aef439b9` · **read from data** · 0.389
+
+- **Kind:** modelled · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
+- **What this field is:** Peak current speed, in m/s, at the model grid cell nearest the point, over the fetched hourly record.
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-c706c07dc6"></a>
+### `data/derived/currents_validate.json` › `points.8.max_ms`
+
+`F-c706c07dc6` · **read from data** · 0.444
+
+- **Kind:** modelled · made by [`K-WATER-CURRENTS`](#K-WATER-CURRENTS)
+- **What this field is:** Peak current speed, in m/s, at the model grid cell nearest the point, over the fetched hourly record.
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-c45b054a8f"></a>
 ### `data/derived/cycles.json` › `results.o2.by_window.10.sun.40+.dev`
@@ -12350,6 +12643,17 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
 
+<a id="F-dd50a85465"></a>
+### `data/derived/ds_facts.json` › `ctd.years.0`
+
+`F-dd50a85465` · **read from data** · 1,970
+
+- **Kind:** counted · made by [`K-DS-FACTS`](#K-DS-FACTS)
+- **What this field is:** The earliest and latest year among the rows' dates, as the first four characters of the date field.
+- **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [PLAN.md](PLAN.md)
+
 <a id="F-3b39e7a914"></a>
 ### `data/derived/ds_facts.json` › `kemi.depth_exactly_99`
 
@@ -12359,7 +12663,7 @@
 - **What this field is:** Rows whose `GennemsnitsDybde_m` parses as exactly the round value the page names.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-502bd97f00"></a>
 ### `data/derived/ds_facts.json` › `kemi.integrated`
@@ -12436,7 +12740,7 @@
 - **What this field is:** Distinct values of `Parameter` among the full rows of the kemi extract.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [PLAN.md](PLAN.md)
 
 <a id="F-cb89b765bd"></a>
 ### `data/derived/ds_facts.json` › `kemi.parameters_multi_unit`
@@ -12447,7 +12751,7 @@
 - **What this field is:** Parameters whose rows carry more than one distinct non-blank `Enhed`.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-b78fe39caf"></a>
 ### `data/derived/ds_facts.json` › `kemi.saturation_max_pct`
@@ -12458,7 +12762,7 @@
 - **What this field is:** The largest `Oxygenmætning` result in the kemi extract, as recorded.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-d1f12cb301"></a>
 ### `data/derived/ds_facts.json` › `kemi.shallow_threshold_m`
@@ -12502,7 +12806,7 @@
 - **What this field is:** Rows of one parameter with one value of `Enhed`, for the parameters that carry more than one.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-d32d88f033"></a>
 ### `data/derived/ds_facts.json` › `kemi.units.Orthophosphat.µg/l`
@@ -12513,7 +12817,7 @@
 - **What this field is:** Rows of one parameter with one value of `Enhed`, for the parameters that carry more than one.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-295cb26492"></a>
 ### `data/derived/ds_facts.json` › `kemi.units.Primær produktion assimilieret Carbon, integreret.mg/(m2*d)`
@@ -12546,7 +12850,7 @@
 - **What this field is:** The earliest and latest year among the rows' dates, as the first four characters of the date field.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [PLAN.md](PLAN.md)
 
 <a id="F-4c63726244"></a>
 ### `data/derived/ds_facts.json` › `kemi.years.1`
@@ -12678,7 +12982,7 @@
 - **What this field is:** The largest `BundDybde_m` at the station named `Hirtshals 15 m`.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-fd4b1ba41e"></a>
 ### `data/derived/ds_facts.json` › `maaledybde.hirtshals_15m.median_m`
@@ -12689,7 +12993,7 @@
 - **What this field is:** The median of that station's `BundDybde_m` readings.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-34a9a3271a"></a>
 ### `data/derived/ds_facts.json` › `maaledybde.rows_read`
@@ -12722,7 +13026,7 @@
 - **What this field is:** Rows whose `SigtTilBund` is `True`: the disc reached the bottom.
 - **Produced by:** [`scripts/ds_facts.py`](../scripts/ds_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-784b93c61d"></a>
 ### `data/derived/ds_probes.json` › `kbhkort_wfs.layers`
@@ -12810,7 +13114,7 @@
 - **What this field is:** Records of the CTD extract whose `Prøvetagningsudstyr` is exactly this value, over the whole file.
 - **Produced by:** [`scripts/enums.py`](../scripts/enums.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-a8322ee49b"></a>
 ### `data/derived/enums.json` › `ctd.categorical.SondeNr.999`
@@ -12821,7 +13125,7 @@
 - **What this field is:** Records of the CTD extract carrying one `SondeNr` value, over the whole file.
 - **Produced by:** [`scripts/enums.py`](../scripts/enums.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-4df017f985"></a>
 ### `data/derived/enums.json` › `ctd.rows`
@@ -12832,7 +13136,18 @@
 - **What this field is:** The number of records the Python `csv` reader returned from the fetched CTD extract `data/raw/oda/ctd.csv.gz`, header excluded and wholly empty lines skipped; one record is one reading of one of the extract's `Parameter` values at one depth of one cast, so this counts readings of every parameter (temperature, salinity, fluorescence, current and the rest), not casts, stations, visits or oxygen readings alone, and nothing was filtered out.
 - **Produced by:** [`scripts/enums.py`](../scripts/enums.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CLAIMS.md](CLAIMS.md), [DATA_SOURCES.md](DATA_SOURCES.md), [HYPOTHESES.md](HYPOTHESES.md), [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [OBSERVING.md](OBSERVING.md), [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [DATA_SOURCES.md](DATA_SOURCES.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [OBSERVING.md](OBSERVING.md), [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
+
+<a id="F-79f75c8b36"></a>
+### `data/derived/enums.json` › `kemi.categorical.Parameter.Oxygen indhold`
+
+`F-79f75c8b36` · **read from data** · 156,971
+
+- **Kind:** counted · made by [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS)
+- **What this field is:** Records of the water-chemistry extract carrying one `Parameter` value, over the whole file.
+- **Produced by:** [`scripts/enums.py`](../scripts/enums.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-208361ba97"></a>
 ### `data/derived/enums.json` › `kemi.categorical.ResultatAttribut.<`
@@ -17235,7 +17550,7 @@
 - **What this field is:** Points of the national overflow-structure register `punkt_rbu_udl.geojson`.
 - **Produced by:** [`scripts/hypodraft_b1.py`](../scripts/hypodraft_b1.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [B1.md](B1.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [B1.md](B1.md)
 
 <a id="F-0d072adc95"></a>
 ### `data/derived/hypodraft_b1.json` › `rbu.type.OF`
@@ -17312,7 +17627,7 @@
 - **What this field is:** Features of the bathing-site layer `badevand.geojson`.
 - **Produced by:** [`scripts/hypodraft_b1.py`](../scripts/hypodraft_b1.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [B1.md](B1.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [B1.md](B1.md)
 
 <a id="F-0e5b83c39d"></a>
 ### `data/derived/hypodraft_ctd.json` › `c1.deep_m`
@@ -17609,7 +17924,7 @@
 - **What this field is:** Areas in the project's area partition, `docs/data/areas/areas.json`.
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-9c2bc4c9bc"></a>
 ### `data/derived/hypodraft_facts.json` › `enums.probe_ids_known`
@@ -17620,7 +17935,7 @@
 - **What this field is:** Distinct `SondeNr` values in the whole CTD extract other than the unknown-probe code.
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-69e562d658"></a>
 ### `data/derived/hypodraft_facts.json` › `enums.supplier_values`
@@ -17664,7 +17979,7 @@
 - **What this field is:** Of those, stations on a lake water body (`DKLAKE`).
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-53860b0f29"></a>
 ### `data/derived/hypodraft_facts.json` › `hazardous.river`
@@ -17675,7 +17990,7 @@
 - **What this field is:** Of those, stations on a river water body (`DKRIVER`).
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-8bf5ff138f"></a>
 ### `data/derived/hypodraft_facts.json` › `hazardous.sediment`
@@ -17697,7 +18012,7 @@
 - **What this field is:** Stations in the national river-basin-specific-pollutant status network, `sw_mfs_tilstand.geojson`.
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-53c0aaacfb"></a>
 ### `data/derived/hypodraft_facts.json` › `kemi.orthophosphate_stations`
@@ -17862,7 +18177,7 @@
 - **What this field is:** Variables in the monthly station series.
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [A1.md](A1.md)
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [A1.md](A1.md)
 
 <a id="F-e4779c5760"></a>
 ### `data/derived/hypodraft_facts.json` › `series_by_variable.by_variable.oxy_bed.n`
@@ -17961,7 +18276,7 @@
 - **What this field is:** Station-months flagged as a batch sign flip in `docs/data/areas/flags.json`.
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-4ed890d0d9"></a>
 ### `data/derived/hypodraft_facts.json` › `sign_flips.stations`
@@ -17972,7 +18287,7 @@
 - **What this field is:** Distinct stations among them.
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-bd74e20689"></a>
 ### `data/derived/hypodraft_facts.json` › `stations_register.rows`
@@ -18016,7 +18331,7 @@
 - **What this field is:** Calendar years with any hourly value in the held wind files `data/raw/weather/wind_*.json`.
 - **Produced by:** [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-3a2cd3a019"></a>
 ### `data/derived/hypotheses.json` › `groups.[len]`
@@ -18039,6 +18354,83 @@
 - **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [CATEGORY.md](CATEGORY.md), [PLACES.md](PLACES.md)
+
+<a id="F-36b30a135c"></a>
+### `data/derived/hypotheses_evidence.json` › `daylight.lat`
+
+`F-36b30a135c` · **read from data** · 55
+
+- **Kind:** stipulated · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** The latitude the day lengths are computed at: a round value in the middle of Danish waters, chosen in `DAYLIGHT` in `scripts/hypotheses.py`.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-174fa66b89"></a>
+### `data/derived/hypotheses_evidence.json` › `daylight.longest_h`
+
+`F-174fa66b89` · **read from data** · 17.103
+
+- **Kind:** computed · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Hours from sunrise to sunset on the longer of those days, computed the same way.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-2ad04809f0"></a>
+### `data/derived/hypotheses_evidence.json` › `daylight.shortest_h`
+
+`F-2ad04809f0` · **read from data** · 6.902
+
+- **Kind:** computed · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Hours from sunrise to sunset on the shorter of the solstice days in `daylight.days`, from `sun_events()` in `scripts/daylight.py`.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-d246254592"></a>
+### `data/derived/hypotheses_evidence.json` › `layers.aquaculture`
+
+`F-d246254592` · **read from data** · 26
+
+- **Kind:** counted · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Features of the national marine aquaculture discharge layer `punkt_havdam_udl.geojson`, as fetched.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-2d4093ce84"></a>
+### `data/derived/hypotheses_evidence.json` › `layers.dumping`
+
+`F-2d4093ce84` · **read from data** · 114
+
+- **Kind:** counted · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Features of the licensed dumping-ground layer `klappladser.geojson`, as fetched.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-4e977ff3c5"></a>
+### `data/derived/hypotheses_evidence.json` › `layers.extraction`
+
+`F-4e977ff3c5` · **read from data** · 305
+
+- **Kind:** counted · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Features of the raw-material extraction layer `raastofomr.geojson`, as fetched.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-83866eb6a0"></a>
+### `data/derived/hypotheses_evidence.json` › `layers.treatment`
+
+`F-83866eb6a0` · **read from data** · 750
+
+- **Kind:** counted · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Features of the treatment-plant discharge layer `punkt_rens_udl.geojson`, as fetched.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-69b4510b42"></a>
 ### `data/derived/hypotheses_evidence.json` › `page.groups`
@@ -18071,7 +18463,7 @@
 - **What this field is:** Of those, the records whose `StartDato` is the same string as their `SlutDato`: a record that states one day, not a span.
 - **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-e46c5b924b"></a>
 ### `data/derived/hypotheses_evidence.json` › `register.rows_with_both_dates`
@@ -18082,7 +18474,7 @@
 - **What this field is:** Register records whose `StartDato` and `SlutDato` are both non-blank after `strip()`.
 - **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-a65709e687"></a>
 ### `data/derived/hypotheses_evidence.json` › `register.series_stations`
@@ -18093,7 +18485,7 @@
 - **What this field is:** Distinct station ids in the `stations` array of `docs/data/areas/stations_series.json`, the monthly series the register pages analyse.
 - **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-9fee8eb468"></a>
 ### `data/derived/hypotheses_evidence.json` › `register.series_stations_in_register`
@@ -18104,7 +18496,51 @@
 - **What this field is:** Series station ids that occur as an `ObservationsstedNr` anywhere in the station register, compared as exact strings.
 - **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-292abe00c9"></a>
+### `data/derived/hypotheses_evidence.json` › `sign_flips.km_max`
+
+`F-292abe00c9` · **read from data** · 75.38
+
+- **Kind:** computed · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** The longest such distance.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-36731a6b6b"></a>
+### `data/derived/hypotheses_evidence.json` › `sign_flips.km_min`
+
+`F-36731a6b6b` · **read from data** · 5.74
+
+- **Kind:** computed · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** The shortest great-circle distance between two of those stations, from their positions in `docs/data/areas/stations_series.json`.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-73df38845a"></a>
+### `data/derived/hypotheses_evidence.json` › `sign_flips.prefixes`
+
+`F-73df38845a` · **read from data** · 4
+
+- **Kind:** counted · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Distinct leading prefixes of those station numbers, of the length `_sign_flips()` in `scripts/hypotheses.py` takes.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-d253c0144e"></a>
+### `data/derived/hypotheses_evidence.json` › `sign_flips.water_bodies`
+
+`F-d253c0144e` · **read from data** · 4
+
+- **Kind:** counted · made by [`K-HY-EVIDENCE`](#K-HY-EVIDENCE)
+- **What this field is:** Distinct water bodies those stations fall in, by `docs/data/areas/station_waterbody_overlay.json`.
+- **Produced by:** [`scripts/hypotheses.py`](../scripts/hypotheses.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-0666c7bdae"></a>
 ### `data/derived/landbrug.json` › `agri_pct`
@@ -21396,17 +21832,6 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [PLAN.md](PLAN.md)
 
-<a id="F-0d0bd7c0c7"></a>
-### `data/derived/meta_facts.json` › `fat_c_frac`
-
-`F-0d0bd7c0c7` · **read from data** · 0.7587
-
-- **Kind:** computed · made by [`K-META-FACTS`](#K-META-FACTS)
-- **What this field is:** Carbon as a fraction of the mass of tripalmitin, from its formula and standard atomic masses.
-- **Produced by:** [`scripts/meta_facts.py`](../scripts/meta_facts.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
 <a id="F-4f7a64285f"></a>
 ### `data/derived/meta_facts.json` › `fat_cod_g_per_g`
 
@@ -21416,7 +21841,7 @@
 - **What this field is:** Grams of oxygen consumed in fully oxidising one gram of tripalmitin to carbon dioxide and water, from the balanced equation.
 - **Produced by:** [`scripts/meta_facts.py`](../scripts/meta_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md)
+- **Used in:** [CAUSATION.md](CAUSATION.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-5ef28a7f0b"></a>
 ### `data/derived/meta_facts.json` › `fat_n_frac_pct`
@@ -21427,7 +21852,7 @@
 - **What this field is:** Nitrogen as a share of the mass of tripalmitin, `C51H98O6`, the reference fat - zero, because the formula has no nitrogen atom.
 - **Produced by:** [`scripts/meta_facts.py`](../scripts/meta_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md)
+- **Used in:** [CAUSATION.md](CAUSATION.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-b5e4c4bced"></a>
 ### `data/derived/meta_facts.json` › `floodalign_pairs`
@@ -21471,7 +21896,7 @@
 - **What this field is:** The published flood-sheet PDFs on disk.
 - **Produced by:** [`scripts/meta_facts.py`](../scripts/meta_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-fe0618057d"></a>
 ### `data/derived/meta_facts.json` › `gated_slots`
@@ -21538,17 +21963,6 @@
 - **Produced by:** [`scripts/meta_facts.py`](../scripts/meta_facts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
-
-<a id="F-2035374c0e"></a>
-### `data/derived/meta_facts.json` › `kemi_parameters`
-
-`F-2035374c0e` · **read from data** · 147
-
-- **Kind:** counted · made by [`K-META-FACTS`](#K-META-FACTS)
-- **What this field is:** Distinct values of the `Parameter` column in the water-chemistry extract, as `scripts/enums.py` counted them.
-- **Produced by:** [`scripts/meta_facts.py`](../scripts/meta_facts.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [PLAN.md](PLAN.md)
 
 <a id="F-4d9b539b78"></a>
 ### `data/derived/meta_facts.json` › `light_start_depth_diff_pct`
@@ -23812,6 +24226,26 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [EXPERIMENTS.md](EXPERIMENTS.md), [NITROGEN.md](NITROGEN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
+<a id="F-6ff754b92c"></a>
+### `data/derived/outfalls.json` › `layers.combined_overflow.totals.Antal overløb.median`
+
+`F-6ff754b92c` · **read from data** · 6
+
+- **Kind:** computed · made by [`K-CS-OVERFLOWS`](#K-CS-OVERFLOWS)
+- **What this field is:** The median of those values - the value at the middle position once sorted, the upper of the two middle values for an even count. DP02 defines the field as a number of overflows a year.
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
+
+<a id="F-8ef5570146"></a>
+### `data/derived/outfalls.json` › `layers.combined_overflow.totals.Antal overløb.n`
+
+`F-8ef5570146` · **read from data** · 2,541
+
+- **Kind:** counted · made by [`K-CS-OVERFLOWS`](#K-CS-OVERFLOWS)
+- **What this field is:** Features of the combined-sewer overflow layer whose `Antal overløb` field holds a number (a zero counts; an empty or unparseable field does not).
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
+
 <a id="F-9c03f92b97"></a>
 ### `data/derived/outfalls.json` › `layers.combined_overflow.totals.Vand_(m3/ aar).n`
 
@@ -23820,7 +24254,7 @@
 - **Kind:** counted · made by [`K-NI-OUTFALL-VOLUMES`](#K-NI-OUTFALL-VOLUMES)
 - **What this field is:** Features of the combined-sewer overflow layer whose annual water volume field `Vand_(m3/ aar)` holds a number - a number, or a string that parses as one once spaces are dropped and a decimal comma read as a point. A zero counts; an empty or unparseable field does not.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [NITROGEN.md](NITROGEN.md)
+- **Used in:** [NITROGEN.md](NITROGEN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-574e7969a0"></a>
 ### `data/derived/outfalls.json` › `layers.combined_overflow.totals.Vand_(m3/ aar).sum`
@@ -23840,7 +24274,7 @@
 - **Kind:** counted · made by [`K-DRAFTSA-OUTFALLS`](#K-DRAFTSA-OUTFALLS)
 - **What this field is:** Features in the separate-stormwater outfall layer `Regnvandssepareredeudlbm3_1.js` as fetched.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md), [EXPERIMENTS.md](EXPERIMENTS.md), [HYPOTHESES.md](HYPOTHESES.md), [NITROGEN.md](NITROGEN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [DATA_SOURCES.md](DATA_SOURCES.md), [EXPERIMENTS.md](EXPERIMENTS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [NITROGEN.md](NITROGEN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-db2e05e3d9"></a>
 ### `data/derived/outfalls.json` › `layers.separate_stormwater.totals.Vand_(m3/ aar).n`
@@ -23850,7 +24284,7 @@
 - **Kind:** counted · made by [`K-DRAFTSA-OUTFALLS`](#K-DRAFTSA-OUTFALLS)
 - **What this field is:** Features of the separate-stormwater layer whose annual water volume field `Vand_(m3/ aar)` holds a number - a number, or a string that parses as one once spaces are dropped and a decimal comma read as a point. A zero counts; an empty or unparseable field does not.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [NITROGEN.md](NITROGEN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [NITROGEN.md](NITROGEN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-b1e3982a08"></a>
 ### `data/derived/outfalls.json` › `layers.separate_stormwater.totals.Vand_(m3/ aar).sum`
@@ -23860,7 +24294,7 @@
 - **Kind:** computed · made by [`K-DRAFTSA-OUTFALLS`](#K-DRAFTSA-OUTFALLS)
 - **What this field is:** The sum, in m3 per year, of the annual water volume over exactly the features counted in the .n beside it - not over every outfall in the layer.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [NITROGEN.md](NITROGEN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [NITROGEN.md](NITROGEN.md)
 
 <a id="F-a93bf4456d"></a>
 ### `data/derived/oxygen.json` › `coefficients.per_c`
@@ -24014,7 +24448,7 @@
 - **What this field is:** The ones flagged as measuring sediment (`maaltsedim`).
 - **Produced by:** [`scripts/oxygen.py`](../scripts/oxygen.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [OXYGEN.md](OXYGEN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [OXYGEN.md](OXYGEN.md)
 
 <a id="F-b5b1f7dcbe"></a>
 ### `data/derived/oxygen.json` › `hazardous.total_points`
@@ -24025,7 +24459,7 @@
 - **What this field is:** Features in the national water-plan hazardous-substance layer `sw_mfs_tilstand`, counted from the layer itself.
 - **Produced by:** [`scripts/oxygen.py`](../scripts/oxygen.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-6f95225e78"></a>
 ### `data/derived/oxygen.json` › `hazardous.water`
@@ -24544,6 +24978,28 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [POLITICS.md](POLITICS.md)
 
+<a id="F-c83235a8a6"></a>
+### `data/derived/politics.json` › `n_quote_part`
+
+`F-c83235a8a6` · **read from data** · 7
+
+- **Kind:** counted · made by [`K-PO-TALLIES`](#K-PO-TALLIES)
+- **What this field is:** Statements with at least one passage not found whole but found as a run of at least six consecutive words (or the whole passage, if shorter); anything weaker stops the build.
+- **Produced by:** [`scripts/politics.py`](../scripts/politics.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [POLITICS.md](POLITICS.md)
+
+<a id="F-502a59850b"></a>
+### `data/derived/politics.json` › `n_quote_verbatim`
+
+`F-502a59850b` · **read from data** · 85
+
+- **Kind:** counted · made by [`K-PO-TALLIES`](#K-PO-TALLIES)
+- **What this field is:** Statements every passage of whose quotation (the text between elisions) is found word for word in the pinned copy of its source, read with tags set aside and entities as characters.
+- **Produced by:** [`scripts/politics.py`](../scripts/politics.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [POLITICS.md](POLITICS.md)
+
 <a id="F-65f135a64c"></a>
 ### `data/derived/politics.json` › `n_share`
 
@@ -24595,6 +25051,17 @@
 
 - **Kind:** counted · made by [`K-POLITICS-TALLIES`](#K-POLITICS-TALLIES)
 - **What this field is:** Statements in `data/manual/politics.json`.
+- **Produced by:** [`scripts/politics.py`](../scripts/politics.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [POLITICS.md](POLITICS.md)
+
+<a id="F-ee50e396ad"></a>
+### `data/derived/politics.json` › `n_typography`
+
+`F-ee50e396ad` · **read from data** · 2
+
+- **Kind:** counted · made by [`K-PO-TALLIES`](#K-PO-TALLIES)
+- **What this field is:** Statements whose collection note mentions spelling or typography.
 - **Produced by:** [`scripts/politics.py`](../scripts/politics.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [POLITICS.md](POLITICS.md)
@@ -33805,7 +34272,7 @@
 - **What this field is:** Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDING.md](LANDING.md), [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [LANDING.md](LANDING.md), [PLACES.md](PLACES.md), [PLAN.md](PLAN.md), [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-15045ed0fb"></a>
 ### `data/derived/triage.json` › `classes.fetch.n`
@@ -33816,7 +34283,7 @@
 - **What this field is:** Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-ab9e2895d5"></a>
 ### `data/derived/triage.json` › `classes.resolution.n`
@@ -33827,7 +34294,7 @@
 - **What this field is:** Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-e786dfc514"></a>
 ### `data/derived/triage.json` › `classes.testable.n`
@@ -33838,7 +34305,7 @@
 - **What this field is:** Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDING.md](LANDING.md), [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [LANDING.md](LANDING.md), [PLAN.md](PLAN.md), [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-6f2641deb0"></a>
 ### `data/derived/triage.json` › `classes.unestablished.n`
@@ -33849,7 +34316,7 @@
 - **What this field is:** Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-198b20fb90"></a>
 ### `data/derived/triage.json` › `classes.unscoreable.n`
@@ -33860,7 +34327,7 @@
 - **What this field is:** Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [LANDING.md](LANDING.md), [PROGRAMME.md](PROGRAMME.md), [SETTLE.md](SETTLE.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [LANDING.md](LANDING.md), [PLACES.md](PLACES.md), [PLAN.md](PLAN.md), [PROGRAMME.md](PROGRAMME.md), [SETTLE.md](SETTLE.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-7495c59f85"></a>
 ### `data/derived/triage.json` › `clusters.bundfauna.n`
@@ -33884,6 +34351,17 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [TRIAGE.md](TRIAGE.md)
 
+<a id="F-15dd43136e"></a>
+### `data/derived/triage.json` › `clusters.microbial.n`
+
+`F-15dd43136e` · **read from data** · 14
+
+- **Kind:** counted · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
+- **What this field is:** Hypotheses named in one of the triage's clusters of blockers, as listed in `CLUSTERS`.
+- **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [PLAN.md](PLAN.md)
+
 <a id="F-e661888b83"></a>
 ### `data/derived/triage.json` › `clusters.microbial.unscoreable`
 
@@ -33893,7 +34371,7 @@
 - **What this field is:** Hypotheses of one cluster in the class `unscoreable`.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-7a78427d2e"></a>
 ### `data/derived/triage.json` › `clusters.toxicant.n`
@@ -33915,7 +34393,7 @@
 - **What this field is:** Hypotheses of one cluster in the class `unscoreable`.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-b5ea195365"></a>
 ### `data/derived/triage.json` › `clusters.vandkemi.n`
@@ -33926,7 +34404,7 @@
 - **What this field is:** Hypotheses named in one of the triage's clusters of blockers, as listed in `CLUSTERS`.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-cd21100ace"></a>
 ### `data/derived/triage.json` › `groups.A.fetch`
@@ -33948,7 +34426,7 @@
 - **What this field is:** Triaged hypotheses in one register group, by the group letter the triage row carries.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-1bbb2adcef"></a>
 ### `data/derived/triage.json` › `groups.A.unestablished`
@@ -34069,7 +34547,7 @@
 - **What this field is:** Triaged hypotheses of one group in the class `testable`.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDING.md](LANDING.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [LANDING.md](LANDING.md), [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-ada657e8a8"></a>
 ### `data/derived/triage.json` › `groups.D.experiment`
@@ -34344,7 +34822,7 @@
 - **What this field is:** Triaged hypotheses of one group in the class `testable`.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDING.md](LANDING.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [LANDING.md](LANDING.md), [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-1efd11344c"></a>
 ### `data/derived/triage.json` › `groups.J.fetch`
@@ -34762,7 +35240,7 @@
 - **What this field is:** Triaged hypotheses of one group in the class `testable`.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDING.md](LANDING.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [LANDING.md](LANDING.md), [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-2c1d0d090e"></a>
 ### `data/derived/triage.json` › `groups.Z.unscoreable`
@@ -34806,7 +35284,7 @@
 - **What this field is:** Hypotheses the triage classifies that the hypothesis register also holds: one row of `scripts/pages/triage_rows.py` per ID, counted only if the ID is in `data/derived/hypotheses.json`.
 - **Produced by:** [`scripts/triage_counts.py`](../scripts/triage_counts.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [PROGRAMME.md](PROGRAMME.md), [SETTLE.md](SETTLE.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLACES.md](PLACES.md), [PLAN.md](PLAN.md), [PROGRAMME.md](PROGRAMME.md), [SETTLE.md](SETTLE.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-2e51f8b7c4"></a>
 ### `data/derived/triage.json` › `n_with_entry`
@@ -34907,7 +35385,7 @@
 - **Kind:** modelled · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **What this field is:** The same hours, for one calendar month, per year of archive.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [SEABED.md](SEABED.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
 
 <a id="F-6a5501dcac"></a>
 ### `data/derived/waves.json` › `by_depth.[5.0].exceedance.dead bed (no biology).by_month.3`
@@ -34917,7 +35395,7 @@
 - **Kind:** modelled · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **What this field is:** The same hours, for one calendar month, per year of archive.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [SEABED.md](SEABED.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
 
 <a id="F-2d785e1bc5"></a>
 ### `data/derived/waves.json` › `by_depth.[5.0].exceedance.dead bed (no biology).by_month.4`
@@ -34927,7 +35405,7 @@
 - **Kind:** modelled · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **What this field is:** The same hours, for one calendar month, per year of archive.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [SEABED.md](SEABED.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
 
 <a id="F-99c599c614"></a>
 ### `data/derived/waves.json` › `by_depth.[5.0].exceedance.dead bed (no biology).by_month.5`
@@ -34937,7 +35415,7 @@
 - **Kind:** modelled · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **What this field is:** The same hours, for one calendar month, per year of archive.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [SEABED.md](SEABED.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
 
 <a id="F-a8ef1c34c9"></a>
 ### `data/derived/waves.json` › `by_depth.[5.0].exceedance.dead bed (no biology).by_month.6`
@@ -34947,7 +35425,7 @@
 - **Kind:** modelled · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **What this field is:** The same hours, for one calendar month, per year of archive.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [SEABED.md](SEABED.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
 
 <a id="F-77b5cb7498"></a>
 ### `data/derived/waves.json` › `by_depth.[5.0].exceedance.dead bed (no biology).by_month.7`
@@ -34967,7 +35445,7 @@
 - **Kind:** modelled · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **What this field is:** The same hours, for one calendar month, per year of archive.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [SEABED.md](SEABED.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
 
 <a id="F-bd1a340f32"></a>
 ### `data/derived/waves.json` › `by_depth.[5.0].exceedance.dead bed (no biology).by_month.9`
@@ -34977,7 +35455,7 @@
 - **Kind:** modelled · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **What this field is:** The same hours, for one calendar month, per year of archive.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [SEABED.md](SEABED.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
 
 <a id="F-ff00e6d42f"></a>
 ### `data/derived/waves.json` › `by_depth.[5.0].exceedance.dead bed (no biology).hours_per_year`
@@ -35557,7 +36035,7 @@
 - **Kind:** document · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
 - **What this field is:** The stated uncertainty of the national average retention, in percentage points.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDBRUG.md](LANDBRUG.md)
+- **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md)
 
 <a id="F-fb507b62c6"></a>
 ### `data/manual/monitoring.json` › `diffuse_load.retention_uncertainty_pct_points.0`
@@ -35597,7 +36075,7 @@
 - **Kind:** document · made by [`K-FLOOD-MONITORING`](#K-FLOOD-MONITORING)
 - **What this field is:** The number of national discharge points the report says the typetal are applied to.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDBRUG.md](LANDBRUG.md), [PROGRAMME.md](PROGRAMME.md), [SOLUTIONS.md](SOLUTIONS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [PROGRAMME.md](PROGRAMME.md)
 
 <a id="F-0019d1e160"></a>
 ### `data/manual/monitoring.json` › `hazardous_substances.stations_combined_overflow`
@@ -35927,7 +36405,7 @@
 - **Kind:** document · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
 - **What this field is:** The area of Danish inner waters affected by oxygen depletion in September of that year, square kilometres, from DCE's notices.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-669029e447"></a>
 ### `data/manual/monitoring.json` › `load_trend_vs_outcome.iltsvind_extent.observations.3.year`
@@ -35947,7 +36425,7 @@
 - **Kind:** document · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
 - **What this field is:** The area of Danish inner waters affected by oxygen depletion in September of that year, square kilometres, from DCE's notices.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-21958c7ac8"></a>
 ### `data/manual/monitoring.json` › `load_trend_vs_outcome.iltsvind_extent.observations.4.year`
@@ -35967,7 +36445,7 @@
 - **Kind:** document · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
 - **What this field is:** The same, for a late-September notice.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-ba31fb08d3"></a>
 ### `data/manual/monitoring.json` › `load_trend_vs_outcome.iltsvind_extent.observations.5.year`
@@ -35987,7 +36465,7 @@
 - **Kind:** document · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
 - **What this field is:** The flow-normalised nitrogen supply from Danish land to the sea around the start of the series, kilotonnes a year, as reported by DCE and summarised at miljotilstand.dk - an approximate reading of the published series.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-b76b31049f"></a>
 ### `data/manual/monitoring.json` › `load_trend_vs_outcome.nitrogen_load.approx_recent_kt`
@@ -35997,7 +36475,7 @@
 - **Kind:** document · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
 - **What this field is:** The same supply in recent years, on the same terms.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-c1dfd7d027"></a>
 ### `data/manual/monitoring.json` › `load_trend_vs_outcome.nitrogen_load.reduction_pct_since_1990`
@@ -36007,7 +36485,7 @@
 - **Kind:** document · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
 - **What this field is:** The reduction between the two, as a percentage, on the same terms.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-f7a3ee9e2c"></a>
 ### `data/manual/monitoring.json` › `national_volumes_m3_per_year.combined_overflow_water`
@@ -36057,7 +36535,7 @@
 - **Kind:** document · made by [`K-FLOOD-MONITORING`](#K-FLOOD-MONITORING)
 - **What this field is:** The uncertainty the technical instruction states for that level, in per cent.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [LANDBRUG.md](LANDBRUG.md), [NITROGEN.md](NITROGEN.md), [SOLUTIONS.md](SOLUTIONS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [NITROGEN.md](NITROGEN.md), [SOLUTIONS.md](SOLUTIONS.md)
 
 <a id="F-e809880b99"></a>
 ### `data/manual/monitoring.json` › `overflow_reporting.knowledge_levels.2.level`
@@ -36137,7 +36615,7 @@
 - **Kind:** document · made by [`K-FLOOD-MONITORING`](#K-FLOOD-MONITORING)
 - **What this field is:** The uncertainty the technical instruction states for that level, in per cent.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [LANDBRUG.md](LANDBRUG.md), [NITROGEN.md](NITROGEN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), [SOLUTIONS.md](SOLUTIONS.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [NITROGEN.md](NITROGEN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), [SOLUTIONS.md](SOLUTIONS.md)
 
 <a id="F-da54056785"></a>
 ### `data/manual/monitoring.json` › `quality_control.acceptance_interval_combined_mg_per_l.0`
@@ -36657,7 +37135,7 @@
 - **Kind:** document · made by [`K-NITROGEN-PATHWAYS`](#K-NITROGEN-PATHWAYS)
 - **What this field is:** The overflow load at the published national typetal concentration, kt N per year.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [NITROGEN.md](NITROGEN.md)
+- **Used in:** [CAUSATION.md](CAUSATION.md), [NITROGEN.md](NITROGEN.md)
 
 <a id="F-683bd33df5"></a>
 ### `data/manual/nitrogen_pathways.json` › `pathways.5.hi`
@@ -39943,6 +40421,15 @@
 
 ## Calculated in a generator
 
+<a id="F-0040a76512"></a>
+### Calculated: 481.16
+
+`F-0040a76512` · **calculated** · 481.16
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [115](SOURCES.md#F-e8955e6dbb) * [4.184](SOURCES.md#F-bb57ac4222) = 481.16
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-007199212b"></a>
 ### Calculated: -64
 
@@ -39968,7 +40455,16 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [36.747](SOURCES.md#F-7eab040aeb) = 36.747
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
+
+<a id="F-00f96001f6"></a>
+### Calculated: 46.6465
+
+`F-00f96001f6` · **calculated** · 46.6465
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [0.466465](SOURCES.md#F-a050303510) * 100 = 46.6465
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-011accf67c"></a>
 ### Calculated: 95.102
@@ -40042,6 +40538,15 @@
 - **Calculation:** [0.2742](SOURCES.md#F-001c24e716) / [1.2928](SOURCES.md#F-ff9060fcab) = 0.212098
 - **Used in:** [METHOD_LAB.md](METHOD_LAB.md)
 
+<a id="F-02743c53b7"></a>
+### Calculated: 291
+
+`F-02743c53b7` · **calculated** · 291
+
+- **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
+- **Calculation:** [28](SOURCES.md#F-3bd0ff4f3a) + [27](SOURCES.md#F-634357f344) + [19](SOURCES.md#F-f1ce5e7adc) + [182](SOURCES.md#F-35bb9d81ec) + [35](SOURCES.md#F-b9c95f7687) = 291
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
 <a id="F-02a9fb18e0"></a>
 ### Calculated: 45.3125
 
@@ -40114,6 +40619,15 @@
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [100](SOURCES.md#F-6445805e60) = 100
 - **Used in:** [NITROGEN.md](NITROGEN.md)
 
+<a id="F-041d888b22"></a>
+### Calculated: 14,040
+
+`F-041d888b22` · **calculated** · 14,040
+
+- **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
+- **Calculation:** [12,725](SOURCES.md#F-a998566e98) + [1,315](SOURCES.md#F-1178e6852d) = 14,040
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
 <a id="F-045974c67c"></a>
 ### Calculated: 65
 
@@ -40149,6 +40663,24 @@
 - **Kind:** calculated · made by [`K-POLITICS-STREAMS`](#K-POLITICS-STREAMS)
 - **Calculation:** [8.48894](SOURCES.md#F-64fcf0935d) / [0.0655945](SOURCES.md#F-8214813f84) = 129.415
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
+
+<a id="F-05655b16b9"></a>
+### Calculated: 678
+
+`F-05655b16b9` · **calculated** · 678
+
+- **Kind:** calculated · made by [`K-FARM-DOCS`](#K-FARM-DOCS)
+- **Calculation:** neg([-678](SOURCES.md#F-c3ed4f168b)) = 678
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-0576f01b93"></a>
+### Calculated: 1.95817
+
+`F-0576f01b93` · **calculated** · 1.95817
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [299.6](SOURCES.md#F-247cb48b59) / [153](SOURCES.md#F-77b5cb7498) = 1.95817
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-05d8cfe97a"></a>
 ### Sum over 10 terms = 85
@@ -40400,7 +40932,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [10.8434](SOURCES.md#F-db7efd5a47) = 10.8434
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-0db999dc87"></a>
 ### Calculated: 12.19
@@ -40427,7 +40959,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [12](SOURCES.md#F-e661888b83) + [7](SOURCES.md#F-ad0e6f85ff) = 19
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-0e0974d269"></a>
 ### Calculated: 20.2532
@@ -40464,6 +40996,15 @@
 - **Kind:** calculated · made by [`K-POLITICS-LIVESTOCK`](#K-POLITICS-LIVESTOCK)
 - **Calculation:** [6.0317e+06](SOURCES.md#F-63e3b5301e) / 1e+06 = 6.0317
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
+
+<a id="F-0f04693c5a"></a>
+### Calculated: 38.4532
+
+`F-0f04693c5a` · **calculated** · 38.4532
+
+- **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DS-FACTS`](#K-DS-FACTS)
+- **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [38.4532](SOURCES.md#F-4420e14fa3) = 38.4532
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-0f0668bf48"></a>
 ### Calculated: -20.3196
@@ -40519,6 +41060,15 @@
 - **Calculation:** [0.0463](SOURCES.md#F-d5bbe3e632) * 100 = 4.63
 - **Used in:** [PLACES.md](PLACES.md)
 
+<a id="F-1046218c89"></a>
+### Calculated: 4.06192e+07
+
+`F-1046218c89` · **calculated** · 4.06192e+07
+
+- **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
+- **Calculation:** [406192](SOURCES.md#F-eefa58fbf2) * 100 = 4.06192e+07
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
 <a id="F-104a437a9d"></a>
 ### Calculated: 6.04243e+06
 
@@ -40572,6 +41122,24 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** 100 * [0.259401](SOURCES.md#F-691a4fab82) = 25.9401
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-11c483619c"></a>
+### Calculated: 0.354641
+
+`F-11c483619c` · **calculated** · 0.354641
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0638](SOURCES.md#F-9901e2eb8e) / [0.1799](SOURCES.md#F-e6b6cf5562) = 0.354641
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-11c53ad170"></a>
+### Calculated: 1.33791
+
+`F-11c53ad170` · **calculated** · 1.33791
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [204.7](SOURCES.md#F-2d785e1bc5) / [153](SOURCES.md#F-77b5cb7498) = 1.33791
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-11d0dcb006"></a>
 ### Calculated: 0.43
@@ -40796,7 +41364,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS), [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [25.6082](SOURCES.md#F-8c53142a45) = 25.6082
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-18fe17c503"></a>
 ### Calculated: 19.7
@@ -40906,6 +41474,15 @@
 - **Calculation:** [1295.79](SOURCES.md#F-5207593105) * 1,000 = 1.29579e+06
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-1bab89aac9"></a>
+### Calculated: 63.996
+
+`F-1bab89aac9` · **calculated** · 63.996
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** 4 * [15.999](SOURCES.md#F-4d08c6bbb5) = 63.996
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-1bae3dc3fd"></a>
 ### Calculated: 43,552
 
@@ -40915,15 +41492,6 @@
 - **Calculation:** [23,160](SOURCES.md#F-6ce45ba3d4) + [20,392](SOURCES.md#F-21dcc91cb3) = 43,552
 - **Used in:** [CONSTRUCTED.md](CONSTRUCTED.md)
 
-<a id="F-1bbf068fbd"></a>
-### Calculated: 1.46667
-
-`F-1bbf068fbd` · **calculated** · 1.46667
-
-- **Kind:** calculated · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
-- **Calculation:** [11,000](SOURCES.md#F-066dfb9a42) / [7,500](SOURCES.md#F-934bda9fbc) = 1.46667
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
 <a id="F-1bc29f8ca0"></a>
 ### Calculated: 7.39594
 
@@ -40932,6 +41500,15 @@
 - **Kind:** calculated · made by [`K-WATER-OXYGEN`](#K-WATER-OXYGEN)
 - **Calculation:** [19.7032](SOURCES.md#F-4a2fc9ec3d) / [2.66406](SOURCES.md#F-a93bf4456d) = 7.39594
 - **Used in:** [OXYGEN.md](OXYGEN.md)
+
+<a id="F-1c5433a022"></a>
+### Calculated: 15.1601
+
+`F-1c5433a022` · **calculated** · 15.1601
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [1516.01](SOURCES.md#F-1f393d4679) / 100 = 15.1601
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-1c99e39c24"></a>
 ### Calculated: -2,980
@@ -40987,6 +41564,15 @@
 - **Calculation:** [49.416](SOURCES.md#F-546d1f62e4) / [167.45](SOURCES.md#F-ed6aa15749) = 0.295109
 - **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md)
 
+<a id="F-1eb45d1232"></a>
+### Calculated: 325
+
+`F-1eb45d1232` · **calculated** · 325
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Calculation:** [32.5](SOURCES.md#F-492e40b543) * 10 = 325
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-1ef45bb396"></a>
 ### Calculated: 356916
 
@@ -41004,6 +41590,15 @@
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-FLOOD-SOLUTIONS`](#K-FLOOD-SOLUTIONS)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [14.4455](SOURCES.md#F-30d738b3a2) = 14.4455
 - **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
+
+<a id="F-1f393d4679"></a>
+### Calculated: 1516.01
+
+`F-1f393d4679` · **calculated** · 1516.01
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [32.5](SOURCES.md#F-492e40b543) * [0.466465](SOURCES.md#F-a050303510) * 100 = 1516.01
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-1f457e025f"></a>
 ### Calculated: 0.26087
@@ -41050,6 +41645,15 @@
 - **Calculation:** [1.16037e+07](SOURCES.md#F-0a55f73c35) / [2.62109e+06](SOURCES.md#F-f7b709b120) = 4.42706
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-21135c443e"></a>
+### Calculated: 1.50523
+
+`F-21135c443e` · **calculated** · 1.50523
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [230.3](SOURCES.md#F-bd1a340f32) / [153](SOURCES.md#F-77b5cb7498) = 1.50523
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-21172c962f"></a>
 ### Calculated: 5
 
@@ -41075,7 +41679,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [60](SOURCES.md#F-38d4f3aa11) / [166](SOURCES.md#F-4196d405de) = 0.361446
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-2182637280"></a>
 ### Calculated: 0.813502
@@ -41104,6 +41708,15 @@
 - **Calculation:** [15.999](SOURCES.md#F-3871bb1426) * 4 = 63.996
 - **Used in:** [NITROGEN.md](NITROGEN.md)
 
+<a id="F-2277f0280a"></a>
+### Calculated: 1.292
+
+`F-2277f0280a` · **calculated** · 1.292
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Calculation:** [0.091](SOURCES.md#F-abac72a8e0) * 10 = 1.292
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-22be589220"></a>
 ### Calculated: 11
 
@@ -41122,6 +41735,15 @@
 - **Calculation:** [0.05](SOURCES.md#F-3c9955d52a) * 100 = 5
 - **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
 
+<a id="F-23fd31bcd2"></a>
+### Calculated: 0.277487
+
+`F-23fd31bcd2` · **calculated** · 0.277487
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0265](SOURCES.md#F-ce2622a1d5) / [0.0955](SOURCES.md#F-704a3cf6f2) = 0.277487
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-24782dd4c7"></a>
 ### Calculated: 74.3918
 
@@ -41129,7 +41751,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-ENUMS`](#K-ENUMS), [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [74.3918](SOURCES.md#F-d75ee66258) = 74.3918
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [PLAN.md](PLAN.md)
 
 <a id="F-24a5068140"></a>
 ### Calculated: 2.31674
@@ -41147,7 +41769,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [24](SOURCES.md#F-e786dfc514) / [166](SOURCES.md#F-4196d405de) = 0.144578
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-252e599f3a"></a>
 ### Calculated: 25.3
@@ -41266,15 +41888,6 @@
 - **Calculation:** [0.3546](SOURCES.md#F-f1b770ed60) / [0.0917](SOURCES.md#F-365c21ca5d) = 3.86696
 - **Used in:** [LANDING.md](LANDING.md), [PLACES.md](PLACES.md)
 
-<a id="F-2882af7097"></a>
-### Calculated: 75.87
-
-`F-2882af7097` · **calculated** · 75.87
-
-- **Kind:** calculated · made by [`K-META-FACTS`](#K-META-FACTS)
-- **Calculation:** [0.7587](SOURCES.md#F-0d0bd7c0c7) * 100 = 75.87
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
 <a id="F-288622cc55"></a>
 ### Calculated: 0.408
 
@@ -41346,6 +41959,15 @@
 - **Kind:** calculated · made by [`K-FLOOD-GAP`](#K-FLOOD-GAP)
 - **Calculation:** [0.145](SOURCES.md#F-69d59335f0) * 100 = 14.5
 - **Used in:** [FLOOD_GAP.md](FLOOD_GAP.md)
+
+<a id="F-2a17fa5268"></a>
+### Calculated: 0.56338
+
+`F-2a17fa5268` · **calculated** · 0.56338
+
+- **Kind:** calculated · made by [`K-NITROGEN-PATHWAYS`](#K-NITROGEN-PATHWAYS), [`K-FARM-PATHWAYS`](#K-FARM-PATHWAYS)
+- **Calculation:** [0.0056338](SOURCES.md#F-e405995f19) * 100 = 0.56338
+- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-2a331939b7"></a>
 ### Calculated: 0.421521
@@ -41453,7 +42075,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [36.1446](SOURCES.md#F-716582d1f7) = 36.1446
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-2ccca457b4"></a>
 ### Calculated: 9
@@ -41472,6 +42094,15 @@
 - **Kind:** calculated · made by [`K-FARM-DOCS`](#K-FARM-DOCS)
 - **Calculation:** [175](SOURCES.md#F-35790b9b7a) / [110](SOURCES.md#F-fe6cd4c3cd) = 1.59091
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-2d9e213f25"></a>
+### Calculated: 1.96993
+
+`F-2d9e213f25` · **calculated** · 1.96993
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [301.4](SOURCES.md#F-9e04a26fd2) / [153](SOURCES.md#F-77b5cb7498) = 1.96993
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-2da8eccf9d"></a>
 ### Calculated: 668640
@@ -41525,7 +42156,7 @@
 
 - **Kind:** calculated · made by [`K-HYPOTHESES-EVIDENCE`](#K-HYPOTHESES-EVIDENCE)
 - **Calculation:** [0.998016](SOURCES.md#F-4c23c44b5f) * 100 = 99.8016
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-2fa1baa60b"></a>
 ### Calculated: 1
@@ -41543,7 +42174,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [0.144578](SOURCES.md#F-24d37b4999) * 100 = 14.4578
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-309655558a"></a>
 ### Calculated: 0.0311554
@@ -41597,7 +42228,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS), [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [13,754,352](SOURCES.md#F-a8322ee49b) / [53,710,760](SOURCES.md#F-4df017f985) = 0.256082
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-3307597d2e"></a>
 ### Calculated: 1.80723
@@ -41606,7 +42237,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [1.80723](SOURCES.md#F-6d5fb61775) = 1.80723
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-331aa4af95"></a>
 ### Calculated: 3.71584e+06
@@ -41617,6 +42248,15 @@
 - **Calculation:** [37158.4](SOURCES.md#F-1e33d8a4c0) * 100 = 3.71584e+06
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-332040382c"></a>
+### Calculated: 1.93529
+
+`F-332040382c` · **calculated** · 1.93529
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [296.1](SOURCES.md#F-41ca2bce8c) / [153](SOURCES.md#F-77b5cb7498) = 1.93529
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-332ea7b4ac"></a>
 ### Calculated: 5.26
 
@@ -41625,6 +42265,15 @@
 - **Kind:** calculated · made by [`K-AREAS-PLACES`](#K-AREAS-PLACES)
 - **Calculation:** [0.0526](SOURCES.md#F-8d584294b7) * 100 = 5.26
 - **Used in:** [PLACES.md](PLACES.md)
+
+<a id="F-339eb770d9"></a>
+### Calculated: 0.354641
+
+`F-339eb770d9` · **calculated** · 0.354641
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0638](SOURCES.md#F-a1ff75b067) / [0.1799](SOURCES.md#F-b7c9801162) = 0.354641
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-33a12f031b"></a>
 ### Calculated: 59
@@ -41642,7 +42291,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [18](SOURCES.md#F-ab9e2895d5) / [166](SOURCES.md#F-4196d405de) = 0.108434
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-340af001dc"></a>
 ### Calculated: 27.0916
@@ -41779,6 +42428,15 @@
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [81.0356](SOURCES.md#F-8b13c8e0be) = 81.0356
 - **Used in:** [CLAIMS.md](CLAIMS.md)
 
+<a id="F-36f22667f2"></a>
+### Calculated: 0.540368
+
+`F-36f22667f2` · **calculated** · 0.540368
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0676](SOURCES.md#F-966f57b7e6) / [0.1251](SOURCES.md#F-df81cfb74d) = 0.540368
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-37085dcccd"></a>
 ### Calculated: …
 
@@ -41840,7 +42498,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [40](SOURCES.md#F-198b20fb90) + [20](SOURCES.md#F-64bb5d44db) = 60
-- **Used in:** [LANDING.md](LANDING.md), [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [LANDING.md](LANDING.md), [PLAN.md](PLAN.md), [PROGRAMME.md](PROGRAMME.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-38ecdb8176"></a>
 ### Calculated: 1.49847e+07
@@ -41959,6 +42617,15 @@
 - **Calculation:** [1.02159e+08](SOURCES.md#F-8b495f8a44) / [1.32486e+06](SOURCES.md#F-77e0dedda3) = 77.1093
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-3d79669ad9"></a>
+### Calculated: 1.65752
+
+`F-3d79669ad9` · **calculated** · 1.65752
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [253.6](SOURCES.md#F-6a5501dcac) / [153](SOURCES.md#F-77b5cb7498) = 1.65752
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-3d9cb83611"></a>
 ### Calculated: 5
 
@@ -41993,7 +42660,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-HYPOTHESES-EVIDENCE`](#K-HYPOTHESES-EVIDENCE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [99.8016](SOURCES.md#F-2f8dc9beea) = 99.8016
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-3dde7b88d1"></a>
 ### Calculated: 4,040,000
@@ -42030,6 +42697,15 @@
 - **Kind:** calculated · made by [`K-META-EXTRACT`](#K-META-EXTRACT)
 - **Calculation:** [1,389,978](SOURCES.md#F-8e176b4929) / 1e+06 = 1.38998
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+
+<a id="F-3e3c480169"></a>
+### Calculated: 2726.48
+
+`F-3e3c480169` · **calculated** · 2726.48
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [2.72648](SOURCES.md#F-7912b55a0d) * 1,000 = 2726.48
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-3e6cc0cd42"></a>
 ### Calculated: 1,207
@@ -42112,6 +42788,15 @@
 - **Calculation:** [7](SOURCES.md#F-4c27a47dfd) - 1 = 6
 - **Used in:** [RESIDUAL.md](RESIDUAL.md)
 
+<a id="F-41132f00cf"></a>
+### Calculated: 0.916753
+
+`F-41132f00cf` · **calculated** · 0.916753
+
+- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
+- **Calculation:** [80072](SOURCES.md#F-6dc9b98a96) / [87343](SOURCES.md#F-6b51597463) = 0.916753
+- **Used in:** [NITROGEN.md](NITROGEN.md)
+
 <a id="F-41392b8a30"></a>
 ### Calculated: 0.324536
 
@@ -42155,7 +42840,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [12.0482](SOURCES.md#F-4eb6ff02df) = 12.0482
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-4337448a25"></a>
 ### Calculated: 21.03
@@ -42201,6 +42886,15 @@
 - **Kind:** calculated · **built on simulation** · made by [`K-DETECTABLE`](#K-DETECTABLE)
 - **Calculation:** [0.05](SOURCES.md#F-a0c67d8423) * 100 = 5
 - **Used in:** [METHOD_LAB.md](METHOD_LAB.md)
+
+<a id="F-4420e14fa3"></a>
+### Calculated: 38.4532
+
+`F-4420e14fa3` · **calculated** · 38.4532
+
+- **Kind:** calculated · made by [`K-DS-FACTS`](#K-DS-FACTS)
+- **Calculation:** [0.384532](SOURCES.md#F-8c5cf9d9c1) * 100 = 38.4532
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-4535a36d81"></a>
 ### Calculated: 0.418605
@@ -42329,15 +43023,6 @@
 - **Calculation:** [5.99506e+06](SOURCES.md#F-72b06c1c90) / [2.62109e+06](SOURCES.md#F-f7b709b120) = 2.28724
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
-<a id="F-480f0451ef"></a>
-### Calculated: 0.916753
-
-`F-480f0451ef` · **calculated** · 0.916753
-
-- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
-- **Calculation:** [80072](SOURCES.md#F-bcfd002e39) / [87343](SOURCES.md#F-6b51597463) = 0.916753
-- **Used in:** [NITROGEN.md](NITROGEN.md)
-
 <a id="F-48422bcf21"></a>
 ### Calculated: 25.9075
 
@@ -42365,6 +43050,15 @@
 - **Calculation:** [0.5](SOURCES.md#F-5d2337ce65) * [18](SOURCES.md#F-e1855754b9) = 9
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
 
+<a id="F-49f1edf9a8"></a>
+### Calculated: 87.411
+
+`F-49f1edf9a8` · **calculated** · 87.411
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [0.091](SOURCES.md#F-abac72a8e0) * 10 * [96.056](SOURCES.md#F-9c263f0c7d) = 87.411
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-4a814a49b4"></a>
 ### Calculated: 2.32422e+06
 
@@ -42390,7 +43084,7 @@
 
 - **Kind:** calculated · made by [`K-HYPOTHESES-EVIDENCE`](#K-HYPOTHESES-EVIDENCE)
 - **Calculation:** [796,990](SOURCES.md#F-e7acc135b6) / [798,574](SOURCES.md#F-e46c5b924b) = 0.998016
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-4c570f3335"></a>
 ### Calculated: 53.7108
@@ -42399,7 +43093,7 @@
 
 - **Kind:** calculated · made by [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [53,710,760](SOURCES.md#F-4df017f985) / 1e+06 = 53.7108
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [PLAN.md](PLAN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [PLAN.md](PLAN.md)
 
 <a id="F-4c5abab026"></a>
 ### Calculated: 104.951
@@ -42507,7 +43201,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [0.120482](SOURCES.md#F-8fb3c1299e) * 100 = 12.0482
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-4efbb58744"></a>
 ### Calculated: 4.24019
@@ -42626,6 +43320,15 @@
 - **Calculation:** [59](SOURCES.md#F-33a12f031b) * [69.6](SOURCES.md#F-0666c7bdae) = 4106.4
 - **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md)
 
+<a id="F-51a8880e0c"></a>
+### Calculated: 47
+
+`F-51a8880e0c` · **calculated** · 47
+
+- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
+- **Calculation:** [5](SOURCES.md#F-5514454a3f) + [22](SOURCES.md#F-47f5f957f8) + [19](SOURCES.md#F-f6404752a6) + [1](SOURCES.md#F-3caf01c47f) = 47
+- **Used in:** [NITROGEN.md](NITROGEN.md)
+
 <a id="F-5207593105"></a>
 ### Calculated: 1295.79
 
@@ -42680,6 +43383,15 @@
 - **Calculation:** [1,076,874](SOURCES.md#F-5bb29588ed) / [7,501,421](SOURCES.md#F-a33f8c08bd) = 0.143556
 - **Used in:** [C6.md](C6.md)
 
+<a id="F-5320d7e8e5"></a>
+### Calculated: 1.99613
+
+`F-5320d7e8e5` · **calculated** · 1.99613
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [63.996](SOURCES.md#F-1bab89aac9) / [32.06](SOURCES.md#F-0b65d411be) = 1.99613
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-534b640218"></a>
 ### Calculated: 0.979186
 
@@ -42688,6 +43400,15 @@
 - **Kind:** calculated · made by [`K-WATER-OBSERVING`](#K-WATER-OBSERVING)
 - **Calculation:** [0.958804](SOURCES.md#F-bf6ece2c30) ** 0.5 = 0.979186
 - **Used in:** [OBSERVING.md](OBSERVING.md)
+
+<a id="F-536ca1e826"></a>
+### Calculated: 1
+
+`F-536ca1e826` · **calculated** · 1
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [153](SOURCES.md#F-77b5cb7498) / [153](SOURCES.md#F-77b5cb7498) = 1
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-539cbb5196"></a>
 ### Calculated: 1.80583
@@ -42734,6 +43455,15 @@
 - **Calculation:** 100 * [0](SOURCES.md#F-3b236ea0f2) = 0
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-540b0a2249"></a>
+### Calculated: 400
+
+`F-540b0a2249` · **calculated** · 400
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Calculation:** [0.04](SOURCES.md#F-0242c902e2) * 10 * 1,000 = 400
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-54446e35ff"></a>
 ### Calculated: -37.622
 
@@ -42751,6 +43481,15 @@
 - **Kind:** calculated · made by [`K-FARM-PATHWAYS`](#K-FARM-PATHWAYS), [`K-FARM-LANDBRUG`](#K-FARM-LANDBRUG)
 - **Calculation:** [4941.6](SOURCES.md#F-29808a1f8e) / 100 = 49.416
 - **Used in:** [CAUSATION.md](CAUSATION.md), [LANDBRUG.md](LANDBRUG.md)
+
+<a id="F-550c67ea30"></a>
+### Calculated: 0.04769
+
+`F-550c67ea30` · **calculated** · 0.04769
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0032](SOURCES.md#F-c3186c7c3c) / [0.0671](SOURCES.md#F-435c4ca499) = 0.04769
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-55429a68c7"></a>
 ### Calculated: 0.305078
@@ -42867,7 +43606,16 @@
 
 - **Kind:** calculated · made by [`K-HYPOTHESES-UDSTYR`](#K-HYPOTHESES-UDSTYR), [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [53,671,621](SOURCES.md#F-11c5082fd0) / [53,710,760](SOURCES.md#F-4df017f985) = 0.999271
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-59a3b9b29f"></a>
+### Calculated: 1.27647
+
+`F-59a3b9b29f` · **calculated** · 1.27647
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [195.3](SOURCES.md#F-94c8a7c035) / [153](SOURCES.md#F-77b5cb7498) = 1.27647
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-59d781a185"></a>
 ### Calculated: 0.774954
@@ -43022,6 +43770,15 @@
 - **Calculation:** [-37.622](SOURCES.md#F-54446e35ff) / 3 = -12.5407
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-5dd888e5a1"></a>
+### Calculated: 0.0561735
+
+`F-5dd888e5a1` · **calculated** · 0.0561735
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0101](SOURCES.md#F-2acd9e5a5f) / [0.1798](SOURCES.md#F-af4ba28f4e) = 0.0561735
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-5e473f543c"></a>
 ### Calculated: 3.69877
 
@@ -43084,6 +43841,15 @@
 - **Kind:** calculated · made by [`K-NITROGEN-READINGS`](#K-NITROGEN-READINGS)
 - **Calculation:** [1.72](SOURCES.md#F-dfaf7e2ecb) - [1.3](SOURCES.md#F-bb03d651ad) = 0.42
 - **Used in:** [GRUNDLAGET.md](GRUNDLAGET.md)
+
+<a id="F-5fb9197caf"></a>
+### Calculated: 0.257169
+
+`F-5fb9197caf` · **calculated** · 0.257169
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0565](SOURCES.md#F-4c525c35b2) / [0.2197](SOURCES.md#F-b9abcfd24a) = 0.257169
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-600f63c708"></a>
 ### Calculated: 43.038
@@ -43173,7 +43939,7 @@
 
 - **Kind:** calculated · made by [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [1,805,805](SOURCES.md#F-22cd06a85c) / [1,805,827](SOURCES.md#F-9fa9c3c21c) = 0.999988
-- **Used in:** [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
+- **Used in:** [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md)
 
 <a id="F-61ce1da177"></a>
 ### Calculated: 3.2987
@@ -43283,6 +44049,15 @@
 - **Calculation:** 1 - [0.209787](SOURCES.md#F-0e40fe8984) = 0.790213
 - **Used in:** [CLAIMS.md](CLAIMS.md), [METHOD_LAB.md](METHOD_LAB.md)
 
+<a id="F-6548eb0d98"></a>
+### Calculated: 1.12745
+
+`F-6548eb0d98` · **calculated** · 1.12745
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [172.5](SOURCES.md#F-a8ef1c34c9) / [153](SOURCES.md#F-77b5cb7498) = 1.12745
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-6587c0a1ae"></a>
 ### Calculated: 79.85
 
@@ -43345,15 +44120,6 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [5.76172e+07](SOURCES.md#F-8a2ce654dd) / [2.43465e+06](SOURCES.md#F-837e6f5289) = 23.6655
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-66ddadb628"></a>
-### Calculated: 46.6667
-
-`F-66ddadb628` · **calculated** · 46.6667
-
-- **Kind:** calculated · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
-- **Calculation:** [0.466667](SOURCES.md#F-8150dcf181) * 100 = 46.6667
-- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-6718e35caf"></a>
 ### Calculated: 1.58555e+08
@@ -43481,6 +44247,15 @@
 - **Calculation:** [1](SOURCES.md#F-c40e14a609) * 100 = 100
 - **Used in:** [NITROGEN.md](NITROGEN.md)
 
+<a id="F-6a03a69734"></a>
+### Calculated: 918
+
+`F-6a03a69734` · **calculated** · 918
+
+- **Kind:** calculated · made by [`K-DS-FACTS`](#K-DS-FACTS)
+- **Calculation:** [353](SOURCES.md#F-c0e2d7eac1) + [565](SOURCES.md#F-d32d88f033) = 918
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
+
 <a id="F-6a35ec9912"></a>
 ### Calculated: 8.5494
 
@@ -43551,7 +44326,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-HYPOTHESES-UDSTYR`](#K-HYPOTHESES-UDSTYR), [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [99.9271](SOURCES.md#F-c1e06aaedc) = 99.9271
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-6c50c5dad1"></a>
 ### Calculated: 124.601
@@ -43650,7 +44425,25 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [0.0180723](SOURCES.md#F-eb400328ff) * 100 = 1.80723
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
+
+<a id="F-6dc7e5ab1e"></a>
+### Calculated: 61.5
+
+`F-6dc7e5ab1e` · **calculated** · 61.5
+
+- **Kind:** calculated · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **Calculation:** [26.3](SOURCES.md#F-4c7d379c9d) + [35.2](SOURCES.md#F-50a7602409) = 61.5
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-6dc9b98a96"></a>
+### Calculated: 80072
+
+`F-6dc9b98a96` · **calculated** · 80072
+
+- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
+- **Calculation:** [17464](SOURCES.md#F-e41d7b7b63) + [19858](SOURCES.md#F-fd36584048) + [42750](SOURCES.md#F-398322b687) + [0](SOURCES.md#F-1bc424f149) = 80072
+- **Used in:** [NITROGEN.md](NITROGEN.md)
 
 <a id="F-6dca9391e1"></a>
 ### Calculated: 20.1999
@@ -43660,6 +44453,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [20,199,899](SOURCES.md#F-8c558b78ae) / 1e+06 = 20.1999
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-6de7e5976b"></a>
+### Calculated: 11.4
+
+`F-6de7e5976b` · **calculated** · 11.4
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Calculation:** [4.3](SOURCES.md#F-2001ee421d) + [7.1](SOURCES.md#F-82b7b7e736) = 11.4
+- **Used in:** [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-6df96e73af"></a>
 ### Calculated: 79.0213
@@ -43705,6 +44507,15 @@
 - … and 14 further calculated terms
 - **Used in:** [LANDING.md](LANDING.md)
 
+<a id="F-6ee12e11e7"></a>
+### Calculated: 64.9945
+
+`F-6ee12e11e7` · **calculated** · 64.9945
+
+- **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
+- **Calculation:** [4.06192e+07](SOURCES.md#F-1046218c89) / [624963](SOURCES.md#F-910413aa8f) = 64.9945
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
 <a id="F-6ef983ba75"></a>
 ### Calculated: 0.2
 
@@ -43741,6 +44552,15 @@
 - **Calculation:** [0.5](SOURCES.md#F-e9c8c3be1a) * 12 = 6
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-70b67a3aef"></a>
+### Calculated: 1.23007
+
+`F-70b67a3aef` · **calculated** · 1.23007
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [188.2](SOURCES.md#F-99c599c614) / [153](SOURCES.md#F-77b5cb7498) = 1.23007
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-70ca8172c1"></a>
 ### Calculated: 43401
 
@@ -43757,7 +44577,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [0.361446](SOURCES.md#F-215d13e350) * 100 = 36.1446
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-7270c02bc1"></a>
 ### Calculated: 47.5
@@ -43794,6 +44614,15 @@
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [5](SOURCES.md#F-0596b7e6b1) + [1](SOURCES.md#F-7b66b1ce10) + [1](SOURCES.md#F-e5193dafdc) + [3](SOURCES.md#F-5a90478e4b) = 10
 - **Used in:** [LANDING.md](LANDING.md)
+
+<a id="F-756664f78c"></a>
+### Calculated: 15160.1
+
+`F-756664f78c` · **calculated** · 15160.1
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [32.5](SOURCES.md#F-492e40b543) * 10 * [0.466465](SOURCES.md#F-a050303510) * 100 = 15160.1
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-759d02e7d9"></a>
 ### Calculated: 0.65048
@@ -43912,6 +44741,15 @@
 - **Calculation:** [5.4077e+06](SOURCES.md#F-deb058829b) / [2.62109e+06](SOURCES.md#F-f7b709b120) = 2.06315
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-7912b55a0d"></a>
+### Calculated: 2.72648
+
+`F-7912b55a0d` · **calculated** · 2.72648
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [87.411](SOURCES.md#F-49f1edf9a8) / [32.06](SOURCES.md#F-0b65d411be) = 2.72648
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-79487c7b8a"></a>
 ### Calculated: 65.9
 
@@ -43955,7 +44793,7 @@
 
 - **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **Calculation:** [1219.3](SOURCES.md#F-b50af12d69) / 4 = 304.825
-- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
+- **Used in:** [SEABED.md](SEABED.md)
 
 <a id="F-7a551a0034"></a>
 ### Calculated: 0
@@ -44028,6 +44866,15 @@
 - **Kind:** calculated · made by [`K-WATER-ONSHORE`](#K-WATER-ONSHORE)
 - **Calculation:** 100 * [205.387](SOURCES.md#F-33414594bd) = 20538.7
 - **Used in:** [SEABED.md](SEABED.md)
+
+<a id="F-7b40090f50"></a>
+### Calculated: 60.056
+
+`F-7b40090f50` · **calculated** · 60.056
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [12.011](SOURCES.md#F-2a5bb03b37) + [15.999](SOURCES.md#F-4d08c6bbb5) + [28.014](SOURCES.md#F-ddebd59edb) + [4.032](SOURCES.md#F-9615c214f0) = 60.056
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-7b5eb17f56"></a>
 ### Calculated: 95
@@ -44171,7 +45018,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [0.36747](SOURCES.md#F-e82fd845d5) * 100 = 36.747
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-7ec0ce6878"></a>
 ### Calculated: 1.99232
@@ -44180,7 +45027,7 @@
 
 - **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **Calculation:** [304.825](SOURCES.md#F-79b0ed5241) / [153](SOURCES.md#F-77b5cb7498) = 1.99232
-- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
+- **Used in:** [SEABED.md](SEABED.md)
 
 <a id="F-7f0a2cbe42"></a>
 ### Calculated: 0.295109
@@ -44234,7 +45081,7 @@
 
 - **Kind:** calculated · made by [`K-ENUMS`](#K-ENUMS), [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS)
 - **Calculation:** [39,956,408](SOURCES.md#F-f841caeb03) / [53,710,760](SOURCES.md#F-4df017f985) = 0.743918
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [PLAN.md](PLAN.md)
 
 <a id="F-80a35796ee"></a>
 ### Calculated: 0.400284
@@ -44253,15 +45100,6 @@
 - **Kind:** calculated · **built on simulation** · made by [`K-DETECTABLE`](#K-DETECTABLE)
 - **Calculation:** [0.35](SOURCES.md#F-9b04723d1f) * 100 = 35
 - **Used in:** [METHOD_LAB.md](METHOD_LAB.md)
-
-<a id="F-8150dcf181"></a>
-### Calculated: 0.466667
-
-`F-8150dcf181` · **calculated** · 0.466667
-
-- **Kind:** calculated · made by [`K-FARM-MONITORING`](#K-FARM-MONITORING)
-- **Calculation:** [1.46667](SOURCES.md#F-1bbf068fbd) - 1 = 0.466667
-- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-81cc2fdcb9"></a>
 ### Calculated: 0.947368
@@ -44353,14 +45191,14 @@
 - `docs/data/architecture.json › catchments.*.ri` × 263
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
-<a id="F-8427325fec"></a>
-### Calculated: 91.6753
+<a id="F-8412cafaa5"></a>
+### Calculated: 4.56886
 
-`F-8427325fec` · **calculated** · 91.6753
+`F-8412cafaa5` · **calculated** · 4.56886
 
-- **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
-- **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [91.6753](SOURCES.md#F-f76f30a27d) = 91.6753
-- **Used in:** [NITROGEN.md](NITROGEN.md)
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [63.996](SOURCES.md#F-1bab89aac9) / [14.007](SOURCES.md#F-6071e7e011) = 4.56886
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-842c5cf71a"></a>
 ### Calculated: 40.4301
@@ -44370,6 +45208,15 @@
 - **Kind:** calculated · made by [`K-WATER-ONSHORE`](#K-WATER-ONSHORE)
 - **Calculation:** [29109.7](SOURCES.md#F-1fb9c70229) / 720 = 40.4301
 - **Used in:** [SEABED.md](SEABED.md)
+
+<a id="F-845bc5868c"></a>
+### Calculated: 3.98903
+
+`F-845bc5868c` · **calculated** · 3.98903
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [63.996](SOURCES.md#F-1bab89aac9) / [16.043](SOURCES.md#F-f184555b34) = 3.98903
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-845f2cdbd2"></a>
 ### Calculated: 90.7284
@@ -44614,6 +45461,15 @@
 - **Calculation:** [1.85848e+06](SOURCES.md#F-d9c9804616) / [2.43465e+06](SOURCES.md#F-ba3e051cdc) = 0.763345
 - **Used in:** [CLAIMS.md](CLAIMS.md)
 
+<a id="F-8b7e7756aa"></a>
+### Calculated: 0.25398
+
+`F-8b7e7756aa` · **calculated** · 0.25398
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0351](SOURCES.md#F-e3f94aaf4e) / [0.1382](SOURCES.md#F-07c079a8b2) = 0.25398
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-8b9b8b7ccb"></a>
 ### Calculated: 5.97037e+06
 
@@ -44639,7 +45495,16 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS), [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [0.256082](SOURCES.md#F-32ea7a16e8) * 100 = 25.6082
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [TRIAGE.md](TRIAGE.md)
+
+<a id="F-8c5cf9d9c1"></a>
+### Calculated: 0.384532
+
+`F-8c5cf9d9c1` · **calculated** · 0.384532
+
+- **Kind:** calculated · made by [`K-DS-FACTS`](#K-DS-FACTS)
+- **Calculation:** [353](SOURCES.md#F-c0e2d7eac1) / [918](SOURCES.md#F-6a03a69734) = 0.384532
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-8ca513c930"></a>
 ### Calculated: 87.5
@@ -44756,7 +45621,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [20](SOURCES.md#F-64bb5d44db) / [166](SOURCES.md#F-4196d405de) = 0.120482
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-900241831b"></a>
 ### Calculated: 41.0747
@@ -44784,6 +45649,15 @@
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [19](SOURCES.md#F-0df9013823) / [40](SOURCES.md#F-198b20fb90) = 0.475
 - **Used in:** [TRIAGE.md](TRIAGE.md)
+
+<a id="F-9089c571a1"></a>
+### Calculated: 811
+
+`F-9089c571a1` · **calculated** · 811
+
+- **Kind:** calculated · made by [`K-FARM-DOCS`](#K-FARM-DOCS)
+- **Calculation:** neg([-811](SOURCES.md#F-0faae0998f)) = 811
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
 <a id="F-90ae99f625"></a>
 ### Calculated: 54
@@ -44820,6 +45694,15 @@
 - **Kind:** calculated · made by [`K-WATER-LIGHT`](#K-WATER-LIGHT)
 - **Calculation:** 100 * [0.121](SOURCES.md#F-2d124bbf5c) = 12.1
 - **Used in:** [LIGHT.md](LIGHT.md)
+
+<a id="F-91cd2ef7c6"></a>
+### Calculated: 91.6753
+
+`F-91cd2ef7c6` · **calculated** · 91.6753
+
+- **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
+- **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [91.6753](SOURCES.md#F-aea1894b50) = 91.6753
+- **Used in:** [NITROGEN.md](NITROGEN.md)
 
 <a id="F-91f72d619a"></a>
 ### Calculated: 0.453125
@@ -44882,7 +45765,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [24.0964](SOURCES.md#F-d8d72cbd86) = 24.0964
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-93bfede074"></a>
 ### Calculated: 25
@@ -44982,6 +45865,15 @@
 - **Kind:** calculated · made by [`K-WATER-OXYGEN`](#K-WATER-OXYGEN)
 - **Calculation:** [19.7032](SOURCES.md#F-4a2fc9ec3d) / [1.99613](SOURCES.md#F-244f52a3b5) = 9.87069
 - **Used in:** [OXYGEN.md](OXYGEN.md)
+
+<a id="F-9615c214f0"></a>
+### Calculated: 4.032
+
+`F-9615c214f0` · **calculated** · 4.032
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** 4 * [1.008](SOURCES.md#F-b9704ec017) = 4.032
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-968699b575"></a>
 ### Calculated: 0.229752
@@ -45136,6 +46028,15 @@
 - **Calculation:** [338188](SOURCES.md#F-045f425711) * 100 = 3.38188e+07
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-9c263f0c7d"></a>
+### Calculated: 96.056
+
+`F-9c263f0c7d` · **calculated** · 96.056
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [32.06](SOURCES.md#F-0b65d411be) + [63.996](SOURCES.md#F-1bab89aac9) = 96.056
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-9c7fac7a68"></a>
 ### Calculated: 7.25639
 
@@ -45225,6 +46126,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [209100](SOURCES.md#F-be2ce198af) / [26,922](SOURCES.md#F-daa69c1d45) = 7.76688
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-a050303510"></a>
+### Calculated: 0.466465
+
+`F-a050303510` · **calculated** · 0.466465
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [28.014](SOURCES.md#F-ddebd59edb) / [60.056](SOURCES.md#F-7b40090f50) = 0.466465
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-a0a9cd248d"></a>
 ### Calculated: 47.5
@@ -45359,7 +46269,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [40](SOURCES.md#F-198b20fb90) / [166](SOURCES.md#F-4196d405de) = 0.240964
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-a4b766ef91"></a>
 ### Calculated: 17.0752
@@ -45469,14 +46379,14 @@
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [0.0487255](SOURCES.md#F-da6c7426b6) = 0.0487255
 - **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
 
-<a id="F-a7ac0bd6a6"></a>
-### Calculated: 47
+<a id="F-a7fc957c32"></a>
+### Calculated: 2.10588
 
-`F-a7ac0bd6a6` · **calculated** · 47
+`F-a7fc957c32` · **calculated** · 2.10588
 
-- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
-- **Calculation:** [1](SOURCES.md#F-3caf01c47f) + [22](SOURCES.md#F-47f5f957f8) + [19](SOURCES.md#F-f6404752a6) + [5](SOURCES.md#F-5514454a3f) = 47
-- **Used in:** [NITROGEN.md](NITROGEN.md)
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [322.2](SOURCES.md#F-597f5e998d) / [153](SOURCES.md#F-77b5cb7498) = 2.10588
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-a88c2c3101"></a>
 ### Calculated: 0.12
@@ -45558,6 +46468,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [151640](SOURCES.md#F-bc7988ebbb) / [43401](SOURCES.md#F-70ca8172c1) = 3.49393
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-aa9fb06c33"></a>
+### Calculated: 1.83007
+
+`F-aa9fb06c33` · **calculated** · 1.83007
+
+- **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
+- **Calculation:** [280](SOURCES.md#F-4add2aabe8) / [153](SOURCES.md#F-77b5cb7498) = 1.83007
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-aaab58b857"></a>
 ### Calculated: 7165.6
@@ -45721,6 +46640,15 @@
 - **Calculation:** 100 * [0.13268](SOURCES.md#F-b040d5f694) = 13.268
 - **Used in:** [OBSERVING.md](OBSERVING.md)
 
+<a id="F-aea1894b50"></a>
+### Calculated: 91.6753
+
+`F-aea1894b50` · **calculated** · 91.6753
+
+- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
+- **Calculation:** [0.916753](SOURCES.md#F-41132f00cf) * 100 = 91.6753
+- **Used in:** [NITROGEN.md](NITROGEN.md)
+
 <a id="F-aee3f2697c"></a>
 ### Calculated: 0.787902
 
@@ -45755,7 +46683,7 @@
 
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [14.4578](SOURCES.md#F-2ffff56ad8) = 14.4578
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-affed35064"></a>
 ### Calculated: 3.45384
@@ -45845,7 +46773,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-OUTFALLS`](#K-DRAFTSA-OUTFALLS)
 - **Calculation:** [2.78306e+08](SOURCES.md#F-b1e3982a08) / 1e+06 = 278.306
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md), [NITROGEN.md](NITROGEN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [NITROGEN.md](NITROGEN.md)
 
 <a id="F-b344e672f3"></a>
 ### Calculated: 56
@@ -45908,7 +46836,7 @@
 
 - **Kind:** calculated · made by [`K-WATER-WAVES`](#K-WATER-WAVES)
 - **Calculation:** [301.4](SOURCES.md#F-9e04a26fd2) + [299.6](SOURCES.md#F-247cb48b59) + [296.1](SOURCES.md#F-41ca2bce8c) + [322.2](SOURCES.md#F-597f5e998d) = 1219.3
-- **Used in:** [CURRENTS.md](CURRENTS.md), [SEABED.md](SEABED.md)
+- **Used in:** [SEABED.md](SEABED.md)
 
 <a id="F-b55be2409a"></a>
 ### Calculated: 6.71553
@@ -45955,6 +46883,15 @@
 - **Calculation:** [120000](SOURCES.md#F-70f43228d2) / 1,000 = 120
 - **Used in:** [SEABED.md](SEABED.md)
 
+<a id="F-b690a7f648"></a>
+### Calculated: 19,299
+
+`F-b690a7f648` · **calculated** · 19,299
+
+- **Kind:** calculated · made by [`K-NI-OUTFALL-VOLUMES`](#K-NI-OUTFALL-VOLUMES), [`K-DRAFTSA-OUTFALLS`](#K-DRAFTSA-OUTFALLS)
+- **Calculation:** [4,140](SOURCES.md#F-9c03f92b97) + [15,159](SOURCES.md#F-db2e05e3d9) = 19,299
+- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+
 <a id="F-b6ee96a3e7"></a>
 ### Calculated: 14.8649
 
@@ -45972,6 +46909,15 @@
 - **Kind:** calculated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
 - **Calculation:** [9](SOURCES.md#F-8f9b6536e3) // 2 = 4
 - **Used in:** [CATEGORY.md](CATEGORY.md)
+
+<a id="F-b83c9e40e7"></a>
+### Calculated: 0.19297
+
+`F-b83c9e40e7` · **calculated** · 0.19297
+
+- **Kind:** calculated · made by [`K-WATER-CURRENTS-INDEX`](#K-WATER-CURRENTS-INDEX)
+- **Calculation:** [0.0527](SOURCES.md#F-2c9c54ba1a) / [0.2731](SOURCES.md#F-a8ba052013) = 0.19297
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-b87ceb99d3"></a>
 ### Calculated: 14.3556
@@ -46144,15 +47090,6 @@
 - **Calculation:** [0.01](SOURCES.md#F-86dd194fb1) * 100 = 1
 - **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
 
-<a id="F-bcfd002e39"></a>
-### Calculated: 80072
-
-`F-bcfd002e39` · **calculated** · 80072
-
-- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
-- **Calculation:** [0](SOURCES.md#F-1bc424f149) + [19858](SOURCES.md#F-fd36584048) + [42750](SOURCES.md#F-398322b687) + [17464](SOURCES.md#F-e41d7b7b63) = 80072
-- **Used in:** [NITROGEN.md](NITROGEN.md)
-
 <a id="F-bd0fd0b9d8"></a>
 ### Calculated: 1.03125
 
@@ -46161,6 +47098,15 @@
 - **Kind:** calculated · made by [`K-NITROGEN-READINGS`](#K-NITROGEN-READINGS)
 - **Calculation:** [3](SOURCES.md#F-79b0169af2) / [2.90909](SOURCES.md#F-579c26b6c9) = 1.03125
 - **Used in:** [NITROGEN.md](NITROGEN.md)
+
+<a id="F-bd227ab006"></a>
+### Calculated: 151.601
+
+`F-bd227ab006` · **calculated** · 151.601
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [15160.1](SOURCES.md#F-756664f78c) / 100 = 151.601
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-bd27d2a448"></a>
 ### Calculated: 7.07643
@@ -46179,6 +47125,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [263](SOURCES.md#F-3dba9943be) + [337](SOURCES.md#F-93581dd574) = 600
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-bd8f07087a"></a>
+### Calculated: 543.92
+
+`F-bd8f07087a` · **calculated** · 543.92
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** [130](SOURCES.md#F-b768e6189f) * [4.184](SOURCES.md#F-bb57ac4222) = 543.92
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-bd946b7004"></a>
 ### Calculated: 20
@@ -46403,7 +47358,7 @@
 
 - **Kind:** calculated · made by [`K-HYPOTHESES-UDSTYR`](#K-HYPOTHESES-UDSTYR), [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [0.999271](SOURCES.md#F-59503bce6c) * 100 = 99.9271
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
 
 <a id="F-c20885b069"></a>
 ### Calculated: 22
@@ -46412,7 +47367,7 @@
 
 - **Kind:** calculated · made by [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [1,805,827](SOURCES.md#F-9fa9c3c21c) - [1,805,805](SOURCES.md#F-22cd06a85c) = 22
-- **Used in:** [CLAIMS.md](CLAIMS.md), [DATA_SOURCES.md](DATA_SOURCES.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), [PLAN.md](PLAN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [DATA_SOURCES.md](DATA_SOURCES.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), [PLAN.md](PLAN.md)
 
 <a id="F-c2c8fe6829"></a>
 ### Calculated: 24.01
@@ -46873,6 +47828,15 @@
 - `docs/data/architecture.json › catchments.*.br` × 260
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-d06bc3b802"></a>
+### Calculated: 2700
+
+`F-d06bc3b802` · **calculated** · 2700
+
+- **Kind:** calculated · made by [`K-READ-PHRASE`](#K-READ-PHRASE), [`K-STATED`](#K-STATED)
+- **Calculation:** round([2726.48](SOURCES.md#F-3e3c480169), -2) = 2700
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-d0be1eee72"></a>
 ### Calculated: …
 
@@ -46898,7 +47862,7 @@
 
 - **Kind:** calculated · made by [`K-ENUMS`](#K-ENUMS)
 - **Calculation:** [0.999988](SOURCES.md#F-61c333ef46) * 100 = 99.9988
-- **Used in:** [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
+- **Used in:** [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md)
 
 <a id="F-d155a6139b"></a>
 ### Calculated: 65.3502
@@ -47143,7 +48107,7 @@
 
 - **Kind:** calculated · made by [`K-ENUMS`](#K-ENUMS), [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS)
 - **Calculation:** [0.743918](SOURCES.md#F-80610a15a4) * 100 = 74.3918
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [PLAN.md](PLAN.md)
 
 <a id="F-d7bcf96e06"></a>
 ### Calculated: 0.000122734
@@ -47224,7 +48188,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [0.240964](SOURCES.md#F-a45fdd75f4) * 100 = 24.0964
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-d92171de93"></a>
 ### Calculated: 67.7326
@@ -47316,6 +48280,15 @@
 - **Calculation:** [0.021](SOURCES.md#F-9a84c130b7) * 100 = 2.1
 - **Used in:** [FLOOD_GAP.md](FLOOD_GAP.md)
 
+<a id="F-db0dc02104"></a>
+### Calculated: 0.00677966
+
+`F-db0dc02104` · **calculated** · 0.00677966
+
+- **Kind:** calculated · made by [`K-NITROGEN-PATHWAYS`](#K-NITROGEN-PATHWAYS), [`K-FARM-PATHWAYS`](#K-FARM-PATHWAYS)
+- **Calculation:** [0.4](SOURCES.md#F-102900de00) / [59](SOURCES.md#F-33a12f031b) = 0.00677966
+- **Used in:** [CAUSATION.md](CAUSATION.md)
+
 <a id="F-db12c0f68e"></a>
 ### Calculated: 256.193
 
@@ -47324,6 +48297,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [442958](SOURCES.md#F-a6869ed201) / [1,729](SOURCES.md#F-f7e82761db) = 256.193
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-db2b4d8e7a"></a>
+### Calculated: 0.677966
+
+`F-db2b4d8e7a` · **calculated** · 0.677966
+
+- **Kind:** calculated · made by [`K-NITROGEN-PATHWAYS`](#K-NITROGEN-PATHWAYS), [`K-FARM-PATHWAYS`](#K-FARM-PATHWAYS)
+- **Calculation:** [0.00677966](SOURCES.md#F-db0dc02104) * 100 = 0.677966
+- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-db497b7455"></a>
 ### Calculated: 78.7902
@@ -47350,7 +48332,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [0.108434](SOURCES.md#F-33c48130d3) * 100 = 10.8434
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-db87f0a6fb"></a>
 ### Calculated: 854604
@@ -47460,6 +48442,15 @@
 - **Calculation:** [38724.2](SOURCES.md#F-88f0035655) * 100 = 3.87242e+06
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-ddebd59edb"></a>
+### Calculated: 28.014
+
+`F-ddebd59edb` · **calculated** · 28.014
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** 2 * [14.007](SOURCES.md#F-6071e7e011) = 28.014
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-ddef6ff0b0"></a>
 ### Calculated: 25
 
@@ -47568,6 +48559,15 @@
 - **Calculation:** [713.9](SOURCES.md#F-7b45940729) * 100 = 71390
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-e1692f7479"></a>
+### Calculated: 41.1
+
+`F-e1692f7479` · **calculated** · 41.1
+
+- **Kind:** calculated · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **Calculation:** [18.9](SOURCES.md#F-414640d3a5) + [22.2](SOURCES.md#F-f108969d3e) = 41.1
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
 <a id="F-e1ba4b224c"></a>
 ### Calculated: 55.897
 
@@ -47640,15 +48640,6 @@
 - **Calculation:** [0.1276](SOURCES.md#F-30e1df7cce) * 100 = 12.76
 - **Used in:** [PLACES.md](PLACES.md)
 
-<a id="F-e2f79c5f02"></a>
-### Calculated: 707
-
-`F-e2f79c5f02` · **calculated** · 707
-
-- **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
-- **Calculation:** [148](SOURCES.md#F-feebc51c45) + [148](SOURCES.md#F-d2d602b7b5) + [52](SOURCES.md#F-f27168d0fb) + [56](SOURCES.md#F-e0ee673dc1) + [303](SOURCES.md#F-1631b8b96f) = 707
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
 <a id="F-e2fcf0dde8"></a>
 ### Calculated: 38.4205
 
@@ -47694,6 +48685,15 @@
 - **Calculation:** [1.51482e+08](SOURCES.md#F-d1844a1699) / [2.62109e+06](SOURCES.md#F-f7b709b120) = 57.7934
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-e405995f19"></a>
+### Calculated: 0.0056338
+
+`F-e405995f19` · **calculated** · 0.0056338
+
+- **Kind:** calculated · made by [`K-NITROGEN-PATHWAYS`](#K-NITROGEN-PATHWAYS), [`K-FARM-PATHWAYS`](#K-FARM-PATHWAYS)
+- **Calculation:** [0.4](SOURCES.md#F-102900de00) / [71](SOURCES.md#F-2cc3054929) = 0.0056338
+- **Used in:** [CAUSATION.md](CAUSATION.md)
+
 <a id="F-e409a73f2d"></a>
 ### Calculated: 224.855
 
@@ -47738,6 +48738,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [8.64103e+07](SOURCES.md#F-50cb05110b) / [2.43465e+06](SOURCES.md#F-837e6f5289) = 35.4919
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-e5da2fc513"></a>
+### Calculated: 32.6
+
+`F-e5da2fc513` · **calculated** · 32.6
+
+- **Kind:** calculated · made by [`K-CS-RAIN`](#K-CS-RAIN)
+- **Calculation:** [16.7](SOURCES.md#F-097da29586) + [15.9](SOURCES.md#F-739b78c4b9) = 32.6
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-e61249fd7c"></a>
 ### Calculated: 0.397439
@@ -47827,7 +48836,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [61](SOURCES.md#F-15045ed0fb) / [166](SOURCES.md#F-4196d405de) = 0.36747
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-e830572482"></a>
 ### Calculated: 135
@@ -47900,6 +48909,15 @@
 - **Kind:** calculated · made by [`K-POLITICS-PROGRAMME`](#K-POLITICS-PROGRAMME)
 - **Calculation:** [0.305078](SOURCES.md#F-55429a68c7) * 100 = 30.5078
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
+
+<a id="F-e9375a339c"></a>
+### Calculated: 707
+
+`F-e9375a339c` · **calculated** · 707
+
+- **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
+- **Calculation:** [148](SOURCES.md#F-feebc51c45) + [56](SOURCES.md#F-e0ee673dc1) + [52](SOURCES.md#F-f27168d0fb) + [303](SOURCES.md#F-1631b8b96f) + [148](SOURCES.md#F-d2d602b7b5) = 707
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
 <a id="F-e9673f2999"></a>
 ### Sum over 22 terms = 16,449
@@ -48019,7 +49037,7 @@
 
 - **Kind:** calculated · made by [`K-DRAFTSA-TRIAGE`](#K-DRAFTSA-TRIAGE)
 - **Calculation:** [3](SOURCES.md#F-6f2641deb0) / [166](SOURCES.md#F-4196d405de) = 0.0180723
-- **Used in:** [TRIAGE.md](TRIAGE.md)
+- **Used in:** [PLAN.md](PLAN.md), [TRIAGE.md](TRIAGE.md)
 
 <a id="F-eb6fd0b3fa"></a>
 ### Calculated: 1
@@ -48173,6 +49191,15 @@
 - **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
 - **Calculation:** [78](SOURCES.md#F-5de3d984af) + [0](SOURCES.md#F-d36d95f65f) = 78
 - **Used in:** [NITROGEN.md](NITROGEN.md)
+
+<a id="F-f184555b34"></a>
+### Calculated: 16.043
+
+`F-f184555b34` · **calculated** · 16.043
+
+- **Kind:** calculated · made by [`K-STATED`](#K-STATED)
+- **Calculation:** [12.011](SOURCES.md#F-2a5bb03b37) + [4.032](SOURCES.md#F-9615c214f0) = 16.043
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-f1bd3174ea"></a>
 ### Calculated: …
@@ -48354,15 +49381,6 @@
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [90.7284](SOURCES.md#F-845f2cdbd2) = 90.7284
 - **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
 
-<a id="F-f63fe07208"></a>
-### Calculated: 291
-
-`F-f63fe07208` · **calculated** · 291
-
-- **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
-- **Calculation:** [28](SOURCES.md#F-3bd0ff4f3a) + [35](SOURCES.md#F-b9c95f7687) + [19](SOURCES.md#F-f1ce5e7adc) + [27](SOURCES.md#F-634357f344) + [182](SOURCES.md#F-35bb9d81ec) = 291
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
 <a id="F-f642509b7d"></a>
 ### Calculated: 1.05616
 
@@ -48390,15 +49408,6 @@
 - **Calculation:** [13,521,510](SOURCES.md#F-b5e1ba42ec) / 1e+06 = 13.5215
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
-<a id="F-f76f30a27d"></a>
-### Calculated: 91.6753
-
-`F-f76f30a27d` · **calculated** · 91.6753
-
-- **Kind:** calculated · made by [`K-NITROGEN-KOEGE`](#K-NITROGEN-KOEGE)
-- **Calculation:** [0.916753](SOURCES.md#F-480f0451ef) * 100 = 91.6753
-- **Used in:** [NITROGEN.md](NITROGEN.md)
-
 <a id="F-f779aa1c01"></a>
 ### Calculated: 53.334
 
@@ -48424,7 +49433,7 @@
 
 - **Kind:** calculated · made by [`K-ENUMS`](#K-ENUMS), [`K-DRAFTSA-ENUMS`](#K-DRAFTSA-ENUMS)
 - **Calculation:** [53,710,760](SOURCES.md#F-4df017f985) - [13,754,352](SOURCES.md#F-a8322ee49b) = 39,956,408
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md), [PLAN.md](PLAN.md)
 
 <a id="F-f8476ccf87"></a>
 ### Calculated: 42.1181
@@ -48628,6 +49637,30 @@
 
 Each of these was read out of an external document whose text is pinned by its sha256. The reading is recomputed from the pinned copy every time, and a change in the document is detected by its hash, which makes every claim resting on it stale until reassessed.
 
+<a id="F-0e1e53f110"></a>
+### `BEK673-2026` — occurrences of "dyreenhed"
+
+`F-0e1e53f110` · **read from a pinned document** · 0
+
+- **Kind:** counted · made by [`K-READ-COUNT`](#K-READ-COUNT)
+- **Document:** [BEK nr. 673 af 21. juli 2026 - pligtige efterafgrøder og husdyrefterafgrøder, retsinformation](https://www.retsinformation.dk/eli/lta/2026/673/dan/pdf), retrieved 2026-09-10
+- **Pinned text sha256:** `ab9e90fdf0bde76b…`
+- **Reading:** occurrences of "dyreenhed", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-10 — unchanged since pinned
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-6cc68513e7"></a>
+### `BEK677-2026` — occurrences of "dyreenhed"
+
+`F-6cc68513e7` · **read from a pinned document** · 0
+
+- **Kind:** counted · made by [`K-READ-COUNT`](#K-READ-COUNT)
+- **Document:** [BEK nr. 677 af 21. juli 2026 - målrettede efterafgrøder, retsinformation](https://www.retsinformation.dk/eli/lta/2026/677/dan/pdf), retrieved 2026-09-10
+- **Pinned text sha256:** `55304f99a724dd26…`
+- **Reading:** occurrences of "dyreenhed", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-10 — unchanged since pinned
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
 <a id="F-fdfa079bf0"></a>
 ### `BEK931-2024` — the phrase "230 kg kvælstof"
 
@@ -48638,7 +49671,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Pinned text sha256:** `dfcd26d1b5aa26fa…`
 - **Reading:** the phrase "230 kg kvælstof", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — unchanged since pinned
-- **Used in:** [CLAIMS.md](CLAIMS.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md)
 
 <a id="F-bb5f71323f"></a>
 ### `BEK931-2024` — the phrase "divideret med 170 kg"
@@ -48662,7 +49695,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Pinned text sha256:** `dfcd26d1b5aa26fa…`
 - **Reading:** occurrences of "dyreenhed", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — unchanged since pinned
-- **Used in:** [CLAIMS.md](CLAIMS.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [INCIDENCE.md](INCIDENCE.md), [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-9a776cb143"></a>
 ### `BEK931-2024` — occurrences of "harmoniareal"
@@ -48675,6 +49708,18 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Reading:** occurrences of "harmoniareal", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — unchanged since pinned
 - **Used in:** [CLAIMS.md](CLAIMS.md)
+
+<a id="F-d78d670a7b"></a>
+### `CMEMS-BAL-STAC` — the phrase "1 nautical mile horizontal resolution"
+
+`F-d78d670a7b` · **read from a pinned document** · 1
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Copernicus Marine, Baltic Sea Physics Reanalysis (BALTICSEA_MULTIYEAR_PHY_003_011), product metadata](https://stac.marine.copernicus.eu/metadata/BALTICSEA_MULTIYEAR_PHY_003_011/product.stac.json), retrieved 2026-09-11
+- **Pinned text sha256:** `af19cff76c8ac358…`
+- **Reading:** the phrase "1 nautical mile horizontal resolution", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-5be82bad90"></a>
 ### `DANVA-2024` — the phrase "22,1 %"
@@ -48722,7 +49767,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Pinned text sha256:** `cce512d654be929c…`
 - **Reading:** the phrase "hvor landbruget alene står for 69,6 %", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — pinned
-- **Used in:** [AREAS.md](AREAS.md), [CLAIMS.md](CLAIMS.md)
+- **Used in:** [AREAS.md](AREAS.md), [CAUSATION.md](CAUSATION.md), [CLAIMS.md](CLAIMS.md)
 
 <a id="F-c50f19554d"></a>
 ### `DCE-STATMOD-2015` — the phrase "(2𝑋1 + 𝑋2 + 𝑋3 + 𝑋4 + 2𝑋5 )/7"
@@ -48810,7 +49855,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Document:** [Timmermann, K., Christensen, J., Murray, C. & Markager, S. (28 April 2015). NST-projektet 'Implementeringen af modeller til brug for vandforvaltningen'. Statistiske modeller og metoder til bestemmelse af indsatsbehov - del 3. DCE / Institut for Bioscience, Aarhus Universitet, for Naturstyrelsen. Fag](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2015/Dokumentation_statistiske_modeller_metoder_del3_28042015.pdf), retrieved 2026-09-10
 - **Pinned text sha256:** `089dd0c3baa388a3…`
 - **Reading:** the phrase "Ecological Quality Ratio (EQR) værdi på 0,6", recomputed from the pinned text
-- **Used in:** [GRUNDLAGET.md](GRUNDLAGET.md)
+- **Used in:** [GRUNDLAGET.md](GRUNDLAGET.md), [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-a5b6f73e2c"></a>
 ### `DCE-STATMOD-2015` — the phrase "Empiriske analyser har vist, at algevæksten i kystnære havområder skal være kvælstofbegrænset i minimum 150 dage, før der kan ses en signifikant sammenhæng mellem klorofylkoncentrationer og kvælstofkoncentrationer"
@@ -48931,7 +49976,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Document:** [Timmermann, K., Christensen, J., Murray, C. & Markager, S. (28 April 2015). NST-projektet 'Implementeringen af modeller til brug for vandforvaltningen'. Statistiske modeller og metoder til bestemmelse af indsatsbehov - del 3. DCE / Institut for Bioscience, Aarhus Universitet, for Naturstyrelsen. Fag](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2015/Dokumentation_statistiske_modeller_metoder_del3_28042015.pdf), retrieved 2026-09-10
 - **Pinned text sha256:** `089dd0c3baa388a3…`
 - **Reading:** the phrase "iltkoncentration er under hhv. 4 mg/L", recomputed from the pinned text
-- **Used in:** [AGENT_BRIEF.md](AGENT_BRIEF.md), [CURRENTS.md](CURRENTS.md), [LANDING.md](LANDING.md), [OBSERVING.md](OBSERVING.md)
+- **Used in:** [AGENT_BRIEF.md](AGENT_BRIEF.md), [LANDING.md](LANDING.md), [OBSERVING.md](OBSERVING.md)
 
 <a id="F-6f707414ef"></a>
 ### `DCE-STATMOD-2015` — the phrase "koncentrationen af ilt i vandet er under 4 mg/L"
@@ -49030,7 +50075,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Document:** [Timmermann, K., Christensen, J., Murray, C. & Markager, S. (28 April 2015). NST-projektet 'Implementeringen af modeller til brug for vandforvaltningen'. Statistiske modeller og metoder til bestemmelse af indsatsbehov - del 3. DCE / Institut for Bioscience, Aarhus Universitet, for Naturstyrelsen. Fag](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2015/Dokumentation_statistiske_modeller_metoder_del3_28042015.pdf), retrieved 2026-09-10
 - **Pinned text sha256:** `089dd0c3baa388a3…`
 - **Reading:** the phrase "statistiske modeller for 29 kystnære overvågningsstationer", recomputed from the pinned text
-- **Used in:** [CLAIMS.md](CLAIMS.md), [METHOD_LAB.md](METHOD_LAB.md), [OBSERVING.md](OBSERVING.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESES.md](HYPOTHESES.md), [METHOD_LAB.md](METHOD_LAB.md), [OBSERVING.md](OBSERVING.md)
 
 <a id="F-3a11e5693e"></a>
 ### `DCE-STATMOD-2015` — the phrase "tentativt sat til mindst 0,4"
@@ -49706,6 +50751,18 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Last checked against the live document:** 2026-09-11 — unchanged since pinned
 - **Used in:** [RESIDUAL.md](RESIDUAL.md)
 
+<a id="F-abc8c14598"></a>
+### `FLOOD2012-AMAGER` — the phrase "ved en 100 års hændelse"
+
+`F-abc8c14598` · **read from a pinned document** · 100
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Københavns Kommune, Oversvømmelseskort for Amager vandopland (one of the seven flood sheets)](https://admin.opendata.dk/dataset/9a1f913c-d19b-486e-a22c-58ee52fef68c/resource/ef31af2e-994e-4db7-8ebc-341045581713/download/amager.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `1045cc4c84324598…`
+- **Reading:** the phrase "ved en 100 års hændelse", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
+
 <a id="F-89b4887632"></a>
 ### `FLOOD2012-AMAGER` — the phrase "ved en 100 års hændelse i 2010"
 
@@ -49730,6 +50787,162 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Last checked against the live document:** 2026-09-11 — unchanged since pinned
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
 
+<a id="F-5a40007fae"></a>
+### `HY-MST-1793` — the phrase "Footwear 100-1,000 5.7 40-380 10-260 7.4"
+
+`F-5a40007fae` · **read from a pinned document** · 7.4
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793](https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `c3e6f59e23e30e2b…`
+- **Reading:** the phrase "Footwear 100-1,000 5.7 40-380 10-260 7.4", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-2001ee421d"></a>
+### `HY-MST-1793` — the phrase "Paints (excl. ship paints) 150-810 5.0 14-220 6-149 4.3"
+
+`F-2001ee421d` · **read from a pinned document** · 4.3
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793](https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `c3e6f59e23e30e2b…`
+- **Reading:** the phrase "Paints (excl. ship paints) 150-810 5.0 14-220 6-149 4.3", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-82b7b7e736"></a>
+### `HY-MST-1793` — the phrase "Ship paints 40-480 2.7 0-50 21-240 7.1"
+
+`F-82b7b7e736` · **read from a pinned document** · 7.1
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793](https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `c3e6f59e23e30e2b…`
+- **Reading:** the phrase "Ship paints 40-480 2.7 0-50 21-240 7.1", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-a0c0606ed3"></a>
+### `HY-MST-1793` — the phrase "Tires 4,200-6,600 55.8 1,600-2,500 500-1,700 60.2"
+
+`F-a0c0606ed3` · **read from a pinned document** · 60.2
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793](https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `c3e6f59e23e30e2b…`
+- **Reading:** the phrase "Tires 4,200-6,600 55.8 1,600-2,500 500-1,700 60.2", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-87cbbb2297"></a>
+### `HY-MST-1793` — the phrase "Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100"
+
+`F-87cbbb2297` · **read from a pinned document** · 3,100
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793](https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `c3e6f59e23e30e2b…`
+- **Reading:** the phrase "Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-d5fafefad0"></a>
+### `HY-MST-1793` — the phrase "only 10-20% of the microplastics in stormwater is retained"
+
+`F-d5fafefad0` · **read from a pinned document** · 20
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793](https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `c3e6f59e23e30e2b…`
+- **Reading:** the phrase "only 10-20% of the microplastics in stormwater is retained", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CLAIMS.md](CLAIMS.md), [HYPOTHESIS_DATA.md](HYPOTHESIS_DATA.md)
+
+<a id="F-84d87fba5e"></a>
+### `HY-WIKI-ATZA` — the phrase "This enzyme is 98% identical in amino acid sequence"
+
+`F-84d87fba5e` · **read from a pinned document** · 98
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Atrazine chlorohydrolase](https://en.wikipedia.org/wiki/Atrazine_chlorohydrolase), retrieved 2026-09-11
+- **Pinned text sha256:** `839308f8629b6c00…`
+- **Reading:** the phrase "This enzyme is 98% identical in amino acid sequence", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-492e40b543"></a>
+### `HY-WIKI-DEF` — the phrase "DEF is an aqueous urea solution made with 32.5% urea and 67.5% deionized water"
+
+`F-492e40b543` · **read from a pinned document** · 32.5
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Diesel exhaust fluid](https://en.wikipedia.org/wiki/Diesel_exhaust_fluid), retrieved 2026-09-11
+- **Pinned text sha256:** `e241c643c10e42b3…`
+- **Reading:** the phrase "DEF is an aqueous urea solution made with 32.5% urea and 67.5% deionized water", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-abac72a8e0"></a>
+### `HY-WIKI-SEAWATER` — the phrase "Magnesium 0.1292 Sulfur 0.091 Calcium 0.04 Potassium 0.04"
+
+`F-abac72a8e0` · **read from a pinned document** · 0.091
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Seawater](https://en.wikipedia.org/wiki/Seawater), retrieved 2026-09-11
+- **Pinned text sha256:** `a933ef4bfa545f19…`
+- **Reading:** the phrase "Magnesium 0.1292 Sulfur 0.091 Calcium 0.04 Potassium 0.04", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-0242c902e2"></a>
+### `HY-WIKI-SEAWATER` — the phrase "Potassium 0.04 Bromine"
+
+`F-0242c902e2` · **read from a pinned document** · 0.04
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Seawater](https://en.wikipedia.org/wiki/Seawater), retrieved 2026-09-11
+- **Pinned text sha256:** `a933ef4bfa545f19…`
+- **Reading:** the phrase "Potassium 0.04 Bromine", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-558b6e1b0f"></a>
+### `HY-WIKI-UAN` — the phrase "Physical and Chemical Characteristics of UAN Solutions Grade, N% 28 30 32"
+
+`F-558b6e1b0f` · **read from a pinned document** · 32
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, UAN (urea ammonium nitrate)](https://en.wikipedia.org/wiki/UAN), retrieved 2026-09-11
+- **Pinned text sha256:** `03fc228b44de6e94…`
+- **Reading:** the phrase "Physical and Chemical Characteristics of UAN Solutions Grade, N% 28 30 32", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-d0b274b132"></a>
+### `KP-DRAENKORT-DCA135` — the phrase "Kortet har en opløsning på 30,4 x 30,4 meter og en nøjagtighed på 79%"
+
+`F-d0b274b132` · **read from a pinned document** · 79
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Kortlægning af drænede arealer i Danmark (DCA rapport 135, Aarhus Universitet)](https://dcapub.au.dk/djfpublikation/djfpdf/DCArapport135.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `f714f1861ba337db…`
+- **Reading:** the phrase "Kortet har en opløsning på 30,4 x 30,4 meter og en nøjagtighed på 79%", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
+
+<a id="F-f6d841dc22"></a>
+### `KP-DRAENKORT-DCA135` — the phrase "På det endelige kort er 52% af markarealet drænet"
+
+`F-f6d841dc22` · **read from a pinned document** · 52
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Kortlægning af drænede arealer i Danmark (DCA rapport 135, Aarhus Universitet)](https://dcapub.au.dk/djfpublikation/djfpdf/DCArapport135.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `f714f1861ba337db…`
+- **Reading:** the phrase "På det endelige kort er 52% af markarealet drænet", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
+
 <a id="F-b55c4c5ade"></a>
 ### `LER-GRAVE` — the phrase "Ledningsejere har 2 timer til at besvare"
 
@@ -49741,6 +50954,42 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Reading:** the phrase "Ledningsejere har 2 timer til at besvare", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-11 — unchanged since pinned
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+
+<a id="F-b05d8586b4"></a>
+### `MEIJER-2021` — the phrase "More than 1000 rivers account for 80% of global riverine plastic emissions"
+
+`F-b05d8586b4` · **read from a pinned document** · 80
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Meijer, van Emmerik, van der Ent, Schmidt & Lebreton (2021), More than 1000 rivers account for 80% of global riverine plastic emissions into the ocean, Science Advances - Europe PMC full text](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8087412/fullTextXML), retrieved 2026-09-11
+- **Pinned text sha256:** `844edaf7a003fbe2…`
+- **Reading:** the phrase "More than 1000 rivers account for 80% of global riverine plastic emissions", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
+
+<a id="F-427fc66cc3"></a>
+### `MEIJER-2021` — the phrase "Of the total 100,887 outlets of rivers and streams"
+
+`F-427fc66cc3` · **read from a pinned document** · 100,887
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Meijer, van Emmerik, van der Ent, Schmidt & Lebreton (2021), More than 1000 rivers account for 80% of global riverine plastic emissions into the ocean, Science Advances - Europe PMC full text](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8087412/fullTextXML), retrieved 2026-09-11
+- **Pinned text sha256:** `844edaf7a003fbe2…`
+- **Reading:** the phrase "Of the total 100,887 outlets of rivers and streams", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
+
+<a id="F-14947ebe4a"></a>
+### `MEIJER-2021` — the phrase "emitted by 1656 rivers in total"
+
+`F-14947ebe4a` · **read from a pinned document** · 1656
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Meijer, van Emmerik, van der Ent, Schmidt & Lebreton (2021), More than 1000 rivers account for 80% of global riverine plastic emissions into the ocean, Science Advances - Europe PMC full text](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8087412/fullTextXML), retrieved 2026-09-11
+- **Pinned text sha256:** `844edaf7a003fbe2…`
+- **Reading:** the phrase "emitted by 1656 rivers in total", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
 
 <a id="F-e2bef0278f"></a>
 ### `MSFD28` — the phrase "For de enkelte år opdeles den diffuse belastning ikke i den naturlige baggrundsbelastning og den diffuse belastning ikke, da opdelingen specielt for fosfor og organisk stof er usikker, men det for 5 års gennemsnit er lavet en opdeling."
@@ -49778,6 +51027,30 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Last checked against the live document:** 2026-09-10 — pinned
 - **Used in:** [OBSERVING.md](OBSERVING.md)
 
+<a id="F-cf14a00b21"></a>
+### `NI-DCE-ILT-2023` — the phrase "iltkoncentrationen i vandet er mindre end 4 mg l-1"
+
+`F-cf14a00b21` · **read from a pinned document** · 4
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [DCE Rådgivningsnotat, Iltsvind i danske farvande, 22. september - 26. oktober 2023](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2023/N2023_52.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `f5a0f9f2d3140e18…`
+- **Reading:** the phrase "iltkoncentrationen i vandet er mindre end 4 mg l-1", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-1ceed0aafd"></a>
+### `NI-DCE-ILT-2023` — the phrase "kraftigt iltsvind, når koncentrationen er under 2 mg l-1"
+
+`F-1ceed0aafd` · **read from a pinned document** · 2
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [DCE Rådgivningsnotat, Iltsvind i danske farvande, 22. september - 26. oktober 2023](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2023/N2023_52.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `f5a0f9f2d3140e18…`
+- **Reading:** the phrase "kraftigt iltsvind, når koncentrationen er under 2 mg l-1", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-27c460c084"></a>
 ### `NI-DCE-ILT-2025` — the phrase "iltkoncentrationen i vandet er mindre end 4 mg l-1"
 
@@ -49788,7 +51061,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Pinned text sha256:** `d2250411494901b5…`
 - **Reading:** the phrase "iltkoncentrationen i vandet er mindre end 4 mg l-1", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-11 — unchanged since pinned
-- **Used in:** [NITROGEN.md](NITROGEN.md)
+- **Used in:** [CURRENTS.md](CURRENTS.md), [NITROGEN.md](NITROGEN.md)
 
 <a id="F-846bb4828f"></a>
 ### `NOVANA-2327` — the phrase "Der er udpeget 109 vandområder inden for 1-sømilsgrænsen"
@@ -49994,6 +51267,78 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Last checked against the live document:** 2026-09-10 — pinned
 - **Used in:** [GRUNDLAGET.md](GRUNDLAGET.md)
 
+<a id="F-8fbbebdcdf"></a>
+### `OM-MARINE` — the phrase "computed at 0.08° (~8 km) resolution"
+
+`F-8fbbebdcdf` · **read from a pinned document** · 8
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Open-Meteo, Marine Weather API documentation](https://open-meteo.com/en/docs/marine-weather-api), retrieved 2026-09-11
+- **Pinned text sha256:** `78412adba8617110…`
+- **Reading:** the phrase "computed at 0.08° (~8 km) resolution", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-cb838b5b6b"></a>
+### `OP-WIKI-KOMMUNER` — the phrase "bestyrelserne i de 98 kommuner"
+
+`F-cb838b5b6b` · **read from a pinned document** · 98
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia (da): Danmarks kommuner](https://da.wikipedia.org/wiki/Danmarks_kommuner), retrieved 2026-09-11
+- **Pinned text sha256:** `e7ddd2d7c080a6f0…`
+- **Reading:** the phrase "bestyrelserne i de 98 kommuner", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+
+<a id="F-a39f8ed548"></a>
+### `OP-WIKI-LUX` — the phrase "0.05–0.3 Full moon on a clear night"
+
+`F-a39f8ed548` · **read from a pinned document** · 0.3
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia: Lux (table of illuminance examples)](https://en.wikipedia.org/wiki/Lux), retrieved 2026-09-11
+- **Pinned text sha256:** `9a7e5cd821e19acf…`
+- **Reading:** the phrase "0.05–0.3 Full moon on a clear night", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+
+<a id="F-bc3273e2e0"></a>
+### `OP-WIKI-LUX` — the phrase "32,000–100,000 Direct sunlight"
+
+`F-bc3273e2e0` · **read from a pinned document** · 100,000
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia: Lux (table of illuminance examples)](https://en.wikipedia.org/wiki/Lux), retrieved 2026-09-11
+- **Pinned text sha256:** `9a7e5cd821e19acf…`
+- **Reading:** the phrase "32,000–100,000 Direct sunlight", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+
+<a id="F-219d622646"></a>
+### `PC-DCE-ILT-2024` — the phrase "udgjorde midt i september 11.000 km2"
+
+`F-219d622646` · **read from a pinned document** · 11,000
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [DCE, Iltsvind i danske farvande, september 2024 (notat 2024/53)](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2024/N2024_53.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `023288cf83860fad…`
+- **Reading:** the phrase "udgjorde midt i september 11.000 km2", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CAUSATION.md](CAUSATION.md)
+
+<a id="F-1615595b34"></a>
+### `PC-DCE-ILT-2024` — the phrase "var næsten 50 % større end i september 2023"
+
+`F-1615595b34` · **read from a pinned document** · 50
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [DCE, Iltsvind i danske farvande, september 2024 (notat 2024/53)](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2024/N2024_53.pdf), retrieved 2026-09-11
+- **Pinned text sha256:** `023288cf83860fad…`
+- **Reading:** the phrase "var næsten 50 % større end i september 2023", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CAUSATION.md](CAUSATION.md)
+
 <a id="F-eb1f345a79"></a>
 ### `PG-BENBROOK-2016` — the phrase "glyphosate use has risen almost 15-fold since"
 
@@ -50066,6 +51411,30 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Last checked against the live document:** 2026-09-11 — unchanged since pinned
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-b768e6189f"></a>
+### `PG-WIKI-CF` — the phrase "bond dissociation energy (BDE) of up to 130 kcal/mol"
+
+`F-b768e6189f` · **read from a pinned document** · 130
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Carbon–fluorine bond](https://en.wikipedia.org/wiki/Carbon%E2%80%93fluorine_bond), retrieved 2026-09-11
+- **Pinned text sha256:** `905811cab76c1921…`
+- **Reading:** the phrase "bond dissociation energy (BDE) of up to 130 kcal/mol", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-e8955e6dbb"></a>
+### `PG-WIKI-CF` — the phrase "is 115, 104.9, 83.7, 72.1, and 57.6 kcal/mol for X = fluorine"
+
+`F-e8955e6dbb` · **read from a pinned document** · 115
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Carbon–fluorine bond](https://en.wikipedia.org/wiki/Carbon%E2%80%93fluorine_bond), retrieved 2026-09-11
+- **Pinned text sha256:** `905811cab76c1921…`
+- **Reading:** the phrase "is 115, 104.9, 83.7, 72.1, and 57.6 kcal/mol for X = fluorine", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-b4bb90da8b"></a>
 ### `PG-WIKI-CHF3` — the phrase "is slightly larger at 14,800 for HFC-23"
 
@@ -50089,6 +51458,18 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Reading:** the phrase "features a spatial resolution of 31 km", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-11 — unchanged since pinned
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
+
+<a id="F-812b82ace0"></a>
+### `PO-64EF563D` — the phrase "5 ud af 18 Venstre-folketingsmedlemmer"
+
+`F-812b82ace0` · **read from a pinned document** · 18
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [dknyt.dk, 2026-08-31: 923a6ca1-9d0c-43aa-86ff-eac6d502e6f9](https://www.dknyt.dk/ritzau/923a6ca1-9d0c-43aa-86ff-eac6d502e6f9), retrieved 2026-09-11
+- **Pinned text sha256:** `1caf1e669ec20f88…`
+- **Reading:** the phrase "5 ud af 18 Venstre-folketingsmedlemmer", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [POLITICS.md](POLITICS.md)
 
 <a id="F-b811e865d2"></a>
 ### `POL-DMBIO-2026` — the phrase "15 år anvendes mere end 50 milliarder offentlige midler og fondsmidler"
@@ -50149,6 +51530,30 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Reading:** the phrase "fejlet gennem 20 år", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — pinned by fork politics; not yet read by the project owner
 - **Used in:** [POLITICS.md](POLITICS.md)
+
+<a id="F-353c939f67"></a>
+### `POL-DMBIO-2026` — the phrase "plante 250.000 hektar ny dansk skov"
+
+`F-353c939f67` · **read from a pinned document** · 250,000
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [DM Bio, 2026-03: Folketingsvalg 2026 - politikerne besvarer spørgsmål om natur og Grøn Trepart](https://dm.dk/bio/alle-artikler/kampen-om-arealerne/folketingsvalg-2026-politikerne-besvarer-spoergsmaal-om-natur-og-groen-trepart/), retrieved 2026-09-10
+- **Pinned text sha256:** `9dfe80a5e2f36ddb…`
+- **Reading:** the phrase "plante 250.000 hektar ny dansk skov", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-10 — pinned by fork politics; not yet read by the project owner
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-e678ed73be"></a>
+### `POL-DMBIO-2026` — the phrase "udtage 140.000 hektar lavbundsjorde"
+
+`F-e678ed73be` · **read from a pinned document** · 140,000
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [DM Bio, 2026-03: Folketingsvalg 2026 - politikerne besvarer spørgsmål om natur og Grøn Trepart](https://dm.dk/bio/alle-artikler/kampen-om-arealerne/folketingsvalg-2026-politikerne-besvarer-spoergsmaal-om-natur-og-groen-trepart/), retrieved 2026-09-10
+- **Pinned text sha256:** `9dfe80a5e2f36ddb…`
+- **Reading:** the phrase "udtage 140.000 hektar lavbundsjorde", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-10 — pinned by fork politics; not yet read by the project owner
+- **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
 <a id="F-7a45699920"></a>
 ### `POL-DN-20260903` — the phrase "Indtil videre har 38 af Danmarks 108 kystvande været"
@@ -50508,7 +51913,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Pinned text sha256:** `7e35b90adf8a8d5e…`
 - **Reading:** the phrase "119 medlemmer af Folketinget stemte for loven", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — pinned by fork politics; not yet read by the project owner
-- **Used in:** [POLITICS.md](POLITICS.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [INCIDENCE.md](INCIDENCE.md), [NITROGEN.md](NITROGEN.md), [POLITICS.md](POLITICS.md)
 
 <a id="F-a987b8d1e3"></a>
 ### `POL-TV2-20260903` — the phrase "mens 34 stemte imod"
@@ -50520,7 +51925,7 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Pinned text sha256:** `7e35b90adf8a8d5e…`
 - **Reading:** the phrase "mens 34 stemte imod", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — pinned by fork politics; not yet read by the project owner
-- **Used in:** [POLITICS.md](POLITICS.md)
+- **Used in:** [CLAIMS.md](CLAIMS.md), [INCIDENCE.md](INCIDENCE.md), [NITROGEN.md](NITROGEN.md), [POLITICS.md](POLITICS.md)
 
 <a id="F-c93ab4a21f"></a>
 ### `POL-TV2-20260903` — the phrase "stemte fem af partiets medlemmer mod lovforslaget"
@@ -50593,6 +51998,18 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Reading:** the phrase "Figur 6.7", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-10 — pinned
 - **Used in:** [A1.md](A1.md)
+
+<a id="F-f3813ac6c6"></a>
+### `SR353` — the phrase "The reductions are 51% and 72% for nitrogen and phosphorus"
+
+`F-f3813ac6c6` · **read from a pinned document** · 51
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Thodsen et al. 2019, Vandløbsdata og kvælstoftransport, DCE Videnskabelig rapport nr. 353](https://dce2.au.dk/pub/SR353.pdf), retrieved 2026-09-10
+- **Pinned text sha256:** `8a598b8a6973094b…`
+- **Reading:** the phrase "The reductions are 51% and 72% for nitrogen and phosphorus", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-10 — pinned
+- **Used in:** [CAUSATION.md](CAUSATION.md), [CLAIMS.md](CLAIMS.md)
 
 <a id="F-ff662f3a7e"></a>
 ### `SR353` — the phrase "Tilførslen fra land til kystvandene er for 2018 beregnet til hhv. ca. 50.000 tons kvælstof"
@@ -50749,6 +52166,66 @@ Each of these was read out of an external document whose text is pinned by its s
 - **Reading:** the phrase "among which 54,000 were hospitalized", recomputed from the pinned text
 - **Last checked against the live document:** 2026-09-11 — unchanged since pinned
 - **Used in:** [RESIDUAL.md](RESIDUAL.md)
+
+<a id="F-7190c3b8ee"></a>
+### `WIKI-ORESUND` — the phrase "has a salinity of more than 30 PSU"
+
+`F-7190c3b8ee` · **read from a pinned document** · 30
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Øresund](https://en.wikipedia.org/wiki/%C3%98resund), retrieved 2026-09-11
+- **Pinned text sha256:** `b5697262d14e80c2…`
+- **Reading:** the phrase "has a salinity of more than 30 PSU", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-91629369dc"></a>
+### `WIKI-ORESUND` — the phrase "its width varies from 4 kilometres"
+
+`F-91629369dc` · **read from a pinned document** · 4
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Øresund](https://en.wikipedia.org/wiki/%C3%98resund), retrieved 2026-09-11
+- **Pinned text sha256:** `b5697262d14e80c2…`
+- **Reading:** the phrase "its width varies from 4 kilometres", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-98f20349e1"></a>
+### `WIKI-ORESUND` — the phrase "the Baltic Sea (around 7 PSU"
+
+`F-98f20349e1` · **read from a pinned document** · 7
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia, Øresund](https://en.wikipedia.org/wiki/%C3%98resund), retrieved 2026-09-11
+- **Pinned text sha256:** `b5697262d14e80c2…`
+- **Reading:** the phrase "the Baltic Sea (around 7 PSU", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [CURRENTS.md](CURRENTS.md)
+
+<a id="F-fa1bf80bf8"></a>
+### `WIKI-REDFIELD` — the phrase "empirically found the ratio to be C:N:P = 106:16:1"
+
+`F-fa1bf80bf8` · **read from a pinned document** · 16
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia: Redfield ratio (retrieved 11 September 2026)](https://en.wikipedia.org/wiki/Redfield_ratio), retrieved 2026-09-11
+- **Pinned text sha256:** `2c13f65ee5099793…`
+- **Reading:** the phrase "empirically found the ratio to be C:N:P = 106:16:1", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-2c8ffebf10"></a>
+### `WIKI-REDFIELD` — the phrase "stated to be C:Si:N:P = 106:15:16:1"
+
+`F-2c8ffebf10` · **read from a pinned document** · 16
+
+- **Kind:** document · made by [`K-READ-PHRASE`](#K-READ-PHRASE)
+- **Document:** [Wikipedia: Redfield ratio (retrieved 11 September 2026)](https://en.wikipedia.org/wiki/Redfield_ratio), retrieved 2026-09-11
+- **Pinned text sha256:** `2c13f65ee5099793…`
+- **Reading:** the phrase "stated to be C:Si:N:P = 106:15:16:1", recomputed from the pinned text
+- **Last checked against the live document:** 2026-09-11 — unchanged since pinned
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 ## Quoted from an earlier version of this site
 
@@ -51744,16 +53221,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-06d6f5ef4b"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-06d6f5ef4b` · **quoted from an earlier version** · 166
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `Forty of @@ mechanisms are` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-08aca8328a"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -51763,36 +53230,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1e4dfc3231"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-1e4dfc3231` · **quoted from an earlier version** · 6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `@@. - **GEUS Jupiter**, OSM` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-2090aed3d4"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-2090aed3d4` · **quoted from an earlier version** · 2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `values to @@ bins, day` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-2430bf4c5d"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-2430bf4c5d` · **quoted from an earlier version** · 17
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `and unused; the @@% of measurements` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-2752fddcec"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -51824,26 +53261,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The instruments are in the public record … on individual holdings from` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-2a748136d1"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-2a748136d1` · **quoted from an earlier version** · 3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `label. Counted as @@, not` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-2d7ac71e98"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-2d7ac71e98` · **quoted from an earlier version** · 36
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `an experiment — **@@% of the field` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-2def35cbcf"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -51854,26 +53271,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-31a6c1ff48"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-31a6c1ff48` · **quoted from an earlier version** · 12
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `@@% | | blocked on measurement resolution` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-32a329bc2e"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-32a329bc2e` · **quoted from an earlier version** · 166
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `[`hypodrafts/TRIAGE.md`](hypodrafts/TRIAGE.md), all @@ lettered hypotheses,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-344f281055"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -51883,36 +53280,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `We have now read it, and it refutes the broader reading … at Randers about an eighth` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3927e3034a"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-3927e3034a` · **quoted from an earlier version** · 5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `itself — plus @@ from C,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-3a20f7adcb"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-3a20f7adcb` · **quoted from an earlier version** · 14
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `@@%** | | needs an experiment |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-3b32062189"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-3b32062189` · **quoted from an earlier version** · 11
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `resolution | 18 | @@% | | not` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-3d49d7e5c4"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -51944,16 +53311,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-416364be20"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-416364be20` · **quoted from an earlier version** · 47
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `CTD measurements, @@ years, plus` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-467954325c"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -51963,16 +53320,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `Aquaculture and marine farms … assumed per-capita loads` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-48cad6114e"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-48cad6114e` · **quoted from an earlier version** · 24
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `**testable now** | **@@** | **14%** |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-4a9f0973af"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52014,16 +53361,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-59f07d6345"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-59f07d6345` · **quoted from an earlier version** · 182
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `stated flaw **@@ mechanisms in` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-5d72913c63"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -52033,16 +53370,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `We have now read it, and it refutes the broader reading … at Randers about an eighth` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5ec5075a34"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-5ec5075a34` · **quoted from an earlier version** · 40
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `of the @@**, and neither` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-6242ae8623"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52054,16 +53381,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `We have now read it, and it refutes the broader reading … at Randers about an eighth` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-637a6ce618"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-637a6ce618` · **quoted from an earlier version** · 51
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `over an area @@% modelled, not` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-667e53d061"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -52073,16 +53390,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-695b22bd1b"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-695b22bd1b` · **quoted from an earlier version** · 12
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `alone makes @@ hypotheses unscoreable,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-7609f435b4"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52104,26 +53411,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-77467b93f6"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-77467b93f6` · **quoted from an earlier version** · 34
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `are up to @@ more. --- ##` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-78e7a74eb3"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-78e7a74eb3` · **quoted from an earlier version** · 3,900
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `destroys at roughly **@@:1** — depth 896` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-8288b9b71d"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -52133,16 +53420,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `But two things in this paper are not circular at all … no circularity in one monitoring-report figure touches` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-85084b73de"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-85084b73de` · **quoted from an earlier version** · 40
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `| **unscoreable** | @@ | 24% |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-870ec5017b"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52194,16 +53471,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-910bc11e7e"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-910bc11e7e` · **quoted from an earlier version** · 19
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `two are @@ of the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-957d390c97"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -52213,36 +53480,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `We have now read it, and it refutes the broader reading … at Randers about an eighth` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-976d4da4a5"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-976d4da4a5` · **quoted from an earlier version** · 20
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `| | needs an experiment | @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-97b81c6bf6"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-97b81c6bf6` · **quoted from an earlier version** · 7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `matrix another @@. **Those` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-9b9bace95a"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-9b9bace95a` · **quoted from an earlier version** · 156,971
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `silicon, and @@ oxygen measurements` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-9bd3708e2d"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52274,26 +53511,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Aquaculture and marine farms … assumed per-capita loads` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-aa3f1896b7"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-aa3f1896b7` · **quoted from an earlier version** · 24
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `now proceed on the @@. --- ##` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-ac449c02bd"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-ac449c02bd` · **quoted from an earlier version** · 61
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `blocked on a named fetch | @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-ad9b7e4d17"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -52303,26 +53520,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `The national typetal for hazardous substances … separate stormwater outlets` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ade55f1378"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-ade55f1378` · **quoted from an earlier version** · 6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `set is @@ from group` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-adf8f1eb8f"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-adf8f1eb8f` · **quoted from an earlier version** · 3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `not established | @@ | 2% |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-afc61f51c9"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52394,16 +53591,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `We have now read it, and it refutes the broader reading … at Randers about an eighth` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-bb4c23d0e9"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-bb4c23d0e9` · **quoted from an earlier version** · 37
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `fetch | 61 | @@% | | **unscoreable**` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-bd3a7f335d"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
 
@@ -52433,16 +53620,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c4c127b73f"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-c4c127b73f` · **quoted from an earlier version** · 1.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `monotonically, by about @@ percentage > points.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-c5327d40dc"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52483,16 +53660,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/NITROGEN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/NITROGEN.md)
 - **Located by:** `So how does the construction perform against things that were measured … converting a surplus target into an expected load` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ca407eacb3"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-ca407eacb3` · **quoted from an earlier version** · 36
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `start measuring. **And @@% of the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
 
 <a id="F-cc6b955ff2"></a>
 ### As published at `1bccd8b` in `docs/NITROGEN.md`
@@ -52574,86 +53741,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Aquaculture and marine farms … assumed per-capita loads` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-e3b19e5ad8"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-e3b19e5ad8` · **quoted from an earlier version** · 18
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `blocked on measurement resolution | @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-eab2e24182"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-eab2e24182` · **quoted from an earlier version** · 896
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `**3,900:1** — depth @@ values to 2` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-ebdd70fc2e"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-ebdd70fc2e` · **quoted from an earlier version** · 69.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `that the @@% attribution` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-ef104db457"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-ef104db457` · **quoted from an earlier version** · 3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `from C, @@ from Z. **The` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-ef326eb315"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-ef326eb315` · **quoted from an earlier version** · 12
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `it decides @@ hypotheses and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-f28731818f"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-f28731818f` · **quoted from an earlier version** · 1,126
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `hold. **1,805,827 rows, @@ stations, 147 parameters,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-fe612b2990"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-fe612b2990` · **quoted from an earlier version** · 800
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `is about **@@ MB**, which the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
-<a id="F-ff09d6f282"></a>
-### As published at `1bccd8b` in `docs/PLAN.md`
-
-`F-ff09d6f282` · **quoted from an earlier version** · 2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLAN.md` at `1bccd8b`](https://github.com/Jjokulian/copenhagen-waterways/blob/1bccd8b/docs/PLAN.md)
-- **Located by:** `@@% | **Four things the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLAN.md](PLAN.md)
-
 <a id="F-d3fae26113"></a>
 ### As published at `2f0d9c7` in `data/derived/floodgap.json`
 
@@ -52692,246 +53779,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/data/flood2012/README.md` at `302f928`](https://github.com/Jjokulian/copenhagen-waterways/blob/302f928/docs/data/flood2012/README.md)
 - **Located by:** `not in it - @@'s impervious surface,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [README.md](README.md)
-
-<a id="F-0d79414cd1"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-0d79414cd1` · **quoted from an earlier version** · 123
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `@@ water bodies, built` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-1e1a3a0d50"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-1e1a3a0d50` · **quoted from an earlier version** · 2300 m
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `on 4,332 rows, @@ of water in` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-2736876c92"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-2736876c92` · **quoted from an earlier version** · 66
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `is a measurement" | `hz` on @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-4ee13d23df"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-4ee13d23df` · **quoted from an earlier version** · 1,392
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `and covers @@ of our` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-5ba780c9d5"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-5ba780c9d5` · **quoted from an earlier version** · 23.1 MB
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `register."* It is **@@, CC BY 4.0**,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-65872c1646"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-65872c1646` · **quoted from an earlier version** · 5.847
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `@@ km², and a headline proximity` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-72708745c9"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-72708745c9` · **quoted from an earlier version** · 38%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `parameters**. `Orthophosphat` is @@ of its rows` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-7d1cd08c86"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-7d1cd08c86` · **quoted from an earlier version** · 1,990
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `**Ålegræs plante** (@@ stations, 1970–2026), **makroalge**` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-80321c6a40"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-80321c6a40` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `would *"remove @@ substantial lines"*` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-81eb00651a"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-81eb00651a` · **quoted from an earlier version** · 23 MB
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `apart; a @@ public layer` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-a02416763f"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-a02416763f` · **quoted from an earlier version** · 1,415
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `of our @@ stations. - **Denmark` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-a5a6908e22"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-a5a6908e22` · **quoted from an earlier version** · ±6–27
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `retention carries @@ percentage points,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-b2ac1e62b6"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-b2ac1e62b6` · **quoted from an earlier version** · 53.5%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `proximity share from @@ to 50.1%, which` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-b43a68abd3"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-b43a68abd3` · **quoted from an earlier version** · 26,380
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** ``SigtTilBund` on @@ Secchi readings` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-b7ec9a9c5c"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-b7ec9a9c5c` · **quoted from an earlier version** · 14
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `them | **14 of @@7 parameters**. `Orthophosphat` is` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-c3f2e31ed5"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-c3f2e31ed5` · **quoted from an earlier version** · 5.932
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `number moved — @@ to 5.847 km²,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-d51f18c9fc"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-d51f18c9fc` · **quoted from an earlier version** · 50.1%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `@@, which crosses from` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-d59dc65841"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-d59dc65841` · **quoted from an earlier version** · 52%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `@@ of agricultural land, published` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-d75202faaa"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-d75202faaa` · **quoted from an earlier version** · 83.5%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `@@ of rows.** The probe` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-daeaf4e7cc"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-daeaf4e7cc` · **quoted from an earlier version** · 50 m
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `water in a @@ trench, 90,972% oxygen` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-dee82d8f7f"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-dee82d8f7f` · **quoted from an earlier version** · 30.4 m
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `mapped for Miljøstyrelsen at @@, 52% of agricultural` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-e14341b7d4"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-e14341b7d4` · **quoted from an earlier version** · 24 GB
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `freshwater points; @@ of six` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-fa080e8171"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-fa080e8171` · **quoted from an earlier version** · 4,332
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `depth `99` on @@ rows, 2300 m` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
-
-<a id="F-fb2e96cd85"></a>
-### As published at `3d71dde` in `docs/KNOWN_AND_UNKNOWN.md`
-
-`F-fb2e96cd85` · **quoted from an earlier version** · 90,972%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `3d71dde`](https://github.com/Jjokulian/copenhagen-waterways/blob/3d71dde/docs/KNOWN_AND_UNKNOWN.md)
-- **Located by:** `m trench, @@ oxygen saturation` - the value is read out of that text when the page is built, never typed
-- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-2ea048a0f2"></a>
 ### As published at `408ab8d` in `docs/PROGRAMME.md`
@@ -54383,16 +55230,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `pooled over @@ days, giving` - the value is read out of that text when the page is built, never typed
 - **Used in:** [EXPERIMENTS.md](EXPERIMENTS.md)
 
-<a id="F-00f398cb68"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-00f398cb68` · **quoted from an earlier version** · 2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `sulphur from anoxic sediment consuming @@ g O₂ per g S` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-01d1e0e572"></a>
 ### As published at `4469fc7` in `docs/CATEGORY.md`
 
@@ -54412,16 +55249,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `> network at **@@–1 bn DKK over` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-04325d4d1c"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-04325d4d1c` · **quoted from an earlier version** · 480
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `chemistry, roughly @@–530 kJ/mol,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-049c00acc2"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -54453,16 +55280,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| 800 | @@ M | 80` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-07499bcc04"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-07499bcc04` · **quoted from an earlier version** · 25
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `threshold near C:N @@: below it` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-094555955c"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -54472,16 +55289,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `turbidity network | 8,000–@@ | | **Dissolved oxygen**` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-094c6d1871"></a>
-### As published at `4469fc7` in `docs/CURRENTS.md`
-
-`F-094c6d1871` · **quoted from an earlier version** · Over 31 years of rainfall that is wrong
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CURRENTS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CURRENTS.md)
-- **Located by:** `overflow season. @@, and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CURRENTS.md](CURRENTS.md)
 
 <a id="F-0a3162bc4f"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -54493,26 +55300,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `DCE report a mean … That is not` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-0b007a9ded"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-0b007a9ded` · **quoted from an earlier version** · 9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `can rise above @@. | High` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-0b81822c8e"></a>
-### As published at `4469fc7` in `docs/CURRENTS.md`
-
-`F-0b81822c8e` · **quoted from an earlier version** · what a 9 km grid does to a 4 km channel
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CURRENTS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CURRENTS.md)
-- **Located by:** `speed, which is @@. **So nothing` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
 <a id="F-0c24a113b3"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -54522,16 +55309,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `does not foul | @@–3,000 | | **Turbidity**` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-0f186eb161"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-0f186eb161` · **quoted from an earlier version** · 20 years
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `largest in @@; second-largest` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-0f27097241"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -54562,16 +55339,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `used one | 25,000–@@ | | Bottle analysis` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-10c53c2869"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-10c53c2869` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `biomass near C:N 8-@@ at about 40% carbon-use` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-10ed0ecf4c"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -54613,16 +55380,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `What the observing system is actually built to see … the other has a model.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-15672d2ec5"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-15672d2ec5` · **quoted from an earlier version** · 305
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `itself at @@ licensed areas.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-15c3e79c8d"></a>
 ### As published at `4469fc7` in `docs/LANDBRUG.md`
 
@@ -54663,16 +55420,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Køge Bugt is at least two things … The data say they are two.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-17f4d0fc97"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-17f4d0fc97` · **quoted from an earlier version** · 165
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `nitrogen, so roughly @@ g N per` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-19a78872b4"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -54683,26 +55430,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `that fails | 300–@@ | | Radio |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-1acfc787ce"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-1acfc787ce` · **quoted from an earlier version** · 30
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `Freshwater carries 5-@@ mg/L of sulphate` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-1b02ab3f86"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-1b02ab3f86` · **quoted from an earlier version** · 4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `Dissolved oxygen below @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-1bc483393c"></a>
 ### As published at `4469fc7` in `docs/CATEGORY.md`
 
@@ -54712,16 +55439,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/CATEGORY.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CATEGORY.md)
 - **Located by:** `obvious self-application: this project sorts … a partition nobody has scored either` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1d7a7eb3c3"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-1d7a7eb3c3` · **quoted from an earlier version** · 114
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `deposited at @@ licensed grounds.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-1db5b305a9"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -54753,16 +55470,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| 8 | 200,000–4@@0,000 | | Shared` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-1ea61608da"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-1ea61608da` · **quoted from an earlier version** · 2,700
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `methanogenesis. Seawater carries @@ mg/L, a hundred` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-20ee846ea2"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -54773,16 +55480,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `an unattended node | @@–1,800 | | *or*` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-2144f81227"></a>
-### As published at `4469fc7` in `docs/CURRENTS.md`
-
-`F-2144f81227` · **quoted from an earlier version** · the 31-year wind record
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CURRENTS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CURRENTS.md)
-- **Located by:** `held, use @@ to extend` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
 <a id="F-216d17c8bb"></a>
 ### As published at `4469fc7` in `docs/RESIDUAL.md`
 
@@ -54792,16 +55489,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/RESIDUAL.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/RESIDUAL.md)
 - **Located by:** `The second quantity is unobservable … as if measured` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-21cb96ab29"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-21cb96ab29` · **quoted from an earlier version** · 25 tonnes
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `reported receiving @@ of fat` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-2240c3923e"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -54833,16 +55520,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `And note what the same work did to the … which is nothing` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-23228e8387"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-23228e8387` · **quoted from an earlier version** · 354
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `AdBlue is about @@ g of urea` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-240797b2a9"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -54863,16 +55540,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `not foul | 1,000–@@ | | **Turbidity** —` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-2541a9ab9a"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-2541a9ab9a` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `transferable - mix 1-@@% of a suppressive` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-2569b0a818"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
 
@@ -54892,16 +55559,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `stretched over [@@% measured and` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-265981ecad"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-265981ecad` · **quoted from an earlier version** · 4.57
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `to nitrate, consuming @@ g O₂ per` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-270630cd46"></a>
 ### As published at `4469fc7` in `docs/EXPERIMENTS.md`
@@ -54932,16 +55589,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/RESIDUAL.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/RESIDUAL.md)
 - **Located by:** `A person and an algorithm agreed. … they landed in the same place` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2893d02f50"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-2893d02f50` · **quoted from an earlier version** · 4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `Methane from anoxic sediment consuming @@ g O₂ per g on` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-29bd7fbbc0"></a>
 ### As published at `4469fc7` in `docs/CATEGORY.md`
@@ -54993,16 +55640,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Fe-adsorbed P at @@ | | **S5**` - the value is read out of that text when the page is built, never typed
 - **Used in:** [TRIAGE.md](TRIAGE.md)
 
-<a id="F-2c3229b81b"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-2c3229b81b` · **quoted from an earlier version** · 0.05
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `MB, CC BY 4.0**, @@° c-square, quarterly, 2016–2021,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-2c3a26d632"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -55013,46 +55650,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `not July | 800–@@ | | Enclosure, mount,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-2d47348774"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-2d47348774` · **quoted from an earlier version** · 7.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `@@%, and paint plus` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-2e24a604a3"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-2e24a604a3` · **quoted from an earlier version** · 15.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `the fluid is @@% nitrogen —` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-2e68a6f745"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-2e68a6f745` · **quoted from an earlier version** · 8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `biomass near C:N @@-10 at about` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-2e95489ac1"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-2e95489ac1` · **quoted from an earlier version** · 5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `MTBE in petrol, ethanol at @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-2f08917523"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
 
@@ -55062,26 +55659,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `circulation model is @@ and ~2x slow` - the value is read out of that text when the page is built, never typed
 - **Used in:** [TRIAGE.md](TRIAGE.md)
-
-<a id="F-300d59737b"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-300d59737b` · **quoted from an earlier version** · 40
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `column. Given that @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
-
-<a id="F-30c4b18f7e"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-30c4b18f7e` · **quoted from an earlier version** · 1.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `@@M-row sample). The` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-30d6425019"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -55152,26 +55729,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `| 40 | 3@@,000 | 5 ×` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-3371f128f9"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-3371f128f9` · **quoted from an earlier version** · 400
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `| **Potassium** — ~@@ mg/L in seawater |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-33b77c6a1d"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-33b77c6a1d` · **quoted from an earlier version** · 29
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `rather than @@ stations and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-33cad98ad5"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
@@ -55253,26 +55810,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Køge Bugt is at least two things … The data say they are two.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-3fd556a8ee"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-3fd556a8ee` · **quoted from an earlier version** · 17
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `at 55°N runs 7–@@ h, so the diel` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-40d7d2d71f"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-40d7d2d71f` · **quoted from an earlier version** · 127
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `a register of @@ — no propagule` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-41064710c0"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -55282,16 +55819,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `DKK. With it: 1@@–30,000.** ### The kit` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-413495952e"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-413495952e` · **quoted from an earlier version** · 6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `custodian prefixes**, spanning @@–75 km in` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-419e934367"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -55383,26 +55910,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `and assigned by point-in-polygon to the same boundaries … contain none visited in ten or more` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-4730c226fa"></a>
-### As published at `4469fc7` in `docs/CURRENTS.md`
-
-`F-4730c226fa` · **quoted from an earlier version** · roughly 1 km behind free registration
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CURRENTS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CURRENTS.md)
-- **Located by:** `regional reanalysis at @@. Everything here` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
-<a id="F-474b6268ab"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-474b6268ab` · **quoted from an earlier version** · 31
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `here from @@ years of` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-47745f918f"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -55452,16 +55959,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `Danish Fe/S/PTOT — **@@** (`openproblems/R6.md`) | |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [TRIAGE.md](TRIAGE.md)
-
-<a id="F-49939f0bc0"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-49939f0bc0` · **quoted from an earlier version** · 28
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `nitrogen — against @@–32% for the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-4a3041beab"></a>
 ### As published at `4469fc7` in `docs/LANDBRUG.md`
@@ -55523,16 +56020,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `And note what the same work did to the … which is nothing` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-4e5883afe7"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-4e5883afe7` · **quoted from an earlier version** · 80
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `Straw at C:N @@ starves the next` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-4f7d9a97f4"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -55583,16 +56070,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `unattended node | 900–@@ | | *or* **Stage,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-541476145e"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-541476145e` · **quoted from an earlier version** · 9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `push pH above @@ — which is` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-543a36873c"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -55602,16 +56079,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `fit one | 1,500–@@ | | **Conductivity +` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-5538c1e648"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-5538c1e648` · **quoted from an earlier version** · 4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `stations, @@ water bodies` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-5666403060"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
@@ -55673,16 +56140,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `in the rain | @@–10,000 | ### The` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-584404c498"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-584404c498` · **quoted from an earlier version** · 1,392
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `quarterly, 2016–2021, covering @@ of 1,415 stations.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-58d724764c"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
 
@@ -55713,26 +56170,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `DCE report a mean … That is not` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-5f72f1ce6c"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-5f72f1ce6c` · **quoted from an earlier version** · 11
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `eelgrass requirement, roughly @@-14% of surface` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-6026be9800"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-6026be9800` · **quoted from an earlier version** · 32.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `two ingredients: @@% urea,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-60304f7199"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -55742,16 +56179,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `every other reading | @@–2,000 | | **fDOM` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-623bb6b70b"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-623bb6b70b` · **quoted from an earlier version** · 11.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `paint together @@%. Its` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-62e34f06e1"></a>
 ### As published at `4469fc7` in `docs/AREAS.md`
@@ -55773,26 +56200,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The boundary carries a little information … whether they behave alike.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-63d4a31ba2"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-63d4a31ba2` · **quoted from an earlier version** · 25
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `soil under @@ cm deep` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-641ffb3a1a"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-641ffb3a1a` · **quoted from an earlier version** · 60.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `Danish water, at @@% of the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-6426e51dc2"></a>
 ### As published at `4469fc7` in `docs/AREAS.md`
 
@@ -55812,16 +56219,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `@@ Ah | Sized for December,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-651654dca1"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-651654dca1` · **quoted from an earlier version** · 1.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `| **Magnesium** — ~@@ g/L in seawater |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-66fe0fac0b"></a>
 ### As published at `4469fc7` in `docs/EXPOSURE.md`
@@ -55843,16 +56240,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `good used one | @@–60,000 | | Bottle` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-6924bdb204"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-6924bdb204` · **quoted from an earlier version** · 11
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `requirement - roughly @@-14% of surface` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-69567d4867"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
 
@@ -55873,16 +56260,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `judged flat @@, where` - the value is read out of that text when the page is built, never typed
 - **Used in:** [LANDBRUG.md](LANDBRUG.md)
 
-<a id="F-6acdc6593d"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-6acdc6593d` · **quoted from an earlier version** · ninety-eight stories
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `answer, it produces @@ and a fight` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
-
 <a id="F-6b3b162e9f"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -55902,16 +56279,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/OBSERVING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/OBSERVING.md)
 - **Located by:** `Sources: DCE/Aarhus Universitet's method report … each tagged with the water body it sits in.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6c12a04eac"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-6c12a04eac` · **quoted from an earlier version** · 7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `daylight at 55°N runs @@–17 h, so the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-6c4259e8e7"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -55973,16 +56340,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `…with a fitted load→indicator model … % |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-74d14c70cf"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-74d14c70cf` · **quoted from an earlier version** · over 40%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `severe fraction - @@ of the affected` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
 <a id="F-74f7022d25"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56043,16 +56400,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Not rare, and not Danish … reports for Denmark` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-7d974b2f72"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-7d974b2f72` · **quoted from an earlier version** · 46.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `g of urea at @@% nitrogen, so roughly` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-7e38eabca1"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56073,16 +56420,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `a standard method @@ | | **F13**` - the value is read out of that text when the page is built, never typed
 - **Used in:** [TRIAGE.md](TRIAGE.md)
 
-<a id="F-7f2498a2c1"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-7f2498a2c1` · **quoted from an earlier version** · 14
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `requirement - roughly 11-@@% of surface irradiance` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-7fdf60bf01"></a>
 ### As published at `4469fc7` in `docs/EXPOSURE.md`
 
@@ -56092,16 +56429,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/EXPOSURE.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/EXPOSURE.md)
 - **Located by:** `including the @@ documents used` - the value is read out of that text when the page is built, never typed
 - **Used in:** [EXPOSURE.md](EXPOSURE.md)
-
-<a id="F-808fb11b49"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-808fb11b49` · **quoted from an earlier version** · 2.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `faster: roughly −@@% saturation per` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-810bd4692e"></a>
 ### As published at `4469fc7` in `docs/AREAS.md`
@@ -56143,16 +56470,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `eMoF carries @@, open` - the value is read out of that text when the page is built, never typed
 - **Used in:** [TRIAGE.md](TRIAGE.md)
 
-<a id="F-842474d0c4"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-842474d0c4` · **quoted from an earlier version** · 46.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `@@% nitrogen by mass, so the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-84b5f4ebc1"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56173,36 +56490,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `What the observing system is actually built to see … the other has a model.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-86ea44b26b"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-86ea44b26b` · **quoted from an earlier version** · 14
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `requirement, roughly 11-@@% of surface` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-870f487260"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-870f487260` · **quoted from an earlier version** · 750
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `BOD from @@ plants. **Predicts.**` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-8768afd59e"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-8768afd59e` · **quoted from an earlier version** · ±16
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `modelled at @@ percentage points.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
 <a id="F-88cfe49728"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56212,16 +56499,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `**A club or a municipality** | @@` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-8a26cacd3a"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-8a26cacd3a` · **quoted from an earlier version** · 55
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `and daylight at @@°N runs` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-8d8b177386"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -56242,16 +56519,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `operation the ~@@% figure is` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-907b817c89"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-907b817c89` · **quoted from an earlier version** · 1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `is transferable - mix @@-10% of a suppressive` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-9101d65de2"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -56283,26 +56550,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `fDOM and 15,000–@@ with it.** One` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-91768b0277"></a>
-### As published at `4469fc7` in `docs/CURRENTS.md`
-
-`F-91768b0277` · **quoted from an earlier version** · flat, 38–72 mm/month, slight Jun–Aug and Oct maxima
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CURRENTS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CURRENTS.md)
-- **Located by:** `Total rainfall | @@ | | Wave-driven` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
-<a id="F-91c171b936"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-91c171b936` · **quoted from an earlier version** · 4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `bodies and @@ custodian prefixes**,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-9376ea98f2"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56312,16 +56559,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `| 24 | 3@@–720,000 | | Samplers,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-93edb1bcc1"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-93edb1bcc1` · **quoted from an earlier version** · 35 years
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `nitrogen. 1990-2025 is @@ - longer than` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-96567c6688"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -56363,16 +56600,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `roughly 5,000–@@ DKK without` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-991a53be8c"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-991a53be8c` · **quoted from an earlier version** · 1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `roughly Si:N at @@:1 for diatoms` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-99457c9672"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56413,16 +56640,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `sedimentkemi `Emne_12_19` (@@). `openproblems/A7.md`: armchair` - the value is read out of that text when the page is built, never typed
 - **Used in:** [TRIAGE.md](TRIAGE.md)
 
-<a id="F-9aea1e5b6c"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-9aea1e5b6c` · **quoted from an earlier version** · 0.6%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `is counted at @@ of a national` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
 <a id="F-9b35801653"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
 
@@ -56442,16 +56659,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/OBSERVING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/OBSERVING.md)
 - **Located by:** `What the observing system is actually built to see … the other has a model.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9d78cb4965"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-9d78cb4965` · **quoted from an earlier version** · 80-90%
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `Eelgrass down @@ from historical` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
 
 <a id="F-9d8ae9cc85"></a>
 ### As published at `4469fc7` in `docs/EXPERIMENTS.md`
@@ -56503,16 +56710,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `reads the weather | @@–3,000 | | **Turbidity,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-a2a460cdab"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-a2a460cdab` · **quoted from an earlier version** · 23.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `ratio, figshare 20310255, **@@ MB, CC BY 4.0**,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-a334c0c404"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56533,26 +56730,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `not July | 800–@@ | | **Enclosure and` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-a3c9d08b07"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-a3c9d08b07` · **quoted from an earlier version** · 193 tonnes
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `year, alongside @@ of screenings.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
-<a id="F-a3f5854987"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-a3f5854987` · **quoted from an earlier version** · 16
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `Redfield C:N:P at 106:@@:1 and roughly Si:N` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-a4bbf1fa8f"></a>
 ### As published at `4469fc7` in `docs/RESIDUAL.md`
 
@@ -56562,16 +56739,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/RESIDUAL.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/RESIDUAL.md)
 - **Located by:** `The figure everyone quotes is that … of nitrogen` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a4be86e0ba"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-a4be86e0ba` · **quoted from an earlier version** · 1,415
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `@@ stations. Not fetched.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-a5ca20b124"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -56593,16 +56760,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Nodes | Tier-@@ hardware | fDOM` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-a67a96fc33"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-a67a96fc33` · **quoted from an earlier version** · 3,100
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `which 600–@@ t/year ultimately` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-a6f27e3e69"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -56612,16 +56769,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `over two seasons | ~@@` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-a7de46f39f"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-a7de46f39f` · **quoted from an earlier version** · 25
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `the flat @@% rule` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-a893594c73"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -56633,16 +56780,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `pairs | 24 | @@–720,000 | | Samplers,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-a92340b4e9"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-a92340b4e9` · **quoted from an earlier version** · 100
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `saturation reads @@–108% and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-a939d23b80"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
 
@@ -56652,16 +56789,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `km and @@ in the straits` - the value is read out of that text when the page is built, never typed
 - **Used in:** [TRIAGE.md](TRIAGE.md)
-
-<a id="F-a9e4a5a346"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-a9e4a5a346` · **quoted from an earlier version** · 2.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `different.** Seawater carries @@ g/L of sulphate.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-ab995d2725"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -56713,36 +56840,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `the tier-@@ list does` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-afe52931e1"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-afe52931e1` · **quoted from an earlier version** · 166
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `@@ mechanisms here are` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
-
-<a id="F-afebe07874"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-afebe07874` · **quoted from an earlier version** · 20
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `and another @@ need an` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
-
-<a id="F-b010462b65"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-b010462b65` · **quoted from an earlier version** · 530
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `roughly 480–@@ kJ/mol, and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-b097822783"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
 
@@ -56762,16 +56859,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `measured and @@% modelled` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-b35e6dda08"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-b35e6dda08` · **quoted from an earlier version** · 40
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `at about @@% carbon-use` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-b3d8197061"></a>
 ### As published at `4469fc7` in `docs/AREAS.md`
@@ -56793,26 +56880,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `den tælles til @@ af en national` - the value is read out of that text when the page is built, never typed
 - **Used in:** [LANDBRUG.md](LANDBRUG.md)
 
-<a id="F-b4bc64ff36"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-b4bc64ff36` · **quoted from an earlier version** · 13,900
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `release at 5,500–@@ t/year, of which` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-b5c1ad7c90"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-b5c1ad7c90` · **quoted from an earlier version** · 75
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `prefixes**, spanning 6–@@ km in the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-b603d9648c"></a>
 ### As published at `4469fc7` in `docs/EXPOSURE.md`
 
@@ -56822,26 +56889,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/EXPOSURE.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/EXPOSURE.md)
 - **Located by:** `calf meat at @@ ng/g, analysed` - the value is read out of that text when the page is built, never typed
 - **Used in:** [EXPOSURE.md](EXPOSURE.md)
-
-<a id="F-b6b0aed04a"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-b6b0aed04a` · **quoted from an earlier version** · 5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `energy. Freshwater carries @@-30 mg/L of` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-b6c05c61c3"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-b6c05c61c3` · **quoted from an earlier version** · 26
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `of the @@ licensed sites.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-b82a69c091"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -56863,26 +56910,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `MPPT controller, @@ V LiFePO₄` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-ba36c5b463"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-ba36c5b463` · **quoted from an earlier version** · 106
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `Redfield C:N:P at @@:16:1 and roughly` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-bae15f02d3"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-bae15f02d3` · **quoted from an earlier version** · 32.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `solution - AdBlue, @@% urea -` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-bb4ac11901"></a>
 ### As published at `4469fc7` in `docs/CATEGORY.md`
 
@@ -56892,16 +56919,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/CATEGORY.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CATEGORY.md)
 - **Located by:** `Open any dataset … a sonde serial number` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bc037b1876"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-bc037b1876` · **quoted from an earlier version** · 60.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `tyres are **@@%**, footwear` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-bc7ef03921"></a>
 ### As published at `4469fc7` in `docs/RESIDUAL.md`
@@ -56932,16 +56949,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/OBSERVING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/OBSERVING.md)
 - **Located by:** `Stratification appears only as … models.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bcf90ce30f"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-bcf90ce30f` · **quoted from an earlier version** · 2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `@@ mg/L, by depth, duration and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-bd341d266c"></a>
 ### As published at `4469fc7` in `docs/EXPOSURE.md`
@@ -56993,26 +57000,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `and assigned by point-in-polygon to the same boundaries … contain none visited in ten or more` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-c0412f76c7"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-c0412f76c7` · **quoted from an earlier version** · 20
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `that only **10–@@% of stormwater` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-c1cca1ada0"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-c1cca1ada0` · **quoted from an earlier version** · 127
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `a register of @@. That absence` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-c27b76f61d"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -57043,26 +57030,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| | **Power** | @@–20 W panel, MPPT` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-c7a23a3d29"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-c7a23a3d29` · **quoted from an earlier version** · 67.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `@@% demineralised water. Urea,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-c88a0de97f"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-c88a0de97f` · **quoted from an earlier version** · 87
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** ``Prøvetager` blank on @@% (1.2M-row sample).` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-c909e27c50"></a>
 ### As published at `4469fc7` in `docs/AREAS.md`
 
@@ -57072,16 +57039,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/AREAS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/AREAS.md)
 - **Located by:** `and assigned by point-in-polygon to the same boundaries … contain none visited in ten or more` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ca17d119b3"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-ca17d119b3` · **quoted from an earlier version** · 0.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `EU-agreed ratio of @@. Both halves` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-ca2cc6af30"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
@@ -57273,16 +57230,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `network is admissible | @@–5,000 | | A` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-dc3abb3da5"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-dc3abb3da5` · **quoted from an earlier version** · 108
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `saturation reads 100–@@% and the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-dc9a6f5cc9"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -57353,16 +57300,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `thing that fails | @@–800 | | Radio` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-e0af8d6bbb"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-e0af8d6bbb` · **quoted from an earlier version** · 600
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `t/year, of which @@–3,100 t/year ultimately` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-e138091385"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -57373,16 +57310,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `with fDOM, @@ matched pairs` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-e263409b28"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-e263409b28` · **quoted from an earlier version** · 8-24 years
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `catchments show @@ between a` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
 <a id="F-e4a8aec21b"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -57392,36 +57319,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `@@° module; with a wiper` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-e4c4bea666"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-e4c4bea666` · **quoted from an earlier version** · 2.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `**Sulphur** — sulphate, ~@@ g/L — effectively unlimited` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
-<a id="F-e5bfbf1c28"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-e5bfbf1c28` · **quoted from an earlier version** · 1–2 years
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `sulphide, existing stations, @@ | | **Lillebælt` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
-
-<a id="F-e604eeacbb"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-e604eeacbb` · **quoted from an earlier version** · 32
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `— against 28–@@% for the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-e68e0faced"></a>
 ### As published at `4469fc7` in `docs/EXPERIMENTS.md`
@@ -57452,16 +57349,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `| Above ~@@ is the accepted` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-e889159395"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-e889159395` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `that only **@@–20% of stormwater` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-e94acdd814"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
@@ -57523,16 +57410,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The threshold a model must clear … its own model is held to.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-efa8a5f68c"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-efa8a5f68c` · **quoted from an earlier version** · twenty-six-fold
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `already varies @@ between bays,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
-
 <a id="F-eff19fecea"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
 
@@ -57542,16 +57419,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/OBSERVING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/OBSERVING.md)
 - **Located by:** `The boundary carries a little information … whether they behave alike.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f176ceddca"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-f176ceddca` · **quoted from an earlier version** · 5,500
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `microplastic release at @@–13,900 t/year, of` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-f1a292a8cb"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -57573,16 +57440,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `EZO-EC with a K=@@ probe, or an industrial` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-f2cc6fe5bf"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-f2cc6fe5bf` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `@@ per cent - along` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-f329afb187"></a>
 ### As published at `4469fc7` in `docs/AREAS.md`
 
@@ -57593,26 +57450,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Same width — a percentage is fine, including of an absence … nothing rests on having found anything else` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-f343d59998"></a>
-### As published at `4469fc7` in `docs/CAUSATION.md`
-
-`F-f343d59998` · **quoted from an earlier version** · ~1.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CAUSATION.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CAUSATION.md)
-- **Located by:** `carbohydrate and @@ for protein.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CAUSATION.md](CAUSATION.md)
-
-<a id="F-f354184325"></a>
-### As published at `4469fc7` in `docs/CURRENTS.md`
-
-`F-f354184325` · **quoted from an earlier version** · roughly 9 km grid
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/CURRENTS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/CURRENTS.md)
-- **Located by:** `model on a @@. The Danish` - the value is read out of that text when the page is built, never typed
-- **Used in:** [CURRENTS.md](CURRENTS.md)
-
 <a id="F-f3731a63d2"></a>
 ### As published at `4469fc7` in `docs/EXPERIMENTS.md`
 
@@ -57622,16 +57459,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/EXPERIMENTS.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/EXPERIMENTS.md)
 - **Located by:** `Two points @@ km apart` - the value is read out of that text when the page is built, never typed
 - **Used in:** [EXPERIMENTS.md](EXPERIMENTS.md)
-
-<a id="F-f3ffed2f4a"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-f3ffed2f4a` · **quoted from an earlier version** · 40
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `matters here, because [@@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
 
 <a id="F-f4f206ffed"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
@@ -57663,16 +57490,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| 8 | 200,000–@@ | | Shared kit,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
 
-<a id="F-f6324158bc"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-f6324158bc` · **quoted from an earlier version** · 1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `faecal solids, at @@ g O₂ demand` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
-
 <a id="F-f654c05a17"></a>
 ### As published at `4469fc7` in `docs/SENSING.md`
 
@@ -57682,16 +57499,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `total** | | **1.5–@@ M DKK** | **So` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-f68411560b"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-f68411560b` · **quoted from an earlier version** · 31
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `modelled from @@ years of` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-f8b98d1693"></a>
 ### As published at `4469fc7` in `docs/RESIDUAL.md`
@@ -57713,16 +57520,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `…with a fitted load→indicator model … % |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
-<a id="F-f9e7673402"></a>
-### As published at `4469fc7` in `docs/PLACES.md`
-
-`F-f9e7673402` · **quoted from an earlier version** · 166
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/PLACES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/PLACES.md)
-- **Located by:** `@@ mechanisms are unscoreable](hypodrafts/TRIAGE.md)` - the value is read out of that text when the page is built, never typed
-- **Used in:** [PLACES.md](PLACES.md)
-
 <a id="F-fb3c0f06b7"></a>
 ### As published at `4469fc7` in `docs/OBSERVING.md`
 
@@ -57742,16 +57539,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/OBSERVING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/OBSERVING.md)
 - **Located by:** `What the observing system is actually built to see … the other has a model.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-fdc443bf67"></a>
-### As published at `4469fc7` in `docs/HYPOTHESES.md`
-
-`F-fdc443bf67` · **quoted from an earlier version** · 98
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/HYPOTHESES.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/HYPOTHESES.md)
-- **Located by:** `deaminase, are @@% identical` - the value is read out of that text when the page is built, never typed
-- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-ff324d5307"></a>
 ### As published at `4469fc7` in `docs/hypodrafts/TRIAGE.md`
@@ -57782,86 +57569,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/SENSING.md` at `4469fc7`](https://github.com/Jjokulian/copenhagen-waterways/blob/4469fc7/docs/SENSING.md)
 - **Located by:** `| 5 × @@ | 2 ×` - the value is read out of that text when the page is built, never typed
 - **Used in:** [SENSING.md](SENSING.md)
-
-<a id="F-049d448e27"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-049d448e27` · **quoted from an earlier version** · 8.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `impervious surface (@@% of the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-4439d5d886"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-4439d5d886` · **quoted from an earlier version** · 344
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `catchments, holding **@@ ha of impervious` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-6537aaea1f"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-6537aaea1f` · **quoted from an earlier version** · 766
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `catchments:** 37 of @@ catchments, holding **344` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-6883213dc7"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-6883213dc7` · **quoted from an earlier version** · 4.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@× enrichment.** New districts` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-a60e8a0f98"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-a60e8a0f98` · **quoted from an earlier version** · 37
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `today's sewer catchments:** @@` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-b522059799"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-b522059799` · **quoted from an earlier version** · 14.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `til recipient* are @@% of impervious` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-bbde0214c6"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-bbde0214c6` · **quoted from an earlier version** · 65.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `covered they are **@@% — a` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-d9727a2098"></a>
-### As published at `44e1b0b` in `docs/OPEN_PROBLEMS.md`
-
-`F-d9727a2098` · **quoted from an earlier version** · 344
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `44e1b0b`](https://github.com/Jjokulian/copenhagen-waterways/blob/44e1b0b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `that, the @@ ha can` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
 <a id="F-01ad4a7e0f"></a>
 ### As published at `5df1889` in `docs/DATA_SOURCES.md`
@@ -58142,6 +57849,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/DATA_SOURCES.md` at `5df1889`](https://github.com/Jjokulian/copenhagen-waterways/blob/5df1889/docs/DATA_SOURCES.md)
 - **Located by:** `against measured chlorophyll. Its … are data and not faults.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8ec238aa8e"></a>
+### As published at `5df1889` in `docs/FLOOD_GAP.md`
+
+`F-8ec238aa8e` · **quoted from an earlier version** · 5.932
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/FLOOD_GAP.md` at `5df1889`](https://github.com/Jjokulian/copenhagen-waterways/blob/5df1889/docs/FLOOD_GAP.md)
+- **Located by:** `Across @@ km² of modelled flooding` - the value is read out of that text when the page is built, never typed
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-91c81cd354"></a>
 ### As published at `5df1889` in `docs/DATA_SOURCES.md`
@@ -63822,276 +63539,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Where:** [`docs/hypodrafts/K1.md` at `80e8441`](https://github.com/Jjokulian/copenhagen-waterways/blob/80e8441/docs/hypodrafts/K1.md)
 - **Located by:** `both. Sampling @@ valid cell-days` - the value is read out of that text when the page is built, never typed
 - **Used in:** [K1.md](K1.md)
-
-<a id="F-0a502f5254"></a>
-### As published at `86ecfe6` in `docs/SOLUTIONS.md`
-
-`F-0a502f5254` · **quoted from an earlier version** · hundred-year phenomenon
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/SOLUTIONS.md` at `86ecfe6`](https://github.com/Jjokulian/copenhagen-waterways/blob/86ecfe6/docs/SOLUTIONS.md)
-- **Located by:** `are not a @@. They happen` - the value is read out of that text when the page is built, never typed
-- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
-
-<a id="F-0f611d6dd7"></a>
-### As published at `86ecfe6` in `docs/SOLUTIONS.md`
-
-`F-0f611d6dd7` · **quoted from an earlier version** · a handful of times a decade
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/SOLUTIONS.md` at `86ecfe6`](https://github.com/Jjokulian/copenhagen-waterways/blob/86ecfe6/docs/SOLUTIONS.md)
-- **Located by:** `already overwhelmed, @@. Overflows` - the value is read out of that text when the page is built, never typed
-- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
-
-<a id="F-31e4317e4a"></a>
-### As published at `86ecfe6` in `docs/SOLUTIONS.md`
-
-`F-31e4317e4a` · **quoted from an earlier version** · multi-century programme
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/SOLUTIONS.md` at `86ecfe6`](https://github.com/Jjokulian/copenhagen-waterways/blob/86ecfe6/docs/SOLUTIONS.md)
-- **Located by:** `this is a @@, and nothing` - the value is read out of that text when the page is built, never typed
-- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
-
-<a id="F-4104622f9d"></a>
-### As published at `86ecfe6` in `docs/SOLUTIONS.md`
-
-`F-4104622f9d` · **quoted from an earlier version** · a century ago
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/SOLUTIONS.md` at `86ecfe6`](https://github.com/Jjokulian/copenhagen-waterways/blob/86ecfe6/docs/SOLUTIONS.md)
-- **Located by:** `plumbing decision made @@. ##` - the value is read out of that text when the page is built, never typed
-- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
-
-<a id="F-7ae819b34b"></a>
-### As published at `86ecfe6` in `docs/SOLUTIONS.md`
-
-`F-7ae819b34b` · **quoted from an earlier version** · hundred-year event
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/SOLUTIONS.md` at `86ecfe6`](https://github.com/Jjokulian/copenhagen-waterways/blob/86ecfe6/docs/SOLUTIONS.md)
-- **Located by:** `designed against a @@. A skybrudsvej` - the value is read out of that text when the page is built, never typed
-- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
-
-<a id="F-8b6f4b207a"></a>
-### As published at `86ecfe6` in `docs/SOLUTIONS.md`
-
-`F-8b6f4b207a` · **quoted from an earlier version** · a handful of structures dominates the load the way a handful dominates the volume
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/SOLUTIONS.md` at `86ecfe6`](https://github.com/Jjokulian/copenhagen-waterways/blob/86ecfe6/docs/SOLUTIONS.md)
-- **Located by:** `out whether @@, and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
-
-<a id="F-b3c077046e"></a>
-### As published at `86ecfe6` in `docs/SOLUTIONS.md`
-
-`F-b3c077046e` · **quoted from an earlier version** · an order of magnitude
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/SOLUTIONS.md` at `86ecfe6`](https://github.com/Jjokulian/copenhagen-waterways/blob/86ecfe6/docs/SOLUTIONS.md)
-- **Located by:** `assumption is wrong by @@. There is no` - the value is read out of that text when the page is built, never typed
-- **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
-
-<a id="F-5c3549afbe"></a>
-### As published at `8b14517` in `docs/POLITICS.md`
-
-`F-5c3549afbe` · **quoted from an earlier version** · two of the three parties that voted against
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/POLITICS.md` at `8b14517`](https://github.com/Jjokulian/copenhagen-waterways/blob/8b14517/docs/POLITICS.md)
-- **Located by:** `worst for @@.** Dansk` - the value is read out of that text when the page is built, never typed
-- **Used in:** [POLITICS.md](POLITICS.md)
-
-<a id="F-7b12796335"></a>
-### As published at `8b14517` in `docs/POLITICS.md`
-
-`F-7b12796335` · **quoted from an earlier version** · two of the three parties that voted against
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/POLITICS.md` at `8b14517`](https://github.com/Jjokulian/copenhagen-waterways/blob/8b14517/docs/POLITICS.md)
-- **Located by:** `claims from @@. The` - the value is read out of that text when the page is built, never typed
-- **Used in:** [POLITICS.md](POLITICS.md)
-
-<a id="F-a4ad53404d"></a>
-### As published at `8b14517` in `docs/POLITICS.md`
-
-`F-a4ad53404d` · **quoted from an earlier version** · Six of the seven
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/POLITICS.md` at `8b14517`](https://github.com/Jjokulian/copenhagen-waterways/blob/8b14517/docs/POLITICS.md)
-- **Located by:** `condition. @@ `state_claim`` - the value is read out of that text when the page is built, never typed
-- **Used in:** [POLITICS.md](POLITICS.md)
-
-<a id="F-aceb6a2437"></a>
-### As published at `8b14517` in `docs/POLITICS.md`
-
-`F-aceb6a2437` · **quoted from an earlier version** · 18
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/POLITICS.md` at `8b14517`](https://github.com/Jjokulian/copenhagen-waterways/blob/8b14517/docs/POLITICS.md)
-- **Located by:** `af @@ stemte` - the value is read out of that text when the page is built, never typed
-- **Used in:** [POLITICS.md](POLITICS.md)
-
-<a id="F-b79f0363bb"></a>
-### As published at `8b14517` in `docs/POLITICS.md`
-
-`F-b79f0363bb` · **quoted from an earlier version** · Three of the quotes
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/POLITICS.md` at `8b14517`](https://github.com/Jjokulian/copenhagen-waterways/blob/8b14517/docs/POLITICS.md)
-- **Located by:** `contains them. @@ carry a` - the value is read out of that text when the page is built, never typed
-- **Used in:** [POLITICS.md](POLITICS.md)
-
-<a id="F-f430a0e4aa"></a>
-### As published at `8b14517` in `docs/POLITICS.md`
-
-`F-f430a0e4aa` · **quoted from an earlier version** · Two of the seven
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/POLITICS.md` at `8b14517`](https://github.com/Jjokulian/copenhagen-waterways/blob/8b14517/docs/POLITICS.md)
-- **Located by:** `monitoring programme. | @@ point at something` - the value is read out of that text when the page is built, never typed
-- **Used in:** [POLITICS.md](POLITICS.md)
-
-<a id="F-195f7fba8a"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-195f7fba8a` · **quoted from an earlier version** · 119–34
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `| **L5** passed @@, becoming **LOV` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-31e7b1cd40"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-31e7b1cd40` · **quoted from an earlier version** · other ten catchments
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `across the @@ analysed.)* Three` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-3423f8a779"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-3423f8a779` · **quoted from an earlier version** · 68% of their debt
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `carried @@ short-term` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-3a24fefa33"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-3a24fefa33` · **quoted from an earlier version** · one filing
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `present on about @@ in twenty, because` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-58666d9fb4"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-58666d9fb4` · **quoted from an earlier version** · 24% for dairy
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `short-term against @@, and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-5e757da5d7"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-5e757da5d7` · **quoted from an earlier version** · thousands of animal units against a single declared
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `businesses running @@ hectare. **Those` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-7a0306350f"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-7a0306350f` · **quoted from an earlier version** · a few hundred to a few thousand
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `holding of @@ animal units,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-933da51e9b"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-933da51e9b` · **quoted from an earlier version** · a few hundred businesses
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `animals binds on @@ — 835 of` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-aadac35963"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-aadac35963` · **quoted from an earlier version** · A handful are
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `an operating farm. @@, on the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-ab05e13ced"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-ab05e13ced` · **quoted from an earlier version** · over fifty billion
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `assets of @@ kroner and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-bdc0d5848b"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-bdc0d5848b` · **quoted from an earlier version** · twenty-two years
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `cattle holdings for @@. It expired` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-c6a4c2c4a0"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-c6a4c2c4a0` · **quoted from an earlier version** · 250,000 ha
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `against the @@ afforestation and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-cd42aab6f9"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-cd42aab6f9` · **quoted from an earlier version** · in twenty
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `one filing @@, because` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
-
-<a id="F-e350bb64f2"></a>
-### As published at `8f4c0d1` in `docs/INCIDENCE.md`
-
-`F-e350bb64f2` · **quoted from an earlier version** · 140,000 ha
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/INCIDENCE.md` at `8f4c0d1`](https://github.com/Jjokulian/copenhagen-waterways/blob/8f4c0d1/docs/INCIDENCE.md)
-- **Located by:** `afforestation and @@ lowland targets.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
 <a id="F-2b9526ca3f"></a>
 ### As published at `9406c9b` in `data/derived/floodgap.json`
@@ -70012,445 +69459,15 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `**2,429 cells · @@ rows · 310` - the value is read out of that text when the page is built, never typed
 - **Used in:** [G1.md](G1.md)
 
-<a id="F-4ea6b77bda"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
+<a id="F-0156368344"></a>
+### As published at `c8e5a6b` in `docs/FLOOD_GAP.md`
 
-`F-4ea6b77bda` · **quoted from an earlier version** · 2.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `all, carry roughly @@ g of oxygen` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-6d4190fa07"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
-
-`F-6d4190fa07` · **quoted from an earlier version** · 6,258
+`F-0156368344` · **quoted from an earlier version** · 5.847
 
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `Of ODA's @@ positioned marine` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-783ce4e51f"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
-
-`F-783ce4e51f` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `"would remove @@ substantial line(s)",` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-8307960d14"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
-
-`F-8307960d14` · **quoted from an earlier version** · 25
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `utility reported @@ tonnes of` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-8e0ab515c0"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
-
-`F-8e0ab515c0` · **quoted from an earlier version** · 1.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `concentration. About @@ percentage points` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-aacfd39a95"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
-
-`F-aacfd39a95` · **quoted from an earlier version** · 0.1–0.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `moonlight is @@ lux against` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-c5d4ce3156"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
-
-`F-c5d4ce3156` · **quoted from an earlier version** · 22
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `least one; @@ hold none` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-c7ef2f4fbb"></a>
-### As published at `c8e5a6b` in `docs/OPEN_PROBLEMS.md`
-
-`F-c7ef2f4fbb` · **quoted from an earlier version** · 100,000
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/OPEN_PROBLEMS.md)
-- **Located by:** `lux against @@ for sun,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-05172ce1a2"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-05172ce1a2` · **quoted from an earlier version** · 82.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `Within 100 m | @@% | **67.4%** |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-0ba0a82164"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-0ba0a82164` · **quoted from an earlier version** · 41 m
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `RMS and @@ worst.** ###` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-105b2273ad"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-105b2273ad` · **quoted from an earlier version** · 0.43
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `pair's NCC from @@ to 0.64. Discarding` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-1c84e44d45"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-1c84e44d45` · **quoted from an earlier version** · 7.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `still in it — @@% of indre-by's remaining` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-2d11483b0e"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-2d11483b0e` · **quoted from an earlier version** · 1.21
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `1.56 km²; after, **@@ km²**, a 22% reduction.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-481b4d3a32"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-481b4d3a32` · **quoted from an earlier version** · 0.046
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `nearest rival of @@, a ratio` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-5255f669f7"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-5255f669f7` · **quoted from an earlier version** · 12.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `peak-to-rival ratio from @@ to 16.0 while` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-66dc334ee7"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-66dc334ee7` · **quoted from an earlier version** · 123
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `south, indre-by by @@ and 217, ladegårdsåen` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-688925e3f2"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-688925e3f2` · **quoted from an earlier version** · 33
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@** | ### What remains **Nørrebro` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-688de74991"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-688de74991` · **quoted from an earlier version** · 67.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@%** | | With a surface route` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-73fbe85529"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-73fbe85529` · **quoted from an earlier version** · 1.52
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `on land | @@ km² | **5.93` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-75b718e7b8"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-75b718e7b8` · **quoted from an earlier version** · 0.64
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@. Discarding photograph is cheap;` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-7c4c1e1f36"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-7c4c1e1f36` · **quoted from an earlier version** · 0.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `up. Amager moved @@σ in easting` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-824f5e24a1"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-824f5e24a1` · **quoted from an earlier version** · 53.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `| 72% | **@@%** | | Corridor` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-85e50bef55"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-85e50bef55` · **quoted from an earlier version** · 100–190
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `they disagreed by @@ m. Their advertised` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-8fee7bcf3a"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-8fee7bcf3a` · **quoted from an earlier version** · 1.12
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `a ratio of @@. A dense uniform` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-93aef62bc6"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-93aef62bc6` · **quoted from an earlier version** · 1.02
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `peak-to-rival ratios of @@ to 1.06 —` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-97f20d56a7"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-97f20d56a7` · **quoted from an earlier version** · 16.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@ while returning the` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-9d85193f3a"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-9d85193f3a` · **quoted from an earlier version** · 1.06
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@ — so it has no usable` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-9e7f20a6e0"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-9e7f20a6e0` · **quoted from an earlier version** · 25
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `217, ladegårdsåen by @@ and 182. The` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-9e80ccdcd3"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-9e80ccdcd3` · **quoted from an earlier version** · 195
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `moved: østerbro by @@ m east and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-a4aa27507d"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-a4aa27507d` · **quoted from an earlier version** · 182
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@. The control points` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-b1cb312478"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-b1cb312478` · **quoted from an earlier version** · 100–360
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `against the @@ m corrections` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-b99a950697"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-b99a950697` · **quoted from an earlier version** · 5.93
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `km² | **@@ km²** | | Within` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-ba4139d911"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-ba4139d911` · **quoted from an earlier version** · 1.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `@@σ. Bispebjerg's moved furthest` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-bafc63cf7a"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-bafc63cf7a` · **quoted from an earlier version** · 90.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `a planned work | @@% | **85.8%** |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-bf2b233ed1"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-bf2b233ed1` · **quoted from an earlier version** · 13–28
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `Their advertised "@@ m" was *agreement` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-c2932ce26d"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-c2932ce26d` · **quoted from an earlier version** · 85.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `| 90.5% | **@@%** | | Within` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-d0383e1d4b"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-d0383e1d4b` · **quoted from an earlier version** · 217
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `indre-by by 123 and @@, ladegårdsåen by 25` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-d0fa50ba6c"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-d0fa50ba6c` · **quoted from an earlier version** · 1.56
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `that was @@ km²; after,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-e052bc7fdd"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-e052bc7fdd` · **quoted from an earlier version** · 0.051
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `result: peak @@ against a` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-e78046261c"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-e78046261c` · **quoted from an earlier version** · 1.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `København Vest @@σ and` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-eb9fafefe2"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-eb9fafefe2` · **quoted from an earlier version** · 72
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `within 100 m | @@% | **53.5%** |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-ebc2bbc998"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-ebc2bbc998` · **quoted from an earlier version** · 4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `| 82.6% | **67.@@%** | | With` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-fe2c91edd5"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-fe2c91edd5` · **quoted from an earlier version** · 135
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `east and @@ m south,` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
-
-<a id="F-ff339addd8"></a>
-### As published at `c917745` in `docs/OPEN_PROBLEMS.md`
-
-`F-ff339addd8` · **quoted from an earlier version** · 1.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/OPEN_PROBLEMS.md` at `c917745`](https://github.com/Jjokulian/copenhagen-waterways/blob/c917745/docs/OPEN_PROBLEMS.md)
-- **Located by:** `in easting and @@σ in northing;` - the value is read out of that text when the page is built, never typed
-- **Used in:** [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
+- **Where:** [`docs/FLOOD_GAP.md` at `c8e5a6b`](https://github.com/Jjokulian/copenhagen-waterways/blob/c8e5a6b/docs/FLOOD_GAP.md)
+- **Located by:** `Across @@ km² of modelled flooding` - the value is read out of that text when the page is built, never typed
+- **Used in:** [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md)
 
 <a id="F-0380496fd0"></a>
 ### As published at `db51741` in `docs/AGENT_BRIEF.md`
@@ -71146,6 +70163,51 @@ What this site said at a past commit. A quotation of the past is permanently tru
 
 Values chosen rather than measured - a threshold, a limit. They are shown as choices, with the reason for each, because a result built on one changes if the choice does.
 
+<a id="F-2a5bb03b37"></a>
+### Stated: `atomic weight of carbon`
+
+`F-2a5bb03b37` · **stated, not measured** · 12.011
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** The IUPAC conventional standard atomic weight.
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-b9704ec017"></a>
+### Stated: `atomic weight of hydrogen`
+
+`F-b9704ec017` · **stated, not measured** · 1.008
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** The IUPAC conventional standard atomic weight.
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-6071e7e011"></a>
+### Stated: `atomic weight of nitrogen`
+
+`F-6071e7e011` · **stated, not measured** · 14.007
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** The IUPAC conventional standard atomic weight.
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-4d08c6bbb5"></a>
+### Stated: `atomic weight of oxygen`
+
+`F-4d08c6bbb5` · **stated, not measured** · 15.999
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** The IUPAC conventional standard atomic weight.
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-0b65d411be"></a>
+### Stated: `atomic weight of sulphur`
+
+`F-0b65d411be` · **stated, not measured** · 32.06
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** The IUPAC conventional standard atomic weight.
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-d758cf776f"></a>
 ### Stated: `category_split_threshold`
 
@@ -71181,6 +70243,15 @@ Values chosen rather than measured - a threshold, a limit. They are shown as cho
 - **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
 - **Why this value:** an example summer surface temperature, in °C
 - **Used in:** [DATA_SOURCES.md](DATA_SOURCES.md)
+
+<a id="F-e8c64a3b0a"></a>
+### Stated: `gram of oxygen per gram of COD`
+
+`F-e8c64a3b0a` · **stated, not measured** · 1
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** COD is expressed as the mass of oxygen consumed (the pinned Wikipedia article on chemical oxygen demand), so a gram of COD is a gram of oxygen demand by definition.
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
 <a id="F-e7d6dac80e"></a>
 ### Stated: `harmony_1_4`
@@ -71713,6 +70784,15 @@ Values chosen rather than measured - a threshold, a limit. They are shown as cho
 - **Why this value:** One year to establish the conversion ratios and shake out the fouling, one to answer the question.
 - **Used in:** [SETTLE.md](SETTLE.md)
 
+<a id="F-bb57ac4222"></a>
+### Stated: `thermochemical calorie`
+
+`F-bb57ac4222` · **stated, not measured** · 4.184
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** The thermochemical calorie is defined as exactly this many joules.
+- **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
 <a id="F-26b7938f76"></a>
 ### Stated: `x14_sensor_error_pct`
 
@@ -71771,7 +70851,7 @@ How much the compact null itself varies from one draw of blobs to another, besid
 <a id="K-AREAS-HYPCOUNT"></a>
 ### The size of the hypothesis register
 
-`K-AREAS-HYPCOUNT` · covers data/derived/hypotheses.json · **current** · read by Claude (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long; what changed is the text of two entries (B2, E6), now filled from data. The count method is untouched. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-AREAS-HYPCOUNT` · covers data/derived/hypotheses.json · **current** · read by fork w2-hyp (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long, with every id and title unchanged; what changed is text inside entries. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 The number of mechanisms and groups in the hypothesis register, read as the length of its lists.
 
@@ -71905,7 +70985,7 @@ For each flood sheet, computes the meridian convergence at the sheet's centre, o
 <a id="K-CONVEYANCE"></a>
 ### Cloudburst plan alignment length by typology
 
-`K-CONVEYANCE` · covers data/derived/conveyance.json · **current** · read by Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-CONVEYANCE` · covers data/derived/conveyance.json · **current** · read by fork w2-cs (re-read solutions.py: compute() and every constant it uses are identical to the version last read, checked by comparing their syntax trees; only page() changed - rewritten for checked claims - and the unused commit constant was replaced by the path to outfalls.json. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Measures the length of every alignment in the city's cloudburst roads-and-pipes layer and splits it by the layer's own `typologi` attribute: water carried on the surface, in a pipe, or on a 'mix' alignment the layer does not break down.
 
@@ -71935,6 +71015,40 @@ Measures the length of every alignment in the city's cloudburst roads-and-pipes 
 - **Void if:** The layer is replaced by a different edition of the plan.
 - **May support:** Claims about what the published cloudburst plan layer contains: how much alignment it draws under each of its own typology labels, and how the surface-to-pipe comparison changes with the definition of surface. It also supports the conclusion that the site's earlier conflicting figures differed in definition, not in measurement.
 - **May not:** How much of the plan is built or in service; how much water any alignment can carry; whether water on a given alignment is actually visible; which part of a 'mix' alignment is surface. Nor does it support any statement about flooding, overflows or water quality, or comparison with other scripts' 'surface route' figures, which count 'mix' as surface.
+
+<a id="K-CS-OVERFLOWS"></a>
+### Overflows a year per combined-sewer structure, in the national layer
+
+`K-CS-OVERFLOWS` · covers data/derived/outfalls.json · **current** · read by fork w2-cs (written against numeric() and the totals loop in fetch_spildevand.py, and DP02's required-data table read in the pin: the count field is a number of overflows a year. 2026-09-11; not yet read by the project owner), 2026-09-11
+
+How many overflows a year the national layer records per combined-sewer overflow structure.
+
+- **Model:** `scripts/fetch_spildevand.py` fetches the layer, coerces each property to numbers with `numeric()`, and keeps count, sum and median for a property that enough features fill in.
+- **Assumes:** The count field means what DP02 says it records: the number of overflows a year, measured or modelled.
+- **Justified because:** DP02 lists the field among the data required in PULS as a number of overflows a year, measured or modelled. ([data/derived/pins/DP02.txt](../data/derived/pins/DP02.txt))
+- **Justified because:** The totals are computed over the features that hold a number, and their count is stored beside them. ([scripts/fetch_spildevand.py](../scripts/fetch_spildevand.py))
+- **Not justified by anything yet:** Structures that leave the field empty are not in the median.
+- **Not justified by anything yet:** Whether a structure's count was measured or modelled is not in the layer.
+- **Void if:** the layer is refetched and the script is not rerun
+- **May support:** That the combined-sewer structures which report it record overflows several times a year.
+- **May not:** How much any overflow discharges, or the count at the structures that leave the field empty.
+
+<a id="K-CS-RAIN"></a>
+### The Copenhagen rain climate, and the wind in and after overflow-scale rain
+
+`K-CS-RAIN` · covers data/derived/currents_rain.json · **current** · read by Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
+
+Monthly rain, overflow-scale hours by month and the wind sector distribution at and after overflow-scale rain, over the whole Copenhagen weather record rather than the shorter current record.
+
+- **Model:** `rain_climate()` in `scripts/currents.py` reads the hourly ERA5 files the wave work fetched (`load_cph_wind`), forms the running `RAIN_WINDOW_H`-hour rain sum, marks hours at or above `EVENT_MM`, and counts by calendar month over the number of years present. Wind directions are binned into eight sectors of equal width, each centred on its compass point, with the meteorological convention that a direction is where the wind comes from; the distribution is taken over all hours and over the marked hours shifted by each lag in `LAGS_H`.
+- **Assumes:** ERA5 precipitation at one grid point stands for Copenhagen's rain.
+- **Assumes:** An hour whose preceding `RAIN_WINDOW_H`-hour total reaches `EVENT_MM` is rain on the scale that fills a combined sewer; the threshold is a stated choice, not a measured overflow.
+- **Justified because:** Counts and sums are taken directly over the hourly records; the month divisor is the number of calendar years present. ([scripts/currents.py](../scripts/currents.py))
+- **Not justified by anything yet:** A reanalysis smooths short convective bursts, so hours of intense rain are probably under-counted, most in the months when rain is convective.
+- **Not justified by anything yet:** No overflow was observed: the overflow-scale hours are a rain proxy.
+- **Void if:** the weather files are re-fetched and the report is not rerun
+- **May support:** When in the year intense rain comes in the reanalysis, how rain totals vary by month, and from which sector the wind blows in and after such rain.
+- **May not:** When any sewer actually overflowed, or how much.
 
 <a id="K-CYCLES"></a>
 ### Surface oxygen samples placed by sun elevation
@@ -72061,7 +71175,7 @@ One streaming pass over the whole CTD extract that re-derives the counts the hyp
 <a id="K-DRAFTSA-CURRENTS"></a>
 ### Held circulation field against published peak speeds
 
-`K-DRAFTSA-CURRENTS` · covers data/derived/currents_validate.json · **current** · read by Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-DRAFTSA-CURRENTS` · covers data/derived/currents_validate.json · **current** · read by Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Checks the held circulation field's speeds against published peak speeds at named points.
 
@@ -72258,7 +71372,7 @@ Reads each figure INCIDENCE.md takes from a regulation or from the NUAR report o
 <a id="K-FARM-INCIDENCE"></a>
 ### Who carries the nitrogen requirement: herds, land and filed accounts, joined on CVR
 
-`K-FARM-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-FARM-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by fork w2-in (re-read: socialcontext.py's compute part - read_registers() through compute() and main() - is identical to the version last read, verified by diff; only the page-writing part was rewritten into checked claims and the self-quotation helper removed. The fields covered are written by the unchanged code. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Joins the sibling project's livestock register, declared field parcels, CVR master data and parsed annual accounts on the CVR number, and aggregates them into cohorts - by enterprise type, legal form, place, organic status and filing status - with every figure a count, a sum, a share or a positional statistic over a named cohort.
 
@@ -72440,7 +71554,7 @@ Counts the designs in the experiment register, the desk-scale ones among them, a
 <a id="K-FLOOD-SOLUTIONS"></a>
 ### Copenhagen's sewer, its plan, its infiltration, and the national overflow register
 
-`K-FLOOD-SOLUTIONS` · covers data/derived/solutions.json · **current** · read by Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-FLOOD-SOLUTIONS` · covers data/derived/solutions.json · **current** · read by fork w2-cs (re-read solutions.py: compute() and every constant it uses are identical to the version last read, checked by comparing their syntax trees; only page() changed - rewritten for checked claims - and the unused commit constant was replaced by the path to outfalls.json. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Reads the city's catchment and infiltration layers and the national overflow register, and summarises how much of Copenhagen is combined sewer, what the plan changes, what infiltration has disconnected, and how concentrated the recorded overflow volume is.
 
@@ -72495,10 +71609,30 @@ Puts the depth bands recovered from the city's published flood-model sheets onto
 - **May support:** How much ground the city's published cloudburst model paints at or above the threshold depth, within the area the recovered sheets cover, as read by this pipeline. It serves as the denominator for floodgap's statements about how much of that modelled flooding lies near planned or built works.
 - **May not:** That this area has flooded or will flood. It says nothing about the city as it is now: districts built since the model lie outside every sheet (`scripts/export_flood.py:68`), and the model has not been re-run on current terrain (`docs/OPEN_PROBLEMS.md:345`). It covers no flooding outside the sheets' footprint, gives no volume or depth beyond the band threshold, and is not precise to the digits printed, given resampling and sensitivity to placement.
 
+<a id="K-HY-EVIDENCE"></a>
+### Layer counts, solstice day lengths and the sign-flip geometry the hypotheses page computes
+
+`K-HY-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by fork w2-hyp (written against _layer_counts(), _daylight() and _sign_flips() in hypotheses.py and sun_events() in daylight.py; the counts match the fetched layers' features and the day lengths and distances were recomputed by hand. 2026-09-11; not yet read by the project owner), 2026-09-11
+
+Facts the hypotheses page and its data page state about the national layers, the length of the day at the solstices, and the flagged sign-flip stations.
+
+- **Model:** `load_values()` in `scripts/hypotheses.py` counts the features of each layer named in `LAYERS`, reading each small layer whole; asks `sun_events()` in `scripts/daylight.py` for sunrise and sunset on each day in `DAYLIGHT` at its latitude and longitude; and, for the stations `flags.json` flags as a batch sign flip, counts their water bodies and prefixes and the great-circle distances between their series positions.
+- **Assumes:** One feature is one site, ground, area or plant.
+- **Assumes:** Sunrise and sunset are where the centre of the sun crosses the geometric horizon, as `sun_events()` finds them; refraction is not applied.
+- **Assumes:** A station's series position is where its samples were taken.
+- **Justified because:** The counts are of the fetched layers' features, read whole. ([scripts/hypotheses.py](../scripts/hypotheses.py))
+- **Justified because:** The day lengths come from the project's own solar code, the one that places samples against the sun. ([scripts/daylight.py](../scripts/daylight.py))
+- **Justified because:** The stations are the ones the flag record names; the record itself is the evidence for the flag. ([docs/data/areas/flags.json](../docs/data/areas/flags.json))
+- **Not justified by anything yet:** Nothing checks whether one physical site appears as more than one feature.
+- **Not justified by anything yet:** What a station-number prefix encodes is not verified: the flag record calls them custodians.
+- **Void if:** a layer is refetched, or the flag record changes, and the page is not rebuilt
+- **May support:** How many features each layer holds, how long the solstice days are at that latitude, and how the flagged stations are spread.
+- **May not:** That the flagged stations share a custodian, or that every licensed site is in use.
+
 <a id="K-HYPOTHESES-EVIDENCE"></a>
 ### What the hypothesis register states about itself and the station register
 
-`K-HYPOTHESES-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by Claude (re-read: the only change to hypotheses.py since the last reading is two sentences now filled from data - the stormwater volume total and the sediment points - and the VALUES that read them; the evidence-writing code is untouched, verified by hashing the file with that change undone, which matches what was last read. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-HYPOTHESES-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by fork w2-hyp (re-read hypotheses.py: _register_facts(), which writes the register fields this declares, is identical to the version before this change, verified by diff; the evidence file gained layer counts, solstice day lengths and sign-flip geometry, declared in K-HY-EVIDENCE. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Counts the entries and groups of the hypothesis register as it is written, and two facts about the ODA station register that entry `I1` states: how many series stations the register carries, and on how many of its records the start date is the end date.
 
@@ -72534,7 +71668,7 @@ The number of CTD records per value of the sampling-gear column, from the enumer
 <a id="K-INCIDENCE"></a>
 ### Who carries the nitrogen requirement: visibility and the no-buffer cohort
 
-`K-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by fork w2-in (re-read: socialcontext.py's compute part - read_registers() through compute() and main() - is identical to the version last read, verified by diff; only the page-writing part was rewritten into checked claims and the self-quotation helper removed. The fields covered are written by the unchanged code. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Reads the sibling project's fetched registers (CHR herds, declared hectares per CVR, CVR master data, parsed XBRL accounts, kommune-to-region) and asks who carries the nitrogen requirement. It splits herd and land by whether the operator's CVR record lists published accounts. Among the businesses that do file, it counts those that are both stocked past a located regulatory threshold, or landless, and thin on equity.
 
@@ -72697,7 +71831,7 @@ Tests every supplier and era of the water-chemistry extract at the summer-time c
 <a id="K-META-CURRENTS"></a>
 ### Current direction in the hours after overflow-scale rain
 
-`K-META-CURRENTS` · covers data/derived/currents_transport.json · **current** · read by Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-META-CURRENTS` · covers data/derived/currents_transport.json · **current** · read by Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Joins Copenhagen's hourly rain record to the modelled current in the southern Øresund, and asks how often the water runs toward Køge Bugt in and after hours of overflow-scale rain.
 
@@ -72778,7 +71912,7 @@ Classifies each sheet's pixels into the six painted depth classes and converts p
 <a id="K-META-FACTS"></a>
 ### Small counts and solstice elevations for the overview pages
 
-`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (re-read: hypotheses.json changed because the register gained I7 and two sentences (B2, E6) are now filled from data; meta_facts.py rerun, and the only field that moved is hypotheses_n, 165 to 166, which is the I7 addition - the list count it declares, unchanged in method. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by fork w2-hyp (re-read: meta_facts.py takes only the lengths of the hypotheses and groups lists from hypotheses.json, and those are unchanged at 166 and 17. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them.
 
@@ -72954,7 +72088,7 @@ The annual overflow volume the national combined-sewer overflow layer reports, a
 <a id="K-NI-RBU-POINTS"></a>
 ### Rain-dependent discharge points in the national register layer
 
-`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by fork w1-ni (re-read after the last prose edits: koege_tables() still counts the layer's features once with len() before the loop; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (re-read: nitrogen.py changed only in the prose of the L 5 sentence - the vote now read from TV 2's pin and the law's 2027 and 2028 steps stated; no computation changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 How many rain-dependent discharge points the national register lists.
 
@@ -73019,7 +72153,7 @@ Fetches crop areas from Statistics Denmark and classifies them by what the crop 
 <a id="K-NITROGEN-CURRENTS"></a>
 ### Southward transport in the southern Sound against Copenhagen rainfall - the fields K-META-CURRENTS does not cover
 
-`K-NITROGEN-CURRENTS` · covers data/derived/currents_transport.json · **current** · read by Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-NITROGEN-CURRENTS` · covers data/derived/currents_transport.json · **current** · read by Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Tests whether the hours in which Copenhagen overflows are hours in which the southern Sound runs south, toward Køge Bugt, and how that changes in the hours after.
 
@@ -73174,7 +72308,7 @@ Joins the plan's project pages to the city's cloudburst map layers on the `klima
 <a id="K-NITROGEN-RENS"></a>
 ### Approved treatment-plant capacity, from the national register
 
-`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by fork w1-ni (re-read: the treatment-plant block of koege_tables() - godk_pe at or above PLANT_MIN_PE, municipality in the list, inside the bay's box - occurs verbatim as it stood before this fork's edits, checked against the text read at the start of the task, and PLANT_MIN_PE and KOEGE_BOX are unchanged; nitrogen.py changed in prose, claims and an added feature count; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (re-read: nitrogen.py changed only in the prose of the L 5 sentence - the vote now read from TV 2's pin and the law's 2027 and 2028 steps stated; no computation changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 The treatment plants around Køge Bugt at or above a stated capacity, from the national register.
 
@@ -73234,10 +72368,25 @@ Counts read from the pinned DCE report's model table and from the national bathi
 - **May support:** How many models DCE's Tabel 3 lists and how many select each variable; how many bathing stations carry a marine water-body id; how much of the sea the open-sea polygons hold.
 - **May not:** Which variables matter in the sea, or anything about the models' quality.
 
+<a id="K-PO-TALLIES"></a>
+### The quotation check and the notes counted over the politics record
+
+`K-PO-TALLIES` · covers data/derived/politics.json · **current** · read by fork w2-po (read analyse() and _quote_check() in politics.py as patched against the declaration: each field counts what it says, and the build stops on an unpinned source, a weak passage or an interval; 2026-09-11; not yet read by the project owner), 2026-09-11
+
+Counts over data/manual/politics.json made by scripts/politics.py.
+
+- **Model:** `analyse()` counts the notes and the interval patterns over every statement; `_quote_check()` splits each quotation at elisions and looks for each passage in the pinned copy of its source page, flattened by `claims._flat`, first whole, then as the longest run of consecutive words.
+- **Assumes:** A passage found in the pinned copy is the passage the collector captured: the pin was taken after the collection, so a page edited in between could differ in either direction.
+- **Justified because:** The check reads the same pinned copies the page's figures are read from, and a quotation that falls short stops the page being written. ([scripts/politics.py](../scripts/politics.py))
+- **Not justified by anything yet:** The six-word threshold for a partial match is a choice, not derived; a passage found only in part may differ from its source in wording, not only in rendering.
+- **Void if:** a source page is re-pinned and the collection is not rechecked
+- **May support:** That the quotations printed are, word for word or in part, on the pages they cite, as those pages stood when pinned.
+- **May not:** That the official record of the Folketing holds the chamber quotations, or that a speaker meant what the words say.
+
 <a id="K-POLITICS-ARCH"></a>
 ### The separated architecture on the city's own sewer layer
 
-`K-POLITICS-ARCH` · covers docs/data/architecture.json · **current** · read by fork w1-pg (re-read: programme.py's prose was rewritten for the claims sweep and its self-quotation helpers and literature table removed; every function that computes or reads the covered fields - P, OX, amager_split, koege_basins, triage, facts - is identical to the version last read, compared as syntax trees; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-POLITICS-ARCH` · covers docs/data/architecture.json · **current** · read by Claude (re-read: programme.py changed only in one sentence of prose - fedtemøg names rotting algae, not the discharge; no computation changed, verified by hashing the file with that sentence reversed. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Classifies the city's sewer catchments, counts the drainage structures in them, measures the street a rain line would follow, and tests where planned cloudburst pipes end.
 
@@ -73328,7 +72477,7 @@ Fetches the official Danish counts of pigs, sows, cattle and people and the annu
 <a id="K-POLITICS-PROGRAMME"></a>
 ### Counts and sums PROGRAMME.md computes for itself
 
-`K-POLITICS-PROGRAMME` · covers data/derived/programme.json · **current** · read by fork w1-pg (re-read: programme.py's prose was rewritten for the claims sweep and its self-quotation helpers and literature table removed; every function that computes or reads the covered fields - P, OX, amager_split, koege_basins, triage, facts - is identical to the version last read, compared as syntax trees; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-POLITICS-PROGRAMME` · covers data/derived/programme.json · **current** · read by Claude (re-read: programme.py changed only in one sentence of prose - fedtemøg names rotting algae, not the discharge; no computation changed, verified by hashing the file with that sentence reversed. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Counts the overflow register's tail, the sheets by placement method, the combined catchments planned for separation and the corridor list, and splits the combined-sewered area by island. The triage and register counts the page prints are read from `data/derived/triage.json`, not computed here.
 
@@ -73364,7 +72513,7 @@ Rasterises the recovered flood model and the cloudburst plan, split into surface
 <a id="K-POLITICS-STREAMS"></a>
 ### The rain stream and the foul stream on Amager, as rates
 
-`K-POLITICS-STREAMS` · covers data/derived/streams.json · **current** · read by fork w1-pg (re-read: programme.py's prose was rewritten for the claims sweep and its self-quotation helpers and literature table removed; every function that computes or reads the covered fields - P, OX, amager_split, koege_basins, triage, facts - is identical to the version last read, compared as syntax trees; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-POLITICS-STREAMS` · covers data/derived/streams.json · **current** · read by Claude (re-read: programme.py changed only in one sentence of prose - fedtemøg names rotting algae, not the discharge; no computation changed, verified by hashing the file with that sentence reversed. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Turns the hourly rain record over Copenhagen and Amager's combined-sewered impervious area into flow rates, compares them with the foul stream as people-equivalents, sizes settling ponds for chosen grains, and estimates the solids a pond would catch.
 
@@ -73385,7 +72534,7 @@ Turns the hourly rain record over Copenhagen and Amager's combined-sewered imper
 <a id="K-POLITICS-TALLIES"></a>
 ### Tallies over the collected public statements
 
-`K-POLITICS-TALLIES` · covers data/derived/politics.json · **current** · read by Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-POLITICS-TALLIES` · covers data/derived/politics.json · **current** · read by Claude (re-read analyse() in politics.py against the committed version by diff: it gains new counts - typography notes, intervals, quotation checks - and every field this declaration covers is computed exactly as before. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Counts the collected public statements by camp, claim class, flag, publisher and date, for the page that prints them.
 
@@ -73456,7 +72605,7 @@ What this site printed at an earlier commit.
 <a id="K-READ-COUNT"></a>
 ### Counting a term in a pinned document
 
-`K-READ-COUNT` · covers reading-count · **current** · read by Claude (re-read: claims.py changed only in how a confirmation's by-line is shown on CLAIMS.md - verbatim, as code; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-READ-COUNT` · covers reading-count · **current** · read by Claude (re-read: claims.py changed only in letting a stipulated rule stand on its stated reasoning, as an argued claim can; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 The number of occurrences of a term in the pinned text of an external document.
 
@@ -73473,7 +72622,7 @@ The number of occurrences of a term in the pinned text of an external document.
 <a id="K-READ-PHRASE"></a>
 ### A value stated in a pinned document
 
-`K-READ-PHRASE` · covers reading-phrase · **current** · read by Claude (re-read: claims.py changed only in how a confirmation's by-line is shown on CLAIMS.md - verbatim, as code; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-READ-PHRASE` · covers reading-phrase · **current** · read by Claude (re-read: claims.py changed only in letting a stipulated rule stand on its stated reasoning, as an argued claim can; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 A value as an external document states it, confirmed to be present in the document's pinned text.
 
@@ -73489,7 +72638,7 @@ A value as an external document states it, confirmed to be present in the docume
 <a id="K-RESCORE"></a>
 ### Yearly median surface Si:DIN ratio
 
-`K-RESCORE` · covers data/derived/rescore.json · **current** · read by Claude (re-read: HYPOTHESES.md changed only in two sentences outside K1 - B2's stormwater volume total and E6's sediment points, now filled from data. hypotheses.py, which writes the page, was verified by hash to differ only in those two sentences and the values they read, so the K1 section this declaration cites is unchanged. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-RESCORE` · covers data/derived/rescore.json · **current** · read by fork w2-hyp (re-read: HYPOTHESES.md changed in other entries only - measurements moved to HYPOTHESIS_DATA.md, constants read from pins; the K1 section this declaration cites is identical apart from link targets, verified by comparing it with the committed page. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 After an availability matrix for the hypotheses that were blocked on the water-chemistry fetch, the script computes, for hypothesis `K1` (silicon depletion and the diatom-to-flagellate shift in `docs/HYPOTHESES.md`), the yearly distribution of the surface molar Si:DIN ratio: its median and its share below one. It computes only the nutrient driver; the phytoplankton-community response it is meant to drive is not held.
 
@@ -73546,7 +72695,7 @@ The share of a recoverable diurnal signal that is lost by sampling at the real h
 <a id="K-STATED"></a>
 ### A value chosen, with its reason
 
-`K-STATED` · covers stated · **current** · read by fork w1-pg (re-read: the new fragment data/manual/claims.d/w1-pg.json holds no params, so no stated value was added or changed; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-STATED` · covers stated · **current** · read by Claude (re-read every params block in the claims fragments: the only stated values added are w1-lr's IUPAC atomic weights of carbon, hydrogen and nitrogen, each with its reason; the wave-2 fragments that made this stale add none. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 A value chosen rather than measured - a threshold, a limit - with the reason for the choice written beside it.
 
@@ -73577,7 +72726,7 @@ A part of a counted set, as a percentage of the whole set.
 <a id="K-WATER-CURRENTS"></a>
 ### Currents in and around Køge Bugt from a coarse global model
 
-`K-WATER-CURRENTS` · covers data/derived/currents_validate.json · **current** · read by Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-WATER-CURRENTS` · covers data/derived/currents_validate.json · **current** · read by Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Compares the coarse model's peak speeds with published strait speeds, to establish what the current field can and cannot support.
 
@@ -73592,7 +72741,7 @@ Compares the coarse model's peak speeds with published strait speeds, to establi
 <a id="K-WATER-CURRENTS-INDEX"></a>
 ### Retention, and a wind index that failed
 
-`K-WATER-CURRENTS-INDEX` · covers data/derived/currents_index.json · **current** · read by Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-WATER-CURRENTS-INDEX` · covers data/derived/currents_index.json · **current** · read by Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Measures how much of the modelled water motion at each point goes anywhere, and tests whether a Baltic wind index can stand in for the short current record.
 
@@ -73608,7 +72757,7 @@ Measures how much of the modelled water motion at each point goes anywhere, and 
 <a id="K-WATER-CURRENTS-TRANSPORT"></a>
 ### Southward transport in the southern Sound, by rain
 
-`K-WATER-CURRENTS-TRANSPORT` · covers data/derived/currents_transport.json · **current** · read by Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-WATER-CURRENTS-TRANSPORT` · covers data/derived/currents_transport.json · **current** · read by Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Asks whether the hours in which Copenhagen overflows are hours in which the southern Sound runs south toward Køge Bugt, at the event and at lags after it.
 

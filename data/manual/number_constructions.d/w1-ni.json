@@ -85,10 +85,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "fork w1-ni (re-read after the last prose edits: koege_tables() still counts the layer's features once with len() before the loop; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: nitrogen.py changed only in the prose of the L 5 sentence - the vote now read from TV 2's pin and the law's 2027 and 2028 steps stated; no computation changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/nitrogen.py": "6637bc54ad794584"
+     "scripts/nitrogen.py": "f25777309800a420"
     }
    }
   }

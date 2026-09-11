@@ -12,15 +12,17 @@ it then goes - and tests two specific claims that the wave model cannot touch:
 
 Data, all free and keyless:
   - Open-Meteo Marine API: hourly ocean current velocity and direction from the CMEMS
-    global physics model. Starts 2022-01-01. NOTE the resolution problem, quantified in
-    cmd_validate: a ~9 km global grid does not resolve the Danish straits, and the
-    speeds come out roughly a factor of three low. Direction and timing survive; the
-    magnitudes do not, and nothing here depends on them.
+    global physics model. Starts 2022-01-01. Its grid is 0.08 degrees (about 8 km, by
+    Open-Meteo's own statement), which does not resolve the Danish straits.
+    cmd_validate compares its speeds with peak speeds that have no source in this
+    repository, so how far the magnitudes fall short is not established; direction
+    and timing are what is used.
   - Open-Meteo ERA5 archive: hourly wind and precipitation, 1995-2025, already fetched
     by the wave work.
 
-The structure follows from that: the 4-year current record is used only to CALIBRATE a
-wind-driven index, and the 31-year wind record is what the index is then evaluated over.
+The structure follows from that: the 4-year current record was to calibrate a
+wind-driven index that would stand in for it over the 31-year wind record. Whether the
+index holds is what cmd_index tests, and CURRENTS.md reports what came of it.
 
 Usage:
   python3 scripts/currents.py fetch      # marine + Baltic-basin wind  (~15 min, polite)
@@ -198,6 +200,9 @@ def cmd_validate(argv):
     log("\n=== what the free current field actually contains ===")
     log(f"  {'point':14}{'n':>8}{'mean':>9}{'p99':>9}{'max':>9}   {'known real max':>16}")
     # Published/pilot-guide peak surface currents, for the reality check.
+    # Peak speeds typed in with no source anywhere in the repository (no pilot guide
+    # or DMI/FCOO figure is pinned), so the underestimate factor computed from them is
+    # not established. No page prints it.
     REAL = {"drogden": 1.7, "oresund_n": 1.5, "storebaelt": 1.8, "fehmarn": 1.2,
             "koege_bugt": 0.4, "oresund_s": 1.5}
     for name in POINTS:
@@ -413,6 +418,63 @@ def cmd_transport(argv):
     return 0
 
 
+# ----------------------------------------------------------------- rain climate
+
+SECTORS = ("N", "NE", "E", "SE", "S", "SW", "W", "NW")
+RAIN_OUT = os.path.join(DERIVED, "currents_rain.json")
+
+
+def _sector(np, deg):
+    """Eight compass sectors, 45 degrees wide and centred on N, NE, ... (index 0-7)."""
+    return (np.floor(((deg % 360) + 22.5) / 45.0) % 8).astype(int)
+
+
+def rain_climate():
+    """Over the whole Copenhagen weather record, not the four years of currents:
+    monthly rainfall, the hours that reach overflow scale by month, and the wind
+    sector in those hours and in the hours after them. Written to
+    data/derived/currents_rain.json for the report, which reads it live."""
+    np = _np()
+    t, U, D, P = load_cph_wind(np)
+    years = sorted({x[:4] for x in t})
+    ny = len(years)
+    mon = np.array([int(x[5:7]) for x in t])
+    ap = np.convolve(np.nan_to_num(P), np.ones(RAIN_WINDOW_H), mode="full")[:len(P)]
+    ev = ap >= EVENT_MM
+    ok = np.isfinite(D)
+    sec = np.full(len(D), -1)
+    sec[ok] = _sector(np, D[ok])
+    names = "JanFebMarAprMayJunJulAugSepOctNovDec"
+    months = {}
+    for m in range(1, 13):
+        sm = mon == m
+        months[names[(m - 1) * 3:m * 3]] = {
+            "rain_mm": round(float(np.nansum(P[sm])) / ny, 1),
+            "overflow_scale_h_per_yr": round(float((ev & sm).sum()) / ny, 1)}
+
+    def dist(mask):
+        m = mask & (sec >= 0)
+        n = int(m.sum())
+        return {"hours": n, "pct": {SECTORS[i]: round(float((sec[m] == i).sum()) / n * 100, 1)
+                                    for i in range(8)} if n else {}}
+    lagged = {}
+    for lag in LAGS_H:
+        sh = np.zeros(len(ev), dtype=bool)
+        if lag == 0:
+            sh = ev.copy()
+        else:
+            sh[lag:] = ev[:-lag]
+        lagged[str(lag)] = dist(sh)
+    out = {"_what": "Copenhagen's ERA5 weather record, whole: monthly rain, overflow-scale "
+                    "hours by month, and the wind sector at and after those hours. Written "
+                    "by scripts/currents.py (rain_climate), read by its report.",
+           "period": [t[0], t[-1]], "years": ny, "rain_window_h": RAIN_WINDOW_H,
+           "event_threshold_mm": EVENT_MM, "months": months,
+           "wind_all_hours": dist(np.ones(len(ev), dtype=bool)), "wind_after_event": lagged}
+    write_json(RAIN_OUT, out)
+    return out
+
+
 # ----------------------------------------------------------------- report
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -420,228 +482,223 @@ MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 
 
 def cmd_report(argv):
-    """Render docs/CURRENTS.md from the stored results, every number live.
-    Figures no script here records are carried as quotations of the page's last
-    committed text (PAGE0), each counted in the conversion report."""
+    """Render docs/CURRENTS.md from the stored results. Every number is live and every
+    assertion a checked claim (LIVE_NUMBERS.md section 11); what no stored result or
+    readable source supports is not said here - it is in docs/ARCHIVE.md."""
     import claims
     import live
+    rain_climate()
     va = live.live_json(os.path.join(DERIVED, "currents_validate.json"))
     ix = live.live_json(os.path.join(DERIVED, "currents_index.json"))
     tr = live.live_json(os.path.join(DERIVED, "currents_transport.json"))
     wv = live.live_json(os.path.join(DERIVED, "waves.json"))
+    rc = live.live_json(RAIN_OUT)
     cd, _, _ = claims.load()
     cache = {}
-    Q = lambda text: live.was("4469fc7", "docs/CURRENTS.md", text)
-    o4 = claims.resolve(cd, "{read:DCE-STATMOD-2015:4|iltkoncentration er under hhv. 4 mg/L}", cache)[0]
+
+    def rd(ph):
+        return claims.resolve(cd, ph, cache)[0]
+    B, E, C = live.claim_begin, live.CLAIM_END, live.claim
+    grid = rd("{read:OM-MARINE:0.08|computed at 0.08° (~8 km) resolution}")
+    grid_km = rd("{read:OM-MARINE:8|computed at 0.08° (~8 km) resolution}")
+    narrow = rd("{read:WIKI-ORESUND:4|its width varies from 4 kilometres}")
+    o4 = rd("{read:NI-DCE-ILT-2025:4|iltkoncentrationen i vandet er mindre end 4 mg l-1}")
+    bal = rd("{read:CMEMS-BAL-STAC:1|1 nautical mile horizontal resolution}")
+    kat = rd("{read:WIKI-ORESUND:30|has a salinity of more than 30 PSU}")
+    balt = rd("{read:WIKI-ORESUND:7|the Baltic Sea (around 7 PSU}")
     km = ix["flush_distance_km"]
     o = []
     a = o.append
 
     a("# Where the water goes\n")
-    a("Generated by `scripts/currents.py`. Currents from the Open-Meteo Marine API "
-      "(CMEMS global physics, hourly, 2022-2026); wind and rain from the ERA5 archive "
-      "(hourly, 1995-2025). Both free and keyless. Companion to "
-      "[SEABED.md](SEABED.md), which computes what the wind lifts off the bed; this "
-      "asks where it then goes.\n")
+    a(B("C-CS-DATA") + "Generated by `scripts/currents.py`. Currents from the Open-Meteo Marine "
+      "API, hourly, 2022-2026; wind and rain from the ERA5 archive, hourly, "
+      f"{rc['period'][0][:4]}-{rc['period'][1][:4]}. Both free and keyless." + E
+      + " Companion to [SEABED.md](SEABED.md), which computes what the wind lifts off the "
+      "bed; this asks where it then goes.\n")
 
     a("## First, what this data cannot do\n")
-    a(f"The only free current field covering Danish waters is a global model on a {Q('model on a @@. The Danish')}. "
-      "The Danish straits are narrower than that. Before using it for "
-      "anything, here is the peak speed it produces against published values:\n")
-    a("| Point | Model peak | Published peak | Ratio |")
-    a("|---|---:|---:|---:|")
-    fac = []
+    a(B("C-CS-GRID") + f"Open-Meteo computes its ocean currents at {grid}° (about {grid_km} km), "
+      f"and the Øresund narrows to {narrow} km. A field that coarse cannot resolve the narrow "
+      "straits, so what follows rests on ratios, signs and timings; the one figure that uses a "
+      "speed - a flushing time in days - carries whatever speed error the field has." + E + "\n")
+    a(B("C-CS-PEAKS") + "The peak speed the field reaches at each point is below. The script "
+      "sets these beside peak speeds it records as published, but no source for those is held, "
+      "so that comparison is not used here." + E + "\n")
+    a("| Point | Peak speed in the field |")
+    a("|---|---:|")
     for r in va["points"]:
-        if "published_peak_ms" not in r:
-            continue
-        fac.append(r["underestimate_factor"])
-        a(f"| {r['point']} | {r['max_ms']:.2f} m/s | {r['published_peak_ms']:.1f} m/s | "
-          f"{r['underestimate_factor']:.1f}× |")
+        a(f"| {r['point']} | {r['max_ms']:.2f} m/s |")
     a("")
-    slow = [f for f in fac if f >= 1.5]
-    a(f"The open-water points are about right; the narrow straits come out "
-      f"{min(slow):.1f}–{max(slow):.1f} times too slow, which is "
-      f"{Q('speed, which is @@. **So nothing')}. **So nothing below uses an absolute "
-      "speed.** Everything is a ratio, a sign, or a timing, and each is stated with the "
-      "reason it survives the calibration error.\n")
 
-    a("## The result: Køge Bugt does not flush\n")
-    a("The metric is the **residual current divided by the mean speed** — how much of "
-      "the water's motion actually goes somewhere. A calibration error in speed cancels "
-      "out of a ratio of two speeds, so this number survives the problem above.\n")
-    a(f"| Point | Mean speed | Residual | Residual heading | Flushing time over {km:.0f} km |")
-    a("|---|---:|---:|---:|---:|")
     ret = ix["retention"]
-    for n, r in sorted(ret.items(), key=lambda kv: -(kv[1]["flush_days_20km"] or 1e9)):
+    a("## The result: Køge Bugt keeps its water longest\n")
+    a(B("C-CS-METRIC") + "The measure is the **residual current divided by the mean speed** - "
+      "how much of the water's motion actually goes somewhere. A speed error common to both "
+      "cancels out of that ratio. The flushing time in days is the distance over the residual "
+      "alone, so it keeps whatever speed error the field has at that point." + E + "\n")
+    a(f"| Point | Mean speed | Residual | Residual heading | Residual ÷ mean speed | "
+      f"Flushing time over {km:.0f} km |")
+    a("|---|---:|---:|---:|---:|---:|")
+    for n, r in sorted(ret.items(), key=lambda kv: kv[1]["residual_ms"] / kv[1]["mean_speed_ms"]):
         fd = r["flush_days_20km"]
         a(f"| {n} | {r['mean_speed_ms']:.3f} m/s | {r['residual_ms']:.4f} m/s | "
-          f"{r['residual_bearing_deg']:.0f}° | **{fd:,.0f} days** |")
+          f"{r['residual_bearing_deg']:.0f}° | {r['residual_ms'] / r['mean_speed_ms']:.2f} | "
+          + (f"**{fd:,.1f} days** |" if fd is not None else "never |"))
     a("")
-    k = ret["koege_bugt"]
-    aa = ret["aarhus_bugt"]
-    a(f"**Køge Bugt takes {k['flush_days_20km']:.0f} days to move water {km:.0f} km. Aarhus "
-      f"Bugt takes {aa['flush_days_20km']:.1f}.** A factor of "
-      f"{k['flush_days_20km'] / aa['flush_days_20km']:.0f}. Køge Bugt has both the lowest "
-      "mean speed in the set and the smallest residual: the water moves constantly and "
-      "ends up where it started.\n")
-    a("*One caveat, applied honestly.* A low residual can also mean a strong reversing "
-      f"flow with little net — which is what the Great Belt's "
-      f"{ret['storebaelt']['flush_days_20km']:.0f} days is. The Belt has "
-      f"{ret['storebaelt']['mean_speed_ms'] / k['mean_speed_ms']:.1f}× Køge Bugt's mean "
-      "speed; it exchanges water vigorously and just happens to average out. Køge Bugt "
-      "is slow *and* net-zero. Those are different states and only the second is "
-      "retention.\n")
+    k, aa, sb, sy = ret["koege_bugt"], ret["aarhus_bugt"], ret["storebaelt"], ret["sydfynske"]
+    lowest = all(k["mean_speed_ms"] <= r["mean_speed_ms"] and k["residual_ms"] <= r["residual_ms"]
+                 for r in ret.values())
+    a(B("C-CS-FLUSH") + f"**In this field Køge Bugt takes {k['flush_days_20km']:.0f} days to move "
+      f"water {km:.0f} km, and Aarhus Bugt takes {aa['flush_days_20km']:.1f}** - a factor of "
+      f"{k['flush_days_20km'] / aa['flush_days_20km']:.0f}."
+      + (" Køge Bugt has both the lowest mean speed in the set and the smallest residual: the "
+         "water moves and ends up close to where it started." if lowest else "") + E + "\n")
+    a(B("C-CS-BELT") + "*One caveat.* A low residual can also mean strong reversing flow with "
+      f"little net - which is what the Great Belt's {sb['flush_days_20km']:.0f} days is. The Belt "
+      f"has {sb['mean_speed_ms'] / k['mean_speed_ms']:.1f}× Køge Bugt's mean speed: it moves "
+      "water back and forth vigorously and averages out. Køge Bugt is slow *and* close to "
+      "net-zero, and only the second of these is retention of the kind asked about here." + E + "\n")
 
-    a("### Which inverts the monitoring\n")
-    a("Aarhus Bugt registers oxygen depletion every year. Køge Bugt is recorded as "
-      "having none, including in 2023 and 2025. And Aarhus Bugt flushes "
-      f"{k['flush_days_20km'] / aa['flush_days_20km']:.0f} times faster.\n")
-    a("That is not a contradiction, because the two things are not the same "
-      f"phenomenon. DCE's iltsvind criterion is dissolved oxygen below {o4} mg/l in "
-      "**stratified bottom water** — which requires depth and a sealed layer, and Aarhus "
-      "Bugt has both. Køge Bugt is shallow and mixes, so it cannot qualify however bad "
-      "it gets. But retention of surface material, floating mats and fine sediment is a "
-      "*different* property, and on that one Køge Bugt is the extreme case in this set.\n")
-    a("The national instrument measures the property Køge Bugt does not have, and does "
-      "not measure the property it has more of than anywhere else here.\n")
-    a("**Det Sydfynske Øhav** comes out mid-range at "
-      f"{ret['sydfynske']['flush_days_20km']:.1f} days — retentive, but nothing like "
-      "Køge Bugt. It does register iltsvind. On this evidence the two bays are not the "
-      "same case, and the shared vortex description is not supported by this model. "
-      "A coarse grid cannot resolve an archipelago, so this is weak evidence either way.\n")
+    a("### What the oxygen survey sees\n")
+    a(C("C-CS-ILT-DEF", f"DCE call it iltsvind when the oxygen concentration is below {o4} mg/l, "
+        "and it develops at the bottom especially where the water column is stratified.") + " "
+      + C("C-CS-ILT-OBS", "In DCE's autumn surveys Aarhus Bugt was among the hardest-hit areas "
+          "in October 2023 and still had sporadic moderate iltsvind late in November 2025; in "
+          "both years DCE registered no iltsvind in Køge Bugt.") + "\n")
+    a(B("C-CS-INVERT") + "So the survey and this table rank different properties. Iltsvind is a "
+      "concentration at the bottom, likeliest where the water is layered; the table ranks "
+      "whether the water goes anywhere, and on that Køge Bugt is the extreme case in this set. "
+      "A water can keep what it receives without registering iltsvind, and a survey that "
+      "counts iltsvind would not show it." + E + "\n")
+    a(B("C-CS-SYDFYN") + f"**Det Sydfynske Øhav** comes out at {sy['flush_days_20km']:.1f} days - "
+      "retentive, but far from Køge Bugt - and DCE's surveys found iltsvind there in both "
+      "years. On this evidence the two bays are not the same case. A field this coarse cannot "
+      "resolve an archipelago, so this is weak evidence either way." + E + "\n")
 
     a("## A negative result: the wind index does not work\n")
-    a("The plan was to regress the strait flow on a wind-driven Baltic filling index, "
-      f"and if it held, use {Q('held, use @@ to extend')} to extend the current record. "
-      "It does not hold.\n")
-    wr = {w["hours"]: w for w in ix["window_r"]}
+    a(B("C-CS-INDEX-PLAN") + "The plan was to regress the strait flow on a wind-driven Baltic "
+      f"filling index and, if it held, use the {rc['years']}-year wind record to extend the "
+      "current record. It does not hold." + E + "\n")
     longer = [w for w in ix["window_r"] if w["hours"] > ix["best_window_h"]]
     tail = ", ".join(f"{w['hours']} h gives {w['r']:.2f}" for w in longer[-3:])
-    a(f"Best correlation is **r = {ix['r']:.2f} at a {ix['best_window_h']} hour window**, "
-      f"with sign agreement of only **{ix['sign_agreement_pct']:.0f}%** over "
-      f"{ix['n_hours']:,} hours. The correlation falls away at the longer windows — "
-      f"{tail}.\n")
-    a(f"A {ix['best_window_h']}-hour optimum is a local synoptic wind response, not a "
-      "basin filling and draining over weeks. Either the multi-week Baltic memory is not "
-      "the dominant control on the Sound, or this coarse product cannot see it. Reported "
-      "as a negative result: **the extension over the long wind record is not available "
-      "on this data.** Everything about currents here is as long as the current record.\n")
+    a(B("C-CS-INDEX") + f"Best correlation is **r = {ix['r']:.2f} at a {ix['best_window_h']} hour "
+      f"window**, with sign agreement of only **{ix['sign_agreement_pct']:.0f}%** over "
+      f"{ix['n_hours']:,} hours. The correlation falls away at the longer windows - {tail}." + E + "\n")
+    a(B("C-CS-INDEX-READ") + f"A {ix['best_window_h']}-hour optimum is a local wind response, not "
+      "a basin filling and draining over weeks. Either the multi-week Baltic memory is not the "
+      "dominant control on the Sound, or this coarse product cannot see it. **The extension "
+      "over the long wind record is not available on this data**, and everything about "
+      "currents here is as long as the current record." + E + "\n")
 
     a("## Does Copenhagen's overflow water go toward Køge Bugt?\n")
-    a("Copenhagen discharges into the harbour and the southern Sound. Køge Bugt is "
-      "south of that, and the mean flow runs north. So the claim is not about averages: "
-      "it requires that the **specific hours in which the city overflows** are hours in "
-      "which the water runs south. The rain record and the current record overlap for "
-      f"{tr['n_hours']:,} hours, so this is directly testable.\n")
-    a(f"Baseline: the southern Sound runs south **{tr['baseline_southward_pct']:.0f}%** "
-      "of all hours.\n")
+    so = ret["oresund_s"]
+    a(B("C-CS-TEST") + "Køge Bugt lies south of Copenhagen, and the residual current at the "
+      f"southern Sound point runs toward {so['residual_bearing_deg']:.0f}°, away from it. So the "
+      "claim can only hold in particular hours: the hours in which the city overflows would have "
+      "to be hours in which the water runs south. The rain record and the current record "
+      f"overlap for {tr['n_hours']:,} hours, so this can be tested directly." + E + "\n")
+    a(C("C-CS-BASELINE", "Across all of them the southern Sound runs south "
+        f"**{tr['baseline_southward_pct']:.0f}%** of the time.") + "\n")
     a(f"| {tr['rain_window_h']}-hour rainfall | Hours | Runs south | vs baseline |")
     a("|---|---:|---:|---:|")
-    for b in tr["bands"]:
-        a(f"| {b['label']} | {b['hours']:,} | {b['southward_pct']:.1f}% | "
-          f"{b['vs_baseline_pp']:+.1f} pp |")
+    for b_ in tr["bands"]:
+        a(f"| {b_['label']} | {b_['hours']:,} | {b_['southward_pct']:.1f}% | "
+          f"{b_['vs_baseline_pp']:+.1f} pp |")
     a("")
-    ovf = next((b for b in tr["bands"] if b["label"] == "overflow-scale"), None)
-    a("**During the rain, the water runs north.** The harder it rains, the more strongly "
-      + (f"— at overflow-scale rainfall, southward transport is "
-         f"{-ovf['vs_baseline_pp']:.0f} points *below* baseline. " if ovf else ". ")
-      + "Which is physically obvious once seen: heavy rain in Copenhagen arrives with "
-      "cyclonic southwesterlies, and those drive the Sound north.\n")
-    a("Taken alone that refutes the transport claim. But an overflow plume does not stop "
-      "moving when the rain stops:\n")
+    ovf = next((b_ for b_ in tr["bands"] if b_["label"] == "overflow-scale"), None)
+    a(B("C-CS-RAIN-NORTH") + "**During the rain, the water runs north**, and the harder it rains "
+      "the more so" + (f": at overflow-scale rainfall, southward transport is "
+                        f"{-ovf['vs_baseline_pp']:.0f} points below the baseline." if ovf else ".")
+      + E + "\n")
+    wa = rc["wind_all_hours"]["pct"]
+    w0 = rc["wind_after_event"]["0"]["pct"]
+    a(B("C-CS-RAIN-WIND") + "The wind record does not show south-westerlies that would explain "
+      f"this simply: over {rc['years']} years, in the hours of overflow-scale rain the wind is "
+      f"from the south-west or west {w0['SW'] + w0['W']:.0f}% of the time, against "
+      f"{wa['SW'] + wa['W']:.0f}% of all hours. What drives the Sound north in those hours is "
+      "not established here." + E + "\n")
     a("| Hours after the event | Runs south | vs baseline |")
     a("|---|---:|---:|")
     best = max(tr["lag"], key=lambda x: x["vs_baseline_pp"])
     for L in tr["lag"]:
         mark = " ←" if L is best else ""
-        a(f"| +{L['lag_h']} h | {L['southward_pct']:.1f}% | "
-          f"**{L['vs_baseline_pp']:+.1f} pp**{mark} |")
+        a(f"| +{L['lag_h']} h | {L['southward_pct']:.1f}% | **{L['vs_baseline_pp']:+.1f} pp**{mark} |")
     a("")
-    a(f"**{best['lag_h']} hours after an overflow-scale event, southward transport runs "
-      f"{best['southward_pct']:.0f}% — {best['vs_baseline_pp']:+.0f} points above "
-      "baseline.** That is the post-frontal wind veer: the front passes, the wind swings "
-      "to the northwest, and the water reverses while the plume is still in it.\n")
-    a("So the mechanism is neither the simple claim nor its refutation. It is a **lag**. "
-      "The discharge happens under northward flow and the transport reverses roughly "
-      "half a day later, on a timescale set by the same weather system that caused the "
-      "discharge.\n")
+    wl = rc["wind_after_event"].get(str(best["lag_h"]))
+    a(B("C-CS-LAG") + f"**{best['lag_h']} hours after an overflow-scale event, southward "
+      f"transport runs {best['southward_pct']:.0f}% - {best['vs_baseline_pp']:+.0f} points above "
+      "baseline.**" + (f" In the wind record the hours after such rain are the westerly ones: "
+                        f"{best['lag_h']} hours later the wind is from the south-west or west "
+                        f"{wl['pct']['SW'] + wl['pct']['W']:.0f}% of the time." if wl else "")
+      + E + "\n")
+    a(B("C-CS-LAG-READ") + "So the transport is neither the simple claim nor its refutation but "
+      "a lag: the discharge happens under northward flow, and the flow reverses about half a "
+      "day later, in the westerly weather that follows the rain." + E + "\n")
     first = tr["lag"][0]
-    a(f"*Statistical honesty:* this rests on {first['hours']} event-hours, and every lag "
-      f"in the table was tested. The {first['lag_h']}-hour and {best['lag_h']}-hour "
-      "results are both large and both have the same simple mechanism behind them, which "
-      "is why they are reported. A longer current record would settle it.\n")
+    a(B("C-CS-FEW") + f"*Statistical honesty:* this rests on {first['hours']} event-hours, and "
+      f"every lag in the table was tested; the {first['lag_h']}-hour and {best['lag_h']}-hour "
+      "results are both large. A longer current record would settle it." + E + "\n")
 
-    a("## A correction to SEABED.md\n")
-    a("That document said the resuspension season coincides with the overflow season. "
-      f"{Q('overflow season. @@, and')}, and the error is worth keeping "
-      "visible.\n")
-    bm = tr["by_month"]
-    summer = [bm[m]["overflow_scale_h_per_yr"] for m in ("Jun", "Jul", "Aug")]
+    a("## When overflows happen, and when the bed is lifted\n")
+    bm = rc["months"]
+    names = list(bm)
+    top = sorted(names, key=lambda m: -bm[m]["overflow_scale_h_per_yr"])[:3]
+    top = [m for m in names if m in top]
+    rest = [bm[m]["overflow_scale_h_per_yr"] for m in names if m not in top]
+    rain = [bm[m]["rain_mm"] for m in names]
     mid = wv["depths_m"][1]
     dead = list(wv["critical_shear_Pa"])[0]
     byd = wv["by_depth"][str(float(mid))]["exceedance"][dead]["by_month"]
-    winter = (byd["10"] + byd["11"] + byd["12"] + byd["1"]) / 4
-    a("| | Peak months |")
-    a("|---|---|")
-    a(f"| Rain intense enough to overflow a combined sewer (≥{tr['event_threshold_mm']:.0f} mm "
-      f"in {tr['rain_window_h']} h) | **Jun–Aug**, {min(summer):.1f}–{max(summer):.1f} h/yr; "
-      "near zero Jan–Apr |")
-    a(f"| Total rainfall | {Q('Total rainfall | @@ | | Wave-driven')} |")
-    a(f"| Wave-driven bed resuspension | **Oct–Jan**, {winter / byd['7']:.1f} times July |")
-    a("| Strong onshore wind (stranding) | **Oct–Jan** |")
+    wtop = sorted(byd, key=lambda m: -byd[m])[:4]
+    wtop = [names[int(m) - 1] for m in sorted(wtop, key=lambda m: (int(m) - 7) % 12)]
+    a(B("C-CS-SEASONS") + f"Over the {rc['years']} years of the Copenhagen weather record, rain "
+      f"intense enough to overflow a combined sewer (at least {rc['event_threshold_mm']:.0f} mm "
+      f"in {rc['rain_window_h']} hours) comes mostly in **{', '.join(top)}**, "
+      f"{min(bm[m]['overflow_scale_h_per_yr'] for m in top):.1f}-"
+      f"{max(bm[m]['overflow_scale_h_per_yr'] for m in top):.1f} hours a year in each, against "
+      f"at most {max(rest):.1f} in any other month. Total rainfall varies much less, "
+      f"{min(rain):.0f}-{max(rain):.0f} mm a month. Wave-driven bed resuspension is most "
+      f"frequent in **{', '.join(wtop)}**." + E + "\n")
+    a("| Month | Rain | Overflow-scale hours a year | Bed resuspension, relative to July |")
+    a("|---|---:|---:|---:|")
+    for i, m in enumerate(names, 1):
+        a(f"| {m} | {bm[m]['rain_mm']:.0f} mm | {bm[m]['overflow_scale_h_per_yr']:.1f} | "
+          f"{byd[str(i)] / byd['7']:.1f}× |")
     a("")
-    a("Overflow *events* are driven by intensity, and intensity in Denmark is "
-      "convective, and convection is summer. The autumn is wetter in total but gentler.\n")
-    a("This does not weaken the case — it sharpens it into a **deposit-then-mobilise "
-      "sequence**:\n")
-    for t in [
-        "**June–August:** cloudbursts overflow the combined system. Sewage solids, fat "
-        "and basin sludge are discharged into a warm, weakly-mixed, retentive bay.",
-        "**The bay holds it.** Flushing time is on the order of months, so the material "
-        "settles locally rather than being exported.",
-        "**Through late summer:** it decays in place, in the warmest water of the year, "
-        "with the oxygen demand and the smell that implies.",
-        f"**October–January:** the gales arrive. The bed — now looser for having been "
-        f"anoxic — resuspends {winter / byd['7']:.1f} times as often as in July, and the "
-        "same wind that lifts it drives it onto the western shore.",
-    ]:
-        a(f"- {t}")
-    a("")
-    a("Delivery in summer and arrival on the shore in autumn are not in conflict. They "
-      "are the two ends of a months-long residence time, and the residence time is the "
-      "measured part.\n")
+    a(B("C-CS-SEQUENCE") + "If the overflow's solids settle where they are discharged, the "
+      "seasons line up into a sequence: delivery in the rain season into the most retentive "
+      "water in this set, a residence time of months, and resuspension in the gales. The "
+      "seasons and the flushing time are computed here; that the discharged material settles in "
+      "Køge Bugt and is lifted again later is not measured." + E + "\n")
 
     a("## When rain and southward transport coincide\n")
     a("| Month | Overflow-scale hours/yr | ...of those, running south |")
     a("|---|---:|---:|")
+    tb = tr["by_month"]
     for m in MONTHS:
-        v = bm[m]
-        a(f"| {m} | {v['overflow_scale_h_per_yr']:.1f} | "
-          f"{v['and_southward_h_per_yr']:.1f} |")
+        v = tb[m]
+        a(f"| {m} | {v['overflow_scale_h_per_yr']:.1f} | {v['and_southward_h_per_yr']:.1f} |")
     a("")
-    joint = sum(bm[m]["and_southward_h_per_yr"] for m in MONTHS)
-    a("Small numbers, and they should be read as small. The joint condition is rare — "
-      f"{joint:.1f} hours a year in all, which is the point. If the transport to Køge "
-      "Bugt happens in so few hours a year, then an annual-average accounting cannot "
-      "represent it at all, and neither can a monitoring programme that samples on a "
-      "calendar.\n")
+    joint = sum(tb[m]["and_southward_h_per_yr"] for m in MONTHS)
+    a(B("C-CS-JOINT") + "These are the years the current record covers, and the numbers are "
+      f"small. The joint condition is rare - {joint:.1f} hours a year in all. If transport toward "
+      "Køge Bugt happens in so few hours, an annual-average accounting cannot represent it, and "
+      "neither can monitoring that samples on a calendar." + E + "\n")
 
     a("## What is still missing\n")
-    for t in [
-        "**A current field that resolves the straits.** CMEMS publishes a Baltic regional "
-        f"reanalysis at {Q('regional reanalysis at @@. Everything here')}. Everything here "
-        "would be worth redoing on it, and the retention result is the one to re-test "
-        "first.",
-        "**Particle tracking.** Retention time is a summary statistic. Where material "
-        "released off Amager actually ends up needs trajectories, which needs the field "
-        "above.",
-        "**A longer current record.** The wind index failed, so there is no way to "
-        "extend the current record backwards, and the event counts stay small.",
-        "**Density.** The Sound is strongly stratified — Baltic water out on top, Kattegat "
-        "water in underneath. A single depth-averaged current hides that a plume and the "
-        "bottom water can be going opposite ways at the same hour.",
-    ]:
-        a(f"- {t}")
+    a("- " + C("C-CS-NEED-FIELD", "**A current field that resolves the straits.** Copernicus "
+               f"Marine publishes a Baltic reanalysis at {bal} nautical mile resolution. "
+               "Everything here would be worth redoing on it, the retention result first."))
+    a("- " + C("C-CS-NEED-TRACK", "**Particle tracking.** Retention is a summary statistic. "
+               "Where material released off Amager ends up needs trajectories, which need the "
+               "field above."))
+    a("- " + C("C-CS-NEED-LONGER", "**A longer current record.** The wind index failed, so the "
+               "current record cannot be extended backwards, and the event counts stay small."))
+    a("- " + C("C-CS-NEED-DENSITY", f"**Density.** The Sound lies between the Kattegat, at more "
+               f"than {kat} PSU, and the Baltic, at around {balt} PSU, and its surface stream is "
+               "often northbound from the Baltic. One current per point cannot show whether a "
+               "plume and the water beneath it are moving differently."))
     a("")
 
     try:
@@ -659,6 +716,7 @@ def main(argv):
         return 1
     cmds = {"fetch": cmd_fetch, "validate": cmd_validate, "index": cmd_index,
             "transport": cmd_transport,
+            "rain": lambda argv: rain_climate() and 0,
             "report": cmd_report}
     c = argv[0]
     if c not in cmds:

@@ -1,0 +1,141 @@
+{
+ "constructions": [
+  {
+   "id": "K-CS-RAIN",
+   "title": "The Copenhagen rain climate, and the wind in and after overflow-scale rain",
+   "covers": {
+    "file": "data/derived/currents_rain.json",
+    "fields": {
+     "years": {
+      "kind": "counted",
+      "is": "Calendar years present in the hourly Copenhagen weather record the script reads."
+     },
+     "rain_window_h": {
+      "kind": "stipulated",
+      "is": "Hours of antecedent rain summed to judge whether a combined sewer fills: `RAIN_WINDOW_H` in the script."
+     },
+     "event_threshold_mm": {
+      "kind": "stipulated",
+      "is": "Rain over `RAIN_WINDOW_H` hours, in mm, at or above which an hour counts as overflow-scale: `EVENT_MM` in the script."
+     },
+     "months.*.rain_mm": {
+      "kind": "modelled",
+      "is": "Mean total precipitation for that calendar month, in mm: the ERA5 reanalysis hourly precipitation at the record's grid point, summed over every hour of that month in the record and divided by the number of years."
+     },
+     "months.*.overflow_scale_h_per_yr": {
+      "kind": "counted",
+      "is": "Hours in that calendar month whose preceding `RAIN_WINDOW_H`-hour rain total reaches `EVENT_MM`, divided by the number of years."
+     },
+     "wind_all_hours.hours": {
+      "kind": "counted",
+      "is": "Hours in the record with a wind direction."
+     },
+     "wind_all_hours.pct.*": {
+      "kind": "share",
+      "is": "Of those hours, the percentage whose wind comes from that compass sector (eight sectors, each centred on its point)."
+     },
+     "wind_after_event.*.hours": {
+      "kind": "counted",
+      "is": "Overflow-scale hours shifted forward by the stated lag, that have a wind direction."
+     },
+     "wind_after_event.*.pct.*": {
+      "kind": "share",
+      "is": "Of those hours, the percentage whose wind comes from that compass sector."
+     }
+    }
+   },
+   "what": "Monthly rain, overflow-scale hours by month and the wind sector distribution at and after overflow-scale rain, over the whole Copenhagen weather record rather than the shorter current record.",
+   "model": "`rain_climate()` in `scripts/currents.py` reads the hourly ERA5 files the wave work fetched (`load_cph_wind`), forms the running `RAIN_WINDOW_H`-hour rain sum, marks hours at or above `EVENT_MM`, and counts by calendar month over the number of years present. Wind directions are binned into eight sectors of equal width, each centred on its compass point, with the meteorological convention that a direction is where the wind comes from; the distribution is taken over all hours and over the marked hours shifted by each lag in `LAGS_H`.",
+   "assumptions": [
+    "ERA5 precipitation at one grid point stands for Copenhagen's rain.",
+    "An hour whose preceding `RAIN_WINDOW_H`-hour total reaches `EVENT_MM` is rain on the scale that fills a combined sewer; the threshold is a stated choice, not a measured overflow."
+   ],
+   "justified": [
+    {
+     "text": "Counts and sums are taken directly over the hourly records; the month divisor is the number of calendar years present.",
+     "ref": "scripts/currents.py"
+    }
+   ],
+   "gaps": [
+    "A reanalysis smooths short convective bursts, so hours of intense rain are probably under-counted, most in the months when rain is convective.",
+    "No overflow was observed: the overflow-scale hours are a rain proxy."
+   ],
+   "void_if": [
+    "the weather files are re-fetched and the report is not rerun"
+   ],
+   "licenses": "When in the year intense rain comes in the reanalysis, how rain totals vary by month, and from which sector the wind blows in and after such rain.",
+   "not_licensed": "When any sewer actually overflowed, or how much.",
+   "watches": [
+    "scripts/currents.py",
+    "data/raw/weather/wind_*.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/currents.py": "c31aaaf30ed9ee19",
+     "data/raw/weather/wind_1995_2000.json": "249210610ed30ff0",
+     "data/raw/weather/wind_2001_2006.json": "1feb33971e10321f",
+     "data/raw/weather/wind_2007_2012.json": "41ed8c2ed9c5f765",
+     "data/raw/weather/wind_2013_2018.json": "adeeff7bf99ad675",
+     "data/raw/weather/wind_2019_2025.json": "57528b257df540bc"
+    }
+   }
+  },
+  {
+   "id": "K-CS-OVERFLOWS",
+   "title": "Overflows a year per combined-sewer structure, in the national layer",
+   "covers": {
+    "file": "data/derived/outfalls.json",
+    "fields": {
+     "layers.combined_overflow.totals.Antal overløb.n": {
+      "kind": "counted",
+      "is": "Features of the combined-sewer overflow layer whose `Antal overløb` field holds a number (a zero counts; an empty or unparseable field does not)."
+     },
+     "layers.combined_overflow.totals.Antal overløb.median": {
+      "kind": "computed",
+      "is": "The median of those values - the value at the middle position once sorted, the upper of the two middle values for an even count. DP02 defines the field as a number of overflows a year."
+     },
+     "layers.combined_overflow.totals.Antal overløb.sum": {
+      "kind": "computed",
+      "is": "The sum of those values."
+     }
+    }
+   },
+   "what": "How many overflows a year the national layer records per combined-sewer overflow structure.",
+   "model": "`scripts/fetch_spildevand.py` fetches the layer, coerces each property to numbers with `numeric()`, and keeps count, sum and median for a property that enough features fill in.",
+   "assumptions": [
+    "The count field means what DP02 says it records: the number of overflows a year, measured or modelled."
+   ],
+   "justified": [
+    {
+     "text": "DP02 lists the field among the data required in PULS as a number of overflows a year, measured or modelled.",
+     "ref": "data/derived/pins/DP02.txt"
+    },
+    {
+     "text": "The totals are computed over the features that hold a number, and their count is stored beside them.",
+     "ref": "scripts/fetch_spildevand.py"
+    }
+   ],
+   "gaps": [
+    "Structures that leave the field empty are not in the median.",
+    "Whether a structure's count was measured or modelled is not in the layer."
+   ],
+   "void_if": [
+    "the layer is refetched and the script is not rerun"
+   ],
+   "licenses": "That the combined-sewer structures which report it record overflows several times a year.",
+   "not_licensed": "How much any overflow discharges, or the count at the structures that leave the field empty.",
+   "watches": [
+    "scripts/fetch_spildevand.py"
+   ],
+   "confirmed": {
+    "by": "fork w2-cs (written against numeric() and the totals loop in fetch_spildevand.py, and DP02's required-data table read in the pin: the count field is a number of overflows a year. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/fetch_spildevand.py": "2ce25d3217ca9080"
+    }
+   }
+  }
+ ]
+}

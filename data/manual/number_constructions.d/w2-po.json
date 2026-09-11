@@ -1,0 +1,65 @@
+{
+ "_what": "Fork w2-po: constructions for the tallies POLITICS.md adds.",
+ "constructions": [
+  {
+   "id": "K-PO-TALLIES",
+   "title": "The quotation check and the notes counted over the politics record",
+   "covers": {
+    "file": "data/derived/politics.json",
+    "fields": {
+     "n_quote_pinned": {
+      "kind": "counted",
+      "is": "Statements whose source page is pinned; the build stops if any is not."
+     },
+     "n_quote_verbatim": {
+      "kind": "counted",
+      "is": "Statements every passage of whose quotation (the text between elisions) is found word for word in the pinned copy of its source, read with tags set aside and entities as characters."
+     },
+     "n_quote_part": {
+      "kind": "counted",
+      "is": "Statements with at least one passage not found whole but found as a run of at least six consecutive words (or the whole passage, if shorter); anything weaker stops the build."
+     },
+     "n_typography": {
+      "kind": "counted",
+      "is": "Statements whose collection note mentions spelling or typography."
+     },
+     "n_interval": {
+      "kind": "counted",
+      "is": "Statements whose quotation carries a plus-minus sign or a numeric range; the page states there are none and stops if there are."
+     }
+    }
+   },
+   "what": "Counts over data/manual/politics.json made by scripts/politics.py.",
+   "model": "`analyse()` counts the notes and the interval patterns over every statement; `_quote_check()` splits each quotation at elisions and looks for each passage in the pinned copy of its source page, flattened by `claims._flat`, first whole, then as the longest run of consecutive words.",
+   "assumptions": [
+    "A passage found in the pinned copy is the passage the collector captured: the pin was taken after the collection, so a page edited in between could differ in either direction."
+   ],
+   "justified": [
+    {
+     "text": "The check reads the same pinned copies the page's figures are read from, and a quotation that falls short stops the page being written.",
+     "ref": "scripts/politics.py"
+    }
+   ],
+   "gaps": [
+    "The six-word threshold for a partial match is a choice, not derived; a passage found only in part may differ from its source in wording, not only in rendering."
+   ],
+   "void_if": [
+    "a source page is re-pinned and the collection is not rechecked"
+   ],
+   "licenses": "That the quotations printed are, word for word or in part, on the pages they cite, as those pages stood when pinned.",
+   "not_licensed": "That the official record of the Folketing holds the chamber quotations, or that a speaker meant what the words say.",
+   "watches": [
+    "scripts/politics.py",
+    "data/manual/politics.json"
+   ],
+   "confirmed": {
+    "by": "fork w2-po (read analyse() and _quote_check() in politics.py as patched against the declaration: each field counts what it says, and the build stops on an unpinned source, a weak passage or an interval; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/politics.py": "21263d09920b81cc",
+     "data/manual/politics.json": "cb444fb5f0e2706a"
+    }
+   }
+  }
+ ]
+}

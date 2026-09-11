@@ -526,10 +526,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "fork w1-ni (re-read: the treatment-plant block of koege_tables() - godk_pe at or above PLANT_MIN_PE, municipality in the list, inside the bay's box - occurs verbatim as it stood before this fork's edits, checked against the text read at the start of the task, and PLANT_MIN_PE and KOEGE_BOX are unchanged; nitrogen.py changed in prose, claims and an added feature count; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: nitrogen.py changed only in the prose of the L 5 sentence - the vote now read from TV 2's pin and the law's 2027 and 2028 steps stated; no computation changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/nitrogen.py": "6637bc54ad794584"
+     "scripts/nitrogen.py": "f25777309800a420"
     }
    }
   },
@@ -594,10 +594,10 @@
     "scripts/currents.py"
    ],
    "confirmed": {
-    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/currents.py": "5e180c254909fc16"
+     "scripts/currents.py": "c31aaaf30ed9ee19"
     }
    }
   },

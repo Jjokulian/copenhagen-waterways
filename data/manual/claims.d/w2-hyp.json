@@ -1,0 +1,1406 @@
+{
+ "sources": {
+  "HY-MST-1793": {
+   "title": "Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793",
+   "url": "https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "c3e6f59e23e30e2b7b0819eb6a14055261c332688fd569c747bd704a311b891e",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "HY-WIKI-DEF": {
+   "title": "Wikipedia, Diesel exhaust fluid",
+   "url": "https://en.wikipedia.org/wiki/Diesel_exhaust_fluid",
+   "retrieved": "2026-09-11",
+   "sha256": "e241c643c10e42b397708576fff337dbddda1e047245ab25e37bd5f43abe8e3f",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "HY-WIKI-UAN": {
+   "title": "Wikipedia, UAN (urea ammonium nitrate)",
+   "url": "https://en.wikipedia.org/wiki/UAN",
+   "retrieved": "2026-09-11",
+   "sha256": "03fc228b44de6e949508d9cef5b5463d99b941203aeebff006a3e87866fad4eb",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "HY-WIKI-SEAWATER": {
+   "title": "Wikipedia, Seawater",
+   "url": "https://en.wikipedia.org/wiki/Seawater",
+   "retrieved": "2026-09-11",
+   "sha256": "a933ef4bfa545f1925cd4068703d3bda464affef35af3639e6a8f9b42a9a0d35",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "HY-WIKI-ATZA": {
+   "title": "Wikipedia, Atrazine chlorohydrolase",
+   "url": "https://en.wikipedia.org/wiki/Atrazine_chlorohydrolase",
+   "retrieved": "2026-09-11",
+   "sha256": "839308f8629b6c0028bb5f43c05095a25a02ddb3cbf5d9cfa699c52a9eebd25a",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "HY-WIKI-COD": {
+   "title": "Wikipedia, Chemical oxygen demand",
+   "url": "https://en.wikipedia.org/wiki/Chemical_oxygen_demand",
+   "retrieved": "2026-09-11",
+   "sha256": "f7be1d12ccc8891382bc01cd8bfeafe8ca2e339918ffff21eab46aa1ada8d36b",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "HY-FIGSHARE-D1": {
+   "title": "figshare 20310255, HELCOM spatial data layers on fishing effort and footprint 2016-2021 (API record)",
+   "url": "https://api.figshare.com/v2/articles/20310255",
+   "retrieved": "2026-09-11",
+   "sha256": "d2af1de1215e1995fbfb0be7ef5ca4d5ccf8dd76ffeac48840b9efd0b83d4709",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "params": {},
+ "figures": {
+  "hy_bathing": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": "sites",
+   "fmt": "{:,}"
+  },
+  "hy_rbu": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": "rbu.n",
+   "fmt": "{:,}"
+  },
+  "hy_sw_n": {
+   "file": "data/derived/outfalls.json",
+   "path": "layers.separate_stormwater.n",
+   "fmt": "{:,}"
+  },
+  "hy_sw_with": {
+   "file": "data/derived/outfalls.json",
+   "path": "layers.separate_stormwater.totals.Vand_(m3/ aar).n",
+   "fmt": "{:,}"
+  },
+  "hy_sw_sum": {
+   "file": "data/derived/outfalls.json",
+   "path": "layers.separate_stormwater.totals.Vand_(m3/ aar).sum",
+   "fmt": "{:,.0f}"
+  },
+  "hy_wind": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": "weather.n_years",
+   "fmt": "{:,}"
+  },
+  "hy_areas": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": "areas.n",
+   "fmt": "{:,}"
+  },
+  "hy_hz_points": {
+   "file": "data/derived/areas.json",
+   "path": "hazardous_layer.points",
+   "fmt": "{:,}"
+  },
+  "hy_hz_lake": {
+   "file": "data/derived/areas.json",
+   "path": "hazardous_layer.lake",
+   "fmt": "{:,}"
+  },
+  "hy_hz_river": {
+   "file": "data/derived/areas.json",
+   "path": "hazardous_layer.river",
+   "fmt": "{:,}"
+  },
+  "hy_hz_coast": {
+   "file": "data/derived/areas.json",
+   "path": "hazardous_layer.coast",
+   "fmt": "{:,}"
+  },
+  "hy_hz_sed": {
+   "file": "data/derived/oxygen.json",
+   "path": "hazardous.sediment",
+   "fmt": "{:,}"
+  },
+  "hy_lay_aqua": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "layers.aquaculture",
+   "fmt": "{:,}"
+  },
+  "hy_lay_dump": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "layers.dumping",
+   "fmt": "{:,}"
+  },
+  "hy_lay_extr": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "layers.extraction",
+   "fmt": "{:,}"
+  },
+  "hy_lay_treat": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "layers.treatment",
+   "fmt": "{:,}"
+  },
+  "hy_i1_in": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "register.series_stations_in_register",
+   "fmt": "{:,}"
+  },
+  "hy_i1_series": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "register.series_stations",
+   "fmt": "{:,}"
+  },
+  "hy_reg_both": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "register.rows_with_both_dates",
+   "fmt": "{:,}"
+  },
+  "hy_reg_eq": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "register.rows_start_equals_end",
+   "fmt": "{:,}"
+  },
+  "hy_ctd_rows": {
+   "file": "data/derived/enums.json",
+   "path": "ctd.rows",
+   "fmt": "{:,}"
+  },
+  "hy_ctd_999": {
+   "file": "data/derived/enums.json",
+   "path": "ctd.categorical.SondeNr.999",
+   "fmt": "{:,}"
+  },
+  "hy_ctd_ketcher": {
+   "file": "data/derived/enums.json",
+   "path": "ctd.categorical.Prøvetagningsudstyr.Ketcher",
+   "fmt": "{:,}"
+  },
+  "hy_probes": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": "enums.probe_ids_known",
+   "fmt": "{:,}"
+  },
+  "hy_i7_months": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": "sign_flips.station_months",
+   "fmt": "{:,}"
+  },
+  "hy_i7_stations": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": "sign_flips.stations",
+   "fmt": "{:,}"
+  },
+  "hy_i7_wb": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "sign_flips.water_bodies",
+   "fmt": "{:,}"
+  },
+  "hy_i7_prefixes": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "sign_flips.prefixes",
+   "fmt": "{:,}"
+  },
+  "hy_i7_km_min": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "sign_flips.km_min",
+   "fmt": "{:.0f}"
+  },
+  "hy_i7_km_max": {
+   "file": "data/derived/hypotheses_evidence.json",
+   "path": "sign_flips.km_max",
+   "fmt": "{:.0f}"
+  }
+ },
+ "nodes": [
+  {
+   "id": "X-HY-HYPOTHESES",
+   "kind": "script",
+   "label": "hypotheses.py",
+   "detail": "Writes hypotheses_evidence.json: the station-register facts, the feature counts of four national layers, solstice day lengths from daylight.py, and the spread of the flagged sign-flip stations."
+  },
+  {
+   "id": "X-HY-B1",
+   "kind": "script",
+   "label": "hypodraft_b1.py",
+   "detail": "Counts the national bathing-site and overflow-structure layers."
+  },
+  {
+   "id": "X-HY-FACTS",
+   "kind": "script",
+   "label": "hypodraft_facts.py",
+   "detail": "File facts for the drafts: the wind record, the area partition, the probe enumeration and the flagged sign flips."
+  },
+  {
+   "id": "X-HY-ENUMS",
+   "kind": "script",
+   "label": "enums.py",
+   "detail": "Enumerates every categorical column of the fetched extracts, counting each value over all rows."
+  },
+  {
+   "id": "X-HY-SPILDEVAND",
+   "kind": "script",
+   "label": "fetch_spildevand.py",
+   "detail": "Fetches the national outfall layers and totals each numeric property over the features that report it."
+  },
+  {
+   "id": "X-HY-AREAS",
+   "kind": "script",
+   "label": "areas.py",
+   "detail": "Builds the water-body records and counts the hazardous-substance layer by the water-body code of each point."
+  },
+  {
+   "id": "X-HY-OXYGEN",
+   "kind": "script",
+   "label": "oxygen.py",
+   "detail": "Counts the matrices the hazardous-substance layer flags."
+  },
+  {
+   "id": "D-HY-NATIONAL",
+   "kind": "held",
+   "label": "National layers\\nsites, grounds, areas, plants",
+   "detail": "data/raw/national: punkt_havdam_udl, klappladser, raastofomr and punkt_rens_udl, as fetched."
+  },
+  {
+   "id": "D-HY-BATHING",
+   "kind": "held",
+   "label": "Bathing-site layer",
+   "detail": "data/raw/national/badevand.geojson, as fetched."
+  },
+  {
+   "id": "D-HY-RBU",
+   "kind": "held",
+   "label": "Overflow-structure register",
+   "detail": "data/raw/national/punkt_rbu_udl.geojson, the national register of rain-conditioned outfalls."
+  },
+  {
+   "id": "D-HY-OUTFALLS",
+   "kind": "held",
+   "label": "Separate-stormwater\\noutfall layer",
+   "detail": "The spildevandsdata.dk layer of separate-stormwater outfalls, with the annual volume each reports."
+  },
+  {
+   "id": "D-HY-HAZ",
+   "kind": "held",
+   "label": "Hazardous-substance layer",
+   "detail": "data/raw/national/sw_mfs_tilstand.geojson: the national water-plan points for hazardous substances, with the water-body code of each and the matrices measured."
+  },
+  {
+   "id": "D-HY-WIND",
+   "kind": "held",
+   "label": "Hourly wind files",
+   "detail": "data/raw/weather: the hourly wind record held here."
+  },
+  {
+   "id": "D-HY-AREAS",
+   "kind": "held",
+   "label": "The area partition",
+   "detail": "docs/data/areas/areas.json: the project's partition of Danish marine waters into water bodies."
+  },
+  {
+   "id": "D-HY-REGISTER",
+   "kind": "held",
+   "label": "ODA station register",
+   "detail": "data/raw/oda/stations.csv, with its start and end dates per row."
+  },
+  {
+   "id": "D-HY-FLAGS",
+   "kind": "held",
+   "label": "The flag record",
+   "detail": "docs/data/areas/flags.json: per-value quality flags, each with the evidence for it. Nothing is removed."
+  },
+  {
+   "id": "E-HY-MST-TOTAL",
+   "kind": "external",
+   "label": "Miljøstyrelsen inventory:\\ntotals",
+   "detail": "The inventory's table of quantified microplastic release, total and to the aquatic environment.",
+   "source": "HY-MST-1793",
+   "said": "Total quantified microplastics (rounded)"
+  },
+  {
+   "id": "E-HY-MST-TABLE",
+   "kind": "external",
+   "label": "Miljøstyrelsen inventory:\\nsources",
+   "detail": "The same table, row by source: tyres, footwear, paints, ship paints.",
+   "source": "HY-MST-1793",
+   "said": "Secondary microplastics Tires"
+  },
+  {
+   "id": "E-HY-MST-RETAIN",
+   "kind": "external",
+   "label": "Miljøstyrelsen inventory:\\nstormwater retention",
+   "detail": "The inventory's estimate of how much stormwater microplastic is retained, and why.",
+   "source": "HY-MST-1793",
+   "said": "As only a part of stormwater sewers are equipped with settling lagoons"
+  },
+  {
+   "id": "E-HY-FIGSHARE",
+   "kind": "external",
+   "label": "figshare record of the\\nHELCOM fishing layers",
+   "detail": "The record describes shapefiles of fishing effort and footprint, by quarter, for the HELCOM regions.",
+   "source": "HY-FIGSHARE-D1",
+   "said": "fishing footprint of bottom contacting gears by quarter for the HELCOM regions"
+  },
+  {
+   "id": "E-HY-DCE-ILT",
+   "kind": "external",
+   "label": "DCE oxygen note:\\nwhat iltsvind is",
+   "detail": "DCE's note defines iltsvind by oxygen concentration for Danish waters.",
+   "source": "NI-DCE-ILT-2023",
+   "said": "I Danmark betegnes det som iltsvind"
+  },
+  {
+   "id": "U-HY-PREFIX",
+   "kind": "untraced",
+   "label": "Trail ends: what a\\nstation-number prefix encodes",
+   "detail": "Searched 2026-09-11: the flag record calls the leading digits of the flagged stations' numbers custodian prefixes; no document held here says how ODA station numbers encode their custodian."
+  },
+  {
+   "id": "H-HY-FIRST",
+   "kind": "history",
+   "label": "HYPOTHESES.md,\\nits first version",
+   "detail": "The register as first committed, written to be thorough.",
+   "commit": "a53500f",
+   "file": "docs/HYPOTHESES.md",
+   "said": "mechanisms in"
+  },
+  {
+   "id": "H-HY-AFTERNOON",
+   "kind": "history",
+   "label": "HYPOTHESES.md,\\nthe same afternoon",
+   "detail": "The register after a single afternoon of additions, each from an analogy raised in passing.",
+   "commit": "bfacbc3",
+   "file": "docs/HYPOTHESES.md",
+   "said": "within a single afternoon"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-HY-O9-SITES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The national bathing-water layer holds {fig:hy_bathing} sites.",
+   "because": "Counted by `hypodraft_b1.py` as the features of the fetched bathing-site layer.",
+   "rests_on": [
+    "D-HY-BATHING",
+    "X-HY-B1"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_bathing}": "1,026",
+     "said on HYPOTHESIS_DATA.md": "The national bathing-water layer holds 1,026 sites.",
+     "texts": "62692b13fe1932da",
+     "node D-HY-BATHING": "9432561e554f2af0",
+     "node X-HY-B1": "22c008282e7bc0d2"
+    }
+   }
+  },
+  {
+   "id": "C-HY-A8-SITES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The national layer of marine aquaculture discharge points holds {fig:hy_lay_aqua} points.",
+   "because": "Counted by hypotheses.py as the features of the fetched layer.",
+   "rests_on": [
+    "D-HY-NATIONAL",
+    "X-HY-HYPOTHESES"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_lay_aqua}": "26",
+     "said on HYPOTHESIS_DATA.md": "The national layer of marine aquaculture discharge points holds 26 points.",
+     "texts": "beff6f6309ec7391",
+     "node D-HY-NATIONAL": "cbcba50cd571b04e",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28"
+    }
+   }
+  },
+  {
+   "id": "C-HY-B1-OUTFALLS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The national register of rain-conditioned outfalls holds {fig:hy_rbu} points.",
+   "because": "Counted by `hypodraft_b1.py` as the features of the fetched register layer.",
+   "rests_on": [
+    "D-HY-RBU",
+    "X-HY-B1"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_rbu}": "19,665",
+     "said on HYPOTHESIS_DATA.md": "The national register of rain-conditioned outfalls holds 19,665 points.",
+     "texts": "2c968f192074d14d",
+     "node D-HY-RBU": "08a7ca99b480a104",
+     "node X-HY-B1": "22c008282e7bc0d2"
+    }
+   }
+  },
+  {
+   "id": "C-HY-B2-TOTAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The separate-stormwater outfall layer sums {calc:hy_sw_sum / 1e6|.1f} million m³ a year over the {fig:hy_sw_with} of its {fig:hy_sw_n} outfalls that report a volume.",
+   "because": "fetch_spildevand.py totals the annual volume over the features that hold a number and stores their count beside it, so the sum covers only those outfalls.",
+   "rests_on": [
+    "D-HY-OUTFALLS",
+    "X-HY-SPILDEVAND"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {calc:hy_sw_sum / 1e6|.1f}": "278.3",
+     "claim {fig:hy_sw_with}": "15,159",
+     "claim {fig:hy_sw_n}": "16,185",
+     "said on HYPOTHESIS_DATA.md": "The separate-stormwater outfall layer sums 278.3 million m³ a year over the 15,159 of its 16,185 outfalls that report a volume.",
+     "texts": "f22984c58321fcda",
+     "node D-HY-OUTFALLS": "654f15587bff60a6",
+     "node X-HY-SPILDEVAND": "9a3b25fd81a543f3"
+    }
+   }
+  },
+  {
+   "id": "C-HY-B2-MST",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "Miljøstyrelsen's microplastic inventory estimates that on average only {read:HY-MST-1793:10|only 10-20% of the microplastics in stormwater is retained}-{read:HY-MST-1793:20|only 10-20% of the microplastics in stormwater is retained}% of the microplastic in stormwater is retained, because only part of the stormwater sewers have settling lagoons.",
+   "because": "Their reason, as the report gives it: only a part of the separate sewers are equipped with settling lagoons. The figure is an average over all stormwater; the report gives no efficiency for the lagoons that exist.",
+   "rests_on": [
+    "E-HY-MST-RETAIN"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen (Lassen et al. 2015, `Environmental Project 1793`)",
+   "replaces": [
+    "C-HY-OLD-B2-BASINS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:HY-MST-1793:10|only 10-20% of the microplastics in stormwater is retained}": "10",
+     "claim {read:HY-MST-1793:20|only 10-20% of the microplastics in stormwater is retained}": "20",
+     "pinned HY-MST-1793": "c3e6f59e23e30e2b",
+     "said on HYPOTHESIS_DATA.md": "Miljøstyrelsen's microplastic inventory estimates that on average only 10–20% of the microplastic in stormwater is retained, because only part of the stormwater sewers have settling lagoons.",
+     "texts": "65b676c4daf44ad4",
+     "node E-HY-MST-RETAIN": "aeab62d73364c6f0"
+    }
+   }
+  },
+  {
+   "id": "C-HY-B3-PLANTS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The national layer of treatment-plant discharge points holds {fig:hy_lay_treat} points.",
+   "because": "Counted by hypotheses.py as the features of the fetched layer.",
+   "rests_on": [
+    "D-HY-NATIONAL",
+    "X-HY-HYPOTHESES"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_lay_treat}": "750",
+     "said on HYPOTHESIS_DATA.md": "The national layer of treatment-plant discharge points holds 750 points.",
+     "texts": "f38c16c94e93a489",
+     "node D-HY-NATIONAL": "cbcba50cd571b04e",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28"
+    }
+   }
+  },
+  {
+   "id": "C-HY-WIND",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The hourly wind record held here covers {fig:hy_wind} calendar years.",
+   "because": "hypodraft_facts.py counts the calendar years with any hourly value in the held wind files.",
+   "rests_on": [
+    "D-HY-WIND",
+    "X-HY-FACTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_wind}": "31",
+     "said on HYPOTHESIS_DATA.md": "The hourly wind record held here covers 31 calendar years.",
+     "texts": "f2ebeb8e361fe9e3",
+     "node D-HY-WIND": "6ab6734e95de3cf5",
+     "node X-HY-FACTS": "0c9203a01293ee22"
+    }
+   }
+  },
+  {
+   "id": "C-HY-D1-FIGSHARE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "HELCOM's layers of fishing effort and of the footprint of bottom-contacting gears are published on figshare as shapefiles, by quarter for the HELCOM regions, for 2016 to 2021; they are not fetched here.",
+   "because": "Their record describes the files and their period. It states neither a grid resolution nor a station coverage.",
+   "rests_on": [
+    "E-HY-FIGSHARE"
+   ],
+   "basis": "assessed",
+   "holder": "HELCOM, through its figshare record",
+   "replaces": [
+    "C-HY-OLD-D1"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on HYPOTHESIS_DATA.md": "HELCOM's layers of fishing effort and of the footprint of bottom-contacting gears are published on figshare as shapefiles, by quarter for the HELCOM regions, for 2016 to 2021; they are not fetched here.",
+     "texts": "6e86a3da6f219706",
+     "node E-HY-FIGSHARE": "28fe62a3195bbf59",
+     "pinned HY-FIGSHARE-D1": "d2af1de1215e1995"
+    }
+   }
+  },
+  {
+   "id": "C-HY-D3-GROUNDS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The national layer of licensed dumping grounds holds {fig:hy_lay_dump} grounds.",
+   "because": "Counted by hypotheses.py as the features of the fetched layer.",
+   "rests_on": [
+    "D-HY-NATIONAL",
+    "X-HY-HYPOTHESES"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_lay_dump}": "114",
+     "said on HYPOTHESIS_DATA.md": "The national layer of licensed dumping grounds holds 114 grounds.",
+     "texts": "a55cb5b5478ac5cc",
+     "node D-HY-NATIONAL": "cbcba50cd571b04e",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28"
+    }
+   }
+  },
+  {
+   "id": "C-HY-D4-AREAS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The national layer of raw-material extraction areas holds {fig:hy_lay_extr} areas.",
+   "because": "Counted by hypotheses.py as the features of the fetched layer.",
+   "rests_on": [
+    "D-HY-NATIONAL",
+    "X-HY-HYPOTHESES"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_lay_extr}": "305",
+     "said on HYPOTHESIS_DATA.md": "The national layer of raw-material extraction areas holds 305 areas.",
+     "texts": "231e2b404ea574f4",
+     "node D-HY-NATIONAL": "cbcba50cd571b04e",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28"
+    }
+   }
+  },
+  {
+   "id": "C-HY-E6-FRESHWATER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The national hazardous-substance layer holds {fig:hy_hz_points} points: {fig:hy_hz_lake} in lakes, {fig:hy_hz_river} in rivers and {fig:hy_hz_coast} at the coast. Its {fig:hy_hz_sed} sediment points are therefore all freshwater, and for the sea the sediment count is none.",
+   "because": "areas.py counts the layer by the water-body code of each point and oxygen.py counts the points flagged as measuring sediment; with no coastal point, no sediment point can be marine.",
+   "rests_on": [
+    "D-HY-HAZ",
+    "X-HY-AREAS",
+    "X-HY-OXYGEN"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-HY-OLD-E6"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_hz_points}": "256",
+     "claim {fig:hy_hz_lake}": "152",
+     "claim {fig:hy_hz_river}": "104",
+     "claim {fig:hy_hz_coast}": "0",
+     "claim {fig:hy_hz_sed}": "5",
+     "said on HYPOTHESIS_DATA.md": "The national hazardous-substance layer holds 256 points: 152 in lakes, 104 in rivers and 0 at the coast. Its 5 sediment points are therefore all freshwater, and for the sea the sediment count is none.",
+     "texts": "520f284d6b922651",
+     "node D-HY-HAZ": "a74dd208c5fde788",
+     "node X-HY-AREAS": "7e0fb107c5ea451d",
+     "node X-HY-OXYGEN": "e31920ffeba25755"
+    }
+   }
+  },
+  {
+   "id": "C-HY-E18-TYRES",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "In Miljøstyrelsen's inventory tyres are the largest single source of the microplastic reaching Danish water: {read:HY-MST-1793:60.2|Tires 4,200-6,600 55.8 1,600-2,500 500-1,700 60.2}% of the aquatic total.",
+   "because": "Their table gives each source's share of the release to the aquatic environment; the tyre row is the largest.",
+   "rests_on": [
+    "E-HY-MST-TABLE"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen (Lassen et al. 2015, `Environmental Project 1793`)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:HY-MST-1793:60.2|Tires 4,200-6,600 55.8 1,600-2,500 500-1,700 60.2}": "60.2",
+     "pinned HY-MST-1793": "c3e6f59e23e30e2b",
+     "said on HYPOTHESIS_DATA.md": "In Miljøstyrelsen's inventory tyres are the largest single source of the microplastic reaching Danish water: 60.2% of the aquatic total.",
+     "texts": "a0b4834ac2494888",
+     "node E-HY-MST-TABLE": "66caea4dbdffa526"
+    }
+   }
+  },
+  {
+   "id": "C-HY-AREAS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The project's partition of Danish marine waters holds {fig:hy_areas} areas.",
+   "because": "hypodraft_facts.py counts the areas of the partition file.",
+   "rests_on": [
+    "D-HY-AREAS",
+    "X-HY-FACTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_areas}": "123",
+     "said on HYPOTHESIS_DATA.md": "The project's partition of Danish marine waters holds 123 areas.",
+     "texts": "3d37e352796fb636",
+     "node D-HY-AREAS": "225f8ef79636d135",
+     "node X-HY-FACTS": "0c9203a01293ee22"
+    }
+   }
+  },
+  {
+   "id": "C-HY-I1-REGISTER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The ODA station register carries {fig:hy_i1_in} of the {fig:hy_i1_series} series stations, and on {calc@K-SUBSET-SHARE:hy_reg_eq / hy_reg_both * 100|.1f}% of its rows StartDato equals SlutDato: a visit date, not a lifespan.",
+   "because": "hypotheses.py streams the register, keeps the rows with both dates, counts those where the two are the same string, and intersects the register's station numbers with the series stations.",
+   "rests_on": [
+    "D-HY-REGISTER",
+    "X-HY-HYPOTHESES"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_i1_in}": "34",
+     "claim {fig:hy_i1_series}": "1,415",
+     "claim {calc@K-SUBSET-SHARE:hy_reg_eq / hy_reg_both * 100|.1f}": "99.8",
+     "said on HYPOTHESIS_DATA.md": "The ODA station register carries 34 of the 1,415 series stations, and on 99.8% of its rows `StartDato` equals `SlutDato`: a visit date, not a lifespan.",
+     "texts": "d1bc4413cf2b0908",
+     "node D-HY-REGISTER": "62c37f9461c9976a",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28"
+    }
+   }
+  },
+  {
+   "id": "C-HY-I2-SONDE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "SondeNr is `999`, probe unknown, on {calc@K-SUBSET-SHARE:hy_ctd_999 / hy_ctd_rows * 100|.1f}% of the CTD extract, and the sampling gear is the constant Ketcher on {calc@K-SUBSET-SHARE:hy_ctd_ketcher / hy_ctd_rows * 100|.1f}%; the other {calc@K-SUBSET-SHARE:(hy_ctd_rows - hy_ctd_999) / hy_ctd_rows * 100|.1f}% carries {fig:hy_probes} identified probes.",
+   "because": "enums.py counts every value of each categorical column over all rows of the extract; the shares are those counts over the rows.",
+   "rests_on": [
+    "D-CTD",
+    "X-HY-ENUMS",
+    "X-HY-FACTS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-HY-OLD-I2-SAMPLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {calc@K-SUBSET-SHARE:hy_ctd_999 / hy_ctd_rows * 100|.1f}": "25.6",
+     "claim {calc@K-SUBSET-SHARE:hy_ctd_ketcher / hy_ctd_rows * 100|.1f}": "99.9",
+     "claim {calc@K-SUBSET-SHARE:(hy_ctd_rows - hy_ctd_999) / hy_ctd_rows * 100|.1f}": "74.4",
+     "claim {fig:hy_probes}": "81",
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on HYPOTHESIS_DATA.md": "`SondeNr` is `999`, probe unknown, on 25.6% of the CTD extract, and the sampling gear is the constant `Ketcher` on 99.9%; the other 74.4% carries 81 identified probes.",
+     "texts": "522a5d274b981eff",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node X-HY-ENUMS": "1683676ecd8e12cb",
+     "node X-HY-FACTS": "0c9203a01293ee22"
+    }
+   }
+  },
+  {
+   "id": "C-HY-I3-NOCLOCK",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The CTD extract has no time of day in any of its {calc:hy_ctd_rows / 1e6|.1f} million rows, and no column for it.",
+   "because": "enums.py reads every row of the extract; its date column is a date, and no column holds a clock time.",
+   "rests_on": [
+    "D-CTD",
+    "X-HY-ENUMS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {calc:hy_ctd_rows / 1e6|.1f}": "53.7",
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on HYPOTHESIS_DATA.md": "The CTD extract has no time of day in any of its 53.7 million rows, and no column for it.",
+     "texts": "5ba9810307ebde13",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node X-HY-ENUMS": "1683676ecd8e12cb"
+    }
+   }
+  },
+  {
+   "id": "C-HY-I3-CHEMCLOCK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "The water-chemistry extract does carry a clock value per sample, so where chemistry shares a cruise with a CTD cast it can bound the hour the cast was taken.",
+   "because": "The clock values are established in C-CLOCK-EXISTS, and borrowing one for a cast on the same station-day is what depth_clock.py does, with the caveats C-DEPTH-BORROW states.",
+   "rests_on": [
+    "C-CLOCK-EXISTS",
+    "C-DEPTH-BORROW"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-HY-OLD-CHEM"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on HYPOTHESIS_DATA.md": "The water-chemistry extract does carry a clock value per sample, so where chemistry shares a cruise with a CTD cast it can bound the hour the cast was taken.",
+     "texts": "5ce61a93780b6fd5",
+     "rests on C-CLOCK-EXISTS": "2d15f832283c36ac",
+     "rests on C-DEPTH-BORROW": "0d003fb295681b19"
+    }
+   }
+  },
+  {
+   "id": "C-HY-I7-CASE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "{fig:hy_i7_months} station-months of negative oxygen, all in May and June 2005, at {fig:hy_i7_stations} stations in {fig:hy_i7_wb} water bodies, between {fig:hy_i7_km_min} and {fig:hy_i7_km_max} km apart in the Øresund approaches. The flag record reads the co-reported saturation as full or above and the magnitudes as matching Weiss solubility: the water was oxygenated and the sign inverted.",
+   "because": "The months and stations are counted from the flag record by hypodraft_facts.py; the water bodies and distances are computed by hypotheses.py from the overlay and the series positions; the reading of the saturation is the flag record's own evidence.",
+   "rests_on": [
+    "D-HY-FLAGS",
+    "X-HY-FACTS",
+    "X-HY-HYPOTHESES"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_i7_months}": "11",
+     "claim {fig:hy_i7_stations}": "6",
+     "claim {fig:hy_i7_wb}": "4",
+     "claim {fig:hy_i7_km_min}": "6",
+     "claim {fig:hy_i7_km_max}": "75",
+     "said on HYPOTHESIS_DATA.md": "11 station-months of negative oxygen, all in May and June 2005, at 6 stations in 4 water bodies, between 6 and 75 km apart in the Øresund approaches. The flag record reads the co-reported saturation as full or above and the magnitudes as matching Weiss solubility: the water was oxygenated and the sign inverted.",
+     "texts": "d66906822d86e34b",
+     "node D-HY-FLAGS": "59611865975d2929",
+     "node X-HY-FACTS": "0c9203a01293ee22",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28"
+    }
+   }
+  },
+  {
+   "id": "C-HY-I7-LEAD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "Flagged stations with {fig:hy_i7_prefixes} different station-number prefixes, close together, point at a shared regional processing step rather than one desk; with {fig:hy_i7_stations} stations it is a lead, not a finding.",
+   "because": "If the prefixes mark custodians, as the flag record reads them, a defect common to several custodians in one area is more likely introduced where their data are processed together than at any one of them. Whether they mark custodians is not verified.",
+   "rests_on": [
+    "C-HY-I7-CASE",
+    "U-HY-PREFIX"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read each span against its claim and the data: layer counts against the fetched features, the register and CTD shares against hypotheses_evidence.json and enums.json, the Miljøstyrelsen and figshare figures against the pinned documents, the sign-flip case against the flag record; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_i7_prefixes}": "4",
+     "claim {fig:hy_i7_stations}": "6",
+     "said on HYPOTHESIS_DATA.md": "Flagged stations with 4 different station-number prefixes, close together, point at a shared regional processing step rather than one desk; with 6 stations it is a lead, not a finding.",
+     "texts": "e47358ac5eac0c23",
+     "rests on C-HY-I7-CASE": "d66906822d86e34b",
+     "node U-HY-PREFIX": "9ac09018a8bdeeef"
+    }
+   }
+  },
+  {
+   "id": "C-HY-J9-INVENTORY",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "HYPOTHESIS_DATA.md",
+   "claim": "Miljøstyrelsen's inventory puts total Danish microplastic release at {read:HY-MST-1793:5,500|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100}-{read:HY-MST-1793:13,900|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100} t a year, of which {read:HY-MST-1793:600|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100}-{read:HY-MST-1793:3,100|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100} t a year reaches the aquatic environment; of that aquatic share, tyres are {read:HY-MST-1793:60.2|Tires 4,200-6,600 55.8 1,600-2,500 500-1,700 60.2}%, footwear {read:HY-MST-1793:7.4|Footwear 100-1,000 5.7 40-380 10-260 7.4}%, paint {read:HY-MST-1793:4.3|Paints (excl. ship paints) 150-810 5.0 14-220 6-149 4.3}% and ship paint {read:HY-MST-1793:7.1|Ship paints 40-480 2.7 0-50 21-240 7.1}%.",
+   "because": "Their table, by source, of release in total and to the aquatic environment; the report is from 2015 and says its coverage of fine dust is incomplete.",
+   "rests_on": [
+    "E-HY-MST-TOTAL",
+    "E-HY-MST-TABLE"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen (Lassen et al. 2015, `Environmental Project 1793`)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:HY-MST-1793:5,500|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100}": "5,500",
+     "claim {read:HY-MST-1793:13,900|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100}": "13,900",
+     "claim {read:HY-MST-1793:600|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100}": "600",
+     "claim {read:HY-MST-1793:3,100|Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100}": "3,100",
+     "claim {read:HY-MST-1793:60.2|Tires 4,200-6,600 55.8 1,600-2,500 500-1,700 60.2}": "60.2",
+     "claim {read:HY-MST-1793:7.4|Footwear 100-1,000 5.7 40-380 10-260 7.4}": "7.4",
+     "claim {read:HY-MST-1793:4.3|Paints (excl. ship paints) 150-810 5.0 14-220 6-149 4.3}": "4.3",
+     "claim {read:HY-MST-1793:7.1|Ship paints 40-480 2.7 0-50 21-240 7.1}": "7.1",
+     "pinned HY-MST-1793": "c3e6f59e23e30e2b",
+     "said on HYPOTHESIS_DATA.md": "Miljøstyrelsen's inventory puts total Danish microplastic release at 5,500–13,900 t a year, of which 600–3,100 t a year reaches the aquatic environment; of that aquatic share, tyres are 60.2%, footwear 7.4%, and paint and ship paint together 11.4%.",
+     "texts": "d017fcd82f8bc10c",
+     "node E-HY-MST-TOTAL": "ea8aac196ccb2975",
+     "node E-HY-MST-TABLE": "66caea4dbdffa526"
+    }
+   }
+  },
+  {
+   "id": "C-HY-GROWTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "HYPOTHESES.md",
+   "claim": "The register's first version was written to be thorough, and within a single afternoon it grew by about three quarters, every addition from an analogy raised in passing: the direct evidence that the list is not complete.",
+   "because": "The two versions are in the repository's history, and the entries added between them are the analogies the page names. A list that grows that much in one sitting has no claim to completeness.",
+   "rests_on": [
+    "H-HY-FIRST",
+    "H-HY-AFTERNOON"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read the span against the page: the incompleteness paragraph quotes the register's first and afternoon versions from git - licensed only because this is a historical claim - and the threshold sentence rests on DCE's pinned definition of iltsvind; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on HYPOTHESES.md": "The first version had 71 entries and was written to be thorough. It reached 127 within a single afternoon, and every addition came from an analogy raised in passing — soil sickness, desertification, sandy deserts, compost going anaerobic, turfgrass thatch, replant disease. None of those came from searching the marine literature. A list that grows by three quarters in one conversation is not a list anyone should call complete",
+     "texts": "c87e46cec8f68e68",
+     "node H-HY-FIRST": "7bd9588f1ff33983",
+     "node H-HY-AFTERNOON": "608956ee059f6618"
+    }
+   }
+  },
+  {
+   "id": "C-HY-ONE-THRESHOLD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "HYPOTHESES.md",
+   "claim": "Iltsvind is defined nationally by oxygen concentration alone, which assumes the tolerable level is the same everywhere.",
+   "because": "DCE's note defines iltsvind for Danish waters by concentration alone, at levels that apply to every water body; one definition for all of them assumes that the level which matters does not differ between them.",
+   "rests_on": [
+    "E-HY-DCE-ILT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-HY-OLD-RULE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w2-hyp (read the span against the page: the incompleteness paragraph quotes the register's first and afternoon versions from git - licensed only because this is a historical claim - and the threshold sentence rests on DCE's pinned definition of iltsvind; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on HYPOTHESES.md": "iltsvind is defined nationally by oxygen concentration alone, which assumes the tolerable level is the same everywhere",
+     "texts": "5af7029275576bba",
+     "node E-HY-DCE-ILT": "0ea92f9017ab5634",
+     "pinned NI-DCE-ILT-2023": "f5a0f9f2d3140e18"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-E6",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Sediment is measured at a few of the national hazardous-substance points.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "Sediment biocide concentrations. Sediment is measured at",
+    "end": "points in the national water-plan register.",
+    "why": "True of the layer, but read beside a marine hypothesis it misleads: every point in the layer is in a lake or a river, so for the sea the count is none."
+   },
+   "replaced_by": [
+    "C-HY-E6-FRESHWATER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Sediment biocide concentrations. Sediment is measured at 5 of the 256 hazardous-substance points in the national water-plan register.",
+     "texts": "4849f60c5a0eaf93"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-I2-SAMPLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Prøvetager is blank on most rows of a sample of the CTD extract.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "`Prøvetager` blank on",
+    "end": "M-row sample)",
+    "why": "Its justification was not recorded properly: the share came from a sample of the extract that no script stores, and the full enumeration does not count blank samplers."
+   },
+   "replaced_by": [
+    "C-HY-I2-SONDE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`Prøvetager` blank on 87% (1.2M-row sample)",
+     "texts": "e572beb2cd292f81"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-D1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The HELCOM swept-area layers come at a stated grid resolution and cover nearly every series station.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "swept-area ratio, figshare",
+    "end": "stations. Not fetched.",
+    "why": "Its justification was not recorded properly: the grid resolution and the station coverage were typed, and the figshare record states neither. Its files, period and quarterly layers can be read there."
+   },
+   "replaced_by": [
+    "C-HY-D1-FIGSHARE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "swept-area ratio, figshare `20310255`, 23.1 MB, `CC BY 4.0`, 0.05° c-square, quarterly, 2016–2021, covering 1,392 of 1,415 stations. Not fetched.",
+     "texts": "3fb666fb11038352"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-C6",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Oxygen saturation falls by a stated share per degree of warming.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "Warmer water holds less oxygen and respires faster",
+    "end": "saturation per °C",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Warmer water holds less oxygen and respires faster: roughly −2.3% saturation per °C",
+     "texts": "21a8d0d94bc2a7b8"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-K11",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Eelgrass needs a stated share of surface irradiance.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "is a resource with a hard requirement",
+    "end": "of surface irradiance for eelgrass",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "is a resource with a hard requirement - roughly 11-14% of surface irradiance for eelgrass",
+     "texts": "8aaa2b4af24b29ae"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-Z1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The eelgrass floor is a stated share of surface irradiance.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "The floor is the eelgrass requirement",
+    "end": "of surface irradiance.",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The floor is the eelgrass requirement, roughly 11-14% of surface irradiance.",
+     "texts": "640e817f55ec6433"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-T5",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated small share of suppressive soil makes a conducive soil suppressive.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "suppressiveness is transferable - mix",
+    "end": "of a suppressive soil into a conducive one",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "suppressiveness is transferable - mix 1-10% of a suppressive soil into a conducive one",
+     "texts": "0cb9f4453219b3d8"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-S5",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A Leptosol is a soil under a stated depth.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "The Leptosol lesson: a soil under",
+    "end": "has almost no capacity to absorb a shock",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The Leptosol lesson: a soil under 25 cm deep has almost no capacity to absorb a shock",
+     "texts": "06c99bd2b8d4666c"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-R1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Decomposers build biomass at a stated C:N and efficiency, giving a stated threshold, and straw sits at a stated C:N.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "Decomposer microbes build biomass near",
+    "end": "starves the next crop.",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Decomposer microbes build biomass near C:N 8-10 at about 40% carbon-use efficiency, so there is a threshold near C:N 25: below it decay releases mineral nitrogen, above it decay consumes it. Straw at C:N 80 starves the next crop.",
+     "texts": "bb218e59f247df48"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-R5",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Freshwater carries a stated range of sulphate, and seawater a stated multiple of it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "each yielding less energy. Freshwater carries",
+    "end": "a hundred to five hundred times more",
+    "why": "The freshwater range and the multiple have no source here. Seawater's sulphate is now computed from the pinned composition of seawater; the freshwater side is kept in words."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "each yielding less energy. Freshwater carries 5-30 mg/L of sulphate and so passes it quickly to methanogenesis. Seawater carries 2,700 mg/L, a hundred to five hundred times more",
+     "texts": "a38a2cfb60669eb0"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-PH-EL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Inside a dense bloom pH can rise above a stated value.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "drawn down inside a dense bloom, where pH can rise above",
+    "end": "High",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "drawn down inside a dense bloom, where pH can rise above 9. | High",
+     "texts": "ab0d54c0df8c218f"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-PH-PR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A bloom can push pH above a stated value.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "drawn down far enough to push pH above",
+    "end": "which is the carbon entry",
+    "why": "No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "drawn down far enough to push pH above 9 — which is the carbon entry",
+     "texts": "556e757f83d7dbe5"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-RULE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A flat percentage rule of the iltsvind trigger assumes the answer is the same everywhere.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "Nobody has published where each Danish area sits in that window",
+    "end": "assumes the answer is the same everywhere",
+    "why": "Its justification was not recorded properly: the percentage rule it named has no source anywhere in the repository. The national definition of iltsvind, which does have one, makes the same point."
+   },
+   "replaced_by": [
+    "C-HY-ONE-THRESHOLD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Nobody has published where each Danish area sits in that window, and the flat 25% rule of the iltsvind trigger assumes the answer is the same everywhere",
+     "texts": "119e1a2c7a7e7857"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-LITRE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A litre of AdBlue carries a stated mass of urea and of nitrogen.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "A litre of AdBlue is about",
+    "end": "g N per litre.",
+    "why": "The per-litre figures assumed a density of the fluid that no pinned source states. The page now gives them per kilogram, computed from the pinned composition and standard atomic weights."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A litre of AdBlue is about 354 g of urea at 46.6% nitrogen, so roughly 165 g N per litre.",
+     "texts": "e7c56239bf157121"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-NINE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "AtzA and TriA differ at a stated number of amino acids out of a stated length.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "they differ at nine amino acids",
+    "end": "is the distance between one novel capability and another.",
+    "why": "The count of differing amino acids and the length of the protein are not in the pinned source, which gives only the share of identical sequence; the page keeps that share."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "they differ at nine amino acids out of some four hundred and seventy-five — and they catalyse *different reactions*, one stripping a chlorine and the other stripping an amine. Nine substitutions is the distance between one novel capability and another.",
+     "texts": "383daf597e8b7bea"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-B2-BASINS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The inventory shows the settling basins are neither reliably present nor, where present, efficient.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "One figure bearing directly on the settling basins is already published",
+    "end": "nor, where present, efficient.",
+    "why": "The inventory's figure is an average over all stormwater. It supports that basins are not reliably present; it does not show that the ones that exist are inefficient."
+   },
+   "replaced_by": [
+    "C-HY-B2-MST"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "One figure bearing directly on the settling basins is already published: Miljøstyrelsen's microplastic inventory estimates that only 10–20% of stormwater microplastic is retained, because only some stormwater sewers have settling lagoons at all — so the basins are neither reliably present nor, where present, efficient.",
+     "texts": "c5d1ce88b10658ae"
+    }
+   }
+  },
+  {
+   "id": "C-HY-OLD-CHEM",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The water-chemistry clock values were never fetched.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "HYPOTHESES.md",
+    "commit": "00a157f",
+    "file": "docs/HYPOTHESES.md",
+    "begin": "But ODA marine water chemistry",
+    "end": "never fetched.",
+    "why": "Out of date: the water-chemistry extract has since been fetched, and its clock values examined."
+   },
+   "replaced_by": [
+    "C-HY-I3-CHEMCLOCK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "But ODA marine water chemistry (`Emne_10_11`) is recorded in our own enumeration, twice, as carrying `Startdato + Startklok` — a clock time per sample, never fetched.",
+     "texts": "22d631b6e8929259"
+    }
+   }
+  }
+ ]
+}

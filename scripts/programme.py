@@ -1374,9 +1374,9 @@ def render():
           "substance.** What comes out is fat, solids, fibre, wipes and the sediment they "
           "were lying in. A person who meets that in the water is not encountering a "
           "downstream effect of an oxygen deficit — they are encountering the discharge, "
-          "diluted. **That is *fedtemøg* in the sense the word is actually used**, and on "
-          "this page's own count it is one of the three public words with no instrument "
-          "behind it.\n"))
+          "diluted. It is not what the word *fedtemøg* names: that is filamentous brown algae "
+          "that grow on stones and mussels, tear loose and rot at the water's edge. The "
+          "discharge fouls water and shore in its own right.\n"))
     fa(CL("C-PG-2-REST", "The rest, with what each acts on and whether anything in Denmark "
           "records it:\n"))
     fa("| The flush also delivers | Which acts on | Recorded by |")

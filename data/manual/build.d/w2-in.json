@@ -1,0 +1,27 @@
+{
+ "_what": "Fork w2-in (INCIDENCE claims sweep): socialcontext.py also reads the claims register (its claim texts and the pinned documents it quotes through claims.resolve).",
+ "steps": [
+  {
+   "script": "scripts/socialcontext.py",
+   "inputs": [
+    "data/manual/claims.d/w2-in.json",
+    "data/manual/claims.d/politics.json",
+    "data/manual/claims.d/farm.json",
+    "data/manual/claims.json",
+    "data/derived/pins/BEK931-2024.txt",
+    "data/derived/pins/BEK673-2026.txt",
+    "data/derived/pins/BEK677-2026.txt",
+    "data/derived/pins/BEK130-2026.txt",
+    "data/derived/pins/BEK131-2026.txt",
+    "data/derived/pins/LOV759-2026.txt",
+    "data/derived/pins/NUAR-2024.txt",
+    "data/derived/pins/POL-TV2-20260903.txt",
+    "data/derived/pins/POL-DMBIO-2026.txt"
+   ],
+   "outputs": [
+    "docs/INCIDENCE.md",
+    "data/derived/socialcontext.json"
+   ]
+  }
+ ]
+}

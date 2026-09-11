@@ -55,6 +55,21 @@ VALUES = {}
 EVIDENCE = os.path.join(DERIVED, "hypotheses_evidence.json")
 STATIONS_CSV = os.path.join(ROOT, "data", "raw", "oda", "stations.csv")
 SERIES = os.path.join(ROOT, "docs", "data", "areas", "stations_series.json")
+DATA_OUT = os.path.join(ROOT, "docs", "HYPOTHESIS_DATA.md")
+FLAGS = os.path.join(ROOT, "docs", "data", "areas", "flags.json")
+OVERLAY = os.path.join(ROOT, "docs", "data", "areas", "station_waterbody_overlay.json")
+NATIONAL = os.path.join(ROOT, "data", "raw", "national")
+# A hypothesis carries no measurement. What the data holds that bears on one is on
+# the data page, linked from its Needs; these are the sections it has.
+DATA_LINK = {"A8": "A8", "B1": "B1", "B2": "B2", "B3": "B3", "C2": "C2", "D1": "D1",
+             "D3": "D3", "D4": "D4", "D7": "C2", "Z5": "C2", "E6": "E6", "E18": "E18",
+             "H4": "H4", "K2": "H4", "I1": "I1", "I2": "I2", "I3": "I3", "I7": "I7",
+             "J9": "J9"}
+# the national layers whose feature counts the data page states, by what they hold
+LAYERS = {"aquaculture": "punkt_havdam_udl", "dumping": "klappladser",
+          "extraction": "raastofomr", "treatment": "punkt_rens_udl"}
+# day length at the solstices, at a round latitude in the middle of Danish waters
+DAYLIGHT = {"lat": 55.0, "lon": 12.0, "days": ["2025-06-21", "2025-12-21"]}
 
 
 def _fill(text):
@@ -116,12 +131,59 @@ def _register_facts():
             "series_stations_in_register": len(series & ids)}
 
 
+def _layer_counts():
+    """Features in each national layer the data page counts. The layers are small
+    (a few hundred kB), so they are read whole."""
+    out = {}
+    for key, fn in LAYERS.items():
+        with open(os.path.join(NATIONAL, fn + ".geojson"), encoding="utf-8") as f:
+            out[key] = len(json.load(f)["features"])
+    return out
+
+
+def _daylight():
+    """Hours between sunrise and sunset at the two solstices, from the project's
+    own solar code (scripts/daylight.py), at the latitude and longitude above."""
+    import datetime as dt
+    from daylight import sun_events
+    lengths = []
+    for day in DAYLIGHT["days"]:
+        rise, _, sett = sun_events(DAYLIGHT["lat"], DAYLIGHT["lon"], dt.date.fromisoformat(day))
+        lengths.append(round(sett - rise, 3))
+    return dict(DAYLIGHT, longest_h=max(lengths), shortest_h=min(lengths))
+
+
+def _sign_flips():
+    """The batch sign-flip case in the flag record: how many water bodies its
+    stations fall in, how many three-digit station-number prefixes they carry, and
+    how far apart they lie (great-circle, from the series' station positions)."""
+    import math
+    flags = [x for x in json.load(open(FLAGS, encoding="utf-8"))["flags"]
+             if x.get("flag") == "batch_sign_flip"]
+    st = sorted({x["station"] for x in flags})
+    pos = {s["id"]: s for s in json.load(open(SERIES, encoding="utf-8"))["stations"]}
+    ov = json.load(open(OVERLAY, encoding="utf-8"))
+    idx = dict(zip(ov["station_ids"], ov["waterbody_index"]))
+    wb = {ov["areas"][idx[s]] for s in st if idx.get(s, -1) >= 0}
+
+    def km(a, b):
+        la1, lo1, la2, lo2 = map(math.radians, (a["lat"], a["lon"], b["lat"], b["lon"]))
+        h = (math.sin((la2 - la1) / 2) ** 2
+             + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2)
+        return 2 * 6371.0088 * math.asin(math.sqrt(h))
+    d = [km(pos[a], pos[b]) for i, a in enumerate(st) for b in st[i + 1:]]
+    return {"stations": len(st), "water_bodies": len(wb), "prefixes": len({s[:3] for s in st}),
+            "km_min": round(min(d), 2), "km_max": round(max(d), 2)}
+
+
 def load_values(rows):
     """Write the evidence this page computes, then read every figure it prints
     from data - this file, the ODA enumeration and the drafts' file facts."""
     write_json(EVIDENCE, {"register": _register_facts(),
                           "page": {"hypotheses": len(rows),
-                                   "groups": len({r[1] for r in rows})}})
+                                   "groups": len({r[1] for r in rows})},
+                          "layers": _layer_counts(), "daylight": _daylight(),
+                          "sign_flips": _sign_flips()})
     ev = live.live_json(EVIDENCE)
     ctd = live.live_json(os.path.join(DERIVED, "enums.json"))["ctd"]
     facts = live.live_json(os.path.join(DERIVED, "hypodraft_facts.json"))
@@ -151,6 +213,77 @@ def load_values(rows):
         sw_outfalls=sw["n"], sw_with_vol=sw["totals"]["Vand_(m3/ aar)"]["n"],
         sw_vol_m=sw["totals"]["Vand_(m3/ aar)"]["sum"] / 1e6,
         hz_sediment=hz["sediment"], hz_points=hz["total_points"])
+    hl = live.live_json(os.path.join(DERIVED, "areas.json"))["hazardous_layer"]
+    VALUES.update(hz_lake=hl["lake"], hz_river=hl["river"], hz_coast=hl["coast"],
+                  lay_aqua=ev["layers"]["aquaculture"], lay_dump=ev["layers"]["dumping"],
+                  lay_extr=ev["layers"]["extraction"], lay_treat=ev["layers"]["treatment"],
+                  i7_wb=ev["sign_flips"]["water_bodies"], i7_prefixes=ev["sign_flips"]["prefixes"],
+                  i7_km_min=ev["sign_flips"]["km_min"], i7_km_max=ev["sign_flips"]["km_max"],
+                  dl_lat=ev["daylight"]["lat"], dl_short=ev["daylight"]["shortest_h"],
+                  dl_long=ev["daylight"]["longest_h"])
+    _constants()
+
+
+def _constants():
+    """The constants a mechanism rests on - thresholds, stoichiometry, what seawater
+    and a reagent contain - each read out of a pinned document or computed from
+    standard atomic weights. None is quoted from an earlier version of this page."""
+    import claims
+    cd, cache = claims.load()[0], {}
+
+    def rd(sid, shown, phrase):
+        # claims.resolve refuses a phrase the pinned text lacks, or a number it does not state
+        claims.resolve(cd, "{read:%s:%s|%s}" % (sid, shown, phrase), cache)
+        return live.reading_value(sid, "phrase", phrase, float(shown.replace(",", "")),
+                                  claims._meta(cd, sid))
+
+    def weight(element, v):
+        return live.stated_value(f"atomic weight of {element}", v,
+                                 "The IUPAC conventional standard atomic weight.")
+    O, S_, N = weight("oxygen", 15.999), weight("sulphur", 32.06), weight("nitrogen", 14.007)
+    C_, H_ = weight("carbon", 12.011), weight("hydrogen", 1.008)
+    kcal = live.stated_value("thermochemical calorie", 4.184,
+                             "The thermochemical calorie is defined as exactly this many joules.")
+    sea = "Magnesium 0.1292 Sulfur 0.091 Calcium 0.04 Potassium 0.04"
+    so4 = rd("HY-WIKI-SEAWATER", "0.091", sea) * 10 * (S_ + 4 * O) / S_       # g per kg
+    adb = "DEF is an aqueous urea solution made with 32.5% urea and 67.5% deionized water"
+    urea = rd("HY-WIKI-DEF", "32.5", adb)
+    urea_n = 2 * N / (C_ + O + 2 * N + 4 * H_) * 100
+    uan = "Physical and Chemical Characteristics of UAN Solutions Grade, N% 28 30 32"
+    rf = "empirically found the ratio to be C:N:P = 106:16:1"
+    brz = "stated to be C:Si:N:P = 106:15:16:1"
+    mst = "Total quantified microplastics (rounded) 5,500-13,900 100 2,000-5,600 600-3,100 100"
+    ret = "only 10-20% of the microplastics in stormwater is retained"
+    VALUES.update(
+        o1_hi=rd("NI-DCE-ILT-2023", "4", "iltkoncentrationen i vandet er mindre end 4 mg l-1"),
+        o1_lo=rd("NI-DCE-ILT-2023", "2", "kraftigt iltsvind, når koncentrationen er under 2 mg l-1"),
+        sw_so4=so4, sw_so4_mg=round(so4 * 1000, -2),
+        sw_mg=rd("HY-WIKI-SEAWATER", "0.1292", sea) * 10,
+        sw_k=rd("HY-WIKI-SEAWATER", "0.04", "Potassium 0.04 Bromine") * 10 * 1000,
+        adb_urea=urea, adb_water=rd("HY-WIKI-DEF", "67.5", adb), urea_n=urea_n,
+        adb_n=urea * urea_n / 100, adb_urea_g=urea * 10, adb_n_g=urea * 10 * urea_n / 100,
+        uan_lo=rd("HY-WIKI-UAN", "28", uan), uan_hi=rd("HY-WIKI-UAN", "32", uan),
+        cod_o2=live.stated("gram of oxygen per gram of COD", 1, "1",
+                           "COD is expressed as the mass of oxygen consumed (the pinned "
+                           "Wikipedia article on chemical oxygen demand), so a gram of COD "
+                           "is a gram of oxygen demand by definition."),
+        e1_o2_s=4 * O / S_, e2_o2_n=4 * O / N, e4_o2_ch4=4 * O / (C_ + 4 * H_),
+        rf_c=rd("WIKI-REDFIELD", "106", rf), rf_n=rd("WIKI-REDFIELD", "16", rf),
+        brz_si=rd("WIKI-REDFIELD", "15", brz), brz_n=rd("WIKI-REDFIELD", "16", brz),
+        eqr=rd("DCE-STATMOD-2015", "0.6", "Ecological Quality Ratio (EQR) værdi på 0,6"),
+        dce_st=rd("DCE-STATMOD-2015", "29",
+                  "statistiske modeller for 29 kystnære overvågningsstationer"),
+        cf_lo=rd("PG-WIKI-CF", "115",
+                 "is 115, 104.9, 83.7, 72.1, and 57.6 kcal/mol for X = fluorine") * kcal,
+        cf_hi=rd("PG-WIKI-CF", "130", "bond dissociation energy (BDE) of up to 130 kcal/mol") * kcal,
+        atza=rd("HY-WIKI-ATZA", "98", "This enzyme is 98% identical in amino acid sequence"),
+        mst_lo=rd("HY-MST-1793", "5,500", mst), mst_hi=rd("HY-MST-1793", "13,900", mst),
+        mst_aq_lo=rd("HY-MST-1793", "600", mst), mst_aq_hi=rd("HY-MST-1793", "3,100", mst),
+        mst_tyres=rd("HY-MST-1793", "60.2", "Tires 4,200-6,600 55.8 1,600-2,500 500-1,700 60.2"),
+        mst_foot=rd("HY-MST-1793", "7.4", "Footwear 100-1,000 5.7 40-380 10-260 7.4"),
+        mst_paint=(rd("HY-MST-1793", "4.3", "Paints (excl. ship paints) 150-810 5.0 14-220 6-149 4.3")
+                   + rd("HY-MST-1793", "7.1", "Ship paints 40-480 2.7 0-50 21-240 7.1")),
+        mst_ret_lo=rd("HY-MST-1793", "10", ret), mst_ret_hi=rd("HY-MST-1793", "20", ret))
 
 
 def _mask(text):
@@ -1362,7 +1495,7 @@ UNQUANTIFIABLE = [
 
 # The outcomes. Conflating these is the original error, so they are kept apart.
 OUTCOMES = [
-    ("O1", "Oxygen deficit", "Dissolved oxygen below {q:Dissolved oxygen below @@} or {q:@@ mg/L, by depth, duration and} mg/L, by depth, "
+    ("O1", "Oxygen deficit", "Dissolved oxygen below {v:o1_hi|g} or {v:o1_lo|g} mg/L, by depth, "
      "duration and extent. **An observable on route M1, not an outcome.** Nobody "
      "values a gas concentration; it earns its place only through what it causes, "
      "and it is neither necessary nor sufficient for any of T1-T5."),
@@ -1390,7 +1523,8 @@ OUTCOMES = [
     ("O8", "Visible discolouration", "Water turned brown, red or milky. What people "
      "photograph and report, and what the chlorophyll indicator averages away."),
     ("O9", "Bathing water failure", "Closures and quality downgrades. The one "
-     "outcome Denmark measures densely, over a long period, at {v:bathing_sites|,} points."),
+     "outcome Denmark measures densely, over a long period "
+     "([what the data holds](HYPOTHESIS_DATA.md#O9))."),
 ]
 
 # The list above is open on purpose. These are phenomena, not a taxonomy, and the
@@ -1465,7 +1599,7 @@ GROUPS = [
      "fail at a magnitude it would survive if it arrived more slowly. This group "
      "exists because the categorical avenues had two entries - failure to replace "
      "itself, and rate exceeded - with almost nothing under them in a register of "
-     "{q:a register of @@. That absence}. That absence was not a judgement that these do not matter; nobody had "
+     "the register as it then stood. That absence was not a judgement that these do not matter; nobody had "
      "thought to look."),
     ("Z", "The physical fields and their windows",
      "Light starvation is the same argument as chemical deficiency, one physical "
@@ -1581,7 +1715,7 @@ CASCADES = [
 ELEMENTS = [
     ("C", "Carbon", "CO₂ and bicarbonate; the vast DIC pool",
      "Rarely limiting in bulk, but drawn down inside a dense bloom, where pH can "
-     "rise above {q:can rise above @@. | High}.",
+     "rise steeply.",
      "High pH shifts ammonium toward un-ionised ammonia, which is acutely toxic. A "
      "bloom therefore poisons the water by consuming carbon — a kill with no "
      "hypoxia in it at all.",
@@ -1610,7 +1744,7 @@ ELEMENTS = [
      "assessment cites this to explain why the Skive and Lovns phosphorus models "
      "fail.",
      "established"),
-    ("S", "Sulphur", "sulphate, ~{q:**Sulphur** — sulphate, ~@@ g/L — effectively unlimited} g/L — effectively unlimited",
+    ("S", "Sulphur", "sulphate, ~{v:sw_so4|.1f} g/kg — effectively unlimited",
      "Never depleted. Its abundance is the problem.",
      "Once oxygen and nitrate are gone, sulphate becomes the terminal electron "
      "acceptor, and there is so much of it that sulphide production is unbounded. "
@@ -1679,11 +1813,11 @@ ELEMENTS = [
      "Deficiency is transmitted through the diet, so it follows the same community "
      "shift as silicon depletion, at a life stage no survey counts.",
      "established"),
-    ("K", "Potassium", "~{q:| **Potassium** — ~@@ mg/L in seawater |} mg/L in seawater",
+    ("K", "Potassium", "~{v:sw_k|,.0f} mg/kg in seawater",
      "No. Never limiting.",
      "None.",
      "n/a"),
-    ("Mg", "Magnesium", "~{q:| **Magnesium** — ~@@ g/L in seawater |} g/L in seawater",
+    ("Mg", "Magnesium", "~{v:sw_mg|.1f} g/kg in seawater",
      "No.",
      "None.",
      "n/a"),
@@ -1730,12 +1864,12 @@ H = [
      "specifically, which is generally not reported."),
     ("A10", "A", "Exhaust-treatment reagent: nitrogen added to remove nitrogen",
      ["O1", "O4"],
-     "Selective catalytic reduction injects urea solution - AdBlue, {q:solution - AdBlue, @@% urea -}% urea - "
+     "Selective catalytic reduction injects urea solution - AdBlue, {v:adb_urea|g}% urea - "
      "into diesel exhaust, where it decomposes to ammonia and reduces nitrogen "
      "oxides to harmless N2 and water.\n\n**The composition is worth stating "
      "plainly, because it makes the entry obvious.** `AUS 32` under `ISO 22241` is two "
-     "ingredients: {q:two ingredients: @@% urea,}% urea, {q:@@% demineralised water. Urea,}% demineralised water. Urea, `CO(NH2)2`, is {q:@@% nitrogen by mass, so the}% "
-     "nitrogen by mass, so the fluid is {q:the fluid is @@% nitrogen —}% nitrogen — against {q:nitrogen — against @@–32% for the}–{q:— against 28–@@% for the}% for the "
+     "ingredients: {v:adb_urea|g}% urea, {v:adb_water|g}% demineralised water. Urea, `CO(NH2)2`, is {v:urea_n|.1f}% "
+     "nitrogen by mass, so the fluid is {v:adb_n|.1f}% nitrogen — against {v:uan_lo|g}–{v:uan_hi|g}% for the "
      "liquid UAN fertilisers spread on fields. **AdBlue is a half-strength "
      "fertiliser solution distributed through the fuel network**, and urease, the "
      "enzyme that converts urea to ammonium, is present in essentially all soil "
@@ -1779,8 +1913,8 @@ H = [
      "directly measurable and the gradient is steep, so this is a cheap "
      "measurement that nobody appears to make on a marine-relevant grid.",
      "**The mass is worth stating even roughly, because it is the same order as "
-     "the entire nitrogen argument.** A litre of AdBlue is about {q:AdBlue is about @@ g of urea} g of urea at "
-     "{q:g of urea at @@% nitrogen, so roughly}% nitrogen, so roughly {q:nitrogen, so roughly @@ g N per} g N per litre. Consumption runs a few per cent "
+     "the entire nitrogen argument.** A kilogram of AdBlue carries {v:adb_urea_g|.0f} g of urea at "
+     "{v:urea_n|.1f}% nitrogen, so roughly {v:adb_n_g|.0f} g N per kilogram of fluid. Consumption runs a few per cent "
      "of diesel volume. Applied to Danish road diesel that is an order of "
      "thousands to low tens of thousands of tonnes of nitrogen a year passing "
      "through exhaust systems as urea - most of it genuinely becoming N2, but the "
@@ -1822,7 +1956,7 @@ H = [
      "faeces directly to the water column and the bed beneath.",
      "Sharp local gradient in sediment organic content and fauna within a few "
      "hundred metres; seasonal with the production cycle.",
-     "Sediment and fauna transects radiating from each of the {q:of the @@ licensed sites.} licensed sites.",
+     "Sediment and fauna transects radiating from each licensed site.",
      "Per-farm production and feed use by month; sediment stations near farms."),
     ("A9", "A", "Nitrogen fixation", ["O4", "O1", "O8"],
      "Cyanobacteria fixing atmospheric N, adding nitrogen the load account cannot "
@@ -1835,13 +1969,13 @@ H = [
     # ---- B ----------------------------------------------------------------
     ("B1", "B", "Combined sewer overflow", ["O1", "O2", "O3", "O9", "O5"],
      "Rain overwhelms a combined system and raw sewage discharges directly: "
-     "organics, fat, faecal solids, at {q:faecal solids, at @@ g O₂ demand} g O₂ demand per g COD.",
+     "organics, fat, faecal solids, at {v:cod_o2} g O₂ demand per g COD.",
      "Event-timed. Deficit and shore fouling follow rainfall by hours to days, not "
      "seasons, and concentrate near outfalls.",
      "Oxygen and shore condition in the days after overflow events, against "
      "per-outfall discharge volume.",
-     "Per-outfall overflow volume and duration per event. Denmark has {v:rbu_points|,} "
-     "registered outfalls and this is the single most valuable missing series."),
+     "Per-outfall overflow volume and duration per event - the single most valuable "
+     "missing series."),
     ("B2", "B", "Separate stormwater", ["O1", "O2", "O9", "O3"],
      "Two mechanisms in one pipe, and the second is the larger. First, what the "
      "rain picks up: road and roof runoff carrying organics, hydrocarbons, tyre "
@@ -1865,15 +1999,10 @@ H = [
      "signature in what is discharged, which separates a scoured in-system deposit "
      "from freshly washed-off road surface.",
      "Event-resolved concentration and volume at the outfall, and basin sediment "
-     "surveys. Annual totals exist ({v:sw_vol_m|.1f} million m3/yr, summed over the "
-     "{v:sw_with_vol|,} of {v:sw_outfalls|,} separate-stormwater outfalls that report a volume) and "
-     "cannot test this. One figure bearing directly on the settling basins is "
-     "already published: Miljøstyrelsen's microplastic inventory estimates that "
-     "only **{q:that only **@@–20% of stormwater}–{q:that only **10–@@% of stormwater}% of stormwater microplastic is retained**, because only some "
-     "stormwater sewers have settling lagoons at all — so the basins are neither "
-     "reliably present nor, where present, efficient."),
+     "surveys. Annual totals exist and cannot test this; one published estimate bears "
+     "directly on the settling basins."),
     ("B3", "B", "Treatment plant organic load", ["O1", "O5"],
-     "Continuous discharge of residual COD and BOD from {q:BOD from @@ plants. **Predicts.**} plants.",
+     "Continuous discharge of residual COD and BOD from treatment plants.",
      "Steady rather than event-driven; scales with population equivalent.",
      "Deficit against PE density, controlling for treatment stage.",
      "Per-plant monthly COD/BOD discharge."),
@@ -1922,7 +2051,7 @@ H = [
      "Mixing energy that breaks stratification and re-ventilates the bottom.",
      "Calm summers produce deficits; windy ones do not, at identical load.",
      "Cumulative wind work over the stratified season against deficit.",
-     "Hourly wind. Already held: {v:wind_years} years."),
+     "Hourly wind. Already held."),
     ("C3", "C", "Residence time", ["O1", "O4"],
      "How long water and its cargo stay before being flushed.",
      "The same load produces very different outcomes at different flushing times, "
@@ -1942,8 +2071,8 @@ H = [
      "Discharge volume as a predictor separate from discharge concentration.",
      "Daily freshwater discharge per catchment."),
     ("C6", "C", "Water temperature and solubility", ["O1"],
-     "Warmer water holds less oxygen and respires faster: roughly −{q:faster: roughly −@@% saturation per}% saturation "
-     "per °C, and demand rising with Q10.",
+     "Warmer water holds less oxygen and respires faster, with demand rising with "
+     "Q10.",
      "Deficit rises with bottom temperature even at constant organic supply.",
      "Deficit against *bottom* temperature. Not a candidate variable in the "
      "statistical models, which carry surface temperature only.",
@@ -1973,9 +2102,8 @@ H = [
      "Fauna loss follows effort spatially with no oxygen anomaly needed; turbidity "
      "and oxygen demand spike along tracks.",
      "Fauna and sediment redox against trawling effort at fine spatial resolution.",
-     "VMS/AIS-derived trawling effort. **Obtainable:** ICES/HELCOM swept-area ratio, "
-     "figshare `20310255`, **{q:ratio, figshare 20310255, **@@ MB, CC BY 4.0**,} MB, `CC BY 4.0`**, {q:MB, CC BY 4.0**, @@° c-square, quarterly, 2016–2021,}° c-square, quarterly, "
-     "2016–2021, covering {q:quarterly, 2016–2021, covering @@ of 1,415 stations.} of {q:@@ stations. Not fetched.} stations. Not fetched. Design in "
+     "VMS/AIS-derived trawling effort. **Obtainable:** the ICES/HELCOM swept-area "
+     "layers on figshare (`20310255`), not fetched. Design in "
      "[`hypodrafts/D1.md`](hypodrafts/D1.md)."),
     ("D2", "D", "Navigation dredging", ["O3", "O1"],
      "Channel maintenance removing the bed and suspending it.",
@@ -1983,13 +2111,13 @@ H = [
      "Before-and-after at fixed stations near dredging campaigns.",
      "Dredging permits with dates, volumes and locations."),
     ("D3", "D", "Dredged-material dumping", ["O3", "O1", "O2"],
-     "Sediment, and whatever is in it, deposited at {q:deposited at @@ licensed grounds.} licensed grounds.",
+     "Sediment, and whatever is in it, deposited at licensed dumping grounds.",
      "Burial of fauna at the ground; a plume; contaminants redistributed.",
      "Fauna and sediment chemistry at and downstream of dumping grounds against "
      "dumping volume and date.",
      "Per-ground dumping volume, date and material chemistry."),
     ("D4", "D", "Sand and gravel extraction", ["O3", "O1"],
-     "Removal of the bed itself at {q:itself at @@ licensed areas.} licensed areas.",
+     "Removal of the bed itself at licensed extraction areas.",
      "Permanent habitat loss; persistent turbidity; altered local hydrodynamics.",
      "Fauna inside against outside extraction areas, over time.",
      "Per-area extracted volume by year. Permits are public; volumes less so."),
@@ -2009,8 +2137,8 @@ H = [
      "Follows wave bed shear stress, and is the mechanism most likely to *deliver* "
      "fedtemøg to a shore rather than create it.",
      "Shore fouling reports against modelled bed shear stress.",
-     "Wave hindcast. Partially held: bed shear already modelled from {q:modelled from @@ years of} years of "
-     "wind."),
+     "Wave hindcast. Partially held: bed shear already modelled from the wind "
+     "record."),
 
     ("D8", "D", "Loss of biostabilisation, and the mobile bed", ["O3", "O4", "O7"],
      "Benthic diatoms and cyanobacteria secrete extracellular polymer that glues the "
@@ -2065,14 +2193,14 @@ H = [
 
     # ---- E ----------------------------------------------------------------
     ("E1", "E", "Sulphide oxidation", ["O1"],
-     "Reduced sulphur from anoxic sediment consuming {q:sulphur from anoxic sediment consuming @@ g O₂ per g S} g O₂ per g S the moment it "
+     "Reduced sulphur from anoxic sediment consuming {v:e1_o2_s|.0f} g O₂ per g S the moment it "
      "meets oxygenated water.",
      "A large, fast oxygen sink that is entirely decoupled from current-year "
      "nutrient supply, and is triggered by disturbance.",
      "Sediment sulphide pools and porewater against oxygen demand.",
      "Sediment redox and sulphide by station. Rarely measured."),
     ("E2", "E", "Nitrification demand", ["O1"],
-     "Ammonium oxidised to nitrate, consuming {q:to nitrate, consuming @@ g O₂ per} g O₂ per g N with no biology "
+     "Ammonium oxidised to nitrate, consuming {v:e2_o2_n|.2f} g O₂ per g N with no biology "
      "of interest in between.",
      "Nitrogen exerting oxygen demand *chemically*, so an N reduction helps here "
      "for a reason unrelated to A1 - and the two are not distinguished.",
@@ -2084,7 +2212,7 @@ H = [
      "Porewater Fe(II) flux against deficit.",
      "Sediment porewater chemistry. Very rare."),
     ("E4", "E", "Methane oxidation", ["O1"],
-     "Methane from anoxic sediment consuming {q:Methane from anoxic sediment consuming @@ g O₂ per g on} g O₂ per g on its way up.",
+     "Methane from anoxic sediment consuming {v:e4_o2_ch4|.0f} g O₂ per g on its way up.",
      "Seep-associated, localised, and invisible to nutrient accounting.",
      "Methane flux surveys.",
      "Essentially no Danish coastal methane flux record."),
@@ -2100,8 +2228,7 @@ H = [
      "Fauna loss concentrated near marinas, harbours and lanes with no oxygen "
      "anomaly at all. TBT imposex is a documented Danish effect.",
      "Fauna and sediment biocide concentration together at the same stations.",
-     "Sediment biocide concentrations. Sediment is measured at {v:hz_sediment} of the "
-     "{v:hz_points} hazardous-substance points in the national water-plan register."),
+     "Sediment biocide concentrations, at sea."),
     ("E7", "E", "Pesticides and degradation products", ["O3", "O4"],
      "Agricultural chemicals reaching the sea and acting on non-target organisms, "
      "including the algae the indicators count.",
@@ -2244,13 +2371,13 @@ H = [
      "salmonids - sea trout especially - carry the sensitivity is a species "
      "question that the published work does not settle for them. Worth noting that "
      "the carrier is not a minor stream: Miljøstyrelsen's own inventory makes tyre "
-     "wear the largest single source of microplastic reaching Danish water, at "
-     "{q:Danish water, at @@% of the}% of the aquatic total, so the particles delivering this compound are "
+     "wear the largest single source of microplastic reaching Danish water, so the "
+     "particles delivering this compound are "
      "already the best-quantified particles in the country."),
     ("E20", "E", "Fuel oxygenates and additives", ["O3", "O6"],
      "Petrol and diesel are not one substance. Oxygenates are blended in to make "
-     "combustion more complete - ETBE and MTBE in petrol, ethanol at {q:MTBE in petrol, ethanol at @@} or {q:@@ per cent - along} per "
-     "cent - along with detergents, lubricity agents for low-sulphur diesel, and "
+     "combustion more complete - ETBE and MTBE in petrol, ethanol in the `E5` and "
+     "`E10` blends - along with detergents, lubricity agents for low-sulphur diesel, and "
      "in some markets metallic additives carrying manganese or iron. The ethers "
      "are the notable ones for water: highly soluble, barely retarded by soil, and "
      "detectable by taste and smell at a few micrograms per litre, so a small spill "
@@ -2520,7 +2647,8 @@ H = [
      "A hump. Fitting a straight line through three simulated points, as the "
      "official method does, cannot recover it.",
      "Non-parametric response of production and diversity to load.",
-     "Load and response across a wide gradient - which the {v:areas_n} areas supply."),
+     "Load and response across a wide gradient - which the marine water bodies "
+     "supply."),
 
     # ---- J ----------------------------------------------------------------
     ("J1", "J", "Transparent exopolymer particles and marine gel", ["O2", "O1", "O3", "O5", "O8"],
@@ -2596,10 +2724,8 @@ H = [
      "smaller size is a different exposure.",
      "Not measured in Denmark for this pathway, and the absence is now checked "
      "against the source rather than asserted. Miljøstyrelsen's national inventory "
-     "(Lassen et al. 2015, Environmental Project `1793`) puts total Danish "
-     "microplastic release at {q:microplastic release at @@–13,900 t/year, of}–{q:release at 5,500–@@ t/year, of which} t/year, of which {q:t/year, of which @@–3,100 t/year ultimately}–{q:which 600–@@ t/year ultimately} t/year "
-     "ultimately reaches the aquatic environment. Of that aquatic share, tyres are "
-     "**{q:tyres are **@@%**, footwear}%**, footwear {q:@@%, and paint plus}%, and paint plus ship paint together {q:paint together @@%. Its}%. Its "
+     "(Lassen et al. 2015, Environmental Project `1793`) quantifies Danish "
+     "microplastic release by source. Its "
      "categories are: personal care products, raw materials for plastics "
      "production, paints, blasting abrasives, rubber granules, tyres, textiles, "
      "ship paints, road markings, building materials, footwear, cooking utensils, "
@@ -2662,14 +2788,15 @@ H = [
      "Dissolved silicate alongside N and P at the same stations and dates, and "
      "species-level phytoplankton counts. Silicate is in the ODA record."),
     ("K2", "K", "Stoichiometric imbalance decides who grows", ["O4", "O2", "O8"],
-     "Redfield C:N:P at {q:Redfield C:N:P at @@:16:1 and roughly}:{q:Redfield C:N:P at 106:@@:1 and roughly Si:N}:1 and roughly Si:N at {q:roughly Si:N at @@:1 for diatoms}:1 for diatoms are "
+     "Redfield C:N:P at {v:rf_c|.0f}:{v:rf_n|.0f}:1 and, for diatoms, Si:N at "
+     "{v:brz_si|.0f}:{v:brz_n|.0f} (Redfield-Brzezinski) are "
      "requirements, not averages. Skewing the ratios changes which organisms can "
      "complete their life cycle, independently of how much of anything there is.",
      "Community composition tracks ratios; total biomass tracks absolute supply. A "
      "policy that moves one nutrient alone necessarily moves every ratio it appears "
      "in, and the direction of that effect is not signed in advance.",
      "Community composition against N:P and Si:N, with absolute concentrations held "
-     "fixed - which the {v:areas_n} areas make possible.",
+     "fixed - which the marine water bodies make possible.",
      "Simultaneous N, P and Si with species-level counts."),
     ("K3", "K", "Macronutrient excess inducing micronutrient deficiency",
      ["O4", "O3", "O6"],
@@ -2747,7 +2874,7 @@ H = [
      "Salinity by station, date and depth. In the CTD record."),
     ("K11", "K", "Light as a depleted resource", ["O7", "O4"],
      "Distinct from turbidity as a symptom: for a rooted plant, light at the bed is "
-     "a resource with a hard requirement - roughly {q:requirement - roughly @@-14% of surface}-{q:requirement - roughly 11-@@% of surface irradiance}% of surface irradiance for "
+     "a resource with a hard requirement - a minimum share of surface irradiance for "
      "eelgrass - and below it the plant does not grow slowly, it dies.",
      "A threshold, not a gradient. Explains why vegetation recovery is abrupt and "
      "why intermediate improvement produces no response at all.",
@@ -2831,7 +2958,7 @@ H = [
      "trials exist; this design does not."),
     ("T5", "T", "Loss of sediment suppressiveness", ["O7", "O3"],
      "Some soils suppress disease purely through their microbial community, and "
-     "suppressiveness is transferable - mix {q:is transferable - mix @@-10% of a suppressive}-{q:transferable - mix 1-@@% of a suppressive}% of a suppressive soil into a "
+     "suppressiveness is transferable - mix a small share of a suppressive soil into a "
      "conducive one and it becomes suppressive. Anaerobiosis and fumigation destroy "
      "it.",
      "A sediment can lose a protective property that no chemical measurement "
@@ -2934,7 +3061,7 @@ H = [
      "Fractionated sediment P. The method is seventy years old and is not routine "
      "in marine monitoring."),
     ("S5", "S", "Buffering scales with the volume of reactive medium", ["O1", "O3"],
-     "The Leptosol lesson: a soil under {q:soil under @@ cm deep} cm deep has almost no capacity to absorb "
+     "The Leptosol lesson: a shallow soil over rock has almost no capacity to absorb "
      "a shock, because buffering is proportional to the volume of material doing the "
      "buffering.",
      "Shallow water bodies and thin sediment layers swing further on the same load, "
@@ -2976,10 +3103,10 @@ H = [
 
     # ---- R ----------------------------------------------------------------
     ("R1", "R", "The C:N threshold, and fat as a nitrogen sink", ["O1", "O2", "O4"],
-     "Decomposer microbes build biomass near C:N {q:biomass near C:N @@-10 at about}-{q:biomass near C:N 8-@@ at about 40% carbon-use} at about {q:at about @@% carbon-use}% carbon-use "
-     "efficiency, so there is a threshold near C:N {q:threshold near C:N @@: below it}: below it decay releases "
-     "mineral nitrogen, above it decay consumes it. Straw at C:N {q:Straw at C:N @@ starves the next} starves the next "
-     "crop. Fat has no nitrogen at all.",
+     "Decomposer microbes build biomass at a low C:N and respire much of the carbon "
+     "they take in, so there is a threshold C:N: below it decay releases mineral "
+     "nitrogen, above it decay consumes it. Straw, far above the threshold, starves "
+     "the next crop. Fat has no nitrogen at all.",
      "**An input with zero nitrogen content lowers measured nitrogen**, because the "
      "bacteria decomposing it scavenge dissolved N from the water to build "
      "themselves. A fat-loaded water can read as less eutrophic on the regulated "
@@ -3032,9 +3159,9 @@ H = [
      ["O1", "O3"],
      "Decay runs down a ladder of electron acceptors - O₂, then nitrate, then "
      "manganese, then iron, then sulphate, then CO₂ - each yielding less energy. "
-     "Freshwater carries {q:energy. Freshwater carries @@-30 mg/L of}-{q:Freshwater carries 5-@@ mg/L of sulphate} mg/L of sulphate and so passes it quickly to "
-     "methanogenesis. Seawater carries {q:methanogenesis. Seawater carries @@ mg/L, a hundred} mg/L, a hundred to five hundred times "
-     "more, and sulphate reducers outcompete methanogens for hydrogen and acetate.",
+     "Freshwater carries little sulphate and so passes it quickly to "
+     "methanogenesis. Seawater carries about {v:sw_so4_mg|,.0f} mg/kg, far more, "
+     "and sulphate reducers outcompete methanogens for hydrogen and acetate.",
      "**Marine anoxia poisons as well as suffocates; freshwater anoxia mostly just "
      "suffocates.** Anoxic lake sediment makes methane. Anoxic marine sediment makes "
      "sulphide, without limit, because the reservoir is effectively infinite. Every "
@@ -3112,7 +3239,7 @@ H = [
      "are not what the reference condition is derived from."),
     ("L2", "L", "The reference is a model output treated as a fact", ["O4", "O7"],
      "Denmark's chlorophyll target is computed by ensemble modelling of a reference "
-     "situation, then scaled by an EU-agreed ratio of {q:EU-agreed ratio of @@. Both halves}. Both halves are choices, "
+     "situation, then scaled by an EU-agreed ratio of {v:eqr|g}. Both halves are choices, "
      "and neither is a measurement.",
      "The requirement moves when the model or the ratio is revised, with no change "
      "in the sea. This is the residual-estimator problem relocated to the target "
@@ -3392,7 +3519,7 @@ H = [
 
     # ---- Z ----------------------------------------------------------------
     ("Z1", "Z", "Light: too little, and too much", ["O7", "O4", "O3"],
-     "The floor is the eelgrass requirement, roughly {q:eelgrass requirement, roughly @@-14% of surface}-{q:requirement, roughly 11-@@% of surface}% of surface irradiance. "
+     "The floor is the eelgrass requirement, a minimum share of surface irradiance. "
      "The ceiling is real too: photoinhibition and UV damage at the surface, which "
      "is why some species do worse in the clearest water.",
      "Both tails, as with every window. A management target expressed only as *more "
@@ -3445,8 +3572,8 @@ H = [
      "field directly, which connects `C8` to a mechanism.",
      "Bed shear stress distribution against community composition - the whole "
      "distribution, since both tails matter.",
-     "Wave and current modelling. Bed shear already computed here from {q:here from @@ years of} years of "
-     "wind."),
+     "Wave and current modelling. Bed shear already computed here from the wind "
+     "record."),
     ("Z6", "Z", "Sound, as a cue and as a stressor", ["O3", "O6", "O7"],
      "Larvae of many marine invertebrates and fish orient to reef sound when "
      "choosing where to settle. Shipping noise and pile driving mask it, and "
@@ -3530,10 +3657,9 @@ H = [
      "in where you looked.",
      "Apparent change concentrated at times when the network changed.",
      "Recompute every trend on the subset of stations present throughout.",
-     "Station start and end dates. **Not held.** The register carries "
-     "{v:i1_in|,} of {v:i1_series|,} series stations, and `StartDato` = `SlutDato` "
-     "on {v:i1_eq_pct|.1f}% of rows — a visit date, not a lifespan. Presence has to "
-     "come from the observation record: [`hypodrafts/I1.md`](hypodrafts/I1.md)."),
+     "Station start and end dates. **Not held**: the register's dates are visit "
+     "dates, not lifespans. Presence has to come from the observation record: "
+     "[`hypodrafts/I1.md`](hypodrafts/I1.md)."),
     ("I2", "I", "Changing analytical method", ["O1", "O4"],
      "Winkler titration to optode sondes for oxygen; changing chlorophyll methods. "
      "Different instruments have different biases.",
@@ -3541,24 +3667,19 @@ H = [
      "method regardless of geography.",
      "Result against sampling gear and sonde, which the raw record names.",
      "SondeNr per measurement — the probe *number* is the identifier, and a "
-     "changeover is when a bias shift has cause. **Present, and mostly filled:** "
-     "`999` (probe unknown) on {v:i2_999_pct|.1f}% of the full CTD extract, "
-     "`Prøvetagningsudstyr` the constant `Ketcher` on {v:i2_ketcher_pct|.1f}%, "
-     "`Prøvetager` blank on {q:`Prøvetager` blank on @@% (1.2M-row sample).}% ({q:@@M-row sample). The}M-row sample). The usable "
-     "**{v:i2_usable_pct|.1f}%** carries {v:i2_probes} identified probes and is where "
-     "I2 is testable."),
+     "changeover is when a bias shift has cause. **Present, and mostly filled**; "
+     "where it is filled is where I2 is testable."),
     ("I3", "I", "Changing sampling frequency and season", ["O1"],
      "A deficit indicator built from the worst month is biased by how often you "
      "sampled that month. More visits find more extremes.",
      "Apparent severity scales with visit count.",
      "Indicator against sampling effort per station-season.",
      "Date of every visit per station — in the raw record. But `Dato` is "
-     "`YYYYMMDD`: **there is no time of day in any of {v:ctd_rows_m|.1f}M rows, and "
-     "no column for it.** Oxygen has a diel cycle and daylight at {q:and daylight at @@°N runs}°N runs {q:daylight at 55°N runs @@–17 h, so the}–{q:at 55°N runs 7–@@ h, so the diel} h, "
-     "so the diel phase sampled shifts with season. Class 6 **for the CTD extract**. "
-     "But ODA marine water chemistry (`Emne_10_11`) is recorded in our own "
-     "enumeration, twice, as carrying `Startdato + **Startklok**` — a clock time per "
-     "sample, never fetched. If chemistry shares cruises with CTD, it bounds the "
+     "`YYYYMMDD`: **the CTD extract has no time of day, and no column for it.** "
+     "Oxygen has a diel cycle and daylight at {v:dl_lat|.0f}°N runs "
+     "{v:dl_short|.0f}–{v:dl_long|.0f} h, so the diel phase sampled shifts with "
+     "season. Class 6 **for the CTD extract**. The water-chemistry extract carries a "
+     "clock value per sample; if chemistry shares cruises with CTD, it bounds the "
      "sampling hour and this becomes class 2."),
     ("I4", "I", "Changing indicator definition", ["O1", "O4"],
      "The indicator itself was redefined - intercalibration, EQR thresholds, "
@@ -3587,14 +3708,10 @@ H = [
      "not pass through the same step.",
      "Cross-channel consistency within station-month: a concentration that "
      "disagrees with its own saturation, temperature and salinity.",
-     "Nothing new. **Worked case found:** {v:i7_months} station-months of negative "
-     "oxygen, all in **May–June 2005**, across **{v:i7_stations} stations, {q:stations, @@ water bodies} water "
-     "bodies and {q:bodies and @@ custodian prefixes**,} custodian prefixes**, spanning {q:custodian prefixes**, spanning @@–75 km in}–{q:prefixes**, spanning 6–@@ km in the} km in the Øresund "
-     "approaches. Co-reported saturation reads {q:saturation reads @@–108% and}–{q:saturation reads 100–@@% and the}% and the magnitudes match "
-     "Weiss solubility — the water was oxygenated and the sign inverted. Four "
-     "custodians with tight geography points at a shared regional processing step "
-     "rather than one desk; n={v:i7_stations}, so a lead. Flagged, not removed, in "
-     "[`data/areas/flags.json`](data/areas/flags.json)."),
+     "Nothing new. **A worked case was found**: negative oxygen in one two-month "
+     "window in the Øresund approaches, where the water was in fact oxygenated and "
+     "the sign inverted - a lead towards a shared processing step. Flagged, not "
+     "removed, in [`data/areas/flags.json`](data/areas/flags.json)."),
 ]
 
 
@@ -3635,13 +3752,17 @@ def render(rows):
     a("## This list is not exhaustive, and we have no way to know how far off it is\n")
     a(f"There are {VALUES['n_hypotheses']} entries below. That number should not be read as a "
       "decomposition of the problem, and the field should not be read as closed.\n")
-    a("**The direct evidence that it is incomplete is its own history.** The first "
+    # the register's own growth is the evidence that it is incomplete, so this is a
+    # historical claim - the one place on the page that may quote its past
+    a("**The direct evidence that it is incomplete is its own history.** "
+      + live.claim_begin("C-HY-GROWTH") + "The first "
       "version had {q:a53500f:**@@ mechanisms in} entries and was written to be thorough. It reached "
       "{q:bfacbc3:It reached @@ within a single afternoon} within a single afternoon, and every addition came from an "
       "analogy raised in passing — soil sickness, desertification, sandy deserts, "
       "compost going anaerobic, turfgrass thatch, replant disease. None of those "
       "came from searching the marine literature. A list that grows by three "
-      "quarters in one conversation is not a list anyone should call complete, and "
+      "quarters in one conversation is not a list anyone should call complete"
+      + live.CLAIM_END + ", and "
       "there is no reason to think the next conversation would add fewer.\n")
     a("Three further problems, which matter for what can be concluded:\n")
     a("**It is not a partition.** The groups sit at different levels of "
@@ -3778,9 +3899,10 @@ def render(rows):
       "This is also why `U1`, mixture effects, is not a fringe caveat: **the "
       "mixture is what sets the window**, and testing substances one at a time "
       "against fixed thresholds assumes precisely what is false.\n")
-    a("Nobody has published where each Danish area sits in that window, and the "
-      "flat {q:the flat @@% rule}% rule of the iltsvind trigger assumes the answer is the same "
-      "everywhere.\n")
+    a("Nobody has published where each Danish area sits in that window, and "
+      + live.claim("C-HY-ONE-THRESHOLD", "iltsvind is defined nationally by oxygen "
+                   "concentration alone, which assumes the tolerable level is the same "
+                   "everywhere") + ".\n")
     a("**What does not close is the list of chemicals.** Tens of thousands are in "
       "commerce and a few dozen are measured (`U4`). So `V1` and `V2` have "
       "exhaustive failure modes over an open set of substances: complete on one "
@@ -3830,7 +3952,7 @@ def render(rows):
       "unrepresentable cause.\n")
 
     a("**This immediately found a hole.** `V7`, failure to replace itself, had "
-      "almost no instances in a register of {q:a register of @@ — no propagule} — no propagule supply, no "
+      "almost no instances in the register as it then stood — no propagule supply, no "
       "connectivity, no settlement cues, no phenological mismatch, no Allee "
       "effects. A population can go extinct locally without a single individual "
       "being killed by anything on the list, and the register could not represent "
@@ -3956,7 +4078,7 @@ def render(rows):
       "A carbon dioxide shortage cures itself, because everything that dies of it "
       "puts the carbon back. An oxygen shortage is fed by its own casualties.\n")
     a("This is not hypothetical at either end. Inside a dense bloom, CO₂ really is "
-      "drawn down far enough to push pH above {q:push pH above @@ — which is} — which is the carbon entry in the "
+      "drawn down far enough to push pH up sharply — which is the carbon entry in the "
       "element sweep below, and the reason a bloom can poison water by consuming "
       "carbon rather than by producing anything. It corrects within a day, as soon "
       "as respiration resumes. Bottom-water oxygen depletion does not correct at "
@@ -4036,7 +4158,7 @@ def render(rows):
       "within reach of existing machinery and always has been.\n"
       ">\n"
       "> And the barrier is not only biological. The C–F bond is the strongest "
-      "single bond in organic chemistry, roughly {q:chemistry, roughly @@–530 kJ/mol,}–{q:roughly 480–@@ kJ/mol, and} kJ/mol, and it gets "
+      "single bond in organic chemistry, roughly {v:cf_lo|,.0f}–{v:cf_hi|,.0f} kJ/mol, and it gets "
       "*stronger* as more fluorines crowd onto the same carbon. In a perfluoroalkyl "
       "chain the fluorine atoms are small, unpolarisable and packed around the "
       "carbon backbone, so there is no polarisable handle for an enzyme to attack "
@@ -4117,9 +4239,9 @@ def render(rows):
       "about forty years.**\n")
     a("And the first step carries the measurement priming has otherwise lacked. "
       "`AtzA`, the atrazine chlorohydrolase, and `TriA`, the melamine deaminase, "
-      "are {q:deaminase, are @@% identical}% identical proteins — they differ at nine amino acids out of some "
-      "four hundred and seventy-five — and they catalyse *different reactions*, one "
-      "stripping a chlorine and the other stripping an amine. **Nine substitutions "
+      "are {v:atza|.0f}% identical proteins — a handful of amino acids apart — and "
+      "they catalyse *different reactions*, one "
+      "stripping a chlorine and the other stripping an amine. **A handful of substitutions "
       "is the distance between one novel capability and another.** That is what "
       "\"the distance from existing machinery to the required function\" means when "
       "it is put in units, and it is why the supply of mutations is not the "
@@ -4326,7 +4448,7 @@ def render(rows):
       "mechanism, for why thirty-five years of load reduction has not produced the "
       "expected recovery.\n")
     a("**Sulphur is the one that makes marine hypoxia different.** Seawater carries "
-      "{q:different.** Seawater carries @@ g/L of sulphate.} g/L of sulphate. Once oxygen and nitrate are exhausted it becomes the "
+      "about {v:sw_so4|.1f} g/kg of sulphate. Once oxygen and nitrate are exhausted it becomes the "
       "terminal electron acceptor, and the supply is effectively unlimited — so the "
       "sea manufactures its own poison, without limit, as soon as the oxygen goes. "
       "Freshwater has no comparable reservoir.\n")
@@ -4361,7 +4483,9 @@ def render(rows):
             a(f"{mech}\n")
             a(f"**Predicts.** {pred}\n")
             a(f"**Discriminated by.** {disc}\n")
-            a(f"**Needs.** {needs}\n")
+            link = (f" [What the data holds →](HYPOTHESIS_DATA.md#{DATA_LINK[hid]})"
+                    if hid in DATA_LINK else "")
+            a(f"**Needs.** {needs}{link}\n")
 
     a("## Borrowed from a field that already made this mistake\n")
     a("The structure here — a degraded end state reachable by many routes, "
@@ -4378,7 +4502,7 @@ def render(rows):
     a("- **Longer, spatially replicated measurement.** Satellite records showed the "
       "Sahel greening while the desertification narrative was at its peak. The "
       "measurement reversed the finding. Here that is {v:register_stations|,} stations and the full "
-      "record rather than {q:rather than @@ stations and} stations and a window closing in 2012.\n")
+      "record rather than {v:dce_st|.0f} stations and a window closing in 2012.\n")
     a("- **Checking whether the baseline was ever real.** Fairhead and Leach found "
       "that forest patches in Guinea, read as relics of a destroyed forest, had been "
       "*created* by the villagers living in them. The causal arrow was backwards and "
@@ -4410,6 +4534,106 @@ def render(rows):
       "currently has, because it would have been tested against rivals rather than "
       "fitted alone.\n")
     return "\n".join(o) + "\n"
+
+
+def render_data(rows):
+    """HYPOTHESIS_DATA.md: what the data holds that bears on each hypothesis. A
+    hypothesis says how things might work and carries no measurement; the counts,
+    shares and published figures that bear on one are here, each a checked claim,
+    and each hypothesis's Needs links to its section."""
+    title = {h: t for h, _, t, *_ in rows}
+    title.update({i: nm for i, nm, _ in OUTCOMES})
+    v = lambda k, f="": format(VALUES[k], f)
+    C = live.claim
+    o = []
+    a = o.append
+
+    def head(i):
+        t = title.get(i, "")
+        a(f'<a id="{i}"></a>')
+        a(f"### {live.ref(i)} — {t}\n" if t and not re.search(r"\d", t) else f"### {live.ref(i)}\n")
+    a("# What the data holds for each hypothesis\n")
+    a("*Generated by `scripts/hypotheses.py`, with [HYPOTHESES.md](HYPOTHESES.md). A "
+      "hypothesis says how things might work, and carries no measurement. What the data "
+      "holds that bears on one - a count, a share, a published figure - is here "
+      "instead, each statement a checked claim, and each hypothesis links to its "
+      "section.*\n")
+    head("O9")
+    a(C("C-HY-O9-SITES", f"The national bathing-water layer holds {v('bathing_sites', ',')} sites.") + "\n")
+    head("A8")
+    a(C("C-HY-A8-SITES", "The national layer of marine aquaculture discharge points holds "
+        f"{v('lay_aqua', ',')} points.") + "\n")
+    head("B1")
+    a(C("C-HY-B1-OUTFALLS", "The national register of rain-conditioned outfalls holds "
+        f"{v('rbu_points', ',')} points.") + "\n")
+    head("B2")
+    a(C("C-HY-B2-TOTAL", f"The separate-stormwater outfall layer sums {v('sw_vol_m', '.1f')} "
+        f"million m³ a year over the {v('sw_with_vol', ',')} of its {v('sw_outfalls', ',')} "
+        "outfalls that report a volume.") + " "
+      + C("C-HY-B2-MST", "Miljøstyrelsen's microplastic inventory estimates that on average "
+          f"only {v('mst_ret_lo', 'g')}–{v('mst_ret_hi', 'g')}% of the microplastic in stormwater "
+          "is retained, because only part of the stormwater sewers have settling lagoons.") + "\n")
+    head("B3")
+    a(C("C-HY-B3-PLANTS", "The national layer of treatment-plant discharge points holds "
+        f"{v('lay_treat', ',')} points.") + "\n")
+    head("C2")
+    a(C("C-HY-WIND", f"The hourly wind record held here covers {v('wind_years')} calendar years.")
+      + f" The same record is what {live.ref('D7')} and {live.ref('Z5')} would drive bed shear from.\n")
+    head("D1")
+    a(C("C-HY-D1-FIGSHARE", "HELCOM's layers of fishing effort and of the footprint of "
+        "bottom-contacting gears are published on figshare as shapefiles, by quarter for "
+        "the HELCOM regions, for 2016 to 2021; they are not fetched here.") + "\n")
+    head("D3")
+    a(C("C-HY-D3-GROUNDS", "The national layer of licensed dumping grounds holds "
+        f"{v('lay_dump', ',')} grounds.") + "\n")
+    head("D4")
+    a(C("C-HY-D4-AREAS", "The national layer of raw-material extraction areas holds "
+        f"{v('lay_extr', ',')} areas.") + "\n")
+    head("E6")
+    a(C("C-HY-E6-FRESHWATER", f"The national hazardous-substance layer holds {v('hz_points', ',')} "
+        f"points: {v('hz_lake', ',')} in lakes, {v('hz_river', ',')} in rivers and "
+        f"{v('hz_coast', ',')} at the coast. Its {v('hz_sediment', ',')} sediment points are "
+        "therefore all freshwater, and for the sea the sediment count is none.") + "\n")
+    head("E18")
+    a(C("C-HY-E18-TYRES", "In Miljøstyrelsen's inventory tyres are the largest single source "
+        f"of the microplastic reaching Danish water: {v('mst_tyres', '.1f')}% of the aquatic "
+        "total.") + "\n")
+    head("H4")
+    a(C("C-HY-AREAS", f"The project's partition of Danish marine waters holds {v('areas_n')} areas.")
+      + f" The same partition is what {live.ref('K2')} needs.\n")
+    head("I1")
+    a(C("C-HY-I1-REGISTER", f"The ODA station register carries {v('i1_in', ',')} of the "
+        f"{v('i1_series', ',')} series stations, and on {v('i1_eq_pct', '.1f')}% of its rows "
+        "`StartDato` equals `SlutDato`: a visit date, not a lifespan.") + "\n")
+    head("I2")
+    a(C("C-HY-I2-SONDE", f"`SondeNr` is `999`, probe unknown, on {v('i2_999_pct', '.1f')}% of the "
+        "CTD extract, and the sampling gear is the constant `Ketcher` on "
+        f"{v('i2_ketcher_pct', '.1f')}%; the other {v('i2_usable_pct', '.1f')}% carries "
+        f"{v('i2_probes')} identified probes.") + "\n")
+    head("I3")
+    a(C("C-HY-I3-NOCLOCK", f"The CTD extract has no time of day in any of its "
+        f"{v('ctd_rows_m', '.1f')} million rows, and no column for it.") + " "
+      + C("C-HY-I3-CHEMCLOCK", "The water-chemistry extract does carry a clock value per "
+          "sample, so where chemistry shares a cruise with a CTD cast it can bound the hour "
+          "the cast was taken.") + "\n")
+    head("I7")
+    a(C("C-HY-I7-CASE", f"{v('i7_months')} station-months of negative oxygen, all in May and "
+        f"June 2005, at {v('i7_stations')} stations in {v('i7_wb')} water bodies, between "
+        f"{v('i7_km_min', '.0f')} and {v('i7_km_max', '.0f')} km apart in the Øresund approaches. "
+        "The flag record reads the co-reported saturation as full or above and the "
+        "magnitudes as matching Weiss solubility: the water was oxygenated and the sign "
+        "inverted.") + " "
+      + C("C-HY-I7-LEAD", f"Flagged stations with {v('i7_prefixes')} different station-number "
+          "prefixes, close together, point at a shared regional processing step rather than "
+          f"one desk; with {v('i7_stations')} stations it is a lead, not a finding.") + "\n")
+    head("J9")
+    a(C("C-HY-J9-INVENTORY", "Miljøstyrelsen's inventory puts total Danish microplastic "
+        f"release at {v('mst_lo', ',.0f')}–{v('mst_hi', ',.0f')} t a year, of which "
+        f"{v('mst_aq_lo', ',.0f')}–{v('mst_aq_hi', ',.0f')} t a year reaches the aquatic "
+        f"environment; of that aquatic share, tyres are {v('mst_tyres', '.1f')}%, footwear "
+        f"{v('mst_foot', '.1f')}%, and paint and ship paint together {v('mst_paint', '.1f')}%.")
+      + "\n")
+    return "\n".join(o).rstrip("\n") + "\n"
 
 
 def main():
@@ -4528,6 +4752,8 @@ def main():
     log(f"  glossary: {len(gloss) - 2} ids, {len(TERMS)} terms")
     write_doc(OUT, entities(rich(render(rows))))
     log(f"wrote docs/HYPOTHESES.md ({os.path.getsize(OUT):,} chars)")
+    write_doc(DATA_OUT, render_data(rows))
+    log(f"wrote docs/HYPOTHESIS_DATA.md ({os.path.getsize(DATA_OUT):,} chars)")
     log(f"  {len(rows)} hypotheses across {len(GROUPS)} groups, "
         f"{len(OUTCOMES)} outcomes kept apart")
     from collections import Counter

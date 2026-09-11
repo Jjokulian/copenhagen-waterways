@@ -722,10 +722,10 @@
     "scripts/currents.py"
    ],
    "confirmed": {
-    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/currents.py": "5e180c254909fc16"
+     "scripts/currents.py": "c31aaaf30ed9ee19"
     }
    }
   },
@@ -805,10 +805,10 @@
     "scripts/currents.py"
    ],
    "confirmed": {
-    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/currents.py": "5e180c254909fc16"
+     "scripts/currents.py": "c31aaaf30ed9ee19"
     }
    }
   },
@@ -897,10 +897,10 @@
     "scripts/currents.py"
    ],
    "confirmed": {
-    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: currents.py changed only in its module docstring - the grid stated as Open-Meteo gives it, the speed comparison said to rest on unsourced peaks - and a comment marking those peaks unsourced; no code changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/currents.py": "5e180c254909fc16"
+     "scripts/currents.py": "c31aaaf30ed9ee19"
     }
    }
   },

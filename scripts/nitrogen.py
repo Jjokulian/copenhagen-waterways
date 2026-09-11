@@ -468,15 +468,17 @@ def whose_nitrogen(cl, total13):
         w(manure_check(live.live_json(mp)))
     w("### What the law does to the herd, if the arithmetic binds\n")
     w(C("C-NI-L5", "The instruments are in the public record rather than in this analysis. `L 5`, the "
-        "fertilisation law, passed on 2026-09-03 with what TV 2 called *\""
-        + quote("POL-TV2-20260903", "et massivt politisk flertal") + "\"* — a massive political "
-        "majority. The ministry's December 2025 announcement gives each holding a quota for its "
+        "fertilisation law, passed on 2026-09-03, "
+        + quote_n("POL-TV2-20260903", "119", "119 medlemmer af Folketinget stemte for loven")
+        + ", " + quote_n("POL-TV2-20260903", "34", "mens 34 stemte imod") + " (TV 2) — what TV 2 "
+        "called *\"" + quote("POL-TV2-20260903", "et massivt politisk flertal") + "\"*, a massive "
+        "political majority. The ministry's December 2025 announcement gives each holding a quota for its "
         "discharges set by how much its catchment must cut, from 2027 (*\""
         + quote("POL-MGTP-20251203", "en kvote for deres udledninger ud fra") + "\"*), and calls the "
         "agreement a safety net under the Tripartite's land conversion (*\""
-        + quote("POL-MGTP-20251203", "et sikkerhedsnet under den") + "\"*). A June 2026 report of the "
-        "government's agreement says the regulation now hits in 2028 rather than 2027 "
-        "([POLITICS.md](POLITICS.md)).") + "\n")
+        + quote("POL-MGTP-20251203", "et sikkerhedsnet under den") + "\"*). Under the law, "
+        "emission-based regulation replaces field regulation from 2027, and its sharper step, "
+        "the kvælstofhammer, cannot strike before 2028 ([POLITICS.md](POLITICS.md)).") + "\n")
     w(C("C-NI-NOT-READ", "**This project has not read the statute**, so what follows is inference "
         "from those instruments and from the balance above, and it is offered as a prediction that "
         "can be checked rather than as a reading of the law.") + "\n")

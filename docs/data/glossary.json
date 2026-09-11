@@ -80,7 +80,7 @@
    {
     "kind": "hypothesis (T)",
     "label": "Loss of sediment suppressiveness",
-    "text": "Some soils suppress disease purely through their microbial community, and suppressiveness is transferable - mix 1-10% of a suppressive soil into a conducive one and it becomes suppressive. Anaerobiosis and fumigation destroy it."
+    "text": "Some soils suppress disease purely through their microbial community, and suppressiveness is transferable - mix a small share of a suppressive soil into a conducive one and it becomes suppressive. Anaerobiosis and fumigation destroy it."
    }
   ]
  },
@@ -237,7 +237,7 @@
  "O9": {
   "kind": "observable",
   "label": "Bathing water failure",
-  "text": "Closures and quality downgrades. The one outcome Denmark measures densely, over a long period, at 1,026 points."
+  "text": "Closures and quality downgrades. The one outcome Denmark measures densely, over a long period ([what the data holds](HYPOTHESIS_DATA.md#O9))."
  },
  "A": {
   "kind": "group",
@@ -292,7 +292,7 @@
  "W": {
   "kind": "group",
   "label": "Renewal and rate",
-  "text": "A population can end without anything killing an individual, and a system can fail at a magnitude it would survive if it arrived more slowly. This group exists because the categorical avenues had two entries - failure to replace itself, and rate exceeded - with almost nothing under them in a register of 127. That absence was not a judgement that these do not matter; nobody had thought to look."
+  "text": "A population can end without anything killing an individual, and a system can fail at a magnitude it would survive if it arrived more slowly. This group exists because the categorical avenues had two entries - failure to replace itself, and rate exceeded - with almost nothing under them in a register of the register as it then stood. That absence was not a judgement that these do not matter; nobody had thought to look."
  },
  "Z": {
   "kind": "group",
@@ -342,7 +342,7 @@
  "A10": {
   "kind": "hypothesis (A)",
   "label": "Exhaust-treatment reagent: nitrogen added to remove nitrogen",
-  "text": "Selective catalytic reduction injects urea solution - AdBlue, 32.5% urea - into diesel exhaust, where it decomposes to ammonia and reduces nitrogen oxides to harmless N2 and water. **The composition is worth stating plainly, because it makes the entry obvious.** `AUS 32` under `ISO 22241` is two ingredients: 32.5% urea, 67.5% demineralised water. Urea, `CO(NH2)2`, is 46.6% nitrogen by mass, so the fluid is 15.1% nitrogen — against 28–32% for the liquid UAN fertilisers spread on fields. **AdBlue is a half-strength fertiliser solution distributed through the fuel network**, and urease, the enzyme that converts urea to ammonium, is present in essentially all soil and water and acts within hours. Anything reaching ground as liquid — spillage at filling points, tank rinsing, disposal — is fertiliser arriving by that route, with no combustion involved at all. That is a second pathway entirely separate from slip, and neither is measured. In the exhaust the decomposition is two steps, and the failure sits in the second: thermolysis gives ammonia plus isocyanic acid, then hydrolysis on the catalyst gives a second ammonia and CO2. If the catalyst is cold the isocyanic acid polymerises instead — biuret, cyanuric acid, melamine — which is what urea deposits in an exhaust system are made of. The technology works, and the point here is not that it fails. It is that **a large mass of reactive nitrogen is deliberately introduced into the exhaust stream in order to destroy another one**, and the destruction is not complete. Unreacted ammonia leaves as slip, worst when the catalyst is cold - short trips, urban driving, winter. Some nitrogen leaves as nitrous oxide instead of N2. And SCR systems are deliberately disabled in heavy transport to avoid the running cost of the reagent, which converts a partial loss into a total one."
+  "text": "Selective catalytic reduction injects urea solution - AdBlue, 32.5% urea - into diesel exhaust, where it decomposes to ammonia and reduces nitrogen oxides to harmless N2 and water. **The composition is worth stating plainly, because it makes the entry obvious.** `AUS 32` under `ISO 22241` is two ingredients: 32.5% urea, 67.5% demineralised water. Urea, `CO(NH2)2`, is 46.6% nitrogen by mass, so the fluid is 15.2% nitrogen — against 28–32% for the liquid UAN fertilisers spread on fields. **AdBlue is a half-strength fertiliser solution distributed through the fuel network**, and urease, the enzyme that converts urea to ammonium, is present in essentially all soil and water and acts within hours. Anything reaching ground as liquid — spillage at filling points, tank rinsing, disposal — is fertiliser arriving by that route, with no combustion involved at all. That is a second pathway entirely separate from slip, and neither is measured. In the exhaust the decomposition is two steps, and the failure sits in the second: thermolysis gives ammonia plus isocyanic acid, then hydrolysis on the catalyst gives a second ammonia and CO2. If the catalyst is cold the isocyanic acid polymerises instead — biuret, cyanuric acid, melamine — which is what urea deposits in an exhaust system are made of. The technology works, and the point here is not that it fails. It is that **a large mass of reactive nitrogen is deliberately introduced into the exhaust stream in order to destroy another one**, and the destruction is not complete. Unreacted ammonia leaves as slip, worst when the catalyst is cold - short trips, urban driving, winter. Some nitrogen leaves as nitrous oxide instead of N2. And SCR systems are deliberately disabled in heavy transport to avoid the running cost of the reagent, which converts a partial loss into a total one."
  },
  "A4": {
   "kind": "hypothesis (A)",
@@ -387,7 +387,7 @@
  "B3": {
   "kind": "hypothesis (B)",
   "label": "Treatment plant organic load",
-  "text": "Continuous discharge of residual COD and BOD from 750 plants."
+  "text": "Continuous discharge of residual COD and BOD from treatment plants."
  },
  "B4": {
   "kind": "hypothesis (B)",
@@ -442,7 +442,7 @@
  "C6": {
   "kind": "hypothesis (C)",
   "label": "Water temperature and solubility",
-  "text": "Warmer water holds less oxygen and respires faster: roughly −2.3% saturation per °C, and demand rising with Q10."
+  "text": "Warmer water holds less oxygen and respires faster, with demand rising with Q10."
  },
  "C7": {
   "kind": "hypothesis (C)",
@@ -472,12 +472,12 @@
  "D3": {
   "kind": "hypothesis (D)",
   "label": "Dredged-material dumping",
-  "text": "Sediment, and whatever is in it, deposited at 114 licensed grounds."
+  "text": "Sediment, and whatever is in it, deposited at licensed dumping grounds."
  },
  "D4": {
   "kind": "hypothesis (D)",
   "label": "Sand and gravel extraction",
-  "text": "Removal of the bed itself at 305 licensed areas."
+  "text": "Removal of the bed itself at licensed extraction areas."
  },
  "D5": {
   "kind": "hypothesis (D)",
@@ -602,7 +602,7 @@
  "E20": {
   "kind": "hypothesis (E)",
   "label": "Fuel oxygenates and additives",
-  "text": "Petrol and diesel are not one substance. Oxygenates are blended in to make combustion more complete - ETBE and MTBE in petrol, ethanol at 5 or 10 per cent - along with detergents, lubricity agents for low-sulphur diesel, and in some markets metallic additives carrying manganese or iron. The ethers are the notable ones for water: highly soluble, barely retarded by soil, and detectable by taste and smell at a few micrograms per litre, so a small spill travels far and is noticed as a nuisance long before it is a measured concentration. Ethanol is itself harmless but acts as a co-solvent, moving benzene and the other aromatics further than they would otherwise go."
+  "text": "Petrol and diesel are not one substance. Oxygenates are blended in to make combustion more complete - ETBE and MTBE in petrol, ethanol in the `E5` and `E10` blends - along with detergents, lubricity agents for low-sulphur diesel, and in some markets metallic additives carrying manganese or iron. The ethers are the notable ones for water: highly soluble, barely retarded by soil, and detectable by taste and smell at a few micrograms per litre, so a small spill travels far and is noticed as a nuisance long before it is a measured concentration. Ethanol is itself harmless but acts as a co-solvent, moving benzene and the other aromatics further than they would otherwise go."
  },
  "E19": {
   "kind": "hypothesis (E)",
@@ -787,7 +787,7 @@
  "K2": {
   "kind": "hypothesis (K)",
   "label": "Stoichiometric imbalance decides who grows",
-  "text": "Redfield C:N:P at 106:16:1 and roughly Si:N at 1:1 for diatoms are requirements, not averages. Skewing the ratios changes which organisms can complete their life cycle, independently of how much of anything there is."
+  "text": "Redfield C:N:P at 106:16:1 and, for diatoms, Si:N at 15:16 (Redfield-Brzezinski) are requirements, not averages. Skewing the ratios changes which organisms can complete their life cycle, independently of how much of anything there is."
  },
  "K3": {
   "kind": "hypothesis (K)",
@@ -832,7 +832,7 @@
  "K11": {
   "kind": "hypothesis (K)",
   "label": "Light as a depleted resource",
-  "text": "Distinct from turbidity as a symptom: for a rooted plant, light at the bed is a resource with a hard requirement - roughly 11-14% of surface irradiance for eelgrass - and below it the plant does not grow slowly, it dies."
+  "text": "Distinct from turbidity as a symptom: for a rooted plant, light at the bed is a resource with a hard requirement - a minimum share of surface irradiance for eelgrass - and below it the plant does not grow slowly, it dies."
  },
  "K12": {
   "kind": "hypothesis (K)",
@@ -892,7 +892,7 @@
  "S5": {
   "kind": "hypothesis (S)",
   "label": "Buffering scales with the volume of reactive medium",
-  "text": "The Leptosol lesson: a soil under 25 cm deep has almost no capacity to absorb a shock, because buffering is proportional to the volume of material doing the buffering."
+  "text": "The Leptosol lesson: a shallow soil over rock has almost no capacity to absorb a shock, because buffering is proportional to the volume of material doing the buffering."
  },
  "S6": {
   "kind": "hypothesis (S)",
@@ -907,7 +907,7 @@
  "R1": {
   "kind": "hypothesis (R)",
   "label": "The C:N threshold, and fat as a nitrogen sink",
-  "text": "Decomposer microbes build biomass near C:N 8-10 at about 40% carbon-use efficiency, so there is a threshold near C:N 25: below it decay releases mineral nitrogen, above it decay consumes it. Straw at C:N 80 starves the next crop. Fat has no nitrogen at all."
+  "text": "Decomposer microbes build biomass at a low C:N and respire much of the carbon they take in, so there is a threshold C:N: below it decay releases mineral nitrogen, above it decay consumes it. Straw, far above the threshold, starves the next crop. Fat has no nitrogen at all."
  },
  "R2": {
   "kind": "hypothesis (R)",
@@ -927,7 +927,7 @@
  "R5": {
   "kind": "hypothesis (R)",
   "label": "The terminal electron acceptor cascade, and why salt changes it",
-  "text": "Decay runs down a ladder of electron acceptors - O₂, then nitrate, then manganese, then iron, then sulphate, then CO₂ - each yielding less energy. Freshwater carries 5-30 mg/L of sulphate and so passes it quickly to methanogenesis. Seawater carries 2,700 mg/L, a hundred to five hundred times more, and sulphate reducers outcompete methanogens for hydrogen and acetate."
+  "text": "Decay runs down a ladder of electron acceptors - O₂, then nitrate, then manganese, then iron, then sulphate, then CO₂ - each yielding less energy. Freshwater carries little sulphate and so passes it quickly to methanogenesis. Seawater carries about 2,700 mg/kg, far more, and sulphate reducers outcompete methanogens for hydrogen and acetate."
  },
  "R6": {
   "kind": "hypothesis (R)",
@@ -1042,7 +1042,7 @@
  "Z1": {
   "kind": "hypothesis (Z)",
   "label": "Light: too little, and too much",
-  "text": "The floor is the eelgrass requirement, roughly 11-14% of surface irradiance. The ceiling is real too: photoinhibition and UV damage at the surface, which is why some species do worse in the clearest water."
+  "text": "The floor is the eelgrass requirement, a minimum share of surface irradiance. The ceiling is real too: photoinhibition and UV damage at the surface, which is why some species do worse in the clearest water."
  },
  "Z2": {
   "kind": "hypothesis (Z)",
@@ -1161,8 +1161,7 @@
    "forms": [
     "aerobe",
     "aerobes",
-    "aerobic",
-    "aerobical"
+    "aerobic"
    ]
   },
   "AIS": {
@@ -1218,8 +1217,7 @@
    "text": "Without oxygen - either an environment with none, or an organism that lives without it. Anaerobic decay produces different, often toxic, products.",
    "why": "Greek an- (without) plus aer. Anaerobiosis is the state; anaerobes are the organisms.",
    "forms": [
-    "anaerobic",
-    "anaerobical"
+    "anaerobic"
    ]
   },
   "anammox": {
@@ -1448,7 +1446,8 @@
    "text": "Biochemical oxygen demand - the share of COD that microbes will actually consume, usually measured over five days.",
    "why": "The biologically available part of the oxygen demand.",
    "forms": [
-    "bod"
+    "bod",
+    "bods"
    ]
   },
   "brackish": {
@@ -2751,8 +2750,7 @@
    "text": "A live organism given deliberately to establish or restore a community. Used in aquaculture in place of antibiotics for the same reason it works in a gut.",
    "why": "Literally for-life, coined against antibiotic, against-life.",
    "forms": [
-    "probiotic",
-    "probiotics"
+    "probiotic"
    ]
   },
   "prokaryote": {
@@ -3070,6 +3068,7 @@
    "why": "The same word as a door sill - a threshold you have to get over.",
    "forms": [
     "sill",
+    "silled",
     "sills"
    ]
   },
@@ -3166,7 +3165,6 @@
    "why": "Seawater carries so much sulphate that once oxygen runs out, sulphide production is effectively unlimited.",
    "forms": [
     "sulphide",
-    "sulphides",
     "sulphidic"
    ]
   },

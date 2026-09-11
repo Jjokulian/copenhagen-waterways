@@ -1,0 +1,50 @@
+{
+ "_what": "Fork w2-cs: the CURRENTS report step now also computes the rain climate from the whole weather record, and SOLUTIONS reads the national overflow layer and three pinned sources.",
+ "steps": [
+  {
+   "script": "scripts/currents.py",
+   "args": [
+    "report"
+   ],
+   "inputs": [
+    "data/raw/weather/wind_1995_2000.json",
+    "data/raw/weather/wind_2001_2006.json",
+    "data/raw/weather/wind_2007_2012.json",
+    "data/raw/weather/wind_2013_2018.json",
+    "data/raw/weather/wind_2019_2025.json",
+    "data/derived/currents_validate.json",
+    "data/derived/currents_index.json",
+    "data/derived/currents_transport.json",
+    "data/derived/waves.json",
+    "data/manual/claims.d/w2-cs.json",
+    "data/manual/claims.d/w1-ni.json",
+    "data/derived/pins/OM-MARINE.txt",
+    "data/derived/pins/WIKI-ORESUND.txt",
+    "data/derived/pins/CMEMS-BAL-STAC.txt",
+    "data/derived/pins/NI-DCE-ILT-2023.txt",
+    "data/derived/pins/NI-DCE-ILT-2025.txt"
+   ],
+   "outputs": [
+    "data/derived/currents_rain.json",
+    "docs/CURRENTS.md"
+   ]
+  },
+  {
+   "script": "scripts/solutions.py",
+   "inputs": [
+    "data/derived/outfalls.json",
+    "data/manual/claims.d/w2-cs.json",
+    "data/manual/claims.d/w1-ni.json",
+    "data/manual/claims.d/w1-pg.json",
+    "data/manual/claims.d/methodlab-b.json",
+    "data/derived/pins/FLOOD2012-AMAGER.txt",
+    "data/derived/pins/MEIJER-2021.txt",
+    "data/derived/pins/TYPETAL22.txt",
+    "data/derived/pins/DP02.txt"
+   ],
+   "outputs": [
+    "docs/SOLUTIONS.md"
+   ]
+  }
+ ]
+}

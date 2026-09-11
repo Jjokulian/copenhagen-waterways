@@ -591,10 +591,10 @@
     "scripts/socialcontext.py"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "fork w2-in (re-read: socialcontext.py's compute part - read_registers() through compute() and main() - is identical to the version last read, verified by diff; only the page-writing part was rewritten into checked claims and the self-quotation helper removed. The fields covered are written by the unchanged code. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/socialcontext.py": "2e64ab1e9f631e41"
+     "scripts/socialcontext.py": "4cb7546c41711811"
     }
    }
   },

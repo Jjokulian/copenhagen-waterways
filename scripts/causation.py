@@ -1,63 +1,37 @@
 #!/usr/bin/env python3
-"""Generate docs/CAUSATION.md - what survives between "agriculture 69.6% of nitrogen"
-and "agriculture causes 70% of fedtemøg".
+"""Generate docs/CAUSATION.md - what connects "agriculture 69.6% of nitrogen" to the
+fedtemøg on a Danish shore.
 
-NITROGEN.md audits the number where it is produced: the denominator, the estimator, the
-currency. This document does something different. It takes the number at face value and
-follows it forward through the causal chain it is quoted as describing, asking at each
-link what coefficient exists. The answer is that four of them do not exist, and the
-product of four unknown fractions is reported as one measured fraction.
+NITROGEN.md audits the share where it is produced: the denominator, the estimator, the
+currency. This page grants the share and follows it forward through the links it would
+have to pass to become a statement about the outcome people name, asking at each link
+what coefficient exists.
 
-Then it puts the intervention and the outcome side by side, which nobody does, because
-that juxtaposition is the only empirical test of the nitrogen-dominant model that
-thirty-five years of Danish policy has actually run.
+Fedtemøg is algae - filamentous brown algae rotting at the water's edge, as the pinned
+Danish Wikipedia article defines it - so it is grown, and nitrogen is on its path. The
+page's questions are which nitrogen, what else limits the growth, and what connects a
+share of nitrogen discharged to algae on a shore. The routes by which oxygen is lost
+without growth are set out separately, as routes to iltsvind.
 
-Every number on the page reaches it through live.py. The published share and the
-two stoichiometric constants are read from data/derived/landbrug.json, where
-scripts/landbrug.py keeps them for LANDBRUG.md, so the site holds one copy; the
-fat and carbohydrate oxygen demands are computed in scripts/meta_facts.py. The few
-document figures no file stores - a utility's fat tonnage, a retention band, a
-lag range - are quoted from the commit that first published this page, and the
-count of those is logged.
+Every number reaches the page through live.py: the pathway bounds from
+data/manual/nitrogen_pathways.json (this project's own compilation, without a source per
+row), the nutrient typetal and the retention uncertainty from data/manual/monitoring.json,
+the stoichiometric constants from data/derived/landbrug.json and meta_facts.json, and the
+published figures read from their pinned documents. Every assertion is a checked claim,
+registered with what it rests on in data/manual/claims.d/w2-pc.json.
 
 Usage:  python3 scripts/causation.py
 """
 import os
-import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, MANUAL, ROOT, log, write_doc
+import claims as _claims
 import live
-import quote_locate
 
 OUT = os.path.join(ROOT, "docs", "CAUSATION.md")
-PAGE = "docs/CAUSATION.md"
-THEN = "4469fc7"         # the page as it stood before its numbers were checked
-# a count or range inside a note - but never a year, which is exempt and left alone
-NOTE_NUM = re.compile(r"(?<![\d-])(?:over |nearly )?(?!(?:18|19|20)\d\d(?!\d))"
-                      r"\d{1,3}(?:-\d{1,3})?%?(?: years)?(?!\d)")
-CHAIN_TAIL = [
-    ("Nitrogen → oxygen depletion",
-     "no coefficient",
-     "NOT COMPUTED",
-     "Nitrogen is one of at least six oxygen sinks. There is no potency term: a kilogram "
-     "in February into a mixed column counts the same as a kilogram in July under a "
-     "pycnocline. No ventilation term, no state variable."),
-    ("Oxygen depletion → loss of higher life",
-     "no coefficient",
-     "NOT COMPUTED",
-     "Hypoxia is one route among several — toxicants, trawling, turbidity, sulphide "
-     "exposure, physical loss of habitat. The soft-bottom survey runs from the start "
-     "of March to the end of May, so the autumn kill is never observed, only its "
-     "aftermath."),
-    ("Loss of higher life → fedtemøg on a shore",
-     "no coefficient",
-     "NOT MEASURED AT ALL",
-     "Fedtemøg has no national monitoring — not extent, not biomass, not duration. "
-     "And it needs retention, stranding wind and a shore, which are properties of the "
-     "receiving bay, not of the source."),
-]
+B, E, C, R = live.claim_begin, live.CLAIM_END, live.claim, live.ref
 
 
 def fmt(x):
@@ -69,51 +43,24 @@ def main():
     mon = live.live_json(os.path.join(MANUAL, "monitoring.json"))
     F = live.live_json(os.path.join(DERIVED, "landbrug.json"))
     meta = live.live_json(os.path.join(DERIVED, "meta_facts.json"))
-    tr = mon["load_trend_vs_outcome"]
-    SELF = []           # numbers carried as quotations of this page's own committed text
+    cd = _claims.load()[0]
+    cache = {}
 
-    def sq(shown):
-        SELF.append(shown)
-        return live.was(THEN, PAGE, shown)
+    def read(ph):
+        return _claims.resolve(cd, ph, cache)[0]
 
-    def note(text):
-        """A note from the monitoring file, its counts quoted as this page had them -
-        each located in the page's committed text by the words around it, so the
-        value is read out of the history, not typed."""
-        def located(m):
-            loc = quote_locate.locate(THEN, PAGE, m.group(0).strip(),
-                                      hints=text[max(0, m.start() - 120):m.end() + 120])
-            if not loc:
-                raise live.Unjustified(f"causation: cannot locate '{m.group(0)}' of a "
-                                       f"monitoring note in {PAGE} at {THEN}")
-            return sq(loc)
-        return NOTE_NUM.sub(located, text)
-
+    # the published share, read from DANVA's page; the arithmetic below uses the same
+    # value as landbrug.json keeps it, and the two are checked against each other
+    PCT = read("{read:DANVA-2024:69.6|hvor landbruget alene står for 69,6 %}")
+    if abs(float(live.strip_marks(PCT)) - F["agri_pct"]) > 1e-9:
+        raise live.Unjustified("causation: landbrug.json's agri_pct no longer matches DANVA's page")
+    RED = read("{read:SR353:51|The reductions are 51% and 72% for nitrogen and phosphorus}")
+    KM24 = read("{read:PC-DCE-ILT-2024:11,000|udgjorde midt i september 11.000 km2}")
+    UP24 = read("{read:PC-DCE-ILT-2024:50|var næsten 50 % større end i september 2023}")
     O2 = live.chem("O2")
-    AGRI = f"{F['agri_pct']:.1f}"
-    # the public sentence carries the published share rounded to a whole percent
-    PUBLIC = f"{F['agri_pct']:.0f}%"
     n_paths, n_empty = meta["pathways_total"], meta["pathways_unquantified"]
     C_PER_N, C_PER_COD = F["c_per_n"], F["c_per_cod"]
-
-    # The chain the phrase "agriculture causes 70% of fedtemøg" asserts, one link per
-    # row. "coefficient" is what would have to exist for the multiplication to be
-    # legitimate.
-    CHAIN = [
-        ("Agriculture → the land-based waterborne nitrogen term",
-         f"{AGRI}%",
-         "PUBLISHED",
-         "A residual: measured-plus-modelled total minus modelled point sources minus "
-         f"modelled natural background. Retention modelled at {sq('modelled at @@ percentage points.')} percentage "
-         "points. Returns negative values in dry years."),
-        ("That term → all reactive nitrogen reaching the sea",
-         "no coefficient",
-         "OPEN SET",
-         f"{n_empty} of {n_paths} enumerated pathways carry no number, including "
-         "atmospheric deposition's organic fraction, submarine groundwater discharge, "
-         "and sediment regeneration — probably the largest single supply to the "
-         "productive layer."),
-    ] + CHAIN_TAIL
+    ret = mon["diffuse_load"]["retention_uncertainty_national_average_pct_points"]
 
     # the two rows that make up the land-based waterborne term the published share is of
     land = [p for p in paths if p["pathway"].startswith("Danish land via")]
@@ -122,113 +69,135 @@ def main():
     agri_lo = land_lo * F["agri_pct"] / 100
     agri_hi = land_hi * F["agri_pct"] / 100
     atmos = next(p for p in paths if p["pathway"].startswith("Atmospheric deposition"))
-
+    cso = next(p for p in paths if p["pathway"].startswith("Rain-dependent overflow"))
     quant = [p for p in paths if p["lo"] is not None]
-    unquant = [p for p in paths if p["lo"] is None]
     tot_lo = sum(p["lo"] for p in quant)
     tot_hi = sum(p["hi"] for p in quant)
-
     # a CEILING, not a share: the denominator can only grow, so this can only fall
     ceil_hi = agri_hi / tot_lo * 100
     ceil_lo = agri_lo / tot_hi * 100
+    cso_lo = cso["typetal_kt"] / land_hi * 100
+    cso_hi = cso["typetal_kt"] / land_lo * 100
 
     o = []
     a = o.append
-
     a("# The chain from nitrogen to fedtemøg\n")
-    a("Generated by `scripts/causation.py` from `data/manual/` and `data/derived/`. "
-      "Companion to [NITROGEN.md](NITROGEN.md), which audits the number where it is "
-      "made. This document does the opposite: it grants the number and follows it "
-      "*forward*, through the causal chain it is routinely quoted as describing.\n")
+    a("*Generated by `scripts/causation.py` from `data/manual/`, `data/derived/` and pinned "
+      "documents.*\n")
+    a(C("C-PC-CA-INTRO", "Companion to [NITROGEN.md](NITROGEN.md), which audits the nitrogen share "
+        "where it is made. This page grants the share and asks what connects it to the outcome "
+        "people name.") + "\n")
 
-    a(f"> **agriculture causes {PUBLIC} of fedtemøg**\n")
-    a("That sentence, or a close variant, is how the figure enters public argument. "
-      "It is a claim about an outcome on a shore. The number behind it is a share of "
-      "one term in one account. Between the two lie four links, and this document asks "
-      "what coefficient each one has.\n")
+    a("## The claim, as it is made\n")
+    a(C("C-PC-CA-FEDT-DEF", "*Fedtemøg* is a popular name for mass occurrences of loose-lying "
+        "filamentous brown algae that can lie rotting at the water's edge and on the beach "
+        "([Danish Wikipedia](https://da.wikipedia.org/wiki/Fedtem%C3%B8g)).") + " "
+      + C("C-PC-CA-PUBLIC", "In the public record this project pinned, that outcome is joined to "
+          "agriculture's nitrogen:") + "\n")
+    a("> " + C("C-PC-CA-WIKI-AGRI", "\"Forekomsten af fedtemøg ved danske kyster skyldes især "
+               "landbrugets udledning af kvælstof\" — the same article"))
+    a(">")
+    a("> " + C("C-PC-CA-DN", "\"År efter år har vi set forfærdeligt iltsvind og fedtemøg. Skal havet "
+               "have en chance, må landbrugets kvælstofforurening ned.\" — Maria Reumert Gjerding, "
+               "president of Danmarks Naturfredningsforening, on the nitrogen agreement"))
+    a(">")
+    a("> " + C("C-PC-CA-DANVA", f"Agriculture alone accounts for {PCT}% of nitrogen discharged — "
+               "DANVA, citing data from Miljøstyrelsen and Aarhus University") + "\n")
+    a(C("C-PC-CA-JOIN", "Put together, a share of nitrogen discharged is joined to an outcome on "
+        "the shore. Nobody quoted here multiplies the two, but the argument invites the reader to. "
+        "This page asks what connects them.") + "\n")
 
     # ------------------------------------------------------------------ 1
     a("## 1. What the number is a share of\n")
-    a(f"The published {AGRI}% is agriculture's share of the **land-based waterborne "
-      "term** — nitrogen arriving at the coast through Danish streams and unmonitored "
-      f"catchments. Those are two rows of the {n_paths} enumerated in NITROGEN.md:\n")
+    a(C("C-PC-CA-SCOPE", f"The {PCT}% is agriculture's share of nitrogen **discharged to coastal "
+        "waters by source** — the land-based waterborne term, nitrogen arriving at the coast "
+        f"through Danish streams and unmonitored catchments. Those are two rows of the {n_paths} "
+        "this project enumerates in NITROGEN.md:") + "\n")
     a("| Row | kt N/yr | Status |")
     a("|---|---:|---|")
     for p in land:
         a(f"| {p['pathway']} | {fmt(p['lo'])} – {fmt(p['hi'])} | {p['status'].title()} |")
     a(f"| **The term the percentage divides** | **{fmt(land_lo)} – {fmt(land_hi)}** | |")
-    a(f"| **{AGRI}% of it — the agricultural load** | **{fmt(agri_lo)} – {fmt(agri_hi)}** | |")
+    a(f"| **{PCT}% of it — the agricultural load** | **{fmt(agri_lo)} – {fmt(agri_hi)}** | |")
     a("")
-    a(f"So the quantity in question is roughly **{fmt(agri_lo)}–{fmt(agri_hi)} kt N/yr**. "
-      "That is a real number and it is not small. The question is what it is a share "
-      "*of*.\n")
-    a(f"The enumerated pathways that carry any number at all sum to "
-      f"**{fmt(tot_lo)} – {fmt(tot_hi)} kt N/yr**, with **{n_empty} of {n_paths} "
-      "rows empty**. An empty row can only add. So the denominator has a floor and no "
-      "ceiling, and any share computed against it is a **ceiling, not an estimate**:\n")
-    a(f"> Agriculture accounts for **no more than {ceil_hi:.0f}%** of enumerated "
-      "reactive nitrogen reaching Danish marine waters — and at the wide end of the "
-      f"denominator bounds, as little as {ceil_lo:.0f}%. Fill any of the empty rows and "
-      "that ceiling falls. It cannot rise.\n")
-    a(f"The published {AGRI}% and this ceiling are not competing estimates of the "
-      "same thing. They answer different questions, and only the second one is the "
-      "question the public sentence is asking.\n")
-    a("Two omissions set the scale of the gap. **Atmospheric deposition to Danish marine "
-      f"waters is {fmt(atmos['lo'])}–{fmt(atmos['hi'])} kt N/yr** — comparable to the entire land-based term, falling on "
-      "the water directly, and absent from every published apportionment. **Sediment "
-      "regeneration** is not a source at all in the accounting frame, yet one study puts "
-      "net advection at around a tenth of what annual primary production requires, which "
-      "implies internal recycling supplies most of it.\n")
+    a(C("C-PC-CA-AGRILOAD", f"So the agricultural part of that term is roughly **{fmt(agri_lo)}–"
+        f"{fmt(agri_hi)} kt N/yr** on this project's bounds. That is a real quantity and it is not "
+        "small. The question is what it is a share *of*.") + "\n")
+    a(C("C-PC-CA-FLOOR", f"The enumerated pathways that carry any number sum to **{fmt(tot_lo)} – "
+        f"{fmt(tot_hi)} kt N/yr**, with **{n_empty} of {n_paths} rows empty**. An empty row can only "
+        "add, so the sum is a floor on the denominator, and a share computed against it is a "
+        "**ceiling, not an estimate**:") + "\n")
+    a("> " + C("C-PC-CA-CEILING", f"On this project's own bounds, agriculture accounts for **no more "
+               f"than {ceil_hi:.0f}%** of enumerated reactive nitrogen reaching Danish marine waters "
+               f"— and at the wide end of the bounds as little as {ceil_lo:.0f}%. Filling any empty "
+               "row lowers that ceiling. The bounds carry no source for each row, so the ceiling is "
+               "only as good as they are.") + "\n")
+    a(C("C-PC-CA-DIFFERENT", f"The published {PCT}% and this ceiling are not competing estimates of "
+        "the same thing. They answer different questions, and only the second is the question an "
+        "outcome at sea raises.") + "\n")
+    a(C("C-PC-CA-DEPOSITION", "Two terms set the scale of what the share leaves out. **Atmospheric "
+        f"deposition to Danish marine waters is {fmt(atmos['lo'])}–{fmt(atmos['hi'])} kt N/yr** in "
+        "this project's register — comparable to the entire land-based term, falling on the water "
+        "directly, and not a line in the apportionment quoted.") + " "
+      + C("C-PC-CA-REGEN", "**Sediment regeneration** is not a source at all in that apportionment, "
+          "and has no number in this project's register either.") + "\n")
 
     # ------------------------------------------------------------------ 2
-    a("## 2. Four missing coefficients, reported as one number\n")
-    a(f"Granting the {AGRI}% entirely, here is what it has to survive to become a claim "
-      "about fedtemøg:\n")
+    a("## 2. Missing coefficients, reported as one number\n")
+    a(C("C-PC-CA-GRANT", f"Granting the {PCT}% entirely, here is what it has to pass through to "
+        "become a statement about fedtemøg:") + "\n")
     a("| Link | Coefficient | Status | Why |")
     a("|---|---|---|---|")
-    for link, coef, status, why in CHAIN:
-        a(f"| {link} | {coef} | **{status}** | {why} |")
+    a(f"| Agriculture → the land-based waterborne nitrogen term | {PCT}% | **PUBLISHED** | "
+      + C("C-PC-CA-L1", "A residual: measured-plus-modelled total minus modelled point sources minus "
+          f"modelled background, with a retention uncertainty of {ret} percentage points in this "
+          "project's register, which gives no source for it.") + " |")
+    a("| That term → all reactive nitrogen reaching the sea | no coefficient | **OPEN SET** | "
+      + C("C-PC-CA-L2", f"{n_empty} of {n_paths} enumerated pathways carry no number, among them "
+          "deposition's organic fraction, submarine groundwater discharge and sediment "
+          "regeneration.") + " |")
+    a("| Nitrogen at sea → the growth of the algae | no coefficient | **NOT COMPUTED** | "
+      + C("C-PC-CA-L3", "Growth also needs light, phosphorus, a season and a surface to attach to, "
+          "and uses nitrogen regenerated in place as well as nitrogen delivered; nothing here says "
+          "how much of the growth the delivered share accounts for.") + " |")
+    a("| Growth → fedtemøg on a shore | no coefficient | **NOT MEASURED** | "
+      + C("C-PC-CA-L4", "The strands tear loose, drift and strand, which takes retention, wind and a "
+          "shore; no shore-condition series was found in any source this project surveyed.") + " |")
     a("")
-    a("Every one of those links is a real causal connection. None of them has a number. "
-      "The sentence multiplies them anyway, and the product inherits the appearance of "
-      "the one factor that was measured.\n")
-    a("This is not a claim that the links are weak. It is a claim about what kind of "
-      "object the result is. **A product of four unknown fractions is an unknown "
-      "fraction** — not a small one. Agriculture may still be the largest single "
-      "contributor at every link. Nobody has computed it either way, and that is the "
-      "finding.\n")
-    a("And section 3 argues the more serious objection: the chain is not a chain.\n")
+    a(C("C-PC-CA-EVERYLINK", "Every one of those links is a real causal connection, and none of them "
+        "has a number here. A product of unknown fractions is an unknown fraction — **not a small "
+        "one**. Agriculture may still be the largest single contributor at every link; this project "
+        "has not computed it either way, and no source it holds does.") + "\n")
 
     # ------------------------------------------------------------------ 3
-    a("## 3. Nitrogen is necessary for one pathway, not for the outcome\n")
-    a("Section 2 treats the argument as a chain and asks for each link's coefficient. "
-      "That concedes too much, because it accepts the shape. The published framing is\n")
-    a("> nitrogen → primary production → biomass → the mush on the shore\n")
-    a("and that is one branch of a tree, not the trunk. There are at least three routes "
-      "to the same endpoint, and **nitrogen is a necessary condition for exactly one of "
-      "them**:\n")
+    a("## 3. Fedtemøg is grown, so nitrogen is on its path\n")
+    a(C("C-PC-CA-GROWN", "Fedtemøg is algae, and algae are grown: the strands attach to stones, "
+        "mussels or other algae and grow on until they tear loose (Danish Wikipedia). So nitrogen is "
+        "on fedtemøg's path, and the open questions are *which* nitrogen and *what else* limits the "
+        "growth — not whether nitrogen matters.") + "\n")
+    a("### Oxygen depletion has more routes than growth\n")
+    a(C("C-PC-CA-ROUTES", "The iltsvind named in the same breath has at least three routes, and "
+        "nitrogen is a necessary condition for one of them:") + "\n")
     a("| Route | What arrives | Does it need nitrogen? |")
     a("|---|---|---|")
     a("| **A. Growth** | dissolved nutrients | **Yes** — this is the modelled pathway |")
-    a("| **B. Direct organic matter** | organic carbon that is already biomass or was "
-      "never alive at all — sewage solids, faecal matter, resuspended basin sludge, "
-      "and fat | **No.** The material does not have to be grown. It has already been "
-      "grown, somewhere else, out of somebody else's nitrogen — or, in the case of "
-      "fat, contains no nitrogen at any point in its existence. |")
-    a("| **C. Killing what is already there** | nothing — toxicants, hypoxia, sulphide, "
-      "physical disturbance | **No.** The standing stock of living tissue in a bay is "
-      "converted to detritus in place. No new carbon enters the system at all. |")
+    a("| **B. Direct organic matter** | organic carbon that is already biomass or was never alive "
+      "at all — sewage solids, faecal matter, resuspended basin sludge, and fat | **No.** The "
+      "material does not have to be grown here. It was grown somewhere else, out of somebody "
+      "else's nitrogen — or, in the case of fat, contains none. |")
+    a("| **C. Killing what is already there** | nothing — toxicants, hypoxia, sulphide, physical "
+      "disturbance | **No.** The standing stock of living tissue in a bay is converted to detritus "
+      "in place. No new carbon enters the system. |")
     a("")
-    a("Routes B and C are not exotic. B is what a combined sewer overflow physically is. "
-      "C is what every hypoxic event and every toxicant pulse does by definition. Neither "
-      "appears in any nutrient accounting, because neither is a nutrient.\n")
-
-    a("### Their own typetal, read as carbon\n")
-    a("The comparison can be made from Miljøstyrelsen's own numbers. Every discharge "
-      "type in the typetal table carries both an organic load (COD) and a nitrogen load. "
-      "Route A's carbon is what that nitrogen could produce at Redfield stoichiometry — "
-      f"{C_PER_N:.2f} g C per g N. Route B's carbon is what the water is already "
-      f"carrying — {C_PER_COD:.3f} g C per g COD.\n")
+    a(C("C-PC-CA-BC", "Routes B and C are not exotic. B is what a combined sewer overflow carries. C "
+        "is what a hypoxic event or a toxicant pulse does. Neither is a line in the nitrogen "
+        "apportionment, which counts nitrogen mass.") + "\n")
+    a("### The overflow's own carbon\n")
+    a(C("C-PC-CA-TYPETAL-INTRO", "The comparison can be made from the nutrient typetal in this "
+        "project's monitoring register, which give each discharge type both an organic load (COD) "
+        "and a nitrogen load. Route A's carbon is what that nitrogen could grow at Redfield "
+        f"stoichiometry — {C_PER_N:.2f} g C per g N. Route B's carbon is what the water already "
+        f"carries — {C_PER_COD:.3f} g C per g COD.") + "\n")
     a("| Discharge type | COD mg/l | Tot-N mg/l | **B: carbon delivered** | "
       "**A: carbon its N could grow** | B ÷ A |")
     a("|---|---:|---:|---:|---:|---:|")
@@ -247,316 +216,228 @@ def main():
     r = tt["combined_overflow"]
     cb = r["COD"] * C_PER_COD
     ca = r["Tot-N"] * C_PER_N
-    a(f"A combined sewer overflow delivers **{cb:.0f} mg of organic carbon per litre "
-      f"directly**, and carries enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of "
-      f"**{cb/ca:.2f}**. The two pathways are the same size. Only one of them is "
-      f"counted, and that one is counted at {sq('is counted at @@ of a national')} of a national nitrogen total.\n")
-    a("For separate stormwater and for the stormwater-runoff reference the direct term is "
-      "the *larger* of the two. Only raw sewage — the one stream that actually goes to "
-      "treatment — is nitrogen-dominated.\n")
-    a("*Both columns are ceilings.* Not all COD is degradable on a relevant timescale, "
-      "and not all nitrogen is assimilated. The two overstatements run in the same "
-      "direction, so the **ratio** is the robust part; the absolute milligrams are not. "
-      "The point does not need them to be.\n")
-
-    a("### Why the direct route is worth more per gram\n")
-    a("The ratio above understates route B, because the two carbons are not "
-      "interchangeable:\n")
-    for i, t in enumerate([
-        "**Route A carbon is conditional.** It requires a phototroph that is present, "
-        "in a growing season, with light reaching it, and with phosphorus and silicon in "
-        "supportive ratio. Nitrogen delivered in November grows nothing.",
-        "**Route B carbon is unconditional.** It is already organic matter. It settles, "
-        "it decays, and it consumes oxygen in the dark in December exactly as well as in "
-        "July.",
-        "**Route B arrives where it is discharged.** Route A carbon is produced wherever "
-        "the light and the season allowed, which may be nowhere near the shore that "
-        "receives the consequence.",
-        "**Route B arrives in pulses, on the flow threshold** — the same events that "
-        "scour a basin and resuspend its accumulated sludge. Route A is a slow "
-        "background.",
-    ], 1):
-        a(f"{i}. {t}")
-    a("")
-    a("Which inverts the seasonal argument. Nitrogen's effectiveness at producing shore "
-      "biomass is highest in spring and summer and close to zero in late autumn. Direct "
-      "organic matter's effectiveness is **flat across the year**, and its delivery peaks "
-      "in autumn and winter with the rain. The two pathways have opposite seasonality, "
-      "and only the one that switches off in autumn is measured.\n")
-
-    a("### The word names a material\n")
-    a("*Fedtemøg* is not a metaphor. It means fat filth, and the fat is literal. Sewage "
-      "carries fats, oils and grease continuously, and the sewer accumulates them into "
-      "the deposits Danish utilities call fedtpropper — the same thing an English-"
-      "speaking utility calls a fatberg.\n")
-    a("As a fedtemøg precursor, fat has an uncomfortable set of properties:\n")
-    a("| Property | Value | Consequence |")
-    a("|---|---|---|")
-    a(f"| Nitrogen content | **{meta['fat_n_frac_pct']:.0f}%** | Triglycerides are carbon, hydrogen and "
-      "oxygen. A nitrogen accounting cannot see this material at all — not "
-      "under-count it, *not see it*. |")
-    a(f"| Carbon content | **~{meta['fat_c_frac'] * 100:.0f}%** by mass | Roughly twice the carbon "
-      "density of algal dry matter. |")
-    a(f"| Oxygen demand | **~{meta['fat_cod_g_per_g']:.1f} g {O2} per g** | Against "
-      f"~{meta['carbohydrate_cod_g_per_g']:.1f} for carbohydrate and {sq('carbohydrate and @@ for protein.')} for "
-      "protein. Fat is the most oxygen-expensive common "
-      "organic material there is. |")
-    a("| Density | below water | It floats. It does not settle out of the way; it goes "
-      "to the surface and then to a shore. |")
-    a("| Solubility | none | It does not dilute. It coalesces. |")
-    a("| Degradation | slow, and slower without oxygen | It persists long enough to "
-      "travel, and longest exactly where the water is already anoxic. |")
-    a("")
-    a("**And its release is threshold-triggered.** A fedtprop is a deposit on a pipe "
-      "wall. It leaves when the flow is high enough to scour it — which is the same "
-      "condition, in the same hours, as a combined sewer overflow. The material is "
-      "retained through every dry day of the year and exported during precisely the "
-      "hours when the flow bypasses the treatment works.\n")
-    a("So the annual accounting is doubly wrong for this material. It is invisible to "
-      "the nitrogen unit, and its export is concentrated in the event tail that a "
-      "modelled-annual-volume × fixed-concentration method averages away.\n")
-    a("**Scale, as far as it can be established.** One Danish utility reported receiving "
-      f"{sq('reported receiving @@ of fat')} of fat at its treatment plant in a single year, alongside "
-      f"{sq('year, alongside @@ of screenings.')} of screenings. That is one utility, one year, and — the important part — it counts "
-      "only what *reached the works*. Every hour the system is in overflow is an hour "
-      "that stream is going somewhere else. There is no national figure, no monitoring, "
-      "and no unit in which it would be reported.\n")
-
-    a("### Route C needs no carbon at all\n")
-    a("The third route has no input term to argue about. A bay holds a standing stock of "
-      "living tissue — macroalgae, eelgrass, fauna, biofilm. Kill it and that tissue "
-      "becomes detritus without a single additional gram entering the system. Toxicants, "
-      "a hypoxic event, a sulphide pulse and a trawl all do this.\n")
-    a("This route is the one the nutrient frame cannot even represent as a question. It "
-      "has no source, no load, no unit. And it is the only route that explains why the "
-      "same bay can produce more decaying material in a year when *less* was delivered "
-      "to it.\n")
-    a(f"**The consequence for the {PUBLIC}.** A necessary condition for one branch is not a "
-      "cause of the outcome. Removing nitrogen entirely would close route A and leave "
-      "routes B and C running.\n")
+    a(C("C-PC-CA-CSO", f"A combined sewer overflow carries **{cb:.0f} mg of organic carbon per litre "
+        f"directly**, and enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of **{cb/ca:.2f}**. "
+        "The two routes are the same size. The nitrogen apportionment counts only the second, and in "
+        f"this project's register the overflow's nitrogen is {cso_lo:.1f}–{cso_hi:.1f}% of the "
+        "land-based term.") + "\n")
+    a(C("C-PC-CA-OTHERS", "For separate stormwater and for the stormwater-runoff reference the direct "
+        "term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — "
+        "is nitrogen-dominated.") + "\n")
+    a(C("C-PC-CA-CEILINGS", "*Both columns are ceilings.* Not all COD is degradable on a relevant "
+        "timescale, and not all nitrogen is assimilated. The two overstatements run in the same "
+        "direction, so the **ratio** is the robust part; the absolute milligrams are not.") + "\n")
+    a(C("C-PC-CA-FAT", f"Part of what an overflow carries is fat, which contains "
+        f"**{meta['fat_n_frac_pct']:.0f}%** nitrogen and takes **~{meta['fat_cod_g_per_g']:.1f} g "
+        f"{O2} per g** to oxidise, against ~{meta['carbohydrate_cod_g_per_g']:.1f} for "
+        "carbohydrate: a nitrogen account cannot see it at all.") + "\n")
+    a("### Why the direct route acts differently\n")
+    a(C("C-PC-CA-PG-1", "1. **Route A carbon is conditional.** It requires a phototroph that is "
+        "present, in a growing season, with light reaching it, and with phosphorus and silicon in "
+        "supportive ratio. Nitrogen delivered in November grows little."))
+    a(C("C-PC-CA-PG-2", "2. **Route B carbon is unconditional.** It is already organic matter. It "
+        "settles, it decays, and it consumes oxygen in the dark in December as well as in July."))
+    a(C("C-PC-CA-PG-3", "3. **Route B arrives where it is discharged.** Route A carbon is produced "
+        "wherever the light and the season allowed, which may be nowhere near the shore that "
+        "receives the consequence."))
+    a(C("C-PC-CA-PG-4", "4. **Route B arrives in pulses, on the flow threshold** — the same events "
+        "that scour a basin and resuspend its accumulated sludge. Route A is a slower background.")
+      + "\n")
+    a(C("C-PC-CA-SEASON", "So for oxygen the two routes keep different calendars: nitrogen's effect on "
+        "growth is highest in spring and summer and small in late autumn, while direct organic "
+        "matter acts year-round and arrives whenever the rain falls.") + "\n")
+    a(C("C-PC-CA-ROUTEC", "**Route C needs no input term.** A bay holds a standing stock of living "
+        "tissue — macroalgae, eelgrass, fauna, biofilm. Kill it and that tissue becomes detritus "
+        "without a single additional gram entering the system; a toxicant pulse, a hypoxic event, a "
+        "sulphide pulse and a trawl all do this. It can explain why a bay produces more decaying "
+        "material in a year when *less* was delivered to it.") + "\n")
+    a(C("C-PC-CA-CONSEQUENCE", f"**The consequence for the {PCT}%.** For fedtemøg, which is grown, "
+        "nitrogen is on the path and the question is how much of the nitrogen growing it is "
+        "agriculture's. For iltsvind, removing nitrogen would close route A and leave routes B and C "
+        "running.") + "\n")
 
     # ------------------------------------------------------------------ 4
-    a("## 4. The bloom is mostly not made of what was delivered\n")
-    a("There is a second structural problem, and it is the one that does the most damage "
-      "to an apportionment. The system feeds itself.\n")
-    a("The loop, stated plainly:\n")
-    for i, t in enumerate([
-        "simple, fast-replicating life grows on whatever is available",
-        "its respiration and decay draw the oxygen down",
-        "things that need oxygen die — fauna, and then everything else",
-        "the dead tissue remineralises, releasing the nutrients it was built from",
-        "those nutrients feed step 1 again, and there is now less competition for them",
-    ], 1):
-        a(f"{i}. {t}")
-    a("")
-    a("Every turn of that loop makes the next turn easier, and the material driving it "
-      "from turn two onward was **already in the bay**. It is not a delivery. Nothing "
-      "crossed a boundary that an accounting could meter.\n")
-    a("This is not a speculative mechanism. It is the standard distinction in marine "
-      "biogeochemistry between **new production** — running on nutrients newly supplied "
-      "from outside the productive layer — and **regenerated production**, running on "
-      "nutrients recycled in place. Their ratio has a name, the f-ratio, and in "
-      "productive coastal water in summer it is low: most of the production is "
-      "regenerated, not new.\n")
-    a("Which means the sentence \"this bloom was caused by X% agriculture\" is making a "
-      "claim about the minority term. The majority of the nitrogen in a late-summer "
-      "bloom was not delivered that summer by anyone. It was released by the previous "
-      "round of dying.\n")
+    a("## 4. How much of a bloom was delivered\n")
+    a(C("C-PC-CA-LOOP", "There is a second structural problem, and it does the most damage to an "
+        "apportionment: the system feeds itself. Simple, fast-replicating life grows on whatever is "
+        "available; its respiration and decay draw the oxygen down; things that need oxygen die — "
+        "fauna, and then everything else; the dead tissue remineralises, releasing the nutrients it "
+        "was built from; and those nutrients feed the first step again, with less competition for "
+        "them.") + "\n")
+    a(C("C-PC-CA-LOOP-EASIER", "Every turn of that loop makes the next easier, and the material "
+        "driving it from the second turn on was **already in the bay**. It is not a delivery; "
+        "nothing crossed a boundary an accounting could meter.") + "\n")
+    a(C("C-PC-CA-NEWREGEN", "Marine biogeochemistry separates **new production**, running on "
+        "nutrients newly supplied to the productive layer, from **regenerated production**, running "
+        "on nutrients recycled in place; their ratio is the f-ratio.") + " "
+      + C("C-PC-CA-FRATIO", "How much of a Danish coastal bloom runs on regenerated nitrogen is not "
+          "established here. The article pinned associates high f-ratios with productive systems "
+          "dominated by large phytoplankton, and low ones with low-biomass, oligotrophic food "
+          "webs.") + "\n")
+    a(C("C-PC-CA-MINORITY", "Where most of a bloom's nitrogen is regenerated, attributing the bloom "
+        "to a share of delivered nitrogen is a statement about the minority term: the rest was "
+        "released by an earlier round of dying, not delivered that summer.") + "\n")
     a("### What the loop does to the arithmetic\n")
-    a("An apportionment is a linear instrument. It assumes the outcome is a weighted sum "
-      "of the inputs, so that halving one input removes its share of the outcome. A "
-      "self-amplifying loop is not a weighted sum. In one:\n")
-    for t in [
-        "**the trigger and the fuel are different quantities.** External input can be "
-        "small and still start something that runs on internal stock;",
-        "**the same input produces wildly different outcomes** depending on how far round "
-        "the loop the system already is — which is the state-dependence of section 7, "
-        "arriving here by a second route;",
-        "**there are thresholds.** Below one, the loop damps; above it, the loop runs. "
-        "Attribution either side of that line means different things;",
-        "**history matters.** What is in the sediment is last decade's deliveries, and it "
-        "is released on the sediment's schedule, not this year's.",
-    ]:
-        a(f"- {t}")
-    a("")
-    a("None of that is exotic or contested. It is the ordinary behaviour of a system with "
-      "positive feedback, and it is why the same load can produce record damage in one "
-      "year and a third of it in the next.\n")
-    a("### And in Køge Bugt, the trigger is probably not nutrients\n")
-    a("The loop above still starts with growth. A bay receiving a large, pulsed delivery "
-      "of sewage solids and fat can enter it further along — the organic material and the "
-      "oxygen demand arrive together, already made, and the die-off that releases the "
-      "internal store can be the *first* step rather than the third.\n")
-    a("That is a different causal shape from the one the accounting models, it produces "
-      "the same shore, and it would be attributed to nitrogen by any method that only "
-      "counts nitrogen.\n")
+    a(C("C-PC-CA-LINEAR", "An apportionment is a linear instrument. It assumes the outcome is a "
+        "weighted sum of the inputs, so that halving one input removes its share of the outcome. A "
+        "self-amplifying loop is not a weighted sum. In one:") + "\n")
+    a(C("C-PC-CA-AR-1", "- **the trigger and the fuel are different quantities.** External input can "
+        "be small and still start something that runs on internal stock;"))
+    a(C("C-PC-CA-AR-2", "- **the same input produces different outcomes** depending on how far round "
+        "the loop the system already is — the state-dependence of section 7, arriving by a second "
+        "route;"))
+    a(C("C-PC-CA-AR-3", "- **there are thresholds.** Below one, the loop damps; above it, the loop "
+        "runs. Attribution either side of that line means different things;"))
+    a(C("C-PC-CA-AR-4", "- **history matters.** What is in the sediment was delivered in earlier "
+        "years, and it is released on the sediment's schedule, not this year's.") + "\n")
+    a(C("C-PC-CA-FEEDBACK", "That is the ordinary behaviour of a system with positive feedback.")
+      + " " + C("C-PC-CA-DCE-WEATHER", "DCE's own notes explain how an iltsvind season develops by "
+                "the weather of the year: wind that mixes the water column slows it, and high water "
+                "temperature promotes it, because oxygen consumption rises with temperature and "
+                "oxygen's solubility falls.") + "\n")
+    a("### A start further along the loop\n")
+    a(C("C-PC-CA-E5", f"The register's {R('E5')} proposes a different start: a bay receiving a large, "
+        "pulsed delivery of sewage solids and fat can enter the loop further along — the organic "
+        "material and the oxygen demand arrive together, already made, and the die-off that releases "
+        "the internal store can be the *first* step. Whether that happens in Køge Bugt is not tested "
+        "here.") + " "
+      + C("C-PC-CA-E5-SHAPE", "It is a different causal shape from the one the accounting models, it "
+          "could produce the same shore, and any method that counts only nitrogen would attribute it "
+          "to nitrogen.") + "\n")
 
     # ------------------------------------------------------------------ 5
     a("## 5. The test that has already been run\n")
-    a("There is one empirical check on the nitrogen-dominant model, and Denmark has "
-      "spent thirty-five years and a great deal of money running it.\n")
-
-    ld = tr["nitrogen_load"]
-    a(f"**The intervention.** {ld['series']} has fallen from about "
-      f"{ld['approx_1990_kt']:,} kt N/yr in 1990 to about {ld['approx_recent_kt']:,} kt — "
-      f"a reduction of roughly {ld['reduction_pct_since_1990']}%. Airborne nitrogen to "
-      "Danish sea areas is down by about the same. This is the largest environmental "
-      "intervention in modern Danish policy and it is not in dispute.\n")
-
-    ie = tr["iltsvind_extent"]
-    a(f"**The outcome.** {ie['series']}, as reported by {ie['reported_by'].split(',')[0]}:\n")
-    a("| Year | September extent | |")
-    a("|---|---:|---|")
-    by_year = {int(r["year"]): r for r in ie["observations"]}
-    for r in ie["observations"]:
-        year = int(r["year"])       # a year is a label, not a quantity
-        km = r.get("km2_september") or r.get("km2_late_september")
-        cell = f"~{km:,} km²" if km else "—"
-        text, lead = r["note"], ""
-        prev = by_year.get(year - 1, {}).get("km2_september")
-        said = f"nearly 50% larger than {year - 1}"
-        if said in text and km and prev:
-            # the notice rounds; the two extents above give the ratio itself
-            text = text.replace(said, "")
-            lead = f"{(km / prev - 1) * 100:.0f}% larger than {year - 1} by these extents"
-        a(f"| {year} | {cell} | {lead}{note(text)} |")
-    a("")
-    a("**Put side by side:** " + tr["the_juxtaposition"] + "\n")
-    a("If nitrogen load were the dominant control on oxygen depletion, halving it should "
-      "have moved the extremes. It did not.\n")
-
-    a("### The caveat that matters more than the headline\n")
-    a(ie["caveat"] + "\n")
-    a("2025 is the reason to be careful with this argument, and also the reason it "
-      "points where it does. A system whose worst outcome swings threefold between "
-      "consecutive years, under a load that barely moves between them, is a system "
-      "governed by **the physics and the state of the individual year** — wind, "
-      "stratification, temperature, what the bed is made of — with load as a slow "
-      "background term. Note also that the load series is *flow-normalised*: the "
-      "weather signal is deliberately removed from the input and is the dominant "
-      "signal in the output.\n")
+    a(C("C-PC-CA-TEST", "There is one empirical check on the nitrogen-dominant model, and Denmark has "
+        "spent more than three decades running it.") + "\n")
+    a(C("C-PC-CA-REDUCTION", f"**The intervention.** DCE's national runoff report puts the reduction "
+        f"in nitrogen supply from land to Danish coastal waters between 1990 and 2018 at {RED}%, "
+        "calculated on discharge-weighted mean annual concentrations.") + "\n")
+    a(C("C-PC-CA-OUTCOME", "**The outcome.** When DCE reported the September 2023 extent of oxygen "
+        "depletion it was the second largest registered. September 2024's was "
+        f"{KM24} km², nearly {UP24}% larger than 2023's, and again the second largest registered, "
+        "exceeded only by 2002.") + "\n")
+    a(C("C-PC-CA-JUXTA", "**Put side by side:** the land-based supply roughly halved, and the 2024 "
+        "September extent was the second largest registered. If load were the dominant control on "
+        "oxygen depletion, halving it should have moved the extremes; these years do not show that "
+        "it has — and two years are not a test. Section 9 says what would be.") + "\n")
+    a(C("C-PC-CA-WEATHER", "On DCE's own account the extremes follow the weather of the year, with "
+        "load as a slower background. That is also why a load series computed to take the weather "
+        "out cannot be read against them year by year.") + "\n")
 
     # ------------------------------------------------------------------ 6
     a("## 6. Three ways to explain the gap\n")
     a("| Explanation | Standing | Detail |")
     a("|---|---|---|")
-    for c in tr["competing_explanations"]:
-        a(f"| {c['name']} | **{c['status']}** | {note(c['detail'])} |")
+    a("| Legacy lag | **PARTIAL** | " + C("C-PC-CA-LAG", "DCE attribute the drift in their nitrogen "
+      "models to the time lag of nitrogen accumulated in the sediments; how long the lag is, is not "
+      "established here.") + " |")
+    a("| Warming | **SUPPORTED, INDEPENDENT** | " + C("C-PC-CA-WARMING", "DCE's notes: high water "
+      "temperature promotes iltsvind, because oxygen consumption rises with temperature and oxygen's "
+      "solubility falls. Temperature is not a line in a source apportionment.") + " |")
+    a("| Loss of assimilative state | **ARGUED, UNQUANTIFIED** | " + C("C-PC-CA-STATE", "The "
+      f"register's {R('K12')}, {R('D8')} and {R('T4', family='hypotheses')} each describe a way the same load could do "
+      "more damage now than before; none is a line in any account.") + " |")
     a("")
-    a("Only the first leaves the policy frame intact — it says the intervention is "
-      "working and the answer is patience. It is also the one that fails on its own "
-      "terms, because the elapsed time exceeds the longest lag anyone has measured.\n")
-    a("The three share a property worth stating plainly: **none of them is a source.** "
-      "A source apportionment cannot represent a lag, cannot represent temperature, and "
-      "cannot represent the difference between a bay that can absorb a kilogram of "
-      "nitrogen and a bay that cannot. They are not omitted because they were judged "
-      "small. They are omitted because the instrument has no slot of that shape.\n")
-    a("So when the intervention underperforms, the instrument has exactly one thing it "
-      "can recommend: more of the same intervention. Not because that is the best "
-      "reading of the evidence, but because it is the only reading the instrument can "
-      "express.\n")
+    a(C("C-PC-CA-ONLYFIRST", "Only the first leaves the policy frame intact — it says the "
+        "intervention is working and the answer is patience.") + "\n")
+    a(C("C-PC-CA-NOTSOURCE", "The three share a property worth stating plainly: **none of them is a "
+        "source.** A source apportionment cannot represent a lag, cannot represent temperature, and "
+        "cannot represent the difference between a bay that can absorb a kilogram of nitrogen and a "
+        "bay that cannot. They are not omitted because they were judged small. They are omitted "
+        "because the instrument has no slot of that shape.") + "\n")
+    a(C("C-PC-CA-MORE", "So when the intervention underperforms, the instrument has one thing it can "
+        "recommend: more of the same intervention. Not because that is the best reading of the "
+        "evidence, but because it is the only reading the instrument can express.") + "\n")
 
     # ------------------------------------------------------------------ 7
-    a("## 7. State-dependence, stated as the mechanism\n")
-    a("The third explanation deserves its own statement, because it is the one this "
-      "project's own computations support.\n")
-    a("Nitrogen is not a toxicant. It is a growth subsidy — the opposite of dead water. "
-      "What determines whether a subsidy produces eelgrass meadows or a bacterial mat "
-      "is **which life is present and able to take it up**, and that is a property of "
-      "the receiving system, not of the nitrogen.\n")
-    a("So the damage function is not *f(load)*. It is *f(load, state)*, and the state "
-      "term has been driven down by things that are not nutrients at all:\n")
-    for i, s in enumerate([
-        "toxicants and metals, which remove grazers and filter feeders — the very "
-        "organisms that would otherwise convert the subsidy into structure",
-        "physical disturbance of the bed, which removes the binding fauna and drops the "
-        "erosion threshold roughly fivefold (SEABED.md)",
-        "each hypoxic event, which kills the benthos and makes the next event cheaper",
-        "the loss of eelgrass, which removed both the uptake capacity and the sediment "
-        "stabilisation at once",
-        "turbidity from a bed that now resuspends several times more often, which keeps "
-        "the light from whatever might recolonise",
-    ], 1):
-        a(f"{i}. {s}")
-    a("")
-    a("Every item on that list is a reason the *same* kilogram of nitrogen does more "
-      "damage in 2025 than it did in 1990. None of them appears in a source "
-      "apportionment, because none of them is a source. **Nitrogen sensitivity is a "
-      "derived property of a damaged system**, and the accounting treats it as a "
-      "constant.\n")
+    a("## 7. State-dependence, stated as a hypothesis\n")
+    a(C("C-PC-CA-SUBSIDY", "Nitrogen is not a toxicant. It is a growth subsidy. What decides whether "
+        "a subsidy produces eelgrass meadows or a bacterial mat is **which life is present and able "
+        "to take it up**, and that is a property of the receiving system, not of the nitrogen.") + "\n")
+    a(C("C-PC-CA-FSTATE", "So the damage function may be not *f(load)* but *f(load, state)*, with the "
+        "state term driven down by things that are not nutrients. The register holds each as a "
+        "hypothesis:") + "\n")
+    a(C("C-PC-CA-S1", f"- toxicants and metals that remove grazers and filter feeders, the organisms "
+        f"that would turn the subsidy into structure ({R('E15')}, {R('E10')}, {R('K13')});"))
+    a(C("C-PC-CA-S2", f"- physical disturbance of the bed, which removes the binding fauna and lets "
+        f"the bed move ({R('D1')}, {R('D8')});"))
+    a(C("C-PC-CA-S3", "- each hypoxic event, which kills the benthos and can make the next event "
+        "cheaper;"))
+    a(C("C-PC-CA-S4", f"- the loss of eelgrass, which removes uptake and sediment stabilisation at "
+        f"once ({R('K12')}, {R('T4', family='hypotheses')});"))
+    a(C("C-PC-CA-S5", f"- turbidity from a resuspending bed, which keeps the light from whatever "
+        f"might recolonise ({R('D7')}, {R('K11')}).") + "\n")
+    a(C("C-PC-CA-SENS", "If they hold, each is a reason the same kilogram of nitrogen does more "
+        "damage now than it did in 1990, and none appears in a source apportionment, because none is "
+        "a source. **Nitrogen sensitivity would then be a derived property of a damaged system**, and "
+        "the accounting treats it as a constant.") + "\n")
 
     # ------------------------------------------------------------------ 8
     a("## 8. What this does and does not establish\n")
-    a("**It does not establish that agriculture is off the hook.** Multiplying unknown "
-      "fractions yields an unknown, not a small one. Agriculture is plausibly still the "
-      "largest single nitrogen contributor, the load is real, and reductions have "
-      "documented local benefits.\n")
-    a("**It does not establish that nitrogen policy failed.** Necessary and insufficient "
-      "are different findings, and the record is consistent with the second.\n")
-    a("**It does establish that the number is not what it is presented as.** "
-      f"\"{AGRI}% of nitrogen\" is a residual of models over one term of an open "
-      f"account. \"{PUBLIC} of fedtemøg\" is that residual multiplied by four coefficients "
-      "that have never been computed. The first is a defensible piece of bookkeeping. "
-      "The second is not a measurement of anything.\n")
-    a("**And it establishes an asymmetry in what gets counted.** Every term that would "
-      "shift blame away from a countable source — deposition, regeneration, groundwater, "
-      "legacy, temperature, state — is precisely a term with no row. That may be "
-      "coincidence of what is easy to measure. It is worth noticing that the easy "
-      "measurements and the politically actionable ones are the same set.\n")
-
+    a(C("C-PC-CA-NOTHOOK", "**It does not establish that agriculture is off the hook.** Multiplying "
+        "unknown fractions yields an unknown, not a small one. Agriculture is plausibly still the "
+        "largest single nitrogen contributor, and the load is real.") + "\n")
+    a(C("C-PC-CA-NOTFAILED", "**It does not establish that nitrogen policy failed.** Necessary and "
+        "insufficient are different findings, and the record is consistent with the second.") + "\n")
+    a(C("C-PC-CA-ESTABLISH", f"**It does establish that the number is not what it is read as.** "
+        f"\"{PCT}% of nitrogen\" is a residual of models over one term of an open account. Read as a "
+        "share of fedtemøg, it is multiplied by coefficients nobody here has computed. The first is "
+        "a defensible piece of bookkeeping. The second is not a measurement of anything.") + "\n")
+    a(C("C-PC-CA-ASYMMETRY", "**And it shows an asymmetry in what gets counted.** Every term that "
+        "would shift blame away from a countable source — deposition, regeneration, groundwater, "
+        "legacy, temperature, state — is a term with no line in the apportionment quoted. That may "
+        "be coincidence of what is easy to measure. It is worth noticing that the easy measurements "
+        "and the politically actionable ones are the same set.") + "\n")
     a("### The practical consequence\n")
-    a("If nitrogen were the whole binding constraint, this would be a solved problem in "
-      "principle: catch crops, wetlands, treatment upgrades, and extractive aquaculture "
-      "are all available, and we have already deployed enough of them to halve the load. "
-      "Either the remaining reduction needed is far larger than anything currently "
-      "proposed, or nitrogen is not the whole binding constraint.\n")
-    a("Both readings sit in the same record. **That thirty-five years of data cannot "
-      "distinguish them is the strongest single argument that the accounting is "
-      "measuring the wrong thing.**\n")
+    a(C("C-PC-CA-PRACTICAL", "If nitrogen were the whole binding constraint, this would be a solved "
+        "problem in principle: catch crops, wetlands, treatment upgrades and extractive aquaculture "
+        "are available, and enough has already been deployed to roughly halve the land-based supply. "
+        "Either the remaining reduction needed is far larger than anything currently proposed, or "
+        "nitrogen is not the whole binding constraint.") + "\n")
+    a(C("C-PC-CA-CANNOT", "Both readings sit in the same record. **That the record so far cannot "
+        "distinguish them is an argument that the accounting measures the wrong thing.**") + "\n")
 
     # ------------------------------------------------------------------ 9
     a("## 9. What would separate the readings\n")
     a("| To test | Do this |")
     a("|---|---|")
-    for t, d in [
-        ("Whether the extremes track load at all",
-         "Regress annual iltsvind extent on flow-normalised load, wind-work over the "
-         "stratified season, and bottom-water temperature anomaly. All three series "
-         "exist and are published. Nobody has published the regression."),
-        ("Whether state-dependence is real",
-         "The same regression with an interaction term, or simply: does a given load "
-         "produce more hypoxia now than in 1990, holding weather constant? Answerable "
-         "from existing DCE series."),
-        ("Whether the denominator can be closed",
-         f"Two of the {n_empty} empty rows are tractable with standard methods — submarine "
-         "groundwater discharge via radon/radium tracers, internal regeneration via "
-         "benthic flux chambers. Both are routine elsewhere."),
-        ("Whether the potency term matters",
-         "Weight existing load figures by season and receiving-water stratification. "
-         "Even a crude weighting beats the current implicit equal weight everywhere."),
-        ("Whether fedtemøg has the season everyone assumes",
-         "Fixed coastal cameras, monthly index, year-round. The cheapest item on this "
-         "list by an order of magnitude, and the only claim here that is currently "
-         "unfalsifiable in either direction."),
-    ]:
+    rows = [
+        ("Whether the extremes track load at all", C("C-PC-CA-T1", "Regress annual iltsvind extent "
+         "on the land-based load, wind work over the stratified season, and the bottom-water "
+         "temperature anomaly. No published regression of this kind was found in the sources this "
+         "project holds.")),
+        ("Whether state-dependence is real", C("C-PC-CA-T2", "The same regression with an interaction "
+         "term, or simply: does a given load produce more hypoxia now than in 1990, holding weather "
+         "constant?")),
+        ("Whether the denominator can be closed", C("C-PC-CA-T3", f"Two of the {n_empty} empty rows "
+         "have established methods — submarine groundwater discharge by radon or radium tracers, "
+         "internal regeneration by benthic flux chambers — and both need new measurements.")),
+        ("Whether the potency term matters", C("C-PC-CA-T4", "Weight existing load figures by season "
+         "and receiving-water stratification. Even a crude weighting beats the current implicit "
+         "equal weight everywhere.")),
+        ("Whether fedtemøg has the season everyone assumes", C("C-PC-CA-T5", "Fixed coastal cameras "
+         "and a monthly index, year-round: a new instrument, and the only way the fedtemøg season "
+         "stops being unfalsifiable in either direction.")),
+    ]
+    for t, d in rows:
         a(f"| {t} | {d} |")
     a("")
-    a("None of these needs new instruments. Four of the five need no new data at all — "
-      "only that two published series be plotted against each other.\n")
-
+    a(C("C-PC-CA-THREE", "Three of the five need no new instrument, only series that exist; the other "
+        "two need new measurements.") + "\n")
     a("---\n")
-    a("*Sources for the load and outcome series, with URLs, are in "
-      "`data/manual/monitoring.json` under `load_trend_vs_outcome`. The pathway "
-      "enumeration is in `data/manual/nitrogen_pathways.json`. Bounds marked as ours "
-      "are constructed here and labelled as such.*")
+    a("*" + C("C-PC-CA-FOOTER", "The pinned documents behind each statement are listed under its claim "
+              "in [CLAIMS.md](CLAIMS.md). The pathway enumeration is in "
+              "`data/manual/nitrogen_pathways.json`, and its bounds are this project's own.") + "*")
 
     text = "\n".join(o)
-    write_doc(OUT, text.rstrip("\n") + "\n")
-    log(f"wrote docs/CAUSATION.md ({len(text):,} chars) - {len(SELF)} number(s) "
-        "carried as self-quotation")
+    try:
+        write_doc(OUT, text.rstrip("\n") + "\n")
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
+    log(f"wrote docs/CAUSATION.md ({len(text):,} chars)")
     log(f"  land term {land_lo}-{land_hi} kt, agriculture {agri_lo:.0f}-{agri_hi:.0f} kt")
-    log(f"  quantified denominator floor {tot_lo:.0f}-{tot_hi:.0f} kt, "
-        f"{len(unquant)}/{len(paths)} rows empty")
+    log(f"  quantified denominator floor {tot_lo:.0f}-{tot_hi:.0f} kt")
     log(f"  ceiling on agriculture's share: {ceil_lo:.0f}-{ceil_hi:.0f}%")
     return 0
 

@@ -373,8 +373,8 @@ the build refuses one that does not:
 | `untraced` | **the trail ends here**: what was searched, where and when, and that nothing further was found | a `detail` is required |
 
 A `said` phrase locates a passage and is shown verbatim, so it holds no digits; a
-number quoted from a document goes through `{read:}`. An `argued` claim may rest
-on nothing only if its `because` is the whole argument.
+number quoted from a document goes through `{read:}`. An `argued` claim, or a `stipulated`
+rule, may rest on nothing only if its `because` is the whole argument or reason.
 
 **Ours and theirs.** Our own claim says why it follows. Somebody else's claim -
 kept because the site steelmans rather than strawmans - is credited to its
