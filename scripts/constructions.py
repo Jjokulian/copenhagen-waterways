@@ -109,9 +109,12 @@ def save(reg, files=None):
             continue
         raw = json.load(open(f, encoding="utf-8"))
         raw["constructions"] = [c for c in reg["constructions"] if _ORIGIN.get(c["id"], REG) == f]
-        with open(f, "w", encoding="utf-8") as fh:
+        # atomic: many workers read these files while others write them
+        tmp = f"{f}.{os.getpid()}.tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
             json.dump(raw, fh, ensure_ascii=False, indent=1)
             fh.write("\n")
+        os.replace(tmp, f)
     _cache.pop("reg", None)
 
 

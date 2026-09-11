@@ -73,7 +73,10 @@ Everything else is a number and needs a chain.
 "twenty-fold" are unjustified quantities that the digit check cannot see. In a
 construction declaration the checker refuses the approximate ones. On a page,
 don't write them either: compute the value and print it live, or say what is
-true without a quantity.
+true without a quantity. An exact quantity in words ("five", "twice") is a claim
+like any number and needs the same justification - print it live where you can.
+The one exception is a count of what is listed right there ("the three tests
+below"), which the list itself justifies.
 
 ## 4. Constructions: what kind of number, and why believe it
 
@@ -107,6 +110,10 @@ A declaration, one per producing script (or per step):
 
 Here is what each part means.
 
+- **Computed or simulated?** A null built by shuffling, permuting or resampling
+  the real data is `computed`: the data are real, only their arrangement is
+  drawn. `simulated` is for data the project invents - a stipulated signal,
+  pure noise - and is refused off the method pages.
 - **Kinds:** measured, counted, estimated, computed, share, simulated,
   stipulated, bound, modelled (somebody's model of the world, such as the city's
   flood map), document, quoted. A calculation's kind comes from its operands.
@@ -459,7 +466,8 @@ Found in the METHOD_LAB pilot:
 - Retired claims are confirmed twice, and the second time only after
   `claims.py` has written ARCHIVE.md - the parent does that round. An agent
   confirms each retired claim once, by id. Never `--reassess all`: it would
-  sign every other agent's claims.
+  sign every other agent's claims. Several ids can be confirmed in one run, separated by
+  commas: `claims.py --reassess C-XX-A,C-XX-B,C-XX-C --by "..."`.
 - Two numbers read from the same quoted phrase share an identity. Read each
   from its own phrase (`{read:SRC:119|119 medlemmer ...}`, `{read:SRC:34|mens
   34 stemte imod}`).

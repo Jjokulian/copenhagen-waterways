@@ -345,10 +345,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in letting a stipulated rule stand on its stated reasoning, as an argued claim can; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: claims.py changed only in saving register files atomically; resolve() is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "8b308de091504daf"
+     "scripts/claims.py": "4f70bbd115d73cdb"
     }
    }
   },
@@ -386,10 +386,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in letting a stipulated rule stand on its stated reasoning, as an argued claim can; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: claims.py changed only in saving register files atomically; resolve() is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "8b308de091504daf"
+     "scripts/claims.py": "4f70bbd115d73cdb"
     }
    }
   },
@@ -1475,23 +1475,20 @@
     {
      "text": "The ratio, the depth cut, the treatment of ammonium and the median index are exactly as described.",
      "ref": "scripts/rescore.py:196-213"
-    },
-    {
-     "text": "A change in Si:DIN driven by the nitrogen term alone is exogenous to diatoms, because nitrogen fell under management while silicon has no human source. That supports reading a rise as a change in the driver (section 6 of the draft).",
-     "ref": "docs/hypodrafts/K1.md"
     }
    ],
    "gaps": [
     "Although the field sits under `tests`, it is not a test. There is no null, no uncertainty, and no control for station, season or depth, while the script's docstring promises only tests whose null is computable (`scripts/rescore.py:17-19`). The persistence-aware null worked out in `docs/hypodrafts/K1.md` is not applied.",
-    "The project's own `K1` design specifies the preceding January-February (pre-bloom) median surface Si:DIN as the quantity that matters, and warns that low silicon beside many diatoms is drawdown, not limitation (`docs/hypodrafts/K1.md`, section 3 and section 6). This median pools all months, so it mixes pre-bloom pools with bloom drawdown.",
-    "Station composition changes across years, and the same draft notes that any across-year statistic on pooled medians is partly a statistic about who sampled (`docs/hypodrafts/K1.md`, section 4). Here there are no station fixed effects and no balanced panel.",
+    "The project's own `K1` design specifies the preceding January-February (pre-bloom) median surface Si:DIN as the quantity that matters, and warns that low silicon beside many diatoms is drawdown, not limitation (`docs/hypodrafts/K1.md`, under The observable consequence and Direction). This median pools all months, so it mixes pre-bloom pools with bloom drawdown.",
+    "Station composition changes across years, and the same draft notes that any across-year statistic on pooled medians is partly a statistic about who sampled (`docs/hypodrafts/K1.md`, under The null). Here there are no station fixed effects and no balanced panel.",
     "Rows are not filtered on `Prøvefraktion`, and when a parameter has more than one row in a cell the last one read silently wins. A total and a dissolved silicate value, for example, are not distinguished.",
     "Ammonium absent from a cell is treated as zero, which raises the ratio for that cell. Ammonium is reported on fewer rows than nitrite+nitrate (`counts.nh4.n` against `counts.nox.n`).",
     "Silicate being reported as the element is asserted in a code comment, not documented.",
     "Excluding censored values removes the low-silicate cells that are the very condition `K1` is about, and also the low-DIN cells. The net bias is unquantified and can drift as detection limits and DIN levels change.",
     "Here `surface` means the top `10` metres, while `scripts/cycles.py` uses `MAX_DEPTH`. The same word names two different layers across the site.",
     "The silicon-limitation threshold of one, used for the companion `share_below_1` and in the prose around these medians, rests on the unsourced statement in `docs/HYPOTHESES.md` (hypothesis `K2`) about the silicon-to-nitrogen ratio diatoms require.",
-    "The latest calendar year in the output is partial (the extract runs to its fetch date), so its median is taken over an unbalanced part of the season."
+    "The latest calendar year in the output is partial (the extract runs to its fetch date), so its median is taken over an unbalanced part of the season.",
+    "The draft keeps the policy-shock reading only as a conditional: if nitrogen fell under management and silicon has no human source, a rise in Si:DIN would be a change in the driver. Neither premise is established on the page, so a rise is not shown to be exogenous to diatoms."
    ],
    "void_if": [
     "A year's cells are dominated by one season, a few stations or one area. This applies especially to the latest, partial year.",
@@ -1508,13 +1505,13 @@
     "docs/hypodrafts/K1.md"
    ],
    "confirmed": {
-    "by": "fork w2-hyp (re-read: HYPOTHESES.md changed in other entries only - measurements moved to HYPOTHESIS_DATA.md, constants read from pins; the K1 section this declaration cites is identical apart from link targets, verified by comparing it with the committed page. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read against the rewritten K1 draft by agent w3-kd: its policy-shock premise is no longer claimed there, so it is recorded here as an unestablished conditional in gaps, not as a justification; section references now name the sections. rescore.py unchanged. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/rescore.py": "0f053842cbb98d60",
      "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3",
      "docs/HYPOTHESES.md": "4ece3f8f0ef80d64",
-     "docs/hypodrafts/K1.md": "8993a26b5b6217ab"
+     "docs/hypodrafts/K1.md": "aa8553e22bf51878"
     }
    }
   }

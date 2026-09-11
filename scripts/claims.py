@@ -159,9 +159,12 @@ def save(d, files=None):
         for k in ("nodes", "claims"):
             if k in raw or any(_ORIGIN.get((k, x["id"]), SRC) == f for x in d.get(k, [])):
                 raw[k] = [x for x in d.get(k, []) if _ORIGIN.get((k, x["id"]), SRC) == f]
-        with open(f, "w", encoding="utf-8") as fh:
+        # atomic: many workers read these files while others write them
+        tmp = f"{f}.{os.getpid()}.tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
             json.dump(raw, fh, indent=1, ensure_ascii=False)
             fh.write("\n")
+        os.replace(tmp, f)
 
 
 # ------------------------------------------------------------ pinned documents ---
@@ -900,7 +903,12 @@ def main(argv):
         if not by:
             log("  --reassess needs --by <name>: a confirmation is somebody's")
             return 2
-        ids = list(claims) if target == "all" else [target]
+        # one id, several separated by commas, or all (the parent's; never an agent's)
+        ids = list(claims) if target == "all" else [i.strip() for i in target.split(",") if i.strip()]
+        unknown = [i for i in ids if i not in claims]
+        if unknown:
+            log(f"  no such claim(s): {', '.join(unknown)}")
+            return 1
         for i in ids:
             try:
                 reassess(d, claims[i], nodes, by)
