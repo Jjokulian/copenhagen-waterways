@@ -1,0 +1,36 @@
+{
+ "sources": {
+  "BEK673-2026": {
+   "title": "BEK nr. 673 af 21. juli 2026 - pligtige efterafgrøder og husdyrefterafgrøder, retsinformation",
+   "url": "https://www.retsinformation.dk/eli/lta/2026/673/dan/pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "ab9e90fdf0bde76bec4afb23b0deed493832121b5771080f60a12fb833073886",
+   "checked": "2026-09-10",
+   "status": "unchanged since pinned"
+  },
+  "BEK677-2026": {
+   "title": "BEK nr. 677 af 21. juli 2026 - målrettede efterafgrøder, retsinformation",
+   "url": "https://www.retsinformation.dk/eli/lta/2026/677/dan/pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "55304f99a724dd260188c78185c081dd87c13ec73ed187723fba82731be60593",
+   "checked": "2026-09-10",
+   "status": "unchanged since pinned"
+  },
+  "BEK130-2026": {
+   "title": "BEK nr. 130 af 23. januar 2026 - tilskud til ekstensivering, retsinformation",
+   "url": "https://www.retsinformation.dk/eli/lta/2026/130/dan/pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "b0d64169b44665c5d040fa2eda854286cf1d59b09041c97a9f1b5b452d270e15",
+   "checked": "2026-09-10",
+   "status": "unchanged since pinned"
+  },
+  "NUAR-2024": {
+   "title": "Eriksen et al., Ny Udledningsbaseret Arealregulering for kvælstof (NUAR), DCA rådgivningsnotat, 24. maj 2024",
+   "url": "https://pure.au.dk/ws/portalfiles/portal/379114234/NUAR-slutnotat_24._maj_2024.pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "d53d221d5dfed37b454aa01b044b054662def15767bc8c869304348ec14522da",
+   "checked": "2026-09-10",
+   "status": "unchanged since pinned"
+  }
+ }
+}

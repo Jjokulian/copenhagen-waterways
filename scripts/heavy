@@ -1,0 +1,11 @@
+#!/bin/sh
+# One memory-heavy job at a time, each in its own capped cgroup.
+#
+#   scripts/heavy python3 scripts/some_script_that_reads_data_raw.py
+#
+# Parallel workers share a 4-5 GB machine. Anything that streams data/raw or the
+# sibling project's data goes through here: the lock serialises them, and runbig
+# kills exactly the offending job at the cap (HEAVY_MEM, default 3G) instead of
+# letting the kernel pick a victim. See CLAUDE.md, "Memory".
+here=$(dirname "$0")
+exec flock "${TMPDIR:-/tmp}/copenhagen-heavy.lock" "$here/runbig" -m "${HEAVY_MEM:-3G}" -- "$@"

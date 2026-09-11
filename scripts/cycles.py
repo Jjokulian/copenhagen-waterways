@@ -39,6 +39,7 @@ ephemeris.py on why water level is not inferred here.
 
 Writes data/derived/cycles.json.
 """
+import collections
 import csv
 import datetime as dt
 import gzip
@@ -51,7 +52,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from common import DERIVED, RAW, log
 from cube import utm32_to_wgs84
-from daylight import solar_elevation, danish_offset, parse_klok
+from daylight import solar_elevation
+import clock
 from ephemeris import moon_altitude, moon_illumination, spring_neap
 
 SRC = os.path.join(RAW, "oda", "kemi.csv.gz")
@@ -74,12 +76,16 @@ PARAMS = {"Oxygen indhold": ("o2", "mg/l", "mg/l", 0.0, 25.0),
           "Klorofyl a": ("chl", "µg/l", "µg/l", 0.0, 500.0)}
 MAX_DEPTH = 3.0
 # Teknisk anvisning for marin overvaagning, Kap. 5 (Kaas & Markager 1998),
-# "Pelagiale parametre - proevetagning i felten", settles what these mean:
+# "Pelagiale parametre - proevetagning i felten", is the nearest guide to what
+# these mean, and it does not settle them:
 #   Enkeltproeve     one bottle at one depth
-#   Blandingsproeve  "Hvis en vanddybde repraesenteres af vand taget med flere
-#                    vandhentere, skal vandet fra disse vandhentere blandes" -
-#                    several bottles at the SAME depth, pooled. Not over time,
-#                    not over depth, so it still refers to one depth and is kept.
+#   Blandingsproeve  the word is in none of the pinned chapters (4, 5, 6). Kap. 5
+#                    says "Hvis en vanddybde repraesenteres af vand taget med
+#                    flere vandhentere, skal vandet fra disse vandhentere
+#                    blandes" - before subsampling for nutrients, chlorophyll and
+#                    primary production, not oxygen. Reading ODA's label as such a
+#                    pool at one depth is an inference; kept as a point sample. A
+#                    small minority of the surface oxygen rows (count not stored).
 #   Dybdeintegreret  integrated over 0-10 m, 0-25 m, or the whole photic zone.
 #                    2,265 of these carry a nominal depth of 3 m or less and
 #                    would enter a surface filter as if they were point samples,
@@ -170,26 +176,33 @@ def deviations(samples, window, key):
             used)
 
 
-def main(argv):
-    temps = load_temps()
-    pos, store = {}, {spec[0]: [] for spec in PARAMS.values()}
+def read_samples(temps, params=None):
+    """The surface samples every analysis of the diurnal cycle uses, placed in
+    time by scripts/clock.py. detectable.py imports this, so the synthetic
+    recovery runs on exactly the samples the real estimate does.
+
+    Returns ({key: [(station, ordinal, value, bins, utc, (lon, lat))]}, info).
+    info["clock"] counts, by clock class, the samples that passed every other
+    filter; only "observed" ones are placed."""
+    params = params or PARAMS
+    pos, store = {}, {spec[0]: [] for spec in params.values()}
     rows = dropped = 0
     skipped = {"type": 0, "censored": 0, "unit": 0}
+    clock_classes = collections.Counter()
     log(f"reading {os.path.relpath(SRC)}")
     with gzip.open(SRC, "rb") as fh:
         for row in csv.DictReader(io.TextIOWrapper(fh, encoding="latin-1"),
                                   delimiter=";"):
             rows += 1
-            spec = PARAMS.get(row.get("Parameter"))
+            spec = params.get(row.get("Parameter"))
             if not spec:
                 continue
             key, _, unit_required, lo, hi = spec
             if (row.get("Enhed") or "").strip() != unit_required:
                 skipped["unit"] += 1
                 continue
-            k = parse_klok(row.get("Startklok"))
             d = (row.get("Startdato") or "").strip()
-            if not k or len(d) != 8 or not d.isdigit():
+            if len(d) != 8 or not d.isdigit():
                 continue
             try:
                 dep = float((row.get("GennemsnitsDybde_m") or "").replace(",", "."))
@@ -226,8 +239,11 @@ def main(argv):
                 day = dt.date(int(d[:4]), int(d[4:6]), int(d[6:]))
             except ValueError:
                 continue
-            utc = (dt.datetime.combine(day, dt.time(k[0], k[1]))
-                   - dt.timedelta(hours=danish_offset(day)))
+            # one continuous time axis: the instant clock.py derives, or nothing
+            utc, cls = clock.instant(row.get("DataLeverandørnavn"), d, row.get("Startklok"))
+            clock_classes[cls] += 1
+            if cls != "observed":
+                continue
             frac, _ = moon_illumination(utc)
             bins = {
                 "sun": sun_bin(solar_elevation(lat, lon, utc)),
@@ -239,10 +255,17 @@ def main(argv):
                 # an error - the analysis ran to completion with an empty axis.
                 "temp": temp_bin(temps.get((st, d))),
             }
-            store[key].append((st, day.toordinal(), v, bins))
+            store[key].append((st, day.toordinal(), v, bins, utc, (lon, lat)))
             if sum(len(s) for s in store.values()) % 50000 == 0:
                 log(f"  {sum(len(s) for s in store.values()):,} placed")
+    return store, {"rows": rows, "dropped": dropped, "skipped": skipped,
+                   "clock": dict(clock_classes)}
 
+
+def main(argv):
+    temps = load_temps()
+    store, info = read_samples(temps)
+    dropped, skipped = info["dropped"], info["skipped"]
     out = {"_what": "Deviation from the same station within a moving window of "
                     "+-W days, itself excluded. Season is continuous; no month.",
            "_moon_caveat": "Full moonlight is about a millionth of sunlight and "
@@ -254,6 +277,11 @@ def main(argv):
            "skipped_depth_integrated": skipped["type"],
            "skipped_censored_detection_limit": skipped["censored"],
            "skipped_wrong_unit": skipped["unit"],
+           "_clock": "Every instant from scripts/clock.py. Samples whose clock is a "
+                     "filled-in default, or whose supplier's convention is mixed or "
+                     "untestable, are not placed against the sun; they are counted "
+                     "in skipped_clock.",
+           "skipped_clock": {k: v for k, v in info["clock"].items() if k != "observed"},
            "windows_days": list(WINDOWS), "dropped_impossible": dropped,
            "temperature_station_days": len(temps), "results": {}}
 
@@ -275,6 +303,10 @@ def main(argv):
             f"{100*matched/len(s):.0f}% joined to a temperature)")
         res = {"n": len(s), "unit": unit,
                "temperature_matched_pct": round(100 * matched / len(s), 1),
+               # every placed sample by sun bin, whatever its neighbours: the
+               # by_window counts include only samples with a same-station
+               # neighbour, so they are not a share of n and must not be read as one
+               "sun_counts": dict(collections.Counter(r[3]["sun"] for r in s)),
                "by_window": {}}
         for w in WINDOWS:
             res["by_window"][w] = {}

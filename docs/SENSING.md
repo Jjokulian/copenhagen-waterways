@@ -6,7 +6,7 @@ harder version of the same question: **what would it take to measure it everywhe
 so that no result anywhere has to be extrapolated to a place nobody visited.
 
 That is the whole point. Denmark's load figure is a modelled surface stretched over
-[49% measured and 51% modelled catchment area](NITROGEN.md), and the objection this
+[49](SOURCES.md#F-258eeecf6c)% measured and [51](SOURCES.md#F-b15ed567bc)% modelled catchment area ([NITROGEN.md](NITROGEN.md)), and the objection this
 project keeps making is not that the model is bad but that **a partition is not a
 measurement**. A network dense enough to have a node on every stream that reaches the
 sea would end that argument by removing its subject.
@@ -30,15 +30,15 @@ a position in a measurement space**, and the question for each candidate tracer 
 
 | Tracer | Why it is faecal | What it is confounded with | What resolves that |
 |---|---|---|---|
-| **Coprostanol** (5β-cholestan-3β-ol) | Made by gut bacteria reducing cholesterol. Vertebrate guts make it; soil does not | Any warm-blooded gut, including humans and wildlife | the ratios below |
-| **24-ethylcoprostanol / coprostanol** | Plant sterols reduced in a herbivore gut | — | **This ratio separates herbivore from human.** High ethyl form: cattle, pigs on plant feed. Low: human sewage |
-| **Coprostanol / (coprostanol + cholestanol)** | Above ~0.7 is the accepted faecal threshold | in-situ reduction in anoxic sediment can mimic it slightly | pair with the marker below |
-| **Host-specific *Bacteroidales* by qPCR** — Pig-2-Bac, BacR, HF183 | Gut microbiota are host-specific to the genus level | Nothing, in terms of source | **This is the attribution instrument.** DNA decays in days to weeks, so it reports *recent* input only |
+| **Coprostanol** (`5β-cholestan-3β-ol`) | Made by gut bacteria reducing cholesterol. Vertebrate guts make it; soil does not | Any warm-blooded gut, including humans and wildlife | the ratios below |
+| **`24-ethylcoprostanol` / coprostanol** | Plant sterols reduced in a herbivore gut | — | **This ratio separates herbivore from human.** High ethyl form: cattle, pigs on plant feed. Low: human sewage |
+| **Coprostanol / (coprostanol + cholestanol)** | Above ~[0.7](SOURCES.md#F-e7cbca75f9) is the accepted faecal threshold | in-situ reduction in anoxic sediment can mimic it slightly | pair with the marker below |
+| **Host-specific *Bacteroidales* by qPCR** — `Pig-2-Bac`, BacR, HF183 | Gut microbiota are host-specific to the genus level | Nothing, in terms of source | **This is the attribution instrument.** DNA decays in days to weeks, so it reports *recent* input only |
 | **crAssphage** | A human-gut bacteriophage | Nothing else has it | Establishes the human baseline, so the rest can be assigned elsewhere |
 | **Acesulfame-K, carbamazepine** | Human diet and human medicine; conservative and persistent | Nothing agricultural | **Marks the human fraction independently of biology** — a chemical crosscheck on the microbial one |
 | **Tylosin, tetracyclines, ivermectin** | Given to livestock, not to people at these volumes | Veterinary use in pets, at trivial scale | Quantifies the livestock fraction; VetStat holds the sales that would calibrate it |
 | **Copper and zinc** | Feed additives, and conservative once in sediment | **Heavily**: brake pads, roofs, tyres, urban runoff | Useless alone in a mixed catchment; useful in a rural one, and useful as a *load* once the fraction is known |
-| **δ¹⁵N of nitrate** | Manure and sewage nitrogen is isotopically heavy (+10 to +20‰); synthetic fertiliser sits near 0‰ | **Denitrification enriches δ¹⁵N too**, which has fooled people for decades | Measure **δ¹⁸O of nitrate alongside it**: denitrification moves both together on a known slope, a source change does not |
+| **δ¹⁵N of nitrate** | Manure and sewage nitrogen is isotopically heavy (+[10](SOURCES.md#F-ddc357707c) to +[20](SOURCES.md#F-30d6425019)‰); synthetic fertiliser sits near [0](SOURCES.md#F-002d8476aa)‰ | **Denitrification enriches δ¹⁵N too**, which has fooled people for decades | Measure **δ¹⁸O of nitrate alongside it**: denitrification moves both together on a known slope, a source change does not |
 | **fDOM, tryptophan-like (peak T) vs humic-like (peak C)** | Protein-like fluorescence rises with fresh faecal and sewage organic matter; humic-like rises with soil | turbidity, temperature, iron | Correctable, and it is the only one of these that can run continuously — which is its whole value |
 
 ### The quantifier
@@ -69,7 +69,7 @@ worth saying plainly because a network of only one kind is a waste of money.
 - A **general observable** — turbidity, COD, total nitrogen, oxygen — measures *how
   much of something is here*, and cannot say where it came from. It is cheap,
   continuous, and it is the quantity that actually matters to a fjord.
-- A **discriminating tracer** — coprostanol, Pig-2-Bac, acesulfame, δ¹⁵N — measures
+- A **discriminating tracer** — coprostanol, `Pig-2-Bac`, acesulfame, δ¹⁵N — measures
   *whose it is*, and by itself says nothing about magnitude. It is expensive,
   episodic, and useless as a load.
 
@@ -96,7 +96,7 @@ an attribution of it**: this much of tonight's oxygen demand was pig, this much 
 this much road, this much soil, and this much is still unexplained.
 
 > **And the last number is the honest one.** This method is the residual method — the
-> same operation the ~70% figure is built on, which this project spends
+> same operation the ~[70](SOURCES.md#F-8d95ffb4ae)% figure is built on, which this project spends
 > [NITROGEN.md](NITROGEN.md) taking apart. It is only better if it obeys three rules
 > the original does not: **every subtraction is a measurement rather than a model**,
 > **the error propagates and is published with the number**, and **the final residual
@@ -155,23 +155,23 @@ Five measurements, in rough order of value per krone.
 
 | Sensor | What it is for | Stated cost, DKK |
 |---|---|---:|
-| **Water level** — ultrasonic ranger above the surface, or a vented pressure transducer | Without discharge there is no load, only a concentration. This is the sensor that turns the network from anecdote into accounting. Mounted above water, an ultrasonic head does not foul | 1,000–3,000 |
-| **Turbidity** — nephelometric, 90°, with a wiper | The carrier. Metals, phosphorus, tyre wear and faecal particles all travel attached to sediment, so turbidity is the single best proxy for *payload in transit* | 1,500–6,000 |
-| **Conductivity and temperature** | Separates dilution from delivery. A storm that dilutes conductivity while raising turbidity is surface wash; a rise in both is something else. Temperature is needed by every other reading | 500–2,000 |
-| **fDOM — tryptophan-like fluorescence** | The one fingerprint dimension that can run continuously. Protein-like fluorescence tracks fresh faecal and sewage organic matter; measured against a humic-like channel it separates that from soil-derived matter. It is the cost driver, and the sensor that makes this network more than a turbidity network | 8,000–20,000 |
-| **Dissolved oxygen** — optical | The receiving-water consequence, at the same minute as the cause | 3,000–8,000 |
+| **Water level** — ultrasonic ranger above the surface, or a vented pressure transducer | Without discharge there is no load, only a concentration. This is the sensor that turns the network from anecdote into accounting. Mounted above water, an ultrasonic head does not foul | [1,000](SOURCES.md#F-0c24a113b3)–[3,000](SOURCES.md#F-2464d5f7c0) |
+| **Turbidity** — nephelometric, [90](SOURCES.md#F-e94acdd814)°, with a wiper | The carrier. Metals, phosphorus, tyre wear and faecal particles all travel attached to sediment, so turbidity is the single best proxy for *payload in transit* | [1,500](SOURCES.md#F-da7dc4d57b)–[6,000](SOURCES.md#F-3121327d19) |
+| **Conductivity and temperature** | Separates dilution from delivery. A storm that dilutes conductivity while raising turbidity is surface wash; a rise in both is something else. Temperature is needed by every other reading | [500](SOURCES.md#F-60304f7199)–[2,000](SOURCES.md#F-4b0f8ff2ca) |
+| **fDOM — tryptophan-like fluorescence** | The one fingerprint dimension that can run continuously. Protein-like fluorescence tracks fresh faecal and sewage organic matter; measured against a humic-like channel it separates that from soil-derived matter. It is the cost driver, and the sensor that makes this network more than a turbidity network | [8,000](SOURCES.md#F-2240c3923e)–[20,000](SOURCES.md#F-094555955c) |
+| **Dissolved oxygen** — optical | The receiving-water consequence, at the same minute as the cause | [3,000](SOURCES.md#F-ad814da942)–[8,000](SOURCES.md#F-2240c3923e) |
 
 **Logger, power and communications**, which are the boring part and the part that
 decides whether the thing survives a winter:
 
 | | | Stated cost, DKK |
 |---|---|---:|
-| Microcontroller, RTC, SD card, watchdog | ESP32 class; log locally as well as transmit, because the network is the thing that fails | 300–800 |
-| Radio | LoRaWAN to a community gateway where one is in range; NB-IoT or LTE-M with a data SIM where none is | 200–700 |
-| Power | 10–20 W panel, LiFePO₄, charge controller. Danish December is the design case, not July | 800–2,500 |
-| Enclosure, mount, cable, desiccant | IP67, mounted to a road culvert or bridge parapet | 700–2,000 |
+| Microcontroller, RTC, SD card, watchdog | ESP32 class; log locally as well as transmit, because the network is the thing that fails | [300](SOURCES.md#F-e0673791d7)–[800](SOURCES.md#F-19a78872b4) |
+| Radio | LoRaWAN to a community gateway where one is in range; NB-IoT or LTE-M with a data SIM where none is | [200](SOURCES.md#F-51d7a86046)–[700](SOURCES.md#F-16a4aa2e22) |
+| Power | [10](SOURCES.md#F-addb9bc54b)–[20](SOURCES.md#F-0504dc69fb) W panel, <span class="chem" data-chem="LiFePO4" title="lithium iron phosphate (battery chemistry)">LiFePO₄</span>, charge controller. Danish December is the design case, not July | [800](SOURCES.md#F-19a78872b4)–[2,500](SOURCES.md#F-2c3a26d632) |
+| Enclosure, mount, cable, desiccant | IP67, mounted to a road culvert or bridge parapet | [700](SOURCES.md#F-16a4aa2e22)–[2,000](SOURCES.md#F-cc21bd6629) |
 
-**A node comes to roughly 5,000–12,000 DKK without fDOM and 15,000–30,000 with it.**
+**A node comes to roughly [5,000](SOURCES.md#F-96567c6688)–[12,000](SOURCES.md#F-989cef1d40) DKK without fDOM and [15,000](SOURCES.md#F-de6612dc6d)–[30,000](SOURCES.md#F-912ad69935) with it.**
 One person can build one in an evening. The hard part was never the electronics.
 
 ---
@@ -187,42 +187,42 @@ then replace with what a supplier actually says.
 
 | | Example of the class | What it is for | DKK |
 |---|---|---|---:|
-| **Stage, ultrasonic** | MaxBotix HRXL-WR class, IP67, mounted above the water on a bridge or culvert | Level → discharge, via a rating curve. **Mounted in air, so it cannot foul** — which is why it beats a pressure transducer for an unattended node | 900–1,800 |
-| *or* **Stage, pressure** | vented submersible transducer, 0–2 m | Where there is no overhead mounting. Vented cable, or it reads the weather | 1,200–3,000 |
-| **Turbidity, nephelometric** | ISO 7027 90° module; with a wiper if the budget reaches | The carrier for everything particulate. **The cheap analog boards sold for hobby use are presence/absence at best** — say so in the data or do not fit one | 1,500–6,000 |
-| **Conductivity + temperature** | Atlas Scientific EZO-EC with a K=1.0 probe, or an industrial two-electrode cell | Separates dilution from delivery, and every other reading needs the temperature | 600–2,000 |
-| **Dissolved oxygen, optical** | luminescent/optical DO probe — **not** a galvanic membrane cell, which drifts and dies | The consequence, measured at the same minute as the cause | 3,000–9,000 |
-| **fDOM, tryptophan channel** | Turner Cyclops-7F class, tryptophan configuration, with a humic-like channel if affordable | The one fingerprint dimension that runs continuously. **This is the difference between a turbidity network and a fingerprint network** | 9,000–22,000 |
-| **Logger + radio** | ESP32 with LoRaWAN, or with LTE-M/NB-IoT where no gateway is in range; RTC, microSD, watchdog | Logs locally *and* transmits. The radio is the least reliable part | 400–1,200 |
-| **Power** | 10–20 W panel, MPPT controller, 12 V LiFePO₄ 20 Ah | Sized for December, not July | 800–2,500 |
-| **Enclosure and mount** | IP67 box, cable glands, stainless bracket, desiccant, anti-theft | Survives a winter and a curious passer-by | 700–2,000 |
+| **Stage, ultrasonic** | MaxBotix HRXL-WR class, IP67, mounted above the water on a bridge or culvert | Level → discharge, via a rating curve. **Mounted in air, so it cannot foul** — which is why it beats a pressure transducer for an unattended node | [900](SOURCES.md#F-20ee846ea2)–[1,800](SOURCES.md#F-52f013d363) |
+| *or* **Stage, pressure** | vented submersible transducer, [0](SOURCES.md#F-d1c0730bca)–[2](SOURCES.md#F-7e38eabca1) m | Where there is no overhead mounting. Vented cable, or it reads the weather | [1,200](SOURCES.md#F-a1f4fe16a3)–[3,000](SOURCES.md#F-74f7022d25) |
+| **Turbidity, nephelometric** | `ISO 7027` [90](SOURCES.md#F-e4a8aec21b)° module; with a wiper if the budget reaches | The carrier for everything particulate. **The cheap analog boards sold for hobby use are presence/absence at best** — say so in the data or do not fit one | [1,500](SOURCES.md#F-3116133ea7)–[6,000](SOURCES.md#F-543a36873c) |
+| **Conductivity + temperature** | Atlas Scientific EZO-EC with a K=[1.0](SOURCES.md#F-f291bd13f6) probe, or an industrial two-electrode cell | Separates dilution from delivery, and every other reading needs the temperature | [600](SOURCES.md#F-2ae70634cf)–[2,000](SOURCES.md#F-4f7d9a97f4) |
+| **Dissolved oxygen, optical** | luminescent/optical DO probe — **not** a galvanic membrane cell, which drifts and dies | The consequence, measured at the same minute as the cause | [3,000](SOURCES.md#F-47745f918f)–[9,000](SOURCES.md#F-6c4259e8e7) |
+| **fDOM, tryptophan channel** | Turner Cyclops-[7](SOURCES.md#F-9e6643ec10)F class, tryptophan configuration, with a humic-like channel if affordable | The one fingerprint dimension that runs continuously. **This is the difference between a turbidity network and a fingerprint network** | [9,000](SOURCES.md#F-6c4259e8e7)–[22,000](SOURCES.md#F-df9606f298) |
+| **Logger + radio** | ESP32 with LoRaWAN, or with LTE-M/NB-IoT where no gateway is in range; RTC, microSD, watchdog | Logs locally *and* transmits. The radio is the least reliable part | [400](SOURCES.md#F-99457c9672)–[1,200](SOURCES.md#F-111ba5af90) |
+| **Power** | [10](SOURCES.md#F-c614aff8c8)–[20](SOURCES.md#F-64d1624a48) W panel, MPPT controller, [12](SOURCES.md#F-ba24d80a55) V <span class="chem" data-chem="LiFePO4" title="lithium iron phosphate (battery chemistry)">LiFePO₄</span> [20](SOURCES.md#F-64d1624a48) Ah | Sized for December, not July | [800](SOURCES.md#F-d76999cb41)–[2,500](SOURCES.md#F-a38a45f868) |
+| **Enclosure and mount** | IP67 box, cable glands, stainless bracket, desiccant, anti-theft | Survives a winter and a curious passer-by | [700](SOURCES.md#F-84b5f4ebc1)–[2,000](SOURCES.md#F-785c317ed1) |
 
-**A node without fDOM: 5,000–12,000 DKK. With it: 15,000–30,000.**
+**A node without fDOM: [5,000](SOURCES.md#F-a5ca20b124)–[12,000](SOURCES.md#F-227f60439e) DKK. With it: [15,000](SOURCES.md#F-de6612dc6d)–[30,000](SOURCES.md#F-912ad69935).**
 
 ### The kit a group shares
 
 | | Why | DKK |
 |---|---|---:|
-| Formazin turbidity standards, EC calibration solutions, DO zero solution | **A reading without a calibration record is not data.** This is the least glamorous line and the one that decides whether the network is admissible | 2,000–5,000 |
-| A reference sonde, borrowed or shared, for co-location | [`X16`](EXPERIMENTS.md) — the check that ties cheap readings to the national record | 15,000–60,000, or borrowed |
-| Spare probes, cable, glands, desiccant, one spare node | Field repairs happen in February in the rain | 5,000–10,000 |
+| Formazin turbidity standards, EC calibration solutions, DO zero solution | **A reading without a calibration record is not data.** This is the least glamorous line and the one that decides whether the network is admissible | [2,000](SOURCES.md#F-dbe923a6cb)–[5,000](SOURCES.md#F-41064710c0) |
+| A reference sonde, borrowed or shared, for co-location | [`X16`](EXPERIMENTS.md) — the check that ties cheap readings to the national record | [15,000](SOURCES.md#F-ab995d2725)–[60,000](SOURCES.md#F-a334c0c404), or borrowed |
+| Spare probes, cable, glands, desiccant, one spare node | Field repairs happen in February in the rain | [5,000](SOURCES.md#F-582e612f3e)–[10,000](SOURCES.md#F-c2c1997e0e) |
 
 ### The sampler, which is where the answer comes from
 
 | | | DKK |
 |---|---|---:|
-| Automatic sampler, 12–24 bottles, flow- and turbidity-triggered | Teledyne ISCO or Hach AS950 class; a used one is a perfectly good used one | 25,000–60,000 |
-| Bottle analysis — sterols, host markers, crAssphage, acesulfame, one veterinary residue, Cu/Zn, COD/BOD, nutrients, δ¹⁵N + δ¹⁸O | **The real cost of the experiment.** Not every bottle needs the full panel; the cheap determinands go on all of them and the fingerprint on the ones the continuous tier says matter | 1,500–4,000 per bottle |
+| Automatic sampler, [12](SOURCES.md#F-cdfdc45c20)–[24](SOURCES.md#F-6d0912e850) bottles, flow- and turbidity-triggered | Teledyne ISCO or Hach AS950 class; a used one is a perfectly good used one | [25,000](SOURCES.md#F-680741f9cc)–[60,000](SOURCES.md#F-109e9eefe2) |
+| Bottle analysis — sterols, host markers, crAssphage, acesulfame, one veterinary residue, Cu/Zn, COD/BOD, nutrients, δ¹⁵N + δ¹⁸O | **The real cost of the experiment.** Not every bottle needs the full panel; the cheap determinands go on all of them and the fingerprint on the ones the continuous tier says matter | [1,500](SOURCES.md#F-e99c001806)–[4,000](SOURCES.md#F-aee78da032) per bottle |
 
 ### What that means for the experiment on the next page
 
 | | Quantity | DKK |
 |---|---:|---:|
-| Nodes with fDOM, 12 matched pairs | 24 | 360,000–720,000 |
-| Samplers, rotating | 8 | 200,000–480,000 |
-| Shared kit, three regional sets | 3 | 60,000–200,000 |
-| Bottles analysed over two seasons | ~600 | 900,000–2,400,000 |
-| **Hardware and laboratory, total** | | **1.5–3.8 M DKK** |
+| Nodes with fDOM, [12](SOURCES.md#F-e138091385) matched pairs | [24](SOURCES.md#F-bf48eaa827) | [360,000](SOURCES.md#F-a893594c73)–[720,000](SOURCES.md#F-9f18ff45d2) |
+| Samplers, rotating | [8](SOURCES.md#F-1e7de910ee) | [200,000](SOURCES.md#F-52c13c8c17)–[480,000](SOURCES.md#F-f5467bd666) |
+| Shared kit, three regional sets | [3](SOURCES.md#F-45efca4db3) | [60,000](SOURCES.md#F-9376ea98f2)–[200,000](SOURCES.md#F-52c13c8c17) |
+| Bottles analysed over two seasons | ~[600](SOURCES.md#F-a6f27e3e69) | [900,000](SOURCES.md#F-ca8073422a)–[2,400,000](SOURCES.md#F-30fa64415a) |
+| **Hardware and laboratory, total** | | **[1.5](SOURCES.md#F-ffad87be0a)–[3.8](SOURCES.md#F-f654c05a17) M DKK** |
 
 **So the sensors are not the expensive part — the bottles are**, and the bottles are
 the part that cannot be economised without losing the attribution the whole design
@@ -248,7 +248,7 @@ in-situ substitute:
   data holds nothing about where it went;
 - **COD and BOD**, to tie the fluorescence proxy to a standard number.
 
-Stated: **25,000–60,000 DKK per sampler**, and **1,500–4,000 DKK per bottle analysed**,
+Stated: **[25,000](SOURCES.md#F-56f7406539)–[60,000](SOURCES.md#F-bd3ac267f1) DKK per sampler**, and **[1,500](SOURCES.md#F-3dc9f04951)–[4,000](SOURCES.md#F-d7e8d20fd4) DKK per bottle analysed**,
 which is why tier 2 is sparse and event-triggered rather than continuous. Twenty
 samplers rotating around a network of hundreds of nodes is the realistic shape.
 
@@ -316,24 +316,24 @@ around a fixed determinand list would never discover.
 Every Danish stream that reaches the sea is the target that removes extrapolation
 entirely. These are stated arithmetic, not a budget anybody has approved.
 
-| | Nodes | Tier-1 hardware | fDOM on a subset | Samplers | Total hardware |
+| | Nodes | Tier-[1](SOURCES.md#F-a5ff5e3bf2) hardware | fDOM on a subset | Samplers | Total hardware |
 |---|---:|---:|---:|---:|---:|
-| **A person, one catchment** | 5 | 40,000 | — | — | **~40,000 DKK** |
-| **A club or a municipality** | 40 | 320,000 | 5 × 20,000 | 2 × 40,000 | **~500,000 DKK** |
-| **Every outlet in the country** | 800 | 6.4 M | 80 × 20,000 | 20 × 40,000 | **~8.8 M DKK** |
+| **A person, one catchment** | [5](SOURCES.md#F-dd09362833) | [40,000](SOURCES.md#F-4be5916acf) | — | — | **~[40,000](SOURCES.md#F-4be5916acf) DKK** |
+| **A club or a municipality** | [40](SOURCES.md#F-88cfe49728) | [320,000](SOURCES.md#F-4c2860b114) | [5](SOURCES.md#F-dd09362833) × [20,000](SOURCES.md#F-ffc66d0b94) | [2](SOURCES.md#F-dc9a6f5cc9) × [40,000](SOURCES.md#F-4be5916acf) | **~[500,000](SOURCES.md#F-419e934367) DKK** |
+| **Every outlet in the country** | [800](SOURCES.md#F-49109ce1f6) | [6.4](SOURCES.md#F-05b93d0fee) M | [80](SOURCES.md#F-3b8f3c24ab) × [20,000](SOURCES.md#F-ffc66d0b94) | [20](SOURCES.md#F-313e790432) × [40,000](SOURCES.md#F-4be5916acf) | **~[8.8](SOURCES.md#F-bc8cb0f719) M DKK** |
 
 > **And that last figure is the smallest of three numbers, which is why it should not
-> be the headline.** 8.8 M is *inland hardware only*. Add marine moorings in the
+> be the headline.** [8.8](SOURCES.md#F-bc8cb0f719) M is *inland hardware only*. Add marine moorings in the
 > fjords and belts, a near-bed string on each, and the servicing and laboratory that
 > keep them meaningful, and [the network tool](network.html) puts a thorough permanent
-> network at **0.5–1 bn DKK over 25 years — almost all of it operations, not
-> instruments.** Against the Copenhagen retrofit costed at 2.6–10.4 bn, that is **on
+> network at **[0.5](SOURCES.md#F-023531fda9)–[1](SOURCES.md#F-811be743de) bn DKK over [25](SOURCES.md#F-6b3b162e9f) years — almost all of it operations, not
+> instruments.** Against the Copenhagen retrofit costed at [2.6](SOURCES.md#F-049c00acc2)–[10.4](SOURCES.md#F-426c402c7d) bn, that is **on
 > the order of a tenth**: knowing costs about ten per cent of doing. Neither
 > negligible nor absurd — a normal monitoring fraction on a capital programme, and a
 > decision rather than a rounding error.
 
 For comparison, the same page that argues for this puts a single bored pipe shot at
-160,000–640,000 DKK. **The national network is the price of about twenty streets.**
+[160,000](SOURCES.md#F-c27b76f61d)–[640,000](SOURCES.md#F-daa962858a) DKK. **The national network is the price of about twenty streets.**
 
 The recurring cost is not the hardware and never was:
 
@@ -342,7 +342,7 @@ The recurring cost is not the hardware and never was:
   fouls least even where it reads worst.
 - **Calibration.** Every node needs a documented calibration history and a co-location
   against a reference instrument — which is [`X16`](EXPERIMENTS.md), already written.
-- **Laboratory.** The tier-2 bottles, which is where the money actually goes.
+- **Laboratory.** The tier-[2](SOURCES.md#F-240797b2a9) bottles, which is where the money actually goes.
 
 ---
 
@@ -394,12 +394,12 @@ and **the archive**, so a result belongs to everyone rather than to whoever host
 ## What this would and would not settle
 
 **Would.** Whether the payload moves in events, where, how often, and in what season —
-across the whole country rather than at 240 stations sampled on a calendar. Whether
+across the whole country rather than at [240](SOURCES.md#F-0f27097241) stations sampled on a calendar. Whether
 the spreading window shows up in the water. Which catchments are quiet and which are
 not, without a model in between.
 
 **Would not.** Anything about the sea beyond the outlet: this measures what arrives,
-not what it does. Anything the tier-2 list does not include. And **it does not abolish
+not what it does. Anything the tier-[2](SOURCES.md#F-af1029a1ff) list does not include. And **it does not abolish
 inference** — attribution still travels from sampled events to unsampled ones, and
 from a marker to a source. What it abolishes is *spatial* extrapolation, which is the
 one this project has spent its length objecting to.

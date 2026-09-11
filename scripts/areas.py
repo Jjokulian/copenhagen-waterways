@@ -1,28 +1,30 @@
 #!/usr/bin/env python3
 """There is no Denmark. There are 123 marine areas with different causes.
 
-Every published figure in this argument is a national aggregate: 69.6% of the
-land-borne load, one indsatsbehov ladder, one 25% rule. Aggregation is where the
-information goes. A number that is true of Denmark is true of nowhere in it.
+Every published figure in this argument is a national aggregate: one share of the
+land-borne load, one indsatsbehov ladder. Aggregation is where the information goes:
+a number that is true of Denmark need not be true of any one place in it.
 
 So this script refuses the aggregate and builds one record per marine water body:
 what presses on it, what is observed in it, over which years each of those streams
 exists, and - stated as plainly as the rest - what cannot be modelled there and why.
 
 Assignment is by nearest point on the marine boundary, via a grid hash over the
-1.47 M boundary vertices, with the distance recorded on every assignment so a
-reader can see how firm it is. Outfalls sit on land; bathing stations sit on the
+1.47 M boundary vertices, with the largest distance per layer and area recorded so a
+reader can see how firm the assignment is. Outfalls sit on land; bathing stations sit on the
 shore; dumping grounds sit in the water. One rule, one distance, no hidden choices.
 
 The cross-sectional estimate at the end is a cum hoc effect size and is labelled as
 one. It regresses a sewage-driven outcome (bathing quality) on sewage pressure
 (treatment-plant PE and rain-conditioned outfall density), across areas rather than
-across years, because across areas is the only axis on which Denmark has enough
-replication to estimate anything at all.
+across years, because the open data have more areas than they have years of
+comparable observation.
 
-Output: data/derived/areas.json, docs/AREAS.md
+Output: data/derived/areas.json. The page, docs/AREAS.md, is written from it by
+scripts/pages/areas.py, so every number on the page is read back from this file
+with its chain rather than formatted straight from memory.
 
-Usage:  python3 scripts/areas.py
+Usage:  scripts/heavy python3 scripts/areas.py
 """
 import collections
 import math
@@ -30,10 +32,9 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, MANUAL, RAW, ROOT, log, read_json, write_json, write_doc
+from common import DERIVED, MANUAL, RAW, ROOT, log, read_json, write_json
 
 NAT = os.path.join(RAW, "national")
-OUT_MD = os.path.join(ROOT, "docs", "AREAS.md")
 OUT_JSON = os.path.join(DERIVED, "areas.json")
 
 CELL = 0.05           # grid cell, degrees
@@ -44,14 +45,13 @@ YEARS = [f"{y:02d}" for y in list(range(91, 100)) + list(range(0, 19))]
 YEAR_NUM = {y: (1900 + int(y) if int(y) >= 91 else 2000 + int(y)) for y in YEARS}
 SCORE = {"Excellent": 4, "Good": 3, "Good or Sufficient": 3, "Sufficient": 2, "Poor": 1}
 
-# DCE (2015) Tabel 3: the 72 validated statistical models, by station area.
-# Only these areas have a fitted relation between load and any indicator.
-MODELLED_AREAS = ["Lovns", "Skive", "Riisgard", "Nissum", "Logstor", "Thisted",
-                  "Kaas", "Nibe", "Randers", "Isefjord", "Horsens", "Roskilde",
-                  "Vejle", "Mariager", "Kolding", "Abenra", "Flensborg", "Odense",
-                  "Ringkobing"]
+# The water bodies with a station-level statistical model, by id, as DHI's method
+# report lists them (Tabel 5 of DHI-MODEL-DEL1-2015), matched by number and name in
+# data/manual/statistical_models.json. It replaced a six-letter name match, which
+# flagged water bodies DHI does not list and missed some it does.
+MODELLED_IDS = {i for e in read_json(os.path.join(MANUAL, "statistical_models.json"))["entries"]
+                for i in e["ids"]}
 MODEL_WINDOW = (1990, 2012)
-FOLD = str.maketrans({"å": "a", "æ": "a", "ø": "o", "Å": "A", "Æ": "A", "Ø": "O"})
 
 # Point and polygon layers to attribute to areas. (file, key, what it is, kind)
 PRESSURES = [
@@ -61,10 +61,6 @@ PRESSURES = [
     ("klappladser", "klap", "licensed dredged-material dumping grounds", "poly"),
     ("raastofomr", "raastof", "raw-material extraction areas", "poly"),
 ]
-
-
-def fold(s):
-    return (s or "").translate(FOLD).lower()
 
 
 def haversine(la1, lo1, la2, lo2):
@@ -178,7 +174,7 @@ def build():
 
     rec = {}
     for i, p in enumerate(props):
-        modelled = any(n.lower()[:6] in fold(p["ov_navn"]) for n in MODELLED_AREAS)
+        modelled = p["ov_id"] in MODELLED_IDS
         rec[p["ov_id"]] = {
             "id": p["ov_id"], "name": p["ov_navn"], "area_km2": p["ov_stoe"],
             "type": p["ov_typ"], "category": p["ov_kat"],
@@ -306,9 +302,10 @@ def build():
     for r in rec.values():
         gaps = []
         if not r["has_statistical_model"]:
-            gaps.append("No fitted relation between nutrient load and any indicator "
-                        "exists for this area. Any coefficient applied here is "
-                        "transferred from a fjord.")
+            gaps.append("No station-level statistical model relates nutrient load to "
+                        "an indicator here. Its requirement comes from DHI's mechanistic "
+                        "model, a meta-analysis, or neither: the requirement table of "
+                        "DHI's method report (Tabel 6) says which.")
         b = r["observation"].get("bathing")
         if not b:
             gaps.append("No bathing station: there is no long, repeated observation "
@@ -325,15 +322,42 @@ def build():
             gaps.append(f"{r['area_km2']:,.0f} km² described by "
                         f"{(b or {}).get('stations', 0)} shore observations.")
         r["not_modelled"] = gaps
+        r["n_gaps"] = len(gaps)
     return props, rec
+
+
+def hazardous_layer():
+    """The national hazardous-substance layer, counted by water type: why no marine
+    water body carries a hazardous-substance observation here."""
+    feats = read_json(os.path.join(NAT, "sw_mfs_tilstand.geojson"))["features"]
+    kinds = collections.Counter((f["properties"].get("eusurfacew") or "")[:6] for f in feats)
+    return {"points": len(feats), "lake": kinds.get("DKLAKE", 0),
+            "river": kinds.get("DKRIVE", 0), "coast": kinds.get("DKCOAS", 0)}
+
+
+def summarize(rec):
+    """The state-of-knowledge counts, stored so the page reads them with a chain."""
+    sets = {
+        "all": list(rec.values()),
+        "modelled": [r for r in rec.values() if r["has_statistical_model"]],
+        "with_bathing": [r for r in rec.values() if r["observation"].get("bathing")],
+        "testable": [r for r in rec.values()
+                     if (r["observation"].get("bathing") or {}).get("informative_stations", 0) >= 3],
+        "neither": [r for r in rec.values() if not r["has_statistical_model"]
+                    and not r["observation"].get("bathing")],
+    }
+    return {"sea_km2": round(sum(r["area_km2"] for r in rec.values()), 1),
+            "sets": {k: {"n": len(v), "km2": round(sum(r["area_km2"] for r in v), 1)}
+                     for k, v in sets.items()}}
 
 
 def cum_hoc(rec):
     """Cross-sectional effect size: sewage pressure against a sewage outcome.
 
     This is a correlation across areas at one time, not a causal estimate, and the
-    only reason to prefer it to the national aggregate is that it has 100 units of
-    replication where the aggregate has one."""
+    only reason to prefer it to the national aggregate is that it has one unit of
+    replication per area with data (the count is stored with the result), where the
+    aggregate has one."""
     rows = []
     for r in rec.values():
         b = r["observation"].get("bathing")
@@ -364,316 +388,16 @@ def cum_hoc(rec):
     return out
 
 
-def render(props, rec, ch):
-    o = []
-    a = o.append
-    tot = sum(r["area_km2"] for r in rec.values())
-    modelled = [r for r in rec.values() if r["has_statistical_model"]]
-    with_bath = [r for r in rec.values() if r["observation"].get("bathing")]
-    testable = [r for r in rec.values()
-                if (r["observation"].get("bathing") or {}).get("informative_stations", 0) >= 3]
-    nothing = [r for r in rec.values() if not r["has_statistical_model"]
-               and not r["observation"].get("bathing")]
-
-    a("# There is no Denmark\n")
-    a("Every number in the national argument is an aggregate: one land-borne load, "
-      "one 69.6%, one ladder of indsatsbehov, one 25% rule. Aggregation is where the "
-      "information goes. Køge Bugt and Ringkøbing Fjord do not share a cause, a "
-      "flushing time, a sediment, or a fix, and a figure true of Denmark is true of "
-      "nowhere in it.\n")
-    a("This page refuses the aggregate. One record per marine water body: what presses "
-      "on it, what is observed in it, **over which years each of those streams "
-      "exists**, and what cannot be modelled there. The last of those is the longest "
-      "column, and that is the finding.\n")
-    a(f"Assignment is by nearest point on the marine boundary, one rule for every "
-      f"layer, with the distance recorded on every assignment and anything beyond "
-      f"{MAX_ASSIGN_KM:.0f} km dropped.\n")
-
-    a("## The state of knowledge, counted\n")
-    a("| | areas | km² | share of sea |")
-    a("|---|---:|---:|---:|")
-    for lab, sub in (("All marine water bodies", list(rec.values())),
-                     ("…with a fitted load→indicator model", modelled),
-                     ("…with any repeated marine observation (bathing)", with_bath),
-                     ("…where internal coherence can even be tested", testable),
-                     ("…with neither a model nor an observation", nothing)):
-        km = sum(r["area_km2"] for r in sub)
-        a(f"| {lab} | {len(sub)} | {km:,.0f} | {100*km/tot:.1f}% |")
-    a("")
-    a(f"{len(nothing)} water bodies covering "
-      f"{sum(r['area_km2'] for r in nothing):,.0f} km² "
-      f"({100*sum(r['area_km2'] for r in nothing)/tot:.0f}% of Danish sea) carry "
-      f"neither a fitted model nor a repeated observation **in the two layers "
-      f"counted above** — bathing water and hazardous-substance status. They still "
-      f"receive a requirement.\n")
-    a("> **A correction, and a caution about the whole class of statement.** An "
-      "earlier version of this line said those water bodies carry \"neither a "
-      "fitted model nor a single repeated marine observation\", which reads as a "
-      "claim about marine observation in general. It is not one, and checked "
-      "against a wider corpus it is false. **A claim of absence is only as wide as "
-      "the search behind it**, and this search was two layers deep.\n"
-      ">\n"
-      "> The check: ODA's station register holds **6,258 positioned marine "
-      "stations**, and assigned by point-in-polygon to the same boundaries used on "
-      "this page, **every one of the 123 water bodies contains at least one.** "
-      "Counted over that register: 3 water bodies contain no station visited in two "
-      "or more distinct years, 8 contain none visited in five or more, and 22 "
-      "contain none visited in ten or more.\n"
-      ">\n"
-      "> **Those are counts, and they are deliberately not percentages.** Saying "
-      "*18% of the sea has no long observation* would be the missing-denominator "
-      "error this project exists to point at, committed here. The denominator is "
-      "known — the sea is 43,579 km². The numerator is not, because it is the "
-      "extent of an absence, and an absence can only be measured against a search "
-      "that was exhaustive. Ours was ODA plus two layers. ICES, EMODnet, university "
-      "programmes, municipal monitoring and every unpublished series sit outside "
-      "it.\n"
-      ">\n"
-      "> The line between the two kinds of figure is worth stating, because this "
-      "page uses one of them freely and must not use the other:\n"
-      ">\n"
-      "> The test is whether **the category named is the same width as the corpus "
-      "searched.**\n"
-      ">\n"
-      "> - **Same width — a percentage is fine, including of an absence.** *57 of "
-      "123 water bodies have no point in the national hazardous-substance "
-      "monitoring programme, covering 70% of the sea.* The category is that "
-      "programme, the register of it is complete, so its complement is exact. Same "
-      "for *28 of 123 have a fitted model — 5.7% of sea area*: the models are "
-      "published and the sea is measured, and nothing rests on having found "
-      "anything else.\n"
-      "> - **Category wider than corpus — only a count is honest.** *56% of the sea "
-      "has no marine observation* names a category — marine observation — far wider "
-      "than the two layers actually searched. The leftover after subtracting what "
-      "we happened to find is then reported as though it were measured, which is "
-      "the operation [RESIDUAL.md](RESIDUAL.md) is about, and it does not become "
-      "acceptable because we are the ones doing it.\n"
-      ">\n"
-      "> So absence is reported here as a count over a named corpus, and the corpus "
-      "is named every time.\n"
-      ">\n"
-      "> **And the corpus is named together with what is missing from it.** A "
-      "coverage figure has a numerator nobody can measure — the evidence that "
-      "exists — so counting what we assembled gives a *lower bound on evidence* and "
-      "therefore an *upper bound on absence*. That is only interpretable beside the "
-      "terms we know belong in the numerator and cannot add. They are kept in "
-      "`data/manual/coverage_gaps.json` and there are three kinds:\n")
-    gaps = read_json(os.path.join(MANUAL, "coverage_gaps.json"))["gaps"]
-    a("")
-    a("| | source | what it would add | why we do not have it |")
-    a("|---|---|---|---|")
-    for g in gaps:
-        a(f"| `{g['class']}` | **{g['id']}** | {g['would_add']} | {g['barrier']} |")
-    a("")
-    a("The distinction inside that table matters as much as the table. `closed` is "
-      "a gap in the world's availability; `open_unassembled` is a gap in our "
-      "effort and is nobody's fault but ours; `absent` is the only one where a "
-      "search was actually run to exhaustion, and even that is bounded by the "
-      "search. **PULS is the sharpest case.** It holds the per-event overflow "
-      "volumes that `B1` calls the single most valuable missing series, and an "
-      "access attempt with a private MitID was refused because no CVR or VAT "
-      "number attached to it was valid — so this is not a login anyone has "
-      "neglected to perform. It appears to require a registered business or "
-      "authority, which means a private citizen cannot obtain it at all.\n")
-
-    a("## Two meanings of \"a body of water\", and the switch between them\n")
-    a("\"Roskilde Fjord\" is not an arbitrary line on a map, and it is worth saying "
-      "so plainly before objecting to anything. It names a real hydrographic "
-      "object: water largely bounded by land, with exchange restricted to a narrow "
-      "mouth. That is a **claim about enclosure**, it is physical, and it is "
-      "true.\n")
-    a("The assessment then uses the same word to mean something else entirely: "
-      "that a measurement taken anywhere in it stands for the whole of it. That is "
-      "a **claim about homogeneity**, and it is statistical. One sense is about "
-      "where the water is bounded; the other is about whether the water inside "
-      "those bounds is alike. Nothing carries you from the first to the second, "
-      "and the name does the carrying unnoticed because the same three words serve "
-      "both.\n")
-    a("**And the physics runs against the transfer, not with it.** Restricted "
-      "exchange is exactly what *preserves* a gradient. A basin with freshwater "
-      "entering at its head and a sill at its mouth holds a salinity, "
-      "residence-time and oxygen gradient along its length precisely because it "
-      "does not flush; open water erases such differences by mixing. So the better "
-      "the enclosure, the weaker the homogeneity assumption becomes. The two "
-      "senses are not merely distinct — **they pull in opposite directions**, and "
-      "the enclosures that most deserve their names are the ones least entitled to "
-      "be treated as single units.\n")
-    a("The partition half-concedes this without following it through. Roskilde "
-      "Fjord appears here as two water bodies, `DKCOAST1` (ydre, 71 km²) and "
-      "`DKCOAST2` (indre, 52 km²) — an admission that one enclosure is at least "
-      "two units. Nothing states why two is the right number, what test would have "
-      "produced three, or what measurement would settle it. A boundary drawn "
-      "somewhere inside a fjord is a hypothesis about where the water changes, and "
-      "it is the kind of hypothesis this project can actually test: `X22` in "
-      "[EXPERIMENTS.md](EXPERIMENTS.md) sets out how, using pairs of measurements "
-      "at matched separation either side of a line.\n")
-    a("> The practical rule that follows, and the reason the station-level series "
-      "exist: **the unit of observation is a position.** Everything else — this "
-      "page included — is an aggregate computed inside somebody's polygon, and "
-      "should be read as a statement about that polygon as much as about the "
-      "sea.\n")
-
-    a("### The switch, measured in the fjord it is named after\n")
-    a("The station-level series make this checkable rather than arguable. Both "
-      "halves of Roskilde Fjord carry several stations, so for any month where "
-      "three or more measured, the disagreement *between* stations can be set "
-      "against the variation *across* months — which is the signal anyone is trying "
-      "to detect.\n")
-    a("| variable | basket | months with 3+ stations | spread between stations, "
-      "same month | spread across months | ratio |")
-    a("|---|---|---:|---:|---:|---:|")
-    for row in (("bottom oxygen", "indre `DKCOAST2`", 221, "sd 1.82, median range "
-                 "**3.35 mg/l**", "2.80", "**0.65**"),
-                ("bottom oxygen", "ydre `DKCOAST1`", 113, "sd 0.81, range 0.80",
-                 "3.20", "0.25"),
-                ("surface salinity", "indre `DKCOAST2`", 222,
-                 "sd 0.49, range 1.06", "1.71", "0.29"),
-                ("surface salinity", "ydre `DKCOAST1`", 114,
-                 "sd 1.07, range 2.08", "1.22", "**0.88**"),
-                ("bottom temperature", "indre `DKCOAST2`", 224, "sd 1.64", "5.36",
-                 "0.31"),
-                ("bottom temperature", "ydre `DKCOAST1`", 113, "sd 0.44", "6.64",
-                 "0.07")):
-        a("| " + " | ".join(str(x) for x in row) + " |")
-    a("")
-    a("**The inner fjord's own stations disagree about bottom oxygen by a median of "
-      "3.35 mg/l within a single month.** The iltsvind criterion is oxygen below "
-      "4 mg/l in bottom water. So the disagreement between stations inside one "
-      "water body is very nearly the whole width of the threshold, and whether that "
-      "body \"has iltsvind\" can depend on which of its own stations is read. The "
-      "ratio says the same thing in another way: the spread between stations is "
-      "**65% of the size of the entire seasonal signal** the monitoring exists to "
-      "measure.\n")
-    a("**And the two halves fail on different variables.** The inner fjord is "
-      "unreliable for oxygen (0.65) and well behaved for salinity (0.29); the outer "
-      "fjord is the reverse — fine for oxygen (0.25), poor for salinity (0.88). "
-      "That is not a ranking of two baskets. It is a demonstration that **no single "
-      "partition can serve both variables**, because the water is organised "
-      "differently depending on what you measure. A boundary that is real for "
-      "salinity is arbitrary for oxygen, and drawing one set of lines and using it "
-      "for everything is the error, rather than drawing them in the wrong place.\n")
-    a("Computed from `docs/data/areas/stations_series.*`, which carry no partition "
-      "at all — the water-body assignment used here is loaded separately from "
-      "`station_waterbody_overlay.json`, on purpose, so that using it is a "
-      "deliberate act.\n")
-
-    a("## What are the baskets predictive FOR? — and how easily that question is "
-      "answered wrongly\n")
-    a("A partition is not right or wrong in general; it is predictive *for a "
-      "variable*. So the question is what the water bodies encode, and the "
-      "statistic is the **intraclass correlation** computed within month: pick two "
-      "stations at random in the same month — if they are in the same water body, "
-      "how much more alike are they than two picked without regard to it? One means "
-      "membership tells you everything; zero means it tells you nothing beyond the "
-      "season.\n")
-    a("Within month is essential. Every station in Denmark shares a season, so "
-      "pooling across months puts the seasonal signal into the between-basket term "
-      "and makes every partition look excellent, including an absurd one.\n")
-    a("**The result depends almost entirely on what it is compared against, and "
-      "three reasonable comparisons give three different answers.** This section "
-      "reports that rather than a ranking, because an earlier version of this page "
-      "reported the ranking and it was wrong.\n")
-    a("| variable | real | shuffled | latitude stripes | size- and shape-matched | "
-      "**lift over the last** |")
-    a("|---|---:|---:|---:|---:|---:|")
-    for r in (("surface oxygen saturation", .924, .859, .516, .522, "**+0.402**"),
-              ("surface oxygen", .878, .782, .550, .595, "**+0.283**"),
-              ("bottom oxygen saturation", .810, .658, .585, .672, "+0.138"),
-              ("surface salinity", .968, .531, .679, .844, "+0.124"),
-              ("bottom salinity", .916, .538, .640, .798, "+0.118"),
-              ("surface temperature", .830, .510, .618, .734, "+0.096"),
-              ("bottom oxygen", .790, .639, .602, .698, "+0.092"),
-              ("bottom temperature", .810, .523, .625, .766, "+0.044"),
-              ("fluorescence", .725, .404, .564, .775, "**−0.050**")):
-        a(f"| {r[0]} | {r[1]:.3f} | {r[2]:.3f} | {r[3]:.3f} | {r[4]:.3f} | {r[5]} |")
-    a("")
-    a("The three nulls answer three different questions. **Shuffled** permutes "
-      "station labels while keeping basket sizes, so it destroys geography and "
-      "keeps the size structure; against it, salinity wins by a distance. "
-      "**Latitude stripes** are equal-count horizontal bands, so they keep "
-      "compactness and equal sizes but ignore hydrography; against them, surface "
-      "oxygen saturation wins. **Size- and shape-matched** baskets have the same "
-      "size distribution as the real ones and are grown from random seeds by "
-      "nearest neighbour, so they are compact blobs of the right sizes following no "
-      "hydrography at all — the only control that varies one thing at a time.\n")
-    a("Against that last one the ordering **reverses**: oxygen gains most, salinity "
-      "gains little, and fluorescence goes negative — random compact blobs of the "
-      "same sizes predict it *better* than the official partition does.\n")
-    a("There is a coherent reading. Salinity is spatially smooth, so any compact "
-      "grouping predicts it well (0.844 from random blobs) and the real boundaries "
-      "have little left to add. Oxygen is spatially rough, so blobs do poorly and "
-      "boundaries that follow enclosure carry real information. A partition's value "
-      "is not how well it predicts, but **how much better it predicts than the "
-      "shape of it alone would**.\n")
-    a("> **A correction, and the reason this section is written as a caution.** An "
-      "earlier version said the water bodies \"encode salinity strongly and oxygen "
-      "almost not at all\", from the shuffled control alone. Against a null "
-      "matching both size and shape that is backwards. The claim was defensible, "
-      "reproducible, and wrong — and it survived exactly as long as it took to "
-      "compute a second control. Any single number here would have been "
-      "publishable; the disagreement between the nulls is the finding.\n")
-    a("> One further limit bounding every row: stations are not placed at random and "
-      "are far denser in some baskets than others, so this scores the partition *as "
-      "sampled*. It cannot distinguish a well-drawn basket from one whose stations "
-      "happen to sit close together.\n")
-
-    a("## The cum hoc estimate, across areas instead of across years\n")
-    a("A national time series has one unit of replication. The areas have "
-      f"{ch['n_areas']}. So the only place an effect size can actually be estimated "
-      "is across them.\n")
-    a("This tests a sewage-driven outcome against sewage pressure — bathing quality "
-      "against outfall and treatment-plant density — because that is the one "
-      "predictor/outcome pair where both sides exist per area. It is **cum hoc**: a "
-      "correlation across places at one time, with no control for coast type, "
-      "flushing, or population. It is reported because it is computable and the "
-      "national figure is not.\n")
-    a("| predictor | outcome | r | R² | areas |")
-    a("|---|---|---:|---:|---:|")
-    for t in ch["tests"]:
-        a(f"| {t['predictor']} | {t['outcome']} | {t['r']:+.3f} | {t['r2']:.3f} | {t['n']} |")
-    a("")
-
-    a("## Every area, on its own terms\n")
-    a("`model` — a fitted load→indicator relation exists (DCE 2015, fitted on "
-      "1990–2012). `bath` — bathing stations, and the years they span. `r` — how "
-      "much those stations agree with each other, where there are enough to ask. "
-      "`RBU` — rain-conditioned outfalls. `PE` — approved treatment-plant load.\n")
-    a("| km² | area | model | bath (years) | r | RBU | PE | gaps |")
-    a("|---:|---|:-:|---|---:|---:|---:|---:|")
-    for r in sorted(rec.values(), key=lambda r: -r["area_km2"]):
-        b = r["observation"].get("bathing")
-        rbu = r["pressure"].get("rbu", {}).get("n", 0)
-        pe = r["pressure"].get("rens", {}).get("pe", 0)
-        bath = f"{b['stations']} ({b['first_year']}–{b['last_year']})" if b else "—"
-        rr = f"{b['internal_r']:+.2f}" if b and b.get("internal_r") is not None else "—"
-        a(f"| {r['area_km2']:,.1f} | {r['name']} | {'✓' if r['has_statistical_model'] else '·'} "
-          f"| {bath} | {rr} | {rbu:,} | {pe:,} | {len(r['not_modelled'])} |")
-    a("")
-    a("The full record for each area — every pressure, every stream with its years, "
-      "and the written-out list of what cannot be modelled there — is in "
-      "`data/derived/areas.json`, which `scripts/areas.py` writes locally and the "
-      "repository does not ship, and drawn with its timeline on "
-      "[the map](areas.html).\n")
-
-    a("## What this is not\n")
-    a("It is not a causal model per area. It is the ledger you need before you can "
-      "build one: which areas have enough observation to support a claim, which have "
-      "none, and over which years each stream exists — so that an analysis published "
-      "in 2025 cannot quietly rest on a relation fitted to 1990–2012 without a reader "
-      "seeing the gap.\n")
-    return "\n".join(o) + "\n"
-
-
 def main():
     props, rec = build()
     ch = cum_hoc(rec)
     write_json(OUT_JSON, {"assignment": {"rule": "nearest marine boundary vertex",
                                          "max_km": MAX_ASSIGN_KM},
+                          "summary": summarize(rec), "hazardous_layer": hazardous_layer(),
                           "cum_hoc": ch, "areas": rec})
-    write_doc(OUT_MD, render(props, rec, ch))
     nothing = [r for r in rec.values()
                if not r["has_statistical_model"] and not r["observation"].get("bathing")]
-    log(f"\nwrote docs/AREAS.md ({os.path.getsize(OUT_MD):,} chars)")
+    log(f"\nwrote {os.path.relpath(OUT_JSON, ROOT)} - now run scripts/pages/areas.py")
     log(f"  {len(rec)} areas; {sum(1 for r in rec.values() if r['has_statistical_model'])} "
         f"modelled; {len(nothing)} with neither model nor observation")
     for t in ch["tests"]:

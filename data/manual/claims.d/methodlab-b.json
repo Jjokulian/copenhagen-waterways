@@ -1,0 +1,1354 @@
+{
+ "_what": "Claims for the second half of METHOD_LAB.md (the circularity register and the noise floor of an acceptance criterion), written by fork ml-b in the claims pilot, 11 September 2026. Retired claims (page ARCHIVE.md) record published wording that could not be justified, from METHOD_LAB.md as first committed and from OBSERVING.md, where the noise-floor section was published before it moved.",
+ "sources": {
+  "FLOOD2012-CKAN": {
+   "title": "Københavns Kommune, 'Oversvømmelsesscenarier for vandoplande' - dataset record on opendata.dk (CKAN package_show)",
+   "url": "https://admin.opendata.dk/api/3/action/package_show?id=oversvommelsesscenarier-for-vandoplande",
+   "retrieved": "2026-09-11",
+   "sha256": "e4c1819605e16e7b267c4019948cb678f02feb05277f161758ee19205a6ed3d6",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "FLOOD2012-AMAGER": {
+   "title": "Københavns Kommune, Oversvømmelseskort for Amager vandopland (one of the seven flood sheets)",
+   "url": "https://admin.opendata.dk/dataset/9a1f913c-d19b-486e-a22c-58ee52fef68c/resource/ef31af2e-994e-4db7-8ebc-341045581713/download/amager.pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "1045cc4c84324598cd23e79fb4f51cf7f2e2c774d9113b75f64f4e7475fec70e",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "figures": {
+  "nf_candidates": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.candidates",
+   "fmt": "{:,}"
+  },
+  "nf_max_terms": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.max_terms",
+   "fmt": "{:,}"
+  },
+  "nf_subsets": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.subsets_searched",
+   "fmt": "{:,}"
+  },
+  "nf_trials": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.trials",
+   "fmt": "{:,}"
+  },
+  "nf_accept": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.acceptance_r2",
+   "fmt": "{:g}"
+  },
+  "nf_med_decl": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.cases.2.median",
+   "fmt": "{:.2f}"
+  },
+  "nf_med_min": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.cases.3.median",
+   "fmt": "{:.2f}"
+  },
+  "nf_pass_decl": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.cases.2.share_passing",
+   "fmt": "{:g}"
+  },
+  "nf_pass_min": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.cases.3.share_passing",
+   "fmt": "{:g}"
+  },
+  "nf_n_decl": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.cases.2.n_points",
+   "fmt": "{:,}"
+  },
+  "nf_n_min": {
+   "file": "data/derived/observing.json",
+   "path": "noise_floor.cases.3.n_points",
+   "fmt": "{:,}"
+  }
+ },
+ "nodes": [
+  {
+   "id": "X-DEPTHCLOCK",
+   "kind": "script",
+   "label": "depth_clock.py",
+   "detail": "Places CTD oxygen in time with a supplied, a borrowed or no clock, and checks the borrowed clock against supplied times where a cast has both."
+  },
+  {
+   "id": "X-OBSERVING",
+   "kind": "script",
+   "label": "observing.py noise_floor()",
+   "detail": "An exhaustive search over small sets of pure-noise candidates for a pure-noise target, scored by in-sample R², repeated for each condition."
+  },
+  {
+   "id": "X-TERRAINCHECK",
+   "kind": "script",
+   "label": "terraincheck.py",
+   "detail": "Scores the modelled 2012 flooding against local terrain from the national elevation model, sheet by sheet. The result is in PROGRAMME.md: on every sheet the flooded cells sit in ordinary rather than low streets."
+  },
+  {
+   "id": "S-ML-NOISEFLOOR",
+   "kind": "synthetic",
+   "label": "Pure-noise target\\nand candidates",
+   "detail": "Series drawn in observing.py with a stipulated autocorrelation and, in two conditions, a stipulated shared drift. Licenses statements about the search, never about the water."
+  },
+  {
+   "id": "A-ML-SERIES",
+   "kind": "assumption",
+   "label": "Candidates autocorrelated\\nand falling together",
+   "detail": "The autocorrelation and the shared drift in NOISE_CASES are chosen values, not estimated from DCE's series. If the real candidates are less autocorrelated or do not fall together, the noise floor is lower."
+  },
+  {
+   "id": "E-ML-DCE-SCOPE",
+   "kind": "external",
+   "label": "DCE statistical models:\\nwhat they are for",
+   "source": "DCE-STATMOD-2015",
+   "said": "der er udviklet til at beregne indsatsbehov i danske fjorde og",
+   "detail": "The report's own statement of purpose: models and methods to calculate the reduction in nutrient input each fjord or coastal water needs."
+  },
+  {
+   "id": "E-ML-DCE-TABLE2",
+   "kind": "external",
+   "label": "DCE: the candidate\\nexplanatory variables",
+   "source": "DCE-STATMOD-2015",
+   "said": "Oversigt over de forklaringsvariable, som er benyttet i udviklingen af de statistiske modeller",
+   "detail": "Their table of candidates: nitrogen and phosphorus input, freshwater input, wind stress, irradiance, salinity, water-column stability and surface temperature."
+  },
+  {
+   "id": "E-ML-DCE-PERIODS",
+   "kind": "external",
+   "label": "DCE: each candidate over\\nmany period windows",
+   "source": "DCE-STATMOD-2015",
+   "said": "Forklaringsvariablerne er inddelt i periodelænger på",
+   "detail": "Each candidate is offered over windows of several lengths, stepped back a month at a time, so one variable enters the search many times over."
+  },
+  {
+   "id": "E-ML-DCE-SPLIT",
+   "kind": "external",
+   "label": "DCE: calibration and\\nvalidation data",
+   "source": "DCE-STATMOD-2015",
+   "said": "Datasættet for indikatoren inddeles i et kalibreringsdatasæt og et valideringsdatasæt",
+   "detail": "The data for each indicator are split into a calibration part and a validation part."
+  },
+  {
+   "id": "E-ML-DCE-CV",
+   "kind": "external",
+   "label": "DCE: cross-validated\\nregression",
+   "source": "DCE-STATMOD-2015",
+   "said": "krydsvalideret multipel lineær regressions metode",
+   "detail": "Variables are chosen by cross-validated multiple linear regression, scored by the cross-validated error."
+  },
+  {
+   "id": "E-ML-DCE-STEPWISE",
+   "kind": "external",
+   "label": "DCE: stepwise, one\\nvariable at a time",
+   "source": "DCE-STATMOD-2015",
+   "said": "blandt de resterende forklaringsvariable udvælges den",
+   "detail": "The variable with the lowest cross-validated error is taken first, then the best of the rest, each variable at most once."
+  },
+  {
+   "id": "E-ML-DCE-NTERMS",
+   "kind": "external",
+   "label": "DCE: how many variables",
+   "source": "DCE-STATMOD-2015",
+   "said": "Det endelige antal af forklaringsvariable i modellen bestemmes ud fra en vægtning mellem forklaringskraft baseret på kalibreringsdatasættet",
+   "detail": "The number of variables is set by weighing the fit on the calibration data against the fit when the independent validation data are included."
+  },
+  {
+   "id": "E-ML-DCE-VALIDATE",
+   "kind": "external",
+   "label": "DCE: evaluated on\\nvalidation data",
+   "source": "DCE-STATMOD-2015",
+   "said": "PLS regression på de udvalgte variable og modellen evalueres ved brug af",
+   "detail": "After selection a PLS regression is fitted on the chosen variables and the model is evaluated on the validation data."
+  },
+  {
+   "id": "E-ML-DCE-REFIT",
+   "kind": "external",
+   "label": "DCE: final fit on all data",
+   "source": "DCE-STATMOD-2015",
+   "said": "Hvis modellen godkendes sker den endelige model parametrisering ved brug af det samlede datasæt",
+   "detail": "An approved model is refitted on the whole data set; otherwise the choice of variables is revised."
+  },
+  {
+   "id": "E-ML-DCE-OVERALL",
+   "kind": "external",
+   "label": "DCE: several acceptance\\ncriteria",
+   "source": "DCE-STATMOD-2015",
+   "said": "Den samlede vurdering af modellerne er baseret på",
+   "detail": "The overall judgement rests on the mean absolute deviation, the R², systematic deviations over time, the fit from the mid-two-thousands on, year-to-year variation, the number of data points and special events."
+  },
+  {
+   "id": "E-ML-DCE-MEAN",
+   "kind": "external",
+   "label": "DCE: mean R²\\nacross model types",
+   "source": "DCE-STATMOD-2015",
+   "said": "Determinationskoefficienterne for alle modeltyperne har et gennemsnit på",
+   "detail": "Stated in their results, beside the mean absolute deviations."
+  },
+  {
+   "id": "E-ML-FLOOD-CKAN",
+   "kind": "external",
+   "label": "Dataset record:\\nflood scenarios from the\\ncloudburst plans",
+   "source": "FLOOD2012-CKAN",
+   "said": "skybrudskonkretiseringerne for vandoplande",
+   "detail": "The city's record on opendata.dk describes the dataset as flood scenarios from the cloudburst plans for each catchment."
+  },
+  {
+   "id": "E-ML-FLOOD-CALC",
+   "kind": "external",
+   "label": "Dataset record:\\nbased on calculations",
+   "source": "FLOOD2012-CKAN",
+   "said": "beregninger",
+   "detail": "The same record says the scenarios are based on calculations (beregninger); it names no model."
+  },
+  {
+   "id": "E-ML-FLOOD-SHEET",
+   "kind": "external",
+   "label": "Sheet title: a flood map\\nat a design event",
+   "source": "FLOOD2012-AMAGER",
+   "said": "Oversvømmelseskort for Amager vandopland ved en",
+   "detail": "Each sheet is titled a flood map for its catchment at a hundred-year event - a design event, not a recorded one."
+  },
+  {
+   "id": "U-ML-FLOOD-MODELTYPE",
+   "kind": "untraced",
+   "label": "Trail ends: which model\\nmade the sheets",
+   "detail": "Searched on 11 September 2026: the dataset record on opendata.dk, the legend text of the Amager sheet, floodmaps.py and this repository's documents. None names the model, the terrain it ran over, or whether it included the sewers. floodmaps.py calls it a 2D surface flood model without a source. The cloudburst plan documents themselves were not searched."
+  },
+  {
+   "id": "U-ML-CATCHMENT-RULE",
+   "kind": "untraced",
+   "label": "Trail ends: no rule for\\nofficial catchments written down",
+   "detail": "Searched on 11 September 2026: docs/, scripts/, README.md, CLAUDE.md and LIVE_NUMBERS.md for 'sanity check', 'official catchment' and 'delineation'. The only statement of the rule was the METHOD_LAB sentence itself, and no flow model exists yet to apply it to."
+  },
+  {
+   "id": "U-ML-SERIES-TEST",
+   "kind": "untraced",
+   "label": "Trail ends: the candidate\\nseries were never tested",
+   "detail": "The repository holds none of DCE's candidate series and tests none for autocorrelation or trend. OBSERVING.md says the nutrient drivers declined over the fitting period but cites no source for it."
+  },
+  {
+   "id": "U-ML-DCE-R2-DATA",
+   "kind": "untraced",
+   "label": "Trail ends: which data\\nDCE's R² is measured on",
+   "detail": "The pinned report describes a calibration part and a held-out validation part, evaluation on the validation part and a final refit on all data, and calls its results table validation results - but it does not say whether the R² it reports is computed on the held-out part or on all the data. For details it refers to two earlier reports, which this project does not hold."
+  },
+  {
+   "id": "U-ML-DCE-MAXTERMS",
+   "kind": "untraced",
+   "label": "Trail ends: why at most\\nthree terms",
+   "detail": "The report states no maximum number of variables. The replication's maximum is the largest selected set in the report's results table as read here; no stored script reproduces that reading."
+  },
+  {
+   "id": "H-ML-OLD-MINUTES",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "Each of these was found in this project's own work"
+  },
+  {
+   "id": "H-ML-OLD-NOISE-SCALES",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "The detection limit above scales"
+  },
+  {
+   "id": "H-ML-OLD-NOISE-HISTORY",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "version asserted"
+  },
+  {
+   "id": "H-ML-OLD-NOISE-CONSERVATIVE",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "The bias runs"
+  },
+  {
+   "id": "H-ML-OLD-NOISE-CONSTRUCTION",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "The estimate is now taken only"
+  },
+  {
+   "id": "H-ML-OLD-FLOOD",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "sheets are the output of somebody's hydraulic model run over a terrain"
+  },
+  {
+   "id": "H-ML-OLD-CATCHMENT",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "which is the same rule this project applies to official catchment"
+  },
+  {
+   "id": "H-ML-OLD-BORROW-SHARE",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "analysing the hour.**"
+  },
+  {
+   "id": "H-ML-OLD-DEPTHCLOCK",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "`scripts/depth_clock.py` therefore treats supplied field-sheet times as a"
+  },
+  {
+   "id": "H-ML-OLD-TUNING",
+   "kind": "history",
+   "label": "METHOD_LAB.md as last committed",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "reproduces an official product, agreement with that product stops being"
+  },
+  {
+   "id": "H-ML-OLD-EXACT-DESIGN",
+   "kind": "history",
+   "label": "OBSERVING.md as last committed",
+   "commit": "4469fc7",
+   "file": "docs/OBSERVING.md",
+   "said": "That is a best-subset search over"
+  },
+  {
+   "id": "H-ML-OLD-DECLINE",
+   "kind": "history",
+   "label": "OBSERVING.md as last committed",
+   "commit": "4469fc7",
+   "file": "docs/OBSERVING.md",
+   "said": "Annual marine and climate series are autocorrelated"
+  },
+  {
+   "id": "H-ML-OLD-NOT-DISTINGUISHABLE",
+   "kind": "history",
+   "label": "OBSERVING.md as last committed",
+   "commit": "4469fc7",
+   "file": "docs/OBSERVING.md",
+   "said": "That is not distinguishable from the noise floor"
+  },
+  {
+   "id": "H-ML-OLD-PROBABLY-REAL",
+   "kind": "history",
+   "label": "OBSERVING.md as last committed",
+   "commit": "4469fc7",
+   "file": "docs/OBSERVING.md",
+   "said": "Several are probably real"
+  },
+  {
+   "id": "H-ML-OLD-NO-EVIDENCE",
+   "kind": "history",
+   "label": "OBSERVING.md as last committed",
+   "commit": "4469fc7",
+   "file": "docs/OBSERVING.md",
+   "said": "What it shows is that the reported"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-ML-CIRC-INTRO",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "Each item in this register is a way a check on the method can pass without testing what it seems to test, and the failure is silent: a circular check passes.",
+   "because": "A check that uses the thing under test to judge itself cannot fail on account of that thing, and nothing in its output shows that it could not have failed.",
+   "rests_on": [],
+   "replaces": [
+    "C-ML-OLD-MINUTES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "Each item below is a way a check on this project's methods can pass without testing what it seems to test. The failure is silent: a circular check passes.",
+     "texts": "6107ef7a6fdcfc03"
+    }
+   }
+  },
+  {
+   "id": "C-ML-NOISE-CIRC",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The bound depends on an estimate of the noise the estimator must see through. Taken from the archive's within-cell residual, that estimate would contain whatever diurnal signal exists, so a large real cycle would inflate the yardstick used to rule it out - and a noisier null reaches the observed spread more often, so the bias would favour this page's conclusion that the spread is not a cycle.",
+   "because": "In detectable.py the noise enters every synthetic value, so every recovery, and the bound, depend on it. A residual taken within a cell that spans several sun bins includes the diurnal difference between those bins. With no cycle imposed, every synthetic value is a constant plus noise, so each draw's spread grows in proportion to the noise and the share of draws reaching the observed spread can only rise with it. This replaces earlier wording, retired to the archive, that said the bias ran conservative.",
+   "rests_on": [
+    "X-DETECT",
+    "S-DETECT"
+   ],
+   "replaces": [
+    "C-ML-OLD-NOISE-HISTORY",
+    "C-ML-OLD-NOISE-SCALES",
+    "C-ML-OLD-NOISE-CONSERVATIVE"
+   ],
+   "basis": "assessed",
+   "note": "No stored run shows which way an inflated noise moves the bound itself: more noise raises the draws' median and widens their scatter, which push in opposite directions.",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "The bound above depends on an estimate of the noise the estimator must see through. Taken as the archive's within-cell residual spread, that estimate would contain whatever diurnal signal exists, so a large real cycle would inflate the yardstick used to rule a large real cycle out - and a noisier null reaches the observed spread more often, so the bias would favour this page's conclusion that the spread is not a cycle.",
+     "texts": "b07b6c3f46dfd7ee",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node S-DETECT": "0b76ae62cc582070"
+    }
+   }
+  },
+  {
+   "id": "C-ML-NOISE-NOW",
+   "kind": "code",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The noise is taken only from samples whose window neighbours all fall in their own sun-elevation bin, so only the diurnal variation inside one bin can enter it.",
+   "because": "noise_where_no_signal() in detectable.py keeps a sample's residual only when every sample of its station within the window shares its sun bin, and scales it to the spread of one value. A bin still spans a range of sun elevations, so a cycle can move the values inside it a little: the estimate is protected from the diurnal difference between bins, not from all diurnal variation.",
+   "rests_on": [
+    "X-DETECT",
+    "D-KEMI",
+    "A-NOISE"
+   ],
+   "replaces": [
+    "C-ML-OLD-NOISE-CONSTRUCTION"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "A-NOISE.label {fig:det_noise}": "0.8427",
+     "said on METHOD_LAB.md": "The noise is therefore taken only from samples whose window neighbours all fall in their own sun-elevation bin, so only the diurnal variation inside one bin can enter it.",
+     "texts": "f9a7851395da8a9c",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node A-NOISE": "3f3e8b813bc6e44c"
+    }
+   }
+  },
+  {
+   "id": "C-ML-ONE-ESTIMATOR",
+   "kind": "code",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The simulation is compared with the observation through one estimator called on both sides: the observed spread and every synthetic recovery come from cycles.deviations(), with the same window, the same sun bins and the same rule for which bins count, over {fig:det_draws} noise draws per amplitude.",
+   "because": "main() in detectable.py computes the observed spread with deviations() and spread() on the real samples; recover() calls the same two functions on the synthetic values; both use the same WINDOW and MIN_BIN_N, and the sun bins of both come from cycles.sun_bin.",
+   "rests_on": [
+    "X-DETECT",
+    "X-CYCLES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:det_draws}": "40",
+     "said on METHOD_LAB.md": "The two are compared through one estimator called on both sides: the observed spread and every synthetic recovery come from `cycles.deviations()`, with the same window, the same sun bins and the same rule for which bins count, over 40 noise draws per amplitude.",
+     "texts": "33acd67aa54dda81",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node X-CYCLES": "bd95d60d0d6bcb33"
+    }
+   }
+  },
+  {
+   "id": "C-ML-FLOOD-MODEL",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "METHOD_LAB.md",
+   "claim": "The 2012 Copenhagen sheets are calculated flood scenarios for a hundred-year event, published by Københavns Kommune - the output of a model, not a record of flooding. What model, over what terrain, and whether it included the sewers, is not stated in anything this project holds.",
+   "because": "Their description, as far as found: the city's dataset record calls them flood scenarios from the cloudburst plans for each catchment, based on calculations, and each sheet is titled a flood map for its catchment at a hundred-year event, which is a design event rather than a recorded one. Neither names the model. This project's own terrain check finds the modelled flooding in ordinary rather than low streets on every sheet; one explanation it gives is a model of the sewers as well as the surface.",
+   "rests_on": [
+    "E-ML-FLOOD-CKAN",
+    "E-ML-FLOOD-CALC",
+    "E-ML-FLOOD-SHEET",
+    "D-SHEETS",
+    "X-TERRAINCHECK",
+    "U-ML-FLOOD-MODELTYPE"
+   ],
+   "replaces": [
+    "C-ML-OLD-FLOOD"
+   ],
+   "basis": "assessed",
+   "holder": "Københavns Kommune (the dataset record and the sheet titles)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-SHEETS.label {fig:conv_n_sheets}": "7",
+     "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91",
+     "said on METHOD_LAB.md": "The 2012 Copenhagen sheets are calculated flood scenarios for a hundred-year event, published by Københavns Kommune: the output of a model, not a record of flooding. Which model, over what terrain, and whether it included the sewers, is not stated in anything this project holds.",
+     "texts": "32e850a8ca7d8929",
+     "node E-ML-FLOOD-CKAN": "6f22daf295943994",
+     "pinned FLOOD2012-CKAN": "e4c1819605e16e7b",
+     "node E-ML-FLOOD-CALC": "a85914b5ae80115d",
+     "node E-ML-FLOOD-SHEET": "6632fd49d9ae8e13",
+     "pinned FLOOD2012-AMAGER": "1045cc4c84324598",
+     "node D-SHEETS": "15d74fbee34cafef",
+     "node X-TERRAINCHECK": "d4d4586ba14ad148",
+     "node U-ML-FLOOD-MODELTYPE": "d5c9035dde498113"
+    }
+   }
+  },
+  {
+   "id": "C-ML-FLOW-VS-FLOOD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "Scoring a terrain-driven flow model against the 2012 sheets measures agreement with another model, not correctness against the world, so the sheets can serve as a sanity check and not as truth.",
+   "because": "Agreement between two models tests each against the other's assumptions, not against water on the ground. That the sheets may also model the sewers makes them a weaker referee for a terrain-only model, not a stronger one.",
+   "rests_on": [
+    "C-ML-FLOOD-MODEL"
+   ],
+   "replaces": [
+    "C-ML-OLD-FLOOD"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "Scoring a terrain-driven flow model against them measures agreement with another model, not correctness against the world, so they can serve as a sanity check and not as truth.",
+     "texts": "9688b695424eff2a",
+     "rests on C-ML-FLOOD-MODEL": "32e850a8ca7d8929"
+    }
+   }
+  },
+  {
+   "id": "C-ML-CATCHMENT-RULE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The same will hold for official catchment delineations when this project's own flow model is scored against them: agreement will be a sanity check, not a validation.",
+   "because": "Official delineations are themselves the product of a method, so agreement with them is agreement with that method - the argument for the flood sheets applies unchanged. It is a rule this project sets itself; no flow model has yet been scored against them.",
+   "rests_on": [
+    "C-ML-FLOW-VS-FLOOD",
+    "U-ML-CATCHMENT-RULE"
+   ],
+   "replaces": [
+    "C-ML-OLD-CATCHMENT"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "The same will hold for official catchment delineations when this project's own flow model is scored against them: agreement will be a sanity check, not a validation.",
+     "texts": "54bd40e54a2d1258",
+     "rests on C-ML-FLOW-VS-FLOOD": "9688b695424eff2a",
+     "node U-ML-CATCHMENT-RULE": "7492dbeb4b879c4c"
+    }
+   }
+  },
+  {
+   "id": "C-ML-BORROW-ARTEFACT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact of the borrowing.",
+   "because": "A cast is placed at the time of the bottle whose clock it borrows. A systematic offset moves every cast's sun elevation by an amount that depends on the hour - the sun climbs fastest after sunrise and not at all at noon - so the bin a measurement lands in is shifted in a way tied to the time of day, which is the axis being analysed. Nothing held says whether such an offset exists; supplied cast times would.",
+   "rests_on": [
+    "A-BORROW",
+    "G-CLOCK"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact of the borrowing.",
+     "texts": "fd778f585e282500",
+     "node A-BORROW": "58b2399fcb372723",
+     "node G-CLOCK": "fd58235dd1ee3c3e"
+    }
+   }
+  },
+  {
+   "id": "C-ML-DEPTHCLOCK-CHECK",
+   "kind": "code",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "scripts/depth_clock.py uses supplied field-sheet times where they exist and, where a cast has both a supplied and a borrowed time, reports the distribution of the offset between them - so supplied times check the borrowed clock as well as replacing it. Until such times exist it reports the check as not run instead of reporting an unchecked number as a result.",
+   "because": "main() takes the supplied clock first and falls back to the borrowed one; it collects offsets only where both exist and writes their median and spread as borrowed_clock_check; with no supplied file it writes that field empty and logs that the borrowed clock is unchecked. data/dropin holds no ctd_visit_times.csv, only its README.",
+   "rests_on": [
+    "X-DEPTHCLOCK",
+    "G-CLOCK"
+   ],
+   "replaces": [
+    "C-ML-OLD-DEPTHCLOCK"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "`scripts/depth_clock.py` therefore uses supplied field-sheet times where they exist and, where a cast has both a supplied and a borrowed time, reports the distribution of the offset between them - so supplied times check the borrowed clock as well as replacing it. Until such times exist it reports the check as not run, instead of reporting an unchecked number as a result.",
+     "texts": "013147ed7db05c9f",
+     "node X-DEPTHCLOCK": "947d7a76ced89e8a",
+     "node G-CLOCK": "fd58235dd1ee3c3e"
+    }
+   }
+  },
+  {
+   "id": "C-ML-TUNING",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "If a model is adjusted until it reproduces an official product, agreement with that product stops being evidence that the model is right. It is written down here in advance because the temptation arrives later, at the moment a divergence appears and looks like a mistake.",
+   "because": "Agreement is evidence only when disagreement was possible. A model tuned until it agrees could not have disagreed, so the agreement records the tuning - and the model takes on whatever errors the product has.",
+   "rests_on": [],
+   "replaces": [
+    "C-ML-OLD-TUNING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "If a model is adjusted until it reproduces an official product, agreement with that product stops being evidence that the model is right. It is written down here in advance because the temptation arrives later, at the moment a divergence appears and looks like a mistake.",
+     "texts": "cdd6fdddf70eba70"
+    }
+   }
+  },
+  {
+   "id": "C-ML-DCE-SCOPE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "METHOD_LAB.md",
+   "claim": "DCE built statistical models to calculate how far nutrient inputs must fall for Danish fjords and coastal waters to reach good ecological status, at {read:DCE-STATMOD-2015:29|statistiske modeller for 29 kystnære overvågningsstationer} coastal monitoring stations representing {read:DCE-STATMOD-2015:22|som repræsenterer 22 vandområder} water bodies.",
+   "because": "Stated in the report's introduction, where it describes what the models and methods were developed for.",
+   "rests_on": [
+    "E-ML-DCE-SCOPE"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:DCE-STATMOD-2015:29|statistiske modeller for 29 kystnære overvågningsstationer}": "29",
+     "claim {read:DCE-STATMOD-2015:22|som repræsenterer 22 vandområder}": "22",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "said on METHOD_LAB.md": "[OBSERVING.md](OBSERVING.md) examines the statistical models DCE built to calculate how far nutrient inputs must fall for Danish fjords and coastal waters to reach good ecological status, at 29 coastal monitoring stations representing 22 water bodies.",
+     "texts": "22a2ae978857634c",
+     "node E-ML-DCE-SCOPE": "290395952049dc26"
+    }
+   }
+  },
+  {
+   "id": "C-ML-DCE-METHOD",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "METHOD_LAB.md",
+   "claim": "DCE choose each model's variables by stepwise, cross-validated regression on a calibration part of the data, offering each candidate - nutrient and freshwater inputs, wind, light, salinity, stratification, temperature - over up to {read:DCE-STATMOD-2015:43|op til 43 månedsintervaller} period windows; they set the number of variables by weighing calibration against validation performance, evaluate the model on held-out data, refit it on all the data, and accept it on several criteria, of which an R² of at least {read:DCE-STATMOD-2015:0.4|kriteriet for dette statistiske mål er tentativt sat til mindst 0,4} is one.",
+   "because": "Their reasons, as far as found: the report describes the procedure but gives no reason for its thresholds, which it calls tentative, and for the details it refers to two earlier reports this project does not hold.",
+   "rests_on": [
+    "E-ML-DCE-TABLE2",
+    "E-ML-DCE-PERIODS",
+    "E-ML-DCE-SPLIT",
+    "E-ML-DCE-CV",
+    "E-ML-DCE-STEPWISE",
+    "E-ML-DCE-NTERMS",
+    "E-ML-DCE-VALIDATE",
+    "E-ML-DCE-REFIT",
+    "E-ML-DCE-OVERALL"
+   ],
+   "replaces": [
+    "C-ML-OLD-EXACT-DESIGN"
+   ],
+   "basis": "assessed",
+   "note": "Read in the original. It replaces a description, retired to the archive, of an exhaustive best-subset search accepted on R² alone with no out-of-sample validation.",
+   "holder": "DCE, Aarhus University",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:DCE-STATMOD-2015:43|op til 43 månedsintervaller}": "43",
+     "claim {read:DCE-STATMOD-2015:0.4|kriteriet for dette statistiske mål er tentativt sat til mindst 0,4}": "0.4",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "said on METHOD_LAB.md": "DCE choose each model's variables by stepwise, cross-validated regression on a calibration part of the data, offering each candidate - nutrient and freshwater inputs, wind, light, salinity, stratification, temperature - over up to 43 period windows. They set the number of variables by weighing calibration against validation performance, evaluate the model on held-out data, refit it on all the data, and accept it on several criteria, of which an $R^2$ of at least 0.4 is one.",
+     "texts": "f81eee8421f28424",
+     "node E-ML-DCE-TABLE2": "76013bc25bd6a268",
+     "node E-ML-DCE-PERIODS": "92a6fdb97a642fe4",
+     "node E-ML-DCE-SPLIT": "23c1c42543e949de",
+     "node E-ML-DCE-CV": "bcf8130337ae981f",
+     "node E-ML-DCE-STEPWISE": "bf9d362cbfca8aae",
+     "node E-ML-DCE-NTERMS": "148981f5cfe32e68",
+     "node E-ML-DCE-VALIDATE": "ecb6be078bcba423",
+     "node E-ML-DCE-REFIT": "ef9700b7bf764143",
+     "node E-ML-DCE-OVERALL": "314331a661a37b1e"
+    }
+   }
+  },
+  {
+   "id": "C-ML-REPLICATION",
+   "kind": "code",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The simulation does not run DCE's procedure. It runs a simpler one: an exhaustive search over every set of up to {fig:nf_max_terms} of {fig:nf_candidates} candidates, {fig:nf_subsets} sets in all, scored by in-sample R², with no period windows, no cross-validation and no held-out data. The computation is noise_floor() in scripts/observing.py.",
+   "because": "The two simplifications pull in opposite directions. Offering each candidate over many period windows would give noise more chances than this search does; selecting on cross-validated error and checking against held-out data would reject much of what an in-sample search accepts. Which dominates for DCE's procedure has not been simulated.",
+   "rests_on": [
+    "X-OBSERVING",
+    "C-ML-DCE-METHOD",
+    "U-ML-DCE-MAXTERMS"
+   ],
+   "replaces": [
+    "C-ML-OLD-EXACT-DESIGN"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:nf_max_terms}": "3",
+     "claim {fig:nf_candidates}": "8",
+     "claim {fig:nf_subsets}": "92",
+     "said on METHOD_LAB.md": "The simulation below does not run that procedure. It runs a simpler one: an exhaustive search over every set of up to 3 of 8 candidates, 92 sets in all, scored by in-sample $R^2$, with no period windows, no cross-validation and no held-out data. The two simplifications pull in opposite directions: period windows would give noise more chances than this search does, while cross-validated selection and a held-out check would reject much of what an in-sample search accepts. The computation is `noise_floor()` in `scripts/observing.py`, run 400 times per condition on pure noise:",
+     "texts": "6161767b42917617",
+     "node X-OBSERVING": "4c2a76225e1392ba",
+     "rests on C-ML-DCE-METHOD": "f81eee8421f28424",
+     "node U-ML-DCE-MAXTERMS": "f8c4887ade9642c7"
+    }
+   }
+  },
+  {
+   "id": "C-ML-SERIES-DECLINE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The rows with a shared decline stipulate candidate series that are autocorrelated and fall together over the fitting period. That is a chosen condition, not a measured one: no candidate series has been tested for either here, and the candidates include wind, light, salinity, stratification and temperature as well as the nutrient inputs.",
+   "because": "observing.py fixes the autocorrelation and the size of the shared decline in NOISE_CASES; nothing in the repository estimates either from DCE's series, which it does not hold. A shared decline is plausible for the nutrient inputs over the fitting period but is not shown here even for them.",
+   "rests_on": [
+    "A-ML-SERIES",
+    "E-ML-DCE-TABLE2",
+    "U-ML-SERIES-TEST"
+   ],
+   "replaces": [
+    "C-ML-OLD-DECLINE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "The rows with a shared decline stipulate candidate series that are autocorrelated and fall together over the fitting period. That is a chosen condition, not a measured one: no candidate series has been tested for either here, and the candidates include wind, light, salinity, stratification and temperature as well as the nutrient inputs.",
+     "texts": "499973a02e632d2c",
+     "node A-ML-SERIES": "e59791316db59e38",
+     "node E-ML-DCE-TABLE2": "76013bc25bd6a268",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node U-ML-SERIES-TEST": "6fad705e1009c868"
+    }
+   }
+  },
+  {
+   "id": "C-ML-NOISE-FLOOR",
+   "kind": "simulated",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "In that simplified search on pure noise, under the shared-decline condition, the median best R² is {fig:nf_med_decl} with {fig:nf_n_decl} points and {fig:nf_med_min} with {fig:nf_n_min}, and {calc:nf_pass_decl * 100|.0f}% to {calc:nf_pass_min * 100|.0f}% of noise models clear an R² of {fig:nf_accept}.",
+   "because": "noise_floor() draws a pure-noise target and pure-noise candidates, runs the search, keeps the best R², and repeats this {fig:nf_trials} times for each condition. It holds for the simplified search only.",
+   "rests_on": [
+    "S-ML-NOISEFLOOR",
+    "X-OBSERVING",
+    "A-ML-SERIES",
+    "C-ML-REPLICATION"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:nf_med_decl}": "0.56",
+     "claim {fig:nf_n_decl}": "20",
+     "claim {fig:nf_med_min}": "0.66",
+     "claim {fig:nf_n_min}": "15",
+     "claim {calc:nf_pass_decl * 100|.0f}": "82",
+     "claim {calc:nf_pass_min * 100|.0f}": "90",
+     "claim {fig:nf_accept}": "0.4",
+     "because {fig:nf_trials}": "400",
+     "said on METHOD_LAB.md": "Under that condition the median best $R^2$ from pure noise is 0.56–0.66, and 82–90% of noise models clear an $R^2$ of 0.4.",
+     "texts": "653098afe7d6c0b9",
+     "node S-ML-NOISEFLOOR": "140e9e4612f1b8f9",
+     "node X-OBSERVING": "4c2a76225e1392ba",
+     "node A-ML-SERIES": "e59791316db59e38",
+     "rests on C-ML-REPLICATION": "6161767b42917617"
+    }
+   }
+  },
+  {
+   "id": "C-ML-DCE-MEAN",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "METHOD_LAB.md",
+   "claim": "DCE report a mean R² of {read:DCE-STATMOD-2015:0.56|har et gennemsnit på 0,56} across their models.",
+   "because": "Stated in the report's results, beside the mean absolute deviations. The report does not say whether this R² is measured on the held-out part of the data or on all of it after the final refit.",
+   "rests_on": [
+    "E-ML-DCE-MEAN",
+    "U-ML-DCE-R2-DATA"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:DCE-STATMOD-2015:0.56|har et gennemsnit på 0,56}": "0.56",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "said on METHOD_LAB.md": "DCE report a mean $R^2$ of 0.56 across their models.",
+     "texts": "6a5de15f4b83c0e9",
+     "node E-ML-DCE-MEAN": "fbfb330301193977",
+     "node U-ML-DCE-R2-DATA": "b39eeeb0d003dc11"
+    }
+   }
+  },
+  {
+   "id": "C-ML-NOT-FALSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "None of this shows that DCE's relations are false.",
+   "because": "A criterion that noise can meet says nothing either way about a relation that meets it, so it cannot count against the relation.",
+   "rests_on": [],
+   "replaces": [
+    "C-ML-OLD-PROBABLY-REAL"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "None of this shows that DCE's relations are false.",
+     "texts": "c9592416d98018b9"
+    }
+   }
+  },
+  {
+   "id": "C-ML-R2-NO-EVIDENCE",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "An R² of {fig:nf_accept} is no hurdle for the simplified search on autocorrelated noise, which clears it more often than not. Whether DCE's reported R² carries evidence depends on whether it was measured on held-out data, which the report does not say; until that is known this is a statement about a selection procedure, not about the water.",
+   "because": "A best R² from a search, measured on the data the search used, is inflated by the search, and the simulation shows how far for the simplified one. An R² measured on data held out from the selection is not inflated that way: a model of noise would score near or below zero on it.",
+   "rests_on": [
+    "C-ML-NOISE-FLOOR",
+    "C-ML-DCE-METHOD",
+    "C-ML-DCE-MEAN",
+    "U-ML-DCE-R2-DATA"
+   ],
+   "replaces": [
+    "C-ML-OLD-NOT-DISTINGUISHABLE",
+    "C-ML-OLD-NO-EVIDENCE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:nf_accept}": "0.4",
+     "said on METHOD_LAB.md": "An $R^2$ of 0.4 is no hurdle for the simplified search on autocorrelated noise, which clears it more often than not. Whether DCE's reported $R^2$ carries evidence depends on whether it was measured on held-out data, which the report does not say; until that is known, this is a statement about a selection procedure, not about the water.",
+     "texts": "8bb509d3f1cdf3cc",
+     "rests on C-ML-NOISE-FLOOR": "653098afe7d6c0b9",
+     "rests on C-ML-DCE-METHOD": "f81eee8421f28424",
+     "rests on C-ML-DCE-MEAN": "6a5de15f4b83c0e9",
+     "node U-ML-DCE-R2-DATA": "b39eeeb0d003dc11"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-MINUTES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every item in the circularity register was found in this project's own work, most within minutes of writing it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "Each of these was found in this project's own work",
+    "end": "minutes of writing it.",
+    "why": "No record says when each item was found, and the register also holds a hazard written down in advance, which was not found in the work at all."
+   },
+   "replaced_by": [
+    "C-ML-CIRC-INTRO"
+   ],
+   "rests_on": [
+    "H-ML-OLD-MINUTES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Each of these was found in this project's own work, most of it within minutes of writing it.",
+     "texts": "ce178bc30f286208",
+     "node H-ML-OLD-MINUTES": "fe33acc2ce12e449"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NOISE-SCALES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The detection limit scales with the noise estimate.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "The detection limit above scales",
+    "end": "an estimator must see through.",
+    "why": "The bound is not proportional to the noise estimate: more noise raises the draws' median and widens their scatter, which push in opposite directions, and no stored run shows the net. What can be justified is that the bound depends on it."
+   },
+   "replaced_by": [
+    "C-ML-NOISE-CIRC"
+   ],
+   "rests_on": [
+    "H-ML-OLD-NOISE-SCALES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The detection limit above scales with an estimate of the noise an estimator must see through.",
+     "texts": "0bada9444387a6f1",
+     "node H-ML-OLD-NOISE-SCALES": "b59ec3e1a865b4d9"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NOISE-HISTORY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The first noise estimate was asserted, and the second was a within-cell residual that contained the signal.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "version asserted",
+    "end": "to rule a large real cycle out.",
+    "why": "About this project's own past and not needed to read the method: the reader needs the hazard, which the replacement states. Its only record is the comment detectable.py carried when it was first committed; the first two versions were never committed."
+   },
+   "replaced_by": [
+    "C-ML-NOISE-CIRC"
+   ],
+   "rests_on": [
+    "H-ML-OLD-NOISE-HISTORY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "version asserted 0.8 mg/l, which made the bound only as good as a guess. The second measured the archive's within-cell residual spread - and that residual *contains whatever diurnal signal exists*, so a large real cycle would have inflated the yardstick used to rule a large real cycle out.",
+     "texts": "a46c2d03999af6db",
+     "node H-ML-OLD-NOISE-HISTORY": "21f575059ae1aecf"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NOISE-CONSERVATIVE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The bias from the circular noise estimate ran conservative, so it could have stood for years unnoticed.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "The bias runs",
+    "end": "stood for years unnoticed.",
+    "why": "Not supported. In this estimator a noisier null reaches the observed spread more often, which favours the page's own conclusion that the spread is not a cycle; conservative holds only for what the schedule can detect. Nothing supports 'for years'."
+   },
+   "replaced_by": [
+    "C-ML-NOISE-CIRC"
+   ],
+   "rests_on": [
+    "H-ML-OLD-NOISE-CONSERVATIVE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The bias runs conservative, which is exactly why it could have stood for years unnoticed.",
+     "texts": "1e273d9c031ec04c",
+     "node H-ML-OLD-NOISE-CONSERVATIVE": "fb5fe99e82764638"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NOISE-CONSTRUCTION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The noise is taken from single-sun-bin cells, where no diurnal variance can enter by construction.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "The estimate is now taken only",
+    "end": "no diurnal variance can enter by construction.",
+    "why": "Overstated, and the method has changed since: the noise now comes from samples whose moving-window neighbours share their sun bin, not from fixed cells, and a bin spans a range of sun elevations, so diurnal variation inside one bin can still enter."
+   },
+   "replaced_by": [
+    "C-ML-NOISE-NOW"
+   ],
+   "rests_on": [
+    "H-ML-OLD-NOISE-CONSTRUCTION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The estimate is now taken only from cells whose samples all fall in one sun-elevation bin, where no diurnal variance can enter by construction.",
+     "texts": "27190abfd160c134",
+     "node H-ML-OLD-NOISE-CONSTRUCTION": "ece43f95e923a72e"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-FLOOD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The 2012 sheets are the output of a hydraulic model run over a terrain model, so scoring a flow model against them compares two implementations of similar physics.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "sheets are the output of somebody's hydraulic model run over a terrain",
+    "end": "agreement between two implementations of similar physics",
+    "why": "What model produced the sheets is not stated in anything this project holds, and the project's own terrain check suggests they may not follow the terrain alone, so 'similar physics' is not established."
+   },
+   "replaced_by": [
+    "C-ML-FLOOD-MODEL",
+    "C-ML-FLOW-VS-FLOOD"
+   ],
+   "rests_on": [
+    "H-ML-OLD-FLOOD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "sheets are the output of somebody's hydraulic model run over a terrain model. Scoring a new terrain-driven flow model against them measures agreement between two implementations of similar physics",
+     "texts": "04fb223e62245990",
+     "node H-ML-OLD-FLOOD": "38fac0237656a9fd"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-CATCHMENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Treating model output as a sanity check rather than truth is a rule this project already applies to official catchment delineations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "which is the same rule this project applies to official catchment",
+    "end": "delineations, for the same reason.",
+    "why": "No such rule is written anywhere else in the repository, and no flow model has yet been scored against official delineations. The rule is now stated as one the project sets itself."
+   },
+   "replaced_by": [
+    "C-ML-CATCHMENT-RULE"
+   ],
+   "rests_on": [
+    "H-ML-OLD-CATCHMENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "which is the same rule this project applies to official catchment delineations, for the same reason.",
+     "texts": "386de2b895e33d56",
+     "node H-ML-OLD-CATCHMENT": "0bf8e2f12303fcbd"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-BORROW-SHARE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A fixed share of CTD station-days can take a time from a same-day water-chemistry bottle, because nearly all of them carry a single one.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "analysing the hour.**",
+    "end": "station-days carry a single one.",
+    "why": "Its justification was not recorded properly: the share was typed into prose - DATA_SOURCES.md and the docstring of depth_clock.py carried it too - and no script in the repository computes it. Since scripts/clock.py stopped lending filled-in default and mixed-convention clocks it no longer describes what depth_clock.py does; the counts depth_clock.py writes replace it."
+   },
+   "replaced_by": [
+    "C-DEPTH-BORROW"
+   ],
+   "rests_on": [
+    "H-ML-OLD-BORROW-SHARE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "analysing the hour. 80% of CTD station-days can take a time from a same-day water-chemistry bottle, because 99% of those station-days carry a single one.",
+     "texts": "f68aafa7317ebad3",
+     "node H-ML-OLD-BORROW-SHARE": "5915f0de48bccff5"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-DEPTHCLOCK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "depth_clock.py treats supplied field-sheet times as a check on the borrowed clock rather than a replacement for it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "`scripts/depth_clock.py` therefore treats supplied field-sheet times as a",
+    "end": "*check* on the borrowed clock rather than a replacement for it",
+    "why": "Inexact: the code uses supplied times in place of the borrowed clock for the casts they cover, and checks the borrowed clock where a cast has both."
+   },
+   "replaced_by": [
+    "C-ML-DEPTHCLOCK-CHECK"
+   ],
+   "rests_on": [
+    "H-ML-OLD-DEPTHCLOCK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`scripts/depth_clock.py` therefore treats supplied field-sheet times as a *check* on the borrowed clock rather than a replacement for it",
+     "texts": "71757e3796ca877a",
+     "node H-ML-OLD-DEPTHCLOCK": "404a1a4551781e89"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-TUNING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Tuning a model to match an official product makes the agreement evidence of nothing.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "reproduces an official product, agreement with that product stops being",
+    "end": "evidence of anything.",
+    "why": "Overstated: the argument supports that the agreement stops being evidence that the model is right, not that it is evidence of nothing."
+   },
+   "replaced_by": [
+    "C-ML-TUNING"
+   ],
+   "rests_on": [
+    "H-ML-OLD-TUNING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "reproduces an official product, agreement with that product stops being evidence of anything.",
+     "texts": "aa3289004f1ead90",
+     "node H-ML-OLD-TUNING": "6198a786df544152"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-EXACT-DESIGN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE's variable selection is an exhaustive best-subset search, and simulating that search on pure noise reproduces their design exactly.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "That is a best-subset search over",
+    "end": "Simulating exactly their design",
+    "why": "Not what the report describes: DCE select stepwise on cross-validated error, offer each candidate over many period windows, hold out a validation set and accept on several criteria. The simulation runs a simpler, exhaustive in-sample search."
+   },
+   "replaced_by": [
+    "C-ML-DCE-METHOD",
+    "C-ML-REPLICATION",
+    "C-OB-DCE-DESIGN"
+   ],
+   "rests_on": [
+    "H-ML-OLD-EXACT-DESIGN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That is a best-subset search over 92 candidate models fitted to about 20 points. So the question is not whether R² = 0.57 is high. It is what that search returns when there is no relation there at all. Simulating exactly their design",
+     "texts": "9bbb3c072d093fab",
+     "node H-ML-OLD-EXACT-DESIGN": "ade340e70effa7f5"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-DECLINE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every candidate series declined together over the fitting period, and DCE's data satisfy the simulation's hardest conditions.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Annual marine and climate series are autocorrelated",
+    "end": "Under the conditions their own data satisfy",
+    "why": "Its justification was not recorded properly: no candidate series was tested, and the candidates include climate variables for which nothing here shows a decline."
+   },
+   "replaced_by": [
+    "C-ML-SERIES-DECLINE",
+    "C-OB-DECLINE"
+   ],
+   "rests_on": [
+    "H-ML-OLD-DECLINE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Annual marine and climate series are autocorrelated, and over 1990–2012 every candidate declined together. Those are the bottom two rows. Under the conditions their own data satisfy",
+     "texts": "ff53d1e3f692550d",
+     "node H-ML-OLD-DECLINE": "437c05aec7f5e9b7"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NOT-DISTINGUISHABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE's mean R² is not distinguishable from the noise floor of their own selection procedure.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "That is not distinguishable from the noise floor",
+    "end": "of their own selection procedure.",
+    "why": "The simulated procedure is not theirs, and whether their R² is measured on held-out data is not stated."
+   },
+   "replaced_by": [
+    "C-ML-R2-NO-EVIDENCE",
+    "C-OB-R2-OPEN"
+   ],
+   "rests_on": [
+    "H-ML-OLD-NOT-DISTINGUISHABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That is not distinguishable from the noise floor of their own selection procedure.",
+     "texts": "dbff14df844789c3",
+     "node H-ML-OLD-NOT-DISTINGUISHABLE": "6b010a80d6f47167"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-PROBABLY-REAL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Several of DCE's relations are probably real, the phosphorus models especially, being strong and mechanistically expected.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Several are probably real",
+    "end": "mechanistically expected.",
+    "why": "No analysis on this site tests any single relation, and 'strong' refers to their R², the very measure in question."
+   },
+   "replaced_by": [
+    "C-ML-NOT-FALSE",
+    "C-OB-NOT-FALSE"
+   ],
+   "rests_on": [
+    "H-ML-OLD-PROBABLY-REAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Several are probably real — the phosphorus models in particular are strong and mechanistically expected.",
+     "texts": "dd05b52bf31ff3e7",
+     "node H-ML-OLD-PROBABLY-REAL": "280186ba652c7c69"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NO-EVIDENCE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE's reported R² carries no evidence either way, and no out-of-sample test is reported.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "What it shows is that the reported",
+    "end": "Neither is reported for any of the",
+    "why": "The report describes a held-out validation set and cross-validated selection. Whether its R² is measured on held-out data is not stated, and the conclusion depends on it."
+   },
+   "replaced_by": [
+    "C-ML-R2-NO-EVIDENCE",
+    "C-OB-R2-OPEN"
+   ],
+   "rests_on": [
+    "H-ML-OLD-NO-EVIDENCE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "What it shows is that the reported R² carries no evidence either way, because the threshold was set below the null distribution of the search that produced it. The fix is cheap and standard: hold out years, or report the R² of the N-load term alone against a model containing only the climate variables. Neither is reported for any of the",
+     "texts": "e38633d2e9105abc",
+     "node H-ML-OLD-NO-EVIDENCE": "52ddd73d11a1e142"
+    }
+   }
+  }
+ ]
+}

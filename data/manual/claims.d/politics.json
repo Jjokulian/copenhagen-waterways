@@ -1,0 +1,334 @@
+{
+ "_what": "Fork `politics`: values PROGRAMME.md, POLITICS.md and RESIDUAL.md choose rather than measure, and the external documents they read, pinned.",
+ "params": {
+  "politics_iltsvind_mg_l": {
+   "value": 4,
+   "shown": "4",
+   "reason": "The bottom-water oxygen threshold Danish marine monitoring uses for oxygen deficit (iltsvind); the hypothesis register's observable O1 is defined by it. A definition, not a measurement."
+  },
+  "politics_terrain_window_m": {
+   "value": 50,
+   "shown": "50",
+   "reason": "The smallest local window scripts/terraincheck.py scores flooded and street cells against (its WINDOWS)."
+  },
+  "politics_terrain_window_wide_m": {
+   "value": 200,
+   "shown": "200",
+   "reason": "The largest local window in scripts/terraincheck.py's WINDOWS."
+  },
+  "politics_rivermap_near_m": {
+   "value": 100,
+   "shown": "100",
+   "reason": "The distance scripts/rivermap.py uses (NEAR_M) for a flood path being near a planned route."
+  },
+  "politics_rivermap_deep_m": {
+   "value": 0.5,
+   "shown": "0.5",
+   "reason": "The modelled depth scripts/rivermap.py requires for a corridor candidate: band 4 of the flood sheets' legend, which starts at half a metre."
+  },
+  "politics_pipe_end_near_m": {
+   "value": 50,
+   "shown": "50",
+   "reason": "The distance scripts/architecture.py uses for its count of planned pipe segments with an end near the shore or the harbour."
+  },
+  "politics_manhole_spacing_m": {
+   "value": 80,
+   "shown": "80",
+   "reason": "A typical spacing between manholes on a Copenhagen street, taken as the length of one bored shot. Stated for scale; not measured by this project."
+  },
+  "politics_scour_lo_m_s": {
+   "value": 0.6,
+   "shown": "0.6",
+   "reason": "The lower end of the self-cleansing velocity range commonly used in gravity-sewer design. A design convention, not measured by this project."
+  },
+  "politics_scour_hi_m_s": {
+   "value": 0.75,
+   "shown": "0.75",
+   "reason": "The upper end of the self-cleansing velocity range commonly used in gravity-sewer design. A design convention, not measured by this project."
+  },
+  "politics_rain_threshold_a_mm": {
+   "value": 2,
+   "shown": "2",
+   "reason": "A rainfall-intensity threshold scripts/streams.py tabulates hours against (a key of rain_record.hours_per_year_at_or_above_mm)."
+  },
+  "politics_rain_threshold_b_mm": {
+   "value": 5,
+   "shown": "5",
+   "reason": "A rainfall-intensity threshold scripts/streams.py tabulates hours against (a key of rain_record.hours_per_year_at_or_above_mm)."
+  },
+  "politics_pond_size_lean": {
+   "value": 0.01,
+   "shown": "0.01",
+   "reason": "Stormwater treatment areas are conventionally sized at a few per cent of the impervious area draining to them; this is the lean end, a wet pond. A design convention, not measured by this project."
+  },
+  "politics_pond_size_b": {
+   "value": 0.02,
+   "shown": "0.02",
+   "reason": "A point inside the conventional sizing range for stormwater treatment areas. A design convention, not measured by this project."
+  },
+  "politics_pond_size_c": {
+   "value": 0.03,
+   "shown": "0.03",
+   "reason": "A point inside the conventional sizing range for stormwater treatment areas. A design convention, not measured by this project."
+  },
+  "politics_pond_size_generous": {
+   "value": 0.05,
+   "shown": "0.05",
+   "reason": "The generous, wetland-type end of the conventional sizing range for stormwater treatment areas. A design convention, not measured by this project."
+  },
+  "politics_cell_fill_mm": {
+   "value": 100,
+   "shown": "100",
+   "reason": "An accumulated sediment depth at which a pond cell is taken to need dredging. Stated for scale."
+  },
+  "politics_bore_rate_lo_kr_m": {
+   "value": 2000,
+   "shown": "2000",
+   "reason": "The low end of the price per metre of a guided bored rain line. An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_bore_rate_hi_kr_m": {
+   "value": 8000,
+   "shown": "8000",
+   "reason": "The high end of the price per metre of a guided bored rain line. An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_area_ha": {
+   "value": 1,
+   "shown": "1",
+   "reason": "The unit area of one trial: a treatment cell, a mussel or macroalgae line, a rewetted corner. A stated unit."
+  },
+  "politics_trial_cutover_lo_kr": {
+   "value": 100000,
+   "shown": "100000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_cutover_hi_kr": {
+   "value": 300000,
+   "shown": "300000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_cell_lo_kr": {
+   "value": 300000,
+   "shown": "300000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_cell_hi_kr": {
+   "value": 1200000,
+   "shown": "1.2e+06",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_basin_lo_kr": {
+   "value": 200000,
+   "shown": "200000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_basin_hi_kr": {
+   "value": 1000000,
+   "shown": "1e+06",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_mussel_lo_kr": {
+   "value": 150000,
+   "shown": "150000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_mussel_hi_kr": {
+   "value": 600000,
+   "shown": "600000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_wetcorner_lo_kr": {
+   "value": 20000,
+   "shown": "20000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_wetcorner_hi_kr": {
+   "value": 100000,
+   "shown": "100000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_hull_lo_kr": {
+   "value": 50000,
+   "shown": "50000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_trial_hull_hi_kr": {
+   "value": 200000,
+   "shown": "200000",
+   "reason": "An order-of-magnitude cost in Danish kroner, stated by the author of PROGRAMME.md so that a utility's real numbers can replace it. No tender was sought and it is not a quote."
+  },
+  "politics_sensor_sonde_lo_kr": {
+   "value": 15000,
+   "shown": "15000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_sensor_sonde_hi_kr": {
+   "value": 60000,
+   "shown": "60000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_sensor_logger_lo_kr": {
+   "value": 5000,
+   "shown": "5000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_sensor_logger_hi_kr": {
+   "value": 15000,
+   "shown": "15000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_sensor_mount_lo_kr": {
+   "value": 3000,
+   "shown": "3000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_sensor_mount_hi_kr": {
+   "value": 10000,
+   "shown": "10000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_sensor_flow_lo_kr": {
+   "value": 25000,
+   "shown": "25000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_sensor_flow_hi_kr": {
+   "value": 80000,
+   "shown": "80000",
+   "reason": "An order-of-magnitude hardware price per station in Danish kroner, stated by the author of PROGRAMME.md. Not a supplier quote."
+  },
+  "politics_shop_headline_gbp_bn": {
+   "value": 2.2,
+   "shown": "2.2",
+   "reason": "The headline figure in RESIDUAL.md's worked analogy of a supermarket's shrinkage, in billions of pounds. Illustrative; the page does not claim it as a statistic and this project has not checked any retail figure."
+  },
+  "politics_shop_turnover_gbp": {
+   "value": 50000000,
+   "shown": "50000000",
+   "reason": "An illustrative annual turnover for the analogy's shop, in pounds, chosen so the arithmetic of a residual is easy to follow. Not data."
+  },
+  "politics_shop_shrinkage_gbp": {
+   "value": 1000000,
+   "shown": "1000000",
+   "reason": "An illustrative annual shrinkage for the analogy's shop, in pounds, chosen small against its turnover as shrinkage is. Not data."
+  },
+  "politics_shop_error": {
+   "value": 0.01,
+   "shown": "0.01",
+   "reason": "An illustrative relative error in each of the analogy's records, chosen small to show that a small error in a large input is a large error in the residual. Not data."
+  },
+  "politics_residual_alt_cut_pct": {
+   "value": 15,
+   "shown": "15",
+   "reason": "A hypothetical alternative to the Danish method's flat oxygen cut, used only to show what a sensitivity question asks. Chosen for illustration."
+  }
+ },
+ "sources": {
+  "POL-MGTP-20251203": {
+   "title": "Ministeriet for Grøn Trepart, 2025-12-03: Ny aftale - historisk reduktion af landbrugets udledninger af kvælstof (press release)",
+   "url": "https://mgtp.dk/nyheder/2025/dec/ny-aftale-historisk-reduktion-af-landbrugets-udledninger-af-kvaelstof-",
+   "retrieved": "2026-09-10",
+   "sha256": "938b1db4d9fc02b5d3d8370a62f113340d3d1577971d5d764da71328963e3117",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-TV2-20251203": {
+   "title": "TV 2, 2025-12-03: Politisk aftale reducerer landbrugets kvælstofudledning markant",
+   "url": "https://nyheder.tv2.dk/politik/2025-12-03-politisk-aftale-reducerer-landbrugets-kvaelstofudledning-markant",
+   "retrieved": "2026-09-10",
+   "sha256": "41e84da9d0975d2500582e8a8f6d9448b2a2daffc0b3cd0fc7fd2fedc1ab7a9c",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-EL-20260623": {
+   "title": "Effektivt Landbrug, 2026-06-23: Politikerne ramte virkelighedens verden",
+   "url": "https://effektivtlandbrug.landbrugnet.dk/artikler/politik/123345/politikerne-ramte-virkelighedens-verden",
+   "retrieved": "2026-09-10",
+   "sha256": "a70d1b8024cdb7ce063b22462ffc2211eb8e382d0e64a8c0958d226b8234b231",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-DR-20260827": {
+   "title": "DR, 2026-08-27: Afviser særbehandling af grøntsagsavlere",
+   "url": "https://www.dr.dk/nyheder/indland/afviser-saerbehandling-af-groentsagsavlere-saa-vil-vi-fortsat-se-vejle-fjord-uden-fisk",
+   "retrieved": "2026-09-10",
+   "sha256": "3c4503256602e0b9551f7ed4ebd403098eaf06f73a2156b79224778deee97fa2",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-TV2-20260903": {
+   "title": "TV 2 live, 2026-09-03: Omstridt lov er vedtaget i Folketinget",
+   "url": "https://nyheder.tv2.dk/live/politik/2026-08-31-ny-lov-vaekker-vrede-i-landbruget/omstridt-lov-er-vedtaget-i-folketinget",
+   "retrieved": "2026-09-10",
+   "sha256": "7e35b90adf8a8d5e24a47eb0412cc606c3c0677fd3697c674d2ae815b89c0f0a",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-SO-2024": {
+   "title": "Second opinion - evaluering af det faglige grundlag for kvælstofindsatsen (Ministeriet for Grøn Trepart, 2024)",
+   "url": "https://mgtp.dk/Media/638748640313468190/second-opinion-evaluering-af-det-faglige-grundlag-for-kvaelstofindsatsen.pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "cca8c9d3ee64b348872978676619da72b47bd0f8b17f6b593bb6244618ec2f8a",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-DMBIO-2026": {
+   "title": "DM Bio, 2026-03: Folketingsvalg 2026 - politikerne besvarer spørgsmål om natur og Grøn Trepart",
+   "url": "https://dm.dk/bio/alle-artikler/kampen-om-arealerne/folketingsvalg-2026-politikerne-besvarer-spoergsmaal-om-natur-og-groen-trepart/",
+   "retrieved": "2026-09-10",
+   "sha256": "9dfe80a5e2f36ddbeea97568c5d3b7758292805851263cdec137c7116ce5eda6",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-DN-KVAELSTOF": {
+   "title": "Danmarks Naturfredningsforening: Kvælstof (campaign page, undated at capture)",
+   "url": "https://www.dn.dk/vi-kaemper-for/et-nyt-landbrug/kvaelstof/",
+   "retrieved": "2026-09-10",
+   "sha256": "68adcb6bd566ad9b62a8b95ecf721f83be46e76705d1993a813919cc6290735c",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-GP-20250619": {
+   "title": "Greenpeace Danmark, 2025-06-19: Kvælstofaftale har langt til målstregen (press release)",
+   "url": "https://www.greenpeace.org/denmark/pressemeddelelse/landbrug/kvaelstofaftale-har-langt-til-maalstregen/",
+   "retrieved": "2026-09-10",
+   "sha256": "a871f4b715fe78723f3590d049cd7a870bd5bdf45e8ff3bb46f8477a1752b8b4",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-GP-20260825": {
+   "title": "Greenpeace Danmark, 2026-08-25: Katastrofalt iltsvind truer livet under overfladen",
+   "url": "https://www.greenpeace.org/denmark/artikel/hav/katastrofalt-iltsvind-truer-livet-under-overfladen/",
+   "retrieved": "2026-09-10",
+   "sha256": "c390c4b4f3721408b1f79a4747c2cbde3fcf2dca58c83178a536f90e29759671",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-DN-20260903": {
+   "title": "Danmarks Naturfredningsforening, 2026: Se kortet - disse kystvande har været ramt af iltsvind i sommeren 2026",
+   "url": "https://www.dn.dk/nyheder/2026/se-kortet-disse-kystvande-har-vaeret-ramt-af-iltsvind-i-sommeren-2026/",
+   "retrieved": "2026-09-10",
+   "sha256": "498531b050c95bfaac889319bb76ddf7841e19fed6794434e4b586e11b3ea493",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-FDK-2026": {
+   "title": "Fødevarealliancen via Ritzau, 2026-08: Nye kvælstofkrav til landbruget bygger på tal fra bondestenalderen",
+   "url": "https://via.ritzau.dk/pressemeddelelse/15103932/nye-kvaelstofkrav-til-landbruget-bygger-pa-tal-fra-bondestenalderen?publisherId=13561562&lang=da",
+   "retrieved": "2026-09-10",
+   "sha256": "c53e2dc63625ecae7b1809bec4de686f88bc498b5918f16e11e85f61b6de9dfd",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  },
+  "POL-DR-20260903": {
+   "title": "DR, 2026-09-03: Så har vi balladen igen - hvad er op og ned i det grønne slagsmål",
+   "url": "https://www.dr.dk/nyheder/viden/klima/saa-har-vi-balladen-igen-hvad-er-op-og-ned-i-det-groenne-slagsmaal-mellem-landmaendene-og",
+   "retrieved": "2026-09-10",
+   "sha256": "f70c2ba6554dc9187ac95c4e6b5b875a495157cc3beabf89917fdcbdf647af7e",
+   "checked": "2026-09-10",
+   "status": "pinned by fork politics; not yet read by the project owner"
+  }
+ },
+ "figures": {},
+ "nodes": [],
+ "claims": []
+}

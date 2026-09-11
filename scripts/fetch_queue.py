@@ -54,8 +54,28 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, MANUAL, ROOT, log, read_json, write_json, write_doc
+import live
 
 OUT = os.path.join(ROOT, "docs", "DATA_QUEUE.md")
+BAD_REFS = []       # hypothesis ids a source names that the register does not hold
+
+
+def ident(text):
+    """A source id or name with digits in it carries an identifier - a product
+    version, a map scale in a title, an expedition number - not a quantity. Each
+    such token is shown as code, so it is neither read as a number nor mistaken
+    for one."""
+    return " ".join(f"`{t}`" if live.bare_numbers(t) else t for t in text.split(" "))
+
+
+def ref(h):
+    """A hypothesis a source serves, as a checked reference; an id the register
+    does not hold is shown as code and counted, not silently linked."""
+    try:
+        return live.ref(h)
+    except Exception:
+        BAD_REFS.append(h)
+        return f"`{h}`"
 FILES = ["data_sources.json", "data_sources_2.json"]
 
 # Credentials this project already has working. A source behind one of these is
@@ -184,7 +204,11 @@ def main():
         v.sort(key=lambda s: (-len(s["_unlocks"]), s["id"]))
 
     write_json(os.path.join(DERIVED, "fetch_queue.json"),
-               {"tiers": [{"id": t, "label": l, "what": w} for t, l, w in TIERS],
+               {"n_sources": len(srcs),
+                "by_tier": {t: len(by[t]) for t, _, _ in TIERS},
+                "by_spatial": {k: sum(1 for s in srcs if s["_spatial"] == k)
+                               for k in ("position", "region", "mixed", "unknown")},
+                "tiers": [{"id": t, "label": l, "what": w} for t, l, w in TIERS],
                 "credentials_held": {k: {"name": n, "how": h}
                                      for k, (n, h) in HELD.items()},
                 "queue": [{"id": s["id"], "tier": s["_tier"],
@@ -205,13 +229,16 @@ def main():
       "Monday. This is the same information sorted by friction: what can be "
       "downloaded now, what is behind a credential we already hold, what needs a "
       "free registration nobody has done, and what is genuinely closed.\n")
-    a(f"**{len(srcs)} sources.** *Unlocks* counts hypotheses that this source "
+    # the counts are read back from the file just written, so each is a checked number
+    q = live.live_json(os.path.join(DERIVED, "fetch_queue.json"))
+    obs = live.live_json(os.path.join(DERIVED, "observing.json"))
+    a(f"**{q['n_sources']} sources.** *Unlocks* counts hypotheses that this source "
       "serves and that nothing easier serves — a crude priority signal, and meant "
       "to be.\n")
     a("| tier | | sources |")
     a("|---|---|---:|")
     for t, label, _ in TIERS:
-        a(f"| `{t}` | {label} | {len(by[t])} |")
+        a(f"| `{t}` | {label} | {q['by_tier'][t]} |")
     a("")
     for k, (n, h) in HELD.items():
         a(f"- **{n}** — {h}")
@@ -221,16 +248,16 @@ def main():
         rows = by[t]
         if not rows:
             continue
-        a(f"## {label} — {len(rows)}\n")
+        a(f"## {label} — {q['by_tier'][t]}\n")
         a(f"*{what}*\n")
         a("| source | unlocks | indexed by | what it is |")
         a("|---|---|---|---|")
         MARK = {"position": "position", "region": "**region**", "mixed": "mixed",
                 "unknown": "?"}
         for s in rows:
-            u = " ".join(f"`{h}`" for h in s["_unlocks"]) or "—"
-            a(f"| **{s['id']}** | {u} | {MARK[s['_spatial']]} "
-              f"| {(s.get('name') or '')[:88]} |")
+            u = " ".join(ref(h) for h in s["_unlocks"]) or "—"
+            a(f"| **{ident(s['id'])}** | {u} | {MARK[s['_spatial']]} "
+              f"| {ident((s.get('name') or '')[:88])} |")
         a("")
 
     a("## The resolution rule\n")
@@ -240,7 +267,8 @@ def main():
       "carried at the resolution it was taken: a position, a time, and where it "
       "exists a depth.\n")
     a("That is not fastidiousness. [OBSERVING.md](OBSERVING.md) establishes that a "
-      "water body explains **7.9%** of the variation in the one variable Denmark "
+      f"water body explains **{obs['variance']['share_between_wb'] * 100:.1f}%** of the "
+      "variation in the one variable Denmark "
       "measures densely enough to check, and that two stations inside one share "
       "about four percent of their year-to-year variance. A source already summed "
       "into those polygons would carry the assumption straight back in, and "
@@ -248,6 +276,7 @@ def main():
       "one.\n")
     a("| indexed by | sources | |")
     a("|---|---:|---|")
+    kinds = q["by_spatial"]
     a(f"| position | {kinds['position']} | a place something was measured |")
     a(f"| **region** | {kinds['region']} | somebody's aggregate; usable, but never "
       f"as a measurement |")
@@ -275,6 +304,9 @@ def main():
       "different questions and this page is only the first one.\n")
     write_doc(OUT, "\n".join(o) + "\n")
     log(f"\nwrote docs/DATA_QUEUE.md ({os.path.getsize(OUT):,} chars)")
+    if BAD_REFS:
+        log(f"  {len(set(BAD_REFS))} hypothesis id(s) named by a source and absent from "
+            f"the register, shown as code: {' '.join(sorted(set(BAD_REFS)))}")
     for t, label, _ in TIERS:
         log(f"  {t:9} {len(by[t]):>3}")
     return 0

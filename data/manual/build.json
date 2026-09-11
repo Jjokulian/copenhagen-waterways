@@ -7,7 +7,20 @@
    "script": "scripts/floodgap.py",
    "inputs": [
     "data/derived/floodmaps/_georef.json",
-    "data/derived/floodmaps/_sheets.json"
+    "data/derived/floodmaps/_sheets.json",
+    "data/derived/floodmaps/amager.band.npy",
+    "data/derived/floodmaps/bispebjerg.band.npy",
+    "data/derived/floodmaps/indre-by.band.npy",
+    "data/derived/floodmaps/kbhvest.band.npy",
+    "data/derived/floodmaps/ladegaardsaaen.band.npy",
+    "data/derived/floodmaps/norrebro.band.npy",
+    "data/derived/floodmaps/osterbro.band.npy",
+    "data/raw/sp_kloakoplande.geojson",
+    "data/raw/skp_bassiner_pladser_kk.geojson",
+    "data/raw/skp_veje_tunneller_kk.geojson",
+    "data/raw/skp_terraenaend.geojson",
+    "data/raw/skp_igangsatte_prj_kk.geojson",
+    "data/raw/skp_afsluttede_prj_kk.geojson"
    ],
    "outputs": [
     "data/derived/floodgap.json",
@@ -29,10 +42,13 @@
   {
    "script": "scripts/export_flood.py",
    "inputs": [
-    "data/derived/floodmaps/_georef.json"
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/floodalign.json",
+    "data/derived/floodmaps/_sheets.json"
    ],
    "outputs": [
-    "docs/data/flood2012/manifest.json"
+    "docs/data/flood2012/manifest.json",
+    "docs/data/flood2012/README.md"
    ]
   },
   {
@@ -59,7 +75,23 @@
    "script": "scripts/nitrogen.py",
    "inputs": [
     "data/derived/manure.json",
-    "data/derived/cropland.json"
+    "data/derived/cropland.json",
+    "data/derived/currents_transport.json",
+    "data/derived/currents_validate.json",
+    "data/manual/claims.d/nitrogen.json",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rens_udl.geojson",
+    "data/derived/pins/SR353.txt",
+    "data/derived/pins/SR120.txt",
+    "data/derived/pins/MSFD28.txt",
+    "data/derived/pins/DP02.txt",
+    "data/derived/pins/TYPETAL22.txt",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/manual/nitrogen_readings.json",
+    "data/manual/nitrogen_constants.json",
+    "data/manual/nitrogen_pathways.json",
+    "data/manual/monitoring.json",
+    "data/manual/codelists.json"
    ],
    "outputs": [
     "docs/NITROGEN.md"
@@ -69,7 +101,8 @@
    "script": "scripts/cycles.py",
    "inputs": [
     "data/raw/oda/kemi.csv.gz",
-    "data/derived/surface_temp.csv.gz"
+    "data/derived/surface_temp.csv.gz",
+    "data/derived/clock_convention.json"
    ],
    "outputs": [
     "data/derived/cycles.json"
@@ -87,7 +120,8 @@
   {
    "script": "scripts/detectable.py",
    "inputs": [
-    "data/raw/oda/kemi.csv.gz"
+    "data/raw/oda/kemi.csv.gz",
+    "data/derived/clock_convention.json"
    ],
    "outputs": [
     "data/derived/detectable.json"
@@ -96,10 +130,13 @@
   {
    "script": "scripts/methodlab.py",
    "inputs": [
-    "data/derived/detectable.json"
+    "data/derived/detectable.json",
+    "data/derived/depth_clock.json",
+    "data/manual/number_constructions.json"
    ],
    "outputs": [
-    "docs/METHOD_LAB.md"
+    "docs/METHOD_LAB.md",
+    "docs/SOURCES.md"
    ]
   },
   {
@@ -117,18 +154,26 @@
     "data/derived/manure.json",
     "data/derived/socialcontext.json",
     "data/derived/depth_clock.json",
-    "data/derived/pins/BEK931-2024.txt"
+    "data/derived/pins/BEK931-2024.txt",
+    "data/manual/number_constructions.json",
+    "data/derived/claim_spans.json"
    ],
    "outputs": [
     "docs/CLAIMS.md",
-    "docs/SOURCES.md"
+    "docs/SOURCES.md",
+    "docs/ARCHIVE.md"
    ]
   },
   {
    "script": "scripts/unlock.py",
    "inputs": [
     "data/manual/data_sources.json",
-    "data/manual/data_sources_2.json"
+    "data/manual/data_sources_2.json",
+    "data/derived/meta_facts.json",
+    "data/derived/enums.json",
+    "data/derived/triage.json",
+    "data/derived/socialcontext.json",
+    "data/derived/depth_clock.json"
    ],
    "outputs": [
     "docs/IF_YOU_HAVE_THE_DATA.md"
@@ -138,7 +183,8 @@
    "script": "scripts/fetch_queue.py",
    "inputs": [
     "data/manual/data_sources.json",
-    "data/manual/data_sources_2.json"
+    "data/manual/data_sources_2.json",
+    "data/derived/observing.json"
    ],
    "outputs": [
     "docs/DATA_QUEUE.md"
@@ -170,6 +216,71 @@
    ],
    "outputs": [
     "data/derived/convergence.json"
+   ],
+   "args": [
+    "--dry-run"
+   ]
+  },
+  {
+   "script": "scripts/manure.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/manure.json"
+   ]
+  },
+  {
+   "script": "scripts/socialcontext.py",
+   "inputs": [
+    "../danish-livestock/data/chr_2024.json",
+    "../danish-livestock/data/land_by_cvr.json",
+    "../danish-livestock/data/cvr_raw.jsonl",
+    "../danish-livestock/data/kommuner.json",
+    "../danish-livestock/data/cvr_financials.json",
+    "data/derived/farm_documents.json"
+   ],
+   "outputs": [
+    "docs/INCIDENCE.md",
+    "data/derived/socialcontext.json"
+   ]
+  },
+  {
+   "script": "scripts/enums.py",
+   "inputs": [
+    "data/raw/oda/kemi.csv.gz",
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/enums.json"
+   ]
+  },
+  {
+   "script": "scripts/depth_clock.py",
+   "inputs": [
+    "data/raw/oda/ctd.csv.gz",
+    "data/raw/oda/kemi.csv.gz",
+    "data/derived/clock_convention.json"
+   ],
+   "outputs": [
+    "data/derived/depth_clock.json"
+   ]
+  },
+  {
+   "script": "scripts/clockzone.py",
+   "inputs": [
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/clock_convention.json"
+   ]
+  },
+  {
+   "script": "scripts/daylight.py",
+   "inputs": [
+    "data/raw/oda/kemi.csv.gz",
+    "data/derived/clock_convention.json"
+   ],
+   "outputs": [
+    "data/derived/daylight.json"
    ]
   }
  ]

@@ -1,0 +1,1193 @@
+{
+ "constructions": [
+  {
+   "id": "K-WATER-LIGHT",
+   "title": "Light at the bed and the depth a plant could root, from ODA light casts",
+   "covers": {
+    "file": "data/derived/light.json",
+    "fields": {
+     "n_casts_total": {
+      "kind": "counted",
+      "is": "Light casts in the ODA light extract: one cast is one station, date and investigation number (`UndersøgelseNr`), counted once however many depth rows it has, provided it carries a positive Kd and a parseable date."
+     },
+     "n_casts_good_fit": {
+      "kind": "counted",
+      "is": "Of `n_casts_total`, the casts whose Kd regression has a correlation of at least `params.min_fit` - or reports no correlation at all, which is kept rather than dropped."
+     },
+     "n_growth_season": {
+      "kind": "counted",
+      "is": "Of `n_casts_good_fit`, the casts taken in the growing-season months from `params.growth_first_month` to `params.growth_last_month`. Every figure below it is computed on these."
+     },
+     "n_stations": {
+      "kind": "counted",
+      "is": "Distinct stations among the growing-season casts."
+     },
+     "years.*": {
+      "kind": "computed",
+      "is": "The first and the last calendar year with a growing-season cast."
+     },
+     "kd.median": {
+      "kind": "estimated",
+      "is": "Median of the published per-cast attenuation coefficient Kd over the growing-season casts."
+     },
+     "kd.p10": {
+      "kind": "estimated",
+      "is": "The value at the tenth-percentile position of the sorted Kd values: the clear end."
+     },
+     "kd.p90": {
+      "kind": "estimated",
+      "is": "The value at the ninetieth-percentile position of the sorted Kd values: the murky end."
+     },
+     "z11.median": {
+      "kind": "estimated",
+      "is": "Median over the growing-season casts of $-\\ln(r)/K_d$ with $r$ the lower light requirement `params.req_lo_pct`: the deepest point each cast's water would still let that share of surface light reach."
+     },
+     "z11.p10": {
+      "kind": "estimated",
+      "is": "The same depth at the tenth-percentile position: the murkiest casts."
+     },
+     "z11.p90": {
+      "kind": "estimated",
+      "is": "The same depth at the ninetieth-percentile position: the clearest casts."
+     },
+     "z14_median": {
+      "kind": "estimated",
+      "is": "Median of the same depth at the stricter requirement `params.req_hi_pct`."
+     },
+     "trend.all_casts_m_per_decade": {
+      "kind": "estimated",
+      "is": "Ordinary least-squares slope of the per-cast depth at the lower requirement on calendar year, over every growing-season cast, times ten: metres per decade. No station or season control."
+     },
+     "trend.n_all": {
+      "kind": "counted",
+      "is": "Casts in that regression."
+     },
+     "trend.stable_stations_m_per_decade": {
+      "kind": "estimated",
+      "is": "The same slope restricted to stations with casts both in the first and in the last `params.stable_window_years` years of the record."
+     },
+     "trend.n_stable": {
+      "kind": "counted",
+      "is": "Casts in the restricted regression."
+     },
+     "trend.n_stable_stations": {
+      "kind": "counted",
+      "is": "Stations with casts in both end windows."
+     },
+     "bed.n_with_bottom_depth": {
+      "kind": "counted",
+      "is": "Growing-season casts for which a bottom depth is known, from a sounding at the same station on the same date or else the station's median sounding."
+     },
+     "bed.n_same_day": {
+      "kind": "counted",
+      "is": "Of those, the casts whose bottom depth comes from a sounding at the same station on the same date."
+     },
+     "bed.n_station_median": {
+      "kind": "counted",
+      "is": "Of those, the casts whose bottom depth is the station's median over all its soundings, because no same-day sounding exists."
+     },
+     "bed.share_meeting": {
+      "kind": "share",
+      "is": "Of `bed.n_with_bottom_depth`, the fraction whose computed light at the bed, $100\\,e^{-K_d z}$ with $z$ the bottom depth, is at least `params.req_lo_pct` per cent: a subset of the same casts."
+     },
+     "per_station.*.n_casts": {
+      "kind": "counted",
+      "is": "Growing-season casts at one station that has casts in at least `params.min_station_years` distinct years."
+     },
+     "per_station.*.years.*": {
+      "kind": "computed",
+      "is": "The first and last year of that station's growing-season casts."
+     },
+     "per_station.*.median_kd": {
+      "kind": "estimated",
+      "is": "Median Kd of that station's growing-season casts."
+     },
+     "per_station.*.median_z11": {
+      "kind": "estimated",
+      "is": "Median depth reaching `params.req_lo_pct` per cent of surface light at that station."
+     },
+     "per_station.*.trend_m_per_decade": {
+      "kind": "estimated",
+      "is": "Least-squares slope of that station's per-cast depth on year, per decade, with no season control within the growing season."
+     },
+     "geometry.*.from": {
+      "kind": "stipulated",
+      "is": "Lower edge, in metres, of a band of profile start depths - the depth of a cast's shallowest reading."
+     },
+     "geometry.*.to": {
+      "kind": "stipulated",
+      "is": "Upper edge of that band."
+     },
+     "geometry.*.n": {
+      "kind": "counted",
+      "is": "Growing-season casts in the band whose own readings could be refitted in halves, shown only when the band holds at least `params.min_band_casts`."
+     },
+     "geometry.*.kd_upper": {
+      "kind": "estimated",
+      "is": "Median, over the band's casts, of Kd refitted from the upper half of the cast's own readings (log light on depth)."
+     },
+     "geometry.*.kd_lower": {
+      "kind": "estimated",
+      "is": "The same from the lower half of the readings."
+     },
+     "geometry.*.ratio": {
+      "kind": "estimated",
+      "is": "Median over the band's casts of lower-half Kd divided by upper-half Kd."
+     },
+     "geometry.*.steepens": {
+      "kind": "share",
+      "is": "Percentage of the band's casts in which the lower half attenuates more steeply than the upper half."
+     },
+     "start_depth.n_profiles": {
+      "kind": "counted",
+      "is": "Casts, in any season, whose readings can be refitted in halves: at least `params.min_profile_points` readings spanning at least `params.min_profile_span_m` metres, both halves with a negative slope."
+     },
+     "start_depth.n_shallow_start": {
+      "kind": "counted",
+      "is": "Growing-season casts with refittable readings that start above `params.start_split_m` metres."
+     },
+     "start_depth.n_deep_start": {
+      "kind": "counted",
+      "is": "Those that start at or below it."
+     },
+     "start_depth.kd_shallow_start": {
+      "kind": "estimated",
+      "is": "Median published Kd of the shallow-start casts."
+     },
+     "start_depth.kd_deep_start": {
+      "kind": "estimated",
+      "is": "Median published Kd of the deep-start casts."
+     },
+     "start_depth.z11_shallow_start": {
+      "kind": "estimated",
+      "is": "Median depth reaching the lower requirement, shallow-start casts."
+     },
+     "start_depth.z11_deep_start": {
+      "kind": "estimated",
+      "is": "The same for deep-start casts."
+     },
+     "secchi.n_secchi": {
+      "kind": "counted",
+      "is": "Rows of the ODA depth-measurement extract carrying a positive Secchi depth."
+     },
+     "secchi.n_paired": {
+      "kind": "counted",
+      "is": "Of those, the rows that also carry a positive bottom depth and a year."
+     },
+     "secchi.years.*": {
+      "kind": "computed",
+      "is": "First and last year among the paired rows."
+     },
+     "secchi.flag.True": {
+      "kind": "counted",
+      "is": "Rows whose sight-to-bottom flag `SigtTilBund` is `True`."
+     },
+     "secchi.bands.*.from": {
+      "kind": "stipulated",
+      "is": "Lower edge, in metres, of a bottom-depth band."
+     },
+     "secchi.bands.*.to": {
+      "kind": "stipulated",
+      "is": "Upper edge of that band."
+     },
+     "secchi.bands.*.n": {
+      "kind": "counted",
+      "is": "Paired readings with a bottom depth in the band."
+     },
+     "secchi.bands.*.median_secchi": {
+      "kind": "estimated",
+      "is": "Median Secchi depth of those readings."
+     },
+     "secchi.bands.*.at_bed_pct": {
+      "kind": "share",
+      "is": "Percentage of the band's readings whose Secchi depth reaches the recorded bottom depth (within a centimetre): computed from the two depths, not from the flag."
+     },
+     "secchi.eras.*.from": {
+      "kind": "stipulated",
+      "is": "First year of a period."
+     },
+     "secchi.eras.*.to": {
+      "kind": "stipulated",
+      "is": "Last year of that period."
+     },
+     "secchi.eras.*.n": {
+      "kind": "counted",
+      "is": "Paired readings in the period."
+     },
+     "secchi.eras.*.at_bed_pct": {
+      "kind": "share",
+      "is": "Percentage of the period's readings reaching the bed, by the same rule as the bands."
+     },
+     "secchi.eras.*.shallow_at_bed_pct": {
+      "kind": "share",
+      "is": "The same share among the period's readings in water shallower than `params.shallow_secchi_m` metres; left empty when too few readings are that shallow."
+     },
+     "params.req_lo_pct": {
+      "kind": "stipulated",
+      "is": "The lower eelgrass light requirement, as a percentage of surface light at the bed (`REQ_LO` in the script)."
+     },
+     "params.req_hi_pct": {
+      "kind": "stipulated",
+      "is": "The upper requirement, the one the Danish Kd target is said to be derived from (`REQ_HI`)."
+     },
+     "params.min_fit": {
+      "kind": "stipulated",
+      "is": "The least correlation a cast's Kd regression must have to be kept."
+     },
+     "params.min_station_years": {
+      "kind": "stipulated",
+      "is": "Distinct years of casts a station needs before it gets a trend of its own."
+     },
+     "params.stable_window_years": {
+      "kind": "stipulated",
+      "is": "Years at each end of the record a station must have casts in to count as present throughout."
+     },
+     "params.min_profile_points": {
+      "kind": "stipulated",
+      "is": "Readings a cast needs before it is refitted in halves."
+     },
+     "params.min_profile_span_m": {
+      "kind": "stipulated",
+      "is": "Depth span, in metres, a cast's readings must cover before it is refitted in halves."
+     },
+     "params.start_split_m": {
+      "kind": "stipulated",
+      "is": "The start depth, in metres, dividing shallow-start from deep-start casts."
+     },
+     "params.shallow_secchi_m": {
+      "kind": "stipulated",
+      "is": "The bottom depth, in metres, below which a Secchi reading counts as taken in shallow water."
+     }
+    }
+   },
+   "what": "Turns each ODA light cast into the light reaching the seabed and the deepest point an eelgrass-like plant could still root, summarises them over the growing season, tests whether that depth changed over the record, checks the straight-line Kd fit against the cast's own readings, and measures how often the Secchi disc was simply resting on the bed.",
+   "model": "Per cast: light at the bed $100\\,e^{-K_d z}$ and potential depth $-\\ln(r)/K_d$, with $K_d$ the published attenuation coefficient, $z$ the bottom depth and $r$ the light requirement (in the code `100 * math.exp(-c[\"kd\"] * b)` and `-math.log(REQ_LO) / c[\"kd\"]`). Trends are least-squares slopes on calendar year. The half-profile refit fits log light on depth separately for the upper and lower halves of each cast's own readings. Secchi readings reach the bed when the Secchi depth is at least the bottom depth.",
+   "assumptions": [
+    "Attenuation is exponential with depth, so one Kd per cast describes the light field - the half-profile refit on the same page shows this does not hold.",
+    "The published Kd is comparable across suppliers, instruments and decades.",
+    "A station's median sounding stands in for the bottom depth when no sounding was made on the day of the cast.",
+    "A growing-season cast describes the light an eelgrass meadow receives; within-season timing is ignored."
+   ],
+   "justified": [
+    {
+     "text": "Kd, the fit correlation and the per-depth light percentages are read as ODA publishes them; nothing is modelled before the arithmetic.",
+     "ref": "scripts/light.py:66"
+    },
+    {
+     "text": "The trend is recomputed on stations present at both ends of the record, so a change in where casts are taken cannot pass as a change in the water.",
+     "ref": "scripts/light.py:235"
+    },
+    {
+     "text": "The straight-line assumption behind Kd is tested against each cast's own readings rather than granted.",
+     "ref": "scripts/light.py:149"
+    },
+    {
+     "text": "The Secchi censoring is computed from the recorded Secchi and bottom depths, and the published sight-to-bottom flag is reported beside it.",
+     "ref": "scripts/light.py:95"
+    }
+   ],
+   "gaps": [
+    "The eelgrass requirements `params.req_lo_pct` and `params.req_hi_pct` are written into the script with a comment naming DCE as the source of the target; no document is pinned for them.",
+    "Casts that report no fit correlation are kept as good fits.",
+    "The per-cast Kd rows are deduplicated by station, date and investigation number, and the last row read wins; rows of one cast that disagree on Kd are not detected.",
+    "Percentiles are taken by position in the sorted list, not interpolated.",
+    "The restricted trend rests on however many stations are present at both ends; the page prints that count, and when it is small the restricted row says little.",
+    "Until this fork's fix, the bottom-depth lookup never found a same-day sounding and always used the station median; the page now reports how many casts used each.",
+    "The half-profile explanation - spectral hardening of broadband light - is argued from how water absorbs light, not measured here; the programme holds no spectral data.",
+    "A claim in the page that the start-depth ordering disappears when computed against profile length is not reproduced by any code in the script."
+   ],
+   "void_if": [
+    "the published Kd was fitted differently by different suppliers or in different periods",
+    "the recorded bottom depths are not depths below the cast position",
+    "the Secchi and bottom depths of a row were taken at different places"
+   ],
+   "licenses": "What the published light record says about light at the seabed and the potential rooting depth, how its straight-line fits depend on where the sensor started, and how often Secchi readings are censored by the bed.",
+   "not_licensed": "Why the light is where it is - the causes of attenuation cannot be separated at this resolution - or where eelgrass actually grows; a potential depth is a light calculation, not an observation of plants.",
+   "watches": [
+    "scripts/light.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/light.py": "e531a8f798693bf5"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-WAVES",
+   "title": "Wind-driven waves and bed shear stress in Køge Bugt",
+   "covers": {
+    "file": "data/derived/waves.json",
+    "fields": {
+     "hours": {
+      "kind": "counted",
+      "is": "Hourly wind records in the fetched Open-Meteo ERA5 archive chunks for the bay, concatenated."
+     },
+     "critical_shear_Pa.*": {
+      "kind": "stipulated",
+      "is": "Critical bed shear stress for a bed with no biology and for one bound by biofilm, fauna and eelgrass, written into `scripts/waves.py` as `TAU_C`."
+     },
+     "depths_m.*": {
+      "kind": "stipulated",
+      "is": "Water depths the wave model is run at (`DEPTHS`)."
+     },
+     "by_depth.*.exceedance.*.hours_per_year": {
+      "kind": "modelled",
+      "is": "Hours per year in which the modelled wave-driven bed shear stress at that depth exceeds that bed's critical stress: hours above the threshold divided by the number of distinct calendar years in the archive."
+     },
+     "by_depth.*.exceedance.*.by_month.*": {
+      "kind": "modelled",
+      "is": "The same hours, for one calendar month, per year of archive."
+     },
+     "by_sector.*.fetch_km": {
+      "kind": "computed",
+      "is": "Mean fetch, in km, over the archive hours whose wind blew from that compass sector, from the five-degree fetch table."
+     },
+     "by_sector.*.hours_per_year": {
+      "kind": "modelled",
+      "is": "Hours per year in which the dead bed resuspends at the middle model depth while the wind blows from that sector."
+     },
+     "by_sector.*.share_of_resuspension_pct": {
+      "kind": "share",
+      "is": "That sector's resuspending hours as a percentage of all resuspending hours at the same depth: a partition of one set."
+     }
+    }
+   },
+   "what": "Turns hourly wind into fetch-limited waves, bottom orbital velocity and bed shear stress at fixed depths, and counts the hours in which the shear exceeds the critical stress of a live and of a dead bed, by month and by wind sector.",
+   "model": "Fetch from the direction table; wave height and period from the shallow-water growth relations of Young and Verhagen (in the code `young_verhagen`); the wavenumber from the linear dispersion relation by iteration; bottom orbital velocity $u_b = \\pi H_s / (T_p \\sinh kd)$; shear $\\tau = \\tfrac{1}{2}\\rho f_w u_b^2$ with the Swart friction factor (in the code `bed_shear`). A resuspending hour is one with $\\tau$ above the bed's critical stress.",
+   "assumptions": [
+    "Waves at each depth are those the local wind grows over the fetch in its direction; swell from outside the bay and currents are ignored.",
+    "One bed roughness and one water density describe the whole bay.",
+    "The critical stresses stand for a live and a dead bed; the absolute values are literature ranges, the ratio is the point."
+   ],
+   "justified": [
+    {
+     "text": "Wave growth, dispersion and friction follow published relations written out in the script.",
+     "ref": "scripts/waves.py:78"
+    },
+    {
+     "text": "The live and dead thresholds are compared under identical weather, so the ratio between them does not depend on the wave model's absolute calibration.",
+     "ref": "scripts/waves.py:129"
+    }
+   ],
+   "gaps": [
+    "The critical stresses come from a comment citing the cohesive-sediment literature; no document is pinned.",
+    "No observation of sediment moving is used; the model is not checked against turbidity or sediment traps.",
+    "The fetch table it reads has no producer script in the repository."
+   ],
+   "void_if": [
+    "waves in the bay are dominated by swell from outside it",
+    "the bed's critical stress differs strongly from the stated values across the bay"
+   ],
+   "licenses": "How often, and in which months and winds, the wind could resuspend a live and a dead bed at the modelled depths, and how much more often the dead one.",
+   "not_licensed": "That sediment actually moved in any given hour, or how much.",
+   "watches": [
+    "scripts/waves.py"
+   ],
+   "confirmed": {
+    "by": "fork water (written against scripts/light.py, waves.py and seabed.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/waves.py": "f04e67813675be81"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-FETCH",
+   "title": "Fetch to the coastline by wind direction",
+   "covers": {
+    "file": "data/raw/weather/fetch.json",
+    "fields": {
+     "*": {
+      "kind": "computed",
+      "is": "Distance in metres from a point in Køge Bugt to the OpenStreetMap coastline along one wind direction, in five-degree steps."
+     }
+    }
+   },
+   "what": "A table of over-water distance to the coast by wind direction, used by the wave model.",
+   "model": "A ray cast from a point in the bay to the OSM coastline, one ray per five degrees.",
+   "assumptions": [
+    "One point stands for the bay's fetch in each direction."
+   ],
+   "justified": [
+    {
+     "text": "The wave model and the page read the same table.",
+     "ref": "scripts/waves.py:66"
+    }
+   ],
+   "gaps": [
+    "No script in the repository produces this file; it was computed once and committed, so neither the point it was cast from nor the coastline version is recorded."
+   ],
+   "void_if": [
+    "the table was cast from a point unrepresentative of the stretch of bay in question"
+   ],
+   "licenses": "The relative openness of the bay to each wind direction.",
+   "not_licensed": "Fetch at any other point in the bay.",
+   "watches": [
+    "data/raw/weather/fetch.json"
+   ],
+   "confirmed": {
+    "by": "fork water (written against scripts/light.py, waves.py and seabed.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/raw/weather/fetch.json": "d1ccbe7e312b326c"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-ONSHORE",
+   "title": "Onshore wind hours by month",
+   "covers": {
+    "file": "data/derived/onshore.json",
+    "fields": {
+     "*.onshore_h": {
+      "kind": "counted",
+      "is": "Hours per year in that month with wind from the onshore sector for the western shore."
+     },
+     "*.onshore_warm_h": {
+      "kind": "counted",
+      "is": "Of those, hours that are also warm."
+     },
+     "*.onshore_strong_h": {
+      "kind": "counted",
+      "is": "Of those, hours with strong wind."
+     }
+    }
+   },
+   "what": "Monthly hours of onshore, warm-and-onshore and strong-and-onshore wind for the bay's western shore.",
+   "model": "Hourly wind classified by direction into an onshore sector, and further by temperature and speed, averaged per month over the archive years.",
+   "assumptions": [
+    "The onshore sector for the western shore is a fixed band of directions."
+   ],
+   "justified": [
+    {
+     "text": "It is read from the same wind archive as the wave model.",
+     "ref": "scripts/waves.py:47"
+    }
+   ],
+   "gaps": [
+    "No script in the repository produces this file; it was computed once and committed, and the sector bounds and the warm and strong thresholds are not recorded anywhere."
+   ],
+   "void_if": [
+    "the sector or thresholds used differ from what the page describes"
+   ],
+   "licenses": "When in the year onshore wind coincides with warm and with strong conditions.",
+   "not_licensed": "That material stranded on any date.",
+   "watches": [
+    "data/derived/onshore.json"
+   ],
+   "confirmed": {
+    "by": "fork water (written against scripts/light.py, waves.py and seabed.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/derived/onshore.json": "da121eb8b697722b"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-SEABED",
+   "title": "The sulphide illustration's stated constants",
+   "covers": {
+    "file": "data/derived/seabed.json",
+    "fields": {
+     "illustration.avs_umol_per_g": {
+      "kind": "stipulated",
+      "is": "An acid-volatile sulphide content for sulphidic mud, per gram of dry sediment, for the illustration."
+     },
+     "illustration.stir_depth_cm": {
+      "kind": "stipulated",
+      "is": "Depth of sediment a storm is taken to stir."
+     },
+     "illustration.dry_bulk_density_g_cm3": {
+      "kind": "stipulated",
+      "is": "Dry bulk density taken for soft mud."
+     },
+     "illustration.o2_per_sulphide": {
+      "kind": "stipulated",
+      "is": "Moles of oxygen consumed per mole of sulphide oxidised to sulphate."
+     },
+     "illustration.mm_o2_g_per_mol": {
+      "kind": "computed",
+      "is": "Molar mass of the oxygen molecule."
+     },
+     "illustration.o2_g_per_m3": {
+      "kind": "stipulated",
+      "is": "Oxygen concentration taken for a well-oxygenated water column."
+     },
+     "illustration.column_m": {
+      "kind": "stipulated",
+      "is": "Height of the water column the demand is compared against."
+     }
+    }
+   },
+   "what": "The constants of a worked illustration: how much oxygen stirring sulphidic mud would consume, against the oxygen in a water column.",
+   "model": "Dry mass stirred per square metre $= \\text{depth} \\cdot \\rho_{dry}$; oxygen demand $=$ sulphide content $\\times$ mass $\\times$ oxygen per sulphide $\\times$ molar mass; column oxygen $=$ concentration $\\times$ height.",
+   "assumptions": [
+    "All stirred sulphide is oxidised by oxygen from the water column.",
+    "The stated sulphide content and bulk density are typical of sulphidic mud."
+   ],
+   "justified": [
+    {
+     "text": "The stoichiometry of sulphide oxidation to sulphate uses two molecules of oxygen per sulphide.",
+     "ref": "scripts/seabed.py"
+    }
+   ],
+   "gaps": [
+    "The sulphide content, stirred depth and bulk density are illustrative values carried from an earlier version of the page, not measured in Køge Bugt and not sourced."
+   ],
+   "void_if": [
+    "the bay's mud holds much less sulphide or is much denser than stated"
+   ],
+   "licenses": "That resuspension of sulphidic mud can be an oxygen sink of the same order as a water column's oxygen, under the stated values.",
+   "not_licensed": "The oxygen demand of any actual storm in the bay.",
+   "watches": [
+    "scripts/seabed.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/seabed.py": "ca1577888b48ba6e"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-OXYGEN",
+   "title": "Oxygen demand per gram, from balanced equations; hazardous-substance coverage",
+   "covers": {
+    "file": "data/derived/oxygen.json",
+    "fields": {
+     "coefficients.per_c": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of organic carbon respired, $M_{O_2}/M_C$."
+     },
+     "coefficients.per_n_growth": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of nitrogen along the carbon route only: carbon fixed per nitrogen at Redfield stoichiometry, respired."
+     },
+     "coefficients.per_n_nitrif": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of ammonium nitrogen nitrified to nitrate."
+     },
+     "coefficients.per_n_total": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of nitrogen along the full Redfield-Ketchum-Richards remineralisation, carbon route and nitrification together."
+     },
+     "coefficients.per_s": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of sulphide sulphur oxidised to sulphate."
+     },
+     "coefficients.per_fe": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of ferrous iron oxidised."
+     },
+     "coefficients.per_ch4": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of methane oxidised."
+     },
+     "coefficients.per_fat": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of tripalmitin, standing for fat, fully oxidised."
+     },
+     "coefficients.per_carb": {
+      "kind": "computed",
+      "is": "Grams of O₂ per gram of carbohydrate written as the unit $\\mathrm{CH_2O}$."
+     },
+     "stated.o2_per_protein": {
+      "kind": "stipulated",
+      "is": "Grams of O₂ per gram of protein: a typical value, which varies with composition."
+     },
+     "stated.o2_per_cod": {
+      "kind": "stipulated",
+      "is": "Grams of O₂ per gram of COD, by the definition of COD."
+     },
+     "hazardous.n_wb": {
+      "kind": "counted",
+      "is": "Marine water bodies in `data/derived/areas.json`."
+     },
+     "hazardous.with_points": {
+      "kind": "counted",
+      "is": "Of those, the water bodies to which `scripts/areas.py` assigned at least one hazardous-substance monitoring point."
+     },
+     "hazardous.without": {
+      "kind": "counted",
+      "is": "The water bodies with none assigned: the complement within the same set."
+     },
+     "hazardous.area_without": {
+      "kind": "measured",
+      "is": "Summed area, in km², of the water bodies without an assigned point."
+     },
+     "hazardous.pct_without": {
+      "kind": "share",
+      "is": "That area as a percentage of the summed area of all the water bodies in the same file."
+     },
+     "hazardous.total_points": {
+      "kind": "counted",
+      "is": "Features in the national water-plan hazardous-substance layer `sw_mfs_tilstand`, counted from the layer itself."
+     },
+     "hazardous.biota": {
+      "kind": "counted",
+      "is": "Of those features, the ones flagged as measuring biota (`maaltbiota` is `Ja`)."
+     },
+     "hazardous.water": {
+      "kind": "counted",
+      "is": "The ones flagged as measuring water (`maaltvand`)."
+     },
+     "hazardous.sediment": {
+      "kind": "counted",
+      "is": "The ones flagged as measuring sediment (`maaltsedim`)."
+     }
+    }
+   },
+   "what": "Derives how much oxygen each reductant consumes per gram from its balanced oxidation equation, and counts how much of the Danish sea the water-plan hazardous-substance monitoring reaches.",
+   "model": "Each coefficient is moles of O₂ per mole of reductant times the molar mass of O₂, divided by the reductant's molar mass (in the code `coefficients()`); the nitrogen routes use the Redfield-Ketchum-Richards ratios. Coverage counts come from the areas file for water bodies and from the layer itself for points and matrices.",
+   "assumptions": [
+    "Each reductant is oxidised completely, along the balanced equation given in the code.",
+    "Tripalmitin stands for fat and the $\\mathrm{CH_2O}$ unit for carbohydrate.",
+    "Marine coverage counts the water bodies to which `scripts/areas.py` assigns a point; as no point of the layer is marine, it assigns none."
+   ],
+   "justified": [
+    {
+     "text": "Every coefficient is arithmetic on a balanced equation and standard molar masses, written out in the script.",
+     "ref": "scripts/oxygen.py"
+    },
+    {
+     "text": "Point and matrix counts are taken from the layer itself, not from the subset assigned to water bodies, so the two denominators are not mixed.",
+     "ref": "scripts/oxygen.py"
+    }
+   ],
+   "gaps": [
+    "The molar masses and the Redfield ratios are written into the script; no reference table is pinned.",
+    "The protein coefficient is stored but not printed: no source for it was found.",
+    "Which points belong to which water body depends on the assignment in `scripts/areas.py`, another page's producer.",
+    "The Redfield-Ketchum-Richards ratios behind the largest coefficient are an average composition of plankton, from which real plankton depart."
+   ],
+   "void_if": [
+    "a reductant is only partly oxidised in the water in question"
+   ],
+   "licenses": "How much oxygen a gram of each substance can consume at most, relative to nitrogen; how much of the sea the national hazardous-substance layer reaches, and in which matrices.",
+   "not_licensed": "How much oxygen any substance actually consumed in a Danish water; that no other sediment monitoring exists outside this layer.",
+   "watches": [
+    "scripts/oxygen.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ob (re-read oxygen.py: coefficients() and the coverage counts are unchanged, verified by diff against the copy taken before; the page no longer prints the protein value, and the declaration now says so and names the Redfield average as a gap; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/oxygen.py": "42b6251ab70ec5e0"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-CURRENTS",
+   "title": "Currents in and around Køge Bugt from a coarse global model",
+   "covers": {
+    "file": "data/derived/currents_validate.json",
+    "fields": {
+     "points.*.max_ms": {
+      "kind": "modelled",
+      "is": "Peak current speed, in m/s, at the model grid cell nearest the point, over the fetched hourly record."
+     },
+     "points.*.published_peak_ms": {
+      "kind": "stipulated",
+      "is": "A published peak speed for the strait, written into the script for comparison."
+     },
+     "points.*.underestimate_factor": {
+      "kind": "computed",
+      "is": "Published peak divided by the model peak."
+     }
+    }
+   },
+   "what": "Compares the coarse model's peak speeds with published strait speeds, to establish what the current field can and cannot support.",
+   "model": "The maximum of the hourly model speed at the grid cell nearest each point, set against a published peak.",
+   "assumptions": [
+    "The nearest grid cell represents the named point."
+   ],
+   "justified": [
+    {
+     "text": "Only ratios, signs and timings are used afterwards, because the magnitudes fail this comparison.",
+     "ref": "scripts/currents.py:189"
+    }
+   ],
+   "gaps": [
+    "The published peak speeds are written into the script without a pinned source."
+   ],
+   "void_if": [
+    "the grid cell nearest a point lies in a different water regime from it"
+   ],
+   "licenses": "That the model's absolute speeds in the straits are too low, and by roughly how much.",
+   "not_licensed": "Any absolute current speed in the straits.",
+   "watches": [
+    "scripts/currents.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/currents.py": "5e180c254909fc16"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-CURRENTS-INDEX",
+   "title": "Retention, and a wind index that failed",
+   "covers": {
+    "file": "data/derived/currents_index.json",
+    "fields": {
+     "r": {
+      "kind": "estimated",
+      "is": "Correlation between the basin wind-stress index at the best window and the modelled northern-Sound along-strait flow."
+     },
+     "best_window_h": {
+      "kind": "stipulated",
+      "is": "The window, in hours, among those tried, that gives the highest correlation."
+     },
+     "sign_agreement_pct": {
+      "kind": "share",
+      "is": "Percentage of hours in which the index and the flow have the same sign, at the best window."
+     },
+     "n_hours": {
+      "kind": "counted",
+      "is": "Hours with both a wind index and a flow value."
+     },
+     "window_r.*.hours": {
+      "kind": "stipulated",
+      "is": "One of the index windows tried, in hours."
+     },
+     "window_r.*.r": {
+      "kind": "estimated",
+      "is": "The correlation at that window."
+     },
+     "flush_distance_km": {
+      "kind": "stipulated",
+      "is": "The distance the flushing time is quoted over."
+     },
+     "retention.*.mean_speed_ms": {
+      "kind": "modelled",
+      "is": "Mean modelled current speed at the point over the record."
+     },
+     "retention.*.residual_ms": {
+      "kind": "modelled",
+      "is": "Speed of the mean current vector: how fast the water goes anywhere on average."
+     },
+     "retention.*.residual_bearing_deg": {
+      "kind": "modelled",
+      "is": "Compass bearing of the mean current vector."
+     },
+     "retention.*.flush_days_20km": {
+      "kind": "modelled",
+      "is": "Days the mean current takes to carry water `flush_distance_km`: distance over residual speed. Empty when the residual is too small to carry it anywhere."
+     }
+    }
+   },
+   "what": "Measures how much of the modelled water motion at each point goes anywhere, and tests whether a Baltic wind index can stand in for the short current record.",
+   "model": "Residual speed is the length of the mean velocity vector; flushing time is `flush_distance_km` over it; the index is a running mean of basin wind stress over a window, correlated with the along-strait flow.",
+   "assumptions": [
+    "A depth-averaged surface current describes transport.",
+    "The ratio of residual to mean speed survives the model's magnitude error; the flushing time in days does not fully, since it uses the residual speed itself."
+   ],
+   "justified": [
+    {
+     "text": "The residual and mean speed come from the same model at the same point, so their ratio does not depend on its magnitude calibration.",
+     "ref": "scripts/currents.py:276"
+    }
+   ],
+   "gaps": [
+    "Flushing time is in days computed from a modelled speed that the validation shows is too low in the straits; the page ranks points by it."
+   ],
+   "void_if": [
+    "stratified flow carries surface and bottom water in opposite directions"
+   ],
+   "licenses": "Which points in the set retain water and which flush it, relative to each other; that the wind index does not predict the strait flow.",
+   "not_licensed": "An absolute residence time, or where released material ends up.",
+   "watches": [
+    "scripts/currents.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/currents.py": "5e180c254909fc16"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-CURRENTS-TRANSPORT",
+   "title": "Southward transport in the southern Sound, by rain",
+   "covers": {
+    "file": "data/derived/currents_transport.json",
+    "fields": {
+     "n_hours": {
+      "kind": "counted",
+      "is": "Hours in which the Copenhagen rain record and the southern-Sound current record overlap."
+     },
+     "baseline_southward_pct": {
+      "kind": "share",
+      "is": "Percentage of those hours with the along-strait flow running south."
+     },
+     "rain_window_h": {
+      "kind": "stipulated",
+      "is": "Hours of preceding rain summed to measure what fills a combined sewer."
+     },
+     "event_threshold_mm": {
+      "kind": "stipulated",
+      "is": "Rain over that window, in mm, that counts as an overflow-scale event."
+     },
+     "bands.*.hours": {
+      "kind": "counted",
+      "is": "Hours in a band of preceding rain."
+     },
+     "bands.*.southward_pct": {
+      "kind": "share",
+      "is": "Percentage of the band's hours with southward flow."
+     },
+     "bands.*.vs_baseline_pp": {
+      "kind": "computed",
+      "is": "That percentage minus the baseline, in percentage points."
+     },
+     "lag.*.lag_h": {
+      "kind": "stipulated",
+      "is": "Hours after an overflow-scale event."
+     },
+     "lag.*.hours": {
+      "kind": "counted",
+      "is": "Event hours shifted by that lag that have a flow value."
+     },
+     "lag.*.southward_pct": {
+      "kind": "share",
+      "is": "Percentage of them with southward flow."
+     },
+     "lag.*.vs_baseline_pp": {
+      "kind": "computed",
+      "is": "That percentage minus the baseline."
+     },
+     "by_month.*.overflow_scale_h_per_yr": {
+      "kind": "counted",
+      "is": "Overflow-scale rain hours in that month, per year of overlap."
+     },
+     "by_month.*.and_southward_h_per_yr": {
+      "kind": "counted",
+      "is": "Of those, hours with southward flow."
+     }
+    }
+   },
+   "what": "Asks whether the hours in which Copenhagen overflows are hours in which the southern Sound runs south toward Køge Bugt, at the event and at lags after it.",
+   "model": "Preceding rain is a running sum over `rain_window_h`; flow is projected on the strait axis, negative southward; shares are counted per rain band and per lag.",
+   "assumptions": [
+    "Rain over the window is what makes a combined sewer overflow.",
+    "The model's flow sign at the grid cell is right even where its speed is not."
+   ],
+   "justified": [
+    {
+     "text": "Rain and current records are matched hour by hour; only signs are used, which the validation leaves usable.",
+     "ref": "scripts/currents.py:332"
+    }
+   ],
+   "gaps": [
+    "The lags are tested on few event hours, and several lags were tried; the result reported is the largest.",
+    "The event threshold stands in for overflow without an observed overflow record."
+   ],
+   "void_if": [
+    "the model's flow sign is wrong in the southern Sound"
+   ],
+   "licenses": "Whether overflow-scale rain hours, and the hours after them, coincide with southward flow more or less often than other hours.",
+   "not_licensed": "That any plume reached Køge Bugt.",
+   "watches": [
+    "scripts/currents.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/currents.py": "5e180c254909fc16"
+    }
+   }
+  },
+  {
+   "id": "K-WATER-OBSERVING",
+   "title": "Where Denmark measures, and whether a water body is a unit",
+   "covers": {
+    "file": "data/derived/observing.json",
+    "fields": {
+     "coverage.total": {
+      "kind": "measured",
+      "is": "Summed area, in km², of the marine water-body polygons in the national layer `marin_overordnet`."
+     },
+     "coverage.area": {
+      "kind": "measured",
+      "is": "Summed area of the polygons whose name matches a station area named in DCE's model table, by the first letters of the folded name."
+     },
+     "coverage.pct": {
+      "kind": "share",
+      "is": "That area as a percentage of the total, from the same polygon set."
+     },
+     "coverage.unmodelled.*.0": {
+      "kind": "measured",
+      "is": "Area, in km², of one of the largest polygons with no matching model area."
+     },
+     "sizes.n": {
+      "kind": "counted",
+      "is": "Polygons in the layer."
+     },
+     "sizes.total": {
+      "kind": "measured",
+      "is": "Their summed area."
+     },
+     "sizes.median": {
+      "kind": "estimated",
+      "is": "Median polygon area, the middle element by position."
+     },
+     "sizes.mean": {
+      "kind": "computed",
+      "is": "Total area divided by the number of polygons."
+     },
+     "sizes.n_types": {
+      "kind": "counted",
+      "is": "Distinct type codes (`ov_typ`)."
+     },
+     "sizes.n_irrelevant": {
+      "kind": "counted",
+      "is": "Polygons typed `Ej relevant`."
+     },
+     "sizes.smallest.*.0": {
+      "kind": "measured",
+      "is": "Area of one of the smallest polygons."
+     },
+     "sizes.largest.*.0": {
+      "kind": "measured",
+      "is": "Area of one of the largest polygons."
+     },
+     "n_bathing_total": {
+      "kind": "counted",
+      "is": "Features in the national bathing-water layer `badevand`, before any filter."
+     },
+     "koege_area_km2": {
+      "kind": "measured",
+      "is": "Area of the Køge Bugt polygon, `DKCOAST201`."
+     },
+     "internal.n_wb": {
+      "kind": "counted",
+      "is": "Water bodies with at least `params.min_pairs_per_wb` correlated pairs of informative stations."
+     },
+     "internal.mean_r": {
+      "kind": "estimated",
+      "is": "Mean, over those water bodies, of the mean pairwise correlation of annual bathing-quality scores between stations inside the body."
+     },
+     "internal.worst.*.area": {
+      "kind": "measured",
+      "is": "Area of one of the least internally coherent water bodies."
+     },
+     "internal.worst.*.n_st": {
+      "kind": "counted",
+      "is": "Its informative stations."
+     },
+     "internal.worst.*.r": {
+      "kind": "estimated",
+      "is": "Its mean pairwise correlation."
+     },
+     "by_distance.*.bin_km.*": {
+      "kind": "stipulated",
+      "is": "Edges, in km, of a separation band."
+     },
+     "by_distance.*.same_r": {
+      "kind": "estimated",
+      "is": "Mean correlation of informative-station pairs in the band inside one water body."
+     },
+     "by_distance.*.same_n": {
+      "kind": "counted",
+      "is": "Those pairs."
+     },
+     "by_distance.*.diff_r": {
+      "kind": "estimated",
+      "is": "Mean correlation of pairs in the band that straddle a boundary."
+     },
+     "by_distance.*.diff_n": {
+      "kind": "counted",
+      "is": "Those pairs."
+     },
+     "boundary.testable": {
+      "kind": "counted",
+      "is": "Adjacent water-body pairs with enough near cross-boundary station pairs, and both bodies coherent enough to compare."
+     },
+     "boundary.n_failed": {
+      "kind": "counted",
+      "is": "Of those, the pairs whose cross-boundary correlation exceeds both bodies' own internal correlation."
+     },
+     "boundary.failed.*.cross_r": {
+      "kind": "estimated",
+      "is": "Mean correlation across the boundary."
+     },
+     "boundary.failed.*.a_r": {
+      "kind": "estimated",
+      "is": "Internal correlation of the first body."
+     },
+     "boundary.failed.*.b_r": {
+      "kind": "estimated",
+      "is": "Internal correlation of the second body."
+     },
+     "boundary.failed.*.n_pairs": {
+      "kind": "counted",
+      "is": "Cross-boundary pairs behind that mean."
+     },
+     "koege.n": {
+      "kind": "counted",
+      "is": "Informative bathing stations in Køge Bugt."
+     },
+     "koege.lat": {
+      "kind": "computed",
+      "is": "Latitude of the north/south cut that best separates the bay's stations."
+     },
+     "koege.n_north": {
+      "kind": "counted",
+      "is": "Stations north of the cut."
+     },
+     "koege.n_south": {
+      "kind": "counted",
+      "is": "Stations south of it."
+     },
+     "koege.within_r": {
+      "kind": "estimated",
+      "is": "Mean correlation within the two groups."
+     },
+     "koege.across_r": {
+      "kind": "estimated",
+      "is": "Mean correlation across the cut."
+     },
+     "variance.n_obs": {
+      "kind": "counted",
+      "is": "Beach-year observations of stations kept by the bathing filter."
+     },
+     "variance.n_stations": {
+      "kind": "counted",
+      "is": "Stations behind them."
+     },
+     "variance.n_wb": {
+      "kind": "counted",
+      "is": "Water bodies behind them."
+     },
+     "variance.share_between_wb": {
+      "kind": "share",
+      "is": "Share of the year-demeaned variance lying between water-body means."
+     },
+     "variance.share_between_st": {
+      "kind": "share",
+      "is": "Share lying between station means inside a water body."
+     },
+     "variance.share_within": {
+      "kind": "share",
+      "is": "Share lying year to year at a single station."
+     },
+     "noise_floor.candidates": {
+      "kind": "stipulated",
+      "is": "Candidate explanatory variables offered in the simulation, set to the length of DCE's `Tabel 2` list.",
+      "synthetic": true
+     },
+     "noise_floor.max_terms": {
+      "kind": "stipulated",
+      "is": "Most variables a simulated model may select.",
+      "synthetic": true
+     },
+     "noise_floor.subsets_searched": {
+      "kind": "computed",
+      "is": "Candidate models in the best-subset search: the sum of binomial coefficients."
+     },
+     "noise_floor.trials": {
+      "kind": "stipulated",
+      "is": "Simulated trials per condition.",
+      "synthetic": true
+     },
+     "noise_floor.acceptance_r2": {
+      "kind": "stipulated",
+      "is": "The acceptance criterion the simulated models are held to, set equal to DCE's."
+     },
+     "noise_floor.cases.*.n_points": {
+      "kind": "stipulated",
+      "is": "Points per simulated series.",
+      "synthetic": true
+     },
+     "noise_floor.cases.*.phi": {
+      "kind": "stipulated",
+      "is": "Lag-one autocorrelation of the simulated series.",
+      "synthetic": true
+     },
+     "noise_floor.cases.*.trend_sd": {
+      "kind": "stipulated",
+      "is": "Size, in standard deviations, of the shared monotone decline added to every series.",
+      "synthetic": true
+     },
+     "noise_floor.cases.*.median": {
+      "kind": "simulated",
+      "is": "Median, over trials, of the best $R^2$ a best-subset search finds between unrelated series."
+     },
+     "noise_floor.cases.*.p75": {
+      "kind": "simulated",
+      "is": "Its seventy-fifth percentile."
+     },
+     "noise_floor.cases.*.p90": {
+      "kind": "simulated",
+      "is": "Its ninetieth percentile."
+     },
+     "noise_floor.cases.*.share_passing": {
+      "kind": "simulated",
+      "is": "Share of trials whose best $R^2$ clears the acceptance criterion."
+     },
+     "params.min_station_years": {
+      "kind": "stipulated",
+      "is": "Years of bathing record a station needs to be kept."
+     },
+     "params.min_below_excellent": {
+      "kind": "stipulated",
+      "is": "Years below Excellent before a station counts as informative."
+     },
+     "params.min_pairs_per_wb": {
+      "kind": "stipulated",
+      "is": "Correlated station pairs a water body needs for an internal coherence."
+     }
+    }
+   },
+   "what": "Measures how much of the Danish marine area the statistical models cover by name, how the water-body polygons vary in size, whether stations inside one water body behave alike in the bathing-water record, and - by simulation, shown on the method page - what a simpler, in-sample selection search returns on unrelated series.",
+   "model": "Coverage by name matching of model areas to polygons. Coherence as Pearson correlation of annual four-class bathing scores between stations with at least `params.min_station_years` years, at least `params.min_below_excellent` of them below Excellent, over common years. Variance split into between-body, between-station and within-station parts after removing the national yearly mean. The noise floor, a simpler stand-in for DCE's procedure, draws unrelated series of `noise_floor.cases.*.n_points` points and keeps the best $R^2$ over all subsets of up to `noise_floor.max_terms` of `noise_floor.candidates` candidates.",
+   "assumptions": [
+    "A bathing-quality class is a usable, if noisy, reading of faecal contamination at a beach in a year.",
+    "Name matching finds the polygons DCE's model areas refer to.",
+    "The simulated search is a simpler, in-sample stand-in for DCE's stepwise, cross-validated procedure; its null distribution applies to that search, not to DCE's."
+   ],
+   "justified": [
+    {
+     "text": "Coherence is tested on a long, dense, replicated marine record, with each station's water body taken from the layer itself; stations without a marine water-body id are left out.",
+     "ref": "scripts/observing.py"
+    },
+    {
+     "text": "The national year-to-year swing is removed before the variance is split, so a good summer everywhere is not counted as structure.",
+     "ref": "scripts/observing.py"
+    },
+    {
+     "text": "The simulation takes from DCE's report the seasonal means as points, their stated minimum and their candidate list; it does not run their stepwise, cross-validated selection over period windows.",
+     "ref": "data/derived/pins/DCE-STATMOD-2015.txt"
+    }
+   ],
+   "gaps": [
+    "The bathing record measures faecal bacteria, not chlorophyll; coherence for chlorophyll is not tested here, and most modelled water bodies have one long-series station.",
+    "Name matching of model areas to polygons is by the first letters of folded names and is not checked against DCE's own station coordinates.",
+    "The simulation offers every candidate to every model once, where DCE offer each over many period windows and select stepwise on cross-validated error."
+   ],
+   "void_if": [
+    "the bathing classes are assigned in a way that differs between neighbouring beaches for administrative reasons",
+    "DCE pre-screened candidates on mechanistic grounds"
+   ],
+   "licenses": "How much of the sea the statistical models cover; that, for faecal contamination, a water body explains less of the variation than the differences inside it; what a simpler, in-sample search passes when there is nothing there - a statement about that search.",
+   "not_licensed": "That chlorophyll behaves the same way inside a water body; that DCE's relations are false.",
+   "watches": [
+    "scripts/observing.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ob (re-read observing.py after the claims sweep: covered computations unchanged - coverage, sizes, coherence, variance, boundaries and the Køge cut reproduce their earlier values; declaration corrected where it called bathing the only dense record and the simulation DCE's own design; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/observing.py": "d8851ff17eeac5fc"
+    }
+   }
+  }
+ ]
+}

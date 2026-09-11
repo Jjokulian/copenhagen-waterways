@@ -27,7 +27,9 @@ from common import MANUAL, log, read_json, write_json
 STORE = os.path.join(MANUAL, "observations.geojson")
 DEFAULT_IMPORT = os.path.join(MANUAL, "observations.import.json")
 
-# Depth classes, matching the 2012 flood-model legend so the two can be compared.
+# Depth classes. Up to one metre they match the 2012 flood-model legend, so the two
+# can be compared there; above it the logger has one class, >1, where the legend has
+# 1-2 and >2.
 DEPTH = ["dry", "<0.05", "0.05-0.1", "0.1-0.2", "0.2-0.5", "0.5-1", ">1"]
 FLOW = ["standing", "slow", "fast", "torrent"]
 DRAIN = ["clear", "slow", "blocked", "surcharging", "none", "unseen"]

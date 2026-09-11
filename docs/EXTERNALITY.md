@@ -96,7 +96,7 @@ cannot say where it stops is not a proposal.
 
 | Product | Why it fits | What changes |
 |---|---|---|
-| **Artificial turf pitches** | ~100 t of rubber infill per pitch, migrating continuously; one municipal buyer, one contract, one supplier | The fine lands on a supplier who sold to a club with no containment plan. Pitches become leased systems with a contracted end of life |
+| **Artificial turf pitches** | [~100 t](SOURCES.md#F-c6a8d9c2cb) of rubber infill per pitch, migrating continuously; one municipal buyer, one contract, one supplier | The fine lands on a supplier who sold to a club with no containment plan. Pitches become leased systems with a contracted end of life |
 | **Agricultural film and silage wrap** | Farm-level buyer, dealer-level supplier, field-scale plastic on exactly the deterioration schedule the model is built around | Dealers become collection points; thicker reusable covers and returnable silos beat single-use film on total cost |
 | **Batteries and electronics** | Already under producer responsibility | Nothing structural — the mechanism exists and is priced nominally rather than at externality. This is the precedent, not the frontier |
 | **Nets, ropes, dolly rope** | Ghost gear *is* the unreturned item | Gear becomes an asset on a register rather than a consumable |
@@ -204,10 +204,10 @@ written rule and none of them is exotic — deposit systems already deal with al
 **The mirror of the moral hazard in the industry argument.** An industry paid to receive
 returns acquires an interest in returns being made, which is benign; an industry paid out
 of failure-to-return acquires an interest in failure, which is not. The revenue from
-clause 4 must not fund the party that administers clause 2.
+the fourth clause must not fund the party that administers the second clause.
 
 **And the honest one: this has not been costed.** No levy rate is proposed here, no
-elasticity is estimated, and no Danish legal opinion has been taken on whether clause 5
+elasticity is estimated, and no Danish legal opinion has been taken on whether the fifth clause
 survives contact with proportionality. The argument is that the *shape* is right — a
 deposit with an uncapped tail, keyed to what a substance does when it disperses, wrapped
 in a lease. The rate, the register and the law are work that has not been done.

@@ -146,6 +146,8 @@ def main():
     clusters = fg.label_clusters(cand, np, MIN_CORRIDOR_CELLS)
     clusters.sort(key=len, reverse=True)
     log(f"  {len(clusters)} corridor candidates >= {MIN_CORRIDOR_CELLS*cell_m2:,.0f} m²")
+    # the count of every candidate, stored: "corridors" below lists only the largest
+    res["corridor_candidates"] = len(clusters)
     for cells in clusters[:14]:
         ys = [c[0] for c in cells]
         xs = [c[1] for c in cells]

@@ -64,6 +64,58 @@ def read_json(path):
         return json.load(f)
 
 
+def fragments(path):
+    """A register and its fragments: `x.json`, then every JSON file in `x.d/`,
+    sorted. Parallel workers each write their own fragment, so no two ever
+    read-modify-write the same file."""
+    d = path[:-5] + ".d" if path.endswith(".json") else path + ".d"
+    out = [path] if os.path.exists(path) else []
+    if os.path.isdir(d):
+        out += sorted(os.path.join(d, f) for f in os.listdir(d) if f.endswith(".json"))
+    return out
+
+
+def load_build():
+    """data/manual/build.json with its fragments merged: every build step."""
+    # the same script declared in two files is one step with both sets of inputs
+    # and outputs - never a silent replacement of one by the other
+    steps, by = [], {}
+    for f in fragments(os.path.join(MANUAL, "build.json")):
+        for s in read_json(f).get("steps", []):
+            if s["script"] in by:
+                t = by[s["script"]]
+                t["inputs"] = t["inputs"] + [x for x in s.get("inputs", []) if x not in t["inputs"]]
+                t["outputs"] = t["outputs"] + [x for x in s.get("outputs", []) if x not in t["outputs"]]
+                if s.get("args") and not t.get("args"):
+                    t["args"] = s["args"]
+            else:
+                by[s["script"]] = t = dict(s, inputs=list(s.get("inputs", [])),
+                                           outputs=list(s.get("outputs", [])))
+                steps.append(t)
+    return {"steps": steps}
+
+
+class locked:
+    """An exclusive lock across processes, around a read-modify-write of a file
+    several generators share (the number index, SOURCES.md)."""
+
+    def __init__(self, name):
+        self.path = os.path.join(ROOT, "data", "derived", f".{name}.lock")
+
+    def __enter__(self):
+        import fcntl
+        os.makedirs(os.path.dirname(self.path), exist_ok=True)
+        self.fh = open(self.path, "w")
+        fcntl.flock(self.fh, fcntl.LOCK_EX)
+        return self
+
+    def __exit__(self, *exc):
+        import fcntl
+        fcntl.flock(self.fh, fcntl.LOCK_UN)
+        self.fh.close()
+        return False
+
+
 def _first_coord(geom):
     """Depth-first descent to the first [x, y] pair in any GeoJSON geometry."""
     if not geom:
@@ -131,13 +183,15 @@ def plain_r(r, thing="one", other="the other"):
       1 - sqrt(1 - r^2)    how much knowing one shrinks your error guessing the other
     """
     r2 = r * r
-    shrink = 1 - math.sqrt(max(0.0, 1 - r2))
+    rest = 1 - r2                         # ** 0.5 keeps a live number live; math.sqrt does not
+    shrink = 1 - (rest if rest > 0 else 0.0) ** 0.5
     return (f"{100*r2:.1f}% of the wobble in {thing} is shared with {other}; "
             f"knowing {other} shrinks your error guessing {thing} by {100*shrink:.0f}%")
 
 
 def plain_r2(r2):
-    shrink = 1 - math.sqrt(max(0.0, 1 - r2))
+    rest = 1 - r2
+    shrink = 1 - (rest if rest > 0 else 0.0) ** 0.5
     return (f"accounts for {100*r2:.0f}% of the wobble; shrinks prediction error "
             f"by {100*shrink:.0f}% against just guessing the average")
 

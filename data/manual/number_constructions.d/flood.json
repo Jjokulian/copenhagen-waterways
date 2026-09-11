@@ -1,0 +1,640 @@
+{
+ "constructions": [
+  {
+   "id": "K-FLOOD-GAP",
+   "title": "The recovered 2012 flood model against the cloudburst works",
+   "covers": {
+    "file": "data/derived/floodgap.json",
+    "fields": {
+     "n_sheets_used": {
+      "kind": "counted",
+      "is": "Flood-model sheets flagged as confidently registered in `data/derived/floodmaps/_georef.json` and actually placed on the grid: one sheet is one of the published PDF sheets."
+     },
+     "flooded_over_water_km2": {
+      "kind": "modelled",
+      "is": "Grid area where a sheet paints flooding at or above `params.flood_depth_min_m` but the cell falls under a mapped lake or harbour polygon: flooding painted over water, excluded from every other figure and reported here instead."
+     },
+     "params.flood_depth_min_m": {
+      "kind": "stipulated",
+      "is": "The lower bound of the shallowest legend band counted as flooded on land. The band below it is treated as a wet film, not flooding."
+     },
+     "params.near_m.*": {
+      "kind": "stipulated",
+      "is": "A distance threshold from the nearest part of any cloudburst work, chosen as a round step from a street's width to a block's."
+     },
+     "params.hotspot_min_area_m2": {
+      "kind": "stipulated",
+      "is": "The smallest connected area of deep, unaddressed flooding reported as a hotspot, chosen to exceed a road junction."
+     },
+     "params.hotspot_min_depth_m": {
+      "kind": "stipulated",
+      "is": "The lower bound of the shallowest legend band a hotspot cell must reach."
+     },
+     "params.hotspot_min_distance_m": {
+      "kind": "stipulated",
+      "is": "How far a hotspot cell must be from any planned or built work."
+     },
+     "band_bounds.*.lo_m": {
+      "kind": "document",
+      "is": "The lower depth bound of one legend band, as printed on the sheets' own legend and transcribed in `scripts/floodmaps.py`."
+     },
+     "band_bounds.*.hi_m": {
+      "kind": "document",
+      "is": "The upper depth bound of one legend band, as printed on the sheets' own legend; the deepest band has none."
+     },
+     "coverage.*": {
+      "kind": "share",
+      "is": "Of the land cells flooded at or above `params.flood_depth_min_m`, the share within the named distance of any part of a work: of any planned work, or only of works recorded as completed or in progress. Part and whole are the same cells counted by the same rule."
+     },
+     "by_band.*.area_m2": {
+      "kind": "modelled",
+      "is": "Land area, excluding mapped water, whose deepest band across all sheets is the named legend band."
+     },
+     "qa_flood_vs_water.water_share_of_grid": {
+      "kind": "share",
+      "is": "The share of all grid cells under a mapped lake or harbour polygon: the rate at which flooding would land on water if it were placed at random."
+     },
+     "qa_flood_vs_water.by_band.*.share_in_water": {
+      "kind": "share",
+      "is": "Of all cells painted in the named band, water included, the share under a mapped water polygon."
+     },
+     "sewer_catchment_coverage.catchment_share_of_grid": {
+      "kind": "share",
+      "is": "The share of grid cells inside any mapped sewer catchment of `sp_kloakoplande`."
+     },
+     "sewer_catchment_coverage.share_of_flooding_inside": {
+      "kind": "share",
+      "is": "Of the flooded land cells, the share inside any mapped sewer catchment: the portion the sewer-system shares are taken of."
+     },
+     "by_sewer_system.*.share_of_mapped_catchment_area": {
+      "kind": "share",
+      "is": "Of the grid cells inside mapped catchments, the share inside catchments of this sewer system. Catchments overlapping on the grid count once for each system that covers them."
+     },
+     "by_sewer_system.*.share_of_flooding_in_mapped_catchments": {
+      "kind": "share",
+      "is": "Of the flooded land cells inside mapped catchments, the share inside catchments of this sewer system, by the same overlap rule."
+     },
+     "by_sewer_system.*.concentration_ratio": {
+      "kind": "computed",
+      "is": "The system's share of flooding divided by its share of catchment area: above one where flooding is over-represented on it."
+     },
+     "hotspot_totals.clusters": {
+      "kind": "counted",
+      "is": "Connected groups of land cells, four-connected, at `params.hotspot_min_depth_m` or deeper and more than `params.hotspot_min_distance_m` from any work, of at least `params.hotspot_min_area_m2`. Smaller groups are not counted."
+     },
+     "hotspot_totals.area_m2": {
+      "kind": "modelled",
+      "is": "The summed area of those clusters."
+     },
+     "hotspot_totals.implied_volume_m3": {
+      "kind": "modelled",
+      "is": "The summed implied water volume of those clusters: each cell's area times the midpoint of its deepest band."
+     },
+     "hotspots.*.lat": {
+      "kind": "computed",
+      "is": "Latitude of a cluster's centroid, from grid cell centres, on the grid's flat-earth metres-per-degree."
+     },
+     "hotspots.*.lon": {
+      "kind": "computed",
+      "is": "Longitude of a cluster's centroid, by the same construction."
+     },
+     "hotspots.*.area_m2": {
+      "kind": "modelled",
+      "is": "One cluster's area: its cell count times the cell area."
+     },
+     "hotspots.*.implied_volume_m3": {
+      "kind": "modelled",
+      "is": "One cluster's area times the midpoint depth of each cell's deepest band, summed."
+     },
+     "hotspots.*.distance_to_nearest_planned_work_m": {
+      "kind": "computed",
+      "is": "The smallest distance, over the cluster's cells, to any part of any work, from a chamfer distance transform on the grid."
+     }
+    }
+   },
+   "what": "Puts the recovered flood-model sheets and the cloudburst plan's layers onto one metric grid, takes a distance transform out from the works, and reads off how much modelled flooding lies near planned and near built works; checks the registration against open water; crosses the flooding with sewer type; and finds deep flooding with nothing planned near it.",
+   "model": "Each confident sheet's depth bands are placed north-up on a grid of `params.cell_m` cells, keeping the deepest band per cell; mapped water is removed. The cloudburst layers are rasterised, split into planned and completed-or-in-progress, and a two-pass chamfer transform with weights $1$ and $\\sqrt{2}$ gives each cell's distance to the nearest work (in the code `distance_transform`). Coverage is the share of flooded land cells within each distance. Hotspots are four-connected components of the far, deep cells above a minimum size; implied volume uses band midpoints (`BAND_MID`).",
+   "assumptions": [
+    "The published sheets show the city's model faithfully, and the colour classification recovers the painted bands (see K-FLOODGAP).",
+    "Being near any part of a work is a fair first proxy for being served by it.",
+    "A work recorded in the completed or in-progress layers has broken ground; one only in the planning layers has not.",
+    "Band midpoints stand in for depth within a band."
+   ],
+   "justified": [
+    {
+     "text": "Distances, thresholds and band classes are all recorded in the output, so the page prints what the code used.",
+     "ref": "scripts/floodgap.py:281"
+    },
+    {
+     "text": "Flooding painted over water is excluded and reported separately, not dropped.",
+     "ref": "scripts/floodgap.py:243"
+    },
+    {
+     "text": "Sewer shares are taken of flooding inside mapped catchments, because the catchment layer does not tile the city; normalising by all flooding would understate every category.",
+     "ref": "scripts/floodgap.py:357"
+    },
+    {
+     "text": "Each sewer share is reported beside its base rate, so a share that merely reflects how much area a system covers is not read as concentration.",
+     "ref": "scripts/floodgap.py:366"
+    },
+    {
+     "text": "The water check compares each band's rate of landing on water with water's own share of the grid, which a misplaced sheet would approach.",
+     "ref": "scripts/floodgap.py:322"
+    }
+   ],
+   "gaps": [
+    "The water check currently fails for some bands: they land on water at least as often as water's share of the grid. For those depths it gives no evidence that the placement is right, and nothing yet says whether the cause is placement or the water layer.",
+    "The chamfer transform's error against true Euclidean distance is asserted in the docstring, not measured.",
+    "Distance to any part of any work is generous; nothing models which work would actually take which water.",
+    "The metres-per-degree constants are fixed at one latitude, a flat-earth approximation over the whole grid.",
+    "A code comment says most painted cells are exact palette matches; no code computes that share.",
+    "The build graph does not list the raw cloudburst and catchment layers, or the OSM water file, among this script's inputs, so a change in them does not mark the output stale.",
+    "The flood model is a 2012 calculation of a 2010 scenario, set against a plan from 2018 with later addenda."
+   ],
+   "void_if": [
+    "a sheet is misplaced by more than the distance thresholds",
+    "the cloudburst layers' status fields do not mean built versus planned",
+    "the water polygons miss lakes or harbour the sheets paint"
+   ],
+   "licenses": "How much of the city's own modelled flooding lies near planned and near built cloudburst works, at stated distances; where deep modelled flooding has nothing planned nearby; and whether the flooding is over-represented on any sewer type.",
+   "not_licensed": "That a place near a work is protected; the flood risk today, on today's city; or anything about flooding the 2012 model did not include.",
+   "watches": [
+    "scripts/floodgap.py",
+    "scripts/floodreg.py",
+    "scripts/floodmaps.py",
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/floodmaps/_sheets.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/floodgap.py": "76ca448241807d3d",
+     "scripts/floodreg.py": "6b088c68b01a063a",
+     "scripts/floodmaps.py": "b6aac5de8e3311c4",
+     "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
+     "data/derived/floodmaps/_sheets.json": "711eee27cb50234c"
+    }
+   }
+  },
+  {
+   "id": "K-FLOOD-SOLUTIONS",
+   "title": "Copenhagen's sewer, its plan, its infiltration, and the national overflow register",
+   "covers": {
+    "file": "data/derived/solutions.json",
+    "fields": {
+     "systems.*.catchments": {
+      "kind": "counted",
+      "is": "Catchments of `sp_kloakoplande` whose current `kloaksystem_status` is this sewer system; one polygon feature is one catchment."
+     },
+     "systems.*.impervious_ha": {
+      "kind": "measured",
+      "is": "Summed `befaestet_areal_status` - the impervious area the city recorded per catchment, in hectares - over catchments of this system."
+     },
+     "systems.*.pe": {
+      "kind": "measured",
+      "is": "Summed `pe_status` - the population equivalent the city recorded per catchment - over catchments of this system."
+     },
+     "impervious_total_ha": {
+      "kind": "measured",
+      "is": "Summed recorded impervious area over every catchment."
+     },
+     "pe_total": {
+      "kind": "measured",
+      "is": "Summed recorded population equivalent over every catchment."
+     },
+     "combined.impervious_ha": {
+      "kind": "measured",
+      "is": "Recorded impervious area of the catchments whose current system is `Fælleskloakeret`."
+     },
+     "combined.pe": {
+      "kind": "measured",
+      "is": "Recorded population equivalent of those catchments."
+     },
+     "combined.impervious_plan_ha": {
+      "kind": "measured",
+      "is": "Summed planned impervious area (`befaestet_areal_plan`) of the catchments whose planned system is `Fælleskloakeret`."
+     },
+     "reconnected_plan_ha": {
+      "kind": "measured",
+      "is": "Summed planned impervious area of the catchments whose planned system is separated inside the catchment and reconnected to the combined system."
+     },
+     "catchments.combined": {
+      "kind": "counted",
+      "is": "Catchments whose current system is combined."
+     },
+     "catchments.stay_combined": {
+      "kind": "counted",
+      "is": "Of those, the catchments whose planned system is also combined."
+     },
+     "catchments.reconnected": {
+      "kind": "counted",
+      "is": "Of those, the catchments planned to be separated and reconnected to the combined system."
+     },
+     "catchments.separated": {
+      "kind": "counted",
+      "is": "Of those, the catchments planned for any other, genuinely separate system."
+     },
+     "lar.installations": {
+      "kind": "counted",
+      "is": "Records in the city's `lar_registreringer` layer; one record is one registered infiltration installation."
+     },
+     "lar.disconnected_ha": {
+      "kind": "measured",
+      "is": "Summed `afkoblet_areal_m2`, the disconnected area recorded per installation, in hectares. An unreadable value counts as zero."
+     },
+     "lar.in_use_ha": {
+      "kind": "measured",
+      "is": "The same sum over installations whose permit is recorded as taken into use."
+     },
+     "register.discharge_points": {
+      "kind": "counted",
+      "is": "Features of the national rain-dependent discharge register `punkt_rbu_udl`."
+     },
+     "register.municipalities": {
+      "kind": "counted",
+      "is": "Distinct `komm_navn` values among them."
+     },
+     "register.copenhagen_points": {
+      "kind": "counted",
+      "is": "Features of the Copenhagen clip `vp3_basis_2019_punkt_rbu_udl`."
+     },
+     "register.with_volume": {
+      "kind": "counted",
+      "is": "National features with a positive recorded basin volume `vol_sb`."
+     },
+     "register.largest_m3": {
+      "kind": "measured",
+      "is": "The largest recorded basin volume."
+     },
+     "register.median_m3": {
+      "kind": "computed",
+      "is": "The middle recorded volume by position among the positive volumes, the upper of the two middle ones when their number is even."
+     },
+     "register.tail.*.share_of_structures": {
+      "kind": "stipulated",
+      "is": "A share of the structures with a recorded volume, largest first, chosen to show the tail."
+     },
+     "register.tail.*.count": {
+      "kind": "computed",
+      "is": "The whole number of structures in that share, and never fewer than one."
+     },
+     "register.tail.*.share_of_volume": {
+      "kind": "share",
+      "is": "Their summed recorded volume as a share of all recorded volume: part and whole from the same structures with a recorded volume."
+     }
+    }
+   },
+   "what": "Reads the city's catchment and infiltration layers and the national overflow register, and summarises how much of Copenhagen is combined sewer, what the plan changes, what infiltration has disconnected, and how concentrated the recorded overflow volume is.",
+   "model": "Sums and counts over the layers' own recorded attributes, grouped by current and planned sewer system; the tail table ranks recorded basin volumes and takes the share held by the largest structures (in the code `sum(vols[:n]) / tot_v`).",
+   "assumptions": [
+    "The recorded impervious areas, population equivalents, disconnected areas and basin volumes are what they say.",
+    "A catchment's planned system is the plan's intention, not a delivered change.",
+    "Structures without a recorded volume are not systematically different from those with one."
+   ],
+   "justified": [
+    {
+     "text": "Every figure is a sum or count of the publishers' own recorded attributes, with no model between the record and the number.",
+     "ref": "scripts/solutions.py"
+    },
+    {
+     "text": "The reconnected category is kept apart from genuine separation, because its own name says the water rejoins the combined pipe.",
+     "ref": "scripts/solutions.py"
+    }
+   ],
+   "gaps": [
+    "Recorded basin volumes, areas and population equivalents are taken as entered; nothing here checks them.",
+    "Structures with no recorded volume are left out of the tail, and whether they differ from those with one is unknown.",
+    "An unreadable disconnected area is read as zero, and nothing counts how often that happens.",
+    "The combined share is a share of recorded impervious area and population equivalent, not of rainfall or of discharge."
+   ],
+   "void_if": [
+    "the recorded attributes are stale or entered inconsistently between catchments",
+    "the planned-system field stops meaning the plan's intention"
+   ],
+   "licenses": "How much of Copenhagen's recorded impervious area and population is on combined sewer, what the plan's categories change, how much infiltration is registered, and how concentrated recorded overflow storage is.",
+   "not_licensed": "How much sewage actually overflows, or where; that the plan will be delivered; anything about the unrecorded structures.",
+   "watches": [
+    "scripts/solutions.py"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/solutions.py": "6dc153443dead1de"
+    }
+   }
+  },
+  {
+   "id": "K-FLOOD-DELIVERY",
+   "title": "Cloudburst lengths by typology and by the city's expected year",
+   "covers": {
+    "file": "data/derived/conveyance.json",
+    "fields": {
+     "by_typologi.*.km": {
+      "kind": "measured",
+      "is": "Summed segment length of the features of one `typologi` in `skp_veje_tunneller_kk`, measured on the map geometry by the formula of K-CONVEYANCE."
+     },
+     "by_typologi.*.features": {
+      "kind": "counted",
+      "is": "Features of that typologi with line geometry; one feature is one mapped alignment."
+     },
+     "features": {
+      "kind": "counted",
+      "is": "Features of the layer with line geometry, all typologies."
+     },
+     "surface_to_pipe": {
+      "kind": "computed",
+      "is": "`surface_km` divided by `pipe_km`: the surface-only class against the pipe class."
+     },
+     "delivery_cutoff_year": {
+      "kind": "stipulated",
+      "is": "The year the delivery split is made at: the last full year before the layer was fetched."
+     },
+     "in_service_by_cutoff_km": {
+      "kind": "measured",
+      "is": "Summed length of the features whose `forventet_ibrugtagning` is a year no later than the cutoff."
+     },
+     "scheduled_after_cutoff_km": {
+      "kind": "measured",
+      "is": "Summed length of the features whose expected year is after the cutoff."
+     },
+     "undated_km": {
+      "kind": "measured",
+      "is": "Summed length of the features whose expected year is missing or not a plain year."
+     },
+     "last_scheduled_year": {
+      "kind": "document",
+      "is": "The latest expected-in-service year the city recorded on any feature."
+     }
+    }
+   },
+   "what": "Adds to conveyance.py's measurement the length per typology and the length by the city's expected-in-service year, from the same segment lengths.",
+   "model": "Each feature's length, measured as in K-CONVEYANCE, is added to its typology and to its `forventet_ibrugtagning` year; years at or before the cutoff are in service, later ones scheduled, anything else undated.",
+   "assumptions": [
+    "The expected-in-service year recorded on a feature is the city's current expectation for it.",
+    "A year at or before the cutoff means the alignment is in service."
+   ],
+   "justified": [
+    {
+     "text": "The same segment lengths feed every conveyance figure, so the site has one length table for this layer rather than a second one with other constants.",
+     "ref": "scripts/conveyance.py"
+    }
+   ],
+   "gaps": [
+    "An expected year at or before the cutoff is the city's record, not a verified delivery.",
+    "A year in the future is an expectation, and the layer carries no record of slippage."
+   ],
+   "void_if": [
+    "the layer's expected-year field is not maintained as works slip or complete"
+   ],
+   "licenses": "What the city's own layer says about when its cloudburst alignments are expected in service, by length.",
+   "not_licensed": "That the alignments are built, or will be by the years shown.",
+   "watches": [
+    "scripts/conveyance.py"
+   ],
+   "confirmed": {
+    "by": "fork flood (written against solutions.py, conveyance.py and monitoring.json after conversion, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/conveyance.py": "84c7ccecce69230f"
+    }
+   }
+  },
+  {
+   "id": "K-FLOOD-MONITORING",
+   "title": "Overflow knowledge levels and the typetal's station base, as transcribed",
+   "covers": {
+    "file": "data/manual/monitoring.json",
+    "fields": {
+     "hazardous_substances.stations_combined_overflow": {
+      "kind": "document",
+      "is": "The number of combined-overflow monitoring stations the typetal report says its concentrations come from."
+     },
+     "hazardous_substances.stations_separate_stormwater": {
+      "kind": "document",
+      "is": "The number of separate-stormwater stations, from the same report."
+     },
+     "hazardous_substances.applied_to_discharge_points_nationally": {
+      "kind": "document",
+      "is": "The number of national discharge points the report says the typetal are applied to."
+     },
+     "overflow_reporting.knowledge_levels.*.level": {
+      "kind": "document",
+      "is": "A level of Miljøstyrelsen's hierarchy of methods for overflow volumes (`videnniveau`), as its technical instruction numbers them."
+     },
+     "overflow_reporting.knowledge_levels.*.uncertainty_pct": {
+      "kind": "document",
+      "is": "The uncertainty the technical instruction states for that level, in per cent."
+     }
+    }
+   },
+   "what": "Values stated in Miljøstyrelsen's documents on rain-dependent discharges, transcribed into the project's monitoring register with their sources.",
+   "model": "Read from `data/manual/monitoring.json`, which records each value with its source document and URL.",
+   "assumptions": [
+    "The transcription matches the documents."
+   ],
+   "justified": [
+    {
+     "text": "The station base and application of the typetal are stated in the typetal report.",
+     "ref": "https://mst.dk/media/grzhqw5f/typetal-for-miljoefarlige-forurenende-stoffer-i-regnbetingede-udledninger.pdf"
+    },
+    {
+     "text": "The knowledge levels and their uncertainties are stated in the technical instruction for rain-dependent discharges.",
+     "ref": "https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf"
+    }
+   ],
+   "gaps": [
+    "The values were typed into the register by hand and are not pinned by hash; nothing re-reads them against the documents. They are candidates for pinned `{read:}` readings."
+   ],
+   "void_if": [
+    "the documents are revised, or were transcribed wrongly"
+   ],
+   "licenses": "What those documents state.",
+   "not_licensed": "That what they state is right.",
+   "watches": [
+    "data/manual/monitoring.json#hazardous_substances",
+    "data/manual/monitoring.json#overflow_reporting"
+   ],
+   "confirmed": {
+    "by": "fork flood (written against solutions.py, conveyance.py and monitoring.json after conversion, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/monitoring.json#hazardous_substances": "916fe2a1105cb0e6",
+     "data/manual/monitoring.json#overflow_reporting": "e221eb4ad112490b"
+    }
+   }
+  },
+  {
+   "id": "K-FLOOD-EXPORT",
+   "title": "The published flood-model dataset and its accuracy",
+   "covers": {
+    "file": "docs/data/flood2012/manifest.json",
+    "fields": {
+     "n_sheets": {
+      "kind": "counted",
+      "is": "Sheets exported with a raster, a world file and a projection file; one sheet is one of the published PDF sheets."
+     },
+     "n_autoref": {
+      "kind": "counted",
+      "is": "Exported sheets whose recorded placement method is the automatic ensemble water cross-correlation."
+     },
+     "n_control_points": {
+      "kind": "counted",
+      "is": "Exported sheets whose recorded placement method uses resident-reported control points."
+     },
+     "bands.*.lo_m": {
+      "kind": "document",
+      "is": "The lower depth bound of the band a pixel value stands for, from the sheets' own legend."
+     },
+     "bands.*.hi_m": {
+      "kind": "document",
+      "is": "The upper depth bound of that band; the deepest band has none."
+     },
+     "bundle_adjustment.pair_rms_m": {
+      "kind": "estimated",
+      "is": "Root-mean-square disagreement between overlapping sheets after the bundle adjustment, from `data/derived/floodalign.json`."
+     },
+     "standard_error_min_m": {
+      "kind": "estimated",
+      "is": "The smallest standard error recorded for a sheet placed from control points."
+     },
+     "standard_error_max_m": {
+      "kind": "estimated",
+      "is": "The largest such standard error."
+     },
+     "sheets.*.standard_error_m": {
+      "kind": "estimated",
+      "is": "The standard error recorded for one sheet's placement, where it was placed from control points; entered by hand in the registration record."
+     }
+    }
+   },
+   "what": "Copies the recovered depth rasters with world and projection files, and records in a manifest how each sheet was placed and how well the placement agrees.",
+   "model": "Counts and extremes over the per-sheet records of `data/derived/floodmaps/_georef.json` and the alignment summary of `data/derived/floodalign.json`; band bounds from the legend in `scripts/floodmaps.py`.",
+   "assumptions": [
+    "The recorded method and standard error of each sheet describe its current placement."
+   ],
+   "justified": [
+    {
+     "text": "Every count and error is read from the registration records, so the README follows the placement as it is now.",
+     "ref": "scripts/export_flood.py"
+    }
+   ],
+   "gaps": [
+    "The standard errors of control-point sheets were entered by hand in the registration record; no code writes them.",
+    "The pair RMS measures agreement between sheets, not agreement with the ground, and cannot see an error all sheets share."
+   ],
+   "void_if": [
+    "a sheet is re-registered and the manifest is not regenerated"
+   ],
+   "licenses": "How each exported sheet was placed and how well the placements agree with each other and with the control points.",
+   "not_licensed": "The accuracy of the flood model itself.",
+   "watches": [
+    "scripts/export_flood.py",
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/floodalign.json"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/export_flood.py": "c52b0ae14d150596",
+     "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
+     "data/derived/floodalign.json": "19bee7a60e77a02e"
+    }
+   }
+  },
+  {
+   "id": "K-FLOOD-CONSTRUCTED",
+   "title": "The size of the constructions register",
+   "covers": {
+    "file": "data/derived/constructed.json",
+    "fields": {
+     "entries": {
+      "kind": "counted",
+      "is": "Rows of the register as the generator holds them; one row is one comparison of a construction against a measurement."
+     },
+     "ours": {
+      "kind": "counted",
+      "is": "Of those rows, the ones whose construction is marked as this project's own."
+     }
+    }
+   },
+   "what": "Counts the rows of the constructions register, and those that are the project's own, as the generator writes them.",
+   "model": "`len` of the generator's row list, and of the rows flagged as the project's own.",
+   "assumptions": [
+    "A row is flagged as the project's own exactly when its construction cell says so."
+   ],
+   "justified": [
+    {
+     "text": "The counts are taken from the same list the table is printed from, so they cannot drift from it.",
+     "ref": "scripts/pages/constructed.py"
+    }
+   ],
+   "gaps": [],
+   "void_if": [
+    "a row is added without its ownership flag"
+   ],
+   "licenses": "How many comparisons the register holds, and how many are of the project's own constructions.",
+   "not_licensed": "How many comparisons the project has run in all.",
+   "watches": [
+    "scripts/pages/constructed.py"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/constructed.py": "f375a511d3596d25"
+    }
+   }
+  },
+  {
+   "id": "K-FLOOD-SETTLE",
+   "title": "Counts the experiment page takes from the registers it describes",
+   "covers": {
+    "file": "data/derived/settle.json",
+    "fields": {
+     "designs": {
+      "kind": "counted",
+      "is": "Experiment designs in `data/derived/experiments.json`; one entry is one design in the register EXPERIMENTS.md renders."
+     },
+     "desk_designs": {
+      "kind": "counted",
+      "is": "Of those, the designs whose scale is `desk`: analyses on data that already exists."
+     },
+     "hypotheses": {
+      "kind": "counted",
+      "is": "The competing hypotheses this page states in its first table."
+     }
+    }
+   },
+   "what": "Counts the designs in the experiment register, the desk-scale ones among them, and the hypotheses this page states.",
+   "model": "`len` over the register's entries, and over those with scale `desk`; `len` of the page's own hypothesis list.",
+   "assumptions": [
+    "The register's scale field says which designs need no fieldwork."
+   ],
+   "justified": [
+    {
+     "text": "The counts are taken from the register the page points to, so they follow it when a design is added.",
+     "ref": "scripts/pages/settle.py"
+    }
+   ],
+   "gaps": [],
+   "void_if": [
+    "the experiment register changes its notion of scale"
+   ],
+   "licenses": "How many designs the register holds and how many need no fieldwork.",
+   "not_licensed": "Anything about whether the designs would work.",
+   "watches": [
+    "scripts/pages/settle.py"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/settle.py": "7eb6f74cf6368be2"
+    }
+   }
+  }
+ ]
+}

@@ -22,8 +22,8 @@ over the whole city at once rather than searching offsets one at a time.
 An earlier attempt matched the drawn catchment outline instead and failed badly. The
 reason turned out to be interesting: the "Oplandsgraenser" drawn on these 2012 sheets is
 NOT the boundary in today's skp_skybrudsoplande. Registering on water and then testing
-against the drawn outline gives 13.6% coverage against an 11% chance level - the
-registration is right (the vector coastline traces the photographed quays exactly) and
+against the drawn outline gave coverage barely above the chance level (the figures of
+that run were not stored) - the registration is right (the vector coastline traces the photographed quays exactly) and
 the boundary is what changed. Do not use the catchment outline to validate.
 
 `georef` remains available for hand-placed control points via viz/georef.html, as a
@@ -251,9 +251,10 @@ def classify(a, np):
     """Assign each pixel to a depth band, or 0 for 'not flooded'.
 
     The palest band (247,251,255) is barely off-white, so on colour alone it matches
-    every white roof on the sheet - 363,940 hits on Indre By against 18,393 real ones.
-    What separates it is the blue cast: the fill keeps B-R = +8 where paint and concrete
-    are neutral. That one test removes 95% of the false positives.
+    every white roof on the sheet - on Indre By, many times more hits than real ones
+    (the counts of that run were not stored). What separates it is the blue cast: the
+    fill keeps a positive B-R where paint and concrete are neutral, and that one test
+    removed nearly all of the false positives.
 
     A local-flatness test (vector fill is flat, aerial photo is not) helps the darker
     bands, but must NOT be applied to the pale band: those are 2-8 px streaks threading

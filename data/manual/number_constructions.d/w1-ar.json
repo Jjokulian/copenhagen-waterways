@@ -1,0 +1,46 @@
+{
+ "constructions": [
+  {
+   "id": "K-AR-PARTITION-SPREAD",
+   "title": "How far the matched-blob null moves between its runs",
+   "covers": {
+    "file": "docs/data/areas/partition_score.json",
+    "fields": {
+     "results.*.size_matched_compact.spread": {
+      "kind": "computed",
+      "is": "For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed."
+     }
+    }
+   },
+   "what": "How much the compact null itself varies from one draw of blobs to another, beside the lift measured against its mean.",
+   "model": "`scripts/partition_score.py` grows one set of compact blobs per seed in its fixed list of seeds, scores each with `icc()`, and stores the mean as `size_matched_compact.icc`, the number of runs as `runs`, and the maximum minus the minimum as `spread`.",
+   "assumptions": [
+    "The seeds are few - their number is stored as `runs` - so the spread is of those draws only, not an estimate of the null's full variability."
+   ],
+   "justified": [
+    {
+     "text": "The spread is computed from the same per-seed scores whose mean the lift is taken against, so a lift smaller than it is within the null's own variation.",
+     "ref": "scripts/partition_score.py"
+    }
+   ],
+   "gaps": [
+    "With so few runs the spread understates how far a single draw of blobs could fall; no standard error is computed."
+   ],
+   "void_if": [
+    "partition_score.py changes its seeds or how it scores a partition and is not rerun"
+   ],
+   "licenses": "Whether a lift over the compact null is larger than the null's own variation across the runs made.",
+   "not_licensed": "A confidence interval or a significance level for the lift.",
+   "watches": [
+    "scripts/partition_score.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ar (read the compact-null loop and the spread computation in partition_score.py: one score per seed, spread = max minus min; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/partition_score.py": "d1821352bd19f410"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,3711 @@
+{
+ "_what": "Fork w1-ni: the claims of docs/NITROGEN.md, the sources and nodes they rest on, and the published claims retired from it.",
+ "sources": {
+  "NI-MFE-OVERSEER": {
+   "title": "Ministry for the Environment (New Zealand), Government response to the findings of the Overseer peer review report - publication page",
+   "url": "https://environment.govt.nz/publications/government-response-to-the-findings-of-the-overseer-peer-review-report/",
+   "sha256": "f14a83554cfb962caa0619eaf0fa9a4bb4d03588c8424d542991f0f2d3f0363f",
+   "retrieved": "2026-09-11",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "NI-DCE-ILT-2023": {
+   "title": "DCE Rådgivningsnotat, Iltsvind i danske farvande, 22. september - 26. oktober 2023",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2023/N2023_52.pdf",
+   "sha256": "f5a0f9f2d3140e1843ca2c778bfdbb54baa35cfd148fa29fb910055021bbde6f",
+   "retrieved": "2026-09-11",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "NI-DCE-ILT-2025": {
+   "title": "DCE Fagligt notat, Iltsvind i danske farvande, 31. oktober - 26. november 2025",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2025/N2025_71.pdf",
+   "sha256": "d2250411494901b554f31dfe71dafde1027b9d0bc4b8a63abba5a8b33730a9c3",
+   "retrieved": "2026-09-11",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "NI-WINDOLF-BIB": {
+   "title": "Windolf, Blicher-Mathiesen, Carstensen & Kronvang (2012), Environmental Science and Policy - Crossref bibliographic record",
+   "url": "https://api.crossref.org/works/10.1016/j.envsci.2012.08.009/transform/text/x-bibliography",
+   "sha256": "1dae2fa62bb42107a6e7908e1facf2b11ea22db6c22b1da1e0fd0edf4d60ff3f",
+   "retrieved": "2026-09-11",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "D-NI-PATHWAYS",
+   "kind": "held",
+   "label": "Nitrogen pathways register",
+   "detail": "data/manual/nitrogen_pathways.json: every pathway of reactive nitrogen to Danish marine waters this project enumerated, a range where one exists and none where it does not."
+  },
+  {
+   "id": "U-NI-PATHWAY-SOURCES",
+   "kind": "untraced",
+   "label": "Trail ends: the pathways'\\nbounds carry no source",
+   "detail": "Searched on 2026-09-11: the register's rows carry no per-row source, no row is marked as this project's own construction although the register's rule asks for it, and no list of sources for the bounds was found in data/manual or docs. The ranges are this project's compilation."
+  },
+  {
+   "id": "D-NI-MONITORING",
+   "kind": "held",
+   "label": "Monitoring register",
+   "detail": "data/manual/monitoring.json: documented properties of the Danish measurement system, collected from technical annexes; each section names its source, and the diffuse-load section names none."
+  },
+  {
+   "id": "U-NI-DIFFUSE-SOURCES",
+   "kind": "untraced",
+   "label": "Trail ends: the diffuse-load\\nfigures are uncited",
+   "detail": "The monitoring register's diffuse-load section - the stream stations, the measured and modelled shares of the country, the validation study's deviations, the retention uncertainty and the negative dry-year contribution - carries no citation, and none of the pinned documents was found to state them (searched on 2026-09-11)."
+  },
+  {
+   "id": "U-NI-LINE-METHODS",
+   "kind": "untraced",
+   "label": "Trail ends: how the smaller\\nlines are estimated",
+   "detail": "How aquaculture, industry, separate stormwater and scattered dwellings are estimated is described from the monitoring and pathways registers, which cite no source for these lines; the pinned DP02 covers only rain-dependent discharges."
+  },
+  {
+   "id": "E-NI-DANVA-AGRI",
+   "kind": "external",
+   "label": "DANVA, quoting Miljøstyrelsen\\nand Aarhus Universitet",
+   "source": "DANVA-2024",
+   "said": "Ifølge data fra Miljøstyrelsen og Aarhus Universitet",
+   "detail": "The utilities' association's summary of the national apportionment: diffuse sources' and agriculture's shares of all nitrogen discharged, with no method and no uncertainty stated."
+  },
+  {
+   "id": "E-NI-DANVA-MINOR",
+   "kind": "external",
+   "label": "DANVA: the remaining lines\\nare even smaller",
+   "source": "DANVA-2024",
+   "said": "bidrager med endnu mindre andele",
+   "detail": "After the treatment-plant share, the summary says only that rain-dependent outlets, combined-sewer overflows and scattered dwellings contribute even smaller shares."
+  },
+  {
+   "id": "E-NI-DANVA-SCOPE",
+   "kind": "external",
+   "label": "DANVA: discharge to\\ncoastal waters by source",
+   "source": "DANVA-2024",
+   "said": "Udledning af kvælstof til kystvand opdelt på kilder",
+   "detail": "The summary's source for its figure is titled a discharge of nitrogen to coastal waters by source."
+  },
+  {
+   "id": "E-NI-DANVA-PUMPS",
+   "kind": "external",
+   "label": "DANVA: emergency overflows\\nfrom pumping stations",
+   "source": "DANVA-2024",
+   "said": "Nødoverløb fra Pumpestationer",
+   "detail": "The summary's list of how wastewater reaches the water names emergency overflows from pumping stations."
+  },
+  {
+   "id": "E-NI-MSFD-RESIDUAL",
+   "kind": "external",
+   "label": "DCE MSFD note: the\\nanthropogenic diffuse load",
+   "source": "MSFD28",
+   "said": "Diffuse tilførsler (inkl. spredt bebyggelse) minus baggrundsbidraget (diffus antropogen)",
+   "detail": "The anthropogenic diffuse load is the diffuse load, scattered dwellings included, minus the background."
+  },
+  {
+   "id": "E-NI-MSFD-BACKGROUND",
+   "kind": "external",
+   "label": "DCE MSFD note: how the\\nbackground is determined",
+   "source": "MSFD28",
+   "said": "bestemmes i mindre oplande med lav antropogen påvirkning",
+   "detail": "The background is determined in small catchments with little human impact."
+  },
+  {
+   "id": "E-NI-MSFD-DIFFUSE",
+   "kind": "external",
+   "label": "DCE MSFD note: scattered\\ndwellings inside the diffuse load",
+   "source": "MSFD28",
+   "said": "tilførsler fra spredt bebyggelse ofte er svær at adskille fra øvrige diffuse kilder",
+   "detail": "Scattered dwellings are counted inside the diffuse load because they are hard to separate from the other diffuse sources."
+  },
+  {
+   "id": "E-NI-MSFD-SPLIT",
+   "kind": "external",
+   "label": "DCE MSFD note: the split\\nis not made year by year",
+   "source": "MSFD28",
+   "said": "opdelingen specielt for fosfor og organisk stof er usikker",
+   "detail": "The split into background and anthropogenic load is made only on multi-year averages, because year by year it is uncertain."
+  },
+  {
+   "id": "E-NI-DP02-QC",
+   "kind": "external",
+   "label": "DP02: the acceptance\\ninterval and what follows",
+   "source": "DP02",
+   "said": "kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl",
+   "detail": "Reported nitrogen over reported volume outside the interval leads to the data owner being contacted to correct the error. The intervals themselves are re-checked against the pin by scripts/nitrogen.py at every build."
+  },
+  {
+   "id": "E-NI-DP02-LEVELS",
+   "kind": "external",
+   "label": "DP02: knowledge levels\\nand their uncertainty",
+   "source": "DP02",
+   "said": "Niveau for usikkerhed på udledt stofmængde",
+   "detail": "The stated uncertainty of the discharged mass at each knowledge level, re-checked against the pin by scripts/nitrogen.py at every build."
+  },
+  {
+   "id": "E-NI-DP02-FIELDS",
+   "kind": "external",
+   "label": "DP02: the data required\\nin PULS for an overflow",
+   "source": "DP02",
+   "said": "Antal overløb (antal/år)",
+   "detail": "The table of data required in PULS for a combined-sewer overflow: structure type, areas, basin volume, discharge capacity, dry-weather flow, method, rain series, rainfall, annual volume, masses and the number of overflows a year."
+  },
+  {
+   "id": "E-NI-SR353-INPUT",
+   "kind": "external",
+   "label": "SR353: the field surplus\\nas the model's input",
+   "source": "SR353",
+   "said": "En vigtig modelvariabel i DK-QNP modellen",
+   "detail": "DCE's methods chapter names the annually computed field surplus as an important variable of the DK-QNP model."
+  },
+  {
+   "id": "E-NI-SR353-RELATION",
+   "kind": "external",
+   "label": "SR353: the relation\\nreported as a result",
+   "source": "SR353",
+   "said": "en meget stærk, signifikant lineær relation mellem det nationale markoverskud",
+   "detail": "Chapter six reports a very strong, significant linear relation between the national field surplus and the normalised diffuse transport."
+  },
+  {
+   "id": "E-NI-SR353-QUALIFY",
+   "kind": "external",
+   "label": "SR353: not all fjords\\nrespond equally fast",
+   "source": "SR353",
+   "said": "der ikke for alle fjordoplande ses en lige hurtig respons",
+   "detail": "Right after the relation: Mariager Fjord and parts of Limfjorden reduced their diffuse load less than the relation indicates, citing two papers by Windolf and colleagues from 2012."
+  },
+  {
+   "id": "E-NI-SR353-BIAS",
+   "kind": "external",
+   "label": "SR353: the model's\\nregional bias",
+   "source": "SR353",
+   "said": "den anvendte metode har en regional bias og generelt overestimerer kvælstofkoncentrationerne i det vestlige Danmark",
+   "detail": "The method overestimates nitrogen concentrations in western Denmark and tends to underestimate in the east, found by Bøgestrand and colleagues; SR353 corrects monthly loads for it by region."
+  },
+  {
+   "id": "E-NI-SR120-NORMS",
+   "kind": "external",
+   "label": "SR120: crop nitrogen\\nfrom the feed tables",
+   "source": "SR120",
+   "said": "Normtal for afgrødernes kvælstofindhold følger opgørelserne i Fodermiddeltabellerne",
+   "detail": "Crop nitrogen contents follow the feed tables of four editions."
+  },
+  {
+   "id": "E-NI-SR120-CEREAL",
+   "kind": "external",
+   "label": "SR120: cereals corrected\\nfrom annual analyses",
+   "source": "SR120",
+   "said": "korrigeres hvert år efter de analyser Videncenter for Svineproduktion foretager",
+   "detail": "Cereal nitrogen is corrected every year from the analyses of the pig industry's research centre."
+  },
+  {
+   "id": "E-NI-SR120-MANURE",
+   "kind": "external",
+   "label": "SR120: manure by the\\nnorms in force",
+   "source": "SR120",
+   "said": "de til en hver tid gældende normer",
+   "detail": "Manure nitrogen follows the norms in force at the time."
+  },
+  {
+   "id": "E-NI-SR120-STEP",
+   "kind": "external",
+   "label": "SR120: the step in the\\nquota series",
+   "source": "SR120",
+   "said": "i de opgjorte kvælstofkvoter",
+   "detail": "The norm cut and the grass-norm change of the same year give a step in the compiled nitrogen quotas."
+  },
+  {
+   "id": "E-NI-SR120-P2012",
+   "kind": "external",
+   "label": "SR120: the harvest method\\nchange raised phosphorus",
+   "source": "SR120",
+   "said": "er steget lidt ift. de tidligere opgørelser",
+   "detail": "After the change from dry-matter yield to feed units, the phosphorus net-input figures rose slightly against earlier compilations."
+  },
+  {
+   "id": "E-NI-SR120-T34",
+   "kind": "external",
+   "label": "SR120 Table 3.4:\\nthe national balance",
+   "source": "SR120",
+   "said": "Hele landet DS",
+   "detail": "The whole-country rows of the field balance, including the year published twice from two fertiliser registers; each value is a checked reading."
+  },
+  {
+   "id": "E-NI-OVERSEER",
+   "kind": "external",
+   "label": "New Zealand: the Overseer\\nreview panel's conclusion",
+   "source": "NI-MFE-OVERSEER",
+   "said": "concluded they did not have confidence in",
+   "detail": "The ministry's summary: the Science Advisory Panel did not have confidence in Overseer's estimates of nitrogen lost from farms across the full range of the country's climates, topographies and land uses."
+  },
+  {
+   "id": "E-NI-WINDOLF-BIB",
+   "kind": "external",
+   "label": "Windolf and colleagues:\\nthe bibliographic record",
+   "source": "NI-WINDOLF-BIB",
+   "said": "A paired catchment and estuary approach for analysing regional responses",
+   "detail": "Only the record is pinned: authors, title and journal."
+  },
+  {
+   "id": "U-NI-WINDOLF-TEXT",
+   "kind": "untraced",
+   "label": "Trail ends: the paper's\\ntext could not be read",
+   "detail": "Searched on 2026-09-11: Unpaywall lists one open copy, a submitted version on Zenodo, whose record now answers that it is gone; Aarhus University's research portal record holds no file; Semantic Scholar reports the abstract elided by the publisher; the publisher's copy is paywalled. Nothing this site stored earlier holds the paper's figures."
+  },
+  {
+   "id": "U-NI-HELDOUT",
+   "kind": "untraced",
+   "label": "Trail ends: no held-out\\nvalidation found",
+   "detail": "The pinned SR353 describes a bias correction, not a validation against gauged catchments held out of the model's fitting; the method papers it cites for DK-QNP were not read."
+  },
+  {
+   "id": "U-NI-SR120-DEPOSITION",
+   "kind": "untraced",
+   "label": "Trail ends: how SR120\\nestimates deposition",
+   "detail": "The appendix section on deposition was not read; that the deposition term is modelled is this page's statement, not a checked reading."
+  },
+  {
+   "id": "E-NI-NOVANA-FAUNA",
+   "kind": "external",
+   "label": "NOVANA: the soft-bottom\\nfauna window",
+   "source": "NOVANA-2327",
+   "said": "Overvågningen af blødbundsfaunaen gennemføres i tidsrummet",
+   "detail": "The national programme samples soft-bottom fauna from the beginning of March to the end of May."
+  },
+  {
+   "id": "E-NI-TYPETAL-STATIONS",
+   "kind": "external",
+   "label": "Typetal report:\\nthe stations",
+   "source": "TYPETAL22",
+   "said": "fælleskloakerede spildevandsoverløb og fem separatkloakerede regnvandsudledninger",
+   "detail": "Six combined-sewer overflows and five separate stormwater outlets in the national programme."
+  },
+  {
+   "id": "E-NI-TYPETAL-HOUSEHOLDS",
+   "kind": "external",
+   "label": "Typetal report: catchments\\nof households",
+   "source": "TYPETAL22",
+   "said": "oplande, der primært repræsenterer bidrag fra husholdninger og boligområder",
+   "detail": "The programme chose catchments representing households and residential areas."
+  },
+  {
+   "id": "E-NI-TYPETAL-NOBASIN",
+   "kind": "external",
+   "label": "Typetal report: no\\nprior treatment",
+   "source": "TYPETAL22",
+   "said": "udelukkende udledninger uden forudgående rensning i form af fx filtrering eller sedimentation i regnvandsbassiner",
+   "detail": "The typetal cover only discharges without prior treatment such as basin sedimentation."
+  },
+  {
+   "id": "E-NI-TYPETAL-HEAVY",
+   "kind": "external",
+   "label": "Typetal report: not for\\nindustry or heavy traffic",
+   "source": "TYPETAL22",
+   "said": "fra mere belastede områder, såsom industriområder og meget trafikerede veje",
+   "detail": "The report says the typetal are limited for more loaded areas such as industrial areas and heavily trafficked roads."
+  },
+  {
+   "id": "E-NI-TYPETAL-SEDIMENT",
+   "kind": "external",
+   "label": "Typetal report: caught\\nin basin sediment",
+   "source": "TYPETAL22",
+   "said": "en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet i regnvandsbassiner",
+   "detail": "A significant share of the adsorbing substances is caught in the sediment of stormwater basins."
+  },
+  {
+   "id": "E-NI-DHI-SULPHIDE",
+   "kind": "external",
+   "label": "DHI fjord models:\\nsulphate reduction",
+   "source": "DHI-MODEL-DEL2-2015",
+   "said": "sker oxidationen overvejende ved sulfatreduktion med deraf følgende produktion af sulfid",
+   "detail": "The mechanistic models used to determine the required effort describe sulphate reduction and sulphide in the sediment."
+  },
+  {
+   "id": "E-NI-DCE-ILT-2023",
+   "kind": "external",
+   "label": "DCE oxygen note, autumn:\\nKøge Bugt",
+   "source": "NI-DCE-ILT-2023",
+   "said": "I Køge og Faxe Bugt blev der ikke registreret iltsvind",
+   "detail": "No oxygen depletion registered in Køge and Faxe Bugt in the note's period."
+  },
+  {
+   "id": "E-NI-DCE-ILT-2023-SIZE",
+   "kind": "external",
+   "label": "DCE oxygen note: the\\nmid-September extent",
+   "source": "NI-DCE-ILT-2023",
+   "said": "som var det hidtil næststørste registreret",
+   "detail": "The extensive mid-September depletion was the second largest registered so far."
+  },
+  {
+   "id": "E-NI-DCE-ILT-2025",
+   "kind": "external",
+   "label": "DCE oxygen note, late\\nautumn: Køge Bugt",
+   "source": "NI-DCE-ILT-2025",
+   "said": "I Køge Bugt og Faxe Bugt er der ikke registreret iltsvind i år",
+   "detail": "No oxygen depletion registered in Køge Bugt and Faxe Bugt that year."
+  },
+  {
+   "id": "E-NI-DCE-DEF",
+   "kind": "external",
+   "label": "DCE: what counts\\nas iltsvind",
+   "source": "NI-DCE-ILT-2025",
+   "said": "I Danmark betegnes det som iltsvind, når iltkoncentrationen i vandet er mindre end",
+   "detail": "The notes' definition by an oxygen threshold, and a lower one for severe depletion."
+  },
+  {
+   "id": "E-NI-TV2-L5",
+   "kind": "external",
+   "label": "TV 2: the law passed",
+   "source": "POL-TV2-20260903",
+   "said": "er vedtaget med et massivt politisk flertal",
+   "detail": "The fertilisation law passed with a massive political majority."
+  },
+  {
+   "id": "E-NI-MGTP-QUOTA",
+   "kind": "external",
+   "label": "The ministry: a quota\\nper holding",
+   "source": "POL-MGTP-20251203",
+   "said": "en kvote for deres udledninger ud fra",
+   "detail": "Farmers get a quota for their discharges from how much their catchment must limit its discharges."
+  },
+  {
+   "id": "E-NI-MGTP-NET",
+   "kind": "external",
+   "label": "The ministry: a safety\\nnet under the land conversion",
+   "source": "POL-MGTP-20251203",
+   "said": "Aftalen skaber et sikkerhedsnet under den",
+   "detail": "The agreement creates a safety net under the Tripartite's land conversion."
+  },
+  {
+   "id": "E-NI-EL-2028",
+   "kind": "external",
+   "label": "Effektivt Landbrug:\\nthe regulation moved",
+   "source": "POL-EL-20260623",
+   "said": "kvælstofhammeren rammer i",
+   "detail": "Reporting the government's June agreement: the regulation now hits a year later than first announced."
+  },
+  {
+   "id": "E-NI-GP-BRAK",
+   "kind": "external",
+   "label": "Greenpeace on the partial\\nagreement: the cap",
+   "source": "POL-GP-20250619",
+   "said": "som fungerer som et fastsat loft for",
+   "detail": "The braklægningspunkt works as a fixed ceiling on how high the regulatory pressure can go in each coastal catchment."
+  },
+  {
+   "id": "D-NI-OUTFALLS",
+   "kind": "held",
+   "label": "National outfall layers",
+   "detail": "data/derived/outfalls.json: the combined-sewer overflow and separate stormwater layers from spildevandsdata.dk, with the annual volume each structure reports summed over those that report one."
+  },
+  {
+   "id": "D-NI-RBU",
+   "kind": "held",
+   "label": "National rain-dependent\\ndischarge points",
+   "detail": "data/raw/national/punkt_rbu_udl.geojson: every rain-dependent discharge point in the national register, with structure type, municipality, position and basin volume."
+  },
+  {
+   "id": "X-NI-KOEGE",
+   "kind": "script",
+   "label": "nitrogen.py: the Køge\\nBugt tables",
+   "detail": "Counts separate outfalls and combined overflows and sums basin volume per municipality inside the bay's box, and counts the layer's features."
+  },
+  {
+   "id": "D-NI-CROPLAND",
+   "kind": "held",
+   "label": "Cropland by use",
+   "detail": "data/derived/cropland.json: shares of Danish farmland by crop group, from Statistics Denmark's crop table, by scripts/cropland.py."
+  },
+  {
+   "id": "A-NI-FEED-CLASS",
+   "kind": "assumption",
+   "label": "Cereals and pulses\\nto maturity are feed",
+   "detail": "The feed share counts cereals and pulses harvested at maturity as feed, and rapeseed in the ceiling; the statistics record what was grown, not what it was fed to. If most grain were milled for food, the floor is the right figure."
+  },
+  {
+   "id": "A-NI-FERT-AREA",
+   "kind": "assumption",
+   "label": "Mineral fertiliser\\nfollows area",
+   "detail": "Reading the feed share of area as a share of mineral fertiliser assumes fertiliser is spread in proportion to area across crop groups. Per hectare, application differs by crop."
+  },
+  {
+   "id": "D-NI-CONSTANTS",
+   "kind": "held",
+   "label": "Chemistry constants",
+   "detail": "data/manual/nitrogen_constants.json: molar masses, the Redfield ratio, the balanced reactions, the sulphate and oxygen scales and the diatom silicon ratio, each written beside where it comes from."
+  },
+  {
+   "id": "U-NI-CONSTANTS",
+   "kind": "untraced",
+   "label": "Trail ends: the constants\\nare not pinned",
+   "detail": "Textbook values taken as given, each with its source named in the register; none is pinned to a document here."
+  },
+  {
+   "id": "D-NI-CURRENTS",
+   "kind": "held",
+   "label": "Current field analyses",
+   "detail": "data/derived/currents_transport.json, currents_validate.json and currents_index.json: the rain-conditioned transport, the calibration against published peak currents, and flushing times, from scripts/currents.py."
+  },
+  {
+   "id": "U-NI-KOEGE-MIX",
+   "kind": "untraced",
+   "label": "Trail ends: how the bay\\nmixes, and whether it was sampled",
+   "detail": "No measurement of Køge Bugt's mixing is read here, and the pinned notes do not say whether their stations in the bay were sampled in the periods they cover."
+  },
+  {
+   "id": "U-NI-SPILL-SOURCES",
+   "kind": "untraced",
+   "label": "Trail ends: the sediment\\nreleases are uncited",
+   "detail": "The monitoring register's sediment-release section - the fixed link's permitted spill and period, the volume released at Lynetteholm, and how each was received - carries no source; none was found in the pinned documents (searched on 2026-09-11)."
+  },
+  {
+   "id": "U-NI-CONTRACTS",
+   "kind": "untraced",
+   "label": "Trail ends: no public\\nregister of manure contracts",
+   "detail": "No public register of inter-farm manure contracts is known to this project; none was searched for beyond the registers it fetches."
+  },
+  {
+   "id": "U-NI-SIBLING",
+   "kind": "untraced",
+   "label": "Trail ends: the sibling\\nproject is not pinned",
+   "detail": "The danish-livestock repository that documented the layers is cited by link and not pinned here."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-NI-HEADLINE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "Agriculture accounts for most of the nitrogen discharged to Danish coastal waters - the share in circulation.",
+   "because": "Their summary gives the diffuse sources' share and agriculture's share of all nitrogen discharged, citing data from Miljøstyrelsen and Aarhus Universitet; the page describes no method and states no uncertainty.",
+   "rests_on": [
+    "E-NI-DANVA-AGRI"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen and Aarhus Universitet, as summarised by DANVA (2024)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The figure in circulation is that agriculture accounts for **69.6% of nitrogen**.",
+     "texts": "197fdade8d2070b2",
+     "node E-NI-DANVA-AGRI": "f6dee177504238f2",
+     "pinned DANVA-2024": "cce512d654be929c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-THREE-QUESTIONS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The page does not dispute the measurements behind the share; it asks three questions the share, as it is used, does not survive.",
+   "because": "Each is argued in its own section: the set of sources is not closed, most lines are estimates rather than measurements, and nitrogen mass is not the currency of oxygen depletion.",
+   "rests_on": [
+    "C-NI-LOWER-BOUND",
+    "C-NI-RELABEL",
+    "C-NI-CURRENCY"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "This document does not dispute the measurements behind it. It asks three questions the percentage, as it is used, does not survive.",
+     "texts": "94be4d1832c60564",
+     "rests on C-NI-LOWER-BOUND": "f18c1f930504af87",
+     "rests on C-NI-RELABEL": "eec5f3032f2482cc",
+     "rests on C-NI-CURRENCY": "2adc1cd7a468c044"
+    }
+   }
+  },
+  {
+   "id": "C-NI-PATHWAYS",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The table lists every pathway of reactive nitrogen to Danish marine waters this project could enumerate; its ranges are this project's compilation, without a source for each.",
+   "because": "The rows are the pathways register, which carries no per-row source.",
+   "rests_on": [
+    "D-NI-PATHWAYS",
+    "U-NI-PATHWAY-SOURCES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "A percentage requires a closed set. Here is every pathway of reactive nitrogen to Danish marine waters this project could enumerate; the ranges are its own compilation, and the register behind them gives no source for each.",
+     "texts": "8f15c3737c522a0d",
+     "node D-NI-PATHWAYS": "6d5a9579c56f6625",
+     "node U-NI-PATHWAY-SOURCES": "b57402ae8211022b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-UNQUANTIFIED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Of the pathways enumerated, some carry no number at all, including internal regeneration from sediment, which is not a source and has no row in the apportionment quoted.",
+   "because": "The count is the register's rows with no lower bound. The apportionment quoted divides discharges to coastal waters by source, so an internal process has no line in it.",
+   "rests_on": [
+    "D-NI-PATHWAYS",
+    "E-NI-DANVA-SCOPE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-REGEN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**10 of 20 pathways carry no number at all**, including internal regeneration from sediment, which is not a \"source\" and so has no row in the apportionment quoted below.",
+     "texts": "55cd73d150185cdd",
+     "node D-NI-PATHWAYS": "6d5a9579c56f6625",
+     "node E-NI-DANVA-SCOPE": "0f254971b6f28b53",
+     "pinned DANVA-2024": "cce512d654be929c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-LOWER-BOUND",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The quantified pathways sum to a lower bound on total supply, not a range: with pathways empty there is no upper bound, so no denominator and no share of the total.",
+   "because": "Adding the register's lower bounds gives the least supply consistent with it; each empty row could add any amount, so the total has no upper bound. The bound is only as good as the register's lower bounds, which carry no source.",
+   "rests_on": [
+    "D-NI-PATHWAYS",
+    "U-NI-PATHWAY-SOURCES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The quantified subset sums to **167 – 327 kt N/yr**. That is not a range for the total. With 10 pathways empty the honest statement is a lower bound — total reactive nitrogen supply **≥ 167 kt N/yr**, with no established upper bound — and therefore no denominator, and no percentages, until the empty rows are filled.",
+     "texts": "f18c1f930504af87",
+     "node D-NI-PATHWAYS": "6d5a9579c56f6625",
+     "node U-NI-PATHWAY-SOURCES": "b57402ae8211022b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-DEPOSITION",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Atmospheric deposition to Danish marine waters is comparable to the land-based waterborne supply in the register, and it is not a line in the apportionment quoted, which covers discharges to coastal waters.",
+   "because": "The register's deposition range is compared with the sum of its two land-by-stream rows; the apportionment's source is titled a discharge to coastal waters by source.",
+   "rests_on": [
+    "D-NI-PATHWAYS",
+    "U-NI-PATHWAY-SOURCES",
+    "E-NI-DANVA-SCOPE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-DEPOSITION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Note the scale of what the apportionment leaves out. Atmospheric deposition to Danish marine waters is put at 45–65 kt N/yr above, comparable to the land-based waterborne supply of 59–71 kt, and it is not a line in the apportionment quoted below, which divides discharges to coastal waters by source.",
+     "texts": "2f0ef8db24667095",
+     "node D-NI-PATHWAYS": "6d5a9579c56f6625",
+     "node U-NI-PATHWAY-SOURCES": "b57402ae8211022b",
+     "node E-NI-DANVA-SCOPE": "0f254971b6f28b53",
+     "pinned DANVA-2024": "cce512d654be929c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-RELABEL",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Relabelled by what produced it: the agricultural share is a residual; the background is determined in small low-impact catchments and transferred; the treatment-plant line is reported effluent monitoring; the other lines are reported or modelled, and the pinned summary gives them only as smaller shares.",
+   "because": "The agricultural and background lines follow DCE's methods note and the treatment-plant line the registers; how the remaining lines are estimated is taken from the registers, which cite no source for them, and the summary names no share for them.",
+   "rests_on": [
+    "E-NI-MSFD-RESIDUAL",
+    "E-NI-MSFD-BACKGROUND",
+    "E-NI-DANVA-MINOR",
+    "D-NI-MONITORING",
+    "U-NI-LINE-METHODS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-MINOR-SHARES",
+    "C-NI-OLD-BACKGROUND-MODEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Each line of the published apportionment, relabelled by what actually produced it. The pinned summary gives shares for the first three lines and calls the rest *\"endnu mindre andele\"* — even smaller shares:",
+     "texts": "eec5f3032f2482cc",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b",
+     "node E-NI-MSFD-BACKGROUND": "8bce9af7d19e5c93",
+     "node E-NI-DANVA-MINOR": "ae7715626dadf3dc",
+     "pinned DANVA-2024": "cce512d654be929c",
+     "node D-NI-MONITORING": "cc8492094bf9de57",
+     "node U-NI-LINE-METHODS": "bb50cf2fdfc3a16e"
+    }
+   }
+  },
+  {
+   "id": "C-NI-MEASURED-LINES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Only the treatment-plant and industry lines are reported measurements; the rest are estimates, and the largest is a residual of estimates.",
+   "because": "Read off the relabelled table: every other line is modelled, transferred or found by subtraction.",
+   "rests_on": [
+    "C-NI-RELABEL"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Only the treatment-plant and industry lines are reported measurements. The rest are estimates, and the largest is a residual of estimates.",
+     "texts": "f098190a610c2306",
+     "rests on C-NI-RELABEL": "eec5f3032f2482cc"
+    }
+   }
+  },
+  {
+   "id": "C-NI-QC-RULE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "Reported overflow nitrogen divided by reported volume must fall inside a stated interval, and outside it the data owner is contacted to correct the error.",
+   "because": "Their instruction states the intervals and the procedure; it gives no reason for the intervals here.",
+   "rests_on": [
+    "E-NI-DP02-QC"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen, DP02 (2024)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Reported nitrogen divided by reported volume must fall within **10–12 mg/l** for combined sewers and **1.8–2.2 mg/l** for separate ones. Outside that, *\"kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl\"* — the data owner is contacted to correct the error.",
+     "texts": "5ee7c908859d6d02",
+     "node E-NI-DP02-QC": "74f41cb475e8f5dd",
+     "pinned DP02": "d6578834b1ace154"
+    }
+   }
+  },
+  {
+   "id": "C-NI-QC-CIRCULAR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The check tests conformity to the assumed concentration, not accuracy, so the assumed concentration cannot be falsified by data collected under it.",
+   "because": "A reported concentration far from the typetal is treated as an error to be corrected, so a genuinely different measured value is removed as a mistake rather than recorded.",
+   "rests_on": [
+    "C-NI-QC-RULE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The check tests conformity to the assumed concentration, not accuracy. A genuinely high measured first-flush concentration would be flagged as a mistake. **The assumed concentration cannot be falsified by data collected under it.**",
+     "texts": "229d56b96b91e988",
+     "rests on C-NI-QC-RULE": "5ee7c908859d6d02"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SR353-INPUT",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "DK-QNP computes the diffuse load over the ungauged part of the country, and DCE name the field surplus as its key input.",
+   "because": "Their methods chapter says so.",
+   "rests_on": [
+    "E-NI-SR353-INPUT"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Thodsen and colleagues (2019), SR353",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "DCE's DK-QNP model computes the diffuse nitrogen load over the ungauged part of the country. Its own methods chapter names the key input:",
+     "texts": "8962b8931ab8fea1",
+     "node E-NI-SR353-INPUT": "fcab9c8f7fe44757",
+     "pinned SR353": "8a598b8a6973094b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SR353-RELATION",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "SR353 reports a very strong, significant linear relation between the national field surplus and the normalised diffuse nitrogen transport as a result.",
+   "because": "Their chapter six presents it with `Figur 6.7 D`.",
+   "rests_on": [
+    "E-NI-SR353-RELATION"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Thodsen and colleagues (2019), SR353",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "And chapter 6 of the same report presents this as a result:",
+     "texts": "048f0349c731b599",
+     "node E-NI-SR353-RELATION": "18b8064216899551",
+     "pinned SR353": "8a598b8a6973094b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-FIG67",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "`Figur 6.7 D` correlates a model input with the model's output and reports the correlation as a finding; that does not make the attribution wrong, but the figure cannot evidence it.",
+   "because": "Where the diffuse transport is modelled from the surplus, a correlation between them is produced by the model and would appear whether or not the surplus drives the real load.",
+   "rests_on": [
+    "C-NI-SR353-INPUT",
+    "C-NI-SR353-RELATION"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**A variable that is an input to the model is correlated with the model's output, and the correlation is reported as a finding.** This does not make the attribution wrong. It makes `Figur 6.7 D` unable to evidence it.",
+     "texts": "b21e961e91828587",
+     "rests on C-NI-SR353-INPUT": "8962b8931ab8fea1",
+     "rests on C-NI-SR353-RELATION": "048f0349c731b599"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SR353-QUALIFY",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "Right after presenting the relation, DCE state that not all fjord catchments respond equally fast - Mariager Fjord and parts of Limfjorden reduced their diffuse load less than the relation indicates - citing two 2012 papers by Windolf and colleagues.",
+   "because": "They cite those papers for it; the papers were not read here.",
+   "rests_on": [
+    "E-NI-SR353-QUALIFY"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Thodsen and colleagues (2019), SR353",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**DCE qualify the figure themselves.** Right after presenting the relation, SR353 says that not all fjord catchments respond equally quickly — Mariager Fjord and parts of Limfjorden reduced their diffuse load *less* than *\"relationen vist i Figur 6.7 D indikerer\"*, citing two papers by Windolf and colleagues from 2012. They are pointing at the figure's limits, not resting on it.",
+     "texts": "adfbd1f8885435ea",
+     "node E-NI-SR353-QUALIFY": "43af8085ba26f34c",
+     "pinned SR353": "8a598b8a6973094b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-WINDOLF-UNREAD",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "A 2012 catchment-and-estuary study by Windolf and colleagues addresses how the surplus shows up in measured load, but its text could not be read here, so this page uses none of its findings.",
+   "because": "The paper's bibliographic record is pinned; every copy of its text searched for was paywalled, withdrawn or empty.",
+   "rests_on": [
+    "E-NI-WINDOLF-BIB",
+    "U-NI-WINDOLF-TEXT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-WINDOLF-READ"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "A catchment-and-estuary study by Windolf, Blicher-Mathiesen, Carstensen & Kronvang, *Environmental Science and Policy*, 2012 ([10.1016/j.envsci.2012.08.009](https://doi.org/10.1016/j.envsci.2012.08.009)), addresses exactly how a fall in the surplus shows up in measured load. Its text could not be read here — the publisher's copy is paywalled and the one open copy listed for it has been withdrawn — so this page uses none of its findings.",
+     "texts": "0f8feb644bdedcdb",
+     "node E-NI-WINDOLF-BIB": "84c23427d595a3b1",
+     "pinned NI-WINDOLF-BIB": "1dae2fa62bb42107",
+     "node U-NI-WINDOLF-TEXT": "4e84abec4b74f112"
+    }
+   }
+  },
+  {
+   "id": "C-NI-BOGESTRAND",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "The DK-QNP method has a regional bias - overestimating nitrogen concentrations in western Denmark and tending to underestimate in the east - which DCE correct monthly loads for by region.",
+   "because": "Their report states the bias, credits it to Bøgestrand and colleagues, and describes the correction.",
+   "rests_on": [
+    "E-NI-SR353-BIAS"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Thodsen and colleagues (2019), SR353",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "DCE also record that the DK-QNP method has a regional bias — overestimating nitrogen concentrations in western Denmark, tending to underestimate in the east — and correct the modelled monthly loads for it by region.",
+     "texts": "4bfd5c57d243125a",
+     "node E-NI-SR353-BIAS": "dcb13de796a47a42",
+     "pinned SR353": "8a598b8a6973094b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-VALIDATION-OPEN",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The model has been evaluated; whether it is validated against gauged catchments held out of its fitting has not been established here.",
+   "because": "The pinned report describes a bias correction, which is an evaluation; a held-out validation was not found in it.",
+   "rests_on": [
+    "C-NI-BOGESTRAND",
+    "U-NI-HELDOUT"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "So the model has been evaluated. Whether it is validated against gauged catchments held out of its fitting has not been established here.",
+     "texts": "3a8c7166bed8b46f",
+     "rests on C-NI-BOGESTRAND": "4bfd5c57d243125a",
+     "node U-NI-HELDOUT": "982ec8ba0f3e6203"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NARROW",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "What is established is narrow: one figure in one monitoring report cannot support the inference it is used for. That the attribution lacks evidence is not established - and neither, here, is the independent support for it.",
+   "because": "The figure's circularity is shown from the report itself; the studies that could supply independent support could not be read or were not found.",
+   "rests_on": [
+    "C-NI-FIG67",
+    "C-NI-WINDOLF-UNREAD",
+    "C-NI-VALIDATION-OPEN"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-REFUTED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**So the established claim is narrow:** *one figure, in one monitoring report, is structurally unable to support the inference it is used for.* The claim **not** established is that the attribution lacks evidence — and the independent support for it, which the studies above could supply, is not established here either.",
+     "texts": "4bc7fa43ecbe932d",
+     "rests on C-NI-FIG67": "b21e961e91828587",
+     "rests on C-NI-WINDOLF-UNREAD": "0f8feb644bdedcdb",
+     "rests on C-NI-VALIDATION-OPEN": "3a8c7166bed8b46f"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SURPLUS-IDENTITY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The field surplus is an accounting identity - what is supplied minus what is harvested - not a measurement.",
+   "because": "SR120's table computes it as the sum of the inputs less harvested nitrogen, and each term is estimated from registers and coefficients.",
+   "rests_on": [
+    "C-NI-SURPLUS-TERMS",
+    "E-NI-SR120-T34"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "It is an accounting identity, not a measurement.",
+     "texts": "3b4965b5c5f1e87f",
+     "rests on C-NI-SURPLUS-TERMS": "0a0b60ea14f40bdf",
+     "node E-NI-SR120-T34": "2f094ce77f6ad717",
+     "pinned SR120": "cea5fe54325343de"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SURPLUS-TERMS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "SR120 builds each term from registers and norms: mineral fertiliser from sales less an estimate for public grounds; manure from livestock counts times the norms in force; yields from the harvest census with assumed shrinkage; crop nitrogen from four editions of the feed tables, cereals corrected annually from the pig industry's research centre's analyses.",
+   "because": "Their appendix and methods text say so; how deposition is estimated was not read.",
+   "rests_on": [
+    "E-NI-SR120-MANURE",
+    "E-NI-SR120-NORMS",
+    "E-NI-SR120-CEREAL",
+    "U-NI-SR120-DEPOSITION"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, SR120",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "And SR120 says what each term is made of: **mineral fertiliser** from national sales statistics, minus an estimated 5,000 t N assumed to go to public grounds, forests and private gardens — a stated constant; **manure** from livestock **counts** by category, times a nutrient content per category that follows *\"de til en hver tid gældende normer\"* — the norms in force at the time, set by regulation; **yields** from the harvest census, with roughage known to be overestimated, so an assumed 10% shrinkage for maize, grass and catch crops and 15% for permanent grass; **crop nitrogen content** from the norm tables of the *Fodermiddeltabeller* of 1992, 1995, 2000 and 2005, with cereals *\"korrigeres hvert år efter de analyser Videncenter for Svineproduktion foretager\"* — corrected every year from analyses by the pig industry's own research centre; and **atmospheric deposition**, whose method is not read here.",
+     "texts": "0a0b60ea14f40bdf",
+     "node E-NI-SR120-MANURE": "48262cb4be713436",
+     "pinned SR120": "cea5fe54325343de",
+     "node E-NI-SR120-NORMS": "590c5c2c50b93d50",
+     "node E-NI-SR120-CEREAL": "3a2759bd6de985f9",
+     "node U-NI-SR120-DEPOSITION": "b09be2b4a833f3cc"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NO-FIELD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "No field's nitrogen balance is observed: every term is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
+   "because": "Follows from how SR120 builds each term.",
+   "rests_on": [
+    "C-NI-SURPLUS-TERMS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-NEVER-INSTRUMENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**No field's nitrogen balance is observed.** Every term is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
+     "texts": "1271d3fed6dbc09b",
+     "rests on C-NI-SURPLUS-TERMS": "0a0b60ea14f40bdf"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NORM-STEPS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Because the coefficients are administrative, the balance moves when they move: SR120 documents a step from the 1999 norm changes, a rise in the phosphorus figures from the 2012 change of harvest method, and 2013 published twice from two fertiliser registers.",
+   "because": "Each is stated in SR120 and read from the pin; together they show the balance responding to its own coefficients.",
+   "rests_on": [
+    "E-NI-SR120-STEP",
+    "E-NI-SR120-P2012",
+    "E-NI-SR120-T34"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Because the coefficients are administrative, the number moves when they move, with no change in any field. In **1999** the nitrogen norm was cut 10%, dropping the quota by about 40,000 t N, while grass norms changed at the same time, raising it by about 15,000 t N a year; SR120 calls the result a *\"spring\"* — a step — in the compiled series. In **2012** the method for nutrients removed at harvest changed from dry-matter yield to feed units, and SR120 records that its phosphorus net-input figures *\"er steget lidt ift. de tidligere opgørelser\"* — rose, from the method change alone. And **2013** is published **twice**, differing only in which register the fertiliser figure came from: **84 kg N/ha** from the *gødningsregnskaber*, **81** from Danmarks Statistik.",
+     "texts": "6d9ccfcd46e34357",
+     "node E-NI-SR120-STEP": "b9edf9ed7614fdae",
+     "pinned SR120": "cea5fe54325343de",
+     "node E-NI-SR120-P2012": "5c8b11a6fb5000f8",
+     "node E-NI-SR120-T34": "2f094ce77f6ad717"
+    }
+   }
+  },
+  {
+   "id": "C-NI-REGISTER-CHOICE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Choosing which register to read for 2013's fertiliser moves the surplus by about a year of its trend - small against the whole decline, not small against a year of it.",
+   "because": "The difference between the two published 2013 surpluses is divided by the average annual fall between the first and last years of the table.",
+   "rests_on": [
+    "E-NI-SR120-T34",
+    "C-NI-NORM-STEPS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-NI-OLD-NEVER-CARRIED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "That last one sets the scale. The surplus fell 148 → 84 kg N/ha over 22 years, -2.9 kg/ha/yr. **Choosing which register to read is worth 1.0 years of the trend** — small against the whole decline, not small against a year of it.",
+     "texts": "d164aa5a8694717a",
+     "node E-NI-SR120-T34": "2f094ce77f6ad717",
+     "pinned SR120": "cea5fe54325343de",
+     "rests on C-NI-NORM-STEPS": "6d9ccfcd46e34357"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OVERSEER",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "New Zealand's Overseer nutrient model went through a whole-model review, and the panel did not have confidence in its estimates of nitrogen lost from farms across the full range of the country's conditions.",
+   "because": "The ministry's summary of the panel's report; the report itself was not readable here - its host refuses scripts.",
+   "rests_on": [
+    "E-NI-OVERSEER"
+   ],
+   "basis": "assessed",
+   "holder": "New Zealand's Ministry for the Environment, summarising its Science Advisory Panel",
+   "replaces": [
+    "C-NI-OLD-OVERSEER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "A coefficient model of farm nitrogen has been reviewed as a whole elsewhere: New Zealand's Overseer. The review panel, in its ministry's words, *\"concluded they did not have confidence in\"* Overseer's estimates of nitrogen lost from farms across the full range of the country's climates, topographies and land uses.",
+     "texts": "ac1ba9147be41079",
+     "node E-NI-OVERSEER": "ecbfd74cc962cc33",
+     "pinned NI-MFE-OVERSEER": "f14a83554cfb962c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-CHAIN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Norm tables and register counts give the surplus; the surplus feeds DK-QNP; its diffuse load, summed, is correlated with the surplus. Each step is defensible alone; the composite cannot evidence what the last step is used to evidence.",
+   "because": "Assembled from the claims it rests on.",
+   "rests_on": [
+    "C-NI-FIG67",
+    "C-NI-SURPLUS-IDENTITY"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**So the chain reads:** norm tables × register counts → *markoverskud*, a residual → input to DK-QNP → diffuse load over the ungauged area → summed into total diffuse transport → correlated with *markoverskud* → \"a very strong, significant linear relation\". Each step is defensible alone. The composite cannot evidence what the last step is used to evidence.",
+     "texts": "9f38a24ae2cb83a8",
+     "rests on C-NI-FIG67": "b21e961e91828587",
+     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NEGATIVE",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "In dry years the calculated cultivation contribution has come out negative, and the share is published to one decimal with no error bar.",
+   "because": "The dry-year result is in the monitoring register without a citation; the decimal and the absence of any stated uncertainty are read from the pinned summary.",
+   "rests_on": [
+    "D-NI-MONITORING",
+    "U-NI-DIFFUSE-SOURCES",
+    "E-NI-DANVA-AGRI"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The monitoring register records, without a citation: In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment. A residual whose error can exceed its own signal is published to one decimal place with no error bar.",
+     "texts": "cd6eea1f4e0c6103",
+     "node D-NI-MONITORING": "cc8492094bf9de57",
+     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8",
+     "node E-NI-DANVA-AGRI": "f6dee177504238f2",
+     "pinned DANVA-2024": "cce512d654be929c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-DIFFUSE-BASIS",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The diffuse load rests on stream stations covering about half the country with the rest modelled; grab samples with linear interpolation underestimated load in all three streams of a validation study; retention carries a wide uncertainty.",
+   "because": "All transcribed in the monitoring register, which gives no citation for them.",
+   "rests_on": [
+    "D-NI-MONITORING",
+    "U-NI-DIFFUSE-SOURCES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Underneath it, by the same register's uncited figures: **240 stream stations** covering **49%** of the country, the other **51%** modelled. Load is grab samples plus linear interpolation, and in all three streams of the 2018 validation study that method **always underestimated** — annual deviations -0.9% to -7.7%, monthly deviations reaching +98%. Retention, the largest single term, carries **±6–27 percentage points**.",
+     "texts": "10319ce061cd915a",
+     "node D-NI-MONITORING": "cc8492094bf9de57",
+     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8"
+    }
+   }
+  },
+  {
+   "id": "C-NI-DP02-LEVELS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "Overflow volumes are modelled at knowledge levels, each with a stated uncertainty, from a simple mass balance to measurement.",
+   "because": "Their instruction's table, checked against the pin at every build.",
+   "rests_on": [
+    "E-NI-DP02-LEVELS"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen, DP02 (2024)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The overflow volume is modelled at one of these knowledge levels, each with the uncertainty Miljøstyrelsen's DP02 states for it.",
+     "texts": "ce5adba62ec1e336",
+     "node E-NI-DP02-LEVELS": "da061f0f067c5b47",
+     "pinned DP02": "d6578834b1ace154"
+    }
+   }
+  },
+  {
+   "id": "C-NI-PULS-FIELDS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Among the data DP02 requires in PULS for an overflow, the only per-event measure is the number of overflows a year - no flow rate, peak or threshold crossing - so a scouring event cannot be told from a dilute one.",
+   "because": "Read from the instruction's table of required data; the rest of the table is structure data, areas, capacities, rainfall, annual volume and masses.",
+   "rests_on": [
+    "E-NI-DP02-FIELDS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Among the data DP02 requires in PULS for an overflow, the only per-event measure is *\"Antal overløb (antal/år)\"* — the number of overflows a year. No flow rate, peak or threshold crossing is among them, so a high-flow event that scours accumulated basin sediment cannot be distinguished from a small dilute one.",
+     "texts": "c05b9b3c7a5c5614",
+     "node E-NI-DP02-FIELDS": "0d20df026831c6e2",
+     "pinned DP02": "d6578834b1ace154"
+    }
+   }
+  },
+  {
+   "id": "C-NI-THRESHOLD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Resuspension is a threshold in flow, and much of the adsorbing substances is caught in basin sediment; an annual volume times an average concentration cannot represent release above the threshold, and its error runs one way and is largest in wet years.",
+   "because": "Material held in basin sediment leaves only when flow exceeds the critical shear stress, so a load from average concentrations misses it - always in the same direction, and most in the years with the most high-flow events.",
+   "rests_on": [
+    "E-NI-TYPETAL-SEDIMENT",
+    "C-NI-PULS-FIELDS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-SLUDGE-A"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "That matters because sediment resuspension is a **threshold** in flow, not a frequency of events. Below the critical shear stress the deposit stays in the basin; above it, the accumulated material leaves — and the typetal report finds that *\"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet i regnvandsbassiner\"*, a significant share of the adsorbing substances caught in basin sediment. Multiplying an annual volume by an average concentration cannot represent that, and the resulting error is one-directional and largest in the wettest years.",
+     "texts": "62506ede74ffab3a",
+     "node E-NI-TYPETAL-SEDIMENT": "dc69c4bf57840c5e",
+     "pinned TYPETAL22": "f9e89eea09ad4512",
+     "rests on C-NI-PULS-FIELDS": "c05b9b3c7a5c5614"
+    }
+   }
+  },
+  {
+   "id": "C-NI-TWO-SUBTRACTIONS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The field balance and the load apportionment are different operations on different quantities, and the headline share is the apportionment, not the balance.",
+   "because": "The surplus subtracts harvest from inputs and is a norm product; the share subtracts point sources and background from river transport and is a residual.",
+   "rests_on": [
+    "C-NI-SURPLUS-IDENTITY",
+    "E-NI-MSFD-RESIDUAL"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "It is easy to run together the **field balance** and the **load apportionment**. They are different operations on different quantities, and the headline share is the second, not the first.",
+     "texts": "5c8ebfe49c530938",
+     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-COUPLED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The two are coupled: the surplus is an input to DK-QNP, which supplies the river-transport term over the modelled part of the country, so the surplus partly determines the share's minuend - but the share itself is the residual.",
+   "because": "From DCE's naming of the surplus as DK-QNP's input and the register's modelled share of the country, which carries no citation.",
+   "rests_on": [
+    "C-NI-SR353-INPUT",
+    "D-NI-MONITORING",
+    "U-NI-DIFFUSE-SOURCES"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-UNGAUGED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "They are coupled, which is why they get confused: **A is an input to DK-QNP, and DK-QNP supplies B's river-transport term over the modelled 51% of the country.** So A partly determines the minuend of B. But the ~70% itself is B.",
+     "texts": "695a667719f16ef3",
+     "rests on C-NI-SR353-INPUT": "8962b8931ab8fea1",
+     "node D-NI-MONITORING": "cc8492094bf9de57",
+     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8"
+    }
+   }
+  },
+  {
+   "id": "C-NI-MSFD-DEF",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "DCE construct the anthropogenic diffuse load as the diffuse load, scattered dwellings included, minus a background determined in small catchments with little human impact.",
+   "because": "Their methods note defines the terms; the definitions are quoted verbatim on the page.",
+   "rests_on": [
+    "E-NI-MSFD-RESIDUAL",
+    "E-NI-MSFD-BACKGROUND",
+    "E-NI-MSFD-DIFFUSE"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, the MSFD methods note on nutrient inputs",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The construction, in DCE's own words ([`MSFD notat 2-8`](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Havstrateginotater/2-8_MSFD_notat_tilfoersel_NPO.pdf)):",
+     "texts": "9a43b4d7512ac6aa",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b",
+     "node E-NI-MSFD-BACKGROUND": "8bce9af7d19e5c93",
+     "node E-NI-MSFD-DIFFUSE": "bd0747f27392882c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-MSFD-FINDINGS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "From DCE's own definitions: scattered dwellings sit inside the agricultural term because they could not be separated; the background is transferred from other catchments; and the split is made only on multi-year averages, so an annual agricultural share is not something the method produces.",
+   "because": "Each follows from a definition in the note; the last from its statement that the split is not made year by year.",
+   "rests_on": [
+    "C-NI-MSFD-DEF",
+    "E-NI-MSFD-SPLIT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-BACKGROUND-CHECK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Three things follow, all from the document rather than from us. **The category is defined as unseparated**: scattered dwellings sit inside the agricultural term *because they could not be separated from it*, as the definition states. **The subtrahend is a transferred measurement**: background is not measured in the catchment it is subtracted from — small low-impact catchments stand in for the rest, a basket assumption at the centre of the arithmetic. And **the split is not annual**: *\"For de enkelte år opdeles den diffuse belastning ikke i den naturlige baggrundsbelastning og den diffuse belastning ikke, da opdelingen specielt for fosfor og organisk stof er usikker, men det for 5 års gennemsnit er lavet en opdeling.\"* The background/anthropogenic division is made only on multi-year averages, because the split is too uncertain year by year, **so an annual agricultural share is not a thing this method produces**, and any year-on-year movement in a published share is an artefact of interpolating that split.",
+     "texts": "5dcd66eecd2037b4",
+     "rests on C-NI-MSFD-DEF": "9a43b4d7512ac6aa",
+     "node E-NI-MSFD-SPLIT": "d28e3cefbd373b9c",
+     "pinned MSFD28": "8204718867e3910b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-PERFORMANCE-UNREAD",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Whether a fall in the surplus shows up in the measured load catchment by catchment is the question the rest turns on; DCE's own qualification shows it did not everywhere, and the study that quantifies it could not be read here.",
+   "because": "The qualification is pinned; the study behind it is not readable.",
+   "rests_on": [
+    "C-NI-SR353-QUALIFY",
+    "C-NI-WINDOLF-UNREAD"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-PASSTHROUGH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "This is the question the rest of it turns on: whether a fall in the surplus shows up as a fall in the measured load, catchment by catchment. DCE's own qualification above says it did not everywhere — Mariager Fjord and parts of Limfjorden responded less than the national relation indicates. The study that quantifies it per catchment could not be read here, so the size of the shortfall is not given on this page.",
+     "texts": "33c0da4d9ce8bde6",
+     "rests on C-NI-SR353-QUALIFY": "adfbd1f8885435ea",
+     "rests on C-NI-WINDOLF-UNREAD": "0f8feb644bdedcdb"
+    }
+   }
+  },
+  {
+   "id": "C-NI-RESIDUAL-ABSORBS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Every unquantified pathway that reaches a river lands inside the residual and is named agriculture by subtraction - a weakness of the share separate from the circularity above.",
+   "because": "The share is what is left after the named terms are subtracted, so anything unnamed that arrives by river is counted in it.",
+   "rests_on": [
+    "C-NI-UNQUANTIFIED",
+    "E-NI-MSFD-RESIDUAL"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-LARGER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Section 1 lists **10 of 20 pathways carrying no number at all**. Every one of them that reaches a river — submarine groundwater discharge, drained organic soils, legacy nitrogen in transit, foreign inflow to shared waters — lands inside B's leftover, and is named agriculture by subtraction. That is a weakness of the ~70% separate from the circularity in §2.",
+     "texts": "131b4fcd12dcd19d",
+     "rests on C-NI-UNQUANTIFIED": "55cd73d150185cdd",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-WHOSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "How much of the nitrogen is due to the herd cannot be read from the apportionment, which has no livestock term and folds cultivated land and scattered dwellings into one diffuse line; the national accounts do not separate the fractions by measurement, so it is a question for accounting on the input side.",
+   "because": "From DCE's definition of the diffuse load; a nitrate ion carries no mark of whether it passed through an animal.",
+   "rests_on": [
+    "E-NI-MSFD-DIFFUSE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-NO-MEASUREMENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**How much of this is because Denmark keeps animals?** The apportionment above has no livestock term. Diffuse load is one bucket — cultivated land *including scattered dwellings*, by DCE's own definition — and the national accounts do not separate the fractions by measurement: a nitrate ion that passed through a pig is the same ion as one out of a bag. **So the question is one for accounting**, and the accounting has two halves.",
+     "texts": "7e4a8bb2cf25360a",
+     "node E-NI-MSFD-DIFFUSE": "bd0747f27392882c",
+     "pinned MSFD28": "8204718867e3910b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-HALF-ONE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "In 2013 manure and sludge supplied more of the nitrogen put on Danish fields than mineral fertiliser, the reverse of 1991; that part exists because the animals do.",
+   "because": "Read from SR120's table; the manure share is manure over total supplied.",
+   "rests_on": [
+    "E-NI-SR120-T34"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-NI-OLD-SINCE-2000"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Half one: what is applied.** From the field balance above — manure and sludge **87 kg N/ha** against mineral fertiliser **74** in 2013, out of 192 supplied; in 1991 it was mineral 141 against manure 91. So 45% of the nitrogen put on Danish fields in 2013 arrived as manure, and that part is not optional in the way a bag is: it exists because the animals do, and it has to be spread, exported or processed.",
+     "texts": "ea7da4e5ea71abea",
+     "node E-NI-SR120-T34": "2f094ce77f6ad717",
+     "pinned SR120": "cea5fe54325343de"
+    }
+   }
+  },
+  {
+   "id": "C-NI-FEED-RULE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Mineral fertiliser on a feed crop is nitrogen spent on livestock, and crop statistics record what was grown, not what it was fed to, so the feed share of farmland is a range on a stated rule.",
+   "because": "The rule and its three levels are in scripts/cropland.py.",
+   "rests_on": [
+    "D-NI-CROPLAND",
+    "A-NI-FEED-CLASS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Half two: what the rest is spread on.** Mineral fertiliser on a barley field grown for pigs is nitrogen spent on livestock as surely as the slurry beside it. Danish crop statistics record what was grown rather than what it was fed to, so this is a range on a stated rule rather than a number (`scripts/cropland.py`, from Statistics Denmark table `AFG6`):",
+     "texts": "6fd665ee134b50a3",
+     "node D-NI-CROPLAND": "da6b6a04b1042c98",
+     "node A-NI-FEED-CLASS": "38e9e3417e750872"
+    }
+   }
+  },
+  {
+   "id": "C-NI-FEED-SHARE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "By that classification, most Danish farmland grows feed and a small share grows food people eat directly, with little change since 1990.",
+   "because": "Computed by scripts/cropland.py from Statistics Denmark's crop table.",
+   "rests_on": [
+    "D-NI-CROPLAND",
+    "A-NI-FEED-CLASS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Between 68% and 74% of Danish farmland grows feed, and 4.7% of it grows food that people eat directly** in 2025, against 4.8% in 1990. The shares have barely moved since 1990.",
+     "texts": "42400aa1b8b325cb",
+     "node D-NI-CROPLAND": "da6b6a04b1042c98",
+     "node A-NI-FEED-CLASS": "38e9e3417e750872"
+    }
+   }
+  },
+  {
+   "id": "C-NI-HERD-INPUT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "If mineral fertiliser is spread in proportion to area, the herd is behind most of the nitrogen applied to Danish soil: the manure directly, and most of the mineral fertiliser through the feed crops it is spread on.",
+   "because": "Manure is nearly half of what is applied, and the feed crops cover most of the area; the second step needs the stated assumption.",
+   "rests_on": [
+    "C-NI-HALF-ONE",
+    "C-NI-FEED-SHARE",
+    "A-NI-FERT-AREA"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-FEED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Set that beside half one and, if mineral fertiliser is spread in proportion to area, the input-side answer is not close: **the herd is behind most of the nitrogen applied to Danish soil — the manure directly, and most of the mineral fertiliser through the feed crops it is spread on.**",
+     "texts": "643ff9711f16ef9c",
+     "rests on C-NI-HALF-ONE": "ea7da4e5ea71abea",
+     "rests on C-NI-FEED-SHARE": "42400aa1b8b325cb",
+     "node A-NI-FERT-AREA": "e02e1c13716aeb75"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NOT-LOAD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "An input share is not a load share: how much of a surplus reaches the sea varies by catchment, so a share of what is applied cannot be converted into a share of what arrives; and the crop classification is this project's.",
+   "because": "DCE's own qualification shows fjords responding less than the national relation; the classification rests on the stated assumption.",
+   "rests_on": [
+    "C-NI-SR353-QUALIFY",
+    "A-NI-FEED-CLASS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-PASSTHROUGH-2C"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "*What this does not establish.* An input share is not a load share: how much of a surplus reaches the sea varies by catchment — DCE's own qualification above shows fjords responding less than the national relation — so a share of what is applied cannot be converted into a share of what arrives. And the classification above is ours: the statistics do not record what a crop was fed to, cereals are the load-bearing assumption, and a reader who thinks Danish grain is mostly milled rather than fed should use the 18.7% floor instead.",
+     "texts": "40f1a69299484b30",
+     "rests on C-NI-SR353-QUALIFY": "adfbd1f8885435ea",
+     "node A-NI-FEED-CLASS": "38e9e3417e750872"
+    }
+   }
+  },
+  {
+   "id": "C-NI-BIOGAS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Anaerobic digestion removes carbon, not nitrogen: methane and carbon dioxide leave, nearly all the nitrogen stays in the digestate, more of it as ammonium.",
+   "because": "Neither methane nor carbon dioxide carries nitrogen, so the nitrogen fed in leaves in the digestate apart from small gaseous losses, and breaking down protein releases its nitrogen as ammonium. No measurement of a Danish plant is used.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The obvious hope is that digestion deals with it. It does not. **Anaerobic digestion removes carbon, not nitrogen**: methane and CO₂ leave, and essentially all the nitrogen stays in the digestate — with *more* of it as ammonium than before, because digestion mineralises organic N. That is useful as fertiliser value and it is the opposite of removal. **The field is still the endpoint.**",
+     "texts": "c32932c617a1f725"
+    }
+   }
+  },
+  {
+   "id": "C-NI-EXITS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "A biogas plant supplies a collection point, and nitrogen can leave it only three ways.",
+   "because": "The three exits below are the processes that move nitrogen out of a liquid or solid stream.",
+   "rests_on": [
+    "C-NI-EXIT-CAPTURE",
+    "C-NI-EXIT-DESTROY",
+    "C-NI-EXIT-BURN"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "What a biogas plant does supply is the thing the manure never otherwise has: **a collection point**. The manure is already gathered, homogenised and pumped, which is where nitrogen can be taken out — and there are only three kinds of exit:",
+     "texts": "952ab9619d7b41e7",
+     "rests on C-NI-EXIT-CAPTURE": "76a22792588b92f3",
+     "rests on C-NI-EXIT-DESTROY": "1ee8ab14641baef0",
+     "rests on C-NI-EXIT-BURN": "3202515719d5398a"
+    }
+   }
+  },
+  {
+   "id": "C-NI-EXIT-CAPTURE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Stripping ammonia from the digestate's liquid into an ammonium salt makes the nitrogen portable without destroying it.",
+   "because": "Ammonia stripped from a liquid and absorbed in acid gives a concentrated salt that can be transported; the nitrogen is moved, not removed.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Capture it as a product.** Separate the digestate into fibre and liquid, then strip ammonia from the liquid into an ammonium salt — a concentrated, transportable fertiliser that can leave the catchment or displace Haber-Bosch nitrogen. The nitrogen is not destroyed; it is made portable, which is what the field balance needs.",
+     "texts": "76a22792588b92f3"
+    }
+   }
+  },
+  {
+   "id": "C-NI-EXIT-DESTROY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Nitrification and denitrification turn the nitrogen into inert dinitrogen - the only true removal - at an energy cost, and a badly run plant emits nitrous oxide instead.",
+   "because": "Denitrification reduces nitrate to dinitrogen gas, leaving the reactive pool; incomplete denitrification stops at nitrous oxide; aeration for nitrification needs energy.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Destroy it, which is literally a reduction.** Nitrify then **denitrify** the liquid fraction and the nitrogen leaves as N₂ — inert, and out of the reactive pool for good. This is the only true removal available, and it is the same reaction a constructed wetland performs slowly and for free. It costs energy, and a badly run plant emits N₂O instead, which trades a water problem for a climate one.",
+     "texts": "1ee8ab14641baef0"
+    }
+   }
+  },
+  {
+   "id": "C-NI-EXIT-BURN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Burning the fibre destroys organic nitrogen and leaves phosphorus in the ash, at the cost of flue-gas treatment.",
+   "because": "Combustion oxidises organic nitrogen to gases and cannot volatilise phosphorus, which stays in the ash.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Burn the fibre.** Destroys organic nitrogen and recovers phosphorus in ash, at the cost of flue-gas treatment. It is the P route more than the N route.",
+     "texts": "3202515719d5398a"
+    }
+   }
+  },
+  {
+   "id": "C-NI-JOIN",
+   "kind": "code",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The prediction - a quota transfers the constraint to the manure only where a holding's own land cannot take what its animals produce - can be checked in two open registers joined on the company number, which scripts/manure.py does.",
+   "because": "manure.py fetches the livestock register's animal units and the field-parcel register's declared hectares and divides one by the other per company number.",
+   "rests_on": [
+    "X-MANURE",
+    "D-CHR",
+    "D-MARKER"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CHR.label {fig:manure_sites}": "57,860",
+     "said on NITROGEN.md": "*A quota transfers the constraint to the manure only when a holding's own land cannot take what its animals produce.* That is not something to wait for: both halves are in open registers and they join on the company number. The livestock register carries **animal units** — `DE` — against the business that runs each herd; the field-parcel register carries the same business's declared hectares. `scripts/manure.py` fetches both and divides.",
+     "texts": "290ea9b3f6a0197f",
+     "node X-MANURE": "2893dee3c11aca68",
+     "node D-CHR": "eb34b0ed55ee3978",
+     "node D-MARKER": "1fb78a4a370f7570"
+    }
+   }
+  },
+  {
+   "id": "C-NI-HARMONY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The businesses above the pre-2017 harmony line, and the share of the CVR-registered herd they hold, are as counted in C-MANURE - the herd share a floor, because herds on businesses with no matched land stay in its denominator.",
+   "because": "The count and shares are C-MANURE's.",
+   "rests_on": [
+    "C-MANURE"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read against C-MANURE as revised from fork w1-ni's proposal: its counts and wording are unchanged; it now states its reasoning and rests on C-DE-VOID, which carries the same qualifications this claim draws on. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Above the pre-2017 harmony line of 1.4 animal units per declared hectare sit 2,662 businesses — 28% of the businesses with both animals and more than one declared hectare — and they hold 56% of the CVR-registered herd.** That share is a floor: herds on businesses with no matched land stay in its denominator and can never count as above the line. At 1.7 it is 2,023 businesses and 47% of that herd.",
+     "texts": "8e5726a497fef6e4",
+     "rests on C-MANURE": "fb5ada4d243936b3"
+    }
+   }
+  },
+  {
+   "id": "C-NI-MANURE-READING",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The harmony line is a retired legal ceiling and declared area is not spreading area, so the count describes manure pressure, not a physical necessity; it suggests export and inter-farm contracts carry a large part of the herd, and no public register of those contracts is known here.",
+   "because": "The qualifications are C-MANURE's; the suggestion follows from the pressure, and the contracts themselves were not found.",
+   "rests_on": [
+    "C-MANURE",
+    "U-NI-CONTRACTS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-HALF-HERD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read against C-MANURE as revised from fork w1-ni's proposal: its counts and wording are unchanged; it now states its reasoning and rests on C-DE-VOID, which carries the same qualifications this claim draws on. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Read it for what it is. The harmony line is a retired legal ceiling, not a measured capacity of the land, and declared area is not spreading area — so this describes manure pressure, not a physical necessity that the manure leave the holding. It suggests that export and inter-farm contracts carry a large part of the herd, and no public register of those contracts is known to this project.",
+     "texts": "84aaa80f1e0f76cd",
+     "rests on C-MANURE": "fb5ada4d243936b3",
+     "node U-NI-CONTRACTS": "200b345199cdc84b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-JOIN-LIMITS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Declared area is not every hectare a business may spread on; some animal-keeping businesses have no more than one declared hectare in the join, either landless or a failed match; and the thresholds are old harmony units, indicating pressure rather than testing compliance.",
+   "because": "From how the two registers are built and joined, and from C-DE-VOID on the thresholds.",
+   "rests_on": [
+    "X-MANURE",
+    "D-MARKER",
+    "C-DE-VOID"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "*What this does not establish.* Declared area is land declared for area support, which is not the same as every hectare a business may spread on: rented-in land can be missing, and a business that buys spreading capacity from a neighbour looks land-poor here and is compliant in law. 42% of animal-keeping businesses have no more than one declared hectare in this join, which is either genuine landlessness or a failed match through holding companies. And the thresholds are the old harmony units: Denmark now regulates in kilograms of nitrogen per hectare, so these indicate the pressure rather than test compliance.",
+     "texts": "c3d08349eb3523f2",
+     "node X-MANURE": "2893dee3c11aca68",
+     "node D-MARKER": "1fb78a4a370f7570",
+     "rests on C-DE-VOID": "b2c0083018413865"
+    }
+   }
+  },
+  {
+   "id": "C-NI-PROVENANCE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Both layers are open; they were located by the sibling project danish-livestock, and scripts/manure.py handles the two traps it documented - an encoding the server misstates, and herd-size columns that do not partition.",
+   "because": "manure.py decodes the livestock file as Latin against its declared encoding and uses animal units because the herd columns do not partition; the sibling repository is not pinned.",
+   "rests_on": [
+    "X-MANURE",
+    "U-NI-SIBLING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "*Provenance.* Both layers are open and need no key. They were located and documented by the sibling project [danish-livestock](https://github.com/Jjokulian), which mapped the livestock layer; this project fetches them from the same primary source rather than copying its data, and the two traps it found — an encoding the server lies about, and herd-size columns that do not partition — are handled in `scripts/manure.py` because of that documentation.",
+     "texts": "24b68afc8bc89ef1",
+     "node X-MANURE": "2893dee3c11aca68",
+     "node U-NI-SIBLING": "de544876890c44f4"
+    }
+   }
+  },
+  {
+   "id": "C-NI-L5",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "The fertilisation law `L 5` passed with a broad majority; the ministry said holdings would get a nitrogen quota set by what their catchment must cut and called the quota model a safety net under the Tripartite's land conversion; a later report says the regulation now starts a year later than first announced.",
+   "because": "Their statements, as reported; none gives the law's text, which was not read.",
+   "rests_on": [
+    "E-NI-TV2-L5",
+    "E-NI-MGTP-QUOTA",
+    "E-NI-MGTP-NET",
+    "E-NI-EL-2028"
+   ],
+   "basis": "assessed",
+   "holder": "TV 2 (2026-09-03), the Ministry for the Green Tripartite (2025-12-03) and Effektivt Landbrug (2026-06-23)",
+   "replaces": [
+    "C-NI-OLD-L5"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The instruments are in the public record rather than in this analysis. `L 5`, the fertilisation law, passed on 2026-09-03 with what TV 2 called *\"et massivt politisk flertal\"* — a massive political majority. The ministry's December 2025 announcement gives each holding a quota for its discharges set by how much its catchment must cut, from 2027 (*\"en kvote for deres udledninger ud fra\"*), and calls the agreement a safety net under the Tripartite's land conversion (*\"et sikkerhedsnet under den\"*). A June 2026 report of the government's agreement says the regulation now hits in 2028 rather than 2027 ([POLITICS.md](POLITICS.md)).",
+     "texts": "95b9d9c562e11f38",
+     "node E-NI-TV2-L5": "80f04a15e244eee4",
+     "pinned POL-TV2-20260903": "7e35b90adf8a8d5e",
+     "node E-NI-MGTP-QUOTA": "4d0069272216fa73",
+     "pinned POL-MGTP-20251203": "938b1db4d9fc02b5",
+     "node E-NI-MGTP-NET": "5c48b834e4c2af4d",
+     "node E-NI-EL-2028": "5006521971821abc",
+     "pinned POL-EL-20260623": "a70d1b8024cdb7ce"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NOT-READ",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "This project has not read the statute; what follows is inference from the instruments and the balance, offered as a checkable prediction.",
+   "because": "A statement about this project's own reading, made so the predictions are not read as law.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**This project has not read the statute**, so what follows is inference from those instruments and from the balance above, and it is offered as a prediction that can be checked rather than as a reading of the law.",
+     "texts": "a9891b9ada310fa3"
+    }
+   }
+  },
+  {
+   "id": "C-NI-PREDICT-MINERAL",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "A quota bites on mineral fertiliser first, because manure is not optional: the first years of a tightening quota look like a fertiliser reduction and leave the herd untouched.",
+   "because": "The bag is the free variable; the slurry exists because the animals do and has to go somewhere.",
+   "rests_on": [
+    "C-NI-HALF-ONE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**A quota bites on mineral fertiliser first, because manure is not optional.** The bag is the free variable: a holding that must apply less nitrogen buys less of it. The slurry is already there, produced daily by animals that exist, and it has to be spread, stored, sold or processed. So the first years of a tightening quota look like a fertiliser reduction and leave the herd untouched.",
+     "texts": "dd08022ed8f958b6",
+     "rests on C-NI-HALF-ONE": "ea7da4e5ea71abea"
+    }
+   }
+  },
+  {
+   "id": "C-NI-PREDICT-TRANSFER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The constraint transfers to the herd when the quota falls below what the manure alone supplies, and taking land out raises manure nitrogen per remaining hectare - an area policy becomes a livestock policy without naming livestock.",
+   "because": "Below that point only fewer animals, more land, more nitrogen leaving in the crop or manure leaving the holding balance the arithmetic; conversion takes land out.",
+   "rests_on": [
+    "C-NI-PREDICT-MINERAL",
+    "C-NI-L5"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**The constraint transfers when the quota falls below what the manure alone supplies.** At that point the arithmetic offers exactly four moves: fewer animals, more hectares to spread on, more nitrogen leaving in the crop, or **the manure nitrogen leaving the holding**. And this is where the design of the Tripartite matters more than its rhetoric: its main engine takes land *out* — wetland conversion, afforestation, set-aside — which raises manure nitrogen per remaining hectare with no change in any herd. **An area policy becomes a livestock policy without ever naming livestock.**",
+     "texts": "f6a153f4e9fa7cc7",
+     "rests on C-NI-PREDICT-MINERAL": "dd08022ed8f958b6",
+     "rests on C-NI-L5": "95b9d9c562e11f38"
+    }
+   }
+  },
+  {
+   "id": "C-NI-DEMAND",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "A byproduct that has to leave is the predictable consequence, and a quota is a demand curve for nitrogen capture.",
+   "because": "If manure nitrogen must leave holdings, the stripping and separation routes above gain a market; the comparison with liability settlements is PROGRAMME.md's argument, not checked here.",
+   "rests_on": [
+    "C-NI-PREDICT-TRANSFER",
+    "C-NI-EXIT-CAPTURE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "So a byproduct that has to leave is the predictable consequence, and the market for it already half exists — inter-farm slurry contracts, separation plants, and the stripping route above, whose output is a concentrated ammonium salt that travels. **A quota is a demand curve for nitrogen capture**, in the way [PROGRAMME.md](PROGRAMME.md) argues the liability settlements are a demand curve for destruction — regulation creating an industry rather than only a cost.",
+     "texts": "b19288fbc0ec1feb",
+     "rests on C-NI-PREDICT-TRANSFER": "f6a153f4e9fa7cc7",
+     "rests on C-NI-EXIT-CAPTURE": "76a22792588b92f3"
+    }
+   }
+  },
+  {
+   "id": "C-NI-CAVEAT-CATCHMENT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The quota is per catchment, so only nitrogen that leaves the catchment - or the reactive pool - is a reduction where it is counted.",
+   "because": "Moving slurry between neighbouring farms changes whose paperwork it is, not what the receiving water gets.",
+   "rests_on": [
+    "C-NI-L5"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**The quota is per catchment, so the export has to cross a catchment line.** Moving slurry from one farm to its neighbour changes whose paperwork it is and not what the receiving water gets. Only nitrogen that leaves the catchment — or leaves the reactive pool altogether — is a reduction where it is being counted.",
+     "texts": "35b575a53bceb996",
+     "rests on C-NI-L5": "95b9d9c562e11f38"
+    }
+   }
+  },
+  {
+   "id": "C-NI-BRAK",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "The agreement fixes a braklægningspunkt: a ceiling on how high the regulatory pressure can go in each coastal catchment.",
+   "because": "As reported of the partial agreement.",
+   "rests_on": [
+    "E-NI-GP-BRAK"
+   ],
+   "basis": "assessed",
+   "holder": "Greenpeace Danmark (2025-06-19), reporting the partial agreement",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**The pressure is capped by design.** The agreement fixes a *braklægningspunkt*, which *\"fungerer som et fastsat loft for\"* how high the regulatory pressure can go in each coastal catchment.",
+     "texts": "621bb80b02fb66a7",
+     "node E-NI-GP-BRAK": "eb94cd04b544ef1c",
+     "pinned POL-GP-20250619": "a871f4b715fe7872"
+    }
+   }
+  },
+  {
+   "id": "C-NI-CAVEAT-BRAK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "That ceiling is the point at which the squeeze on land would start forcing the herd, so where it is set decides whether the prediction ever happens.",
+   "because": "Pressure above the ceiling is what would force the herd; the ceiling caps it.",
+   "rests_on": [
+    "C-NI-BRAK",
+    "C-NI-PREDICT-TRANSFER"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "That is exactly the point at which the squeeze on land would start forcing the herd, so where it is set decides whether any of the above ever happens.",
+     "texts": "2a5b12ff7cd47087",
+     "rests on C-NI-BRAK": "621bb80b02fb66a7",
+     "rests on C-NI-PREDICT-TRANSFER": "f6a153f4e9fa7cc7"
+    }
+   }
+  },
+  {
+   "id": "C-NI-CAVEAT-LOAD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The load may not follow the input: how much of a surplus reaches the sea varies by catchment, and an input reduction is not yet a load reduction.",
+   "because": "DCE's own qualification shows fjords responding less than the national relation.",
+   "rests_on": [
+    "C-NI-SR353-QUALIFY"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-PASSTHROUGH-CAVEAT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**And the load may not follow the input.** How much of a surplus reaches the sea varies by catchment, and DCE's own qualification shows fjords that responded less than the national relation. A herd reduction is an input reduction, and an input reduction is not yet a load reduction — which is the same objection this project makes to the standard account, applied to a measure it would otherwise be tempted to endorse.",
+     "texts": "5b892f6a69a1521b",
+     "rests on C-NI-SR353-QUALIFY": "adfbd1f8885435ea"
+    }
+   }
+  },
+  {
+   "id": "C-NI-BIOGAS-ANSWER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Digestion without a nitrogen step returns the nitrogen to the same fields; with stripping or denitrification the plant becomes the place where the nitrogen can be made to go elsewhere - the herd sets a floor unless manure nitrogen is given an exit that is not a field.",
+   "because": "Assembled from the claims it rests on.",
+   "rests_on": [
+    "C-NI-BIOGAS",
+    "C-NI-EXITS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "So the answer to *can biogas fix it* is: not by itself, and yes as infrastructure. **Digestion without a nitrogen step returns every kilogram to the same fields in a more available form.** With separation and stripping, or with denitrification, the same plant becomes the only place in the chain where the nitrogen can be made to go somewhere else — which is the honest version of the claim that the herd sets a floor: it sets one **unless the manure nitrogen is given an exit that is not a field.**",
+     "texts": "fae83ff2a3e86bd1",
+     "rests on C-NI-BIOGAS": "c32932c617a1f725",
+     "rests on C-NI-EXITS": "952ab9619d7b41e7"
+    }
+   }
+  },
+  {
+   "id": "C-NI-CURRENCY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Oxygen depletion is the damage and nitrogen one route to it, so nitrogen mass is the wrong currency for comparing what causes the damage.",
+   "because": "The table shows other routes with their own oxygen demand per unit mass.",
+   "rests_on": [
+    "C-NI-O2-TABLE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Oxygen depletion is the damage. Nitrogen is one route to it.",
+     "texts": "2adc1cd7a468c044",
+     "rests on C-NI-O2-TABLE": "e208576000742958"
+    }
+   }
+  },
+  {
+   "id": "C-NI-O2-TABLE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Converted with the Redfield ratio and the balanced reactions, each pathway's oxygen demand per unit mass is as tabled.",
+   "because": "Each line is moles of oxygen per mole of the species times the ratio of molar masses, computed from the constants register.",
+   "rests_on": [
+    "D-NI-CONSTANTS",
+    "U-NI-CONSTANTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Converting everything to oxygen demand — Redfield stoichiometry and the balanced reactions, which is chemistry rather than judgement (`data/manual/nitrogen_constants.json`):",
+     "texts": "e208576000742958",
+     "node D-NI-CONSTANTS": "a169ef97f6d9f3b6",
+     "node U-NI-CONSTANTS": "1587a0c50ff95b3d"
+    }
+   }
+  },
+  {
+   "id": "C-NI-ACCOUNTS-MASS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The nitrogen apportionment counts nitrogen mass, which bears on the first line only; the mechanistic fjord models used to set the targets do describe sulphate reduction and sulphide, but the share that circulates is a share of nitrogen.",
+   "because": "The share is defined as a residual of nitrogen transport; the DHI models' description of the sediment is pinned.",
+   "rests_on": [
+    "E-NI-MSFD-RESIDUAL",
+    "E-NI-DHI-SULPHIDE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-FIRST-LINE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The nitrogen apportionment counts nitrogen mass, which bears on the first line only. The mechanistic fjord models used to set the targets do describe the sediment's sulphate reduction — *\"sker oxidationen overvejende ved sulfatreduktion med deraf følgende produktion af sulfid\"* — but the share that circulates is a share of nitrogen. The consequences:",
+     "texts": "05705a99dccadf1c",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b",
+     "node E-NI-DHI-SULPHIDE": "dfc75fe83b511459",
+     "pinned DHI-MODEL-DEL2-2015": "5317df8eb7f4d3a9"
+    }
+   }
+  },
+  {
+   "id": "C-NI-AMMONIUM",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "An ammonium-rich discharge consumes oxygen by nitrification on arrival, with no algae, light or delay - a pathway absent from a nitrogen-to-algae-to-decay model.",
+   "because": "Nitrification oxidises ammonium to nitrate directly; a model that routes nitrogen only through algal growth and decay does not contain it.",
+   "rests_on": [
+    "C-NI-O2-TABLE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Ammonium carries its own demand.** An ammonium-rich discharge — which is what a basin that has gone anaerobic produces — consumes 4.57 g O₂ per g N on arrival, with no algae, no light and no delay. That pathway is absent from a nitrogen→algae→decay model entirely.",
+     "texts": "035afcb42bdabd9d",
+     "rests on C-NI-O2-TABLE": "e208576000742958"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SULPHATE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Seawater's sulphate, reduced and later re-oxidised, stores an oxygen debt many times the oxygen in the water, so once a basin goes anoxic the electron acceptor is effectively unlimited; brackish Danish waters hold less and lower the multiple.",
+   "because": "Computed from the register's sulphate and oxygen scales and the sulphide-oxidation reaction.",
+   "rests_on": [
+    "D-NI-CONSTANTS",
+    "U-NI-CONSTANTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Sulphate makes the debt effectively unbounded.** Full-strength seawater holds ~2700 mg/l sulphate = 901 mg/l as sulphur, against ~8 mg/l dissolved oxygen. Fully reduced and later re-oxidised that is 1799 mg/l of demand — **225× the oxygen in the water**. Reducing just 0.44% of the sulphate pool stores a debt equal to all of it. Danish waters are brackish and hold proportionally less sulphate, which lowers the multiple and leaves the point. Once a basin goes anoxic the electron acceptor is effectively infinite, and every storm that mixes oxygen in spends it re-oxidising sulphide instead of restoring the water.",
+     "texts": "808de380afdd299c",
+     "node D-NI-CONSTANTS": "a169ef97f6d9f3b6",
+     "node U-NI-CONSTANTS": "1587a0c50ff95b3d"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SILICON",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Diatoms take up silicon and nitrogen at a molar ratio near one; enrichment adds nitrogen and phosphorus but no silicon, so it raises the nitrogen-to-silicon ratio and can shift the community away from diatoms.",
+   "because": "The ratio is the constants register's value, with its source named there and not pinned.",
+   "rests_on": [
+    "D-NI-CONSTANTS",
+    "U-NI-CONSTANTS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**And the ratio matters, not just the total.** Diatoms take up silicon and nitrogen at a molar ratio of about 1. Fertiliser and sewage add N and P; neither adds silicon, which comes from rock weathering. Enrichment therefore raises N:Si, and when silicon runs out the community shifts from diatoms to flagellates and dinoflagellates. A composition change driven by a ratio, invisible to any nitrogen total.",
+     "texts": "10138517ef62901f",
+     "node D-NI-CONSTANTS": "a169ef97f6d9f3b6",
+     "node U-NI-CONSTANTS": "1587a0c50ff95b3d"
+    }
+   }
+  },
+  {
+   "id": "C-NI-POTENCY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The accounting has no potency term: a kilogram delivered in February into a mixed column counts the same as one delivered in July into a stratified fjord.",
+   "because": "The share is a share of mass over the year, with no weight for when or where it arrives.",
+   "rests_on": [
+    "E-NI-MSFD-RESIDUAL"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-MIXING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "There is no potency term anywhere in the accounting. A kilogram delivered in February into a mixed column counts identically to a kilogram delivered in July into a stratified fjord.",
+     "texts": "ec6c0ee0aaba56e4",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NOVANA-FAUNA",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "The national programme samples soft-bottom fauna from the beginning of March to the end of May.",
+   "because": "Their programme description states the window.",
+   "rests_on": [
+    "E-NI-NOVANA-FAUNA"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen, the NOVANA programme description",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The most consequential row is the second. **The national programme samples soft-bottom fauna 1st March to 31st May** — *\"Overvågningen af blødbundsfaunaen gennemføres i tidsrummet\"* — after the winter, before the summer.",
+     "texts": "0a00125c099db341",
+     "node E-NI-NOVANA-FAUNA": "6c7218d155df502f",
+     "pinned NOVANA-2327": "f57c67b33cee6c19"
+    }
+   }
+  },
+  {
+   "id": "C-NI-DIEOFF",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "So a late-summer die-off is observed only in its aftermath, once recolonisation has begun, and the event that decides which organisms receive the next year's nitrogen is the one the programme does not sample.",
+   "because": "Oxygen depletion falls in late summer and autumn; the fauna window is in spring.",
+   "rests_on": [
+    "C-NI-NOVANA-FAUNA"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-NOBODY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "So the late-summer die-off is observed only in its aftermath, months later, once recolonisation has begun, and the event that decides which organisms are present to receive the next year's nitrogen is the one the programme does not sample.",
+     "texts": "f18c843eb39486a7",
+     "rests on C-NI-NOVANA-FAUNA": "0a00125c099db341"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SEASONAL",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "A seasonal claim drawn from a seasonally sampled record is circular unless the window was set by mechanism; the oxygen window was, the bathing window was not.",
+   "because": "A window chosen for a reason other than the mechanism cannot show a season it never samples; how each window was set is from the monitoring register.",
+   "rests_on": [
+    "D-NI-MONITORING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "And any seasonal claim drawn from a seasonally-sampled record is circular unless the window was set by mechanism. Iltsvind's July–November window was; bathing water's June–September window was not.",
+     "texts": "7cc027dc79780284",
+     "node D-NI-MONITORING": "cc8492094bf9de57"
+    }
+   }
+  },
+  {
+   "id": "C-NI-TYPETAL-BASIS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "The typetal for hazardous substances rest on six combined-sewer overflows and five separate stormwater outlets in household catchments, cover only discharges without prior treatment such as basin sedimentation, and are not for industrial areas or heavily trafficked roads.",
+   "because": "Their report states each.",
+   "rests_on": [
+    "E-NI-TYPETAL-STATIONS",
+    "E-NI-TYPETAL-HOUSEHOLDS",
+    "E-NI-TYPETAL-NOBASIN",
+    "E-NI-TYPETAL-HEAVY"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen and DHI, typetal report (2022)",
+   "replaces": [
+    "C-NI-OLD-APPLIED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The national typetal for hazardous substances in rain-dependent discharges rest on **6 combined-sewer overflows and 5 separate stormwater outlets** — *\"fælleskloakerede spildevandsoverløb og fem separatkloakerede regnvandsudledninger\"* — monitored 2000–2020 in catchments representing *\"husholdninger og boligområder\"*. They cover only discharges *\"uden forudgående rensning i form af fx filtrering eller sedimentation i regnvandsbassiner\"*, and the report calls them limited for *\"industriområder og meget trafikerede veje\"*.",
+     "texts": "c434e834e9f6ff71",
+     "node E-NI-TYPETAL-STATIONS": "9ba41e7b16e4f02c",
+     "pinned TYPETAL22": "f9e89eea09ad4512",
+     "node E-NI-TYPETAL-HOUSEHOLDS": "5d07258b29339435",
+     "node E-NI-TYPETAL-NOBASIN": "c1a89c29f5d0e101",
+     "node E-NI-TYPETAL-HEAVY": "7942a0b3ece460fb"
+    }
+   }
+  },
+  {
+   "id": "C-NI-RBU-COUNT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The national register holds the stated number of rain-dependent discharge points.",
+   "because": "Counted from the register layer.",
+   "rests_on": [
+    "D-NI-RBU",
+    "X-NI-KOEGE"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The national register holds **19,665** rain-dependent discharge points.",
+     "texts": "d74d7160a5cd0d29",
+     "node D-NI-RBU": "599c03c75243737f",
+     "node X-NI-KOEGE": "30273289f998386f"
+    }
+   }
+  },
+  {
+   "id": "C-NI-TYPETAL-EXCLUDES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Much of the adsorbing substances is caught in basin sediment, which the typetal do not cover, so the design leaves out the worst cases - and says so.",
+   "because": "The report states both what the basins catch and what the typetal exclude.",
+   "rests_on": [
+    "C-NI-TYPETAL-BASIS",
+    "E-NI-TYPETAL-SEDIMENT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-SLUDGE-B"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "A significant share of the adsorbing substances is caught in basin sediment, which the typetal do not cover. **The design excludes the worst cases, and says so.**",
+     "texts": "76a0572dcb77f949",
+     "rests on C-NI-TYPETAL-BASIS": "c434e834e9f6ff71",
+     "node E-NI-TYPETAL-SEDIMENT": "dc69c4bf57840c5e",
+     "pinned TYPETAL22": "f9e89eea09ad4512"
+    }
+   }
+  },
+  {
+   "id": "C-NI-STORMWATER-METALS",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Chromium, nickel and arsenic typetal are higher in separate stormwater than in combined overflow, and the national outfall layers report far more stormwater volume than overflow volume, so separating a sewer system trades sewage overflow for untreated runoff.",
+   "because": "The typetal are as transcribed in the monitoring register from the pinned report; the volumes are sums over the outfalls that report one.",
+   "rests_on": [
+    "D-NI-MONITORING",
+    "D-NI-OUTFALLS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-VOLUMES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Note that chromium, nickel and arsenic are **higher in separated stormwater than in sewage overflow** — and the national outfall layers report 278 million m³/yr of the former, summed over the 15,159 of 16,185 separate outfalls that give a volume, against 33.6 million m³/yr of the latter over 4,140 of 4,217 combined-sewer overflows. Separating a sewer system solves the sewage overflow and delivers untreated runoff instead.",
+     "texts": "eae66a76810b88b8",
+     "node D-NI-MONITORING": "cc8492094bf9de57",
+     "node D-NI-OUTFALLS": "6686968c1a211f20"
+    }
+   }
+  },
+  {
+   "id": "C-NI-KOEGE-DCE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "DCE's oxygen notes record no oxygen depletion in Køge Bugt in their 2023 and 2025 periods - in 2023 in the autumn after the second-largest extent registered.",
+   "because": "Their notes say so.",
+   "rests_on": [
+    "E-NI-DCE-ILT-2023",
+    "E-NI-DCE-ILT-2023-SIZE",
+    "E-NI-DCE-ILT-2025"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, oxygen notes (2023, 2025)",
+   "replaces": [
+    "C-NI-OLD-WORST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "DCE's oxygen notes say for 2023 *\"I Køge og Faxe Bugt blev der ikke registreret iltsvind\"* and for 2025 *\"I Køge Bugt og Faxe Bugt er der ikke registreret iltsvind i år\"* — **no oxygen depletion registered**, in 2023 in the autumn after a mid-September extent the note calls *\"det hidtil næststørste registreret\"*, the second largest registered.",
+     "texts": "df223e2043282385",
+     "node E-NI-DCE-ILT-2023": "9e47d11e844d1d31",
+     "pinned NI-DCE-ILT-2023": "f5a0f9f2d3140e18",
+     "node E-NI-DCE-ILT-2023-SIZE": "9991e4960ff6d7de",
+     "node E-NI-DCE-ILT-2025": "129f185a8ef5bc3b",
+     "pinned NI-DCE-ILT-2025": "d2250411494901b5"
+    }
+   }
+  },
+  {
+   "id": "C-NI-ILTSVIND-DEF",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "NITROGEN.md",
+   "claim": "DCE call it iltsvind when the oxygen concentration falls below the threshold their notes state.",
+   "because": "Their definition, stated in each note.",
+   "rests_on": [
+    "E-NI-DCE-DEF"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, oxygen notes",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "DCE call it iltsvind when the oxygen concentration is below **4 mg/l**.",
+     "texts": "3a127df20f680300",
+     "node E-NI-DCE-DEF": "cda08de1e8e7e5ad",
+     "pinned NI-DCE-ILT-2025": "d2250411494901b5"
+    }
+   }
+  },
+  {
+   "id": "C-NI-KOEGE-MIX",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Køge Bugt mixes readily, so it may never meet that definition while still having anoxic sediment; 'not registered' is probably accurate and says nothing about the bed, and whether it means measured and absent or not measured is not stated.",
+   "because": "The mixing is not measured here, and the notes do not say whether the bay's stations were sampled.",
+   "rests_on": [
+    "C-NI-ILTSVIND-DEF",
+    "U-NI-KOEGE-MIX"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-STRATIFIED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Køge Bugt mixes readily, so it may never meet that definition while still having anoxic sediment, sulphate reduction and a putrefying shoreline. 'Not registered' is probably accurate and says nothing about whether the bed is dead — and whether it means measured and absent, or not measured, the notes do not say.",
+     "texts": "6356e230216fd6d8",
+     "rests on C-NI-ILTSVIND-DEF": "3a127df20f680300",
+     "node U-NI-KOEGE-MIX": "3ab9d8cdc515aebc"
+    }
+   }
+  },
+  {
+   "id": "C-NI-KOEGE-COMBINED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Several shoreline municipalities have no combined-sewer overflow in the national register, so in a storm they cannot spill combined sewage through one - though pumping stations can still have emergency overflows.",
+   "because": "Counted from the register layer inside the bay's box; the emergency overflows are named in DANVA's list of discharge types.",
+   "rests_on": [
+    "D-NI-RBU",
+    "X-NI-KOEGE",
+    "E-NI-DANVA-PUMPS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-NI-OLD-PHYSICALLY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Vallensbæk, Ishøj and Solrød have **no** combined-sewer overflow in the national register; Greve has 2. So in a storm they cannot spill combined sewage through one — though pumping stations on a separate system can still have emergency overflows, which DANVA's own list of discharge types names: *\"Nødoverløb fra Pumpestationer\"*.",
+     "texts": "21eea74b204484de",
+     "node D-NI-RBU": "599c03c75243737f",
+     "node X-NI-KOEGE": "30273289f998386f",
+     "node E-NI-DANVA-PUMPS": "2f02f7ebc5b82015",
+     "pinned DANVA-2024": "cce512d654be929c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-KOEGE-STORAGE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Most of the bay's basin storage and many of its combined overflows sit in the northern municipalities, and the bay opens southeast, so their discharge enters at its northern end.",
+   "because": "Summed from the register layer; the geography is the bay's coastline.",
+   "rests_on": [
+    "D-NI-RBU",
+    "X-NI-KOEGE"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**92% of the bay's basin storage** (80,072 of 87,343 m³) sits in the northern municipalities, along with 47 of 85 combined overflows. The bay opens southeast, so their discharge enters at the northern end.",
+     "texts": "af5db598ab6e7df4",
+     "node D-NI-RBU": "599c03c75243737f",
+     "node X-NI-KOEGE": "30273289f998386f"
+    }
+   }
+  },
+  {
+   "id": "C-NI-TRANSPORT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "CURRENTS.md's rain-conditioned transport gives the southward share in the southern Sound at baseline, during overflow-scale rain and after it.",
+   "because": "Read from its stored analysis.",
+   "rests_on": [
+    "D-NI-CURRENTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "[CURRENTS.md](CURRENTS.md), on 35,064 hours where the rain record and the current record overlap, gives the southward transport in the southern Sound:",
+     "texts": "7b09020cf62b8756",
+     "node D-NI-CURRENTS": "c1f7b8921c238c61"
+    }
+   }
+  },
+  {
+   "id": "C-NI-TRANSPORT-READ",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "While the city is overflowing the water runs north: southward transport falls below baseline during overflow-scale rain and exceeds it only hours later, when the plume is diluted.",
+   "because": "Read off the table; no wind data is used, so the cause is not shown.",
+   "rests_on": [
+    "C-NI-TRANSPORT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-SOUTHWESTERLIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "So the geometry is right about the plume and wrong about the event. **While the city is overflowing, the water runs north**: southward transport falls below baseline during overflow-scale rain and only clearly exceeds it 12 hours later, by which time the plume is diluted and no longer traceable to an outfall.",
+     "texts": "ce4147e991b9448e",
+     "rests on C-NI-TRANSPORT": "7b09020cf62b8756"
+    }
+   }
+  },
+  {
+   "id": "C-NI-FLUSH",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The current field flushes mid Køge Bugt over its reference distance in months, against days in the southern Sound, so what arrives stays.",
+   "because": "Flushing times from CURRENTS.md's stored analysis.",
+   "rests_on": [
+    "D-NI-CURRENTS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-NI-OLD-DOES-NOT-FLUSH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "And the current field flushes mid Køge Bugt over 20 km in about 73 days, against 3.6 in the southern Sound, so what does arrive stays for months.",
+     "texts": "8984ae657b1d818b",
+     "node D-NI-CURRENTS": "c1f7b8921c238c61"
+    }
+   }
+  },
+  {
+   "id": "C-NI-EVENT-VS-ACCUM",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "An event-based attribution - this overflow, that shoreline - is not supported, while an accumulated one may be.",
+   "because": "The water runs north during the event and the bay holds what arrives later.",
+   "rests_on": [
+    "C-NI-TRANSPORT-READ",
+    "C-NI-FLUSH"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "That matters for what this whole section can claim. A load entering a bay that flushes slowly is a different quantity from a load entering one that flushes fast — and the timing means an event-based attribution (this overflow, that shoreline) is not supported, while an accumulated one may be.",
+     "texts": "345819a87752f045",
+     "rests on C-NI-TRANSPORT-READ": "ce4147e991b9448e",
+     "rests on C-NI-FLUSH": "8984ae657b1d818b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-SPILL",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The fixed link's permitted spill into the bay's northern entrance was hundreds of times the volume released at Lynetteholm, and where it went has not been computed here; the current field could not show it.",
+   "because": "The volumes and how each was received are in the monitoring register without a source; the field's period and calibration are from CURRENTS.md's analyses.",
+   "rests_on": [
+    "D-NI-MONITORING",
+    "U-NI-SPILL-SOURCES",
+    "D-NI-CURRENTS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-NEVER-COMPUTED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "The same bay carries the largest release nobody argued about. The Øresund fixed link's permitted spill — **up to 370,000 m³** of fines into the water column at the bay's northern entrance, 1995-2000 — against the **498 m³** released at Lynetteholm before dumping was stopped: **743 times**, and the larger one, as recorded in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), a permit condition met rather than a controversy. Where that material went has not been computed here: the current field used above covers 2022–2025 only, and underestimates published peak currents in the straits by a factor of 1.7 to 2.1 by its own calibration.",
+     "texts": "caa3443af31ccc3a",
+     "node D-NI-MONITORING": "cc8492094bf9de57",
+     "node U-NI-SPILL-SOURCES": "3971ed34f8fa8309",
+     "node D-NI-CURRENTS": "c1f7b8921c238c61"
+    }
+   }
+  },
+  {
+   "id": "C-NI-NOT-URBAN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The page does not establish that urban discharge is a large national source: in the pathways register combined overflow is a fraction of the land-by-stream supply even at its upper bound.",
+   "because": "Compared from the register's bounds, which carry no source.",
+   "rests_on": [
+    "D-NI-PATHWAYS",
+    "U-NI-PATHWAY-SOURCES"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-RECONSTRUCTIONS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**It does not establish that urban discharge is a large national source.** In the pathways register above, combined-sewer overflow is put at 0.2–4 kt N/yr against 59–71 kt from Danish land by stream: a fraction even at its upper bound.",
+     "texts": "16c3cdfaa6657dd2",
+     "node D-NI-PATHWAYS": "6d5a9579c56f6625",
+     "node U-NI-PATHWAY-SOURCES": "b57402ae8211022b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-DIFFERENT-QUESTION",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "The published share answers how much of the nitrogen observed arriving by stream from Danish land is attributed to farming after subtracting models of everything else - not how much of Denmark's marine nitrogen problem is agriculture.",
+   "because": "From how the share is constructed and from what the sections above find outside it.",
+   "rests_on": [
+    "C-NI-HEADLINE",
+    "E-NI-MSFD-RESIDUAL",
+    "C-NI-LOWER-BOUND"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**It does establish that the published percentage answers a different question than the one it is used for.** It answers: *of the nitrogen we observe arriving by stream from Danish land, how much do we attribute to farming after subtracting our models of everything else?* It is read as: *how much of Denmark's marine nitrogen problem is agriculture?*",
+     "texts": "b60b0494622e8fac",
+     "rests on C-NI-HEADLINE": "197fdade8d2070b2",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b",
+     "rests on C-NI-LOWER-BOUND": "f18c1f930504af87"
+    }
+   }
+  },
+  {
+   "id": "C-NI-THREE-DIFFERENCES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Those two questions differ by a closed set, a potency term and a state variable, and the accounts contain none of the three.",
+   "because": "The set is not closed, the share weighs no delivery by its effect, and sediment memory is not a term.",
+   "rests_on": [
+    "C-NI-LOWER-BOUND",
+    "C-NI-POTENCY",
+    "C-NI-UNQUANTIFIED"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "Those differ by a closed set, a potency term, and a state variable. The accounts contain none of the three.",
+     "texts": "a4fb1a7ea0d8a0f3",
+     "rests on C-NI-LOWER-BOUND": "f18c1f930504af87",
+     "rests on C-NI-POTENCY": "ec6c0ee0aaba56e4",
+     "rests on C-NI-UNQUANTIFIED": "55cd73d150185cdd"
+    }
+   }
+  },
+  {
+   "id": "C-NI-BOUNDS",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "NITROGEN.md",
+   "claim": "Several ranges in section one are this project's constructions, and the register does not mark which, so every range there should be read as this project's unless a source is given.",
+   "because": "The register asks for a mark on constructed bounds and no row carries one.",
+   "rests_on": [
+    "D-NI-PATHWAYS",
+    "U-NI-PATHWAY-SOURCES"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-NI-OLD-BOUNDS-OURS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on NITROGEN.md": "**Several ranges in section 1 are constructed here, not published figures, and the register does not mark which** — so every range there should be read as this project's unless a source is given. They are stated so they can be argued with.",
+     "texts": "9006c717e1dd03dc",
+     "node D-NI-PATHWAYS": "6d5a9579c56f6625",
+     "node U-NI-PATHWAY-SOURCES": "b57402ae8211022b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-REGEN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The unquantified pathways include what is probably the largest supply to the productive layer, which has no row in any apportionment.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "including what is probably the largest supply",
+    "end": "has no row in any apportionment",
+    "why": "'Probably the largest supply' rests on one unnamed study in the pathways register, and 'any apportionment' is broader than anything checked."
+   },
+   "replaced_by": [
+    "C-NI-UNQUANTIFIED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "including what is probably the largest supply to the productive layer — internal regeneration from sediment, which is not a \"source\" and so has no row in any apportionment",
+     "texts": "dd597e9ea9df26ff"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-DEPOSITION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Atmospheric deposition to Danish marine waters is comparable to the land-based term and appears in none of the published shares.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Note the scale of what the apportionment omits",
+    "end": "appears in none of the published shares",
+    "why": "Its upper figure and the annual figures behind it are in the pathways register without a source, and 'none of the published shares' is broader than what was checked: the pinned apportionment covers discharges to coastal waters."
+   },
+   "replaced_by": [
+    "C-NI-DEPOSITION"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Note the scale of what the apportionment omits. Atmospheric deposition to Danish marine waters is 45–90 kt N/yr, comparable to the entire land-based waterborne term, and appears in none of the published shares",
+     "texts": "36357d0e88e24175"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-BACKGROUND-MODEL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The natural background line is model output.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Model output — and the subtrahend",
+    "end": "determines the residual above",
+    "why": "DCE's methods note determines the background in small catchments with little human impact and transfers it; 'model output' misdescribes it."
+   },
+   "replaced_by": [
+    "C-NI-RELABEL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Model output — and the subtrahend that determines the residual above",
+     "texts": "c9672b03ba00069e"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-MINOR-SHARES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The published apportionment gives shares for aquaculture, separate stormwater, overflow, industry and scattered dwellings.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Aquaculture and marine farms",
+    "end": "assumed per-capita loads",
+    "why": "Its justification was not recorded properly: the five shares were carried without a pinned source. The pinned summary says only that overflows, stormwater outlets and scattered dwellings contribute even smaller shares than treatment plants, and names neither industry nor aquaculture."
+   },
+   "replaced_by": [
+    "C-NI-RELABEL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Aquaculture and marine farms, 1.5% | Reported, feed-balance based. | | Separate stormwater, 0.7% | Modelled volume × a concentration from a 1990 measurement programme. | | Rain-dependent overflow, 0.6% | Modelled volume (30-135% stated uncertainty) × an assumed concentration, quality-controlled against that same assumed concentration. | | Industry, 0.5% | Reported. | | Scattered dwellings, 0.2% | Modelled from dwelling counts × assumed per-capita loads",
+     "texts": "a8348ba64388c53b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-WINDOLF-READ",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A catchment-and-estuary study was read, and its design and gauged shares showed where the relation is circular.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "We have now read it, and it refutes the broader reading",
+    "end": "at Randers about an eighth",
+    "why": "Its justification was not recorded properly: the paper is paywalled, the one open copy listed for it has been withdrawn, and nothing the site stored holds its figures, so no one can check them here."
+   },
+   "replaced_by": [
+    "C-NI-WINDOLF-UNREAD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "We have now read it, and it refutes the broader reading. Windolf, Blicher-Mathiesen, Carstensen & Kronvang (2012), *Environmental Science and Policy* 24: 24–33, 10.1016/j.envsci.2012.08.009. The design is a catchment↔estuary pairing — 10 catchments covering 35% of Danish land area with their estuaries, 1990–2009 — not the treated-versus-control paired catchment experiment. On that, an earlier draft of this section guessed right and then guessed wrong about what followed. What matters is where the numbers come from: | link | how it is obtained | |---|---| | catchment N surplus | the norm-product residual, as above | | stream N load | measured on the gauged fraction — fortnightly total-N concentrations × daily discharge — and modelled on the rest per Windolf et al. (2011), the DK-QNP family | | estuary total N | measured. Discrete samples, surface and bottom, 12–46×/year, upper/middle/lower reaches | Gauged area runs from 22% (Isefjord) to 87% (Randers Fjord), median about 66%. So the surplus↔load relation *is* partly circular, and unevenly so — at Isefjord more than three quarters of the catchment is modelled, at Randers about an eighth",
+     "texts": "28e4989ceb6f329d"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-REFUTED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Measured estuary nitrogen and the catchments' different responses positively refute the claim that the attribution lacks independent support.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "But two things in this paper are not circular at all",
+    "end": "no circularity in one monitoring-report figure touches",
+    "why": "It rests on the same paper, which cannot be read here; 'positively refuted' cannot be shown from anything held."
+   },
+   "replaced_by": [
+    "C-NI-NARROW"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "But two things in this paper are not circular at all, and together they carry the attribution: 1. Estuary nitrogen is measured, and fell 24–62%. It sits downstream of the load model and takes no input from *markoverskud*. Stream and upper-estuary concentrations *\"nearly halved over the time frame investigated.\"* 2. The catchments respond differently, and that is the tell. Eight show a direct response under five years; two show a decadal delay attributed to nitrate surviving in oxic chalk aquifers. A relation manufactured by a shared input would give all ten the same response. The heterogeneity is a signature of real hydrology, and a construction does not produce it. So the position changes. The narrow claim stands: Figur 6.7 D in SR353 cannot evidence what it is used for, and this paper does not rescue that figure. The broad claim — that the attribution lacks independent support — is now positively refuted, not merely unestablished. Measured stream loads over a gauged majority, measured estuary concentrations, and between-catchment heterogeneity are support that no circularity in one monitoring-report figure touches",
+     "texts": "72fb8c79de2a8b8d"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-SETTLED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Reading the paper settled the question against this project's first draft.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "This is worth stating plainly because it is the error this project audits",
+    "end": "only the first was in the first draft",
+    "why": "About this project's own drafting rather than the nitrogen account, and 'reading the paper settled it' cannot stand when the paper cannot be read here."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This is worth stating plainly because it is the error this project audits, committed here twice in one hour, in both directions. First we found one bad argument and let it stand for the case — a bad argument in a source does not mean there are no good ones. Then, correcting that, we asserted from a *title* that a non-circular design existed. Softening an overclaim is still an overclaim. Reading the paper settled it, and against us. That is the steelman rule working as intended: the strongest version of the case was looked for, found, and turned out to be stronger than the finding. The circularity is real and local. The attribution is not unevidenced. Both sentences are needed, and only the first was in the first draft",
+     "texts": "35a78630fd98649c"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-NEVER-INSTRUMENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Crop nitrogen comes from three editions of the feed tables, no field is observed at any point, and nitrogen never touches an instrument.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "crop nitrogen content",
+    "end": "Nitrogen never touches",
+    "why": "SR120 names feed tables from four editions, not three, and the annual analyses of cereal nitrogen are measurements inside the balance; what holds is that no field's nitrogen balance is observed."
+   },
+   "replaced_by": [
+    "C-NI-SURPLUS-TERMS",
+    "C-NI-NO-FIELD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "crop nitrogen content — norm tables from the *Fodermiddeltabeller* of 1992, 1995 and 2000, with cereals corrected annually from analyses by the pig industry's own research centre. - atmospheric deposition — modelled. No field is observed at any point. Every term is a register count or an area times a regulatory coefficient, and the surplus is what is left over. Nitrogen never touches",
+     "texts": "e02a7ab79ff753df"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-NEVER-CARRIED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The register choice is never carried as an uncertainty.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Small against the whole decline",
+    "end": "never carried as an uncertainty",
+    "why": "'Never carried as an uncertainty' is a universal no search supports; what the table shows is the size of the choice."
+   },
+   "replaced_by": [
+    "C-NI-REGISTER-CHOICE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Small against the whole decline; not small against a year of it, and it is never carried as an uncertainty",
+     "texts": "474cd88cb88ce627"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-OVERSEER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Successive versions of New Zealand's Overseer raised modelled leaching with no change in practice, and a review panel would not say whether it could tell a rise from a fall.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "New Zealand's OVERSEER is the same pattern",
+    "end": "tell a rise from a fall",
+    "why": "The figure and the paraphrase of the panel could not be traced to a readable source; the ministry's summary of the panel's conclusion is pinned and says something narrower."
+   },
+   "replaced_by": [
+    "C-NI-OVERSEER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "New Zealand's OVERSEER is the same pattern with an audit attached: successive versions raised modelled nitrogen leaching by up to 60% with no change in on-farm practice, and a 2021 review panel would not say whether the tool could tell a rise from a fall",
+     "texts": "451ef00aa4f20d54"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-SLUDGE-A",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The hazardous-substances programme reports the highest median metal concentrations in basin sludge.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "That matters because sediment resuspension is a",
+    "end": "largest in the wettest years",
+    "why": "The typetal report, which the register cites for it, does not say that basin sludge carries the highest median metal concentrations; it says a significant share of the adsorbing substances is caught in basin sediment."
+   },
+   "replaced_by": [
+    "C-NI-THRESHOLD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That matters because sediment resuspension is a threshold in flow, not a frequency of events. Below the critical shear stress the deposit stays in the basin; above it, the accumulated sludge leaves — and the hazardous-substances programme reports the highest median metal concentrations precisely in basin sludge. Multiplying an annual volume by an average concentration cannot represent that, and the resulting error is one-directional and largest in the wettest years",
+     "texts": "706dedcc6e522edd"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-UNGAUGED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DK-QNP supplies the river-transport term over a stated range of the country left ungauged.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "They are coupled, which is why they get confused",
+    "end": "itself is B",
+    "why": "Its justification was not recorded properly: the range was carried only as a quotation of an earlier version; the monitoring register gives one figure, itself without a citation."
+   },
+   "replaced_by": [
+    "C-NI-COUPLED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "They are coupled, which is why they get confused: A is an input to DK-QNP, and DK-QNP supplies B's river-transport term over the ungauged ~45–51% of the country. So A partly determines the minuend of B. But the ~70% itself is B",
+     "texts": "7822e683e5bad56a"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-BACKGROUND-CHECK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A catchment study's regression intercept agrees with background concentrations measured in minimally disturbed streams.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "gives that assumption its one strong check",
+    "end": "the background term is not arbitrary",
+    "why": "Its justification was not recorded properly: the paper is paywalled, the one open copy listed for it has been withdrawn, and nothing the site stored holds its figures, so no one can check them here."
+   },
+   "replaced_by": [
+    "C-NI-MSFD-FINDINGS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "gives that assumption its one strong check: the intercept of their measured regressions implies 1.24 ± 0.46 mg N/L, against 1.27 ± 0.55 measured in nine minimally-disturbed streams. That agreement is real and is the best evidence the background term is not arbitrary",
+     "texts": "94241ef2d0eb42dd"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-PASSTHROUGH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Per catchment, only a small fraction of the fall in field surplus reached the measured diffuse load, and none in one catchment.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "So how does the construction perform against things that were measured",
+    "end": "converting a surplus target into an expected load",
+    "why": "Its justification was not recorded properly: the paper is paywalled, the one open copy listed for it has been withdrawn, and nothing the site stored holds its figures, so no one can check them here."
+   },
+   "replaced_by": [
+    "C-NI-PERFORMANCE-UNREAD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So how does the construction perform against things that were measured? This is the question the rest of it turns on, and Windolf et al. (2012) answer it per catchment. Over 1990–2009: | catchment | field surplus fell | measured normalised diffuse load fell | pass-through | |---|---|---|---| | Horsens, Isefjord, Odense | 30–52 kg N ha⁻¹ yr⁻¹ | 10–14 | roughly ¼ to ⅓ | | Randers, Roskilde | 24–50 | 3–5 | roughly a tenth | | Mariager | fell as elsewhere | no response traceable | zero | The construction moves and the measurement mostly does not. For every kilogram per hectare the surplus fell, the measured diffuse load fell by something like 0.1 to 0.4 where it responded at all, and by nothing in one catchment of ten. The paper attributes the spread to nitrogen removal in groundwater varying with geology, and the Mariager failure to old oxic aquifers where nitrate survives. Read carefully, that is three separate findings: 1. Direction: good. Nine of ten catchments show a significant relation. The surplus is not noise. 2. Magnitude: poor. The transfer coefficient ranges from 0 to about a third. A load reduction predicted from a surplus reduction would be overestimated by a factor of three to ten, or entirely, depending which catchment you are standing in. 3. And the national figure hides exactly this. Figur 6.7 D shows *\"en meget stærk, signifikant lineær relation\"* at national scale. That relation is an aggregate over catchments whose individual pass-through runs from zero to a third. The strength of the national fit is not evidence that the local coefficient is stable — it is what aggregation does to a variable coefficient. Point 3 is this project's recurring finding arriving in the nitrogen account: a basket looks tight from outside and is heterogeneous within, and the tightness is partly an artefact of looking from outside. It is the same shape as the water bodies that carry no within-basket signal, and the same shape as a national trend that tracks which stations were reporting. None of which says the decline was not real. Measured estuary nitrogen fell 24–62% and measured inlet concentrations 18–55%. Something large happened. What the numbers do not support is using the surplus as a quantitative instrument — sizing an intervention on it, or converting a surplus target into an expected load",
+     "texts": "ac4c87073a4a0490"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-LARGER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The unquantified pathways inside the residual are a larger weakness of the share than the circularity.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Every one of them that reaches a river",
+    "end": "separate from, and larger than, the circularity",
+    "why": "'Larger than' compares a set of unquantified pathways with the circularity, and nothing measures either against the other."
+   },
+   "replaced_by": [
+    "C-NI-RESIDUAL-ABSORBS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Every one of them that reaches a river — submarine groundwater discharge, drained organic soils, legacy nitrogen in transit, foreign inflow to shared waters — lands inside B's leftover, and is named agriculture by subtraction. That is the substantive weakness of the ~70%, and it is separate from, and larger than, the circularity",
+     "texts": "777a467cb684c255"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-NO-MEASUREMENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The herd's share is asked constantly and no measurement in a stream could separate it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "A question that gets asked constantly",
+    "end": "only by accounting",
+    "why": "'Asked constantly' has no source, and 'no measurement could separate' is stronger than what is established: the national accounts do not separate the fractions, which is what can be said."
+   },
+   "replaced_by": [
+    "C-NI-WHOSE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A question that gets asked constantly and has no answer downstream: how much of this is because Denmark keeps animals? The apportionment above has no livestock term. Diffuse load is one bucket — cultivated land *including scattered dwellings*, by DCE's own definition — and no measurement in a stream could separate the fractions anyway. A nitrate ion that passed through a pig is the same ion as one out of a bag. The question cannot be answered by measuring, only by accounting",
+     "texts": "29d53c7e3d278630"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-SINCE-2000",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Manure has been the larger input since about the turn of the century.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Manure has been the larger of the two",
+    "end": "it was mineral",
+    "why": "The table shows three years, which do not show since when manure has been the larger."
+   },
+   "replaced_by": [
+    "C-NI-HALF-ONE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Manure has been the larger of the two since about 2000; in 1991 it was mineral",
+     "texts": "c489859ac515323a"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-FEED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The herd is behind most of the nitrogen applied, the majority of the mineral fertiliser through what it is spread on.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Set that beside half one",
+    "end": "through what it is spread on",
+    "why": "It assumes mineral fertiliser is spread in proportion to area, which the page did not say; per hectare, application differs by crop."
+   },
+   "replaced_by": [
+    "C-NI-HERD-INPUT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Set that beside half one and the input-side answer is not close: the herd is behind most of the nitrogen applied to Danish soil — the manure directly, and the majority of the mineral fertiliser through what it is spread on",
+     "texts": "637dfc68f029a34f"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-PASSTHROUGH-2C",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "This project's comparison of field surplus with measured load puts pass-through between zero and about a third.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "This project's own comparison of",
+    "end": "varying by catchment",
+    "why": "Its justification was not recorded properly: the paper is paywalled, the one open copy listed for it has been withdrawn, and nothing the site stored holds its figures, so no one can check them here."
+   },
+   "replaced_by": [
+    "C-NI-NOT-LOAD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This project's own comparison of *markoverskud* against measured load puts pass-through between zero and about a third, varying by catchment",
+     "texts": "90730dc46cbf049b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-PASSTHROUGH-CAVEAT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Pass-through from field surplus to measured load runs from zero to about a third, and is zero at Mariager.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "This document's own comparison puts pass-through",
+    "end": "zero at Mariager",
+    "why": "Its justification was not recorded properly: the paper is paywalled, the one open copy listed for it has been withdrawn, and nothing the site stored holds its figures, so no one can check them here."
+   },
+   "replaced_by": [
+    "C-NI-CAVEAT-LOAD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This document's own comparison puts pass-through from field surplus to measured load between zero and about a third, varying by catchment and zero at Mariager",
+     "texts": "63e183669d1140fb"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-HALF-HERD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Roughly half the animals in Denmark are on farms whose own land cannot take their manure, and the export is already the arrangement in place.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Read that plainly",
+    "end": "the one part of it that is not public",
+    "why": "Above a retired legal ceiling is not 'cannot take their own manure', and declared area is not spreading area; C-MANURE states the floor and the qualifications."
+   },
+   "replaced_by": [
+    "C-NI-MANURE-READING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Read that plainly: roughly half the animals in Denmark are on farms whose own declared land cannot take their own manure. The export the law would force is not a future consequence of a quota. It is the arrangement already in place, held together by inter-farm contracts — and those contracts are the one part of it that is not public",
+     "texts": "ff28306e27fc2204"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-L5",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The law passed with a stated vote count and puts quotas on holdings from a stated year.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "The instruments are in the public record",
+    "end": "on individual holdings from",
+    "why": "The vote count is not in anything pinned, and the start year differs between the pinned reports - a quota from one year in the ministry's announcement, a year later in a report of the June agreement."
+   },
+   "replaced_by": [
+    "C-NI-L5"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The instruments are in the public record rather than in this analysis: `L5` passed 119–34 on 3 September 2026 and puts per-catchment nitrogen quotas on individual holdings from",
+     "texts": "cd3e4d14806c61fd"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-FIRST-LINE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Of the oxygen-demand pathways, only algal remineralisation is modelled by the accounts.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Only the first line is modelled by the accounts",
+    "end": "Three consequences",
+    "why": "The mechanistic fjord models used to set the targets describe sulphate reduction and sulphide; what holds is that the nitrogen apportionment counts nitrogen mass only."
+   },
+   "replaced_by": [
+    "C-NI-ACCOUNTS-MASS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Only the first line is modelled by the accounts. Three consequences",
+     "texts": "426829edac48e8bd"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-MIXING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Vertical mixing across a summer pycnocline is orders of magnitude weaker, which decides whether nitrogen is used or flushed.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "though vertical mixing across a summer pycnocline",
+    "end": "used or flushed",
+    "why": "No source is held for the size of the difference in mixing, or for what it decides."
+   },
+   "replaced_by": [
+    "C-NI-POTENCY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "though vertical mixing across a summer pycnocline is roughly four orders of magnitude weaker, which is what decides whether the nitrogen is used or flushed",
+     "texts": "fa384f518cd9069b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-NOBODY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The event that decides which organisms receive the next year's nitrogen is the one thing nobody watches.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "So the event that decides which organisms",
+    "end": "the one thing nobody watches",
+    "why": "'Nobody watches' is broader than what is shown: what is shown is the national programme's sampling window."
+   },
+   "replaced_by": [
+    "C-NI-DIEOFF"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So the event that decides which organisms are present to receive the next year's nitrogen is the one thing nobody watches",
+     "texts": "e317960ea3f0f084"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-APPLIED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The hazardous-substance typetal are applied to every discharge point in the national register.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "The national typetal for hazardous substances",
+    "end": "separate stormwater outlets",
+    "why": "That the typetal are applied to every one of the register's points is not stated in the typetal report or anything else held; what holds is the stations they rest on and how many points the register lists."
+   },
+   "replaced_by": [
+    "C-NI-TYPETAL-BASIS",
+    "C-NI-RBU-COUNT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The national typetal for hazardous substances in rain-dependent discharges — applied to all 19,665 discharge points — rest on 6 combined-sewer overflows and 5 separate stormwater outlets",
+     "texts": "4b24a60a62def8ab"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-SLUDGE-B",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The same programme reports the highest median metal concentrations in basin sludge.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Meanwhile the same programme reports",
+    "end": "and says so",
+    "why": "The typetal report, cited for it, does not say so; it says a significant share of adsorbing substances is caught in basin sediment."
+   },
+   "replaced_by": [
+    "C-NI-TYPETAL-EXCLUDES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Meanwhile the same programme reports the highest median metal concentrations in sludge from basins. The design excludes the worst cases, and says so",
+     "texts": "ae65181351934988"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-VOLUMES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nationally there is a stated volume of separate stormwater against a stated volume of combined overflow.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "and nationally there is",
+    "end": "of the latter",
+    "why": "Its justification was not recorded properly: the register cites the typetal report for these volumes, which does not contain them, and the national outfall layers held here give the stormwater figure far higher."
+   },
+   "replaced_by": [
+    "C-NI-STORMWATER-METALS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "and nationally there is 195 million m³/yr of the former against 33 million m³/yr of the latter",
+     "texts": "c82c2efee974b846"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-WORST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "No oxygen depletion was registered in Køge Bugt even in the worst iltsvind year in two decades.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "no oxygen depletion registered",
+    "end": "the worst iltsvind year in two decades",
+    "why": "DCE's autumn note that year calls the mid-September extent the second largest registered, not the worst in two decades."
+   },
+   "replaced_by": [
+    "C-NI-KOEGE-DCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "no oxygen depletion registered, including in 2023, the worst iltsvind year in two decades",
+     "texts": "bdcedf76303bcc83"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-STRATIFIED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE's iltsvind is mapped in stratified basins, and Køge Bugt is shallow and mixes readily.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "mapped in stratified basins",
+    "end": "whether the bay is dead",
+    "why": "'Mapped in stratified basins' and 'shallow' are not stated in anything held, and whether the bay was measured at all is not stated in the notes."
+   },
+   "replaced_by": [
+    "C-NI-KOEGE-MIX"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "mapped in stratified basins. Køge Bugt is shallow and mixes readily, so it may never qualify while still having anoxic sediment, sulphate reduction and a putrefying shoreline. 'Not registered' is probably accurate and says nothing about whether the bay is dead",
+     "texts": "e836d51179866a58"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-PHYSICALLY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The separated shoreline communities physically cannot discharge sewage into the bay in a storm.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "The shoreline communities separated their systems",
+    "end": "into the bay in a storm",
+    "why": "A separate system can still spill sewage - pumping stations have emergency overflows - and the register counts only combined-sewer overflow structures."
+   },
+   "replaced_by": [
+    "C-NI-KOEGE-COMBINED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The shoreline communities separated their systems and physically cannot discharge sewage into the bay in a storm",
+     "texts": "b83c3914328eaeff"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-SMELLS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The municipality that built the storage is not the one that smells it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "The municipality that built the storage",
+    "end": "not the one that smells it",
+    "why": "No measurement of shore condition by municipality exists here; the sentence asserts what the page does not measure."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The municipality that built the storage is not the one that smells it",
+     "texts": "8e6e4d86edea6d61"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-SOUTHWESTERLIES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Heavy Copenhagen rain arrives with cyclonic southwesterlies that drive the Sound northward.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "heavy Copenhagen rain arrives with cyclonic",
+    "end": "drive the Sound northward",
+    "why": "No wind data is read here; the mechanism is not shown, only the transport."
+   },
+   "replaced_by": [
+    "C-NI-TRANSPORT-READ"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "heavy Copenhagen rain arrives with cyclonic southwesterlies that drive the Sound northward",
+     "texts": "ec182dadd3445e84"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-DOES-NOT-FLUSH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Køge Bugt does not flush, so what arrives stays.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "separately finds that",
+    "end": "what does arrive stays",
+    "why": "The analysis cited gives a flushing time of months, not none; the replacement states it."
+   },
+   "replaced_by": [
+    "C-NI-FLUSH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "separately finds that Køge Bugt does not flush, so what does arrive stays",
+     "texts": "7f7b09d07bac27f0"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-NEVER-COMPUTED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Where the fixed link's spill went has never been computed.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Where that material went has never been computed",
+    "end": "by its own calibration",
+    "why": "'Never' is broader than what was searched; what holds is that this project has not computed it and its current field could not."
+   },
+   "replaced_by": [
+    "C-NI-SPILL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Where that material went has never been computed: the current field used above covers 2022–2026 only, and is about twice too slow in the straits by its own calibration",
+     "texts": "e4988521dd571c6f"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-RECONSTRUCTIONS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Under every reconstruction attempted, agriculture remained the largest term, and stacking every bias puts overflow at a stated share of the land-based term.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Under every reconstruction attempted",
+    "end": "and still not the driver",
+    "why": "Its justification was not recorded properly: no reconstruction is stored, and the published overflow share it compares with is itself unsourced; the pathways register's bounds are what can be shown."
+   },
+   "replaced_by": [
+    "C-NI-NOT-URBAN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Under every reconstruction attempted, including ones stacked generously in that direction, agriculture remained the largest nitrogen term. Stacking every identified bias in the overflow figures reaches roughly 10% of the land-based term — material, far above the published 0.6%, and still not the driver",
+     "texts": "0521cc6784716da4"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-BOUNDS-OURS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Bounds marked as this project's are its own.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "NITROGEN.md",
+    "commit": "1bccd8b",
+    "file": "docs/NITROGEN.md",
+    "begin": "Bounds marked as ours are ours",
+    "end": "can be argued with",
+    "why": "No row of the pathways register is marked as this project's, so the reader could not tell which ranges are constructed."
+   },
+   "replaced_by": [
+    "C-NI-BOUNDS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Bounds marked as ours are ours. Several ranges in section 1 are constructed here from the biases identified, not published figures. They are stated so they can be argued with",
+     "texts": "f63fea34a2a0d968"
+    }
+   }
+  }
+ ]
+}

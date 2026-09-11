@@ -1,0 +1,82 @@
+{
+ "_what": "Build steps for the pages fork politics converted. freshness.py keys steps by script, so a step here replaces the one in build.json for the same script: it carries that step's inputs as well as its own.",
+ "steps": [
+  {
+   "script": "scripts/programme.py",
+   "inputs": [
+    "data/derived/rivermap.json",
+    "data/derived/floodgap.json",
+    "data/derived/conveyance.json",
+    "data/derived/currents_index.json",
+    "data/derived/streams.json",
+    "data/derived/livestock.json",
+    "data/derived/cropland.json",
+    "data/derived/terraincheck.json",
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/station_places.json",
+    "data/derived/oxygen.json",
+    "data/derived/hypotheses.json",
+    "docs/data/architecture.json",
+    "docs/data/areas/areas.json",
+    "data/manual/monitoring.json",
+    "data/raw/sp_kloakoplande.geojson",
+    "data/raw/national/punkt_rbu_udl.geojson",
+    "data/derived/triage.json",
+    "data/manual/claims.d/politics.json",
+    "data/manual/species.d/politics.json",
+    "data/manual/number_constructions.d/politics.json"
+   ],
+   "outputs": [
+    "data/derived/programme.json",
+    "docs/PROGRAMME.md"
+   ]
+  },
+  {
+   "script": "scripts/politics.py",
+   "inputs": [
+    "data/manual/politics.json",
+    "data/manual/claims.d/politics.json",
+    "data/manual/number_constructions.d/politics.json",
+    "data/derived/pins/POL-MGTP-20251203.txt",
+    "data/derived/pins/POL-TV2-20251203.txt",
+    "data/derived/pins/POL-EL-20260623.txt",
+    "data/derived/pins/POL-DR-20260827.txt",
+    "data/derived/pins/POL-TV2-20260903.txt",
+    "data/derived/pins/POL-SO-2024.txt",
+    "data/derived/pins/POL-DMBIO-2026.txt",
+    "data/derived/pins/POL-DN-KVAELSTOF.txt",
+    "data/derived/pins/POL-GP-20250619.txt",
+    "data/derived/pins/POL-GP-20260825.txt",
+    "data/derived/pins/POL-DN-20260903.txt",
+    "data/derived/pins/POL-FDK-2026.txt",
+    "data/derived/pins/POL-DR-20260903.txt",
+    "data/derived/pins/DANVA-2024.txt"
+   ],
+   "outputs": [
+    "data/derived/politics.json",
+    "docs/POLITICS.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/residual.py",
+   "inputs": [
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/manual/monitoring.json",
+    "data/manual/nitrogen_pathways.json",
+    "data/derived/currents_index.json",
+    "data/derived/floodalign.json",
+    "data/derived/floodgap.json",
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/programme.json",
+    "data/derived/streams.json",
+    "data/derived/hypotheses.json",
+    "data/manual/claims.d/politics.json",
+    "data/manual/number_constructions.d/politics.json"
+   ],
+   "outputs": [
+    "docs/RESIDUAL.md"
+   ]
+  }
+ ]
+}

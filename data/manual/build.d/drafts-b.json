@@ -1,0 +1,174 @@
+{
+ "steps": [
+  {
+   "script": "scripts/drafts_b_counts.py",
+   "inputs": [
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/stations_series.bin",
+    "data/manual/data_sources_2.json",
+    "data/raw/oda/maaledybde.csv.gz",
+    "data/raw/geus/seabed_sediment_dk.gpkg",
+    "data/raw/national/sw_mfs_tilstand.geojson"
+   ],
+   "outputs": [
+    "data/derived/drafts_b_counts.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_d1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/D1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_d7.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/D7.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_g1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/G1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_i1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/I1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_i3.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/I3.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_k1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/K1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_l3.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/L3.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_z8.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/Z8.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/openproblem_a7.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/openproblems/A7.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/openproblem_e7.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/openproblems/E7.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/openproblem_j1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/openproblems/J1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/openproblem_r6.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/drafts-b.json",
+    "data/derived/hypotheses.json",
+    "data/derived/drafts_b_counts.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/openproblems/R6.md"
+   ]
+  }
+ ]
+}

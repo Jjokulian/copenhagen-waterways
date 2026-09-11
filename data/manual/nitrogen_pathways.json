@@ -7,14 +7,18 @@
    "lo": 32,
    "hi": 38,
    "status": "PARTLY MEASURED",
-   "note": "49% of area; grab samples + linear interpolation, documented low bias"
+   "note": "49% of area; grab samples + linear interpolation, documented low bias",
+   "area_pct": 49,
+   "note_t": "{area_pct:g}% of area; grab samples + linear interpolation, documented low bias"
   },
   {
    "pathway": "Danish land via unmonitored catchments",
    "lo": 27,
    "hi": 33,
    "status": "MODELLED",
-   "note": "51% of area; diffuse model minus modelled lake/wetland retention"
+   "note": "51% of area; diffuse model minus modelled lake/wetland retention",
+   "area_pct": 51,
+   "note_t": "{area_pct:g}% of area; diffuse model minus modelled lake/wetland retention"
   },
   {
    "pathway": "Foreign rivers to shared Danish waters",
@@ -35,7 +39,9 @@
    "lo": 0.2,
    "hi": 4.0,
    "status": "MODELLED",
-   "note": "0.4 kt at published typetal; upper bound allows first flush + scour + volume error"
+   "note": "0.4 kt at published typetal; upper bound allows first flush + scour + volume error",
+   "typetal_kt": 0.4,
+   "note_t": "{typetal_kt:g} kt at published typetal; upper bound allows first flush + scour + volume error"
   },
   {
    "pathway": "Separate stormwater outfalls",
@@ -70,7 +76,10 @@
    "lo": 45,
    "hi": 65,
    "status": "MODELLED",
-   "note": "DEHM output; 53 kt in 2022, 89 kt in 2014 - no direct over-water measurement"
+   "note": "DEHM output; 53 kt in 2022, 89 kt in 2014 - no direct over-water measurement",
+   "kt_2022": 53,
+   "kt_2014": 89,
+   "note_t": "DEHM output; {kt_2022:g} kt in 2022, {kt_2014:g} kt in 2014 - no direct over-water measurement"
   },
   {
    "pathway": "Organic N in deposition (DON)",
@@ -91,14 +100,21 @@
    "lo": null,
    "hi": null,
    "status": "UNQUANTIFIED",
-   "note": "NOT A TERM in the national account; monitored only at 1.5-5 m depth in 6 catchments"
+   "note": "NOT A TERM in the national account; monitored only at 1.5-5 m depth in 6 catchments",
+   "depth_m_lo": 1.5,
+   "depth_m_hi": 5,
+   "catchments": 6,
+   "note_t": "NOT A TERM in the national account; monitored only at {depth_m_lo:g}-{depth_m_hi:g} m depth in {catchments:g} catchments"
   },
   {
    "pathway": "Legacy N still in transit",
    "lo": null,
    "hi": null,
    "status": "UNQUANTIFIED",
-   "note": "8-24 yr lag observed in LOOP; a timing term on the rows above, not an extra source"
+   "note": "8-24 yr lag observed in LOOP; a timing term on the rows above, not an extra source",
+   "lag_yr_lo": 8,
+   "lag_yr_hi": 24,
+   "note_t": "{lag_yr_lo:g}-{lag_yr_hi:g} yr lag observed in LOOP; a timing term on the rows above, not an extra source"
   },
   {
    "pathway": "Drained organic soils / lowmoor peat",
@@ -140,7 +156,9 @@
    "lo": null,
    "hi": null,
    "status": "UNQUANTIFIED",
-   "note": "one study puts net advection at ~10% of what annual primary production requires,\n     which implies regeneration supplies most of it; state-dependent, rises under anoxia"
+   "note": "one study puts net advection at ~10% of what annual primary production requires,\n     which implies regeneration supplies most of it; state-dependent, rises under anoxia",
+   "advection_pct_of_production": 10,
+   "note_t": "one study puts net advection at ~{advection_pct_of_production:g}% of what annual primary production requires, which implies regeneration supplies most of it; state-dependent, rises under anoxia"
   }
  ]
 }

@@ -1,0 +1,33 @@
+{
+ "steps": [
+  {
+   "script": "scripts/observing.py",
+   "inputs": [
+    "data/manual/claims.d/w1-ob.json",
+    "data/manual/claims.d/methodlab-b.json",
+    "data/manual/claims.d/nitrogen.json",
+    "data/derived/pins/MSFD28.txt",
+    "data/derived/pins/DHI-MODEL-DEL1-2015.txt",
+    "data/manual/number_constructions.d/w1-ob.json"
+   ],
+   "outputs": []
+  },
+  {
+   "script": "scripts/oxygen.py",
+   "inputs": [
+    "data/derived/observing.json",
+    "data/manual/claims.d/w1-ob.json",
+    "data/manual/claims.d/nitrogen.json",
+    "data/manual/claims.d/water.json",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/MSFD28.txt",
+    "data/derived/pins/NOVANA-2327.txt",
+    "data/derived/pins/ML2009-HYPOXIA.txt",
+    "data/derived/pins/WIKI-REDFIELD.txt",
+    "data/derived/pins/WIKI-NITRIFICATION.txt",
+    "data/manual/number_constructions.d/w1-ob.json"
+   ],
+   "outputs": []
+  }
+ ]
+}

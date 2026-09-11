@@ -1,0 +1,46 @@
+{
+ "steps": [
+  {
+   "script": "scripts/ds_facts.py",
+   "inputs": [
+    "data/raw/oda/kemi.csv.gz",
+    "data/raw/oda/ctd.csv.gz",
+    "data/raw/oda/lys.csv.gz",
+    "data/raw/oda/maaledybde.csv.gz",
+    "scripts/formats.py"
+   ],
+   "outputs": [
+    "data/derived/ds_facts.json"
+   ]
+  },
+  {
+   "script": "scripts/ds_probe.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/ds_probes.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/data_sources.py",
+   "inputs": [
+    "data/derived/ds_facts.json",
+    "data/derived/ds_probes.json",
+    "data/manual/claims.d/w1-ds.json",
+    "data/manual/number_constructions.d/w1-ds.json",
+    "data/derived/pins/DTA-DP02-2024.txt",
+    "data/derived/pins/TA-NOVA-1998-K1.txt",
+    "data/derived/pins/TA-NOVA-1998-K2.txt",
+    "data/derived/pins/TA-NOVA-1998-K4.txt",
+    "data/derived/pins/TA-NOVA-1998-K5.txt",
+    "data/derived/pins/TA-NOVA-1998-K6.txt",
+    "data/derived/pins/LER-GRAVE.txt",
+    "data/derived/pins/HOFOR-LEDNING.txt",
+    "data/derived/pins/FLOOD2012-CKAN.txt",
+    "data/derived/pins/FLOOD2012-AMAGER.txt"
+   ],
+   "outputs": [
+    "docs/DATA_SOURCES.md"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,3052 @@
+{
+ "sources": {
+  "DTA-DP02-2024": {
+   "title": "Miljøstyrelsen, Datateknisk anvisning DP02 (regnbetingede udløb), version 4, 2024",
+   "url": "https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "d6578834b1ace1540f3f1e717a0d37c79b74c8d30b8e120e1f1e060ff6fef2bd",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "TA-NOVA-1998-K1": {
+   "title": "Teknisk anvisning for marin overvågning (NOVA 1998), Kap. 1",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap01.doc",
+   "retrieved": "2026-09-11",
+   "sha256": "bdd5ce350a436041bb917fcedc824b4671ed8222f64f9fbb58e62e9a2957a951",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "TA-NOVA-1998-K2": {
+   "title": "Teknisk anvisning for marin overvågning (NOVA 1998), Kap. 2",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap02.doc",
+   "retrieved": "2026-09-11",
+   "sha256": "5b8668106b328f26f0db1a1212548ed09fd95d590ea0e3f4313a2d415e8632f6",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "HOFOR-LEDNING": {
+   "title": "HOFOR, Ledningsoplysninger",
+   "url": "https://www.hofor.dk/erhverv/ledningsoplysninger/",
+   "retrieved": "2026-09-11",
+   "sha256": "68d22a42f96b75904603ffa692873b5dda2a7a86cbc9933ca4270f897a35c396",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "LER-GRAVE": {
+   "title": "Ledningsejerregistret, page for excavators (Graveaktører)",
+   "url": "https://ler.dk/Portal/P.3.Graveaktoerer.aspx",
+   "retrieved": "2026-09-11",
+   "sha256": "1ed469683c9cbd7153ca6f4c52e6ef9b3a17451de9e76977fab7c9c5379e9651",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "D-DS-MANIFEST",
+   "kind": "held",
+   "label": "Fetch manifest",
+   "detail": "data/raw/_manifest.json: for each fetched layer, its feature count, title, note and property list, written by the fetch."
+  },
+  {
+   "id": "D-DS-PROBES",
+   "kind": "held",
+   "label": "Service probes",
+   "detail": "data/derived/ds_probes.json: what each service answered to one anonymous request, and the date."
+  },
+  {
+   "id": "D-DS-FACTS",
+   "kind": "held",
+   "label": "ODA trap counts",
+   "detail": "data/derived/ds_facts.json: counts over every row of the four ODA extracts, with the thresholds that define them."
+  },
+  {
+   "id": "D-DS-META",
+   "kind": "held",
+   "label": "Overview counts",
+   "detail": "data/derived/meta_facts.json: counts taken from the files each field names."
+  },
+  {
+   "id": "D-DS-PLAN",
+   "kind": "held",
+   "label": "Plan project register",
+   "detail": "data/raw/plan_projects.json: the parsed project pages of Spildevandsplan 2018."
+  },
+  {
+   "id": "D-DS-OUTFALLS",
+   "kind": "held",
+   "label": "spildevandsdata extract",
+   "detail": "data/derived/outfalls.json: the outfall layers fetched from spildevandsdata.dk and their feature counts."
+  },
+  {
+   "id": "D-DS-GEOREF",
+   "kind": "held",
+   "label": "Sheet placements",
+   "detail": "data/derived/floodmaps/_georef.json: how each flood sheet was placed, and its stated error."
+  },
+  {
+   "id": "D-DS-EXTRACT",
+   "kind": "held",
+   "label": "Flooded areas read",
+   "detail": "data/derived/floodmaps/_extract.json: pixels and area per depth band per sheet, and where the legend was masked."
+  },
+  {
+   "id": "D-DS-CODELISTS",
+   "kind": "held",
+   "label": "Code lists",
+   "detail": "data/manual/codelists.json: the bgv_type decoding, entered by hand from DP02."
+  },
+  {
+   "id": "D-DS-ENUMS",
+   "kind": "held",
+   "label": "Distinct values",
+   "detail": "data/derived/enums.json: every distinct value of every column of kemi and ctd, counted."
+  },
+  {
+   "id": "D-DS-HEADERS",
+   "kind": "held",
+   "label": "ODA column headers",
+   "detail": "The header rows of the four extracts in data/raw/oda/, which name every column each carries."
+  },
+  {
+   "id": "D-DS-CONSTRUCTIONS",
+   "kind": "held",
+   "label": "Manual structures register",
+   "detail": "data/manual/constructions.json, whose cited sources include hofor.dk."
+  },
+  {
+   "id": "X-DS-PAGE",
+   "kind": "script",
+   "label": "data_sources.py",
+   "detail": "Writes this page; loads every figure through live_json or reads it from a pinned document."
+  },
+  {
+   "id": "X-DS-FETCHWFS",
+   "kind": "script",
+   "label": "fetch_wfs.py",
+   "detail": "Fetches each layer anonymously and clips national layers by komm_navn, or by bounding box where a layer has no such column."
+  },
+  {
+   "id": "X-DS-COMMON",
+   "kind": "script",
+   "label": "common.py: axis_order_ok",
+   "detail": "Detects whether EPSG:4326 coordinates arrived as [lon, lat] or swapped, since WFS `1.0.0` and `1.1.0` disagree."
+  },
+  {
+   "id": "X-DS-PROBE",
+   "kind": "script",
+   "label": "ds_probe.py",
+   "detail": "Asks each service once, anonymously, and stores the answer with the date."
+  },
+  {
+   "id": "X-DS-FACTS",
+   "kind": "script",
+   "label": "ds_facts.py",
+   "detail": "Counts the traps over every row of every ODA extract."
+  },
+  {
+   "id": "X-DS-ENUMS",
+   "kind": "script",
+   "label": "enums.py",
+   "detail": "Counts every distinct value of every column of kemi and ctd."
+  },
+  {
+   "id": "X-DS-PLANFETCH",
+   "kind": "script",
+   "label": "fetch_plan_projects.py",
+   "detail": "Parses each plan page into JSON and keeps each stated quantity with the sentence it came from."
+  },
+  {
+   "id": "X-DS-REGISTRY",
+   "kind": "script",
+   "label": "build_registry.py",
+   "detail": "Recovers klima_id links from the plan pages' text, restricted to ids that exist in the geometry, and labels the result reconstructed, not official."
+  },
+  {
+   "id": "X-DS-SPILDEVAND",
+   "kind": "script",
+   "label": "fetch_spildevand.py",
+   "detail": "Fetches the public spildevandsdata outfall layers anonymously and counts their features."
+  },
+  {
+   "id": "X-DS-FLOODMAPS",
+   "kind": "script",
+   "label": "floodmaps.py",
+   "detail": "Renders the sheets, reads each scale bar from the text layer, checks every sheet's legend labels, masks the legend, and separates the palest band by its blue cast."
+  },
+  {
+   "id": "X-DS-OBS",
+   "kind": "script",
+   "label": "observations.py and viz/log.html",
+   "detail": "The field logger and its checker: depth classes, drain states including surcharging, stored in data/manual/observations.geojson; the viewer build only copies the file out."
+  },
+  {
+   "id": "X-DS-UNLOCK",
+   "kind": "script",
+   "label": "unlock.py",
+   "detail": "Holds the drop-in slots for data this project cannot reach, LER among them."
+  },
+  {
+   "id": "X-DS-VIZ",
+   "kind": "script",
+   "label": "viz/*.html",
+   "detail": "The viewers load MapLibre from cdnjs."
+  },
+  {
+   "id": "X-DS-SCRIPTS",
+   "kind": "script",
+   "label": "scripts/: imports",
+   "detail": "No script imports GDAL or geopandas (a search of scripts/ on 2026-09-11)."
+  },
+  {
+   "id": "E-DS-DP02-TAB1",
+   "kind": "external",
+   "label": "DP02, table 1",
+   "detail": "Type values for the concentrations in stormwater, sewage and overflow water.",
+   "source": "DTA-DP02-2024",
+   "said": "Typetal for forureningskoncentrationer"
+  },
+  {
+   "id": "E-DS-DP02-TYPEBASE",
+   "kind": "external",
+   "label": "DP02: what the type values rest on",
+   "detail": "Derived from NOVANA measurements of water from combined systems.",
+   "source": "DTA-DP02-2024",
+   "said": "er udledt på baggrund af målinger fra NOVANA-programmet af vand fra fællessystemer"
+  },
+  {
+   "id": "E-DS-DP02-OV",
+   "kind": "external",
+   "label": "DP02: combined-sewer overflow types",
+   "detail": "Its table of the data PULS requires for combined-sewer overflows, with the codes OV, OS, OF, OK, Bypass and Skybrud.",
+   "source": "DTA-DP02-2024",
+   "said": "Overløbsbygværk med sparebassin"
+  },
+  {
+   "id": "E-DS-DP02-SESF",
+   "kind": "external",
+   "label": "DP02: separate-sewer outfall types",
+   "detail": "SE: separate rainwater; SF: separate rainwater with a detention basin.",
+   "source": "DTA-DP02-2024",
+   "said": "SE: Separat regnvand SF: Separat regnvand med forsinkelsesbassin"
+  },
+  {
+   "id": "E-DS-DP02-CAL",
+   "kind": "external",
+   "label": "DP02: what calibration needs",
+   "detail": "The measured data behind a calibration must include at least five clearly separable overflows.",
+   "source": "DTA-DP02-2024",
+   "said": "fem klart adskillelige overløb"
+  },
+  {
+   "id": "E-DS-DP02-PULS",
+   "kind": "external",
+   "label": "DP02: data in PULS",
+   "detail": "All data are stored in the PULS database, the specialist system for point sources.",
+   "source": "DTA-DP02-2024",
+   "said": "Alle data lagres i PULS-databasen"
+  },
+  {
+   "id": "E-DS-DP02-IT",
+   "kind": "external",
+   "label": "DP02: access to PULS",
+   "detail": "Access goes through the IT coordinator of one's own organisation.",
+   "source": "DTA-DP02-2024",
+   "said": "Henvendelse til IT-koordinator i egen organisation"
+  },
+  {
+   "id": "E-DS-DP02-ANNUAL",
+   "kind": "external",
+   "label": "DP02: annual quantities",
+   "detail": "Discharged volumes of water and substance are to be determined every year for every rain-dependent discharge.",
+   "source": "DTA-DP02-2024",
+   "said": "skal der årligt bestemmes udløbsmængder"
+  },
+  {
+   "id": "E-DS-DP02-DMP",
+   "kind": "external",
+   "label": "DP02: who runs PULS",
+   "detail": "Operation and support of the system sit with Danmarks Miljøportal.",
+   "source": "DTA-DP02-2024",
+   "said": "Drift af system Support Danmarks Miljøportal"
+  },
+  {
+   "id": "E-DS-DP02-LEVELS",
+   "kind": "external",
+   "label": "DP02: the lowest knowledge level",
+   "detail": "The knowledge levels for an overflow volume start at a simple mass balance.",
+   "source": "DTA-DP02-2024",
+   "said": "Simpel massebalanceberegning"
+  },
+  {
+   "id": "E-DS-DP02-MEASURED",
+   "kind": "external",
+   "label": "DP02: the highest knowledge level",
+   "detail": "and end at measurement-based estimation of the overflow.",
+   "source": "DTA-DP02-2024",
+   "said": "Målebaseret overløbsestimering"
+  },
+  {
+   "id": "E-DS-LER",
+   "kind": "external",
+   "label": "LER's page for excavators",
+   "detail": "A search for pipe information is made as a user logged in with MitID; the owners within the dig area have a stated number of hours to answer, and digging waits until all have answered.",
+   "source": "LER-GRAVE",
+   "said": "skal du vente med at grave, indtil alle ledningsejere har svaret"
+  },
+  {
+   "id": "E-DS-HOFOR",
+   "kind": "external",
+   "label": "HOFOR: pipe information",
+   "detail": "Before a dig, pipe information is to be sought through LER.",
+   "source": "HOFOR-LEDNING",
+   "said": "skal I søge ledningsoplysninger via LER"
+  },
+  {
+   "id": "E-DS-CKAN-LIC",
+   "kind": "external",
+   "label": "Dataset record: licence",
+   "detail": "The flood dataset's catalogue record names its licence.",
+   "source": "FLOOD2012-CKAN",
+   "said": "Creative Commons Attribution"
+  },
+  {
+   "id": "E-DS-K4-GANGE",
+   "kind": "external",
+   "label": "Technical instruction, Kap. 4: the correction",
+   "detail": "Every electrode value in the profile is multiplied by the ratio of the Winkler and electrode readings.",
+   "source": "TA-NOVA-1998-K4",
+   "said": "gange alle elektrodev�rdier i profilet med forholdet mellem Winkler"
+  },
+  {
+   "id": "E-DS-K4-SAMEDAG",
+   "kind": "external",
+   "label": "Kap. 4: inside a gradient",
+   "detail": "The profile is then corrected by the mean factor of profiles measured the same day at other stations.",
+   "source": "TA-NOVA-1998-K4",
+   "said": "fra andre profiler m�lt med elektroden samme dag p� andre stationer"
+  },
+  {
+   "id": "E-DS-K5-FOTISK",
+   "kind": "external",
+   "label": "Kap. 5: integrated samples",
+   "detail": "Integrated samples over fixed depth intervals or down to the depth of the photic zone.",
+   "source": "TA-NOVA-1998-K5",
+   "said": "Integreret pr�ve ned til dybden af den fotiske zone"
+  },
+  {
+   "id": "E-DS-K6-DL",
+   "kind": "external",
+   "label": "Kap. 6: below the detection limit",
+   "detail": "Data below the detection limit are also to be reported.",
+   "source": "TA-NOVA-1998-K6",
+   "said": "mindre end detektionsgr�nsen ogs� skal indrapporteres"
+  },
+  {
+   "id": "E-DS-K6-IKKE",
+   "kind": "external",
+   "label": "Kap. 6: as measured",
+   "detail": "The measured concentration is to be reported, not zero or the limit with a less-than sign.",
+   "source": "TA-NOVA-1998-K6",
+   "said": "som skal indrapporteres og ikke fx"
+  },
+  {
+   "id": "E-DS-K2-CONC",
+   "kind": "external",
+   "label": "Kap. 2: fluorescence is not a concentration",
+   "detail": "A fluorescence signal cannot be turned directly into a pigment concentration.",
+   "source": "TA-NOVA-1998-K2",
+   "said": "kan derfor ikke direkte oms�ttes til en pigment koncentration"
+  },
+  {
+   "id": "E-DS-K2-MAKERS",
+   "kind": "external",
+   "label": "Kap. 2: whatever the software says",
+   "detail": "even though many manufacturers' programs report readings in chlorophyll units.",
+   "source": "TA-NOVA-1998-K2",
+   "said": "selvom mange fabrikater i deres programmer angiver"
+  },
+  {
+   "id": "E-DS-K2-INSTR",
+   "kind": "external",
+   "label": "Kap. 2: a varying ratio",
+   "detail": "A varying ratio of fluorescence to chlorophyll is not a sign of instrument problems.",
+   "source": "TA-NOVA-1998-K2",
+   "said": "ikke et udtryk for instrument problemer"
+  },
+  {
+   "id": "E-DS-K1-CAL",
+   "kind": "external",
+   "label": "Kap. 1: CTD calibration",
+   "detail": "Calibration data and coefficients, with control and reference measurements.",
+   "source": "TA-NOVA-1998-K1",
+   "said": "kalibreringsdata og -koefficienter"
+  },
+  {
+   "id": "A-DS-SHALLOW",
+   "kind": "assumption",
+   "label": "What counts as\\nsurface depth",
+   "detail": "A nominal depth of the stored threshold or less is taken to enter a surface filter; the threshold is a choice, stored in ds_facts.json beside the count."
+  },
+  {
+   "id": "A-DS-LIGHT",
+   "kind": "assumption",
+   "label": "Above what share of\\nsurface light",
+   "detail": "Readings above the stored share of surface light are taken as beyond reading noise near the surface; a choice, stored beside the count."
+  },
+  {
+   "id": "A-DS-BAND",
+   "kind": "assumption",
+   "label": "An adjustment's\\nband",
+   "detail": "A correction factor outside the stored band is taken as more than an adjustment; a choice, stored beside the counts."
+  },
+  {
+   "id": "A-DS-EXAMPLE",
+   "kind": "assumption",
+   "label": "The example's values",
+   "detail": "The factor and the temperature in the range-check example are chosen to illustrate, not measured."
+  },
+  {
+   "id": "A-DS-ONEREQUEST",
+   "kind": "assumption",
+   "label": "One request stands\\nfor the service",
+   "detail": "A service is described by how it answered one anonymous request on the stored date."
+  },
+  {
+   "id": "E-DS-LER-MITID",
+   "kind": "external",
+   "label": "LER: logging in",
+   "detail": "Users are created by logging in to LER with MitID.",
+   "source": "LER-GRAVE",
+   "said": "LER med MitID"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-DS-INTRO",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "DATA_SOURCES.md is written by data_sources.py, which reads every count from the fetch manifest or a derived file.",
+   "because": "The generator loads every figure through live_json from data/raw/_manifest.json or a file in data/derived, or reads it from a pinned document; write_doc refuses a typed number.",
+   "rests_on": [
+    "X-DS-PAGE",
+    "D-DS-MANIFEST"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "What is public, what needs an account, what does not exist in open form, and what each thing is good for. Everything marked **fetched** is pulled by the scripts in `scripts/` and lands in `data/raw/`. Generated by `scripts/pages/data_sources.py`: every count is read from the fetch manifest or a derived file, and every statement opens what it rests on.",
+     "texts": "2372f5462bbebb68",
+     "node X-DS-PAGE": "45128a07068da222",
+     "node D-DS-MANIFEST": "7401b0a7a23de591"
+    }
+   }
+  },
+  {
+   "id": "C-DS-KBH-SERVER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The Kbhkort WFS answered an anonymous capabilities request with the layer count the probe stored.",
+   "because": "ds_probe.py asked once without credentials and counted the FeatureType entries of the answer; the date is stored with it.",
+   "rests_on": [
+    "D-DS-PROBES",
+    "X-DS-PROBE",
+    "A-DS-ONEREQUEST"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-KBH-LAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`https://wfs-kbhkort.kk.dk/k101/ows` answered an anonymous capabilities request on 2026-09-11 with 483 layers.",
+     "texts": "08b3cc96d74fbd56",
+     "node D-DS-PROBES": "43f4da370f16a45f",
+     "node X-DS-PROBE": "5f6dfc5df4b7b3e8",
+     "node A-DS-ONEREQUEST": "1133cf6f5e98d276"
+    }
+   }
+  },
+  {
+   "id": "C-DS-CKAN",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The city's CKAN API answers on admin.opendata.dk, and the same path on www.opendata.dk answers not found.",
+   "because": "Both were asked once, anonymously, by ds_probe.py; the statuses are stored with the date.",
+   "rests_on": [
+    "D-DS-PROBES",
+    "X-DS-PROBE",
+    "A-DS-ONEREQUEST"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The city's CKAN catalogue answers at `https://admin.opendata.dk/api/3/action/package_search?q=organization:city-of-copenhagen`; the same path on `www.opendata.dk` answered `404`.",
+     "texts": "9db0fb0502cfb0b7",
+     "node D-DS-PROBES": "43f4da370f16a45f",
+     "node X-DS-PROBE": "5f6dfc5df4b7b3e8",
+     "node A-DS-ONEREQUEST": "1133cf6f5e98d276"
+    }
+   }
+  },
+  {
+   "id": "C-DS-KBH-FETCHED",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Layer names come from GetCapabilities, and the layers this project fetches are listed with feature counts and properties in the manifest.",
+   "because": "fetch_wfs.py writes one manifest entry per layer with its count, title, note and property list.",
+   "rests_on": [
+    "D-DS-MANIFEST",
+    "X-DS-FETCHWFS",
+    "D-DS-META"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "Layer names come from `?service=WFS&version=1.1.0&request=GetCapabilities`. The 21 this project fetches are listed, with their feature counts and properties, in `data/raw/_manifest.json`.",
+     "texts": "571d90352a0a2de8",
+     "node D-DS-MANIFEST": "7401b0a7a23de591",
+     "node X-DS-FETCHWFS": "cb4c48b5e7c5bb95",
+     "node D-DS-META": "7ec919a67c7eee00"
+    }
+   }
+  },
+  {
+   "id": "C-DS-KBH-TABLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Each fetched Kbhkort layer holds what its row in the table says.",
+   "because": "Each description matches the title, note and properties the fetch recorded for the layer: the sewer catchments carry system status, receiving plant and impervious-area fields; basins and alignments carry klima_id and the completed projects klimaid; the dike layers carry only a grid code. Why each matters is this project's reading of what the layer is for.",
+   "rests_on": [
+    "D-DS-MANIFEST",
+    "X-DS-FETCHWFS",
+    "D-DS-META"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-DS-OLD-DIKES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "What each fetched layer is, from the title, note and properties the fetch records for it, and why it matters here:",
+     "texts": "e33c8eacf65e114b",
+     "node D-DS-MANIFEST": "7401b0a7a23de591",
+     "node X-DS-FETCHWFS": "cb4c48b5e7c5bb95",
+     "node D-DS-META": "7ec919a67c7eee00"
+    }
+   }
+  },
+  {
+   "id": "C-DS-AXIS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Asked in WFS `1.0.0` the server returns EPSG:4326 as lon, lat, and `1.1.0` flips the order; common.py detects which arrived.",
+   "because": "fetch_wfs.py asks in `1.0.0`; axis_order_ok in common.py tests whether the coordinates fall in Denmark's longitude or latitude range, because the two versions disagree.",
+   "rests_on": [
+    "X-DS-COMMON",
+    "X-DS-FETCHWFS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: identifiers the number check reads as quantities - 6PPD, 3M, WFS version numbers, HTTP status codes, n/(n-1) - set as code in this claim's texts or in claims and nodes under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**Gotcha:** asked in WFS `1.0.0` this server returns `EPSG:4326` as `[lon, lat]`, and `1.1.0` flips the axis order. `scripts/common.py` detects which arrived rather than trusting either.",
+     "texts": "0131990a383855b3",
+     "node X-DS-COMMON": "515e6cdd838255e8",
+     "node X-DS-FETCHWFS": "cb4c48b5e7c5bb95"
+    }
+   }
+  },
+  {
+   "id": "C-DS-VP3-SERVER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The VP3 WFS is national and answered an anonymous capabilities request with the layer count the probe stored.",
+   "because": "ds_probe.py asked once without credentials and counted the FeatureType entries of the answer.",
+   "rests_on": [
+    "D-DS-PROBES",
+    "X-DS-PROBE",
+    "A-DS-ONEREQUEST"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-VP3-LAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`https://wfs2-miljoegis.mim.dk/vp3basis2019/ows` — national; it answered an anonymous capabilities request on 2026-09-11 with 47 layers.",
+     "texts": "ffbb8429c0dadfc6",
+     "node D-DS-PROBES": "43f4da370f16a45f",
+     "node X-DS-PROBE": "5f6dfc5df4b7b3e8",
+     "node A-DS-ONEREQUEST": "1133cf6f5e98d276"
+    }
+   }
+  },
+  {
+   "id": "C-DS-VP3-WHAT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The VP3 layers are the discharge end of the system.",
+   "because": "The layers fetched from it are the rain-dependent discharge points, treatment-plant, industrial and scattered-dwelling discharges, by their titles and properties in the manifest.",
+   "rests_on": [
+    "D-DS-MANIFEST"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "This is the **discharge end** of the system: the points where rain-dependent overflows and outfalls, treatment plants, industry and scattered dwellings release water.",
+     "texts": "23423cb30a01a8dd",
+     "node D-DS-MANIFEST": "7401b0a7a23de591"
+    }
+   }
+  },
+  {
+   "id": "C-DS-VP3-TABLE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The VP3 layers hold, within metro Copenhagen, the counts and properties the table gives.",
+   "because": "The counts are meta_facts' and the manifest's; bgv_type, vol_sb and godk_pe are properties the manifest lists for those layers, with the notes the fetch configuration gives them. Their use for checking overflow claims is this project's reading.",
+   "rests_on": [
+    "D-DS-MANIFEST",
+    "D-DS-META"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "What each layer holds within metro Copenhagen, from the features the fetch kept and the properties it records:",
+     "texts": "09086c73977eb00e",
+     "node D-DS-MANIFEST": "7401b0a7a23de591",
+     "node D-DS-META": "7ec919a67c7eee00"
+    }
+   }
+  },
+  {
+   "id": "C-DS-CLIP",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "fetch_wfs.py clips national layers by komm_navn where the column exists and otherwise by bounding box.",
+   "because": "The fetch code chooses the clip per layer; the manifest shows which VP3 layers lack komm_navn, and those would return nothing if clipped by it.",
+   "rests_on": [
+    "X-DS-FETCHWFS",
+    "D-DS-MANIFEST"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-THREE-LAYERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "Layers here are national, so `fetch_wfs.py` clips them — by `komm_navn` where that column exists, otherwise by bounding box; the layers without a municipality column would come back empty without the bounding-box fallback.",
+     "texts": "242883721b9e4ed3",
+     "node X-DS-FETCHWFS": "cb4c48b5e7c5bb95",
+     "node D-DS-MANIFEST": "7401b0a7a23de591"
+    }
+   }
+  },
+  {
+   "id": "C-DS-BGV",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "DP02 defines the bgv_type codes of both combined-sewer overflows and separate-sewer outfalls, and the separate-sewer codes make up the count of our points the page gives.",
+   "because": "The combined-sewer codes are in DP02's table of the data PULS requires; SE and SF are defined in its list for separate-sewer outfalls; codelists.json carries the decoding and meta_facts counts the points.",
+   "rests_on": [
+    "D-DS-CODELISTS",
+    "E-DS-DP02-OV",
+    "E-DS-DP02-SESF",
+    "D-DS-META"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-SE-SF"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**`bgv_type` decoding** is in `data/manual/codelists.json`, from Miljøstyrelsen's [Datateknisk anvisning DP02 v4 (2024)](https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf). Its table of the data PULS requires for combined-sewer overflows defines `OV`, `OS`, `OF`, `OK`, `Bypass` and `Skybrud`; its list for separate-sewer outfalls defines `SE` (separate rainwater) and `SF` (separate rainwater with a detention basin), which make up 487 of our 680 points.",
+     "texts": "b59f3388606a6fc7",
+     "node D-DS-CODELISTS": "28d71caffba781b5",
+     "node E-DS-DP02-OV": "cd04e8efd4caebc0",
+     "pinned DTA-DP02-2024": "d6578834b1ace154",
+     "node E-DS-DP02-SESF": "292a342cad8dc0b5",
+     "node D-DS-META": "7ec919a67c7eee00"
+    }
+   }
+  },
+  {
+   "id": "C-DS-TYPETAL",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "DATA_SOURCES.md",
+   "claim": "DP02's table 1 gives type values for the concentrations of {chem:BI5}, COD, total nitrogen and total phosphorus in overflow water, derived from monitoring of water from combined systems.",
+   "because": "Their table gives type values for stormwater, sewage and overflow water and says they are derived from NOVANA measurements of combined-system water; no further reason is given for using them as the concentration of every overflow.",
+   "rests_on": [
+    "E-DS-DP02-TAB1",
+    "E-DS-DP02-TYPEBASE"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen, Datateknisk anvisning DP02, version 4 (2024)",
+   "replaces": [
+    "C-DS-OLD-TYPETAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {chem:BI5}": "BI5",
+     "said on DATA_SOURCES.md": "The same document's table 1 gives the concentrations to assume for overflow water (BI₅ 30, COD 180, Tot-N 12, Tot-P 2.0 mg/l), type values derived from monitoring of water from combined systems — which is how a volume becomes a load.",
+     "texts": "a041c6814730d8a0",
+     "node E-DS-DP02-TAB1": "cd189aca555bd87d",
+     "pinned DTA-DP02-2024": "d6578834b1ace154",
+     "node E-DS-DP02-TYPEBASE": "54a69a920c31657e"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PLAN-PAGES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The Spildevandsplan 2018 register has the counted project pages in the counted categories.",
+   "because": "meta_facts counts the pages and categories of the parsed register, enumerated from the site's sitemap.",
+   "rests_on": [
+    "D-DS-META",
+    "D-DS-PLAN",
+    "X-DS-PLANFETCH"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`https://planer.kk.dk/spildevandsplan-2018/projekter/` — 357 project pages, enumerable from `https://planer.kk.dk/sitemap.xml`. Categories: byudvikling (140), skybrudssikring (102), afløbssystem (61), klimatilpasning-af-kloakken (51), renseanlæg (3).",
+     "texts": "3f3f5f3ce260a49f",
+     "node D-DS-META": "7ec919a67c7eee00",
+     "node D-DS-PLAN": "37a0a8e2c3a44801",
+     "node X-DS-PLANFETCH": "c49827ff3e5b7c25"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PLAN-PARSE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "fetch_plan_projects.py parses each plan page into JSON and keeps each stated quantity with its sentence.",
+   "because": "Its extraction patterns record, for every stated quantity, the sentence around it, so a human can judge the figure.",
+   "rests_on": [
+    "X-DS-PLANFETCH",
+    "D-DS-PLAN"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "This is the prose record of each project in the plan: purpose, dimensions, stated volumes, ownership, and the affected land parcels by matrikel number. `fetch_plan_projects.py` parses it into structured JSON and pulls out stated quantities with the sentence each came from, so a human can judge the figure.",
+     "texts": "e6cbdcdf63e660fa",
+     "node X-DS-PLANFETCH": "c49827ff3e5b7c25",
+     "node D-DS-PLAN": "37a0a8e2c3a44801"
+    }
+   }
+  },
+  {
+   "id": "C-DS-JOIN",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Plan pages and map layers key the same projects differently, and neither source carries a mapping between them.",
+   "because": "The map layers carry klima_id (the manifest's property lists) and the parsed plan pages carry plan numbers; neither carries the other key.",
+   "rests_on": [
+    "D-DS-MANIFEST",
+    "D-DS-PLAN"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**The join problem.** Copenhagen keys these two worlds differently, and neither source carries a mapping between them:",
+     "texts": "0c329dd3f4a51014",
+     "node D-DS-MANIFEST": "7401b0a7a23de591",
+     "node D-DS-PLAN": "37a0a8e2c3a44801"
+    }
+   }
+  },
+  {
+   "id": "C-DS-RECOVER",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "build_registry.py reconstructs the link from the klima_ids the plan pages cite, keeping only ids present in the geometry, and labels the result reconstructed, not official.",
+   "because": "Its scan reads each page's title and body for klima_ids and keeps only those found in the map layers, so a stray token cannot invent a match; the output carries a note that the links are reconstructed by citation scanning.",
+   "rests_on": [
+    "X-DS-REGISTRY",
+    "D-DS-PLAN"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The pages *cite* the klima_id in their titles and body text (\"`A3.3` Regnvandsledning i Bispebjerg Bakke, `BIR 7.5`\"). `build_registry.py` recovers the link by scanning for ids that actually exist in the geometry, which stops stray tokens inventing matches. The recovered mapping is a **reconstruction, not an official crosswalk** — treat it as such.",
+     "texts": "96925c5e3c8a3f22",
+     "node X-DS-REGISTRY": "0637fe510da22f34",
+     "node D-DS-PLAN": "37a0a8e2c3a44801"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PULS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "DATA_SOURCES.md",
+   "claim": "PULS is the national point-source database, run by Danmarks Miljøportal, where every rain-dependent discharge is reported with its master data and annual volumes, graded by how each volume was found.",
+   "because": "Their text: all data are stored in the PULS database; operation and support sit with Danmarks Miljøportal; discharged volumes are to be determined every year for every rain-dependent discharge; the knowledge levels run from a simple mass balance to measurement-based estimation.",
+   "rests_on": [
+    "E-DS-DP02-PULS",
+    "E-DS-DP02-DMP",
+    "E-DS-DP02-ANNUAL",
+    "E-DS-DP02-LEVELS",
+    "E-DS-DP02-MEASURED"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen, Datateknisk anvisning DP02, version 4 (2024)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The national point-source database, run by Danmarks Miljøportal. Every rain-dependent discharge is reported in it with its master data, and its discharged volumes of water and substance are to be determined every year; DP02 grades how each volume was found, from a simple mass balance to measurement at the structure.",
+     "texts": "f825003c384c429a",
+     "node E-DS-DP02-PULS": "6ad67da517abfebe",
+     "pinned DTA-DP02-2024": "d6578834b1ace154",
+     "node E-DS-DP02-DMP": "9c0a5c90fe815e67",
+     "node E-DS-DP02-ANNUAL": "dced1778fab59d8e",
+     "node E-DS-DP02-LEVELS": "eec33ff8faa9e178",
+     "node E-DS-DP02-MEASURED": "019482890f540cf4"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PULS-EXTRACT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The public spildevandsdata extract carries the counted combined-sewer overflow structures and separate stormwater outfalls.",
+   "because": "fetch_spildevand.py counts the features of each layer as fetched.",
+   "rests_on": [
+    "D-DS-OUTFALLS",
+    "X-DS-SPILDEVAND"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The public spildevandsdata extract carries 4,217 combined-sewer overflow structures and 16,185 separate stormwater outfalls.",
+     "texts": "751d43719ec86db0",
+     "node D-DS-OUTFALLS": "a9eac2499870dc35",
+     "node X-DS-SPILDEVAND": "67ba19caffc97391"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PULS-ACCESS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Access to PULS goes through an organisation's IT coordinator; this project has none and reads the public extract.",
+   "because": "DP02's system overview gives access as a request to the IT coordinator of one's own organisation; this project has no organisation account and fetches the public extract with fetch_spildevand.py.",
+   "rests_on": [
+    "E-DS-DP02-IT",
+    "X-DS-SPILDEVAND"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "Access to PULS goes through the IT coordinator of one's own organisation, as DP02's system overview has it; this project holds no such access and reads the public extract.",
+     "texts": "51ada43ffaf9bb12",
+     "node E-DS-DP02-IT": "1d8b32c6e3834e30",
+     "pinned DTA-DP02-2024": "d6578834b1ace154",
+     "node X-DS-SPILDEVAND": "67ba19caffc97391"
+    }
+   }
+  },
+  {
+   "id": "C-DS-LER-RULE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "DATA_SOURCES.md",
+   "claim": "LER's pipe information is requested by a dig inquiry made as a user logged in with MitID; the owners then have a stated number of hours to answer, and digging waits for all of them.",
+   "because": "Their page for excavators says so. Their front page's description gives a different time, days rather than hours, in a meta tag, not in the page text; the page for excavators is the one pinned.",
+   "rests_on": [
+    "E-DS-LER",
+    "E-DS-LER-MITID"
+   ],
+   "basis": "assessed",
+   "holder": "Ledningsejerregistret (LER)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The utilities' pipe information is requested here by a dig inquiry, made as a user logged in with MitID; LER's page for excavators gives the owners 2 hours to answer, and digging waits until all of them have.",
+     "texts": "ff67f207141d90b1",
+     "node E-DS-LER": "f16e842510f57a39",
+     "pinned LER-GRAVE": "1ed469683c9cbd71",
+     "node E-DS-LER-MITID": "ead901a91cd500ed"
+    }
+   }
+  },
+  {
+   "id": "C-DS-LER-POLICY",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "This project does not query LER, and documents it as a drop-in slot for those who hold access.",
+   "because": "An inquiry is made as an excavation actor for an intended dig; this project plans no excavation, so it makes none. The slot is in unlock.py.",
+   "rests_on": [
+    "E-DS-LER",
+    "X-DS-UNLOCK"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-DS-OLD-LER-MISUSE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "This project does not query it: an inquiry is for an intended excavation, and this project digs nothing. It is documented as a drop-in slot for those who hold access — see [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md).",
+     "texts": "2362cda54a547483",
+     "node E-DS-LER": "f16e842510f57a39",
+     "pinned LER-GRAVE": "1ed469683c9cbd71",
+     "node X-DS-UNLOCK": "918461012f86db8f"
+    }
+   }
+  },
+  {
+   "id": "C-DS-NO-INVERTS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "None of the open sources in this catalogue gives surveyed invert levels for Copenhagen's sewers; the project's depths come from plan prose.",
+   "because": "No layer or register fetched for this catalogue carries an invert-level field (the manifest's property lists, the parsed plan pages); depths in the project's registers come from the plan documents' prose and are flagged as stated.",
+   "rests_on": [
+    "D-DS-MANIFEST",
+    "D-DS-PLAN",
+    "X-DS-PLANFETCH"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "This is the limit on the 3D ambition: **none of the open sources in this catalogue gives surveyed invert levels for Copenhagen's sewers.** Depths in this project come from what the plan documents state in prose, and are labelled as claims.",
+     "texts": "ce80fb8d55d84aca",
+     "node D-DS-MANIFEST": "7401b0a7a23de591",
+     "node D-DS-PLAN": "37a0a8e2c3a44801",
+     "node X-DS-PLANFETCH": "c49827ff3e5b7c25"
+    }
+   }
+  },
+  {
+   "id": "C-DS-HOFOR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "HOFOR sends requests for pipe information to LER, and hofor.dk is cited here, not fetched.",
+   "because": "HOFOR's own page for contractors says pipe information is to be sought through LER; hofor.dk appears in the manual structures register as a cited source, and no fetch script reads it.",
+   "rests_on": [
+    "E-DS-HOFOR",
+    "D-DS-CONSTRUCTIONS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-DS-OLD-HOFOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The utility. Its page for contractors sends requests for pipe information to LER, and `hofor.dk` is used here as a citation source for the manual register of structures, not as a data source.",
+     "texts": "5013ab6101d20193",
+     "node E-DS-HOFOR": "bbd1d6f85585163a",
+     "pinned HOFOR-LEDNING": "68d22a42f96b7590",
+     "node D-DS-CONSTRUCTIONS": "6e4d6cad4b1351d0"
+    }
+   }
+  },
+  {
+   "id": "C-DS-DHM",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "terraincheck.py fetches the national elevation model's terrain from Dataforsyningen's WCS with a token, at the resolution it asks for.",
+   "because": "The script names the WCS endpoint and the coverage dhm_terraen, reads a token file, and requests a GeoTIFF at the resolution each sheet needs.",
+   "rests_on": [
+    "X-TERRAINCHECK"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-DHM"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`scripts/terraincheck.py` fetches the national elevation model's terrain (`dhm_terraen`) from Dataforsyningen's WCS, `https://api.dataforsyningen.dk/dhm_wcs_DAF`, with a token kept on this machine and at the resolution it asks for, to check the 2012 flood sheets against the ground.",
+     "texts": "b618d5c803ff4d81",
+     "node X-TERRAINCHECK": "d4d4586ba14ad148"
+    }
+   }
+  },
+  {
+   "id": "C-DS-FLOWINPUT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "An elevation model is the input for modelling where rain flows.",
+   "because": "Flow follows the terrain: filling an elevation model's sinks and routing each cell to its lowest neighbour gives flow direction, accumulation and ponding depressions without reference to any plan.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "It is also the input for **modelling where rain flows**: fill the terrain's sinks, compute flow direction and accumulation, and surface flow paths and ponding depressions come out directly, rather than being inferred from the plan.",
+     "texts": "7efa2b592b534530"
+    }
+   }
+  },
+  {
+   "id": "C-DS-FLOOD-WHAT",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "DATA_SOURCES.md",
+   "claim": "The flood sheets are calculated scenarios from the city's cloudburst plans for a design event; which model made them is not stated.",
+   "because": "Their record calls them flood scenarios from the cloudburst plans for each catchment, based on calculations; each sheet's title names a design event. Neither names the model.",
+   "rests_on": [
+    "E-ML-FLOOD-CKAN",
+    "E-ML-FLOOD-CALC",
+    "E-ML-FLOOD-SHEET",
+    "U-ML-FLOOD-MODELTYPE"
+   ],
+   "basis": "assessed",
+   "holder": "Københavns Kommune (the dataset record and the sheet titles)",
+   "replaces": [
+    "C-DS-OLD-FLOOD-MODEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`Oversvømmelsesscenarier for vandoplande` on opendata.dk: flood scenarios from the city's cloudburst plans for each water catchment, based on calculations, for a 100-year event, banded `0.05-0.1 m` / `0.1-0.2 m` / `0.2-0.5 m` / `0.5-1 m` / `1-2 m` / `>2 m`. Which model produced them, over what terrain, is not stated.",
+     "texts": "8310978a3053b464",
+     "node E-ML-FLOOD-CKAN": "6f22daf295943994",
+     "pinned FLOOD2012-CKAN": "e4c1819605e16e7b",
+     "node E-ML-FLOOD-CALC": "a85914b5ae80115d",
+     "node E-ML-FLOOD-SHEET": "6632fd49d9ae8e13",
+     "pinned FLOOD2012-AMAGER": "1045cc4c84324598",
+     "node U-ML-FLOOD-MODELTYPE": "d5c9035dde498113"
+    }
+   }
+  },
+  {
+   "id": "C-DS-FLOOD-PDFS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The dataset is the counted raster PDFs of the stated sizes, an orthophoto with depth bands painted over it, calculated in the record's year for the titles' year.",
+   "because": "meta_facts counts the PDFs and their sizes; the sheets show an orthophoto under the bands, which floodmaps.py matches water against; the years are the record's and the titles'.",
+   "rests_on": [
+    "D-DS-META",
+    "D-SHEETS",
+    "X-DS-FLOODMAPS",
+    "E-ML-FLOOD-CKAN",
+    "E-ML-FLOOD-SHEET"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-SHEETS.label {fig:conv_n_sheets}": "7",
+     "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91",
+     "said on DATA_SOURCES.md": "It is published as **7 raster PDFs** — amager, bispebjerg, indre-by, kbhvest, ladegaardsaaen, norrebro, osterbro — from 8 to 30 MB each, an orthophoto with the depth bands painted over it. The dataset record says the calculations are from 2012, and each sheet's title puts the event in 2010.",
+     "texts": "70b4e372356ad599",
+     "node D-DS-META": "7ec919a67c7eee00",
+     "node D-SHEETS": "15d74fbee34cafef",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8",
+     "node E-ML-FLOOD-CKAN": "6f22daf295943994",
+     "pinned FLOOD2012-CKAN": "e4c1819605e16e7b",
+     "node E-ML-FLOOD-SHEET": "6632fd49d9ae8e13",
+     "pinned FLOOD2012-AMAGER": "1045cc4c84324598"
+    }
+   }
+  },
+  {
+   "id": "C-DS-FLOOD-UNUSABLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The flood sheets are the most important thing in this catalogue and the least usable until each is placed and read.",
+   "because": "The files carry depths only as colours painted over a photograph, and no coordinates this project could use: every sheet was placed by this project, by matching or by control points, as _georef.json records. That it matters most is this project's judgement: it is the only calculated answer to where rain ponds.",
+   "rests_on": [
+    "D-DS-GEOREF",
+    "D-SHEETS",
+    "X-DS-FLOODMAPS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-DS-OLD-GEOREF-ABSENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-SHEETS.label {fig:conv_n_sheets}": "7",
+     "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91",
+     "said on DATA_SOURCES.md": "This is the most important thing in this catalogue and the least usable. Where rain ponds in Copenhagen was calculated at municipal scale and published as an image: no coordinates this project could use, no vector extents, no depth values - so nothing can be overlaid, intersected or queried until each sheet is placed and read.",
+     "texts": "b6112d97c2d63d9a",
+     "node D-DS-GEOREF": "082a9a0dd79184c9",
+     "node D-SHEETS": "15d74fbee34cafef",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8"
+    }
+   }
+  },
+  {
+   "id": "C-DS-SCALES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Each flood sheet is at a different scale, with a scale bar read from its text layer.",
+   "because": "_sheets.json holds each sheet's scale denominator and scale-bar length, read from the text layer by floodmaps.py; no two denominators are equal.",
+   "rests_on": [
+    "D-SHEETS",
+    "X-DS-FLOODMAPS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-SHEETS.label {fig:conv_n_sheets}": "7",
+     "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91",
+     "said on DATA_SOURCES.md": "The sheets are at **a different scale each**, with scale denominators from 7,528 (Nørrebro) to 28,737 (KBH Vest), and scale bars of 500 m or 1000 m. Each sheet carries a real text layer, so the bar length is read, not guessed.",
+     "texts": "24411f116a010b68",
+     "node D-SHEETS": "15d74fbee34cafef",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PALETTE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The depth ramp is the Blues palette and every sheet carries the same six legend labels.",
+   "because": "floodmaps.py holds the six sampled colours and checks each sheet's legend labels; every sheet's standard_legend is true in _sheets.json.",
+   "rests_on": [
+    "X-DS-FLOODMAPS",
+    "D-SHEETS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-SHEETS.label {fig:conv_n_sheets}": "7",
+     "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91",
+     "said on DATA_SOURCES.md": "The depth ramp is the Blues palette: `#f7fbff #d1e2f2 #9ac7e0 #519ccc #1c6bb0 #08306b` for the six bands, and every sheet carries the same six legend labels.",
+     "texts": "1515a4e3934c502a",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8",
+     "node D-SHEETS": "15d74fbee34cafef"
+    }
+   }
+  },
+  {
+   "id": "C-DS-LEGEND",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The legend is masked before the depth is read, located from the text layer.",
+   "because": "floodmaps.py finds the legend from the text layer and blanks it before extraction; _extract.json records the blanked box per sheet.",
+   "rests_on": [
+    "X-DS-FLOODMAPS",
+    "D-DS-EXTRACT"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-LEGEND"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The legend is masked before the depth is read, or its swatches would count as flooding; its position moves between sheets, so it is located from the text layer.",
+     "texts": "c860804ea8552955",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8",
+     "node D-DS-EXTRACT": "fca41338d45d152a"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PALE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "floodmaps.py separates the palest band from pale roofs by its blue cast.",
+   "because": "The extraction keeps the palest band's pixels only where their blue exceeds their red by a margin set in the code.",
+   "rests_on": [
+    "X-DS-FLOODMAPS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-PALE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The palest band is nearly white and matches pale roofs on colour alone; `floodmaps.py` separates it by its blue cast.",
+     "texts": "d2fcd3b05f94c605",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8"
+    }
+   }
+  },
+  {
+   "id": "C-DS-AREAS",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The flooded area extracted from each sheet is as the page lists.",
+   "because": "_extract.json holds the flooded area per sheet, from the band pixels times each sheet's scale; it is the city's calculated flooding, read, not observed flooding.",
+   "rests_on": [
+    "D-DS-EXTRACT",
+    "X-DS-FLOODMAPS",
+    "D-SHEETS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-SHEETS.label {fig:conv_n_sheets}": "7",
+     "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91",
+     "said on DATA_SOURCES.md": "Extracted flooded area: Bispebjerg 2.22 km², KBH Vest 1.39, Amager 1.18, Ladegårdsåen 0.42, Nørrebro 0.36, Østerbro 0.10, Indre By 0.04.",
+     "texts": "d4d29f85b2a36baa",
+     "node D-DS-EXTRACT": "fca41338d45d152a",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8",
+     "node D-SHEETS": "15d74fbee34cafef"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PLACED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "All the flood sheets are placed, and _georef.json records how each was and with what error.",
+   "because": "_georef.json has one entry per sheet with its method and stated error; viz/georef.html reports residuals for control points.",
+   "rests_on": [
+    "D-DS-GEOREF",
+    "X-DS-FLOODMAPS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "All 7 sheets are placed. `data/derived/floodmaps/_georef.json` records for each how — by matching the orthophoto's water against the city's water polygons, or by control points, some supplied by readers — and its stated error; see [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md). `viz/georef.html` still takes control points and reports residuals, so a bad registration is visible.",
+     "texts": "de6b291ec3d9ec71",
+     "node D-DS-GEOREF": "082a9a0dd79184c9",
+     "node X-DS-FLOODMAPS": "2d0a00da847806e8"
+    }
+   }
+  },
+  {
+   "id": "C-DS-LICENCE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "DATA_SOURCES.md",
+   "claim": "The flood dataset's record gives its licence as Creative Commons Attribution.",
+   "because": "Their record's licence field; no further terms were read.",
+   "rests_on": [
+    "E-DS-CKAN-LIC"
+   ],
+   "basis": "assessed",
+   "holder": "Københavns Kommune (the dataset record)",
+   "replaces": [
+    "C-DS-OLD-LICENSING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "CKAN id `oversvommelsesscenarier-for-vandoplande`; its record gives the licence as Creative Commons Attribution 4.0.",
+     "texts": "0714221085c2b7d5",
+     "node E-DS-CKAN-LIC": "0bdeffe6bc2456a4",
+     "pinned FLOOD2012-CKAN": "e4c1819605e16e7b"
+    }
+   }
+  },
+  {
+   "id": "C-DS-NO-OBS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "None of the sources in this catalogue records observed surface water in Copenhagen's streets.",
+   "because": "Of the sources this page catalogues, none is a record of observed surface water: the WFS layers are plans, assets and catchments, VP3 and PULS are discharge points, the flood sheets are calculated.",
+   "rests_on": [
+    "D-DS-MANIFEST",
+    "C-DS-FLOOD-WHAT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-DS-OLD-NO-OBS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "None of the sources in this catalogue records where water is actually seen standing or running in Copenhagen's streets.",
+     "texts": "fbbe8966a68dcdb1",
+     "node D-DS-MANIFEST": "7401b0a7a23de591",
+     "rests on C-DS-FLOOD-WHAT": "8310978a3053b464"
+    }
+   }
+  },
+  {
+   "id": "C-DS-DP02-CALIB",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "DATA_SOURCES.md",
+   "claim": "DP02 calibrates an overflow model on measurement at the structure, with at least five clearly separable overflows in the data.",
+   "because": "Their text states the minimum for a calibration; no reason for the number is given in the passage.",
+   "rests_on": [
+    "E-DS-DP02-CAL"
+   ],
+   "basis": "assessed",
+   "holder": "Miljøstyrelsen, Datateknisk anvisning DP02, version 4 (2024)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "Miljøstyrelsen's technical standard (dTA DP02) calibrates a model on measurement *at the overflow structure*: at least five clearly separable overflow events must be in the measured data.",
+     "texts": "2a1bbf1a405eedc0",
+     "node E-DS-DP02-CAL": "2b99221158d6b6b1",
+     "pinned DTA-DP02-2024": "d6578834b1ace154"
+    }
+   }
+  },
+  {
+   "id": "C-DS-NO-STREET",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Calibration happens inside the pipes, and nothing in the reporting chain observes a street surface.",
+   "because": "The calibration DP02 asks for uses measurements at the overflow structure, and the reported quantities are volumes and counts at discharge points; none is a measurement at a street surface.",
+   "rests_on": [
+    "C-DS-DP02-CALIB",
+    "C-DS-PULS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "Calibration happens inside the pipes; nothing in the reporting chain observes a street surface.",
+     "texts": "1df706f78d78474e",
+     "rests on C-DS-DP02-CALIB": "2a1bbf1a405eedc0",
+     "rests on C-DS-PULS": "f825003c384c429a"
+    }
+   }
+  },
+  {
+   "id": "C-DS-CORNER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "A modelled depth at a street corner is never checked against the water actually standing there.",
+   "because": "Nothing observed at the surface enters calibration or reporting, and no source here records it, so a modelled depth has nothing to be compared with.",
+   "rests_on": [
+    "C-DS-NO-OBS",
+    "C-DS-NO-STREET"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-DS-OLD-CORNER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "So a modelled depth at a street corner is never checked against the water actually standing there.",
+     "texts": "b5319ab3469b897f",
+     "rests on C-DS-NO-OBS": "fbbe8966a68dcdb1",
+     "rests on C-DS-NO-STREET": "1df706f78d78474e"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OBSLOG",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The field logger records depth classes matching the 2012 legend up to one metre, with one deeper class, and flags surcharging drains, in a hand-collected file.",
+   "because": "observations.py's depth classes run dry, below the lowest band, the four legend bands up to one metre, and one class above; its drain states include surcharging; the store is data/manual/observations.geojson, which no fetch script writes.",
+   "rests_on": [
+    "X-DS-OBS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-DEPTHCLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`viz/log.html` (a phone-friendly, offline field logger) and `scripts/observations.py` collect that layer. Records use the 2012 legend's depth classes up to one metre, with everything deeper as one class, and flag drains that are *surcharging* — water rising out of the gully, meaning the pipe below is full. They are stored in `data/manual/observations.geojson`, hand-collected, never overwritten by a fetch script.",
+     "texts": "dfee0ba2effb40eb",
+     "node X-DS-OBS": "c4f216b7c62d492b"
+    }
+   }
+  },
+  {
+   "id": "C-DS-ODA-EXTRACTS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Four ODA extracts are on disk with the counted rows and date span.",
+   "because": "kemi and ctd rows are enums.py's counts; lys and maaledybde rows and every extract's years are ds_facts.py's, over every row.",
+   "rests_on": [
+    "D-DS-ENUMS",
+    "D-DS-FACTS",
+    "X-DS-FACTS",
+    "D-KEMI",
+    "D-CTD"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-ODA-COUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on DATA_SOURCES.md": "Four extracts are on disk: `kemi` (water chemistry, 1,805,827 rows), `ctd` (53,710,760), `lys` (light attenuation, 2,370,091) and `maaledybde` (151,203), with dates from 1970 to 2026.",
+     "texts": "da94acda32437326",
+     "node D-DS-ENUMS": "d951dca316762bb4",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node D-CTD": "f8d18f725cee6bd0"
+    }
+   }
+  },
+  {
+   "id": "C-DS-ENUMS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "enums.py counts every distinct value of every column of kemi and ctd, and ds_facts.py counts the traps over every row of all four extracts.",
+   "because": "Both scripts stream every row; neither samples.",
+   "rests_on": [
+    "X-DS-ENUMS",
+    "X-DS-FACTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`scripts/enums.py` counts every distinct value of every column of `kemi` and `ctd`, and `scripts/ds_facts.py` counts the traps below over every row of all four, because reading the top few values of a column is how a rare sentinel survives.",
+     "texts": "8750c9f7af4f770c",
+     "node X-DS-ENUMS": "5daacb4b87de2626",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-DS-UNITS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "In kemi, units vary within parameters: the counted parameters carry more than one, with the counts the page gives for orthophosphate, integrated primary production and chlorophyll a.",
+   "because": "ds_facts.py counts rows per parameter and unit over the whole extract; a parameter with more than one non-blank unit is counted as multi-unit.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS",
+    "D-KEMI"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-UNITS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "said on DATA_SOURCES.md": "**Units are per row, not per parameter. 14 of 146 `kemi` parameters carry more than one.** `Orthophosphat` is 565 rows in µg/l against 353 in mg/l. Integrated primary production splits 5,068 mg/(m²·d) against 62,831 mg/(m³·d), *per area against per volume*, which cannot be reconciled without a depth. `Klorofyl a` is 185,313 rows in µg/l and 1 in mg/l — and no range filter can catch that, because a plausible mg/l value is also a plausible µg/l value. **Check `Enhed` on every row.** Oxygen, saturation and total nitrogen are single-valued throughout, which is luck rather than a guarantee.",
+     "texts": "90fc6fc53244504a",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730",
+     "node D-KEMI": "8eb961b1b24952c9"
+    }
+   }
+  },
+  {
+   "id": "C-DS-SENTINELS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The lys migration note announces a sentinel the column does not hold, and kemi carries an undeclared round depth on the counted rows.",
+   "because": "ds_facts.py counts the lys rows whose note says the intercept was set to the sentinel, how many of them leave the column blank, and the rows where the column holds the sentinel at all; and the kemi rows whose depth is exactly the round value.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-SENTINELS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**Sentinels, undeclared — and one announced but absent.** In `lys`, the migration note on 1,857,147 rows says `YIntercept` was set to `9999999` because the source lacked it; on 1,854,698 of them the column is blank, and it holds `9999999` on 0 rows of the extract. In `kemi`, `GennemsnitsDybde_m` is exactly `99` on 4,332 rows, with nothing on the row to say whether that depth was measured.",
+     "texts": "9427cc757ce0e3e5",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-DS-BOTTOM",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The deepest recorded bottom depths sit at stations whose other readings are far shallower.",
+   "because": "ds_facts.py keeps each station's bottom-depth readings and reports the largest with the station's median.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "In `maaledybde`, `BundDybde_m` reaches 2300 m at `Læsø rende`, where the station's 510 readings have a median of 22.565 m, and 292.3 m at a station named `Hirtshals 15 m`, whose readings have a median of 17.5 m.",
+     "texts": "eae129b1507089b1",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-DS-LIGHT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Lysprocent exceeds the stated share of surface light on the counted rows, and kemi's oxygen saturation reaches the stated maximum.",
+   "because": "ds_facts.py counts and takes the maxima over every row.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS",
+    "A-DS-LIGHT"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`Lysprocent` exceeds 110% of surface light on 21,348 rows and peaks at 96057. In `kemi`, oxygen saturation reaches 90971.8%.",
+     "texts": "b9cd3f81c62bb9aa",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730",
+     "node A-DS-LIGHT": "b0e07eefb09ae2ce"
+    }
+   }
+  },
+  {
+   "id": "C-DS-CENSOR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "ResultatAttribut marks the counted kemi rows as below the detection limit, whose Resultat is the limit, not a measurement.",
+   "because": "enums.py counts ResultatAttribut; a '<' row's Resultat is the detection limit, so taking it as a value puts a censored measurement at its upper bound.",
+   "rests_on": [
+    "D-DS-ENUMS",
+    "X-DS-ENUMS",
+    "D-KEMI"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "said on DATA_SOURCES.md": "**Censoring hidden behind column names that do not say so.** `ResultatAttribut` is `<` on 85,035 `kemi` rows, where `Resultat` holds *the detection limit, not the measurement* — read as a value it biases the parameter high.",
+     "texts": "9289da3b39931e8b",
+     "node D-DS-ENUMS": "d951dca316762bb4",
+     "node X-DS-ENUMS": "5daacb4b87de2626",
+     "node D-KEMI": "8eb961b1b24952c9"
+    }
+   }
+  },
+  {
+   "id": "C-DS-NOTDETECTED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The 'ikke påvist' rows are analyses that found nothing, of which the counted share are PFAS results.",
+   "because": "enums.py counts the attribute; ds_facts.py counts it per parameter.",
+   "rests_on": [
+    "D-DS-ENUMS",
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "(`ikke påvist`, 80 rows, is different: an analysis that found nothing; 80 of them are PFAS results.)",
+     "texts": "9ebe25a371bafb9e",
+     "node D-DS-ENUMS": "d951dca316762bb4",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-DS-SECCHI",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The counted Secchi readings reached the bottom, and the counted ones were taken through a water telescope.",
+   "because": "ds_facts.py counts the True values of both columns over every maaledybde row.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "In `maaledybde`, `SigtTilBund` is true on 26,380 Secchi readings, meaning the disc reached the bottom and the water was clearer than the number says. `SigtDybdeMedVandkikkert` marks 6,104 readings taken through a water telescope, a different instrument.",
+     "texts": "818903ff08328160",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-DS-EMPTYCOLS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "TekniskAnvisningAnvendt and Afsluttet are single-valued in every extract that carries them.",
+   "because": "ctd's two columns carry one value each in enums.py's count; lys's two and maaledybde's one carry one value each in ds_facts.py's; kemi carries neither (its header).",
+   "rests_on": [
+    "D-DS-ENUMS",
+    "D-DS-FACTS",
+    "D-DS-HEADERS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-EMPTYCOLS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**Columns that carry nothing.** `TekniskAnvisningAnvendt` is single-valued across every row of the three extracts that carry it, and `Afsluttet` across both that carry it, so neither can be used to filter for protocol compliance.",
+     "texts": "e14606b35ddd12e6",
+     "node D-DS-ENUMS": "d951dca316762bb4",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node D-DS-HEADERS": "2e7194c5c5505cd4"
+    }
+   }
+  },
+  {
+   "id": "C-DS-INTEGRATED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The instruction prescribes integrated samples over depth intervals, and the counted kemi integrated rows carry a shallow nominal depth.",
+   "because": "Kap. 5 describes integrated samples over fixed intervals and down to the photic zone; ds_facts.py counts integrated rows at or above the stored threshold depth.",
+   "rests_on": [
+    "E-DS-K5-FOTISK",
+    "D-DS-FACTS",
+    "X-DS-FACTS",
+    "A-DS-SHALLOW"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-BLANDING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**Sample type decides what a depth means.** The technical instruction's sampling chapter ([Kap. 5](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap05.doc)) prescribes integrated samples over 0–10 m, over 0–25 m, or down to the depth of the photic zone. In `kemi`, 2,261 of the 9,734 `Dybdeintegreret prøve` rows carry a nominal depth of 3 m or less and will enter a surface filter as though they were point measurements. An integral is not a measurement at its midpoint.",
+     "texts": "2875296fdcfda346",
+     "node E-DS-K5-FOTISK": "c43e478a049cd49f",
+     "pinned TA-NOVA-1998-K5": "bf0440cec12b6dc5",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730",
+     "node A-DS-SHALLOW": "660a48c5163fc614"
+    }
+   }
+  },
+  {
+   "id": "C-DS-UTC",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The nutrient chapter asks for sampling times in UTC, and where that can be tested the archive's times are not UTC.",
+   "because": "Kap. 6 lists sampling date and time in UTC among the station data; clockzone.py's measured conventions give wall-clock times, offset-added times and defaults, counted per visit in clock_convention.json.",
+   "rests_on": [
+    "E-ML-TA-K6",
+    "X-ML-CLOCKZONE",
+    "D-ML-CLOCKCONV",
+    "C-ML-CLOCK-KINDS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-UTC-CHAPTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**What the instruction asks for and the archive does not deliver.** The nutrient chapter ([Kap. 6](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap06.doc)) lists *\"Prøvetagningsdato og tidspunkt i UTC\"* among the station data to report, and wherever that can be tested the archive's times are not UTC. `scripts/clockzone.py` compares every station with itself at each summer-time change and finds Danish wall-clock times from the early two-thousands, wall-clock times with the summer or winter offset *added* before that, and filled-in defaults on 27,934 of 129,913 sampling visits, with 17,836 more from suppliers whose convention is mixed.",
+     "texts": "cba6c38e82932ec9",
+     "node E-ML-TA-K6": "77b8ea1428a41c6a",
+     "pinned TA-NOVA-1998-K6": "f05a49f8a8c7161f",
+     "node X-ML-CLOCKZONE": "573422fbd53d8022",
+     "node D-ML-CLOCKCONV": "3feebe7299751b53",
+     "rests on C-ML-CLOCK-KINDS": "1f82121cf21cf2af"
+    }
+   }
+  },
+  {
+   "id": "C-DS-CLOCKPY",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Every analysis that places a water-chemistry sample in time takes the instant from clock.py.",
+   "because": "The same finding as the method lab's, stated for this page's readers.",
+   "rests_on": [
+    "C-ML-CLOCKPY"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "Every analysis that places a water-chemistry sample in time takes the instant from `scripts/clock.py`, which returns one UTC instant or says why there is none.",
+     "texts": "1766e5c1b2c91a2c",
+     "rests on C-ML-CLOCKPY": "31b75331cc563177"
+    }
+   }
+  },
+  {
+   "id": "C-DS-STARTKLOK",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Startklok has a value on every genuine kemi row, and the other extracts have no clock field.",
+   "because": "The kemi finding is C-CLOCK-EXISTS; the ctd, lys and maaledybde headers carry dates and no clock column.",
+   "rests_on": [
+    "C-CLOCK-EXISTS",
+    "D-DS-HEADERS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "`Startklok` has a value on every genuine `kemi` row — the 22 rows without one are fragments of a broken note field — and ODA offers no clock field at all for `ctd`, `lys` or `maaledybde`.",
+     "texts": "c4c96df32bc5025b",
+     "rests on C-CLOCK-EXISTS": "2d15f832283c36ac",
+     "node D-DS-HEADERS": "2e7194c5c5505cd4"
+    }
+   }
+  },
+  {
+   "id": "C-DS-DETLIMIT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Kap. 6 asks for values below the detection limit to be reported as measured, and yet the counted nutrient rows carry '<'.",
+   "because": "Kap. 6: data below the detection limit are to be reported, as the measured concentration and not as zero or with '<'. ds_facts.py counts the '<' rows among the nutrient, TOC and POC parameters. Which rows were sampled under this chapter is not recorded.",
+   "rests_on": [
+    "E-DS-K6-DL",
+    "E-DS-K6-IKKE",
+    "D-DS-FACTS",
+    "X-DS-FACTS",
+    "U-ML-TA-SCOPE"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-NEGATIVES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "The same chapter asks for values below the detection limit to be reported as measured, not as zero or as the limit with `<`. Yet 72,026 of the 1,153,832 nutrient, TOC and POC rows in `kemi` carry `<` — though which rows were sampled under this chapter the archive cannot say, since `TekniskAnvisningAnvendt` carries one value throughout.",
+     "texts": "35eb9a5a0248d09c",
+     "node E-DS-K6-DL": "e965e99067e74877",
+     "pinned TA-NOVA-1998-K6": "f05a49f8a8c7161f",
+     "node E-DS-K6-IKKE": "7e10719b5f0fc6e3",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730",
+     "node U-ML-TA-SCOPE": "11075e70e368891d"
+    }
+   }
+  },
+  {
+   "id": "C-DS-KFAKTOR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "In ctd the corrected result equals the original times the factor, within rounding, on most rows carrying all three, and not on the counted rest.",
+   "because": "ds_facts.py tests every row carrying all three against the product, allowing half a unit of the corrected value's last stored decimal.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS",
+    "D-CTD"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-KFAKTOR-SAMPLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on DATA_SOURCES.md": "**`KorrektionsFaktor` is not one thing.** In `ctd`, `KorrigeretResultat` equals `OriginalResultat × KorrektionsFaktor`, to within the rounding of the stored value, on 53,708,047 of the 53,710,760 rows carrying all three, and not on the other 2,713 — so a wrong factor corrupts the value silently and by construction. But what the factor *means* differs per parameter, and the technical instructions say so:",
+     "texts": "e11a1e211cc6183b",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730",
+     "node D-CTD": "f8d18f725cee6bd0"
+    }
+   }
+  },
+  {
+   "id": "C-DS-KF-OXYGEN",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "DATA_SOURCES.md",
+   "claim": "For oxygen the factor is the Winkler-to-electrode ratio at a fixed depth, applied when they differ by more than a threshold, or another station's mean factor inside a gradient.",
+   "because": "Their text: the Winkler reading at the stated depth calibrates the electrode profile; above the stated difference every value is multiplied by the ratio; inside a gradient the mean factor of other stations' profiles that day is used. No reason is given for the threshold.",
+   "rests_on": [
+    "E-DS-K4-GANGE",
+    "E-DS-K4-SAMEDAG"
+   ],
+   "basis": "assessed",
+   "holder": "Teknisk anvisning for marin overvågning (NOVA 1998), Kap. 4",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**Oxygen** ([Kap. 4](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap04.doc)): instrument bias compensation. The electrode profile is checked against a Winkler titration on a bottle from 1 m, and if they disagree by more than 0.3 mg O₂/l every value in the profile is multiplied by the ratio of the two. Where the Winkler bottle fell inside a gradient, the profile is corrected instead by the mean factor from profiles measured the same day at other stations — so some corrected oxygen carries a calibration derived at a different station.",
+     "texts": "8f7b2619099e8472",
+     "node E-DS-K4-GANGE": "801f4f96e789ef49",
+     "pinned TA-NOVA-1998-K4": "28d3351a3d1b53e2",
+     "node E-DS-K4-SAMEDAG": "00d3d258bb5e56c8"
+    }
+   }
+  },
+  {
+   "id": "C-DS-KF-FLUOR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "The fluorescence factor is a calibration against chlorophyll, not bias compensation, and the counted fluorescence rows fall outside the stored band.",
+   "because": "Kap. 2: fluorescence cannot be turned directly into a pigment concentration whatever the software reports, and a varying ratio is not an instrument problem. ds_facts.py counts the factors outside the band and the largest.",
+   "rests_on": [
+    "E-DS-K2-CONC",
+    "E-DS-K2-MAKERS",
+    "E-DS-K2-INSTR",
+    "D-DS-FACTS",
+    "X-DS-FACTS",
+    "A-DS-BAND"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-FLUOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**Fluorescence** ([Kap. 2](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap02.doc)): **not** bias compensation. The instruction states that a fluorescence signal *\"kan derfor ikke direkte omsættes til en pigment koncentration\"*, whatever the manufacturers' software reports, and that a varying ratio of fluorescence to chlorophyll *\"[er] ikke et udtryk for instrument problemer\"* — so the factor is a calibration against measured chlorophyll, and large factors can be correct. 156,974 of its 6,783,790 factored rows (2.3%) fall outside 0.5–2, to a maximum of 201×. **Do not filter fluorescence on this column.**",
+     "texts": "77b1e69ffb5bb80c",
+     "node E-DS-K2-CONC": "8e799b0043eb1d39",
+     "pinned TA-NOVA-1998-K2": "5b8668106b328f26",
+     "node E-DS-K2-MAKERS": "2fcd7b55981850f9",
+     "node E-DS-K2-INSTR": "4656736717eb88d9",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730",
+     "node A-DS-BAND": "02ef45ae21889625"
+    }
+   }
+  },
+  {
+   "id": "C-DS-KF-CTD",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Kap. 1 describes no post-hoc factor for CTD temperature, conductivity and pressure, yet the counted temperature and salinity rows carry one.",
+   "because": "Kap. 1's calibration is the sensor's own coefficients checked against reference measurements, and the word faktor does not occur in it; ds_facts.py counts the rows whose factor is not one and the largest.",
+   "rests_on": [
+    "E-DS-K1-CAL",
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-CTDFACTOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**CTD temperature, conductivity, pressure** ([Kap. 1](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap01.doc)): calibration lives in the sensor's own coefficients, checked against reference measurements; the word *faktor* occurs 0 times in the chapter, so **no post-hoc multiplicative factor is described.** Yet 1,280 temperature rows carry a factor other than one, up to 80×, and 3,926 salinity rows, up to 2346.15× — with no basis in the instruction.",
+     "texts": "2c078ad264c0fffd",
+     "node E-DS-K1-CAL": "da38b2ebb314d723",
+     "pinned TA-NOVA-1998-K1": "bdd5ce350a436041",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-DS-RANGE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "A physical range check cannot catch a bad factor.",
+   "because": "A plausible value times a wrong factor can land on another plausible value, as the stated example shows: the product falls inside the range Danish sea temperatures take.",
+   "rests_on": [
+    "A-DS-EXAMPLE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "A physical range check will not catch a bad factor: 0.5 applied to 18 °C gives 9 °C, an unremarkable Danish sea temperature that happens to be wrong.",
+     "texts": "58b023413708b19f",
+     "node A-DS-EXAMPLE": "6448007fc5365a83"
+    }
+   }
+  },
+  {
+   "id": "C-DS-BORROW",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "If a station-day is one moment, depth_clock.py can lend an observed kemi clock to ctd, and it places the counted measurements that way; the two counts are not shares of one population.",
+   "because": "depth_clock.py lends only a kemi clock that clock.py classes as an observed time; the moment is assumed, not checked.",
+   "rests_on": [
+    "X-DEPTHCLOCK",
+    "X-ML-CLOCK",
+    "A-BORROW",
+    "C-DEPTH-BORROW"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-BORROW"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "**Lending a clock, with a caveat.** If a station-day is one moment — which is assumed, not checked — the clock can be lent from `kemi` to `ctd`, the only route in the data held to putting a time on oxygen at depth. `scripts/depth_clock.py` does it through `scripts/clock.py`, lending only a `kemi` clock that is an observed time: 4,688,007 CTD oxygen measurements are placed that way, and 2,454,520 have no usable clock to borrow. The first count is taken after the script's quality filters and the second before them, so the two are not shares of one population.",
+     "texts": "6365b864bc1a9767",
+     "node X-DEPTHCLOCK": "947d7a76ced89e8a",
+     "node X-ML-CLOCK": "81b7c21ff61a74c0",
+     "node A-BORROW": "58b2399fcb372723",
+     "rests on C-DEPTH-BORROW": "0d003fb295681b19"
+    }
+   }
+  },
+  {
+   "id": "C-DS-PRACTICAL",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "No script uses GDAL or geopandas, and the viewers load MapLibre from cdnjs.",
+   "because": "A search of scripts/ for the imports finds none; the viewers' script tags load MapLibre from cdnjs.",
+   "rests_on": [
+    "X-DS-SCRIPTS",
+    "X-DS-VIZ"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-DS-OLD-PRACTICAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "No script uses GDAL or geopandas, and the viewers load MapLibre from a CDN (cdnjs).",
+     "texts": "e5528207f6cdefd5",
+     "node X-DS-SCRIPTS": "22d0343eb5d097fa",
+     "node X-DS-VIZ": "9b5b31624a2673e4"
+    }
+   }
+  },
+  {
+   "id": "C-DS-NOCRED",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_SOURCES.md",
+   "claim": "Apart from the elevation model, the fetched sources on this page are fetched without credentials.",
+   "because": "fetch_wfs.py, fetch_plan_projects.py and fetch_spildevand.py make anonymous requests, and the probe's anonymous requests were answered; terraincheck.py alone reads a token.",
+   "rests_on": [
+    "X-DS-FETCHWFS",
+    "X-DS-PLANFETCH",
+    "X-DS-SPILDEVAND",
+    "X-TERRAINCHECK",
+    "D-DS-PROBES"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_SOURCES.md": "Apart from the elevation model, the fetched sources on this page are fetched without credentials; `data/manual/` is hand-authored.",
+     "texts": "586131fcb1288f41",
+     "node X-DS-FETCHWFS": "cb4c48b5e7c5bb95",
+     "node X-DS-PLANFETCH": "c49827ff3e5b7c25",
+     "node X-DS-SPILDEVAND": "67ba19caffc97391",
+     "node X-TERRAINCHECK": "d4d4586ba14ad148",
+     "node D-DS-PROBES": "43f4da370f16a45f"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-KBH-LAYERS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The Kbhkort server offers about a stated number of layers.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "GeoServer, ~",
+    "end": "no authentication.",
+    "why": "Its justification was not recorded properly: the count was taken once from the capabilities document and never stored. The probe now counts and stores it with its date."
+   },
+   "replaced_by": [
+    "C-DS-KBH-SERVER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "GeoServer, ~481 layers, no authentication.",
+     "texts": "f9a598956b4fd55c"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-VP3-LAYERS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The VP3 server offers a stated number of layers.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "— national,",
+    "end": "no auth.",
+    "why": "Its justification was not recorded properly: the count was taken once and never stored. The probe now counts and stores it with its date."
+   },
+   "replaced_by": [
+    "C-DS-VP3-SERVER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "— national, 47 layers, no auth.",
+     "texts": "8f61a4ead36f7c25"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-DIKES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The dike layers are storm surge lines at two stated heights, and a stated share of the raw download.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Storm surge dike lines at",
+    "end": "peripheral to this project.",
+    "why": "The heights were read off the layer names and printed as measurements; the features carry only a grid code. The megabytes were typed and have since changed."
+   },
+   "replaced_by": [
+    "C-DS-KBH-TABLE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Storm surge dike lines at 2.63 m and 2.85 m | 101 MB of the 131 MB raw total. Coastal flooding, not rainfall — peripheral to this project.",
+     "texts": "dd4597860008ec2e"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-PULS-SHADOW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The VP3 layers are derived from PULS, the open shadow of a database that is not open.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Derived from PULS",
+    "end": "not itself open.",
+    "why": "No document this project holds says the VP3 layers are derived from PULS, and the section it pointed to was the wrong one."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Derived from PULS (see §3), so it is the open shadow of a database that is not itself open.",
+     "texts": "df665336fa40a8bf"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-SE-SF",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "SE and SF are not in DP02; the reading is inferred and must not be reported as fact.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "are **not** in it",
+    "end": "Do not report those two as fact.",
+    "why": "Wrong: DP02 version four defines SE (separate rainwater) and SF (separate rainwater with a detention basin) in its list for separate-sewer outfalls."
+   },
+   "replaced_by": [
+    "C-DS-BGV"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "are not in it — they belong to the separate-sewer outfall list and our reading is flagged `inferred: true`. Do not report those two as fact.",
+     "texts": "73dd38c37ca3601f"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-THREE-LAYERS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of the national layers have no municipality column.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Three layers have no municipality column",
+    "end": "without the bbox fallback.",
+    "why": "Its justification was not recorded properly, and the fetch manifest shows a different number of VP3 layers without one."
+   },
+   "replaced_by": [
+    "C-DS-CLIP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Three layers have no municipality column and would silently come back empty without the bbox fallback.",
+     "texts": "de936ef483a39514"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-SUPPORT-403",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Miljøportal's support host refuses automated fetches, an old geoserver no longer resolves, and the dTA PDFs are the reliable documentation.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "The support host",
+    "end": "reliable documentation.",
+    "why": "The support host answered an anonymous request normally when probed on 2026-09-11; the refusal was never recorded."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The support host `support.miljoeportal.dk` returns 403 to automated fetches, and the `b0902-prod-dist-app.azurewebsites.net` geoserver quoted in older guides no longer resolves. The Miljøstyrelsen dTA PDFs are the reliable documentation.",
+     "texts": "ad2296a1ed78fe9b"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-MAPCENTIA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The project maps' SQL endpoint answers trivial queries but not schema introspection.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "The project map on each page renders through",
+    "end": "not reachable that way.",
+    "why": "Its justification was not recorded properly: the probe was made once and its answers not stored."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The project map on each page renders through `cowi.mapcentia.com/api/v2/` (a MapCentia GC2 instance). Its SQL endpoint answers trivial queries but returns nothing for schema introspection, so per-project geometry is not reachable that way.",
+     "texts": "e4099cee73fb19eb"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-HOFOR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "HOFOR owns and operates the system and publishes figures but no GIS downloads.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "The utility that owns and operates the system.",
+    "end": "It directs pipe-location requests to LER.",
+    "why": "Its justification was not recorded properly: no search of HOFOR's site for downloads is recorded. What HOFOR's own page says about pipe information is pinned."
+   },
+   "replaced_by": [
+    "C-DS-HOFOR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The utility that owns and operates the system. Publishes project descriptions and figures — tunnel lengths, diameters, pump capacities, storage volumes — but no GIS downloads. `hofor.dk` is a citation source for the manual register, not a data source. It directs pipe-location requests to LER.",
+     "texts": "b0ceb76abd7af4ca"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-DHM",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Dataforsyningen serves a terrain model at a stated resolution by WMS and WCS, available but not yet wired into this project.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "is up and serves DHM",
+    "end": "A free API token is required.",
+    "why": "The resolution is in no document this project holds, and the model is wired: scripts/terraincheck.py fetches it."
+   },
+   "replaced_by": [
+    "C-DS-DHM"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "is up and serves DHM (Danmarks Højdemodel), including the 0.4 m terrain model, via WMS/WCS. A free API token is required.",
+     "texts": "b77a93693a3db471"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-FLOOD-MODEL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The flood sheets are the output of Copenhagen's two-dimensional surface flood model.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "on opendata.dk: the output of",
+    "end": "surface flood model",
+    "why": "What model produced the sheets is not stated in anything this project holds; the city's record says only that they are calculated."
+   },
+   "replaced_by": [
+    "C-DS-FLOOD-WHAT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "on opendata.dk: the output of Copenhagen's 2D surface flood model",
+     "texts": "5a5b8a583c15d7f3"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-GEOREF-ABSENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The flood PDFs contain no georeferencing of any kind, compressed or otherwise.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "The georeferencing is genuinely absent",
+    "end": "compressed or otherwise.",
+    "why": "Its justification was not recorded properly: no script checks the files for these structures, and the search was not stored."
+   },
+   "replaced_by": [
+    "C-DS-FLOOD-UNUSABLE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The georeferencing is genuinely absent, not merely unadvertised — the files contain no `/Measure`, `/GPTS`, `/LPTS`, `/Viewport` or projection string, compressed or otherwise.",
+     "texts": "41f7367882d08366"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-AMAGER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Guessing the scale bar put Amager out by a stated factor.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "guessing it put Amager out by",
+    "end": "Amager out by",
+    "why": "Its justification was not recorded properly, and it is history the reader does not need."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "guessing it put Amager out by",
+     "texts": "038185facc4fc755"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-LEGEND",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "On Indre By one whole depth band was legend and nothing else.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "on Indre By the entire",
+    "end": "band was legend, nothing else.",
+    "why": "Its justification was not recorded properly: nothing stored shows it."
+   },
+   "replaced_by": [
+    "C-DS-LEGEND"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "on Indre By the entire \"1-2 m\" band was legend, nothing else.",
+     "texts": "214bcf0b8fb41f30"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-PALE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The palest band is separated by a stated blue cast, with stated raw and real matches on Indre By.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "The palest band is nearly white",
+    "end": "real.",
+    "why": "The threshold and the counts appear only in a comment and a docstring; no run stored them."
+   },
+   "replaced_by": [
+    "C-DS-PALE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The palest band is nearly white and matches every pale roof on colour alone. Its blue cast (B-R = +8) separates it: 363,940 raw matches on Indre By, 18,393 real.",
+     "texts": "ac27e408c6683a02"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-OUTLINE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The drawn catchment outline is not today's boundary: registration on water gives a stated coverage against a stated chance level.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Registering on water and then testing",
+    "end": "chance level.",
+    "why": "Its justification was not recorded properly: the test was run once and its result not stored."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Registering on water and then testing against the drawn outline gives 13.6% coverage against an 11% chance level.",
+     "texts": "618aa23ce40319ea"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-ORTHO",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The sheets do not share one orthophoto: a detector tuned on Indre By finds a stated share of Bispebjerg.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "The **sheets do not share one orthophoto**",
+    "end": "no blue cast at all.",
+    "why": "Its justification was not recorded properly: the run was not stored."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The sheets do not share one orthophoto. Exposures differ enough that a water detector tuned on Indre By finds 0.1% of Bispebjerg, whose lakes render near-black with no blue cast at all.",
+     "texts": "726e0e33466a9e5f"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-CORNER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A modelled depth at a corner is never checked against a stated real depth at a gully blocked since a stated year.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "So a modelled",
+    "end": "because a gully has been blocked since",
+    "why": "The depths and the year were an illustration, printed as if observed."
+   },
+   "replaced_by": [
+    "C-DS-CORNER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So a modelled 0.2 m at a corner is never checked against the 0.4 m that is actually there because a gully has been blocked since",
+     "texts": "ef501167491233da"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-NO-OBS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "No open dataset anywhere records observed surface water in Copenhagen.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "There is no open dataset of where water",
+    "end": "observes a street surface.",
+    "why": "An absence claimed of everything, with no record of what was searched; the replacement claims it of the sources in this catalogue."
+   },
+   "replaced_by": [
+    "C-DS-NO-OBS",
+    "C-DS-DP02-CALIB",
+    "C-DS-NO-STREET"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "There is no open dataset of where water is actually seen standing or running in Copenhagen streets. The gap is structural rather than accidental: Miljøstyrelsen's technical standard (dTA DP02, section 3.1.1) defines model calibration as measurement *at the overflow structure* — five clearly separable overflow events. Calibration happens inside the pipes. Nothing in the reporting chain observes a street surface.",
+     "texts": "f92bdb79af8febb9"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-ODA-COUNTS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The four extracts have stated row counts, span stated years, are none truncated, and none of their traps is documented in the download.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Four extracts are on disk:",
+    "end": "None of it is documented in the download.",
+    "why": "The lys and maaledybde counts were typed; 'none truncated' and 'documented nowhere in the download' have no recorded check."
+   },
+   "replaced_by": [
+    "C-DS-ODA-EXTRACTS",
+    "C-DS-ENUMS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Four extracts are on disk: `kemi` (water chemistry, 1,805,827 rows), `ctd` (53,710,760), `lys` (light attenuation, 2,370,091) and `maaledybde` (151,203), all spanning 1970–2026 and none truncated. `scripts/enums.py` counts every distinct value of every column of each, because reading the top few values of a column is how a rare sentinel survives. What it found is below. None of it is documented in the download.",
+     "texts": "1c86485056264140"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-UNITS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of parameters carry more than one unit, with typed counts, and a stated share lies a thousandfold from the rest.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "**Units are per row, not per parameter.",
+    "end": "which is luck rather than a guarantee.",
+    "why": "The counts were typed from a cross-tabulation that was never stored, and 'a thousandfold from the rest' was never defined."
+   },
+   "replaced_by": [
+    "C-DS-UNITS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Units are per row, not per parameter. 14 of 147 parameters carry more than one. Not all of them are strays. `Orthophosphat` is 565 rows in µg/l against 353 in mg/l — 38% of them a thousandfold from the rest. Integrated primary production splits 5,068 mg/(m²·d) against 62,831 mg/(m³·d), *per area against per volume*, which cannot be reconciled at all without a depth. PFAS sums run ng/l against µg/l. `Klorofyl a` is 185,313 rows in µg/l and exactly one in mg/l — and no range filter can catch that, because a plausible mg/l value is also a plausible µg/l value. Check `Enhed` on every row. Oxygen (mg/l), saturation (pct) and total nitrogen (µg/l) are single-valued throughout, which is luck rather than a guarantee.",
+     "texts": "c49c66fb649382b4"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-SENTINELS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Undeclared sentinels, with typed counts and extremes, and the depths of the Skagerrak and a Kattegat trench stated from memory.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "**Sentinels, undeclared.**",
+    "end": "Oxygen saturation reaches",
+    "why": "Counts and extremes were typed from runs never stored, and the depths of the Skagerrak and the Kattegat trench had no source."
+   },
+   "replaced_by": [
+    "C-DS-SENTINELS",
+    "C-DS-BOTTOM",
+    "C-DS-LIGHT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Sentinels, undeclared. `YIntercept` is `9999999` where the source lacked it, admitted only in a free-text note on the row itself. `GennemsnitsDybde_m` is exactly `99` on 4,332 rows — a real depth in the Skagerrak and a suspicious round number everywhere else, with nothing distinguishing the two. `BundDybde_m` reaches 2300 m at Læsø rende, a Kattegat trench about 50 m deep, and 292.3 m at a station named `Hirtshals 15 m`, where the station's own name refutes the value. `Lysprocent` exceeds 110% of surface light on 21,348 rows and peaks at 58,438. Oxygen saturation reaches",
+     "texts": "105b58bc5731b69d"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-BLANDING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Per the technical instruction's Kap. 5, a Blandingsprøve pools bottles from one depth, and a stated number of integrated samples are shallow.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "a `Blandingsprøve` is several bottles",
+    "end": "An integral is not a measurement at its midpoint.",
+    "why": "Kap. 5 does not define a Blandingsprøve; the definition has no source this project holds, and the count was typed."
+   },
+   "replaced_by": [
+    "C-DS-INTEGRATED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "a `Blandingsprøve` is several bottles at *the same depth*, pooled — not over time and not over depth — so it behaves as a point sample. A `Dybdeintegreret prøve` integrates 0–10 m, 0–25 m or the whole photic zone; 2,265 of them carry a nominal depth of 3 m or less and will enter a surface filter as though they were point measurements. An integral is not a measurement at its midpoint.",
+     "texts": "1f4aaa59b926ce76"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-NEGATIVES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Values below the detection limit are to be reported as measured, negatives included, yet none is negative, so the rule was not followed or the data were cleaned.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "And values below the detection limit are to be reported as measured",
+    "end": "cleaned before ODA received them.",
+    "why": "The instruction asks for values below the detection limit to be reported as measured, not as zero or with '<'; it says nothing about negatives, so the inference had no premise."
+   },
+   "replaced_by": [
+    "C-DS-DETLIMIT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "And values below the detection limit are to be reported as measured, negatives included — yet there is not one negative value in 1.8 million rows, so either that was never followed or the numbers were cleaned before ODA received them.",
+     "texts": "6d9b206ba0a71b41"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-KFAKTOR-SAMPLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The corrected result is the original times the factor on every one of a stated number of rows.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "`OriginalResultat × KorrektionsFaktor` — verified on",
+    "end": "rows carrying all three",
+    "why": "Checked on a sample of that size, not the extract, and the check was not stored."
+   },
+   "replaced_by": [
+    "C-DS-KFAKTOR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`OriginalResultat × KorrektionsFaktor` — verified on 199,999 of 199,999 rows carrying all three",
+     "texts": "9244c47a26ffdf77"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-FLUOR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of fluorescence rows fall outside a band, to a stated maximum, and are data, not faults.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "against measured chlorophyll. Its",
+    "end": "are data and not faults.",
+    "why": "The counts were typed, and 'data, not faults' goes further than the instruction, which says a varying ratio is not an instrument problem - not that every factor is right."
+   },
+   "replaced_by": [
+    "C-DS-KF-FLUOR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "against measured chlorophyll. Its 156,974 rows (2.3%) outside 0.5–2.0, to a maximum of 201×, are data and not faults.",
+     "texts": "707a87bd916a8d50"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-CTDFACTOR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of temperature and salinity rows carry factors up to stated maxima, with no basis in the instruction.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "**No post-hoc multiplicative factor is described.**",
+    "end": "no basis in the instruction at all.",
+    "why": "The counts were typed from a run that was not stored."
+   },
+   "replaced_by": [
+    "C-DS-KF-CTD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "No post-hoc multiplicative factor is described. So the 606 temperature rows with a factor up to 80×, and the 79 salinity rows up to 2346×, are not a documented procedure applied badly — they have no basis in the instruction at all.",
+     "texts": "6edf556f6a8866df"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-PRACTICAL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Pip is unavailable and memory about a gigabyte, so every script is standard-library only; nothing here is authenticated.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "`pip` is unavailable",
+    "end": "only `data/manual/` is hand-authored.",
+    "why": "No longer true: some scripts run in a virtual environment with extra packages, memory is larger, and the elevation model needs a token."
+   },
+   "replaced_by": [
+    "C-DS-PRACTICAL",
+    "C-DS-NOCRED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`pip` is unavailable and RAM is ~1 GB, so every script is standard-library only and the viewer loads MapLibre from a CDN. No GDAL, no geopandas. * Nothing here is authenticated. Re-running the fetch scripts reproduces `data/raw/` from scratch; only `data/manual/` is hand-authored.",
+     "texts": "3f66abe3b30bdcac"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-LICENSING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The Copenhagen layers are open data via opendata.dk and the Miljøstyrelsen layers public-sector open data; attribute both.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Licensing: the Copenhagen layers",
+    "end": "Attribute both if you republish.",
+    "why": "Its justification was not recorded properly: no licence text was pinned. The flood dataset's record is pinned and gives its licence."
+   },
+   "replaced_by": [
+    "C-DS-LICENCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Licensing: the Copenhagen layers are published as open data via opendata.dk; the Miljøstyrelsen layers are public-sector open data. Attribute both if you republish.",
+     "texts": "99eef1cf4c769624"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-LER-MISUSE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Querying LER without intent to dig would be a misuse, and its data is licensed for that dig, not for republication.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Querying it without genuine intent to dig",
+    "end": "not for republication.",
+    "why": "Not in anything this project holds from LER; what LER's own page says about inquiries is pinned."
+   },
+   "replaced_by": [
+    "C-DS-LER-POLICY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Querying it without genuine intent to dig would be a misuse of the register, and the returned data is licensed for that dig, not for republication.",
+     "texts": "9b53751e7655072c"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-UTC-CHAPTER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Right after citing Kap. 5, the page quoted the instruction's requirement to report sampling times in UTC, as if from that chapter.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "**Two things the instruction requires that the archive does not deliver.**",
+    "end": "tidspunkt i UTC",
+    "why": "The phrase is in the nutrient chapter, Kap. 6, not Kap. 5."
+   },
+   "replaced_by": [
+    "C-DS-UTC"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Two things the instruction requires that the archive does not deliver. Times are to be reported in UTC (*\"Prøvetagningsdato og tidspunkt i UTC",
+     "texts": "ee450ae5470bdfff"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-BORROW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nearly all kemi station-days carry one clock time and a stated share of ctd station-days match a kemi visit, so the clock can be lent.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "**A workaround worth knowing.**",
+    "end": "only route to putting a time on oxygen at depth.",
+    "why": "Its justification was not recorded properly: the shares were typed, no script computes them, and filled-in default clocks were then counted as times."
+   },
+   "replaced_by": [
+    "C-DS-BORROW"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A workaround worth knowing. 99% of `kemi` station-days carry a single clock time, and 123,866 of 155,182 `ctd` station-days (80%) have a matching `kemi` visit. A station-day is effectively one moment, so the clock can be lent from one extract to the other — which is the only route to putting a time on oxygen at depth.",
+     "texts": "e192d7f5eb6a807b"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-TYPETAL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DP02's table 1 gives national median concentrations for overflow water.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "gives the national median",
+    "end": "concentrations for overflow water",
+    "why": "The document calls them type values derived from monitoring of combined-system water; 'national median' is not in it."
+   },
+   "replaced_by": [
+    "C-DS-TYPETAL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "gives the national median concentrations for overflow water",
+     "texts": "7cc68699c298c31c"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-DEPTHCLASSES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Field records use the same six depth classes as the 2012 model.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Records use the same six depth classes",
+    "end": "compare directly",
+    "why": "They do not: the logger's classes follow the 2012 legend up to one metre and then have one deeper class, where the legend has two."
+   },
+   "replaced_by": [
+    "C-DS-OBSLOG"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Records use the same six depth classes as the 2012 model so the two compare directly",
+     "texts": "1f012e2f1622b3e0"
+    }
+   }
+  },
+  {
+   "id": "C-DS-OLD-EMPTYCOLS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "TekniskAnvisningAnvendt and Afsluttet are single-valued in every row of every extract.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "single-valued across every row of every extract",
+    "end": "reaches for them.",
+    "why": "Not every extract carries them: kemi has neither, and maaledybde has no Afsluttet."
+   },
+   "replaced_by": [
+    "C-DS-EMPTYCOLS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "single-valued across every row of every extract, so neither can be used to filter for protocol compliance — which is the only reason anyone reaches for them.",
+     "texts": "39c40c4e3c8c753c"
+    }
+   }
+  }
+ ]
+}

@@ -251,6 +251,27 @@ def main():
     shared = {f["properties"]["klima_id"]: f["properties"]["claimed_volume_m3_shared"]
               for f in features if f["properties"].get("claimed_volume_m3_shared")}
     flow_pages = [e for e in entries if e["annual_flow_m3_per_year"]]
+    # One figure, counted once. The same annual volume stated for the same named
+    # structures on two plan pages - a project page and the 'indsats' that requires
+    # it - is one figure about one outfall, not two flows. The key is the value and
+    # the structure codes its sentence names (U4, …); a figure whose sentence names
+    # none is counted per page, since nothing shows it is the same one.
+    def _flow_key(e):
+        v = e["annual_flow_m3_per_year"]
+        ctx = " ".join(h["context"] for h in e["volume_hits"]["annual_flow"] if h["value"] == v)
+        codes = tuple(sorted(set(re.findall(r"\b[A-ZÆØÅ]{1,3}\d{1,3}\b", ctx))))
+        return (v, codes) if codes else (v, e["url"])
+    first_flow, flow_duplicates = {}, []
+    for e in flow_pages:
+        k = _flow_key(e)
+        if k in first_flow:
+            e["annual_flow_counted"] = False
+            flow_duplicates.append({"title": e["title"], "url": e["url"],
+                                    "same_figure_as": first_flow[k]["title"],
+                                    "same_figure_as_url": first_flow[k]["url"]})
+        else:
+            e["annual_flow_counted"] = True
+            first_flow[k] = e
 
     by_cat = Counter(e["category"] for e in entries)
     log("\n--- coverage ---")
@@ -282,6 +303,7 @@ def main():
             "Depths and diameters come from planning prose, not survey. No open source gives "
             "surveyed invert levels for Copenhagen sewers.",
         ],
+        "annual_flow_duplicates": flow_duplicates,
         "counts": {
             "plan_projects": len(entries),
             "plan_projects_with_geometry": sum(1 for e in entries if e["has_geometry"]),
@@ -293,7 +315,14 @@ def main():
             "storage_m3_attributable": round(sum(attributable.values())),
             "storage_m3_shared_attribution": round(sum(shared.values())),
             "annual_flow_m3_per_year": round(sum(e["annual_flow_m3_per_year"] for e in flow_pages)),
+            "annual_flow_m3_per_year_distinct": round(sum(k[0] for k in first_flow)),
+            "annual_flow_pages": len(flow_pages),
+            "annual_flow_figures_distinct": len(first_flow),
             "volume_figures_needing_human_read": sum(len(e["unclear_volumes_m3"]) for e in entries),
+            # stored rather than typed into prose: docs/REGISTER.md cites how many
+            # non-project plan pages the undocumented check was run against
+            "plan_other_pages_scanned": (len(read_json(other_path))
+                                         if os.path.exists(other_path) else 0),
         },
         "klima_id_without_documentation": orphan_ids,
         "klima_id_only_mentioned_outside_the_project_register": elsewhere,

@@ -8,31 +8,31 @@ Rain that falls on a Copenhagen street mostly does not go to a river. It goes in
 
 | Sewer system | Catchments | Impervious area | Population equivalent |
 |---|---:|---:|---:|
-| Fælleskloakeret | 300 | 3,447 ha (81.4%) | 640,539 (90.7%) |
-| Separatkloakeret, tag- og vejvand til recip… | 127 | 612 ha (14.4%) | 24,384 (3.5%) |
-| 3-strenget separat kloaksystem med separat … | 17 | 140 ha (3.3%) | 32,407 (4.6%) |
-| Spildevandskloakeret | 270 | 22 ha (0.5%) | 8,322 (1.2%) |
-| Separatkloakeret, vejvand til recipient | 10 | 14 ha (0.3%) | 0 (0.0%) |
-| Separatkloakeretopland tilkoblet fællessyst… | 2 | 1 ha (0.0%) | 344 (0.0%) |
-| ikke oplyst | 38 | 1 ha (0.0%) | 0 (0.0%) |
+| `Fælleskloakeret` | [300](SOURCES.md#F-ac8e42dc54) | [3,447](SOURCES.md#F-a2031c6ba3) ha ([81.4](SOURCES.md#F-bbea5165b6)%) | [640,539](SOURCES.md#F-e96158be90) ([90.7](SOURCES.md#F-f5fdd79275)%) |
+| `Separatkloakeret, tag- og vejvand til recip…` | [127](SOURCES.md#F-b53210d15f) | [612](SOURCES.md#F-0c98437d0e) ha ([14.4](SOURCES.md#F-1f2aa7f751)%) | [24,384](SOURCES.md#F-efb0904c41) ([3.5](SOURCES.md#F-affed35064)%) |
+| `3-strenget separat kloaksystem med separat …` | [17](SOURCES.md#F-529ded9627) | [140](SOURCES.md#F-ec26c05e42) ha ([3.3](SOURCES.md#F-61ce1da177)%) | [32,407](SOURCES.md#F-72dd9c85d1) ([4.6](SOURCES.md#F-f7c5d47fd7)%) |
+| `Spildevandskloakeret` | [270](SOURCES.md#F-008ed6b857) | [22](SOURCES.md#F-d3abce397c) ha ([0.5](SOURCES.md#F-9e1676d012)%) | [8,322](SOURCES.md#F-b86d90b250) ([1.2](SOURCES.md#F-5bf4a8fc0d)%) |
+| `Separatkloakeret, vejvand til recipient` | [10](SOURCES.md#F-5c61c72037) | [14](SOURCES.md#F-ec4ce0bd50) ha ([0.3](SOURCES.md#F-41392b8a30)%) | [0](SOURCES.md#F-ecbdd04e4b) ([0.0](SOURCES.md#F-111102e222)%) |
+| `Separatkloakeretopland tilkoblet fællessyst…` | [2](SOURCES.md#F-f472876f7d) | [1](SOURCES.md#F-11c8095e3b) ha ([0.0](SOURCES.md#F-a3fcfaf126)%) | [344](SOURCES.md#F-c6a7a3d372) ([0.0](SOURCES.md#F-a7a9c46cfc)%) |
+| `ikke oplyst` | [38](SOURCES.md#F-8f924baf55) | [1](SOURCES.md#F-68fb85e2ef) ha ([0.0](SOURCES.md#F-2b3f89c3e7)%) | [0](SOURCES.md#F-e8b3e1bd22) ([0.0](SOURCES.md#F-563d833847)%) |
 
-**90.7% of the city's population equivalent, and 81.4% of its impervious area, sits on a combined system.** That is 3,447 hectares of roof and pavement whose runoff is, by design, mixed with sewage before it can go anywhere.
+**[90.7](SOURCES.md#F-941d310508)% of the city's population equivalent, and [81.4](SOURCES.md#F-5cdfcab925)% of its impervious area, sits on a combined system.** That is [3,447](SOURCES.md#F-8255ecde08) hectares of roof and pavement whose runoff is, by design, mixed with sewage before it can go anywhere.
 
-It is the single most consequential fact about the city's relationship with the sea, and it is not a fact about agriculture, nutrients or nitrogen. It is a plumbing decision made a century ago.
+It is the single most consequential fact about the city's relationship with the sea, and it is not a fact about agriculture, nutrients or nitrogen. It is a plumbing decision made [a century ago](SOURCES.md#F-4104622f9d).
 
 ## 2. The plan does not separate it
 
-Every catchment carries both a current sewer type and a planned one. Of the **300 combined catchments**:
+Every catchment carries both a current sewer type and a planned one. Of the **[300](SOURCES.md#F-8ca57f52c7) combined catchments**:
 
 | Planned outcome | Catchments | What it means for the sea |
 |---|---:|---|
-| Stays combined | **212** | nothing changes |
-| *Separatkloakeret opland tilkoblet fællessystemet* | **75** | separated inside the catchment — **and reconnected to the combined system.** The rain is still in the sewage pipe by the time it reaches an overflow. |
-| Genuine separation, stormwater to a recipient | **13** | the rain leaves the sewage system |
+| Stays combined | **[212](SOURCES.md#F-fbd3884100)** | nothing changes |
+| *Separatkloakeret opland tilkoblet fællessystemet* | **[75](SOURCES.md#F-d918454fef)** | separated inside the catchment — **and reconnected to the combined system.** The rain is still in the sewage pipe by the time it reaches an overflow. |
+| Genuine separation, stormwater to a recipient | **[13](SOURCES.md#F-abf07e74ca)** | the rain leaves the sewage system |
 
 The middle row is the finding, and the category's own name says it. Separating the pipes within a catchment and then joining them again upstream of the overflow changes what happens inside the block and changes nothing at the outfall.
 
-By impervious area: combined drops from 3,447 ha to 3,169 ha, but 197 ha of that goes into the reconnected category. **Net area actually leaving the combined system: about 80 ha, or 2.3%.**
+By impervious area: combined drops from [3,447](SOURCES.md#F-8255ecde08) ha to [3,169](SOURCES.md#F-8985101e3b) ha, but [197](SOURCES.md#F-0be5e6504d) ha of that goes into the reconnected category. **Net area actually leaving the combined system: about [80](SOURCES.md#F-6587c0a1ae) ha, or [2.3](SOURCES.md#F-e8b111fd57)%.**
 
 ## 3. What has actually been disconnected
 
@@ -40,13 +40,13 @@ The other route off the combined system is local infiltration — soakaways, rai
 
 | | |
 |---|---:|
-| Registered installations | 1,444 |
-| Total disconnected area | **156 ha** |
-| Of which confirmed in use | 49 ha |
-| Combined-sewered impervious area | 3,447 ha |
-| **Share disconnected** | **4.5%** (confirmed in use: 1.4%) |
+| Registered installations | [1,444](SOURCES.md#F-a136f1d960) |
+| Total disconnected area | **[156](SOURCES.md#F-7a29d6c544) ha** |
+| Of which confirmed in use | [49](SOURCES.md#F-a44a30dbbc) ha |
+| Combined-sewered impervious area | [3,447](SOURCES.md#F-8255ecde08) ha |
+| **Share disconnected** | **[4.5](SOURCES.md#F-3bd21a291a)%** (confirmed in use: [1.4](SOURCES.md#F-d7d8e65001)%) |
 
-So after however many years of the policy, between one and five per cent of the relevant area has been taken off the pipe. At the pace implied by the confirmed figure this is a multi-century programme, and nothing about that is a criticism of infiltration as a technique — it is a statement about scale.
+So after however many years of the policy, between [1.4](SOURCES.md#F-d7d8e65001)% (confirmed in use) and [4.5](SOURCES.md#F-3bd21a291a)% (registered) of the relevant area has been taken off the pipe. At the pace implied by the confirmed figure this is a [multi-century programme](SOURCES.md#F-31e4317e4a), and nothing about that is a criticism of infiltration as a technique — it is a statement about scale.
 
 ## 4. Copenhagen did build rivers — for the wrong rain
 
@@ -54,44 +54,44 @@ The cloudburst plan is not mostly pipes. It is mostly surface: streets reshaped 
 
 | Type | Segments | Length | |
 |---|---:|---:|---|
-| Skybrudsledning | 222 | 71.2 km | pipe |
-| Skybrudsveje | 230 | 70.2 km | **surface** |
-| Grønne veje | 273 | 60.8 km | **surface** |
-| mix | 115 | 41.0 km | mixed |
-| Forsinkelsesveje | 136 | 37.7 km | **surface** |
-| **Total** | **976** | **280.9 km** | |
+| Skybrudsledning | [222](SOURCES.md#F-27d08fb7c9) | [71.0](SOURCES.md#F-3fe795b2dd) km | pipe |
+| Skybrudsveje | [230](SOURCES.md#F-06eba47c23) | [70.0](SOURCES.md#F-41ab81dd36) km | **surface** |
+| Grønne veje | [273](SOURCES.md#F-d36496649c) | [60.6](SOURCES.md#F-aef2de5e0a) km | **surface** |
+| mix | [114](SOURCES.md#F-4ce26a0600) | [40.9](SOURCES.md#F-99c3f00f27) km | mixed |
+| Forsinkelsesveje | [135](SOURCES.md#F-f52a1667ad) | [37.6](SOURCES.md#F-b038445b5c) km | **surface** |
+| **Total** | **[974](SOURCES.md#F-4890c63d8a)** | **[280.0](SOURCES.md#F-35e8d8dd04) km** | |
 
-**169 km of surface conveyance against 71 km of pipe — 2.4 to 1.** The idea is not missing from Copenhagen's plan. It is the plan's dominant form.
+**[168](SOURCES.md#F-8c39a542a2) km of surface conveyance against [71](SOURCES.md#F-777b25e425) km of pipe — [2.4](SOURCES.md#F-23a50d187d) to 1.** The idea is not missing from Copenhagen's plan. It is the plan's dominant form. Lengths are those of `scripts/conveyance.py`, the one length table for this layer.
 
 ### But a skybrudsvej is sized for the rain that does not cause overflows
 
-The cloudburst plan is designed against a hundred-year event. A skybrudsvej is a route for water that has nowhere else to go — it activates when the system is already overwhelmed, a handful of times a decade.
+The cloudburst plan is designed against a [hundred-year event](SOURCES.md#F-7ae819b34b). A skybrudsvej is a route for water that has nowhere else to go — it activates when the system is already overwhelmed, [a handful of times a decade](SOURCES.md#F-0f611d6dd7).
 
-Overflows are not a hundred-year phenomenon. They happen on ordinary heavy rain, many times a year, and that rain still goes down the gully into the combined pipe exactly as it always did. The surface network was built for the flood risk to the city, which is a different problem with a different design storm.
+Overflows are not a [hundred-year phenomenon](SOURCES.md#F-0a502f5254). They happen on ordinary heavy rain, many times a year, and that rain still goes down the gully into the combined pipe exactly as it always did. The surface network was built for the flood risk to the city, which is a different problem with a different design storm.
 
-The everyday-rain component is the green roads and the infiltration — 61 km and 156 ha respectively — against 3,447 ha that needs disconnecting.
+The everyday-rain component is the green roads and the infiltration — [61](SOURCES.md#F-aef2de5e0a) km and [156](SOURCES.md#F-7a29d6c544) ha respectively — against [3,447](SOURCES.md#F-8255ecde08) ha that needs disconnecting.
 
-Delivery, on the city's own expected-in-service dates: **56 km by the end of 2025**, 149 km scheduled through 2038, and 76 km with no date at all.
+Delivery, on the city's own expected-in-service dates: **[56](SOURCES.md#F-99886be938) km by the end of [2025](SOURCES.md#F-a05cfb5104)**, [148](SOURCES.md#F-ba02c2ffe5) km scheduled through [2038](SOURCES.md#F-1ab1337222), and [76](SOURCES.md#F-3686ef9ef0) km with no date at all.
 
 ## 5. Why a representative sample cannot measure this
 
-The national register holds **19,665 rain-dependent discharge points** across 97 municipalities (680 of them inside the Copenhagen clip used elsewhere here). Only **1,328** of them carry a recorded basin volume; the other 18,337 have the field empty. Among those that do have a number, the distribution is extreme:
+The national register holds **[19,665](SOURCES.md#F-ca585ebec0) rain-dependent discharge points** across [97](SOURCES.md#F-05fef0021b) municipalities ([680](SOURCES.md#F-1b6f67846e) of them inside the Copenhagen clip used elsewhere here). Only **[1,328](SOURCES.md#F-66b55fdb81)** of them carry a recorded basin volume; the other [18,337](SOURCES.md#F-9f877a5e0e) have the field empty. Among those that do have a number, the distribution is extreme:
 
 | Share of structures | Count | Share of stored volume |
 |---|---:|---:|
-| top 1% | 13 | **24.0%** |
-| top 5% | 66 | **50.5%** |
-| top 10% | 132 | **64.1%** |
-| top 20% | 265 | **79.2%** |
-| top 50% | 664 | **96.2%** |
+| top [1](SOURCES.md#F-bccfed7608)% | [13](SOURCES.md#F-aee8a1ff8a) | **[24.0](SOURCES.md#F-c2c8fe6829)%** |
+| top [5](SOURCES.md#F-23073d11f2)% | [66](SOURCES.md#F-87c76546cd) | **[50.5](SOURCES.md#F-590dca0120)%** |
+| top [10](SOURCES.md#F-64b4f7a66c)% | [132](SOURCES.md#F-a4543f4d02) | **[64.1](SOURCES.md#F-b1f79aedcd)%** |
+| top [20](SOURCES.md#F-bd946b7004)% | [265](SOURCES.md#F-5ac8a74857) | **[79.2](SOURCES.md#F-3c8c5cb5e7)%** |
+| top [50](SOURCES.md#F-4dac00119b)% | [664](SOURCES.md#F-245830e8ff) | **[96.2](SOURCES.md#F-1a7b824fe9)%** |
 
-**13 structures hold 24% of the recorded volume.** The largest is 42,000 m³; the median is 250 m³. That is a heavy tail, and heavy tails break sampling.
+**[13](SOURCES.md#F-aee8a1ff8a) structures hold [24](SOURCES.md#F-c2c8fe6829)% of the recorded volume.** The largest is [42,000](SOURCES.md#F-88d0066948) m³; the median is [250](SOURCES.md#F-051c262d76) m³. That is a heavy tail, and heavy tails break sampling.
 
-The national pollutant concentrations — the typetal applied to all 19,665 points — come from **6 combined-overflow stations and 5 stormwater stations**, in catchments *deliberately chosen* to represent households and residential areas, and explicitly excluding industrial areas and heavily trafficked roads. The same report notes the highest median metal concentrations in sludge from basins, and the typetal explicitly cover only discharges without prior settling.
+The national pollutant concentrations — the typetal, which Miljøstyrelsen applies to [19,665](SOURCES.md#F-5b58827703) discharge points — come from **[6](SOURCES.md#F-0019d1e160) combined-overflow stations and [5](SOURCES.md#F-c376e1041d) stormwater stations**, in catchments *deliberately chosen* to represent households and residential areas, and explicitly excluding industrial areas and heavily trafficked roads. The same report notes the highest median metal concentrations in sludge from basins, and the typetal explicitly cover only discharges without prior settling.
 
 Put those together. In a heavy-tailed distribution the mean is set by the tail, so an estimate of the mean is an estimate of the tail. This sampling design removed the tail on purpose, then used the remainder to estimate the mean, then multiplied it by every discharge point in the country.
 
-The same structure is well known in the ocean-plastic literature, where a small minority of rivers carries the large majority of the input, and any uniform per-river assumption is wrong by an order of magnitude. There is no reason a sewer network should be more evenly behaved than a river network, and this register says it is not.
+The same structure is well known in the ocean-plastic literature, where a small minority of rivers carries the large majority of the input, and any uniform per-river assumption is wrong by [an order of magnitude](SOURCES.md#F-b3c077046e). There is no reason a sewer network should be more evenly behaved than a river network, and this register says it is not.
 
 ## 6. How fast could any of this move?
 
@@ -99,18 +99,18 @@ The concentration in section 5 cuts both ways. It is what makes the measurement 
 
 | | Timescale | Why |
 |---|---|---|
-| Measure the tail | **weeks** | Flow-proportional samplers on the largest 13 structures. That is videnniveau 5, the best method in Miljøstyrelsen's own hierarchy, at 30% uncertainty instead of 135%. It has never been done because nobody is required to. |
+| Measure the tail | **weeks** | Flow-proportional samplers on the largest [13](SOURCES.md#F-aee8a1ff8a) structures. That is videnniveau [5](SOURCES.md#F-3a70a9dc3f), the best method in Miljøstyrelsen's own hierarchy, at [30](SOURCES.md#F-00b2f8d525)% uncertainty instead of [135](SOURCES.md#F-16bd766a2e)% for a simple mass balance. It has never been done because nobody is required to. |
 | Publish event-level data | **weeks** | The event counts are already recorded in PULS. The flow rates are not recorded at all, which is a decision, not a limit. |
 | Empty basins before the season | **months** | Accumulated sludge is exported when flow scours it. Removing it in advance is an operating procedure, not construction. |
 | Intercept fat at source | **months** | Grease separators are already a legal requirement for food businesses. Enforcement is regulatory. |
-| Disconnect roofs at scale | **years to decades** | 1–5% done. |
-| Genuinely separate the network | **decades** | Nine catchments of three hundred are planned for it. |
-| Deliver the surface network | **to 2038** | on the city's own dates |
+| Disconnect roofs at scale | **years to decades** | [1.4](SOURCES.md#F-d7d8e65001)–[4.5](SOURCES.md#F-3bd21a291a)% done. |
+| Genuinely separate the network | **decades** | [13](SOURCES.md#F-abf07e74ca) of the [300](SOURCES.md#F-8ca57f52c7) combined catchments are planned for it. |
+| Deliver the surface network | **to [2038](SOURCES.md#F-1ab1337222)** | on the city's own dates |
 
 So the honest answer to *how fast* is that it splits in two. **The measurement problem could be fixed in a season**, and until it is, nobody can say which of the slow interventions is worth the money. **The infrastructure problem cannot be fixed quickly by anyone**, and the plan on the books does not attempt it — it holds water back rather than routing it away.
 
-Which is the case for doing the cheap thing first. Instrument the tail, find out whether a handful of structures dominates the load the way a handful dominates the volume, and the argument about what to build next becomes an argument with evidence in it.
+Which is the case for doing the cheap thing first. Instrument the tail, find out whether [a handful of structures dominates the load the way a handful dominates the volume](SOURCES.md#F-8b6f4b207a), and the argument about what to build next becomes an argument with evidence in it.
 
 ---
 
-*Sources: `sp_kloakoplande`, `lar_registreringer` and `skp_veje_tunneller_kk` from Københavns Kommune's WFS; `vp3_basis_2019_punkt_rbu_udl` from Miljøgis. Typetal provenance in `data/manual/monitoring.json`. Lengths are computed from the geometries; areas and volumes are the values the publishers recorded.*
+*Sources: `sp_kloakoplande`, `lar_registreringer` and `skp_veje_tunneller_kk` from Københavns Kommune's WFS; `vp3_basis_2019_punkt_rbu_udl` from Miljøgis; the national register `punkt_rbu_udl`. Typetal and knowledge-level provenance in `data/manual/monitoring.json`. Lengths are computed from the geometries by `scripts/conveyance.py`; areas and volumes are the values the publishers recorded.*

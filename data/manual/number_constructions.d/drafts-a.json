@@ -1,0 +1,830 @@
+{
+ "_what": "Fork drafts-a: construction declarations for the hypothesis drafts' facts.",
+ "constructions": [
+  {
+   "id": "K-DRAFTSA-TRIAGE",
+   "title": "Counts over the hypothesis triage",
+   "covers": {
+    "file": "data/derived/triage.json",
+    "fields": {
+     "n_triaged": {
+      "kind": "counted",
+      "is": "Hypotheses the triage classifies that the hypothesis register also holds: one row of `scripts/pages/triage_rows.py` per ID, counted only if the ID is in `data/derived/hypotheses.json`."
+     },
+     "n_with_entry": {
+      "kind": "counted",
+      "is": "Register IDs with a page of their own under `docs/hypodrafts/` or `docs/openproblems/`, found by file name."
+     },
+     "n_groups": {
+      "kind": "counted",
+      "is": "Groups in the hypothesis register."
+     },
+     "classes.*.n": {
+      "kind": "counted",
+      "is": "Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class."
+     },
+     "groups.*.n": {
+      "kind": "counted",
+      "is": "Triaged hypotheses in one register group, by the group letter the triage row carries."
+     },
+     "clusters.*.n": {
+      "kind": "counted",
+      "is": "Hypotheses named in one of the triage's clusters of blockers, as listed in `CLUSTERS`."
+     },
+     "groups.*.testable": {
+      "kind": "counted",
+      "is": "Triaged hypotheses of one group in the class `testable`."
+     },
+     "clusters.*.testable": {
+      "kind": "counted",
+      "is": "Hypotheses of one cluster in the class `testable`."
+     },
+     "groups.*.fetch": {
+      "kind": "counted",
+      "is": "Triaged hypotheses of one group in the class `fetch`."
+     },
+     "clusters.*.fetch": {
+      "kind": "counted",
+      "is": "Hypotheses of one cluster in the class `fetch`."
+     },
+     "groups.*.resolution": {
+      "kind": "counted",
+      "is": "Triaged hypotheses of one group in the class `resolution`."
+     },
+     "clusters.*.resolution": {
+      "kind": "counted",
+      "is": "Hypotheses of one cluster in the class `resolution`."
+     },
+     "groups.*.unscoreable": {
+      "kind": "counted",
+      "is": "Triaged hypotheses of one group in the class `unscoreable`."
+     },
+     "clusters.*.unscoreable": {
+      "kind": "counted",
+      "is": "Hypotheses of one cluster in the class `unscoreable`."
+     },
+     "groups.*.experiment": {
+      "kind": "counted",
+      "is": "Triaged hypotheses of one group in the class `experiment`."
+     },
+     "clusters.*.experiment": {
+      "kind": "counted",
+      "is": "Hypotheses of one cluster in the class `experiment`."
+     },
+     "groups.*.unestablished": {
+      "kind": "counted",
+      "is": "Triaged hypotheses of one group in the class `unestablished`."
+     },
+     "clusters.*.unestablished": {
+      "kind": "counted",
+      "is": "Hypotheses of one cluster in the class `unestablished`."
+     },
+     "n_register": {
+      "kind": "counted",
+      "is": "Hypotheses the register holds: entries in the `hypotheses` list of `data/derived/hypotheses.json`."
+     }
+    }
+   },
+   "what": "Counts the rows of the hypothesis triage by class, by register group and by the named clusters of blockers, against the hypothesis register.",
+   "model": "Each triage row puts one hypothesis ID in one class. A row whose ID the register does not hold is an orphan: named in `orphans`, counted nowhere. Class and group counts are over the rows that remain; a cluster count is over its listed members, whatever the register says, and the script refuses a cluster naming an untriaged ID.",
+   "assumptions": [
+    "The classes in the triage rows are the classifications the page argues from; they are judgements, not measurements."
+   ],
+   "justified": [
+    {
+     "text": "Every count is a count over the same rows the page prints, so a table cell and a count in the prose can never disagree.",
+     "ref": "scripts/triage_counts.py"
+    },
+    {
+     "text": "IDs are checked against the register the page links to, so a hypothesis the register drops stops being counted instead of lingering in a denominator.",
+     "ref": "scripts/triage_counts.py"
+    }
+   ],
+   "gaps": [
+    "The classes themselves are one author's judgement; the counts are exact counts of those judgements and nothing more."
+   ],
+   "void_if": [
+    "the triage rows are edited without rerunning the count",
+    "the register renumbers hypotheses the rows still use"
+   ],
+   "licenses": "How many hypotheses the triage put in each class, group and cluster.",
+   "not_licensed": "That a hypothesis in a class could or could not be tested by anyone else, or anything about the hypotheses' truth.",
+   "watches": [
+    "scripts/triage_counts.py",
+    "scripts/pages/triage_rows.py"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/triage_counts.py": "bb341ecbe2888cc4",
+     "scripts/pages/triage_rows.py": "4171a429b080c973"
+    }
+   }
+  },
+  {
+   "id": "K-DRAFTSA-CTD",
+   "title": "CTD facts cited by the hypothesis drafts",
+   "covers": {
+    "file": "data/derived/hypodraft_ctd.json",
+    "fields": {
+     "c1.min_levels": {
+      "kind": "stipulated",
+      "is": "The least number of distinct depths of temperature, and of salinity, for a station-day to count as a density profile."
+     },
+     "c1.near_m": {
+      "kind": "stipulated",
+      "is": "How close, in metres, the deepest oxygen must be to the deepest temperature."
+     },
+     "c1.deep_m": {
+      "kind": "stipulated",
+      "is": "The depth, in metres, the deepest temperature must reach for a profile to count as reaching deep water."
+     },
+     "c1.station_days_ts": {
+      "kind": "counted",
+      "is": "Station-days - one `ObservationsStedNr` on one `Dato` - with at least one temperature and one salinity depth."
+     },
+     "c1.with_levels": {
+      "kind": "counted",
+      "is": "Of those, station-days with at least `min_levels` distinct depths of temperature and of salinity."
+     },
+     "c1.with_levels_and_oxygen": {
+      "kind": "counted",
+      "is": "Of those, station-days with at least one oxygen value in mg/l."
+     },
+     "c1.with_levels_oxygen_bottom": {
+      "kind": "counted",
+      "is": "Of those, station-days that `maaledybde.csv.gz` gives a bottom depth for, joined on station and date."
+     },
+     "c1.with_levels_oxygen_bottom_deep": {
+      "kind": "counted",
+      "is": "Of those, station-days whose deepest temperature reaches `deep_m`."
+     },
+     "c1.oxygen_near_deepest_t": {
+      "kind": "counted",
+      "is": "Station-days with temperature and salinity whose deepest oxygen lies within `near_m` of the deepest temperature or below it."
+     },
+     "c1.stations": {
+      "kind": "counted",
+      "is": "Distinct stations among station-days with temperature and salinity."
+     },
+     "c1.first_year": {
+      "kind": "measured",
+      "is": "The earliest year among those station-days."
+     },
+     "c1.last_year": {
+      "kind": "measured",
+      "is": "The latest year among those station-days."
+     },
+     "c1.reopened_keys": {
+      "kind": "counted",
+      "is": "Station-days whose rows were not contiguous in the file; each later run was counted as a station-day of its own."
+     },
+     "c1.maaledybde_station_days": {
+      "kind": "counted",
+      "is": "Distinct station-days in `maaledybde.csv.gz`."
+     },
+     "c1.maaledybde_with_bottom": {
+      "kind": "counted",
+      "is": "Of those, station-days with a parseable `BundDybde_m`."
+     },
+     "c1.unknown_probe_rows.*": {
+      "kind": "counted",
+      "is": "Rows of one parameter whose `SondeNavn` begins with the unknown-probe code `999`."
+     },
+     "correction.rows": {
+      "kind": "counted",
+      "is": "CTD rows with the header's number of fields."
+     },
+     "correction.factor_one": {
+      "kind": "counted",
+      "is": "Of those, rows whose `KorrektionsFaktor` parses as exactly one."
+     },
+     "correction.factor_other": {
+      "kind": "counted",
+      "is": "Rows whose `KorrektionsFaktor` is present and not one."
+     },
+     "correction.factor_blank": {
+      "kind": "counted",
+      "is": "Rows with no `KorrektionsFaktor`."
+     },
+     "correction.rows_with_both_results": {
+      "kind": "counted",
+      "is": "Rows carrying both `OriginalResultat` and `KorrigeretResultat`."
+     },
+     "correction.original_differs": {
+      "kind": "counted",
+      "is": "Of those, rows whose two results differ as numbers."
+     },
+     "h2s.rows": {
+      "kind": "counted",
+      "is": "CTD rows of parameter `Dihydrogensulfid`."
+     },
+     "h2s.stations": {
+      "kind": "counted",
+      "is": "Stations with any such row."
+     },
+     "h2s.top_station_rows": {
+      "kind": "counted",
+      "is": "Rows at the station with the most."
+     },
+     "fdom.rows": {
+      "kind": "counted",
+      "is": "CTD rows of parameter `FDOM` whose `Dato` is an eight-character date."
+     },
+     "fdom.first_year": {
+      "kind": "measured",
+      "is": "The earliest year of an `FDOM` row."
+     },
+     "fdom.last_year": {
+      "kind": "measured",
+      "is": "The latest year of an `FDOM` row."
+     },
+     "temperature_decimals.rows": {
+      "kind": "counted",
+      "is": "Temperature rows."
+     },
+     "temperature_decimals.at_most_one_decimal": {
+      "kind": "counted",
+      "is": "Of those, rows whose original result is written with at most one decimal."
+     }
+    }
+   },
+   "what": "One streaming pass over the whole CTD extract that re-derives the counts the hypothesis drafts cite: density-profile station-days for C1, the correction factor, the hydrogen-sulphide record, the FDOM span and the unknown-probe rows.",
+   "model": "Rows are grouped into station-days by a flush on key change, since the extract is written cast by cast; a key that reopens after its flush is counted separately in `reopened_keys`. Depths are the parsed `Dybde (m)`; oxygen counts only in mg/l. The bottom-depth join is on station and date against `maaledybde.csv.gz`.",
+   "assumptions": [
+    "A station-day - one station on one date - is one cast or a set of casts that belong together.",
+    "Rows of one station-day are contiguous in the file; `reopened_keys` measures how far that fails."
+   ],
+   "justified": [
+    {
+     "text": "The whole file is read, not a sample, so the counts are exact for the extract as held.",
+     "ref": "scripts/hypodraft_ctd.py"
+    },
+    {
+     "text": "The grouping is a flush over contiguous rows, and the rows that break contiguity are counted rather than silently merged or dropped.",
+     "ref": "scripts/hypodraft_ctd.py"
+    }
+   ],
+   "gaps": [
+    "A station-day can hold more than one cast; the depth-level counts pool them.",
+    "The depth threshold for a profile reaching deep water is the deepest temperature, not a recorded bottom depth."
+   ],
+   "void_if": [
+    "the extract is refetched and the pass is not rerun",
+    "rows of one station-day are scattered through the file far more than `reopened_keys` shows"
+   ],
+   "licenses": "How much of the held CTD extract has the structure a density-profile analysis needs, and the named properties of its correction, sulphide and FDOM records.",
+   "not_licensed": "Anything about the water itself.",
+   "watches": [
+    "scripts/hypodraft_ctd.py",
+    "data/raw/oda/ctd.csv.gz",
+    "data/raw/oda/maaledybde.csv.gz"
+   ],
+   "confirmed": {
+    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/hypodraft_ctd.py": "2a3931331a0419db",
+     "data/raw/oda/ctd.csv.gz": "99004e1b7bcc8b5b",
+     "data/raw/oda/maaledybde.csv.gz": "bcdb9d24722798a1"
+    }
+   }
+  },
+  {
+   "id": "K-DRAFTSA-FACTS",
+   "title": "File facts cited by the hypothesis drafts",
+   "covers": {
+    "file": "data/derived/hypodraft_facts.json",
+    "fields": {
+     "weather.n_years": {
+      "kind": "counted",
+      "is": "Calendar years with any hourly value in the held wind files `data/raw/weather/wind_*.json`."
+     },
+     "maaledybde.rows": {
+      "kind": "counted",
+      "is": "Records in `maaledybde.csv.gz`, one per visit and depth record."
+     },
+     "maaledybde.stations_with_bottom": {
+      "kind": "counted",
+      "is": "Stations with at least one parseable `BundDybde_m`."
+     },
+     "lys.rows": {
+      "kind": "counted",
+      "is": "Records in `lys.csv.gz`."
+     },
+     "lys.stations_with_coordinates": {
+      "kind": "counted",
+      "is": "Stations with a parseable position in `lys.csv.gz`."
+     },
+     "kemi.orthophosphate_stations": {
+      "kind": "counted",
+      "is": "Stations in the held water-chemistry extract with any `Ortho-phosphat-P` row."
+     },
+     "seabed.polygons": {
+      "kind": "counted",
+      "is": "Polygons in the seabed sediment layer of `seabed_sediment_dk.gpkg`."
+     },
+     "seabed.mapping_programmes": {
+      "kind": "counted",
+      "is": "Distinct values of its mapping-programme field `kortlaegni`."
+     },
+     "seabed.scale_min": {
+      "kind": "measured",
+      "is": "The smallest map-scale denominator in its `scale` field."
+     },
+     "seabed.scale_max": {
+      "kind": "measured",
+      "is": "The largest map-scale denominator in its `scale` field."
+     },
+     "areas.n": {
+      "kind": "counted",
+      "is": "Areas in the project's area partition, `docs/data/areas/areas.json`."
+     },
+     "series.station_months": {
+      "kind": "counted",
+      "is": "Values in the monthly station series, summed over its variables: one per station, month and variable."
+     },
+     "series.stations": {
+      "kind": "counted",
+      "is": "Stations in the monthly station series."
+     },
+     "series.variables": {
+      "kind": "counted",
+      "is": "Variables in the monthly station series."
+     },
+     "enums.probe_ids_known": {
+      "kind": "counted",
+      "is": "Distinct `SondeNr` values in the whole CTD extract other than the unknown-probe code."
+     },
+     "enums.supplier_values": {
+      "kind": "counted",
+      "is": "Distinct `DataleverandørNavn` values in the whole CTD extract."
+     },
+     "enums.technical_instruction_values": {
+      "kind": "counted",
+      "is": "Distinct `TekniskAnvisningAnvendt` values in the whole CTD extract."
+     },
+     "hazardous.total": {
+      "kind": "counted",
+      "is": "Stations in the national river-basin-specific-pollutant status network, `sw_mfs_tilstand.geojson`."
+     },
+     "hazardous.sediment": {
+      "kind": "counted",
+      "is": "Of those, stations flagged as measuring sediment (`maaltsedim`)."
+     },
+     "hazardous.lake": {
+      "kind": "counted",
+      "is": "Of those, stations on a lake water body (`DKLAKE`)."
+     },
+     "hazardous.river": {
+      "kind": "counted",
+      "is": "Of those, stations on a river water body (`DKRIVER`)."
+     },
+     "hazardous.coast": {
+      "kind": "counted",
+      "is": "Of those, stations on a coastal water body (`DKCOAST`)."
+     },
+     "sign_flips.station_months": {
+      "kind": "counted",
+      "is": "Station-months flagged as a batch sign flip in `docs/data/areas/flags.json`."
+     },
+     "sign_flips.stations": {
+      "kind": "counted",
+      "is": "Distinct stations among them."
+     },
+     "series_by_variable.months": {
+      "kind": "counted",
+      "is": "Months spanned by the monthly station series, from its descriptor."
+     },
+     "series_by_variable.year0": {
+      "kind": "measured",
+      "is": "The first year of the monthly station series."
+     },
+     "series_by_variable.bin_bytes": {
+      "kind": "measured",
+      "is": "Size in bytes of `stations_series.bin`."
+     },
+     "series_by_variable.by_variable.*.n": {
+      "kind": "counted",
+      "is": "Values of one variable in the monthly station series: one per station and month."
+     },
+     "series_by_variable.by_variable.*.stations": {
+      "kind": "counted",
+      "is": "Distinct stations with any value of that variable, read from the binary station-index array."
+     },
+     "stations_register.rows": {
+      "kind": "counted",
+      "is": "Records in the ODA station register `stations.csv`."
+     },
+     "stations_register.stations": {
+      "kind": "counted",
+      "is": "Distinct `ObservationsstedNr` in it."
+     },
+     "stations_register.with_transect_end": {
+      "kind": "counted",
+      "is": "Stations with a transect end coordinate."
+     },
+     "layers.hovedoplande_features": {
+      "kind": "counted",
+      "is": "Features in the national main-catchment layer `hovedoplande.geojson`."
+     },
+     "layers.ctd_bytes": {
+      "kind": "measured",
+      "is": "Size in bytes of `ctd.csv.gz` as held."
+     },
+     "layers.ctd_columns": {
+      "kind": "counted",
+      "is": "Fields in the header of `ctd.csv.gz`."
+     },
+     "stations_register.first_date": {
+      "kind": "measured",
+      "is": "The earliest `StartDato` or `SlutDato` in the station register."
+     },
+     "stations_register.last_date": {
+      "kind": "measured",
+      "is": "The latest `StartDato` or `SlutDato` in the station register."
+     }
+    }
+   },
+   "what": "Re-derives, from the files named, the row counts, station counts, spans and layer facts the hypothesis drafts once typed from one-off checks.",
+   "model": "Each fact is one count or extreme over one held file, computed at build time: rows read with the declared delimiter and encoding, distinct values by exact string, layer features by parsing the file.",
+   "assumptions": [
+    "The files named are the ones the drafts' statements are about."
+   ],
+   "justified": [
+    {
+     "text": "Every fact is recomputed from the file each build, so it follows the file when the file is refetched.",
+     "ref": "scripts/hypodraft_facts.py"
+    }
+   ],
+   "gaps": [
+    "Distinct-value counts compare strings exactly, so two spellings of one supplier count as two."
+   ],
+   "void_if": [
+    "a file is refetched and the script is not rerun"
+   ],
+   "licenses": "Statements about the held files themselves.",
+   "not_licensed": "Statements about the water, the seabed or the monitoring programme beyond what the files hold.",
+   "watches": [
+    "scripts/hypodraft_facts.py",
+    "scripts/enums.py"
+   ],
+   "confirmed": {
+    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/hypodraft_facts.py": "f2f1381a58c0d275",
+     "scripts/enums.py": "e21dcf1b1c5748b5"
+    }
+   }
+  },
+  {
+   "id": "K-DRAFTSA-ENUMS",
+   "title": "Per-value row counts of the ODA extracts",
+   "covers": {
+    "file": "data/derived/enums.json",
+    "fields": {
+     "ctd.categorical.Parameter.*": {
+      "kind": "counted",
+      "is": "Records of the CTD extract carrying one `Parameter` value, over the whole file."
+     },
+     "ctd.categorical.SondeNr.*": {
+      "kind": "counted",
+      "is": "Records of the CTD extract carrying one `SondeNr` value, over the whole file."
+     },
+     "kemi.categorical.Parameter.*": {
+      "kind": "counted",
+      "is": "Records of the water-chemistry extract carrying one `Parameter` value, over the whole file."
+     }
+    }
+   },
+   "what": "The count of records per value of each categorical column, from the enumeration pass over each extract.",
+   "model": "`scripts/enums.py` streams each extract with the declared format and counts every value of a column while the column stays categorical; the whole count is written for each value.",
+   "assumptions": [
+    "One record is one parameter reading."
+   ],
+   "justified": [
+    {
+     "text": "Counts are over the whole file, per exact value.",
+     "ref": "scripts/enums.py:139"
+    }
+   ],
+   "gaps": [
+    "Records split by a broken multi-line note field are counted as records; they carry no parameter, so the per-value counts are unaffected but the total is not."
+   ],
+   "void_if": [
+    "an extract is refetched and the enumeration is not rerun"
+   ],
+   "licenses": "How many records of the held extracts carry a given value.",
+   "not_licensed": "How many samples, casts or stations that is.",
+   "watches": [
+    "scripts/enums.py"
+   ],
+   "confirmed": {
+    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/enums.py": "e21dcf1b1c5748b5"
+    }
+   }
+  },
+  {
+   "id": "K-DRAFTSA-OUTFALLS",
+   "title": "Outfall counts from the national wastewater layers",
+   "covers": {
+    "file": "data/derived/outfalls.json",
+    "fields": {
+     "layers.separate_stormwater.n": {
+      "kind": "counted",
+      "is": "Features in the separate-stormwater outfall layer `Regnvandssepareredeudlbm3_1.js` as fetched."
+     },
+     "layers.separate_stormwater.totals.Vand_(m3/ aar).n": {
+      "kind": "counted",
+      "is": "Features of the separate-stormwater layer whose annual water volume field `Vand_(m3/ aar)` holds a number - a number, or a string that parses as one once spaces are dropped and a decimal comma read as a point. A zero counts; an empty or unparseable field does not."
+     },
+     "layers.separate_stormwater.totals.Vand_(m3/ aar).sum": {
+      "kind": "computed",
+      "is": "The sum, in m3 per year, of the annual water volume over exactly the features counted in the .n beside it - not over every outfall in the layer."
+     }
+    }
+   },
+   "what": "Counts and totals of the outfall layers fetched from spildevandsdata.dk.",
+   "model": "`scripts/fetch_spildevand.py` fetches each layer and counts its features. For each property it coerces the values to numbers (`numeric()`), skipping empty and unparseable ones, and keeps a total - count, sum, median - when enough of the features hold a number (the threshold is a share set in the code) and at least one is non-zero.",
+   "assumptions": [
+    "One feature is one outfall."
+   ],
+   "justified": [
+    {
+     "text": "The count is of the fetched layer's features, recorded with its file name.",
+     "ref": "scripts/fetch_spildevand.py"
+    },
+    {
+     "text": "The volume total is summed only over features that hold a number, and the count of those is stored beside it, so a page can say how many outfalls a total covers.",
+     "ref": "scripts/fetch_spildevand.py"
+    }
+   ],
+   "gaps": [
+    "Nothing checks whether one physical outfall appears as more than one feature.",
+    "A zero volume counts as a reported value. Whether a zero means no discharge or an unfilled field is not recorded in the layer.",
+    "Outfalls with no volume are left out of the sum, not estimated, so the sum understates the layer's total by whatever those outfalls discharge."
+   ],
+   "void_if": [
+    "the layer is refetched and the script is not rerun"
+   ],
+   "licenses": "How many separate-stormwater outfalls the national layer lists, how many carry an annual volume, and what those volumes add to.",
+   "not_licensed": "The volume of the outfalls that report none, or any event-level discharge.",
+   "watches": [
+    "scripts/fetch_spildevand.py"
+   ],
+   "confirmed": {
+    "by": "Claude (declared the separate-stormwater volume total and its count after reading numeric() and the totals loop in fetch_spildevand.py; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/fetch_spildevand.py": "2ce25d3217ca9080"
+    }
+   }
+  },
+  {
+   "id": "K-DRAFTSA-LIGHT",
+   "title": "Secchi pairing and censoring from the light analysis",
+   "covers": {
+    "file": "data/derived/light.json",
+    "fields": {
+     "secchi.n_paired": {
+      "kind": "counted",
+      "is": "Records in `maaledybde.csv.gz` with a positive `SigtDybde_m`, a positive `BundDybde_m` and a dated `StartDato`."
+     },
+     "secchi.bands.*.at_bed_pct": {
+      "kind": "share",
+      "is": "Of the paired readings in one bottom-depth band, the percentage whose Secchi depth reaches the recorded bottom depth."
+     },
+     "secchi.bands.*.to": {
+      "kind": "stipulated",
+      "is": "The upper bottom depth, in metres, of one band."
+     }
+    }
+   },
+   "what": "The Secchi half of the light analysis: how many readings pair with a bottom depth, and how often the disc reached the bed, by depth band.",
+   "model": "`scripts/light.py` pairs each Secchi reading $s$ with the bottom depth $b$ recorded on the same record and counts it as at the bed when $s \\ge b - 0.01$ m; per band of $b$ it reports that share, dropping bands with too few readings. The `SigtTilBund` flag is tallied beside it but not used in the share.",
+   "assumptions": [
+    "A Secchi depth equal to the recorded bottom depth means the disc was on the bed, not that the water happened to be exactly that clear."
+   ],
+   "justified": [
+    {
+     "text": "The pairing and the per-band share are computed from the visit records themselves, by comparing the two depths each record carries.",
+     "ref": "scripts/light.py:136"
+    }
+   ],
+   "gaps": [
+    "The share is not checked against the supplier's own `SigtTilBund` flag, so a bottom depth recorded wrongly moves a reading in or out of the censored share unnoticed."
+   ],
+   "void_if": [
+    "the depth register is refetched and the script is not rerun"
+   ],
+   "licenses": "How often shallow-water Secchi readings are censored at the bed.",
+   "not_licensed": "The true water clarity where the disc reached the bed.",
+   "watches": [
+    "scripts/light.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/light.py": "e531a8f798693bf5"
+    }
+   }
+  },
+  {
+   "id": "K-DRAFTSA-CURRENTS",
+   "title": "Held circulation field against published peak speeds",
+   "covers": {
+    "file": "data/derived/currents_validate.json",
+    "fields": {
+     "points.*.underestimate_factor": {
+      "kind": "computed",
+      "is": "The published peak current speed at a named point divided by the largest speed the held circulation field reaches there."
+     }
+    }
+   },
+   "what": "Checks the held circulation field's speeds against published peak speeds at named points.",
+   "model": "`published_peak_ms / max_ms`, rounded, per point with a published peak.",
+   "assumptions": [
+    "The published peak and the field's largest speed describe the same kind of extreme."
+   ],
+   "justified": [
+    {
+     "text": "The ratio is formed from the field's own maximum at the point and the published value recorded beside it.",
+     "ref": "scripts/currents.py:217"
+    }
+   ],
+   "gaps": [
+    "The published peaks are typed into the script, not read from a pinned document."
+   ],
+   "void_if": [
+    "the field is refetched and the script is not rerun"
+   ],
+   "licenses": "That the held field is slower than published peaks at those points, by roughly that factor.",
+   "not_licensed": "The true current speed anywhere.",
+   "watches": [
+    "scripts/currents.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/currents.py": "5e180c254909fc16"
+    }
+   }
+  },
+  {
+   "id": "K-DRAFTSA-B1",
+   "title": "Local counts behind the combined-overflow draft",
+   "covers": {
+    "file": "data/derived/hypodraft_b1.json",
+    "fields": {
+     "sites": {
+      "kind": "counted",
+      "is": "Features of the bathing-site layer `badevand.geojson`."
+     },
+     "cso.n": {
+      "kind": "counted",
+      "is": "Features of the combined-overflow layer `combined_overflow.geojson`."
+     },
+     "cso.names_unique": {
+      "kind": "counted",
+      "is": "Distinct `Navn` values in it."
+     },
+     "cso.spills_null": {
+      "kind": "counted",
+      "is": "Of its features, those with no `Antal overløb`."
+     },
+     "cso.volume_null": {
+      "kind": "counted",
+      "is": "Of its features, those with no annual volume."
+     },
+     "cso.volume_zero": {
+      "kind": "counted",
+      "is": "Of its features, those whose annual volume is zero."
+     },
+     "cso.type.*": {
+      "kind": "counted",
+      "is": "Its features of one `Bygværkstype`."
+     },
+     "rbu.n": {
+      "kind": "counted",
+      "is": "Points of the national overflow-structure register `punkt_rbu_udl.geojson`."
+     },
+     "rbu.vol_sb_nonnull": {
+      "kind": "counted",
+      "is": "Register points with a `vol_sb`."
+     },
+     "rbu.vol_sb_zero": {
+      "kind": "counted",
+      "is": "Register points whose `vol_sb` is zero."
+     },
+     "rbu.vol_fbas_nonnull": {
+      "kind": "counted",
+      "is": "Register points with a `vol_fbas`."
+     },
+     "rbu.vol_fbas_zero": {
+      "kind": "counted",
+      "is": "Register points whose `vol_fbas` is zero."
+     },
+     "rbu.type.*": {
+      "kind": "counted",
+      "is": "Register points of one `bgv_type`."
+     },
+     "join.cso_names": {
+      "kind": "counted",
+      "is": "Distinct overflow names."
+     },
+     "join.matched": {
+      "kind": "counted",
+      "is": "Of those, names equal to some register `pkt_navn`, exactly as strings."
+     },
+     "critical_depth_mm.n": {
+      "kind": "counted",
+      "is": "Overflow features whose name matches exactly one register point, with positive storage and positive reduced area."
+     },
+     "critical_depth_mm.p10": {
+      "kind": "computed",
+      "is": "Tenth percentile, by position, of their critical rainfall depth in mm."
+     },
+     "critical_depth_mm.median": {
+      "kind": "computed",
+      "is": "Median, by position, of the same."
+     },
+     "critical_depth_mm.p90": {
+      "kind": "computed",
+      "is": "Ninetieth percentile, by position, of the same."
+     },
+     "critical_depth_mm.max": {
+      "kind": "computed",
+      "is": "The largest of the same."
+     },
+     "nearest.combined": {
+      "kind": "counted",
+      "is": "Bathing sites whose nearest register point of a combined or separate type is combined."
+     },
+     "nearest.separate": {
+      "kind": "counted",
+      "is": "Bathing sites whose nearest such point is separate."
+     },
+     "nearest.median_km": {
+      "kind": "computed",
+      "is": "Median distance, by position, from a site to that nearest point, in km."
+     },
+     "nearest.within_1km": {
+      "kind": "counted",
+      "is": "Sites with that nearest point within one kilometre."
+     },
+     "nearest.within_2km": {
+      "kind": "counted",
+      "is": "Sites with that nearest point within two kilometres."
+     }
+    }
+   },
+   "what": "Recomputes the local half of the combined-overflow draft's data table: the three layers' counts and nulls, their name join, a critical rainfall depth per structure, and which kind of outfall lies nearest each bathing site.",
+   "model": "Critical rainfall depth is storage over reduced area, $\\dfrac{V_{\\mathrm{sb}} + V_{\\mathrm{fbas}}}{10\\,A}$ mm for storage in cubic metres and area in hectares (in the code `store / (area * 10.0)`), for structures whose name matches exactly one register point. The nearest outfall is by an equirectangular great-circle approximation over register points typed combined (`OV`, `OS`, `OF`, `OK`, `Bypass`) or separate (`SE`, `SF`).",
+   "assumptions": [
+    "An overflow and a register point with the same name are the same structure.",
+    "`Red areal` is in hectares and the storage volumes in cubic metres.",
+    "The structure-type codes mean combined or separate as the draft reads them."
+   ],
+   "justified": [
+    {
+     "text": "Every count is over the held layers themselves; the join and the depth rule are written in the script and applied to every feature.",
+     "ref": "scripts/hypodraft_b1.py"
+    }
+   ],
+   "gaps": [
+    "The name join is exact string equality; structures named differently in the two registers are missed, and the draft's own join rule is not stated beyond this.",
+    "The critical-depth tail contains unit errors that nothing corrects; the draft trims it by hand.",
+    "The distance approximation is equirectangular, not geodesic; at these distances the difference is small but not bounded here."
+   ],
+   "void_if": [
+    "either register is refetched and the script is not rerun",
+    "the type codes are redefined"
+   ],
+   "licenses": "Counts and derived storage depths over the held registers, and the nearest-outfall classification of each bathing site.",
+   "not_licensed": "Any volume discharged, or whether a site is actually exposed to an overflow.",
+   "watches": [
+    "scripts/hypodraft_b1.py",
+    "data/raw/national/badevand.geojson",
+    "data/raw/spildevand/combined_overflow.geojson",
+    "data/raw/national/punkt_rbu_udl.geojson"
+   ],
+   "confirmed": {
+    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/hypodraft_b1.py": "ffb95ece6590eac2",
+     "data/raw/national/badevand.geojson": "fe37bb58e7734cf4",
+     "data/raw/spildevand/combined_overflow.geojson": "2d67fa185ea6ee81",
+     "data/raw/national/punkt_rbu_udl.geojson": "0280cc777737f84c"
+    }
+   }
+  }
+ ]
+}

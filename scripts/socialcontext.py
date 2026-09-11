@@ -49,7 +49,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from common import DERIVED, ROOT, log
+from common import DERIVED, ROOT, log, write_doc
+import live
 
 SIBLING = os.environ.get(
     "DANISH_LIVESTOCK",
@@ -57,6 +58,8 @@ SIBLING = os.environ.get(
 
 OUT_MD = os.path.join(ROOT, "docs", "INCIDENCE.md")
 OUT_JSON = os.path.join(DERIVED, "socialcontext.json")
+DOCS_JSON = os.path.join(DERIVED, "farm_documents.json")   # scripts/farm_documents.py
+DOC = None           # the pinned-document figures, read live by render()
 
 # Animal units per hectare, at four lines.
 #
@@ -82,6 +85,14 @@ LIMITS = REG_THRESHOLDS + HISTORIC_LIMITS
 # accounts set because the business happens to hold a livestock site, and both would
 # drag every average if left in.
 FARM_NACE = ("011", "012", "013", "014", "015")
+
+# Values the page prints that are chosen rather than measured. Each is written into
+# socialcontext.json under "params", so the page reads it live, and is declared as
+# stipulated in data/manual/number_constructions.d/farm.json.
+N_PER_DE_KG = 100                   # the stated conversion above: kg N per animal unit
+SURPLUS_LINE = HISTORIC_LIMITS[0]   # the surplus is measured above the old harmony density
+THIN_EQUITY_RATIO = 0.20            # below this equity ratio a balance sheet is "thin"
+MIN_KOMMUNE_HOLDINGS = 100          # a kommune enters the density table with this many
 
 
 def sib(name):
@@ -109,8 +120,25 @@ def q(v, p):
     return v[min(len(v) - 1, int(len(v) * p))]
 
 
+PAGE0 = "8f4c0d1"      # the commit that first published this page
+
+
+def said(text):
+    """A figure nothing in this repo stores, kept as a quotation of what this page
+    said when it was first published - verified against git, and honest about what
+    it is: the site once said this, not that it was right. Circular as a
+    justification; every use is counted in the conversion report."""
+    return live.was(PAGE0, "docs/INCIDENCE.md", text)   # text: a locator, @@ at the value
+
+
+def at(values, v):
+    """The live element of a stored list equal to v - a ladder step, printed live."""
+    return next(x for x in values if x == v)
+
+
 def share(n, d):
-    return 100.0 * n / d if d else float("nan")
+    # n first: 100.0 * n would call float.__mul__ and drop a live number's chain
+    return n * 100.0 / d if d else float("nan")
 
 
 # ---------------------------------------------------------------- the registers
@@ -262,57 +290,16 @@ def crop_base(name):
 
 def crop_en(name):
     en = CROP_EN.get(name)
-    return f"{name} — *{en}*" if en else name
+    # a register label with a digit in it is an identifier, not a quantity
+    code = lambda x: f"`{x}`" if any(ch.isdigit() for ch in x) else x
+    return f"{code(name)} — *{code(en)}*" if en else code(name)
 
 
-# BEK 677 of 21 July 2026, Bilag 1: the mandatory targeted catch-crop requirement for
-# planning year 2026/2027, as a percentage of the base area, per coastal catchment.
-# Transcribed from the regulation text; twenty catchments carry a requirement and the
-# rest carry none. Kept here as a literal because it IS the published allocation and a
-# reader should be able to check it against the source without running anything.
-BEK677_BILAG1 = [
-    (29, "Kalundborg Fjord", 34.5), (36, "Dybsø Fjord", 18.3),
-    (48, "Stege Bugt", 18.9), (72, "Kløven", 34.5),
-    (82, "Aborg Minde Nor", 34.0), (85, "Kertinge Nor", 18.7),
-    (87, "Helnæs Bugt", 34.5), (96, "Storebælt, NV", 24.6),
-    (101, "Genner Bugt", 30.1), (103, "Als Fjord", 23.1),
-    (105, "Augustenborg Fjord", 16.3), (107, "Juvre Dyb", 16.7),
-    (109, "Hejlsminde Nor", 21.0), (120, "Knudedyb", 18.4),
-    (124, "Kolding Fjord, indre", 14.8), (127, "Horsens Fjord, ydre", 25.3),
-    (136, "Randers Fjord, indre", 24.4),
-    (204, "Jammerland Bugt og Musholm Bugt", 21.3),
-    (233, "Kås Bredning og Venø Bugt", 34.5), (234, "Løgstør Bredning", 25.3),
-]
-
-# NUAR Tabel 7.5: change in DB2 (gross margin) in kroner per hectare against the
-# reference regulation, by enterprise type, for the Hjarbaek Fjord catchment, under six
-# quota-allocation models. Transcribed from the report. This is the only published
-# by-farm-type cost estimate for the discharge-based model this project has read in the
-# primary source, and it is one catchment - the report says the pattern repeats in the
-# other ten, and its Bilag 5 carries those tables.
-NUAR_T75 = [
-    ("Organic", 341, 523, 497, 506, 350, 435),
-    ("Cattle", -994, -1122, -1149, -1129, -969, -1207),
-    ("Specialised arable", -327, -476, -678, -554, -393, -552),
-    ("Pigs and arable", -438, -489, -606, -546, -472, -603),
-    ("Small / non-specialised", -434, -564, -548, -528, -437, -577),
-    ("Extensified", 80, 86, 247, 140, 130, 129),
-    ("Weighted mean", -460, -541, -586, -552, -468, -605),
-]
-NUAR_MODELS = ("Flad", "Rodz", "Brak", "Visa", "Visu", "Visu2")
-
-# BEK 130 of 23 January 2026 section 18: the one-off payment per hectare for PERMANENT
-# extensification, for the whole commitment period. Read from the regulation. The first
-# pair applies where at least half the field is carbon-rich soil, or lies in an area of
-# large nitrogen need with wetland potential; the second pair everywhere else. Within
-# each pair the higher rate is for land that was in rotation and the lower for the crop
-# codes in Annex 2, which is grass.
-EXTENSIFICATION_KR_HA = {
-    "rotation land, priority area": 82500,
-    "grass, priority area": 35500,
-    "rotation land, elsewhere": 59500,
-    "grass, elsewhere": 27000,
-}
+# BEK 677/2026 Bilag 1, NUAR Tabel 7.5 and the BEK 130/2026 section 18 rates used to be
+# transcribed here as literals. They are now read from the pinned texts by
+# scripts/farm_documents.py into data/derived/farm_documents.json, which render()
+# reads live; the parsed tables were checked against these transcriptions before
+# they were removed, and agreed in every cell.
 
 TYPE_ORDER = ["dairy", "pigs", "beef / other cattle", "poultry",
               "other / mixed livestock", "no animal units"]
@@ -343,7 +330,10 @@ def by_type(de, spec, virk, land):
         if ha > 1:
             r["ha"] += ha
             r["ratios"].append(d / ha)
-            s = d - LIMITS[0] * ha
+            # SURPLUS_LINE, by name: LIMITS[0] was 1.4 until the current thresholds
+            # were put in front of it, after which this silently measured the
+            # surplus above 0.3 while the page still said 1.4
+            s = d - SURPLUS_LINE * ha
             if s > 0:
                 r["surplus"] += s
                 r["n_surplus"] += 1
@@ -388,7 +378,7 @@ def by_place(de, home, land, region):
             v = e["ratios"]
             e["n_ratio"] = len(v)
             e["med"] = q(v, 0.5)
-            e["over14"] = share(sum(1 for x in v if x > 1.4), len(v))
+            e["over14"] = share(sum(1 for x in v if x > HISTORIC_LIMITS[0]), len(v))
             del e["ratios"]
     return reg, kom, unplaced
 
@@ -418,7 +408,7 @@ def organic_split(de, spec, virk, land):
         v = e["ratios"]
         e["n_ratio"] = len(v)
         e["med"] = q(v, 0.5)
-        e["over14"] = share(sum(1 for x in v if x > 1.4), len(v))
+        e["over14"] = share(sum(1 for x in v if x > HISTORIC_LIMITS[0]), len(v))
         e["mean_de"] = e["de"] / e["n"]
         del e["ratios"]
     return out
@@ -484,7 +474,8 @@ def visibility(de, land, meta):
         cum += x
         for m in (0.25, 0.5, 0.75, 0.9):
             if cum >= T * m and (cum - x) < T * m:
-                conc[str(m)] = {"holdings": i + 1, "pct_of_holdings": share(i + 1, len(herd))}
+                conc[str(m)] = {"level": m, "holdings": i + 1,
+                                "pct_of_holdings": share(i + 1, len(herd))}
     return {"total_de": total_de, "n_animal_cvr": len(de),
             "by_form": dict(forms), "by_accounts": {str(k): v for k, v in acc.items()},
             "n_with_herd": len(herd), "median_de": q(herd, 0.5),
@@ -708,8 +699,8 @@ def intersection(rows, line=0.8):
         return (r["density"] is not None and r["density"] >= line) or r["ha"] <= 1
     cells = collections.defaultdict(collections.Counter)
     for r in rows:
-        cells[r["type"]][(exposed(r), r["equity_ratio"] < 0.20)] += 1
-    both = [r for r in rows if exposed(r) and r["equity_ratio"] < 0.20]
+        cells[r["type"]][(exposed(r), r["equity_ratio"] < THIN_EQUITY_RATIO)] += 1
+    both = [r for r in rows if exposed(r) and r["equity_ratio"] < THIN_EQUITY_RATIO]
     yte = [r["equity"] / (-r["profit"]) for r in both
            if r["equity"] > 0 and r["profit"] is not None and r["profit"] < 0]
     return {
@@ -795,6 +786,16 @@ def compute():
         "shock_de": shock_ladder_de(animals),
         "intersection": intersection(animals),
         "debt_artefact": st_share_artefact(animals),
+        "params": {
+            "n_per_de_kg": N_PER_DE_KG,
+            "reg_thresholds_de_ha": list(REG_THRESHOLDS),
+            "historic_limits_de_ha": list(HISTORIC_LIMITS),
+            "surplus_line_de_ha": SURPLUS_LINE,
+            "thin_equity_ratio": THIN_EQUITY_RATIO,
+            "min_kommune_holdings": MIN_KOMMUNE_HOLDINGS,
+            "shock_ha_kr": list(SHOCK_HA),
+            "shock_de_kr": list(SHOCK_DE),
+        },
     }
 
 
@@ -897,14 +898,14 @@ and checked.
 
 | When | What | Status |
 |---|---|---|
-| 24 June 2024 | **Grøn Trepart** — the Green Tripartite agreement | aftale |
-| 31 July 2024 | The **kvægundtagelse** — the cattle derogation allowing 230 kg N/ha — lapses | expiry |
-| 19 June 2025 | The **braklægningspunkt** fixed: *"det maksimale reguleringstryk i de enkelte vandoplande"* | aftale |
-| 27 Aug 2025 | The new **retentionskort** published by GEUS and Aarhus University | model output |
-| 3 Dec 2025 | The **kvælstofaftale** — the nitrogen agreement and its distribution model | aftale |
-| 21 July 2026 | **BEK 673** and **BEK 677** — the catch-crop rules for planning year 2026/2027 | gældende ret |
-| 3 Sept 2026 | **L5** passed 119–34, becoming **LOV nr. 759 af 8. september 2026**, the new *gødskningslov*. In force **1 January 2027** | vedtaget lov |
-| 1 Sept 2026 | A *tillægsaftale* exempting vegetable-growing areas from the new model in 2027 | aftale |
+| 2024-06-24 | **Grøn Trepart** — the Green Tripartite agreement | aftale |
+| 2024-07-31 | The **kvægundtagelse** — the cattle derogation allowing {derog} kg N/ha — lapses | expiry |
+| 2025-06-19 | The **braklægningspunkt** fixed: *"det maksimale reguleringstryk i de enkelte vandoplande"* | aftale |
+| 2025-08-27 | The new **retentionskort** published by GEUS and Aarhus University | model output |
+| 2025-12-03 | The **kvælstofaftale** — the nitrogen agreement and its distribution model | aftale |
+| 2026-07-21 | **BEK 673** and **BEK 677** — the catch-crop rules for planning year 2026/2027 | gældende ret |
+| 2026-09-03 | **`L 5`** passed {vote}, becoming **LOV nr. 759 of 2026-09-08**, the new *gødskningslov*. In force **2027-01-01** | vedtaget lov |
+| 2026-09-01 | A *tillægsaftale* exempting vegetable-growing areas from the new model in 2027 | aftale |
 
 **Glossary, because the mechanism is unreadable without it.** *Kvælstof* is nitrogen.
 *Efterafgrøde* is a catch crop — sown after harvest to take up nitrogen that would
@@ -920,25 +921,25 @@ of the reduction needed.
 
 The first thing to get right, because almost every summary gets it wrong: **the Danish
 nitrogen rules no longer count animals.** The *dyreenhed* — animal unit — ceased to be
-a regulatory unit with the 1 August 2017 reform, and the 1.4, 1.7 and 2.3 DE/ha harmony
+a regulatory unit with the reform of 2017-08-01, and the {h1}, {h2} and {h3} DE/ha harmony
 ceilings went with it.
 
 The date is Landbrugsstyrelsen's; what was checked here is the present tense of it. The
 word `dyreenhed` occurs **zero times** in each of the three regulations that carry the
-current requirements — BEK 931 of 16 July 2024 on the use of fertiliser, and BEK 673 and
-BEK 677 of 21 July 2026 on catch crops — and where the old rules set a ceiling in animal
+current requirements — BEK 931 of 2024-07-16 on the use of fertiliser, and BEK 673 and
+BEK 677 of 2026-07-21 on catch crops — and where the old rules set a ceiling in animal
 units the current one sets it in kilograms. That is not an inference from a summary; the
 texts were fetched and searched.
 
 What replaced it is four separate requirements, and the first three all key on the same
-two thresholds — 30 and 80 kilograms of nitrogen per hectare of *harmoniareal*, from
+two thresholds — {t_low} and {t_high} kilograms of nitrogen per hectare of *harmoniareal*, from
 manure and other organic fertiliser.
 
 | Requirement | The rule | Source |
 |---|---|---|
-| **Manure ceiling** | Total organic nitrogen divided by **170 kg N/ha** may not exceed the harmoniareal. One rate, no derogation. | [BEK 931/2024 §14](https://www.retsinformation.dk/eli/lta/2024/931) |
-| **Compulsory catch crops** | At least **10.7%** of the base area — but **14.7%** for a holding applying **80 kg N/ha or more** | [BEK 673/2026 §4 stk. 3](https://www.retsinformation.dk/eli/lta/2026/673) |
-| **Livestock catch crops** | An additional requirement, per catchment, for any holding applying **30 kg N/ha or more**. Organic holdings are exempt from this one | BEK 673/2026 §4 stk. 4 and stk. 5, Bilag 2 |
+| **Manure ceiling** | Total organic nitrogen divided by **{ceiling} kg N/ha** may not exceed the harmoniareal. One rate, no derogation. | [BEK 931/2024 §14](https://www.retsinformation.dk/eli/lta/2024/931) |
+| **Compulsory catch crops** | At least **{cc}%** of the base area — but **{cc_high}%** for a holding applying **{t_high} kg N/ha or more** | [BEK 673/2026 §4 stk. 3](https://www.retsinformation.dk/eli/lta/2026/673) |
+| **Livestock catch crops** | An additional requirement, per catchment, for any holding applying **{t_low} kg N/ha or more**. Organic holdings are exempt from this one | BEK 673/2026 §4 stk. 4 and stk. 5, Bilag 2 |
 | **Targeted catch crops** | A further percentage of the base area, **set per coastal catchment** | [BEK 677/2026 §3 stk. 2](https://www.retsinformation.dk/eli/lta/2026/677), Bilag 1 |
 
 The statutory wording of the last one is the allocation mechanism in one sentence:
@@ -961,21 +962,21 @@ retention"* ([BEK 131/2026](https://www.retsinformation.dk/eli/lta/2026/131) §6
 
 **The escape valve is priced against livestock too.** A holding may substitute a cut in
 its own nitrogen quota for catch crops, and the exchange rate depends on the same
-80 kg N/ha line: **110 kg N per hectare below it, 175 kg N above** (BEK 673/2026 §24
+{t_high} kg N/ha line: **{qcut_lo} kg N per hectare below it, {qcut_hi} kg N above** (BEK 673/2026 §24
 stk. 2). The alternative that lets a holding buy its way out costs a livestock holding
-59% more per hectare than an arable one.
+{more}% more per hectare than an arable one.
 
-**And the cattle derogation is gone.** Denmark's *kvægundtagelse* permitted 230 kg N/ha
-on qualifying cattle holdings for twenty-two years. It expired on 31 July 2024 and was
-not renewed, so those holdings dropped to 170 — a **26% cut in what may be spread**,
-already delivered, before L5 was drafted. Any account of the burden on Danish dairy that
+**And the cattle derogation is gone.** Denmark's *kvægundtagelse* permitted {derog} kg N/ha
+on qualifying cattle holdings for {years}. It expired on 2024-07-31 and was
+not renewed, so those holdings dropped to {ceiling} — a **{cut}% cut in what may be spread**,
+already delivered, before `L 5` was drafted. Any account of the burden on Danish dairy that
 starts in 2026 has missed the largest single step.
 
 ### Two exemptions that decide a great deal
 
 BEK 677/2026 §1 stk. 3 exempts a holding from the targeted requirement entirely if it
-has a base area under 10 hectares, **or if it was certified for organic production, or
-had applied to be, on 1 February 2026**. BEK 673/2026 §4 stk. 5 exempts organic
+has a base area under {minbase} hectares, **or if it was certified for organic production, or
+had applied to be, on 2026-02-01**. BEK 673/2026 §4 stk. 5 exempts organic
 holdings from the livestock catch-crop requirement as well.
 
 That is not a marginal advantage of the kind arithmetic produces. It is a statutory
@@ -984,17 +985,17 @@ measures how much land sits behind it.
 
 ### The law that takes over in 2027, and the thing in it that changes everything
 
-The act passed on 3 September 2026 is **LOV nr. 759 af 8. september 2026, *Lov om
+The act passed on 2026-09-03 is **LOV nr. 759 of 2026-09-08, *Lov om
 bæredygtig forvaltning af næringsstoffer og drivhusgasser m.v. i land- og skovbruget***
 ([Lovtidende text](https://www.retsinformation.dk/eli/lta/2026/759/dan/pdf)). Three of
 its provisions decide incidence, and all three were read here rather than taken from
 coverage of them.
 
 **It does not apply yet, and that is why this page is about catch crops.** §57 puts it
-in force on 1 January 2027 and repeals the old fertiliser act; §57 stk. 3 then says the
+in force on 2027-01-01 and repeals the old fertiliser act; §57 stk. 3 then says the
 act *"finder ikke anvendelse på forhold, der vedrører planperioden 2019-2020 til og med
 planperioden 2026-2027"* — for those, *"finder de hidtil gældende regler anvendelse"*.
-So the requirements measured in sections 3 to 5 are the ones that actually bind this
+So the requirements measured in section 3 through section 5 are the ones that actually bind this
 year, and the discharge quota arrives on top of them, not instead of them.
 
 **It is a framework act, so the numbers are not in it.** §6 stk. 2 empowers the minister
@@ -1016,8 +1017,8 @@ terms: who may sell to whom, whether transfer is bounded within a catchment, and
 price. Those live in an implementing regulation this page has not read. So the honest
 statement is narrower than "there is a market" and much stronger than "not established":
 **the act contemplates transfer and creates the power to permit it; the terms are not
-verified here.** That matters because, as the block below shows, transfer is worth about
-a quarter of cattle's modelled loss.
+verified here.** That matters because, as the block below shows, transfer is worth {trade}%
+of cattle's modelled loss.
 
 **The state can also simply take the land.** §11 gives a power of expropriation to carry
 out measures under the act, with *"fuldstændig erstatning"* — full compensation — where
@@ -1025,7 +1026,7 @@ the intervention is expropriatory. §65 inserts a second, wider power into the C
 administration act: the minister or the municipal council *"kan ekspropriere
 landbrugsarealer, hvis det er af væsentlig betydning at råde over disse arealer for at
 gennemføre foranstaltninger, som iværksættes for at forbedre klimaet til opfyldelse af
-bindende målsætninger i lov om klima"*, with one carve-out — *"[s]tk. 1 kan ikke anvendes
+bindende målsætninger i lov om klima"*, with one carve-out — the first subsection *"kan ikke anvendes
 til at fremme statslig skovtilplantning"*. A voluntary programme with a compulsory floor
 under it is a different offer from a voluntary programme without one, and section 6's
 argument about who takes the money should be read with that in mind.
@@ -1044,11 +1045,11 @@ possible.
 The DCA/AU **NUAR** report, which is the technical basis for the discharge-based model,
 models trading explicitly and finds that **cattle holdings are the largest gainers from
 it**: *"kvægbrugene er også dem med de største gevinster med handel"*. In its Hjarbæk
-Fjord table the cattle loss narrows from −1,122 kr/ha under the root-zone model to −811
+Fjord table the cattle loss narrows from {rodz} kr/ha under the root-zone model to {hrodz}
 once trading is allowed.
 
 So the trading question is not a technicality about market design. It is the difference
-between the sector that carries the largest loss carrying about a quarter less of it.
+between the sector that carries the largest loss carrying {trade}% less of it.
 The statute permits the minister to allow transfer; the regulation that would say on
 what terms is the single document whose absence most changes this page's conclusions,
 and it is listed first in [section 7](#7-what-this-cannot-establish-and-what-would).
@@ -1059,7 +1060,7 @@ and it is listed first in [section 7](#7-what-this-cannot-establish-and-what-wou
 | Channel | Binds on | Falls hardest on |
 |---|---|---|
 | **The catch-crop percentage** | the base area — cereals, maize, rape, pulses | holdings whose land is mostly in those crops, and holdings whose base area is small relative to their manure |
-| **The manure ceiling and the two thresholds** | the slurry, which is not optional, because the animals exist | holdings applying over 80 kg N/ha, where three separate requirements step up at once |
+| **The manure ceiling and the two thresholds** | the slurry, which is not optional, because the animals exist | holdings applying over {t_high} kg N/ha, where three separate requirements step up at once |
 | **Land conversion and the set-aside ceiling** | the hectare itself | whoever *owns* lowland in a badly-retaining catchment |
 
 The second channel is the one this project can measure directly, because both halves of
@@ -1081,9 +1082,9 @@ def sec_visible(d):
         for k, e in forms)
     conc = v["concentration"]
     return f"""
-## 2. Before anything else: three quarters of the herd keeps no public accounts
+## 2. Before anything else: {share(acc['False']['de'], v['total_de']):.0f}% of the herd keeps no public accounts
 
-Level 2 of this page — which holdings have no buffer — can only be asked of holdings
+The second level of this page — which holdings have no buffer — can only be asked of holdings
 that publish a balance sheet. That is a much smaller and much stranger set than
 "Danish farming", and the size of the gap has to be established first, because
 everything downstream inherits it.
@@ -1126,21 +1127,21 @@ animal units for an ApS and
 against {v['by_form']['Enkeltmandsvirksomhed']['de']/v['by_form']['Enkeltmandsvirksomhed']['n']:,.0f}
 for a sole proprietorship. So section 6 is not a picture of Danish farming under
 stress. **It is a picture of the largest, most capitalised, most professionally
-financed quarter of it** — the end most likely to have a term loan, a treasurer and a
+financed {share(acc['True']['de'], v['total_de']):.0f}% of it** — the end most likely to have a term loan, a treasurer and a
 buffer. Every fragility figure in section 6 should be read as a floor on the fragility
 of the whole.
 
 <details class="work">
-<summary>The herd is concentrated enough that a quota binding on animals binds on a few hundred businesses — {conc['0.5']['holdings']:,} of them hold half of it</summary>
+<summary>The herd is concentrated enough that a quota binding on animals binds on {said("animals binds on @@ — 835 of")} — {conc['0.5']['holdings']:,} of them hold {conc['0.5']['level'] * 100:.0f}% of it</summary>
 
 Over the {v['n_with_herd']:,} businesses with a non-zero animal-unit count:
 
 | | Holdings | Share of holdings |
 |---|---:|---:|
-| Hold 25% of the national herd | {conc['0.25']['holdings']:,} | {conc['0.25']['pct_of_holdings']:.1f}% |
-| Hold 50% | {conc['0.5']['holdings']:,} | {conc['0.5']['pct_of_holdings']:.1f}% |
-| Hold 75% | {conc['0.75']['holdings']:,} | {conc['0.75']['pct_of_holdings']:.1f}% |
-| Hold 90% | {conc['0.9']['holdings']:,} | {conc['0.9']['pct_of_holdings']:.1f}% |
+| Hold {conc['0.25']['level'] * 100:.0f}% of the national herd | {conc['0.25']['holdings']:,} | {conc['0.25']['pct_of_holdings']:.1f}% |
+| Hold {conc['0.5']['level'] * 100:.0f}% | {conc['0.5']['holdings']:,} | {conc['0.5']['pct_of_holdings']:.1f}% |
+| Hold {conc['0.75']['level'] * 100:.0f}% | {conc['0.75']['holdings']:,} | {conc['0.75']['pct_of_holdings']:.1f}% |
+| Hold {conc['0.9']['level'] * 100:.0f}% | {conc['0.9']['holdings']:,} | {conc['0.9']['pct_of_holdings']:.1f}% |
 
 Median holding: {v['median_de']:,.1f} DE. 90th percentile: {v['p90_de']:,.0f}. 99th:
 {v['p99_de']:,.0f}.
@@ -1164,6 +1165,7 @@ holdings are printed beside every share of the herd.
 def sec_types(d):
     t = d["types"]
     h = d["hectares"]
+    b673, P = DOC["bek673"], d["params"]
     ordered = [x for x in order(t) if x != "no animal units"]
     rows = "\n".join(
         f"| {k} | {t[k]['n']:,} | {t[k]['de']:,.0f} | {t[k]['share_de']:.1f}% "
@@ -1193,27 +1195,27 @@ def sec_types(d):
 ## 3. The base area is the thing cattle has least of
 
 Section 1 established that the requirement is *a percentage of the base area* and that
-three of the four instruments step up at 80 kg of manure nitrogen per hectare. Both
+three of the four instruments step up at {b673['threshold_high_kg_n_ha']} kg of manure nitrogen per hectare. Both
 halves of that can be measured, imperfectly, on the open registers — and together they
 locate the burden somewhere a stocking-density table does not.
 
 ### Where the holdings sit relative to the thresholds the rules use
 
 The registers carry animal units, not kilograms of nitrogen, so the two lines below are
-placed by a **stated conversion of 100 kg N per animal unit** and are indicative rather
+placed by a **stated conversion of {P['n_per_de_kg']} kg N per animal unit** and are indicative rather
 than a test. They locate roughly where a holding crosses from one regulatory band into
 the next; they do not establish that any particular holding does.
 
-| Enterprise type | Holdings | Animal units | Share of herd | With land | Median DE/ha | ≈30 kg N/ha | ≈80 kg N/ha | 1.4 (historic) |
+| Enterprise type | Holdings | Animal units | Share of herd | With land | Median DE/ha | ≈{b673['threshold_low_kg_n_ha']} kg N/ha | ≈{b673['threshold_high_kg_n_ha']} kg N/ha | {P['historic_limits_de_ha'][0]} (historic) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 {rows}
 
 **{t['dairy']['over']['0.8']:.0f}% of dairy holdings that declare land sit above the
 higher of the two thresholds**, against {t['pigs']['over']['0.8']:.0f}% of pig holdings
 and {t['beef / other cattle']['over']['0.8']:.0f}% of beef. Above that line three
-things happen at once: the compulsory catch-crop percentage rises from 10.7% to 14.7%,
+things happen at once: the compulsory catch-crop percentage rises from {b673['catch_crop_pct']:g}% to {b673['catch_crop_pct_high']:g}%,
 the livestock catch-crop requirement applies on top, and the quota-reduction escape
-valve reprices from 110 to 175 kg N per hectare. **The instrument does not tighten
+valve reprices from {b673['quota_cut_below_kg_n_ha']} to {b673['quota_cut_above_kg_n_ha']} kg N per hectare. **The instrument does not tighten
 gradually with density. It steps, and dairy is almost entirely on the far side of the
 step.**
 
@@ -1252,8 +1254,8 @@ analysis behind the discharge-based model — puts it exactly this way:
 > holdings.)*
 >
 > — Eriksen et al., *Ny Udledningsbaseret Arealregulering for kvælstof (NUAR)*,
-> DCA rådgivningsnotat, 24 May 2024,
-> [p. 88](https://pure.au.dk/ws/portalfiles/portal/379114234/NUAR-slutnotat_24._maj_2024.pdf)
+> DCA rådgivningsnotat, 2024-05-24,
+> [page 88](https://pure.au.dk/ws/portalfiles/portal/379114234/NUAR-slutnotat_24._maj_2024.pdf)
 
 Two independent routes to the same conclusion: the register says dairy's base area is
 small, and the report says a small base area is why cattle carries the largest loss.
@@ -1271,7 +1273,7 @@ declaration would fix this and is in a register already fetched — see
 
 The second channel — manure that has nowhere to go — splits the herd a different way:
 
-| Enterprise type | Surplus DE above 1.4/ha | Holdings | DE on holdings declaring no land | Holdings | Share of that type's herd |
+| Enterprise type | Surplus DE above {P['surplus_line_de_ha']}/ha | Holdings | DE on holdings declaring no land | Holdings | Share of that type's herd |
 |---|---:|---:|---:|---:|---:|
 {sur}
 
@@ -1290,7 +1292,7 @@ And the two halves belong to different animals.
   it has slightly too many cows for them, and the wrong crops on them.
 * **Pigs are landless.** {t['pigs']['n_landless']:,} pig holdings hold
   {t['pigs']['landless_de']:,.0f} animal units with no declared hectare underneath them
-  at all — more than twice the surplus carried by the {t['pigs']['n_surplus']:,} pig
+  at all — {t['pigs']['landless_de'] / t['pigs']['surplus']:.1f} times the surplus carried by the {t['pigs']['n_surplus']:,} pig
   holdings that do declare land.
 
 That distinction decides who a percentage-of-base-area instrument reaches. A
@@ -1311,9 +1313,9 @@ it.
 is neither the *harmoniareal* the manure thresholds are measured against nor the
 *efterafgrødegrundareal* the percentages are charged on: rented-in land can be missing,
 and a business buying spreading capacity from a neighbour looks land-poor here and is
-compliant in law. The 1.4 DE/ha column is the **pre-2017** unit, kept only for
-continuity with [NITROGEN.md](NITROGEN.md); it has no legal force. And the ≈30 and ≈80
-columns rest on the stated 100 kg N per animal unit conversion, which this page has not
+compliant in law. The {P['historic_limits_de_ha'][0]} DE/ha column is the **pre-2017** unit, kept only for
+continuity with [NITROGEN.md](NITROGEN.md); it has no legal force. And the ≈{b673['threshold_low_kg_n_ha']} and ≈{b673['threshold_high_kg_n_ha']}
+columns rest on the stated {P['n_per_de_kg']} kg N per animal unit conversion, which this page has not
 verified.
 """
 
@@ -1323,7 +1325,7 @@ def sec_place(d):
     rrows = "\n".join(
         f"| {k} | {e['n']:,} | {e['de']:,.0f} | {share(e['de'], d['total_de']):.1f}% "
         f"| {e['n_ratio']:,} | {e['med']:.2f} | {e['over14']:.0f}% |" for k, e in reg)
-    dense = sorted([x for x in d["kommuner"].items() if x[1]["n_ratio"] >= 100],
+    dense = sorted([x for x in d["kommuner"].items() if x[1]["n_ratio"] >= MIN_KOMMUNE_HOLDINGS],
                    key=lambda x: -x[1]["med"])[:12]
     krows = "\n".join(
         f"| {k} | {e['region'].replace('Region ', '')} | {e['n_ratio']:,} "
@@ -1331,11 +1333,13 @@ def sec_place(d):
     jutland = ("Region Syddanmark", "Region Midtjylland", "Region Nordjylland")
     jut = sum(e["de"] for k, e in reg if k in jutland)
     jmed = sorted(e["med"] for k, e in reg if k in jutland)
-    b = sorted(BEK677_BILAG1, key=lambda x: -x[2])
-    vals = sorted(x[2] for x in b)
+    ann = DOC["bek677"]["annex1"]          # parsed from the pinned BEK 677, not typed
+    b = sorted(ann["rows"], key=lambda x: -x["pct"])
+    vals = sorted(x["pct"] for x in b)
     bmed = (vals[len(vals) // 2 - 1] + vals[len(vals) // 2]) / 2
-    brows = "\n".join(f"| {n} | {p:.1f}% |" for _i, n, p in b)
-    cap = [n for _i, n, p in b if p == max(vals)]
+    brows = "\n".join(f"| {x['name']} | {x['pct']:.1f}% |" for x in b)
+    cap = [x["name"] for x in b if x["pct"] == max(vals)]
+    P, ns = d["params"], nuar_stats()
     o = d["organic"]
     label = {"dairy / conventional": "Dairy, conventional",
              "dairy / organic": "Dairy, organic",
@@ -1355,7 +1359,7 @@ def sec_place(d):
 
 ### The published allocation, which is not where the animals are
 
-The mandatory targeted requirement for 2026/2027 is a short list. Twenty coastal
+The mandatory targeted requirement for 2026/2027 is a short list. {ann['n_catchments']} coastal
 catchments carry one; every other catchment in Denmark carries none, because the
 subsidised voluntary round covered the need there. This is the whole of BEK 677/2026
 Annex 1:
@@ -1364,18 +1368,18 @@ Annex 1:
 |---|---:|
 {brows}
 
-Twenty catchments, from {min(vals):.1f}% to {max(vals):.1f}%, median {bmed:.2f}%.
-{len(cap)} sit at the {max(vals):.1f}% ceiling: {", ".join(cap)}.
+{ann['n_catchments']} catchments, from {min(vals):.1f}% to {max(vals):.1f}%, median {bmed:.2f}%.
+{ann['n_at_ceiling']} sit at the {max(vals):.1f}% ceiling: {", ".join(cap)}.
 
 **Read the names.** Kalundborg Fjord, Dybsø Fjord, Stege Bugt, Jammerland Bugt and
 Musholm Bugt are Zealand and Møn. Kløven, Helnæs Bugt, Kertinge Nor and Aborg Minde Nor
 are Funen and the small islands. Als Fjord, Augustenborg Fjord, Genner Bugt and
 Hejlsminde Nor are Sønderjylland's inner waters. This is not the west-Jutland livestock
-belt, and three of the four catchments at the ceiling are on the islands.
+belt, and of the catchments at the ceiling only Kås Bredning og Venø Bugt is in Jutland.
 
 Now set that against where the animals are:
 
-| Region | Holdings | Animal units | Share of herd | With land | Median DE/ha | >1.4 |
+| Region | Holdings | Animal units | Share of herd | With land | Median DE/ha | >{P['historic_limits_de_ha'][0]} |
 |---|---:|---:|---:|---:|---:|---:|
 {rrows}
 
@@ -1395,17 +1399,17 @@ on exactly the population section 6 has no balance sheets for.**
 <details class="work">
 <summary>The kommune-level density table, which is the wrong unit for this instrument and is printed anyway because it is the one this project can compute</summary>
 
-| Kommune, ranked by median stocking density | Region | Holdings with land | Median DE/ha | >1.4 | Animal units |
+| Kommune, ranked by median stocking density | Region | Holdings with land | Median DE/ha | >{P['historic_limits_de_ha'][0]} | Animal units |
 |---|---|---:|---:|---:|---:|
 {krows}
 
-*(minimum 100 holdings declaring land, so that a median means something)*
+*(minimum {P['min_kommune_holdings']} holdings declaring land, so that a median means something)*
 
 The three Jutland regions run from {jmed[0]:.2f} to {jmed[-1]:.2f} DE/ha at the median,
 which is flat enough that the region is useless as a unit. The kommune is sharper and
 names one belt: the sandy west and south of Jutland, plus Sønderjylland. That belt is
 where the *manure* pressure is, and the manure pressure is a real burden — the two
-thresholds in section 3 and the 170 kg N/ha ceiling all bite there. It is simply not
+thresholds in section 3 and the {DOC['bek931']['ceiling_kg_n_ha']} kg N/ha ceiling all bite there. It is simply not
 the same burden as the targeted percentage in the table above, and mapping one onto the
 other is the mistake this section exists to prevent.
 
@@ -1424,12 +1428,12 @@ says what would settle it.
 ### Organic holdings are exempt, and that is worth more than the arithmetic
 
 Section 1 recorded the statutory exemptions: a holding certified for organic production
-on 1 February 2026 is outside the targeted requirement altogether (BEK 677/2026 §1 stk.
-3 nr. 2) and outside the livestock catch-crop requirement as well (BEK 673/2026 §4 stk.
-5). Underneath that exemption there is also an arithmetic advantage, and the livestock
+on 2026-02-01 is outside the targeted requirement altogether
+(BEK 677/2026 §1 stk. 3 nr. 2) and outside the livestock catch-crop requirement as well
+(BEK 673/2026 §4 stk. 5). Underneath that exemption there is also an arithmetic advantage, and the livestock
 register can measure it on cattle:
 
-| Cohort | Holdings | Animal units | Mean DE | With land | Median DE/ha | >1.4 |
+| Cohort | Holdings | Animal units | Mean DE | With land | Median DE/ha | >{P['historic_limits_de_ha'][0]} |
 |---|---:|---:|---:|---:|---:|---:|
 {orows}
 
@@ -1444,8 +1448,8 @@ extensive beef is already below any threshold that binds.
 
 The independent check agrees, and it is stronger than an exemption. In NUAR's modelling
 of the discharge-based regulation across six allocation models, **organic holdings do
-not merely lose less — they gain**, at between +341 and +523 kroner per hectare against
-the reference, in a catchment where cattle lose between −969 and −1,207. That is the
+not merely lose less — they gain**, at between {ns['organic_lo']:+,} and {ns['organic_hi']:+,} kroner per hectare against
+the reference, in a catchment where cattle lose between {ns['cattle_best']:,} and {ns['cattle_worst']:,}. That is the
 only enterprise type in the table with a positive sign in every column.
 
 *What this does not establish.* The livestock register's organic flag is on the
@@ -1471,9 +1475,9 @@ def sec_hectares(d):
     zero_n = dict(h["top_crops"]).get("Miljøtilsagn græs (0 N), permanent", 0.0)
     no = byt["no animal units"]
     return f"""
-## 5. Half the hectares have no animals over them
+## 5. {share(no['ha'], h['total_ha']):.0f}% of the hectares have no animals over them
 
-Sections 3 and 4 asked who keeps the animals and what they grow. Ask instead who holds
+Section 3 and section 4 asked who keeps the animals and what they grow. Ask instead who holds
 the hectares the percentage is charged on, and the population changes completely.
 
 | Operator of the declared hectares | Businesses | Declared hectares | Share | Mean ha |
@@ -1492,10 +1496,10 @@ kind of cost.
 
 * **Today the instrument is a catch-crop percentage**, and the cost is a hectare of
   rotation given over to a crop that is not sold, on a base area that is nearly all of
-  the farm. The 34.5% ceiling in section 4 means a third of the cereal ground.
+  the farm. The {max(x['pct'] for x in DOC['bek677']['annex1']['rows']):.1f}% ceiling in section 4 is that share of the cereal ground.
 * **From 2027 the quota is on discharge**, and then the constraint moves to the input
   the arable holding actually controls: the bag. That is the channel
-  [NITROGEN.md section 2c](NITROGEN.md) predicts bites first — *mineral fertiliser is
+  [the manure section of NITROGEN.md](NITROGEN.md) predicts bites first — *mineral fertiliser is
   the free variable and manure is not.* The livestock holding meets a tightening quota
   by rearranging where the slurry goes; the arable holding meets it by buying less
   nitrogen and harvesting less wheat. One is a logistics cost and the other is a yield
@@ -1535,6 +1539,9 @@ def sec_money(d):
     sh = d["shock"]
     it = d["intersection"]
     art = d["debt_artefact"]
+    P, ns = d["params"], nuar_stats()
+    lhead = " | ".join(f"{x:,}" for x in P["shock_ha_kr"])
+    dhead = " | ".join(f"{x:,}" for x in P["shock_de_kr"])
     ordered = [x for x in order(c)]
     dec = s["equity_deciles"]
     crows = "\n".join(
@@ -1565,7 +1572,11 @@ def sec_money(d):
         f"| {c[k]['median_equity_trajectory']:+.3f} "
         f"| {c[k]['pct_trajectory_falling']:.0f}% |"
         for k in ordered if c[k]["n_profit_3y"] >= 10)
-    E = EXTENSIFICATION_KR_HA
+    b130 = DOC["bek130"]                   # read from the pinned BEK 130, not typed
+    E = {"rotation land, priority area": b130["priority_rotation_kr_ha"],
+         "grass, priority area": b130["priority_grass_kr_ha"],
+         "rotation land, elsewhere": b130["elsewhere_rotation_kr_ha"],
+         "grass, elsewhere": b130["elsewhere_grass_kr_ha"]}
     def yrs(t, rate):
         m = sh.get(t, {}).get("break_even_median", float("nan"))
         return rate / m if m == m and m > 0 else None
@@ -1573,16 +1584,18 @@ def sec_money(d):
         "| " + t + f" | {f0(sh[t]['break_even_median'])} | "
         + " | ".join(
             (f"{yrs(t, r):.1f}" if yrs(t, r) is not None else "—")
-            for r in (82500, 59500, 35500)) + " |"
+            for r in (E["rotation land, priority area"], E["rotation land, elsewhere"],
+                      E["grass, priority area"])) + " |"
         for t in sorted(sh, key=lambda x: -sh[x]["break_even_median"]))
-    yr_beef = yrs("beef / other cattle", 35500) or float("nan")
-    yr_dairy = yrs("dairy", 82500) or float("nan")
-    nuar_models = " | ".join(NUAR_MODELS)
-    nuar_dashes = "".join("---:|" for _ in NUAR_MODELS)
+    yr_beef = yrs("beef / other cattle", E["grass, priority area"]) or float("nan")
+    yr_dairy = yrs("dairy", E["rotation land, priority area"]) or float("nan")
+    NR, NM = DOC["nuar_t75"]["rows"], DOC["nuar_t75"]["models"]   # the parsed Tabel 7.5
+    nuar_models = " | ".join(NM)
+    nuar_dashes = "".join("---:|" for _ in NM)
     nuar_rows = "\n".join(
-        "| " + ("**" + r[0] + "**" if r[0] in ("Cattle", "Organic") else r[0]) + " | "
-        + " | ".join(f"{v:+,}" for v in r[1:]) + " |"
-        for r in NUAR_T75)
+        "| " + ("**" + t + "**" if t in ("Cattle", "Organic") else t) + " | "
+        + " | ".join(f"{NR[t][m]:+,}" for m in NM) + " |"
+        for t in NR)
     ix = it["by_type"]
 
     def cell(t, k):
@@ -1601,7 +1614,7 @@ def sec_money(d):
 | | |
 |---|---:|
 | Businesses with filed accounts in this data | {s['n_filed']:,} |
-| …in primary agriculture (NACE 011–015) | {s['n_primary_agriculture']:,} |
+| …in primary agriculture (NACE `011`–`015`) | {s['n_primary_agriculture']:,} |
 | …keeping animals in the 2024 livestock register | **{s['n_keeping_animals']:,}** |
 | …of those, also declaring field parcels | {s['n_with_land']:,} |
 
@@ -1609,11 +1622,11 @@ def sec_money(d):
 primary agriculture. They are not noise to be tidied away — they are horse-keeping
 businesses, property-letting companies, fish farms, livestock wholesalers and
 non-financial holding companies that appear in the register because they happen to
-hold a livestock site. Left in, the largest of them has assets of over fifty billion
+hold a livestock site. Left in, the largest of them has assets of {said("assets of @@ kroner and")}
 kroner and would have set every mean on this page by itself. Medians are used
 throughout anyway, and the exclusion is stated so the count can be checked.
 
-Read section 2 before reading any figure below. This is the incorporated quarter of
+Read section 2 before reading any figure below. This is the incorporated {share(d['visibility']['by_accounts']['True']['de'], d['total_de']):.0f}% of
 the herd, it is the large end, and it is therefore the **most** resilient end.
 
 ### The distribution of equity
@@ -1656,7 +1669,7 @@ here is only: how many holdings in each cohort go from profit to loss as an annu
 charge per declared hectare rises? The break-even column is the charge the median
 holding could absorb exactly.
 
-| Enterprise type | n | Break-even (kr/ha) | 0 | 500 | 1,000 | 2,000 | 3,000 | 5,000 | 8,000 |
+| Enterprise type | n | Break-even (kr/ha) | {lhead} |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 {lrows}
 
@@ -1665,10 +1678,10 @@ hectare is applied to the last filed twelve-month profit)*
 
 The gradients differ by more than the levels do. Dairy absorbs
 {f0(sh['dairy']['break_even_median'])} kr/ha before the median holding turns, and even
-at 8,000 kr/ha only {sh['dairy']['ladder']['8000']:.0f}% of the cohort is loss-making.
+at {P['shock_ha_kr'][-1]:,} kr/ha only {sh['dairy']['ladder']['8000']:.0f}% of the cohort is loss-making.
 Beef starts at {sh['beef / other cattle']['ladder']['0']:.0f}% loss-making before
 anything is applied and is at {sh['beef / other cattle']['ladder']['1000']:.0f}% by
-1,000 kr/ha. **The cohort with the least room is the one the instrument is least
+{at(P['shock_ha_kr'], 1000):,} kr/ha. **The cohort with the least room is the one the instrument is least
 aimed at.**
 
 That ladder has a hole in it, and the hole is the finding of section 3. A charge per
@@ -1679,7 +1692,7 @@ per animal unit instead puts them back, and is anyway the better model of how th
 reaches them: through the price of a slurry placement contract, which scales with the
 slurry.
 
-| Enterprise type | n | of which landless | Break-even (kr/DE) | 0 | 250 | 500 | 1,000 | 2,000 | 4,000 |
+| Enterprise type | n | of which landless | Break-even (kr/DE) | {dhead} |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 {drows}
 
@@ -1726,42 +1739,43 @@ by enterprise type, for the Hjarbæk Fjord catchment under six quota-allocation 
 {nuar_rows}
 
 *(change in DB2, kroner per hectare, against a reference of compulsory and livestock
-catch crops. Eriksen et al., NUAR, DCA rådgivningsnotat, 24 May 2024, Tabel 7.5. The
-report states the pattern repeats across the other ten catchments analysed.)*
+catch crops. Eriksen et al., NUAR, DCA rådgivningsnotat, 2024-05-24, Tabel 7.5, read from
+the pinned report. The report states the pattern repeats across the {said("across the @@ analysed.)* Three")}
+analysed.)*
 
 Three things follow, and the third is the one that matters.
 
-**The magnitudes land on the low rungs of the ladder.** The losses run from about 330
-to about 1,200 kroner per hectare. At 1,000 kr/ha this page's ladder puts
+**The magnitudes land on the low rungs of the ladder.** The losses run from {ns['loss_lo']:,}
+to {ns['loss_hi']:,} kroner per hectare. At {at(P['shock_ha_kr'], 1000):,} kr/ha this page's ladder puts
 {sh['dairy']['ladder']['1000']:.0f}% of dairy holdings into a loss,
 {sh['pigs']['ladder']['1000']:.0f}% of pigs and
 {sh['beef / other cattle']['ladder']['1000']:.0f}% of beef and other cattle. A cost of
 this size is absorbable by most of the sample — but the sample is the incorporated
-quarter, and the ladder's zero column already shows
+{share(d['visibility']['by_accounts']['True']['de'], d['total_de']):.0f}% of the herd, and the ladder's zero column already shows
 {sh['beef / other cattle']['ladder']['0']:.0f}% of beef holdings loss-making before
 anything is added.
 
-**Cattle carries two to three times the arable loss in every column**, which is the
+**Cattle carries {ns['ratio_lo']:.1f} to {ns['ratio_hi']:.1f} times the arable loss across the columns**, which is the
 mechanism section 3 measured from the other side. And **organic is positive in every
 column** — not exempt-and-therefore-unaffected, but better off than the reference.
 
 **And no allocation model rescues cattle.** This is the third thing, and it is the one
 that matters, because six models is what the argument has been about. Cattle's loss
-lands between −969 and −1,207 kroner per hectare in **every one of them** — a spread of
-238 kr/ha, or 22% of its own loss, the narrowest relative range of any loss-making type
-in the table. Specialised arable moves from −327 to −678 across the same six, a spread
-of 351 kr/ha and 71% of its own loss.
+lands between {ns['cattle_best']:,} and {ns['cattle_worst']:,} kroner per hectare in **every one of them** — a spread of
+{ns['cattle_spread']:,} kr/ha, or {ns['cattle_rel']:.0f}% of its own mean loss, the narrowest relative range of any
+loss-making type in the table. Specialised arable moves from {ns['arable_best']:,} to {ns['arable_worst']:,} across the
+same six, a spread of {ns['arable_spread']:,} kr/ha and {ns['arable_rel']:.0f}% of its own mean loss.
 
 So the choice being fought over is a real choice **for arable and a largely settled
-question for cattle**. Picking a different quota-allocation model can roughly halve or
-double what a specialised arable holding loses; it moves a cattle holding by about a
-fifth and leaves it, in all six cases, losing two to three times what the arable holding
+question for cattle**. Picking a different quota-allocation model changes what a specialised arable holding
+loses by a factor of {ns['arable_factor']:.1f}; it moves a cattle holding by {ns['cattle_rel']:.0f}% of its mean loss
+and leaves it, in all six cases, losing {ns['ratio_lo']:.1f} to {ns['ratio_hi']:.1f} times what the arable holding
 does. **The instrument the industry is arguing about is not the instrument that decides
 cattle's position — the base area is**, and the base area is fixed by what grows on the
 farm.
 
 The one thing in the report that does move cattle materially is trading: the same table
-narrows cattle's loss to −811 kr/ha once allowances can be exchanged, which is the
+narrows cattle's loss to {ns['hrodz']:,} kr/ha once allowances can be exchanged, which is the
 largest gain of any type. That is why [section 1](#1-what-the-instrument-is-and-what-that-alone-tells-you-about-incidence)
 treats the unresolved trading question as load-bearing rather than technical.
 
@@ -1784,7 +1798,7 @@ Set that against what a hectare currently earns, using the same medians as the l
 above. The figure is the number of years of the cohort's median per-hectare profit that
 the payment replaces:
 
-| Enterprise type | Median profit per ha | 82,500 | 59,500 | 35,500 |
+| Enterprise type | Median profit per ha | {E['rotation land, priority area']:,} | {E['rotation land, elsewhere']:,} | {E['grass, priority area']:,} |
 |---|---:|---:|---:|---:|
 {payback}
 
@@ -1792,7 +1806,7 @@ the payment replaces:
 cohort at the rate it would actually be offered — grass for beef, rotation land for
 dairy — the payment replaces about **{yr_beef:.0f} years** of a beef hectare's margin
 and about **{yr_dairy:.0f}** of a dairy hectare's. At an identical rate the gap is
-wider still: 82,500 kr/ha is {yrs('beef / other cattle', 82500):.0f} years for beef
+wider still: {E['rotation land, priority area']:,} kr/ha is {yrs('beef / other cattle', E['rotation land, priority area']):.0f} years for beef
 against {yr_dairy:.0f} for dairy. Against a farming horizon of a generation, one of
 those is a good price and the other is not.
 
@@ -1803,10 +1817,10 @@ The holdings whose hectares carry the most are the ones for which it is worst va
 dairy at {d['cohorts']['dairy']['median_density']:.2f}.
 
 There is a second reason dairy should decline, and it is the mechanism
-[NITROGEN.md section 2c](NITROGEN.md) already predicted. **Selling a hectare out of a
+[the manure section of NITROGEN.md](NITROGEN.md) already predicted. **Selling a hectare out of a
 land-squeezed holding raises its manure loading on every hectare that remains.** A dairy
 holding at {d['cohorts']['dairy']['median_density']:.2f} DE/ha that converts land moves
-*up* against the 80 kg N/ha threshold and the 170 kg N/ha ceiling, not down. The
+*up* against the {DOC['bek673']['threshold_high_kg_n_ha']} kg N/ha threshold and the {DOC['bek931']['ceiling_kg_n_ha']} kg N/ha ceiling, not down. The
 voluntary scheme and the compulsory one push it in opposite directions, and it is paid
 for going the way that makes its other problem worse.
 
@@ -1821,14 +1835,14 @@ retains some residual value and some of it can still be grazed. The ratio above 
 comparison of magnitudes, not a discounted valuation, and a reader who wants the second
 should build it. It is printed because the magnitudes differ by a factor of
 {yr_beef/yr_dairy:.0f} between the two cattle sectors at the rates each would be
-offered, and {yrs('beef / other cattle', 82500)/yr_dairy:.0f} at the same rate — and no
+offered, and {yrs('beef / other cattle', E['rotation land, priority area'])/yr_dairy:.0f} at the same rate — and no
 discount rate reverses a gap of that size.
 
 ### The overlap, which is the actual answer
 
 Exposed means at or above the indicative {it['line']} DE/ha line — where section 1's
-80 kg N/ha threshold sits, and where three of the four requirements step up at once — or
-declaring no land at all. Thin means an equity ratio below 0.20.
+{DOC['bek673']['threshold_high_kg_n_ha']} kg N/ha threshold sits, and where three of the four requirements step up at once — or
+declaring no land at all. Thin means an equity ratio below {P['thin_equity_ratio']:.2f}.
 
 | Enterprise type | n | Exposed **and** thin | Exposed, not thin | Thin, not exposed | Neither |
 |---|---:|---:|---:|---:|---:|
@@ -1838,7 +1852,7 @@ First, the size of the exposed column itself:
 **{sum(cell(t, '(True, True)') + cell(t, '(True, False)') for t in ix):,} of
 {it['n_rows']} animal-keeping holdings with accounts
 ({share(sum(cell(t, '(True, True)') + cell(t, '(True, False)') for t in ix), it['n_rows']):.0f}%)
-are on the exposed side of the line.** Above the 80 kg N/ha threshold is where a
+are on the exposed side of the line.** Above the {DOC['bek673']['threshold_high_kg_n_ha']} kg N/ha threshold is where a
 livestock holding normally is; that is not a finding about a stressed minority, it is
 the ordinary condition of the sector. Which is why the second column matters more than
 the first.
@@ -1858,10 +1872,10 @@ losing money while equity is still positive (n={it['n_years_of_equity']}), the m
 holding has **{it['median_years_of_equity']:.1f} years of equity left at its current
 loss rate** — before any nitrogen cost at all.
 
-The profile, stated as a profile: **a pig holding of a few hundred to a few thousand
-animal units, either landless or stocked above the higher manure threshold, with an
-equity ratio under a fifth and a loss already on the last filed accounts.** Pigs are
-{cell('pigs', '(True, True)')} of the {it['n_both']} — half the cohort — and
+The profile, stated as a profile: **a pig holding of {said("holding of @@ animal units,")}
+animal units, either landless or stocked above the higher manure threshold, with an equity ratio under {P['thin_equity_ratio']:.2f} and a loss already on the
+last filed accounts.** Pigs are
+{cell('pigs', '(True, True)')} of the {it['n_both']} — {share(cell('pigs', '(True, True)'), it['n_both']):.0f}% of the cohort — and
 {share(cell('pigs', '(True, True)'), sum(ix['pigs'].values())):.0f}% of all pig
 holdings with accounts sit there, against
 {share(cell('dairy', '(True, True)'), sum(ix['dairy'].values())):.0f}% of dairy — and
@@ -1873,7 +1887,7 @@ equity**, and only one of those can be fixed by a transition scheme.
 
 **The accounts are measured at a cyclical high.** Over the three filed years:
 
-| Enterprise type | n | Median 3-year cumulative profit (m. kr) | Negative over 3 years | Median change in equity ratio | Falling |
+| Enterprise type | n | Median three-year cumulative profit (m. kr) | Negative over three years | Median change in equity ratio | Falling |
 |---|---:|---:|---:|---:|---:|
 {trows}
 
@@ -1895,15 +1909,15 @@ produce. A solvency ratio that counts it is counting the exit as the reserve.
 <details class="work">
 <summary>A worked example of the trap this project keeps falling into: a debt-structure finding that was a missing XBRL tag, and would have been wrong by up to {max_err:.0f} percentage points</summary>
 
-An early version of this analysis found that beef holdings carried 68% of their debt
-short-term against 24% for dairy, and read that as dairy being mortgage-financed while
+An early version of this analysis found that beef holdings carried {said("carried @@ short-term")}
+short-term against {said("short-term against @@, and")}, and read that as dairy being mortgage-financed while
 beef lives on the overdraft. It is a plausible story and it fits the other findings.
 
 It was mostly an artefact. `lt_debt` is
 `LongtermLiabilitiesOtherThanProvisions`, and a filing that does not present the line
 does not carry the tag. Treating an absent tag as a zero is correct for the *level* of
 debt — the balance-sheet identity confirms it, below — and catastrophic for the
-*composition*, because it forces the short-term share to 100% for every holding that
+*composition*, because it forces the short-term share to the whole of the debt for every holding that
 did not file the line. Those holdings are not spread evenly:
 
 | Enterprise type | Filings carrying `lt_debt` | Short-term share, treating absent as zero | …restricted to filings carrying both tags | Error |
@@ -1937,8 +1951,8 @@ and the ratio built from it was not.
 
 **And one that no range check catches at all.** The `gross` column is
 `GrossResult`/`GrossProfitLoss` — *bruttofortjeneste*, gross profit after variable
-costs. It is **not turnover**. `Revenue` is a separate tag present on about one filing
-in twenty, because a Danish class B company may omit it. Every figure it produces is
+costs. It is **not turnover**. `Revenue` is a separate tag present on about {said("present on about @@ in twenty, because")}
+{said("one filing @@, because")}, because a Danish class B company may omit it. Every figure it produces is
 plausible, correctly signed and of the right order of magnitude; a "profit margin"
 computed as profit over `gross` would be a real ratio of two real numbers and would
 mean something different for every firm in the sample. There is therefore **no margin
@@ -1949,6 +1963,9 @@ on sales anywhere on this page**. Everything is per hectare or per animal unit.
 
 def sec_gaps(d):
     h = d["hectares"]
+    P, b673, b931, b130, ns = d["params"], DOC["bek673"], DOC["bek931"], DOC["bek130"], nuar_stats()
+    ann = DOC["bek677"]["annex1"]
+    annv = [x["pct"] for x in ann["rows"]]
     return f"""
 ## 7. What this cannot establish, and what would
 
@@ -1959,30 +1976,30 @@ data*.
 
 | Question the brief asked | Answer here | What would answer it |
 |---|---|---|
-| **The allocation mechanism** | Established, from the regulations. It is a percentage of the base area, set per coastal catchment, with two manure thresholds at 30 and 80 kg N/ha and a 170 kg N/ha ceiling. The texts were fetched and read. | — |
-| **Which catchments carry the largest mandatory requirement** | Established for 2026/2027, from BEK 677 Annex 1: twenty catchments, 14.8% to 34.5%. | — |
-| **Whether high-density kommuner are also low-retention catchments** | **Not established, and not asserted.** Published evidence exists in both directions and this project has not obtained the retention grid. | The **kystvandopland** boundaries and the GEUS/AU retention grid of 27 Aug 2025, joined to the field-parcel geometry the sibling project already holds. Both are model outputs and both are published. Highest-value fetch on this list. |
-| **On what terms discharge quotas may be transferred** | **Partly established.** LOV 759 §6 stk. 4 creates the power to permit transfer; the terms — who to whom, whether bounded within a catchment, at what price — are **not verified**. This is the most load-bearing gap on the page: transfer is worth roughly a quarter of cattle's modelled loss. | The implementing regulation under §6, once issued. |
-| **Whether the implementing regulations under LOV 759 have been issued** | **Not established.** The act is a framework; every number that decides a holding's position is delegated. | Checking Lovtidende after the act commences on 1 January 2027. |
-| **The numeric braklægningspunkt** | **Not established**, and there may be no single number: it is described as set per catchment. | The 18 June 2025 *delaftale* and the implementing act. |
-| **Compensation and transition rates** | **Not established. No rate in kroner per hectare has been verified by this project.** Scheme names exist in the regulation index; a name is not a rate and is not published here as one. | A fresh pass over the *tilskud* regulations and their annexes. This one was not done. |
+| **The allocation mechanism** | Established, from the regulations. It is a percentage of the base area, set per coastal catchment, with two manure thresholds at {b673['threshold_low_kg_n_ha']} and {b673['threshold_high_kg_n_ha']} kg N/ha and a {b931['ceiling_kg_n_ha']} kg N/ha ceiling. The texts were fetched, pinned and read. | — |
+| **Which catchments carry the largest mandatory requirement** | Established for 2026/2027, from BEK 677 Annex 1: {ann['n_catchments']} catchments, {min(annv):.1f}% to {max(annv):.1f}%. | — |
+| **Whether high-density kommuner are also low-retention catchments** | **Not established, and not asserted.** Published evidence exists in both directions and this project has not obtained the retention grid. | The **kystvandopland** boundaries and the GEUS/AU retention grid of 2025-08-27, joined to the field-parcel geometry the sibling project already holds. Both are model outputs and both are published. Highest-value fetch on this list. |
+| **On what terms discharge quotas may be transferred** | **Partly established.** LOV 759 §6 stk. 4 creates the power to permit transfer; the terms — who to whom, whether bounded within a catchment, at what price — are **not verified**. This is the most load-bearing gap on the page: transfer is worth {ns['trade']:.0f}% of cattle's modelled loss. | The implementing regulation under §6, once issued. |
+| **Whether the implementing regulations under LOV 759 have been issued** | **Not established.** The act is a framework; every number that decides a holding's position is delegated. | Checking Lovtidende after the act commences on 2027-01-01. |
+| **The numeric braklægningspunkt** | **Not established**, and there may be no single number: it is described as set per catchment. | The 2025-06-18 *delaftale* and the implementing act. |
+| **Compensation and transition rates** | **Established for permanent extensification only**, read from the pinned BEK 130/2026 §18 in section 6. The other *tilskud* schemes were not read, and no rate for them is published here. | A pass over the other *tilskud* regulations and their annexes. |
 | **Owned versus rented land** | Not established at all. The field-parcel register records who *declares* a parcel, not who owns it. | The ownership register (*Ejerfortegnelsen*) or the land register (*Tingbogen*), joined on the property identifier. The sibling project holds the GraphQL schema and has not fetched it. This is also the join that would make individual identification easy, which is a reason to publish only the distribution. |
 | **Uptake of the voluntary conversion schemes, by enterprise type** | Not obtained, which is why section 6's closing argument is labelled a prediction. | The published *tilsagn* lists for skovrejsning, permanent ekstensivering and the wetland schemes, joined on CVR to the livestock register. The commitments are administered by the state and the areas are registered. |
 | **Crop mix per holding** | Only the single largest declared crop, which is why section 3's base-area split is a proxy with a stated direction and unstated magnitude. | The full parcel-level crop declaration, in the same Marker layer already fetched and reduced to a top-crop summary on the way in. Recoverable without a new source, and it would turn section 3's best finding from a direction into a number. |
-| **Kilograms of manure nitrogen per hectare, per holding** | Not established. Animal units were converted at a **stated** 100 kg N per unit, and the declared area is not the *harmoniareal*. | The *gødningsregnskab*, which is filed by every holding and is not open. |
+| **Kilograms of manure nitrogen per hectare, per holding** | Not established. Animal units were converted at a **stated** {P['n_per_de_kg']} kg N per unit, and the declared area is not the *harmoniareal*. | The *gødningsregnskab*, which is filed by every holding and is not open. |
 | **Balance sheets for arable holdings** | None exist in this data. Every filing here belongs to a livestock business — including, awkwardly, the population the targeted requirement is most aimed at. | The sibling project's crop-farmer extension, in progress. |
 | **The finances of {share(d['visibility']['by_accounts']['False']['de'], d['visibility']['total_de']):.0f}% of the herd and {share(h['by_accounts']['False']['ha'], h['total_ha']):.0f}% of the land** | Not obtainable. | Nothing public. Sole proprietorships and partnerships have no filing duty. The only routes are the farm accountancy survey (*Regnskabsstatistik for jordbrug*, a sample, published in aggregate) or the advisory sector's benchmarking, which is not open. **This one does not close.** |
 | **The inter-farm slurry placement contracts** | Not obtainable. Not in any register. | Nothing. These are private contracts. Their existence is inferable from the {sum(d['types'][t]['landless_de'] for t in d['types']):,.0f} animal units standing on holdings with no declared land; their terms are not. |
 | **The CO2e tax on agricultural emissions** | **Out of scope, and it is not law.** It is a separate instrument with a different base — modelled greenhouse-gas emissions from digestion and manure handling, not nitrogen — and therefore a different incidence, which this page does not compute. It exists as a political agreement; no implementing bill was located in the Folketing record, and the government's own stated plan is to introduce one in 2027 for entry into force in 2030. Nothing on this page should be read as covering it, and nothing on this page assumes it. | An implementing bill, if one is introduced. Until then every farm-type cost analysis of it — and there are several in circulation — is an analysis of a proposal, generally at rates and without the basic deduction that the agreement actually specifies. |
-| **The *bemærkninger* to LOV 759** | Not read. The enacted text was read — §§6, 11, 57 and 65 are quoted from Lovtidende — but the explanatory remarks, which is where the modelling behind the quota is described, were not. | Reading the bill's remarks. |
-| **Whether the voluntary conversion programme is delivering at the rate its targets require** | Not established here. Section 6 predicts who should decline the offer; it does not measure whether they have. | The *tilsagn* registers, and the agency's own area accounting against the 250,000 ha afforestation and 140,000 ha lowland targets. |
+| **The *bemærkninger* to LOV 759** | Not read. The enacted text was read — §6, §11, §57 and §65 are quoted from Lovtidende — but the explanatory remarks, which is where the modelling behind the quota is described, were not. | Reading the bill's remarks. |
+| **Whether the voluntary conversion programme is delivering at the rate its targets require** | Not established here. Section 6 predicts who should decline the offer; it does not measure whether they have. | The *tilsagn* registers, and the agency's own area accounting against the {said("against the @@ afforestation and")} afforestation and {said("afforestation and @@ lowland targets.")} lowland targets. |
 
 ### The one finding that would need a name, stated without one
 
 The highest-density holdings in the register are extreme: {d['types']['poultry']['p90']:.1f}
 animal units per declared hectare at the 90th percentile for poultry, and a national
-99th percentile far above any density that could be an operating farm. A handful are, on
-the face of it, businesses running thousands of animal units against a single declared
+99th percentile far above any density that could be an operating farm. {said("an operating farm. @@, on the")}, on
+the face of it, businesses running {said("businesses running @@ hectare. **Those")}
 hectare.
 
 **Those are not findings about farming. They are almost certainly findings about the
@@ -2000,8 +2017,8 @@ threshold, and none reports a maximum.
 ## 8. What this page concludes
 
 1. **The instrument does not count animals.** It charges a percentage on a base area of
-   cereals, maize, rape and pulses, set per coastal catchment, with step changes at 30
-   and 80 kg of manure nitrogen per hectare and a flat 170 kg N/ha ceiling. The animal
+   cereals, maize, rape and pulses, set per coastal catchment, with step changes at {b673['threshold_low_kg_n_ha']}
+   and {b673['threshold_high_kg_n_ha']} kg of manure nitrogen per hectare and a flat {b931['ceiling_kg_n_ha']} kg N/ha ceiling. The animal
    unit has had no legal force since 2017 and the cattle derogation lapsed in 2024.
 2. **Dairy is the most exposed enterprise type, and not because of density.**
    {d['types']['dairy']['over']['0.8']:.0f}% of dairy holdings that declare land sit
@@ -2018,9 +2035,9 @@ threshold, and none reports a maximum.
    {d['cohorts']['beef / other cattle']['pct_loss']:.0f}%, n={d['cohorts']['beef / other cattle']['n_profit']}.
    Any account that treats "hit hardest" as one quantity is wrong about one of them.
 4. **No allocation model rescues cattle.** Across the six quota-allocation models in the
-   published technical basis, cattle loses between 969 and 1,207 kroner per hectare — a
-   spread of a fifth — while specialised arable moves by 71% of its own much smaller
-   loss. The model choice the industry is arguing about changes arable's position and
+   published technical basis, cattle loses between {-ns['cattle_best']:,} and {-ns['cattle_worst']:,} kroner per hectare — a
+   spread of {ns['cattle_rel']:.0f}% of its mean loss — while specialised arable moves by {ns['arable_rel']:.0f}% of its own
+   much smaller loss. The model choice the industry is arguing about changes arable's position and
    barely changes cattle's. Trading would; whether it exists is not established.
 5. **The unit the charge is denominated in swaps which sector is thinnest.** Per hectare
    the thinnest is **beef** ({f0(d['shock']['beef / other cattle']['break_even_median'])}
@@ -2033,27 +2050,27 @@ threshold, and none reports a maximum.
    half of its own sector: {d['shock_de']['pigs']['pct_loss_landless']:.0f}% of landless
    pig holdings with accounts made a loss last year against
    {d['shock_de']['pigs']['pct_loss_with_land']:.0f}% of those with land.
-7. **The mandatory allocation for 2026/2027 is not where the animals are.** Twenty
-   catchments carry it, several on Zealand and the islands, and three of the four at the
-   34.5% ceiling are on the islands — in the region holding
+7. **The mandatory allocation for 2026/2027 is not where the animals are.** {ann['n_catchments']}
+   catchments carry it, several on Zealand and the islands, and of those at the
+   {max(annv):.1f}% ceiling only Kås Bredning og Venø Bugt is in Jutland — Zealand's region holding
    {share(d['regions']['Region Sjælland']['de'], d['total_de']):.1f}% of the national
    herd at a median of {d['regions']['Region Sjælland']['med']:.2f} DE/ha. A percentage
    of a large base area on holdings with no manure is a real cost, and it falls on the
    population this page has no balance sheets for.
 8. **The voluntary offer is worth least to the holdings whose land carries the most
-   nitrogen.** Permanent extensification pays a one-off 82,500 kr/ha for rotation land
-   in a priority area. That is about {82500/d['shock']['dairy']['break_even_median']:.0f}
+   nitrogen.** Permanent extensification pays a one-off {b130['priority_rotation_kr_ha']:,} kr/ha for rotation land
+   in a priority area. That is about {b130['priority_rotation_kr_ha']/d['shock']['dairy']['break_even_median']:.0f}
    years of the median dairy hectare's profit and about
-   {35500/d['shock']['beef / other cattle']['break_even_median']:.0f} years of the median
+   {b130['priority_grass_kr_ha']/d['shock']['beef / other cattle']['break_even_median']:.0f} years of the median
    beef hectare's at the grass rate. The engine buys extensive land cheaply and
    intensive land not at all — and a land-squeezed dairy holding that sells a hectare
    moves *up* against its own manure thresholds. That is a falsifiable prediction about
    uptake, not an observation.
 9. **The act that takes over in 2027 permits quotas to be transferred, and the terms are
    not public.** LOV 759 §6 stk. 4 creates the power; the implementing regulation would
-   set the terms; transfer is worth about a quarter of cattle's modelled loss. It also
+   set the terms; transfer is worth {ns['trade']:.0f}% of cattle's modelled loss. It also
    carries two expropriation powers, one of them not limited to this act's own measures.
-10. **Four fifths of Danish farmland is farmed by businesses that publish nothing.** The
+10. **{share(h['by_accounts']['False']['ha'], h['total_ha']):.0f}% of Danish farmland is farmed by businesses that publish nothing.** The
    individual-level question is, for most of Danish agriculture, not answerable from
    public data — and that is a finding about the public record rather than a limitation
    of this analysis.
@@ -2071,8 +2088,8 @@ restating it, and computes its own aggregates from the same primary sources rath
 copying its results.*
 
 *Every legal provision quoted here was fetched and read for this page, not taken from
-coverage of it: LOV nr. 759 af 8. september 2026 (§§6, 11, 57, 65), BEK 931/2024 (§14),
-BEK 673/2026 (§§4, 24 and Annexes 1–2), BEK 677/2026 (§§1, 3, 6 and Annex 1) and
+coverage of it: LOV nr. 759 of 2026-09-08 (§6, §11, §57, §65), BEK 931/2024 (§14),
+BEK 673/2026 (§4, §24, Annex 1 and Annex 2), BEK 677/2026 (§1, §3, §6 and Annex 1) and
 BEK 130/2026 (§18), all from
 [retsinformation.dk](https://www.retsinformation.dk); and the NUAR figures from the
 report itself. Where this page says something is not established, it means the document
@@ -2080,8 +2097,71 @@ was not obtained — not that it was skimmed.*
 """
 
 
-def main():
-    d = compute()
+def nuar_stats():
+    """What the page says about NUAR Tabel 7.5, computed from the parsed table."""
+    rows, models = DOC["nuar_t75"]["rows"], DOC["nuar_t75"]["models"]
+    cat = [rows["Cattle"][m] for m in models]
+    ara = [rows["Specialised arable"][m] for m in models]
+    loss_types = ("Cattle", "Specialised arable", "Pigs and arable", "Small / non-specialised")
+    losses = [-rows[t][m] for t in loss_types for m in models]
+    org = [rows["Organic"][m] for m in models]
+    return {
+        "cattle_best": max(cat), "cattle_worst": min(cat),
+        "cattle_spread": max(cat) - min(cat),
+        "cattle_rel": (max(cat) - min(cat)) / (-sum(cat) / len(cat)) * 100,
+        "arable_best": max(ara), "arable_worst": min(ara),
+        "arable_spread": max(ara) - min(ara),
+        "arable_rel": (max(ara) - min(ara)) / (-sum(ara) / len(ara)) * 100,
+        "arable_factor": min(ara) / max(ara),
+        "ratio_lo": min(c / a for c, a in zip(cat, ara)),
+        "ratio_hi": max(c / a for c, a in zip(cat, ara)),
+        "loss_lo": min(losses), "loss_hi": max(losses),
+        "organic_lo": min(org), "organic_hi": max(org),
+        "rodz": rows["Cattle"]["Rodz"], "hrodz": rows["Cattle"]["hRODZ"],
+        "trade": (1 - rows["Cattle"]["hRODZ"] / rows["Cattle"]["Rodz"]) * 100,
+    }
+
+
+def policy_values(d):
+    b931, b673, P = DOC["bek931"], DOC["bek673"], d["params"]
+    h = P["historic_limits_de_ha"]
+    ns = nuar_stats()
+    return {"vote": said("| **L5** passed @@, becoming **LOV"), "years": said("cattle holdings for @@. It expired"),
+            "derog": b931["derogation_kg_n_ha"], "ceiling": b931["ceiling_kg_n_ha"],
+            "cut": f"{(1 - b931['ceiling_kg_n_ha'] / b931['derogation_kg_n_ha']) * 100:.0f}",
+            "h1": h[0], "h2": h[1], "h3": h[2],
+            "t_low": b673["threshold_low_kg_n_ha"], "t_high": b673["threshold_high_kg_n_ha"],
+            "cc": f"{b673['catch_crop_pct']:g}", "cc_high": f"{b673['catch_crop_pct_high']:g}",
+            "qcut_lo": b673["quota_cut_below_kg_n_ha"], "qcut_hi": b673["quota_cut_above_kg_n_ha"],
+            "more": f"{(b673['quota_cut_above_kg_n_ha'] / b673['quota_cut_below_kg_n_ha'] - 1) * 100:.0f}",
+            "minbase": DOC["bek677"]["min_base_ha"],
+            "rodz": f"{ns['rodz']:,}", "hrodz": f"{ns['hrodz']:,}", "trade": f"{ns['trade']:.0f}"}
+
+
+def check_positions(d):
+    """The DE/ha lines are the pinned kg N thresholds over the stated conversion.
+    A page whose lines no longer follow from its sources is refused."""
+    P, b673 = d["params"], DOC["bek673"]
+    want = (b673["threshold_low_kg_n_ha"] / P["n_per_de_kg"],
+            b673["threshold_high_kg_n_ha"] / P["n_per_de_kg"])
+    have = tuple(P["reg_thresholds_de_ha"])
+    if any(abs(a - b) > 1e-9 for a, b in zip(want, have)):
+        raise live.Unjustified(f"INCIDENCE: the DE/ha lines {have} no longer follow from "
+                               f"the pinned thresholds over the stated conversion {want}")
+    # section 3 says dairy carries the largest surplus of any type in words
+    t = d["types"]
+    top = max(t, key=lambda k: t[k]["surplus"])
+    if top != "dairy":
+        raise live.Unjustified(f"INCIDENCE: the page says dairy carries the largest surplus "
+                               f"of any type; the numbers now say {top}")
+
+
+def render(d):
+    """The page, from the numbers as written to socialcontext.json and read back
+    live, so every figure on it carries its field."""
+    global DOC
+    DOC = live.live_json(DOCS_JSON)
+    check_positions(d)
     v = d["visibility"]
     ekm = v["by_form"].get("Enkeltmandsvirksomhed", {"n": 0, "de": 0.0})
     doc = "".join([
@@ -2091,7 +2171,7 @@ def main():
                                   if k != "(not in the CVR extract)"),
             n_ekm=ekm["n"],
             pct_ekm_de=f"{share(ekm['de'], v['total_de']):.0f}%"),
-        POLICY,
+        POLICY.format(**policy_values(d)),
         sec_visible(d),
         sec_types(d),
         sec_place(d),
@@ -2099,14 +2179,28 @@ def main():
         sec_money(d),
         sec_gaps(d),
     ])
-    with open(OUT_MD, "w", encoding="utf-8") as f:
-        f.write(doc)
-    os.makedirs(DERIVED, exist_ok=True)
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(d, f, ensure_ascii=False, indent=1)
-    log(f"  wrote {OUT_MD} ({len(doc):,} chars)")
-    log(f"  wrote {OUT_JSON}")
+    return doc
+
+
+def main(argv):
+    """Compute from the sibling registers (heavy: run through scripts/heavy) and
+    write socialcontext.json; then render the page from that file, read live.
+    --render skips the compute and renders from the file as it stands."""
+    if "--render" not in argv:
+        d = compute()
+        os.makedirs(DERIVED, exist_ok=True)
+        with open(OUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False, indent=1)
+        log(f"  wrote {OUT_JSON}")
+    doc = render(live.live_json(OUT_JSON))
+    try:
+        write_doc(OUT_MD, doc)
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
+    log(f"  wrote {OUT_MD}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main(sys.argv[1:]))

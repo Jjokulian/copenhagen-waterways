@@ -16,21 +16,48 @@ which is missing in the same direction.
 
 Usage:  python3 scripts/landbrug.py
 """
+import json
 import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, ROOT, log, read_json
+from common import DERIVED, ROOT, log, read_json, write_doc
+import live
 
 MANUAL = os.path.join(ROOT, "data", "manual")
-AGRI_PCT = 69.6
-C_PER_COD = 0.375
-C_PER_N = (106 * 12.011) / (16 * 14.007)
+AGRI_PCT = 69.6           # the published agricultural share; declared, not pinned here
+C_PER_COD = 0.375         # kg C per kg COD: one O2 (32) oxidises one C (12)
+C_PER_N = (106 * 12.011) / (16 * 14.007)   # Redfield C:N 106:16, as a mass ratio
+FACTS = os.path.join(DERIVED, "landbrug.json")
+PAGE0 = "4469fc7"         # the commit whose text the self-quotations below are checked against
+
+
+def said(text):
+    """A figure nothing in this repo stores, carried as a quotation of this page as
+    committed - the site once said this, not that it was right. Counted."""
+    return live.was(PAGE0, "docs/LANDBRUG.md", text)   # text: a locator, @@ at the value
+
+
+def dk(marked):
+    """Danish decimal comma in the shown text of a live number (ids carry no dot)."""
+    return marked.replace(".", ",")
 
 
 def main():
-    paths = read_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
-    mon = read_json(os.path.join(MANUAL, "monitoring.json"))
+    # the few numbers this page derives itself are stored, then read back live
+    raw = read_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
+    os.makedirs(DERIVED, exist_ok=True)
+    with open(FACTS, "w", encoding="utf-8") as f:
+        json.dump({"_what": "Counts and constants LANDBRUG.md prints, written by "
+                            "scripts/landbrug.py.",
+                   "n_pathways": len(raw),
+                   "n_unquantified": sum(1 for p in raw if p["lo"] is None),
+                   "agri_pct": AGRI_PCT, "c_per_n": C_PER_N, "c_per_cod": C_PER_COD},
+                  f, ensure_ascii=False, indent=1)
+        f.write("\n")
+    F = live.live_json(FACTS)
+    paths = live.live_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
+    mon = live.live_json(os.path.join(MANUAL, "monitoring.json"))
     tt = mon["typetal_nutrients_mg_per_l"]
     hz = mon["hazardous_substances"]
     ov = mon["overflow_reporting"]
@@ -38,7 +65,8 @@ def main():
     land = [p for p in paths if p["pathway"].startswith("Danish land via")]
     land_lo = sum(p["lo"] for p in land)
     land_hi = sum(p["hi"] for p in land)
-    agri_lo, agri_hi = land_lo * AGRI_PCT / 100, land_hi * AGRI_PCT / 100
+    agri_lo, agri_hi = land_lo * F["agri_pct"] / 100, land_hi * F["agri_pct"] / 100
+    atm = next(p for p in paths if p["pathway"].startswith("Atmospheric deposition"))
     quant = [p for p in paths if p["lo"] is not None]
     unq = [p for p in paths if p["lo"] is None]
     tot_lo = sum(p["lo"] for p in quant)
@@ -59,11 +87,11 @@ def main():
       "hvor meget indikatoren \u00e6ndrer sig pr. \u00e6ndring i N-tilf\u00f8rsel.\n")
     a("> **For iltsvind findes der ingen.** Iltsvindsindikatoren er en *bin\u00e6r "
       "udl\u00f8ser*. Hvis \u00e9n eller flere iltsvindsindikatorer siger, at vandomr\u00e5det er "
-      "ramt, s\u00e6ttes indsatsbehovet til en fast reduktion p\u00e5 **25 %** af den "
+      "ramt, s\u00e6ttes indsatsbehovet til en fast reduktion p\u00e5 **" + said("fast reduktion på **@@** af den nuværende") + "** af den "
       "nuv\u00e6rende TN-koncentration \u2014 uanset hvor slemt iltsvindet er, hvor meget "
       "kv\u00e6lstof der tilf\u00f8res, eller hvordan omr\u00e5det er indrettet. DCE skriver selv, "
       "hvorfor: tallet er valgt, s\u00e5 det er *st\u00f8rre end de normale \u00e5r-til-\u00e5r "
-      "variationer*, og \u201ddet **vurderes**, at en 25 % reduktion i TN-koncentrationen "
+      "variationer*, og \u201ddet **vurderes**, at en " + said("**vurderes**, at en @@ reduktion i TN-koncentrationen") + " reduktion i TN-koncentrationen "
       "er minimumskrav for at \u00e6ndre systemet\u201d. Det er en fagligt begrundet "
       "tommelfingerregel, ikke en m\u00e5lt d\u00e6mpning. Den kan hverken falsificeres eller "
       "kalibreres, fordi der ingen respons-kurve er bag den.\n")
@@ -80,7 +108,7 @@ def main():
       "kvælstoftallet, og resultatet er ubelejligt for flere end landbruget.\n")
 
     # ---------------------------------------------------------------- 1
-    a("## 1. Hvad de 69,6 % faktisk er en andel af\n")
+    a(f"## 1. Hvad de {dk(format(F['agri_pct'], '.1f'))} % faktisk er en andel af\n")
     a(f"Tallet er landbrugets andel af **den landbaserede, vandbårne post alene** — "
       "kvælstof, der når kysten gennem danske vandløb og umålte oplande. Det er to "
       "rækker ud af tyve i den opgørelse, projektet har lavet over alle veje, ad hvilke "
@@ -93,9 +121,9 @@ def main():
         a(f"| {p['pathway'].replace('Danish land via monitored streams', 'Dansk land via målte vandløb').replace('Danish land via unmonitored catchments', 'Dansk land via umålte oplande')} "
           f"| {p['lo']:.0f} – {p['hi']:.0f} | {st} |")
     a(f"| **Posten, procenten deler** | **{land_lo:.0f} – {land_hi:.0f}** | |")
-    a(f"| **69,6 % af den** | **{agri_lo:.0f} – {agri_hi:.0f}** | |")
+    a(f"| **{dk(format(F['agri_pct'], '.1f'))} % af den** | **{agri_lo:.0f} – {agri_hi:.0f}** | |")
     a("")
-    a(f"De **{len(unq)} af {len(paths)} veje har slet intet tal** — heriblandt "
+    a(f"De **{F['n_unquantified']} af {F['n_pathways']} veje har slet intet tal** — heriblandt "
       "atmosfærisk afsætning af organisk kvælstof, udsivning af grundvand under havet, "
       "og frigivelse fra sedimentet, som efter én undersøgelse leverer størstedelen af "
       "det, den årlige primærproduktion kræver. De veje, der *har* et tal, summerer til "
@@ -105,8 +133,8 @@ def main():
     a(f"> Landbruget står for **højst {ceil_hi:.0f} %** af det opgjorte reaktive "
       "kvælstof, der når danske havområder. Udfyld én af de tomme rækker, og loftet "
       "falder. Det kan ikke stige.\n")
-    a("Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen er 45–65 kt "
-      "N/år** — på størrelse med hele den landbaserede post — og optræder ikke i nogen "
+    a(f"Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen er "
+      f"{atm['lo']:.0f}–{atm['hi']:.0f} kt N/år** — på størrelse med hele den landbaserede post — og optræder ikke i nogen "
       "offentliggjort fordeling.\n")
 
     # ---------------------------------------------------------------- 2
@@ -133,8 +161,8 @@ def main():
 
     # ---------------------------------------------------------------- 3
     a("## 3. Tre led mangler mellem tallet og skaden\n")
-    a("Sætningen, der bruges politisk, er ikke *69,6 % af den landbaserede vandbårne "
-      "kvælstofpost*. Den er *landbruget står for omkring 70 % af iltsvindet* — eller "
+    a(f"Sætningen, der bruges politisk, er ikke *{dk(format(F['agri_pct'], '.1f'))} % af den landbaserede vandbårne "
+      f"kvælstofpost*. Den er *landbruget står for {said("står for @@ af iltsvindet*")} af iltsvindet* — eller "
       "af fedtemøget. Mellem de to sætninger ligger tre led:\n")
     a("| Led | Koefficient |")
     a("|---|---|")
@@ -143,7 +171,7 @@ def main():
       "tæller som et kilo i juli under et springlag |")
     a("| Iltsvind → tab af højere liv | **findes ikke.** Iltsvind er én vej blandt flere — "
       "miljøfremmede stoffer, trawl, turbiditet, svovlbrinte. Bundfaunaen prøvetages "
-      "**1. marts – 31. maj**, så efterårets dødelighed ses aldrig |")
+      f"**{said("Bundfaunaen prøvetages **@@**, så efterårets")}**, så efterårets dødelighed ses aldrig |")
     a("| Tab af højere liv → fedtemøg | **findes ikke.** Fedtemøg overvåges ikke "
       "systematisk overhovedet — ikke udbredelse, ikke biomasse, ikke varighed |")
     a("")
@@ -195,9 +223,9 @@ def main():
         f"**Et fællessystemsoverløb leverer lige så meget organisk kulstof direkte, som "
         f"dets kvælstof kunne nå at producere.** Ved Redfield-forhold svarer "
         f"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til "
-        f"{tt['combined_overflow']['Tot-N']*C_PER_N:.0f} mg C/l; vandet bærer selv "
-        f"{tt['combined_overflow']['COD']*C_PER_COD:.0f} mg C/l. Kun den ene halvdel "
-        f"tælles, og den tælles til 0,6 % af en national kvælstoftotal.",
+        f"{tt['combined_overflow']['Tot-N']*F['c_per_n']:.0f} mg C/l; vandet bærer selv "
+        f"{tt['combined_overflow']['COD']*F['c_per_cod']:.0f} mg C/l. Kun den ene halvdel "
+        f"tælles, og den tælles til {said("den tælles til @@ af en national")} af en national kvælstoftotal.",
         "**Fedt indeholder intet kvælstof overhovedet.** Triglycerider er kulstof, "
         "brint og ilt. En kvælstofopgørelse kan ikke undervurdere det materiale — den "
         "kan slet ikke se det. Og det frigives på en flowtærskel, altså netop i de "
@@ -288,9 +316,11 @@ def main():
       "standardmetoder — udsivning af grundvand under havet med radon- og radiumsporing, "
       "og intern frigivelse fra sedimentet med bundkamre | begge er rutine i udlandet. "
       "Uden en nævner er der ingen procent |")
+    lv = {k["level"]: k for k in ov["knowledge_levels"]}
     a("| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største "
-      "bygværker, over hændelser af forskellig størrelse | det er videnniveau 5 i "
-      "Miljøstyrelsens egen skala, med 30 % usikkerhed mod 135 %. Metoden er defineret. "
+      f"bygværker, over hændelser af forskellig størrelse | det er videnniveau {lv[5]['level']} i "
+      f"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed mod "
+      f"{lv[1]['uncertainty_pct']} %. Metoden er defineret. "
       "Næsten ingen bruger den |")
     a("| **Finansiér marin ekstraktion som virkemiddel**, med krav om analyse af høsten | "
       "det er det eneste virkemiddel, der fjerner kvælstof, som allerede er i vandet |")
@@ -302,13 +332,13 @@ def main():
     a("---\n")
     a("## In English\n")
     a("This page argues, in Danish and to a Danish agricultural audience, that the "
-      "evidential chain from the published 69.6% figure to a quantified sector-specific "
-      "reduction target has three missing links: there is no closed denominator (10 of "
-      "20 enumerated nitrogen pathways carry no number), no dose-response behind the "
-      "oxygen requirement — which is a binary trigger and a judged flat 25%, where "
+      f"evidential chain from the published {F['agri_pct']:.1f}% figure to a quantified sector-specific "
+      f"reduction target has three missing links: there is no closed denominator ({F['n_unquantified']} of "
+      f"{F['n_pathways']} enumerated nitrogen pathways carry no number), no dose-response behind the "
+      f"oxygen requirement — which is a binary trigger and a judged flat {said("judged flat @@, where")}, where "
       "chlorophyll and light attenuation do have fitted coefficients — and no "
       "detectable movement in the extremes after a "
-      "35-year halving of the load. It states explicitly that this does not exonerate "
+      f"{said("extremes after a @@ halving of the")} halving of the load. It states explicitly that this does not exonerate "
       "agriculture, that multiplying unknown fractions yields an unknown rather than a "
       "small one, and that it is not an argument for inaction. It applies the same "
       "scrutiny to urban discharge, where the numbers are worse. And it ends with four "
@@ -322,10 +352,13 @@ def main():
 
     path = os.path.join(ROOT, "docs", "LANDBRUG.md")
     text = "\n".join(o)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(text)
+    try:
+        write_doc(path, text)
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
     log(f"wrote docs/LANDBRUG.md ({len(text):,} chars)")
-    log(f"  ceiling on agriculture's share: {ceil_hi:.0f}%")
+    log(f"  ceiling on agriculture's share: {live.strip_marks(format(ceil_hi, '.0f'))}%")
     return 0
 
 

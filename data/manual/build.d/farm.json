@@ -1,0 +1,42 @@
+{
+ "steps": [
+  {
+   "script": "scripts/farm_documents.py",
+   "inputs": [
+    "data/derived/pins/BEK931-2024.txt",
+    "data/derived/pins/BEK673-2026.txt",
+    "data/derived/pins/BEK677-2026.txt",
+    "data/derived/pins/BEK130-2026.txt",
+    "data/derived/pins/NUAR-2024.txt"
+   ],
+   "outputs": [
+    "data/derived/farm_documents.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/exposure.py",
+   "inputs": [],
+   "outputs": [
+    "docs/EXPOSURE.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/externality.py",
+   "inputs": [],
+   "outputs": [
+    "docs/EXTERNALITY.md"
+   ]
+  },
+  {
+   "script": "scripts/landbrug.py",
+   "inputs": [
+    "data/manual/nitrogen_pathways.json",
+    "data/manual/monitoring.json"
+   ],
+   "outputs": [
+    "docs/LANDBRUG.md",
+    "data/derived/landbrug.json"
+   ]
+  }
+ ]
+}

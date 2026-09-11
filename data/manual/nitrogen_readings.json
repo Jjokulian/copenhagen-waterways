@@ -1,0 +1,324 @@
+{
+ "_what": "Values docs/NITROGEN.md and docs/GRUNDLAGET.md read out of documents rather than computes. Each carries the exact phrase it sits in, and scripts/nitrogen.py and scripts/pages/grundlaget.py refuse to build unless that phrase occurs in the pinned text of the source (data/derived/pins/<source>.txt; sources in data/manual/claims.d/nitrogen.json). Values that cannot be pinned are not kept here: the page quotes its own committed text for them, and counts them.",
+ "_owner": "fork nitrogen, 2026-09-10",
+ "pinned": {
+  "apportion_diffuse": {
+   "value": 91.7,
+   "source": "DANVA-2024",
+   "phrase": "91,7 % af al kvælstofudledning",
+   "where": "quoting Miljøstyrelsen and Aarhus Universitet"
+  },
+  "apportion_agriculture": {
+   "value": 69.6,
+   "source": "DANVA-2024",
+   "phrase": "landbruget alene står for 69,6",
+   "where": "quoting Miljøstyrelsen and Aarhus Universitet"
+  },
+  "apportion_background": {
+   "value": 22.1,
+   "source": "DANVA-2024",
+   "phrase": "bidrager med 22,1",
+   "where": "quoting Miljøstyrelsen and Aarhus Universitet"
+  },
+  "apportion_plants": {
+   "value": 4.8,
+   "source": "DANVA-2024",
+   "phrase": "står for 4,8",
+   "where": "quoting Miljøstyrelsen and Aarhus Universitet"
+  },
+  "t34_1991_mineral": {
+   "value": 141,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_1991_manure": {
+   "value": 91,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_1991_fixation": {
+   "value": 16,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_1991_seed": {
+   "value": 2,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_1991_deposition": {
+   "value": 22,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_1991_total": {
+   "value": 272,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_1991_harvest": {
+   "value": 124,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_1991_surplus": {
+   "value": 148,
+   "source": "SR120",
+   "phrase": "Hele landet 141 91 16 2 22 272 124 148",
+   "where": "Tabel 3.4, whole country, 1991"
+  },
+  "t34_2005_mineral": {
+   "value": 71,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2005_manure": {
+   "value": 84,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2005_fixation": {
+   "value": 15,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2005_seed": {
+   "value": 2,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2005_deposition": {
+   "value": 16,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2005_total": {
+   "value": 189,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2005_harvest": {
+   "value": 106,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2005_surplus": {
+   "value": 87,
+   "source": "SR120",
+   "phrase": "Hele landet 71 84 15 2 16 189 106 87",
+   "where": "Tabel 3.4, whole country, 2005"
+  },
+  "t34_2013_mineral": {
+   "value": 74,
+   "source": "SR120",
+   "phrase": "Hele landet, GR1 74 87 16 2 13",
+   "where": "Tabel 3.4, whole country, 2013, fertiliser from the gødningsregnskaber"
+  },
+  "t34_2013_manure": {
+   "value": 87,
+   "source": "SR120",
+   "phrase": "Hele landet, GR1 74 87 16 2 13",
+   "where": "Tabel 3.4, whole country, 2013"
+  },
+  "t34_2013_fixation": {
+   "value": 16,
+   "source": "SR120",
+   "phrase": "Hele landet, GR1 74 87 16 2 13",
+   "where": "Tabel 3.4, whole country, 2013"
+  },
+  "t34_2013_seed": {
+   "value": 2,
+   "source": "SR120",
+   "phrase": "Hele landet, GR1 74 87 16 2 13",
+   "where": "Tabel 3.4, whole country, 2013"
+  },
+  "t34_2013_deposition": {
+   "value": 13,
+   "source": "SR120",
+   "phrase": "Hele landet, GR1 74 87 16 2 13",
+   "where": "Tabel 3.4, whole country, 2013"
+  },
+  "t34_2013_surplus": {
+   "value": 84,
+   "source": "SR120",
+   "phrase": "Hele landet, GR1 74 87 16 2 13 19 11 84",
+   "where": "Tabel 3.4, whole country, 2013, fertiliser from the gødningsregnskaber (the total and harvest cells extract garbled)"
+  },
+  "t34_2013_ds_mineral": {
+   "value": 71,
+   "source": "SR120",
+   "phrase": "Hele landet DS2 71 87 16 2 13 191 110 81",
+   "where": "Tabel 3.4, whole country, 2013, fertiliser from Danmarks Statistik"
+  },
+  "t34_2013_harvest": {
+   "value": 110,
+   "source": "SR120",
+   "phrase": "Hele landet DS2 71 87 16 2 13 191 110 81",
+   "where": "Tabel 3.4, whole country, 2013 - the harvest is the same in both 2013 rows"
+  },
+  "t34_2013_ds_surplus": {
+   "value": 81,
+   "source": "SR120",
+   "phrase": "Hele landet DS2 71 87 16 2 13 191 110 81",
+   "where": "Tabel 3.4, whole country, 2013, fertiliser from Danmarks Statistik"
+  },
+  "t34_year_first": {
+   "value": 1991,
+   "source": "SR120",
+   "phrase": "for årene 1991, 2005 og 2013",
+   "where": "Tabel 3.4 caption"
+  },
+  "t34_year_last": {
+   "value": 2013,
+   "source": "SR120",
+   "phrase": "for årene 1991, 2005 og 2013",
+   "where": "Tabel 3.4 caption"
+  },
+  "public_grounds_t_n": {
+   "value": 5000,
+   "source": "SR120",
+   "phrase": "anslået til 5.000 tons N",
+   "where": "Bilag 3"
+  },
+  "shrinkage_fodder_pct": {
+   "value": 10,
+   "source": "SR120",
+   "phrase": "svind på 10 % for majs, græs og efterafgrøder og 15 % for udbytterne fra vedvarende græsarealer",
+   "where": "Bilag 3"
+  },
+  "shrinkage_permanent_grass_pct": {
+   "value": 15,
+   "source": "SR120",
+   "phrase": "svind på 10 % for majs, græs og efterafgrøder og 15 % for udbytterne fra vedvarende græsarealer",
+   "where": "Bilag 3"
+  },
+  "norm_cut_1999_pct": {
+   "value": 10,
+   "source": "SR120",
+   "phrase": "I 1999 blev kvælstofnormen reduceret med 10 %, hvilket betød et fald i kvoten på ca. 40.000 tons N",
+   "where": "Bilag 3"
+  },
+  "norm_cut_1999_t_n": {
+   "value": 40000,
+   "source": "SR120",
+   "phrase": "I 1999 blev kvælstofnormen reduceret med 10 %, hvilket betød et fald i kvoten på ca. 40.000 tons N",
+   "where": "Bilag 3"
+  },
+  "grass_norm_1999_t_n": {
+   "value": 15000,
+   "source": "SR120",
+   "phrase": "kvoten øges med ca. 15.000 tons N pr. år",
+   "where": "Bilag 3"
+  },
+  "sr353_quote_page": {
+   "value": 34,
+   "source": "SR353",
+   "phrase": "beregnede kvælstofoverskud på ’mark-niveau’. Der er i Blicher- Mathiesen m.fl. (2015) foretaget visse justeringer ved beregning i 34",
+   "where": "the printed page number that closes the page carrying the quotation"
+  },
+  "gm_kattegat_vp3": {
+   "value": 0.9,
+   "source": "SO-BG-2024",
+   "phrase": "205: Kattegat, Nordsjælland >20 m OW1 T.21: KVuDLSa 0,9 1,58 1,58",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the VP3 (scenario 1) cell"
+  },
+  "gm_kattegat_ic": {
+   "value": 1.58,
+   "source": "SO-BG-2024",
+   "phrase": "205: Kattegat, Nordsjælland >20 m OW1 T.21: KVuDLSa 0,9 1,58 1,58",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the scenario 2 (intercalibrated) cell"
+  },
+  "gm_bornholm_vp3": {
+   "value": 1.0,
+   "source": "SO-BG-2024",
+   "phrase": "56: Østersøen, Bornholm OW3c T.5: ØD1 1 1,72 1,72",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the VP3 (scenario 1) cell"
+  },
+  "gm_bornholm_ic": {
+   "value": 1.72,
+   "source": "SO-BG-2024",
+   "phrase": "56: Østersøen, Bornholm OW3c T.5: ØD1 1 1,72 1,72",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the scenario 2 (intercalibrated) cell"
+  },
+  "gm_koege_vp3": {
+   "value": 1.3,
+   "source": "SO-BG-2024",
+   "phrase": "201: Køge Bugt OW3b T.12: ØD2 1,3 1,72 1,72",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the VP3 (scenario 1) cell"
+  },
+  "gm_koege_ic": {
+   "value": 1.72,
+   "source": "SO-BG-2024",
+   "phrase": "201: Køge Bugt OW3b T.12: ØD2 1,3 1,72 1,72",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the scenario 2 (intercalibrated) cell"
+  },
+  "gm_oresund_vp3": {
+   "value": 1.5,
+   "source": "SO-BG-2024",
+   "phrase": "6: Nordlige Øresund OW2 T.20: BVuDLSe 1,5 1,63 1,63",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the VP3 (scenario 1) cell"
+  },
+  "gm_oresund_ic": {
+   "value": 1.63,
+   "source": "SO-BG-2024",
+   "phrase": "6: Nordlige Øresund OW2 T.20: BVuDLSe 1,5 1,63 1,63",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the scenario 2 (intercalibrated) cell"
+  },
+  "gm_aalborg_vp3": {
+   "value": 1.9,
+   "source": "SO-BG-2024",
+   "phrase": "222: Kattegat, Aalborg Bugt OW2 T.21: KVuDLSa 1,9 1,58 1,58",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the VP3 (scenario 1) cell"
+  },
+  "gm_aalborg_ic": {
+   "value": 1.58,
+   "source": "SO-BG-2024",
+   "phrase": "222: Kattegat, Aalborg Bugt OW2 T.21: KVuDLSa 1,9 1,58 1,58",
+   "where": "Second opinion - Baggrundsanalyser, Tabel C.1: the chlorophyll-a G/M boundary in µg/l, in scenario 1 ('klorofyl-a-miljømål er som i VP3') and scenario 2 (refitted to the intercalibrated value) - the scenario 2 (intercalibrated) cell"
+  },
+  "kd_bin_0": {
+   "value": 0,
+   "source": "DCE-STATMOD-2015",
+   "phrase": "0, 0.25, 𝑖𝑛𝑑𝑠𝑎𝑡𝑠𝑏𝑒ℎ𝑜𝑣𝐾𝑑 = 0.5, { 0.75,",
+   "where": "DCE del 3, equation (3): the four values the Kd requirement is banded into, as fractions"
+  },
+  "kd_bin_1": {
+   "value": 0.25,
+   "source": "DCE-STATMOD-2015",
+   "phrase": "0, 0.25, 𝑖𝑛𝑑𝑠𝑎𝑡𝑠𝑏𝑒ℎ𝑜𝑣𝐾𝑑 = 0.5, { 0.75,",
+   "where": "DCE del 3, equation (3): the four values the Kd requirement is banded into, as fractions"
+  },
+  "kd_bin_2": {
+   "value": 0.5,
+   "source": "DCE-STATMOD-2015",
+   "phrase": "0, 0.25, 𝑖𝑛𝑑𝑠𝑎𝑡𝑠𝑏𝑒ℎ𝑜𝑣𝐾𝑑 = 0.5, { 0.75,",
+   "where": "DCE del 3, equation (3): the four values the Kd requirement is banded into, as fractions"
+  },
+  "kd_bin_3": {
+   "value": 0.75,
+   "source": "DCE-STATMOD-2015",
+   "phrase": "0, 0.25, 𝑖𝑛𝑑𝑠𝑎𝑡𝑠𝑏𝑒ℎ𝑜𝑣𝐾𝑑 = 0.5, { 0.75,",
+   "where": "DCE del 3, equation (3): the four values the Kd requirement is banded into, as fractions"
+  },
+  "hjarbaek_chl": {
+   "value": 93.9,
+   "source": "DHI-MODEL-DEL2-2015",
+   "phrase": "Hjarbæk Fjord 158 93,9 21,3",
+   "where": "DHI del 2, the Danish share of the chlorophyll indicator in Hjarbæk Fjord, per cent"
+  }
+ }
+}

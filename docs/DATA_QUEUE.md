@@ -2,100 +2,100 @@
 
 The source register records what exists. It does not say what to do on Monday. This is the same information sorted by friction: what can be downloaded now, what is behind a credential we already hold, what needs a free registration nobody has done, and what is genuinely closed.
 
-**148 sources.** *Unlocks* counts hypotheses that this source serves and that nothing easier serves — a crude priority signal, and meant to be.
+**[148](SOURCES.md#F-bfada8d583) sources.** *Unlocks* counts hypotheses that this source serves and that nothing easier serves — a crude priority signal, and meant to be.
 
 | tier | | sources |
 |---|---|---:|
-| `open` | Fetch it now | 59 |
-| `held` | Gated, but we hold the key | 22 |
-| `account` | One free registration away | 30 |
-| `blocked` | Not open | 37 |
+| `open` | Fetch it now | [59](SOURCES.md#F-a7cb1a9012) |
+| `held` | Gated, but we hold the key | [22](SOURCES.md#F-46c5c33c27) |
+| `account` | One free registration away | [30](SOURCES.md#F-542c824a5b) |
+| `blocked` | Not open | [37](SOURCES.md#F-d3261ec77b) |
 
 - **ODA / Overfladevandsdatabasen** — email login, scripted SOAP extract working in scripts/oda_client.py
 - **Dataforsyningen** — API token on this machine, orthophoto WMS verified
 
-## Fetch it now — 59
+## Fetch it now — [59](SOURCES.md#F-a7cb1a9012)
 
 *No account, no permission, no negotiation.*
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
-| **NOVANA-PROG** | `A7` `E12` `F8` `G4` `H2` `I4` | ? | NOVANA programme description 2023-2027 |
-| **AL561-KATTEGAT-SKAGERRAK** | `A7` `R5` `R6` `R7` `T7` | ? | ALKOR AL561 (APOC) - Kattegat to Skagerrak particulate and porewater geochemistry with i |
-| **GBIF** | `F10` `F5` `F6` `F7` `F9` | position | GBIF occurrence API (dominated by the Danish national portal Arter.dk) |
-| **SR634** | `E10` `E6` `E7` `E8` `E9` | ? | DCE Scientific Report 634 - Miljoefarlige forurenende stoffer 2023 |
-| **DCE-ILTSVIND** | `B8` `C4` `F9` `O1` | position | DCE/NOVANA iltsvind (oxygen deficit) bulletin series |
-| **DMI-METOBS** | `B1` `D7` `G2` `G3` | position | DMI Open Data - metObs and climateData |
-| **DMI-OCEANOBS** | `C4` `C9` `D7` `G6` | position | DMI Open Data - oceanObs (sea level) |
-| **EMODNET-SEABED-HABITATS** | `D10` `K12` `L5` `L6` | mixed | EMODnet Seabed Habitats - EUSeaMap/HELCOM HUB modelled habitat map, and the ground-truth |
-| **GEUS-HAVBUNDSSEDIMENT** | `D10` `L6` `R7` `S5` | position | Havbundssedimentkort - seabed surface sediment map of Danish waters |
-| **HORSENS-EELGRASS-TRANSPLANT** | `F3` `K12` `L4` `T4` | position | Bisholt, outer Horsens Fjord - large-scale eelgrass transplant with bare-bottom and natu |
-| **ICES-CONTAM-BIOTA-OBIS** | `E10` `E6` `K8` `K9` | position | ICES DOME contaminants and biological effects in biota, Danish subset, through OBIS and  |
-| **ICES-DATRAS** | `F1` `F4` `F5` `O3` | position | ICES DATRAS - trawl survey database |
-| **ICES-OCEAN** | `A5` `C1` `C4` `C6` | position | ICES Oceanographic Database |
-| **ICES-PHYTO-OBIS** | `A9` `F7` `K1` `K2` | position | ICES Phytoplankton Community dataset, Danish subset, reachable through OBIS |
-| **ICES-ZOOBENTHOS-OBIS** | `D11` `D9` `K10` `K14` | position | ICES Zoobenthos Community dataset, Danish subset, through OBIS |
-| **MILJOEGIS-RBU-SAML** | `A4` `B1` `B2` `B3` | position | MiljoeGIS VP3/VP4 rain-conditioned outfall layers with discharge fields (*_punkt_rbu_sam |
-| **OBIS** | `F5` `F6` `F7` `O3` | position | OBIS occurrence API |
-| **PUNKTKILDER-RAPPORT** | `A4` `B3` `B5` `E5` | mixed | Punktkilderapporten (annual Danish point-source report), Bilag 1 and 2 |
-| **ASMALA-ROSKILDE-DOC** | `J7` `R1` `R7` | ? | Roskilde Fjord water-column DOC, TOC, nutrients, chlorophyll and DOM optics, 2014-2015 |
-| **BORNHOLM-SEDEX** | `H2` `R6` `S4` | **region** | IODP 347-M0065 Bornholm Basin - sequential phosphorus extraction (SEDEX) |
-| **DCE-TA-M06-LYS** | `K11` `L3` `O4` | ? | NOVANA technical instruction M06 - Lyssvaekkelse: how Kd and Secchi are actually measure |
-| **DCE-TA-M12-M18-GAP** | `F3` `K3` `T1` | ? | NOVANA technical instructions M18 (eelgrass) and M12 (macroalgae) - what the vegetation  |
-| **DDM** | `C3` `C7` `D7` | position | Danmarks Dybdemodel (Danish Depth Model) v2.0 |
-| **EU-IED-TOC** | `B3` `B5` `R1` | **region** | EU Industrial Emissions / E-PRTR reporting - Total Organic Carbon to water, and the abse |
-| **FOSSING-METROL-AARHUS** | `E12` `R5` `T7` | ? | METROL Aarhus Bay cores - porewater sulphate, methane, hydrogen sulphide, TOC and TN by  |
-| **GEUS-MARTA** | `D4` `K12` `L6` | position | GEUS Marta - marine raw material database (sand, gravel, stone) |
-| **IOW-MBI** | `A5` `C1` `C4` | position | Major Baltic Inflow statistics (Mohrholz) |
-| **ODENSE-FJORD-CN** | `A9` `D8` `R1` | ? | Sediment resuspension and pelagic nitrogen fixation, Odense Fjord - core incubations wit |
-| **PANGAEA-AARHUS-ORGANICACIDS** | `R2` `R5` `T7` | position | PANGAEA - Aarhus Bay porewater organic acids, sulphate, methane and sulphate reduction r |
-| **BOKNIS-ECK-SML** | `J1` `J2` | ? | Seasonal variation of the sea-surface microlayer at Boknis Eck, Kiel Bight |
-| **EU-INTERCAL-2013-480** | `I4` `L2` | ? | Commission Decision 2013/480/EU - WFD intercalibration, Baltic GIG coastal types |
-| **GEUS-NRETENTION** | `S1` `S6` | mixed | National nitrogen retention maps for Denmark, version 2026 |
-| **HELCOM-DEPOSITION** | `A3` `A5` | **region** | HELCOM atmospheric nitrogen deposition to the Baltic Sea 1990-2023 |
-| **LABYRINTHULA-DK** | `T3` `T8` | position | Labyrinthula in Denmark - one qPCR site and fifteen metabarcoding hits |
-| **LFST-LANDINGS** | `F1` `F4` | **region** | Landbrugs- og Fiskeristyrelsen landings statistics |
-| **MST-KLAP** | `D2` `D3` | ? | Miljoestyrelsen klaptilladelser (dumping permits), individual PDFs |
-| **PSMSL** | `C9` `G6` | ? | PSMSL Revised Local Reference monthly means |
-| **SPILDEVANDSDATA** | `B1` `B2` | position | spildevandsdata.dk - a PULS extract of overflow and stormwater outfalls |
-| **DCE-DEPOSITION** | `A3` | mixed | DCE 'Atmosfaerisk deposition' NOVANA reports (DEHM model) |
-| **DMI-RADIA-GLOB** | `K11` | ? | DMI Open Data metObs - global radiation (radia_glob) |
-| **DST-AKV11** | `A8` | **region** | Danmarks Statistik AKV11 - aquaculture |
-| **DST-RST01** | `D4` | **region** | Danmarks Statistik RST01/RST04 raw-material extraction |
-| **DTU-MUSLING** | `F1` | ? | DTU Aqua blue mussel stock assessments, Limfjorden |
-| **ENS-STAMDATA** | `C8` | position | Energistyrelsen Stamdataregister for vindmoeller |
-| **GEUS-JORDART200K** | `S1` | **region** | Jordartskort over Danmark 1:200.000 |
-| **GEUS-JORDART25K** | `S1` | mixed | Danmarks Digitale Jordartskort 1:25.000 (v7.1) |
-| **GEUS-KVARTAERTYKKELSE** | `S5` | position | Kvartaerets tykkelse i Danmark (Quaternary thickness) |
-| **HALOPHYTOPHTHORA-LIMFJORD** | `T8` | position | Marine oomycetes isolated from Zostera marina, including Limfjorden |
-| **HEREON-UVFILTERS** | `J4` | position | Organic UV stabilisers and UV filters in North Sea and Baltic sediment, 2015-2017 |
-| **ICES-CATCH** | `F4` | **region** | ICES Official Nominal Catch Statistics |
-| **K7-CARBONATE-CONTEXT** | `K7` | ? | The carbonate-system context around Denmark - no Danish station, neighbours' lines only |
-| **MARIS** | `D4` | mixed | MARIS raw-material extraction API |
-| **METHANE-LIT** | `E4` | ? | Kattegat methane seeps (boblerev) - the literature |
-| **MST-RAASTOF-PDF** | `D4` | ? | Miljoestyrelsen extraction volumes for faellesomraader (shared sand/gravel licence areas |
+| **NOVANA-PROG** | [A7](openproblems/A7.md "Sediment nutrient regeneration") [E12](HYPOTHESES.md "Hydrogen sulphide toxicity") [F8](HYPOTHESES.md "Microbial shift to fast-growing forms") [G4](HYPOTHESES.md "Acidification") [H2](HYPOTHESES.md "Sediment legacy") [I4](HYPOTHESES.md "Changing indicator definition") | ? | NOVANA programme description 2023-2027 |
+| **AL561-KATTEGAT-SKAGERRAK** | [A7](openproblems/A7.md "Sediment nutrient regeneration") [R5](HYPOTHESES.md "The terminal electron acceptor cascade, and why salt changes it") [R6](openproblems/R6.md "Sulphide locks the iron that would hold the phosphate") [R7](HYPOTHESES.md "Estuarine flocculation deposits river carbon at the coast") [T7](HYPOTHESES.md "Anaerobic phytotoxins other than sulphide") | ? | ALKOR AL561 (APOC) - Kattegat to Skagerrak particulate and porewater geochemistry with i |
+| **GBIF** | [F10](HYPOTHESES.md "Vertebrate mass mortality") [F5](HYPOTHESES.md "Invasive species") [F6](HYPOTHESES.md "Jellyfish blooms") [F7](HYPOTHESES.md "Harmful algal blooms specifically") [F9](HYPOTHESES.md "Disease and parasite mass mortality") | position | GBIF occurrence API (dominated by the Danish national portal Arter.dk) |
+| **SR634** | [E10](HYPOTHESES.md "Heavy metals") [E6](HYPOTHESES.md "Biocides and antifoulants") [E7](openproblems/E7.md "Pesticides and degradation products") [E8](HYPOTHESES.md "Pharmaceuticals and personal care products") [E9](HYPOTHESES.md "PFAS and persistent novo-chemicals") | ? | DCE Scientific Report `634` - Miljoefarlige forurenende stoffer 2023 |
+| **DCE-ILTSVIND** | [B8](HYPOTHESES.md "Direct manure and slurry entry") [C4](hypodrafts/C4.md "Baltic inflow events") [F9](HYPOTHESES.md "Disease and parasite mass mortality") [O1](HYPOTHESES.md "Oxygen deficit") | position | DCE/NOVANA iltsvind (oxygen deficit) bulletin series |
+| **DMI-METOBS** | [B1](hypodrafts/B1.md "Combined sewer overflow") [D7](hypodrafts/D7.md "Storm-driven resuspension") [G2](HYPOTHESES.md "Changing precipitation and runoff timing") [G3](HYPOTHESES.md "Changing wind climatology") | position | DMI Open Data - metObs and climateData |
+| **DMI-OCEANOBS** | [C4](hypodrafts/C4.md "Baltic inflow events") [C9](HYPOTHESES.md "Sea level and tidal change") [D7](hypodrafts/D7.md "Storm-driven resuspension") [G6](HYPOTHESES.md "Sea level rise") | position | DMI Open Data - oceanObs (sea level) |
+| **EMODNET-SEABED-HABITATS** | [D10](HYPOTHESES.md "Winnowing and armouring") [K12](HYPOTHESES.md "Loss of habitat-forming structure") [L5](HYPOTHESES.md "The reference sites are not references") [L6](HYPOTHESES.md "The degraded bed is classified as its own habitat type") | mixed | EMODnet Seabed Habitats - EUSeaMap/HELCOM HUB modelled habitat map, and the ground-truth |
+| **GEUS-HAVBUNDSSEDIMENT** | [D10](HYPOTHESES.md "Winnowing and armouring") [L6](HYPOTHESES.md "The degraded bed is classified as its own habitat type") [R7](HYPOTHESES.md "Estuarine flocculation deposits river carbon at the coast") [S5](HYPOTHESES.md "Buffering scales with the volume of reactive medium") | position | Havbundssedimentkort - seabed surface sediment map of Danish waters |
+| **HORSENS-EELGRASS-TRANSPLANT** | [F3](hypodrafts/F3.md "Loss of eelgrass and macroalgae") [K12](HYPOTHESES.md "Loss of habitat-forming structure") [L4](HYPOTHESES.md "Recovery is blocked by something other than the driver") `T4` | position | Bisholt, outer Horsens Fjord - large-scale eelgrass transplant with bare-bottom and natu |
+| **ICES-CONTAM-BIOTA-OBIS** | [E10](HYPOTHESES.md "Heavy metals") [E6](HYPOTHESES.md "Biocides and antifoulants") [K8](HYPOTHESES.md "The narrow window between deficient and toxic") [K9](HYPOTHESES.md "Selenium") | position | ICES DOME contaminants and biological effects in biota, Danish subset, through OBIS and  |
+| **ICES-DATRAS** | [F1](HYPOTHESES.md "Loss of filter feeders") [F4](HYPOTHESES.md "Trophic cascade from a removal far away") [F5](HYPOTHESES.md "Invasive species") [O3](HYPOTHESES.md "Loss of higher benthic life") | position | ICES DATRAS - trawl survey database |
+| **ICES-OCEAN** | [A5](HYPOTHESES.md "Advected nutrients from outside Denmark") [C1](hypodrafts/C1.md "Stratification strength") [C4](hypodrafts/C4.md "Baltic inflow events") [C6](hypodrafts/C6.md "Water temperature and solubility") | position | ICES Oceanographic Database |
+| **ICES-PHYTO-OBIS** | [A9](HYPOTHESES.md "Nitrogen fixation") [F7](HYPOTHESES.md "Harmful algal blooms specifically") [K1](hypodrafts/K1.md "Silicon depletion and the diatom-to-flagellate shift") [K2](HYPOTHESES.md "Stoichiometric imbalance decides who grows") | position | ICES Phytoplankton Community dataset, Danish subset, reachable through OBIS |
+| **ICES-ZOOBENTHOS-OBIS** | [D11](HYPOTHESES.md "Stabilisers against destabilisers") [D9](HYPOTHESES.md "Fertility islands lost to homogenisation") [K10](HYPOTHESES.md "Salinity change and osmotic cost") [K14](HYPOTHESES.md "Genetic and functional diversity depletion") | position | ICES Zoobenthos Community dataset, Danish subset, through OBIS |
+| **MILJOEGIS-RBU-SAML** | [A4](HYPOTHESES.md "Point-source discharge of nutrients") [B1](hypodrafts/B1.md "Combined sewer overflow") [B2](HYPOTHESES.md "Separate stormwater") [B3](HYPOTHESES.md "Treatment plant organic load") | position | MiljoeGIS VP3/VP4 rain-conditioned outfall layers with discharge fields (*_punkt_rbu_sam |
+| **OBIS** | [F5](HYPOTHESES.md "Invasive species") [F6](HYPOTHESES.md "Jellyfish blooms") [F7](HYPOTHESES.md "Harmful algal blooms specifically") [O3](HYPOTHESES.md "Loss of higher benthic life") | position | OBIS occurrence API |
+| **PUNKTKILDER-RAPPORT** | [A4](HYPOTHESES.md "Point-source discharge of nutrients") [B3](HYPOTHESES.md "Treatment plant organic load") [B5](HYPOTHESES.md "Industrial organic discharge") [E5](HYPOTHESES.md "Direct chemical oxygen demand of discharges") | mixed | Punktkilderapporten (annual Danish point-source report), Bilag `1` and `2` |
+| **ASMALA-ROSKILDE-DOC** | [J7](HYPOTHESES.md "Exudate from senescing blooms") [R1](HYPOTHESES.md "The C:N threshold, and fat as a nitrogen sink") [R7](HYPOTHESES.md "Estuarine flocculation deposits river carbon at the coast") | ? | Roskilde Fjord water-column DOC, TOC, nutrients, chlorophyll and DOM optics, 2014-2015 |
+| **BORNHOLM-SEDEX** | [H2](HYPOTHESES.md "Sediment legacy") [R6](openproblems/R6.md "Sulphide locks the iron that would hold the phosphate") [S4](HYPOTHESES.md "Total is not available") | **region** | IODP `347-M0065` Bornholm Basin - sequential phosphorus extraction (SEDEX) |
+| **DCE-TA-M06-LYS** | [K11](HYPOTHESES.md "Light as a depleted resource") [L3](hypodrafts/L3.md "The trend depends on the start year") [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass") | ? | NOVANA technical instruction M06 - Lyssvaekkelse: how Kd and Secchi are actually measure |
+| **DCE-TA-M12-M18-GAP** | [F3](hypodrafts/F3.md "Loss of eelgrass and macroalgae") [K3](HYPOTHESES.md "Macronutrient excess inducing micronutrient deficiency") `T1` | ? | NOVANA technical instructions M18 (eelgrass) and M12 (macroalgae) - what the vegetation  |
+| **DDM** | [C3](HYPOTHESES.md "Residence time") [C7](HYPOTHESES.md "Bathymetry, sills and depth") [D7](hypodrafts/D7.md "Storm-driven resuspension") | position | Danmarks Dybdemodel (Danish Depth Model) v2.0 |
+| **EU-IED-TOC** | [B3](HYPOTHESES.md "Treatment plant organic load") [B5](HYPOTHESES.md "Industrial organic discharge") [R1](HYPOTHESES.md "The C:N threshold, and fat as a nitrogen sink") | **region** | EU Industrial Emissions / E-PRTR reporting - Total Organic Carbon to water, and the abse |
+| **FOSSING-METROL-AARHUS** | [E12](HYPOTHESES.md "Hydrogen sulphide toxicity") [R5](HYPOTHESES.md "The terminal electron acceptor cascade, and why salt changes it") [T7](HYPOTHESES.md "Anaerobic phytotoxins other than sulphide") | ? | METROL Aarhus Bay cores - porewater sulphate, methane, hydrogen sulphide, TOC and TN by  |
+| **GEUS-MARTA** | [D4](HYPOTHESES.md "Sand and gravel extraction") [K12](HYPOTHESES.md "Loss of habitat-forming structure") [L6](HYPOTHESES.md "The degraded bed is classified as its own habitat type") | position | GEUS Marta - marine raw material database (sand, gravel, stone) |
+| **IOW-MBI** | [A5](HYPOTHESES.md "Advected nutrients from outside Denmark") [C1](hypodrafts/C1.md "Stratification strength") [C4](hypodrafts/C4.md "Baltic inflow events") | position | Major Baltic Inflow statistics (Mohrholz) |
+| **ODENSE-FJORD-CN** | [A9](HYPOTHESES.md "Nitrogen fixation") [D8](HYPOTHESES.md "Loss of biostabilisation, and the mobile bed") [R1](HYPOTHESES.md "The C:N threshold, and fat as a nitrogen sink") | ? | Sediment resuspension and pelagic nitrogen fixation, Odense Fjord - core incubations wit |
+| **PANGAEA-AARHUS-ORGANICACIDS** | [R2](HYPOTHESES.md "Priming of the old sediment pool by fresh carbon") [R5](HYPOTHESES.md "The terminal electron acceptor cascade, and why salt changes it") [T7](HYPOTHESES.md "Anaerobic phytotoxins other than sulphide") | position | PANGAEA - Aarhus Bay porewater organic acids, sulphate, methane and sulphate reduction r |
+| **BOKNIS-ECK-SML** | [J1](openproblems/J1.md "Transparent exopolymer particles and marine gel") [J2](HYPOTHESES.md "Sea-surface microlayer enrichment") | ? | Seasonal variation of the sea-surface microlayer at Boknis Eck, Kiel Bight |
+| **`EU-INTERCAL-2013-480`** | [I4](HYPOTHESES.md "Changing indicator definition") [L2](HYPOTHESES.md "The reference is a model output treated as a fact") | ? | Commission Decision 2013/480/EU - WFD intercalibration, Baltic GIG coastal types |
+| **GEUS-NRETENTION** | [S1](HYPOTHESES.md "Retention is a property of the medium and varies by an order of magnitude") [S6](HYPOTHESES.md "Retention capacity is saturable, so the coefficient is not constant") | mixed | National nitrogen retention maps for Denmark, version 2026 |
+| **HELCOM-DEPOSITION** | [A3](HYPOTHESES.md "Atmospheric deposition on the sea surface") [A5](HYPOTHESES.md "Advected nutrients from outside Denmark") | **region** | HELCOM atmospheric nitrogen deposition to the Baltic Sea 1990-2023 |
+| **LABYRINTHULA-DK** | `T3` [T8](HYPOTHESES.md "Anaerobic conditions select the pathogens") | position | Labyrinthula in Denmark - one qPCR site and fifteen metabarcoding hits |
+| **LFST-LANDINGS** | [F1](HYPOTHESES.md "Loss of filter feeders") [F4](HYPOTHESES.md "Trophic cascade from a removal far away") | **region** | Landbrugs- og Fiskeristyrelsen landings statistics |
+| **MST-KLAP** | [D2](HYPOTHESES.md "Navigation dredging") [D3](HYPOTHESES.md "Dredged-material dumping") | ? | Miljoestyrelsen klaptilladelser (dumping permits), individual PDFs |
+| **PSMSL** | [C9](HYPOTHESES.md "Sea level and tidal change") [G6](HYPOTHESES.md "Sea level rise") | ? | PSMSL Revised Local Reference monthly means |
+| **SPILDEVANDSDATA** | [B1](hypodrafts/B1.md "Combined sewer overflow") [B2](HYPOTHESES.md "Separate stormwater") | position | spildevandsdata.dk - a PULS extract of overflow and stormwater outfalls |
+| **DCE-DEPOSITION** | [A3](HYPOTHESES.md "Atmospheric deposition on the sea surface") | mixed | DCE 'Atmosfaerisk deposition' NOVANA reports (DEHM model) |
+| **DMI-RADIA-GLOB** | [K11](HYPOTHESES.md "Light as a depleted resource") | ? | DMI Open Data metObs - global radiation (radia_glob) |
+| **DST-AKV11** | [A8](HYPOTHESES.md "Marine aquaculture") | **region** | Danmarks Statistik AKV11 - aquaculture |
+| **DST-RST01** | [D4](HYPOTHESES.md "Sand and gravel extraction") | **region** | Danmarks Statistik RST01/RST04 raw-material extraction |
+| **DTU-MUSLING** | [F1](HYPOTHESES.md "Loss of filter feeders") | ? | DTU Aqua blue mussel stock assessments, Limfjorden |
+| **ENS-STAMDATA** | [C8](HYPOTHESES.md "Constructed change to circulation") | position | Energistyrelsen Stamdataregister for vindmoeller |
+| **GEUS-JORDART200K** | [S1](HYPOTHESES.md "Retention is a property of the medium and varies by an order of magnitude") | **region** | Jordartskort over Danmark `1:200.000` |
+| **GEUS-JORDART25K** | [S1](HYPOTHESES.md "Retention is a property of the medium and varies by an order of magnitude") | mixed | Danmarks Digitale Jordartskort `1:25.000` (v7.1) |
+| **GEUS-KVARTAERTYKKELSE** | [S5](HYPOTHESES.md "Buffering scales with the volume of reactive medium") | position | Kvartaerets tykkelse i Danmark (Quaternary thickness) |
+| **HALOPHYTOPHTHORA-LIMFJORD** | [T8](HYPOTHESES.md "Anaerobic conditions select the pathogens") | position | Marine oomycetes isolated from Zostera marina, including Limfjorden |
+| **HEREON-UVFILTERS** | [J4](HYPOTHESES.md "Sunscreen and UV filters") | position | Organic UV stabilisers and UV filters in North Sea and Baltic sediment, 2015-2017 |
+| **ICES-CATCH** | [F4](HYPOTHESES.md "Trophic cascade from a removal far away") | **region** | ICES Official Nominal Catch Statistics |
+| **K7-CARBONATE-CONTEXT** | [K7](HYPOTHESES.md "Carbonate ion depletion") | ? | The carbonate-system context around Denmark - no Danish station, neighbours' lines only |
+| **MARIS** | [D4](HYPOTHESES.md "Sand and gravel extraction") | mixed | MARIS raw-material extraction API |
+| **METHANE-LIT** | [E4](HYPOTHESES.md "Methane oxidation") | ? | Kattegat methane seeps (boblerev) - the literature |
+| **MST-RAASTOF-PDF** | [D4](HYPOTHESES.md "Sand and gravel extraction") | ? | Miljoestyrelsen extraction volumes for faellesomraader (shared sand/gravel licence areas |
 | **OBIS-GBIF-LUCINIDER** | `T2` | position | OBIS and GBIF occurrence counts for the sulphide-oxidising bivalves in Danish waters |
-| **PANGAEA-BENTHIC-FLUX** | `A7` | position | PANGAEA - in-situ benthic chamber nutrient flux (BIGO lander) |
-| **PANGAEA-CORES** | `H2` | position | PANGAEA - dated sediment cores, Skagerrak/Kattegat |
-| **SGD-LIT** | `A6` | position | Danish submarine groundwater discharge - the two campaigns that exist |
-| **WFD-DEFINITIONS** | `I4` | ? | EU WFD intercalibration decisions and Danish miljoemaal bekendtgoerelser, with adoption  |
+| **PANGAEA-BENTHIC-FLUX** | [A7](openproblems/A7.md "Sediment nutrient regeneration") | position | PANGAEA - in-situ benthic chamber nutrient flux (BIGO lander) |
+| **PANGAEA-CORES** | [H2](HYPOTHESES.md "Sediment legacy") | position | PANGAEA - dated sediment cores, Skagerrak/Kattegat |
+| **SGD-LIT** | [A6](HYPOTHESES.md "Submarine groundwater discharge") | position | Danish submarine groundwater discharge - the two campaigns that exist |
+| **WFD-DEFINITIONS** | [I4](HYPOTHESES.md "Changing indicator definition") | ? | EU WFD intercalibration decisions and Danish miljoemaal bekendtgoerelser, with adoption  |
 
-## Gated, but we hold the key — 22
+## Gated, but we hold the key — [22](SOURCES.md#F-46c5c33c27)
 
 *Behind a login this project already has working.*
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
-| **ODA-CTD** | `C2` `G1` `H1` `H3` `I1` `I2` `I3` `I5` `I6` | position | ODA - Hav / Feltmaaling / CTD |
-| **ODA-BUNDFAUNA** | `D1` `F2` `H3` `I1` `I3` | position | ODA - Hav / Bundfauna / Artsliste + Sediment |
-| **ODA-VANDKEMI-HAV** | `A1` `A2` `E11` `E2` `I5` | position | ODA - Hav / Vandkemi / Naeringsstof og Miljoefarligt stof |
-| **ODA-STOFTRANSPORT** | `A1` `A2` `B4` `C5` | position | ODA - Vandloeb / Stoftransport / Maanedstransport |
-| **ODA-TILFOERSEL** | `A1` `A2` `C5` `H4` | **region** | ODA - Naeringsstoftilfoersel til havet (nutrient input to the sea) |
-| **ODA-MARINE-NEGATIVES** | `J3` `K5` `K6` | ? | The complete ODA marine parameter space - what is provably not in it |
-| **ODA-AFFALD-PLASTIK** | `J5` | position | ODA - Hav / Marint affald and Plastik i biota (schema present, no data exposed) |
-| **ODA-BUNDFAUNA-SEDIMENT** | `R3` | position | ODA - Hav / Bundfauna / Sediment (grain size and sediment character at the fauna station |
-| **ODA-STATION-COUNTS-CORRECTION** | `R3` | ? | ODA station counts are period-dependent - the numbers in data_sources.json are the wrong |
-| **ODA-VEGETATION** | `H1` | position | ODA - Hav / Vegetation (aalegraes bundfauna / makroalge / plante) |
+| **ODA-CTD** | [C2](HYPOTHESES.md "Wind work") [G1](hypodrafts/G1.md "Warming") [H1](HYPOTHESES.md "Alternative stable states and hysteresis") [H3](HYPOTHESES.md "Loss of resilience through diversity loss") [I1](hypodrafts/I1.md "Changing station network") [I2](HYPOTHESES.md "Changing analytical method") [I3](hypodrafts/I3.md "Changing sampling frequency and season") [I5](HYPOTHESES.md "Changing correction factors") [I6](HYPOTHESES.md "Changing custodian") | position | ODA - Hav / Feltmaaling / CTD |
+| **ODA-BUNDFAUNA** | [D1](hypodrafts/D1.md "Bottom trawling") [F2](HYPOTHESES.md "Loss of bioturbators") [H3](HYPOTHESES.md "Loss of resilience through diversity loss") [I1](hypodrafts/I1.md "Changing station network") [I3](hypodrafts/I3.md "Changing sampling frequency and season") | position | ODA - Hav / Bundfauna / Artsliste + Sediment |
+| **ODA-VANDKEMI-HAV** | [A1](hypodrafts/A1.md "Danish land-based nitrogen load") [A2](HYPOTHESES.md "Phosphorus load") [E11](HYPOTHESES.md "Ammonia toxicity") [E2](HYPOTHESES.md "Nitrification demand") [I5](HYPOTHESES.md "Changing correction factors") | position | ODA - Hav / Vandkemi / Naeringsstof og Miljoefarligt stof |
+| **ODA-STOFTRANSPORT** | [A1](hypodrafts/A1.md "Danish land-based nitrogen load") [A2](HYPOTHESES.md "Phosphorus load") [B4](HYPOTHESES.md "Riverine particulate organic carbon") [C5](HYPOTHESES.md "Freshwater discharge buoyancy") | position | ODA - Vandloeb / Stoftransport / Maanedstransport |
+| **ODA-TILFOERSEL** | [A1](hypodrafts/A1.md "Danish land-based nitrogen load") [A2](HYPOTHESES.md "Phosphorus load") [C5](HYPOTHESES.md "Freshwater discharge buoyancy") [H4](HYPOTHESES.md "Subsidy-stress") | **region** | ODA - Naeringsstoftilfoersel til havet (nutrient input to the sea) |
+| **ODA-MARINE-NEGATIVES** | [J3](HYPOTHESES.md "Surfactants from detergents and personal care") [K5](HYPOTHESES.md "Cobalamin (B12) and cobalt limitation") [K6](HYPOTHESES.md "Iron bioavailability") | ? | The complete ODA marine parameter space - what is provably not in it |
+| **ODA-AFFALD-PLASTIK** | [J5](HYPOTHESES.md "Microplastic and its biofilm") | position | ODA - Hav / Marint affald and Plastik i biota (schema present, no data exposed) |
+| **ODA-BUNDFAUNA-SEDIMENT** | [R3](HYPOTHESES.md "The decay relay stalls when a stage is removed") | position | ODA - Hav / Bundfauna / Sediment (grain size and sediment character at the fauna station |
+| **ODA-STATION-COUNTS-CORRECTION** | [R3](HYPOTHESES.md "The decay relay stalls when a stage is removed") | ? | ODA station counts are period-dependent - the numbers in data_sources.json are the wrong |
+| **ODA-VEGETATION** | [H1](HYPOTHESES.md "Alternative stable states and hysteresis") | position | ODA - Hav / Vegetation (aalegraes bundfauna / makroalge / plante) |
 | **ODA-BUNDFAUNA-LUCINIDER** | — | ? | ODA bundfauna taxon list - the sulphide-oxidising bivalves are in it |
 | **ODA-BUNDFAUNA-REPLICATES** | — | position | ODA - Hav / Bundfauna / Artsliste, at replicate-grab resolution |
 | **ODA-LYSSVAEKKELSE** | — | position | ODA - Hav / Feltmaaling / Lyssvaekkelse (light attenuation profiles) |
@@ -109,24 +109,24 @@ The source register records what exists. It does not say what to do on Monday. T
 | **ODA-VANDLOEB-MFS** | — | position | ODA - Vandloeb / Vandkemi / Miljoefarligt stof |
 | **ODA-VEGETATION-FELTER** | — | position | ODA - Hav / Vegetation, at field level (three separate topics) |
 
-## One free registration away — 30
+## One free registration away — [30](SOURCES.md#F-542c824a5b)
 
 *A form and an email address. Nothing is being withheld; it just has not been done.*
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
-| **DMA-AIS** | `B7` `D6` | position | Danish Maritime Authority raw AIS archive |
-| **EMODNET-VESSELDENSITY** | `B7` `D6` | position | EMODnet Human Activities vessel density |
-| **ENA-DK-COASTAL-16S** | `J8` `T5` | position | Danish coastal-water microbial sequence data in ENA |
-| **ENA-MGNIFY-DK-SEDIMENT** | `T5` `T6` | position | Danish marine sediment microbial sequence data in ENA and MGnify |
-| **GFW** | `B7` `D6` | position | Global Fishing Watch apparent fishing effort v3.0 |
-| **PANGAEA-POREWATER** | `E1` `E3` | position | PANGAEA - sediment porewater chemistry, Danish and adjacent waters |
-| **CDSE-SENTINEL1** | `J6` | **region** | Sentinel-1 GRD SAR over Danish waters, Copernicus Data Space Ecosystem |
-| **CMEMS-NWS-WAV** | `O2` | ? | Copernicus Marine North-West Shelf Wave Reanalysis |
-| **EMODNET-SEABED-USE** | `D5` | mixed | EMODnet Human Activities seabed-use layers |
-| **ICE** | `G5` | mixed | Sea ice for Danish waters - no single confirmed source |
-| **ICES-VMS-SAR** | `D6` | **region** | ICES WGSFD VMS/logbook swept-area-ratio product |
-| **LOOP** | `S2` | mixed | LOOP - Landovervaagningsoplandene (agricultural catchment monitoring with root-zone and  |
+| **DMA-AIS** | [B7](HYPOTHESES.md "Shipping discharges") [D6](HYPOTHESES.md "Anchoring and propeller wash") | position | Danish Maritime Authority raw AIS archive |
+| **EMODNET-VESSELDENSITY** | [B7](HYPOTHESES.md "Shipping discharges") [D6](HYPOTHESES.md "Anchoring and propeller wash") | position | EMODnet Human Activities vessel density |
+| **`ENA-DK-COASTAL-16S`** | [J8](HYPOTHESES.md "Bacterial exopolymer from fast-growing communities") `T5` | position | Danish coastal-water microbial sequence data in ENA |
+| **ENA-MGNIFY-DK-SEDIMENT** | `T5` [T6](HYPOTHESES.md "Enrichment dissolving the partnership") | position | Danish marine sediment microbial sequence data in ENA and MGnify |
+| **GFW** | [B7](HYPOTHESES.md "Shipping discharges") [D6](HYPOTHESES.md "Anchoring and propeller wash") | position | Global Fishing Watch apparent fishing effort v3.0 |
+| **PANGAEA-POREWATER** | [E1](HYPOTHESES.md "Sulphide oxidation") [E3](HYPOTHESES.md "Iron and manganese oxidation") | position | PANGAEA - sediment porewater chemistry, Danish and adjacent waters |
+| **CDSE-SENTINEL1** | [J6](HYPOTHESES.md "Oil and hydrocarbon films") | **region** | `Sentinel-1` GRD SAR over Danish waters, Copernicus Data Space Ecosystem |
+| **CMEMS-NWS-WAV** | [O2](HYPOTHESES.md "Fedtemøg") | ? | Copernicus Marine North-West Shelf Wave Reanalysis |
+| **EMODNET-SEABED-USE** | [D5](HYPOTHESES.md "Cable and pipeline works") | mixed | EMODnet Human Activities seabed-use layers |
+| **ICE** | [G5](HYPOTHESES.md "Changing ice cover") | mixed | Sea ice for Danish waters - no single confirmed source |
+| **ICES-VMS-SAR** | [D6](HYPOTHESES.md "Anchoring and propeller wash") | **region** | ICES WGSFD VMS/logbook swept-area-ratio product |
+| **LOOP** | [S2](HYPOTHESES.md "Phosphorus saturation, and legacy leakage") | mixed | LOOP - Landovervaagningsoplandene (agricultural catchment monitoring with root-zone and  |
 | **BSH-MARNET** | — | ? | BSH MARNET automatic monitoring network |
 | **CMEMS-BAL-BGC** | — | ? | Copernicus Marine Baltic Sea Biogeochemistry Reanalysis |
 | **CMEMS-BAL-PHY** | — | position | Copernicus Marine Baltic Sea Physics Reanalysis |
@@ -146,19 +146,19 @@ The source register records what exists. It does not say what to do on Monday. T
 | **OSPAR-ODIMS** | — | **region** | OSPAR dumped-materials (dredged material disposal) submissions |
 | **VANDAH** | — | position | Vandah - hydrometric REST API (Dmp.Hydro.Api) |
 
-## Not open — 37
+## Not open — [37](SOURCES.md#F-d3261ec77b)
 
 *Request-only, FOI, institutional provisioning, or unverified. These are the ones worth arguing about publicly, because for several of them the measurement exists and the public cannot see it.*
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
-| **R2-R4-R8-R9-R10-GAP** | `R10` `R4` `R8` `R9` | ? | Five decomposition experiments that have never been run in Danish water |
-| **BADEVAND** | `B6` | position | Bathing water quality portal |
-| **K4-M74-GAP** | `K4` | ? | Thiamine deficiency and M74 - no Danish assay, and the Swedish series not opened |
-| **K5-K6-K13-GAP** | `K13` | ? | Cobalamin, iron speciation and particle size spectra in Danish waters - none found |
-| **L1-GAP** | `L1` | ? | Dated diatom or pigment stratigraphy from Danish coastal sediment - confirmed absent fro |
-| **S1-PAPERS** | `S3` | ? | The Danish soil-and-sediment process papers that stand in for the missing datasets |
-| **S2-GAP** | `S3` | ? | Danish soil phosphorus status by area - confirmed absent as open data |
+| **R2-R4-R8-R9-R10-GAP** | [R10](HYPOTHESES.md "Osmotic discontinuity for the decomposers themselves") [R4](HYPOTHESES.md "Nitrogen enrichment retards decay of the recalcitrant fraction") [R8](HYPOTHESES.md "Lipids are less soluble in seawater") [R9](HYPOTHESES.md "Home-field advantage, and novel material") | ? | Five decomposition experiments that have never been run in Danish water |
+| **BADEVAND** | [B6](HYPOTHESES.md "Harbour and fish-processing waste") | position | Bathing water quality portal |
+| **K4-M74-GAP** | [K4](HYPOTHESES.md "Thiamine (B1) deficiency") | ? | Thiamine deficiency and M74 - no Danish assay, and the Swedish series not opened |
+| **K5-K6-K13-GAP** | [K13](HYPOTHESES.md "Food depletion for filter feeders and larvae") | ? | Cobalamin, iron speciation and particle size spectra in Danish waters - none found |
+| **L1-GAP** | [L1](HYPOTHESES.md "The reference condition never existed") | ? | Dated diatom or pigment stratigraphy from Danish coastal sediment - confirmed absent fro |
+| **S1-PAPERS** | [S3](HYPOTHESES.md "Sorption is hysteretic - a ratchet on the land side too") | ? | The Danish soil-and-sediment process papers that stand in for the missing datasets |
+| **S2-GAP** | [S3](HYPOTHESES.md "Sorption is hysteretic - a ratchet on the land side too") | ? | Danish soil phosphorus status by area - confirmed absent as open data |
 | **B8-GAP** | — | ? | Danish environmental incident / spill / fish-kill registers - confirmed absent in open f |
 | **BIOTIC-MARLIN** | — | ? | BIOTIC - Biological Traits Information Catalogue |
 | **CMEMS-BAL-WAV** | — | ? | Copernicus Marine Baltic Sea Wave Reanalysis |
@@ -194,14 +194,14 @@ The source register records what exists. It does not say what to do on Monday. T
 
 Nothing here is stored at an administrative unit — not per water body, not per catchment, not per municipality, not per sub-basin. Everything is carried at the resolution it was taken: a position, a time, and where it exists a depth.
 
-That is not fastidiousness. [OBSERVING.md](OBSERVING.md) establishes that a water body explains **7.9%** of the variation in the one variable Denmark measures densely enough to check, and that two stations inside one share about four percent of their year-to-year variance. A source already summed into those polygons would carry the assumption straight back in, and everything computed from it would inherit a unit we had just shown is not one.
+That is not fastidiousness. [OBSERVING.md](OBSERVING.md) establishes that a water body explains **[7.9](SOURCES.md#F-8f0c3bce24)%** of the variation in the one variable Denmark measures densely enough to check, and that two stations inside one share about four percent of their year-to-year variance. A source already summed into those polygons would carry the assumption straight back in, and everything computed from it would inherit a unit we had just shown is not one.
 
 | indexed by | sources | |
 |---|---:|---|
-| position | 69 | a place something was measured |
-| **region** | 16 | somebody's aggregate; usable, but never as a measurement |
-| mixed | 12 | carries both; take the position field |
-| ? | 51 | not stated clearly enough to tell |
+| position | [69](SOURCES.md#F-5a6aa3c0d7) | a place something was measured |
+| **region** | [16](SOURCES.md#F-d7cb543694) | somebody's aggregate; usable, but never as a measurement |
+| mixed | [12](SOURCES.md#F-92d73d1d05) | carries both; take the position field |
+| ? | [51](SOURCES.md#F-f2bd84c6b8) | not stated clearly enough to tell |
 
 The region-indexed sources are often the only version that exists, and several matter a great deal — the monthly nutrient input series is per marine reference polygon, and there is no per-outfall alternative. They enter the panel labelled as somebody's aggregate of a measurement, and never as the measurement.
 

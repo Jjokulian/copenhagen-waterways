@@ -1,0 +1,32 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/landing.py",
+   "inputs": [
+    "docs/data/areas/partition_subspace.json",
+    "data/manual/nitrogen_readings.json",
+    "data/derived/currents_index.json",
+    "data/derived/floodalign.json",
+    "data/derived/floodmaps/_georef.json",
+    "data/manual/claims.d/w1-lr.json"
+   ],
+   "outputs": [
+    "docs/LANDING.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/residual.py",
+   "inputs": [
+    "data/derived/currents_transport.json",
+    "data/derived/pins/FAO-2003-PROTEIN.txt",
+    "data/derived/pins/WIKI-MILK-2008.txt",
+    "data/derived/pins/EPA-VW-2015.txt",
+    "data/derived/pins/TYPETAL22.txt",
+    "data/manual/claims.d/w1-lr.json"
+   ],
+   "outputs": [
+    "docs/RESIDUAL.md"
+   ]
+  }
+ ]
+}

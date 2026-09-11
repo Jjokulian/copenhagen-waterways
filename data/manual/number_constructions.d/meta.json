@@ -1,0 +1,1136 @@
+{
+ "_what": "Construction declarations added by the meta conversion (overview pages: OPEN_PROBLEMS, CAUSATION, DATA_SOURCES, KNOWN_AND_UNKNOWN, PLAN, AGENT_BRIEF, EXPERIMENTS, DATA_QUEUE, IF_YOU_HAVE_THE_DATA, the landing page).",
+ "constructions": [
+  {
+   "id": "K-META-MONITORING",
+   "title": "Monitoring facts transcribed from named public documents",
+   "covers": {
+    "file": "data/manual/monitoring.json",
+    "fields": {
+     "load_trend_vs_outcome.nitrogen_load.reduction_pct_since_1990": {
+      "kind": "document",
+      "is": "The reduction in flow-normalised nitrogen supply from Danish land to the sea since the base year, as DCE reports it on miljotilstand.dk - a rounded figure from a summary page, transcribed by hand."
+     },
+     "load_trend_vs_outcome.nitrogen_load.approx_1990_kt": {
+      "kind": "document",
+      "is": "The approximate flow-normalised land-based nitrogen supply in the base year, in kt a year, as the same summary reports it."
+     },
+     "load_trend_vs_outcome.nitrogen_load.approx_recent_kt": {
+      "kind": "document",
+      "is": "The approximate recent flow-normalised land-based nitrogen supply, in kt a year, as the same summary reports it."
+     },
+     "load_trend_vs_outcome.iltsvind_extent.observations.*.km2_september": {
+      "kind": "document",
+      "is": "The September area of Danish inner waters affected by oxygen depletion in one year, in km², as DCE's iltsvind notices report it."
+     },
+     "load_trend_vs_outcome.iltsvind_extent.observations.*.km2_late_september": {
+      "kind": "document",
+      "is": "The late-September area of Danish inner waters affected by oxygen depletion in one year, in km², as DCE's iltsvind notice for that year reports it."
+     },
+     "overflow_reporting.knowledge_levels.*.level": {
+      "kind": "document",
+      "is": "The number of one knowledge level in Miljøstyrelsen's scheme for reporting rain-conditioned discharges, from the technical instruction named in the file."
+     },
+     "overflow_reporting.knowledge_levels.*.uncertainty_pct": {
+      "kind": "document",
+      "is": "The uncertainty the same instruction attaches to that knowledge level, in percent."
+     },
+     "sediment_release_events.oresund_fixed_link.dredged_m3": {
+      "kind": "document",
+      "is": "Seabed volume dredged for the Øresund fixed link, in m³, as the project's documentation reports it."
+     },
+     "sediment_release_events.oresund_fixed_link.spill_limit_pct_of_dredged": {
+      "kind": "document",
+      "is": "The permitted spill, as a percentage of the dredged volume, in the link's environmental conditions."
+     },
+     "sediment_release_events.oresund_fixed_link.spill_limit_m3": {
+      "kind": "document",
+      "is": "The same permitted spill as a volume, in m³."
+     },
+     "sediment_release_events.lynetteholm.planned_dump_m3": {
+      "kind": "document",
+      "is": "The volume of harbour gytje the Lynetteholm project planned to dump in Køge Bugt, in m³."
+     },
+     "sediment_release_events.lynetteholm.first_dumped_m3": {
+      "kind": "document",
+      "is": "The volume actually dumped before the dumping was stopped, in m³."
+     },
+     "typetal_nutrients_mg_per_l.separate_stormwater.COD": {
+      "kind": "document",
+      "is": "The annual-average chemical oxygen demand, mg per litre, Miljøstyrelsen's typetal assign to separate stormwater."
+     },
+     "typetal_nutrients_mg_per_l.separate_stormwater.Tot-N": {
+      "kind": "document",
+      "is": "The annual-average total nitrogen, mg per litre, the same typetal assign to separate stormwater."
+     },
+     "typetal_nutrients_mg_per_l.reference_raw_sewage.COD": {
+      "kind": "document",
+      "is": "The annual-average chemical oxygen demand, mg per litre, Miljøstyrelsen's typetal assign to raw sewage, the table's reference row."
+     },
+     "typetal_nutrients_mg_per_l.reference_raw_sewage.Tot-N": {
+      "kind": "document",
+      "is": "The annual-average total nitrogen, mg per litre, the same typetal assign to raw sewage, the table's reference row."
+     },
+     "typetal_nutrients_mg_per_l.reference_stormwater_runoff.COD": {
+      "kind": "document",
+      "is": "The annual-average chemical oxygen demand, mg per litre, Miljøstyrelsen's typetal assign to stormwater runoff, the table's reference row."
+     },
+     "typetal_nutrients_mg_per_l.reference_stormwater_runoff.Tot-N": {
+      "kind": "document",
+      "is": "The annual-average total nitrogen, mg per litre, the same typetal assign to stormwater runoff, the table's reference row."
+     }
+    }
+   },
+   "what": "A hand-curated register of monitoring and reporting facts read from named public documents: DCE notices and summaries, Miljøstyrelsen's technical instruction, and the documentation of two sediment releases.",
+   "model": "Values are transcribed from the document named beside them (`source`, `url`, `reported_by`); nothing is computed. The register's own rule is that nothing in it is inferred, and a reading that is the project's rather than the source's is marked `inferred`.",
+   "assumptions": [
+    "The transcription matches the source document.",
+    "A figure the source gives as approximate is kept and read as approximate (fields named `approx_*`)."
+   ],
+   "justified": [
+    {
+     "text": "Every entry names its source document, and where there is one its URL, so each value can be checked against it.",
+     "ref": "data/manual/monitoring.json"
+    },
+    {
+     "text": "The register states its rule - nothing inferred, readings of the project's own flagged - at its head.",
+     "ref": "data/manual/monitoring.json"
+    }
+   ],
+   "gaps": [
+    "The source documents are not pinned by hash: a revised or withdrawn document would not be noticed, and no machine checks the transcription.",
+    "The land-load figures are rounded values from a summary page, not the underlying annual series."
+   ],
+   "void_if": [
+    "the source document is revised and the register is not"
+   ],
+   "licenses": "What the named documents report.",
+   "not_licensed": "That the reported figures are right, or any figure the documents do not state.",
+   "watches": [
+    "data/manual/monitoring.json"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/monitoring.json": "0bd5fd966bfd7077"
+    }
+   }
+  },
+  {
+   "id": "K-META-FACTS",
+   "title": "Small counts and solstice elevations for the overview pages",
+   "covers": {
+    "file": "data/derived/meta_facts.json",
+    "fields": {
+     "pathways_total": {
+      "kind": "counted",
+      "is": "Rows in `data/manual/nitrogen_pathways.json`: every pathway of reactive nitrogen to Danish marine waters the project enumerated."
+     },
+     "pathways_unquantified": {
+      "kind": "counted",
+      "is": "Of those, the pathways whose status is `UNQUANTIFIED` - no bound given, published or constructed."
+     },
+     "floodalign_pairs": {
+      "kind": "counted",
+      "is": "Overlapping flood-sheet pairs in `data/derived/floodalign.json` that passed the peak-to-rival test and entered the bundle adjustment."
+     },
+     "sun_reference_lat": {
+      "kind": "stipulated",
+      "is": "Latitude of the reference point used for the solstice examples, Rådhuspladsen in central Copenhagen."
+     },
+     "sun_reference_lon": {
+      "kind": "stipulated",
+      "is": "Longitude of the same reference point."
+     },
+     "sun_winter_0900": {
+      "kind": "computed",
+      "is": "Solar elevation in degrees at the reference point at the stated Danish legal clock time on the winter solstice of `2025`."
+     },
+     "sun_summer_0900": {
+      "kind": "computed",
+      "is": "Solar elevation in degrees at the reference point at the stated Danish legal clock time on the summer solstice of `2025`."
+     },
+     "sun_winter_1300": {
+      "kind": "computed",
+      "is": "Solar elevation in degrees at the reference point at the stated Danish legal clock time on the winter solstice of `2025`."
+     },
+     "vp3_rbu_points": {
+      "kind": "counted",
+      "is": "Features in the fetched metro clip of the VP3 rain-dependent discharge layer (`vp3_basis_2019_punkt_rbu_udl`)."
+     },
+     "vp3_rbu_kobenhavn": {
+      "kind": "counted",
+      "is": "Of those, the points whose `komm_navn` is København."
+     },
+     "vp3_rbu_se_sf": {
+      "kind": "counted",
+      "is": "Of those, the points whose `bgv_type` is `SE` or `SF` - codes not in the technical instruction's table, read by the project as separate-sewer outfalls."
+     },
+     "vp3_rbu_with_volume": {
+      "kind": "counted",
+      "is": "Of those, the points carrying a non-empty, non-zero attached basin volume (`vol_sb`)."
+     },
+     "vp3_rbu_volume_m3": {
+      "kind": "computed",
+      "is": "The sum of those basin volumes, in m³."
+     },
+     "plan_pages": {
+      "kind": "counted",
+      "is": "Project pages in the fetched Spildevandsplan register (`data/raw/plan_projects.json`)."
+     },
+     "plan_categories.*": {
+      "kind": "counted",
+      "is": "Project pages in one category of that register."
+     },
+     "kbhkort_layers_fetched": {
+      "kind": "counted",
+      "is": "Layers in the fetch manifest whose source is the city's Kbhkort WFS."
+     },
+     "kbhkort_raw_mb": {
+      "kind": "measured",
+      "is": "Size on disk, in MB, of the files the manifest lists for those layers."
+     },
+     "dike_raw_mb": {
+      "kind": "measured",
+      "is": "Size on disk, in MB, of the two storm-surge dike layers together."
+     },
+     "floodmap_pdfs": {
+      "kind": "counted",
+      "is": "The published flood-sheet PDFs on disk."
+     },
+     "floodmap_pdf_mb_min": {
+      "kind": "measured",
+      "is": "The smallest of those files, in MB."
+     },
+     "floodmap_pdf_mb_max": {
+      "kind": "measured",
+      "is": "The largest of those files, in MB."
+     },
+     "hypotheses_n": {
+      "kind": "counted",
+      "is": "Entries in the `hypotheses` list of `data/derived/hypotheses.json`, the register `scripts/hypotheses.py` writes - lettered hypotheses only, not the group headings they are filed under."
+     },
+     "groups_n": {
+      "kind": "counted",
+      "is": "Entries in the `groups` list of the same register."
+     },
+     "drafts_n": {
+      "kind": "counted",
+      "is": "Per-hypothesis draft pages in `docs/hypodrafts/` and `docs/openproblems/`, not counting their README, triage or audit pages."
+     },
+     "kemi_parameters": {
+      "kind": "counted",
+      "is": "Distinct values of the `Parameter` column in the water-chemistry extract, as `scripts/enums.py` counted them."
+     },
+     "ctd_parameters": {
+      "kind": "counted",
+      "is": "Distinct values of the `Parameter` column in the CTD extract, as `scripts/enums.py` counted them."
+     },
+     "fat_n_frac_pct": {
+      "kind": "computed",
+      "is": "Nitrogen as a share of the mass of tripalmitin, `C51H98O6`, the reference fat - zero, because the formula has no nitrogen atom."
+     },
+     "fat_c_frac": {
+      "kind": "computed",
+      "is": "Carbon as a fraction of the mass of tripalmitin, from its formula and standard atomic masses."
+     },
+     "fat_cod_g_per_g": {
+      "kind": "computed",
+      "is": "Grams of oxygen consumed in fully oxidising one gram of tripalmitin to carbon dioxide and water, from the balanced equation."
+     },
+     "carbohydrate_cod_g_per_g": {
+      "kind": "computed",
+      "is": "Grams of oxygen consumed in fully oxidising one gram of glucose, `C6H12O6`, the reference carbohydrate, from the balanced equation."
+     },
+     "gated_sources": {
+      "kind": "counted",
+      "is": "Sources the source register classifies as gated - held by someone, not reachable by this project - as `gated_sources()` in `scripts/unlock.py` returns them."
+     },
+     "gated_slots": {
+      "kind": "counted",
+      "is": "Gated sources with a drop-in slot: a fixed filename and shape in `SLOTS` in `scripts/unlock.py`."
+     },
+     "light_start_depth_diff_pct": {
+      "kind": "computed",
+      "is": "How much deeper, as a percentage, the median depth of eleven per cent light is in casts whose sensor was switched on deep than in casts switched on near the surface, from the two start-depth medians `scripts/light.py` stores."
+     }
+    }
+   },
+   "what": "Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them.",
+   "model": "`scripts/meta_facts.py` counts list items in the named files, and computes elevations with `solar_elevation` from `scripts/daylight.py`, converting the Danish legal clock time to UTC with `clock.offset`. The fat and carbohydrate figures are stoichiometry on a chosen reference compound - tripalmitin for fat, glucose for carbohydrate - with standard atomic masses; a real sewage fat is a mixture and would differ somewhat.",
+   "assumptions": [
+    "One reference point stands for the city for the solstice examples."
+   ],
+   "justified": [
+    {
+     "text": "The counts are direct counts over the files named in each field.",
+     "ref": "scripts/meta_facts.py"
+    },
+    {
+     "text": "Sun elevation comes from the NOAA solar-position equations, written out in the repository.",
+     "ref": "scripts/daylight.py:98"
+    },
+    {
+     "text": "The clock time is converted with the historical Danish summer-time rules.",
+     "ref": "scripts/clock.py"
+    }
+   ],
+   "gaps": [
+    "That other points in the city differ by less than the precision printed is asserted, not computed.",
+    "The pathway list is the project's own enumeration; a pathway missing from it is missing from both counts."
+   ],
+   "void_if": [
+    "a counted file changes and the script is not rerun"
+   ],
+   "licenses": "How many items the named files hold, and where the sun stands at the stated times.",
+   "not_licensed": "Anything about light under water, or a count of pathways nobody enumerated.",
+   "watches": [
+    "data/derived/enums.json",
+    "data/derived/hypotheses.json",
+    "data/raw/_manifest.json",
+    "data/raw/plan_projects.json",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "scripts/clock.py",
+    "scripts/daylight.py",
+    "scripts/meta_facts.py",
+    "scripts/unlock.py",
+    "data/derived/light.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: hypotheses.json changed because the register gained I7 and two sentences (B2, E6) are now filled from data; meta_facts.py rerun, and the only field that moved is hypotheses_n, 165 to 166, which is the I7 addition - the list count it declares, unchanged in method. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/derived/enums.json": "d6e860d36c583106",
+     "data/derived/hypotheses.json": "994878a3bcb72481",
+     "data/raw/_manifest.json": "7dc01d09bebb357f",
+     "data/raw/plan_projects.json": "3a35c90af6192df5",
+     "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson": "b2b949376e93ee05",
+     "scripts/clock.py": "e2fb9cafe90c804b",
+     "scripts/daylight.py": "84c11f42cb7e2cab",
+     "scripts/meta_facts.py": "eea330a720cf22c6",
+     "scripts/unlock.py": "0dd922c6506ad4dc",
+     "data/derived/light.json": "3bf11c218286e4c6"
+    }
+   }
+  },
+  {
+   "id": "K-META-FLOODALIGN",
+   "title": "Bundle adjustment of the flood sheets against each other",
+   "covers": {
+    "file": "data/derived/floodalign.json",
+    "fields": {
+     "pair_rms_m": {
+      "kind": "estimated",
+      "is": "Root mean square, in metres, of the pair residuals: for each usable overlapping pair, the distance between the offset the image correlation measured and the offset the adjusted sheet positions imply."
+     },
+     "shifts_m.*.*": {
+      "kind": "estimated",
+      "is": "The easting or northing correction, in metres, the bundle adjustment would apply to one sheet on the latest run - made after the previous solution was applied, so near zero once the registration has converged."
+     }
+    }
+   },
+   "what": "Registers the seven flood sheets against each other by correlating their photographs where they overlap, and solves all positions at once, anchored by the sheets with control points.",
+   "model": "Every overlapping pair is correlated by masked normalised cross-correlation over gradient magnitude; pairs whose peak stands clear of the next best by the ratio threshold enter a weighted least-squares solution for all sheet offsets, with the control-point sheets as anchors weighted by their stated errors. Residuals are measured against every usable pair.",
+   "assumptions": [
+    "Where two sheets overlap they depict the same ground from the same survey.",
+    "The control points' stated errors are honest."
+   ],
+   "justified": [
+    {
+     "text": "Pairs enter only if their correlation peak stands clear of the next best by `min_ratio`.",
+     "ref": "scripts/floodalign.py:333"
+    },
+    {
+     "text": "Pair residuals are computed for every usable pair and their RMS is written with the solution.",
+     "ref": "scripts/floodalign.py:366"
+    },
+    {
+     "text": "The whole set is solved jointly, so a loose frame shows up as residuals instead of passing unnoticed sheet by sheet.",
+     "ref": "scripts/floodalign.py:313"
+    }
+   ],
+   "gaps": [
+    "The residuals measure agreement between sheets, not accuracy on the ground: sheets that share a rotation or scale error agree with each other and are still wrong.",
+    "Only the latest run's solution is stored; the corrections earlier runs applied are not kept."
+   ],
+   "void_if": [
+    "the sheets' georeferencing changes and the alignment is not rerun"
+   ],
+   "licenses": "How well the placed sheets agree where they overlap, and whether another pass would move them.",
+   "not_licensed": "The absolute positional accuracy of the sheets.",
+   "watches": [
+    "scripts/floodalign.py",
+    "data/derived/floodmaps/_georef.json"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/floodalign.py": "1763009c1cf3e320",
+     "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4"
+    }
+   }
+  },
+  {
+   "id": "K-META-FLOODSTATE",
+   "title": "The modelled flood path against the planned works",
+   "covers": {
+    "file": "data/derived/floodgap.json",
+    "fields": {
+     "flooded_over_water_km2": {
+      "kind": "modelled",
+      "is": "Area, in km², where the city's modelled flood depth is painted over open water in the city's water polygons - an error of the painted sheets, not flooding."
+     },
+     "coverage.within_200m_of_any_planned_work": {
+      "kind": "share",
+      "is": "Share of flooded land cells within the named distance of any planned cloudburst work, whatever its status."
+     },
+     "coverage.within_100m_of_any_planned_work": {
+      "kind": "share",
+      "is": "Share of flooded land cells within the named distance of any planned cloudburst work, whatever its status."
+     },
+     "params.near_m.*": {
+      "kind": "stipulated",
+      "is": "A distance, in metres, at which coverage is measured."
+     }
+    }
+   },
+   "what": "Places the city's modelled flood depth from the placed sheets on a regular grid and measures how much of it lies near a planned cloudburst work.",
+   "model": "`floodgap.py` rasterises the placed sheets onto a grid of `CELL`-metre cells, classes a cell flooded where the painted depth reaches the stated minimum, sets aside cells on open water, and measures each flooded cell's distance to the nearest planned work with a distance transform.",
+   "assumptions": [
+    "The painted depth classes are read correctly from the sheets.",
+    "Distance to any part of a planned work stands for being served by it."
+   ],
+   "justified": [
+    {
+     "text": "Distances come from a distance transform on the same grid.",
+     "ref": "scripts/floodgap.py:124"
+    },
+    {
+     "text": "Coverage is written for each stated distance.",
+     "ref": "scripts/floodgap.py:317"
+    },
+    {
+     "text": "Depth painted on open water is measured and reported, not silently kept as flooding.",
+     "ref": "scripts/floodgap.py:252"
+    }
+   ],
+   "gaps": [
+    "Nearness to any part of a planned work is generous: being near a cloudburst road is not being protected by it.",
+    "The flood model is the city's run of an older scenario; the plan it is compared with is later, and the city has changed since."
+   ],
+   "void_if": [
+    "the sheets are re-placed and floodgap.py is not rerun"
+   ],
+   "licenses": "How much of the modelled flood path lies near a planned work.",
+   "not_licensed": "That those areas are protected, or anything about flooding in today's city.",
+   "watches": [
+    "scripts/floodgap.py",
+    "data/derived/floodmaps/_georef.json"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/floodgap.py": "76ca448241807d3d",
+     "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4"
+    }
+   }
+  },
+  {
+   "id": "K-META-RIVERMAP",
+   "title": "The flood path read as the city's natural surface drainage",
+   "covers": {
+    "file": "data/derived/rivermap.json",
+    "fields": {
+     "near_surface_conveyance_pct": {
+      "kind": "share",
+      "is": "Share of flooded cells within `NEAR_M` of a planned surface conveyance alignment."
+     },
+     "corridor_candidates": {
+      "kind": "counted",
+      "is": "Clusters of deep flooded land cells with no surface route within `NEAR_M`, of at least `MIN_CORRIDOR_CELLS` cells - every such cluster, whereas `corridors` lists only the largest."
+     }
+    }
+   },
+   "what": "Reads the modelled flood path as a survey of where water would run on the surface, and marks where a river is indicated and no surface route is planned.",
+   "model": "On the grid of `floodgap.py`, flooded cells within `NEAR_M` of surface conveyance are counted against all flooded cells; deep flooded cells away from water and from any surface route are clustered, and clusters above the size floor are corridor candidates.",
+   "assumptions": [
+    "A deep modelled flood path marks where surface water would run."
+   ],
+   "justified": [
+    {
+     "text": "Nearness for the surface figure is measured against surface conveyance alone.",
+     "ref": "scripts/rivermap.py:115"
+    },
+    {
+     "text": "Every candidate cluster is counted before the list is cut to the largest.",
+     "ref": "scripts/rivermap.py:148"
+    }
+   ],
+   "gaps": [
+    "`NEAR_M` and `MIN_CORRIDOR_CELLS` are stipulated in the script.",
+    "A corridor candidate marks where a river is indicated and absent; whether one should be built is not assessed."
+   ],
+   "void_if": [
+    "floodgap.py's grid or the sheets change and rivermap.py is not rerun"
+   ],
+   "licenses": "How much of the modelled flood path has a planned surface route beside it, and how many candidate corridors have none.",
+   "not_licensed": "Where the city should build, or anything about today's terrain.",
+   "watches": [
+    "scripts/rivermap.py",
+    "data/derived/floodgap.json"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/rivermap.py": "eae940ce0c09aa37",
+     "data/derived/floodgap.json": "0f9f83eb29bf8176"
+    }
+   }
+  },
+  {
+   "id": "K-META-RESCORE-TESTS",
+   "title": "What the water-chemistry fetch made testable",
+   "covers": {
+    "file": "data/derived/rescore.json",
+    "fields": {
+     "tally.*": {
+      "kind": "counted",
+      "is": "Hypotheses listed as blocked on the water-chemistry fetch, by availability class after it: testable now, or partly unblocked with a second blocker behind the first."
+     },
+     "matrix.*.fetch_supplied.*.n": {
+      "kind": "counted",
+      "is": "Rows of one parameter kept by `rescore.py`'s filters: the required unit, not censored, a point sample type, a parseable value, date and depth, and a depth that is not the sentinel code."
+     },
+     "matrix.*.fetch_supplied.*.stations": {
+      "kind": "counted",
+      "is": "Distinct stations among those rows."
+     },
+     "tests.K1_si_din_molar_surface.*.share_below_1": {
+      "kind": "share",
+      "is": "Of the cells behind one year's pooled surface Si:DIN median, the share with a molar ratio below one."
+     },
+     "tests.A7_bottom_dip_by_month.*.median": {
+      "kind": "estimated",
+      "is": "Median ortho-phosphate, µg/l, in cells deeper than the script's depth cut, pooled over all stations and years, for one calendar month."
+     },
+     "tests.E11_unionised_nh3_ug_l.n_bottles_with_both": {
+      "kind": "counted",
+      "is": "Cells - one station, date and depth - carrying both a pH and an ammonium value."
+     },
+     "tests.E11_unionised_nh3_ug_l.median": {
+      "kind": "estimated",
+      "is": "Median un-ionised ammonia, µg/l, over those cells, from a single freshwater dissociation constant."
+     },
+     "tests.E11_unionised_nh3_ug_l.p95": {
+      "kind": "estimated",
+      "is": "The ninety-fifth percentile of the same values."
+     },
+     "tests.E11_unionised_nh3_ug_l.max": {
+      "kind": "estimated",
+      "is": "The largest of the same values."
+     }
+    }
+   },
+   "what": "Re-scores the hypotheses that were listed as blocked on the water-chemistry fetch, and runs the first tests whose inputs that fetch supplies.",
+   "model": "For each hypothesis, `rescore.py` checks whether every parameter it needs is present after filtering, and records what is still missing; the class follows. The K1 ratio, the A7 monthly medians and the E11 fraction are computed over station-date-depth cells.",
+   "assumptions": [
+    "The needs written into `NEEDS` are what each hypothesis requires.",
+    "Pooling stations and years gives a fair first look at a seasonal pattern."
+   ],
+   "justified": [
+    {
+     "text": "Availability is recorded per parameter with rows, stations and years, so the class can be checked.",
+     "ref": "scripts/rescore.py:139"
+    },
+    {
+     "text": "The tally counts the classes over the whole matrix.",
+     "ref": "scripts/rescore.py:174"
+    },
+    {
+     "text": "The share below one is computed over the same cells as the median.",
+     "ref": "scripts/rescore.py:213"
+    },
+    {
+     "text": "Monthly bottom-water medians are taken only for months with enough cells.",
+     "ref": "scripts/rescore.py:239"
+    },
+    {
+     "text": "The ammonia fraction needs pH and ammonium in the same cell, and says it is indicative only.",
+     "ref": "scripts/rescore.py:257"
+    }
+   ],
+   "gaps": [
+    "A need nobody wrote into `NEEDS` is not checked - exactly how the second blockers stayed hidden behind the first.",
+    "The monthly medians pool a station set that changes over the years.",
+    "The un-ionised ammonia uses one freshwater dissociation constant at a fixed temperature, with no salinity or in-situ temperature correction.",
+    "When a parameter has several rows in one cell, the last one read wins."
+   ],
+   "void_if": [
+    "the extract is re-fetched and the script is not rerun"
+   ],
+   "licenses": "Which hypotheses the fetched archive can now address, and a first descriptive look at three of them.",
+   "not_licensed": "That any hypothesis is confirmed or refuted.",
+   "watches": [
+    "scripts/rescore.py",
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/rescore.py": "0f053842cbb98d60",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3"
+    }
+   }
+  },
+  {
+   "id": "K-META-CYCLES-DEV",
+   "title": "Deviations from a station's own local mean, by cycle class",
+   "covers": {
+    "file": "data/derived/cycles.json",
+    "fields": {
+     "results.*.by_window.*.*.*.dev": {
+      "kind": "estimated",
+      "is": "Mean deviation of the samples in one class of one axis - sun elevation, moon, tide or temperature - from the mean of the other samples at the same station within the window, for one parameter: mg/l for oxygen, percentage points for saturation."
+     },
+     "windows_days.*": {
+      "kind": "stipulated",
+      "is": "A half-width of the moving window, in days."
+     }
+    }
+   },
+   "what": "For each surface sample, its deviation from the mean of the other samples at the same station inside a moving window, averaged by the class of the sample's sun elevation, moon state, tidal phase and temperature.",
+   "model": "`cycles.deviations()` sorts each station's samples by date, takes the mean of the others inside the window by prefix sums, and averages the deviations per class. Instants come from `clock.instant`, which leaves out filled-in defaults and mixed conventions.",
+   "assumptions": [
+    "Within the window, season and site are removed well enough for a class difference to reflect the cycle."
+   ],
+   "justified": [
+    {
+     "text": "The comparison is leave-one-out within each station's own window.",
+     "ref": "scripts/cycles.py:137"
+    },
+    {
+     "text": "Every instant comes from one conversion with conventions measured per supplier and era.",
+     "ref": "scripts/clock.py"
+    }
+   ],
+   "gaps": [
+    "No uncertainty is attached to a class mean, so small differences between classes cannot be told from noise on this output alone.",
+    "A wider window lets more of the season into the comparison.",
+    "Thin classes are reported alongside thick ones."
+   ],
+   "void_if": [
+    "the clock conventions or the filters change and the script is not rerun"
+   ],
+   "licenses": "How far each class sits from its stations' local means, as a description of the archive.",
+   "not_licensed": "The size of any cycle in the water, or that a difference between classes is real rather than noise.",
+   "watches": [
+    "scripts/cycles.py",
+    "scripts/clock.py",
+    "data/derived/clock_convention.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: cycles.py changed only in the comment on sample types, now saying the technical instruction does not settle what a Blandingsprøve is; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/cycles.py": "ef5a31aa3beaf2fc",
+     "scripts/clock.py": "e2fb9cafe90c804b",
+     "data/derived/clock_convention.json": "a3ea19fa01ca5d8d"
+    }
+   }
+  },
+  {
+   "id": "K-META-CLOCKZONE",
+   "title": "What each clock value in the water-chemistry extract is",
+   "covers": {
+    "file": "data/derived/clock_convention.json",
+    "fields": {
+     "classes.*.*": {
+      "kind": "counted",
+      "is": "Sampling visits - one per station, date and clock value - in one era, in one clock class: observed, default, ambiguous or untestable, as `clock.instant` classes them."
+     },
+     "observed_check.*.local_hour_p05": {
+      "kind": "estimated",
+      "is": "The fifth percentile of the local clock time, in hours, of the observed visits in one era, after conversion."
+     },
+     "observed_check.*.local_hour_p95": {
+      "kind": "estimated",
+      "is": "The ninety-fifth percentile of the same."
+     },
+     "observed_check.*.sun_below_horizon_pct": {
+      "kind": "share",
+      "is": "Share of the observed visits in one era taken with the sun below the horizon at the station's position and the converted instant."
+     }
+    }
+   },
+   "what": "Tests every supplier and era of the water-chemistry extract at the summer-time changes to find what its clock values are, and classes every visit accordingly.",
+   "model": "`clockzone.py` compares each station with itself either side of every summer-time change: a wall clock does not jump, a UTC clock jumps one way, a clock with the offset added the other. Filled-in default values are identified by their local reading and tested separately. `clock.instant` then converts or refuses each visit.",
+   "assumptions": [
+    "Fieldwork keeps local working hours, so a clock that jumps at a summer-time change is not a wall clock."
+   ],
+   "justified": [
+    {
+     "text": "The verdict per supplier and era comes from station-paired comparisons, so a changing mix of stations cannot fake a jump.",
+     "ref": "scripts/clockzone.py:58"
+    },
+    {
+     "text": "Every visit's class is counted after the conventions are fixed.",
+     "ref": "scripts/clockzone.py:187"
+    }
+   ],
+   "gaps": [
+    "The constant hour of the old convention is anchored by the default value reading as noon, not by an independent clock.",
+    "Before summer time existed a convention cannot be seen, and those visits are left out."
+   ],
+   "void_if": [
+    "a supplier changed convention within an era in a way the station-paired test averages away"
+   ],
+   "licenses": "How many visits carry an observed time, a default, or a convention too mixed to convert.",
+   "not_licensed": "The true time of a visit whose clock is a default.",
+   "watches": [
+    "scripts/clockzone.py",
+    "scripts/clock.py",
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/clockzone.py": "530766daa184f5eb",
+     "scripts/clock.py": "e2fb9cafe90c804b",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3"
+    }
+   }
+  },
+  {
+   "id": "K-META-CURRENTS",
+   "title": "Current direction in the hours after overflow-scale rain",
+   "covers": {
+    "file": "data/derived/currents_transport.json",
+    "fields": {
+     "lag.*.lag_h": {
+      "kind": "stipulated",
+      "is": "The lag, in hours after an overflow-scale rain hour, at which the current direction is read."
+     },
+     "lag.*.hours": {
+      "kind": "counted",
+      "is": "Hours in the overlapping rain and current record whose antecedent rainfall reaches the overflow-scale threshold, shifted by the lag."
+     },
+     "lag.*.southward_pct": {
+      "kind": "share",
+      "is": "Share of those hours in which the along-sound current at the southern Øresund point runs south, toward Køge Bugt."
+     }
+    }
+   },
+   "what": "Joins Copenhagen's hourly rain record to the modelled current in the southern Øresund, and asks how often the water runs toward Køge Bugt in and after hours of overflow-scale rain.",
+   "model": "Antecedent rain is the sum over the preceding hours; hours above the overflow-scale threshold are events. For each lag, the events are shifted and the share of shifted hours with southward along-sound flow is compared with the share over all hours.",
+   "assumptions": [
+    "Antecedent rain over a few hours stands for what fills a combined sewer.",
+    "The modelled current at one point stands for transport out of the harbour."
+   ],
+   "justified": [
+    {
+     "text": "The event threshold and the lags are fixed in the code and the comparison is against the all-hours baseline.",
+     "ref": "scripts/currents.py:376"
+    },
+    {
+     "text": "Each lag's count of hours is stored with its share.",
+     "ref": "scripts/currents.py:381"
+    }
+   ],
+   "gaps": [
+    "Hours after one event overlap the next, so the counted hours are not independent events.",
+    "The overflow-scale threshold is stipulated in the script, not taken from overflow records."
+   ],
+   "void_if": [
+    "the rain or current record is replaced and the script is not rerun"
+   ],
+   "licenses": "A statistical association between rain and current direction in the joint record.",
+   "not_licensed": "That material from the Copenhagen side reaches Køge Bugt.",
+   "watches": [
+    "scripts/currents.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/currents.py": "5e180c254909fc16"
+    }
+   }
+  },
+  {
+   "id": "K-META-MANIFEST",
+   "title": "Feature counts recorded at fetch time",
+   "covers": {
+    "file": "data/raw/_manifest.json",
+    "fields": {
+     "*.features": {
+      "kind": "counted",
+      "is": "Features the WFS returned for one layer when it was fetched, as the fetch script recorded them in its manifest."
+     }
+    }
+   },
+   "what": "The fetch manifest: for every fetched layer, its server, title, geometry types, properties and the number of features that came back.",
+   "model": "`fetch_wfs.py` requests each layer as GeoJSON and records the count of returned features beside the file it wrote.",
+   "assumptions": [
+    "The server returned the whole layer, not a truncated page."
+   ],
+   "justified": [
+    {
+     "text": "The count is written by the same run that wrote the layer file, next to its source URL.",
+     "ref": "data/raw/_manifest.json"
+    }
+   ],
+   "gaps": [
+    "A layer that changed on the server since the fetch is not noticed until it is fetched again.",
+    "Nothing checks the returned count against the server's own reported total."
+   ],
+   "void_if": [
+    "the layer is re-fetched and the manifest is not rewritten"
+   ],
+   "licenses": "How many features each fetched layer held when it was fetched.",
+   "not_licensed": "How many the layer holds today.",
+   "watches": [
+    "data/raw/_manifest.json"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/raw/_manifest.json": "7dc01d09bebb357f"
+    }
+   }
+  },
+  {
+   "id": "K-META-CODELISTS",
+   "title": "National overflow concentrations from the technical instruction",
+   "covers": {
+    "file": "data/manual/codelists.json",
+    "fields": {
+     "typetal_overloebsvand_mg_per_l.*": {
+      "kind": "document",
+      "is": "A national median concentration for overflow water, mg/l, from table one of Miljøstyrelsen's technical instruction for rain-conditioned discharges, as transcribed into the code list."
+     }
+    }
+   },
+   "what": "Code lists and national figures transcribed from Miljøstyrelsen's technical instruction for rain-conditioned discharges.",
+   "model": "Transcribed by hand from the table named in the file's `_source`; nothing computed.",
+   "assumptions": [
+    "The transcription matches the table."
+   ],
+   "justified": [
+    {
+     "text": "The file names the document, its version and the table each block comes from.",
+     "ref": "data/manual/codelists.json"
+    }
+   ],
+   "gaps": [
+    "The document is not pinned by hash, and no machine checks the transcription."
+   ],
+   "void_if": [
+    "a newer version of the instruction changes the table"
+   ],
+   "licenses": "What the instruction states.",
+   "not_licensed": "That the concentrations describe any particular overflow.",
+   "watches": [
+    "data/manual/codelists.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: codelists.json changed only in SE and SF, now sourced from DP02's list for separate-sewer outfalls, and in its note; the typetal concentrations covered here are untouched. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/manual/codelists.json": "ce6980b7270d08a2"
+    }
+   }
+  },
+  {
+   "id": "K-META-SHEETS",
+   "title": "Scale of each published flood sheet",
+   "covers": {
+    "file": "data/derived/floodmaps/_sheets.json",
+    "fields": {
+     "*.map_scale": {
+      "kind": "measured",
+      "is": "The scale denominator of one flood sheet, from its scale bar's printed length and its length in pixels on the rendered page."
+     },
+     "*.scalebar_m": {
+      "kind": "measured",
+      "is": "The ground length, in metres, the sheet's scale bar is labelled with, read from its text layer."
+     }
+    }
+   },
+   "what": "Reads each flood sheet's frame, scale bar and legend from the PDF so that its pixels can be given ground dimensions.",
+   "model": "`floodmaps.py` renders each PDF, finds the scale bar and reads its label from the text layer, and divides the labelled length by the bar's pixel length to get metres per pixel and the scale.",
+   "assumptions": [
+    "The scale bar is drawn true to the map."
+   ],
+   "justified": [
+    {
+     "text": "The bar length is read from the sheet's own text layer rather than guessed.",
+     "ref": "scripts/floodmaps.py"
+    }
+   ],
+   "gaps": [
+    "The scale gives dimensions, not position; placement is a separate step."
+   ],
+   "void_if": [
+    "a sheet is replaced by a differently rendered PDF"
+   ],
+   "licenses": "The ground size of a sheet's pixels.",
+   "not_licensed": "Where the sheet lies.",
+   "watches": [
+    "scripts/floodmaps.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/floodmaps.py": "b6aac5de8e3311c4"
+    }
+   }
+  },
+  {
+   "id": "K-META-EXTRACT",
+   "title": "Flooded area read off each sheet",
+   "covers": {
+    "file": "data/derived/floodmaps/_extract.json",
+    "fields": {
+     "*.flooded_m2": {
+      "kind": "modelled",
+      "is": "Area, in m², of one sheet painted in any of the six depth classes of the city's modelled flood, legend masked - the city's model output as drawn, before placement and before water is set aside."
+     }
+    }
+   },
+   "what": "Classifies each sheet's pixels into the six painted depth classes and converts pixel counts to ground area.",
+   "model": "Pixels whose colour matches a depth class of the Blues palette, with the palest class separated from pale roofs by its blue cast, are counted per class and multiplied by the sheet's ground area per pixel.",
+   "assumptions": [
+    "Colour matching recovers the painted classes without taking in roofs or annotation."
+   ],
+   "justified": [
+    {
+     "text": "The legend is masked before counting, and the palest band is separated from roofs by its blue cast.",
+     "ref": "scripts/floodmaps.py"
+    }
+   ],
+   "gaps": [
+    "Painted depth over open water is still counted here; it is set aside later, in floodgap.py."
+   ],
+   "void_if": [
+    "the palette test is changed and the extraction is not rerun"
+   ],
+   "licenses": "How much of each sheet the city's model painted as flooded.",
+   "not_licensed": "Where water actually stands.",
+   "watches": [
+    "scripts/floodmaps.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/floodmaps.py": "b6aac5de8e3311c4"
+    }
+   }
+  },
+  {
+   "id": "K-META-ENUMS-CAT",
+   "title": "Value counts of the water-chemistry extract's categorical columns",
+   "covers": {
+    "file": "data/derived/enums.json",
+    "fields": {
+     "kemi.categorical.*.*": {
+      "kind": "counted",
+      "is": "Records of the water-chemistry extract carrying one value in one categorical column, counted over the whole file."
+     }
+    }
+   },
+   "what": "For every categorical column of the extract, the count of every distinct value.",
+   "model": "`enums.py` streams the whole extract through the CSV reader and counts each column's values while the column stays categorical.",
+   "assumptions": [
+    "One CSV record is one row of the source table."
+   ],
+   "justified": [
+    {
+     "text": "The whole file is read, not the first rows, so a rare value is counted.",
+     "ref": "scripts/enums.py"
+    }
+   ],
+   "gaps": [
+    "The fragment records from a broken note field are counted too, under `None`."
+   ],
+   "void_if": [
+    "the extract is re-fetched and the script is not rerun"
+   ],
+   "licenses": "How many records carry each value.",
+   "not_licensed": "Anything about the water.",
+   "watches": [
+    "scripts/enums.py",
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/enums.py": "e21dcf1b1c5748b5",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3"
+    }
+   }
+  },
+  {
+   "id": "K-META-OUTFALLS",
+   "title": "Outfalls in the public PULS extract",
+   "covers": {
+    "file": "data/derived/outfalls.json",
+    "fields": {
+     "layers.*.n": {
+      "kind": "counted",
+      "is": "Features in one layer of the spildevandsdata.dk PULS extract: combined-sewer overflow structures, or separate stormwater outfalls."
+     }
+    }
+   },
+   "what": "Reads the public PULS extract's outfall layers and summarises them.",
+   "model": "Each layer file is parsed and its features counted and summed per attribute.",
+   "assumptions": [
+    "The public extract holds every reported structure."
+   ],
+   "justified": [
+    {
+     "text": "The counts are taken over the whole layer files named in the output.",
+     "ref": "data/derived/outfalls.json"
+    }
+   ],
+   "gaps": [
+    "Volumes in the extract are largely modelled from runoff over the connected area, not gauged."
+   ],
+   "void_if": [
+    "the extract is re-fetched and the summary is not rebuilt"
+   ],
+   "licenses": "How many outfalls the public extract lists.",
+   "not_licensed": "How much each discharges in a given event.",
+   "watches": [
+    "data/derived/outfalls.json"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/derived/outfalls.json": "e7ebd5c2450e0b6a"
+    }
+   }
+  },
+  {
+   "id": "K-META-EXPERIMENTS",
+   "title": "How many proposed experiments there are, of each kind and scale",
+   "covers": {
+    "file": "data/derived/experiments.json",
+    "fields": {
+     "n_experiments": {
+      "kind": "counted",
+      "is": "Entries in the experiment register `X` in `scripts/experiments.py`."
+     },
+     "by_kind.*": {
+      "kind": "counted",
+      "is": "Entries of one kind of work - experiment, measurement, instrument or analysis."
+     },
+     "by_scale.*": {
+      "kind": "counted",
+      "is": "Entries at one scale - small, lab, programme or desk."
+     },
+     "no_institution": {
+      "kind": "counted",
+      "is": "Entries at the small or desk scale: those that need no institution to run."
+     }
+    }
+   },
+   "what": "Counts over the hand-written register of proposed experiments, stored so the page reads them back rather than counting in its prose.",
+   "model": "Each entry is filed under exactly one kind and one scale when it is written; the counts are taken over the register at every build.",
+   "assumptions": [
+    "The kind and scale an entry is filed under are the author's judgement, not a measured property."
+   ],
+   "justified": [
+    {
+     "text": "The counts are recomputed from the register each time the page is built, so adding an entry changes them.",
+     "ref": "scripts/experiments.py"
+    }
+   ],
+   "gaps": [
+    "Whether an entry needs an institution is judged from its scale label alone."
+   ],
+   "void_if": [
+    "an entry is refiled without the page being rebuilt"
+   ],
+   "licenses": "How the register is composed.",
+   "not_licensed": "Anything about how feasible or valuable the experiments are.",
+   "watches": [
+    "scripts/experiments.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: the only change since the last reading is a family argument on ambiguous T1-T5 references in experiments.py - they are group T hypotheses (T5 sediment inoculation, T2 fauna) - plus the refs import; verified by hashing the file with those removed, which matches what was last read. No number-producing code touched. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/experiments.py": "b580626c6de8a7a8"
+    }
+   }
+  },
+  {
+   "id": "K-META-QUEUE",
+   "title": "How many registered sources there are, by friction and by what they are indexed by",
+   "covers": {
+    "file": "data/derived/fetch_queue.json",
+    "fields": {
+     "n_sources": {
+      "kind": "counted",
+      "is": "Distinct source ids across the source registers `data/manual/data_sources*.json`."
+     },
+     "by_tier.*": {
+      "kind": "counted",
+      "is": "Sources in one friction tier - open, held, account or blocked - as `classify()` in `scripts/fetch_queue.py` assigns them from each source's access text."
+     },
+     "by_spatial.*": {
+      "kind": "counted",
+      "is": "Sources whose spatial description reads as indexed by a position, by a region, by both, or by neither, as `spatial_kind()` assigns them by keyword."
+     }
+    }
+   },
+   "what": "Counts over the source registers, sorted by how hard each source is to reach and by whether it is indexed by a place something was measured or by a region.",
+   "model": "Both sortings are keyword rules over the free text of each register entry: the access text for the tier, the spatial and aggregation text for the index. The rules are in the script and are applied at every build.",
+   "assumptions": [
+    "A source's access and spatial text describe it accurately.",
+    "The keyword lists catch the phrasings the registers use."
+   ],
+   "justified": [
+    {
+     "text": "The rules and their keyword lists are written out in the script, and a source that matches no tier word is classed as blocked rather than guessed open.",
+     "ref": "scripts/fetch_queue.py"
+    }
+   ],
+   "gaps": [
+    "A keyword rule misreads unusual phrasing; no entry has been checked by hand against its class.",
+    "The unknown index class counts sources whose text did not say, not sources that have no index."
+   ],
+   "void_if": [
+    "a register entry is edited and the queue is not rebuilt",
+    "a keyword list is changed"
+   ],
+   "licenses": "How the registered sources divide by friction and by index, under the stated rules.",
+   "not_licensed": "How valuable a source is, or whether its access text is current.",
+   "watches": [
+    "scripts/fetch_queue.py",
+    "data/manual/data_sources.json",
+    "data/manual/data_sources_2.json"
+   ],
+   "confirmed": {
+    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/fetch_queue.py": "c3699a99510d3774",
+     "data/manual/data_sources.json": "bbcf3ff9710105f6",
+     "data/manual/data_sources_2.json": "6d052e73fa896f81"
+    }
+   }
+  }
+ ]
+}

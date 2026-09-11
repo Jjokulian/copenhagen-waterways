@@ -147,21 +147,7 @@
   @media (max-width:860px){ .embedfig{display:none} }
 
   /* A case is a verdict of three sentences standing on three tables, and a reader
-     wants the tables second. `a.figure{border-bottom:1px dotted currentColor;text-decoration:none;cursor:help}
-a.figure::after{content:"\\2299";font-size:.7em;vertical-align:super;opacity:.55;margin-left:1px}
-#justify{position:fixed;right:0;top:0;bottom:0;width:min(460px,92vw);z-index:60;
-  background:#0d1117;border-left:1px solid #30363d;box-shadow:-8px 0 24px #0008;
-  display:flex;flex-direction:column}
-#justify header{display:flex;align-items:center;gap:8px;padding:10px 12px;
-  border-bottom:1px solid #30363d;font-size:12px;color:#8b949e}
-#justify header b{color:#c9d1d9;font-weight:600}
-#justify button{margin-left:auto;all:unset;cursor:pointer;color:#8b949e;padding:0 6px}
-.justify-body{overflow:auto;padding:12px 14px;font-size:13px}
-.justify-body h3{font-size:14px;margin:0 0 8px}
-.mermaid-fig{margin:14px 0;overflow-x:auto;text-align:center}
-.mermaid-fig svg{max-width:100%;height:auto}
-.mermaid-failed{font-size:11px;color:#8b949e;border-left:2px solid #e8a33d;padding-left:8px}
-details.work` is that evidence: folded at every
+     wants the tables second. `details.work` is that evidence: folded at every
      width, because the reason to fold is the length of the working and not the
      size of the screen, and it is the one fold on the site that a wide screen does
      not force open. The summary carries the finding, so what is deferred is the
@@ -284,6 +270,7 @@ code.gloss{
     line-height:1.05;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
   .fact p{margin:.5rem 0 .6rem;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
   .fact a{font-family:Archivo,sans-serif;font-size:12.5px;letter-spacing:.03em}
+  .fact a.figure{font:inherit;letter-spacing:inherit}
 
   /* Reading map. Laid out with grid and flow only - no computed positions, so it
      degrades to a readable stack at any width instead of to overlapping boxes. */
@@ -314,6 +301,99 @@ ul.chain li{margin:0 0 11px;padding-left:15px;border-left:2px solid var(--line);
 ul.chain b{color:var(--ink)}
 ul.chain i{font-style:italic}
 h2.sec{font-size:17px;font-weight:640;letter-spacing:-.01em;margin:26px 0 8px}
+/* Live-number links and the justification panel. These rules were once spliced in
+   before the first occurrence of 'details.work' - which turned out to be inside the
+   comment above - so none of them applied, and the panel opened unstyled at the
+   bottom of the page where nobody could see it. [hidden] is restated because an
+   author display rule otherwise beats the browser's, as line 50 already warns. */
+.mermaid-fig{margin:14px 0;overflow-x:auto;text-align:center}
+.mermaid-fig svg{max-width:100%;height:auto}
+.mermaid-failed{font-size:11px;color:#8b949e;border-left:2px solid #e8a33d;padding-left:8px}
+/* A linked number, and the menu of views it opens. Every colour is a site token,
+   so the menu and panel follow the reader's light or dark theme. */
+a.figure{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent);cursor:pointer}
+/* a claim the page asserts: the sentence opens what it rests on, its numbers their own chains */
+/* every assertion is a claim, so the sentence is not underlined at rest - the † says
+   it can be opened, and the sentence lights up under the pointer */
+span.claim{cursor:pointer;border-radius:2px;transition:background-color .12s}
+span.claim:hover{background:color-mix(in srgb,var(--accent) 11%,transparent)}
+@media (prefers-reduced-motion: reduce){span.claim{transition:none}}
+sup.claim-mark a{border:0;text-decoration:none;opacity:.65;padding:0 .1em}
+sup.claim-mark a:hover{opacity:1}
+a.figure:hover,a.figure:focus{background:var(--sunk);outline:none}
+a.figure::after{content:"\2299";font-size:.62em;vertical-align:super;color:var(--accent);opacity:.75;margin-left:1px}
+#nummenu[hidden]{display:none}
+#nummenu{position:fixed;z-index:70;font-family:inherit;min-width:250px;max-width:320px;background:var(--surface);color:var(--ink);
+  border:1px solid var(--rule);border-radius:9px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:6px;font-size:13px}
+#nummenu .mh{padding:6px 10px 8px;border-bottom:1px solid var(--rule);margin-bottom:4px;color:var(--muted);font-size:12px}
+#nummenu .mh b{color:var(--ink);font-size:15px;font-variant-numeric:tabular-nums}
+#nummenu button{display:block;width:100%;text-align:left;background:none;border:0;padding:7px 10px;border-radius:6px;
+  color:var(--ink);font:inherit;cursor:pointer}
+#nummenu button:hover,#nummenu button:focus{background:var(--sunk);outline:none}
+#nummenu button small{display:block;color:var(--muted);font-size:11px;margin-top:1px}
+#justify[hidden]{display:none}
+#justify{position:fixed;right:0;top:0;bottom:0;width:min(540px,94vw);z-index:60;background:var(--surface);color:var(--ink);
+  border-left:1px solid var(--rule);box-shadow:-10px 0 30px rgba(0,0,0,.14);display:flex;flex-direction:column}
+#justify header{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--rule)}
+#justify header b{color:var(--ink);font-size:14px;font-weight:600}
+#justify header button{margin-left:auto;background:none;border:0;cursor:pointer;color:var(--muted);font-size:17px;padding:2px 6px}
+#justify .tabs[hidden]{display:none}
+#justify .tabs{display:flex;flex-wrap:wrap;gap:5px;padding:9px 12px;border-bottom:1px solid var(--rule)}
+#justify .tabs button{background:none;border:1px solid var(--rule);border-radius:999px;padding:3px 10px;font:inherit;
+  font-size:12px;color:var(--ink-2);cursor:pointer}
+#justify .tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.justify-body{overflow:auto;padding:14px 18px 40px;font-size:13.5px;line-height:1.55}
+.justify-body h3{font-size:14px;margin:0 0 8px}
+.justify-body h4{margin:16px 0 6px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.justify-body .big{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.justify-body .muted{color:var(--muted)}
+.justify-body p.expr{font-size:14px;line-height:2.1;font-variant-numeric:tabular-nums}
+.justify-body .chip{display:inline-block;border:1px solid var(--rule);border-radius:5px;padding:0 6px;margin:0 1px;
+  background:var(--sunk);font-variant-numeric:tabular-nums;line-height:1.6}
+.justify-body .chip[data-nv]{cursor:pointer;border-color:var(--accent)}
+.justify-body .chip[data-nv]:hover{background:var(--surface)}
+.justify-body pre.code{background:var(--sunk);padding:8px 0;border-radius:6px;overflow:auto;font-size:11.5px;line-height:1.5}
+.justify-body pre.code span{display:block;padding:0 10px;white-space:pre}
+.justify-body pre.code span.hit{background:color-mix(in srgb,var(--accent) 20%,transparent)}
+.justify-body pre.code i{display:inline-block;width:3.4em;color:var(--muted);font-style:normal;user-select:none}
+.justify-body table.ex{border-collapse:collapse;width:100%;font-size:12px;font-variant-numeric:tabular-nums}
+.justify-body table.ex td{border-bottom:1px solid var(--rule);padding:3px 7px;vertical-align:top}
+.justify-body table.ex tr.hit td{background:color-mix(in srgb,var(--accent) 20%,transparent);font-weight:600}
+.justify-body ul.tree{list-style:none;padding-left:16px;border-left:1px solid var(--rule);margin:4px 0}
+.justify-body ul.tree li{margin:5px 0}
+.justify-body .badge{font-size:10px;letter-spacing:.04em;color:var(--muted);border:1px solid var(--rule);border-radius:4px;
+  padding:0 4px;margin-right:6px}
+.justify-body p.passage{background:var(--sunk);padding:9px 11px;border-radius:6px;font-size:12.5px}
+.justify-body mark{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;padding:0 1px}
+.justify-body .back{background:none;border:0;color:var(--accent);cursor:pointer;padding:0;margin:0 0 10px;font:inherit}
+:root{--nv-warn:#9a5b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--nv-warn:#e3a54a}}
+:root[data-theme="dark"]{--nv-warn:#e3a54a}
+.justify-body .simflag{border-left:3px solid var(--nv-warn);padding:7px 11px;margin:12px 0;
+  background:color-mix(in srgb,var(--nv-warn) 9%,transparent)}
+.justify-body h5{margin:13px 0 4px;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.justify-body h5.gaps{color:var(--nv-warn)}
+.justify-body ul{padding-left:18px;margin:4px 0}
+.justify-body ul.gaps li::marker{color:var(--nv-warn)}
+.justify-body details.kcard{border-top:1px solid var(--rule);padding:11px 0 6px}
+.justify-body details.kcard summary{cursor:pointer;line-height:1.5}
+.justify-body details.kcard summary b{font-size:14px}
+.justify-body .kstat{font-size:10px;border-radius:4px;padding:0 5px;border:1px solid;margin-left:4px;vertical-align:1px}
+.justify-body .kstat.ok{color:var(--accent);border-color:var(--accent)}
+.justify-body .kstat.bad{color:var(--nv-warn);border-color:var(--nv-warn)}
+.justify-body .lic{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px}
+@media (max-width:520px){.justify-body .lic{grid-template-columns:1fr}}
+.justify-body .small{font-size:11.5px}
+.justify-body a{color:var(--accent)}
+.justify-body a.ref{font-size:11.5px;white-space:nowrap}
+.justify-body .stepname{font-style:italic;color:var(--accent)}
+.chem{white-space:nowrap}
+.math{font-family:"IBM Plex Mono",monospace;font-size:.9em}
+.math[data-done]{font-family:inherit;font-size:inherit}
+.math.display{display:block;overflow-x:auto;overflow-y:hidden;padding:4px 0 10px}
+.katex{font-size:1.07em}
+.justify-body .katex [data-nv]{cursor:pointer;border-bottom:1px dotted var(--accent)}
+.justify-body .katex [data-nv]:hover{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -404,6 +484,8 @@ const GROUPS = [
     ["SETTLE.md",       "Fingerprinting Denmark \u2014 the experiment"],
     ["METHOD_LAB.md",   "The method lab \u2014 experiments on the instrument"],
     ["CLAIMS.md",       "What each claim rests on"],
+    ["ARCHIVE.md",      "Retired claims"],
+    ["SOURCES.md",      "Where each number comes from"],
     ["OPEN_PROBLEMS.md","Open problems"],
   ]],
   ["The data", [
@@ -467,6 +549,8 @@ const META = {
   "SETTLE.md":      {tier:4, why:"The protocol that would settle whether the payload reaches the water, and what it costs", after:["SENSING.md"], related:["EXPERIMENTS.md"]},
   "METHOD_LAB.md":  {tier:4, why:"What this archive could have detected, tested by imposing known signals on its real sampling schedule \u2014 and a register of where the reasoning ate its own tail. Nothing here is a claim about the sea.", after:["EXPERIMENTS.md"], related:["IF_YOU_HAVE_THE_DATA.md","OPEN_PROBLEMS.md"]},
   "CLAIMS.md":      {tier:4, why:"Every substantive claim with the graph of what it stands on \u2014 measurement, gap, simulation or stipulation, told apart by shape. The graph is checked for cycles, because a cycle is circular reasoning made visible", after:["METHOD_LAB.md"], related:["DATA_SOURCES.md","IF_YOU_HAVE_THE_DATA.md"]},
+  "ARCHIVE.md":     {tier:4, why:"Claims the site no longer makes, in the words it published them, with why each was retired \u2014 most often because its justification was never recorded properly \u2014 and what replaced it", after:["CLAIMS.md"], related:["CLAIMS.md"]},
+  "SOURCES.md":     {tier:4, why:"Every computed number on the site links here: the field it was read from, the script that produced it and how that script counted it, or the calculation that made it with each operand linked to its own entry. Generated each time a document is written.", after:["CLAIMS.md"], related:["CLAIMS.md","DATA_SOURCES.md"]},
   "SENSING.md":     {tier:4, why:"The fingerprint of faecal load, and what a network that measured it everywhere would cost", after:["EXPERIMENTS.md"], related:["PLACES.md"]},
   "EXTERNALITY.md": {tier:5, why:"A fiscal instrument for what disperses, and what it would do to the firms that sell it", after:["PROGRAMME.md"], related:["PLACES.md"]},
   "POLITICS.md":    {tier:5, why:"What was said out loud, verbatim and dated", after:["RESIDUAL.md"]},
@@ -1075,24 +1159,14 @@ function esc(t) {
 
 /* Three figures, each generated by a script in this repository and each linking to
    the page that derives it. They lead because a table of contents tells a first-time
-   reader nothing about why any of this exists. */
-const FACTS = [
-  ["−3.5 → +20.5", "per cent per decade. One light record, one stretch of water, " +
-   "eight defensible ways to compute the trend — and both signs among them. " +
-   "Correcting only for which stations stayed open moves it from +18.2 to +1.6.",
-   "LIGHT.md"],
-  ["6.31 <span>or</span> 8.18 m", "How deep useful light reaches, from the same " +
-   "casts, differing by 30% according to nothing but how near the surface the " +
-   "sensor was switched on. A choice nobody documents making.", "LIGHT.md"],
-  ["7.9% <span>vs</span> 13.3%", "A water body explains less of the variation " +
-   "inside it than two stations within one differ from each other. The unit the " +
-   "whole assessment is built on is not holding together.", "OBSERVING.md"],
-];
+   reader nothing about why any of this exists. Their words and numbers are written by
+   scripts/pages/landing.py into docs/LANDING.md, so every figure is live. */
+const FACTS = [["light-trend", "LIGHT.md"], ["light-depth", "LIGHT.md"], ["partition", "OBSERVING.md"]];
 /* The public names the damage in four words. Set against what is measured, three of
    them have nothing behind them at all. */
 const WORDS = [
   ["iltsvind", "the sea is suffocating",
-   "oxygen below 4 mg/l <b>in stratified bottom water</b>",
+   "@word:iltsvind",
    "needs depth and a sealed layer — Køge Bugt is shallow, mixes, and has no " +
    "iltsvind on record, 2023 and 2025 included. Whether the criterion is " +
    "structurally unreachable there is our inference, not a settled fact",
@@ -1113,16 +1187,14 @@ const WORDS = [
    dependency graph. */
 const TOOLS = [
   ["docs/areas.html", "What is known, where, and when",
-   "All 123 marine water bodies coloured by how much is actually known about each, " +
-   "with the years every stream of observation covers. The red line is 2012 — where " +
-   "the fitted window ends and the thing it must explain begins.", ""],
+   "@tool:areas", ""],
   /* the one entry here that is a document rather than a page of its own: it is
      listed with the tools because it is addressed to someone about to use them */
   ["#IF_YOU_HAVE_THE_DATA.md", "If you have data access we don't",
-   "A handover for anyone with a login, a field sheet or an internal series. Eight "
-   + "blocked items with exactly what unblocks each - three of which need no "
-   + "credentials at all and are simply not done - plus how to clone, run, add a "
-   + "source, and the six rules that make a result readable here.", ""],
+   "A handover for anyone with a login, a field sheet or an internal series: every "
+   + "blocked item with exactly what unblocks it - some need no credentials at all and "
+   + "are simply not done - plus how to clone, run, add a source, and the rules that "
+   + "make a result readable here.", ""],
   ["docs/architecture.html", "The separated architecture, on the city",
    "The proposal in section 2 of the argument, as a directed graph and as a map of "
    + "which sewer catchments it acts on. Every catchment coloured by whether rain "
@@ -1149,12 +1221,7 @@ const TOOLS = [
    + "shower and washing-machine water. The toilet and the kitchen are in a "
    + "different pipe, and that pipe is drawn too.", "an impression, not a survey"],
   ["docs/section3d.html", "The retrofit, dimensioned",
-   "The street arrangement in three dimensions at its real sizes: the bored rain "
-   + "line, the sewer left where it is, the two-storey shaft and the pan that "
-   + "serves both. Thirteen of its fourteen dimensions are stated conventions "
-   + "rather than measurements, marked as such and all adjustable — and the "
-   + "hydraulic panel answers the question the argument turns on, which is whether "
-   + "a pipe that carries the flow is still fast enough to carry its own grit.", ""],
+   "@tool:section3d", ""],
   ["docs/stations.html", "Measurements, where they were taken",
    "The same archive with the water bodies removed: every station-month at the "
    + "position it was recorded, nothing aggregated and nothing interpolated. Layers "
@@ -1162,119 +1229,65 @@ const TOOLS = [
    + "- and interpolation is a control you switch on, with a count of how many cells "
    + "it invented. Empty sea is empty because nobody measured there.", ""],
   ["docs/baltic.html", "The Baltic below the halocline",
-   "Oxygen at the Gotland Deep, 500 km east of Denmark, with depth resolved to one "
-   + "metre - the axis the Danish station archive collapses to two bins. Every month "
-   + "of a 32-year record below 100 m is under 2 mg/l, against 4% of Danish near-bed "
-   + "observations. Two things are being called by one word.", ""],
+   "@tool:baltic", ""],
   ["viz/rivers3d.html", "Rainwater rivers, in 3D",
-   "The proposal on the real city: 168.1 km of surface conveyance plus 40.9 km of "
-   + "mixed alignment \u2014 209.0 km that could carry a river \u2014 " +
-   "the interceptor retrofit where they cannot, and where the water ends up.", ""],
+   "@tool:rivers3d", ""],
   ["viz/", "Copenhagen at full detail — the standard, reached once",
-   "Sewer catchments, cloudburst basins and tunnels, discharge points and the " +
-   "recovered flood overlays, every feature clickable to its own record. This is " +
-   "the level of detail the national 4D map is aiming at and has not reached: " +
-   "every stream in one spatial view, with a time axis. It exists for one city, " +
-   "on a 2012 reconstruction, and nothing built since is in it — which is open " +
-   "problem 16.", "~13 MB · desktop · Copenhagen only"],
+   "@tool:viz", "@tool:viz:note"],
   ["viz/log.html", "Rain field log",
    "Record observed depth, flow and whether the drain is surcharging, in the model's " +
-   "own six depth classes, so an observation lands in the same vocabulary as the " +
+   "own depth classes, so an observation lands in the same vocabulary as the " +
    "model. Works offline once loaded, and needs HTTPS for location.", "phone"],
   ["docs/data/flood2012/", "The recovered flood model",
-   "All seven 2012 cloudburst sheets as georeferenced rasters — PNG, world file and " +
-   ".prj — so they open straight in QGIS. The only public copy with the coordinates " +
-   "put back.", "1.1 MB · EPSG:4326"],
+   "@tool:flood2012", "@tool:flood2012:note"],
   ["viz/georef.html", "Add control points to Nørrebro",
-   "Six sheets are tied together to 23 m. Nørrebro is the one that would not " +
-   "correlate with any neighbour, so it still sits where the automatic pass left " +
-   "it.", "the last loose end"],
+   "@tool:georef", "the one sheet the bundle does not tie"],
 ];
+
+/* The landing's words are generated: scripts/pages/landing.py writes docs/LANDING.md
+   through the same compiler as every page, so every number on the map is live and
+   opens the same number menu. Sections are marked <!-- landing:key -->; each is
+   rendered once and kept as its whole HTML, its first paragraph (a fact's figure),
+   the rest, and an inline form for a table cell or a card. */
+let LANDING = null;
+async function loadLanding() {
+  if (LANDING) return LANDING;
+  const out = {};
+  try {
+    const r = await fetch(DOCS_DIR + "LANDING.md", { cache: "no-cache" });
+    if (r.ok) {
+      const bits = (await r.text()).split(/<!--\s*landing:([^\s>]+)\s*-->/);
+      for (let i = 1; i < bits.length; i += 2) {
+        const div = document.createElement("div");
+        div.innerHTML = mdParse(bits[i + 1]);
+        resolveLinks(div, "LANDING.md");
+        if (bits[i] === "hero") {
+          for (const p of div.querySelectorAll("p")) p.classList.add("lede");
+          for (const h of div.querySelectorAll("h2")) h.classList.add("sec");
+          for (const u of div.querySelectorAll("ul")) u.classList.add("chain");
+        }
+        const first = div.querySelector("p");
+        const rest = div.cloneNode(true);
+        if (rest.querySelector("p")) rest.querySelector("p").remove();
+        out[bits[i]] = { html: div.innerHTML, fig: first ? first.innerHTML : "",
+          rest: rest.innerHTML,
+          inline: div.children.length === 1 && first ? first.innerHTML : div.innerHTML };
+      }
+    }
+  } catch (e) {}
+  LANDING = out;
+  return out;
+}
+const L = (key, form) => ((LANDING || {})[key] || {})[form || "inline"] || "";
 
 function renderMap() {
   const parts = ['<section class="hero">',
-    '<h1>166 mechanisms can kill a fjord. 24 are testable. None acts everywhere.</h1>',
-    '<p class="lede">This project enumerated every mechanism it could find that would ' +
-    'leave a Danish coastal water lifeless \u2014 nutrients, toxicants, trawling, ' +
-    'sediment chemistry, warming, disease, film on the surface, and a hundred and ' +
-    'sixty more \u2014 then asked which could be tested against data that exists. ' +
-    '<strong>Twenty-four can. Forty cannot be tested at all, because the deciding ' +
-    'measurement has no column anywhere. Twenty more need an experiment nobody has ' +
-    'run.</strong></p>',
-    '<p class="lede"><strong>But the question is not \u201cwhat killed Danish coastal ' +
-    'water\u201d, because that is not one thing.</strong> These are not 166 rivals for ' +
-    'a single prize. They are a menu, and different subsets operate in different ' +
-    'places \u2014 which the data says plainly. One catchment shows <b>no response ' +
-    'at all</b> to the nitrogen reductions that eight others respond to within five ' +
-    'years. The slope linking land to estuary varies <b>twenty-six-fold</b> between ' +
-    'bays. K\u00f8ge Bugt does not flush; others do. The central Baltic is anoxic in ' +
-    '<b>100%</b> of months below 100&nbsp;m while Danish inner waters are below 2\u00a0' +
-    'mg/l in <b>4%</b> \u2014 two phenomena under one word. ' +
-    '<a href="#AREAS.md">there is no Denmark \u2192</a></p>',
-    '<p class="lede"><strong>And none of the twenty-four testable mechanisms is a ' +
-    'nutrient hypothesis.</strong> Every entry in that group is waiting on a data ' +
-    'fetch, unscoreable, or unestablished. What can be tested today is mostly physics ' +
-    '\u2014 or the monitoring archive auditing itself. <b>So nutrients did not win an ' +
-    'argument against the alternatives. Nutrients are the group that has a monitoring ' +
-    'programme, and sixty rival mechanisms have never been in a position to ' +
-    'compete.</b> <a href="#PLAN.md">the triage, all 166 rows \u2192</a></p>',
-    '<p class="lede">That is not a claim that nutrients are innocent, or that the ' +
-    'policy is wrong. It is a claim about what the evidence can currently bear \u2014 ' +
-    'and it is checkable, because every figure here is recomputed from published data ' +
-    'by scripts in this repository. <a href="#KNOWN_AND_UNKNOWN.md">Including the ' +
-    'errors we made ourselves</a>: marine coverage we built out of freshwater ' +
-    'monitoring points, an oxygen series we labelled mg/l that was ml/l, four nulls we ' +
-    'quoted instead of computing, a station category three of our own analyses defined ' +
-    'three different ways, and a flood map of the wrong neighbourhood that passed its ' +
-    'own quality check because the check was computed on the answer it was testing. ' +
-    'They are left visible in the pages and the history rather than edited out.</p>',
-    '<h2 class="sec">The specific case: the chain behind the nitrogen figure</h2>',
-    '<p class="lede">A field surplus becomes a modelled load, becomes a percentage, ' +
-    'gets allocated to a water body, is judged against a threshold, and shows a ' +
-    'trend. Every link is public and recomputed here. <strong>Three do not hold, and ' +
-    'a fourth rests on less than it appears to.</strong></p>',
-    '<ul class="chain">',
-    '<li><b>No field is measured.</b> The <i>markoverskud</i> that drives the model ' +
-    'is an accounting residual — register counts times regulatory norm tables, minus ' +
-    'a harvest computed from norm tables. Change a norm and the number moves with no ' +
-    'change in any field: Denmark\u2019s own reports record a step in 1999 and ' +
-    'another in 2012, and publish 2013 twice at 84 and 81 kg N/ha depending on which ' +
-    'register supplied one term. ' +
-    '<a href="#NITROGEN.md">the construction, term by term \u2192</a></li>',
-    '<li><b>One published figure cannot evidence what it is used for.</b> ' +
-    'DCE\u2019s methods chapter names the field surplus as a key variable of the ' +
-    'model that computes the diffuse load, and chapter 6 of the same report then ' +
-    'presents the strong linear relation between those two quantities as a result. ' +
-    '<b>This is a narrow claim about one figure, and we checked the case against ' +
-    'it.</b> DCE qualify that figure themselves on the next page. And the paired ' +
-    'catchment\u2013estuary study behind it turns out to rest on measured stream ' +
-    'loads over a gauged majority, measured estuary nitrogen that fell 24\u201362%, ' +
-    'and catchments that respond on different timescales \u2014 which a shared ' +
-    'input could not produce. <b>The circularity is real and local; the attribution ' +
-    'is not unevidenced.</b> <a href="#NITROGEN.md">both, in full \u2192</a></li>',
-    '<li><b>The boundaries carry no measured signal.</b> Across all 255 feature ' +
-    'subsets, the official water bodies add nothing beyond being a connected region ' +
-    'of their size — lift \u22120.026 to \u22120.014 against a contiguity-matched ' +
-    'null. The same method recovered Henry\u2019s law unprompted from the same data, ' +
-    'so it is not a blunt instrument. <a href="#AREAS.md">how that was tested ' +
-    '\u2192</a></li>',
-    '<li><b>The record is two networks, not one.</b> 293 summer-only stations sit ' +
-    '1.57 mg/l lower than 481 year-round ones <i>in the same months</i>. Their mix ' +
-    'moved from 32% to 12% of observations, and the pooled trend follows the mix ' +
-    'while the year-round subset alone does not. ' +
-    '<a href="docs/stations.html">see it on the map \u2192</a></li>',
-    '</ul>',
-    '<p class="lede">Each link above has its working, its null and its limits in ' +
-    '<a href="#NITROGEN.md">what the sea actually receives</a>. And for the question ' +
-    'that follows from all of it \u2014 <i>so where, and what would actually help?</i> ' +
-    '\u2014 <a href="#PLACES.md">Places, not categories</a> takes the coasts one at a ' +
-    'time. One is four times worse than anywhere else and is not the one anybody ' +
-    'argues about.</p>',
+    L("hero", "html") || '<p class="status">The landing text (docs/LANDING.md) could not be loaded.</p>',
     '</section>', '<div class="facts">'];
-  for (const [n, t, doc] of FACTS)
-    // n is a literal in FACTS above and deliberately carries markup; t likewise.
-    // Neither is user input, and escaping them printed the tags on the page.
-    parts.push('<div class="fact"><b>' + n + '</b><p>' + t + '</p>' +
+  for (const [key, doc] of FACTS)
+    // the figure is the first paragraph of the section, the text the rest; both are
+    // generated markdown, rendered with their numbers linked
+    parts.push('<div class="fact"><b>' + L("fact:" + key, "fig") + '</b>' + L("fact:" + key, "rest") +
       (doc ? '<a href="#' + doc + '">' + esc(titleOf(doc)) + ' →</a>' : '') + '</div>');
   parts.push('</div>');
 
@@ -1287,14 +1300,14 @@ function renderMap() {
     '<th>where the two come apart</th></tr></thead><tbody>');
   for (const [w, mean, meas, gap, doc] of WORDS)
     parts.push('<tr><td><b>' + esc(w) + '</b></td><td>' + esc(mean) + '</td><td>' +
-      meas + '</td><td>' + gap +
+      (meas.startsWith("@") ? L(meas.slice(1)) : meas) + '</td><td>' + gap +
       (doc ? ' (<a href="#' + doc + '">' + esc(titleOf(doc)) + '</a>)' : '') +
       '</td></tr>');
   parts.push('</tbody></table></div>');
 
   parts.push('<h2>Where to start</h2>',
-    '<p>Two dozen documents, and a list of them is an inventory rather than an ' +
-    'overview. Four ways in, depending on what you came for.</p>',
+    '<p>A list of documents is an inventory rather than an overview. Here are ways ' +
+    'in, depending on what you came for.</p>',
     '<div class="routes">');
   for (const [name, path] of ROUTES) {
     parts.push('<div class="route"><b>' + esc(name) + '</b><ol>');
@@ -1331,10 +1344,11 @@ function renderMap() {
   parts.push('<h2>Things to use</h2>',
     '<p>Not documents. These are the interactive pieces, and they open as pages of ' +
     'their own rather than in this reader.</p>', '<div class="cards">');
+  const txt = t => t.startsWith("@") ? L(t.slice(1)) : esc(t);
   for (const [href, name, what, note] of TOOLS)
     parts.push('<div class="card"><a class="cardtitle" href="' + href + '">' +
-      esc(name) + ' →</a><p>' + esc(what) + '</p>' +
-      (note ? '<p class="req">' + esc(note) + '</p>' : '') + '</div>');
+      esc(name) + ' →</a><p>' + txt(what) + '</p>' +
+      (note ? '<p class="req">' + txt(note) + '</p>' : '') + '</div>');
   parts.push('</div>');
 
   parts.push('<p class="status">The map is hand-maintained in <code>index.html</code>. ' +
@@ -1454,10 +1468,13 @@ function resolveLinks(root, file) {
        the id names a claim, not a heading, and the reader opens it beside the
        text rather than navigating away from the sentence it belongs to. */
     const anchor = cut < 0 ? "" : raw.slice(cut + 1);
-    if (doc === "CLAIMS.md" && /^C-[A-Z0-9-]+$/.test(anchor)) {
+    if (((doc === "CLAIMS.md" || doc === "ARCHIVE.md") && /^C-[A-Z0-9-]+$/.test(anchor)) ||
+        (doc === "SOURCES.md" && /^F-[0-9a-f]{10}$/.test(anchor))) {
       a.classList.add("figure");
       a.dataset.claim = anchor;
-      a.title = "What this number rests on";
+      a.dataset.doc = doc;
+      a.title = doc !== "SOURCES.md" ? "What this claim rests on"
+                                    : "Where this number comes from";
     }
     a.setAttribute("href",
       doc && DOCS.some(([f]) => f === doc) ? "#" + doc : p + raw.slice(cut < 0 ? raw.length : cut));
@@ -1540,46 +1557,493 @@ async function drawMermaid(root) {
   }
 }
 
-/* The justification panel. A number that cannot say where it came from is the
-   failure this whole apparatus exists for, so the answer has to be one click away
-   from the number itself and must not navigate the reader out of the sentence.
-   On GitHub the same link degrades to what it looks like: a jump to the claim. */
-let claimsText = null;
-async function openJustification(id) {
+/* ── The number menu ──────────────────────────────────────────────────────────
+   A number that cannot say where it came from is the failure this whole apparatus
+   exists for, so the answer is one click from the number and never navigates the
+   reader out of the sentence. On GitHub the same link degrades to what it looks
+   like: a jump to the entry in SOURCES.md.
+   One number, several views of it. A click on a linked number opens a small menu
+   of the angles it can be seen from; choosing one opens the side panel on that
+   view, with tabs to move between the others and every operand clickable in turn.
+   The views are drawn from docs/data/sources_index.json, which scripts/live.py
+   writes each time a page is built - so they work on the published site, which
+   cannot open data/derived. The address bar carries ?n=<id>&view=<view>, so a
+   view can be linked to, and opens itself when the page loads. */
+let nvIdx = null;
+async function nvLoad() {
+  if (nvIdx) return nvIdx;
+  let d = { entries: {}, docs: {} };
+  try {
+    const r = await fetch(DOCS_DIR + "data/sources_index.json", { cache: "no-cache" });
+    if (r.ok) d = await r.json();
+  } catch (e) {}
+  d.bySrc = new Map();
+  for (const [id, e] of Object.entries(d.entries || {})) d.bySrc.set(JSON.stringify(e.src), id);
+  d.usedBy = {};
+  for (const [doc, ids] of Object.entries(d.docs || {}))
+    for (const i of ids) (d.usedBy[i] = d.usedBy[i] || []).push(doc);
+  nvIdx = d;
+  return d;
+}
+const nvEsc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const nvFmt = v => v === null || v === undefined ? "…" : typeof v === "number"
+  ? (Number.isInteger(v) ? v.toLocaleString("en-US") : String(+v.toPrecision(6))) : String(v);
+const nvKids = n => (n[0] === "op" || n[0] === "nary" || n[0] === "step") ? n[2] : n[0] === "agg" ? n[3] : [];
+const nvKindLabel = e => (e.kind || NV_KIND[e.src[0]] || e.src[0]) + (e.synthetic ? " · built on simulation" : "");
+const nvCode = s => String(s || "").split(/(\$[^$\n]+?\$)/).map((part, i) => i % 2
+  ? nvMathSpan(part.slice(1, -1), false)
+  : nvEsc(part).replace(/`([^`]+)`/g, "<code>$1</code>")).join("");
+function nvRef(r) {
+  if (/^https?:/.test(r)) return [r, new URL(r).hostname.replace(/^www\./, "")];
+  if (/^docs\/.+\.md/.test(r)) return ["#" + r.slice(5), r.slice(5)];
+  const [f, l] = r.split(":");
+  return [NV_GH + "main/" + f + (l ? "#L" + l : ""), r];
+}
+const NV_KIND = { leaf: "read from data", op: "calculated", nary: "calculated", agg: "calculated",
+  reading: "read from a pinned document", quote: "quoted from an earlier version",
+  stated: "stated, not measured" };
+const NV_SYM = { "+": "+", "-": "−", "*": "×", "/": "÷", "//": "div", "%": "mod", "**": "^" };
+const NV_GH = "https://github.com/Jjokulian/copenhagen-waterways/blob/";
+const NV_VIEWS = [
+  ["construction", "Construction and model", "what kind of number it is, the model behind it, why that is justified"],
+  ["what", "Source and counting rule", "where it was read from, what was counted as one"],
+  ["graph", "Dependency graph", "what it is built from, drawn"],
+  ["depth", "Derivation, all the way down", "every step to the data, with its value"],
+  ["calc", "Calculation", "the arithmetic - with names, then with values"],
+  ["code", "Code that produced it", "the line that put it on the page"],
+  ["data", "Data it was read from", "the rows around it, the used value highlighted"]
+];
+function nvShort(n) {
+  if (n[0] === "leaf") {
+    // The field and whatever row it sits in: runs.4.imposed and runs.5.imposed
+    // are different operands, and a bare "imposed" would make them look alike.
+    const segs = n[2].match(/\[[^\]]*\]|[^.]+/g) || [n[2]];
+    let out = segs.pop(), i = segs.length - 1;
+    while (i >= 0 && /^(\d+|\[.*\])$/.test(segs[i])) { out = `[${segs[i].replace(/^\[|\]$/g, "")}]` + (out[0] === "[" ? "" : ".") + out; i--; }
+    if (i >= 0 && (out[0] === "[" || /^(n|value|median|mean|total|count)$/.test(out))) out = segs[i] + (out[0] === "[" ? "" : ".") + out;
+    return out;
+  }
+  if (n[0] === "reading") return (n[2] === "count" ? "count of “" : "“") + n[3] + "”";
+  if (n[0] === "quote") return n[2] + " @ " + n[1];
+  if (n[0] === "stated") return n[1];
+  return "";
+}
+function nvLeaves(n, out) {
+  if (["leaf", "reading", "quote", "stated"].includes(n[0])) out.push(n);
+  for (const k of nvKids(n)) nvLeaves(k, out);
+  return out;
+}
+const nvDepth = n => { const k = nvKids(n); return k.length ? 1 + Math.max(...k.map(nvDepth)) : 0; };
+function nvChip(idx, n, text) {
+  const id = idx.bySrc.get(JSON.stringify(n));
+  const title = n[0] === "leaf" ? `${n[1]} › ${n[2]}` : (NV_KIND[n[0]] || "");
+  return `<span class="chip"${id ? ` data-nv="${id}"` : ""} title="${nvEsc(title)}">${nvEsc(text)}</span>`;
+}
+/* Formulas. A calculation is typeset as mathematics - fractions as fractions,
+   a construction step as a labelled underbrace - with every operand still a link:
+   \htmlData puts the operand's id on its box, and the click handler follows it. */
+const nvTexEsc = s => String(s).replace(/[\\{}_%&#$^~]/g, c =>
+  ({ "\\": "\\textbackslash{}", "~": "\\textasciitilde{}", "^": "\\textasciicircum{}" }[c] || "\\" + c));
+const nvTexNum = v => nvEsc(nvFmt(v)).replace(/,/g, "{,}");
+const nvStepShort = cid => cid.replace(/^K-/, "").toLowerCase().replace(/-/g, " ");
+function nvTex(idx, n, v, numeric) {
+  const t = n[0];
+  if (t === "const") return { t: nvTexNum(n[1]), p: 9 };
+  const kids = nvKids(n), vals = n[3] || [];
+  if (!kids.length) {
+    const id = idx.bySrc.get(JSON.stringify(n));
+    const body = numeric ? nvTexNum(v) : `\\textsf{${nvTexEsc(nvShort(n))}}`;
+    return { t: id ? `\\htmlData{nv=${id}}{${body}}` : body, p: 9 };
+  }
+  const wrap = (x, need) => x.p < need ? { t: `\\left(${x.t}\\right)`, p: 9 } : x;
+  if (t === "step") {
+    const inner = nvTex(idx, n[2][0], vals[0], numeric);
+    return { t: `\\underbrace{${inner.t}}_{\\textsf{${nvTexEsc(nvStepShort(n[1]))}}}`, p: inner.p };
+  }
+  if (t === "agg") {
+    const parts = Object.entries(n[2]).map(([k, c]) => `${c}\\times\\textsf{${nvTexEsc(k.split(" › ").pop())}}`);
+    return { t: `${n[1] === "+" ? "\\Sigma" : "\\Pi"}\\left(${parts.join(",\\ ")}${n[3].length ? ",\\ \\ldots" : ""}\\right)`, p: 9 };
+  }
+  const sub = kids.map((k, i) => nvTex(idx, k, vals[i], numeric)), sym = n[1];
+  if (t === "nary") return sym === "+"
+    ? { t: sub.map(x => wrap(x, 1).t).join(" + "), p: 1 }
+    : { t: sub.map(x => wrap(x, 2).t).join(" \\times "), p: 2 };
+  switch (sym) {
+    case "-": return { t: `${wrap(sub[0], 1).t} - ${wrap(sub[1], 2).t}`, p: 1 };
+    case "/": return { t: `\\frac{${sub[0].t}}{${sub[1].t}}`, p: 3 };
+    case "//": return { t: `\\left\\lfloor\\frac{${sub[0].t}}{${sub[1].t}}\\right\\rfloor`, p: 9 };
+    case "%": return { t: `${wrap(sub[0], 2).t} \\bmod ${wrap(sub[1], 3).t}`, p: 2 };
+    case "**": return { t: `{${wrap(sub[0], 9).t}}^{${sub[1].t}}`, p: 4 };
+    case "neg": return { t: `-${wrap(sub[0], 2).t}`, p: 2 };
+    case "abs": return { t: `\\left|${sub[0].t}\\right|`, p: 9 };
+    case "round": return { t: `\\operatorname{round}\\left(${sub[0].t},\\ ${sub[1].t}\\right)`, p: 9 };
+    default: return { t: `${wrap(sub[0], 2).t} \\mathbin{${nvTexEsc(sym)}} ${wrap(sub[1], 2).t}`, p: 2 };
+  }
+}
+const nvMathSpan = (tex, display) => display
+  ? `<div class="math display" data-tex="${nvEsc(tex)}">${nvEsc(tex)}</div>`
+  : `<span class="math" data-tex="${nvEsc(tex)}">${nvEsc(tex)}</span>`;
+/* KaTeX, not MathJax: a fraction of the weight, and it renders synchronously.
+   Loaded only when something on screen holds a formula. */
+/* Always our own copy and its stylesheet: another library on the page (mermaid
+   bundles one) may already have put a katex on window without the fonts, and
+   rendering with that one lays formulas out with invisible glyphs. */
+let nvKatex = null, nvKatexLib = null;
+function nvEnsureKatex() {
+  if (nvKatexLib) return Promise.resolve(true);
+  if (!nvKatex) nvKatex = Promise.all([["link", "katex.min.css"], ["script", "katex.min.js"]]
+    .map(([tag, file]) => new Promise(res => {
+      const el = document.createElement(tag), url = "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/" + file;
+      if (tag === "link") { el.rel = "stylesheet"; el.href = url; } else { el.src = url; }
+      el.onload = () => res(true);
+      el.onerror = () => res(false);
+      document.head.appendChild(el);
+    }))).then(([css, js]) => { nvKatexLib = js ? window.katex : null; return js; });
+  return nvKatex;
+}
+async function nvMath(root) {
+  const els = [...root.querySelectorAll(".math:not([data-done])")];
+  if (!els.length || !(await nvEnsureKatex())) return;
+  for (const el of els) {
+    try {
+      nvKatexLib.render(el.dataset.tex, el, { displayMode: el.classList.contains("display"),
+        throwOnError: false, strict: "ignore", trust: c => c.command === "\\htmlData" });
+    } catch (err) {}
+    el.dataset.done = "1";
+  }
+  // KaTeX's faces are font-display:block - invisible until loaded - and Firefox
+  // does not always start loading them for text laid out in the scrolled side
+  // panel. So ask for exactly the faces these formulas use, and nothing more.
+  const faces = new Set();
+  for (const el of els) for (const g of el.querySelectorAll(".katex-html span")) {
+    if (g.firstChild && g.firstChild.nodeType === 3 && g.firstChild.nodeValue.trim()) {
+      const cs = getComputedStyle(g);
+      faces.add(`${cs.fontStyle} ${cs.fontWeight} 16px ${cs.fontFamily.split(",")[0]}`);
+    }
+  }
+  await Promise.all([...faces].map(f => document.fonts.load(f).catch(() => null)));
+  if (nvIdx) for (const x of root.querySelectorAll(".katex [data-nv]")) {
+    const e = nvIdx.entries[x.dataset.nv];
+    if (e) x.title = e.src[0] === "leaf" ? `${e.src[1]} › ${e.src[2]}` : (NV_KIND[e.src[0]] || "");
+  }
+}
+/* Markdown with formulas: $…$ inline, $$…$$ displayed. Code is set aside first, so
+   a dollar in a shell line is never taken for math; math is set aside from marked,
+   which would otherwise read every underscore in a formula as emphasis. The
+   inline rule is Pandoc's - no space just inside the dollars - which keeps "$5
+   and $10" as text. */
+function mdParse(text) {
+  const code = [], math = [];
+  let t = text.replace(/^```[\s\S]*?^```/gm, m => `@@CODE${code.push(m) - 1}@@`)
+              .replace(/`[^`\n]*`/g, m => `@@CODE${code.push(m) - 1}@@`);
+  t = t.replace(/\$\$([\s\S]+?)\$\$/g, (_, x) => `@@MATH${math.push([x, true]) - 1}@@`)
+       .replace(/(^|[^\\\w$])\$([^\s$](?:[^$\n]*?[^\s$\\])?)\$(?![\w$])/g,
+                (_, pre, x) => `${pre}@@MATH${math.push([x, false]) - 1}@@`);
+  t = t.replace(/@@CODE(\d+)@@/g, (_, i) => code[+i]);
+  return marked.parse(t, { gfm: true })
+    .replace(/@@MATH(\d+)@@/g, (_, i) => nvMathSpan(math[+i][0], math[+i][1]));
+}
+function nvApplies(e, view) {
+  const calc = nvKids(e.src).length > 0;
+  if (view === "what" || view === "construction") return true;
+  if (view === "graph" || view === "depth" || view === "calc") return calc;
+  if (view === "code") return !!(e.code || e.producer);
+  if (view === "data") return !!e.excerpt || calc;
+  return false;
+}
+function nvRender(idx, id, view) {
+  const e = idx.entries[id];
+  if (!e) return `<p>No entry for ${nvEsc(id)}.</p>`;
+  const n = e.src, t = n[0];
+  let h = `<div class="big">${nvEsc(nvFmt(e.value))}</div><div class="muted">${nvEsc(nvKindLabel(e))}</div>`;
+  if (view === "construction") {
+    const K = idx.constructions || {}, kinds = idx.kinds || {};
+    if (e.synthetic)
+      h += `<p class="simflag">Built on simulation. It can speak about what the method is able to see, not about the water - which is why the compiler allows it only on a method page.</p>`;
+    if (e.uncovered && e.uncovered.length)
+      h += `<p class="simflag">No construction is declared for: ${e.uncovered.map(nvEsc).join("; ")}.</p>`;
+    h += `<h4>What kind of number</h4><p><b>${nvEsc(e.kind || "undeclared")}</b> — ${nvEsc(kinds[e.kind] || "")}.</p>`;
+    if (e.field && e.field.is) h += `<p>${nvCode(e.field.is)}</p>`;
+    const rest = Object.entries(e.rests_on || {});
+    if (nvKids(n).length && rest.length)
+      h += `<p class="muted">Built from ${rest.map(([k, c]) => `<span class="chip">${nvEsc(k)} ×${c}</span>`).join(" ")}</p>`;
+    const cs = (e.constructions || []).filter(c => K[c]);
+    if (cs.length) h += `<h4>How it was made${cs.length > 1 ? ", step by step" : ""}</h4>`;
+    const list = (title, xs, cls) => !xs || !xs.length ? "" :
+      `<h5${cls ? ` class="${cls}"` : ""}>${title}</h5><ul${cls ? ` class="${cls}"` : ""}>` + xs.map(x => typeof x === "string"
+        ? `<li>${nvCode(x)}</li>`
+        : `<li>${nvCode(x.text)}${x.ref ? ` <a class="ref" href="${nvEsc(nvRef(x.ref)[0])}">${nvEsc(nvRef(x.ref)[1])}</a>` : ""}</li>`).join("") + "</ul>";
+    cs.forEach((cid, i) => {
+      const c = K[cid], st = c.status || "unconfirmed", ok = st === "current";
+      h += `<details class="kcard"${i === 0 ? " open" : ""}><summary><b>${nvEsc(c.title)}</b>`
+        + `<span class="kstat ${ok ? "ok" : "bad"}">${nvEsc(st.split(":")[0])}</span></summary>`
+        + `<p>${nvCode(c.what)}</p><h5>Model</h5><p>${nvCode(c.model)}</p>`
+        + list("Assumes", c.assumptions)
+        + list("Why it is justified", c.justified)
+        + (c.gaps && c.gaps.length ? list("Not justified by anything yet", c.gaps, "gaps")
+                                   : `<h5>Gaps</h5><p class="muted">None recorded.</p>`)
+        + list("Void if", c.void_if)
+        + `<div class="lic"><div><h5>May support</h5><p>${nvCode(c.licenses)}</p></div>`
+        + `<div><h5>May not</h5><p>${nvCode(c.not_licensed)}</p></div></div>`
+        + `<p class="muted small"><code>${nvEsc(cid)}</code> · ${c.confirmed ? `read by ${nvEsc(c.confirmed.by)}, ${nvEsc(c.confirmed.on)}` : "never confirmed"}`
+        + `${ok || st === "unconfirmed" ? "" : " — " + nvEsc(st)}. A change in ${(c.watches || []).map(f => `<code>${nvEsc(f)}</code>`).join(", ")} makes it stale until it is read again.</p></details>`;
+    });
+  } else if (view === "what") {
+    if (t === "leaf") {
+      h += `<h4>Read from</h4><p><code>${nvEsc(n[1])}</code> › <code>${nvEsc(n[2])}</code></p>`;
+      if (e.producer) h += `<p>Written by <a href="${NV_GH}main/${nvEsc(e.producer)}"><code>${nvEsc(e.producer)}</code></a></p>`;
+      const pv = e.provenance;
+      if (pv) {
+        h += `<h4>Counted as the same thing</h4><p>${nvEsc(pv.counts_as)}</p><h4>How</h4><p>${nvEsc(pv.calculation)}</p>`;
+        if (pv.excluded && pv.excluded.length)
+          h += `<h4>Excluded</h4><ul>${pv.excluded.map(x => `<li>${nvEsc(x.reason)} — ${nvFmt(x.n)}</li>`).join("")}</ul>`;
+        if (pv.alternatives && pv.alternatives.length)
+          h += `<h4>Other defensible definitions</h4><ul>${pv.alternatives.map(a => `<li>${nvEsc(a.definition)} → <b>${nvFmt(a.value)}</b></li>`).join("")}</ul>`;
+      } else h += `<p class="muted">How this field was counted is not recorded by the script that wrote it.</p>`;
+    } else if (t === "reading") {
+      const m = n[4] || {};
+      h += `<h4>Read from</h4><p><a href="${nvEsc(m.url || "#")}">${nvEsc(m.title || n[1])}</a>, retrieved ${nvEsc(m.retrieved || "?")}</p>`
+        + `<p>${n[2] === "count" ? "Occurrences of" : "The phrase"} “${nvEsc(n[3])}”, recomputed from the pinned text `
+        + `(sha256 <code>${nvEsc((m.sha256 || "").slice(0, 16))}…</code>).</p>`;
+      if (m.checked) h += `<p class="muted">Last checked against the live document ${nvEsc(m.checked)}: ${nvEsc(m.status || "")}.</p>`;
+    } else if (t === "quote") {
+      h += `<h4>Quoted from</h4><p><code>${nvEsc(n[2])}</code> at commit <a href="${NV_GH}${nvEsc(n[1])}/${nvEsc(n[2])}"><code>${nvEsc(n[1])}</code></a>.</p>`
+        + (n[4] ? `<p>Located in that text by “${nvEsc(n[4])}” - the value is read out of the history when the page is built, never typed.</p>` : "")
+        + `<p class="muted">A quotation of the past is permanently true. It was checked against git when the page was built.</p>`;
+    } else if (t === "stated") {
+      h += `<h4>Why this value</h4><p>${nvEsc(n[2])}</p>`;
+    } else {
+      h += `<h4>Calculation</h4>${nvMathSpan(nvTex(idx, n, e.value, false).t, true)}`
+        + `<p class="muted">${nvDepth(n)} step(s) from this number down to the data. Click any operand to open it.</p>`;
+    }
+    const used = idx.usedBy[id] || [];
+    if (used.length) h += `<h4>Used in</h4><p>${used.map(d => { const f = d.replace(/^docs\//, ""); return `<a href="#${nvEsc(f)}">${nvEsc(f)}</a>`; }).join(", ")}</p>`;
+  } else if (view === "calc") {
+    h += `<h4>With names</h4>${nvMathSpan(nvTex(idx, n, e.value, false).t, true)}`
+      + `<h4>With values</h4>${nvMathSpan(nvTex(idx, n, e.value, true).t + " = \\mathbf{" + nvTexNum(e.value) + "}", true)}`
+      + `<p class="muted">Click any operand to open it.</p>`;
+  } else if (view === "depth") {
+    const tree = (m, v, d) => {
+      const kids = nvKids(m), vals = m[3] || [];
+      const lab = m[0] === "const" ? `constant <b>${nvEsc(nvFmt(m[1]))}</b>`
+        : m[0] === "step" ? `<span class="stepname">${nvEsc(((idx.constructions || {})[m[1]] || {}).title || m[1])}</span> = <b>${nvEsc(nvFmt(v))}</b>`
+        : kids.length ? `${m[0] === "agg" ? (m[1] === "+" ? "sum" : "product") : nvEsc(NV_SYM[m[1]] || m[1])} = <b>${nvEsc(nvFmt(v))}</b>`
+        : nvChip(idx, m, `${nvShort(m)} = ${nvFmt(v)}`);
+      let sub = "";
+      const patterns = m[0] === "agg" ? Object.entries(m[2]) : [];
+      if (patterns.length) sub = patterns.map(([k, c]) => `<li><span class="badge">×${c}</span><code>${nvEsc(k)}</code></li>`).join("");
+      else if (kids.length) sub = kids.map((k, i) => tree(k, vals[i], d + 1)).join("");
+      return `<li><span class="badge">${d}</span>${lab}${sub ? `<ul class="tree">${sub}</ul>` : ""}</li>`;
+    };
+    h += `<p class="muted">${nvDepth(n)} step(s) deep. The badge is the depth; the leaves are data.</p><ul class="tree">${tree(n, e.value, 0)}</ul>`;
+  } else if (view === "graph") {
+    let k = 0;
+    const ids = new Map(), lines = ["graph BT"], seen = new Set();
+    const nid = m => { const key = JSON.stringify(m); if (!ids.has(key)) ids.set(key, "n" + (k++)); return ids.get(key); };
+    const sty = { leaf: "fill:#1c4e70,stroke:#58a6ff,color:#e6edf3", reading: "fill:#3d3357,stroke:#a58cf0,color:#e6edf3",
+      quote: "fill:#3d3357,stroke:#a58cf0,color:#e6edf3", stated: "fill:#4a3a12,stroke:#e8a33d,color:#ffeccc",
+      const: "fill:#21262d,stroke:#8b949e,color:#c9d1d9", calc: "fill:#173a26,stroke:#3fb950,color:#d7ffe4" };
+    const lab = (m, v) => (m[0] === "const" ? nvFmt(m[1]) : m[0] === "step"
+      ? `${((idx.constructions || {})[m[1]] || {}).title || m[1]} = ${nvFmt(v)}` : nvKids(m).length
+      ? `${m[0] === "agg" ? "Σ" : (NV_SYM[m[1]] || m[1])} = ${nvFmt(v)}` : `${nvShort(m)} = ${nvFmt(v)}`).replace(/"/g, "'");
+    const walk = (m, v, d) => {
+      const me = nid(m), calc = nvKids(m).length > 0;
+      if (!seen.has(me)) {
+        seen.add(me);
+        const sh = calc ? ['("', '")'] : m[0] === "const" ? ['["', '"]'] : ['[("', '")]'];
+        lines.push(`  ${me}${sh[0]}${lab(m, v)}${sh[1]}`, `  style ${me} ${sty[calc ? "calc" : m[0]] || sty.const}`);
+      }
+      if (d > 6) return;
+      if (m[0] === "agg") for (const [pk, c] of Object.entries(m[2])) {
+        const pid = "n" + (k++);
+        lines.push(`  ${pid}[("${pk.split(" › ").pop().replace(/"/g, "'")} ×${c}")]`, `  style ${pid} ${sty.leaf}`, `  ${pid} --> ${me}`);
+      }
+      const vals = m[3] || [];
+      nvKids(m).forEach((c, i) => { walk(c, vals[i], d + 1); lines.push(`  ${nid(c)} --> ${me}`); });
+    };
+    walk(n, e.value, 0);
+    h += `<pre><code class="language-mermaid">${nvEsc(lines.join("\n"))}</code></pre>`;
+  } else if (view === "code") {
+    const c = e.code;
+    if (c) {
+      const ls = c.text.split("\n");
+      h += `<h4>Where it entered the page</h4><p><code>${nvEsc(c.file)}</code>, line ${c.line} · <a href="${NV_GH}main/${nvEsc(c.file)}#L${c.line}">on GitHub</a></p>`
+        + `<pre class="code">${ls.map((l, i) => { const ln = c.first + i; return `<span class="${ln === c.line ? "hit" : ""}"><i>${ln}</i>${nvEsc(l)}</span>`; }).join("")}</pre>`;
+    }
+    if (e.producer) h += `<h4>The field it reads was written by</h4><p><a href="${NV_GH}main/${nvEsc(e.producer)}"><code>${nvEsc(e.producer)}</code></a></p>`;
+    if (e.provenance && e.provenance.code) h += `<p class="muted">Its counting rules are in <code>${nvEsc(e.provenance.code)}</code>.</p>`;
+  } else if (view === "data") {
+    const table = (ex, label) => `<h4>${nvEsc(label)}</h4><p class="muted"><code>${nvEsc(ex.parent)}</code></p><table class="ex">`
+      + ex.rows.map(([rk, rv]) => `<tr class="${rk === ex.target ? "hit" : ""}"><td><code>${nvEsc(rk)}</code></td><td>${nvEsc(rv)}</td></tr>`).join("") + "</table>";
+    const passage = (ex, label) => {
+      const s = nvEsc(ex.text), m = nvEsc(ex.mark), i = s.toLowerCase().indexOf(m.toLowerCase());
+      return `<h4>${nvEsc(label)}</h4><p class="passage">${i < 0 ? s : s.slice(0, i) + "<mark>" + s.slice(i, i + m.length) + "</mark>" + s.slice(i + m.length)}</p>`;
+    };
+    const one = (en, label) => !en || !en.excerpt ? "" : en.excerpt.rows ? table(en.excerpt, label) : passage(en.excerpt, label);
+    if (e.hits) {
+      // A count shows everything it counted: the word each match sits in is
+      // underlined, so a compound swept in by the substring rule is visible.
+      const word = (a, m, b) => (a.match(/[\p{L}\p{N}]*$/u) || [""])[0] + m + (b.match(/^[\p{L}\p{N}]*/u) || [""])[0];
+      const forms = {};
+      for (const [a, m, b] of e.hits) { const w = word(a, m, b); forms[w] = (forms[w] || 0) + 1; }
+      h += `<h4>What was counted</h4><p>Every case-insensitive occurrence of “${nvEsc(n[3])}” in the pinned text: `
+        + `<b>${e.hits.length}</b>. As whole words:</p><p>`
+        + Object.entries(forms).sort((x, y) => y[1] - x[1]).map(([w, c]) => `<span class="chip">${nvEsc(w)} ×${c}</span>`).join(" ")
+        + `</p><h4>Each occurrence</h4><table class="ex">`
+        + e.hits.map(([a, m, b], i) => `<tr><td class="muted">${i + 1}</td><td>…${nvEsc(a)}<mark>${nvEsc(m)}</mark>${nvEsc(b)}…</td></tr>`).join("")
+        + `</table>`;
+    } else if (e.excerpt) h += one(e, t === "leaf" ? n[1] : t === "reading" ? "Pinned text" : "At the commit");
+    else {
+      const got = new Set();
+      for (const lf of nvLeaves(n, [])) {
+        const lid = idx.bySrc.get(JSON.stringify(lf));
+        if (!lid || got.has(lid)) continue;
+        got.add(lid);
+        h += one(idx.entries[lid], lf[0] === "leaf" ? `${lf[1]} › ${lf[2]}` : nvShort(lf));
+      }
+      if (!got.size) h += `<p class="muted">No excerpt is recorded for the data under this calculation.</p>`;
+    }
+  }
+  return h;
+}
+const nvState = { id: null, view: "what", stack: [] };
+function nvSetURL(id, view) {
+  const q = id ? `?n=${encodeURIComponent(id)}&view=${encodeURIComponent(view)}` : "";
+  history.replaceState(null, "", location.pathname + q + location.hash);
+}
+async function nvOpen(id, view, push) {
+  const idx = await nvLoad(), e = idx.entries[id];
+  if (!e) return;
+  if (!nvApplies(e, view)) view = "what";
+  if (push && nvState.id) nvState.stack.push([nvState.id, nvState.view]);
+  nvState.id = id; nvState.view = view;
+  const panel = document.getElementById("justify");
+  panel.querySelector("header b").textContent = "Where this number comes from";
+  const tabs = panel.querySelector(".tabs");
+  tabs.innerHTML = NV_VIEWS.filter(([v]) => nvApplies(e, v))
+    .map(([v, lab]) => `<button type="button" data-view="${v}" aria-selected="${v === view}">${nvEsc(lab)}</button>`).join("");
+  tabs.hidden = false;
+  const body = panel.querySelector(".justify-body");
+  body.innerHTML = (nvState.stack.length ? `<button type="button" class="back">← back</button>` : "") + nvRender(idx, id, view);
+  panel.hidden = false;
+  body.scrollTop = 0;
+  await drawMermaid(body);
+  await nvMath(body);
+  nvSetURL(id, view);
+}
+function nvClose() {
+  document.getElementById("justify").hidden = true;
+  nvState.id = null; nvState.stack = [];
+  nvSetURL(null);
+}
+const nvMenuClose = () => { document.getElementById("nummenu").hidden = true; };
+async function nvMenu(id, x, y, shown) {
+  const idx = await nvLoad(), e = idx.entries[id];
+  if (!e) return;
+  const m = document.getElementById("nummenu");
+  const exact = nvFmt(e.value);
+  m.innerHTML = `<div class="mh"><b>${nvEsc(shown || exact)}</b> · ${nvEsc(nvKindLabel(e))}`
+    + (shown && shown.replace(/,/g, "") !== exact.replace(/,/g, "") ? `<br>exact value ${nvEsc(exact)}` : "") + `</div>`
+    + NV_VIEWS.filter(([v]) => nvApplies(e, v)).map(([v, lab, sub]) =>
+      `<button type="button" role="menuitem" data-view="${v}" data-id="${id}">${nvEsc(lab)}<small>${nvEsc(sub)}</small></button>`).join("");
+  m.hidden = false;
+  m.style.left = Math.max(8, Math.min(x, innerWidth - m.offsetWidth - 8)) + "px";
+  m.style.top = Math.max(8, Math.min(y + 12, innerHeight - m.offsetHeight - 8)) + "px";
+  const first = m.querySelector("button");
+  if (first) first.focus();
+}
+/* Claims keep their own view: the claim, its graph and its assessment. */
+const nvClaimText = {};
+async function openClaim(id, push) {
   const panel = document.getElementById("justify");
   const body = panel.querySelector(".justify-body");
+  // a claim opened from inside the panel keeps the way back, like a number does
+  if (push && nvState.id && !panel.hidden) nvState.stack.push([nvState.id, nvState.view]);
+  nvState.id = id; nvState.view = "claim";
+  history.replaceState(null, "", location.pathname + `?c=${encodeURIComponent(id)}` + location.hash);
+  panel.querySelector("header b").textContent = "What this claim rests on";
+  panel.querySelector(".tabs").hidden = true;
   panel.hidden = false;
   body.innerHTML = '<p class="status">Loading…</p>';
   try {
-    if (claimsText === null) {
-      const r = await fetch(DOCS_DIR + "CLAIMS.md", { cache: "no-cache" });
-      claimsText = r.ok ? await r.text() : "";
+    // a live claim is explained in CLAIMS.md, a retired one in the archive
+    let lines = [], at = -1, from = "CLAIMS.md";
+    for (const doc of ["CLAIMS.md", "ARCHIVE.md"]) {
+      if (!(doc in nvClaimText)) {
+        const r = await fetch(DOCS_DIR + doc, { cache: "no-cache" });
+        nvClaimText[doc] = r.ok ? await r.text() : "";
+      }
+      lines = nvClaimText[doc].split("\n");
+      at = lines.findIndex(l => l.indexOf("`" + id + "`") === 0);
+      if (at >= 0) { from = doc; break; }
     }
-    /* Slice the claim's own section. The id sits on the line under its heading,
-       so walk back to the heading and forward to the next one. */
-    const lines = claimsText.split("\n");
-    let at = lines.findIndex(l => l.indexOf("`" + id + "`") === 0 ||
-                                  l.indexOf("`" + id + "` ·") >= 0);
-    if (at < 0) { body.innerHTML = "<p>No registered justification for " + id + ".</p>"; return; }
+    if (at < 0) { body.innerHTML = `<p>No claim ${nvEsc(id)}.</p>`; return; }
     let start = at;
     while (start > 0 && !lines[start].startsWith("### ")) start--;
-    let end = start + 1;
-    while (end < lines.length && !lines[end].startsWith("### ") &&
-           !lines[end].startsWith("## ")) end++;
-    body.innerHTML = marked.parse(lines.slice(start, end).join("\n"), { gfm: true });
+    let end = at + 1;
+    while (end < lines.length && !lines[end].startsWith("### ") && !lines[end].startsWith("## ")
+           && !lines[end].startsWith("<a id=")) end++;
+    body.innerHTML = (nvState.stack.length ? `<button type="button" class="back">← back</button>` : "")
+      + mdParse(lines.slice(start, end).join("\n"));
+    body.scrollTop = 0;
     await drawMermaid(body);
-    resolveLinks(body, "CLAIMS.md");
-  } catch (e) {
-    body.innerHTML = "<p>Could not load the justification.</p>";
+    await nvMath(body);
+    resolveLinks(body, from);
+  } catch (err) {
+    body.innerHTML = "<p>Could not load the claim.</p>";
   }
 }
-
 document.addEventListener("click", e => {
+  const item = e.target.closest("#nummenu button[data-view]");
+  if (item) { e.preventDefault(); nvMenuClose(); nvOpen(item.dataset.id, item.dataset.view, false); return; }
+  const tab = e.target.closest("#justify .tabs button[data-view]");
+  if (tab) { e.preventDefault(); nvOpen(nvState.id, tab.dataset.view, false); return; }
+  const back = e.target.closest("#justify .back");
+  if (back) {
+    e.preventDefault();
+    const prev = nvState.stack.pop();
+    if (prev) (prev[1] === "claim" ? openClaim(prev[0], false) : nvOpen(prev[0], prev[1], false));
+    return;
+  }
+  const chip = e.target.closest("#justify [data-nv]");
+  if (chip) { e.preventDefault(); nvOpen(chip.dataset.nv, nvState.view, true); return; }
   const a = e.target.closest("a.figure");
-  if (!a) return;
-  e.preventDefault();
-  openJustification(a.dataset.claim);
+  if (a) {
+    e.preventDefault();
+    nvMenuClose();
+    if (a.dataset.doc !== "SOURCES.md") { openClaim(a.dataset.claim, true); return; }
+    if (matchMedia("(max-width: 700px)").matches) { nvOpen(a.dataset.claim, "what", false); return; }
+    nvMenu(a.dataset.claim, e.clientX, e.clientY, a.textContent.trim());
+    return;
+  }
+  // a claim: the sentence itself opens it, unless the reader is selecting its text
+  const cl = e.target.closest("span.claim[data-claim]");
+  if (cl && !String(getSelection())) { nvMenuClose(); openClaim(cl.dataset.claim, true); return; }
+  if (!e.target.closest("#nummenu")) nvMenuClose();
 });
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  const m = document.getElementById("nummenu");
+  if (!m.hidden) { nvMenuClose(); return; }
+  if (!document.getElementById("justify").hidden) nvClose();
+});
+/* Only on arrival: after that the address follows the panel, not the other way. */
+let nvArrived = false;
+function openFromQuery() {
+  if (nvArrived) return;
+  nvArrived = true;
+  const q = new URLSearchParams(location.search);
+  if (q.get("c")) { openClaim(q.get("c"), false); return; }
+  const id = q.get("n");
+  if (!id) return;
+  if (q.get("view") !== "menu") { nvOpen(id, q.get("view") || "what", false); return; }
+  // view=menu opens the menu beside the number itself, where a click would have put it.
+  const a = [...document.querySelectorAll("a.figure")].find(x => x.dataset.claim === id);
+  if (!a) return;
+  a.scrollIntoView({ block: "center" });
+  const r = a.getBoundingClientRect();
+  nvMenu(id, r.left, r.bottom - 6, a.textContent.trim());
+}
 
 async function show() {
   const { file, section } = current();
@@ -1594,6 +2058,7 @@ async function show() {
   }
   if (file === "map") {
     hideTip();
+    await loadLanding();
     docEl.innerHTML = renderMap();
     showing = file;
     settle(file, section);
@@ -1603,7 +2068,8 @@ async function show() {
   try {
     const r = await fetch(urlOf(file), { cache: "no-cache" });
     if (!r.ok) throw new Error(`${file} — HTTP ${r.status}`);
-    docEl.innerHTML = marked.parse(await r.text(), { gfm: true });
+    docEl.innerHTML = mdParse(await r.text());
+    nvMath(docEl);
     await drawMermaid(docEl);
     resolveLinks(docEl, file);
     // tables carry long Danish system names; let each scroll rather than the page
@@ -1624,6 +2090,7 @@ async function show() {
     await decorate(docEl, file).catch(() => {});
     showing = file;
     settle(file, section);
+    openFromQuery();
   } catch (e) {
     showing = null;
     docEl.innerHTML = `<p class="status">Could not load ${file}: ${e.message}. `
@@ -1634,10 +2101,11 @@ async function show() {
 addEventListener("hashchange", show);
 show();
 </script>
-<aside id="justify" hidden>
-  <header><b>What this number rests on</b>
-    <button onclick="document.getElementById('justify').hidden=true"
-            title="close">\u2715</button></header>
+<div id="nummenu" role="menu" hidden></div>
+<aside id="justify" hidden aria-label="Where this number comes from">
+  <header><b>Where this number comes from</b>
+    <button type="button" onclick="nvClose()" title="Close (Esc)">&times;</button></header>
+  <div class="tabs" hidden></div>
   <div class="justify-body"></div>
 </aside>
 </body>

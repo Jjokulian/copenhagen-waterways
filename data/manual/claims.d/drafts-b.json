@@ -1,0 +1,508 @@
+{
+ "figures": {
+  "dbx_ss_total": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "total_station_months"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "n_stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_months": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "months"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_nvars": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "n_variables"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_bytes": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "bin_bytes"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_fluo": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "fluo",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_fluo_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "fluo",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxy_bed": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxy_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxy_bed_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxy_bed",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxy_surf": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxy_surf",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxy_surf_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxy_surf",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxysat_bed": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxysat_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxysat_bed_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxysat_bed",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxysat_surf": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxysat_surf",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_oxysat_surf_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "oxysat_surf",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_sal_bed": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "sal_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_sal_bed_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "sal_bed",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_sal_surf": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "sal_surf",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_sal_surf_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "sal_surf",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_temp_bed": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "temp_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_temp_bed_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "temp_bed",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_temp_surf": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "temp_surf",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_ss_temp_surf_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "stations_series",
+    "variables",
+    "temp_surf",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_ctd_now": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "ctd",
+    "no_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_ctd_ever": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "ctd",
+    "with_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_vandkemi_now": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "vandkemi",
+    "no_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_vandkemi_ever": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "vandkemi",
+    "with_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_sedimentkemi_sporstof_now": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "sedimentkemi_sporstof",
+    "no_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_sedimentkemi_sporstof_ever": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "sedimentkemi_sporstof",
+    "with_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_lyssvaekkelse_now": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "lyssvaekkelse",
+    "no_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_lyssvaekkelse_ever": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "lyssvaekkelse",
+    "with_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_maaledybde_now": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "maaledybde",
+    "no_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_portal_maaledybde_ever": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "oda_portal",
+    "maaledybde",
+    "with_period"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_md_rows": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "maaledybde",
+    "rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_md_stations": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "maaledybde",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_md_stations_with_bottom_depth": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "maaledybde",
+    "stations_with_bottom_depth"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_md_rows_x_equals_x1": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "maaledybde",
+    "rows_x_equals_x1"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_features": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "features"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_classes": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "classes"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_campaigns": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "campaigns"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_gravel": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "by_class",
+    "Gravel and coarse sand"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_mud": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "by_class",
+    "Mud and sandy mud"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_muddysand": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "by_class",
+    "Muddy sand"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_clay": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "by_class",
+    "Quaternary clay and silt"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_sand": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "by_class",
+    "Sand"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_rock": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "by_class",
+    "Sedimentary rock"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_sb_till": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "seabed",
+    "by_class",
+    "Till/diamicton"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_mfs_points": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "mfs",
+    "points"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_mfs_biota": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "mfs",
+    "biota"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_mfs_water": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "mfs",
+    "water"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_mfs_sediment": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "mfs",
+    "sediment"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_mfs_no_matrix": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "mfs",
+    "no_matrix"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_mfs_lake": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "mfs",
+    "by_type",
+    "DKLAKE"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbx_mfs_river": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": [
+    "mfs",
+    "by_type",
+    "DKRIVER"
+   ],
+   "fmt": "{:,}"
+  },
+  "dbk_plankton_files": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": "plankton.n_files",
+   "fmt": "{:,}"
+  },
+  "dbk_plankton_nvars": {
+   "file": "data/derived/drafts_b_counts.json",
+   "path": "plankton.n_variables",
+   "fmt": "{:,}"
+  }
+ },
+ "params": {
+  "dbx_si_molar_mass_used": {
+   "value": 28,
+   "shown": "28",
+   "reason": "The molar mass of silicon the EMODnet silicate values appear to have been converted with: integer micrograms per litre divided by it, not by the standard atomic weight - inferred in the K1 draft from the values falling on exact multiples of its reciprocal, not documented by the provider."
+  }
+ }
+}

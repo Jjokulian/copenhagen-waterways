@@ -1,0 +1,72 @@
+{
+ "steps": [
+  {
+   "script": "scripts/areas.py",
+   "inputs": [
+    "data/raw/national/marin_overordnet.geojson",
+    "data/raw/national/badevand.geojson",
+    "data/raw/national/punkt_rbu_udl.geojson",
+    "data/raw/national/punkt_rens_udl.geojson",
+    "data/raw/national/punkt_havdam_udl.geojson",
+    "data/raw/national/klappladser.geojson",
+    "data/raw/national/raastofomr.geojson",
+    "data/raw/national/sw_mfs_tilstand.geojson",
+    "data/manual/statistical_models.json"
+   ],
+   "outputs": [
+    "data/derived/areas.json"
+   ]
+  },
+  {
+   "script": "scripts/station_places.py",
+   "inputs": [
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/stations_series.bin",
+    "docs/data/areas/station_waterbody_overlay.json",
+    "data/derived/areas.json",
+    "data/raw/oda/kemi.csv.gz",
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/station_places.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/areas.py",
+   "inputs": [
+    "data/derived/areas.json",
+    "data/derived/station_places.json",
+    "docs/data/areas/partition_score.json",
+    "docs/data/areas/stations.json",
+    "data/manual/coverage_gaps.json",
+    "data/derived/hypotheses.json",
+    "data/manual/number_constructions.d/areas.json"
+   ],
+   "outputs": [
+    "docs/AREAS.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/places.py",
+   "inputs": [
+    "data/derived/station_places.json",
+    "data/derived/hypotheses.json",
+    "data/manual/number_constructions.d/areas.json"
+   ],
+   "outputs": [
+    "docs/PLACES.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/category.py",
+   "inputs": [
+    "docs/data/areas/partition_score.json",
+    "data/derived/hypotheses.json",
+    "data/manual/number_constructions.d/areas.json"
+   ],
+   "outputs": [
+    "docs/CATEGORY.md"
+   ]
+  }
+ ]
+}

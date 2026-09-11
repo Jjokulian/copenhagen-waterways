@@ -59,7 +59,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from common import DERIVED, RAW, ROOT, log
 from cube import utm32_to_wgs84
-from daylight import solar_elevation, danish_offset, parse_klok
+from daylight import solar_elevation
+import clock
 
 CTD = os.path.join(RAW, "oda", "ctd.csv.gz")
 KEMI = os.path.join(RAW, "oda", "kemi.csv.gz")
@@ -93,7 +94,7 @@ def num(s):
 
 
 def load_supplied():
-    """station;date;time_utc -> {(station, YYYYMMDD): (h, m)}"""
+    """station;date;time_utc -> {(station, YYYYMMDD): UTC datetime}"""
     if not os.path.exists(SUPPLIED):
         return {}
     out = {}
@@ -112,32 +113,40 @@ def load_supplied():
                 h, mi = int(t[:2]), int(t[3:5]) if len(t) >= 5 else 0
             except ValueError:
                 continue
-            out[(st.strip(), d)] = (h, mi)
+            try:
+                out[(st.strip(), d)] = dt.datetime(int(d[:4]), int(d[4:6]), int(d[6:8]), h, mi)
+            except ValueError:
+                continue
     log(f"  supplied clock: {len(out):,} station-days from "
         f"{os.path.relpath(SUPPLIED, ROOT)}")
     return out
 
 
 def load_borrowed():
-    """The water-chemistry clock, per station-day, where it is unambiguous."""
-    seen = {}
-    ambiguous = set()
+    """The water-chemistry clock per station-day, as a UTC instant, where
+    scripts/clock.py classes it as an observed time and the station-day has only
+    one. A filled-in default is not a time to borrow, and a supplier whose
+    convention is mixed cannot lend one."""
+    seen, ambiguous, classes = {}, set(), collections.Counter()
     with gzip.open(KEMI, "rb") as fh:
         for row in csv.DictReader(io.TextIOWrapper(fh, encoding="latin-1"),
                                   delimiter=";"):
-            k = parse_klok(row.get("Startklok"))
-            if not k:
+            utc, cls = clock.instant(row.get("DataLeverandørnavn"),
+                                     row.get("Startdato"), row.get("Startklok"))
+            classes[cls] += 1
+            if utc is None:
                 continue
             key = (row.get("ObservationsStedNr"), (row.get("Startdato") or "").strip())
-            if key in seen and seen[key] != k:
+            if key in seen and seen[key] != utc:
                 ambiguous.add(key)      # more than one visit: do not guess
-            seen[key] = k
+            seen[key] = utc
     for key in ambiguous:
         seen.pop(key, None)
     log(f"  borrowed clock: {len(seen):,} unambiguous station-days "
-        f"({len(ambiguous):,} discarded as multi-visit)")
+        f"({len(ambiguous):,} discarded as multi-visit); water-chemistry rows by "
+        "clock class: " + ", ".join(f"{k} {v:,}" for k, v in classes.most_common()))
+    load_borrowed.classes = dict(classes)
     return seen
-
 
 def main(argv):
     maxrows = next((int(a.split("=", 1)[1]) for a in argv
@@ -176,8 +185,7 @@ def main(argv):
                 src_count["none"] += 1
                 continue
             if src == "supplied" and key in borrowed:
-                b = borrowed[key]
-                offsets.append((clk[0] * 60 + clk[1]) - (b[0] * 60 + b[1]))
+                offsets.append(round((clk - borrowed[key]).total_seconds() / 60))
             k = num(row.get("KorrektionsFaktor"))
             if k is not None and not (FACTOR_RANGE[0] <= k <= FACTOR_RANGE[1]):
                 continue
@@ -201,9 +209,9 @@ def main(argv):
                 day = dt.date(int(d[:4]), int(d[4:6]), int(d[6:]))
             except ValueError:
                 continue
-            # the supplied file is UTC by contract; the borrowed clock is
-            # Startklok, which the technical instruction requires in UTC too
-            when = dt.datetime.combine(day, dt.time(clk[0], clk[1]))
+            # both clocks are UTC instants: the supplied file by contract, the
+            # borrowed one because scripts/clock.py converted it
+            when = clk
             el = solar_elevation(lat, lon, when)
             # season and site removed the same way as cycles.py: deviation from
             # the same station, same depth band, within a 20-day window
@@ -230,9 +238,11 @@ def main(argv):
     out = {"_what": "Oxygen at depth against the sun's elevation, season and "
                     "site removed by a 20-day window at each station and depth "
                     "band.",
-           "_clock": "supplied = data/dropin/ctd_visit_times.csv; borrowed = the "
-                     "same station-day in the water-chemistry extract, which "
-                     "carries a clock on every row; none = excluded.",
+           "_clock": "supplied = data/dropin/ctd_visit_times.csv (UTC); borrowed = the "
+                     "observed clock of the same station-day in the water-chemistry "
+                     "extract, converted to UTC by scripts/clock.py - defaults and "
+                     "mixed conventions are not borrowed; none = excluded.",
+           "borrowed_from_classes": getattr(load_borrowed, "classes", {}),
            "measurements": used, "rows_scanned": rows,
            "clock_source": dict(src_count),
            "deviation": {}}

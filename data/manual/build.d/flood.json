@@ -1,0 +1,41 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/constructed.py",
+   "inputs": [
+    "data/derived/light.json",
+    "docs/data/flood2012/manifest.json"
+   ],
+   "outputs": [
+    "docs/CONSTRUCTED.md",
+    "data/derived/constructed.json"
+   ]
+  },
+  {
+   "script": "scripts/solutions.py",
+   "inputs": [
+    "data/raw/sp_kloakoplande.geojson",
+    "data/raw/lar_registreringer.geojson",
+    "data/raw/national/punkt_rbu_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "data/derived/conveyance.json",
+    "data/manual/monitoring.json"
+   ],
+   "outputs": [
+    "docs/SOLUTIONS.md",
+    "data/derived/solutions.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/settle.py",
+   "inputs": [
+    "data/derived/experiments.json",
+    "data/derived/triage.json"
+   ],
+   "outputs": [
+    "docs/SETTLE.md",
+    "data/derived/settle.json"
+   ]
+  }
+ ]
+}

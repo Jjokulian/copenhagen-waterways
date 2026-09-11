@@ -1,0 +1,3852 @@
+{
+ "sources": {
+  "ML2009-HYPOXIA": {
+   "title": "Middelburg, J. J. and Levin, L. A.: Coastal hypoxia and sediment biogeochemistry, Biogeosciences (2009), open access",
+   "url": "https://bg.copernicus.org/articles/6/1273/2009/bg-6-1273-2009.pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "339e0fcf4c0baff0ac8e423b93425fee254aaaa9f134ac10a0b0b1e5f505ecb1",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "WIKI-REDFIELD": {
+   "title": "Wikipedia: Redfield ratio (retrieved 11 September 2026)",
+   "url": "https://en.wikipedia.org/wiki/Redfield_ratio",
+   "retrieved": "2026-09-11",
+   "sha256": "2c13f65ee5099793b67d0998c058a70490d01161249e330e46ac589ad4f6b46f",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "WIKI-NITRIFICATION": {
+   "title": "Wikipedia: Nitrification (retrieved 11 September 2026)",
+   "url": "https://en.wikipedia.org/wiki/Nitrification",
+   "retrieved": "2026-09-11",
+   "sha256": "09731dc628072006f6b5f7667b456030fcd7767d261eddd0e75b68abac7c80b8",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "D-OB-VP3",
+   "kind": "held",
+   "label": "VP3 marine water bodies",
+   "detail": "data/raw/national/marin_overordnet.geojson: name, stated area and type of each marine water body."
+  },
+  {
+   "id": "D-OB-BATHING",
+   "kind": "held",
+   "label": "Bathing-water layer",
+   "detail": "data/raw/national/badevand.geojson: an annual quality class per station, and the id of a water body where the layer gives one."
+  },
+  {
+   "id": "D-OB-HZLAYER",
+   "kind": "held",
+   "label": "Hazardous-substance layer",
+   "detail": "data/raw/national/sw_mfs_tilstand.geojson: the water-plan register's hazardous-substance points, each with the water body it belongs to and the matrices assessed."
+  },
+  {
+   "id": "D-OB-DOMENOTE",
+   "kind": "held",
+   "label": "Data-sources note on ICES DOME",
+   "detail": "data/manual/data_sources.json: this project's typed note on its reading of the ICES DOME Danish sediment file."
+  },
+  {
+   "id": "X-OB-OBSERVING",
+   "kind": "script",
+   "label": "observing.py",
+   "detail": "Reads the VP3 and bathing layers; computes sizes, the name match, internal coherence, the variance split, the distance bins, the boundary test and the Køge Bugt cut."
+  },
+  {
+   "id": "X-OB-TABEL3PARSE",
+   "kind": "script",
+   "label": "observing.py dce_table3()",
+   "detail": "Parses Tabel 3 of the pinned DCE report into models and their selected variables, and refuses unless three independent counts agree in each half of the table."
+  },
+  {
+   "id": "X-OB-OXYGEN",
+   "kind": "script",
+   "label": "oxygen.py",
+   "detail": "Oxygen per gram of each reductant from balanced equations and molar masses, and the marine coverage of the hazardous-substance layer."
+  },
+  {
+   "id": "X-OB-AREAS",
+   "kind": "script",
+   "label": "areas.py hazardous_layer()",
+   "detail": "Counts the hazardous-substance layer's points by the type of water body they belong to."
+  },
+  {
+   "id": "A-OB-NAMEMATCH",
+   "kind": "assumption",
+   "label": "A polygon is modelled\\nif its name matches",
+   "detail": "coverage() counts a polygon as carrying a statistical model when its name, folded to plain letters, begins like a station area typed from Tabel 3. It can take in polygons DCE did not model and miss ones named otherwise."
+  },
+  {
+   "id": "A-OB-RKR",
+   "kind": "assumption",
+   "label": "Plankton has the\\nRedfield composition",
+   "detail": "The largest coefficient takes organic matter to have the Redfield-Ketchum-Richards composition. Real plankton depart from it by species and by area."
+  },
+  {
+   "id": "A-OB-GRADES",
+   "kind": "assumption",
+   "label": "A bathing class is\\na number",
+   "detail": "The variance split treats the four-class bathing grade as a number. It is an ordinal grade with coarse steps, so its noise is large."
+  },
+  {
+   "id": "U-OB-GRADING-RULE",
+   "kind": "untraced",
+   "label": "Trail ends: the grading rule\\nfor bathing classes",
+   "detail": "Searched on 11 September 2026: the pinned sources and this repository for the rule that turns faecal indicator counts into the four bathing classes. None is pinned; the classes are used as the layer gives them."
+  },
+  {
+   "id": "U-OB-DOME-SCRIPT",
+   "kind": "untraced",
+   "label": "Trail ends: the DOME\\nanalysis script",
+   "detail": "Searched on 11 September 2026: scripts/ for code that reads the ICES DOME sediment file. None was found; the figures exist only as the typed note in data_sources.json."
+  },
+  {
+   "id": "E-OB-DCE-REPORT",
+   "kind": "external",
+   "label": "DCE statistical models\\nand methods, part three",
+   "detail": "The report the page reads.",
+   "source": "DCE-STATMOD-2015",
+   "said": "og metoder til bestemmelse af indsatsbehov"
+  },
+  {
+   "id": "E-OB-DCE-PERWB",
+   "kind": "external",
+   "label": "DCE: one requirement\\nper water body",
+   "detail": "Their requirement table gives a combined requirement per water body.",
+   "source": "DCE-STATMOD-2015",
+   "said": "Samlet indsatsbehov pr. vandomr"
+  },
+  {
+   "id": "E-OB-DCE-NREQ",
+   "kind": "external",
+   "label": "DCE: the requirement\\nfrom nitrogen relations",
+   "detail": "Water-body relations between nitrogen input and total-nitrogen concentration are used to compute the requirement.",
+   "source": "DCE-STATMOD-2015",
+   "said": "Vandområdespecifikke relationer mellem N-tilførsel og TN-koncentrationer benyttes til at beregne indsatsbehovet"
+  },
+  {
+   "id": "E-OB-DCE-29",
+   "kind": "external",
+   "label": "DCE: the model stations",
+   "detail": "The number of coastal stations with models and the water bodies they represent.",
+   "source": "DCE-STATMOD-2015",
+   "said": "kystnære overvågningsstationer, som repræsenterer"
+  },
+  {
+   "id": "E-OB-DCE-PERIOD",
+   "kind": "external",
+   "label": "DCE: the fitting period",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "I udviklingen af modellerne er der brugt data fra perioden"
+  },
+  {
+   "id": "E-OB-DCE-LONG",
+   "kind": "external",
+   "label": "DCE: only where\\nlong series exist",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "eksisterer lange tidsserier"
+  },
+  {
+   "id": "E-OB-DCE-FJORD",
+   "kind": "external",
+   "label": "DCE: the fjord models",
+   "detail": "The caption of Tabel 3 calls them the fjord models.",
+   "source": "DCE-STATMOD-2015",
+   "said": "valideringsresultater for fjordmodellerne"
+  },
+  {
+   "id": "E-OB-DCE-ONESTATION",
+   "kind": "external",
+   "label": "DCE: one station in\\nmost water bodies",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "For de fleste vandområder er der kun en enkelt moniteringsstation med tilstrækkelig datadækning til statistisk modellering"
+  },
+  {
+   "id": "E-OB-DCE-META",
+   "kind": "external",
+   "label": "DCE: the meta-analysis\\ntransfers knowledge",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "viden fra andre og tilsvarende vandområder, som er dækket af modeller, overføres til det område"
+  },
+  {
+   "id": "E-OB-DCE-META-SCOPE",
+   "kind": "external",
+   "label": "DCE: where the\\nmeta-analysis applies",
+   "detail": "Where there are too few data for a statistical model and the dynamic sea model does not describe the area well enough.",
+   "source": "DCE-STATMOD-2015",
+   "said": "og områderne ikke er tilstrækkeligt velbeskrevet i den dynamiske havmodel, anvendes en meta-analyse"
+  },
+  {
+   "id": "E-OB-DHI-TABEL6",
+   "kind": "external",
+   "label": "DHI: the table of\\ncomputed requirements",
+   "detail": "Tabel 6 labels each water body with the basis of its requirement: MEK for the mechanistic model, STAT for DCE's statistical models, Meta for the meta-analysis.",
+   "source": "DHI-MODEL-DEL1-2015",
+   "said": "Beregnede indsatsbehov og samlede målbelastninger for de enkelte vandområder"
+  },
+  {
+   "id": "E-OB-DHI-KOEGE",
+   "kind": "external",
+   "label": "DHI: Køge Bugt\\nunder the mechanistic model",
+   "detail": "In Tabel 6 the row for Køge Bugt carries the label MEK.",
+   "source": "DHI-MODEL-DEL1-2015",
+   "said": "Køge Bugt"
+  },
+  {
+   "id": "E-OB-DCE-TABEL2",
+   "kind": "external",
+   "label": "DCE: the candidate\\nvariables",
+   "detail": "Tabel 2 lists nitrogen, phosphorus and freshwater input, wind stress, irradiance, salinity, water-column stability and surface water temperature.",
+   "source": "DCE-STATMOD-2015",
+   "said": "Overfladevandstemperatur"
+  },
+  {
+   "id": "E-OB-DCE-TABEL3",
+   "kind": "external",
+   "label": "DCE: the models and\\ntheir selected variables",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "Oversigt over modellerede indikatorer, de udvalgte forklaringsvariable"
+  },
+  {
+   "id": "E-OB-DCE-TRIGGER",
+   "kind": "external",
+   "label": "DCE: the oxygen trigger",
+   "detail": "If an oxygen indicator shows a deficit, a fixed requirement is set.",
+   "source": "DCE-STATMOD-2015",
+   "said": "indikerer, at et vandområde er iltsvindsramt, fastsættes et indsatsbehov på"
+  },
+  {
+   "id": "E-OB-DCE-INDICATOR",
+   "kind": "external",
+   "label": "DCE: the oxygen indicator",
+   "detail": "The share of time below two thresholds in the month with most low-oxygen days, from several years of data, one value per period.",
+   "source": "DCE-STATMOD-2015",
+   "said": "i den måned, hvor antallet af dage med lave iltkoncentrationer er højest"
+  },
+  {
+   "id": "E-OB-DCE-FREQ",
+   "kind": "external",
+   "label": "DCE: the sampling frequency",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "målingerne af ilt foretages med en frekvens, som ikke nødvendigvis fanger kortvarige iltsvind"
+  },
+  {
+   "id": "E-OB-DCE-CUT",
+   "kind": "external",
+   "label": "DCE: why the flat cut",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "større end de normale år-til-år variationer, og det vurderes at en"
+  },
+  {
+   "id": "E-OB-DCE-TNDRIFT",
+   "kind": "external",
+   "label": "DCE: the TN models drift",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "har generelt en tendens til systematiske afvigelser over tid, idet de høje"
+  },
+  {
+   "id": "E-OB-DCE-LAG",
+   "kind": "external",
+   "label": "DCE: the sediment time lag",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "hvilket tilskrives tidsforsinkelsen pga. ophobning af organisk bundet kvælstof i sedimenterne"
+  },
+  {
+   "id": "E-OB-DCE-R2DEF",
+   "kind": "external",
+   "label": "DCE: their definition of R²",
+   "detail": "Printed as a formula: one minus the model's squared errors over the observations' squared deviations from their mean.",
+   "source": "DCE-STATMOD-2015",
+   "said": "for korrelation mellem modellerede og observerede indikatorværdier"
+  },
+  {
+   "id": "E-OB-DCE-CRIT",
+   "kind": "external",
+   "label": "DCE: the tentative\\nR² criterion",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "kriteriet for dette statistiske mål er tentativt sat til mindst"
+  },
+  {
+   "id": "E-OB-DCE-SEASONMEAN",
+   "kind": "external",
+   "label": "DCE: one seasonal\\nmean per year",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "gennemsnit af målinger for en sæson (år)"
+  },
+  {
+   "id": "E-OB-DCE-FORKLARING",
+   "kind": "external",
+   "label": "DCE: the variables\\nthat explain most",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "som giver den største forklaringskraft"
+  },
+  {
+   "id": "E-OB-DCE-MINPOINTS",
+   "kind": "external",
+   "label": "DCE: a minimum\\nof data points",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "minimumsgrænsen tentativt sat til"
+  },
+  {
+   "id": "E-OB-DCE-CHLWINDOW",
+   "kind": "external",
+   "label": "DCE: the chlorophyll\\nwindow",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "i perioden maj-september, i overensstemmelse med den interkalibrerede klorofylindikator"
+  },
+  {
+   "id": "E-OB-DCE-SPRINGP",
+   "kind": "external",
+   "label": "DCE: phosphorus governs\\nspring chlorophyll",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "Det er dog som hovedregel fosfortilførslen, der styrer klorofylkoncentrationen i forårsperioden"
+  },
+  {
+   "id": "E-OB-DCE-NSELECT",
+   "kind": "external",
+   "label": "DCE: nitrogen is\\nselected most often",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "er det kvælstoftilførslen, der oftest udvælges som forklaringsvariabel"
+  },
+  {
+   "id": "E-OB-DCE-DIPCHL",
+   "kind": "external",
+   "label": "DCE: DIP and chlorophyll\\nas oxygen indicators",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "kan derfor benyttes som indikatorer for, om der er iltsvind i et vandområde"
+  },
+  {
+   "id": "E-OB-DCE-ILTSVIND",
+   "kind": "external",
+   "label": "DCE: how oxygen\\ndeficits arise",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "Iltsvind opstår som følge af komplekse sammenspil mellem mængden af dødt organisk stof"
+  },
+  {
+   "id": "E-OB-DCE-FAUNA",
+   "kind": "external",
+   "label": "DCE: deficits affect\\nthe bottom fauna",
+   "detail": "",
+   "source": "DCE-STATMOD-2015",
+   "said": "da begge forhold vil påvirke bl.a. bundfauna"
+  },
+  {
+   "id": "E-OB-MSFD-N",
+   "kind": "external",
+   "label": "DCE marine strategy note:\\nnitrogen input fell",
+   "detail": "",
+   "source": "MSFD28",
+   "said": "den samlede kvælstoftilførsel til marine kystafsnit med"
+  },
+  {
+   "id": "E-OB-MSFD-P",
+   "kind": "external",
+   "label": "DCE marine strategy note:\\nphosphorus input fell",
+   "detail": "",
+   "source": "MSFD28",
+   "said": "Tilsvarende er faldet i den samlede fosfortilførsel"
+  },
+  {
+   "id": "E-OB-MSFD-BI5",
+   "kind": "external",
+   "label": "DCE marine strategy note:\\norganic matter as `BI5`",
+   "detail": "Inputs of nitrogen, phosphorus and organic matter measured as `BI5` are accounted together.",
+   "source": "MSFD28",
+   "said": "organisk stof (O) målt som"
+  },
+  {
+   "id": "E-OB-NOVANA-FAUNA",
+   "kind": "external",
+   "label": "NOVANA: the soft-bottom\\nfauna season",
+   "detail": "From the first of March to the end of May.",
+   "source": "NOVANA-2327",
+   "said": "Overvågningen af blødbundsfaunaen gennemføres i tidsrummet"
+  },
+  {
+   "id": "E-OB-ML-PENETRATION",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\noxygen penetration",
+   "detail": "From under a millimetre in active mud to a few centimetres in permeable sand.",
+   "source": "ML2009-HYPOXIA",
+   "said": "oxygen penetration depths are very limited"
+  },
+  {
+   "id": "E-OB-ML-NORM",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nanoxia is the norm below",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "Hypoxic and anoxic conditions are thus the norm for the biologically-active upper"
+  },
+  {
+   "id": "E-OB-ML-MATS",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nbacterial mats",
+   "detail": "Nitrate-storing sulphur bacteria such as Beggiatoa and Thioploca, under hypoxic water with high nitrate.",
+   "source": "ML2009-HYPOXIA",
+   "said": "often occur at high densities forming thick mats that blanket the sediments"
+  },
+  {
+   "id": "E-OB-ML-MATECO",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nmats as hypoxic ecosystems",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "These mats represent specific hypoxic ecosystems"
+  },
+  {
+   "id": "E-OB-ML-FAVOURED",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nwho is favoured",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "calcareous foraminifera, nematodes and branchiate, and soft-bodied annelids are typically favored"
+  },
+  {
+   "id": "E-OB-ML-SILLED",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nnaturally hypoxic basins",
+   "detail": "The Black Sea is named among them.",
+   "source": "ML2009-HYPOXIA",
+   "said": "Naturally occurring hypoxia is found in bottom waters of silled basins and fjords with restricted circulation"
+  },
+  {
+   "id": "E-OB-ML-REOX",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nreduced products rise\\nand are oxidised",
+   "detail": "Methane, sulphide, manganese and iron.",
+   "source": "ML2009-HYPOXIA",
+   "said": "diffuse upwards and are then oxidized"
+  },
+  {
+   "id": "E-OB-ML-REOXSHARE",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nmost oxygen goes\\nto re-oxidation",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "most of the oxygen consumption in coastal sediments can be attributed to re-oxidation processes"
+  },
+  {
+   "id": "E-OB-ML-STORM",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\na storm brings\\nsulphidic water up",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "storm causing entrainment of sulphidic subsurface waters into surface waters"
+  },
+  {
+   "id": "E-OB-ML-AOM",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nmethane oxidised\\nwithout oxygen",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "anaerobic oxidation of methane by sulphate"
+  },
+  {
+   "id": "E-OB-ML-SOLUB",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nwarming lowers solubility",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "Global warming will lead to reduced oxygen solubility"
+  },
+  {
+   "id": "E-OB-ML-METAZOAN",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nanimals fall away",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "the contribution of metazoans decreasing as oxygen levels drop"
+  },
+  {
+   "id": "E-OB-ML-SULPHTOX",
+   "kind": "external",
+   "label": "Middelburg and Levin:\\nsulphide is toxic",
+   "detail": "",
+   "source": "ML2009-HYPOXIA",
+   "said": "because of the toxicity of sulphides for many organisms, in particular metazoans"
+  },
+  {
+   "id": "E-OB-WIKI-REDFIELD",
+   "kind": "external",
+   "label": "Wikipedia: the Redfield\\nratio is an average",
+   "detail": "Deviations from the canonical ratio are found by species and study area.",
+   "source": "WIKI-REDFIELD",
+   "said": "While deviations from the canonical"
+  },
+  {
+   "id": "E-OB-WIKI-NITRIF",
+   "kind": "external",
+   "label": "Wikipedia: nitrification\\nis microbial",
+   "detail": "",
+   "source": "WIKI-NITRIFICATION",
+   "said": "autotrophic bacteria and archaea"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-OB-UNIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The nitrogen requirement is computed per water body: status, target and requirement are each one number per polygon, and the chain assumes the polygon is uniform enough for one number to describe it.",
+   "because": "DCE's requirement table gives one combined requirement per water body, from each water body's own nitrogen relations. One number per polygon applies equally to every point in it; that is the assumption this page tests.",
+   "rests_on": [
+    "E-OB-DCE-PERWB",
+    "E-OB-DCE-NREQ"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The nitrogen requirement is computed **per water body**. Status, environmental target and indsatsbehov are each one number attached to one polygon, and the chain assumes that polygon is uniform enough for one number to describe it.",
+     "texts": "092e4ebdb0992777",
+     "node E-OB-DCE-PERWB": "ff43dddee526fda1",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-NREQ": "cb22c5e422f52a30"
+    }
+   }
+  },
+  {
+   "id": "C-OB-SOURCES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The page reads DCE's statistical-model report and the national VP3 layers of marine water bodies and bathing stations, of which not every station carries a marine water-body id.",
+   "because": "observing.py reads the two VP3 layers and counts the bathing stations whose water-body id is a marine water body; the years are the layer's quality columns.",
+   "rests_on": [
+    "E-OB-DCE-REPORT",
+    "D-OB-VP3",
+    "D-OB-BATHING",
+    "X-OB-OBSERVING"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-TAGGED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Sources: DCE/Aarhus Universitet's method report for the marine indsatsbehov (2015), and the national VP3 layers - 123 marine water bodies and 1,026 bathing stations with annual quality 1991-2018, 791 of them tagged with a marine water body.",
+     "texts": "1bc850398c514185",
+     "node E-OB-DCE-REPORT": "32e677965c503edf",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node D-OB-VP3": "c503fcfc3aafc0d1",
+     "node D-OB-BATHING": "29751c14f1a96af0",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45"
+    }
+   }
+  },
+  {
+   "id": "C-OB-SIZES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Danish marine water bodies span a vast range of sizes, and the open-sea polygons typed Ej relevant hold most of the area, which is why the mean polygon is far above the median.",
+   "because": "Areas are the polygons' stated areas in the VP3 layer, ranked and summed by observing.py; the open-sea polygons' share is their summed area over the total.",
+   "rests_on": [
+    "D-OB-VP3",
+    "X-OB-OBSERVING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The largest is 24,992 times the smallest. 123 polygons, 43,579 km², 41 distinct type codes, of which 14 are typed `Ej relevant`. Median 84.5 km², mean 354.3 km² - the mean is 4.2 times the median because the 14 open-sea polygons typed `Ej relevant` carry 53% of the area.",
+     "texts": "7cded69cf8c851db",
+     "node D-OB-VP3": "c503fcfc3aafc0d1",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45"
+    }
+   }
+  },
+  {
+   "id": "C-OB-DCE-SCOPE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "DCE built statistical models for coastal stations representing a set of water bodies, on data from their fitting period and only where long series exist, and call them the fjord models.",
+   "because": "Their text: models were built where the time series were long enough; the stations, the water bodies they represent and the period are stated, and the caption of Tabel 3 calls them fjord models.",
+   "rests_on": [
+    "E-OB-DCE-29",
+    "E-OB-DCE-PERIOD",
+    "E-OB-DCE-LONG",
+    "E-OB-DCE-FJORD"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "DCE built statistical models for **29 coastal stations representing 22 water bodies**, on data from **1990-2012**, where series longer than 15 years exist. The caption on their own validation table calls them *fjordmodellerne*.",
+     "texts": "67c053291d6e8e0f",
+     "node E-OB-DCE-29": "9d690cb18b6e8ad4",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-PERIOD": "4dd81a0988994187",
+     "node E-OB-DCE-LONG": "e1d1959e9419a322",
+     "node E-OB-DCE-FJORD": "fcbb28da245a1ba5"
+    }
+   }
+  },
+  {
+   "id": "C-OB-COVERAGE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Matched by name, the polygons of the station areas DCE model make up a small share of Danish marine water-body area; the match takes in more polygons than DCE count water bodies, so the share is what the names give, not DCE's figure.",
+   "because": "coverage() in observing.py counts a polygon as modelled when its name begins like a station area typed from Tabel 3. More polygons match than DCE's count of water bodies, so the match may include polygons DCE did not model.",
+   "rests_on": [
+    "X-OB-OBSERVING",
+    "D-OB-VP3",
+    "A-OB-NAMEMATCH",
+    "E-OB-DCE-29"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Matching every station area named in that table against the national polygon set by name gives **2,492 km² of 43,579 km² - 5.7% of Danish marine water-body area**. The match takes in 28 polygons where DCE count 22 water bodies, so it may include polygons DCE did not model: the share is what the names give, not DCE's own figure.",
+     "texts": "4275a5959f682b63",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45",
+     "node D-OB-VP3": "c503fcfc3aafc0d1",
+     "node A-OB-NAMEMATCH": "ca6c0bbc34549e1f",
+     "node E-OB-DCE-29": "9d690cb18b6e8ad4",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-UNMODELLED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The largest water bodies the name match finds no statistical model for are the open-sea polygons and the large bays.",
+   "because": "The complement of the name match, ranked by stated area.",
+   "rests_on": [
+    "X-OB-OBSERVING",
+    "A-OB-NAMEMATCH"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The largest water bodies the name match finds no statistical model for:",
+     "texts": "83595f5ecb5d8f80",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45",
+     "node A-OB-NAMEMATCH": "ca6c0bbc34549e1f"
+    }
+   }
+  },
+  {
+   "id": "C-OB-KOEGE-MODEL",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "Køge Bugt has no statistical model; DHI's table of computed requirements lists it under the mechanistic model, and DCE's meta-analysis is for water bodies that neither kind of model covers.",
+   "because": "Their tables and text: DHI's Tabel 6 labels each water body with the basis of its requirement, and Køge Bugt carries MEK, the mechanistic model. DCE describe the meta-analysis as transferring knowledge from similar modelled water bodies where data are too few for a statistical model and the dynamic sea model does not describe the area well enough.",
+   "rests_on": [
+    "E-OB-DHI-TABEL6",
+    "E-OB-DHI-KOEGE",
+    "E-OB-DCE-META",
+    "E-OB-DCE-META-SCOPE"
+   ],
+   "basis": "assessed",
+   "holder": "DHI and DCE (the requirement reports)",
+   "replaces": [
+    "C-OB-OLD-FJORD-TRANSFER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Køge Bugt — `DKCOAST201`, 562 km², the water this project is about — has no statistical model. Its requirement comes from DHI's mechanistic model instead: DHI's table of computed requirements lists it under that model (`MEK`). DCE's meta-analysis, which transfers what is known from modelled water bodies to similar unmodelled ones, is for water bodies that neither kind of model covers.",
+     "texts": "4a5b8c2bbc17fe7d",
+     "node E-OB-DHI-TABEL6": "075c71343fadb093",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f",
+     "node E-OB-DHI-KOEGE": "328d41bf1555b9bc",
+     "node E-OB-DCE-META": "d20b3e80b9fbf601",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-META-SCOPE": "06bca3047a5ac10b"
+    }
+   }
+  },
+  {
+   "id": "C-OB-TABEL2",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "DCE's models draw on a fixed list of candidate variables - nutrient loads, freshwater flow, wind stress, irradiance, salinity, water-column stability and surface water temperature - with no bottom-water temperature; water-column stability is selected in a minority of the models.",
+   "because": "Tabel 2 lists the candidates, with surface water temperature among them. How many models select water-column stability comes from Tabel 3 of the pinned report, parsed by observing.py.",
+   "rests_on": [
+    "E-OB-DCE-TABEL2",
+    "E-OB-DCE-TABEL3",
+    "X-OB-TABEL3PARSE"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-OB-OLD-72-BV"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The models in `Tabel 3` draw their explanatory variables from a fixed list given in `Tabel 2` (*vind, temp, salt, irr, BV, Q, N-load og P-load*): nutrient loads (N and P), freshwater flow, wind stress, irradiance, salinity, water-column stability, and **surface** water temperature. Bottom-water temperature is not on the list. Stratification appears only as `vandsøjlestabilitet`, selected in 13 of the 79 models in `Tabel 3`.",
+     "texts": "ef7970af2a828f30",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-TABEL3": "ac6dbe1947bdb2b9",
+     "node X-OB-TABEL3PARSE": "d3f285684239510e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-NOT-ON-LIST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Imported organic matter, ammonium oxidation, sulphide from the sediment and the decay of a kill are not candidate variables, while warming and stratification are; what belongs to a missing driver shows up, if anywhere, in the coefficients of candidates that move with it or in what the model leaves unexplained.",
+   "because": "Set the candidate list beside the routes on OXYGEN.md. A variable left out of a regression has its effect taken up by included variables correlated with it, or left in the residual - the standard result for an omitted variable.",
+   "rests_on": [
+    "C-OB-TABEL2",
+    "C-OB-OX-BALANCE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-LIST-GAPS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "That list is worth reading for what is not on it. An oxygen deficit is a balance — what removes oxygen against what resupplies it — and the routes on both sides are many. Imported organic matter exerts its demand directly, with no growth step in between. Ammonium exerts a demand by being oxidised. Sulphide from disturbed sediment consumes oxygen as it is oxidised. A kill of any cause leaves a decaying mass. None of those is a candidate variable; warming and stratification are, as surface temperature and water-column stability. What belongs to a missing driver shows up, if anywhere, in the coefficients of candidates that move with it, or in what the model leaves unexplained. The enumeration is in [OXYGEN.md](OXYGEN.md).",
+     "texts": "5ad78b3b030e44e0",
+     "rests on C-OB-TABEL2": "ef7970af2a828f30",
+     "rests on C-OB-OX-BALANCE": "fb1794a985567a23"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OXYGEN-TRIGGER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The oxygen requirement is a binary trigger on an indicator formed from the single worst month over several years, so most of each year and any trend within the window are set aside before the number is formed.",
+   "because": "DCE define the indicator as the share of time below two thresholds in the month with most low-oxygen days, from several years of data, one value per period; if an oxygen indicator shows a deficit a fixed requirement follows. Oxygen itself is measured far more often, as the CTD record this project holds shows.",
+   "rests_on": [
+    "E-OB-DCE-INDICATOR",
+    "E-OB-DCE-TRIGGER",
+    "D-CTD"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-TRIGGER-TAIL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on OBSERVING.md": "The oxygen requirement itself comes from no regression at all. It is a **binary trigger** on an indicator that is the share of time oxygen sits below 4 mg/L and 2 mg/L **in the single month where low-oxygen days are most numerous**, computed from 6 years of measurements, yielding **one value per water body per 6 years**. Oxygen is sampled far more often than that; this is about what survives the aggregation. Every month but one of every year is set aside before the number is formed, and the collapse over years removes what is left of the temporal signal, including any trend within the window.",
+     "texts": "fed3bccc26088785",
+     "node E-OB-DCE-INDICATOR": "9c56f0202ce1d32e",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-TRIGGER": "6a9d8c66d2bf6397",
+     "node D-CTD": "f8d18f725cee6bd0"
+    }
+   }
+  },
+  {
+   "id": "C-OB-SAMPLING",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "DCE state that oxygen is measured at a frequency that does not necessarily catch short deficits.",
+   "because": "Stated where the report explains why DIP and chlorophyll are used as indicators of oxygen deficit.",
+   "rests_on": [
+    "E-OB-DCE-FREQ"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-OB-OLD-MISSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "DCE state that oxygen is measured at a frequency that does not necessarily catch short deficits: *\"målingerne af ilt foretages med en frekvens, som ikke nødvendigvis fanger kortvarige iltsvind\"*.",
+     "texts": "b6e58483c17c83db",
+     "node E-OB-DCE-FREQ": "f4441f09a3043b98",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-FLAT-CUT",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "If the oxygen trigger fires, the requirement is a flat cut in total-nitrogen concentration, chosen as larger than normal year-to-year variation and judged to be the minimum that will move the system - not fitted.",
+   "because": "Their reasons, as stated: the cut must be large enough to move the system and larger than normal year-to-year variation, and it is judged to be the minimum. No fitted response is given.",
+   "rests_on": [
+    "E-OB-DCE-CUT",
+    "E-OB-DCE-TRIGGER"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "If the trigger fires, the requirement is a flat 25% cut in total nitrogen concentration, chosen because it is *\"større end de normale år-til-år variationer\"* and because *\"det vurderes\"* to be the minimum that will move the system. A judged round number, not a fitted response.",
+     "texts": "bf34c5fb1785e425",
+     "node E-OB-DCE-CUT": "3de70e6955d33ab7",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-TRIGGER": "6a9d8c66d2bf6397"
+    }
+   }
+  },
+  {
+   "id": "C-OB-SCOPE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The section is read from DCE's statistical-model report, except the Køge Bugt line, read from DHI's table; the mechanistic modelling layer is pinned but not examined here.",
+   "because": "Every reading in the section is of DCE's report except the one of DHI's Tabel 6; the DHI reports are pinned among the sources, and no claim here rests on what their models do.",
+   "rests_on": [
+    "E-OB-DCE-REPORT",
+    "E-OB-DHI-TABEL6"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-DHI-UNREAD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Everything above is read from the statistical modelling report (Timmermann et al. 2015), its `Tabel 2` and `Tabel 3`, except the line on Køge Bugt, which is read from DHI's table. The mechanistic modelling layer itself (DHI; Erichsen and co-authors) is among this project's pinned sources but is not examined here, so nothing here is a claim about what it does.",
+     "texts": "829bf85b4af364e8",
+     "node E-OB-DCE-REPORT": "32e677965c503edf",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DHI-TABEL6": "075c71343fadb093",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f"
+    }
+   }
+  },
+  {
+   "id": "C-OB-DECLINE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "Over most of the fitting window Danish nitrogen and phosphorus inputs to the coastal waters fell, by DCE's own accounting.",
+   "because": "Their note reports the fall in total nitrogen and in total phosphorus input to the coastal waters, for Denmark as a whole, over its period of account.",
+   "rests_on": [
+    "E-OB-MSFD-N",
+    "E-OB-MSFD-P"
+   ],
+   "basis": "assessed",
+   "holder": "DCE (marine strategy note on inputs of nitrogen, phosphorus and organic matter)",
+   "replaces": [
+    "C-OB-OLD-EVERYDRIVER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The models are fitted on **1990-2012**. Over most of that window Danish nutrient inputs fell: DCE's marine strategy note puts the fall from 1990 to 2010 in total nitrogen input to the coastal waters at 48%, and in total phosphorus input at 62%.",
+     "texts": "25cac76766506516",
+     "node E-OB-MSFD-N": "b3548ea807e42ae1",
+     "pinned MSFD28": "8204718867e3910b",
+     "node E-OB-MSFD-P": "a7e3bd34b0f093ac"
+    }
+   }
+  },
+  {
+   "id": "C-OB-COLLINEAR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "A regression on candidates that fall together cannot tell them apart; a stepwise selection gives their shared variance to whichever it picks first.",
+   "because": "Two series that move together carry much the same information about a target. Stepwise selection takes the one with the lowest error first, and the other then adds little, whatever its true role.",
+   "rests_on": [
+    "E-ML-DCE-STEPWISE",
+    "C-OB-DECLINE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-EVERYDRIVER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "A regression on candidates that fall together cannot tell them apart: a stepwise selection gives their shared variance to whichever it picks first.",
+     "texts": "5f95152dd4c96611",
+     "node E-ML-DCE-STEPWISE": "bf9d362cbfca8aae",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "rests on C-OB-DECLINE": "25cac76766506516"
+    }
+   }
+  },
+  {
+   "id": "C-OB-DCE-TNDRIFT",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "DCE report that the TN models drift over time - early high concentrations underestimated, late low ones overestimated - and attribute the difference from the other indicators to the time lag of nitrogen accumulating in the sediments.",
+   "because": "Stated in their validation results.",
+   "rests_on": [
+    "E-OB-DCE-TNDRIFT",
+    "E-OB-DCE-LAG"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-OB-OLD-SIGNATURE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "DCE report that the TN models *\"har generelt en tendens til systematiske afvigelser over tid, idet de høje TN-koncentrationer observeret i starten af 1990’erne underestimeres\"*, and that the low concentrations late in the period are overestimated. The other indicators show it less, which DCE attribute to *\"tidsforsinkelsen pga. ophobning af organisk bundet kvælstof i sedimenterne\"* — the time lag from nitrogen accumulating in the sediments.",
+     "texts": "f947af836fb12941",
+     "node E-OB-DCE-TNDRIFT": "489571e75a26b65b",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-LAG": "87f41ff0f71ddce1"
+    }
+   }
+  },
+  {
+   "id": "C-OB-MISSING-COVARIATE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "A predicted range compressed against a trending observed series is what a missing trending variable would produce, and the sediment store DCE name is not a candidate variable.",
+   "because": "A model without a variable that trends with the target cannot follow the trend, and fits both ends too close to the middle. Tabel 2 has no sediment-nitrogen candidate.",
+   "rests_on": [
+    "C-OB-DCE-TNDRIFT",
+    "E-OB-DCE-TABEL2"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-SIGNATURE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "A predicted range compressed against a trending observed series is what a missing trending variable would produce, and the one DCE name is not among the candidates in `Tabel 2`.",
+     "texts": "1dcbf66088af582f",
+     "rests on C-OB-DCE-TNDRIFT": "f947af836fb12941",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-AFTER2012",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Whatever changed after the fitting window cannot be estimated from a series that stops at its end.",
+   "because": "A fitted relation says nothing about conditions outside the data it was fitted on.",
+   "rests_on": [
+    "E-OB-DCE-PERIOD"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-AFTER2012"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Whatever changed after 2012 — in the sewers, on the coast or at sea — cannot be estimated from a series that stops in 2012: not because its effect is absent, but because the data end.",
+     "texts": "af2877745dd1b021",
+     "node E-OB-DCE-PERIOD": "4dd81a0988994187",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-R2DEF",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "One of several acceptance criteria is a minimum R², called tentative; DCE define R² as one minus the model's squared errors over the observations' squared deviations from their mean.",
+   "because": "Their definition, printed as a formula in the method section, and their list of criteria.",
+   "rests_on": [
+    "E-OB-DCE-R2DEF",
+    "E-OB-DCE-CRIT",
+    "E-ML-DCE-OVERALL"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-OB-OLD-R2DEF"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (formatting only: R2 meaning R-squared written as R-squared, and register IDs the text already named - A2, T9, A10 - made checked references; wording otherwise unchanged. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "One of several acceptance criteria is **$R^2$ ≥ 0.4**, described in the report as *tentativt sat*. DCE define $R^2$ as one minus the sum of squared differences between model and observation over the sum of squared deviations of the observations from their mean.",
+     "texts": "50117570416b1763",
+     "node E-OB-DCE-R2DEF": "c3540f04e61923a1",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-CRIT": "a085d6e4e0926278",
+     "node E-ML-DCE-OVERALL": "314331a661a37b1e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-R2-NOTCORR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "That statistic is not a squared correlation: bias or compression in the predictions lowers it, and it can fall below zero.",
+   "because": "A squared correlation ignores any offset or change of scale between prediction and observation. One minus the ratio of squared errors to the observations' variance counts them as error, and is negative when the predictions do worse than the observations' mean.",
+   "rests_on": [
+    "C-OB-R2DEF"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "That is not the square of a correlation: a model whose predictions are biased or compressed scores lower on it, and it can fall below zero.",
+     "texts": "e453fa85a35eed21",
+     "rests on C-OB-R2DEF": "50117570416b1763"
+    }
+   }
+  },
+  {
+   "id": "C-OB-DCE-DESIGN",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "DCE's data points are seasonal means with a stated minimum per model, and variables are chosen stepwise by cross-validated regression, each candidate offered over many period windows, with evaluation on held-out data.",
+   "because": "Their text, as pinned.",
+   "rests_on": [
+    "E-OB-DCE-SEASONMEAN",
+    "E-OB-DCE-MINPOINTS",
+    "E-OB-DCE-FORKLARING",
+    "E-ML-DCE-STEPWISE",
+    "E-ML-DCE-CV",
+    "E-ML-DCE-PERIODS",
+    "E-ML-DCE-VALIDATE"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-ML-OLD-EXACT-DESIGN",
+    "C-OB-OLD-CAVEATS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Each data point is *\"gennemsnit af målinger for en sæson (år)\"* — one seasonal mean per year — with a stated minimum of 15 points. `Tabel 3` shows the few variables selected per model, chosen as those *\"som giver den største forklaringskraft\"*: stepwise, by cross-validated regression on a calibration part of the data, with each candidate offered over many period windows, then evaluated on held-out data. [The method lab](METHOD_LAB.md) sets out the procedure as the report describes it.",
+     "texts": "7b2c4cf870fa9720",
+     "node E-OB-DCE-SEASONMEAN": "66791da6f1ac5398",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-MINPOINTS": "41217d0790030d28",
+     "node E-OB-DCE-FORKLARING": "66de7ac1054f9571",
+     "node E-ML-DCE-STEPWISE": "bf9d362cbfca8aae",
+     "node E-ML-DCE-CV": "bcf8130337ae981f",
+     "node E-ML-DCE-PERIODS": "92a6fdb97a642fe4",
+     "node E-ML-DCE-VALIDATE": "ecb6be078bcba423"
+    }
+   }
+  },
+  {
+   "id": "C-OB-QUESTION",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The question is what such a search returns when there is no relation, and whether the reported R² was measured on data the search did not see.",
+   "because": "A search over many candidates can fit noise, so its fit on the data it searched measures the search as well as the relation; a fit on data held out from the search does not.",
+   "rests_on": [
+    "C-OB-DCE-DESIGN",
+    "C-ML-R2-NO-EVIDENCE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "So the question is not whether a mean $R^2$ of 0.56 is high. It is what a search like this returns **when there is no relation there at all** - and whether the reported $R^2$ was measured on data the search did not see.",
+     "texts": "43ef02d088f515ea",
+     "rests on C-OB-DCE-DESIGN": "7b2c4cf870fa9720",
+     "rests on C-ML-R2-NO-EVIDENCE": "8bb509d3f1cdf3cc"
+    }
+   }
+  },
+  {
+   "id": "C-OB-DCE-MEAN",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OBSERVING.md",
+   "claim": "DCE report a mean R² across their models.",
+   "because": "Stated in their results. Whether it is measured on held-out data is not said.",
+   "rests_on": [
+    "E-ML-DCE-MEAN",
+    "U-ML-DCE-R2-DATA"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-OB-OLD-72-MEDIAN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "DCE report a mean $R^2$ of **0.56** across all their models.",
+     "texts": "eb5a259e835eedf8",
+     "node E-ML-DCE-MEAN": "fbfb330301193977",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node U-ML-DCE-R2-DATA": "b39eeeb0d003dc11"
+    }
+   }
+  },
+  {
+   "id": "C-OB-R2-OPEN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Whether DCE's reported R² carries evidence depends on whether it was measured on held-out data, which the report does not say; a simpler in-sample search on autocorrelated noise clears the criterion more often than not.",
+   "because": "The method lab's simulation of the simpler search, and the report's silence on which data its R² is measured on.",
+   "rests_on": [
+    "C-ML-R2-NO-EVIDENCE",
+    "C-ML-NOISE-FLOOR"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-ML-OLD-NOT-DISTINGUISHABLE",
+    "C-ML-OLD-NO-EVIDENCE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "[The method lab](METHOD_LAB.md) simulates a simpler, exhaustive in-sample search on pure noise, which clears this criterion more often than not on autocorrelated series. Whether DCE's reported $R^2$ carries evidence depends on whether it was measured on their held-out data, which the report does not say.",
+     "texts": "6991042ea32e0650",
+     "rests on C-ML-R2-NO-EVIDENCE": "8bb509d3f1cdf3cc",
+     "rests on C-ML-NOISE-FLOOR": "653098afe7d6c0b9"
+    }
+   }
+  },
+  {
+   "id": "C-OB-NOT-FALSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "None of this shows DCE's relations are false.",
+   "because": "A criterion that noise can meet says nothing either way about a relation that meets it, so it cannot count against the relation.",
+   "rests_on": [],
+   "basis": "assessed",
+   "replaces": [
+    "C-ML-OLD-PROBABLY-REAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "None of this shows the relations are false.",
+     "texts": "3ae1c49c3c0534d0"
+    }
+   }
+  },
+  {
+   "id": "C-OB-NTEST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "A test specific to the nitrogen term is its R² alone against a model with only the climate variables.",
+   "because": "Comparing a model with and without the nitrogen term isolates what nitrogen adds beyond climate, which one overall R² does not.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "A test that would speak to the nitrogen term specifically is the $R^2$ of the N-load term alone against a model containing only the climate variables.",
+     "texts": "3cbbce46213b3199"
+    }
+   }
+  },
+  {
+   "id": "C-OB-BATHING",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Bathing water is a long, dense, spatially replicated marine record, most of its stations tagged with a marine water body.",
+   "because": "observing.py counts the stations in the national bathing layer and those whose water-body id is a marine water body; the quality columns cover the years it reads.",
+   "rests_on": [
+    "D-OB-BATHING",
+    "D-OB-VP3",
+    "X-OB-OBSERVING"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-ONLYRECORD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Bathing water is a long, dense, spatially replicated marine record: 1,026 stations, one quality class per year from 1991 to 2018, 791 of them tagged with the marine water body they sit in. That is enough replication to ask the question directly.",
+     "texts": "0da7ec298c75e2d5",
+     "node D-OB-BATHING": "29751c14f1a96af0",
+     "node D-OB-VP3": "c503fcfc3aafc0d1",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45"
+    }
+   }
+  },
+  {
+   "id": "C-OB-VARIANCE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "With the national year-to-year swing removed, variation in bathing quality splits into between water bodies, between beaches within one, and year to year at one beach.",
+   "because": "variance_components() in observing.py subtracts each year's national mean and splits the rest into three sums of squares, over the stations with enough years of record.",
+   "rests_on": [
+    "X-OB-OBSERVING",
+    "D-OB-BATHING",
+    "A-OB-GRADES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Take all 19,714 beach-year observations of the 728 stations with at least 15 years of record, in 70 water bodies. Remove the national year-to-year swing first, so a warm wet summer everywhere does not count as structure. Split what is left three ways:",
+     "texts": "7043fcc2c47dc8d4",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45",
+     "node D-OB-BATHING": "29751c14f1a96af0",
+     "node A-OB-GRADES": "b230dd904bf83e5e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-VARIANCE-PLAIN",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Knowing the beach inside a water body explains more of one beach-year than knowing the water body.",
+   "because": "In the split, the between-beach share exceeds the between-water-body share.",
+   "rests_on": [
+    "C-OB-VARIANCE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "In plain words: if you had to guess how one beach did in one year, knowing which water body it is in gets you 8% of the way. Knowing which beach — inside that same water body — gets you 13%, 1.7 times as much. The unit that policy treats as uniform explains less than the differences within it.",
+     "texts": "9df603c20cb48587",
+     "rests on C-OB-VARIANCE": "7043fcc2c47dc8d4"
+    }
+   }
+  },
+  {
+   "id": "C-OB-NOISE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Grading noise enters the year-to-year share in full and the other two only through averages, so the comparison of the first two shares carries the argument.",
+   "because": "In the split, a beach's mean over its years and a water body's mean over its beaches average the grading noise down; the year-to-year residual keeps all of it.",
+   "rests_on": [
+    "C-OB-VARIANCE",
+    "A-OB-GRADES"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-NOISE-EQUAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The last row is large partly because a four-class grade is a coarse instrument. Grading noise enters that row in full, and the first two only through averages over each beach's years and each water body's beaches, where it is small; the comparison that carries the argument is the first two rows against each other.",
+     "texts": "b72592217271809c",
+     "rests on C-OB-VARIANCE": "7043fcc2c47dc8d4",
+     "node A-OB-GRADES": "b230dd904bf83e5e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-INTERNAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Under stated minimums of record and of variation, a set of water bodies have enough station pairs to test their internal coherence.",
+   "because": "internal() in observing.py keeps stations with enough years and enough years below Excellent, and water bodies with enough pairs of such stations.",
+   "rests_on": [
+    "X-OB-OBSERVING",
+    "D-OB-BATHING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Restricting to stations with at least 15 years of record and at least 3 years below *Excellent* (so there is something to correlate), and to water bodies with at least 3 pairs of such stations — **42 water bodies**:",
+     "texts": "1cc0d09b0ee6db97",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45",
+     "node D-OB-BATHING": "29751c14f1a96af0"
+    }
+   }
+  },
+  {
+   "id": "C-OB-MEANR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The mean correlation between two stations in the same water body is small.",
+   "because": "internal() averages Pearson correlations over the years each pair shares, per water body, and then over water bodies; its square reads as a small shared share.",
+   "rests_on": [
+    "C-OB-INTERNAL"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Mean pairwise correlation between two stations **inside the same water body**: **r = +0.203**.",
+     "texts": "2933f458a46bb777",
+     "rests on C-OB-INTERNAL": "1cc0d09b0ee6db97"
+    }
+   }
+  },
+  {
+   "id": "C-OB-R-PLAIN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "r is the average product of two standardised series, bounded by minus one and plus one, so its square reads as a shared share of variance.",
+   "because": "The definition of Pearson's correlation, as pearson() in observing.py computes it.",
+   "rests_on": [
+    "X-OB-OBSERVING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "In plain words: r is not a verdict, it is a co-wobble score — the average of how far one beach sits above its own usual, in units of its own usual wobble, times the same for the other beach. The divisor is the two **spreads**, not the two means, which is what keeps it between minus one and plus one and lets $r^2$ be read as a share. Here that means: 4.1% of the wobble in one beach is shared with the other; knowing the other shrinks your error guessing one beach by 2%",
+     "texts": "ef1cbc5842d2a9aa",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45"
+    }
+   }
+  },
+  {
+   "id": "C-OB-SMALLEST",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The least internally coherent water bodies include the two smallest tested.",
+   "because": "The page's generator checks the two smallest areas among all tested water bodies against the least coherent ones before it prints this.",
+   "rests_on": [
+    "C-OB-INTERNAL"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-NOTSIZE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The least internally coherent water bodies include the two smallest tested:",
+     "texts": "333d9fb435a8a061",
+     "rests on C-OB-INTERNAL": "1cc0d09b0ee6db97"
+    }
+   }
+  },
+  {
+   "id": "C-OB-DISTANCE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Matched on separation, same-body and cross-body station pairs correlate much alike beyond the shorter distances.",
+   "because": "by_distance() in observing.py bins station pairs by distance and averages the correlations of pairs in the same and in different water bodies.",
+   "rests_on": [
+    "X-OB-OBSERVING"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-NONEPAST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The boundary carries some information at the shorter separations and almost **none past 10 km**, where two stations in the same water body correlate at +0.152 and two in different ones at +0.138. At that range, knowing that two points are in the same water body tells you little about whether they behave alike.",
+     "texts": "f94867692cd6334f",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45"
+    }
+   }
+  },
+  {
+   "id": "C-OB-BOUNDARIES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "For a share of the testable pairs of neighbouring water bodies, stations agree across the boundary more than within either body.",
+   "because": "boundaries() in observing.py compares the mean correlation of station pairs within a set distance across the boundary with each body's own mean.",
+   "rests_on": [
+    "X-OB-OBSERVING",
+    "C-OB-INTERNAL"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-ADJACENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Of 20 pairs of water bodies with at least 6 station pairs within 15 km of each other across the boundary, **7 (35%)** have stations that agree *across* the boundary more than either body's own stations agree among themselves. For those pairs the boundary carries negative information.",
+     "texts": "6049bd2965e79b93",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45",
+     "rests on C-OB-INTERNAL": "1cc0d09b0ee6db97"
+    }
+   }
+  },
+  {
+   "id": "C-OB-FJORDS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Flensborg Fjord and Vejle Fjord are each divided into an inner and an outer water body, and in both the division fails the boundary test; DCE have one model station in each fjord.",
+   "because": "Both inner-outer pairs are among the failing pairs boundaries() finds, which the generator checks before printing; Tabel 3 lists one station for each fjord.",
+   "rests_on": [
+    "C-OB-BOUNDARIES",
+    "E-OB-DCE-TABEL3"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-TWOHALVES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Among them, Flensborg Fjord and Vejle Fjord are each one fjord divided into an inner and an outer water body, and in both the division fails this test. DCE have one model station in each of the two fjords (`KFF2` in Flensborg Fjord, `4273` in Vejle Fjord).",
+     "texts": "eee684ff16aa7058",
+     "rests on C-OB-BOUNDARIES": "6049bd2965e79b93",
+     "node E-OB-DCE-TABEL3": "ac6dbe1947bdb2b9",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-KOEGE-SEARCH",
+   "kind": "code",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Køge Bugt's informative bathing stations were searched for the north-south cut that best separates them.",
+   "because": "split_koege() in observing.py tries every cut in order of latitude and keeps the one with the largest gain.",
+   "rests_on": [
+    "X-OB-OBSERVING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Køge Bugt is one water body with 24 informative bathing stations. Searching every north/south cut for the one that best separates them:",
+     "texts": "de17bd067de2dde9",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45"
+    }
+   }
+  },
+  {
+   "id": "C-OB-KOEGE-CUT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The best cut falls at the latitude given, and pairs across it correlate at a fraction of pairs on the same side.",
+   "because": "The within figure is the mean over pairs on the same side, both sides pooled; the across figure the mean over pairs that straddle the cut.",
+   "rests_on": [
+    "X-OB-OBSERVING",
+    "D-OB-BATHING"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-KOEGE-TWO"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The cut falls at **55.581°N**, at *Greve Badehotel*, with 5 stations north of it and 19 south. Pairs on the same side correlate at **r = +0.267** on average; pairs across the cut at **r = +0.107** - 0.40 of it.",
+     "texts": "dc75f0dd56aa0f9e",
+     "node X-OB-OBSERVING": "32ee9eb2c29bba45",
+     "node D-OB-BATHING": "29751c14f1a96af0"
+    }
+   }
+  },
+  {
+   "id": "C-OB-KOEGE-CAVEAT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Because the cut is the best of all those tried, its contrast is inflated by the search, and nothing here measures by how much.",
+   "because": "Choosing the largest of many noisy contrasts picks up noise as well as structure; no distribution of the best cut under a uniform water was computed.",
+   "rests_on": [
+    "C-OB-KOEGE-SEARCH"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-KOEGE-TWO"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Because the cut is the best of every one tried, its contrast is the largest these stations allow, and some contrast would appear even in a water that behaves as one; nothing here measures how much. The northern stations are KBS, ud for Hyldetangen; Vallensbæk strand, ved Skrubben; Ishøj strand, Ud for Jæger sø; Strandparken, Hundigevej; Amager Sydstrand.",
+     "texts": "b08c4bbad3be751f",
+     "rests on C-OB-KOEGE-SEARCH": "de17bd067de2dde9"
+    }
+   }
+  },
+  {
+   "id": "C-OB-TWO-RECORDS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The bathing record covers more water bodies than the statistical models and runs later.",
+   "because": "Counts from observing.py and from DCE's report.",
+   "rests_on": [
+    "C-OB-VARIANCE",
+    "C-OB-DCE-SCOPE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-BUILTTOSEE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The bathing record's 19,714 station-years cover 70 water bodies against the models' 22, and run to 2018 rather than 2012.",
+     "texts": "61a9ac3d369fdb1a",
+     "rests on C-OB-VARIANCE": "7043fcc2c47dc8d4",
+     "rests on C-OB-DCE-SCOPE": "67c053291d6e8e0f"
+    }
+   }
+  },
+  {
+   "id": "C-OB-ARCHIVE-LARGER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The national monitoring archive this project holds is larger than either record.",
+   "because": "Row counts of the water-chemistry and CTD extracts this project holds.",
+   "rests_on": [
+    "D-KEMI",
+    "D-CTD"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-BUILTTOSEE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on OBSERVING.md": "Neither is the whole of what Denmark measures in the sea: the national monitoring archive this project holds - 1,805,827 water-chemistry rows and 53,710,760 CTD rows - is larger than both. The comparison here is only about replication inside water bodies.",
+     "texts": "140d383bab658125",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node D-CTD": "f8d18f725cee6bd0"
+    }
+   }
+  },
+  {
+   "id": "C-OB-CANNOT-ADJUDICATE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The bathing analysis cannot adjudicate the nitrogen chain: it grades faecal indicator bacteria, not chlorophyll.",
+   "because": "Incoherence in one measured quantity is no evidence about another.",
+   "rests_on": [
+    "D-OB-BATHING",
+    "U-OB-GRADING-RULE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The bathing analysis above **cannot adjudicate the nitrogen chain**. It grades bathing quality from faecal indicator bacteria, not chlorophyll, so the finding that a water body is internally incoherent is a finding about faecal contamination and is not proof that chlorophyll behaves the same way inside one.",
+     "texts": "38c2996817a9aad2",
+     "node D-OB-BATHING": "29751c14f1a96af0",
+     "node U-OB-GRADING-RULE": "0d1644baf78c20a1"
+    }
+   }
+  },
+  {
+   "id": "C-OB-SEWAGE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The bathing record directly measures faecal contamination reaching the shore, at more stations and through later years than the nutrient models were fitted on.",
+   "because": "Station counts and years of the two records.",
+   "rests_on": [
+    "C-OB-TWO-RECORDS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-COMPETING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The bathing record is also a direct measurement of something else: faecal contamination reaching the shore, recorded at 728 stations in 70 water bodies and through 2018 - more stations, and later years, than the nutrient models were fitted on.",
+     "texts": "5b51974cce73e893",
+     "rests on C-OB-TWO-RECORDS": "61a9ac3d369fdb1a"
+    }
+   }
+  },
+  {
+   "id": "C-OB-CHL-UNTESTED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "Whether a water body is coherent for chlorophyll is not tested here; DCE fitted models only where long series exist, and most of those water bodies have a single such station.",
+   "because": "DCE state that most water bodies have only one station with enough data for statistical modelling, and one station cannot disagree with itself.",
+   "rests_on": [
+    "E-OB-DCE-ONESTATION",
+    "E-OB-DCE-LONG"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-UNTESTABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "Whether a water body is a coherent unit **for chlorophyll** is not tested here. DCE fitted models only where series ran longer than 15 years, and with 29 stations across 22 water bodies most of those water bodies have one such station — one station cannot disagree with itself.",
+     "texts": "9e1d06215457ad3d",
+     "node E-OB-DCE-ONESTATION": "fe9915c4c53c2764",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-LONG": "e1d1959e9419a322"
+    }
+   }
+  },
+  {
+   "id": "C-OB-PROPOSAL",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OBSERVING.md",
+   "claim": "The partition is an empirical question, and a second long series in each water body with one would answer it for chlorophyll.",
+   "because": "Coherence needs at least two stations to compare.",
+   "rests_on": [],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-SMALLERASK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OBSERVING.md": "The constructive version is not \"scrap the water bodies\". It is that the partition is an empirical question with an empirical answer, and the data to answer it for chlorophyll would be a second long series in each water body that has one.",
+     "texts": "cf631dac4325e7b1"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-CHAIN",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OXYGEN.md",
+   "claim": "The requirement rests on a chain from nitrogen to algae to oxygen deficit to harm on the bed; DCE use the seasonal pattern of phosphate and chlorophyll as indicators of oxygen deficit, and note that deficits affect the bottom fauna.",
+   "because": "Their reasons: low bottom oxygen releases phosphate from the sediment and can feed late-summer blooms, so the seasonal pattern indicates oxygen deficit even where it was not measured; deficits arise from dead organic matter together with climate.",
+   "rests_on": [
+    "E-OB-DCE-DIPCHL",
+    "E-OB-DCE-ILTSVIND",
+    "E-OB-DCE-FAUNA"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-OB-OLD-OX-CHAIN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "The requirement rests on a chain: nitrogen feeds algae, dead organic matter draws the oxygen down, and low oxygen harms the life on the bed. DCE use the seasonal pattern of phosphate (DIP) and of chlorophyll as indicators of whether a water body suffers oxygen deficits, because low oxygen at the bottom releases phosphate from the sediment and feeds late-summer blooms; and they note that oxygen deficits affect, among other things, the bottom fauna.",
+     "texts": "67c0959ee90301e3",
+     "node E-OB-DCE-DIPCHL": "59939119f502a4f0",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-ILTSVIND": "f891ddab2a036e61",
+     "node E-OB-DCE-FAUNA": "e0cd080d37a414f2"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-BASIS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "The coefficients are arithmetic on balanced equations and molar masses; the largest rests on the Redfield-Ketchum-Richards average composition of plankton, from which real plankton depart.",
+   "because": "coefficients() in oxygen.py; the Redfield composition is an empirical average with documented deviations by species and area.",
+   "rests_on": [
+    "X-OB-OXYGEN",
+    "A-OB-RKR",
+    "E-OB-WIKI-REDFIELD"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-NOMODEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Every joint in that chain comes apart, and this page takes them one at a time. The coefficients below are arithmetic on balanced equations and molar masses; the largest rests on the Redfield–Ketchum–Richards composition of plankton, an average from which real plankton depart. The coverage counts come from the national monitoring layers.",
+     "texts": "cbb6a17757901092",
+     "node X-OB-OXYGEN": "57487c15057fd892",
+     "node A-OB-RKR": "d02ce0486fa65c9d",
+     "node E-OB-WIKI-REDFIELD": "35ac2c43b73e2eb0",
+     "pinned WIKI-REDFIELD": "2c13f65ee5099793"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-BALANCE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "An oxygen deficit is demand exceeding supply, and most of the routes on either side need no nitrogen.",
+   "because": "Of the routes tabulated, only the respiration of biomass grown on nitrogen and nitrification involve nitrogen.",
+   "rests_on": [
+    "C-OB-OX-DEMAND-TABLE",
+    "C-OB-OX-SUPPLY-TABLE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "An oxygen deficit is what is left when demand exceeds supply. Both sides have many entry points, and most of those below need no nitrogen at all.",
+     "texts": "fb1794a985567a23",
+     "rests on C-OB-OX-DEMAND-TABLE": "328bf758c55f394e",
+     "rests on C-OB-OX-SUPPLY-TABLE": "2b5b9e419d356585"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-DEMAND-TABLE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Each coefficient is grams of oxygen per gram of reductant from its balanced equation and molar masses; the last column names the Tabel 2 candidate that could carry the route.",
+   "because": "coefficients() in oxygen.py, from its molar masses, the Redfield composition and the moles of oxygen in each balanced equation, written beside each line of the code.",
+   "rests_on": [
+    "X-OB-OXYGEN",
+    "A-OB-RKR",
+    "E-OB-DCE-TABEL2"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Each coefficient is grams of oxygen per gram of the reductant, from its balanced equation and molar masses; the last column names the `Tabel 2` candidate, if any, that could carry the route in DCE's statistical models.",
+     "texts": "328bf758c55f394e",
+     "node X-OB-OXYGEN": "57487c15057fd892",
+     "node A-OB-RKR": "d02ce0486fa65c9d",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-R1",
+   "kind": "code",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Respiring algal biomass grown on nitrogen consumes oxygen at Redfield stoichiometry: the carbon is respired and the organic nitrogen nitrified.",
+   "because": "The coefficient is the Redfield-Ketchum-Richards equation's oxygen per nitrogen.",
+   "rests_on": [
+    "A-OB-RKR",
+    "X-OB-OXYGEN"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "The route the requirement is built on. Nitrogen becomes carbon at Redfield stoichiometry, the carbon is respired, and the organic nitrogen is nitrified.",
+     "texts": "e9c9a1c44a74a46c",
+     "node A-OB-RKR": "d02ce0486fa65c9d",
+     "node X-OB-OXYGEN": "57487c15057fd892"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-R2",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Organic matter that arrives already made exerts its demand with no growth step; fat and carbohydrate carry no nitrogen, and sewage organics' demand does not wait on theirs.",
+   "because": "The formulas used for fat and carbohydrate contain no nitrogen; COD is by definition an oxygen demand in grams of oxygen.",
+   "rests_on": [
+    "X-OB-OXYGEN"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-COD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Sewage organics, fat, riverine particulate carbon, anything washed off a surface. COD is its demand measured chemically, in grams of oxygen. It needs no growth step: fat and carbohydrate carry no nitrogen, and though sewage organics carry some, their oxygen demand does not wait on it.",
+     "texts": "8f8d693989047334",
+     "node X-OB-OXYGEN": "57487c15057fd892"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-R3",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Nitrification is carried out by bacteria and archaea and consumes oxygen as ammonium is oxidised; it needs no algal growth step.",
+   "because": "The oxygen per nitrogen follows from ammonium and two oxygen to nitrate; the organisms are nitrifiers, not algae.",
+   "rests_on": [
+    "E-OB-WIKI-NITRIF",
+    "X-OB-OXYGEN"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-NITRIF"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Nitrifying bacteria and archaea oxidise ammonium to nitrate, and the oxygen is gone. This is nitrogen acting as a *reductant*, not as a fertiliser: it needs no algal growth step.",
+     "texts": "b6dbc0568ae36213",
+     "node E-OB-WIKI-NITRIF": "479f86e5947e3c2b",
+     "pinned WIKI-NITRIFICATION": "09731dc628072006",
+     "node X-OB-OXYGEN": "57487c15057fd892"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-R4",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Reduced compounds from anoxic sediment are oxidised where they meet oxygen, most oxygen consumption in coastal sediments goes to such re-oxidation, and a storm can bring sulphidic water up at once.",
+   "because": "The pinned review describes the upward flux of reduced products and their oxidation, and a storm entraining sulphidic water. That dredging or trawling does the same is argued by analogy, not sourced.",
+   "rests_on": [
+    "E-OB-ML-REOX",
+    "E-OB-ML-REOXSHARE",
+    "E-OB-ML-STORM"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-SULPHIDE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Reduced compounds made in anoxic sediment, sulphide among them, move up and are oxidised where they meet oxygen; in coastal sediments most of the oxygen consumed goes to such re-oxidation. A storm that stirs sulphidic water up does the same at once, and so would dredging or trawling that stirs the bed.",
+     "texts": "362f69ea13d9f549",
+     "node E-OB-ML-REOX": "bfd930dd6bbf397f",
+     "pinned ML2009-HYPOXIA": "339e0fcf4c0baff0",
+     "node E-OB-ML-REOXSHARE": "e08955ef47dc5483",
+     "node E-OB-ML-STORM": "d813864ccf0e49aa"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-R5",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Dissolved iron and manganese from reduced sediment are oxidised by the same upward route, with less oxygen per gram.",
+   "because": "The pinned review names manganese and iron among the reduced products that rise and are oxidised; the coefficient is from the balanced equation.",
+   "rests_on": [
+    "E-OB-ML-REOX",
+    "X-OB-OXYGEN"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "The same upward route, smaller per gram: dissolved iron and manganese from the same reduced sediment.",
+     "texts": "6999ac8b1a6994e8",
+     "node E-OB-ML-REOX": "bfd930dd6bbf397f",
+     "pinned ML2009-HYPOXIA": "339e0fcf4c0baff0",
+     "node X-OB-OXYGEN": "57487c15057fd892"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-R6",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Methane from anoxic sediment can be oxidised on the way up without oxygen, by sulphate or nitrate; the oxygen coefficient applies to what reaches oxygenated water.",
+   "because": "The pinned review describes anaerobic oxidation of methane by sulphate and by nitrate.",
+   "rests_on": [
+    "E-OB-ML-AOM",
+    "E-OB-ML-REOX"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-METHANE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Produced in anoxic sediment. Part of it can be oxidised on the way up without oxygen, by sulphate or nitrate; the coefficient applies to what reaches oxygenated water.",
+     "texts": "6e78735c54bff2fc",
+     "node E-OB-ML-AOM": "c75317f1aeedbfac",
+     "pinned ML2009-HYPOXIA": "339e0fcf4c0baff0",
+     "node E-OB-ML-REOX": "bfd930dd6bbf397f"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-R7",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Whatever kills leaves a mass that decays and draws oxygen down, so the deficit carries no information about the killing agent.",
+   "because": "The decay's oxygen demand is set by the dead mass, whatever killed it.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "A toxicant, a salinity shock, a heat event, physical destruction. Whatever kills leaves a mass that decays, and the decay draws the oxygen down. The oxygen deficit is then downstream of the killing agent, and carries no information about it.",
+     "texts": "c891dc8945d626df"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-SUPPLY-TABLE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "No coefficient is given for the supply routes; the table names the Tabel 2 candidate that could carry each.",
+   "because": "The candidates are read from Tabel 2.",
+   "rests_on": [
+    "E-OB-DCE-TABEL2"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "No coefficient is given for these here; the last column names the `Tabel 2` candidate that could carry each.",
+     "texts": "2b5b9e419d356585",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-S1",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Warmer water holds less oxygen; water temperature is a candidate variable, so this route is representable.",
+   "because": "The pinned review states that warming reduces oxygen solubility; Tabel 2 has surface water temperature.",
+   "rests_on": [
+    "E-OB-ML-SOLUB",
+    "E-OB-DCE-TABEL2"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-WARMCOEF"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Solubility, not biology: warmer water holds less oxygen. Water temperature is a candidate variable, as surface temperature, so this one is at least representable.",
+     "texts": "07b51c3b7bdac651",
+     "node E-OB-ML-SOLUB": "5bac55dfb81a21cc",
+     "pinned ML2009-HYPOXIA": "339e0fcf4c0baff0",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-S2",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "A column that does not turn over does not refill; water-column stability is a candidate selected in a minority of the models.",
+   "because": "Tabel 2 lists water-column stability; the count of models selecting it is from observing.py's parse of Tabel 3.",
+   "rests_on": [
+    "E-OB-DCE-TABEL2",
+    "X-OB-TABEL3PARSE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-BV72"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "A column that does not turn over does not refill. Water-column stability (`vandsøjlestabilitet`) is a candidate variable and is selected in 13 of the 79 models in `Tabel 3`.",
+     "texts": "7f0bbecd61f1fe3f",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node X-OB-TABEL3PARSE": "d3f285684239510e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-S3",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Turbidity also suppresses photosynthesis, the oxygen source; Kd is an indicator the models predict, not a candidate.",
+   "because": "Kd appears in Tabel 3 as a modelled indicator and not in the Tabel 2 list of candidates.",
+   "rests_on": [
+    "E-OB-DCE-TABEL2",
+    "E-OB-DCE-TABEL3"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "The same turbidity that the Kd indicator measures also suppresses photosynthesis, the oxygen source. Kd is an indicator the models predict; it is not among the `Tabel 2` candidates.",
+     "texts": "924e8c718c79b2a7",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-TABEL3": "ac6dbe1947bdb2b9"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-S4",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Wind stress is selected in more models than phosphorus load and in fewer than nitrogen load.",
+   "because": "Counts from observing.py's parse of Tabel 3.",
+   "rests_on": [
+    "X-OB-TABEL3PARSE",
+    "E-OB-DCE-TABEL3"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-WIND72"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Wind stress is a candidate variable. It is selected in 24 of the 79 models, more often than phosphorus load (21) and less often than nitrogen load (49).",
+     "texts": "6446b7a20460fc51",
+     "node X-OB-TABEL3PARSE": "d3f285684239510e",
+     "node E-OB-DCE-TABEL3": "ac6dbe1947bdb2b9",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-PRICES",
+   "kind": "code",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "The oxygen consumed per kilogram differs between substances by more than an order of magnitude.",
+   "because": "The coefficients from coefficients() in oxygen.py, largest over smallest.",
+   "rests_on": [
+    "X-OB-OXYGEN",
+    "A-OB-RKR"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-NOBODY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "If oxygen is the currency, then every substance that consumes it has a price, and the prices differ by more than an order of magnitude. These follow from the balanced equations:",
+     "texts": "4892cd6af5199bbd",
+     "node X-OB-OXYGEN": "57487c15057fd892",
+     "node A-OB-RKR": "d02ce0486fa65c9d"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-CEILING",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Nitrogen's full remineralisation demand is the largest in the table but a ceiling reached only if every step completes.",
+   "because": "Each condition listed is a step on the route from nitrogen input to decay in place; if any fails, less of the demand is realised there.",
+   "rests_on": [
+    "C-OB-OX-PRICES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "So a kilogram of nitrogen, taken all the way through growth and remineralisation, consumes **19.7 kg of oxygen** — the largest figure in the table, and the reason the nitrogen route is taken seriously. But that is a *ceiling reached only if every step completes*: the nitrogen must be bioavailable, must be limiting, must actually be taken up, the biomass must die in place rather than be exported or eaten, and it must decay where the oxygen matters.",
+     "texts": "32c0af2a8a804ca1",
+     "rests on C-OB-OX-PRICES": "4892cd6af5199bbd"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-FAT",
+   "kind": "code",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Fat exerts its demand without the conditions nitrogen needs, and the table gives how many kilograms of it match a kilogram of nitrogen.",
+   "because": "Ratios of the coefficients; fat arrives as organic matter and needs no growth step.",
+   "rests_on": [
+    "X-OB-OXYGEN"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Fat pays **2.87 kg O₂ per kg** and skips every one of those conditions. It arrives already made. It does not need to be limiting, taken up, or grown. Roughly **6.9 kg of fat** matches the full theoretical oxygen demand of a kilogram of nitrogen — and **1.6 kg** matches what a kilogram of ammonium consumes by nitrification alone.",
+     "texts": "e5e556a0d5b274e5",
+     "node X-OB-OXYGEN": "57487c15057fd892"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-ACCOUNTING",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OXYGEN.md",
+   "claim": "The requirement is computed from nitrogen relations, while Danish input accounting also reports organic matter as `BI5`, a biological oxygen demand, which is not a candidate variable.",
+   "because": "Their texts: the requirement report computes it from each water body's nitrogen-input relations; the marine strategy note accounts nitrogen, phosphorus and organic matter as `BI5` together; Tabel 2 has no organic-matter candidate.",
+   "rests_on": [
+    "E-OB-DCE-NREQ",
+    "E-OB-MSFD-BI5",
+    "E-OB-DCE-TABEL2"
+   ],
+   "basis": "assessed",
+   "holder": "DCE (requirement report; marine strategy note on inputs)",
+   "replaces": [
+    "C-OB-OLD-OX-ACCOUNTING"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (re-read after writing BI5 as code, an identifier the chemistry check read as a formula; wording otherwise unchanged; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "The requirement is set in nitrogen: DCE compute it from each water body's relation between nitrogen input and total-nitrogen concentration. Danish input accounting does carry an oxygen-demand measure — DCE's marine strategy note reports organic matter as `BI5`, a biological oxygen demand, beside nitrogen and phosphorus — but organic matter is not among the candidate variables of the statistical models.",
+     "texts": "b5fa01bd0e5f2e3e",
+     "node E-OB-DCE-NREQ": "cb22c5e422f52a30",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-MSFD-BI5": "7a2438c033cba337",
+     "pinned MSFD28": "8204718867e3910b",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-EIGHT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Each of the eight combinations of nitrogen loaded, oxygen low and life gone has a mechanism that produces it.",
+   "because": "The table names a mechanism for each. The naturally hypoxic cases rest on the pinned review; the others are argued in the table.",
+   "rests_on": [
+    "E-OB-ML-SILLED",
+    "E-OB-ML-PENETRATION",
+    "E-OB-ML-SULPHTOX",
+    "C-OB-OX-R7"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-CELLS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Take the three things the chain joins — nitrogen loaded, oxygen low, higher life gone — and enumerate the eight combinations. A mechanism exists for each one; the table names one or more for each, and says whether the indicators tell it apart.",
+     "texts": "a3ba3a6c654351c5",
+     "node E-OB-ML-SILLED": "669d480f1b144a35",
+     "pinned ML2009-HYPOXIA": "339e0fcf4c0baff0",
+     "node E-OB-ML-PENETRATION": "bbb8d7338a3b9851",
+     "node E-OB-ML-SULPHTOX": "8d79ef0bf2b46479",
+     "rests on C-OB-OX-R7": "c891dc8945d626df"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-INDICATORS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "The indicators respond to low oxygen and high chlorophyll and cannot tell a nutrient kill from another kill; the fauna indicator's survey runs in spring.",
+   "because": "The national programme sets the soft-bottom survey season; neither an oxygen nor a chlorophyll reading records what killed the fauna.",
+   "rests_on": [
+    "E-OB-NOVANA-FAUNA",
+    "E-OB-DCE-DIPCHL"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-ONLYFAUNA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Reading down the last column: the indicator set responds to low oxygen and to high chlorophyll. It cannot tell a water killed by nutrients from a water killed by something else. The fauna indicator's soft-bottom survey, which the national programme runs between the first of March and the end of May, comes after the winter, before the summer, and months after an autumn kill.",
+     "texts": "b80dbb994b5ff558",
+     "node E-OB-NOVANA-FAUNA": "8120d02cbb4dc51c",
+     "pinned NOVANA-2327": "f57c67b33cee6c19",
+     "node E-OB-DCE-DIPCHL": "59939119f502a4f0",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-HAZARD",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "The water-plan hazardous-substance layer's points are all in lakes and rivers; no marine water body has one.",
+   "because": "areas.py counts the layer's points by water type; oxygen.py counts marine water bodies with and without a point, and their area.",
+   "rests_on": [
+    "D-OB-HZLAYER",
+    "X-OB-AREAS",
+    "X-OB-OXYGEN"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-SEDIMENT",
+    "C-OB-OLD-OX-CORRECTION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "And the toxicant column is not monitored in the sea in this layer. The water-plan register's hazardous-substance layer holds 256 points: 152 in lakes, 104 in rivers and 0 in coastal or marine water. Of Denmark's 123 marine water bodies, 123 have none, covering 43,579 km² - 100% of the sea. Across those freshwater points the matrices measured are biota 253, water 174 and sediment 5.",
+     "texts": "e151941e1fa4cd82",
+     "node D-OB-HZLAYER": "01cb3d44e450c96b",
+     "node X-OB-AREAS": "0066c296ca875263",
+     "node X-OB-OXYGEN": "57487c15057fd892"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-DOME",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "ICES DOME holds Danish marine sediment contaminant data; this project's notes record organotin measurements for a run of years and then almost none, from an analysis not stored as a script.",
+   "because": "The typed note in data_sources.json records the reading; no script reproduces it.",
+   "rests_on": [
+    "D-OB-DOMENOTE",
+    "U-OB-DOME-SCRIPT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-CORRECTION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "The international ICES DOME archive holds Danish marine sediment contaminant data. This project's notes on its Danish sediment file record organotins, TBT among them, measured for a run of years and then almost not at all; the analysis behind those notes is not stored as a script.",
+     "texts": "32e5f5386d7cd56e",
+     "node D-OB-DOMENOTE": "bc96a9832173d91e",
+     "node U-OB-DOME-SCRIPT": "d07d1c62d5ecaa79"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-POISON-UNTESTED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "A poisoned rather than suffocated seabed is not tested by the programme that sets the requirement.",
+   "because": "No toxicant is among the candidate variables, and the hazardous-substance layer has no marine point.",
+   "rests_on": [
+    "E-OB-DCE-TABEL2",
+    "C-OB-OX-HAZARD"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "So a hypothesis in which the seabed was poisoned rather than suffocated is not tested by the programme that sets the requirement: no toxicant is among its candidate variables, and its hazardous-substance layer has no marine point.",
+     "texts": "dfe89a9def2477d4",
+     "node E-OB-DCE-TABEL2": "7f4fdb016e39c0da",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "rests on C-OB-OX-HAZARD": "e151941e1fa4cd82"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-LOWLIFE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Hypoxic and anoxic conditions are the norm a short way into marine sediment; bacterial mats form specific hypoxic ecosystems; foraminifera, nematodes and soft-bodied worms are favoured under severe oxygen shortage.",
+   "because": "Each piece is stated in the pinned review of coastal hypoxia and sediment biogeochemistry.",
+   "rests_on": [
+    "E-OB-ML-PENETRATION",
+    "E-OB-ML-NORM",
+    "E-OB-ML-MATS",
+    "E-OB-ML-MATECO",
+    "E-OB-ML-FAVOURED"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-SOLID",
+    "C-OB-OLD-OX-DENSEST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "This is the combination that sounds contrived, and it is well documented. In marine sediment oxygen reaches from under a millimetre in active mud to a few centimetres in permeable sand, and below that hypoxic and anoxic conditions are the norm. Where hypoxic water carries nitrate, sulphur-oxidising bacteria — *Beggiatoa*, *Thioploca* — often form thick mats that blanket the sediment: specific hypoxic ecosystems with their own specialised fauna. Under severe oxygen shortage, foraminifera, nematodes and soft-bodied worms are typically favoured.",
+     "texts": "3f62c75c9e8fecc0",
+     "node E-OB-ML-PENETRATION": "bbb8d7338a3b9851",
+     "pinned ML2009-HYPOXIA": "339e0fcf4c0baff0",
+     "node E-OB-ML-NORM": "f29e1d9b7376e849",
+     "node E-OB-ML-MATS": "bef4f64cf12700d4",
+     "node E-OB-ML-MATECO": "4eac0df95d4f41fb",
+     "node E-OB-ML-FAVOURED": "ad8f2bc0241cfd62"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-NOTFAUNA",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Near-zero oxygen is consistent with an active specialised community but not with large, long-lived animals.",
+   "because": "The pinned review: the contribution of animals falls as oxygen drops, and sulphide is toxic to them, while specialised hypoxic communities persist.",
+   "rests_on": [
+    "C-OB-OX-LOWLIFE",
+    "E-OB-ML-METAZOAN",
+    "E-OB-ML-SULPHTOX"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-ENORMOUS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "So an oxygen reading near zero is consistent with an active, specialised community. What it is not consistent with is the particular assemblage of large, slow, long-lived animals that people mean by a living seabed: the contribution of animals falls as oxygen drops, and sulphide is toxic to them. Those two statements are different, and the indicator makes only the first one.",
+     "texts": "76d0f9bef647839c",
+     "rests on C-OB-OX-LOWLIFE": "3f62c75c9e8fecc0",
+     "node E-OB-ML-METAZOAN": "99e9305255e4415f",
+     "pinned ML2009-HYPOXIA": "339e0fcf4c0baff0",
+     "node E-OB-ML-SULPHTOX": "8d79ef0bf2b46479"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-CHL",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "OXYGEN.md",
+   "claim": "Chlorophyll is a biomass measure that scores readings whatever their cause; DCE's indicator averages May to September following the EU-intercalibrated indicator, and with spring outside it nitrogen is the variable most often selected.",
+   "because": "Their text: the window follows the intercalibrated indicator; phosphorus mostly governs spring chlorophyll, and because spring is not in the indicator nitrogen is selected most often.",
+   "rests_on": [
+    "E-OB-DCE-CHLWINDOW",
+    "E-OB-DCE-SPRINGP",
+    "E-OB-DCE-NSELECT"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
+   "replaces": [
+    "C-OB-OLD-OX-WINDOW"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "The inverse holds as well. **Chlorophyll is a biomass measure.** A low chlorophyll reading scores as good status whether the water is healthy or too poor, too dark or too poisoned to produce anything, and a high reading scores as bad whether it comes from a nutrient-choked soup or a productive season in a healthy sea. DCE's indicator averages May to September, following the EU-intercalibrated chlorophyll indicator. By their account phosphorus mostly governs chlorophyll in spring, but because spring is outside that indicator, *\"er det kvælstoftilførslen, der oftest udvælges som forklaringsvariabel\"*.",
+     "texts": "7fbeeb4215d7f8a6",
+     "node E-OB-DCE-CHLWINDOW": "96a362189ca17cb8",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "node E-OB-DCE-SPRINGP": "9f0f342493686c09",
+     "node E-OB-DCE-NSELECT": "ae6297450d934260"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-QUANTITY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "Chlorophyll and oxygen are quantities standing in for composition, and a system can lose its large animals while rising in biomass.",
+   "because": "Biomass and dissolved gas measure how much, not which organisms; the pinned review shows animals falling away while specialised communities persist.",
+   "rests_on": [
+    "C-OB-OX-NOTFAUNA"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-SOUP"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "Neither chlorophyll nor oxygen is a measure of ecological state. Both are measures of *quantity* — how much biomass, how much dissolved gas — standing in for a claim about *composition*: which organisms are there. A system can lose every large animal it had and still rise in both biomass and productivity.",
+     "texts": "8d38524a518c1e02",
+     "rests on C-OB-OX-NOTFAUNA": "76d0f9bef647839c"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-NMATTERS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "None of this shows nitrogen does not matter; where a system is nitrogen-limited and poorly flushed, reducing nitrogen reduces oxygen demand.",
+   "because": "The nitrogen route is the most oxygen-expensive line, and where its steps complete, less nitrogen means less demand.",
+   "rests_on": [
+    "C-OB-OX-CEILING"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "None of this shows that nitrogen does not matter. The full remineralisation route is the most oxygen-expensive line in the table, and where a system is nitrogen-limited and poorly flushed, reducing nitrogen will reduce oxygen demand. That much is sound.",
+     "texts": "f4ab905d02b70c73",
+     "rests on C-OB-OX-CEILING": "32c0af2a8a804ca1"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OX-FOLLOWS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "OXYGEN.md",
+   "claim": "The requirement is set in nitrogen while oxygen has many debtors, and the indicators single out one of eight combinations and partly a second; an oxygen-demand budget, fauna surveys timed to catch a kill, and sediment toxicant measurement would close the gaps.",
+   "because": "The routes, the accounting, the indicator table and the missing marine toxicant points above.",
+   "rests_on": [
+    "C-OB-OX-EIGHT",
+    "C-OB-OX-ACCOUNTING",
+    "C-OB-OX-INDICATORS",
+    "C-OB-OX-POISON-UNTESTED"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-OB-OLD-OX-ONECOLUMN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ob (re-read after writing BI5 as code, an identifier the chemistry check read as a formula; wording otherwise unchanged; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on OXYGEN.md": "What it shows is that the requirement is set in one currency, nitrogen, while the oxygen it protects has many debtors, and of the eight combinations the indicators single out one and partly a second. The fix is not a different target — it is an oxygen-demand budget alongside the nutrient budget, fauna surveys timed to catch a kill as well as the spring, and sediment toxicant measurement in the programme that actually sets the requirement.",
+     "texts": "d7672b3f65f404ba",
+     "rests on C-OB-OX-EIGHT": "a3ba3a6c654351c5",
+     "rests on C-OB-OX-ACCOUNTING": "b5fa01bd0e5f2e3e",
+     "rests on C-OB-OX-INDICATORS": "b80dbb994b5ff558",
+     "rests on C-OB-OX-POISON-UNTESTED": "dfe89a9def2477d4"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-TAGGED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every bathing station in the national layer is tagged with the water body it sits in.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Sources: DCE/Aarhus Universitet's method report",
+    "end": "each tagged with the water body it sits in.",
+    "why": "Not every station carries a marine water-body id: some carry none, and some an id that is not a marine water body. The page now gives how many are tagged."
+   },
+   "replaced_by": [
+    "C-OB-SOURCES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Sources: DCE/Aarhus Universitet's method report for the marine indsatsbehov (2015), and the national VP3 layers - 123 marine water bodies and 1,026 bathing stations carrying annual quality 1991-2018, each tagged with the water body it sits in.",
+     "texts": "325be97aa7e0c210"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-FJORD-TRANSFER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Køge Bugt's requirement uses coefficients transferred from fjords, the setting least like an open bay.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Whatever coefficient is applied to it is transferred from fjords",
+    "end": "least like an open bay's.",
+    "why": "DHI's table of computed requirements lists Køge Bugt under the mechanistic model, so its requirement is not transferred from a fjord; and the comparison of fjords with open bays had no source."
+   },
+   "replaced_by": [
+    "C-OB-KOEGE-MODEL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Whatever coefficient is applied to it is transferred from fjords, and a fjord is the one marine setting whose flushing, stratification and residence time are least like an open bay's.",
+     "texts": "330681bba9445f06"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-72-BV",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Water-column stability is selected in a stated number of a hand-counted total of models.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Stratification appears only as",
+    "end": "models.",
+    "why": "Its justification was not recorded properly: the total of models was counted by hand, and the pinned table, parsed by observing.py, holds more. The count for water-column stability now comes from that parse."
+   },
+   "replaced_by": [
+    "C-OB-TABEL2"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Stratification appears only as `vandsøjlestabilitet`, selected in 13 of the 72 models.",
+     "texts": "a0c0ec10c3ecf03d"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-LIST-GAPS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "None of the routes that remove or fail to resupply oxygen is a candidate variable, so their share goes into the coefficients of those that are.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "That list is worth reading for what is not on it.",
+    "end": "on the variables that are there.",
+    "why": "Warming and stratification are on the list, as surface temperature and water-column stability; and what belongs to a missing driver goes into correlated coefficients or stays unexplained, not necessarily into the coefficients."
+   },
+   "replaced_by": [
+    "C-OB-NOT-ON-LIST"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That list is worth reading for what is not on it. An oxygen deficit is a balance — what removes oxygen against what resupplies it — and the routes on both sides are many. Imported organic matter exerts its demand directly, with no nitrogen and no growth step in between. Ammonium exerts a demand chemically, by being oxidised. Sulphide released from disturbed sediment consumes oxygen the moment it meets it. A kill event of any cause leaves a decaying mass and a bacterial bloom on it. Warmer water holds less; a column that does not turn over does not refill. None of those is a candidate variable, so whatever share belongs to them has nowhere to go but into the coefficients on the variables that are there.",
+     "texts": "8a472f39a61d5099"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-TRIGGER-TAIL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The aggregation removes whatever happened in the years the shore got worse.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Eleven months of every year are discarded",
+    "end": "the shore actually got worse.",
+    "why": "No years in which the shore got worse are identified anywhere here; the rest of the sentence stands in the replacement."
+   },
+   "replaced_by": [
+    "C-OB-OXYGEN-TRIGGER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Eleven months of every year are discarded before the number is formed, and the six-year collapse removes what is left of the temporal signal — including any trend, and including whatever happened in the years the shore actually got worse.",
+     "texts": "eaaaf15e333e5e0b"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-MISSES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE state that the oxygen sampling misses the events.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "DCE state plainly that the sampling misses the events",
+    "end": "misses the events",
+    "why": "DCE write that the measuring frequency does not necessarily catch short deficits - not that it misses them."
+   },
+   "replaced_by": [
+    "C-OB-SAMPLING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "DCE state plainly that the sampling misses the events",
+     "texts": "3a486c0fdcc57450"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-DHI-UNREAD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "This project has not read the mechanistic modelling layer in the original.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "A second, mechanistic modelling layer exists",
+    "end": "does or does not contain.",
+    "why": "Both DHI reports are pinned among this project's sources, and the page now reads DHI's requirement table for Køge Bugt."
+   },
+   "replaced_by": [
+    "C-OB-SCOPE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A second, mechanistic modelling layer exists (DHI, Erichsen & Kaas 2015) which this project has not yet read in the original. Nothing here should be taken as a claim about what that layer does or does not contain.",
+     "texts": "a349eea8b2ba8921"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-WINDOW-HEAD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The fitting window closes where the problem starts.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "The window closes where the problem starts",
+    "end": "where the problem starts",
+    "why": "Nothing shown here places the start of the problem after the fitting window."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The window closes where the problem starts",
+     "texts": "6c68a6324cc7cb28"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-EVERYDRIVER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every candidate driver declined monotonically over the fitting window.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Over that window essentially every candidate driver declined monotonically",
+    "end": "it awards the shared variance to whichever is entered.",
+    "why": "Nothing here shows the climate candidates declining, and a steady decline is not established even for the nutrient inputs; what DCE's own accounting shows is that nitrogen and phosphorus inputs fell."
+   },
+   "replaced_by": [
+    "C-OB-DECLINE",
+    "C-OB-COLLINEAR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Over that window essentially every candidate driver declined monotonically - nitrogen load, phosphorus load, point-source discharge, atmospheric deposition. A regression on co-declining series cannot separate them; it awards the shared variance to whichever is entered.",
+     "texts": "5f7b9d233ca22ab6"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-SIGNATURE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE report the TN models' drift without drawing the inference, and the drift is the signature of a missing covariate.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "DCE report the symptom without drawing the inference",
+    "end": "an unmodelled state variable with memory.",
+    "why": "DCE do draw an inference - they attribute the difference to the time lag of nitrogen accumulating in the sediments; the quotation's wording did not match the report; and a compressed range is one thing a missing trending variable would produce, not a signature only it leaves."
+   },
+   "replaced_by": [
+    "C-OB-DCE-TNDRIFT",
+    "C-OB-MISSING-COVARIATE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "DCE report the symptom without drawing the inference: > *\"TN-modellerne har generelt en tendens til systematiske afvigelser over tid, idet de høje TN-koncentrationer observeret i starten af 1990'erne underestimeres, mens de lave TN-koncentrationer i sidste del af perioden overestimeres.\"* A predicted range compressed against a monotone observed trend is the signature of a missing monotone covariate. Their own explanation names one and leaves it out of the model: *\"tidsforsinkelsen pga. ophobning af organisk bundet kvælstof i sedimenterne\"* - an unmodelled state variable with memory.",
+     "texts": "a02309a0e6d5e983"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-AFTER2012",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Named programmes, construction projects and trawling effort changed regime after the fitting window.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "And several things that plausibly matter",
+    "end": "because the data end.",
+    "why": "Nothing held here dates those changes, so the examples could not be justified; the general point stands in the replacement."
+   },
+   "replaced_by": [
+    "C-OB-AFTER2012"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "And several things that plausibly matter *change regime after 2012* and are therefore outside the fit entirely: the national basin-and-separation programme that followed the 2011 cloudburst, the construction wave (Nordhavn, Ørestad, Sluseholmen, Lynetteholm), and trawling effort. None of them can be estimated from a series that stops in 2012 - not because their effect is absent, but because the data end.",
+     "texts": "2dfca14961ed9290"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-R2DEF",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE's R² is the squared normalised cross-covariance of fitted and observed, and no out-of-sample validation is reported.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "is the squared normalised cross-covariance between fitted and observed",
+    "end": "No out-of-sample validation is reported.",
+    "why": "DCE define R² as one minus the model's squared errors over the observations' variance, and the report describes evaluation on held-out data."
+   },
+   "replaced_by": [
+    "C-OB-R2DEF",
+    "C-OB-R2-NOTCORR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "is the squared normalised cross-covariance between fitted and observed. No out-of-sample validation is reported.",
+     "texts": "b75930bf51d12489"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-72-MEDIAN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "DCE's table holds a hand-counted number of models with a hand-parsed median R².",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "DCE report a mean",
+    "end": "That is not",
+    "why": "Its justification was not recorded properly: the count and the median were taken by hand, and the pinned table, parsed by observing.py, holds a different number of models."
+   },
+   "replaced_by": [
+    "C-OB-DCE-MEAN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "DCE report a mean R² of 0.56 across all 72 models; the median of the table as parsed here is 0.57. > That is not",
+     "texts": "11104d222e32d250"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-CAVEATS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The simulation's candidate set and drift match DCE's design and Danish nitrogen load.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Two caveats, stated because they matter.",
+    "end": "and still puts the median at",
+    "why": "DCE offer each candidate over many period windows, which the simulation does not do, and nothing here ties the size of the drift to Danish nitrogen load."
+   },
+   "replaced_by": [
+    "C-OB-DCE-DESIGN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Two caveats, stated because they matter. The simulation assumes all 8 candidates were offered to every model; if variables were pre-screened on mechanistic grounds the inflation is smaller — though *\"største forklaringskraft\"* describes a search, not a screen. And the shared-decline case assumes a 2-SD monotone drift across the window, which is the right order for Danish nitrogen load but is a choice; the autocorrelation-only row is the conservative version and still puts the median at",
+     "texts": "3abbc80bfc356991"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-ONLYRECORD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Bathing water is Denmark's only long, dense, spatially replicated marine record, every station tagged with its water body.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Bathing water is the only long, dense",
+    "end": "the water body it sits in.",
+    "why": "The national monitoring archive this project holds - water chemistry and CTD - is longer and larger, and not every bathing station carries a marine water-body id."
+   },
+   "replaced_by": [
+    "C-OB-BATHING",
+    "C-OB-ARCHIVE-LARGER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Bathing water is the only long, dense, spatially replicated marine record Denmark has: 1,026 stations, one quality class per year from 1991 to 2018, each carrying the id of the water body it sits in.",
+     "texts": "a413ddd7cc226301"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-NOISE-EQUAL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Grading noise falls equally on all three shares, so the first two do not depend on it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "The last row is large partly because",
+    "end": "do not depend on the noise level at all.",
+    "why": "Grading noise enters the year-to-year share in full and the other two only through averages, so it does not fall equally, and the first two are affected little rather than not at all."
+   },
+   "replaced_by": [
+    "C-OB-NOISE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The last row is large partly because a four-class ordinal is a noisy instrument, and that noise falls on all three shares equally. The load-bearing comparison is the first two rows against each other, and they do not depend on the noise level at all.",
+     "texts": "ac4741d83cd3cfd3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-TENTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The water body does not cohere to a tenth of the standard its own model is held to.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "The threshold a model must clear",
+    "end": "its own model is held to.",
+    "why": "A station pair's shared variance and a model's fit at one station are different measures; setting one against the other implied a standard the stations are not held to."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The threshold a model must clear to be accepted as a description of that same water body is R² ≥ 0.4 — which accounts for 40% of the wobble; shrinks prediction error by 23% against just guessing the average. The water body does not cohere to a tenth of the standard its own model is held to.",
+     "texts": "d42c3cc8b26546e1"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-NOTSIZE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The low coherence is not an artefact of water-body size.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "It is not an artefact of size",
+    "end": "some of the smallest",
+    "why": "A handful of examples cannot rule size out; what the table shows is that the two smallest water bodies tested are among the least coherent."
+   },
+   "replaced_by": [
+    "C-OB-SMALLEST"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It is not an artefact of size. The least internally coherent bodies include some of the smallest",
+     "texts": "d8ef8305f9e50b85"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-NONEPAST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Beyond a set distance the water-body boundary carries no information about whether two stations behave alike.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "The boundary carries a little information",
+    "end": "whether they behave alike.",
+    "why": "Past that distance the same-body and cross-body correlations still differ a little; none and nothing overstated it."
+   },
+   "replaced_by": [
+    "C-OB-DISTANCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The boundary carries a little information at 2–10 km and none past 10 km. Beyond ten kilometres, knowing that two points are in the same water body tells you nothing about whether they behave alike.",
+     "texts": "c7aaad10b0fbaf38"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-ADJACENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Adjacent water-body pairs were tested for agreement across their boundary.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "adjacent water-body pairs with enough stations to test",
+    "end": "the boundary carries negative information.",
+    "why": "The pairs tested are water bodies with stations within a set distance of each other across the boundary, not bodies that share a boundary."
+   },
+   "replaced_by": [
+    "C-OB-BOUNDARIES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "adjacent water-body pairs with enough stations to test, 7 (35%) have stations that agree *across* the boundary more than either body's own stations agree among themselves. For those pairs the boundary carries negative information.",
+     "texts": "0b6a38193d038d4a"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-TWOHALVES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Vejle Fjord and Flensborg Fjord carry statistical models and separate requirements for each half.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Two of those are a single fjord",
+    "end": "separate requirements for each half.",
+    "why": "DCE have one model station in each fjord, not in each half, and a separate requirement for each half is not shown here."
+   },
+   "replaced_by": [
+    "C-OB-FJORDS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Two of those are a single fjord cut into *indre* and *ydre*, where the cut is worse than no cut - and both Vejle Fjord and Flensborg Fjord carry statistical models and separate requirements for each half.",
+     "texts": "a909006133478880"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-KOEGE-TWO",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Køge Bugt is at least two things, as the data show.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Køge Bugt is at least two things",
+    "end": "The data say they are two.",
+    "why": "The cut is the best of every one tried, so its contrast is inflated by the search itself, and nothing here compares it with a cut through a water that behaves as one; each side's coherence was a pooled figure; and the Amager outfall shore named an outfall nothing here locates."
+   },
+   "replaced_by": [
+    "C-OB-KOEGE-CUT",
+    "C-OB-KOEGE-CAVEAT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Køge Bugt is at least two things Køge Bugt is one water body with 24 informative bathing stations - enough to ask whether it is one thing. Searching every north/south cut for the one that best separates it: > The cut falls at 55.581°N, at *Greve Badehotel*. North of it (5 stations) and south of it (19 stations) each cohere at r = +0.267; across the cut, r = +0.107 - less than half. The northern group is KBS, ud for Hyldetangen; Vallensbæk strand, ved Skrubben; Ishøj strand, Ud for Jæger sø; Strandparken, Hundigevej; Amager Sydstrand — the Køge Bugt Strandpark lagoon chain and the Amager outfall shore. The administrative polygon treats them and the open southern coast as one water with one status. The data say they are two.",
+     "texts": "0148824a84cd45ba"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-BUILTTOSEE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Denmark's densest, longest marine observation is of faecal contamination, and the nutrient chain has a model where the sewage pathway has an observing system.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "What the observing system is actually built to see",
+    "end": "the other has a model.",
+    "why": "The national water-chemistry and CTD records this project holds are longer and larger than the bathing record; the multiples rested on hand counts; and nutrients are measured, not only modelled."
+   },
+   "replaced_by": [
+    "C-OB-TWO-RECORDS",
+    "C-OB-ARCHIVE-LARGER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "What the observing system is actually built to see Set the two records side by side. Denmark's densest, longest, most replicated marine observation is of faecal contamination — is it safe to swim. The chain policy acts on — nitrogen to algae to oxygen to a dead seabed — is observed far more thinly, and the oxygen end of it most thinly of all. | | stations | water bodies | years | data points entering the analysis | |---|---:|---:|---|---:| | Bathing water (faecal indicator) | 728 | 70 | 1991–2018 | 19,714 station-years | | Nutrient/chlorophyll/Kd models | 29 | 22 | 1990–2012 | ~1,440 seasonal means (72 models × ≥15 points) | | Oxygen indicator | — | per water body | rolling 6-year | 1 value per water body per 6 years | Roughly fourteen times as many observations stand behind the faecal record as behind every nutrient model in the country combined, they are spread over three times as many water bodies, and they run thirteen years further forward — through exactly the period the fitted window excludes. That is not a small technical asymmetry. It means the sewage pathway is the one Denmark can actually measure, and the nutrient pathway is the one Denmark acts on. The two hypotheses about what wrecks a Danish shore are not being weighed against each other on comparable evidence — one has an observing system and the other has a model.",
+     "texts": "dc5f4b718643d00b"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-COMPETING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The bathing record gives a competing hypothesis far more observational support than anything said about nitrogen.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "But that limit cuts both directions",
+    "end": "keeps showing it after",
+    "why": "The multiple rested on a hand count, and anything said about nitrogen passed over the nutrient measurements themselves."
+   },
+   "replaced_by": [
+    "C-OB-SEWAGE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "But that limit cuts both directions, and the second direction is the one usually left out. The bathing record is not a *weak proxy* for the nutrient question — it is a *strong direct measurement of a competing one*. Whatever it shows about sewage reaching Danish shores, it shows with fourteen times the observational support of anything said about nitrogen, and it keeps showing it after",
+     "texts": "15d64285a336fde5"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-UNTESTABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Whether a water body is coherent for chlorophyll cannot be tested at all.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "Whether the water body is a coherent unit",
+    "end": "demonstrated nowhere.",
+    "why": "It is untested here, not untestable: DCE modelled only where long series exist, and demonstrated nowhere was not searched for."
+   },
+   "replaced_by": [
+    "C-OB-CHL-UNTESTED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Whether the water body is a coherent unit for chlorophyll cannot be tested at all: 29 stations across 22 water bodies is a median of one each, and one station cannot disagree with itself. The homogeneity is asserted by the delineation and demonstrated nowhere.",
+     "texts": "af5204a3b50baa01"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-SMALLERASK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A second monitoring station per water body is a smaller ask than a nitrogen reduction.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OBSERVING.md",
+    "commit": "4469fc7",
+    "file": "docs/OBSERVING.md",
+    "begin": "The constructive version is not",
+    "end": "smaller ask than a nitrogen reduction.",
+    "why": "No comparison of cost stands behind it."
+   },
+   "replaced_by": [
+    "C-OB-PROPOSAL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The constructive version is not \"scrap the water bodies\". It is that the partition is an empirical question with an empirical answer, and the data to answer it would be one more monitoring station in each of the bodies that currently have one. That is a smaller ask than a nitrogen reduction.",
+     "texts": "f691390b0925e95e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-CHAIN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "In use each arrow of the nitrogen chain is read as an implication in both directions, so measuring one link counts as measuring all.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "The requirement is built on a chain",
+    "end": "measuring all of them.",
+    "why": "It attributed a reading to no one in particular, and nothing here documents it; what DCE state is narrower: they use DIP and chlorophyll as indicators of oxygen deficit."
+   },
+   "replaced_by": [
+    "C-OB-OX-CHAIN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The requirement is built on a chain: nitrogen makes algae, algae make oxygen depletion, oxygen depletion kills the seabed, and a dead seabed puts fedtemøg on a shore. In use, each arrow gets read as an implication in both directions, so that measuring one link counts as measuring all of them.",
+     "texts": "9099c198c0ede51b"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-NOMODEL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nothing on the page depends on anyone's model.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Every joint in that chain comes apart.",
+    "end": "national monitoring layers.",
+    "why": "The Redfield-Ketchum-Richards stoichiometry behind the largest coefficient is an average composition of plankton - a model."
+   },
+   "replaced_by": [
+    "C-OB-OX-BASIS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Every joint in that chain comes apart. This page takes them one at a time, and nothing on it depends on anyone's model — the coefficients are arithmetic on balanced equations, and the coverage counts come from the national monitoring layers.",
+     "texts": "8af9ced394be63b0"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-COD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Organic matter that arrives already made carries no nitrogen, and COD is the oxygen it will consume.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Sewage organics, fat, riverine particulate carbon",
+    "end": "no nitrogen anywhere in it.",
+    "why": "Sewage organics carry nitrogen; the sentence denied it."
+   },
+   "replaced_by": [
+    "C-OB-OX-R2"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Sewage organics, fat, riverine particulate carbon, anything washed off a surface. COD *is* the oxygen it will consume — the measurement and the effect are the same quantity. No growth step, no nitrogen anywhere in it.",
+     "texts": "9d2c4373447ec0f5"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-NITRIF",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nitrification is a purely chemical demand that happens whether or not anything grows.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Purely chemical demand",
+    "end": "whether or not anything grows.",
+    "why": "Nitrification is carried out by bacteria and archaea, so the demand is microbial, not purely chemical; what holds is that it needs no algal growth step."
+   },
+   "replaced_by": [
+    "C-OB-OX-R3"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Purely chemical demand: ammonium is oxidised and the oxygen is gone. This is nitrogen acting as a *reductant*, not as a fertiliser, and it happens whether or not anything grows.",
+     "texts": "590d5742c23de3bd"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-SULPHIDE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Sulphide brought into oxygenated water is consumed immediately.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Anoxic sediment holds sulphide.",
+    "end": "it is consumed immediately.",
+    "why": "Immediately has no source; the pinned review describes reduced products rising and being re-oxidised, most coastal sediment oxygen consumption going to re-oxidation, and a storm bringing sulphidic water up."
+   },
+   "replaced_by": [
+    "C-OB-OX-R4"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Anoxic sediment holds sulphide. Trawling, dredging, dumping, a storm or a propeller brings it into contact with oxygenated water and it is consumed immediately.",
+     "texts": "4050509f5283b07e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-METHANE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Methane is consumed by oxygen on its way up from the sediment.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Produced in anoxic sediment and consumed on its way up",
+    "end": "consumed on its way up",
+    "why": "Methane can be oxidised on its way up without oxygen, by sulphate or nitrate, so the oxygen coefficient applies only to what reaches oxygenated water."
+   },
+   "replaced_by": [
+    "C-OB-OX-R6"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Produced in anoxic sediment and consumed on its way up",
+     "texts": "7c37d21d384c9eda"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-WARMCOEF",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Warming lowers oxygen solubility by a stated percentage per degree.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Warming reduces how much the water can hold | ≈",
+    "end": "| temp |",
+    "why": "The coefficient was typed with no source or calculation behind it."
+   },
+   "replaced_by": [
+    "C-OB-OX-S1"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Warming reduces how much the water can hold | ≈ −2.3% per °C at 10–20 °C | temp |",
+     "texts": "f0d3e63c894c4d25"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-BV72",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Water-column stability is selected in a stated number of a hand-counted total of models.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Present as a candidate variable",
+    "end": "models.",
+    "why": "Its justification was not recorded properly: the total was a hand count, and the pinned table, parsed by observing.py, holds more models."
+   },
+   "replaced_by": [
+    "C-OB-OX-S2"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Present as a candidate variable (`vandsøjlestabilitet`) and selected in 13 of 72 models.",
+     "texts": "a0c0ec10c3ecf03d"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-WIND72",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Wind stress appears in a hand-counted share of models, more often than several nutrient terms.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Wind stress is a candidate variable.",
+    "end": "several nutrient terms.",
+    "why": "The total was a hand count; and there are only two nutrient terms, of which wind is selected more often than one."
+   },
+   "replaced_by": [
+    "C-OB-OX-S4"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Wind stress is a candidate variable. It appears in 24 of the 72 models, more often than several nutrient terms.",
+     "texts": "813964b39a11386e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-NOBODY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nobody publishes the oxygen exchange rates of the substances that consume it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "The exchange rates nobody publishes",
+    "end": "rates nobody publishes",
+    "why": "Oxygen demands per gram follow from standard stoichiometry; what is missing is their use in the requirement, not their publication."
+   },
+   "replaced_by": [
+    "C-OB-OX-PRICES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The exchange rates nobody publishes",
+     "texts": "215d80b59199ae7f"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-PROTEIN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Protein consumes a stated amount of oxygen per kilogram.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "| Protein |",
+    "end": "| Carbohydrate |",
+    "why": "The value was stated in the code with no source or calculation; it is dropped."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| Protein | 1.50 kg `O₂` | 13.1 | | Carbohydrate |",
+     "texts": "9c0f7ada64b8650b"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-ACCOUNTING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "No Danish accounting has an oxygen-demand column, so substances that consume oxygen without nitrogen are absent from it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Neither figure appears in any Danish accounting",
+    "end": "absent from it",
+    "why": "DCE's own note on inputs to Danish marine waters reports organic matter as `BI5`, a biological oxygen demand, beside nitrogen and phosphorus."
+   },
+   "replaced_by": [
+    "C-OB-OX-ACCOUNTING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Neither figure appears in any Danish accounting. The load statement is in tonnes of nitrogen and tonnes of phosphorus. There is no oxygen-demand column, so the substances that consume oxygen without containing nitrogen are not smaller in the account — they are absent from it",
+     "texts": "ace0b31dff48bc9b"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-CELLS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Seasonal hypoxia is common in fjords; the Limfjord broads flush far slower than Køge Bugt; the load term does not know which water it is in; the Black Sea is anoxic below a stated depth.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Common in fjords with an annual cycle.",
+    "end": "marine sediment surface.",
+    "why": "None of these had a source here: no survey of fjords, no flushing time for the Limfjord, no depth for the Black Sea; and a load term fitted at one station does carry that station's flushing - the problem is transferring it."
+   },
+   "replaced_by": [
+    "C-OB-OX-EIGHT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Common in fjords with an annual cycle. | no — an oxygen trigger fires either way | | ● | ○ | ● | Nitrogen present, water well oxygenated, fauna gone anyway: toxicants, antifoulants, pharmaceutical residues, ammonia toxicity, or physical destruction by trawling and dredging. Oxygen is not the only way to kill. | no | | ● | ○ | ○ | A loaded but well-flushed system. Køge Bugt's flushing time is 73 days; the Limfjord broads are far longer. The same load in the two places is not the same pressure, and the load term does not know which it is in. | no | | ○ | ● | ● | Oxygen consumed by material that arrived already made — the toilet-flush case — or by sulphide from disturbed sediment, or by decay after a kill of another cause. No nitrogen needed at any step. | no | | ○ | ● | ○ | A naturally anoxic or hypoxic basin with its own community. Deep sills, the Black Sea below 150 m, the millimetre beneath any marine sediment surface.",
+     "texts": "1d252262a4df3b39"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-ONLYFAUNA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The only fauna instrument is a spring soft-bottom survey.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "It cannot see the difference between a water killed by nutrients",
+    "end": "months after an autumn kill.",
+    "why": "The spring survey is the fauna indicator's measurement, and its season is confirmed by the national programme, but it is not the only fauna monitoring the programme runs."
+   },
+   "replaced_by": [
+    "C-OB-OX-INDICATORS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It cannot see the difference between a water killed by nutrients and a water killed by something else, because the *only* fauna instrument is a soft-bottom survey run 1 March–31 May — after the winter, before the summer, and months after an autumn kill.",
+     "texts": "23162f36837257c6"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-SEDIMENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Sediment, where toxicants accumulate and benthic animals live, is flagged at few of the layer's points.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Sediment is where persistent toxicants accumulate",
+    "end": "biota carries almost all of the rest.",
+    "why": "The layer's points are all in lakes and rivers; set beside the seabed, the count read as marine sediment, which it is not."
+   },
+   "replaced_by": [
+    "C-OB-OX-HAZARD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Sediment is where persistent toxicants accumulate, and where a benthic animal actually lives. In the water-plan layer it is flagged at five of those 256 points; biota carries almost all of the rest.",
+     "texts": "90abef05c591b73e"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-CORRECTION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "An earlier version generalised one layer's sediment count to Denmark, and ICES DOME holds a longer record this project has not verified.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "A correction, and a narrowing.",
+    "end": "rather than about what exists somewhere.",
+    "why": "The page narrated its own history; the ICES DOME Danish sediment file has since been read in this project's notes; and the layer counted is freshwater."
+   },
+   "replaced_by": [
+    "C-OB-OX-HAZARD",
+    "C-OB-OX-DOME"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A correction, and a narrowing. An earlier version of this page said sediment is measured at four points *in Denmark*. That generalised one layer — the VP3 hazardous-substance stations — to the whole country, and it was wrong on both counts. The count in that layer is five, and a separate international archive (ICES DOME) holds a longer Danish marine sediment record that this project has not yet verified for itself. The defensible claim is narrower: the national water-plan monitoring that feeds the assessment looks at biota and water and almost never at the bed, which is a statement about what the assessment can see rather than about what exists somewhere.",
+     "texts": "5b852bfb5bfe2ce7"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-SOLID",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Low oxygen with life present is the most solidly established of the eight combinations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "This is the combination that sounds contrived",
+    "end": "the most solidly established one in the table.",
+    "why": "No ranking of the eight combinations by evidence exists here."
+   },
+   "replaced_by": [
+    "C-OB-OX-LOWLIFE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This is the combination that sounds contrived, and it is the most solidly established one in the table.",
+     "texts": "a5f5b1e6491bd702"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-DENSEST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The anoxic sediment layer is among the densest microbial habitats on the planet, with white bacterial mats, a permanently anoxic Black Sea below a stated depth, and nematodes increasing because their predators left.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "Marine sediment goes anoxic within millimetres",
+    "end": "are the things that left.",
+    "why": "Several pieces had no source: densest on the planet, the colour of the mats, the Black Sea's depth and permanence, and the reason nematodes and foraminifera are favoured. What the pinned review supports is kept."
+   },
+   "replaced_by": [
+    "C-OB-OX-LOWLIFE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Marine sediment goes anoxic within millimetres of its surface, and that anoxic layer is among the densest microbial habitats on the planet. Sulphide-oxidising bacterial mats — *Beggiatoa*, *Thioploca* — form thick white sheets exactly where oxygen is nearly absent and sulphide is plentiful; they are a *feature* of hypoxic beds, not an absence of life. The Black Sea below about 150 m has been permanently anoxic throughout recorded history and holds an active microbial community throughout. Hypoxia-tolerant nematodes and foraminifera frequently *increase* in abundance under low oxygen, because the things that ate them and competed with them are the things that left.",
+     "texts": "f671c93e3d8b337d"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-ENORMOUS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Near-zero oxygen is consistent with enormous biomass and intense metabolic activity.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "So an oxygen reading of near zero",
+    "end": "the indicator makes only the first one.",
+    "why": "Enormous biomass has no source here."
+   },
+   "replaced_by": [
+    "C-OB-OX-NOTFAUNA"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So an oxygen reading of near zero is consistent with enormous biomass and intense metabolic activity. What it is not consistent with is the particular assemblage of large, slow, long-lived animals that people mean by a living seabed. Those two statements are different, and the indicator makes only the first one.",
+     "texts": "7ca4df70860188bb"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-WINDOW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The chlorophyll indicator's window was chosen so that the nitrogen signal shows.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "which is why the indicator is defined on May",
+    "end": "the nitrogen signal is the one that shows.",
+    "why": "DCE give the window's reason: it follows the EU-intercalibrated chlorophyll indicator, and with spring excluded nitrogen is the variable most often selected. The page reversed the cause, imputed a purpose, and misquoted the sentence's word order."
+   },
+   "replaced_by": [
+    "C-OB-OX-CHL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "which is why the indicator is defined on May–September only, cutting out the spring bloom, which in turn is why *\"det er kvælstoftilførslen, der oftest udvælges som forklaringsvariabel\"* rather than phosphorus. The window is chosen so the nitrogen signal is the one that shows.",
+     "texts": "1f28b7ac21a135ab"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-SOUP",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The loss of large animals with rising biomass is what the escalation to fedtemøg looks like from inside the numbers.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "That is not a hypothetical failure mode",
+    "end": "from inside the numbers.",
+    "why": "That fedtemøg is this escalation is a hypothesis of this project, not shown here."
+   },
+   "replaced_by": [
+    "C-OB-OX-QUANTITY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That is not a hypothetical failure mode; it is what the word *primordial soup* describes, and it is what the escalation to fedtemøg looks like from inside the numbers.",
+     "texts": "9fddd796260db1c3"
+    }
+   }
+  },
+  {
+   "id": "C-OB-OLD-OX-ONECOLUMN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Only one oxygen-consuming substance is counted, and the instruments distinguish two of eight paths.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "OXYGEN.md",
+    "commit": "0739c86",
+    "file": "docs/OXYGEN.md",
+    "begin": "What it shows is that the account has one column where it needs several.",
+    "end": "the programme that actually sets the requirement.",
+    "why": "Danish input accounting does report organic matter as `BI5` beside nitrogen; the eight were combinations, not paths; and the call for an autumn survey rested on the spring survey being the only fauna measurement."
+   },
+   "replaced_by": [
+    "C-OB-OX-FOLLOWS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "What it shows is that the account has one column where it needs several. Oxygen demand is the quantity that actually matters, every substance in the water has a price in it, and only one of them is counted. A shore can be wrecked by any of eight paths and the instruments distinguish two. The fix is not a different target — it is an oxygen-demand budget alongside the nutrient budget, a fauna survey that runs in autumn as well as spring, and sediment toxicant measurement in the programme that actually sets the requirement.",
+     "texts": "82e085d6fd3c1101"
+    }
+   }
+  }
+ ]
+}

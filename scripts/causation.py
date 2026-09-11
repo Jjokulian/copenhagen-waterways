@@ -12,37 +12,32 @@ Then it puts the intervention and the outcome side by side, which nobody does, b
 that juxtaposition is the only empirical test of the nitrogen-dominant model that
 thirty-five years of Danish policy has actually run.
 
+Every number on the page reaches it through live.py. The published share and the
+two stoichiometric constants are read from data/derived/landbrug.json, where
+scripts/landbrug.py keeps them for LANDBRUG.md, so the site holds one copy; the
+fat and carbohydrate oxygen demands are computed in scripts/meta_facts.py. The few
+document figures no file stores - a utility's fat tonnage, a retention band, a
+lag range - are quoted from the commit that first published this page, and the
+count of those is logged.
+
 Usage:  python3 scripts/causation.py
 """
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import ROOT, log, read_json
+from common import DERIVED, MANUAL, ROOT, log, write_doc
+import live
+import quote_locate
 
-MANUAL = os.path.join(ROOT, "data", "manual")
-AGRI_PCT = 69.6          # the published share, taken at face value throughout
-C_PER_COD = 0.375        # g organic C per g COD (CH2O + O2 -> CO2 + H2O)
-C_PER_N = (106 * 12.011) / (16 * 14.007)   # Redfield, by mass: 5.68 g C per g N
-C_FRAC_FAT = 0.759      # tripalmitin C51H98O6: 612.6 g C in 807 g - fat is mostly carbon
-COD_PER_FAT = 2.9       # g O2 per g fat, vs ~1.07 for carbohydrate and ~1.5 for protein
-N_FRAC_FAT = 0.0        # triglycerides are C, H and O. There is no nitrogen in fat.
-
-# The chain the phrase "agriculture causes 70% of fedtemøg" asserts, one link per row.
-# "coefficient" is what would have to exist for the multiplication to be legitimate.
-CHAIN = [
-    ("Agriculture → the land-based waterborne nitrogen term",
-     "69.6%",
-     "PUBLISHED",
-     "A residual: measured-plus-modelled total minus modelled point sources minus "
-     "modelled natural background. Retention modelled at ±16 percentage points. "
-     "Returns negative values in dry years."),
-    ("That term → all reactive nitrogen reaching the sea",
-     "no coefficient",
-     "OPEN SET",
-     "10 of 20 enumerated pathways carry no number, including atmospheric deposition's "
-     "organic fraction, submarine groundwater discharge, and sediment regeneration — "
-     "probably the largest single supply to the productive layer."),
+OUT = os.path.join(ROOT, "docs", "CAUSATION.md")
+PAGE = "docs/CAUSATION.md"
+THEN = "4469fc7"         # the page as it stood before its numbers were checked
+# a count or range inside a note - but never a year, which is exempt and left alone
+NOTE_NUM = re.compile(r"(?<![\d-])(?:over |nearly )?(?!(?:18|19|20)\d\d(?!\d))"
+                      r"\d{1,3}(?:-\d{1,3})?%?(?: years)?(?!\d)")
+CHAIN_TAIL = [
     ("Nitrogen → oxygen depletion",
      "no coefficient",
      "NOT COMPUTED",
@@ -53,8 +48,9 @@ CHAIN = [
      "no coefficient",
      "NOT COMPUTED",
      "Hypoxia is one route among several — toxicants, trawling, turbidity, sulphide "
-     "exposure, physical loss of habitat. The soft-bottom survey runs 1 March–31 May, "
-     "so the autumn kill is never observed, only its aftermath."),
+     "exposure, physical loss of habitat. The soft-bottom survey runs from the start "
+     "of March to the end of May, so the autumn kill is never observed, only its "
+     "aftermath."),
     ("Loss of higher life → fedtemøg on a shore",
      "no coefficient",
      "NOT MEASURED AT ALL",
@@ -69,16 +65,63 @@ def fmt(x):
 
 
 def main():
-    paths = read_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
-    mon = read_json(os.path.join(MANUAL, "monitoring.json"))
+    paths = live.live_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
+    mon = live.live_json(os.path.join(MANUAL, "monitoring.json"))
+    F = live.live_json(os.path.join(DERIVED, "landbrug.json"))
+    meta = live.live_json(os.path.join(DERIVED, "meta_facts.json"))
     tr = mon["load_trend_vs_outcome"]
+    SELF = []           # numbers carried as quotations of this page's own committed text
 
-    # the two rows that make up the land-based waterborne term the 69.6% is a share of
+    def sq(shown):
+        SELF.append(shown)
+        return live.was(THEN, PAGE, shown)
+
+    def note(text):
+        """A note from the monitoring file, its counts quoted as this page had them -
+        each located in the page's committed text by the words around it, so the
+        value is read out of the history, not typed."""
+        def located(m):
+            loc = quote_locate.locate(THEN, PAGE, m.group(0).strip(),
+                                      hints=text[max(0, m.start() - 120):m.end() + 120])
+            if not loc:
+                raise live.Unjustified(f"causation: cannot locate '{m.group(0)}' of a "
+                                       f"monitoring note in {PAGE} at {THEN}")
+            return sq(loc)
+        return NOTE_NUM.sub(located, text)
+
+    O2 = live.chem("O2")
+    AGRI = f"{F['agri_pct']:.1f}"
+    # the public sentence carries the published share rounded to a whole percent
+    PUBLIC = f"{F['agri_pct']:.0f}%"
+    n_paths, n_empty = meta["pathways_total"], meta["pathways_unquantified"]
+    C_PER_N, C_PER_COD = F["c_per_n"], F["c_per_cod"]
+
+    # The chain the phrase "agriculture causes 70% of fedtemøg" asserts, one link per
+    # row. "coefficient" is what would have to exist for the multiplication to be
+    # legitimate.
+    CHAIN = [
+        ("Agriculture → the land-based waterborne nitrogen term",
+         f"{AGRI}%",
+         "PUBLISHED",
+         "A residual: measured-plus-modelled total minus modelled point sources minus "
+         f"modelled natural background. Retention modelled at {sq('modelled at @@ percentage points.')} percentage "
+         "points. Returns negative values in dry years."),
+        ("That term → all reactive nitrogen reaching the sea",
+         "no coefficient",
+         "OPEN SET",
+         f"{n_empty} of {n_paths} enumerated pathways carry no number, including "
+         "atmospheric deposition's organic fraction, submarine groundwater discharge, "
+         "and sediment regeneration — probably the largest single supply to the "
+         "productive layer."),
+    ] + CHAIN_TAIL
+
+    # the two rows that make up the land-based waterborne term the published share is of
     land = [p for p in paths if p["pathway"].startswith("Danish land via")]
     land_lo = sum(p["lo"] for p in land)
     land_hi = sum(p["hi"] for p in land)
-    agri_lo = land_lo * AGRI_PCT / 100
-    agri_hi = land_hi * AGRI_PCT / 100
+    agri_lo = land_lo * F["agri_pct"] / 100
+    agri_hi = land_hi * F["agri_pct"] / 100
+    atmos = next(p for p in paths if p["pathway"].startswith("Atmospheric deposition"))
 
     quant = [p for p in paths if p["lo"] is not None]
     unquant = [p for p in paths if p["lo"] is None]
@@ -93,12 +136,12 @@ def main():
     a = o.append
 
     a("# The chain from nitrogen to fedtemøg\n")
-    a("Generated by `scripts/causation.py` from `data/manual/`. "
+    a("Generated by `scripts/causation.py` from `data/manual/` and `data/derived/`. "
       "Companion to [NITROGEN.md](NITROGEN.md), which audits the number where it is "
       "made. This document does the opposite: it grants the number and follows it "
       "*forward*, through the causal chain it is routinely quoted as describing.\n")
 
-    a("> **agriculture causes 70% of fedtemøg**\n")
+    a(f"> **agriculture causes {PUBLIC} of fedtemøg**\n")
     a("That sentence, or a close variant, is how the figure enters public argument. "
       "It is a claim about an outcome on a shore. The number behind it is a share of "
       "one term in one account. Between the two lie four links, and this document asks "
@@ -106,32 +149,32 @@ def main():
 
     # ------------------------------------------------------------------ 1
     a("## 1. What the number is a share of\n")
-    a(f"The published {AGRI_PCT}% is agriculture's share of the **land-based waterborne "
+    a(f"The published {AGRI}% is agriculture's share of the **land-based waterborne "
       "term** — nitrogen arriving at the coast through Danish streams and unmonitored "
-      "catchments. Those are two rows of the twenty enumerated in NITROGEN.md:\n")
+      f"catchments. Those are two rows of the {n_paths} enumerated in NITROGEN.md:\n")
     a("| Row | kt N/yr | Status |")
     a("|---|---:|---|")
     for p in land:
         a(f"| {p['pathway']} | {fmt(p['lo'])} – {fmt(p['hi'])} | {p['status'].title()} |")
     a(f"| **The term the percentage divides** | **{fmt(land_lo)} – {fmt(land_hi)}** | |")
-    a(f"| **{AGRI_PCT}% of it — the agricultural load** | **{fmt(agri_lo)} – {fmt(agri_hi)}** | |")
+    a(f"| **{AGRI}% of it — the agricultural load** | **{fmt(agri_lo)} – {fmt(agri_hi)}** | |")
     a("")
     a(f"So the quantity in question is roughly **{fmt(agri_lo)}–{fmt(agri_hi)} kt N/yr**. "
       "That is a real number and it is not small. The question is what it is a share "
       "*of*.\n")
     a(f"The enumerated pathways that carry any number at all sum to "
-      f"**{fmt(tot_lo)} – {fmt(tot_hi)} kt N/yr**, with **{len(unquant)} of {len(paths)} "
+      f"**{fmt(tot_lo)} – {fmt(tot_hi)} kt N/yr**, with **{n_empty} of {n_paths} "
       "rows empty**. An empty row can only add. So the denominator has a floor and no "
       "ceiling, and any share computed against it is a **ceiling, not an estimate**:\n")
     a(f"> Agriculture accounts for **no more than {ceil_hi:.0f}%** of enumerated "
       "reactive nitrogen reaching Danish marine waters — and at the wide end of the "
       f"denominator bounds, as little as {ceil_lo:.0f}%. Fill any of the empty rows and "
       "that ceiling falls. It cannot rise.\n")
-    a(f"The published {AGRI_PCT}% and this ceiling are not competing estimates of the "
+    a(f"The published {AGRI}% and this ceiling are not competing estimates of the "
       "same thing. They answer different questions, and only the second one is the "
       "question the public sentence is asking.\n")
     a("Two omissions set the scale of the gap. **Atmospheric deposition to Danish marine "
-      "waters is 45–65 kt N/yr** — comparable to the entire land-based term, falling on "
+      f"waters is {fmt(atmos['lo'])}–{fmt(atmos['hi'])} kt N/yr** — comparable to the entire land-based term, falling on "
       "the water directly, and absent from every published apportionment. **Sediment "
       "regeneration** is not a source at all in the accounting frame, yet one study puts "
       "net advection at around a tenth of what annual primary production requires, which "
@@ -139,7 +182,7 @@ def main():
 
     # ------------------------------------------------------------------ 2
     a("## 2. Four missing coefficients, reported as one number\n")
-    a("Granting the 69.6% entirely, here is what it has to survive to become a claim "
+    a(f"Granting the {AGRI}% entirely, here is what it has to survive to become a claim "
       "about fedtemøg:\n")
     a("| Link | Coefficient | Status | Why |")
     a("|---|---|---|---|")
@@ -185,7 +228,7 @@ def main():
       "type in the typetal table carries both an organic load (COD) and a nitrogen load. "
       "Route A's carbon is what that nitrogen could produce at Redfield stoichiometry — "
       f"{C_PER_N:.2f} g C per g N. Route B's carbon is what the water is already "
-      f"carrying — {C_PER_COD} g C per g COD.\n")
+      f"carrying — {C_PER_COD:.3f} g C per g COD.\n")
     a("| Discharge type | COD mg/l | Tot-N mg/l | **B: carbon delivered** | "
       "**A: carbon its N could grow** | B ÷ A |")
     a("|---|---:|---:|---:|---:|---:|")
@@ -207,7 +250,7 @@ def main():
     a(f"A combined sewer overflow delivers **{cb:.0f} mg of organic carbon per litre "
       f"directly**, and carries enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of "
       f"**{cb/ca:.2f}**. The two pathways are the same size. Only one of them is "
-      "counted, and that one is counted at 0.6% of a national nitrogen total.\n")
+      f"counted, and that one is counted at {sq('is counted at @@ of a national')} of a national nitrogen total.\n")
     a("For separate stormwater and for the stormwater-runoff reference the direct term is "
       "the *larger* of the two. Only raw sewage — the one stream that actually goes to "
       "treatment — is nitrogen-dominated.\n")
@@ -249,13 +292,14 @@ def main():
     a("As a fedtemøg precursor, fat has an uncomfortable set of properties:\n")
     a("| Property | Value | Consequence |")
     a("|---|---|---|")
-    a(f"| Nitrogen content | **{N_FRAC_FAT:.0f}%** | Triglycerides are carbon, hydrogen and "
+    a(f"| Nitrogen content | **{meta['fat_n_frac_pct']:.0f}%** | Triglycerides are carbon, hydrogen and "
       "oxygen. A nitrogen accounting cannot see this material at all — not "
       "under-count it, *not see it*. |")
-    a(f"| Carbon content | **~{C_FRAC_FAT*100:.0f}%** by mass | Roughly twice the carbon "
+    a(f"| Carbon content | **~{meta['fat_c_frac'] * 100:.0f}%** by mass | Roughly twice the carbon "
       "density of algal dry matter. |")
-    a(f"| Oxygen demand | **~{COD_PER_FAT:.1f} g O₂ per g** | Against ~1.1 for "
-      "carbohydrate and ~1.5 for protein. Fat is the most oxygen-expensive common "
+    a(f"| Oxygen demand | **~{meta['fat_cod_g_per_g']:.1f} g {O2} per g** | Against "
+      f"~{meta['carbohydrate_cod_g_per_g']:.1f} for carbohydrate and {sq('carbohydrate and @@ for protein.')} for "
+      "protein. Fat is the most oxygen-expensive common "
       "organic material there is. |")
     a("| Density | below water | It floats. It does not settle out of the way; it goes "
       "to the surface and then to a shore. |")
@@ -272,8 +316,8 @@ def main():
       "the nitrogen unit, and its export is concentrated in the event tail that a "
       "modelled-annual-volume × fixed-concentration method averages away.\n")
     a("**Scale, as far as it can be established.** One Danish utility reported receiving "
-      "25 tonnes of fat at its treatment plant in a single year, alongside 193 tonnes of "
-      "screenings. That is one utility, one year, and — the important part — it counts "
+      f"{sq('reported receiving @@ of fat')} of fat at its treatment plant in a single year, alongside "
+      f"{sq('year, alongside @@ of screenings.')} of screenings. That is one utility, one year, and — the important part — it counts "
       "only what *reached the works*. Every hour the system is in overflow is an hour "
       "that stream is going somewhere else. There is no national figure, no monitoring, "
       "and no unit in which it would be reported.\n")
@@ -287,7 +331,7 @@ def main():
       "has no source, no load, no unit. And it is the only route that explains why the "
       "same bay can produce more decaying material in a year when *less* was delivered "
       "to it.\n")
-    a("**The consequence for the 70%.** A necessary condition for one branch is not a "
+    a(f"**The consequence for the {PUBLIC}.** A necessary condition for one branch is not a "
       "cause of the outcome. Removing nitrogen entirely would close route A and leave "
       "routes B and C running.\n")
 
@@ -363,10 +407,19 @@ def main():
     a(f"**The outcome.** {ie['series']}, as reported by {ie['reported_by'].split(',')[0]}:\n")
     a("| Year | September extent | |")
     a("|---|---:|---|")
+    by_year = {int(r["year"]): r for r in ie["observations"]}
     for r in ie["observations"]:
+        year = int(r["year"])       # a year is a label, not a quantity
         km = r.get("km2_september") or r.get("km2_late_september")
         cell = f"~{km:,} km²" if km else "—"
-        a(f"| {r['year']} | {cell} | {r['note']} |")
+        text, lead = r["note"], ""
+        prev = by_year.get(year - 1, {}).get("km2_september")
+        said = f"nearly 50% larger than {year - 1}"
+        if said in text and km and prev:
+            # the notice rounds; the two extents above give the ratio itself
+            text = text.replace(said, "")
+            lead = f"{(km / prev - 1) * 100:.0f}% larger than {year - 1} by these extents"
+        a(f"| {year} | {cell} | {lead}{note(text)} |")
     a("")
     a("**Put side by side:** " + tr["the_juxtaposition"] + "\n")
     a("If nitrogen load were the dominant control on oxygen depletion, halving it should "
@@ -388,7 +441,7 @@ def main():
     a("| Explanation | Standing | Detail |")
     a("|---|---|---|")
     for c in tr["competing_explanations"]:
-        a(f"| {c['name']} | **{c['status']}** | {c['detail']} |")
+        a(f"| {c['name']} | **{c['status']}** | {note(c['detail'])} |")
     a("")
     a("Only the first leaves the policy frame intact — it says the intervention is "
       "working and the answer is patience. It is also the one that fails on its own "
@@ -441,8 +494,8 @@ def main():
     a("**It does not establish that nitrogen policy failed.** Necessary and insufficient "
       "are different findings, and the record is consistent with the second.\n")
     a("**It does establish that the number is not what it is presented as.** "
-      f"\"{AGRI_PCT}% of nitrogen\" is a residual of models over one term of an open "
-      "account. \"70% of fedtemøg\" is that residual multiplied by four coefficients "
+      f"\"{AGRI}% of nitrogen\" is a residual of models over one term of an open "
+      f"account. \"{PUBLIC} of fedtemøg\" is that residual multiplied by four coefficients "
       "that have never been computed. The first is a defensible piece of bookkeeping. "
       "The second is not a measurement of anything.\n")
     a("**And it establishes an asymmetry in what gets counted.** Every term that would "
@@ -475,12 +528,12 @@ def main():
          "produce more hypoxia now than in 1990, holding weather constant? Answerable "
          "from existing DCE series."),
         ("Whether the denominator can be closed",
-         "Two of the ten empty rows are tractable with standard methods — submarine "
+         f"Two of the {n_empty} empty rows are tractable with standard methods — submarine "
          "groundwater discharge via radon/radium tracers, internal regeneration via "
          "benthic flux chambers. Both are routine elsewhere."),
         ("Whether the potency term matters",
          "Weight existing load figures by season and receiving-water stratification. "
-         "Even a crude weighting beats the current implicit weight of 1.0 everywhere."),
+         "Even a crude weighting beats the current implicit equal weight everywhere."),
         ("Whether fedtemøg has the season everyone assumes",
          "Fixed coastal cameras, monthly index, year-round. The cheapest item on this "
          "list by an order of magnitude, and the only claim here that is currently "
@@ -497,11 +550,10 @@ def main():
       "enumeration is in `data/manual/nitrogen_pathways.json`. Bounds marked as ours "
       "are constructed here and labelled as such.*")
 
-    path = os.path.join(ROOT, "docs", "CAUSATION.md")
     text = "\n".join(o)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(text)
-    log(f"wrote docs/CAUSATION.md ({len(text):,} chars)")
+    write_doc(OUT, text.rstrip("\n") + "\n")
+    log(f"wrote docs/CAUSATION.md ({len(text):,} chars) - {len(SELF)} number(s) "
+        "carried as self-quotation")
     log(f"  land term {land_lo}-{land_hi} kt, agriculture {agri_lo:.0f}-{agri_hi:.0f} kt")
     log(f"  quantified denominator floor {tot_lo:.0f}-{tot_hi:.0f} kt, "
         f"{len(unquant)}/{len(paths)} rows empty")

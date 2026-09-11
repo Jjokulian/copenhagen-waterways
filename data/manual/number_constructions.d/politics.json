@@ -1,0 +1,817 @@
+{
+ "constructions": [
+  {
+   "id": "K-POLITICS-LIVESTOCK",
+   "title": "Danish livestock as official counts, throughput, and nitrogen derived from them",
+   "covers": {
+    "file": "data/derived/livestock.json",
+    "fields": {
+     "pigs_standing": {
+      "kind": "counted",
+      "is": "Pigs standing in Denmark at one moment, Statistics Denmark table `SVIN`, type `D29`, for the quarter named in `pigs_standing_period`; the table reports thousands and the script multiplies up."
+     },
+     "sows_standing": {
+      "kind": "counted",
+      "is": "Sows standing, table `SVIN`, type `D181`, same quarter, multiplied up from thousands."
+     },
+     "pigs_through_per_year": {
+      "kind": "counted",
+      "is": "Pigs slaughtered or exported live in the year named in `pigs_through_period`, table `ANI5`; the throughput, not the stock. Animals that died on the farm are not in it."
+     },
+     "pig_meat_million_kg_per_year": {
+      "kind": "measured",
+      "is": "Pig meat production in the same year, table `ANI5`, kept in the table's own unit of million kg."
+     },
+     "cattle_standing": {
+      "kind": "counted",
+      "is": "Cattle standing, whole country, table `KVAEG5`, type `D17`, for the quarter in `cattle_period`."
+     },
+     "people": {
+      "kind": "counted",
+      "is": "People living in Denmark, table `FOLK1A`, for the quarter in `people_period`."
+     },
+     "manure_n_kt_per_year": {
+      "kind": "calculated",
+      "is": "A stated manure-and-sludge nitrogen figure per hectare from the field balance in DCE `SR120` times the current agricultural area from `data/derived/cropland.json`, in kt."
+     },
+     "human_sewage_n_kt_per_year.*": {
+      "kind": "calculated",
+      "is": "People times a stated per-person sewage nitrogen convention, at both ends of the stated range, in kt."
+     },
+     "manure_over_human": {
+      "kind": "calculated",
+      "is": "Manure nitrogen divided by human sewage nitrogen at the low end of the per-person range."
+     },
+     "pig_years_per_pig_stated": {
+      "kind": "stipulated",
+      "is": "The life of a Danish slaughter pig in years, written into the script as a stated figure."
+     },
+     "liveborn_per_sow_year_stated.*": {
+      "kind": "stipulated",
+      "is": "A stated range of piglets born alive per sow-year; the script carries both ends."
+     },
+     "died_before_slaughter_share_stated.*": {
+      "kind": "stipulated",
+      "is": "A stated range for the share of liveborn pigs that never reach slaughter or export."
+     },
+     "born_per_year_from_sows.*": {
+      "kind": "calculated",
+      "is": "Sows standing times the stated liveborn range: pigs born in a year, by the sow route."
+     },
+     "born_per_year_from_throughput.*": {
+      "kind": "calculated",
+      "is": "The throughput grossed up by the stated share that dies first: pigs born in a year, by the throughput route."
+     },
+     "died_before_slaughter_per_year.*": {
+      "kind": "calculated",
+      "is": "The throughput-route births minus the throughput: pigs that died before slaughter or export, at both ends of the stated share."
+     }
+    }
+   },
+   "what": "Fetches the official Danish counts of pigs, sows, cattle and people and the annual pig throughput, and derives manure and sewage nitrogen and the pigs that die before slaughter.",
+   "model": "Each count is the last value of a Statistics Denmark API query for a named table and period (in the code `one()`). Manure nitrogen is $N_{ha} \\times A$ with $N_{ha}$ the stated field-balance figure and $A$ the agricultural area; sewage nitrogen is people times a stated per-person figure. Births are estimated two ways: sows times liveborn per sow-year, and throughput divided by one minus the share that dies first; deaths are the second minus the throughput.",
+   "assumptions": [
+    "The quarter and year named in the query are the current ones; they are written into the script.",
+    "The field-balance manure figure per hectare still applies to the current agricultural area.",
+    "The stated liveborn and mortality ranges describe the current Danish herd."
+   ],
+   "justified": [
+    {
+     "text": "The counts are the national statistics office's own tables, fetched live from its API.",
+     "ref": "scripts/livestock.py"
+    },
+    {
+     "text": "The two birth routes are independent, and the script prints both so a disagreement would be visible.",
+     "ref": "scripts/livestock.py"
+    }
+   ],
+   "gaps": [
+    "The liveborn range, the mortality share and the pig lifetime are stated in the script without a pinned source.",
+    "The manure figure per hectare is from an older field balance and is not re-derived for the current year.",
+    "No open series of on-farm deaths exists that this project has found, so the deaths are arithmetic on stated ranges, not a count."
+   ],
+   "void_if": [
+    "Statistics Denmark redefines a table type code or changes a table's unit",
+    "the field balance behind the manure figure is superseded"
+   ],
+   "licenses": "The size of the Danish herd relative to its human population, the difference between stock and throughput, and the order of magnitude of manure nitrogen against sewage nitrogen.",
+   "not_licensed": "A measured count of pigs that died on farms; the nitrogen that reaches any water.",
+   "watches": [
+    "scripts/livestock.py"
+   ],
+   "confirmed": {
+    "by": "fork politics (written against the producing scripts on 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/livestock.py": "9ce33abe9bcd22d0"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-STREAMS",
+   "title": "The rain stream and the foul stream on Amager, as rates",
+   "covers": {
+    "file": "data/derived/streams.json",
+    "fields": {
+     "rain_record.years": {
+      "kind": "counted",
+      "is": "Distinct calendar years with at least one hourly precipitation value in the fetched `ERA5` files under `data/raw/weather/`."
+     },
+     "rain_record.hours": {
+      "kind": "counted",
+      "is": "Hourly precipitation values in those files, missing values skipped."
+     },
+     "rain_record.mean_annual_mm": {
+      "kind": "modelled",
+      "is": "Total hourly precipitation over the record divided by the number of years. `ERA5` is a reanalysis: the output of a weather model constrained by observations, at a grid cell far coarser than a city."
+     },
+     "rain_record.wet_hours_per_year": {
+      "kind": "modelled",
+      "is": "Hours with precipitation above zero, per year of record."
+     },
+     "rain_record.hours_per_year_at_or_above_mm.*": {
+      "kind": "modelled",
+      "is": "Hours at or above each stated threshold, per year of record."
+     },
+     "rain_record.median_wet_hour_mm": {
+      "kind": "modelled",
+      "is": "The median of the hours with precipitation above zero."
+     },
+     "rain_record.max_hour_mm": {
+      "kind": "modelled",
+      "is": "The largest hourly value in the record. A grid-cell mean cannot reproduce a cloudburst, so this is far below what a street experiences."
+     },
+     "*.design_intensity_mm_h_stated": {
+      "kind": "stipulated",
+      "is": "The design rain intensity, a convention written into `scripts/programme.py` as `RAIN_MM_H`."
+     },
+     "*.runoff_coefficient_stated": {
+      "kind": "stipulated",
+      "is": "The share of rain on paved surface that runs off, a design convention written into `scripts/programme.py` as `RUNOFF_C`."
+     },
+     "*.flow_m3_s.design_hour": {
+      "kind": "calculated",
+      "is": "Amager's combined-sewered impervious area times the design intensity times the runoff coefficient, in cubic metres per second."
+     },
+     "*.flow_m3_s.median_wet_hour": {
+      "kind": "calculated",
+      "is": "The same area times the median wet-hour precipitation times the runoff coefficient."
+     },
+     "foul_stated.dwf_l_per_person_day": {
+      "kind": "stipulated",
+      "is": "Dry-weather sewage per person per day, a design convention."
+     },
+     "foul_stated.morning_peak_factor": {
+      "kind": "stipulated",
+      "is": "The ratio of the morning peak to the mean dry-weather flow, a design convention."
+     },
+     "foul_stated.morning_peak_m3_s_per_1000_people": {
+      "kind": "calculated",
+      "is": "The dry-weather flow of a thousand people times the peak factor."
+     },
+     "foul_stated.people_matched_per_impervious_ha_in_design_hour": {
+      "kind": "calculated",
+      "is": "How many people's morning peak one impervious hectare matches in the design hour."
+     },
+     "foul_stated.people_matched_by_amager_in_design_hour": {
+      "kind": "calculated",
+      "is": "How many people's morning peak Amager's impervious area matches in the design hour."
+     },
+     "foul_stated.people_matched_by_amager_at_median_wet_hour": {
+      "kind": "calculated",
+      "is": "The same at the median wet hour."
+     },
+     "ponds.*.grain_um": {
+      "kind": "stipulated",
+      "is": "The grain diameters the script chooses to size ponds for, in micrometres."
+     },
+     "ponds.*.settling_m_per_h": {
+      "kind": "calculated",
+      "is": "Stokes terminal velocity of a quartz-density grain in still water, from the viscosity and densities stated in the script."
+     },
+     "ponds.*.area_ha_at_design_hour": {
+      "kind": "calculated",
+      "is": "The pond area whose surface loading equals the settling velocity when the design-hour flow arrives at once."
+     },
+     "ponds.*.area_ha_if_fed_steadily": {
+      "kind": "calculated",
+      "is": "The pond area that suffices when the year's runoff is fed at a steady rate."
+     },
+     "sediment.tss_mg_per_l_stated": {
+      "kind": "stipulated",
+      "is": "A suspended-solids concentration for urban stormwater, chosen inside the range the script's comment cites."
+     },
+     "sediment.capture_fraction_stated": {
+      "kind": "stipulated",
+      "is": "The share of arriving solids a pond keeps, taken as the low end of the pond range PROGRAMME.md quotes."
+     },
+     "sediment.solids_caught_t_per_year": {
+      "kind": "calculated",
+      "is": "Annual runoff volume times the stated concentration times the stated capture, in tonnes."
+     },
+     "sediment.solids_caught_m3_per_year": {
+      "kind": "calculated",
+      "is": "The caught tonnage divided by a stated bulk density."
+     },
+     "sediment.t_per_impervious_ha_per_year": {
+      "kind": "calculated",
+      "is": "Caught tonnage per impervious hectare on Amager."
+     },
+     "sediment.m3_per_impervious_ha_per_year": {
+      "kind": "calculated",
+      "is": "Caught volume per impervious hectare on Amager."
+     }
+    }
+   },
+   "what": "Turns the hourly rain record over Copenhagen and Amager's combined-sewered impervious area into flow rates, compares them with the foul stream as people-equivalents, sizes settling ponds for chosen grains, and estimates the solids a pond would catch.",
+   "model": "Flow is $Q = A \\cdot i \\cdot C / 3600$ with $A$ in square metres, $i$ in metres per hour and $C$ the runoff coefficient (in the code `flow()`). Settling is Stokes, $v = (\\rho_s - \\rho_w) g d^2 / (18 \\mu)$ (in the code `settling_m_per_h()`); the peak-fed pond area is the design-hour volume over $v$, the steady-fed area is annual runoff over $v$ times the hours in a year. Solids caught are runoff volume times concentration times capture.",
+   "assumptions": [
+    "A grid-cell reanalysis stands for the rain over Amager's streets.",
+    "Ponds settle as still water, so the areas are floors.",
+    "Amager's combined-sewered impervious area is split from the mainland by the hand-drawn polygon in `scripts/programme.py`."
+   ],
+   "justified": [
+    {
+     "text": "Every formula and every stated convention is written out in the script, and the stated values are carried into the output under names ending in `_stated`.",
+     "ref": "scripts/streams.py"
+    },
+    {
+     "text": "The rain record is the fetched hourly series, not a design storm.",
+     "ref": "scripts/streams.py"
+    }
+   ],
+   "gaps": [
+    "The runoff coefficient, dry-weather flow, peak factor, concentration, capture fraction and bulk density are conventions without pinned sources.",
+    "The capture fraction is taken from the pond literature quoted on PROGRAMME.md, whose sources are not pinned; the page and this file lean on each other there.",
+    "A reanalysis grid cell smooths away the short intense rain that drives overflows, so the rain statistics understate the extremes."
+   ],
+   "void_if": [
+    "the weather files under `data/raw/weather/` are replaced by a different point or product",
+    "the Amager polygon or the catchment layer changes"
+   ],
+   "licenses": "The rain stream against the foul stream as rates, the pond areas a settling filter needs as floors, and the order of magnitude of what a pond would catch.",
+   "not_licensed": "A cloudburst frequency for any street; a measured pond performance; a sediment tonnage anyone has weighed.",
+   "watches": [
+    "scripts/streams.py",
+    "scripts/programme.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-pg (re-read: programme.py's prose was rewritten for the claims sweep and its self-quotation helpers and literature table removed; every function that computes or reads the covered fields - P, OX, amager_split, koege_basins, triage, facts - is identical to the version last read, compared as syntax trees; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/streams.py": "ba3177e06932c91c",
+     "scripts/programme.py": "55e928f1e80b42e0"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-RIVERMAP",
+   "title": "How much of the modelled flood path has a planned route near it",
+   "covers": {
+    "file": "data/derived/rivermap.json",
+    "fields": {
+     "flood_path_km2": {
+      "kind": "modelled",
+      "is": "The area of flooded cells in the recovered flood model sheets on the common grid of `scripts/floodgap.py`, harbour and lakes removed, in km²."
+     },
+     "near_buried_conveyance_pct": {
+      "kind": "share",
+      "is": "Flooded cells within `NEAR_M` of a planned cloudburst pipe, as a percentage of all flooded cells."
+     },
+     "near_anything_pct": {
+      "kind": "share",
+      "is": "Flooded cells within `NEAR_M` of a planned surface route, a pipe or a basin, as a percentage of all flooded cells."
+     },
+     "no_surface_route_pct": {
+      "kind": "share",
+      "is": "Flooded cells with no planned surface route within `NEAR_M`, as a percentage of all flooded cells."
+     }
+    }
+   },
+   "what": "Rasterises the recovered flood model and the cloudburst plan, split into surface routes and pipes, and measures how much of the flood path each comes near.",
+   "model": "Distance transforms of the rasterised plan layers; a flooded cell is near a layer when its distance is at most `NEAR_M`. Each share is near cells over all flooded cells on the same grid (in the code `main()`).",
+   "assumptions": [
+    "The recovered sheets are placed where the georeferencing says.",
+    "The plan layers are complete for the cloudburst plan."
+   ],
+   "justified": [
+    {
+     "text": "Numerator and denominator are counted on the same grid from the same flooded mask.",
+     "ref": "scripts/rivermap.py"
+    }
+   ],
+   "gaps": [
+    "The sheets are tied to the ground with errors comparable to the proximity distance, so a cell's nearness can move with a placement.",
+    "The flood extent is a model output, not an observation of flooding."
+   ],
+   "void_if": [
+    "a sheet is re-registered or withdrawn",
+    "the plan layers are revised"
+   ],
+   "licenses": "How far the cloudburst plan's surface routes reach the modelled flood paths, against its pipes.",
+   "not_licensed": "Where water will flow in a real event; that a planned route discharges anywhere in particular.",
+   "watches": [
+    "scripts/rivermap.py",
+    "scripts/floodgap.py"
+   ],
+   "confirmed": {
+    "by": "fork politics (written against the producing scripts on 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/rivermap.py": "eae940ce0c09aa37",
+     "scripts/floodgap.py": "76ca448241807d3d"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-TERRAIN",
+   "title": "Modelled flooding scored against local terrain, per sheet",
+   "covers": {
+    "file": "data/derived/terraincheck.json",
+    "fields": {
+     "sheets.*.windows.*.flooded_below_local_pct": {
+      "kind": "share",
+      "is": "Of the sampled flooded pixels on land, the percentage whose elevation is below the median terrain of the block of that window size around them."
+     },
+     "sheets.*.windows.*.background_below_local_pct": {
+      "kind": "share",
+      "is": "The same for the background sample, taken along streets where the road extract is present and uniformly otherwise."
+     },
+     "sheets.*.windows.*.lift_pct_points": {
+      "kind": "calculated",
+      "is": "The flooded percentage minus the background percentage, in percentage points."
+     }
+    }
+   },
+   "what": "Fetches the national elevation model for each flood sheet and asks whether modelled flooding sits below its own neighbourhood more often than street ground does.",
+   "model": "For each window the terrain anomaly is elevation minus the block median (in the code `anomaly()`); flooded and background samples are scored below zero or not, land only, and the shares compared (in the code `one_sheet()`).",
+   "assumptions": [
+    "The sheet's georeferencing is good enough for the window size used.",
+    "Street points are a fair background for flooding that lies mostly on streets."
+   ],
+   "justified": [
+    {
+     "text": "The elevation model is fetched live from the national service, and each sheet is scored against its own background.",
+     "ref": "scripts/terraincheck.py"
+    },
+    {
+     "text": "The background is taken along streets so that interpolated ground under buildings does not stand in for street ground.",
+     "ref": "scripts/terraincheck.py"
+    }
+   ],
+   "gaps": [
+    "The samples are random with fixed seeds; the sampling error is not reported.",
+    "Positional error in the sheets is comparable to the smallest window."
+   ],
+   "void_if": [
+    "a sheet is re-registered",
+    "the national elevation model is revised"
+   ],
+   "licenses": "Whether modelled flooding favours locally low ground, sheet by sheet.",
+   "not_licensed": "Where water collects in a real event; why the model placed flooding where it did.",
+   "watches": [
+    "scripts/terraincheck.py"
+   ],
+   "confirmed": {
+    "by": "fork politics (written against the producing scripts on 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/terraincheck.py": "c5870c40fcd2f592"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-GEOREF",
+   "title": "How well each recovered flood sheet is tied to the ground",
+   "covers": {
+    "file": "data/derived/floodmaps/_georef.json",
+    "fields": {
+     "*.m_per_px_from_scalebar": {
+      "kind": "measured",
+      "is": "Metres per pixel of the rendered sheet, read from the sheet's own printed scale bar."
+     },
+     "*.spread_m": {
+      "kind": "computed",
+      "is": "For a sheet registered automatically: the largest distance between the positions found by the detector variants that agreed. It is conditioned on agreement, so it is small by construction."
+     },
+     "*.standard_error_m": {
+      "kind": "estimated",
+      "is": "For a sheet placed from resident-reported control points: a positional standard error written into the file with the placement. No script in the repository computes it."
+     },
+     "*.control_points": {
+      "kind": "counted",
+      "is": "For a sheet placed by hand: the control points a resident reported on a web map and the placement used."
+     }
+    }
+   },
+   "what": "Records, per flood sheet, how it was placed and how far its placement can be trusted: the scale-bar resolution, the detector spread for automatic sheets, and the control points and standard error for assisted ones.",
+   "model": "Automatic sheets are placed by ensemble water cross-correlation in `scripts/floodmaps.py`, which writes the agreeing spread and the scale-bar resolution. Assisted sheets were placed from control points; their standard errors entered the file with the placement commits.",
+   "assumptions": [
+    "The printed scale bar is right.",
+    "The control points were read off the web map correctly."
+   ],
+   "justified": [
+    {
+     "text": "The automatic registration and its spread are computed in the script, with the acceptance thresholds explained beside the code.",
+     "ref": "scripts/floodmaps.py"
+    }
+   ],
+   "gaps": [
+    "No script in the repository writes `standard_error_m`; it arrived with the placement commits and cannot be recomputed here.",
+    "The agreeing spread measures agreement between detectors, not error against the ground."
+   ],
+   "void_if": [
+    "a sheet is re-registered, which has already happened once"
+   ],
+   "licenses": "The order of magnitude of positional error per sheet, and which sheets were placed automatically.",
+   "not_licensed": "A calibrated positional error for any sheet.",
+   "watches": [
+    "scripts/floodmaps.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/floodmaps.py": "b6aac5de8e3311c4"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-ARCH",
+   "title": "The separated architecture on the city's own sewer layer",
+   "covers": {
+    "file": "docs/data/architecture.json",
+    "fields": {
+     "street_m.amager": {
+      "kind": "bound",
+      "is": "Road centreline length inside the combined-sewered catchments on Amager, from the untagged road extract. Paths and service roads are included, so it is an upper bound."
+     },
+     "street_m.mainland": {
+      "kind": "bound",
+      "is": "The same on the mainland."
+     },
+     "structures.rist.total": {
+      "kind": "counted",
+      "is": "Gully gratings in the city's structure register."
+     },
+     "structures.broend.total": {
+      "kind": "counted",
+      "is": "Wells and chambers in the city's structure register."
+     },
+     "structures.*.type_field_empty_pct": {
+      "kind": "share",
+      "is": "Register entries whose type column is empty, as a percentage of all entries in the same layer."
+     },
+     "catchments.*.ri": {
+      "kind": "counted",
+      "is": "Gully gratings whose point falls inside the catchment polygon."
+     },
+     "catchments.*.br": {
+      "kind": "counted",
+      "is": "Wells and chambers whose point falls inside the catchment polygon."
+     },
+     "plan_pipe_ends.n": {
+      "kind": "counted",
+      "is": "Planned cloudburst pipe segments with an end point in the plan layer."
+     },
+     "plan_pipe_ends.median_m": {
+      "kind": "computed",
+      "is": "The median, over segments, of the distance from the nearer end to the coast or the harbour."
+     },
+     "plan_pipe_ends.within_50m": {
+      "kind": "counted",
+      "is": "Segments whose nearer end lies within the distance in the field name of the coast or the harbour."
+     },
+     "polder.ha": {
+      "kind": "stipulated",
+      "is": "The Vestamager polder's area, written into `scripts/programme.py` as `VESTAMAGER_HA`; the outline beside it is schematic."
+     },
+     "totals.combined.ha": {
+      "kind": "calculated",
+      "is": "The municipal layer's impervious area, summed over the catchments classed combined."
+     }
+    }
+   },
+   "what": "Classifies the city's sewer catchments, counts the drainage structures in them, measures the street a rain line would follow, and tests where planned cloudburst pipes end.",
+   "model": "Point-in-polygon counts on a coarse spatial index for structures and street segments (in the code `structures()` and `street_metres()`); nearest-point distances to coast and harbour for pipe ends (in the code `plan_pipe_ends()`); sums of the layer's own attributes for totals.",
+   "assumptions": [
+    "The municipal sewer-catchment layer's impervious area and class are right.",
+    "A structure belongs to the catchment its point falls in."
+   ],
+   "justified": [
+    {
+     "text": "The counts are taken from the city's own registers, and the script says which fields are empty rather than filling them.",
+     "ref": "scripts/architecture.py"
+    },
+    {
+     "text": "The street length is labelled an upper bound in the output itself.",
+     "ref": "scripts/architecture.py"
+    }
+   ],
+   "gaps": [
+    "The road extract carries no tags, so street length cannot be restricted to carriageway.",
+    "The pipe-end test is evidence about a segmented layer, not about where any route discharges.",
+    "The polder area is a stated round figure, not measured from a boundary."
+   ],
+   "void_if": [
+    "the municipal catchment layer or the structure register is refetched with different content",
+    "the cloudburst plan layer is revised"
+   ],
+   "licenses": "The scale of a separation retrofit in structures and in street length, and that the pipe layer is segmented.",
+   "not_licensed": "The cost of any street; where a planned pipe discharges; the polder's surveyed extent.",
+   "watches": [
+    "scripts/architecture.py",
+    "scripts/programme.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-pg (re-read: programme.py's prose was rewritten for the claims sweep and its self-quotation helpers and literature table removed; every function that computes or reads the covered fields - P, OX, amager_split, koege_basins, triage, facts - is identical to the version last read, compared as syntax trees; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/architecture.py": "af0d805385dfbef8",
+     "scripts/programme.py": "55e928f1e80b42e0"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-AREAS",
+   "title": "Rain-conditioned outfalls and their basin volume, per coastal water body",
+   "covers": {
+    "file": "docs/data/areas/areas.json",
+    "fields": {
+     "areas.*.rbu": {
+      "kind": "counted",
+      "is": "Points of the national rain-conditioned outfall register `punkt_rbu_udl` that `scripts/areas.py` assigns to the water body."
+     },
+     "areas.*.vol": {
+      "kind": "calculated",
+      "is": "The registered basin volume `vol_sb` summed over those points, in m³. Registered, so a floor: a basin nobody entered is not here."
+     }
+    }
+   },
+   "what": "Carries each water body's outfall count and registered basin volume from the areas analysis into the published per-area file.",
+   "model": "`scripts/areas.py` assigns register points to water bodies and sums `vol_sb`; `scripts/areamap.py` copies the count and the sum into the slim per-area record.",
+   "assumptions": [
+    "The assignment of an outfall to the water body it discharges to is right."
+   ],
+   "justified": [
+    {
+     "text": "Both numbers are read straight from the national register, counted and summed without adjustment.",
+     "ref": "scripts/areamap.py"
+    }
+   ],
+   "gaps": [
+    "The register's volume field is empty for many points, so the sum understates the storage that exists."
+   ],
+   "void_if": [
+    "the register is refetched with different content",
+    "the assignment of points to water bodies changes"
+   ],
+   "licenses": "A floor on the registered storage draining to a water body, and how many registered outfalls reach it.",
+   "not_licensed": "The storage that actually exists; how much water overflows.",
+   "watches": [
+    "scripts/areas.py",
+    "scripts/areamap.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: areas.py's assignment and volume sums are unchanged - the rerun changed no field but the model flag and its gap - so the outfall counts and basin volumes covered here are the same. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/areas.py": "f5a559584f1bcf2c",
+     "scripts/areamap.py": "ebf9d882df683da5"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-KARLSTRUP",
+   "title": "Karlstrup Kalkgrav's registered area, depth and pumping, as transcribed",
+   "covers": {
+    "file": "data/manual/monitoring.json",
+    "fields": {
+     "karlstrup_kalkgrav.water_body.area_km2": {
+      "kind": "document",
+      "is": "The lake's area as registered in the water-plan data for `DKLAKE812`, transcribed by hand from the page the file links."
+     },
+     "karlstrup_kalkgrav.physical_setting.depth_m": {
+      "kind": "document",
+      "is": "The lake's depth, transcribed by hand; the file names no source for it."
+     },
+     "karlstrup_kalkgrav.physical_setting.pumped_to_sea_m3_per_year": {
+      "kind": "document",
+      "is": "The volume the pump station removes to the bay each year, transcribed by hand; the file names no source for it."
+     }
+    }
+   },
+   "what": "Holds the physical facts about Karlstrup Kalkgrav that PROGRAMME.md weighs against using it as a receiving water.",
+   "model": "Manual transcription into `data/manual/monitoring.json`; nothing is computed.",
+   "assumptions": [
+    "The transcriptions are faithful to their sources."
+   ],
+   "justified": [
+    {
+     "text": "The area comes with a link to the water-plan record it was read from.",
+     "ref": "https://vandplandata.dk/vandomraade/Soe/DKLAKE812"
+    }
+   ],
+   "gaps": [
+    "None of the sources is pinned, so none of the values can be checked against a stored copy.",
+    "The depth and the pumped volume have no named source in the file at all."
+   ],
+   "void_if": [
+    "the pumping regime changes",
+    "the water-plan register revises the lake's area"
+   ],
+   "licenses": "That the lake is small, deep and already pumped to the bay, as grounds for the page's argument against using it.",
+   "not_licensed": "Any statement of the lake's current condition.",
+   "watches": [
+    "data/manual/monitoring.json"
+   ],
+   "confirmed": {
+    "by": "fork politics (written against the producing scripts on 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/monitoring.json": "0bd5fd966bfd7077"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-PROGRAMME",
+   "title": "Counts and sums PROGRAMME.md computes for itself",
+   "covers": {
+    "file": "data/derived/programme.json",
+    "fields": {
+     "amager_split.amager_ha": {
+      "kind": "calculated",
+      "is": "Impervious area of the combined-sewered catchments in the municipal layer whose vertex mean falls inside the hand-drawn Amager polygon, summed, in hectares."
+     },
+     "amager_split.mainland_ha": {
+      "kind": "calculated",
+      "is": "The same for the combined-sewered catchments outside it."
+     },
+     "rbu_register.points": {
+      "kind": "counted",
+      "is": "Features in the national rain-conditioned outfall register `punkt_rbu_udl`."
+     },
+     "rbu_register.with_volume": {
+      "kind": "counted",
+      "is": "Of those, the features with a registered basin volume `vol_sb` above zero."
+     },
+     "rbu_register.top_one_pct_n": {
+      "kind": "counted",
+      "is": "The largest one per cent of the features with a volume, by volume, rounded down and at least one."
+     },
+     "rbu_register.top_one_pct_share_pct": {
+      "kind": "share",
+      "is": "Their summed volume as a percentage of the summed volume of all features with a volume."
+     },
+     "combined_catchments.n": {
+      "kind": "counted",
+      "is": "Catchments in `docs/data/architecture.json` classed combined."
+     },
+     "combined_catchments.planned_to_separate": {
+      "kind": "counted",
+      "is": "Of those, the ones whose city plan class takes them out of the combined system: separate, three-pipe, foul only, or part separate."
+     },
+     "flood_sheets.total": {
+      "kind": "counted",
+      "is": "Sheets with a provenance entry in `data/derived/terraincheck.json`."
+     },
+     "flood_sheets.automatic": {
+      "kind": "counted",
+      "is": "Of those, the sheets whose placement method begins `autoref`."
+     },
+     "flood_sheets.assisted": {
+      "kind": "counted",
+      "is": "Of those, the sheets whose placement method begins `assisted`."
+     },
+     "rivermap_corridors": {
+      "kind": "counted",
+      "is": "Entries in the corridor list of `data/derived/rivermap.json`: the largest candidates the map draws, not every candidate."
+     }
+    }
+   },
+   "what": "Counts the overflow register's tail, the sheets by placement method, the combined catchments planned for separation and the corridor list, and splits the combined-sewered area by island. The triage and register counts the page prints are read from `data/derived/triage.json`, not computed here.",
+   "model": "Feature counts with the rules stated per field (in the code `facts()`); the top share is $\\sum_{i \\le k} v_i / \\sum_i v_i$ over volumes sorted descending, with $k$ the rounded-down one per cent; the island split is a point-in-polygon test on each catchment's vertex mean (in the code `amager_split()`).",
+   "assumptions": [
+    "A catchment's vertex mean falls on the island the catchment is on.",
+    "A sheet's placement method is recorded in its provenance entry with the prefix the counts test for."
+   ],
+   "justified": [
+    {
+     "text": "Every count is taken from the file named in its description, with the rule written beside the code.",
+     "ref": "scripts/programme.py"
+    }
+   ],
+   "gaps": [
+    "The Amager polygon is traced by hand; a catchment straddling its edge goes wholly to one side.",
+    "The top share uses only features with a registered volume; features with an empty volume field are outside both numerator and denominator."
+   ],
+   "void_if": [
+    "the overflow register or the catchment layer is refetched with different content",
+    "a flood sheet's placement method is renamed"
+   ],
+   "licenses": "The counts and shares PROGRAMME.md prints about its own sources.",
+   "not_licensed": "The storage that actually exists behind features with an empty volume field; the load any structure discharges.",
+   "watches": [
+    "scripts/programme.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-pg (re-read: programme.py's prose was rewritten for the claims sweep and its self-quotation helpers and literature table removed; every function that computes or reads the covered fields - P, OX, amager_split, koege_basins, triage, facts - is identical to the version last read, compared as syntax trees; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/programme.py": "55e928f1e80b42e0"
+    }
+   }
+  },
+  {
+   "id": "K-POLITICS-TALLIES",
+   "title": "Tallies over the collected public statements",
+   "covers": {
+    "file": "data/derived/politics.json",
+    "fields": {
+     "n_statements": {
+      "kind": "counted",
+      "is": "Statements in `data/manual/politics.json`."
+     },
+     "n_speakers": {
+      "kind": "counted",
+      "is": "Distinct speaker strings among them; a person described in different words is counted once per description."
+     },
+     "n_sources": {
+      "kind": "counted",
+      "is": "Distinct host names among the statements' source addresses."
+     },
+     "n_verbatim": {
+      "kind": "counted",
+      "is": "Statements the collection marks verbatim."
+     },
+     "n_undated": {
+      "kind": "counted",
+      "is": "Statements with no date."
+     },
+     "camps.*": {
+      "kind": "counted",
+      "is": "Statements whose id prefix assigns them to the camp named in the key, by the prefix table in the script; the longest matching prefix wins."
+     },
+     "classes.*": {
+      "kind": "counted",
+      "is": "Statements carrying the claim class named in the key, as the collection assigned it at capture."
+     },
+     "flags.*": {
+      "kind": "counted",
+      "is": "Statements carrying the flag named in the key, as the collection assigned it at capture."
+     },
+     "flag_camps.*.*": {
+      "kind": "counted",
+      "is": "Statements carrying the flag in the first key and assigned to the camp in the second."
+     },
+     "domains.*.n": {
+      "kind": "counted",
+      "is": "Statements whose source address has the host name in the same entry."
+     },
+     "n_share": {
+      "kind": "counted",
+      "is": "Statements whose quotation states the agricultural nitrogen share, or the diffuse total it is carved out of, matched by the pattern `SHARE_RX` in the script."
+     },
+     "n_share_flagged": {
+      "kind": "counted",
+      "is": "Of those, the ones the collection flags as stating a modelled quantity as measured."
+     }
+    }
+   },
+   "what": "Counts the collected public statements by camp, claim class, flag, publisher and date, for the page that prints them.",
+   "model": "Counters over the statement list (in the code `analyse()`); the camp of a statement is the camp of the longest id prefix in `CAMPS` that it starts with.",
+   "assumptions": [
+    "The claim classes and flags assigned at capture are the ones to count; the script does not reclassify.",
+    "An id prefix identifies the speaker's position in the process."
+   ],
+   "justified": [
+    {
+     "text": "Every count is a counter over the collection's own fields, and an id with no camp stops the build rather than being dropped.",
+     "ref": "scripts/politics.py"
+    }
+   ],
+   "gaps": [
+    "The classes and flags are one collector's judgement at capture time; nobody has re-read the statements against them.",
+    "The collection is skewed toward the side that published press releases, so every count describes the record, not the debate."
+   ],
+   "void_if": [
+    "statements are added to or removed from the collection",
+    "a flag or class is reassigned"
+   ],
+   "licenses": "How the collected record is composed: who is in it, how often, and with which classes and flags.",
+   "not_licensed": "How the public debate as a whole was composed; that any statement is right or wrong.",
+   "watches": [
+    "scripts/politics.py",
+    "data/manual/politics.json"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/politics.py": "8af9ebfabe6a176b",
+     "data/manual/politics.json": "cb444fb5f0e2706a"
+    }
+   }
+  }
+ ]
+}

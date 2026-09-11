@@ -15,9 +15,9 @@ the count *means* does not.
 Danish monitoring produces concentrations. It does not produce images of consequence,
 and the two are not substitutes.
 
-**Korsør, 2021.** Fødevarestyrelsen found PFOS in calf meat at 156, 189 and 230 ng/g,
-analysed 27 samples across beef, fish, fruit, berries, vegetables and honey, and offered
-179 residents a health examination. Every one of those is a measurement of a
+**Korsør, 2021.** Fødevarestyrelsen found PFOS in calf meat at [156, 189 and 230](SOURCES.md#F-b603d9648c) ng/g,
+analysed [27](SOURCES.md#F-66fe0fac0b) samples across beef, fish, fruit, berries, vegetables and honey, and offered
+[179](SOURCES.md#F-f545c455b9) residents a health examination. Every one of those is a measurement of a
 *concentration* — in the food, and then in the people. Nothing published records what
 the animals looked like, whether they were examined beyond a meat assay, or what
 symptoms if any they showed. The exposure was documented as a number in the food chain
@@ -25,7 +25,7 @@ and never as an effect in an organism.
 
 **Parkersburg, 1998–2004**, is the counter-case, and it is the reason anyone outside a
 toxicology department has heard of PFAS at all. Wilbur Tennant filmed his own herd over
-years: more than 150 animals dead one at a time, blackened teeth, tumours, deformities,
+years: more than [150](SOURCES.md#F-bd341d266c) animals dead one at a time, blackened teeth, tumours, deformities,
 calves born with white blind eyes, a creek running with foam and a discharge pipe from a
 DuPont landfill. He made that record himself because no official programme covered what
 was happening to him.
@@ -38,7 +38,7 @@ is easy to count gets counted, and the thing that would show what it means does 
 
 **The asymmetry worth noting.** The *paper* record from that litigation is open. Bilott's
 discovery documents were donated to UCSF's Industry Documents Library — free, fully
-searchable, two PFAS collections spanning 1961–2006, including the 39 documents used in
+searchable, two PFAS collections spanning 1961–2006, including the [39](SOURCES.md#F-7fdf60bf01) documents used in
 *The Devil We Know*, alongside the tobacco and opioid archives. **The document archive is
 public. The video archive is not**, and remains under copyright into the 2070s.
 

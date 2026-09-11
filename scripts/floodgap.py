@@ -24,7 +24,8 @@ import sys
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, RAW, ROOT, log, read_json, write_json
+from common import DERIVED, RAW, ROOT, log, read_json, write_doc, write_json
+import live
 
 CELL = 10.0                     # metres
 LATM = 111320.0
@@ -32,6 +33,9 @@ LONM = 111320.0 * math.cos(math.radians(55.68))
 FLOOD_DEPTH_MIN = 2             # band index 2 = 0.1 m; band 1 (0.05-0.1) is a wet film
 NEAR_M = (50, 100, 200)
 HOTSPOT_MIN_CELLS = 40          # 4000 m2, i.e. bigger than a road junction
+HOTSPOT_MIN_BAND = 3            # band index 3 = 0.2 m and deeper
+HOTSPOT_MIN_DISTANCE_M = 100    # further than this from any planned work
+OUT = os.path.join(DERIVED, "floodgap.json")
 
 BANDS = [None, "0.05-0.1", "0.1-0.2", "0.2-0.5", "0.5-1", "1-2", ">2"]
 BAND_MID = [0, 0.075, 0.15, 0.35, 0.75, 1.5, 2.5]   # for a volume estimate
@@ -207,7 +211,12 @@ def label_clusters(mask, np, min_cells):
     return out
 
 
-def main():
+def main(argv=()):
+    if "--report" in argv:
+        # the page alone, from the stored result - no rasters, no distance transforms
+        write_report(live.live_json(OUT))
+        log("wrote docs/FLOOD_GAP.md from data/derived/floodgap.json")
+        return 0
     np, Image = _np(), _pil()
     geo_path = os.path.join(DERIVED, "floodmaps", "_georef.json")
     if not os.path.exists(geo_path):
@@ -265,17 +274,29 @@ def main():
     d_built = distance_transform(built, np)
 
     total = int(flooded.sum())
+    from floodmaps import BANDS as LEGEND      # the sheets' own legend classes
+    missing = sorted(set(sheets) - set(used))
     res = {
         "generated_from": sorted(used),
+        "n_sheets_used": len(used),
+        "sheets_missing": missing,
+        "params": {"cell_m": CELL, "near_m": list(NEAR_M),
+                   "flood_depth_min_m": LEGEND[FLOOD_DEPTH_MIN - 1]["lo"],
+                   "hotspot_min_area_m2": round(HOTSPOT_MIN_CELLS * CELL * CELL),
+                   "hotspot_min_depth_m": LEGEND[HOTSPOT_MIN_BAND - 1]["lo"],
+                   "hotspot_min_distance_m": HOTSPOT_MIN_DISTANCE_M},
+        "band_bounds": {BANDS[i]: {"lo_m": LEGEND[i - 1]["lo"], "hi_m": LEGEND[i - 1]["hi"]}
+                        for i in range(1, 7)},
         "grid": {"cell_m": CELL, "width": grid.W, "height": grid.H,
                  "bounds": {"west": west, "south": south, "east": east, "north": north}},
         "caveats": [
             "The flood model is 2012 calculations of a 2010 scenario; the plan is 2018 "
-            "with later addenda. This compares two snapshots taken six years apart.",
-            "Only sheets that registered confidently are included - the inner-city "
-            "catchments. Amager, Bispebjerg and Koebenhavn Vest are missing.",
-            "Distances are to any part of a planned work, which is generous: being 50 m "
-            "from a cloudburst road is not the same as being protected by it.",
+            "with later addenda. This compares two snapshots taken years apart.",
+            ("Only sheets that registered confidently are included; missing: "
+             + ", ".join(missing) + ".") if missing else
+            "Every extracted sheet registered confidently and is included.",
+            f"Distances are to any part of a planned work, which is generous: being "
+            f"{NEAR_M[0]} m from a cloudburst road is not the same as being protected by it.",
             "The sheets paint depth over lakes and the harbour as well as over land. "
             "Those cells are excluded here - water standing on water is not something a "
             "cloudburst basin addresses - and reported as flooded_over_water_km2.",
@@ -361,7 +382,7 @@ def main():
                 }
 
     # --- the worst unaddressed places
-    far = flooded & (d_any > 100) & (depth >= 3)     # land, >= 0.2 m, >100 m from any work
+    far = flooded & (d_any > HOTSPOT_MIN_DISTANCE_M) & (depth >= HOTSPOT_MIN_BAND)
     clusters = label_clusters(far, np, HOTSPOT_MIN_CELLS)
     log(f"unaddressed clusters (>=0.2 m, >100 m from any planned work): {len(clusters)}")
     spots = []
@@ -387,7 +408,7 @@ def main():
         "implied_volume_m3": round(sum(s["implied_volume_m3"] for s in spots)),
     }
 
-    write_json(os.path.join(DERIVED, "floodgap.json"), res)
+    write_json(OUT, res)
     write_json(os.path.join(DERIVED, "viewer", "flood_hotspots.geojson"), {
         "type": "FeatureCollection",
         "features": [{"type": "Feature",
@@ -433,7 +454,7 @@ def main():
         log(f"    {s['lat']:.5f},{s['lon']:.5f}  {s['area_m2']:>7,} m2  "
             f"max {s['max_depth_band']:>8}  {s['implied_volume_m3']:>7,} m3  "
             f"{s['distance_to_nearest_planned_work_m']:>4} m from anything planned")
-    write_report(res)
+    write_report(live.live_json(OUT))
     render_map(grid, depth, layers, spots, np, Image)
     log("\nwrote data/derived/floodgap.json, viewer/flood_hotspots.geojson "
         "and docs/FLOOD_GAP.md")
@@ -497,98 +518,151 @@ def render_map(grid, depth, layers, spots, np, Image):
 
 
 def write_report(res):
+    """The page, from the stored result read live: every number links to its field,
+    and every sentence that states a comparison is decided by the numbers."""
     o = []
     w = o.append
-    c = res["coverage"]
+    c, p, bb = res["coverage"], res["params"], res["band_bounds"]
+    near = list(p["near_m"])
+
+    def listed(items):
+        items = list(items)
+        return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
+
+    def band(label):
+        """A depth class, printed from the legend bounds it stands for."""
+        lo, hi = bb[label]["lo_m"], bb[label]["hi_m"]
+        return f"{lo:g}–{hi:g} m" if hi is not None else f"over {lo:g} m"
+
     w("# Does the cloudburst plan go where the water goes?\n")
     w("Generated by `scripts/floodgap.py`. Compares the 2012 flood model - recovered "
       "from the PDFs it was published in - against the cloudburst works in the "
       "Spildevandsplan.\n")
-    w(f"Covers **{', '.join(res['generated_from'])}**: the sheets that registered "
-      "confidently. Amager, Bispebjerg and København Vest are not included.\n")
+    missing = list(res["sheets_missing"])
+    if missing:
+        w(f"Covers **{', '.join(res['generated_from'])}**: the sheets that registered "
+          f"confidently. {', '.join(missing)} {'is' if len(missing) == 1 else 'are'} not "
+          "included.\n")
+    else:
+        w(f"Covers all {res['n_sheets_used']} sheets: **{', '.join(res['generated_from'])}**."
+          "\n")
 
     w("## The headline\n")
-    w(f"Across {res['flooded_area_km2']} km² of modelled flooding **on land** at 0.1 m or "
-      f"deeper (the sheets also paint {res.get('flooded_over_water_km2', 0)} km² over lakes "
-      "and the harbour, excluded here):\n")
+    w(f"Across {res['flooded_area_km2']:g} km² of modelled flooding **on land** at "
+      f"{p['flood_depth_min_m']:g} m or deeper (the sheets also paint "
+      f"{res['flooded_over_water_km2']:g} km² over lakes and the harbour, excluded here):\n")
     w("| Distance | Near *any* planned work | Near something **built or started** |")
     w("|---|---:|---:|")
-    for m in NEAR_M:
-        a = c[f"within_{m}m_of_any_planned_work"]
-        b = c[f"within_{m}m_of_a_built_or_started_project"]
-        w(f"| within {m} m | {a*100:.1f}% | {b*100:.1f}% |")
+    for m in near:
+        a = c[f"within_{int(m)}m_of_any_planned_work"]
+        b = c[f"within_{int(m)}m_of_a_built_or_started_project"]
+        w(f"| within {m} m | {a * 100:.1f}% | {b * 100:.1f}% |")
     w("")
-    w("The plan is aimed correctly and is largely unbuilt. Nine tenths of the modelled "
-      "flooding has something planned within 200 m of it; barely a third has anything "
-      "that has actually broken ground. The gap between those two columns is the "
-      "backlog, and it is most of the plan.\n")
-    w("Read the distances as generous. Being 50 m from a cloudburst road is not the same "
-      "as being protected by it, and this counts any part of any planned work.\n")
+    far = near[-1]
+    a_far = c[f"within_{int(far)}m_of_any_planned_work"]
+    b_far = c[f"within_{int(far)}m_of_a_built_or_started_project"]
+    w(f"The plan is aimed correctly and is largely unbuilt: {a_far * 100:.0f}% of the "
+      f"modelled flooding has something planned within {far} m of it, and "
+      f"{b_far * 100:.0f}% has anything that has actually broken ground. The gap between "
+      "those two columns is the backlog.\n")
+    w(f"Read the distances as generous. Being {near[0]} m from a cloudburst road is not "
+      "the same as being protected by it, and this counts any part of any planned work.\n")
 
     w("## Modelled depth\n")
     w("| Band | Area (m²) |")
     w("|---|---:|")
     for k, v in res["by_band"].items():
-        w(f"| {k} m | {v['area_m2']:,} |")
+        w(f"| {band(k)} | {v['area_m2']:,} |")
     w("")
 
     q = res["qa_flood_vs_water"]
+    base = q["water_share_of_grid"]
+    shares = {k: v["share_in_water"] for k, v in q["by_band"].items()}
+    over = [k for k, v in shares.items() if v >= base]
     w("## Is the registration trustworthy?\n")
-    w(f"Open water is {q['water_share_of_grid']*100:.1f}% of the study area. If the sheets "
-      "were placed wrongly, flooding would land in the harbour at about that rate. "
-      "It lands there much less often, at every depth:\n")
+    w(f"Open water is {base * 100:.1f}% of the study area. If the sheets were placed "
+      "wrongly, flooding would land in the harbour at about that rate. "
+      + ("It lands there much less often, at every depth:\n" if not over else
+         "It lands there less often than that in every band except "
+         + listed(band(k) for k in over) + ":\n"))
     w("| Band | Share falling in open water |")
     w("|---|---:|")
-    for k, v in q["by_band"].items():
-        w(f"| {k} m | {v['share_in_water']*100:.1f}% |")
+    for k, v in shares.items():
+        w(f"| {band(k)} | {v * 100:.1f}% |")
     w("")
-    w(f"**{'PASS' if q['passes'] else 'FAIL'}** - modelled flooding avoids open water, "
-      "which is independent evidence that the georeferencing is right. It also rules out "
-      "the deepest band (a dark navy) being confused with dark harbour water: it is the "
-      "*least* likely of all bands to fall in water.\n")
+    if not over:
+        deepest = list(shares)[-1]
+        w("**PASS** - modelled flooding avoids open water, which is independent evidence "
+          "that the georeferencing is right."
+          + (" It also rules out the deepest band (a dark navy) being confused with dark "
+             "harbour water: it is the *least* likely of all bands to fall in water."
+             if min(shares, key=shares.get) == deepest else "") + "\n")
+    else:
+        w("**FAIL** - in " + listed(band(k) for k in over) + ", modelled flooding "
+          "lands in open water at least as often as open water's own share of the area. "
+          "For those depths this check gives no evidence that the sheets are placed "
+          "correctly; the other bands still avoid water.\n")
 
-    cov = res.get("sewer_catchment_coverage", {})
+    cov = res.get("sewer_catchment_coverage")
     w("## What is underneath it\n")
     if cov:
-        w(f"Sewer catchments cover {cov['catchment_share_of_grid']*100:.0f}% of the study "
-          f"area and contain {cov['share_of_flooding_inside']*100:.0f}% of the flooding. "
+        w(f"Sewer catchments cover {cov['catchment_share_of_grid'] * 100:.0f}% of the study "
+          f"area and contain {cov['share_of_flooding_inside'] * 100:.0f}% of the flooding. "
           "Shares below are of that portion.\n")
     w("| System | Share of area | Share of flooding | Ratio |")
     w("|---|---:|---:|---:|")
     for k, v in sorted(res["by_sewer_system"].items(),
                        key=lambda x: -(x[1]["share_of_flooding_in_mapped_catchments"] or 0)):
-        w(f"| {k} | {v['share_of_mapped_catchment_area']*100:.1f}% | "
-          f"{v['share_of_flooding_in_mapped_catchments']*100:.1f}% | "
-          f"{v['concentration_ratio']}× |")
+        r = v["concentration_ratio"]
+        w(f"| `{k}` | {v['share_of_mapped_catchment_area'] * 100:.1f}% | "
+          f"{v['share_of_flooding_in_mapped_catchments'] * 100:.1f}% | "
+          + (f"{r:g}×" if r is not None else "—") + " |")
     w("")
-    w("93% of this flooding sits over combined sewer, where stormwater and sewage share "
-      "one pipe - so that standing water is mixed with sewage. But note the ratio: 87% of "
-      "the mapped area is combined sewer too. Flooding is **not** concentrated over "
-      "combined sewers; the inner city is simply built that way almost everywhere. The "
-      "consequence is real, the correlation is not.\n")
+    comb = res["by_sewer_system"].get("Fælleskloakeret")
+    if comb:
+        r = comb["concentration_ratio"]
+        w(f"{comb['share_of_flooding_in_mapped_catchments'] * 100:.0f}% of this flooding "
+          "sits over combined sewer, where stormwater and sewage share one pipe - so that "
+          f"standing water is mixed with sewage. But "
+          f"{comb['share_of_mapped_catchment_area'] * 100:.0f}% of the mapped area is combined "
+          f"sewer too, a ratio of {r:g}: "
+          + ("flooding lands over combined sewer a little more often than its share of the "
+             "area, and most of the consequence is the plumbing - the inner city is built "
+             "that way almost everywhere.\n" if r > 1 else
+             "flooding is not concentrated over combined sewers; the inner city is simply "
+             "built that way almost everywhere. The consequence is real, the correlation is "
+             "not.\n"))
 
     t = res["hotspot_totals"]
     w("## Places with deep water and nothing planned nearby\n")
-    w(f"{t['clusters']} clusters of at least 4,000 m², at 0.2 m or deeper, more than 100 m "
+    w(f"{t['clusters']} clusters of at least {p['hotspot_min_area_m2']:,} m², at "
+      f"{p['hotspot_min_depth_m']:g} m or deeper, more than {p['hotspot_min_distance_m']} m "
       f"from any planned work — {t['area_m2']:,} m² holding roughly "
-      f"{t['implied_volume_m3']:,} m³.\n")
+      f"{t['implied_volume_m3']:,} m³. The largest by implied volume are listed; every "
+      "cluster is in `data/derived/viewer/flood_hotspots.geojson`.\n")
     w("| lat, lon | Area (m²) | Max depth | Implied volume (m³) | Nearest planned work |")
     w("|---|---:|---|---:|---:|")
     for s_ in res["hotspots"]:
-        w(f"| {s_['lat']:.5f}, {s_['lon']:.5f} | {s_['area_m2']:,} | {s_['max_depth_band']} m "
-          f"| {s_['implied_volume_m3']:,} | {s_['distance_to_nearest_planned_work_m']} m |")
+        w(f"| {s_['lat']:.5f}, {s_['lon']:.5f} | {s_['area_m2']:,} | "
+          f"{band(s_['max_depth_band'])} | {s_['implied_volume_m3']:,} | "
+          f"{s_['distance_to_nearest_planned_work_m']} m |")
     w("")
-    w("Four is a small number, and that is the finding: the plan's *coverage* is good. "
-      "Volumes are the depth-band midpoint times area, so they are indicative only.\n")
+    w("Volumes are the depth-band midpoint times area, so they are indicative only.\n")
 
     w("## Caveats\n")
-    for cv in res["caveats"]:
-        w(f"- {cv}")
+    w("- The flood model is a 2012 calculation of a 2010 scenario; the plan is from 2018 "
+      "with later addenda, so this compares two snapshots taken years apart.")
+    w(("- Only sheets that registered confidently are included; " + ", ".join(missing)
+       + (" is" if len(missing) == 1 else " are") + " missing.") if missing else
+      "- Every extracted sheet registered confidently and is included.")
+    w(f"- Distances are to any part of a planned work, which is generous: being {near[0]} m "
+      "from a cloudburst road is not the same as being protected by it.")
+    w("- The sheets paint depth over lakes and the harbour as well as over land. Those "
+      "cells are excluded here - water standing on water is not something a cloudburst "
+      "basin addresses - and reported separately above.")
     w("")
-    path = os.path.join(ROOT, "docs", "FLOOD_GAP.md")
-    with open(path, "w", encoding="utf-8") as f:
-        f.write("\n".join(o))
+    write_doc(os.path.join(ROOT, "docs", "FLOOD_GAP.md"), "\n".join(o))
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

@@ -1,0 +1,793 @@
+{
+ "constructions": [
+  {
+   "id": "K-FARM-DOCS",
+   "title": "Figures read from the pinned texts of regulations and a report",
+   "covers": {
+    "file": "data/derived/farm_documents.json",
+    "fields": {
+     "bek931.ceiling_kg_n_ha": {
+      "kind": "document",
+      "is": "The manure ceiling in BEK 931/2024: the organic nitrogen a holding has for spreading, divided by this many kg N per hectare, may not exceed its harmoniareal."
+     },
+     "bek931.derogation_kg_n_ha": {
+      "kind": "document",
+      "is": "The rate BEK 931/2024 names for holdings that had been granted permission to spread more organic nitrogen per hectare of harmoniareal - the cattle derogation."
+     },
+     "bek673.catch_crop_pct": {
+      "kind": "document",
+      "is": "The compulsory catch-crop area in BEK 673/2026, as a percentage of the holding's catch-crop base area."
+     },
+     "bek673.catch_crop_pct_high": {
+      "kind": "document",
+      "is": "The same, for a holding spreading organic nitrogen at or above `threshold_high_kg_n_ha` per hectare of harmoniareal."
+     },
+     "bek673.threshold_low_kg_n_ha": {
+      "kind": "document",
+      "is": "The organic-nitrogen application, kg N per hectare of harmoniareal, from which the livestock catch-crop requirement applies."
+     },
+     "bek673.threshold_high_kg_n_ha": {
+      "kind": "document",
+      "is": "The organic-nitrogen application, kg N per hectare of harmoniareal, at which the higher compulsory percentage and the higher quota-cut rate apply."
+     },
+     "bek673.quota_cut_below_kg_n_ha": {
+      "kind": "document",
+      "is": "The cut in the holding's own nitrogen quota, kg N per hectare of catch crop not established, for a holding below `threshold_high_kg_n_ha`."
+     },
+     "bek673.quota_cut_above_kg_n_ha": {
+      "kind": "document",
+      "is": "The same cut, for a holding at or above `threshold_high_kg_n_ha`."
+     },
+     "bek677.min_base_ha": {
+      "kind": "document",
+      "is": "The catch-crop base area, in hectares, below which BEK 677/2026 does not apply to a holding."
+     },
+     "bek677.annex1.rows.*.pct": {
+      "kind": "document",
+      "is": "The targeted catch-crop requirement for one coastal catchment in BEK 677/2026 Bilag 1, as a percentage of the base area a holding has in that catchment."
+     },
+     "bek677.annex1.n_catchments": {
+      "kind": "counted",
+      "is": "The coastal catchments listed in BEK 677/2026 Bilag 1, as parsed: every catchment that carries a targeted requirement."
+     },
+     "bek677.annex1.n_at_ceiling": {
+      "kind": "counted",
+      "is": "Of those, the catchments whose percentage equals the largest in the table."
+     },
+     "bek130.priority_rotation_kr_ha": {
+      "kind": "document",
+      "is": "The one-off payment per hectare in BEK 130/2026 for permanent extensification of land that was in rotation (crop codes of its Bilag 1), where at least half the field is carbon-rich or in an area of large nitrogen need with wetland potential."
+     },
+     "bek130.priority_grass_kr_ha": {
+      "kind": "document",
+      "is": "The same, for land in the crop codes of its Bilag 2 (grass), in the same priority areas."
+     },
+     "bek130.elsewhere_rotation_kr_ha": {
+      "kind": "document",
+      "is": "The payment for rotation land outside those areas."
+     },
+     "bek130.elsewhere_grass_kr_ha": {
+      "kind": "document",
+      "is": "The payment for grass outside those areas."
+     },
+     "nuar_t75.rows.*.*": {
+      "kind": "document",
+      "is": "One cell of NUAR Tabel 7.5: the change in gross margin (DB2, kroner per hectare) against the reference regulation, for one enterprise type in the Hjarbæk Fjord catchment, under one quota-allocation model; the last three models are the report's trading variants."
+     }
+    }
+   },
+   "what": "Reads each figure INCIDENCE.md takes from a regulation or from the NUAR report out of that document's pinned text.",
+   "model": "Every single figure is matched by a regular expression built from the document's own wording around it, against the whitespace-normalised pinned text, and must match exactly once; Danish number format is converted (`10,7` is ten point seven, `1.122` has a thousands separator). BEK 677/2026 Bilag 1 is parsed as its three columns in order - catchment numbers, names, percentages - and NUAR Tabel 7.5 as its cells in reading order.",
+   "assumptions": [
+    "The extracted text preserves each document's wording and the order of its table cells.",
+    "The wording chosen around each figure identifies the provision the page describes."
+   ],
+   "justified": [
+    {
+     "text": "Each document is pinned by the sha256 of its extracted text; a change in the live document is detected by a recheck and refuses the pin until it is read again.",
+     "ref": "scripts/claims.py"
+    },
+    {
+     "text": "A figure whose wording occurs other than exactly once refuses the run, so no figure can be read from the wrong provision silently.",
+     "ref": "scripts/farm_documents.py"
+    },
+    {
+     "text": "The parsed tables were compared with the transcriptions that were previously typed into the page's generator, and agree in every cell of Bilag 1 and in every model column of Tabel 7.5; so were the four extensification rates.",
+     "ref": "scripts/farm_documents.py"
+    }
+   ],
+   "gaps": [
+    "The last two rows of NUAR Tabel 7.5 come out of the extraction interleaved, column by column; the parser splits them on that layout, which a different extraction could change without any wording check noticing.",
+    "That each provision means what the page says it means is a reading, not something the pattern checks.",
+    "The expiry of the cattle derogation is not stated in BEK 931/2024 and is not read from any pinned document."
+   ],
+   "void_if": [
+    "a document is amended and re-pinned without this script being rerun",
+    "the extraction tool changes how it orders table cells"
+   ],
+   "licenses": "What the regulations and the NUAR report state, as figures, and nothing typed in between.",
+   "not_licensed": "That the provisions have the effects the page argues, or that the one NUAR catchment tabulated is representative of the others.",
+   "watches": [
+    "scripts/farm_documents.py",
+    "data/derived/pins/BEK931-2024.txt",
+    "data/derived/pins/BEK673-2026.txt",
+    "data/derived/pins/BEK677-2026.txt",
+    "data/derived/pins/BEK130-2026.txt",
+    "data/derived/pins/NUAR-2024.txt"
+   ],
+   "confirmed": {
+    "by": "fork farm (written against the code and the pinned texts, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/farm_documents.py": "3d3ed63982e9a8f6",
+     "data/derived/pins/BEK931-2024.txt": "dfcd26d1b5aa26fa",
+     "data/derived/pins/BEK673-2026.txt": "ab9e90fdf0bde76b",
+     "data/derived/pins/BEK677-2026.txt": "55304f99a724dd26",
+     "data/derived/pins/BEK130-2026.txt": "b0d64169b44665c5",
+     "data/derived/pins/NUAR-2024.txt": "d53d221d5dfed37b"
+    }
+   }
+  },
+  {
+   "id": "K-FARM-INCIDENCE",
+   "title": "Who carries the nitrogen requirement: herds, land and filed accounts, joined on CVR",
+   "covers": {
+    "file": "data/derived/socialcontext.json",
+    "fields": {
+     "total_de": {
+      "kind": "measured",
+      "is": "Register animal units (`DE`) summed over every business with a CVR number in the livestock register, the herd every share of the herd is taken of."
+     },
+     "visibility.n_animal_cvr": {
+      "kind": "counted",
+      "is": "Businesses in the livestock register with a CVR number, whatever their herd."
+     },
+     "visibility.by_form.*.n": {
+      "kind": "counted",
+      "is": "Of those, the businesses of one legal form as the CVR extract records it; those missing from the extract form their own group."
+     },
+     "visibility.by_form.*.de": {
+      "kind": "measured",
+      "is": "Register animal units summed over the businesses of one legal form."
+     },
+     "visibility.by_accounts.*.n": {
+      "kind": "counted",
+      "is": "Businesses keeping animals whose CVR record does, or does not, list published accounts - the flag K-INCIDENCE describes."
+     },
+     "visibility.by_accounts.*.de": {
+      "kind": "measured",
+      "is": "Register animal units summed over the businesses on one side of that flag."
+     },
+     "visibility.n_with_herd": {
+      "kind": "counted",
+      "is": "Businesses whose register animal units are above zero."
+     },
+     "visibility.median_de": {
+      "kind": "estimated",
+      "is": "The median herd, in animal units, over the businesses in `n_with_herd`; a positional median."
+     },
+     "visibility.p90_de": {
+      "kind": "estimated",
+      "is": "The ninetieth percentile of the same herds, by position."
+     },
+     "visibility.p99_de": {
+      "kind": "estimated",
+      "is": "The ninety-ninth percentile of the same herds, by position."
+     },
+     "visibility.concentration.*.level": {
+      "kind": "stipulated",
+      "is": "The share of the national herd a concentration row is about, as a fraction; chosen to span the distribution."
+     },
+     "visibility.concentration.*.holdings": {
+      "kind": "counted",
+      "is": "How many of the largest herds, taken largest first, it takes to hold that share of the herd."
+     },
+     "visibility.concentration.*.pct_of_holdings": {
+      "kind": "share",
+      "is": "Those holdings as a percentage of `n_with_herd`."
+     },
+     "types.*.n": {
+      "kind": "counted",
+      "is": "Businesses with animal units above zero, of one enterprise type as `enterprise_type` classifies them from the register's species and production codes."
+     },
+     "types.*.de": {
+      "kind": "measured",
+      "is": "Register animal units summed over the businesses of one enterprise type."
+     },
+     "types.*.share_de": {
+      "kind": "share",
+      "is": "Those animal units as a percentage of `total_de`."
+     },
+     "types.*.n_ratio": {
+      "kind": "counted",
+      "is": "Of the businesses of that type, those declaring more than one hectare of field parcels: the only ones with a stocking density."
+     },
+     "types.*.med": {
+      "kind": "estimated",
+      "is": "The median stocking density - animal units over declared hectares - over the businesses in `n_ratio`, by position."
+     },
+     "types.*.p90": {
+      "kind": "estimated",
+      "is": "The ninetieth percentile of the same densities, by position."
+     },
+     "types.*.over.*": {
+      "kind": "share",
+      "is": "Of the businesses in `n_ratio`, the percentage whose stocking density is above the line named by the key, in animal units per declared hectare."
+     },
+     "types.*.surplus": {
+      "kind": "computed",
+      "is": "Animal units above what the business's own declared hectares would carry at `surplus_line_de_ha`, summed over the businesses of that type that have such a surplus."
+     },
+     "types.*.n_surplus": {
+      "kind": "counted",
+      "is": "The businesses of that type with a surplus above `surplus_line_de_ha`."
+     },
+     "types.*.landless_de": {
+      "kind": "measured",
+      "is": "Register animal units on businesses of that type declaring no more than one hectare."
+     },
+     "types.*.n_landless": {
+      "kind": "counted",
+      "is": "The businesses of that type declaring no more than one hectare."
+     },
+     "regions.*.n": {
+      "kind": "counted",
+      "is": "Businesses with animals placed in one region: each is placed at the kommune holding most of its animal units, and the kommune at its region."
+     },
+     "regions.*.de": {
+      "kind": "measured",
+      "is": "Register animal units summed over the businesses placed in that region."
+     },
+     "regions.*.n_ratio": {
+      "kind": "counted",
+      "is": "Of those, the businesses declaring more than one hectare."
+     },
+     "regions.*.med": {
+      "kind": "estimated",
+      "is": "The median stocking density over the businesses in `n_ratio`, by position."
+     },
+     "regions.*.over14": {
+      "kind": "share",
+      "is": "Of the businesses in `n_ratio`, the percentage above the historic harmony density, `historic_limits_de_ha` first entry."
+     },
+     "kommuner.*.n_ratio": {
+      "kind": "counted",
+      "is": "Businesses declaring more than one hectare placed in one kommune, by the same placement rule as the regions."
+     },
+     "kommuner.*.med": {
+      "kind": "estimated",
+      "is": "Their median stocking density, by position."
+     },
+     "kommuner.*.over14": {
+      "kind": "share",
+      "is": "The percentage of them above the historic harmony density."
+     },
+     "kommuner.*.de": {
+      "kind": "measured",
+      "is": "Register animal units summed over the businesses placed in that kommune."
+     },
+     "organic.*.n": {
+      "kind": "counted",
+      "is": "Cattle businesses - cattle at least `0.7` of their animal units - in one cohort: dairy where dairy-cattle animal units exceed half the herd, else beef and other cattle; organic where the register's organic share exceeds one half."
+     },
+     "organic.*.de": {
+      "kind": "measured",
+      "is": "Register animal units summed over one such cohort."
+     },
+     "organic.*.mean_de": {
+      "kind": "computed",
+      "is": "Those animal units divided by the cohort's businesses."
+     },
+     "organic.*.n_ratio": {
+      "kind": "counted",
+      "is": "Of the cohort, the businesses declaring more than one hectare."
+     },
+     "organic.*.med": {
+      "kind": "estimated",
+      "is": "Their median stocking density, by position."
+     },
+     "organic.*.over14": {
+      "kind": "share",
+      "is": "The percentage of them above the historic harmony density."
+     },
+     "hectares.n_cvr": {
+      "kind": "counted",
+      "is": "Businesses with declared field parcels in the sibling's hectares-per-CVR table."
+     },
+     "hectares.by_type.*.n": {
+      "kind": "counted",
+      "is": "Land-declaring businesses of one enterprise type; a business with no animal units forms the group `no animal units`."
+     },
+     "hectares.by_type.*.ha": {
+      "kind": "measured",
+      "is": "Declared hectares summed over the land-declaring businesses of one enterprise type."
+     },
+     "hectares.base.*.*": {
+      "kind": "measured",
+      "is": "Declared hectares of one enterprise type, split by whether each business's single largest declared crop is inside the catch-crop base area, outside it, or unclassified by `crop_base`."
+     },
+     "hectares.by_accounts.*.n": {
+      "kind": "counted",
+      "is": "Land-declaring businesses on one side of the published-accounts flag."
+     },
+     "hectares.by_accounts.*.ha": {
+      "kind": "measured",
+      "is": "Declared hectares summed over the businesses on one side of that flag."
+     },
+     "hectares.top_crops.*.*": {
+      "kind": "measured",
+      "is": "Declared hectares summed by each business's single largest declared crop - hectare-weighted, so the whole of a business's land counts under its largest crop."
+     },
+     "hectares.median_ha": {
+      "kind": "estimated",
+      "is": "The median declared area per land-declaring business, by position."
+     },
+     "hectares.p99_ha": {
+      "kind": "estimated",
+      "is": "The ninety-ninth percentile of the same areas, by position."
+     },
+     "hectares.cvrs_holding_half_the_land": {
+      "kind": "counted",
+      "is": "How many of the largest land declarations, taken largest first, it takes to reach half the declared hectares."
+     },
+     "accounts_sample.n_primary_agriculture": {
+      "kind": "counted",
+      "is": "Businesses in `n_filed` whose industry code starts with a primary-agriculture prefix in `FARM_NACE`, that have a filing spanning roughly a year and a usable balance sheet."
+     },
+     "accounts_sample.n_keeping_animals": {
+      "kind": "counted",
+      "is": "Of those, the businesses with animal units above zero and a herd-derived enterprise type."
+     },
+     "accounts_sample.n_with_land": {
+      "kind": "counted",
+      "is": "Of those, the businesses declaring more than one hectare."
+     },
+     "accounts_sample.excluded.*": {
+      "kind": "counted",
+      "is": "Filings dropped from the sample, by the reason named by the key."
+     },
+     "accounts_sample.equity_deciles.*": {
+      "kind": "estimated",
+      "is": "The deciles of the equity ratio - equity over total assets - over the primary-agriculture filings, each by position."
+     },
+     "accounts_sample.balance_sheet_check.*.n": {
+      "kind": "counted",
+      "is": "Filings in the balance-sheet identity check, split by whether the long-term debt tag is present."
+     },
+     "accounts_sample.balance_sheet_check.*.median_residual": {
+      "kind": "estimated",
+      "is": "The median of assets minus equity minus the debts filed, as a fraction of assets: how well the identity closes."
+     },
+     "cohorts.*.n": {
+      "kind": "counted",
+      "is": "Filings in the animal-keeping sample of one enterprise type."
+     },
+     "cohorts.*.median_de": {
+      "kind": "estimated",
+      "is": "Their median herd in animal units, by position."
+     },
+     "cohorts.*.median_assets": {
+      "kind": "estimated",
+      "is": "Their median total assets, in kroner, by position."
+     },
+     "cohorts.*.median_equity_ratio": {
+      "kind": "estimated",
+      "is": "Their median equity ratio, by position."
+     },
+     "cohorts.*.pct_negative_equity": {
+      "kind": "share",
+      "is": "The percentage of them with equity below zero."
+     },
+     "cohorts.*.pct_loss": {
+      "kind": "share",
+      "is": "Of those carrying a profit figure, the percentage whose last filed twelve-month profit is below zero."
+     },
+     "cohorts.*.n_profit": {
+      "kind": "counted",
+      "is": "Those carrying a profit figure."
+     },
+     "cohorts.*.median_profit_per_ha": {
+      "kind": "estimated",
+      "is": "The median of last filed profit per declared hectare, over those declaring more than one hectare, by position."
+     },
+     "cohorts.*.median_density": {
+      "kind": "estimated",
+      "is": "Their median stocking density, by position."
+     },
+     "cohorts.*.median_biological_share": {
+      "kind": "estimated",
+      "is": "The median of biological assets over total assets, where the tag is filed, by position."
+     },
+     "cohorts.*.n_biological": {
+      "kind": "counted",
+      "is": "Those filing a biological-assets tag."
+     },
+     "cohorts.*.n_profit_3y": {
+      "kind": "counted",
+      "is": "Those with three twelve-month filings all carrying profit."
+     },
+     "cohorts.*.median_profit_3y": {
+      "kind": "estimated",
+      "is": "The median of profit summed over those three filings, by position."
+     },
+     "cohorts.*.pct_profit_3y_negative": {
+      "kind": "share",
+      "is": "The percentage whose three-year profit is below zero."
+     },
+     "cohorts.*.median_equity_trajectory": {
+      "kind": "estimated",
+      "is": "The median change in equity ratio from the first of those filings to the last, by position."
+     },
+     "cohorts.*.pct_trajectory_falling": {
+      "kind": "share",
+      "is": "The percentage whose equity ratio fell over the same filings."
+     },
+     "shock.*.n": {
+      "kind": "counted",
+      "is": "Filings of one enterprise type with a profit figure and more than one declared hectare - the per-hectare ladder's cohort."
+     },
+     "shock.*.break_even_median": {
+      "kind": "estimated",
+      "is": "The median of last filed profit per declared hectare over that cohort: the charge per hectare the median holding could absorb exactly."
+     },
+     "shock.*.ladder.*": {
+      "kind": "share",
+      "is": "The percentage of that cohort whose last filed profit, minus the charge named by the key times its declared hectares, is below zero."
+     },
+     "shock_de.*.n": {
+      "kind": "counted",
+      "is": "Filings of one enterprise type with a profit figure and animal units above zero - the per-animal-unit ladder's cohort, landless holdings included."
+     },
+     "shock_de.*.n_landless": {
+      "kind": "counted",
+      "is": "Of those, the holdings declaring no more than one hectare."
+     },
+     "shock_de.*.break_even_median": {
+      "kind": "estimated",
+      "is": "The median of last filed profit per animal unit over that cohort."
+     },
+     "shock_de.*.ladder.*": {
+      "kind": "share",
+      "is": "The percentage whose last filed profit, minus the charge named by the key times its animal units, is below zero."
+     },
+     "shock_de.*.n_with_land": {
+      "kind": "counted",
+      "is": "The cohort's holdings declaring more than one hectare."
+     },
+     "shock_de.*.pct_loss_landless": {
+      "kind": "share",
+      "is": "The percentage of the landless holdings whose last filed profit is below zero."
+     },
+     "shock_de.*.pct_loss_with_land": {
+      "kind": "share",
+      "is": "The percentage of the holdings with land whose last filed profit is below zero."
+     },
+     "intersection.line": {
+      "kind": "stipulated",
+      "is": "The stocking density, in animal units per declared hectare, at or above which a holding counts as exposed: the higher regulatory threshold located by the stated conversion."
+     },
+     "intersection.n_rows": {
+      "kind": "counted",
+      "is": "Filings in the animal-keeping sample."
+     },
+     "intersection.by_type.*.*": {
+      "kind": "counted",
+      "is": "Filings of one enterprise type in one cell of exposed-or-not by thin-or-not; a landless holding counts as exposed, and thin means an equity ratio below `thin_equity_ratio`."
+     },
+     "intersection.de_held": {
+      "kind": "measured",
+      "is": "Register animal units summed over the holdings that are both exposed and thin."
+     },
+     "intersection.median_de": {
+      "kind": "estimated",
+      "is": "Their median herd, by position."
+     },
+     "intersection.median_equity_ratio": {
+      "kind": "estimated",
+      "is": "Their median equity ratio, by position."
+     },
+     "intersection.n_loss": {
+      "kind": "counted",
+      "is": "Of them, those whose last filed profit is below zero."
+     },
+     "intersection.n_negative_equity": {
+      "kind": "counted",
+      "is": "Of them, those with equity below zero."
+     },
+     "intersection.n_years_of_equity": {
+      "kind": "counted",
+      "is": "Of them, those with positive equity and a loss - the cohort the years-of-equity median is taken over."
+     },
+     "debt_artefact.*.pct_lt_filed": {
+      "kind": "share",
+      "is": "The percentage of one type's filings that carry the long-term debt tag."
+     },
+     "debt_artefact.*.naive_median": {
+      "kind": "estimated",
+      "is": "The median short-term share of debt when an absent long-term tag is read as zero, by position - the wrong reading, kept to show its size."
+     },
+     "debt_artefact.*.strict_median": {
+      "kind": "estimated",
+      "is": "The same median over filings carrying both debt tags."
+     },
+     "params.n_per_de_kg": {
+      "kind": "stipulated",
+      "is": "The stated conversion, kilograms of nitrogen per animal unit, the pre-reform unit was built on; not verified here."
+     },
+     "params.reg_thresholds_de_ha.*": {
+      "kind": "stipulated",
+      "is": "The two regulatory thresholds located in animal units per declared hectare: the pinned kilogram thresholds over the stated conversion, which the generator checks."
+     },
+     "params.historic_limits_de_ha.*": {
+      "kind": "stipulated",
+      "is": "The pre-reform harmony ceilings in animal units per hectare, kept for continuity with the other pages; they have no legal force."
+     },
+     "params.surplus_line_de_ha": {
+      "kind": "stipulated",
+      "is": "The density above which a holding's animal units count as surplus to its own land: the first historic harmony ceiling."
+     },
+     "params.thin_equity_ratio": {
+      "kind": "stipulated",
+      "is": "The equity ratio below which a balance sheet counts as thin."
+     },
+     "params.min_kommune_holdings": {
+      "kind": "stipulated",
+      "is": "The number of land-declaring holdings a kommune needs before its median density is shown."
+     },
+     "params.shock_ha_kr.*": {
+      "kind": "stipulated",
+      "is": "The rungs of the per-hectare charge ladder, in kroner per declared hectare."
+     },
+     "params.shock_de_kr.*": {
+      "kind": "stipulated",
+      "is": "The rungs of the per-animal-unit charge ladder, in kroner per animal unit."
+     }
+    }
+   },
+   "what": "Joins the sibling project's livestock register, declared field parcels, CVR master data and parsed annual accounts on the CVR number, and aggregates them into cohorts - by enterprise type, legal form, place, organic status and filing status - with every figure a count, a sum, a share or a positional statistic over a named cohort.",
+   "model": "Per business: animal units from the livestock register, declared hectares from the parcel register, legal form, industry code and accounts flag from the CVR extract, and the newest filing spanning roughly a year from the parsed accounts. Enterprise type comes from the register's species and production codes (`enterprise_type`). A business has a stocking density only if it declares more than one hectare. Cohort statistics are medians and percentiles taken by position (`q`), shares are part over whole of the same cohort (`share`), and the charge ladders subtract a charge per hectare or per animal unit from the last filed twelve-month profit.",
+   "assumptions": [
+    "The CVR number on a herd, on a parcel and on a filing identifies one operating business.",
+    "Declared parcel area stands in for the area a holding can spread on, though it is neither harmoniareal nor the catch-crop base area.",
+    "The last filed twelve-month profit represents the holding's margin against which a charge would fall.",
+    "A business's single largest declared crop stands for its whole declared area when splitting land by the catch-crop base."
+   ],
+   "justified": [
+    {
+     "text": "Cohorts are published only with their counts, and medians are used throughout because one filing's equity ratio is extreme enough to decide a mean.",
+     "ref": "scripts/socialcontext.py:628"
+    },
+    {
+     "text": "Flows are taken only from filings spanning roughly a year, and stock and flow from the same filing.",
+     "ref": "scripts/socialcontext.py:585"
+    },
+    {
+     "text": "The long-term debt tag's absence is checked against the balance-sheet identity before it is read as zero, and the composition error it causes is computed and shown rather than hidden.",
+     "ref": "scripts/socialcontext.py:564"
+    },
+    {
+     "text": "The per-animal-unit ladder exists because the per-hectare ladder drops every landless holding.",
+     "ref": "scripts/socialcontext.py:697"
+    },
+    {
+     "text": "The surplus is measured above a line named in the code, so it cannot drift when the list of lines changes.",
+     "ref": "scripts/socialcontext.py:359"
+    }
+   ],
+   "gaps": [
+    "Until this conversion the surplus was measured above the first entry of a list whose first entry had changed, while the page said it was measured above the historic harmony ceiling; the figures before and after the fix differ.",
+    "The cut-offs that define a cattle business, a dairy cohort and an organic one (`0.7`, a half, a half in `organic_split`) are typed in the code and explained nowhere.",
+    "`enterprise_type` classifies a business from its register codes; its rules are not documented on the page.",
+    "The threshold positions rest on an unverified conversion, and declared area is not harmoniareal, so exposure locates the thresholds rather than testing them.",
+    "The filed accounts are the readable filings on the sibling's livestock map, selected by legal form: statistics over them carry selection bias, not sampling error in the usual sense."
+   ],
+   "void_if": [
+    "the sibling project's registers are refetched and this script is not rerun",
+    "a holding's animals, land and accounts sit under different CVR numbers"
+   ],
+   "licenses": "Counts, sums, shares and positional statistics over the named cohorts of the open registers and of the businesses that file accounts.",
+   "not_licensed": "Anything about a named holding, about businesses that file nothing, or about compliance with the regulations; any forecast of insolvency.",
+   "watches": [
+    "scripts/socialcontext.py"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/socialcontext.py": "2e64ab1e9f631e41"
+    }
+   }
+  },
+  {
+   "id": "K-FARM-PATHWAYS",
+   "title": "Every enumerated pathway of reactive nitrogen to Danish marine waters, with bounds",
+   "covers": {
+    "file": "data/manual/nitrogen_pathways.json",
+    "fields": {
+     "pathways.*.lo": {
+      "kind": "estimated",
+      "is": "The lower bound, kilotonnes of nitrogen a year, for one pathway of reactive nitrogen to Danish marine waters; null where the pathway has no number."
+     },
+     "pathways.*.hi": {
+      "kind": "estimated",
+      "is": "The upper bound for the same pathway, on the same terms."
+     }
+    }
+   },
+   "what": "A hand-compiled register of every pathway of reactive nitrogen to Danish marine waters this project could enumerate, each with plausible bounds in kilotonnes a year, its status (measured, modelled or unquantified) and a note on where the bounds come from.",
+   "model": "Bounds are read from published figures where they exist and constructed by this project where they do not; the register marks the constructed ones. Unquantified pathways carry no bounds. Sums over the pathways that have bounds give a floor on the total, because every empty row can only add.",
+   "assumptions": [
+    "The enumeration catches the pathways that matter; an unlisted pathway would change every sum and share taken over the register."
+   ],
+   "justified": [
+    {
+     "text": "Each pathway's note names where its bounds come from, and the register says which bounds are constructed here rather than published.",
+     "ref": "data/manual/nitrogen_pathways.json"
+    }
+   ],
+   "gaps": [
+    "The bounds are plausible ranges, not confidence intervals, and the notes do not give a pinned source for each.",
+    "Whether the enumeration is complete is not testable from inside the register."
+   ],
+   "void_if": [
+    "a pathway's published figure is revised and the register is not"
+   ],
+   "licenses": "That the enumerated set is unclosed, and floors on sums over it.",
+   "not_licensed": "Any percentage of a total the register cannot close.",
+   "watches": [
+    "data/manual/nitrogen_pathways.json"
+   ],
+   "confirmed": {
+    "by": "fork farm (written against the code and the pinned texts, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/nitrogen_pathways.json": "3c05038bde72ac40"
+    }
+   }
+  },
+  {
+   "id": "K-FARM-MONITORING",
+   "title": "How the national nutrient and oxygen figures are produced - the fields LANDBRUG.md prints",
+   "covers": {
+    "file": "data/manual/monitoring.json",
+    "fields": {
+     "diffuse_load.area_measured_pct": {
+      "kind": "document",
+      "is": "The share of Danish land area whose nitrogen transport is measured at stream stations, as the monitoring documentation states it."
+     },
+     "diffuse_load.area_modelled_pct": {
+      "kind": "document",
+      "is": "The share whose transport is modelled instead."
+     },
+     "diffuse_load.retention_uncertainty_national_average_pct_points": {
+      "kind": "document",
+      "is": "The stated uncertainty of the national average retention, in percentage points."
+     },
+     "load_trend_vs_outcome.nitrogen_load.approx_1990_kt": {
+      "kind": "document",
+      "is": "The flow-normalised nitrogen supply from Danish land to the sea around the start of the series, kilotonnes a year, as reported by DCE and summarised at miljotilstand.dk - an approximate reading of the published series."
+     },
+     "load_trend_vs_outcome.nitrogen_load.approx_recent_kt": {
+      "kind": "document",
+      "is": "The same supply in recent years, on the same terms."
+     },
+     "load_trend_vs_outcome.nitrogen_load.reduction_pct_since_1990": {
+      "kind": "document",
+      "is": "The reduction between the two, as a percentage, on the same terms."
+     },
+     "load_trend_vs_outcome.iltsvind_extent.observations.*.year": {
+      "kind": "document",
+      "is": "The year of one observation of the area affected by oxygen depletion."
+     },
+     "load_trend_vs_outcome.iltsvind_extent.observations.*.km2_september": {
+      "kind": "document",
+      "is": "The area of Danish inner waters affected by oxygen depletion in September of that year, square kilometres, from DCE's notices."
+     },
+     "load_trend_vs_outcome.iltsvind_extent.observations.*.km2_late_september": {
+      "kind": "document",
+      "is": "The same, for a late-September notice."
+     },
+     "typetal_nutrients_mg_per_l.combined_overflow.Tot-N": {
+      "kind": "document",
+      "is": "The standard concentration of total nitrogen assumed for combined-sewer overflow water, mg per litre."
+     },
+     "typetal_nutrients_mg_per_l.combined_overflow.COD": {
+      "kind": "document",
+      "is": "The standard chemical oxygen demand assumed for the same water, mg per litre."
+     }
+    }
+   },
+   "what": "A hand-curated register of documented properties of the Danish measurement system, each with its source; this declaration covers the diffuse-load, load-trend and standard-concentration fields the Danish-language page prints.",
+   "model": "Values are transcribed from the named technical annexes and reports; where an entry is the project's reading rather than the source's words, the register marks it inferred.",
+   "assumptions": [
+    "The transcription matches the source."
+   ],
+   "justified": [
+    {
+     "text": "The register's own rule: nothing is inferred without being marked, and each entry carries its source.",
+     "ref": "data/manual/monitoring.json"
+    }
+   ],
+   "gaps": [
+    "The figures are transcribed, not read from pinned texts, so a change in a source is not detected.",
+    "Several load figures are stated as approximate in the register's own field names."
+   ],
+   "void_if": [
+    "a source is revised and the register is not"
+   ],
+   "licenses": "What the monitoring documentation states.",
+   "not_licensed": "That the stated properties are the whole account of the measurement system.",
+   "watches": [
+    "data/manual/monitoring.json"
+   ],
+   "confirmed": {
+    "by": "fork farm (written against the code and the pinned texts, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/monitoring.json": "0bd5fd966bfd7077"
+    }
+   }
+  },
+  {
+   "id": "K-FARM-LANDBRUG",
+   "title": "Counts and constants the Danish-language page derives itself",
+   "covers": {
+    "file": "data/derived/landbrug.json",
+    "fields": {
+     "n_pathways": {
+      "kind": "counted",
+      "is": "Pathways in `data/manual/nitrogen_pathways.json`."
+     },
+     "n_unquantified": {
+      "kind": "counted",
+      "is": "Of those, the pathways with no lower bound: the empty rows."
+     },
+     "agri_pct": {
+      "kind": "document",
+      "is": "The published agricultural share of the Danish land-based waterborne nitrogen load, as this page quotes it; the page's subject is what that share is a share of."
+     },
+     "c_per_n": {
+      "kind": "computed",
+      "is": "Carbon per nitrogen by mass at the Redfield ratio, from the molar ratio and the atomic masses in the generator."
+     },
+     "c_per_cod": {
+      "kind": "computed",
+      "is": "Carbon per unit of chemical oxygen demand by mass: one oxygen molecule oxidises one carbon atom."
+     }
+    }
+   },
+   "what": "Writes the few numbers the page derives itself - two counts over the pathway register, the published agricultural share it quotes, and two stoichiometric constants - so that the page reads them back live.",
+   "model": "The counts are taken over the pathway register as it stands at the build; the constants are `(106 * 12.011) / (16 * 14.007)` and `12 / 32` in the code's terms.",
+   "assumptions": [
+    "The Redfield ratio applies to the organic matter a nitrogen load could produce."
+   ],
+   "justified": [
+    {
+     "text": "The counts are recomputed from the register at every build, so a filled row changes the page.",
+     "ref": "scripts/landbrug.py"
+    }
+   ],
+   "gaps": [
+    "The agricultural share is typed into the generator; it is not pinned to the document that publishes it.",
+    "The Redfield ratio is an ocean average, not a measured ratio for Danish overflow water."
+   ],
+   "void_if": [
+    "the published share is revised"
+   ],
+   "licenses": "The counts and the arithmetic the page does with them.",
+   "not_licensed": "That the published share is right.",
+   "watches": [
+    "scripts/landbrug.py",
+    "data/manual/nitrogen_pathways.json"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/landbrug.py": "3035a7541cccebc9",
+     "data/manual/nitrogen_pathways.json": "3c05038bde72ac40"
+    }
+   }
+  }
+ ]
+}

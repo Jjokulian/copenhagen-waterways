@@ -21,7 +21,8 @@ import shutil
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, ROOT, log, read_json
+from common import DERIVED, ROOT, log, read_json, write_doc
+import live
 
 SRC = os.path.join(DERIVED, "floodmaps")
 DEST = os.path.join(ROOT, "docs", "data", "flood2012")
@@ -30,9 +31,18 @@ WGS84_PRJ = ('GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257
 
 BANDS = [(1, "0.05-0.1 m"), (2, "0.1-0.2 m"), (3, "0.2-0.5 m"),
          (4, "0.5-1 m"), (5, "1-2 m"), (6, "over 2 m")]
+README_COMMIT = "302f928"    # the committed README a still-unsourced figure is quoted from
+# sheet keys are file-safe; the README names the districts
+SHEET_NAMES = {"amager": "Amager", "bispebjerg": "Bispebjerg", "indre-by": "Indre By",
+               "kbhvest": "København Vest", "ladegaardsaaen": "Ladegårdsåen",
+               "norrebro": "Nørrebro", "osterbro": "Østerbro"}
 
 
-def main():
+def main(argv=()):
+    if "--readme" in argv:
+        write_readme()
+        log("wrote docs/data/flood2012/README.md from its manifest")
+        return 0
     os.makedirs(DEST, exist_ok=True)
     geo = read_json(os.path.join(SRC, "_georef.json"))
     sheets = read_json(os.path.join(SRC, "_sheets.json"))
@@ -125,50 +135,111 @@ def main():
         if os.path.exists(s):
             shutil.copyfile(s, os.path.join(DEST, extra))
 
+    # Counts and accuracy from the registration itself, so the README states what
+    # the files say today rather than what was true when it was first written.
+    from floodmaps import BANDS as LEGEND
+    manifest["bands"] = [{"value": i, "lo_m": b["lo"], "hi_m": b["hi"]}
+                         for i, b in enumerate(LEGEND, start=1)]
+    sh = manifest["sheets"]
+    manifest["n_sheets"] = len(sh)
+    manifest["n_autoref"] = sum(1 for v in sh.values() if (v["method"] or "").startswith("autoref"))
+    manifest["n_control_points"] = sum(1 for v in sh.values()
+                                       if "control points" in (v["method"] or ""))
+    ses = [v["standard_error_m"] for v in sh.values() if v["standard_error_m"] is not None]
+    manifest["standard_error_min_m"] = min(ses) if ses else None
+    manifest["standard_error_max_m"] = max(ses) if ses else None
+    # the manifest's own prose, rebuilt from the same records (it once said four and
+    # three where the placement now is the other way round)
+    manifest["what"] = manifest["what"].replace("seven published", f"{len(sh)} published")
+    manifest["provenance"][2] = (
+        f"Position: an ensemble water cross-correlation for {manifest['n_autoref']} sheets; "
+        f"control points located on a web map by a resident for "
+        f"{manifest['n_control_points']}; then sheet-to-sheet image registration on masked "
+        "gradient images and a bundle adjustment over the sheets that overlap usefully.")
+    ba = manifest.get("bundle_adjustment") or {}
+    manifest["accuracy"] = (
+        (f"Mutually consistent to {ba['pair_rms_m']:g} m RMS across overlapping sheets, "
+         if ba.get("pair_rms_m") is not None else "")
+        + (f"tied to the ground by control points with standard errors of "
+           f"{min(ses):g}-{max(ses):g} m. " if ses else "")
+        + ("".join(f"{n.capitalize()} is not tied to the other sheets by the bundle "
+                   "adjustment and rests on its own control points. "
+                   for n in (ba.get("unconstrained") or []))))
     with open(os.path.join(DEST, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=1)
 
-    readme = f"""# Copenhagen 2012 cloudburst flood model, georeferenced
-
-{manifest['what']}
-
-## How to load it
-
-Open any `<sheet>.png` in QGIS. The matching `.pgw` world file and `.prj` sit beside it,
-so it lands in the right place in EPSG:4326 with no further steps.
-
-Pixel values are depth bands, not metres:
-
-| value | depth |
-|---|---|
-{chr(10).join(f"| {i} | {lab} |" for i, lab in BANDS)}
-| 0 | no modelled flooding, or outside the sheet |
-
-## Where it came from
-
-{chr(10).join('- ' + p for p in manifest['provenance'])}
-
-## How accurate it is
-
-{manifest['accuracy']}
-
-## What to be careful of
-
-{chr(10).join('- ' + c for c in manifest['caveats'])}
-
-## Licence
-
-{manifest['licence']}
-
-Method, code and the arguments built on it: https://jjokulian.github.io/copenhagen-waterways/
-"""
-    with open(os.path.join(DEST, "README.md"), "w", encoding="utf-8") as f:
-        f.write(readme)
+    write_readme()
     total = sum(os.path.getsize(os.path.join(DEST, f)) for f in os.listdir(DEST))
     log(f"\nwrote {len(manifest['sheets'])} sheets to docs/data/flood2012/ "
         f"({total/1e6:.1f} MB)")
     return 0
 
 
+
+def write_readme():
+    """The README, from the manifest read live: every count and error links to it."""
+    m = live.live_json(os.path.join(DEST, "manifest.json"))
+    ba = m.get("bundle_adjustment") or {}
+    un = list(ba.get("unconstrained") or [])
+    q = lambda text: live.was(README_COMMIT, "docs/data/flood2012/README.md", text)   # a locator
+    o = []
+    w = o.append
+    w(f"# {m['name']}\n")
+    w(f"Modelled inundation depth for a {q("for a @@ rainfall event")} rainfall event on the 2010 city, "
+      "from Københavns Kommune's Skybrudsplan. Recovered from the "
+      f"{m['n_sheets']} published PDF sheets, whose geospatial metadata had been "
+      "stripped, and placed back on the map.\n")
+    w("## How to load it\n")
+    w("Open any `<sheet>.png` in QGIS. The matching `.pgw` world file and `.prj` sit beside "
+      "it, so it lands in the right place in `EPSG:4326` with no further steps.\n")
+    w("Pixel values are depth bands, not metres:\n")
+    w("| value | depth |")
+    w("|---|---|")
+    for b in m["bands"]:
+        depth = (f"{b['lo_m']:g}–{b['hi_m']:g} m" if b["hi_m"] is not None
+                 else f"over {b['lo_m']:g} m")
+        w(f"| `{int(b['value'])}` | {depth} |")
+    w("| `0` | no modelled flooding, or outside the sheet |\n")
+    w("## Where it came from\n")
+    w("- Depth bands read against the printed legend palette.")
+    w("- Scale from each sheet's own scale bar, via the PDF text layer.")
+    w(f"- Position: an ensemble water cross-correlation for {m['n_autoref']} sheets; "
+      f"control points located on a web map by a resident for {m['n_control_points']}; "
+      "then sheet-to-sheet image registration on masked gradient images and a bundle "
+      "adjustment over the sheets that overlap usefully.\n")
+    w("## How accurate it is\n")
+    acc = []
+    if ba.get("pair_rms_m") is not None:
+        acc.append(f"Mutually consistent to {ba['pair_rms_m']:g} m RMS across overlapping "
+                   "sheets")
+    if m.get("standard_error_min_m") is not None:
+        acc.append(f"tied to the ground by control points with standard errors of "
+                   f"{m['standard_error_min_m']:g}–{m['standard_error_max_m']:g} m")
+    w(", ".join(acc) + "." if acc else "")
+    if un:
+        w(f"{', '.join(SHEET_NAMES.get(n, n) for n in un)} "
+          + ("is" if len(un) == 1 else "are") + " the exception: no overlapping pair "
+          "produced a usable correlation peak, so the bundle adjustment could not tie "
+          + ("it" if len(un) == 1 else "them") + " to the rest; "
+          + ("its" if len(un) == 1 else "their") + " position rests on "
+          + ("its" if len(un) == 1 else "their") + " own control points alone.")
+    w("")
+    w("## What to be careful of\n")
+    w("- The model is a 2012 calculation of a 2010 scenario. Nordhavn, most of Ørestad, "
+      "Sluseholmen and Teglholmen, and much of Refshaleøen have been built since and are "
+      f"not in it - {q("not in it - @@'s impervious surface,")}'s impervious surface, "
+      f"{q("impervious surface, @@, lies")}, lies outside every sheet.")
+    w("- The sheets paint depth over lakes and the harbour as well as over land. Water "
+      "standing on water is not modelled flooding; filter it against a water layer if "
+      "that matters to you.")
+    w("- This is a recovery of a published figure, not a hydraulic model run. Errors in "
+      "the recovery are ours, not the city's.\n")
+    w("## Licence\n")
+    w(f"{m['licence']}\n")
+    w("Method, code and the arguments built on it: "
+      "https://jjokulian.github.io/copenhagen-waterways/")
+    write_doc(os.path.join(DEST, "README.md"), "\n".join(o) + "\n")
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

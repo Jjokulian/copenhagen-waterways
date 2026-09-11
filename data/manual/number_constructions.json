@@ -1,0 +1,1515 @@
+{
+ "_what": "The construction behind every number this site prints: what kind of number it is, the model that produced it, why that model is justified, what nothing justifies, when it would be void, and what it may and may not be used to claim. Read by scripts/constructions.py; shown in the reader's number panel and in docs/SOURCES.md.",
+ "_rule": "A number whose construction is undeclared is refused, as a number without a source is. A number built on simulation is refused outside the method pages. No digits in the prose here: name the field in backticks or say it in words, because a typed number is exactly what this file exists to prevent.",
+ "method_pages": [
+  "docs/METHOD_LAB.md"
+ ],
+ "meta_pages": [
+  "docs/CLAIMS.md",
+  "docs/SOURCES.md"
+ ],
+ "constructions": [
+  {
+   "id": "K-DETECTABLE",
+   "title": "Synthetic recovery on the real sampling schedule, over many noise draws",
+   "covers": {
+    "file": "data/derived/detectable.json",
+    "fields": {
+     "n_samples": {
+      "kind": "counted",
+      "is": "Real surface-oxygen samples the real estimate uses, read through `cycles.read_samples()`: the same parameter, unit, depth, sample-type, censoring and range filters as `scripts/cycles.py`, and only samples whose clock `scripts/clock.py` classes as observed. One row is one measurement, so several shallow depths from one visit each count."
+     },
+     "clock_excluded.default": {
+      "kind": "counted",
+      "is": "Samples that pass every other filter but whose clock is a filled-in default, not a time: excluded because they cannot be placed against the sun."
+     },
+     "clock_excluded.ambiguous": {
+      "kind": "counted",
+      "is": "Samples that pass every other filter but come from a supplier whose clock convention in that era is mixed, so no single rule converts them to an instant: excluded."
+     },
+     "clock_excluded.untestable": {
+      "kind": "counted",
+      "is": "Samples from before summer time existed whose clock is not a known default: their convention cannot be tested, so they are excluded."
+     },
+     "noise_sd_mg_l": {
+      "kind": "estimated",
+      "is": "Standard deviation of one real oxygen value about its station's local level, from samples whose window neighbours all share their sun bin - where no diurnal variation can enter - with each residual scaled for the size of the mean it is taken from."
+     },
+     "noise_n": {
+      "kind": "counted",
+      "is": "The samples `noise_sd_mg_l` is measured from: those with at least one same-station neighbour inside the window, every one of them in the same sun bin."
+     },
+     "samples_with_neighbours": {
+      "kind": "counted",
+      "is": "Of `n_samples`, those with at least one other sample from the same station inside the window. The rest contribute nothing to the estimator."
+     },
+     "samples_single_bin": {
+      "kind": "counted",
+      "is": "Of `samples_with_neighbours`, those whose neighbours all sit in their own sun-elevation bin: a subset counted by the same rule, offering the estimator no contrast."
+     },
+     "window_days": {
+      "kind": "stipulated",
+      "is": "The half-width of the moving window, in days, that defines a sample's neighbours: `scripts/cycles.py`'s tightest window."
+     },
+     "draws": {
+      "kind": "stipulated",
+      "is": "Noise draws per amplitude on the real instants, chosen as a compromise between the precision of the share of draws and run time."
+     },
+     "level": {
+      "kind": "stipulated",
+      "is": "The share of draws an amplitude must reach the observed spread in before it counts as the bound."
+     },
+     "observed_real_spread_mg_l": {
+      "kind": "estimated",
+      "is": "The real archive's diurnal spread: the largest minus the smallest mean within-window deviation across the sun bins thick enough to count, computed by `cycles.deviations()` on the real samples - the same function, window, bins and thickness rule as every synthetic recovery."
+     },
+     "runs.*.imposed": {
+      "kind": "stipulated",
+      "synthetic": true,
+      "is": "The size of the diurnal cycle imposed on the synthetic values in one run: the coefficient on the sine of the sun's elevation. The swing from night to noon it gives is that coefficient times the sine of the day's noon elevation, so less than the size on every Danish day."
+     },
+     "runs.*.recovered_real_hours": {
+      "kind": "simulated",
+      "is": "The median, over the noise draws, of the spread the estimator recovers from synthetic values placed at the real sample instants, measured exactly as `observed_real_spread_mg_l` is."
+     },
+     "runs.*.recovered_real_p05": {
+      "kind": "simulated",
+      "is": "The fifth percentile of the same recoveries across draws."
+     },
+     "runs.*.recovered_real_p95": {
+      "kind": "simulated",
+      "is": "The ninety-fifth percentile of the same recoveries across draws."
+     },
+     "runs.*.recovered_even_hours": {
+      "kind": "simulated",
+      "is": "The median recovery when each sample's time of day is redrawn uniformly: the same samples, stations and dates, at any hour."
+     },
+     "runs.*.share_at_or_above_observed": {
+      "kind": "simulated",
+      "is": "The share of draws in which the recovered spread is at least `observed_real_spread_mg_l`."
+     },
+     "null_share_at_or_above_observed": {
+      "kind": "simulated",
+      "is": "With no cycle imposed at all, the share of draws whose spread is at least the observed one: how often noise alone produces what the archive shows."
+     },
+     "noise_ceiling_mg_l": {
+      "kind": "simulated",
+      "is": "The ninety-fifth percentile of the spread with no cycle imposed: what noise alone reaches in nearly all draws."
+     },
+     "detection_limit_mg_l": {
+      "kind": "bound",
+      "synthetic": true,
+      "is": "The smallest imposed amplitude on the grid whose recovered spread reaches the observed one in at least `level` of the draws."
+     }
+    }
+   },
+   "what": "Imposes a diurnal oxygen cycle of stipulated amplitude on the real instants and positions of the archive's surface samples, adds noise measured from the archive, and measures the result with the estimator the real data are measured with - over many noise draws per amplitude, once at the real times of day and once with the times redrawn.",
+   "model": "Each synthetic value is a constant plus $A\\,\\bigl(\\max(0,\\ \\sin e) - \\tfrac{1}{2}\\bigr)$, with $A$ the imposed amplitude and $e$ the sun's elevation (in the code `amp * (max(0, sin(elevation)) - 0.5)`), plus Gaussian noise with standard deviation `noise_sd_mg_l`, at the sun elevation of the sample's own instant (from `scripts/clock.py`) and place. `cycles.deviations()` turns every value into its deviation from the mean of its station's other samples inside the window, averages the deviations per sun bin, and the spread is the largest bin mean minus the smallest over the bins thick enough to count. The same function measures the real samples. Each amplitude is run on many draws; the bound is the smallest amplitude reaching the observed spread in at least `level` of them, and the draws at zero amplitude give the null.",
+   "assumptions": [
+    "A real diurnal cycle, if there is one, has the shape of the sun's elevation: flat at night, rising and falling with the sun. A cycle of another shape or phase would be recovered differently.",
+    "Everything the signal leaves out - season, site, weather, real variability - behaves within a window like independent Gaussian noise of the measured size.",
+    "Samples the clock cannot place are left out; the schedule tested is the schedule of the samples that can be placed."
+   ],
+   "justified": [
+    {
+     "text": "Recovering a stipulated truth through the real observing system is an Observing System Simulation Experiment, the standard way meteorology and oceanography decide what an observing system can see.",
+     "ref": "https://journals.ametsoc.org/view/journals/bams/101/8/bamsD190155.xml"
+    },
+    {
+     "text": "The same logic applied to ocean observing networks.",
+     "ref": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2019.00417/full"
+    },
+    {
+     "text": "Both sides are measured by the same code: the samples come from `cycles.read_samples()` and every spread, real or synthetic, from `cycles.deviations()` with the same window, bins and thickness rule. Nothing is re-implemented or typed in.",
+     "ref": "scripts/detectable.py:62"
+    },
+    {
+     "text": "The schedule is not modelled: every sample's station, date, instant and position is the archive's own, placed in time by conventions measured at every summer-time change rather than assumed.",
+     "ref": "scripts/clockzone.py"
+    },
+    {
+     "text": "The noise is measured rather than assumed, where a diurnal signal cannot reach it: from samples whose window neighbours all share their sun bin, scaled for the size of the mean each residual is taken from.",
+     "ref": "scripts/detectable.py:90"
+    },
+    {
+     "text": "Every amplitude is run on many draws, and draw by draw the amplitudes share a seed, so within a draw they differ by the signal alone; the bound and the null are shares of draws, not single outcomes.",
+     "ref": "scripts/detectable.py"
+    }
+   ],
+   "gaps": [
+    "The sine-of-elevation shape is argued from how photosynthesis works, not fitted to observed diurnal oxygen curves in Danish water.",
+    "The simulated noise is Gaussian and independent. Real residuals may be heavier-tailed or correlated within a station, which would widen the real spread's distribution beyond the simulated one and make the bound too tight.",
+    "The thickness rule for bins, `MIN_BIN_N` in the script, is stipulated. Another rule changes the observed spread and every recovery together, but the bound may move.",
+    "The share of draws that reach the observed spread is itself estimated from a finite number of draws."
+   ],
+   "void_if": [
+    "the real cycle's shape or phase differs strongly from the sun's elevation",
+    "the within-window noise is far from Gaussian, or depends on the hour",
+    "the clock conventions measured by `scripts/clockzone.py` are wrong for a supplier"
+   ],
+   "licenses": "What this sampling schedule and this estimator could and could not have detected, for a signal of this shape; and how often noise alone produces the spread the archive shows. Statements about the instrument.",
+   "not_licensed": "Anything about the size of the real diurnal cycle on its own. Combined with the observed spread it yields only a conditional upper limit, never a value, and never a limit for a cycle of another shape.",
+   "watches": [
+    "scripts/detectable.py",
+    "scripts/cycles.py",
+    "scripts/clock.py",
+    "scripts/daylight.py",
+    "data/derived/clock_convention.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: cycles.py changed only in the comment on sample types, now saying the technical instruction does not settle what a Blandingsprøve is; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/detectable.py": "04067ca4fac5e078",
+     "scripts/cycles.py": "ef5a31aa3beaf2fc",
+     "scripts/clock.py": "e2fb9cafe90c804b",
+     "scripts/daylight.py": "84c11f42cb7e2cab",
+     "data/derived/clock_convention.json": "a3ea19fa01ca5d8d"
+    }
+   }
+  },
+  {
+   "id": "K-DEPTH-CLOCK",
+   "title": "Timing CTD oxygen with a borrowed clock",
+   "covers": {
+    "file": "data/derived/depth_clock.json",
+    "fields": {
+     "clock_source.borrowed": {
+      "kind": "counted",
+      "is": "CTD oxygen measurements placed in time with the observed clock of the water-chemistry visit at the same station on the same date, converted to UTC by `scripts/clock.py`. Counted after every quality filter: correction factor in range, a usable value and depth, a depth band, a station position."
+     },
+     "clock_source.none": {
+      "kind": "counted",
+      "is": "CTD oxygen rows whose station-day has no water-chemistry clock to borrow: no bottle that day, or only bottles whose clock `scripts/clock.py` does not class as an observed time, or more than one observed time. Counted before the quality filters, so it includes rows that would have been dropped anyway - not the same counting rule as `borrowed`."
+     }
+    }
+   },
+   "what": "Places each oxygen measurement in a CTD profile in time, using the best clock available, so that oxygen at depth can be related to the sun's elevation.",
+   "model": "The CTD extract has no time field. A cast takes the instant of the water-chemistry visit at the same station on the same date, where `scripts/clock.py` classes that visit's clock as an observed time and the station-day has only one; filled-in defaults and mixed conventions are not borrowed. A clock supplied from cast logs, when one is present, takes precedence and checks the borrowed one.",
+   "assumptions": [
+    "A CTD cast and a water-chemistry bottle at the same station on the same day belong to one visit, close together in time."
+   ],
+   "justified": [
+    {
+     "text": "Ambiguous station-days - more than one clock time - are discarded, not averaged.",
+     "ref": "scripts/depth_clock.py:121"
+    },
+    {
+     "text": "Where supplied cast times exist, the offset between the supplied and the borrowed clock is measured cast by cast, so the borrowing can be checked instead of trusted.",
+     "ref": "scripts/depth_clock.py:178"
+    },
+    {
+     "text": "The borrowed clock is converted to UTC by the conventions measured per supplier and era, not assumed.",
+     "ref": "scripts/clock.py"
+    }
+   ],
+   "gaps": [
+    "No supplied cast times exist yet, so the borrowed clock is unchecked: nothing measures how often a cast and a bottle on the same station-day are hours apart.",
+    "`borrowed` and `none` are counted under different rules - after and before the quality filters - so their ratio is not the share of measurements that could borrow a clock."
+   ],
+   "void_if": [
+    "casts are routinely made at a different time of day from the bottle sampling on the same visit"
+   ],
+   "licenses": "How many CTD oxygen measurements can be timed by borrowing and how many cannot, each under its own counting rule; and, once supplied times arrive, whether the borrowing is sound.",
+   "not_licensed": "A share of measurements able to borrow a clock, because the counts use different rules. Any diurnal finding at depth, until the borrowed clock has been checked.",
+   "watches": [
+    "data/derived/clock_convention.json",
+    "scripts/clock.py",
+    "scripts/depth_clock.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read against the clock.py version of the code, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/derived/clock_convention.json": "a3ea19fa01ca5d8d",
+     "scripts/clock.py": "e2fb9cafe90c804b",
+     "scripts/depth_clock.py": "453a81739a7a518d"
+    }
+   }
+  },
+  {
+   "id": "K-SCHEDULE-LOSS",
+   "title": "The share of a signal lost to the sampling hours",
+   "covers": {
+    "step": true
+   },
+   "produces": "share",
+   "what": "The share of a recoverable diurnal signal that is lost by sampling at the real hours instead of round the clock, at one imposed amplitude.",
+   "model": "$100\\left(1 - \\dfrac{R_{\\mathrm{real}}}{R_{\\mathrm{even}}}\\right)$, with $R_{\\mathrm{real}}$ and $R_{\\mathrm{even}}$ the median recoveries at the real and at redrawn times of day (in the code `(1 - recovered_real_hours / recovered_even_hours) * 100`), for one amplitude, from the medians over draws, and only where the median recovery on the real hours exceeds `noise_ceiling_mg_l`.",
+   "assumptions": [
+    "The round-the-clock run is the fair reference: the same samples, only the times of day redrawn.",
+    "Both recoveries stand clear of the noise."
+   ],
+   "justified": [
+    {
+     "text": "Comparing a schedule with itself - the same stations, dates and samples, only the time of day redrawn - removes every property of the sea from the comparison.",
+     "ref": "scripts/detectable.py"
+    },
+    {
+     "text": "A loss is shown only where the signal clears everything noise alone produces in nearly all draws, so no ratio of noise to noise is reported.",
+     "ref": "scripts/methodlab.py"
+    }
+   ],
+   "gaps": [
+    "The round-the-clock median is taken over fewer draws than the real-hours one.",
+    "The loss is specific to a sun-shaped cycle."
+   ],
+   "void_if": [
+    "the real cycle's shape differs from the sun's elevation, because the loss is specific to that shape"
+   ],
+   "licenses": "How much of a sun-shaped diurnal signal this archive's working-day sampling throws away.",
+   "not_licensed": "How large the real diurnal cycle is, or that there is one.",
+   "watches": [
+    "scripts/methodlab.py",
+    "scripts/detectable.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: methodlab.py's sections two and three were rewritten for the claims pilot and an unused commit constant removed; the K-SCHEDULE-LOSS step line is unchanged. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/methodlab.py": "dcfdef9ce167122f",
+     "scripts/detectable.py": "04067ca4fac5e078"
+    }
+   }
+  },
+  {
+   "id": "K-SUBSET-SHARE",
+   "title": "A share of a counted set",
+   "covers": {
+    "step": true
+   },
+   "produces": "share",
+   "what": "A part of a counted set, as a percentage of the whole set.",
+   "model": "$100\\cdot\\dfrac{\\text{part}}{\\text{whole}}$, where the part is a subset of the whole and both are counted by the same rule.",
+   "assumptions": [
+    "The part is contained in the whole.",
+    "Part and whole are counted under the same rule: the same units, filters and period."
+   ],
+   "justified": [
+    {
+     "text": "A share of a documented positive set is the one form of share this project uses without further argument; a share of an absence is a residual and is not written as a share.",
+     "ref": "CLAUDE.md"
+    }
+   ],
+   "gaps": [
+    "The subset relation is asserted by whoever writes each use of this step. The machine checks neither that the part is contained in the whole nor that both were counted by the same rule."
+   ],
+   "void_if": [
+    "the part and the whole come from different filters, periods or units"
+   ],
+   "licenses": "The proportion of the set that was counted.",
+   "not_licensed": "A proportion of anything wider than the set that was counted.",
+   "watches": [
+    "CLAUDE.md"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: CLAUDE.md gained a paragraph on checked claims; its Claims section on shares of a documented set, which this declaration cites, is unchanged. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "CLAUDE.md": "7561eea19cada931"
+    }
+   }
+  },
+  {
+   "id": "K-READ-COUNT",
+   "title": "Counting a term in a pinned document",
+   "covers": {
+    "node": "reading-count"
+   },
+   "produces": "counted",
+   "what": "The number of occurrences of a term in the pinned text of an external document.",
+   "model": "A case-insensitive substring count over the pinned text, recomputed at every build: `len(re.findall(re.escape(term), text, re.I))`.",
+   "assumptions": [
+    "Each occurrence of the term is an instance of what the claim is counting.",
+    "The pinned text is a faithful extraction of the document."
+   ],
+   "justified": [
+    {
+     "text": "The count is recomputed from a copy pinned by its sha256, and a change in the live document is detected by its hash.",
+     "ref": "scripts/claims.py:132"
+    },
+    {
+     "text": "Every occurrence is listed beside the count, with the whole word it sits in, so what was counted as the same thing can be inspected.",
+     "ref": "scripts/live.py"
+    }
+   ],
+   "gaps": [
+    "A substring count also counts the inflections and compounds that contain the term. Whether each belongs is not decided by the machine."
+   ],
+   "void_if": [
+    "the term occurs in senses the claim does not mean"
+   ],
+   "licenses": "How often the document uses the term.",
+   "not_licensed": "How often the thing it names occurs in the world.",
+   "watches": [
+    "scripts/claims.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: claims.py changed only in how a confirmation's by-line is shown on CLAIMS.md - verbatim, as code; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/claims.py": "60161a51463c2608"
+    }
+   }
+  },
+  {
+   "id": "K-READ-PHRASE",
+   "title": "A value stated in a pinned document",
+   "covers": {
+    "node": "reading-phrase"
+   },
+   "produces": "document",
+   "what": "A value as an external document states it, confirmed to be present in the document's pinned text.",
+   "model": "The phrase carrying the value must occur, with whitespace normalised and HTML tags set aside, in the pinned text; and the value shown must be one of the numbers that phrase states, compared as a number whatever its separators. Otherwise the page is refused.",
+   "assumptions": [
+    "The phrase means what the claim takes it to mean."
+   ],
+   "justified": [
+    {
+     "text": "Presence is checked against a copy pinned by its sha256 at every build, and the live document is rechecked by hash.",
+     "ref": "scripts/claims.py:132"
+    },
+    {
+     "text": "A reading cannot print a number the document does not state: the shown value is checked against the quoted phrase itself, not merely against nearby words.",
+     "ref": "scripts/claims.py"
+    }
+   ],
+   "gaps": [
+    "That the phrase means what the claim says it means is a reading, assessed when the claim is confirmed, not checked by the machine."
+   ],
+   "void_if": [
+    "the document is amended, or the phrase is read out of its context"
+   ],
+   "licenses": "What the document states.",
+   "not_licensed": "That what it states is true.",
+   "watches": [
+    "scripts/claims.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: claims.py changed only in how a confirmation's by-line is shown on CLAIMS.md - verbatim, as code; resolve(), which reads {count:} and {read:}, is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/claims.py": "60161a51463c2608"
+    }
+   }
+  },
+  {
+   "id": "K-QUOTE",
+   "title": "Quoting this site's own past",
+   "covers": {
+    "node": "quote"
+   },
+   "produces": "quoted",
+   "what": "What this site printed at an earlier commit.",
+   "model": "A quotation is a located reference: a commit, a file and a phrase from that text with a slot where the value stands. When the page is built the value is read out of `git show COMMIT:FILE` at the slot; a phrase that finds no place, or more than one, is refused. Nothing is typed. In the archive of retired claims a whole passage is read the same way, from a digit-free opening and closing phrase (`live.excerpt`), and every quantity in it is a quotation of that commit.",
+   "assumptions": [
+    "The commit named is the version being talked about."
+   ],
+   "justified": [
+    {
+     "text": "A quotation of the past is true by construction once it is read out of the repository's history, which is what the build does - and because it is read, not typed, it cannot drift from what was said.",
+     "ref": "scripts/live.py"
+    },
+    {
+     "text": "The locator is checked for uniqueness, so the value cannot silently come from another place in the old text.",
+     "ref": "scripts/quote_locate.py"
+    },
+    {
+     "text": "The compiler refuses a quoted number anywhere but inside a historical claim, so a quotation cannot stand in for a justification of what it says: it licenses only that the site said it.",
+     "ref": "scripts/live.py"
+    }
+   ],
+   "gaps": [],
+   "void_if": [
+    "the history is rewritten"
+   ],
+   "licenses": "That the site once said this.",
+   "not_licensed": "That what it said was right.",
+   "watches": [
+    "scripts/live.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: the only change to live.py since the last reading is that excerpt() shows a chemical formula in an old passage as written, since it is part of what was said and may name a species the register does not hold; quantities are still quotations; verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/live.py": "5e94526640ee2f45"
+    }
+   }
+  },
+  {
+   "id": "K-STATED",
+   "title": "A value chosen, with its reason",
+   "covers": {
+    "node": "stated"
+   },
+   "produces": "stipulated",
+   "what": "A value chosen rather than measured - a threshold, a limit - with the reason for the choice written beside it.",
+   "model": "Declared once under `params` in `data/manual/claims.json` and shown with its reason wherever it is used.",
+   "assumptions": [
+    "The reason given still holds."
+   ],
+   "justified": [
+    {
+     "text": "Each value carries the reason it was chosen, and the reason travels with it to every page that uses it.",
+     "ref": "data/manual/claims.json"
+    }
+   ],
+   "gaps": [
+    "The reason is prose. Whether the choice is the right one is assessed with the claims that use it, not by the machine."
+   ],
+   "void_if": [
+    "the reason no longer holds"
+   ],
+   "licenses": "Results conditional on this choice.",
+   "not_licensed": "Results that would hold whatever the choice.",
+   "watches": [
+    "data/manual/claims.json#params",
+    "data/manual/claims.d/*.json#params"
+   ],
+   "confirmed": {
+    "by": "fork w1-pg (re-read: the new fragment data/manual/claims.d/w1-pg.json holds no params, so no stated value was added or changed; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/manual/claims.json#params": "762634f9547c3c3b",
+     "data/manual/claims.d/drafts-a.json#params": "44136fa355b3678a",
+     "data/manual/claims.d/drafts-b.json#params": "90814001a2b364c7",
+     "data/manual/claims.d/farm.json#params": "missing",
+     "data/manual/claims.d/methodlab-a.json#params": "missing",
+     "data/manual/claims.d/methodlab-b.json#params": "missing",
+     "data/manual/claims.d/nitrogen.json#params": "7353d9286191de1e",
+     "data/manual/claims.d/politics.json#params": "1488bdd72ea933e2",
+     "data/manual/claims.d/w1-ar.json#params": "missing",
+     "data/manual/claims.d/w1-ds.json#params": "missing",
+     "data/manual/claims.d/w1-lr.json#params": "8a98f7141c4c956b",
+     "data/manual/claims.d/w1-ni.json#params": "missing",
+     "data/manual/claims.d/w1-ob.json#params": "missing",
+     "data/manual/claims.d/w1-pg.json#params": "missing",
+     "data/manual/claims.d/water.json#params": "missing"
+    }
+   }
+  },
+  {
+   "id": "K-CONVEYANCE",
+   "title": "Cloudburst plan alignment length by typology",
+   "covers": {
+    "file": "data/derived/conveyance.json",
+    "fields": {
+     "features_in_layer": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Every feature in the city's cloudburst roads-and-pipes layer, one per GeoJSON feature, including the ones with no line geometry (`features_without_line_geometry`); nothing is excluded."
+     },
+     "mix_km": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Summed map length of the features whose `typologi` is 'mix', alignments the layer marks as surface for some unknown part of their length and piped for the rest."
+     },
+     "pipe_km": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Summed map length of the features whose `typologi` is 'Skybrudsledning', the cloudburst pipes."
+     },
+     "surface_km": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Summed map length of the features whose `typologi` is Skybrudsveje, Grønne veje or Forsinkelsesveje; 'mix' and pipe features are excluded, and so are features with no line geometry."
+     },
+     "surface_plus_mix_km": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "`surface_km` plus `mix_km`, added before rounding: every alignment that could carry water on the surface for some of its length."
+     },
+     "total_km": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Summed map length of every feature with line geometry, whatever its `typologi` (surface, pipe, 'mix', or any other value the layer might carry)."
+     },
+     "_provenance.pipe_km.excluded.*.n": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Features left out of `pipe_km`, one count per stated reason (no line geometry; every surface and mixed typologi). The second count is computed as every feature minus the pipe features, so it also contains the features with no geometry, which are therefore counted twice across the list and the list over-sums `n_in` minus `n_used`."
+     },
+     "_provenance.pipe_km.n_in": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Every feature in the layer, the same count as `features_in_layer`."
+     },
+     "_provenance.pipe_km.n_used": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Features with line geometry whose `typologi` is Skybrudsledning."
+     },
+     "_provenance.surface_km.alternatives.*.value": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "The length, in km, under each other definition of the surface class the script records: surface only, surface plus 'mix', and every alignment including pipe. These equal `surface_km`, `surface_plus_mix_km` and `total_km`."
+     },
+     "_provenance.surface_km.excluded.*.n": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Features left out of `surface_km`, one count per reason: no line geometry; `typologi` 'mix'; `typologi` Skybrudsledning. The typology counts include only features with line geometry, so the list sums exactly to `n_in` minus `n_used` for as long as the layer carries no other typologi value."
+     },
+     "_provenance.surface_km.n_in": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Every feature in the layer, the same count as `features_in_layer`."
+     },
+     "_provenance.surface_km.n_used": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Features with line geometry whose `typologi` is one of the three surface typologies."
+     },
+     "_provenance.surface_plus_mix_km.alternatives.*.value": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "The same alternative-definition lengths as `_provenance.surface_km.alternatives`: surface only, surface plus 'mix', and every alignment including pipe."
+     },
+     "_provenance.surface_plus_mix_km.excluded.*.n": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Features left out of `surface_plus_mix_km`, one count per reason: no line geometry; `typologi` Skybrudsledning."
+     },
+     "_provenance.surface_plus_mix_km.n_in": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Every feature in the layer, the same count as `features_in_layer`."
+     },
+     "_provenance.surface_plus_mix_km.n_used": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Features with line geometry whose `typologi` is a surface typology or 'mix'."
+     },
+     "_provenance.surface_to_pipe.alternatives.*.value": {
+      "kind": "share",
+      "synthetic": false,
+      "is": "The ratio of surface length to pipe length under each recorded definition of surface (surface only; surface plus 'mix'). It is a multiplier, not a fraction of a whole."
+     },
+     "_provenance.surface_to_pipe.n_in": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Every feature in the layer, the same count as `features_in_layer`."
+     },
+     "_provenance.surface_to_pipe.n_used": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Features with line geometry in the surface-only or pipe class. The 'mix' features and the features with no geometry are neither used nor listed as excluded: this entry's excluded list is empty."
+     },
+     "_provenance.surface_to_pipe.excluded.*.n": {
+      "kind": "counted",
+      "is": "Features left out of the surface-to-pipe ratio for one stated reason: the 'mix' features, which are neither class, and the features with no line geometry. Recorded since the exclusion list was completed; before that it was empty although these features were dropped."
+     }
+    }
+   },
+   "what": "Measures the length of every alignment in the city's cloudburst roads-and-pipes layer and splits it by the layer's own `typologi` attribute: water carried on the surface, in a pipe, or on a 'mix' alignment the layer does not break down.",
+   "model": "Each feature's `typologi` is read as its class. Surface is Skybrudsveje, Grønne veje and Forsinkelsesveje; pipe is Skybrudsledning; anything else (in practice only 'mix') is unclassified. For every feature with LineString or MultiLineString geometry, the script sums segment lengths computed on geographic longitude/latitude coordinates with a local flat-earth approximation, $\\sqrt{(k_\\lambda\\,\\Delta\\lambda\\,\\cos\\varphi)^2 + (k_\\varphi\\,\\Delta\\varphi)^2}$ - $\\Delta\\lambda$ and $\\Delta\\varphi$ the segment's steps in longitude and latitude, $k_\\lambda$ and $k_\\varphi$ the km-per-degree constants, $\\varphi$ the latitude (in the code `hypot(dlon * km_per_deg_lon * cos(lat), dlat * km_per_deg_lat)`). The constants are fixed spherical values written inline, and $\\varphi$ is taken at the segment's first point. Lengths are summed per typology, and the class totals are sums of those. Features with no line geometry are counted and dropped. Each headline figure is written together with a provenance block giving its class, its counts in and used, its exclusions, and the value under the other defensible class definitions.",
+   "assumptions": [
+    "The publisher's `typologi` value correctly says where water runs along each feature, on the surface or in a pipe.",
+    "The three named typologies all carry water on the surface where a person could see it, Forsinkelsesveje (retention roads, which hold water back) included.",
+    "No two features trace the same stretch of ground, so summing feature lengths does not count one alignment twice.",
+    "The layer's coordinates are geographic degrees, not a projected grid.",
+    "A flat-earth approximation with a cosine-of-latitude correction and fixed km-per-degree constants is accurate enough over the extent of one city.",
+    "The layer's geometry is the plan's alignment. It says nothing about whether an alignment has been built."
+   ],
+   "justified": [
+    {
+     "text": "The typology split uses an attribute the publisher attaches to every feature. It is not a classification this project invented.",
+     "ref": "docs/DATA_SOURCES.md:21"
+    },
+    {
+     "text": "The class sets are fixed in code and applied mechanically to every feature, and features with no line geometry are counted rather than silently dropped.",
+     "ref": "scripts/conveyance.py:41"
+    },
+    {
+     "text": "The length formula is a few lines of visible arithmetic on the layer's own vertices, with no smoothing or resampling.",
+     "ref": "scripts/conveyance.py:48"
+    },
+    {
+     "text": "The class definition, the counts and the value under each alternative definition are written by the code that did the counting, so a reader can see that the number depends on which typologies are grouped as surface.",
+     "ref": "scripts/conveyance.py:126"
+    },
+    {
+     "text": "The conflicting figures this site once printed for this quantity are each reproduced by one of the recorded definitions. The disagreement was about definitions, not measurement.",
+     "ref": "data/manual/claims.json:510"
+    },
+    {
+     "text": "The script names classification, not geometry, as the limiting error.",
+     "ref": "scripts/conveyance.py:23"
+    }
+   ],
+   "gaps": [
+    "No source cited anywhere in the repo defines the typologies. The mapping of Skybrudsveje, Grønne veje and Forsinkelsesveje to surface, and of Skybrudsledning to pipe, rests only on the script's own gloss (`scripts/conveyance.py:16`). Nothing argues that a retention road conveys water rather than holding it, or that a cloudburst road has no pipe beneath it.",
+    "Nothing checks for features that overlap or duplicate one another. A pipe drawn beneath a cloudburst road, or a segment digitised twice, would be summed twice into `total_km`.",
+    "The docstring's claim that the length formula is accurate to well under a percent is asserted, not tested. No code compares these lengths with an ellipsoidal or projected measurement, and the km-per-degree constants are fixed spherical values.",
+    "Sibling scripts use a different class definition. `rivermap.py` and `rivers3d.py` count 'mix' as surface (`scripts/rivermap.py:39`, `scripts/rivers3d.py:34`), while `surface_km` does not. rivermap.py's own docstring lists the surface set without 'mix' (`scripts/rivermap.py:16`), so that docstring and its code disagree.",
+    "A feature with an empty `typologi` becomes 'ukendt' and lands in `total_km` and `unclassified_km` without appearing in any provenance exclusion (`scripts/conveyance.py:71`). None occur in the current layer, but nothing guards against it.",
+    "The layer carries an expected in-service year, `forventet_ibrugtagning`, but this script ignores it. Every figure therefore mixes built, started and merely planned alignments (`docs/OPEN_PROBLEMS.md:353`)."
+   ],
+   "void_if": [
+    "The layer is re-fetched and its `typologi` vocabulary changes. A new or renamed value would fall into `total_km` and `unclassified_km`, match neither class, have no exclusion reason, and stop `mix_km` equalling the unclassified length.",
+    "The layer's coordinates arrive in a projected grid rather than geographic degrees. Some Danish layers are published that way (`scripts/formats.py:113`), and the formula would then return nonsense.",
+    "Features in the layer are found to overlap or duplicate one another.",
+    "The publisher's `typologi` values turn out to encode something other than where the water runs, such as a funding programme or a project phase.",
+    "The layer is replaced by a different edition of the plan."
+   ],
+   "licenses": "Claims about what the published cloudburst plan layer contains: how much alignment it draws under each of its own typology labels, and how the surface-to-pipe comparison changes with the definition of surface. It also supports the conclusion that the site's earlier conflicting figures differed in definition, not in measurement.",
+   "not_licensed": "How much of the plan is built or in service; how much water any alignment can carry; whether water on a given alignment is actually visible; which part of a 'mix' alignment is surface. Nor does it support any statement about flooding, overflows or water quality, or comparison with other scripts' 'surface route' figures, which count 'mix' as surface.",
+   "watches": [
+    "scripts/conveyance.py",
+    "scripts/figures.py",
+    "data/raw/skp_veje_tunneller_kk.geojson",
+    "scripts/solutions.py",
+    "scripts/rivermap.py"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/conveyance.py": "84c7ccecce69230f",
+     "scripts/figures.py": "ac3cebdb3d20ce7b",
+     "data/raw/skp_veje_tunneller_kk.geojson": "802de7e3314172f8",
+     "scripts/solutions.py": "6dc153443dead1de",
+     "scripts/rivermap.py": "eae940ce0c09aa37"
+    }
+   }
+  },
+  {
+   "id": "K-CONVERGENCE",
+   "title": "Unmodelled grid-north rotation of the flood sheets",
+   "covers": {
+    "file": "data/derived/convergence.json",
+    "fields": {
+     "gamma_max_deg": {
+      "kind": "computed",
+      "synthetic": false,
+      "is": "The largest, across the processed flood sheets, of the meridian convergence at a sheet's centre: the angle, in degrees clockwise, from true north to the grid north of the UTM zone the sheets are assumed to be drawn in."
+     },
+     "gamma_min_deg": {
+      "kind": "computed",
+      "synthetic": false,
+      "is": "The smallest, across the processed flood sheets, of the meridian convergence at a sheet's centre, in degrees clockwise from true north to the assumed grid north."
+     },
+     "n_sheets": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Flood sheets in `docs/data/flood2012` that have both a raster and a world file with no rotation terms. A sheet whose world file already carries a rotation is skipped and not counted."
+     },
+     "shift_max_m": {
+      "kind": "computed",
+      "synthetic": false,
+      "is": "The largest, across sheets, corner displacement: how far a sheet's corner would move if the sheet were turned about its centre by its convergence, taken as the ground half-diagonal times the angle in radians."
+     },
+     "shift_min_m": {
+      "kind": "computed",
+      "synthetic": false,
+      "is": "The smallest, across sheets, corner displacement: how far a sheet's corner would move if the sheet were turned about its centre by its convergence."
+     },
+     "shift_over_error_max": {
+      "kind": "estimated",
+      "synthetic": false,
+      "is": "The largest, across sheets, of one sheet's corner displacement divided by that sheet's stated registration error, rounded. The ratio inherits whatever uncertainty and meaning its denominator has, and that denominator is a different statistic on different sheets."
+     },
+     "shift_over_error_min": {
+      "kind": "estimated",
+      "synthetic": false,
+      "is": "The smallest, across sheets, of one sheet's corner displacement divided by that sheet's stated registration error, rounded. It need not come from the sheet with the smallest displacement."
+     },
+     "stated_error_max_m": {
+      "kind": "estimated",
+      "synthetic": false,
+      "is": "The largest registration error figure recorded in _georef.json across the processed sheets. For sheets placed from control points this is `standard_error_m`, for the others `spread_m`, which is the spread among agreeing detectors; sheets with neither are skipped."
+     },
+     "stated_error_min_m": {
+      "kind": "estimated",
+      "synthetic": false,
+      "is": "The smallest registration error figure recorded in _georef.json across the processed sheets: `standard_error_m` where present, otherwise the detector-agreement `spread_m`."
+     }
+    }
+   },
+   "what": "For each flood sheet, computes the meridian convergence at the sheet's centre, on the assumption that the sheet is drawn in a UTM grid, and the corner displacement that angle causes when the sheet is placed true-north-up, as every placement in this pipeline does. It then sets that displacement against the registration error the pipeline records for the sheet.",
+   "model": "For each world file in `docs/data/flood2012` with no rotation terms, the script takes the sheet-centre longitude and latitude from the world file and raster size. It computes $\\gamma = \\arctan\\bigl(\\tan(\\lambda - \\lambda_0)\\,\\sin\\varphi\\bigr)$, with $\\lambda_0$ the zone's central meridian (in the code `gamma = atan(tan(lon - CENTRAL_MERIDIAN) * sin(lat))`), the transverse-Mercator convergence on a sphere. It converts the world file's pixel sizes to ground metres with `M_PER_DEG_LON * cos(lat)` and `M_PER_DEG_LAT`, and takes the corner displacement as the ground half-diagonal times `|gamma|` in radians, the arc a corner travels when the sheet turns about its centre. Each sheet's stated error is `standard_error_m`, or failing that `spread_m`, from `data/derived/floodmaps/_georef.json`. Their ratio is rounded, and the file reports the minimum and maximum of each quantity across sheets. The record is written on every run. Run with `--dry-run` the world files are untouched; run without it, they are also rewritten with the rotation applied.",
+   "assumptions": [
+    "The flood sheets are drawn in the UTM zone whose central meridian is `CENTRAL_MERIDIAN`, and their north arrow shows that grid's north.",
+    "No step of the placement models any rotation, so the whole convergence is left out. This holds in code: the control-point fit, the world-file export, the bundle adjustment and floodgap's pixel mapping are all translation and scale only.",
+    "The spherical convergence formula is accurate enough at the sheets' latitude, and one angle at the centre serves for the whole sheet.",
+    "The displacement at the corner, the largest anywhere on the sheet, is a fair measure of the omission's size.",
+    "The error figures in _georef.json are comparable from sheet to sheet, and describe the placement in use now."
+   ],
+   "justified": [
+    {
+     "text": "The convergence formula is implemented in a few lines and evaluated at each sheet's own centre, as read from the world file currently served.",
+     "ref": "scripts/convergence.py:62"
+    },
+    {
+     "text": "The placement really has no rotation term. The control-point fit solves longitude from pixel x and latitude from pixel y separately, and states that every sheet has north up.",
+     "ref": "scripts/floodmaps.py:524"
+    },
+    {
+     "text": "The exported world files are written with both rotation terms set to zero, and every current world file carries none.",
+     "ref": "scripts/export_flood.py:106"
+    },
+    {
+     "text": "The bundle adjustment that later moved every sheet solves an east shift and a north shift per sheet, and no angle.",
+     "ref": "scripts/floodalign.py:254"
+    },
+    {
+     "text": "The corner displacement is the half-diagonal times the angle, a direct geometric consequence of turning a rectangle about its centre.",
+     "ref": "scripts/convergence.py:99"
+    },
+    {
+     "text": "The script's docstring reports checking the angle empirically, by walking along a line of constant UTM easting and measuring the eastward drift.",
+     "ref": "scripts/convergence.py:20"
+    },
+    {
+     "text": "Applying the rotation was tried and did not improve the independent terrain check beyond the scatter between sheets. The site therefore presents these numbers as the size of an omission, not as a correction.",
+     "ref": "scripts/convergence.py:37"
+    },
+    {
+     "text": "The site describes this as the pipeline's own north-up statement set against the convergence it omits.",
+     "ref": "docs/KNOWN_AND_UNKNOWN.md:68"
+    }
+   ],
+   "gaps": [
+    "Nothing in the repo establishes which grid the sheets were drawn in. The UTM premise rests on the docstring. The empirical check in `scripts/convergence.py:20` verifies UTM's own geometry, not that the sheets use UTM, and the sheet text read by floodmaps.py carries no projection statement. A grid with a different central meridian would give a different convergence.",
+    "The one independent test of the rotation, the terrain check, did not detect it beyond scatter (`scripts/convergence.py:37`). That result is recorded only in the docstring; `data/derived/terraincheck.json` holds no rotated run.",
+    "The denominator mixes two statistics. On control-point sheets it is `standard_error_m`; on automatically placed sheets it is `spread_m`, which the code itself calls small by construction, conditioned on the agreement it is meant to test (`scripts/floodmaps.py:430`). The site states that those figures were agreement between detectors and never accuracy (`docs/OPEN_PROBLEMS.md:227`). Ratios on those sheets, including the one that sets `shift_over_error_max`, are inflated against any true error.",
+    "The stated errors predate the bundle adjustment, which moved every automatically placed sheet much further than its `spread_m` (`docs/OPEN_PROBLEMS.md:227`). The current placement's accuracy as the export describes it, pair residuals plus control-point standard errors (`scripts/export_flood.py:160`, now computed from the registration records), is not what the ratio uses.",
+    "No code in scripts/ writes `standard_error_m` for the control-point sheets; the figures sit in _georef.json as hand-entered records. Each is a standard error of a fitted position, smaller than the scatter of the individual control points recorded beside it (`control_point_scatter_rms_m`). That scatter is where an unmodelled rotation would show, and nothing tests whether it does.",
+    "The ratio divides a maximum, the corner displacement, by a typical error. A like-for-like comparison would use the displacement at the control points or averaged over the sheet.",
+    "The convergence varies little between sheets (from `gamma_min_deg` to `gamma_max_deg`), so neighbouring sheets are rotated almost equally. The sheet-to-sheet consistency the bundle adjustment reports therefore cannot detect this rotation; only absolute anchors can.",
+    "In the docstring's worked check, the quoted drift and walk length give a bearing slightly smaller than the one stated (`scripts/convergence.py:20`). The discrepancy is small, but the check is not reproduced by any code.",
+    "The latitude constant `M_PER_DEG_LAT` differs from the one floodreg.py used to write the sheet bounds (`scripts/floodreg.py:34`), so ground half-diagonals are slightly understated. The effect is negligible, but the constants are inconsistent across scripts."
+   ],
+   "void_if": [
+    "The sheets turn out to be drawn in a grid whose central meridian is not `CENTRAL_MERIDIAN`, or their north arrow shows true north.",
+    "Any placement step gains a rotation term. The convergence would then no longer be omitted, and these numbers would describe a pipeline that no longer exists.",
+    "The script is run without `--dry-run`. The world files are then rotated, a later run skips every sheet (`scripts/convergence.py:76`), and the record cannot be rebuilt until export_flood.py rewrites the world files.",
+    "The error fields in _georef.json are replaced or change meaning, for example by a re-registration that records a post-adjustment error.",
+    "The world files in `docs/data/flood2012` fall out of step with _georef.json. build.json lists the export manifest as this script's input, not the world files and rasters it actually reads."
+   ],
+   "licenses": "A claim about the data pipeline: if the sheets are drawn in the assumed UTM grid, placing them north-up leaves out a rotation whose effect at the sheet corners is of the size given here. The registration error figures the pipeline records per sheet therefore do not bound the true placement error.",
+   "not_licensed": "Anything about flooding, water or the city. It does not show that any sheet is actually misplaced by this amount: the grid is assumed, and the one independent test did not detect the rotation. It is not a correction to apply to the current placement, and it is not a calibrated accuracy ratio, least of all on the automatically placed sheets, whose denominator is detector agreement.",
+   "watches": [
+    "scripts/convergence.py",
+    "scripts/floodmaps.py",
+    "scripts/floodalign.py",
+    "scripts/export_flood.py",
+    "scripts/floodreg.py",
+    "data/derived/floodmaps/_georef.json",
+    "docs/data/flood2012/manifest.json",
+    "data/derived/terraincheck.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/convergence.py": "85c913e91bcc269c",
+     "scripts/floodmaps.py": "b6aac5de8e3311c4",
+     "scripts/floodalign.py": "1763009c1cf3e320",
+     "scripts/export_flood.py": "c52b0ae14d150596",
+     "scripts/floodreg.py": "6b088c68b01a063a",
+     "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
+     "docs/data/flood2012/manifest.json": "1a970644e76ae011",
+     "data/derived/terraincheck.json": "bd7e95c80ca33c60"
+    }
+   }
+  },
+  {
+   "id": "K-FLOODGAP",
+   "title": "Modelled flood area on land",
+   "covers": {
+    "file": "data/derived/floodgap.json",
+    "fields": {
+     "flooded_area_km2": {
+      "kind": "modelled",
+      "is": "The ground area, on this project's metric grid, of cells where the deepest band read from any confidently registered sheet of the city's cloudburst flood model reaches at least `FLOOD_DEPTH_MIN`. One cell counts once if any sheet pixel falling in it reaches that band. Cells on mapped lakes and harbour are excluded and reported separately as `flooded_over_water_km2`, and the shallowest painted band is not counted."
+     }
+    }
+   },
+   "what": "Puts the depth bands recovered from the city's published flood-model sheets onto one metric grid, keeps the deepest band per cell, and counts the ground area modelled as flooded at or above a threshold depth, excluding open water. The result is the denominator of floodgap's coverage shares.",
+   "model": "Each sheet's pixels have already been classified into depth bands by colour distance to the printed legend palette, with a blue-cast test for the palest band, a flatness test for the darker ones, and the legend itself blanked (`scripts/floodmaps.py:250`). floodgap.py builds a grid of `CELL` cells spanning every confident sheet, using fixed metres-per-degree constants `LATM` and `LONM`. It places each confident sheet north-up by its recorded north-west corner, scales pixels by the sheet's scale-bar `m_per_px`, truncates each pixel to a grid cell, and keeps the maximum band per cell across all pixels and sheets. Cells at or above `FLOOD_DEPTH_MIN` are flooded; cells under the rasterised water polygons (the municipal water layer, plus OSM water if that file is present) are removed. The area is the remaining cell count times the cell area.",
+   "assumptions": [
+    "The published sheets faithfully show the city's model for the design cloudburst on the city as it then stood.",
+    "Colour classification recovers the painted bands without admitting photographed roofs, water or shadow.",
+    "Each sheet is placed well enough that the water mask removes the painted harbour and lakes and not neighbouring land. The total is not placement-invariant, because both the water exclusion and the union of overlapping sheets depend on where each sheet sits.",
+    "Where sheets overlap they agree, so taking the deepest band per cell unions one flood, not two misplaced copies.",
+    "A grid cell counts as flooded whenever any sheet pixel inside it does, which is acceptable resampling even though partly flooded edge cells count whole.",
+    "The band below `FLOOD_DEPTH_MIN` is a wet film, not flooding.",
+    "The municipal and OSM water polygons mark open water correctly."
+   ],
+   "justified": [
+    {
+     "text": "Only sheets flagged as confidently registered are used.",
+     "ref": "scripts/floodgap.py:229"
+    },
+    {
+     "text": "Paint over lakes and harbour is excluded, since water standing on water is not something a cloudburst basin addresses, and is reported separately, not dropped.",
+     "ref": "scripts/floodgap.py:301"
+    },
+    {
+     "text": "The palette classification was tuned against named failure cases: white roofs matching the palest band, and a flatness test that erased real streaks.",
+     "ref": "scripts/floodmaps.py:250"
+    },
+    {
+     "text": "The legend's swatches are blanked using positions from the PDF text layer, so they are not exported as fictional deep flooding.",
+     "ref": "scripts/floodmaps.py:359"
+    },
+    {
+     "text": "Every run checks whether modelled flooding avoids open water at each depth band against the water's own share of the grid, and reports a FAIL when it does not - which it now does.",
+     "ref": "scripts/floodgap.py:595"
+    },
+    {
+     "text": "The sheets were made mutually consistent by photograph-to-photograph matching and a bundle adjustment anchored on control points, and paint over open water fell, a quantity the adjustment did not optimise for.",
+     "ref": "docs/OPEN_PROBLEMS.md:220"
+    },
+    {
+     "text": "How far the area moves when one sheet's placement changes is recorded on the site, not hidden.",
+     "ref": "docs/KNOWN_AND_UNKNOWN.md:86"
+    }
+   ],
+   "gaps": [
+    "The threshold `FLOOD_DEPTH_MIN` is justified only by an inline comment calling the shallowest band a wet film (`scripts/floodgap.py:33`). No source is cited.",
+    "Two comments disagree. floodgap.py says most classified cells are an exact match to a palette colour, 'verified, not assumed' (`scripts/floodgap.py:244`); floodmaps.py sets a colour tolerance because the sheets are JPEG and an exact match is rare (`scripts/floodmaps.py:92`). No code in either script computes the exact-match share.",
+    "Max-per-cell resampling biases the area upward at every flood edge, since a cell counts whole if any pixel in it floods. The size of this bias is not measured.",
+    "Every placement step omits the meridian convergence (`data/derived/convergence.json`). Its effect on this area, through the water mask and sheet overlaps, has never been computed; only its effect on the terrain check was tried.",
+    "The water mask adds OSM water only if an optional raw file is present (`scripts/floodreg.py:163`), so the result depends on a file whose absence produces no warning.",
+    "The check that modelled flooding avoids open water now fails for several depth bands. A placement error or a fault in the water layer could explain it, and nothing yet decides between them."
+   ],
+   "void_if": [
+    "Any sheet's registration changes. The area has moved with one sheet's placement before (`docs/KNOWN_AND_UNKNOWN.md:86`).",
+    "A sheet stops or starts being flagged confident, changing which ground is covered at all.",
+    "The band rasters are re-extracted with a different colour tolerance, flatness test or legend box.",
+    "The water polygons change, or the optional OSM water file appears or disappears.",
+    "The sheets are found to show a scenario or terrain other than the one they are described as showing."
+   ],
+   "licenses": "How much ground the city's published cloudburst model paints at or above the threshold depth, within the area the recovered sheets cover, as read by this pipeline. It serves as the denominator for floodgap's statements about how much of that modelled flooding lies near planned or built works.",
+   "not_licensed": "That this area has flooded or will flood. It says nothing about the city as it is now: districts built since the model lie outside every sheet (`scripts/export_flood.py:68`), and the model has not been re-run on current terrain (`docs/OPEN_PROBLEMS.md:345`). It covers no flooding outside the sheets' footprint, gives no volume or depth beyond the band threshold, and is not precise to the digits printed, given resampling and sensitivity to placement.",
+   "watches": [
+    "scripts/floodgap.py",
+    "scripts/floodmaps.py",
+    "scripts/floodreg.py",
+    "scripts/floodalign.py",
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/floodmaps/_sheets.json",
+    "data/raw/vand_oversigtskort.geojson",
+    "data/raw/osm/landcover.json",
+    "data/derived/convergence.json",
+    "data/derived/floodmaps/amager.band.npy",
+    "data/derived/floodmaps/bispebjerg.band.npy",
+    "data/derived/floodmaps/indre-by.band.npy",
+    "data/derived/floodmaps/kbhvest.band.npy",
+    "data/derived/floodmaps/ladegaardsaaen.band.npy",
+    "data/derived/floodmaps/norrebro.band.npy",
+    "data/derived/floodmaps/osterbro.band.npy"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/floodgap.py": "76ca448241807d3d",
+     "scripts/floodmaps.py": "b6aac5de8e3311c4",
+     "scripts/floodreg.py": "6b088c68b01a063a",
+     "scripts/floodalign.py": "1763009c1cf3e320",
+     "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
+     "data/derived/floodmaps/_sheets.json": "711eee27cb50234c",
+     "data/raw/vand_oversigtskort.geojson": "c431ccb9c06f5889",
+     "data/raw/osm/landcover.json": "eea6c66c4c68bbf8",
+     "data/derived/convergence.json": "744a82cc37160b44",
+     "data/derived/floodmaps/amager.band.npy": "e8602a31feb92aa4",
+     "data/derived/floodmaps/bispebjerg.band.npy": "895c327a1e7acef0",
+     "data/derived/floodmaps/indre-by.band.npy": "1e1030782ecc5f98",
+     "data/derived/floodmaps/kbhvest.band.npy": "1c73e14ecf54e603",
+     "data/derived/floodmaps/ladegaardsaaen.band.npy": "06644202fcd16f51",
+     "data/derived/floodmaps/norrebro.band.npy": "12c310961bb8ed46",
+     "data/derived/floodmaps/osterbro.band.npy": "fca29ab400f43bce"
+    }
+   }
+  },
+  {
+   "id": "K-MANURE",
+   "title": "Animal units against declared land, per business",
+   "covers": {
+    "file": "data/derived/manure.json",
+    "fields": {
+     "over_limit.[1.4].businesses": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "The number of businesses (distinct CVR numbers) whose register animal units (`DE`, summed over all their CHR rows) divided by their declared parcel area (`IMK_areal`, summed over all their Marker parcels) is strictly above the classic harmony line `harmony_1_4`; only businesses with `DE > 0` and `ha > 1` are eligible, so a business with no matched land, or whose land is declared under another CVR, is never counted however dense its herd."
+     },
+     "over_limit.[1.4].share_of_businesses_pct": {
+      "kind": "share",
+      "synthetic": false,
+      "is": "`businesses` as a percent of `cvrs_with_both` - the businesses with both `DE > 0` and `ha > 1` - which is neither every business that declares land (`cvrs_with_land`) nor every business in the livestock register (`cvrs_with_animals`)."
+     },
+     "over_limit.[1.4].share_of_herd_pct": {
+      "kind": "share",
+      "synthetic": false,
+      "is": "The animal units held by the businesses in `businesses`, as a percent of `animal_units_total`; numerator and denominator follow different rules, because the denominator includes the herds of businesses with no matched land, which can never enter the numerator, and it excludes CHR rows with a blank CVR, so this is the share of the CVR-registered herd and not of the whole register."
+     },
+     "sites": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Every row the WFS returned for the CHR layer `CHR24`, counted before any filter; a row is one herd registration (a CHR number with a species, sometimes more than one per pair), so the count is larger than the number of distinct CHR numbers, and it includes rows with no CVR and rows with zero animal units."
+     }
+    }
+   },
+   "what": "Joins the livestock register (CHR, animal units per herd row) to the declared field-parcel register (Marker, hectares per parcel) on the operator's CVR number. For each business it divides animal units by declared hectares, then counts the businesses above each line in `LIMITS` and the animal units they hold.",
+   "model": "Two live WFS pulls from the agriculture ministry's GeoServer, attributes only, as CSV decoded as `latin-1`, a page at a time. CHR: every row is counted into `sites`; rows whose `CVRNR` is blank or `\"0\"` are then dropped, and `DE` is summed per CVR (`de_by_cvr`), whose sum is `animal_units_total`. Marker (`Marker_2025`): `IMK_areal` is summed per CVR (`ha_by_cvr`). A business enters the comparison only if `de_by_cvr[c] > 0` and `ha_by_cvr[c] > 1`; its density is $\\mathrm{DE}/\\mathrm{ha}$. For each line in `LIMITS`, `businesses` counts densities strictly above the line, `animal_units` sums those businesses' `DE`, $100\\cdot\\dfrac{\\text{businesses}}{|\\text{vals}|}$ (in the code `share_of_businesses_pct = 100 * businesses / len(vals)`) where `len(vals) == cvrs_with_both`, and $100\\cdot\\dfrac{\\text{animal units}}{\\text{animal units total}}$ (in the code `share_of_herd_pct = 100 * animal_units / animal_units_total`). Any `DE` or `IMK_areal` value that the script's own `num()` cannot parse is read as zero.",
+   "assumptions": [
+    "The CVR number on a CHR herd row and the CVR number on a Marker parcel identify the same operating business, so a string match on CVR is a match of animals to the land that takes their manure.",
+    "Area declared for area support approximates the area a business can spread on. It is not harmoniareal: spreading agreements, rented spreading land and land declared by a partner company are all outside it.",
+    "The register's `DE` is a like-for-like measure of manure across species. The herd-size columns are not, which is why `DE` is used.",
+    "The two layers describe the same farms at compatible times, though they are different register years (`CHR24` for herds, `Marker_2025` for parcels).",
+    "The classic harmony line `harmony_1_4` is a meaningful marker of manure pressure, although it has no legal force.",
+    "CHR rows with a blank CVR hold herds that do not belong in the national total the page prints.",
+    "Values silently zeroed by `num()` are too few to matter.",
+    "Every WFS page arrives complete: the pull ends at the first page shorter than requested and does not compare against the server's feature count."
+   ],
+   "justified": [
+    {
+     "text": "Both registers carry the operator's CVR number and the script joins on it; the layers and their traps were documented by the sibling project danish-livestock.",
+     "ref": "scripts/manure.py:9"
+    },
+    {
+     "text": "The sibling documents `DE` as the animal units under the manure regulation, and documents that the herd-size columns double-count for some species, which is the stated reason for using `DE`.",
+     "ref": "../danish-livestock/docs/data-sources.md"
+    },
+    {
+     "text": "The server's false encoding declaration is handled by decoding as `latin-1`.",
+     "ref": "scripts/manure.py:62"
+    },
+    {
+     "text": "The sibling reports that the CHR cattle head count for the layer's year agrees closely with the Statistics Denmark census. That supports the register's coverage of cattle heads, though not its `DE` figures.",
+     "ref": "../danish-livestock/docs/data-sources.md"
+    },
+    {
+     "text": "The threshold is declared stipulated and indicative, not a compliance test, in the script and in its output's `_stated` field.",
+     "ref": "scripts/manure.py:26"
+    },
+    {
+     "text": "The project's claim ledger pins the fertiliser regulation and finds the animal unit absent from its operative text, so the ledger qualifies every DE-per-hectare claim as indicative.",
+     "ref": "data/manual/claims.json"
+    },
+    {
+     "text": "The eligibility rule and both denominators are exactly as described.",
+     "ref": "scripts/manure.py:104"
+    },
+    {
+     "text": "The page that prints these numbers discloses that declared area is not spreading area, that many animal-keeping businesses match no land, and that the thresholds are the old harmony units.",
+     "ref": "scripts/nitrogen.py:425"
+    }
+   ],
+   "gaps": [
+    "Nothing in the repo justifies `harmony_1_4` as the land's physical capacity to take manure; it is a retired legal ceiling. The current binding ceiling is organic nitrogen per hectare of harmoniareal (source `BEK931-2024`, claim `C-DE-VOID`). At the nitrogen-per-animal-unit conversion that scripts/socialcontext.py states but says it has not verified, that ceiling corresponds to the `over_limit.[1.7]` line, not the `[1.4]` line. So the reading printed in NITROGEN.md, that the animals on those farms stand on declared land that cannot take their manure, and the `C-MANURE` note that 'the physical statement stands', claim more than the `[1.4]` line supports.",
+    "The claim text of `C-MANURE` in data/manual/claims.json calls `share_of_businesses_pct` a share 'of those declaring land'. The code's denominator is `cvrs_with_both` (businesses with `DE > 0` and `ha > 1`), a much smaller set than `cvrs_with_land`. The printed sentence misdescribes its own denominator, and NITROGEN.md's 'of those with land' is ambiguous in the same direction.",
+    "In `share_of_herd_pct` the numerator and denominator are counted under different rules. Businesses with animal units but no matched land fail `ha > 1` and are excluded from the numerator, although by the density rule they are above every line; their animal units stay in the denominator. How large a part of the CVR-registered herd these businesses hold is computed by no script. The printed share is therefore a floor on 'the herd on businesses whose own declared land is below the line', but it is printed as a share 'of the national herd' without that qualification.",
+    "`animal_units_total`, printed as the national herd, excludes CHR rows with a blank CVR. On the sibling's copy those rows are a large part of all rows and carry a small part of the animal units; no script here records either share. Neither the script nor the page mentions the exclusion.",
+    "`sites` is a row count, not a count of sites or locations. On the sibling's copy of `CHR24`, many CHR numbers carry several rows, and several rows share a CHR number and species. The sibling's data-sources doc says 'each feature is one site', the `D-CHR` node labels the count 'livestock sites', and NITROGEN.md prints it as 'Livestock sites'. Code and data disagree with those labels.",
+    "`num()` returns zero on any parse failure, the bare-except pattern the project's CLAUDE.md warns against. `formats.num()` is not used, and no count of zeroed values is recorded.",
+    "The `ha > 1` eligibility minimum is not explained in the script, its output or the page.",
+    "The pull stops at the first page shorter than requested and never checks the server's matched-feature count, although the sibling's fetchers do. A truncated page would silently shorten every total.",
+    "The output records no fetch date and no layer version. Recomputing from the sibling's fetched copies of the same layers reproduces `over_limit.[1.4].businesses` to within one business, not exactly, so the value depends on the live layer on the day of the fetch.",
+    "No reason is given for pairing a herd layer of one register year with a parcel layer of the next.",
+    "The script is not registered in data/manual/build.json. It reads no local file, only two live WFS layers, so the freshness check can never report its output stale."
+   ],
+   "void_if": [
+    "A business's animals and its land are registered under different CVR numbers (holding company, partnership, spreading agreement). It then appears landless (excluded) or overstocked (counted) when it is neither.",
+    "A WFS page came back short before the end of the layer, truncating the fold without an error.",
+    "The CHR or Marker layer has been revised since the fetch: the output carries no fetch date and would not show it.",
+    "The register's `DE` is defined differently from the old manure-regulation animal unit, or changes definition between layer years.",
+    "The count is read as a test of legal compliance. The animal unit has no legal force (`C-DE-VOID`).",
+    "`sites` is read as the number of livestock farms or distinct locations."
+   ],
+   "licenses": "Counts over the open registers: how many CVR-matched businesses have register animal units per declared hectare strictly above the classic harmony line, what fraction that is of businesses with both animals and land, and a lower bound on the share of the CVR-registered herd that stands on such businesses. Together these support a statement that declared area is small relative to the herd across a large part of the sector, at a stated and non-legal line.",
+   "not_licensed": "Legal non-compliance; the claim that manure physically must leave these holdings (the line is a retired legal ceiling, not a measured capacity, and declared area is not spreading area); a share of all land-declaring businesses; the share of the whole herd on overstocked holdings (landless herds are excluded from the numerator); the number of livestock sites or farms; kilograms of manure nitrogen per hectare; anything about water quality directly.",
+   "watches": [
+    "scripts/manure.py",
+    "data/derived/pins/BEK931-2024.txt",
+    "../danish-livestock/docs/data-sources.md"
+   ],
+   "confirmed": {
+    "by": "Claude research agent, main findings checked against the code by Claude (2026-09-10); not yet read by the project owner",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/manure.py": "3887fd0025291193",
+     "data/derived/pins/BEK931-2024.txt": "dfcd26d1b5aa26fa",
+     "../danish-livestock/docs/data-sources.md": "3f549d80383d9485"
+    }
+   }
+  },
+  {
+   "id": "K-INCIDENCE",
+   "title": "Who carries the nitrogen requirement: visibility and the no-buffer cohort",
+   "covers": {
+    "file": "data/derived/socialcontext.json",
+    "fields": {
+     "accounts_sample.n_filed": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "The number of businesses (CVR keys) in the sibling's `cvr_financials.json`: businesses on the sibling's livestock map with at least one readable XBRL annual report among the newest ones fetched. It counts businesses, not filings, and applies no filter yet for industry code, period length or balance sheet."
+     },
+     "hectares.by_accounts.False.ha": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Declared parcel hectares summed over the businesses in `land_by_cvr.json` whose CVR record lists no published accounts (the `accounts` count in `cvr_raw.jsonl` is zero), plus any business missing from that extract. It is a register flag, not a test of filing duty and not the complement of the accounts sample."
+     },
+     "hectares.total_ha": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Declared field-parcel area from the `Marker_2025` layer, summed over every CVR in the sibling's `land_by_cvr.json` with no minimum area; per-business totals were rounded to a tenth of a hectare upstream, and parcels with no CVR or an unreadable area were dropped upstream."
+     },
+     "intersection.median_years_of_equity": {
+      "kind": "estimated",
+      "synthetic": false,
+      "is": "The median, taken by position (the upper of the two middle values when the count is even), of book equity divided by the loss in the last twelve-month filing. It covers only holdings in `n_both` with positive equity and a loss in that filing (`n_years_of_equity`); holdings in profit or already in negative equity are excluded."
+     },
+     "intersection.n_both": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "The number of holdings in the filed-accounts sample that are both exposed and thin. The sample means a primary-agriculture industry code, a usable twelve-month balance sheet, `DE > 0` and a herd-based enterprise type. Exposed means register animal units per declared hectare at or above `line`, or `ha <= 1`; thin means equity over assets below the stipulated equity-ratio cut. Businesses that file no accounts cannot be counted, so this is a floor for the population."
+     },
+     "visibility.by_accounts.False.de": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Register animal units summed over the CVR-bearing businesses in the livestock register whose CVR record lists no published accounts. It includes businesses with zero animal units, which add nothing, and the flag is not the same set as the accounts sample: some businesses flagged as filers have no readable accounts."
+     },
+     "visibility.total_de": {
+      "kind": "measured",
+      "synthetic": false,
+      "is": "Register animal units (`DE`) summed over every CHR row carrying a CVR number. Rows with a blank CVR, which hold a small amount of animal units, are excluded, so this is the CVR-registered herd rather than the whole register."
+     }
+    }
+   },
+   "what": "Reads the sibling project's fetched registers (CHR herds, declared hectares per CVR, CVR master data, parsed XBRL accounts, kommune-to-region) and asks who carries the nitrogen requirement. It splits herd and land by whether the operator's CVR record lists published accounts. Among the businesses that do file, it counts those that are both stocked past a located regulatory threshold, or landless, and thin on equity.",
+   "model": "Per-CVR sums: `DE` over CHR rows with a CVR that is not blank or `\"0\"` (`de`); hectares from `land_by_cvr.json` (`land`). Each business carries a boolean from `cvr_raw.jsonl`, `accounts > 0`, where `accounts` is the length of the CVR record's `sammenhaengendeRegnskaber` list. A business absent from the extract, or whose fetch failed, defaults to False. `visibility.total_de = sum(de)`, and `by_accounts` sums `de` per boolean. `hectares.total_ha = sum(land)`, and `by_accounts` sums hectares per boolean. `accounts_sample.n_filed = len(cvr_financials)`. That set is filtered in turn: to an industry code whose first three characters are in `FARM_NACE`; to its latest filing spanning roughly a year (`latest_full_year`); to one with assets, equity and positive assets. Then `DE > 0` and a herd-derived enterprise type. Within those rows, exposed is `density >= line or ha <= 1`. `line` is the animal-unit position of the higher kg-N threshold, at a stated nitrogen-per-animal-unit conversion; $\\text{density} = \\mathrm{DE}/\\mathrm{ha}$ where `ha > 1`. Thin is $\\text{equity}/\\text{assets}$ below `THIN_EQUITY_RATIO`, stored with the other parameters in the output. `n_both` counts rows that are exposed and thin. $\\operatorname{median}\\!\\left(\\dfrac{\\text{equity}}{-\\text{profit}}\\right)$ (in the code `median_years_of_equity = q([equity / -profit], 0.5)`) over those with `equity > 0` and `profit < 0`, where `profit` is the XBRL `ProfitLoss` fact.",
+   "assumptions": [
+    "The CVR record's list of accounts (`sammenhaengendeRegnskaber`) is non-empty exactly when a business publishes annual accounts, so an empty list means its finances are not public.",
+    "A business missing from the CVR extract, or whose fetch failed, has no public accounts.",
+    "The current kg-N-per-hectare thresholds can be placed on the animal-unit scale at the stated conversion, and declared parcel area can stand in for harmoniareal.",
+    "A holding with `ha <= 1` is exposed whatever its herd, because it has no base area of its own and its position rests on a placement contract.",
+    "An equity ratio below the stipulated cut means the holding has little buffer.",
+    "The last filed twelve-month loss is a run rate, so book equity divided by that loss measures years of buffer; book equity is a fair measure of the buffer.",
+    "The first three characters of the CVR industry code identify primary agriculture, and the herd rather than the code identifies the enterprise type.",
+    "The CVR that owns the CHR herd, the CVR that declares the land and the CVR that files the accounts are the same entity, and its balance sheet is the farm's.",
+    "Herds (livestock register year), parcels (`Marker_2025`) and the latest filings (whose years vary by holding) describe the same businesses at compatible times.",
+    "The sibling's accounts fetch covered every CVR on its livestock map, so `n_filed` is the population of readable filers there rather than a draw from it."
+   ],
+   "justified": [
+    {
+     "text": "The accounts flag is read from the CVR extract as a count of the record's accounts list, and a business absent from the extract is placed under False by the default tuple.",
+     "ref": "scripts/socialcontext.py:142"
+    },
+    {
+     "text": "The flag is the length of the CVR gateway's `sammenhaengendeRegnskaber` list, as written by the sibling's fetcher.",
+     "ref": "../danish-livestock/scripts/fetch_cvr.py:264"
+    },
+    {
+     "text": "The accounts file holds parsed XBRL figures only for CVRs on the sibling's livestock map, from the newest reports fetched per business.",
+     "ref": "../danish-livestock/scripts/fetch_regnskaber.py:307"
+    },
+    {
+     "text": "The page and the sibling's docs state that filing duty follows legal form and that sole proprietorships and ordinary partnerships do not file; the page also tabulates herd by legal form beside the flag.",
+     "ref": "docs/INCIDENCE.md"
+    },
+    {
+     "text": "Flows are taken only from filings spanning roughly a year, and stock and flow come from the same filing.",
+     "ref": "scripts/socialcontext.py:511"
+    },
+    {
+     "text": "Support services and property letting are excluded from primary agriculture by industry code, because they would drag every average.",
+     "ref": "scripts/socialcontext.py:80"
+    },
+    {
+     "text": "The script labels the kg-N-to-animal-unit conversion as stated and not verified, and says declared parcels are not harmoniareal, so the line locates the threshold rather than testing it.",
+     "ref": "scripts/socialcontext.py:68"
+    },
+    {
+     "text": "Landless holdings are counted as exposed because they have no base area of their own.",
+     "ref": "scripts/socialcontext.py:702"
+    },
+    {
+     "text": "Medians are used throughout because one holding's equity ratio is extreme enough to drive a mean.",
+     "ref": "scripts/socialcontext.py:595"
+    },
+    {
+     "text": "The percentile is exact by position, and an empty cohort returns NaN rather than an error.",
+     "ref": "scripts/socialcontext.py:103"
+    },
+    {
+     "text": "The claim ledger marks the cohort count as a floor and names the non-filing share of the herd beside it.",
+     "ref": "data/manual/claims.json"
+    },
+    {
+     "text": "The sibling reports that the CHR cattle head count agrees closely with the Statistics Denmark census for the layer's year, which supports the register's coverage of cattle, though not its `DE` figures.",
+     "ref": "../danish-livestock/docs/data-sources.md"
+    }
+   ],
+   "gaps": [
+    "The equity-ratio cut that defines 'thin', `THIN_EQUITY_RATIO`, is stipulated and printed on the page, but neither the code nor any doc gives a reason for it.",
+    "The nitrogen-per-animal-unit conversion that places `line` is stated and, on the script's own account, not verified. Declared parcel area is not harmoniareal. So 'exposed' locates the threshold and does not test it.",
+    "'Years of equity at the current loss rate' treats a single filed year's `ProfitLoss` as a run rate. Nothing justifies that, the cohort behind the median (`n_years_of_equity`) is small, and the positional median is the upper of the two middle values.",
+    "The `by_accounts` split and the accounts sample are counted under different rules. The flag is the CVR record's accounts list; the sample is readable XBRL fetched only for CVRs on the sibling's livestock map. For livestock businesses the two nearly coincide (the difference is a small set of businesses flagged True that have no readable accounts, counted by no script). For land-declaring businesses most of those flagged True are outside the sample, because their accounts were never fetched. The page nevertheless sets the flag's shares beside the sample as if the sample were the flagged set (`scripts/socialcontext.py:1851`).",
+    "That `sammenhaengendeRegnskaber` means 'published annual accounts' is inferred from the field name. Neither the sibling's docs nor this repo documents it.",
+    "The False bucket is a residual: no accounts listed, plus absent or failed CVR lookups. The extract covers essentially every business, so it is nearly as wide as the category named, but it is still a share of an absence (see CLAUDE.md, Claims).",
+    "The page explains the non-filing share as 'a legal fact about who has to file'. The code never uses legal form for the split, and no statute is cited for the filing duty.",
+    "The docstring counts the account fetch in 'XBRL documents' (`scripts/socialcontext.py:24`), and the page calls them 'filings' (`scripts/socialcontext.py:1520`). The code's `n_filed` counts businesses, and the file holds several filings per business. The docstring disagrees with the code.",
+    "The `D-ACCOUNTS` node calls the filed accounts 'a sample'. They are the whole readable filing population on the sibling's map, selected by legal form. Statistics over them carry selection bias, not sampling error in the usual sense.",
+    "`visibility.total_de`, printed as the national herd, excludes CHR rows with a blank CVR; neither the script nor the page says so.",
+    "The `ha > 1` split between holdings with land and landless holdings is not explained.",
+    "The script reads files outside the repository through `DANISH_LIVESTOCK` and records no digest or fetch date for them. It is not registered in data/manual/build.json, so nothing reports its outputs stale when the sibling refetches."
+   ],
+   "void_if": [
+    "The sibling's data files are refetched, extended (for example, the crop-holding accounts fetch in progress) or partially fetched. Every field moves, and nothing here records the change.",
+    "`DANISH_LIVESTOCK` points at a different data directory from the one these values were computed on.",
+    "The CVR accounts list stops meaning published annual reports, or the CVR fetch had failures: failed lines silently become False.",
+    "A farm's animals, land and accounts sit under different CVR numbers (group or partnership structures). Exposure and equity are then measured on different entities.",
+    "The last filed loss was a one-off (write-down, disposal, a bad harvest year), which breaks the run-rate reading of years of equity.",
+    "The numbers are read as a statement about named holdings or as a bankruptcy forecast."
+   ],
+   "licenses": "How much of the CVR-registered herd, and of declared farmland, is operated by businesses whose CVR record lists no published accounts. How many businesses on the sibling's livestock map have readable filed accounts. A floor on the number of animal-keeping filers that are both landless or stocked past the located threshold and below the stipulated equity cut, and the median size of their book equity relative to their last loss.",
+   "not_licensed": "Anything about the finances of businesses that do not file; a count or share of Danish farms in financial distress; a forecast of insolvency or any statement about a named holding; compliance with the kg-N thresholds (the animal-unit position is an unverified conversion over non-harmoniareal area); a projected date of exhaustion (the ratio compares magnitudes and discounts nothing); anything about arable holdings' balance sheets, since none are in the data; anything about water quality.",
+   "watches": [
+    "scripts/socialcontext.py",
+    "../danish-livestock/data/chr_2024.json",
+    "../danish-livestock/data/land_by_cvr.json",
+    "../danish-livestock/data/cvr_raw.jsonl",
+    "../danish-livestock/data/kommuner.json",
+    "../danish-livestock/data/cvr_financials.json",
+    "../danish-livestock/scripts/fetch_chr.py",
+    "../danish-livestock/scripts/fetch_marker.py",
+    "../danish-livestock/scripts/fetch_cvr.py",
+    "../danish-livestock/scripts/fetch_regnskaber.py",
+    "../danish-livestock/docs/data-sources.md"
+   ],
+   "confirmed": {
+    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/socialcontext.py": "2e64ab1e9f631e41",
+     "../danish-livestock/data/chr_2024.json": "6dec4ea4405d56e5",
+     "../danish-livestock/data/land_by_cvr.json": "5abc496953b6ac82",
+     "../danish-livestock/data/cvr_raw.jsonl": "f77642e911523557",
+     "../danish-livestock/data/kommuner.json": "5f2ff5f0b1f3d01d",
+     "../danish-livestock/data/cvr_financials.json": "80a9e794c5bc6cce",
+     "../danish-livestock/scripts/fetch_chr.py": "7d4020ab3b3886ff",
+     "../danish-livestock/scripts/fetch_marker.py": "cf6754b0af5fcce9",
+     "../danish-livestock/scripts/fetch_cvr.py": "9cd70c97f2528dbf",
+     "../danish-livestock/scripts/fetch_regnskaber.py": "4c21f51dfa40cb80",
+     "../danish-livestock/docs/data-sources.md": "3f549d80383d9485"
+    }
+   }
+  },
+  {
+   "id": "K-ENUMS",
+   "title": "Record and non-blank counts of the ODA extracts",
+   "covers": {
+    "file": "data/derived/enums.json",
+    "fields": {
+     "ctd.rows": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "The number of records the Python `csv` reader returned from the fetched CTD extract `data/raw/oda/ctd.csv.gz`, header excluded and wholly empty lines skipped; one record is one reading of one of the extract's `Parameter` values at one depth of one cast, so this counts readings of every parameter (temperature, salinity, fluorescence, current and the rest), not casts, stations, visits or oxygen readings alone, and nothing was filtered out."
+     },
+     "kemi.rows": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "The number of records the Python `csv` reader returned from the fetched water-chemistry extract `data/raw/oda/kemi.csv.gz`, header excluded and wholly empty lines skipped; a record is normally one parameter result (`Parameter`, `Enhed`, `Resultat`) for one bottle sample at one station, date and depth, so it is not a count of samples or visits, and nothing was excluded - which means the count also includes the one-field fragments produced where a multi-line free-text quality note breaks the file's quoting."
+     },
+     "kemi.nonblank.Startklok": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "The number of records counted in `kemi.rows` whose `Startklok` field exists and is not empty after stripping whitespace (a whitespace-only value counts as blank, and a record too short to reach the column counts as blank); whether the value is a valid clock time, or in which time zone, is not tested - and every record without a value is a note fragment rather than a sample row, so `kemi.rows - kemi.nonblank.Startklok` counts parse fragments, not samples lacking a clock."
+     }
+    }
+   },
+   "what": "For every column of each named ODA extract, counts the distinct values (in full while the column looks categorical, as a reservoir-sampled numeric summary once it does not), the total number of records, and the number of records with a non-blank value in each column.",
+   "model": "Each gzip extract is streamed through `csv.DictReader` with a semicolon delimiter and `latin-1` decoding. `rows` is incremented once for every record the reader yields, before any test. For each field, `nonblank[column]` is incremented when the column name is not `None` (so values spilling past the header are ignored), the value is not `None` (so a short record contributes nothing for the columns it lacks), and `value.strip()` is non-empty. The per-extract record is merged into the existing `enums.json`, replacing only that extract's key. The current `kemi` entry comes from the current code; the `ctd` entry carries no `nonblank` key, so it was written by an earlier version of the script and survives through the merge.",
+   "assumptions": [
+    "One `csv` record corresponds to one row of the source table. This holds for the CTD extract, where a full-file scan found no malformed rows. It fails in the water-chemistry extract wherever a free-text `Kvalitetsnote` contains quotation marks and line breaks that split it into extra one-field records.",
+    "The file on disk is the extract the numbers are meant to describe; the counts are of the fetched file, not of ODA's database, whose station list depends on the period requested.",
+    "The earlier version of the script that wrote the `ctd` entry counted records the same way the current code does."
+   ],
+   "justified": [
+    {
+     "text": "A record is counted once for every row the reader yields, with no filter before the increment.",
+     "ref": "scripts/enums.py:83-86"
+    },
+    {
+     "text": "A value counts as non-blank only if its column is named, the field exists in the record, and it is non-empty after `strip()`.",
+     "ref": "scripts/enums.py:87-89"
+    },
+    {
+     "text": "The reader follows the declared ODA format: semicolon delimiter, `latin-1` encoding, double-quoted fields.",
+     "ref": "scripts/formats.py:93-97"
+    },
+    {
+     "text": "The CTD record count matches the independent full-file scan recorded in the format declarations, which found no malformed rows in that extract.",
+     "ref": "scripts/formats.py:26-28"
+    },
+    {
+     "text": "In `kemi.nonblank`, every column after the first has exactly the same count as `Startklok`, while the first column has more. So the records lacking a clock lack every field but the first, which is the pattern of the column-count trap the format declaration names. A streaming check made for this declaration confirmed that each such record has a single field of note text.",
+     "ref": "scripts/formats.py:104-106"
+    },
+    {
+     "text": "The CTD extract's own column list, as recorded by this script, has a `Dato` column and no clock column, which supports reading `ctd.rows` as readings that carry a date and no hour.",
+     "ref": "data/derived/enums.json"
+    },
+    {
+     "text": "Merging rather than overwriting is deliberate, so that a run on one extract does not erase another's entry.",
+     "ref": "scripts/enums.py:149-161"
+    }
+   ],
+   "gaps": [
+    "The format declaration says records whose field count differs from the header must be skipped, but the script does not skip them. `kemi.rows` therefore includes note fragments that are not measurements.",
+    "The difference `kemi.rows - kemi.nonblank.Startklok` is used elsewhere as the number of rows without a clock time. It is the number of note fragments: every genuine row of the extract carries a `Startklok` value.",
+    "Non-blank does not mean valid. Nothing checks that a `Startklok` value parses as a time, which time zone it is in, or whether a value such as midnight is a placeholder.",
+    "The `ctd` entry was written by an earlier version of the script and carried forward by the merge. Nothing in the file records when it was made or from which copy of the extract.",
+    "The script is not registered in `data/manual/build.json`, so nothing marks these counts stale when an extract is re-fetched."
+   ],
+   "void_if": [
+    "An extract is re-fetched (a different period, station network or fetch date) and the script is not re-run for it: the entry then describes a file that is no longer on disk.",
+    "The script is changed to skip records with the wrong field count, or the source's quoting is repaired: `kemi.rows` would fall to `kemi.nonblank.Startklok`, and the apparent rows without a clock would disappear.",
+    "The file is read with a different delimiter, encoding or quoting rule than the one declared."
+   ],
+   "licenses": "Statements about the extracts as held: how many records each contains, that every genuine row of the water-chemistry extract carries a `Startklok` value, and, with the recorded column list, that the CTD extract's readings carry a date and no clock time.",
+   "not_licensed": "Anything about the water. These counts are not counts of samples, bottles, casts, stations or visits, since a record is one parameter reading. They say nothing about ODA's database beyond the fetched period and network. `Startklok` being present says nothing about whether the time is correct or which zone it is in. The gap between `kemi.rows` and `kemi.nonblank.Startklok` is not a count of samples without a clock.",
+   "watches": [
+    "scripts/enums.py",
+    "scripts/formats.py",
+    "data/raw/oda/kemi.csv.gz",
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "confirmed": {
+    "by": "Claude research agent, main findings checked against the code by Claude (2026-09-10); not yet read by the project owner",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/enums.py": "e21dcf1b1c5748b5",
+     "scripts/formats.py": "4d546353a50a2668",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3",
+     "data/raw/oda/ctd.csv.gz": "99004e1b7bcc8b5b"
+    }
+   }
+  },
+  {
+   "id": "K-CYCLES",
+   "title": "Surface oxygen samples placed by sun elevation",
+   "covers": {
+    "file": "data/derived/cycles.json",
+    "fields": {
+     "results.o2.n": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "The number of water-chemistry rows that pass all of these filters: `Parameter` is exactly `Oxygen indhold` and `Enhed` is exactly `mg/l`; `parse_klok` accepts the clock; `Startdato` is a `YYYYMMDD` date; depth and result parse; the depth is at most `MAX_DEPTH`; the sample type is `Enkeltprøve` or `Blandingsprøve`; `ResultatAttribut` is not `<` or `>`; the value is inside the physical range in `PARAMS`; and the station has a position. One row is one oxygen measurement in one bottle, so several shallow depths or replicate rows from one visit each count, and the count is not a count of visits or stations, and whose clock `scripts/clock.py` classes as an observed time."
+     },
+     "results.o2.by_window.*.sun.night.n": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Of the measurements in `results.o2.n`, the number whose computed sun elevation `e`, at the station's position and the sample's instant, satisfies `e < -6` degrees (the sun deeper below the horizon than civil twilight). This class holds nautical and astronomical twilight and evening darkness as well as pre-dawn. A measurement is included only if at least one other counted measurement exists at the same station within plus or minus `W` days, where `W` is the `*` key; that neighbour may be another bottle from the same visit. Measurements with no such neighbour are excluded, so the count grows with `W` and is not the total number of night samples."
+     },
+     "results.o2.by_window.*.sun.twilight.n": {
+      "kind": "counted",
+      "synthetic": false,
+      "is": "Of the measurements in `results.o2.n`, the number whose computed sun elevation satisfies `-6 <= e < 0` degrees (the sun below the geometric horizon but within civil-twilight depth, at dawn or at dusk). A measurement is included only if at least one other counted measurement exists at the same station within plus or minus `W` days, where `W` is the `*` key. Measurements without such a neighbour are excluded, so this is not the total number of twilight samples."
+     },
+     "results.o2.sun_counts.night": {
+      "kind": "counted",
+      "is": "Of the measurements in `results.o2.n`, every one whose computed sun elevation at the station's position and the sample's instant is below `-6` degrees, whatever its neighbours. The class holds evening darkness as well as the hours before dawn."
+     },
+     "results.o2.sun_counts.twilight": {
+      "kind": "counted",
+      "is": "Of the measurements in `results.o2.n`, every one taken with the sun below the horizon but within civil-twilight depth - at dawn or at dusk - whatever its neighbours."
+     }
+    }
+   },
+   "what": "For surface oxygen, saturation and chlorophyll bottle samples, the script computes each sample's deviation from the mean of its own station's other samples within a moving window. It averages those deviations by sun-elevation class, moon state, spring-neap phase and surface-temperature class. The covered fields are the sample counts behind that: all retained oxygen samples, and those in the two below-horizon sun classes that had a same-station neighbour.",
+   "model": "Each qualifying row's `Startklok` is parsed as hours and minutes. Each row's instant comes from `clock.instant()`, which applies the clock convention `scripts/clockzone.py` measured for the row's supplier and era and excludes filled-in defaults and mixed conventions. The station position is converted from the `X_UTM32` and `Y_UTM32` of the first row seen for that station and cached. `solar_elevation` (the NOAA algorithm, written out) gives the geometric elevation of the sun's centre, with no refraction correction. `sun_bin` maps `e < -6` to `night`, `-6 <= e < 0` to `twilight`, and bands above the horizon to the remaining classes. `results.o2.n` is the length of the retained oxygen list. For each window `W` in `WINDOWS`, `deviations` sorts each station's samples by date and counts a sample in its class only if the count of other samples with dates inside the inclusive plus-or-minus `W` day range is at least one.",
+   "assumptions": [
+    "`Startklok` is the moment the bottle was filled, not the start of a cruise, the arrival at a station, or a default value.",
+    "The station's registered position, taken from the first row seen for it, is where every sample at that station was taken. The per-sample coordinates (`PrøveX_UTM32`, `PrøveY_UTM32`) are ignored.",
+    "The geometric elevation of the sun's centre is close enough to the apparent elevation for class assignment. Near the zero and minus-six boundaries, refraction and the solar disc's size can move a sample between classes.",
+    "A `Blandingsprøve` refers to a single depth and can stand as a point sample.",
+    "Rows are distinct measurements: there is no deduplication of replicate rows or of the same bottle reported twice."
+   ],
+   "justified": [
+    {
+     "text": "The class boundaries are exactly `e < -6` for night and `e < 0` for twilight.",
+     "ref": "scripts/cycles.py:94-97"
+    },
+    {
+     "text": "Sun elevation comes from the NOAA solar-position algorithm, which the script's author states is far more accurate than the degree-level precision the classes need.",
+     "ref": "scripts/daylight.py:21-23"
+    },
+    {
+     "text": "The elevation is computed from the date, the time and the station's longitude and latitude, with no atmospheric refraction term.",
+     "ref": "scripts/daylight.py:98-129"
+    },
+    {
+     "text": "The unit is checked on every row, because several parameters in this extract appear under more than one unit.",
+     "ref": "scripts/cycles.py:61-74"
+    },
+    {
+     "text": "Only single-bottle and same-depth pooled samples are kept, following the technical instruction for Danish marine monitoring; depth-integrated samples are excluded because an integral is not a measurement at its midpoint.",
+     "ref": "scripts/cycles.py:76-90"
+    },
+    {
+     "text": "Censored rows are dropped and counted, because `<` means the result field holds the detection limit, not a measurement.",
+     "ref": "scripts/cycles.py:204-211"
+    },
+    {
+     "text": "The oxygen range is a physical plausibility filter, reasoned from solubility in cold fresh water.",
+     "ref": "scripts/daylight.py:33-42"
+    },
+    {
+     "text": "The neighbour window is inclusive on both sides and excludes the sample itself; a sample with no neighbour is skipped.",
+     "ref": "scripts/cycles.py:154-160"
+    },
+    {
+     "text": "`results.o2.n` is the number of oxygen samples retained before any window is applied.",
+     "ref": "scripts/cycles.py:276"
+    },
+    {
+     "text": "Instants come from one function, with conventions measured per supplier and era rather than assumed for the whole archive.",
+     "ref": "scripts/clock.py"
+    },
+    {
+     "text": "The technical instruction's field-sampling chapter says that where one water depth is represented by water from several samplers, the water is mixed before subsampling for nutrients, chlorophyll and primary production: a pool at one depth, which is how a `Blandingsprøve` is read here.",
+     "ref": "data/derived/pins/TA-NOVA-1998-K5.txt"
+    }
+   ],
+   "gaps": [
+    "The clock conventions are measured at summer-time changes; before summer time existed a convention cannot be seen, and those samples are excluded unless they are known defaults, which are excluded too.",
+    "The boundaries at zero and minus six degrees are stipulated. Nothing in the code or docs cites the civil-twilight convention they follow. Because the elevation is geometric and taken at the sun's centre, the zero boundary is not the published sunrise or sunset.",
+    "Some exclusions are silent: an unparseable clock, a malformed date, an unparseable depth or result, or a station without a usable position drops the row without being counted. This is unlike the type, censoring, unit and range exclusions, which are counted.",
+    "A station's position is cached from the first row seen for it. A bad coordinate on that row drops the station's samples for the whole run, without a count.",
+    "The total number of samples in each sun class is never written out; only the neighbour-conditioned counts per window are. A claim that divides the smallest window's night or twilight count by `results.o2.n` therefore compares two different populations and understates the dark-hour share.",
+    "The night and twilight classes do not separate pre-dawn from post-dusk. Nothing in the output supports reading them as pre-dawn counts.",
+    "The word `Blandingsprøve` is in none of the pinned chapters of the technical instruction, and the mixing passage concerns nutrient, chlorophyll and primary-production subsamples, not oxygen. That ODA's `Blandingsprøve` rows are pools at one depth is therefore an inference. They are a small minority of the surface oxygen rows; the count was made once and is not stored."
+   ],
+   "void_if": [
+    "`Startklok` records something other than the time the bottle was filled.",
+    "The extract is re-fetched, or `PARAMS`, `MAX_DEPTH`, `POINT_TYPES`, `WINDOWS` or the `sun_bin` boundaries change, and the script is not re-run.",
+    "Station coordinates in the extract are wrong by enough to move an elevation across a class boundary; this matters only for samples already close to one.",
+    "the clock conventions measured by `scripts/clockzone.py` are wrong for a supplier"
+   ],
+   "licenses": "Statements about when the monitoring programme sampled: how many archived surface oxygen bottle measurements pass the stated filters, and how few of them, under the Danish wall-clock reading of `Startklok`, were timed with the sun below the horizon and had a same-station neighbour within the window. This supports the claim that the archive barely observes surface oxygen in the dark hours. It is a finding about the sampling, not about the sea.",
+   "not_licensed": "Anything about oxygen concentrations at night, or the value of the pre-dawn minimum. A count of visits, stations or independent observations. The total number of night or twilight samples, since each window count excludes samples without a neighbour. A split between pre-dawn and post-dusk sampling. Anything below `MAX_DEPTH`, or from the CTD sonde record, which has no clock.",
+   "watches": [
+    "data/derived/clock_convention.json",
+    "data/derived/surface_temp.csv.gz",
+    "data/raw/oda/kemi.csv.gz",
+    "scripts/clock.py",
+    "scripts/cube.py",
+    "scripts/cycles.py",
+    "scripts/daylight.py",
+    "data/derived/pins/TA-NOVA-1998-K5.txt"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: the sample-type reading it cited from DATA_SOURCES.md was retired there, since the technical instruction does not define a Blandingsprøve; checked the pinned field-sampling chapter myself - its mixing passage is about nutrient, chlorophyll and primary-production subsamples - and recorded the reading as an inference in gaps. cycles.py changed only in that comment, verified by hash. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/derived/clock_convention.json": "a3ea19fa01ca5d8d",
+     "data/derived/surface_temp.csv.gz": "124d1f7a1a9e54fc",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3",
+     "scripts/clock.py": "e2fb9cafe90c804b",
+     "scripts/cube.py": "075fe9118cf45329",
+     "scripts/cycles.py": "ef5a31aa3beaf2fc",
+     "scripts/daylight.py": "84c11f42cb7e2cab",
+     "data/derived/pins/TA-NOVA-1998-K5.txt": "bf0440cec12b6dc5"
+    }
+   }
+  },
+  {
+   "id": "K-RESCORE",
+   "title": "Yearly median surface Si:DIN ratio",
+   "covers": {
+    "file": "data/derived/rescore.json",
+    "fields": {
+     "tests.K1_si_din_molar_surface.*.median": {
+      "kind": "estimated",
+      "synthetic": false,
+      "is": "For one calendar year (the `*` key, taken from the first four characters of `Startdato`), the median molar ratio $\\dfrac{\\mathrm{Si}/M_{\\mathrm{Si}}}{(\\mathrm{NO_x} + \\mathrm{NH_4})/M_{\\mathrm{N}}}$, with $M$ the molar masses (in the code `(si / MM[\"si\"]) / ((nox + nh4) / MM[\"n\"])`). It is taken over station-date-depth cells with depth `dep <= 10` metres that carry silicate (`Silicium`, `µg/l`) and nitrite+nitrate (`Nitrit+nitrat-N`, `µg/l`). Ammonium (`Ammoniak+ammonium-N`) is added when present and taken as zero when absent, and both silicate and DIN must be positive. The median is the element at index `len(v) // 2` of the sorted values, so for an even count it is the upper middle value. Censored results, depth-integrated samples, the depth sentinel `99` and wrong-unit rows are excluded, as are years with fewer cells than the script's minimum. One cell is one station, date and depth rounded to a decimetre, so a station's several shallow depths on one day are separate cells."
+     }
+    }
+   },
+   "what": "After an availability matrix for the hypotheses that were blocked on the water-chemistry fetch, the script computes, for hypothesis `K1` (silicon depletion and the diatom-to-flagellate shift in `docs/HYPOTHESES.md`), the yearly distribution of the surface molar Si:DIN ratio: its median and its share below one. It computes only the nutrient driver; the phytoplankton-community response it is meant to drive is not held.",
+   "model": "Water-chemistry rows are kept when `Parameter` matches one of the exact strings in `P` with the unit `P` requires, `ResultatAttribut` is not `<` or `>`, the sample type is `Enkeltprøve` or `Blandingsprøve`, the result and depth parse, the date has `YYYYMMDD` form, and the depth is not the sentinel `99`. Each kept value is written into a dictionary keyed by station, date and depth rounded to one decimal; if a parameter appears more than once in a cell, the last row read wins. In `run_tests`, cells deeper than `10` metres, or lacking silicate or nitrite+nitrate, are skipped. DIN is `nox + (nh4 or 0.0)`, and cells where DIN or silicate is not positive are skipped. Each concentration in micrograms of element per litre is divided by that element's molar mass (`MM`) and the ratio is taken. Ratios are grouped by the year string, sorted, and the value at index `len(v) // 2` is reported, rounded, for each year with at least the minimum cell count.",
+   "assumptions": [
+    "`Silicium` is reported as micrograms of the silicon element per litre, not as silicate or silicon dioxide. The code's comment asserts this for all parameters; it is not checked against a document.",
+    "Silicate, nitrite+nitrate and ammonium values in one cell refer to the same fraction (dissolved), although rows are not filtered on `Prøvefraktion` and the extract carries total, dissolved and particulate fractions.",
+    "A missing ammonium value means ammonium was negligible, not that it was unmeasured or below detection.",
+    "Dropping censored results does not bias the yearly median. Censoring removes exactly the cells where silicate or DIN is depleted, and in opposite directions for the two.",
+    "A median pooled over all seasons, stations and depths down to `10` metres represents the year's surface ratio, even though the stations sampled, the months sampled and the number of depths per station change from year to year.",
+    "Si:DIN, rather than Si to total nitrogen, is the ratio the hypothesis concerns."
+   ],
+   "justified": [
+    {
+     "text": "The hypothesis names the silicon-to-nitrogen ratio through time as one half of what discriminates it, and silicate as available in the ODA record.",
+     "ref": "docs/HYPOTHESES.md"
+    },
+    {
+     "text": "The triage that blocked `K1` on this fetch states the hypothesis in terms of Si:DIN.",
+     "ref": "docs/hypodrafts/TRIAGE.md:192"
+    },
+    {
+     "text": "Parameter strings and units are taken from the enum sweep, and the unit is enforced per row, because several parameters appear under more than one unit.",
+     "ref": "scripts/rescore.py:43-58"
+    },
+    {
+     "text": "Rows are dropped on unit, censoring, sample type, unparseable values and the depth sentinel before any cell is formed.",
+     "ref": "scripts/rescore.py:102-118"
+    },
+    {
+     "text": "Censored rows are excluded because a detection limit read as a value biases the parameter high.",
+     "ref": "scripts/cycles.py:204-208"
+    },
+    {
+     "text": "The ratio is molar, using element molar masses on concentrations reported as the element.",
+     "ref": "scripts/rescore.py:79-80"
+    },
+    {
+     "text": "The ratio, the depth cut, the treatment of ammonium and the median index are exactly as described.",
+     "ref": "scripts/rescore.py:196-213"
+    },
+    {
+     "text": "A change in Si:DIN driven by the nitrogen term alone is exogenous to diatoms, because nitrogen fell under management while silicon has no human source. That supports reading a rise as a change in the driver (section 6 of the draft).",
+     "ref": "docs/hypodrafts/K1.md"
+    }
+   ],
+   "gaps": [
+    "Although the field sits under `tests`, it is not a test. There is no null, no uncertainty, and no control for station, season or depth, while the script's docstring promises only tests whose null is computable (`scripts/rescore.py:17-19`). The persistence-aware null worked out in `docs/hypodrafts/K1.md` is not applied.",
+    "The project's own `K1` design specifies the preceding January-February (pre-bloom) median surface Si:DIN as the quantity that matters, and warns that low silicon beside many diatoms is drawdown, not limitation (`docs/hypodrafts/K1.md`, section 3 and section 6). This median pools all months, so it mixes pre-bloom pools with bloom drawdown.",
+    "Station composition changes across years, and the same draft notes that any across-year statistic on pooled medians is partly a statistic about who sampled (`docs/hypodrafts/K1.md`, section 4). Here there are no station fixed effects and no balanced panel.",
+    "Rows are not filtered on `Prøvefraktion`, and when a parameter has more than one row in a cell the last one read silently wins. A total and a dissolved silicate value, for example, are not distinguished.",
+    "Ammonium absent from a cell is treated as zero, which raises the ratio for that cell. Ammonium is reported on fewer rows than nitrite+nitrate (`counts.nh4.n` against `counts.nox.n`).",
+    "Silicate being reported as the element is asserted in a code comment, not documented.",
+    "Excluding censored values removes the low-silicate cells that are the very condition `K1` is about, and also the low-DIN cells. The net bias is unquantified and can drift as detection limits and DIN levels change.",
+    "Here `surface` means the top `10` metres, while `scripts/cycles.py` uses `MAX_DEPTH`. The same word names two different layers across the site.",
+    "The silicon-limitation threshold of one, used for the companion `share_below_1` and in the prose around these medians, rests on the unsourced statement in `docs/HYPOTHESES.md` (hypothesis `K2`) about the silicon-to-nitrogen ratio diatoms require.",
+    "The latest calendar year in the output is partial (the extract runs to its fetch date), so its median is taken over an unbalanced part of the season."
+   ],
+   "void_if": [
+    "A year's cells are dominated by one season, a few stations or one area. This applies especially to the latest, partial year.",
+    "Some laboratories or periods report `Silicium` as silicate or silicon dioxide, or report a different fraction, under the same parameter string and unit.",
+    "Ammonium reporting or detection limits change over time enough to move which cells lose ammonium or are censored.",
+    "The extract is re-fetched, or `P`, the depth cut or the minimum cell count changes, and the script is not re-run."
+   ],
+   "licenses": "A descriptive statement about the archived bottle samples: in the top `10` metres, the pooled yearly median molar Si:DIN in this extract is higher in recent years than in the mid-eighties. That is a first look at the direction of `K1`'s driver, consistent with DIN having fallen while silicon did not.",
+   "not_licensed": "Anything about diatoms, flagellates or community composition, which is the response half of `K1` and is not held. That the change is statistically established, monotonic, or true at any particular station or water body. That silicon limitation no longer occurs in any season, the pre-bloom winter pool in particular. That nitrogen management caused the rise. That the premise of `K1` is refuted as a mechanism rather than weakened as a trend.",
+   "watches": [
+    "scripts/rescore.py",
+    "data/raw/oda/kemi.csv.gz",
+    "docs/HYPOTHESES.md",
+    "docs/hypodrafts/K1.md"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: HYPOTHESES.md changed only in two sentences outside K1 - B2's stormwater volume total and E6's sediment points, now filled from data. hypotheses.py, which writes the page, was verified by hash to differ only in those two sentences and the values they read, so the K1 section this declaration cites is unchanged. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/rescore.py": "0f053842cbb98d60",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3",
+     "docs/HYPOTHESES.md": "e5afa2fff502c434",
+     "docs/hypodrafts/K1.md": "8993a26b5b6217ab"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "constructions": [
+  {
+   "id": "K-LANDING-FACTS",
+   "title": "Facts only the landing page states",
+   "covers": {
+    "file": "data/derived/landing_facts.json",
+    "fields": {
+     "viz_mb": {
+      "kind": "measured",
+      "is": "The size on disk of every file under `viz/`, in megabytes, when the script last ran: what a reader downloads to open the full-detail Copenhagen view."
+     },
+     "flood2012_mb": {
+      "kind": "measured",
+      "is": "The size on disk of every file under `docs/data/flood2012/`, in megabytes: the georeferenced flood sheets offered for download."
+     },
+     "gotland.months": {
+      "kind": "counted",
+      "is": "Monthly time steps in the Gotland Deep grid, the length of `times` in `docs/data/baltic/gotland.json`."
+     },
+     "gotland.months_with_deep_data": {
+      "kind": "counted",
+      "is": "Of those months, the ones with at least one valid oxygen value below `params.depth_m`; fill values are skipped."
+     },
+     "gotland.span_years": {
+      "kind": "computed",
+      "is": "The calendar span from the first to the last month of the grid, in years."
+     },
+     "gotland.months_all_below_pct": {
+      "kind": "share",
+      "is": "Of the months with data below `params.depth_m`, the share in which every valid oxygen value below that depth is under `params.o2_mg_l`."
+     },
+     "gotland.cells_below_pct": {
+      "kind": "share",
+      "is": "Of all valid month-and-depth cells below `params.depth_m`, the share under `params.o2_mg_l`."
+     },
+     "params.depth_m": {
+      "kind": "stipulated",
+      "is": "The depth below which the Gotland record is read: the depth the baltic page draws the halocline water below."
+     },
+     "params.o2_mg_l": {
+      "kind": "stipulated",
+      "is": "The hypoxia line the Gotland record is read against: the lower of the two oxygen thresholds DCE's statistical model uses, the same line the Danish near-bed shares use."
+     },
+     "section3d.stated": {
+      "kind": "counted",
+      "is": "Dimensions of the retrofit model in `docs/data/section3d.json` whose `kind` is STATED - conventions chosen for the drawing, not measurements."
+     },
+     "section3d.total": {
+      "kind": "counted",
+      "is": "All dimensions of the retrofit model in `docs/data/section3d.json`."
+     }
+    }
+   },
+   "what": "Computes the values the landing page states that no other script stores: two download sizes, the span of the Gotland Deep oxygen record and how much of it lies under the hypoxia line below the halocline, and how many of the retrofit model's dimensions are stated conventions.",
+   "model": "Sizes are the sum of file sizes under each folder. The Gotland values read the float grid in `gotland.bin` in the layout `gotland.json` declares, skip fill values, and count months and cells below `params.depth_m` against `params.o2_mg_l`. The retrofit counts read the `kind` of each dimension in `section3d.json`.",
+   "assumptions": [
+    "The Gotland grid's oxygen is in mg/l, as `gotland.json` states after its correction from ml/l.",
+    "A month in the grid stands for the water at that depth that month, although the grid is in-situ profiles regridded to a monthly step."
+   ],
+   "justified": [
+    {
+     "text": "The grid layout, the unit correction and the fill value are declared in the data file itself and checked on read: a binary whose size does not match the declared layout is refused.",
+     "ref": "scripts/landing_facts.py:40"
+    },
+    {
+     "text": "The thresholds are the ones the rest of the site uses for near-bed oxygen, so the Gotland share and the Danish share are measured against the same line.",
+     "ref": "data/derived/station_places.json"
+    }
+   ],
+   "gaps": [
+    "The Gotland grid interpolates between discrete samples in the vertical, so a cell is not a measurement; the share of months is a statement about the regridded product.",
+    "The share of months needs every valid value below the depth to be under the line; a single interpolated value above it makes the month count against. A looser reading - the monthly mean below the depth - would give a different share, and the page says which one it uses.",
+    "The download sizes move with every change to those folders, and the build graph does not list every file in them."
+   ],
+   "void_if": [
+    "the oxygen unit in the Gotland grid is not what `gotland.json` declares",
+    "the folders are rebuilt without rerunning the script"
+   ],
+   "licenses": "How big the downloads are, how long the Gotland record runs, how much of it lies under the hypoxia line below the halocline, and how many retrofit dimensions are conventions.",
+   "not_licensed": "Anything about the Gotland Deep between the grid's samples, or about the Danish waters themselves.",
+   "watches": [
+    "scripts/landing_facts.py",
+    "docs/data/baltic/gotland.json",
+    "docs/data/section3d.json"
+   ],
+   "confirmed": {
+    "by": "fork landing (written against scripts/landing_facts.py, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/landing_facts.py": "8c0ec69a1f443803",
+     "docs/data/baltic/gotland.json": "fe70338678270ea5",
+     "docs/data/section3d.json": "d734d23e1d569ece"
+    }
+   }
+  }
+ ]
+}

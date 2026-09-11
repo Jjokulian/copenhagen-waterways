@@ -1,0 +1,129 @@
+{
+ "_what": "Build steps registered by the meta conversion: the small-facts producer and the page generators for the overview pages.",
+ "steps": [
+  {
+   "script": "scripts/meta_facts.py",
+   "inputs": [
+    "data/derived/enums.json",
+    "data/derived/floodalign.json",
+    "data/derived/hypotheses.json",
+    "data/manual/nitrogen_pathways.json",
+    "data/raw/_manifest.json",
+    "data/raw/plan_projects.json",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "scripts/clock.py",
+    "scripts/daylight.py",
+    "data/derived/light.json",
+    "scripts/unlock.py",
+    "data/manual/data_sources.json",
+    "data/manual/data_sources_2.json"
+   ],
+   "outputs": [
+    "data/derived/meta_facts.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/open_problems.py",
+   "inputs": [
+    "data/derived/meta_facts.json",
+    "data/manual/monitoring.json",
+    "data/derived/floodalign.json",
+    "data/derived/floodgap.json",
+    "data/derived/rivermap.json",
+    "data/derived/outfalls.json",
+    "data/derived/cycles.json",
+    "data/derived/rescore.json",
+    "data/derived/enums.json",
+    "data/derived/clock_convention.json",
+    "data/derived/hypotheses.json",
+    "data/manual/number_constructions.d/meta.json"
+   ],
+   "outputs": [
+    "docs/OPEN_PROBLEMS.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/data_sources.py",
+   "inputs": [
+    "data/derived/meta_facts.json",
+    "data/raw/_manifest.json",
+    "data/manual/codelists.json",
+    "data/derived/enums.json",
+    "data/derived/clock_convention.json",
+    "data/derived/outfalls.json",
+    "data/derived/depth_clock.json",
+    "data/derived/floodmaps/_sheets.json",
+    "data/derived/floodmaps/_extract.json",
+    "data/manual/species.d/meta.json",
+    "data/manual/number_constructions.d/meta.json"
+   ],
+   "outputs": [
+    "docs/DATA_SOURCES.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/plan.py",
+   "inputs": [
+    "data/derived/meta_facts.json",
+    "data/derived/enums.json",
+    "data/derived/clock_convention.json",
+    "data/derived/cycles.json",
+    "data/derived/hypotheses.json",
+    "data/manual/number_constructions.d/meta.json"
+   ],
+   "outputs": [
+    "docs/PLAN.md"
+   ]
+  },
+  {
+   "script": "scripts/causation.py",
+   "inputs": [
+    "data/manual/nitrogen_pathways.json",
+    "data/manual/monitoring.json",
+    "data/derived/meta_facts.json",
+    "data/derived/landbrug.json"
+   ],
+   "outputs": [
+    "docs/CAUSATION.md"
+   ]
+  },
+  {
+   "script": "scripts/experiments.py",
+   "inputs": [
+    "data/derived/hypotheses.json",
+    "data/derived/solutions.json",
+    "data/derived/observing.json",
+    "data/derived/outfalls.json"
+   ],
+   "outputs": [
+    "data/derived/experiments.json",
+    "docs/EXPERIMENTS.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/agent_brief.py",
+   "inputs": [
+    "data/derived/landbrug.json",
+    "data/derived/observing.json",
+    "data/derived/station_places.json",
+    "data/manual/claims.json"
+   ],
+   "outputs": [
+    "docs/AGENT_BRIEF.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/known_and_unknown.py",
+   "inputs": [
+    "data/derived/enums.json",
+    "data/derived/convergence.json",
+    "data/derived/meta_facts.json",
+    "data/manual/monitoring.json",
+    "data/manual/claims.json"
+   ],
+   "outputs": [
+    "docs/KNOWN_AND_UNKNOWN.md"
+   ]
+  }
+ ]
+}

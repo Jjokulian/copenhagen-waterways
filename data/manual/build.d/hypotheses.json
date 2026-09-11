@@ -1,0 +1,24 @@
+{
+ "steps": [
+  {
+   "script": "scripts/hypotheses.py",
+   "inputs": [
+    "data/raw/oda/stations.csv",
+    "docs/data/areas/stations_series.json",
+    "data/derived/enums.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_b1.json",
+    "data/manual/species.json",
+    "data/manual/number_constructions.d/hypotheses.json",
+    "data/derived/outfalls.json",
+    "data/derived/oxygen.json"
+   ],
+   "outputs": [
+    "data/derived/hypotheses_evidence.json",
+    "data/derived/hypotheses.json",
+    "docs/data/glossary.json",
+    "docs/HYPOTHESES.md"
+   ]
+  }
+ ]
+}

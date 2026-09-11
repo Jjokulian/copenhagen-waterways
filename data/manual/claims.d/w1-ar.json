@@ -1,0 +1,2972 @@
+{
+ "_what": "Fork w1-ar, wave one of the claims sweep: the claims made on AREAS.md and CATEGORY.md, and what was retired from them.",
+ "sources": {
+  "EDWARDS-2003": {
+   "title": "Edwards (2003), Human genetic diversity: Lewontin's fallacy - PubMed abstract",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=12879450&rettype=abstract&retmode=text",
+   "retrieved": "2026-09-11",
+   "sha256": "618123050dc16a121e820a1d652806dddddee71abbdc8c8608edd2a81c6a4d0d",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "SERRE-PAABO-2004": {
+   "title": "Serre & Pääbo (2004), Evidence for gradients of human genetic diversity - PubMed abstract",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=15342553&rettype=abstract&retmode=text",
+   "retrieved": "2026-09-11",
+   "sha256": "99c8d1fa955990ea130d6bc2d04b98ab5e99385db55a34dde33e39f45e3fa7b1",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "ROSENBERG-2002": {
+   "title": "Rosenberg et al. (2002), Genetic structure of human populations - PubMed abstract",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=12493913&rettype=abstract&retmode=text",
+   "retrieved": "2026-09-11",
+   "sha256": "f8a0392d4f0c03a3dd834f883ed05b8a70f09aae17547497e0d2ea172b39ead9",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "BHATIA-2013": {
+   "title": "Bhatia et al. (2013), Estimating and interpreting FST - PubMed abstract",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=23861382&rettype=abstract&retmode=text",
+   "retrieved": "2026-09-11",
+   "sha256": "02f807ec140a00e7e12eb369c2f50b14096643115c14dd1707773b4bb83dbcc1",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "DEQUEIROZ-2007": {
+   "title": "De Queiroz (2007), Species concepts and species delimitation - PubMed abstract",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=18027281&rettype=abstract&retmode=text",
+   "retrieved": "2026-09-11",
+   "sha256": "1895c026667cdd4e5b299b4a6b367122f7828028652c8ed3e19ec8c1ba3f27d0",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "WHO-ICD": {
+   "title": "WHO, International Classification of Diseases (ICD)",
+   "url": "https://www.who.int/standards/classifications/classification-of-diseases",
+   "retrieved": "2026-09-11",
+   "sha256": "64bb584af04afb3e35dd189bd0d13bfb9cb24815f881046192bfe38ae4524e5f",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "WIKI-ROSKILDE-FJORD": {
+   "title": "Wikipedia (da), Roskilde Fjord - article source",
+   "url": "https://da.wikipedia.org/w/index.php?title=Roskilde_Fjord&action=raw",
+   "retrieved": "2026-09-11",
+   "sha256": "751dfbb7da98ec7c32a1319125e53822d302e9a157df51b903764b2b8bd25610",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "D-AR-AREAS",
+   "kind": "held",
+   "label": "Water-body records\\ndata/derived/areas.json",
+   "detail": "Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled."
+  },
+  {
+   "id": "D-AR-PARTITION",
+   "kind": "held",
+   "label": "Partition scores\\npartition_score.json",
+   "detail": "docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs."
+  },
+  {
+   "id": "D-AR-STATIONS",
+   "kind": "held",
+   "label": "Station facts\\nstation_places.json",
+   "detail": "data/derived/station_places.json, from the station series docs/data/areas/stations_series.* and the separate overlay station_waterbody_overlay.json: the Roskilde Fjord spreads, and how long each water body's longest station series runs."
+  },
+  {
+   "id": "D-AR-REGISTER",
+   "kind": "held",
+   "label": "ODA station register\\nstations.json",
+   "detail": "docs/data/areas/stations.json: every ODA marine observation station with a position."
+  },
+  {
+   "id": "D-AR-GAPS",
+   "kind": "held",
+   "label": "Known missing sources\\ncoverage_gaps.json",
+   "detail": "data/manual/coverage_gaps.json: a hand-kept list of sources known to exist and not held, each with its class, what it would add and why it is missing."
+  },
+  {
+   "id": "D-AR-SRCREG",
+   "kind": "held",
+   "label": "Source register\\ndata_sources.json",
+   "detail": "data/manual/data_sources.json, entry MILJOEGIS-RBU-SAML: it records that the underlying PULS volumes are modelled rather than measured, by the technical guidance's knowledge levels."
+  },
+  {
+   "id": "D-AR-HYPREG",
+   "kind": "held",
+   "label": "Hypothesis register\\nhypotheses.json",
+   "detail": "data/derived/hypotheses.json: the needs field of {ref:B1} calls per-event overflow volume the single most valuable missing series."
+  },
+  {
+   "id": "D-AR-ENUMS",
+   "kind": "held",
+   "label": "ODA column survey\\nenums.json",
+   "detail": "data/derived/enums.json: the categorical columns of the CTD and water-chemistry extracts, among them SondeNr, Prøvetagningsudstyr, QANiveau, AnalyseMetode, Laboratorium and ResultatAttribut."
+  },
+  {
+   "id": "D-AR-ORGANISM",
+   "kind": "held",
+   "label": "Sibling project\\n../organism",
+   "detail": "../organism/README.md: it applies the method developed on these water bodies to the groups living things are sorted into."
+  },
+  {
+   "id": "D-AR-RESIDUAL",
+   "kind": "held",
+   "label": "Companion page\\nRESIDUAL.md",
+   "detail": "docs/RESIDUAL.md, about a number nobody measured being treated as one."
+  },
+  {
+   "id": "X-AR-AREAS",
+   "kind": "script",
+   "label": "areas.py",
+   "detail": "Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations."
+  },
+  {
+   "id": "X-AR-PARTITION",
+   "kind": "script",
+   "label": "partition_score.py",
+   "detail": "Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs."
+  },
+  {
+   "id": "X-AR-STATIONPLACES",
+   "kind": "script",
+   "label": "station_places.py",
+   "detail": "The Roskilde spreads: per month with enough stations, the population standard deviation and the range across them, against the standard deviation of the monthly means."
+  },
+  {
+   "id": "X-AR-EXPERIMENTS",
+   "kind": "script",
+   "label": "experiments.py: `X22`",
+   "detail": "Sets out the boundary test: pairs of points at a fixed separation that straddle an official boundary against pairs at the same separation that do not."
+  },
+  {
+   "id": "A-AR-SPLIT12",
+   "kind": "assumption",
+   "label": "The threshold for\\nsplitting a feature space",
+   "detail": "A judgment, not a derivation, stated as the parameter category_split_threshold with its reason: with fewer independent features, disjoint halves are too small to cluster on."
+  },
+  {
+   "id": "A-AR-SAMPLED",
+   "kind": "assumption",
+   "label": "Stations as sampled",
+   "detail": "Stations are not placed at random and are denser in some baskets than others, so a score is of the partition as sampled."
+  },
+  {
+   "id": "E-AR-DANVA",
+   "kind": "external",
+   "label": "DANVA: agriculture's\\nshare of the nitrogen",
+   "source": "DANVA-2024",
+   "said": "hvor landbruget alene står for",
+   "detail": "DANVA's page gives agriculture's share of nitrogen discharge, citing data from Miljøstyrelsen and Aarhus Universitet."
+  },
+  {
+   "id": "E-AR-DHI-TABLE",
+   "kind": "external",
+   "label": "DHI method report:\\nwater bodies with\\nstatistical models",
+   "source": "DHI-MODEL-DEL1-2015",
+   "said": "Oversigt over vandområder og de tilhørende overvågningsstationer, der er opstillet statistiske modeller for",
+   "detail": "The report's table names each water body that has a statistical model, with its monitoring stations."
+  },
+  {
+   "id": "E-AR-DHI-EVERY",
+   "kind": "external",
+   "label": "DHI method report:\\nevery water body\\ngiven a requirement",
+   "source": "DHI-MODEL-DEL1-2015",
+   "said": "vandområder, der indgår i Vandplan",
+   "detail": "The tools were applied to every water body of the second water plans to compute an indsatsbehov."
+  },
+  {
+   "id": "E-AR-DCE-ILTSVIND",
+   "kind": "external",
+   "label": "DCE: what counts\\nas iltsvind",
+   "source": "DCE-STATMOD-2015",
+   "said": "I Danmark betegnes det som iltsvind, når koncentrationen af ilt i vandet er under"
+  },
+  {
+   "id": "E-AR-DCE-PERIOD",
+   "kind": "external",
+   "label": "DCE: the models'\\nfitting period",
+   "source": "DCE-STATMOD-2015",
+   "said": "I udviklingen af modellerne er der brugt data fra perioden"
+  },
+  {
+   "id": "E-AR-SO-BASIS",
+   "kind": "external",
+   "label": "Second opinion: why\\nwater bodies have\\nboundaries",
+   "source": "SO-BG-2024",
+   "said": "angive overfladevandområders beliggenhed og grænser",
+   "detail": "Quotes the water framework directive's annex: member states set the location and boundaries of surface water bodies."
+  },
+  {
+   "id": "E-AR-SO-TYPES",
+   "kind": "external",
+   "label": "Second opinion: coastal\\nwaters sorted into types",
+   "source": "SO-BG-2024",
+   "said": "kystvande er inddelt i"
+  },
+  {
+   "id": "E-AR-SO-CATCH",
+   "kind": "external",
+   "label": "Second opinion: each coastal\\nwater has a catchment",
+   "source": "SO-BG-2024",
+   "said": "defineret et tilhørende opland",
+   "detail": "Its table gives Roskilde Fjord's inner and outer parts separate catchments, the outer one downstream of the inner."
+  },
+  {
+   "id": "E-AR-WIKI",
+   "kind": "external",
+   "label": "Wikipedia: Roskilde Fjord\\nopens into Isefjorden",
+   "source": "WIKI-ROSKILDE-FJORD",
+   "said": "Nord om Hornsherred løber den ud i",
+   "detail": "An encyclopaedia article, pinned as its source text: the fjord runs out into Isefjorden north of Hornsherred."
+  },
+  {
+   "id": "E-AR-EDWARDS-FIG",
+   "kind": "external",
+   "label": "Edwards: the within and\\nbetween shares, and whose\\nconclusion it is",
+   "source": "EDWARDS-2003",
+   "said": "This conclusion, due to R.C. Lewontin"
+  },
+  {
+   "id": "E-AR-EDWARDS-CORR",
+   "kind": "external",
+   "label": "Edwards: the information is\\nin the correlations",
+   "source": "EDWARDS-2003",
+   "said": "hidden in the correlation structure of the data"
+  },
+  {
+   "id": "E-AR-ROSENBERG",
+   "kind": "external",
+   "label": "Rosenberg et al.: clusters\\nwithout prior origins",
+   "source": "ROSENBERG-2002",
+   "said": "without using prior information about the origins of individuals"
+  },
+  {
+   "id": "E-AR-SERRE",
+   "kind": "external",
+   "label": "Serre & Pääbo:\\ngradients",
+   "source": "SERRE-PAABO-2004",
+   "said": "the pattern seen is one of gradients of allele frequencies",
+   "detail": "Their abstract: when individuals are sampled homogeneously from around the globe, gradients rather than discrete clusters."
+  },
+  {
+   "id": "E-AR-BHATIA-DEF",
+   "kind": "external",
+   "label": "Bhatia et al.: differing\\ndefinitions and estimators",
+   "source": "BHATIA-2013",
+   "said": "provided differing definitions, estimation methods"
+  },
+  {
+   "id": "E-AR-BHATIA-TWOFOLD",
+   "kind": "external",
+   "label": "Bhatia et al.: estimates moved\\nmore than twofold",
+   "source": "BHATIA-2013",
+   "said": "in some cases more than twofold",
+   "detail": "Published estimates for pairs of HapMap populations changed more than twofold, largely through differences in estimation methods."
+  },
+  {
+   "id": "E-AR-BHATIA-SNPS",
+   "kind": "external",
+   "label": "Bhatia et al.: combining and\\nchoosing the loci",
+   "source": "BHATIA-2013",
+   "said": "selecting the set of SNPs used in the computation"
+  },
+  {
+   "id": "E-AR-DEQUEIROZ",
+   "kind": "external",
+   "label": "De Queiroz: concepts share one\\nproperty, differ on others",
+   "source": "DEQUEIROZ-2007",
+   "said": "but they disagree in adopting different properties"
+  },
+  {
+   "id": "E-AR-DEQUEIROZ-UNIFIED",
+   "kind": "external",
+   "label": "De Queiroz: a unified\\nconcept is proposed",
+   "source": "DEQUEIROZ-2007",
+   "said": "A unified species concept can be achieved"
+  },
+  {
+   "id": "E-AR-WHO-STATS",
+   "kind": "external",
+   "label": "WHO: ICD as the basis\\nfor comparable statistics",
+   "source": "WHO-ICD",
+   "said": "has been the basis for comparable statistics on causes of mortality and morbidity"
+  },
+  {
+   "id": "E-AR-WHO-USES",
+   "kind": "external",
+   "label": "WHO: ICD's other uses",
+   "source": "WHO-ICD",
+   "said": "resource allocation, reimbursement"
+  },
+  {
+   "id": "U-AR-SPLIT-REASON",
+   "kind": "untraced",
+   "label": "Trail ends: no stated reason\\nRoskilde Fjord is two units",
+   "detail": "Searched on 11 September 2026: every pinned text that mentions Roskilde Fjord - the DHI method reports (parts one and two), DCE's statistical-model report, the second-opinion background analyses, BEK 673/2026, MSFD article 8, NOVANA 2023–2027, the DCE oxygen reports, SR353 and the Danish Society for Nature Conservation's second opinion. They give the general basis (the directive's annex, the typology, catchments) and list the two parts separately, with separate catchments; none says why this fjord is two units rather than one or three."
+  },
+  {
+   "id": "U-AR-SMOOTH",
+   "kind": "untraced",
+   "label": "Trail ends: spatial smoothness\\nwas never measured",
+   "detail": "Searched scripts/ on 11 September 2026 for a variogram, Moran's I or any spatial autocorrelation of these variables: none exists. partition_score.py scores partitions; it does not measure how smooth a variable is in space."
+  },
+  {
+   "id": "U-AR-GAPS-UNVERIFIED",
+   "kind": "untraced",
+   "label": "Trail ends: the missing-source\\nlist was not re-checked",
+   "detail": "coverage_gaps.json is a hand-kept record. This sweep (11 September 2026) did not re-verify its entries. The refused PULS attempt is recorded only there; no copy of the refusal is kept."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-AR-AGG",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The national argument is made in aggregates - one land-borne load, and one share of it for agriculture of {read:DANVA-2024:69.6|hvor landbruget alene står for 69,6 %}% - and a figure true of Denmark need not hold for any one water body inside it.",
+   "because": "The national figures are totals and shares over the whole country; a total or share over many water bodies can hold while being wrong for each of them, so the aggregate cannot stand in for the water bodies.",
+   "rests_on": [
+    "E-AR-DANVA"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-AGG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:DANVA-2024:69.6|hvor landbruget alene står for 69,6 %}": "69.6",
+     "pinned DANVA-2024": "cce512d654be929c",
+     "said on AREAS.md": "The national argument is made in aggregates: one land-borne load, and one share of it for agriculture - 69.6% in the figure DANVA cites from Miljøstyrelsen and Aarhus University. Aggregation is where the information goes: a figure true of Denmark need not hold for any one water body inside it.",
+     "texts": "e3ace0666f8f2a2f",
+     "node E-AR-DANVA": "074ea4793abe9dea"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SCOPE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The page keeps one record per marine water body: what presses on it, what is observed in it, over which years each stream exists, and what cannot be modelled there.",
+   "because": "scripts/areas.py writes each record with pressure, observation, streams and not_modelled, and the page prints them per water body.",
+   "rests_on": [
+    "X-AR-AREAS",
+    "D-AR-AREAS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-LONGEST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "This page refuses the aggregate. One record per marine water body: what presses on it, what is observed in it, **over which years each of those streams exists**, and what cannot be modelled there.",
+     "texts": "0458859c2ccc84ce",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ASSIGN",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Every layer is assigned to water bodies by nearest point on the marine boundary, one rule for all, with the largest distance kept per layer and area and anything beyond the maximum distance dropped.",
+   "because": "In scripts/areas.py each feature goes to the nearest boundary vertex within the maximum distance; the record keeps n and max_dist_km per layer, not the distance of each feature.",
+   "rests_on": [
+    "X-AR-AREAS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-DISTANCE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Assignment is by nearest point on the marine boundary, one rule for every layer, with the largest distance kept for each layer in each area and anything beyond 20 km dropped.",
+     "texts": "9ebb3ba7d89a79a3",
+     "node X-AR-AREAS": "3d0aabbb33262dbe"
+    }
+   }
+  },
+  {
+   "id": "C-AR-MODEL-MATCH",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The model flag follows DHI's list of water bodies with a station-level statistical model, matched to this layer by DHI's number with every name read against the layer's; one of DHI's models covers five Limfjord bredninger together, and one water body it lists is not in the marine layer used here.",
+   "because": "scripts/areas.py marks a water body as modelled when its id is in data/manual/statistical_models.json. That file takes each entry of DHI's table of water bodies with statistical models and gives the layer's id for DHI's number, noting where the two names are worded differently; DHI's Limfjord entry names five bredninger, all matched by name, and its Grund Fjord entry has no counterpart in the layer.",
+   "rests_on": [
+    "X-AR-AREAS",
+    "D-AR-AREAS",
+    "E-AR-DHI-TABLE"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-MODELLED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**The model flag follows DHI's list.** A water body counts as modelled when DHI's 2015 method report lists it among the water bodies with a station-level statistical model, matched to this layer by DHI's water-body number, with every name read against the layer's own (`data/manual/statistical_models.json`). One of DHI's models covers five Limfjord bredninger together, so all five are counted; one water body it lists, Randers Fjord's Grund Fjord, is not in the marine layer used here.",
+     "texts": "e0d2f7c66a4d4b3b",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1",
+     "node E-AR-DHI-TABLE": "4e31fe8604e00fef",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NEITHER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Counted with DHI's model flag, the water bodies with neither the flag nor a bathing station, and their share of the sea, are as the table gives them; the hazardous-substance layer adds no marine observation to any.",
+   "because": "The neither set in scripts/areas.py is the bodies with no model flag and no bathing record; the hazardous layer holds no marine point. The flag follows DHI's list as matched in statistical_models.json.",
+   "rests_on": [
+    "X-AR-AREAS",
+    "D-AR-AREAS",
+    "C-AR-MODEL-MATCH"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-REQUIREMENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Counted with that flag, 46 water bodies covering 24,359 km² (56% of Danish sea) carry neither the flag nor a repeated observation **in the two layers counted here** — bathing water, and the hazardous-substance layer, which holds no marine point.",
+     "texts": "811065a5028f7f22",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1",
+     "rests on C-AR-MODEL-MATCH": "e0d2f7c66a4d4b3b"
+    }
+   }
+  },
+  {
+   "id": "C-AR-REQUIREMENT",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "AREAS.md",
+   "claim": "In the method behind the second water plans, every one of its {read:DHI-MODEL-DEL1-2015:119|For hvert af de 119 vandområder} water bodies was given an indsatsbehov, whether it had a statistical model or not.",
+   "because": "Their method report says the tools it describes were applied to each water body of the second water plans to compute an indsatsbehov and a target load. The layer here holds more polygons, so which of the page's water bodies were among them is not checked.",
+   "rests_on": [
+    "E-AR-DHI-EVERY"
+   ],
+   "basis": "assessed",
+   "holder": "DHI, for the Danish Nature Agency (2015)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:DHI-MODEL-DEL1-2015:119|For hvert af de 119 vandområder}": "119",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f",
+     "said on AREAS.md": "A requirement does not wait for either: in the method behind the second water plans, every one of its 119 water bodies was given an indsatsbehov, whether it had a statistical model or not.",
+     "texts": "00a19b3765f5c7d5",
+     "node E-AR-DHI-EVERY": "c89a401a2b3a423a"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ABSENCE-RULE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "A claim of absence is only as wide as the search behind it, and this search was two layers deep.",
+   "because": "An absence found by searching some sources says nothing about sources not searched. The observation counted here is bathing water and the hazardous-substance layer, and nothing else.",
+   "rests_on": [],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-CORRECTION-NOTE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**A claim of absence is only as wide as the search behind it**, and this search was two layers deep.",
+     "texts": "c7694850cffd1095"
+    }
+   }
+  },
+  {
+   "id": "C-AR-REGISTER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "ODA's station register holds the number of positioned marine stations the page gives.",
+   "because": "Counted from docs/data/areas/stations.json, which lists every ODA marine observation station with a position.",
+   "rests_on": [
+    "D-AR-REGISTER"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "ODA's station register holds **6,258 positioned marine stations**.",
+     "texts": "23e0fa2223733a7b",
+     "node D-AR-REGISTER": "2c621058ec9e1adc"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SERIES-COVERAGE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Of the station series behind the partition tests, the page gives how many stations lie inside a water body and how many water bodies contain one, and how many contain none with data in two, five and ten or more distinct years.",
+   "because": "scripts/station_places.py counts the series' stations placed by point in polygon and, per water body, the most distinct years any of its stations carries data in; these are counts over that series, not over the register.",
+   "rests_on": [
+    "X-AR-STATIONPLACES",
+    "D-AR-STATIONS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-REGISTER-COVERAGE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The part of it this page can place in water bodies is the station series behind the partition tests below — 1,415 stations with a monthly record, 1,313 of them inside a water body by point in polygon — and **119 of the 123 water bodies contain at least one of those.** Counted over that series: 4 water bodies contain no station with data in 2 or more distinct years, 10 water bodies contain no station with data in 5 or more distinct years, 12 water bodies contain no station with data in 10 or more distinct years.",
+     "texts": "b57020f27f2be015",
+     "node X-AR-STATIONPLACES": "f480f67f5bf30b62",
+     "node D-AR-STATIONS": "26623b56f73df40c"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NOT-PERCENT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Those absences are counts and not percentages, because a share of the sea without a long observation would measure an absence against a search that was not exhaustive: ODA plus two layers, with ICES, EMODnet and any other series outside it.",
+   "because": "A share needs its numerator measured. The extent of an absence is measured only by an exhaustive search; ICES and EMODnet are listed as open and unassembled in coverage_gaps.json, so the search was not exhaustive.",
+   "rests_on": [
+    "D-AR-GAPS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Those are counts, and they are deliberately not percentages.** Saying *8% of the sea has no long observation* would be the missing-denominator error this project exists to point at. The denominator is known — the sea is 43,579 km². The numerator is not, because it is the extent of an absence, and an absence can only be measured against a search that was exhaustive. Ours was ODA plus two layers; ICES and EMODnet sit outside it, and so does whatever university, municipal or unpublished series exist.",
+     "texts": "1c66b7fce16ea4f4",
+     "node D-AR-GAPS": "a4ee57fffa31b628"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SAME-WIDTH",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "None of the water bodies has a marine point in the national hazardous-substance layer: its points are lake and river. The category is that layer and the count is of all of it, so its complement is exact.",
+   "because": "The layer's points are counted by kind in scripts/areas.py and none is coastal. An absence stated over a whole named layer needs no search beyond it.",
+   "rests_on": [
+    "X-AR-AREAS",
+    "D-AR-AREAS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-SAME-WIDTH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Same width — an exact statement is fine, including of an absence.** *None of the 123 water bodies has a marine point in the national hazardous-substance layer: its 256 points are 152 lake and 104 river.* The category is that layer and the count is of all of it, so its complement is exact.",
+     "texts": "9329bb9f3baa3d20",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
+    }
+   }
+  },
+  {
+   "id": "C-AR-WIDER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "A share of the sea with no marine observation would name a category far wider than the two layers searched, and report a leftover as though it were measured.",
+   "because": "Marine observation includes every series outside the two layers; subtracting what was found from the sea leaves a residual, not a measurement.",
+   "rests_on": [
+    "C-AR-ABSENCE-RULE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Category wider than corpus — only a count is honest.** *56% of the sea has no marine observation* would name a category — marine observation — far wider than the two layers actually searched, and report the leftover after subtracting what we happened to find as though it were measured, which is the operation [RESIDUAL.md](RESIDUAL.md) is about.",
+     "texts": "5402a1dc9d0b3aaa",
+     "rests on C-AR-ABSENCE-RULE": "c7694850cffd1095"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NAMED-CORPUS",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Absence is reported on this page as a count over a named corpus, and the corpus is named every time.",
+   "because": "A rule the project sets itself (CLAUDE.md, Claims), applied on this page, because of the two arguments it follows.",
+   "rests_on": [
+    "C-AR-ABSENCE-RULE",
+    "C-AR-NOT-PERCENT"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "So absence is reported here as a count over a named corpus, and the corpus is named every time.",
+     "texts": "fb563b511dee1186",
+     "rests on C-AR-ABSENCE-RULE": "c7694850cffd1095",
+     "rests on C-AR-NOT-PERCENT": "1c66b7fce16ea4f4"
+    }
+   }
+  },
+  {
+   "id": "C-AR-GAPS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Counting what was assembled gives a lower bound on evidence and an upper bound on absence, interpretable only beside the sources known to be missing, which are listed in coverage_gaps.json in three kinds.",
+   "because": "What was found is part of what exists, so it bounds the evidence from below and the absence from above. The list names known missing terms; its entries are a hand-kept record, not re-verified here.",
+   "rests_on": [
+    "D-AR-GAPS",
+    "U-AR-GAPS-UNVERIFIED"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**And the corpus is named together with what is missing from it.** A coverage figure has a numerator nobody can measure — the evidence that exists — so counting what we assembled gives a *lower bound on evidence* and therefore an *upper bound on absence*. That is only interpretable beside the terms we know belong in the numerator and cannot add. They are kept in `data/manual/coverage_gaps.json`, a hand-kept record, in three kinds:",
+     "texts": "66293d7221d5e17b",
+     "node D-AR-GAPS": "a4ee57fffa31b628",
+     "node U-AR-GAPS-UNVERIFIED": "bfbfeb590269a067"
+    }
+   }
+  },
+  {
+   "id": "C-AR-GAP-CLASSES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "closed is a gap in the world's availability, open_unassembled a gap in this project's effort, and absent the one kind where a search was run to the end - bounded by that search.",
+   "because": "These are the definitions coverage_gaps.json gives its three classes.",
+   "rests_on": [
+    "D-AR-GAPS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The distinction inside that table matters as much as the table. `closed` is a gap in the world's availability; `open_unassembled` is a gap in our effort and is nobody's fault but ours; `absent` is the only one where a search was run to the end, and even that is bounded by the search.",
+     "texts": "5b4585e5a0d416a7",
+     "node D-AR-GAPS": "a4ee57fffa31b628"
+    }
+   }
+  },
+  {
+   "id": "C-AR-PULS",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "PULS holds the per-event overflow volumes that {ref:B1} calls the single most valuable missing series - volumes that are largely modelled - and a private MitID was refused access, so a private citizen may not be able to obtain it at all.",
+   "because": "The need is in the hypothesis register; that the volumes are modelled is in the source register; the refused attempt and the reason given are recorded in coverage_gaps.json and nowhere else.",
+   "rests_on": [
+    "D-AR-HYPREG",
+    "D-AR-SRCREG",
+    "D-AR-GAPS",
+    "U-AR-GAPS-UNVERIFIED"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-PULS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:B1}": "B1: Combined sewer overflow",
+     "D-AR-HYPREG.detail {ref:B1}": "B1: Combined sewer overflow",
+     "said on AREAS.md": "**PULS is the sharpest case.** It holds the per-event overflow volumes that B1 calls the single most valuable missing series — volumes that are themselves largely modelled, by this project's source register — and an access attempt with a private MitID was refused because no CVR or VAT number attached to it was valid, so this is not a login anyone has neglected to perform. Access appears to require a registered business or authority, in which case a private citizen cannot obtain it.",
+     "texts": "afe3cc9957f9b10b",
+     "node D-AR-HYPREG": "c507517b1be82db8",
+     "node D-AR-SRCREG": "baa6a5ffedc03eb3",
+     "node D-AR-GAPS": "a4ee57fffa31b628",
+     "node U-AR-GAPS-UNVERIFIED": "bfbfeb590269a067"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ENCLOSURE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "AREAS.md",
+   "claim": "Roskilde Fjord names a real hydrographic object, an inlet bounded by land that opens to the sea through Isefjorden: a physical claim about enclosure, and a true one.",
+   "because": "The pinned article says the fjord runs out into Isefjorden north of Hornsherred; the rest is the page's reading of what an inlet is. Nothing held says how restricted its exchange is.",
+   "rests_on": [
+    "E-AR-WIKI"
+   ],
+   "basis": "assessed",
+   "holder": "Wikipedia (Danish), Roskilde Fjord",
+   "replaces": [
+    "C-AR-OLD-NARROW"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "\"Roskilde Fjord\" is not an arbitrary line on a map, and it is worth saying so plainly before objecting to anything. It names a real hydrographic object: an inlet bounded by land that opens to the sea through Isefjorden. That is a **claim about enclosure**, it is physical, and it is true.",
+     "texts": "0763a815486b6b04",
+     "node E-AR-WIKI": "e0f7c3f031d9f190",
+     "pinned WIKI-ROSKILDE-FJORD": "751dfbb7da98ec7c"
+    }
+   }
+  },
+  {
+   "id": "C-AR-HOMOGENEITY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The assessment uses the same name for a claim about homogeneity - that a measurement taken anywhere in the water body stands for all of it - and nothing carries the enclosure claim to the homogeneity claim.",
+   "because": "Being bounded by land says where the water is, not that it is alike; one does not imply the other, and the shared name hides the switch.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The assessment then uses the same word to mean something else entirely: that a measurement taken anywhere in it stands for the whole of it. That is a **claim about homogeneity**, and it is statistical. One sense is about where the water is bounded; the other is about whether the water inside those bounds is alike. Nothing carries you from the first to the second, and the name does the carrying unnoticed because the same three words serve both.",
+     "texts": "be02c96994643338"
+    }
+   }
+  },
+  {
+   "id": "C-AR-PHYSICS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Where exchange is restricted it preserves gradients rather than erasing them, so the better the enclosure, the weaker the homogeneity assumption: the enclosures most deserving of their names are the least entitled to be treated as single units.",
+   "because": "A basin with freshwater at its head and little exchange at its mouth keeps salinity, residence-time and oxygen differences along its length because the water that would mix them away does not come in; open water mixes them. The conclusion follows from that premise; it is reasoning, not a measurement here.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**And where exchange is restricted, the physics runs against the transfer, not with it.** Restricted exchange is what *preserves* a gradient. A basin with freshwater entering at its head and little exchange at its mouth holds salinity, residence-time and oxygen gradients along its length because it does not flush; open water erases such differences by mixing. So the better the enclosure, the weaker the homogeneity assumption becomes: the two senses **pull in opposite directions**, and the enclosures that most deserve their names are the ones least entitled to be treated as single units.",
+     "texts": "eca61a790b123449"
+    }
+   }
+  },
+  {
+   "id": "C-AR-TWO-UNITS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Roskilde Fjord appears as two water bodies, DKCOAST1 and DKCOAST2 - an admission that one enclosure is at least two units.",
+   "because": "Both are records of the national marine layer in areas.json, with their areas.",
+   "rests_on": [
+    "D-AR-AREAS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The partition half-concedes this without following it through. Roskilde Fjord appears here as two water bodies, `DKCOAST1` (ydre, 71 km²) and `DKCOAST2` (indre, 52 km²) — an admission that one enclosure is at least two units.",
+     "texts": "7a317dcebfab1dd0",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SPLIT-UNSTATED",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The documents this project holds give the general basis for water bodies' boundaries - the directive asks member states to set them, and the plans sort coastal waters into types with a catchment each - but none says why Roskilde Fjord is two units rather than one or three.",
+   "because": "The general basis is stated in the second-opinion background analysis; the search for a reason specific to this fjord is recorded where it ends.",
+   "rests_on": [
+    "E-AR-SO-BASIS",
+    "E-AR-SO-TYPES",
+    "E-AR-SO-CATCH",
+    "U-AR-SPLIT-REASON"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-NOTHING-STATES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The documents this project holds give the general basis for water bodies' boundaries — the water framework directive asks member states to set them, and the plans sort coastal waters into types with a catchment each — but none of them says why this fjord is two units rather than one or three, or what measurement would settle it.",
+     "texts": "91a2e38a392cea4c",
+     "node E-AR-SO-BASIS": "cdff68d7c5a67736",
+     "pinned SO-BG-2024": "8d12fc4d97151adc",
+     "node E-AR-SO-TYPES": "2ddc2799f1e352c1",
+     "node E-AR-SO-CATCH": "75a94523882c6add",
+     "node U-AR-SPLIT-REASON": "22366360f13fc79a"
+    }
+   }
+  },
+  {
+   "id": "C-AR-X22",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "A boundary drawn inside a fjord is a hypothesis about where the water changes, and `X22` in EXPERIMENTS.md sets out how to test it with pairs at matched separation either side of the line.",
+   "because": "X22's control takes pairs at a fixed separation that straddle an official boundary against pairs at the same separation that do not.",
+   "rests_on": [
+    "X-AR-EXPERIMENTS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "A boundary drawn inside a fjord is a hypothesis about where the water changes, and it can be tested: `X22` in [EXPERIMENTS.md](EXPERIMENTS.md) sets out how, using pairs of measurements at matched separation either side of a line.",
+     "texts": "f5e737b93e97e798",
+     "node X-AR-EXPERIMENTS": "539157df87580174"
+    }
+   }
+  },
+  {
+   "id": "C-AR-POSITION",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The unit of observation is a position; everything else, this page included, is an aggregate computed inside somebody's polygon.",
+   "because": "A rule the page sets itself, following from the two senses of a body of water: only a position is measured.",
+   "rests_on": [
+    "C-AR-HOMOGENEITY"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The practical rule that follows, and the reason the station-level series exist: **the unit of observation is a position.** Everything else — this page included — is an aggregate computed inside somebody's polygon, and should be read as a statement about that polygon as much as about the sea.",
+     "texts": "31755621bd667dcb",
+     "rests on C-AR-HOMOGENEITY": "be02c96994643338"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ROSK-METHOD",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "For each month in which enough stations in one half of Roskilde Fjord measured, the spread between stations is set against the spread of the monthly means across months.",
+   "because": "station_places.py takes, per month with at least the minimum number of stations, the population standard deviation and the range across them, averages the standard deviations and takes the median range, and divides by the standard deviation of the monthly means.",
+   "rests_on": [
+    "X-AR-STATIONPLACES",
+    "D-AR-STATIONS"
+   ],
+   "basis": "computed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The station-level series make this checkable rather than arguable. Both halves of Roskilde Fjord carry several stations, so for any month where 3 or more measured, the disagreement *between* stations can be set against the variation *across* months. *Spread between stations* is the population standard deviation across the stations in a month, averaged over the months, beside the median range; *spread across months* is the standard deviation of the monthly means.",
+     "texts": "3ce66b8f70fc0413",
+     "node X-AR-STATIONPLACES": "f480f67f5bf30b62",
+     "node D-AR-STATIONS": "26623b56f73df40c"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ROSK-OXY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The inner fjord's own stations disagree about bottom oxygen by a median range, within a single month, that is most of the distance from zero to the iltsvind threshold, and their spread is a large share of the spread of monthly means.",
+   "because": "Read from station_places.json. A range that size means that in a month when bottom water is near the threshold one station can read below it and another above; that is a possibility the numbers allow, not a count of such months.",
+   "rests_on": [
+    "X-AR-STATIONPLACES",
+    "D-AR-STATIONS",
+    "C-AR-ILTSVIND"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-WIDTH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**The inner fjord's own stations disagree about bottom oxygen by a median of 3.35 mg/l within a single month.** A spread that size is most of the distance from zero to that threshold, so in a month when the fjord's bottom water is near it, one station can read below and another above — and whether that body \"has iltsvind\" can then depend on which of its own stations is read. The ratio puts it another way: the spread between stations is **65% of the spread of the monthly means across months**.",
+     "texts": "6480877bba15ef45",
+     "node X-AR-STATIONPLACES": "f480f67f5bf30b62",
+     "node D-AR-STATIONS": "26623b56f73df40c",
+     "rests on C-AR-ILTSVIND": "683ff8377380f3b5"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ILTSVIND",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "AREAS.md",
+   "claim": "In Denmark, oxygen below {read:DCE-STATMOD-2015:4|koncentrationen af ilt i vandet er under 4 mg/L} mg/L is called iltsvind.",
+   "because": "Stated as the Danish definition in the DCE report; it gives no source for it.",
+   "rests_on": [
+    "E-AR-DCE-ILTSVIND"
+   ],
+   "basis": "assessed",
+   "holder": "DCE, Aarhus University (2015)",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:DCE-STATMOD-2015:4|koncentrationen af ilt i vandet er under 4 mg/L}": "4",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "said on AREAS.md": "In Denmark, oxygen below 4 mg/L is called iltsvind.",
+     "texts": "683ff8377380f3b5",
+     "node E-AR-DCE-ILTSVIND": "ae3ce12bcfc87a5d"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ROSK-HALVES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "In Roskilde Fjord the inner half's stations disagree for oxygen and agree for salinity, and the outer half's the reverse: within this one fjord a boundary serving one variable does not serve the other. One case, not a proof about every partition.",
+   "because": "The four ratios are read from station_places.json. Two halves of one fjord show the pattern; they cannot show it for partitions in general, which is what `X22` would test.",
+   "rests_on": [
+    "X-AR-STATIONPLACES",
+    "D-AR-STATIONS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-NO-SINGLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**And the two halves fail on different variables.** The inner fjord's stations disagree for oxygen (0.65) and agree for salinity (0.29); the outer fjord's are the reverse — close for oxygen (0.25), apart for salinity (0.87). Within this one fjord, a boundary drawn to serve one variable does not serve the other. That is one case, not a proof about every partition; it is the case `X22` would test systematically.",
+     "texts": "f5cb0ff348106abd",
+     "node X-AR-STATIONPLACES": "f480f67f5bf30b62",
+     "node D-AR-STATIONS": "26623b56f73df40c"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ROSK-SOURCE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The Roskilde figures are computed by station_places.py from station series that carry no partition; the water-body assignment is loaded separately from the overlay file.",
+   "because": "station_places.py reads stations_series and station_waterbody_overlay.json as separate files.",
+   "rests_on": [
+    "X-AR-STATIONPLACES"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Computed by `scripts/station_places.py` from `docs/data/areas/stations_series.*`, which carry no partition at all — the water-body assignment used here is loaded separately from `station_waterbody_overlay.json`, on purpose, so that using it is a deliberate act.",
+     "texts": "fc09e36b58fa8225",
+     "node X-AR-STATIONPLACES": "f480f67f5bf30b62"
+    }
+   }
+  },
+  {
+   "id": "C-AR-PART-STAT",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The partition score is a ratio of mean squares within month - the between-basket mean square over the sum of between and within - on which labels that carry no information score near one half, not zero, so no value in the table is readable on its own.",
+   "because": "icc() in partition_score.py returns MSB/(MSB+MSW). Under random labels both mean squares estimate the same variance, so the ratio tends to one half; the file's own note says so. The name icc in the code is not the ANOVA intraclass correlation.",
+   "rests_on": [
+    "X-AR-PARTITION",
+    "D-AR-PARTITION"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-ICC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "A partition is not right or wrong in general; it is predictive *for a variable*. So the question is what the water bodies encode. The statistic, computed within month by `scripts/partition_score.py`, is a **ratio of mean squares**: the between-basket mean square over the sum of the between- and within-basket mean squares. One means stations in the same basket agree completely. With labels that carry no information both mean squares estimate the same variance and the ratio sits near one half, not zero — so no value in the table below can be read on its own, only its difference from a null.",
+     "texts": "2ef587bff9f917a0",
+     "node X-AR-PARTITION": "70f90507ef60ec40",
+     "node D-AR-PARTITION": "52530e963493f776"
+    }
+   }
+  },
+  {
+   "id": "C-AR-WITHIN-MONTH",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The score is computed within month, because pooling across months puts the shared season into the between-basket term and makes every partition look excellent.",
+   "because": "Every station shares the season; a common driver across baskets inflates the between term whatever the baskets are. partition_score.py groups by month before scoring.",
+   "rests_on": [
+    "X-AR-PARTITION"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Within month is essential. Every station in Denmark shares a season, so pooling across months puts the seasonal signal into the between-basket term and makes every partition look excellent, including an absurd one.",
+     "texts": "b11425c7e881db06",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
+    }
+   }
+  },
+  {
+   "id": "C-AR-THREE-RANKINGS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The ranking of variables depends almost entirely on the null it is compared against: three reasonable nulls give three different rankings.",
+   "because": "Ranking the variables by the real score minus each null's gives three different orders in partition_score.json.",
+   "rests_on": [
+    "D-AR-PARTITION"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-RANKING-NOTE",
+    "C-AR-OLD-CAUTION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**The result depends almost entirely on what it is compared against, and three reasonable comparisons give three different rankings.**",
+     "texts": "e1cd7b436e84cb69",
+     "node D-AR-PARTITION": "52530e963493f776"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NULLS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Shuffled labels keep basket sizes and destroy geography; latitude stripes keep compactness and equal sizes and ignore hydrography; the matched blobs keep both sizes and compactness, grown from random seeds by nearest neighbour three times over - the only control that varies one thing at a time.",
+   "because": "Read from the three controls in partition_score.py.",
+   "rests_on": [
+    "X-AR-PARTITION"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The three nulls answer three different questions. **Shuffled** permutes station labels while keeping basket sizes, so it destroys geography and keeps the size structure. **Latitude stripes** are equal-count horizontal bands, as many as there are real baskets, so they keep compactness and equal sizes but ignore hydrography. **Size- and shape-matched** baskets have the same size distribution as the real ones and are grown from random seeds by nearest neighbour, three times over, so they are compact blobs of the right sizes following no hydrography at all — the only control that varies one thing at a time.",
+     "texts": "cec175ec5d2f5a37",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
+    }
+   }
+  },
+  {
+   "id": "C-AR-WINNERS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Against the shuffle, salinity gains most by a distance; against the stripes, surface oxygen saturation does.",
+   "because": "The largest real-minus-null difference for each control, read from partition_score.json.",
+   "rests_on": [
+    "D-AR-PARTITION"
+   ],
+   "basis": "computed",
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Against the shuffle, salinity gains most, by a distance; against the stripes, surface oxygen saturation does.",
+     "said on CATEGORY.md": "The winners are read from the scores, and the first two disagree, not marginally: surface oxygen saturation gains **+0.065** over the shuffle and **+0.408** over the stripes, while against the shuffle salinity gains most.",
+     "texts": "a75a44822b1f3cbe",
+     "node D-AR-PARTITION": "52530e963493f776"
+    }
+   }
+  },
+  {
+   "id": "C-AR-REVERSAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.",
+   "because": "Lifts and the spread between the three runs are read from partition_score.json. With three runs, a lift smaller than the runs' spread cannot be told from zero.",
+   "rests_on": [
+    "D-AR-PARTITION",
+    "X-AR-PARTITION"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-FLUO",
+    "C-AR-OLD-CAT-FLUO"
+   ],
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Against the matched blobs the ordering **reverses**: surface oxygen saturation gains most (+0.402), surface salinity little (+0.124), and fluorescence's lift is below zero (-0.050) — but the three blob runs themselves spread by 0.109 for fluorescence, so for it the official partition does no better than random compact blobs, and whether it does worse is not shown.",
+     "said on CATEGORY.md": "Only the third varies one thing at a time, and against it the ordering from the first **reverses** — oxygen saturation gains most, salinity little — and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.",
+     "texts": "1445ea759d6b3410",
+     "node D-AR-PARTITION": "52530e963493f776",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
+    }
+   }
+  },
+  {
+   "id": "C-AR-READING",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "One reading fits these numbers and is not tested: if salinity is spatially smooth, any compact grouping predicts it and real boundaries add little; if oxygen is rough, blobs do poorly and boundaries that follow enclosure carry information.",
+   "because": "The pattern of lifts is what that difference in smoothness would produce, but nothing here measures smoothness, so it stays a reading.",
+   "rests_on": [
+    "C-AR-REVERSAL",
+    "U-AR-SMOOTH"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-SMOOTH",
+    "C-AR-OLD-CAT-SMOOTH"
+   ],
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, any compact grouping predicts it well (0.844 from random blobs) and the real boundaries have little left to add; if oxygen is spatially rough, blobs do poorly and boundaries that follow enclosure carry real information.",
+     "said on CATEGORY.md": "One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, *any* compact grouping predicts it well and real boundaries have little left to add; if oxygen is rough, shape alone fails and boundaries that follow enclosure carry real information.",
+     "texts": "b2c095787bafdfe7",
+     "rests on C-AR-REVERSAL": "1445ea759d6b3410",
+     "node U-AR-SMOOTH": "2e52f10b0df32660"
+    }
+   }
+  },
+  {
+   "id": "C-AR-LIFT-RULE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would.",
+   "because": "A compact grouping predicts any spatially structured variable to some degree whatever its lines, so only the excess over a same-shaped grouping can be credited to the lines.",
+   "rests_on": [
+    "C-AR-NULLS"
+   ],
+   "basis": "assessed",
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "A partition's value is not how well it predicts, but **how much better it predicts than its own shape alone would**.",
+     "said on CATEGORY.md": "**A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would.**",
+     "texts": "0f14397ffbde1421",
+     "rests on C-AR-NULLS": "cec175ec5d2f5a37"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SAMPLED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "Stations are not placed at random and are denser in some baskets than others, so every score is of the partition as sampled, and cannot tell a well-drawn basket from one whose stations sit close together.",
+   "because": "Stated with the scores in partition_score.json; clustered stations raise agreement within a basket whatever the basket's merit.",
+   "rests_on": [
+    "A-AR-SAMPLED",
+    "D-AR-PARTITION"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "One further limit bounding every row: stations are not placed at random and are far denser in some baskets than others, so this scores the partition *as sampled*. It cannot distinguish a well-drawn basket from one whose stations happen to sit close together.",
+     "texts": "b032c74eefe99329",
+     "node A-AR-SAMPLED": "e0fe2abad7eaa536",
+     "node D-AR-PARTITION": "52530e963493f776"
+    }
+   }
+  },
+  {
+   "id": "C-AR-CUMHOC",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "A national time series has one unit of replication; the water bodies with two or more bathing stations give more, so an effect size can be estimated across them.",
+   "because": "cum_hoc() in areas.py keeps the areas with two or more bathing stations and an area; the count is read from areas.json.",
+   "rests_on": [
+    "X-AR-AREAS",
+    "D-AR-AREAS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-ONLY-PLACE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "A national time series has one unit of replication. The water bodies with two or more bathing stations number 65, so an effect size can be estimated across them.",
+     "texts": "a97000ecda472aa4",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
+    }
+   }
+  },
+  {
+   "id": "C-AR-CUMHOC-DESIGN",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The cross-area test sets bathing-water quality against sewage pressure - outfall, treatment-plant and basin density per area - and is cum hoc: a correlation across places at one time, with no control for coast type, flushing or population.",
+   "because": "cum_hoc() correlates the logged densities with the bathing outcomes and nothing else.",
+   "rests_on": [
+    "X-AR-AREAS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "This sets bathing-water quality against sewage pressure — outfall, treatment-plant and basin density per km² — because both sides of that pair exist per area. It is **cum hoc**: a correlation across places at one time, with no control for coast type, flushing, or population.",
+     "texts": "4acba4549b62d044",
+     "node X-AR-AREAS": "3d0aabbb33262dbe"
+    }
+   }
+  },
+  {
+   "id": "C-AR-TABLE-KEY",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "In the per-area table, model is DHI's statistical-model flag, bath the bathing stations and their years, r the mean correlation between informative stations' yearly classes, RBU the rain-conditioned outfalls, PE the approved treatment-plant load, and gaps the number of written-out reasons.",
+   "because": "Each column is read from the record's fields in areas.py; DCE fitted its models on data from 1990 to 2012.",
+   "rests_on": [
+    "X-AR-AREAS",
+    "E-AR-DCE-PERIOD",
+    "C-AR-MODEL-MATCH"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-MODEL-KEY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "`model` — a DHI statistical model, as described above (DCE fitted its statistical models on 1990–2012). `bath` — bathing stations, and the years they span. `r` — the mean correlation between the yearly classes of a water body's informative bathing stations, where there are three or more. `RBU` — rain-conditioned outfalls. `PE` — approved treatment-plant load. `gaps` — the number of written-out reasons this area cannot be modelled.",
+     "texts": "a0763ad3a96830fd",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node E-AR-DCE-PERIOD": "fb1d3c0e2ded567f",
+     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
+     "rests on C-AR-MODEL-MATCH": "e0d2f7c66a4d4b3b"
+    }
+   }
+  },
+  {
+   "id": "C-AR-RECORD",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "The full record for each area is in data/derived/areas.json, which areas.py writes locally and the repository does not ship, and it is drawn on the areas map.",
+   "because": "data/derived/* is ignored by git; docs/areas.html exists.",
+   "rests_on": [
+    "X-AR-AREAS"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The full record for each area — every pressure, every stream with its years, and the written-out list of what cannot be modelled there — is in `data/derived/areas.json`, which `scripts/areas.py` writes locally and the repository does not ship, and drawn with its timeline on [the map](areas.html).",
+     "texts": "6a757362b8fec789",
+     "node X-AR-AREAS": "3d0aabbb33262dbe"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NOT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "claim": "This is not a causal model per area but the ledger needed before one: which areas have enough observation to support a claim, which have none, and over which years each stream exists.",
+   "because": "The page counts and correlates; it fits no model of cause, and what it lists is what a model would need.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "It is not a causal model per area. It is the ledger you need before you can build one: which areas have enough observation to support a claim, which have none, and over which years each stream exists — so that an analysis published in 2025 cannot quietly rest on a relation fitted to 1990–2012 without a reader seeing the gap.",
+     "texts": "259597b28d557e3e"
+    }
+   }
+  },
+  {
+   "id": "C-AR-CAT-COMPANION",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "CATEGORY.md is about a category nobody measured being treated as one, as RESIDUAL.md is about such a number.",
+   "because": "The two pages describe the same move applied to a category and to a number.",
+   "rests_on": [
+    "D-AR-RESIDUAL"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "This is the companion to [RESIDUAL.md](RESIDUAL.md), and the same shape of mistake one column to the left. That page is about a *number* nobody measured being treated as one. This is about a *category* nobody measured being treated as one.",
+     "texts": "0b1f7a730e286e5c",
+     "node D-AR-RESIDUAL": "a0ebe74f9a98bd76"
+    }
+   }
+  },
+  {
+   "id": "C-AR-TELL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The measured columns of the Danish marine monitoring archive come with what a measurement comes with: a sonde number, a sampling instrument, an analysis method, a laboratory, a quality level, and a mark for a value below what the method could detect.",
+   "because": "Those are columns of the CTD and water-chemistry extracts, as enums.json records them.",
+   "rests_on": [
+    "D-AR-ENUMS"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-ANYDATASET"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "Open the Danish marine monitoring archive this project holds. Its measured columns come with what a measurement comes with: a sonde serial number, a sampling instrument, an analysis method, a laboratory, a quality level, and a mark for a value below what the method could detect.",
+     "texts": "ac32f3884d9912af",
+     "node D-AR-ENUMS": "d692b5463ba9fc1e"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NO-ERRORBAR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "None of the categorical columns has an error bar and none was measured: each is the output of a model, presented beside the instrument readings as if it were one.",
+   "because": "A polygon, a legal test or a classification is assigned, not read off an instrument; nothing in the column states how uncertain the assignment is.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Not one of them has an error bar, and not one of them was measured.** Each is the output of a model — a polygon someone drew, a legal test someone applied, a classification someone wrote down — presented in the same table, in the same typeface, as the quantities that came off an instrument. The instrument reading is an observation with a known error. The category is a claim with an unstated one.",
+     "texts": "1e890d6683be1647"
+    }
+   }
+  },
+  {
+   "id": "C-AR-TWO-THINGS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Every basket carries a membership rule and an attribution, which are easy to conflate, and the conflation is the problem.",
+   "because": "Who is in and what members are taken to share are different questions; a name that serves both lets an answer to the first pass for an answer to the second.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "Every basket carries two things that are easy to conflate, and the conflation is the whole problem:",
+     "texts": "0b7f457f378f0ec6"
+    }
+   }
+  },
+  {
+   "id": "C-AR-MEMBERSHIP",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "A membership rule says who is in; it is usually sound and often a real fact - Roskilde Fjord is an enclosure, a citizenship is a legal status, a postcode is a postcode.",
+   "because": "Each example is a rule that either holds or does not for a given member.",
+   "rests_on": [
+    "C-AR-ENCLOSURE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**A membership rule.** Who is in. This is usually sound, often precise, and frequently a genuine fact about the world. Roskilde Fjord really is an enclosure. Danish citizenship really is a determinate legal status. A postcode really is a postcode.",
+     "texts": "0581af2c7bc47c62",
+     "rests on C-AR-ENCLOSURE": "0763a815486b6b04"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ATTRIBUTION",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "An attribution - what members are taken to share - is a statistical claim, and nothing in the membership rule establishes it.",
+   "because": "Sharing a property is a claim about a distribution over members, which a rule about who is in does not address.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**An attribution.** What members are taken to share. This is a *statistical* claim, and nothing in the membership rule establishes it.",
+     "texts": "2d6613a8d7d647e5"
+    }
+   }
+  },
+  {
+   "id": "C-AR-QUESTION",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Asking whether a category is real answers the membership question and is almost always yes; the question with content is whether membership predicts the thing it is used to predict, better than a same-shaped arbitrary grouping.",
+   "because": "Follows from the two preceding claims.",
+   "rests_on": [
+    "C-AR-MEMBERSHIP",
+    "C-AR-ATTRIBUTION"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "The name serves both functions, so the switch between them goes unnoticed. Asking \"is this a real category?\" answers the first question and is almost always yes. The question that has content is different:",
+     "texts": "145c166aadac3b57",
+     "rests on C-AR-MEMBERSHIP": "0581af2c7bc47c62",
+     "rests on C-AR-ATTRIBUTION": "2d6613a8d7d647e5"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ICC-FAMILY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The intraclass correlation and its relatives measure how much more alike two members of one basket are than two picked without regard to basket; the scores this project computes are a relative on which no information reads near one half rather than zero.",
+   "because": "For the intraclass correlation zero means membership tells nothing; the project's score is a mean-square ratio with chance at one half, as its producer states.",
+   "rests_on": [
+    "C-AR-PART-STAT"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-CAT-ICC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "There is a standard family of statistics for this: the **intraclass correlation** and its relatives. Pick two members of the population at random. If they are in the same basket, how much more alike are they than two picked without regard to basket? For the intraclass correlation, one means membership tells you everything and zero means it tells you nothing. The scores this project computes are a relative — a ratio of mean squares, on which no information reads near one half rather than zero — which is one more reason to read only their difference from a null.",
+     "texts": "26f7abbea6d96083",
+     "rests on C-AR-PART-STAT": "2ef587bff9f917a0"
+    }
+   }
+  },
+  {
+   "id": "C-AR-CONDITION",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Such a statistic must be conditioned on what every member shares - the season for marine stations - or the shared driver lands in the between-basket term and every partition scores well.",
+   "because": "The same argument as for within-month scoring on AREAS.",
+   "rests_on": [
+    "C-AR-WITHIN-MONTH"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Condition on what everything shares.** Every marine station in Denmark experiences the same season. Pool across months and the seasonal signal lands in the between-basket term and *every* partition scores well — including a deliberately absurd one. The same applies wherever a common driver exists: compare within year, within cohort, within whatever the members hold in common regardless of basket.",
+     "texts": "604355eadce432d6",
+     "rests on C-AR-WITHIN-MONTH": "b11425c7e881db06"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SHAPE-NULL",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "It must also be compared against a null that matches the basket's shape; skipping that is how a defensible number comes out backwards.",
+   "because": "The worked example below shows the ranking reversing when the null is changed to one matching shape.",
+   "rests_on": [
+    "C-AR-REVERSAL"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Compare against a null that matches the basket's shape.** This is the part that gets skipped, and skipping it is how a defensible number comes out backwards.",
+     "texts": "f9381da00e5d7b90",
+     "rests on C-AR-REVERSAL": "1445ea759d6b3410"
+    }
+   }
+  },
+  {
+   "id": "C-AR-DEFECT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The statistic has a defect that applies to every number on the page: it takes the partition as an input.",
+   "because": "Stated and argued in the next claim.",
+   "rests_on": [
+    "C-AR-FST-CIRCLE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "The measurement above has a defect that has to be stated before the worked example, because it applies to every number on this page.",
+     "texts": "ccd0794cc59290e0",
+     "rests on C-AR-FST-CIRCLE": "12a1e3e2cec9e468"
+    }
+   }
+  },
+  {
+   "id": "C-AR-FST-CIRCLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The intraclass correlation and F_ST take the partition as an input - H_S cannot be computed until subpopulations are declared - so citing a value as evidence that the groups are distinct assumes what it sets out to show, unless it is set against partitions not chosen to be real.",
+   "because": "In F_ST = (H_T - H_S)/H_T the within-subpopulation term needs the subpopulations first. The value then depends on the data, but without a reference it cannot say whether the declared groups beat arbitrary ones.",
+   "rests_on": [],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-CIRCLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**The intraclass correlation takes the partition as an input.** So does $F_{\\mathrm{ST}}$, a statistic of the same family in population-genetics clothing: $F_{\\mathrm{ST}} = (H_T - H_S)/H_T$, and $H_S$ — the variation *within subpopulations* — cannot be computed until the subpopulations have been declared. Citing an $F_{\\mathrm{ST}}$ value as evidence that populations are distinct therefore assumes what it sets out to show, unless it is set against what partitions not chosen to be real would give.",
+     "texts": "12a1e3e2cec9e468"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SAMPLING",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The partition can come from the sampling design itself: collect two national samples and the nations are the groups by construction.",
+   "because": "A group defined by where the sample was drawn is a boundary the fieldwork drew; Serre and Pääbo show a sampling design changing what the data seem to show.",
+   "rests_on": [
+    "E-AR-SERRE"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-USUALLY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "The partition can come from the **sampling design** itself. Collect fifty Danes and fifty Dutch and \"Danish\" and \"Dutch\" are your groups by construction; the statistic then reports on a boundary the fieldwork drew.",
+     "texts": "adb26b298f0a98cb",
+     "node E-AR-SERRE": "d656e066486cc5cb",
+     "pinned SERRE-PAABO-2004": "99c8d1fa955990ea"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ESTIMATORS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "CATEGORY.md",
+   "claim": "F_ST is not one statistic: after Wright's, papers gave differing definitions and estimators, and published estimates for the same population pairs moved more than twofold with the estimation method, the way loci are combined and which are chosen.",
+   "because": "Bhatia and co-authors' abstract says so and attributes the changes largely to estimation methods.",
+   "rests_on": [
+    "E-AR-BHATIA-DEF",
+    "E-AR-BHATIA-TWOFOLD",
+    "E-AR-BHATIA-SNPS"
+   ],
+   "basis": "assessed",
+   "holder": "Bhatia, Patterson, Sankararaman and Price (2013)",
+   "replaces": [
+    "C-AR-OLD-USUALLY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "Nor is it one statistic. After Wright's, papers gave differing definitions and estimators, and published estimates for the same pairs of populations have moved more than twofold with the estimation method, the way estimates are combined across loci and the choice of loci. It is an aggregation function over a chosen metric, presented as an observable.",
+     "texts": "d48fcc1cd75d1e43",
+     "node E-AR-BHATIA-DEF": "587d6d2264ba7206",
+     "pinned BHATIA-2013": "02f807ec140a00e7",
+     "node E-AR-BHATIA-TWOFOLD": "0a3833786bcd2bdc",
+     "node E-AR-BHATIA-SNPS": "e2116240772edac3"
+    }
+   }
+  },
+  {
+   "id": "C-AR-RESCUE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The null is not a refinement; it is what rescues the measurement.",
+   "because": "Argued in the next claim.",
+   "rests_on": [
+    "C-AR-DIFFERENCE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**This is why the null is not a refinement. It is the thing that rescues the measurement.**",
+     "texts": "24fe17a12cf30440",
+     "rests on C-AR-DIFFERENCE": "a253888fa34a4bda"
+    }
+   }
+  },
+  {
+   "id": "C-AR-DIFFERENCE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Compared against a shape-matched null, the statistic stops being circular, because the null partitions were not chosen to be real; a single bare value cannot by itself say whether the groups are anything.",
+   "because": "Each score depends on the assumed partition; the difference from partitions nobody chose measures what the chosen one adds. A bare value has nothing to be read against.",
+   "rests_on": [
+    "C-AR-FST-CIRCLE",
+    "C-AR-NULLS"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-BARE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "A circular statistic compared against a *shape-matched null* stops being circular, because the null partitions were not chosen to be real. Each number separately depends on the assumption; the **difference** between them measures what the chosen partition adds. That is the argument for the exercise below, and it is why a single reported value — a bare $F_{\\mathrm{ST}}$, a bare intraclass correlation, a bare $R^2$ between groups — cannot by itself say whether the groups are anything.",
+     "texts": "a253888fa34a4bda",
+     "rests on C-AR-FST-CIRCLE": "12a1e3e2cec9e468",
+     "rests on C-AR-NULLS": "cec175ec5d2f5a37"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NULL-LIMIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The null comparison is the strongest test available when the feature space is small, not the strongest test available.",
+   "because": "The next claims give the stronger one and when it applies.",
+   "rests_on": [
+    "C-AR-SPLIT-TEST"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-STANDARD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "The null comparison above is not the strongest test available. It is the strongest test available *when the feature space is small*.",
+     "texts": "8e5daadc5343c0be",
+     "rests on C-AR-SPLIT-TEST": "885abe2b3a8a3d64"
+    }
+   }
+  },
+  {
+   "id": "C-AR-NULL-CONDITIONED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "A null asks whether a grouping beats chance given the measurements taken, so it cannot separate a property of the entities from an artifact of what someone chose to record.",
+   "because": "The null is drawn over the same measured features; features never measured cannot enter either side.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "A null answers: **given these measurements, does this grouping beat chance?** The answer is still conditioned on which measurements were taken, so it cannot separate a property of the entities from an artifact of what someone chose to record.",
+     "texts": "b738001781d9a46a"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SPLIT-TEST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "A grouping that appears only when one particular measurement is included is an artifact of it; one that appears whichever features are drawn is a property of the entities, and agreement rising as disjoint feature subsets widen is the signal.",
+   "because": "Disjoint subsets share no measurement, so agreement between groupings from them cannot come from any one measurement.",
+   "rests_on": [],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "A grouping that appears only when one particular measurement is included is an artifact of that measurement. A grouping that appears whichever features are drawn is a property of the entities. Convergence as the subsets widen is the signal; flat agreement near chance means there is nothing to converge on. The official partition is then scored on the same axis — its agreement with each derivation — so it is one candidate among them rather than the standard they are marked against.",
+     "texts": "885abe2b3a8a3d64"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SMALL-SPACE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "A feature space of three or four measurements cannot be split into disjoint halves: there is nothing to hold out, and a null is the only test available.",
+   "because": "Halves of so few features are one or two features each, too few to cluster on.",
+   "rests_on": [],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-HISTORY-FEW"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "A feature space of three or four measurements cannot be split into disjoint halves: there is nothing to hold out, and a null is the only test available.",
+     "texts": "604e4b795d714356"
+    }
+   }
+  },
+  {
+   "id": "C-AR-WHERE-MANY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Where many measurements accumulate on the same entities, the stronger test is available and the weaker one is a habit.",
+   "because": "The split test needs only enough features to divide; where they exist, nothing stops it.",
+   "rests_on": [
+    "C-AR-SPLIT-TEST"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-REVERSED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "Where many measurements accumulate on the same entities, the stronger test is available and the weaker one is a habit.",
+     "texts": "9dd140c40f77d43d",
+     "rests on C-AR-SPLIT-TEST": "885abe2b3a8a3d64"
+    }
+   }
+  },
+  {
+   "id": "C-AR-THRESHOLD",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Below the stated number of independent features use a shape-matched null and accept that it cannot distinguish the entities from the instrument; above it, split the feature space.",
+   "because": "The number is a judgment, stated with its reason as a parameter.",
+   "rests_on": [
+    "A-AR-SPLIT12"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**So the rule is a threshold, not a preference.** Below 12 independent features — a judgment, stated as one — use a shape-matched null and accept that it cannot distinguish the entities from the instrument. Above that, split the feature space, because you can.",
+     "texts": "68ac68e4b52cb061",
+     "node A-AR-SPLIT12": "36338beb83fa3c50"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OWN-EXAMPLE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The page's own marine example sits below that threshold, with its variables far from independent, so the marine result is suggestive only; the method wants dozens of characters per entity, which the sibling project organism exists to try.",
+   "because": "The example scores the variables in partition_score.json, several of them the same quantity at two depths or oxygen and its saturation. organism's README says it applies this method to the groups living things are sorted into.",
+   "rests_on": [
+    "D-AR-PARTITION",
+    "A-AR-SPLIT12",
+    "D-AR-ORGANISM"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "This page's own worked example sits below that threshold — 9 variables, so 4 per half, and far from independent: oxygen and its saturation, the same quantity at two depths — which is why the marine result is suggestive only. The method wants a case with dozens of characters per entity, which is what `../organism` exists to try.",
+     "texts": "25295cae723e1515",
+     "node D-AR-PARTITION": "52530e963493f776",
+     "node A-AR-SPLIT12": "36338beb83fa3c50",
+     "node D-AR-ORGANISM": "ac75996ed914046f"
+    }
+   }
+  },
+  {
+   "id": "C-AR-CITIZENSHIP",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Citizenship is a legal status acquired by the routes a country's law sets out, and can be used as a proxy for population, culture, ancestry or behaviour, none of which the rule tracks.",
+   "because": "Offered as an instance of the distinction, not as a finding about how often it happens.",
+   "rests_on": [],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-CLOTHES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Citizenship.** A legal status, acquired by the routes a country's law sets out. It can be used as a proxy for population, culture, ancestry, or behaviour — none of which the membership rule tracks. The rule is *legal*; the attribution is *biological or cultural*.",
+     "texts": "f511bd2dda441579"
+    }
+   }
+  },
+  {
+   "id": "C-AR-RACE",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "CATEGORY.md",
+   "claim": "A dispute over race turns on this statistic: the claim, after Lewontin, that about {read:EDWARDS-2003:85|about 85% of the total genetical} percent of human genetic variation is within populations and only {read:EDWARDS-2003:15|only 15% to differences} percent between; Edwards's reply that the distinguishing information is in the correlations between loci; Rosenberg and co-authors' clusters found without prior origins; and Serre and Pääbo's gradients when sampling homogeneously across the globe.",
+   "because": "Each part is read from the pinned abstract of the paper named. That Edwards's point has the shape of the compact-null finding - a smooth field classifies well wherever it is cut - is this page's reading.",
+   "rests_on": [
+    "E-AR-EDWARDS-FIG",
+    "E-AR-EDWARDS-CORR",
+    "E-AR-ROSENBERG",
+    "E-AR-SERRE"
+   ],
+   "basis": "assessed",
+   "holder": "Edwards (2003); Rosenberg et al. (2002); Serre & Pääbo (2004)",
+   "replaces": [
+    "C-AR-OLD-CLOTHES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {read:EDWARDS-2003:85|about 85% of the total genetical}": "85",
+     "claim {read:EDWARDS-2003:15|only 15% to differences}": "15",
+     "pinned EDWARDS-2003": "618123050dc16a12",
+     "said on CATEGORY.md": "**Race.** A dispute in the literature turns on exactly this statistic. By Edwards's account it is often stated, after Lewontin in 1972, that about 85% of human genetic variation lies within populations and only 15% between them. Edwards (2003) replied that the information distinguishing populations lies in the correlations between loci, so classification can be accurate anyway — the shape of the compact-null finding above, where compact groupings of a smooth field score well wherever they are cut. Rosenberg et al. (2002) found clusters without using the individuals' origins; Serre & Pääbo (2004), sampling individuals homogeneously across the globe, found gradients rather than discrete clusters. Sampling design, again.",
+     "texts": "38f22b73b0e6cc1a",
+     "node E-AR-EDWARDS-FIG": "4bd1ce5d50fc2c5d",
+     "node E-AR-EDWARDS-CORR": "e0be49462aecb5b5",
+     "node E-AR-ROSENBERG": "7ca322b6c5d0c4f4",
+     "pinned ROSENBERG-2002": "f8a0392d4f0c03a3",
+     "node E-AR-SERRE": "d656e066486cc5cb",
+     "pinned SERRE-PAABO-2004": "99c8d1fa955990ea"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SPECIES",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "CATEGORY.md",
+   "claim": "Species concepts agree that a species is a separately evolving lineage but disagree about which further property makes one - reproductive isolation, diagnosability, monophyly - so the same organisms can be sorted differently.",
+   "because": "De Queiroz's abstract says so, and proposes a unified concept; which concept predicts a given trait is a question the page leaves open.",
+   "rests_on": [
+    "E-AR-DEQUEIROZ",
+    "E-AR-DEQUEIROZ-UNIFIED"
+   ],
+   "basis": "assessed",
+   "holder": "De Queiroz (2007)",
+   "replaces": [
+    "C-AR-OLD-CLOTHES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Species.** Species concepts agree that a species is a separately evolving lineage but disagree about which further property makes one — reproductive isolation, diagnosability, monophyly — so the same organisms can be sorted differently. Which concept to use is argued over; which one predicts a given trait is a question with an answer.",
+     "texts": "6225e5e25ae51134",
+     "node E-AR-DEQUEIROZ": "fa6cb3b1f1ba4fc7",
+     "pinned DEQUEIROZ-2007": "1895c026667cdd4e",
+     "node E-AR-DEQUEIROZ-UNIFIED": "110a53e44288d48f"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SECTOR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "An industrial sector code is attached to each firm from a classification, and productivity and emissions can then be compared within sector.",
+   "because": "Offered as an instance of the distinction; who assigns the code was not checked.",
+   "rests_on": [],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-CLOTHES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Industrial sector** (SIC, NACE). A code attached to each firm from a classification; productivity and emissions can then be compared \"within sector\".",
+     "texts": "1956f0f917f02dda"
+    }
+   }
+  },
+  {
+   "id": "C-AR-ICD",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "CATEGORY.md",
+   "claim": "The ICD has for more than a century been the basis for comparable statistics on causes of death and disease, and is now also used for resource allocation and reimbursement: a membership rule built for counting, used to stand for a condition.",
+   "because": "WHO's page states the first and lists the other uses; the last clause is the page's reading of the distinction.",
+   "rests_on": [
+    "E-AR-WHO-STATS",
+    "E-AR-WHO-USES"
+   ],
+   "basis": "assessed",
+   "holder": "World Health Organization",
+   "replaces": [
+    "C-AR-OLD-CLOTHES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Diagnosis codes.** For more than a century the basis for comparable statistics on causes of death and disease, and now also used for resource allocation and reimbursement — a membership rule built for counting, used to stand for a condition.",
+     "texts": "1640028eb39d9c8a",
+     "node E-AR-WHO-STATS": "eef6f9662db34b3f",
+     "pinned WHO-ICD": "64bb584af04afb3e",
+     "node E-AR-WHO-USES": "6cae90ce9dbabb30"
+    }
+   }
+  },
+  {
+   "id": "C-AR-POSTCODE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Deprivation by postcode attributes an area statistic to the individuals in it, which is the ecological fallacy and the same error AREAS.md reports for Denmark.",
+   "because": "An average over an area says nothing definite about any one member; AREAS.md makes the same point about national figures and water bodies.",
+   "rests_on": [
+    "C-AR-AGG"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Deprivation by postcode.** An area statistic attributed to the individuals in it — which is the ecological fallacy, and the same error [AREAS.md](AREAS.md) reports for Denmark.",
+     "texts": "b897ec1eb5fd90a9",
+     "rests on C-AR-AGG": "e3ace0666f8f2a2f"
+    }
+   }
+  },
+  {
+   "id": "C-AR-DEMAND",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "If a category's lift over a same-shaped null is unknown, it is being used as data when it is a model, and any figure computed inside it is a statement about the basket at least as much as about the world.",
+   "because": "Without the lift, a figure computed inside the category cannot be separated from the choice of category.",
+   "rests_on": [
+    "C-AR-DIFFERENCE"
+   ],
+   "basis": "assessed",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "If the answer to the third is unknown, the category is being used as data when it is a model, and any figure computed inside it is a statement about the basket at least as much as about the world.",
+     "texts": "87825fe87aa5074b",
+     "rests on C-AR-DIFFERENCE": "a253888fa34a4bda"
+    }
+   }
+  },
+  {
+   "id": "C-AR-SELF-APPLY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "This project sorts its mechanisms into groups, which is a partition it has not scored either.",
+   "because": "The counts are read from hypotheses.json; no script scores the grouping.",
+   "rests_on": [
+    "D-AR-HYPREG"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-NOBODY-SCORED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-AR-HYPREG.detail {ref:B1}": "B1: Combined sewer overflow",
+     "said on CATEGORY.md": "this project sorts 166 mechanisms into 17 groups, which is a partition it has not scored either.",
+     "texts": "b3754510ae9b547d",
+     "node D-AR-HYPREG": "c507517b1be82db8"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-AGG",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every number in the national argument is an aggregate, including a percentage rule, and a figure true of Denmark is true of nowhere in it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "Every number in the national argument is an aggregate",
+    "end": "true of nowhere in it",
+    "why": "The percentage rule it named has no source anywhere in the repository; its justification was not recorded properly. 'Every number' and 'true of nowhere' overgeneralise: a national figure need not hold in any one water body, which is what the replacement says."
+   },
+   "replaced_by": [
+    "C-AR-AGG"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Every number in the national argument is an aggregate: one land-borne load, one 69.6%, one ladder of indsatsbehov, one 25% rule. Aggregation is where the information goes. Køge Bugt and Ringkøbing Fjord do not share a cause, a flushing time, a sediment, or a fix, and a figure true of Denmark is true of nowhere in it",
+     "texts": "c2ef72971dba49b2"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-LONGEST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The list of what cannot be modelled is the longest column of each record, and that is the finding.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "The last of those is the longest column",
+    "end": "and that is the finding",
+    "why": "Rhetorical, and not a finding: on the stored records the gaps list averages about the same length as the list of pressures."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The last of those is the longest column, and that is the finding",
+     "texts": "0c76cab24cdcbf56"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-DISTANCE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The distance is recorded on every assignment.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "Assignment is by nearest point on the marine boundary",
+    "end": "km dropped",
+    "why": "Inexact: areas.py keeps only the largest distance per layer and area, not the distance of every assignment."
+   },
+   "replaced_by": [
+    "C-AR-ASSIGN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Assignment is by nearest point on the marine boundary, one rule for every layer, with the distance recorded on every assignment and anything beyond 20 km dropped",
+     "texts": "076d22442b726a69"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-MODELLED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of water bodies have a fitted load-to-indicator model.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "…with a fitted load→indicator model",
+    "end": "% |",
+    "why": "The count is of a name match - the first six letters of DCE's station-area names found in water-body names - which disagrees with DHI's list of water bodies that have statistical models in both directions."
+   },
+   "replaced_by": [
+    "C-AR-MODEL-MATCH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "…with a fitted load→indicator model | 28 | 2,492 | 5.7% |",
+     "texts": "5407b9fe2655908a"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-REQUIREMENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The water bodies with neither a fitted model nor a repeated observation still receive a requirement.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "carry neither a fitted model nor a repeated observation",
+    "end": "They still receive a requirement.",
+    "why": "'A fitted model' was the name-matched flag, not the models, and the requirement had no source on the page; the replacement counts with the flag named as what it is, and takes the requirement from DHI's method report."
+   },
+   "replaced_by": [
+    "C-AR-NEITHER",
+    "C-AR-REQUIREMENT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "carry neither a fitted model nor a repeated observation in the two layers counted above — bathing water and hazardous-substance status. They still receive a requirement.",
+     "texts": "4749454dbd360a37"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-CORRECTION-NOTE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "An earlier version's absence claim was false when checked against a wider corpus.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "A correction, and a caution about the whole class of statement",
+    "end": "this search was two layers deep",
+    "why": "History the reader does not need; the rule it teaches is stated plainly by the replacement."
+   },
+   "replaced_by": [
+    "C-AR-ABSENCE-RULE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A correction, and a caution about the whole class of statement. An earlier version of this line said those water bodies carry \"neither a fitted model nor a single repeated marine observation\", which reads as a claim about marine observation in general. It is not one, and checked against a wider corpus it is false. A claim of absence is only as wide as the search behind it, and this search was two layers deep",
+     "texts": "2babcab3c2d85fa4"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-REGISTER-COVERAGE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every water body contains a station from the ODA register, with stated counts lacking a long-visited one.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "and assigned by point-in-polygon to the same boundaries",
+    "end": "contain none visited in ten or more",
+    "why": "its justification was not recorded properly: the counts were made over the whole register, including stations with no data, and the computation was never stored and cannot be reproduced. The replacement counts over the station series, which is stored."
+   },
+   "replaced_by": [
+    "C-AR-SERIES-COVERAGE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "and assigned by point-in-polygon to the same boundaries used on this page, every one of the 123 water bodies contains at least one. Counted over that register: 3 water bodies contain no station visited in two or more distinct years, 8 contain none visited in five or more, and 22 contain none visited in ten or more",
+     "texts": "652d952fc6c2c93e"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-SAME-WIDTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of water bodies have no point in the hazardous-substance programme, and a stated number have a fitted model; both are exact.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "Same width — a percentage is fine, including of an absence",
+    "end": "nothing rests on having found anything else",
+    "why": "Its hazardous-substance count came from lake and river points assigned to the nearest coast, while the layer holds no marine point at all; and its model count came from the name-matched flag."
+   },
+   "replaced_by": [
+    "C-AR-SAME-WIDTH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Same width — a percentage is fine, including of an absence. *57 of 123 water bodies have no point in the national hazardous-substance monitoring programme, covering 70% of the sea.* The category is that programme, the register of it is complete, so its complement is exact. Same for *28 of 123 have a fitted model — 5.7% of sea area*: the models are published and the sea is measured, and nothing rests on having found anything else",
+     "texts": "66de6fadb98c68a3"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-PULS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "PULS appears to require a registered business or authority, so a private citizen cannot obtain it at all.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "It appears to require a registered business or authority",
+    "end": "cannot obtain it at all",
+    "why": "'Cannot obtain it at all' goes beyond one refused attempt and the word 'appears'."
+   },
+   "replaced_by": [
+    "C-AR-PULS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It appears to require a registered business or authority, which means a private citizen cannot obtain it at all",
+     "texts": "acfc602e2d6b1d77"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-NARROW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Roskilde Fjord is water largely bounded by land, with exchange restricted to a narrow mouth.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "It names a real hydrographic object",
+    "end": "it is physical, and it is true",
+    "why": "The restricted exchange through a narrow mouth was not checked against any document held; the pinned description supports an inlet bounded by land that opens into Isefjorden."
+   },
+   "replaced_by": [
+    "C-AR-ENCLOSURE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It names a real hydrographic object: water largely bounded by land, with exchange restricted to a narrow mouth. That is a claim about enclosure, it is physical, and it is true",
+     "texts": "23bbe3b30e077159"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-NOTHING-STATES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nothing states why Roskilde Fjord is two units.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "Nothing states why two is the right number",
+    "end": "or what measurement would settle it",
+    "why": "An absence stated over no named corpus - the error the page itself warns against."
+   },
+   "replaced_by": [
+    "C-AR-SPLIT-UNSTATED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Nothing states why two is the right number, what test would have produced three, or what measurement would settle it",
+     "texts": "6fe62cc8e565659d"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-WIDTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The inner fjord's disagreement is nearly the whole width of the iltsvind threshold, and a large share of the seasonal signal.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "So the disagreement between stations inside one water body",
+    "end": "the monitoring exists to measure",
+    "why": "It compared a spread with a level as if the level had a width, and called the spread of monthly means - which carries year-to-year change as well - the seasonal signal."
+   },
+   "replaced_by": [
+    "C-AR-ROSK-OXY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So the disagreement between stations inside one water body is very nearly the whole width of the threshold, and whether that body \"has iltsvind\" can depend on which of its own stations is read. The ratio says the same thing in another way: the spread between stations is 65% of the size of the entire seasonal signal the monitoring exists to measure",
+     "texts": "ec7ee7ec85b8349b"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-NO-SINGLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The two halves of Roskilde Fjord demonstrate that no single partition can serve both oxygen and salinity.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "That is not a ranking of two baskets",
+    "end": "rather than drawing them in the wrong place",
+    "why": "One fjord's two halves cannot demonstrate a rule about every partition."
+   },
+   "replaced_by": [
+    "C-AR-ROSK-HALVES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That is not a ranking of two baskets. It is a demonstration that no single partition can serve both variables, because the water is organised differently depending on what you measure. A boundary that is real for salinity is arbitrary for oxygen, and drawing one set of lines and using it for everything is the error, rather than drawing them in the wrong place",
+     "texts": "d46dcc58b82e6340"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-ICC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The partition score is the intraclass correlation, on which zero means membership tells nothing.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "So the question is what the water bodies encode",
+    "end": "tells you nothing beyond the season",
+    "why": "The statistic computed is the mean-square ratio MSB/(MSB+MSW), on which labels carrying no information score near one half; read as an intraclass correlation, every value in the table overstates what membership tells."
+   },
+   "replaced_by": [
+    "C-AR-PART-STAT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "So the question is what the water bodies encode, and the statistic is the intraclass correlation computed within month: pick two stations at random in the same month — if they are in the same water body, how much more alike are they than two picked without regard to it? One means membership tells you everything; zero means it tells you nothing beyond the season",
+     "texts": "f3005933307231ed"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-RANKING-NOTE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The section reports no ranking because an earlier version reported one and it was wrong.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "This section reports that rather than a ranking",
+    "end": "reported the ranking and it was wrong",
+    "why": "History the reader does not need."
+   },
+   "replaced_by": [
+    "C-AR-THREE-RANKINGS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This section reports that rather than a ranking, because an earlier version of this page reported the ranking and it was wrong",
+     "texts": "840f00c3648d88ee"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-CAUTION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "An earlier claim about what the water bodies encode was backwards, and survived until a second control was computed.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "A correction, and the reason this section is written as a caution",
+    "end": "the disagreement between the nulls is the finding",
+    "why": "History the reader does not need; the replacement states the finding - the nulls disagree - without it."
+   },
+   "replaced_by": [
+    "C-AR-THREE-RANKINGS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A correction, and the reason this section is written as a caution. An earlier version said the water bodies \"encode salinity strongly and oxygen almost not at all\", from the shuffled control alone. Against a null matching both size and shape that is backwards. The claim was defensible, reproducible, and wrong — and it survived exactly as long as it took to compute a second control. Any single number here would have been publishable; the disagreement between the nulls is the finding",
+     "texts": "898c39f69d444a75"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-FLUO",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Against matched blobs fluorescence goes negative: random blobs predict it better than the official partition.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "Against that last one the ordering",
+    "end": "than the official partition does",
+    "why": "With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs, so 'predict it better' is not shown."
+   },
+   "replaced_by": [
+    "C-AR-REVERSAL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Against that last one the ordering reverses: oxygen gains most, salinity gains little, and fluorescence goes negative — random compact blobs of the same sizes predict it *better* than the official partition does",
+     "texts": "a83c9d9ec9262b5d"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-SMOOTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Salinity is spatially smooth and oxygen rough, which is why the lifts differ.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "There is a coherent reading",
+    "end": "boundaries that follow enclosure carry real information",
+    "why": "Spatial smoothness was never measured; stated as fact, it is a reading."
+   },
+   "replaced_by": [
+    "C-AR-READING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "There is a coherent reading. Salinity is spatially smooth, so any compact grouping predicts it well (0.844 from random blobs) and the real boundaries have little left to add. Oxygen is spatially rough, so blobs do poorly and boundaries that follow enclosure carry real information",
+     "texts": "2bea2ac77de536a8"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-ONLY-PLACE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Across areas is the only place an effect size can be estimated, and bathing against sewage density is the one pair where both sides exist.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "A national time series has one unit of replication",
+    "end": "the national figure is not",
+    "why": "'The only place' and 'the one pair' overstate, and the count is of areas with two or more bathing stations, not of all areas."
+   },
+   "replaced_by": [
+    "C-AR-CUMHOC",
+    "C-AR-CUMHOC-DESIGN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A national time series has one unit of replication. The areas have 65. So the only place an effect size can actually be estimated is across them. This tests a sewage-driven outcome against sewage pressure — bathing quality against outfall and treatment-plant density — because that is the one predictor/outcome pair where both sides exist per area. It is cum hoc: a correlation across places at one time, with no control for coast type, flushing, or population. It is reported because it is computable and the national figure is not",
+     "texts": "fe5ffe798316dbac"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-MODEL-KEY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The model column marks a fitted load-to-indicator relation.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "a fitted load→indicator relation exists",
+    "end": "fitted on",
+    "why": "The column is the name-matched flag, not the models."
+   },
+   "replaced_by": [
+    "C-AR-TABLE-KEY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "a fitted load→indicator relation exists (DCE 2015, fitted on",
+     "texts": "b9f93ab291a90fc1"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-ANYDATASET",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "In any dataset the continuous columns carry error, as in two example readings with their uncertainties.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "Open any dataset",
+    "end": "a sonde serial number",
+    "why": "The example values were typed, not read from anything, and 'any dataset' is a generalisation nothing checks; its justification was not recorded properly. The replacement points at the archive this project holds."
+   },
+   "replaced_by": [
+    "C-AR-TELL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Open any dataset. The continuous columns carry error: salinity 12.4 ± 0.2 ‰, oxygen 4.1 ± 0.3 mg/l, a detection limit, a calibration date, a sonde serial number",
+     "texts": "38e891e326568473"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-CAT-ICC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The measurement is the intraclass correlation, on which zero means membership tells nothing.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "There is a standard statistic for this and it is not new",
+    "end": "zero means it tells you nothing",
+    "why": "The scores the page goes on to use are a mean-square ratio on which chance sits near one half, not the intraclass correlation."
+   },
+   "replaced_by": [
+    "C-AR-ICC-FAMILY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "There is a standard statistic for this and it is not new: the intraclass correlation. Pick two members of the population at random. If they are in the same basket, how much more alike are they than two picked without regard to basket? One means membership tells you everything; zero means it tells you nothing",
+     "texts": "8c548f72f37cf829"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-CIRCLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Citing F_ST as evidence of distinct populations is reasoning in a circle: the number was manufactured by assuming them.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "populations are distinct is therefore reasoning in a circle",
+    "end": "manufactured by assuming them",
+    "why": "Overstated: the value still depends on the data; what it lacks without a null is a reference to be read against."
+   },
+   "replaced_by": [
+    "C-AR-FST-CIRCLE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "populations are distinct is therefore reasoning in a circle: the number was manufactured by assuming them",
+     "texts": "7e2829e31ba0aa77"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-USUALLY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The partition usually comes from the sampling design, and four named estimators return different numbers from identical data.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "In practice the circle is tighter still",
+    "end": "presented as an observable",
+    "why": "'Usually' is a frequency nothing here measures, and the estimator claim was not checked estimator by estimator; the pinned review supports the narrower statement that replaces it."
+   },
+   "replaced_by": [
+    "C-AR-SAMPLING",
+    "C-AR-ESTIMATORS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "In practice the circle is tighter still, because the partition usually comes from the sampling design. Collect fifty Danes and fifty Dutch and \"Danish\" and \"Dutch\" are your groups by construction; the statistic then reports on a boundary the fieldwork drew. Nor is it one statistic — Wright's original, Nei's GST, Weir and Cockerham's θ and Hudson's estimator return different numbers from identical data, and the choice of loci and weighting are modelling decisions taken before any of them runs. It is an aggregation function over a chosen metric, presented as an observable",
+     "texts": "df9b69ed9d468f77"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-BARE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A bare F_ST, intraclass correlation or R squared carries almost no information about whether the groups are anything.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "Each number separately is",
+    "end": "about whether the groups are anything",
+    "why": "'Almost no information' overstates: a bare value cannot be read on its own, which is what the replacement says."
+   },
+   "replaced_by": [
+    "C-AR-DIFFERENCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Each number separately is contaminated by the assumption; the difference between them is not. That is the whole argument for the exercise below, and it is why a single reported value — a bare FST, a bare ICC, a bare R² between groups — carries almost no information about whether the groups are anything",
+     "texts": "e6713743012e735c"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-CAT-FLUO",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Against the matched null the ordering reverses and random compact blobs predict fluorescence better than the official partition.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "Only the third varies one thing at a time",
+    "end": "than the official partition does",
+    "why": "With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs."
+   },
+   "replaced_by": [
+    "C-AR-REVERSAL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Only the third varies one thing at a time, and against it the ordering from the first is reversed — oxygen gains most, salinity little, and fluorescence goes *negative*, meaning random compact blobs of the same sizes predict it better than the official partition does",
+     "texts": "7f3ef4fa7d1402b6"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-WITHDRAW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The page exists partly because the project published a first answer and had to withdraw it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "This page exists partly because this project published the first answer",
+    "end": "compute a second control",
+    "why": "History the reader does not need."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This page exists partly because this project published the first answer and had to withdraw it. It was defensible, reproducible, and wrong, and it survived exactly as long as it took to compute a second control",
+     "texts": "b4b24453bf47d128"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-CAT-SMOOTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Salinity is spatially smooth and oxygen rough.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "Salinity is spatially smooth, so",
+    "end": "carry real information",
+    "why": "Spatial smoothness was never measured; stated as fact, it is a reading."
+   },
+   "replaced_by": [
+    "C-AR-READING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Salinity is spatially smooth, so *any* compact grouping predicts it well and real boundaries have nothing left to add. Oxygen is rough, so shape alone fails and boundaries that follow enclosure carry real information",
+     "texts": "ee49b89af7c0eaf9"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-STANDARD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The null comparison became standard because it is the strongest test when the feature space is small.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "The null comparison above is not the strongest test available",
+    "end": "that is why it became standard",
+    "why": "Why the null became standard is history no document here supports."
+   },
+   "replaced_by": [
+    "C-AR-NULL-LIMIT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The null comparison above is not the strongest test available. It is the strongest test available *when the feature space is small*, and that is why it became standard",
+     "texts": "c4edf6c3b89fc8e4"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-HISTORY-FEW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "When these statistics were developed a study had three or four measurements, so the null was the only thing available.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "Why this was not the historical default",
+    "end": "it was the only thing available",
+    "why": "A history of the statistics' origins that no document here supports; the logic that remains - a tiny feature space cannot be split - replaces it."
+   },
+   "replaced_by": [
+    "C-AR-SMALL-SPACE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Why this was not the historical default. When these statistics were developed, a study had three or four measurements. You cannot split a feature space that small into disjoint halves; there is nothing to hold out. The null was not a compromise, it was the only thing available",
+     "texts": "a9bb2acd5b77b30b"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-REVERSED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Measurement is now automatic and cumulative, so the stronger test is widely available.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "That condition has quietly reversed",
+    "end": "the weaker one is a habit",
+    "why": "A claim about how measurement is done now that nothing here measures; the conditional that remains replaces it."
+   },
+   "replaced_by": [
+    "C-AR-WHERE-MANY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "That condition has quietly reversed. Measurement is now automatic and cumulative: many groups measure many things on the same entities, and the columns accumulate independently of any one question. Where that has happened, the stronger test is available and the weaker one is a habit",
+     "texts": "b7ae777c893ece35"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-CLOTHES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Citizenship, race, species, sector, diagnosis codes and postcodes each show the membership-attribution split, with stated figures and history.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "Not rare, and not Danish",
+    "end": "reports for Denmark",
+    "why": "Several parts had nothing behind them or went beyond their sources: the race figures were typed without a source, 'the literature's central dispute' overstated, Serre and Pääbo sampled homogeneously across the globe rather than 'the same geography continuously', the species review proposes a unified concept where the page said 'no answer', diagnosis codes were built for statistics rather than billing, and 'often by the firm' was unchecked."
+   },
+   "replaced_by": [
+    "C-AR-CITIZENSHIP",
+    "C-AR-RACE",
+    "C-AR-SPECIES",
+    "C-AR-SECTOR",
+    "C-AR-ICD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Not rare, and not Danish. One line each, with no claim that any is wrong — only that each has a membership rule doing one job and an attribution doing another: - Citizenship. A determinate legal status, acquired by birth, descent or naturalisation. Used as a proxy for population, culture, ancestry, or behaviour — none of which the membership rule tracks. The rule is *legal*; the attribution is usually *biological or cultural*. - Race. The literature's central dispute is exactly this statistic. Lewontin (1972) partitioned human genetic variance: ~85% within populations, ~15% between — an ICC of 0.15. Edwards (2003) replied that correlated loci make classification accurate anyway, which is true and is *our compact-null finding*: high classifiability is what a smooth cline gives you wherever you cut it. Rosenberg et al. (2002) is cited for finding clusters; Serre & Pääbo (2004) sampled the same geography continuously and got gradients. Sampling design, again. - Species. Biological, morphological and phylogenetic species concepts are three different membership rules over the same organisms, and they do not agree. Which one is \"correct\" has no answer; which one predicts a given trait does. - Industrial sector (SIC, NACE). A firm's code is assigned, often by the firm. Productivity and emissions are then compared \"within sector\". - Diagnosis codes. A membership rule built for billing, used as a phenotype. - Deprivation by postcode. An area statistic attributed to the individuals in it — which is the ecological fallacy, and the same error AREAS.md reports for Denmark",
+     "texts": "2234a2adb49a0f31"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-NOBODY-SCORED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The project's grouping of its mechanisms is a partition nobody has scored.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CATEGORY.md",
+    "commit": "4469fc7",
+    "file": "docs/CATEGORY.md",
+    "begin": "obvious self-application: this project sorts",
+    "end": "a partition nobody has scored either",
+    "why": "An absence over no named corpus; what is known is that this project has not scored it."
+   },
+   "replaced_by": [
+    "C-AR-SELF-APPLY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "obvious self-application: this project sorts 165 mechanisms into 17 groups, which is a partition nobody has scored either",
+     "texts": "675ccb74e9c38d2b"
+    }
+   }
+  }
+ ]
+}

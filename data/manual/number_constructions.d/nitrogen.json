@@ -1,0 +1,949 @@
+{
+ "_what": "Fork nitrogen: constructions behind docs/NITROGEN.md, docs/GRUNDLAGET.md and docs/REGISTER.md.",
+ "constructions": [
+  {
+   "id": "K-NITROGEN-READINGS",
+   "title": "Values read out of pinned documents, each checked at its phrase",
+   "covers": {
+    "file": "data/manual/nitrogen_readings.json",
+    "fields": {
+     "pinned.*.value": {
+      "kind": "document",
+      "is": "A value as a document prints it, recorded with the exact phrase it sits in and the source it comes from. The field-surplus table entries are norm-product accounts from DCE SR120 Table 3.4, in kg N per hectare; the apportionment shares are percentages of land-based nitrogen to coastal waters. The G/M entries are chlorophyll-a boundaries in µg/l from the second opinion's `Tabel C.1` (the first scenario is VP3, the second the intercalibrated value); the Kd bins are the fractions of DCE's banding equation for Kd; the Hjarbæk entry is a percentage of the chlorophyll indicator."
+     }
+    }
+   },
+   "what": "Holds the numbers docs/NITROGEN.md and docs/GRUNDLAGET.md read from documents rather than compute: DCE SR120's field balance and its method notes, the published national apportionment, the second opinion's chlorophyll G/M boundaries, DCE's Kd banding and DHI's Danish share for Hjarbæk Fjord.",
+   "model": "Each entry names a source pinned by its sha256 in `data/manual/claims.d/nitrogen.json` and a phrase copied from it. `rv()` in `scripts/nitrogen.py` and in `scripts/pages/grundlaget.py` refuses to write the page unless the phrase, with whitespace collapsed and, for a web page, entities decoded and tags dropped, occurs in the pinned text. A table row is checked as the whole row in order, so a value cannot be taken from the wrong column without the row failing to match. The GRUNDLAGET generator also refuses a value that is not printed in its own phrase.",
+   "assumptions": [
+    "The phrase recorded with a value is the one the value was read from, and the value is the one printed there.",
+    "The pinned text is a faithful extraction of the document."
+   ],
+   "justified": [
+    {
+     "text": "Every value is refused at build time unless its phrase occurs in the pinned text.",
+     "ref": "scripts/nitrogen.py:65"
+    },
+    {
+     "text": "Pins are the documents' extracted text, fixed by sha256; a change in the live document is detected by hash.",
+     "ref": "scripts/claims.py:132"
+    },
+    {
+     "text": "The GRUNDLAGET generator checks phrase and value against the pin before it uses either.",
+     "ref": "scripts/pages/grundlaget.py"
+    }
+   ],
+   "gaps": [
+    "A phrase check proves the value sits in that phrase of the document, not that the phrase is the row, column or year the page says it is. For a single value in running text the phrase carries its meaning; for table rows only the order of the whole row constrains it.",
+    "The headline apportionment is pinned from a secondary source, DANVA, quoting Miljøstyrelsen and Aarhus Universitet; the primary annex (Folketinget, MOF Alm.del bilag 121) refuses scripted fetches, and its smaller shares are carried on the page as quotations of the page's own earlier text instead.",
+    "In SR120 Table 3.4 the 2013 row with fertiliser from the gødningsregnskaber extracts with its total and harvest cells garbled, so the page shows that total as the sum of the row's inputs and the harvest from the Danmarks Statistik row, which prints the same harvest."
+   ],
+   "void_if": [
+    "a phrase matches by coincidence somewhere other than where the value was read",
+    "a pinned document is re-issued with different figures and re-pinned without the readings being read again"
+   ],
+   "licenses": "That the named document prints the value, in the phrase shown.",
+   "not_licensed": "That the document's value is right, or that it means what the page's surrounding argument takes it to mean.",
+   "watches": [
+    "data/manual/nitrogen_readings.json",
+    "data/manual/claims.d/nitrogen.json#sources",
+    "scripts/pages/grundlaget.py"
+   ],
+   "confirmed": {
+    "by": "Claude (read the change: a range is now read as one reading per number, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/manual/nitrogen_readings.json": "692d8b2ecde62cf7",
+     "data/manual/claims.d/nitrogen.json#sources": "5cbfcd49ac6a88ff",
+     "scripts/pages/grundlaget.py": "cbaa7140cabca83b"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-CONSTANTS",
+   "title": "Chemistry constants behind the oxygen-demand table",
+   "covers": {
+    "file": "data/manual/nitrogen_constants.json",
+    "fields": {
+     "molar_mass_g_per_mol.*": {
+      "kind": "stipulated",
+      "is": "A conventional atomic or molecular weight, grams per mole, as used in the stoichiometry."
+     },
+     "redfield.*": {
+      "kind": "stipulated",
+      "is": "A coefficient of the Redfield remineralisation of algal organic matter: moles of oxygen, nitrogen or phosphorus per Redfield unit of carbon."
+     },
+     "stoichiometry_mol_o2.*": {
+      "kind": "stipulated",
+      "is": "Moles of oxygen consumed per mole of the reduced species, from the balanced oxidation reaction."
+     },
+     "bod5_to_ultimate": {
+      "kind": "stipulated",
+      "is": "The conventional ratio of ultimate to five-day biochemical oxygen demand for domestic wastewater."
+     },
+     "seawater_sulphate_mg_per_l": {
+      "kind": "stipulated",
+      "is": "Sulphate in full-strength seawater, milligrams per litre."
+     },
+     "dissolved_oxygen_mg_per_l": {
+      "kind": "stipulated",
+      "is": "A round value for dissolved oxygen in well-oxygenated temperate seawater, used as a scale."
+     },
+     "diatom_si_per_n": {
+      "kind": "stipulated",
+      "is": "The molar ratio in which diatoms take up silicon and nitrogen."
+     }
+    }
+   },
+   "what": "The constants the page converts nitrogen, phosphorus, sulphur and methane into oxygen demand with.",
+   "model": "Oxygen demand per gram is moles of oxygen per mole of the species times the molar mass of oxygen over the molar mass of the species; for remineralised algal matter the Redfield coefficients give $138/16$ mol $\\mathrm{O_2}$ per mol N (in the code `R[\"o2_per_c106\"] / R[\"n_per_c106\"] * MM[\"O2\"] / MM[\"N\"]`).",
+   "assumptions": [
+    "Algal organic matter has the Redfield composition and is fully remineralised.",
+    "The scale values for sulphate and dissolved oxygen describe the water in question well enough to size the argument."
+   ],
+   "justified": [
+    {
+     "text": "The coefficients follow from the balanced reactions and the Redfield ratio, each written beside its value with where it comes from.",
+     "ref": "data/manual/nitrogen_constants.json"
+    }
+   ],
+   "gaps": [
+    "No constant is pinned to a source document; they are textbook values taken as given.",
+    "Sulphate is the full-strength seawater value. Danish waters are brackish and hold proportionally less, which lowers the multiple of the oxygen pool the page derives from it.",
+    "The ratio of ultimate to five-day BOD is a typical value for domestic wastewater, not a Danish measurement."
+   ],
+   "void_if": [
+    "the organic matter reaching the sediment departs strongly from Redfield composition"
+   ],
+   "licenses": "The size of the oxygen demand each reduced species carries, per unit mass.",
+   "not_licensed": "How much of any species actually reaches a given water body.",
+   "watches": [
+    "data/manual/nitrogen_constants.json"
+   ],
+   "confirmed": {
+    "by": "fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/nitrogen_constants.json": "543df0d62e564766"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-PATHWAYS",
+   "title": "The enumerated pathways of reactive nitrogen, with plausible bounds",
+   "covers": {
+    "file": "data/manual/nitrogen_pathways.json",
+    "fields": {
+     "pathways.*.lo": {
+      "kind": "stipulated",
+      "is": "The lower of two plausible bounds for a pathway, in kt N per year, compiled here - some from published figures, some constructed from the biases identified on the page."
+     },
+     "pathways.*.hi": {
+      "kind": "stipulated",
+      "is": "The upper plausible bound, kt N per year, compiled as above."
+     },
+     "pathways.*.area_pct": {
+      "kind": "document",
+      "is": "The share of Danish land a stream-monitoring pathway covers, as the national accounts describe it."
+     },
+     "pathways.*.typetal_kt": {
+      "kind": "document",
+      "is": "The overflow load at the published national typetal concentration, kt N per year."
+     },
+     "pathways.*.kt_2022": {
+      "kind": "modelled",
+      "is": "Atmospheric deposition to Danish marine waters in the named year, from the DEHM model."
+     },
+     "pathways.*.kt_2014": {
+      "kind": "modelled",
+      "is": "Atmospheric deposition to Danish marine waters in the named year, from the DEHM model."
+     },
+     "pathways.*.depth_m_lo": {
+      "kind": "document",
+      "is": "The shallower end of the depth range at which submarine groundwater is monitored, metres."
+     },
+     "pathways.*.depth_m_hi": {
+      "kind": "document",
+      "is": "The deeper end of that range, metres."
+     },
+     "pathways.*.catchments": {
+      "kind": "counted",
+      "is": "The catchments in which submarine groundwater is monitored."
+     },
+     "pathways.*.lag_yr_lo": {
+      "kind": "document",
+      "is": "The shorter end of the lag observed in the agricultural monitoring catchments, years."
+     },
+     "pathways.*.lag_yr_hi": {
+      "kind": "document",
+      "is": "The longer end of that lag, years."
+     },
+     "pathways.*.advection_pct_of_production": {
+      "kind": "document",
+      "is": "Net advection as a share of what annual primary production requires, as one study puts it."
+     },
+     "pathways.n": {
+      "kind": "counted",
+      "is": "The pathways the register enumerates - every row, quantified or not."
+     },
+     "pathways.n_unquantified": {
+      "kind": "counted",
+      "is": "Of those, the rows that carry no bound at all."
+     }
+    }
+   },
+   "what": "Every pathway of reactive nitrogen to Danish marine waters this project could enumerate, with a plausible range where one exists and none where it does not.",
+   "model": "A hand-compiled register. The quantified subset is summed to a lower bound on total supply; the empty rows are the point - with the set unclosed there is no denominator.",
+   "assumptions": [
+    "The enumeration is as complete as the project could make it; an unlisted pathway would lower the bound's relevance, not raise it."
+   ],
+   "justified": [
+    {
+     "text": "Each row states its status - measured, modelled, unquantified - and what its note rests on.",
+     "ref": "data/manual/nitrogen_pathways.json"
+    }
+   ],
+   "gaps": [
+    "No row carries a per-row source; the bounds and the figures in the notes are compiled without citations in the register.",
+    "The register's own rule marks constructed bounds with an `own` flag, and no row carries it, so published and constructed bounds cannot be told apart from the file."
+   ],
+   "void_if": [
+    "a quantified row's bound turns out to be a different quantity from the one named",
+    "a large pathway is missing from the list"
+   ],
+   "licenses": "A lower bound on reactive nitrogen supply, and the count of pathways nobody has quantified.",
+   "not_licensed": "A total, a denominator, or a share of the total for any source.",
+   "watches": [
+    "data/manual/nitrogen_pathways.json"
+   ],
+   "confirmed": {
+    "by": "fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/nitrogen_pathways.json": "3c05038bde72ac40"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-MONITORING",
+   "title": "How the Danish nutrient figures are produced, from the technical annexes",
+   "covers": {
+    "file": "data/manual/monitoring.json",
+    "fields": {
+     "diffuse_load.stream_stations": {
+      "kind": "counted",
+      "is": "Stream stations in the national diffuse-load monitoring."
+     },
+     "diffuse_load.area_measured_pct": {
+      "kind": "document",
+      "is": "The share of Danish land whose stream load is measured rather than modelled."
+     },
+     "diffuse_load.area_modelled_pct": {
+      "kind": "document",
+      "is": "The share modelled."
+     },
+     "diffuse_load.deviation_annual_pct.*": {
+      "kind": "document",
+      "is": "Annual deviation of grab-sample transport from intensive daily measurement in the validation study, percent."
+     },
+     "diffuse_load.deviation_monthly_pct.*": {
+      "kind": "document",
+      "is": "Monthly deviation, percent."
+     },
+     "diffuse_load.retention_uncertainty_pct_points.*": {
+      "kind": "document",
+      "is": "The stated uncertainty of modelled retention, percentage points."
+     },
+     "quality_control.acceptance_interval_combined_mg_per_l.*": {
+      "kind": "document",
+      "is": "An end of the acceptance interval for reported nitrogen over reported volume from combined-sewer overflows, mg/l."
+     },
+     "quality_control.acceptance_interval_separate_mg_per_l.*": {
+      "kind": "document",
+      "is": "An end of the acceptance interval for separate stormwater outfalls, mg/l."
+     },
+     "hazardous_substances.typetal_ug_per_l.*.*": {
+      "kind": "document",
+      "is": "For one metal: the national typetal concentration in combined overflow, the typetal in separate stormwater, and the maximum observed in combined overflow, in µg/l."
+     },
+     "national_volumes_m3_per_year.*": {
+      "kind": "document",
+      "is": "A national annual volume, cubic metres a year, from the point-source programme."
+     }
+    }
+   },
+   "what": "Documented properties of the Danish measurement system, collected from technical annexes because they are stripped when headline numbers travel.",
+   "model": "A hand-curated register; each section names its source. `scripts/nitrogen.py` re-checks the overflow knowledge-level uncertainties and both acceptance intervals against the pinned text of Miljøstyrelsen's DP02 instruction before writing the page.",
+   "assumptions": [
+    "Values were transcribed as the sources print them."
+   ],
+   "justified": [
+    {
+     "text": "The acceptance intervals and knowledge-level uncertainties are verified against the pinned DP02 text at every build.",
+     "ref": "scripts/nitrogen.py"
+    },
+    {
+     "text": "The hazardous-substances section cites the MST/DHI typetal report with its URL.",
+     "ref": "data/manual/monitoring.json"
+    }
+   ],
+   "gaps": [
+    "The diffuse-load section carries no source in the register; its figures are transcribed without a citation and not re-checked.",
+    "The typetal table's third column is the maximum observed in combined overflow only. For zinc, for example, the report's separate-stormwater maximum is higher than the combined one; the page labels the column accordingly.",
+    "The national volumes are cited to the point-source programme via the typetal report, not pinned."
+   ],
+   "void_if": [
+    "an annex is revised and the register is not"
+   ],
+   "licenses": "What the measurement system's own documents say about how its numbers are produced.",
+   "not_licensed": "That those procedures produce accurate loads.",
+   "watches": [
+    "data/manual/monitoring.json#diffuse_load",
+    "data/manual/monitoring.json#quality_control",
+    "data/manual/monitoring.json#hazardous_substances",
+    "data/manual/monitoring.json#national_volumes_m3_per_year"
+   ],
+   "confirmed": {
+    "by": "fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/monitoring.json#diffuse_load": "ea0e6aa43811ae1a",
+     "data/manual/monitoring.json#quality_control": "c8596fbd30eb7e7e",
+     "data/manual/monitoring.json#hazardous_substances": "916fe2a1105cb0e6",
+     "data/manual/monitoring.json#national_volumes_m3_per_year": "71a147f63614e5c1"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-CROPLAND",
+   "title": "Danish crop area by what the crop is for, on a stated rule",
+   "covers": {
+    "file": "data/derived/cropland.json",
+    "fields": {
+     "years.*.floor_pct": {
+      "kind": "share",
+      "is": "Crop area that is unambiguously feed - grass and whole-crop in rotation, grass outside rotation, fodder roots - as a percent of total farmed and horticultural area in Statistics Denmark `AFG6`."
+     },
+     "years.*.central_pct": {
+      "kind": "share",
+      "is": "The floor plus cereals and pulses grown to maturity, as a percent of the same total."
+     },
+     "years.*.ceiling_pct": {
+      "kind": "share",
+      "is": "The central share plus rapeseed, whose meal is feed, as a percent of the same total."
+     },
+     "years.*.direct_food_pct": {
+      "kind": "share",
+      "is": "Potatoes, factory sugar beet and horticultural crops - food people eat directly - as a percent of the same total."
+     }
+    }
+   },
+   "what": "Fetches crop areas from Statistics Denmark and classifies them by what the crop is for, as a floor, a central reading and a ceiling.",
+   "model": "For each year, areas by crop from the open `AFG6` table, summed into tiers named in the script, each divided by the table's total (in the code `row[\"unambiguous_feed_ha\"] / tot * 100` and so on).",
+   "assumptions": [
+    "Cereals and pulses grown to maturity are mostly fed to animals, in Denmark or abroad."
+   ],
+   "justified": [
+    {
+     "text": "The areas are Statistics Denmark's crop census, fetched live; the classification is written out in the script and in the output.",
+     "ref": "scripts/cropland.py:40"
+    }
+   ],
+   "gaps": [
+    "The classification is stated, not official: the census records what was grown, not what it was fed to, and cereals carry the result.",
+    "Seed, set-aside and Christmas trees fall in no tier, so the tiers do not sum to the whole."
+   ],
+   "void_if": [
+    "a large share of Danish grain goes to milling, malting or export as grain rather than to feed"
+   ],
+   "licenses": "A range for how much Danish farmland grows feed, on the stated rule.",
+   "not_licensed": "A share of nitrogen applied for livestock, or a share of load.",
+   "watches": [
+    "scripts/cropland.py"
+   ],
+   "confirmed": {
+    "by": "fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/cropland.py": "7b8b20b8342e049c"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-MANURE",
+   "title": "Animal units against declared land - the fields K-MANURE does not cover",
+   "covers": {
+    "file": "data/derived/manure.json",
+    "fields": {
+     "cvrs_with_animals": {
+      "kind": "counted",
+      "is": "Distinct CVR numbers with register animal units, from the CHR layer, rows with a blank CVR dropped."
+     },
+     "cvrs_with_both": {
+      "kind": "counted",
+      "is": "Of those, the CVR numbers with more than one declared hectare in the field-parcel layer and animal units above zero."
+     },
+     "animal_units_total": {
+      "kind": "measured",
+      "is": "Register animal units summed over every CHR row carrying a CVR number: the CVR-registered herd, not the whole register."
+     },
+     "animal_units_on_matched": {
+      "kind": "measured",
+      "is": "Animal units summed over the businesses in `cvrs_with_both`."
+     },
+     "percentiles_de_per_ha.*": {
+      "kind": "estimated",
+      "is": "A percentile of animal units per declared hectare across the businesses in `cvrs_with_both`, as `pct()` in the script takes it."
+     },
+     "over_limit.[1.7].businesses": {
+      "kind": "counted",
+      "is": "Businesses in `cvrs_with_both` whose animal units per declared hectare are strictly above the second harmony line."
+     },
+     "over_limit.[1.7].share_of_herd_pct": {
+      "kind": "share",
+      "is": "Their animal units as a percent of `animal_units_total` - a floor, since herds with no matched land stay in the denominator and never in the numerator."
+     }
+    }
+   },
+   "what": "The same join and computation as K-MANURE in the main register; these are the fields of its output the nitrogen page prints and that declaration does not list.",
+   "model": "See K-MANURE: animal units summed per CVR from the livestock register, declared hectares per CVR from the parcel register, density per business where both exist.",
+   "assumptions": [
+    "As K-MANURE."
+   ],
+   "justified": [
+    {
+     "text": "The eligibility rule and the percentiles are computed exactly as described.",
+     "ref": "scripts/manure.py:105"
+    }
+   ],
+   "gaps": [
+    "Every gap K-MANURE lists applies: the harmony lines are retired legal ceilings, not measured capacities; declared area is not spreading area; the herd share is a floor; values the script cannot parse become zero.",
+    "The percentiles are taken over businesses with land only, so the landless businesses - the most extreme densities - are not in them."
+   ],
+   "void_if": [
+    "as K-MANURE"
+   ],
+   "licenses": "As K-MANURE, at the second harmony line and across the distribution of densities.",
+   "not_licensed": "Legal non-compliance, or a physical necessity that manure leave a holding.",
+   "watches": [
+    "scripts/manure.py"
+   ],
+   "confirmed": {
+    "by": "fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/manure.py": "3887fd0025291193"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-KOEGE",
+   "title": "Who can discharge sewage into Køge Bugt, from the national discharge register",
+   "covers": {
+    "file": "data/raw/national/punkt_rbu_udl.geojson",
+    "fields": {
+     "koege.*.comb": {
+      "kind": "counted",
+      "is": "Discharge points in the named municipality, inside the bay's bounding box, whose structure type the project's code list marks as a combined-sewer overflow."
+     },
+     "koege.*.sep": {
+      "kind": "counted",
+      "is": "Discharge points there whose type is a separate stormwater outfall, with or without retention (`SE`, `SF`)."
+     },
+     "koege.*.vol": {
+      "kind": "measured",
+      "is": "The register's basin volumes (`vol_sb`), cubic metres, summed over that municipality's combined-sewer overflow points."
+     }
+    }
+   },
+   "what": "Counts and basin volumes per municipality around Køge Bugt, from the national layer of rain-dependent discharge points.",
+   "model": "`koege_tables()` in `scripts/nitrogen.py` keeps points in the named municipalities and inside a bounding box around the bay, classes each by structure type with `data/manual/codelists.json`, and counts and sums per municipality. The counts are carried as live values of the layer under paths beginning `koege.`.",
+   "assumptions": [
+    "A point inside the box in one of the named municipalities discharges to the bay.",
+    "The structure-type code list classes combined overflows correctly, including the codes it infers."
+   ],
+   "justified": [
+    {
+     "text": "Counting and summing are done in one place, from the register as downloaded.",
+     "ref": "scripts/nitrogen.py:130"
+    },
+    {
+     "text": "Every structure-type code used, `SE` and `SF` included, is taken from DP02: the combined-sewer codes from its table, the separate-sewer ones from its list for separate-sewer outfalls.",
+     "ref": "data/manual/codelists.json"
+    }
+   ],
+   "gaps": [
+    "The bounding box and the municipality list are stated in the script, not derived from catchment boundaries, so a point just outside the box that drains to the bay is missed and one inside that drains elsewhere is counted."
+   ],
+   "void_if": [
+    "the register is revised and not re-fetched"
+   ],
+   "licenses": "Where around the bay combined-sewer overflows and their basins are, by the register.",
+   "not_licensed": "How much any of them discharges.",
+   "watches": [
+    "data/manual/codelists.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: SE and SF are now taken from DP02 v4 itself, so the assumption that some codes are inferred is gone and the source is stated. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/manual/codelists.json": "ce6980b7270d08a2"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-RENS",
+   "title": "Approved treatment-plant capacity, from the national register",
+   "covers": {
+    "file": "data/raw/national/punkt_rens_udl.geojson",
+    "fields": {
+     "features.*.properties.godk_pe": {
+      "kind": "document",
+      "is": "A treatment plant's approved capacity in person equivalents, as the national register records it."
+     }
+    }
+   },
+   "what": "The treatment plants around Køge Bugt at or above a stated capacity, from the national register.",
+   "model": "Plants in the named municipalities, inside the bay's bounding box, with approved capacity at or above `PLANT_MIN_PE`, sorted by capacity.",
+   "assumptions": [
+    "Approved capacity indicates scale; it is not a measured load."
+   ],
+   "justified": [
+    {
+     "text": "Read directly from the register's attribute.",
+     "ref": "scripts/nitrogen.py:154"
+    }
+   ],
+   "gaps": [
+    "The capacity threshold for listing a plant is stated in the script, not derived."
+   ],
+   "void_if": [
+    "the register is revised and not re-fetched"
+   ],
+   "licenses": "Which large plants sit around the bay, and their approved capacity.",
+   "not_licensed": "Their actual loads or where their effluent goes.",
+   "watches": [
+    "scripts/nitrogen.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ni (re-read: the treatment-plant block of koege_tables() - godk_pe at or above PLANT_MIN_PE, municipality in the list, inside the bay's box - occurs verbatim as it stood before this fork's edits, checked against the text read at the start of the task, and PLANT_MIN_PE and KOEGE_BOX are unchanged; nitrogen.py changed in prose, claims and an added feature count; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/nitrogen.py": "6637bc54ad794584"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-CURRENTS",
+   "title": "Southward transport in the southern Sound against Copenhagen rainfall - the fields K-META-CURRENTS does not cover",
+   "covers": {
+    "file": "data/derived/currents_transport.json",
+    "fields": {
+     "n_hours": {
+      "kind": "counted",
+      "is": "Hours in which the modelled current record at the southern Sound point and the Copenhagen rainfall record overlap."
+     },
+     "baseline_southward_pct": {
+      "kind": "share",
+      "is": "Of those hours, the percent in which the along-channel current at the southern Sound point runs south, toward Køge Bugt."
+     },
+     "bands.*.hours": {
+      "kind": "counted",
+      "is": "Overlap hours whose antecedent rainfall - summed over the preceding window in the script - falls in the named band."
+     },
+     "bands.*.southward_pct": {
+      "kind": "share",
+      "is": "Of those hours, the percent with southward current."
+     },
+     "bands.*.vs_baseline_pp": {
+      "kind": "computed",
+      "is": "The band's southward percent minus the baseline, percentage points."
+     },
+     "lag.*.vs_baseline_pp": {
+      "kind": "computed",
+      "is": "The southward percent the stated number of hours after an overflow-scale rain hour, minus the baseline, percentage points."
+     }
+    }
+   },
+   "what": "Tests whether the hours in which Copenhagen overflows are hours in which the southern Sound runs south, toward Køge Bugt, and how that changes in the hours after.",
+   "model": "`cmd_transport` in `scripts/currents.py`: hourly current velocity at the southern Sound point from the Open-Meteo marine API (the CMEMS global physics model), projected on the channel axis; hourly precipitation for Copenhagen from the ERA5 archive; hours matched; the share of southward hours overall, by band of antecedent rainfall, and at lags after the heaviest band.",
+   "assumptions": [
+    "The direction of the modelled current is right at hourly resolution, even where its speed is not.",
+    "Rainfall in the named bands stands for combined-sewer overflow; the overflow-scale band is a rainfall threshold, not a recorded overflow."
+   ],
+   "justified": [
+    {
+     "text": "Only direction and timing are used; the script documents that the coarse grid gets speeds wrong in the straits and that nothing here rests on them.",
+     "ref": "scripts/currents.py:1"
+    },
+    {
+     "text": "The calculation is a share of matched hours, written out in one function.",
+     "ref": "scripts/currents.py:320"
+    }
+   ],
+   "gaps": [
+    "The global model grid does not resolve the Danish straits; its direction at the southern Sound point is assumed, not validated against a local current meter.",
+    "Rainfall is a reanalysis series at one point, not a gauge in the sewer catchments, and no overflow record is used to confirm which hours overflowed."
+   ],
+   "void_if": [
+    "the modelled direction is unreliable in the southern Sound at hourly resolution"
+   ],
+   "licenses": "How often the southern Sound runs south during and after heavy Copenhagen rain, in the modelled current field.",
+   "not_licensed": "That a given overflow's water reached a given shoreline, or how much.",
+   "watches": [
+    "scripts/currents.py"
+   ],
+   "confirmed": {
+    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/currents.py": "5e180c254909fc16"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-REGISTRY",
+   "title": "The Spildevandsplan prose joined to the map geometry",
+   "covers": {
+    "file": "data/derived/registry.json",
+    "fields": {
+     "counts.plan_projects": {
+      "kind": "counted",
+      "is": "Project pages of the Spildevandsplan 2018 fetched from planer.kk.dk."
+     },
+     "counts.plan_projects_with_geometry": {
+      "kind": "counted",
+      "is": "Of those, pages citing at least one `klima_id` that exists in the city's map layers."
+     },
+     "counts.unique_klima_id_with_geometry": {
+      "kind": "counted",
+      "is": "Distinct cloudburst numbers (`klima_id`) in the four WFS layers that carry one."
+     },
+     "counts.klima_id_cited_by_a_plan_page": {
+      "kind": "counted",
+      "is": "Of those, the ones some project page cites, found by scanning page titles and text for known ids."
+     },
+     "counts.klima_id_with_geometry_but_no_plan_page": {
+      "kind": "counted",
+      "is": "Mapped ids that no project page cites and no other plan page mentions."
+     },
+     "counts.klima_id_mentioned_only_elsewhere_in_the_plan": {
+      "kind": "counted",
+      "is": "Mapped ids no project page cites but some non-project plan page mentions."
+     },
+     "counts.construction_features": {
+      "kind": "counted",
+      "is": "Keyed geometries written to `constructions.geojson`."
+     },
+     "counts.storage_m3_attributable": {
+      "kind": "document",
+      "is": "Cubic-metre figures the script classes as storage, from pages citing exactly one structure, summed."
+     },
+     "counts.storage_m3_shared_attribution": {
+      "kind": "document",
+      "is": "Storage figures from pages naming several structures, summed - not attributable to any one of them."
+     },
+     "counts.annual_flow_m3_per_year": {
+      "kind": "document",
+      "is": "Figures classed as a volume per year - discharged or pumped - summed over pages, the largest per page."
+     },
+     "counts.volume_figures_needing_human_read": {
+      "kind": "counted",
+      "is": "Cubic-metre figures whose sentence the classifier could not settle as storage or flow."
+     },
+     "counts.plan_other_pages_scanned": {
+      "kind": "counted",
+      "is": "Non-project plan pages - appendix, status, target and current-project pages - scanned for mentions of mapped ids."
+     },
+     "projects.*.annual_flow_m3_per_year": {
+      "kind": "document",
+      "is": "The largest per-year volume on one project page."
+     },
+     "klima_id_without_documentation.count": {
+      "kind": "counted",
+      "is": "Entries in the register's list of mapped ids nothing in the plan mentions."
+     },
+     "klima_id_without_documentation.count_by_prefix.*": {
+      "kind": "counted",
+      "is": "Of those, the ids with the named catchment prefix."
+     }
+    }
+   },
+   "what": "Joins the plan's project pages to the city's cloudburst map layers on the `klima_id` the pages cite, and keeps the misses.",
+   "model": "Known ids come from the WFS layers; each page's title and text are scanned for them; cubic-metre figures are classed as storage, annual flow or unclear from cue words in their sentence (`classify_volume`), and a storage figure is attributed only when its page cites exactly one id.",
+   "assumptions": [
+    "A page that cites an id is about that structure.",
+    "Cue words in a sentence tell a holding volume from a yearly flow."
+   ],
+   "justified": [
+    {
+     "text": "The classification and the attribution rule are written out and applied to every figure.",
+     "ref": "scripts/build_registry.py:125"
+    },
+    {
+     "text": "An id counts as undocumented only if the whole plan is silent on it, not just the project register.",
+     "ref": "scripts/build_registry.py:197"
+    }
+   ],
+   "gaps": [
+    "The links between plan numbers and map ids are reconstructed by citation scanning, not an official mapping.",
+    "Cue-word classification can misread a sentence; the unclear figures are counted but not resolved."
+   ],
+   "void_if": [
+    "the plan or the map layers are republished and the raw files not re-fetched"
+   ],
+   "licenses": "Which mapped structures the statutory plan describes, and the volumes its prose claims.",
+   "not_licensed": "The structures' real volumes, or that an undescribed structure does not exist.",
+   "watches": [
+    "scripts/build_registry.py"
+   ],
+   "confirmed": {
+    "by": "Claude (read the change: the registry now counts one annual-flow figure once, a rule declared under K-QP2-REGISTRY-FLOW; the fields declared here are unchanged, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/build_registry.py": "d9172dc81ce2b1b8"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-CONSGEO",
+   "title": "Claimed volumes per mapped structure",
+   "covers": {
+    "file": "data/derived/constructions.geojson",
+    "fields": {
+     "features.*.properties.claimed_volume_m3": {
+      "kind": "document",
+      "is": "A storage volume from a plan page citing exactly this one structure, cubic metres."
+     },
+     "features.*.properties.claimed_volume_m3_shared": {
+      "kind": "document",
+      "is": "A storage volume from a plan page naming several structures - not attributable to this one alone."
+     }
+    }
+   },
+   "what": "Every keyed map geometry, carrying any volume the plan's prose claims for it.",
+   "model": "As K-NITROGEN-REGISTRY; the largest storage figure is kept per structure.",
+   "assumptions": [
+    "As K-NITROGEN-REGISTRY."
+   ],
+   "justified": [
+    {
+     "text": "Shared figures are kept apart from attributable ones.",
+     "ref": "scripts/build_registry.py:186"
+    }
+   ],
+   "gaps": [
+    "A shared figure is shown against each structure its page names, so the same volume can appear more than once in the table."
+   ],
+   "void_if": [
+    "as K-NITROGEN-REGISTRY"
+   ],
+   "licenses": "What the plan claims for a structure.",
+   "not_licensed": "What was built.",
+   "watches": [
+    "scripts/build_registry.py"
+   ],
+   "confirmed": {
+    "by": "Claude (read the change: the registry now counts one annual-flow figure once, a rule declared under K-QP2-REGISTRY-FLOW; the fields declared here are unchanged, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/build_registry.py": "d9172dc81ce2b1b8"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-VP3-RBU",
+   "title": "Rain-dependent discharge points, VP3 basis analysis",
+   "covers": {
+    "file": "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "fields": {
+     "n_features": {
+      "kind": "counted",
+      "is": "Discharge points in the layer as fetched."
+     },
+     "n_in_kobenhavn": {
+      "kind": "counted",
+      "is": "Of those, points whose municipality is København."
+     },
+     "n_by_bgv_type.*": {
+      "kind": "counted",
+      "is": "Points with the named structure-type code."
+     },
+     "n_with_vol_sb": {
+      "kind": "counted",
+      "is": "Points carrying a detention-basin volume."
+     },
+     "features.*.properties.vol_sb": {
+      "kind": "document",
+      "is": "A point's detention-basin volume as the register records it, cubic metres."
+     },
+     "features.*.geometry.coordinates.*": {
+      "kind": "measured",
+      "is": "A point's longitude or latitude as the layer places it."
+     }
+    }
+   },
+   "what": "The Miljøstyrelsen VP3 basis-analysis layer of rain-dependent discharge points in metropolitan Copenhagen, derived from PULS.",
+   "model": "Read as fetched; counts and sums made in `scripts/report.py` are carried under the paths above.",
+   "assumptions": [
+    "The register is complete for the area it covers."
+   ],
+   "justified": [
+    {
+     "text": "Counted directly from the layer.",
+     "ref": "scripts/report.py"
+    }
+   ],
+   "gaps": [],
+   "void_if": [
+    "the layer is revised and not re-fetched"
+   ],
+   "licenses": "What the register records.",
+   "not_licensed": "How much any point discharges.",
+   "watches": [
+    "data/manual/codelists.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: no code in codelists.json is inferred any longer - SE and SF are in DP02 v4 - so the gap saying so is removed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/manual/codelists.json": "ce6980b7270d08a2"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-VP3-RENS",
+   "title": "Treatment plants, VP3 basis analysis",
+   "covers": {
+    "file": "data/raw/vp3_basis_2019_punkt_rens_udl.geojson",
+    "fields": {
+     "features.*.properties.godk_pe": {
+      "kind": "document",
+      "is": "A plant's approved capacity in person equivalents, as the register records it."
+     },
+     "features.*.geometry.coordinates.*": {
+      "kind": "measured",
+      "is": "A plant's longitude or latitude as the layer places it."
+     }
+    }
+   },
+   "what": "The treatment plants in the VP3 basis-analysis layer for metropolitan Copenhagen.",
+   "model": "Read as fetched, sorted by approved capacity.",
+   "assumptions": [
+    "Approved capacity indicates scale, not load."
+   ],
+   "justified": [
+    {
+     "text": "Read directly from the attribute.",
+     "ref": "scripts/report.py"
+    }
+   ],
+   "gaps": [
+    "A plant without a recorded capacity is shown without one."
+   ],
+   "void_if": [
+    "the layer is revised and not re-fetched"
+   ],
+   "licenses": "Which plants the register lists, and their approved capacity.",
+   "not_licensed": "Their loads.",
+   "watches": [
+    "scripts/report.py"
+   ],
+   "confirmed": {
+    "by": "Claude (read the change: the registry now counts one annual-flow figure once, a rule declared under K-QP2-REGISTRY-FLOW; the fields declared here are unchanged, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/report.py": "88aa8ffb74c63218"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-KLOAK",
+   "title": "Sewer catchments by system type",
+   "covers": {
+    "file": "data/raw/sp_kloakoplande.geojson",
+    "fields": {
+     "n_by_kloaksystem_status.*": {
+      "kind": "counted",
+      "is": "Sewer catchments in the municipal layer with the named system type; a catchment with none recorded counts as unspecified."
+     }
+    }
+   },
+   "what": "The municipal sewer-catchment layer, counted by its system-type attribute.",
+   "model": "A count per value of `kloaksystem_status`.",
+   "assumptions": [
+    "The attribute is kept up to date as catchments are separated."
+   ],
+   "justified": [
+    {
+     "text": "Counted directly from the layer.",
+     "ref": "scripts/report.py"
+    }
+   ],
+   "gaps": [
+    "Catchments are counted, not weighted by area or population."
+   ],
+   "void_if": [
+    "the layer is revised and not re-fetched"
+   ],
+   "licenses": "How many catchments of each system type the layer holds.",
+   "not_licensed": "The share of area or of sewage in each type.",
+   "watches": [
+    "scripts/report.py"
+   ],
+   "confirmed": {
+    "by": "Claude (read the change: the registry now counts one annual-flow figure once, a rule declared under K-QP2-REGISTRY-FLOW; the fields declared here are unchanged, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/report.py": "88aa8ffb74c63218"
+    }
+   }
+  },
+  {
+   "id": "K-NITROGEN-HANDCURATED",
+   "title": "Hand-curated structure facts, each with a source",
+   "covers": {
+    "file": "data/manual/constructions.json",
+    "fields": {
+     "constructions.*.claims.*.value": {
+      "kind": "document",
+      "is": "A dimension or date stated in the named source for one structure, with the date it was read."
+     },
+     "constructions.*.claims.*.value.*": {
+      "kind": "document",
+      "is": "An end of a stated range."
+     }
+    }
+   },
+   "what": "Facts that exist only in prose or press material - depth, diameter, pump capacity, completion - recorded by hand with their source.",
+   "model": "A hand-curated file with a source URL and read date on every figure, disagreements recorded as disputed.",
+   "assumptions": [
+    "The source states the figure as recorded."
+   ],
+   "justified": [
+    {
+     "text": "Every figure carries its source and the date it was read; figures that cannot be sourced are left out.",
+     "ref": "data/manual/constructions.json"
+    }
+   ],
+   "gaps": [
+    "The sources are not pinned; nothing re-checks the pages."
+   ],
+   "void_if": [
+    "the source revises the figure"
+   ],
+   "licenses": "What the owner or source states about a structure.",
+   "not_licensed": "Surveyed dimensions.",
+   "watches": [
+    "data/manual/constructions.json"
+   ],
+   "confirmed": {
+    "by": "fork nitrogen (written against scripts/build_registry.py, scripts/report.py and scripts/currents.py as read, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "data/manual/constructions.json": "5a03d33eac2c919b"
+    }
+   }
+  }
+ ]
+}

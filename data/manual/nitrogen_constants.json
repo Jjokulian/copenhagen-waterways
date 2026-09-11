@@ -1,0 +1,26 @@
+{
+ "_what": "Chemistry constants behind the oxygen-demand table in docs/NITROGEN.md (section 3). Each is a textbook value, stated with where it comes from. Read live by scripts/nitrogen.py, so every derived ratio on the page is a calculation on these fields.",
+ "_owner": "fork nitrogen, 2026-09-10",
+ "molar_mass_g_per_mol": {
+  "O2": 31.998, "N": 14.007, "P": 30.974, "S": 32.06, "O": 15.999, "CH4": 16.04,
+  "_source": "IUPAC standard atomic weights (conventional values), rounded as used in scripts/nitrogen.py"
+ },
+ "redfield": {
+  "o2_per_c106": 138, "n_per_c106": 16, "p_per_c106": 1,
+  "_source": "Redfield, Ketchum & Richards (1963): remineralising one Redfield unit of algal organic matter (C106 N16 P1) consumes 138 mol O2"
+ },
+ "stoichiometry_mol_o2": {
+  "nitrification_per_n": 2,
+  "sulphide_oxidation_per_s": 2,
+  "methane_oxidation_per_ch4": 2,
+  "_source": "NH4+ + 2 O2 -> NO3- + 2 H+ + H2O; H2S + 2 O2 -> SO4(2-) + 2 H+; CH4 + 2 O2 -> CO2 + 2 H2O"
+ },
+ "bod5_to_ultimate": 1.46,
+ "_bod_source": "the conventional ratio of ultimate to five-day biochemical oxygen demand for domestic wastewater (BOD5 about 68% of ultimate); a typical value, not a Danish measurement",
+ "seawater_sulphate_mg_per_l": 2700.0,
+ "_sulphate_source": "full-strength seawater at salinity 35; Danish waters are brackish and hold proportionally less",
+ "dissolved_oxygen_mg_per_l": 8.0,
+ "_oxygen_source": "a round value for well-oxygenated temperate seawater, used as a scale, not a measurement",
+ "diatom_si_per_n": 1.0,
+ "_si_source": "Brzezinski (1985): diatoms take up silicon and nitrogen in roughly equal molar amounts"
+}

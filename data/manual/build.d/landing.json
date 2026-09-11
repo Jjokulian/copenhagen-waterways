@@ -1,0 +1,13 @@
+{
+ "steps": [
+  {"script": "scripts/landing_facts.py",
+   "inputs": ["docs/data/baltic/gotland.json", "docs/data/baltic/gotland.bin", "docs/data/section3d.json"],
+   "outputs": ["data/derived/landing_facts.json"]},
+  {"script": "scripts/pages/landing.py",
+   "inputs": ["data/derived/landing_facts.json", "data/derived/triage.json", "data/derived/station_places.json",
+              "data/derived/light.json", "data/derived/meta_facts.json", "data/derived/observing.json",
+              "data/derived/areas.json", "data/derived/conveyance.json", "docs/data/flood2012/manifest.json",
+              "data/manual/claims.d/water.json", "data/derived/pins/DCE-STATMOD-2015.txt"],
+   "outputs": ["docs/LANDING.md"]}
+ ]
+}

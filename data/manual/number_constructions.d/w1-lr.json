@@ -1,0 +1,95 @@
+{
+ "constructions": [
+  {
+   "id": "K-LR-PARTITION",
+   "title": "Feature-subset partitions scored against the official water bodies",
+   "covers": {
+    "file": "docs/data/areas/partition_subspace.json",
+    "fields": {
+     "results.*.subsets": {
+      "kind": "counted",
+      "is": "Distinct subsets of the station variables of one size (`features_per_basket`), each clustered once into contiguous groups: every combination of that many variables from `variables`."
+     },
+     "results.*.derived_vs_official_lift": {
+      "kind": "computed",
+      "is": "For one subset size: the mean adjusted Rand index between each derived partition and the official water-body partition, minus `contiguous_null_ari` - the mean agreement of random connected partitions of the same size distribution with each other. Zero or below means the official partition agrees with the data's partitions no better than arbitrary connected regions do."
+     },
+     "contiguous_null_ari": {
+      "kind": "computed",
+      "is": "Mean adjusted Rand index over pairs of random connected partitions of the stations with the official partition's group sizes, on the same neighbour graph."
+     },
+     "stations": {
+      "kind": "counted",
+      "is": "Stations with enough shared months to enter the clustering, as `partition_stability.load()` keeps them."
+     }
+    }
+   },
+   "what": "How well the official water bodies match partitions derived from the monitoring data, for every subset of the station variables at each subset size the script enumerates (`features_per_basket`).",
+   "model": "`scripts/partition_subspace.py` clusters the stations on every subset of the station variables at each size in its loop over `features_per_basket`, with average linkage under a contiguity constraint (`agglomerate_contiguous`), at the official partition's granularity, and scores each derived partition against the official one by the adjusted Rand index. The same score between random connected partitions is subtracted, so a lift reads as agreement beyond what contiguity alone produces.",
+   "assumptions": [
+    "The station variables in `variables` are the dimensions a water body should be distinguishable on.",
+    "Average linkage under a contiguity constraint is a fair way to derive a partition from them."
+   ],
+   "justified": [
+    {
+     "text": "The subsets are enumerated exhaustively, not sampled, and the null is built on the same neighbour graph with the same group sizes, so the lift is agreement beyond what shape and contiguity give for free.",
+     "ref": "scripts/partition_subspace.py"
+    }
+   ],
+   "gaps": [
+    "Other clustering methods or granularities could give other lifts; only one is run.",
+    "The stations are those with long enough shared records, not every station in the water bodies."
+   ],
+   "void_if": [
+    "the station series are rebuilt and the script is not rerun"
+   ],
+   "licenses": "That, on these variables and this method, the official water bodies agree with data-derived partitions no better than random connected regions do.",
+   "not_licensed": "That no partition of Danish waters could carry a signal, or that the official boundaries are wrong for other purposes.",
+   "watches": [
+    "scripts/partition_subspace.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-lr (written against partition_subspace.py main(): subsets enumerated per size, vs_off ARI to the official partition minus ari0 of random connected partitions; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/partition_subspace.py": "9aafc4aa0195cf08"
+    }
+   }
+  },
+  {
+   "id": "K-LR-MASSFRAC",
+   "title": "An element's share of a compound's mass",
+   "covers": {
+    "step": true
+   },
+   "produces": "computed",
+   "what": "The share of a compound's mass that one element makes up, from its formula and standard atomic masses.",
+   "model": "The element's atom count times its atomic mass, divided by the sum over every element of atom count times atomic mass, as a percentage. The atomic masses are stated values with their reasons.",
+   "assumptions": [
+    "The formula is the compound's, and the standard atomic masses apply (natural isotope mix)."
+   ],
+   "justified": [
+    {
+     "text": "A mass fraction follows from the formula and the atomic masses by arithmetic; nothing is estimated.",
+     "ref": "scripts/pages/residual.py"
+    }
+   ],
+   "gaps": [],
+   "void_if": [
+    "the formula is wrong"
+   ],
+   "licenses": "The element's share of the pure compound's mass.",
+   "not_licensed": "Anything about a mixture or a sample.",
+   "watches": [
+    "scripts/pages/residual.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-lr (re-read: residual.py changed only in page wording - a blockquote joined onto one line and a comma; the melamine step line is unchanged; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/residual.py": "b239798e04a8cd9b"
+    }
+   }
+  }
+ ]
+}

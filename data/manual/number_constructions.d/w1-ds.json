@@ -1,0 +1,255 @@
+{
+ "constructions": [
+  {
+   "id": "K-DS-FACTS",
+   "title": "Counts over the four ODA extracts",
+   "covers": {
+    "file": "data/derived/ds_facts.json",
+    "fields": {
+     "*.rows_read": {
+      "kind": "counted",
+      "is": "Rows of the extract with as many fields as its header; rows shorter than the header are counted apart."
+     },
+     "*.short_rows": {
+      "kind": "counted",
+      "is": "Rows shorter than the header: fragments of a broken note field, read no further."
+     },
+     "*.years.*": {
+      "kind": "counted",
+      "is": "The earliest and latest year among the rows' dates, as the first four characters of the date field."
+     },
+     "kemi.parameters": {
+      "kind": "counted",
+      "is": "Distinct values of `Parameter` among the full rows of the kemi extract."
+     },
+     "kemi.parameters_multi_unit": {
+      "kind": "counted",
+      "is": "Parameters whose rows carry more than one distinct non-blank `Enhed`."
+     },
+     "kemi.units.*.*": {
+      "kind": "counted",
+      "is": "Rows of one parameter with one value of `Enhed`, for the parameters that carry more than one."
+     },
+     "kemi.negative_results": {
+      "kind": "counted",
+      "is": "Rows whose `Resultat` parses as a number below zero."
+     },
+     "kemi.nutrient_rows": {
+      "kind": "counted",
+      "is": "Rows of the parameters listed in `nutrient_parameters`: nutrients, TOC and POC under the extract's names."
+     },
+     "kemi.nutrient_rows_censored_lt": {
+      "kind": "counted",
+      "is": "Of those, the rows whose `ResultatAttribut` is `<`."
+     },
+     "kemi.depth_exactly_99": {
+      "kind": "counted",
+      "is": "Rows whose `GennemsnitsDybde_m` parses as exactly the round value the page names."
+     },
+     "kemi.integrated": {
+      "kind": "counted",
+      "is": "Rows whose sample type is `Dybdeintegreret prøve`."
+     },
+     "kemi.integrated_shallow": {
+      "kind": "counted",
+      "is": "Of those, the rows whose `GennemsnitsDybde_m` is no deeper than the shallow threshold stored beside it."
+     },
+     "kemi.shallow_threshold_m": {
+      "kind": "stipulated",
+      "is": "A nominal depth this shallow enters a surface filter; chosen, not measured."
+     },
+     "kemi.saturation_rows": {
+      "kind": "counted",
+      "is": "Rows of `Oxygenmætning` with a numeric result."
+     },
+     "kemi.saturation_max_pct": {
+      "kind": "measured",
+      "is": "The largest `Oxygenmætning` result in the kemi extract, as recorded."
+     },
+     "ctd.rows_with_all_three": {
+      "kind": "counted",
+      "is": "Rows where `KorrektionsFaktor`, `OriginalResultat` and `KorrigeretResultat` all parse as numbers."
+     },
+     "ctd.rows_where_product_holds": {
+      "kind": "counted",
+      "is": "Of those, rows where the corrected result equals the original times the factor, to within half a unit of the corrected value's last stored decimal."
+     },
+     "ctd.factor_band.*": {
+      "kind": "stipulated",
+      "is": "The band inside which a correction factor counts as an adjustment rather than a conversion; chosen, not measured."
+     },
+     "ctd.by_parameter.*.rows": {
+      "kind": "counted",
+      "is": "Rows of one CTD parameter."
+     },
+     "ctd.by_parameter.*.with_factor": {
+      "kind": "counted",
+      "is": "Of those, rows with a numeric `KorrektionsFaktor`."
+     },
+     "ctd.by_parameter.*.factor_not_1": {
+      "kind": "counted",
+      "is": "Rows whose factor is not exactly one."
+     },
+     "ctd.by_parameter.*.outside_band": {
+      "kind": "counted",
+      "is": "Rows whose factor lies outside the stored band."
+     },
+     "ctd.by_parameter.*.max_factor": {
+      "kind": "measured",
+      "is": "The largest factor recorded for that parameter."
+     },
+     "lys.light_threshold_pct": {
+      "kind": "stipulated",
+      "is": "A share of surface light above which a reading is not reading noise; chosen, not measured."
+     },
+     "lys.light_above_threshold": {
+      "kind": "counted",
+      "is": "Rows whose `Lysprocent` is above the stored threshold."
+     },
+     "lys.light_max_pct": {
+      "kind": "measured",
+      "is": "The largest `Lysprocent` recorded."
+     },
+     "lys.yintercept_9999999": {
+      "kind": "counted",
+      "is": "Rows whose `YIntercept` parses as the sentinel value the migration note names."
+     },
+     "*.teknisk_anvisning_values.*": {
+      "kind": "counted",
+      "is": "Rows per distinct value of `TekniskAnvisningAnvendt`."
+     },
+     "lys.afsluttet_values.*": {
+      "kind": "counted",
+      "is": "Rows per distinct value of `Afsluttet`."
+     },
+     "maaledybde.secchi_to_bottom": {
+      "kind": "counted",
+      "is": "Rows whose `SigtTilBund` is `True`: the disc reached the bottom."
+     },
+     "maaledybde.secchi_by_water_telescope": {
+      "kind": "counted",
+      "is": "Rows whose `SigtDybdeMedVandkikkert` is `True`."
+     },
+     "maaledybde.deepest_stations.*.max_m": {
+      "kind": "measured",
+      "is": "The largest `BundDybde_m` recorded at one station."
+     },
+     "maaledybde.deepest_stations.*.median_m": {
+      "kind": "computed",
+      "is": "The median of that station's `BundDybde_m` readings."
+     },
+     "maaledybde.deepest_stations.*.readings": {
+      "kind": "counted",
+      "is": "That station's rows with a numeric `BundDybde_m`."
+     },
+     "maaledybde.hirtshals_15m.max_m": {
+      "kind": "measured",
+      "is": "The largest `BundDybde_m` at the station named `Hirtshals 15 m`."
+     },
+     "maaledybde.hirtshals_15m.median_m": {
+      "kind": "computed",
+      "is": "The median of that station's `BundDybde_m` readings."
+     },
+     "maaledybde.hirtshals_15m.readings": {
+      "kind": "counted",
+      "is": "That station's rows with a numeric `BundDybde_m`."
+     },
+     "kemi.not_detected_by_parameter.*": {
+      "kind": "counted",
+      "is": "Rows per parameter whose `ResultatAttribut` is `ikke påvist`: analysed, and nothing found."
+     },
+     "lys.yintercept_note_rows": {
+      "kind": "counted",
+      "is": "Rows whose light-attenuation note says the intercept was set to the sentinel value."
+     },
+     "lys.yintercept_note_blank_rows": {
+      "kind": "counted",
+      "is": "Of those, rows whose `YIntercept` is blank."
+     }
+    }
+   },
+   "what": "Counts and extremes over every row of the kemi, ctd, lys and maaledybde extracts, for the warnings on DATA_SOURCES.md.",
+   "model": "`scripts/ds_facts.py` streams each gzipped extract with the csv module, decoded as `latin-1` with a semicolon delimiter, and parses numbers with `formats.num`, which reads the decimal comma. A row with fewer fields than the header is counted as short and skipped. Counters are kept per parameter, unit and station; thresholds are module constants written into the output beside the counts they define.",
+   "assumptions": [
+    "A row with as many fields as the header is a genuine row.",
+    "The thresholds are choices; a different choice gives a different count, not a wrong one."
+   ],
+   "justified": [
+    {
+     "text": "Every row of every extract is read; nothing is sampled, so a rare value cannot be missed.",
+     "ref": "scripts/ds_facts.py"
+    },
+    {
+     "text": "Numbers are parsed by the one declared parser for ODA, so a decimal comma cannot empty a column.",
+     "ref": "scripts/formats.py"
+    }
+   ],
+   "gaps": [
+    "The product check allows half a unit of the corrected value's last stored decimal; a factor applied and then rounded differently would count as a mismatch."
+   ],
+   "void_if": [
+    "an extract is refetched and the script is not rerun"
+   ],
+   "licenses": "How often each trap occurs in the extracts as downloaded.",
+   "not_licensed": "Which of the flagged rows are errors: the counts say where a value is unusual, not that it is wrong.",
+   "watches": [
+    "scripts/ds_facts.py",
+    "scripts/formats.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ds (read ds_facts.py against every declared field: full rows only, formats.num parsing, the product check's tolerance, per-parameter factor counters, the lys note and blank counts, the maaledybde station medians, and the three thresholds stored beside their counts; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/ds_facts.py": "483a2a1c83605f32",
+     "scripts/formats.py": "4d546353a50a2668"
+    }
+   }
+  },
+  {
+   "id": "K-DS-PROBES",
+   "title": "What each service answered, and when",
+   "covers": {
+    "file": "data/derived/ds_probes.json",
+    "fields": {
+     "*.status": {
+      "kind": "measured",
+      "is": "The HTTP status the service returned to an anonymous request on the stored date."
+     },
+     "*.layers": {
+      "kind": "counted",
+      "is": "Feature types listed in the WFS server's GetCapabilities response to an anonymous request."
+     }
+    }
+   },
+   "what": "The answers of the services DATA_SOURCES.md describes, to one anonymous request each.",
+   "model": "`scripts/ds_probe.py` sends one GET with the project's user agent to each URL and stores the status, or the error when there is none; for the two WFS servers it counts the FeatureType elements of the capabilities document. Host resolution is tested with the system resolver.",
+   "assumptions": [
+    "One request on one day stands for how the service answers; a service can answer differently to another client or on another day."
+   ],
+   "justified": [
+    {
+     "text": "The request and its answer are stored with the date, so the page states an observation it can show.",
+     "ref": "scripts/ds_probe.py"
+    }
+   ],
+   "gaps": [
+    "A service that answers differently to a browser than to a script is recorded as it answered the script."
+   ],
+   "void_if": [
+    "the probe is older than the claim resting on it needs"
+   ],
+   "licenses": "That on the stored date the service answered this, anonymously.",
+   "not_licensed": "That it answers so today, or to every client.",
+   "watches": [
+    "scripts/ds_probe.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ds (read ds_probe.py against the declaration: one anonymous GET per URL with the project's user agent, status or error stored, FeatureType elements counted for the two WFS servers, host resolution by the system resolver, date stored; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/ds_probe.py": "6c0d6f25e25baead"
+    }
+   }
+  }
+ ]
+}

@@ -6,7 +6,7 @@
 
 > **For klorofyl og lyssvækkelse findes der en koefficient.** DCE har opstillet statistiske relationer, og indsatsbehovet regnes ud af en hældning: hvor meget indikatoren ændrer sig pr. ændring i N-tilførsel.
 
-> **For iltsvind findes der ingen.** Iltsvindsindikatoren er en *binær udløser*. Hvis én eller flere iltsvindsindikatorer siger, at vandområdet er ramt, sættes indsatsbehovet til en fast reduktion på **25 %** af den nuværende TN-koncentration — uanset hvor slemt iltsvindet er, hvor meget kvælstof der tilføres, eller hvordan området er indrettet. DCE skriver selv, hvorfor: tallet er valgt, så det er *større end de normale år-til-år variationer*, og ”det **vurderes**, at en 25 % reduktion i TN-koncentrationen er minimumskrav for at ændre systemet”. Det er en fagligt begrundet tommelfingerregel, ikke en målt dæmpning. Den kan hverken falsificeres eller kalibreres, fordi der ingen respons-kurve er bag den.
+> **For iltsvind findes der ingen.** Iltsvindsindikatoren er en *binær udløser*. Hvis én eller flere iltsvindsindikatorer siger, at vandområdet er ramt, sættes indsatsbehovet til en fast reduktion på **[25 %](SOURCES.md#F-d819b9d178)** af den nuværende TN-koncentration — uanset hvor slemt iltsvindet er, hvor meget kvælstof der tilføres, eller hvordan området er indrettet. DCE skriver selv, hvorfor: tallet er valgt, så det er *større end de normale år-til-år variationer*, og ”det **vurderes**, at en [25 %](SOURCES.md#F-15c3e79c8d) reduktion i TN-koncentrationen er minimumskrav for at ændre systemet”. Det er en fagligt begrundet tommelfingerregel, ikke en målt dæmpning. Den kan hverken falsificeres eller kalibreres, fordi der ingen respons-kurve er bag den.
 
 > Det er iltsvind, der bærer den offentlige begrundelse for aftalen. Og netop der er koefficienten et skøn.
 
@@ -14,24 +14,24 @@
 
 > **Hvad dette er, og hvad det ikke er.** Dette er ikke et partsindlæg for landbruget. Projektet her bruger det meste af sin plads på at tage byens egne udledninger fra hinanden — regnbetingede overløb, spildevandsplanens huller, hvad Københavns skybrudsplan faktisk dækker. Det er *samme* metode anvendt på kvælstoftallet, og resultatet er ubelejligt for flere end landbruget.
 
-## 1. Hvad de 69,6 % faktisk er en andel af
+## 1. Hvad de [69,6](SOURCES.md#F-0666c7bdae) % faktisk er en andel af
 
 Tallet er landbrugets andel af **den landbaserede, vandbårne post alene** — kvælstof, der når kysten gennem danske vandløb og umålte oplande. Det er to rækker ud af tyve i den opgørelse, projektet har lavet over alle veje, ad hvilke reaktivt kvælstof når danske havområder:
 
 | Række | kt N/år | Grundlag |
 |---|---:|---|
-| Dansk land via målte vandløb | 32 – 38 | delvist målt |
-| Dansk land via umålte oplande | 27 – 33 | modelleret |
-| **Posten, procenten deler** | **59 – 71** | |
-| **69,6 % af den** | **41 – 49** | |
+| Dansk land via målte vandløb | [32](SOURCES.md#F-ca904caa01) – [38](SOURCES.md#F-b26e8aa3c1) | delvist målt |
+| Dansk land via umålte oplande | [27](SOURCES.md#F-c83b4d6327) – [33](SOURCES.md#F-f693b34ac5) | modelleret |
+| **Posten, procenten deler** | **[59](SOURCES.md#F-33a12f031b) – [71](SOURCES.md#F-2cc3054929)** | |
+| **[69,6](SOURCES.md#F-0666c7bdae) % af den** | **[41](SOURCES.md#F-1d80559c13) – [49](SOURCES.md#F-546d1f62e4)** | |
 
-De **10 af 20 veje har slet intet tal** — heriblandt atmosfærisk afsætning af organisk kvælstof, udsivning af grundvand under havet, og frigivelse fra sedimentet, som efter én undersøgelse leverer størstedelen af det, den årlige primærproduktion kræver. De veje, der *har* et tal, summerer til **167 – 327 kt N/år**.
+De **[10](SOURCES.md#F-10301e05f2) af [20](SOURCES.md#F-ed6addefe7) veje har slet intet tal** — heriblandt atmosfærisk afsætning af organisk kvælstof, udsivning af grundvand under havet, og frigivelse fra sedimentet, som efter én undersøgelse leverer størstedelen af det, den årlige primærproduktion kræver. De veje, der *har* et tal, summerer til **[167](SOURCES.md#F-ed6aa15749) – [327](SOURCES.md#F-bc179fad94) kt N/år**.
 
 En tom række kan kun lægge til. Nævneren har altså et gulv og intet loft, og enhver procent regnet mod den er et **loft, ikke et estimat**:
 
-> Landbruget står for **højst 30 %** af det opgjorte reaktive kvælstof, der når danske havområder. Udfyld én af de tomme rækker, og loftet falder. Det kan ikke stige.
+> Landbruget står for **højst [30](SOURCES.md#F-0f96452fb9) %** af det opgjorte reaktive kvælstof, der når danske havområder. Udfyld én af de tomme rækker, og loftet falder. Det kan ikke stige.
 
-Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen er 45–65 kt N/år** — på størrelse med hele den landbaserede post — og optræder ikke i nogen offentliggjort fordeling.
+Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen er [45](SOURCES.md#F-967b074b52)–[65](SOURCES.md#F-61a9da50ff) kt N/år** — på størrelse med hele den landbaserede post — og optræder ikke i nogen offentliggjort fordeling.
 
 ## 2. Tallet er en restpost, ikke en måling
 
@@ -39,40 +39,40 @@ Sådan fremkommer landbrugsandelen: målt-plus-modelleret total, minus modellere
 
 | | |
 |---|---|
-| Måledækning | 49 % af arealet måles, 51 % modelleres |
+| Måledækning | [49](SOURCES.md#F-d90ee38f36) % af arealet måles, [51](SOURCES.md#F-e986da2740) % modelleres |
 | Målemetode | stikprøver med faste mellemrum, transport beregnet som sum af daglig vandføring gange lineært interpoleret koncentration |
 | Dokumenteret skævhed | i alle tre vandløb i GUDP-undersøgelsen fra 2018 gav stikprøver **altid lavere** transport end højfrekvent måling |
-| Retentionens usikkerhed | ± 16 procentpoint på landsgennemsnittet |
+| Retentionens usikkerhed | ± [16](SOURCES.md#F-ae67e45764) procentpoint på landsgennemsnittet |
 | Estimatorens opførsel | i tørre år som 1996 og 2005 bliver det beregnede dyrkningsbidrag **negativt** |
 
 En størrelse, der kan blive negativ, er ikke en måling af en fysisk mængde. Den er residualet af to modeller, og den arver begges fejl med modsat fortegn.
 
 ## 3. Tre led mangler mellem tallet og skaden
 
-Sætningen, der bruges politisk, er ikke *69,6 % af den landbaserede vandbårne kvælstofpost*. Den er *landbruget står for omkring 70 % af iltsvindet* — eller af fedtemøget. Mellem de to sætninger ligger tre led:
+Sætningen, der bruges politisk, er ikke *[69,6](SOURCES.md#F-0666c7bdae) % af den landbaserede vandbårne kvælstofpost*. Den er *landbruget står for [omkring 70 %](SOURCES.md#F-4595e4dc42) af iltsvindet* — eller af fedtemøget. Mellem de to sætninger ligger tre led:
 
 | Led | Koefficient |
 |---|---|
 | Kvælstof → iltsvind | **findes ikke.** Kvælstof er én af mindst seks iltforbrugende processer. Der er ingen potensfaktor: et kilo i februar i en opblandet vandsøjle tæller som et kilo i juli under et springlag |
-| Iltsvind → tab af højere liv | **findes ikke.** Iltsvind er én vej blandt flere — miljøfremmede stoffer, trawl, turbiditet, svovlbrinte. Bundfaunaen prøvetages **1. marts – 31. maj**, så efterårets dødelighed ses aldrig |
+| Iltsvind → tab af højere liv | **findes ikke.** Iltsvind er én vej blandt flere — miljøfremmede stoffer, trawl, turbiditet, svovlbrinte. Bundfaunaen prøvetages **[1. marts – 31. maj](SOURCES.md#F-57c72752f6)**, så efterårets dødelighed ses aldrig |
 | Tab af højere liv → fedtemøg | **findes ikke.** Fedtemøg overvåges ikke systematisk overhovedet — ikke udbredelse, ikke biomasse, ikke varighed |
 
 Hvert led er en reel årsagssammenhæng. Ingen af dem har et tal. **Et produkt af tre ukendte brøker er en ukendt brøk** — og det præsenteres som ét målt tal.
 
 ## 4. Prøven, der allerede er taget
 
-Den landbaserede kvælstoftilførsel er faldet fra omkring 100 kt N/år i 1990 til omkring 55 kt — en reduktion på cirka 50 %. Luftbåren kvælstof til danske havområder er faldet tilsvarende. Det er den største miljøindsats i nyere dansk politik, og den er ikke omstridt.
+Den landbaserede kvælstoftilførsel er faldet fra omkring [100](SOURCES.md#F-4a25552fa4) kt N/år i 1990 til omkring [55](SOURCES.md#F-b76b31049f) kt — en reduktion på cirka [50](SOURCES.md#F-c1dfd7d027) %. Luftbåren kvælstof til danske havområder er faldet tilsvarende. Det er den største miljøindsats i nyere dansk politik, og den er ikke omstridt.
 
 Imens:
 
 | År | Iltsvindets udbredelse i september |
 |---|---|
-| 1989 | — |
-| 2000 | — |
-| 2002 | — |
-| 2023 | ~7,500 km² |
-| 2024 | ~11,000 km² |
-| 2025 | ~3,700 km² |
+| [1989](SOURCES.md#F-ed58b9eec3) | — |
+| [2000](SOURCES.md#F-88606867a7) | — |
+| [2002](SOURCES.md#F-266cc745e2) | — |
+| [2023](SOURCES.md#F-669029e447) | ~[7,500](SOURCES.md#F-934bda9fbc) km² |
+| [2024](SOURCES.md#F-21958c7ac8) | ~[11,000](SOURCES.md#F-066dfb9a42) km² |
+| [2025](SOURCES.md#F-ba31fb08d3) | ~[3,700](SOURCES.md#F-c3f2caa39d) km² |
 
 **Halvér tilførslen, og yderpunkterne rykker sig ikke.** 2023 og 2024 lå på niveau med 1989, 2000 og 2002, hvor belastningen var omtrent dobbelt så stor. Og 2025 kom ind på en tredjedel af 2024 — så udsvinget mellem to på hinanden følgende år er større end trenden over femogtredive.
 
@@ -82,9 +82,9 @@ Det er ikke bevis for, at kvælstof er ligegyldigt. Det er bevis for, at **udbre
 
 Samme metode på byens egne udledninger, så det er klart, at kritikken ikke kun peger én vej:
 
-- **Overløbsmængder er modellerede**, ikke målte. PULS registrerer antal overløb og ingen vandføring. Massen beregnes som modelleret årsvolumen gange et fast typetal — og kvalitetskontrolleres ved at tjekke, om koncentrationen ligger tæt på det samme typetal. Usikkerheden på volumen er angivet til 135 % på det laveste videnniveau.
-- **Typetallene for miljøfarlige stoffer** hviler på 6 målestationer for fællessystem og 5 for separat regnvand, anvendt på 19,665 udledningspunkter — i oplande *valgt* til at repræsentere husholdninger og boligområder, og udtrykkeligt afgrænset over for industriområder og stærkt trafikerede veje. Samme rapport finder de højeste medianer for metaller i slam fra bassiner.
-- **Et fællessystemsoverløb leverer lige så meget organisk kulstof direkte, som dets kvælstof kunne nå at producere.** Ved Redfield-forhold svarer 12 mg N/l til 68 mg C/l; vandet bærer selv 68 mg C/l. Kun den ene halvdel tælles, og den tælles til 0,6 % af en national kvælstoftotal.
+- **Overløbsmængder er modellerede**, ikke målte. PULS registrerer antal overløb og ingen vandføring. Massen beregnes som modelleret årsvolumen gange et fast typetal — og kvalitetskontrolleres ved at tjekke, om koncentrationen ligger tæt på det samme typetal. Usikkerheden på volumen er angivet til [135](SOURCES.md#F-16bd766a2e) % på det laveste videnniveau.
+- **Typetallene for miljøfarlige stoffer** hviler på [6](SOURCES.md#F-0019d1e160) målestationer for fællessystem og [5](SOURCES.md#F-c376e1041d) for separat regnvand, anvendt på [19,665](SOURCES.md#F-5b58827703) udledningspunkter — i oplande *valgt* til at repræsentere husholdninger og boligområder, og udtrykkeligt afgrænset over for industriområder og stærkt trafikerede veje. Samme rapport finder de højeste medianer for metaller i slam fra bassiner.
+- **Et fællessystemsoverløb leverer lige så meget organisk kulstof direkte, som dets kvælstof kunne nå at producere.** Ved Redfield-forhold svarer [12](SOURCES.md#F-939768acc0) mg N/l til [68](SOURCES.md#F-6e395085a5) mg C/l; vandet bærer selv [68](SOURCES.md#F-d0101bc26f) mg C/l. Kun den ene halvdel tælles, og den tælles til [0,6 %](SOURCES.md#F-b4082f2c2b) af en national kvælstoftotal.
 - **Fedt indeholder intet kvælstof overhovedet.** Triglycerider er kulstof, brint og ilt. En kvælstofopgørelse kan ikke undervurdere det materiale — den kan slet ikke se det. Og det frigives på en flowtærskel, altså netop i de timer, hvor vandet går uden om renseanlægget.
 
 ## 6. Hvad dette **ikke** viser
@@ -129,7 +129,7 @@ Ikke *drop kravet*. Det er en tabt sag og en dårlig sag. I stedet fire ting, so
 |---|---|
 | **Offentliggør regressionen.** Iltsvindets årlige udbredelse mod flow-normaliseret belastning, vindarbejde i lagdelingssæsonen og bundvandstemperatur | alle tre serier er allerede offentliggjort af DCE. Det kræver ingen nye data, ingen nye målinger og ingen bevilling |
 | **Udfyld nævneren.** Mindst de to tomme rækker, der kan måles med standardmetoder — udsivning af grundvand under havet med radon- og radiumsporing, og intern frigivelse fra sedimentet med bundkamre | begge er rutine i udlandet. Uden en nævner er der ingen procent |
-| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, over hændelser af forskellig størrelse | det er videnniveau 5 i Miljøstyrelsens egen skala, med 30 % usikkerhed mod 135 %. Metoden er defineret. Næsten ingen bruger den |
+| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, over hændelser af forskellig størrelse | det er videnniveau [5](SOURCES.md#F-3a70a9dc3f) i Miljøstyrelsens egen skala, med [30](SOURCES.md#F-00b2f8d525) % usikkerhed mod [135](SOURCES.md#F-16bd766a2e) %. Metoden er defineret. Næsten ingen bruger den |
 | **Finansiér marin ekstraktion som virkemiddel**, med krav om analyse af høsten | det er det eneste virkemiddel, der fjerner kvælstof, som allerede er i vandet |
 
 De tre første er krav om *måling*. Det er den stærkeste position, man kan indtage over for et tal, man mener er forkert: forlang ikke, at det ændres — forlang, at det bliver efterprøvet.
@@ -138,7 +138,7 @@ De tre første er krav om *måling*. Det er den stærkeste position, man kan ind
 
 ## In English
 
-This page argues, in Danish and to a Danish agricultural audience, that the evidential chain from the published 69.6% figure to a quantified sector-specific reduction target has three missing links: there is no closed denominator (10 of 20 enumerated nitrogen pathways carry no number), no dose-response behind the oxygen requirement — which is a binary trigger and a judged flat 25%, where chlorophyll and light attenuation do have fitted coefficients — and no detectable movement in the extremes after a 35-year halving of the load. It states explicitly that this does not exonerate agriculture, that multiplying unknown fractions yields an unknown rather than a small one, and that it is not an argument for inaction. It applies the same scrutiny to urban discharge, where the numbers are worse. And it ends with four demands, three of which are demands for measurement rather than for a different answer.
+This page argues, in Danish and to a Danish agricultural audience, that the evidential chain from the published [69.6](SOURCES.md#F-0666c7bdae)% figure to a quantified sector-specific reduction target has three missing links: there is no closed denominator ([10](SOURCES.md#F-10301e05f2) of [20](SOURCES.md#F-ed6addefe7) enumerated nitrogen pathways carry no number), no dose-response behind the oxygen requirement — which is a binary trigger and a judged flat [25%](SOURCES.md#F-6961039832), where chlorophyll and light attenuation do have fitted coefficients — and no detectable movement in the extremes after a [35-year](SOURCES.md#F-4a3041beab) halving of the load. It states explicitly that this does not exonerate agriculture, that multiplying unknown fractions yields an unknown rather than a small one, and that it is not an argument for inaction. It applies the same scrutiny to urban discharge, where the numbers are worse. And it ends with four demands, three of which are demands for measurement rather than for a different answer.
 
 The full audit is in [NITROGEN.md](NITROGEN.md) and [CAUSATION.md](CAUSATION.md); the argument about what to build instead is in [PROGRAMME.md](PROGRAMME.md).
 

@@ -10,6 +10,9 @@ data/derived/*
 !data/derived/constructions.geojson
 !data/derived/floodgap.json
 !data/derived/floodmaps/
+# claims are confirmed against the wording each page says them in: without this
+# record every confirmation looks stale in a fresh clone
+!data/derived/claim_spans.json
 # ... but not the heavy intermediates inside it (93 MB of renders, 47 MB of arrays).
 data/derived/floodmaps/*.render.png
 data/derived/floodmaps/*.band.npy
@@ -25,3 +28,5 @@ data/raw/oda/*.csv
 # hand-in slots: never commit somebody else's licensed data
 data/dropin/*
 !data/dropin/README.md
+data/derived/.construction_hashes.json
+data/derived/.*.lock

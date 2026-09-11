@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 """Generate docs/REGISTER.md - the register as readable text, no browser needed.
 
+Every number on the page is a checked entity (see LIVE_NUMBERS.md): read live from
+data/derived/registry.json and constructions.geojson (scripts/build_registry.py),
+from the raw national and municipal layers, or from the hand-curated structures in
+data/manual/constructions.json. Counts and sums made here are carried as live
+values of the file they are counted from, and every file's fields are declared in
+data/manual/number_constructions.d/nitrogen.json.
+
+Plan-page titles, structure names and category labels are quoted as `code`: they
+are names that happen to contain digits, not quantities.
+
 Usage:  python3 scripts/report.py
 """
 import os
@@ -9,16 +19,31 @@ import sys
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import DERIVED, MANUAL, RAW, ROOT, log, read_json
+from common import DERIVED, MANUAL, RAW, ROOT, log, read_json, write_doc
+import live
 
 
-def fmt(n):
-    return f"{n:,.0f}" if isinstance(n, (int, float)) else str(n)
+def code(t):
+    """A name quoted as text, so its digits are read as part of the name."""
+    return "`" + str(t).replace("`", "'") + "`"
+
+
+def name(t):
+    """A name as plain text, or as code if it carries digits."""
+    return code(t) if re.search(r"\d", str(t)) else str(t)
+
+
+def idents(t):
+    """Identifiers inside hand-written notes - plan numbers (K1.57), house numbers
+    (Kalvebod Brygge 45-47) - set as code, so they read as names, not quantities."""
+    t = re.sub(r"\b[A-Z]{1,3}\d+(?:\.\d+)+\b", lambda m: code(m.group(0)), str(t))
+    return re.sub(r"\b([A-ZÆØÅ][a-zæøå]+) (\d+-\d+)\b", lambda m: f"{m.group(1)} {code(m.group(2))}", t)
 
 
 def main():
-    reg = read_json(os.path.join(DERIVED, "registry.json"))
-    cons = read_json(os.path.join(DERIVED, "constructions.geojson"))
+    rp = os.path.join(DERIVED, "registry.json")
+    reg = live.live_json(rp)
+    cons = live.live_json(os.path.join(DERIVED, "constructions.geojson"))
     codes = read_json(os.path.join(MANUAL, "codelists.json"))
     c = reg["counts"]
     out = []
@@ -30,31 +55,31 @@ def main():
     w("## Coverage\n")
     w("| | |")
     w("|---|---:|")
-    w(f"| Spildevandsplan 2018 project pages | {fmt(c['plan_projects'])} |")
-    w(f"| ... linked to map geometry | {fmt(c['plan_projects_with_geometry'])} |")
-    w(f"| Distinct mapped structures (`klima_id`) | {fmt(c['unique_klima_id_with_geometry'])} |")
-    w(f"| ... cited by at least one plan page | {fmt(c['klima_id_cited_by_a_plan_page'])} |")
-    w(f"| ... **drawn but never described** | {fmt(c['klima_id_with_geometry_but_no_plan_page'])} |")
+    w(f"| Spildevandsplan 2018 project pages | {c['plan_projects']:,} |")
+    w(f"| ... linked to map geometry | {c['plan_projects_with_geometry']:,} |")
+    w(f"| Distinct mapped structures (`klima_id`) | {c['unique_klima_id_with_geometry']:,} |")
+    w(f"| ... cited by at least one plan page | {c['klima_id_cited_by_a_plan_page']:,} |")
+    w(f"| ... **drawn but never described** | {c['klima_id_with_geometry_but_no_plan_page']:,} |")
     if c.get("klima_id_mentioned_only_elsewhere_in_the_plan") is not None:
         w(f"| ... mentioned only outside the project register "
-          f"| {fmt(c['klima_id_mentioned_only_elsewhere_in_the_plan'])} |")
-    w(f"| Construction features written | {fmt(c['construction_features'])} |")
+          f"| {c['klima_id_mentioned_only_elsewhere_in_the_plan']:,} |")
+    w(f"| Construction features written | {c['construction_features']:,} |")
     w("")
     w("The finding worth keeping: the city draws "
-      f"{fmt(c['klima_id_with_geometry_but_no_plan_page'])} numbered structures that "
+      f"{c['klima_id_with_geometry_but_no_plan_page']:,} numbered structures that "
       "**no page of the statutory plan describes**. That is checked against the whole "
-      "document - the project register plus the 117 appendix, status, target and "
-      "'aktuelle projekter' pages - not just the project pages.\n")
+      f"document - the project register plus the {c['plan_other_pages_scanned']:,} appendix, "
+      "status, target and 'aktuelle projekter' pages - not just the project pages.\n")
 
     w("## Claimed volumes\n")
     w("A cubic-metre figure in planning prose can mean a tank that *holds* that much, or an "
       "outfall that *releases* that much per year. They are separated here.\n")
     w("| | m3 |")
     w("|---|---:|")
-    w(f"| Storage, attributable to a single structure | {fmt(c['storage_m3_attributable'])} |")
-    w(f"| Storage, stated on pages naming several structures | {fmt(c['storage_m3_shared_attribution'])} |")
-    w(f"| Annual discharge / pumped volume (m3 **per year**) | {fmt(c['annual_flow_m3_per_year'])} |")
-    w(f"| Figures needing a human read | {fmt(c['volume_figures_needing_human_read'])} |")
+    w(f"| Storage, attributable to a single structure | {c['storage_m3_attributable']:,.0f} |")
+    w(f"| Storage, stated on pages naming several structures | {c['storage_m3_shared_attribution']:,.0f} |")
+    w(f"| Annual discharge / pumped volume (m3 **per year**) | {c['annual_flow_m3_per_year_distinct']:,.0f} |")
+    w(f"| Figures needing a human read | {c['volume_figures_needing_human_read']:,} |")
     w("")
 
     best = {}
@@ -63,9 +88,9 @@ def main():
         v = p.get("claimed_volume_m3") or p.get("claimed_volume_m3_shared")
         if not v:
             continue
-        cur = best.get(p["klima_id"])
+        cur = best.get(str(p["klima_id"]))
         if not cur or v > cur["v"]:
-            best[p["klima_id"]] = {
+            best[str(p["klima_id"])] = {
                 "v": v,
                 "t": (p.get("plan_titles") or [""])[0] or "",
                 "u": (p.get("plan_urls") or [""])[0] or "",
@@ -77,29 +102,40 @@ def main():
     w("|---|---:|---|---|---|")
     for k, d in sorted(best.items(), key=lambda x: -x[1]["v"])[:25]:
         att = "single" if d["sure"] else "shared"
-        link = f"[{d['t'][:58]}]({d['u']})" if d["u"] else "-"
-        w(f"| `{k}` | {fmt(d['v'])} | {att} | {d['cat']} | {link} |")
+        link = f"[{code(str(d['t'])[:58])}]({d['u']})" if d["u"] else "-"
+        w(f"| `{k}` | {d['v']:,.0f} | {att} | {name(d['cat'])} | {link} |")
     w("")
 
-    flows = [e for e in reg["projects"] if e.get("annual_flow_m3_per_year")]
+    flows = [e for e in reg["projects"] if e.get("annual_flow_m3_per_year")
+             and e.get("annual_flow_counted", True)]
     if flows:
         w("### Stated annual discharge volumes\n")
         w("Rates, not capacity. These say how much water leaves the system each year.\n")
+        dups = reg.get("annual_flow_duplicates") or []
+        if dups:
+            w(f"A figure is counted once: the {c['annual_flow_pages']:,} plan pages that state an "
+              f"annual volume give {c['annual_flow_figures_distinct']:,} distinct figures, because "
+              "the same volume stated for the same named structures on two pages - a project "
+              "page and the requirement it answers - is one outfall, not two. Left out of the "
+              "total and the table: " + "; ".join(
+                  f"[{code(str(d['title'])[:60])}]({d['url']}), the same figure as "
+                  f"[{code(str(d['same_figure_as'])[:60])}]({d['same_figure_as_url']})"
+                  for d in dups) + ".\n")
         w("| m3/year | Project |")
         w("|---:|---|")
         for e in sorted(flows, key=lambda x: -x["annual_flow_m3_per_year"])[:15]:
-            w(f"| {fmt(e['annual_flow_m3_per_year'])} | [{e['title'][:70]}]({e['url']}) |")
+            w(f"| {e['annual_flow_m3_per_year']:,.0f} | [{code(str(e['title'])[:70])}]({e['url']}) |")
         w("")
 
     rbu = os.path.join(RAW, "vp3_basis_2019_punkt_rbu_udl.geojson")
     if os.path.exists(rbu):
-        feats = read_json(rbu)["features"]
+        feats = list(live.live_json(rbu)["features"])
         kbh = [f for f in feats if f["properties"].get("komm_navn") == "København"]
-        by_type = Counter(f["properties"].get("bgv_type") for f in feats)
+        by_type = Counter(str(f["properties"].get("bgv_type")) for f in feats)
         w("## Discharge and overflow points\n")
-        w(f"{len(feats)} rain-dependent discharge points in metropolitan Copenhagen, "
-          f"{len(kbh)} of them in Københavns Kommune "
-          "(Miljøstyrelsen VP3 basisanalyse, derived from PULS).\n")
+        w(f"{live.live(len(feats), rbu, 'n_features')} rain-dependent discharge points in "
+          f"metropolitan Copenhagen, {live.live(len(kbh), rbu, 'n_in_kobenhavn')} of them in "
+          "Københavns Kommune (Miljøstyrelsen VP3 basisanalyse, derived from PULS).\n")
         w("| Code | Meaning | Points |")
         w("|---|---|---:|")
         for t, n in by_type.most_common():
@@ -107,17 +143,17 @@ def main():
             label = meta.get("en", "unknown")
             if meta.get("inferred"):
                 label += " **(inferred, not in the official code list)**"
-            w(f"| `{t}` | {label} | {n} |")
+            w(f"| `{t}` | {label} | {live.live(n, rbu, 'n_by_bgv_type.' + t)} |")
         w("")
-        vols = [(f["properties"].get("vol_sb"), f["properties"].get("pkt_navn"),
+        vols = [(f["properties"]["vol_sb"], f["properties"].get("pkt_navn"),
                  f["properties"].get("bgv_type"), f["properties"].get("komm_navn"),
                  f["geometry"]["coordinates"]) for f in feats if f["properties"].get("vol_sb")]
-        w(f"{len(vols)} of these carry a detention-basin volume, totalling "
-          f"**{fmt(sum(v[0] for v in vols))} m3**.\n")
+        w(f"{live.live(len(vols), rbu, 'n_with_vol_sb')} of these carry a detention-basin "
+          f"volume, totalling **{sum(v[0] for v in vols):,.0f} m3**.\n")
         w("| Structure | Type | m3 | Municipality | lon, lat |")
         w("|---|---|---:|---|---|")
-        for v, name, t, km, xy in sorted(vols, reverse=True)[:20]:
-            w(f"| `{name}` | {t} | {fmt(v)} | {km} | {xy[0]:.4f}, {xy[1]:.4f} |")
+        for v, nm, t, km, xy in sorted(vols, key=lambda x: -x[0])[:20]:
+            w(f"| {code(nm)} | {t} | {v:,.0f} | {km} | {xy[0]:.4f}, {xy[1]:.4f} |")
         w("")
 
     rens = os.path.join(RAW, "vp3_basis_2019_punkt_rens_udl.geojson")
@@ -125,16 +161,17 @@ def main():
         w("## Treatment plants\n")
         w("| Plant | Capacity (PE) | Stage | lon, lat |")
         w("|---|---:|---|---|")
-        for f in sorted(read_json(rens)["features"],
+        for f in sorted(live.live_json(rens)["features"],
                         key=lambda x: -(x["properties"].get("godk_pe") or 0)):
             p, xy = f["properties"], f["geometry"]["coordinates"]
-            w(f"| {p.get('pkt_navn')} | {fmt(p.get('godk_pe') or 0)} | {p.get('rens_sta')} "
+            pe = f"{p['godk_pe']:,}" if p.get("godk_pe") else "—"
+            w(f"| {name(p.get('pkt_navn'))} | {pe} | {p.get('rens_sta')} "
               f"| {xy[0]:.4f}, {xy[1]:.4f} |")
         w("")
 
     kl = os.path.join(RAW, "sp_kloakoplande.geojson")
     if os.path.exists(kl):
-        st = Counter((f["properties"].get("kloaksystem_status") or "unspecified")
+        st = Counter(str(f["properties"].get("kloaksystem_status") or "unspecified")
                      for f in read_json(kl)["features"])
         w("## Sewer catchments by system type\n")
         w("Combined (*faelleskloakeret*) catchments carry sewage and rain in one pipe, which is "
@@ -142,45 +179,51 @@ def main():
         w("| System | Catchments |")
         w("|---|---:|")
         for k, n in st.most_common():
-            w(f"| {k} | {n} |")
+            w(f"| {name(k)} | {live.live(n, kl, 'n_by_kloaksystem_status.' + k.replace('.', ','))} |")
         w("")
 
     man = os.path.join(MANUAL, "constructions.json")
     if os.path.exists(man):
         w("## Hand-curated structures\n")
         w("Facts that exist only in prose - depth, diameter, pump capacity - each with a source.\n")
-        for s in read_json(man)["constructions"]:
-            w(f"### {s['name']}\n")
+        for s in live.live_json(man)["constructions"]:
+            w(f"### {name(s['name'])}\n")
             w(f"*{s['type']}* - owner **{s['owner']}** - confidence: {s['confidence']}  ")
-            w(f"klima_id `{', '.join(s.get('klima_id') or []) or '-'}`, "
-              f"plan `{', '.join(s.get('plan_ids') or []) or '-'}`\n")
+            w(f"klima_id `{', '.join(str(x) for x in (s.get('klima_id') or [])) or '-'}`, "
+              f"plan `{', '.join(str(x) for x in (s.get('plan_ids') or [])) or '-'}`\n")
             if s.get("route"):
-                w(f"Route: {s['route']}\n")
+                w(f"Route: {idents(s['route'])}\n")
             w("| Claim | Value | Source |")
             w("|---|---|---|")
             for cl in s["claims"]:
                 val = cl["value"]
-                val = f"{val[0]}-{val[1]}" if isinstance(val, list) else fmt(val)
-                q = f" ({cl['qualifier']})" if cl.get("qualifier") else ""
+                if isinstance(val, list):
+                    val = f"{val[0]:g}-{val[1]:g}"
+                elif cl["unit"] == "year":
+                    val = f"{val}"
+                else:
+                    val = f"{val:,g}"
+                q = f" ({idents(cl['qualifier'])})" if cl.get("qualifier") else ""
                 w(f"| {cl['what'].replace('_', ' ')} | {val} {cl['unit']}{q} | "
                   f"[link]({cl['source']}) read {cl['read_on']} |")
             w("")
             for cl in s["claims"]:
                 if cl.get("disputed"):
-                    w(f"> **Disputed - {cl['what']}:** {cl['disputed']}\n")
+                    w(f"> **Disputed - {cl['what']}:** {idents(cl['disputed'])}\n")
                 if cl.get("note"):
-                    w(f"> *{cl['what']}:* {cl['note']}\n")
+                    w(f"> *{cl['what']}:* {idents(cl['note'])}\n")
 
-    ids = reg["klima_id_without_documentation"]
+    ids = [str(i) for i in reg["klima_id_without_documentation"]]
     w("## Undocumented structures\n")
-    w(f"{len(ids)} `klima_id` values appear in the city's own map layers and nowhere in "
-      "the text of the plan:\n")
+    w(f"{live.live(len(ids), rp, 'klima_id_without_documentation.count')} `klima_id` values "
+      "appear in the city's own map layers and nowhere in the text of the plan:\n")
     by_pre = defaultdict(list)
     for i in ids:
         m = re.match(r"^[A-ZÆØÅ]+", i)
         by_pre[m.group(0) if m else "?"].append(i)
     for pre, group in sorted(by_pre.items()):
-        w(f"- **{pre}** ({len(group)}): `" + "`, `".join(sorted(group)) + "`")
+        n = live.live(len(group), rp, f"klima_id_without_documentation.count_by_prefix.{pre}")
+        w(f"- **{pre}** ({n}): `" + "`, `".join(sorted(group)) + "`")
     w("")
 
     w("---\n")
@@ -191,8 +234,11 @@ def main():
 
     text = "\n".join(out)
     path = os.path.join(ROOT, "docs", "REGISTER.md")
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(text)
+    try:
+        write_doc(path, text)
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
     log(f"wrote docs/REGISTER.md ({len(text):,} chars)")
     return 0
 

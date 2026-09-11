@@ -1,0 +1,91 @@
+{
+ "constructions": [
+  {
+   "id": "K-OB-OBSERVING-EXTRA",
+   "title": "What observing.py adds for the claims sweep: DCE's Tabel 3 parsed, marine-tagged bathing stations, and the boundary-test settings",
+   "covers": {
+    "file": "data/derived/observing.json",
+    "fields": {
+     "dce_table3.models": {
+      "kind": "counted",
+      "is": "Models listed in Tabel 3 of the pinned DCE report, as parsed by dce_table3(): one per list of selected variables, and refused unless, in each half of the table, the lists, the R2 values and the ja/nej entries of the systematic-deviation column come to the same count."
+     },
+     "dce_table3.with_bv": {
+      "kind": "counted",
+      "is": "Of those models, the ones whose selected variables include water-column stability (BV)."
+     },
+     "dce_table3.with_vind": {
+      "kind": "counted",
+      "is": "Of those models, the ones whose selected variables include wind stress (vind)."
+     },
+     "dce_table3.with_nload": {
+      "kind": "counted",
+      "is": "Of those models, the ones whose selected variables include nitrogen load (N-load)."
+     },
+     "dce_table3.with_pload": {
+      "kind": "counted",
+      "is": "Of those models, the ones whose selected variables include phosphorus load (P-load)."
+     },
+     "n_bathing_marine": {
+      "kind": "counted",
+      "is": "Stations of the national bathing layer whose water-body id is one of the marine water bodies of the VP3 layer."
+     },
+     "sizes.irrelevant_area": {
+      "kind": "computed",
+      "is": "The sum, in km2, of the stated areas of the marine water bodies typed `Ej relevant`."
+     },
+     "coverage.n_matched": {
+      "kind": "counted",
+      "is": "Polygons the name match counts as carrying a statistical model."
+     },
+     "params.boundary_near_km": {
+      "kind": "stipulated",
+      "is": "The distance, in km, within which stations either side of a water-body boundary are paired for the boundary test - a setting in observing.py."
+     },
+     "params.boundary_min_pairs": {
+      "kind": "stipulated",
+      "is": "The number of cross-boundary station pairs a water-body pair needs before it is tested - a setting in observing.py."
+     }
+    }
+   },
+   "what": "Counts read from the pinned DCE report's model table and from the national bathing and water-body layers, and two settings of the boundary test.",
+   "model": "`dce_table3()` takes the text of Tabel 3 from the pinned DCE report and walks its tokens: a token made only of variable abbreviations starts or, after a trailing comma, continues one model's list; decimals no greater than one are R2 values; ja and nej are the systematic-deviation column. The three counts must agree in each half of the table. `main()` counts bathing stations whose `wbid` is a VP3 marine water body, and sums the areas typed `Ej relevant`. The boundary settings are constants in the script.",
+   "assumptions": [
+    "The PDF text extraction keeps each model's variable list together and in order, so a list is not split or merged across models.",
+    "A decimal no greater than one in the table body is an R2 value; the deviation column holds percentages above one."
+   ],
+   "justified": [
+    {
+     "text": "The parse checks itself: three quantities that must each count the models once are taken independently and must agree in each half of the table, or the script refuses.",
+     "ref": "scripts/observing.py"
+    },
+    {
+     "text": "The counts of selected variables agree with those an earlier hand count of the same table gave for water-column stability and wind stress; the total of models does not, and the hand count is retired.",
+     "ref": "data/manual/claims.d/w1-ob.json"
+    }
+   ],
+   "gaps": [
+    "A model whose variable list the extraction broke across a line would be counted as two, and only the agreement with the R2 and ja/nej counts guards against it.",
+    "The boundary settings are chosen, not derived; other settings would test other pairs."
+   ],
+   "void_if": [
+    "the DCE report is re-pinned with a different text extraction",
+    "the bathing or water-body layer is refetched and the script is not rerun"
+   ],
+   "licenses": "How many models DCE's Tabel 3 lists and how many select each variable; how many bathing stations carry a marine water-body id; how much of the sea the open-sea polygons hold.",
+   "not_licensed": "Which variables matter in the sea, or anything about the models' quality.",
+   "watches": [
+    "scripts/observing.py",
+    "data/derived/pins/DCE-STATMOD-2015.txt"
+   ],
+   "confirmed": {
+    "by": "fork w1-ob (written against dce_table3() and main() in observing.py; the parse's three counts agree in each half of Tabel 3; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/observing.py": "d8851ff17eeac5fc",
+     "data/derived/pins/DCE-STATMOD-2015.txt": "089dd0c3baa388a3"
+    }
+   }
+  }
+ ]
+}

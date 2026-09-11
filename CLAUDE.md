@@ -93,3 +93,23 @@ Absence is reported as a count over a named corpus, never as a share of the whol
 unless the category named is exactly as wide as the search performed. See the
 correction block in `docs/AREAS.md`. A share of a documented positive set is fine;
 a share of an absence is a residual.
+
+## Every number, reference and species on a page is checked
+
+Read `LIVE_NUMBERS.md` before editing any page or generator. In short: pages in
+`docs/` are generated, never edited by hand; a number reaches a page through
+`live.py` (from data, a calculation, a pinned document or a stated choice - a
+quotation of a past commit only in the archive of retired claims) and its field needs a declared construction in
+`data/manual/number_constructions.json`; a hypothesis reference is
+`live.ref("K1")`; a chemical species is `live.chem("O2")` (plain O2 is the
+observable). `write_doc()` refuses anything typed by hand, and the pre-commit
+hook refuses a committed page that has drifted from its sources.
+`data/manual/constructions.json` is a different file - the hand-curated sewer
+structures that `scripts/report.py` renders.
+
+Assertions are checked the same way (`LIVE_NUMBERS.md` section 11): a claim on a
+page is `live.claim("C-ID", text)`, registered with what it rests on, and every
+chain ends in data, a pinned document, a stated assumption, a gap, code, this
+project's history, or an honest "untraced". What cannot be justified is not
+claimed: it is retired to `docs/ARCHIVE.md` and replaced with what can be. A
+quotation of this site's past is never a justification for a fact.

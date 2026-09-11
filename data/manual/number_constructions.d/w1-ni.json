@@ -1,0 +1,96 @@
+{
+ "_what": "Fork w1-ni (claims sweep, wave 1): constructions for the two numbers docs/NITROGEN.md now reads from held data in place of figures it carried without a source.",
+ "constructions": [
+  {
+   "id": "K-NI-OUTFALL-VOLUMES",
+   "title": "Combined-overflow volume from the national outfall layer",
+   "covers": {
+    "file": "data/derived/outfalls.json",
+    "fields": {
+     "layers.combined_overflow.totals.Vand_(m3/ aar).n": {
+      "kind": "counted",
+      "is": "Features of the combined-sewer overflow layer whose annual water volume field `Vand_(m3/ aar)` holds a number - a number, or a string that parses as one once spaces are dropped and a decimal comma read as a point. A zero counts; an empty or unparseable field does not."
+     },
+     "layers.combined_overflow.totals.Vand_(m3/ aar).sum": {
+      "kind": "computed",
+      "is": "The sum, in m3 per year, of the annual water volume over exactly the features counted in the .n beside it - not over every structure in the layer."
+     }
+    }
+   },
+   "what": "The annual overflow volume the national combined-sewer overflow layer reports, and over how many structures.",
+   "model": "`scripts/fetch_spildevand.py` fetches the layer and, for each property, coerces the values to numbers with `numeric()`, skipping empty and unparseable ones, and keeps a count and a sum of those that parse.",
+   "assumptions": [
+    "One feature is one overflow structure."
+   ],
+   "justified": [
+    {
+     "text": "The sum is taken only over features that hold a number, and the count of those is stored beside it, so a page can say how many structures a total covers.",
+     "ref": "scripts/fetch_spildevand.py"
+    }
+   ],
+   "gaps": [
+    "The volumes are the figures the utilities report or model, as published in the layer; how each was produced is not in the layer.",
+    "Structures with no volume are left out of the sum, not estimated, so the sum understates the layer's total by whatever they discharge.",
+    "A zero volume counts as a reported value; whether a zero means no overflow or an unfilled field is not recorded."
+   ],
+   "void_if": [
+    "the layer is refetched and the script is not rerun"
+   ],
+   "licenses": "How much annual overflow volume the national layer reports, and over how many of its structures.",
+   "not_licensed": "The volume of structures that report none, or any event-level discharge.",
+   "watches": [
+    "scripts/fetch_spildevand.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ni (written against numeric() and the totals loop in scripts/fetch_spildevand.py, read 2026-09-11: count of parseable values and their sum, zeros included; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/fetch_spildevand.py": "2ce25d3217ca9080"
+    }
+   }
+  },
+  {
+   "id": "K-NI-RBU-POINTS",
+   "title": "Rain-dependent discharge points in the national register layer",
+   "covers": {
+    "file": "data/raw/national/punkt_rbu_udl.geojson",
+    "fields": {
+     "n_features": {
+      "kind": "counted",
+      "is": "Features in the national register layer of rain-dependent discharge points, as fetched: every feature counted once, whatever its structure type."
+     }
+    }
+   },
+   "what": "How many rain-dependent discharge points the national register lists.",
+   "model": "`scripts/nitrogen.py` reads the layer and counts its features.",
+   "assumptions": [
+    "One feature is one discharge point."
+   ],
+   "justified": [
+    {
+     "text": "The count is the length of the layer's feature list, taken where the page reads the layer for its Køge Bugt tables.",
+     "ref": "scripts/nitrogen.py"
+    }
+   ],
+   "gaps": [
+    "Nothing checks whether one physical outlet appears as more than one feature.",
+    "The layer is the copy fetched into data/raw; the page build does not refetch it."
+   ],
+   "void_if": [
+    "the layer is refetched and the page is not rebuilt"
+   ],
+   "licenses": "How many rain-dependent discharge points the national register lists.",
+   "not_licensed": "How many discharge in a given year, how much, or which of them any typetal is applied to.",
+   "watches": [
+    "scripts/nitrogen.py"
+   ],
+   "confirmed": {
+    "by": "fork w1-ni (re-read after the last prose edits: koege_tables() still counts the layer's features once with len() before the loop; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/nitrogen.py": "6637bc54ad794584"
+    }
+   }
+  }
+ ]
+}

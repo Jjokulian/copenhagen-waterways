@@ -58,11 +58,12 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from common import ROOT, log, read_json, write_doc
+from common import ROOT, log, read_json, write_doc, fragments
 import live
 
 SRC = os.path.join(ROOT, "data", "manual", "claims.json")
 OUT = os.path.join(ROOT, "docs", "CLAIMS.md")
+ARCHIVE = os.path.join(ROOT, "docs", "ARCHIVE.md")
 PINS = os.path.join(ROOT, "data", "derived", "pins")
 UA = "copenhagen-waterways research (github.com/Jjokulian/copenhagen-waterways)"
 
@@ -73,6 +74,8 @@ SHAPE = {
     "synthetic":  ('>"', '"]'),
     "assumption": ('{"', '"}'),
     "script":     ('["', '"]'),
+    "history":    ('[/"', '"/]'),
+    "untraced":   ('(("', '"))'),
     "claim":      ('("', '")'),
 }
 STYLE = {
@@ -82,30 +85,83 @@ STYLE = {
     "synthetic":  "fill:#4a3a12,stroke:#e8a33d,color:#ffeccc",
     "assumption": "fill:#4a3a12,stroke:#e8a33d,color:#ffeccc,stroke-dasharray:3 2",
     "script":     "fill:#21262d,stroke:#8b949e,color:#c9d1d9",
+    "history":    "fill:#1f2a3a,stroke:#7d8fa8,color:#dce6f2",
+    "untraced":   "fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2",
     "claim":      "fill:#173a26,stroke:#3fb950,color:#d7ffe4",
 }
 KIND_NOTE = {
     "measured": "rests on measurement",
     "bounded": "a bound, not a point estimate",
     "simulated": "about the instrument, not the world",
+    "modelled": "the output of somebody's model of the world, not an observation of it",
     "provisional": "unchecked - see the graph for what would check it",
     "gap": "a statement that something cannot be established",
+    "argued": "follows by reasoning from what it rests on - the argument is given in full",
+    "attributed": "somebody else's claim, shown with what could be found behind it",
+    "historical": "what this project itself did or said, checked against its own history",
+    "stipulated": "a rule this project sets itself, with its reason",
+    "code": "what this project's code does, read from the code",
 }
+# Where a chain may end. A claim rests on these or on other claims, and every path
+# down from a claim ends in one of them: data, a document, a stipulation, a gap,
+# code, this project's own history - or an honest "untraced": what was searched,
+# and that nothing further was found. Nothing below an untraced node is claimed.
+TERMINAL = {"held", "external", "gap", "synthetic", "assumption", "script", "history",
+            "untraced"}
 
 
 class Refused(Exception):
     pass
 
 
+_ORIGIN = {}      # (collection, id) -> the file it came from
+
+
 def load():
+    """claims.json and its fragments in claims.d/, merged. Parallel workers each
+    add figures, params, sources, nodes and claims in a fragment of their own."""
     d = read_json(SRC)
+    _ORIGIN.clear()
+    for f in fragments(SRC)[1:]:
+        frag = read_json(f)
+        for k in ("figures", "params", "sources"):
+            for name, v in frag.get(k, {}).items():
+                if name in d.setdefault(k, {}):
+                    if d[k][name] == v:
+                        continue            # the same source pinned twice: one entry
+                    raise Refused(f"{os.path.relpath(f, ROOT)}: {k} '{name}' is already "
+                                  "defined elsewhere, differently - pick another name")
+                d[k][name] = v
+                _ORIGIN[(k, name)] = f
+        for k in ("nodes", "claims"):
+            have = {x["id"] for x in d.setdefault(k, [])}
+            for x in frag.get(k, []):
+                if x["id"] in have:
+                    raise Refused(f"{os.path.relpath(f, ROOT)}: {k[:-1]} '{x['id']}' is "
+                                  "already defined - elsewhere, or earlier in this file")
+                have.add(x["id"])
+                d[k].append(x)
+                _ORIGIN[(k, x["id"])] = f
     return d, {n["id"]: n for n in d["nodes"]}, {c["id"]: c for c in d["claims"]}
 
 
-def save(d):
-    with open(SRC, "w", encoding="utf-8") as f:
-        json.dump(d, f, indent=1, ensure_ascii=False)
-        f.write("\n")
+def save(d, files=None):
+    """Write items back to the file each came from - only `files`, when given, so
+    a worker confirming its own claim never rewrites a file somebody else has
+    edited since it was read."""
+    for f in fragments(SRC):
+        if files is not None and f not in files:
+            continue
+        raw = read_json(f)
+        for k in ("figures", "params", "sources"):
+            if k in raw or any(_ORIGIN.get((k, n), SRC) == f for n in d.get(k, {})):
+                raw[k] = {n: v for n, v in d.get(k, {}).items() if _ORIGIN.get((k, n), SRC) == f}
+        for k in ("nodes", "claims"):
+            if k in raw or any(_ORIGIN.get((k, x["id"]), SRC) == f for x in d.get(k, [])):
+                raw[k] = [x for x in d.get(k, []) if _ORIGIN.get((k, x["id"]), SRC) == f]
+        with open(f, "w", encoding="utf-8") as fh:
+            json.dump(raw, fh, indent=1, ensure_ascii=False)
+            fh.write("\n")
 
 
 # ------------------------------------------------------------ pinned documents ---
@@ -164,7 +220,7 @@ def recheck(d):
             with open(os.path.join(PINS, sid + ".new.txt"), "w", encoding="utf-8") as f:
                 f.write(text)
         log(f"  {sid}: {s['status']}")
-    save(d)
+    save(d, {_ORIGIN.get(("sources", k), SRC) for k in d.get("sources", {})})
 
 
 def repin(d, sid):
@@ -177,11 +233,14 @@ def repin(d, sid):
     s["retrieved"] = datetime.date.today().isoformat()
     s["status"] = "re-pinned; every claim reading it must be reassessed"
     os.replace(p, os.path.join(PINS, sid + ".txt"))
-    save(d)
+    save(d, {_ORIGIN.get(("sources", sid), SRC)})
 
 
 # ----------------------------------------------------------------- live text ---
-PH = re.compile(r"\{(fig|calc|count|read|was|param):([^{}]+)\}")
+# {calc@K-ID:expr} applies a declared construction step to the calculation
+# {ref:K1} / {ref:K1|title} a checked reference to the hypothesis register;
+# {chem:O2} a checked chemical species - both entities, like numbers
+PH = re.compile(r"\{(fig|calc(?:@K-[A-Z0-9-]+)?|count|read|was|param|ref|chem):([^{}]+)\}")
 
 
 def _meta(d, sid):
@@ -259,9 +318,14 @@ def resolve(d, text, cache):
             name, _, spec = arg.partition("|")
             v, fmt = _figure(d, name.strip(), cache)
             s = ("{:" + spec + "}").format(v) if spec else fmt.format(v)
-        elif kind == "calc":
+        elif kind.startswith("calc"):
             expr, _, spec = arg.partition("|")
             v = _calc(d, expr.strip(), cache)
+            if "@" in kind:
+                try:
+                    v = live.step(kind.partition("@")[2], v)
+                except live.Unjustified as e:
+                    raise Refused(f"{key}: {e}")
             s = ("{:" + (spec or "g") + "}").format(v)
         elif kind == "count":
             sid, _, term = arg.partition(":")
@@ -270,37 +334,96 @@ def resolve(d, text, cache):
         elif kind == "read":
             sid, _, rest = arg.partition(":")
             shown, _, phrase = rest.partition("|")
-            if not phrase or _norm(phrase) not in _norm(pin_text(d, sid)):
+            # an HTML pin: a phrase may run across a tag, so real tags are set aside -
+            # only real ones: a plain-text pin may hold a literal "<" (SR353 does)
+            tag = r"</?[A-Za-z][A-Za-z0-9:-]*(?:\s[^<>]*)?/?>"
+            pinned = _norm(re.sub(tag, " ", pin_text(d, sid)))
+            if not phrase or _norm(re.sub(tag, " ", phrase)) not in pinned:
                 raise Refused(f"{key}: the pinned text of {sid} does not contain "
                               f"'{phrase}', so this reading is unsupported")
+            # and the number shown must be one the document states - compared as a
+            # number, whatever the separators: Danish "50.000" is English "50,000"
+            num = lambda t: re.sub(r"\D", "", t)      # digits only: "1%" states 1
+            # each whitespace-separated number is a candidate - a table row "158 93,9
+            # 21,3" is three cells, not one number - and so is a short run of them,
+            # because Danish may group thousands with a space ("58 367")
+            toks = re.findall(r"\d[\d.,]*\d|\d", phrase)
+            cands = {num(t) for t in toks}
+            cands |= {num("".join(toks[i:i + k])) for k in (2, 3) for i in range(len(toks) - k + 1)}
+            if num(shown) not in cands:
+                raise Refused(f"{key}: '{shown}' is not a number the quoted phrase "
+                              f"'{phrase}' states - the reading would print a number the "
+                              "document does not")
             s = live.reading(sid, "phrase", phrase, shown, shown, _meta(d, sid))
         elif kind == "was":
             parts = arg.split(":", 2)
             if len(parts) != 3:
                 raise Refused(f"{key}: expected {{was:COMMIT:FILE:TEXT}}")
             commit, file, shown = parts
-            if shown not in _git_show(commit, file):
-                raise Refused(f"{key}: {file} at {commit} does not contain '{shown}'"
-                              " - a misquotation")
-            s = live.quoted(commit, file, shown)
+            try:
+                if live.SLOT in shown:          # a located reference: nothing typed
+                    s = live.was(commit, file, shown)
+                else:
+                    if shown not in _git_show(commit, file):
+                        raise Refused(f"{key}: {file} at {commit} does not contain "
+                                      f"'{shown}' - a misquotation")
+                    s = live.quoted(commit, file, shown)
+            except live.Unjustified as e:
+                raise Refused(f"{key}: {e}")
+        elif kind in ("ref", "chem"):
+            import chem
+            import refs
+            i, _, form = arg.partition("|")
+            opts = [o.strip() for o in form.split(",") if o.strip()]
+            try:
+                s = refs.mark(i.strip(), "title" in opts,
+                              next((o for o in opts if o != "title"), None)) if kind == "ref" \
+                    else chem.mark(i.strip())
+            except live.Unjustified as e:
+                raise Refused(f"{key}: {e}")
         else:
             p = d.get("params", {}).get(arg)
             if p is None:
                 raise Refused(f"{key}: no such parameter in claims.json")
             s = live.stated(arg, p["value"], p["shown"], p["reason"])
         seen[key] = live.strip_marks(s)
+        if kind == "ref":           # a reference is stale when its target's title moves
+            import refs
+            seen[key] = f"{arg.partition('|')[0].strip()}: " \
+                        f"{refs.registry()[arg.partition('|')[0].strip()]['title']}"
+        at = _placeholder_line(key)
+        if at:
+            live.set_where(s, *at)
         return s
     return PH.sub(rep, text), seen
 
 
+_SRC_LINES = {}
+
+
+def _placeholder_line(key):
+    """(file, line) a placeholder was written on, across the register and its
+    fragments - for the code view."""
+    for f in fragments(SRC):
+        if f not in _SRC_LINES:
+            _SRC_LINES[f] = open(f, encoding="utf-8").read().split("\n")
+        for n, line in enumerate(_SRC_LINES[f], 1):
+            if key in line:
+                return os.path.relpath(f, ROOT), n
+    return None
+
+
 def plain(d, text, cache):
-    return live.strip_marks(resolve(d, text, cache)[0])
+    import chem
+    import refs
+    return chem.strip(refs.strip(live.strip_marks(resolve(d, text, cache)[0])))
 
 
 # ---------------------------------------------------------------- staleness ---
 def _texts(c, nodes):
     """Every text rendered in a claim's section - what a confirmation covers."""
-    t = {"claim": c["claim"], "note": c.get("note", "")}
+    t = {"claim": c["claim"], "note": c.get("note", ""),
+         "because": c.get("because", ""), "holder": c.get("holder", "")}
     for k, v in (c.get("assessment") or {}).items():
         t["assessment." + k] = v
     for r in c["rests_on"]:
@@ -321,7 +444,51 @@ def observe(d, c, nodes, cache):
         s = d["sources"][sid]
         saw[f"pinned {sid}"] = s["sha256"][:16] + (
             " CHANGED" if "CHANGED" in (s.get("status") or "") else "")
+    # the words, not only the numbers in them: the sentence on each page that says
+    # the claim, the claim's own texts, and what each thing it rests on says
+    for page, said in _said_on(c["id"]).items():
+        saw[f"said on {page}"] = said
+    saw["texts"] = _digest({k: c.get(k) for k in OWN})
+    allc = {x["id"]: x for x in d.get("claims", [])}
+    for r in c["rests_on"]:
+        if r in allc:
+            saw[f"rests on {r}"] = _digest({k: allc[r].get(k) for k in OWN})
+        elif r in nodes:
+            n = nodes[r]
+            saw[f"node {r}"] = _digest(n)
+            s = d.get("sources", {}).get(n.get("source") or "")
+            if s:
+                saw[f"pinned {n['source']}"] = s["sha256"][:16] + (
+                    " CHANGED" if "CHANGED" in (s.get("status") or "") else "")
     return saw
+
+
+OWN = ("claim", "because", "holder", "stance", "kind", "rests_on", "note",
+       "assessment", "page", "said_on")
+# Observed only since 2026-09-11. A confirmation made before recorded none of these,
+# so their absence there means "not observed then", not "changed since".
+_LATER = re.compile(r"texts$|rests on |node ")
+
+
+def _digest(x):
+    return hashlib.sha256(json.dumps(x, sort_keys=True, ensure_ascii=False)
+                          .encode()).hexdigest()[:16]
+
+
+def _spans():
+    try:
+        return json.load(open(live.SPANS, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def _said_on(cid):
+    """{page: the words} for every page that says this claim, as last written."""
+    return {page: said[cid] for page, said in _spans().items() if cid in said}
+
+
+def _pages(c):
+    return [p for p in [c.get("page")] + list(c.get("said_on", [])) if p]
 
 
 def staleness(d, nodes, claims, cache):
@@ -338,11 +505,31 @@ def staleness(d, nodes, claims, cache):
                        f"claims.py --reassess {cid} --by <name>")
             continue
         was = conf.get("saw", {})
-        diff = sorted(k for k in set(was) | set(now) if was.get(k) != now.get(k))
+        diff = sorted(k for k in set(was) | set(now) if was.get(k) != now.get(k)
+                      and not (k not in was and _LATER.match(k)))
         if diff:
             ex = "; ".join(f"{k}: {was.get(k)} -> {now.get(k)}" for k in diff[:3])
             out.append(f"{cid}: STALE since it was confirmed {conf.get('on')} - "
                        f"{ex}. Read it again, then --reassess {cid}")
+    return out
+
+
+def synthetic_on_findings(d, nodes, claims, cache):
+    """A claim resting on a simulated number may stand only on a method page -
+    including every page it appears_in, and the nodes it hangs from."""
+    import constructions
+    out = []
+    for cid, c in claims.items():
+        pages = [p for p in [c.get("page")] + list(c.get("appears_in", [])) if p]
+        wrong = [p for p in pages if not constructions.synthetic_allowed(p)]
+        if not wrong:
+            continue
+        for field, text in _texts(c, nodes).items():
+            for fid, shown in live.MARK.findall(resolve(d, text, cache)[0]):
+                if constructions.describe(live._seen[fid]["src"])["synthetic"]:
+                    out.append(f"{cid}: '{shown}' in {field} is built on simulation, "
+                               f"and the claim stands on {', '.join(wrong)} - not a "
+                               "method page")
     return out
 
 
@@ -395,13 +582,146 @@ def check_figures(d, claims, cache):
     return bad
 
 
-def validate(d, nodes, claims, cache):
+def _flat(t):
+    """Text as compared for a phrase: tags set aside, entities read as the
+    characters they stand for, whitespace collapsed."""
+    import html
+    t = html.unescape(re.sub(r"</?[A-Za-z][A-Za-z0-9:-]*(?:\s[^<>]*)?/?>", " ", t))
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def node_problems(d, n):
+    nid, kind = n["id"], n.get("kind")
+    if kind not in TERMINAL:
+        return [f"{nid}: kind '{kind}' is not one a chain can end in - one of "
+                f"{', '.join(sorted(TERMINAL))}"]
+    said = n.get("said")
+    if said and re.search(r"\d", said):
+        return [f"{nid}: 'said' locates a passage and is shown verbatim, so it holds no "
+                "digits - a number quoted from it goes through {read:} or {was:}"]
+    if kind == "history":
+        if not (n.get("commit") and n.get("file") and said):
+            return [f"{nid}: a history node names a commit, a file and what it said there"]
+        text = live._git_text(n["commit"], n["file"])
+        if text is None:
+            return [f"{nid}: {n['file']} does not exist at {n['commit']}"]
+        if _flat(said) not in _flat(text):
+            return [f"{nid}: {n['file']} at {n['commit']} does not say '{said}'"]
+    if kind == "untraced" and not n.get("detail"):
+        return [f"{nid}: an untraced node says what was searched, where and when - "
+                "the end of a trail is a finding too"]
+    if n.get("source"):
+        sid = n["source"]
+        if sid not in d.get("sources", {}):
+            return [f"{nid}: no pinned source {sid}"]
+        if said:
+            try:
+                pinned = pin_text(d, sid)
+            except Refused as e:
+                return [f"{nid}: {e}"]
+            if _flat(said) not in _flat(pinned):
+                return [f"{nid}: the pinned text of {sid} does not contain '{said}'"]
+    return []
+
+
+def structure(d, nodes, claims, allc=None):
+    """What a claim must have besides a current confirmation: something it rests
+    on, the argument if it is argued, and - if it is somebody else's - whose it is
+    and where their document is, or where the trail ran out."""
+    allc = allc or claims
     bad = []
-    known = set(nodes) | set(claims)
     for cid, c in claims.items():
-        for r in c["rests_on"]:
-            if r not in known:
+        rs = c.get("rests_on") or []
+        for r in rs:
+            if r not in nodes and r not in allc:
                 bad.append(f"{cid} rests on {r}, which is not defined")
+        if c.get("kind") == "argued" and not c.get("because"):
+            bad.append(f"{cid}: an argued claim needs 'because' - the argument itself")
+        if c.get("retired"):
+            bad += _retired_problems(cid, c, allc)
+        for o in c.get("replaces", []):
+            if o not in allc or not allc[o].get("retired"):
+                bad.append(f"{cid} replaces {o}, which is not a retired claim")
+        if not rs and not c.get("retired") and not (c.get("kind") == "argued"
+                                                     and c.get("because")):
+            bad.append(f"{cid}: rests on nothing. Name what it rests on - or, if nothing "
+                       "could be found, an untraced node saying what was searched")
+        stance = c.get("stance", "ours")
+        if stance not in ("ours", "theirs"):
+            bad.append(f"{cid}: stance is 'ours' or 'theirs', not '{stance}'")
+        if stance == "theirs":
+            if not c.get("holder"):
+                bad.append(f"{cid}: somebody else's claim needs 'holder' - whose it is")
+            if not any(r in nodes and (nodes[r].get("kind") == "untraced"
+                                       or nodes[r].get("source")) for r in rs):
+                bad.append(f"{cid}: somebody else's claim rests on their document - a "
+                           "node with a pinned source and what they said there - or on an "
+                           "untraced node saying where the trail ran out")
+    for nid in sorted({r for c in claims.values() for r in c.get("rests_on", []) if r in nodes}):
+        bad += node_problems(d, nodes[nid])
+    return bad
+
+
+def _retired_problems(cid, c, allc):
+    """A retired claim: what the site once published, where, and why it is no longer
+    claimed. The passage must still be found at that commit."""
+    r, bad = c["retired"], []
+    if c.get("kind") != "historical" or c.get("page") != "ARCHIVE.md":
+        bad.append(f"{cid}: a retired claim is historical and lives on ARCHIVE.md")
+    miss = [k for k in ("on", "from", "commit", "file", "begin", "end", "why") if not r.get(k)]
+    if miss:
+        return bad + [f"{cid}: 'retired' needs {', '.join(miss)}"]
+    for k in ("begin", "end"):
+        if re.search(r"\d", r[k]):
+            bad.append(f"{cid}: retired.{k} locates a passage, so it holds no digits")
+    try:
+        live.excerpt(r["commit"], r["file"], r["begin"], r["end"])
+    except live.Unjustified as e:
+        bad.append(f"{cid}: {e}")
+    for x in c.get("replaced_by", []):
+        if x not in allc:
+            bad.append(f"{cid}: replaced by {x}, which is not defined")
+    return bad
+
+
+def homes(cids):
+    """Where each claim is explained: CLAIMS.md, or ARCHIVE.md once retired."""
+    claims = load()[2]
+    return {c: "ARCHIVE.md" if (claims.get(c) or {}).get("retired") else "CLAIMS.md"
+            for c in cids}
+
+
+def said_problems(rel, found):
+    """For write_doc(): each claim a page marks must be registered for that page,
+    and it and everything under it, all the way down, sound and current."""
+    page = rel[len("docs/"):] if rel.startswith("docs/") else rel
+    d, nodes, claims = load()
+    bad, todo = [], []
+    for cid in found:
+        c = claims.get(cid)
+        if not c:
+            bad.append(f"{cid}: not in the claims register")
+        elif page not in _pages(c):
+            bad.append(f"{cid}: registered for {c.get('page')}, not {page}")
+        else:
+            todo.append(cid)
+    chain = set()
+    while todo:
+        cid = todo.pop()
+        if cid not in chain:
+            chain.add(cid)
+            todo += [r for r in claims[cid].get("rests_on", []) if r in claims]
+    sub = {k: claims[k] for k in sorted(chain)}
+    return bad + structure(d, nodes, sub, claims) + staleness(d, nodes, sub, {})
+
+
+def validate(d, nodes, claims, cache):
+    bad = structure(d, nodes, claims)
+    for page, said in _spans().items():
+        for cid in said:
+            if cid not in claims:
+                bad.append(f"{page} says {cid}, which the register no longer holds - "
+                           "rebuild the page, or restore the claim")
     WHITE, GREY, BLACK = 0, 1, 2
     colour = {cid: WHITE for cid in claims}
 
@@ -456,6 +776,24 @@ def graph_for(cid, nodes, claims, lab, depth=2):
     return "\n".join(out)
 
 
+def _node_item(d, n, cache):
+    kind = n.get("kind")
+    label = resolve(d, n.get("label", n["id"]), cache)[0].replace("\\n", " ")
+    detail = resolve(d, n.get("detail", ""), cache)[0]
+    if kind == "history":
+        s = (f"- **history** — {label}: `{n['file']}` at `{n['commit'][:7]}` "
+             f"says “{n['said']}”")
+    elif kind == "untraced":
+        s = f"- **trail ends here** — {label}"
+    elif n.get("source"):
+        src = d["sources"][n["source"]]
+        s = (f"- **{kind}** — {label}" + (f": “{n['said']}”" if n.get("said") else "")
+             + f" ([`{n['source']}`]({src['url']}), pinned)")
+    else:
+        s = f"- **{kind}** — {label}"
+    return s + (f". {detail}" if detail else "")
+
+
 def justification(d, cid, c, cache):
     out = []
     if c.get("basis") == "computed":
@@ -496,9 +834,9 @@ def justification(d, cid, c, cache):
         a = c.get("assessment")
         out.append("**Assessed** — no script computes this. It is a reading or a "
                    "judgement, assessed by a person.")
-        if not a:
+        if not a and not c.get("because"):
             out += ["", "*Assessment not yet written.*"]
-        else:
+        elif a:
             out.append("")
             for k, labl in (("counts_as", "What it counts"),
                             ("reasoning", "Why it is believed"),
@@ -507,9 +845,11 @@ def justification(d, cid, c, cache):
                 if a.get(k):
                     out.append(f"- **{labl}:** {resolve(d, a[k], cache)[0]}")
     conf = c.get("confirmed") or {}
-    out += ["", f"*Confirmed {conf.get('on', 'never')} by {conf.get('by', 'nobody')}. "
-            "If anything shown here changes, this claim is refused until it is read "
-            "again.*"]
+    # the by-line is a record of who read what, shown verbatim - as code, so a count
+    # or an identifier in it is not taken for a claim about the world
+    by = (conf.get("by") or "nobody").replace("`", "'")
+    out += ["", f"*Confirmed {conf.get('on', 'never')} by* `{by}`. *If anything shown here "
+            "changes, this claim is refused until it is read again.*"]
     return out
 
 
@@ -538,12 +878,13 @@ def main(argv):
             except Refused as e:
                 log(f"  {i}: {e}")
                 return 1
-        save(d)
+        save(d, {_ORIGIN.get(("claims", i), SRC) for i in ids})
         log(f"  confirmed {len(ids)} claim(s) as of today, by {by}")
         return 0
 
     cache = {}
     bad = validate(d, nodes, claims, cache)
+    bad += synthetic_on_findings(d, nodes, claims, cache)
     for b in bad:
         log("  " + b)
     if bad:
@@ -592,12 +933,24 @@ def main(argv):
     w("| box, grey | **script** | the code that does the work |")
     w("| rounded, green | **claim** | a statement on a page, which may rest on other "
       "claims |")
+    w("| slanted, slate | **history** | what this project itself did or said at a past "
+      "commit, checked against its history |")
+    w("| circle, red dotted | **untraced** | where the trail ends: what was searched and "
+      "not found. Nothing below it is claimed |")
+    w("")
+    w("A claim is either this project's own or somebody else's. Ours says why it "
+      "follows from what it rests on. Somebody else's is credited to whoever holds it "
+      "and shows only what could be found behind it - their document, pinned, and "
+      "the reasons they give - and where the trail ran out, it says so. Every path "
+      "down from a claim ends in one of the kinds above; the build refuses one that "
+      "does not.")
     w("")
     w("---")
     w("")
     by_page = {}
     for cid, c in claims.items():
-        by_page.setdefault(c.get("page", "—"), []).append((cid, c))
+        if not c.get("retired"):
+            by_page.setdefault(c.get("page", "—"), []).append((cid, c))
     for page in sorted(by_page):
         w(f"## {page}")
         w("")
@@ -607,17 +960,37 @@ def main(argv):
             w("")
             w(f"`{cid}` · **{c['kind']}** — {KIND_NOTE.get(c['kind'], '')}")
             w("")
-            w(graph_for(cid, nodes, claims, lab))
-            w("")
+            if c.get("stance") == "theirs":
+                w(f"**Somebody else's claim** — held by {resolve(d, c['holder'], cache)[0]}. "
+                  "What follows is what could be found behind it, and no more.")
+                w("")
+            said = _said_on(cid)
+            if said:
+                w("Said on " + ", ".join(f"[{p}]({p})" for p in sorted(said)) + ".")
+                w("")
+            if c.get("because"):
+                lead = ("Their reasons, as far as they could be found"
+                        if c.get("stance") == "theirs" else "Why it follows")
+                w(f"**{lead}:** {resolve(d, c['because'], cache)[0]}")
+                w("")
+            for old in c.get("replaces", []):
+                r = claims[old]["retired"]
+                w(f"**Replaces an earlier claim**, retired on {r['on']} to the "
+                  f"[archive](ARCHIVE.md#{old}): {resolve(d, r['why'], cache)[0]}")
+                w("")
+            if c["rests_on"]:
+                w(graph_for(cid, nodes, claims, lab, depth=4))
+                w("")
             for r in c["rests_on"]:
                 n = nodes.get(r)
                 if n:
-                    label = resolve(d, n.get("label", r), cache)[0].replace("\\n", " ")
-                    detail = resolve(d, n.get("detail", ""), cache)[0]
-                    w(f"- **{n.get('kind')}** — {label}" + (f". {detail}" if detail else ""))
+                    w(_node_item(d, n, cache))
                 elif r in claims:
-                    w(f"- **claim** — [{plain(d, claims[r]['claim'], cache)[:80]}…]"
-                      f"(CLAIMS.md#{r})")
+                    w(f"- **claim** — {resolve(d, claims[r]['claim'], cache)[0]} "
+                      f"([`{r}`](CLAIMS.md#{r}))")
+            if not c["rests_on"]:
+                w("- **the argument alone** — nothing further is cited: the reasoning "
+                  "above is the whole of it, for the reader to judge")
             w("")
             for line in justification(d, cid, c, cache):
                 w(line)
@@ -638,6 +1011,64 @@ def main(argv):
         log(str(e))
         return 1
     log(f"wrote {os.path.relpath(OUT, ROOT)}")
+    return write_archive(d, claims, cache)
+
+
+def write_archive(d, claims, cache):
+    """ARCHIVE.md: every claim the site no longer makes, in the words it was
+    published in, with why it was retired and what, if anything, replaced it."""
+    o = []
+    w = o.append
+    w("# Retired claims")
+    w("")
+    w("*Generated by `scripts/claims.py` from the claims register. Each passage below "
+      "is read out of this repository's history at the commit named, so it is what "
+      "the site actually published, not a paraphrase.*")
+    w("")
+    w("A claim is retired when no good justification for it can be given - most often "
+      "because its justification was never recorded properly. It is not quietly "
+      "deleted: it is kept here, in its own words, with the reason, and the page that "
+      "made it now says only what can be justified. Nothing on this page is claimed "
+      "to be true. What is claimed is that the site once said it.")
+    w("")
+    retired = sorted(((cid, c) for cid, c in claims.items() if c.get("retired")),
+                     key=lambda x: (x[1]["retired"]["from"], x[0]))
+    if not retired:
+        w("*Nothing has been retired yet.*")
+    by_page = {}
+    for cid, c in retired:
+        by_page.setdefault(c["retired"]["from"], []).append((cid, c))
+    for page in by_page:
+        w(f"## {page}")
+        w("")
+        for cid, c in by_page[page]:
+            r = c["retired"]
+            w(f'<a id="{cid}"></a>')
+            w(f"### {resolve(d, c['claim'], cache)[0]}")
+            w("")
+            w(f"`{cid}` · retired {r['on']} from [{r['from']}]({r['from']}) · as "
+              f"published in `{r['commit'][:7]}`")
+            w("")
+            w("> " + live.claim(cid, live.excerpt(r["commit"], r["file"], r["begin"], r["end"])))
+            w("")
+            w(f"**Why it was retired:** {resolve(d, r['why'], cache)[0]}")
+            w("")
+            if c.get("replaced_by"):
+                # by id: a replacement's own numbers belong on its own page (a
+                # simulated one only on a method page), not restated here
+                w("**Replaced by:** " + ", ".join(
+                    f"[`{x}`](CLAIMS.md#{x})" for x in c["replaced_by"])
+                  + " — each opens what it rests on.")
+            else:
+                w("**Not replaced** — nothing that could be justified was found to say "
+                  "in its place.")
+            w("")
+    try:
+        write_doc(ARCHIVE, "\n".join(o).rstrip("\n") + "\n")
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
+    log(f"wrote {os.path.relpath(ARCHIVE, ROOT)}")
     return 0
 
 

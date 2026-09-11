@@ -1,0 +1,16 @@
+{
+ "sources": {
+  "DCE-STATMOD-2015": {
+   "title": "Timmermann, K., Christensen, J., Murray, C. & Markager, S. (28 April 2015). NST-projektet 'Implementeringen af modeller til brug for vandforvaltningen'. Statistiske modeller og metoder til bestemmelse af indsatsbehov - del 3. DCE / Institut for Bioscience, Aarhus Universitet, for Naturstyrelsen. Fag",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2015/Dokumentation_statistiske_modeller_metoder_del3_28042015.pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "089dd0c3baa388a39e26a53c718a84e04a426cbfa09ba584eb3cd5524732185b"
+  },
+  "DHI-MODEL-DEL1-2015": {
+   "title": "Erichsen, A.C., Timmermann, K., Kaas, H., Markager, S., Christensen, J. & Murray, C. (2014, rev. 18/5-2015). NST projektet 'Implementeringen af modeller til brug for vandforvaltningen'. Modeller for Danske Fjorde og Kystnære Havområder - Del 1. Metode til bestemmelse af målbelastning. Dokumentation.",
+   "url": "https://sgavmst.dk/media/hvomfapx/31-modeller-for-danske-fjorde-og-kystnaere-havomraader-del-1.pdf",
+   "retrieved": "2026-09-10",
+   "sha256": "c4721f1e56c58b7f7b949848f60646825107c134bfa7437821144390ea7fb243"
+  }
+ }
+}

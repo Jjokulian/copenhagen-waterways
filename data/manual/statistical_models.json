@@ -1,0 +1,29 @@
+{
+ "_what": "Water bodies with a station-level statistical model in the second water plans, by this project's water-body id. The id is DKCOAST followed by DHI's water-body number (checked by name for every entry below). Replaces the six-letter name match in scripts/areas.py, which flagged water bodies DHI does not list and missed some it does.",
+ "_source": "DHI-MODEL-DEL1-2015 (pinned), section 3.2, Tabel 5: 'Oversigt over vandområder og de tilhørende overvågningsstationer, der er opstillet statistiske modeller for'",
+ "_matched": "2026-09-11, by DHI's number, each name read against marin_overordnet's ov_navn. Where the names differ in wording it is noted.",
+ "entries": [
+  {"dhi": 2, "dhi_name": "Roskilde Fjord, indre", "ids": ["DKCOAST2"]},
+  {"dhi": 24, "dhi_name": "Isefjord, ydre", "ids": ["DKCOAST24"]},
+  {"dhi": 44, "dhi_name": "Hjelm Bugt", "ids": ["DKCOAST44"]},
+  {"dhi": 92, "dhi_name": "Odense Fjord, ydre", "ids": ["DKCOAST92"]},
+  {"dhi": 93, "dhi_name": "Odense Fjord, Seden Strand", "ids": ["DKCOAST93"]},
+  {"dhi": 96, "dhi_name": "Storebælt, NV", "ids": ["DKCOAST96"]},
+  {"dhi": 102, "dhi_name": "Åbenrå Fjord", "ids": ["DKCOAST102"]},
+  {"dhi": 113, "dhi_name": "Flensborg Fjord, indre", "ids": ["DKCOAST113"]},
+  {"dhi": 123, "dhi_name": "Vejle Fjord, indre", "ids": ["DKCOAST123"]},
+  {"dhi": 124, "dhi_name": "Kolding Fjord, indre", "ids": ["DKCOAST124"]},
+  {"dhi": 127, "dhi_name": "Horsens Fjord, ydre", "ids": ["DKCOAST127"]},
+  {"dhi": 128, "dhi_name": "Horsens Fjord, indre", "ids": ["DKCOAST128"]},
+  {"dhi": 132, "dhi_name": "Ringkøbing Fjord", "ids": ["DKCOAST132"]},
+  {"dhi": 135, "dhi_name": "Randers Fjord, Grund Fjord", "ids": [], "note": "no water body with this number in marin_overordnet.geojson"},
+  {"dhi": 137, "dhi_name": "Randers Fjord, ydre", "ids": ["DKCOAST137"]},
+  {"dhi": 147, "dhi_name": "Århus Bugt, Kalø og Begtrup Vig", "ids": ["DKCOAST147"], "note": "ov_navn reads 'Århus Bugt og Begtrup Vig'"},
+  {"dhi": 156, "dhi_name": "Nissum, Thisted, Kås, Løgstør, Nibe, Langerak", "ids": ["DKCOAST232", "DKCOAST233", "DKCOAST234", "DKCOAST235", "DKCOAST236"], "note": "one model for a group of Limfjord bredninger, matched by name: Nissum Bredning, Kås Bredning og Venø Bugt, Løgstør Bredning, Nibe Bredning og Langerak, Thisted Bredning"},
+  {"dhi": 157, "dhi_name": "Lovns, Skive, Riisgårde, Bjørnholms bugt", "ids": ["DKCOAST157"], "note": "ov_navn reads 'Bjørnholms Bugt, Riisgårde Bredning, Skive Fjord og Lovns Bredning'"},
+  {"dhi": 159, "dhi_name": "Mariager Fjord, indre", "ids": ["DKCOAST159"]},
+  {"dhi": 214, "dhi_name": "Det sydfynske Øhav, åbne del", "ids": ["DKCOAST214"], "note": "ov_navn reads 'Det sydfynske Øhav'"},
+  {"dhi": 216, "dhi_name": "Lillebælt, syd", "ids": ["DKCOAST216"]},
+  {"dhi": 224, "dhi_name": "Nordlige Lillebælt", "ids": ["DKCOAST224"]}
+ ]
+}

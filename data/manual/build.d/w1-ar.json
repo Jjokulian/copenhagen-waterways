@@ -1,0 +1,65 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/areas.py",
+   "inputs": [
+    "data/manual/claims.d/w1-ar.json",
+    "data/derived/pins/EDWARDS-2003.txt",
+    "data/derived/pins/SERRE-PAABO-2004.txt",
+    "data/derived/pins/ROSENBERG-2002.txt",
+    "data/derived/pins/BHATIA-2013.txt",
+    "data/derived/pins/DEQUEIROZ-2007.txt",
+    "data/derived/pins/WHO-ICD.txt",
+    "data/derived/pins/WIKI-ROSKILDE-FJORD.txt",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/DHI-MODEL-DEL1-2015.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/SO-BG-2024.txt"
+   ],
+   "outputs": [
+    "docs/AREAS.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/category.py",
+   "inputs": [
+    "data/manual/claims.d/w1-ar.json",
+    "data/derived/pins/EDWARDS-2003.txt",
+    "data/derived/pins/SERRE-PAABO-2004.txt",
+    "data/derived/pins/ROSENBERG-2002.txt",
+    "data/derived/pins/BHATIA-2013.txt",
+    "data/derived/pins/DEQUEIROZ-2007.txt",
+    "data/derived/pins/WHO-ICD.txt",
+    "data/derived/pins/WIKI-ROSKILDE-FJORD.txt",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/DHI-MODEL-DEL1-2015.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/SO-BG-2024.txt"
+   ],
+   "outputs": [
+    "docs/CATEGORY.md"
+   ]
+  },
+  {
+   "script": "scripts/claims.py",
+   "inputs": [
+    "data/manual/claims.d/w1-ar.json",
+    "data/derived/pins/EDWARDS-2003.txt",
+    "data/derived/pins/SERRE-PAABO-2004.txt",
+    "data/derived/pins/ROSENBERG-2002.txt",
+    "data/derived/pins/BHATIA-2013.txt",
+    "data/derived/pins/DEQUEIROZ-2007.txt",
+    "data/derived/pins/WHO-ICD.txt",
+    "data/derived/pins/WIKI-ROSKILDE-FJORD.txt",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/DHI-MODEL-DEL1-2015.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/SO-BG-2024.txt"
+   ],
+   "outputs": [
+    "docs/CLAIMS.md",
+    "docs/ARCHIVE.md"
+   ]
+  }
+ ]
+}

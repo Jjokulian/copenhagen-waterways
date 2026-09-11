@@ -5,6 +5,9 @@
 python3 scripts/check_generated.py --staged || exit 1
 # a cycle in the claim graph is circular reasoning; refuse the commit
 python3 scripts/claims.py --check || exit 1
+# every construction behind a published number must be declared, confirmed, and
+# current against the files it watches - a model's justification goes stale too
+python3 scripts/constructions.py --check || exit 1
 # an output whose input changed is a published number that no longer follows
 # from its data; a hand-edit in a generated file is the opposite problem
 python3 scripts/freshness.py || exit 1

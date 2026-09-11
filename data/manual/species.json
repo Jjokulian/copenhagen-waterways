@@ -1,0 +1,21 @@
+{
+ "_what": "Chemical species this site names, each a checked entity: generators write live.chem(key) or {chem:key}, and scripts/chem.py renders the unicode form with the key in the DOM. Add a species here (or in a fragment in species.d/) before using it.",
+ "species": {
+  "O2": {"unicode": "O₂", "name": "oxygen (dissolved, as a molecule)"},
+  "CO2": {"unicode": "CO₂", "name": "carbon dioxide"},
+  "N2": {"unicode": "N₂", "name": "dinitrogen gas"},
+  "N2O": {"unicode": "N₂O", "name": "nitrous oxide"},
+  "H2S": {"unicode": "H₂S", "name": "hydrogen sulphide"},
+  "CH4": {"unicode": "CH₄", "name": "methane"},
+  "NO3-": {"unicode": "NO₃⁻", "name": "nitrate"},
+  "NO2-": {"unicode": "NO₂⁻", "name": "nitrite"},
+  "NH4+": {"unicode": "NH₄⁺", "name": "ammonium"},
+  "NH3": {"unicode": "NH₃", "name": "ammonia"},
+  "PO4 3-": {"unicode": "PO₄³⁻", "name": "phosphate"},
+  "HCO3-": {"unicode": "HCO₃⁻", "name": "bicarbonate"},
+  "SO4 2-": {"unicode": "SO₄²⁻", "name": "sulphate"},
+  "SiO2": {"unicode": "SiO₂", "name": "silica"},
+  "Fe2+": {"unicode": "Fe²⁺", "name": "ferrous iron"},
+  "Mn2+": {"unicode": "Mn²⁺", "name": "manganese(II)"}
+ }
+}

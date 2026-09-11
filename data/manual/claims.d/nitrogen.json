@@ -1,0 +1,85 @@
+{
+ "_what": "Fork nitrogen: pinned sources behind docs/NITROGEN.md, docs/GRUNDLAGET.md and docs/REGISTER.md.",
+ "sources": {
+  "SR353": {
+   "title": "Thodsen et al. 2019, Vandløbsdata og kvælstoftransport, DCE Videnskabelig rapport nr. 353",
+   "url": "https://dce2.au.dk/pub/SR353.pdf",
+   "sha256": "8a598b8a6973094b7cffff192f8737802c83863995c49d77c328746a068d37f4",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  },
+  "SR120": {
+   "title": "DCE Videnskabelig rapport nr. 120, kvælstofoverskud og markbalancer",
+   "url": "https://dce2.au.dk/pub/SR120.pdf",
+   "sha256": "cea5fe54325343de938e4641ac0b0cf088aa038d4411c16df92373c11ba9e4e7",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  },
+  "MSFD28": {
+   "title": "DCE Havstrategi-notat 2-8, tilførsel af N, P og organisk stof",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Havstrateginotater/2-8_MSFD_notat_tilfoersel_NPO.pdf",
+   "sha256": "8204718867e3910bd126d1bdcb57c1c9eb46ad9416d86acd3a04fecb6a31489c",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  },
+  "DP02": {
+   "title": "Miljøstyrelsen, Datateknisk anvisning for regnbetingede udledninger (RBU), TA DP02 version 4, 2024",
+   "url": "https://mst.dk/media/bnkdidho/dta-dp02-rbu-version-4-2024.pdf",
+   "sha256": "d6578834b1ace1540f3f1e717a0d37c79b74c8d30b8e120e1f1e060ff6fef2bd",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  },
+  "TYPETAL22": {
+   "title": "Miljøstyrelsen / DHI, Typetal for miljøfarlige forurenende stoffer i regnbetingede udledninger, januar 2022",
+   "url": "https://mst.dk/media/grzhqw5f/typetal-for-miljoefarlige-forurenende-stoffer-i-regnbetingede-udledninger.pdf",
+   "sha256": "f9e89eea09ad4512f0f2808d8b0d2a6c036008c2193fd88abafa183a918fa1f2",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  },
+  "DANVA-2024": {
+   "title": "DANVA (2024), Udledningen af kvælstof skyldes andre kilder end spildevand - quoting Miljøstyrelsen and Aarhus Universitet",
+   "url": "https://www.danva.dk/nyheder/2024/kvaelstofudledningen-skyldes-overvejende-andre-kilder-end-spildevand/",
+   "sha256": "cce512d654be929c81cc1f2ab361db9001afdecb3df4231fc18abe3da1bb3b26",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned",
+   "note": "A secondary source, pinned because the primary (Folketinget MOF Alm.del 2022-23 bilag 121, https://www.ft.dk/samling/20222/almdel/MOF/bilag/121/2657955.pdf) refuses scripted fetches (HTTP 403)."
+  },
+  "NOVANA-2327": {
+   "title": "Miljøstyrelsen (September 2023). NOVANA. Det nationale overvågningsprogram for vandmiljø og natur 2023-27. Chapter 2, delprogram for hav og fjord.",
+   "url": "https://www2.mst.dk/Udgiv/publikationer/2023/09/978-87-7038-556-5.pdf",
+   "sha256": "f57c67b33cee6c1954a1428ced2559340c6b04fa63f18b78fbdab9edc5654175",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  },
+  "DHI-MODEL-DEL2-2015": {
+   "title": "Erichsen, A.C. & Kaas, H. (2015). Modeller for Danske Fjorde og Kystnære Havområder - del 2. Mekanistiske modeller og metode til bestemmelse af indsatsbehov. DHI for Naturstyrelsen.",
+   "url": "https://edit.mst.dk/media/lspfqzss/312-modeller-for-danske-fjorde-og-kystnaere-havomraader-del-2.pdf",
+   "sha256": "5317df8eb7f4d3a9b5cae3c2ad9d3e8354ca500ef68215302f5896e9fdfb2847",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  },
+  "SO-BG-2024": {
+   "title": "Finansministeriet, Ministeriet for Grøn Trepart, Ministeriet for Fødevarer, Landbrug og Fiskeri (November 2024). Second opinion - Baggrundsanalyser.",
+   "url": "https://mgtp.dk/Media/638803057484281253/second-opinion-baggrundsanalyser.pdf",
+   "sha256": "8d12fc4d97151adc2a6fa956b8642f5cafa635a3bbc5fda7efe8321aa95eb768",
+   "retrieved": "2026-09-10",
+   "checked": "2026-09-10",
+   "status": "pinned"
+  }
+ },
+ "params": {
+  "harmony_1_7": {
+   "value": 1.7,
+   "shown": "1.7",
+   "reason": "The second line in scripts/manure.py (LIMITS): at the 100 kg N per animal unit conversion scripts/socialcontext.py states but has not verified, it corresponds to today's 170 kg organic N per hectare of harmoniareal ceiling (C-DE-VOID) - an indicator, not a compliance test."
+  }
+ }
+}

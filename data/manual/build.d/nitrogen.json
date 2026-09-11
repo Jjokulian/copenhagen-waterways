@@ -1,0 +1,52 @@
+{
+ "_what": "Fork nitrogen: build steps for scripts it made generators of, or that were not registered.",
+ "steps": [
+  {
+   "script": "scripts/build_registry.py",
+   "inputs": [
+    "data/raw/plan_projects.json",
+    "data/raw/plan_other_pages.json",
+    "data/raw/skp_bassiner_pladser_kk.geojson",
+    "data/raw/skp_veje_tunneller_kk.geojson",
+    "data/raw/skp_igangsatte_prj_kk.geojson",
+    "data/raw/skp_afsluttede_prj_kk.geojson"
+   ],
+   "outputs": [
+    "data/derived/registry.json",
+    "data/derived/constructions.geojson"
+   ]
+  },
+  {
+   "script": "scripts/report.py",
+   "inputs": [
+    "data/derived/registry.json",
+    "data/derived/constructions.geojson",
+    "data/manual/codelists.json",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rens_udl.geojson",
+    "data/raw/sp_kloakoplande.geojson",
+    "data/manual/constructions.json"
+   ],
+   "outputs": [
+    "docs/REGISTER.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/grundlaget.py",
+   "inputs": [
+    "data/manual/nitrogen_readings.json",
+    "data/manual/claims.d/nitrogen.json",
+    "data/manual/claims.d/water.json",
+    "data/derived/pins/NOVANA-2327.txt",
+    "data/derived/pins/DHI-MODEL-DEL1-2015.txt",
+    "data/derived/pins/DHI-MODEL-DEL2-2015.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/SO-BG-2024.txt",
+    "data/derived/pins/DANVA-2024.txt"
+   ],
+   "outputs": [
+    "docs/GRUNDLAGET.md"
+   ]
+  }
+ ]
+}

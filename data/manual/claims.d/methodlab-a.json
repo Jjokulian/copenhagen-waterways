@@ -1,0 +1,1263 @@
+{
+ "_what": "METHOD_LAB.md claims, first half (intro, section 1, the clock, the licensing table): fork ml-a, 2026-09-11. Kept and replacement claims, and the claims retired to ARCHIVE.md. Drafts - not yet confirmed.",
+ "sources": {
+  "FUJII-2019": {
+   "title": "Fujii et al. (2019), Observing System Evaluation Based on Ocean Data Assimilation and Prediction Systems, Frontiers in Marine Science 6:417 (PDF)",
+   "url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2019.00417/pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "4da529c601b47e38abd70fd34f6d6b0f8a9ee79d086d24098f393882c489a23b",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "ZENG-2020-BIB": {
+   "title": "Zeng et al. (2020), Use of Observing System Simulation Experiments in the United States, BAMS 101(8) - Crossref bibliographic record",
+   "url": "https://api.crossref.org/works/10.1175/BAMS-D-19-0155.1/transform/text/x-bibliography",
+   "retrieved": "2026-09-11",
+   "sha256": "394105dc4d5538b3f78607663687835af233ad251539c07d9dbfe3539051e627",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "ICH-E9": {
+   "title": "ICH E9, Statistical principles for clinical trials (EMA, CPMP/ICH/363/96)",
+   "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-9-statistical-principles-clinical-trials-step-5_en.pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "53238c1462327ac772e133dda1091f6b1abbd373516147e4fd008ca9d5752216",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "TA-NOVA-1998-K4": {
+   "title": "Teknisk anvisning for marin overvågning (NOVA 1998), Kap. 4",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap04.doc",
+   "retrieved": "2026-09-11",
+   "sha256": "28d3351a3d1b53e2431b23778266b60c5cda75e4cda6be1a0dd5efbe020fa8e9",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "TA-NOVA-1998-K5": {
+   "title": "Teknisk anvisning for marin overvågning (NOVA 1998), Kap. 5",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap05.doc",
+   "retrieved": "2026-09-11",
+   "sha256": "bf0440cec12b6dc5406abd6056b75b6c062f3ee3b0f7dba4e2684c391fd25277",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "TA-NOVA-1998-K6": {
+   "title": "Teknisk anvisning for marin overvågning (NOVA 1998), Kap. 6",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap06.doc",
+   "retrieved": "2026-09-11",
+   "sha256": "f05a49f8a8c7161ff3825b92767adbadf62ef20b8150e6c0efc09a858607ef9b",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "figures": {
+  "det_nb": {
+   "file": "data/derived/detectable.json",
+   "path": "samples_with_neighbours",
+   "fmt": "{:,}"
+  },
+  "det_single": {
+   "file": "data/derived/detectable.json",
+   "path": "samples_single_bin",
+   "fmt": "{:,}"
+  },
+  "det_noise_n": {
+   "file": "data/derived/detectable.json",
+   "path": "noise_n",
+   "fmt": "{:,}"
+  },
+  "det_draws": {
+   "file": "data/derived/detectable.json",
+   "path": "draws",
+   "fmt": "{:,}"
+  }
+ },
+ "nodes": [
+  {
+   "id": "X-ML-CLOCK",
+   "kind": "script",
+   "label": "clock.py",
+   "detail": "One UTC instant per clock value, or the reason there is none, by the convention measured for that supplier and era. It refuses to run without the measured conventions."
+  },
+  {
+   "id": "X-ML-CLOCKZONE",
+   "kind": "script",
+   "label": "clockzone.py",
+   "detail": "Compares every station with itself in the weeks either side of each summer-time change, weekdays only, and names the convention each supplier and era follows."
+  },
+  {
+   "id": "D-ML-CLOCKCONV",
+   "kind": "held",
+   "label": "Measured clock conventions",
+   "detail": "data/derived/clock_convention.json: a verdict per era and per supplier, the jump measured at the changes, and how many visits carry a filled-in default."
+  },
+  {
+   "id": "A-ML-WORKHOURS",
+   "kind": "assumption",
+   "label": "Fieldwork keeps local\\nworking hours",
+   "detail": "The test reads a jump at a summer-time change as the clock's convention because crews are assumed to keep their working day on local time. If they shifted it with the change, a wall clock would look like UTC. Not tested on its own; that the sun is below the horizon for only a small share of the instants clock.py places is consistent with it."
+  },
+  {
+   "id": "A-ML-UNIFORM",
+   "kind": "assumption",
+   "label": "Round-the-clock schedule:\\nhour drawn uniformly",
+   "detail": "The comparison keeps every sample's day, station and position and redraws its time of day uniformly over the whole day. The loss is measured against that schedule, not against one anyone could run."
+  },
+  {
+   "id": "A-ML-WITHINBIN",
+   "kind": "assumption",
+   "label": "A cycle is flat\\ninside one sun bin",
+   "detail": "The noise is taken from samples whose neighbours share their sun bin, on the premise that no diurnal variance enters there. A sun-shaped cycle still varies inside a bin - the bins are several degrees wide and the highest is open-ended - so part of a real cycle can enter. Stipulated, not tested."
+  },
+  {
+   "id": "A-ML-FIVEPCT",
+   "kind": "assumption",
+   "label": "What counts as\\n'too often'",
+   "detail": "The observed spread counts as no sign of a cycle when the null share is at or above the complement of the bound's level, {calc:(1 - det_level) * 100|.0f}% - the usual significance convention, not derived here. The null share is counted over {fig:det_draws} draws, so it moves in steps of one draw."
+  },
+  {
+   "id": "X-ML-SIMRULE",
+   "kind": "script",
+   "label": "constructions.py:\\nthe simulation rule",
+   "detail": "Refuses a number built on simulation on any page that is not a method page, and claims.py refuses a claim resting on one there. The rule is enforced for numbers, not for prose."
+  },
+  {
+   "id": "E-ML-FUJII",
+   "kind": "external",
+   "label": "Fujii and co-authors,\\nFrontiers in Marine Science",
+   "detail": "A review of observing-system evaluation at ocean forecasting centres. It describes the OSSE framework - synthetic observations drawn from a simulated 'true' ocean - and says OSSEs are widely used to evaluate future observing systems and network designs. It speaks of design and planning; it does not frame OSSEs as a test of cost.",
+   "source": "FUJII-2019",
+   "said": "OSSEs are widely used for the evaluation of future observing"
+  },
+  {
+   "id": "E-ML-ZENG",
+   "kind": "external",
+   "label": "Zeng and co-authors, BAMS:\\nthe bibliographic record",
+   "detail": "The second paper the page links. Its authors are Zeng, Atlas and others - not Hoffman and Atlas, as the page names them. Only its bibliographic record is pinned.",
+   "source": "ZENG-2020-BIB",
+   "said": "Use of Observing System Simulation Experiments in the United States"
+  },
+  {
+   "id": "U-ML-ZENG-TEXT",
+   "kind": "untraced",
+   "label": "Trail ends: the paper's\\ntext could not be read",
+   "detail": "journals.ametsoc.org refused the article page and its PDF on 2026-09-11, and no other open copy was found (Semantic Scholar lists only the publisher's link). What the page says of it - that agencies use OSSEs to decide whether a proposed system earns its cost before it is built - is not checked against its text."
+  },
+  {
+   "id": "E-ML-ICHE9",
+   "kind": "external",
+   "label": "ICH guideline on\\nstatistics in clinical trials",
+   "detail": "Requires a trial to be sized in advance, stating the chance of a false positive and of a missed effect - a power calculation - in the protocol.",
+   "source": "ICH-E9",
+   "said": "The number of subjects in a clinical trial should always be large enough to provide a reliable"
+  },
+  {
+   "id": "U-ML-POWER",
+   "kind": "untraced",
+   "label": "Trail ends: 'uncontroversial\\nwherever' is not sourced",
+   "detail": "The page generalises from practice. One field where sizing by power is required is pinned: clinical trials. No survey of practice across fields was looked for or found, 2026-09-11. 'Uncontroversial' is the page's own characterisation."
+  },
+  {
+   "id": "E-ML-TA-K4",
+   "kind": "external",
+   "label": "Technical instruction:\\nthe oxygen chapter",
+   "detail": "Among the data to report with oxygen: station, date, time in UTC, depth.",
+   "source": "TA-NOVA-1998-K4",
+   "said": "Station, dato, tidspunkt i UTC, dybde for midten af vandhenter"
+  },
+  {
+   "id": "E-ML-TA-K5",
+   "kind": "external",
+   "label": "Technical instruction:\\nthe field-sampling chapter",
+   "detail": "The station log records date and clock time in UTC ('dato, klokkeslet i UTC').",
+   "source": "TA-NOVA-1998-K5",
+   "said": "dato, klokkeslet i UTC, vindretning"
+  },
+  {
+   "id": "E-ML-TA-K6",
+   "kind": "external",
+   "label": "Technical instruction:\\nthe nutrients chapter",
+   "detail": "Station data to report include 'Prøvetagningsdato og tidspunkt i UTC' - sampling date and time in UTC. This is the phrase DATA_SOURCES.md and PLAN.md quote; both attribute it to the field-sampling chapter, which says the same in other words. The same phrase is also in the chlorophyll chapter, not pinned.",
+   "source": "TA-NOVA-1998-K6",
+   "said": "og tidspunkt i UTC"
+  },
+  {
+   "id": "U-ML-TA-SCOPE",
+   "kind": "untraced",
+   "label": "Trail ends: which edition\\ngoverns which rows",
+   "detail": "The chapters pinned are one edition of the instruction, issued for the NOVA programme. Rows from before it cannot have followed it, and no text was found that says what ODA's Startklok field must hold, as opposed to what a crew notes and reports. Searched every chapter of that edition that the server holds on 2026-09-11; ODA documents nothing about the field's time zone."
+  },
+  {
+   "id": "H-ML-OPEN-WINDOW",
+   "kind": "history",
+   "label": "OPEN_PROBLEMS.md\\nas committed",
+   "detail": "Gives the share of samples taken in working hours and the count of night and twilight samples, and says the pre-dawn minimum is essentially never visited.",
+   "commit": "0b7d4d1",
+   "file": "docs/OPEN_PROBLEMS.md",
+   "said": "The pre-dawn minimum — the value an oxygen threshold is actually *about* — is essentially"
+  },
+  {
+   "id": "H-ML-EB-WHY",
+   "kind": "history",
+   "label": "detectable.py:\\nits first version",
+   "detail": "Its docstring says cycles.py 'asserted that this is why the pre-dawn minimum is invisible' and calls that a plausible story with nothing behind it.",
+   "commit": "eb2d0a2",
+   "file": "scripts/detectable.py",
+   "said": "asserted that this is why the pre-dawn minimum is invisible"
+  },
+  {
+   "id": "H-ML-EB-BOUND",
+   "kind": "history",
+   "label": "METHOD_LAB.md\\nas first published",
+   "detail": "Gave the bound as a range: the script's coarse grid gave the upper end, and interpolation the lower.",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "The coarse grid in the script reports"
+  },
+  {
+   "id": "H-ML-EB-ONEDRAW",
+   "kind": "history",
+   "label": "One noise draw\\nper amplitude",
+   "detail": "Each amplitude was recovered once, with a fixed seed. The script has no interpolation step, so the lower end was worked out outside it.",
+   "commit": "eb2d0a2",
+   "file": "scripts/detectable.py",
+   "said": "got, _ = recover(schedule, amp, random.Random("
+  },
+  {
+   "id": "H-ML-EB-TYPEDSPREAD",
+   "kind": "history",
+   "label": "The observed spread,\\ntyped in",
+   "detail": "The real spread the recoveries were compared with was a constant written into the script from a cycles.py run, with that run's bins.",
+   "commit": "eb2d0a2",
+   "file": "scripts/detectable.py",
+   "said": "\"observed_spread_note\": \"max minus min across sun bins carrying \""
+  },
+  {
+   "id": "H-ML-EB-CELLS",
+   "kind": "history",
+   "label": "Fixed cells, not\\nthe moving window",
+   "detail": "Samples were grouped into fixed station-and-period cells, where cycles.py uses a moving window around each sample.",
+   "commit": "eb2d0a2",
+   "file": "scripts/detectable.py",
+   "said": "vals.append(((st, day.toordinal() // WINDOW), v))"
+  },
+  {
+   "id": "H-ML-EB-UTC",
+   "kind": "history",
+   "label": "The clock read as UTC",
+   "detail": "The sample's date and raw clock value were combined and passed straight to the solar-elevation function, which takes UTC: no offset removed, and filled-in defaults included.",
+   "commit": "eb2d0a2",
+   "file": "scripts/detectable.py",
+   "said": "binof[(cell, id(v))] = sun_bin(solar_elevation(lat, lon, when))"
+  },
+  {
+   "id": "H-ML-EB-SINGLEBIN",
+   "kind": "history",
+   "label": "The single-bin count\\nas first published",
+   "detail": "Reported almost every station-window cell as holding samples from one sun-elevation bin.",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "contain samples from only"
+  },
+  {
+   "id": "U-ML-SINGLEBIN-CAUSE",
+   "kind": "untraced",
+   "label": "Trail ends: what drove\\nthe early count",
+   "detail": "The first count and the current one differ in unit (cells against samples), in grouping (fixed cells against a moving window), in the clock (read as UTC with defaults included, against observed instants only) and in the samples kept. Which of these made nearly every cell single-bin was not separated: no run changes one of them at a time. Searched the history and the scripts on 2026-09-11."
+  },
+  {
+   "id": "H-ML-EB-PAGE",
+   "kind": "history",
+   "label": "METHOD_LAB.md\\nas first published",
+   "detail": "The only committed version of the page.",
+   "commit": "eb2d0a2",
+   "file": "docs/METHOD_LAB.md",
+   "said": "# The method lab"
+  },
+  {
+   "id": "A-ML-LEVEL",
+   "kind": "assumption",
+   "label": "What counts as\\nruled out",
+   "detail": "A size counts as ruled out when its recovered spread reaches the observed one in at least {calc:det_level * 100|.0f}% of the draws - a convention set in scripts/detectable.py, not derived."
+  },
+  {
+   "id": "A-ML-BLANDING",
+   "kind": "assumption",
+   "label": "A mixed sample\\nis one depth",
+   "detail": "cycles.py keeps ODA's Blandingsprøve rows as point samples, reading them as water from several samplers at one depth, mixed - the practice the technical instruction's field-sampling chapter describes for nutrient, chlorophyll and primary-production subsamples. The word itself is in none of the pinned chapters and the passage is not about oxygen, so the reading is an inference. Such rows are a small minority of the surface oxygen samples; the count is not stored. If a mixed sample pools depths, those rows are not point samples."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-ML-SCOPE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "This page holds experiments on this project's methods: what the monitoring archive could have detected, what an estimator recovers when the truth is stipulated in advance, and where a chain of reasoning feeds on itself. Its one statement about the water is a bound, read from the real archive through a simulation and holding only under that simulation's assumptions. It is kept apart from the pages that argue about water because a reader who cannot tell which claims rest on measurement and which on simulation is entitled to distrust both.",
+   "because": "The sections of the page are those three things, and the bound in section one is its only result about the water, stated with its conditions. Keeping the page apart is an argument, not a finding: mixing the two kinds of evidence on one page hides which is which.",
+   "rests_on": [
+    "C-DIURNAL-BOUND",
+    "C-ML-LICENSE"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "what the page is",
+    "reasoning": "Read against the page's sections.",
+    "confidence": "High.",
+    "would_change": "A statement about the water on this page other than the bound."
+   },
+   "replaces": [
+    "C-ML-OLD-NOTFINDING",
+    "C-ML-OLD-EVERYPAGE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "This page holds experiments on this project's methods: what the monitoring archive could have detected, what an estimator recovers when the truth is stipulated in advance, and where a chain of reasoning feeds on itself. Its one statement about the water is a bound, read from the real archive through a simulation and holding only under that simulation's assumptions. It is kept apart from the pages that argue about water because a reader who cannot tell which claims rest on measurement and which on simulation is entitled to distrust both.",
+     "texts": "01e35e01c584ed06",
+     "rests on C-DIURNAL-BOUND": "68ed862a6f5e5530",
+     "rests on C-ML-LICENSE": "4c8378bb80c48282"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OSSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "Building a known world, sampling it the way the real instrument samples and checking whether the analysis recovers what was put in is an established method - the observing system simulation experiment - and the experiment below is one in miniature.",
+   "because": "The experiment has an OSSE's parts: a stipulated truth (the imposed cycle), synthetic observations drawn from it on the real schedule with measured noise, and the real analysis scored against the known truth. That the method is established and in use is Fujii and co-authors' statement.",
+   "rests_on": [
+    "C-ML-OSSE-THEIRS",
+    "S-DETECT",
+    "X-DETECT"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "the method's name, and that the experiment is one",
+    "reasoning": "The parts are read against detectable.py; the name and its use against the pinned review.",
+    "confidence": "High.",
+    "would_change": "A definition of an OSSE the experiment does not meet."
+   },
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "Building a known world, sampling it the way the real instrument samples, and checking whether the analysis recovers what was put in, is an established method. In meteorology and oceanography it is an **Observing System Simulation Experiment**: a *nature run* stands in for the world, synthetic observations are drawn from it with realistic error, and the analysis is scored against a truth that is known because it was constructed. The experiment below is one in miniature.",
+     "texts": "bbd5a0a06dbcfe14",
+     "rests on C-ML-OSSE-THEIRS": "0f7d3a08554d0120",
+     "node S-DETECT": "0b76ae62cc582070",
+     "node X-DETECT": "161ccb3afdcee374"
+    }
+   }
+  },
+  {
+   "id": "C-ML-POWER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The same logic under another name is prospective power analysis - sizing an experiment by what it could detect, before it is run - which clinical-trial guidelines require.",
+   "because": "Both ask what an instrument or a design could detect before any result is read. The pinned ICH guideline asks that a trial's size be set in advance from the chances of a false positive and of a missed effect.",
+   "rests_on": [
+    "E-ML-ICHE9"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "a likeness of method, and one field's rule",
+    "reasoning": "The likeness is argued; the rule is read in the pinned guideline.",
+    "confidence": "High.",
+    "would_change": "A reading of the guideline that does not ask for it."
+   },
+   "replaces": [
+    "C-ML-OLD-POWER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "The same logic under another name is prospective power analysis - sizing an experiment by what it could detect, before it is run - which clinical-trial guidelines require ([the ICH guideline on statistical principles for clinical trials](https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e-9-statistical-principles-clinical-trials-step-5_en.pdf)).",
+     "texts": "f8b43f22ff38f575",
+     "node E-ML-ICHE9": "05ccfc961eca53ca",
+     "pinned ICH-E9": "53238c1462327ac7"
+    }
+   }
+  },
+  {
+   "id": "C-ML-LICENSE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "A simulation on its own licenses claims about the instrument - what this schedule and this estimator could see of a stipulated signal - not about the world. A claim about the world needs a measurement: the bound in section one is the real archive's spread read through the simulation, and it holds only under the simulation's assumptions. The may and may-not table lists instances, and the pages that gather measurements are where the right-hand column is taken up. The build refuses a number built on simulation on any page but a method page; prose is not checked.",
+   "because": "In a synthetic run the signal is put in by us, so what comes out measures the schedule and the estimator, given that signal. Whether the sea carries such a signal is not an input the run can test. The bound is the one place the page reaches the world, and it does so through a measurement - the real spread - under the run's assumptions.",
+   "rests_on": [
+    "S-DETECT",
+    "X-ML-SIMRULE",
+    "C-DIURNAL-BOUND"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "a rule the project sets itself, and where it is enforced",
+    "reasoning": "It follows from what a synthetic run contains; the enforcement is in constructions.py and claims.py, for numbers only.",
+    "confidence": "The rule: high. Its enforcement in prose: none.",
+    "would_change": "A prose check, which does not exist."
+   },
+   "replaces": [
+    "C-ML-OLD-LICENSE",
+    "C-ML-OLD-TABLE-LOSS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "So the objection worth taking seriously is not *this method has no precedent*. It is the narrower one: **a simulation on its own licenses claims about the instrument, not about the world.** A claim about the world needs a measurement: the bound below is the real archive's spread read through the simulation, and it holds only under the simulation's assumptions. The table at the end lists instances. The build refuses a number built on simulation on any page but a method page; prose is not checked.",
+     "texts": "4c8378bb80c48282",
+     "node S-DETECT": "0b76ae62cc582070",
+     "node X-ML-SIMRULE": "179dcd5f1c3daeec",
+     "rests on C-DIURNAL-BOUND": "68ed862a6f5e5530"
+    }
+   }
+  },
+  {
+   "id": "C-ML-METHOD",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "detectable.py takes the {fig:det_n} surface-oxygen samples the real estimate uses, read through cycles.read_samples() with the same filters and the same clock; imposes a cycle proportional to the sine of the sun's elevation at each sample's instant and place; adds noise measured from the archive; and runs the estimator itself, cycles.deviations(), with its window and sun bins and one rule, applied to both sides, for which bins count. Each size is run on {fig:det_draws} noise draws, the round-the-clock comparison on fewer. It claims nothing about how the sea behaves.",
+   "because": "Read against scripts/detectable.py: it imports read_samples, deviations and sun_bin from cycles.py; recover() builds each synthetic value from the sine of the sun's elevation, a constant and Gaussian noise of the measured size; spread() applies one minimum bin size to real and synthetic runs alike. The minimum bin size is detectable.py's own; cycles.py has none.",
+   "rests_on": [
+    "X-DETECT",
+    "X-CYCLES",
+    "X-ML-CLOCK",
+    "A-SHAPE",
+    "A-NOISE",
+    "A-ML-BLANDING"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "what the script does",
+    "reasoning": "Read against the code.",
+    "confidence": "High.",
+    "would_change": "A change to detectable.py."
+   },
+   "replaces": [
+    "C-ML-OLD-SCHEDULE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (added A-ML-BLANDING to what it rests on after checking the pinned field-sampling chapter: the sample-type filter it names keeps mixed samples on an inference; the claim's wording is unchanged. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:det_n}": "62,069",
+     "claim {fig:det_draws}": "40",
+     "A-NOISE.label {fig:det_noise}": "0.8427",
+     "said on METHOD_LAB.md": "`scripts/detectable.py` takes the **62,069 surface-oxygen samples** the real estimate uses - read through `cycles.read_samples()`, so with the same filters and the same clock - imposes a cycle proportional to the sine of the sun's elevation at each sample's instant and place, adds noise measured from the archive, and runs the estimator itself: `cycles.deviations()`, with its window and sun bins, and one rule, applied to both sides, for which bins count. Each size is run on 40 noise draws, the round-the-clock comparison on fewer. It claims nothing about how the sea behaves. It asks only: *if it behaved this way, at this size, would this schedule have found out?*",
+     "texts": "e8d0940d0c1d78bc",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node X-CYCLES": "bd95d60d0d6bcb33",
+     "node X-ML-CLOCK": "81b7c21ff61a74c0",
+     "node A-SHAPE": "41d4ba76e1671287",
+     "node A-NOISE": "3f3e8b813bc6e44c",
+     "node A-ML-BLANDING": "6c50ea3a63eb0617"
+    }
+   }
+  },
+  {
+   "id": "C-ML-LEFT-OUT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "{fig:det_clock_default} samples whose clock is a filled-in default and {fig:det_clock_ambiguous} from suppliers whose clock convention is mixed are left out: neither can be placed against the sun.",
+   "because": "cycles.read_samples() places only samples clock.py classes as observed, and counts the rest by class; detectable.py records those counts. A default is not a time, and a mixed convention has no single conversion.",
+   "rests_on": [
+    "X-ML-CLOCK",
+    "X-CYCLES",
+    "C-ML-CLOCK-KINDS"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "samples by clock class",
+    "reasoning": "Read against read_samples() and the counts in detectable.json.",
+    "confidence": "High.",
+    "would_change": "A change to the conventions clockzone.py measures."
+   },
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:det_clock_default}": "18,717",
+     "claim {fig:det_clock_ambiguous}": "10,198",
+     "said on METHOD_LAB.md": "Left out: 18,717 samples whose clock is a filled-in default and 10,198 from suppliers whose clock convention is mixed. Neither can be placed against the sun.",
+     "texts": "c3399f368f2c2098",
+     "node X-ML-CLOCK": "81b7c21ff61a74c0",
+     "node X-CYCLES": "bd95d60d0d6bcb33",
+     "rests on C-ML-CLOCK-KINDS": "1f82121cf21cf2af"
+    }
+   }
+  },
+  {
+   "id": "C-ML-TABLE-READ",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The table gives medians over the draws; its middle range runs from about the fifth to the ninety-fifth percentile of the draws; a loss is shown only where the median recovery clears the ninety-fifth percentile of what no cycle produces.",
+   "because": "detectable.py stores the median of the draws and the values at those ranks; methodlab.py shows a loss only where the median exceeds the zero-size run's upper value. With few draws the percentiles are the nearest ranks, hence 'about'.",
+   "rests_on": [
+    "X-DETECT"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "how the table is built",
+    "reasoning": "Read against detectable.py and methodlab.py.",
+    "confidence": "High.",
+    "would_change": "A change to either script."
+   },
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "The medians are shown; *middle of the draws* runs from about the fifth to the ninety-fifth percentile. A loss is given only where the median recovery clears the ninety-fifth percentile of what no cycle produces.",
+     "texts": "0448f3426048c542",
+     "node X-DETECT": "161ccb3afdcee374"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OSSE-THEIRS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "METHOD_LAB.md",
+   "claim": "Observing system simulation experiments - synthetic observations drawn from a simulated 'true' ocean, with realistic error, given to the analysis - are widely used to evaluate future observing systems and network designs.",
+   "because": "Their grounds: a review of observing-system evaluation across ocean forecasting centres, which cites the OSSE studies it summarises. The passage is pinned.",
+   "rests_on": [
+    "E-ML-FUJII"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "a statement in a published review",
+    "reasoning": "Read in the pinned PDF: the review defines the OSSE framework and says OSSEs are widely used for the evaluation of future observing systems and network designs.",
+    "confidence": "That the review says it: certain. That it is so: as good as the review.",
+    "would_change": "A different reading of the passage."
+   },
+   "holder": "Fujii and co-authors, Frontiers in Marine Science",
+   "replaces": [
+    "C-ML-OLD-OSSE-COST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "OSSEs are widely used to evaluate future observing systems and network designs ([Fujii et al., *Frontiers in Marine Science*, 2019](https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2019.00417/full)).",
+     "texts": "0f7d3a08554d0120",
+     "node E-ML-FUJII": "ee2c59c682501401",
+     "pinned FUJII-2019": "4da529c601b47e38"
+    }
+   }
+  },
+  {
+   "id": "C-ML-SPREAD-NOT-EVIDENCE",
+   "kind": "simulated",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The spread the archive shows across sun bins, {fig:det_obs} mg/l, is not evidence of a cycle: with no cycle imposed, {calc:det_null * 100|.0f}% of noise draws produce one at least as large.",
+   "because": "The zero-amplitude draws are the null, run through the same estimator on the same samples. A spread that pure noise reaches that often cannot be told from noise. Where 'that often' begins is a convention, not derived.",
+   "rests_on": [
+    "S-DETECT",
+    "X-DETECT",
+    "D-KEMI",
+    "A-NOISE",
+    "A-ML-FIVEPCT"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "a spread against its null",
+    "reasoning": "The null share is read from detectable.json and compared with the page's threshold.",
+    "confidence": "That the spread is not evidence: high. The null share itself is coarse, counted over few draws.",
+    "would_change": "More draws, or noise that is far from Gaussian."
+   },
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:det_obs}": "0.0581",
+     "claim {calc:det_null * 100|.0f}": "8",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "A-NOISE.label {fig:det_noise}": "0.8427",
+     "A-ML-FIVEPCT.detail {calc:(1 - det_level) * 100|.0f}": "5",
+     "A-ML-FIVEPCT.detail {fig:det_draws}": "40",
+     "said on METHOD_LAB.md": "The real archive shows a spread of 0.0581 mg/l across the sun bins. With no cycle imposed at all, 8% of draws produce one at least as large, which is too often for the observed spread to count as a sign of one.",
+     "texts": "03a4a0a27bc084b4",
+     "node S-DETECT": "0b76ae62cc582070",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node A-NOISE": "3f3e8b813bc6e44c",
+     "node A-ML-FIVEPCT": "68cd239f327bc604"
+    }
+   }
+  },
+  {
+   "id": "C-ML-BOUND-STRONGER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "A bound is a stronger result than a null: a null cannot separate 'the effect is absent' from 'the instrument could not have seen it', and a bound can.",
+   "because": "A null reports that nothing was found, and absence and blindness both predict that. A recovery experiment supplies what the instrument can see, which turns the null into a limit on how large the effect could be and still go unseen. The limit is only as good as what the recovery assumes: the signal's shape and the noise.",
+   "rests_on": [],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "a point of reasoning",
+    "reasoning": "The argument is given in full.",
+    "confidence": "As strong as the argument.",
+    "would_change": "A case where a bound and a null carry the same information."
+   },
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "A bound is a stronger object than a null: a null cannot separate *the effect is absent* from *the instrument could not have seen it*, and a bound can.",
+     "texts": "6686ba54d6594364"
+    }
+   }
+  },
+  {
+   "id": "C-ML-NOISE-MEASURED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "Noise is measured from the archive, at {fig:det_noise} mg/l, from the {fig:det_noise_n} samples whose window neighbours all share their sun bin, so the contrast between bins cannot enter it; its Gaussian form is stipulated.",
+   "because": "noise_where_no_signal() in detectable.py takes each such sample's deviation from its neighbours' mean, corrects for the neighbours' own noise, and uses the standard deviation. The contrast between bins - what the estimator tests - cannot enter those samples. Variation of a cycle inside one bin can; that is the premise stated beside it.",
+   "rests_on": [
+    "X-DETECT",
+    "D-KEMI",
+    "A-NOISE",
+    "A-ML-WITHINBIN"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "the size of the noise",
+    "reasoning": "Read against noise_where_no_signal() and the values in detectable.json.",
+    "confidence": "The size: measured. The Gaussian form and the flat-within-bin premise: stipulated.",
+    "would_change": "A test of the residuals' distribution, or bins narrow enough that nothing varies inside them."
+   },
+   "replaces": [
+    "C-ML-OLD-NOISE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:det_noise}": "0.8427",
+     "claim {fig:det_noise_n}": "11,244",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "A-NOISE.label {fig:det_noise}": "0.8427",
+     "said on METHOD_LAB.md": "Noise is measured from the archive, at **0.8427 mg/l**, from 11,244 samples whose window neighbours all share their sun bin, so the contrast between bins cannot enter it; its Gaussian form is stipulated.",
+     "texts": "c497e0d9fdd336c8",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node A-NOISE": "3f3e8b813bc6e44c",
+     "node A-ML-WITHINBIN": "a0d5d52a766c921d"
+    }
+   }
+  },
+  {
+   "id": "C-ML-NEIGHBOURS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "Of the {fig:det_n} samples, {calc@K-SUBSET-SHARE:(det_n - det_nb) / det_n * 100|.0f}% have no other sample from their station within the window and add nothing to the estimate; of the {fig:det_nb} that do, {fig:det_single} have neighbours only in their own sun bin, and so add no contrast between bins. Whatever this estimator can say about the daily cycle rests on the rest.",
+   "because": "cycles.deviations() skips a sample with no neighbour in its window, so those samples contribute nothing. A sample whose neighbours all share its sun bin contributes a deviation within its own bin; with the cycle flat inside a bin, the diurnal part cancels and only noise is left. Both counts come from detectable.py, with the estimator's window.",
+   "rests_on": [
+    "X-CYCLES",
+    "X-DETECT",
+    "D-KEMI",
+    "A-ML-WITHINBIN"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "samples, by what they can contribute",
+    "reasoning": "Read against deviations() in scripts/cycles.py and noise_where_no_signal() in scripts/detectable.py.",
+    "confidence": "High.",
+    "would_change": "A change to the window or to the sun bins."
+   },
+   "replaces": [
+    "C-ML-OLD-SINGLEBIN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:det_n}": "62,069",
+     "claim {calc@K-SUBSET-SHARE:(det_n - det_nb) / det_n * 100|.0f}": "64",
+     "claim {fig:det_nb}": "22,571",
+     "claim {fig:det_single}": "11,244",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "said on METHOD_LAB.md": "The estimator sees a diurnal signal only through contrast *within* a station's own ±10-day window. Of the 62,069 samples, **64% have no other sample from their station inside that window** and contribute nothing. Of the 22,571 that do, **11,244 - 50% - have neighbours only in their own sun-elevation bin**, and so add no contrast between bins. Whatever this estimator can say about the daily cycle rests on the rest.",
+     "texts": "ebb242c89d8cbb28",
+     "node X-CYCLES": "bd95d60d0d6bcb33",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node A-ML-WITHINBIN": "a0d5d52a766c921d"
+    }
+   }
+  },
+  {
+   "id": "C-ML-CLOCK-KINDS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "Startklok is not UTC wherever that can be tested, and it is not one kind of thing: until the late nineties it holds Danish wall-clock times with the summer or winter offset added, mixed with filled-in defaults that read noon and three in the morning local once the offset is taken off; from the early two-thousands it holds wall-clock times; and some suppliers' conventions are mixed.",
+   "because": "clockzone.py compares each station with itself in the weeks either side of each summer-time change. A wall clock does not jump; a UTC clock jumps an hour one way, and a clock with the offset added jumps the other way. The old era jumps close to an hour in the offset-added direction and the new era hardly at all; no era jumps the UTC way. With the offset taken off, the old defaults read exactly noon and three in the morning. Before summer time was reintroduced no convention can be seen, so 'not UTC' is not established for the oldest rows.",
+   "rests_on": [
+    "X-ML-CLOCKZONE",
+    "D-ML-CLOCKCONV",
+    "D-KEMI",
+    "A-ML-WORKHOURS"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "the convention of each clock value, per supplier and era",
+    "reasoning": "Read against clockzone.py and data/derived/clock_convention.json.",
+    "confidence": "High from the first summer time on; none before.",
+    "would_change": "Evidence that crews moved their working day with the clock change."
+   },
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "said on METHOD_LAB.md": "`Startklok` is not UTC wherever that can be tested, and it is not one kind of thing. `scripts/clockzone.py` compares every station with itself in the weeks either side of each summer-time change: a wall clock does not move, a UTC clock jumps an hour one way, a clock with the offset added jumps the other. Until the late nineties the archive's times are Danish wall-clock times with the offset *added*, mixed with filled-in defaults that read noon and three in the morning local once the offset is taken off; from the early two-thousands they are wall-clock times; and some suppliers' conventions are mixed.",
+     "texts": "1f82121cf21cf2af",
+     "node X-ML-CLOCKZONE": "573422fbd53d8022",
+     "node D-ML-CLOCKCONV": "3feebe7299751b53",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node A-ML-WORKHOURS": "0c308a86d3a40243"
+    }
+   }
+  },
+  {
+   "id": "C-ML-TECH-INSTRUCTION",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "METHOD_LAB.md",
+   "claim": "The technical instruction for Danish marine monitoring asks for sampling times in UTC.",
+   "because": "Their text: the oxygen chapter lists station, date and time in UTC among the data to report; the field-sampling chapter has the station log record date and clock time in UTC; the nutrients chapter lists sampling date and time in UTC among the station data. The passages found give no reason for it.",
+   "rests_on": [
+    "E-ML-TA-K4",
+    "E-ML-TA-K5",
+    "E-ML-TA-K6",
+    "U-ML-TA-SCOPE"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "what the instruction asks",
+    "reasoning": "Found in three pinned chapters of the instruction.",
+    "confidence": "That it asks: certain. Which rows it governed: not established.",
+    "would_change": "An edition that asks otherwise, or ODA documentation of the field."
+   },
+   "holder": "Kaas & Markager, Teknisk anvisning for marin overvågning (NOVA)",
+   "note": "The phrase DATA_SOURCES.md and PLAN.md quote, 'Prøvetagningsdato og tidspunkt i UTC', is in the nutrients and chlorophyll chapters, not in the field-sampling chapter they cite.",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "The technical instruction for Danish marine monitoring asks for sampling times in UTC.",
+     "texts": "6ddee0d593ad3c16",
+     "node E-ML-TA-K4": "5e5f1f7f3e6c2b07",
+     "pinned TA-NOVA-1998-K4": "28d3351a3d1b53e2",
+     "node E-ML-TA-K5": "edbc5bb47139804a",
+     "pinned TA-NOVA-1998-K5": "bf0440cec12b6dc5",
+     "node E-ML-TA-K6": "77b8ea1428a41c6a",
+     "pinned TA-NOVA-1998-K6": "f05a49f8a8c7161f",
+     "node U-ML-TA-SCOPE": "11075e70e368891d"
+    }
+   }
+  },
+  {
+   "id": "C-ML-CLOCKPY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "Every analysis that places a water-chemistry sample in time takes the instant from clock.py, which returns one UTC instant or says why there is none; the raw column is read elsewhere only for daylight.py's fixed readings, kept as controls, and a clock-hour count no page uses.",
+   "because": "A search of scripts/ for Startklok, parse_klok and clock calls on 2026-09-11: cycles.py, depth_clock.py, clockzone.py and daylight.py's measures go through clock.py, and detectable.py takes its samples from cycles.read_samples(). daylight.py still parses the raw value for its fixed readings and its clock-hour count. enums.py, unlock.py and the page generators count non-blank values, which is not a reading of time. Nothing enforces this: a new script could read the column directly and no check would stop it.",
+   "rests_on": [
+    "X-ML-CLOCK",
+    "X-CYCLES",
+    "X-DETECT"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "scripts that turn Startklok into an instant",
+    "reasoning": "A search of the code, not a check the build runs.",
+    "confidence": "True today; nothing keeps it true.",
+    "would_change": "A new script that reads the column directly."
+   },
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on METHOD_LAB.md": "Every analysis that places a water-chemistry sample in time takes the instant from `scripts/clock.py`, which returns one UTC instant or says why there is none; the raw column is read elsewhere only for fixed readings kept as controls and a clock-hour count no page uses.",
+     "texts": "31b75331cc563177",
+     "node X-ML-CLOCK": "81b7c21ff61a74c0",
+     "node X-CYCLES": "bd95d60d0d6bcb33",
+     "node X-DETECT": "161ccb3afdcee374"
+    }
+   }
+  },
+  {
+   "id": "C-ML-ASSUMPTION-FREE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "METHOD_LAB.md",
+   "claim": "The same samples, stations and seasons are compared with themselves, only the hour redrawn, so no model of the sea's mean state or seasons enters the comparison. What does enter is the stipulated sun-shaped cycle and Gaussian noise of the measured size, against a round-the-clock schedule with the hour drawn uniformly; a cycle peaking at another hour would lose a different share.",
+   "because": "In detectable.py every synthetic value is a constant plus the imposed cycle plus noise, and the estimator removes the constant; both runs use the same samples, days and positions, and only the sun elevations differ. So nothing about the sea's level or seasons enters. The imposed cycle is itself a model of the daily cycle - it follows the sun's elevation - and the loss is a property of that shape.",
+   "rests_on": [
+    "X-DETECT",
+    "A-SHAPE",
+    "A-NOISE",
+    "A-ML-UNIFORM",
+    "C-WORKDAY"
+   ],
+   "basis": "assessed",
+   "assessment": {
+    "counts_as": "what enters the comparison",
+    "reasoning": "Read against recover() and elevations() in scripts/detectable.py.",
+    "confidence": "High, for what enters.",
+    "would_change": "A run with another cycle shape, which would show how much the loss depends on it."
+   },
+   "replaces": [
+    "C-ML-OLD-WORKDAY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-a's research; the engine checked the pinned and history phrases and that no number is typed; spot-checked the Zeng authorship in the pinned record and the imposed amplitude in detectable.py recover(). 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "A-NOISE.label {fig:det_noise}": "0.8427",
+     "said on METHOD_LAB.md": "The same samples, stations and seasons are compared with themselves, only the hour redrawn, so no model of the sea's mean state or seasons enters. What does enter is the stipulated sun-shaped cycle and Gaussian noise of the measured size, against a round-the-clock schedule with the hour drawn uniformly; a cycle peaking at another hour would lose a different share.",
+     "texts": "d17427e05f5a0c24",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node A-SHAPE": "41d4ba76e1671287",
+     "node A-NOISE": "3f3e8b813bc6e44c",
+     "node A-ML-UNIFORM": "de348118ceed374d",
+     "rests on C-WORKDAY": "f545fe656a63d671"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NOTFINDING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nothing on this page is a finding about Danish water; every claim on it is about the methods.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "Nothing on this page is a",
+    "end": "methods can and cannot see",
+    "why": "False as written: the page's own bound is a statement about Danish water - an upper limit on the surface daily oxygen cycle, read from the real archive through a simulation."
+   },
+   "replaced_by": [
+    "C-ML-SCOPE"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Nothing on this page is a finding about Danish water; every claim here is about what this project's methods can and cannot see",
+     "texts": "f6b29d3f163c39b7",
+     "node H-ML-EB-PAGE": "fb4550841ce42398"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-EVERYPAGE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every other page argues about water.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "Every other page argues",
+    "end": "argues about water",
+    "why": "Not so: several pages - SOURCES.md, CLAIMS.md and DATA_SOURCES.md among them - are about the evidence, not the water."
+   },
+   "replaced_by": [
+    "C-ML-SCOPE"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Every other page argues about water",
+     "texts": "7c0261026a119eb6",
+     "node H-ML-EB-PAGE": "fb4550841ce42398"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-OSSE-COST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "OSSEs are how agencies decide whether a proposed observing system would earn its cost before it is built, per Hoffman and Atlas and Fujii and co-authors.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "OSSEs are how agencies decide whether",
+    "end": "/full)).",
+    "why": "The first paper cited is misattributed: the DOI's authors are Zeng, Atlas and co-authors, not Hoffman and Atlas, and its text could not be read. Neither source that could be read frames OSSEs as a test of cost; the review that could be read says they are widely used to evaluate future observing systems and network designs."
+   },
+   "replaced_by": [
+    "C-ML-OSSE-THEIRS"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "E-ML-ZENG",
+    "U-ML-ZENG-TEXT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "OSSEs are how agencies decide whether a proposed satellite or buoy array would earn its cost *before* it is built ([Hoffman & Atlas, *BAMS* 101(8), 2020](https://journals.ametsoc.org/view/journals/bams/101/8/bamsD190155.xml); [Fujii et al., *Frontiers in Marine Science*, 2019](https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2019.00417/full)).",
+     "texts": "faeaf047e388b731",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node E-ML-ZENG": "7facf9424d6d9764",
+     "pinned ZENG-2020-BIB": "394105dc4d5538b3",
+     "node U-ML-ZENG-TEXT": "a53eb65da76548cf"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-POWER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Prospective power analysis is uncontroversial wherever an experiment has to be sized before it is run.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "The same logic under a different name",
+    "end": "has to be sized before it is run",
+    "why": "No source was given for 'uncontroversial wherever', and none across fields was found; one field that requires it can be shown."
+   },
+   "replaced_by": [
+    "C-ML-POWER"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "U-ML-POWER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The same logic under a different name is prospective power analysis, which is uncontroversial wherever an experiment has to be sized before it is run",
+     "texts": "0d1ca52fa6fef3c4",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node U-ML-POWER": "d43ee36af849d9c8"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-LICENSE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A simulation can only license claims about the instrument, never about the world, and any crossing on another page is a bug worth reporting.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "a simulation can only",
+    "end": "worth reporting",
+    "why": "Contradicted on the same page: the bound in section one is a claim about the world, reached through a simulation together with a measurement. And nothing checks prose on other pages for the crossing; the build checks numbers only."
+   },
+   "replaced_by": [
+    "C-ML-LICENSE"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "a simulation can only license claims about the instrument, never about the world. That line is drawn explicitly below, and anywhere it is crossed on another page is a bug worth reporting",
+     "texts": "ab6c239719091645",
+     "node H-ML-EB-PAGE": "fb4550841ce42398"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-SCHEDULE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The recovery ran on the real surface-oxygen visits with their true clock times, through the estimator the real data used.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "`scripts/detectable.py` takes the",
+    "end": "have found out?",
+    "why": "The clock times were not true times: they were read as UTC with filled-in defaults included, and the script grouped samples in fixed cells of its own rather than running the estimator the real data used."
+   },
+   "replaced_by": [
+    "C-ML-METHOD"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "H-ML-EB-UTC",
+    "H-ML-EB-CELLS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`scripts/detectable.py` takes the 91,093 real surface-oxygen visits in the water-chemistry extract - their true stations, dates and clock times - imposes a diurnal cycle of stipulated amplitude keyed to the sun's elevation, and runs the same estimator OPEN_PROBLEMS.md item 17 uses on the real data. It claims nothing about how the sea behaves. It asks only: *if it behaved this way, at this amplitude, would this schedule have found out?",
+     "texts": "7ff355fcb4e37594",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node H-ML-EB-UTC": "1f3e60d57210561e",
+     "node H-ML-EB-CELLS": "f0801d3d37776f56"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-WORKDAY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The working day costs about three quarters of a daily signal, steadily across a wide range of sizes, and the comparison is very nearly assumption-free.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "| imposed amplitude | recovered on the real hours",
+    "end": "comparison of a schedule with itself.",
+    "why": "Measured with one noise draw per size, a clock read as UTC, fixed cells and a typed-in observed spread; the loss and the range of sizes changed when the comparison was rebuilt. 'No model of the sea enters' leaves out the stipulated sun-shaped cycle, on which the loss depends."
+   },
+   "replaced_by": [
+    "C-WORKDAY",
+    "C-ML-ASSUMPTION-FREE"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "H-ML-EB-ONEDRAW",
+    "H-ML-EB-UTC",
+    "H-ML-EB-CELLS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| imposed amplitude | recovered on the real hours | recovered if sampled round the clock | lost to the working day | |---:|---:|---:|---:| | 0.00 | 0.010 | 0.008 | — | | 0.02 | 0.008 | 0.008 | — | | 0.05 | 0.007 | 0.016 | — | | 0.10 | 0.008 | 0.032 | 76% | | 0.20 | 0.015 | 0.063 | 76% | | 0.50 | 0.042 | 0.156 | 73% | | 1.00 | 0.087 | 0.312 | 72% | | 2.00 | 0.179 | 0.623 | 71% | The working day costs about three quarters of a diurnal signal, and it costs it steadily across a hundredfold range of amplitudes. The same visits, the same stations, the same seasons - only the hour redrawn. That is the strongest result on this page, and it is very nearly assumption-free: no model of the sea enters the comparison of a schedule with itself.",
+     "texts": "7ad48160d11d3e3b",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node H-ML-EB-ONEDRAW": "8b9c7bc47ba34eb5",
+     "node H-ML-EB-UTC": "1f3e60d57210561e",
+     "node H-ML-EB-CELLS": "f0801d3d37776f56"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-SETTLES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The simulation settles what OPEN_PROBLEMS.md had asserted without evidence: that the working-hours window is why the pre-dawn minimum is invisible.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "It also settles something",
+    "end": "measured attenuation with a number on it",
+    "why": "The earlier statement rested on a count of how few samples fall at night or in twilight, so it was not without evidence; and what the simulation measures is the loss of a whole sun-shaped cycle's contrast, not the visibility of the pre-dawn minimum. The current result does not need this history."
+   },
+   "replaced_by": [],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "H-ML-OPEN-WINDOW",
+    "H-ML-EB-WHY"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It also settles something that had been asserted without evidence. OPEN_PROBLEMS.md said the 09:00-15:00 window is *why* the pre-dawn minimum is invisible. That was a plausible story. It is now a measured attenuation with a number on it",
+     "texts": "8ac10368d484c48e",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node H-ML-OPEN-WINDOW": "a9ff9c33339a69f6",
+     "node H-ML-EB-WHY": "23f2dbafc205f46d"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-BOUND",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The real surface daily amplitude is below a range whose lower end was interpolated between grid points.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "The bound is softer",
+    "end": "interpolating gives the lower",
+    "why": "Its justification was not recorded properly: one noise draw per size with a fixed seed, fixed cells, a clock read as UTC, an observed spread typed in from a run with other bins, and a lower end interpolated by hand outside the script."
+   },
+   "replaced_by": [
+    "C-DIURNAL-BOUND"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "H-ML-EB-BOUND",
+    "H-ML-EB-ONEDRAW",
+    "H-ML-EB-CELLS",
+    "H-ML-EB-UTC",
+    "H-ML-EB-TYPEDSPREAD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The bound is softer and should be quoted as a range. Recovery crosses the 0.0294 mg/l actually observed somewhere between an imposed 0.2 and 0.5 mg/l, so the real surface diurnal amplitude is below roughly 0.35 to 0.5 mg/l. The coarse grid in the script reports the upper end; interpolating gives the lower",
+     "texts": "b94d7059f0c89c4d",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node H-ML-EB-BOUND": "84bc03523f9f1614",
+     "node H-ML-EB-ONEDRAW": "8b9c7bc47ba34eb5",
+     "node H-ML-EB-CELLS": "f0801d3d37776f56",
+     "node H-ML-EB-UTC": "1f3e60d57210561e",
+     "node H-ML-EB-TYPEDSPREAD": "4ea2a9b195a600f8"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-NOISE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The noise is measured, not assumed, and the circularity register says why the first two attempts at it were wrong.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "Noise is measured at",
+    "end": "that number were wrong",
+    "why": "The value was measured on fixed cells with the clock read as UTC and defaults included, and it moved when the samples and the clock were corrected. The pointer to the earlier attempts is history the current result does not need."
+   },
+   "replaced_by": [
+    "C-ML-NOISE-MEASURED"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "H-ML-EB-CELLS",
+    "H-ML-EB-UTC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Noise is measured at 0.6286 mg/l, not assumed - see the circularity register below for why the first two attempts at that number were wrong",
+     "texts": "4f5323437d34ca18",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node H-ML-EB-CELLS": "f0801d3d37776f56",
+     "node H-ML-EB-UTC": "1f3e60d57210561e"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-SINGLEBIN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Almost every station-window cell holds samples from one sun bin, and that explains the working day's attenuation mechanically.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "And the reason it cannot be seen at all",
+    "end": "they are repeated",
+    "why": "Counted in fixed cells, with the clock read as UTC and filled-in defaults included, and which of these produced the count was never separated; the mechanical explanation of the attenuation rested on it. The replacement counts samples over the estimator's own window, on observed instants only, and draws no causal link."
+   },
+   "replaced_by": [
+    "C-ML-NEIGHBOURS"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "H-ML-EB-SINGLEBIN",
+    "H-ML-EB-CELLS",
+    "H-ML-EB-UTC",
+    "U-ML-SINGLEBIN-CAUSE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "And the reason it cannot be seen at all Fixing the circularity produced a diagnostic worth more than the fix. Of 81,627 station-window cells, 80,445 - 98.5% - contain samples from only one sun-elevation bin. Within a station's own ten-day window, the water is almost always sampled at the same height of sun. That is a harder limit than a narrow working day. A fixed-effects estimator sees a diurnal signal only through *within-cell* contrast, and 98.5% of the cells have none to offer. Whatever the archive can say about the daily cycle rests on the remaining 1.5%. It also explains the three-quarters attenuation above mechanically rather than by analogy: the hours are not merely narrow, they are repeated",
+     "texts": "874bf38a12488216",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node H-ML-EB-SINGLEBIN": "9def0945298ca171",
+     "node H-ML-EB-CELLS": "f0801d3d37776f56",
+     "node H-ML-EB-UTC": "1f3e60d57210561e",
+     "node U-ML-SINGLEBIN-CAUSE": "5f740f902c22d72c"
+    }
+   }
+  },
+  {
+   "id": "C-ML-OLD-TABLE-LOSS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "This schedule loses a stated share of a signal of this shape - the share typed into the table from the first comparison.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "METHOD_LAB.md",
+    "commit": "eb2d0a2",
+    "file": "docs/METHOD_LAB.md",
+    "begin": "This schedule loses",
+    "end": "of a signal of this shape.*",
+    "why": "The share came from the first comparison - one noise draw per size, the clock read as UTC - and was typed into the table. The table now takes the loss live from the rebuilt comparison."
+   },
+   "replaced_by": [
+    "C-ML-LICENSE"
+   ],
+   "rests_on": [
+    "H-ML-EB-PAGE",
+    "H-ML-EB-ONEDRAW",
+    "H-ML-EB-UTC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This schedule loses 75% of a signal of this shape.*",
+     "texts": "41e313feb14d0483",
+     "node H-ML-EB-PAGE": "fb4550841ce42398",
+     "node H-ML-EB-ONEDRAW": "8b9c7bc47ba34eb5",
+     "node H-ML-EB-UTC": "1f3e60d57210561e"
+    }
+   }
+  }
+ ]
+}

@@ -22,13 +22,12 @@ Solar position by the NOAA algorithm, written out rather than imported: this box
 has no ephemeris library and the accuracy needed here (a degree) is far inside
 what the series gives (about 0.01 degrees).
 
-TIME ZONE. ODA does not document whether Startklok is UTC or Danish wall-clock,
-and the difference is one or two hours - which is nothing at noon and everything
-at dawn. Both readings are computed and reported side by side, and the one that
-puts fieldwork in the dark is the one to disbelieve. Denmark keeps daylight
-saving, so the wall-clock reading is UTC+2 from the last Sunday in March to the
-last Sunday in October and UTC+1 otherwise; a flat +1 or +2 is not a candidate
-hypothesis, it is just a wrong clock, and both are kept only as controls.
+TIME ZONE. ODA does not document what Startklok is, and it turned out to be
+several things: filled-in defaults, wall-clock times with the offset added, and
+wall-clock times, by supplier and era. scripts/clockzone.py measures which is
+which at every summer-time change, and the measures here use the instant
+scripts/clock.py derives from that - only where it derives one. The fixed
+readings (UTC, Danish, a flat +1 or +2) are still counted, as controls.
 
 IMPOSSIBLE VALUES. Two rows of 13,289 report oxygen saturation at 74,332% and
 90,972%, and one reports 32.6 mg/l. Left in, the two moved December's dawn bin
@@ -89,6 +88,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from common import DERIVED, RAW, log
+import clock
 from cube import utm32_to_wgs84
 
 SRC = os.path.join(RAW, "oda", "kemi.csv.gz")
@@ -161,15 +161,12 @@ def sun_events(lat, lon, day):
 
 
 def danish_offset(d):
-    """UTC offset of Danish wall-clock time on this date, in hours.
-
-    EU rule: forward on the last Sunday of March, back on the last Sunday of
-    October. Written out because zoneinfo's Europe/Copenhagen needs tzdata, which
-    is not installed here, and because a wrong answer is silent."""
-    def last_sunday(year, month):
-        d0 = dt.date(year, month, 31)
-        return d0 - dt.timedelta(days=(d0.weekday() + 1) % 7)
-    return 2 if last_sunday(d.year, 3) <= d < last_sunday(d.year, 10) else 1
+    """UTC offset of Danish legal time on this date, in hours - with the historical
+    rules, which the present EU rule is not: no summer time before 1980, and until
+    1995 it ended in September. The rules live in clock.py, which every clock
+    reading now goes through."""
+    import clock
+    return clock.offset(d)
 
 
 def parse_klok(s):
@@ -211,7 +208,7 @@ def main(argv):
     tz_arg = next((a.split("=", 1)[1] for a in argv if a.startswith("--tz=")), None)
 
     pos = {}          # station -> (lon, lat), computed once
-    ZONES = ("utc", "danish", "cet", "cest")
+    ZONES = ("utc", "danish", "cet", "cest", "clock")
     counts = {tz: {b: 0 for b in ORDER} for tz in ZONES}
     by_month = {tz: {m: {b: 0 for b in ORDER} for m in range(1, 13)} for tz in ZONES}
     # n, sum - pooled (the confounded view) and per month (the honest one)
@@ -227,6 +224,7 @@ def main(argv):
     dropped = {"sat": 0, "o2": 0}
     hours_hist = {}
     rows = used = noclock = nopos = 0
+    clock_classes = {}
 
     log(f"reading {os.path.relpath(SRC)}")
     with gzip.open(SRC, "rb") as fh:
@@ -260,13 +258,22 @@ def main(argv):
             local = dt.datetime.combine(day, dt.time(k[0], k[1]))
             used += 1
             hours_hist[k[0]] = hours_hist.get(k[0], 0) + 1
-            for tz, off in (("utc", 0), ("danish", danish_offset(day)),
-                            ("cet", 1), ("cest", 2)):
-                el = solar_elevation(lat, lon, local - dt.timedelta(hours=off))
+            # the fixed readings are controls; the measures use the instant
+            # scripts/clock.py gives, and only where it gives one
+            utc, cls = clock.instant(row.get("DataLeverandørnavn"), d, row.get("Startklok"))
+            clock_classes[cls] = clock_classes.get(cls, 0) + 1
+            readings = [("utc", local),
+                        ("danish", local - dt.timedelta(hours=danish_offset(day))),
+                        ("cet", local - dt.timedelta(hours=1)),
+                        ("cest", local - dt.timedelta(hours=2))]
+            if utc is not None:
+                readings.append(("clock", utc))
+            for tz, when in readings:
+                el = solar_elevation(lat, lon, when)
                 b = bin_of(el)
                 counts[tz][b] += 1
                 by_month[tz][day.month][b] += 1
-                if tz != "danish":
+                if tz != "clock":
                     continue
                 which = {"Oxygen indhold": "o2", "Oxygenmætning": "sat"}.get(
                     row.get("Parameter"))
@@ -347,14 +354,16 @@ def main(argv):
         "rows_scanned": rows, "measurements_used": used,
         "no_clock": noclock, "no_position": nopos,
         "stations": len([p for p in pos.values() if p]),
-        "note": ("Startklok's time zone is not documented by ODA. All three "
-                 "readings are given; the one that puts routine fieldwork below "
-                 "the horizon is the one to disbelieve."),
+        "note": ("Startklok is several things by supplier and era; "
+                 "scripts/clockzone.py measures which. The measures use "
+                 "scripts/clock.py's instant, which excludes filled-in defaults "
+                 "and mixed conventions; the fixed readings are controls."),
+        "clock_classes": clock_classes,
         "elevation_bins": ORDER,
         "counts": counts,
         "by_month": by_month,
         "clock_hours": hours_hist,
-        "reading_used_for_the_measures": "danish",
+        "reading_used_for_the_measures": "clock",
         "surface_pooled": {p: {b: {"n": v[0],
                                    "mean": round(v[1] / v[0], 3) if v[0] else None}
                                for b, v in bins.items()}

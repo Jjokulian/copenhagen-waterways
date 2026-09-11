@@ -14,7 +14,7 @@
    "id": "D-KEMI",
    "kind": "held",
    "label": "ODA vandkemi\\n{fig:kemi_rows} rows, 1970-2026",
-   "detail": "Fetched 2026-09-10. Carries Startklok on nearly every row, and several of its parameters appear under more than one unit - see DATA_SOURCES.md."
+   "detail": "Fetched 2026-09-10. Carries a clock value on every genuine row, though for much of the old record the value is a filled-in default rather than a time (scripts/clockzone.py); several parameters appear under more than one unit - see DATA_SOURCES.md."
   },
   {
    "id": "D-CTD",
@@ -25,7 +25,7 @@
   {
    "id": "D-CHR",
    "kind": "held",
-   "label": "CHR livestock sites\\n{fig:manure_sites}",
+   "label": "CHR register rows\\n{fig:manure_sites}",
    "detail": "Animal units per site, joined to Marker parcels on CVR."
   },
   {
@@ -38,7 +38,7 @@
    "id": "D-ACCOUNTS",
    "kind": "held",
    "label": "Filed accounts\\n{fig:accounts_filed} businesses",
-   "detail": "From the sibling project danish-livestock. A SAMPLE: {calc:filers_none_de / herd_total_de * 100|.1f}% of the herd and {calc:ha_none / ha_total * 100|.1f}% of farmland is on businesses filing nothing."
+   "detail": "From the sibling project danish-livestock. A SAMPLE: {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}% of the herd and {calc@K-SUBSET-SHARE:ha_none / ha_total * 100|.1f}% of farmland is on businesses filing nothing."
   },
   {
    "id": "D-BEK931",
@@ -62,19 +62,19 @@
    "id": "G-PREDAWN",
    "kind": "gap",
    "label": "Pre-dawn sampling\\nNEVER TAKEN",
-   "detail": "{calc:predawn_night_n + predawn_twilight_n|,} night and twilight samples in {fig:surface_o2_n}. The value an oxygen threshold is about is essentially unobserved."
+   "detail": "{calc:predawn_night_n + predawn_twilight_n|,} night and twilight samples in {fig:surface_o2_n} whose clock is an observed time. The value an oxygen threshold is about is essentially unobserved."
   },
   {
    "id": "G-DRAIN",
    "kind": "gap",
-   "label": "Drain outfalls\\nDO NOT EXIST",
-   "detail": "No national layer. Private paper draenkort."
+   "label": "Drain outfalls\\nNO NATIONAL LAYER",
+   "detail": "Searched and recorded 2026-09-10 in data/manual/data_sources_2.json (DK-DRAENUDLOEB): no national dataset of drain outfalls or drain-pipe networks; historic draenkort are paper, held by landowners and drainage associations, and Hedeselskabet digitises them commercially. The national map of drained land (DK-DRAENKORT-AU) is a statistical model of which land is drained, not a map of outfalls."
   },
   {
    "id": "G-SPECIES",
    "kind": "gap",
    "label": "Phytoplankton counts\\nNOT HELD",
-   "detail": "OBIS eMoF. Blocks the assemblage half of K1 and K2."
+   "detail": "OBIS eMoF. Blocks the assemblage half of {ref:K1} and {ref:K2}."
   },
   {
    "id": "S-DETECT",
@@ -154,11 +154,12 @@
    "id": "C-CLOCK-EXISTS",
    "kind": "measured",
    "page": "PLAN.md",
-   "claim": "The archive carries a clock time. Startklok is present on {calc:kemi_startklok / kemi_rows * 100|.1f}% of {fig:kemi_rows} water-chemistry rows - all but {calc:kemi_rows - kemi_startklok|,}.",
+   "claim": "Every genuine water-chemistry row carries a clock value - the {calc:kemi_rows - kemi_startklok|,} of {fig:kemi_rows} rows without one are fragments of a broken note field, not samples. But a clock value is not always a time: of the surface-oxygen samples, {fig:det_clock_default} carry a filled-in default and {fig:det_clock_ambiguous} come from suppliers whose clock convention is mixed; {fig:det_n} can be placed against the sun.",
    "rests_on": [
-    "D-KEMI"
+    "D-KEMI",
+    "X-DETECT"
    ],
-   "note": "Corrects a claim this project made for weeks, that no row in the archive carried a clock time. That was true of the CTD extract and inferred from the absence of a download.",
+   "note": "Corrects two earlier versions: one said no row carried a clock time; the next read the note fragments as samples without one. Neither looked at what the values were. scripts/clockzone.py tests every supplier and era at the summer-time changes.",
    "value_from": {
     "file": "data/derived/enums.json",
     "path": "kemi.rows",
@@ -167,11 +168,13 @@
    "basis": "computed",
    "confirmed": {
     "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "by": "Claude (re-read against the new clock and Monte Carlo results, 2026-09-10; not yet read by the project owner)",
     "saw": {
-     "claim {calc:kemi_startklok / kemi_rows * 100|.1f}": "100.0",
-     "claim {fig:kemi_rows}": "1,805,827",
      "claim {calc:kemi_rows - kemi_startklok|,}": "22",
+     "claim {fig:kemi_rows}": "1,805,827",
+     "claim {fig:det_clock_default}": "18,717",
+     "claim {fig:det_clock_ambiguous}": "10,198",
+     "claim {fig:det_n}": "62,069",
      "D-KEMI.label {fig:kemi_rows}": "1,805,827"
     }
    }
@@ -179,53 +182,90 @@
   {
    "id": "C-WORKDAY",
    "kind": "simulated",
+   "stance": "ours",
    "page": "METHOD_LAB.md",
-   "claim": "The 09:00-15:00 sampling window loses {calc:(1 - det_rec_hi / det_even_hi) * 100|.0f}% of a diurnal signal - and about the same share at every amplitude large enough to recover above the noise.",
+   "claim": "Against sampling round the clock, the real schedule loses {calc@K-SCHEDULE-LOSS:(1 - det_rec_hi / det_even_hi) * 100|.0f}% of a sun-shaped daily cycle of size {fig:det_imp_hi} mg/l - and about the same share at every size large enough to recover above the noise.",
+   "because": "detectable.py recovers the same imposed cycle twice through the real estimator - on the real instants, and with each sample's hour redrawn uniformly over the day - and the loss is one minus the ratio of the two median recoveries. Only the hour differs between the runs. The share belongs to the stipulated shape: a cycle peaking at another hour would lose a different share.",
    "rests_on": [
     "S-DETECT",
     "X-DETECT",
+    "X-CYCLES",
     "D-KEMI",
-    "A-SHAPE"
+    "A-SHAPE",
+    "A-NOISE",
+    "A-ML-UNIFORM"
    ],
-   "note": "Nearly assumption-free: the same visits compared with themselves, only the hour redrawn. Does NOT claim the sea has such a cycle.",
+   "note": "The round-the-clock side is a median over fewer draws than the real side. Does NOT claim the sea has such a cycle.",
    "basis": "computed",
+   "replaces": [
+    "C-ML-OLD-WORKDAY"
+   ],
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (rewritten from the forks' research and read against the METHOD_LAB wording: stance, reasoning and supports added, typed hours and the self-quoted note removed. 2026-09-11; not yet read by the project owner)",
     "saw": {
-     "claim {calc:(1 - det_rec_hi / det_even_hi) * 100|.0f}": "73",
-     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+     "claim {calc@K-SCHEDULE-LOSS:(1 - det_rec_hi / det_even_hi) * 100|.0f}": "79",
+     "claim {fig:det_imp_hi}": "1",
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "A-NOISE.label {fig:det_noise}": "0.8427",
+     "said on METHOD_LAB.md": "**The working day costs between 77% and 79% of a sun-shaped daily cycle**, steadily across a 4-fold range of sizes - every size large enough to recover above the noise.",
+     "texts": "f545fe656a63d671",
+     "node S-DETECT": "0b76ae62cc582070",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node X-CYCLES": "bd95d60d0d6bcb33",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node A-SHAPE": "41d4ba76e1671287",
+     "node A-NOISE": "3f3e8b813bc6e44c",
+     "node A-ML-UNIFORM": "de348118ceed374d"
     }
    }
   },
   {
    "id": "C-DIURNAL-BOUND",
    "kind": "bounded",
+   "stance": "ours",
    "page": "METHOD_LAB.md",
-   "claim": "The surface diurnal oxygen amplitude is below roughly {calc:det_imp_lo + (det_obs - det_rec_lo) / (det_rec_hi - det_rec_lo) * (det_imp_hi - det_imp_lo)|.2f} to {fig:det_limit} mg/l.",
+   "claim": "If the surface daily oxygen cycle follows the sine of the sun's elevation, its size - the coefficient on that sine, which is more than its night-to-noon swing on any Danish day - is below {fig:det_limit} mg/l: a cycle that size out-spreads the archive in at least {calc:det_level * 100|.0f}% of noise draws, and every smaller size on the grid does so less often.",
+   "because": "The observed spread is measured on the real samples by the real estimator. Each size is imposed on the same samples over many noise draws and measured the same way. The smallest size whose recovered spread reaches the observed one in at least the stated share of draws is the bound: a larger real cycle would, in nearly every draw, have produced a larger spread than the archive shows. The true limit lies between that size and the next smaller one on the grid. It holds only if the cycle has the sun's shape and the noise is Gaussian of the measured size.",
    "rests_on": [
-    "C-WORKDAY",
+    "S-DETECT",
+    "X-DETECT",
     "X-CYCLES",
     "D-KEMI",
+    "A-SHAPE",
     "A-NOISE",
-    "A-SHAPE"
+    "A-ML-LEVEL",
+    "C-ML-NOISE-MEASURED"
    ],
-   "note": "A bound, not a null. The lower figure interpolates between the two tested amplitudes the observed spread falls between; the upper is the first tested amplitude recovered above it. An earlier version gave the lower figure as {was:e8ec308:docs/CLAIMS.md:0.35}, interpolated by hand from older runs. Void if the signal has a shape unlike sun elevation, or if the noise is far from Gaussian.",
+   "note": "A bound, not a value, and not evidence of a cycle - see C-ML-SPREAD-NOT-EVIDENCE.",
    "value_from": {
     "file": "data/derived/detectable.json",
     "path": "detection_limit_mg_l",
     "fmt": "{:g}"
    },
    "basis": "computed",
+   "replaces": [
+    "C-ML-OLD-BOUND"
+   ],
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (rewritten from the forks' research and read against the METHOD_LAB wording: stance, reasoning and supports added, typed hours and the self-quoted note removed. 2026-09-11; not yet read by the project owner)",
     "saw": {
-     "claim {calc:det_imp_lo + (det_obs - det_rec_lo) / (det_rec_hi - det_rec_lo) * (det_imp_hi - det_imp_lo)|.2f}": "0.36",
-     "claim {fig:det_limit}": "0.5",
-     "note {was:e8ec308:docs/CLAIMS.md:0.35}": "0.35",
+     "claim {fig:det_limit}": "0.7",
+     "claim {calc:det_level * 100|.0f}": "95",
      "D-KEMI.label {fig:kemi_rows}": "1,805,827",
-     "A-NOISE.label {fig:det_noise}": "0.6286"
+     "A-NOISE.label {fig:det_noise}": "0.8427",
+     "A-ML-LEVEL.detail {calc:det_level * 100|.0f}": "95",
+     "said on METHOD_LAB.md": "A cycle of size 0.7 mg/l produces a spread at least as large as the observed one in 100% of draws, and every smaller size on the grid does so in fewer than 95% of them. So if the real surface cycle follows the sine of the sun's elevation, its size is below 0.7 mg/l. The size is the coefficient on that sine: the swing from night to noon it would give where the sun stands overhead, and more than the swing on any Danish day.",
+     "texts": "68ed862a6f5e5530",
+     "node S-DETECT": "0b76ae62cc582070",
+     "node X-DETECT": "161ccb3afdcee374",
+     "node X-CYCLES": "bd95d60d0d6bcb33",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node A-SHAPE": "41d4ba76e1671287",
+     "node A-NOISE": "3f3e8b813bc6e44c",
+     "node A-ML-LEVEL": "d387c8bc80f3c5b4",
+     "rests on C-ML-NOISE-MEASURED": "c497e0d9fdd336c8"
     }
    }
   },
@@ -242,21 +282,21 @@
    "note": "Not a finding about the sea. A statement about when people are willing to be on a boat.",
    "basis": "assessed",
    "assessment": {
-    "counts_as": "surface oxygen samples taken with the sun below the horizon - night and civil twilight - at a station's own position and instant",
-    "reasoning": "{fig:predawn_night_n} night and {fig:predawn_twilight_n} twilight samples, of {fig:surface_o2_n}. Spread across the whole record since 1970 and all the stations that sampled, that cannot characterise a minimum at any one place.",
+    "counts_as": "surface oxygen samples whose clock is an observed time, taken with the sun below the horizon - night and civil twilight - at a station's own position and instant",
+    "reasoning": "{fig:predawn_night_n} night and {fig:predawn_twilight_n} twilight samples, of {fig:surface_o2_n} whose clock is an observed time. Spread across the whole record and all the stations that sampled, that cannot characterise a minimum at any one place.",
     "confidence": "High that the minimum is undersampled. The word 'nothing' is strong: the {calc:predawn_night_n + predawn_twilight_n|,} exist, they are simply too thin to constrain anything local.",
     "would_change": "Moored continuous sensors, or one season of deliberate pre-dawn sampling at a handful of stations."
    },
    "confirmed": {
     "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "by": "Claude (re-read against the new clock and Monte Carlo results, 2026-09-10; not yet read by the project owner)",
     "saw": {
-     "assessment.reasoning {fig:predawn_night_n}": "324",
-     "assessment.reasoning {fig:predawn_twilight_n}": "360",
-     "assessment.reasoning {fig:surface_o2_n}": "91,072",
-     "assessment.confidence {calc:predawn_night_n + predawn_twilight_n|,}": "684",
-     "G-PREDAWN.detail {calc:predawn_night_n + predawn_twilight_n|,}": "684",
-     "G-PREDAWN.detail {fig:surface_o2_n}": "91,072",
+     "assessment.reasoning {fig:predawn_night_n}": "665",
+     "assessment.reasoning {fig:predawn_twilight_n}": "944",
+     "assessment.reasoning {fig:surface_o2_n}": "62,069",
+     "assessment.confidence {calc:predawn_night_n + predawn_twilight_n|,}": "1,609",
+     "G-PREDAWN.detail {calc:predawn_night_n + predawn_twilight_n|,}": "1,609",
+     "G-PREDAWN.detail {fig:surface_o2_n}": "62,069",
      "D-KEMI.label {fig:kemi_rows}": "1,805,827"
     }
    }
@@ -283,49 +323,69 @@
   {
    "id": "C-DEPTH-BORROW",
    "kind": "provisional",
+   "stance": "ours",
    "page": "METHOD_LAB.md",
-   "claim": "{fig:depth_borrowed} oxygen measurements at depth were placed in time with a clock borrowed from a same-day water-chemistry bottle; {fig:depth_none} had no such bottle to borrow from.",
+   "claim": "{fig:depth_borrowed} oxygen measurements at depth were placed in time with a clock borrowed from a same-day water-chemistry bottle; {fig:depth_none} had no bottle with a usable time to borrow from - none that day, or one whose clock is a filled-in default or of a mixed convention.",
+   "because": "scripts/depth_clock.py places a CTD oxygen measurement at the clock of the same station-day in the water-chemistry extract when that station-day has one unambiguous observed time, converted to UTC by scripts/clock.py; filled-in defaults and mixed conventions are not lent. Measurements with no such clock are counted and excluded. The borrowed count is taken after depth_clock.py's quality filters and the count with none before them.",
    "rests_on": [
     "D-CTD",
     "D-KEMI",
+    "X-DEPTHCLOCK",
     "A-BORROW",
     "G-CLOCK"
    ],
-   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact. The two counts are not a share of one population: the first is counted after depth_clock.py's quality filters and the second before them, so their ratio is not the fraction that can borrow a clock. An earlier version said {was:e8ec308:docs/CLAIMS.md:80%} of station-days, a figure computed by hand and never stored.",
+   "replaces": [
+    "C-ML-OLD-BORROW-SHARE"
+   ],
+   "note": "PROVISIONAL. The borrowing is unchecked, and G-CLOCK is what would check it. If casts systematically precede bottles, any diurnal pattern found at depth is partly an artefact. The two counts are not a share of one population: the first is counted after depth_clock.py's quality filters and the second before them, so their ratio is not the fraction that can borrow a clock. The second count grew when filled-in default clocks stopped being lent as if they were times.",
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (rewritten from the forks' research and read against the METHOD_LAB wording: stance, reasoning and supports added, typed hours and the self-quoted note removed. 2026-09-11; not yet read by the project owner)",
     "saw": {
-     "claim {fig:depth_borrowed}": "6,085,887",
-     "claim {fig:depth_none}": "1,054,275",
-     "note {was:e8ec308:docs/CLAIMS.md:80%}": "80%",
+     "claim {fig:depth_borrowed}": "4,688,007",
+     "claim {fig:depth_none}": "2,454,520",
      "D-CTD.label {fig:ctd_rows}": "53,710,760",
-     "D-KEMI.label {fig:kemi_rows}": "1,805,827"
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "said on METHOD_LAB.md": "4,688,007 oxygen measurements at depth were placed in time with a clock borrowed from a same-day water-chemistry bottle, and 2,454,520 had no bottle with a usable time to borrow from - none that day, or one whose clock is a filled-in default or of a mixed convention. The two counts are not shares of one population: the first is counted after `scripts/depth_clock.py`'s quality filters and the second before them.",
+     "texts": "0d003fb295681b19",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node X-DEPTHCLOCK": "947d7a76ced89e8a",
+     "node A-BORROW": "58b2399fcb372723",
+     "node G-CLOCK": "fd58235dd1ee3c3e"
     }
    }
   },
   {
    "id": "C-MANURE",
    "kind": "measured",
+   "stance": "ours",
    "page": "NITROGEN.md",
-   "claim": "{fig:manure_14_businesses} businesses - {fig:manure_14_share_biz}% of those declaring land - hold animal units above {param:harmony_1_4} DE per declared hectare, and {fig:manure_14_share_herd}% of the national herd.",
+   "claim": "{fig:manure_14_businesses} businesses - {fig:manure_14_share_biz}% of the businesses with both animals and more than one declared hectare - hold register animal units above {param:harmony_1_4} DE per declared hectare. They hold {fig:manure_14_share_herd}% of the CVR-registered herd: a floor, because herds on businesses with no matched land stay in the denominator and can never count as above the line.",
+   "because": "scripts/manure.py joins the livestock register's animal units to the field-parcel register's declared hectares on the company number and counts the businesses above the line; the herd share divides their animal units by all CVR-registered animal units, so herds with no matched land stay in the denominator.",
    "rests_on": [
     "D-CHR",
     "D-MARKER",
-    "X-MANURE"
+    "X-MANURE",
+    "C-DE-VOID"
    ],
-   "note": "QUALIFIED by C-DE-VOID: the threshold has no legal force. The physical statement, that this manure must leave the holding, stands.",
+   "note": "QUALIFIED by C-DE-VOID: the threshold has no legal force. The harmony line is a retired legal ceiling, not a measured capacity of the land, and declared area is not spreading area; at the nitrogen-per-animal-unit conversion the incidence page states, the current ceiling sits at a higher line than this one. So this counts holdings above a historical marker. It does not show that their manure must physically leave the holding.",
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (read fork w1-ni's revision: stance and reasoning added, C-DE-VOID - already named in the note as its qualifier - now among what it rests on; the counts and wording of the claim read against manure.py's join. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "claim {fig:manure_14_businesses}": "2,662",
      "claim {fig:manure_14_share_biz}": "28",
      "claim {param:harmony_1_4}": "1.4",
      "claim {fig:manure_14_share_herd}": "56",
-     "D-CHR.label {fig:manure_sites}": "57,860"
+     "D-CHR.label {fig:manure_sites}": "57,860",
+     "texts": "fb5ada4d243936b3",
+     "node D-CHR": "eb34b0ed55ee3978",
+     "node D-MARKER": "1fb78a4a370f7570",
+     "node X-MANURE": "2893dee3c11aca68",
+     "rests on C-DE-VOID": "b2c0083018413865"
     }
    }
   },
@@ -370,7 +430,7 @@
     "X-SOCIAL",
     "C-DE-VOID"
    ],
-   "note": "A FLOOR, not a count. {calc:filers_none_de / herd_total_de * 100|.1f}% of the herd is on businesses filing no accounts, and the filers are the large end.",
+   "note": "A FLOOR, not a count. {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}% of the herd is on businesses filing no accounts, and the filers are the large end.",
    "basis": "computed",
    "confirmed": {
     "on": "2026-09-10",
@@ -378,10 +438,10 @@
     "saw": {
      "claim {fig:nobuf_n}": "154",
      "claim {fig:nobuf_years}": "1.9",
-     "note {calc:filers_none_de / herd_total_de * 100|.1f}": "76.3",
+     "note {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}": "76.3",
      "D-ACCOUNTS.label {fig:accounts_filed}": "1,630",
-     "D-ACCOUNTS.detail {calc:filers_none_de / herd_total_de * 100|.1f}": "76.3",
-     "D-ACCOUNTS.detail {calc:ha_none / ha_total * 100|.1f}": "81.0"
+     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}": "76.3",
+     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:ha_none / ha_total * 100|.1f}": "81.0"
     }
    }
   },
@@ -389,12 +449,12 @@
    "id": "C-SIDIN",
    "kind": "measured",
    "page": "OPEN_PROBLEMS.md",
-   "claim": "Surface Si:DIN has risen from a median of {fig:sidin_1985} in 1985 to {fig:sidin_2025} in 2025, contradicting the premise of hypothesis K1.",
+   "claim": "The pooled surface Si:DIN yearly median was {fig:sidin_1985} in 1985 and {fig:sidin_2025} in 2025, but the years between swing widely - it was {fig:sidin_1994} in 1994 - and the median pools every month, mixing the pre-bloom pool {ref:K1} is about with bloom drawdown. It is not a test of that premise.",
    "rests_on": [
     "D-KEMI",
     "X-RESCORE"
    ],
-   "note": "The DRIVER only. The assemblage response remains unscoreable - see G-SPECIES.",
+   "note": "The DRIVER only. The assemblage response remains unscoreable - see G-SPECIES. An earlier version said the rise contradicted the premise of the hypothesis, comparing a low year with a high one.",
    "value_from": {
     "file": "data/derived/rescore.json",
     "path": "tests.K1_si_din_molar_surface.2025.median",
@@ -403,10 +463,12 @@
    "basis": "computed",
    "confirmed": {
     "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "by": "Claude (re-read after writing its hypothesis references as checked entities, 2026-09-10; not yet read by the project owner)",
     "saw": {
      "claim {fig:sidin_1985}": "1.11",
      "claim {fig:sidin_2025}": "3.41",
+     "claim {fig:sidin_1994}": "1.05",
+     "claim {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
      "D-KEMI.label {fig:kemi_rows}": "1,805,827"
     }
    }
@@ -419,7 +481,7 @@
    "rests_on": [
     "G-SPECIES"
    ],
-   "note": "A blocker behind a blocker: K1 was listed as waiting on the vandkemi fetch, which has happened.",
+   "note": "A blocker behind a blocker: {ref:K1} was listed as waiting on the vandkemi fetch, which has happened.",
    "basis": "assessed",
    "assessment": {
     "counts_as": "phytoplankton assemblage counts at stations where Si:DIN is measured",
@@ -429,20 +491,24 @@
    },
    "confirmed": {
     "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
-    "saw": {}
+    "by": "Claude (re-read after writing its hypothesis references as checked entities, 2026-09-10; not yet read by the project owner)",
+    "saw": {
+     "note {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "G-SPECIES.detail {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "G-SPECIES.detail {ref:K2}": "K2: Stoichiometric imbalance decides who grows"
+    }
    }
   },
   {
    "id": "C-FLOOD-AREA",
-   "kind": "measured",
+   "kind": "modelled",
    "page": "FLOOD_GAP.md",
-   "claim": "{fig:flood_km2} km² of modelled flooding on land at {param:flood_depth_min} m or deeper.",
+   "claim": "{fig:flood_km2} km² of modelled flooding on land at {fig:flood_depth_min_m} m or deeper.",
    "rests_on": [
     "D-SHEETS",
     "X-FLOODGAP"
    ],
-   "note": "Depends on a sheet placement that does not model the meridian convergence of {fig:conv_gamma_min_deg}-{fig:conv_gamma_max_deg} degrees, which displaces corners by {fig:conv_shift_min_m|.0f}-{fig:conv_shift_max_m|.0f} m - {fig:conv_shift_over_error_min} to {fig:conv_shift_over_error_max} times the registration error the pipeline states for each sheet. An earlier version of this note said {was:e8ec308:docs/CLAIMS.md:four to ten times}, worked out loosely by hand; the first stored figures contradicted it.",
+   "note": "Depends on a sheet placement that does not model the meridian convergence of {fig:conv_gamma_min_deg}-{fig:conv_gamma_max_deg} degrees, which displaces corners by {fig:conv_shift_min_m|.0f}-{fig:conv_shift_max_m|.0f} m - {fig:conv_shift_over_error_min} to {fig:conv_shift_over_error_max} times the registration error the pipeline states for each sheet.",
    "value_from": {
     "file": "data/derived/floodgap.json",
     "path": "flooded_area_km2",
@@ -450,23 +516,28 @@
    },
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (read against the register and the passages as read out of git: the history moved out of the note into retired claims, what remains is what the stored figures support; 2026-09-11; not yet read by the project owner)",
     "saw": {
      "claim {fig:flood_km2}": "5.847",
-     "claim {param:flood_depth_min}": "0.1",
+     "claim {fig:flood_depth_min_m}": "0.1",
      "note {fig:conv_gamma_min_deg}": "2.897",
      "note {fig:conv_gamma_max_deg}": "2.982",
      "note {fig:conv_shift_min_m|.0f}": "94",
      "note {fig:conv_shift_max_m|.0f}": "350",
      "note {fig:conv_shift_over_error_min}": "2.4",
      "note {fig:conv_shift_over_error_max}": "7.5",
-     "note {was:e8ec308:docs/CLAIMS.md:four to ten times}": "four to ten times",
      "D-SHEETS.label {fig:conv_n_sheets}": "7",
      "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
-     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91"
+     "D-SHEETS.detail {fig:conv_stated_error_max_m}": "91",
+     "texts": "a3c690294ac92f5a",
+     "node D-SHEETS": "15d74fbee34cafef",
+     "node X-FLOODGAP": "9170cbc8148eabf6"
     }
-   }
+   },
+   "replaces": [
+    "C-FA-OLD-NOTE"
+   ]
   },
   {
    "id": "C-DRAIN-ROUTE",
@@ -485,15 +556,20 @@
     "would_change": "Digitised draenkort for one test catchment, against which the terrain approximation can be scored."
    },
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
-    "saw": {}
-   }
+    "on": "2026-09-11",
+    "by": "Claude (read against data_sources_2.json's DK-DRAENUDLOEB and DK-DRAENKORT-AU entries: the gap is a missing national layer of outfalls, recorded as searched on 2026-09-10; the node no longer says the outfalls do not exist. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "texts": "dd45600e6a22a754",
+     "node G-DRAIN": "753e1d354722ef30"
+    }
+   },
+   "stance": "ours",
+   "because": "To place a field's entry into the stream network you need where its tile drains discharge. No national layer of drain outfalls exists: the search recorded in the data-source register found none, and the historic drain maps are private paper records. Without the outfalls, the entry point can only be approximated from terrain, and there is nothing to test that approximation against."
   },
   {
    "id": "C-CONVEYANCE",
    "kind": "measured",
-   "page": "index.html",
+   "page": "LANDING.md",
    "claim": "The cloudburst plan holds {fig:surface_plus_mix_km} km of alignment that could carry water on the surface - {fig:surface_km|.1f} km classed as surface conveyance plus {fig:mix_km} km of mixed alignment - against {fig:pipe_km|.1f} km of pipe.",
    "rests_on": [
     "D-SKYBRUDSVEJE",
@@ -505,25 +581,114 @@
     "fmt": "{:g}"
    },
    "appears_in": [
-    "index.html"
+    "docs/LANDING.md"
    ],
-   "note": "Three figures for this quantity were published and none was derived: {was:0288f8e:index.html:210} km on the landing page, {was:408ab8d:scripts/programme.py:169} km in two documents, and a layer measuring {fig:total_km} km. All three are defensible under different definitions of 'surface' and nothing said which was in use: the first was surface plus mix ({fig:surface_plus_mix_km}), the second surface alone ({fig:surface_km|.1f}). The pipe figure was right to the kilometre.",
+   "note": "Which alignments count as surface changes the length: surface alone is {fig:surface_km|.1f} km, surface plus mixed {fig:surface_plus_mix_km} km, and the layer in full measures {fig:total_km} km. The claim says which is which.",
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-10",
-    "by": "Claude (initial conversion 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only the registered page changed, from index.html to LANDING.md, where the landing now lives; the claim, its note and what it rests on are unchanged. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "claim {fig:surface_plus_mix_km}": "209.0",
      "claim {fig:surface_km|.1f}": "168.1",
      "claim {fig:mix_km}": "40.9",
      "claim {fig:pipe_km|.1f}": "71.0",
-     "note {was:0288f8e:index.html:210}": "210",
-     "note {was:408ab8d:scripts/programme.py:169}": "169",
-     "note {fig:total_km}": "280.0",
-     "note {fig:surface_plus_mix_km}": "209.0",
      "note {fig:surface_km|.1f}": "168.1",
+     "note {fig:surface_plus_mix_km}": "209.0",
+     "note {fig:total_km}": "280.0",
      "D-SKYBRUDSVEJE.label {fig:layer_features}": "976",
-     "D-SKYBRUDSVEJE.detail {fig:total_km}": "280.0"
+     "D-SKYBRUDSVEJE.detail {fig:total_km}": "280.0",
+     "texts": "0b5f8e0fea6bad2d",
+     "node D-SKYBRUDSVEJE": "96d4142dbf9cebb9",
+     "node X-CONVEYANCE": "af00dae1177ba00a"
+    }
+   },
+   "replaces": [
+    "C-CONV-OLD-LANDING",
+    "C-CONV-OLD-PROGRAMME"
+   ]
+  },
+  {
+   "id": "C-FA-OLD-NOTE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The meridian convergence displaces the flood sheets' corners by several times their stated registration error.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "CLAIMS.md",
+    "commit": "e8ec308",
+    "file": "docs/CLAIMS.md",
+    "begin": "Depends on a sheet placement that does not model the",
+    "end": "the stated registration error",
+    "why": "Its justification was not recorded properly: the ratio was worked out loosely by hand and never stored, and the first stored figures contradicted it. The note now gives the ratio as floodgap.py and convergence.py compute it."
+   },
+   "replaced_by": [
+    "C-FLOOD-AREA"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Depends on a sheet placement that does not model the ~2.95 degree meridian convergence, which displaces corners by 94-350 m - four to ten times the stated registration error",
+     "texts": "df9013ee4b043a4a"
+    }
+   }
+  },
+  {
+   "id": "C-CONV-OLD-LANDING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The cloudburst plan holds a stated length of alignments that could carry a river.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "index.html",
+    "commit": "0288f8e",
+    "file": "index.html",
+    "begin": "The proposal on the real city:",
+    "end": "that could carry a river",
+    "why": "Its justification was not recorded properly: the length was typed into the landing page, not derived, and the page did not say which alignments it counted. Measured from the plan's layer it is the surface-plus-mixed length."
+   },
+   "replaced_by": [
+    "C-CONVEYANCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The proposal on the real city: 210 km of alignments that could carry a river",
+     "texts": "480cc5c8c7b2d1a5"
+    }
+   }
+  },
+  {
+   "id": "C-CONV-OLD-PROGRAMME",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The cloudburst plan holds a stated length of surface conveyance against a stated length of pipe.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "PROGRAMME.md",
+    "commit": "408ab8d",
+    "file": "docs/PROGRAMME.md",
+    "begin": "The city's cloudburst plan is",
+    "end": "km of pipe",
+    "why": "Its justification was not recorded properly: both lengths were typed into the generator, not derived, and the page did not say that its surface figure left out the mixed alignments."
+   },
+   "replaced_by": [
+    "C-CONVEYANCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; the archive wording is what git holds, register IDs and formulas in it shown as written. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The city's cloudburst plan is 169 km of surface conveyance against 71 km of pipe",
+     "texts": "f14b5e1ec59ed39a"
     }
    }
   }
@@ -592,13 +757,13 @@
   },
   "predawn_night_n": {
    "file": "data/derived/cycles.json",
-   "path": "results.o2.by_window.10.sun.night.n",
+   "path": "results.o2.sun_counts.night",
    "fmt": "{:,}",
    "claim": "C-PREDAWN"
   },
   "predawn_twilight_n": {
    "file": "data/derived/cycles.json",
-   "path": "results.o2.by_window.10.sun.twilight.n",
+   "path": "results.o2.sun_counts.twilight",
    "fmt": "{:,}",
    "claim": "C-PREDAWN"
   },
@@ -790,33 +955,21 @@
    "fmt": "{:,}",
    "claim": "C-DEPTH-BORROW"
   },
-  "det_imp_lo": {
-   "file": "data/derived/detectable.json",
-   "path": "runs.4.imposed",
-   "fmt": "{:g}",
-   "claim": "C-DIURNAL-BOUND"
-  },
-  "det_rec_lo": {
-   "file": "data/derived/detectable.json",
-   "path": "runs.4.recovered_real_hours",
-   "fmt": "{:g}",
-   "claim": "C-DIURNAL-BOUND"
-  },
   "det_imp_hi": {
    "file": "data/derived/detectable.json",
-   "path": "runs.5.imposed",
+   "path": "runs.9.imposed",
    "fmt": "{:g}",
    "claim": "C-DIURNAL-BOUND"
   },
   "det_rec_hi": {
    "file": "data/derived/detectable.json",
-   "path": "runs.5.recovered_real_hours",
+   "path": "runs.9.recovered_real_hours",
    "fmt": "{:g}",
    "claim": "C-DIURNAL-BOUND"
   },
   "det_even_hi": {
    "file": "data/derived/detectable.json",
-   "path": "runs.5.recovered_even_hours",
+   "path": "runs.9.recovered_even_hours",
    "fmt": "{:g}",
    "claim": "C-DIURNAL-BOUND"
   },
@@ -837,6 +990,48 @@
    "path": "noise_sd_mg_l",
    "fmt": "{:g}",
    "claim": "C-DIURNAL-BOUND"
+  },
+  "det_level": {
+   "file": "data/derived/detectable.json",
+   "path": "level",
+   "fmt": "{:g}"
+  },
+  "det_null": {
+   "file": "data/derived/detectable.json",
+   "path": "null_share_at_or_above_observed",
+   "fmt": "{:g}"
+  },
+  "det_n": {
+   "file": "data/derived/detectable.json",
+   "path": "n_samples",
+   "fmt": "{:,}"
+  },
+  "det_clock_default": {
+   "file": "data/derived/detectable.json",
+   "path": "clock_excluded.default",
+   "fmt": "{:,}"
+  },
+  "det_clock_ambiguous": {
+   "file": "data/derived/detectable.json",
+   "path": "clock_excluded.ambiguous",
+   "fmt": "{:,}"
+  },
+  "sidin_1994": {
+   "file": "data/derived/rescore.json",
+   "path": [
+    "tests",
+    "K1_si_din_molar_surface",
+    "1994",
+    "median"
+   ],
+   "fmt": "{:.2f}",
+   "claim": "C-SIDIN"
+  },
+  "flood_depth_min_m": {
+   "file": "data/derived/floodgap.json",
+   "path": "params.flood_depth_min_m",
+   "fmt": "{:g}",
+   "claim": "C-FLOOD-AREA"
   }
  },
  "_basis": "Every claim is COMPUTED - a script produces the number and records how it counted it - or ASSESSED: a reading or a judgement that no script can re-derive, assessed by a person in its 'assessment' field.",

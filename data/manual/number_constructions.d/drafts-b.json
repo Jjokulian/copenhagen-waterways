@@ -1,0 +1,185 @@
+{
+ "constructions": [
+  {
+   "id": "K-DRAFTSB-COUNTS",
+   "title": "Counts of held files, as the drafts quote them",
+   "covers": {
+    "file": "data/derived/drafts_b_counts.json",
+    "fields": {
+     "stations_series.total_station_months": {
+      "kind": "counted",
+      "is": "Station-months in the monthly station panel: the sum of `n` over every variable in `docs/data/areas/stations_series.json`. One station-month is one monthly median of one variable at one station, so a station with nine variables in a month counts nine times."
+     },
+     "stations_series.n_stations": {
+      "kind": "counted",
+      "is": "Stations listed in the panel's `stations` array - positions, not water bodies."
+     },
+     "stations_series.months": {
+      "kind": "counted",
+      "is": "Monthly slots the panel declares, counted from its first year."
+     },
+     "stations_series.n_variables": {
+      "kind": "counted",
+      "is": "Variables in the panel's `variables` array."
+     },
+     "stations_series.bin_bytes": {
+      "kind": "measured",
+      "is": "Size of `stations_series.bin` in bytes, as read."
+     },
+     "stations_series.variables.*.n": {
+      "kind": "counted",
+      "is": "Station-months carrying this variable: the `n` the panel declares for it."
+     },
+     "stations_series.variables.*.stations": {
+      "kind": "counted",
+      "is": "Distinct stations among this variable's station-months, read from the station indices in the binary at the variable's offset."
+     },
+     "oda_portal.*.no_period": {
+      "kind": "counted",
+      "is": "Stations the ODA portal's criterion list returned for this topic with no period set - the current network - as recorded by hand in `data/manual/data_sources_2.json` (`ODA-STATION-COUNTS-CORRECTION`)."
+     },
+     "oda_portal.*.with_period": {
+      "kind": "counted",
+      "is": "Stations the same list returned with the period set to the whole record, as recorded by hand in the same register entry."
+     },
+     "maaledybde.rows": {
+      "kind": "counted",
+      "is": "Records the Python `csv` reader returns from `data/raw/oda/maaledybde.csv.gz`, header excluded - one record is one sounding at one station on one date."
+     },
+     "maaledybde.stations": {
+      "kind": "counted",
+      "is": "Distinct `ObservationsstedNr` among those records."
+     },
+     "maaledybde.stations_with_bottom_depth": {
+      "kind": "counted",
+      "is": "Distinct stations with at least one non-blank `BundDybde_m`."
+     },
+     "maaledybde.rows_x_equals_x1": {
+      "kind": "counted",
+      "is": "Records whose `X_UTM32` and `X_UTM321` are the same string - the northing column the extract lacks."
+     },
+     "seabed.features": {
+      "kind": "counted",
+      "is": "Polygons in layer `Seabed_sedimen` of `data/raw/geus/seabed_sediment_dk.gpkg`."
+     },
+     "seabed.classes": {
+      "kind": "counted",
+      "is": "Distinct values of the substrate field `sedimenten`."
+     },
+     "seabed.by_class.*": {
+      "kind": "counted",
+      "is": "Polygons carrying this `sedimenten` value - polygons, not area."
+     },
+     "seabed.by_scale.*": {
+      "kind": "counted",
+      "is": "Polygons compiled at this map scale (`scale` field)."
+     },
+     "seabed.campaigns": {
+      "kind": "counted",
+      "is": "Distinct values of the `mapping` field, which names the survey campaign each polygon was compiled from."
+     },
+     "mfs.points": {
+      "kind": "counted",
+      "is": "Points in `data/raw/national/sw_mfs_tilstand.geojson`."
+     },
+     "mfs.by_type.*": {
+      "kind": "counted",
+      "is": "Points whose `eusurfacew` code starts with this letter prefix (lake or river water body)."
+     },
+     "mfs.biota": {
+      "kind": "counted",
+      "is": "Points whose `maaltbiota` flag is set (not blank, zero or no)."
+     },
+     "mfs.water": {
+      "kind": "counted",
+      "is": "Points whose `maaltvand` flag is set."
+     },
+     "mfs.sediment": {
+      "kind": "counted",
+      "is": "Points whose `maaltsedim` flag is set."
+     },
+     "mfs.no_matrix": {
+      "kind": "counted",
+      "is": "Points with none of the three matrix flags set."
+     },
+     "mfs.distinct_qecode": {
+      "kind": "counted",
+      "is": "Distinct values of `qecode` across the points."
+     },
+     "mfs.distinct_qestatusor": {
+      "kind": "counted",
+      "is": "Distinct values of `qestatusor` across the points."
+     },
+     "mfs.distinct_da_oekolog": {
+      "kind": "counted",
+      "is": "Distinct values of `da_oekolog` across the points."
+     },
+     "mfs.distinct_aktivstart": {
+      "kind": "counted",
+      "is": "Distinct values of `aktivstart` across the points."
+     },
+     "plankton.n_files": {
+      "kind": "counted",
+      "is": "Yearly files of the CMEMS Baltic phytoplankton grid on disk: every `plankton__inner__YYYY.nc` under `data/raw/cmems/grid`, one per year, a partial year included."
+     },
+     "plankton.n_variables": {
+      "kind": "counted",
+      "is": "Data variables in the newest of those files - everything that is not a dimension - read with netCDF4 in the marine environment."
+     }
+    }
+   },
+   "what": "Counts the monthly station panel, the soundings extract, the seabed sediment layer and the pollutant-status layer, and parses the station counts the ODA portal returned as recorded in the source register - the file facts the hypothesis drafts and open problems cite.",
+   "model": "Plain counts over the files as held: sums of the panel's declared `n`, distinct station indices read from its binary, distinct values and group counts over the soundings CSV and the two geographic layers, and a pattern match over the register's recorded portal counts.",
+   "assumptions": [
+    "The files on disk are the extracts the drafts describe.",
+    "The portal counts in the register were read correctly when they were recorded."
+   ],
+   "justified": [
+    {
+     "text": "Every count is taken by the script from the file itself, so it follows the file when the file changes.",
+     "ref": "scripts/drafts_b_counts.py"
+    },
+    {
+     "text": "The panel's layout - station indices, then month indices, then values, at each variable's offset - is read as the panel declares it.",
+     "ref": "docs/data/areas/stations_series.json"
+    },
+    {
+     "text": "The soundings extract is read with the declared ODA format: semicolon delimiter and `latin-1`.",
+     "ref": "scripts/formats.py"
+    }
+   ],
+   "gaps": [
+    "The portal counts are a hand record of a web form in `data/manual/data_sources_2.json`; this script parses them but cannot re-run the query, so they are only as current as that record.",
+    "A matrix flag counts as set unless it is blank, zero or no; the layer documents no other coding."
+   ],
+   "void_if": [
+    "an extract is re-fetched and this script is not re-run",
+    "the portal's station lists change after the register entry was recorded"
+   ],
+   "licenses": "Statements about the files as held: how many records, stations, polygons or points they contain and how those divide.",
+   "not_licensed": "Anything about the water, the seabed or pollutants themselves; any count of what exists outside the extracts; any claim that the portal still returns these station lists today.",
+   "watches": [
+    "data/manual/data_sources_2.json",
+    "data/raw/geus/seabed_sediment_dk.gpkg",
+    "data/raw/national/sw_mfs_tilstand.geojson",
+    "data/raw/oda/maaledybde.csv.gz",
+    "docs/data/areas/stations_series.bin",
+    "docs/data/areas/stations_series.json",
+    "scripts/drafts_b_counts.py"
+   ],
+   "confirmed": {
+    "by": "Claude (added the plankton-grid counts behind the corrected K1 note, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/manual/data_sources_2.json": "6d052e73fa896f81",
+     "data/raw/geus/seabed_sediment_dk.gpkg": "417650d223d33a47",
+     "data/raw/national/sw_mfs_tilstand.geojson": "e341292a279b1b29",
+     "data/raw/oda/maaledybde.csv.gz": "bcdb9d24722798a1",
+     "docs/data/areas/stations_series.bin": "cfa4a83100559ec4",
+     "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
+     "scripts/drafts_b_counts.py": "b257668118049836"
+    }
+   }
+  }
+ ]
+}

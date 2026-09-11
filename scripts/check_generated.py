@@ -42,7 +42,9 @@ def generated_map():
     and nobody has to remember to add it to a list.
     """
     out = {}
-    for fn in sorted(os.listdir(SCRIPTS)):
+    # generators live in subdirectories too (scripts/pages/)
+    for fn in sorted(os.path.relpath(os.path.join(dp, f), SCRIPTS)
+                     for dp, _, fs in os.walk(SCRIPTS) for f in fs):
         if not fn.endswith(".py"):
             continue
         src = open(os.path.join(SCRIPTS, fn), encoding="utf-8").read()

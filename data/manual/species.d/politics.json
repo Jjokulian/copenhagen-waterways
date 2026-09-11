@@ -1,0 +1,13 @@
+{
+ "_what": "Fork `politics`: species PROGRAMME.md names.",
+ "species": {
+  "C2F6": {
+   "unicode": "C₂F₆",
+   "name": "hexafluoroethane"
+  },
+  "CHF3": {
+   "unicode": "CHF₃",
+   "name": "trifluoromethane (fluoroform)"
+  }
+ }
+}

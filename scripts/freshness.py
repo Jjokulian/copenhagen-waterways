@@ -53,7 +53,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from common import ROOT, log, read_json
+from common import ROOT, log, read_json, load_build
 
 MANIFEST = os.path.join(ROOT, "data", "manual", "build.json")
 LOCK = os.path.join(ROOT, "data", "derived", "build.lock.json")
@@ -161,7 +161,7 @@ def record(lock, s):
 
 
 def main(argv):
-    steps = read_json(MANIFEST)["steps"]
+    steps = load_build()["steps"]          # build.json and its fragments in build.d/
     try:
         steps, deps = order(steps)
     except RuntimeError as e:
@@ -232,7 +232,8 @@ def main(argv):
             if s["script"] not in todo:
                 continue
             log(f"\n  rerunning {s['script']}")
-            r = subprocess.run([sys.executable, os.path.join(ROOT, s["script"])],
+            # a step may need a subcommand ("currents.py report"): "args" in its entry
+            r = subprocess.run([sys.executable, os.path.join(ROOT, s["script"])] + list(s.get("args", [])),
                                cwd=ROOT)
             if r.returncode != 0:
                 log(f"  {s['script']} exited {r.returncode} - stopping")

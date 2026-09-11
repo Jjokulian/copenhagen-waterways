@@ -1,0 +1,886 @@
+{
+ "_what": "Fork drafts-a: figures, params and sources for docs/hypodrafts TRIAGE, AUDIT, A1, A1b, B1, C1, C4, C6, F3.",
+ "figures": {
+  "da_kemi_orthop_stations": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "kemi",
+    "orthophosphate_stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_outfalls_separate": {
+   "file": "data/derived/outfalls.json",
+   "path": [
+    "layers",
+    "separate_stormwater",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_c1_days": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "with_levels_and_oxygen"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_c1_min_levels": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "min_levels"
+   ],
+   "fmt": "{}"
+  },
+  "da_wind_years": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "weather",
+    "n_years"
+   ],
+   "fmt": "{}"
+  },
+  "da_drogden_factor": {
+   "file": "data/derived/currents_validate.json",
+   "path": [
+    "points",
+    "2",
+    "underestimate_factor"
+   ],
+   "fmt": "{:g}"
+  },
+  "da_maal_rows": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "maaledybde",
+    "rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_light_paired": {
+   "file": "data/derived/light.json",
+   "path": [
+    "secchi",
+    "n_paired"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_turbiditet": {
+   "file": "data/derived/enums.json",
+   "path": [
+    "ctd",
+    "categorical",
+    "Parameter",
+    "Turbiditet"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_seabed_polygons": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "seabed",
+    "polygons"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_seabed_programmes": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "seabed",
+    "mapping_programmes"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_seabed_scale_min": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "seabed",
+    "scale_min"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_seabed_scale_max": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "seabed",
+    "scale_max"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_mfs_total": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "hazardous",
+    "total"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_mfs_sediment": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "hazardous",
+    "sediment"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_mfs_lake": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "hazardous",
+    "lake"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_mfs_river": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "hazardous",
+    "river"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_mfs_coast": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "hazardous",
+    "coast"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_ctd_rows": {
+   "file": "data/derived/enums.json",
+   "path": [
+    "ctd",
+    "rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_series_months": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series",
+    "station_months"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_ph_rows": {
+   "file": "data/derived/enums.json",
+   "path": [
+    "ctd",
+    "categorical",
+    "Parameter",
+    "pH"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_h2s_rows": {
+   "file": "data/derived/enums.json",
+   "path": [
+    "ctd",
+    "categorical",
+    "Parameter",
+    "Dihydrogensulfid"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_h2s_top": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "h2s",
+    "top_station_rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_n_areas": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "areas",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_sal_rows": {
+   "file": "data/derived/enums.json",
+   "path": [
+    "ctd",
+    "categorical",
+    "Parameter",
+    "Salinitet"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_lys_rows": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "lys",
+    "rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_secchi_shallow_pct": {
+   "file": "data/derived/light.json",
+   "path": [
+    "secchi",
+    "bands",
+    "0",
+    "at_bed_pct"
+   ],
+   "fmt": "{:g}"
+  },
+  "da_secchi_shallow_to": {
+   "file": "data/derived/light.json",
+   "path": [
+    "secchi",
+    "bands",
+    "0",
+    "to"
+   ],
+   "fmt": "{:g}"
+  },
+  "da_fdom_rows": {
+   "file": "data/derived/enums.json",
+   "path": [
+    "ctd",
+    "categorical",
+    "Parameter",
+    "FDOM"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_fdom_first": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "fdom",
+    "first_year"
+   ],
+   "fmt": "{}"
+  },
+  "da_probe999": {
+   "file": "data/derived/enums.json",
+   "path": [
+    "ctd",
+    "categorical",
+    "SondeNr",
+    "999"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_real_probes": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "enums",
+    "probe_ids_known"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_corr_one": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "correction",
+    "factor_one"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_corr_rows": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "correction",
+    "rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_corr_differ": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "correction",
+    "original_differs"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_corr_both": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "correction",
+    "rows_with_both_results"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_supplier_values": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "enums",
+    "supplier_values"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_instruction_values": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "enums",
+    "technical_instruction_values"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_flip_months": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "sign_flips",
+    "station_months"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_flip_stations": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "sign_flips",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_fdom_last": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "fdom",
+    "last_year"
+   ],
+   "fmt": "{}"
+  },
+  "db_sites": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "sites"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_cso": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "cso",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_cso_spills_null": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "cso",
+    "spills_null"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_cso_vol_null": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "cso",
+    "volume_null"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_cso_vol_zero": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "cso",
+    "volume_zero"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_rbu": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "rbu",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_vol_sb": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "rbu",
+    "vol_sb_nonnull"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_vol_sb_zero": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "rbu",
+    "vol_sb_zero"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_vol_fbas": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "rbu",
+    "vol_fbas_nonnull"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_vol_fbas_zero": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "rbu",
+    "vol_fbas_zero"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_join_matched": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "join",
+    "matched"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_join_names": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "join",
+    "cso_names"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_cso_ov": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "cso",
+    "type",
+    "OV"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_rbu_ov": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "rbu",
+    "type",
+    "OV"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_cso_of": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "cso",
+    "type",
+    "OF"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_rbu_of": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "rbu",
+    "type",
+    "OF"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_depth_n": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "critical_depth_mm",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_depth_p10": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "critical_depth_mm",
+    "p10"
+   ],
+   "fmt": "{:g}"
+  },
+  "db_depth_median": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "critical_depth_mm",
+    "median"
+   ],
+   "fmt": "{:g}"
+  },
+  "db_depth_p90": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "critical_depth_mm",
+    "p90"
+   ],
+   "fmt": "{:g}"
+  },
+  "db_depth_max": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "critical_depth_mm",
+    "max"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_near_combined": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "nearest",
+    "combined"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_near_separate": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "nearest",
+    "separate"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_near_median_km": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "nearest",
+    "median_km"
+   ],
+   "fmt": "{:g}"
+  },
+  "db_near_1km": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "nearest",
+    "within_1km"
+   ],
+   "fmt": "{:,}"
+  },
+  "db_near_2km": {
+   "file": "data/derived/hypodraft_b1.json",
+   "path": [
+    "nearest",
+    "within_2km"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_ts": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "station_days_ts"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_levels": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "with_levels"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_bottom": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "with_levels_oxygen_bottom"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_bottom_deep": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "with_levels_oxygen_bottom_deep"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_deep_m": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "deep_m"
+   ],
+   "fmt": "{:g}"
+  },
+  "dc1_near_m": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "near_m"
+   ],
+   "fmt": "{:g}"
+  },
+  "dc1_near": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "oxygen_near_deepest_t"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_stations": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_first": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "first_year"
+   ],
+   "fmt": "{}"
+  },
+  "dc1_last": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "last_year"
+   ],
+   "fmt": "{}"
+  },
+  "dc1_maal_days": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "maaledybde_station_days"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_maal_bottom": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "maaledybde_with_bottom"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_unk_t": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "unknown_probe_rows",
+    "temperature"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_unk_s": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "unknown_probe_rows",
+    "salinity"
+   ],
+   "fmt": "{:,}"
+  },
+  "dc1_unk_o": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "c1",
+    "unknown_probe_rows",
+    "oxygen"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_n_register": {
+   "file": "data/derived/triage.json",
+   "path": [
+    "n_register"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_hov_features": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "layers",
+    "hovedoplande_features"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_ctd_bytes": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "layers",
+    "ctd_bytes"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_ctd_columns": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "layers",
+    "ctd_columns"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_series_vars": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series",
+    "variables"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_series_stations": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_series_nmonths": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "months"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_sal_bed_n": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "by_variable",
+    "sal_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_sal_bed_st": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "by_variable",
+    "sal_bed",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_oxy_bed_n": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "by_variable",
+    "oxy_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_oxy_bed_st": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "by_variable",
+    "oxy_bed",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_sal_surf_n": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "by_variable",
+    "sal_surf",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_temp_bed_n": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "by_variable",
+    "temp_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_oxysat_bed_n": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "series_by_variable",
+    "by_variable",
+    "oxysat_bed",
+    "n"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_maal_stations_bottom": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "maaledybde",
+    "stations_with_bottom"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_lys_stations": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "lys",
+    "stations_with_coordinates"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_st_rows": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "stations_register",
+    "rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_st_stations": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "stations_register",
+    "stations"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_st_transect": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "stations_register",
+    "with_transect_end"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_tdec_rows": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "temperature_decimals",
+    "rows"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_tdec_one": {
+   "file": "data/derived/hypodraft_ctd.json",
+   "path": [
+    "temperature_decimals",
+    "at_most_one_decimal"
+   ],
+   "fmt": "{:,}"
+  },
+  "da_st_first": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "stations_register",
+    "first_date"
+   ],
+   "fmt": "{}"
+  },
+  "da_st_last": {
+   "file": "data/derived/hypodraft_facts.json",
+   "path": [
+    "stations_register",
+    "last_date"
+   ],
+   "fmt": "{}"
+  }
+ },
+ "params": {},
+ "sources": {},
+ "nodes": [],
+ "claims": []
+}

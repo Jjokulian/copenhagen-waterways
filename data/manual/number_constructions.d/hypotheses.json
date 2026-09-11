@@ -1,0 +1,126 @@
+{
+ "constructions": [
+  {
+   "id": "K-HYPOTHESES-EVIDENCE",
+   "title": "What the hypothesis register states about itself and the station register",
+   "covers": {
+    "file": "data/derived/hypotheses_evidence.json",
+    "fields": {
+     "register.rows": {
+      "kind": "counted",
+      "is": "Records in the ODA station register `data/raw/oda/stations.csv`, one for every record the reader yields."
+     },
+     "register.rows_with_both_dates": {
+      "kind": "counted",
+      "is": "Register records whose `StartDato` and `SlutDato` are both non-blank after `strip()`."
+     },
+     "register.rows_start_equals_end": {
+      "kind": "counted",
+      "is": "Of those, the records whose `StartDato` is the same string as their `SlutDato`: a record that states one day, not a span."
+     },
+     "register.series_stations": {
+      "kind": "counted",
+      "is": "Distinct station ids in the `stations` array of `docs/data/areas/stations_series.json`, the monthly series the register pages analyse."
+     },
+     "register.series_stations_in_register": {
+      "kind": "counted",
+      "is": "Series station ids that occur as an `ObservationsstedNr` anywhere in the station register, compared as exact strings."
+     },
+     "page.hypotheses": {
+      "kind": "counted",
+      "is": "Entries in the register `H` of `scripts/hypotheses.py`, counted as the page is written; the ids are asserted unique before counting."
+     },
+     "page.groups": {
+      "kind": "counted",
+      "is": "Distinct group letters among those entries: the groups that hold at least one entry, not the groups declared."
+     }
+    }
+   },
+   "what": "Counts the entries and groups of the hypothesis register as it is written, and two facts about the ODA station register that entry `I1` states: how many series stations the register carries, and on how many of its records the start date is the end date.",
+   "model": "The station register is streamed with `csv.DictReader`, semicolon delimiter and `latin-1` decoding, as `scripts/hypodraft_facts.py` reads it. Every record increments `rows`; its `ObservationsstedNr`, stripped, goes into a set; a record with both dates non-blank increments `rows_with_both_dates`, and also `rows_start_equals_end` when the two strings are equal. The series station ids are the `id` of each element of `stations`, and the carried count is the size of the intersection of the two id sets. The result is kept with the size and modification time of both files, and recomputed only when either changes. The page counts are the length of `H` and of the set of its group letters.",
+   "assumptions": [
+    "One `csv` record is one row of the register. The register has no free-text columns, so no record is split.",
+    "A station id means the same station in the register and in the monthly series: both are the ODA `ObservationsstedNr`.",
+    "Equal date strings mean the record states a single visit. A record could state a genuine one-day lifespan; nothing in the register distinguishes that."
+   ],
+   "justified": [
+    {
+     "text": "The register read and the date test are the script's own code, rerun whenever the register or the series is replaced.",
+     "ref": "scripts/hypotheses.py:_register_facts"
+    },
+    {
+     "text": "The row count can be checked against the independent count of the same file in the drafts' file facts, `stations_register.rows`.",
+     "ref": "data/derived/hypodraft_facts.json"
+    },
+    {
+     "text": "The register is read in the declared ODA format.",
+     "ref": "scripts/formats.py"
+    }
+   ],
+   "gaps": [
+    "The cache is keyed on file size and modification time, not content: a file replaced by another of the same size within the same second is not reread.",
+    "The ids are compared as exact strings; a series id written with leading zeros or spaces that the register lacks would count as absent."
+   ],
+   "void_if": [
+    "the station register is refetched with a different period, since ODA returns the stations visited in the period asked for",
+    "the monthly series is rebuilt from a different station list and this page is not rerun"
+   ],
+   "licenses": "Statements about the held register file and the held monthly series: which series stations the file names, and how its date columns are filled.",
+   "not_licensed": "When a station was in the monitoring network. A record with one date is a visit, and absence from the file is absence from this extract, not from the programme.",
+   "watches": [
+    "scripts/hypotheses.py",
+    "scripts/formats.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: the only change to hypotheses.py since the last reading is two sentences now filled from data - the stormwater volume total and the sediment points - and the VALUES that read them; the evidence-writing code is untouched, verified by hashing the file with that change undone, which matches what was last read. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/hypotheses.py": "74332be27932b538",
+     "scripts/formats.py": "4d546353a50a2668"
+    }
+   }
+  },
+  {
+   "id": "K-HYPOTHESES-UDSTYR",
+   "title": "Sampling-gear value counts of the CTD extract",
+   "covers": {
+    "file": "data/derived/enums.json",
+    "fields": {
+     "ctd.categorical.Prøvetagningsudstyr.*": {
+      "kind": "counted",
+      "is": "Records of the CTD extract whose `Prøvetagningsudstyr` is exactly this value, over the whole file."
+     }
+    }
+   },
+   "what": "The number of CTD records per value of the sampling-gear column, from the enumeration pass over the extract.",
+   "model": "`scripts/enums.py` streams the extract in the declared format and counts every value of a column while the column stays categorical; this column never leaves the categorical state, so every value is counted in full. The counts over all values sum to `ctd.rows`.",
+   "assumptions": [
+    "One record is one parameter reading, so a share of records is a share of readings, not of casts or stations."
+   ],
+   "justified": [
+    {
+     "text": "Counts are over the whole file, per exact value.",
+     "ref": "scripts/enums.py"
+    }
+   ],
+   "gaps": [
+    "The value names the gear recorded by the data supplier; whether it names the gear actually used is not checkable from the extract."
+   ],
+   "void_if": [
+    "the extract is refetched and the enumeration is not rerun"
+   ],
+   "licenses": "How many records of the held CTD extract carry a given gear value.",
+   "not_licensed": "Which instrument made a given measurement: the column is filled with a constant, which is why the probe number is the identifier that matters.",
+   "confirmed": {
+    "by": "fork hypotheses (written against the code, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/enums.py": "e21dcf1b1c5748b5"
+    }
+   },
+   "watches": [
+    "scripts/enums.py"
+   ]
+  }
+ ]
+}

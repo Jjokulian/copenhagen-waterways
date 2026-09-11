@@ -1,0 +1,85 @@
+{
+ "steps": [
+  {
+   "script": "scripts/light.py",
+   "inputs": [
+    "data/raw/oda/lys.csv.gz",
+    "data/raw/oda/maaledybde.csv.gz",
+    "data/derived/hypotheses.json",
+    "data/manual/number_constructions.d/water.json"
+   ],
+   "outputs": [
+    "data/derived/light.json",
+    "docs/LIGHT.md"
+   ]
+  },
+  {
+   "script": "scripts/seabed.py",
+   "inputs": [
+    "data/derived/waves.json",
+    "data/derived/onshore.json",
+    "data/raw/weather/fetch.json",
+    "data/manual/species.json",
+    "data/manual/number_constructions.d/water.json"
+   ],
+   "outputs": [
+    "data/derived/seabed.json",
+    "docs/SEABED.md"
+   ]
+  },
+  {
+   "script": "scripts/observing.py",
+   "inputs": [
+    "data/raw/national/marin_overordnet.geojson",
+    "data/raw/national/badevand.geojson",
+    "data/manual/claims.d/water.json",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/manual/number_constructions.d/water.json"
+   ],
+   "outputs": [
+    "data/derived/observing.json",
+    "docs/OBSERVING.md"
+   ]
+  },
+  {
+   "script": "scripts/oxygen.py",
+   "inputs": [
+    "data/derived/areas.json",
+    "data/raw/national/sw_mfs_tilstand.geojson",
+    "data/derived/currents_index.json",
+    "data/manual/species.json",
+    "data/manual/number_constructions.d/water.json"
+   ],
+   "outputs": [
+    "data/derived/oxygen.json",
+    "docs/OXYGEN.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/sensing.py",
+   "inputs": [
+    "data/manual/species.d/water.json"
+   ],
+   "outputs": [
+    "docs/SENSING.md"
+   ]
+  },
+  {
+   "script": "scripts/currents.py",
+   "inputs": [
+    "data/derived/currents_validate.json",
+    "data/derived/currents_index.json",
+    "data/derived/currents_transport.json",
+    "data/derived/waves.json",
+    "data/manual/claims.d/water.json",
+    "data/manual/number_constructions.d/water.json"
+   ],
+   "outputs": [
+    "docs/CURRENTS.md"
+   ],
+   "args": [
+    "report"
+   ]
+  }
+ ]
+}

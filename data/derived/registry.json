@@ -8,6 +8,14 @@
   "m3 figures are classified as storage / annual_flow / unclear from their sentence; only 'storage' figures on pages citing exactly one klima_id are attributed to a structure.",
   "Depths and diameters come from planning prose, not survey. No open source gives surveyed invert levels for Copenhagen sewers."
  ],
+ "annual_flow_duplicates": [
+  {
+   "title": "Reduktion af overløb fra Pumpestation Strandvænget",
+   "url": "https://planer.kk.dk/spildevandsplan-2018/projekter/afloebssystem/reduktion-af-overloeb-fra-pumpestation-strandvaenget/",
+   "same_figure_as": "Indsats om reduktion af overløb fra Pumpestation Strandvænget",
+   "same_figure_as_url": "https://planer.kk.dk/spildevandsplan-2018/projekter/afloebssystem/indsats-om-reduktion-af-overloeb-fra-pumpestation-strandvaenget/"
+  }
+ ],
  "counts": {
   "plan_projects": 357,
   "plan_projects_with_geometry": 105,
@@ -19,7 +27,11 @@
   "storage_m3_attributable": 139580,
   "storage_m3_shared_attribution": 99200,
   "annual_flow_m3_per_year": 937600,
-  "volume_figures_needing_human_read": 45
+  "annual_flow_m3_per_year_distinct": 789600,
+  "annual_flow_pages": 7,
+  "annual_flow_figures_distinct": 6,
+  "volume_figures_needing_human_read": 45,
+  "plan_other_pages_scanned": 116
  },
  "klima_id_without_documentation": [
   "AM10",
@@ -2393,7 +2405,8 @@
       "Arbejdsplads"
      ]
     ]
-   ]
+   ],
+   "annual_flow_counted": true
   },
   {
    "plan_id": null,
@@ -3152,7 +3165,8 @@
     "Indledning": "Pumpestation Strandvænget håndterer spildevand fra et stort fælleskloakeret opland, der i København strækker sig over Brønshøj, Utterslev, Ydre Nørrebro og Ydre Østerbro. I oplandet indgår herudover de østlige dele af Gladsaxe, de vestlige dele af Gentofte samt en mindre del af det nordlige Frederiksberg. Spildevandet pumpes herfra videre til rensning på Renseanlæg Lynetten. Under regn stiger vandmængderne i fælleskloakken betydeligt, hvilket kan medføre at der løber vand til pumpestationen hurtigere, end hvad der kan transporteres videre til renseanlægget. Da der i dag kun er et begrænset bassinvolumen tilgængeligt for overløb fra pumpestationen, udledes der ved regnhændelser i dag relativt ofte spildevand via overløbsbygværkerne forbundet med Pumpestation Strandvænget.\n For at opnå en mere tidssvarende og miljømæssig hensigtsmæssig håndtering af spildevandet ved Pumpestation Strandvænget, vurderes der at være behov for, at HOFOR snarest muligt udfører tiltag til at begrænse disse årlige udledninger betydeligt. Det kan muligvis kræve en midlertidig løsning, da der er flere projekter under planlægning i området.\n Det er i tråd med Københavns Kommunes Spildevandsplan 2018’s overordnede mål om at reducere mængden af overløb af spildevand. Overløb fra Pumpestation Strandvænget vurderes at udgøre en stor miljømæssig påvirkning med tilsvarende stort behov for at igangsætte en prioriteret indsats til begrænsning af denne miljøpåvirkning.\n Status \n De overløbsbygværker, hvorfra der ved overløb udledes regnvandsopblandet spildevand fra Pumpestation Strandvænget, er U4 med ca. 44 årlige overløb og samlet overløbsmængde på ca. 148.000 m³ udledt til Øresund, og UØ14.1 med ca. 3 årlige overløb og samlet overløbsmængde på ca. 9.000 m³ udledt til Svanemøllebugten.\n I henhold til statens vandområdeplaner er målsætningen for Øresund og Københavns Havn hhv. god økologisk tilstand og godt økologisk potentiale efter 22. december 2021. Disse målsætninger er i dag ikke opfyldt, idet der ifølge vandområdeplanerne i 2021 er hhv. ringe økologisk tilstand for Øresund og moderat økologisk potentiale for Københavns Havn.\n Plan \n HOFOR pålægges ved vedtagelse af dette projekt en indsats med snarest muligt at sikre en betydelig samlet reduktion af hyppighed og omfang af de årlige overløb af regnvandsopblandet spildevand relateret til Pumpestation Strandvænget.\n HOFOR skal således hurtigst muligt, og om nødvendigt midlertidigt, udføre tiltag til at sikre, at antallet af årlige overløb fra Pumpestation Strandvængets overløbsbygværker i den fremtidige situation nedsættes til 1 (n=1) – i tråd med de øvrige indsatser for overløbsbygværker fastsat i Spildevandsplan 2018. Der skal tilsvarende ske en væsentlig reduktion i de årlige udledte mængder regnvandsopblandet spildevand. Det skal sikres, at vandet renses for overfladestoffer inden udledning, fx ved finristning, og om nødvendigt skal der etableres nye tiltag, så denne tilstrækkelige tilbageholdelse af overfladestoffer kan sikres.\n HOFOR skal desuden i dialog med BIOFOS sikre sig, at løsningen holder sig inden for den tilgængelige hydrauliske kapacitet på Renseanlæg Lynetten og ikke giver anledning til mere bypass ved renseanlægget.\n Herudover skal det sikres, at de udførte tiltag ikke er en hindring for opretholdelse af nuværende badevandskvalitet og ikke udgør en hindring for fremtidige planlagte badesteder.",
     "Projektbeskrivelse og ejerforhold": "HOFOR skal identificere en teknisk løsning, der skal sikre at kravene fastsat i dette projekts indsats beskrevet under ovenstående plan-afsnit om reduktion af overløb fra Pumpestation Strandvænget kan overholdes.\n Miljøforhold \n Denne indsats vil lede til en betydelig samlet reduktion af hyppighed og omfang af de årlige overløb fra Pumpestation Strandvænget – og vil dermed medføre væsentlige miljøforbedringer. Indsatsen vil ligeledes sikre, at miljøpåvirkningen fra Pumpestation Strandvænget ikke fremadrettet vil bidrage til at hindre opfyldelse af statens fastlagte miljømål. Indsatsen vil desuden skulle udmøntes på en måde, så udledning fra overløbsbygværker i den fremtidige situation (med realiseret planscenarie) ikke udgør en hindring for opretholdelse af nuværende badevandskvalitet. Hvis den valgte løsning får indflydelse for placering af fremtidige badesteder, skal det vurderes og påvirkningen minimeres.\n Økonomiske forhold \n Som beskrevet under ovenstående afsnit, ”Projektbeskrivelse og ejerforhold”, er det konkrete løsningsprojekt endnu ikke identificeret. Det er derfor endnu ikke muligt at estimere den forventede økonomi relateret til dette kommende projekt. I forbindelse med at HOFOR identificerer og formulerer projektet med den konkrete løsning, vil det være muligt at fastsætte forventet budget og økonomi i spildevandsplanen, herunder princip for økonomisk fordeling mellem berørte spildevandsforsyningsselskaber.\n Der henstilles til, at HOFOR arbejder målrettet på at finde en løsning, der snarest muligt sikrer implementering af kravene fastsat i dette projekts indsats beskrevet under ovenstående plan-afsnit. Hvis der vælges en midlertidig løsning, skal tidsperspektivet for en mere permanent løsning beskrives. Et projekt med HOFORs konkrete tekniske løsning forventes optaget i spildevandsplanens kommende Projekttillæg 2023.\n Berørte matrikler \n Som nævnt under ovenstående afsnit, ”Projektbeskrivelse og ejerforhold”, er det konkrete løsningsprojekt endnu ikke identificeret. Når dette projekt er identificeret og formuleret, vil forhold omkring eventuelle berørte matrikler og deres påvirkning ligeledes kunne beskrives, forventeligt i spildevandsplanens kommende Projekttillæg 2023."
    },
-   "tables": []
+   "tables": [],
+   "annual_flow_counted": true
   },
   {
    "plan_id": "A6.1",
@@ -4592,7 +4606,8 @@
       ""
      ]
     ]
-   ]
+   ],
+   "annual_flow_counted": false
   },
   {
    "plan_id": "A5.10",
@@ -5005,7 +5020,8 @@
     "Indledning": "Folketinget vedtog den 29. november 2018 Lov om ændring af lov om Metroselskabet I/S og Udviklingsselskabet By & Havn I/S. I loven bemyndiges By & Havn bl.a. til at:\n Anlægge erhvervshavn med krydstogtterminal, containerterminal og anden havnevirksomhed og havnerelateret virksomhed med tilhørende bygninger og anlæg, fornødne adgangsveje og opmarcharealer samt service- og vedligeholdelsesfaciliteter m.v. \n By & Havn har til Teknik- og Miljøforvaltningen oplyst, at containerterminalen ønskes anlagt fra medio 2022 til ibrugtagning i 2024, hvilket nødvendiggør anlæg af adgangsvejen til erhvervshavnen. Området for selve containerterminalen er beskrevet i spildevandsplanens Projekttillæg 2022 under projektet B.104 ”Ny Containerterminal i Ydre Nordhavn”.\n Status \n Den sydvestlige spids af adgangsvejen er omfattet af kloakopland 401, der er privat separatkloakeret med By & Havn som ledningsejer. Spildevand fra oplandet ledes til Renseanlæg Lynetten, og regnvand udledes lokalt. Resten af adgangsvejens tracé er ikke i dag omfattet af kloakopland.\n Plan \n Der pågår et større planlægningsarbejde for håndtering af spildevand og regnvand for det samlede Nordhavn. Med dette projekt udlægges der nyt kloakopland for hele adgangsvejens tracé som vist på ovenstående figur. Det nye kloakopland for adgangsvejen udgør et reduceret areal på ca. 1 ha.\n By & Havn har oplyst, at de forventer at fastholde ejerskab af den kommende adgangsvej til erhvervshavnen. Kloakoplandet for adgangsvejen udlægges derfor som privat separatkloakeret, svarende til det eksisterende kloakopland 401. Der forventes dog i praksis alene afledt regnvand fra adgangsvejens arealer.\n Det fremgår af Miljøkonsekvensrapporten for container- og ny krydstogtterminal på Ydre Nordhavn af 15. maj 2019, samt Miljøstyrelsens miljøgodkendelse af 11. oktober 2019 (”Miljøgodkendelse, Tilladelse til direkte udledning af overfladevand for: CMP Containerterminal i Nordhavn”), at Københavns Kommune skal give tilladelse til etablering af adgangsvejen, samt til afledning af overfladevand fra vejen efter miljøbeskyttelseslovens §28.\n By & Havn har oplyst, at trafikbelastningen på adgangsvejen bliver væsentlig lavere end 5000 ÅDT. Regnvandet fra adgangsvejen kan derfor udledes lokalt efter passende rensning svarende til vilkår fastsat i kommende udledningstilladelse, jf. gældende lovgivning og Københavns Kommunes gældende administrationspraksis i forhold til det ansøgte afvandingsprojekt.\n Den præcise afvanding fra adgangsvejen forventes endeligt fastlagt ved forestående proces med ansøgning om og udarbejdelse af udledningstilladelse. I takt med at planscenariet realiseres, vil forholdene blive ajourført i Københavns Kommunes offentligt tilgængelige spildevandsplan.",
     "Projektbeskrivelse og ejerforhold": "Hele adgangsvejen skal anlægges på nuværende landareal, umiddelbart vest for Oceankaj. By & Havn ønsker at tilslutte regnvand fra adgangsvejen til det eksisterende anlæg i Oceankaj, der i dag udleder regnvand lokalt efter rensning i sandfang og olieudskillere.\n Adgangsvejen kommer til at bestå af ny vej parallelt med Oceankaj fra østenden af Oceanvej til den sydlige ende af containerterminalen, en strækning på ca. 1 km. Adgangsvejen forventes at få et vejudlæg med bredde på ca. 9 m med fuld befæstelse.\n Miljøforhold \n Årlig regnmængde fra adgangsvejen udledt efter lokal rensning vil være ca. 4.600 m³.\n Berørte matrikler \n I forhold til berørte matrikler har By & Havn oplyst, at etableringen af adgangsvejen til erhvervshavnen berører umatrikuleret areal i Ydre Nordhavn samt matrikel 6376, Udenbys Klædebo Kvarter, København, der ejes af By & Havn."
    },
-   "tables": []
+   "tables": [],
+   "annual_flow_counted": true
   },
   {
    "plan_id": null,
@@ -22544,7 +22560,8 @@
       ""
      ]
     ]
-   ]
+   ],
+   "annual_flow_counted": true
   },
   {
    "plan_id": null,
@@ -22711,7 +22728,8 @@
       "Investeringsramme B"
      ]
     ]
-   ]
+   ],
+   "annual_flow_counted": true
   },
   {
    "plan_id": null,
@@ -26288,7 +26306,8 @@
       ""
      ]
     ]
-   ]
+   ],
+   "annual_flow_counted": true
   },
   {
    "plan_id": null,

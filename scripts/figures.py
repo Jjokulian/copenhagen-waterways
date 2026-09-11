@@ -72,8 +72,17 @@ _cache = {}
 
 
 def _reg():
+    """claims.json with its fragments in claims.d/ merged."""
     if "d" not in _cache:
-        _cache["d"] = json.load(open(REG, encoding="utf-8"))
+        from common import fragments
+        d = json.load(open(REG, encoding="utf-8"))
+        for f in fragments(REG)[1:]:
+            frag = json.load(open(f, encoding="utf-8"))
+            for k in ("figures", "params", "sources"):
+                d.setdefault(k, {}).update(frag.get(k, {}))
+            for k in ("claims", "nodes"):
+                d.setdefault(k, []).extend(frag.get(k, []))
+        _cache["d"] = d
     return _cache["d"]
 
 
@@ -147,6 +156,10 @@ SRCLINK = re.compile(r"\[([^\]]+)\]\((?:\.\./)*SOURCES\.md#(F-[0-9a-f]{10})\)")
 
 def _landing_prose(html):
     """The reader-facing text of index.html: its long string literals."""
+    # code comments are not prose a reader sees
+    html = re.sub(r"/\*.*?\*/", "", html, flags=re.S)
+    html = re.sub(r"<!--.*?-->", "", html, flags=re.S)
+    html = re.sub(r"(?m)^\s*//.*$", "", html)
     lits = re.findall(r'"((?:[^"\\]|\\.){30,400})"', html)
     return "\n".join(l for l in lits
                      if re.search(r"[a-z]{3,}\s+[a-z]{3,}", l)
@@ -179,13 +192,34 @@ def check(rel, text=None):
             for s, cid in CLAIMLINK.findall(text) if cid not in claims]
     hard += [f"{rel}: {s} links to {fid}, which SOURCES.md does not hold"
              for s, fid in SRCLINK.findall(text) if fid not in entries]
+    # a source is not enough: the construction must be declared, and a number
+    # built on simulation may stand only on a method page
+    import constructions
+    for s, fid in SRCLINK.findall(text):
+        e = entries.get(fid) or {}
+        if e.get("uncovered"):
+            hard.append(f"{rel}: {s} ({fid}) has no declared construction for "
+                        + "; ".join(e["uncovered"]))
+        if e.get("synthetic") and not constructions.synthetic_allowed(rel):
+            hard.append(f"{rel}: {s} ({fid}) is built on simulation, and {rel} is not "
+                        "a method page")
     if rel in live.EXEMPT:
         return hard, []
+    # references and chemical species are checked entities too: a committed one
+    # must still match its register, and none may be typed bare
+    import chem
+    import refs
+    body = _landing_prose(text) if rel == "index.html" else text
+    rh, rb = refs.check_links(rel, body)
+    ch, cb = chem.check_spans(rel, body)
+    hard += rh + ch
+    extra = [(l, "ref " + t, c) for l, t, c in rb] + [(l, "chem " + t, c) for l, t, c in cb]
     if rel == "index.html":
-        ok = _landing_accounted()
-        return hard, [b for b in live.bare_numbers(_landing_prose(text))
-                      if b[1] not in ok]
-    return hard, live.bare_numbers(text)
+        # the landing is generated now (scripts/pages/landing.py -> docs/LANDING.md,
+        # checked like every page); a number typed into index.html's own strings is
+        # refused outright - no value-matching exemption any more
+        return hard, live.bare_numbers(body) + extra
+    return hard, live.bare_numbers(text) + extra
 
 
 def targets():
@@ -252,9 +286,9 @@ def main(argv):
     if not failing and not hard_all:
         log(f"  every number in {len(docs)} document(s) has a chain of justification")
         return 0
-    log(f"\n  {total} number(s) in {len(failing)} document(s) have no chain of "
-        "justification. Each must come through live_json(), fig(), or - if it is "
-        "an identifier - be written as `code`.")
+    log(f"\n  {total} unchecked entit(ies) in {len(failing)} document(s): numbers "
+        "without a chain of justification, references typed bare ('ref K1'), and "
+        "chemical formulas typed bare ('chem O2'). See LIVE_NUMBERS.md.")
     return 1
 
 

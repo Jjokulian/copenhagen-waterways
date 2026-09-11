@@ -1,0 +1,9 @@
+{
+ "_what": "Species used by fork nitrogen's pages that the main register lacks.",
+ "species": {
+  "Fe3+": {
+   "unicode": "Fe³⁺",
+   "name": "ferric iron"
+  }
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "_what": "Fork w1-ni: inputs scripts/nitrogen.py reads since the claims sweep, merged with its step in build.json.",
+ "steps": [
+  {
+   "script": "scripts/nitrogen.py",
+   "inputs": [
+    "data/derived/outfalls.json",
+    "data/derived/currents_index.json",
+    "data/raw/national/punkt_rbu_udl.geojson",
+    "data/raw/national/punkt_rens_udl.geojson",
+    "data/manual/claims.d/w1-ni.json",
+    "data/derived/pins/NI-MFE-OVERSEER.txt",
+    "data/derived/pins/NI-DCE-ILT-2023.txt",
+    "data/derived/pins/NI-DCE-ILT-2025.txt",
+    "data/derived/pins/NOVANA-2327.txt",
+    "data/derived/pins/DHI-MODEL-DEL2-2015.txt",
+    "data/derived/pins/POL-TV2-20260903.txt",
+    "data/derived/pins/POL-MGTP-20251203.txt",
+    "data/derived/pins/POL-GP-20250619.txt"
+   ],
+   "outputs": [
+    "docs/NITROGEN.md"
+   ]
+  }
+ ]
+}

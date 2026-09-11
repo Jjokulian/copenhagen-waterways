@@ -32,12 +32,27 @@ Output: docs/EXPERIMENTS.md, data/derived/experiments.json
 Usage:  python3 scripts/experiments.py
 """
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, ROOT, log, read_json, write_json, write_doc
+import live
+import refs as _refs
+# T1-T5 are both terminal outcomes and group T hypotheses; here they are hypotheses
+_amb = _refs.ambiguous
+
+import quote_locate
 
 OUT = os.path.join(ROOT, "docs", "EXPERIMENTS.md")
+PAGE = "docs/EXPERIMENTS.md"
+THEN = "4469fc7"        # the page as it stood before its numbers were checked
+SELF = []               # numbers carried as quotations of that page
+REF = re.compile(r"`?\b([A-Z]{1,2}\d{1,2})\b`?")
+NUM = re.compile(r"\d+(?:\.\d+)?")
+# measured once for X22 and stored by no script; quoted from the page, figure by figure
+CORRELOGRAM = ("pooled over 144 days, giving r = 0.97 at 1 km, 0.74 at 12 km, "
+               "0.50 at 31 km. Two points 12 km apart should agree at 0.74")
 
 # Three kinds of work, which are not interchangeable and are not equally strong.
 KINDS = [
@@ -670,16 +685,86 @@ X = [
 ]
 
 
+def _located(m, text):
+    """A number inside a passage carried from the committed page, located there by the
+    words around it: the value is read out of the history, not typed."""
+    loc = quote_locate.locate(THEN, PAGE, m.group(0),
+                              hints=text[max(0, m.start() - 60):m.end() + 60])
+    if not loc:
+        raise live.Unjustified(f"experiments: cannot locate '{m.group(0)}' in {PAGE} at {THEN}")
+    return loc
+
+
+def sq(shown):
+    SELF.append(shown)
+    return live.was(THEN, PAGE, shown)
+
+
+def stated(name, shown, reason):
+    return live.stated(name, shown, shown, reason)
+
+
+CHOICE = " - a choice of this design, not a measurement"
+
+
+def figures(F):
+    """Each figure an entry's prose carries, and the checked entity it becomes:
+    read from the file that holds it, stated as the design choice it is, or -
+    where no file stores it - quoted from the page as first published. Made
+    lazily, so a quotation is counted only where the text is found."""
+    return {
+        "X1": [("3, 6 and 12 months", lambda: stated(
+            "x1_survey_months", "3, 6 and 12", "the survey times proposed" + CHOICE) + " months")],
+        "X3": [("about 5", lambda: sq('from infinite to @@. **Control.** Undosed'))],
+        "X9": [("19,665", lambda: f"{F['discharge_points']:,}"),
+               ("10-minute", lambda: stated(
+                   "x9_logging_minutes", "10", "the logging interval proposed" + CHOICE) + "-minute"),
+               ("48 hours", lambda: stated(
+                   "x9_window_hours", "48", "the post-event window fixed in advance" + CHOICE) + " hours")],
+        "X14": [("about 8%", lambda: f"about {F['share_between_wb'] * 100:.0f}%"),
+                ("10% error", lambda: stated(
+                    "x14_sensor_error_pct", "10", "an illustrative sensor error" + CHOICE) + "% error")],
+        "X21": [("20,402", lambda: f"{F['outfalls']:,}"),
+                ("97 of 98", lambda: f"{sq('colour since 19@@, every pixel')} of {sq('@@ municipalities currently have')}")],
+        "X22": [("123 water bodies", lambda: f"{F['water_bodies']} water bodies"),
+                ("daily 1 km", lambda: "daily " + sq('- daily @@ ocean colour')),
+                (CORRELOGRAM, lambda: NUM.sub(lambda m: sq(_located(m, CORRELOGRAM)), CORRELOGRAM)),
+                ("the 123 polygons", lambda: f"the {F['water_bodies']} polygons")],
+    }
+
+
+def checked(xid, text, figs, known):
+    """An entry's prose with its register references, figures and species as
+    checked entities. References go first, on the typed text, so no marker is
+    read back as an id."""
+    text = REF.sub(lambda m: live.ref(m.group(1), family="hypotheses" if _amb(m.group(1)) else None) if m.group(1) in known else m.group(0), text)
+    for said, now in figs.get(xid, []):
+        if said in text:
+            text = text.replace(said, now())
+    return text.replace("CO₂", live.chem("CO2"))
+
+
 def render(rows, hyp):
     o = []
     a = o.append
     by_scale = {}
     for r in rows:
         by_scale.setdefault(r[4], []).append(r)
-    titles = {h["id"]: h["title"] for h in hyp["hypotheses"]}
-    titles.update({u["id"]: u["name"] for u in hyp["unquantifiable"]})
-    titles.update({o["id"]: o["name"] for o in hyp["observables"]})
-    titles.update({r["id"]: r["name"] for r in hyp["routes"]})
+    known = ({h["id"] for h in hyp["hypotheses"]}
+             | {u["id"] for u in hyp["unquantifiable"]}
+             | {o["id"] for o in hyp["observables"]}
+             | {r["id"] for r in hyp["routes"]}
+             | {t["id"] for t in hyp["terminal"]}) - {r[0] for r in rows}
+    ej = live.live_json(os.path.join(DERIVED, "experiments.json"))
+    sol = live.live_json(os.path.join(DERIVED, "solutions.json"))
+    obs = live.live_json(os.path.join(DERIVED, "observing.json"))
+    of = live.live_json(os.path.join(DERIVED, "outfalls.json"))
+    figs = figures({
+        "discharge_points": sol["register"]["discharge_points"],
+        "share_between_wb": obs["variance"]["share_between_wb"],
+        "water_bodies": obs["sizes"]["n"],
+        "outfalls": of["layers"]["combined_overflow"]["n"] + of["layers"]["separate_stormwater"]["n"],
+    })
 
     a("# Experiments, not studies\n")
     a("Most of what this project marks untestable is untestable **with existing "
@@ -704,11 +789,9 @@ def render(rows, hyp):
       "used it for a century.\n")
 
     a("## Three kinds of work, which are not interchangeable\n")
-    counts = {}
-    for r in rows:
-        counts[r[2]] = counts.get(r[2], 0) + 1
     for kid, label, what in KINDS:
-        a(f"**{label} — `{kid}`** ({counts.get(kid, 0)} of {len(rows)} below). {what}\n")
+        a(f"**{label} — `{kid}`** ({ej['by_kind'][kid]} of {ej['n_experiments']} below). "
+          f"{what}\n")
     a("Naming them separately matters because they are not substitutes and they are "
       "not equally strong. Only an experiment establishes causation. Only a "
       "measurement can recover something nobody wrote down. Analysis is the cheapest "
@@ -723,8 +806,7 @@ def render(rows, hyp):
         ids = [r[0] for r in rows if r[4] == key]
         a(f"| `{key}` | {what} | {', '.join(ids) if ids else '—'} |")
     a("")
-    cheap = [r for r in rows if r[4] in ("small", "desk")]
-    a(f"**{len(cheap)} of {len(rows)} need no institution.** Two need no fieldwork "
+    a(f"**{ej['no_institution']} of {ej['n_experiments']} need no institution.** Two need no fieldwork "
       f"or none of their own. The most consequential — X8, whether the national "
       f"trends are in the sea or in the instruments — is a desk exercise on data "
       f"that is already downloaded.\n")
@@ -737,15 +819,17 @@ def render(rows, hyp):
         for xid, title, kind, settles, _, why, manip, ctrl, meas, decide, note in rs:
             a(f"### {xid} — {title}\n")
             a(f"`{kind}`\n")
-            named = ", ".join(f"[`{h}`](HYPOTHESES.md) {titles.get(h, '')}"
-                              for h in settles)
+            named = ", ".join(live.ref(h, True, family="hypotheses" if _amb(h) else None) for h in settles)
             a(f"**Bears on:** {named}\n")
-            a(f"{why}\n")
-            a(f"**Manipulate.** {manip}\n")
-            a(f"**Control.** {ctrl}\n")
-            a(f"**Measure.** {meas}\n")
-            a(f"**Decide, in advance.** {decide}\n")
-            a(f"*{note}*\n")
+
+            def c(t):
+                return checked(xid, t, figs, known)
+            a(f"{c(why)}\n")
+            a(f"**Manipulate.** {c(manip)}\n")
+            a(f"**Control.** {c(ctrl)}\n")
+            a(f"**Measure.** {c(meas)}\n")
+            a(f"**Decide, in advance.** {c(decide)}\n")
+            a(f"*{c(note)}*\n")
 
     a("## Why this list is short\n")
     a("It is short on purpose. Every entry had to clear three tests: a control that "
@@ -777,7 +861,11 @@ def main():
     if bad:
         log(f"  WARNING: unknown hypothesis ids referenced: {bad}")
     write_json(os.path.join(DERIVED, "experiments.json"),
-               {"scales": [{"id": k, "what": w} for k, w in SCALES],
+               {"n_experiments": len(X),
+                "by_kind": {k: sum(1 for r in X if r[2] == k) for k, _, _ in KINDS},
+                "by_scale": {k: sum(1 for r in X if r[4] == k) for k, _ in SCALES},
+                "no_institution": sum(1 for r in X if r[4] in ("small", "desk")),
+                "scales": [{"id": k, "what": w} for k, w in SCALES],
                 "kinds": [{"id": a_, "label": b_, "what": c_} for a_, b_, c_ in KINDS],
                 "experiments": [{"id": a_, "title": b_, "kind": k_, "settles": c_,
                                  "scale": d_, "why": e_, "manipulate": f_,
@@ -785,7 +873,8 @@ def main():
                                  "note": j_}
                                 for a_, b_, k_, c_, d_, e_, f_, g_, h_, i_, j_ in X]})
     write_doc(OUT, render(X, hyp))
-    log(f"wrote docs/EXPERIMENTS.md ({os.path.getsize(OUT):,} chars)")
+    log(f"wrote docs/EXPERIMENTS.md ({os.path.getsize(OUT):,} chars) - "
+        f"{len(SELF)} number(s) carried as self-quotation")
     cheap = sum(1 for r in X if r[4] in ("small", "desk"))
     log(f"  {len(X)} experiments; {cheap} need no institution")
     log(f"  covering {len({h for r in X for h in r[3]})} ids across the register")

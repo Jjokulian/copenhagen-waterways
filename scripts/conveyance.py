@@ -40,6 +40,9 @@ SRC = os.path.join(RAW, "skp_veje_tunneller_kk.geojson")
 OUT = os.path.join(DERIVED, "conveyance.json")
 SURFACE = {"Grønne veje", "Skybrudsveje", "Forsinkelsesveje"}
 PIPE = {"Skybrudsledning"}
+# Delivery is split at the last full year before the layer was fetched: lengths the
+# city expects in service by then, later, or undated. Read by solutions.py.
+DELIVERY_CUTOFF = 2025
 
 
 def seg_km(ln):
@@ -55,6 +58,7 @@ def main():
     d = read_json(SRC)
     by = collections.Counter()
     n = collections.Counter()
+    by_year = collections.Counter()
     nogeom = 0          # counted, so the provenance can say what it dropped
     for f in d["features"]:
         g = f.get("geometry") or {}
@@ -65,8 +69,12 @@ def main():
             nogeom += 1
             continue
         t = (f["properties"].get("typologi") or "ukendt").strip()
-        by[t] += sum(seg_km(p) for p in parts)
+        km = sum(seg_km(p) for p in parts)
+        by[t] += km
         n[t] += 1
+        # the city's own expected-in-service year, for the delivery schedule
+        yr = str(f["properties"].get("forventet_ibrugtagning") or "").strip()
+        by_year[yr if yr.isdigit() else "undated"] += km
 
     surface = sum(v for k, v in by.items() if k in SURFACE)
     pipe = sum(v for k, v in by.items() if k in PIPE)
@@ -101,6 +109,14 @@ def main():
     out["features_without_line_geometry"] = nogeom
     out["mix_km"] = round(mix, 1)
     out["surface_plus_mix_km"] = round(surface + mix, 1)
+    # Delivery on the city's expected-in-service dates, measured with the same
+    # segment lengths, so the site has one length table for this layer, not two.
+    dated = {int(k): v for k, v in by_year.items() if k.isdigit()}
+    out["delivery_cutoff_year"] = DELIVERY_CUTOFF
+    out["in_service_by_cutoff_km"] = round(sum(v for y, v in dated.items() if y <= DELIVERY_CUTOFF), 1)
+    out["scheduled_after_cutoff_km"] = round(sum(v for y, v in dated.items() if y > DELIVERY_CUTOFF), 1)
+    out["undated_km"] = round(by_year.get("undated", 0.0), 1)
+    out["last_scheduled_year"] = max(dated) if dated else None
     alt = [("surface only: Skybrudsveje, Groenne veje, Forsinkelsesveje",
             round(surface, 1)),
            ("surface plus mixed alignment", round(surface + mix, 1)),
@@ -133,12 +149,14 @@ def main():
                       "a pipe, out of sight",
             calculation="sum of segment lengths over those features, as above",
             code=code, unit="km", n_in=nall, n_used=npipe,
-            excluded=[("feature with no line geometry - nothing to measure", nogeom), ("every surface and mixed typologi", nall - npipe)]),
+            excluded=[("feature with no line geometry - nothing to measure", nogeom), ("every surface and mixed typologi", nall - nogeom - npipe)]),
         "surface_to_pipe": provenance(
             counts_as="the surface-only class against the pipe class - the ratio "
                       "changes with the surface definition, so it carries it",
             calculation="surface_km / pipe_km",
             code=code, n_in=nall, n_used=nsurf + npipe,
+            excluded=[("feature with no line geometry - nothing to measure", nogeom),
+                      ("typologi in neither class ('mix')", sum(n.values()) - nsurf - npipe)],
             alternatives=[("surface only / pipe", round(surface / pipe, 2)),
                           ("surface plus mix / pipe", round((surface + mix) / pipe, 2))]),
     }

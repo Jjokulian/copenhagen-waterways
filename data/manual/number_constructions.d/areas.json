@@ -1,0 +1,489 @@
+{
+ "constructions": [
+  {
+   "id": "K-AREAS-LEDGER",
+   "title": "One record per marine water body",
+   "covers": {
+    "file": "data/derived/areas.json",
+    "fields": {
+     "assignment.max_km": {
+      "kind": "stipulated",
+      "is": "The largest distance, in kilometres, at which a point, outfall or plant is still assigned to its nearest marine water body; anything farther belongs to none."
+     },
+     "summary.sea_km2": {
+      "kind": "computed",
+      "is": "The summed area of every marine water body in the layer, each body's own `ov_stoe` attribute added up."
+     },
+     "summary.sets.*.n": {
+      "kind": "counted",
+      "is": "Water bodies in one of the page's sets: all of them; those with a fitted load-to-indicator model; those with a bathing station; those whose informative bathing stations reach the minimum `informative_stations` needs; those with neither a model nor a bathing station."
+     },
+     "summary.sets.*.km2": {
+      "kind": "computed",
+      "is": "The summed `ov_stoe` area of the water bodies in that set."
+     },
+     "hazardous_layer.points": {
+      "kind": "counted",
+      "is": "Every point in the national hazardous-substance layer `sw_mfs_tilstand`."
+     },
+     "hazardous_layer.lake": {
+      "kind": "counted",
+      "is": "Points in `sw_mfs_tilstand` whose water-body code `eusurfacew` begins `DKLAKE`."
+     },
+     "hazardous_layer.river": {
+      "kind": "counted",
+      "is": "Points in `sw_mfs_tilstand` whose water-body code `eusurfacew` begins `DKRIVE`."
+     },
+     "hazardous_layer.coast": {
+      "kind": "counted",
+      "is": "Points in `sw_mfs_tilstand` whose water-body code `eusurfacew` begins `DKCOAS` - the marine ones."
+     },
+     "areas.*.area_km2": {
+      "kind": "measured",
+      "is": "The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry."
+     },
+     "areas.*.observation.bathing.stations": {
+      "kind": "counted",
+      "is": "Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year."
+     },
+     "areas.*.observation.bathing.first_year": {
+      "kind": "measured",
+      "is": "The first year any of those stations carries a quality class."
+     },
+     "areas.*.observation.bathing.last_year": {
+      "kind": "measured",
+      "is": "The last year any of those stations carries a quality class."
+     },
+     "areas.*.observation.bathing.internal_r": {
+      "kind": "estimated",
+      "is": "The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together."
+     },
+     "areas.*.pressure.rbu.n": {
+      "kind": "counted",
+      "is": "Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body."
+     },
+     "areas.*.pressure.rens.pe": {
+      "kind": "measured",
+      "is": "The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load."
+     },
+     "areas.*.n_gaps": {
+      "kind": "counted",
+      "is": "The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled."
+     },
+     "cum_hoc.n_areas": {
+      "kind": "counted",
+      "is": "Water bodies with more than one bathing station and a nonzero area: the rows of the cross-sectional test."
+     },
+     "cum_hoc.tests.*.r": {
+      "kind": "estimated",
+      "is": "The Pearson correlation across water bodies between a log-transformed sewage pressure per square kilometre and a bathing outcome."
+     },
+     "cum_hoc.tests.*.r2": {
+      "kind": "computed",
+      "is": "The square of `r`."
+     },
+     "cum_hoc.tests.*.n": {
+      "kind": "counted",
+      "is": "The rows the correlation is computed over, the same water bodies as `cum_hoc.n_areas`."
+     }
+    }
+   },
+   "what": "Builds one record per marine water body in the national marine layer: what presses on it (outfalls, treatment plants, aquaculture, dumping and extraction), what is observed in it (bathing water), over which years, and what cannot be modelled there; then a cross-sectional correlation of sewage pressure against bathing quality, across water bodies.",
+   "model": "Every point layer is assigned to the water body with the nearest marine boundary vertex, through a grid hash over a thinned boundary (`STRIDE`), within `MAX_ASSIGN_KM`; distances are kept. Bathing stations are assigned by the bathing layer's own water-body field. A water body counts as modelled when its id is listed in `data/manual/statistical_models.json`, which matches DHI's list of water bodies with a station-level statistical model by number and name. The cross-sectional test correlates $\\log_{10}(1 + x)$ of each pressure per square kilometre with the share of years below excellent and with the mean score.",
+   "assumptions": [
+    "The nearest boundary vertex identifies the water body a point on land discharges into.",
+    "The layer's own `ov_stoe` area is the water body's area.",
+    "Matching a water body's name against the model station areas finds exactly the water bodies the published models cover.",
+    "Bathing quality classes are comparable across stations and years."
+   ],
+   "justified": [
+    {
+     "text": "One assignment rule and one distance for every layer, with the distance stored on each assignment so a reader can see how firm it is.",
+     "ref": "scripts/areas.py:171"
+    },
+    {
+     "text": "Bathing stations are attributed by the layer's own water-body code rather than by distance.",
+     "ref": "scripts/areas.py:133"
+    },
+    {
+     "text": "The hazardous-substance layer is counted by its own water-type code, which is why no marine observation is claimed from it.",
+     "ref": "scripts/areas.py:333"
+    },
+    {
+     "text": "The cross-sectional estimate is labelled as a correlation across places at one time, not a causal estimate.",
+     "ref": "scripts/areas.py:358"
+    }
+   ],
+   "gaps": [
+    "Model coverage is decided by a substring match on names (`fold`), not by the models' own station list joined to the water-body codes; a renamed or ambiguously named water body would be misclassified.",
+    "The thresholds that make a bathing station informative and a water body testable are stipulated in the code, and nothing states why those values.",
+    "Nearest-vertex assignment puts an outfall into the nearest sea whatever the drainage actually does; the stored distance shows how far, not whether it is right.",
+    "The cross-sectional correlation has no control for coast type, flushing or population, and the approved person-equivalent capacity is not a load."
+   ],
+   "void_if": [
+    "a layer is refetched and `scripts/areas.py` is not rerun",
+    "the published statistical models change the areas they cover"
+   ],
+   "licenses": "Counts of what is held per water body in these layers - pressures, bathing observation, model coverage - with their areas; and a correlation across water bodies at one time.",
+   "not_licensed": "A claim about marine observation in general (the corpus is these layers); a causal effect of sewage pressure; a measured load from a permitted capacity.",
+   "watches": [
+    "scripts/areas.py",
+    "data/raw/national/marin_overordnet.geojson",
+    "data/raw/national/badevand.geojson",
+    "data/raw/national/punkt_rbu_udl.geojson",
+    "data/raw/national/punkt_rens_udl.geojson",
+    "data/raw/national/sw_mfs_tilstand.geojson",
+    "data/manual/statistical_models.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read areas.py: the model flag now comes from the id list matched to DHI's Tabel 5 instead of a six-letter name match, and the gap text and docstring no longer say what the page retired; the declaration's model says so. The rerun changed no field but the flag and its gap. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/areas.py": "f5a559584f1bcf2c",
+     "data/raw/national/marin_overordnet.geojson": "23d3a7ac969c9437",
+     "data/raw/national/badevand.geojson": "fe37bb58e7734cf4",
+     "data/raw/national/punkt_rbu_udl.geojson": "0280cc777737f84c",
+     "data/raw/national/punkt_rens_udl.geojson": "3d2a543ac9739abb",
+     "data/raw/national/sw_mfs_tilstand.geojson": "e341292a279b1b29",
+     "data/manual/statistical_models.json": "dc3def1d4bf33a61"
+    }
+   }
+  },
+  {
+   "id": "K-AREAS-PLACES",
+   "title": "Station facts for places: oxygen by region, the Roskilde spread, series length, sulphide",
+   "covers": {
+    "file": "data/derived/station_places.json",
+    "fields": {
+     "oxy_bed.below_low_mg_l": {
+      "kind": "stipulated",
+      "is": "The lower oxygen line, in mg/l: the severe iltsvind criterion as the Danish monitoring convention states it."
+     },
+     "oxy_bed.below_high_mg_l": {
+      "kind": "stipulated",
+      "is": "The upper oxygen line, in mg/l: the moderate iltsvind criterion, oxygen below it in bottom water."
+     },
+     "oxy_bed.first_year": {
+      "kind": "measured",
+      "is": "The first calendar year with any near-bed oxygen value in the station series."
+     },
+     "oxy_bed.last_year": {
+      "kind": "measured",
+      "is": "The last calendar year with any near-bed oxygen value in the station series."
+     },
+     "oxy_bed.stations_total": {
+      "kind": "counted",
+      "is": "Stations in the series with at least one near-bed oxygen value, whether or not they fall inside a water body."
+     },
+     "oxy_bed.regions.*.observations": {
+      "kind": "counted",
+      "is": "Station-month medians of near-bed oxygen from stations inside a water body of this hovedopland: one per station and month, not raw measurements."
+     },
+     "oxy_bed.regions.*.stations": {
+      "kind": "counted",
+      "is": "Distinct stations contributing those observations."
+     },
+     "oxy_bed.regions.*.median_mg_l": {
+      "kind": "estimated",
+      "is": "The median of those station-month medians."
+     },
+     "oxy_bed.regions.*.share_below_low": {
+      "kind": "share",
+      "is": "The fraction of those observations below the lower line; part and whole are the same observations."
+     },
+     "oxy_bed.regions.*.share_below_high": {
+      "kind": "share",
+      "is": "The fraction of those observations below the upper line; part and whole are the same observations."
+     },
+     "roskilde.min_stations": {
+      "kind": "stipulated",
+      "is": "How many stations a month must have measured to count toward the Roskilde spread."
+     },
+     "roskilde.rows.*.months": {
+      "kind": "counted",
+      "is": "Months in which at least `roskilde.min_stations` stations of this half of the fjord measured the variable."
+     },
+     "roskilde.rows.*.sd_between": {
+      "kind": "estimated",
+      "is": "The population standard deviation across the stations measuring a month, averaged over those months: the typical disagreement between stations at one time."
+     },
+     "roskilde.rows.*.range_between_median": {
+      "kind": "estimated",
+      "is": "The median, over those months, of the largest minus the smallest station value."
+     },
+     "roskilde.rows.*.sd_across": {
+      "kind": "estimated",
+      "is": "The sample standard deviation of the monthly means across those months: the size of the seasonal and year-to-year signal."
+     },
+     "roskilde.rows.*.ratio": {
+      "kind": "computed",
+      "is": "`sd_between` divided by `sd_across`."
+     },
+     "coverage.series_stations": {
+      "kind": "counted",
+      "is": "Stations in the station series, any variable."
+     },
+     "coverage.stations_inside": {
+      "kind": "counted",
+      "is": "Of those, the stations inside a water body by point in polygon, as the overlay records it."
+     },
+     "coverage.waterbodies": {
+      "kind": "counted",
+      "is": "Water bodies in `data/derived/areas.json`."
+     },
+     "coverage.waterbodies_with_station": {
+      "kind": "counted",
+      "is": "Water bodies containing at least one series station."
+     },
+     "coverage.lacking_long_station.*.min_years": {
+      "kind": "stipulated",
+      "is": "The number of distinct calendar years a station's series must span to count as long, at one of the lines tested."
+     },
+     "coverage.lacking_long_station.*.waterbodies": {
+      "kind": "counted",
+      "is": "Water bodies whose longest-running series station has data in fewer than `min_years` distinct years, including those with no series station at all."
+     },
+     "coverage.lacking_long_station.*.km2": {
+      "kind": "computed",
+      "is": "The summed area of those water bodies."
+     },
+     "h2s.ctd.rows": {
+      "kind": "counted",
+      "is": "Rows of the CTD extract whose `Parameter` is one of the hydrogen-sulphide names in `parameters` - rows as the extract has them, not casts or samples."
+     },
+     "h2s.ctd.stations": {
+      "kind": "counted",
+      "is": "Distinct stations among those rows."
+     },
+     "h2s.ctd.top_station_rows": {
+      "kind": "counted",
+      "is": "Rows from the station with the most of them."
+     },
+     "h2s.kemi.rows": {
+      "kind": "counted",
+      "is": "Rows of the water-chemistry extract whose `Parameter` is one of the hydrogen-sulphide names in `parameters` - rows as the extract has them, not bottles."
+     },
+     "h2s.kemi.stations": {
+      "kind": "counted",
+      "is": "Distinct stations among those rows."
+     },
+     "h2s.kemi.top_station_rows": {
+      "kind": "counted",
+      "is": "Rows from the station with the most of them."
+     }
+    }
+   },
+   "what": "Computes the station-level facts the place pages print: near-bed oxygen by region, the between-station spread in the two halves of Roskilde Fjord, how long each water body's longest series station runs, and where the hydrogen-sulphide record comes from.",
+   "model": "The unit is the station series: one monthly median per station and variable. Each station takes the water body the overlay places it in, and each water body its hovedopland from the ledger, used as the region label. For Roskilde Fjord, in each month with enough stations measuring, the population standard deviation across stations is taken, averaged over the months, and set against the standard deviation of the monthly means; the ratio is $\\sigma_{\\text{between}} / \\sigma_{\\text{across}}$. Sulphide rows are counted per station in each extract.",
+   "assumptions": [
+    "A station-month median is a fair unit of observation, so no station's heavy sampling in one month outweighs another's single visit.",
+    "The water body a station falls inside is the one it measures.",
+    "The iltsvind lines are the Danish monitoring convention."
+   ],
+   "justified": [
+    {
+     "text": "The regions are computed from the same station series and overlay the partition tests use, so the table and the tests describe the same stations.",
+     "ref": "scripts/station_places.py:75"
+    },
+    {
+     "text": "The spread between stations is measured only in months with enough stations to have a spread at all.",
+     "ref": "scripts/station_places.py:115"
+    },
+    {
+     "text": "Both hydrogen-sulphide records are counted, each on its own terms, because the sonde record and the bottle record are different instruments.",
+     "ref": "scripts/station_places.py:156"
+    }
+   ],
+   "gaps": [
+    "The overlay that puts a station in a water body is a model assumption, as the overlay itself says; stations outside every polygon are dropped from the region table.",
+    "The iltsvind lines are stated in the code as the convention, not read from a pinned document.",
+    "The spread between stations is a mean over months, which a few extreme months can move; the definition was chosen to reproduce an earlier hand-made table whose definition was never written down, and a median would be more robust.",
+    "Sulphide rows are counted as rows, so a cast with many depths counts many times."
+   ],
+   "void_if": [
+    "the station series or the overlay is rebuilt and this script is not rerun",
+    "the hovedopland labels in the ledger change"
+   ],
+   "licenses": "Where low near-bed oxygen observations are, by region label; how far stations in one half of Roskilde Fjord disagree against the seasonal signal; which water bodies lack a long station series in this corpus; how the sulphide record is distributed across stations.",
+   "not_licensed": "What a region is like as a unit; causes; a claim about observation in general beyond the station series; a count of sulphide samples.",
+   "watches": [
+    "scripts/station_places.py",
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/station_waterbody_overlay.json",
+    "data/derived/areas.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: areas.json changed only in the model flag and its gap text, verified field by field against the copy taken before the rerun; station_places.py does not read the flag. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/station_places.py": "00edfa1600b388c6",
+     "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
+     "docs/data/areas/station_waterbody_overlay.json": "9cda52a744ee0a93",
+     "data/derived/areas.json": "0c4855d5e9c6550f"
+    }
+   }
+  },
+  {
+   "id": "K-AREAS-PARTITION",
+   "title": "What the water bodies are predictive for: the intraclass correlation within month",
+   "covers": {
+    "file": "docs/data/areas/partition_score.json",
+    "fields": {
+     "results.*.water_bodies.icc": {
+      "kind": "estimated",
+      "is": "For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero."
+     },
+     "results.*.shuffled.icc": {
+      "kind": "estimated",
+      "is": "The same ratio with station labels permuted, basket sizes kept."
+     },
+     "results.*.latitude_bands.icc": {
+      "kind": "estimated",
+      "is": "The same ratio for equal-count latitude bands, as many as there are real baskets."
+     },
+     "results.*.size_matched_compact.icc": {
+      "kind": "estimated",
+      "is": "The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour."
+     },
+     "results.*.lift_over_compact": {
+      "kind": "computed",
+      "is": "The real partition's ratio minus the compact null's."
+     },
+     "results.[len]": {
+      "kind": "counted",
+      "is": "The number of variables scored: one entry in `results` per variable."
+     }
+    }
+   },
+   "what": "Scores the official water-body partition, per variable, by how much more alike two stations in the same basket are within a month, against three null partitions.",
+   "model": "For each variable and each month with enough stations, between-basket and within-basket mean squares are pooled; the score is $MSB/(MSB+MSW)$. The nulls are shuffled labels, latitude stripes and size-matched compact blobs from fixed seeds; the lift is the real score minus the compact null's.",
+   "assumptions": [
+    "Removing the month removes the shared season, so what is left is spatial.",
+    "The compact null isolates what the boundaries know beyond compactness and size."
+   ],
+   "justified": [
+    {
+     "text": "Scoring within month keeps the seasonal signal out of the between-basket term.",
+     "ref": "scripts/partition_score.py:158"
+    },
+    {
+     "text": "The compact null matches both the size distribution and compactness of the real baskets, so it varies one thing at a time.",
+     "ref": "scripts/partition_score.py:133"
+    },
+    {
+     "text": "Chance for this ratio is one half, not zero, so only the lift is read on its own.",
+     "ref": "scripts/partition_score.py:17"
+    }
+   ],
+   "gaps": [
+    "The compact null is averaged over only the few seeds the script fixes, and its spread is recorded but not propagated into the lift.",
+    "Stations are not placed at random, so the partition is scored as sampled."
+   ],
+   "void_if": [
+    "the station series or the overlay is rebuilt and the script is not rerun"
+   ],
+   "licenses": "How much better the official partition predicts each variable than a same-shaped arbitrary grouping, as sampled.",
+   "not_licensed": "That a water body is homogeneous; a ranking of variables from any single control.",
+   "watches": [
+    "scripts/partition_score.py",
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/station_waterbody_overlay.json"
+   ],
+   "confirmed": {
+    "by": "fork areas (written against the code, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/partition_score.py": "d1821352bd19f410",
+     "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
+     "docs/data/areas/station_waterbody_overlay.json": "9cda52a744ee0a93"
+    }
+   }
+  },
+  {
+   "id": "K-AREAS-REGISTER",
+   "title": "ODA's positioned marine station register",
+   "covers": {
+    "file": "docs/data/areas/stations.json",
+    "fields": {
+     "n": {
+      "kind": "counted",
+      "is": "Stations in ODA's station register of type `Hav` with a usable UTM position, each station number counted once."
+     }
+    }
+   },
+   "what": "Lists every ODA marine station with a position and which extracted topics it carries.",
+   "model": "Rows of `stations.csv` with `Observationsstedtype` equal to `Hav`, deduplicated by station number, kept when the UTM coordinates parse and fall in the expected range.",
+   "assumptions": [
+    "The register's station type and coordinates are correct."
+   ],
+   "justified": [
+    {
+     "text": "Stations are deduplicated by number and only positioned ones are kept.",
+     "ref": "scripts/stationmap.py:49"
+    }
+   ],
+   "gaps": [
+    "A station in the register is not evidence that anything was measured there; the topic flags say which extracts carry it."
+   ],
+   "void_if": [
+    "the register is refetched and the script is not rerun"
+   ],
+   "licenses": "How many positioned marine stations ODA's register lists.",
+   "not_licensed": "How many were visited, or when.",
+   "watches": [
+    "scripts/stationmap.py"
+   ],
+   "confirmed": {
+    "by": "fork areas (written against the code, 2026-09-10; not yet read by the project owner)",
+    "on": "2026-09-10",
+    "saw": {
+     "scripts/stationmap.py": "016a20445a0a6123"
+    }
+   }
+  },
+  {
+   "id": "K-AREAS-HYPCOUNT",
+   "title": "The size of the hypothesis register",
+   "covers": {
+    "file": "data/derived/hypotheses.json",
+    "fields": {
+     "hypotheses.[len]": {
+      "kind": "counted",
+      "is": "Entries in the register's `hypotheses` list: the mechanisms."
+     },
+     "groups.[len]": {
+      "kind": "counted",
+      "is": "Entries in the register's `groups` list."
+     }
+    }
+   },
+   "what": "The number of mechanisms and groups in the hypothesis register, read as the length of its lists.",
+   "model": "The length of each list in `data/derived/hypotheses.json`, which `scripts/hypotheses.py` writes.",
+   "assumptions": [
+    "Each list entry is one mechanism, or one group."
+   ],
+   "justified": [
+    {
+     "text": "The register writes one entry per mechanism and per group.",
+     "ref": "scripts/hypotheses.py:4207"
+    }
+   ],
+   "gaps": [],
+   "void_if": [
+    "the register is rewritten and the pages are not regenerated"
+   ],
+   "licenses": "How many mechanisms and groups the register holds.",
+   "not_licensed": "How many are scoreable, or how many are right.",
+   "watches": [
+    "data/derived/hypotheses.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long; what changed is the text of two entries (B2, E6), now filled from data. The count method is untouched. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "data/derived/hypotheses.json": "994878a3bcb72481"
+    }
+   }
+  }
+ ]
+}

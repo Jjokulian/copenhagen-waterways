@@ -15,7 +15,7 @@
    ],
    "name": "ON DISK - CMEMS Baltic ocean-colour phytoplankton functional types, daily 1 km",
    "custodian": "Copernicus Marine / CNR-ISMAR (Brando, Sammartino et al.); product cmems_obs-oc_bal_bgc-plankton_my_l3-multi-1km_P1D",
-   "url": "data/raw/cmems/grid/plankton__inner__YYYY.nc (1997-2016; the 2016 file is a partial download, still carrying its .c_2luzzi suffix)",
+   "url": "data/raw/cmems/grid/plankton__inner__YYYY.nc (1997-2025; the 1997 file is partial)",
    "temporal": "DAILY (P1D)",
    "spatial": "1 km grid, the inner Danish waters subset",
    "aggregation": "per-measurement per cell per day. It is a SATELLITE RETRIEVAL, not a cell count: functional-type chlorophyll is derived from total chl by the Brando et al. (2021) abundance-based algorithm.",
@@ -25,15 +25,17 @@
     "mass_concentration_of_dinophytes_expressed_as_chlorophyll_in_sea_water",
     "mass_concentration_of_microphytoplankton_expressed_as_chlorophyll_in_sea_water",
     "mass_concentration_of_nanophytoplankton_expressed_as_chlorophyll_in_sea_water",
-    "mass_concentration_of_picophytoplankton_expressed_as_chlorophyll_in_sea_water"
+    "mass_concentration_of_picophytoplankton_expressed_as_chlorophyll_in_sea_water",
+    "cyanobacteria bloom mask (CYANOBLOOM)"
    ],
-   "coverage": "1997-2016 as downloaded; the product itself runs to near-present",
+   "coverage": "1997-2025 as downloaded; the product itself runs to near-present",
    "past_2012": true,
-   "access": "ALREADY ON DISK, 17 GB",
+   "access": "ALREADY ON DISK, 20 GB",
    "format": "NetCDF-4 / HDF5",
-   "size": "~745 MB per year, 20 years",
+   "size": "~711 MB per full year, 29 yearly files",
    "caveat": "THIS CHANGES K1 AND IT IS ALREADY DOWNLOADED. The last pass concluded that K1's diatom-share term needed an authenticated ICES DOME extraction because OBIS and GBIF strip the cell counts. It does not: a DIATOM CHLOROPHYLL FIELD, daily, at 1 km, for twenty years, is sitting in data/raw/cmems/grid, and the Si:N ratio to regress it against is in ODA at the same dates. K1's discriminator - the Si:N ratio through time against the diatom share of the community - can be computed this week. Three real limits, all of which must be carried: (1) it is a RETRIEVAL, and the file's own metadata states a chlorophyll validity range of 0.13-25.5 mg m-3, so blooms above that are clipped; (2) the Danish straits are optically complex Case-2 water where ocean-colour chlorophyll is least reliable and where CDOM and resuspended sediment interfere - which is Z8's argument applied to the satellite rather than to the field measurement; (3) diatom chlorophyll is inferred from total chlorophyll by an abundance-based model, so a diatom share derived from it is not independent of total biomass in the way a cell count would be. Validate it against the ICES DOME occurrence record before trusting a trend.",
-   "verified": "2026-09-08, lead: file magic confirmed HDF5; product id cmems_obs-oc_bal_bgc-plankton_my_l3-multi-1km_P1D, the six standard_name strings and the Brando et al. 2021 citation and validity-range note all read directly from the file header"
+   "verified": "2026-09-08, lead: file magic confirmed HDF5; product id cmems_obs-oc_bal_bgc-plankton_my_l3-multi-1km_P1D, the six standard_name strings and the Brando et al. 2021 citation and validity-range note all read directly from the file header",
+   "_checked": "Corrected 2026-09-11 against the files on disk; scripts/drafts_b_counts.py (plankton) counts them live for the K1 draft."
   },
   {
    "id": "LOCAL-CMEMS-KD490",

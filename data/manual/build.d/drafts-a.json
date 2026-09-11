@@ -1,0 +1,181 @@
+{
+ "steps": [
+  {
+   "script": "scripts/triage_counts.py",
+   "inputs": [
+    "scripts/pages/triage_rows.py",
+    "data/derived/hypotheses.json"
+   ],
+   "outputs": [
+    "data/derived/triage.json"
+   ]
+  },
+  {
+   "script": "scripts/hypodraft_facts.py",
+   "inputs": [
+    "data/raw/oda/maaledybde.csv.gz",
+    "data/raw/oda/lys.csv.gz",
+    "data/raw/oda/kemi.csv.gz",
+    "data/raw/geus/seabed_sediment_dk.gpkg",
+    "docs/data/areas/areas.json",
+    "docs/data/areas/stations_series.json",
+    "data/derived/enums.json",
+    "data/raw/national/sw_mfs_tilstand.geojson",
+    "docs/data/areas/flags.json",
+    "data/raw/oda/stations.csv",
+    "data/raw/national/hovedoplande.geojson",
+    "data/raw/oda/ctd.csv.gz",
+    "docs/data/areas/stations_series.bin"
+   ],
+   "outputs": [
+    "data/derived/hypodraft_facts.json"
+   ]
+  },
+  {
+   "script": "scripts/hypodraft_ctd.py",
+   "inputs": [
+    "data/raw/oda/ctd.csv.gz",
+    "data/raw/oda/maaledybde.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/hypodraft_ctd.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/triage.py",
+   "inputs": [
+    "scripts/pages/triage_rows.py",
+    "data/derived/triage.json",
+    "data/derived/hypotheses.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/enums.json",
+    "data/derived/light.json",
+    "data/derived/outfalls.json",
+    "data/derived/currents_validate.json",
+    "data/manual/claims.d/drafts-a.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/TRIAGE.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_a1.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/pins/SR353.txt",
+    "data/manual/claims.d/nitrogen.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/A1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_a1b.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/A1b.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_audit.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/AUDIT.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_b1.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/hypodraft_b1.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/B1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_c1.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/triage.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/C1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_c4.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/hypodraft_facts.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/C4.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_c6.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/C6.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_f3.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/drafts-a.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/hypodraft_facts.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/F3.md"
+   ]
+  },
+  {
+   "script": "scripts/hypodraft_b1.py",
+   "inputs": [
+    "data/raw/national/badevand.geojson",
+    "data/raw/spildevand/combined_overflow.geojson",
+    "data/raw/national/punkt_rbu_udl.geojson"
+   ],
+   "outputs": [
+    "data/derived/hypodraft_b1.json"
+   ]
+  }
+ ]
+}

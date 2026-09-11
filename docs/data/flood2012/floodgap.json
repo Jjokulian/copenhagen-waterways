@@ -8,6 +8,46 @@
   "norrebro",
   "osterbro"
  ],
+ "n_sheets_used": 7,
+ "sheets_missing": [],
+ "params": {
+  "cell_m": 10.0,
+  "near_m": [
+   50,
+   100,
+   200
+  ],
+  "flood_depth_min_m": 0.1,
+  "hotspot_min_area_m2": 4000,
+  "hotspot_min_depth_m": 0.2,
+  "hotspot_min_distance_m": 100
+ },
+ "band_bounds": {
+  "0.05-0.1": {
+   "lo_m": 0.05,
+   "hi_m": 0.1
+  },
+  "0.1-0.2": {
+   "lo_m": 0.1,
+   "hi_m": 0.2
+  },
+  "0.2-0.5": {
+   "lo_m": 0.2,
+   "hi_m": 0.5
+  },
+  "0.5-1": {
+   "lo_m": 0.5,
+   "hi_m": 1.0
+  },
+  "1-2": {
+   "lo_m": 1.0,
+   "hi_m": 2.0
+  },
+  ">2": {
+   "lo_m": 2.0,
+   "hi_m": null
+  }
+ },
  "grid": {
   "cell_m": 10.0,
   "width": 1274,
@@ -20,8 +60,8 @@
   }
  },
  "caveats": [
-  "The flood model is 2012 calculations of a 2010 scenario; the plan is 2018 with later addenda. This compares two snapshots taken six years apart.",
-  "Only sheets that registered confidently are included - the inner-city catchments. Amager, Bispebjerg and Koebenhavn Vest are missing.",
+  "The flood model is 2012 calculations of a 2010 scenario; the plan is 2018 with later addenda. This compares two snapshots taken years apart.",
+  "Every extracted sheet registered confidently and is included.",
   "Distances are to any part of a planned work, which is generous: being 50 m from a cloudburst road is not the same as being protected by it.",
   "The sheets paint depth over lakes and the harbour as well as over land. Those cells are excluded here - water standing on water is not something a cloudburst basin addresses - and reported as flooded_over_water_km2."
  ],

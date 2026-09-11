@@ -1,0 +1,62 @@
+{
+ "constructions": [
+  {
+   "id": "K-QP2-REGISTRY-FLOW",
+   "title": "Annual discharge figures, each counted once",
+   "covers": {
+    "file": "data/derived/registry.json",
+    "fields": {
+     "counts.annual_flow_m3_per_year_distinct": {
+      "kind": "computed",
+      "is": "The sum of the annual discharge or pumped volumes the plan's project pages state, each distinct figure once: a volume stated for the same named structures on two pages counts once."
+     },
+     "counts.annual_flow_pages": {
+      "kind": "counted",
+      "is": "Plan project pages that state an annual discharge or pumped volume."
+     },
+     "counts.annual_flow_figures_distinct": {
+      "kind": "counted",
+      "is": "Distinct annual-volume figures among those pages: one per value and set of structure codes named in its sentence, or one per page where the sentence names no structure."
+     }
+    }
+   },
+   "what": "Adds the annual discharge volumes the statutory plan states, counting a figure stated on more than one page once.",
+   "model": "Each page's largest annual figure is keyed by its value and the structure codes (`U4` and the like) its sentence names; the first page with a key contributes it, later pages with the same key are listed as duplicates and left out. A figure whose sentence names no structure is keyed by its page.",
+   "assumptions": [
+    "The same value stated for the same named structures describes one outfall.",
+    "A figure whose sentence names no structure code is a figure of its own page."
+   ],
+   "justified": [
+    {
+     "text": "The two Strandvænget pages state the same annual volume for the same overflow structure in near-identical sentences - one is the project, the other the requirement it answers.",
+     "ref": "scripts/build_registry.py"
+    },
+    {
+     "text": "The duplicates are named on the page, so the rule is visible where it is applied.",
+     "ref": "scripts/report.py"
+    }
+   ],
+   "gaps": [
+    "Two genuinely different outfalls stating the same volume with the same structure codes would be merged; nothing but the codes distinguishes them.",
+    "A figure restated without any structure code on two pages is still counted twice."
+   ],
+   "void_if": [
+    "the plan pages name structures inconsistently, so one outfall carries different codes on different pages"
+   ],
+   "licenses": "The total annual discharge the plan states, without a figure counted twice for one outfall.",
+   "not_licensed": "The volume actually discharged, which is modelled or estimated in the plan, not measured here.",
+   "watches": [
+    "scripts/build_registry.py",
+    "scripts/report.py"
+   ],
+   "confirmed": {
+    "by": "fork quotes-pages-2 (build_registry.py one-figure-once rule, 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/build_registry.py": "d9172dc81ce2b1b8",
+     "scripts/report.py": "88aa8ffb74c63218"
+    }
+   }
+  }
+ ]
+}
