@@ -701,9 +701,8 @@ def _retired_problems(cid, c, allc):
     miss = [k for k in ("on", "from", "commit", "file", "begin", "end", "why") if not r.get(k)]
     if miss:
         return bad + [f"{cid}: 'retired' needs {', '.join(miss)}"]
-    for k in ("begin", "end"):
-        if re.search(r"\d", r[k]):
-            bad.append(f"{cid}: retired.{k} locates a passage, so it holds no digits")
+    # begin and end only locate the passage - what is shown is read out of git - so
+    # they may hold a number where the passage starts or ends on one
     try:
         live.excerpt(r["commit"], r["file"], r["begin"], r["end"])
     except live.Unjustified as e:

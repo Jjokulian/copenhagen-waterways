@@ -404,9 +404,11 @@ why we may believe this a possible or perhaps plausible explanatory dynamic." So
 1. Add it to the register as a retired claim: kind `historical`, page
    `ARCHIVE.md`, and `"retired": {"on", "from", "commit", "file", "begin", "end",
    "why"}`. The commit is the last *committed* version that published the
-   wording; `begin` and `end` are digit-free phrases that locate the passage
+   wording; `begin` and `end` are phrases that locate the passage (they may hold a number, since
+   they are never shown)
    there (`live.excerpt()` reads it out of git, every quantity in it a
-   quotation). `why` is the reason, plainly - most often "its justification was
+   quotation). They locate only - the passage shown is read out of git - so
+   they may hold a number where the passage starts or ends on one. `why` is the reason, plainly - most often "its justification was
    not recorded properly".
 2. Write the replacement: only what can be justified, as a normal claim with
    `"replaces": [...]`, and `"replaced_by"` on the retired one. If nothing can be
@@ -416,7 +418,8 @@ why we may believe this a possible or perhaps plausible explanatory dynamic." So
    replacement's entry in CLAIMS.md.
 
 Wording that was never committed was never published: change it, no archive
-entry. `scripts/claims.py` writes both `docs/CLAIMS.md` and `docs/ARCHIVE.md`.
+entry. A published claim reworded but still justified - it says the same
+thing, better - is not retired either: it is still claimed. `scripts/claims.py` writes both `docs/CLAIMS.md` and `docs/ARCHIVE.md`.
 
 Found in the METHOD_LAB pilot:
 
