@@ -1572,6 +1572,51 @@ let showing = null;   // which document is rendered, so a section link does not 
    into other pages, so a failure here would silently blank the very thing that
    shows what a claim rests on - which is why a failed diagram falls back to its
    own source rather than to nothing. */
+/* A long label would shrink the whole diagram to fit its width, so before drawing
+   each box's text is broken over lines, and after drawing a diagram is never
+   scaled below 80% of its size (it scrolls sideways instead) and every box shows
+   its full text on hover. Where a box shows its text cut short, the generator
+   writes the whole of it as a "%% full ID: text" comment, which mermaid ignores. */
+const MMD_NODE = /^(\s*)([A-Za-z0-9_-]+)([\[\(\{>\/]+)"(.*)"([\)\]\}\/]+)\s*$/;
+function mmdWrap(s, width = 28) {
+  const out = [];
+  for (const part of s.split(" · ")) {     // the generators' " · " stands for a line break
+    let line = "";
+    for (const w of part.split(" ")) {
+      if (line && (line + " " + w).length > width) { out.push(line); line = w; }
+      else line = line ? line + " " + w : w;
+    }
+    if (line) out.push(line);
+  }
+  return out.join("<br/>");
+}
+function mmdPrepare(src) {
+  const full = new Map(), lines = [];
+  for (const l of src.split("\n")) {
+    const f = l.match(/^\s*%% full ([A-Za-z0-9_-]+): (.*)$/);
+    if (f) { full.set(f[1], f[2]); continue; }
+    const m = l.match(MMD_NODE);
+    if (!m) { lines.push(l); continue; }
+    if (!full.has(m[2])) full.set(m[2], m[4]);
+    lines.push(`${m[1]}${m[2]}${m[3]}"${mmdWrap(m[4])}"${m[5]}`);
+  }
+  return { src: lines.join("\n"), full };
+}
+function mmdFinish(host, full) {
+  const svg = host.querySelector("svg");
+  if (!svg) return;
+  const vb = svg.viewBox && svg.viewBox.baseVal;
+  if (vb && vb.width) svg.style.minWidth = Math.round(vb.width * 0.8) + "px";
+  for (const g of svg.querySelectorAll("g.node")) {
+    const id = (g.id.match(/^flowchart-(.+)-\d+$/) || [])[1];
+    const t = id && full.get(id);
+    if (!t) continue;
+    const tip = document.createElementNS("http://www.w3.org/2000/svg", "title");
+    tip.textContent = t;
+    g.prepend(tip);
+    g.querySelectorAll("foreignObject div, foreignObject span").forEach(d => { d.title = t; });
+  }
+}
 let mermaidReady = false;
 async function drawMermaid(root) {
   const blocks = root.querySelectorAll("code.language-mermaid");
@@ -1587,8 +1632,10 @@ async function drawMermaid(root) {
     const host = document.createElement("div");
     host.className = "mermaid-fig";
     try {
-      const { svg } = await mermaid.render("mmd" + (++n) + "-" + Date.now(), src);
+      const prep = mmdPrepare(src);
+      const { svg } = await mermaid.render("mmd" + (++n) + "-" + Date.now(), prep.src);
       host.innerHTML = svg;
+      mmdFinish(host, prep.full);
     } catch (e) {
       host.innerHTML = '<pre class="mermaid-failed">' +
         src.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])) +
