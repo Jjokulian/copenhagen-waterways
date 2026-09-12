@@ -11851,7 +11851,7 @@
 - **What this field is:** Pathways in `data/manual/nitrogen_pathways.json`.
 - **Produced by:** [`scripts/landbrug.py`](../scripts/landbrug.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDBRUG.md](LANDBRUG.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [LANDING.md](LANDING.md)
 
 <a id="F-10301e05f2"></a>
 ### `data/derived/landbrug.json` › `n_unquantified`
@@ -11862,7 +11862,7 @@
 - **What this field is:** Of those, the pathways with no lower bound: the empty rows.
 - **Produced by:** [`scripts/landbrug.py`](../scripts/landbrug.py)
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [LANDBRUG.md](LANDBRUG.md)
+- **Used in:** [LANDBRUG.md](LANDBRUG.md), [LANDING.md](LANDING.md)
 
 <a id="F-61713409de"></a>
 ### `data/derived/landing_facts.json` › `flood2012_mb`

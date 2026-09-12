@@ -79,6 +79,112 @@
      "texts": "b5f28b33d40621b8"
     }
    }
+  },
+  {
+   "id": "C-LE-TOP-DENOM",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "LANDBRUG.md",
+   "claim": "The published share cannot be given as a share of all the nitrogen reaching the sea: it is a share of one term, computed rather than measured - measured in streams for part of the country and modelled for the rest by a model whose key input is the field surplus, itself an accounting identity - while nitrogen reaches the sea by many enumerated pathways of which many carry no number, so there is no denominator.",
+   "because": "The share's scope is the land-based waterborne term; the quantified pathways sum only to a lower bound on the total, so a share of the whole has no denominator.",
+   "rests_on": [
+    "C-LE-SCOPE",
+    "C-LE-EMPTY",
+    "C-NI-LOWER-BOUND",
+    "C-LE-FLOOR",
+    "C-LE-LEFTOVER",
+    "C-NI-COUPLED",
+    "C-NI-SR353-INPUT",
+    "C-NI-SURPLUS-IDENTITY"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDBRUG.md": "**Andelen kan ikke angives som en andel af alt det kvælstof, der når havet.** Den gælder én post - kvælstof, der løber fra land til kystvandene - og selv den er beregnet, ikke målt: målt i vandløb for en del af landet og modelberegnet for resten, og den model regner ud fra markoverskuddet, som selv er et regnestykke - tilført minus høstet - ikke en måling. Kvælstof når havet ad mindst 20 veje, og 10 af dem har slet intet tal. Uden dem er der ingen nævner, og så er der ingen andel af det hele at angive.",
+     "texts": "5d69f338acd1766e",
+     "rests on C-LE-SCOPE": "a006b865abdb2cd2",
+     "rests on C-LE-EMPTY": "09ab83a4069cf8b2",
+     "rests on C-NI-LOWER-BOUND": "f18c1f930504af87",
+     "rests on C-LE-FLOOR": "b7e049fc3feb79a6",
+     "rests on C-LE-LEFTOVER": "e568cfaf63931fb3",
+     "rests on C-NI-COUPLED": "695a667719f16ef3",
+     "rests on C-NI-SR353-INPUT": "8962b8931ab8fea1",
+     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f"
+    }
+   }
+  },
+  {
+   "id": "C-LE-TOP-CHAIN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "LANDBRUG.md",
+   "claim": "Nitrogen is one link: one of several routes to oxygen depletion, which is one of many mechanisms by which a sea bed and its life are lost, and both are among many causes of fedtemøg - the harms named in the public argument.",
+   "because": "Oxygen depletion has at least three routes and nitrogen is necessary for one; fedtemøg needs light, phosphorus, a season and a surface as well as nitrogen; the register lists many candidate mechanisms for a dying coastal water; the public argument names these harms.",
+   "rests_on": [
+    "C-PC-CA-ROUTES",
+    "C-LE-L4",
+    "C-LR-L-TRIAGE",
+    "C-PG-FOUR-WORDS",
+    "C-LE-EVERYLINK"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDBRUG.md": "**Og kvælstof er kun ét led.** Det er én af flere veje til iltsvind; iltsvind er én af mange måder, en havbund og dens liv går tabt på; og begge er blandt mange årsager til fedtemøg - de skader, politikere og naturorganisationer peger på. [Led for led](CAUSATION.md).",
+     "texts": "3467f8d1e2b0adeb",
+     "rests on C-PC-CA-ROUTES": "a9d6407fd49d34ff",
+     "rests on C-LE-L4": "a9913e1a4e349526",
+     "rests on C-LR-L-TRIAGE": "370c4772f1ad9e71",
+     "rests on C-PG-FOUR-WORDS": "0eca8dd420f2a5c0",
+     "rests on C-LE-EVERYLINK": "4aa00d9873bb12e4"
+    }
+   }
+  },
+  {
+   "id": "C-LR-L-DENOM",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "LANDING.md",
+   "claim": "The published farm share has no denominator: nitrogen reaches the sea by many enumerated pathways, many with no number, so no share of the total can be stated.",
+   "because": "As LANDBRUG and NITROGEN set out: the quantified pathways are a lower bound on the total.",
+   "rests_on": [
+    "C-LE-TOP-DENOM",
+    "C-NI-LOWER-BOUND"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDING.md": "**And the share has no denominator.** Nitrogen reaches the sea by at least 20 pathways, and 10 of them carry no number at all. Without them there is no total, and no share of it can be stated.",
+     "texts": "008a386bcf362432",
+     "rests on C-LE-TOP-DENOM": "5d69f338acd1766e",
+     "rests on C-NI-LOWER-BOUND": "f18c1f930504af87"
+    }
+   }
+  },
+  {
+   "id": "C-LR-L-ONELINK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "LANDING.md",
+   "claim": "Nitrogen is one of several routes to oxygen depletion, which is one of many mechanisms by which a sea bed is lost, and both are among many causes of fedtemøg - the harms politicians and nature organisations name.",
+   "because": "As CAUSATION and LANDBRUG set out, link by link.",
+   "rests_on": [
+    "C-LE-TOP-CHAIN",
+    "C-PC-CA-ROUTES"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDING.md": "**Nor is nitrogen the whole chain.** It is one of several routes to oxygen depletion, which is one of many ways a sea bed and its life are lost, and both are among many causes of fedtemøg - the harms politicians and nature organisations name. [Link by link](CAUSATION.md)",
+     "texts": "17f8bdc28f630b20",
+     "rests on C-LE-TOP-CHAIN": "3467f8d1e2b0adeb",
+     "rests on C-PC-CA-ROUTES": "a9d6407fd49d34ff"
+    }
+   }
   }
  ]
 }

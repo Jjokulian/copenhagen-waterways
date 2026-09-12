@@ -143,6 +143,17 @@ def render():
         "bidrag, og det diffuse bidrag minus det naturlige baggrundsbidrag er det, der kaldes "
         "landbrugets andel. Det er en restpost - og alt, hvad der er regnet forkert eller mangler "
         "i de andre poster, havner i den. [Hvordan hver post er lavet](NITROGEN.md).") + "\n")
+    a("> " + C("C-LE-TOP-DENOM", "**Andelen kan ikke angives som en andel af alt det kvælstof, der "
+        "når havet.** Den gælder én post - kvælstof, der løber fra land til kystvandene - og selv "
+        "den er beregnet, ikke målt: målt i vandløb for en del af landet og modelberegnet for "
+        "resten, og den model regner ud fra markoverskuddet, som selv er et regnestykke - tilført "
+        "minus høstet - ikke en måling. "
+        f"Kvælstof når havet ad mindst {n_all} veje, og {n_unq} af dem har slet intet "
+        "tal. Uden dem er der ingen nævner, og så er der ingen andel af det hele at angive.") + "\n")
+    a("> " + C("C-LE-TOP-CHAIN", "**Og kvælstof er kun ét led.** Det er én af flere veje til "
+        "iltsvind; iltsvind er én af mange måder, en havbund og dens liv går tabt på; og begge er "
+        "blandt mange årsager til fedtemøg - de skader, politikere og naturorganisationer peger "
+        "på. [Led for led](CAUSATION.md).") + "\n")
     a(C("C-LE-FIX", "*Har du fundet en fejl? [Skriv den her](https://github.com/Jjokulian/copenhagen-waterways/issues). Hvad sitet har "
         "trukket tilbage, står med begrundelse i [arkivet](ARCHIVE.md).*") + "\n")
     a("> ## Om koefficienterne\n")

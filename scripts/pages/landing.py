@@ -99,6 +99,16 @@ def main(argv):
       "are subtracted: a leftover, which takes up every error in the terms subtracted. "
       "[Why that matters](RESIDUAL.md) · [på dansk, til landbruget](LANDBRUG.md)"))
     w("")
+    lb = live.live_json(os.path.join(DERIVED, "landbrug.json"))
+    w(C("C-LR-L-DENOM", "**And the share has no denominator.** Nitrogen reaches the sea by at least "
+      f"{lb['n_pathways']} pathways, and {lb['n_unquantified']} of them carry no number at all. "
+      "Without them there is no total, and no share of it can be stated."))
+    w("")
+    w(C("C-LR-L-ONELINK", "**Nor is nitrogen the whole chain.** It is one of several routes to oxygen "
+      "depletion, which is one of many ways a sea bed and its life are lost, and both are among many "
+      "causes of fedtemøg - the harms politicians and nature organisations name. "
+      "[Link by link](CAUSATION.md)"))
+    w("")
     w(C("C-LR-L-FIX", "*Found a mistake? [Report it](https://github.com/Jjokulian/copenhagen-waterways/issues). What this site has "
       "retracted, and why, is in its [archive](ARCHIVE.md).*"))
     w("")

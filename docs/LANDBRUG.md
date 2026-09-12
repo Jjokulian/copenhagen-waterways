@@ -2,6 +2,10 @@
 
 > <span class="claim" data-claim="C-LE-LEFTOVER">**Landbrugets andel er ikke målt.** Den regnes som det, der er tilbage: den samlede kvælstoftilførsel fra land minus punktkilderne giver det diffuse bidrag, og det diffuse bidrag minus det naturlige baggrundsbidrag er det, der kaldes landbrugets andel. Det er en restpost - og alt, hvad der er regnet forkert eller mangler i de andre poster, havner i den. [Hvordan hver post er lavet](NITROGEN.md).</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-LEFTOVER "What this claim rests on")</sup>
 
+> <span class="claim" data-claim="C-LE-TOP-DENOM">**Andelen kan ikke angives som en andel af alt det kvælstof, der når havet.** Den gælder én post - kvælstof, der løber fra land til kystvandene - og selv den er beregnet, ikke målt: målt i vandløb for en del af landet og modelberegnet for resten, og den model regner ud fra markoverskuddet, som selv er et regnestykke - tilført minus høstet - ikke en måling. Kvælstof når havet ad mindst [20](SOURCES.md#F-ed6addefe7) veje, og [10](SOURCES.md#F-10301e05f2) af dem har slet intet tal. Uden dem er der ingen nævner, og så er der ingen andel af det hele at angive.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-TOP-DENOM "What this claim rests on")</sup>
+
+> <span class="claim" data-claim="C-LE-TOP-CHAIN">**Og kvælstof er kun ét led.** Det er én af flere veje til iltsvind; iltsvind er én af mange måder, en havbund og dens liv går tabt på; og begge er blandt mange årsager til fedtemøg - de skader, politikere og naturorganisationer peger på. [Led for led](CAUSATION.md).</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-TOP-CHAIN "What this claim rests on")</sup>
+
 <span class="claim" data-claim="C-LE-FIX">*Har du fundet en fejl? [Skriv den her](https://github.com/Jjokulian/copenhagen-waterways/issues). Hvad sitet har trukket tilbage, står med begrundelse i [arkivet](ARCHIVE.md).*</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-FIX "What this claim rests on")</sup>
 
 > ## Om koefficienterne

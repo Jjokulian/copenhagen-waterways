@@ -37413,6 +37413,260 @@ Said on [LANDBRUG.md](LANDBRUG.md).
 
 *Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
+<a id="C-LE-TOP-DENOM"></a>
+### The published share cannot be given as a share of all the nitrogen reaching the sea: it is a share of one term, computed rather than measured - measured in streams for part of the country and modelled for the rest by a model whose key input is the field surplus, itself an accounting identity - while nitrogen reaches the sea by many enumerated pathways of which many carry no number, so there is no denominator.
+
+`C-LE-TOP-DENOM` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [LANDBRUG.md](LANDBRUG.md).
+
+**Why it follows:** The share's scope is the land-based waterborne term; the quantified pathways sum only to a lower bound on the total, so a share of the whole has no denominator.
+
+```mermaid
+graph BT
+  C-LE-TOP-DENOM("The published share cannot be given as a share of all the ...")
+  C-LE-SCOPE("The published share is agriculture's share of nitrogen dis...")
+  C-PC-CA-SCOPE("The published share is agriculture's share of nitrogen dis...")
+  E-NI-DANVA-SCOPE[("DANVA: discharge to · coastal waters by source")]
+  D-NI-PATHWAYS[("Nitrogen pathways register")]
+  U-NI-PATHWAY-SOURCES(("Trail ends: the pathways' · bounds carry no source"))
+  C-LE-EMPTY("Of the pathways enumerated, many carry no number, among th...")
+  C-NI-UNQUANTIFIED("Of the pathways enumerated, some carry no number at all, i...")
+  C-PC-CA-L2("Many enumerated pathways carry no number, among them depos...")
+  C-NI-LOWER-BOUND("The quantified pathways sum to a lower bound on total supp...")
+  X-LE-LANDBRUG["landbrug.py"]
+  C-LE-FLOOR("An empty row that is a source of its own can only add, so ...")
+  C-PC-CA-FLOOR("The quantified pathways sum to a floor on the denominator,...")
+  X-PC-CAUSATION["causation.py"]
+  C-LE-NOTADD("Not every empty row adds: locally deposited nitrogen from ...")
+  C-LE-LEFTOVER("The agricultural share is not measured: the land-borne nit...")
+  C-NI-RELABEL("Relabelled by what produced it: the agricultural share is ...")
+  E-NI-MSFD-RESIDUAL[("DCE MSFD note: the · anthropogenic diffuse load")]
+  E-NI-MSFD-BACKGROUND[("DCE MSFD note: how the · background is determined")]
+  E-NI-DANVA-MINOR[("DANVA: the remaining lines · are even smaller")]
+  D-NI-MONITORING[("Monitoring register")]
+  U-NI-LINE-METHODS(("Trail ends: how the smaller · lines are estimated"))
+  C-NI-COUPLED("The two are coupled: the surplus is an input to DK-QNP, wh...")
+  C-NI-SR353-INPUT("DK-QNP computes the diffuse load over the ungauged part of...")
+  E-NI-SR353-INPUT[("SR353: the field surplus · as the model's input")]
+  U-NI-DIFFUSE-SOURCES(("Trail ends: the diffuse-load · figures are uncited"))
+  C-NI-SURPLUS-IDENTITY("The field surplus is an accounting identity - what is supp...")
+  C-NI-SURPLUS-TERMS("SR120 builds each term from registers and norms: mineral f...")
+  E-NI-SR120-MANURE[("SR120: manure by the · norms in force")]
+  E-NI-SR120-NORMS[("SR120: crop nitrogen · from the feed tables")]
+  E-NI-SR120-CEREAL[("SR120: cereals corrected · from annual analyses")]
+  U-NI-SR120-DEPOSITION(("Trail ends: how SR120 · estimates deposition"))
+  E-NI-SR120-T34[("SR120 Table 3.4: · the national balance")]
+  C-LE-SCOPE --> C-LE-TOP-DENOM
+  C-PC-CA-SCOPE --> C-LE-SCOPE
+  E-NI-DANVA-SCOPE --> C-PC-CA-SCOPE
+  D-NI-PATHWAYS --> C-PC-CA-SCOPE
+  E-NI-DANVA-SCOPE --> C-LE-SCOPE
+  D-NI-PATHWAYS --> C-LE-SCOPE
+  U-NI-PATHWAY-SOURCES --> C-LE-SCOPE
+  C-LE-EMPTY --> C-LE-TOP-DENOM
+  C-NI-UNQUANTIFIED --> C-LE-EMPTY
+  D-NI-PATHWAYS --> C-NI-UNQUANTIFIED
+  E-NI-DANVA-SCOPE --> C-NI-UNQUANTIFIED
+  C-PC-CA-L2 --> C-LE-EMPTY
+  C-NI-UNQUANTIFIED --> C-PC-CA-L2
+  C-NI-LOWER-BOUND --> C-LE-EMPTY
+  D-NI-PATHWAYS --> C-NI-LOWER-BOUND
+  U-NI-PATHWAY-SOURCES --> C-NI-LOWER-BOUND
+  X-LE-LANDBRUG --> C-LE-EMPTY
+  C-NI-LOWER-BOUND --> C-LE-TOP-DENOM
+  C-LE-FLOOR --> C-LE-TOP-DENOM
+  C-PC-CA-FLOOR --> C-LE-FLOOR
+  C-NI-LOWER-BOUND --> C-PC-CA-FLOOR
+  C-NI-UNQUANTIFIED --> C-PC-CA-FLOOR
+  X-PC-CAUSATION --> C-PC-CA-FLOOR
+  C-LE-NOTADD --> C-LE-FLOOR
+  D-NI-PATHWAYS --> C-LE-NOTADD
+  U-NI-PATHWAY-SOURCES --> C-LE-NOTADD
+  X-LE-LANDBRUG --> C-LE-NOTADD
+  C-LE-LEFTOVER --> C-LE-TOP-DENOM
+  C-NI-RELABEL --> C-LE-LEFTOVER
+  E-NI-MSFD-RESIDUAL --> C-NI-RELABEL
+  E-NI-MSFD-BACKGROUND --> C-NI-RELABEL
+  E-NI-DANVA-MINOR --> C-NI-RELABEL
+  D-NI-MONITORING --> C-NI-RELABEL
+  U-NI-LINE-METHODS --> C-NI-RELABEL
+  E-NI-MSFD-RESIDUAL --> C-LE-LEFTOVER
+  C-NI-COUPLED --> C-LE-TOP-DENOM
+  C-NI-SR353-INPUT --> C-NI-COUPLED
+  E-NI-SR353-INPUT --> C-NI-SR353-INPUT
+  D-NI-MONITORING --> C-NI-COUPLED
+  U-NI-DIFFUSE-SOURCES --> C-NI-COUPLED
+  C-NI-SR353-INPUT --> C-LE-TOP-DENOM
+  C-NI-SURPLUS-IDENTITY --> C-LE-TOP-DENOM
+  C-NI-SURPLUS-TERMS --> C-NI-SURPLUS-IDENTITY
+  E-NI-SR120-MANURE --> C-NI-SURPLUS-TERMS
+  E-NI-SR120-NORMS --> C-NI-SURPLUS-TERMS
+  E-NI-SR120-CEREAL --> C-NI-SURPLUS-TERMS
+  U-NI-SR120-DEPOSITION --> C-NI-SURPLUS-TERMS
+  E-NI-SR120-T34 --> C-NI-SURPLUS-IDENTITY
+  style C-LE-TOP-DENOM fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-SCOPE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-SCOPE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-DANVA-SCOPE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-NI-PATHWAYS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style U-NI-PATHWAY-SOURCES fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style C-LE-EMPTY fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-UNQUANTIFIED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-L2 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-LOWER-BOUND fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-LE-LANDBRUG fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-LE-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-PC-CAUSATION fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-LE-NOTADD fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-LEFTOVER fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-RELABEL fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-MSFD-RESIDUAL fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-MSFD-BACKGROUND fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-DANVA-MINOR fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-NI-MONITORING fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style U-NI-LINE-METHODS fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style C-NI-COUPLED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-SR353-INPUT fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-SR353-INPUT fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style U-NI-DIFFUSE-SOURCES fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style C-NI-SURPLUS-IDENTITY fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-SURPLUS-TERMS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-SR120-MANURE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-SR120-NORMS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-SR120-CEREAL fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style U-NI-SR120-DEPOSITION fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style E-NI-SR120-T34 fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **claim** — The published share is agriculture's share of nitrogen discharged to coastal waters by source - the land-based waterborne term, two rows of the pathways this project could enumerate. ([`C-LE-SCOPE`](CLAIMS.md#C-LE-SCOPE))
+- **claim** — Of the pathways enumerated, many carry no number, among them organic nitrogen in deposition, submarine groundwater discharge and release from sediment; those with a number sum to a lower bound on the total. ([`C-LE-EMPTY`](CLAIMS.md#C-LE-EMPTY))
+- **claim** — The quantified pathways sum to a lower bound on total supply, not a range: with pathways empty there is no upper bound, so no denominator and no share of the total. ([`C-NI-LOWER-BOUND`](CLAIMS.md#C-NI-LOWER-BOUND))
+- **claim** — An empty row that is a source of its own can only add, so the denominator has a floor and no ceiling, and any share computed against it is a ceiling, not an estimate. ([`C-LE-FLOOR`](CLAIMS.md#C-LE-FLOOR))
+- **claim** — The agricultural share is not measured: the land-borne nitrogen load minus point sources gives the diffuse input, and the diffuse input minus the natural background is what is called agriculture's share - a leftover, into which every error or omission in the other terms falls. ([`C-LE-LEFTOVER`](CLAIMS.md#C-LE-LEFTOVER))
+- **claim** — The two are coupled: the surplus is an input to DK-QNP, which supplies the river-transport term over the modelled part of the country, so the surplus partly determines the share's minuend - but the share itself is the residual. ([`C-NI-COUPLED`](CLAIMS.md#C-NI-COUPLED))
+- **claim** — DK-QNP computes the diffuse load over the ungauged part of the country, and DCE name the field surplus as its key input. ([`C-NI-SR353-INPUT`](CLAIMS.md#C-NI-SR353-INPUT))
+- **claim** — The field surplus is an accounting identity - what is supplied minus what is harvested - not a measurement. ([`C-NI-SURPLUS-IDENTITY`](CLAIMS.md#C-NI-SURPLUS-IDENTITY))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-LE-TOP-CHAIN"></a>
+### Nitrogen is one link: one of several routes to oxygen depletion, which is one of many mechanisms by which a sea bed and its life are lost, and both are among many causes of fedtemøg - the harms named in the public argument.
+
+`C-LE-TOP-CHAIN` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [LANDBRUG.md](LANDBRUG.md).
+
+**Why it follows:** Oxygen depletion has at least three routes and nitrogen is necessary for one; fedtemøg needs light, phosphorus, a season and a surface as well as nitrogen; the register lists many candidate mechanisms for a dying coastal water; the public argument names these harms.
+
+```mermaid
+graph BT
+  C-LE-TOP-CHAIN("Nitrogen is one link: one of several routes to oxygen depl...")
+  C-PC-CA-ROUTES("Iltsvind has at least three routes - growth, direct organi...")
+  C-LE-L4("From nitrogen at sea through algal growth to fedtemøg on a...")
+  C-PC-CA-L3("Algal growth also needs light, phosphorus, a season and a ...")
+  C-PC-CA-GROWN("Fedtemøg is algae and algae are grown, so nitrogen is on i...")
+  E-PC-FEDT-GROW[("Danish Wikipedia: · how fedtemøg forms")]
+  C-PC-CA-FEDT-DEF("Fedtemøg is a popular name for mass occurrences of loose-l...")
+  C-PC-CA-NEWREGEN("Marine biogeochemistry separates new production, on newly ...")
+  E-PC-FRATIO[("Wikipedia: new and · regenerated production")]
+  C-PC-CA-L4("The strands tear loose, drift and strand, which takes rete...")
+  E-PC-FEDT-LOOSE[("Danish Wikipedia: · the strands tear loose")]
+  C-LR-R-OWN-FEDTEMOG("No shore-condition series was found in any source this pro...")
+  D-LR-SHORE[("The sources surveyed · for shore condition")]
+  X-LR-PROGRAMME["programme.py"]
+  C-LR-L-TRIAGE("Of the register's mechanisms, the triage finds a set testa...")
+  D-LR-TRIAGE[("Hypothesis triage · data/derived/triage.json")]
+  X-LR-TRIAGE["triage_rows.py · triage.py"]
+  D-LR-SOURCES[("The sources surveyed · data/manual/data_sources*.json")]
+  C-PG-FOUR-WORDS("In the recorded public argument the damage is named with f...")
+  E-PG-POL-ILTSVIND[("TV 2: iltsvind in fjords and inner waters")]
+  E-PG-POL-FEDTEMOEG[("Greenpeace: fedtemøg")]
+  E-PG-POL-FISKEDOED[("DN: iltsvind og fiskedød")]
+  E-PG-POL-LIV[("Greenpeace: liv i fjorden")]
+  D-PG-POLITICS[("The public-argument record")]
+  C-LE-EVERYLINK("Every link is a real causal connection and the last three ...")
+  C-PC-CA-EVERYLINK("Every link is a real causal connection with no number here...")
+  C-PC-CA-L1("Agriculture's share is a residual of measured and modelled...")
+  C-NI-DIFFUSE-BASIS("The diffuse load rests on stream stations covering about h...")
+  C-NI-RESIDUAL-ABSORBS("Every unquantified pathway that reaches a river lands insi...")
+  U-LR-MONITORING-SOURCES(("Trail ends: the documents · behind monitoring.json"))
+  C-PC-CA-ROUTES --> C-LE-TOP-CHAIN
+  C-LE-L4 --> C-LE-TOP-CHAIN
+  C-PC-CA-L3 --> C-LE-L4
+  C-PC-CA-GROWN --> C-PC-CA-L3
+  E-PC-FEDT-GROW --> C-PC-CA-GROWN
+  C-PC-CA-FEDT-DEF --> C-PC-CA-GROWN
+  C-PC-CA-NEWREGEN --> C-PC-CA-L3
+  E-PC-FRATIO --> C-PC-CA-NEWREGEN
+  C-PC-CA-L4 --> C-LE-L4
+  E-PC-FEDT-LOOSE --> C-PC-CA-L4
+  C-LR-R-OWN-FEDTEMOG --> C-PC-CA-L4
+  D-LR-SHORE --> C-LR-R-OWN-FEDTEMOG
+  X-LR-PROGRAMME --> C-LR-R-OWN-FEDTEMOG
+  C-LR-L-TRIAGE --> C-LE-TOP-CHAIN
+  D-LR-TRIAGE --> C-LR-L-TRIAGE
+  X-LR-TRIAGE --> C-LR-L-TRIAGE
+  D-LR-SOURCES --> C-LR-L-TRIAGE
+  C-PG-FOUR-WORDS --> C-LE-TOP-CHAIN
+  E-PG-POL-ILTSVIND --> C-PG-FOUR-WORDS
+  E-PG-POL-FEDTEMOEG --> C-PG-FOUR-WORDS
+  E-PG-POL-FISKEDOED --> C-PG-FOUR-WORDS
+  E-PG-POL-LIV --> C-PG-FOUR-WORDS
+  D-PG-POLITICS --> C-PG-FOUR-WORDS
+  C-LE-EVERYLINK --> C-LE-TOP-CHAIN
+  C-PC-CA-EVERYLINK --> C-LE-EVERYLINK
+  C-PC-CA-L1 --> C-PC-CA-EVERYLINK
+  C-NI-DIFFUSE-BASIS --> C-PC-CA-L1
+  C-NI-RESIDUAL-ABSORBS --> C-PC-CA-L1
+  U-LR-MONITORING-SOURCES --> C-PC-CA-L1
+  C-PC-CA-L3 --> C-PC-CA-EVERYLINK
+  C-PC-CA-L4 --> C-PC-CA-EVERYLINK
+  style C-LE-TOP-CHAIN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-ROUTES fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-L4 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-L3 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-GROWN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-PC-FEDT-GROW fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-PC-CA-FEDT-DEF fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-NEWREGEN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-PC-FRATIO fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-PC-CA-L4 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-PC-FEDT-LOOSE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-LR-R-OWN-FEDTEMOG fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-LR-SHORE fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-LR-PROGRAMME fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-LR-L-TRIAGE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-LR-TRIAGE fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-LR-TRIAGE fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-LR-SOURCES fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-PG-FOUR-WORDS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-PG-POL-ILTSVIND fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-PG-POL-FEDTEMOEG fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-PG-POL-FISKEDOED fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-PG-POL-LIV fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-PG-POLITICS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-LE-EVERYLINK fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-EVERYLINK fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-L1 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-DIFFUSE-BASIS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-RESIDUAL-ABSORBS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style U-LR-MONITORING-SOURCES fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+```
+
+- **claim** — Iltsvind has at least three routes - growth, direct organic matter, and killing what is already there - and nitrogen is a necessary condition for one of them. ([`C-PC-CA-ROUTES`](CLAIMS.md#C-PC-CA-ROUTES))
+- **claim** — From nitrogen at sea through algal growth to fedtemøg on a shore nothing is computed: growth needs light, phosphorus, a season and a surface as well as nitrogen, delivered or regenerated; the strands tear loose, drift and strand; and no shore-condition series was found in any source this project surveyed. ([`C-LE-L4`](CLAIMS.md#C-LE-L4))
+- **claim** — Of the register's mechanisms, the triage finds a set testable, a set that cannot be tested with any source this project surveyed because the deciding measurement is in none of them, and a set that needs an experiment no surveyed source reports. ([`C-LR-L-TRIAGE`](CLAIMS.md#C-LR-L-TRIAGE))
+- **claim** — In the recorded public argument the damage is named with four words: iltsvind, fedtemøg, fiskedød and liv i fjorden. ([`C-PG-FOUR-WORDS`](CLAIMS.md#C-PG-FOUR-WORDS))
+- **claim** — Every link is a real causal connection and the last three have no number here; a product of unknown fractions is an unknown fraction, not a small one; agriculture may still be the largest single contributor at every link, which this project has not computed and no source it holds does. ([`C-LE-EVERYLINK`](CLAIMS.md#C-LE-EVERYLINK))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
 ## LANDING.md
 
 <a id="C-CONVEYANCE"></a>
@@ -38438,6 +38692,235 @@ Said on [LANDING.md](LANDING.md).
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
 *Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-LR-L-DENOM"></a>
+### The published farm share has no denominator: nitrogen reaches the sea by many enumerated pathways, many with no number, so no share of the total can be stated.
+
+`C-LR-L-DENOM` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [LANDING.md](LANDING.md).
+
+**Why it follows:** As LANDBRUG and NITROGEN set out: the quantified pathways are a lower bound on the total.
+
+```mermaid
+graph BT
+  C-LR-L-DENOM("The published farm share has no denominator: nitrogen reac...")
+  C-LE-TOP-DENOM("The published share cannot be given as a share of all the ...")
+  C-LE-SCOPE("The published share is agriculture's share of nitrogen dis...")
+  C-PC-CA-SCOPE("The published share is agriculture's share of nitrogen dis...")
+  E-NI-DANVA-SCOPE[("DANVA: discharge to · coastal waters by source")]
+  D-NI-PATHWAYS[("Nitrogen pathways register")]
+  U-NI-PATHWAY-SOURCES(("Trail ends: the pathways' · bounds carry no source"))
+  C-LE-EMPTY("Of the pathways enumerated, many carry no number, among th...")
+  C-NI-UNQUANTIFIED("Of the pathways enumerated, some carry no number at all, i...")
+  C-PC-CA-L2("Many enumerated pathways carry no number, among them depos...")
+  C-NI-LOWER-BOUND("The quantified pathways sum to a lower bound on total supp...")
+  X-LE-LANDBRUG["landbrug.py"]
+  C-LE-FLOOR("An empty row that is a source of its own can only add, so ...")
+  C-PC-CA-FLOOR("The quantified pathways sum to a floor on the denominator,...")
+  X-PC-CAUSATION["causation.py"]
+  C-LE-NOTADD("Not every empty row adds: locally deposited nitrogen from ...")
+  C-LE-LEFTOVER("The agricultural share is not measured: the land-borne nit...")
+  C-NI-RELABEL("Relabelled by what produced it: the agricultural share is ...")
+  E-NI-MSFD-RESIDUAL[("DCE MSFD note: the · anthropogenic diffuse load")]
+  E-NI-MSFD-BACKGROUND[("DCE MSFD note: how the · background is determined")]
+  E-NI-DANVA-MINOR[("DANVA: the remaining lines · are even smaller")]
+  D-NI-MONITORING[("Monitoring register")]
+  U-NI-LINE-METHODS(("Trail ends: how the smaller · lines are estimated"))
+  C-NI-COUPLED("The two are coupled: the surplus is an input to DK-QNP, wh...")
+  C-NI-SR353-INPUT("DK-QNP computes the diffuse load over the ungauged part of...")
+  E-NI-SR353-INPUT[("SR353: the field surplus · as the model's input")]
+  U-NI-DIFFUSE-SOURCES(("Trail ends: the diffuse-load · figures are uncited"))
+  C-NI-SURPLUS-IDENTITY("The field surplus is an accounting identity - what is supp...")
+  C-NI-SURPLUS-TERMS("SR120 builds each term from registers and norms: mineral f...")
+  E-NI-SR120-MANURE[("SR120: manure by the · norms in force")]
+  E-NI-SR120-NORMS[("SR120: crop nitrogen · from the feed tables")]
+  E-NI-SR120-CEREAL[("SR120: cereals corrected · from annual analyses")]
+  U-NI-SR120-DEPOSITION(("Trail ends: how SR120 · estimates deposition"))
+  E-NI-SR120-T34[("SR120 Table 3.4: · the national balance")]
+  C-LE-TOP-DENOM --> C-LR-L-DENOM
+  C-LE-SCOPE --> C-LE-TOP-DENOM
+  C-PC-CA-SCOPE --> C-LE-SCOPE
+  E-NI-DANVA-SCOPE --> C-PC-CA-SCOPE
+  D-NI-PATHWAYS --> C-PC-CA-SCOPE
+  E-NI-DANVA-SCOPE --> C-LE-SCOPE
+  D-NI-PATHWAYS --> C-LE-SCOPE
+  U-NI-PATHWAY-SOURCES --> C-LE-SCOPE
+  C-LE-EMPTY --> C-LE-TOP-DENOM
+  C-NI-UNQUANTIFIED --> C-LE-EMPTY
+  D-NI-PATHWAYS --> C-NI-UNQUANTIFIED
+  E-NI-DANVA-SCOPE --> C-NI-UNQUANTIFIED
+  C-PC-CA-L2 --> C-LE-EMPTY
+  C-NI-UNQUANTIFIED --> C-PC-CA-L2
+  C-NI-LOWER-BOUND --> C-LE-EMPTY
+  D-NI-PATHWAYS --> C-NI-LOWER-BOUND
+  U-NI-PATHWAY-SOURCES --> C-NI-LOWER-BOUND
+  X-LE-LANDBRUG --> C-LE-EMPTY
+  C-NI-LOWER-BOUND --> C-LE-TOP-DENOM
+  C-LE-FLOOR --> C-LE-TOP-DENOM
+  C-PC-CA-FLOOR --> C-LE-FLOOR
+  C-NI-LOWER-BOUND --> C-PC-CA-FLOOR
+  C-NI-UNQUANTIFIED --> C-PC-CA-FLOOR
+  X-PC-CAUSATION --> C-PC-CA-FLOOR
+  C-LE-NOTADD --> C-LE-FLOOR
+  D-NI-PATHWAYS --> C-LE-NOTADD
+  U-NI-PATHWAY-SOURCES --> C-LE-NOTADD
+  X-LE-LANDBRUG --> C-LE-NOTADD
+  C-LE-LEFTOVER --> C-LE-TOP-DENOM
+  C-NI-RELABEL --> C-LE-LEFTOVER
+  E-NI-MSFD-RESIDUAL --> C-NI-RELABEL
+  E-NI-MSFD-BACKGROUND --> C-NI-RELABEL
+  E-NI-DANVA-MINOR --> C-NI-RELABEL
+  D-NI-MONITORING --> C-NI-RELABEL
+  U-NI-LINE-METHODS --> C-NI-RELABEL
+  E-NI-MSFD-RESIDUAL --> C-LE-LEFTOVER
+  C-NI-COUPLED --> C-LE-TOP-DENOM
+  C-NI-SR353-INPUT --> C-NI-COUPLED
+  E-NI-SR353-INPUT --> C-NI-SR353-INPUT
+  D-NI-MONITORING --> C-NI-COUPLED
+  U-NI-DIFFUSE-SOURCES --> C-NI-COUPLED
+  C-NI-SR353-INPUT --> C-LE-TOP-DENOM
+  C-NI-SURPLUS-IDENTITY --> C-LE-TOP-DENOM
+  C-NI-SURPLUS-TERMS --> C-NI-SURPLUS-IDENTITY
+  E-NI-SR120-MANURE --> C-NI-SURPLUS-TERMS
+  E-NI-SR120-NORMS --> C-NI-SURPLUS-TERMS
+  E-NI-SR120-CEREAL --> C-NI-SURPLUS-TERMS
+  U-NI-SR120-DEPOSITION --> C-NI-SURPLUS-TERMS
+  E-NI-SR120-T34 --> C-NI-SURPLUS-IDENTITY
+  C-NI-LOWER-BOUND --> C-LR-L-DENOM
+  style C-LR-L-DENOM fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-TOP-DENOM fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-SCOPE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-SCOPE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-DANVA-SCOPE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-NI-PATHWAYS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style U-NI-PATHWAY-SOURCES fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style C-LE-EMPTY fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-UNQUANTIFIED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-L2 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-LOWER-BOUND fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-LE-LANDBRUG fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-LE-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-PC-CAUSATION fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-LE-NOTADD fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-LEFTOVER fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-RELABEL fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-MSFD-RESIDUAL fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-MSFD-BACKGROUND fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-DANVA-MINOR fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-NI-MONITORING fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style U-NI-LINE-METHODS fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style C-NI-COUPLED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-SR353-INPUT fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-SR353-INPUT fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style U-NI-DIFFUSE-SOURCES fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style C-NI-SURPLUS-IDENTITY fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-SURPLUS-TERMS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-SR120-MANURE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-SR120-NORMS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-SR120-CEREAL fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style U-NI-SR120-DEPOSITION fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+  style E-NI-SR120-T34 fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **claim** — The published share cannot be given as a share of all the nitrogen reaching the sea: it is a share of one term, computed rather than measured - measured in streams for part of the country and modelled for the rest by a model whose key input is the field surplus, itself an accounting identity - while nitrogen reaches the sea by many enumerated pathways of which many carry no number, so there is no denominator. ([`C-LE-TOP-DENOM`](CLAIMS.md#C-LE-TOP-DENOM))
+- **claim** — The quantified pathways sum to a lower bound on total supply, not a range: with pathways empty there is no upper bound, so no denominator and no share of the total. ([`C-NI-LOWER-BOUND`](CLAIMS.md#C-NI-LOWER-BOUND))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-LR-L-ONELINK"></a>
+### Nitrogen is one of several routes to oxygen depletion, which is one of many mechanisms by which a sea bed is lost, and both are among many causes of fedtemøg - the harms politicians and nature organisations name.
+
+`C-LR-L-ONELINK` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [LANDING.md](LANDING.md).
+
+**Why it follows:** As CAUSATION and LANDBRUG set out, link by link.
+
+```mermaid
+graph BT
+  C-LR-L-ONELINK("Nitrogen is one of several routes to oxygen depletion, whi...")
+  C-LE-TOP-CHAIN("Nitrogen is one link: one of several routes to oxygen depl...")
+  C-PC-CA-ROUTES("Iltsvind has at least three routes - growth, direct organi...")
+  C-LE-L4("From nitrogen at sea through algal growth to fedtemøg on a...")
+  C-PC-CA-L3("Algal growth also needs light, phosphorus, a season and a ...")
+  C-PC-CA-GROWN("Fedtemøg is algae and algae are grown, so nitrogen is on i...")
+  C-PC-CA-NEWREGEN("Marine biogeochemistry separates new production, on newly ...")
+  C-PC-CA-L4("The strands tear loose, drift and strand, which takes rete...")
+  E-PC-FEDT-LOOSE[("Danish Wikipedia: · the strands tear loose")]
+  C-LR-R-OWN-FEDTEMOG("No shore-condition series was found in any source this pro...")
+  C-LR-L-TRIAGE("Of the register's mechanisms, the triage finds a set testa...")
+  D-LR-TRIAGE[("Hypothesis triage · data/derived/triage.json")]
+  X-LR-TRIAGE["triage_rows.py · triage.py"]
+  D-LR-SOURCES[("The sources surveyed · data/manual/data_sources*.json")]
+  C-PG-FOUR-WORDS("In the recorded public argument the damage is named with f...")
+  E-PG-POL-ILTSVIND[("TV 2: iltsvind in fjords and inner waters")]
+  E-PG-POL-FEDTEMOEG[("Greenpeace: fedtemøg")]
+  E-PG-POL-FISKEDOED[("DN: iltsvind og fiskedød")]
+  E-PG-POL-LIV[("Greenpeace: liv i fjorden")]
+  D-PG-POLITICS[("The public-argument record")]
+  C-LE-EVERYLINK("Every link is a real causal connection and the last three ...")
+  C-PC-CA-EVERYLINK("Every link is a real causal connection with no number here...")
+  C-PC-CA-L1("Agriculture's share is a residual of measured and modelled...")
+  C-LE-TOP-CHAIN --> C-LR-L-ONELINK
+  C-PC-CA-ROUTES --> C-LE-TOP-CHAIN
+  C-LE-L4 --> C-LE-TOP-CHAIN
+  C-PC-CA-L3 --> C-LE-L4
+  C-PC-CA-GROWN --> C-PC-CA-L3
+  C-PC-CA-NEWREGEN --> C-PC-CA-L3
+  C-PC-CA-L4 --> C-LE-L4
+  E-PC-FEDT-LOOSE --> C-PC-CA-L4
+  C-LR-R-OWN-FEDTEMOG --> C-PC-CA-L4
+  C-LR-L-TRIAGE --> C-LE-TOP-CHAIN
+  D-LR-TRIAGE --> C-LR-L-TRIAGE
+  X-LR-TRIAGE --> C-LR-L-TRIAGE
+  D-LR-SOURCES --> C-LR-L-TRIAGE
+  C-PG-FOUR-WORDS --> C-LE-TOP-CHAIN
+  E-PG-POL-ILTSVIND --> C-PG-FOUR-WORDS
+  E-PG-POL-FEDTEMOEG --> C-PG-FOUR-WORDS
+  E-PG-POL-FISKEDOED --> C-PG-FOUR-WORDS
+  E-PG-POL-LIV --> C-PG-FOUR-WORDS
+  D-PG-POLITICS --> C-PG-FOUR-WORDS
+  C-LE-EVERYLINK --> C-LE-TOP-CHAIN
+  C-PC-CA-EVERYLINK --> C-LE-EVERYLINK
+  C-PC-CA-L1 --> C-PC-CA-EVERYLINK
+  C-PC-CA-L3 --> C-PC-CA-EVERYLINK
+  C-PC-CA-L4 --> C-PC-CA-EVERYLINK
+  C-PC-CA-ROUTES --> C-LR-L-ONELINK
+  style C-LR-L-ONELINK fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-TOP-CHAIN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-ROUTES fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-L4 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-L3 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-GROWN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-NEWREGEN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-L4 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-PC-FEDT-LOOSE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-LR-R-OWN-FEDTEMOG fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LR-L-TRIAGE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-LR-TRIAGE fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-LR-TRIAGE fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-LR-SOURCES fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-PG-FOUR-WORDS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-PG-POL-ILTSVIND fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-PG-POL-FEDTEMOEG fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-PG-POL-FISKEDOED fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-PG-POL-LIV fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-PG-POLITICS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-LE-EVERYLINK fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-EVERYLINK fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-PC-CA-L1 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+```
+
+- **claim** — Nitrogen is one link: one of several routes to oxygen depletion, which is one of many mechanisms by which a sea bed and its life are lost, and both are among many causes of fedtemøg - the harms named in the public argument. ([`C-LE-TOP-CHAIN`](CLAIMS.md#C-LE-TOP-CHAIN))
+- **claim** — Iltsvind has at least three routes - growth, direct organic matter, and killing what is already there - and nitrogen is a necessary condition for one of them. ([`C-PC-CA-ROUTES`](CLAIMS.md#C-PC-CA-ROUTES))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the published share has no denominator - one term, measured in streams for part of the country and modelled for the rest from the field surplus, against many pathways with no number - and nitrogen is one link of several on the way to the named harms; each rests on the confirmed NITROGEN, CAUSATION, LANDBRUG and PROGRAMME claims named. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 ## LIGHT.md
 
