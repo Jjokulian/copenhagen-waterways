@@ -17,6 +17,12 @@ MLP, and the same MLP with relation and law nodes in its first layer.
     python scripts/pilot_relations.py parse            stream ctd.csv.gz -> sample .npz
     python scripts/pilot_relations.py train --kind both --seeds 0 1 2
     python scripts/pilot_relations.py report           baselines + assemble the JSON
+    python scripts/pilot_relations.py train --split time --kind both --seeds 0 1 2 3 4
+    python scripts/pilot_relations.py extrap-report    extrapolation splits -> own JSON
+
+The extrapolation splits (SPLITS) keep the station partition and add a condition -
+later years, the warmest measurements, marine or brackish water - so the test rows
+lie outside what was trained on; see the section above extrap_report().
 
 Run under scripts/runbig -m 3G -- ~/.venvs/relations/bin/python ... (torch, gsw).
 
@@ -26,7 +32,8 @@ train/report: the reservoir sample as float32 arrays plus torch (a few hundred M
 
 Reads   data/raw/oda/ctd.csv.gz, data/raw/oda/stations.csv
 Writes  data/derived/pilot_relations_sample.npz, pilot_relations_parse.json,
-        pilot_relations_runs/*.json, pilot_relations.json
+        pilot_relations_runs/*.json, pilot_relations.json,
+        pilot_relations_extrap_runs/*.json, pilot_relations_extrap.json
 """
 import argparse
 import collections
@@ -510,7 +517,10 @@ def prepare():
             "y": ((target - ymu) / ysd).astype(np.float32), "target": target,
             "ymu": ymu, "ysd": ysd, "tr": tr, "va": va, "te": te, "wb": D["wb"],
             "month": mo, "station": D["station"], "wb_names": D["wb_names"],
-            "constructions": cons}
+            "constructions": cons,
+            # raw arrays and the station partition (0 train, 1 validation, 2 test), so
+            # apply_split() can cut by condition and re-standardise on its own rows
+            "Xraw": X, "Lraw": Lraw, "year": y, "which": which}
 
 
 # --------------------------------------------------------------------- models
@@ -522,31 +532,12 @@ def metrics(y, p):
             "n": int(len(y))}
 
 
-def torch_xp():
-    import torch
-
-    class XP:
-        """torch, but maximum() accepts a Python scalar as numpy's does. library.py's
-        _pos() calls xp.maximum(z, 0), which torch.maximum refuses."""
-        def __getattr__(self, name):
-            return getattr(torch, name)
-
-        @staticmethod
-        def maximum(a, b):
-            if not torch.is_tensor(b):
-                return torch.clamp_min(a, b)
-            if not torch.is_tensor(a):
-                return torch.clamp_min(b, a)
-            return torch.maximum(a, b)
-    return XP()
-
-
 def make_net(kind, n_in, n_laws):
     import torch
     from torch import nn
     sys.path.insert(0, RELATIONS_DIR)
     from library import RELATIONS
-    xp = torch_xp()
+    xp = torch      # library.py runs under torch directly since statistical-methods 5a48c5f
     forms = list(RELATIONS.values()) if kind == "relation" else []
     n_law = n_laws if kind == "relation" else 0
     n_relu = CFG["first_layer_nodes"] - len(forms) - n_law
@@ -593,7 +584,12 @@ def train(args):
     # torch threads spin against each other (a smoke run stalled past ten minutes)
     torch.set_num_threads(int(os.environ.get("PILOT_THREADS", "1")))
     P = prepare()
-    os.makedirs(RUNS, exist_ok=True)
+    outdir, prefix = RUNS, ""
+    if args.split:
+        P = apply_split(P, args.split)
+        outdir, prefix = EXTRAP_RUNS, args.split + "__"
+        log(f"split {args.split}: {P['split_info']['measurements']}")
+    os.makedirs(outdir, exist_ok=True)
     X = torch.from_numpy(P["X"]); L = torch.from_numpy(P["L"]); Y = torch.from_numpy(P["y"])
     idx = {k: torch.from_numpy(np.nonzero(P[k])[0]) for k in ("tr", "va", "te")}
     kinds = ["plain", "relation"] if args.kind == "both" else [args.kind]
@@ -693,8 +689,10 @@ def train(args):
                         "input_weights": [dict(zip(INPUTS, [round(float(v), 4) for v in row])) for row in W],
                         "input_bias": [round(float(v), 4) for v in lin.bias.detach()]})
             res["seconds"] = round(time.time() - t0, 1)
-            name = f"{kind}_seed{seed}" + ("" if lam == CFG["lambda_gate_l1"] else f"_lam{lam:g}")
-            with open(os.path.join(RUNS, name + ".json"), "w") as f:
+            if args.split:
+                res["split"] = args.split
+            name = prefix + f"{kind}_seed{seed}" + ("" if lam == CFG["lambda_gate_l1"] else f"_lam{lam:g}")
+            with open(os.path.join(outdir, name + ".json"), "w") as f:
                 json.dump(res, f, indent=1)
             log(f"  {name}: test R2 {res['test']['r2']} RMSE {res['test']['rmse_mg_l']} "
                 f"val R2 {res['validation']['r2']} epochs {len(hist)} best {best_ep} "
@@ -709,11 +707,11 @@ def spearman(a, b):
     return float(np.corrcoef(ra, rb)[0, 1])
 
 
-def report(args):
-    P = prepare()
+def aggregate_baselines(P):
+    """The water body's mean and the water body by month, taken from the training rows
+    and predicted on the test rows, with every fallback counted."""
     target, tr, te = P["target"], P["tr"], P["te"]
     wb, month = P["wb"], P["month"]
-    # baselines from training stations
     gmean = target[tr].mean()
     nwb = int(wb.max()) + 1
     s = np.bincount(wb[tr], target[tr], nwb); c = np.bincount(wb[tr], None, nwb)
@@ -727,6 +725,74 @@ def report(args):
     p_wbm = wbmm[key[te]]
     fb_wbm = int(np.isnan(p_wbm).sum())
     p_wbm = np.where(np.isnan(p_wbm), p_wb, p_wbm)
+    return {
+        "water_body_mean": {**metrics(target[te], p_wb),
+                            "test_measurements_whose_water_body_has_no_training_station":
+                                fb_wb, "fallback": "training mean over all stations"},
+        "water_body_by_month_mean": {**metrics(target[te], p_wbm),
+                                     "test_measurements_without_training_cell": fb_wbm,
+                                     "fallback": "the water body's mean, then the overall "
+                                                 "training mean"},
+        "training_mean_everywhere": metrics(target[te], np.full(te.sum(), gmean)),
+    }, key
+
+
+def network_summary(runs, lam):
+    """Held-out R^2 and RMSE per network kind over its seeds, at gate penalty lam."""
+    summary = {}
+    for kind in ("plain", "relation"):
+        rs = [r for r in runs if r["kind"] == kind and r["lambda_gate_l1"] == lam]
+        if not rs:
+            continue
+        r2 = np.array([r["test"]["r2"] for r in rs]); rm = np.array([r["test"]["rmse_mg_l"] for r in rs])
+        summary[kind] = {"seeds": [r["seed"] for r in rs],
+                         "test_r2_per_seed": r2.tolist(), "test_rmse_per_seed": rm.tolist(),
+                         "test_r2_mean": round(float(r2.mean()), 4),
+                         "test_r2_sd": round(float(r2.std(ddof=1)), 4) if len(rs) > 1 else None,
+                         "test_rmse_mean": round(float(rm.mean()), 4),
+                         "test_rmse_sd": round(float(rm.std(ddof=1)), 4) if len(rs) > 1 else None,
+                         "units_active_per_seed": [r["units_active"] for r in rs],
+                         "n_params": rs[0]["n_params"],
+                         "nonfinite_runs": [r["seed"] for r in rs if r["nonfinite_loss"]]}
+    return summary
+
+
+def gate_summary(rel):
+    """Every relation and law gate of the relation runs `rel`, ranked, with its
+    stability across their seeds."""
+    names = [n["node"] for n in rel[0]["nodes"] if not n["node"].startswith("unit_")]
+    G = np.array([[next(x["gate_abs"] for x in r["nodes"] if x["node"] == nm) for nm in names] for r in rel])
+    E = np.array([[next(x["effective"] for x in r["nodes"] if x["node"] == nm) for nm in names] for r in rel])
+    ranks = np.argsort(np.argsort(-G, 1), 1) + 1
+    order = np.argsort(G.mean(0))[::-1]
+    pairs = [(i, j) for i in range(len(rel)) for j in range(i + 1, len(rel))]
+    top5 = [set(np.argsort(-G[i])[:5]) for i in range(len(rel))]
+    return {
+        "_what": "|gate| of every relation and law node at the best validation epoch, "
+                 "ranked by the mean over seeds; rank 1 = largest. 'effective' is "
+                 "|gate| times the norm of the node's outgoing weights (node outputs "
+                 "are batch-normalised, so this is its scale of contribution).",
+        "seeds": [r["seed"] for r in rel],
+        "ranked": [{"node": names[k], "gate_abs_per_seed": [round(float(v), 4) for v in G[:, k]],
+                    "gate_abs_mean": round(float(G[:, k].mean()), 4),
+                    "rank_per_seed": ranks[:, k].tolist(),
+                    "effective_per_seed": [round(float(v), 4) for v in E[:, k]]}
+                   for k in order],
+        "spearman_between_seeds_gate_abs": {f"{rel[i]['seed']}-{rel[j]['seed']}":
+                                            round(spearman(G[i], G[j]), 3) for i, j in pairs},
+        "spearman_between_seeds_effective": {f"{rel[i]['seed']}-{rel[j]['seed']}":
+                                             round(spearman(E[i], E[j]), 3) for i, j in pairs},
+        "top5_common_to_all_seeds": sorted(names[k] for k in set.intersection(*top5)),
+        "top5_per_seed": {str(r["seed"]): [names[k] for k in np.argsort(-G[i])[:5]]
+                          for i, r in enumerate(rel)},
+    }
+
+
+def report(args):
+    P = prepare()
+    target, te = P["target"], P["te"]
+    wb = P["wb"]
+    baselines, key = aggregate_baselines(P)
 
     def within_share(groups, yv):
         k = np.unique(groups, return_inverse=True)[1]
@@ -744,16 +810,6 @@ def report(args):
         "total_variance_mg2_l2": round(float(target.var()), 4),
         "water_bodies_in_sample": int(len(np.unique(wb))),
     }
-    baselines = {
-        "water_body_mean": {**metrics(target[te], p_wb),
-                            "test_measurements_whose_water_body_has_no_training_station":
-                                fb_wb, "fallback": "training mean over all stations"},
-        "water_body_by_month_mean": {**metrics(target[te], p_wbm),
-                                     "test_measurements_without_training_cell": fb_wbm,
-                                     "fallback": "the water body's mean, then the overall "
-                                                 "training mean"},
-        "training_mean_everywhere": metrics(target[te], np.full(te.sum(), gmean)),
-    }
     runs = []
     for fn in sorted(os.listdir(RUNS)):
         if fn.endswith(".json"):
@@ -762,49 +818,9 @@ def report(args):
             r["file"] = fn
             runs.append(r)
     main_lam = CFG["lambda_gate_l1"]
-    summary = {}
-    for kind in ("plain", "relation"):
-        rs = [r for r in runs if r["kind"] == kind and r["lambda_gate_l1"] == main_lam]
-        if not rs:
-            continue
-        r2 = np.array([r["test"]["r2"] for r in rs]); rm = np.array([r["test"]["rmse_mg_l"] for r in rs])
-        summary[kind] = {"seeds": [r["seed"] for r in rs],
-                         "test_r2_per_seed": r2.tolist(), "test_rmse_per_seed": rm.tolist(),
-                         "test_r2_mean": round(float(r2.mean()), 4),
-                         "test_r2_sd": round(float(r2.std(ddof=1)), 4) if len(rs) > 1 else None,
-                         "test_rmse_mean": round(float(rm.mean()), 4),
-                         "units_active_per_seed": [r["units_active"] for r in rs],
-                         "n_params": rs[0]["n_params"],
-                         "nonfinite_runs": [r["seed"] for r in rs if r["nonfinite_loss"]]}
-    gates = None
+    summary = network_summary(runs, main_lam)
     rel = [r for r in runs if r["kind"] == "relation" and r["lambda_gate_l1"] == main_lam]
-    if rel:
-        names = [n["node"] for n in rel[0]["nodes"] if not n["node"].startswith("unit_")]
-        G = np.array([[next(x["gate_abs"] for x in r["nodes"] if x["node"] == nm) for nm in names] for r in rel])
-        E = np.array([[next(x["effective"] for x in r["nodes"] if x["node"] == nm) for nm in names] for r in rel])
-        ranks = np.argsort(np.argsort(-G, 1), 1) + 1
-        order = np.argsort(G.mean(0))[::-1]
-        pairs = [(i, j) for i in range(len(rel)) for j in range(i + 1, len(rel))]
-        top5 = [set(np.argsort(-G[i])[:5]) for i in range(len(rel))]
-        gates = {
-            "_what": "|gate| of every relation and law node at the best validation epoch, "
-                     "ranked by the mean over seeds; rank 1 = largest. 'effective' is "
-                     "|gate| times the norm of the node's outgoing weights (node outputs "
-                     "are batch-normalised, so this is its scale of contribution).",
-            "seeds": [r["seed"] for r in rel],
-            "ranked": [{"node": names[k], "gate_abs_per_seed": [round(float(v), 4) for v in G[:, k]],
-                        "gate_abs_mean": round(float(G[:, k].mean()), 4),
-                        "rank_per_seed": ranks[:, k].tolist(),
-                        "effective_per_seed": [round(float(v), 4) for v in E[:, k]]}
-                       for k in order],
-            "spearman_between_seeds_gate_abs": {f"{rel[i]['seed']}-{rel[j]['seed']}":
-                                                round(spearman(G[i], G[j]), 3) for i, j in pairs},
-            "spearman_between_seeds_effective": {f"{rel[i]['seed']}-{rel[j]['seed']}":
-                                                 round(spearman(E[i], E[j]), 3) for i, j in pairs},
-            "top5_common_to_all_seeds": sorted(names[k] for k in set.intersection(*top5)),
-            "top5_per_seed": {str(r["seed"]): [names[k] for k in np.argsort(-G[i])[:5]]
-                              for i, r in enumerate(rel)},
-        }
+    gates = gate_summary(rel) if rel else None
     sens = [{"file": r["file"], "kind": r["kind"], "seed": r["seed"],
              "lambda_gate_l1": r["lambda_gate_l1"], "test": r["test"],
              "units_active": r["units_active"]}
@@ -819,10 +835,12 @@ def report(args):
            "_script": "scripts/pilot_relations.py",
            "_library": {"forms": os.path.join(RELATIONS_DIR, "library.py"),
                         "laws": os.path.join(RELATIONS_DIR, "laws.py"),
-                        "torch_note": "library.py's _pos() calls xp.maximum(z, 0); "
-                                      "torch.maximum refuses a scalar, so 9 of 17 forms fail "
-                                      "with xp=torch. Run here with a shim whose maximum() "
-                                      "accepts a scalar (torch_xp()); the library is unchanged."},
+                        "torch_note": "The first run (copenhagen-waterways 1ec48a4) was trained "
+                                      "through a shim, because library.py's _pos() then "
+                                      "called xp.maximum(z, 0), which torch refuses (9 of 17 "
+                                      "forms failed). statistical-methods 5a48c5f fixed _pos() "
+                                      "with xp.clip; since then the library is imported "
+                                      "under torch directly."},
            "constructions": P["constructions"],
            "parse": parse_summary,
            "variance": variance,
@@ -838,6 +856,199 @@ def report(args):
     return 0
 
 
+# -------------------------------------------------------------- extrapolation
+#
+# Known relations should matter most OUTSIDE the conditions trained on, which a
+# station split does not test. Each split below keeps the station partition of the
+# first run (whole stations held out) and adds a condition: training and validation
+# stations contribute only rows inside the training condition, test stations only
+# rows outside it, so early stopping never sees the test condition either.
+
+EXTRAP_RUNS = os.path.join(DERIVED, "pilot_relations_extrap_runs")
+EXTRAP_OUT = os.path.join(DERIVED, "pilot_relations_extrap.json")
+TIME_TRAIN_LAST, TIME_TEST_FIRST = 2008, 2014
+TEMP_QUANTILE = 0.9
+SAL_MARINE = 30.0
+SPLITS = {
+    "in_range": "whole stations held out and no condition: the first run's split, "
+                "repeated with the library imported under torch directly, as the "
+                "comparison for every gate below",
+    "time": f"train on years <= {TIME_TRAIN_LAST}, test on years >= {TIME_TEST_FIRST}; "
+            f"the years between are a gap used by neither side",
+    "temperature": f"train below the {TEMP_QUANTILE} quantile of temperature, test at "
+                   "or above it (the warmest share)",
+    "salinity_brackish_to_marine": f"train on salinity < {SAL_MARINE:g}, test on "
+                                   f">= {SAL_MARINE:g}",
+    "salinity_marine_to_brackish": f"train on salinity >= {SAL_MARINE:g}, test on "
+                                   f"< {SAL_MARINE:g}",
+}
+
+
+def split_conditions(P, name):
+    """(training condition, test condition, record of the choice) over every row."""
+    yr, T, S = P["year"], P["Xraw"][:, 0], P["Xraw"][:, 1]
+    info = {"rule": SPLITS[name]}
+    if name == "in_range":
+        a = b = np.ones(len(yr), bool)
+    elif name == "time":
+        a, b = yr <= TIME_TRAIN_LAST, yr >= TIME_TEST_FIRST
+        info.update(train_years=[int(yr[a].min()), TIME_TRAIN_LAST],
+                    test_years=[TIME_TEST_FIRST, int(yr[b].max())],
+                    gap_years=[TIME_TRAIN_LAST + 1, TIME_TEST_FIRST - 1],
+                    why="cut from the sample's year distribution so both sides are well "
+                        "populated; the gap years are also the ones the QA-level filter "
+                        "left thin (see pilot_relations.json constructions)")
+    elif name == "temperature":
+        q = float(np.quantile(T, TEMP_QUANTILE))
+        a, b = T < q, T >= q
+        info.update(quantile=TEMP_QUANTILE, threshold_C=round(q, 3),
+                    threshold_from="every filtered sample measurement, all stations")
+    else:
+        br, ma = S < SAL_MARINE, S >= SAL_MARINE
+        a, b = (br, ma) if name.endswith("to_marine") else (ma, br)
+        info.update(boundary_promille=SAL_MARINE,
+                    boundary_from="the Venice system (1958): euhaline water from 30; "
+                                  "ODA 'promille' read as practical salinity")
+    info["share_of_sample_in_training_condition"] = round(float(a.mean()), 4)
+    info["share_of_sample_in_test_condition"] = round(float(b.mean()), 4)
+    return a, b, info
+
+
+def apply_split(P, name):
+    """P with an extrapolation split's train/validation/test masks, re-standardised on
+    its own training rows."""
+    a, b, info = split_conditions(P, name)
+    w = P["which"]
+    tr, va, te = (w == 0) & a, (w == 1) & a, (w == 2) & b
+    Xr, Lr, t = P["Xraw"], P["Lraw"], P["target"]
+    mu, sd = Xr[tr].mean(0), Xr[tr].std(0)
+    lmu, lsd = Lr[tr].mean(0), Lr[tr].std(0)
+    ymu, ysd = t[tr].mean(), t[tr].std()
+    info["measurements"] = {
+        "train": int(tr.sum()), "validation": int(va.sum()), "test": int(te.sum()),
+        "unused_test_condition_on_train_or_validation_stations": int(((w != 2) & b & ~a).sum()),
+        "unused_training_condition_on_test_stations": int(((w == 2) & a & ~b).sum()),
+        "unused_in_neither_condition": int((~a & ~b).sum())}
+    info["stations"] = {"train": int(len(np.unique(P["station"][tr]))),
+                        "validation": int(len(np.unique(P["station"][va]))),
+                        "test": int(len(np.unique(P["station"][te])))}
+    Q = dict(P)
+    Q.update(X=((Xr - mu) / sd).astype(np.float32), L=((Lr - lmu) / lsd).astype(np.float32),
+             y=((t - ymu) / ysd).astype(np.float32), ymu=ymu, ysd=ysd, tr=tr, va=va, te=te,
+             split_info=info)
+    return Q
+
+
+def extrap_report(args):
+    P0 = prepare()
+    lam = CFG["lambda_gate_l1"]
+    io2 = [n for _, n in LAW_NODES].index("oxygen_solubility")
+    runs = []
+    if os.path.isdir(EXTRAP_RUNS):
+        for fn in sorted(os.listdir(EXTRAP_RUNS)):
+            if fn.endswith(".json"):
+                with open(os.path.join(EXTRAP_RUNS, fn)) as f:
+                    r = json.load(f)
+                r["file"] = fn
+                r.pop("history_train_mse_val_mse_standardised", None)
+                runs.append(r)
+    splits, cons = {}, {}
+    for name in SPLITS:
+        P = apply_split(P0, name)
+        cons[name] = P["split_info"]
+        base, _ = aggregate_baselines(P)
+        tr, te, t, x = P["tr"], P["te"], P["target"], P["Lraw"][:, io2]
+        slope, icpt = np.polyfit(x[tr], t[tr], 1)
+        base["law_only_oxygen_solubility_linear"] = {
+            **metrics(t[te], icpt + slope * x[te]),
+            "intercept_mg_l": round(float(icpt), 4),
+            "slope_mg_l_per_umol_kg": round(float(slope), 6)}
+        rs = [r for r in runs if r.get("split") == name]
+        rel = [r for r in rs if r["kind"] == "relation" and r["lambda_gate_l1"] == lam]
+        splits[name] = {
+            "baselines": base, "networks": network_summary(rs, lam),
+            "relation_gates": gate_summary(rel) if rel else None,
+            "relation_ablation_without_retraining_per_seed":
+                {str(r["seed"]): r["test_ablation_without_retraining"] for r in rel},
+            # the L1 penalty shrinks gates per optimizer step, so a split with fewer
+            # training rows (fewer steps per epoch) leaves every gate larger
+            "relation_optimizer_steps_to_best_epoch_mean": round(float(np.mean(
+                [(r["best_epoch"] + 1) * int(np.ceil(tr.sum() / CFG["batch"])) for r in rel])), 1)
+                if rel else None,
+            "test_oxygen_mean_mg_l": round(float(t[te].mean()), 4),
+            "test_oxygen_variance_mg2_l2": round(float(t[te].var()), 4)}
+    # do the wired laws' gates grow outside the training conditions?
+    laws_vs = {}
+    ref = splits["in_range"]["relation_gates"]
+    if ref:
+        refd = {x["node"]: x for x in ref["ranked"]}
+        ref_level = float(np.mean([x["gate_abs_mean"] for x in ref["ranked"]]))
+        for name in SPLITS:
+            g = splits[name]["relation_gates"]
+            if name == "in_range" or not g:
+                continue
+            level = float(np.mean([x["gate_abs_mean"] for x in g["ranked"]]))
+            laws_vs[name] = {"_level": {
+                "_what": "mean |gate| over all 23 relation and law nodes. The L1 penalty "
+                         "acts per optimizer step, so the whole gate level differs between "
+                         "splits; 'relative_ratio' divides each gate by its split's level "
+                         "before comparing, and the rank needs no such correction",
+                "split": round(level, 4), "in_range": round(ref_level, 4)}}
+            for x in g["ranked"]:
+                if not x["node"].startswith("law:"):
+                    continue
+                r0 = refd[x["node"]]["gate_abs_mean"]
+                laws_vs[name][x["node"]] = {
+                    "gate_abs_mean": x["gate_abs_mean"], "in_range_gate_abs_mean": r0,
+                    "ratio_to_in_range": round(x["gate_abs_mean"] / max(r0, 1e-9), 3),
+                    "relative_ratio": round((x["gate_abs_mean"] / level) /
+                                            max(r0 / ref_level, 1e-9), 3),
+                    "mean_rank": round(float(np.mean(x["rank_per_seed"])), 2),
+                    "in_range_mean_rank": round(float(np.mean(refd[x["node"]]["rank_per_seed"])), 2),
+                    "gate_abs_per_seed": x["gate_abs_per_seed"]}
+    out = {"_what": "Extrapolation test of the relations pilot: the same comparisons as "
+                    "pilot_relations.json, on splits that hold out whole stations AND a "
+                    "condition (later years, the warmest measurements, marine or brackish "
+                    "water), plus a law-only baseline. 'runs' omits per-epoch histories; "
+                    "they stay in data/derived/pilot_relations_extrap_runs/.",
+           "_script": "scripts/pilot_relations.py (train --split NAME; extrap-report)",
+           "_first_run": "data/derived/pilot_relations.json (copenhagen-waterways 1ec48a4)",
+           "_library": {"forms": os.path.join(RELATIONS_DIR, "library.py"),
+                        "laws": os.path.join(RELATIONS_DIR, "laws.py"),
+                        "torch": "imported under torch directly (statistical-methods 5a48c5f); "
+                                 "the in_range split is rerun with it so every gate compared "
+                                 "here comes from the same code"},
+           "constructions": {
+               "inherited": "sample, filters, target column, water-body join, inputs, law "
+                            "nodes, network, penalties and training settings exactly as in "
+                            "pilot_relations.json 'constructions' (re-derived by the same "
+                            "prepare())",
+               "station_partition": P0["constructions"]["split"],
+               "condition_within_partition": "training and validation stations keep only "
+                                             "rows in the training condition, test "
+                                             "stations only rows in the test condition; "
+                                             "standardisation, water-body means and the "
+                                             "law-only fit come from the training rows",
+               "law_only_baseline": "ordinary least squares of oxygen (mg/l) on O2sol "
+                                    "(umol/kg, laws.record_state) over the training rows: "
+                                    "the simplest law-only model",
+               "seeds": "5 per network kind and split (0-4)",
+               "model_config": CFG,
+               "splits": cons},
+           "splits": splits,
+           "law_gates_against_in_range": laws_vs,
+           "runs": runs}
+    with open(EXTRAP_OUT, "w") as f:
+        json.dump(out, f, indent=1, ensure_ascii=False)
+    log(f"wrote {EXTRAP_OUT}")
+    for name, s in splits.items():
+        row = {k: (v["r2"], v["rmse_mg_l"]) for k, v in s["baselines"].items()}
+        row.update({k: (v["test_r2_mean"], v["test_r2_sd"], v["test_rmse_mean"])
+                    for k, v in s["networks"].items()})
+        log(f"{name}: n_test {cons[name]['measurements']['test']} {row}")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -847,9 +1058,13 @@ def main():
                                                  choices=["plain", "relation", "both"])
     b.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2])
     b.add_argument("--lam", type=float, default=None)
+    b.add_argument("--split", choices=list(SPLITS), default=None,
+                   help="an extrapolation split; runs go to pilot_relations_extrap_runs/")
     sub.add_parser("report")
+    sub.add_parser("extrap-report")
     args = ap.parse_args()
-    return {"parse": parse, "train": train, "report": report}[args.cmd](args)
+    return {"parse": parse, "train": train, "report": report,
+            "extrap-report": extrap_report}[args.cmd](args)
 
 
 if __name__ == "__main__":
