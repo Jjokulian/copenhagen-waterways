@@ -1,0 +1,27 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/triage.py",
+   "inputs": [
+    "scripts/pages/triage_rows.py",
+    "data/derived/triage.json",
+    "data/derived/rescore.json",
+    "data/derived/hypotheses.json",
+    "data/derived/enums.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/light.json",
+    "data/derived/outfalls.json",
+    "data/raw/oda/kemi.csv.gz",
+    "data/manual/claims.d/w3-tr.json",
+    "data/manual/claims.d/drafts-a.json",
+    "data/manual/number_constructions.d/w3-tr.json",
+    "data/manual/species.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/TRIAGE.md",
+    "data/derived/triage_sections.json"
+   ]
+  }
+ ]
+}

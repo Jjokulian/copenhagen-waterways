@@ -1,0 +1,2765 @@
+{
+ "_what": "Claims, nodes, stated values and pinned sources for the hypothesis drafts K1 and D7 (docs/hypodrafts/K1.md, docs/hypodrafts/D7.md), written by agent w3-kd; and the claims those pages published at commit 00a157f and could not justify, retired to the archive.",
+ "sources": {
+  "KD-CMEMS-OC133": {
+   "title": "Copernicus Marine, Baltic Sea Multiyear Ocean Colour Plankton, Reflectances and Transparency L3 daily observations (OCEANCOLOUR_BAL_BGC_L3_MY_009_133), product metadata",
+   "url": "https://stac.marine.copernicus.eu/metadata/OCEANCOLOUR_BAL_BGC_L3_MY_009_133/product.stac.json",
+   "retrieved": "2026-09-11",
+   "sha256": "749a3af52642e281ceb78d32995fb8d55a2340907d088b41c636c7858f2ab272",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "KD-CMEMS-WAV015": {
+   "title": "Copernicus Marine, Baltic Sea Wave Hindcast (BALTICSEA_MULTIYEAR_WAV_003_015), product metadata",
+   "url": "https://stac.marine.copernicus.eu/metadata/BALTICSEA_MULTIYEAR_WAV_003_015/product.stac.json",
+   "retrieved": "2026-09-11",
+   "sha256": "376e4721f1b6d0510b9139d56074196e34297b8873407e4610f6c98949b40041",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "KD-CMEMS-BGC012": {
+   "title": "Copernicus Marine, Baltic Sea Biogeochemistry Reanalysis (BALTICSEA_MULTIYEAR_BGC_003_012), product metadata",
+   "url": "https://stac.marine.copernicus.eu/metadata/BALTICSEA_MULTIYEAR_BGC_003_012/product.stac.json",
+   "retrieved": "2026-09-11",
+   "sha256": "be223f7ea3c2bce60f2e39f0d6f57dd225ec4084b087a915ebb2b0074f43a592",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "KD-IPT-DOMEPHYTO": {
+   "title": "EurOBIS IPT (Flanders Marine Institute), ICES Phytoplankton Community dataset - resource page",
+   "url": "https://ipt.vliz.be/eurobis/resource?r=dome-phytoplankton",
+   "retrieved": "2026-09-11",
+   "sha256": "23b7e9d3def6183a7227d70a0009af2b0ba4a7ed1d8ebdd2ba5f0e6369991ca4",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "KD-CMEMS-BGC012-P1D": {
+   "title": "Copernicus Marine, Baltic Sea Biogeochemistry Reanalysis, daily dataset cmems_mod_bal_bgc_my_P1D-m (catalogue record)",
+   "url": "https://stac.marine.copernicus.eu/metadata/BALTICSEA_MULTIYEAR_BGC_003_012/cmems_mod_bal_bgc_my_P1D-m_202303/dataset.stac.json",
+   "retrieved": "2026-09-11",
+   "sha256": "9d4d33e66090aa7988432020ecfeba508c6b34d8d2d70dd7067e6c10f0a01bb1",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "figures": {},
+ "params": {
+  "kd_d7_lag_days": {
+   "value": 5,
+   "shown": "5",
+   "reason": "How many days after an hour of critical-shear exceedance the depth prediction looks for degraded clarity: a design choice for the test on the D7 draft, not a measured settling time."
+  },
+  "kd_d7_shallow_m": {
+   "value": 10,
+   "shown": "10",
+   "reason": "The bed depth, in metres, at or above which a station belongs to the shallow arm of the D7 depth prediction: a design choice, taken at an edge of the bottom-depth bands light.py already reports Secchi censoring in."
+  },
+  "kd_d7_deep_m": {
+   "value": 20,
+   "shown": "20",
+   "reason": "The bed depth, in metres, beyond which a station is a deep control for the D7 depth prediction: a design choice, taken at an edge of the bottom-depth bands light.py already reports Secchi censoring in, leaving a band between the arms."
+  },
+  "kd_d7_relax_days": {
+   "value": 10,
+   "shown": "10",
+   "reason": "How many days after an exceedance the D7 relaxation prediction follows the coefficient: a design choice, long enough for a storm's effect to fade and short enough not to reach the next season."
+  },
+  "kd_d7_shift_days": {
+   "value": 60,
+   "shown": "60",
+   "reason": "The largest extra shift, in days, added to a whole-year circular shift in the D7 time null: a design choice, large enough to move a storm off its visits and small enough to keep the season."
+  },
+  "kd_d7_nbhd_km": {
+   "value": 50,
+   "shown": "50",
+   "reason": "The radius, in kilometres, of the neighbourhood within which the D7 depth null permutes bottom depth: a design choice, keeping a permuted station in comparable exposure while leaving stations to exchange with."
+  }
+ },
+ "nodes": [
+  {
+   "id": "X-KD-DBCOUNTS",
+   "kind": "script",
+   "label": "drafts_b_counts.py",
+   "detail": "Counts, from the files themselves, the monthly panel's variables, the Secchi extract's records and easting columns, the seabed layer's classes and the CMEMS plankton files, their years and variables; writes data/derived/drafts_b_counts.json."
+  },
+  {
+   "id": "D-KD-DBCOUNTS",
+   "kind": "held",
+   "label": "Held-file counts\\ndata/derived/drafts_b_counts.json",
+   "detail": "What drafts_b_counts.py counted, including the panel's variables, the Secchi extract's records and repeated easting column, the seabed classes and the plankton files with their first, last and partial years."
+  },
+  {
+   "id": "D-KD-PLANKTON",
+   "kind": "held",
+   "label": "CMEMS plankton files\\ndata/raw/cmems/grid",
+   "detail": "Yearly netCDF files plankton__inner__YYYY.nc. Their global attributes name the product `OCEANCOLOUR_BAL_BGC_L3_MY_009_133`, the satellite sensors from SeaWiFS to OLCI, the source as surface observation and a daily time step."
+  },
+  {
+   "id": "D-KD-PLANKTON-ATTRS",
+   "kind": "held",
+   "label": "The plankton files'\\nvariable notes",
+   "detail": "In those files each of `DIATO`, `DINO`, `MICRO`, `NANO` and `PICO` carries the comment 'Derived from chl as in Brando et al. (2021)', with a chlorophyll validity range beside it; `CHL` is the multi-sensor chlorophyll retrieval the same paper describes."
+  },
+  {
+   "id": "A-KD-FUNCTION",
+   "kind": "assumption",
+   "label": "Derived from chlorophyll\\nmeans from chlorophyll alone",
+   "detail": "The argument takes 'derived from chl' to mean that each functional type is computed from the chlorophyll of the same cell and day and nothing else. If the algorithm also used reflectance, season or place, a type could move at fixed chlorophyll, and the files could carry some signal of composition."
+  },
+  {
+   "id": "E-KD-OC133-PFT",
+   "kind": "external",
+   "label": "Copernicus Marine: functional\\ntypes by a regional algorithm",
+   "detail": "The product description says the chlorophyll comes from a region-specific neural network and the phytoplankton functional types from a region-specific algorithm.",
+   "source": "KD-CMEMS-OC133",
+   "said": "Phytoplankton Functional Types (PFT) evaluated via region-specific algorithm"
+  },
+  {
+   "id": "E-KD-OC133-TITLE",
+   "kind": "external",
+   "label": "Copernicus Marine: plankton,\\nreflectance and transparency",
+   "detail": "The product's title names its three kinds of observation.",
+   "source": "KD-CMEMS-OC133",
+   "said": "Multiyear Ocean Colour Plankton, Reflectances and Transparency"
+  },
+  {
+   "id": "E-KD-OC133-KD",
+   "kind": "external",
+   "label": "Copernicus Marine: transparency\\nas light attenuation",
+   "detail": "The transparency dataset is the diffuse attenuation coefficient of light.",
+   "source": "KD-CMEMS-OC133",
+   "said": "with the diffuse attenuation coefficient of light at"
+  },
+  {
+   "id": "E-KD-OC133-DAILY",
+   "kind": "external",
+   "label": "Copernicus Marine:\\ndaily",
+   "detail": "The product description gives its temporal resolution as daily.",
+   "source": "KD-CMEMS-OC133",
+   "said": "Temporal resolution**: daily"
+  },
+  {
+   "id": "E-KD-WAV-VARS",
+   "kind": "external",
+   "label": "Copernicus Marine wave hindcast:\\nhourly height, period, direction",
+   "detail": "The hindcast gives hourly significant wave height, period and direction.",
+   "source": "KD-CMEMS-WAV015",
+   "said": "hourly data for significant wave height, wave period and wave direction"
+  },
+  {
+   "id": "E-KD-WAV-WAM",
+   "kind": "external",
+   "label": "Copernicus Marine wave hindcast:\\nthe WAM model",
+   "detail": "The product is computed with the wave model WAM.",
+   "source": "KD-CMEMS-WAV015",
+   "said": "The product is based on the wave model WAM cycle"
+  },
+  {
+   "id": "E-KD-WAV-ERA",
+   "kind": "external",
+   "label": "Copernicus Marine wave hindcast:\\nforced by ECMWF's reanalysis",
+   "detail": "The surface forcing is ECMWF's ERA5 reanalysis.",
+   "source": "KD-CMEMS-WAV015",
+   "said": "surface forcing from ECMWF"
+  },
+  {
+   "id": "E-KD-WAV-AREA",
+   "kind": "external",
+   "label": "Copernicus Marine wave hindcast:\\nthe Danish straits included",
+   "detail": "The area covers the Baltic including the transition to the North Sea.",
+   "source": "KD-CMEMS-WAV015",
+   "said": "the Danish Belts, the Kattegat and Skagerrak"
+  },
+  {
+   "id": "E-KD-BGC-VARS",
+   "kind": "external",
+   "label": "Copernicus Marine BGC reanalysis:\\nits variables",
+   "detail": "The product description lists the variables every dataset of the reanalysis includes.",
+   "source": "KD-CMEMS-BGC012",
+   "said": "include nitrate, phosphate, ammonium, dissolved oxygen, ph, chlorophyll-a, secchi depth, surface partial"
+  },
+  {
+   "id": "E-KD-BGC-VARS2",
+   "kind": "external",
+   "label": "Copernicus Marine BGC reanalysis:\\nthe end of the list",
+   "detail": "The list ends with surface partial carbon-dioxide pressure and net primary production.",
+   "source": "KD-CMEMS-BGC012",
+   "said": "pressure and net primary production"
+  },
+  {
+   "id": "E-KD-IPT-TITLE",
+   "kind": "external",
+   "label": "EurOBIS IPT: the ICES\\nphytoplankton dataset",
+   "detail": "The resource page of the dataset in the EurOBIS repository.",
+   "source": "KD-IPT-DOMEPHYTO",
+   "said": "ICES Phytoplankton Community dataset"
+  },
+  {
+   "id": "E-KD-IPT-EMOF",
+   "kind": "external",
+   "label": "EurOBIS IPT: an extended\\nmeasurement-or-fact table",
+   "detail": "The page lists the dataset's tables: sampling events as the core, with occurrence and extended measurement-or-fact extensions.",
+   "source": "KD-IPT-DOMEPHYTO",
+   "said": "ExtendedMeasurementOrFact"
+  },
+  {
+   "id": "E-KD-IPT-LIC",
+   "kind": "external",
+   "label": "EurOBIS IPT: the licence",
+   "detail": "The page states the licence.",
+   "source": "KD-IPT-DOMEPHYTO",
+   "said": "Creative Commons Attribution (CC-BY"
+  },
+  {
+   "id": "E-KD-REDFIELD-DIATOM",
+   "kind": "external",
+   "label": "Wikipedia: diatoms need\\nsilicic acid",
+   "detail": "Diatoms need silicic acid to build the silica of their cell walls.",
+   "source": "WIKI-REDFIELD",
+   "said": "Diatoms need, among other nutrients, silicic acid to create biogenic silica for their frustules"
+  },
+  {
+   "id": "E-KD-OM-MODELS",
+   "kind": "external",
+   "label": "Open-Meteo: marine waves\\nare model output",
+   "detail": "Open-Meteo's marine documentation says its API combines wave models.",
+   "source": "OM-MARINE",
+   "said": "The Marine API combines wave models from different sources."
+  },
+  {
+   "id": "U-KD-NORUN",
+   "kind": "untraced",
+   "label": "Trail ends: no script\\nruns the test",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for a regression of a diatom share on Si:DIN, for surrogate nulls on a Si:DIN series and for any computed pre-bloom Si:DIN: rescore.py computes a yearly median pooled over every month and its share below one, and nothing else was found."
+  },
+  {
+   "id": "U-KD-NOSHEAR",
+   "kind": "untraced",
+   "label": "Trail ends: bed shear never\\nset against transparency",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for readers of data/derived/waves.json and of the Open-Meteo wave heights: currents.py, seabed.py and waves.py read the first, and currents.py fetches the second; none of them reads light.json, the Secchi or light-attenuation extracts or the CTD turbidity alongside. Nothing further was found."
+  },
+  {
+   "id": "U-KD-PAR",
+   "kind": "untraced",
+   "label": "Trail ends: how the light\\nprofiles are measured",
+   "detail": "Searched on 2026-09-11 the NOVA technical-instruction chapters pinned here, the column headers of lys.csv.gz and the source register for the instrument behind the light-attenuation profiles; none says whether it is a sensor on the CTD cast or a separate photometer."
+  },
+  {
+   "id": "X-KD-WAVES",
+   "kind": "script",
+   "label": "waves.py",
+   "detail": "Wind to fetch-limited waves, orbital velocity and bed shear at fixed depths for Køge Bugt, hourly. fetch_lookup reads the fetch from data/raw/weather/fetch.json, which seabed.py also reads and no script in the repository writes; bed_shear computes the orbital velocity through sinh of wavenumber times depth."
+  },
+  {
+   "id": "X-KD-HYPCTD",
+   "kind": "script",
+   "label": "hypodraft_ctd.py",
+   "detail": "One pass over the CTD extract for the counts the drafts cite, among them the first and last year of FDOM."
+  },
+  {
+   "id": "D-KD-MARINE",
+   "kind": "held",
+   "label": "Open-Meteo marine files\\ndata/raw/marine",
+   "detail": "marine_*.json: hourly ocean current velocity and direction, wave height and sea-surface temperature per point, fetched by currents.py from the Open-Meteo Marine API."
+  },
+  {
+   "id": "A-KD-FINES",
+   "kind": "assumption",
+   "label": "Which GEUS classes\\ncount as fine",
+   "detail": "Mud and sandy mud, Muddy sand, and Quaternary clay and silt are taken as fine, mobile beds; Sand, Gravel and coarse sand, Till/diamicton and Sedimentary rock as coarse. The map compiles surveys at mixed scales, so a station's class may come from a coarse survey."
+  },
+  {
+   "id": "E-KD-BGC-P1D",
+   "kind": "external",
+   "label": "Copernicus Marine BGC reanalysis:\\nthe daily dataset's variables",
+   "detail": "The catalogue record of the reanalysis's daily dataset lists its variables as chl, nh4, no3, nppv, o2, o2b, ph, po4, spco2 and zsd; read in full on 2026-09-11, none of them is silicate. The monthly dataset's record lists the same; the yearly one was not read.",
+   "source": "KD-CMEMS-BGC012-P1D",
+   "said": "secchi_depth_of_sea_water"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-KD-K1-STATUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The test this page specifies has not been run: no script in this repository computes it.",
+   "because": "rescore.py computes only a pooled yearly Si:DIN median; a search of the scripts found nothing that regresses a diatom share on Si:DIN or builds its null.",
+   "rests_on": [
+    "X-RESCORE",
+    "U-KD-NORUN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "The test this page specifies has not been run: no script in this repository computes it.",
+     "texts": "e8e817ad53c2da7f",
+     "node X-RESCORE": "979c0e7191811ad6",
+     "node U-KD-NORUN": "a8207eae83e620c5"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-NEEDS",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "{ref:K1} needs dissolved silicate alongside nitrogen and phosphorus at the same stations and dates, and species-level phytoplankton counts; the silicate half is held and the counts are not.",
+   "because": "The needs are the register's entry for the hypothesis; the silicate is in the held water-chemistry extract, and no phytoplankton counts are held.",
+   "rests_on": [
+    "D-LR-REGISTER",
+    "C-KD-K1-SILICATE",
+    "G-SPECIES"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-REACH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "G-SPECIES.detail {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "G-SPECIES.detail {ref:K2}": "K2: Stoichiometric imbalance decides who grows",
+     "said on hypodrafts/K1.md": "K1 needs dissolved silicate alongside N and P at the same stations and dates, and species-level phytoplankton counts. The silicate half is held; the counts are not.",
+     "hypothesis K1": "8df5f45d3e4fc152",
+     "texts": "992d56c5e4ec9193",
+     "node D-LR-REGISTER": "2d21a171b8570678",
+     "rests on C-KD-K1-SILICATE": "42c71ee4a670db28",
+     "node G-SPECIES": "ca9417ac17657dbd"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-FILES",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The repository holds the yearly files of the Copernicus Marine Baltic ocean-colour plankton product, the first of them partial, the newest with total chlorophyll, the functional types DIATO, DINO, MICRO, NANO and PICO, and a cyanobacteria bloom mask; they are daily satellite retrievals, not cell counts.",
+   "because": "drafts_b_counts.py counts the files, reads their years from the file names, marks a year partial by its file size, and lists the data variables of the newest file with netCDF4; the files' global attributes name the product, the satellite sensors, the source as surface observation and a daily step.",
+   "rests_on": [
+    "D-KD-PLANKTON",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-GRID"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "`data/raw/cmems/grid/` holds 29 yearly files, 1997 to 2025, the first of them partial, of the Copernicus Marine product `OCEANCOLOUR_BAL_BGC_L3_MY_009_133`, the newest of them with 7 variables: total chlorophyll (`CHL`), the functional types `DIATO`, `DINO`, `MICRO`, `NANO` and `PICO`, and a cyanobacteria bloom mask (`CYANOBLOOM`). They are daily satellite retrievals of ocean colour, not cell counts.",
+     "texts": "a14e5d079f867fcc",
+     "node D-KD-PLANKTON": "5c0b7b0eba0197e3",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-DERIVED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Each functional-type field is, by the provider's own note in the files, derived from chlorophyll, so it cannot move where chlorophyll does not; {ref:K1}'s distinguishing prediction, that composition moves while total biomass need not, cannot be expressed in these files, let alone tested.",
+   "because": "Premises: the variable attributes in the files say each type is derived from chlorophyll as in Brando et al. (2021), and the product description says the types are evaluated by a region-specific algorithm. If each type is computed from the chlorophyll of the same cell and day, then at fixed chlorophyll every type is fixed, and a change in composition without a change in chlorophyll cannot be represented. The argument is void if the algorithm uses anything beyond chlorophyll (A-KD-FUNCTION).",
+   "rests_on": [
+    "D-KD-PLANKTON-ATTRS",
+    "E-KD-OC133-PFT",
+    "A-KD-FUNCTION",
+    "D-LR-REGISTER"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-REACH",
+    "C-KD-OLD-K1-PARTITION",
+    "C-KD-OLD-K1-RELABEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "said on hypodrafts/K1.md": "Each functional-type variable carries, in the file itself, the provider's note that it is *derived from chl as in Brando et al. (2021)*, and the product's description says the functional types are evaluated by a region-specific algorithm. A field computed from total chlorophyll cannot move where chlorophyll does not, so K1's distinguishing prediction — *composition moves while total biomass need not* — cannot be expressed in these files, let alone tested. They are a chlorophyll field, not an observation of who the biomass is.",
+     "hypothesis K1": "8df5f45d3e4fc152",
+     "texts": "2de643acd2875806",
+     "node D-KD-PLANKTON-ATTRS": "315301e26d366208",
+     "node E-KD-OC133-PFT": "8ed640330c96b7b1",
+     "pinned KD-CMEMS-OC133": "749a3af52642e281",
+     "node A-KD-FUNCTION": "6b2dfd392b95937d",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-SILICATE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The held water-chemistry extract carries silicon, nitrite+nitrate and ammonium per sample, at the counted stations and years, joinable by station and date.",
+   "because": "rescore.py reads the extract and counts, per parameter, the rows its filters keep, their distinct stations and their years; it joins the parameters by station, date and depth.",
+   "rests_on": [
+    "D-KEMI",
+    "X-RESCORE",
+    "D-OP-RESCORE"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-ODA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "said on hypodrafts/K1.md": "The water-chemistry extract held here, `data/raw/oda/kemi.csv.gz`, carries silicon (`Silicium`) on 147,711 samples that `scripts/rescore.py` accepts, at 491 stations over 1974-2026, beside NO₂⁻+NO₃⁻ on 160,198 and NH₄⁺ on 150,024: one value per sample, joinable by station and date.",
+     "texts": "42c71ee4a670db28",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node X-RESCORE": "979c0e7191811ad6",
+     "node D-OP-RESCORE": "cd878bb872bc424e"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-POOLED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The only Si:DIN computed from it is a yearly median of surface Si:DIN pooled over every month, which is not the January-February pre-bloom quantity the page specifies and not a test of the premise.",
+   "because": "As `C-OP-18-K1` and C-SIDIN record: rescore.py pools every month, mixing the pre-bloom pool with bloom drawdown; no other script computes a Si:DIN.",
+   "rests_on": [
+    "C-OP-18-K1",
+    "C-SIDIN",
+    "X-RESCORE",
+    "U-KD-NORUN"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-ODA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "The only Si:DIN computed from it is `rescore.py`'s yearly median of surface Si:DIN pooled over every month: not the January–February pre-bloom quantity specified below, and not a test of the premise (see [C-SIDIN](../CLAIMS.md#C-SIDIN)).",
+     "texts": "52224c3bfd441fb4",
+     "rests on C-OP-18-K1": "50e82025cd0d8213",
+     "rests on C-SIDIN": "67d9a2eb82f53de7",
+     "node X-RESCORE": "979c0e7191811ad6",
+     "node U-KD-NORUN": "a8207eae83e620c5"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-DOME",
+   "kind": "attributed",
+   "stance": "theirs",
+   "holder": "Flanders Marine Institute, publishing the ICES dataset through the EurOBIS repository",
+   "page": "hypodrafts/K1.md",
+   "claim": "The ICES Phytoplankton Community dataset is published as sampling events with occurrence and extended measurement-or-fact records, under a Creative Commons Attribution licence.",
+   "because": "Their resource page lists the dataset's core and extension tables and its licence; what the measurement records hold is not stated there.",
+   "rests_on": [
+    "E-KD-IPT-TITLE",
+    "E-KD-IPT-EMOF",
+    "E-KD-IPT-LIC"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-OBIS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "The ICES Phytoplankton Community dataset is published through the EurOBIS repository as sampling events with occurrence and extended measurement-or-fact records, under a Creative Commons Attribution licence.",
+     "texts": "f360a0c30c212ecb",
+     "node E-KD-IPT-TITLE": "bb47e9d09c70afff",
+     "pinned KD-IPT-DOMEPHYTO": "23b7e9d3def6183a",
+     "node E-KD-IPT-EMOF": "0badbbfbedfccb90",
+     "node E-KD-IPT-LIC": "d7aa05726ff4e545"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-NOCOUNTS",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Species-level phytoplankton counts are not held here, so the assemblage half cannot be scored; whether that dataset's measurement records carry cell counts for Danish samples has not been checked against anything held.",
+   "because": "No phytoplankton count file is on disk and none has been fetched; the dataset's own page names its measurement table but not what it holds for Denmark.",
+   "rests_on": [
+    "G-SPECIES",
+    "C-K1-BLOCKED",
+    "E-KD-IPT-EMOF"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-OBIS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "G-SPECIES.detail {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "G-SPECIES.detail {ref:K2}": "K2: Stoichiometric imbalance decides who grows",
+     "said on hypodrafts/K1.md": "Species-level phytoplankton counts are not held here, so the assemblage half cannot be scored; whether that dataset's measurement records carry cell counts for Danish samples has not been checked against anything held.",
+     "texts": "0b9962b8f904df71",
+     "node G-SPECIES": "ca9417ac17657dbd",
+     "rests on C-K1-BLOCKED": "f115af8dbc0a3b2e",
+     "node E-KD-IPT-EMOF": "0badbbfbedfccb90",
+     "pinned KD-IPT-DOMEPHYTO": "23b7e9d3def6183a"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-DENOM",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The denominator of a diatom share is built, not assumed: the records resolving inside the autotrophic protist groups, with the unassignable fraction reported, not distributed.",
+   "because": "A community count can hold heterotrophs such as bacteria and ciliates, and records identified only above class cannot be placed in a group; distributing them would put an assumption inside the share.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-K1-BACTERIA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "The denominator must be built, not assumed: a community count can hold heterotrophs such as bacteria and ciliates, and records identified only above class cannot be placed in a group. Denominator = records resolving inside the autotrophic protist groups; the unassignable fraction is reported, not distributed.",
+     "texts": "34cd099b3a3f90ff"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-TEST",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The test: at a sampling position, regress the March-April diatom share of phytoplankton carbon on the preceding January-February median surface Si:DIN, with position fixed effects; {ref:K1} predicts a positive slope that survives conditioning on total chlorophyll.",
+   "because": "Working at a sampling position keeps the test off any partition into water bodies, which would be an assumption laid over the stations; the pre-bloom pool comes before the bloom it is said to shape; conditioning on chlorophyll separates composition from biomass, which is the hypothesis's distinguishing prediction.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "said on hypodrafts/K1.md": "At a **sampling position** (never a water body), the pre-bloom silicon pool sets the diatom fraction the following bloom can reach. Regress the **March–April diatom share of phytoplankton carbon** on the **preceding January–February median surface Si:DIN** at the same position, with position fixed effects. K1 predicts a positive slope **that survives conditioning on total chlorophyll**: the share must move where biomass does not.",
+     "hypothesis K1": "8df5f45d3e4fc152",
+     "texts": "dcbbcfb2683275d2"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-FALSIFY",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The test fails if the slope is indistinguishable from the null, or vanishes once chlorophyll is conditioned on.",
+   "because": "Either outcome would say the diatom share tracks biomass or chance, not the silicon pool.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "**Falsified if:** the slope is indistinguishable from the null below, or it vanishes once chlorophyll is conditioned on — which would say composition only tracks biomass.",
+     "texts": "02c9be47edd1a5a5"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-NULLRULE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The threshold for the test comes from surrogates that keep the series' own persistence, not from the statistic's nominal null; neither surrogate has been computed here.",
+   "because": "A yearly pre-bloom series can persist from one year to the next, and a persistent series crosses a threshold set for independent years more often than that threshold allows. Circular shifts of the years and phase-randomised series with the same spectrum keep the persistence and break only the pairing. No script computes either on a held series.",
+   "rests_on": [
+    "U-KD-NORUN"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Not the statistic's nominal null. A yearly series of pre-bloom Si:DIN can persist from one year to the next, and a persistent series crosses a threshold set for independent years more often than that threshold allows. The threshold must come from surrogates that keep the series' own persistence — circular shifts of the years, and phase-randomised series with its spectrum — computed on the series actually used; neither has been computed here.",
+     "texts": "02fb703688f6f224",
+     "node U-KD-NORUN": "a8207eae83e620c5"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-PANEL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The panel is not fixed: the number of surface cells behind the pooled yearly Si:DIN median differs between the years rescore.py keeps by the counted amounts, so an across-year statistic on pooled medians is partly a statistic about how much was sampled.",
+   "because": "rescore.py records the number of cells behind each year's median; the smallest and the largest are read from it.",
+   "rests_on": [
+    "D-OP-RESCORE",
+    "X-RESCORE"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-PANEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "**A second null to absorb:** the panel is not fixed. The surface cells (one station, date and depth) behind `rescore.py`'s pooled yearly Si:DIN median number 191 in 1980 and 3,449 in 2002, among the years it keeps, so an across-year statistic on pooled medians is partly a statistic about how much was sampled.",
+     "texts": "df83f14c488db47d",
+     "node D-OP-RESCORE": "cd878bb872bc424e",
+     "node X-RESCORE": "979c0e7191811ad6"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-FIXED",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Hence position fixed effects and a balanced panel; a station-level permutation is not conservative enough.",
+   "because": "Fixed effects compare a position with itself, so a changing mix of positions cannot move the slope, and a balanced panel keeps the mix fixed. Neighbouring stations can share water, so their residuals need not be independent, and a permutation across stations treats them as if they were.",
+   "rests_on": [
+    "C-KD-K1-PANEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Hence position fixed effects and a balanced panel; a station-level permutation is *not* conservative enough, because neighbouring stations can share water.",
+     "texts": "477301283f7bec4e",
+     "rests on C-KD-K1-PANEL": "df83f14c488db47d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-P1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Fetch the counts with their measurement records, paged to disk by year, never held in memory at once.",
+   "because": "The project streams large downloads to disk rather than holding them; paging by year also lets a failed year be fetched again alone.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-K1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Fetch the counts with their measurement records, paged to disk by year, never held in memory at once.",
+     "texts": "0f1905896e324606"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-P2",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Group by sample event, keep only events in which every occurrence carries an abundance, and report how many events that drops.",
+   "because": "A share computed over an event with missing abundances is a share of what happened to be counted.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-K1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Group by sample event; **keep only events where every occurrence carries an abundance**, and report how many events that drops.",
+     "texts": "d2b261238c2f2a38"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-P3",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Normalise to cells per litre by each record's own unit, never by a unit assumed for the column or the file.",
+   "because": "A unit read per record is right whatever the file mixes; the water-chemistry extract held here already carries some parameters in more than one unit, as ds_facts.py counts.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-UNITS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Normalise to cells per litre by each record's own unit, never by a unit assumed for the column or the file.",
+     "texts": "3e84689e28c675fa",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-P4",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Convert to carbon with a published biovolume list, report the share of abundance records that match it, and resolve synonyms and higher-rank identifications before relying on that share.",
+   "because": "Carbon per counting unit depends on the taxon and size class, so an unmatched record either drops out or needs a rule; the matched share says how much of the answer rests on the list.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-K1-PEG",
+    "C-KD-OLD-K1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Convert to carbon with a published biovolume list, report the share of abundance records that match it, and resolve synonyms and higher-rank identifications before relying on that share.",
+     "texts": "0b2fa916f7aeb0cd"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-P5",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The currency is not neutral: report the diatom share both by carbon and by cell number, and state the rule for what counts as one individual.",
+   "because": "Few large cells and many small ones give different shares by carbon and by number, so the choice of currency is part of the result.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-K1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "**The currency is not neutral.** Report the diatom share both by carbon and by cell number, and state the rule for what counts as one individual.",
+     "texts": "801f53ec421b9493"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-P6",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Take the chemistry from the held water-chemistry extract, which joins to a station by identity rather than by distance and date.",
+   "because": "A join by identity has no distance or time window to choose; a join to another source by distance and date does, and each window is a choice that moves the result.",
+   "rests_on": [
+    "C-KD-K1-SILICATE"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-JOIN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Chemistry: take it from the held water-chemistry extract, which joins to a station by identity rather than by distance and date.",
+     "texts": "0dab31ae688bcb30",
+     "rests on C-KD-K1-SILICATE": "42c71ee4a670db28"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-DRAWDOWN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Diatoms take up dissolved silicon, so a contemporaneous correlation between silicon and diatoms fits either arrow: low silicon with many diatoms can be drawdown, not limitation.",
+   "because": "Diatoms need silicic acid to build their frustules, so a bloom lowers the silicon in the water it grows in; the same low silicon would be seen whether silicon limited the bloom or the bloom removed the silicon.",
+   "rests_on": [
+    "E-KD-REDFIELD-DIATOM"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Diatoms take up dissolved silicon to build their cell walls, so a contemporaneous correlation fits either arrow, and the trivial one: a bloom draws Si down, so *low Si with many diatoms* is drawdown, not limitation.",
+     "texts": "de27af9d9ee9e8f6",
+     "node E-KD-REDFIELD-DIATOM": "9041366a28f81e3b",
+     "pinned WIKI-REDFIELD": "2c13f65ee5099793"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-D1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Temporal ordering: use the winter pool before the bloom, cross-lagged both ways; if the reverse path is as strong, the design has failed and says so.",
+   "because": "In observational data only the order in time separates limitation from drawdown, and testing the reverse path is what makes the order evidence.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "**Temporal ordering** — the winter pool before the bloom, cross-lagged both ways: if the reverse path (last spring's share → this winter's Si) is as strong, the design has failed and says so.",
+     "texts": "f20defcc14b4e4f9"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-SHIFTER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "An exogenous shifter: silicon delivered by rivers is set upstream, not by marine diatoms; the source register records an ODA river-transport topic carrying silicon monthly per station with discharge, not fetched here; discharge also delivers nitrogen, phosphorus and stratification, so it is a partial instrument.",
+   "because": "Marine diatoms cannot change what a river carries before it reaches the sea, so river silicon varies for reasons outside the bloom; the same discharge moves other drivers of the bloom, which is why the instrument is only partial. The topic's contents are as the register records them; fetch_oda.py does not list it.",
+   "rests_on": [
+    "D-KP-SOURCEREG",
+    "X-KP-FETCHODA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "**An exogenous shifter** — silicon delivered by rivers is set upstream, not by marine diatoms. The source register records ODA's river-transport topic (*Vandløb / Stoftransport*) as carrying `Silicium` monthly per station with discharge; it is not fetched here. Discharge also delivers N, P and stratification, so this is a partial instrument and must be reported as one.",
+     "texts": "9128b1cffbccfc3f",
+     "node D-KP-SOURCEREG": "5f1ff7a12c321845",
+     "node X-KP-FETCHODA": "8e40c88a70bf9709"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-SHOCK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "An asymmetric policy shock: where nitrogen was cut by policy and silicon was not, a step in Si:DIN driven by the nitrogen term alone is exogenous to diatoms in a way the silicon term is not.",
+   "because": "A policy change is set by legislators, not by the bloom; if it moves only the nitrogen term, the part of the ratio it moves is not a consequence of diatom uptake. The conditional stands whether or not such a step is found.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-K1-SHOCK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "**An asymmetric policy shock** — where nitrogen was cut by policy and silicon was not, a step in Si:DIN driven by the N term alone is exogenous to diatoms in a way the Si term is not.",
+     "texts": "21341fab6ac0fa71"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-LICENSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "The test would license a coefficient, the diatom carbon share against pre-bloom Si:DIN at sampling-position level against a persistence-aware null, for a stated denominator and currency; not a statement about total production, oxygen, any water body, or whether cutting nitrogen helps, on which {ref:K1}'s appeal rests.",
+   "because": "An observational association at positions, with no intervention, says nothing about the effect of intervening; and none of production, oxygen or water bodies enters the regression.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:K1}": "K1: Silicon depletion and the diatom-to-flagellate shift",
+     "said on hypodrafts/K1.md": "A coefficient — diatom carbon share against pre-bloom Si:DIN, at sampling-position level, against a persistence-aware null, for a stated denominator and currency. **Not** a statement about total production, oxygen, any water body, or whether cutting nitrogen helps: K1's appeal is that cutting N raises Si:N, and this measures an association, not that intervention.",
+     "hypothesis K1": "8df5f45d3e4fc152",
+     "texts": "d20348c918b7416f"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-BGC-LIST",
+   "kind": "attributed",
+   "stance": "theirs",
+   "holder": "Copernicus Marine Service, in the reanalysis's product description",
+   "page": "hypodrafts/K1.md",
+   "claim": "The Baltic Sea biogeochemistry reanalysis describes its variables as including nitrate, phosphate, ammonium, dissolved oxygen, pH, chlorophyll-a, Secchi depth, surface partial {chem:CO2} pressure and net primary production, and the catalogue record of its daily dataset lists exactly those.",
+   "because": "Their product description and the catalogue record of the daily dataset, both as pinned.",
+   "rests_on": [
+    "E-KD-BGC-VARS",
+    "E-KD-BGC-VARS2",
+    "E-KD-BGC-P1D"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-VANDA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {chem:CO2}": "CO2",
+     "said on hypodrafts/K1.md": "Copernicus Marine's Baltic Sea biogeochemistry reanalysis (`BALTICSEA_MULTIYEAR_BGC_003_012`) describes its variables as including nitrate, phosphate, ammonium, dissolved oxygen, pH, chlorophyll-a, Secchi depth, surface partial CO₂ pressure and net primary production, and the catalogue record of its daily dataset lists exactly those: `chl`, `nh4`, `no3`, `nppv`, `o2`, `o2b`, `ph`, `po4`, `spco2` and `zsd`.",
+     "texts": "0d66eafcd3ddb178",
+     "node E-KD-BGC-VARS": "14b97c2c8804c9cf",
+     "pinned KD-CMEMS-BGC012": "be223f7ea3c2bce6",
+     "node E-KD-BGC-VARS2": "d875d56ace4f0dc8",
+     "node E-KD-BGC-P1D": "22cb55e58628c70b",
+     "pinned KD-CMEMS-BGC012-P1D": "9d4d33e66090aa79"
+    }
+   }
+  },
+  {
+   "id": "C-KD-K1-BGC",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/K1.md",
+   "claim": "Silicate is not among them, so the reanalysis cannot stand in for the silicon side.",
+   "because": "An absence over a named list: the variables the daily dataset's catalogue record lists, read in full, with the monthly dataset's record listing the same; the data files were not opened, and the yearly dataset's record was not read.",
+   "rests_on": [
+    "C-KD-K1-BGC-LIST"
+   ],
+   "replaces": [
+    "C-KD-OLD-K1-VANDA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/K1.md": "Silicate is not among them, so the reanalysis cannot stand in for the silicon side.",
+     "texts": "aabe65f02eceba54",
+     "rests on C-KD-K1-BGC-LIST": "0d66eafcd3ddb178"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-PANEL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The monthly panel this project analyses carries temperature, salinity, oxygen and oxygen saturation at surface and bed, and fluorescence, as monthly medians per station, and no turbidity.",
+   "because": "drafts_b_counts.py counts the panel's variables from its declaration, and the panel's own description says it holds a monthly median per station per variable.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "`stations_series.json`, the monthly panel this project analyses, carries 9 variables — temperature, salinity, oxygen and oxygen saturation at surface and bed, and fluorescence — none of them turbidity, each a monthly median per station.",
+     "texts": "aed6440e1faf584b",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-WAVESHARE",
+   "kind": "modelled",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The wave model held here puts the modelled bed shear at its shallowest depth above the dead-bed threshold in most hours, so a monthly median describes a mixture, not an event.",
+   "because": "waves.py gives the share of all hours in which the modelled shear at each depth exceeds the dead-bed critical stress; at the shallowest depth it is the share printed. A month then holds exceeding and non-exceeding hours together.",
+   "rests_on": [
+    "D-CS-WAVES",
+    "X-KD-WAVES"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-STORM"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "The wave model held here puts the modelled bed shear at 3 m above the dead-bed threshold in 61% of all hours, so a monthly median describes a mixture, not an event.",
+     "texts": "2d23d19733c68cc2",
+     "node D-CS-WAVES": "5032ceca705073e9",
+     "node X-KD-WAVES": "3e192318c4c27f97"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-MONTHLY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The monthly product cannot test {ref:D7}; the dated raw record can.",
+   "because": "The panel holds no transparency variable, and its step is a month, while the prediction concerns the days after an exceedance, which the model puts in most hours. The dated raw record holds transparency per dated visit.",
+   "rests_on": [
+    "C-KD-D7-PANEL",
+    "C-KD-D7-WAVESHARE",
+    "C-KD-D7-TRANSP"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:D7}": "D7: Storm-driven resuspension",
+     "said on hypodrafts/D7.md": "**The monthly product cannot test D7.** The dated raw record can:",
+     "hypothesis D7": "2a66f39d76ef19ab",
+     "texts": "1b5dc333a1028525",
+     "rests on C-KD-D7-PANEL": "aed6440e1faf584b",
+     "rests on C-KD-D7-WAVESHARE": "2d23d19733c68cc2",
+     "rests on C-KD-D7-TRANSP": "f3b77f997f02ef1a"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-TRANSP",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The dated raw record holds transparency series - Secchi depths, light-attenuation profiles and CTD turbidity; the first two feed this project's light analysis, and none has been set against modelled bed shear.",
+   "because": "light.py reads the Secchi and light-attenuation extracts; the CTD extract carries turbidity; no script reads any of them alongside the bed-shear model.",
+   "rests_on": [
+    "D-LR-LIGHT",
+    "X-LR-LIGHT",
+    "D-CTD",
+    "U-KD-NOSHEAR"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-UNUSED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on hypodrafts/D7.md": "it holds transparency series — Secchi depths, light-attenuation profiles and CTD turbidity. The first two feed this project's light analysis; none has been set against modelled bed shear.",
+     "texts": "f3b77f997f02ef1a",
+     "node D-LR-LIGHT": "d13e75be5b44c526",
+     "node X-LR-LIGHT": "3ab43ea609543b4d",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node U-KD-NOSHEAR": "6d2654059e9631d1"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-MECH",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Under {ref:D7}, resuspension is depth-limited, substrate-limited and relaxes as fine sediment settles; the test reads these as restrictions per station-visit, net of station mean, month-of-year and year.",
+   "because": "The depth limit is the one waves.py computes, the orbital velocity at the bed falling with depth through sinh of wavenumber times depth; the substrate limit and the relaxation are the hypothesis's mechanism, taken as given for the test and not measured here.",
+   "rests_on": [
+    "X-KD-WAVES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:D7}": "D7: Storm-driven resuspension",
+     "said on hypodrafts/D7.md": "Under D7, resuspension is depth-limited — in the wave model held here the orbital velocity at the bed falls with depth through sinh *kh* — substrate-limited, since only mobile fine sediment suspends, and it *relaxes* as that sediment settles again. The predictions, per station-visit, net of station mean, month-of-year and year:",
+     "hypothesis D7": "2a66f39d76ef19ab",
+     "texts": "13f42873c57b9368",
+     "node X-KD-WAVES": "3e192318c4c27f97"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-P-DEPTH",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Depth: clarity is degraded in the stated days after an hour of critical-shear exceedance at a station, scaling with the depth attenuation term, large in the shallow arm and zero within noise in the deep control, in the same storms.",
+   "because": "Deep beds feel little orbital velocity from the same wind, so a storm that clouds shallow stations and not deep ones is resuspension rather than weather; the window and the arms are stated values.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Depth.** Clarity is degraded in the 5 days after an hour of critical-shear exceedance at that station, scaling with the depth attenuation term: large where the bed is at most 10 m deep, zero within noise where it is deeper than 20 m, **in the same storms**.",
+     "texts": "f344f14b18f1d967"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-P-SUB",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Substrate: present over the fine GEUS classes, absent over the coarse ones.",
+   "because": "In the hypothesis's mechanism only mobile fine sediment suspends; which classes count as fine is A-KD-FINES, and the class names are the seabed layer's own.",
+   "rests_on": [
+    "A-KD-FINES",
+    "D-KD-DBCOUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Substrate.** Present over GEUS *Mud and sandy mud* / *Muddy sand* / *Quaternary clay and silt*; absent over *Sand* / *Gravel and coarse sand* / *Till/diamicton* / *Sedimentary rock* (the layer is described in [`D1.md`](D1.md)).",
+     "texts": "7a003e220d39a3e4",
+     "node A-KD-FINES": "e93ca78bbd917d17",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-P-RELAX",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Relaxation: the coefficient decays monotonically over the stated days after an exceedance; a step persisting for weeks is a season, not a storm.",
+   "because": "Settling returns the water to its prior clarity, so a storm's effect should fade with time since it; a persistent step has a slower cause.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Relaxation.** The coefficient decays monotonically over the 10 days after an exceedance; a step persisting for weeks is a season, not a storm.",
+     "texts": "ec3b44511e574f48"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-FALSIFY",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The test fails if the within-station coefficient lies inside the null, the deep control moves as much as the shallow arm, the coarse-substrate coefficient equals the mud one, or the lag profile is flat; together these separate {ref:D7} from winter being murkier.",
+   "because": "Each failure is how a seasonal or weather-wide cause would look; only resuspension predicts all the restrictions at once.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:D7}": "D7: Storm-driven resuspension",
+     "said on hypodrafts/D7.md": "**Falsified if** the within-station coefficient lies inside the null below; **or** the control deeper than 20 m moves as much as the arm at most 10 m deep; **or** the coarse-substrate coefficient equals the mud one; **or** the lag profile is flat. Together these predictions separate D7 from \"winter is murkier.\"",
+     "hypothesis D7": "2a66f39d76ef19ab",
+     "texts": "405859870cb95a8a"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SECCHI",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The Secchi extract holds the counted records; those with a positive Secchi depth, a positive bottom depth and a year span the counted years and divide among bottom-depth bands as counted.",
+   "because": "light.py pairs the two depths each record carries and counts by band; the record count is drafts_b_counts.py's over the whole file.",
+   "rests_on": [
+    "D-LR-LIGHT",
+    "X-LR-LIGHT",
+    "D-KD-DBCOUNTS",
+    "X-KD-DBCOUNTS"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SECCHI"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Response — Secchi depth.** `data/raw/oda/maaledybde.csv.gz` holds 151,203 records; 96,708 carry a positive Secchi depth, a positive bottom depth and a year, 1980 to 2026. By bottom depth: 0–5 m 23,160 · 5–10 m 20,392 · 10–20 m 31,981 · 20–40 m 17,454 · 40–200 m 3,714.",
+     "texts": "110b2d714dfdeeb8",
+     "node D-LR-LIGHT": "d13e75be5b44c526",
+     "node X-LR-LIGHT": "3ab43ea609543b4d",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-CENSOR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Comparing the two depths each record carries, the share of readings in which the disc reached the bottom is far larger in the shallow bands than in the deep ones; the supplier's own bottom flag is set on the counted records of the whole file.",
+   "because": "light.py compares each record's Secchi depth with its bottom depth, per band; ds_facts.py counts the flag over every record. The two rules differ, and the page names each.",
+   "rests_on": [
+    "D-LR-LIGHT",
+    "X-LR-LIGHT",
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-CENSOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "*Censored at the bed, and unequally between the arms.* Comparing the two depths each record carries, the share of readings in which the disc reached the bottom is 36.9% at 0–5 m and 10.0% at 5–10 m, against 0.2% at 20–40 m and 0.0% at 40–200 m; the supplier's own flag `SigtTilBund` is set on 26,380 of all 151,203 records.",
+     "texts": "be388bd271845844",
+     "node D-LR-LIGHT": "d13e75be5b44c526",
+     "node X-LR-LIGHT": "3ab43ea609543b4d",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-TOBIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Censoring correlates with the predictor and differs between the arms, so an uncensored fit would manufacture the depth prediction from censoring alone; model it interval-censored.",
+   "because": "The disc lies on the bed exactly when the water is clearer than the bed is deep, which happens far more in shallow water; treating such a reading as the clarity understates it most where the depth prediction looks.",
+   "rests_on": [
+    "C-KD-D7-CENSOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "The disc hits bottom exactly when the water is clear, so censoring correlates with the predictor *and* differs between the arms: an uncensored fit would manufacture the depth prediction from censoring alone. Model it interval-censored (\"at least the bottom depth\").",
+     "texts": "7da8e9b6ba7f697d",
+     "rests on C-KD-D7-CENSOR": "be388bd271845844"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SCOPE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The water-telescope flag is set on the counted records, so the Secchi column holds readings taken two ways, and a test models the flag or keeps one kind.",
+   "because": "ds_facts.py counts the flag over every record; readings with and without a telescope are different procedures.",
+   "rests_on": [
+    "D-DS-FACTS",
+    "X-DS-FACTS"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SCOPE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "`SigtDybdeMedVandkikkert` — read through a water telescope — is True on 6,104 records, so the Secchi column holds readings taken two ways; a test models the flag or keeps one kind.",
+     "texts": "d9048cbbf33dfc1e",
+     "node D-DS-FACTS": "83a9d88284325866",
+     "node X-DS-FACTS": "47fe0e5378d7d730"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-NOCLOCK",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The Secchi extract has a date and no clock field.",
+   "because": "As C-DS-STARTKLOK records from the extracts' headers.",
+   "rests_on": [
+    "C-DS-STARTKLOK",
+    "D-DS-HEADERS"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SUN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "The extract has a date and no clock field.",
+     "texts": "2a238288e68cb2dd",
+     "rests on C-DS-STARTKLOK": "c4c96df32bc5025b",
+     "node D-DS-HEADERS": "2e7194c5c5505cd4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-XUTM",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "In every record of the Secchi extract the second easting column repeats the first, and the extract has no northing column, so a position comes from the station register.",
+   "because": "drafts_b_counts.py counts the records whose two easting strings are equal, and the count equals the number of records; the header names no northing column.",
+   "rests_on": [
+    "D-KD-DBCOUNTS",
+    "X-KD-DBCOUNTS",
+    "D-DS-HEADERS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "In all 151,203 records the second easting column `X_UTM321` repeats `X_UTM32`, and there is no northing column, so a position comes from the station register.",
+     "texts": "f68aafe86685865c",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-DS-HEADERS": "2e7194c5c5505cd4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-TAIL",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Visits are not drawn at random over the weather, so the test sits on the relaxation tail, not the storm hour.",
+   "because": "The design cannot assume a visit is as likely in a storm as in calm; the days after a storm are reached by ordinary visits.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-D7-MONTHS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Visits are not drawn at random over the weather.** Hence a test on the relaxation tail, not the storm hour: a design consequence, not a caveat.",
+     "texts": "01243a49e05b3fbf"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-KD",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The light-attenuation extract holds the counted records at the counted stations with a position; this project's light analysis counts the casts in it with a positive attenuation coefficient and a date, and its growing-season casts span the counted years.",
+   "because": "hypodraft_facts.py counts the records and the stations with a parseable position; light.py counts the casts, one per station, date and investigation, and gives the first and last year of a growing-season cast.",
+   "rests_on": [
+    "X-KP-HYPFACTS",
+    "D-LR-LIGHT",
+    "X-LR-LIGHT"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-LYS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Second response.** `lys.csv.gz` holds 2,370,091 records of light-attenuation profiles (`LyssvaekkelsesKoefficient`, K_d) at 566 stations with a position; this project's light analysis counts 62,741 casts in them with a positive K_d and a date, and its growing-season casts run from 1980 to 2026.",
+     "texts": "3f76222193250e20",
+     "node X-KP-HYPFACTS": "b78ab850a1db2c4b",
+     "node D-LR-LIGHT": "d13e75be5b44c526",
+     "node X-LR-LIGHT": "3ab43ea609543b4d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-KDPATH",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Whether the light-attenuation profiles come from an instrument separate from the CTD cast is not established here; this project's list of independent production paths does not count them.",
+   "because": "Nothing held or pinned says how the profiles are measured.",
+   "rests_on": [
+    "C-KP-PATHS",
+    "U-KD-PAR"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-LYS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "Whether the profiles come from an instrument separate from the CTD cast is not established here; this project's list of independent production paths does not count them.",
+     "texts": "6700c45676978f3e",
+     "rests on C-KP-PATHS": "fc03d189a9074ed2",
+     "node U-KD-PAR": "f605b682728a2cd0"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-TURB",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The CTD extract carries turbidity and FDOM rows, FDOM only from its first counted year, and neither reaches the monthly panel.",
+   "because": "enums.py counts the rows of each parameter; hypodraft_ctd.py finds the first and last FDOM year; the panel's variables are `C-KD-D7-PANEL`'s.",
+   "rests_on": [
+    "D-CTD",
+    "X-KP-ENUMS",
+    "X-KD-HYPCTD",
+    "C-KD-D7-PANEL"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-TURB"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on hypodrafts/D7.md": "**Third response — turbidity is in the archive.** The CTD extract carries `Turbiditet` on 1,076,915 rows and `FDOM` on 890,921 rows, the latter from 2021 to 2026; neither reaches the monthly panel.",
+     "texts": "a9200151f5f9be5e",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node X-KP-ENUMS": "9f81357787adb189",
+     "node X-KD-HYPCTD": "1ceeb76bd5900e03",
+     "rests on C-KD-D7-PANEL": "aed6440e1faf584b"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-TURBPATH",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "CTD turbidity is not a separate production path: it comes from the same casts as the oxygen channel.",
+   "because": "It is a parameter of the CTD extract, recorded per cast like oxygen; this project counts the CTD as one production path.",
+   "rests_on": [
+    "C-KP-PATHS",
+    "D-CTD"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-TURB"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on hypodrafts/D7.md": "It is **not a separate production path**: it comes from the same CTD casts as the oxygen channel — another channel of the same path.",
+     "texts": "45565f1429c2e631",
+     "rests on C-KP-PATHS": "fc03d189a9074ed2",
+     "node D-CTD": "f8d18f725cee6bd0"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-PREDICTOR",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Bed shear is a model output; the one this repository has is waves.py, hourly over the wind record, from ERA5 wind through fetch, Young and Verhagen wave growth and orbital velocity to Swart friction, with the fetch read from a table that no script in the repository produces.",
+   "because": "Read in waves.py: fetch_lookup reads data/raw/weather/fetch.json, and young_verhagen, wavenumber and bed_shear implement the chain; a search of scripts/ finds seabed.py and waves.py reading fetch.json and nothing writing it.",
+   "rests_on": [
+    "X-KD-WAVES",
+    "D-CS-WAVES",
+    "D-CS-WEATHER"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-RAYCAST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Predictor.** Bed shear is a model output, not an observation, and this repository has one: `scripts/waves.py` → `data/derived/waves.json`, hourly from 1995-01-01 to 2025-12-31 (271,752 hours): ERA5 wind → the fetch in the wind's direction, read from a table (`data/raw/weather/fetch.json`) that no script in the repository produces → wave growth by Young and Verhagen (1996) → orbital velocity at the bed → Swart friction.",
+     "texts": "3f2565421918864d",
+     "node X-KD-WAVES": "3e192318c4c27f97",
+     "node D-CS-WAVES": "5032ceca705073e9",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-UNCHECKED",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "It is computed for Køge Bugt only, at fixed depths, and has never been checked against an observation of sediment moving.",
+   "because": "waves.py computes at its fixed depths from the bay's wind and fetch; seabed.py, which presents it, says it holds no measurement, and no script sets it against turbidity or Secchi.",
+   "rests_on": [
+    "X-KD-WAVES",
+    "X-OP-SEABED",
+    "U-KD-NOSHEAR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "It is computed for Køge Bugt only, at fixed depths of 3, 5 and 10 m, and has **never been confronted with an observation** of sediment moving.",
+     "texts": "1b954631ae06ce1f",
+     "node X-KD-WAVES": "3e192318c4c27f97",
+     "node X-OP-SEABED": "9a1a3284b4229c09",
+     "node U-KD-NOSHEAR": "6d2654059e9631d1"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-MARINE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The Open-Meteo marine files held carry hourly wave height and sea-surface temperature beside the currents currents.py reads; those wave heights are a model output too, and nothing here sets them against transparency.",
+   "because": "The files hold those series per point, fetched by currents.py; Open-Meteo's documentation says its marine API combines wave models; no script reads the wave heights against any transparency series.",
+   "rests_on": [
+    "D-KD-MARINE",
+    "C-CS-DATA",
+    "E-KD-OM-MODELS",
+    "U-KD-NOSHEAR"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-MARINE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "The Open-Meteo marine files under `data/raw/marine/` carry hourly wave height and sea-surface temperature beside the currents `currents.py` reads; those wave heights are a model output too, and nothing here sets them against transparency.",
+     "texts": "0c05a702060bdbb3",
+     "node D-KD-MARINE": "79998d6f57b2dc75",
+     "rests on C-CS-DATA": "586e4b2a4c03a9c5",
+     "node E-KD-OM-MODELS": "ca1d25aa3ad537d2",
+     "pinned OM-MARINE": "78412adba8617110",
+     "node U-KD-NOSHEAR": "6d2654059e9631d1"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-WIND",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The test drives bed shear from wind, the end of the chain closer to observation, not from a wave field.",
+   "because": "Every model step between the wind and the bed adds error the test cannot see; the held wave model already starts from the wind.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "Wind is the end of the chain closer to observation, so τ is driven from wind, not from a wave field.",
+     "texts": "01ee545c18f470ee"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SRC-DMI",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The source register records DMI's open oceanObs API as serving sea level observed at its stations, unauthenticated in testing; wind setup in a shallow bay is observed storm forcing, independent of ERA5 and of any wave model, and so a separate path.",
+   "because": "The register's entry names the sea-level parameters and the access it found; a gauge measures the water level itself, so its storm signal owes nothing to the reanalysis or to a wave model.",
+   "rests_on": [
+    "D-OP-DMI"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SOURCES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**DMI oceanObs** — the source register records DMI's open API as serving sea level observed at its stations, unauthenticated in testing. Wind setup in a shallow bay is *observed* storm forcing, independent of ERA5 and of any wave model: the anchor τ lacks. **A separate path.**",
+     "texts": "dcaf69c44fe9e256",
+     "node D-OP-DMI": "64574cd7780bf539"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SRC-WAV",
+   "kind": "attributed",
+   "stance": "theirs",
+   "holder": "Copernicus Marine Service, in the hindcast's product description",
+   "page": "hypodrafts/D7.md",
+   "claim": "The Baltic Sea wave hindcast gives hourly significant wave height, period and direction from the wave model WAM with surface forcing from ECMWF's reanalysis, over the Baltic including the Danish Belts, the Kattegat and Skagerrak.",
+   "because": "Their product description, as pinned.",
+   "rests_on": [
+    "E-KD-WAV-VARS",
+    "E-KD-WAV-WAM",
+    "E-KD-WAV-ERA",
+    "E-KD-WAV-AREA"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SOURCES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Copernicus Marine `BALTICSEA_MULTIYEAR_WAV_003_015`** — an hourly hindcast of significant wave height, period and direction from the wave model WAM with surface forcing from ECMWF's ERA5, over the Baltic including the Danish Belts, the Kattegat and Skagerrak.",
+     "texts": "af939a2ab92d011d",
+     "node E-KD-WAV-VARS": "9467411df0c9d868",
+     "pinned KD-CMEMS-WAV015": "376e4721f1b6d051",
+     "node E-KD-WAV-WAM": "a5402aadd709826f",
+     "node E-KD-WAV-ERA": "f134c8f9fcf480ee",
+     "node E-KD-WAV-AREA": "56e8fa4476d78766"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SRC-WAV-PATH",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "It is not a separate production path from the held wind: the same atmosphere, with only the wave step different.",
+   "because": "Both start from ECMWF's ERA5 wind; the hindcast replaces the held model's wave step with WAM and keeps the forcing.",
+   "rests_on": [
+    "C-KD-D7-SRC-WAV",
+    "D-CS-WEATHER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Not a separate path**: the same atmosphere as the held wind; only the wave step differs.",
+     "texts": "acb8dec2ace11be2",
+     "rests on C-KD-D7-SRC-WAV": "af939a2ab92d011d",
+     "node D-CS-WEATHER": "5e6ed22f3b458b16"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SRC-OC",
+   "kind": "attributed",
+   "stance": "theirs",
+   "holder": "Copernicus Marine Service, in the product description",
+   "page": "hypodrafts/D7.md",
+   "claim": "The Baltic Sea ocean-colour product gives daily satellite observations of plankton, reflectance and transparency as the diffuse attenuation coefficient of light.",
+   "because": "Their product description, as pinned.",
+   "rests_on": [
+    "E-KD-OC133-TITLE",
+    "E-KD-OC133-KD",
+    "E-KD-OC133-DAILY"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SOURCES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Copernicus Marine `OCEANCOLOUR_BAL_BGC_L3_MY_009_133`** — daily satellite observations of plankton, reflectance and transparency as the diffuse attenuation coefficient of light (`KD490`).",
+     "texts": "ad5b584dfdc01556",
+     "node E-KD-OC133-TITLE": "00ab3d9eace5a6c6",
+     "pinned KD-CMEMS-OC133": "749a3af52642e281",
+     "node E-KD-OC133-KD": "3015b21109a3fc72",
+     "node E-KD-OC133-DAILY": "021cfb46e9ce5b35"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SRC-OC-PATH",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "It is a separate production path: satellite radiometry, daily, so it can resolve a storm's tail where cloud allows.",
+   "because": "It is measured from orbit, not by a disc, a photometer or a sonde, and a daily revisit is finer than the relaxation the test looks for; an optical sensor sees nothing through cloud.",
+   "rests_on": [
+    "C-KD-D7-SRC-OC",
+    "C-KP-PATHS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**A separate path**: satellite radiometry, daily, so it can resolve a storm's tail where cloud allows.",
+     "texts": "55df4473a26eb46d",
+     "rests on C-KD-D7-SRC-OC": "ad5b584dfdc01556",
+     "rests on C-KP-PATHS": "fc03d189a9074ed2"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-SRC-SS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The held water-chemistry extract carries suspended solids and turbidity from water samples, a production path separate from the sonde.",
+   "because": "enums.py counts the rows of each parameter in the extract; water chemistry is analysed from samples, not read from a sonde on the cast.",
+   "rests_on": [
+    "D-KEMI",
+    "X-KP-ENUMS"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SOURCES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-KEMI.label {fig:kemi_rows}": "1,805,827",
+     "said on hypodrafts/D7.md": "**ODA water chemistry**, held (`kemi.csv.gz`): suspended solids (`Suspenderede stoffer`) on 19,314 rows and turbidity on 60, from water samples. **A separate path** from the sonde.",
+     "texts": "9415b1ecf30ed5ca",
+     "node D-KEMI": "8eb961b1b24952c9",
+     "node X-KP-ENUMS": "9f81357787adb189"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-PROC",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Compute fetch per station from the held coastline, run waves.py's chain per station at its own bottom depth, form the largest shear on each day before a visit, and fit an interval-censored Secchi model on it with station, month-of-year and year absorbed, interacted with depth and substrate; repeat on light attenuation and turbidity.",
+   "because": "Per-station fetch and depth replace the single bay the held model runs for; the interval-censored fit is what `C-KD-D7-TOBIT` requires.",
+   "rests_on": [
+    "C-KD-D7-TOBIT"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "Compute fetch per station from the held OSM coastline (`data/raw/osm/coastline.json`) for the shallow stations and the deep controls; run `waves.py`'s chain per station at its own `BundDybde_m`, giving τ(station, hour). Per visit form E_ℓ = max τ in day ℓ before the visit, for ℓ up to 10. Fit an interval-censored (Tobit) Secchi model on E_ℓ — station, month-of-year, year absorbed — interacted with depth and substrate; repeat on K_d and on `Turbiditet`.",
+     "texts": "0652ec53a6501aba",
+     "rests on C-KD-D7-TOBIT": "7da8e9b6ba7f697d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-NULLCONSTR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "A shuffle of shear across visits breaks where and when visits sit and the autocorrelation of storms, and scores any seasonal cycle shared by storms and transparency as signal.",
+   "because": "A permutation assumes exchangeable units; visits and hours are not exchangeable when both follow the season.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "The constraint: visits sit where and when they sit, and storms are autocorrelated. A shuffle of τ across visits breaks both, and scores any seasonal cycle that storms and transparency share as signal.",
+     "texts": "de173a2fafff56b7"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-NULL-TIME",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The time null: circular-shift the whole hourly shear series by whole years plus or minus up to a stated number of days, re-deriving the lags each draw.",
+   "because": "A whole-year shift keeps the seasonal cycle and the storms' autocorrelation and breaks only the registration between a storm and a visit; the extra days keep a shift from returning the same storms.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**The time null.** Circular-shift the whole hourly τ series by whole years ± up to 60 days, re-deriving the lags each draw. Preserves the seasonal cycle and storm autocorrelation exactly; destroys only the registration between *this* storm and *this* visit.",
+     "texts": "da92b2e4d7db4d66"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-NULL-DEPTH",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The depth null: keep shear and visits, and permute bottom depth among stations within substrate class and a stated neighbourhood.",
+   "because": "It removes the depth prediction and keeps everything else, including any tendency of shallow stations to lie near the coast.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**The depth null.** Keep τ and the visits intact; permute *bottom depth* among stations within substrate class and a 50 km neighbourhood. Kills the depth prediction and preserves the rest, including any tendency of shallow stations to lie near the coast.",
+     "texts": "ce7535d360c123b6"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-EFFN",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The effective sample is exceedance events, not visits: report distinct events and stations per event, never the number of visits.",
+   "because": "One weather system can cover the whole domain, so stations sampled after it observe one storm, not many.",
+   "rests_on": [],
+   "replaces": [
+    "C-KD-OLD-D7-EFFN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "**Effective n is events, not visits.** One weather system can cover the whole domain, so stations sampled in its wake observe the same storm. Report distinct exceedance events and stations per event — never the number of visits.",
+     "texts": "84a87627c8592b55"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-LICENSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "The test would license a coefficient at station-visit level for the lagged transparency deficit per unit exceedance, with a depth gradient and a substrate contrast against the two nulls, and, if the transparency series agree, a stability coefficient across them.",
+   "because": "That is what the regression estimates and what its nulls test; agreement across differently produced series is what licenses stability.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D7.md": "Licensed: *a coefficient, at station-visit level, for the lagged transparency deficit per unit exceedance, with a depth gradient and a substrate contrast, against those two nulls* — and, if Secchi, K_d and satellite attenuation agree, a stability coefficient across them.",
+     "texts": "e285c29a2e2e3ac4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-NOTOXY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "It would not license anything about oxygen: transparency is not sulphide, and {ref:D7}'s oxygen outcome needs the chemistry of the resuspended material, which is not held and for which fetch_oda.py lists no topic.",
+   "because": "A clouded column says material is suspended, not what it consumes; fetch_oda.py's TOPICS dict has no sediment-chemistry topic, though its docstring names one.",
+   "rests_on": [
+    "X-KP-FETCHODA"
+   ],
+   "replaces": [
+    "C-KD-OLD-D7-SEDIMENT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:D7}": "D7: Storm-driven resuspension",
+     "said on hypodrafts/D7.md": "Not licensed: anything about oxygen — transparency is not sulphide, and D7's oxygen outcome needs the chemistry of the resuspended material, which is not held, and for which `fetch_oda.py` lists no topic.",
+     "hypothesis D7": "2a66f39d76ef19ab",
+     "texts": "064702f04be88449",
+     "node X-KP-FETCHODA": "8e40c88a70bf9709"
+    }
+   }
+  },
+  {
+   "id": "C-KD-D7-NOSHORE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D7.md",
+   "claim": "Nor fedtemøg reaching a shore, {ref:D7}'s other outcome, which needs a series of shore condition; none was found in any source this project surveyed.",
+   "because": "As `C-OP-8-NONE` records, over the sources surveyed.",
+   "rests_on": [
+    "C-OP-8-NONE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:D7}": "D7: Storm-driven resuspension",
+     "said on hypodrafts/D7.md": "Nor fedtemøg reaching a shore, D7's other outcome, which needs a series of shore condition; none was found in any source this project surveyed.",
+     "hypothesis D7": "2a66f39d76ef19ab",
+     "texts": "8581318cd1d552e5",
+     "rests on C-OP-8-NONE": "9ae653579b70c05d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-REACH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every count on the draft was computed in the drafting session from the file or endpoint named, both halves of what the hypothesis needs are openly reachable, and computation settles that the chlorophyll asset is not the answer.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "Every count below was",
+    "end": "settled by computation.",
+    "why": "The counts from external endpoints were made in a drafting session whose output and code are not held, so they cannot be checked; that the counts are openly reachable is not established, and none is held. The page now says what is held and what is not, and the chlorophyll point rests on the files' own description."
+   },
+   "replaced_by": [
+    "C-KD-K1-NEEDS",
+    "C-KD-K1-DERIVED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Every count below was computed in this session from the file or endpoint named. `K1` needs \"dissolved silicate alongside N and P at the same stations and dates, and species-level phytoplankton counts\". Both halves are openly reachable; the chlorophyll asset that looked like the answer is not one, and that is settled by computation.",
+     "texts": "e5e688ef884b5e00"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-GRID",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The plankton files are on a stated grid and extent; the registry entry gave a shorter span and fewer variables until it was corrected; a stated number of cell-days was sampled.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "CYANOBLOOM mask), daily,",
+    "end": "each from",
+    "why": "The grid, extent and sample sizes were read in a one-off session and are not held. The account of the register's correction is this project's history, not a statement about the data, and a page does not narrate its corrections."
+   },
+   "replaced_by": [
+    "C-KD-K1-FILES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "CYANOBLOOM mask), daily, 327×223 cells at 0.01098° × 0.01772°, 54.41–57.99 N / 9.26–13.19 E. The registry entry `LOCAL-CMEMS-PFT` said 1997–2016 and six variables until it was corrected on 2026-09-11 to match the files on disk. Sampling 261,652 valid cell-days from 2020 and 58k–257k each from",
+     "texts": "9b8dd13964430add"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-PARTITION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The functional types sum to total chlorophyll within rounding, and the diatom share of chlorophyll is a fixed function of chlorophyll alone, at stated values in every year sampled.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "PICO+NANO+MICRO − CHL",
+    "end": "cells.",
+    "why": "Computed in a one-off run whose output and code are not held. The files' own description, that each type is derived from chlorophyll, supports the conclusion without those figures."
+   },
+   "replaced_by": [
+    "C-KD-K1-DERIVED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "PICO+NANO+MICRO − CHL` never exceeds 1.9e-6 mg m⁻³; `DIATO+DINO − MICRO` never exceeds 9.5e-7. The split is an exact partition of CHL, not a separate retrieval. - `DIATO/CHL` is a fixed function of `CHL` alone. Binning CHL to three decimals, the largest within-bin spread of the ratio in any year is 2.8e-4. At CHL = 1.000 the ratio is 0.365009 (1998), 0.364999 (2005), 0.365002 (2012), 0.365001 (2020), 0.365000 (2025); at CHL = 0.5 it is 0.33935 in every year — 28 years, all seasons, 73,000 cells.",
+     "texts": "c19ccbab2ed40f04"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-RELABEL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The diatom field is a monotone relabelling of total chlorophyll, carrying no information about who the biomass is, so the hypothesis's distinguishing prediction has measure zero in it; the files are rated by error class.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "The diatom field is a monotone relabelling",
+    "end": "not a community observation.",
+    "why": "'Monotone' and 'measure zero' rested on the unheld run above. What the held files support is narrower: each type is, by their own note, derived from chlorophyll, so it cannot move where chlorophyll does not."
+   },
+   "replaced_by": [
+    "C-KD-K1-DERIVED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The diatom field is a monotone relabelling of total chlorophyll and carries zero information about who the biomass is. `K1`'s distinguishing prediction — *composition moves while total biomass need not* — has measure zero here: it cannot be expressed, let alone tested. Error class 7. These files are a legitimate CHL field, not a community observation.",
+     "texts": "d7ebcbf4ef9bcdb4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-OBIS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The ICES DOME phytoplankton records for Denmark served through OBIS number a stated total, most with an abundance measurement, over stated years and classes, openly served.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "ICES DOME phytoplankton via OBIS",
+    "end": "Open REST, no key",
+    "why": "Counted from the OBIS API in a session whose output is not held. The dataset's own page, pinned now, shows the measurement table and the licence, but not the Danish counts."
+   },
+   "replaced_by": [
+    "C-KD-K1-NOCOUNTS",
+    "C-KD-K1-DOME"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "ICES DOME phytoplankton via OBIS, `api.obis.org/v3/occurrence?datasetid=46c52e34-…&areaid=49&mof=true` | 240,671 DK records; 114,312 carry an eMoF extension, 103,005 carry `Abundance number (number counted)` (`vocab.ices.dk/53840`); 45 years 1979–2023; Bacillariophyceae 34,193, Dinophyceae 27,649, Cyanophyceae 8,613. Open REST, no key",
+     "texts": "572120e481208e92"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-EMODNET",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "EMODnet Chemistry serves a stated number of silicate samples in the Danish area with the other nutrients, quality flags and originator, openly.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "ERDDAP `EUT_BALTIC_PROFILES`",
+    "end": "Open, no registration",
+    "why": "Counted in a session whose output is not held. The page takes silicate from the held water-chemistry extract instead."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "ERDDAP `EUT_BALTIC_PROFILES`, tabledap CSV | 62,270 silicate depth-samples, 1967–2023, 29,573 profiles, 1,656 positions in 9–13.2 E / 54.4–58 N; `NO₂⁻`+`NO₃⁻` on 92.5%, phosphate 93.8%, ammonium 88.0%, chlorophyll 38.4%; per-sample SeaDataNet QC flags, depth, EDMO originator; 7.1 MB. Open, no registration",
+     "texts": "d52b532d4d411c7d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-PEG",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The HELCOM PEG biovolume list has a stated size and number of keyed rows carrying carbon per counting unit.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "HELCOM PEG biovolume list",
+    "end": "(geometric model)",
+    "why": "Read from a download that is not held and not pinned. The procedure now asks for a published biovolume list without describing one."
+   },
+   "replaced_by": [
+    "C-KD-K1-P4"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "HELCOM PEG biovolume list, `ices.dk/data/Documents/ENV/PEG_BVOL.zip` | 1.79 MB zip → `PEG_BVOL2026.xlsx`, 3,777 rows, 3,502 (AphiaID, SizeClassNo) keys carrying carbon pg per counting unit, 1,293 diatom rows | 7 (geometric model)",
+     "texts": "73cbf5f4dd03c4c4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-ODA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "ODA's water chemistry carries silicate beside the nutrients at the portal's station count in one per-sample table, fetched since the draft, from which rescore.py computes a pooled yearly median.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "ODA Hav / Vandkemi",
+    "end": "quantity specified in section",
+    "why": "The station count was the portal's count of stations offered with no period set, not the stations holding silicate in the extract now held; and 'fetched since this draft' narrates the page's history."
+   },
+   "replaced_by": [
+    "C-KD-K1-SILICATE",
+    "C-KD-K1-POOLED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "ODA Hav / Vandkemi, `Emne_10_11` | `Silicium` with total-N, `NO₂⁻`+`NO₃⁻`, `NH₄⁺`, total-P, `PO₄³⁻`, chl, pH, alkalinity in one per-sample table, 205 stations, joinable by station identity. Fetched since this draft (`data/raw/oda/kemi.csv.gz`): `scripts/rescore.py` now computes a yearly surface Si:DIN median from it, pooled over every month - not the January–February pre-bloom quantity specified in section",
+     "texts": "0601fa6d2a561d3b"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-INDEP",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Most EMODnet silicate values carry the Aarhus University originator, so EMODnet re-serves the national programme, and one programme produces each axis.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "Independence.** Of the",
+    "end": "not cross-validate one.",
+    "why": "The originator shares were counted in a session whose output is not held."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Independence. Of the 62,270 EMODnet silicate values, 90.7% carry `EDMO 729` = Aarhus University, Bioscience, Roskilde — the NOVANA path that feeds ODA, re-served under a European label. Foreign: German DOD 5.1%, SMHI 2.8%, ICES 0.7%, SYKE + FMI 0.8%. EMODnet is an *access* route, not a second measurement, and the counts are the same programme again. One production path on each axis, and it is the same programme — this can score a mechanism, not cross-validate one.",
+     "texts": "43870eeda25ef84c"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-QUANT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated share of the EMODnet silicate values fall on exact multiples of the reciprocal of a rounded molar mass of silicon.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "Quantisation:**",
+    "end": "Class",
+    "why": "Counted in a session whose output is not held; the page no longer uses the EMODnet values."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Quantisation: 61.3% of the silicate values are exact multiples of 1 / 28 (14.035714 = 393 / 28) — integer µg l⁻¹ converted with M = 28, not 28.09. Class",
+     "texts": "98caa618ea6c8566"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-UNITS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The abundance measurement is in two units across the events of one month, consistent within an event.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "the abundance eMoF is",
+    "end": "three orders of magnitude.",
+    "why": "Counted from records that are not held. The procedure keeps the rule the finding motivated, a unit read per record."
+   },
+   "replaced_by": [
+    "C-KD-K1-P3"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "the abundance eMoF is `number / cubic decimetre` on 686 and `number / cubic metre` on 356 of 1,042 March-2011 records — consistent *within* an event, mixed *across* events. Class 4; ignoring it moves a share by three orders of magnitude.",
+     "texts": "389f350e167ebe6f"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-BACTERIA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The DOME dataset holds bacteria at a stated density in one event, and ciliates, and records identified above class have no class.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "the dataset also holds bacteria",
+    "end": "have a null `class`.",
+    "why": "Read from records that are not held. The rule for the denominator stands on its own reason."
+   },
+   "replaced_by": [
+    "C-KD-K1-DENOM"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "the dataset also holds bacteria (7.1e8 cells l⁻¹ in one event) and ciliates, and records identified above class have a null `class`.",
+     "texts": "dd50b534090fdef8"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-NULL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "From the EMODnet samples a January-February surface Si:DIN series has a stated persistence and trend, and persistence-aware nulls give thresholds a stated multiple of the nominal one.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "Not the statistic's nominal null.",
+    "end": "percentile of this one.",
+    "why": "Computed from EMODnet samples in a session whose output and code are not held."
+   },
+   "replaced_by": [
+    "C-KD-K1-NULLRULE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Not the statistic's nominal null. From the 62,270 EMODnet samples I built the Jan–Feb median surface Si:DIN per year: 40 years with ≥20 samples, 1975–2021, lag-1 autocorrelation ρ₁ = 0.417, trend +0.0002 yr⁻¹ (flat, and confounded — see below). - nominal iid 5% threshold on |r|, n = 40: 0.312 - circular year-shift null, all 39 non-identity shifts: 95th pct 0.333; finest attainable p = `1/n` = 0.025 - phase-randomised surrogates preserving the series' spectrum, 20,000 draws: 95th pct |r| = 0.490, 99th pct 0.603 The persistence-aware threshold is 1.57× the nominal one. A correlation of 0.35 — \"significant\" against the textbook null — sits at the 60th percentile of this one.",
+     "texts": "4e5b1087a17836be"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-PANEL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The January-February contributing positions, samples and the Aarhus originator share vary across years over stated ranges.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "A second null to absorb",
+    "end": "is partly a statistic about who sampled.",
+    "why": "Counted from EMODnet samples that are not held. The held water-chemistry extract shows the same point from its own counts."
+   },
+   "replaced_by": [
+    "C-KD-K1-PANEL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A second null to absorb: the panel is not fixed. Jan–Feb contributing positions run 16 (1986) to 69 (2016), samples 27 to 408, the `EDMO-729` share 0.53 to 1.00, so any across-year statistic on pooled medians is partly a statistic about who sampled.",
+     "texts": "d85862826e1fd856"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-PROC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "In one month of OBIS records, a stated request size, a stated number of complete events, stated match shares against the biovolume list, and a stated rank correlation between shares by carbon and by number.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "Fetch OBIS occurrences with",
+    "end": "report both.",
+    "why": "Counted from records that are not held. The procedure keeps its rules and drops the counts."
+   },
+   "replaced_by": [
+    "C-KD-K1-P1",
+    "C-KD-K1-P2",
+    "C-KD-K1-P4",
+    "C-KD-K1-P5"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Fetch OBIS occurrences with `mof=true`, paged by `after`: March 2011 is 2,420 records / 6.1 MB in one request; 45 years ~280 MB, paged to disk by year, not held. 2. Group by `eventID`; keep only events where every occurrence carries an abundance — 29 of 40 complete, 9 partial, 2 none in March 2011 (class 5; report the drop). 3. Normalise to cells l⁻¹ per the record's own `measurementUnit`. 4. Join to PEG on (AphiaID, SizeClassNo) for carbon per counting unit: 33% of abundance records match strictly, 69% on AphiaID alone; the unmatched are higher-rank identifications (`Bacillariales`) and synonyms (`Skeletonema costatum`). Below ~80% matched carbon the share is unusable — a WoRMS synonym pass first. 5. The currency is not neutral. On 23 complete March-2011 events the diatom share by carbon (median 0.182) and by cell number (0.188) rank-correlate only 0.540. State the individuation rule; report both.",
+     "texts": "545da6484cf971af"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-JOIN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Few events of one month have a surface silicate sample in the open EMODnet route within stated distances and days.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "The open EMODnet route",
+    "end": "binding constraint on an open-only version.",
+    "why": "Counted in a session whose output is not held."
+   },
+   "replaced_by": [
+    "C-KD-K1-P6"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The open EMODnet route joins badly — of 40 March-2011 events, 3 have a surface silicate sample within 5 km and 2 days, 11 within 25 km and 7 days, median nearest distance 74 km. That is the binding constraint on an open-only version.",
+     "texts": "ef53952ff078509d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-SHOCK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nitrogen fell after a stated year while silicon has no anthropogenic source, so a step in Si:DIN driven by the nitrogen term is exogenous to diatoms.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "The asymmetric policy shock",
+    "end": "the Si term is not.",
+    "why": "Neither premise was justified on the page: no nitrogen series is read there, and the absence of an anthropogenic silicon source was asserted without a source. The argument is kept as a conditional."
+   },
+   "replaced_by": [
+    "C-KD-K1-SHOCK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The asymmetric policy shock — N fell after 1987 while Si has no anthropogenic source, so a step in Si:DIN driven by the N term alone is exogenous to diatoms in a way the Si term is not.",
+     "texts": "bb47115e2e448e6d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-K1-VANDA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "VanDa's phytoplankton endpoints refuse an anonymous request, and whether the Baltic biogeochemical reanalysis carries a silicate variable is not established.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/K1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/K1.md",
+    "begin": "VanDa `/phytoplankton/*`",
+    "end": "**not established**.",
+    "why": "The refusal was observed in a session and not pinned, and the specification address the source register gives returned not found on 2026-09-11. The reanalysis's catalogue record, pinned now, lists the variables of its daily dataset, and silicate is not among them."
+   },
+   "replaced_by": [
+    "C-KD-K1-BGC-LIST",
+    "C-KD-K1-BGC"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "VanDa `/phytoplankton/*` (401) would give the counts natively rather than through DOME's round trip; whether the CMEMS Baltic biogeochemical reanalysis carries a silicate state variable is not established.",
+     "texts": "b61cacd53f37c1eb"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-STORM",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A storm lasts a stated range of hours, and the wave model puts a stated share of all hours above the dead-bed threshold at a stated depth.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "A storm is",
+    "end": "dead-bed threshold,",
+    "why": "The storm duration had no source. The share is now read from waves.json as the page is built."
+   },
+   "replaced_by": [
+    "C-KD-D7-WAVESHARE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A storm is 6–36 hours; the wave model already here puts 61% of *all* hours at 3 m above the dead-bed threshold,",
+     "texts": "a9dd17c072407343"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-UNUSED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The dated raw record holds transparency series that nobody in this project has used.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "The dated raw",
+    "end": "nobody here has used.",
+    "why": "They are used: light.py reads the Secchi and light-attenuation extracts. What has not been done is setting any of them against bed shear."
+   },
+   "replaced_by": [
+    "C-KD-D7-TRANSP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The dated raw record can, and it holds transparency series nobody here has used.",
+     "texts": "33e2d0b7b059386d"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-SECCHI",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The Secchi file has a stated size, station-dates with both depths at stated stations over stated dates and bands, a stated number join to positions over a stated extent, and depths are read to a stated precision.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Response — Secchi depth.",
+    "end": "often",
+    "why": "The file size, station-dates, stations, join, extent and precision were counted in a one-off scan whose output is not held. The records and the depth bands are now read from drafts_b_counts.py and light.py, whose counting rules differ from the scan's."
+   },
+   "replaced_by": [
+    "C-KD-D7-SECCHI"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Response — Secchi depth. `data/raw/oda/maaledybde.csv.gz` (1.9 MB gz), scanned in full: 151,203 rows; 96,709 station-dates carrying both `SigtDybde_m` and `BundDybde_m`, at 949 stations, 1980-03-06 to 2026-09-07. By bottom depth: ≤5 m 24,394 · 5–10 m 21,572 · 10–20 m 30,500 · >20 m 20,243. 943 join to a lon/lat in `stations_series.json`, 498 of the 502 shallow; extent 8.09–14.90°E, 54.52–57.63°N. *Class 2:* read to 0.1 m, often",
+     "texts": "032974da199af40c"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-CENSOR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The bottom flag is set on a stated number of rows, most in shallow water, so a stated share of shallow readings are right-censored, against a small share in deep water.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "informative censoring, on the treatment arm",
+    "end": "The disc hits bottom exactly when the water",
+    "why": "Counted over station-dates in a one-off run whose output is not held. The held counts, of the flag over every record and of the two depths compared per band, differ from these; the page now gives those, each with its rule."
+   },
+   "replaced_by": [
+    "C-KD-D7-CENSOR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "informative censoring, on the treatment arm.* `SigtTilBund` is True for 9,998 rows — 9,815 at ≤10 m, so 21.4% of shallow readings are right-censored at the bed, against 46 of 20,243 (0.23%) at >20 m. The disc hits bottom exactly when the water",
+     "texts": "c6983c7133c7cebf"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-SCOPE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The water-telescope flag is true, false and blank on stated counts, a viewing scope reads deeper, and a clean shallow subset has a stated size.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "`SigtDybdeMedVandkikkert` True",
+    "end": "Clean shallow subset",
+    "why": "The false and blank counts and the subset were counted in an unheld run, and the held count of the true flag differs from the one given; that a scope reads deeper was asserted without a source."
+   },
+   "replaced_by": [
+    "C-KD-D7-SCOPE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`SigtDybdeMedVandkikkert` True 5,945, False 75,199, blank 15,549 — a viewing scope reads deeper, so one column holds two instruments and 16% do not say which. Clean shallow subset",
+     "texts": "481752a890430807"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-PARSE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of rows carry numbers where booleans belong, and the light file has a latitude in a date field.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "parse hazard.",
+    "end": "add to `scripts/formats.py`.",
+    "why": "Neither the count nor the case is recorded in any held output, and formats.py does not list them."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "parse hazard.* ~36 rows carry numbers where booleans belong (`1,1`, `458865`); `lys.csv.gz` has a latitude in a date field. Strict CSV parsing; add to `scripts/formats.py`.",
+     "texts": "e5172fde91641fcf"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-SUN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Secchi depth depends on sun angle, as PLAN.md's worked example shows.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Secchi depends on sun angle",
+    "end": "worked example.",
+    "why": "No source was given for the dependence, and PLAN.md's worked example, as it now stands, concerns microbial community composition."
+   },
+   "replaced_by": [
+    "C-KD-D7-NOCLOCK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Secchi depends on sun angle — PLAN.md's worked example.",
+     "texts": "e35051a8a659eeab"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-MONTHS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Visits by month differ by a stated ratio between August and December, because vessels do not sail in a gale.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Visits by month",
+    "end": "vessels do not sail in a gale.",
+    "why": "The counts were made in an unheld run, and the reason given for them had no source."
+   },
+   "replaced_by": [
+    "C-KD-D7-TAIL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Visits by month: Aug 12,446 vs Dec 4,618, 2.7:1 — vessels do not sail in a gale.",
+     "texts": "a7915f30e9a5648c"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-LYS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The light file of a stated size holds stated valid rows, station-dates and stations, and a PAR photometer is a production path separate from the eye and the sonde.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Second response.",
+    "end": "a separate production path",
+    "why": "The size and station-dates were counted in an unheld run. Whether the light profiles come from an instrument separate from the CTD cast is not established from anything held, and this project's list of independent paths does not count them."
+   },
+   "replaced_by": [
+    "C-KD-D7-KD",
+    "C-KD-D7-KDPATH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Second response. `lys.csv.gz` (22.5 MB gz): `LyssvaekkelsesKoefficient` (K_d) — 2,370,091 valid rows, 62,848 station-dates, 566 stations, 1980–2026, with depth and coordinates per measurement. A PAR photometer is neither the eye nor the sonde: a separate production path",
+     "texts": "0f0ad28e2aee91db"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-TURB",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "CTD turbidity spans stated dates at stated stations and mean depth, with a gap of years, stated row counts either side and mostly one sonde type; FDOM at stated stations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Third response",
+    "end": "A dense modern arm, not a fourth path.",
+    "why": "Only the row counts are held, by enums.py, and the first and last FDOM years, by hypodraft_ctd.py; the span, stations, depth, gap and era counts were counted in an unheld run."
+   },
+   "replaced_by": [
+    "C-KD-D7-TURB",
+    "C-KD-D7-TURBPATH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Third response — turbidity is in the archive, and it is large. Full scan of `ctd.csv.gz`: `Turbiditet` 1,076,915 measurements in FTU, 1994-01-10 to 2026-09-07, 252 stations, mean depth 13.5 m, with depth and coordinates per measurement; `FDOM` 890,921 ppb, 2021-04-19 on, 211 stations. *Class 4, a regime break:* nothing between 2007 and 2021, ~195k rows before 2008, 880k in 2022–2026 (mostly `MSE - Marin sonde II/III`). And not a separate production path — same cast, vessel, date and often sonde as the oxygen channel. A dense modern arm, not a fourth path.",
+     "texts": "c887cb9a50cef948"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-RAYCAST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The wave model casts rays to the coastline at a stated angular step to find the fetch.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "ray-cast fetch",
+    "end": "Swart friction.",
+    "why": "waves.py reads the fetch from a table that no script in the repository produces; that the table was ray-cast to the coastline is said only in the script's docstring."
+   },
+   "replaced_by": [
+    "C-KD-D7-PREDICTOR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "ray-cast fetch → Young & Verhagen 1996 → orbital velocity → Swart friction.",
+     "texts": "1e1475e4a535e4f5"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-MARINE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Marine files for a stated number of Danish sites, hourly and complete, with a stated number of records each, are held and unused.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Also held and unused:",
+    "end": "covering exactly the dense turbidity era.",
+    "why": "They are used: currents.py fetches and reads them for CURRENTS.md. The site count and completeness are not recorded in any held output."
+   },
+   "replaced_by": [
+    "C-KD-D7-MARINE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Also held and unused: `data/raw/marine/marine_*.json` — 9 Danish sites incl. Drogden, Øresund and Køge Bugt, hourly `wave_height`, current and SST, 40,896 records each, 2022-01-01…2026-08-31, no gaps, covering exactly the dense turbidity era.",
+     "texts": "f52cb5e7dc6e101f"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-SOURCES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The table of sources beyond those held: DMI's sea-level and wind series with resolution, span, licence and key policy; the Copernicus wave hindcast with grid, span and west edge; the ocean-colour product with suspended matter and turbidity; a measured wave archive; and the water chemistry as a blocking fetch.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "sea level (`sealev_dvr`",
+    "end": "the fetch PLAN.md names as blocking",
+    "why": "The rows were written from a session's survey and none was pinned. The Copernicus records, pinned now, state the wave hindcast's grid two ways, in its description and in a metadata field, and the row took one of them; they do not name suspended matter for the ocean-colour product. The DMI entry rests on the source register, and the water chemistry is held now, so it no longer blocks."
+   },
+   "replaced_by": [
+    "C-KD-D7-SRC-DMI",
+    "C-KD-D7-SRC-WAV",
+    "C-KD-D7-SRC-OC",
+    "C-KD-D7-SRC-SS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "sea level (`sealev_dvr`, `sealev_ln`), water temp · 10 min since ~2001 · 1889–, DMI + Kystdirektoratet gauges · `CC BY 4.0`, no key since 2026-03-26 | yes — a float in a stilling well. Wind setup in a shallow bay is *observed* storm forcing, independent of ERA5 and of any wave model: class 1 / 2, the anchor τ lacks | | DMI metObs, same API | wind speed/direction · 10 min · 1953– · `CC BY 4.0`, no key | yes — anemometers, the un-reanalysed wind | | CMEMS `BALTICSEA_MULTIYEAR_WAV_003_015` | Hs, mean period, direction, wind-sea/swell, Stokes drift, wave momentum flux · hourly, 2 km · 1980-01-01→2026-06-01, 53.01–65.91°N, 9.01–30.21°E · Copernicus Marine | no — WAM cy4.7 on ERA5: same atmosphere as the held wind, only the wave step differs; its west edge drops stations from 8.09 to 9.01°E. Class 7 | | CMEMS `OCEANCOLOUR_BAL_BGC_L3_MY_009_133` (EMODnet's ERDDAP `TSM_BALTICSEA` is the same idea at 300 m but monthly, so it aliases storms) | SPM, turbidity, KD490, RRS · daily `L3`, ~300 m–1 km · 1997– · Copernicus Marine | yes — satellite radiometry, daily, so it resolves a storm tail; cloud in an October gale is the limit | | Kystdirektoratet bølgemålinger (via mst.dk) | measured Hs/Tp · CSV archive, QC'd from 2010 · Jutland west-coast buoys and harbours; no study-region station on the reachable pages | the only measured wave record — but not, so far as documented, inside the Belts or Øresund where `D7` lives | | ODA `Vandkemi`, `scripts/fetch_oda.py kemi` | lab suspended solids / turbidity (`DS 290`), bottle samples · per visit · NOVANA · as ctd | yes — bottle to laboratory gravimetry, not a sonde; also the fetch PLAN.md names as blocking",
+     "texts": "7ef32d27c81d02f2"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-PROC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Fetch is to be ray-cast at a stated angular step for a stated number of shallow stations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Ray-cast fetch at",
+    "end": "controls; run",
+    "why": "The step and the station count have no held source."
+   },
+   "replaced_by": [
+    "C-KD-D7-PROC"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Ray-cast fetch at 5° from the held OSM coastline for the 498 shallow stations and the >20 m controls; run",
+     "texts": "bce534065afcbae4"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-EFFN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The effective sample is events, and the naive count is a clean shallow subset of a stated size.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "Effective n is events, not visits.",
+    "end": "never the",
+    "why": "The subset was counted in an unheld run."
+   },
+   "replaced_by": [
+    "C-KD-D7-EFFN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Effective n is events, not visits. One synoptic system covers the domain, so every station sampled in its wake observes the same storm. Report distinct exceedance events and stations per event — never the",
+     "texts": "1f6b54c9c2c43d76"
+    }
+   }
+  },
+  {
+   "id": "C-KD-OLD-D7-SEDIMENT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The oxygen outcomes need the resuspended material's chemistry, which fetch_oda.py fetches with a sediment topic.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D7.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D7.md",
+    "begin": "oxygen outcomes need the resuspended material",
+    "end": "sediment`)",
+    "why": "fetch_oda.py's TOPICS dict has no sediment topic; its docstring names one, and the code wins."
+   },
+   "replaced_by": [
+    "C-KD-D7-NOTOXY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "oxygen outcomes need the resuspended material's chemistry (`fetch_oda.py sediment`)",
+     "texts": "c18942f074cae326"
+    }
+   }
+  }
+ ]
+}

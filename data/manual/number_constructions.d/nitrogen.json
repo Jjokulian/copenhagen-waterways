@@ -50,12 +50,12 @@
     "scripts/pages/grundlaget.py"
    ],
    "confirmed": {
-    "by": "Claude (read the change: a range is now read as one reading per number, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read grundlaget.py after agent w3-gc's rewrite: rv() still refuses a nitrogen_readings.json value unless its phrase is in the pinned text of its source and the value is printed in the phrase, as the model says; the page also reads pins directly through rval(), which applies the same two checks. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "data/manual/nitrogen_readings.json": "692d8b2ecde62cf7",
      "data/manual/claims.d/nitrogen.json#sources": "5cbfcd49ac6a88ff",
-     "scripts/pages/grundlaget.py": "cbaa7140cabca83b"
+     "scripts/pages/grundlaget.py": "7b84287f07d1799d"
     }
    }
   },
@@ -526,10 +526,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: nitrogen.py changed only in the prose of the L 5 sentence - the vote now read from TV 2's pin and the law's 2027 and 2028 steps stated; no computation changed, verified by hashing the file as it was before that edit. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: nitrogen.py's only change since the last confirmation is one printed table cell - 'minus modelled point sources' became 'minus point sources', since plants and industry report their discharges; no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/nitrogen.py": "f25777309800a420"
+     "scripts/nitrogen.py": "5e453fe67bac02ca"
     }
    }
   },
@@ -850,10 +850,10 @@
     "scripts/report.py"
    ],
    "confirmed": {
-    "by": "Claude (read the change: the registry now counts one annual-flow figure once, a rule declared under K-QP2-REGISTRY-FLOW; the fields declared here are unchanged, 2026-09-11; not yet read by the project owner)",
+    "by": "agent w3-fr (re-confirmed only because the computation is unchanged: this declaration was last confirmed against scripts/report.py at the sha256 recorded in its saw, and the edit changed only the page-writing main and new helpers; every other top-level definition of the file hashes identically by AST, and the page's own derived file is written by the same statement; the declaration's text was not re-read, and line references into the page-writing code may now point elsewhere; 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/report.py": "88aa8ffb74c63218"
+     "scripts/report.py": "e8d3ee0a7ec5adfd"
     }
    }
   },
@@ -892,10 +892,10 @@
     "scripts/report.py"
    ],
    "confirmed": {
-    "by": "Claude (read the change: the registry now counts one annual-flow figure once, a rule declared under K-QP2-REGISTRY-FLOW; the fields declared here are unchanged, 2026-09-11; not yet read by the project owner)",
+    "by": "agent w3-fr (re-confirmed only because the computation is unchanged: this declaration was last confirmed against scripts/report.py at the sha256 recorded in its saw, and the edit changed only the page-writing main and new helpers; every other top-level definition of the file hashes identically by AST, and the page's own derived file is written by the same statement; the declaration's text was not re-read, and line references into the page-writing code may now point elsewhere; 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/report.py": "88aa8ffb74c63218"
+     "scripts/report.py": "e8d3ee0a7ec5adfd"
     }
    }
   },

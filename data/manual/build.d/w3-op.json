@@ -1,0 +1,100 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/openproblem_j1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-op.json",
+    "data/manual/number_constructions.d/w3-op.json",
+    "data/derived/enums.json",
+    "data/derived/meta_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/light.json",
+    "docs/data/areas/stations_series.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/OQ-WIKI-TEP.txt",
+    "data/derived/pins/OQ-WIKI-BEER.txt",
+    "data/derived/pins/SS-WIKI-TURBIDITY.txt"
+   ],
+   "outputs": [
+    "docs/openproblems/J1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/openproblem_r6.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-op.json",
+    "data/manual/number_constructions.d/w3-op.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/enums.json",
+    "data/manual/data_sources.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/OQ-SR323.txt",
+    "data/derived/pins/TA-NOVA-1998-K14.txt",
+    "data/derived/pins/OQ-PG997075.txt",
+    "data/derived/pins/OQ-PG987348.txt",
+    "data/derived/pins/OQ-PG880132.txt",
+    "data/derived/pins/NOVANA-2327.txt"
+   ],
+   "outputs": [
+    "docs/openproblems/R6.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/openproblem_a7.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-op.json",
+    "data/manual/number_constructions.d/w3-op.json",
+    "data/derived/rescore.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/raw/geus/seabed_sediment_dk.gpkg",
+    "scripts/fetch_oda.py",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/OQ-HYLEN-ESSD.txt",
+    "data/derived/pins/OQ-HYLEN-ZEN.txt",
+    "data/derived/pins/OQ-FR483.txt",
+    "data/derived/pins/OQ-SR323.txt",
+    "data/derived/pins/OQ-PG987348.txt",
+    "data/derived/pins/TA-NOVA-1998-K14.txt",
+    "data/derived/pins/NOVANA-2327.txt"
+   ],
+   "outputs": [
+    "docs/openproblems/A7.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/openproblem_e7.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-op.json",
+    "data/manual/number_constructions.d/w3-op.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/enums.json",
+    "data/derived/meta_facts.json",
+    "data/derived/oxygen.json",
+    "data/raw/national/sw_mfs_tilstand.geojson",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/OQ-WIKI-DIURON.txt",
+    "data/derived/pins/OQ-WIKI-SIMAZINE.txt",
+    "data/derived/pins/OQ-WIKI-ATRAZINE.txt",
+    "data/derived/pins/HY-WIKI-ATZA.txt",
+    "data/derived/pins/OQ-WIKI-LINDANE.txt",
+    "data/derived/pins/PG-WIKI-GLYPHOSATE.txt"
+   ],
+   "outputs": [
+    "docs/openproblems/E7.md"
+   ]
+  }
+ ]
+}

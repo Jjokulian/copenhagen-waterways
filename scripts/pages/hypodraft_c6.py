@@ -1,140 +1,189 @@
 #!/usr/bin/env python3
-"""Writes docs/hypodrafts/C6.md: a hypothesis draft, as generated text.
+"""docs/hypodrafts/C6.md - what the data held here can and cannot show about C6.
 
-Every hypothesis ID is a checked reference, every chemical species a checked
-species, and every number either read live or quoted from the page as committed
-({q:…@@…}, a located quotation - see draftkit.py) because nothing in the repository stores it yet.
+Every number is read from data or from a pinned document as the page is built, or
+is a stated design value with its reason; every assertion is a checked claim
+(LIVE_NUMBERS.md section 11), registered in data/manual/claims.d/w3-cc.json with
+what it rests on. What the draft once said and could not justify is in
+docs/ARCHIVE.md, not here. The page is written through scripts/pages/draftkit.py.
 
     python3 scripts/pages/hypodraft_c6.py
 """
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
 import draftkit
+import live
 
+C = live.claim
 REL = "docs/hypodrafts/C6.md"
-TEXT = r"""# {ref:C6|title}
 
-Draft only. Nothing here has been run; the counts were verified by reading the files.
 
-## What is not in dispute
-
-Weiss (1970) makes the solubility ceiling deterministic in temperature and salinity.
-That half of {ref:C6} needs no test. The testable residue is the Q10 half: **at constant
-organic supply, does warmer bottom water sit further below its own ceiling?**
-
-## Observable consequence, stated to be falsified
-
-Define the near-bed apparent deficit, per station-month:
-
-> `D = C_sat(T_bed, S_bed) − O_bed` (mg/l), `C_sat` = Weiss 1970, mL/L × {q:Weiss 1970, mL/L × @@. `D` is solubility-neutral}.
-
-`D` is solubility-neutral by construction. If temperature acted on near-bed oxygen
-*only* through the ceiling, `D` would be independent of `T`.
-
-**Falsifiable claim:** *within a fixed station and a fixed calendar month, across years,
-`D` does not rise with that year's near-bed temperature.* A pooled within-cell slope
-β̂ ≤ {q:within-cell slope β̂ ≤ @@, or one indistinguishable}, or one indistinguishable from {q:indistinguishable from @@ under the} under the permutation null below, falsifies {ref:C6}'s
-non-thermodynamic content at the resolution this archive has.
-
-**Subsidiary claim about the regulated statistic:** *the `< 4 mg/l` flag ranks stations
-by consumption, not by ceiling height.* Falsified if station-level flag rates under
-`O < 4` and under an equal-rate deficit flag rank stations differently.
-
-## Data, with verified counts
-
-`docs/data/areas/stations_series.{json,bin}` — {fig:da_series_months} station-months (sum over the nine
-variables, confirmed), {fig:da_series_stations} stations, months {q:stations, months @@ (Jan} (Jan 1980 – Sep 2026). Near-bed: `oxy_bed` {fig:da_oxy_bed_n} · `temp_bed` {fig:da_temp_bed_n} · `sal_bed` {fig:da_sal_bed_n} ·
-`oxysat_bed` {fig:da_oxysat_bed_n}.
-
-- Triple join `oxy_bed ∩ temp_bed ∩ sal_bed`: **{q:sal_bed`: **@@**; after}**; after a plausibility filter
-  ({q:a plausibility filter (@@ ≤ O ≤} ≤ O ≤ {q:≤ O ≤ @@ ≤ T ≤} ≤ T ≤ {q:≤ T ≤ @@ ≤ S ≤} ≤ S ≤ {q:0 ≤ S ≤ @@): **76,305 rows over}): **{q:S ≤ 40): **@@ over 1,314 stations**, 44} over {q:**76,305 rows over @@**, 44 dropped.}**, {q:over 1,314 stations**, @@ dropped. - Cells} dropped.
-- Cells = (station × calendar month). With ≥ {q:With ≥ @@ distinct years:} distinct years: **{q:distinct years: **@@ cells, 63,262 rows,} cells, {q:years: **3,282 cells, @@ rows, 395 stations**.}
-  rows, {q:cells, 63,262 rows, @@**. With ≥}**. With ≥ {q:stations**. With ≥ @@. With ≥}. With ≥ {q:641. With ≥ @@. - Within-cell}.
-- Within-cell SD of `temp_bed`: median **{q:`temp_bed`: median **@@** (q10 1.03,}** (q10 {q:median **1.55 °C** (q10 @@, q90 2.26) —}, q90 {q:°C** (q10 1.03, q90 @@) — real leverage.}) — real leverage.
-- Reproduced prior work on this join: `O < 4 mg/l` monthly rate {q:monthly rate @@ (Feb) →} (Feb) → {q:(Feb) → @@ (Sep), **23.6-fold**;}
-  (Sep), **{q:→ 0.2119 (Sep), **@@**; recomputed `< 30}**; recomputed `< 30 %` saturation **{q:%` saturation **@@**; median `temp_bed`}**; median `temp_bed`
-  {q:`temp_bed` @@ (Feb)} (Feb) / {q:°C (Feb) / @@ (Aug). - Reference} (Aug).
-- Reference for the subsidiary claim: an *equal-rate* deficit flag `D > 5.13 mg/l`
-  (same {q:mg/l` (same @@ overall rate)} overall rate) is **{q:rate) is **@@** seasonally, and}** seasonally, and {q:**13.9-fold** seasonally, and @@ of `O <} of `O < 4`
-  station-months also exceed it. The two statistics differ at the margin, not in bulk.
-
-**Error classes present.** ({q:classes present.** (@@) value errors}) value errors — `oxy_bed` spans {q:`oxy_bed` spans @@, `oxysat_bed`},
-`oxysat_bed` to {q:`oxysat_bed` to @@, `temp_surf`}, `temp_surf` to {q:`temp_surf` to @@; the}; the filter removes {q:filter removes @@ of the} of the join.
-({q:spans −9.93 to @@81.6 mg/l, `oxysat_bed`}) quantisation — raw `Temperatur` is written with at most one decimal on {fig:da_tdec_one} of {fig:da_tdec_rows} rows over the whole extract ({calc@K-SUBSET-SHARE:da_tdec_one / da_tdec_rows * 100|.0f}%; an earlier sample put it at {q:decimal on @@ sampled rows;}); where it is,
-{q:141,731 sampled rows; @@ → ±0.015 mg/l} → {q:±0.05 °C → @@ in `C_sat` (|dC_sat/dT|} in `C_sat` (|dC_sat/dT| = {q:`C_sat` (|dC_sat/dT| = @@ at 4 °C,} at {q:= 0.29 at @@ at 16 °C),} at {q:4 °C, 0.18 at @@), negligible against a}), negligible
-against a deficit that reaches {q:deficit that reaches @@. (3) aggregation}. ({q:reaches 14.6 mg/l. (@@) aggregation — these}) aggregation — these are monthly *medians*,
-and "near the bed" is itself a within-cast selection, so the T, S and O medians of one
-station-month need not come from the same cast. ({q:same cast. (@@) unfilled —}) unfilled — {q:unfilled — @@ `oxy_bed` cells} `oxy_bed` cells
-carry no saturation; `SondeNavn` is `999 - Ukendt` on the raw rows inspected. ({q:rows inspected. (@@) absent dimension}) absent
-dimension — see below. ({q:see below. (@@) is avoided:}) is avoided: the unit is a station, never a water body.
-
-**Class 6, stated not ignored.** The raw header (`data/raw/oda/ctd.csv.gz`, {fig:da_ctd_columns} columns)
-has `Dato` as `19701013` — a date, no hour, and no other time field. Oxygen has a diel
-cycle, and sampling hour plausibly covaries with season (short winter days compress
-sampling toward midday). The confound has the *same sign* as the hypothesis. It is not
-correctable from this archive and it caps what any result licenses.
-
-## Circularity, handled
-
-Archived `oxysat_bed` is computed from O, T and S; using it as the outcome against T as
-the regressor would be circular, so **it is never the outcome here**. It is used once as a
-check: recomputed Weiss saturation matches the archived value to a median {q:a median @@ percentage points,}
-percentage points, r = {q:percentage points, r = @@, n =}, n = {q:0.9948, n = @@ — so the} — so the archive's saturation rests on
-essentially the same solubility function and `D` adds no second, rival model.
-
-`D` contains T through `C_sat` deliberately — that is the *removal* of the solubility
-channel, not circularity, because Weiss is exact and external to this dataset. The
-residual risk is errors-in-variables: an error ε in T enters `D` with slope {q:`D` with slope @@ to −0.29 and} to
-{q:@@ and the regressor} and the regressor with slope +{q:regressor with slope +@@, so it induces}, so it induces a **negative** spurious slope. The
-test is therefore conservative in the direction that matters; with σ_ε ≈ {q:with σ_ε ≈ @@ against σ_T =} against
-σ_T = {q:against σ_T = @@ the attenuation is} the attenuation is {q:the attenuation is @@. Salinity is}. Salinity is computed from conductivity and
-temperature, so it carries T error too, but dC_sat/dS = {q:dC_sat/dS = @@ per psu} per psu — a {q:psu — a @@ error propagates to}
-error propagates to under {q:propagates to under @@. Negligible. ##}. Negligible.
-
-## Procedure
-
-1. Read the three near-bed arrays at the offsets in the `.json`; key on
-   `station_index × 1000 + month_index`; filter as above → {q:filter as above → @@. 2. Compute `C_sat`}.
-2. Compute `C_sat` (Weiss) and `D`. Keep cells with ≥ {q:cells with ≥ @@ (3,282 cells). 3.} ({q:8 years (@@ cells). 3. Centre} cells).
-3. Centre T and D on their cell means. Estimate β̂ = Σ(t̃·d̃)/Σ(t̃²) — the station ×
-   calendar-month fixed-effects slope of deficit on temperature, mg/l per °C.
-4. **Null, computed under the constraint actually imposed.** {q:actually imposed.** @@ permutations: within} permutations: within
-   each cell independently, permute D across years with T held in place. This preserves
-   cell means, the seasonal cycle, every station effect and both marginals, destroying
-   only the within-cell T–D pairing. Two-sided p = fraction with |β*| ≥ |β̂|. Report the
-   permutation SD *and* the OLS SE and their ratio: near-bed deficits at neighbouring
-   stations in the same month are the same water mass sampled twice, so the textbook SE
-   assumes an independence the data does not have, by an unknown factor. That ratio is
-   the size of the error a quoted null would have made.
-5. Repeat with D linearly detrended on year within each cell, so that forty years of
-   warming meeting forty years of changing nutrient load cannot manufacture β̂. Report
-   both, and the {q:and the @@-year variants.}-year variants.
-6. Subsidiary: per station, flag rate under `O < 4` and under `D > 5.13`; Spearman ρ
-   over {q:Spearman ρ over @@; count stations}; count stations flagged by one and not the other. Null: permute
-   calendar-month labels within station.
-7. Confirmatory version, if step 4 clears: rebuild `D` from *same-cast* T, S, O by
-   streaming `ctd.csv.gz` ({q:`ctd.csv.gz` (@@ gz), removing} gz), removing the class-{q:the class-@@ pairing gap.} pairing gap.
-
-## What a result would and would not license
-
-**Would.** A positive β̂ surviving the permutation null and the detrending licenses:
-near-bed temperature moves near-bed oxygen beyond solubility, within station and within
-calendar month, in this archive — which is exactly the gap {ref:C6} names, since the standing
-models carry surface temperature only.
-
-**Would not.** It does not identify respiration: warm within-month anomalies co-occur
-with weak wind and stronger stratification, so the deficit may be failed ventilation
-rather than Q10. It cannot calibrate Q10 at all — converting a respiration *rate* to a
-standing deficit needs a ventilation timescale this archive does not record (class 6).
-It says nothing about water bodies. And β̂ ≈ {q:And β̂ ≈ @@ would **not** refute} would **not** refute {ref:C6} in nature; it
-would refute it at the resolution of monthly medians taken at an unrecorded hour.
-"""
+def text():
+    o = []
+    w = o.append
+    w("# {ref:C6|title}")
+    w("")
+    w("*Generated by `scripts/pages/hypodraft_c6.py`: what the data held here can and "
+      "cannot show about the hypothesis. Each marked statement links to what it rests on.*")
+    w("")
+    w("**Draft, not a result.** "
+      + C("C-CC-C6-STATUS", "The test this page specifies has not been run: no script in "
+          "this repository computes it. The counts it prints are read from held outputs."))
+    w("")
+    w("## What is not in dispute")
+    w("")
+    w(C("C-CC-C6-CEILING", "Oxygen solubility is a function of temperature and salinity (and "
+        "of pressure), computed from published equations; Weiss (1970) proposed the set this "
+        "draft uses. That half of {ref:C6} needs no test.")
+      + " " + C("C-CC-C6-RESIDUE", "The testable residue is the Q10 half: **at constant "
+                "organic supply, does warmer bottom water sit further below its own ceiling?**"))
+    w("")
+    w("## The observable consequence, stated so it can be falsified")
+    w("")
+    w("Define the near-bed apparent deficit, per station-month:")
+    w("")
+    w("> " + C("C-CC-C6-DEF", "`D = C_sat(T_bed, S_bed) − O_bed` (mg/l), with `C_sat` from "
+               "Weiss's equations in ml/l, converted at "
+               "{read:CC-USGS-OWQ-2011-03:1.42905|that factor should have been 1.42905 mg/mL} "
+               "mg per ml."))
+    w("")
+    w(C("C-CC-C6-NEUTRAL", "`D` is solubility-neutral by construction: if temperature acted "
+        "on near-bed oxygen *only* through the ceiling, `D` would not depend on `T`."))
+    w("")
+    w(C("C-CC-C6-FALSIFY", "**What would falsify it:** *within a fixed station and a fixed "
+        "calendar month, across years, `D` does not rise with that year's near-bed "
+        "temperature* — a pooled within-cell slope β̂ that is not positive, or one the "
+        "permutation null below cannot tell from none. That falsifies {ref:C6}'s "
+        "non-thermodynamic content at the resolution this archive has."))
+    w("")
+    w(C("C-CC-C6-SUBSID", "**Subsidiary, about the iltsvind threshold:** *the `< 4 mg/l` "
+        "flag ranks stations by consumption, not by ceiling height.* Falsified if station-level "
+        "flag rates under `O < 4` and under a deficit flag with the same overall rate rank "
+        "stations differently."))
+    w("")
+    w("## The data held")
+    w("")
+    w(C("C-CC-C6-SERIES", "`docs/data/areas/stations_series.{json,bin}` holds "
+        "{fig:da_series_months} station-months — the sum over its {fig:cc_series_vars} "
+        "variables — at {fig:da_series_stations} stations, in {fig:cc_series_slots} monthly "
+        "slots from January {fig:cc_series_year0}. Near-bed: `oxy_bed` {fig:da_oxy_bed_n} · "
+        "`temp_bed` {fig:da_temp_bed_n} · `sal_bed` {fig:da_sal_bed_n} · `oxysat_bed` "
+        "{fig:da_oxysat_bed_n}.")
+      + " " + C("C-CC-C6-JOIN-NORUN", "No script here joins the three near-bed arrays, so how "
+                "many station-months carry all three, how many pass the plausibility filter, "
+                "and how many cells have enough years are not known."))
+    w("")
+    w("**What is wrong with the data, and what the test does about it.**")
+    w("")
+    w("- " + C("C-CC-C6-FLAGS", "**Impossible values.** The panel holds values no water can "
+               "hold — the flag record marks the sign-inverted oxygen of May and June 2005 — so "
+               "the plausibility filter comes before anything else."))
+    w("- " + C("C-CC-C6-QUANT", "**Quantisation.** Raw `Temperatur` is written with at most "
+               "one decimal on {fig:da_tdec_one} of {fig:da_tdec_rows} rows of the whole CTD "
+               "extract ({calc@K-SUBSET-SHARE:da_tdec_one / da_tdec_rows * 100|.0f}%); how much "
+               "that rounding moves `C_sat` has not been computed here."))
+    w("- " + C("C-CC-C6-AGG", "**Aggregation.** These are monthly *medians*, `_bed` is the "
+               "deepest quarter of each cast's depth range, and each variable's median is taken "
+               "separately, so the T, S and O medians of one station-month need not come from "
+               "the same cast."))
+    w("- " + C("C-CC-C6-UNFILLED", "**Unfilled.** At least "
+               "{calc:da_oxy_bed_n - da_oxysat_bed_n|,} `oxy_bed` station-months carry no "
+               "saturation — the difference of the two counts, a lower bound — and `SondeNr` is "
+               "`999`, probe unknown, on "
+               "{calc@K-SUBSET-SHARE:hy_ctd_999 / hy_ctd_rows * 100|.1f}% of the CTD extract."))
+    w("- " + C("C-CC-C6-NOCLOCK", "**No time of day.** The raw header "
+               "(`data/raw/oda/ctd.csv.gz`, {fig:da_ctd_columns} columns) has `Dato` as "
+               "`19701013` — a date, no hour — and no other time field.")
+      + " " + C("C-CC-C6-HOUR", "Within a station and calendar month, where the test works, the "
+                "season's pull on the hour of sampling is held fixed; what remains is any change "
+                "in that hour from year to year, which the detrending absorbs only where it is a "
+                "trend. It is not correctable from this archive, and it caps what any result "
+                "licenses."))
+    w("- " + C("C-CC-C6-NOWB", "**The unit is a station, never a water body.**"))
+    w("")
+    w("## Circularity, handled")
+    w("")
+    w(C("C-CC-C6-NOTOUTCOME", "The archive's `oxysat_bed` is **never the outcome here**: "
+        "saturation is oxygen as a share of what the water can hold at its temperature, so "
+        "regressing it on temperature would put temperature on both sides.")
+      + " " + C("C-CC-C6-SATSRC", "How ODA computes the saturation it supplies — "
+                "`Oxygenmætning`, a parameter of its own in the CTD extract — is not documented "
+                "in anything held or pinned here, so whether it rests on the same equations as "
+                "`C_sat` is not known."))
+    w("")
+    w(C("C-CC-C6-DELIBERATE", "`D` contains T through `C_sat` deliberately — that is the "
+        "*removal* of the solubility channel, not circularity, because `C_sat` is a fixed "
+        "published function, not fitted to these data.")
+      + " " + C("C-CC-C6-USGS", "The U.S. Geological Survey has replaced Weiss's equations "
+                "with those of Benson and Krause for its own oxygen work."))
+    w("")
+    w(C("C-CC-C6-EIV", "The residual risk is errors-in-variables: an error ε in T enters `D` "
+        "through `C_sat`, which falls as temperature rises, and enters the regressor unchanged, "
+        "so it pulls β̂ toward a **negative** value as well as toward none. The test is "
+        "therefore conservative in the direction that matters. Salinity, derived from "
+        "conductivity and temperature, carries temperature error too; the size of either "
+        "effect has not been computed here."))
+    w("")
+    w("## Procedure")
+    w("")
+    w("1. " + C("C-CC-C6-P1", "Read the three near-bed arrays at the offsets in the `.json`; "
+                "key on `station_index × 1000 + month_index`; keep {param:cc_c6_o_min} ≤ O ≤ "
+                "{param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and "
+                "{param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter "
+                "removes."))
+    w("2. " + C("C-CC-C6-P2", "Compute `C_sat` and `D`. Keep cells with at least "
+                "{param:cc_c6_min_years} distinct years."))
+    w("3. " + C("C-CC-C6-P3", "Centre T and D on their cell means. Estimate β̂ = "
+                "Σ(t̃·d̃)/Σ(t̃²) — the station × calendar-month fixed-effects slope of deficit "
+                "on temperature, mg/l per °C."))
+    w("4. " + C("C-CC-C6-P4", "**Null, computed under the constraint actually imposed.** "
+                "{param:cc_c6_perms} permutations: within each cell independently, permute D "
+                "across years with T held in place. This keeps cell means, the seasonal cycle, "
+                "every station effect and both marginals, destroying only the within-cell T–D "
+                "pairing. Two-sided p = fraction with |β*| ≥ |β̂|. Report the permutation SD "
+                "*and* the OLS SE and their ratio: near-bed deficits at neighbouring stations in "
+                "the same month can be the same water mass sampled twice, so the textbook SE "
+                "assumes an independence the data need not have. That ratio is the size of the "
+                "error a quoted null would have made."))
+    w("5. " + C("C-CC-C6-P5", "Repeat with D linearly detrended on year within each cell, so "
+                "that a trend temperature and deficit share across the years cannot "
+                "manufacture β̂. Report both, and the variants with at least "
+                "{param:cc_c6_years_low} and at least {param:cc_c6_years_high} years."))
+    w("6. " + C("C-CC-C6-P6", "Subsidiary: per station, the flag rate under `O < 4` and under "
+                "a deficit threshold set so that it flags the same share of station-months; "
+                "Spearman ρ over the stations; count the stations flagged by one and not the "
+                "other. Null: permute calendar-month labels within station."))
+    w("7. " + C("C-CC-C6-P7", "Confirmatory version, if step 4 clears: rebuild `D` from the "
+                "temperature, salinity and oxygen of the *same cast* by streaming the CTD "
+                "extract, removing the pairing gap that monthly medians leave."))
+    w("")
+    w("## What a result would and would not license")
+    w("")
+    w(C("C-CC-C6-WOULD", "**Would.** A positive β̂ surviving the permutation null and the "
+        "detrending licenses: near-bed temperature moves near-bed oxygen beyond solubility, "
+        "within station and within calendar month, in this archive — the gap {ref:C6} names, "
+        "since the standing statistical models carry surface temperature only."))
+    w("")
+    w(C("C-CC-C6-NOTRESP", "**Would not.** It does not identify respiration: DCE name wind "
+        "mixing as slowing oxygen depletion and high temperature as promoting it, and a warm "
+        "year can also be a calm one, so a larger deficit may be failed ventilation rather "
+        "than Q10.")
+      + " " + C("C-CC-C6-NOQ10", "It cannot calibrate Q10 at all: converting a respiration "
+                "*rate* to a standing deficit needs a ventilation timescale this archive does "
+                "not record.")
+      + " " + C("C-CC-C6-NOWBODY", "It says nothing about water bodies.")
+      + " " + C("C-CC-C6-NULLRES", "And a slope indistinguishable from none would **not** "
+                "refute {ref:C6} in nature; it would refute it at the resolution of monthly "
+                "medians taken at an unrecorded hour."))
+    return "\n".join(o) + "\n"
 
 
 def main(argv):
-    return 0 if draftkit.build(REL, TEXT) is not None else 1
+    return 0 if draftkit.build(REL, text()) is not None else 1
 
 
 if __name__ == "__main__":

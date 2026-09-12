@@ -1,348 +1,150 @@
 # A dense network for the thing nobody measures
 
-[`X23`](EXPERIMENTS.md) asks whether the faecal payload reaches the water or is spent
-in the soil, and answers it at a handful of paired catchments. This page asks the
-harder version of the same question: **what would it take to measure it everywhere**,
-so that no result anywhere has to be extrapolated to a place nobody visited.
+<span class="claim" data-claim="C-SS-S-X23">[`X23`](EXPERIMENTS.md) asks whether the faecal payload reaches the water or is spent in the soil, and designs an answer from event sampling at paired stream catchments.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-S-X23 "What this claim rests on")</sup> <span class="claim" data-claim="C-SS-S-PURPOSE">This page asks the harder version of the same question: **what would it take to measure it everywhere**, so that no result anywhere has to be extrapolated to a place nobody visited.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-S-PURPOSE "What this claim rests on")</sup>
 
-That is the whole point. Denmark's load figure is a modelled surface stretched over
-[49](SOURCES.md#F-258eeecf6c)% measured and [51](SOURCES.md#F-b15ed567bc)% modelled catchment area ([NITROGEN.md](NITROGEN.md)), and the objection this
-project keeps making is not that the model is bad but that **a partition is not a
-measurement**. A network dense enough to have a node on every stream that reaches the
-sea would end that argument by removing its subject.
+That is the whole point. <span class="claim" data-claim="C-SS-S-AREA">Denmark's diffuse load figure rests on catchment area that is [49](SOURCES.md#F-d90ee38f36)% measured and [51](SOURCES.md#F-e986da2740)% modelled ([NITROGEN.md](NITROGEN.md))</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-S-AREA "What this claim rests on")</sup>, and <span class="claim" data-claim="C-SS-S-OBJECTION">the objection this project keeps making is not that the model is bad but that **a partition is not a measurement**. A network dense enough to have a node on every stream that reaches the sea would end that argument by removing its subject.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-S-OBJECTION "What this claim rests on")</sup>
 
-**This page is a construction, not a proposal anyone has funded.** Prices are stated
-ranges rather than quotations, the sensor choices are ordinary catalogue parts, and
-nothing here has been built by this project. What it is for is to make the thing
-costed and concrete enough that a disagreement about it is a disagreement about
-numbers.
+<span class="claim" data-claim="C-SS-S-DESIGN">**This page is a construction, not a proposal anyone has funded**, and nothing here has been built by this project.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-S-DESIGN "What this claim rests on")</sup> <span class="claim" data-claim="C-SS-S-NOPRICE">The parts are named by class, with an example where the maker's own page could be pinned, and no price is given: a price is worth printing only with its source, and what a buyer needs is a supplier's quotation. What the page is for is to make the thing concrete enough that a disagreement about it is a disagreement about parts and procedures.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-S-NOPRICE "What this claim rests on")</sup>
 
 ---
 
-## The fingerprint, which is what replaces the sensor that does not exist
+## The fingerprint, in place of a sensor for the source
 
-If no instrument reports *manure*, the alternative is to measure many things and ask
-which combination only manure produces. That is a fingerprint: **not a measurement but
-a position in a measurement space**, and the question for each candidate tracer is not
-*is it present* but *what else could have put it there*.
+<span class="claim" data-claim="C-SS-F-IDEA">No sensor on this page reports *manure*, so the alternative is to measure many things and ask which combination only manure produces. That is a fingerprint: **not a measurement but a position in a measurement space**, and the question for each candidate tracer is not *is it present* but *what else could have put it there*.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-IDEA "What this claim rests on")</sup>
 
 ### The tracers, and what each one rules out
 
-| Tracer | Why it is faecal | What it is confounded with | What resolves that |
-|---|---|---|---|
-| **Coprostanol** (`5β-cholestan-3β-ol`) | Made by gut bacteria reducing cholesterol. Vertebrate guts make it; soil does not | Any warm-blooded gut, including humans and wildlife | the ratios below |
-| **`24-ethylcoprostanol` / coprostanol** | Plant sterols reduced in a herbivore gut | — | **This ratio separates herbivore from human.** High ethyl form: cattle, pigs on plant feed. Low: human sewage |
-| **Coprostanol / (coprostanol + cholestanol)** | Above ~[0.7](SOURCES.md#F-e7cbca75f9) is the accepted faecal threshold | in-situ reduction in anoxic sediment can mimic it slightly | pair with the marker below |
-| **Host-specific *Bacteroidales* by qPCR** — `Pig-2-Bac`, BacR, HF183 | Gut microbiota are host-specific to the genus level | Nothing, in terms of source | **This is the attribution instrument.** DNA decays in days to weeks, so it reports *recent* input only |
-| **crAssphage** | A human-gut bacteriophage | Nothing else has it | Establishes the human baseline, so the rest can be assigned elsewhere |
-| **Acesulfame-K, carbamazepine** | Human diet and human medicine; conservative and persistent | Nothing agricultural | **Marks the human fraction independently of biology** — a chemical crosscheck on the microbial one |
-| **Tylosin, tetracyclines, ivermectin** | Given to livestock, not to people at these volumes | Veterinary use in pets, at trivial scale | Quantifies the livestock fraction; VetStat holds the sales that would calibrate it |
-| **Copper and zinc** | Feed additives, and conservative once in sediment | **Heavily**: brake pads, roofs, tyres, urban runoff | Useless alone in a mixed catchment; useful in a rural one, and useful as a *load* once the fraction is known |
-| **δ¹⁵N of nitrate** | Manure and sewage nitrogen is isotopically heavy (+[10](SOURCES.md#F-ddc357707c) to +[20](SOURCES.md#F-30d6425019)‰); synthetic fertiliser sits near [0](SOURCES.md#F-002d8476aa)‰ | **Denitrification enriches δ¹⁵N too**, which has fooled people for decades | Measure **δ¹⁸O of nitrate alongside it**: denitrification moves both together on a known slope, a source change does not |
-| **fDOM, tryptophan-like (peak T) vs humic-like (peak C)** | Protein-like fluorescence rises with fresh faecal and sewage organic matter; humic-like rises with soil | turbidity, temperature, iron | Correctable, and it is the only one of these that can run continuously — which is its whole value |
+- <span class="claim" data-claim="C-SS-F-COPRO">**Coprostanol** (`5β-cholestan-3β-ol`). Intestinal bacteria make it from cholesterol in the gut of most higher animals, and it is used as a biomarker of human faecal matter. So it marks faeces, but any warm-blooded gut can have put it there; the ratios below narrow it down.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-COPRO "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-RATIO">**Coprostanol / (coprostanol + cholestanol).** Cholestanol forms in the environment by bacteria and generally has no faecal origin, so the share of coprostanol measures faecal contamination: above [0.7](SOURCES.md#F-214415aa0c) a sample may be contaminated with human faecal matter, below [0.3](SOURCES.md#F-ad5e704d0b) it may be considered uncontaminated, and in between the ratio alone cannot place it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-RATIO "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-ETHYL">**Coprostanol / `24-ethylcoprostanol`.** Herbivores such as cows and sheep eat plant sterols, which their gut bacteria turn into `24-ethylcoprostanol`, a biomarker of herbivore faeces. In the values the source tabulates, community wastewater has a ratio of [2.6](SOURCES.md#F-1e2acf6336) or more and abattoir waste from sheep and cattle [0.9](SOURCES.md#F-b7152ace25) or less, so the ratio separates human sewage from cattle and sheep. **Nothing found reports it for pigs**, which are not herbivores, so for pig slurry it is untested here.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-ETHYL "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-HOST">**Host-specific *Bacteroidales* by qPCR** — `HF183` for people, `Pig-2-Bac` for pigs. qPCR quantifies genetic markers specific to the host of the bacteria, and detects recent contamination rather than old. **This is the attribution instrument, and it is not clean**: the human method's own documentation warns that some non-human animals shed its target and asks for a specificity test on local source material, and validation studies report `Pig-2-Bac`'s specificity anywhere from [66](SOURCES.md#F-71beac42c9)% to [100](SOURCES.md#F-277ba99315)%.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-HOST "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-CRASS">**crAssphage.** CrAss-like phages are the most abundant viruses in the human gut and have been evaluated as a marker for sewage pollution. They establish the human baseline, so the rest can be assigned elsewhere.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-CRASS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-HUMANCHEM">**Acesulfame-K, carbamazepine.** Acesulfame is excreted largely unchanged, is hardly removed in treatment plants, and is used as a wastewater marker in surface water and groundwater; carbamazepine, an anticonvulsant medicine, has been found in treatment-plant effluent. They mark the human fraction independently of biology — a chemical crosscheck on the microbial one.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-HUMANCHEM "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-VET">**Tylosin, tetracyclines, ivermectin.** Tylosin is an antibiotic feed additive of veterinary medicine; oxytetracycline is used in cattle, chickens, swine and turkeys; ivermectin was given massively to cattle, sheep and other animals. They mark the livestock fraction, and VetStat, the national statistics of veterinary medicine, holds the sales that would calibrate it — in public only by substance group, species and region.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-VET "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-METALS">**Copper and zinc.** Zinc oxide has been given to piglets in their feed against post-weaning diarrhoea, and the European Medicines Agency's veterinary committee found that its benefit did not outweigh the risk to the environment; but copper is in brake pads and zinc on galvanised roofs. So the metals are useless alone in a mixed catchment, useful in a rural one, and useful as a *load* once the fraction is known.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-METALS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-D15N">**δ¹⁵N of nitrate.** Nitrate from animal and human waste is isotopically heavy, generally +[10](SOURCES.md#F-3ad779a132) to +[20](SOURCES.md#F-1d6d6f4733)‰, and fertiliser made from atmospheric nitrogen sits near [0](SOURCES.md#F-716f0363d3)‰; human and animal waste are indistinguishable under most circumstances, so this separates waste from fertiliser, not pig from person. **Denitrification enriches δ¹⁵N too**, since it takes the lighter isotope and leaves the heavier. Measure **δ¹⁸O of nitrate alongside it**: during denitrification the two rise in an apparently constant ratio, and mixing of sources does not follow it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-D15N "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-F-FDOM">**fDOM, tryptophan-like (peak T) against humic-like (peak C).** Protein-like fluorescence comes mostly from tryptophan and tyrosine; treatment-plant effluent is rich in it, manure leaves its own fluorescent fingerprint, and tryptophan-like fluorescence can indicate wastewater contamination, while peak C counts as a terrestrial source. Turbidity and temperature interfere and have to be corrected for. Field fluorometers read it continuously, which makes it the one dimension here that can run in the stream — which is its whole value.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-F-FDOM "What this claim rests on")</sup>
 
 ### The quantifier
 
-**There is no single number that is "the faecal load", and a page that offered one
-would be doing what this project spends its length objecting to.** What there is, is a
-mixing model with an uncertainty on it:
+<span class="claim" data-claim="C-SS-Q-MIX">**There is no single number that is "the faecal load", and a page that offered one would be doing what this project spends its length objecting to.** What there is, is a mixing model with an uncertainty on it:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Q-MIX "What this claim rests on")</sup>
 
-1. Pick **end members** — pig slurry, cattle slurry, human sewage, soil organic matter,
-   and if the catchment has one, treated effluent. Each is sampled directly, so its
-   own fingerprint is measured rather than assumed.
-2. Solve for the **fractions** that reproduce the observed tracer vector at the
-   stream. With more tracers than sources the system is over-determined, which is what
-   allows an *estimate of error* rather than only an answer.
-3. Multiply the faecal fraction by the **measured load** — concentration times
-   discharge at the same minute — to get mass per event, per season, per year.
+1. <span class="claim" data-claim="C-SS-Q-1">Pick **end members** — pig slurry, cattle slurry, human sewage, soil organic matter, and if the catchment has one, treated effluent. Each is sampled directly, so its own fingerprint is measured rather than assumed.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Q-1 "What this claim rests on")</sup>
+2. <span class="claim" data-claim="C-SS-Q-2">Solve for the **fractions** that reproduce the observed tracer vector at the stream. With more tracers than sources the system is over-determined, which is what allows an *estimate of error* rather than only an answer.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Q-2 "What this claim rests on")</sup>
+3. <span class="claim" data-claim="C-SS-Q-3">Multiply the faecal fraction by the **measured load** — concentration times discharge at the same minute — to get mass per event, per season, per year.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Q-3 "What this claim rests on")</sup>
 
-So the quantifier is **kilograms of pig-derived organic matter past this point in this
-storm**, with a confidence interval, and it decomposes into the same units for cattle,
-for people, and for soil. That is the number the national account has never had, and
-the reason it has never had it is that nobody measured the end members.
+<span class="claim" data-claim="C-SS-Q-KG">So the quantifier is **kilograms of pig-derived organic matter past this point in this storm**, with a confidence interval, and it decomposes into the same units for cattle, for people, and for soil.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Q-KG "What this claim rests on")</sup> <span class="claim" data-claim="C-SS-Q-ABSENT">None of the monitoring and data sources this project has profiled carries that number, and none measures a faecal sterol, a host-specific marker or crAssphage, so none holds the end members it needs.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Q-ABSENT "What this claim rests on")</sup>
 
 ### General sensors give totals; discriminating tracers give shares
 
-The two kinds of measurement do different jobs and the design needs both, which is
-worth saying plainly because a network of only one kind is a waste of money.
+<span class="claim" data-claim="C-SS-G-BOTH">The two kinds of measurement do different jobs and the design needs both, which is worth saying plainly because a network of only one kind is a waste of money.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-BOTH "What this claim rests on")</sup>
 
-- A **general observable** — turbidity, COD, total nitrogen, oxygen — measures *how
-  much of something is here*, and cannot say where it came from. It is cheap,
-  continuous, and it is the quantity that actually matters to a fjord.
-- A **discriminating tracer** — coprostanol, `Pig-2-Bac`, acesulfame, δ¹⁵N — measures
-  *whose it is*, and by itself says nothing about magnitude. It is expensive,
-  episodic, and useless as a load.
+- <span class="claim" data-claim="C-SS-G-GENERAL">A **general observable** — turbidity, COD, total nitrogen, oxygen — measures *how much of something is here*, and cannot say where it came from. Where a sensor reads it, the sensor is bought once and reads continuously, and it is the quantity that actually matters to a fjord.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-GENERAL "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-G-DISCRIM">A **discriminating tracer** — coprostanol, `Pig-2-Bac`, acesulfame, δ¹⁵N — measures *whose it is*, and by itself says nothing about magnitude. Each reading is a laboratory analysis of a sample, so it is expensive per reading, episodic, and useless as a load.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-DISCRIM "What this claim rests on")</sup>
 
-**The product of the two is the thing nobody has.** A discriminating tracer that rises
-in proportion to the material carrying it converts a total into a share: measure the
-tracer, apply the ratio of tracer to bulk in that source, and you have the fraction of
-the total that came from it — in kilograms, at that minute, past that point.
+<span class="claim" data-claim="C-SS-G-PRODUCT">**The product of the two is what none of the sources this project profiled has.** A discriminating tracer that rises in proportion to the material carrying it converts a total into a share: measure the tracer, apply the ratio of tracer to bulk in that source, and you have the fraction of the total that came from it — in kilograms, at that minute, past that point.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-PRODUCT "What this claim rests on")</sup>
 
 ### Which lets you subtract, one source at a time
 
-That is the operating principle, and it generalises past faeces to every pathway on
-this site:
+<span class="claim" data-claim="C-SS-G-SUBTRACT">That is the operating principle, and it generalises past faeces to every pathway on this site:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-SUBTRACT "What this claim rests on")</sup>
 
-1. **Measure the totals continuously** with the cheap sensors, everywhere.
-2. **Measure the fingerprint episodically** at the same points, and convert each
-   resolved source into its contribution to each total.
-3. **Subtract it.** What is left is a residual with one fewer explanation in it.
-4. **Repeat for the next fingerprint** — road runoff by its own markers, human sewage
-   by acesulfame and crAssphage, industrial by whatever is specific to it — and each
-   subtraction cleans the residual the next estimate is made on.
+1. <span class="claim" data-claim="C-SS-G-S1">**Measure the totals continuously** with the cheap sensors, everywhere.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-S1 "What this claim rests on")</sup>
+2. <span class="claim" data-claim="C-SS-G-S2">**Measure the fingerprint episodically** at the same points, and convert each resolved source into its contribution to each total.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-S2 "What this claim rests on")</sup>
+3. <span class="claim" data-claim="C-SS-G-S3">**Subtract it.** What is left is a residual with one fewer explanation in it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-S3 "What this claim rests on")</sup>
+4. <span class="claim" data-claim="C-SS-G-S4">**Repeat for the next fingerprint** — road runoff by its own markers, human sewage by acesulfame and crAssphage, industrial by whatever is specific to it — and each subtraction cleans the residual the next estimate is made on.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-S4 "What this claim rests on")</sup>
 
-Done across enough tracers, the outcome is a **decomposition of the load rather than
-an attribution of it**: this much of tonight's oxygen demand was pig, this much human,
-this much road, this much soil, and this much is still unexplained.
+<span class="claim" data-claim="C-SS-G-DECOMP">Done across enough tracers, the outcome is a **decomposition of the load rather than an attribution of it**: this much of tonight's oxygen demand was pig, this much human, this much road, this much soil, and this much is still unexplained.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-DECOMP "What this claim rests on")</sup>
 
-> **And the last number is the honest one.** This method is the residual method — the
-> same operation the ~[70](SOURCES.md#F-8d95ffb4ae)% figure is built on, which this project spends
-> [NITROGEN.md](NITROGEN.md) taking apart. It is only better if it obeys three rules
-> the original does not: **every subtraction is a measurement rather than a model**,
-> **the error propagates and is published with the number**, and **the final residual
-> is never named after a source.** An unexplained remainder is an unexplained
-> remainder. The moment it gets called *agriculture*, this becomes the thing it was
-> built to replace.
+> <span class="claim" data-claim="C-SS-G-RESIDUAL">**And the last number is the honest one.** This method is the residual method — the same operation the [69.6](SOURCES.md#F-e2cc286a52)% figure is built on, which this project spends [NITROGEN.md](NITROGEN.md) taking apart. It is only better if it obeys rules the original does not: **every subtraction is a measurement rather than a model**, **the error propagates and is published with the number**, and **the final residual is never named after a source.** An unexplained remainder is an unexplained remainder. The moment it gets called *agriculture*, this becomes the thing it was built to replace.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-RESIDUAL "What this claim rests on")</sup>
 
-**The proportionality is an assumption and has to be measured, not asserted.** The
-ratio of coprostanol to organic matter in pig slurry varies with diet, storage and
-digestion; DNA markers decay on a timescale of days; sterols do not. So each ratio is
-established by sampling the end members directly — the tank, the plant effluent, the
-road gully — and re-established when the system changes. A conversion factor taken
-from a paper about another country's pigs is exactly the kind of borrowed coefficient
-this project objects to everywhere else.
+<span class="claim" data-claim="C-SS-G-PROPORTION">**The proportionality is an assumption and has to be measured, not asserted.** Nothing guarantees that a tracer stands in the same ratio to the bulk in every tank, and the tracers age differently: host markers detect recent contamination, while coprostanol converts only slowly in the environment and in anaerobic sediment lasts long enough to record past faecal discharges. So each ratio is established by sampling the end members directly — the tank, the plant effluent, the road gully — and re-established when the system changes. A conversion factor taken from a paper about another country's pigs is exactly the kind of borrowed coefficient this project objects to everywhere else.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-PROPORTION "What this claim rests on")</sup>
 
 ### Why a fingerprint is more trustworthy than any of its dimensions
 
-Each tracer above has a confounder. The design answer is not a better tracer, it is
-**agreement across independent measurement spaces**: sterol chemistry, microbial
-genetics, pharmaceutical chemistry, stable isotopes and optics fail in unrelated ways,
-so a source assignment that survives all five is not an artefact of any one of them.
-A signal visible in one dimension and absent from the other four is noise wearing a
-name — and the discipline that says so is the same one this project applies to
-[partitions and baskets](https://github.com/Jjokulian/statistical-methods): **a boundary that holds under every metric you
-try is the only kind worth calling real.**
+<span class="claim" data-claim="C-SS-G-AGREE">Each tracer above has a confounder. The design answer is not a better tracer, it is **agreement across independent measurement spaces**: sterol chemistry, microbial genetics, pharmaceutical chemistry, stable isotopes and optics fail in unrelated ways, so a source assignment that survives all of them is not an artefact of any one. A signal visible in one dimension and absent from the others is noise wearing a name — and the discipline that says so is the same one this project applies to [partitions and baskets](https://github.com/Jjokulian/statistical-methods): **a boundary that holds under every metric you try is the only kind worth calling real.**</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-AGREE "What this claim rests on")</sup>
 
-That has a practical consequence for the network below. The dense tier measures the
-cheap, continuous, ambiguous dimensions; the sparse tier measures the expensive,
-unambiguous ones; and **the calibration between them is per-site, not national**. The
-continuous proxies are trusted only where the laboratory has stood in the same water.
+<span class="claim" data-claim="C-SS-G-PERSITE">That has a practical consequence for the network below. The dense tier measures the cheap, continuous, ambiguous dimensions; the sparse tier measures the expensive, unambiguous ones; and **the calibration between them is per-site, not national**. The continuous proxies are trusted only where the laboratory has stood in the same water.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-PERSITE "What this claim rests on")</sup>
 
 ---
 
 ## Which is why the architecture is forced
 
-**There is no faecal sensor.** Nothing you can put in a stream reports "manure". What
-exists is the fingerprint above — and it splits cleanly by what can be automated. The
-continuous dimensions are cheap and ambiguous; the dimensions that identify a source
-are laboratory measurements and cannot be put on a pole. So the architecture is forced,
-and it is two-tier:
+<span class="claim" data-claim="C-SS-A-FORCED">**No sensor in this design reports "manure".** What it has is the fingerprint above, and it splits cleanly by what can be automated: the continuous dimensions are cheap per reading and ambiguous; the dimensions that identify a source are laboratory analyses of a sample. So the architecture is forced, and it is two-tier:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-A-FORCED "What this claim rests on")</sup>
 
-| | What it does | What it cannot do |
-|---|---|---|
-| **Tier 1 — dense, continuous, cheap** | says **when and where** something moved, at every site, all the time | say **what** it was |
-| **Tier 2 — sparse, event-triggered, expensive** | says **what it was**, by laboratory attribution | be everywhere |
+- <span class="claim" data-claim="C-SS-A-T1">**Tier 1 — dense, continuous, cheap per reading.** Says **when and where** something moved, at every site, all the time; cannot say **what** it was.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-A-T1 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-A-T2">**Tier 2 — sparse, event-triggered, expensive per sample.** Says **what it was**, by laboratory attribution; cannot be everywhere.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-A-T2 "What this claim rests on")</sup>
 
-Tier 1 without tier 2 is a network of interesting wiggles. Tier 2 without tier 1 is the
-existing monitoring programme: a fortnightly visit that misses the event. **The design
-is the coupling** — tier 1 decides when tier 2 fires.
+<span class="claim" data-claim="C-SS-A-COUPLING">Tier 1 without tier 2 is a network of interesting wiggles. Tier 2 without tier 1 is the existing monitoring programme: grab samples at fixed intervals, from which transport came out underestimated against intensive daily measurement in every stream of the 2018 study this project records. **The design is the coupling** — tier 1 decides when tier 2 fires.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-A-COUPLING "What this claim rests on")</sup>
 
 ---
 
-## Tier 1 — the node anyone can build
+## Tier 1 — the node
 
-Five measurements, in rough order of value per krone.
+<span class="claim" data-claim="C-SS-N-INTRO">The node carries these measurements, each for a reason:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-INTRO "What this claim rests on")</sup>
 
-| Sensor | What it is for | Stated cost, DKK |
-|---|---|---:|
-| **Water level** — ultrasonic ranger above the surface, or a vented pressure transducer | Without discharge there is no load, only a concentration. This is the sensor that turns the network from anecdote into accounting. Mounted above water, an ultrasonic head does not foul | [1,000](SOURCES.md#F-0c24a113b3)–[3,000](SOURCES.md#F-2464d5f7c0) |
-| **Turbidity** — nephelometric, [90](SOURCES.md#F-e94acdd814)°, with a wiper | The carrier. Metals, phosphorus, tyre wear and faecal particles all travel attached to sediment, so turbidity is the single best proxy for *payload in transit* | [1,500](SOURCES.md#F-da7dc4d57b)–[6,000](SOURCES.md#F-3121327d19) |
-| **Conductivity and temperature** | Separates dilution from delivery. A storm that dilutes conductivity while raising turbidity is surface wash; a rise in both is something else. Temperature is needed by every other reading | [500](SOURCES.md#F-60304f7199)–[2,000](SOURCES.md#F-4b0f8ff2ca) |
-| **fDOM — tryptophan-like fluorescence** | The one fingerprint dimension that can run continuously. Protein-like fluorescence tracks fresh faecal and sewage organic matter; measured against a humic-like channel it separates that from soil-derived matter. It is the cost driver, and the sensor that makes this network more than a turbidity network | [8,000](SOURCES.md#F-2240c3923e)–[20,000](SOURCES.md#F-094555955c) |
-| **Dissolved oxygen** — optical | The receiving-water consequence, at the same minute as the cause | [3,000](SOURCES.md#F-ad814da942)–[8,000](SOURCES.md#F-2240c3923e) |
+- <span class="claim" data-claim="C-SS-N-STAGE">**Water level** — an ultrasonic ranger above the surface, such as MaxBotix's weather-resistant `MB7389`, or a vented pressure transducer where there is no overhead mounting. Without discharge there is no load, only a concentration: this is the sensor that turns the network from anecdote into accounting. Mounted in air, an ultrasonic head is not in the water and cannot foul; a pressure transducer's cable must be vented, or it reads the weather.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-STAGE "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-N-TURB">**Turbidity** — nephelometric, which measures light scattered at right angles, in the formazin units of the `ISO 7027` method, with a wiper. The carrier: viruses and bacteria attach to suspended solids, so turbidity is the proxy for *payload in transit*.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-TURB "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-N-EC">**Conductivity and temperature** — for example Atlas Scientific's EZO conductivity kit with a `K 1.0` probe. Separates dilution from delivery: a storm that dilutes conductivity while raising turbidity is surface wash; a rise in both is something else. Temperature corrects the other readings, fluorescence among them.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-EC "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-N-FDOM">**fDOM — tryptophan-like fluorescence**, with a humic-like channel if affordable. The one fingerprint dimension that runs continuously, and the difference between a turbidity network and a fingerprint network.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-FDOM "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-N-DO">**Dissolved oxygen** — an optode, which reads oxygen optically, not an electrochemical cell, which in larger sizes drifts as it consumes its electrolyte. The receiving-water consequence, at the same minute as the cause.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-DO "What this claim rests on")</sup>
 
-**Logger, power and communications**, which are the boring part and the part that
-decides whether the thing survives a winter:
+<span class="claim" data-claim="C-SS-N-BORING">**Logger, power and communications** are the boring part and the part that decides whether the thing survives a winter:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-BORING "What this claim rests on")</sup>
 
-| | | Stated cost, DKK |
-|---|---|---:|
-| Microcontroller, RTC, SD card, watchdog | ESP32 class; log locally as well as transmit, because the network is the thing that fails | [300](SOURCES.md#F-e0673791d7)–[800](SOURCES.md#F-19a78872b4) |
-| Radio | LoRaWAN to a community gateway where one is in range; NB-IoT or LTE-M with a data SIM where none is | [200](SOURCES.md#F-51d7a86046)–[700](SOURCES.md#F-16a4aa2e22) |
-| Power | [10](SOURCES.md#F-addb9bc54b)–[20](SOURCES.md#F-0504dc69fb) W panel, <span class="chem" data-chem="LiFePO4" title="lithium iron phosphate (battery chemistry)">LiFePO₄</span>, charge controller. Danish December is the design case, not July | [800](SOURCES.md#F-19a78872b4)–[2,500](SOURCES.md#F-2c3a26d632) |
-| Enclosure, mount, cable, desiccant | IP67, mounted to a road culvert or bridge parapet | [700](SOURCES.md#F-16a4aa2e22)–[2,000](SOURCES.md#F-cc21bd6629) |
+- <span class="claim" data-claim="C-SS-N-LOGGER">**Logger and radio** — an `ESP32`-class microcontroller with a real-time clock, a memory card and a watchdog; LoRaWAN to a community gateway where one is in range, since LoRa carries far at low power, and a mobile data link where none is. It logs locally as well as transmits, so a dropped link loses no data.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-LOGGER "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-N-POWER">**Power** — a solar panel, a charge controller and a <span class="chem" data-chem="LiFePO4" title="lithium iron phosphate (battery chemistry)">LiFePO₄</span> battery, sized for a Danish December, not July.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-POWER "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-N-BOX">**Enclosure and mount** — a sealed box (`IP67`), cable glands, a stainless bracket and desiccant, mounted to a road culvert or a bridge parapet.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-BOX "What this claim rests on")</sup>
 
-**A node comes to roughly [5,000](SOURCES.md#F-96567c6688)–[12,000](SOURCES.md#F-989cef1d40) DKK without fDOM and [15,000](SOURCES.md#F-de6612dc6d)–[30,000](SOURCES.md#F-912ad69935) with it.**
-One person can build one in an evening. The hard part was never the electronics.
+<span class="claim" data-claim="C-SS-N-KIT">**The kit a group shares:** formazin turbidity standards, conductivity calibration solutions and an oxygen zero solution, because **a reading without a calibration record is not data**; a reference sonde, borrowed or shared, for co-location, which is [`X16`](EXPERIMENTS.md), the check that ties cheap readings to the national record; and spare probes, cable and one spare node, because field repairs happen in February in the rain.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-KIT "What this claim rests on")</sup>
 
----
-
-## The shopping list
-
-Everything above as a list of things to buy, because a cost is only real when it is a
-purchase order. **Part names are examples of the class, not endorsements, and no price
-here is a quotation** — they are the stated ranges a buyer should expect to find and
-then replace with what a supplier actually says.
-
-### The node — what one stream costs
-
-| | Example of the class | What it is for | DKK |
-|---|---|---|---:|
-| **Stage, ultrasonic** | MaxBotix HRXL-WR class, IP67, mounted above the water on a bridge or culvert | Level → discharge, via a rating curve. **Mounted in air, so it cannot foul** — which is why it beats a pressure transducer for an unattended node | [900](SOURCES.md#F-20ee846ea2)–[1,800](SOURCES.md#F-52f013d363) |
-| *or* **Stage, pressure** | vented submersible transducer, [0](SOURCES.md#F-d1c0730bca)–[2](SOURCES.md#F-7e38eabca1) m | Where there is no overhead mounting. Vented cable, or it reads the weather | [1,200](SOURCES.md#F-a1f4fe16a3)–[3,000](SOURCES.md#F-74f7022d25) |
-| **Turbidity, nephelometric** | `ISO 7027` [90](SOURCES.md#F-e4a8aec21b)° module; with a wiper if the budget reaches | The carrier for everything particulate. **The cheap analog boards sold for hobby use are presence/absence at best** — say so in the data or do not fit one | [1,500](SOURCES.md#F-3116133ea7)–[6,000](SOURCES.md#F-543a36873c) |
-| **Conductivity + temperature** | Atlas Scientific EZO-EC with a K=[1.0](SOURCES.md#F-f291bd13f6) probe, or an industrial two-electrode cell | Separates dilution from delivery, and every other reading needs the temperature | [600](SOURCES.md#F-2ae70634cf)–[2,000](SOURCES.md#F-4f7d9a97f4) |
-| **Dissolved oxygen, optical** | luminescent/optical DO probe — **not** a galvanic membrane cell, which drifts and dies | The consequence, measured at the same minute as the cause | [3,000](SOURCES.md#F-47745f918f)–[9,000](SOURCES.md#F-6c4259e8e7) |
-| **fDOM, tryptophan channel** | Turner Cyclops-[7](SOURCES.md#F-9e6643ec10)F class, tryptophan configuration, with a humic-like channel if affordable | The one fingerprint dimension that runs continuously. **This is the difference between a turbidity network and a fingerprint network** | [9,000](SOURCES.md#F-6c4259e8e7)–[22,000](SOURCES.md#F-df9606f298) |
-| **Logger + radio** | ESP32 with LoRaWAN, or with LTE-M/NB-IoT where no gateway is in range; RTC, microSD, watchdog | Logs locally *and* transmits. The radio is the least reliable part | [400](SOURCES.md#F-99457c9672)–[1,200](SOURCES.md#F-111ba5af90) |
-| **Power** | [10](SOURCES.md#F-c614aff8c8)–[20](SOURCES.md#F-64d1624a48) W panel, MPPT controller, [12](SOURCES.md#F-ba24d80a55) V <span class="chem" data-chem="LiFePO4" title="lithium iron phosphate (battery chemistry)">LiFePO₄</span> [20](SOURCES.md#F-64d1624a48) Ah | Sized for December, not July | [800](SOURCES.md#F-d76999cb41)–[2,500](SOURCES.md#F-a38a45f868) |
-| **Enclosure and mount** | IP67 box, cable glands, stainless bracket, desiccant, anti-theft | Survives a winter and a curious passer-by | [700](SOURCES.md#F-84b5f4ebc1)–[2,000](SOURCES.md#F-785c317ed1) |
-
-**A node without fDOM: [5,000](SOURCES.md#F-a5ca20b124)–[12,000](SOURCES.md#F-227f60439e) DKK. With it: [15,000](SOURCES.md#F-de6612dc6d)–[30,000](SOURCES.md#F-912ad69935).**
-
-### The kit a group shares
-
-| | Why | DKK |
-|---|---|---:|
-| Formazin turbidity standards, EC calibration solutions, DO zero solution | **A reading without a calibration record is not data.** This is the least glamorous line and the one that decides whether the network is admissible | [2,000](SOURCES.md#F-dbe923a6cb)–[5,000](SOURCES.md#F-41064710c0) |
-| A reference sonde, borrowed or shared, for co-location | [`X16`](EXPERIMENTS.md) — the check that ties cheap readings to the national record | [15,000](SOURCES.md#F-ab995d2725)–[60,000](SOURCES.md#F-a334c0c404), or borrowed |
-| Spare probes, cable, glands, desiccant, one spare node | Field repairs happen in February in the rain | [5,000](SOURCES.md#F-582e612f3e)–[10,000](SOURCES.md#F-c2c1997e0e) |
-
-### The sampler, which is where the answer comes from
-
-| | | DKK |
-|---|---|---:|
-| Automatic sampler, [12](SOURCES.md#F-cdfdc45c20)–[24](SOURCES.md#F-6d0912e850) bottles, flow- and turbidity-triggered | Teledyne ISCO or Hach AS950 class; a used one is a perfectly good used one | [25,000](SOURCES.md#F-680741f9cc)–[60,000](SOURCES.md#F-109e9eefe2) |
-| Bottle analysis — sterols, host markers, crAssphage, acesulfame, one veterinary residue, Cu/Zn, COD/BOD, nutrients, δ¹⁵N + δ¹⁸O | **The real cost of the experiment.** Not every bottle needs the full panel; the cheap determinands go on all of them and the fingerprint on the ones the continuous tier says matter | [1,500](SOURCES.md#F-e99c001806)–[4,000](SOURCES.md#F-aee78da032) per bottle |
-
-### What that means for the experiment on the next page
-
-| | Quantity | DKK |
-|---|---:|---:|
-| Nodes with fDOM, [12](SOURCES.md#F-e138091385) matched pairs | [24](SOURCES.md#F-bf48eaa827) | [360,000](SOURCES.md#F-a893594c73)–[720,000](SOURCES.md#F-9f18ff45d2) |
-| Samplers, rotating | [8](SOURCES.md#F-1e7de910ee) | [200,000](SOURCES.md#F-52c13c8c17)–[480,000](SOURCES.md#F-f5467bd666) |
-| Shared kit, three regional sets | [3](SOURCES.md#F-45efca4db3) | [60,000](SOURCES.md#F-9376ea98f2)–[200,000](SOURCES.md#F-52c13c8c17) |
-| Bottles analysed over two seasons | ~[600](SOURCES.md#F-a6f27e3e69) | [900,000](SOURCES.md#F-ca8073422a)–[2,400,000](SOURCES.md#F-30fa64415a) |
-| **Hardware and laboratory, total** | | **[1.5](SOURCES.md#F-ffad87be0a)–[3.8](SOURCES.md#F-f654c05a17) M DKK** |
-
-**So the sensors are not the expensive part — the bottles are**, and the bottles are
-the part that cannot be economised without losing the attribution the whole design
-exists for. A node is a weekend and a few thousand kroner. The laboratory is the
-commitment.
+<span class="claim" data-claim="C-SS-N-SAMPLER">**The sampler, which is where the answer comes from:** a field autosampler for water-quality samples, triggered by flow and turbidity, and the bottle analysis — sterols, host markers, crAssphage, acesulfame, one veterinary residue, copper and zinc, COD and BOD, nutrients, δ¹⁵N with δ¹⁸O. Not every bottle needs the full panel: the routine determinands go on all of them and the fingerprint on the ones the continuous tier says matter.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-N-SAMPLER "What this claim rests on")</sup>
 
 ---
 
 ## Tier 2 — the sampler that answers the question
 
-An automatic sampler, triggered by tier 1 when stage or turbidity crosses a threshold,
-filling bottles through the rising and falling limb of a storm. **This is where the
-attribution comes from**, because it is a laboratory measurement and there is no
-in-situ substitute:
+<span class="claim" data-claim="C-SS-T2-ATTR">An automatic sampler, triggered by tier 1 when stage or turbidity crosses a threshold, fills bottles through the rising and falling limb of a storm. **This is where the attribution comes from**, because the attributing measurements are laboratory analyses:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T2-ATTR "What this claim rests on")</sup>
 
-- **faecal sterols — coprostanol, and its ratio to cholesterol**, which distinguishes
-  faecal organic matter from soil organic matter;
-- **host-specific microbial markers** (pig-, ruminant- and human-associated
-  *Bacteroidales* by qPCR), which distinguish a pig from a person — the measurement
-  that makes the whole argument attributable rather than suggestive;
-- **copper and zinc**, conservative, and from feed;
-- **one veterinary antiparasitic residue**, because the register that holds the sales
-  data holds nothing about where it went;
-- **COD and BOD**, to tie the fluorescence proxy to a standard number.
+- <span class="claim" data-claim="C-SS-T2-STEROL">**faecal sterols** — coprostanol, and its ratio to cholesterol, which marks faecal contamination;</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T2-STEROL "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T2-HOST">**host-specific microbial markers** (pig-, ruminant- and human-associated *Bacteroidales* by qPCR), which distinguish a pig from a person — the measurement that makes the argument attributable rather than suggestive, once its specificity is tested on local material;</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T2-HOST "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T2-METALS">**copper and zinc**, zinc from piglet feed among its sources;</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T2-METALS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T2-VET">**one veterinary antiparasitic residue**, because the register that holds the sales data holds nothing about where it went;</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T2-VET "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T2-COD">**COD and BOD**, to tie the fluorescence proxy to a standard number.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T2-COD "What this claim rests on")</sup>
 
-Stated: **[25,000](SOURCES.md#F-56f7406539)–[60,000](SOURCES.md#F-bd3ac267f1) DKK per sampler**, and **[1,500](SOURCES.md#F-3dc9f04951)–[4,000](SOURCES.md#F-d7e8d20fd4) DKK per bottle analysed**,
-which is why tier 2 is sparse and event-triggered rather than continuous. Twenty
-samplers rotating around a network of hundreds of nodes is the realistic shape.
+<span class="claim" data-claim="C-SS-T2-SPARSE">Each bottle is a laboratory analysis paid for one at a time, which is why tier 2 is sparse and event-triggered rather than continuous: samplers rotate around a network of nodes.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T2-SPARSE "What this claim rests on")</sup>
 
 ---
 
 ## Does it really have to be bottles?
 
-Partly, and less every year — but the honest answer has three tiers rather than one,
-and the middle tier is the one that changes the economics.
+<span class="claim" data-claim="C-SS-B-PARTLY">Partly, and the honest answer is not one answer: some of it needs a laboratory, some is already automated, and some is being automated now.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-PARTLY "What this claim rests on")</sup>
 
-**What genuinely needs a laboratory today.** The discriminating chemistry: faecal
-sterols by GC-MS, host-specific markers and crAssphage by qPCR, veterinary residues by
-LC-MS/MS, nitrate isotopes by IRMS. These are extractions, chromatography and mass
-spectrometry. **Nothing you can bolt to a culvert does them**, and anybody who says
-otherwise is selling something. So attribution, today, means a bottle.
+<span class="claim" data-claim="C-SS-B-LAB">**What needs a laboratory.** The discriminating chemistry and genetics: faecal sterols extracted from the sample, host-specific markers by qPCR, veterinary residues by liquid chromatography, nitrate isotopes by mass spectrometry. At a stream node, attribution means a bottle.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-LAB "What this claim rests on")</sup>
 
-**What is already automated and is not bottles at all.** Everything reagentless: level,
-turbidity, conductivity, temperature, optical oxygen, chlorophyll and fDOM run
-continuously for months on a battery. UV nitrate needs no reagent either — it is
-expensive rather than manual. And wet-chemistry nutrient analysers run nitrate and
-phosphate hourly in situ for weeks, which trades a bottle round for a **reagent refill**
-— a different chore, on a calmer schedule, and one that can be done on the same visit
-the sensor is cleaned on.
+<span class="claim" data-claim="C-SS-B-AUTO">**What is already automated and is not bottles at all.** The node's own sensors — level, turbidity, conductivity, temperature, optical oxygen and fluorescence — need no bottle: each reads a property of the water where it stands, continuously.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-AUTO "What this claim rests on")</sup>
 
-**What is being automated now, expensively.** Robotic molecular samplers that filter,
-preserve and in some cases run the assay in place exist and are deployed — for harmful
-algae and for eDNA. They cost more than everything else on this page combined, which
-means they belong at a handful of anchor sites rather than at eight hundred. **The
-trajectory is clear and the price is not there yet**, and a plan that assumed otherwise
-would be planning on a press release.
+<span class="claim" data-claim="C-SS-B-ROBOT">**What is being automated now.** Robotic sample processors that collect and analyse water samples in place exist and are deployed: one was the first underwater instrument to detect a harmful algal species and its toxin autonomously. They are a different machine from this page's node, and this page does not price them.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-ROBOT "What this claim rests on")</sup>
 
 ### Which changes what the bottles are *for*
 
-> **Bottles calibrate the network. They do not monitor it.**
+> <span class="claim" data-claim="C-SS-B-RULE">**Bottles calibrate the network. They do not monitor it.**</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-RULE "What this claim rests on")</sup>
 
-That is the sentence that makes the arithmetic bearable. At a site, a season of
-event bottles establishes the local relation between the cheap continuous dimensions —
-fluorescence, turbidity, conductivity — and the laboratory panel. Once that relation
-holds, **the sensors carry the estimate between calibrations** and the bottles fall
-back to validation: a handful a year to confirm the relation has not drifted, and a
-fresh round whenever something changes upstream.
+<span class="claim" data-claim="C-SS-B-CALIBRATE">That is the design's central rule. At a site, a season of event bottles establishes the local relation between the cheap continuous dimensions — fluorescence, turbidity, conductivity — and the laboratory panel. Once that relation holds, **the sensors carry the estimate between calibrations** and the bottles fall back to validation: enough to confirm the relation has not drifted, and a fresh round whenever something changes upstream.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-CALIBRATE "What this claim rests on")</sup>
 
-So the bottle count scales with **sites × recalibrations**, not with events forever,
-and the cost curve bends down after the first year or two rather than running flat.
-[The network page](network.html) has that as two dials — how long the calibration phase
-lasts, and what fraction of the sampling continues afterwards — because the honest
-answer depends on how stable the relation turns out to be, and nobody knows that yet
-for a Danish stream.
+<span class="claim" data-claim="C-SS-B-SCALE">So the bottle count scales with **sites × recalibrations**, not with events forever, and the bottle line bends down once the calibration phase ends rather than running flat.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-SCALE "What this claim rests on")</sup> <span class="claim" data-claim="C-SS-B-DIALS">[The network page](network.html) has a dial for each — how long the calibration phase lasts, and what share of the sampling continues afterwards — because the honest answer depends on how stable the relation turns out to be, and none of the sources this project profiled reports that for a Danish stream.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-DIALS "What this claim rests on")</sup>
 
-**And if the relation never stabilises at a site, that is a result rather than a
-setback.** It would mean the payload arrives in forms the cheap sensors cannot see,
-which is worth knowing and is exactly the kind of thing a monitoring programme designed
-around a fixed determinand list would never discover.
+<span class="claim" data-claim="C-SS-B-RESULT">**And if the relation never stabilises at a site, that is a result rather than a setback.** It would mean the payload arrives in forms the cheap sensors cannot see, which is worth knowing and is exactly the kind of thing a monitoring programme designed around a fixed determinand list would never discover.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-B-RESULT "What this claim rests on")</sup>
 
 ---
 
-## What that costs, at three sizes
+## At every outlet
 
-> **[Dial it yourself →](network.html)** — the density on a map of Denmark, what each
-> node carries, the sampler ratio, the bottle price, the servicing interval and the
-> years, with the total moving as you change them. The presets reproduce the stages
-> in [SETTLE.md](SETTLE.md).
+> <span class="claim" data-claim="C-SS-Z-DIAL">**[Dial it yourself →](network.html)** — the density on a map of Denmark, what each node carries, the sampler ratio, the bottle price, the servicing interval and the years, with a total that moves as you change them. Its default prices are the tool's own and have no source this project could find; replace them with quotations.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Z-DIAL "What this claim rests on")</sup>
 
+<span class="claim" data-claim="C-SS-Z-TARGET">A node on every Danish stream that reaches the sea is the target that removes extrapolation entirely. Whatever the hardware costs, it is bought once; what recurs is this:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Z-TARGET "What this claim rests on")</sup>
 
-Every Danish stream that reaches the sea is the target that removes extrapolation
-entirely. These are stated arithmetic, not a budget anybody has approved.
-
-| | Nodes | Tier-[1](SOURCES.md#F-a5ff5e3bf2) hardware | fDOM on a subset | Samplers | Total hardware |
-|---|---:|---:|---:|---:|---:|
-| **A person, one catchment** | [5](SOURCES.md#F-dd09362833) | [40,000](SOURCES.md#F-4be5916acf) | — | — | **~[40,000](SOURCES.md#F-4be5916acf) DKK** |
-| **A club or a municipality** | [40](SOURCES.md#F-88cfe49728) | [320,000](SOURCES.md#F-4c2860b114) | [5](SOURCES.md#F-dd09362833) × [20,000](SOURCES.md#F-ffc66d0b94) | [2](SOURCES.md#F-dc9a6f5cc9) × [40,000](SOURCES.md#F-4be5916acf) | **~[500,000](SOURCES.md#F-419e934367) DKK** |
-| **Every outlet in the country** | [800](SOURCES.md#F-49109ce1f6) | [6.4](SOURCES.md#F-05b93d0fee) M | [80](SOURCES.md#F-3b8f3c24ab) × [20,000](SOURCES.md#F-ffc66d0b94) | [20](SOURCES.md#F-313e790432) × [40,000](SOURCES.md#F-4be5916acf) | **~[8.8](SOURCES.md#F-bc8cb0f719) M DKK** |
-
-> **And that last figure is the smallest of three numbers, which is why it should not
-> be the headline.** [8.8](SOURCES.md#F-bc8cb0f719) M is *inland hardware only*. Add marine moorings in the
-> fjords and belts, a near-bed string on each, and the servicing and laboratory that
-> keep them meaningful, and [the network tool](network.html) puts a thorough permanent
-> network at **[0.5](SOURCES.md#F-023531fda9)–[1](SOURCES.md#F-811be743de) bn DKK over [25](SOURCES.md#F-6b3b162e9f) years — almost all of it operations, not
-> instruments.** Against the Copenhagen retrofit costed at [2.6](SOURCES.md#F-049c00acc2)–[10.4](SOURCES.md#F-426c402c7d) bn, that is **on
-> the order of a tenth**: knowing costs about ten per cent of doing. Neither
-> negligible nor absurd — a normal monitoring fraction on a capital programme, and a
-> decision rather than a rounding error.
-
-For comparison, the same page that argues for this puts a single bored pipe shot at
-[160,000](SOURCES.md#F-c27b76f61d)–[640,000](SOURCES.md#F-daa962858a) DKK. **The national network is the price of about twenty streets.**
-
-The recurring cost is not the hardware and never was:
-
-- **Servicing.** A fouled sensor produces confident wrong numbers, which is worse than
-  no sensor. Budget two to six visits a year per node, and prefer the sensor that
-  fouls least even where it reads worst.
-- **Calibration.** Every node needs a documented calibration history and a co-location
-  against a reference instrument — which is [`X16`](EXPERIMENTS.md), already written.
-- **Laboratory.** The tier-[2](SOURCES.md#F-240797b2a9) bottles, which is where the money actually goes.
+- <span class="claim" data-claim="C-SS-Z-SERVICE">**Servicing.** A fouled sensor produces confident wrong numbers, which is worse than no sensor. Visit on a schedule, and prefer the sensor that fouls least even where it reads worst.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Z-SERVICE "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-Z-CALIB">**Calibration.** Every node needs a documented calibration history and a co-location against a reference instrument — which is [`X16`](EXPERIMENTS.md), already written.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Z-CALIB "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-Z-LAB">**Laboratory.** The tier-two bottles, a cost per analysis for as long as the network is calibrated.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-Z-LAB "What this claim rests on")</sup>
 
 ---
 
@@ -353,58 +155,32 @@ The recurring cost is not the hardware and never was:
                                               raw archive ──┼──▶ public API
                                                             └──▶ static site
 
-Concretely: an MQTT broker on a small VM, a time-series database, a nightly dump of
-raw readings to object storage, and a static site generated from it — the same shape
-as this repository, which is built from public data by scripts and costs nothing to
-host. **Software is not the constraint and has not been for years.**
+<span class="claim" data-claim="C-SS-D-STACK">Concretely: an MQTT broker on a small VM, a time-series database, a nightly dump of raw readings to object storage, and a static site generated from it — the same shape as this repository, which is built from public data by scripts and hosted free as a static site. **Software is not the constraint.**</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-D-STACK "What this claim rests on")</sup>
 
-Five rules matter more than the stack:
+<span class="claim" data-claim="C-SS-D-RULES">These rules matter more than the stack:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-D-RULES "What this claim rests on")</sup>
 
-1. **Log locally as well as transmit.** The radio is the least reliable component.
-2. **Publish raw counts, not just calibrated values.** A recalibration must be
-   reproducible after the fact, which means the uncalibrated series has to survive.
-3. **Every reading carries its node's calibration state and last service date.** A
-   series without that is not evidence.
-4. **Public API from day one, and open licence.** The argument this network exists to
-   settle is one that gated data created.
-5. **Never publish an index without the series it came from.** That is the failure
-   this whole project documents, and it would be humiliating to reproduce it.
+1. <span class="claim" data-claim="C-SS-D-R1">**Log locally as well as transmit.** A link that drops then loses nothing.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-D-R1 "What this claim rests on")</sup>
+2. <span class="claim" data-claim="C-SS-D-R2">**Publish raw counts, not just calibrated values.** A recalibration must be reproducible after the fact, which means the uncalibrated series has to survive.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-D-R2 "What this claim rests on")</sup>
+3. <span class="claim" data-claim="C-SS-D-R3">**Every reading carries its node's calibration state and last service date.** A series without that is not evidence.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-D-R3 "What this claim rests on")</sup>
+4. <span class="claim" data-claim="C-SS-D-R4">**Public API from day one, and open licence.** An open record is one a reader who trusts neither side can check.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-D-R4 "What this claim rests on")</sup>
+5. <span class="claim" data-claim="C-SS-D-R5">**Never publish an index without the series it came from.** That is the failure this whole project documents, and it would be humiliating to reproduce it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-D-R5 "What this claim rests on")</sup>
 
 ---
 
 ## What one person can do, and what needs many
 
-**One person can build a node, mount it on a culvert, and produce a defensible record
-of one stream.** That is not a small thing: it is one place, measured, with a date —
-and [the argument this project makes about plurality](PLACES.md) is that a place
-measured is worth more than a place modelled.
+<span class="claim" data-claim="C-SS-P-ONE">**One person can build a node, mount it on a culvert, and produce a defensible record of one stream.** That is not a small thing: it is one place, measured, with a date — and [the argument this project makes about plurality](PLACES.md) is that a place measured is worth more than a place modelled.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-P-ONE "What this claim rests on")</sup>
 
-**What one person cannot do is cover a country**, and the spread is the whole value.
-The network's power is that it removes extrapolation, and it only removes it where
-somebody stood in the water. So the shape of it is a hundred people with one node each
-and a shared protocol, not one institution with a plan — which is also the only shape
-that gets built without anybody's permission.
+<span class="claim" data-claim="C-SS-P-SHAPE">**What one person cannot do is cover a country**, and the spread is the whole value. The network's power is that it removes extrapolation, and it only removes it where somebody stood in the water. So the shape of it is many people with one node each and a shared protocol, not one institution with a plan.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-P-SHAPE "What this claim rests on")</sup>
 
-Three things would have to be shared for that to work and none of them is hard: **the
-build**, so nodes are comparable; **the calibration protocol**, so their readings are;
-and **the archive**, so a result belongs to everyone rather than to whoever hosted it.
+<span class="claim" data-claim="C-SS-P-SHARED">What would have to be shared for that to work is not hard: **the build**, so nodes are comparable; **the calibration protocol**, so their readings are; and **the archive**, so a result belongs to everyone rather than to whoever hosted it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-P-SHARED "What this claim rests on")</sup>
 
 ---
 
 ## What this would and would not settle
 
-**Would.** Whether the payload moves in events, where, how often, and in what season —
-across the whole country rather than at [240](SOURCES.md#F-0f27097241) stations sampled on a calendar. Whether
-the spreading window shows up in the water. Which catchments are quiet and which are
-not, without a model in between.
+<span class="claim" data-claim="C-SS-W-WOULD">**Would.** Whether the payload moves in events, where, how often, and in what season — across the whole country rather than at [240](SOURCES.md#F-44b234c71f) stream stations sampled at fixed intervals. Whether the spreading window shows up in the water. Which catchments are quiet and which are not, without a model in between.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-W-WOULD "What this claim rests on")</sup>
 
-**Would not.** Anything about the sea beyond the outlet: this measures what arrives,
-not what it does. Anything the tier-[2](SOURCES.md#F-af1029a1ff) list does not include. And **it does not abolish
-inference** — attribution still travels from sampled events to unsampled ones, and
-from a marker to a source. What it abolishes is *spatial* extrapolation, which is the
-one this project has spent its length objecting to.
+<span class="claim" data-claim="C-SS-W-WOULDNOT">**Would not.** Anything about the sea beyond the outlet: this measures what arrives, not what it does. Anything the tier-two list does not include. And **it does not abolish inference** — attribution still travels from sampled events to unsampled ones, and from a marker to a source. What it abolishes is *spatial* extrapolation, which is the one this project has spent its length objecting to.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-W-WOULDNOT "What this claim rests on")</sup>
 
-> **The honest summary.** The instruments exist, the protocol is ordinary, the cost is
-> the price of twenty streets, and nobody has done it. That is not a technical finding.
-> It is a statement about what the monitoring system was built to answer, and about
-> who has been allowed to ask.
+> <span class="claim" data-claim="C-SS-W-SUMMARY">**The honest summary.** The instruments exist, the protocol is ordinary, and none of the sources this project profiled reports a network like it. That is not a technical finding. It is a statement about what the monitoring system was built to answer, and about who has been allowed to ask.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-W-SUMMARY "What this claim rests on")</sup>

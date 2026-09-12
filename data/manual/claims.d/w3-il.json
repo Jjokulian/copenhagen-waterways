@@ -1,0 +1,1883 @@
+{
+ "_what": "Claims, nodes and stated values for the hypothesis drafts I3 and L3 (docs/hypodrafts/I3.md, docs/hypodrafts/L3.md), written by agent w3-il; and the claims those pages published at commit 00a157f and could not justify, retired to the archive.",
+ "sources": {},
+ "figures": {},
+ "params": {
+  "il_i3_draws": {
+   "value": 200,
+   "shown": "200",
+   "reason": "How many month-sets the I3 resampling null draws per full-year unit: a design choice kept from the draft's procedure; more draws narrow the Monte Carlo error of the envelope and cost only time."
+  },
+  "il_l3_first_year": {
+   "value": 1989,
+   "shown": "1989",
+   "reason": "The first year of the L3 annual index: a design choice kept from the draft, which put it where fewer stations report in the years before; no held output counts stations per year, so that reason is unchecked."
+  },
+  "il_l3_last_year": {
+   "value": 2025,
+   "shown": "2025",
+   "reason": "The last year of the L3 annual index: the last calendar year that had ended when the panel was built, since the panel's final year was still running."
+  },
+  "il_l3_min_window": {
+   "value": 10,
+   "shown": "10",
+   "reason": "The shortest window, in years, the L3 slope surface admits: a design choice kept from the draft, so that no slope is fitted to too few annual values to mean anything."
+  },
+  "il_l3_sims": {
+   "value": 4000,
+   "shown": "4,000",
+   "reason": "How many autocorrelated series the L3 null simulates per station set: a design choice kept from the draft; more series narrow the Monte Carlo error of the null probabilities and cost only time."
+  }
+ },
+ "nodes": [
+  {
+   "id": "X-IL-SERIES",
+   "kind": "script",
+   "label": "stations_series.py",
+   "detail": "Streams the CTD extract one cast at a time. Within a cast, values in the shallowest quarter of its depth range go to the surface and values in the deepest quarter to the bed; the panel value is the median of every parseable value per station, month and variable, with no test of range. Writes docs/data/areas/stations_series.bin and stations_series.json, one station index, month index and value per station-month."
+  },
+  {
+   "id": "X-IL-CUBE",
+   "kind": "script",
+   "label": "cube.py",
+   "detail": "Fixes the monthly grid the station series indexes its months by: from January of the constant `Y0` to December of `Y1`, both set in the script. mon() gives a date outside those years no month index, and stations_series.py skips such a cast."
+  },
+  {
+   "id": "D-IL-EVIDENCE",
+   "kind": "held",
+   "label": "Hypothesis evidence\\ndata/derived/hypotheses_evidence.json",
+   "detail": "Written by hypotheses.py: among other facts, the hours from sunrise to sunset on the June and December solstice days at a stated latitude and longitude, computed with daylight.py."
+  },
+  {
+   "id": "D-IL-HYPFACTS",
+   "kind": "held",
+   "label": "Draft file facts\\ndata/derived/hypodraft_facts.json",
+   "detail": "Written by hypodraft_facts.py: among other facts, the first year of the monthly station series, and the station-months and stations the flag record marks as a batch sign flip."
+  },
+  {
+   "id": "D-IL-HYPCTD",
+   "kind": "held",
+   "label": "CTD counts\\ndata/derived/hypodraft_ctd.json",
+   "detail": "Written by hypodraft_ctd.py in one pass over the whole CTD extract: among other counts, the station-days with temperature and salinity, their stations, and the first and last year among them."
+  },
+  {
+   "id": "U-IL-I3-NORUN",
+   "kind": "untraced",
+   "label": "Trail ends: no script\\nruns the {ref:I3} test",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for code that counts calendar months per station-year of near-bed oxygen, draws month-sets from station-years, or computes an indicator under a fixed calendar window; and the git history of the repository, all branches, for the drafting session's resampling code. Only this page's generator mentions the procedure; the drafting code was never committed. Nothing further was found."
+  },
+  {
+   "id": "U-IL-L3-NORUN",
+   "kind": "untraced",
+   "label": "Trail ends: no script\\nruns the {ref:L3} test",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for a slope surface over start and end years, a two-way fixed-effects index of near-bed oxygen, or autocorrelated null simulations of one; and the git history of the repository, all branches, for the drafting session's code. Only this page's generator mentions the procedure; the drafting code was never committed. Nothing further was found."
+  },
+  {
+   "id": "U-IL-MULTIDAY",
+   "kind": "untraced",
+   "label": "Trail ends: sampling days\\nper station-month",
+   "detail": "Searched data/derived/*.json and scripts/*.py on 2026-09-11 for a count of station-months holding more than one sampling day, in the CTD extract or the Secchi extract: hypodraft_ctd.py counts station-days and drafts_b_counts.py counts Secchi records, and nothing stores how many days fall in one station-month."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-IL-I3-NEIGHBOUR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "{ref:I1} asks which stations were observed; {ref:I3} asks how often, and when in the year: the aliasing of a quantity that can vary faster than it is sampled.",
+   "because": "Both are entries of the hypothesis register, the first about the station network and the second about sampling frequency and season; a quantity sampled less often than it can change is aliased by definition.",
+   "rests_on": [
+    "D-LR-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "claim {ref:I3}": "I3: Changing sampling frequency and season",
+     "said on hypodrafts/I3.md": "I1 asks *which stations* were observed; I3 asks *how often, and when in the year*: the aliasing of a quantity that can vary faster than it is sampled.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "hypothesis I3": "1d55bcf7bf92738b",
+     "texts": "92125323a945153e",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-STATUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The test this page specifies has not been run: no script in this repository computes it.",
+   "because": "A search of the scripts and of the repository's history found no code that counts months per station-year, draws month-sets or fits a fixed-window indicator.",
+   "rests_on": [
+    "U-IL-I3-NORUN"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-IL-I3-NORUN.label {ref:I3}": "I3: Changing sampling frequency and season",
+     "said on hypodrafts/I3.md": "The test this page specifies has not been run: no script in this repository computes it.",
+     "texts": "ec10f8b812acdebc",
+     "node U-IL-I3-NORUN": "274bdd262848c858"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-A",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "An extremal indicator, an annual minimum or a worst-month value, is an order statistic of the draws, so its expectation moves with the number of draws and with the months they fall in.",
+   "because": "The minimum of more draws from the same distribution is on average no larger, and the minimum of draws from months with lower values is lower; a worst-month value is formed the same way, from the extreme of the draws.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "**Count and window.** An extremal indicator — an annual minimum, a worst-month value — is an order statistic of the draws. Its expectation moves with the number of draws and with the months they fall in.",
+     "texts": "b5a58eda8ee243d4"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-A-PANEL",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The monthly panel records, for each station, which months carry a value, so the count and the window can both be read off it.",
+   "because": "Each panel value is stored with a station index and a month index, so the months present per station and year can be counted and named.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-IL-SERIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "The monthly panel records, for each station, which months carry a value, so both the count and the window can be read off it.",
+     "texts": "66aab19061c8e4c3",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-IL-SERIES": "45e0d9ac2e98cc2c"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-B-SUN",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Daylight at the stated latitude runs from its December to its June solstice length, so if oxygen follows the sun, sampling held to working hours meets a different phase of its daily cycle as the season moves; water-chemistry samples with an observed clock time rarely visit night or twilight.",
+   "because": "The day lengths are computed by hypotheses.py with daylight.py at a stated latitude; the same clock hour gives very different sun elevations at the two solstices; and the samples with an observed clock time leave night and twilight almost unvisited, both over the whole record and since the clock became a wall clock.",
+   "rests_on": [
+    "D-IL-EVIDENCE",
+    "X-HY-HYPOTHESES",
+    "X-OP-DAYLIGHT",
+    "C-OP-17-SUN",
+    "C-KP-SAMPLING-HOURS",
+    "C-PREDAWN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "**Daily phase.** Daylight at 55°N runs from 7 h at the December solstice to 17 h at the June solstice, so if oxygen follows the sun, sampling held to working hours meets a different phase of its daily cycle as the season moves; the water-chemistry samples whose clock is an observed time rarely visit night or twilight.",
+     "texts": "422b7309007b0a4c",
+     "node D-IL-EVIDENCE": "dc71754e54f5690a",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28",
+     "node X-OP-DAYLIGHT": "e1e982b649eefab2",
+     "rests on C-OP-17-SUN": "7ce0084f455a5b21",
+     "rests on C-KP-SAMPLING-HOURS": "f1981c23d94133c9",
+     "rests on C-PREDAWN": "6166785886794b35"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-CLOCK",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The CTD extract behind the panel carries a date and no hour, as do the Secchi and light-attenuation extracts; the water-chemistry extract carries a clock value per sample, and depth_clock.py lends an observed bottle time to a CTD cast on the same station-day, assuming unchecked that the two share a moment.",
+   "because": "The extracts' headers carry no clock field except in water chemistry, where every genuine row has one; depth_clock.py lends only a clock that clock.py classes as an observed time, and whether cast and bottle share a moment is an unchecked assumption.",
+   "rests_on": [
+    "C-HY-I3-NOCLOCK",
+    "C-DS-STARTKLOK",
+    "C-HY-I3-CHEMCLOCK",
+    "C-DEPTH-BORROW",
+    "A-BORROW"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-NOCLOCK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "The CTD extract this panel is built from carries a date and no hour, and so do the Secchi and light-attenuation extracts. The water-chemistry extract carries a clock value per sample, and where a CTD cast shares a station-day with a bottle whose clock is an observed time, `depth_clock.py` lends the cast that time, on the unchecked assumption that the two share a moment.",
+     "texts": "f6acf636280917b4",
+     "rests on C-HY-I3-NOCLOCK": "5ba9810307ebde13",
+     "rests on C-DS-STARTKLOK": "c4c96df32bc5025b",
+     "rests on C-HY-I3-CHEMCLOCK": "5ce61a93780b6fd5",
+     "rests on C-DEPTH-BORROW": "0d003fb295681b19",
+     "node A-BORROW": "58b2399fcb372723"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-B",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The daily phase cannot be scored on the panel, whose values carry no hour; it could be bounded only through borrowed clocks, which this page does not use, and nothing in the archive constrains the pre-dawn minimum; nothing here licenses a claim that the daily-cycle confound is absent or small.",
+   "because": "The panel is built from the CTD extract, which has no hour; a borrowed clock is the only route to one, and even with clocks the pre-dawn hours where a daily minimum would sit are essentially unsampled. An absence of evidence here is not evidence of a small confound.",
+   "rests_on": [
+    "C-IL-I3-CLOCK",
+    "C-PREDAWN",
+    "C-KP-TIMEOFDAY"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-NOCLOCK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "So the daily phase cannot be scored on the panel, whose values carry no hour; it could be bounded only through borrowed clocks, which nothing on this page uses, and nothing in the archive constrains the pre-dawn minimum. Nothing here licenses a claim that the daily-cycle confound is absent or small.",
+     "texts": "016c1e5666f44a17",
+     "rests on C-IL-I3-CLOCK": "f6acf636280917b4",
+     "rests on C-PREDAWN": "6166785886794b35",
+     "rests on C-KP-TIMEOFDAY": "22e367e8a89e39f1"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-TEST",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "If the count-and-window half is right, an extremal indicator under fixed effort and a fixed calendar window follows a different path through the years than the same indicator on whatever visits each station-year contains; if the two coincide inside the resampling envelope, it is refuted as an explanation of the {ref:O1} trend.",
+   "because": "The test this page sets: holding effort and window fixed removes exactly what the hypothesis says drives the indicator, so a difference between the two paths is its signature and agreement refutes it.",
+   "rests_on": [
+    "D-LR-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:O1}": "O1: Oxygen deficit",
+     "said on hypodrafts/I3.md": "If the count-and-window half is right, an extremal severity indicator computed under **fixed effort and a fixed calendar window** will follow a different path through the years than the same indicator computed on whatever visits each station-year happens to contain. If the two paths coincide inside the resampling envelope, it is refuted as an explanation of the O1 trend.",
+     "hypothesis O1": "8b559c161b2cbb0a",
+     "texts": "4fcf0da9b345c6ba",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-TWO",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The count and the window must be separated, because they can push opposite ways.",
+   "because": "More draws lower the expected minimum, while a sparse programme placed in the months when oxygen is lowest finds low values with few draws; the two effects can therefore offset each other in an indicator that mixes them.",
+   "rests_on": [],
+   "replaces": [
+    "C-IL-OLD-I3-CANCEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "Two directions must be separated, because they can push opposite ways:",
+     "texts": "049d1538df26c963"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-COUNT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "More draws, lower minimum, mechanically.",
+   "because": "The minimum over a set of draws cannot rise when a draw is added, so its expectation falls with the number of draws whatever the water does.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "**Count.** More draws, lower minimum, mechanically.",
+     "texts": "de8a1f7d11a49c19"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-WINDOW",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Which months the draws fall in matters as well as how many; how the panel's sparsely sampled station-years spread over the calendar has not been counted here.",
+   "because": "A programme sampling only in the months of lowest oxygen meets low values with few draws, while one spread over the year dilutes the same number of draws with high months. No script counts the calendar spread of sparse station-years.",
+   "rests_on": [
+    "U-IL-I3-NORUN"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-WINDOW"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-IL-I3-NORUN.label {ref:I3}": "I3: Changing sampling frequency and season",
+     "said on hypodrafts/I3.md": "**Window.** Which months the draws fall in matters as well: a programme that samples only in the months when oxygen is lowest meets low values with few draws, and one spread over the year dilutes the same number of draws with months when oxygen is high. How the panel's sparsely sampled station-years spread over the calendar has not been counted here.",
+     "texts": "556901260da7e96b",
+     "node U-IL-I3-NORUN": "274bdd262848c858"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-PANEL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The monthly station panel holds the counted station-months, stations and variables, one monthly median per station and variable over the month slots from the panel's first January; near-bed oxygen has the counted station-months and stations.",
+   "because": "drafts_b_counts.py reads the panel's declaration and its binary for the totals and the distinct stations per variable; the first year is the panel's own, which cube.py fixes and hypodraft_facts.py reads back.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-IL-SERIES",
+    "X-IL-CUBE",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS",
+    "X-HY-FACTS",
+    "D-IL-HYPFACTS"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-PANEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "`docs/data/areas/stations_series.json` holds 679,422 station-months at 1,415 stations over 9 variables: one monthly median per station and variable, in 564 month slots from January 1980. Near-bed oxygen, `oxy_bed`, has 76,980 station-months at 1,327 stations.",
+     "texts": "f61d747c394ccb1b",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-IL-SERIES": "45e0d9ac2e98cc2c",
+     "node X-IL-CUBE": "2f346bb4313bf8ef",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node X-HY-FACTS": "0c9203a01293ee22",
+     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-RANGE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Panel values are not range-checked: stations_series.py takes the median of every value in the deepest quarter of each cast's depth range, so values no instrument could give, which the extracts carry, reach the panel; the flag record marks the counted station-months and stations as a sign inversion and removes nothing.",
+   "because": "The script applies no bound before taking the median; the extracts are known to carry impossible values, negative oxygen among them; the flag record's sign-flip case is counted by hypodraft_facts.py, and the record keeps every value.",
+   "rests_on": [
+    "X-IL-SERIES",
+    "C-KP-T-SENTINEL",
+    "C-HY-I7-CASE",
+    "D-HY-FLAGS",
+    "X-HY-FACTS",
+    "D-IL-HYPFACTS"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-CLASS1"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "**Values are not range-checked.** `stations_series.py` takes the median of every value in the deepest quarter of each cast's depth range, with no test of range, so values no instrument could give, which the extracts are known to carry, reach the panel. The flag record marks 11 station-months at 6 stations as a sign inversion (I7) and removes nothing.",
+     "hypothesis I7": "498a591b6ac36714",
+     "texts": "c405da3e67a7b863",
+     "node X-IL-SERIES": "45e0d9ac2e98cc2c",
+     "rests on C-KP-T-SENTINEL": "71c240cb72f08eed",
+     "rests on C-HY-I7-CASE": "d66906822d86e34b",
+     "node D-HY-FLAGS": "59611865975d2929",
+     "node X-HY-FACTS": "0c9203a01293ee22",
+     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-REPLIC",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The panel is a monthly median, so within-month replication is gone from it; the CTD extract keeps each cast with its date, so whatever replication there is survives there, and it holds the counted station-days at the counted stations; how many station-months hold more than one sampling day has not been counted, so only the extract can test variance within a month.",
+   "because": "stations_series.py pools every cast of a station-month into one median; hypodraft_ctd.py counts the extract's station-days with temperature and salinity; no held output counts sampling days per station-month.",
+   "rests_on": [
+    "X-IL-SERIES",
+    "D-CTD",
+    "X-KD-HYPCTD",
+    "D-IL-HYPCTD",
+    "U-IL-MULTIDAY"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-REPLIC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on hypodrafts/I3.md": "**The panel is a monthly median**, so within-month replication is gone from it. The CTD extract keeps each cast with its date, so whatever replication there is survives there: `hypodraft_ctd.py` counts 152,671 station-days with temperature and salinity there, at 1,478 stations. How many station-months hold more than one sampling day has not been counted here. So the panel can test count and window, and only the extract can test variance within a month.",
+     "texts": "0962a992e01358ee",
+     "node X-IL-SERIES": "45e0d9ac2e98cc2c",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node X-KD-HYPCTD": "1ceeb76bd5900e03",
+     "node D-IL-HYPCTD": "46e504f8e69f3e96",
+     "node U-IL-MULTIDAY": "bf0963d805285490"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-SAT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Oxygen saturation at the bed is computed from oxygen, temperature and salinity, so it is not an independent measurement, and is not used here.",
+   "because": "As C-KP-DERIVED-CHANNELS argues: a quantity computed from others adds nothing they do not carry.",
+   "rests_on": [
+    "C-KP-DERIVED-CHANNELS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "`oxysat_bed` is computed from oxygen, temperature and salinity, so it is not an independent measurement; it is not used here.",
+     "texts": "7b1ddfd3e8b390e1",
+     "rests on C-KP-DERIVED-CHANNELS": "ac261b0aece7de9e"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-CONSTR",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Constraint: station-years with every calendar month present, so effort is fixed and station composition is fixed inside each unit, and nothing is compared across differently observed units.",
+   "because": "A rule this test sets itself: a unit observed in every month has the same effort as every other such unit, and each unit is one station.",
+   "rests_on": [],
+   "replaces": [
+    "C-IL-OLD-I3-VISITS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "**Constraint:** station-years with every calendar month present. Effort is then fixed, and station composition is fixed inside each unit, so nothing is compared across differently observed units.",
+     "texts": "5286b2c23a7710f2"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-NULL",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The null is the distribution of the indicator over month-sets drawn from each full-year unit's own values, not an assumption that severity rises with count; it has not been computed here.",
+   "because": "The window effect can run against the count effect, so the direction of the null cannot be assumed; resampling each unit's own year keeps its level and season. No script computes it.",
+   "rests_on": [
+    "U-IL-I3-NORUN"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-IL-I3-NORUN.label {ref:I3}": "I3: Changing sampling frequency and season",
+     "said on hypodrafts/I3.md": "**The null is computed, not assumed.** Within the fixed units, draw month-sets from each station-year's own values; the distribution of the indicator over those draws is the null against which any observed path is scored. That severity rises with count is not assumed, since the window effect can run the other way. The null has not been computed here.",
+     "texts": "59c656b696931631",
+     "node U-IL-I3-NORUN": "274bdd262848c858"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-P1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Build the effort-matched panel of station-years containing all of July, August and September, and count them and their stations by decade.",
+   "because": "A step this test sets itself: fixing the window to the months of the season the indicator is about, and reporting how many units and stations support it in each decade.",
+   "rests_on": [],
+   "replaces": [
+    "C-IL-OLD-I3-P1"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "Build the effort-matched panel: station-years containing all of July, August and September; count them, and the stations carrying them, by decade.",
+     "texts": "84a0d6aee75ce475"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-P2",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Compute the indicator on all available months and on exactly July to September, per station-year, never aggregated to water bodies.",
+   "because": "A step this test sets itself: the two versions differ only in the window, and the station is the unit because a water body is a partition laid over the stations.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "Compute the severity indicator twice per station-year: (a) on all available months, (b) on exactly July, August and September. Never aggregate to water bodies; the unit is the station.",
+     "texts": "2f129b56b6b70631"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-P3",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "For each unit draw the stated number of month-sets of the observed size from the unit's own values, and score the observed path against that envelope.",
+   "because": "A step this test sets itself; the number of draws is a stated design value.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "For each unit, draw 200 month-sets of the same size from that unit's own values to get the null envelope for (a). Score the observed path of (a) against it.",
+     "texts": "0bac2be0cd2c5eb1"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-P4",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Regress each indicator on year with station fixed effects and compare slopes and year-to-year paths.",
+   "because": "A step this test sets itself: station fixed effects keep each comparison within a station.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "Regress each indicator on year with station fixed effects. Compare slopes and the year-to-year path of (a) and (b).",
+     "texts": "5dca186b1dce3b45"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-P5",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "Repeat with the August to September window and with a window of at least two of the three months, as sensitivity.",
+   "because": "A step this test sets itself: the result should not hang on one choice of window.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I3.md": "Repeat with the August–September window and with a window of at least two of the three months, as sensitivity.",
+     "texts": "7ff5e963341ba533"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-WOULD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "If the fixed-window indicator is flat where the all-visit one trends, or the slopes differ beyond the envelope, the {ref:O1} severity trend is partly a trend in sampling design and every extremal indicator here must be recomputed effort-matched; if they agree, the count-and-window half is falsified at monthly resolution.",
+   "because": "The two indicators differ only in effort and window, so a difference between them is attributable to sampling design, and agreement leaves nothing for the hypothesis to explain.",
+   "rests_on": [
+    "C-IL-I3-TEST"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:O1}": "O1: Oxygen deficit",
+     "said on hypodrafts/I3.md": "**Would.** If (b) is flat where (a) trends, or the slopes differ beyond the envelope, then the O1 severity trend is partly a trend in sampling design, and every extremal indicator in this project must be recomputed effort-matched. If (a) and (b) agree, the count-and-window half is falsified for extremal indicators at monthly resolution — a real result, and the stronger one.",
+     "hypothesis O1": "8b559c161b2cbb0a",
+     "texts": "6d13c3d331bf8bc8",
+     "rests on C-IL-I3-TEST": "4fcf0da9b345c6ba"
+    }
+   }
+  },
+  {
+   "id": "C-IL-I3-WOULDNOT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I3.md",
+   "claim": "The test says nothing about the daily phase, about variance within a month, about rate indicators, which it does not examine, or about which stations were observed, which is {ref:I1}'s.",
+   "because": "The panel has no hour and no within-month values; the test is built on extremal statistics only, where the count dependence is structural; and the station network is a separate hypothesis.",
+   "rests_on": [
+    "C-IL-I3-B",
+    "C-IL-I3-REPLIC",
+    "D-LR-REGISTER"
+   ],
+   "replaces": [
+    "C-IL-OLD-I3-RATE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on hypodrafts/I3.md": "**Would not.** It says nothing about (i) the daily phase, which stays unscored; (ii) variance within a month, which needs the extract, not this panel; (iii) *rate* indicators, which it does not examine: it is about extremal statistics only, where the count dependence is structural; (iv) which stations were observed, which is I1's.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "20e9c43c3a1ace06",
+     "rests on C-IL-I3-B": "016c1e5666f44a17",
+     "rests on C-IL-I3-REPLIC": "0962a992e01358ee",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-STATUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The test this page specifies has not been run: no script in this repository computes it.",
+   "because": "A search of the scripts and of the repository's history found no code that builds the slope surface, the index or its simulated nulls.",
+   "rests_on": [
+    "U-IL-L3-NORUN"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-STATUS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-IL-L3-NORUN.label {ref:L3}": "L3: The trend depends on the start year",
+     "said on hypodrafts/L3.md": "The test this page specifies has not been run: no script in this repository computes it.",
+     "texts": "f74700538cccdafa",
+     "node U-IL-L3-NORUN": "48ced7ff486de7e9"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-READINGS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "{ref:L3} has a weak reading and a strong reading, and only the strong one is a claim about the sea.",
+   "because": "The weak reading holds of any noisy series and so says nothing about the water; the strong one says the record holds different eras, which is a statement about the sea.",
+   "rests_on": [
+    "D-LR-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:L3}": "L3: The trend depends on the start year",
+     "said on hypodrafts/L3.md": "L3 has a weak reading and a strong reading, and only the strong one is a claim about the sea.",
+     "hypothesis L3": "d25ea94e11a66ed0",
+     "texts": "39b89604ff1c0045",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-WEAK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "That a slope fitted to a Danish series changes when the cut moves is true of any noisy series, whatever the sea did, and is not worth testing.",
+   "because": "A least-squares slope over different years is fitted to different noise, so it changes with the window even when the underlying rate is constant.",
+   "rests_on": [],
+   "replaces": [
+    "C-IL-OLD-L3-WEAK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "**Weak:** *a slope fitted to a Danish series changes when you move the cut.* That is true of any noisy series, whatever the sea did, and is not worth testing.",
+     "texts": "9ddc501f2f1640c5"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-STRONG",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The strong reading: the window-dependence exceeds what a single constant rate plus the series' own autocorrelated noise would produce, so the record holds different eras and one trend number is a category error.",
+   "because": "The definition this page gives the strong reading, so that it can be tested against a stated null.",
+   "rests_on": [
+    "D-LR-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "**Strong:** *the window-dependence exceeds what a single constant rate plus the series' own autocorrelated noise would produce* — i.e. the record contains genuinely different eras, so \"the trend\" is not a well-defined quantity and reporting one number is a category error.",
+     "texts": "94367173bb89791a",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-FALSIFY",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Falsified if the spread of fitted slopes and the positive fraction both fall inside the interval from simulating one constant slope with matched autocorrelated noise; then the strong reading of {ref:L3} is not established for this variable.",
+   "because": "The criterion this test sets itself, matching the strong reading's definition.",
+   "rests_on": [
+    "C-IL-L3-STRONG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:L3}": "L3: The trend depends on the start year",
+     "said on hypodrafts/L3.md": "**Falsified if:** over the full space of admissible windows, the spread of fitted slopes, and the fraction of them that are positive, both fall inside the interval generated by simulating one constant slope with matched `AR(1)` noise. Then the window-dependence is noise around a single rate, the number is estimable, and L3's strong reading is not established for this variable.",
+     "hypothesis L3": "d25ea94e11a66ed0",
+     "texts": "52e416a7a0b9e96d",
+     "rests on C-IL-L3-STRONG": "94367173bb89791a"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-SUPPORT",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Supported if the observed surface is more dispersed, or its sign-share further from a single-trend expectation, than that simulation allows.",
+   "because": "The complement of the falsification criterion, set by this test.",
+   "rests_on": [
+    "C-IL-L3-STRONG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "**Supported if:** the observed surface is more dispersed, or its sign-share further from a single-trend expectation, than that simulation allows.",
+     "texts": "e551a2dea476638d",
+     "rests on C-IL-L3-STRONG": "94367173bb89791a"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-PANEL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The monthly station panel holds the counted station-months, the sum of its variables' counts, at the counted stations over the month slots from the panel's first January; its binary file is eight bytes per station-month, as its declared layout requires.",
+   "because": "drafts_b_counts.py sums the variables' counts from the declaration and measures the binary's length; the generator refuses the page unless the length is exactly eight bytes per station-month, the two unsigned sixteen-bit indices and one four-byte float the layout declares.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-IL-SERIES",
+    "X-IL-CUBE",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS",
+    "X-HY-FACTS",
+    "D-IL-HYPFACTS"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-DROPS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "`docs/data/areas/stations_series.json` holds 679,422 station-months, the sum of its 9 variables' counts, at 1,415 stations, in 564 month slots from January 1980; `stations_series.bin` is 5,435,376 bytes, 8 per station-month, as the declared layout of a `uint16` station index, a `uint16` month index and a `float32` value requires.",
+     "texts": "0740b14c1079402b",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-IL-SERIES": "45e0d9ac2e98cc2c",
+     "node X-IL-CUBE": "2f346bb4313bf8ef",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node X-HY-FACTS": "0c9203a01293ee22",
+     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-OXY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The variable used is near-bed oxygen in mg/l, with the counted station-months and stations.",
+   "because": "drafts_b_counts.py reads the count from the panel's declaration and the distinct stations from its binary.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Variable used: **`oxy_bed`**, near-bed oxygen in mg/l: 76,980 station-months at 1,327 stations.",
+     "texts": "2f5055e662ccd28c",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-RANGE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Panel values are not range-checked, so values no instrument could give reach the panel; the flag record marks the counted sign-inversion station-months and removes nothing; a test must set its own bounds and say how many values they drop.",
+   "because": "stations_series.py applies no bound before taking the median; the extracts are known to carry impossible values, negative oxygen among them; the flag record keeps every value, so a bound is the test's own choice and its effect must be reported.",
+   "rests_on": [
+    "X-IL-SERIES",
+    "C-KP-T-SENTINEL",
+    "C-HY-I7-CASE",
+    "D-HY-FLAGS",
+    "X-HY-FACTS",
+    "D-IL-HYPFACTS"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-DROPS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "`stations_series.py` takes the median of every value in the deepest quarter of each cast's depth range, with no test of range, so values no instrument could give, which the extracts are known to carry, reach the panel; the flag record marks 11 station-months at 6 stations as a sign inversion (I7) and removes nothing. A test must set its own bounds and say how many values they drop.",
+     "hypothesis I7": "498a591b6ac36714",
+     "texts": "403b4954f1cfdd91",
+     "node X-IL-SERIES": "45e0d9ac2e98cc2c",
+     "rests on C-KP-T-SENTINEL": "71c240cb72f08eed",
+     "rests on C-HY-I7-CASE": "d66906822d86e34b",
+     "node D-HY-FLAGS": "59611865975d2929",
+     "node X-HY-FACTS": "0c9203a01293ee22",
+     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-STRUCT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Two faults are structural and only declared: the panel is a monthly median per station, so within-month spread and any daily oxygen cycle are gone from it, and the CTD extract it is built from carries a date and no hour.",
+   "because": "stations_series.py pools every cast of a station-month into one median; the CTD extract has no clock field.",
+   "rests_on": [
+    "X-IL-SERIES",
+    "C-HY-I3-NOCLOCK"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-NOCLOCK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Two further faults are structural and are not fixed, only declared. The panel is a monthly median per station, so within-month spread and any daily oxygen cycle are gone from it, and the CTD extract it is built from carries a date and no hour.",
+     "texts": "034d5ebb070bb643",
+     "node X-IL-SERIES": "45e0d9ac2e98cc2c",
+     "rests on C-HY-I3-NOCLOCK": "5ba9810307ebde13"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-RESID",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Both faults inflate the year-to-year residual, and a null matched to the observed residual widens rather than letting them into the signal.",
+   "because": "Unresolved within-month and daily variation adds variance to each annual value; a null whose noise is estimated from the same residual carries that variance too, so it makes the test harder to pass, not easier.",
+   "rests_on": [
+    "C-IL-L3-STRUCT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Both inflate the year-to-year residual; the null below is matched to the residual actually observed, so they widen the null rather than being smuggled into the signal.",
+     "texts": "ed09cf143afc58c1",
+     "rests on C-IL-L3-STRUCT": "034d5ebb070bb643"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-SATCHK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The saturation cross-check uses oxygen saturation at the bed, which is computed from oxygen, temperature and salinity, and is a robustness check only.",
+   "because": "As C-KP-DERIVED-CHANNELS argues, a computed channel is not an independent measurement, so it can check the concentration result but not stand beside it as a second one.",
+   "rests_on": [
+    "C-KP-DERIVED-CHANNELS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "The saturation cross-check uses `oxysat_bed`, which is computed from oxygen, temperature and salinity, and is reported as a robustness check only.",
+     "texts": "7b3f5b596e0e74fa",
+     "rests on C-KP-DERIVED-CHANNELS": "ac261b0aece7de9e"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-CONSTR",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Constraint: annual index years from the stated first to the stated last year, windows of at least the stated length, giving the computed number of admissible windows.",
+   "because": "The years and the minimum length are stated design values; the window count follows from them by K-IL-WINDOWS.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Constraint: annual index years **1989–2025** (37 years), windows of **at least 10 years**, giving **406 admissible windows**.",
+     "texts": "acf62031bfb696e6"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-INDEX",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The index is the annual mean of residuals after two-way fixed effects for station and calendar month, fitted by alternating demeaning to convergence.",
+   "because": "The definition this test sets itself: removing each station's level and each month's seasonal level leaves a residual comparable across years.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Index = two-way fixed effects (station + calendar month, alternating demeaning to convergence), then the annual mean of residuals.",
+     "texts": "fb965a11aff48d85"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-LEVELS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Station effects absorb level differences, so a change of composition in levels cannot drive the index.",
+   "because": "A station's fixed effect removes its mean before the residuals are averaged, so a station entering or leaving at a different level shifts no annual mean.",
+   "rests_on": [
+    "C-IL-L3-INDEX"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Station effects absorb level differences, so composition change in *levels* cannot drive the index.",
+     "texts": "462fa430f4b83197",
+     "rests on C-IL-L3-INDEX": "fb965a11aff48d85"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-NULLPROC",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "For each station set, estimate the autocorrelation and noise from the detrended index, simulate the stated number of autocorrelated series of the same length, and compute the same window surface on each.",
+   "because": "A step this test sets itself; the number of simulations is a stated design value and the window count follows from the constraint.",
+   "rests_on": [
+    "C-IL-L3-CONSTR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "**The null is not \"zero sensitivity\".** For each station set, estimate ρ and σ from the detrended index, then simulate 4,000 `AR(1)` series of the same length and compute the same 406-window surface. Two nulls:",
+     "texts": "be445c4f336c2cbd",
+     "rests on C-IL-L3-CONSTR": "acf62031bfb696e6"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-H0",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "With no trend at all each window's slope is noise, as likely positive as negative, so both signs across the windows are expected and a sign flip on its own does not tell a trend from none.",
+   "because": "Under a symmetric noise model with zero mean slope, a fitted slope's sign is a coin toss, so windows disagreeing in sign is what no trend produces; a sign flip cannot therefore be evidence against a trend or for one.",
+   "rests_on": [],
+   "replaces": [
+    "C-IL-OLD-L3-H0"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "**`H0`, no trend at all.** Each window's slope is then noise, as likely positive as negative, so finding both signs across the windows is expected with no trend at all: *a sign flip on its own does not tell a trend from none.*",
+     "texts": "74bbc3898279a6cd"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-H1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The second null is one constant slope, equal to the fitted full-window slope, plus matched noise; it is the null the strong reading of {ref:L3} must beat.",
+   "because": "The strong reading is defined against exactly this null.",
+   "rests_on": [
+    "C-IL-L3-STRONG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:L3}": "L3: The trend depends on the start year",
+     "said on hypodrafts/L3.md": "**`H1`, one constant slope equal to the fitted full-window slope, plus matched noise.** This is the null that L3's strong reading must beat.",
+     "hypothesis L3": "d25ea94e11a66ed0",
+     "texts": "0312a3e980c45385",
+     "rests on C-IL-L3-STRONG": "94367173bb89791a"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-COMP",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "If the stations reporting change over the record, station effects absorb their levels but not their seasonal timing, so a summer-peaked or year-round split must state its rule, including a minimum number of observations: a station seen in one calendar month has a seasonal resultant of exactly one.",
+   "because": "A fixed effect removes a station's mean, not the months it was sampled in. The resultant length of a set of angles all at one angle is one, so without a minimum a scarcely sampled station scores as perfectly seasonal.",
+   "rests_on": [
+    "C-IL-L3-LEVELS",
+    "D-LR-REGISTER"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-COMP"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "**Composition.** If the stations reporting change over the record (I1), station effects absorb their levels but not their seasonal timing. A split into summer-peaked and year-round stations must then state its rule, including a minimum number of observations: a station seen in a single calendar month has a seasonal resultant of exactly one by construction, and would count as perfectly seasonal.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "8bd040b517c49a07",
+     "rests on C-IL-L3-LEVELS": "462fa430f4b83197",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-CORE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The test is to be repeated on a fixed core of stations reporting throughout the index period, which a change of composition cannot move.",
+   "because": "A step this test sets itself: a panel whose members do not change has no composition to change.",
+   "rests_on": [],
+   "replaces": [
+    "C-IL-OLD-L3-COMP"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "The test is to be repeated on a fixed core of stations reporting throughout the index period, which a change of composition cannot move.",
+     "texts": "2caed697ee206e2d"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-SAT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "The same surface can be computed on oxygen saturation at the bed, with the counted station-months and stations; a decline in concentration absent in saturation points to solubility rather than oxygen supply; it is not computed here.",
+   "because": "Saturation is oxygen relative to what the water holds at its temperature and salinity, so a change of solubility moves concentration and leaves saturation; the counts come from drafts_b_counts.py; no script computes the surface.",
+   "rests_on": [
+    "C-KP-DERIVED-CHANNELS",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS",
+    "U-IL-L3-NORUN"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-SAT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-IL-L3-NORUN.label {ref:L3}": "L3: The trend depends on the start year",
+     "said on hypodrafts/L3.md": "**Thermometer.** The same surface can be computed on `oxysat_bed` (64,493 station-months at 1,152 stations): oxygen as a share of what the water holds at saturation, at its temperature and salinity. A decline in concentration that is absent in saturation points to solubility rather than oxygen supply. Not computed here.",
+     "texts": "1f151bf0c96b48db",
+     "rests on C-KP-DERIVED-CHANNELS": "ac261b0aece7de9e",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node U-IL-L3-NORUN": "48ced7ff486de7e9"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-LICENSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Once run, the test licenses whether near-bed oxygen in this panel shows window-dependence beyond one constant rate with matched autocorrelation, for this variable and these stations; nothing is licensed yet.",
+   "because": "The test compares one variable's surface on these stations with its own null, so its result reaches no further; it has not been run.",
+   "rests_on": [
+    "C-IL-L3-STATUS",
+    "C-IL-L3-FALSIFY"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-LICENSED",
+    "C-IL-OLD-L3-TABLE",
+    "C-IL-OLD-L3-H1"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Licensed, once run: whether near-bed oxygen in this panel shows window-dependence beyond one constant rate with matched autocorrelation, for this variable and these stations. Nothing is licensed yet.",
+     "texts": "322b56768ff058ac",
+     "rests on C-IL-L3-STATUS": "f74700538cccdafa",
+     "rests on C-IL-L3-FALSIFY": "52e416a7a0b9e96d"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-NOTLIC",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Not licensed: anything about chlorophyll, nutrient loading or the modelled reference condition, where the stake of {ref:L3} lies ({ref:L1}, {ref:L2}); nothing causal.",
+   "because": "The test uses near-bed oxygen only and fits no mechanism; the reference condition is the subject of the two neighbouring hypotheses in the register.",
+   "rests_on": [
+    "D-LR-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:L3}": "L3: The trend depends on the start year",
+     "claim {ref:L1}": "L1: The reference condition never existed",
+     "claim {ref:L2}": "L2: The reference is a model output treated as a fact",
+     "said on hypodrafts/L3.md": "Not licensed: anything about chlorophyll, nutrient loading, or the modelled reference condition, which is where L3's stake actually lies (L1, L2). Nothing causal.",
+     "hypothesis L1": "29e2cdacfb8dab75",
+     "hypothesis L2": "777afa5c2e47ae37",
+     "hypothesis L3": "d25ea94e11a66ed0",
+     "texts": "70bfe1934fdb38c0",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-PRE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Nothing before the panel's first year, which cube.py fixes, is licensed: the CTD extract the panel is built from holds station-days with temperature and salinity from an earlier year, which are not in the panel, and {ref:L3} is about where monitoring records begin.",
+   "because": "The panel's first year is the constant cube.py sets and hypodraft_facts.py reads back; hypodraft_ctd.py finds station-days in the extract from an earlier year; the generator refuses the page if that stops being so.",
+   "rests_on": [
+    "X-IL-CUBE",
+    "X-HY-FACTS",
+    "D-IL-HYPFACTS",
+    "X-KD-HYPCTD",
+    "D-IL-HYPCTD",
+    "D-LR-REGISTER"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-PRE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:L3}": "L3: The trend depends on the start year",
+     "said on hypodrafts/L3.md": "Nor anything before the panel's first year, 1980, which `cube.py` fixes: the CTD extract it is built from holds station-days with temperature and salinity from 1970, and those earlier years are not in the panel. L3 is about where monitoring records begin, so the earlier years matter to it.",
+     "hypothesis L3": "d25ea94e11a66ed0",
+     "texts": "7530fb65c4bd2747",
+     "node X-IL-CUBE": "2f346bb4313bf8ef",
+     "node X-HY-FACTS": "0c9203a01293ee22",
+     "node D-IL-HYPFACTS": "ddbf38e149a4a591",
+     "node X-KD-HYPCTD": "1ceeb76bd5900e03",
+     "node D-IL-HYPCTD": "46e504f8e69f3e96",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-IL-L3-SLOPE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/L3.md",
+   "claim": "Whatever the result, a single slope is not licensed on its own: a published rate needs its window and its null interval beside it.",
+   "because": "Even a surface consistent with one constant rate leaves each window's slope uncertain, so a rate without its window and interval cannot be read.",
+   "rests_on": [
+    "C-IL-L3-H1"
+   ],
+   "replaces": [
+    "C-IL-OLD-L3-RANGE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/L3.md": "Whatever the result, a single slope is not licensed on its own: any published rate needs its window and its `H1` interval printed beside it.",
+     "texts": "0980a9324ec6123e",
+     "rests on C-IL-L3-H1": "0312a3e980c45385"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-NOCLOCK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "No ODA extract has a time-of-day column; the daily phase is unrecoverable, unboundable and unscoreable.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "There is no",
+    "end": "speaks to it.",
+    "why": "Not true of the archive: the water-chemistry extract carries a clock value per sample, and a CTD cast sharing a station-day with a bottle whose clock is an observed time can borrow it, so the daily phase can be bounded there. The field counts were read in the drafting session and are not held."
+   },
+   "replaced_by": [
+    "C-IL-I3-CLOCK",
+    "C-IL-I3-B"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "There is no time-of-day column anywhere in the archive. Verified across all four ODA exports: `ctd.csv.gz` (34 fields), `lys.csv.gz` (30), `maaledybde.csv.gz` (19), `stations.csv` (17) — every temporal field is `YYYYMMDD`. Class 6, absent dimension: not recoverable, not boundable, not countable. `I3b` is unscoreable, not unsupported, and no result below speaks to it.",
+     "texts": "429548c912175e1e"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-CANCEL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The count and window effects push opposite ways and the data show they nearly cancel.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "Two directions must be separated",
+    "end": "nearly cancel:",
+    "why": "That the two effects nearly cancel came from a one-off run in the drafting session whose code and output are not held."
+   },
+   "replaced_by": [
+    "C-IL-I3-TWO"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Two directions must be separated, because they push opposite ways and the data show they nearly cancel:",
+     "texts": "f0cdd120df4cabc8"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-WINDOW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Sparsely sampled station-years put a stated share of their observations in August and September, and densely sampled ones are near-flat by month.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "Sparse programmes are not thin",
+    "end": "few chances to.",
+    "why": "The shares came from a one-off run whose code and output are not held; a re-count from the panel on 2026-09-11 did not reproduce them exactly."
+   },
+   "replaced_by": [
+    "C-IL-I3-WINDOW"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Sparse programmes are not thin versions of dense ones — they are late-summer-targeted. Station-years with ≤3 near-bed oxygen months put 50.2% of their observations in August–September; station-years with ≥9 months are near-flat (7.2%–8.8% per month). Sparse sampling therefore *finds* hypoxia while having few chances to.",
+     "texts": "9688c50bfb590c85"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-PANEL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The panel's month index spans a stated range, and near-bed oxygen covers a stated number of station-years.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "month index",
+    "end": "station-years.",
+    "why": "The month-index range and the count of station-years were read in the drafting session and are not stored by any script; a re-count from the panel on 2026-09-11 agreed with the range and not with the count of station-years."
+   },
+   "replaced_by": [
+    "C-IL-I3-PANEL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "month index 0–560. Variable `oxy_bed`: 76,980 station-months, 11,289 station-years.",
+     "texts": "499fd179e6fc6f65"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-CLASS1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Stated numbers of near-bed oxygen values below zero and above a stated ceiling were dropped, and a stated number retained.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "value error:",
+    "end": "retained.",
+    "why": "The counts of values dropped and kept came from a one-off run and are not stored by any script; a re-count from the panel on 2026-09-11 agreed with them, but a page cannot rest on a re-count nobody keeps. The panel itself applies no range test."
+   },
+   "replaced_by": [
+    "C-IL-I3-RANGE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "value error: 432 values ≤ 0 and 40 > 20 mg/l. Dropped; 76,508 retained.",
+     "texts": "d63cc32a908da0bd"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-REPLIC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The Secchi extract is the complete visit register, and stated shares of station-months, there and in a prefix of the CTD extract, carry more than one sampling day.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "The complete visit register",
+    "end": "So the monthly panel",
+    "why": "The Secchi extract is not a register of every visit, and the shares came from one-off runs, one of them on a prefix of the CTD extract; none is held."
+   },
+   "replaced_by": [
+    "C-IL-I3-REPLIC"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The complete visit register `data/raw/oda/maaledybde.csv.gz` (151,203 soundings, 1,429 stations, 1980–2026) has 50.9% of its 83,011 station-months carrying ≥2 distinct sampling days. Oxygen rows specifically, over a 6M-row prefix of `ctd.csv.gz` (992 stations, 31,539 station-months — a prefix, not a population estimate): 31.9%. So the monthly panel",
+     "texts": "01372288e2565771"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-VISITS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Near-bed oxygen station-years are distributed over visit counts as stated, and a stated number have all months present.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "Visits per station-year",
+    "end": "differently-observed units.",
+    "why": "The distribution of visits per station-year and the count of full-year units came from a one-off run whose code and output are not held; a re-count from the panel on 2026-09-11 agreed with the count of full-year units and not with the distribution."
+   },
+   "replaced_by": [
+    "C-IL-I3-CONSTR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Visits per station-year, `oxy_bed`, all 11,289: 1→1,496 · 2→956 · 3→730 · 4→842 · 5→1,154 · 6→609 · 7→336 · 8→383 · 9→527 · 10→764 · 11→1,113 · 12→2,379. ## The null under the constraint I impose Constraint: station-years with all twelve calendar months present — 2,314 of 11,289. Effort is fixed at 12 and station composition is fixed inside each unit, so nothing is compared across differently-observed units.",
+     "texts": "106244435e96a43a"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-NULL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Annual minima do not fall with visit count, and a resampling of full-year units gives the stated mean minima, exceedance probabilities and ratio.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "The null is computed, not assumed",
+    "end": "against which any observed path is scored.",
+    "why": "The marginal minima, the resampling table and the ratio drawn from it came from a one-off run whose code and output are not held."
+   },
+   "replaced_by": [
+    "C-IL-I3-NULL",
+    "C-IL-I3-STATUS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The null is computed, not assumed, and the naive one is wrong. Marginally, minima do *not* fall with visit count: median annual minimum is 4.73 mg/l at 3 visits and 6.30 at 12. A null of \"severity rises with count\" would be inverted by the window effect. Within the 2,314 fixed units, drawing month-sets from each station-year's own twelve values (200 Monte Carlo draws): | indicator on the same 2,314 station-years | mean min (mg/l) | P(min < 4) | |---|---|---| | min over all 12 months | 5.69 | 0.250 | | Emin over [3 months drawn at random] | 7.23 | 0.058 | | min over the fixed window {Jul, Aug, Sep} | 5.93 | 0.219 | Count alone moves exceedance by 4.3×; fixing the window to Jul–Sep recovers almost all of the 12-month signal from 3 draws. That table *is* the null: the per-station-year resampling distribution of the indicator, against which any observed path is scored.",
+     "texts": "de3441e47fa93c38"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-P1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The effort-matched panel has stated numbers of units, of stations with many such years, and of units by decade band.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "all of Jul, Aug and Sep",
+    "end": "by decade band).",
+    "why": "The unit and station counts came from a one-off run whose code and output are not held; a re-count from the panel on 2026-09-11 did not reproduce the unit counts."
+   },
+   "replaced_by": [
+    "C-IL-I3-P1"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "all of Jul, Aug and Sep — 6,802 units; 8,771 have ≥2 of the three. 323 stations carry ≥10 such years, 225 carry ≥15, spanning 1980–2026 (789 / 2,411 / 2,006 / 1,697 / 1,091 by decade band).",
+     "texts": "1d8c98626fe933b3"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-I3-RATE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Rate indicators have already been shown robust to effort and station composition in this project.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I3.md",
+    "begin": "already shown robust to effort",
+    "end": "composition here",
+    "why": "No held output or page of this project shows rate indicators to be robust to effort and station composition; a search of the documentation found no such result."
+   },
+   "replaced_by": [
+    "C-IL-I3-WOULDNOT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "already shown robust to effort and station composition here",
+     "texts": "c1bef5f0d3bef434"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-STATUS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The procedure was run once on bed oxygen and the numbers on the page are that run.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "Test draft. Status:",
+    "end": "not a literature quote.",
+    "why": "The run is not held: its code and output were never committed, so its numbers cannot be checked."
+   },
+   "replaced_by": [
+    "C-IL-L3-STATUS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Test draft. Status: procedure specified and run once on bed oxygen; numbers below are that run, not a literature quote.",
+     "texts": "f572224d3b2f94cc"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-WEAK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The no-trend null produces window-dependence in a stated share of simulations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "This is true of every noisy series",
+    "end": "from nothing.",
+    "why": "The share came from the unheld simulation; the point stands on the argument alone."
+   },
+   "replaced_by": [
+    "C-IL-L3-WEAK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This is true of every noisy series ever fitted and is not worth testing — see the null below, which produces it 100% of the time from nothing.",
+     "texts": "b843c365feeab8cd"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-DROPS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The panel's months run over a stated range, and stated numbers of impossible near-bed oxygen values were dropped, with the raw range and the rows and stations kept.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "month index",
+    "end": "stations.",
+    "why": "The month range, the counts dropped and kept and the raw range came from the drafting run and are not stored by any script; a re-count from the panel on 2026-09-11 agreed with them, but a page cannot rest on a re-count nobody keeps."
+   },
+   "replaced_by": [
+    "C-IL-L3-PANEL",
+    "C-IL-L3-RANGE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "month index 0–560 = 1980-01 to 2026-09. Variable used: `oxy_bed`, near-bed oxygen in mg/l, 76,980 rows. Dropped 472 as impossible (432 at ≤ 0 mg/l, 40 above 20 mg/l; the raw range is −9.93 to 281.6) — error class 1, value error. Kept 76,508 rows on 1,325 stations.",
+     "texts": "2eade401e0682137"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-NOCLOCK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The archive has no time-of-day column anywhere.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "Two further error classes",
+    "end": "absent dimension",
+    "why": "Not true of the archive: the water-chemistry extract carries a clock value per sample, and the archive is not a monthly median - the panel built from it is. It is the CTD extract behind the panel that has no hour."
+   },
+   "replaced_by": [
+    "C-IL-L3-STRUCT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Two further error classes are structural and are not fixed, only declared. The archive is already a monthly median per station — class 3, aggregation: within-month spread and the diel oxygen cycle are gone before I see the file, and there is no time-of-day column anywhere (class 6, absent dimension",
+     "texts": "a34543f5862e7a53"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-CONSTR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The index years were chosen because fewer than a stated number of stations report before them and the final year holds a stated number of rows.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "Constraint imposed: annual index years",
+    "end": "admissible windows",
+    "why": "The reasons given for the chosen years rest on counts no held output stores."
+   },
+   "replaced_by": [
+    "C-IL-L3-CONSTR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Constraint imposed: annual index years 1989–2025 (37 years; before 1989 fewer than 200 stations report per year, 2026 is a part-year of 819 rows), windows of ≥ 10 years, giving 406 admissible windows",
+     "texts": "b02ee93ded3494e1"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-H0",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Sign-flipping windows occur in every simulation without a trend, with a stated median slope range.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "Sign-flipping windows occur in",
+    "end": "(pooled).",
+    "why": "The share and the median range came from the unheld simulation."
+   },
+   "replaced_by": [
+    "C-IL-L3-H0"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Sign-flipping windows occur in 100.0% of simulations, in every station set. Median slope range 0.104 mg/l/yr (pooled).",
+     "texts": "bba329b3ccfd14dd"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-TABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The run's table of slopes, autocorrelations, positive fractions and null probabilities for four station sets, and the finding that the end year sets the sign.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "| set | stations",
+    "end": "not the start year.",
+    "why": "Every figure in the table and the slopes beside it came from the drafting run, whose code and output are not held."
+   },
+   "replaced_by": [
+    "C-IL-L3-LICENSE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| set | stations | full-window slope | ρ | obs. slope range | frac. positive | P(`H0` frac ≤ obs) | P(`H1` frac ≤ obs) | P(`H1` range ≥ obs) | |---|---|---|---|---|---|---|---|---| | pooled | 1,325 | −0.0064 | +0.35 | 0.112 | 0.145 | 0.023 | 0.150 | 0.360 | | core (≥20 yrs) | 186 | −0.0085 | +0.44 | 0.138 | 0.108 | 0.008 | 0.091 | 0.358 | | year-round (R<0.2) | 427 | −0.0052 | +0.50 | 0.105 | 0.170 | 0.049 | 0.177 | 0.436 | | summer-peaked (R>0.5) | 426 | −0.0035 | −0.15 | 0.171 | 0.352 | 0.246 | 0.448 | 0.429 | Slopes in mg/l/yr. Fitted slopes run from −0.054 to +0.084 (core set) — a 15-fold range crossing zero. With the end fixed at 2025 every start year gives a negative slope (−0.0085 at 1989, −0.054 at 2016); with the start fixed at 1989 the slope is +0.084 ending 1998 and −0.0085 ending 2025. The sign is set by the end year, not the start year.",
+     "texts": "b5035d0de6a065fd"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-H1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every dispersion statistic is consistent with one constant rate plus the series' own autocorrelation.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "Every dispersion statistic is consistent",
+    "end": "reproduces the whole surface.",
+    "why": "The probabilities came from the unheld simulation."
+   },
+   "replaced_by": [
+    "C-IL-L3-LICENSE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Every dispersion statistic is consistent with `H1`. P(`H1` range ≥ observed) is 0.36–0.44 everywhere: one constant rate plus this series' own autocorrelation reproduces the whole surface.",
+     "texts": "cb408edcb8887fbc"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-COMP",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The summer-peaked share falls by stated amounts, the core and year-round runs agree, and a stated split of stations was re-derived.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "The summer-peaked share",
+    "end": "not inherited.",
+    "why": "The shares and the split came from the drafting run; the split's rule was not stated, and this project's audit of the drafts found the split reachable only with no minimum number of observations."
+   },
+   "replaced_by": [
+    "C-IL-L3-COMP",
+    "C-IL-L3-CORE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The summer-peaked share of `oxy_bed` station-months falls from 0.126 (1989–1994) to 0.035 (2015–2019) — the compositional shift is real and large in this variable. It is handled by re-running on a fixed 186-station core panel and on the 427 year-round stations separately; both give the same answer, and the core panel gives a *stronger* directional signal, not a weaker one. My Rayleigh classification (426 summer / 427 year-round) is computed on `oxy_bed` rows only and does not reproduce the project's 293 / 481 — treat the split as re-derived, not inherited.",
+     "texts": "32af48fe285a30b7"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-SAT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Repeating on oxygen saturation raises the positive fraction by stated amounts, with a stated slope, consistent with part of the decline being solubility.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "Repeating on `oxysat_bed`",
+    "end": "Not separated here.",
+    "why": "The counts and fractions came from the drafting run and are not held."
+   },
+   "replaced_by": [
+    "C-IL-L3-SAT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Repeating on `oxysat_bed` (64,493 rows, 449 dropped): the fraction of positive windows rises from 0.11–0.15 to 0.28–0.30, and the full-window slope is −0.015 %sat/yr. Moving from a concentration to a saturation ruler roughly doubles the sign ambiguity. Consistent with part of the mg/l decline being solubility, not oxygen supply. Not separated here.",
+     "texts": "89a1aa4dc7e6843c"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-LICENSED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "For near-bed oxygen the strong reading is not established; start year barely matters and end year decides the sign.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "Licensed: for near-bed oxygen",
+    "end": "end year decides the sign.",
+    "why": "It reports the result of a run whose code and output are not held."
+   },
+   "replaced_by": [
+    "C-IL-L3-LICENSE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Licensed: for near-bed oxygen in this archive, `L3`'s strong reading is not established. The window-dependence is fully reproduced by one constant slope with matched autocorrelation, and the interesting asymmetry is the opposite of `L3`'s framing — start year barely matters, end year decides the sign.",
+     "texts": "c2c81966ae26fcea"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-PRE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The archive starts in the panel's first year, after the loading peak.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "is really about",
+    "end": "measured from a peak",
+    "why": "The CTD extract behind the panel holds station-days from before the panel's first year, which the panel's construction fixes, and no source held here places the loading peak."
+   },
+   "replaced_by": [
+    "C-IL-L3-PRE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "is really about — this archive starts at 1980, after the loading peak, so it cannot test \"a trend measured from a peak",
+     "texts": "dc287d5eae4e8d4a"
+    }
+   }
+  },
+  {
+   "id": "C-IL-OLD-L3-RANGE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The fitted rate ranges between stated slopes.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/L3.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/L3.md",
+    "begin": "And a negative here",
+    "end": "printed beside it.",
+    "why": "The slope range came from the unheld run."
+   },
+   "replaced_by": [
+    "C-IL-L3-SLOPE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "And a negative here does not license reporting a single slope: the fitted rate still ranges −0.054 to +0.084, so any published number needs its window and its `H1` interval printed beside it.",
+     "texts": "cf9746d030dc1311"
+    }
+   }
+  }
+ ]
+}

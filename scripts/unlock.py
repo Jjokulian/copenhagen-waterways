@@ -64,62 +64,41 @@ import live
 DROPIN = os.path.join(ROOT, "data", "dropin")
 DOC = os.path.join(ROOT, "docs", "IF_YOU_HAVE_THE_DATA.md")
 PAGE = "docs/IF_YOU_HAVE_THE_DATA.md"
-THEN = "fb90951"        # the page as it stood before its numbers were checked
 
 # A slot is a promise: put THIS file here in THIS shape and the named scripts
 # will use it. Only sources with a slot can be handed in mechanically; the rest
 # are documented so that someone who holds them knows what would be worth the
-# trouble of making one.
+# trouble of making one. What each slot would unlock, and who holds it, is page
+# text: cmd_doc() writes it as checked claims (data/manual/claims.d/w3-dq.json).
 SLOTS = {
     "SPILDEVANDSDATA": {
         "file": "overflow_measured.csv",
         "shape": "one row per overflow event: outfall_id;lon;lat;start;end;volume_m3;"
                  "rain_mm  (semicolon or comma, header required, ISO timestamps)",
-        "unlocks": "Overflow as a measurement rather than a model. Every overflow "
-                   "figure on this site is a registered or modelled volume; none "
-                   "has been compared with a metered one.",
-        "who": "HOFOR, BIOFOS and other utilities; Miljoestyrelsen through PULS",
         "consumers": [],
     },
     "PULS": {
         "file": "puls_pointsources.csv",
         "shape": "one row per point source per year: cvr;name;lon;lat;year;"
                  "n_kg;p_kg;bod_kg;type",
-        "unlocks": "Point-source load beside the diffuse residual, at the "
-                   "resolution the residual is computed against.",
-        "who": "Miljoestyrelsen",
         "consumers": [],
     },
     "DK-DRAENKORT-AU": {
         "file": "draenede_arealer.tif",
         "shape": "GeoTIFF, EPSG:25832, one band, drained=1 / not=0 or a "
-                 "probability in 0-1. The published product is 30.4 m.",
-        "unlocks": "The surface-versus-drain routing fraction as a mapped "
-                   "quantity instead of a single national dial. Tile-drained "
-                   "land bypasses the riparian zone and most of the "
-                   "denitrification, so this is the term between field surplus "
-                   "and delivered load.",
-        "who": "Aarhus Universitet DCA; Miljoestyrelsen; Danmarks Arealinformation",
+                 "probability in 0-1",
         "consumers": [],
     },
     "CVR-BULK": {
         "file": "cvr_bulk.jsonl",
         "shape": "one JSON object per line, must carry cvr and one of "
                  "{name, industrycode, kommune}",
-        "unlocks": "Turning a CVR number into who and where, for the manure "
-                   "surplus join. The sibling project danish-livestock holds a "
-                   "14,222-row subset; the bulk register would complete it.",
-        "who": "Erhvervsstyrelsen agreement, or a working Datafordeler subscription",
         "consumers": [],
     },
     "ODA-MFS-FISK": {
         "file": "oda_mfs_biota.csv",
         "shape": "the ODA extract as downloaded - semicolon separated, "
                  "ISO-8859-1, Parameter and Enhed columns preserved",
-        "unlocks": "Marine toxicant loading, currently unscoreable: 7 "
-                   "hypotheses turn on whether contaminants rather than "
-                   "nutrients gate recovery.",
-        "who": "anyone with an ODA login and the MFS topics enabled",
         "consumers": [],
     },
     "LER": {
@@ -127,69 +106,29 @@ SLOTS = {
         "shape": "GeoJSON, EPSG:25832, LineString per pipe with at least "
                  "{diameter_mm, material, invert_start_m, invert_end_m, type} "
                  "where type distinguishes faelles / spildevand / regnvand",
-        "unlocks": "A real hydraulic model of the Copenhagen sewer instead of a "
-                   "catchment-level spill estimate. Without pipe geometry and "
-                   "connectivity, overflow can be predicted as whether and "
-                   "roughly how much, never as when within an event - and the "
-                   "timing is where the flush dynamic lives.",
-        "who": "Ledningsejerregistret; the utilities that own the lines; "
-               "Klimadatastyrelsen provisions access",
-        "permission": "Provisioned for excavation safety. Whether a given "
-                      "access covers hydraulic analysis is the holder's "
-                      "question, not this project's - it is recorded here "
-                      "because the data would answer the question, which is a "
-                      "separate fact from whether anyone may ask it that way.",
         "consumers": [],
     },
     "UTILITY-HYDRAULIC-MODEL": {
         "file": "sewer_model_results.csv",
         "shape": "one row per node or outfall per timestep: node_id;lon;lat;"
                  "time;flow_m3s;depth_m;overflow_m3",
-        "unlocks": "The comparison this project cannot make: its own predicted "
-                   "spill against a calibrated commercial model of the same "
-                   "network. Agreement would validate a method that needs no "
-                   "pipe data; disagreement would localise exactly where "
-                   "topography stops being enough.",
-        "who": "HOFOR, BIOFOS and the consultancies that built the models",
         "consumers": [],
     },
     "SLURRY-CONTRACTS": {
         "file": "slurry_agreements.csv",
         "shape": "supplier_cvr;receiver_cvr;year;tonnes;n_kg;p_kg  (a receiving "
                  "parcel id instead of receiver_cvr is more useful still)",
-        "unlocks": "Where the manure from the 581 landless pig holdings - "
-                   "406,192 animal units - actually goes. It leaves the farm by "
-                   "contract, and the contracts are in no public register, so "
-                   "the nitrogen is attributed to a holding that never spread "
-                   "it.",
-        "who": "Landbrugsstyrelsen; the parties to the agreements",
         "consumers": [],
     },
     "DEFENCE-BATHYMETRY": {
         "file": "bathymetry_hires.tif",
         "shape": "GeoTIFF, EPSG:25832, one band of depth in metres, negative "
-                 "down; any grid finer than the 50 m public model is useful",
-        "unlocks": "Bed morphology at the scale that decides where "
-                   "resuspension and sulphidic sediment actually sit. The "
-                   "public depth model is too coarse to separate a trawled "
-                   "furrow from a natural hollow.",
-        "who": "Soevaernet and the national hydrographic survey; some holdings "
-               "are restricted",
-        "permission": "Some of this is restricted for reasons that have nothing "
-                      "to do with the environment. Recorded because it is "
-                      "useful, not because it is available.",
+                 "down; any grid finer than the public depth model, DDM",
         "consumers": [],
     },
     "FIELD-SHEETS-CLOCK": {
         "file": "ctd_visit_times.csv",
         "shape": "station;date;time_utc  - one row per cast",
-        "unlocks": "A clock on oxygen AT DEPTH. The water-chemistry topic "
-                   "carries a time on every row and CTD carries none, so 53.7M "
-                   "profile measurements have a date and no hour. Part of the CTD "
-                   "record can borrow a time from a same-day bottle whose clock is "
-                   "observed; the field sheets would settle the rest and check "
-                   "that borrowing.",
-        "who": "DCE, or whoever holds the original cruise logs",
         "consumers": ["scripts/depth_clock.py"],
     },
 }
@@ -299,184 +238,302 @@ def cmd_check(run=False):
     return 1 if invalid else 0
 
 
+def _reading(sid, value, phrase):
+    """A number read from a pinned document, refused unless the pinned copy holds the
+    phrase (tags set aside and entities read, as the claims register compares it).
+    Each reading gets its own phrase: two readings with one phrase would share an id."""
+    import claims as _claims
+    d = _claims.load()[0]
+    if _claims._flat(phrase) not in _claims._flat(_claims.pin_text(d, sid)):
+        raise live.Unjustified(f"{sid}: the pinned text does not contain '{phrase}'")
+    return live._mk(value, ["reading", sid, "phrase", phrase, _claims._meta(d, sid)])
+
+
 def cmd_doc():
+    """Write docs/IF_YOU_HAVE_THE_DATA.md. Every number comes through live.py, and every
+    assertion is a checked claim registered in data/manual/claims.d/w3-dq.json with what
+    it rests on (LIVE_NUMBERS.md section 11). What the page once said and could not
+    justify is in docs/ARCHIVE.md, not here."""
+    from fetch_queue import FILES
     rows = gated_sources()
-    # every number on the page comes through live.py; the counts of gated sources
-    # and slots are stored by scripts/meta_facts.py, which must be current
     J = lambda name: live.live_json(os.path.join(DERIVED, name))
     meta, en, tri = J("meta_facts.json"), J("enums.json"), J("triage.json")
+    q = J("fetch_queue.json")
     pigs = J("socialcontext.json")["types"]["pigs"]
     cs = J("depth_clock.json")["clock_source"]
     if meta["gated_sources"] != len(rows) or meta["gated_slots"] != len(SLOTS):
         raise SystemExit("data/derived/meta_facts.json is stale against the register "
                          "- run scripts/meta_facts.py first")
-    SELF = []           # numbers carried as quotations of this page's own committed text
+    gated = q["by_tier"]["held"] + q["by_tier"]["account"] + q["by_tier"]["blocked"]
+    if gated != len(rows):
+        raise SystemExit("data/derived/fetch_queue.json is stale against the register "
+                         "- run scripts/fetch_queue.py first")
+    # where each slot is filed in the register - read here, never typed, and the
+    # sentences that name a tier refuse to stand once it has moved
+    tier_of = {s["id"]: classify(s)[0] for s in load()}
+    open_slots = [sid for sid in SLOTS if tier_of.get(sid) == "open"]
+    loose_slots = [sid for sid in SLOTS if sid not in tier_of]
+    for sid, t in (("SPILDEVANDSDATA", "open"), ("DK-DRAENKORT-AU", "blocked")):
+        if tier_of.get(sid) != t:
+            raise SystemExit(f"the page says {sid} is in the {t} tier and it no longer is "
+                             "- reword its slot")
+    C = live.claim
+    files = " and ".join(f"`{f}`" for f in FILES)
+    ler_hours = _reading("LER-GRAVE", 2, "Ledningsejere har 2 timer til at besvare din søgning")
+    drain_res = _reading("KP-DRAENKORT-DCA135", 30.4,
+                         "Kortet har en opløsning på 30,4 x 30,4 meter")
+    drain_acc = _reading("KP-DRAENKORT-DCA135", 79, "og en nøjagtighed på 79%")
 
-    def sq(shown):
-        SELF.append(shown)
-        return live.was(THEN, PAGE, shown)
-
-    kemi_rows = en["kemi"]["rows"]
-    clock_pct = en["kemi"]["nonblank"]["Startklok"] / kemi_rows * 100
-    FIG = {     # figures inside a slot's typed prose, and the checked entity each becomes
-        "CVR-BULK": [("14,222", lambda: sq('holds a @@-row subset;'))],
-        "ODA-MFS-FISK": [("7 hypotheses", lambda: sq('currently unscoreable: @@ hypotheses turn') + " hypotheses")],
-        "SLURRY-CONTRACTS": [("581", lambda: f"{pigs['n_landless']:,}"),
-                             ("406,192", lambda: f"{pigs['landless_de']:,.0f}")],
-        "FIELD-SHEETS-CLOCK": [
-            ("53.7M", lambda: f"{en['ctd']['rows'] / 1e6:.1f}M"),
-            ("Part of the CTD record can borrow", lambda: (
-                f"{cs['borrowed'] / (cs['borrowed'] + cs['none']) * 100:.0f}% of the CTD "
-                "measurements the depth analysis keeps can borrow"))],
+    PAGE = {
+        "SPILDEVANDSDATA": {
+            "unlocks": C("C-DQ-S-OVERFLOW", "Overflow measured event by event. The register's "
+                         "entry under this id is the public spildevandsdata extract, which gives "
+                         "one annual volume and one annual event count per outfall, with no "
+                         "per-event dates or durations, and which the fetch queue puts in its "
+                         "open tier."),
+            "who": C("C-DQ-W-OVERFLOW", "Not found for Copenhagen. The register's only "
+                     "per-event overflow entry is Nyborg Forsyning's telemetry, which it treats "
+                     "as request-only; the open extracts are annual, and PULS is closed."),
+        },
+        "PULS": {
+            "unlocks": C("C-DQ-S-PULS", "The point-source register itself, per source and year. "
+                         "The source register records it as not public and names its public "
+                         "extracts, `MILJOEGIS-RBU-SAML` and `SPILDEVANDSDATA`."),
+            "who": C("C-DQ-W-PULS", "Miljoestyrelsen and Danmarks Miljøportal, the custodians "
+                     "the register records; DP02 puts the system's operation and support with "
+                     "Danmarks Miljøportal."),
+        },
+        "DK-DRAENKORT-AU": {
+            "unlocks": C("C-DQ-S-DRAIN", "Which agricultural land is drained, as a map: the "
+                         "national map gives the probable extent of drained and undrained land "
+                         f"at a resolution of {drain_res} m, with an accuracy of {drain_acc}%, "
+                         "and a layer of the probability of drainage.") + " " +
+                       C("C-DQ-S-DRAIN-ROUTE", "The register has not located a route to the "
+                         "raster, and with no access text recorded, the fetch queue counts it "
+                         "as blocked."),
+            "who": C("C-DQ-W-DRAIN", "Aarhus Universitet, DCA, which made it for "
+                     "Miljoestyrelsen, as the register records; where the raster is "
+                     "distributed was not found."),
+        },
+        "CVR-BULK": {
+            "unlocks": C("C-DQ-S-CVR", "Turning a CVR number into who and where, for the "
+                         "manure surplus join. The sibling project danish-livestock holds CVR "
+                         "records for part of it; the bulk register would complete it."),
+            "who": C("C-DQ-W-CVR", "Not recorded: the source register has no entry for it, so "
+                     "how the bulk register is reached, and on what terms, is not on file."),
+        },
+        "ODA-MFS-FISK": {
+            "unlocks": C("C-DQ-S-MFS", "Contaminants measured in fish tissue: the ODA topic "
+                         "*MFS i biota / Fisk*, for the hypotheses the register names below."),
+            "who": C("C-DQ-W-MFS", "Possibly this project: the register lists the topic behind "
+                     "a registration and a scripted extract, as for the ODA topics already "
+                     "fetched with this project's login, and it has not been fetched."),
+        },
+        "LER": {
+            "unlocks": C("C-DQ-S-LER", "Pipe geometry and connectivity for the Copenhagen "
+                         "sewer. None of the open sources in [DATA_SOURCES.md](DATA_SOURCES.md) "
+                         "gives surveyed invert levels for it, and a hydraulic model of the "
+                         "network needs them. Whether LER's answers carry diameters and invert "
+                         "levels was not found."),
+            "who": C("C-DQ-W-LER", "The line owners, who answer an inquiry made through LER. "
+                     f"LER's page for excavators gives them {ler_hours} hours to answer, and "
+                     "digging waits until all of them have."),
+            "permission": C("C-DQ-P-LER", "An inquiry to LER is a dig inquiry, made before "
+                            "digging. This project plans no dig and does not query LER. LER's "
+                            "site also lists access for authorities and researchers "
+                            "(*Myndigheds- og forskeradgang*), whose terms this project has not "
+                            "read. Whether a given access covers hydraulic analysis is the "
+                            "holder's question, not this project's."),
+        },
+        "UTILITY-HYDRAULIC-MODEL": {
+            "unlocks": C("C-DQ-S-HYDRO", "A calibrated model's results for Copenhagen's "
+                         "network: flow, depth and overflow per node and time step. This project "
+                         "makes no spill prediction of its own to set beside them; DP02 "
+                         "calibrates such a model on measurement at the structure."),
+            "who": C("C-DQ-W-HYDRO", "Not recorded: the source register has no entry for it. "
+                     "DP02 says the structure data such a model needs should be derivable from "
+                     "the utilities' pipe records."),
+        },
+        "SLURRY-CONTRACTS": {
+            "unlocks": C("C-DQ-S-SLURRY", f"Where the manure from the {pigs['n_landless']:,} "
+                         f"landless pig holdings - {pigs['landless_de']:,.0f} animal units - "
+                         "actually goes. It leaves the farm by contract, and the contracts are "
+                         "in no public register, so the nitrogen is attributed to a holding "
+                         "that never spread it."),
+            "who": C("C-DQ-W-SLURRY", "The parties to the contracts, which are in no register "
+                     "this project could find."),
+        },
+        "DEFENCE-BATHYMETRY": {
+            "unlocks": C("C-DQ-S-BATHY", "Bed morphology finer than the public depth model, "
+                         "`DDM`, which the register records as a single current-state grid "
+                         "with the per-survey dates and accuracies composited away."),
+            "who": C("C-DQ-W-BATHY", "Not recorded: the register has no entry for the surveys "
+                     "the public model is composited from. Its custodian is "
+                     "Klimadatastyrelsen, the Danish Hydrographic Office."),
+        },
+        "FIELD-SHEETS-CLOCK": {
+            "unlocks": C("C-DQ-S-CLOCK", "A clock on oxygen at depth. The water-chemistry "
+                         "topic carries a clock value on every genuine row; CTD has no clock "
+                         f"field, so its {en['ctd']['rows'] / 1e6:.1f}M readings have a date "
+                         f"and no hour. `scripts/depth_clock.py` places {cs['borrowed']:,} CTD "
+                         "oxygen measurements with the observed clock of a same-day "
+                         "water-chemistry visit, counted after its quality filters; "
+                         f"{cs['none']:,} rows have no such clock to borrow, counted before "
+                         "them, so the two are not shares of one whole. The field sheets would "
+                         "time the casts directly and check the borrowing."),
+            "who": C("C-DQ-W-CLOCK", "DCE, or whoever holds the original cruise logs"),
+            "consumer": C("C-DQ-S-CONSUMER", "**Read by `scripts/depth_clock.py`.** It runs "
+                          "today on the borrowed clock; when this file is present its times "
+                          "take precedence, and the offset between them and the borrowed clock "
+                          "is measured wherever a station-day has both, so the borrowing is "
+                          "checked rather than trusted."),
+        },
     }
+    if set(PAGE) != set(SLOTS) or any(bool(PAGE[s].get("consumer")) != bool(SLOTS[s]["consumers"])
+                                      for s in SLOTS):
+        raise SystemExit("the page's slot texts no longer match SLOTS - write the missing ones")
 
-    def slot_text(sid, text):
-        for said, now in FIG.get(sid, []):
-            if said in text:
-                text = text.replace(said, now())
-        return text
-
-    a = [].append
     out = []
+
     def w(s=""):
         out.append(s)
     w("# If you have data access we don't")
     w()
     w("## The three states, of which this page is one")
     w()
-    w("Every input this project could use is in one of three states, and the")
-    w("system is written for all three rather than for the one it happens to have.")
-    w("That ordering matters: an analysis written against the data on hand is worth")
-    w("only what that data is worth, but an analysis written against a stated")
-    w("contract runs on whatever arrives, and says what it could not do.")
+    w(C("C-DQ-U-STATES", "This page sorts what the project could use into three states. An "
+        "analysis written against the data on hand is worth only what that data is worth; one "
+        "written against a stated file shape runs on whatever arrives in that shape."))
     w()
     w("| state | meaning | where it lives |")
     w("|---|---|---|")
-    w("| **wanted** | nobody has measured it, anywhere. The measurement has to be "
-      "invented or funded before the question is answerable at all. | "
-      f"[EXPERIMENTS.md](EXPERIMENTS.md), and the {tri['classes']['unscoreable']['n']} "
-      "hypotheses marked "
-      "*unscoreable* in [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) |")
-    w("| **gated** | it exists, someone holds it, and this project cannot reach "
-      "it. | **this page** |")
-    w("| **held** | on disk, with whatever faults it has. | everything else on "
-      "this site, and the fault list in "
-      "[DATA_SOURCES.md](DATA_SOURCES.md) |")
+    w("| **wanted** | nobody has measured it, anywhere. The measurement has to be invented or "
+      "funded before the question is answerable at all. | [EXPERIMENTS.md](EXPERIMENTS.md), "
+      "and " + C("C-DQ-U-UNSCORE", f"the {tri['classes']['unscoreable']['n']} hypotheses "
+                 "marked *unscoreable* in [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md)") + " |")
+    w("| **gated** | it exists, and sits behind a credential, a registration or a closed "
+      "door. | **this page** |")
+    w("| **held** | on disk, with whatever faults it has. | everything else on this site, and "
+      "the fault list in [DATA_SOURCES.md](DATA_SOURCES.md) |")
     w()
-    w("**What is published here is the degraded run of a system built for the")
-    w("first column.** That is the claim worth arguing with. Not *this is what the")
-    w("open data supports* - which invites the reply that the data is poor and the")
-    w("conclusions are therefore soft - but *this is the analysis, here is the")
-    w("contract it consumes, and here is what it currently has to eat.* Hand it")
-    w("better input and the same code produces a better answer without anyone")
-    w("rewriting an argument. Where the answer would change, it changes in public.")
-    w()
-    w("The pattern is not aspirational. Section 2c of [NITROGEN.md](NITROGEN.md)")
-    w("had been written for months and rendered nothing, because the file it needed")
-    w("did not exist; the day that file was first produced, the section appeared")
-    w("with its numbers in it and no prose was written to make that happen.")
+    w(C("C-DQ-U-WRITTEN", "Where a slot has a script that reads it, better input gives a better "
+        "answer without anyone rewriting an argument: `scripts/depth_clock.py` reads the CTD "
+        "visit-time slot when a file is there, and counts the measurements each clock placed. "
+        "The other slots fix a file shape so that the analysis can be written against "
+        "something real."))
     w()
     w("---")
     w()
-    w("*Generated by `scripts/unlock.py` from the source register. Do not hand-edit:*")
-    w("*an earlier hand-written version of this page still named ODA `vandkemi` as the*")
-    w("*top blocker after it had been fetched, and still said no clock time existed in*")
-    w(f"*the archive after the water-chemistry topic turned out to carry one on {clock_pct:.1f}%*")
-    w(f"*of {kemi_rows:,} rows.*")
+    w(C("C-DQ-U-GENERATED", f"*Generated by `scripts/unlock.py` from {files} and the slots "
+        "the script defines.*") + " *Do not hand-edit.*")
     w()
-    w("This project is run from open data by someone with no institutional")
-    w("credentials. A large part of what it cannot answer is not hard - it is")
-    w("**gated**. If you hold a utility login, a field sheet, a drainage archive or a")
-    w("service agreement, you can unblock in an afternoon what this cannot unblock at")
-    w("all.")
+    w(C("C-DQ-U-CREDS", "This project runs on what can be fetched openly and with the "
+        "credentials its fetch scripts read from this machine, which [the fetch "
+        "queue](DATA_QUEUE.md) lists.") + " " +
+      C("C-DQ-U-HOLD", "Some of what it cannot answer waits on data that exists and is "
+        "**gated**: if you hold a utility login, a field sheet, a drainage archive or a service "
+        "agreement, you may be able to supply it."))
     w()
-    w("**You do not have to write any code, and you do not have to send anything to")
-    w("anyone.** Clone the repository, put your file in `data/dropin/` under the name")
-    w("given below, and run:")
+    w(C("C-DQ-U-NOCODE", "**You do not have to write any code, and you do not have to send "
+        "anything to anyone.**") + " Clone the repository, put your file in `data/dropin/` "
+      "under the name given below, and run:")
     w()
     w("```sh")
     w("python3 scripts/unlock.py          # validates it, then runs what it unblocks")
     w("```")
     w()
-    w("The file stays on your machine. Nothing is uploaded. What changes is that the")
-    w("pages regenerate with your data in them, and you can see whether it moves any")
-    w("conclusion - which is the only thing worth knowing.")
+    w(C("C-DQ-U-RUNS", "The file stays on your machine. `unlock.py` checks its shape, runs the "
+        "scripts that read that slot, and rewrites this page; the pages that read what those "
+        "scripts write change when the site is rebuilt."))
     w()
-    w("**Nothing is transmitted, and nothing here decides what you may use.** The")
-    w("file is read on your machine and is never committed or uploaded — which is a")
-    w("materially different act from sending a dataset to anyone. What this page")
-    w("records is that a given dataset *would answer* a given question, and in what")
-    w("shape. Whether your access permits that use is a legal question belonging to")
-    w("you, or to whoever granted it; it is not settled here and this project is not")
-    w("in a position to settle it.")
+    w(C("C-DQ-U-LOCAL", "**Nothing is transmitted, and nothing here decides what you may use.** "
+        "The file is read on your machine and is never committed or uploaded — which is a "
+        "materially different act from sending a dataset to anyone.") + " " +
+      C("C-DQ-U-PERMISSION", "What this page records is that a given dataset *would answer* a "
+        "given question, and in what shape. Whether your access permits that use is a legal "
+        "question belonging to you, or to whoever granted it; it is not settled here and this "
+        "project is not in a position to settle it."))
     w()
-    w("That distinction is why entries appear below that this project could never")
-    w("use itself, including registers provisioned for an entirely different")
-    w("purpose. What a register was built for does not determine what it is useful")
-    w("for. Leaving such an entry out would hide the question from the only people")
-    w("who can answer it — a holder deciding whether their access covers this, or a")
-    w("lawmaker deciding whether it should.")
+    w(C("C-DQ-U-WHYLISTED", "That distinction is why entries appear below that this project "
+        "could never use itself, including registers provisioned for an entirely different "
+        "purpose. What a register was built for does not determine what it is useful for. "
+        "Leaving such an entry out would hide the question from the only people who can answer "
+        "it — a holder deciding whether their access covers this, or a lawmaker deciding "
+        "whether it should."))
     w()
     w("---")
     w()
     w("## 1. Slots — hand these in mechanically")
     w()
-    w("Each of these has a fixed filename and a fixed shape, so the analysis can be")
-    w("written against it before anyone has it.")
+    consumed = [f"`{sl['file']}`" for sl in SLOTS.values() if sl["consumers"]]
+    w(C("C-DQ-U-SLOTS", "Each slot has a fixed file name and a fixed shape, so an analysis can "
+        "be written against it before anyone has the file. Today only " + " and ".join(consumed)
+        + (" has" if len(consumed) == 1 else " have") + " such an analysis, marked below; for "
+        "the others the slot exists so the data can arrive before the analysis is written.")
+      + " " + C("C-DQ-U-HYPLIST", "Where a slot is filed under a register entry the fetch "
+                "queue does not class as open, the hypotheses the entry names are listed with "
+                "it."))
     w()
     for sid, sl in SLOTS.items():
         src = next((s for _, _, s in rows if s["id"] == sid), None)
+        pt = PAGE[sid]
         w(f"### `{sl['file']}` — {sid}")
         w()
-        w(f"**Unlocks.** {slot_text(sid, sl['unlocks'])}")
+        w(f"**Unlocks.** {pt['unlocks']}")
         w()
         w(f"**Shape.** `{sl['shape']}`")
         w()
-        w(f"**Who plausibly holds it.** {sl['who']}")
-        if sl.get("permission"):
+        w(f"**Who holds it.** {pt['who']}")
+        if pt.get("permission"):
             w()
-            w(f"**Permission.** {sl['permission']}")
+            w(f"**Permission.** {pt['permission']}")
         if src and src.get("hypotheses"):
             w()
-            w(f"**Hypotheses waiting on it.** {' '.join(ref(h) for h in src['hypotheses'][:12])}")
-        if sl["consumers"]:
+            w(f"**Hypotheses waiting on it.** {' '.join(ref(h) for h in src['hypotheses'])}")
+        if pt.get("consumer"):
             w()
-            w("**The analysis is already written.** `" + "`, `".join(sl["consumers"])
-              + "` runs today on the best clock available and will use yours the")
-            w("moment the file is here - nobody has to write anything for your data")
-            w("to be used, and you can see at once whether it changes the answer.")
-        else:
-            w()
-            w("*No script consumes this yet.* The slot exists so the data can arrive")
-            w("before the analysis is written - the shape is fixed in advance so the")
-            w("analysis can be written against something real rather than imagined.")
+            w(pt["consumer"])
         w()
     w("---")
     w()
     w("## 2. Everything else the register classifies as gated")
     w()
-    w("Ordered by friction, then by how many hypotheses each serves. *Held* means a")
-    w("credential this project already has and simply has not spent; *account* means a")
-    w("free registration nobody has done; *blocked* means not open.")
+    w(C("C-DQ-U-TABLE", f"Every entry of {files} that the fetch queue does not class as open, "
+        "ordered by tier, then by how many hypotheses the entry names, with every hypothesis "
+        "it names.") + " " +
+      C("C-DQ-U-TIERS", "*Held* means behind a credential this project holds, and some of "
+        "those topics are already on disk; *account* means a registration, an account, a login "
+        "or a token the fetch queue does not count as held; *blocked* means the access text "
+        "says it is closed or unverified, or matches no tier word."))
     w()
     w("| tier | source | serves | what it is |")
     w("|---|---|---|---|")
     for tier, cred, s in rows:
-        hyp = " ".join(ref(h) for h in (s.get("hypotheses") or [])[:6]) or "—"
+        hyp = " ".join(ref(h) for h in (s.get("hypotheses") or [])) or "—"
         nm = ident(s["name"].replace("|", "/")[:90])
         mark = " **[slot]**" if s["id"] in SLOTS else ""
         w(f"| `{tier}` | **{ident(s['id'])}**{mark} | {hyp} | {nm} |")
     w()
-    w(f"**{meta['gated_sources']} gated sources, {meta['gated_slots']} with a slot.**")
+    tail = []
+    if loose_slots:
+        tail.append("no register entry")
+    if open_slots:
+        tail.append("an entry in the open tier (" + ", ".join(f"`{x}`" for x in open_slots)
+                    + ")")
+    w(C("C-DQ-U-COUNT", f"**{gated} entries are not classed open.** The ones a slot is filed "
+        "under are marked **[slot]**" + ("; the other slots match " + " or ".join(tail)
+                                          if tail else "") + "."))
     w()
-    w("If you hold one of the others and it is worth a slot, the shape is cheap to")
-    w("add - the cost is agreeing what the file should look like, not writing the")
-    w("reader.")
+    w(C("C-DQ-U-ADD", "If you hold one of the others and it is worth a slot, the shape is "
+        "cheap to add - the cost is agreeing what the file should look like, not writing the "
+        "reader."))
     w()
-    write_doc(DOC, "\n".join(out).rstrip("\n") + "\n")
-    log(f"wrote {os.path.relpath(DOC, ROOT)} "
-        f"({len(rows)} gated sources, {len(SLOTS)} slots) - {len(SELF)} number(s) "
-        "carried as self-quotation")
+    try:
+        write_doc(DOC, "\n".join(out).rstrip("\n") + "\n")
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
+    log(f"wrote {os.path.relpath(DOC, ROOT)} ({len(rows)} gated sources, {len(SLOTS)} slots)")
     if BAD_REFS:
         log(f"  {len(set(BAD_REFS))} hypothesis id(s) named by a source and absent from "
             f"the register, shown as code: {' '.join(sorted(set(BAD_REFS)))}")

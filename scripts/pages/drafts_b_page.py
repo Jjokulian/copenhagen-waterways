@@ -5,12 +5,12 @@ placeholders - {fig:}, {calc:}, {was:…@@…}, {param:}, {ref:}, {chem:} - reso
 against the register and its fragments, then written through write_doc(), which
 refuses anything left unchecked.
 
-Two kinds of number appear in these pages, and the difference is the point:
-counts of files held in this repository are read live ({fig:} over
-data/derived/drafts_b_counts.json and data/derived/enums.json); counts an earlier
-session made from external sources are quotations of the draft as it was committed
-({was:COMMIT:FILE:phrase with @@}) - located references: the value is read out of
-git at the phrase's slot when the page is built, never typed, and not re-derived.
+Numbers are read live ({fig:} over data/derived/drafts_b_counts.json,
+data/derived/enums.json and the other stored results) or from pinned documents
+({read:}). A quotation of the draft as it was once committed ({was:…@@…}) is not a
+justification for printing a number again: the compiler accepts it only inside a
+historical claim, in the archive of retired claims (docs/ARCHIVE.md). Counts an
+earlier session made from external sources and never stored were retired there.
 """
 import os
 import sys

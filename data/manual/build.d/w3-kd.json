@@ -1,0 +1,47 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/hypodraft_k1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-kd.json",
+    "data/manual/number_constructions.d/w3-kd.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/rescore.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/KD-CMEMS-OC133.txt",
+    "data/derived/pins/KD-CMEMS-BGC012.txt",
+    "data/derived/pins/KD-CMEMS-BGC012-P1D.txt",
+    "data/derived/pins/KD-IPT-DOMEPHYTO.txt",
+    "data/derived/pins/WIKI-REDFIELD.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/K1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_d7.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-kd.json",
+    "data/manual/number_constructions.d/w3-kd.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/waves.json",
+    "data/derived/light.json",
+    "data/derived/ds_facts.json",
+    "data/derived/enums.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/KD-CMEMS-OC133.txt",
+    "data/derived/pins/KD-CMEMS-WAV015.txt",
+    "data/derived/pins/OM-MARINE.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/D7.md"
+   ]
+  }
+ ]
+}

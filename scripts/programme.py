@@ -607,7 +607,7 @@ def framing_gap(F):
                     "is " + (", ".join(rest[:-1]) + " or " + rest[-1] if len(rest) > 1
                              else rest[0]) + ".")
     else:
-        nutrient = f"**and {a_ok} of them are in the nutrient group.**"
+        nutrient = f"**and {a_ok} of them {'is' if int(a_ok) == 1 else 'are'} in the nutrient group.**"
     o = []
     a = o.append
     a("### Why the current framing does not reach those four words\n")

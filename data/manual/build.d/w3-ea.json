@@ -1,0 +1,44 @@
+{
+ "steps": [
+  {
+   "script": "scripts/experiments.py",
+   "inputs": [
+    "data/derived/triage.json",
+    "data/derived/enums.json",
+    "docs/data/flood2012/manifest.json",
+    "data/manual/species.json",
+    "data/manual/claims.d/w3-ea.json",
+    "data/manual/claims.d/w2-hyp.json",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/KD-CMEMS-OC133.txt",
+    "data/derived/pins/EA-WIKI-FMT.txt",
+    "data/derived/pins/EA-WIKI-SML.txt",
+    "data/derived/pins/EA-WIKI-SHIFT.txt",
+    "data/derived/pins/EA-WIKI-EXIF.txt",
+    "data/derived/pins/EA-WIKI-STEPPED.txt",
+    "data/derived/pins/EA-WIKI-BIOFOUL.txt",
+    "data/derived/pins/EA-WIKI-THATCH.txt",
+    "data/derived/pins/EA-WIKI-TEP.txt",
+    "data/derived/pins/EA-WIKI-PRIMING.txt"
+   ],
+   "outputs": [
+    "docs/EXPERIMENTS.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/agent_brief.py",
+   "inputs": [
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/stations_series.bin",
+    "docs/data/areas/partition_subspace.json",
+    "data/manual/claims.d/w3-ea.json",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/EA-WIKI-DECK.txt"
+   ],
+   "outputs": [
+    "docs/AGENT_BRIEF.md",
+    "data/derived/agent_brief.json"
+   ]
+  }
+ ]
+}

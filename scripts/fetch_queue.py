@@ -70,8 +70,13 @@ def ident(text):
 
 def ref(h):
     """A hypothesis a source serves, as a checked reference; an id the register
-    does not hold is shown as code and counted, not silently linked."""
+    does not hold is shown as code and counted, not silently linked. The source
+    registers serve the hypotheses of data/derived/hypotheses.json, so an id two
+    families share (T1-T5 are also terminal outcomes) is the hypothesis."""
+    import refs
     try:
+        if h in refs.entries() and refs.ambiguous(h):
+            return live.ref(h, family="hypotheses")
         return live.ref(h)
     except Exception:
         BAD_REFS.append(h)
@@ -222,38 +227,98 @@ def main():
                            "access": s.get("access"), "caveat": s.get("caveat")}
                           for t, _, _ in TIERS for s in by[t]]})
 
+    # The page. Every assertion on it is a checked claim, registered with what it
+    # rests on in data/manual/claims.d/w3-dq.json (LIVE_NUMBERS.md section 11), and
+    # every count is read back from the file just written. What it once said and
+    # could not justify is in docs/ARCHIVE.md, not here.
+    C = live.claim
+    q = live.live_json(os.path.join(DERIVED, "fetch_queue.json"))
+    obs = live.live_json(os.path.join(DERIVED, "observing.json"))
+    if set(HELD) != {"oda", "dataforsyningen"}:
+        raise SystemExit("HELD has changed: rewrite the page's list of held credentials")
+    read = " and ".join(f"`{f}`" for f in FILES)
+    unread = sorted(f for f in os.listdir(MANUAL)
+                    if f.startswith("data_sources") and f.endswith(".json") and f not in FILES)
+    # entries behind credentials the fetch scripts use but HELD does not name
+    cop = [(s["id"], s["_tier"]) for s in srcs if s["id"].startswith(("CMEMS-", "CDSE-"))]
     o = []
     a = o.append
     a("# The fetch queue\n")
-    a("The source register records what exists. It does not say what to do on "
-      "Monday. This is the same information sorted by friction: what can be "
-      "downloaded now, what is behind a credential we already hold, what needs a "
-      "free registration nobody has done, and what is genuinely closed.\n")
-    # the counts are read back from the file just written, so each is a checked number
-    q = live.live_json(os.path.join(DERIVED, "fetch_queue.json"))
-    obs = live.live_json(os.path.join(DERIVED, "observing.json"))
-    a(f"**{q['n_sources']} sources.** *Unlocks* counts hypotheses that this source "
-      "serves and that nothing easier serves — a crude priority signal, and meant "
-      "to be.\n")
+    a(C("C-DQ-Q-PURPOSE", "The source register records what exists; this page sorts its "
+        "entries by friction: what can be downloaded now, what sits behind a credential this "
+        "project holds, what needs a registration it has not made, and what the register's "
+        "access text does not show to be reachable.") + "\n")
+    count = f"**{q['n_sources']} sources**, from {read}."
+    if unread:
+        names = " and ".join(f"`{f}`" for f in unread)
+        count += (f" {names}, also part of the register, "
+                  + ("is" if len(unread) == 1 else "are") + " not read by this queue, so "
+                  + ("its" if len(unread) == 1 else "their") + " entries are in none of the "
+                  "tiers below.")
+    a(C("C-DQ-Q-COUNT", count) + " " +
+      C("C-DQ-Q-UNLOCKS", "*Unlocks* lists the hypotheses an entry names that no entry in an "
+        "easier tier also names — a crude priority signal, and meant to be.") + "\n")
+    a(C("C-DQ-Q-TIERS", "Each entry's tier is read from its access text by keyword, in this "
+        "order: an ODA topic, or a source that names Dataforsyningen, is *held*; words for not "
+        "public, request-only, FOI, provisioning, unverified or no download make it *blocked*; "
+        "words for a registration, an account, a login or a token make it *account*; words for "
+        "an open or key-free download make it *open*; and an entry that matches none of these "
+        "is counted as *blocked*. Because the account words are tested before the open ones, "
+        "an access text saying that no login or no registration is needed is counted as "
+        "*account*. The tiers have not been checked by hand entry by entry, and the note under "
+        "the credentials shows where they go wrong for the Copernicus entries.") + "\n")
     a("| tier | | sources |")
     a("|---|---|---:|")
     for t, label, _ in TIERS:
         a(f"| `{t}` | {label} | {q['by_tier'][t]} |")
     a("")
-    for k, (n, h) in HELD.items():
-        a(f"- **{n}** — {h}")
+    a("The credentials the queue counts as held:\n")
+    a("- " + C("C-DQ-Q-ODA", "**ODA / Overfladevandsdatabasen** — an email login, and a "
+               "scripted SOAP extract in `scripts/oda_client.py`"))
+    a("- " + C("C-DQ-Q-DF", "**Dataforsyningen** — an API token, which "
+               "`scripts/terraincheck.py` reads to fetch the national elevation model"))
     a("")
-
-    for t, label, what in TIERS:
+    parts = []
+    for t in ("open", "account", "blocked"):
+        ids = sorted(i for i, tt in cop if tt == t)
+        if ids:
+            parts.append(" ".join(f"`{i}`" for i in ids) + f" as *{t}*")
+    if parts:
+        a(C("C-DQ-Q-UNCOUNTED", "The queue counts only these as held. This project's fetch "
+            "scripts also read Copernicus Data Space client credentials "
+            "(`scripts/fetch_satellite.py`) and Copernicus Marine credentials "
+            "(`scripts/fetch_cmems.py`) from this machine, so the Copernicus entries are "
+            "counted in tiers that say otherwise: " + "; ".join(parts) + ".") + "\n")
+    a(C("C-DQ-Q-ROWS", "In each tier below, entries are ordered by how many hypotheses they "
+        "unlock. *Indexed by* is read from the entry's spatial and aggregation text by keyword: "
+        "a position, a **region**, both (*mixed*), or `?` where neither matched. *What it is* "
+        "is the entry's name, shortened where long.") + "\n")
+    DESC = {
+        "open": C("C-DQ-Q-OPEN", "*The access text reads as open — an open or direct "
+                  "download, a service asking no key or authentication, or an open licence — "
+                  "and names nothing that puts it in another tier.*"),
+        "held": C("C-DQ-Q-HELD", "*An ODA topic, or a service behind the Dataforsyningen "
+                  "token: behind a credential this project holds. Some are already on disk: "
+                  "the ODA extracts `kemi`, `ctd`, `lys` and `maaledybde`.*"),
+        "account": C("C-DQ-Q-ACCOUNT", "*The access text names a registration, an account, "
+                     "a login or a token that the queue does not count as held.*"),
+        "blocked": C("C-DQ-Q-BLOCKED", "*The access text says not public, request-only, FOI, "
+                     "provisioned, unverified or without a download — or matches no tier word "
+                     "at all. Entries recording data confirmed not to exist are here too.*")
+                   + " " + C("C-DQ-Q-PULSCLOSED", "`PULS` is one whose data exists and is "
+                             "closed: the register records it as not public, reached through "
+                             "an organisation's IT coordinator."),
+    }
+    MARK = {"position": "position", "region": "**region**", "mixed": "mixed",
+            "unknown": "?"}
+    for t, label, _ in TIERS:
         rows = by[t]
         if not rows:
             continue
         a(f"## {label} — {q['by_tier'][t]}\n")
-        a(f"*{what}*\n")
+        a(DESC[t] + "\n")
         a("| source | unlocks | indexed by | what it is |")
         a("|---|---|---|---|")
-        MARK = {"position": "position", "region": "**region**", "mixed": "mixed",
-                "unknown": "?"}
         for s in rows:
             u = " ".join(ref(h) for h in s["_unlocks"]) or "—"
             a(f"| **{ident(s['id'])}** | {u} | {MARK[s['_spatial']]} "
@@ -261,48 +326,51 @@ def main():
         a("")
 
     a("## The resolution rule\n")
-    kinds = collections.Counter(s["_spatial"] for s in srcs)
-    a("Nothing here is stored at an administrative unit — not per water body, not "
-      "per catchment, not per municipality, not per sub-basin. Everything is "
-      "carried at the resolution it was taken: a position, a time, and where it "
-      "exists a depth.\n")
-    a("That is not fastidiousness. [OBSERVING.md](OBSERVING.md) establishes that a "
-      f"water body explains **{obs['variance']['share_between_wb'] * 100:.1f}%** of the "
-      "variation in the one variable Denmark "
-      "measures densely enough to check, and that two stations inside one share "
-      "about four percent of their year-to-year variance. A source already summed "
-      "into those polygons would carry the assumption straight back in, and "
-      "everything computed from it would inherit a unit we had just shown is not "
-      "one.\n")
-    a("| indexed by | sources | |")
-    a("|---|---:|---|")
+    a(C("C-DQ-Q-RULE", "The rule: a source is carried at the resolution it was taken — a "
+        "position, a time, and where it exists a depth — and not at an administrative unit "
+        "such as a water body, a catchment, a municipality or a sub-basin. This page flags each "
+        "source by what it is indexed by; it does not enforce the rule.") + "\n")
+    wb = obs["variance"]["share_between_wb"] * 100
+    mr = obs["internal"]["mean_r"]
+    a(C("C-DQ-Q-WHY", "The reason is in [OBSERVING.md](OBSERVING.md): in bathing-water "
+        "quality at stations with a long record, once the national year-to-year swing is "
+        f"removed, variation between water bodies is **{wb:.1f}%** of the whole, and between "
+        f"two stations in the same water body {mr * mr * 100:.1f}% of the wobble in one is "
+        "shared with the other. A source already summed into those polygons would carry the "
+        "unit back in, and everything computed from it would inherit it.") + "\n")
     kinds = q["by_spatial"]
-    a(f"| position | {kinds['position']} | a place something was measured |")
-    a(f"| **region** | {kinds['region']} | somebody's aggregate; usable, but never "
-      f"as a measurement |")
-    a(f"| mixed | {kinds['mixed']} | carries both; take the position field |")
-    a(f"| ? | {kinds['unknown']} | not stated clearly enough to tell |")
+    a(C("C-DQ-Q-INDEX", "Counted by that keyword reading of each entry's spatial and "
+        "aggregation text; `?` means the text matched no keyword, not that the source has no "
+        "index.") + "\n")
+    a("| indexed by | sources |")
+    a("|---|---:|")
+    a(f"| position | {kinds['position']} |")
+    a(f"| **region** | {kinds['region']} |")
+    a(f"| mixed | {kinds['mixed']} |")
+    a(f"| ? | {kinds['unknown']} |")
     a("")
-    a("The region-indexed sources are often the only version that exists, and "
-      "several matter a great deal — the monthly nutrient input series is per "
-      "marine reference polygon, and there is no per-outfall alternative. They "
-      "enter the panel labelled as somebody's aggregate of a measurement, and never "
-      "as the measurement.\n")
-    a("> **What a water body actually is, if it is anything, is a question to be "
-      "answered from the data rather than assumed by the schema.** Put the "
-      "observations on the map with their own coordinates and times, see which move "
-      "together, and check every proxy against an unrelated one. The administrative "
-      "polygon is then an overlay to be tested against — not a container to pour "
-      "things into.\n")
+    a(C("C-DQ-Q-TILF", "A region-indexed source can still be the one to fetch: the monthly "
+        "nutrient input to the sea, `ODA-TILFOERSEL`, is given per marine reference polygon, "
+        "and the register records the stream stations behind it as available separately, in "
+        "`ODA-STOFTRANSPORT`.") + " " +
+      C("C-DQ-Q-AGG", "Under the rule such a source is used as somebody's aggregate of a "
+        "measurement, never as the measurement.") + "\n")
+    a("> " + C("C-DQ-Q-WB", "**What a water body actually is, if it is anything, is a question "
+               "to be answered from the data rather than assumed by the schema.** Put the "
+               "observations on the map with their own coordinates and times, see which move "
+               "together, and check every proxy against an unrelated one. The administrative "
+               "polygon is then an overlay to be tested against — not a container to pour "
+               "things into.") + "\n")
 
     a("## What this does not tell you\n")
-    a("Friction is not value. Several entries in the last tier matter more than "
-      "anything in the first — per-event overflow volumes, monthly trawling effort, "
-      "and marine phytoplankton species counts are each closed, and each of them "
-      "would settle a hypothesis that currently cannot be ranked at all. The tiers "
-      "say what is easy, and the register says what is important; they are "
-      "different questions and this page is only the first one.\n")
-    write_doc(OUT, "\n".join(o) + "\n")
+    a(C("C-DQ-Q-VALUE", "Friction is not value. The tiers say what is easy to reach, and each "
+        "register entry's hypotheses say what it would serve; they are different questions, "
+        "and this page answers only the first.") + "\n")
+    try:
+        write_doc(OUT, "\n".join(o) + "\n")
+    except live.Unjustified as e:
+        log(str(e))
+        return 1
     log(f"\nwrote docs/DATA_QUEUE.md ({os.path.getsize(OUT):,} chars)")
     if BAD_REFS:
         log(f"  {len(set(BAD_REFS))} hypothesis id(s) named by a source and absent from "

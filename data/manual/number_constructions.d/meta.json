@@ -245,11 +245,11 @@
      },
      "gated_sources": {
       "kind": "counted",
-      "is": "Sources the source register classifies as gated - held by someone, not reachable by this project - as `gated_sources()` in `scripts/unlock.py` returns them."
+      "is": "Sources the source register does not class as open - the held, account and blocked tiers of `classify()` - as `gated_sources()` in `scripts/unlock.py` returns them. The held tier is reachable by this project: the ODA extracts on disk came through it."
      },
      "gated_slots": {
       "kind": "counted",
-      "is": "Gated sources with a drop-in slot: a fixed filename and shape in `SLOTS` in `scripts/unlock.py`."
+      "is": "Drop-in slots: the entries of `SLOTS` in `scripts/unlock.py`, each a fixed filename and shape. It counts slots, not sources; a slot need not sit under a gated source."
      },
      "light_start_depth_diff_pct": {
       "kind": "computed",
@@ -298,7 +298,7 @@
     "data/derived/light.json"
    ],
    "confirmed": {
-    "by": "fork w2-hyp (re-read: meta_facts.py takes only the lengths of the hypotheses and groups lists from hypotheses.json, and those are unchanged at 166 and 17. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "data/derived/enums.json": "d6e860d36c583106",
@@ -309,7 +309,7 @@
      "scripts/clock.py": "e2fb9cafe90c804b",
      "scripts/daylight.py": "84c11f42cb7e2cab",
      "scripts/meta_facts.py": "eea330a720cf22c6",
-     "scripts/unlock.py": "0dd922c6506ad4dc",
+     "scripts/unlock.py": "fcf535d055ad6f9d",
      "data/derived/light.json": "3bf11c218286e4c6"
     }
    }
@@ -430,10 +430,10 @@
     "data/derived/floodmaps/_georef.json"
    ],
    "confirmed": {
-    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (re-read: floodgap.py changed only in two comments - typed shares that no longer match the data are gone, and the unstored palette check is called unstored, as agent w3-fr found; the syntax tree is identical, so no computation changed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
     "saw": {
-     "scripts/floodgap.py": "76ca448241807d3d",
+     "scripts/floodgap.py": "740a7dae580b98d0",
      "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4"
     }
    }
@@ -579,10 +579,10 @@
     "data/raw/oda/kemi.csv.gz"
    ],
    "confirmed": {
-    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (re-read rescore.py after my edit: A5's still-missing list now names volume transport at the Belt and Sound sections, as A5's own Needs line asks and the source register finds no open series; the salinity key takes promille, the unit the extract carries; a docstring and a comment lost typed counts. The matrix logic and every test are unchanged - the tests read no salinity and select no hypothesis by class. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
     "saw": {
-     "scripts/rescore.py": "0f053842cbb98d60",
+     "scripts/rescore.py": "7bbddbd8f771e443",
      "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3"
     }
    }
@@ -886,10 +886,10 @@
     "scripts/floodmaps.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: floodmaps.py changed only in one comment - the depth PNG holds each band's legend colour, not a band index, as agent w3-dq found; the parsed syntax tree is identical before and after, so no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/floodmaps.py": "b6aac5de8e3311c4"
+     "scripts/floodmaps.py": "eefd81a4560f94b7"
     }
    }
   },
@@ -928,10 +928,10 @@
     "scripts/floodmaps.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: floodmaps.py changed only in one comment - the depth PNG holds each band's legend colour, not a band index, as agent w3-dq found; the parsed syntax tree is identical before and after, so no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/floodmaps.py": "b6aac5de8e3311c4"
+     "scripts/floodmaps.py": "eefd81a4560f94b7"
     }
    }
   },
@@ -1068,10 +1068,10 @@
     "scripts/experiments.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: the only change since the last reading is a family argument on ambiguous T1-T5 references in experiments.py - they are group T hypotheses (T5 sediment inoculation, T2 fauna) - plus the refs import; verified by hashing the file with those removed, which matches what was last read. No number-producing code touched. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read experiments.py after agent w3-ea's rewrite: the register X, KINDS and SCALES are unchanged, and main() still takes n_experiments, by_kind, by_scale and no_institution over X exactly as before - its only change is a log line; the page part was rewritten. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/experiments.py": "b580626c6de8a7a8"
+     "scripts/experiments.py": "ec499c4afa386d61"
     }
    }
   },
@@ -1083,7 +1083,7 @@
     "fields": {
      "n_sources": {
       "kind": "counted",
-      "is": "Distinct source ids across the source registers `data/manual/data_sources*.json`."
+      "is": "Distinct source ids across the source registers `fetch_queue.py` reads (its `FILES`: `data_sources.json` and `data_sources_2.json`); `data_sources_3.json` is not read, and the queue says so when it runs."
      },
      "by_tier.*": {
       "kind": "counted",
@@ -1123,10 +1123,10 @@
     "data/manual/data_sources_2.json"
    ],
    "confirmed": {
-    "by": "Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
     "saw": {
-     "scripts/fetch_queue.py": "c3699a99510d3774",
+     "scripts/fetch_queue.py": "cd1d8eb48e96e506",
      "data/manual/data_sources.json": "bbcf3ff9710105f6",
      "data/manual/data_sources_2.json": "6d052e73fa896f81"
     }

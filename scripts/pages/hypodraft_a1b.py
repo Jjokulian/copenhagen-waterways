@@ -1,120 +1,186 @@
 #!/usr/bin/env python3
-"""Writes docs/hypodrafts/A1b.md: a hypothesis draft, as generated text.
+"""docs/hypodrafts/A1b.md - a discontinuity test of whether the constructed field
+surplus coheres with the measured nitrogen load; not in the hypothesis register, it
+serves A1.
 
-Every hypothesis ID is a checked reference, every chemical species a checked
-species, and every number either read live or quoted from the page as committed
-({q:…@@…}, a located quotation - see draftkit.py) because nothing in the repository stores it yet.
+Every number is read from data (live_json) or from a pinned document ({read:}); every
+assertion is a checked claim (LIVE_NUMBERS.md section 11), registered in
+data/manual/claims.d/w3-ba.json. What the draft once said and could not justify is in
+docs/ARCHIVE.md, not here.
 
     python3 scripts/pages/hypodraft_a1b.py
 """
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import draftkit
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+import draftkit  # noqa: E402
+from draftkit import RD  # noqa: E402
+import live  # noqa: E402
+from common import DERIVED  # noqa: E402
 
 REL = "docs/hypodrafts/A1b.md"
-TEXT = r"""# A1b — Does the constructed surplus cohere with the measured load?
+C, R = live.claim, live.ref
+TAX = "https://github.com/Jjokulian/statistical-methods#7b-rate-a-data-stream-by-the-errors-it-can-contain"
 
-**Not in HYPOTHESES.md.** This test came out of a question about {ref:A1} and is written here
-because it is more specific than the hypothesis it serves: *the field surplus is a
-construction and the stream and estuary nitrogen are measurements — do they move
-together, and does the relation hold still?*
 
-Companion to [`A1.md`](A1.md), which drafts the residual-growth test on the published
-attribution. This one tests the **coupling**, not the accounting.
+def J(name):
+    return live.live_json(os.path.join(DERIVED, name))
 
----
 
-## The observable consequence
+def text():
+    kemi_p = J("enums.json")["kemi"]["categorical"]["Parameter"]
+    if "Nitrogen,total N" not in kemi_p:
+        raise live.Unjustified("A1b: the water-chemistry extract no longer carries total nitrogen")
 
-`markoverskud` contains at least two components that no field produced:
-
-- **1999** — the nitrogen norm was cut {q:was cut @@, dropping}, dropping the quota {q:the quota @@, while}, while grass
-  norms changed simultaneously, raising it {q:simultaneously, raising it @@. DCE's own}. DCE's own report calls the
-  result a *"spring"* in the compiled series.
-- **2012** — the method for computing nutrients removed at harvest changed from
-  dry-matter yield to feed units, and the net-input figures *"er steget lidt ift. de
-  tidligere opgørelser."*
-
-Both are **administrative events on known dates with no physical counterpart.** So:
-
-> **If the constructed series steps at 1999 and the measured series does not, the
-> surplus↔load relation must break at that date. The size of the break is a direct
-> measurement of the construction's non-physical component.**
-
-**Falsified if** the relation is stable across 1999 — which would mean either the norm
-change passed through to real application, or the step is small relative to the noise,
-and either way the construction is not carrying a spurious discontinuity.
-
-**Confirmed if** a regression fitted before 1999 mispredicts after it, in the direction
-and roughly the magnitude the norm change implies.
-
-## Why this test and not a correlation
-
-Windolf et al. (2012) already report significant linear relations between N surplus and
-normalised diffuse load in nine of ten catchments, over 1990–2009. **They fit one line
-per catchment over the whole window and never ask whether it holds in both halves** —
-and that window straddles 1999. A correlation over the full period cannot distinguish a
-real coupling from a coupling plus a shared administrative step; a discontinuity test
-can, because only one of the two series should step.
-
-This is the residual-growth logic applied sideways. There, a part is moved out of a
-leftover and the arithmetic must close. Here, a part is moved *into* the construction by
-an administrative decision, and the measurement must **not** move.
-
-## Data
-
-| | source | status |
-|---|---|---|
-| annual `markoverskud`, national, 1990– | DCE SR120 Bilag 1; recomputed each vintage | **public PDFs**, `pdftotext`-extractable |
-| annual N surplus per catchment | Windolf et al. (2012) supplementary B | with the paper |
-| normalised diffuse load per catchment | Windolf et al. (2012); DCE annual reports | published |
-| **estuary total N, measured** | national monitoring 1989–, {q:national monitoring 1989–, @@/yr | the}/yr | the independent terminal series |
-| stream N, gauged fraction | fortnightly total-N × daily discharge | measured; {q:discharge | measured; @@ of area by} of area by catchment |
-
-**Error classes**: the surplus is a **norm product**; the load is **hybrid** — measured
-on the gauged fraction, class 7 on the rest, since the ungauged part is DK-QNP output
-whose input is the surplus itself. **Use the gauged fraction only**, or the test is
-partly circular by construction. Estuary N is the cleanest series available and is
-class 1–2 throughout.
-
-## The null, which is not zero
-
-A break-point test finds breaks in autocorrelated series with no breaks in them. The
-null must be **matched-autocorrelation surrogates with no step**, and the reported
-quantity is where the observed break sits in that distribution — not a p-value against
-independence.
-
-Two further controls, both cheap:
-
-- **Placebo dates.** Fit the same break test at every year 1993–2006. If 1999 is not
-  distinguished from its neighbours, there is no step to find.
-- **Gauged-fraction stratification.** The circular component scales with the modelled
-  share, so the effect should be **strongest at Isefjord ({q:Isefjord (@@ gauged) and} gauged) and weakest at
-  Randers ({q:at Randers (@@)**. That gradient})**. That gradient is a prediction no rival explanation makes.
-
-## What a result would and would not license
-
-**Would**: a number for how much of the surplus series is administrative, on a stated
-date, with the measured series as reference.
-
-**Would not**: anything about whether agriculture causes hypoxia. This tests the
-coherence of two series, one constructed and one measured. A clean break at 1999 would
-say the construction carries a bookkeeping jump — not that the underlying load did not
-fall. Windolf's measured estuary nitrogen fell {q:nitrogen fell @@ regardless, and} regardless, and the intercept of
-those regressions lands on independently measured background. **Both things can be true:
-the construction is partly administrative, and the decline is real.**
-
-## Status
-
-Not run. The catchment-level series are in a paper supplement and DCE annual reports;
-neither has been extracted. Nothing here has been computed.
-"""
+    o = []
+    w = o.append
+    w("# A1b — Does the constructed surplus cohere with the measured load?")
+    w("")
+    w("*Generated by `scripts/pages/hypodraft_a1b.py`: a test in service of a hypothesis, "
+      "what it would need and what it could show. Each marked statement links to what it "
+      "rests on.*")
+    w("")
+    w("**Not in the hypothesis register.** "
+      + C("C-BA-A1B-REGISTER", f"This test is not one of the register's hypotheses: it "
+          f"serves {R('A1')}, and is more specific than it.")
+      + " "
+      + C("C-BA-A1B-QUESTION", "*The field surplus is a construction; the stream and "
+          "estuary nitrogen are measured, the stream series only where it is gauged. Do "
+          "they move together, and does the relation hold still?*"))
+    w("")
+    w("Companion to [`A1.md`](A1.md), which drafts the residual-growth test on the "
+      "published attribution. This one tests the **coupling**, not the accounting.")
+    w("")
+    w("---")
+    w("")
+    w("## The observable consequence")
+    w("")
+    w(C("C-BA-A1B-NORMS", "`markoverskud`, the field surplus, is built from coefficients as "
+        "well as counts: manure nitrogen from livestock numbers times the norms in force, "
+        "crop nitrogen from the editions of the feed tables. It can move when a coefficient "
+        "moves, with no change in any field. SR120 records two changes on known dates:"))
+    w("")
+    w("- " + C("C-BA-A1B-1999", "**1999** — the nitrogen norm was cut "
+               f"{RD('SR120', '10', 'I 1999 blev kvælstofnormen reduceret med 10 %')}%, "
+               "lowering the nitrogen *quota* by about "
+               f"{RD('SR120', '40,000', 'hvilket betød et fald i kvoten på ca. 40.000 tons N')} "
+               "t N, while grass norms changed and raised it by about "
+               f"{RD('SR120', '15,000', 'at kvoten øges med ca. 15.000 tons N pr. år')} t N a "
+               "year; SR120 calls the result a *\"spring\"* — a step — in the compiled "
+               "quotas.")
+      + " "
+      + C("C-BA-A1B-1999-QUOTA", "The quota is what a farm may apply, set from crop norms; "
+          "it is not a term of the surplus, and a cut in it can change what is applied. "
+          "Whether the surplus steps at 1999, and by how much, is what the test measures."))
+    w("- " + C("C-BA-A1B-2012", "**2012** — the method for nutrients removed at harvest "
+               "changed from dry-matter yield to feed units for roughage crops, and SR120 "
+               "records that its *phosphorus* net-input figures *\"er steget lidt ift. de "
+               "tidligere opgørelser\"* — rose against the earlier reports: a revision "
+               "between vintages, stated for phosphorus. Its effect on nitrogen is not stated "
+               "there."))
+    w("")
+    w("> " + C("C-BA-A1B-TEST", "**If the constructed series steps at 1999, or at another "
+               "date where a coefficient changed, and the measured series does not, the "
+               "surplus↔load relation must break at that date. The size of the break "
+               "measures the construction's non-physical component.**"))
+    w("")
+    w(C("C-BA-A1B-FALSIFY", "**Falsified if** the relation is stable across 1999 — either "
+        "the norm change passed through to what was applied and to the load, or the step is "
+        "small relative to the noise; either way the construction carries no spurious "
+        "discontinuity there."))
+    w("")
+    w(C("C-BA-A1B-CONFIRM", "**Confirmed if** a regression fitted before 1999 mispredicts "
+        "after it, in the direction and roughly the magnitude the norm change implies."))
+    w("")
+    w("## Why this test and not a correlation")
+    w("")
+    w(C("C-BA-A1B-WHOLE", "SR353 states its relation between the national field surplus and "
+        "the normalised diffuse load *\"for perioden som helhed\"* — for the period as a "
+        "whole, over a series it computes from 1990: one relation across the 1999 change. A "
+        "correlation over the whole period cannot distinguish a real coupling from a "
+        "coupling plus a shared administrative step; a discontinuity test can, because only "
+        "one of the two series should step."))
+    w("")
+    w(C("C-BA-A1B-SIDEWAYS", "This is the residual-growth logic applied sideways. There, a "
+        "part is moved out of a leftover and the arithmetic must close. Here, a part is "
+        "moved *into* the construction by an administrative decision, and the measurement "
+        "must **not** move."))
+    w("")
+    w("## Data")
+    w("")
+    w("- " + C("C-BA-A1B-D-SURPLUS", "**Annual national field surplus, 1990 onward**: "
+               "SR120's Bilag 1, *Markbalancer for 1990-2013*, in a public report whose text "
+               "extracts (pinned here)."))
+    w("- " + C("C-BA-A1B-D-GAP", "**Surplus and diffuse load per catchment**: no such series "
+               "has been read here; SR353 gives the national relation, and SR120 balances for "
+               "its agricultural monitoring catchments, not for the catchments of coastal "
+               "waters."))
+    w("- " + C("C-BA-A1B-D-ESTUARY", "**Measured nitrogen in the sea**: the held ODA "
+               "water-chemistry extract carries total nitrogen on "
+               f"{kemi_p['Nitrogen,total N']:,} rows — the independent terminal series."))
+    w("- " + C("C-BA-A1B-D-STREAM", "**Stream nitrogen where it is gauged**: SR353 computes "
+               "the national load from "
+               f"{RD('SR353', '209', 'Beregningerne dette år er baseret på målinger fra 209 kystnære målestationer')} "
+               "coastal stream stations and a model for the rest, so it is measured on the "
+               "gauged fraction only."))
+    w("")
+    w(C("C-BA-A1B-CLASSES", "The surplus is a **norm product**; the load is **hybrid** — "
+        "measured on the gauged fraction, model output on the rest, since the ungauged part "
+        "is DK-QNP output whose input is the surplus itself (class `7` in "
+        f"[the taxonomy of data-stream errors]({TAX})). **Use the gauged fraction only**, or "
+        "the test is partly circular by construction. Measured nitrogen in the sea does not "
+        "pass through the surplus at all."))
+    w("")
+    w("## The null, which is not zero")
+    w("")
+    w(C("C-BA-A1B-NULL", "A break-point test finds breaks in autocorrelated series with no "
+        "breaks in them. The null must be **matched-autocorrelation surrogates with no "
+        "step**, and the reported quantity is where the observed break sits in that "
+        "distribution — not a p-value against independence."))
+    w("")
+    w("Two further controls:")
+    w("")
+    w("- " + C("C-BA-A1B-PLACEBO", "**Placebo dates.** Fit the same break test at every year "
+               "1993–2006. If 1999 is not distinguished from its neighbours, there is no step "
+               "to find."))
+    w("- " + C("C-BA-A1B-STRAT", "**Gauged-fraction stratification.** The circular component "
+               "scales with the modelled share, so the effect should be strongest where a "
+               "catchment's modelled share is largest and weakest where it is smallest."))
+    w("")
+    w("## What a result would and would not license")
+    w("")
+    w(C("C-BA-A1B-WOULD", "**Would**: a number for how much of the surplus series is "
+        "administrative, on a stated date, with the measured series as reference."))
+    w("")
+    w(C("C-BA-A1B-WOULDNOT", "**Would not**: anything about whether agriculture causes "
+        "hypoxia. This tests the coherence of two series, one constructed and one measured. "
+        "A clean break at 1999 would say the construction carries a bookkeeping jump — not "
+        "that the underlying load did not fall.")
+      + " "
+      + C("C-BA-A1B-DECLINE", "Whether it fell is a separate question, which DCE answer "
+          "from the measured record: SR353 puts the reduction in nitrogen supply from land "
+          "to the coast since the start of its series at "
+          f"{RD('SR353', '51', 'The reductions are 51% and 72% for nitrogen and phosphorus')}%, "
+          "calculated on discharge-weighted mean annual concentrations. **Both things can be "
+          "true: the construction partly administrative, and the decline real.**"))
+    w("")
+    w("## Status")
+    w("")
+    w(C("C-BA-A1B-STATUS", "Not run: no script here extracts the surplus series or a load "
+        "series, and nothing on this page has been computed."))
+    return "\n".join(o) + "\n"
 
 
 def main(argv):
-    return 0 if draftkit.build(REL, TEXT) is not None else 1
+    try:
+        page = text()
+    except live.Unjustified as e:
+        print(e, file=sys.stderr)
+        return 1
+    return 0 if draftkit.build(REL, page) is not None else 1
 
 
 if __name__ == "__main__":

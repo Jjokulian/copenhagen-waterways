@@ -1,0 +1,145 @@
+{
+ "constructions": [
+  {
+   "id": "K-EA-BRIEF-SEASONAL",
+   "title": "Stations classified by the brief's seasonality convention",
+   "covers": {
+    "file": "data/derived/agent_brief.json",
+    "fields": {
+     "all_nine.stations": {
+      "kind": "counted",
+      "is": "Stations of the monthly station series with at least one station-month on any of the nine variables."
+     },
+     "all_nine.seasonal": {
+      "kind": "counted",
+      "is": "Stations classed seasonal: Z above `z_cut` and mean direction in June to September, where N counts the station's station-months over the nine variables pooled, so a month is counted once for each variable reported in it."
+     },
+     "all_nine.year_round": {
+      "kind": "counted",
+      "is": "Stations classed year-round on the same pooled basis: Z at or below `z_cut` and N at least `min_n`."
+     },
+     "all_nine.neither": {
+      "kind": "counted",
+      "is": "Stations in neither class on the pooled basis, those with too few observations among them."
+     },
+     "oxy_bed.stations": {
+      "kind": "counted",
+      "is": "Stations with at least one station-month of `oxy_bed`, near-bed oxygen."
+     },
+     "oxy_bed.seasonal": {
+      "kind": "counted",
+      "is": "Stations classed seasonal on `oxy_bed` alone, one observation per station-month."
+     },
+     "oxy_bed.year_round": {
+      "kind": "counted",
+      "is": "Stations classed year-round on `oxy_bed` alone."
+     },
+     "oxy_bed.neither": {
+      "kind": "counted",
+      "is": "Stations in neither class on `oxy_bed` alone."
+     },
+     "oxy_bed.at_least_min_n": {
+      "kind": "counted",
+      "is": "Stations with at least `min_n` station-months of `oxy_bed`: those a year-round class could hold."
+     },
+     "oxy_bed.raw_r_group": {
+      "kind": "counted",
+      "is": "Stations whose mean resultant length R on `oxy_bed` exceeds `raw_r_cut`, with no minimum N: the raw-R rule the convention replaces."
+     },
+     "oxy_bed.raw_r_single": {
+      "kind": "counted",
+      "is": "Stations of that raw-R group with exactly one station-month."
+     },
+     "oxy_bed.raw_r_at_most_three": {
+      "kind": "counted",
+      "is": "Stations of that raw-R group with at most three station-months."
+     }
+    }
+   },
+   "what": "The brief's station seasonality convention applied to every station of the monthly station series, on the nine variables pooled and on near-bed oxygen alone, with the counts of the raw-R rule without a minimum that it replaces.",
+   "model": "Each station-month in `stations_series.bin` becomes a unit vector at the angle of its calendar month, $\\theta = 2\\pi m / 12$ with `m = month_index % 12`. For a station with N vectors, $R = |\\sum_k e^{i\\theta_k}| / N$ and $Z = N R^2$; the mean direction is the angle of the sum, rounded to the nearest month. Seasonal: `z > z_cut` and the mean month in June to September; year-round: `z <= z_cut` and `n >= min_n`; neither otherwise (`classify()` in `scripts/pages/agent_brief.py`). The raw-R group is `r > raw_r_cut` with no minimum.",
+   "assumptions": [
+    "The series' month index counts months from January of `year0`, so its remainder modulo twelve is the calendar month.",
+    "An observation is one station-month of the series, which holds a monthly median per station: repeated casts within a month count once. On the nine-variable basis a station-month counts once for each variable, a reading of the convention chosen because under it, and not with the months merged across variables, the counts the brief first printed come out the same."
+   ],
+   "justified": [
+    {
+     "text": "Every station-month of every variable in the series is read, one variable block at a time, and each station is classified by the rule the brief states, with its cut, minimum and season as constants beside the stated values the page prints.",
+     "ref": "scripts/pages/agent_brief.py"
+    },
+    {
+     "text": "The series is the monthly station panel the project's partition and composition analyses read; its header gives the byte layout the reader follows.",
+     "ref": "docs/data/areas/stations_series.json"
+    }
+   ],
+   "gaps": [
+    "Rounding the mean direction to the nearest month decides stations whose mean falls near the edge of June or September; no other rounding is tested.",
+    "The nine-variable basis weights a station by how many variables it reports as well as by how often it was visited."
+   ],
+   "void_if": [
+    "the station series is rebuilt with a different month index or unit",
+    "the convention's cut, minimum or season changes without the page's wording following"
+   ],
+   "licenses": "How many stations of the series fall in each class under this convention, and how the raw-R rule without a minimum behaves on `oxy_bed`.",
+   "not_licensed": "Anything about the seasonality of the sea: the class describes when a station was observed, not what it observed.",
+   "watches": [
+    "scripts/pages/agent_brief.py",
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/stations_series.bin"
+   ],
+   "confirmed": {
+    "by": "agent w3-ea (written against scripts/pages/agent_brief.py classify() and seasonality() and scripts/fetch_spildevand.py numeric() and the totals condition in main(); agent_brief.json counts reproduced by an independent recount of stations_series.bin, and every outfall feature checked for a Point geometry and a numeric Red areal in data/raw/spildevand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/agent_brief.py": "660533570263bd3b",
+     "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
+     "docs/data/areas/stations_series.bin": "cfa4a83100559ec4"
+    }
+   }
+  },
+  {
+   "id": "K-EA-OUTFALL-AREA",
+   "title": "Outfalls reporting a reduced impervious area",
+   "covers": {
+    "file": "data/derived/outfalls.json",
+    "fields": {
+     "layers.*.totals.Red areal.n": {
+      "kind": "counted",
+      "is": "Features of one layer of the spildevandsdata.dk PULS extract whose `Red areal` property is a number; a reported zero counts."
+     }
+    }
+   },
+   "what": "For each outfall layer, how many features carry a numeric reduced impervious area.",
+   "model": "`numeric()` in `scripts/fetch_spildevand.py` keeps every property value that is a number, or a string that parses as one once spaces are removed and a decimal comma is read, and skips booleans and missing values; `n` is the count kept. A field is summarised only when more than `0.3` of the features carry it and one value at least is non-zero.",
+   "assumptions": [
+    "A reduced area a utility reports as zero is a reported value, not a missing one."
+   ],
+   "justified": [
+    {
+     "text": "The count is taken over every feature of the fetched layer, and the EXPERIMENTS page refuses to build unless it equals the layer's feature count.",
+     "ref": "scripts/fetch_spildevand.py"
+    }
+   ],
+   "gaps": [
+    "The reduced areas are reported by the utilities through PULS; how each was derived is not documented in the extract, and some of them are zero."
+   ],
+   "void_if": [
+    "the layers are refetched with a different field set"
+   ],
+   "licenses": "That every feature of the combined-overflow and separate-stormwater layers carries a reduced-area value.",
+   "not_licensed": "That the values are measured, non-zero or comparable between utilities.",
+   "watches": [
+    "scripts/fetch_spildevand.py",
+    "data/derived/outfalls.json#layers"
+   ],
+   "confirmed": {
+    "by": "agent w3-ea (written against scripts/pages/agent_brief.py classify() and seasonality() and scripts/fetch_spildevand.py numeric() and the totals condition in main(); agent_brief.json counts reproduced by an independent recount of stations_series.bin, and every outfall feature checked for a Point geometry and a numeric Red areal in data/raw/spildevand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/fetch_spildevand.py": "2ce25d3217ca9080",
+     "data/derived/outfalls.json#layers": "6c07f4a57a8f64fc"
+    }
+   }
+  }
+ ]
+}

@@ -1,62 +1,43 @@
 # Fingerprinting Denmark
 
-**The experiment that would end the argument, written so that both sides can commit to
-it before it runs.**
+<span class="claim" data-claim="C-SS-T-LEAD">**The experiment that would end the argument, written so that both sides can commit to it before it runs.**</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-LEAD "What this claim rests on")</sup>
 
-Everything else on this site is an audit: it takes numbers that exist and asks what
-they are estimators of. This page is the opposite. It is a design for producing
-numbers that do not exist yet, aimed at the one question the whole dispute turns on
-and nobody has ever measured directly:
+<span class="claim" data-claim="C-SS-T-DESIGN">This page is not an audit of numbers that exist. It is a design for producing numbers that do not exist yet, aimed at a question the dispute turns on and that none of the monitoring this project has profiled measures directly:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-DESIGN "What this claim rests on")</sup>
 
 > **When Danish fields receive slurry and then rain, what reaches the water — and
 > whose is it?**
 
-[SENSING.md](SENSING.md) constructs the instrument: the fingerprint that separates a
-pig from a person from a road, and the two-tier network that could carry it.
-[`X23`](EXPERIMENTS.md) is the entry in the register. **This page is the protocol** —
-what is claimed, what would refute it, how many catchments and how many storms, and
-the rules that have to be fixed before the first sampler is bolted to a culvert.
+<span class="claim" data-claim="C-SS-T-NAV">[SENSING.md](SENSING.md) constructs the instrument: the fingerprint meant to separate a pig from a person from a road, and the two-tier network that could carry it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-NAV "What this claim rests on")</sup> [`X23`](EXPERIMENTS.md) is the entry in the register. **This page is the protocol** — what is claimed, what would refute it, how many catchments and how many storms, and the rules that have to be fixed before the first sampler is bolted to a culvert.
 
 ---
 
 ## 1. The [3](SOURCES.md#F-ff0b4d5203) hypotheses, stated so they can lose
 
-The point of writing them out is that each makes a different prediction about the same
-measurements, so the data can pick.
+<span class="claim" data-claim="C-SS-T-HYPS">The point of writing them out is that each makes a different prediction about the same measurements, so the data can pick. They are hypotheses, not findings: this page asserts none of them.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-HYPS "What this claim rests on")</sup>
 
-| | Claim | Predicts |
+| | Hypothesis | Predicts |
 |---|---|---|
 | **The soil reactor** | The field consumes the payload. Labile carbon is respired, ammonium nitrifies, and what leaves is mobile nitrate | Faecal markers stay near baseline through the spreading window. Nitrate rises seasonally, smoothly, with drainage. No relationship between marker peaks and livestock density |
 | **The bypass** | Preferential flow, tile drains and rain onto fresh slurry deliver the payload close to intact | Marker and copper peaks within days of spreading, **scaling with livestock density**, concentrated in the rising limb of storms |
 | **The regime** | Both are true, in different conditions. The bypass opens only when the ground is frozen, saturated or tile-drained, and closes otherwise | Marker peaks appear at **some** sites and not others, predicted by soil type, drainage and antecedent wetness rather than by livestock density alone |
 
-**The soil reactor is the outcome that would embarrass this project**, since much of its argument
-leans on the payload mattering. It is stated first on purpose, and the publication rule
-below is written so that it cannot be quietly dropped.
+<span class="claim" data-claim="C-SS-T-EMBARRASS">**The soil reactor is the outcome that would embarrass this project**, since part of its argument leans on the payload mattering. It is stated first on purpose, and the publication rule below is written so that it cannot be quietly dropped.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-EMBARRASS "What this claim rests on")</sup>
 
 ---
 
 ## 2. What the calendar does for us
 
-The manipulation already exists and is applied nationally: Danish rules forbid
-spreading through the autumn and winter and open a window in spring. So the experiment
-is **before-after on a fixed national schedule**, with a within-year control window
-that needs no permission from anyone.
+<span class="claim" data-claim="C-SS-T-CALENDAR">The manipulation already exists and is applied nationally: Danish rules forbid spreading liquid organic manure and nitrogen fertiliser from after harvest, at the latest the start of October, until February, with exceptions they list.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-CALENDAR "What this claim rests on")</sup> <span class="claim" data-claim="C-SS-T-BEFOREAFTER">So the experiment is **before-after on a fixed national schedule**, with a within-year control window that needs no permission from anyone.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-BEFOREAFTER "What this claim rests on")</sup>
 
-And the events can be counted in advance. From the [31](SOURCES.md#F-e2aa1a3c4b)-year hourly rainfall record used
-elsewhere in this project, over Copenhagen, February–April:
+<span class="claim" data-claim="C-SS-T-RAIN">And the events can be counted in advance. In the hourly rainfall record used elsewhere in this project, over Copenhagen, [1995](SOURCES.md#F-78ec4e8ca1)–[2025](SOURCES.md#F-352dc99498), these are the days of each February–April season with at least a given daily total, over its [31](SOURCES.md#F-3f40b547c1) seasons:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-RAIN "What this claim rests on")</sup>
 
-| | Median days per season | Range |
+| Daily total | Median days per season | Range |
 |---|---:|---:|
-| ≥ [2](SOURCES.md#F-2fd272403c) mm in a day | **[21](SOURCES.md#F-aa4eeff062)** | [11–35](SOURCES.md#F-982bd0fcab) |
-| ≥ [5](SOURCES.md#F-a188d26291) mm in a day | **[9](SOURCES.md#F-1a2f3048cf)** | [2–15](SOURCES.md#F-3857d759a0) |
-| ≥ [10](SOURCES.md#F-0e2070cc2f) mm in a day | **[2](SOURCES.md#F-2fd272403c)** | [0–5](SOURCES.md#F-f17be98e72) |
+| ≥ [2](SOURCES.md#F-52bdd86b0e) mm | **[21](SOURCES.md#F-535d402cc0)** | [11](SOURCES.md#F-c66170df8f)–[35](SOURCES.md#F-7dda9d14f4) |
+| ≥ [5](SOURCES.md#F-9fc767e7c7) mm | **[9](SOURCES.md#F-550ea7f6a2)** | [2](SOURCES.md#F-7d7084f844)–[15](SOURCES.md#F-e89e918a27) |
+| ≥ [10](SOURCES.md#F-6b7787ed42) mm | **[2](SOURCES.md#F-3cc2ed8528)** | [0](SOURCES.md#F-271239eab0)–[5](SOURCES.md#F-ddcaac4658) |
 
-**That is the sample size, and it is the reason the design works.** A sampler on a
-[five-millimetre](SOURCES.md#F-96a13562e3) trigger catches [something like nine events](SOURCES.md#F-5b3822a4fe) in a spreading season and a
-comparable number in the autumn control window — enough for a paired comparison within
-a single year, at a single site, without waiting a decade. *Caveat carried from the
-source:* a reanalysis grid cell understates extremes, so the ≥[10](SOURCES.md#F-7d023fa99a) mm row is a floor.
+<span class="claim" data-claim="C-SS-T-SAMPLE">**That is the sample size, and it is the reason the design works.** A sampler that fires on days of [5](SOURCES.md#F-9fc767e7c7) mm or more would see a median of [9](SOURCES.md#F-550ea7f6a2) such days in a spreading season — a day being a UTC day, so a storm that spans two days counts twice — enough for a paired comparison within a single year, at a single site.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-SAMPLE "What this claim rests on")</sup> <span class="claim" data-claim="C-SS-T-FLOOR">ERA5, the reanalysis behind the record, has a spatial resolution of [31](SOURCES.md#F-f6c410a4f2) km, so each value is an average over a grid cell, which smooths a local downpour: the counts at the higher thresholds are more likely to understate what one catchment sees than to overstate it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-FLOOR "What this claim rests on")</sup>
 
 ---
 
@@ -64,250 +45,116 @@ source:* a reanalysis grid cell understates extremes, so the ≥[10](SOURCES.md#
 
 **Paired catchments, matched on everything except the thing under test.**
 
-- **[12](SOURCES.md#F-df03937f6f) pairs** — [24](SOURCES.md#F-95eb3d8182) catchments — matched on soil type, drainage class, area and slope,
-  contrasted on **livestock density** from the national register. Small headwater
-  catchments, so a signal is not diluted to nothing before it reaches the sensor.
-- **Both tiers at every site**: continuous stage, turbidity, conductivity, temperature
-  and fDOM; an autosampler on a flow-and-turbidity trigger.
-- **[Two](SOURCES.md#F-c81a8e735b) windows a year**: the spreading window (February–April) and an autumn control
-  window when spreading is forbidden. Same sites, same triggers, same laboratory.
-- **End members sampled directly**: slurry from the tanks in each catchment, effluent
-  from any plant in it, road gully sediment, and soil. **No conversion ratio is taken
-  from the literature** — every one is measured on the material that is actually there.
-- **[Two](SOURCES.md#F-6e613878d3) full years.** One to establish the ratios and shake out the fouling, one to
-  answer the question.
+- <span class="claim" data-claim="C-SS-T-D-PAIRS">**[12](SOURCES.md#F-df03937f6f) pairs** — [24](SOURCES.md#F-95eb3d8182) catchments — matched on soil type, drainage class, area and slope, contrasted on **livestock density** from the national register. Small headwater catchments, so a signal is not diluted to nothing before it reaches the sensor.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-D-PAIRS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-D-TIERS">**Both tiers at every site**: continuous stage, turbidity, conductivity, temperature and fDOM; an autosampler on a flow-and-turbidity trigger.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-D-TIERS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-D-WINDOWS">**[Two](SOURCES.md#F-c81a8e735b) windows a year**: the spreading window (February–April) and an autumn control window when liquid manure may not be spread. Same sites, same triggers, same laboratory.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-D-WINDOWS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-D-ENDS">**End members sampled directly**: slurry from the tanks in each catchment, effluent from any plant in it, road gully sediment, and soil. **No conversion ratio is taken from the literature** — every one is measured on the material that is actually there.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-D-ENDS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-D-YEARS">**[Two](SOURCES.md#F-6e613878d3) full years.** One to establish the ratios and shake out the fouling, one to answer the question.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-D-YEARS "What this claim rests on")</sup>
 
-**What is analysed per event:** faecal sterols with the herbivore ratio,
-host-specific microbial markers, crAssphage, acesulfame, one veterinary residue,
-copper and zinc, COD and BOD, total and dissolved N and P, and δ¹⁵N with δ¹⁸O of
-nitrate. Discharge at the same minute, or it is a concentration and not a load.
+<span class="claim" data-claim="C-SS-T-D-PANEL">**What is analysed per event:** faecal sterols with the herbivore ratio, host-specific microbial markers, crAssphage, acesulfame, one veterinary residue, copper and zinc, COD and BOD, total and dissolved N and P, and δ¹⁵N with δ¹⁸O of nitrate. Discharge at the same minute, or it is a concentration and not a load.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-D-PANEL "What this claim rests on")</sup>
 
 ---
 
 ## 4. The decision rules, fixed before the first sample
 
-These are the whole point of the page. A rule written afterwards is a story.
+<span class="claim" data-claim="C-SS-T-R0">These are the whole point of the page. A rule written afterwards is a story.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-R0 "What this claim rests on")</sup>
 
-1. **The bypass is accepted** if faecal-marker load in the spreading window exceeds the autumn
-   control window by a factor stated in advance at **[two thirds](SOURCES.md#F-ab772b3b88) or more of the
-   high-density sites**, and the effect scales with livestock density across the
-   [twelve](SOURCES.md#F-df03937f6f) pairs.
-2. **The soil reactor is accepted** if marker loads in the two windows are indistinguishable at the
-   great majority of sites and nitrate is the only determinand that moves.
-3. **The regime is accepted** if the effect is present at some sites and absent at others *and*
-   is predicted by soil, drainage or antecedent wetness better than by density.
-4. **The result is published whichever way it falls**, in full, with the raw series —
-   and the pre-registration says so before the money is spent. **If the soil reactor wins, this
-   project's own emphasis was wrong and the page saying so will carry that sentence.**
-5. **No composite index is reported without the series it came from**, and no residual
-   is named after a source. That is the failure this whole site documents; reproducing
-   it here would be unforgivable.
+1. <span class="claim" data-claim="C-SS-T-R1">**The bypass is accepted** if faecal-marker load in the spreading window exceeds the autumn control window by a factor stated in advance at **[two thirds](SOURCES.md#F-ab772b3b88) or more of the high-density sites**, and the effect scales with livestock density across the [twelve](SOURCES.md#F-df03937f6f) pairs.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-R1 "What this claim rests on")</sup>
+2. <span class="claim" data-claim="C-SS-T-R2">**The soil reactor is accepted** if marker loads in the two windows are indistinguishable, by a criterion stated in advance, at the sites the first rule looks at, and nitrate is the only determinand that moves.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-R2 "What this claim rests on")</sup>
+3. <span class="claim" data-claim="C-SS-T-R3">**The regime is accepted** if the effect is present at some sites and absent at others *and* is predicted by soil, drainage or antecedent wetness better than by density.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-R3 "What this claim rests on")</sup>
+4. <span class="claim" data-claim="C-SS-T-R4">**The result is published whichever way it falls**, in full, with the raw series — and the pre-registration says so before the money is spent. **If the soil reactor wins, this project's own emphasis was wrong and the page saying so will carry that sentence.**</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-R4 "What this claim rests on")</sup>
+5. <span class="claim" data-claim="C-SS-T-R5">**No composite index is reported without the series it came from**, and no residual is named after a source. That is the failure this whole site documents; reproducing it here would be unforgivable.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-R5 "What this claim rests on")</sup>
 
 ---
 
 ## 5. What would invalidate the experiment rather than answer it
 
-Written down in advance, because each of these has ruined a monitoring programme
-somewhere:
+<span class="claim" data-claim="C-SS-T-INVALID">Written down in advance, so that none of them can be found afterwards as an excuse:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-INVALID "What this claim rests on")</sup>
 
-- **Fouled sensors reading confidently.** Servicing schedule and co-location against a
-  reference instrument, or the continuous tier is decoration. This is [`X16`](EXPERIMENTS.md).
-- **Decayed DNA.** Microbial markers fall away in days, so a marker absence at a site
-  visited late is not evidence of absence. The sterols, which persist, are the check.
-- **Unmeasured end members.** If the slurry in *these* tanks was never sampled, every
-  fraction is a guess with a decimal point on it.
-- **Storm-chasing bias.** Triggers are set in advance and left alone. An operator who
-  decides which storms are interesting has destroyed the sample.
-- **Catchments matched on the wrong thing.** If the high-density catchments are also
-  the sandy ones, the design has confounded exactly what it set out to separate — and
-  the pairing has to be published so somebody else can say so.
+- <span class="claim" data-claim="C-SS-T-I-FOUL">**Fouled sensors reading confidently.** Servicing schedule and co-location against a reference instrument, or the continuous tier is decoration. This is [`X16`](EXPERIMENTS.md).</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-I-FOUL "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-DNA">**Decayed DNA.** Host markers detect recent contamination, so a marker absence at a site visited late is not evidence of absence. The sterols, which change slowly, are the check.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-DNA "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-I-ENDS">**Unmeasured end members.** If the slurry in *these* tanks was never sampled, every fraction is a guess with a decimal point on it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-I-ENDS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-I-CHASE">**Storm-chasing bias.** Triggers are set in advance and left alone. An operator who decides which storms are interesting has destroyed the sample.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-I-CHASE "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-I-MATCH">**Catchments matched on the wrong thing.** If the high-density catchments are also the sandy ones, the design has confounded exactly what it set out to separate — and the pairing has to be published so somebody else can say so.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-I-MATCH "What this claim rests on")</sup>
 
 ---
 
-## 6. What it costs, and how it could be built
+## 6. What it needs, and how it could be built
 
-From the bill of materials in [SENSING.md](SENSING.md), at stated prices rather than
-quotations:
-
-**The purchase order is in [SENSING.md](SENSING.md)** — every sensor, an example part
-of its class, and what to expect to pay. The short version: a node is [5,000–12,000](SOURCES.md#F-cccb072b21) DKK
-without the fluorometer and [15,000–30,000](SOURCES.md#F-0f333cab0e) with it, and **the sensors are not the
-expensive part. The laboratory bottles are** — [1,500–4,000](SOURCES.md#F-02c701796d) DKK each, and they are the
-line that cannot be economised without losing the attribution the design exists for.
-
-| Phase | What | Stated cost |
-|---|---|---:|
-| **Pilot** — one season, [3](SOURCES.md#F-1c5548b8ef) pairs | [6](SOURCES.md#F-b9c5c719ce) nodes with fDOM, [2](SOURCES.md#F-96c33c5f9e) samplers, ~[60](SOURCES.md#F-68824f8b9d) bottles | **~[0.4–0.6](SOURCES.md#F-219836bdda) M DKK** |
-| **The experiment** — [2](SOURCES.md#F-6e613878d3) years, [12](SOURCES.md#F-df03937f6f) pairs | [24](SOURCES.md#F-18c9cd8106) nodes, [8](SOURCES.md#F-bc572504b6) samplers, ~[600](SOURCES.md#F-628d340836) bottles, servicing | **~[3–5](SOURCES.md#F-667e52bf48) M DKK** |
-| **The standing network afterwards** | a node on every outlet that reaches the sea | ~[8.8](SOURCES.md#F-a27ef0ef06) M DKK of hardware |
-
-**The pilot is inside the reach of a foundation, a university department, or a
-crowdfunded association.** The full experiment is the cost of one junction rebuild. The
-comparison that matters is not to a research budget: it is to a national nitrogen
-programme costing [orders of magnitude more](SOURCES.md#F-e7bc309b8c) and producing **no test**.
-
----
+<span class="claim" data-claim="C-SS-T-PHASES">[SENSING.md](SENSING.md) lists what to buy: the node, the sampler, the shared kit and the laboratory panel. No price is given there or here: the design says what to buy, and a supplier's quotation says what it costs. The laboratory is a cost per bottle and the sensors a purchase made once, so the bottles are the line that grows with the design, and the one that cannot be economised without losing the attribution the design exists for.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-PHASES "What this claim rests on")</sup>
 
 ### The proof of concept, which tests the instrument and not the hypothesis
 
-**One pair of catchments, one spreading season, and a deliberately narrow question.**
-The distinction matters more than the money: a single pair cannot answer whether the
-payload reaches Danish water — the sample is one pair and the result would be a number
-people fight over. What it *can* do is establish that the method works, which is what
-has to be true before anybody buys [24](SOURCES.md#F-95eb3d8182) of anything.
+<span class="claim" data-claim="C-SS-T-POC">**One pair of catchments, one spreading season, and a deliberately narrow question.** The distinction matters: a single pair cannot answer whether the payload reaches Danish water — the sample is one pair and the result would be a number people fight over. What it *can* do is establish that the method works, which is what has to be true before anybody buys [24](SOURCES.md#F-95eb3d8182) of anything.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-POC "What this claim rests on")</sup>
 
 **What it has to prove, and the go/no-go on each:**
 
-| | Passes if | Fails if |
-|---|---|---|
-| **A cheap node survives** | one node returns a continuous record through a Danish February, with gaps that are explainable | the enclosure floods, the panel ices, or the radio drops the winter |
-| **Its readings mean something** | co-located against a reference sonde, turbidity and EC track it within a stated tolerance and the drift is characterisable | drift is larger than the seasonal signal, in which case the continuous tier is a trigger only and must be described as one |
-| **The trigger catches events** | the sampler fires on the rising limb and fills bottles across the storm, unattended, [three times](SOURCES.md#F-94d880d1a3) | it fires on noise, or misses the events the rain record says happened |
-| **The panel discriminates *here*** | the sterol ratio and host markers separate this catchment's slurry from its sewage effluent and from its soil | **this is the one that kills the national design.** If the end members are not separable in one Danish catchment, [twelve](SOURCES.md#F-df03937f6f) pairs will not fix it |
-| **The chain closes** | a reading taken at a culvert appears in a public series with its calibration state attached | anything in the path needs a person to copy a file |
+- <span class="claim" data-claim="C-SS-T-G1">**A cheap node survives.** Passes if one node returns a continuous record through a Danish February, with gaps that are explainable; fails if the enclosure floods, the panel ices, or the radio drops the winter.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-G1 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-G2">**Its readings mean something.** Passes if, co-located against a reference sonde, turbidity and conductivity track it within a stated tolerance and the drift is characterisable; fails if drift is larger than the seasonal signal, in which case the continuous tier is a trigger only and must be described as one.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-G2 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-G3">**The trigger catches events.** Passes if the sampler fires on the rising limb and fills bottles across the storm, unattended, [three](SOURCES.md#F-97b831e706) times; fails if it fires on noise, or misses the events the rain record says happened.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-G3 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-G4">**The panel discriminates *here*.** Passes if the sterol ratio and host markers separate this catchment's slurry from its sewage effluent and from its soil; fails otherwise — **and this is the one that kills the national design.** If the end members are not separable in one Danish catchment, [twelve](SOURCES.md#F-df03937f6f) pairs will not fix it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-G4 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-G5">**The chain closes.** Passes if a reading taken at a culvert appears in a public series with its calibration state attached; fails if anything in the path needs a person to copy a file.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-G5 "What this claim rests on")</sup>
 
-**Note the fourth row.** It is the only test whose failure means *do not build the
-national network*, and it costs [about thirty thousand kroner](SOURCES.md#F-4dc7c1afa1) to run. Everything else
-on this page is downstream of it, which is an argument for doing it first and alone.
+<span class="claim" data-claim="C-SS-T-FOURTH">**Note the fourth test.** It is the only one whose failure means *do not build the national network*. Everything else on this page is downstream of it, which is an argument for doing it first and alone.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-FOURTH "What this claim rests on")</sup>
 
-**What it costs, item by item:**
+<span class="claim" data-claim="C-SS-T-STAGED">**A staged path, with a decision at each step:**</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-STAGED "What this claim rests on")</sup>
 
-| | | DKK |
-|---|---|---:|
-| [2](SOURCES.md#F-d3b08015e2) nodes with fDOM | one high-density catchment and its match | [30,000–60,000](SOURCES.md#F-516e4a7640) |
-| [1](SOURCES.md#F-831fffd707) automatic sampler | rotated between the two, or fixed on the high-density one | [25,000–60,000](SOURCES.md#F-ee626993e3) |
-| Calibration standards, spares, mounts | the shared kit, smallest version | [7,000–15,000](SOURCES.md#F-cffd4b4316) |
-| Reference sonde for co-location | **borrowed** from a utility or a department, which most will lend for a season | [0](SOURCES.md#F-09dd46c7f2), or [15,000–60,000](SOURCES.md#F-b528d423a9) to buy |
-| End-member samples — [3](SOURCES.md#F-f563560a31) slurry tanks, [1](SOURCES.md#F-d05592b4b3) plant effluent, [1](SOURCES.md#F-d05592b4b3) road gully, [2](SOURCES.md#F-78d6fbb4d3) soils | full fingerprint panel on each. **This is the row that decides the fourth test** | [18,000–28,000](SOURCES.md#F-e2d6cd1e31) |
-| Event bottles — [3](SOURCES.md#F-21802f68be) events × [8](SOURCES.md#F-dbfbde78d9) | full panel on [8](SOURCES.md#F-dbfbde78d9) of them, cheap determinands on the rest | [25,000–60,000](SOURCES.md#F-a53e31b4c1) |
-| Servicing, travel, a server | one person, [twenty visits](SOURCES.md#F-12d20eebad), a small VM | [5,000–10,000](SOURCES.md#F-ac33c2e4d4) |
-| **Total** | one pair, one season, one person | **[110,000–230,000](SOURCES.md#F-cb4774e1d0) DKK** |
+- <span class="claim" data-claim="C-SS-T-S0">**Stage `0` — one node**: a single stream, no sampler. Does the hardware survive and report?</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-S0 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-S1">**Stage `1` — proof of concept**: one pair, one season, one sampler. Does the method discriminate, here?</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-S1 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-S2">**Stage `2` — regional**: pairs in more than one region, both windows. Is the effect visible at all, and how variable?</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-S2 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-S3">**Stage `3` — the experiment**: [twelve](SOURCES.md#F-df03937f6f) pairs, [two](SOURCES.md#F-6e613878d3) years. Which of the [3](SOURCES.md#F-ff0b4d5203) hypotheses is right?</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-S3 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-S4">**Stage `4` — the network**: every outlet that reaches the sea. The same answer everywhere, permanently.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-S4 "What this claim rests on")</sup>
 
-**Which is a used car, not a house** — and it is the number that matters, because it
-is the one somebody can actually decide to spend. The full experiment is only worth
-funding if this comes back clean, and if it does not, the money saved is the whole
-[three to five million](SOURCES.md#F-8297f5719f).
+<span class="claim" data-claim="C-SS-T-NOWASTE">**No stage is wasted if the next one is never funded.** Stage `0` is a real series from a real stream. Stage `1` is a publishable methods result either way. Stage `2` is a regional finding. That property is the reason to stage it like this rather than to write one large proposal that has to be accepted whole.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-NOWASTE "What this claim rests on")</sup>
 
-**A staged path, with a decision at each step** — and it is
-[dialable on a map](network.html), where each preset below reproduces the row beside
-it:
+### What recurs
 
-| Stage | Scope | Cost | The question it answers |
-|---|---|---:|---|
-| **`0` — one node** | a single stream, no sampler | [15,000–30,000](SOURCES.md#F-bb36379b15) | does the hardware survive and report? |
-| **`1` — proof of concept** | one pair, one season, one sampler | [110,000–230,000](SOURCES.md#F-919736e26d) | does the method discriminate, here? |
-| **`2` — regional** | [three pairs](SOURCES.md#F-35d63546c5), both windows | [0.4–0.6](SOURCES.md#F-d67f37b80f) M | is the effect visible at all, and how variable? |
-| **`3` — the experiment** | [twelve](SOURCES.md#F-df03937f6f) pairs, [two](SOURCES.md#F-6e613878d3) years | [3–5](SOURCES.md#F-4b3f1c08a4) M | which of the [3](SOURCES.md#F-ff0b4d5203) hypotheses is right |
-| **`4` — the network** | every outlet that reaches the sea | [8.8](SOURCES.md#F-47f17b0daa) M + operating | the same answer everywhere, permanently |
+<span class="claim" data-claim="C-SS-T-RECUR">**Do not mistake the hardware for the programme.** Hardware is bought once, and saying that it is the cost is how these schemes die:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-RECUR "What this claim rests on")</sup>
 
-**No stage is wasted if the next one is never funded.** Stage 0 is a real series from a
-real stream. Stage 1 is a publishable methods result either way. Stage 2 is a regional
-finding. That property is not an accident of the costing — it is the reason to stage
-it like this rather than to write one large proposal that has to be accepted whole.
+- <span class="claim" data-claim="C-SS-T-RC-SERV">**Servicing.** A sensor that nobody visits produces confident wrong numbers, which is worse than no sensor.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-RC-SERV "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-RC-LAB">**Laboratory.** The tier-two bottles are paid for one analysis at a time, and are the only line that cannot be economised without losing the attribution.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-RC-LAB "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-RC-CUST">**Custody.** Somebody has to keep the archive, the calibration histories and the pre-registration for as long as the series runs, and that is a job rather than a server.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-RC-CUST "What this claim rests on")</sup>
 
-### The number, put beside things that are not science
-
-Because the figure is easy to lose next to a research budget, here it is next to
-things people actually price:
-
-| | Stated cost |
-|---|---:|
-| The **pilot** — [three pairs](SOURCES.md#F-085a19a2cc), one season | ~[0.5](SOURCES.md#F-40aa90f1b1) M DKK, the price of a small flat outside the cities |
-| The **experiment that settles it** — [12](SOURCES.md#F-df03937f6f) pairs, [two](SOURCES.md#F-6e613878d3) years | **[3–5](SOURCES.md#F-42984150e9) M DKK, the price of a cheap house** |
-| The **standing national network**, hardware | ~[8.8](SOURCES.md#F-c98dd27724) M DKK |
-| One bored street shot, from the retrofit costing on this site | [0.16–0.64](SOURCES.md#F-5d619c2ee8) M DKK |
-
-**So the decisive experiment costs about what a house costs, and the capital for a
-national network costs about what a good house in Copenhagen costs.** That is the
-honest headline and it should be uncomfortable: the argument has run for [forty years](SOURCES.md#F-5e25614913),
-and the measurement that would settle a central part of it has never been bought at a
-price a single wealthy person could pay.
-
-**But do not mistake the capital for the programme.** Hardware is the cheap half and
-saying otherwise is how these schemes die:
-
-- **Servicing.** [800](SOURCES.md#F-1f1572a379) nodes at [four visits a year](SOURCES.md#F-4040df66bf) is on the order of **[3–4](SOURCES.md#F-dab4e1f3b8) M DKK a
-  year** — which is to say [two to four people](SOURCES.md#F-e4407c5d36), permanently. A sensor that nobody
-  visits produces confident wrong numbers, which is worse than no sensor.
-- **Laboratory.** The tier-[2](SOURCES.md#F-28884716f3) bottles at [1,500–4,000](SOURCES.md#F-2faeb8cc3a) DKK each are the largest single
-  line in the experiment budget, and the only one that cannot be economised without
-  losing the attribution.
-- **Custody.** Somebody has to keep the archive, the calibration histories and the
-  pre-registration for a decade, and that is a job rather than a server.
-
-So: **a house to find out, and a few salaries a year to keep knowing.** The first
-number is startlingly small. The second is the one a proposal has to be honest about,
-because it is the one that gets cut in [year three](SOURCES.md#F-e1867aa3db) and takes the series with it.
+<span class="claim" data-claim="C-SS-T-RC-SO">So: **a purchase to find out, and salaries to keep knowing.** The recurring part is the one a proposal has to be honest about, because it is the one that gets cut and takes the series with it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-RC-SO "What this claim rests on")</sup>
 
 ### And the whole of it?
 
-This page prices one question. The obvious next one is what it would cost to settle
-the *field* — not the faecal channel alone, but enough of the [23](SOURCES.md#F-5573f4b655) designs in
-[EXPERIMENTS.md](EXPERIMENTS.md) to leave the Danish sea argument with measurements
-where it currently has models. Adding up what this project has actually costed, and
-marking clearly what it has not:
+<span class="claim" data-claim="C-SS-T-FIELD">This page designs the answer to one question. The obvious next one is what it would take to settle the *field* — not the faecal channel alone, but enough of the [23](SOURCES.md#F-1a851cdb55) designs in [EXPERIMENTS.md](EXPERIMENTS.md) to put measurements where the argument now has models. The blocks, without prices:</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-FIELD "What this claim rests on")</sup>
 
-| Block | What it buys | Stated cost |
-|---|---|---:|
-| **This experiment** | whether the payload reaches the water, and whose it is | [3–5](SOURCES.md#F-68108daa7e) M |
-| **The standing stream network** | the same question everywhere, permanently, no extrapolation | [8.8](SOURCES.md#F-64a351e4ad) M hardware |
-| **Instrumenting the [13](SOURCES.md#F-cab2646328) largest overflow structures** | flow rather than event counts — the largest single uncertainty on this site | ~[1](SOURCES.md#F-26856ad278) M |
-| **The cheap marine tier** — `X14`, `X15`, `X16` | oxygen and temperature at many points instead of monthly at few | [1–3](SOURCES.md#F-3203e10e45) M |
-| **The missing instruments** — `X19`, `X20` | a *fedtemøg* index and a structured record of what people have watched for [forty years](SOURCES.md#F-3a5941e426). [Three of the four public words have no instrument; these are two of them](SOURCES.md#F-cdba34261e) | small — a panel and a protocol |
-| **The desk work** — `X8`, `X21`, `X22` | analyses on data that already exists and has never been run | **nothing but time** |
-| **A trials portfolio** — the meta-solution in [PROGRAMME.md](PROGRAMME.md) | whether the interventions work, in named places, reversibly | [6–24](SOURCES.md#F-9460f3ebe0) M |
+- <span class="claim" data-claim="C-SS-T-B-THIS">**This experiment**: whether the payload reaches the water, and whose it is.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-B-THIS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-B-NET">**The standing stream network** in [SENSING.md](SENSING.md): the same question everywhere, permanently, with no extrapolation.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-B-NET "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-B-CSO">**Instrumenting the [13](SOURCES.md#F-8b39dac318) largest overflow structures**: flow rather than event counts, at the structures that hold [24](SOURCES.md#F-21d33a092b)% of the volume reported by the [1,328](SOURCES.md#F-56459bfcad) that report one.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-B-CSO "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-B-MARINE">**The marine tier** — `X14`, `X15`, `X16`: oxygen and temperature at many points in one water body, to test whether one station can stand for it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-B-MARINE "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-B-MISSING">**The missing instruments** — `X19`, `X20`: a panel for the outcomes no source this project profiled measures, and a record of dated events from the people with the longest baseline, for damage that has no instrument behind it.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-B-MISSING "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-B-DESK">**The desk work** — `X8`, `X21`, `X22`: analyses of data that already exists.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-B-DESK "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-B-TRIALS">**A trials portfolio** — the meta-solution in [PROGRAMME.md](PROGRAMME.md): whether the interventions work, in named places, reversibly.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-B-TRIALS "What this claim rests on")</sup>
 
-**Capital, in the order of [20–40](SOURCES.md#F-a0ecf1ca40) M DKK.** Which is a large villa, or a small apartment
-building, or about one kilometre of urban motorway — and it is *not* the same as an
-upper-middle-class house: that figure buys the decisive single experiment, not the
-programme. Plus **[5–10](SOURCES.md#F-3137175873) M a year** to service, sample and keep custody, which is the
-number that decides whether any of it survives to be a time series.
+<span class="claim" data-claim="C-SS-T-CAPITAL">Each block is hardware bought once and a bill for service, sampling and custody that recurs, and the recurring part is the one that decides whether any of it survives to be a time series.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-CAPITAL "What this claim rests on")</sup>
 
-**And three honest deductions from that total.**
+**And what money cannot do.**
 
-- **Ship time is not in it.** The autumn benthic extension and anything offshore needs
-  a vessel and an institution, and this project cannot price either.
-- **Some of it cannot be bought at all.** [40](SOURCES.md#F-198b20fb90) of the [166](SOURCES.md#F-4196d405de) mechanisms in the register
-  are unscoreable because the deciding measurement has no column anywhere; money buys
-  the instrument, not the decades of record it should have been collecting.
-- **And the cheapest block is the one nobody has done.** [3](SOURCES.md#F-aeebf9ece2) designs need no
-  fieldwork and no funding — the data exists and the analysis has never been run. If
-  the argument is that this is all too expensive, that block is the counter-example
-  sitting in the open.
+- <span class="claim" data-claim="C-SS-T-L-SHIP">**Ship time is not in it.** The autumn benthic extension and anything offshore needs a vessel and an institution, and this page provides neither.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-L-SHIP "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-UNSCOREABLE">**Some of it cannot be bought at all.** [42](SOURCES.md#F-198b20fb90) of the [166](SOURCES.md#F-4196d405de) mechanisms in the register cannot be tested with any source this project surveyed, because the deciding measurement is in none of them; money buys the instrument, not the record it should have been collecting.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-UNSCOREABLE "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-DESK">**And one block needs no fieldwork.** [3](SOURCES.md#F-3121ff95a9) designs are desk analyses of data that already exists. If the argument is that this is all too expensive, that block is the counter-example sitting in the open.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-DESK "What this claim rests on")</sup>
 
 ---
 
 ## 7. Who could do which part
 
-| | Can do |
-|---|---|
-| **One person with a culvert and a soldering iron** | A node, a year of a real series from one stream, and the demonstration that it works |
-| **A local association or a school** | A pair — one high-density catchment and its match — which is a whole experiment in miniature |
-| **A municipality or a water utility** | The samplers and the laboratory line, which is the half that needs an institution |
-| **A university group** | The end-member sampling and the isotope work, and the pre-registration that makes the rest admissible |
-| **Anyone at all** | Hold the pre-registration to its publication rule when the result is inconvenient |
+- <span class="claim" data-claim="C-SS-T-W-ONE">**One person with a culvert and a soldering iron**: a node, a year of a real series from one stream, and the demonstration that it works.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-W-ONE "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-W-ASSOC">**A local association or a school**: a pair — one high-density catchment and its match — which is a whole experiment in miniature.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-W-ASSOC "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-W-MUNI">**A municipality or a water utility**: the samplers and the laboratory line, which is the half that needs an institution.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-W-MUNI "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-W-UNI">**A university group**: the end-member sampling and the isotope work, and the pre-registration that makes the rest admissible.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-W-UNI "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-SS-T-W-ANY">**Anyone at all**: hold the pre-registration to its publication rule when the result is inconvenient.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-W-ANY "What this claim rests on")</sup>
 
-**Nothing above needs a change in the law, a data agreement, or anybody's permission
-except the landowner's at each culvert.** That is unusual in this field and it is the
-reason this page exists.
+<span class="claim" data-claim="C-SS-T-PERMISSION">The stream measurements need a landowner's permission at each culvert, and the end-member samples need the farms and plants that hold them to agree.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-PERMISSION "What this claim rests on")</sup>
 
 ---
 
 ## 8. What it settles, and what it does not
 
-**Settles.** Whether the payload reaches the water, in what quantity, in what season,
-under what conditions, and whose it is — measured rather than modelled, at the point
-where inland water becomes coastal water. Whether the spreading calendar is visible in
-a stream. Whether the account's single channel is missing a second one, and by roughly
-how much.
+<span class="claim" data-claim="C-SS-T-SETTLES">**Settles.** Whether the payload reaches the water, in what quantity, in what season, under what conditions, and whose it is — measured rather than modelled, at the point where inland water becomes coastal water. Whether the spreading calendar is visible in a stream. Whether the account's single channel is missing a second one, and by roughly how much.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-SETTLES "What this claim rests on")</sup>
 
-**Does not settle.** What the arriving material then does in the sea: that is the next
-experiment and it is harder. Nor anything about constituents outside the analysed list.
-Nor the marine oxygen question, which has [its own designs](EXPERIMENTS.md).
+<span class="claim" data-claim="C-SS-T-NOTSETTLE">**Does not settle.** What the arriving material then does in the sea: that is the next experiment and it is harder. Nor anything about constituents outside the analysed list. Nor the marine oxygen question, which has [its own designs](EXPERIMENTS.md).</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-NOTSETTLE "What this claim rests on")</sup>
 
-> **Why it would end the argument rather than extend it.** Every disputed number in
-> Danish nutrient policy is a modelled quantity defended by the people who model it.
-> This produces a measured quantity, at named places, on dates, with the raw series
-> published and the decision rule fixed in advance — so the result is available to
-> somebody who does not trust either party. **That is the only kind of number that
-> ends a [forty-year](SOURCES.md#F-ed56ccc9d6) disagreement**, and the striking thing is how cheap it is.
+> <span class="claim" data-claim="C-SS-T-WHYEND">**Why it would end the argument rather than extend it.** The disputed agricultural share is a modelled residual. This produces a measured quantity, at named places, on dates, with the raw series published and the decision rule fixed in advance — so the result is available to somebody who does not trust either party. **That is the kind of number that can end a disagreement.**</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-T-WHYEND "What this claim rests on")</sup>

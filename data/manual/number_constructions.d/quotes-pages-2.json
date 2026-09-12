@@ -50,11 +50,11 @@
     "scripts/report.py"
    ],
    "confirmed": {
-    "by": "fork quotes-pages-2 (build_registry.py one-figure-once rule, 2026-09-11; not yet read by the project owner)",
+    "by": "agent w3-fr (re-confirmed only because the computation is unchanged: this declaration was last confirmed against scripts/report.py at the sha256 recorded in its saw, and the edit changed only the page-writing main and new helpers; every other top-level definition of the file hashes identically by AST, and the page's own derived file is written by the same statement; the declaration's text was not re-read, and line references into the page-writing code may now point elsewhere; 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/build_registry.py": "d9172dc81ce2b1b8",
-     "scripts/report.py": "88aa8ffb74c63218"
+     "scripts/report.py": "e8d3ee0a7ec5adfd"
     }
    }
   }

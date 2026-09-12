@@ -1,0 +1,2980 @@
+{
+ "_what": "Claims, nodes, stated values and pinned sources for the hypothesis drafts D1 and Z8 (docs/hypodrafts/D1.md, docs/hypodrafts/Z8.md), written by agent w3-dz; and the claims those pages published at commit 00a157f and could not justify, retired to the archive.",
+ "sources": {
+  "DZ-TA-M06": {
+   "title": "DCE, Marint Fagdatacenter, Teknisk anvisning M06 Lyssvækkelse, version 3 (Markager and Fossing), valid from 04.06.2015",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_M06_Lyssvaekkelse_ver3.pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "5697500895a903d810f31190aed6f06224b37d6e1d387a854e567a5274fe20b8",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "DZ-HELCOM-META": {
+   "title": "HELCOM metadata record 0195e2c6-6b83-49ea-a0db-41f14a316c87, Fishing intensity and effort 2016-2021 (VMS data), ISO XML",
+   "url": "https://metadata.helcom.fi/geonetwork/srv/api/records/0195e2c6-6b83-49ea-a0db-41f14a316c87/formatters/xml",
+   "retrieved": "2026-09-11",
+   "sha256": "22fcfa73aa601dedcaf39fda2b23ac4f3550fe41f35f949eb7df1840df1f3d09",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "DZ-CMEMS-131": {
+   "title": "Copernicus Marine, Baltic Sea Ocean Colour Plankton, Reflectances, Transparency and Optics L3 NRT daily observations (OCEANCOLOUR_BAL_BGC_L3_NRT_009_131), product metadata",
+   "url": "https://stac.marine.copernicus.eu/metadata/OCEANCOLOUR_BAL_BGC_L3_NRT_009_131/product.stac.json",
+   "retrieved": "2026-09-11",
+   "sha256": "baebdb15129711d4905db2c1585425d34c7663e6fa3dc9a0eec7bb6cf115775c",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "DZ-CMEMS-208": {
+   "title": "Copernicus Marine, Baltic Sea Bio-Geo-Chemical L4 monthly means and interpolated daily observation (OCEANCOLOUR_BAL_BGC_HR_L4_NRT_009_208), product metadata",
+   "url": "https://stac.marine.copernicus.eu/metadata/OCEANCOLOUR_BAL_BGC_HR_L4_NRT_009_208/product.stac.json",
+   "retrieved": "2026-09-11",
+   "sha256": "89f04d6ef7185f9b5a92d38ad8600e4bd343fd0105fa14427c0e393102b45354",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "DZ-CEDA-OCCCI": {
+   "title": "CEDA catalogue, ESA Ocean Colour CCI: global dataset of inherent optical properties (IOP) at 4 km, version 6.0",
+   "url": "https://catalogue.ceda.ac.uk/uuid/024292dcda5d42ceb326850f89f8b40d/",
+   "retrieved": "2026-09-11",
+   "sha256": "d031e592ac6db6fe76337343a5664ac8810f41c4fde27c57b02a75a4709bba89",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "DZ-NASA-IOP": {
+   "title": "NASA CMR, Aqua MODIS Level-3 Global Mapped Inherent Optical Properties (IOP) Data, version 2022.0 (collection record)",
+   "url": "https://cmr.earthdata.nasa.gov/search/concepts/C3380709177-OB_CLOUD.json",
+   "retrieved": "2026-09-11",
+   "sha256": "f59cfeeba23463b7db2f899ec461558c7676168426bfed8d8ad04d9002837a2d",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  },
+  "DZ-GA-2020": {
+   "title": "Gonçalves-Araujo and Markager (2020), Light in the Dark: Retrieving Underwater Irradiance in Shallow Eutrophic Waters From AC-S Measurements, Frontiers in Marine Science 7:343 (PDF)",
+   "url": "https://www.frontiersin.org/articles/10.3389/fmars.2020.00343/pdf",
+   "retrieved": "2026-09-11",
+   "sha256": "5750b05d99ebfc0f75c1c541e7cb7316d7add914d83c607c9504ea81787e9db7",
+   "checked": "2026-09-11",
+   "status": "unchanged since pinned"
+  }
+ },
+ "figures": {},
+ "params": {
+  "dz_d1_nodata_pct": {
+   "value": 5,
+   "shown": "5",
+   "reason": "The largest share of stations, in percent, that a rotated or translated effort field may leave on no-data before the trawling draft's spatial null rejects the draw: a design choice, so that every draw still scores the stations the observed field covers."
+  },
+  "dz_d1_draws": {
+   "value": 999,
+   "shown": "999",
+   "reason": "The least number of draws for each null of the trawling draft: a design choice, enough to place an observed coefficient in the tail of its null distribution."
+  },
+  "dz_z8_perms": {
+   "value": 1000,
+   "shown": "1,000",
+   "reason": "How many times the attenuation draft rebuilds its variance apportionment under the permutation null: a design choice, enough to describe the null distribution's tails."
+  }
+ },
+ "nodes": [
+  {
+   "id": "U-DZ-D1-NORUN",
+   "kind": "untraced",
+   "label": "Trail ends: no script\\nruns the trawling test",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for SubsurfSAR, swept-area ratio, c-square and figshare, and data/raw for any effort layer: hypotheses.py and the page generators name the figshare record; nothing fetches it, reads a swept-area ratio or joins effort to a station, and data/raw holds no effort layer. Nothing further was found."
+  },
+  {
+   "id": "U-DZ-D1-NOCOUNT",
+   "kind": "untraced",
+   "label": "Trail ends: the overlap\\nis not counted",
+   "detail": "Searched data/derived/*.json, docs/data/areas/*.json and scripts/*.py on 2026-09-11 for a count of the monthly panel restricted to the effort layers' years or to c-squares, and for a comparison of the CTD extract's measurement positions with its station positions: none is stored or computed. The counts an earlier draft gave came from a one-off reading whose output is not held."
+  },
+  {
+   "id": "U-DZ-D1-SARMETHOD",
+   "kind": "untraced",
+   "label": "Trail ends: how swept\\narea is derived",
+   "detail": "Read on 2026-09-11 the HELCOM metadata record and the figshare record of the layers for how fishing is told from steaming and how gear width is set: the HELCOM record says the layers were processed from VMS data by the ICES working group and lists the gear groups and metiers, and says nothing of either step; the figshare record describes the files. The working group's method documents were not searched."
+  },
+  {
+   "id": "U-DZ-D1-VMSRULE",
+   "kind": "untraced",
+   "label": "Trail ends: which vessels\\ncarry VMS",
+   "detail": "Searched on 2026-09-11 the HELCOM metadata record and the figshare record, which say the layers are based on VMS data and give no vessel-length rule; Wikipedia's article on vessel monitoring systems, which states an EU length threshold without the years it applies to; and the EU control regulation on EUR-Lex, which returned an empty response to the pinning fetcher. No pinned document states which vessels carried VMS in the layers' years."
+  },
+  {
+   "id": "E-DZ-HM-VMS",
+   "kind": "external",
+   "label": "HELCOM record: the layers\\nare built from VMS data",
+   "detail": "The record describes fishing intensity and effort data for the layers' years based on VMS data.",
+   "source": "DZ-HELCOM-META",
+   "said": "based on VMS data"
+  },
+  {
+   "id": "E-DZ-HM-WGSFD",
+   "kind": "external",
+   "label": "HELCOM record: processed to\\nc-squares by ICES WGSFD",
+   "detail": "Member states provided the data to ICES, and its working group on spatial fisheries data processed them to c-square products at HELCOM's request.",
+   "source": "DZ-HELCOM-META",
+   "said": "processed to C-square resolution data products by ICES WGSFD"
+  },
+  {
+   "id": "E-DZ-HM-QUARTER",
+   "kind": "external",
+   "label": "HELCOM record: by year and\\nquarter, per c-square",
+   "detail": "Each layer's temporal resolution is given as year and quarter, and its spatial resolution as the c-square.",
+   "source": "DZ-HELCOM-META",
+   "said": "* quarter ### spatial resolution: * c-square"
+  },
+  {
+   "id": "E-DZ-HM-BOTTOM",
+   "kind": "external",
+   "label": "HELCOM record: intensity of\\nmobile bottom-contacting gears",
+   "detail": "",
+   "source": "DZ-HELCOM-META",
+   "said": "Intensity of mobile bottom contacting gears"
+  },
+  {
+   "id": "E-DZ-HM-GEARS",
+   "kind": "external",
+   "label": "HELCOM record: the gear groups",
+   "detail": "For the intensity layers the gear groups are the total, dredge, demersal seine and otter trawl, with Benthis metiers beside them.",
+   "source": "DZ-HELCOM-META",
+   "said": "* Dredge (DRB) * Demersal seine (SDN, SSC) * Otter trawl"
+  },
+  {
+   "id": "E-DZ-HM-SAR",
+   "kind": "external",
+   "label": "HELCOM record: swept area\\nand swept-area ratio",
+   "detail": "The intensity layers give surface and subsurface swept area and swept-area ratio, with weight, value and fishing hours.",
+   "source": "DZ-HELCOM-META",
+   "said": "* Subsurface SAR * Total weight"
+  },
+  {
+   "id": "E-DZ-HM-ABBR",
+   "kind": "external",
+   "label": "HELCOM record: the shapefile\\nfield names",
+   "detail": "Shapefile field names are cut to ten characters, so surface and subsurface SAR appear as sur_sar and subsur_sar.",
+   "source": "DZ-HELCOM-META",
+   "said": "sur_sar = surface_sar * subsur_sar = subsurface_sar"
+  },
+  {
+   "id": "E-DZ-HM-ANON",
+   "kind": "external",
+   "label": "HELCOM record: SAR is never\\nwithheld for anonymity",
+   "detail": "Weight, value and fishing hours are withheld where too few vessels fished a cell; swept area and swept-area ratio are not.",
+   "source": "DZ-HELCOM-META",
+   "said": "surface and subsurface SAR are not subject to anonymity constraints"
+  },
+  {
+   "id": "E-DZ-FIG-FILE",
+   "kind": "external",
+   "label": "figshare record: the archive",
+   "detail": "The record's one file, a zip archive, with its size in bytes.",
+   "source": "HY-FIGSHARE-D1",
+   "said": "_helcom_spatial_effort_intensity.zip"
+  },
+  {
+   "id": "E-DZ-FIG-LIC",
+   "kind": "external",
+   "label": "figshare record: the licence",
+   "detail": "The record's licence is Creative Commons Attribution.",
+   "source": "HY-FIGSHARE-D1",
+   "said": "\"name\": \"CC BY"
+  },
+  {
+   "id": "D-DZ-CTDHEAD",
+   "kind": "held",
+   "label": "CTD extract header\\ndata/raw/oda/ctd.csv.gz",
+   "detail": "The column header of the CTD extract, read on 2026-09-11: beside the station's coordinates X_UTM32 and Y_UTM32 and the date (Dato) it has Dybde (m), MålingX_UTM32 and MalingY_UTM32 for each measurement row, Parameter, Enhed and SondeNr; no column holds a clock time or a wavelength."
+  },
+  {
+   "id": "D-DZ-HYPFACTS",
+   "kind": "held",
+   "label": "Draft file facts\\ndata/derived/hypodraft_facts.json",
+   "detail": "What hypodraft_facts.py counted in held files: among them the light extract's records and positioned stations, the seabed layer's smallest and largest map-scale denominators, the monthly panel's first year and months, and the CTD extract's size on disk."
+  },
+  {
+   "id": "D-DZ-CONTIG",
+   "kind": "held",
+   "label": "Contiguous partitions\\ndocs/data/areas/partition_contiguous.json",
+   "detail": "Per station graph: how many stations it holds and the mean adjusted Rand index between random connected partitions of matched sizes, the floor any derived partition must beat. Its own note says a raw index is not readable here, because contiguity alone makes partitions agree above chance."
+  },
+  {
+   "id": "X-DZ-CONTIG",
+   "kind": "script",
+   "label": "partition_contiguous.py",
+   "detail": "contiguous_null grows random connected partitions by breadth-first accretion from random seeds, with group sizes matched to the official water bodies; main averages the adjusted Rand index over every pair of them for each graph and writes partition_contiguous.json."
+  },
+  {
+   "id": "U-DZ-Z8-NORUN",
+   "kind": "untraced",
+   "label": "Trail ends: no script\\nruns the attenuation test",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for readers of FDOM, Turbiditet, Lysdæmpning and the photometer channels, and for adg or aph retrievals: fetch_oda.py, formats.py, enums.py and hypodraft_ctd.py fetch, parse or count them, and nothing joins them to the light casts or apportions Kd. Nothing further was found."
+  },
+  {
+   "id": "H-DZ-Z8-NEEDS",
+   "kind": "history",
+   "label": "The register's entry:\\nwhat it needs",
+   "detail": "The hypothesis register's Needs line for the attenuation hypothesis.",
+   "commit": "00a157f",
+   "file": "docs/HYPOTHESES.md",
+   "said": "Denmark measures broadband Kd, which cannot be partitioned even in principle"
+  },
+  {
+   "id": "E-DZ-M06-TITLE",
+   "kind": "external",
+   "label": "DCE technical instruction\\nLyssvækkelse",
+   "detail": "The technical instruction on light attenuation for Danish marine monitoring, by Markager and Fossing, version three, with the date it is valid from.",
+   "source": "DZ-TA-M06",
+   "said": "Stiig Markager og Henrik Fossing"
+  },
+  {
+   "id": "E-DZ-M06-PAR",
+   "kind": "external",
+   "label": "The instruction: measure\\nphotosynthetically active light",
+   "detail": "Kd is to be computed from photosynthetically active light over one band, called PAR.",
+   "source": "DZ-TA-M06",
+   "said": "skal der måles fotosyntetisk aktivt lys i intervallet"
+  },
+  {
+   "id": "E-DZ-M06-SPEC",
+   "kind": "external",
+   "label": "The instruction: light's spectrum\\nchanges with depth",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "Lysets spektrale sammensætning og spredning ændrer sig med vanddybden"
+  },
+  {
+   "id": "E-DZ-M06-NONLIN",
+   "kind": "external",
+   "label": "The instruction: a\\nnon-linear slope",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "iagttages en ikke-lineær hældning"
+  },
+  {
+   "id": "E-DZ-M06-OMIT",
+   "kind": "external",
+   "label": "The instruction: leave out\\nthe lowest readings",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "nødvendigt at udelade lysmålinger fra den nederste del af vandsøjlen"
+  },
+  {
+   "id": "E-DZ-M06-SEDIMENT",
+   "kind": "external",
+   "label": "The instruction: sediment\\nstirred up near the bed",
+   "detail": "Near the bottom, stirred-up sediment or light reflected from the bed can distort the readings, and those nearest the bed are then disregarded.",
+   "source": "DZ-TA-M06",
+   "said": "Nederst i vandsøjlen kan sediment hvirvles op fra bunden"
+  },
+  {
+   "id": "E-DZ-M06-NOEXACT",
+   "kind": "external",
+   "label": "The instruction: no precise\\nrule for dropping readings",
+   "detail": "Which readings to leave out rests on experience and knowledge of the conditions of measurement.",
+   "source": "DZ-TA-M06",
+   "said": "Der kan ikke gives præcise anvisninger til denne procedure"
+  },
+  {
+   "id": "E-DZ-M06-RANGE",
+   "kind": "external",
+   "label": "The instruction: the Secchi\\nconstant's range",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "I danske farvande varierer den empiriske omregningskonstant mellem"
+  },
+  {
+   "id": "E-DZ-M06-TURBID",
+   "kind": "external",
+   "label": "The instruction: lower\\nin turbid water",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "i meget turbide systemer, hvor"
+  },
+  {
+   "id": "E-DZ-M06-DISSOLVED",
+   "kind": "external",
+   "label": "The instruction: higher where\\ndissolved matter dominates",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "hvor opløste stoffer dominerer lyssvækkelsen"
+  },
+  {
+   "id": "E-DZ-M06-SET",
+   "kind": "external",
+   "label": "The instruction: the\\nconstant as set",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "sættes omregningskonstanten til"
+  },
+  {
+   "id": "E-DZ-M06-NOKD",
+   "kind": "external",
+   "label": "The instruction: Secchi-derived\\nKd is not reported as Kd",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "må ikke indrapporteres til databasen som Kd-værdier"
+  },
+  {
+   "id": "E-DZ-M06-ZMIN",
+   "kind": "external",
+   "label": "The instruction: z-min,\\nthe top depth used",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "øverste dybde som er anvendt"
+  },
+  {
+   "id": "E-DZ-M06-ZMAX",
+   "kind": "external",
+   "label": "The instruction: z-max,\\nthe bottom depth used",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "nederst dybde som er anvendt"
+  },
+  {
+   "id": "E-DZ-M06-PCT",
+   "kind": "external",
+   "label": "The instruction: light value\\nas percent of surface light",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "lysværdi i vandsøjlen i procent af overfladeindstråling"
+  },
+  {
+   "id": "E-DZ-M06-UNIT",
+   "kind": "external",
+   "label": "The instruction: Kd's unit",
+   "detail": "Kd is reported in the unit per metre.",
+   "source": "DZ-TA-M06",
+   "said": "den beregnede lyssvækkelseskoefficient (enhed:"
+  },
+  {
+   "id": "E-DZ-M06-SURFACE",
+   "kind": "external",
+   "label": "The instruction: surface light\\nin photon flux",
+   "detail": "The mean surface irradiance during a measurement is reported in micromoles of photons per square metre per second.",
+   "source": "DZ-TA-M06",
+   "said": "gennemsnitlig overfladelysindstråling under måling"
+  },
+  {
+   "id": "E-DZ-M06-TWO",
+   "kind": "external",
+   "label": "The instruction: two sensors,\\nsurface and underwater",
+   "detail": "The fit relates the underwater reading to the surface reading, and the two sensors often give a slightly different signal.",
+   "source": "DZ-TA-M06",
+   "said": "de to sensorer vil i praksis også ofte give et lidt forskelligt signal"
+  },
+  {
+   "id": "E-DZ-M06-CTD",
+   "kind": "external",
+   "label": "The instruction: the light\\nsensor is usually on the CTD",
+   "detail": "",
+   "source": "DZ-TA-M06",
+   "said": "sædvanligvis monteret på CTD’en"
+  },
+  {
+   "id": "D-DZ-LYSHEAD",
+   "kind": "held",
+   "label": "Light extract header\\ndata/raw/oda/lys.csv.gz",
+   "detail": "The column header of the light-attenuation extract, read on 2026-09-11: LyssvaekkelsesKoefficient, ZMin, ZMax, YIntercept, KorrelationsKoefficient, StandardAfvigelse and Lysprocent, one record per profile."
+  },
+  {
+   "id": "D-DZ-CUBE",
+   "kind": "held",
+   "label": "Water-body cube\\ndocs/data/areas/cube.json",
+   "detail": "Describes the val_*.bin streams, val_kd.bin and val_secchi.bin among them, as one value per area and month, and lists the areas as water bodies with DKCOAST identifiers."
+  },
+  {
+   "id": "A-DZ-CDOM",
+   "kind": "assumption",
+   "label": "Dissolved organic matter\\nabsorbs most in the blue",
+   "detail": "Absorption by coloured dissolved organic matter rises toward short wavelengths, so more of it removes the blue end of the PAR band near the surface and narrows the spread of K(λ) across the band. The artefact prediction is void if this does not hold in these waters."
+  },
+  {
+   "id": "E-DZ-FDOM-FLUOR",
+   "kind": "external",
+   "label": "fDOM review: fDOM is\\nfluorescent organic matter",
+   "detail": "",
+   "source": "SS-PMC-FDOM-REV",
+   "said": "fDOM fluorescent dissolved organic matter"
+  },
+  {
+   "id": "D-DZ-MATCHUPS",
+   "kind": "held",
+   "label": "Light-satellite pairs\\ndata/derived/matchups.json",
+   "detail": "One row per station and day with a light cast and a satellite retrieval over it; its warning field says the matched days are a biased sample, clearer than unmatched casts in the same months."
+  },
+  {
+   "id": "X-DZ-MATCHUP",
+   "kind": "script",
+   "label": "matchup.py",
+   "detail": "Pairs each light cast with the satellite pixel window over it on the same day. That matched casts are clearer than the rest in the same months is written into its docstring and its output's warning as text, with two medians, from its first run; neither median is computed or stored as a field when it runs."
+  },
+  {
+   "id": "E-DZ-131-TITLE",
+   "kind": "external",
+   "label": "Copernicus Marine NRT: plankton,\\nreflectance, transparency, optics",
+   "detail": "",
+   "source": "DZ-CMEMS-131",
+   "said": "Baltic Sea Ocean Colour Plankton, Reflectances, Transparency and Optics"
+  },
+  {
+   "id": "E-DZ-131-OPTICS",
+   "kind": "external",
+   "label": "Copernicus Marine NRT:\\nan optics dataset",
+   "detail": "",
+   "source": "DZ-CMEMS-131",
+   "said": "including the IOPs (Inherent Optical Properties) such as absorption and scattering"
+  },
+  {
+   "id": "E-DZ-131-QAA",
+   "kind": "external",
+   "label": "Copernicus Marine NRT:\\nADG, APH, BBP by QAA",
+   "detail": "",
+   "source": "DZ-CMEMS-131",
+   "said": "(ADG, APH, BBP), via QAAv"
+  },
+  {
+   "id": "E-DZ-131-DAILY",
+   "kind": "external",
+   "label": "Copernicus Marine NRT:\\ndaily",
+   "detail": "",
+   "source": "DZ-CMEMS-131",
+   "said": "Temporal resolution**: daily"
+  },
+  {
+   "id": "E-DZ-131-OLCI",
+   "kind": "external",
+   "label": "Copernicus Marine NRT:\\nfrom OLCI",
+   "detail": "",
+   "source": "DZ-CMEMS-131",
+   "said": "**Upstreams**: OLCI-S"
+  },
+  {
+   "id": "E-DZ-208-TITLE",
+   "kind": "external",
+   "label": "Copernicus Marine HR:\\nBaltic biogeochemistry",
+   "detail": "",
+   "source": "DZ-CMEMS-208",
+   "said": "Baltic Sea, Bio-Geo-Chemical"
+  },
+  {
+   "id": "E-DZ-208-MSI",
+   "kind": "external",
+   "label": "Copernicus Marine HR:\\nfrom `Sentinel-2` MSI",
+   "detail": "The variables are retrieved from the `Sentinel-2` MSI sensor, at the resolution and for the coastal zone the description gives.",
+   "source": "DZ-CMEMS-208",
+   "said": "MSI sensor at"
+  },
+  {
+   "id": "E-DZ-CCI-TITLE",
+   "kind": "external",
+   "label": "ESA OC-CCI: a global\\nIOP dataset",
+   "detail": "",
+   "source": "DZ-CEDA-OCCCI",
+   "said": "Global dataset of inherent optical properties (IOP) gridded on a sinusoidal projection"
+  },
+  {
+   "id": "E-DZ-CCI-TIME",
+   "kind": "external",
+   "label": "ESA OC-CCI: composites\\nfrom daily to yearly",
+   "detail": "",
+   "source": "DZ-CEDA-OCCCI",
+   "said": "at a number of time resolutions (daily,"
+  },
+  {
+   "id": "E-DZ-NASA-TITLE",
+   "kind": "external",
+   "label": "NASA: Aqua MODIS\\nlevel-three IOP",
+   "detail": "",
+   "source": "DZ-NASA-IOP",
+   "said": "Aqua MODIS Level"
+  },
+  {
+   "id": "E-DZ-NASA-APH",
+   "kind": "external",
+   "label": "NASA MODIS IOP:\\nphytoplankton absorption",
+   "detail": "",
+   "source": "DZ-NASA-IOP",
+   "said": "Phytoplankton absorption coefficient at"
+  },
+  {
+   "id": "E-DZ-208-VARS",
+   "kind": "external",
+   "label": "Copernicus Marine HR: turbidity,\\nsuspended matter, backscatter, chlorophyll",
+   "detail": "The product distributes turbidity, suspended particulate matter, particulate backscatter and chlorophyll, and no other variable.",
+   "source": "DZ-CMEMS-208",
+   "said": "Solid Particulate Matter Concentration (SPM, expressed in mg/l), particulate backscattering at"
+  },
+  {
+   "id": "E-DZ-CCI-IOP",
+   "kind": "external",
+   "label": "ESA OC-CCI:\\nthe IOP product",
+   "detail": "",
+   "source": "DZ-CEDA-OCCCI",
+   "said": "inherent optical properties (IOP) product"
+  },
+  {
+   "id": "E-DZ-CCI-PARTS",
+   "kind": "external",
+   "label": "ESA OC-CCI: dissolved-and-detrital\\nand phytoplankton absorption",
+   "detail": "Total absorption and backscatter, and the fractions of absorption by detrital and dissolved matter and by phytoplankton.",
+   "source": "DZ-CEDA-OCCCI",
+   "said": "absorption and phytoplankton absorption"
+  },
+  {
+   "id": "E-DZ-CCI-QAA",
+   "kind": "external",
+   "label": "ESA OC-CCI: absorption\\nfrom the QAA model",
+   "detail": "",
+   "source": "DZ-CEDA-OCCCI",
+   "said": "derived using the QAA model V"
+  },
+  {
+   "id": "E-DZ-NASA-GIOP",
+   "kind": "external",
+   "label": "NASA MODIS IOP:\\nthe GIOP model",
+   "detail": "",
+   "source": "DZ-NASA-IOP",
+   "said": "Generalized Inherent Optical Properties (GIOP) model framework"
+  },
+  {
+   "id": "E-DZ-NASA-ADG",
+   "kind": "external",
+   "label": "NASA MODIS IOP: one term\\nfor CDOM and detritus",
+   "detail": "",
+   "source": "DZ-NASA-IOP",
+   "said": "Combined CDOM + non-algal detritus absorption coefficient"
+  },
+  {
+   "id": "E-DZ-GA-FYN",
+   "kind": "external",
+   "label": "Gonçalves-Araujo and Markager:\\nstations around Fyn",
+   "detail": "",
+   "source": "DZ-GA-2020",
+   "said": "sampling stations in the waters surrounding the island of Fyn (Denmark) were visited in the autumn"
+  },
+  {
+   "id": "E-DZ-GA-NOVANA",
+   "kind": "external",
+   "label": "Gonçalves-Araujo and Markager:\\nNOVANA monitoring stations",
+   "detail": "",
+   "source": "DZ-GA-2020",
+   "said": "Sampling stations of the NOVANA monitoring program considered in this study"
+  },
+  {
+   "id": "E-DZ-GA-FRAME",
+   "kind": "external",
+   "label": "Gonçalves-Araujo and Markager:\\nan AC-S on the CTD frame",
+   "detail": "",
+   "source": "DZ-GA-2020",
+   "said": "spectrophotometer (Sea-Bird Scientific) was mounted on the CTD frame to measure the hyperspectral absorption"
+  },
+  {
+   "id": "E-DZ-GA-FIRST",
+   "kind": "external",
+   "label": "Gonçalves-Araujo and Markager:\\nthe AC-S joins the programme",
+   "detail": "",
+   "source": "DZ-GA-2020",
+   "said": "a first step toward an automated, sensor-based monitoring was the incorporation of an AC-S instrument to the sampling program in"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-DZ-D1-STATUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The test this page specifies has not been run: no script in this repository computes it, and the fishing-effort layers it needs are not fetched.",
+   "because": "A search of the scripts and of data/raw finds nothing that fetches the layers, reads a swept-area ratio or joins effort to a station; the register's own entry says the layers are not fetched.",
+   "rests_on": [
+    "U-DZ-D1-NORUN",
+    "C-HY-D1-FIGSHARE"
+   ],
+   "replaces": [
+    "C-DZ-OLD-D1-STATUS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "The test this page specifies has not been run: no script in this repository computes it, and the fishing-effort layers it needs are not fetched.",
+     "texts": "3ca0f75de0f07901",
+     "node U-DZ-D1-NORUN": "471c9c8a471098e0",
+     "rests on C-HY-D1-FIGSHARE": "6e86a3da6f219706"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-ZIP",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/D1.md",
+   "claim": "The layers are one zip archive on figshare, of the size in bytes the record gives, under a Creative Commons Attribution licence.",
+   "because": "Their record, as pinned, lists the one file with its size, and the licence.",
+   "rests_on": [
+    "E-DZ-FIG-FILE",
+    "E-DZ-FIG-LIC",
+    "E-HY-FIGSHARE"
+   ],
+   "holder": "ICES, publishing on figshare at HELCOM's request",
+   "replaces": [
+    "C-DZ-OLD-D1-STATUS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "They are one archive on figshare, `2022_helcom_spatial_effort_intensity.zip`, of 23,051,366 bytes, under `CC BY 4.0`.",
+     "texts": "0a113fbe7c176901",
+     "node E-DZ-FIG-FILE": "1f64928a70d898bd",
+     "pinned HY-FIGSHARE-D1": "d2af1de1215e1995",
+     "node E-DZ-FIG-LIC": "538b08d6d395af57",
+     "node E-HY-FIGSHARE": "28fe62a3195bbf59"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-MECH",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Read as an oxygen mechanism rather than a fauna one, {ref:D1} says gear dragged over fine reduced sediment resuspends sulphide and labile organic matter, which consume oxygen where released: at the bed, within weeks, and only where fine reduced sediment exists; the test reads this per station-quarter.",
+   "because": "This is the hypothesis's own mechanism, restated as restrictions a test can check; it is taken as given for the test and not measured here.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:D1}": "D1: Bottom trawling",
+     "said on hypodrafts/D1.md": "Read as an oxygen mechanism rather than a fauna one, D1 says gear dragged over fine reduced sediment resuspends sulphide and labile organic matter, which consume oxygen where they are released: at the bed, within weeks, **and only where fine reduced sediment exists.** Per station-quarter:",
+     "hypothesis D1": "8d3c230a1c052a0b",
+     "texts": "b75aeba0ce608524"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-P-WITHIN",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Within station: near-bed oxygen anomaly is lower in a station's own quarters following high subsurface swept-area ratio in its c-square than in its quarters following low, after removing station mean, month-of-year and year.",
+   "because": "Comparing a station with itself removes everything fixed about the place, so what remains is the timing of effort against the timing of oxygen.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Within station.** Near-bed oxygen anomaly is lower in a station's own quarters following a high subsurface swept-area ratio (`subsur_sar`) in its c-square than in its own quarters following a low one, after removing station mean, month-of-year and year.",
+     "texts": "11b12cf00dc48e1d"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-P-SUB",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Substrate interaction: the effect is present on the fine GEUS classes and absent on the coarse ones.",
+   "because": "In the mechanism only fine reduced sediment holds the sulphide that trawling resuspends; which classes count as fine is A-KD-FINES, and the class names are the seabed layer's own.",
+   "rests_on": [
+    "A-KD-FINES",
+    "D-KD-DBCOUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Substrate interaction.** The effect is present on *Mud and sandy mud* / *Muddy sand* / *Quaternary clay and silt* and absent on *Sand* / *Gravel and coarse sand* / *Till/diamicton* / *Sedimentary rock*.",
+     "texts": "f0f349a50616c5f4",
+     "node A-KD-FINES": "e93ca78bbd917d17",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-P-PLACEBO",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Placebo: no comparable effect in near-surface oxygen at the same stations.",
+   "because": "Resuspension consumes oxygen at the bed; a cause acting on the whole column, such as productivity, would move the surface too.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Placebo.** No comparable effect in near-**surface** oxygen at the same stations.",
+     "texts": "c57f940edd438124"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-FALSIFY",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The test fails if the within-station coefficient lies inside the null, the coarse-substrate coefficient is indistinguishable from the mud one, or the surface placebo moves with effort as strongly as the bed; the substrate interaction and the placebo make it a test of trawling rather than of where fish are.",
+   "because": "Each failure is how a cause other than resuspension would look; only resuspension predicts all the restrictions at once.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Falsified if:** the within-station coefficient lies inside the null distribution below; **or** the coarse-substrate coefficient is indistinguishable from the mud one; **or** the surface placebo moves with effort as strongly as the bed. The substrate interaction and the surface placebo are what make this a test of trawling rather than of where fish are.",
+     "texts": "deba81ad81544497"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-PANEL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The monthly panel this project analyses holds the counted station-months across its variables at the counted stations, from its first year over the counted months, one median per station, month and variable; near-bed and near-surface oxygen fill the counted station-months each.",
+   "because": "drafts_b_counts.py sums the panel's declared counts and counts its stations; the panel's own description says it holds a monthly median per station per variable; hypodraft_facts.py reads its first year.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS",
+    "D-DZ-HYPFACTS",
+    "X-KP-HYPFACTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**The panel.** `docs/data/areas/stations_series.json`, the monthly panel this project analyses, holds 679,422 station-months across its 9 variables at 1,415 stations, over 564 months from 1980: one median per station, month and variable, so a station-quarter built from it is a median of medians. Near-bed oxygen (`oxy_bed`) fills 76,980 station-months and near-surface oxygen (`oxy_surf`), the placebo, 76,963.",
+     "texts": "92cc41e710d458b3",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
+     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-FLUO",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Fluorescence, the productivity covariate, fills the counted station-months; it is a sensor channel of the CTD cast, not the laboratory chlorophyll the water-chemistry extract carries separately on the counted rows.",
+   "because": "The panel's fluorescence comes from the CTD extract's Fluorescens channel; enums.py counts Klorofyl a as a parameter of the water-chemistry extract, a different measurement.",
+   "rests_on": [
+    "D-KD-DBCOUNTS",
+    "D-KP-SERIES",
+    "D-DS-ENUMS",
+    "X-KP-ENUMS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Fluorescence (`fluo`), the productivity covariate, fills 60,460 station-months. It is a sensor channel of the CTD cast, not the laboratory chlorophyll the water-chemistry extract carries separately as `Klorofyl a`, on 185,314 rows.",
+     "texts": "dac1e81d0b045a63",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node D-DS-ENUMS": "d951dca316762bb4",
+     "node X-KP-ENUMS": "9f81357787adb189"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-OVERLAP",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "How many of the panel's station-months fall in the effort layers' years, at how many stations and in how many c-squares, is not counted by any script here; it is the first thing the test must count.",
+   "because": "Nothing stored or computed restricts the panel to those years or to c-squares; the layers' years are the figshare record's.",
+   "rests_on": [
+    "U-DZ-D1-NOCOUNT",
+    "C-HY-D1-FIGSHARE"
+   ],
+   "replaces": [
+    "C-DZ-OLD-D1-WINDOW",
+    "C-DZ-OLD-D1-EAST",
+    "C-DZ-OLD-D1-OVERLAP"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "How many of the panel's station-months fall in the effort layers' years, at how many stations and in how many c-squares, is not counted by any script here: the overlap is the first thing the test must count.",
+     "texts": "4ddd78bc2232e25b",
+     "node U-DZ-D1-NOCOUNT": "94aaac5d2450b213",
+     "rests on C-HY-D1-FIGSHARE": "6e86a3da6f219706"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-META",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/D1.md",
+   "claim": "The layers are based on VMS data processed by ICES's working group on spatial fisheries data to c-squares, by year and quarter; for the mobile bottom-contacting gear groups they give swept area and surface and subsurface swept-area ratio, and these, unlike weight, value and fishing hours, are never withheld for anonymity.",
+   "because": "Their metadata record, as pinned, says so in those terms.",
+   "rests_on": [
+    "E-DZ-HM-VMS",
+    "E-DZ-HM-WGSFD",
+    "E-DZ-HM-QUARTER",
+    "E-DZ-HM-BOTTOM",
+    "E-DZ-HM-GEARS",
+    "E-DZ-HM-SAR",
+    "E-DZ-HM-ABBR",
+    "E-DZ-HM-ANON"
+   ],
+   "holder": "HELCOM Secretariat, in its metadata record for the layers",
+   "replaces": [
+    "C-DZ-OLD-D1-FIELDS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**The effort layers.** HELCOM's metadata record for them says they are based on VMS data, processed by ICES's working group on spatial fisheries data (WGSFD) to c-square products, by year and by quarter; for the mobile bottom-contacting gear groups — dredge, demersal seine and otter trawl, and their total — they give swept area and the surface and subsurface swept-area ratio (`sur_sar`, `subsur_sar` in the shapefiles), and these, unlike weight, value and fishing hours, are never withheld for anonymity.",
+     "texts": "ab9071c5012a6c3c",
+     "node E-DZ-HM-VMS": "83ba254d85459ffd",
+     "pinned DZ-HELCOM-META": "22fcfa73aa601ded",
+     "node E-DZ-HM-WGSFD": "212c8258ba72dcfe",
+     "node E-DZ-HM-QUARTER": "8d014ff5fe9f208d",
+     "node E-DZ-HM-BOTTOM": "fe7e3b2e0ee69d90",
+     "node E-DZ-HM-GEARS": "f0e4dfe51d81754f",
+     "node E-DZ-HM-SAR": "a7202e7dd90fec26",
+     "node E-DZ-HM-ABBR": "7b1300a660e504b8",
+     "node E-DZ-HM-ANON": "51d65db1dfb80869"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-SARMODEL",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Swept-area ratio is computed, not observed; how fishing is told from steaming and how each gear's width is set is not described in either record pinned here.",
+   "because": "The layers are data products processed from VMS positions; neither record describes the processing steps.",
+   "rests_on": [
+    "E-DZ-HM-WGSFD",
+    "U-DZ-D1-SARMETHOD"
+   ],
+   "replaces": [
+    "C-DZ-OLD-D1-FIELDS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Swept-area ratio is computed, not observed; how fishing is told from steaming and how each gear's width is set is not described in either record pinned here.",
+     "texts": "dc6a8a7e62a09ec8",
+     "node E-DZ-HM-WGSFD": "212c8258ba72dcfe",
+     "pinned DZ-HELCOM-META": "22fcfa73aa601ded",
+     "node U-DZ-D1-SARMETHOD": "305363202417bd0c"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-FLEET",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Vessels without VMS are not in the layers, and which vessels carried it in these years is not established from any document pinned here, so how much of the inshore fleet is missing is unknown.",
+   "because": "Layers built from VMS data can only hold vessels that report by VMS; no pinned document gives the rule for which vessels had to.",
+   "rests_on": [
+    "E-DZ-HM-VMS",
+    "U-DZ-D1-VMSRULE"
+   ],
+   "replaces": [
+    "C-DZ-OLD-D1-FIELDS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Vessels without VMS are not in the layers, and which vessels carried it in these years is not established from any document pinned here, so how much of the inshore fleet is missing is unknown.",
+     "texts": "0f607d856e148881",
+     "node E-DZ-HM-VMS": "83ba254d85459ffd",
+     "pinned DZ-HELCOM-META": "22fcfa73aa601ded",
+     "node U-DZ-D1-VMSRULE": "a33d9323bc794d86"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-QUARTER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The layers are totals per c-square, gear group and quarter, so timing within a quarter is gone and the test's lag can only be a whole quarter.",
+   "because": "A quarterly total carries no date inside the quarter.",
+   "rests_on": [
+    "E-DZ-HM-QUARTER",
+    "E-DZ-HM-GEARS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "The layers are totals per c-square, gear group and quarter, so timing within a quarter is gone and the test's lag can only be a whole quarter.",
+     "texts": "c53fc86efa96da2f",
+     "node E-DZ-HM-QUARTER": "8d014ff5fe9f208d",
+     "pinned DZ-HELCOM-META": "22fcfa73aa601ded",
+     "node E-DZ-HM-GEARS": "f0e4dfe51d81754f"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-SEABED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The GEUS seabed layer holds the counted polygons in the counted classes of its sediment field, with the counted polygons in each class.",
+   "because": "drafts_b_counts.py counts the polygons of layer Seabed_sedimen by the field sedimenten; the counts are of polygons, not of area.",
+   "rests_on": [
+    "D-KD-DBCOUNTS",
+    "X-KD-DBCOUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Substrate.** `data/raw/geus/seabed_sediment_dk.gpkg`, layer `Seabed_sedimen`, holds 108 polygons in 7 classes of the field `sedimenten`: Sand 22, Till/diamicton 22, Gravel and coarse sand 22, Muddy sand 16, Quaternary clay and silt 14, Mud and sandy mud 9, Sedimentary rock 3 — counts of polygons, not of area.",
+     "texts": "187fd4a961c3fa01",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-SCALE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The layer is compiled from surveys at map scales whose denominators run between the counted smallest and largest, with the counted polygons at each end, so boundary precision is not uniform.",
+   "because": "hypodraft_facts.py reads the smallest and largest value of the scale field and drafts_b_counts.py counts the polygons at each scale; a boundary drawn from a coarse survey is less precise than one from a fine survey.",
+   "rests_on": [
+    "D-DZ-HYPFACTS",
+    "X-KP-HYPFACTS",
+    "D-KD-DBCOUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "The layer is compiled from surveys at map scales whose denominators, in the `scale` field, run from 5,000 to 500,000, with 7 polygons at the finest scale and 7 at the coarsest, so boundary precision is not uniform.",
+     "texts": "f40ada8da88255f9",
+     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
+     "node X-KP-HYPFACTS": "b78ab850a1db2c4b",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-BOUNDARY",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Carry distance to a class boundary as a covariate, and test stations near a boundary separately.",
+   "because": "A station near a boundary may sit on either class, the more so where the boundary comes from a coarse survey.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Carry distance to a class boundary as a covariate, and test stations near a boundary separately.",
+     "texts": "ae6d1a35abe074eb"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-POSITION",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The CTD extract, of the counted size compressed, has columns beside each station's coordinates for the depth and the position of each measurement row, so one streamed pass can place each cast in the c-square it was taken in, with its depth.",
+   "because": "Its header has the measurement position and depth columns beside the station's; hypodraft_facts.py records the file's size on disk.",
+   "rests_on": [
+    "D-DZ-CTDHEAD",
+    "D-DZ-HYPFACTS",
+    "X-KP-HYPFACTS"
+   ],
+   "replaces": [
+    "C-DZ-OLD-D1-POSITION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Depth and position.** The CTD extract, `data/raw/oda/ctd.csv.gz` (448.7 MB compressed), has columns beside each station's coordinates (`X_UTM32`, `Y_UTM32`) for the depth (`Dybde (m)`) and the position (`MålingX_UTM32`, `MalingY_UTM32`) of each measurement row, so one streamed pass can place each cast in the c-square it was taken in, with its depth.",
+     "texts": "960e2cf765fde6e0",
+     "node D-DZ-CTDHEAD": "2077016bbbc85a12",
+     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
+     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-POSGAP",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "How often a measurement's position differs from its station's is not counted here.",
+   "because": "Nothing stored or computed compares the two positions.",
+   "rests_on": [
+    "U-DZ-D1-NOCOUNT"
+   ],
+   "replaces": [
+    "C-DZ-OLD-D1-POSITION"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "How often a measurement's position differs from its station's is not counted here.",
+     "texts": "454268a5f950c549",
+     "node U-DZ-D1-NOCOUNT": "94aaac5d2450b213"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-NULLWHY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Neither null is a plain shuffle: effort and bathymetry are spatially autocorrelated, and on this project's nearest-neighbour station graph random connected partitions of matched sizes already agree with each other at the counted mean adjusted Rand index, an index corrected for chance against arbitrary partitions and not contiguous ones; a cell-wise shuffle of effort would repeat that mistake.",
+   "because": "partition_contiguous.py measures the agreement contiguity alone buys on the stations' graph; a shuffle that ignores contiguity would credit that agreement to effort.",
+   "rests_on": [
+    "D-DZ-CONTIG",
+    "X-DZ-CONTIG"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "The test has a spatial arm and a within-station arm, each with its own constraint and null, and **neither null is a plain shuffle.** Effort is spatially autocorrelated and so is bathymetry, and contiguity alone makes partitions agree: on this project's nearest-neighbour graph of 150 stations, random connected partitions with group sizes matched to the official water bodies agree with each other at a mean adjusted Rand index of 0.337 (`docs/data/areas/partition_contiguous.json`, `contiguous_null` in `scripts/partition_contiguous.py`), where the index corrects for chance against arbitrary partitions, not contiguous ones. A cell-wise shuffle of effort would repeat that mistake.",
+     "texts": "643ce3406c86c052",
+     "node D-DZ-CONTIG": "37ce55ecd0f340ba",
+     "node X-DZ-CONTIG": "8d1b821cb31a4071"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-NULL-SPATIAL",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The spatial arm keeps the effort field whole and breaks only its registration with the stations, by random rotations and toroidal translations within a Danish sea mask that reject draws leaving more than a stated share of stations on no-data, plus connected block resampling on the c-square adjacency graph with matched block sizes, over at least a stated number of draws, reported against both.",
+   "because": "Moving the field whole keeps its spatial structure and breaks only which station sits under which effort; block resampling is a second null with the same aim; the share and the draws are stated values.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Spatial arm** (cross-sectional, the weak one). Constraint: stations sit where they sit and effort has the structure it has. Null: keep the effort field whole and break only its *registration* with the stations — random rotations and toroidal translations within a Danish sea mask, rejecting draws that put more than 5% of stations on no-data; plus a second null by `contiguous_null`-style connected block resampling on the c-square adjacency graph with matched block sizes. At least 999 draws, reported against both.",
+     "texts": "78699d4c54c88947"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-NULL-WITHIN",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "The within-station arm absorbs station, month-of-year and year, and its null circularly shifts each station's own effort series by whole years, with a cluster bootstrap over stations.",
+   "because": "A whole-year shift keeps each station's effort distribution, the seasonal cycle and effort's serial correlation, and breaks only the timing of effort against oxygen.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "**Within-station arm** (primary). Constraint: station identity, month-of-year and year are absorbed. Null: circular shifts of each station's own effort series by whole years, plus a cluster bootstrap over stations. This preserves each station's effort marginal, the seasonal cycle and effort's serial correlation, breaking only the time alignment.",
+     "texts": "fd1a0f00ebfd4729"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-S1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Fetch and unzip the archive; keep the mobile bottom-contacting gear groups the record lists; count the c-squares that intersect the stations' bounding box.",
+   "because": "The first step of the procedure: the data it needs.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Fetch and unzip the archive named above; keep the mobile bottom-contacting gear groups the record lists; count the c-squares that intersect the stations' bounding box.",
+     "texts": "40a7f5ecfca363fb"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-S2",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Assign each cast to its own c-square from its measurement coordinates, and roll to station-quarter medians of the variables used below.",
+   "because": "The effort is per c-square and quarter, so the response must be too.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Assign each cast to its own c-square from its measurement coordinates; roll to station-quarter medians of the variables used below.",
+     "texts": "767aefa771c5749f"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-S3",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Join the subsurface swept-area ratio of the preceding quarter; keep fluorescence in the same quarter, not lagged.",
+   "because": "The effect must follow the effort; productivity confounds in the same quarter.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Join `subsur_sar` of the *preceding* quarter; keep fluorescence same-quarter, not lagged.",
+     "texts": "0abb562db37f79ac"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-S4",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Fit near-bed oxygen on the lagged log of one plus the subsurface swept-area ratio, with station, month and year fixed effects, and fluorescence, near-bed temperature, near-bed salinity and depth as covariates.",
+   "because": "The fixed effects absorb place and season; temperature stands for solubility and salinity for stratification.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Fit near-bed oxygen on the lagged `log1p(subsur_sar)` with station, month and year fixed effects and covariates: fluorescence, near-bed temperature (solubility), near-bed salinity (stratification proxy), depth.",
+     "texts": "2074c04e25964575"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-S5",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Refit with a substrate by effort interaction, and repeat the whole fit on surface oxygen as the placebo.",
+   "because": "These carry the substrate and placebo predictions.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Refit with a substrate × effort interaction; repeat the whole fit on surface oxygen as the placebo.",
+     "texts": "a8b19b4e7d3ea952"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-S6",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Report every coefficient against the two nulls, never a textbook p-value.",
+   "because": "A textbook p-value assumes the independence the nulls are built to avoid.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Report every coefficient against both nulls above, never a textbook p-value.",
+     "texts": "838ddf84ca973648"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-CONFOUND",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Trawlers fish where fish are, and fish are where productivity is, so a raw effort-oxygen association is that association read backwards; the within-station fixed effect, fluorescence and the substrate interaction break it only together.",
+   "because": "The fixed effect removes what is constant about a place; fluorescence absorbs the time-varying part of productivity; productivity-driven effort would lower oxygen wherever trawlers work, while resuspension can only do it where reduced fines exist.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "The obvious confound: trawlers fish where fish are, and fish are where productivity is, so any raw effort–oxygen association is that association read backwards. The within-station fixed effect, fluorescence and the substrate interaction break it, and only together: the fixed effect removes everything time-invariant about a place (depth, substrate, mean productivity, distance from a source); fluorescence absorbs the time-varying part of the same confound; and the substrate interaction is a prediction the confound does not make, since productivity-driven effort would depress oxygen wherever trawlers work, while resuspension can only do it where reduced fines exist.",
+     "texts": "d262552d003f4d4a"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-LICENSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "A mud-confined, bed-only coefficient outside both nulls would license an association of preceding-quarter effort with lower near-bed oxygen on fine substrate in the layers' years, and not a budget attribution, a causal claim, anything about the fauna outcomes {ref:O3} and {ref:O7}, or anything about vessels VMS does not see.",
+   "because": "That is what the regression estimates against its nulls; effort is not randomised, a quarterly total cannot separate a trawl pass from what followed it, and no fauna variable is held.",
+   "rests_on": [
+    "C-DZ-D1-FLEET"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:O3}": "O3: Loss of higher benthic life",
+     "claim {ref:O7}": "O7: Loss of rooted vegetation",
+     "said on hypodrafts/D1.md": "A mud-confined, bed-only coefficient outside both nulls would license exactly this: *trawling effort in the preceding quarter is associated with lower near-bed oxygen at Danish stations, 2016–2021, on fine substrate, beyond a null preserving the spatial and temporal structure of effort.* Not a budget attribution; not a causal claim (effort is not randomised, and a quarterly total cannot separate the trawl pass from what followed it); nothing about the fauna outcomes O3 and O7, since no fauna variable is here; nothing about vessels VMS does not see.",
+     "hypothesis O3": "cc621dda8a8cfc82",
+     "hypothesis O7": "f7bc1a398f5a0af6",
+     "texts": "2c9a827c4cc852d2",
+     "rests on C-DZ-D1-FLEET": "0f607d856e148881"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-WEAK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "A null result is weakly informative, since quarterly effort, a computed swept-area ratio and vessels missing from the layers can each hide a real effect; and with layers beginning in their first year there is no baseline before trawling, so the test contrasts places and quarters and is never a before-and-after.",
+   "because": "Each premise is a claim above; the layers' years are the figshare record's.",
+   "rests_on": [
+    "C-DZ-D1-QUARTER",
+    "C-DZ-D1-SARMODEL",
+    "C-DZ-D1-FLEET",
+    "C-HY-D1-FIGSHARE"
+   ],
+   "replaces": [
+    "C-DZ-OLD-D1-WEAK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "A null result is weakly informative: quarterly effort, a computed swept-area ratio and vessels missing from the layers can each hide a real effect. And there is no baseline before trawling: the layers begin in 2016, so the test is a contrast across places and quarters, never a before-and-after.",
+     "texts": "89b0c32c78b09f00",
+     "rests on C-DZ-D1-QUARTER": "c53fc86efa96da2f",
+     "rests on C-DZ-D1-SARMODEL": "dc6a8a7e62a09ec8",
+     "rests on C-DZ-D1-FLEET": "0f607d856e148881",
+     "rests on C-HY-D1-FIGSHARE": "6e86a3da6f219706"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-D1-CLUSTER",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/D1.md",
+   "claim": "Stations that share a c-square share its effort, so effort is a shared regressor and errors must cluster on the c-square.",
+   "because": "Observations with one regressor value are not independent draws of it.",
+   "rests_on": [],
+   "replaces": [
+    "C-DZ-OLD-D1-OVERLAP"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/D1.md": "Stations that share a c-square share its effort, so effort is a shared regressor and errors must cluster on the c-square.",
+     "texts": "0713c01a8aca1bf9"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-STATUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The test this page specifies has not been run: no script in this repository computes it.",
+   "because": "A search of the scripts finds the composition channels fetched, parsed and counted, and nothing that joins them to the light casts or apportions Kd.",
+   "rests_on": [
+    "U-DZ-Z8-NORUN"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-STATUS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "The test this page specifies has not been run: no script in this repository computes it.",
+     "texts": "e1f4fdbbf04a7294",
+     "node U-DZ-Z8-NORUN": "f4171a4ed78dcff6"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-HALF",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "{ref:Z8} says Denmark measures broadband Kd, which cannot be partitioned even in principle; the first half is the protocol's own rule, and the second holds for the number alone, but the missing partition is set by protocol rather than physics, and the archive holds, on the same casts, channels the protocol does not use.",
+   "because": "The instruction mandates one band; the CTD extract carries turbidity and FDOM beside the light channels.",
+   "rests_on": [
+    "H-DZ-Z8-NEEDS",
+    "C-DZ-Z8-M06-PAR",
+    "C-DZ-Z8-CTDPARAM"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:Z8}": "Z8: The attenuation budget is never partitioned",
+     "said on hypodrafts/Z8.md": "Z8 says Denmark measures broadband Kd, *which cannot be partitioned even in principle*. The first half is the protocol's own rule; the second holds for the number alone, but the missing partition is set **by protocol**, not by physics, and the archive holds, on the same casts, channels the protocol does not use.",
+     "hypothesis Z8": "b2e2b624105a94a1",
+     "texts": "8ef029cd3439bb98",
+     "node H-DZ-Z8-NEEDS": "f904ccfc86845fd9",
+     "rests on C-DZ-Z8-M06-PAR": "6b5f14cbae45ffbd",
+     "rests on C-DZ-Z8-CTDPARAM": "2dfaac6250e534fb"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-M06",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The governing method document is DCE's technical instruction on light attenuation by Markager and Fossing, in its stated version and valid from its stated date.",
+   "because": "The instruction's own front page.",
+   "rests_on": [
+    "E-DZ-M06-TITLE"
+   ],
+   "holder": "DCE's marine data centre, in technical instruction M06",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "The governing method document is DCE's technical instruction `M06` *Lyssvækkelse* by Markager and Fossing, version 3, valid from 04.06.2015 ([PDF](https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_M06_Lyssvaekkelse_ver3.pdf)):",
+     "texts": "d1d7241e271894c2",
+     "node E-DZ-M06-TITLE": "f6c61fc7bbf30abf",
+     "pinned DZ-TA-M06": "5697500895a903d8"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-M06-PAR",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "One band is mandated: photosynthetically active light over the stated interval, called PAR.",
+   "because": "The instruction says so, as quoted.",
+   "rests_on": [
+    "E-DZ-M06-PAR"
+   ],
+   "holder": "DCE's marine data centre, in technical instruction M06",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "One band, mandated: *skal der måles fotosyntetisk aktivt lys i intervallet* 400–700 *nm også kaldet PAR* — photosynthetically active light, one broad band.",
+     "texts": "6b5f14cbae45ffbd",
+     "node E-DZ-M06-PAR": "957a7248e4b5beca",
+     "pinned DZ-TA-M06": "5697500895a903d8"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-M06-SPEC",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Its section on light measurement says the light's spectral composition and scattering change with depth, which can bend the log-transformed profile, and that the readings from the lower part of the water column may then have to be left out.",
+   "because": "The instruction says so, as quoted.",
+   "rests_on": [
+    "E-DZ-M06-SPEC",
+    "E-DZ-M06-NONLIN",
+    "E-DZ-M06-OMIT"
+   ],
+   "holder": "DCE's marine data centre, in technical instruction M06",
+   "replaces": [
+    "C-DZ-OLD-Z8-REDISCOVER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Section `2.5.1` names the spectral mechanism and prescribes deletion as the cure: *Lysets spektrale sammensætning og spredning ændrer sig med vanddybden … en ikke-lineær hældning. I disse tilfælde kan det være nødvendigt at udelade lysmålinger fra den nederste del af vandsøjlen* — the light's spectrum changes with depth, the log-transformed profile can bend, and the lowest readings may then be left out.",
+     "texts": "b4f557352dfc3341",
+     "node E-DZ-M06-SPEC": "3ebdb8f005096c9f",
+     "pinned DZ-TA-M06": "5697500895a903d8",
+     "node E-DZ-M06-NONLIN": "306c279237cc3b89",
+     "node E-DZ-M06-OMIT": "fda4704d24efa1ca"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-M06-BED",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "It also sets aside the readings nearest the bed where sediment is stirred up, and leaves which readings to drop to the experience of whoever fits the profile.",
+   "because": "The instruction says so, as quoted.",
+   "rests_on": [
+    "E-DZ-M06-SEDIMENT",
+    "E-DZ-M06-NOEXACT"
+   ],
+   "holder": "DCE's marine data centre, in technical instruction M06",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "It also sets aside the readings nearest the bed where sediment is stirred up from the bottom (*Nederst i vandsøjlen kan sediment hvirvles op fra bunden*), and it leaves which readings to drop to the fitter's experience: *Der kan ikke gives præcise anvisninger til denne procedure*.",
+     "texts": "640c6d0201ed744c",
+     "node E-DZ-M06-SEDIMENT": "c2a65f9626036e1e",
+     "pinned DZ-TA-M06": "5697500895a903d8",
+     "node E-DZ-M06-NOEXACT": "3177580a4cd9204d"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-WINDOW",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Leaving out the lowest readings deletes the mineral signal a partition wants, and where a fit's profile starts matters: this project's light analysis finds a shallower median depth reaching the lower light requirement in casts whose shallowest reading lies above the stated split than in those starting deeper.",
+   "because": "Stirred-up sediment is the mineral signal, and the instruction removes it; light.py splits the casts by their shallowest reading and takes the median depth reaching the requirement in each group.",
+   "rests_on": [
+    "C-DZ-Z8-M06-BED",
+    "D-LR-LIGHT",
+    "X-LR-LIGHT"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-REDISCOVER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Leaving out the lowest readings deletes the mineral signal a partition wants, and where a fit's profile starts matters: this project's light analysis finds the median depth at which light falls to 11% of the surface at 6.31 m in casts whose shallowest reading lies above 2 m, against 8.18 m in those starting deeper.",
+     "texts": "78ea47d8b83ce94e",
+     "rests on C-DZ-Z8-M06-BED": "640c6d0201ed744c",
+     "node D-LR-LIGHT": "d13e75be5b44c526",
+     "node X-LR-LIGHT": "3ab43ea609543b4d"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-M06-FACTOR",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "In Danish waters the empirical constant converting Secchi depth to Kd varies between the stated values, can be lower in very turbid water where scattering matters and higher where dissolved matter dominates, and is set in practice to a stated value.",
+   "because": "The instruction says so, as quoted.",
+   "rests_on": [
+    "E-DZ-M06-RANGE",
+    "E-DZ-M06-TURBID",
+    "E-DZ-M06-DISSOLVED",
+    "E-DZ-M06-SET"
+   ],
+   "holder": "DCE's marine data centre, in technical instruction M06",
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Section `2.5.2`: in Danish waters the empirical constant converting Secchi depth to Kd varies between 1.5 and 3.6, but can be as low as 0.6 in very turbid systems where scattering matters, and up to 4.1 where dissolved matter dominates the attenuation; in practice it is set to 2.3.",
+     "texts": "fac90830d2848aa8",
+     "node E-DZ-M06-RANGE": "0ab0d319f4cf1c54",
+     "pinned DZ-TA-M06": "5697500895a903d8",
+     "node E-DZ-M06-TURBID": "cf16e06f75b98d1d",
+     "node E-DZ-M06-DISSOLVED": "8545579f510923e5",
+     "node E-DZ-M06-SET": "0c995e3851c4ef3e"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-RANGE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "That range is the partition: the constant moves with what attenuates the light, so fixing it assumes the composition away.",
+   "because": "The instruction itself ties the low end to scattering and the high end to dissolved matter.",
+   "rests_on": [
+    "C-DZ-Z8-M06-FACTOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "That range **is** the partition: the constant moves with what attenuates the light, so fixing it assumes the composition away.",
+     "texts": "8f466a43e73ecedd",
+     "rests on C-DZ-Z8-M06-FACTOR": "fac90830d2848aa8"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-PERCAST",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The unit of the test is the cast, never a water body, so the area files val_kd.bin and val_secchi.bin, one value per coastal water body and month, cannot serve.",
+   "because": "A cast's composition and its Kd are measured together; a water body's monthly value mixes casts of different composition.",
+   "rests_on": [
+    "D-DZ-CUBE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Per **cast** — never a water body, which is why the area files `val_kd.bin` and `val_secchi.bin`, one value per coastal water body (`DKCOAST…`) and month, cannot serve here.",
+     "texts": "5cc8196a7a024170",
+     "node D-DZ-CUBE": "c6c1c7d89e0511ed"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-P-ORDER",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Ordering: ranking casts by the chlorophyll proxy does not reproduce their ranking by Kd, and casts above a Kd threshold fall into distinct composition types rather than one.",
+   "because": "If chlorophyll carried Kd, the two rankings would agree and high-Kd casts would share one composition.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**Ordering.** Ranking casts by the chlorophyll proxy does not reproduce the ranking by Kd, and casts above a Kd threshold fall into distinct composition types — high-FDOM/low-turbidity and high-turbidity/low-FDOM — rather than one.",
+     "texts": "221faeb74cbef022"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-P-CONST",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The constant: Kd times Secchi depth on the same station-day varies with FDOM and turbidity after station and month are removed; the instruction's own range predicts this and its fixed constant denies it.",
+   "because": "A constant that moves with composition is a composition signal.",
+   "rests_on": [
+    "C-DZ-Z8-M06-FACTOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**The constant.** `Kd · z_Secchi` on the same station-day varies with FDOM and turbidity after station and month are removed. The instruction's own range predicts this; its fixed constant denies it.",
+     "texts": "f832c861d0ca33a0",
+     "rests on C-DZ-Z8-M06-FACTOR": "fac90830d2848aa8"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-P-ART",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The artefact: the apparent-Kd decline with depth that this project's light analysis measures - the median ratio of lower-half to upper-half Kd rising from its value for profiles starting at the surface to its value for the deepest-starting band - weakens as FDOM rises; the sign is the prediction and the magnitude, which needs an assumed K(λ), is not part of the test.",
+   "because": "Dissolved organic matter narrows the spread of K(λ) across the band, and that spread is what produces the decline; light.py computes the ratios by start-depth band.",
+   "rests_on": [
+    "D-LR-LIGHT",
+    "X-LR-LIGHT",
+    "A-DZ-CDOM"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**The artefact.** The apparent-Kd decline with depth — in this project's light analysis the median ratio of lower-half to upper-half Kd is 0.879 for profiles starting between 0 and 0.6 m, rising to 0.987 for those starting below 5.1 m — **weakens as FDOM rises**, because absorption by coloured dissolved organic matter at short wavelengths narrows the spread of K(λ) across the PAR band that produces the decline. The sign is the prediction; the magnitude needs an assumed K(λ) and is not part of the test.",
+     "texts": "d6614c311acf4437",
+     "node D-LR-LIGHT": "d13e75be5b44c526",
+     "node X-LR-LIGHT": "3ab43ea609543b4d",
+     "node A-DZ-CDOM": "849bd101b81e83b4"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-EACHFAIL",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Each prediction can fail: the ordering would leave {ref:Z8}'s attribution complaint empty here, the constant would make the fixed constant harmless, and the artefact would refute the spectral reading of the light analysis.",
+   "because": "Each is stated so that an outcome of the test contradicts it.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:Z8}": "Z8: The attenuation budget is never partitioned",
+     "said on hypodrafts/Z8.md": "Each can fail: the ordering would leave Z8's attribution complaint empty here, the constant would make the fixed constant harmless, and the artefact would refute the spectral reading of the light analysis.",
+     "hypothesis Z8": "b2e2b624105a94a1",
+     "texts": "0694249170eb04c5"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-LYS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The light-attenuation extract holds the counted records at the counted stations with a position; this project's light analysis counts the casts in it with a positive Kd and a date, and those with a fit correlation of at least its stated minimum or none reported.",
+   "because": "hypodraft_facts.py counts the records and positioned stations; light.py counts casts, one per station, date and investigation, and applies its fit rule.",
+   "rests_on": [
+    "D-DZ-HYPFACTS",
+    "X-KP-HYPFACTS",
+    "D-LR-LIGHT",
+    "X-LR-LIGHT"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-LYS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**Light profiles.** `lys.csv.gz` holds 2,370,091 records at 566 stations with a position; this project's light analysis counts 62,741 casts in it with a positive Kd and a date, 60,697 of them with a fit correlation of at least 0.9 or none reported.",
+     "texts": "3ca60cd8c6692f3a",
+     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
+     "node X-KP-HYPFACTS": "b78ab850a1db2c4b",
+     "node D-LR-LIGHT": "d13e75be5b44c526",
+     "node X-LR-LIGHT": "3ab43ea609543b4d"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-LYSCOLS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Each record carries the top and bottom depths its regression used and its correlation coefficient, so Kd is a regression over a window the operator chose, a profile collapsed to one slope.",
+   "because": "The extract's header has ZMin, ZMax and KorrelationsKoefficient beside the coefficient; the instruction defines z-min and z-max as the top and bottom depth used, and leaves which readings to use to the fitter.",
+   "rests_on": [
+    "D-DZ-LYSHEAD",
+    "E-DZ-M06-ZMIN",
+    "E-DZ-M06-ZMAX",
+    "C-DZ-Z8-M06-BED"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-LYS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Each record carries the depths its regression used, `ZMin` and `ZMax` — the instruction's *øverste* and *nederst dybde som er anvendt* — and its correlation coefficient: Kd is a regression the operator fitted over a window the operator chose, a profile collapsed to one slope.",
+     "texts": "a24c3b83eafb2f33",
+     "node D-DZ-LYSHEAD": "3af917ad5f282b1f",
+     "node E-DZ-M06-ZMIN": "16f848b8e36ec4a9",
+     "pinned DZ-TA-M06": "5697500895a903d8",
+     "node E-DZ-M06-ZMAX": "0b0b4fc2a51871d4",
+     "rests on C-DZ-Z8-M06-BED": "640c6d0201ed744c"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-FIT",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Require the fit coefficient, so that a Kd converted from Secchi depth, which the instruction forbids reporting as Kd, cannot enter.",
+   "because": "A record with a fitted correlation came from a profile; the rule guards against records that broke the instruction.",
+   "rests_on": [
+    "E-DZ-M06-NOKD"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-LYS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Require the fit coefficient: the instruction forbids reporting a Kd converted from Secchi depth as a Kd value (*må ikke indrapporteres til databasen som Kd-værdier*), and a fitted correlation shows a record came from a profile, so a record that broke the rule cannot enter.",
+     "texts": "f31413535c362daa",
+     "node E-DZ-M06-NOKD": "99d17e3745014ed2",
+     "pinned DZ-TA-M06": "5697500895a903d8"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-CTDPARAM",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The CTD extract carries Lysdæmpning, Fluorescens, Turbiditet and FDOM on the counted rows, with the two photometer channels on the counted rows beside them.",
+   "because": "enums.py counts every value of the Parameter column over all rows.",
+   "rests_on": [
+    "D-CTD",
+    "D-DS-ENUMS",
+    "X-KP-ENUMS"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-CTD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on hypodrafts/Z8.md": "**CTD channels.** The CTD extract carries `Lysdæmpning` on 5,217,377 rows, `Fluorescens` on 6,783,790, `Turbiditet` on 1,076,915 and `FDOM` on 890,921, with `Photometer måling` on 576,179 and `Photometer reference` on 531,071 beside them.",
+     "texts": "2dfaac6250e534fb",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node D-DS-ENUMS": "d951dca316762bb4",
+     "node X-KP-ENUMS": "9f81357787adb189"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-UNITS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "By count, the unit column puts turbidity in FTU, FDOM in ppb, the photometer channels in photon flux and Lysdæmpning with oxygen saturation in percent: Lysdæmpning is a percentage, matching the instruction's light value as a percentage of surface irradiance, and not the attenuation coefficient, whose unit is per metre.",
+   "because": "enums.py counts every value of both the Parameter and the Enhed column over all rows, and each of these unit totals equals the named parameter totals exactly. The columns are not joined row by row, so the reading is an inference from the totals.",
+   "rests_on": [
+    "C-DZ-Z8-CTDPARAM",
+    "D-DS-ENUMS",
+    "X-KP-ENUMS",
+    "E-DZ-M06-PCT",
+    "E-DZ-M06-UNIT"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-SPAN",
+    "C-DZ-OLD-Z8-LYSD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "The unit column, `Enhed`, says what they are, by count: `FTU` stands on 1,076,915 rows, exactly as many as `Turbiditet`; `ppb` on 890,921, as many as `FDOM`; `µmol fotoner/(m2*sek)` on 1,107,250, as many as the photometer channels together (1,107,250); and `pct` on 11,815,696, as many as `Lysdæmpning` and oxygen saturation (`Oxygenmætning`) together (11,815,696). So turbidity and FDOM are in sensor units and the photometers in photon flux, and `Lysdæmpning` is a percentage — matching the instruction's light value in the water column as a percentage of surface irradiance (*lysværdi i vandsøjlen i procent af overfladeindstråling*), not its attenuation coefficient, whose unit is per metre.",
+     "texts": "9833a6a94a329395",
+     "rests on C-DZ-Z8-CTDPARAM": "2dfaac6250e534fb",
+     "node D-DS-ENUMS": "d951dca316762bb4",
+     "node X-KP-ENUMS": "9f81357787adb189",
+     "node E-DZ-M06-PCT": "53dc2b6ca3dc9894",
+     "pinned DZ-TA-M06": "5697500895a903d8",
+     "node E-DZ-M06-UNIT": "65b14d51682b67c1"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-REFIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The photometer channels, a reading and a reference in the photon-flux unit the instruction uses for surface light, look like the underwater and surface sensors its fit is made from, per depth row; if they are, Kd can be refitted over a stated window on the same cast as the composition channels, though the reading channel has more rows than the reference.",
+   "because": "The names and the unit match the instruction's two sensors; every CTD row has a depth; the row counts are enums.py's.",
+   "rests_on": [
+    "C-DZ-Z8-UNITS",
+    "E-DZ-M06-TWO",
+    "E-DZ-M06-SURFACE",
+    "D-DZ-CTDHEAD"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-LYSD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "The photometer channels — a reading and a reference, in the photon-flux unit the instruction gives for surface light — look like the underwater and surface sensors its fit is made from, one value per depth row. If they are, Kd can be refitted over a *stated* window instead of the operator's, on the same cast as the composition channels. The reading channel has more rows than the reference, so not every reading has its reference.",
+     "texts": "69eae4c6df61f8d2",
+     "rests on C-DZ-Z8-UNITS": "9833a6a94a329395",
+     "node E-DZ-M06-TWO": "70a90f76b8e3206c",
+     "pinned DZ-TA-M06": "5697500895a903d8",
+     "node E-DZ-M06-SURFACE": "b448d60ac02f0592",
+     "node D-DZ-CTDHEAD": "2077016bbbc85a12"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-FDOMSPAN",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "FDOM runs only over the counted years, so a test on both composition channels is confined to them, and before them the extract holds no other channel for dissolved organic matter.",
+   "because": "hypodraft_ctd.py finds the first and last FDOM year; no other Parameter value is a proxy for dissolved organic matter.",
+   "rests_on": [
+    "X-KD-HYPCTD",
+    "D-CTD",
+    "C-DZ-Z8-CTDPARAM"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-SPAN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on hypodrafts/Z8.md": "`FDOM` runs only from 2021 to 2026, so a test on both composition channels is confined to those years; before them the extract holds no other channel for dissolved organic matter.",
+     "texts": "3bcdedbee9150d12",
+     "node X-KD-HYPCTD": "1ceeb76bd5900e03",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "rests on C-DZ-Z8-CTDPARAM": "2dfaac6250e534fb"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-PROXY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The sensor units are not absorption coefficients, FDOM is fluorescence rather than absorption by coloured dissolved organic matter, and turbidity is light scattered at right angles rather than absorption by non-algal particles.",
+   "because": "The units are `C-DZ-Z8-UNITS`'s; the fDOM review names fDOM as fluorescent organic matter, and a turbidity meter reads light scattered at right angles.",
+   "rests_on": [
+    "C-DZ-Z8-UNITS",
+    "E-DZ-FDOM-FLUOR",
+    "E-SS-TURB-ANGLE"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Errors in the proxies: `ppb` and `FTU` are sensor units, not absorption coefficients; FDOM is fluorescence (fluorescent dissolved organic matter), not absorption by coloured dissolved organic matter; and turbidity is light scattered at right angles, not absorption by non-algal particles.",
+     "texts": "4270472e25e1026d",
+     "rests on C-DZ-Z8-UNITS": "9833a6a94a329395",
+     "node E-DZ-FDOM-FLUOR": "3cd49e24f714ec12",
+     "pinned SS-PMC-FDOM-REV": "a4bbc290aceea2ed",
+     "node E-SS-TURB-ANGLE": "9bf7679ea8151f41",
+     "pinned SS-WIKI-TURBIDITY": "e52506adfe07c334"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SONDE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "SondeNr is the unknown-probe placeholder on the counted share of the CTD extract's rows, so on those rows the probe, and any calibration tied to it, cannot be identified.",
+   "because": "The share is `C-HY-I2-SONDE`'s, over every row of the extract.",
+   "rests_on": [
+    "C-HY-I2-SONDE"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "`SondeNr` is the placeholder `999`, probe unknown, on 25.6% of the CTD extract's rows, so on those rows the probe, and any calibration tied to it, cannot be identified.",
+     "texts": "caa860bab935aa98",
+     "rests on C-HY-I2-SONDE": "522a5d274b981eff"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-NOCLOCK",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The CTD extract has no wavelength column and no time of day.",
+   "because": "Its header holds neither, as `C-HY-I3-NOCLOCK` records for the clock.",
+   "rests_on": [
+    "C-HY-I3-NOCLOCK",
+    "D-DZ-CTDHEAD"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Over all of it, the extract has no wavelength column and no time of day.",
+     "texts": "5f80d30b6a244db9",
+     "rests on C-HY-I3-NOCLOCK": "5ba9810307ebde13",
+     "node D-DZ-CTDHEAD": "2077016bbbc85a12"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-S1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Build a cast table from the light extract through formats.num(): station, date, Kd, fit, ZMin, ZMax; keep casts with a fit coefficient.",
+   "because": "The first step: the response, parsed with the declared format.",
+   "rests_on": [
+    "C-DZ-Z8-FIT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Cast table from `lys.csv.gz` via `formats.num()`: station, date, Kd, fit, `ZMin`, `ZMax`; keep casts with a fit coefficient.",
+     "texts": "2e92c8aca1d67e58",
+     "rests on C-DZ-Z8-FIT": "f31413535c362daa"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-S2",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Stream the CTD extract once, cast-contiguous, emitting per station and date the depth-median fluorescence, FDOM and turbidity over the depths the Kd was fitted over.",
+   "because": "The composition that matters is that of the layer the Kd describes.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Stream `ctd.csv.gz` once, cast-contiguous (flush on key change, count reopened keys), emitting per station and date the depth-median `Fluorescens`, `FDOM` and `Turbiditet` **over `ZMin…ZMax`** — the layer the Kd was fitted over, not the whole cast.",
+     "texts": "c0a2fc7aeb7c3469"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-S3",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Inner-join on station and date, and report how the joined subset differs from all light casts in Kd, station and month; that selection is the first result.",
+   "because": "A join that keeps only some casts is a sample, and its selection must be known before anything is read from it.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Inner-join on station and date; report how the joined subset differs from all light casts in Kd, station and month — that selection is the first result.",
+     "texts": "c9708fc99f48b34d"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-S4",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Apportion Kd's variance among the proxies within station by month, then fit the ordering and the constant against Secchi depth on the same station-day, and the artefact, each against the permutation null, reported as a distribution; repeat with satellite absorption and backscatter retrievals where one reaches back before the FDOM record.",
+   "because": "These carry the three predictions; the satellite arm is the only one that can reach years without FDOM.",
+   "rests_on": [
+    "C-DZ-Z8-FDOMSPAN"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Apportion Kd's variance among the proxies within station × month, then fit the ordering and the constant against `maaledybde.csv.gz` Secchi on the same station-day, and the artefact — each against the permutation null below, reported as a distribution rather than a p-value. Repeat with satellite absorption and backscatter retrievals where one reaches back before the FDOM record.",
+     "texts": "c22487b663ee8db6",
+     "rests on C-DZ-Z8-FDOMSPAN": "3bcdedbee9150d12"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-NULL",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The null permutes the composition channels together across casts within station and calendar month, keeping each channel's marginals and the station and season structure, and rebuilds the apportionment a stated number of times; the observed unique variance must beat that distribution, and the same permutation serves the constant and the artefact.",
+   "because": "Casts are clustered by station, seasonal and autocorrelated, and the channels share a station's mean level with Kd, so a regression's nominal null would overstate; the number of permutations is a stated value.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Not a regression's nominal F-null. Casts are clustered by station, seasonal and autocorrelated, and the composition channels share a station's mean level with Kd. **Permute the composition channels together, one row per cast, across casts within station × calendar month**, preserving each channel's marginals and the station/season structure, and rebuild the apportionment 1,000 times; the observed unique variance must beat that distribution. Same permutation for the constant and the artefact; the result is whatever the permutation returns, reported even when it exceeds the observed statistic.",
+     "texts": "1aaf9036f5f9d208"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-MATCH",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The satellite arm's null is built on the matched subset, because matchup.py records, from its first run, that casts with a same-day satellite retrieval are clearer than the rest in the same months: the matched days are not a random sample.",
+   "because": "The statement is in matchup.py's docstring and in the warning of the file it writes; it is not recomputed when the script runs.",
+   "rests_on": [
+    "X-DZ-MATCHUP",
+    "D-DZ-MATCHUPS"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-MATCH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "The satellite arm's null is built on the matched subset: `matchup.py` records, from its first run, that casts with a same-day satellite retrieval are clearer than the rest in the same months, so the matched days are not a random sample of days.",
+     "texts": "a4627a5ecfa7f7f5",
+     "node X-DZ-MATCHUP": "a8c94ce5d17db651",
+     "node D-DZ-MATCHUPS": "2c763aca6f8e3430"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SUM",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Kd is the sum of what water, phytoplankton, coloured dissolved organic matter and non-algal particles attenuate; on the in-situ arm none of the terms is in absorption units, so the test yields a variance apportionment, not a budget, and the residual holds the start-depth artefact, the operator's window and the time of day.",
+   "because": "The proxies are in sensor units and are not absorptions; the window and the clock are not in the data.",
+   "rests_on": [
+    "C-DZ-Z8-PROXY",
+    "C-DZ-Z8-LYSCOLS",
+    "C-DZ-Z8-NOCLOCK"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "`Kd = K_water + K_phyto + K_CDOM + K_NAP`. On the in-situ arm **none of the terms is in absorption units**, so this yields a variance apportionment, not a budget, and the residual holds the start-depth artefact, the operator's window choice and the time of day.",
+     "texts": "a784ea7245accff0",
+     "rests on C-DZ-Z8-PROXY": "4270472e25e1026d",
+     "rests on C-DZ-Z8-LYSCOLS": "a24c3b83eafb2f33",
+     "rests on C-DZ-Z8-NOCLOCK": "5f80d30b6a244db9"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SATSPLIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The satellite arm cannot split dissolved matter from detritus: its absorption term for them is one combined coefficient.",
+   "because": "The retrievals pinned here give dissolved and detrital absorption as one term.",
+   "rests_on": [
+    "E-DZ-NASA-ADG",
+    "E-DZ-CCI-PARTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "The satellite arm cannot split dissolved matter from detritus: its absorption term for them (`adg`) is one combined coefficient.",
+     "texts": "1dcb0aa93d4988ca",
+     "node E-DZ-NASA-ADG": "dc623072eed0c936",
+     "pinned DZ-NASA-IOP": "f59cfeeba23463b7",
+     "node E-DZ-CCI-PARTS": "b45e5429b5a1a9cc",
+     "pinned DZ-CEDA-OCCCI": "d031e592ac6db6fe"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SHRINK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "A residual is testable only by measuring a part out of it and checking that the residual shrinks by exactly that part, which needs absorption in units: a spectrophotometer or spectroradiometer profile beside the PAR cast.",
+   "because": "A part measured in other units cannot be subtracted from the residual.",
+   "rests_on": [],
+   "replaces": [
+    "C-DZ-OLD-Z8-ACS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "A residual is testable only by measuring a part out of it and checking that it shrinks by exactly that part — which needs absorption in units: a spectrophotometer or spectroradiometer profile beside the PAR cast.",
+     "texts": "4722b514394fa7f0"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-ACS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Such profiles have been taken in Danish waters: an AC-S spectrophotometer mounted on the CTD frame at national monitoring stations around Fyn in an autumn and a spring campaign, and the instrument's incorporation into the sampling programme called a first step toward sensor-based monitoring.",
+   "because": "Their paper, as pinned, says so.",
+   "rests_on": [
+    "E-DZ-GA-FYN",
+    "E-DZ-GA-NOVANA",
+    "E-DZ-GA-FRAME",
+    "E-DZ-GA-FIRST"
+   ],
+   "holder": "Gonçalves-Araujo and Markager (2020), in Frontiers in Marine Science",
+   "replaces": [
+    "C-DZ-OLD-Z8-ACS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Such profiles have been taken in Danish waters: Gonçalves-Araujo and Markager (2020) mounted an AC-S spectrophotometer on the CTD frame at stations of the national monitoring programme (NOVANA) around Fyn, in autumn 2017 and spring 2019, and call the instrument's incorporation into the sampling programme in 2017 a first step toward automated, sensor-based monitoring.",
+     "texts": "c0ec0c1061c7a580",
+     "node E-DZ-GA-FYN": "d201cee6c757a03b",
+     "pinned DZ-GA-2020": "5750b05d99ebfc0f",
+     "node E-DZ-GA-NOVANA": "ef9363fad1574e40",
+     "node E-DZ-GA-FRAME": "5a0d5c97f5d92a06",
+     "node E-DZ-GA-FIRST": "a80e43058cd1ee4c"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-ACSGAP",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "None of the CTD extract's Parameter values is an absorption, so no such profile reaches the extract this project holds, and until one does the shrinkage test is joint with a spectral model.",
+   "because": "enums.py lists every Parameter value of the extract; none of them is an absorption.",
+   "rests_on": [
+    "C-DZ-Z8-CTDPARAM",
+    "D-DS-ENUMS"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-ACS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "None of the CTD extract's `Parameter` values is an absorption, so no such profile reaches the extract this project holds; until one does, the shrinkage test is joint with a spectral model.",
+     "texts": "007ba0f00378c91e",
+     "rests on C-DZ-Z8-CTDPARAM": "2dfaac6250e534fb",
+     "node D-DS-ENUMS": "d951dca316762bb4"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-WOULD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The test would license a statement about the record: whether Kd's cast-to-cast variance at named stations in named months is carried mainly by the chlorophyll channel, against a permutation null, and whether the instruction's fixed constant is composition-free.",
+   "because": "That is what the apportionment and the constant's regression estimate against their null.",
+   "rests_on": [
+    "C-DZ-Z8-M06-FACTOR"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**Would:** a statement about the *record* — whether Kd's cast-to-cast variance at named stations in named months is carried mainly by the chlorophyll channel, against a permutation null, and whether the instruction's fixed constant of 2.3 is composition-free.",
+     "texts": "e08f34980676b1b3",
+     "rests on C-DZ-Z8-M06-FACTOR": "fac90830d2848aa8"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-WOULDNOT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "It would not license a physical budget, a causal attribution, any per-water-body or national number, or any trend.",
+   "because": "The apportionment is not in absorption units, an association is not a cause, casts at named stations are not a sample of water bodies, and the FDOM record spans few years.",
+   "rests_on": [
+    "C-DZ-Z8-SUM",
+    "C-DZ-Z8-FDOMSPAN"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-TRENDS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**Would not:** a physical budget, a causal attribution, any per-water-body or national number, or any trend.",
+     "texts": "1aed98e7ca19f6a8",
+     "rests on C-DZ-Z8-SUM": "a784ea7245accff0",
+     "rests on C-DZ-Z8-FDOMSPAN": "3bcdedbee9150d12"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SRC-CTD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The CTD extract's light and composition channels are held, per depth, and are not a separate production path from the light profiles: the instruction says the light sensor is usually mounted on the CTD.",
+   "because": "Held channels are `C-DZ-Z8-CTDPARAM`'s; the instruction's section on light measurement says where the sensor sits.",
+   "rests_on": [
+    "C-DZ-Z8-CTDPARAM",
+    "E-DZ-M06-CTD"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**Held: the CTD extract's light and composition channels**, per depth. **Not a separate path** from the light profiles: the instruction says the light sensor is usually mounted on the CTD (*sædvanligvis monteret på CTD’en*).",
+     "texts": "a347da2b138f632d",
+     "rests on C-DZ-Z8-CTDPARAM": "2dfaac6250e534fb",
+     "node E-DZ-M06-CTD": "915cf0ce337a6f5d",
+     "pinned DZ-TA-M06": "5697500895a903d8"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SRC-131",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Copernicus Marine's near-real-time Baltic ocean-colour product gives daily observations at the stated resolution, with an optics dataset of absorption and backscatter by dissolved and particulate matter and phytoplankton from the QAA model, and its catalogue record starts in the stated year.",
+   "because": "Their product description and catalogue record, as pinned.",
+   "rests_on": [
+    "E-DZ-131-TITLE",
+    "E-DZ-131-OPTICS",
+    "E-DZ-131-QAA",
+    "E-DZ-131-DAILY",
+    "E-DZ-131-OLCI"
+   ],
+   "holder": "Copernicus Marine Service, in the product description",
+   "replaces": [
+    "C-DZ-OLD-Z8-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**Copernicus Marine [`OCEANCOLOUR_BAL_BGC_L3_NRT_009_131`](https://data.marine.copernicus.eu/product/OCEANCOLOUR_BAL_BGC_L3_NRT_009_131/description)** — near-real-time daily observations from OLCI at 300 m, with an optics dataset of absorption and backscatter by dissolved and particulate matter and by phytoplankton (`ADG`, `APH`, `BBP`) from the QAA model; its catalogue record starts in 2023.",
+     "texts": "5f42897a3f078d46",
+     "node E-DZ-131-TITLE": "3d2a76c952f3f24f",
+     "pinned DZ-CMEMS-131": "baebdb15129711d4",
+     "node E-DZ-131-OPTICS": "0fd513e51d0994d3",
+     "node E-DZ-131-QAA": "74bd379f75b4b8eb",
+     "node E-DZ-131-DAILY": "568dae481af2998c",
+     "node E-DZ-131-OLCI": "e20721c6a0ddeb38"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SRC-208",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Copernicus Marine's high-resolution Baltic product gives turbidity, suspended matter, particulate backscatter and chlorophyll from `Sentinel-2` at the stated resolution for a coastal zone of the stated width, and no absorption variable, from the stated year.",
+   "because": "Their product description and catalogue record, as pinned; the description lists its variables and no absorption among them.",
+   "rests_on": [
+    "E-DZ-208-TITLE",
+    "E-DZ-208-VARS",
+    "E-DZ-208-MSI"
+   ],
+   "holder": "Copernicus Marine Service, in the product description",
+   "replaces": [
+    "C-DZ-OLD-Z8-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**Copernicus Marine [`OCEANCOLOUR_BAL_BGC_HR_L4_NRT_009_208`](https://data.marine.copernicus.eu/product/OCEANCOLOUR_BAL_BGC_HR_L4_NRT_009_208/description)** — `Sentinel-2` MSI at 100 m for a 20 km coastal zone: turbidity, suspended matter, particulate backscatter (`BBP443`) and chlorophyll, and no absorption variable; its catalogue record starts in 2020.",
+     "texts": "65515d63b417c4f4",
+     "node E-DZ-208-TITLE": "f9bd530beb401d64",
+     "pinned DZ-CMEMS-208": "89f04d6ef7185f9b",
+     "node E-DZ-208-VARS": "2218620cce2775f7",
+     "node E-DZ-208-MSI": "f4c84c976f6191da"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SRC-CCI",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "ESA's Ocean Colour CCI inherent optical properties are global, at the stated resolution, in composites from daily to yearly over the stated years: total absorption and backscatter and absorption by detrital and dissolved matter and by phytoplankton, the dissolved-and-detrital term from the QAA model.",
+   "because": "Their catalogue record, as pinned.",
+   "rests_on": [
+    "E-DZ-CCI-TITLE",
+    "E-DZ-CCI-IOP",
+    "E-DZ-CCI-TIME",
+    "E-DZ-CCI-PARTS",
+    "E-DZ-CCI-QAA"
+   ],
+   "holder": "ESA Ocean Colour CCI, in its CEDA catalogue record",
+   "replaces": [
+    "C-DZ-OLD-Z8-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**ESA Ocean Colour CCI inherent optical properties, `v6.0`** ([CEDA](https://catalogue.ceda.ac.uk/uuid/024292dcda5d42ceb326850f89f8b40d/)) — global, at approximately 4 km, in composites from daily to yearly, covering 1997 to 2022: total absorption and backscatter, and absorption by detrital and dissolved matter and by phytoplankton, the dissolved-and-detrital term from the QAA model.",
+     "texts": "6fc70d1c7909c632",
+     "node E-DZ-CCI-TITLE": "5130d9953b5893c7",
+     "pinned DZ-CEDA-OCCCI": "d031e592ac6db6fe",
+     "node E-DZ-CCI-IOP": "da6aed5bfc408594",
+     "node E-DZ-CCI-TIME": "cbf9f29a3c4caa07",
+     "node E-DZ-CCI-PARTS": "b45e5429b5a1a9cc",
+     "node E-DZ-CCI-QAA": "eb1c747b4cc2ab5b"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SRC-MODIS",
+   "kind": "attributed",
+   "stance": "theirs",
+   "page": "hypodrafts/Z8.md",
+   "claim": "NASA's Aqua MODIS inherent optical properties are retrieved with the GIOP model framework, giving phytoplankton absorption and combined CDOM and detritus absorption, from the stated year.",
+   "because": "Their collection record, as pinned.",
+   "rests_on": [
+    "E-DZ-NASA-TITLE",
+    "E-DZ-NASA-GIOP",
+    "E-DZ-NASA-APH",
+    "E-DZ-NASA-ADG"
+   ],
+   "holder": "NASA, in its Earthdata collection record",
+   "replaces": [
+    "C-DZ-OLD-Z8-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "**NASA Aqua MODIS `L3` inherent optical properties, version `2022.0`** ([Earthdata](https://www.earthdata.nasa.gov/data/catalog/ob-cloud-modisa-l3m-iop-2022.0)) — retrieved with the GIOP model framework, not QAA: phytoplankton absorption and combined CDOM and detritus absorption (`aph_443`, `adg_443`), from 2002.",
+     "texts": "639baada7f148b8c",
+     "node E-DZ-NASA-TITLE": "497242a3a62be1a2",
+     "pinned DZ-NASA-IOP": "f59cfeeba23463b7",
+     "node E-DZ-NASA-GIOP": "952314672bb60768",
+     "node E-DZ-NASA-APH": "8101bea03baa2075",
+     "node E-DZ-NASA-ADG": "dc623072eed0c936"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SRC-PATH",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Every satellite product listed is a retrieval of optical properties from reflectance, a model applied to radiometry from orbit, so each is a separate production path from the ship's casts, and none is a measurement of absorption in the water.",
+   "because": "Each record names its retrieval model or its satellite sensor.",
+   "rests_on": [
+    "C-DZ-Z8-SRC-131",
+    "C-DZ-Z8-SRC-208",
+    "C-DZ-Z8-SRC-CCI",
+    "C-DZ-Z8-SRC-MODIS"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Every satellite product above is a retrieval of optical properties from reflectance — a model applied to radiometry from orbit — so each is a separate production path from the ship's casts, and none is a measurement of absorption in the water.",
+     "texts": "d5c54c2c664e6ba1",
+     "rests on C-DZ-Z8-SRC-131": "5f42897a3f078d46",
+     "rests on C-DZ-Z8-SRC-208": "65515d63b417c4f4",
+     "rests on C-DZ-Z8-SRC-CCI": "6fc70d1c7909c632",
+     "rests on C-DZ-Z8-SRC-MODIS": "639baada7f148b8c"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SRC-133",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "The Baltic multiyear ocean-colour product already fetched names plankton, reflectance and transparency in its title and no optics, where its near-real-time sibling's title adds optics.",
+   "because": "The two titles, as pinned.",
+   "rests_on": [
+    "E-KD-OC133-TITLE",
+    "E-DZ-131-TITLE"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-SEARCH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "The Baltic multiyear product already fetched, `OCEANCOLOUR_BAL_BGC_L3_MY_009_133`, names plankton, reflectances and transparency in its title and no optics, where its near-real-time sibling's title adds optics.",
+     "texts": "b5b9262de116dc2b",
+     "node E-KD-OC133-TITLE": "00ab3d9eace5a6c6",
+     "pinned KD-CMEMS-OC133": "749a3af52642e281",
+     "node E-DZ-131-TITLE": "3d2a76c952f3f24f",
+     "pinned DZ-CMEMS-131": "baebdb15129711d4"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-Z8-SEARCH",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/Z8.md",
+   "claim": "Beyond these, the source register records searches of PANGAEA and of the Copernicus Baltic product for spectral absorption in Danish water, with a Roskilde Fjord series as the only positive: an absence over those searches, not a finding that none exists.",
+   "because": "The register's entry for the gap names the searches and the one dataset found.",
+   "rests_on": [
+    "D-KP-SOURCEREG"
+   ],
+   "replaces": [
+    "C-DZ-OLD-Z8-SEARCH"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/Z8.md": "Beyond these, the source register records searches of PANGAEA and of that product for spectral absorption in Danish water, with a Roskilde Fjord series as the only positive: an absence over those searches, *not a finding that none exists*.",
+     "texts": "54d7dd900ff0f9ec",
+     "node D-KP-SOURCEREG": "5f1ff7a12c321845"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-STATUS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The test was ready, the hypothesis register called trawling effort the most important missing layer, and the archive had a stated size.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "**Status: testable.**",
+    "end": "nothing downloaded;",
+    "why": "The quotation is not in the hypothesis register as it now stands, and nothing held says the test is ready; the archive's size was typed from the drafting session. The size and licence are now read from the pinned figshare record."
+   },
+   "replaced_by": [
+    "C-DZ-D1-STATUS",
+    "C-DZ-D1-ZIP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Status: testable. HYPOTHESES.md calls VMS/AIS effort \"the single most important missing layer in this whole register\". It is a 23.1 MB `CC BY 4.0` zip. Nothing here has been run and nothing downloaded;",
+     "texts": "cdc16dc27ecb9db1"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-WINDOW",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Stated counts of near-bed oxygen station-months and stations in the layers' years, of stations by quarters covered, of grid cells, and of fluorescence station-months sharing a month with oxygen.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "Verified by reading the",
+    "end": "nearly complete on the response.",
+    "why": "Counted in a one-off reading of the panel's binary whose output and code are not held."
+   },
+   "replaced_by": [
+    "C-DZ-D1-OVERLAP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Verified by reading the binary: `oxy_bed` 76,980 station-months total, 8,396 in 2016–2021 at 224 stations, of which 197 stations cover ≥8 distinct quarters, 180 ≥12, 140 ≥16, 79 ≥20. Stations occupy 791 distinct 0.05° cells; 215 carry `oxy_bed` in-window, 175 in ≥12 quarters. `fluo` 7,694 in-window station-months, 7,655 of them sharing a station-month with `oxy_bed` — the productivity covariate is nearly complete on the response.",
+     "texts": "3a14154e3b598cd5"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-EAST",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated number of the panel's stations lie east of a stated meridian.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "(placebo).",
+    "end": "°E.",
+    "why": "Counted in a one-off run whose output is not held."
+   },
+   "replaced_by": [
+    "C-DZ-D1-OVERLAP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "(placebo). 1,392 of 1,415 stations lie east of 8°E.",
+     "texts": "0b308ae17ab497d1"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-FIELDS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The HELCOM record lists stated fields; the layers have a stated grid size and cover every station east of a meridian; swept area is modelled by a stated method; VMS is mandatory above a stated vessel length.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "Fields per HELCOM metadata record",
+    "end": "that is the fleet.",
+    "why": "The field names are not those the HELCOM record gives, the grid size and coverage were typed and neither record states them, and the method and the vessel-length rule had no source: the pinned records do not describe them, and the EU regulation could not be retrieved to pin."
+   },
+   "replaced_by": [
+    "C-DZ-D1-META",
+    "C-DZ-D1-SARMODEL",
+    "C-DZ-D1-FLEET"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Fields per HELCOM metadata record `0195e2c6-6b83-49ea-a0db-41f14a316c87`: `c-square`, `mid_lat`, `mid_lon`, `Year`, `quarter`, `geargroup`, `SurfSAR`, `SubsurfSAR`, `Fishing_ho` — 0.05° c-square, quarterly, 2016–2021, HELCOM area, covering every station east of 8°E. *Class 7 (model-as-datum):* SAR is not measured — pings are interpolated to tracks, fishing inferred from a speed rule, gear width imputed from vessel length by métier. *Class 6 (absent dimension):* VMS is mandatory only above 12 m, with 12–15 m exemptions inside territorial waters, so the small inshore fleet is structurally absent — in the Belt Sea and Øresund that is the fleet.",
+     "texts": "3f6774fb19ef48e4"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-OSPAR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "An annual OSPAR effort product of a stated size covers a stated number of North Sea stations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "**Optional, larger.**",
+    "end": "Attended work.",
+    "why": "The station count was made in the drafting session and is not held, and the figshare record describes the code that produces the layers, not their resolution."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Optional, larger. ICES/OSPAR annual layers 2009–2020, figshare `18601508`, 411.5 MB, `CC BY 4.0` — annual only, and only for the 23 North Sea stations. Attended work.",
+     "texts": "d96f1ec7cdd8af79"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-POSITION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A stated share of CTD measurements lie at coordinates differing from their station's.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "**Depth and true position.**",
+    "end": "yields cast depth.",
+    "why": "The share was computed in a one-off run whose output is not held."
+   },
+   "replaced_by": [
+    "C-DZ-D1-POSITION",
+    "C-DZ-D1-POSGAP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Depth and true position. `data/raw/oda/ctd.csv.gz` (448.7 MB gzip) carries `Dybde (m)` and `MålingX_UTM32`/`MalingY_UTM32` per measurement. With 56% of measurements at coordinates differing from their station's, the station→c-square join is itself an error source; one streamed pass places each cast in the c-square it was taken in and yields cast depth.",
+     "texts": "6ba1688e548127d2"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-WEAK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A null is weakly informative over a stated number of observations, and trawling predates the record's start.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "A null is weakly informative:",
+    "end": "never before-and-after.",
+    "why": "The observation count was made in an unheld run, and when trawling began in these waters had no source."
+   },
+   "replaced_by": [
+    "C-DZ-D1-WEAK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A null is weakly informative: six years, 8,396 observations, quarterly effort and a modelled SAR missing the inshore fleet can all fail to see a real effect. And there is no pre-trawling baseline — trawling predates the 1980 record start, so this is contrast across places and quarters, never before-and-after.",
+     "texts": "72e9f2d973ae2412"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-D1-OVERLAP",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Stated counts of quarters, near-bed station-months and their share, of what OSPAR's layers would add, and of grid cells holding more than one station.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/D1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/D1.md",
+    "begin": "**Overlap, precisely.**",
+    "end": "cluster on the c-square.",
+    "why": "The counts were made in a one-off run whose output is not held."
+   },
+   "replaced_by": [
+    "C-DZ-D1-OVERLAP",
+    "C-DZ-D1-CLUSTER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Overlap, precisely. Effort is quarterly 2016–2021 against a monthly 1980–2026 record: 24 quarters, 8,396 near-bed station-months, 10.9% of `oxy_bed`. OSPAR's 2009–2020 layers would raise that to 17,977 station-months at 325 stations, but at annual resolution, destroying the lag structure that makes the within-station arm a test rather than a correlation. The 0.05° cell is coarse against the station field — 262 of 791 cells hold more than one station — so effort is a shared regressor and errors must cluster on the c-square.",
+     "texts": "632409ca8d60c925"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-STATUS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The test can be run now on a subset, with one term left by subtraction.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "**Testable now**",
+    "end": "said, not hidden.",
+    "why": "A judgment that the test is ready, which nothing held supports: it has not been run, and its joined subset has not been counted."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-STATUS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Testable now, on a subset, with one term left by subtraction — said, not hidden.",
+     "texts": "8ed78b3533bfc33d"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-REDISCOVER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "This project rediscovered the instruction's spectral mechanism from its own data.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "names the spectral mechanism",
+    "end": "rediscovered from the data",
+    "why": "That this project found the mechanism in its data was not shown: the light analysis measures the decline of apparent Kd with depth and how the result depends on where a profile starts, not its spectral cause."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-M06-SPEC",
+    "C-DZ-Z8-WINDOW"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "names the spectral mechanism this project rediscovered from the data",
+     "texts": "81bc302ba8b6c05d"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-LYS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Stated counts of light records, casts, fitted casts, start depths, field-shifted rows and stations, all of them CTD stations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "**`lys.csv.gz`** —",
+    "end": "Secchi-derived Kd cannot enter.",
+    "why": "The counts and the shared-station check were made in the drafting session and are not held, and the held counts differ. The classes and the guard are kept, restated against the instruction."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-LYS",
+    "C-DZ-Z8-LYSCOLS",
+    "C-DZ-Z8-FIT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`lys.csv.gz` — 2,370,340 rows; 62,848 distinct station|date casts with a fitted Kd, 62,845 with a fit coefficient, 62,136 with `ZMin`, the depth the regression started from — 40.6% shallower than 0.6 m, only 1,290 deeper than 5.1 m. 249 rows are field-shifted and must be dropped by field count, not silently. 566 stations, all also CTD stations (of 1,527). *Class 7* — Kd is a regression the operator fitted over a window the operator chose; *class 3* — a profile collapsed to one slope. Guard against circularity: require the fit coefficient, so Secchi-derived Kd cannot enter.",
+     "texts": "1bc50078cad8930f"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-CTD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Stated counts of the CTD extract's Parameter values and of the rows of each channel the test needs.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "**`ctd.csv.gz`** — all",
+    "end": "rows.",
+    "why": "The counts came from the drafting session's scan, which truncated accented names; the held enumeration over every row differs for two channels."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-CTDPARAM"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`ctd.csv.gz` — all 18 `Parameter` values counted (17 named, one blank; accented names truncate in my scan). The four this needs: Lysdæmpning 5,217,330 · Fluorescens 6,783,570 · Turbiditet 1,076,915 · FDOM 890,921, with `Photometer m…` 576,179 and `Photometer reference` 531,071 beside them. The rest are channels this project already uses, plus five under 240,000 rows.",
+     "texts": "fd69ffed6c741dcf"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-SPAN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Turbidity and FDOM cover stated spans, stations and station-days, each in one unit throughout.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "**The two composition channels do not cover the same record",
+    "end": "carries it.",
+    "why": "The spans, station and station-day counts and the units were read in the drafting session and are not held; the held FDOM years and the unit column's counts support a narrower statement."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-FDOMSPAN",
+    "C-DZ-Z8-UNITS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The two composition channels do not cover the same record, and that decides the shape of the test. Turbiditet: 1994-01-10 → 2026-09-07, 252 stations, 12,700 station-days, FTU throughout. FDOM: 2021-04-19 → 2026-09-07, 211 stations, 10,550 station-days, ppb throughout. The in-situ CDOM term exists for five years; before 2021 only satellite `adg443` carries it.",
+     "texts": "01a9ea910d0773c9"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-LYSD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Lysdæmpning holds the underwater and surface readings the instruction requires, per depth, in a unit still to be checked.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "is the finding**",
+    "end": "different quantity.",
+    "why": "It named the wrong channel: by the held unit counts Lysdæmpning is a percentage, and the two photometer channels are the ones in photon flux; the unit question it left open is answered from those counts."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-UNITS",
+    "C-DZ-Z8-REFIT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "is the finding: the underwater and surface readings TA `M06` requires survive per depth, so Kd can be refitted over a *stated* window instead of the operator's — on the same cast as the three proxies: composition and light in one frame. Check its unit first: attenuation, or transmissometer beam-c, which is a different quantity.",
+     "texts": "36fcad82be50c8cf"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-CLASSES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The proxies' error classes, with the unknown-probe placeholder on a stated share of rows.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "Error classes on the proxies:",
+    "end": "no clock time.",
+    "why": "The share was not the held one: enums.py, counting every row, finds the placeholder on a smaller share of the rows than the one given."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-PROXY",
+    "C-DZ-Z8-SONDE",
+    "C-DZ-Z8-NOCLOCK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Error classes on the proxies: *class 1* — ppb and FTU are sensor units, not absorption coefficients; *class 4* — FDOM is fluorescence, not a(λ)CDOM, and turbidity is scattering, not non-algal absorption; *class 5* — `SondeNr` is 999 on 83.5% of rows, so the per-cast calibration that would convert units is unrecoverable. *Class 6* over all of it: no wavelength, no clock time.",
+     "texts": "da2b1a9ed75432ff"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-MATCH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "matchup.py found the matched subset not random, with stated medians for matched and all casts.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "Second constraint, already",
+    "end": "built on that subset.",
+    "why": "The two medians are typed into matchup.py's docstring and output warning from its first run, not computed as it runs, and the comparison with all casts in the same months is not stored."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-MATCH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Second constraint, already shown here: `matchup.py` found the satellite-matched subset is not a random sample (matched median Kd 0.270 against 0.330 in the same months), so the satellite arm's null is built on that subset.",
+     "texts": "2d8abc3e50aa0e27"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-ACS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Absorption profiles beside a PAR cast were taken twice in Danish waters and never in monitoring.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "needs absorption in units:",
+    "end": "never in monitoring.",
+    "why": "The paper it cites, now pinned, took its AC-S profiles at stations of the national monitoring programme and describes the instrument's incorporation into the sampling programme; never in monitoring is contradicted by that source."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-SHRINK",
+    "C-DZ-Z8-ACS",
+    "C-DZ-Z8-ACSGAP"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "needs absorption in units: an AC-S or spectroradiometer profile beside the PAR cast, done twice in Danish waters (Gonçalves-Araujo & Markager 2020, around Fyn, 2017 and 2019) and never in monitoring.",
+     "texts": "0904f02599dd3f81"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-TRENDS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "matchup.py already found trends of both signs.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "**Would not:**",
+    "end": "both signs.",
+    "why": "The trend results are typed into matchup.py's docstring from a first run and are not held as output."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-WOULDNOT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Would not: a physical budget, a causal attribution, any per-water-body or national number, or any trend — matchup.py already got both signs.",
+     "texts": "09f8c49d47253c1b"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-TABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A table of products with their variables, resolutions, coverage, licences and production paths.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "Satellite IOPs are all",
+    "end": "primary document |",
+    "why": "The rows were written from a session's survey and none was pinned. Four of the products are pinned now and the page says what their records state; the ESA page for the `Sentinel-3` water product could not be reached to pin, and the OC-CCI record does not state the water classes or the monthly start the row gave."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-SRC-CTD",
+    "C-DZ-Z8-SRC-131",
+    "C-DZ-Z8-SRC-208",
+    "C-DZ-Z8-SRC-CCI",
+    "C-DZ-Z8-SRC-MODIS",
+    "C-DZ-Z8-SRC-PATH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Satellite IOPs are all *class 7*: a QAA or neural-net retrieval. | source | measures | resolution · coverage · licence | separate path | |---|---|---|---| | `ctd.csv.gz` Lysdæmpning · Photometer · FDOM · Turbiditet · Fluorescens (held) | attenuation + 3 composition proxies, per depth | per cast · counts above · ODA open | no — same ship and frame as `lys` | | BAL_BGC_L3_NRT_009_131 | ADG443, APH443, BBP443, KD490, RRS | 300 m daily · OLCI, NRT only · free | yes | | BAL_BGC_HR_L4_NRT_009_208 | TUR, SPM, BBP443, CHL — no ADG | 100 m, 20 km coastal band · `S2`/MSI, 2020-01-08 → · free | yes; CDOM is its residual | | OC-CCI v6.0 IOP · ERDDAP | adg/aph/atot/bbp at 412–665 nm, kd_490, 14 water classes | 4 km, monthly & 8-day · 1997-09 → · ESA CCI open | yes; box-subsettable, small | | `Sentinel-3` OLCI `L2` WFR | ADG443_NN, TSM_NN, CHL_NN, KD490_M07 | 300 m · 2016 → · free | yes | | MODIS-A `L3` IOP GIOP | adg/aph/bbp_443_giop | 4 km · 2002 → · Earthdata login | yes — GIOP, not QAA | | TA `M06` v3 | the method itself | in force 2015 · AU/DCE public | primary document |",
+     "texts": "e51b5cc20cc4d5a5"
+    }
+   }
+  },
+  {
+   "id": "C-DZ-OLD-Z8-SEARCH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The multiyear product lists no inherent optical properties, only the global sets reach back to its start, and EMODnet Chemistry and ICES were searched without finding a product for Danish waters.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/Z8.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/Z8.md",
+    "begin": "The Baltic multiyear product already fetched",
+    "end": "performed*.",
+    "why": "That only the global sets reach back rested on the unpinned rows, and the EMODnet and ICES searches are recorded nowhere in this project."
+   },
+   "replaced_by": [
+    "C-DZ-Z8-SRC-133",
+    "C-DZ-Z8-SEARCH"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The Baltic multiyear product already fetched (`009_133`, 1 km, 1997 →) lists no IOP: only the 4 km global sets reach back to 1997. EMODnet Chemistry and ICES were searched and no CDOM-absorption or spectral-attenuation product for Danish waters was established — not \"absent\", *not found by the search performed*.",
+     "texts": "0264e5a0d59a3f50"
+    }
+   }
+  }
+ ]
+}

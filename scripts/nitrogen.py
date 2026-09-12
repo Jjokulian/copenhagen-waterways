@@ -248,12 +248,13 @@ def surplus_audit(mon):
         "count, a sales total or an area times a coefficient, and the surplus is what is left over; "
         "the one measurement inside it is the annual analysis of cereal nitrogen.") + "\n")
     w("#### The consequence is documented in the sources themselves\n")
-    w(C("C-NI-NORM-STEPS", "Because the coefficients are administrative, the number moves when they "
-        f"move, with no change in any field. In **1999** the nitrogen norm was cut "
+    w(C("C-NI-NORM-STEPS", "Because the coefficients are administrative, the published figures move "
+        f"when they move, with no change in any field. In **1999** the nitrogen norm was cut "
         f"{rv('norm_cut_1999_pct')}%, dropping the quota by about {rv('norm_cut_1999_t_n'):,} t N, "
         f"while grass norms changed at the same time, raising it by about "
         f"{rv('grass_norm_1999_t_n'):,} t N a year; SR120 calls the result a *\""
-        f"{quote('SR120', 'spring')}\"* — a step — in the compiled series. In **2012** the method for "
+        f"{quote('SR120', 'spring')}\"* — a step — in the compiled nitrogen quotas, the limit on what may be "
+        "applied, not the field balance itself. In **2012** the method for "
         "nutrients removed at harvest changed from dry-matter yield to feed units, and SR120 records "
         f"that its phosphorus net-input figures *\"{quote('SR120', 'er steget lidt ift. de tidligere opgørelser')}\"* "
         "— rose, from the method change alone. And **2013** is published **twice**, differing only "
@@ -599,7 +600,7 @@ def main():
     apportionment = [
         ("Agriculture", agri,
          f"**Residual.** (grab-sampled load over {dl['area_measured_pct']}% of the area + model "
-         f"output over {dl['area_modelled_pct']}%) minus modelled point sources minus the natural "
+         f"output over {dl['area_modelled_pct']}%) minus point sources minus the natural "
          f"background, with retention modelled at ±{dl['retention_uncertainty_pct_points'][0]}"
          f"-{dl['retention_uncertainty_pct_points'][1]} percentage points."),
         ("Natural background", rv("apportion_background"),

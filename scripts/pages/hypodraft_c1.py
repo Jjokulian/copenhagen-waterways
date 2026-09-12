@@ -1,153 +1,246 @@
 #!/usr/bin/env python3
-"""Writes docs/hypodrafts/C1.md: a hypothesis draft, as generated text.
+"""docs/hypodrafts/C1.md - what the data held here can and cannot show about C1.
 
-Every hypothesis ID is a checked reference, every chemical species a checked
-species, and every number either read live or quoted from the page as committed
-({q:…@@…}, a located quotation - see draftkit.py) because nothing in the repository stores it yet.
+Every number is read from data (live_json), a pinned document or is a stated design
+value with its reason; every assertion is a checked claim (LIVE_NUMBERS.md section
+11), registered in data/manual/claims.d/w3-af.json with what it rests on, and every
+field printed has a declared construction. What the draft once said and could not
+justify is in docs/ARCHIVE.md, not here. The page is written through
+scripts/pages/drafts_b_page.py.
 
     python3 scripts/pages/hypodraft_c1.py
 """
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import draftkit
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+from drafts_b_page import render
+from common import DERIVED
+import claims
+import live
 
-REL = "docs/hypodrafts/C1.md"
-TEXT = r"""# {ref:C1|title}
-
-**Testable. This is a draft; nothing here has been run.**
-
-`C1` predicts deficit "tracks the strength and persistence of the pycnocline, and is near
-zero in well-mixed water whatever the load."
-
-**Scope cut first.** *Persistence* is not testable here. A cast is a snapshot, sampling is
-roughly monthly, and whether a pycnocline held between visits is unobserved (class 6).
-What follows tests **strength only**; persistence needs a moored T/S chain for one
-stratified season — an instrument, not an analysis.
-
-## 1. The observable consequence
-
-Two claims of different strength, treated separately.
-
-**C1a (gradient).** Within one station and calendar month, casts with stronger density
-structure have less oxygen in the bottom metre.
-
-**C1b (floor).** Well-mixed casts do not show low bottom oxygen — the strong claim, and
-the falsifiable one.
-
-> **Falsifies C1b:** a non-trivial count of casts with stratification in the lowest
-> quintile *and* low bottom oxygen. One is an outlier; hundreds mean a mixed column can
-> also run out, and "near zero in well-mixed water" is false as stated.
->
-> **Falsifies C1a:** the association between the potential energy anomaly φ and bottom
-> oxygen does not exceed the computed null of §3.
-
-**What is not the test.** DCE's iltsvind criterion is oxygen below {q:oxygen below @@ *in stratified} *in stratified
-bottom water* ([CURRENTS.md](../CURRENTS.md)), so regressing the published iltsvind extent
-on stratification tests nothing — stratification is inside the response's definition.
-Class 7, circular by construction. Only raw per-measurement oxygen is used.
-
-## 2. The data, and the circularity check
-
-**Source:** `data/raw/oda/ctd.csv.gz` ({q:`data/raw/oda/ctd.csv.gz` (@@ gzipped), one} gzipped), one row per measurement, with
-`Dybde (m)` and coordinates. Verified by a full streaming pass:
-
-| quantity | count |
-|---|---|
-| station-days with both a `Temperatur` and a `Salinitet` value | **{fig:dc1_ts}** |
-| … with ≥{fig:da_c1_min_levels} depth levels of each | **{fig:dc1_levels}** |
-| … and an `Oxygen indhold` value (mg/l) | **{fig:da_c1_days}** |
-| … joined to a recorded `BundDybde_m` in `maaledybde.csv.gz` | **{fig:dc1_bottom}** |
-| … of those, profile reaching ≥{fig:dc1_deep_m} m | **{fig:dc1_bottom_deep}** |
-| deepest {chem:O2} within {fig:dc1_near_m} m of deepest T (of {fig:dc1_ts}) | **{fig:dc1_near}** |
-| distinct stations / span | **{fig:dc1_stations}** / {fig:dc1_first}–{fig:dc1_last} |
-
-`maaledybde.csv.gz`: {fig:dc1_maal_days} distinct station-days, {fig:dc1_maal_bottom} carrying `BundDybde_m`.
-**Primary sample: the {fig:dc1_bottom}.** `stations_series.bin` cannot be used: it is a monthly
-*median* of surface and bed separately, which breaks the pairing a cast needs — class 3.
-
-**Circularity.** φ is computed from density, and density is a function of T and S.
-
-1. `oxysat_*` is computed from oxygen, temperature and salinity — two of three inputs
-   shared with φ. **Not used.** Only `Oxygen indhold` in mg/l.
-2. Salinity is computed from conductivity and temperature, so φ rests on two sensor
-   channels and oxygen is a third. Not circular — but φ's error and T_bed's error are
-   correlated wherever T_bed is a covariate.
-3. **The residual coupling is thermodynamic, and is the whole difficulty.** Oxygen
-   *solubility* is a deterministic function of T_bed and S_bed: a warm stratified summer
-   has high φ and low saturation concentration for reasons that are `C6`, not `C1`. Not
-   removable by a covariate; measured instead, in §3.
-
-**Error classes.** Depth quantised to {q:Depth quantised to @@ below ~5 m} below {q:1 m below @@ (0.2/0.5 m nearer} ({q:m (@@ nearer the surface)} nearer the surface) —
-class 2, boundable by recomputing φ on sub-metre casts against their own {q:their own @@-decimated copies.}-decimated
-copies. `SondeNavn` is `999 - Ukendt` on most rows of all three parameters (over the whole extract: {fig:dc1_unk_t} Temperatur, {fig:dc1_unk_s} Salinitet, {fig:dc1_unk_o} Oxygen rows; in the
-earlier {q:parameters (@@ decompressed sample:} sample the next-largest instrument had {q:next-largest instrument has @@k) — class}k) — class 5: Winkler cannot be separated from optode, nor
-salinometer from CTD. `Salinitet` is one Parameter over both production paths with no
-distinguishing column — class 4, not boundable, and it enters φ directly. **No time-of-day
-column exists anywhere** — class 6. A midday cast carries a diurnal warm surface layer a
-dawn cast does not, inflating φ with no ventilation meaning; this attenuates C1a (making
-it conservative) and inflates the mixed set for C1b (making it anti-conservative). Neither
-countable nor correctable.
-
-## 3. The null — computed, never quoted
-
-Statistic: **Spearman ρ between φ and bottom oxygen C_bed**, pooled over eligible casts.
-Three nulls, because the quoted null of zero is wrong under every constraint imposed here.
-
-**Null A — the thermodynamic surrogate.** Replace each cast's observed C_bed with
-C_sat(T_bed, S_bed): what a fully ventilated, non-respiring column would hold. Recompute
-ρ. This is the association φ has with bottom oxygen under **no ventilation limitation at
-all**, arising purely from shared T and S — an empirical number, plausibly large and
-negative, and **the floor the observed ρ must beat.** Bootstrap over stations, {q:over stations, @@ draws. **Null} draws.
-
-**Null B — the design null.** Strata = station × calendar month × decile of recorded
-bottom depth. Shuffle φ within strata, recompute the *pooled* ρ, {q:*pooled* ρ, @@ times. The} times. The result
-is not centred on zero: it retains the between-stratum association depth, season and place
-produce on their own. Its distance from zero is the size of the confounding — a result
-worth reporting by itself.
-
-**Null C — for C1b.** Let *p* = the fraction of casts in the lowest φ quintile (within
-depth decile) whose C_bed falls below the 5th percentile of C_bed in its own station ×
-calendar-month stratum. C1b predicts *p* ≈ {q:predicts *p* ≈ @@. Null C is}. Null C is *p* under the same stratified
-shuffle as Null B — near {q:B — near @@, but **not}, but **not assumed to be {q:assumed to be @@**: the two}**: the two stratifications
-interact. Report the permutation distribution.
-
-## 4. Procedure
-
-1. Stream `ctd.csv.gz` once, emitting `(station, date, depth, parameter, value)` for the
-   three parameters. Intermediate {q:parameters. Intermediate @@ on disk;} on disk; never load the archive into memory.
-2. Keep casts with {q:casts with @@ paired T/S} paired T/S levels, a bottom {chem:O2} within {q:bottom O2 within @@ of the deepest} of the deepest T, and a
-   `BundDybde_m` join. Never aggregate into water bodies — station and position are the units.
-3. Potential density per level, under **both** `EOS-80` and `TEOS-10`, reporting the difference
-   as a bound rather than picking one; then φ = (g/h)∫(ρ̄ − ρ(z))·z dz over the cast.
-4. C_sat(T_bed, S_bed) for Null A. Compute the statistic and all three nulls. Report ρ
-   **beside** Null A and Null B, never beside zero.
-5. Report the count and station list of lowest-quintile-φ casts with C_bed below {q:C_bed below @@ (a borrowed}
-   (a borrowed threshold, flagged as such), plus the full distribution.
-
-## 5. What a result would and would not license
-
-**A positive C1a result licenses:** within a station and month, stronger density structure
-accompanies lower bottom oxygen by more than shared thermodynamics explains. **It does not
-license** causation — wind (`C2`), bottom temperature (`C6`), residence time (`C3`) and
-load all covary with φ — nor anything about persistence, nor weighting a nitrogen
-coefficient by stratification, since load is absent (ODA `vandkemi` is not fetched).
-
-**A falsification of C1b** — hypoxic casts in well-mixed columns — is the strongest thing
-available here, and it is one-directional. Finding them refutes "near zero in well-mixed
-water whatever the load." *Not* finding them confirms nothing, because well-mixed Danish
-columns are also mostly shallow, and the class 6 timing gap means some casts labelled
-mixed were merely sampled at dawn.
-
-**Nothing here licenses a share.** φ explaining variance in C_bed is a within-field
-statement about one of {fig:da_n_register} enumerated mechanisms, not a decomposition.
-"""
+C = live.claim
+R, CH = live.ref, live.chem
+# DCE's iltsvind threshold, read out of their pinned oxygen note
+DCE4 = "{read:NI-DCE-ILT-2025:4|iltkoncentrationen i vandet er mindre end 4 mg l-1}"
 
 
-def main(argv):
-    return 0 if draftkit.build(REL, TEXT) is not None else 1
+def J(name):
+    return live.live_json(os.path.join(DERIVED, name))
+
+
+def refuse(msg):
+    raise live.Unjustified("C1: " + msg)
+
+
+def text():
+    cd = claims.load()[0]
+    params = cd["params"]
+
+    def P(name):
+        """A design value the test chooses, declared with its reason."""
+        p = params[name]
+        return live.stated_value(name, p["value"], p["reason"])
+
+    boot, perm, pct = P("af_c1_boot"), P("af_c1_perm"), P("af_c1_pct")
+    dce4 = claims.resolve(cd, DCE4, {})[0]
+
+    hc = J("hypodraft_ctd.json")
+    c1 = hc["c1"]
+    hf = J("hypodraft_facts.json")
+    ctd_mb = hf["layers"]["ctd_bytes"] / 1e6
+    par = J("enums.json")["ctd"]["categorical"]["Parameter"]
+    unk = c1["unknown_probe_rows"]
+    # the shares divide hypodraft_ctd.py's counts by enums.py's; the page rests on the
+    # two counting the same rows, which they are seen to do for temperature
+    if par["Temperatur"] != hc["temperature_decimals"]["rows"]:
+        refuse("enums.py and hypodraft_ctd.py no longer agree on the temperature rows")
+    share = lambda part, whole: live.step("K-SUBSET-SHARE", part / whole * 100)
+    rows = [("Temperatur", unk["temperature"]), ("Salinitet", unk["salinity"]),
+            ("Oxygen indhold", unk["oxygen"])]
+    probe = ", ".join(f"{share(u, par[p]):.1f}% of the `{p}` rows ({u:,} of {par[p]:,})"
+                      for p, u in rows)
+    n_reg = J("triage.json")["n_register"]
+
+    o = []
+    w = o.append
+    w(f"# {R('C1', title=True)}")
+    w("")
+    w("*Generated by `scripts/pages/hypodraft_c1.py`: what the data held here can and "
+      "cannot show about the hypothesis. Each marked statement links to what it rests on.*")
+    w("")
+    w("**Draft, not a result.** "
+      + C("C-AF-C1-STATUS", "The test this page specifies has not been run: no script in "
+          "this repository computes it."))
+    w("")
+    w(C("C-AF-C1-PRED", f"{R('C1')} predicts that deficit \"tracks the strength and "
+        "persistence of the pycnocline, and is near zero in well-mixed water whatever the "
+        "load.\""))
+    w("")
+    w("**Scope cut first.** "
+      + C("C-AF-C1-SCOPE", "*Persistence* is not testable here. A cast is a snapshot, the "
+          "extract holds visits rather than a continuous record, and whether a pycnocline "
+          "held between visits is unobserved. What follows tests **strength only**; "
+          "persistence needs a moored temperature and salinity chain for a stratified season "
+          "— an instrument, not an analysis."))
+    w("")
+    w("## 1. The observable consequence")
+    w("")
+    w("A weak consequence and a strong one, treated separately.")
+    w("")
+    w(C("C-AF-C1-A", "**C1a (gradient).** Within one station and calendar month, casts with "
+        "stronger density structure have less oxygen in the bottom metre."))
+    w("")
+    w(C("C-AF-C1-B", "**C1b (floor).** Well-mixed casts do not show low bottom oxygen — the "
+        "strong claim, and the falsifiable one."))
+    w("")
+    w("> " + C("C-AF-C1-FALSB", "**Falsifies C1b:** more casts with stratification in the "
+               "lowest quintile *and* low bottom oxygen than Null C allows. Then a mixed "
+               "column can also run out, and \"near zero in well-mixed water\" is false as "
+               "stated."))
+    w(">")
+    w("> " + C("C-AF-C1-FALSA", "**Falsifies C1a:** the association between the potential "
+               "energy anomaly φ and bottom oxygen does not exceed the computed nulls of §3."))
+    w("")
+    w("**What is not the test.** "
+      + C("C-AF-C1-DEF", f"DCE call it iltsvind when the oxygen concentration in the water is "
+          f"below {dce4} mg/l, and name stratified water as where it develops, not as part "
+          "of the definition.") + " "
+      + C("C-AF-C1-RAW", "The test uses raw per-measurement oxygen, not the published "
+          "iltsvind extent: it compares casts within a station and month, and an extent "
+          "mapped per survey carries neither the cast nor its density profile."))
+    w("")
+    w("## 2. The data, and the circularity check")
+    w("")
+    w(C("C-AF-C1-SRC", f"**Source:** `data/raw/oda/ctd.csv.gz` ({ctd_mb:.1f} MB gzipped), one "
+        "row per measurement, with `Dybde (m)` and coordinates.") + " "
+      + C("C-AF-C1-COUNTS", "One streaming pass over the whole extract, by "
+          "`scripts/hypodraft_ctd.py`, counts "
+          f"{c1['station_days_ts']:,} station-days — one station on one date — with both a "
+          f"`Temperatur` and a `Salinitet` value; {c1['with_levels']:,} of them with at least "
+          f"{c1['min_levels']} depth levels of each; {c1['with_levels_and_oxygen']:,} of "
+          "those also with an `Oxygen indhold` value in mg/l; "
+          f"{c1['with_levels_oxygen_bottom']:,} of those joined to a recorded `BundDybde_m` "
+          f"in `maaledybde.csv.gz`, and {c1['with_levels_oxygen_bottom_deep']:,} of these "
+          f"with a temperature profile reaching {c1['deep_m']:g} m. Of all "
+          f"{c1['station_days_ts']:,}, {c1['oxygen_near_deepest_t']:,} have their deepest "
+          f"{CH('O2')} within {c1['near_m']:g} m of the deepest temperature or below it. "
+          f"They come from {c1['stations']:,} stations, {c1['first_year']} to "
+          f"{c1['last_year']}."))
+    w("")
+    w(C("C-AF-C1-MAAL", f"`maaledybde.csv.gz` holds {c1['maaledybde_station_days']:,} distinct "
+        f"station-days, {c1['maaledybde_with_bottom']:,} carrying `BundDybde_m`.") + " "
+      + C("C-AF-C1-PRIMARY", f"**Primary sample: the {c1['with_levels_oxygen_bottom']:,} "
+          "station-days with levels, oxygen and a recorded bottom depth.**") + " "
+      + C("C-AF-C1-NOSERIES", "`stations_series.bin` cannot be used: it is a monthly "
+          "*median* of surface and bed separately, which breaks the pairing a cast needs."))
+    w("")
+    w("**Circularity.** "
+      + C("C-AF-C1-PHI", "φ is computed from density, and density from temperature and "
+          "salinity."))
+    w("")
+    w("1. " + C("C-AF-C1-CIRC1", "`oxysat_*` is ODA's oxygen saturation, which the national "
+                "CTD method computes with temperature and salinity — two of the three inputs "
+                "shared with φ. **Not used.** Only `Oxygen indhold` in mg/l."))
+    w("2. " + C("C-AF-C1-CIRC2", "Salinity is computed from conductivity and temperature, so "
+                "φ rests on two sensor channels and oxygen on a third. Not circular — but φ's "
+                "error and T_bed's error are correlated wherever T_bed is a covariate.") + " "
+      + C("C-AF-C1-SALNOVA", "The same method sends salinity and temperature measured on a "
+          "water sample to the water-chemistry record, with the sampler given as a water "
+          "bottle, not as CTD."))
+    w("3. " + C("C-AF-C1-CIRC3", "**The residual coupling is thermodynamic, and is the whole "
+                "difficulty.** Oxygen *solubility* falls as temperature rises and depends on "
+                "salinity: a warm stratified summer has high φ and low saturation "
+                f"concentration for reasons that are {R('C6')}, not {R('C1')}. Not removable "
+                "by a covariate; measured instead, in §3."))
+    w("")
+    w("**Error sources.** "
+      + C("C-AF-C1-DEPTHRES", "φ depends on how finely a cast is resolved in depth: the test "
+          "recomputes φ on the finest casts against decimated copies of themselves and "
+          "reports the difference as a bound.") + " "
+      + C("C-AF-C1-PROBE", "`SondeNavn` begins with the unknown-probe code `999` on "
+          f"{probe}; on those rows the instrument is not recorded.") + " "
+      + C("C-AF-C1-NOCLOCK", "The CTD extract has no time of day, and no column for it; the "
+          "water-chemistry extract does carry a clock value per sample.") + " "
+      + C("C-AF-C1-DIURNAL", "A midday cast can carry a warm surface layer a dawn cast does "
+          "not, inflating φ with no ventilation meaning: this attenuates C1a (making it "
+          "conservative) and inflates the mixed set for C1b (making it anti-conservative). "
+          "The CTD extract alone can neither count nor correct it; where water chemistry was "
+          "sampled on the same station-day and its clock is a real time rather than a "
+          "filled-in default, that clock can bound the hour."))
+    w("")
+    w("## 3. The null — computed, never quoted")
+    w("")
+    w(C("C-AF-C1-STAT", "Statistic: **Spearman ρ between φ and bottom oxygen C_bed**, pooled "
+        "over eligible casts, set against the nulls below, because zero is not the null "
+        "under the constraints imposed here."))
+    w("")
+    w(C("C-AF-C1-NULLA", "**Null A — the thermodynamic surrogate.** Replace each cast's "
+        "observed C_bed with C_sat(T_bed, S_bed): what a fully ventilated, non-respiring "
+        "column would hold. Recompute ρ. This is the association φ has with bottom oxygen "
+        "under **no ventilation limitation at all**, arising purely from shared T and S — "
+        f"**the floor the observed ρ must beat.** Bootstrap over stations, {boot:,} draws."))
+    w("")
+    w(C("C-AF-C1-NULLB", "**Null B — the design null.** Strata = station × calendar month × "
+        f"decile of recorded bottom depth. Shuffle φ within strata, recompute the *pooled* ρ, "
+        f"{perm:,} times. The result is not centred on zero: it retains the between-stratum "
+        "association depth, season and place produce on their own. Its distance from zero is "
+        "the size of the confounding — a result worth reporting by itself."))
+    w("")
+    w(C("C-AF-C1-NULLC", "**Null C — for C1b.** Let *p* = the fraction of casts in the lowest "
+        f"φ quintile (within depth decile) whose C_bed falls below the {pct}th percentile of "
+        "C_bed in its own station × calendar-month stratum. C1b predicts *p* near zero. Null C "
+        "is *p* under the same stratified shuffle as Null B — near "
+        f"{pct / 100:g}, but **not assumed to be {pct / 100:g}**: the two stratifications "
+        "interact. Report the permutation distribution."))
+    w("")
+    w("## 4. Procedure")
+    w("")
+    w("1. " + C("C-AF-C1-P1", "Stream `ctd.csv.gz` once, emitting "
+                "`(station, date, depth, parameter, value)` for the three parameters, with "
+                "intermediates on disk; never load the archive into memory."))
+    w("2. " + C("C-AF-C1-P2", f"Keep casts with at least {c1['min_levels']} paired T/S "
+                f"levels, a bottom {CH('O2')} within {c1['near_m']:g} m of the deepest T, and "
+                "a `BundDybde_m` join. Never aggregate into water bodies — station and "
+                "position are the units."))
+    w("3. " + C("C-AF-C1-P3", "Potential density per level, under **both** `EOS-80` and "
+                "`TEOS-10`, reporting the difference as a bound rather than picking one; then "
+                "φ = (g/h)∫(ρ̄ − ρ(z))·z dz over the cast."))
+    w("4. " + C("C-AF-C1-P4", "C_sat(T_bed, S_bed) for Null A. Compute the statistic and all "
+                "three nulls. Report ρ **beside** Null A and Null B, never beside zero."))
+    w("5. " + C("C-AF-C1-P5", "Report the count and station list of lowest-quintile-φ casts "
+                f"with C_bed below {dce4} mg/l — DCE's iltsvind threshold, borrowed and "
+                "flagged as such — plus the full distribution."))
+    w("")
+    w("## 5. What a result would and would not license")
+    w("")
+    w(C("C-AF-C1-LIC", "**A positive C1a result licenses:** within a station and month, "
+        "stronger density structure accompanies lower bottom oxygen by more than shared "
+        f"thermodynamics explains. **It does not license** causation — wind ({R('C2')}), "
+        f"bottom temperature ({R('C6')}), residence time ({R('C3')}) and load all covary with "
+        "φ — nor anything about persistence, nor weighting a nitrogen coefficient by "
+        "stratification: load is not in the CTD extract, and ODA's topic of nutrient input "
+        "to the sea is not fetched."))
+    w("")
+    w(C("C-AF-C1-FALS", "**A falsification of C1b** — hypoxic casts in well-mixed columns — "
+        "is the strongest thing available here, and it is one-directional. Finding them "
+        "refutes \"near zero in well-mixed water whatever the load.\" *Not* finding them "
+        "confirms nothing: where well-mixed casts are taken may keep them oxygenated for "
+        "other reasons, and without a clock some casts labelled mixed may have been sampled "
+        "at dawn."))
+    w("")
+    w(C("C-AF-C1-SHARE", "**Nothing here licenses a share.** φ explaining variance in C_bed "
+        f"is a within-field statement about one of {n_reg:,} enumerated mechanisms, not a "
+        "decomposition."))
+    return "\n".join(o) + "\n"
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    try:
+        page = text()
+    except (live.Unjustified, claims.Refused) as e:
+        print(e, file=sys.stderr)
+        sys.exit(1)
+    sys.exit(render("docs/hypodrafts/C1.md", page))

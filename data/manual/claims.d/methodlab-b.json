@@ -900,8 +900,8 @@
     "H-ML-OLD-MINUTES"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Each of these was found in this project's own work, most of it within minutes of writing it.",
      "texts": "ce178bc30f286208",
@@ -931,8 +931,8 @@
     "H-ML-OLD-NOISE-SCALES"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The detection limit above scales with an estimate of the noise an estimator must see through.",
      "texts": "0bada9444387a6f1",
@@ -962,8 +962,8 @@
     "H-ML-OLD-NOISE-HISTORY"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "version asserted 0.8 mg/l, which made the bound only as good as a guess. The second measured the archive's within-cell residual spread - and that residual *contains whatever diurnal signal exists*, so a large real cycle would have inflated the yardstick used to rule a large real cycle out.",
      "texts": "a46c2d03999af6db",
@@ -993,8 +993,8 @@
     "H-ML-OLD-NOISE-CONSERVATIVE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The bias runs conservative, which is exactly why it could have stood for years unnoticed.",
      "texts": "1e273d9c031ec04c",
@@ -1024,8 +1024,8 @@
     "H-ML-OLD-NOISE-CONSTRUCTION"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The estimate is now taken only from cells whose samples all fall in one sun-elevation bin, where no diurnal variance can enter by construction.",
      "texts": "27190abfd160c134",
@@ -1056,8 +1056,8 @@
     "H-ML-OLD-FLOOD"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "sheets are the output of somebody's hydraulic model run over a terrain model. Scoring a new terrain-driven flow model against them measures agreement between two implementations of similar physics",
      "texts": "04fb223e62245990",
@@ -1087,8 +1087,8 @@
     "H-ML-OLD-CATCHMENT"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "which is the same rule this project applies to official catchment delineations, for the same reason.",
      "texts": "386de2b895e33d56",
@@ -1118,8 +1118,8 @@
     "H-ML-OLD-BORROW-SHARE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "analysing the hour. 80% of CTD station-days can take a time from a same-day water-chemistry bottle, because 99% of those station-days carry a single one.",
      "texts": "f68aafa7317ebad3",
@@ -1149,8 +1149,8 @@
     "H-ML-OLD-DEPTHCLOCK"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "`scripts/depth_clock.py` therefore treats supplied field-sheet times as a *check* on the borrowed clock rather than a replacement for it",
      "texts": "71757e3796ca877a",
@@ -1180,8 +1180,8 @@
     "H-ML-OLD-TUNING"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "reproduces an official product, agreement with that product stops being evidence of anything.",
      "texts": "aa3289004f1ead90",
@@ -1213,8 +1213,8 @@
     "H-ML-OLD-EXACT-DESIGN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "That is a best-subset search over 92 candidate models fitted to about 20 points. So the question is not whether R² = 0.57 is high. It is what that search returns when there is no relation there at all. Simulating exactly their design",
      "texts": "9bbb3c072d093fab",
@@ -1245,8 +1245,8 @@
     "H-ML-OLD-DECLINE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Annual marine and climate series are autocorrelated, and over 1990–2012 every candidate declined together. Those are the bottom two rows. Under the conditions their own data satisfy",
      "texts": "ff53d1e3f692550d",
@@ -1277,8 +1277,8 @@
     "H-ML-OLD-NOT-DISTINGUISHABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "That is not distinguishable from the noise floor of their own selection procedure.",
      "texts": "dbff14df844789c3",
@@ -1309,8 +1309,8 @@
     "H-ML-OLD-PROBABLY-REAL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Several are probably real — the phosphorus models in particular are strong and mechanistically expected.",
      "texts": "dd05b52bf31ff3e7",
@@ -1341,8 +1341,8 @@
     "H-ML-OLD-NO-EVIDENCE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "What it shows is that the reported R² carries no evidence either way, because the threshold was set below the null distribution of the search that produced it. The fix is cheap and standard: hold out years, or report the R² of the N-load term alone against a model containing only the climate variables. Neither is reported for any of the",
      "texts": "e38633d2e9105abc",

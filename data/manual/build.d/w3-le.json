@@ -1,0 +1,46 @@
+{
+ "steps": [
+  {
+   "script": "scripts/landbrug.py",
+   "inputs": [
+    "data/manual/nitrogen_pathways.json",
+    "data/manual/monitoring.json",
+    "data/derived/hypotheses.json",
+    "data/manual/claims.d/w3-le.json",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/SR353.txt",
+    "data/derived/pins/PC-DCE-ILT-2024.txt",
+    "data/derived/pins/POL-TV2-20260903.txt"
+   ],
+   "outputs": [
+    "docs/LANDBRUG.md",
+    "data/derived/landbrug.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/exposure.py",
+   "inputs": [
+    "data/manual/claims.d/w3-le.json",
+    "data/derived/pins/LE-FVST-KORSOR-PR.txt",
+    "data/derived/pins/LE-FVST-KORSOR-27.txt",
+    "data/derived/pins/LE-BEREDSKAB-179.txt",
+    "data/derived/pins/LE-UCSF-LIB.txt"
+   ],
+   "outputs": [
+    "docs/EXPOSURE.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/externality.py",
+   "inputs": [
+    "data/manual/claims.d/w3-le.json",
+    "data/derived/pins/LE-MST-TURF-2018.txt",
+    "data/derived/pins/LE-EEB-REACH-2026.txt"
+   ],
+   "outputs": [
+    "docs/EXTERNALITY.md"
+   ]
+  }
+ ]
+}

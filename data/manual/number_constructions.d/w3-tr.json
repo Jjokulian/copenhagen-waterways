@@ -1,0 +1,63 @@
+{
+ "constructions": [
+  {
+   "id": "K-TR-SECTIONS",
+   "title": "Water-chemistry stations in the Belts and the Sound carrying three nutrients",
+   "covers": {
+    "file": "data/derived/triage_sections.json",
+    "fields": {
+     "n_stations": {
+      "kind": "counted",
+      "is": "Distinct `ObservationsStedNr` in the water-chemistry extract whose `Lokalitetsnavn` begins with `Storebælt`, `Lillebælt` or `Øresund` and that have at least one row of each of `Nitrogen,total N`, `Ortho-phosphat-P` and `Silicium`. A station is one station number; rows are not filtered by unit, detection flag, depth or year."
+     },
+     "n_stations_any": {
+      "kind": "counted",
+      "is": "Distinct station numbers with those locality prefixes that have a row of at least one of the three parameters."
+     },
+     "by_prefix.*": {
+      "kind": "counted",
+      "is": "The stations counted in `n_stations`, split by the prefix their locality name begins with."
+     }
+    }
+   },
+   "what": "How many stations of the held water-chemistry extract, in localities named for the Belts and the Sound, carry total nitrogen, ortho-phosphate and silicon, for the triage row of the hypothesis on advected nutrients.",
+   "model": "`sections()` in `scripts/pages/triage.py` streams `data/raw/oda/kemi.csv.gz` once with the `csv` reader (delimiter `;`, encoding `latin-1`), keeps the rows whose `Parameter` is one of the three and whose `Lokalitetsnavn` begins with one of the prefixes, and collects the set of parameters seen per `ObservationsStedNr`. It counts $n = \\#\\{s : P_s = \\{TN, DIP, Si\\}\\}$ over those stations and stores the station numbers beside the count. It recounts only when the extract's size or modification time changes.",
+   "assumptions": [
+    "A locality name beginning with `Storebælt`, `Lillebælt` or `Øresund` places the station at the Belt and Sound sections the row names; `Øresund` also matches `Øresundstragten`, the Sound's northern approach.",
+    "A station carries a parameter if any row of it is in the file, whatever its unit, censoring flag or year; the unit and censoring filters of `rescore.py` are not applied here."
+   ],
+   "justified": [
+    {
+     "text": "The count is made from every row of the held extract, reading only the three columns it needs, and the station numbers behind it are stored with it.",
+     "ref": "scripts/pages/triage.py"
+    },
+    {
+     "text": "The parameter strings are the ones rescore.py uses for total N, ortho-P and silicon, written against the extract's enumeration.",
+     "ref": "scripts/rescore.py:46"
+    }
+   ],
+   "gaps": [
+    "A station with a single row of a parameter counts as carrying it, so the count says where the three nutrients were measured at all, not where a series long or regular enough for a co-variation test exists.",
+    "Transport through the sections is neither counted nor held."
+   ],
+   "void_if": [
+    "the extract is refetched with other locality names",
+    "the prefixes or parameters in `scripts/pages/triage.py` change without the row's wording following"
+   ],
+   "licenses": "That the held water-chemistry extract has total nitrogen, ortho-phosphate and silicon at the counted stations in localities named for the Belts and the Sound.",
+   "not_licensed": "That the series there are long or regular enough for a test, or anything about transport through the sections.",
+   "watches": [
+    "scripts/pages/triage.py",
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: triage.py's only change since the last confirmation makes one printed line an f-string, so the B4 reference renders instead of showing as code text; sections() is untouched. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/triage.py": "86a91e2fde94e295",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3"
+    }
+   }
+  }
+ ]
+}

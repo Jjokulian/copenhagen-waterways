@@ -1,0 +1,83 @@
+{
+ "_what": "Construction declarations of fork w3-ba: the two steps the A1 draft's null uses, a rounding half-width and the spread of a sum of rounding errors. The draft pages otherwise print fields already declared in drafts-a.json, number_constructions.json and meta.json, and readings of pinned documents.",
+ "constructions": [
+  {
+   "id": "K-BA-HALFWIDTH",
+   "title": "Half the rounding unit of a published figure",
+   "covers": {
+    "step": true
+   },
+   "produces": "bound",
+   "what": "The largest error a figure printed in a report can carry from rounding alone: half the unit it is rounded to.",
+   "model": "$h = u / 2$ for a figure rounded to the nearest multiple of a unit $u$, in the code `unit * 0.5`, where $u$ is a stated value read off how the report prints the figure: the place of its last non-zero digit before the trailing zeros.",
+   "assumptions": [
+    "The report rounds to the nearest unit, not always down or always up.",
+    "The unit is the one its printing shows: a total printed with trailing zeros is taken as rounded at its last non-zero digit."
+   ],
+   "justified": [
+    {
+     "text": "Rounding to the nearest multiple of a unit moves a value by at most half that unit, so the true value lies within the half-width of the printed one.",
+     "ref": "scripts/pages/hypodraft_a1.py"
+    }
+   ],
+   "gaps": [
+    "SR353 does not say how it rounds; a figure printed with trailing zeros may have been rounded more coarsely than its last non-zero digit, and then this bound is too narrow.",
+    "It bounds rounding only. Every other error in a published total, measurement and model alike, is outside it by construction."
+   ],
+   "void_if": [
+    "the report gives the same figure more precisely elsewhere, or states a different rounding rule"
+   ],
+   "licenses": "A bound on the rounding error of a figure printed in a report, for a test of an arithmetic identity between two printed versions of an account.",
+   "not_licensed": "Anything about the accuracy of the estimate the figure reports.",
+   "watches": [
+    "scripts/pages/hypodraft_a1.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-HALFWIDTH', unit * 0.5) to the stated rounding units of SR353's total and point-source figure; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/hypodraft_a1.py": "6b094deab2c892b0"
+    }
+   }
+  },
+  {
+   "id": "K-BA-UNIFORM-SD",
+   "title": "Spread of a sum of independent rounding errors",
+   "covers": {
+    "step": true
+   },
+   "produces": "estimated",
+   "what": "The standard deviation of the sum of the rounding errors of the four printed figures one comparison of two vintages uses, if each error is independent and uniform within its half-width.",
+   "model": "$\\sigma = \\sqrt{\\sum_{i} h_i^{2} / 3}$ over the four half-widths $h_i$ (two totals, two point-source figures), in the code `((hT ** 2 + hT ** 2 + hP ** 2 + hP ** 2) / 3) ** 0.5`: a uniform error on $[-h, h]$ has variance $h^{2}/3$, and the variances of independent errors add.",
+   "assumptions": [
+    "The four rounding errors are independent of one another.",
+    "Each is uniform within its half-width."
+   ],
+   "justified": [
+    {
+     "text": "The variance of a uniform distribution on $[-h, h]$ is $h^{2}/3$, and the variance of a sum of independent terms is the sum of their variances.",
+     "ref": "scripts/pages/hypodraft_a1.py"
+    }
+   ],
+   "gaps": [
+    "Two vintages may print the same year's total from values that differ little, so their rounding errors need not be independent; nothing here establishes that they are.",
+    "The half-widths are those of K-BA-HALFWIDTH and share its gaps."
+   ],
+   "void_if": [
+    "the rounding errors are correlated, or the rounding is not to the nearest unit"
+   ],
+   "licenses": "A typical size for the rounding noise in one comparison, set beside the worst-case bound the test imposes.",
+   "not_licensed": "A threshold for the test: the page imposes the worst case, not this spread.",
+   "watches": [
+    "scripts/pages/hypodraft_a1.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-UNIFORM-SD', ((hT ** 2 + hT ** 2 + hP ** 2 + hP ** 2) / 3) ** 0.5) to the two half-widths; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/hypodraft_a1.py": "6b094deab2c892b0"
+    }
+   }
+  }
+ ]
+}

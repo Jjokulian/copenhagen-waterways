@@ -461,7 +461,10 @@ Found in the METHOD_LAB pilot:
 - A `said` phrase is matched against the pinned text as extracted: tags are set
   aside and entities read as characters, but in a JSON or API pin the markup and
   escapes are part of the text. A response that changes on every request cannot
-  be pinned; cite the register entry that records it, and say so.
+  be pinned; cite the register entry that records it, and say so. A stable API
+  or query response can be pinned like a page: give the query URL as the
+  source's `url`; if the source's data changes, the recheck marks the pin
+  changed, which is the point.
 - One claim, one span per page. A second span with the same ID is refused,
   since only one wording can be confirmed; merge them or make two claims.
 - A published table that cannot be justified is retired like a sentence: one
@@ -486,6 +489,25 @@ Found in the METHOD_LAB pilot:
   leaves the page half-confirmed and nobody to finish it.
 - Confirming takes two rounds for anything newly marked. The first build
   records the wording and refuses; confirm against it; build again.
+- If one command would run past the tool's time limit, split it - one page
+  per call - rather than moving it to the background and ending the turn.
+- Pins under `data/derived/pins/` are git-ignored on purpose. The register
+  keeps each source's URL, retrieval date and sha256, so a pin is rebuilt by
+  fetching it and checked by its hash; do not commit pins.
+- Pin what a claim needs. A source that names private people with health or
+  similar details is not pinned; cite its register entry, say why, and name no
+  private person on the page.
+- Your edit may make a construction or claim in another fragment stale. Re-confirm
+  it only after checking that what it covers did not change - compare the syntax
+  tree, or the output's hash, against the version it was confirmed on - and say
+  so in the by-line. If its wording is wrong, report it; do not sign it.
+- A table whose header rows repeat cannot be located by a header phrase. Begin
+  the retired passage at the heading or sentence just above the table.
+- A design's own sizes in words ("twenty to fifty sensors") belong to a
+  stipulated claim and need no stated value. A quantity about the world in
+  words does.
+- A Danish section reference ("afsnit 9") is not exempt as "Section 9" is; set
+  it as code.
 
 **Procedure for a page.**
 
@@ -499,8 +521,6 @@ Found in the METHOD_LAB pilot:
 5. Build the page. It refuses until each claim is confirmed against its wording:
    read it, then `python3 scripts/claims.py --reassess C-ID --by "<who, what was read>"`.
 6. Report what was retired and why, and every page sentence that changed.
-
-## Where things are
 
 ## Where things are
 

@@ -1,12 +1,14 @@
 # Is there enough light at the bed?
 
-Eelgrass has a requirement, not a preference. Below roughly **[11](SOURCES.md#F-e0cd5a53f8)–[14](SOURCES.md#F-5621596820)% of surface light at the seabed** it does not grow slowly — it dies. The Danish light-attenuation target is built on the same number from the other direction: the environmental objective for Kd is derived by assuming eelgrass needs about [14](SOURCES.md#F-5621596820)% of surface irradiance at the depth it is supposed to reach.
+<span class="claim" data-claim="C-FR-LT-DCE">DCE write that eelgrass can grow where the mean light at the bed is between [11](SOURCES.md#F-8070c8be3d)% and [20](SOURCES.md#F-b2dad6aee9)% of surface irradiance, and turn the environmental targets for eelgrass depth limits into targets for the Kd indicator by assuming that the light at the bed at the target depth limit is [14](SOURCES.md#F-2157f11fb4)% of surface irradiance: the Kd indicator is thus a measure of eelgrass's potential depth limit.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-DCE "What this claim rests on")</sup>
 
-So the indicator and the requirement are two ends of one calculation, and the calculation can be run from the raw record rather than inherited from an assessment. ODA publishes the attenuation coefficient per cast, with the fit quality of the regression that produced it. Two lines of arithmetic follow:
+<span class="claim" data-claim="C-FR-LT-THRESH">This page uses the lower end of that range, [11](SOURCES.md#F-e0cd5a53f8)%, and the target's [14](SOURCES.md#F-5621596820)%: for each cast, the depth at which its light falls to each.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-THRESH "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-FR-LT-ODA">ODA publishes the attenuation coefficient Kd per cast, with the correlation coefficient of the regression it comes from - the technical instruction fits the logarithm of the light fraction against depth by linear regression - so these depths can be computed from the raw record rather than inherited from an assessment. The arithmetic:</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-ODA "What this claim rests on")</sup>
 
 ```
 light at the bed   =  100 · exp(−Kd · bottom depth)
-potential depth    =  −ln(r) / Kd      r the light requirement: the deepest a plant could root
+potential depth    =  −ln(r) / Kd      r the light threshold
 ```
 
 ## What the record contains
@@ -15,40 +17,38 @@ potential depth    =  −ln(r) / Kd      r the light requirement: the deepest a 
 |---|---:|
 | Light casts in the record | [62,741](SOURCES.md#F-e98d356567) |
 | …with a usable Kd regression (r ≥ [0.9](SOURCES.md#F-aba786ac0d), or no fit reported) | [60,697](SOURCES.md#F-7e31872a83) |
-| …in the March–September growing season | [39,101](SOURCES.md#F-30f79a7c76) |
+| …in March–September, the months this page counts as the growing season | [39,101](SOURCES.md#F-30f79a7c76) |
 | Stations | [536](SOURCES.md#F-f092698376) |
 | Years covered | [1980](SOURCES.md#F-a8cef07c63)–[2026](SOURCES.md#F-4e008ddd04) |
 
-Attenuation runs from Kd = [0.22](SOURCES.md#F-de8a9ea4a1) (p10, the clearest casts) to [0.874](SOURCES.md#F-fb41ea2418) (p90, the murkiest), median [0.35](SOURCES.md#F-e3f61c1a83).
+<span class="claim" data-claim="C-FR-LT-KDRANGE">Attenuation runs from Kd = [0.22](SOURCES.md#F-de8a9ea4a1) (p10, the clearest casts) to [0.874](SOURCES.md#F-fb41ea2418) (p90, the murkiest), median [0.35](SOURCES.md#F-e3f61c1a83).</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-KDRANGE "What this claim rests on")</sup>
 
 ## The depth a plant could reach
 
-Converting each cast to the deepest point still receiving [11](SOURCES.md#F-e0cd5a53f8)% of surface light:
+<span class="claim" data-claim="C-FR-LT-CONVERT">Each cast converted to the deepest point still receiving [11](SOURCES.md#F-e0cd5a53f8)% of surface light, by the second line above:</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-CONVERT "What this claim rests on")</sup>
 
-> Median **[6.31](SOURCES.md#F-757e12357a) m**. The clearest casts (p90) reach [10.03](SOURCES.md#F-c1eb42b27e) m; the murkiest (p10) reach only [2.53](SOURCES.md#F-c2c4e6102a) m. At the stricter [14](SOURCES.md#F-5621596820)% requirement the median falls to **[5.62](SOURCES.md#F-3af5febcd2) m**.
+> <span class="claim" data-claim="C-FR-LT-DEPTH">Median **[6.31](SOURCES.md#F-757e12357a) m**. The clearest casts (p90) reach [10.03](SOURCES.md#F-c1eb42b27e) m; the murkiest (p10) reach [2.53](SOURCES.md#F-c2c4e6102a) m. At the target's [14](SOURCES.md#F-5621596820)% the median is **[5.62](SOURCES.md#F-3af5febcd2) m**.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-DEPTH "What this claim rests on")</sup>
 
-That is the whole eelgrass question in one number per cast, and it is computed from a measurement rather than from a model of a reference condition.
+<span class="claim" data-claim="C-FR-LT-POTENTIAL">It is a number per cast, computed from the published Kd rather than from a model of a reference condition; DCE add that enough light does not mean eelgrass grows at that depth, since other factors can limit it.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-POTENTIAL "What this claim rests on")</sup>
 
 ## Has it improved?
-
-This is the question decades of load reduction are supposed to have answered.
 
 | | metres per decade | casts |
 |---|---:|---:|
 | All casts | [-0.251](SOURCES.md#F-f1e2b1dc23) | [39,101](SOURCES.md#F-59463d4225) |
 | Only stations present at both ends of the record ([2](SOURCES.md#F-0f944d1be8) stations) | [-0.068](SOURCES.md#F-01527b7dec) | [900](SOURCES.md#F-52775c8607) |
 
-*Both ends* means casts in the first and in the last [5](SOURCES.md#F-bbe1fbaea3) years of the record; [2](SOURCES.md#F-0f944d1be8) stations qualify, so the second row rests on those alone.
+<span class="claim" data-claim="C-FR-LT-BOTHENDS">*Both ends* means casts in the first and in the last [5](SOURCES.md#F-bbe1fbaea3) years of the record; [2](SOURCES.md#F-0f944d1be8) stations qualify, so the second row rests on those alone.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-BOTHENDS "What this claim rests on")</sup>
 
-The second row is the check that matters, and it is the one nobody runs. If a trend appears on all casts but not on the stations measured throughout, it is a trend in **where Denmark chose to measure**, not in the water — hypothesis [I1 — Changing station network](hypodrafts/I1.md "Changing station network"), put to the record rather than asserted.
+<span class="claim" data-claim="C-FR-LT-I1">The second row is this page's check on hypothesis [I1 — Changing station network](hypodrafts/I1.md "Changing station network"): if a trend appears on all casts but not on the stations measured throughout, it may be a trend in which stations were sampled rather than in the water. Resting on the stations that qualify, it can show that the question matters, not settle it.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-I1 "What this claim rests on")</sup>
 
 ## And does the light actually reach the bed?
 
-Where a bottom depth is known ([39,094](SOURCES.md#F-bbf74582b8) casts: [36,933](SOURCES.md#F-4c385f6b6f) from a sounding on the same day, [2,161](SOURCES.md#F-c3b1c5c6a0) from the station's median sounding), the share where the seabed receives at least [11](SOURCES.md#F-e0cd5a53f8)% of surface light is **[12](SOURCES.md#F-9193fc1d54)%**.
+<span class="claim" data-claim="C-FR-LT-BED">Where a bottom depth is known ([39,094](SOURCES.md#F-bbf74582b8) casts: [36,933](SOURCES.md#F-4c385f6b6f) from a sounding on the same day, [2,161](SOURCES.md#F-c3b1c5c6a0) from the station's median sounding), the share where the seabed receives at least [11](SOURCES.md#F-e0cd5a53f8)% of surface light is **[12](SOURCES.md#F-9193fc1d54)%**.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-BED "What this claim rests on")</sup>
 
 ## Station by station
 
-Stations with at least [8](SOURCES.md#F-9a94079511) years of growing-season casts, sorted by trend: the darkening end and the brightening end. A negative number is water getting darker.
+<span class="claim" data-claim="C-FR-LT-STATIONS">Stations with at least [8](SOURCES.md#F-9a94079511) years of growing-season casts, sorted by trend: the darkening end and the brightening end. A negative number is water getting darker.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-STATIONS "What this claim rests on")</sup>
 
 | station | casts | years | median Kd | median depth at [11](SOURCES.md#F-e0cd5a53f8)% | m/decade |
 |---|---:|---|---:|---:|---:|
@@ -74,9 +74,9 @@ Stations with at least [8](SOURCES.md#F-9a94079511) years of growing-season cast
 | Stationsnavn ej angivet | [34](SOURCES.md#F-43af75fad8) | [2007](SOURCES.md#F-3de3126d89)–[2014](SOURCES.md#F-a233cc02d4) | [0.24](SOURCES.md#F-9f0fccd2a7) | [9.2](SOURCES.md#F-1a3a98be37) m | [+3.83](SOURCES.md#F-90b9f1d591) |
 | Nordsøen | [15](SOURCES.md#F-bdc5a94faf) | [2016](SOURCES.md#F-6fac28c0f4)–[2025](SOURCES.md#F-e28fcc62f1) | [0.212](SOURCES.md#F-4db0f5a200) | [10.43](SOURCES.md#F-9e0a9d44b5) m | [+8.38](SOURCES.md#F-563e1fb20f) |
 
-## The number depends on where the sensor started
+## The fit and the depth window
 
-Every figure above rests on Kd, and Kd is a straight line fitted to the logarithm of light against depth. That fit assumes attenuation is the same all the way down. ODA publishes the measurements the line was fitted to, so the assumption can be checked rather than granted: refit the top half of each profile against the bottom half. [53,468](SOURCES.md#F-9fe3c8054f) casts carry enough points to allow it — at least [8](SOURCES.md#F-01b05b63d6) readings spanning at least [2.0](SOURCES.md#F-d6886e449e) m.
+<span class="claim" data-claim="C-FR-LT-REFIT">Every figure above rests on Kd, the slope of a straight line fitted to the logarithm of light against depth, which assumes attenuation is the same all the way down. ODA publishes each cast's light readings beside its Kd, so the assumption can be checked: this page refits the top half of each profile and the bottom half separately. [53,468](SOURCES.md#F-9fe3c8054f) casts carry enough readings - at least [8](SOURCES.md#F-01b05b63d6) spanning at least [2.0](SOURCES.md#F-d6886e449e) m.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-REFIT "What this claim rests on")</sup>
 
 | profile starts at | casts | Kd top half | Kd bottom half | ratio | steepens with depth |
 |---|---:|---:|---:|---:|---:|
@@ -87,21 +87,23 @@ Every figure above rests on Kd, and Kd is a straight line fitted to the logarith
 | [3.1](SOURCES.md#F-78b8b110b3) – [5.1](SOURCES.md#F-9513cd4612) m | [2,236](SOURCES.md#F-f7030706f2) | [0.275](SOURCES.md#F-a5964ad222) | [0.261](SOURCES.md#F-64fc0eb5ab) | **[0.962](SOURCES.md#F-d19103596b)** | [40.0](SOURCES.md#F-5dc30d87db)% |
 | [5.1](SOURCES.md#F-944f1be009) – [30.0](SOURCES.md#F-8daddb836e) m | [1,066](SOURCES.md#F-b5ea286603) | [0.242](SOURCES.md#F-d55e9d975d) | [0.239](SOURCES.md#F-7fa85e9c38) | **[0.987](SOURCES.md#F-976556d48d)** | [47.5](SOURCES.md#F-56d90df78e)% |
 
-**The bottom half attenuates less, and the gap closes the deeper the profile begins.** That ordering is the whole result. It runs opposite to resuspension — a turbid layer over the bed would make the bottom half steeper, and it does so in only [22](SOURCES.md#F-3dc96d7c4c)–[48](SOURCES.md#F-56d90df78e)% of casts, outweighed on average by something else.
+<span class="claim" data-claim="C-FR-LT-HALVES">**In every band the bottom half attenuates less than the top on the median, and the ratio runs from [0.879](SOURCES.md#F-efdd02dc1e) for profiles starting within [0.6](SOURCES.md#F-8a6e7ba403) m of the surface to [0.987](SOURCES.md#F-976556d48d) for those starting below [5.1](SOURCES.md#F-944f1be009) m, rising overall though not at every step.**</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-HALVES "What this claim rests on")</sup>
 
-The something else is that a PAR sensor counts photons across the whole band without distinguishing them, and water absorbs the band unevenly - as an earlier version of this page put it, [roughly 0.5 per metre at 700 nm against 0.015 per metre at 450 nm](SOURCES.md#F-1161b27adb). The red part of the light is gone near the surface, and what continues downward is the fraction water attenuates least. So the apparent broadband Kd falls with depth **in perfectly uniform water**, purely because the surviving spectrum has shifted. If that is the mechanism, the effect must fade for profiles that begin below the red-absorbing layer, because the red is already gone. It does: the ratio runs from [0.879](SOURCES.md#F-efdd02dc1e) for profiles starting at the surface to [0.987](SOURCES.md#F-976556d48d) for those starting below [5.1](SOURCES.md#F-944f1be009) m, rising overall though not at every step.
+<span class="claim" data-claim="C-FR-LT-RESUSP">A turbid layer over the bed would make the bottom half steeper. The bottom half is steeper in [22](SOURCES.md#F-3dc96d7c4c)–[48](SOURCES.md#F-56d90df78e)% of casts in each band, and less steep on the median.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-RESUSP "What this claim rests on")</sup>
 
-> **What follows is that Kd measured this way is not a property of the water.** It is a property of the water and the depth window jointly. Two casts in identical water, one begun near the surface and one begun deeper, return different numbers. The indicator, the target derived from it, and every figure on this page inherit that.
+<span class="claim" data-claim="C-FR-LT-SPECTRAL">One explanation is spectral. The technical instruction specifies quantum sensors for photosynthetically active light, PAR, which respond equally to every wavelength in the band, and water absorbs the red end of it: what continues downward is the part water attenuates least, so a broadband Kd falls with depth even in uniform water. The instruction itself notes that the light's spectral composition changes with depth and can bend the curve. If that is the mechanism, the effect should fade for profiles that begin below the depth where the red is gone, and the ratio does rise with start depth. Nothing here measures the spectrum, so it remains an explanation.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-SPECTRAL "What this claim rests on")</sup>
 
-Splitting the growth-season casts on where they started: [26,662](SOURCES.md#F-b0fb024790) began above [2.0](SOURCES.md#F-5a6a77bc92) m and give a median Kd of [0.35](SOURCES.md#F-f8f56b7f48) and a median depth reaching [11](SOURCES.md#F-e0cd5a53f8)% of [6.31](SOURCES.md#F-b5f33a89f8) m; [7,360](SOURCES.md#F-fbfab234d5) began below [2.0](SOURCES.md#F-5a6a77bc92) m and give [0.27](SOURCES.md#F-341b020904) and [8.18](SOURCES.md#F-301a45c3f7) m. Neither is the true number. They are two answers from one record, separated by a choice nobody documents making.
+> <span class="claim" data-claim="C-FR-LT-WINDOW">**Within a cast, the line fitted to the upper half and the line fitted to the lower half differ, so a Kd depends on the depth window it is fitted over as well as on the water.** The instruction's own rules - fit above the thermocline only where the curve differs across it, leave out the lowest readings where it bends - choose that window cast by cast.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-WINDOW "What this claim rests on")</sup>
 
-The measurement that would separate the two explanations — spectral attenuation rather than one broadband coefficient — is not made anywhere in the Danish programme. A single number cannot say whether the light stopped because something was in the water or because water is red-absorbing and the sensor started shallow. That is [Z8 — The attenuation budget is never partitioned](hypodrafts/Z8.md "The attenuation budget is never partitioned") again, one layer below where it is stated.
+<span class="claim" data-claim="C-FR-LT-SPLIT">Splitting the growth-season casts on where they started: [26,662](SOURCES.md#F-b0fb024790) began above [2.0](SOURCES.md#F-5a6a77bc92) m and give a median Kd of [0.35](SOURCES.md#F-f8f56b7f48) and a median depth reaching [11](SOURCES.md#F-e0cd5a53f8)% of [6.31](SOURCES.md#F-b5f33a89f8) m; [7,360](SOURCES.md#F-fbfab234d5) began below [2.0](SOURCES.md#F-5a6a77bc92) m and give [0.27](SOURCES.md#F-341b020904) and [8.18](SOURCES.md#F-301a45c3f7) m. They are different casts, not the same water measured twice, so the gap mixes where a profile starts with where it was taken.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-SPLIT "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-FR-LT-NOSPECTRAL">The measurement that would separate the explanations - attenuation by wavelength rather than a broadband coefficient - is in none of the ODA extracts this project fetched, and the technical instruction specifies broadband sensors.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-NOSPECTRAL "What this claim rests on")</sup> <span class="claim" data-claim="C-FR-LT-Z8">A broadband number cannot say whether the light stopped because something was in the water or because water absorbs red and the profile started shallow: that is [Z8 — The attenuation budget is never partitioned](hypodrafts/Z8.md "The attenuation budget is never partitioned"), a layer below where it is stated.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-Z8 "What this claim rests on")</sup>
 
 ## The other optical record measures the seabed when the water is shallow
 
-Kd is not the only transparency number Denmark holds. There is also Secchi depth — a white disc lowered until it disappears — [144,208](SOURCES.md#F-d422132c90) readings, [96,708](SOURCES.md#F-e51550bdc9) of them paired with a bottom depth, [1980](SOURCES.md#F-f944d2516c)–[2026](SOURCES.md#F-ef805012bf). It has one hard limit: **a disc cannot be seen deeper than the bottom.** Where the water is shallower than the water is clear, the number recorded is the depth of the seabed.
+<span class="claim" data-claim="C-FR-LT-SECCHI">Kd is not the only transparency number Denmark holds. There is also Secchi depth - a white disc lowered until it can no longer be seen - [144,208](SOURCES.md#F-d422132c90) readings, [96,708](SOURCES.md#F-e51550bdc9) of them paired with a bottom depth, [1980](SOURCES.md#F-f944d2516c)–[2026](SOURCES.md#F-ef805012bf). It has a hard limit: **a disc cannot be seen deeper than the bottom.** Where the water is shallower than the water is clear, the number recorded is the depth of the seabed.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-SECCHI "What this claim rests on")</sup>
 
-ODA is straightforward about this and publishes the flag — `SigtTilBund`, sight-to-bottom — which is the only reason any of this can be checked. It is set on [26,380](SOURCES.md#F-1499c2f79d) of [144,208](SOURCES.md#F-d422132c90) readings.
+<span class="claim" data-claim="C-FR-LT-FLAG">ODA also publishes a flag, `SigtTilBund` (sight-to-bottom), set on [26,380](SOURCES.md#F-1499c2f79d) of [144,208](SOURCES.md#F-d422132c90) readings ([18.3](SOURCES.md#F-8f35c82302)%). The shares below do not use it: they count a reading as at the bed where its Secchi depth reaches the bottom depth on the same record, which puts [11.2](SOURCES.md#F-ff8d1d7e0f)% of the [96,708](SOURCES.md#F-e51550bdc9) paired readings at the bed. The flag is counted over all readings and the comparison over the paired ones, so the two are not compared record by record here.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-FLAG "What this claim rests on")</sup>
 
 | bottom depth | readings | median Secchi | disc reached the bed |
 |---|---:|---:|---:|
@@ -111,9 +113,9 @@ ODA is straightforward about this and publishes the flag — `SigtTilBund`, sigh
 | [20](SOURCES.md#F-94a38e5aba)–[40](SOURCES.md#F-9d63bd2b8f) m | [17,454](SOURCES.md#F-5f906c87db) | [6.5](SOURCES.md#F-870fbeae3b) m | **[0.2](SOURCES.md#F-dbc1d51af8)%** |
 | [40](SOURCES.md#F-dc99d4a6e5)–[200](SOURCES.md#F-0a91013e45) m | [3,714](SOURCES.md#F-f5de4748e9) | [8.0](SOURCES.md#F-c6dd3bc60d) m | **[0.0](SOURCES.md#F-68bac1a7d0)%** |
 
-So in water under [5](SOURCES.md#F-7f0e8a949b) m, [36.9](SOURCES.md#F-46aa1895a2)% of the readings are measurements of bathymetry wearing the units of clarity. From [10](SOURCES.md#F-db815ba183) m down it essentially stops happening ([0.8](SOURCES.md#F-9a973f2830)%). The censoring is not an error — it is what the instrument does — but it is **one-sided**: it can only make the water look less clear than it is, never more, and only in the shallows.
+<span class="claim" data-claim="C-FR-LT-CENSOR">So in water under [5](SOURCES.md#F-7f0e8a949b) m, [36.9](SOURCES.md#F-46aa1895a2)% of the readings record the depth of the bed rather than the clarity of the water; in the [10](SOURCES.md#F-db815ba183)–[20](SOURCES.md#F-4ed303263b) m band it is [0.8](SOURCES.md#F-9a973f2830)%. The censoring is not an error - it is what the instrument does - but it is **one-sided**: it can only make the water look less clear than it is, never more.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-CENSOR "What this claim rests on")</sup>
 
-**And the censored share is not constant, which is the part that matters for any series built from it.**
+<span class="claim" data-claim="C-FR-LT-NOTCONST">**And the censored share is not constant, which is the part that matters for any series built from it.**</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-NOTCONST "What this claim rests on")</sup>
 
 | period | readings | disc reached the bed | in water under [5](SOURCES.md#F-b5c79d9a68) m |
 |---|---:|---:|---:|
@@ -122,13 +124,13 @@ So in water under [5](SOURCES.md#F-7f0e8a949b) m, [36.9](SOURCES.md#F-46aa1895a2
 | [2005](SOURCES.md#F-a96752daea)–[2014](SOURCES.md#F-9c44527afc) | [27,599](SOURCES.md#F-d9fd8a5405) | [7.3](SOURCES.md#F-899b4fbbed)% | [28.0](SOURCES.md#F-9ae4b8940d)% |
 | [2015](SOURCES.md#F-a08c8ea9b5)–[2026](SOURCES.md#F-01dc098679) | [28,555](SOURCES.md#F-88ec06c0f8) | [13.6](SOURCES.md#F-7f08413681)% | [47.2](SOURCES.md#F-d44ffeb8f9)% |
 
-A time-varying censored fraction is a time-varying bias, so a Secchi trend computed across these eras is partly a trend in how often the instrument hit the ground. **Why it varies is not settled here.** Cleaner water would raise it, because a disc that can be seen further reaches the bed more often; so would a shift of effort toward shallower stations; so would a change in field practice. Those are not separable from this table, and the direction of the resulting bias is uncomfortable: a genuine improvement in clarity partly hides itself, because the readings that would show it are the ones that get capped.
+<span class="claim" data-claim="C-FR-LT-BIAS">A time-varying censored fraction is a time-varying bias, so a Secchi trend computed across these eras is partly a trend in how often the instrument hit the ground. **Why it varies is not settled here.** Cleaner water would raise it, because a disc that can be seen further reaches the bed more often; so would a shift of effort toward shallower stations; so would a change in field practice. Those are not separable from this table, and the direction of the resulting bias is uncomfortable: a genuine improvement in clarity partly hides itself, because the readings that would show it are the ones that get capped.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-BIAS "What this claim rests on")</sup>
 
-The same caution as the Kd section, arrived at from the other side. Neither of Denmark's two transparency records is a clean measurement of the water alone — one depends on where the sensor started, the other on how deep the sea is underneath it.
+<span class="claim" data-claim="C-FR-LT-NEITHER">Neither of the transparency records in ODA is a clean measurement of the water alone: one depends on the depth window its line is fitted over, the other on how deep the sea is underneath it.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-NEITHER "What this claim rests on")</sup>
 
 ## What this does and does not settle
 
-It settles the arithmetic, which was never in doubt, and it puts a number on the thing the Kd indicator is a proxy for. What it cannot settle is *why* the light is where it is. Kd is one broadband number and its causes do not separate — phytoplankton, resuspended mineral sediment, coloured dissolved organic matter and drifted detritus all darken water identically at this resolution. That is [Z8](hypodrafts/Z8.md "The attenuation budget is never partitioned"), and it is why a Kd exceedance is attributed to algae by assumption rather than by measurement.
+<span class="claim" data-claim="C-FR-LT-SETTLES">It computes, from the published record, the depth at which each cast's light falls to thresholds taken from DCE - the quantity the Kd indicator stands for. It cannot say why the light is where it is: Kd is a broadband number, and phytoplankton, resuspended mineral sediment, coloured dissolved organic matter and detritus all attenuate light within it without being told apart. That is [Z8](hypodrafts/Z8.md "The attenuation budget is never partitioned").</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-SETTLES "What this claim rests on")</sup>
 
-It also cannot see the shading that happens *after* the light has passed through the water. Epiphytes growing on the leaf shade the host at the blade surface, where no water-column measurement reaches ([Z9 — Epiphyte shading, which bypasses the water column](HYPOTHESES.md "Epiphyte shading, which bypasses the water column")), so the nutrient-to-light pathway can operate with every number on this page looking acceptable.
+<span class="claim" data-claim="C-FR-LT-Z9">Nor can it see shading after the light has passed through the water: [Z9 — Epiphyte shading, which bypasses the water column](HYPOTHESES.md "Epiphyte shading, which bypasses the water column") holds that algae growing on the leaf shade it at the blade surface, where no water-column measurement reaches, so a nutrient effect on eelgrass could act with every number on this page looking acceptable.</span><sup class="claim-mark">[†](CLAIMS.md#C-FR-LT-Z9 "What this claim rests on")</sup>
 

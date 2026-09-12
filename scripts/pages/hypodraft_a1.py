@@ -1,152 +1,294 @@
 #!/usr/bin/env python3
-"""Writes docs/hypodrafts/A1.md: a hypothesis draft, as generated text.
+"""docs/hypodrafts/A1.md - what the published record and the data held here can and
+cannot show about A1 (Danish land-based nitrogen load): a residual-growth test across
+vintages of DCE's national load account.
 
-Every hypothesis ID is a checked reference, every chemical species a checked
-species, and every number either read live or quoted from the page as committed
-({q:…@@…}, a located quotation - see draftkit.py) because nothing in the repository stores it yet.
+Every number is read from data (live_json), from a pinned document ({read:}), or is a
+stated value with its reason, and the rounding bound is arithmetic on stated values
+through declared steps; every assertion is a checked claim (LIVE_NUMBERS.md section 11),
+registered in data/manual/claims.d/w3-ba.json. What the draft once said and could not
+justify is in docs/ARCHIVE.md, not here.
 
     python3 scripts/pages/hypodraft_a1.py
 """
+import json
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import draftkit
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+import draftkit  # noqa: E402
+from draftkit import RD  # noqa: E402
+import claims  # noqa: E402
+import live  # noqa: E402
+from common import DERIVED, RAW  # noqa: E402
 
 REL = "docs/hypodrafts/A1.md"
-TEXT = r"""# {ref:A1|title}
+C, R = live.claim, live.ref
+S = "SR353"
+TAX = "https://github.com/Jjokulian/statistical-methods#7b-rate-a-data-stream-by-the-errors-it-can-contain"
+PANEL = {"fluo", "oxy_bed", "oxy_surf", "oxysat_bed", "oxysat_surf", "sal_bed",
+         "sal_surf", "temp_bed", "temp_surf"}
+NUTRIENT = ("nitr", "ammon", "phosph", "fosf", "silic", "kvælst")
+KEMI_N = ("Nitrogen,total N", "Nitrit+nitrat-N", "Ammoniak+ammonium-N")
+TOTAL = RD(S, "50,000", "Tilførslen fra land til kystvandene er for 2018 beregnet til hhv. "
+                        "ca. 50.000 tons kvælstof")
+POINT = RD(S, "5,200", "på ca. 5.200 tons i 2018")
 
-**Draft, not a result. Nothing here has been run.**
 
-{ref:A1} as written ("deficit scales with current-year N load") cannot be tested today: it
-needs catchment N flux per water body per month, and this project has none — see
-*Still blocked*. What **can** be tested is its precondition. The {q:its precondition. The @@ is a residual,} is a residual,
-and a residual cannot be validated against itself ([`../RESIDUAL.md`](../RESIDUAL.md),
-which states the growth test at line {q:test at line @@). This drafts}). This drafts that growth test against the
-archive, which turns out to be obtainable.
+def J(name):
+    return live.live_json(os.path.join(DERIVED, name))
 
-## A primary-source finding, obtained on the way
 
-The unverified claim — that DK-QNP, covering the ungauged half of Denmark, takes the
-national field nitrogen surplus as an input — **is correct, and DCE state it.** From
-*Vandløb 2018 NOVANA* (Thodsen et al. 2019, DCE Videnskabelig rapport nr. 353),
-methods chapter:
+def refuse(msg):
+    raise live.Unjustified("A1: " + msg)
 
-> "En vigtig modelvariabel i DK-QNP modellen til beregning af tilførsel af total
-> diffus kvælstof er det årligt beregnede kvælstofoverskud på 'mark-niveau'."
 
-The field balance is computed per Blicher-Mathiesen et al. (2015). Chapter 6 of the
-same report then offers as a *result*:
+def text():
+    d = claims.load()[0]
 
-> "Der er således – for perioden som helhed - en meget stærk, signifikant lineær
-> relation mellem det nationale markoverskud og den samlede, normaliserede
-> kvælstoftransport fra diffuse kilder (Figur {read:SR353:6.7|Figur 6.7}, D)."
+    def P(name):
+        p = d["params"][name]
+        return live.stated_value(name, p["value"], p["reason"])
 
-A farming statistic is an input to the model generating the diffuse load over {q:load over @@ of the} of
-the country, and its correlation with that load is then reported as evidence — **error
-class 7, model-as-datum**, exactly. This does not show the attribution is wrong. It
-shows Figur {read:SR353:6.7|Figur 6.7} D cannot be what shows it is right.
+    fx, en = J("hypodraft_facts.json"), J("enums.json")
+    hov = json.load(open(os.path.join(RAW, "national", "hovedoplande.geojson"),
+                         encoding="utf-8"))["features"]
+    names = {(f["properties"]["hov_id"], f["properties"]["hov_na"]) for f in hov}
+    if not {("DK", "Int vidå-kruså"), ("DK4.1", "Vidå-kruså")} <= names:
+        refuse("the main-catchment layer no longer holds the two Vidå-kruså entries")
+    sbv = fx["series_by_variable"]["by_variable"]
+    if set(sbv) != PANEL:
+        refuse(f"the monthly series now holds {sorted(sbv)}, not the variables the page names")
+    ctd_p = en["ctd"]["categorical"]["Parameter"]
+    if any(any(k in p.lower() for k in NUTRIENT) for p in ctd_p):
+        refuse("a CTD parameter now names a nutrient; the page says none does")
+    kemi_p = en["kemi"]["categorical"]["Parameter"]
+    if not all(k in kemi_p for k in KEMI_N):
+        refuse("the water-chemistry extract no longer carries the nitrogen parameters counted")
+    ns = [sbv[v]["n"] for v in sorted(sbv)]
+    lo, hi = min(ns), max(ns)
+    sr, sv = fx["series"], fx["series_by_variable"]
+    ly = fx["layers"]
 
-## Observable consequence, stated so it can be falsified
+    uT, uP = P("ba_a1_unit_total"), P("ba_a1_unit_point")
+    hT = live.step("K-BA-HALFWIDTH", uT * 0.5)
+    hP = live.step("K-BA-HALFWIDTH", uP * 0.5)
+    bound = hT + hT + hP + hP
+    sd = live.step("K-BA-UNIFORM-SD", ((hT ** 2 + hT ** 2 + hP ** 2 + hP ** 2) / 3) ** 0.5)
+    mc = P("ba_a1_min_changes")
 
-DCE recompute the whole 1990-present series under the current method every year ("fra
-1990, således at den nyeste version af modellen anvendes", SR353), so a fixed year *y*
-exists in many published vintages. When a version change moves a part **P**
-out of the leftover, and the account is a partition:
-
-> **R_new(y) = R_old(y) − P** and **T_new(y) = T_old(y)**
-
-**Falsified if:** R does not move; R moves by materially less than P; or the **total**
-T moves instead. Any of the three means the published share is not a share of
-anything.
-
-## Data, named, with counts I verified
-
-| Source | Verified here | Error class |
-|---|---|---|
-| DCE `Vandløb <year>. NOVANA`, `https://dce2.au.dk/pub/SR<n>.pdf` | SR353 = Vandløb 2018, {q:Vandløb 2018, @@, **text-extractable**:}, **text-extractable**: `pdftotext -layout` yields {q:-layout` yields @@ chars; `pdfinfo`} chars; `pdfinfo` shows Distiller {q:`pdfinfo` shows Distiller @@, 2019-12-02. SR527}, 2019-12-02. SR527 (Vandløb 2021) and SR532 share the URL shape | {q:-layout` yields 17@@,210 chars; `pdfinfo`}, published to {q:2, published to @@ | | SR353} |
-| SR353 figures | 2018 land→coast ≈ **{read:SR353:50.000|Tilførslen fra land til kystvandene er for 2018 beregnet til hhv. ca. 50.000 tons kvælstof} t N/yr**, point sources ≈ **{read:SR353:5.200|på ca. 5.200 tons i 2018} t N/yr**; **{read:SR353:209|Beregningerne dette år er baseret på målinger fra 209 kystnære målestationer}** coastal stream stations plus a model for the rest; **{read:SR353:240|anvendes 240 målestationer}** discharge gauges in the 1990-2018 run; field surplus **{read:SR353:186.000|varieret mellem 186.000 – 240.000 tons N}–{read:SR353:240.000|varieret mellem 186.000 – 240.000 tons N} t N** over five agrohydrological years | {q:agrohydrological years | @@, then}, then {q:`data/raw/national/hovedoplande.geojson` | **@@4** features, including} |
-| `data/raw/national/hovedoplande.geojson` | **{fig:da_hov_features}** features, including `DK` *"Int vidå-kruså"* beside `DK4.1` *"Vidå-kruså"* — a transboundary catchment named as such | {q:as such | @@, no foreign-inflow}, no foreign-inflow term |
-| `docs/data/areas/stations_series.json` | **{fig:da_series_months}** station-months (summed over {fig:da_series_vars} variables, {q:over 9 variables, @@ … 84,668), 1,415} … {q:9 variables, 60,460 … @@), 1,415 stations, 564}), {fig:da_series_stations} stations, {fig:da_series_nmonths} months from 1980. **No nutrients** | {q:**No nutrients** | @@ | | `data/raw/oda/ctd.csv.gz`} |
-| `data/raw/oda/ctd.csv.gz` | {fig:da_ctd_bytes} bytes, {fig:da_ctd_columns} columns; first {q:columns; first @@ compressed =} compressed = **{q:MB compressed = **@@** rows ⇒ ~1.35×10⁵}** rows ⇒ {q:rows ⇒ @@⁵ rows per}⁵ rows per compressed MB ⇒ {q:compressed MB ⇒ @@⁷ total, consistent}⁷ total, consistent with the stated {q:with the stated @@ M |} M | {q:53.7 M | @@ | Only the} |
-
-Only the first two rows are used by the test. The last two are what {ref:A1} would otherwise
-be tested on; neither carries nitrogen.
-
-## The null under the constraint I actually impose
-
-The constraint is **arithmetic identity across two publications**, not sampling: there
-is no estimator distribution, and n is the number of version changes, which is small.
-The only noise under the null is publication rounding, which I compute rather than
-quote. Totals appear to {q:appear to @@ significant figures,} significant figures, so half-widths are h = {q:are h = @@ on a 50,000} on a
-{q:t on a @@ total and h} total and h = {q:and h = @@ on a 5,200} on a {q:50 t on a @@ point-source figure. Four published} point-source figure. Four published quantities
-enter each comparison (T_old, T_new, P_old, P_new):
-
-- worst-case bound: {q:worst-case bound: @@ =} = **{q:+ 50 = **@@** - independent-uniform s.d.:}**
-- independent-uniform s.d.: √({q:- independent-uniform s.d.: √(@@·(500/√3)² + 2·(50/√3)²) =}·({q:- independent-uniform s.d.: √(2·(@@/√3)² + 2·(50/√3)²) =}/√{q:- independent-uniform s.d.: √(2·(500/√@@)² + 2·(50/√3)²) =})² + {q:- independent-uniform s.d.: √(@@·(500/√3)² + 2·(50/√3)²) =}·({q:- independent-uniform s.d.: √(2·(@@0/√3)² + 2·(50/√3)²) =}/√{q:s.d.: √(2·(500/√3)² + 2·(50/√@@)²) = **410 t})²) = **{q:+ 2·(50/√3)²) = **@@** I impose the}**
-
-I impose the worst case. **Reject only when |ΔR + P| > {q:|ΔR + P| > @@** — which is}** — which is also the
-design's honest limit: **no power against reallocations under {q:against reallocations under @@**, a fifth}**, a fifth of
-the whole point-source term. More power needs the underlying tables at full precision,
-not the report text.
-
-Use the **actual** (aktuel) series, never the climate-normalised one: normalisation is
-a model applied to the total (SR353 records it running {read:SR353:1%|var 1% højere end de aktuelle tilførsler} above actual over 1990-2017),
-so it moves T by itself and would contaminate the third failure mode.
-
-## Procedure
-
-1. Fetch the `Vandløb <year> NOVANA` vintages 2013-2024 (SR numbers looked up per
-   year; SR353 and SR527 confirmed) — {q:SR527 confirmed) — @@ PDFs, ~8 MB} PDFs, {q:PDFs, @@ each, streamed} each, streamed to disk, then
-   `pdftotext -layout` locally.
-2. From each, for every *y* ≥ 1990: total land→coast TN, point sources, diffuse
-   remainder — actual, not normalised.
-3. Read each vintage's methods chapter for declared changes. SR353 declares two
-   unprompted: a **new** regional bias correction of DK-QNP monthly loads
-   ("Bias-korrektionen … er ny i forhold til de foregående år"), and a correction of TN
-   and TP measured 2016–Apr 2017 by a wrong analytical method, plus a smaller one for
-   2007-2014. Each is a candidate *P* with a stated year.
-4. For each, form ΔR and ΔT across the vintage boundary and compare to the {q:compare to the @@ bound. ## What}
-   bound.
-
-## What a result would and would not license
-
-**Would.** Three or more declared changes with ΔR = −P inside the bound and ΔT ≈ {q:and ΔT ≈ @@ licenses one narrow}
-licenses one narrow statement: *the account behaves as a partition under revision.* A
-single failure of the third kind — T moving with R — licenses the opposite and
-stronger one: the share is circular.
-
-**Would not.** Nothing here licenses a claim about the sea: no mechanism, no N-load
-coefficient, no oxygen. Nor whether "Denmark" is a closed box — the account carries no
-foreign-inflow term though the national catchment layer names the transboundary unit
-outright. A partition that balances is still a partition of a quantity whose boundary
-was assumed.
-
-## Still blocked, and by what exactly
-
-ODA `vandkemi` **is not fetchable by `scripts/fetch_oda.py` as it stands.** `TOPICS`
-holds five keys — `stations`, `ctd`, `lys`, `iltkor`, `maaledybde` — and
-`argparse(choices=sorted(TOPICS))` rejects `kemi`: the docstring advertises the topic,
-the dict does not implement it. Missing is one `Emne_<n>_<m>` node id,
-discoverable with the `expand()` helper already in the file. Separately, `run()`
-hardcodes `topic.aspx?id=h&t=h` — **Hav** — so `ODA-STOFTRANSPORT` (Vandløb /
-Stoftransport / Månedstransport) and `ODA-TILFOERSEL`, the two that actually carry
-{ref:A1}'s load term, need a code change, not merely a table entry.
-
-Size, estimated and not measured: vandkemi is bottle samples, a few depths × tens of
-parameters per visit, against CTD's hundreds of depth bins × {q:depth bins × @@ — so one} — so one to two orders
-of magnitude fewer rows than ctd's {q:rows than ctd's @@⁷: **10⁶–10⁷ rows,}⁷: **{q:than ctd's ~5×@@⁷: **10⁶–10⁷ rows,}⁶–{q:ctd's ~5×10⁷: **@@⁶–10⁷ rows, roughly}⁷ rows, roughly {q:rows, roughly @@ gzipped**, streamed} gzipped**,
-streamed in {q:gzipped**, streamed in @@ KB chunks under} KB chunks under the existing `--max-mb 2000` guard. Not a multi-GB job.
-I did not run it.
-
-And the warning: marine vandkemi is nitrogen **concentration in the sea**, a state and
-a response. Substituting it for a land load commits the very class-{q:very class-@@ error this} error this
-hypothesis stands charged with.
-"""
+    o = []
+    w = o.append
+    w(f"# {R('A1', title=True)}")
+    w("")
+    w("*Generated by `scripts/pages/hypodraft_a1.py`: what the published record and the "
+      "data held here can and cannot show about the hypothesis. Each marked statement links "
+      "to what it rests on.*")
+    w("")
+    w("**Draft, not a result.** "
+      + C("C-BA-A1-STATUS", "The test this page specifies has not been run: no script in "
+          "this repository reads the published vintages of the national load account or "
+          "compares them."))
+    w("")
+    w(C("C-BA-A1-NEEDS", f"{R('A1')} predicts that the deficit scales with current-year "
+        "nitrogen load, and needs catchment nitrogen flux per water body per month; this "
+        "project holds none — see *Still blocked*.")
+      + " "
+      + C("C-BA-A1-PRECONDITION", "What **can** be tested is a precondition. The "
+          "agricultural share in circulation, "
+          f"{RD('DANVA-2024', '69.6', 'hvor landbruget alene står for 69,6 %')}%, is a "
+          "residual, and a residual cannot be checked against itself; it can be checked "
+          "across revisions of the account ([`../RESIDUAL.md`](../RESIDUAL.md)). This page "
+          "drafts that test against the published reports."))
+    w("")
+    w("## The model's input, in DCE's words")
+    w("")
+    w(C("C-BA-A1-INPUT", "DCE's DK-QNP model computes the diffuse nitrogen load from the "
+        "part of the country without measuring stations — *\"en model for det resterende "
+        "umålte opland\"* — and the methods chapter of *Vandløb 2018* (`SR353`, Thodsen and "
+        "colleagues, 2019) names the annually computed field-level nitrogen surplus as an "
+        "important model variable:"))
+    w("")
+    w("> \"En vigtig modelvariabel i DK-QNP modellen til beregning af tilførsel af total")
+    w("> diffus kvælstof er det årligt beregnede kvælstofoverskud på 'mark-niveau'.\"")
+    w("")
+    w(C("C-BA-A1-BLICHER", "The field balance behind it is computed as Blicher-Mathiesen and "
+        "colleagues (2015) describe.")
+      + " "
+      + C("C-BA-A1-RELATION", "The report's sixth chapter then offers, as a result:"))
+    w("")
+    w("> \"Der er således – for perioden som helhed - en meget stærk, signifikant lineær")
+    w("> relation mellem det nationale markoverskud og den samlede, normaliserede")
+    w(f"> kvælstoftransport fra diffuse kilder (Figur {RD(S, '6.7', 'Figur 6.7')}, D).\"")
+    w("")
+    w(C("C-BA-A1-CIRCULAR", "A farming statistic is an input to the model that generates "
+        "the diffuse load over the ungauged part of the country, and its correlation with "
+        "that load is then reported as evidence — class `7`, model-as-datum, in "
+        f"[the taxonomy of data-stream errors]({TAX}). This does not show the attribution is "
+        f"wrong. It shows that Figur {RD(S, '6.7', 'Figur 6.7')} D cannot be what shows it "
+        "is right."))
+    w("")
+    w("## Observable consequence, stated so it can be falsified")
+    w("")
+    w(C("C-BA-A1-VINTAGES", "DCE recompute the series with each report. SR353 runs the "
+        "national water model over the whole period from 1990 in each reporting year, "
+        "*\"således at den nyeste version af modellen anvendes\"*, puts its diffuse nitrogen "
+        f"load {RD(S, '8', 'Den diffuse kvælstoftilførsel er som middel 8% lavere end med den gamle opgørelsesmetode')}% "
+        "lower on average than by the old method, and says the normalised loads of earlier "
+        "reports are not directly comparable with the new. So a fixed year *y* exists in "
+        "more than one published vintage, not always with the same value."))
+    w("")
+    w("> " + C("C-BA-A1-PARTITION", "If a version change moves a part **P** out of the "
+               "leftover, and the account is a partition, then **R_new(y) = R_old(y) − P** "
+               "and **T_new(y) = T_old(y)**."))
+    w("")
+    w(C("C-BA-A1-FALSIFY", "**Falsified if:** R does not move; R moves by materially less "
+        "than P; or the **total** T moves instead, with no declared change to explain it. "
+        "Any of the three means the published share is not a share of a partition."))
+    w("")
+    w("## Data, named and counted")
+    w("")
+    w("- " + C("C-BA-A1-VINTAGE-FILES", "DCE publish each report as `Vandløb <year>. "
+               "NOVANA` at `https://dce2.au.dk/pub/SR<n>.pdf`: `SR353` is *Vandløb 2018* and "
+               "`SR527` *Vandløb 2021*, both pinned here, and the text of each extracts."))
+    w("- " + C("C-BA-A1-FIGURES", f"**SR353's figures.** The 2018 load from land to the "
+               f"coast is about {TOTAL} t N and point sources about {POINT} t N, computed "
+               f"from {RD(S, '209', 'Beregningerne dette år er baseret på målinger fra 209 kystnære målestationer')} "
+               "coastal stream stations and a model for the unmeasured catchment; the runoff "
+               f"rests on {RD(S, '240', 'anvendes 240 målestationer')} gauging stations in "
+               f"*Vandløb 2018*, against {RD(S, '179', 'anvendtes således 179 målestationer')} "
+               f"in *Vandløb 2016* and {RD(S, '201', 'anvendtes 201 målestation')} in "
+               "*Vandløb 2017*; the field surplus ran between "
+               f"{RD(S, '186,000', 'varieret mellem 186.000 – 240.000 tons N')} and "
+               f"{RD(S, '240,000', 'varieret mellem 186.000 – 240.000 tons N')} t N over the "
+               f"latest {RD(S, '5', 'I de seneste 5 opgjorte agrohydrologiske år')} "
+               "agrohydrological years.")
+      + " "
+      + C("C-BA-A1-NETWORK", "So the runoff rests on more stations in each of these reports "
+          "than in the one before, and a change of vintage can move the total for reasons the report "
+          "declares — which the test must set aside before it reads its third failure "
+          "mode."))
+    w("- " + C("C-BA-A1-HOV", "`data/raw/national/hovedoplande.geojson` holds "
+               f"{ly['hovedoplande_features']:,} main catchments, among them `DK` *Int "
+               "vidå-kruså* beside `DK4.1` *Vidå-kruså*: a catchment named as international "
+               "beside its Danish part."))
+    w("- " + C("C-BA-A1-SERIES", "`docs/data/areas/stations_series.json` holds "
+               f"{sr['station_months']:,} station-month values summed over its "
+               f"{sr['variables']:,} variables ({lo:,} to {hi:,} per variable), from "
+               f"{sr['stations']:,} stations over {sv['months']:,} months from {sv['year0']}. "
+               "Its variables are temperature, salinity, oxygen and oxygen saturation at "
+               "surface and bed, and fluorescence: **no nutrients**."))
+    w("- " + C("C-BA-A1-CTD", f"`data/raw/oda/ctd.csv.gz` is {ly['ctd_bytes']:,} bytes with "
+               f"{ly['ctd_columns']:,} columns and {en['ctd']['rows']:,} rows; its parameters "
+               "include temperature, salinity, oxygen, fluorescence and turbidity, and none "
+               "is a nutrient."))
+    w("- " + C("C-BA-A1-KEMI", "`data/raw/oda/kemi.csv.gz`, the ODA water-chemistry "
+               f"extract, is held: {en['kemi']['rows']:,} rows, with total nitrogen on "
+               f"{kemi_p['Nitrogen,total N']:,}, nitrite+nitrate on "
+               f"{kemi_p['Nitrit+nitrat-N']:,} and ammonium on "
+               f"{kemi_p['Ammoniak+ammonium-N']:,} — nitrogen **in the sea**, a state and a "
+               "response, not a load from land."))
+    w("")
+    w(C("C-BA-A1-USED", "Only the published reports are used by the test. The held "
+        f"monitoring files are what {R('A1')} would otherwise be tested on: the station "
+        "panel and the CTD carry no nitrogen, and the water chemistry carries it as a "
+        "concentration in the sea."))
+    w("")
+    w("## The null under the constraint imposed")
+    w("")
+    w(C("C-BA-A1-NULL", "The constraint is **arithmetic identity across two publications**, "
+        "not sampling: there is no estimator distribution, and n is the number of version "
+        "changes, which is small. The only noise under the null is publication rounding, "
+        "computed here rather than quoted."))
+    w("")
+    w(C("C-BA-A1-ROUNDING", f"SR353 gives the total as *ca.* {TOTAL} t and the point "
+        f"sources as *ca.* {POINT} t. Read as rounded at their last non-zero digit — units "
+        f"of {uT:,} t and {uP:,} t — each lies within half a unit: h = {hT:,.0f} t on the "
+        f"total and h = {hP:,.0f} t on the point sources. Four published quantities enter "
+        "each comparison (T_old, T_new, P_old, P_new):"))
+    w("")
+    w("- " + C("C-BA-A1-BOUND", f"worst case: {hT:,.0f} + {hT:,.0f} + {hP:,.0f} + "
+               f"{hP:,.0f} = **{bound:,.0f} t N**"))
+    w("- " + C("C-BA-A1-SD", "if the four rounding errors are independent and uniform: a "
+               f"standard deviation of **{sd:,.0f} t N**"))
+    w("")
+    w(C("C-BA-A1-REJECT", "The test takes the worst case. **Reject only when |ΔR + P| > "
+        f"{bound:,.0f} t N** — which is also the design's honest limit: **no power against "
+        f"reallocations under {bound:,.0f} t N**, beside a point-source term of {POINT} t. "
+        "More power needs the underlying tables at full precision, not the report text."))
+    w("")
+    w(C("C-BA-A1-ACTUAL", "Use the **actual** (*aktuel*) series, never the "
+        "climate-normalised one: normalisation is a model applied to the total, and its "
+        "method changed with SR353 — the new method conserves mass, so that over the whole "
+        "period from 1990 the normalised and the actual load are equal, while by the old "
+        f"method the normalised values ran {RD(S, '1', 'var 1% højere end de aktuelle tilførsler')}% "
+        "above the actual over 1990–2017. It moves T by itself between vintages and would "
+        "contaminate the third failure mode."))
+    w("")
+    w("## Procedure")
+    w("")
+    w("1. " + C("C-BA-A1-P1", "Fetch the `Vandløb <year> NOVANA` vintages 2013-2024, one "
+                "PDF each, streamed to disk, then extracted locally with `pdftotext -layout`; "
+                "`SR353` and `SR527` are pinned already."))
+    w("2. " + C("C-BA-A1-P2", "From each, for every *y* ≥ 1990: total land→coast TN, point "
+                "sources, diffuse remainder — actual, not normalised."))
+    w("3. " + C("C-BA-A1-P3", "Read each vintage's methods chapter for declared changes. "
+                "SR353 declares a regional bias correction of the modelled load from "
+                "unmeasured catchments, new that year (*\"Bias-korrektionen … er ny i forhold "
+                "til de foregående år\"*); a correction of TN and TP measured in 2016 and the "
+                f"first {RD(S, '4', 'TN og TP-koncentrationer målt i vandløb i 2016 og første 4 måneder af 2017')} "
+                "months of 2017 with a wrong analytical method; a restoration of TN measured "
+                "by one laboratory in 2007–2014; and a new runoff model for the unmeasured "
+                "catchments.")
+      + " "
+      + C("C-BA-A1-P3-NOTP", "Each of these changes the total itself, not a part of it: "
+          "a declared change of this kind is expected to move T, so it is set aside before "
+          "the third failure mode is read. The candidates for *P* are changes that count a "
+          "source apart from the diffuse load, as scattered dwellings are not today."))
+    w("4. " + C("C-BA-A1-P4", "For each candidate, form ΔR and ΔT across the vintage "
+                f"boundary and compare them with the {bound:,.0f} t bound."))
+    w("")
+    w("## What a result would and would not license")
+    w("")
+    w(C("C-BA-A1-WOULD", f"**Would.** {mc} or more declared changes with ΔR = −P inside the "
+        "bound and ΔT inside it license one narrow statement: *the account behaves as a "
+        "partition under revision.* A single failure of the third kind — T moving with R, "
+        "with no declared change to explain it — licenses the opposite and stronger one: "
+        "the share is circular."))
+    w("")
+    w(C("C-BA-A1-WOULDNOT", "**Would not.** Nothing here licenses a claim about the sea: no "
+        "mechanism, no nitrogen-load coefficient, no oxygen.")
+      + " "
+      + C("C-BA-A1-BOX", "Nor whether *Denmark* is a closed box: the national catchment "
+          "layer names the transboundary unit outright, and whether the account carries a "
+          "term for what flows in from across the border is not established — the pinned "
+          "SR353 does not mention Germany. A partition that balances is still a partition of "
+          "a quantity whose boundary was assumed."))
+    w("")
+    w("## Still blocked, and by what exactly")
+    w("")
+    w(C("C-BA-A1-FETCH", f"The river-transport series that carry {R('A1')}'s load term — "
+        "ODA's *Vandløb / Stoftransport / Månedstransport* and *Næringsstoftilførsel til "
+        "havet* (`ODA-STOFTRANSPORT` and `ODA-TILFOERSEL` in the source register) — are not "
+        "fetchable by `scripts/fetch_oda.py` as it stands: its `TOPICS` are all under the "
+        "marine root, and `run()` opens the topic tree at `topic.aspx?id=h&t=h`, that root, "
+        "so they need a code change, not merely a table entry."))
+    w("")
+    w(C("C-BA-A1-WARNING", "And the warning: the water chemistry is nitrogen **concentration "
+        "in the sea**, a state and a response. Substituting it for a land load would put a "
+        "response in the place of its driver."))
+    return "\n".join(o) + "\n"
 
 
 def main(argv):
-    return 0 if draftkit.build(REL, TEXT) is not None else 1
+    try:
+        page = text()
+    except live.Unjustified as e:
+        print(e, file=sys.stderr)
+        return 1
+    return 0 if draftkit.build(REL, page) is not None else 1
 
 
 if __name__ == "__main__":

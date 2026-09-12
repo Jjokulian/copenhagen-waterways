@@ -1,8 +1,10 @@
 # The fetch queue
 
-The source register records what exists. It does not say what to do on Monday. This is the same information sorted by friction: what can be downloaded now, what is behind a credential we already hold, what needs a free registration nobody has done, and what is genuinely closed.
+<span class="claim" data-claim="C-DQ-Q-PURPOSE">The source register records what exists; this page sorts its entries by friction: what can be downloaded now, what sits behind a credential this project holds, what needs a registration it has not made, and what the register's access text does not show to be reachable.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-PURPOSE "What this claim rests on")</sup>
 
-**[148](SOURCES.md#F-bfada8d583) sources.** *Unlocks* counts hypotheses that this source serves and that nothing easier serves — a crude priority signal, and meant to be.
+<span class="claim" data-claim="C-DQ-Q-COUNT">**[148](SOURCES.md#F-bfada8d583) sources**, from `data_sources.json` and `data_sources_2.json`. `data_sources_3.json`, also part of the register, is not read by this queue, so its entries are in none of the tiers below.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-COUNT "What this claim rests on")</sup> <span class="claim" data-claim="C-DQ-Q-UNLOCKS">*Unlocks* lists the hypotheses an entry names that no entry in an easier tier also names — a crude priority signal, and meant to be.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-UNLOCKS "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-DQ-Q-TIERS">Each entry's tier is read from its access text by keyword, in this order: an ODA topic, or a source that names Dataforsyningen, is *held*; words for not public, request-only, FOI, provisioning, unverified or no download make it *blocked*; words for a registration, an account, a login or a token make it *account*; words for an open or key-free download make it *open*; and an entry that matches none of these is counted as *blocked*. Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*. The tiers have not been checked by hand entry by entry, and the note under the credentials shows where they go wrong for the Copernicus entries.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-TIERS "What this claim rests on")</sup>
 
 | tier | | sources |
 |---|---|---:|
@@ -11,12 +13,18 @@ The source register records what exists. It does not say what to do on Monday. T
 | `account` | One free registration away | [30](SOURCES.md#F-542c824a5b) |
 | `blocked` | Not open | [37](SOURCES.md#F-d3261ec77b) |
 
-- **ODA / Overfladevandsdatabasen** — email login, scripted SOAP extract working in scripts/oda_client.py
-- **Dataforsyningen** — API token on this machine, orthophoto WMS verified
+The credentials the queue counts as held:
+
+- <span class="claim" data-claim="C-DQ-Q-ODA">**ODA / Overfladevandsdatabasen** — an email login, and a scripted SOAP extract in `scripts/oda_client.py`</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-ODA "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-DQ-Q-DF">**Dataforsyningen** — an API token, which `scripts/terraincheck.py` reads to fetch the national elevation model</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-DF "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-DQ-Q-UNCOUNTED">The queue counts only these as held. This project's fetch scripts also read Copernicus Data Space client credentials (`scripts/fetch_satellite.py`) and Copernicus Marine credentials (`scripts/fetch_cmems.py`) from this machine, so the Copernicus entries are counted in tiers that say otherwise: `CDSE-SENTINEL1` `CMEMS-BAL-BGC` `CMEMS-BAL-PHY` `CMEMS-NWS-WAV` as *account*; `CMEMS-BAL-WAV` as *blocked*.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-UNCOUNTED "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-DQ-Q-ROWS">In each tier below, entries are ordered by how many hypotheses they unlock. *Indexed by* is read from the entry's spatial and aggregation text by keyword: a position, a **region**, both (*mixed*), or `?` where neither matched. *What it is* is the entry's name, shortened where long.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-ROWS "What this claim rests on")</sup>
 
 ## Fetch it now — [59](SOURCES.md#F-a7cb1a9012)
 
-*No account, no permission, no negotiation.*
+<span class="claim" data-claim="C-DQ-Q-OPEN">*The access text reads as open — an open or direct download, a service asking no key or authentication, or an open licence — and names nothing that puts it in another tier.*</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-OPEN "What this claim rests on")</sup>
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
@@ -29,7 +37,7 @@ The source register records what exists. It does not say what to do on Monday. T
 | **DMI-OCEANOBS** | [C4](hypodrafts/C4.md "Baltic inflow events") [C9](HYPOTHESES.md "Sea level and tidal change") [D7](hypodrafts/D7.md "Storm-driven resuspension") [G6](HYPOTHESES.md "Sea level rise") | position | DMI Open Data - oceanObs (sea level) |
 | **EMODNET-SEABED-HABITATS** | [D10](HYPOTHESES.md "Winnowing and armouring") [K12](HYPOTHESES.md "Loss of habitat-forming structure") [L5](HYPOTHESES.md "The reference sites are not references") [L6](HYPOTHESES.md "The degraded bed is classified as its own habitat type") | mixed | EMODnet Seabed Habitats - EUSeaMap/HELCOM HUB modelled habitat map, and the ground-truth |
 | **GEUS-HAVBUNDSSEDIMENT** | [D10](HYPOTHESES.md "Winnowing and armouring") [L6](HYPOTHESES.md "The degraded bed is classified as its own habitat type") [R7](HYPOTHESES.md "Estuarine flocculation deposits river carbon at the coast") [S5](HYPOTHESES.md "Buffering scales with the volume of reactive medium") | position | Havbundssedimentkort - seabed surface sediment map of Danish waters |
-| **HORSENS-EELGRASS-TRANSPLANT** | [F3](hypodrafts/F3.md "Loss of eelgrass and macroalgae") [K12](HYPOTHESES.md "Loss of habitat-forming structure") [L4](HYPOTHESES.md "Recovery is blocked by something other than the driver") `T4` | position | Bisholt, outer Horsens Fjord - large-scale eelgrass transplant with bare-bottom and natu |
+| **HORSENS-EELGRASS-TRANSPLANT** | [F3](hypodrafts/F3.md "Loss of eelgrass and macroalgae") [K12](HYPOTHESES.md "Loss of habitat-forming structure") [L4](HYPOTHESES.md "Recovery is blocked by something other than the driver") [T4](HYPOTHESES.md "Marine replant failure: negative sediment feedback") | position | Bisholt, outer Horsens Fjord - large-scale eelgrass transplant with bare-bottom and natu |
 | **ICES-CONTAM-BIOTA-OBIS** | [E10](HYPOTHESES.md "Heavy metals") [E6](HYPOTHESES.md "Biocides and antifoulants") [K8](HYPOTHESES.md "The narrow window between deficient and toxic") [K9](HYPOTHESES.md "Selenium") | position | ICES DOME contaminants and biological effects in biota, Danish subset, through OBIS and  |
 | **ICES-DATRAS** | [F1](HYPOTHESES.md "Loss of filter feeders") [F4](HYPOTHESES.md "Trophic cascade from a removal far away") [F5](HYPOTHESES.md "Invasive species") [O3](HYPOTHESES.md "Loss of higher benthic life") | position | ICES DATRAS - trawl survey database |
 | **ICES-OCEAN** | [A5](HYPOTHESES.md "Advected nutrients from outside Denmark") [C1](hypodrafts/C1.md "Stratification strength") [C4](hypodrafts/C4.md "Baltic inflow events") [C6](hypodrafts/C6.md "Water temperature and solubility") | position | ICES Oceanographic Database |
@@ -41,7 +49,7 @@ The source register records what exists. It does not say what to do on Monday. T
 | **ASMALA-ROSKILDE-DOC** | [J7](HYPOTHESES.md "Exudate from senescing blooms") [R1](HYPOTHESES.md "The C:N threshold, and fat as a nitrogen sink") [R7](HYPOTHESES.md "Estuarine flocculation deposits river carbon at the coast") | ? | Roskilde Fjord water-column DOC, TOC, nutrients, chlorophyll and DOM optics, 2014-2015 |
 | **BORNHOLM-SEDEX** | [H2](HYPOTHESES.md "Sediment legacy") [R6](openproblems/R6.md "Sulphide locks the iron that would hold the phosphate") [S4](HYPOTHESES.md "Total is not available") | **region** | IODP `347-M0065` Bornholm Basin - sequential phosphorus extraction (SEDEX) |
 | **DCE-TA-M06-LYS** | [K11](HYPOTHESES.md "Light as a depleted resource") [L3](hypodrafts/L3.md "The trend depends on the start year") [O4](HYPOTHESES.md "Turbidity and phytoplankton biomass") | ? | NOVANA technical instruction M06 - Lyssvaekkelse: how Kd and Secchi are actually measure |
-| **DCE-TA-M12-M18-GAP** | [F3](hypodrafts/F3.md "Loss of eelgrass and macroalgae") [K3](HYPOTHESES.md "Macronutrient excess inducing micronutrient deficiency") `T1` | ? | NOVANA technical instructions M18 (eelgrass) and M12 (macroalgae) - what the vegetation  |
+| **DCE-TA-M12-M18-GAP** | [F3](hypodrafts/F3.md "Loss of eelgrass and macroalgae") [K3](HYPOTHESES.md "Macronutrient excess inducing micronutrient deficiency") [T1](HYPOTHESES.md "Sulphide intrusion, gated by light") | ? | NOVANA technical instructions M18 (eelgrass) and M12 (macroalgae) - what the vegetation  |
 | **DDM** | [C3](HYPOTHESES.md "Residence time") [C7](HYPOTHESES.md "Bathymetry, sills and depth") [D7](hypodrafts/D7.md "Storm-driven resuspension") | position | Danmarks Dybdemodel (Danish Depth Model) v2.0 |
 | **EU-IED-TOC** | [B3](HYPOTHESES.md "Treatment plant organic load") [B5](HYPOTHESES.md "Industrial organic discharge") [R1](HYPOTHESES.md "The C:N threshold, and fat as a nitrogen sink") | **region** | EU Industrial Emissions / E-PRTR reporting - Total Organic Carbon to water, and the abse |
 | **FOSSING-METROL-AARHUS** | [E12](HYPOTHESES.md "Hydrogen sulphide toxicity") [R5](HYPOTHESES.md "The terminal electron acceptor cascade, and why salt changes it") [T7](HYPOTHESES.md "Anaerobic phytotoxins other than sulphide") | ? | METROL Aarhus Bay cores - porewater sulphate, methane, hydrogen sulphide, TOC and TN by  |
@@ -53,7 +61,7 @@ The source register records what exists. It does not say what to do on Monday. T
 | **`EU-INTERCAL-2013-480`** | [I4](HYPOTHESES.md "Changing indicator definition") [L2](HYPOTHESES.md "The reference is a model output treated as a fact") | ? | Commission Decision 2013/480/EU - WFD intercalibration, Baltic GIG coastal types |
 | **GEUS-NRETENTION** | [S1](HYPOTHESES.md "Retention is a property of the medium and varies by an order of magnitude") [S6](HYPOTHESES.md "Retention capacity is saturable, so the coefficient is not constant") | mixed | National nitrogen retention maps for Denmark, version 2026 |
 | **HELCOM-DEPOSITION** | [A3](HYPOTHESES.md "Atmospheric deposition on the sea surface") [A5](HYPOTHESES.md "Advected nutrients from outside Denmark") | **region** | HELCOM atmospheric nitrogen deposition to the Baltic Sea 1990-2023 |
-| **LABYRINTHULA-DK** | `T3` [T8](HYPOTHESES.md "Anaerobic conditions select the pathogens") | position | Labyrinthula in Denmark - one qPCR site and fifteen metabarcoding hits |
+| **LABYRINTHULA-DK** | [T3](HYPOTHESES.md "Wasting disease with stress-modulated virulence") [T8](HYPOTHESES.md "Anaerobic conditions select the pathogens") | position | Labyrinthula in Denmark - one qPCR site and fifteen metabarcoding hits |
 | **LFST-LANDINGS** | [F1](HYPOTHESES.md "Loss of filter feeders") [F4](HYPOTHESES.md "Trophic cascade from a removal far away") | **region** | Landbrugs- og Fiskeristyrelsen landings statistics |
 | **MST-KLAP** | [D2](HYPOTHESES.md "Navigation dredging") [D3](HYPOTHESES.md "Dredged-material dumping") | ? | Miljoestyrelsen klaptilladelser (dumping permits), individual PDFs |
 | **PSMSL** | [C9](HYPOTHESES.md "Sea level and tidal change") [G6](HYPOTHESES.md "Sea level rise") | ? | PSMSL Revised Local Reference monthly means |
@@ -74,7 +82,7 @@ The source register records what exists. It does not say what to do on Monday. T
 | **MARIS** | [D4](HYPOTHESES.md "Sand and gravel extraction") | mixed | MARIS raw-material extraction API |
 | **METHANE-LIT** | [E4](HYPOTHESES.md "Methane oxidation") | ? | Kattegat methane seeps (boblerev) - the literature |
 | **MST-RAASTOF-PDF** | [D4](HYPOTHESES.md "Sand and gravel extraction") | ? | Miljoestyrelsen extraction volumes for faellesomraader (shared sand/gravel licence areas |
-| **OBIS-GBIF-LUCINIDER** | `T2` | position | OBIS and GBIF occurrence counts for the sulphide-oxidising bivalves in Danish waters |
+| **OBIS-GBIF-LUCINIDER** | [T2](HYPOTHESES.md "Loss of the sulphide-detoxifying symbiosis") | position | OBIS and GBIF occurrence counts for the sulphide-oxidising bivalves in Danish waters |
 | **PANGAEA-BENTHIC-FLUX** | [A7](openproblems/A7.md "Sediment nutrient regeneration") | position | PANGAEA - in-situ benthic chamber nutrient flux (BIGO lander) |
 | **PANGAEA-CORES** | [H2](HYPOTHESES.md "Sediment legacy") | position | PANGAEA - dated sediment cores, Skagerrak/Kattegat |
 | **SGD-LIT** | [A6](HYPOTHESES.md "Submarine groundwater discharge") | position | Danish submarine groundwater discharge - the two campaigns that exist |
@@ -82,7 +90,7 @@ The source register records what exists. It does not say what to do on Monday. T
 
 ## Gated, but we hold the key — [22](SOURCES.md#F-46c5c33c27)
 
-*Behind a login this project already has working.*
+<span class="claim" data-claim="C-DQ-Q-HELD">*An ODA topic, or a service behind the Dataforsyningen token: behind a credential this project holds. Some are already on disk: the ODA extracts `kemi`, `ctd`, `lys` and `maaledybde`.*</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-HELD "What this claim rests on")</sup>
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
@@ -111,14 +119,14 @@ The source register records what exists. It does not say what to do on Monday. T
 
 ## One free registration away — [30](SOURCES.md#F-542c824a5b)
 
-*A form and an email address. Nothing is being withheld; it just has not been done.*
+<span class="claim" data-claim="C-DQ-Q-ACCOUNT">*The access text names a registration, an account, a login or a token that the queue does not count as held.*</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-ACCOUNT "What this claim rests on")</sup>
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
 | **DMA-AIS** | [B7](HYPOTHESES.md "Shipping discharges") [D6](HYPOTHESES.md "Anchoring and propeller wash") | position | Danish Maritime Authority raw AIS archive |
 | **EMODNET-VESSELDENSITY** | [B7](HYPOTHESES.md "Shipping discharges") [D6](HYPOTHESES.md "Anchoring and propeller wash") | position | EMODnet Human Activities vessel density |
-| **`ENA-DK-COASTAL-16S`** | [J8](HYPOTHESES.md "Bacterial exopolymer from fast-growing communities") `T5` | position | Danish coastal-water microbial sequence data in ENA |
-| **ENA-MGNIFY-DK-SEDIMENT** | `T5` [T6](HYPOTHESES.md "Enrichment dissolving the partnership") | position | Danish marine sediment microbial sequence data in ENA and MGnify |
+| **`ENA-DK-COASTAL-16S`** | [J8](HYPOTHESES.md "Bacterial exopolymer from fast-growing communities") [T5](HYPOTHESES.md "Loss of sediment suppressiveness") | position | Danish coastal-water microbial sequence data in ENA |
+| **ENA-MGNIFY-DK-SEDIMENT** | [T5](HYPOTHESES.md "Loss of sediment suppressiveness") [T6](HYPOTHESES.md "Enrichment dissolving the partnership") | position | Danish marine sediment microbial sequence data in ENA and MGnify |
 | **GFW** | [B7](HYPOTHESES.md "Shipping discharges") [D6](HYPOTHESES.md "Anchoring and propeller wash") | position | Global Fishing Watch apparent fishing effort v3.0 |
 | **PANGAEA-POREWATER** | [E1](HYPOTHESES.md "Sulphide oxidation") [E3](HYPOTHESES.md "Iron and manganese oxidation") | position | PANGAEA - sediment porewater chemistry, Danish and adjacent waters |
 | **CDSE-SENTINEL1** | [J6](HYPOTHESES.md "Oil and hydrocarbon films") | **region** | `Sentinel-1` GRD SAR over Danish waters, Copernicus Data Space Ecosystem |
@@ -148,7 +156,7 @@ The source register records what exists. It does not say what to do on Monday. T
 
 ## Not open — [37](SOURCES.md#F-d3261ec77b)
 
-*Request-only, FOI, institutional provisioning, or unverified. These are the ones worth arguing about publicly, because for several of them the measurement exists and the public cannot see it.*
+<span class="claim" data-claim="C-DQ-Q-BLOCKED">*The access text says not public, request-only, FOI, provisioned, unverified or without a download — or matches no tier word at all. Entries recording data confirmed not to exist are here too.*</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-BLOCKED "What this claim rests on")</sup> <span class="claim" data-claim="C-DQ-Q-PULSCLOSED">`PULS` is one whose data exists and is closed: the register records it as not public, reached through an organisation's IT coordinator.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-PULSCLOSED "What this claim rests on")</sup>
 
 | source | unlocks | indexed by | what it is |
 |---|---|---|---|
@@ -192,22 +200,24 @@ The source register records what exists. It does not say what to do on Monday. T
 
 ## The resolution rule
 
-Nothing here is stored at an administrative unit — not per water body, not per catchment, not per municipality, not per sub-basin. Everything is carried at the resolution it was taken: a position, a time, and where it exists a depth.
+<span class="claim" data-claim="C-DQ-Q-RULE">The rule: a source is carried at the resolution it was taken — a position, a time, and where it exists a depth — and not at an administrative unit such as a water body, a catchment, a municipality or a sub-basin. This page flags each source by what it is indexed by; it does not enforce the rule.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-RULE "What this claim rests on")</sup>
 
-That is not fastidiousness. [OBSERVING.md](OBSERVING.md) establishes that a water body explains **[7.9](SOURCES.md#F-8f0c3bce24)%** of the variation in the one variable Denmark measures densely enough to check, and that two stations inside one share about four percent of their year-to-year variance. A source already summed into those polygons would carry the assumption straight back in, and everything computed from it would inherit a unit we had just shown is not one.
+<span class="claim" data-claim="C-DQ-Q-WHY">The reason is in [OBSERVING.md](OBSERVING.md): in bathing-water quality at stations with a long record, once the national year-to-year swing is removed, variation between water bodies is **[7.9](SOURCES.md#F-8f0c3bce24)%** of the whole, and between two stations in the same water body [4.1](SOURCES.md#F-7dc131660c)% of the wobble in one is shared with the other. A source already summed into those polygons would carry the unit back in, and everything computed from it would inherit it.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-WHY "What this claim rests on")</sup>
 
-| indexed by | sources | |
-|---|---:|---|
-| position | [69](SOURCES.md#F-5a6aa3c0d7) | a place something was measured |
-| **region** | [16](SOURCES.md#F-d7cb543694) | somebody's aggregate; usable, but never as a measurement |
-| mixed | [12](SOURCES.md#F-92d73d1d05) | carries both; take the position field |
-| ? | [51](SOURCES.md#F-f2bd84c6b8) | not stated clearly enough to tell |
+<span class="claim" data-claim="C-DQ-Q-INDEX">Counted by that keyword reading of each entry's spatial and aggregation text; `?` means the text matched no keyword, not that the source has no index.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-INDEX "What this claim rests on")</sup>
 
-The region-indexed sources are often the only version that exists, and several matter a great deal — the monthly nutrient input series is per marine reference polygon, and there is no per-outfall alternative. They enter the panel labelled as somebody's aggregate of a measurement, and never as the measurement.
+| indexed by | sources |
+|---|---:|
+| position | [69](SOURCES.md#F-5a6aa3c0d7) |
+| **region** | [16](SOURCES.md#F-d7cb543694) |
+| mixed | [12](SOURCES.md#F-92d73d1d05) |
+| ? | [51](SOURCES.md#F-f2bd84c6b8) |
 
-> **What a water body actually is, if it is anything, is a question to be answered from the data rather than assumed by the schema.** Put the observations on the map with their own coordinates and times, see which move together, and check every proxy against an unrelated one. The administrative polygon is then an overlay to be tested against — not a container to pour things into.
+<span class="claim" data-claim="C-DQ-Q-TILF">A region-indexed source can still be the one to fetch: the monthly nutrient input to the sea, `ODA-TILFOERSEL`, is given per marine reference polygon, and the register records the stream stations behind it as available separately, in `ODA-STOFTRANSPORT`.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-TILF "What this claim rests on")</sup> <span class="claim" data-claim="C-DQ-Q-AGG">Under the rule such a source is used as somebody's aggregate of a measurement, never as the measurement.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-AGG "What this claim rests on")</sup>
+
+> <span class="claim" data-claim="C-DQ-Q-WB">**What a water body actually is, if it is anything, is a question to be answered from the data rather than assumed by the schema.** Put the observations on the map with their own coordinates and times, see which move together, and check every proxy against an unrelated one. The administrative polygon is then an overlay to be tested against — not a container to pour things into.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-WB "What this claim rests on")</sup>
 
 ## What this does not tell you
 
-Friction is not value. Several entries in the last tier matter more than anything in the first — per-event overflow volumes, monthly trawling effort, and marine phytoplankton species counts are each closed, and each of them would settle a hypothesis that currently cannot be ranked at all. The tiers say what is easy, and the register says what is important; they are different questions and this page is only the first one.
+<span class="claim" data-claim="C-DQ-Q-VALUE">Friction is not value. The tiers say what is easy to reach, and each register entry's hypotheses say what it would serve; they are different questions, and this page answers only the first.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-Q-VALUE "What this claim rests on")</sup>
 

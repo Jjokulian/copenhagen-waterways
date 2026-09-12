@@ -1,0 +1,58 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/hypodraft_f3.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-af.json",
+    "data/manual/number_constructions.d/w3-af.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/light.json",
+    "data/derived/hypotheses_evidence.json",
+    "data/derived/hypotheses.json",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/DHI-MODEL-DEL2-2015.txt",
+    "data/derived/pins/KD-CMEMS-OC133.txt",
+    "data/derived/pins/OP-WIKI-ZOSTERA.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/F3.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_c1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-af.json",
+    "data/manual/number_constructions.d/w3-af.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/enums.json",
+    "data/derived/triage.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/NI-DCE-ILT-2025.txt",
+    "data/derived/pins/NI-DCE-ILT-2023.txt",
+    "data/derived/pins/OP-DCE-ILT-2024.txt",
+    "data/derived/pins/TA-NOVA-1998-K1.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/C1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_audit.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-af.json",
+    "data/derived/hypotheses.json",
+    "data/derived/pins/NI-DCE-ILT-2025.txt",
+    "data/derived/pins/NI-DCE-ILT-2023.txt",
+    "data/derived/pins/TA-NOVA-1998-K1.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/AUDIT.md"
+   ]
+  }
+ ]
+}

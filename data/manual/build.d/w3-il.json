@@ -1,0 +1,34 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/hypodraft_i3.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-il.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/hypotheses_evidence.json",
+    "data/derived/hypotheses.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/I3.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_l3.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-il.json",
+    "data/manual/number_constructions.d/w3-il.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/hypotheses.json"
+   ],
+   "outputs": [
+    "docs/hypodrafts/L3.md"
+   ]
+  }
+ ]
+}

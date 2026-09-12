@@ -94,7 +94,8 @@ def main():
     w(f"{nl['approx_recent_kt']} kt a year." + E + " " + B("C-OP-2-EXTENT") + "September oxygen-depletion")
     w(f"extent was {a23:,} km² in 2023 and {a24:,} km² in 2024 - by DCE's note on 2024 nearly half as")
     w("large again as 2023, and the second largest registered, exceeded only by 2002. By late")
-    w(f"September 2025 it was {a25 / a24 * 100:.0f}% of 2024's area." + E)
+    w(f"September 2025 the register's figure was {a25 / a24 * 100:.0f}% of 2024's September area; it does not")
+    w("say whether the two were read at the same point in the month." + E)
     w()
     w(C("C-OP-2-NOTREND", "So the extremes have not fallen with a halved load, and the swing from one "
         "year to the next is large. No source this project holds explains either."))
@@ -157,9 +158,10 @@ def main():
       + C("C-OP-5-THRESHOLD", "Sediment resuspension in a basin is a *threshold* in flow, so the mass is "
           "plausibly dominated by a handful of events the method averages away."))
     w()
-    w(B("C-OP-5-SETTLE") + "**What would settle it.** Flow-proportional sampling at a handful of structures")
-    w(f"across a range of event sizes - videnniveau {lv['level']} in Miljøstyrelsen's own scheme,")
-    w(f"{lv['uncertainty_pct']}% uncertainty, and the highest level in their hierarchy. How many structures")
+    w(B("C-OP-5-SETTLE") + "**What would settle it.** Measuring the overflow at a handful of structures")
+    w("across a range of event sizes - both its flow, directly or by mass balance, and the substance")
+    w(f"concentrations in the overflowing water. That is videnniveau {lv['level']} in Miljøstyrelsen's own scheme:")
+    w(f"{lv['uncertainty_pct']}% uncertainty on the discharged mass, the highest level in their hierarchy. How many structures")
     w("are measured this way is not in anything this project holds." + E)
     w()
     w("---")

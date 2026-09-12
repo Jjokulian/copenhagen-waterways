@@ -4,6 +4,85 @@
 
 A claim is retired when no good justification for it can be given - most often because its justification was never recorded properly. It is not quietly deleted: it is kept here, in its own words, with the reason, and the page that made it now says only what can be justified. Nothing on this page is claimed to be true. What is claimed is that the site once said it.
 
+## AGENT_BRIEF.md
+
+<a id="C-EA-OLD-B-DECK"></a>
+### A deck of cards is a stated number of atoms.
+
+`C-EA-OLD-B-DECK` · retired 2026-09-11 from [AGENT_BRIEF.md](AGENT_BRIEF.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-B-DECK">Point at a deck of cards and ask *how many?* — one deck, four suits, fifty-two cards, [10](SOURCES.md#F-73d04f98ee)²⁴ atoms. There is no answer until somebody has said what a one is.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-B-DECK "What this claim rests on")</sup>
+
+**Why it was retired:** The count of atoms was carried only as a quotation of the page's own earlier text; no calculation or source stood behind it.
+
+**Replaced by:** [`C-EA-B-DECK`](CLAIMS.md#C-EA-B-DECK) — each opens what it rests on.
+
+<a id="C-EA-OLD-B-DRAFTS"></a>
+### Three drafts split the stations on different unstated rules, one of them arithmetically impossible.
+
+`C-EA-OLD-B-DRAFTS` · retired 2026-09-11 from [AGENT_BRIEF.md](AGENT_BRIEF.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-B-DRAFTS">Three drafts in this project split the stations into *summer-peaked* and *year-round* and got [293](SOURCES.md#F-c144f1710a)/[481](SOURCES.md#F-eae5341207), [282](SOURCES.md#F-204785f449)/[480](SOURCES.md#F-8b53683a5f) and [426](SOURCES.md#F-521bd97a71)/[427](SOURCES.md#F-d69c88a990) — all defensible arithmetic on different unstated rules, one of them arithmetically impossible.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-B-DRAFTS "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were carried only as quotations of the page's own text; two of the drafts stated their rules; and 'arithmetically impossible' held only under a minimum count the draft did not use. The splits are now quoted from the drafts themselves, with the condition stated.
+
+**Replaced by:** [`C-EA-B-DRAFTS`](CLAIMS.md#C-EA-B-DRAFTS), [`C-EA-B-L3`](CLAIMS.md#C-EA-B-L3) — each opens what it rests on.
+
+<a id="C-EA-OLD-B-FOOTER"></a>
+### The table of nulls and the seasonality counts are quoted from the page as first written, since no script stores them.
+
+`C-EA-OLD-B-FOOTER` · retired 2026-09-11 from [AGENT_BRIEF.md](AGENT_BRIEF.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-B-FOOTER">The table of nulls and the seasonality counts record what earlier work found; no script stores them, so they are quoted from this page as it was first written.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-B-FOOTER "What this claim rests on")</sup>
+
+**Why it was retired:** The seasonality counts are now computed from the station series and the table of nulls is retired, so the note described a method the page no longer uses.
+
+**Replaced by:** [`C-EA-B-FOOT`](CLAIMS.md#C-EA-B-FOOT), [`C-EA-B-BASIS`](CLAIMS.md#C-EA-B-BASIS), [`C-EA-B-SCARCITY`](CLAIMS.md#C-EA-B-SCARCITY) — each opens what it rests on.
+
+<a id="C-EA-OLD-B-MOST"></a>
+### Labelling a quantity's kind is the rule broken most often.
+
+`C-EA-OLD-B-MOST` · retired 2026-09-11 from [AGENT_BRIEF.md](AGENT_BRIEF.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-B-MOST">This is the rule broken most often, including here.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-B-MOST "What this claim rests on")</sup>
+
+**Why it was retired:** 'Most often' was a frequency nothing counted.
+
+**Replaced by:** [`C-EA-B-BROKEN`](CLAIMS.md#C-EA-B-BROKEN) — each opens what it rests on.
+
+<a id="C-EA-OLD-B-NORM"></a>
+### The field surplus is livestock counts times excretion norms.
+
+`C-EA-OLD-B-NORM` · retired 2026-09-11 from [AGENT_BRIEF.md](AGENT_BRIEF.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-B-NORM">| norm product | a register count × a regulatory coefficient | *markoverskud*: livestock counts × excretion norms |</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-B-NORM "What this claim rests on")</sup>
+
+**Why it was retired:** The field surplus is not livestock counts times excretion norms: that is its manure term, one of several.
+
+**Replaced by:** [`C-EA-B-EX-NORM`](CLAIMS.md#C-EA-B-EX-NORM) — each opens what it rests on.
+
+<a id="C-EA-OLD-B-NULLS"></a>
+### Five times in this project a quoted null was wrong, with the table of quoted and actual values, one of them running against the finding.
+
+`C-EA-OLD-B-NULLS` · retired 2026-09-11 from [AGENT_BRIEF.md](AGENT_BRIEF.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-B-NULLS">Five times in this project a quoted null was wrong: | statistic | quoted | actual | |---|---|---| | mean-square ratio MSB/(MSB+MSW) | [0](SOURCES.md#F-98e6f33658) | [0.5](SOURCES.md#F-55c66ab267) | | ARI, [12](SOURCES.md#F-8d3e73ffab) groups vs [84](SOURCES.md#F-8983d3069b) | max [1.0](SOURCES.md#F-8a3b79ec05) | max [0.132](SOURCES.md#F-51dd15145c) | | ARI between contiguity-constrained partitions | [0](SOURCES.md#F-98e6f33658) | [0.337](SOURCES.md#F-17fca75e7e) | | ARI between *derived* partitions | [0.337](SOURCES.md#F-17fca75e7e) | [0.12](SOURCES.md#F-7bc57d08b8) | | annual minimum vs sampling effort | falls with effort | rises | One of those ran against the finding. The direction is not guessable in advance, which is the whole argument for measuring rather than quoting.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-B-NULLS "What this claim rests on")</sup>
+
+**Why it was retired:** No script stores the table's values; they were carried only as quotations of the page's own text. Two of the cases are recorded in files the analyses write and are kept; for the other three no stored result was found, and which case ran against the finding was not recorded.
+
+**Replaced by:** [`C-EA-B-NULLS`](CLAIMS.md#C-EA-B-NULLS), [`C-EA-B-NULL-MSR`](CLAIMS.md#C-EA-B-NULL-MSR), [`C-EA-B-NULL-ARI`](CLAIMS.md#C-EA-B-NULL-ARI), [`C-EA-B-DIRECTION`](CLAIMS.md#C-EA-B-DIRECTION) — each opens what it rests on.
+
+<a id="C-EA-OLD-B-STAGE2"></a>
+### Stage two of PLAN.md is unfinished, and nine archive variables are three sensors.
+
+`C-EA-OLD-B-STAGE2` · retired 2026-09-11 from [AGENT_BRIEF.md](AGENT_BRIEF.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-B-STAGE2">The data you have found is not all there is. Stage 2 of PLAN.md is unfinished. Independence between sources matters more than volume: nine archive variables are three sensors.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-B-STAGE2 "What this claim rests on")</sup>
+
+**Why it was retired:** PLAN.md marks stage two done, and no count of the sensors behind the archive's variables was made; what can be said is which channels are computed from which, and which ODA topics are not fetched.
+
+**Replaced by:** [`C-EA-B-R-FOUND`](CLAIMS.md#C-EA-B-R-FOUND) — each opens what it rests on.
+
 ## AREAS.md
 
 <a id="C-AR-OLD-AGG"></a>
@@ -225,6 +304,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** It compared a spread with a level as if the level had a width, and called the spread of monthly means - which carries year-to-year change as well - the seasonal signal.
 
 **Replaced by:** [`C-AR-ROSK-OXY`](CLAIMS.md#C-AR-ROSK-OXY) — each opens what it rests on.
+
+<a id="C-AU-OLD-ROSK-TABLE"></a>
+### Station spreads within each half of Roskilde Fjord, by variable, as the table gave them.
+
+`C-AU-OLD-ROSK-TABLE` · retired 2026-09-11 from [AREAS.md](AREAS.md) · as published in `4469fc7`
+
+> <span class="claim" data-claim="C-AU-OLD-ROSK-TABLE">| variable | basket | months with [3](SOURCES.md#F-4ebc06f1d9)+ stations | spread between stations, same month | spread across months | ratio | |---|---|---:|---:|---:|---:| | bottom oxygen | indre `DKCOAST2` | [221](SOURCES.md#F-1582ff9508) | sd [1.82](SOURCES.md#F-65c30e99a4), median range [3.35](SOURCES.md#F-fb3f438716) mg/l | [2.80](SOURCES.md#F-7dcbc91e91) | [0.65](SOURCES.md#F-fa97e88562) | | bottom oxygen | ydre `DKCOAST1` | [113](SOURCES.md#F-e0a44428ac) | sd [0.81](SOURCES.md#F-65ccc6f104), range [0.80](SOURCES.md#F-fdbbc81738) | [3.20](SOURCES.md#F-fc20d893fc) | [0.25](SOURCES.md#F-172b9a5695) | | surface salinity | indre `DKCOAST2` | [222](SOURCES.md#F-be3e4eb4d5) | sd [0.49](SOURCES.md#F-1e4de94327), range [1.06](SOURCES.md#F-57d10cf5ad) | [1.71](SOURCES.md#F-42d934650a) | [0.29](SOURCES.md#F-47dea0297a) | | surface salinity | ydre `DKCOAST1` | [114](SOURCES.md#F-3e7d211c2c) | sd [1.07](SOURCES.md#F-17d753f19f), range [2.08](SOURCES.md#F-10e35288fe) | [1.22](SOURCES.md#F-054aa5824f) | [0.88](SOURCES.md#F-95a2673ce0) | | bottom temperature | indre `DKCOAST2` | [224](SOURCES.md#F-194fb75275) | sd [1.64](SOURCES.md#F-a338283c2c) | [5.36](SOURCES.md#F-326d7be112) | [0.31](SOURCES.md#F-49b0a7f202) | | bottom temperature | ydre `DKCOAST1` | [113](SOURCES.md#F-e0a44428ac) | sd [0.44](SOURCES.md#F-28c25bf5ff) | [6.64](SOURCES.md#F-9ac77701dd) | [0.07](SOURCES.md#F-72b6e4313b)</span><sup class="claim-mark">[†](ARCHIVE.md#C-AU-OLD-ROSK-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Superseded by the live computation in station_places.py, whose figures differ; what changed between the two is not recorded with the table.
+
+**Replaced by:** [`C-AR-ROSK-HALVES`](CLAIMS.md#C-AR-ROSK-HALVES) — each opens what it rests on.
 
 ## CATEGORY.md
 
@@ -703,6 +793,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-PC-CA-FEEDBACK`](CLAIMS.md#C-PC-CA-FEEDBACK), [`C-PC-CA-DCE-WEATHER`](CLAIMS.md#C-PC-CA-DCE-WEATHER) — each opens what it rests on.
 
+<a id="C-PC-OLD-CA-CEILING"></a>
+### Filling any empty row of the nitrogen register lowers the agricultural ceiling.
+
+`C-PC-OLD-CA-CEILING` · retired 2026-09-11 from [CAUSATION.md](CAUSATION.md) · as published in `65ba0dd`
+
+> <span class="claim" data-claim="C-PC-OLD-CA-CEILING">Filling any empty row lowers that ceiling.</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-CA-CEILING "What this claim rests on")</sup>
+
+**Why it was retired:** Wrong for some rows: by the register's own notes, locally deposited nitrogen from shipping lies inside the deposition row, drained organic soils inside the diffuse residual, and nitrogen in transit is a timing term, so filling those adds nothing (agent w3-le; LANDBRUG's C-LE-NOTADD).
+
+**Replaced by:** [`C-PC-CA-CEILING`](CLAIMS.md#C-PC-CA-CEILING) — each opens what it rests on.
+
 ## CLAIMS.md
 
 <a id="C-FA-OLD-NOTE"></a>
@@ -715,6 +816,96 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** Its justification was not recorded properly: the ratio was worked out loosely by hand and never stored, and the first stored figures contradicted it. The note now gives the ratio as floodgap.py and convergence.py compute it.
 
 **Replaced by:** [`C-FLOOD-AREA`](CLAIMS.md#C-FLOOD-AREA) — each opens what it rests on.
+
+## CONSTRUCTED.md
+
+<a id="C-GC-OLD-C-ADD"></a>
+### An entry needs the construction, the measurement, the number and what it licenses.
+
+`C-GC-OLD-C-ADD` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-ADD">An entry needs four things: the construction, the measurement it was held against, the number, and what the comparison licenses. If a check was run and passed, that belongs here too — a register of only failures would be a construction with its own selection problem. A new entry's number should come from a stored result, not from this page.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-ADD "What this claim rests on")</sup>
+
+**Why it was retired:** The register now keeps entries whose result is stated in words because no number was stored or readable, and says so.
+
+**Replaced by:** [`C-GC-C-ADD`](CLAIMS.md#C-GC-C-ADD) — each opens what it rests on.
+
+<a id="C-GC-OLD-C-AGG"></a>
+### Aggregation hides failure, shown by the surplus's catchment range and the pooled oxygen trend.
+
+`C-GC-OLD-C-AGG` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-AGG">Aggregation is where the failure hides. `markoverskud` at national scale looks strong and at catchment scale ranges from zero to a third. The water bodies look like a partition and carry no within-basket signal. The pooled oxygen trend looks like water and is network composition. In each case the pooled statistic is tighter than any of its parts, and the tightness is what aggregation does to a variable coefficient.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-AGG "What this claim rests on")</sup>
+
+**Why it was retired:** The catchment range came from an unread study and the pooled oxygen trend was never stored.
+
+**Replaced by:** [`C-GC-C-AGG`](CLAIMS.md#C-GC-C-AGG) — each opens what it rests on.
+
+<a id="C-GC-OLD-C-ALMOSTNONE"></a>
+### Almost no construction is ever held against a measurement with the relation stated as a number.
+
+`C-GC-OLD-C-ALMOSTNONE` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-ALMOSTNONE">Almost none ever is.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-ALMOSTNONE "What this claim rests on")</sup>
+
+**Why it was retired:** An absence asserted of everyone, never counted.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-GC-OLD-C-DIRECTION"></a>
+### A proportional cut in load is supported nowhere in this data.
+
+`C-GC-OLD-C-DIRECTION` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-DIRECTION">And a good sign licenses a claim about direction only. "Nitrogen surplus fell and load fell" is supported. "Cutting the surplus by `X` will cut the load by `0.7X`" is not, anywhere in this data.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-DIRECTION "What this claim rests on")</sup>
+
+**Why it was retired:** 'Anywhere in this data' was never searched; what holds is that the register does not hold a catchment's own coefficient.
+
+**Replaced by:** [`C-GC-C-DIRECTION`](CLAIMS.md#C-GC-C-DIRECTION) — each opens what it rests on.
+
+<a id="C-GC-OLD-C-EVERY"></a>
+### The register holds every such comparison the project has run, with unstored numbers quoted from its own text.
+
+`C-GC-OLD-C-EVERY` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-EVERY">This page is the register of every such comparison this project has actually run. It is meant to be added to. Generated by `scripts/pages/constructed.py`; where an entry's result is not yet stored by the analysis that produced it, the number is quoted from the register's committed text and links to that commit.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-EVERY "What this claim rests on")</sup>
+
+**Why it was retired:** 'Every' was never checked, and a number quoted from the page's own past is no justification.
+
+**Replaced by:** [`C-GC-C-REGISTER`](CLAIMS.md#C-GC-C-REGISTER) — each opens what it rests on.
+
+<a id="C-GC-OLD-C-MOST"></a>
+### Most published constructions have only had the sign check.
+
+`C-GC-OLD-C-MOST` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-MOST">Most published constructions have had the sign check done and stop there. The coefficient and aggregation checks are where they fail, and they fail in a way that a good sign hides.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-MOST "What this claim rests on")</sup>
+
+**Why it was retired:** A share of all published constructions, never counted.
+
+**Replaced by:** [`C-GC-C-SIGNHIDES`](CLAIMS.md#C-GC-C-SIGNHIDES) — each opens what it rests on.
+
+<a id="C-GC-OLD-C-SIGN"></a>
+### Every construction in the register passes the sign check, and most fail the coefficient or aggregation check.
+
+`C-GC-OLD-C-SIGN` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-SIGN">Sign is cheap and coefficient is not. Every construction here passes the sign check. Most fail the coefficient or the aggregation check — the direction is right and the magnitude is not transferable. That is the failure mode a correlation cannot detect and a published relation almost never reports.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-SIGN "What this claim rests on")</sup>
+
+**Why it was retired:** Not every entry had a sign check to pass, and 'almost never reports' is an absence asserted of everyone.
+
+**Replaced by:** [`C-GC-C-SIGN`](CLAIMS.md#C-GC-C-SIGN) — each opens what it rests on.
+
+<a id="C-GC-OLD-C-TABLE"></a>
+### The register's table of constructions held against measurements.
+
+`C-GC-OLD-C-TABLE` · retired 2026-09-11 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-C-TABLE">| construction | held against | result | verdict | |---|---|---|---| | `markoverskud` — field surplus, a norm product | measured normalised diffuse load, per catchment, 1990–2009 | pass-through [0](SOURCES.md#F-5ae70950f5) to ~⅓; [10](SOURCES.md#F-3dc8f9a19d)–[14](SOURCES.md#F-a96c1c9313) kg N/ha of load per [30](SOURCES.md#F-ce5c2db9ee)–[52](SOURCES.md#F-b29e0fbfc2) of surplus in three catchments, [3](SOURCES.md#F-a50114f6bb)–[5](SOURCES.md#F-7c14d815aa) per [24](SOURCES.md#F-d4f24acff2)–[50](SOURCES.md#F-b7a7f5360d) in two, zero at Mariager | sign good, coefficient not usable. A load predicted from a surplus is overestimated [3](SOURCES.md#F-a50114f6bb)–[10](SOURCES.md#F-3dc8f9a19d)×, or entirely | | the same, at national scale | the same, pooled | *"en meget stærk, signifikant lineær relation"* | the pooled fit is tight because the coefficient varies. The aggregation step failing in public | | [123](SOURCES.md#F-fdb3c8c4de) water bodies — a drawn partition | measured station similarity, all [255](SOURCES.md#F-3c3864a4b0) feature subsets, contiguity-matched null | lift −[0.026](SOURCES.md#F-2bf0d7b69a) to −[0.014](SOURCES.md#F-7df7d51c1e) | adds nothing beyond being a connected region of its size | | pooled oxygen trend | the same trend on year-round stations only | pooled median dips to [7.42](SOURCES.md#F-5156875bc1) when the summer network is [32](SOURCES.md#F-191e7b3b6e)% of observations and rebounds to [7.77](SOURCES.md#F-cddc43b618) at [12](SOURCES.md#F-d7a30c94cb)%; year-round subset moves [7.82](SOURCES.md#F-9478c46013) → [7.90](SOURCES.md#F-9afd388f25) | the pooled wobble is network composition, not water | | `< 4 mg/l` hypoxia threshold | the same seasonality on a saturation threshold | [23.6](SOURCES.md#F-6ef7faa7ff)-fold against [15.5](SOURCES.md#F-38f3d74625)-fold | roughly a third of the seasonal signal is oxygen solubility — the threshold is partly a thermometer | | `DIATO`, `DINO`, `PICO`, `NANO` — [24](SOURCES.md#F-d4f24acff2) GB of plankton fields | `CHL`, the same file | ratio functionally determined by CHL; within-bin spread [6.3](SOURCES.md#F-99b55b8fe3)×[10](SOURCES.md#F-3dc8f9a19d)⁻⁴ against a range of [0.33](SOURCES.md#F-bcef09a554)–[0.43](SOURCES.md#F-04bf059cb7) | six fields that are one field. Composition change at constant biomass is unrepresentable | | `hz`, marine hazardous-substance coverage on [66](SOURCES.md#F-e118c0ae1a) of [123](SOURCES.md#F-fdb3c8c4de) water bodies — ours | the source layer's own geography | [0](SOURCES.md#F-5ae70950f5) of [256](SOURCES.md#F-142fe4eb80) points are marine ([152](SOURCES.md#F-d350796b05) lake, [104](SOURCES.md#F-6359d3b57a) river) | withdrawn; the coverage was manufactured by proximity | | `SigtDybde_m`, Secchi depth | `BundDybde_m`, bottom depth, [96,708](SOURCES.md#F-a4aebbde27) paired rows | seen-to-bottom on [24.3](SOURCES.md#F-b9bb6907ab)% of readings where the water is [10](SOURCES.md#F-3dc8f9a19d) m deep or less, and [0.5](SOURCES.md#F-f60ea83609)% deeper | right-censored, [44](SOURCES.md#F-ceff0c5fc4)× more in shallow water; any clarity-vs-depth comparison is partly the censoring | | ρ\*, the mean-square ratio reported as ICC | its own null, simulated | null is [0.5](SOURCES.md#F-f60ea83609), not [0](SOURCES.md#F-5ae70950f5) | every raw value was unreadable as published | | ARI across mismatched granularities | its attainable maximum | max [0.132](SOURCES.md#F-0f87511d7d) at [12](SOURCES.md#F-d7a30c94cb) groups vs [84](SOURCES.md#F-7976e1b6b2) | an observed [0.117](SOURCES.md#F-606bf39541) was [88](SOURCES.md#F-2078009a78)% of ceiling, not near-floor | | `confident` on the Nørrebro flood sheet — ours, a quality flag | the spread over *all* registration variants, not just the agreeing ones | agreeing-spread [12.7](SOURCES.md#F-dc9c20eca7) m, the tightest in the set; all-variant spread [3,115](SOURCES.md#F-c2a4fc6327) m, against [27](SOURCES.md#F-28cc6f75ba)–[28](SOURCES.md#F-f5a2337552) m for the good sheets; agreement a bare [3](SOURCES.md#F-a50114f6bb)/[6](SOURCES.md#F-f2841a87dd); the bundle adjustment could not touch it | the confidence statistic was conditioned on the selection it validated. Withdrawn at the time. Since re-registered from resident-reported control points, standard error [14.3](SOURCES.md#F-a4f3dcfda7) m; the bundle adjustment still cannot tie it to the other sheets. | | "summer-peaked" vs "year-round" stations — ours, a category | its own definition, varied | three analyses gave [293](SOURCES.md#F-2aaef6bd1f)/[481](SOURCES.md#F-e23fa3d1d3), [282](SOURCES.md#F-307adeebeb)/[480](SOURCES.md#F-9f37927a69), [426](SOURCES.md#F-303e3d0301)/[427](SOURCES.md#F-1a8ec78b7c); the last is impossible, since only [488](SOURCES.md#F-65b55974a8) `oxy_bed` stations have ≥[24](SOURCES.md#F-d4f24acff2) observations | the category was never defined. Under a raw-R rule with no minimum, [254](SOURCES.md#F-4a365d8492) stations with one observation score `R = 1` and became [39](SOURCES.md#F-ff3d8bb143)% of the "seasonal" group | | a structure register with a type column — `k101:rist`, `k101:broend`, the city's own | its own field | empty on [100](SOURCES.md#F-50af8db372)% of [123,806](SOURCES.md#F-28050b6acd) gratings and [94](SOURCES.md#F-2f015fb923)% of [85,816](SOURCES.md#F-27320d48c8) wells, while every one carries a centimetre-resolution elevation and a registration date | an unfilled field, not an absent dimension. The column exists, the survey happened, the value was never entered — so a contractor planning a bore knows where every lid is and not what one of them is</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Most results were carried only as quotations of the page's own earlier text. The catchment surplus figures come from a study that could not be read; the pooled oxygen trend, the hypoxia threshold's fold changes, the ARI ceiling and the seasonality splits were never stored; the plankton and Nørrebro figures survive only as prose in data files; the stored data give a different station count from the one quoted for the seasonality row. The entries whose result can be read or rests on a checked claim are kept.
+
+**Replaced by:** [`C-GC-C-MARK-R`](CLAIMS.md#C-GC-C-MARK-R), [`C-GC-C-MARK-V`](CLAIMS.md#C-GC-C-MARK-V), [`C-GC-C-WB-R`](CLAIMS.md#C-GC-C-WB-R), [`C-GC-C-WB-V`](CLAIMS.md#C-GC-C-WB-V), [`C-GC-C-PFT-R`](CLAIMS.md#C-GC-C-PFT-R), [`C-GC-C-PFT-V`](CLAIMS.md#C-GC-C-PFT-V), [`C-GC-C-HZ-R`](CLAIMS.md#C-GC-C-HZ-R), [`C-GC-C-HZ-V`](CLAIMS.md#C-GC-C-HZ-V), [`C-GC-C-SECCHI-R`](CLAIMS.md#C-GC-C-SECCHI-R), [`C-GC-C-SECCHI-V`](CLAIMS.md#C-GC-C-SECCHI-V), [`C-GC-C-RHO-R`](CLAIMS.md#C-GC-C-RHO-R), [`C-GC-C-RHO-V`](CLAIMS.md#C-GC-C-RHO-V), [`C-GC-C-NB-R`](CLAIMS.md#C-GC-C-NB-R), [`C-GC-C-NB-V`](CLAIMS.md#C-GC-C-NB-V), [`C-GC-C-ST-R`](CLAIMS.md#C-GC-C-ST-R), [`C-GC-C-ST-V`](CLAIMS.md#C-GC-C-ST-V) — each opens what it rests on.
 
 ## CURRENTS.md
 
@@ -883,7 +1074,119 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-CS-SYDFYN`](CLAIMS.md#C-CS-SYDFYN) — each opens what it rests on.
 
+## DATA_QUEUE.md
+
+<a id="C-DQ-OLD-ARGUE"></a>
+### The blocked tier is request-only, FOI, institutional provisioning or unverified, and for several of its entries the measurement exists and the public cannot see it.
+
+`C-DQ-OLD-ARGUE` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-ARGUE">Request-only, FOI, institutional provisioning, or unverified. These are the ones worth arguing about publicly, because for several of them the measurement exists and the public cannot see it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-ARGUE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Several' was never counted, and the tier also holds entries with no access text and entries for data confirmed not to exist.
+
+**Replaced by:** [`C-DQ-Q-BLOCKED`](CLAIMS.md#C-DQ-Q-BLOCKED), [`C-DQ-Q-PULSCLOSED`](CLAIMS.md#C-DQ-Q-PULSCLOSED) — each opens what it rests on.
+
+<a id="C-DQ-OLD-DENSE"></a>
+### OBSERVING.md shows a water body explains little of the variation in the one variable Denmark measures densely enough to check, and that stations within one share little of their year-to-year variance.
+
+`C-DQ-OLD-DENSE` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-DENSE">That is not fastidiousness. OBSERVING.md establishes that a water body explains [7.9](SOURCES.md#F-76d648b5a6)% of the variation in the one variable Denmark measures densely enough to check, and that two stations inside one share about four percent of their year-to-year variance. A source already summed into those polygons would carry the assumption straight back in, and everything computed from it would inherit a unit we had just shown is not one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-DENSE "What this claim rests on")</sup>
+
+**Why it was retired:** 'The one variable Denmark measures densely enough to check' has nothing recorded under it, the shared share was a quantity in words, and the variable, bathing-water quality, was not named.
+
+**Replaced by:** [`C-DQ-Q-WHY`](CLAIMS.md#C-DQ-Q-WHY) — each opens what it rests on.
+
+<a id="C-DQ-OLD-FORM"></a>
+### The account tier is a form and an email address away, and nothing in it is withheld.
+
+`C-DQ-OLD-FORM` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-FORM">A form and an email address. Nothing is being withheld; it just has not been done.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-FORM "What this claim rests on")</sup>
+
+**Why it was retired:** What each registration asks was not recorded for the entries in the tier, and the tier is a keyword match on access text; some of its entries sit behind Copernicus credentials this project already holds.
+
+**Replaced by:** [`C-DQ-Q-ACCOUNT`](CLAIMS.md#C-DQ-Q-ACCOUNT), [`C-DQ-Q-UNCOUNTED`](CLAIMS.md#C-DQ-Q-UNCOUNTED) — each opens what it rests on.
+
+<a id="C-DQ-OLD-FRICTION"></a>
+### The queue is the same information as the register, sorted by friction, and its last tier is what is genuinely closed, behind free registrations nobody has made.
+
+`C-DQ-OLD-FRICTION` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-FRICTION">The source register records what exists. It does not say what to do on Monday. This is the same information sorted by friction: what can be downloaded now, what is behind a credential we already hold, what needs a free registration nobody has done, and what is genuinely closed.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-FRICTION "What this claim rests on")</sup>
+
+**Why it was retired:** The queue reads two of the three register files, so it is not the same information; its last tier also holds entries with no access text and entries for data confirmed not to exist, so it is not what is genuinely closed; and 'nobody has done' was not searched beyond this project's own credentials.
+
+**Replaced by:** [`C-DQ-Q-PURPOSE`](CLAIMS.md#C-DQ-Q-PURPOSE), [`C-DQ-Q-COUNT`](CLAIMS.md#C-DQ-Q-COUNT) — each opens what it rests on.
+
+<a id="C-DQ-OLD-REGION"></a>
+### Region-indexed sources are often the only version that exists, several matter a great deal, the nutrient input series has no per-outfall alternative, and they enter the panel labelled as aggregates.
+
+`C-DQ-OLD-REGION` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-REGION">The region-indexed sources are often the only version that exists, and several matter a great deal — the monthly nutrient input series is per marine reference polygon, and there is no per-outfall alternative. They enter the panel labelled as somebody's aggregate of a measurement, and never as the measurement.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-REGION "What this claim rests on")</sup>
+
+**Why it was retired:** 'Often' and 'several' were never counted; the register gives the stream stations behind the nutrient input series separately; and no panel that labels them was found.
+
+**Replaced by:** [`C-DQ-Q-TILF`](CLAIMS.md#C-DQ-Q-TILF), [`C-DQ-Q-AGG`](CLAIMS.md#C-DQ-Q-AGG) — each opens what it rests on.
+
+<a id="C-DQ-OLD-STORED"></a>
+### Nothing in the project is stored at an administrative unit.
+
+`C-DQ-OLD-STORED` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-STORED">Nothing here is stored at an administrative unit — not per water body, not per catchment, not per municipality, not per sub-basin. Everything is carried at the resolution it was taken: a position, a time, and where it exists a depth.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-STORED "What this claim rests on")</sup>
+
+**Why it was retired:** Stated as a fact about what is stored, but nothing checks it: the queue classifies each source's index and enforces nothing, and region-indexed sources are listed in it.
+
+**Replaced by:** [`C-DQ-Q-RULE`](CLAIMS.md#C-DQ-Q-RULE) — each opens what it rests on.
+
+<a id="C-DQ-OLD-VALUE"></a>
+### Several blocked entries matter more than anything open: per-event overflow volumes, monthly trawling effort and marine phytoplankton species counts are each closed, and each would settle a hypothesis that cannot yet be ranked.
+
+`C-DQ-OLD-VALUE` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-VALUE">Several entries in the last tier matter more than anything in the first — per-event overflow volumes, monthly trawling effort, and marine phytoplankton species counts are each closed, and each of them would settle a hypothesis that currently cannot be ranked at all.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-VALUE "What this claim rests on")</sup>
+
+**Why it was retired:** Against the current tiers it is wrong for two of its three examples: the fishing-effort products are in the account tier and a phytoplankton community dataset is in the open tier. 'Several' was never counted, and no ranking supports 'more than anything in the first'.
+
+**Replaced by:** [`C-DQ-Q-VALUE`](CLAIMS.md#C-DQ-Q-VALUE) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WMS"></a>
+### The Dataforsyningen token's orthophoto WMS was verified.
+
+`C-DQ-OLD-WMS` · retired 2026-09-11 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WMS">API token on this machine, orthophoto WMS verified</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WMS "What this claim rests on")</sup>
+
+**Why it was retired:** No script in this repository calls an orthophoto WMS, and no record of a check was found; the token is used for the elevation model's WCS.
+
+**Replaced by:** [`C-DQ-Q-DF`](CLAIMS.md#C-DQ-Q-DF) — each opens what it rests on.
+
 ## DATA_SOURCES.md
+
+<a id="C-AU-OLD-CENSOR-COUNT"></a>
+### ResultatAttribut marks a stated number of rows as below the detection limit.
+
+`C-AU-OLD-CENSOR-COUNT` · retired 2026-09-11 from [DATA_SOURCES.md](DATA_SOURCES.md) · as published in `5df1889`
+
+> <span class="claim" data-claim="C-AU-OLD-CENSOR-COUNT">Censoring hidden behind column names that do not say so. `ResultatAttribut` is `<` on [85,035](SOURCES.md#F-1617ede4d8) rows, where `Resultat` holds *the detection limit, not the measurement* — read as a value it biases the parameter high.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AU-OLD-CENSOR-COUNT "What this claim rests on")</sup>
+
+**Why it was retired:** The count is not reproduced by the extract held now; the replacement counts the censored rows from the data.
+
+**Replaced by:** [`C-DS-CENSOR`](CLAIMS.md#C-DS-CENSOR) — each opens what it rests on.
+
+<a id="C-AU-OLD-PULS-ROUGH"></a>
+### Municipalities report roughly a stated number of overflow structures and rain-dependent discharge points each year.
+
+`C-AU-OLD-PULS-ROUGH` · retired 2026-09-11 from [DATA_SOURCES.md](DATA_SOURCES.md) · as published in `5df1889`
+
+> <span class="claim" data-claim="C-AU-OLD-PULS-ROUGH">The national point-source database behind §2, run by Danmarks Miljøportal. Municipalities report roughly [4,500](SOURCES.md#F-6829b5c285) overflow structures and ~[20,000](SOURCES.md#F-d7315a3b1d) rain-dependent discharge points annually, including measured or modelled overflow volumes and event counts per year.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AU-OLD-PULS-ROUGH "What this claim rests on")</sup>
+
+**Why it was retired:** The approximate counts were typed in; the extract held counts the combined-sewer overflow structures and separate stormwater outfalls exactly.
+
+**Replaced by:** [`C-DS-PULS-EXTRACT`](CLAIMS.md#C-DS-PULS-EXTRACT) — each opens what it rests on.
 
 <a id="C-DS-OLD-AMAGER"></a>
 ### Guessing the scale bar put Amager out by a stated factor.
@@ -1270,6 +1573,1655 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-DS-VP3-SERVER`](CLAIMS.md#C-DS-VP3-SERVER) — each opens what it rests on.
 
+## EXPERIMENTS.md
+
+<a id="C-EA-OLD-C-SHORT"></a>
+### The list is short on purpose: every entry cleared three tests, and a great many measurements and proposals failed them.
+
+`C-EA-OLD-C-SHORT` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-C-SHORT">It is short on purpose. Every entry had to clear three tests: a control that isolates one mechanism, a decision rule written before the result, and an outcome that would change what someone does. A great many interesting measurements fail the third test, and a great many proposals fail the first.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-C-SHORT "What this claim rests on")</sup>
+
+**Why it was retired:** Not every entry has a control that isolates one mechanism (`X18` has none to isolate), and no record was kept of the measurements and proposals said to have failed.
+
+**Replaced by:** [`C-EA-C-TESTS`](CLAIMS.md#C-EA-C-TESTS) — each opens what it rests on.
+
+<a id="C-EA-OLD-I-AGAINST"></a>
+### Every entry states its decision rule in advance, including the result that would count against the hypothesis the project prefers.
+
+`C-EA-OLD-I-AGAINST` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-I-AGAINST">So every entry below states its decision rule before anyone runs it, including what result would count against the hypothesis this project prefers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-I-AGAINST "What this claim rests on")</sup>
+
+**Why it was retired:** Not every entry names a result against a hypothesis: `X18` has no hypothesis to falsify, and the decision rules of `X5` and `X6` list only outcomes in favour.
+
+**Replaced by:** [`C-EA-I-RULE`](CLAIMS.md#C-EA-I-RULE) — each opens what it rests on.
+
+<a id="C-EA-OLD-I-MOST"></a>
+### Most of what the project marks untestable is untestable with existing monitoring.
+
+`C-EA-OLD-I-MOST` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-I-MOST">Most of what this project marks untestable is untestable with existing monitoring. That is a different claim, and a weaker one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-I-MOST "What this claim rests on")</sup>
+
+**Why it was retired:** 'Most' was a share in words with no count behind it; the triage gives the counts.
+
+**Replaced by:** [`C-EA-I-TRIAGE`](CLAIMS.md#C-EA-I-TRIAGE), [`C-EA-I-WEAKER`](CLAIMS.md#C-EA-I-WEAKER) — each opens what it rests on.
+
+<a id="C-EA-OLD-I-STERILE"></a>
+### The sterilised control has identical chemistry and no organisms, and soil science has used it for a century.
+
+`C-EA-OLD-I-STERILE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-I-STERILE">The recurring design element is the sterilised control — the same material, autoclaved or irradiated, run alongside the live one. Identical chemistry, no organisms. It separates *the chemistry of this stuff* from *the organisms in it* in a single step, and that is exactly the distinction the sediment-sickness and inoculation hypotheses turn on. Soil science has used it for a century.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-I-STERILE "What this claim rests on")</sup>
+
+**Why it was retired:** 'For a century' had no source, and 'identical chemistry' promises more than sterilising can: heat and radiation remove organisms and are not shown to leave the chemistry untouched.
+
+**Replaced by:** [`C-EA-I-STERILE`](CLAIMS.md#C-EA-I-STERILE) — each opens what it rests on.
+
+<a id="C-EA-OLD-K-ANALYSIS"></a>
+### Almost everything the project has produced is analysis, and its findings are of the form 'your evidence does not support what you claim'.
+
+`C-EA-OLD-K-ANALYSIS` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-K-ANALYSIS">You work on what is already written down. It can establish consistency, bound magnitudes, expose contradictions and kill hypotheses - but it cannot establish causation, and it cannot recover a fact that was never recorded. Almost everything this project has produced is of this kind. That is worth saying plainly: its findings are of the form *your evidence does not support what you claim*, which is a real result and a limited one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-K-ANALYSIS "What this claim rests on")</sup>
+
+**Why it was retired:** 'Almost everything' was a share in words with no count; since none of the project's data is its own measurement, the justified word is everything. Not all of its findings are of the one form named.
+
+**Replaced by:** [`C-EA-K-ANALYSIS`](CLAIMS.md#C-EA-K-ANALYSIS) — each opens what it rests on.
+
+<a id="C-EA-OLD-K-INSTRUMENT"></a>
+### The Danish state is unusually willing to fund digital infrastructure, and a sensor network is legible to it as ship time is not.
+
+`C-EA-OLD-K-INSTRUMENT` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-K-INSTRUMENT">You make the thing that takes the reading, and put it where nobody was looking. It is a measurement project with a build phase, and it differs from the others in what it can be aimed at: a network can be pointed at the assumptions of the existing monitoring, not only at the sea. Whether one station can stand for a water body, whether monthly sampling sees a six-hour event, what an aggregation costs - all of those are questions about the instrument, and all of them are answerable by building a denser one beside it. It is also the kind with the clearest route to actually happening here: the Danish state is unusually willing to fund digital infrastructure, and a distributed sensor network is legible to it in a way that a request for more ship time is not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-K-INSTRUMENT "What this claim rests on")</sup>
+
+**Why it was retired:** No source was recorded for the state's willingness to fund digital infrastructure, or for how a sensor network reads to it.
+
+**Replaced by:** [`C-EA-K-INSTRUMENT`](CLAIMS.md#C-EA-K-INSTRUMENT) — each opens what it rests on.
+
+<a id="C-EA-OLD-K-MEASUREMENT"></a>
+### Most of the project's gaps are unrecorded rather than unknowable.
+
+`C-EA-OLD-K-MEASUREMENT` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-K-MEASUREMENT">You observe something real that nobody recorded. It creates the *record* rather than the evidence: it can establish what is happening, where and when, but not why. Cheaper than an experiment and still requires being there. Most of the gaps in this project are of this kind - not unknowable, unrecorded.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-K-MEASUREMENT "What this claim rests on")</sup>
+
+**Why it was retired:** 'Most of the gaps' was a share in words with no count behind it.
+
+**Replaced by:** [`C-EA-K-MEASUREMENT`](CLAIMS.md#C-EA-K-MEASUREMENT) — each opens what it rests on.
+
+<a id="C-EA-OLD-K-NAMING"></a>
+### Most of the project's output is analysis.
+
+`C-EA-OLD-K-NAMING` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-K-NAMING">Naming them separately matters because they are not substitutes and they are not equally strong. Only an experiment establishes causation. Only a measurement can recover something nobody wrote down. Analysis is the cheapest and the weakest, and it is what a project like this one can do from a desk — so it should be honest that most of its output is of that kind, and that the step up in force comes from going and looking.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-K-NAMING "What this claim rests on")</sup>
+
+**Why it was retired:** 'Most of its output' was a share in words with no count.
+
+**Replaced by:** [`C-EA-K-NAMING`](CLAIMS.md#C-EA-K-NAMING) — each opens what it rests on.
+
+<a id="C-EA-OLD-S-COUNT"></a>
+### Two entries need no fieldwork, and the most consequential is a desk exercise on data already downloaded.
+
+`C-EA-OLD-S-COUNT` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-S-COUNT">need no institution. Two need no fieldwork or none of their own. The most consequential — `X8`, whether the national trends are in the sea or in the instruments — is a desk exercise on data that is already downloaded.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-S-COUNT "What this claim rests on")</sup>
+
+**Why it was retired:** 'Two need no fieldwork' did not follow the register, which has three desk entries, and 'the most consequential' was a ranking nothing measured.
+
+**Replaced by:** [`C-EA-S-COUNT`](CLAIMS.md#C-EA-S-COUNT), [`C-EA-S-X8`](CLAIMS.md#C-EA-S-X8) — each opens what it rests on.
+
+<a id="C-EA-OLD-SCALES"></a>
+### The scale table: a person with a boat, a season and a few thousand kroner; a university lab for one to two seasons; a programme; a desk.
+
+`C-EA-OLD-SCALES` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-SCALES">| | | experiments | |---|---|---| | `small` | A person with a boat, a season, and a few thousand kroner. No institution required. | `X1`, `X18`, `X2`, `X7`, `X19`, `X20`, `X9`, `X10`, `X12`, `X14`, `X15`, `X16` | | `lab` | A university lab, standard methods, one to two seasons. | `X3`, `X4`, `X6`, `X11`, `X13` | | `programme` | Needs a funded programme or ship time, but is still a bounded experiment rather than a monitoring commitment. | `X5`, `X23`, `X17` | | `desk` | No fieldwork at all. The data already exists; the analysis has not been run. |</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-SCALES "What this claim rests on")</sup>
+
+**Why it was retired:** The scales carried a price in words and durations with no source, and several small entries run longer than a season.
+
+**Replaced by:** [`C-EA-S-SMALL`](CLAIMS.md#C-EA-S-SMALL), [`C-EA-S-LAB`](CLAIMS.md#C-EA-S-LAB), [`C-EA-S-PROGRAMME`](CLAIMS.md#C-EA-S-PROGRAMME), [`C-EA-S-DESK`](CLAIMS.md#C-EA-S-DESK) — each opens what it rests on.
+
+<a id="C-EA-OLD-X1-CTRL"></a>
+### A community that has spent a million generations adapting to one setting is at a disadvantage in another.
+
+`C-EA-OLD-X1-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X1-CTRL">Two contrasts carry it. Live against sterilised (b vs d) separates a chemical effect from a biological one, because the two are identical in everything except their organisms. Matched against mismatched (b vs c) tests local adaptation: a community that has spent a million generations adapting to one setting is at a disadvantage in another, and the residents it has to displace are not. If donor origin matters, the practical rule follows immediately. Plus untransplanted plots and a transplant into a functioning bed as the upper bound.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X1-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** 'A million generations' was a quantity nobody measured, and a disadvantage outside one's own setting is what the contrast tests, not a premise.
+
+**Replaced by:** [`C-EA-X1-CTRL`](CLAIMS.md#C-EA-X1-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X1-NOTE"></a>
+### It is the cheapest decisive experiment in the register, nobody has run it, Denmark has failed restorations to site it in, and the human analogue shows uneven engraftment and autologous banking as the frontier.
+
+`C-EA-OLD-X1-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X1-NOTE">This is the cheapest decisive experiment in the register and nobody has run it. Denmark has failed eelgrass restorations to site it in. The human analogue has already worked through the same problem. Faecal transplant restores a cleared gut, but donor material engrafts unevenly, some donors work far better than others, and the current frontier is autologous banking - freezing a person's own community before the antibiotic and giving it back afterwards, so the restored community is already adapted to that body. The marine version of the second half is impossible retroactively and urgent prospectively, which is</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X1-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** No cost stood behind 'cheapest'; that nobody has run it and that Denmark has failed restorations to site it in had no source; and uneven engraftment, better donors and autologous banking were not found in the pinned article on faecal transplant.
+
+**Replaced by:** [`C-EA-X1-NOTE`](CLAIMS.md#C-EA-X1-NOTE), [`C-EA-X1-NOTE2`](CLAIMS.md#C-EA-X1-NOTE2) — each opens what it rests on.
+
+<a id="C-EA-OLD-X1-WHY"></a>
+### Restoration plantings fail in sediment whose chemistry looks adequate; horticulture calls this replant disease.
+
+`C-EA-OLD-X1-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X1-WHY">Restoration plantings fail in sediment whose chemistry looks adequate. Horticulture calls this replant disease and tests it the obvious way.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X1-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** It stated the register's replant-failure hypothesis as a fact.
+
+**Replaced by:** [`C-EA-X1-WHY`](CLAIMS.md#C-EA-X1-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X10-NOTE"></a>
+### This is the only experiment that can distinguish 'not yet' from 'never', and the whole nitrogen argument rests on it.
+
+`C-EA-OLD-X10-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X10-NOTE">This is the only experiment that can distinguish 'not yet' from 'never, for another reason', and it is the question the whole nitrogen argument rests on.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X10-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** That it is the only such experiment, and that the whole nitrogen argument rests on its question, were not shown.
+
+**Replaced by:** [`C-EA-X10-NOTE`](CLAIMS.md#C-EA-X10-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X10-WHY"></a>
+### Decades of unexplained non-recovery sit between the two explanations.
+
+`C-EA-OLD-X10-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X10-WHY">A target can be unreachable because the driver is still too high, or because something else is missing. From the outside these look identical, and thirty years of unexplained non-recovery sit between them.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X10-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** The span of non-recovery was a quantity in words with no source.
+
+**Replaced by:** [`C-EA-X10-WHY`](CLAIMS.md#C-EA-X10-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X12-NOTE"></a>
+### Mussel beds change flow as well as filtering.
+
+`C-EA-OLD-X12-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X12-NOTE">The dead-shell control matters: mussel beds change flow as well as filtering, and the two effects have different policy implications.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X12-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** That mussel beds change flow had no source here; what the control separates stands without it.
+
+**Replaced by:** [`C-EA-X12-NOTE`](CLAIMS.md#C-EA-X12-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X13-NOTE"></a>
+### It is the cleanest discriminator in the register, and its dose figures come from published sales and residue data.
+
+`C-EA-OLD-X13-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X13-NOTE">The cleanest discriminator in the register: two hypotheses that predict the same observed outcome are separated by holding the input fixed and varying only the processors. Standard litter-bag method, standard mesocosms, and the dose figures come from published sales and residue data.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X13-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Cleanest' was a ranking, 'standard' was not sourced, and the dose cannot come from sales data this project could not locate.
+
+**Replaced by:** [`C-EA-X13-NOTE`](CLAIMS.md#C-EA-X13-NOTE), [`C-EA-X13-DOSE`](CLAIMS.md#C-EA-X13-DOSE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X13-WHY"></a>
+### Turfgrass thatch, a greasy organic mat, forms when pesticides kill the earthworms and microbes that would incorporate it.
+
+`C-EA-OLD-X13-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X13-WHY">Turfgrass thatch - a greasy organic mat - forms when pesticides kill the earthworms and microbes that would incorporate the material. If fedtemøg is the same failure in sediment, then organic matter accumulates because the decomposers are gone, not because more is arriving.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X13-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** The pinned article on thatch gives several causes, insecticides reducing earthworm activity among them and too much nitrogen fertiliser too, and does not call thatch greasy; the analogy to fedtemøg is the register's hypothesis.
+
+**Replaced by:** [`C-EA-X13-THATCH`](CLAIMS.md#C-EA-X13-THATCH), [`C-EA-X13-WHY`](CLAIMS.md#C-EA-X13-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X14-NOTE"></a>
+### Replication over precision inverts the usual objection to cheap sensors and is why the design is affordable.
+
+`C-EA-OLD-X14-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X14-NOTE">Precision is worth less than replication here. A sensor with [10](SOURCES.md#F-41d0de14b6)% error at forty points tells you more about whether a polygon is homogeneous than one perfect instrument does, because the question is about variance and not about level. That inverts the usual objection to cheap sensors, and it is the reason this is affordable.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X14-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The usual objection was not sourced, and nothing was priced to make it affordable.
+
+**Replaced by:** [`C-EA-X14-NOTE`](CLAIMS.md#C-EA-X14-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X14-WHY"></a>
+### The marine programme puts a median of one station in each water body.
+
+`C-EA-OLD-X14-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X14-WHY">The national assessment attaches one number to each water body, and the marine programme puts a median of one station in each - so the homogeneity that the whole framework assumes cannot be tested with the data that framework produces. Bathing water suggests a water body explains about [8](SOURCES.md#F-71066a6d6a)% of the variation inside it, but bathing water measures faecal indicators, not the variables at issue.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X14-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** The median of one station per water body had no count behind it; DCE's own model report gives stations and water bodies, now read from it.
+
+**Replaced by:** [`C-EA-X14-DCE`](CLAIMS.md#C-EA-X14-DCE), [`C-EA-X14-ARG`](CLAIMS.md#C-EA-X14-ARG), [`C-EA-X14-BATH`](CLAIMS.md#C-EA-X14-BATH) — each opens what it rests on.
+
+<a id="C-EA-OLD-X15-NOTE"></a>
+### It is the cheapest way to put a number on the project's central claim.
+
+`C-EA-OLD-X15-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X15-NOTE">One sensor and two years. It is the cheapest way to put a number on the central claim of this whole project, and it works against us as easily as for us.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X15-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** 'The cheapest way' had no cost behind it.
+
+**Replaced by:** [`C-EA-X15-NOTE`](CLAIMS.md#C-EA-X15-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X15-WHY"></a>
+### The oxygen indicator is one value per water body per six years, and nobody has measured what the collapse discards.
+
+`C-EA-OLD-X15-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X15-WHY">The oxygen indicator is the share of time oxygen sits below a threshold in the worst month, computed from six years of data, yielding one value per water body per six years. Nobody has measured what that collapse discards, because doing so needs a continuous record to compare against.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X15-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's report gives two thresholds and one value per period, not per water body; and 'nobody has measured' is an absence over the world, not over what was searched.
+
+**Replaced by:** [`C-EA-X15-DCE`](CLAIMS.md#C-EA-X15-DCE), [`C-EA-X15-ARG`](CLAIMS.md#C-EA-X15-ARG) — each opens what it rests on.
+
+<a id="C-EA-OLD-X16-NOTE"></a>
+### Biofouling, not cost, is the binding constraint; everything else is solved, and a sensor grows a community within weeks.
+
+`C-EA-OLD-X16-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X16-NOTE">Biofouling is the binding constraint on marine deployment, not cost. Everything else is solved; a sensor left in Danish water grows a community within weeks. Wipers, copper guards and UV all work and all add cost and power, and the honest version of this proposal budgets for servicing rather than pretending a buoy is unattended infrastructure.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X16-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The binding constraint, 'everything else solved', the growth within weeks and that wipers, copper and UV all work had no source.
+
+**Replaced by:** [`C-EA-X16-NOTE`](CLAIMS.md#C-EA-X16-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X16-WHY"></a>
+### Cheap sensors drift and foul.
+
+`C-EA-OLD-X16-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X16-WHY">Any distributed network is worthless if its readings cannot be tied to the national record, and cheap sensors drift and foul. This is the calibration that makes `X14` and `X15` admissible rather than interesting.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X16-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** That cheap sensors drift was not sourced here; that sensors in the water foul is.
+
+**Replaced by:** [`C-EA-X16-WHY`](CLAIMS.md#C-EA-X16-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X17-NOTE"></a>
+### It is the only design that is at once an intervention, a national experiment and survivable, and Denmark already has pesticide taxation, action plans and wellfield protection zones.
+
+`C-EA-OLD-X17-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X17-NOTE">This is the only design here that is simultaneously an intervention, a national experiment, and survivable for the people inside it. It also supplies what nothing else can: a real counterfactual for the chemical argument, at the scale the argument is made. Denmark already has the administrative machinery — pesticide taxation, action plans, and protection zones around wellfields where spraying is restricted — so the instrument exists and only the randomisation and the marine measurement would be new. The general form of that observation is the meta-solution in PLACES.md: a country that does one thing everywhere has spent the contrast that would have told it whether the thing worked, and the staggered order here is how you buy it back without withholding anything from anyone.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X17-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** That it is the only such design was not shown, and the administrative instruments named had no source here.
+
+**Replaced by:** [`C-EA-X17-NOTE`](CLAIMS.md#C-EA-X17-NOTE), [`C-EA-X17-PLACES`](CLAIMS.md#C-EA-X17-PLACES) — each opens what it rests on.
+
+<a id="C-EA-OLD-X17-WHY"></a>
+### Every Danish catchment has been sprayed for decades, and a ban would be economic suicide.
+
+`C-EA-OLD-X17-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X17-WHY">The register cannot say what agricultural biocides do to marine decomposers, because the counterfactual does not exist: every Danish catchment has been sprayed for decades. A ban would create one and would also be economic suicide for the people asked to absorb it, so it will not happen and should not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X17-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** That every catchment has been sprayed for decades had no source, and 'economic suicide' was an estimate of cost nobody made.
+
+**Replaced by:** [`C-EA-X17-WHY`](CLAIMS.md#C-EA-X17-WHY), [`C-EA-X17-BAN`](CLAIMS.md#C-EA-X17-BAN) — each opens what it rests on.
+
+<a id="C-EA-OLD-X18-CTRL"></a>
+### The first design shows that pairing decides whether an inoculum establishes.
+
+`C-EA-OLD-X18-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X18-CTRL">The metadata *is* the design. Without matched conditions recorded, a bank is a freezer full of mud whose donors cannot be paired to a recipient site, and `X1` shows that pairing is exactly what decides whether an inoculum establishes.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X18-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** `X1` has not been run, so it shows nothing yet; it is the test of whether pairing decides.
+
+**Replaced by:** [`C-EA-X18-CTRL`](CLAIMS.md#C-EA-X18-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X18-DECIDE"></a>
+### Two register entries both say the pre-disturbance baseline is missing by construction.
+
+`C-EA-OLD-X18-DECIDE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X18-DECIDE">There is no hypothesis to falsify here, which is why it is filed as measurement rather than experiment. What it produces is optionality: every later restoration attempt, and every test of whether donor origin matters, needs source material that either exists or does not. It also supplies the pre-disturbance baseline that `T10` and `W8` both say is missing by construction.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X18-DECIDE "What this claim rests on")</sup>
+
+**Why it was retired:** Neither entry's text in the register says so; the source search for one of them found no pre-intervention baseline, and the page now says that.
+
+**Replaced by:** [`C-EA-X18-DECIDE`](CLAIMS.md#C-EA-X18-DECIDE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X18-NOTE"></a>
+### The bank is the only item in the register that gets harder every year it is not done.
+
+`C-EA-OLD-X18-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X18-NOTE">The only item in this register that gets harder every year it is not done. Everything else here can be run later at the same cost; this one loses material permanently as sites degrade, and the sites that would be most valuable to have banked are the ones most likely to be gone. A freezer, a coring tube, and somebody's time.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X18-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** It contradicted the page: `X20` also gets harder every year it is not done.
+
+**Replaced by:** [`C-EA-X18-NOTE`](CLAIMS.md#C-EA-X18-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X18-WHY"></a>
+### The best source for a restoration is a matched community, the frontier of medicine is autologous banking, and donor material degrades a little every year.
+
+`C-EA-OLD-X18-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X18-WHY">Restoring a community needs a source, and the best source is the same community from a matched setting. Medicine has reached the same conclusion and acted on it: stool banks exist, and the frontier is autologous banking - freezing a person's own community *before* the antibiotic. The marine equivalent of the autologous half is impossible after the fact, and the donor half degrades a little every year as more sites fail.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X18-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** That the best source is a matched community is what `X1` tests, not a premise; autologous banking as the frontier and a yearly decline had no source.
+
+**Replaced by:** [`C-EA-X18-WHY`](CLAIMS.md#C-EA-X18-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X19-CTRL"></a>
+### Open reporting is the same failure as the satellite matchups.
+
+`C-EA-OLD-X19-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X19-CTRL">That null is the control and the entire difference between a dataset and a complaints inbox. Open reporting - tell us when it is bad - produces a map of attention, and attention follows news coverage, so the resulting series measures publicity. A panel with a denominator produces a rate. It is the same failure as the satellite matchups: the observations that exist must not be selected on the variable being measured.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X19-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** No record of a selection failure in the satellite matchups was found to stand behind the comparison.
+
+**Replaced by:** [`C-EA-X19-CTRL`](CLAIMS.md#C-EA-X19-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X19-MEAS"></a>
+### A photograph carries position and time in its EXIF, and the odour scale is the one used in odour-nuisance regulation.
+
+`C-EA-OLD-X19-MEAS` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X19-MEAS">Per visit: position and time (a photograph carries both in EXIF, and fedtemøg is visible, so the image is a record of the outcome rather than a report about it); an ordinal odour intensity on a fixed scale, as used in odour-nuisance regulation; water appearance; whether anything structural is growing; and the null when none of it applies. Plus one control question about something unrelated to the outcome, to detect when a panel's reporting effort is rising rather than the phenomenon.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X19-MEAS "What this claim rests on")</sup>
+
+**Why it was retired:** A photograph carries a position only when the device records one, and no source was found for the scale's use in nuisance regulation.
+
+**Replaced by:** [`C-EA-X19-MEAS`](CLAIMS.md#C-EA-X19-MEAS) — each opens what it rests on.
+
+<a id="C-EA-OLD-X19-NOTE"></a>
+### The panel is cheap, and every citizen-science scheme underestimates recruiting observers.
+
+`C-EA-OLD-X19-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X19-NOTE">Cheap, and the cheapest part is the phone people already carry. The expensive part is recruiting observers who will keep reporting nothing, which is the part every citizen-science scheme underestimates.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X19-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Cheap' had no price, and what every citizen-science scheme underestimates had no source.
+
+**Replaced by:** [`C-EA-X19-NOTE`](CLAIMS.md#C-EA-X19-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X19-WHY"></a>
+### The outcomes people care about are measured by no Danish programme, the only observers are the people who use the shore, and their observations are discarded as anecdote.
+
+`C-EA-OLD-X19-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X19-WHY">The outcomes anyone actually cares about - greasy water, a foul shore, a bed with nothing structural left on it - are not measured by any Danish programme. There is no instrument for fedtemøg; the glossary entry says so, and it is not an oversight so much as a category the monitoring was never built to hold. The only observers are the people who swim, walk and fish there, and their observations are currently discarded as anecdote.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X19-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** Too wide: rooted vegetation is a monitored indicator, and the absence of shore condition is known over the sources surveyed; that the users of the shore are the only observers, and that their reports are discarded, had no source.
+
+**Replaced by:** [`C-EA-X19-WHY`](CLAIMS.md#C-EA-X19-WHY), [`C-EA-X19-WHO`](CLAIMS.md#C-EA-X19-WHO) — each opens what it rests on.
+
+<a id="C-EA-OLD-X2-WHY"></a>
+### Eelgrass keeps sulphide out by leaking oxygen from its roots.
+
+`C-EA-OLD-X2-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X2-WHY">Eelgrass keeps sulphide out by leaking oxygen from its roots, powered by photosynthesis. If the leak is the mechanism, shading kills by poisoning rather than by starving.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X2-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** It stated the register's hypothesis as a fact.
+
+**Replaced by:** [`C-EA-X2-WHY`](CLAIMS.md#C-EA-X2-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X20-CTRL"></a>
+### Memory of the past understates change, and more so the older the respondent.
+
+`C-EA-OLD-X20-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X20-CTRL">The known failure mode is shifting baseline syndrome: each generation's normal is the previous generation's decline, so 'how was it back then' reliably understates change and does so more the older the respondent. The mitigation is to anchor every question on a dated specific event - what came up in that haul, in that autumn, on that ground - rather than on a remembered general state. Where two people fished the same ground in the same years, their accounts are a replicate.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X20-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** That the understatement grows with the respondent's age had no source and runs against the syndrome as described, in which each generation takes its own start as normal.
+
+**Replaced by:** [`C-EA-X20-CTRL`](CLAIMS.md#C-EA-X20-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X20-NOTE"></a>
+### The interviews are the one item on the page that gets harder every year for a reason unrelated to funding.
+
+`C-EA-OLD-X20-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X20-NOTE">This is the one item on the page that gets harder every year for a reason unrelated to funding, and it shares that with `X18`: the people who fished before the change are ageing out, and the baseline goes with them.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X20-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** It called itself the one such item and then named another; the reason given for it stands.
+
+**Replaced by:** [`C-EA-X20-NOTE`](CLAIMS.md#C-EA-X20-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X20-WHY"></a>
+### Fishermen hold the longest continuous observation of the Danish seabed that exists, over decades, recorded nowhere.
+
+`C-EA-OLD-X20-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X20-WHY">Commercial and recreational fishermen hold the longest continuous observation of the Danish seabed that exists - decades of hauling gear across specific ground - and none of it is recorded anywhere as observation. Landings are recorded; what the bottom looked and smelled like is not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X20-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** The superlative and the span of decades had no source, and 'recorded nowhere' is known only over the sources surveyed.
+
+**Replaced by:** [`C-EA-X20-WHY`](CLAIMS.md#C-EA-X20-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X21-CTRL"></a>
+### The reported areas were produced independently of any terrain analysis.
+
+`C-EA-OLD-X21-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X21-CTRL">reported areas are the control, and they were produced independently of any terrain analysis. A delineation that reproduces them is doing something right; one that cannot is falsified without fieldwork. Hold out a random tenth to fit nothing and check against those.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X21-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** Independence from any terrain analysis was not established; that the areas come from the utilities' reports is.
+
+**Replaced by:** [`C-EA-X21-CTRL`](CLAIMS.md#C-EA-X21-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X21-MEAS"></a>
+### Terrain, footprints and the outfall register are all open and already fetched or fetchable.
+
+`C-EA-OLD-X21-MEAS` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X21-MEAS">Terrain, building footprints with year built, and the outfall register - all open, all already fetched or fetchable. Plus, where a municipal wastewater plan publishes real catchment boundaries, those become a second and much harder test.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X21-MEAS "What this claim rests on")</sup>
+
+**Why it was retired:** That all are open and fetched or fetchable was not shown; the building register's fields were not read here.
+
+**Replaced by:** [`C-EA-X21-MEAS`](CLAIMS.md#C-EA-X21-MEAS) — each opens what it rests on.
+
+<a id="C-EA-OLD-X21-NOTE"></a>
+### Nearly every municipality has no catchment map at all, and Copenhagen's exists because some PDFs happened to be recoverable.
+
+`C-EA-OLD-X21-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X21-NOTE">It produces a plausible network, not the real one, and every use must say so. But [97](SOURCES.md#F-546bfd5e14) of [98](SOURCES.md#F-06b85cf90c) municipalities currently have no catchment map at all, and a plausible one with a stated error beats nothing. Copenhagen's exists only because seven PDFs happened to be recoverable, which is archaeology rather than method.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X21-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The count of municipalities without a catchment map was carried only as a quotation of the page's own text, and municipal plans do carry catchments.
+
+**Replaced by:** [`C-EA-X21-NOTE`](CLAIMS.md#C-EA-X21-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X21-WHY"></a>
+### Every outfall has a position, an annual volume and a reduced area, and there is no published map of which ground drains where.
+
+`C-EA-OLD-X21-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X21-WHY">outfalls with a position, an annual volume and a reported reduced impervious area, and no published map of which ground drains to which. The pipe geometry exists in a national register that is not open, so the network cannot be looked up. It may be inferable.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X21-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** Not every outfall reports an annual volume, and 'no published map' was too wide: municipal wastewater plans carry catchments, and what is missing is a national assembly of them.
+
+**Replaced by:** [`C-EA-X21-WHY`](CLAIMS.md#C-EA-X21-WHY), [`C-EA-X21-LER`](CLAIMS.md#C-EA-X21-LER) — each opens what it rests on.
+
+<a id="C-EA-OLD-X22-CTRL"></a>
+### The null already exists and was measured: a correlogram of log Kd490 against separation.
+
+`C-EA-OLD-X22-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X22-CTRL">The null already exists and was measured: similarity of log Kd490 against separation, pooled over [144](SOURCES.md#F-1360822d73) days, giving r = [0.97](SOURCES.md#F-d678e1293c) at [1](SOURCES.md#F-78407c6d1f) km, [0.74](SOURCES.md#F-ccd75bd373) at [12](SOURCES.md#F-3780c50598) km, [0.50](SOURCES.md#F-03bb0858c7) at [31](SOURCES.md#F-621ecdbd07) km. Two points [12](SOURCES.md#F-3780c50598) km apart should agree at [0.74](SOURCES.md#F-ccd75bd373) wherever they are. So take pairs at a fixed separation that straddle an official boundary and pairs at the same separation that do not. A boundary that is real shows *less* agreement across it than the curve predicts; one that agrees more than the curve predicts is splitting water that behaves as one thing.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X22-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** The correlogram's figures were typed into the page's script and quoted from its text; no script or stored file produces them.
+
+**Replaced by:** [`C-EA-X22-CTRL`](CLAIMS.md#C-EA-X22-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X22-MANIP"></a>
+### Every pixel of the satellite record is measured the same way on the same day.
+
+`C-EA-OLD-X22-MANIP` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X22-MANIP">Nothing physical. The satellite record supplies a field with no station bias at all - daily [1](SOURCES.md#F-f2dfa44909) km ocean colour since 1997, every pixel measured the same way on the same day - so the partition can be derived from the water rather than imposed on it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X22-MANIP "What this claim rests on")</sup>
+
+**Why it was retired:** The product merges several sensors over its record, so not every pixel is measured the same way, and cloud leaves days without a value.
+
+**Replaced by:** [`C-EA-X22-MANIP`](CLAIMS.md#C-EA-X22-MANIP) — each opens what it rests on.
+
+<a id="C-EA-OLD-X22-NOTE"></a>
+### Satellite retrieval fails hardest in exactly the fjords where the boundaries are densest.
+
+`C-EA-OLD-X22-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X22-NOTE">Two limits stated in advance. The satellite sees the surface, and its retrieval fails hardest in exactly the fjords where the boundaries are densest, so the test is strongest in open water and weakest where it would matter most. And a partition discovered from one variable is a partition for that variable: the baskets for light need not be the baskets for oxygen, and finding that they differ would itself dispose of the idea that one set of lines can serve every purpose.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X22-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** That retrieval fails hardest in the fjords where the boundaries are densest had no measurement behind it.
+
+**Replaced by:** [`C-EA-X22-NOTE`](CLAIMS.md#C-EA-X22-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X22-WHY"></a>
+### The Copenhagen map's units are consequences of the terrain, and nobody asks whether the marine boundaries are where the sea changes.
+
+`C-EA-OLD-X22-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X22-WHY">The Copenhagen map does not aggregate into administrative units. Its units are functional - a catchment is the ground that drains to one point, a flow path is where water actually goes - so the boundaries are consequences of the terrain rather than decisions about it. The marine map has no equivalent: it inherits [123](SOURCES.md#F-4403383d51) water bodies drawn for administration, and every statistic computed in them inherits that drawing. The question nobody asks is whether those lines are where the sea changes.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X22-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** That the Copenhagen map's units follow from the terrain was not shown, since the city's catchments are drawn in its plan, and 'the question nobody asks' is an absence nobody searched for.
+
+**Replaced by:** [`C-EA-X22-WHY`](CLAIMS.md#C-EA-X22-WHY), [`C-EA-X22-Q`](CLAIMS.md#C-EA-X22-Q) — each opens what it rests on.
+
+<a id="C-EA-OLD-X23-CTRL"></a>
+### Faecal sterols and host-specific markers separate pig manure from human sewage and from soil organic matter.
+
+`C-EA-OLD-X23-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X23-CTRL">Three controls, and the design needs all of them. Time: the same streams outside the spreading window. Space: catchments matched on soil, drainage and area but contrasting in livestock density, which is where the national register earns its place. And source: faecal sterols and host-specific microbial markers separate pig manure from human sewage and from soil organic matter, which is what turns a concentration into an attribution.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X23-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** The host marker is not clean and the sterol ratio is untested for pigs, as SENSING.md sets out.
+
+**Replaced by:** [`C-EA-X23-CTRL`](CLAIMS.md#C-EA-X23-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X23-NOTE"></a>
+### It is the cheapest unbought answer in the document, the one design whose negative result would help the official account, and grab sampling missed transport in all three streams of the study, visited fortnightly.
+
+`C-EA-OLD-X23-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X23-NOTE">The instrument is constructed in SENSING.md and the full protocol - hypotheses that can lose, the decision rules fixed before the first sample, the twelve matched pairs and what invalidates the whole thing rather than answering it - is SETTLE.md. This is the cheapest unbought answer in the whole document. The instruments are ordinary autosamplers and a lab list, the timing is fixed by a calendar everyone already knows, and the comparison catchments exist. It is also the one design here whose *negative* result would materially strengthen the official account — which is a reason to run it, not a reason to avoid it. Grab sampling cannot substitute: this project's own sources report that transport computed from grab samples was underestimated in all three streams of the 2018 GUDP study, and an event is exactly what a fortnightly visit misses.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X23-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The count of matched pairs belongs to SETTLE.md; 'the cheapest unbought answer' had no cost; it was not shown to be the only such design; and the visits are at fixed intervals, not shown to be fortnightly.
+
+**Replaced by:** [`C-EA-X23-NAV`](CLAIMS.md#C-EA-X23-NAV), [`C-EA-X23-NEG`](CLAIMS.md#C-EA-X23-NEG), [`C-EA-X23-GRAB`](CLAIMS.md#C-EA-X23-GRAB) — each opens what it rests on.
+
+<a id="C-EA-OLD-X23-WHY"></a>
+### The load account prices only nitrogen and phosphorus, copper and resistance genes among the rest, bypasses are documented, and national monitoring cannot see any of it.
+
+`C-EA-OLD-X23-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X23-WHY">The load account carries nitrogen and phosphorus. Everything else that is spread — organic carbon, copper and zinc from feed, antiparasitics, antibiotics, resistance genes, pathogens — is unpriced, and its fate is genuinely unknown rather than known to be small. A field is a reactor: labile carbon is respired there, so the default assumption is that little arrives. But rain onto freshly spread ground, frozen or saturated soil, tile drains and macropores are documented bypasses, and Denmark's own monitoring cannot see any of it, because it samples on a calendar rather than on events and measures a determinand list that does not include the payload.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X23-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** Copper as a feed additive, resistance genes and pathogens had no source here, 'documented bypasses' named no document, and the determinand list was not checked beyond the faecal markers no profiled source measures.
+
+**Replaced by:** [`C-EA-X23-LOAD`](CLAIMS.md#C-EA-X23-LOAD), [`C-EA-X23-PAYLOAD`](CLAIMS.md#C-EA-X23-PAYLOAD), [`C-EA-X23-REACTOR`](CLAIMS.md#C-EA-X23-REACTOR), [`C-EA-X23-BLIND`](CLAIMS.md#C-EA-X23-BLIND) — each opens what it rests on.
+
+<a id="C-EA-OLD-X3-MANIP"></a>
+### The four materials span C:N from infinite down to a stated value.
+
+`C-EA-OLD-X3-MANIP` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X3-MANIP">Mesocosms of natural seawater dosed with equal chemical oxygen demand as (a) fat, (b) carbohydrate, (c) algal biomass, (d) protein - four materials, same oxygen demand, C:N from infinite to</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X3-MANIP "What this claim rests on")</sup>
+
+**Why it was retired:** The passage ends where the range's lower bound stood: that bound was carried only as a quotation of the page's own earlier text, and no source gave it.
+
+**Replaced by:** [`C-EA-X3-MANIP`](CLAIMS.md#C-EA-X3-MANIP) — each opens what it rests on.
+
+<a id="C-EA-OLD-X3-NOTE"></a>
+### The country has two regulated indicators, one of which could move the wrong way.
+
+`C-EA-OLD-X3-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X3-NOTE">A three-week bench experiment that would tell you whether one of the country's two regulated indicators can move the wrong way.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X3-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** That the country has two regulated indicators was not sourced here.
+
+**Replaced by:** [`C-EA-X3-NOTE`](CLAIMS.md#C-EA-X3-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X3-WHY"></a>
+### Fat has no nitrogen, so bacteria decomposing it must take nitrogen from the water.
+
+`C-EA-OLD-X3-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X3-WHY">Fat has no nitrogen, so bacteria decomposing it must take nitrogen from the water. If so, a fat-loaded water reads as *less* eutrophic on the regulated indicator while being more degraded.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X3-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** It stated the register's hypothesis as a fact.
+
+**Replaced by:** [`C-EA-X3-WHY`](CLAIMS.md#C-EA-X3-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X4-NOTE"></a>
+### The design is a standard soil-science method.
+
+`C-EA-OLD-X4-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X4-NOTE">Standard soil-science method applied to marine sediment. The equipment is a core tube and an oxygen optode.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X4-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** That it is a standard method was not sourced; that priming is a soil-science idea is.
+
+**Replaced by:** [`C-EA-X4-NOTE`](CLAIMS.md#C-EA-X4-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X4-WHY"></a>
+### Labile carbon gives microbes the energy to attack the recalcitrant pool.
+
+`C-EA-OLD-X4-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X4-WHY">Priming: labile carbon gives microbes the energy to attack the recalcitrant pool, so an input's oxygen demand can exceed its own COD.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X4-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** It stated the register's hypothesis as a fact.
+
+**Replaced by:** [`C-EA-X4-WHY`](CLAIMS.md#C-EA-X4-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X6-MANIP"></a>
+### The nutrient-addition bioassay is a standard method.
+
+`C-EA-OLD-X6-MANIP` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X6-MANIP">Standard nutrient-addition bioassay on natural water: control, +N, +N+P, +N+P+Si, +Si alone.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X6-MANIP "What this claim rests on")</sup>
+
+**Why it was retired:** That the bioassay is standard was not sourced here; what the design adds stands without the word.
+
+**Replaced by:** [`C-EA-X6-MANIP`](CLAIMS.md#C-EA-X6-MANIP) — each opens what it rests on.
+
+<a id="C-EA-OLD-X6-NOTE"></a>
+### The bottle experiment has a century of methodological pedigree.
+
+`C-EA-OLD-X6-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X6-NOTE">A bottle experiment with a century of methodological pedigree. Silicate is already in the ODA record, so the observational half is free.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X6-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The century of pedigree had no source.
+
+**Replaced by:** [`C-EA-X6-NOTE`](CLAIMS.md#C-EA-X6-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X6-WHY"></a>
+### Silicon comes only from weathering, so nitrogen and phosphorus have risen and silicon has not.
+
+`C-EA-OLD-X6-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X6-WHY">Si comes only from weathering, so N and P have risen and Si has not. If Si limits, the community shifts away from diatoms toward the flagellates and gel-formers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X6-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** It stated the register's hypothesis as a fact.
+
+**Replaced by:** [`C-EA-X6-WHY`](CLAIMS.md#C-EA-X6-WHY) — each opens what it rests on.
+
+<a id="C-EA-OLD-X7-CTRL"></a>
+### Wind destroys the surface film.
+
+`C-EA-OLD-X7-CTRL` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X7-CTRL">Paired bulk-water samples from the same station and moment, so every result is an enrichment factor rather than a concentration. Sampled across wind speeds, because wind destroys the film.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X7-CTRL "What this claim rests on")</sup>
+
+**Why it was retired:** That wind destroys the film is the hypothesis's claim, stated as fact.
+
+**Replaced by:** [`C-EA-X7-CTRL`](CLAIMS.md#C-EA-X7-CTRL) — each opens what it rests on.
+
+<a id="C-EA-OLD-X7-MANIP"></a>
+### The microlayer measurement would be the first of its kind here.
+
+`C-EA-OLD-X7-MANIP` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X7-MANIP">Nothing. This is a measurement, not a manipulation - but it is the first one of its kind here, and it is a glass plate and a squeegee.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X7-MANIP "What this claim rests on")</sup>
+
+**Why it was retired:** 'The first one of its kind here' is an absence known only over the sources searched.
+
+**Replaced by:** [`C-EA-X7-MANIP`](CLAIMS.md#C-EA-X7-MANIP) — each opens what it rests on.
+
+<a id="C-EA-OLD-X7-NOTE"></a>
+### Glass-plate sampling costs almost nothing, has never been done here, and the public reports the phenomenon constantly.
+
+`C-EA-OLD-X7-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X7-NOTE">Glass-plate microlayer sampling is a 1970s technique costing almost nothing. That it has never been done here, for a phenomenon the public reports constantly, is the finding.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X7-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Costing almost nothing' had no price, 'never done here' is known only over the sources searched, and 'the public reports constantly' had no source.
+
+**Replaced by:** [`C-EA-X7-NOTE`](CLAIMS.md#C-EA-X7-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X7-WHY"></a>
+### The microlayer concentrates surfactants and lipids by orders of magnitude, and Denmark has never sampled it.
+
+`C-EA-OLD-X7-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X7-WHY">The greasiness people report after swimming is a property of the sea-surface microlayer, which concentrates surfactants and lipids by orders of magnitude over the bulk water. Denmark has never sampled it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X7-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** The mechanism was the register's hypothesis stated as fact, its magnitude taken from it unsourced, and 'never sampled' is known only over the sources searched.
+
+**Replaced by:** [`C-EA-X7-WHY`](CLAIMS.md#C-EA-X7-WHY), [`C-EA-X7-NONE`](CLAIMS.md#C-EA-X7-NONE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X8-NOTE"></a>
+### It has the highest ratio of consequence to cost in the register.
+
+`C-EA-OLD-X8-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X8-NOTE">No fieldwork and no permission required. The data is downloaded. This is the highest ratio of consequence to cost in the register.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X8-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The highest ratio of consequence to cost was a ranking with no measure behind it.
+
+**Replaced by:** [`C-EA-X8-NOTE`](CLAIMS.md#C-EA-X8-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X8-WHY"></a>
+### No published analysis uses the record's supplier, gear, sonde, instruction and correction columns.
+
+`C-EA-OLD-X8-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X8-WHY">The raw record carries the supplier, the sampling gear, the sonde, the technical instruction, and both the original and corrected result with the factor applied. No published analysis uses them.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X8-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** 'No published analysis uses them' is an absence over the literature that nobody searched.
+
+**Replaced by:** [`C-EA-X8-WHY`](CLAIMS.md#C-EA-X8-WHY), [`C-EA-X8-GEAR`](CLAIMS.md#C-EA-X8-GEAR) — each opens what it rests on.
+
+<a id="C-EA-OLD-X9-NOTE"></a>
+### Per-event overflow impact is the single largest measurement gap in Danish coastal water, closed by hardware costing less than a laptop.
+
+`C-EA-OLD-X9-NOTE` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X9-NOTE">Two loggers and a season. The single largest measurement gap in Danish coastal water is per-event overflow impact, and it is closed by hardware costing less than a laptop.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X9-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** 'The single largest measurement gap' was a ranking with no measure, and no price was recorded for the hardware.
+
+**Replaced by:** [`C-EA-X9-NOTE`](CLAIMS.md#C-EA-X9-NOTE) — each opens what it rests on.
+
+<a id="C-EA-OLD-X9-WHY"></a>
+### There is no per-event record of what the outfalls discharge, and monthly sampling cannot see a short event.
+
+`C-EA-OLD-X9-WHY` · retired 2026-09-11 from [EXPERIMENTS.md](EXPERIMENTS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-EA-OLD-X9-WHY">rain-conditioned outfalls and no per-event record of what they discharge or what follows. Monthly sampling cannot see a six-hour event.</span><sup class="claim-mark">[†](ARCHIVE.md#C-EA-OLD-X9-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** A per-event record exists for one small utility and the layers carry a yearly count of overflows for part of the combined system; that monthly sampling misses short events is DCE's own caveat, now cited.
+
+**Replaced by:** [`C-EA-X9-WHY`](CLAIMS.md#C-EA-X9-WHY), [`C-EA-X9-U2`](CLAIMS.md#C-EA-X9-U2) — each opens what it rests on.
+
+## EXPOSURE.md
+
+<a id="C-LE-X-OLD-ANSWERS"></a>
+### The page answers the question the rest of the site keeps raising.
+
+`C-LE-X-OLD-ANSWERS` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-ANSWERS">because it answers the question the rest of the site keeps raising and cannot settle: what would it take for a harm nobody is measuring to become visible at all. That is the same question as `X19` and `X20` in EXPERIMENTS.md, asked at a different scale.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-ANSWERS "What this claim rests on")</sup>
+
+**Why it was retired:** The page is an outline and answers nothing; it asks the question.
+
+**Replaced by:** [`C-LE-X-BESIDE`](CLAIMS.md#C-LE-X-BESIDE) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-ARCHIVE"></a>
+### The litigation's discovery documents were donated to UCSF, free, searchable and in two collections spanning the period, while the video archive is not public and stays under copyright for decades.
+
+`C-LE-X-OLD-ARCHIVE` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-ARCHIVE">discovery documents were donated to UCSF's Industry Documents Library — free, fully searchable, two PFAS collections spanning 1961–2006, including the [39](SOURCES.md#F-0c082ebf04) documents used in *The Devil We Know*, alongside the tobacco and opioid archives. The document archive is public. The video archive is not, and remains under copyright into the</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-ARCHIVE "What this claim rests on")</sup>
+
+**Why it was retired:** The film's producers donated the documents; one of the library's two collections comes from the litigation and spans those years; 'free, fully searchable' was not found; and nothing was found on who holds the video or its copyright.
+
+**Replaced by:** [`C-LE-X-PAPER`](CLAIMS.md#C-LE-X-PAPER), [`C-LE-X-VIDEO`](CLAIMS.md#C-LE-X-VIDEO) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-EVERYTHING"></a>
+### Everything else on the site works on Danish coastal water.
+
+`C-LE-X-OLD-EVERYTHING` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-EVERYTHING">Everything else on this site works on Danish coastal water and reports what its data supports.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-EVERYTHING "What this claim rests on")</sup>
+
+**Why it was retired:** Other pages of the site are not about coastal water, among them the argument for a levy on dispersing products.
+
+**Replaced by:** [`C-LE-X-OTHERS`](CLAIMS.md#C-LE-X-OTHERS) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-HANDWRITTEN"></a>
+### The page is hand-written, extracted from an item of the open problems, and nothing in it has been verified.
+
+`C-LE-X-OLD-HANDWRITTEN` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-HANDWRITTEN">Hand-written. Extracted from `OPEN_PROBLEMS.md` item 9, which now points here. Nothing in this page has been verified beyond what that item already stated, and it should be read as a project outline rather than as findings.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-HANDWRITTEN "What this claim rests on")</sup>
+
+**Why it was retired:** The page is generated; where it came from is this project's history, kept here; and each statement now carries what it rests on.
+
+**Replaced by:** [`C-LE-X-FOOTER`](CLAIMS.md#C-LE-X-FOOTER) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-HERD"></a>
+### A farmer filmed his own herd over years, with a stated count of dead animals and their injuries, and made the record himself because no official programme covered it.
+
+`C-LE-X-OLD-HERD` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-HERD">filmed his own herd over years: more than [150](SOURCES.md#F-3262de82ab) animals dead one at a time, blackened teeth, tumours, deformities, calves born with white blind eyes, a creek running with foam and a discharge pipe from a DuPont landfill. He made that record himself because no official programme covered what was happening to him.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-HERD "What this claim rests on")</sup>
+
+**Why it was retired:** The count of dead animals differs between the sources found and none was recorded here; the injuries listed had no source recorded; why the farmer made the record is in no source found. The page now names no private individual.
+
+**Replaced by:** [`C-LE-X-PKB`](CLAIMS.md#C-LE-X-PKB) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-KNOWN"></a>
+### In the known instances of a whole-organism record, it was made by the affected party, not an institution.
+
+`C-LE-X-OLD-KNOWN` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-KNOWN">In the known instances it was the affected party, not an institution.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-KNOWN "What this claim rests on")</sup>
+
+**Why it was retired:** One instance is named on the page.
+
+**Replaced by:** [`C-LE-X-SCOPE-3`](CLAIMS.md#C-LE-X-SCOPE-3) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-KORSOR"></a>
+### Fødevarestyrelsen found PFOS in calf meat, analysed a number of samples and offered residents a health examination; nothing published records the animals, and the exposure was never documented as an effect.
+
+`C-LE-X-OLD-KORSOR` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-KORSOR">Fødevarestyrelsen found PFOS in calf meat at [156](SOURCES.md#F-6fe9c3beb9), [189](SOURCES.md#F-a8e57c2f18) and [230](SOURCES.md#F-c078133e41) ng/g, analysed [27](SOURCES.md#F-840cd08efc) samples across beef, fish, fruit, berries, vegetables and honey, and offered [179](SOURCES.md#F-61fc2a6bea) residents a health examination. Every one of those is a measurement of a *concentration* — in the food, and then in the people. Nothing published records what the animals looked like, whether they were examined beyond a meat assay, or what symptoms if any they showed. The exposure was documented as a number in the food chain and never as an effect in an organism.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-KORSOR "What this claim rests on")</sup>
+
+**Why it was retired:** No source found says Fødevarestyrelsen offered the examination; its final report lists the three values under beef cuts; and 'nothing published' and 'never' are wider than what was searched.
+
+**Replaced by:** [`C-LE-X-KOR-MEAT`](CLAIMS.md#C-LE-X-KOR-MEAT), [`C-LE-X-KOR-27`](CLAIMS.md#C-LE-X-KOR-27), [`C-LE-X-KOR-179`](CLAIMS.md#C-LE-X-KOR-179), [`C-LE-X-KOR-NOTHING`](CLAIMS.md#C-LE-X-KOR-NOTHING) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-LICENSED"></a>
+### Both films licensed the footage, so a rights holder exists and has granted permission before.
+
+`C-LE-X-OLD-LICENSED` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-LICENSED">Both films licensed the footage, so a rights holder exists and has granted permission before.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-LICENSED "What this claim rests on")</sup>
+
+**Why it was retired:** No source was found saying either film licensed the footage, or from whom.
+
+**Replaced by:** [`C-LE-X-SETTLE-1`](CLAIMS.md#C-LE-X-SETTLE-1) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-LOG"></a>
+### The nearest thing here is a field logger recording shore observations, at approximately none of the required scale.
+
+`C-LE-X-OLD-LOG` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-LOG">The nearest thing here is `viz/log.html`, an offline field logger that records a shore observation in the flood model's own vocabulary — the right shape, at approximately none of the required scale.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-LOG "What this claim rests on")</sup>
+
+**Why it was retired:** The logger records rain and flood observations in the flood model's depth bands, not shore observations, and 'approximately none of the required scale' was a quantity nobody set.
+
+**Replaced by:** [`C-LE-X-LOG`](CLAIMS.md#C-LE-X-LOG) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-MONITORING"></a>
+### Danish monitoring produces concentrations, not images of consequence.
+
+`C-LE-X-OLD-MONITORING` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-MONITORING">Danish monitoring produces concentrations. It does not produce images of consequence, and the two are not substitutes.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-MONITORING "What this claim rests on")</sup>
+
+**Why it was retired:** It was said of all Danish monitoring; what was examined is the monitoring this project has profiled.
+
+**Replaced by:** [`C-LE-X-CONC`](CLAIMS.md#C-LE-X-CONC) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-MOVES"></a>
+### Whole-organism evidence is the form that moves anything, and it is entirely absent from the Danish record.
+
+`C-LE-X-OLD-MOVES` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-MOVES">It is also the form of evidence that moves anything. And it is entirely absent from the Danish record — which is this project's recurring finding arriving one layer further out: the thing that is easy to count gets counted, and the thing that would show what it means does not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-MOVES "What this claim rests on")</sup>
+
+**Why it was retired:** 'The form that moves anything' was not argued, and 'entirely absent from the Danish record' is wider than the sources this project has profiled.
+
+**Replaced by:** [`C-LE-X-WHY-ABSENT`](CLAIMS.md#C-LE-X-WHY-ABSENT) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-NOTDANISH"></a>
+### The subject is not Danish and mostly cannot be: the cases are elsewhere because the exposure had to be extreme and unregulated before anyone recorded it.
+
+`C-LE-X-OLD-NOTDANISH` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-NOTDANISH">It is not Danish, and mostly cannot be. The cases that carry the evidence are elsewhere, and the reason they are elsewhere is itself part of the finding: the exposure had to be extreme and unregulated before anyone was moved to record it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-NOTDANISH "What this claim rests on")</sup>
+
+**Why it was retired:** One case is named on the page; 'mostly cannot be' and the reason given generalise from it.
+
+**Replaced by:** [`C-LE-X-NOTDANISH`](CLAIMS.md#C-LE-X-NOTDANISH) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-NOTEXIST"></a>
+### The Danish equivalent does not exist: no open register of fish kills, no photographic record of a fouled shore, no examination beyond a residue assay.
+
+`C-LE-X-OLD-NOTEXIST` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-NOTEXIST">The Danish equivalent, which does not exist. No open register of fish kills, no photographic record of a fouled shore, no examination of an affected animal beyond a residue assay.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-NOTEXIST "What this claim rests on")</sup>
+
+**Why it was retired:** An absence stated for the whole country; what was searched is narrower.
+
+**Replaced by:** [`C-LE-X-SCOPE-4`](CLAIMS.md#C-LE-X-SCOPE-4) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-REASON"></a>
+### The Parkersburg case, dated, is the reason anyone outside toxicology has heard of PFAS.
+
+`C-LE-X-OLD-REASON` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-REASON">Parkersburg, 1998–2004, is the counter-case, and it is the reason anyone outside a toxicology department has heard of PFAS at all.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-REASON "What this claim rests on")</sup>
+
+**Why it was retired:** Nothing was found to show that the case is why PFAS is known outside toxicology, and the dates had no source recorded.
+
+**Replaced by:** [`C-LE-X-PKB`](CLAIMS.md#C-LE-X-PKB), [`C-LE-X-PKB-COUNTER`](CLAIMS.md#C-LE-X-PKB-COUNTER) — each opens what it rests on.
+
+<a id="C-LE-X-OLD-ROUTINE"></a>
+### Discovery documents are routinely donated after litigation, film and photographs almost never, for legal rather than scientific reasons.
+
+`C-LE-X-OLD-ROUTINE` · retired 2026-09-11 from [EXPOSURE.md](EXPOSURE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-X-OLD-ROUTINE">discovery documents are routinely donated to public libraries after litigation; film and photographs almost never are, and the reasons are legal rather than scientific.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-X-OLD-ROUTINE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Routinely' and 'almost never' were not counted, and the reasons were not established.
+
+**Replaced by:** [`C-LE-X-SCOPE-2`](CLAIMS.md#C-LE-X-SCOPE-2) — each opens what it rests on.
+
+## EXTERNALITY.md
+
+<a id="C-LE-E-OLD-ALLTHREE"></a>
+### None of the laundering routes is exotic, and deposit systems already deal with all three.
+
+`C-LE-E-OLD-ALLTHREE` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-ALLTHREE">none of them is exotic — deposit systems already deal with all three.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-ALLTHREE "What this claim rests on")</sup>
+
+**Why it was retired:** The list names four routes, and what deposit systems do about resale or lost and stolen items was not found.
+
+**Replaced by:** [`C-LE-E-LAUNDER`](CLAIMS.md#C-LE-E-LAUNDER), [`C-LE-E-EXPORT`](CLAIMS.md#C-LE-E-EXPORT) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-CARCASS"></a>
+### The tyre carcass comes back anyway.
+
+`C-LE-E-OLD-CARCASS` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-CARCASS">The carcass comes back anyway; the wear left on the road while driving is the externality, and no return obligation reaches it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-CARCASS "What this claim rests on")</sup>
+
+**Why it was retired:** Whether worn tyres already come back was not established here.
+
+**Replaced by:** [`C-LE-E-TYRES`](CLAIMS.md#C-LE-E-TYRES) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-CENTURIES"></a>
+### Leasing's title retention, liability allocation, condition on return and remedies are all several centuries old and thoroughly litigated.
+
+`C-LE-E-OLD-CENTURIES` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-CENTURIES">remedies that are all several centuries old and thoroughly litigated.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-CENTURIES "What this claim rests on")</sup>
+
+**Why it was retired:** 'Several centuries old and thoroughly litigated' had no source; the lease's defining feature, title kept by the lessor, has one.
+
+**Replaced by:** [`C-LE-E-LEASE`](CLAIMS.md#C-LE-E-LEASE) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-EVERY"></a>
+### Every other instrument in this area asks a regulator to prove a diffuse harm.
+
+`C-LE-E-OLD-EVERY` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-EVERY">Every other instrument in this area asks a regulator to prove a harm that is diffuse by construction.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-EVERY "What this claim rests on")</sup>
+
+**Why it was retired:** Deposit systems and producer responsibility, which the page itself cites, ask nobody to prove a harm.
+
+**Replaced by:** [`C-LE-E-BAN`](CLAIMS.md#C-LE-E-BAN) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-IMPORTS"></a>
+### A levy is border-adjustable in a way a product ban is not, and the substances of concern mostly arrive rather than originate.
+
+`C-LE-E-OLD-IMPORTS` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-IMPORTS">A levy is border-adjustable in a way a product ban is not: an importer posts the liability or does not place the goods. That matters because the substances this project cares about mostly arrive rather than originate.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-IMPORTS "What this claim rests on")</sup>
+
+**Why it was retired:** A product ban applies to imported goods too, so the contrast did not hold, and 'mostly arrive' had no source.
+
+**Replaced by:** [`C-LE-E-IMPORTS`](CLAIMS.md#C-LE-E-IMPORTS) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-LABEL"></a>
+### A fiscal declaration is auditable, dated and punishable in a way a 'PFAS-free' label currently is not.
+
+`C-LE-E-OLD-LABEL` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-LABEL">which is auditable, dated, and punishable in a way that "PFAS-free" on a label currently is not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-LABEL "What this claim rests on")</sup>
+
+**Why it was retired:** Whether a 'PFAS-free' label can be audited or sanctioned today was not examined, so the comparison had nothing behind it.
+
+**Replaced by:** [`C-LE-E-DECLARE`](CLAIMS.md#C-LE-E-DECLARE) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-MANDATE"></a>
+### No rule requires return-bearing title for a kind of chemistry, equipment leasing is a mature industry, and none of the existing instruments is keyed to dispersal.
+
+`C-LE-E-OLD-MANDATE` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-MANDATE">What does not exist is a rule that says *this kind of chemistry may only be placed on the market under a return-bearing title*. Denmark already runs a deposit system for containers, the EU already runs producer responsibility for electronics and batteries, and equipment leasing is a mature industry. The gap is that none of them is keyed to what the substance does when it disperses.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-MANDATE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Does not exist' is wider than what was searched, and 'a mature industry' had nothing behind it.
+
+**Replaced by:** [`C-LE-E-MANDATE`](CLAIMS.md#C-LE-E-MANDATE) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-NOMINAL"></a>
+### Producer responsibility is priced nominally rather than at the externality.
+
+`C-LE-E-OLD-NOMINAL` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-NOMINAL">the mechanism exists and is priced nominally rather than at externality. This is the precedent, not the frontier</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-NOMINAL "What this claim rests on")</sup>
+
+**Why it was retired:** What producers pay was not examined, so 'priced nominally' had nothing behind it; what the law requires them to finance is collection and treatment.
+
+**Replaced by:** [`C-LE-E-BATT-EFFECT`](CLAIMS.md#C-LE-E-BATT-EFFECT) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-PRICED"></a>
+### Rolling resistance and wet grip are already priced attributes of a tyre.
+
+`C-LE-E-OLD-PRICED` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-PRICED">abrasion becomes a priced attribute, the way rolling resistance and wet grip already are.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-PRICED "What this claim rests on")</sup>
+
+**Why it was retired:** Rolling resistance and wet grip are graded on the EU label, not priced; the regulation also provides for abrasion to join them.
+
+**Replaced by:** [`C-LE-E-TYRELABEL`](CLAIMS.md#C-LE-E-TYRELABEL) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-QUARTERS"></a>
+### Insurance is a private regulator that moves in quarters rather than the years a REACH restriction takes.
+
+`C-LE-E-OLD-QUARTERS` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-QUARTERS">That is a private regulator that moves in quarters rather than in the years a REACH restriction takes</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-QUARTERS "What this claim rests on")</sup>
+
+**Why it was retired:** How often insurers reprice was not established, and how long a REACH restriction takes was not sourced.
+
+**Replaced by:** [`C-LE-E-INSURANCE`](CLAIMS.md#C-LE-E-INSURANCE), [`C-LE-E-REACHYEARS`](CLAIMS.md#C-LE-E-REACHYEARS) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-TABLE"></a>
+### A table of where the page connects, including an ecolabel argument and difference between places as the only thing that makes any of this identifiable.
+
+`C-LE-E-OLD-TABLE` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-TABLE">| This page says | Which answers | |---|---| | A levy is a national fiscal instrument | the REACH row: a product ban is harmonised, so no level below the EU can start one | | Unmanaged dispersal costs more than managed destruction, on the day | the industry question: destruction has liability demand and no market demand | | The levy class is keyed to the evolutionary prior | section 5: the same taxonomy already decides the source-control instrument and the disposal route | | Rates and return infrastructure differ by place, on dates | the plurality argument: difference between places is the only thing that makes any of this identifiable | | Declarations become fiscal rather than promotional | the ecolabel argument: a claim nobody audits is not evidence</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** The ecolabel argument it pointed to is no longer on the programme page, and 'the only thing' said more than the plurality argument does.
+
+**Replaced by:** [`C-LE-E-W1`](CLAIMS.md#C-LE-E-W1), [`C-LE-E-W2`](CLAIMS.md#C-LE-E-W2), [`C-LE-E-W3`](CLAIMS.md#C-LE-E-W3), [`C-LE-E-W4`](CLAIMS.md#C-LE-E-W4) — each opens what it rests on.
+
+<a id="C-LE-E-OLD-TURF"></a>
+### Artificial turf pitches carry a stated tonnage of rubber infill each, migrating continuously, with one municipal buyer.
+
+`C-LE-E-OLD-TURF` · retired 2026-09-11 from [EXTERNALITY.md](EXTERNALITY.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-E-OLD-TURF">of rubber infill per pitch, migrating continuously; one municipal buyer, one contract, one supplier</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-E-OLD-TURF "What this claim rests on")</sup>
+
+**Why it was retired:** The tonnage was carried as a quotation of the page's own earlier text; Miljøstyrelsen's report gives a range for an ordinary Danish pitch and says part of the infill leaves it; 'municipal' had no source.
+
+**Replaced by:** [`C-LE-E-TURF`](CLAIMS.md#C-LE-E-TURF), [`C-LE-E-TURF-BUYER`](CLAIMS.md#C-LE-E-TURF-BUYER) — each opens what it rests on.
+
+## FLOOD_GAP.md
+
+<a id="C-FR-OLD-FG-AIMED"></a>
+### The plan is aimed correctly and is largely unbuilt, and the gap between the columns is the backlog.
+
+`C-FR-OLD-FG-AIMED` · retired 2026-09-11 from [FLOOD_GAP.md](FLOOD_GAP.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-FG-AIMED">The plan is aimed correctly and is largely unbuilt: [85](SOURCES.md#F-32c865dfd0)% of the modelled flooding has something planned within [200](SOURCES.md#F-f6cee720d1) m of it, and [44](SOURCES.md#F-ddae4df9f8)% has anything that has actually broken ground. The gap between those two columns is the backlog.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-FG-AIMED "What this claim rests on")</sup>
+
+**Why it was retired:** Nearness to a work is not aim: nothing on the page tests whether a work would take the water modelled near it. 'Broken ground' was more than the layers say - the second column counts projects the city lists as started or completed, and a started project need not have broken ground - and the difference between two nearness shares is not a backlog of unbuilt work.
+
+**Replaced by:** [`C-FR-FG-NEAR`](CLAIMS.md#C-FR-FG-NEAR) — each opens what it rests on.
+
+<a id="C-FR-OLD-FG-HEAD"></a>
+### The sheets also paint an area of depth over lakes and the harbour.
+
+`C-FR-OLD-FG-HEAD` · retired 2026-09-11 from [FLOOD_GAP.md](FLOOD_GAP.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-FG-HEAD">the sheets also paint [1.31](SOURCES.md#F-d6d7229a1d) km² over lakes and the harbour, excluded here</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-FG-HEAD "What this claim rests on")</sup>
+
+**Why it was retired:** What was measured is painted depth falling on the mapped water polygons, and part of it was placement error: the area fell when the sheets were registered against each other.
+
+**Replaced by:** [`C-FR-FG-AREA`](CLAIMS.md#C-FR-FG-AREA), [`C-FR-FG-PAINT`](CLAIMS.md#C-FR-FG-PAINT) — each opens what it rests on.
+
+<a id="C-FR-OLD-FG-INTRO"></a>
+### The page compared the city's flood model with the cloudburst works in the Spildevandsplan.
+
+`C-FR-OLD-FG-INTRO` · retired 2026-09-11 from [FLOOD_GAP.md](FLOOD_GAP.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-FG-INTRO">Compares the 2012 flood model - recovered from the PDFs it was published in - against the cloudburst works in the Spildevandsplan.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-FG-INTRO "What this claim rests on")</sup>
+
+**Why it was retired:** The works compared are the city's cloudburst-plan map layers, titled Skybrudsplan in the fetch record, which join the Spildevandsplan's project pages only through a reconstructed id; and the sheets are the city's calculated scenarios, made by a model nothing held names.
+
+**Replaced by:** [`C-FR-FG-WHAT`](CLAIMS.md#C-FR-FG-WHAT) — each opens what it rests on.
+
+<a id="C-FR-OLD-FG-PAINT"></a>
+### The sheets paint depth over lakes and the harbour as well as over land.
+
+`C-FR-OLD-FG-PAINT` · retired 2026-09-11 from [FLOOD_GAP.md](FLOOD_GAP.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-FG-PAINT">The sheets paint depth over lakes and the harbour as well as over land. Those cells are excluded here - water standing on water is not something a cloudburst basin addresses - and reported separately above.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-FG-PAINT "What this claim rests on")</sup>
+
+**Why it was retired:** Painted depth on mapped water was taken to be the city's paint; part of it was placement error, since it fell when the sheets were registered against each other.
+
+**Replaced by:** [`C-FR-FG-PAINT`](CLAIMS.md#C-FR-FG-PAINT) — each opens what it rests on.
+
+<a id="C-FR-OLD-FG-QA"></a>
+### If the sheets were placed wrongly, flooding would land in the harbour at open water's share, and the check fails for some bands and passes for the rest.
+
+`C-FR-OLD-FG-QA` · retired 2026-09-11 from [FLOOD_GAP.md](FLOOD_GAP.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-FG-QA">If the sheets were placed wrongly, flooding would land in the harbour at about that rate. It lands there less often than that in every band except [0.2](SOURCES.md#F-dd1dfe339d)–[0.5](SOURCES.md#F-bd06c74089) m, [0.5](SOURCES.md#F-bd06c74089)–[1](SOURCES.md#F-90083086e9) m and over [2](SOURCES.md#F-dd6054c564) m: | Band | Share falling in open water | |---|---:| | [0.05](SOURCES.md#F-f8cdb80fbf)–[0.1](SOURCES.md#F-b3138fdb42) m | [10.7](SOURCES.md#F-4805cbc0b1)% | | [0.1](SOURCES.md#F-b3138fdb42)–[0.2](SOURCES.md#F-dd1dfe339d) m | [12.8](SOURCES.md#F-eae7cc9549)% | | [0.2](SOURCES.md#F-dd1dfe339d)–[0.5](SOURCES.md#F-bd06c74089) m | [25.3](SOURCES.md#F-a2f676f15e)% | | [0.5](SOURCES.md#F-bd06c74089)–[1](SOURCES.md#F-90083086e9) m | [17.6](SOURCES.md#F-61f9227765)% | | [1](SOURCES.md#F-90083086e9)–[2](SOURCES.md#F-dd6054c564) m | [7.6](SOURCES.md#F-c39f61ace0)% | | over [2](SOURCES.md#F-dd6054c564) m | [24.1](SOURCES.md#F-52479bb057)% | FAIL - in [0.2](SOURCES.md#F-dd1dfe339d)–[0.5](SOURCES.md#F-bd06c74089) m, [0.5](SOURCES.md#F-bd06c74089)–[1](SOURCES.md#F-90083086e9) m and over [2](SOURCES.md#F-dd6054c564) m, modelled flooding lands in open water at least as often as open water's own share of the area. For those depths this check gives no evidence that the sheets are placed correctly; the other bands still avoid water.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-FG-QA "What this claim rests on")</sup>
+
+**Why it was retired:** Painted depth on open water is partly placement error and perhaps partly the city's own paint on lakes and the harbour, so a band's share in water tests neither: the check's premise, that correctly placed flooding avoids water, does not hold for depth painted on water.
+
+**Replaced by:** [`C-FR-FG-WATERSHARE`](CLAIMS.md#C-FR-FG-WATERSHARE), [`C-FR-FG-NOTEST`](CLAIMS.md#C-FR-FG-NOTEST) — each opens what it rests on.
+
+<a id="C-FR-OLD-FG-SEWAGE"></a>
+### Standing water over combined sewer is mixed with sewage, and most of the consequence is the plumbing of an inner city built that way almost everywhere.
+
+`C-FR-OLD-FG-SEWAGE` · retired 2026-09-11 from [FLOOD_GAP.md](FLOOD_GAP.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-FG-SEWAGE">sits over combined sewer, where stormwater and sewage share one pipe - so that standing water is mixed with sewage. But [81](SOURCES.md#F-0d0f882cf7)% of the mapped area is combined sewer too, a ratio of [1.15](SOURCES.md#F-2b55ec1673): flooding lands over combined sewer a little more often than its share of the area, and most of the consequence is the plumbing - the inner city is built that way almost everywhere.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-FG-SEWAGE "What this claim rests on")</sup>
+
+**Why it was retired:** That standing water over a combined sewer is mixed with sewage was not shown: the sheets do not say whether the modelled water came from the pipes or ran off the surface. 'Most of the consequence is the plumbing' and 'almost everywhere' had no measure behind them, and the study area is not the inner city alone.
+
+**Replaced by:** [`C-FR-FG-COMBINED`](CLAIMS.md#C-FR-FG-COMBINED) — each opens what it rests on.
+
+<a id="C-FR-OLD-FG-SNAP"></a>
+### The flood model is a calculation of an older scenario, and the plan is from the year of the Spildevandsplan with later addenda.
+
+`C-FR-OLD-FG-SNAP` · retired 2026-09-11 from [FLOOD_GAP.md](FLOOD_GAP.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-FG-SNAP">The flood model is a 2012 calculation of a 2010 scenario; the plan is from 2018 with later addenda, so this compares two snapshots taken years apart.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-FG-SNAP "What this claim rests on")</sup>
+
+**Why it was retired:** The works compared are the city's cloudburst layers as fetched, not the plan of that year, and no addenda were read; the sheets' dates are now cited from the sheets and the city's dataset record.
+
+**Replaced by:** [`C-FR-FG-SNAPSHOTS`](CLAIMS.md#C-FR-FG-SNAPSHOTS) — each opens what it rests on.
+
+## GRUNDLAGET.md
+
+<a id="C-GC-OLD-G-AVGQUOTE"></a>
+### DCE's reason for averaging, quoted.
+
+`C-GC-OLD-G-AVGQUOTE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-AVGQUOTE">Hvis det skulle sikres, at alle indikatorer opnåede deres miljømål skulle det maksimale indsatsbehov anvendes i stedet for et gennemsnit ... Ved at anvende et gennemsnit ... minimeres risikoen for overimplementering</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-AVGQUOTE "What this claim rests on")</sup>
+
+**Why it was retired:** The quotation's last words were not the report's: it says 'hvilket minimerer', not 'minimeres'.
+
+**Replaced by:** [`C-GC-G-AVERAGE-LEAD`](CLAIMS.md#C-GC-G-AVERAGE-LEAD), [`C-GC-G-AVERAGE-Q`](CLAIMS.md#C-GC-G-AVERAGE-Q) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-BESTVALID"></a>
+### Bottom-water oxygen is the best-validated ecological output in either document, for the quantity the project said had no model.
+
+`C-GC-OLD-G-BESTVALID` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-BESTVALID">Twelve stations for a model spanning Kattegat, the Belts and the western Baltic is thin. But bottom-water oxygen at R² [0.83](SOURCES.md#F-27ba397f37) is the best-validated ecological output in either document, and it is for exactly the quantity this project has been claiming has no model.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-BESTVALID "What this claim rests on")</sup>
+
+**Why it was retired:** 'The best-validated ecological output in either document' was not checked against DCE's table, whose R² values run higher, and the rest narrated other pages; what holds is that oxygen has the highest R² in DHI's validation of that model.
+
+**Replaced by:** [`C-GC-G-OXBEST`](CLAIMS.md#C-GC-G-OXBEST) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-CG-MORE"></a>
+### Nitrogen's effect is fitted in some water bodies, simulated in others more, with a consistent direction everywhere.
+
+`C-GC-OLD-G-CG-MORE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-CG-MORE">Nitrogen loading does affect summer chlorophyll and water clarity. Fitted in [22](SOURCES.md#F-a47438c98d) water bodies, simulated in [45](SOURCES.md#F-447c6f8642) more, direction consistent everywhere.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-CG-MORE "What this claim rests on")</sup>
+
+**Why it was retired:** The mechanistic water bodies are not all additional - some have both model types - and a consistent direction everywhere was not checked.
+
+**Replaced by:** [`C-GC-G-CG-CHL`](CLAIMS.md#C-GC-G-CG-CHL) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-CG-WHOLE"></a>
+### Reducing Danish nitrogen is nearly the whole story in closed fjords.
+
+`C-GC-OLD-G-CG-WHOLE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-CG-WHOLE">Reducing Danish nitrogen is nearly the whole story in closed fjords and nearly none of it in open water.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-CG-WHOLE "What this claim rests on")</sup>
+
+**Why it was retired:** DHI give the Danish effect in the closed Limfjorden water bodies as a range whose lower end is far from the whole; the graded shares themselves are kept.
+
+**Replaced by:** [`C-GC-G-CG-GRADED`](CLAIMS.md#C-GC-G-CG-GRADED) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-CHEAPEST"></a>
+### The cheapest measurements on the project's list would settle the arguments for less than a week of the policy.
+
+`C-GC-OLD-G-CHEAPEST` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-CHEAPEST">and that the four cheapest measurements on our list would settle several of these arguments for less than the cost of a week of the policy.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-CHEAPEST "What this claim rests on")</sup>
+
+**Why it was retired:** No cost on either side of the comparison had a source.
+
+**Replaced by:** [`C-GC-G-ASYM2`](CLAIMS.md#C-GC-G-ASYM2) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-CSO"></a>
+### The project has arithmetic suggesting the unmeasured routes are large for combined-sewer overflows.
+
+`C-GC-OLD-G-CSO` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-CSO">We have arithmetic suggesting it for combined sewer overflows and no measurement</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-CSO "What this claim rests on")</sup>
+
+**Why it was retired:** Which arithmetic was not named, and NITROGEN.md now says the project does not establish urban discharge as a large source.
+
+**Replaced by:** [`C-GC-G-US-ROUTES`](CLAIMS.md#C-GC-G-US-ROUTES) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-DEFERENCE"></a>
+### Endorsement is not evidence; the project once retracted, in deference, a claim that turned out true, and this correction is larger.
+
+`C-GC-OLD-G-DEFERENCE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-DEFERENCE">That rule cuts both ways and it has to. Two international expert panels endorsing something is not evidence about the something. Neither is a ministry-chaired taskforce criticising it. This project got that wrong once, in the direction of deference, and retracted a claim that turned out to be true. The correction below is in the other direction, and it is larger.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-DEFERENCE "What this claim rests on")</sup>
+
+**Why it was retired:** The retraction it points to withdrew the sentence that no coefficient links nitrogen to any ecological effect, which this page itself shows false, so 'a claim that turned out to be true' does not describe it; 'larger' was never measured, and the panels were counted without a source.
+
+**Replaced by:** [`C-GC-G-ENDORSE`](CLAIMS.md#C-GC-G-ENDORSE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-DHITABLE"></a>
+### A table of the DHI models: dimensions, state variables, time step, output interval and period.
+
+`C-GC-OLD-G-DHITABLE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-DHITABLE">| Dimensions | [3](SOURCES.md#F-5d5c1031d3) | | State variables | more than [50](SOURCES.md#F-9844ed31cb) primary, about half benthic | | Time step | a few minutes | | Output | every [24](SOURCES.md#F-406f858523) hours | | Period | 2002–2011; first five years spin-up;</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-DHITABLE "What this claim rests on")</sup>
+
+**Why it was retired:** The time step and the output interval had no source in the pinned report; the rest is kept.
+
+**Replaced by:** [`C-GC-G-SPEC`](CLAIMS.md#C-GC-G-SPEC) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-DOWNSTREAM"></a>
+### Everything downstream of the monitoring comes from NOVANA.
+
+`C-GC-OLD-G-DOWNSTREAM` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-DOWNSTREAM">Everything downstream comes from NOVANA, the national monitoring programme. The current programme, 2023–[27](SOURCES.md#F-94c2cf87e1), is the one to read, and the numbers in it are specific.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-DOWNSTREAM "What this claim rests on")</sup>
+
+**Why it was retired:** DHI's inputs also come from HELCOM, SMHI and the national load inventories; what the documents say is that DCE's indicators are NOVANA data and that DHI used NOVANA data to calibrate and validate.
+
+**Replaced by:** [`C-GC-G-NOVANA`](CLAIMS.md#C-GC-G-NOVANA) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-DRAFT"></a>
+### A banner calling the page an unpublished draft whose corrections had to be made before anything went on the site.
+
+`C-GC-OLD-G-DRAFT` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-DRAFT">DRAFT — FOR REVIEW. NOT PUBLISHED. > Written by reading the primary method documents, not summaries of them. It contains four corrections to claims this project has already published, and those corrections have to be made before anything here goes on the site. Structured evidence with verbatim sources and per-claim verification flags is in `data/manual/science_chain.json`.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-DRAFT "What this claim rests on")</sup>
+
+**Why it was retired:** The page is built and published with the site, and the corrections it said had to come first were made or superseded on the pages concerned, so neither half of the banner holds.
+
+**Replaced by:** [`C-GC-G-READ`](CLAIMS.md#C-GC-G-READ) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-ENSEMBLE"></a>
+### The ensemble method is the correct approach and this project's own principle, with a table of the ensemble water bodies.
+
+`C-GC-OLD-G-ENSEMBLE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-ENSEMBLE">The ensemble method — comparing the two model types where both exist — is the correct approach when there is no ground truth, and it is this project's own principle of independent checks with unrelated failure modes, applied by them. It runs on [11](SOURCES.md#F-9ee6117d83) of [119](SOURCES.md#F-fa1c90c638) water bodies: | Water body | Mechanistic | Statistical | |---|---:|---:| | Hjelm Bugt | [0](SOURCES.md#F-575ae80063)% | [18](SOURCES.md#F-84e7fd7053)% | | Roskilde Fjord, indre | [4](SOURCES.md#F-ac17b8800c)% | [11](SOURCES.md#F-9ee6117d83)% | | Århus Bugt | [7](SOURCES.md#F-f14c47a4ab)% | [2](SOURCES.md#F-587061c063)% | | Odense Fjord, ydre | [23](SOURCES.md#F-aef402f62b)% | [26](SOURCES.md#F-8ba0589774)% | | Storebælt NV | [34](SOURCES.md#F-96375e6b81)% | [44](SOURCES.md#F-5f1c56a67a)% | | Lillebælt syd | [36](SOURCES.md#F-bc534775c6)% | [32](SOURCES.md#F-a0fa67a795)% | | Limfjorden vest | [37](SOURCES.md#F-428a43f15f)% | [31](SOURCES.md#F-4cbd3ac8cf)% | | Åbenrå Fjord | [41](SOURCES.md#F-804bc387b3)% | [50](SOURCES.md#F-775ee1c205)% | | Skive og Lovns | [52](SOURCES.md#F-01da3ee8c4)% | [60](SOURCES.md#F-a4c9968d46)% | | Nordlige Lillebælt | [56](SOURCES.md#F-ced5a92bc0)% | [58](SOURCES.md#F-6b6249e30d)% | | Det Sydfynske Øhav</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-ENSEMBLE "What this claim rests on")</sup>
+
+**Why it was retired:** 'This project's own principle' was not shown and 'the correct approach' is DHI's own judgement; the table did not say what its values were and gave two water bodies names that are not the report's.
+
+**Replaced by:** [`C-GC-G-ENSEMBLE`](CLAIMS.md#C-GC-G-ENSEMBLE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-EQR"></a>
+### The chlorophyll target is the modelled reference times the intercalibrated EQR.
+
+`C-GC-OLD-G-EQR` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-EQR">The chlorophyll target is the reference concentration from ensemble modelling times the EU-intercalibrated EQR of [0.6](SOURCES.md#F-0ed4e53d9d). In the April 2015 method document, the supporting reference for it is:</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-EQR "What this claim rests on")</sup>
+
+**Why it was retired:** DCE define the EQR as the ratio of the reference to the good/moderate boundary, so the boundary is the reference divided by the ratio, not multiplied by it.
+
+**Replaced by:** [`C-GC-G-EQR`](CLAIMS.md#C-GC-G-EQR) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-EXAMPLES"></a>
+### Named station models with their R² values, and models below the threshold marked yellow.
+
+`C-GC-OLD-G-EXAMPLES` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-EXAMPLES">The good ones are genuinely good: Ringkøbing TN R² [0.96](SOURCES.md#F-224d7438b7), Vejle TP [0.97](SOURCES.md#F-8c4c39ce8e), Riisgårde TP [0.92](SOURCES.md#F-387593b7d6), Randers TN [0.86](SOURCES.md#F-684f47e040). The bad ones are genuinely bad: Ringkøbing TP R² [0.09](SOURCES.md#F-145b6ee95b), Nissum TP [0.18](SOURCES.md#F-12569108b1), Odense chlorophyll [0.20](SOURCES.md#F-5d29a5e7bc), Thisted chlorophyll [45.3](SOURCES.md#F-5a08f4e860)% deviation. Models below the threshold are carried forward, marked yellow rather than green — *"man skal være varsom ved anvendelse af modellen</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-EXAMPLES "What this claim rests on")</sup>
+
+**Why it was retired:** Each value was matched to its station by the PDF's layout, which the pinned text does not keep, and which models DCE coloured yellow is in colours the text does not hold; the range is computed instead, and DCE's colour scheme stated as theirs.
+
+**Replaced by:** [`C-GC-G-RANGE`](CLAIMS.md#C-GC-G-RANGE), [`C-GC-G-COLOURS`](CLAIMS.md#C-GC-G-COLOURS) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-F1"></a>
+### A published sentence on LANDBRUG.md is false and an internal inconsistency to fix at once.
+
+`C-GC-OLD-G-F1` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-F1">There is no coefficient anywhere between nitrogen and any outcome." *(LANDBRUG.md, the English summary at the foot of the page.)* Contradicted by the correction banner at the top of the same page, and by [79](SOURCES.md#F-f9e90dcd74) fitted models and a validated 3D ecosystem model. This is a live internal inconsistency on a published page. Fix immediately.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-F1 "What this claim rests on")</sup>
+
+**Why it was retired:** Its remedy was made: LANDBRUG.md's English summary was corrected in commit `6078057`, so 'a live internal inconsistency on a published page' no longer holds; the finding is kept, with its count now computed.
+
+**Replaced by:** [`C-GC-G-F1`](CLAIMS.md#C-GC-G-F1) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-F2"></a>
+### The sentence that nitrogen to oxygen has no coefficient, published on three pages, is false, with what should replace it.
+
+`C-GC-OLD-G-F2` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-F2">no coefficient, NOT COMPUTED. No ventilation term, no state variable. A kilogram in February counts the same as a kilogram in July under a pycnocline." *(CAUSATION.md §2, NITROGEN.md §3, LANDBRUG.md §3.)* False. The mechanistic models are 3D, run at minute time steps on real meteorology, resolve stratification, carry oxygen at all depths year-round, include sediment oxygen demand, redox-dependent phosphate release, denitrification and ammonium efflux — and validate bottom-water oxygen at R² [0.83](SOURCES.md#F-685d1a0166). Even the statistical models carry water-column stability and temperature as candidate variables, and select them. What should replace it, and it is stronger: [1](SOURCES.md#F-6ddf83260d). In the statistical route, the oxygen requirement is a binary trigger plus a judged flat [25](SOURCES.md#F-d13ebafac3)%, with no dose-response between hypoxia severity and required reduction. DCE writes *"det vurderes"*. [2](SOURCES.md#F-4f66315ae9). In the mechanistic route, oxygen is simulated and well validated and is *excluded from the indicator set* — only summer chlorophyll and summer Kd produce a requirement — because only intercalibrated quality elements were in scope. [3](SOURCES.md#F-e158a7cde8). In the load accounting that produces the [69.6](SOURCES.md#F-11eef96580)%, there is indeed no potency term of any kind. The model that could compute this does compute it. The answer is excluded by the indicator set, not by the physics. That is a much better argument than the one we published.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-F2 "What this claim rests on")</sup>
+
+**Why it was retired:** It attributed the sentence to pages that have since been rewritten, said the models run at minute time steps, which the pinned report does not say, and set its conclusion against what the site once published; the finding and its three narrower points are kept.
+
+**Replaced by:** [`C-GC-G-F2`](CLAIMS.md#C-GC-G-F2), [`C-GC-G-F2-LEAD`](CLAIMS.md#C-GC-G-F2-LEAD), [`C-GC-G-F2-1`](CLAIMS.md#C-GC-G-F2-1), [`C-GC-G-F2-2`](CLAIMS.md#C-GC-G-F2-2), [`C-GC-G-F2-3`](CLAIMS.md#C-GC-G-F2-3), [`C-GC-G-F2-EXCLUDED`](CLAIMS.md#C-GC-G-F2-EXCLUDED) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-F3"></a>
+### The deposition sentence on CAUSATION.md is too broad and should be scoped.
+
+`C-GC-OLD-G-F3` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-F3">is absent from every published apportionment." *(CAUSATION.md §1.)* Too broad. Deposition is an explicit input to every mechanistic model and Gothenburg reductions are applied in every scenario run. Correct claim: it is absent from the source apportionment that produces the [69.6](SOURCES.md#F-5e0dc1d97f)%, which apportions the Danish land-based waterborne term only. Scope the sentence.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-F3 "What this claim rests on")</sup>
+
+**Why it was retired:** An instruction to another page, since carried out there, and 'every mechanistic model' and 'every scenario run' went beyond the report; the finding is kept in the report's terms.
+
+**Replaced by:** [`C-GC-G-F3`](CLAIMS.md#C-GC-G-F3) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-F4"></a>
+### The sediment sentence on two pages is false as a statement about the evidence base.
+
+`C-GC-OLD-G-F4` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-F4">Sediment regeneration is not a source at all in the accounting frame." *(CAUSATION.md §1, NITROGEN.md §1.)* False as a statement about the evidence base. The mechanistic sediment module carries organic C, N and P pools, mineralisation, burial, iron-bound phosphate, denitrification and ammonium efflux, with seasonal accumulation and summer release. Correct claim: it has no row in the *load accounting*; and what NOVANA measures is the pool, once a year, in January–February when the sediment is most oxidised. The second half is new and is a better version of the point.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-F4 "What this claim rests on")</sup>
+
+**Why it was retired:** It listed burial, which the pinned report does not name, said the pool is measured once a year, and called part of itself new; the finding is kept in the report's and the programme's terms.
+
+**Replaced by:** [`C-GC-G-F4`](CLAIMS.md#C-GC-G-F4) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-FOUR"></a>
+### A count of false claims this project had published.
+
+`C-GC-OLD-G-FOUR` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-FOUR">Four claims this project has published are false. They are listed in section 3 with what should replace them. Two of them are false in a way that makes the real argument *stronger*, which is the ordinary result of actually reading the source.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-FOUR "What this claim rests on")</sup>
+
+**Why it was retired:** It counted claims on other pages as they stood when it was written; LANDBRUG.md has since been corrected and CAUSATION.md's wordings retired, so the count describes a moment, not the site.
+
+**Replaced by:** [`C-GC-G-AUDIT-LEAD`](CLAIMS.md#C-GC-G-AUDIT-LEAD) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-HANDWRITTEN"></a>
+### The page was hand-written from primary documents, most never opened before, and quoted its own committed text for figures no pin held.
+
+`C-GC-OLD-G-HANDWRITTEN` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-HANDWRITTEN">Hand-written from seven primary documents, five of which had never been opened by this project before. Generated by `scripts/pages/grundlaget.py`: every figure is read from a pinned copy of the document it comes from or, where no pinnable document holds it, quoted from this page's committed text and counted.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-HANDWRITTEN "What this claim rests on")</sup>
+
+**Why it was retired:** Its figures are now read from, or computed on, pinned documents, and none is quoted from the page's own past; how the page was first written is the project's history, not a claim the page makes.
+
+**Replaced by:** [`C-GC-G-READ`](CLAIMS.md#C-GC-G-READ), [`C-GC-G-GEN`](CLAIMS.md#C-GC-G-GEN) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-KBH"></a>
+### København Havn gets a stated requirement, by the neighbour rule.
+
+`C-GC-OLD-G-KBH` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-KBH">Which is how København Havn gets an [18](SOURCES.md#F-4ade766711)% requirement, with the comment *"Øresund anvendt til at bestemme indsats til KBH</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-KBH "What this claim rests on")</sup>
+
+**Why it was retired:** The percentage was quoted from the page's own earlier text; the report's table does not keep its columns in order in the pinned extraction, so the value cannot be read from it. The comment on the row is kept.
+
+**Replaced by:** [`C-GC-G-KBH`](CLAIMS.md#C-GC-G-KBH) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-KOEGEKBH"></a>
+### Copenhagen Harbour takes Øresund's stated requirement by the neighbour rule.
+
+`C-GC-OLD-G-KOEGEKBH` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-KOEGEKBH">Copenhagen Harbour with no model, taking Øresund's [18](SOURCES.md#F-757d74ae9a)% by rule</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-KOEGEKBH "What this claim rests on")</sup>
+
+**Why it was retired:** The percentage was quoted from the page's own earlier text and cannot be read from the pinned table.
+
+**Replaced by:** [`C-GC-G-KOEGE`](CLAIMS.md#C-GC-G-KOEGE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-LACK"></a>
+### The DHI models contain stratification, temperature and seasonality, which the statistical models lack.
+
+`C-GC-OLD-G-LACK` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-LACK">Do the DHI models contain stratification, temperature and seasonality that the statistical models lack? Yes. All three, and more.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-LACK "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's statistical models carry water-column stability and surface temperature among their candidate variables and select them in some models, so 'that the statistical models lack' contradicts the page's own reading of DCE's tables.
+
+**Replaced by:** [`C-GC-G-DHI-YES`](CLAIMS.md#C-GC-G-DHI-YES) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-NEVERQUOTED"></a>
+### The N-limitation part of the method is almost never quoted.
+
+`C-GC-OLD-G-NEVERQUOTED` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-NEVERQUOTED">The most self-aware part of the method, and almost never quoted:</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-NEVERQUOTED "What this claim rests on")</sup>
+
+**Why it was retired:** 'Almost never quoted' is an absence asserted of everyone, never searched.
+
+**Replaced by:** [`C-GC-G-NLIM-LEAD`](CLAIMS.md#C-GC-G-NLIM-LEAD) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-NINE"></a>
+### In a stated number of meta-analysis water bodies the target eelgrass depth exceeds the water depth.
+
+`C-GC-OLD-G-NINE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-NINE">In nine of the twenty-two meta-analysis water bodies the target eelgrass depth exceeds the actual water depth, so the Kd target is computed from the water depth instead. In several others the observed eelgrass shows better light than the Kd measurements, so Kd status is computed backwards from eelgrass. The proxy runs in both directions — Kd and eelgrass are not independent lines of evidence.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-NINE "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were read off footnote marks in a table the pinned text does not keep in order; the two footnotes themselves are kept.
+
+**Replaced by:** [`C-GC-G-PROXY`](CLAIMS.md#C-GC-G-PROXY) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-NOBODY"></a>
+### The state term is quantified by nobody.
+
+`C-GC-OLD-G-NOBODY` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-NOBODY">Mechanistically supported; quantified by nobody, including us</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-NOBODY "What this claim rests on")</sup>
+
+**Why it was retired:** An absence asserted of everyone; what can be said is that this project holds it as a hypothesis and has not quantified it.
+
+**Replaced by:** [`C-GC-G-US-STATE`](CLAIMS.md#C-GC-G-US-STATE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-NOTHING"></a>
+### No document in the chain claims otherwise.
+
+`C-GC-OLD-G-NOTHING` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-NOTHING">No document in the chain claims otherwise.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-NOTHING "What this claim rests on")</sup>
+
+**Why it was retired:** Asserted of every document in the chain, one of which was never pinned; what can be checked is the six pinned ones.
+
+**Replaced by:** [`C-GC-G-NOTSUPPORT`](CLAIMS.md#C-GC-G-NOTSUPPORT) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-NOTHINGMEASURES"></a>
+### Nothing measures fedtemøg.
+
+`C-GC-OLD-G-NOTHINGMEASURES` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-NOTHINGMEASURES">Currently unfalsifiable in either direction, because nothing measures it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-NOTHINGMEASURES "What this claim rests on")</sup>
+
+**Why it was retired:** An absence asserted of everything; what was searched is the national programme.
+
+**Replaced by:** [`C-GC-G-US-FEDTE`](CLAIMS.md#C-GC-G-US-FEDTE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-NOTOBTAINED"></a>
+### The documents not obtained, with the VP3 model update's counts of models and water bodies.
+
+`C-GC-OLD-G-NOTOBTAINED` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-NOTOBTAINED">Not obtained, and this limits the page. Herman et al. 2017 and 2023 are quoted only through the ministries' Danish translation, which itself warns that editorial choices were made. Erichsen et al. 2023 — the VP3 model update to [11](SOURCES.md#F-9acd2df76c) mechanistic models over [107](SOURCES.md#F-a06816fd9b) water bodies — has not been read, so every model-level number here is</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-NOTOBTAINED "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were quoted from the page's own earlier text, of a report that was never read.
+
+**Replaced by:** [`C-GC-G-NOTOBTAINED`](CLAIMS.md#C-GC-G-NOTOBTAINED) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-OXCOLUMN"></a>
+### The oxygen column of DCE's results shows stated varying values rather than a uniform cut.
+
+`C-GC-OLD-G-OXCOLUMN` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-OXCOLUMN">cut, converted to a loading cut through the water body's fitted TN slope — which is why the oxygen column in their results shows [79](SOURCES.md#F-2c2b7da7a5)%, [67](SOURCES.md#F-ac7d0ce402)%, [70](SOURCES.md#F-e5f57cec6f)%, [0](SOURCES.md#F-764fc6987a)% rather than a uniform [25](SOURCES.md#F-e7138101d2). The variation comes from the TN model, not from the severity of the hypoxia. Two water bodies with identical hypoxia and different slopes get different requirements. There is no dose-response between the oxygen condition and the required reduction, and DCE does not claim there is. The indicator itself yields one value per six years.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-OXCOLUMN "What this claim rests on")</sup>
+
+**Why it was retired:** The values were read off the results table's layout, which the pinned text does not keep in order; the argument does not need them, and the period is now read from the report.
+
+**Replaced by:** [`C-GC-G-OXCUT`](CLAIMS.md#C-GC-G-OXCUT) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-PAREN"></a>
+### The sentence on spring phosphorus is the most consequential in the document and sits in a parenthesis.
+
+`C-GC-OLD-G-PAREN` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-PAREN">which is the most consequential in the document and appears in a parenthesis:</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-PAREN "What this claim rests on")</sup>
+
+**Why it was retired:** The sentence is not in a parenthesis - only its note that the results are not shown is - and 'the most consequential in the document' was never weighed.
+
+**Replaced by:** [`C-GC-G-SPRINGP-LEAD`](CLAIMS.md#C-GC-G-SPRINGP-LEAD) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-Q1"></a>
+### The negative claim about the literature should be read against Hansen and Rytter or softened.
+
+`C-GC-OLD-G-Q1` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-Q1">Nobody has published the regression of iltsvind extent on load, wind work and bottom temperature." A strong negative claim about the literature that we have not verified. Hansen & Rytter 2024, as quoted in the second opinion, states that *"Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer"* — a summary of exactly that analysis. Read it, or soften to "we have not found the coefficients published". The demand itself is unaffected.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-Q1 "What this claim rests on")</sup>
+
+**Why it was retired:** An instruction to another page, since carried out there; the paper is known here only through the second opinion.
+
+**Replaced by:** [`C-GC-G-Q1`](CLAIMS.md#C-GC-G-Q1) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-Q2"></a>
+### The halving comparison needs three qualifications and thirty-five years cannot settle it.
+
+`C-GC-OLD-G-Q2` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-Q2">Halve the load and the extremes do not move." Three qualifications are missing. The comparison uses hand-picked years from a series whose interannual variance our own document calls the finding. The alternative hypothesis is not "no effect" but "worse without", and this comparison cannot separate them. And warming works against the load reduction over the same period, which our own §6 says. Keep the observation, drop the word "test." State it as: the extremes are not obviously tracking the load, the variance is dominated by year physics, and thirty-five years cannot distinguish the two readings. That is still a serious problem for a policy that has to justify a specific tonnage.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-Q2 "What this claim rests on")</sup>
+
+**Why it was retired:** It rested on hand-picked years, 'our own section six' and thirty-five years that were not checked here; the qualifications are kept as argument.
+
+**Replaced by:** [`C-GC-G-Q2`](CLAIMS.md#C-GC-G-Q2) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-Q4"></a>
+### The mechanistic models represent alternative stable states, the single biggest available correction.
+
+`C-GC-OLD-G-Q4` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-Q4">The models cannot represent state-dependence or alternative stable states." False for the mechanistic models, true for the statistical models and the accounting. DHI models eelgrass presence as a state with feedbacks onto light, resuspension and sediment nutrient release, and models *why* eelgrass fails to return — sandworm burial of seeds, drifting macroalgae damaging shoots, resuspension — with the note that in some areas *"forudsiger [modellen], at ålegræsvegetationen ikke genetableres i et omfang som registreret i tidligere tider. Skal der ske en genetablering i disse områder, skal nogle af de beskrevne stressfaktorer begrænses."* That is our argument, in their document. This is the single biggest available correction and it strengthens the project. The alternative-stable-states case is not a heterodox objection to Danish marine science. It is inside the Danish model and it does not reach the policy instrument.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-Q4 "What this claim rests on")</sup>
+
+**Why it was retired:** 'The single biggest available correction' was never weighed against the others, and the quotation carried a bracketed insertion; the finding and the quotation, verbatim, are kept.
+
+**Replaced by:** [`C-GC-G-Q4`](CLAIMS.md#C-GC-G-Q4), [`C-GC-G-Q4-OURS`](CLAIMS.md#C-GC-G-Q4-OURS) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-Q5"></a>
+### The residual-estimator claims were not re-verified in this pass and are left standing.
+
+`C-GC-OLD-G-Q5` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-Q5">The residual-estimator claims about the [69.6](SOURCES.md#F-17f6cc45fe)%. Not re-verified in this pass; they concern the load accounting, not the requirement chain. Out of scope here, left standing.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-Q5 "What this claim rests on")</sup>
+
+**Why it was retired:** It described the page's own working pass; the scope it sets is kept.
+
+**Replaced by:** [`C-GC-G-Q5`](CLAIMS.md#C-GC-G-Q5) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-Q6"></a>
+### The Køge Bugt criterion claim is our inference and is recorded as unresolved; keep it that way.
+
+`C-GC-OLD-G-Q6` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-Q6">cannot qualify for iltsvind however bad it gets." The mechanism is right and better supported now. But "cannot however bad it gets" is our inference; the criterion is oxygen below [4](SOURCES.md#F-422934db4f) mg/l in bottom water. `monitoring.json` already records this as unresolved. Keep it that way.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-Q6 "What this claim rests on")</sup>
+
+**Why it was retired:** 'Better supported now' and the instruction described a moment in the site's editing; what holds is kept.
+
+**Replaced by:** [`C-GC-G-Q6`](CLAIMS.md#C-GC-G-Q6) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-RETRACTED"></a>
+### The judged oxygen figure is the claim the project retracted under institutional pressure, and was correct.
+
+`C-GC-OLD-G-RETRACTED` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-RETRACTED">This is the claim the project retracted under institutional pressure. It was correct. Restore it, with the mechanistic-route qualification attached.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-RETRACTED "What this claim rests on")</sup>
+
+**Why it was retired:** The retraction in commit `65afd09` withdrew a broader sentence - that no coefficient links nitrogen to any ecological effect - which this page shows false, and nothing recorded shows institutional pressure; the judged figure itself is kept.
+
+**Replaced by:** [`C-GC-G-S-JUDGED`](CLAIMS.md#C-GC-G-S-JUDGED) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-RUNS"></a>
+### Each model has present-day, reduction and pre-industrial reference runs.
+
+`C-GC-OLD-G-RUNS` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-RUNS">Eight runs per model: present-day, six reduction runs, and a pre-industrial reference. The reduction levels are Danish nitrogen at −[15](SOURCES.md#F-6417dbc3bf)%, −[30](SOURCES.md#F-62f1046f77)%, −[60](SOURCES.md#F-478b02df2a)%, crossed with phosphorus at present or</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-RUNS "What this claim rests on")</sup>
+
+**Why it was retired:** 'Pre-industrial' is not the report's word for the reference run, and the pinned text does not say what the reference is.
+
+**Replaced by:** [`C-GC-G-RUNS`](CLAIMS.md#C-GC-G-RUNS) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-SHAPE"></a>
+### Køge Bugt being the wrong shape is massively strengthened.
+
+`C-GC-OLD-G-SHAPE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-SHAPE">Massively strengthened — by their number, not ours.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-SHAPE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Massively' measured nothing; the point is kept with the number behind it.
+
+**Replaced by:** [`C-GC-G-S-SHAPE`](CLAIMS.md#C-GC-G-S-SHAPE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-SHARETABLE"></a>
+### A table of DHI's Danish share of each indicator for chosen water bodies.
+
+`C-GC-OLD-G-SHARETABLE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-SHARETABLE">| Water body | Chlorophyll | Kd | |---|---:|---:| | Hjarbæk Fjord | [93.9](SOURCES.md#F-cf9f6596ff)% | [21.3](SOURCES.md#F-2c09876e8e)% | | Roskilde Fjord, indre | [85.3](SOURCES.md#F-c156ebd73b)% | [100](SOURCES.md#F-8b787242a1)% | | Bjørnholms Bugt / Skive / Lovns | [83.2](SOURCES.md#F-32f8a462f1)% | [33.6](SOURCES.md#F-4b29636d90)% | | Odense Fjord, ydre | [65.2](SOURCES.md#F-508a1afab6)% | [57.5](SOURCES.md#F-f0c655894b)% | | Limfjorden, central | [62.1](SOURCES.md#F-57a067dad6)% | [20.5](SOURCES.md#F-28e2c6ecc1)% | | Kattegat, Nordsjælland | [5.2](SOURCES.md#F-7fa356dffc)% | [3.1](SOURCES.md#F-d757621f4a)% | | Køge Bugt | [2.8](SOURCES.md#F-9ca6b6a5bc)% | [2.7](SOURCES.md#F-98f5bbfd01)% | | Nordlige Øresund | [2.6](SOURCES.md#F-e583f33b39)% | [1.5](SOURCES.md#F-685c57c282)% | | Femerbælt | [1.9](SOURCES.md#F-8fad83ec20)% | [3.2](SOURCES.md#F-a2797e6364)% | | Fakse Bugt | [1.0](SOURCES.md#F-0655ea8e1e)% | [0.7](SOURCES.md#F-5af5d4e605)% | | Østersøen, Bornholm</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-SHARETABLE "What this claim rests on")</sup>
+
+**Why it was retired:** One cell was quoted from the page's own earlier text, because the report's cell does not extract legibly, and two rows carried names that are not the report's; the table is kept with the report's names and that cell from the report's own sentence.
+
+**Replaced by:** [`C-GC-G-SHARE`](CLAIMS.md#C-GC-G-SHARE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-SIDEBYSIDE"></a>
+### A table setting their conclusions beside ours.
+
+`C-GC-OLD-G-SIDEBYSIDE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-SIDEBYSIDE">| Point | Theirs | Ours, corrected | Who is right | |---|---|---|---| | Is there a quantified nitrogen–outcome relationship? | Yes: [79](SOURCES.md#F-6ebd11d8ca) fitted models, four validated 3D models, an [11](SOURCES.md#F-d9a041eabc)-water-body ensemble | Yes for summer chlorophyll and Kd. No for oxygen *as a policy quantity*. No for anything downstream of oxygen. | Both, about different links. Our error was saying "no coefficient" when we meant "not for the link the public argument turns on". | | Stratification, temperature, seasonality in the models? | Yes, in 3D, at minute steps | Concede completely | Them | | Is the slope causal? | It is the modelled response to changing Danish N, all else equal, presented as such | A partial derivative with everything else frozen — *"alt andet ... holdt konstant"*. Right instrument for "what would reducing do", wrong one for "what caused this". | Us, and their documents agree in their own words. A claim about *use*, not about the science. | | Is the uncertainty adequate? | ~[9](SOURCES.md#F-35164555a9)% nationally, from a genuine two-method ensemble | Method right, scope narrow, and they say so: [11](SOURCES.md#F-d9a041eabc) of [119](SOURCES.md#F-a5c95ac1d8), slope only, measurement/status/target excluded, national figure *"for illustrationens skyld"* | Us on scope, them on method. No dispute of fact. | | Are the chlorophyll targets right? | Model group: VP3 values are most correct. Panel and taskforce: they diverge from the intercalibrated values and should be lifted. | No position. Note only that the target is in the numerator. | Internal Danish dispute. Report it, don't adjudicate it. | | Is averaging five indicators right? | A deliberate choice to avoid over-implementation | Honest and defensible. Consequence: no water body must reach all five targets, and [2](SOURCES.md#F-5c1e7ce5fc)–[4](SOURCES.md#F-d8b1d1680b) of [7](SOURCES.md#F-cdcc7e4282) weight units come from banded or judged values. | No factual dispute. | | Is Køge Bugt in the frame? | Danish land N explains [2.8](SOURCES.md#F-87793e9e57)% of chlorophyll there | Same number | Agreement. It simply never appears in the public argument.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-SIDEBYSIDE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Four validated 3D models' had no source - the report says four of its five models carry ecosystem modules - two of its counts were quoted from the page's own earlier text, 'at minute steps' was not in the report, and 'it simply never appears in the public argument' is an absence asserted of everyone.
+
+**Replaced by:** [`C-GC-G-SB-COEF`](CLAIMS.md#C-GC-G-SB-COEF), [`C-GC-G-SB-STRAT`](CLAIMS.md#C-GC-G-SB-STRAT), [`C-GC-G-SB-SLOPE`](CLAIMS.md#C-GC-G-SB-SLOPE), [`C-GC-G-SB-UNC`](CLAIMS.md#C-GC-G-SB-UNC), [`C-GC-G-SB-TARGET`](CLAIMS.md#C-GC-G-SB-TARGET), [`C-GC-G-SB-AVG`](CLAIMS.md#C-GC-G-SB-AVG), [`C-GC-G-SB-KOEGE`](CLAIMS.md#C-GC-G-SB-KOEGE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-SPRING"></a>
+### Spring counting means an autumn kill is seen late, and in most water bodies only every third year.
+
+`C-GC-OLD-G-SPRING` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-SPRING">This confirms, verbatim, the claim this project has been making. The benthic community is counted in spring. An autumn kill is seen the following March at the earliest, after recolonisation has begun, and in most water bodies only every third year. In any given year [45](SOURCES.md#F-5ab4288dfd)–[49](SOURCES.md#F-96ddb34184) of [110](SOURCES.md#F-4d7b050c23) stations are visited.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-SPRING "What this claim rests on")</sup>
+
+**Why it was retired:** The programme visits operational stations, not water bodies, every third year; 'most water bodies' was not what it says.
+
+**Replaced by:** [`C-GC-G-SPRING`](CLAIMS.md#C-GC-G-SPRING) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-STRAWMAN"></a>
+### The project may have spent months undermining a strawman, and this page does the opposite of the rest of the site.
+
+`C-GC-OLD-G-STRAWMAN` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-STRAWMAN">The most embarrassing possible outcome for this project would be to have spent months undermining a strawman. So this document does the opposite of what the rest of the site does. It reconstructs the case *for* the Danish nitrogen requirement, as carefully as its authors made it, at the level of what is measured and what is computed — never at the level of who signed off on it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-STRAWMAN "What this claim rests on")</sup>
+
+**Why it was retired:** Neither how long the project had spent nor that the page does the opposite of the rest of the site was shown; the aim it states is kept.
+
+**Replaced by:** [`C-GC-G-PURPOSE`](CLAIMS.md#C-GC-G-PURPOSE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-STRONGEST"></a>
+### The Danish share is the strongest evidence in the chain, correctly modelled, and absent from how the national total is discussed.
+
+`C-GC-OLD-G-STRONGEST` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-STRONGEST">This is the strongest single piece of evidence anywhere in the chain and it is theirs, not ours. The gradient is real, physically obvious and correctly modelled: closed fjords are dominated by their own catchment, open water is dominated by the Baltic. It is also almost entirely absent from how the national total is discussed.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-STRONGEST "What this claim rests on")</sup>
+
+**Why it was retired:** 'The strongest single piece of evidence anywhere' and 'correctly modelled' were never shown, and 'almost entirely absent from how the national total is discussed' is an absence asserted of everyone; DHI's own statement of the gradient is kept.
+
+**Replaced by:** [`C-GC-G-GRADIENT`](CLAIMS.md#C-GC-G-GRADIENT) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-TENBOTTLES"></a>
+### The chlorophyll mean of an operational water body is built from a stated number of bottle samples at one point.
+
+`C-GC-OLD-G-TENBOTTLES` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-TENBOTTLES">The chlorophyll indicator is a May–September mean. In a water body on the operational programme, that mean is built from roughly ten bottle samples, at one point in space, in alternate years.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-TENBOTTLES "What this claim rests on")</sup>
+
+**Why it was retired:** The number of samples was never computed and 'one point in space' was not shown for every operational water body; what the programme gives is the sampling frequency and the every-second-year cycle.
+
+**Replaced by:** [`C-GC-G-CHLMEAN`](CLAIMS.md#C-GC-G-CHLMEAN) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-THIRTYFIVE"></a>
+### A stated number of years have not settled whether the extremes respond to load.
+
+`C-GC-OLD-G-THIRTYFIVE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-THIRTYFIVE">Thirty-five years have not settled it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-THIRTYFIVE "What this claim rests on")</sup>
+
+**Why it was retired:** The length of the record was never read from data here.
+
+**Replaced by:** [`C-GC-G-US-EXTREMES`](CLAIMS.md#C-GC-G-US-EXTREMES) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-THREE"></a>
+### The requirement for the water bodies of both plans is assembled from three instruments, the meta-analysis covering the remainder.
+
+`C-GC-OLD-G-THREE` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-THREE">The requirement for all [119](SOURCES.md#F-3fd74c752c) (VP2) / [109](SOURCES.md#F-c809f314fc) (VP3) marine water bodies is assembled from three different things. | Instrument | Built by | Covers (VP2) | What it is | |---|---|---:|---| | Statistical models | DCE / Aarhus | [22](SOURCES.md#F-38b9994c50) water bodies, [29](SOURCES.md#F-d8a960c51c) stations | Regressions on 1990–2012 station time series | | Mechanistic models | DHI | [45](SOURCES.md#F-fe04a110c8) water bodies | 3D hydrodynamic-ecological simulation, 2002–2011 | | Meta-analysis | both | the remainder | Slopes borrowed from typologically similar water bodies</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-THREE "What this claim rests on")</sup>
+
+**Why it was retired:** The three instruments are the second plans' method; that the third plans' requirement was assembled the same way was not shown, and DHI's report gives the meta-analysis a stated number of water bodies and leaves the rest to their neighbours.
+
+**Replaced by:** [`C-GC-G-THREE`](CLAIMS.md#C-GC-G-THREE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-UNREACH"></a>
+### Some targets are not reachable by Danish action at all.
+
+`C-GC-OLD-G-UNREACH` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-UNREACH">And that some targets are not reachable by Danish action at all:</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-UNREACH "What this claim rests on")</sup>
+
+**Why it was retired:** The second opinion says there may be signs of it in some open coastal waters, not that it is so.
+
+**Replaced by:** [`C-GC-G-UNREACH-LEAD`](CLAIMS.md#C-GC-G-UNREACH-LEAD) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-UNWRITTEN"></a>
+### The supporting note had not been written.
+
+`C-GC-OLD-G-UNWRITTEN` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-UNWRITTEN">A note that had not been written. That does not make the value wrong; it means the derivation was not publicly checkable when the method was published.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-UNWRITTEN "What this claim rests on")</sup>
+
+**Why it was retired:** 'Under udarbejdelse' says the note was in preparation, not that none of it had been written.
+
+**Replaced by:** [`C-GC-G-NOTE`](CLAIMS.md#C-GC-G-NOTE) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-VP3DATA"></a>
+### The VP3 requirement was computed on the previous NOVANA programme.
+
+`C-GC-OLD-G-VP3DATA` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-VP3DATA">indsatsbehov — the number now being turned into catchment quotas — was computed on the 2017–[21](SOURCES.md#F-dcdc8549a5) programme, under which chlorophyll and benthic fauna were not monitored in every water body. The improvement is real and it postdates the numbers in force.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-VP3DATA "What this claim rests on")</sup>
+
+**Why it was retired:** The second opinion gives VP3's status loads as the mean of 2016 to 2018 and its slopes as fitted on loads to 2016, which is not 'computed on' the previous programme; what holds is that the requirement predates the current one.
+
+**Replaced by:** [`C-GC-G-PREDATES`](CLAIMS.md#C-GC-G-PREDATES) — each opens what it rests on.
+
+<a id="C-GC-OLD-G-WFD"></a>
+### The Water Framework Directive asserts that chlorophyll and Kd suffice.
+
+`C-GC-OLD-G-WFD` · retired 2026-09-11 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GC-OLD-G-WFD">The WFD asserts this; the mechanistic models could test it and were not asked to.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-G-WFD "What this claim rests on")</sup>
+
+**Why it was retired:** No source for what the directive asserts was read or pinned.
+
+**Replaced by:** [`C-GC-G-TR-STATS`](CLAIMS.md#C-GC-G-TR-STATS) — each opens what it rests on.
+
 ## HYPOTHESES.md
 
 <a id="C-HY-OLD-B2-BASINS"></a>
@@ -1458,6 +3410,316 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** No source for the figure could be found or computed here. A hypothesis keeps its mechanism in words and drops a number it cannot source; the mechanism is unchanged.
 
 **Not replaced** — nothing that could be justified was found to say in its place.
+
+## IF_YOU_HAVE_THE_DATA.md
+
+<a id="C-DQ-OLD-AFTERNOON"></a>
+### The project is run by someone with no institutional credentials; much of what it cannot answer is gated, and a holder could unblock it in an afternoon.
+
+`C-DQ-OLD-AFTERNOON` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-AFTERNOON">This project is run from open data by someone with no institutional credentials. A large part of what it cannot answer is not hard - it is gated. If you hold a utility login, a field sheet, a drainage archive or a service agreement, you can unblock in an afternoon what this cannot unblock at all.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-AFTERNOON "What this claim rests on")</sup>
+
+**Why it was retired:** 'A large part' was never counted and 'in an afternoon' was a duration nobody measured; the credentials the project does hold are listed on the fetch queue.
+
+**Replaced by:** [`C-DQ-U-CREDS`](CLAIMS.md#C-DQ-U-CREDS), [`C-DQ-U-HOLD`](CLAIMS.md#C-DQ-U-HOLD) — each opens what it rests on.
+
+<a id="C-DQ-OLD-ALLTHREE"></a>
+### Every input is in one of three states, and the system is written for all three.
+
+`C-DQ-OLD-ALLTHREE` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-ALLTHREE">Every input this project could use is in one of three states, and the system is written for all three rather than for the one it happens to have. That ordering matters: an analysis written against the data on hand is worth only what that data is worth, but an analysis written against a stated contract runs on whatever arrives, and says what it could not do.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-ALLTHREE "What this claim rests on")</sup>
+
+**Why it was retired:** Only one slot has a script that reads it; the rest of the system is written against the data on hand, so 'written for all three' was not so.
+
+**Replaced by:** [`C-DQ-U-STATES`](CLAIMS.md#C-DQ-U-STATES) — each opens what it rests on.
+
+<a id="C-DQ-OLD-ATONCE"></a>
+### depth_clock.py will use a supplied file the moment it is there, and the holder can see at once whether it changes the answer.
+
+`C-DQ-OLD-ATONCE` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-ATONCE">The analysis is already written. `scripts/depth_clock.py` runs today on the best clock available and will use yours the moment the file is here - nobody has to write anything for your data to be used, and you can see at once whether it changes the answer.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-ATONCE "What this claim rests on")</sup>
+
+**Why it was retired:** The script uses the file when it is rerun, which unlock.py does; what it measures is the offset between supplied and borrowed clocks per station-day, which the replacement says.
+
+**Replaced by:** [`C-DQ-S-CONSUMER`](CLAIMS.md#C-DQ-S-CONSUMER) — each opens what it rests on.
+
+<a id="C-DQ-OLD-BATHY"></a>
+### Finer bathymetry would show bed morphology at the scale that decides where resuspension and sulphidic sediment sit, and the public model is too coarse to separate a trawled furrow from a natural hollow.
+
+`C-DQ-OLD-BATHY` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-BATHY">Bed morphology at the scale that decides where resuspension and sulphidic sediment actually sit. The public depth model is too coarse to separate a trawled furrow from a natural hollow.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-BATHY "What this claim rests on")</sup>
+
+**Why it was retired:** Neither the deciding scale nor a furrow's width had a source.
+
+**Replaced by:** [`C-DQ-S-BATHY`](CLAIMS.md#C-DQ-S-BATHY) — each opens what it rests on.
+
+<a id="C-DQ-OLD-BATHY-PERM"></a>
+### Some finer bathymetry is restricted for reasons unrelated to the environment.
+
+`C-DQ-OLD-BATHY-PERM` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-BATHY-PERM">Some of this is restricted for reasons that have nothing to do with the environment. Recorded because it is useful, not because it is available.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-BATHY-PERM "What this claim rests on")</sup>
+
+**Why it was retired:** Nothing recorded supports it.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-DQ-OLD-CLOCKSHARE"></a>
+### Water chemistry carries a time on every row, and a stated share of the CTD measurements the depth analysis keeps can borrow a time.
+
+`C-DQ-OLD-CLOCKSHARE` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-CLOCKSHARE">A clock on oxygen AT DEPTH. The water-chemistry topic carries a time on every row and CTD carries none, so [53.7](SOURCES.md#F-f6fed7832b)M profile measurements have a date and no hour. [66](SOURCES.md#F-dc48cb5af7)% of the CTD measurements the depth analysis keeps can borrow a time from a same-day bottle whose clock is observed; the field sheets would settle the rest and check that borrowing.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-CLOCKSHARE "What this claim rests on")</sup>
+
+**Why it was retired:** It divided the borrowed count by the sum of the borrowed and unborrowed counts, which are taken under different rules, after and before the quality filters, so the share is not licensed (`K-DEPTH-CLOCK`); and water chemistry carries a clock value, not always a time, on every genuine row.
+
+**Replaced by:** [`C-DQ-S-CLOCK`](CLAIMS.md#C-DQ-S-CLOCK) — each opens what it rests on.
+
+<a id="C-DQ-OLD-CVR-ROWS"></a>
+### The sibling project holds a subset of the CVR register of a stated number of rows.
+
+`C-DQ-OLD-CVR-ROWS` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-CVR-ROWS">The sibling project danish-livestock holds a [14,222](SOURCES.md#F-a23ff34713)-row subset; the bulk register would complete it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-CVR-ROWS "What this claim rests on")</sup>
+
+**Why it was retired:** The row count was carried as a quotation of this page's own past, and no construction covers a count of the sibling's file, which today holds a different number of lines.
+
+**Replaced by:** [`C-DQ-S-CVR`](CLAIMS.md#C-DQ-S-CVR) — each opens what it rests on.
+
+<a id="C-DQ-OLD-DEGRADED"></a>
+### What is published is the degraded run of a system built for data it lacks, so better input would give a better answer from the same code.
+
+`C-DQ-OLD-DEGRADED` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-DEGRADED">What is published here is the degraded run of a system built for the first column. That is the claim worth arguing with. Not *this is what the open data supports* - which invites the reply that the data is poor and the conclusions are therefore soft - but *this is the analysis, here is the contract it consumes, and here is what it currently has to eat.* Hand it better input and the same code produces a better answer without anyone rewriting an argument. Where the answer would change, it changes in public.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-DEGRADED "What this claim rests on")</sup>
+
+**Why it was retired:** True of the one slot whose script reads it; for the others better input would need new code, so the system is not built for them.
+
+**Replaced by:** [`C-DQ-U-WRITTEN`](CLAIMS.md#C-DQ-U-WRITTEN) — each opens what it rests on.
+
+<a id="C-DQ-OLD-DRAIN"></a>
+### The drainage map would replace a single national dial for the drain routing fraction, and tile-drained land bypasses the riparian zone and most of the denitrification.
+
+`C-DQ-OLD-DRAIN` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-DRAIN">The surface-versus-drain routing fraction as a mapped quantity instead of a single national dial. Tile-drained land bypasses the riparian zone and most of the denitrification, so this is the term between field surplus and delivered load.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-DRAIN "What this claim rests on")</sup>
+
+**Why it was retired:** No national dial in this project was named, and the bypass and 'most of the denitrification' had no source; what the map's report says is kept in the replacement.
+
+**Replaced by:** [`C-DQ-S-DRAIN`](CLAIMS.md#C-DQ-S-DRAIN), [`C-DQ-S-DRAIN-ROUTE`](CLAIMS.md#C-DQ-S-DRAIN-ROUTE) — each opens what it rests on.
+
+<a id="C-DQ-OLD-HANDWRITTEN"></a>
+### An earlier hand-written version of the page named ODA vandkemi the top blocker after it was fetched, and said no clock time existed in the archive.
+
+`C-DQ-OLD-HANDWRITTEN` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-HANDWRITTEN">an earlier hand-written version of this page still named ODA `vandkemi` as the* *top blocker after it had been fetched, and still said no clock time existed in* *the archive after the water-chemistry topic turned out to carry one on [100.0](SOURCES.md#F-93d9df3e86)%* *of [1,805,827](SOURCES.md#F-0a7a856085) rows.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-HANDWRITTEN "What this claim rests on")</sup>
+
+**Why it was retired:** The page does not narrate its own history. The clock finding it quoted is carried as checked claims on PLAN.md and DATA_SOURCES.md.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-DQ-OLD-HYDRO"></a>
+### A calibrated utility model would be compared with this project's own predicted spill, validating a method that needs no pipe data.
+
+`C-DQ-OLD-HYDRO` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-HYDRO">The comparison this project cannot make: its own predicted spill against a calibrated commercial model of the same network. Agreement would validate a method that needs no pipe data; disagreement would localise exactly where topography stops being enough.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-HYDRO "What this claim rests on")</sup>
+
+**Why it was retired:** No spill prediction by this project was found in its scripts or derived data, so there is nothing of its own to compare.
+
+**Replaced by:** [`C-DQ-S-HYDRO`](CLAIMS.md#C-DQ-S-HYDRO) — each opens what it rests on.
+
+<a id="C-DQ-OLD-LER-MODEL"></a>
+### LER's pipe data would give a real hydraulic model of the sewer instead of a catchment-level spill estimate, and without it overflow timing within an event cannot be predicted.
+
+`C-DQ-OLD-LER-MODEL` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-LER-MODEL">A real hydraulic model of the Copenhagen sewer instead of a catchment-level spill estimate. Without pipe geometry and connectivity, overflow can be predicted as whether and roughly how much, never as when within an event - and the timing is where the flush dynamic lives.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-LER-MODEL "What this claim rests on")</sup>
+
+**Why it was retired:** It assumed LER's answers carry the pipe attributes a model needs, which was not found, and no catchment-level spill estimate by this project was found.
+
+**Replaced by:** [`C-DQ-S-LER`](CLAIMS.md#C-DQ-S-LER) — each opens what it rests on.
+
+<a id="C-DQ-OLD-LER-PERM"></a>
+### LER is provisioned for excavation safety, and its data would answer the question whatever the permission.
+
+`C-DQ-OLD-LER-PERM` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-LER-PERM">Provisioned for excavation safety. Whether a given access covers hydraulic analysis is the holder's question, not this project's - it is recorded here because the data would answer the question, which is a separate fact from whether anyone may ask it that way.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-LER-PERM "What this claim rests on")</sup>
+
+**Why it was retired:** 'Would answer the question' assumed LER's answers carry the attributes the slot needs, which was not found; the rest is kept in the replacement, with what LER's pinned page says.
+
+**Replaced by:** [`C-DQ-P-LER`](CLAIMS.md#C-DQ-P-LER) — each opens what it rests on.
+
+<a id="C-DQ-OLD-METERED"></a>
+### Every overflow figure on the site is a registered or modelled volume, and none has been compared with a metered one.
+
+`C-DQ-OLD-METERED` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-METERED">Overflow as a measurement rather than a model. Every overflow figure on this site is a registered or modelled volume; none has been compared with a metered one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-METERED "What this claim rests on")</sup>
+
+**Why it was retired:** No search of the site's overflow figures was recorded, so 'every' and 'none' have nothing under them.
+
+**Replaced by:** [`C-DQ-S-OVERFLOW`](CLAIMS.md#C-DQ-S-OVERFLOW) — each opens what it rests on.
+
+<a id="C-DQ-OLD-MFS"></a>
+### Marine toxicant loading is unscoreable, and a stated number of hypotheses turn on whether contaminants rather than nutrients gate recovery.
+
+`C-DQ-OLD-MFS` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-MFS">Marine toxicant loading, currently unscoreable: [7](SOURCES.md#F-da983eb0fb) hypotheses turn on whether contaminants rather than nutrients gate recovery.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-MFS "What this claim rests on")</sup>
+
+**Why it was retired:** The count was carried as a quotation of this page's own past, and neither it nor 'unscoreable' was traced to the triage.
+
+**Replaced by:** [`C-DQ-S-MFS`](CLAIMS.md#C-DQ-S-MFS) — each opens what it rests on.
+
+<a id="C-DQ-OLD-MONTHS"></a>
+### A section of NITROGEN.md had been written for months and rendered nothing until its input file first existed.
+
+`C-DQ-OLD-MONTHS` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-MONTHS">The pattern is not aspirational. Section 2c of NITROGEN.md had been written for months and rendered nothing, because the file it needed did not exist; the day that file was first produced, the section appeared with its numbers in it and no prose was written to make that happen.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-MONTHS "What this claim rests on")</sup>
+
+**Why it was retired:** 'For months' cannot be so: this repository's first commit is dated 2026-09-07. The rest was not traced in the history.
+
+**Replaced by:** [`C-DQ-U-WRITTEN`](CLAIMS.md#C-DQ-U-WRITTEN) — each opens what it rests on.
+
+<a id="C-DQ-OLD-NOTSPENT"></a>
+### Held means a credential the project has and has not spent, and account a free registration nobody has made.
+
+`C-DQ-OLD-NOTSPENT` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-NOTSPENT">Ordered by friction, then by how many hypotheses each serves. *Held* means a credential this project already has and simply has not spent; *account* means a free registration nobody has done; *blocked* means not open.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-NOTSPENT "What this claim rests on")</sup>
+
+**Why it was retired:** The held credential has been spent on the ODA extracts already on disk, and 'nobody has done' was not searched beyond this project's own credentials, some of which open entries in the account tier.
+
+**Replaced by:** [`C-DQ-U-TABLE`](CLAIMS.md#C-DQ-U-TABLE), [`C-DQ-U-TIERS`](CLAIMS.md#C-DQ-U-TIERS) — each opens what it rests on.
+
+<a id="C-DQ-OLD-PULS-RES"></a>
+### PULS gives point-source load at the resolution the diffuse residual is computed against.
+
+`C-DQ-OLD-PULS-RES` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-PULS-RES">Point-source load beside the diffuse residual, at the resolution the residual is computed against.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-PULS-RES "What this claim rests on")</sup>
+
+**Why it was retired:** Which residual, and at what resolution, was not named, and nothing recorded compares PULS's resolution with it.
+
+**Replaced by:** [`C-DQ-S-PULS`](CLAIMS.md#C-DQ-S-PULS) — each opens what it rests on.
+
+<a id="C-DQ-OLD-REGENERATE"></a>
+### Running the drop-in regenerates the pages with the data in them.
+
+`C-DQ-OLD-REGENERATE` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-REGENERATE">What changes is that the pages regenerate with your data in them, and you can see whether it moves any conclusion - which is the only thing worth knowing.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-REGENERATE "What this claim rests on")</sup>
+
+**Why it was retired:** unlock.py reruns the scripts that read a slot and rewrites its own page; the other pages change only when the site is rebuilt.
+
+**Replaced by:** [`C-DQ-U-RUNS`](CLAIMS.md#C-DQ-U-RUNS) — each opens what it rests on.
+
+<a id="C-DQ-OLD-TENSLOTS"></a>
+### A stated number of gated sources, a stated number of them with a slot.
+
+`C-DQ-OLD-TENSLOTS` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-TENSLOTS">gated sources, [10](SOURCES.md#F-bd1416f2ff) with a slot.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-TENSLOTS "What this claim rests on")</sup>
+
+**Why it was retired:** It counted slots, not gated sources with a slot: some slots match no register entry, and one matches an entry in the open tier.
+
+**Replaced by:** [`C-DQ-U-COUNT`](CLAIMS.md#C-DQ-U-COUNT) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-BATHY"></a>
+### Finer bathymetry is held by Soevaernet and the hydrographic survey, some of it restricted.
+
+`C-DQ-OLD-WHO-BATHY` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-BATHY">Soevaernet and the national hydrographic survey; some holdings are restricted</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-BATHY "What this claim rests on")</sup>
+
+**Why it was retired:** Not in any register entry or pinned document this project holds.
+
+**Replaced by:** [`C-DQ-W-BATHY`](CLAIMS.md#C-DQ-W-BATHY) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-CVR"></a>
+### The bulk CVR register is reached through an Erhvervsstyrelsen agreement or a Datafordeler subscription.
+
+`C-DQ-OLD-WHO-CVR` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-CVR">Erhvervsstyrelsen agreement, or a working Datafordeler subscription</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-CVR "What this claim rests on")</sup>
+
+**Why it was retired:** Not in any register entry or pinned document this project holds.
+
+**Replaced by:** [`C-DQ-W-CVR`](CLAIMS.md#C-DQ-W-CVR) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-DRAIN"></a>
+### The drainage map is held by Aarhus Universitet DCA, Miljoestyrelsen and Danmarks Arealinformation.
+
+`C-DQ-OLD-WHO-DRAIN` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-DRAIN">Aarhus Universitet DCA; Miljoestyrelsen; Danmarks Arealinformation</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-DRAIN "What this claim rests on")</sup>
+
+**Why it was retired:** The register names Aarhus Universitet, DCA, working for Miljoestyrelsen; Danmarks Arealinformation is not recorded as holding it.
+
+**Replaced by:** [`C-DQ-W-DRAIN`](CLAIMS.md#C-DQ-W-DRAIN) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-HYDRO"></a>
+### Calibrated models are held by HOFOR, BIOFOS and the consultancies that built them.
+
+`C-DQ-OLD-WHO-HYDRO` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-HYDRO">HOFOR, BIOFOS and the consultancies that built the models</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-HYDRO "What this claim rests on")</sup>
+
+**Why it was retired:** Not in any register entry or pinned document this project holds.
+
+**Replaced by:** [`C-DQ-W-HYDRO`](CLAIMS.md#C-DQ-W-HYDRO) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-LER"></a>
+### LER data is held by Ledningsejerregistret and the utilities, with access provisioned by Klimadatastyrelsen.
+
+`C-DQ-OLD-WHO-LER` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-LER">Ledningsejerregistret; the utilities that own the lines; Klimadatastyrelsen provisions access</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-LER "What this claim rests on")</sup>
+
+**Why it was retired:** LER's pinned page for excavators says the line owners answer inquiries; it does not name Klimadatastyrelsen.
+
+**Replaced by:** [`C-DQ-W-LER`](CLAIMS.md#C-DQ-W-LER) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-MFS"></a>
+### The fish-tissue topic is held by anyone with an ODA login and the MFS topics enabled.
+
+`C-DQ-OLD-WHO-MFS` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-MFS">anyone with an ODA login and the MFS topics enabled</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-MFS "What this claim rests on")</sup>
+
+**Why it was retired:** That the topics must be enabled has nothing recorded under it; the register lists the topic behind the same kind of registration as the ODA topics this project has fetched.
+
+**Replaced by:** [`C-DQ-W-MFS`](CLAIMS.md#C-DQ-W-MFS) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-OVERFLOW"></a>
+### Per-event overflow measurements are held by HOFOR, BIOFOS and other utilities, and by Miljoestyrelsen through PULS.
+
+`C-DQ-OLD-WHO-OVERFLOW` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-OVERFLOW">HOFOR, BIOFOS and other utilities; Miljoestyrelsen through PULS</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-OVERFLOW "What this claim rests on")</sup>
+
+**Why it was retired:** Not in any register entry or pinned document this project holds, and the register records PULS's overflow figures as annual.
+
+**Replaced by:** [`C-DQ-W-OVERFLOW`](CLAIMS.md#C-DQ-W-OVERFLOW) — each opens what it rests on.
+
+<a id="C-DQ-OLD-WHO-SLURRY"></a>
+### Slurry agreements are held by Landbrugsstyrelsen and the parties to them.
+
+`C-DQ-OLD-WHO-SLURRY` · retired 2026-09-11 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-WHO-SLURRY">Landbrugsstyrelsen; the parties to the agreements</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-WHO-SLURRY "What this claim rests on")</sup>
+
+**Why it was retired:** That Landbrugsstyrelsen holds the agreements is in no register entry or pinned document this project holds; the contracts are recorded as private.
+
+**Replaced by:** [`C-DQ-W-SLURRY`](CLAIMS.md#C-DQ-W-SLURRY) — each opens what it rests on.
 
 ## INCIDENCE.md
 
@@ -2244,6 +4506,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 ## KNOWN_AND_UNKNOWN.md
 
+<a id="C-AU-OLD-KU-CENSOR"></a>
+### The censored water-chemistry rows number a stated count, read as measurements.
+
+`C-AU-OLD-KU-CENSOR` · retired 2026-09-11 from [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AU-OLD-KU-CENSOR">| Censoring with no name | read as measurements | `ResultatAttribut` = `<` on [85,035](SOURCES.md#F-e77754e37d) rows, where the value is the *detection limit*; `SigtTilBund` on [26,380](SOURCES.md#F-aa9c4f3999) Secchi readings that hit the bottom |</span><sup class="claim-mark">[†](ARCHIVE.md#C-AU-OLD-KU-CENSOR "What this claim rests on")</sup>
+
+**Why it was retired:** The censored-row count is not reproduced by the extract held now; DATA_SOURCES counts the censored rows from the data.
+
+**Replaced by:** [`C-DS-CENSOR`](CLAIMS.md#C-DS-CENSOR) — each opens what it rests on.
+
 <a id="C-KP-OLD-ACCIDENT"></a>
 ### A day later the estimator was run again by accident, with one fetch and one audit.
 
@@ -2496,6 +4769,549 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** HYPOTHESES.md no longer says it, and the size, licence and station coverage have no stored source; the pinned record gives the dataset and its span.
 
 **Replaced by:** [`C-KP-FISHING`](CLAIMS.md#C-KP-FISHING) — each opens what it rests on.
+
+## LANDBRUG.md
+
+<a id="C-LE-OLD-BINDING"></a>
+### The binding cost of letting an animal live longer is feed.
+
+`C-LE-OLD-BINDING` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-BINDING">Den bindende omkostning ved at lade et dyr leve længere er foder. Hvis et kvælstofvirkemiddel *producerer* foder og betales som miljøydelse, så kan den samme politik finansiere, at dyr lever længere, i stedet for at besætninger bliver mindre.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-BINDING "What this claim rests on")</sup>
+
+**Why it was retired:** That feed is the binding cost had no source.
+
+**Replaced by:** [`C-LE-8-FEED`](CLAIMS.md#C-LE-8-FEED) — each opens what it rests on.
+
+<a id="C-LE-OLD-CARRIES"></a>
+### Oxygen depletion carries the public justification of the agreement, and there the coefficient is an estimate.
+
+`C-LE-OLD-CARRIES` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-CARRIES">Det er iltsvind, der bærer den offentlige begrundelse for aftalen. Og netop der er koefficienten et skøn.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-CARRIES "What this claim rests on")</sup>
+
+**Why it was retired:** No pinned source says oxygen depletion carries the justification; the minister named it among the harms when the model was presented, and that is what is now said.
+
+**Replaced by:** [`C-LE-MINISTER`](CLAIMS.md#C-LE-MINISTER), [`C-LE-THERE`](CLAIMS.md#C-LE-THERE) — each opens what it rests on.
+
+<a id="C-LE-OLD-CEILING"></a>
+### An empty row can only add, so agriculture's share of the enumerated nitrogen is at most a stated ceiling, and filling any empty row lowers it.
+
+`C-LE-OLD-CEILING` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-CEILING">En tom række kan kun lægge til. Nævneren har altså et gulv og intet loft, og enhver procent regnet mod den er et loft, ikke et estimat: > Landbruget står for højst [30](SOURCES.md#F-4c095c59f2) % af det opgjorte reaktive kvælstof, der når danske havområder. Udfyld én af de tomme rækker, og loftet falder. Det kan ikke stige.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-CEILING "What this claim rests on")</sup>
+
+**Why it was retired:** Three of the empty rows lie inside other rows or are a timing term, so filling them adds nothing; and the ceiling rests on this project's own bounds, which have no source for each row, which the passage did not say.
+
+**Replaced by:** [`C-LE-FLOOR`](CLAIMS.md#C-LE-FLOOR), [`C-LE-CEILING`](CLAIMS.md#C-LE-CEILING), [`C-LE-NOTADD`](CLAIMS.md#C-LE-NOTADD) — each opens what it rests on.
+
+<a id="C-LE-OLD-CHEAP"></a>
+### The requirement cannot be dropped, and the four demands are all cheap.
+
+`C-LE-OLD-CHEAP` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-CHEAP">Det er en tabt sag og en dårlig sag. I stedet fire ting, som alle er billige, og som ingen kan afvise uden at forklare hvorfor:</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-CHEAP "What this claim rests on")</sup>
+
+**Why it was retired:** No cost was given for any of the demands.
+
+**Replaced by:** [`C-LE-9-INTRO`](CLAIMS.md#C-LE-9-INTRO) — each opens what it rests on.
+
+<a id="C-LE-OLD-COUNTED"></a>
+### Only the nitrogen route is counted, at a stated fraction of a national nitrogen total.
+
+`C-LE-OLD-COUNTED` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-COUNTED">Kun den ene halvdel tælles, og den tælles til [0,6](SOURCES.md#F-d6fde37534) % af en national kvælstoftotal.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-COUNTED "What this claim rests on")</sup>
+
+**Why it was retired:** Its justification was not recorded properly: the fraction was carried as a quotation of the page's own past, and its whole was not a national total; it is now computed from the register against the land-based term.
+
+**Replaced by:** [`C-LE-C-CSO`](CLAIMS.md#C-LE-C-CSO) — each opens what it rests on.
+
+<a id="C-LE-OLD-DEMANDS"></a>
+### A table of four demands: publish the regression, all of whose series DCE already publish; fill the denominator by methods routine abroad; measure overflows at a level almost nobody uses; fund marine extraction, the only measure removing nitrogen already in the water.
+
+`C-LE-OLD-DEMANDS` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-DEMANDS">| Krav | Hvorfor det ikke kan afvises | |---|---| | Offentliggør regressionen. Iltsvindets årlige udbredelse mod flow-normaliseret belastning, vindarbejde i lagdelingssæsonen og bundvandstemperatur | alle tre serier er allerede offentliggjort af DCE. Det kræver ingen nye data, ingen nye målinger og ingen bevilling | | Udfyld nævneren. Mindst de to tomme rækker, der kan måles med standardmetoder — udsivning af grundvand under havet med radon- og radiumsporing, og intern frigivelse fra sedimentet med bundkamre | begge er rutine i udlandet. Uden en nævner er der ingen procent | | Mål overløbene i hændelser. Flowproportional prøvetagning på de største bygværker, over hændelser af forskellig størrelse | det er videnniveau [5](SOURCES.md#F-c5dec8e261) i Miljøstyrelsens egen skala, med [30](SOURCES.md#F-e9d6cdec18) % usikkerhed mod [135](SOURCES.md#F-5c71700314) %. Metoden er defineret. Næsten ingen bruger den | | Finansiér marin ekstraktion som virkemiddel, med krav om analyse af høsten | det er det eneste virkemiddel, der fjerner kvælstof, som allerede er i vandet</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-DEMANDS "What this claim rests on")</sup>
+
+**Why it was retired:** Wind work and bottom-water temperature are not published by DCE as series, and no published regression was found to publish; 'routine abroad' had no source; 'almost nobody uses it' was not counted; and 'the only measure' had nothing behind it.
+
+**Replaced by:** [`C-LE-9-REGRESSION`](CLAIMS.md#C-LE-9-REGRESSION), [`C-LE-9-METHODS`](CLAIMS.md#C-LE-9-METHODS), [`C-LE-9-DENOM`](CLAIMS.md#C-LE-9-DENOM), [`C-LE-9-LEVEL5`](CLAIMS.md#C-LE-9-LEVEL5), [`C-LE-9-EXTRACT`](CLAIMS.md#C-LE-9-EXTRACT) — each opens what it rests on.
+
+<a id="C-LE-OLD-DEPOSITION"></a>
+### Atmospheric deposition on the sea appears in no published apportionment.
+
+`C-LE-OLD-DEPOSITION` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-DEPOSITION">atmosfærisk afsætning direkte på havoverfladen er [45](SOURCES.md#F-0a78446851)–[65](SOURCES.md#F-72a128779d) kt N/år — på størrelse med hele den landbaserede post — og optræder ikke i nogen offentliggjort fordeling.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-DEPOSITION "What this claim rests on")</sup>
+
+**Why it was retired:** 'No published apportionment' is wider than the one apportionment quoted, which is what was checked.
+
+**Replaced by:** [`C-LE-DEPOSITION`](CLAIMS.md#C-LE-DEPOSITION) — each opens what it rests on.
+
+<a id="C-LE-OLD-EMPTY"></a>
+### The empty rows include release from sediment, which by one study supplies most of what annual primary production needs.
+
+`C-LE-OLD-EMPTY` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-EMPTY">veje har slet intet tal — heriblandt atmosfærisk afsætning af organisk kvælstof, udsivning af grundvand under havet, og frigivelse fra sedimentet, som efter én undersøgelse leverer størstedelen af det, den årlige primærproduktion kræver.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-EMPTY "What this claim rests on")</sup>
+
+**Why it was retired:** The study was never named, and the register's own note says it put advection at a share of production's needs; 'most' was an inference, not the study's finding.
+
+**Replaced by:** [`C-LE-EMPTY`](CLAIMS.md#C-LE-EMPTY) — each opens what it rests on.
+
+<a id="C-LE-OLD-EN"></a>
+### The English summary of the page as it then stood.
+
+`C-LE-OLD-EN` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-EN">This page argues, in Danish and to a Danish agricultural audience, that the evidential chain from the published [69.6](SOURCES.md#F-a48dedd807)% figure to a quantified sector-specific reduction target has three missing links: there is no closed denominator ([10](SOURCES.md#F-065a83ba99) of [20](SOURCES.md#F-18236f24a7) enumerated nitrogen pathways carry no number), no dose-response behind the oxygen requirement — which is a binary trigger and a judged flat [25](SOURCES.md#F-0daaa1bec3)%, where chlorophyll and light attenuation do have fitted coefficients — and no detectable movement in the extremes after a [35](SOURCES.md#F-2610f88a64)-year halving of the load. It states explicitly that this does not exonerate agriculture, that multiplying unknown fractions yields an unknown rather than a small one, and that it is not an argument for inaction. It applies the same scrutiny to urban discharge, where the numbers are worse. And it ends with four demands, three of which are demands for measurement rather than for a different answer.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-EN "What this claim rests on")</sup>
+
+**Why it was retired:** It summarised wording now retired: the flat cut without its conversion to a load, the period of the halving as a quotation, 'no detectable movement in the extremes' drawn from a comparison of chosen years, which cannot carry a trend, cannot tell no effect from worse without and leaves out warming working against the reduction (as GRUNDLAGET.md sets out), and urban numbers said to be worse without a comparison.
+
+**Replaced by:** [`C-LE-EN`](CLAIMS.md#C-LE-EN) — each opens what it rests on.
+
+<a id="C-LE-OLD-EXTREMES"></a>
+### A table of September extents, and the reading that halving the load left the extremes unmoved, the recent years level with years of double the load, and the swing between two years larger than the trend over the period.
+
+`C-LE-OLD-EXTREMES` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-EXTREMES">Iltsvindets udbredelse i september | |---|---| | 1989 | — | | 2000 | — | | 2002 | — | | 2023 | ~[7,500](SOURCES.md#F-e183f3c508) km² | | 2024 | ~[11,000](SOURCES.md#F-c10cffde61) km² | | 2025 | ~[3,700](SOURCES.md#F-65b47845c8) km² | Halvér tilførslen, og yderpunkterne rykker sig ikke. 2023 og 2024 lå på niveau med 1989, 2000 og 2002, hvor belastningen var omtrent dobbelt så stor. Og 2025 kom ind på en tredjedel af 2024 — så udsvinget mellem to på hinanden følgende år er større end trenden over femogtredive.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-EXTREMES "What this claim rests on")</sup>
+
+**Why it was retired:** The earliest rows and the later years' areas have no pinned source, the load in the earlier record years was never given, DCE's notes put the recent years below the record year, and no trend was computed to compare the swing with; and a comparison of chosen years cannot carry a trend, cannot tell no effect from worse without, and leaves out warming working against the reduction.
+
+**Replaced by:** [`C-LE-OUTCOME`](CLAIMS.md#C-LE-OUTCOME), [`C-LE-JUXTA`](CLAIMS.md#C-LE-JUXTA) — each opens what it rests on.
+
+<a id="C-LE-OLD-FATFLOW"></a>
+### Fat is released at a flow threshold, in the very hours the water bypasses the treatment plant.
+
+`C-LE-OLD-FATFLOW` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-FATFLOW">Og det frigives på en flowtærskel, altså netop i de timer, hvor vandet går uden om renseanlægget.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-FATFLOW "What this claim rests on")</sup>
+
+**Why it was retired:** No source held says when fat leaves the sewers or how much; overflows run above a flow threshold, but fat's release with them is not established.
+
+**Replaced by:** [`C-LE-C-FAT`](CLAIMS.md#C-LE-C-FAT) — each opens what it rests on.
+
+<a id="C-LE-OLD-FEED"></a>
+### Mussel meal and seaweed are feed, and the feed is the environmental service.
+
+`C-LE-OLD-FEED` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-FEED">Det afgørende ved marin ekstraktion er, at det er en produktion. Muslingemel og tang er foder. Og foderet er selve miljøydelsen: kvælstoffet fjernes ved, at biomassen tages op.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-FEED "What this claim rests on")</sup>
+
+**Why it was retired:** Mussel meal has been tested as feed; nothing found shows it in routine use.
+
+**Replaced by:** [`C-LE-7-PRODUCTION`](CLAIMS.md#C-LE-7-PRODUCTION) — each opens what it rests on.
+
+<a id="C-LE-OLD-HISTORY"></a>
+### An earlier version of the page made a broader claim about coefficients, since narrowed.
+
+`C-LE-OLD-HISTORY` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-HISTORY">En tidligere version af denne side sagde, at der *ikke findes nogen koefficient mellem kvælstof og nogen økologisk effekt*. Det er for bredt, og det er nu rettet til det, dokumenterne faktisk viser — en skærpelse, ikke en tilbagetrækning.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-HISTORY "What this claim rests on")</sup>
+
+**Why it was retired:** A page does not narrate its own history; what it once said is kept in this archive.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-LE-OLD-HOOK"></a>
+### Agriculture is not without a share, and reductions have documented local benefits.
+
+`C-LE-OLD-HOOK` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-HOOK">Det viser ikke, at landbruget er uden andel. At gange ukendte brøker giver en ukendt, ikke en lille. Landbruget er sandsynligvis stadig den største enkelte kvælstofkilde, belastningen er reel, og reduktioner har dokumenterede lokale gevinster.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-HOOK "What this claim rests on")</sup>
+
+**Why it was retired:** The documented local benefits were not cited.
+
+**Replaced by:** [`C-LE-NOTHOOK`](CLAIMS.md#C-LE-NOTHOOK) — each opens what it rests on.
+
+<a id="C-LE-OLD-INTERVENTION"></a>
+### Land-based nitrogen supply fell from a stated load to about half, airborne nitrogen fell as much, and this is the largest and an undisputed environmental effort.
+
+`C-LE-OLD-INTERVENTION` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-INTERVENTION">Den landbaserede kvælstoftilførsel er faldet fra omkring [100](SOURCES.md#F-115a8de291) kt N/år i 1990 til omkring [55](SOURCES.md#F-75a779d9ac) kt — en reduktion på cirka [50](SOURCES.md#F-2137b72d77) %. Luftbåren kvælstof til danske havområder er faldet tilsvarende. Det er den største miljøindsats i nyere dansk politik, og den er ikke omstridt.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-INTERVENTION "What this claim rests on")</sup>
+
+**Why it was retired:** The load figures rest on the register's transcription of a page that did not show them, the airborne fall has no source, and 'the largest' and 'undisputed' have nothing behind them; DCE's pinned report gives the reduction.
+
+**Replaced by:** [`C-LE-REDUCTION`](CLAIMS.md#C-LE-REDUCTION), [`C-LE-NOTDISPUTED`](CLAIMS.md#C-LE-NOTDISPUTED) — each opens what it rests on.
+
+<a id="C-LE-OLD-LEVER"></a>
+### The second lever, the state of the sea, has not so far been in play.
+
+`C-LE-OLD-LEVER` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-LEVER">Så er der to håndtag, ikke ét, og det andet har hidtil ikke været i spil.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-LEVER "What this claim rests on")</sup>
+
+**Why it was retired:** Marine measures have been weighed: the second opinion published by the ministry records coastal water councils recommending them as supplements.
+
+**Replaced by:** [`C-LE-7-SUPPOSE`](CLAIMS.md#C-LE-7-SUPPOSE), [`C-LE-7-WEIGHED`](CLAIMS.md#C-LE-7-WEIGHED) — each opens what it rests on.
+
+<a id="C-LE-OLD-LEVERSTABLE"></a>
+### A table of measures: mussel and seaweed farming the only measure working on the stock, eelgrass holding metals and sulphide in the bed, and wetlands and catch crops known to work.
+
+`C-LE-OLD-LEVERSTABLE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-LEVERSTABLE">| Virkemiddel | Hvad det gør, som reduktion ikke gør | |---|---| | Muslinge- og tangopdræt | fjerner kvælstof, der allerede er i vandet, og høstes i stedet for at rådne. Det eneste virkemiddel, der arbejder på lageret frem for på tilførslen | | Ålegræs og bundintegritet | genopretter optagelsen og stabiliserer sedimentet, så metaller og svovlbrinte bliver liggende | | Vådområder og efterafgrøder | de kendte, og de virker — men kun på tilførslen</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-LEVERSTABLE "What this claim rests on")</sup>
+
+**Why it was retired:** 'The only measure working on the stock' had nothing behind it, eelgrass holding metals and sulphide in the bed is a hypothesis in the register, and 'they work' was not cited.
+
+**Replaced by:** [`C-LE-7-MUSSEL`](CLAIMS.md#C-LE-7-MUSSEL), [`C-LE-7-EELGRASS`](CLAIMS.md#C-LE-7-EELGRASS), [`C-LE-7-LAND`](CLAIMS.md#C-LE-7-LAND) — each opens what it rests on.
+
+<a id="C-LE-OLD-LINKS"></a>
+### Three links, each with no coefficient: nitrogen to oxygen depletion, oxygen depletion to the loss of higher life, and that loss to fedtemøg.
+
+`C-LE-OLD-LINKS` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-LINKS">| Led | Koefficient | |---|---| | Kvælstof → iltsvind | findes ikke. Kvælstof er én af mindst seks iltforbrugende processer. Der er ingen potensfaktor: et kilo i februar i en opblandet vandsøjle tæller som et kilo i juli under et springlag | | Iltsvind → tab af højere liv | findes ikke. Iltsvind er én vej blandt flere — miljøfremmede stoffer, trawl, turbiditet, svovlbrinte. Bundfaunaen prøvetages 1. marts – 31. maj, så efterårets dødelighed ses aldrig | | Tab af højere liv → fedtemøg | findes ikke. Fedtemøg overvåges ikke systematisk overhovedet — ikke udbredelse, ikke biomasse, ikke varighed</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-LINKS "What this claim rests on")</sup>
+
+**Why it was retired:** Fedtemøg is grown algae, not the end of an oxygen-and-die-off chain; 'does not exist' was wider than what was searched; 'at least six' processes had no source; and 'never seen' overstated what a spring survey misses.
+
+**Replaced by:** [`C-LE-L1`](CLAIMS.md#C-LE-L1), [`C-LE-L2`](CLAIMS.md#C-LE-L2), [`C-LE-L3`](CLAIMS.md#C-LE-L3), [`C-LE-L4`](CLAIMS.md#C-LE-L4), [`C-LE-FAUNA`](CLAIMS.md#C-LE-FAUNA) — each opens what it rests on.
+
+<a id="C-LE-OLD-MEASURE"></a>
+### The first three demands are demands for measurement, the strongest position against a number one thinks wrong.
+
+`C-LE-OLD-MEASURE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-MEASURE">De tre første er krav om *måling*. Det er den stærkeste position, man kan indtage over for et tal, man mener er forkert: forlang ikke, at det ændres — forlang, at det bliver efterprøvet.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-MEASURE "What this claim rests on")</sup>
+
+**Why it was retired:** The first demand is a calculation on published and held series, not a measurement, and 'the strongest position' was not argued.
+
+**Replaced by:** [`C-LE-9-KIND`](CLAIMS.md#C-LE-9-KIND) — each opens what it rests on.
+
+<a id="C-LE-OLD-METHODTABLE"></a>
+### A table of the diffuse-load method's coverage, sampling, documented bias, retention uncertainty and dry-year behaviour, stated as facts.
+
+`C-LE-OLD-METHODTABLE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-METHODTABLE">Måledækning | [49](SOURCES.md#F-91677c0226) % af arealet måles, [51](SOURCES.md#F-8f7892f758) % modelleres | | Målemetode | stikprøver med faste mellemrum, transport beregnet som sum af daglig vandføring gange lineært interpoleret koncentration | | Dokumenteret skævhed | i alle tre vandløb i GUDP-undersøgelsen fra 2018 gav stikprøver altid lavere transport end højfrekvent måling | | Retentionens usikkerhed | ± [16](SOURCES.md#F-621f48bb7e) procentpoint på landsgennemsnittet | | Estimatorens opførsel | i tørre år som 1996 og 2005 bliver det beregnede dyrkningsbidrag negativt</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-METHODTABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Every row was transcribed from the project's monitoring register, which gives no source, and the table did not say so; the comparison in the bias row was intensive daily measurement, not high-frequency measurement.
+
+**Replaced by:** [`C-LE-R-COVER`](CLAIMS.md#C-LE-R-COVER), [`C-LE-R-METHOD`](CLAIMS.md#C-LE-R-METHOD), [`C-LE-R-BIAS`](CLAIMS.md#C-LE-R-BIAS), [`C-LE-R-RETENTION`](CLAIMS.md#C-LE-R-RETENTION), [`C-LE-R-DRY`](CLAIMS.md#C-LE-R-DRY), [`C-LE-R-SOURCE`](CLAIMS.md#C-LE-R-SOURCE) — each opens what it rests on.
+
+<a id="C-LE-OLD-NEGATIVE"></a>
+### A quantity that can be negative is not a measurement of a physical amount; it is the residual of two models.
+
+`C-LE-OLD-NEGATIVE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-NEGATIVE">En størrelse, der kan blive negativ, er ikke en måling af en fysisk mængde. Den er residualet af to modeller, og den arver begges fejl med modsat fortegn.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-NEGATIVE "What this claim rests on")</sup>
+
+**Why it was retired:** The total is partly measured and the point sources partly reported, so it is not the residual of two models; a difference can come out negative through error and still estimate a physical amount.
+
+**Replaced by:** [`C-LE-NEGATIVE`](CLAIMS.md#C-LE-NEGATIVE) — each opens what it rests on.
+
+<a id="C-LE-OLD-NOCURVE"></a>
+### The oxygen requirement can be neither falsified nor calibrated, because no response curve lies behind it.
+
+`C-LE-OLD-NOCURVE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-NOCURVE">Den kan hverken falsificeres eller kalibreres, fordi der ingen respons-kurve er bag den.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-NOCURVE "What this claim rests on")</sup>
+
+**Why it was retired:** A judged minimum can be tested against what happens where it is applied, and a fitted relation between supply and concentration lies behind its conversion to a load; what DCE give for the share itself is year-to-year variation and a judgement.
+
+**Replaced by:** [`C-LE-JUDGED`](CLAIMS.md#C-LE-JUDGED) — each opens what it rests on.
+
+<a id="C-LE-OLD-PRIOR"></a>
+### Extractive farming concentrates metals and organic pollutants; cadmium and mercury concentrate up the food chain and nothing living has an evolutionary defence against them.
+
+`C-LE-OLD-PRIOR` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-PRIOR">Ekstraktivt opdræt opkoncentrerer metaller og organiske miljøfremmede stoffer. Hvor høsten må gå hen, afgøres af analyse, ikke af hensigt — og zink og kobber er ikke det samme som cadmium og kviksølv, som opkoncentreres op gennem fødekæden og som intet levende har et evolutionært beredskab over for.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-PRIOR "What this claim rests on")</sup>
+
+**Why it was retired:** 'Nothing living has an evolutionary preparedness' had nothing behind it; the pinned sources say cadmium has no known function in higher organisms and methylmercury is biomagnified in aquatic food chains.
+
+**Replaced by:** [`C-LE-8-METALS`](CLAIMS.md#C-LE-8-METALS) — each opens what it rests on.
+
+<a id="C-LE-OLD-PRODUCT"></a>
+### A product of three unknown fractions is presented as one measured number.
+
+`C-LE-OLD-PRODUCT` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-PRODUCT">Hvert led er en reel årsagssammenhæng. Ingen af dem har et tal. Et produkt af tre ukendte brøker er en ukendt brøk — og det præsenteres som ét målt tal.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-PRODUCT "What this claim rests on")</sup>
+
+**Why it was retired:** No source held presents the product as one measured number.
+
+**Replaced by:** [`C-LE-EVERYLINK`](CLAIMS.md#C-LE-EVERYLINK) — each opens what it rests on.
+
+<a id="C-LE-OLD-PROOF"></a>
+### The record is proof that the extent is governed by the year's physics and the state of the seabed, with load as a slow background.
+
+`C-LE-OLD-PROOF` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-PROOF">Det er bevis for, at udbredelsen styres af det enkelte års fysik og af havbundens tilstand, med belastningen som en langsom baggrund. Ingen af de to ting kan en kildeopgørelse overhovedet udtrykke, for ingen af dem er en kilde.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-PROOF "What this claim rests on")</sup>
+
+**Why it was retired:** 'Proof' said more than the record shows: DCE explain the season by wind and temperature, and the state of the seabed is a set of hypotheses in the register.
+
+**Replaced by:** [`C-LE-WEATHER`](CLAIMS.md#C-LE-WEATHER), [`C-LE-STATE`](CLAIMS.md#C-LE-STATE), [`C-LE-NOTSOURCE`](CLAIMS.md#C-LE-NOTSOURCE) — each opens what it rests on.
+
+<a id="C-LE-OLD-RESIDUAL"></a>
+### The agricultural share is a measured-plus-modelled total minus modelled point sources minus a modelled natural background.
+
+`C-LE-OLD-RESIDUAL` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-RESIDUAL">Sådan fremkommer landbrugsandelen: målt-plus-modelleret total, minus modellerede punktkilder, minus modelleret naturligt baggrundsbidrag. Det, der bliver tilbage, kaldes landbrug.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-RESIDUAL "What this claim rests on")</sup>
+
+**Why it was retired:** Treatment plants and industry, among the point sources subtracted, report their discharges rather than being modelled, and the remainder also holds scattered dwellings.
+
+**Replaced by:** [`C-LE-RESIDUAL`](CLAIMS.md#C-LE-RESIDUAL) — each opens what it rests on.
+
+<a id="C-LE-OLD-SCALE"></a>
+### Extractive farming at the necessary scale is economically untested, and no serious attempt has been made.
+
+`C-LE-OLD-SCALE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-SCALE">Ekstraktivt opdræt i den nødvendige skala er ikke økonomisk afprøvet. Der er ikke sket en effektivitetsrevolution endnu — men der er heller ikke gjort noget alvorligt forsøg.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-SCALE "What this claim rests on")</sup>
+
+**Why it was retired:** DCE reported a full-scale trial in Skive Fjord in 2013 with the cost per kilogram of nitrogen removed, so 'no serious attempt' is contradicted; 'the necessary scale' was never defined.
+
+**Replaced by:** [`C-LE-8-TESTED`](CLAIMS.md#C-LE-8-TESTED) — each opens what it rests on.
+
+<a id="C-LE-OLD-SCOPE"></a>
+### The share's term is two of the rows in the project's account of all the ways reactive nitrogen reaches Danish marine waters.
+
+`C-LE-OLD-SCOPE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-SCOPE">Tallet er landbrugets andel af den landbaserede, vandbårne post alene — kvælstof, der når kysten gennem danske vandløb og umålte oplande. Det er to rækker ud af tyve i den opgørelse, projektet har lavet over alle veje, ad hvilke reaktivt kvælstof når danske havområder:</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-SCOPE "What this claim rests on")</sup>
+
+**Why it was retired:** 'All the ways' claimed completeness for a register of the pathways this project could enumerate, and the count was given in words.
+
+**Replaced by:** [`C-LE-SCOPE`](CLAIMS.md#C-LE-SCOPE) — each opens what it rests on.
+
+<a id="C-LE-OLD-SENTENCE"></a>
+### The sentence used politically is that agriculture accounts for a stated share of oxygen depletion, or of fedtemøg.
+
+`C-LE-OLD-SENTENCE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-SENTENCE">Sætningen, der bruges politisk, er ikke *[69,6](SOURCES.md#F-188db7960d) % af den landbaserede vandbårne kvælstofpost*. Den er *landbruget står for omkring [70](SOURCES.md#F-9134027b6d) % af iltsvindet* — eller af fedtemøget. Mellem de to sætninger ligger tre led:</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-SENTENCE "What this claim rests on")</sup>
+
+**Why it was retired:** No source this project holds says it: the pinned record joins agriculture's nitrogen to fedtemøg and oxygen depletion without a share, and gives the share without the outcome; the figure was a quotation of the page's own earlier text.
+
+**Replaced by:** [`C-LE-PUBLIC`](CLAIMS.md#C-LE-PUBLIC), [`C-LE-JOIN`](CLAIMS.md#C-LE-JOIN) — each opens what it rests on.
+
+<a id="C-LE-OLD-SHOWS"></a>
+### The basis for a quantified, sector-specific target is not present: no denominator, no potency factor and no documented effect on the extremes; a misspecified instrument is dangerous to everyone.
+
+`C-LE-OLD-SHOWS` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-SHOWS">er snævrere og stærkere: grundlaget for et kvantificeret, sektorspecifikt mål er ikke til stede. Der findes ingen nævner, ingen potensfaktor, og ingen dokumenteret virkning på yderpunkterne efter femogtredive år. Et fejlspecificeret instrument er ikke kun urimeligt over for den regulerede — det er farligt for alle, fordi det bliver ved med at kræve mere af det samme, når det samme ikke virker.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-SHOWS "What this claim rests on")</sup>
+
+**Why it was retired:** The page itself says DCE compute the requirement for chlorophyll and light from fitted slopes, so 'the basis is not present' said more than the page shows; the period was given in words, and 'dangerous to everyone' was not argued.
+
+**Replaced by:** [`C-LE-SHOWS`](CLAIMS.md#C-LE-SHOWS) — each opens what it rests on.
+
+<a id="C-LE-OLD-SPACE"></a>
+### The project spends most of its space taking the city's own discharges apart.
+
+`C-LE-OLD-SPACE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-SPACE">Projektet her bruger det meste af sin plads på at tage byens egne udledninger fra hinanden — regnbetingede overløb, spildevandsplanens huller, hvad Københavns skybrudsplan faktisk dækker.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-SPACE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Most of its space' was a quantity nobody measured.
+
+**Replaced by:** [`C-LE-CITY-TOO`](CLAIMS.md#C-LE-CITY-TOO) — each opens what it rests on.
+
+<a id="C-LE-OLD-TYPETAL"></a>
+### The hazardous-substance typetal are applied to the national count of discharge points, and the same report finds the highest metal medians in basin sludge.
+
+`C-LE-OLD-TYPETAL` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-TYPETAL">Typetallene for miljøfarlige stoffer hviler på [6](SOURCES.md#F-41dfed1453) målestationer for fællessystem og [5](SOURCES.md#F-bbc818016b) for separat regnvand, anvendt på [19,665](SOURCES.md#F-e99017aac7) udledningspunkter — i oplande *valgt* til at repræsentere husholdninger og boligområder, og udtrykkeligt afgrænset over for industriområder og stærkt trafikerede veje. Samme rapport finder de højeste medianer for metaller i slam fra bassiner.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-TYPETAL "What this claim rests on")</sup>
+
+**Why it was retired:** The pinned report was not found to say how many discharge points the typetal are applied to, or that basin sludge has the highest metal medians; it says a significant share of the adsorbing substances is caught in basin sediment.
+
+**Replaced by:** [`C-LE-C-TYPETAL`](CLAIMS.md#C-LE-C-TYPETAL) — each opens what it rests on.
+
+<a id="C-LE-OLD-UANSET"></a>
+### The oxygen requirement is the same fixed reduction whatever the severity, the nitrogen supplied or the layout of the water body.
+
+`C-LE-OLD-UANSET` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-UANSET">Hvis én eller flere iltsvindsindikatorer siger, at vandområdet er ramt, sættes indsatsbehovet til en fast reduktion på [25](SOURCES.md#F-a0d8856566) % af den nuværende TN-koncentration — uanset hvor slemt iltsvindet er, hvor meget kvælstof der tilføres, eller hvordan området er indrettet.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-UANSET "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's report converts the cut in concentration into a requirement in supply through each water body's own relation between supply and concentration, so the requirement in supply does depend on the water body.
+
+**Replaced by:** [`C-LE-TRIGGER`](CLAIMS.md#C-LE-TRIGGER) — each opens what it rests on.
+
+<a id="C-LE-OLD-VALUE"></a>
+### In the present arrangement an animal's value coincides with its death, and the earlier the better, as with bull calves, lambs and boars.
+
+`C-LE-OLD-VALUE` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-VALUE">Det er ikke en omskrivning. Det er en ændring af, hvad betalingen er knyttet til. I den nuværende ordning falder dyrets værdi sammen med dets død, og jo tidligere jo bedre — tyrekalve, lam, orner. Et foderflow, der betales for at fjerne kvælstof fra havet, afkobler betalingen fra aflivningen.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-VALUE "What this claim rests on")</sup>
+
+**Why it was retired:** No source was recorded or found for the general statement or for the three examples.
+
+**Replaced by:** [`C-LE-8-DECOUPLE`](CLAIMS.md#C-LE-8-DECOUPLE) — each opens what it rests on.
+
+<a id="C-LE-OLD-VOLUME"></a>
+### Overflow quantities are modelled, not measured, and the volume carries a stated uncertainty at the lowest knowledge level.
+
+`C-LE-OLD-VOLUME` · retired 2026-09-11 from [LANDBRUG.md](LANDBRUG.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-LE-OLD-VOLUME">Overløbsmængder er modellerede, ikke målte. PULS registrerer antal overløb og ingen vandføring. Massen beregnes som modelleret årsvolumen gange et fast typetal — og kvalitetskontrolleres ved at tjekke, om koncentrationen ligger tæt på det samme typetal. Usikkerheden på volumen er angivet til [135](SOURCES.md#F-7208cb5a42) % på det laveste videnniveau.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-VOLUME "What this claim rests on")</sup>
+
+**Why it was retired:** Miljøstyrelsen's scheme includes a measurement-based level, and its stated uncertainty is on the discharged mass, at the level of a simple mass balance; the lowest level, a PULS calculation, has none.
+
+**Replaced by:** [`C-LE-C-OVERFLOW`](CLAIMS.md#C-LE-C-OVERFLOW) — each opens what it rests on.
+
+## LIGHT.md
+
+<a id="C-FR-OLD-LT-ALGAE"></a>
+### The page settles the arithmetic, which was never in doubt, and a Kd exceedance is attributed to algae by assumption rather than measurement.
+
+`C-FR-OLD-LT-ALGAE` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-ALGAE">It settles the arithmetic, which was never in doubt, and it puts a number on the thing the Kd indicator is a proxy for. What it cannot settle is *why* the light is where it is. Kd is one broadband number and its causes do not separate — phytoplankton, resuspended mineral sediment, coloured dissolved organic matter and drifted detritus all darken water identically at this resolution. That is `Z8`, and it is why a Kd exceedance is attributed to algae by assumption rather than by measurement.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-ALGAE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Never in doubt' and 'attributed to algae by assumption' were not shown: nothing was read to say how an exceedance of the Kd target is attributed.
+
+**Replaced by:** [`C-FR-LT-SETTLES`](CLAIMS.md#C-FR-LT-SETTLES) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-CHOICE"></a>
+### The shallow-start and deep-start figures are two answers from one record, separated by a choice nobody documents making.
+
+`C-FR-OLD-LT-CHOICE` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-CHOICE">Neither is the true number. They are two answers from one record, separated by a choice nobody documents making.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-CHOICE "What this claim rests on")</sup>
+
+**Why it was retired:** The groups are different casts, which may lie in different waters, so the gap mixes the depth window with the place; and the technical instruction documents the choices that set a cast's window.
+
+**Replaced by:** [`C-FR-LT-SPLIT`](CLAIMS.md#C-FR-LT-SPLIT) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-DECADES"></a>
+### Decades of load reduction were supposed to have answered whether light has improved.
+
+`C-FR-OLD-LT-DECADES` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-DECADES">This is the question decades of load reduction are supposed to have answered.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-DECADES "What this claim rests on")</sup>
+
+**Why it was retired:** What decades of load reduction were supposed to answer was asserted with no source, and nothing on the page needs it.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-FR-OLD-LT-DIES"></a>
+### Eelgrass has a requirement, not a preference, and below the page's range of light at the bed it dies; the Kd target is built on the same number.
+
+`C-FR-OLD-LT-DIES` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-DIES">Eelgrass has a requirement, not a preference. Below roughly [11](SOURCES.md#F-7771f22d49)–[14](SOURCES.md#F-20c1328c6c)% of surface light at the seabed it does not grow slowly — it dies. The Danish light-attenuation target is built on the same number from the other direction: the environmental objective for Kd is derived by assuming eelgrass needs about [14](SOURCES.md#F-20c1328c6c)% of surface irradiance at the depth it is supposed to reach. So the indicator and the requirement are two ends of one calculation, and the calculation can be run from the raw record rather than inherited from an assessment.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-DIES "What this claim rests on")</sup>
+
+**Why it was retired:** DCE, whose note the page's thresholds come from, give a range of light at the bed within which eelgrass can grow, reaching higher than the page's upper figure, and do not say that below the page's range it dies; the upper figure is the share DCE assume at the target depth when they turn depth targets into Kd targets.
+
+**Replaced by:** [`C-FR-LT-DCE`](CLAIMS.md#C-FR-LT-DCE), [`C-FR-LT-THRESH`](CLAIMS.md#C-FR-LT-THRESH), [`C-FR-LT-ODA`](CLAIMS.md#C-FR-LT-ODA) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-EPI"></a>
+### Epiphytes on the leaf shade eelgrass where no water-column measurement reaches.
+
+`C-FR-OLD-LT-EPI` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-EPI">It also cannot see the shading that happens *after* the light has passed through the water. Epiphytes growing on the leaf shade the host at the blade surface, where no water-column measurement reaches (`Z9` — Epiphyte shading, which bypasses the water column), so the nutrient-to-light pathway can operate with every number on this page looking acceptable.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-EPI "What this claim rests on")</sup>
+
+**Why it was retired:** The epiphyte mechanism was stated as fact; it is a hypothesis in the register.
+
+**Replaced by:** [`C-FR-LT-Z9`](CLAIMS.md#C-FR-LT-Z9) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-FITTEDTO"></a>
+### ODA publishes the measurements each Kd line was fitted to.
+
+`C-FR-OLD-LT-FITTEDTO` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-FITTEDTO">Every figure above rests on Kd, and Kd is a straight line fitted to the logarithm of light against depth. That fit assumes attenuation is the same all the way down. ODA publishes the measurements the line was fitted to, so the assumption can be checked rather than granted: refit the top half of each profile against the bottom half. [53,468](SOURCES.md#F-1bcf4302e9) casts carry enough points to allow it</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-FITTEDTO "What this claim rests on")</sup>
+
+**Why it was retired:** ODA publishes each cast's light readings, but not that the published Kd was fitted to all of them: the technical instruction lets the analyst fit above the thermocline only, leave out the lowest readings where the curve bends, and weigh whether the faintest readings belong, so which readings a published Kd was fitted to is not recorded.
+
+**Replaced by:** [`C-FR-LT-REFIT`](CLAIMS.md#C-FR-LT-REFIT) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-FLAG"></a>
+### ODA's sight-to-bottom flag is the only reason the censoring can be checked.
+
+`C-FR-OLD-LT-FLAG` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-FLAG">ODA is straightforward about this and publishes the flag — `SigtTilBund`, sight-to-bottom — which is the only reason any of this can be checked.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-FLAG "What this claim rests on")</sup>
+
+**Why it was retired:** The shares do not use the flag: they compare each reading with the bottom depth on the same record, so the flag is not the only way to check; and 'straightforward about this' credited ODA with an intent nothing records.
+
+**Replaced by:** [`C-FR-LT-FLAG`](CLAIMS.md#C-FR-LT-FLAG) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-NOBODY"></a>
+### The restricted trend is the check nobody runs, and a trend absent from it is a trend in where Denmark chose to measure.
+
+`C-FR-OLD-LT-NOBODY` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-NOBODY">The second row is the check that matters, and it is the one nobody runs. If a trend appears on all casts but not on the stations measured throughout, it is a trend in where Denmark chose to measure, not in the water — hypothesis `I1` — Changing station network, put to the record rather than asserted.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-NOBODY "What this claim rests on")</sup>
+
+**Why it was retired:** 'The one nobody runs' was an absence over every analysis anyone has made, never searched; and 'where Denmark chose to measure' named a choice where the record shows only which stations were sampled.
+
+**Replaced by:** [`C-FR-LT-I1`](CLAIMS.md#C-FR-LT-I1) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-NOSPECTRAL"></a>
+### Spectral attenuation is not measured anywhere in the Danish programme.
+
+`C-FR-OLD-LT-NOSPECTRAL` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-NOSPECTRAL">The measurement that would separate the two explanations — spectral attenuation rather than one broadband coefficient — is not made anywhere in the Danish programme. A single number cannot say whether the light stopped because something was in the water or because water is red-absorbing and the sensor started shallow. That is `Z8` — The attenuation budget is never partitioned again, one layer below where it is stated.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-NOSPECTRAL "What this claim rests on")</sup>
+
+**Why it was retired:** An absence over the whole programme, not searched as such; what is established is that none of the ODA extracts fetched carries it and the instruction specifies broadband sensors.
+
+**Replaced by:** [`C-FR-LT-NOSPECTRAL`](CLAIMS.md#C-FR-LT-NOSPECTRAL), [`C-FR-LT-Z8`](CLAIMS.md#C-FR-LT-Z8) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-ONESIDED"></a>
+### In shallow water many Secchi readings are bathymetry, the censoring stops from moderate depths, and it happens only in the shallows.
+
+`C-FR-OLD-LT-ONESIDED` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-ONESIDED">readings are measurements of bathymetry wearing the units of clarity. From [10](SOURCES.md#F-4d09b8512c) m down it essentially stops happening ([0.8](SOURCES.md#F-88f70da3ce)%). The censoring is not an error — it is what the instrument does — but it is one-sided: it can only make the water look less clear than it is, never more, and only in the shallows.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-ONESIDED "What this claim rests on")</sup>
+
+**Why it was retired:** 'Only in the shallows' was not so: the table finds the disc at the bed in deeper bands too, if rarely.
+
+**Replaced by:** [`C-FR-LT-CENSOR`](CLAIMS.md#C-FR-LT-CENSOR) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-PROPERTY"></a>
+### Kd measured this way is not a property of the water, two casts in identical water return different numbers, and the indicator and its target inherit that.
+
+`C-FR-OLD-LT-PROPERTY` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-PROPERTY">What follows is that Kd measured this way is not a property of the water. It is a property of the water and the depth window jointly. Two casts in identical water, one begun near the surface and one begun deeper, return different numbers. The indicator, the target derived from it, and every figure on this page inherit that.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-PROPERTY "What this claim rests on")</sup>
+
+**Why it was retired:** Within a cast the halves differ, so a Kd depends on its depth window - that stands; but 'two casts in identical water return different numbers' was inferred, not observed, and that the national indicator and its target inherit it was not checked against how the indicator is computed.
+
+**Replaced by:** [`C-FR-LT-WINDOW`](CLAIMS.md#C-FR-LT-WINDOW) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-SPECTRAL"></a>
+### The spectral hardening of broadband light is what outweighs resuspension, as the page's earlier absorption figures showed.
+
+`C-FR-OLD-LT-SPECTRAL` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-SPECTRAL">The bottom half attenuates less, and the gap closes the deeper the profile begins. That ordering is the whole result. It runs opposite to resuspension — a turbid layer over the bed would make the bottom half steeper, and it does so in only [22](SOURCES.md#F-8900ed4b6a)–[48](SOURCES.md#F-d5c7fe333b)% of casts, outweighed on average by something else. The something else is that a PAR sensor counts photons across the whole band without distinguishing them, and water absorbs the band unevenly - as an earlier version of this page put it, roughly [0.5](SOURCES.md#F-9eb304b0ac) per metre at [700](SOURCES.md#F-3dfab3e269) nm against [0.015](SOURCES.md#F-91aaf10297) per metre at [450](SOURCES.md#F-e346c4ae07) nm. The red part of the light is gone near the surface, and what continues downward is the fraction water attenuates least. So the apparent broadband Kd falls with depth in perfectly uniform water, purely because the surviving spectrum has shifted. If that is the mechanism, the effect must fade for profiles that begin below the red-absorbing layer, because the red is already gone. It does: the ratio runs from [0.879](SOURCES.md#F-55e103c0dd) for profiles starting at the surface to [0.987](SOURCES.md#F-6901a3eb54) for those starting below [5.1](SOURCES.md#F-b8dd0ec86d) m, rising overall though not at every step.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-SPECTRAL "What this claim rests on")</sup>
+
+**Why it was retired:** It gave the spectral explanation as the cause, which nothing here measures - the page itself said the measurement that would separate the explanations is not made; its absorption figures were read out of an earlier version of the page, not a source; and it narrated that history on the page.
+
+**Replaced by:** [`C-FR-LT-HALVES`](CLAIMS.md#C-FR-LT-HALVES), [`C-FR-LT-RESUSP`](CLAIMS.md#C-FR-LT-RESUSP), [`C-FR-LT-SPECTRAL`](CLAIMS.md#C-FR-LT-SPECTRAL) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-TWO"></a>
+### Neither of Denmark's two transparency records measures the water alone.
+
+`C-FR-OLD-LT-TWO` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-TWO">Neither of Denmark's two transparency records is a clean measurement of the water alone — one depends on where the sensor started, the other on how deep the sea is underneath it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-TWO "What this claim rests on")</sup>
+
+**Why it was retired:** Denmark holds more transparency records than these: satellite ocean-colour products give the attenuation coefficient too; and 'where the sensor started' is now the depth window the fit uses.
+
+**Replaced by:** [`C-FR-LT-NEITHER`](CLAIMS.md#C-FR-LT-NEITHER) — each opens what it rests on.
+
+<a id="C-FR-OLD-LT-WHOLE"></a>
+### The potential depth is the whole eelgrass question in a number per cast.
+
+`C-FR-OLD-LT-WHOLE` · retired 2026-09-11 from [LIGHT.md](LIGHT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-LT-WHOLE">That is the whole eelgrass question in one number per cast, and it is computed from a measurement rather than from a model of a reference condition.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-LT-WHOLE "What this claim rests on")</sup>
+
+**Why it was retired:** Not the whole question: DCE write that enough light does not mean eelgrass grows at that depth, and the page's own last section names shading on the leaf that no water-column number sees.
+
+**Replaced by:** [`C-FR-LT-POTENTIAL`](CLAIMS.md#C-FR-LT-POTENTIAL) — each opens what it rests on.
 
 ## METHOD_LAB.md
 
@@ -4034,6 +6850,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-OP-4-POTENCY`](CLAIMS.md#C-OP-4-POTENCY) — each opens what it rests on.
 
+<a id="C-OP-OLD-5-FLOWPROP"></a>
+### Flow-proportional sampling as Miljøstyrelsen's highest knowledge level for overflows.
+
+`C-OP-OLD-5-FLOWPROP` · retired 2026-09-11 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `65ba0dd`
+
+> <span class="claim" data-claim="C-OP-OLD-5-FLOWPROP">Flow-proportional sampling at a handful of structures across a range of event sizes - videnniveau [5](SOURCES.md#F-e9d635fd78) in Miljøstyrelsen's own scheme, [30](SOURCES.md#F-a2cb1ca0a5)% uncertainty, and the highest level in their hierarchy.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-5-FLOWPROP "What this claim rests on")</sup>
+
+**Why it was retired:** It named one sampling method as the level. DP02 defines the level by two elements - the overflow flow, measured directly or by mass balance, and measured substance concentrations in the overflow water - and allows many techniques for them (agent w3-le's reading, checked against the pin).
+
+**Replaced by:** [`C-OP-5-SETTLE`](CLAIMS.md#C-OP-5-SETTLE) — each opens what it rests on.
+
 <a id="C-OP-OLD-5-NOBODY"></a>
 ### Almost nobody does flow-proportional overflow sampling.
 
@@ -4698,6 +7525,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-PC-KOEGE-DCE`](CLAIMS.md#C-PC-KOEGE-DCE) — each opens what it rests on.
 
+<a id="C-PC-OLD-X17"></a>
+### X17 as arguing that every Danish catchment has been sprayed for decades, so no counterfactual exists until somebody stops somewhere.
+
+`C-PC-OLD-X17` · retired 2026-09-11 from [PLACES.md](PLACES.md) · as published in `65ba0dd`
+
+> <span class="claim" data-claim="C-PC-OLD-X17">argues the specific case: every Danish catchment has been sprayed for decades, so for that mechanism there is nothing to compare against — the counterfactual does not exist at any price until somebody stops somewhere.</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-X17 "What this claim rests on")</sup>
+
+**Why it was retired:** The reason it gave - every Danish catchment sprayed for decades - had no source, and EXPERIMENTS retired the same wording (agent w3-ea). The replacement gives the reason X17 now gives.
+
+**Replaced by:** [`C-PC-X17`](CLAIMS.md#C-PC-X17) — each opens what it rests on.
+
 ## PLAN.md
 
 <a id="C-KP-OLD-182"></a>
@@ -4975,6 +7813,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-KP-OUTSTANDING`](CLAIMS.md#C-KP-OUTSTANDING) — each opens what it rests on.
 
+<a id="C-KP-OLD-VANDKEMI-FETCH"></a>
+### The triage as still counting the nine water-chemistry hypotheses as blocked on a fetch after the extract was held, with their re-scoring left to OPEN_PROBLEMS.md.
+
+`C-KP-OLD-VANDKEMI-FETCH` · retired 2026-09-11 from [PLAN.md](PLAN.md) · as published in `65ba0dd`
+
+> <span class="claim" data-claim="C-KP-OLD-VANDKEMI-FETCH">but the triage above still counts the nine as blocked on a fetch. Re-scoring them against the data, rather than against its absence, is in OPEN_PROBLEMS.md.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KP-OLD-VANDKEMI-FETCH "What this claim rests on")</sup>
+
+**Why it was retired:** True when it was published: the triage then still classed the nine as blocked on the fetch. The triage has since scored them against the held extract, so the sentence no longer describes it. Its replacement reads the classes from the triage rows.
+
+**Replaced by:** [`C-KP-VANDKEMI`](CLAIMS.md#C-KP-VANDKEMI) — each opens what it rests on.
+
 ## POLITICS.md
 
 <a id="C-PO-OLD-DHI-INTERVAL"></a>
@@ -5077,6 +7926,39 @@ A claim is retired when no good justification for it can be given - most often b
 **Replaced by:** [`C-PO-UNDERREP`](CLAIMS.md#C-PO-UNDERREP) — each opens what it rests on.
 
 ## PROGRAMME.md
+
+<a id="C-AU-OLD-3M-RANGE"></a>
+### The `3M` settlement with US public water systems lies in a stated range.
+
+`C-AU-OLD-3M-RANGE` · retired 2026-09-11 from [PROGRAMME.md](PROGRAMME.md) · as published in `7954022`
+
+> <span class="claim" data-claim="C-AU-OLD-3M-RANGE">| [3](SOURCES.md#F-93d331a956)M, public water systems | [10.5](SOURCES.md#F-a731c3ae84)–[12.5](SOURCES.md#F-2adef861da)bn</span><sup class="claim-mark">[†](ARCHIVE.md#C-AU-OLD-3M-RANGE "What this claim rests on")</sup>
+
+**Why it was retired:** The range was typed in; the pinned source gives the settlement as one figure, which the replacement states.
+
+**Replaced by:** [`C-PG-I-PFAS`](CLAIMS.md#C-PG-I-PFAS) — each opens what it rests on.
+
+<a id="C-AU-OLD-DESTRUCTION"></a>
+### High-temperature incineration and supercritical water oxidation destroy PFAS at stated temperatures, times and efficiencies.
+
+`C-AU-OLD-DESTRUCTION` · retired 2026-09-11 from [PROGRAMME.md](PROGRAMME.md) · as published in `7954022`
+
+> <span class="claim" data-claim="C-AU-OLD-DESTRUCTION">| High-temperature incineration | >[1,100](SOURCES.md#F-9e9e5838e1) °C, [2](SOURCES.md#F-d85fc0b276)–[3](SOURCES.md#F-4a78de41db) s residence, excess oxygen | >[99.99](SOURCES.md#F-8e041a79f0)% mineralisation for AFFF and similar wastes | Below that, the parent compound disappears but products of incomplete combustion form — perfluorocarboxylic acids, perfluoroalkanes, `C₂F₆`, `CHF₃`. Ordinary municipal waste incineration is not this. | | Supercritical water oxidation | [650](SOURCES.md#F-3c6b8080e5) °C, [22](SOURCES.md#F-068891093a) MPa, ~[11](SOURCES.md#F-0adfcac5b5)% excess `O₂`, [10](SOURCES.md#F-37aa7c719b)–[11](SOURCES.md#F-0adfcac5b5) s | >[99.999](SOURCES.md#F-5ed240b7f8)% for all [12](SOURCES.md#F-60c56ffc12) PFAAs measured | Also produces small volatile organofluorines including trifluoromethane, a potent greenhouse gas. Emerging, not yet at municipal scale.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AU-OLD-DESTRUCTION "What this claim rests on")</sup>
+
+**Why it was retired:** The temperatures, residence times and destruction efficiencies had no source this project holds.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-AU-OLD-GULLIES"></a>
+### Copenhagen's cloudburst programme would cut over a stated number of gully gratings and chambers.
+
+`C-AU-OLD-GULLIES` · retired 2026-09-11 from [PROGRAMME.md](PROGRAMME.md) · as published in `7954022`
+
+> <span class="claim" data-claim="C-AU-OLD-GULLIES">The same scope in structures rather than in metres: about [102,000](SOURCES.md#F-f81dc75b67) gully gratings to cut over and [73,000](SOURCES.md#F-b8b679399e) chambers standing in the way of, or available to, the work — which is the number a programme is actually planned in</span><sup class="claim-mark">[†](ARCHIVE.md#C-AU-OLD-GULLIES "What this claim rests on")</sup>
+
+**Why it was retired:** No source this project holds gives the counts of gully gratings and chambers, and no script counts them.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
 
 <a id="C-CONV-OLD-PROGRAMME"></a>
 ### The cloudburst plan holds a stated length of surface conveyance against a stated length of pipe.
@@ -6442,6 +9324,107 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-PG-5-TIERS`](CLAIMS.md#C-PG-5-TIERS) — each opens what it rests on.
 
+## REGISTER.md
+
+<a id="C-FR-OLD-RG-COMBINED"></a>
+### Combined catchments carry sewage and rain in one pipe, which is why heavy rain pushes sewage into the harbour.
+
+`C-FR-OLD-RG-COMBINED` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-COMBINED">catchments carry sewage and rain in one pipe, which is why heavy rain is what pushes sewage into the harbour.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-COMBINED "What this claim rests on")</sup>
+
+**Why it was retired:** The mechanism stands and is now cited; that the overflow goes into the harbour was not shown by anything the page reads, since the register holds no receiving water for its structures.
+
+**Replaced by:** [`C-FR-RG-COMBINED`](CLAIMS.md#C-FR-RG-COMBINED) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-DRAWN"></a>
+### The unmentioned map values are structures drawn but never described.
+
+`C-FR-OLD-RG-DRAWN` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-DRAWN">drawn but never described</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-DRAWN "What this claim rests on")</sup>
+
+**Why it was retired:** It counted map values, some of which join several ids - some of those cited after all - or carry no number; and the scan finds whether an id's text occurs on a page, not whether the page describes it.
+
+**Replaced by:** [`C-FR-RG-UNDOC`](CLAIMS.md#C-FR-RG-UNDOC) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-FINDING"></a>
+### The city draws numbered structures that no page of the statutory plan describes, checked against the whole document.
+
+`C-FR-OLD-RG-FINDING` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-FINDING">The finding worth keeping: the city draws [262](SOURCES.md#F-42714a01d1) numbered structures that no page of the statutory plan describes. That is checked against the whole document - the project register plus the [116](SOURCES.md#F-2136e94096) appendix, status, target and 'aktuelle projekter' pages - not just the project pages.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-FINDING "What this claim rests on")</sup>
+
+**Why it was retired:** It counted map values as structures: some values join several ids, some of those naming an id a plan page does cite, and some are not structure numbers at all. 'Describes' was more than the scan tests - it finds whether an id's text occurs on a page - and 'the whole document' was the pages fetched, which the page did not show to be all of them.
+
+**Replaced by:** [`C-FR-RG-UNDOC`](CLAIMS.md#C-FR-RG-UNDOC) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-HANDNOTE"></a>
+### The curated facts exist only in prose.
+
+`C-FR-OLD-RG-HANDNOTE` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-HANDNOTE">Facts that exist only in prose - depth, diameter, pump capacity - each with a source.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-HANDNOTE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Only in prose' was an absence over every layer and document, never searched as such; what the file records is facts read by hand from a named source.
+
+**Replaced by:** [`C-FR-RG-HAND`](CLAIMS.md#C-FR-RG-HAND) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-INTRO"></a>
+### Every figure traces to a source; nothing is estimated.
+
+`C-FR-OLD-RG-INTRO` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-INTRO">Every figure traces to a source; nothing is estimated.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-INTRO "What this claim rests on")</sup>
+
+**Why it was retired:** The plan's volumes are the city's own figures, most stated as approximate, and the volume table rests on a cue-word classification of each figure's sentence, so 'nothing is estimated' was not so.
+
+**Replaced by:** [`C-FR-RG-WHAT`](CLAIMS.md#C-FR-RG-WHAT) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-INVERT"></a>
+### Depths and diameters come from planning prose, not survey, and no open source gives surveyed invert levels for Copenhagen sewers.
+
+`C-FR-OLD-RG-INVERT` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-INVERT">Depths and diameters come from planning prose, not survey. No open source gives surveyed invert levels for Copenhagen sewers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-INVERT "What this claim rests on")</sup>
+
+**Why it was retired:** The depth and diameter shown come from HOFOR's project page, not planning prose; and 'no open source' was an absence over every source, not a search of a named set.
+
+**Replaced by:** [`C-FR-RG-CAV-SURVEY`](CLAIMS.md#C-FR-RG-CAV-SURVEY) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-NOWHERE"></a>
+### The unmentioned klima_id values appear nowhere in the text of the plan.
+
+`C-FR-OLD-RG-NOWHERE` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-NOWHERE">values appear in the city's own map layers and nowhere in the text of the plan:</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-NOWHERE "What this claim rests on")</sup>
+
+**Why it was retired:** It counted values, not structures, and the text searched was the pages fetched; a joined value is absent as a string while some of its ids are cited.
+
+**Replaced by:** [`C-FR-RG-UNDOC-LIST`](CLAIMS.md#C-FR-RG-UNDOC-LIST) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-RATES"></a>
+### The annual figures say how much water leaves the system each year.
+
+`C-FR-OLD-RG-RATES` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-RATES">Rates, not capacity. These say how much water leaves the system each year.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-RATES "What this claim rests on")</sup>
+
+**Why it was retired:** One of them is wastewater a tunnel will pump back into the sewer each year - water kept in the system, not leaving it.
+
+**Replaced by:** [`C-FR-RG-RATES`](CLAIMS.md#C-FR-RG-RATES) — each opens what it rests on.
+
+<a id="C-FR-OLD-RG-SHAFTS"></a>
+### HOFOR's temporary work shafts and the plan page's permanent deep shafts are counts of different things.
+
+`C-FR-OLD-RG-SHAFTS` · retired 2026-09-11 from [REGISTER.md](REGISTER.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-RG-SHAFTS">Temporary work shafts at Vodroffsvej/Gammel Kongevej, Halmtorvet/Gasværksvej, Kalvebod Brygge `45-47`. The statutory plan page `K1.57` describes two permanent deep shafts - the counts refer to different things.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-RG-SHAFTS "What this claim rests on")</sup>
+
+**Why it was retired:** The plan's own supplement says the reservation page left a deep shaft out by mistake, and a later supplement gives as many deep shafts as HOFOR gives work shafts, so the counts do not plainly refer to different things.
+
+**Replaced by:** [`C-FR-RG-KB-SHAFTS`](CLAIMS.md#C-FR-RG-KB-SHAFTS) — each opens what it rests on.
+
 ## RESIDUAL.md
 
 <a id="C-LR-OLD-AGREED"></a>
@@ -6675,6 +9658,639 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-LR-R-LOADBEARING`](CLAIMS.md#C-LR-R-LOADBEARING) — each opens what it rests on.
 
+## SEABED.md
+
+<a id="C-FR-OLD-SB-ACCUM"></a>
+### Fedtemøg needs the biomass to pile up, so retention and stranding matter in a way they never do for oxygen depletion; wind from a stated sector drives mats and odour onto the western shore.
+
+`C-FR-OLD-SB-ACCUM` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-ACCUM">The accumulation term, which iltsvind does not have Fedtemøg requires the biomass to *pile up somewhere*. A bay that produces the same algae and flushes it out does not get fedtemøg. So retention and stranding are part of the causal chain in a way they never are for oxygen depletion. Wind from roughly [70](SOURCES.md#F-9ea2f0988f)–[200](SOURCES.md#F-9f363ad00f)° drives surface water, floating mats and their odour onto the western shore and inland</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-ACCUM "What this claim rests on")</sup>
+
+**Why it was retired:** How fedtemøg accumulates was stated with no source - the source held on fedtemøg describes algae that tear loose and can lie rotting at the water's edge, and says nothing of a bay that flushes them out; 'never' had no source; and the onshore sector was read out of an earlier version of the page, recorded nowhere else.
+
+**Replaced by:** [`C-FR-SB-FEDT`](CLAIMS.md#C-FR-SB-FEDT), [`C-FR-SB-ONSHORE`](CLAIMS.md#C-FR-SB-ONSHORE) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-CARRIES"></a>
+### Warm-and-onshore marks growth and rotting conditions, strong-and-onshore the stranding conditions.
+
+`C-FR-OLD-SB-CARRIES` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-CARRIES">What changes is what it carries. Warm-and-onshore peaks in August — growth and rotting conditions. Strong-and-onshore peaks in January — the stranding conditions.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-CARRIES "What this claim rests on")</sup>
+
+**Why it was retired:** Warm and strong are thresholds nobody recorded, and that they mark growth, rotting and stranding was not shown.
+
+**Replaced by:** [`C-FR-SB-ONSHARE`](CLAIMS.md#C-FR-SB-ONSHARE) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-CORRECTED"></a>
+### A note that an earlier version was corrected: overflow rain peaks in summer because intensity is convective, resuspension in autumn and winter, deposit then mobilise.
+
+`C-FR-OLD-SB-CORRECTED` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-CORRECTED">An earlier version of this document said the resuspension season coincides with the overflow season. Over [31](SOURCES.md#F-61791cddfe) years of rainfall it does not: rain intense enough to overflow a combined sewer peaks in June to August, because intensity in Denmark is convective. Resuspension peaks in October to January. See CURRENTS.md — the two are separated by a residence time, not simultaneous, and the sequence is deposit in summer, mobilise in autumn.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-CORRECTED "What this claim rests on")</sup>
+
+**Why it was retired:** The page narrated its own history; the rainfall span it cited was read out of an earlier version of the page, not from the record; and 'because intensity in Denmark is convective' had no source. The seasons are now computed over the whole weather record.
+
+**Replaced by:** [`C-FR-SB-RAINSEASON`](CLAIMS.md#C-FR-SB-RAINSEASON) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-CURRENTS"></a>
+### The convergence of southward transport and the Baltic outflow would explain why fine sediment and floating material collect in the bay, but needs current fields behind registration.
+
+`C-FR-OLD-SB-CURRENTS` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-CURRENTS">The convergence of wind-driven southward transport against the Baltic outflow is a coherent mechanism for accumulation and would explain why fine sediment and floating material collect in this bay, but it needs current fields that are behind registration. Everything above is wave physics from wind, and says nothing about what arrives from elsewhere.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-CURRENTS "What this claim rests on")</sup>
+
+**Why it was retired:** That fine sediment and floating material collect in the bay was not shown by anything held; the convergence is recorded as an open problem, not established; and the project has since fetched a modelled current field.
+
+**Replaced by:** [`C-FR-SB-NOTCURRENTS`](CLAIMS.md#C-FR-SB-NOTCURRENTS) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-DAMAGE"></a>
+### Southwest does the routine work, southeast does the damage, and only southeast pushes toward the shore.
+
+`C-FR-OLD-SB-DAMAGE` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-DAMAGE">Southwest and southeast drive [26](SOURCES.md#F-0bad0b1038)% and [26](SOURCES.md#F-0bad0b1038)% of the resuspension — but for opposite reasons. Southwesterlies come over [16](SOURCES.md#F-f83a0eec94) km of water; southeasterlies run [89](SOURCES.md#F-2b7419a3f8) km. Southwest does the routine work, southeast does the damage, and only southeast pushes toward the shore rather than away from it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-DAMAGE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Damage' was not measured - the model counts hours over a threshold, not their effect; and 'only southeast pushes toward the shore' rested on an onshore sector nobody recorded, which the page's own wording put at a band that takes in east and south too.
+
+**Replaced by:** [`C-FR-SB-SECTORS`](CLAIMS.md#C-FR-SB-SECTORS) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-FUNNEL"></a>
+### Køge Bugt is a south-east-facing funnel: the south-east fetch is the open Baltic approach, and the onshore and stranding direction for the western shore.
+
+`C-FR-OLD-SB-FUNNEL` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-FUNNEL">Fetch: Køge Bugt is a southeast-facing funnel | Wind from | Fetch | |---|---:| | N | [6.5](SOURCES.md#F-ea60466072) km | | NE | [7.5](SOURCES.md#F-a7dacac4dd) km | | E | [31.8](SOURCES.md#F-6286175c25) km | | SE | [120.0](SOURCES.md#F-4e726417ea) km | | S | [19.3](SOURCES.md#F-c8c24fd8ca) km | | SW | [17.5](SOURCES.md#F-8c498da50d) km | | W | [9.5](SOURCES.md#F-2ca4717d53) km | | NW | [5.8](SOURCES.md#F-8ce5860db1) km | Southeast runs to [120](SOURCES.md#F-33eeac7cc8) km — the open Baltic approach — against a median of [9](SOURCES.md#F-7165f4b836) km over the other directions in the table. Southeast is also the onshore direction for the western shore. The bay's longest wave fetch and its stranding direction are the same.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-FUNNEL "What this claim rests on")</sup>
+
+**Why it was retired:** The south-east value is where the table stops: several directions between south-east and south hold exactly the same round maximum, so the rays were stopped there rather than at a coast, and 'the open Baltic approach' was not read from anything. That south-east is the onshore and stranding direction rested on an onshore sector nobody recorded.
+
+**Replaced by:** [`C-FR-SB-FETCH`](CLAIMS.md#C-FR-SB-FETCH) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-INTRO"></a>
+### Wind from the ERA5 archive, the coastline from OpenStreetMap, and everything else computed.
+
+`C-FR-OLD-SB-INTRO` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-INTRO">Wind from the Open-Meteo ERA5 archive (1995-01-01 to 2025-12-31, [271,752](SOURCES.md#F-8a633de724) hourly records), coastline from OpenStreetMap, everything else computed.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-INTRO "What this claim rests on")</sup>
+
+**Why it was retired:** The coastline behind the fetch table cannot be traced - no script in the repository makes the table - and not everything else was computed: the thresholds and the illustration's values are stated, and the onshore table has no producer here.
+
+**Replaced by:** [`C-FR-SB-WHAT`](CLAIMS.md#C-FR-SB-WHAT) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-LIGLAGEN"></a>
+### Under severe oxygen depletion Beggiatoa mats, liglagen, oxidise hydrogen sulphide to sulphate with oxygen from the water, appear in late summer, and are the sulphide oxygen sink made visible.
+
+`C-FR-OLD-SB-LIGLAGEN` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-LIGLAGEN">There is a name for what that looks like. Under severe oxygen depletion, white filamentous sulphur bacteria (*Beggiatoa*) spread across the bed in milky sheets, oxidising hydrogen sulphide to sulphate using oxygen taken from the water. Danish calls them liglagen — corpse shroud — and they appear in late summer. The mat is the sulphide oxygen sink, visible.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-LIGLAGEN "What this claim rests on")</sup>
+
+**Why it was retired:** DCE describe the sulphur bacteria of liglagen oxidising hydrogen sulphide to elemental sulphur, not to sulphate, after prolonged oxygen depletion; the late-summer timing had no source; Middelburg and Levin describe the mat-forming Beggiatoa as nitrate-storing, so oxygen from the water is not the whole of it; and nothing connected the mats to the dead-bed hours before them.
+
+**Replaced by:** [`C-FR-SB-LIGLAGEN`](CLAIMS.md#C-FR-SB-LIGLAGEN) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-LOOP"></a>
+### Killing the benthos lowers the erosion threshold, and a loop of resuspension, re-oxidation and lost eelgrass lowers it again.
+
+`C-FR-OLD-SB-LOOP` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-LOOP">Which produces the loop - iltsvind, toxicants or trawling kill the benthos - the erosion threshold falls — the bed becomes loose - storms resuspend more sediment, more often - buried sulphide and metals are re-oxidised and remobilised - resuspended sulphide consumes oxygen; turbidity blocks light - less eelgrass, less benthos — and the threshold falls again</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-LOOP "What this claim rests on")</sup>
+
+**Why it was retired:** A causal loop stated as fact, with no source for any link; its links are mechanisms of hypotheses in the register, where they belong as hypotheses.
+
+**Replaced by:** [`C-FR-SB-LOOP`](CLAIMS.md#C-FR-SB-LOOP) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-MUD"></a>
+### The deeper, quieter water is exactly where fine organic sulphidic mud settles.
+
+`C-FR-OLD-SB-MUD` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-MUD">the dead bed resuspends [6.8](SOURCES.md#F-25bb80c347) times as often as the live one — and the deeper, quieter water is exactly where the fine organic sulphidic mud settles.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-MUD "What this claim rests on")</sup>
+
+**Why it was retired:** Where fine sulphidic mud settles in Køge Bugt was not read from anything, and the model's hours count threshold crossings, not resuspension observed.
+
+**Replaced by:** [`C-FR-SB-RATIO`](CLAIMS.md#C-FR-SB-RATIO) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-PROTECT"></a>
+### Biology protects most in summer and least in a January gale, so losing the benthos costs most in the calm season.
+
+`C-FR-OLD-SB-PROTECT` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-PROTECT">Note the ratio column: biology protects most in summer ([8.7](SOURCES.md#F-9a051ec8a2)× in July) and least in a January gale ([3.1](SOURCES.md#F-8d49817b32)×). Losing the benthos costs you most in the calm season; in a storm the bed moves regardless.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-PROTECT "What this claim rests on")</sup>
+
+**Why it was retired:** 'Costs you most in the calm season' holds for the ratio only: in hours, the dead bed's excess over the live one is larger in the stormier months. 'Biology protects' read the model's thresholds as a measured protection.
+
+**Replaced by:** [`C-FR-SB-RATIOMONTH`](CLAIMS.md#C-FR-SB-RATIOMONTH) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-RAYCAST"></a>
+### The chain begins with fetch ray-cast to the OSM coastline.
+
+`C-FR-OLD-SB-RAYCAST` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-RAYCAST">The chain: wind → fetch by direction (ray-cast to the OSM coastline) → fetch-limited wave height and period (Young & Verhagen 1996, shallow-water form) → bottom orbital velocity (linear wave theory) → bed shear stress (Swart friction factor) → compared against the critical stress for a living bed and a dead one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-RAYCAST "What this claim rests on")</sup>
+
+**Why it was retired:** 'Ray-cast to the OSM coastline' is the docstring's account of a table no script in the repository makes; the rest of the chain stands.
+
+**Replaced by:** [`C-FR-SB-CHAIN`](CLAIMS.md#C-FR-SB-CHAIN) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-ROBUST"></a>
+### The live-to-dead ratio is robust, and only the absolute hours depend on a threshold that varies with mud composition.
+
+`C-FR-OLD-SB-ROBUST` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-ROBUST">Also absent: any measurement. These are computed exceedance frequencies against literature values for critical shear stress, not observations of sediment moving. The ratio between a live and dead bed is robust; the absolute hours depend on a threshold that varies with mud composition.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-ROBUST "What this claim rests on")</sup>
+
+**Why it was retired:** The thresholds are stated values with no document behind them, not literature values the page could show; 'robust' was not tested - the hours and the ratio both depend on the thresholds and the wave model; and that the threshold varies with mud composition had no source.
+
+**Replaced by:** [`C-FR-SB-NOMEASURE`](CLAIMS.md#C-FR-SB-NOMEASURE) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-SEQUENCE"></a>
+### Mats grow and putrefy in late summer and are driven ashore by the first autumn gales, one phenomenon in two phases.
+
+`C-FR-OLD-SB-SEQUENCE` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-SEQUENCE">Which gives a sequence rather than a single season: mats grow and begin to putrefy in late summer in warm, weakly-mixed water, and are then driven ashore by the first autumn gales. That is one phenomenon with two phases, in two different months, and neither is measured.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-SEQUENCE "What this claim rests on")</sup>
+
+**Why it was retired:** A sequence of growth, putrefaction and stranding read from monthly peaks of unrecorded thresholds, with no source on the algae; 'weakly-mixed water' was not computed.
+
+**Replaced by:** [`C-FR-SB-NOSHORE`](CLAIMS.md#C-FR-SB-NOSHORE) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-STRIP"></a>
+### Resuspending sulphidic sediment is an oxygen sink, and a storm over a dead bed can strip the water on its own.
+
+`C-FR-OLD-SB-STRIP` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-STRIP">That matters because resuspending sulphidic sediment is itself an oxygen sink, with no nitrogen and no algae in it. At [50](SOURCES.md#F-ab88d42787) µmol acid-volatile sulphide per gram of dry sediment and a dry bulk density of [0.5](SOURCES.md#F-b567084bfc) g/cm³, stirring [5](SOURCES.md#F-ce1a611116) cm consumes about [80](SOURCES.md#F-0884f1e51a) g `O₂`/m², against [80](SOURCES.md#F-0884f1e51a) g `O₂`/m² in a [10](SOURCES.md#F-8fab9728a6) m water column holding [8](SOURCES.md#F-2745e0d3a3) mg/L. A storm over a dead bed can strip the water on its own. (These are stated values for an illustration, not measurements of Køge Bugt.)</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-STRIP "What this claim rests on")</sup>
+
+**Why it was retired:** 'A storm over a dead bed can strip the water on its own' drew a conclusion about the bay from values chosen for an illustration, none of them sourced or measured there, and assumed that all the stirred sulphide is oxidised by the water column's oxygen.
+
+**Replaced by:** [`C-FR-SB-SINK`](CLAIMS.md#C-FR-SB-SINK), [`C-FR-SB-ILLUS`](CLAIMS.md#C-FR-SB-ILLUS) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-TAU"></a>
+### A dead bed resuspends several times more often; the critical stresses are those of a bed with no biology and one bound by biofilm, fauna and eelgrass.
+
+`C-FR-OLD-SB-TAU` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-TAU">A dead bed resuspends several times more often Critical bed shear stress: [0.1](SOURCES.md#F-35ecc1cd57) Pa with no biology, [0.5](SOURCES.md#F-3d10824ef2) Pa with biofilm, tube fauna and eelgrass binding the grains. Same weather, same waves — the only variable is whether the benthos is alive.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-TAU "What this claim rests on")</sup>
+
+**Why it was retired:** The thresholds were given as properties of living and dead beds; they are values written into the wave model whose source was never recorded.
+
+**Replaced by:** [`C-FR-SB-TAU`](CLAIMS.md#C-FR-SB-TAU) — each opens what it rests on.
+
+<a id="C-FR-OLD-SB-WHY"></a>
+### In a shallow bay orbital motion under waves lifts sediment, and currents were left out because their data are behind registration.
+
+`C-FR-OLD-SB-WHY` · retired 2026-09-11 from [SEABED.md](SEABED.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-FR-OLD-SB-WHY">In a shallow bay the thing that lifts sediment off the bed is orbital motion under waves, and that follows from wind speed, direction, fetch and depth. Currents redistribute what the waves have already lifted — important, and not done here, because it needs data behind registration.</span><sup class="claim-mark">[†](ARCHIVE.md#C-FR-OLD-SB-WHY "What this claim rests on")</sup>
+
+**Why it was retired:** A statement of how shallow bays work, with no source; and the reason given for leaving currents out was recorded with no source - the project has since fetched a modelled current field for CURRENTS.md.
+
+**Replaced by:** [`C-FR-SB-MECH`](CLAIMS.md#C-FR-SB-MECH) — each opens what it rests on.
+
+## SENSING.md
+
+<a id="C-SS-OLD-AUTOMATED"></a>
+### Reagentless sensors run for months on a battery, UV nitrate needs no reagent, and wet-chemistry analysers run nutrients hourly for weeks.
+
+`C-SS-OLD-AUTOMATED` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-AUTOMATED">run continuously for months on a battery. UV nitrate needs no reagent either — it is expensive rather than manual. And wet-chemistry nutrient analysers run nitrate and phosphate hourly in situ for weeks, which trades a bottle round for a reagent refill — a different chore, on a calmer schedule, and one that can be done on the same visit the sensor is cleaned on.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-AUTOMATED "What this claim rests on")</sup>
+
+**Why it was retired:** Endurance, the UV nitrate sensor's properties and the analysers' frequency and time in the field were given without a source.
+
+**Replaced by:** [`C-SS-B-AUTO`](CLAIMS.md#C-SS-B-AUTO) — each opens what it rests on.
+
+<a id="C-SS-OLD-CALIBRATE"></a>
+### Bottles fall back to a handful a year, the cost curve bends down after the first year or two, and nobody knows the relation's stability.
+
+`C-SS-OLD-CALIBRATE` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-CALIBRATE">That is the sentence that makes the arithmetic bearable. At a site, a season of event bottles establishes the local relation between the cheap continuous dimensions — fluorescence, turbidity, conductivity — and the laboratory panel. Once that relation holds, the sensors carry the estimate between calibrations and the bottles fall back to validation: a handful a year to confirm the relation has not drifted, and a fresh round whenever something changes upstream. So the bottle count scales with sites × recalibrations, not with events forever, and the cost curve bends down after the first year or two rather than running flat. The network page has that as two dials — how long the calibration phase lasts, and what fraction of the sampling continues afterwards — because the honest answer depends on how stable the relation turns out to be, and nobody knows that yet for a Danish stream.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-CALIBRATE "What this claim rests on")</sup>
+
+**Why it was retired:** The arithmetic it refers to is retired with the prices; the number of validation bottles and the length of the calibration phase were quantities nobody set; and 'nobody knows' is an absence asserted of everyone.
+
+**Replaced by:** [`C-SS-B-CALIBRATE`](CLAIMS.md#C-SS-B-CALIBRATE), [`C-SS-B-SCALE`](CLAIMS.md#C-SS-B-SCALE), [`C-SS-B-DIALS`](CLAIMS.md#C-SS-B-DIALS) — each opens what it rests on.
+
+<a id="C-SS-OLD-DECAY"></a>
+### The tracer ratio in pig slurry varies with diet, storage and digestion, and DNA markers decay in days while sterols do not.
+
+`C-SS-OLD-DECAY` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-DECAY">The ratio of coprostanol to organic matter in pig slurry varies with diet, storage and digestion; DNA markers decay on a timescale of days; sterols do not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-DECAY "What this claim rests on")</sup>
+
+**Why it was retired:** The causes of variation and the decay time were given without a source; the pinned sources say that host markers detect recent contamination and that coprostanol converts slowly in the environment.
+
+**Replaced by:** [`C-SS-G-PROPORTION`](CLAIMS.md#C-SS-G-PROPORTION) — each opens what it rests on.
+
+<a id="C-SS-OLD-FORTNIGHT"></a>
+### The existing monitoring programme is a fortnightly visit that misses the event.
+
+`C-SS-OLD-FORTNIGHT` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-FORTNIGHT">is the existing monitoring programme: a fortnightly visit that misses the event.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-FORTNIGHT "What this claim rests on")</sup>
+
+**Why it was retired:** The interval was given without a source; the project's record of the national method says grab samples at fixed intervals.
+
+**Replaced by:** [`C-SS-A-COUPLING`](CLAIMS.md#C-SS-A-COUPLING) — each opens what it rests on.
+
+<a id="C-SS-OLD-GATED"></a>
+### Gated data created the argument this network exists to settle.
+
+`C-SS-OLD-GATED` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-GATED">The argument this network exists to settle is one that gated data created.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-GATED "What this claim rests on")</sup>
+
+**Why it was retired:** That gated data created the argument was never shown.
+
+**Replaced by:** [`C-SS-D-R4`](CLAIMS.md#C-SS-D-R4) — each opens what it rests on.
+
+<a id="C-SS-OLD-HANDFUL"></a>
+### The register entry answers its question at a handful of paired catchments.
+
+`C-SS-OLD-HANDFUL` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-HANDFUL">asks whether the faecal payload reaches the water or is spent in the soil, and answers it at a handful of paired catchments.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-HANDFUL "What this claim rests on")</sup>
+
+**Why it was retired:** 'A handful' was a quantity nobody set: the register entry designs event sampling at paired catchments without a number.
+
+**Replaced by:** [`C-SS-S-X23`](CLAIMS.md#C-SS-S-X23) — each opens what it rests on.
+
+<a id="C-SS-OLD-HUNDRED"></a>
+### The network's shape is a hundred people with one node each, the only shape built without permission.
+
+`C-SS-OLD-HUNDRED` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-HUNDRED">So the shape of it is a hundred people with one node each and a shared protocol, not one institution with a plan — which is also the only shape that gets built without anybody's permission.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-HUNDRED "What this claim rests on")</sup>
+
+**Why it was retired:** 'A hundred people' was a quantity nobody set, and 'the only shape that gets built without anybody's permission' was never argued.
+
+**Replaced by:** [`C-SS-P-SHAPE`](CLAIMS.md#C-SS-P-SHAPE) — each opens what it rests on.
+
+<a id="C-SS-OLD-LABTODAY"></a>
+### The discriminating chemistry needs a laboratory, and nothing bolted to a culvert does it.
+
+`C-SS-OLD-LABTODAY` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-LABTODAY">The discriminating chemistry: faecal sterols by GC-MS, host-specific markers and crAssphage by qPCR, veterinary residues by LC-MS/MS, nitrate isotopes by IRMS. These are extractions, chromatography and mass spectrometry. Nothing you can bolt to a culvert does them, and anybody who says otherwise is selling something. So attribution, today, means a bottle.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-LABTODAY "What this claim rests on")</sup>
+
+**Why it was retired:** The analytical methods were named without a source, and 'nothing you can bolt to a culvert does them' is contradicted by in-situ sample processors that run a molecular assay where they are deployed.
+
+**Replaced by:** [`C-SS-B-LAB`](CLAIMS.md#C-SS-B-LAB) — each opens what it rests on.
+
+<a id="C-SS-OLD-LESSYEAR"></a>
+### Bottles are needed less every year, and the automated middle tier changes the economics.
+
+`C-SS-OLD-LESSYEAR` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-LESSYEAR">Partly, and less every year — but the honest answer has three tiers rather than one, and the middle tier is the one that changes the economics.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-LESSYEAR "What this claim rests on")</sup>
+
+**Why it was retired:** A trend and an economic effect asserted without a source.
+
+**Replaced by:** [`C-SS-B-PARTLY`](CLAIMS.md#C-SS-B-PARTLY) — each opens what it rests on.
+
+<a id="C-SS-OLD-NEVER"></a>
+### The national account has never had the number, because nobody measured the end members.
+
+`C-SS-OLD-NEVER` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-NEVER">That is the number the national account has never had, and the reason it has never had it is that nobody measured the end members.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-NEVER "What this claim rests on")</sup>
+
+**Why it was retired:** An absence asserted of everyone. What can be said is narrower: none of the monitoring and data sources this project profiled measures a faecal sterol, a host-specific marker or crAssphage.
+
+**Replaced by:** [`C-SS-Q-ABSENT`](CLAIMS.md#C-SS-Q-ABSENT) — each opens what it rests on.
+
+<a id="C-SS-OLD-NOBODY"></a>
+### The product of a total and a share is something nobody has.
+
+`C-SS-OLD-NOBODY` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-NOBODY">The product of the two is the thing nobody has.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-NOBODY "What this claim rests on")</sup>
+
+**Why it was retired:** An absence asserted of everyone; what was searched is the sources this project profiled.
+
+**Replaced by:** [`C-SS-G-PRODUCT`](CLAIMS.md#C-SS-G-PRODUCT) — each opens what it rests on.
+
+<a id="C-SS-OLD-NODECOST"></a>
+### The node's sensors in order of value per krone, with a price range for each part and for the whole node, built in an evening.
+
+`C-SS-OLD-NODECOST` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-NODECOST">Five measurements, in rough order of value per krone. | Sensor | What it is for | Stated cost, DKK | |---|---|---:| | Water level — ultrasonic ranger above the surface, or a vented pressure transducer | Without discharge there is no load, only a concentration. This is the sensor that turns the network from anecdote into accounting. Mounted above water, an ultrasonic head does not foul | [1,000](SOURCES.md#F-2f7f03dca6)–[3,000](SOURCES.md#F-824acfd1e9) | | Turbidity — nephelometric, [90](SOURCES.md#F-0d4ccb3840)°, with a wiper | The carrier. Metals, phosphorus, tyre wear and faecal particles all travel attached to sediment, so turbidity is the single best proxy for *payload in transit* | [1,500](SOURCES.md#F-b7c8e27133)–[6,000](SOURCES.md#F-cacdca73ea) | | Conductivity and temperature | Separates dilution from delivery. A storm that dilutes conductivity while raising turbidity is surface wash; a rise in both is something else. Temperature is needed by every other reading | [500](SOURCES.md#F-5bfcafbeb4)–[2,000](SOURCES.md#F-cf73c85a3d) | | fDOM — tryptophan-like fluorescence | The one fingerprint dimension that can run continuously. Protein-like fluorescence tracks fresh faecal and sewage organic matter; measured against a humic-like channel it separates that from soil-derived matter. It is the cost driver, and the sensor that makes this network more than a turbidity network | [8,000](SOURCES.md#F-26742cd7af)–[20,000](SOURCES.md#F-ee56660d2d) | | Dissolved oxygen — optical | The receiving-water consequence, at the same minute as the cause | [3,000](SOURCES.md#F-824acfd1e9)–[8,000](SOURCES.md#F-26742cd7af) | Logger, power and communications, which are the boring part and the part that decides whether the thing survives a winter: | | | Stated cost, DKK | |---|---|---:| | Microcontroller, RTC, SD card, watchdog | ESP32 class; log locally as well as transmit, because the network is the thing that fails | [300](SOURCES.md#F-bffcb7633b)–[800](SOURCES.md#F-b94ffab82a) | | Radio | LoRaWAN to a community gateway where one is in range; NB-IoT or LTE-M with a data SIM where none is | [200](SOURCES.md#F-e0e4793f01)–[700](SOURCES.md#F-7e114013d9) | | Power | [10](SOURCES.md#F-21cee76301)–[20](SOURCES.md#F-214e26f6d4) W panel, `LiFePO₄`, charge controller. Danish December is the design case, not July | [800](SOURCES.md#F-b94ffab82a)–[2,500](SOURCES.md#F-2a00439c62) | | Enclosure, mount, cable, desiccant | IP67, mounted to a road culvert or bridge parapet | [700](SOURCES.md#F-7e114013d9)–[2,000](SOURCES.md#F-cf73c85a3d) | A node comes to roughly [5,000](SOURCES.md#F-ff13f6353e)–[12,000](SOURCES.md#F-4338386a8a) DKK without fDOM and [15,000](SOURCES.md#F-68fde5ccd1)–[30,000](SOURCES.md#F-36820efeb4) with it. One person can build one in an evening. The hard part was never the electronics.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-NODECOST "What this claim rests on")</sup>
+
+**Why it was retired:** Every price in the node's tables was a range with no recorded source, and the ordering by value per krone and the evening's build rest on nothing more.
+
+**Replaced by:** [`C-SS-N-INTRO`](CLAIMS.md#C-SS-N-INTRO), [`C-SS-N-STAGE`](CLAIMS.md#C-SS-N-STAGE), [`C-SS-N-TURB`](CLAIMS.md#C-SS-N-TURB), [`C-SS-N-EC`](CLAIMS.md#C-SS-N-EC), [`C-SS-N-FDOM`](CLAIMS.md#C-SS-N-FDOM), [`C-SS-N-DO`](CLAIMS.md#C-SS-N-DO), [`C-SS-N-BORING`](CLAIMS.md#C-SS-N-BORING), [`C-SS-N-LOGGER`](CLAIMS.md#C-SS-N-LOGGER), [`C-SS-N-POWER`](CLAIMS.md#C-SS-N-POWER), [`C-SS-N-BOX`](CLAIMS.md#C-SS-N-BOX), [`C-SS-N-KIT`](CLAIMS.md#C-SS-N-KIT), [`C-SS-N-SAMPLER`](CLAIMS.md#C-SS-N-SAMPLER) — each opens what it rests on.
+
+<a id="C-SS-OLD-NOSENSOR"></a>
+### There is no faecal sensor: nothing put in a stream reports manure.
+
+`C-SS-OLD-NOSENSOR` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-NOSENSOR">There is no faecal sensor. Nothing you can put in a stream reports "manure".</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-NOSENSOR "What this claim rests on")</sup>
+
+**Why it was retired:** Contradicted by what the page itself describes further down: robotic sample processors that run a molecular assay in the water exist and are deployed. What holds is narrower: in this design, the dimensions that identify a source are laboratory analyses.
+
+**Replaced by:** [`C-SS-A-FORCED`](CLAIMS.md#C-SS-A-FORCED) — each opens what it rests on.
+
+<a id="C-SS-OLD-NOSUBST"></a>
+### Attribution comes from the sampler because there is no in-situ substitute for the laboratory.
+
+`C-SS-OLD-NOSUBST` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-NOSUBST">This is where the attribution comes from, because it is a laboratory measurement and there is no in-situ substitute:</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-NOSUBST "What this claim rests on")</sup>
+
+**Why it was retired:** Contradicted by the in-situ sample processors the page describes further down.
+
+**Replaced by:** [`C-SS-T2-ATTR`](CLAIMS.md#C-SS-T2-ATTR) — each opens what it rests on.
+
+<a id="C-SS-OLD-PRESETS"></a>
+### The network tool's presets reproduce the stages on SETTLE.md.
+
+`C-SS-OLD-PRESETS` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-PRESETS">The presets reproduce the stages > in SETTLE.md.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-PRESETS "What this claim rests on")</sup>
+
+**Why it was retired:** They do not: the tool's regional preset does not match the regional stage, and its experiment preset carries a different number of samplers from the page's costing.
+
+**Replaced by:** [`C-SS-Z-DIAL`](CLAIMS.md#C-SS-Z-DIAL) — each opens what it rests on.
+
+<a id="C-SS-OLD-PRICES"></a>
+### The page's prices are stated ranges a disagreement can be about.
+
+`C-SS-OLD-PRICES` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-PRICES">Prices are stated ranges rather than quotations, the sensor choices are ordinary catalogue parts, and nothing here has been built by this project. What it is for is to make the thing costed and concrete enough that a disagreement about it is a disagreement about numbers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-PRICES "What this claim rests on")</sup>
+
+**Why it was retired:** No price on the page had a recorded source. A range of what a buyer should expect to pay is a claim about the market, not a design choice, and nothing was found to support any of them.
+
+**Replaced by:** [`C-SS-S-NOPRICE`](CLAIMS.md#C-SS-S-NOPRICE) — each opens what it rests on.
+
+<a id="C-SS-OLD-RADIO"></a>
+### The radio is the least reliable component.
+
+`C-SS-OLD-RADIO` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-RADIO">The radio is the least reliable component.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-RADIO "What this claim rests on")</sup>
+
+**Why it was retired:** No source; the rule stands on what a local copy protects against.
+
+**Replaced by:** [`C-SS-D-R1`](CLAIMS.md#C-SS-D-R1) — each opens what it rests on.
+
+<a id="C-SS-OLD-ROBOT"></a>
+### Robotic molecular samplers are deployed for harmful algae and eDNA, cost more than everything else on the page, and belong at a few anchor sites.
+
+`C-SS-OLD-ROBOT` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-ROBOT">for harmful algae and for eDNA. They cost more than everything else on this page combined, which means they belong at a handful of anchor sites rather than at eight hundred. The trajectory is clear and the price is not there yet, and a plan that assumed otherwise would be planning on a press release.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-ROBOT "What this claim rests on")</sup>
+
+**Why it was retired:** The pinned description of the sample processor documents harmful-algae detection, not eDNA; the cost comparison, the siting and the trajectory had no source.
+
+**Replaced by:** [`C-SS-B-ROBOT`](CLAIMS.md#C-SS-B-ROBOT) — each opens what it rests on.
+
+<a id="C-SS-OLD-SHOPPING"></a>
+### The shopping list: example parts with prices, the experiment's hardware and laboratory total, and the conclusion that the bottles, not the sensors, are the expensive part.
+
+`C-SS-OLD-SHOPPING` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-SHOPPING">Everything above as a list of things to buy, because a cost is only real when it is a purchase order. Part names are examples of the class, not endorsements, and no price here is a quotation — they are the stated ranges a buyer should expect to find and then replace with what a supplier actually says. ### The node — what one stream costs | | Example of the class | What it is for | DKK | |---|---|---|---:| | Stage, ultrasonic | MaxBotix HRXL-WR class, IP67, mounted above the water on a bridge or culvert | Level → discharge, via a rating curve. Mounted in air, so it cannot foul — which is why it beats a pressure transducer for an unattended node | [900](SOURCES.md#F-9747683b44)–[1,800](SOURCES.md#F-3897bb9ed4) | | *or* Stage, pressure | vented submersible transducer, [0](SOURCES.md#F-83139ce5e2)–[2](SOURCES.md#F-acf15e97b2) m | Where there is no overhead mounting. Vented cable, or it reads the weather | [1,200](SOURCES.md#F-948c04b3d8)–[3,000](SOURCES.md#F-9615c7d66e) | | Turbidity, nephelometric | `ISO 7027` [90](SOURCES.md#F-5205e993c5)° module; with a wiper if the budget reaches | The carrier for everything particulate. The cheap analog boards sold for hobby use are presence/absence at best — say so in the data or do not fit one | [1,500](SOURCES.md#F-e3765185d2)–[6,000](SOURCES.md#F-c7da4cc7cf) | | Conductivity + temperature | Atlas Scientific EZO-EC with a K=[1.0](SOURCES.md#F-80ab917311) probe, or an industrial two-electrode cell | Separates dilution from delivery, and every other reading needs the temperature | [600](SOURCES.md#F-969f0b6d64)–[2,000](SOURCES.md#F-71d26ef41f) | | Dissolved oxygen, optical | luminescent/optical DO probe — not a galvanic membrane cell, which drifts and dies | The consequence, measured at the same minute as the cause | [3,000](SOURCES.md#F-9615c7d66e)–[9,000](SOURCES.md#F-ded8caea0e) | | fDOM, tryptophan channel | Turner Cyclops-[7](SOURCES.md#F-a0b9331d44)F class, tryptophan configuration, with a humic-like channel if affordable | The one fingerprint dimension that runs continuously. This is the difference between a turbidity network and a fingerprint network | [9,000](SOURCES.md#F-ded8caea0e)–[22,000](SOURCES.md#F-acc3687fa6) | | Logger + radio | ESP32 with LoRaWAN, or with LTE-M/NB-IoT where no gateway is in range; RTC, microSD, watchdog | Logs locally *and* transmits. The radio is the least reliable part | [400](SOURCES.md#F-11d4302258)–[1,200](SOURCES.md#F-948c04b3d8) | | Power | [10](SOURCES.md#F-b6a5224e34)–[20](SOURCES.md#F-d3eebc0e45) W panel, MPPT controller, [12](SOURCES.md#F-ab617a25b3) V `LiFePO₄` [20](SOURCES.md#F-d3eebc0e45) Ah | Sized for December, not July | [800](SOURCES.md#F-54b43264f7)–[2,500](SOURCES.md#F-c0ef35addc) | | Enclosure and mount | IP67 box, cable glands, stainless bracket, desiccant, anti-theft | Survives a winter and a curious passer-by | [700](SOURCES.md#F-acef2f222b)–[2,000](SOURCES.md#F-71d26ef41f) | A node without fDOM: [5,000](SOURCES.md#F-f4fdce81b4)–[12,000](SOURCES.md#F-73e1e2da6f) DKK. With it: [15,000](SOURCES.md#F-8e275fd844)–[30,000](SOURCES.md#F-cd760f1145). ### The kit a group shares | | Why | DKK | |---|---|---:| | Formazin turbidity standards, EC calibration solutions, DO zero solution | A reading without a calibration record is not data. This is the least glamorous line and the one that decides whether the network is admissible | [2,000](SOURCES.md#F-71d26ef41f)–[5,000](SOURCES.md#F-f4fdce81b4) | | A reference sonde, borrowed or shared, for co-location | `X16` — the check that ties cheap readings to the national record | [15,000](SOURCES.md#F-8e275fd844)–[60,000](SOURCES.md#F-942d7a6735), or borrowed | | Spare probes, cable, glands, desiccant, one spare node | Field repairs happen in February in the rain | [5,000](SOURCES.md#F-f4fdce81b4)–[10,000](SOURCES.md#F-053a9a0e7b) | ### The sampler, which is where the answer comes from | | | DKK | |---|---|---:| | Automatic sampler, [12](SOURCES.md#F-ab617a25b3)–[24](SOURCES.md#F-c15893b4ef) bottles, flow- and turbidity-triggered | Teledyne ISCO or Hach AS950 class; a used one is a perfectly good used one | [25,000](SOURCES.md#F-8b12a3424e)–[60,000](SOURCES.md#F-942d7a6735) | | Bottle analysis — sterols, host markers, crAssphage, acesulfame, one veterinary residue, Cu/Zn, COD/BOD, nutrients, δ¹⁵N + δ¹⁸O | The real cost of the experiment. Not every bottle needs the full panel; the cheap determinands go on all of them and the fingerprint on the ones the continuous tier says matter | [1,500](SOURCES.md#F-e3765185d2)–[4,000](SOURCES.md#F-167f57fea1) per bottle | ### What that means for the experiment on the next page | | Quantity | DKK | |---|---:|---:| | Nodes with fDOM, [12](SOURCES.md#F-ab617a25b3) matched pairs | [24](SOURCES.md#F-c15893b4ef) | [360,000](SOURCES.md#F-a53955ed3a)–[720,000](SOURCES.md#F-6ef0123e16) | | Samplers, rotating | [8](SOURCES.md#F-a3a65e078a) | [200,000](SOURCES.md#F-8b17e28990)–[480,000](SOURCES.md#F-da89dda421) | | Shared kit, three regional sets | [3](SOURCES.md#F-4aba8b445f) | [60,000](SOURCES.md#F-942d7a6735)–[200,000](SOURCES.md#F-8b17e28990) | | Bottles analysed over two seasons | ~[600](SOURCES.md#F-969f0b6d64) | [900,000](SOURCES.md#F-2f8f8dd9f0)–[2,400,000](SOURCES.md#F-a0e07cb07e) | | Hardware and laboratory, total | | [1.5](SOURCES.md#F-f228017834)–[3.8](SOURCES.md#F-3103db24eb) M DKK | So the sensors are not the expensive part — the bottles are, and the bottles are the part that cannot be economised without losing the attribution the whole design exists for. A node is a weekend and a few thousand kroner. The laboratory is the commitment.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-SHOPPING "What this claim rests on")</sup>
+
+**Why it was retired:** Prices without a recorded source, the experiment's total built from them, part names that could not all be found, and a conclusion about which part is expensive that rests on those prices; the claims about hobby turbidity boards, galvanic cells and the radio's reliability had no source either.
+
+**Replaced by:** [`C-SS-N-INTRO`](CLAIMS.md#C-SS-N-INTRO), [`C-SS-N-STAGE`](CLAIMS.md#C-SS-N-STAGE), [`C-SS-N-TURB`](CLAIMS.md#C-SS-N-TURB), [`C-SS-N-EC`](CLAIMS.md#C-SS-N-EC), [`C-SS-N-FDOM`](CLAIMS.md#C-SS-N-FDOM), [`C-SS-N-DO`](CLAIMS.md#C-SS-N-DO), [`C-SS-N-BORING`](CLAIMS.md#C-SS-N-BORING), [`C-SS-N-LOGGER`](CLAIMS.md#C-SS-N-LOGGER), [`C-SS-N-POWER`](CLAIMS.md#C-SS-N-POWER), [`C-SS-N-BOX`](CLAIMS.md#C-SS-N-BOX), [`C-SS-N-KIT`](CLAIMS.md#C-SS-N-KIT), [`C-SS-N-SAMPLER`](CLAIMS.md#C-SS-N-SAMPLER) — each opens what it rests on.
+
+<a id="C-SS-OLD-SIZES"></a>
+### The network at three sizes, with node counts, hardware totals and the whole-country figure; a thorough network at a tenth of the retrofit; the national network at the price of about twenty streets; the recurring costs.
+
+`C-SS-OLD-SIZES` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-SIZES">Every Danish stream that reaches the sea is the target that removes extrapolation entirely. These are stated arithmetic, not a budget anybody has approved. | | Nodes | Tier-[1](SOURCES.md#F-63c6ade385) hardware | fDOM on a subset | Samplers | Total hardware | |---|---:|---:|---:|---:|---:| | A person, one catchment | [5](SOURCES.md#F-f34bff5815) | [40,000](SOURCES.md#F-8c91e357a8) | — | — | ~[40,000](SOURCES.md#F-8c91e357a8) DKK | | A club or a municipality | [40](SOURCES.md#F-92247a081b) | [320,000](SOURCES.md#F-d83b2e8dfe) | [5](SOURCES.md#F-f34bff5815) × [20,000](SOURCES.md#F-51acff19e9) | [2](SOURCES.md#F-1a2936857e) × [40,000](SOURCES.md#F-8c91e357a8) | ~[500,000](SOURCES.md#F-20eb39aee3) DKK | | Every outlet in the country | [800](SOURCES.md#F-f27507451f) | [6.4](SOURCES.md#F-f3cee2ce28) M | [80](SOURCES.md#F-eefc4bd14f) × [20,000](SOURCES.md#F-51acff19e9) | [20](SOURCES.md#F-0750716ffc) × [40,000](SOURCES.md#F-8c91e357a8) | ~[8.8](SOURCES.md#F-85b2510431) M DKK | > And that last figure is the smallest of three numbers, which is why it should not > be the headline. [8.8](SOURCES.md#F-85b2510431) M is *inland hardware only*. Add marine moorings in the > fjords and belts, a near-bed string on each, and the servicing and laboratory that > keep them meaningful, and the network tool puts a thorough permanent > network at [0.5](SOURCES.md#F-06dd823d31)–[1](SOURCES.md#F-63c6ade385) bn DKK over [25](SOURCES.md#F-f4a4df224e) years — almost all of it operations, not > instruments. Against the Copenhagen retrofit costed at [2.6](SOURCES.md#F-3c2c79d942)–[10.4](SOURCES.md#F-98e8f72d10) bn, that is on > the order of a tenth: knowing costs about ten per cent of doing. Neither > negligible nor absurd — a normal monitoring fraction on a capital programme, and a > decision rather than a rounding error. For comparison, the same page that argues for this puts a single bored pipe shot at [160,000](SOURCES.md#F-6f0a737405)–[640,000](SOURCES.md#F-f3ac4e489e) DKK. The national network is the price of about twenty streets. The recurring cost is not the hardware and never was: - Servicing. A fouled sensor produces confident wrong numbers, which is worse than no sensor. Budget two to six visits a year per node, and prefer the sensor that fouls least even where it reads worst. - Calibration. Every node needs a documented calibration history and a co-location against a reference instrument — which is `X16`, already written. - Laboratory. The tier-[2](SOURCES.md#F-1a2936857e) bottles, which is where the money actually goes.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-SIZES "What this claim rests on")</sup>
+
+**Why it was retired:** Node counts, prices and totals without a recorded source; the number of outlets in the country was never sourced; the comparison with the retrofit costing and the price in streets rest on them; the servicing frequency was a quantity nobody set, and 'where the money actually goes' rests on the prices.
+
+**Replaced by:** [`C-SS-Z-TARGET`](CLAIMS.md#C-SS-Z-TARGET), [`C-SS-Z-SERVICE`](CLAIMS.md#C-SS-Z-SERVICE), [`C-SS-Z-LAB`](CLAIMS.md#C-SS-Z-LAB) — each opens what it rests on.
+
+<a id="C-SS-OLD-SOFTWARE"></a>
+### Software has not been the constraint for years.
+
+`C-SS-OLD-SOFTWARE` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-SOFTWARE">Software is not the constraint and has not been for years.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-SOFTWARE "What this claim rests on")</sup>
+
+**Why it was retired:** How long it has been so was never shown.
+
+**Replaced by:** [`C-SS-D-STACK`](CLAIMS.md#C-SS-D-STACK) — each opens what it rests on.
+
+<a id="C-SS-OLD-SUMMARY"></a>
+### The cost is the price of twenty streets, and nobody has done it.
+
+`C-SS-OLD-SUMMARY` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-SUMMARY">The instruments exist, the protocol is ordinary, the cost is > the price of twenty streets, and nobody has done it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-SUMMARY "What this claim rests on")</sup>
+
+**Why it was retired:** The price comparison is retired with the prices, and 'nobody has done it' is an absence asserted of everyone.
+
+**Replaced by:** [`C-SS-W-SUMMARY`](CLAIMS.md#C-SS-W-SUMMARY) — each opens what it rests on.
+
+<a id="C-SS-OLD-T2METALS"></a>
+### Copper and zinc are conservative and come from feed.
+
+`C-SS-OLD-T2METALS` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-T2METALS">conservative, and from feed;</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-T2METALS "What this claim rests on")</sup>
+
+**Why it was retired:** Copper as a feed additive and both metals being conservative were given without a source; zinc oxide in piglet feed is documented.
+
+**Replaced by:** [`C-SS-T2-METALS`](CLAIMS.md#C-SS-T2-METALS) — each opens what it rests on.
+
+<a id="C-SS-OLD-TIER2COST"></a>
+### A sampler and a bottle analysis cost stated ranges, and a few samplers rotating around hundreds of nodes is the realistic shape.
+
+`C-SS-OLD-TIER2COST` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-TIER2COST">Stated: [25,000](SOURCES.md#F-40126a48dd)–[60,000](SOURCES.md#F-9ab1528b68) DKK per sampler, and [1,500](SOURCES.md#F-593872d09a)–[4,000](SOURCES.md#F-5ccd003764) DKK per bottle analysed, which is why tier 2 is sparse and event-triggered rather than continuous. Twenty samplers rotating around a network of hundreds of nodes is the realistic shape.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-TIER2COST "What this claim rests on")</sup>
+
+**Why it was retired:** Prices without a recorded source, and a number of samplers with no reason given.
+
+**Replaced by:** [`C-SS-T2-SPARSE`](CLAIMS.md#C-SS-T2-SPARSE) — each opens what it rests on.
+
+<a id="C-SS-OLD-TRACERS"></a>
+### The tracer table: what makes each tracer faecal, what confounds it and what resolves that.
+
+`C-SS-OLD-TRACERS` · retired 2026-09-11 from [SENSING.md](SENSING.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-TRACERS">| Tracer | Why it is faecal | What it is confounded with | What resolves that | |---|---|---|---| | Coprostanol (`5β-cholestan-3β-ol`) | Made by gut bacteria reducing cholesterol. Vertebrate guts make it; soil does not | Any warm-blooded gut, including humans and wildlife | the ratios below | | `24-ethylcoprostanol` / coprostanol | Plant sterols reduced in a herbivore gut | — | This ratio separates herbivore from human. High ethyl form: cattle, pigs on plant feed. Low: human sewage | | Coprostanol / (coprostanol + cholestanol) | Above ~[0.7](SOURCES.md#F-fbfb20c9e8) is the accepted faecal threshold | in-situ reduction in anoxic sediment can mimic it slightly | pair with the marker below | | Host-specific *Bacteroidales* by qPCR — `Pig-2-Bac`, BacR, HF183 | Gut microbiota are host-specific to the genus level | Nothing, in terms of source | This is the attribution instrument. DNA decays in days to weeks, so it reports *recent* input only | | crAssphage | A human-gut bacteriophage | Nothing else has it | Establishes the human baseline, so the rest can be assigned elsewhere | | Acesulfame-K, carbamazepine | Human diet and human medicine; conservative and persistent | Nothing agricultural | Marks the human fraction independently of biology — a chemical crosscheck on the microbial one | | Tylosin, tetracyclines, ivermectin | Given to livestock, not to people at these volumes | Veterinary use in pets, at trivial scale | Quantifies the livestock fraction; VetStat holds the sales that would calibrate it | | Copper and zinc | Feed additives, and conservative once in sediment | Heavily: brake pads, roofs, tyres, urban runoff | Useless alone in a mixed catchment; useful in a rural one, and useful as a *load* once the fraction is known | | δ¹⁵N of nitrate | Manure and sewage nitrogen is isotopically heavy (+[10](SOURCES.md#F-0a20c3941a) to +[20](SOURCES.md#F-29952b9b5c)‰); synthetic fertiliser sits near [0](SOURCES.md#F-24d492316f)‰ | Denitrification enriches δ¹⁵N too, which has fooled people for decades | Measure δ¹⁸O of nitrate alongside it: denitrification moves both together on a known slope, a source change does not | | fDOM, tryptophan-like (peak T) vs humic-like (peak C) | Protein-like fluorescence rises with fresh faecal and sewage organic matter; humic-like rises with soil | turbidity, temperature, iron | Correctable, and it is the only one of these that can run continuously — which is its whole value</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-TRACERS "What this claim rests on")</sup>
+
+**Why it was retired:** The table's cells carried no sources. Read again against pinned documents, several did not survive: the herbivore sterol ratio is documented for cattle and sheep, not for pigs on plant feed; the faecal cut-off is a pair of cut-offs with an uncertain band between them, not one accepted threshold, and the sediment confounder had no source; the human marker is shed by some non-human animals, so 'confounded with nothing' is contradicted by the method's own documentation; 'nothing else has it' for crAssphage and 'nothing agricultural' for the human chemicals had no source; copper as a feed additive and the metals being conservative were not found; 'fooled people for decades' and iron as a fluorescence confounder had no source.
+
+**Replaced by:** [`C-SS-F-COPRO`](CLAIMS.md#C-SS-F-COPRO), [`C-SS-F-RATIO`](CLAIMS.md#C-SS-F-RATIO), [`C-SS-F-ETHYL`](CLAIMS.md#C-SS-F-ETHYL), [`C-SS-F-HOST`](CLAIMS.md#C-SS-F-HOST), [`C-SS-F-CRASS`](CLAIMS.md#C-SS-F-CRASS), [`C-SS-F-HUMANCHEM`](CLAIMS.md#C-SS-F-HUMANCHEM), [`C-SS-F-VET`](CLAIMS.md#C-SS-F-VET), [`C-SS-F-METALS`](CLAIMS.md#C-SS-F-METALS), [`C-SS-F-D15N`](CLAIMS.md#C-SS-F-D15N), [`C-SS-F-FDOM`](CLAIMS.md#C-SS-F-FDOM) — each opens what it rests on.
+
+## SETTLE.md
+
+<a id="C-SS-OLD-COSTS"></a>
+### The node, bottle and phase costs, the pilot within reach of a foundation, the experiment at the cost of a junction rebuild, and a nitrogen programme costing orders of magnitude more.
+
+`C-SS-OLD-COSTS` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-COSTS">From the bill of materials in SENSING.md, at stated prices rather than quotations: The purchase order is in SENSING.md — every sensor, an example part of its class, and what to expect to pay. The short version: a node is [5,000](SOURCES.md#F-0b8dcd3835)–[12,000](SOURCES.md#F-033ea48e63) DKK without the fluorometer and [15,000](SOURCES.md#F-8b5e23c1d5)–[30,000](SOURCES.md#F-0b9e0106ad) with it, and the sensors are not the expensive part. The laboratory bottles are — [1,500](SOURCES.md#F-c77c5af806)–[4,000](SOURCES.md#F-09110d95a3) DKK each, and they are the line that cannot be economised without losing the attribution the design exists for. | Phase | What | Stated cost | |---|---|---:| | Pilot — one season, [3](SOURCES.md#F-164c70310c) pairs | [6](SOURCES.md#F-ddf436d7eb) nodes with fDOM, [2](SOURCES.md#F-269b9ee989) samplers, ~[60](SOURCES.md#F-bdce613d0e) bottles | ~[0.4](SOURCES.md#F-a1182b678e)–[0.6](SOURCES.md#F-6ee6268082) M DKK | | The experiment — [2](SOURCES.md#F-269b9ee989) years, [12](SOURCES.md#F-00a6f02113) pairs | [24](SOURCES.md#F-4b21c1a645) nodes, [8](SOURCES.md#F-3a70c7df44) samplers, ~[600](SOURCES.md#F-7a42bf75c1) bottles, servicing | ~[3](SOURCES.md#F-164c70310c)–[5](SOURCES.md#F-9df1e0a507) M DKK | | The standing network afterwards | a node on every outlet that reaches the sea | ~[8.8](SOURCES.md#F-dae705678f) M DKK of hardware | The pilot is inside the reach of a foundation, a university department, or a crowdfunded association. The full experiment is the cost of one junction rebuild. The comparison that matters is not to a research budget: it is to a national nitrogen programme costing orders of magnitude more and producing no test.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-COSTS "What this claim rests on")</sup>
+
+**Why it was retired:** Prices without a recorded source and the phase totals built from them; the comparisons with a junction rebuild and with the nitrogen programme are with numbers nobody sourced.
+
+**Replaced by:** [`C-SS-T-PHASES`](CLAIMS.md#C-SS-T-PHASES) — each opens what it rests on.
+
+<a id="C-SS-OLD-DEDUCT"></a>
+### Three deductions from the total: ship time, mechanisms with no column anywhere, and desk designs whose analysis has never been run.
+
+`C-SS-OLD-DEDUCT` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-DEDUCT">And three honest deductions from that total. - Ship time is not in it. The autumn benthic extension and anything offshore needs a vessel and an institution, and this project cannot price either. - Some of it cannot be bought at all. [40](SOURCES.md#F-2db5c9c45e) of the [166](SOURCES.md#F-5ecd978c0c) mechanisms in the register are unscoreable because the deciding measurement has no column anywhere; money buys the instrument, not the decades of record it should have been collecting. - And the cheapest block is the one nobody has done. [3](SOURCES.md#F-c97c3cd62c) designs need no fieldwork and no funding — the data exists and the analysis has never been run.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-DEDUCT "What this claim rests on")</sup>
+
+**Why it was retired:** The total is retired with the prices; 'no column anywhere' and 'never been run' are absences asserted of everyone, while the triage says what the sources this project surveyed hold and the register which designs are desk work.
+
+**Replaced by:** [`C-SS-T-L-SHIP`](CLAIMS.md#C-SS-T-L-SHIP), [`C-SS-T-UNSCOREABLE`](CLAIMS.md#C-SS-T-UNSCOREABLE), [`C-SS-T-DESK`](CLAIMS.md#C-SS-T-DESK) — each opens what it rests on.
+
+<a id="C-SS-OLD-DNA"></a>
+### Microbial markers fall away in days.
+
+`C-SS-OLD-DNA` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-DNA">Microbial markers fall away in days, so a marker absence at a site visited late is not evidence of absence.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-DNA "What this claim rests on")</sup>
+
+**Why it was retired:** The decay time had no source; the pinned source says only that host markers detect recent contamination.
+
+**Replaced by:** [`C-SS-T-DNA`](CLAIMS.md#C-SS-T-DNA) — each opens what it rests on.
+
+<a id="C-SS-OLD-EVENTS"></a>
+### A five-millimetre trigger catches something like nine events a season and as many in autumn, without waiting a decade; the reanalysis caveat is carried from the source.
+
+`C-SS-OLD-EVENTS` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-EVENTS">A sampler on a five-millimetre trigger catches something like nine events in a spreading season and a comparable number in the autumn control window — enough for a paired comparison within a single year, at a single site, without waiting a decade. *Caveat carried from the source:* a reanalysis grid cell understates extremes, so the ≥[10](SOURCES.md#F-9d8fbecb30) mm row is a floor.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-EVENTS "What this claim rests on")</sup>
+
+**Why it was retired:** Days with at least that much rain were counted as events, though a storm over two days is two such days; the comparison with the autumn window was never computed; 'a decade' was a quantity nobody set; and the caveat named no source.
+
+**Replaced by:** [`C-SS-T-SAMPLE`](CLAIMS.md#C-SS-T-SAMPLE), [`C-SS-T-FLOOR`](CLAIMS.md#C-SS-T-FLOOR) — each opens what it rests on.
+
+<a id="C-SS-OLD-EVERYNUMBER"></a>
+### Every disputed number in Danish nutrient policy is a modelled quantity defended by its modellers, and a measurement cheaply ends a forty-year disagreement.
+
+`C-SS-OLD-EVERYNUMBER` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-EVERYNUMBER">Every disputed number in > Danish nutrient policy is a modelled quantity defended by the people who model it. > This produces a measured quantity, at named places, on dates, with the raw series > published and the decision rule fixed in advance — so the result is available to > somebody who does not trust either party. That is the only kind of number that > ends a forty-year disagreement, and the striking thing is how cheap it is.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-EVERYNUMBER "What this claim rests on")</sup>
+
+**Why it was retired:** 'Every disputed number' was never checked, 'forty-year' was never sourced, and the cost rests on retired prices.
+
+**Replaced by:** [`C-SS-T-WHYEND`](CLAIMS.md#C-SS-T-WHYEND) — each opens what it rests on.
+
+<a id="C-SS-OLD-FOURTHCOST"></a>
+### The decisive fourth test costs about thirty thousand kroner.
+
+`C-SS-OLD-FOURTHCOST` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-FOURTHCOST">It is the only test whose failure means *do not build the national network*, and it costs about thirty thousand kroner to run.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-FOURTHCOST "What this claim rests on")</sup>
+
+**Why it was retired:** A cost with no recorded source.
+
+**Replaced by:** [`C-SS-T-FOURTH`](CLAIMS.md#C-SS-T-FOURTH) — each opens what it rests on.
+
+<a id="C-SS-OLD-HOUSE"></a>
+### The experiment priced against a flat, a house and a street shot; servicing at a stated rate and staffing; and a series cut in its third year.
+
+`C-SS-OLD-HOUSE` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-HOUSE">Because the figure is easy to lose next to a research budget, here it is next to things people actually price: | | Stated cost | |---|---:| | The pilot — three pairs, one season | ~[0.5](SOURCES.md#F-3ec1725c04) M DKK, the price of a small flat outside the cities | | The experiment that settles it — [12](SOURCES.md#F-46f71d86ac) pairs, two years | [3](SOURCES.md#F-8222e0b2f8)–[5](SOURCES.md#F-38b2117f8f) M DKK, the price of a cheap house | | The standing national network, hardware | ~[8.8](SOURCES.md#F-a7ef1a5335) M DKK | | One bored street shot, from the retrofit costing on this site | [0.16](SOURCES.md#F-4614ffcfa2)–[0.64](SOURCES.md#F-298fb9dd0d) M DKK | So the decisive experiment costs about what a house costs, and the capital for a national network costs about what a good house in Copenhagen costs. That is the honest headline and it should be uncomfortable: the argument has run for forty years, and the measurement that would settle a central part of it has never been bought at a price a single wealthy person could pay. But do not mistake the capital for the programme. Hardware is the cheap half and saying otherwise is how these schemes die: - Servicing. [800](SOURCES.md#F-df6c16ae34) nodes at four visits a year is on the order of [3](SOURCES.md#F-8222e0b2f8)–[4](SOURCES.md#F-fc00539bcb) M DKK a year — which is to say two to four people, permanently. A sensor that nobody visits produces confident wrong numbers, which is worse than no sensor. - Laboratory. The tier-[2](SOURCES.md#F-63531e4345) bottles at [1,500](SOURCES.md#F-936b7dfaea)–[4,000](SOURCES.md#F-b6d238cd8d) DKK each are the largest single line in the experiment budget, and the only one that cannot be economised without losing the attribution. - Custody. Somebody has to keep the archive, the calibration histories and the pre-registration for a decade, and that is a job rather than a server. So: a house to find out, and a few salaries a year to keep knowing. The first number is startlingly small. The second is the one a proposal has to be honest about, because it is the one that gets cut in year three and takes the series with it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-HOUSE "What this claim rests on")</sup>
+
+**Why it was retired:** Every figure in the comparison was unsourced, and so were the servicing rate, the staffing and the year in which a series is cut.
+
+**Replaced by:** [`C-SS-T-RECUR`](CLAIMS.md#C-SS-T-RECUR), [`C-SS-T-RC-SERV`](CLAIMS.md#C-SS-T-RC-SERV), [`C-SS-T-RC-LAB`](CLAIMS.md#C-SS-T-RC-LAB), [`C-SS-T-RC-CUST`](CLAIMS.md#C-SS-T-RC-CUST), [`C-SS-T-RC-SO`](CLAIMS.md#C-SS-T-RC-SO) — each opens what it rests on.
+
+<a id="C-SS-OLD-MAJORITY"></a>
+### The soil reactor is accepted if marker loads are indistinguishable at the great majority of sites.
+
+`C-SS-OLD-MAJORITY` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-MAJORITY">indistinguishable at the great majority of sites</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-MAJORITY "What this claim rests on")</sup>
+
+**Why it was retired:** 'The great majority' is a threshold nobody fixed, in a rule that says it is fixed in advance.
+
+**Replaced by:** [`C-SS-T-R2`](CLAIMS.md#C-SS-T-R2) — each opens what it rests on.
+
+<a id="C-SS-OLD-NEVERMEASURED"></a>
+### Everything else on the site is an audit, and the question has never been measured directly by anyone.
+
+`C-SS-OLD-NEVERMEASURED` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-NEVERMEASURED">Everything else on this site is an audit: it takes numbers that exist and asks what they are estimators of. This page is the opposite. It is a design for producing numbers that do not exist yet, aimed at the one question the whole dispute turns on and nobody has ever measured directly:</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-NEVERMEASURED "What this claim rests on")</sup>
+
+**Why it was retired:** 'Everything else' overstates what the site is, and 'nobody has ever measured' is an absence asserted of everyone; what was searched is the monitoring this project profiled.
+
+**Replaced by:** [`C-SS-T-DESIGN`](CLAIMS.md#C-SS-T-DESIGN) — each opens what it rests on.
+
+<a id="C-SS-OLD-PERMISSION"></a>
+### Nothing in the design needs a change in the law, a data agreement or anybody's permission except the landowner's, which is unusual in the field.
+
+`C-SS-OLD-PERMISSION` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-PERMISSION">Nothing above needs a change in the law, a data agreement, or anybody's permission except the landowner's at each culvert. That is unusual in this field and it is the reason this page exists.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-PERMISSION "What this claim rests on")</sup>
+
+**Why it was retired:** The design samples slurry tanks and plant effluent, which needs their owners, and 'unusual in this field' was never searched.
+
+**Replaced by:** [`C-SS-T-PERMISSION`](CLAIMS.md#C-SS-T-PERMISSION) — each opens what it rests on.
+
+<a id="C-SS-OLD-PILOTCOST"></a>
+### The proof of concept costed item by item as a used car, and the staged path with a cost per stage reproduced by the network tool's presets.
+
+`C-SS-OLD-PILOTCOST` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-PILOTCOST">What it costs, item by item: | | | DKK | |---|---|---:| | [2](SOURCES.md#F-25637e891f) nodes with fDOM | one high-density catchment and its match | [30,000](SOURCES.md#F-325870aa53)–[60,000](SOURCES.md#F-dd4eb194ab) | | [1](SOURCES.md#F-2743276e38) automatic sampler | rotated between the two, or fixed on the high-density one | [25,000](SOURCES.md#F-55ec904bd3)–[60,000](SOURCES.md#F-dd4eb194ab) | | Calibration standards, spares, mounts | the shared kit, smallest version | [7,000](SOURCES.md#F-e0a4fb71a6)–[15,000](SOURCES.md#F-fbc1ac14c7) | | Reference sonde for co-location | borrowed from a utility or a department, which most will lend for a season | [0](SOURCES.md#F-5d612e3f80), or [15,000](SOURCES.md#F-fbc1ac14c7)–[60,000](SOURCES.md#F-dd4eb194ab) to buy | | End-member samples — [3](SOURCES.md#F-2eae4e647d) slurry tanks, [1](SOURCES.md#F-2743276e38) plant effluent, [1](SOURCES.md#F-2743276e38) road gully, [2](SOURCES.md#F-25637e891f) soils | full fingerprint panel on each. This is the row that decides the fourth test | [18,000](SOURCES.md#F-ecc8103631)–[28,000](SOURCES.md#F-1356c293cd) | | Event bottles — [3](SOURCES.md#F-2eae4e647d) events × [8](SOURCES.md#F-fd96364a71) | full panel on [8](SOURCES.md#F-fd96364a71) of them, cheap determinands on the rest | [25,000](SOURCES.md#F-55ec904bd3)–[60,000](SOURCES.md#F-dd4eb194ab) | | Servicing, travel, a server | one person, twenty visits, a small VM | [5,000](SOURCES.md#F-9061f00a13)–[10,000](SOURCES.md#F-88af2b87d1) | | Total | one pair, one season, one person | [110,000](SOURCES.md#F-648e1dfb65)–[230,000](SOURCES.md#F-000d931aaf) DKK | Which is a used car, not a house — and it is the number that matters, because it is the one somebody can actually decide to spend. The full experiment is only worth funding if this comes back clean, and if it does not, the money saved is the whole three to five million. A staged path, with a decision at each step — and it is dialable on a map, where each preset below reproduces the row beside it: | Stage | Scope | Cost | The question it answers | |---|---|---:|---| | `0` — one node | a single stream, no sampler | [15,000](SOURCES.md#F-fbc1ac14c7)–[30,000](SOURCES.md#F-325870aa53) | does the hardware survive and report? | | `1` — proof of concept | one pair, one season, one sampler | [110,000](SOURCES.md#F-648e1dfb65)–[230,000](SOURCES.md#F-000d931aaf) | does the method discriminate, here? | | `2` — regional | three pairs, both windows | [0.4](SOURCES.md#F-4488d7a145)–[0.6](SOURCES.md#F-d2014762a3) M | is the effect visible at all, and how variable? | | `3` — the experiment | twelve pairs, two years | [3](SOURCES.md#F-2eae4e647d)–[5](SOURCES.md#F-fc7fb64ebb) M | which of the [3](SOURCES.md#F-2eae4e647d) hypotheses is right | | `4` — the network | every outlet that reaches the sea | [8.8](SOURCES.md#F-4ac9046db9) M + operating | the same answer everywhere, permanently | No stage is wasted if the next one is never funded. Stage 0 is a real series from a real stream. Stage 1 is a publishable methods result either way. Stage 2 is a regional finding. That property is not an accident of the costing — it is the reason to stage it like this rather than to write one large proposal that has to be accepted whole.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-PILOTCOST "What this claim rests on")</sup>
+
+**Why it was retired:** Item prices and totals without a recorded source, and the comparison with a car rests on them; the network tool's presets do not reproduce the stages beside them; the staged path's scopes carried pair counts with no reason given.
+
+**Replaced by:** [`C-SS-T-STAGED`](CLAIMS.md#C-SS-T-STAGED), [`C-SS-T-S0`](CLAIMS.md#C-SS-T-S0), [`C-SS-T-S1`](CLAIMS.md#C-SS-T-S1), [`C-SS-T-S2`](CLAIMS.md#C-SS-T-S2), [`C-SS-T-S3`](CLAIMS.md#C-SS-T-S3), [`C-SS-T-S4`](CLAIMS.md#C-SS-T-S4), [`C-SS-T-NOWASTE`](CLAIMS.md#C-SS-T-NOWASTE) — each opens what it rests on.
+
+<a id="C-SS-OLD-RUINED"></a>
+### Each failure mode has ruined a monitoring programme somewhere.
+
+`C-SS-OLD-RUINED` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-RUINED">Written down in advance, because each of these has ruined a monitoring programme somewhere:</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-RUINED "What this claim rests on")</sup>
+
+**Why it was retired:** No programme was named.
+
+**Replaced by:** [`C-SS-T-INVALID`](CLAIMS.md#C-SS-T-INVALID) — each opens what it rests on.
+
+<a id="C-SS-OLD-RULES"></a>
+### Danish rules forbid spreading through autumn and winter and open a window in spring.
+
+`C-SS-OLD-RULES` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-RULES">Danish rules forbid spreading through the autumn and winter and open a window in spring.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-RULES "What this claim rests on")</sup>
+
+**Why it was retired:** Stated without the rule: the pinned order forbids spreading liquid organic manure and nitrogen fertiliser from after harvest until February, with exceptions it lists.
+
+**Replaced by:** [`C-SS-T-CALENDAR`](CLAIMS.md#C-SS-T-CALENDAR) — each opens what it rests on.
+
+<a id="C-SS-OLD-SEPARATES"></a>
+### The fingerprint separates a pig from a person from a road.
+
+`C-SS-OLD-SEPARATES` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-SEPARATES">constructs the instrument: the fingerprint that separates a pig from a person from a road,</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-SEPARATES "What this claim rests on")</sup>
+
+**Why it was retired:** Stated as achieved: the markers that would separate a pig from a person have documented cross-reactions, and the sterol ratio is untested for pigs.
+
+**Replaced by:** [`C-SS-T-NAV`](CLAIMS.md#C-SS-T-NAV) — each opens what it rests on.
+
+<a id="C-SS-OLD-WHOLE"></a>
+### The cost of settling the whole field, block by block, and the capital and yearly totals with their comparisons.
+
+`C-SS-OLD-WHOLE` · retired 2026-09-11 from [SETTLE.md](SETTLE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-SS-OLD-WHOLE">This page prices one question. The obvious next one is what it would cost to settle the *field* — not the faecal channel alone, but enough of the [23](SOURCES.md#F-3e047c4257) designs in EXPERIMENTS.md to leave the Danish sea argument with measurements where it currently has models. Adding up what this project has actually costed, and marking clearly what it has not: | Block | What it buys | Stated cost | |---|---|---:| | This experiment | whether the payload reaches the water, and whose it is | [3](SOURCES.md#F-f9e87ed194)–[5](SOURCES.md#F-cef9e2359d) M | | The standing stream network | the same question everywhere, permanently, no extrapolation | [8.8](SOURCES.md#F-1acf833585) M hardware | | Instrumenting the [13](SOURCES.md#F-ae9340fc2d) largest overflow structures | flow rather than event counts — the largest single uncertainty on this site | ~[1](SOURCES.md#F-6038cede73) M | | The cheap marine tier — `X14`, `X15`, `X16` | oxygen and temperature at many points instead of monthly at few | [1](SOURCES.md#F-6038cede73)–[3](SOURCES.md#F-f9e87ed194) M | | The missing instruments — `X19`, `X20` | a *fedtemøg* index and a structured record of what people have watched for forty years. Three of the four public words have no instrument; these are two of them | small — a panel and a protocol | | The desk work — `X8`, `X21`, `X22` | analyses on data that already exists and has never been run | nothing but time | | A trials portfolio — the meta-solution in PROGRAMME.md | whether the interventions work, in named places, reversibly | [6](SOURCES.md#F-88baa4593a)–[24](SOURCES.md#F-005bf8d0f6) M | Capital, in the order of [20](SOURCES.md#F-fc57502d22)–[40](SOURCES.md#F-0cc4bbcb85) M DKK. Which is a large villa, or a small apartment building, or about one kilometre of urban motorway — and it is *not* the same as an upper-middle-class house: that figure buys the decisive single experiment, not the programme. Plus [5](SOURCES.md#F-cef9e2359d)–[10](SOURCES.md#F-386d9eaef1) M a year to service, sample and keep custody, which is the number that decides whether any of it survives to be a time series.</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD-WHOLE "What this claim rests on")</sup>
+
+**Why it was retired:** Block costs, the capital total and its comparisons had no recorded source; 'forty years' was never sourced; 'the largest single uncertainty on this site' and 'has never been run' were asserted without a search.
+
+**Replaced by:** [`C-SS-T-FIELD`](CLAIMS.md#C-SS-T-FIELD), [`C-SS-T-B-CSO`](CLAIMS.md#C-SS-T-B-CSO), [`C-SS-T-B-MARINE`](CLAIMS.md#C-SS-T-B-MARINE), [`C-SS-T-B-MISSING`](CLAIMS.md#C-SS-T-B-MISSING), [`C-SS-T-B-DESK`](CLAIMS.md#C-SS-T-B-DESK), [`C-SS-T-CAPITAL`](CLAIMS.md#C-SS-T-CAPITAL) — each opens what it rests on.
+
 ## SOLUTIONS.md
 
 <a id="C-CS-OLD-S-APPLIED"></a>
@@ -6797,6 +10413,2781 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** It joins two different distributions: the tail is in the stored volume, while the typetal sample chose catchment types, not small structures; and no document held shows the typetal multiplied across every point.
 
 **Replaced by:** [`C-CS-S-TAILARG`](CLAIMS.md#C-CS-S-TAILARG) — each opens what it rests on.
+
+## data/flood2012/README.md
+
+<a id="C-DQ-OLD-F-BUILT"></a>
+### Named districts built since are not in the model, a stated area and share of today's impervious surface lying outside every sheet.
+
+`C-DQ-OLD-F-BUILT` · retired 2026-09-11 from [data/flood2012/README.md](data/flood2012/README.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-F-BUILT">Nordhavn, most of Ørestad, Sluseholmen and Teglholmen, and much of Refshaleøen have been built since and are not in it - [344](SOURCES.md#F-4646c2b9e3) ha of today's impervious surface, [8.1](SOURCES.md#F-9de2b5c1a8)% of the city, lies outside every sheet.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-F-BUILT "What this claim rests on")</sup>
+
+**Why it was retired:** The area and share were carried as quotations of this README's own past, and no stored computation produces them; which districts were built after the calculation was not traced to a source.
+
+**Replaced by:** [`C-DQ-F-SINCE`](CLAIMS.md#C-DQ-F-SINCE) — each opens what it rests on.
+
+<a id="C-DQ-OLD-F-LAKES"></a>
+### The sheets paint depth over lakes and the harbour.
+
+`C-DQ-OLD-F-LAKES` · retired 2026-09-11 from [data/flood2012/README.md](data/flood2012/README.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-F-LAKES">The sheets paint depth over lakes and the harbour as well as over land.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-F-LAKES "What this claim rests on")</sup>
+
+**Why it was retired:** Which water bodies carry painted depth was not broken down; what is measured is the area on the open-water polygons, which the replacement gives.
+
+**Replaced by:** [`C-DQ-F-WATER`](CLAIMS.md#C-DQ-F-WATER) — each opens what it rests on.
+
+<a id="C-DQ-OLD-F-NOSTEPS"></a>
+### The world and projection files place a sheet in QGIS with no further steps.
+
+`C-DQ-OLD-F-NOSTEPS` · retired 2026-09-11 from [data/flood2012/README.md](data/flood2012/README.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-F-NOSTEPS">The matching `.pgw` world file and `.prj` sit beside it, so it lands in the right place in `EPSG:4326` with no further steps.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-F-NOSTEPS "What this claim rests on")</sup>
+
+**Why it was retired:** That QGIS needs no further steps was not tested and recorded here; what the export writes is kept in the replacement.
+
+**Replaced by:** [`C-DQ-F-FILES`](CLAIMS.md#C-DQ-F-FILES) — each opens what it rests on.
+
+<a id="C-DQ-OLD-F-PIXELS"></a>
+### Pixel values are band numbers, each standing for a depth band, and zero means no modelled flooding.
+
+`C-DQ-OLD-F-PIXELS` · retired 2026-09-11 from [data/flood2012/README.md](data/flood2012/README.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-F-PIXELS">Pixel values are depth bands, not metres: | value | depth | |---|---| | `1` | [0.05](SOURCES.md#F-357b2e6a74)–[0.1](SOURCES.md#F-01d43673fe) m | | `2` | [0.1](SOURCES.md#F-01d43673fe)–[0.2](SOURCES.md#F-b349b78ddc) m | | `3` | [0.2](SOURCES.md#F-b349b78ddc)–[0.5](SOURCES.md#F-f89ceac4cd) m | | `4` | [0.5](SOURCES.md#F-f89ceac4cd)–[1](SOURCES.md#F-75c1b9d66b) m | | `5` | [1](SOURCES.md#F-75c1b9d66b)–[2](SOURCES.md#F-375e0bd5da) m | | `6` | over [2](SOURCES.md#F-375e0bd5da) m | | `0` | no modelled flooding, or outside the sheet</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-F-PIXELS "What this claim rests on")</sup>
+
+**Why it was retired:** The exported rasters hold no band numbers: each pixel is its band's legend colour, opaque where a band was read and transparent elsewhere, as floodmaps.py writes them and an exported sheet shows.
+
+**Replaced by:** [`C-DQ-F-COLOURS`](CLAIMS.md#C-DQ-F-COLOURS) — each opens what it rests on.
+
+<a id="C-DQ-OLD-F-STRIPPED"></a>
+### The sheets model a design rainfall event on the city as it stood in the scenario year, from the Skybrudsplan, and their geospatial metadata had been stripped.
+
+`C-DQ-OLD-F-STRIPPED` · retired 2026-09-11 from [data/flood2012/README.md](data/flood2012/README.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-F-STRIPPED">Modelled inundation depth for a [100](SOURCES.md#F-07aaf6d2c4)-year rainfall event on the 2010 city, from Københavns Kommune's Skybrudsplan. Recovered from the [7](SOURCES.md#F-b63ddb6977) published PDF sheets, whose geospatial metadata had been stripped, and placed back on the map.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-F-STRIPPED "What this claim rests on")</sup>
+
+**Why it was retired:** The return period was carried as a quotation of this README's own past; 'on the city' of that year read more into the title, which names an event in that year; and 'had been stripped' has no stored check behind it, as DATA_SOURCES.md found for the same assertion.
+
+**Replaced by:** [`C-DQ-F-WHAT`](CLAIMS.md#C-DQ-F-WHAT), [`C-DQ-F-RECOVERED`](CLAIMS.md#C-DQ-F-RECOVERED) — each opens what it rests on.
+
+<a id="C-DQ-OLD-F-WEBMAP"></a>
+### The control points were located on a web map by a resident.
+
+`C-DQ-OLD-F-WEBMAP` · retired 2026-09-11 from [data/flood2012/README.md](data/flood2012/README.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DQ-OLD-F-WEBMAP">Position: an ensemble water cross-correlation for [3](SOURCES.md#F-10801b938e) sheets; control points located on a web map by a resident for [4](SOURCES.md#F-25990b189d); then sheet-to-sheet image registration on masked gradient images and a bundle adjustment over the sheets that overlap usefully.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-F-WEBMAP "What this claim rests on")</sup>
+
+**Why it was retired:** Where the resident located the control points is not recorded in the registration record.
+
+**Replaced by:** [`C-DQ-F-POSITION`](CLAIMS.md#C-DQ-F-POSITION) — each opens what it rests on.
+
+## hypodrafts/A1.md
+
+<a id="C-BA-OLD-A1-FALSIFY"></a>
+### The test is falsified if the residual does not move, moves by less than the part, or the total moves, and any of these means the share is not a share of anything.
+
+`C-BA-OLD-A1-FALSIFY` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-FALSIFY">Falsified if: R does not move; R moves by materially less than P; or the total T moves instead. Any of the three means the published share is not a share of anything.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-FALSIFY "What this claim rests on")</sup>
+
+**Why it was retired:** A declared correction of the measurements or of the model moves the total by design, which the third failure mode did not allow for.
+
+**Replaced by:** [`C-BA-A1-FALSIFY`](CLAIMS.md#C-BA-A1-FALSIFY) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-FOREIGN"></a>
+### The account carries no foreign-inflow term though the catchment layer names the transboundary unit.
+
+`C-BA-OLD-A1-FOREIGN` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-FOREIGN">Nor whether "Denmark" is a closed box — the account carries no foreign-inflow term though the national catchment layer names the transboundary unit outright.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-FOREIGN "What this claim rests on")</sup>
+
+**Why it was retired:** No document of the account was read for a term for foreign inflow; the pinned report does not mention Germany, which is silence in one report, not the account's structure.
+
+**Replaced by:** [`C-BA-A1-BOX`](CLAIMS.md#C-BA-A1-BOX) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-HALF"></a>
+### A farming statistic is an input to the model generating the diffuse load over a stated share of the country.
+
+`C-BA-OLD-A1-HALF` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-HALF">A farming statistic is an input to the model generating the diffuse load over ~[51](SOURCES.md#F-8e584ca690)% of the country, and its correlation with that load is then reported as evidence — error class 7, model-as-datum, exactly.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-HALF "What this claim rests on")</sup>
+
+**Why it was retired:** The modelled share of the country was carried only as a quotation of this page.
+
+**Replaced by:** [`C-BA-A1-CIRCULAR`](CLAIMS.md#C-BA-A1-CIRCULAR) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-INTRO"></a>
+### The published share is a residual, the companion page states the growth test at a stated line, and the archive turns out to be obtainable.
+
+`C-BA-OLD-A1-INTRO` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-INTRO">What can be tested is its precondition. The [69.6](SOURCES.md#F-b51c64cf22)% is a residual, and a residual cannot be validated against itself (`../RESIDUAL.md`, which states the growth test at line [111](SOURCES.md#F-a6614fa210)). This drafts that growth test against the archive, which turns out to be obtainable.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-INTRO "What this claim rests on")</sup>
+
+**Why it was retired:** The line given for the test on the companion page no longer points at it, the share was carried only as a quotation of this page, and the archive was called obtainable from one report.
+
+**Replaced by:** [`C-BA-A1-PRECONDITION`](CLAIMS.md#C-BA-A1-PRECONDITION) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-KEMI"></a>
+### The ODA water-chemistry topic is not fetchable by fetch_oda.py, whose topics lack it.
+
+`C-BA-OLD-A1-KEMI` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-KEMI">ODA `vandkemi` is not fetchable by `scripts/fetch_oda.py` as it stands. `TOPICS` holds five keys — `stations`, `ctd`, `lys`, `iltkor`, `maaledybde` — and `argparse(choices=sorted(TOPICS))` rejects `kemi`: the docstring advertises the topic, the dict does not implement it. Missing is one `Emne__` node id, discoverable with the `expand()` helper already in the file.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-KEMI "What this claim rests on")</sup>
+
+**Why it was retired:** The water-chemistry topic has since been added to fetch_oda.py, and its extract is held.
+
+**Replaced by:** [`C-BA-A1-KEMI`](CLAIMS.md#C-BA-A1-KEMI), [`C-BA-A1-FETCH`](CLAIMS.md#C-BA-A1-FETCH) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-NORM"></a>
+### SR353 records climate normalisation running above the actual load over the whole period.
+
+`C-BA-OLD-A1-NORM` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-NORM">Use the actual (aktuel) series, never the climate-normalised one: normalisation is a model applied to the total (SR353 records it running [1](SOURCES.md#F-f81e00ad2f)% above actual over 1990-2017), so it moves T by itself and would contaminate the third failure mode.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-NORM "What this claim rests on")</sup>
+
+**Why it was retired:** SR353 gives that excess for its old normalisation method; under the new one it says the normalised and actual loads are equal over the period.
+
+**Replaced by:** [`C-BA-A1-ACTUAL`](CLAIMS.md#C-BA-A1-ACTUAL) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-P1"></a>
+### A stated number of reports of a stated size each are to be fetched.
+
+`C-BA-OLD-A1-P1` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-P1">SR353 and SR527 confirmed) — ~[12](SOURCES.md#F-94f736cc53) PDFs, ~[8](SOURCES.md#F-ec5e07ed7a) MB each, streamed to disk, then</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-P1 "What this claim rests on")</sup>
+
+**Why it was retired:** The number and size of the reports were estimates carried as quotations of this page.
+
+**Replaced by:** [`C-BA-A1-P1`](CLAIMS.md#C-BA-A1-P1) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-P3"></a>
+### SR353 declares two changes unprompted, one smaller than the other, and each is a candidate part with a stated year.
+
+`C-BA-OLD-A1-P3` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-P3">SR353 declares two unprompted: a new regional bias correction of DK-QNP monthly loads ("Bias-korrektionen … er ny i forhold til de foregående år"), and a correction of TN and TP measured 2016–Apr 2017 by a wrong analytical method, plus a smaller one for 2007-2014. Each is a candidate *P* with a stated year.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-P3 "What this claim rests on")</sup>
+
+**Why it was retired:** SR353 gives no size by which the correction for the earlier years is smaller; and a declared correction of the measurements or of the model changes the total itself, so it cannot be a part moved out of the leftover.
+
+**Replaced by:** [`C-BA-A1-P3`](CLAIMS.md#C-BA-A1-P3), [`C-BA-A1-P3-NOTP`](CLAIMS.md#C-BA-A1-P3-NOTP) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-SIZE"></a>
+### The water-chemistry extract would be of a stated estimated size.
+
+`C-BA-OLD-A1-SIZE` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-SIZE">Size, estimated and not measured: vandkemi is bottle samples, a few depths × tens of parameters per visit, against CTD's hundreds of depth bins × [9](SOURCES.md#F-baba7d911d) — so one to two orders of magnitude fewer rows than ctd's ~[5](SOURCES.md#F-bdb72ae755)×[10](SOURCES.md#F-dcfc4802fc)⁷: [10](SOURCES.md#F-dcfc4802fc)⁶–[10](SOURCES.md#F-dcfc4802fc)⁷ rows, roughly [10](SOURCES.md#F-dcfc4802fc)–[100](SOURCES.md#F-d643dfff3e) MB gzipped, streamed in [64](SOURCES.md#F-0b34c07deb) KB chunks under the existing `--max-mb 2000` guard. Not a multi-GB job. I did not run it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-SIZE "What this claim rests on")</sup>
+
+**Why it was retired:** The extract is now held, so its size is counted, not estimated.
+
+**Replaced by:** [`C-BA-A1-KEMI`](CLAIMS.md#C-BA-A1-KEMI) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-TABLE"></a>
+### The data table: the report's file size, character count and producer, a second report with the same URL pattern, the report's figures, the catchment layer, the station series, the CTD extract's rows extrapolated from its first megabytes, and an error class for each.
+
+`C-BA-OLD-A1-TABLE` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-TABLE">| Source | Verified here | Error class | |---|---|---| | DCE `Vandløb . NOVANA`, `https://dce2.au.dk/pub/SR.pdf` | SR353 = Vandløb 2018, [8.7](SOURCES.md#F-7a9bebfd2b) MB, text-extractable: `pdftotext -layout` yields [172,210](SOURCES.md#F-6d2069ef63) chars; `pdfinfo` shows Distiller [19.0](SOURCES.md#F-4c4451f860), 2019-12-02. SR527 (Vandløb 2021) and SR532 share the URL shape | [2](SOURCES.md#F-84fdffdb2f), published to [2](SOURCES.md#F-84fdffdb2f) s.f. | | SR353 figures | 2018 land→coast ≈ [50.000](SOURCES.md#F-dbb2230366) t N/yr, point sources ≈ [5.200](SOURCES.md#F-14bc542cba) t N/yr; [209](SOURCES.md#F-23af9c29d3) coastal stream stations plus a model for the rest; [240](SOURCES.md#F-538a73226f) discharge gauges in the 1990-2018 run; field surplus [186.000](SOURCES.md#F-def38648b3)–[240.000](SOURCES.md#F-9a60f5446d) t N over five agrohydrological years | [7](SOURCES.md#F-45ec631f95), then [2](SOURCES.md#F-84fdffdb2f) | | `data/raw/national/hovedoplande.geojson` | [24](SOURCES.md#F-59fdbbf31b) features, including `DK` *"Int vidå-kruså"* beside `DK4.1` *"Vidå-kruså"* — a transboundary catchment named as such | [6](SOURCES.md#F-6bbb22d7f9), no foreign-inflow term | | `docs/data/areas/stations_series.json` | [679,422](SOURCES.md#F-7f42bf5e06) station-months (summed over [9](SOURCES.md#F-866ad69532) variables, [60,460](SOURCES.md#F-0e42de0280) … [84,668](SOURCES.md#F-04673377d7)), [1,415](SOURCES.md#F-6000b99cab) stations, [564](SOURCES.md#F-d14c4abe3b) months from 1980. No nutrients | [3](SOURCES.md#F-23af8ea184) | | `data/raw/oda/ctd.csv.gz` | [448,723,078](SOURCES.md#F-f65053ad30) bytes, [34](SOURCES.md#F-7409a36f29) columns; first [40](SOURCES.md#F-7a3c7a8cef) MB compressed = [5,391,122](SOURCES.md#F-fefed34771) rows ⇒ ~[1.35](SOURCES.md#F-3164ad237f)×[10](SOURCES.md#F-2e7e0c3941)⁵ rows per compressed MB ⇒ [5](SOURCES.md#F-6687b826a2)–[6](SOURCES.md#F-6bbb22d7f9)×[10](SOURCES.md#F-2e7e0c3941)⁷ total, consistent with the stated</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** File size, character count and producer, and the extrapolated row count, were carried as quotations of this page from a drafting session whose output is not held, one of the two further reports named was never checked, and the error classes were asserted. The report's figures are kept as readings, the CTD's rows are now counted, and SR527 is pinned.
+
+**Replaced by:** [`C-BA-A1-VINTAGE-FILES`](CLAIMS.md#C-BA-A1-VINTAGE-FILES), [`C-BA-A1-FIGURES`](CLAIMS.md#C-BA-A1-FIGURES), [`C-BA-A1-HOV`](CLAIMS.md#C-BA-A1-HOV), [`C-BA-A1-SERIES`](CLAIMS.md#C-BA-A1-SERIES), [`C-BA-A1-CTD`](CLAIMS.md#C-BA-A1-CTD) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-THIRD"></a>
+### A single failure of the third kind shows the share is circular.
+
+`C-BA-OLD-A1-THIRD` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-THIRD">single failure of the third kind — T moving with R — licenses the opposite and stronger one: the share is circular.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-THIRD "What this claim rests on")</sup>
+
+**Why it was retired:** A declared correction of the measurements or of the model moves the total by design, so a moving total indicates circularity only once such corrections are set aside.
+
+**Replaced by:** [`C-BA-A1-WOULD`](CLAIMS.md#C-BA-A1-WOULD) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-UNVERIFIED"></a>
+### The unverified claim that DK-QNP, covering the ungauged half of the country, takes the field surplus as input is correct.
+
+`C-BA-OLD-A1-UNVERIFIED` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-UNVERIFIED">The unverified claim — that DK-QNP, covering the ungauged half of Denmark, takes the national field nitrogen surplus as an input — is correct, and DCE state it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-UNVERIFIED "What this claim rests on")</sup>
+
+**Why it was retired:** It narrated this project's own checking, and put the modelled part of the country at half with no source here.
+
+**Replaced by:** [`C-BA-A1-INPUT`](CLAIMS.md#C-BA-A1-INPUT) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1-WARNING"></a>
+### Substituting sea concentration for a land load commits the model-as-datum error.
+
+`C-BA-OLD-A1-WARNING` · retired 2026-09-11 from [hypodrafts/A1.md](hypodrafts/A1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1-WARNING">Substituting it for a land load commits the very class-[7](SOURCES.md#F-54082d07a5) error this hypothesis stands charged with.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1-WARNING "What this claim rests on")</sup>
+
+**Why it was retired:** A measured concentration used as a proxy for a load is not a modelled value in a column shaped like a measured one, which is what that class names; the substitution error is real, the class given was not.
+
+**Replaced by:** [`C-BA-A1-WARNING`](CLAIMS.md#C-BA-A1-WARNING) — each opens what it rests on.
+
+## hypodrafts/A1b.md
+
+<a id="C-BA-OLD-A1B-CLEANEST"></a>
+### Estuary nitrogen is the cleanest series available, in the best error classes throughout.
+
+`C-BA-OLD-A1B-CLEANEST` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-CLEANEST">Estuary N is the cleanest series available and is class 1–2 throughout.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-CLEANEST "What this claim rests on")</sup>
+
+**Why it was retired:** No comparison of the series' errors was made; the classes were asserted, not argued from the data.
+
+**Replaced by:** [`C-BA-A1B-CLASSES`](CLAIMS.md#C-BA-A1B-CLASSES) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1B-FELL"></a>
+### Measured estuary nitrogen fell by a stated range regardless, and the regressions' intercept lands on measured background.
+
+`C-BA-OLD-A1B-FELL` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-FELL">Windolf's measured estuary nitrogen fell [24](SOURCES.md#F-99ff32a94b)–[62](SOURCES.md#F-3116de831d)% regardless, and the intercept of those regressions lands on independently measured background. Both things can be true: the construction is partly administrative, and the decline is real.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-FELL "What this claim rests on")</sup>
+
+**Why it was retired:** Windolf and colleagues could not be read here, so the fall and the intercept are not established; both were retired from NITROGEN.md for the same reason.
+
+**Replaced by:** [`C-BA-A1B-DECLINE`](CLAIMS.md#C-BA-A1B-DECLINE) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1B-GRADIENT"></a>
+### Both controls are cheap, and the effect should run from strongest at one named estuary to weakest at another by their gauged shares, a gradient no rival explanation predicts.
+
+`C-BA-OLD-A1B-GRADIENT` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-GRADIENT">Two further controls, both cheap: - Placebo dates. Fit the same break test at every year 1993–2006. If 1999 is not distinguished from its neighbours, there is no step to find. - Gauged-fraction stratification. The circular component scales with the modelled share, so the effect should be strongest at Isefjord ([22](SOURCES.md#F-c235459768)% gauged) and weakest at Randers ([87](SOURCES.md#F-565c0552cf)%). That gradient is a prediction no rival explanation makes.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-GRADIENT "What this claim rests on")</sup>
+
+**Why it was retired:** The gauged shares were Windolf and colleagues', not read here; that the controls are cheap was not costed; and that no rival makes the prediction was not argued.
+
+**Replaced by:** [`C-BA-A1B-PLACEBO`](CLAIMS.md#C-BA-A1B-PLACEBO), [`C-BA-A1B-STRAT`](CLAIMS.md#C-BA-A1B-STRAT) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1B-ORIGIN"></a>
+### The test came out of a question about the load hypothesis.
+
+`C-BA-OLD-A1B-ORIGIN` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-ORIGIN">This test came out of a question about `A1` and is written here because it is more specific than the hypothesis it serves:</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-ORIGIN "What this claim rests on")</sup>
+
+**Why it was retired:** How the draft arose is this project's history, not a statement about the data.
+
+**Replaced by:** [`C-BA-A1B-REGISTER`](CLAIMS.md#C-BA-A1B-REGISTER) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1B-STATUS"></a>
+### The catchment-level series are in a paper supplement and in DCE's reports, and neither has been extracted.
+
+`C-BA-OLD-A1B-STATUS` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-STATUS">The catchment-level series are in a paper supplement and DCE annual reports; neither has been extracted. Nothing here has been computed.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-STATUS "What this claim rests on")</sup>
+
+**Why it was retired:** The supplement is Windolf and colleagues', which could not be read here.
+
+**Replaced by:** [`C-BA-A1B-STATUS`](CLAIMS.md#C-BA-A1B-STATUS) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1B-STEPS"></a>
+### The field surplus contains two components no field produced: the 1999 norm changes, a step in the compiled series, and the 2012 change of harvest method, both administrative with no physical counterpart.
+
+`C-BA-OLD-A1B-STEPS` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-STEPS">contains at least two components that no field produced: - 1999 — the nitrogen norm was cut [10](SOURCES.md#F-d1a525ddd4)%, dropping the quota ~[40,000](SOURCES.md#F-686f5e0613) t N, while grass norms changed simultaneously, raising it ~[15,000](SOURCES.md#F-03a9042062) t N. DCE's own report calls the result a *"spring"* in the compiled series. - 2012 — the method for computing nutrients removed at harvest changed from dry-matter yield to feed units, and the net-input figures *"er steget lidt ift. de tidligere opgørelser."* Both are administrative events on known dates with no physical counterpart.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-STEPS "What this claim rests on")</sup>
+
+**Why it was retired:** SR120 places the 1999 step in the compiled nitrogen quotas, which bound what may be applied, not in the field surplus; the effect it records of the 2012 change is on the phosphorus figures, against earlier reports; and a cut in the norm that sets a quota can change what is applied, so it is not without physical counterpart.
+
+**Replaced by:** [`C-BA-A1B-NORMS`](CLAIMS.md#C-BA-A1B-NORMS), [`C-BA-A1B-1999`](CLAIMS.md#C-BA-A1B-1999), [`C-BA-A1B-1999-QUOTA`](CLAIMS.md#C-BA-A1B-1999-QUOTA), [`C-BA-A1B-2012`](CLAIMS.md#C-BA-A1B-2012) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1B-TABLE"></a>
+### The surplus is recomputed each vintage; per-catchment surplus and load are in a paper's supplement; estuary nitrogen is sampled at a stated rate; streams are gauged over a stated share of each catchment.
+
+`C-BA-OLD-A1B-TABLE` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-TABLE">recomputed each vintage | public PDFs, `pdftotext`-extractable | | annual N surplus per catchment | Windolf et al. (2012) supplementary B | with the paper | | normalised diffuse load per catchment | Windolf et al. (2012); DCE annual reports | published | | estuary total N, measured | national monitoring 1989–, [12](SOURCES.md#F-12dad90965)–[46](SOURCES.md#F-c98302a0fb) samples/yr | the independent terminal series | | stream N, gauged fraction | fortnightly total-N × daily discharge | measured; [22](SOURCES.md#F-bfc05a49c1)–[87](SOURCES.md#F-e8ab68c1b7)% of area by catchment</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** The per-catchment series, the sampling rates and the gauged shares were attributed to Windolf and colleagues, whose text could not be read here; that the surplus is recomputed with each vintage was not established.
+
+**Replaced by:** [`C-BA-A1B-D-SURPLUS`](CLAIMS.md#C-BA-A1B-D-SURPLUS), [`C-BA-A1B-D-GAP`](CLAIMS.md#C-BA-A1B-D-GAP), [`C-BA-A1B-D-ESTUARY`](CLAIMS.md#C-BA-A1B-D-ESTUARY), [`C-BA-A1B-D-STREAM`](CLAIMS.md#C-BA-A1B-D-STREAM) — each opens what it rests on.
+
+<a id="C-BA-OLD-A1B-WINDOLF"></a>
+### A catchment study reports linear relations in most of its catchments and never asks whether they hold in both halves of its window.
+
+`C-BA-OLD-A1B-WINDOLF` · retired 2026-09-11 from [hypodrafts/A1b.md](hypodrafts/A1b.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-A1B-WINDOLF">already report significant linear relations between N surplus and normalised diffuse load in nine of ten catchments, over 1990–2009. They fit one line per catchment over the whole window and never ask whether it holds in both halves — and that window straddles</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-A1B-WINDOLF "What this claim rests on")</sup>
+
+**Why it was retired:** The paper could not be read here, so what it fits and what it asks cannot be stated.
+
+**Replaced by:** [`C-BA-A1B-WHOLE`](CLAIMS.md#C-BA-A1B-WHOLE) — each opens what it rests on.
+
+## hypodrafts/AUDIT.md
+
+<a id="C-AF-OLD-AU-A1"></a>
+### The nitrogen-attribution draft's primary-source work was independently verified, but it predates the Windolf reading, which gives the attribution independent support in a stated range of falling estuary nitrogen; the fix is to cross-reference the nitrogen page.
+
+`C-AF-OLD-AU-A1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-A1">Its primary-source work is correct and independently verified: DK-QNP takes the field surplus as an input, and `SR353 ch.6` reports the resulting correlation as a finding. Its scoping is also correct — *"this does not show the attribution is wrong. It shows `Figur 6.7 D` cannot be what shows it is right."* But it predates the Windolf reading and therefore does not know that the attribution does have independent support (measured estuary N falling [24](SOURCES.md#F-a7dfa345db)–[62](SOURCES.md#F-406219ee6e)%, heterogeneous response timing). Fix: cross-reference `../NITROGEN.md` §2, so the draft cannot be read as implying the attribution is unevidenced. Its null is arithmetic (publication rounding), which is the right kind for a residual-growth test — the zero permutation-count is not a defect.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-A1 "What this claim rests on")</sup>
+
+**Why it was retired:** The fix rested on a reading of Windolf and colleagues that cannot be checked here, and quoted a range from it; the paper's text could not be read.
+
+**Replaced by:** [`C-AF-AU-A1`](CLAIMS.md#C-AF-AU-A1) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-A7"></a>
+### The sediment-flux open problem established that the dataset is nearly useless for Denmark, at stated station counts.
+
+`C-AF-OLD-AU-A7` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-A7">established it is nearly useless for Denmark ([5](SOURCES.md#F-8c9751b5cb) of [59](SOURCES.md#F-d33d623421) stations west of [15.5](SOURCES.md#F-29d8a8ea74)°E, none in Kattegat, Belts, Sound or any fjord). A negative with numbers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-A7 "What this claim rests on")</sup>
+
+**Why it was retired:** The counts are the draft's, carried as quotations, and nearly useless is a judgement those counts would have to carry.
+
+**Replaced by:** [`C-AF-AU-A7`](CLAIMS.md#C-AF-AU-A7) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-B1"></a>
+### The parent queried the EEA table and got an invalid-object error, so every figure in the combined-overflow draft's data row rests on that table resolving.
+
+`C-AF-OLD-AU-B1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-B1">The parent queried `[latest].[timeseries_MonitoringResult]` at `discodata.eea.europa.eu/sql` and got `Invalid object name`. Every figure in its data row — [172,440](SOURCES.md#F-1198ce43fd) samples, [1,437](SOURCES.md#F-15a99107d6) sites, [26,301](SOURCES.md#F-b36b844659) at LOD — rests on that table resolving.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-B1 "What this claim rests on")</sup>
+
+**Why it was retired:** The query and its error are recorded nowhere in the repository. What can be said is that no extract of the table is held.
+
+**Replaced by:** [`C-AF-AU-B1-EEA`](CLAIMS.md#C-AF-AU-B1-EEA) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-BRIEFED"></a>
+### None of the drafts' authors had the brief; they were briefed on null discipline and their own hypothesis's trap, not on applefication, kinds of quantity or the steelman rule.
+
+`C-AF-OLD-AU-BRIEFED` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-BRIEFED">which none of their authors had. They were briefed on null discipline and their own hypothesis's trap; not on applefication, not on naming what kind of thing a quantity is, and not on the steelman rule.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-BRIEFED "What this claim rests on")</sup>
+
+**Why it was retired:** What the drafting agents were briefed on is not held, and the commits show the brief committed after some drafts and before others.
+
+**Replaced by:** [`C-AF-AU-SCOPE`](CLAIMS.md#C-AF-AU-SCOPE) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-C1"></a>
+### The stratification draft is sound and the strongest finding in the set: it refused the published iltsvind extent because DCE's criterion puts stratification inside the definition.
+
+`C-AF-OLD-AU-C1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-C1">sound, and the strongest single finding in the set. It refused the published iltsvind extent as a response variable because DCE's criterion is oxygen below [4](SOURCES.md#F-57484d7166) mg/l *in stratified bottom water* — stratification inside the definition of the dependent variable. It names its own null as non-zero (fully-ventilated saturation) rather than assuming zero.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-C1 "What this claim rests on")</sup>
+
+**Why it was retired:** Its premise, that DCE's criterion puts stratification inside the definition of the response, is not what DCE's notes say: they define iltsvind by concentration alone.
+
+**Replaced by:** [`C-AF-AU-C1`](CLAIMS.md#C-AF-AU-C1) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-C4"></a>
+### The inflow draft found the Gotland errors the parent then verified and fixed, and states its permutation floor against its effective event count, both given as figures.
+
+`C-AF-OLD-AU-C4` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-C4">It found the Gotland unit and provenance errors that the parent then verified and fixed. Its p-floor of [1](SOURCES.md#F-a1f4a8181d)/[32](SOURCES.md#F-62c74dcf90) is stated honestly against an effective event count of</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-C4 "What this claim rests on")</sup>
+
+**Why it was retired:** The parent's verification is not recorded as such, and the figures are the draft's own, carried as quotations; the verdict now rests on what the draft does.
+
+**Replaced by:** [`C-AF-AU-C4`](CLAIMS.md#C-AF-AU-C4) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-C6"></a>
+### The temperature draft has the best null work in the set, and its fold figures are the ones now carried in the constructed-quantities page, superseding the parent's earlier ones.
+
+`C-AF-OLD-AU-C6` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-C6">best null work in the set. Excluded archived `oxysat_bed` as an outcome because it shares two of three inputs with the statistic, and used it only as a consistency check. Its [23.6](SOURCES.md#F-94c44c28ae)-fold / [15.5](SOURCES.md#F-a8fb80706e)-fold figures are the ones now carried in `../CONSTRUCTED.md`; they supersede the parent's earlier</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-C6 "What this claim rests on")</sup>
+
+**Why it was retired:** The figures are the draft's, carried as quotations; the rest is an account of this project's corrections, which a page does not narrate; and best in the set names no criterion.
+
+**Replaced by:** [`C-AF-AU-C6`](CLAIMS.md#C-AF-AU-C6) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-D7"></a>
+### The resuspension draft found the Secchi censoring the parent then verified, at stated shallow and deep shares.
+
+`C-AF-OLD-AU-D7` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-D7">Found the Secchi censoring the parent then verified ([21.36](SOURCES.md#F-7f083d7044)% shallow vs [0.36](SOURCES.md#F-4417f89bae)% deep).</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-D7 "What this claim rests on")</sup>
+
+**Why it was retired:** The shares were quoted from the drafting session and credited to a verification that is not recorded; this project's light analysis counts the censoring by depth band.
+
+**Replaced by:** [`C-AF-AU-D7`](CLAIMS.md#C-AF-AU-D7) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-F3"></a>
+### The vegetation draft is sound: it avoids the clarity-indicator circularity and states the part it could not remove.
+
+`C-AF-OLD-AU-F3` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-F3">Avoids the clarity-indicator circularity by using cover rather than depth limit, and states the part it could not remove.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-F3 "What this claim rests on")</sup>
+
+**Why it was retired:** The part it could not remove, the eelgrass light requirement, has no source here, and the verdict did not weigh that.
+
+**Replaced by:** [`C-AF-AU-F3`](CLAIMS.md#C-AF-AU-F3) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-G1"></a>
+### The warming draft re-derived the station split at stated counts and flagged its disagreement with the stated counts on file.
+
+`C-AF-OLD-AU-G1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-G1">Independently re-derived the station split as [282](SOURCES.md#F-bca908b9aa)/[480](SOURCES.md#F-00297595ec), explicitly flagged the disagreement with the on-file [293](SOURCES.md#F-723c17b341)/[481](SOURCES.md#F-54c17b6b1d), and called it threshold-dependent.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-G1 "What this claim rests on")</sup>
+
+**Why it was retired:** The counts are the drafts', carried as quotations; no script stores either split.
+
+**Replaced by:** [`C-AF-AU-G1`](CLAIMS.md#C-AF-AU-G1) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-I1"></a>
+### The network draft inherits the split on file at stated counts, which the audit recovered exactly under the draft's stated rule.
+
+`C-AF-OLD-AU-I1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-I1">It inherits [293](SOURCES.md#F-38b19f51d1) summer-peaked / [481](SOURCES.md#F-ac07a9a0fe) year-round as established fact in its opening. That figure *is* reproducible — I recover exactly [293](SOURCES.md#F-38b19f51d1)/[481](SOURCES.md#F-ac07a9a0fe) under its stated rule (all [9](SOURCES.md#F-57be557aa9) variables, ≥[24](SOURCES.md#F-3d5282fc2f) observations, R>[0.5](SOURCES.md#F-97b671650c) with peak Jun–Sep and Z>[3](SOURCES.md#F-76dfcfd55f) / R<[0.2](SOURCES.md#F-48f9d2bbd6)) — but the draft neither states the rule nor notes that `G1` and `L3` derived different numbers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-I1 "What this claim rests on")</sup>
+
+**Why it was retired:** The reproduction was run in a session that stored neither code nor output, and the counts are the drafts'.
+
+**Replaced by:** [`C-AF-AU-I1`](CLAIMS.md#C-AF-AU-I1) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-I3"></a>
+### The sampling-season draft records no time of day as a property of the archive, while the topic enumeration records the unfetched water chemistry as carrying a clock; the rest, including a stated swing from count alone, was verified by its own pilot.
+
+`C-AF-OLD-AU-I3` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-I3">fix. Line [53](SOURCES.md#F-c3336c5f72) records *"Class 6: no time of day"* as a property of the archive. That is true of the CTD extract and not established for ODA as a whole: the topic enumeration records marine water chemistry (`Emne_10_11`) as carrying `Startdato + Startklok`. Fix: scope the claim to the CTD extract and note the unfetched topic. The rest — the inverted marginal, the [4.3](SOURCES.md#F-7c677f2fd4)× swing from count alone — is sound and was verified by its own pilot.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-I3 "What this claim rests on")</sup>
+
+**Why it was retired:** It pointed at a topic as unfetched that has since been fetched and carries the clock, and the swing it called sound was computed in a pilot that stored nothing.
+
+**Replaced by:** [`C-AF-AU-I3`](CLAIMS.md#C-AF-AU-I3) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-J1"></a>
+### The gel open problem's counts differ from the parent's full scan by a stated number, which is immaterial.
+
+`C-AF-OLD-AU-J1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-J1">Its per-parameter counts differ from the parent's full scan by [67](SOURCES.md#F-f515607420)–[160](SOURCES.md#F-e6f2e89c23) rows (malformed-row handling); immaterial.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-J1 "What this claim rests on")</sup>
+
+**Why it was retired:** The parent's full scan is not held.
+
+**Replaced by:** [`C-AF-AU-J1`](CLAIMS.md#C-AF-AU-J1) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-K1"></a>
+### The silicon draft's diatom finding is correct, the parent having verified a stated within-bin ratio spread; its OBIS counts claim remains unverified.
+
+`C-AF-OLD-AU-K1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-K1">The DIATO/CHL finding is correct; the parent verified within-bin ratio spread at [6.3](SOURCES.md#F-89f11af0a9)×[10](SOURCES.md#F-32372ffa14)⁻⁴. Its claim that OBIS returns eMoF cell counts under `&mof=true` remains unverified.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-K1 "What this claim rests on")</sup>
+
+**Why it was retired:** The ratio spread was computed in a one-off run that is not held; the files' own note supports the finding without it.
+
+**Replaced by:** [`C-AF-AU-K1`](CLAIMS.md#C-AF-AU-K1) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-L3"></a>
+### The trend-window draft has an error: its station split is impossible under its own definition, given how few stations have enough observations, as a table of counts shows; its headline stands and was independently reimplemented.
+
+`C-AF-OLD-AU-L3` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-L3">HAS AN ERROR. Its station split of [426](SOURCES.md#F-314357570e) summer-peaked / [427](SOURCES.md#F-7463d73f0e) year-round is impossible under the definition it states. Only [488](SOURCES.md#F-00e59d3486) `oxy_bed` stations have ≥[24](SOURCES.md#F-77999b77b5) observations; [426](SOURCES.md#F-314357570e) + [427](SOURCES.md#F-7463d73f0e) = [853](SOURCES.md#F-7702d997f8) exceeds that. The numbers are reachable only with no minimum observation count, and at that setting the classification is meaningless: | stations with R>[0.5](SOURCES.md#F-5b5453cd49), no minimum | [644](SOURCES.md#F-14c1fd74d9) | |---|---| | of which N = [1](SOURCES.md#F-8221d1ea30) observation | [254](SOURCES.md#F-aa76019ddb) | | of which N ≤ [3](SOURCES.md#F-278daf0d55) | [369](SOURCES.md#F-a20733b380) | | median N in the group | `3` | With N = [1](SOURCES.md#F-8221d1ea30) the resultant length R is exactly [1](SOURCES.md#F-8221d1ea30) by construction — all the mass sits in one calendar month. Over half of `L3`'s "summer-peaked" group is stations where the seasonality statistic measures nothing but scarcity. Fix: re-run the composition check with a stated minimum (≥[24](SOURCES.md#F-77999b77b5) gives [89](SOURCES.md#F-1ca95fe352)/[306](SOURCES.md#F-4047373259) on `oxy_bed`), or drop the split arm and rely on the [186](SOURCES.md#F-6dff70cca6)-station core panel, which is unaffected. The draft's headline result is not touched by this — the `AR(1)` finding that sign-flipping windows occur in [100](SOURCES.md#F-ff44b3ed08)% of no-trend simulations stands, and was independently reimplemented.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-L3 "What this claim rests on")</sup>
+
+**Why it was retired:** The counts behind the error and the table come from a check that stored nothing, and the reimplementation is not held. What the draft's own text supports is a split on raw R with no stated minimum.
+
+**Replaced by:** [`C-AF-AU-L3`](CLAIMS.md#C-AF-AU-L3), [`C-AF-AU-L3-HEAD`](CLAIMS.md#C-AF-AU-L3-HEAD) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-R6"></a>
+### The sulphide open problem found that Denmark ran a national standard method for its variables over stated years and discontinued it.
+
+`C-AF-OLD-AU-R6` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-R6">Found that Denmark ran a national standard method for `R6`'s own variables 1998–2003 and discontinued it,</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-R6 "What this claim rests on")</sup>
+
+**Why it was retired:** The audit stated as found what only the draft reports; the national method's chapter is not pinned here.
+
+**Replaced by:** [`C-AF-AU-R6`](CLAIMS.md#C-AF-AU-R6) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-W1"></a>
+### Three drafts use a station split and get stated incompatible counts; none of the rules is written down as the convention, and a line in the brief would remove the contradiction and a hard error.
+
+`C-AF-OLD-AU-W1` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-W1">Inherited figures are not re-derived, and the one convention that matters was never fixed. Three drafts use a summer/year-round station split and get [293](SOURCES.md#F-58a1fdc850)/[481](SOURCES.md#F-565b3cba10), [282](SOURCES.md#F-787b576c88)/[480](SOURCES.md#F-c8079beb8d) and [426](SOURCES.md#F-d05fdd75c3)/[427](SOURCES.md#F-d75d73a4bb). All three are defensible arithmetic on different rules; none of the rules is written down anywhere as *the* convention. `G1` flagged it, `L3` flagged it and got it wrong anyway, `I1` inherited it silently. This is the applefication failure in its purest form: a category everyone uses and nobody defines. A single line in `AGENT_BRIEF.md` fixing the rule would remove a cross-draft contradiction and one hard error.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-W1 "What this claim rests on")</sup>
+
+**Why it was retired:** The counts are the drafts', quoted; the hard error rested on a check that stored nothing; and the brief has since stated a convention.
+
+**Replaced by:** [`C-AF-AU-W1`](CLAIMS.md#C-AF-AU-W1) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-W3"></a>
+### No draft carries a line naming a quantity's kind, such as a norm product or a residual; the stratification draft refuses a threshold class with the predictor inside it.
+
+`C-AF-OLD-AU-W3` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-W3">Quantity kinds are used correctly but almost never named. The drafts avoid the traps in practice — `C6` excludes a derived channel, `C1` refuses a threshold class with the predictor inside it, `Z8` calls its residual a variance apportionment — but they do it case-by-case rather than by labelling. No draft carries a line saying *this quantity is a norm product*, *this one is a residual*. The behaviour is right; the vocabulary that would make it checkable by a reader is missing.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-W3 "What this claim rests on")</sup>
+
+**Why it was retired:** `A1` calls its attribution a residual, `A1b` the surplus a norm product and `B1` a volume a model output, so the claim that no draft names a kind is wrong; and the stratification example rests on a misreading of DCE's definition.
+
+**Replaced by:** [`C-AF-AU-W3`](CLAIMS.md#C-AF-AU-W3) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-W4"></a>
+### The open problems steelman better than the drafts; among the drafts only three seriously argue against their own design.
+
+`C-AF-OLD-AU-W4` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-W4">The (B) files steelman better than the (A) files. `E7` and `R6` pre-commit to what would make them wrong. `A7` and `J1` come close. Among the (A) drafts, only `C6`, `B1` and `C1` seriously argue against their own design. The asymmetry is backwards — a draft that proposes a test has more room to be wrong than one that declines to.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-W4 "What this claim rests on")</sup>
+
+**Why it was retired:** Which drafts seriously argue against their own design was ranked on no stated criterion; what the files show is that two open problems state their reclassification tests in advance.
+
+**Replaced by:** [`C-AF-AU-W4`](CLAIMS.md#C-AF-AU-W4) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-W5"></a>
+### A stated number of files, incompatible splits and an arithmetic impossibility show the set was written in parallel with no cross-reading.
+
+`C-AF-OLD-AU-W5` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-W5">Sixteen files, three incompatible station splits, and one arithmetic impossibility that a single `wc`-scale check would have caught. The set was written in parallel with no cross-reading, which is the right way to get independence and the wrong way to get consistency.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-W5 "What this claim rests on")</sup>
+
+**Why it was retired:** The count of files does not match the files audited, the impossibility rested on a check that stored nothing, and how the set was written is not recorded.
+
+**Replaced by:** [`C-AF-AU-W5`](CLAIMS.md#C-AF-AU-W5) — each opens what it rests on.
+
+<a id="C-AF-OLD-AU-Z8"></a>
+### The light-apportionment draft extracted the technical instruction and names its residual, quoted as saying nothing is in absorption units.
+
+`C-AF-OLD-AU-Z8` · retired 2026-09-11 from [hypodrafts/AUDIT.md](hypodrafts/AUDIT.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-AU-Z8">Extracted TA `M06` as a primary document rather than summarising it, and names its residual honestly: *"nothing is in absorption units, so it is a variance apportionment, not a budget."*</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-AU-Z8 "What this claim rests on")</sup>
+
+**Why it was retired:** The quotation did not match the draft's words: it says none of its four terms is in absorption units, so this yields a variance apportionment.
+
+**Replaced by:** [`C-AF-AU-Z8`](CLAIMS.md#C-AF-AU-Z8) — each opens what it rests on.
+
+## hypodrafts/B1.md
+
+<a id="C-BA-OLD-B1-CREWS"></a>
+### Sampling crews avoid storms, and a replacement sample supersedes a short-term-pollution one.
+
+`C-BA-OLD-B1-CREWS` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-CREWS">crews avoid storms, and a replacement sample supersedes a short-term-pollution one — which attenuates toward zero, so a positive result survives it but a null does not license "no effect".</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-CREWS "What this claim rests on")</sup>
+
+**Why it was retired:** That crews avoid storms was not observed in any record held, and how a replacement relates to a short-term-pollution sample is the Directive's rule, which was not read here.
+
+**Replaced by:** [`C-BA-B1-NOT-SELECTED`](CLAIMS.md#C-BA-B1-NOT-SELECTED) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-KBH"></a>
+### Copenhagen's bathing-water forecast ingests measured overflow on a short cycle and is the highest-value fetch for the hypothesis.
+
+`C-BA-OLD-B1-KBH` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-KBH">(DHI/HOFOR) — ingests measured overflow on a ~[10](SOURCES.md#F-2db3072a6f)-minute cycle; host did not resolve from here, archive not known public. The highest-value fetch for</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-KBH "What this claim rests on")</sup>
+
+**Why it was retired:** What the service ingests and how often was not recorded from any document, and its host does not resolve, so none could be read; that it is the highest-value fetch rested on that.
+
+**Replaced by:** [`C-BA-B1-SRC-KBH`](CLAIMS.md#C-BA-B1-SRC-KBH) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-LAYERS"></a>
+### The bathing-site layer joins the EEA identifiers exactly and has fewer sites because delisted sites persist; the overflow register disagrees with itself; its extra codes are in no codelist; each file carries a stated error class.
+
+`C-BA-OLD-B1-LAYERS` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-LAYERS">joins to WISE ids exactly; [1,437](SOURCES.md#F-9155f759ed) > [1,026](SOURCES.md#F-81102a3dc0) because delisted sites persist | `5` | | `data/raw/spildevand/combined_overflow.geojson` | [4,217](SOURCES.md#F-a76875a352) CSOs; `Red areal`, annual volume, `Antal overløb` | `Antal overløb` null for [1,676](SOURCES.md#F-ce99e21a91) of [4,217](SOURCES.md#F-a76875a352) ([39.7](SOURCES.md#F-7280640905)%); volume null [77](SOURCES.md#F-fc4c7ae4ec), zero [719](SOURCES.md#F-3e8106489f) | `5`; volume itself `7`, unused here | | `data/raw/national/punkt_rbu_udl.geojson` | [19,665](SOURCES.md#F-93ae9de05b) RBU points; `vol_sb`, `vol_fbas` | `vol_sb` non-null [4,068](SOURCES.md#F-f4e3d8c476) ([2,740](SOURCES.md#F-7f66d8e834) zeros); `vol_fbas` [8,763](SOURCES.md#F-9d038266bb) ([5,771](SOURCES.md#F-35345f669f) zeros) | `5` | | the two together | joinable? | [3,712](SOURCES.md#F-0d07f14c99) of [4,130](SOURCES.md#F-e346a38554) CSO names match `pkt_navn`; the register disagrees with itself — `OV` [2,812](SOURCES.md#F-018f74840a) vs [3,015](SOURCES.md#F-3022dd6162), `OF` [77](SOURCES.md#F-fc4c7ae4ec) vs [209](SOURCES.md#F-ddd8294c22) — and `UR`, `ikke oplyst` are in no codelist | [4](SOURCES.md#F-074f3509ab) — schema/vintage conflation</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-LAYERS "What this claim rests on")</sup>
+
+**Why it was retired:** That delisting explains the extra identifiers was not checked, and the pinned counts show more never-delisted identifiers in the table than sites in the layer. The disagreement is between two different files, not within one register; no codelist but DP02's was consulted; and the error classes were asserted rather than argued.
+
+**Replaced by:** [`C-BA-B1-LAYER`](CLAIMS.md#C-BA-B1-LAYER), [`C-BA-B1-CSO`](CLAIMS.md#C-BA-B1-CSO), [`C-BA-B1-CSO-VOLUME`](CLAIMS.md#C-BA-B1-CSO-VOLUME), [`C-BA-B1-RBU`](CLAIMS.md#C-BA-B1-RBU), [`C-BA-B1-JOIN`](CLAIMS.md#C-BA-B1-JOIN), [`C-BA-B1-JOIN-CLASS`](CLAIMS.md#C-BA-B1-JOIN-CLASS) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-MST"></a>
+### A national report puts overflow uncertainty at a stated level, reducible at a stated cost; the treatment-plant database is annual per agglomeration; and the national planning service no longer answers.
+
+`C-BA-OLD-B1-MST` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-MST">Standardiseret bestemmelse af overløb* — national overflow uncertainty ~[110](SOURCES.md#F-1f43fec7db)%, reducible to ~[50](SOURCES.md#F-77c992af8e)% for [20](SOURCES.md#F-148de11386)–[40](SOURCES.md#F-4fc0597146) M DKK/yr; the citation for class 7, not data. Waterbase-UWWTD is agglomeration-annual, class 3 and [7](SOURCES.md#F-f4df4205e5). MiljøGIS `vp3basis2019` WFS now [404](SOURCES.md#F-03e3583f46)s — the repo's own fetch path is dead.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-MST "What this claim rests on")</sup>
+
+**Why it was retired:** The report of Miljøstyrelsen, EnviDan and Aalborg University was not pinned or read here; the source register describes the treatment-plant database per discharge point per reporting cycle; and this project's own probe found the national service answering.
+
+**Replaced by:** [`C-BA-B1-SRC-DP02`](CLAIMS.md#C-BA-B1-SRC-DP02), [`C-BA-B1-SRC-UWWTD`](CLAIMS.md#C-BA-B1-SRC-UWWTD), [`C-BA-B1-SRC-VP3`](CLAIMS.md#C-BA-B1-SRC-VP3) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-NATIONAL"></a>
+### Measured overflow at national scale does not exist.
+
+`C-BA-OLD-B1-NATIONAL` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-NATIONAL">overflow at national scale does not exist. What does:</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-NATIONAL "What this claim rests on")</sup>
+
+**Why it was retired:** An absence at national scale was asserted without saying where it was looked for.
+
+**Replaced by:** [`C-BA-B1-NONATIONAL`](CLAIMS.md#C-BA-B1-NONATIONAL) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-O2"></a>
+### The test bears on bathing-water failure and weakly on shore fouling, not on oxygen.
+
+`C-BA-OLD-B1-O2` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-O2">delivery limb (`O9`, weakly `O2`), not `O1`; faecal indicators are not COD, so the oxygen claim stays unscored.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-O2 "What this claim rests on")</sup>
+
+**Why it was retired:** Fedtemøg names rotting filamentous algae, which a faecal count does not measure, so the test does not bear on that outcome even weakly.
+
+**Replaced by:** [`C-BA-B1-NOT-OXYGEN`](CLAIMS.md#C-BA-B1-NOT-OXYGEN) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-PULS"></a>
+### The PULS API is live and undocumented and would carry each structure's knowledge level.
+
+`C-BA-OLD-B1-PULS` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-PULS">live, undocumented. Same production path, but would carry the per-structure *knowledge level* (TA DP02 [0](SOURCES.md#F-b72a0a37aa)–[5](SOURCES.md#F-c9ae5414c0)) that names an instrumented subset.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-PULS "What this claim rests on")</sup>
+
+**Why it was retired:** Only that the host answers with a page titled for PULS was observed; by DP02, access to PULS goes through an organisation's IT coordinator.
+
+**Replaced by:** [`C-BA-B1-SRC-PULS`](CLAIMS.md#C-BA-B1-SRC-PULS) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-RAIN"></a>
+### DMI's rain service needs a free API key, a key-free gauge network has too few Danish stations running late enough, and the held weather files are reanalysis.
+
+`C-BA-OLD-B1-RAIN` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-RAIN">the right source, needs one free API key. Key-free fallback NOAA GHCN-Daily: [16](SOURCES.md#F-aa671ab43c) Danish stations carry PRCP, only three run past 2020 — too sparse. `data/raw/weather/*` and `marine/wind_*` are Open-Meteo reanalysis, not gauges | `7` if reanalysis is substituted</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-RAIN "What this claim rests on")</sup>
+
+**Why it was retired:** The source register records DMI's API answering without a key; the NOAA station counts were made in a drafting session whose output is not held.
+
+**Replaced by:** [`C-BA-B1-RAIN`](CLAIMS.md#C-BA-B1-RAIN), [`C-BA-B1-DMI`](CLAIMS.md#C-BA-B1-DMI) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-REGRESSOR"></a>
+### The per-outfall discharge volume is a model output driven by rainfall, not a datum.
+
+`C-BA-OLD-B1-REGRESSOR` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-REGRESSOR">That regressor is not a datum — it is a model output (class `7`) driven by rainfall, which drives every rival too, so regressing it on a rainfall-driven response tests rainfall.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-REGRESSOR "What this claim rests on")</sup>
+
+**Why it was retired:** DP02 lets a structure report a measured volume at its highest knowledge level, and how many do is not known here; the volume is a model output only below that level, which the sentence did not allow for.
+
+**Replaced by:** [`C-BA-B1-VOLUME`](CLAIMS.md#C-BA-B1-VOLUME) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-SMALLEST"></a>
+### The smallest improvement is Copenhagen's measured-overflow archive or the per-structure knowledge level from PULS.
+
+`C-BA-OLD-B1-SMALLEST` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-SMALLEST">Smallest improvement: the Copenhagen Badevandsudsigten measured-overflow archive, or the per-structure knowledge level from the PULS API. Either converts a structural proxy into an instrumented subset and moves the exposure out of error class</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-SMALLEST "What this claim rests on")</sup>
+
+**Why it was retired:** It named the Copenhagen forecast's archive, whose existence as a public archive is not established.
+
+**Replaced by:** [`C-BA-B1-IMPROVE`](CLAIMS.md#C-BA-B1-IMPROVE) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-SPECIFIC"></a>
+### Faecal indicators are sewage-specific, as the nitrogen typetal for overflow and stormwater show.
+
+`C-BA-OLD-B1-SPECIFIC` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-SPECIFIC">Faecal indicator is sewage-specific: the typetal put combined overflow at Tot-N [12](SOURCES.md#F-81cd5c13f9) mg/l against [2](SOURCES.md#F-9fb32e39b0) for separate stormwater.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-SPECIFIC "What this claim rests on")</sup>
+
+**Why it was retired:** Faecal indicator bacteria come from animals and birds as well as sewage, and the nitrogen typetal given in support say nothing about bacteria.
+
+**Replaced by:** [`C-BA-B1-TYPETAL`](CLAIMS.md#C-BA-B1-TYPETAL), [`C-BA-B1-SEWAGE`](CLAIMS.md#C-BA-B1-SEWAGE) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-SRC-WISE"></a>
+### The EEA bathing-water data are openly licensed, a small download, and a path fully separate from modelled volume.
+
+`C-BA-OLD-B1-SRC-WISE` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-SRC-WISE">CC-BY EEA, ~[5](SOURCES.md#F-7d8a431606) MB streamed — fully separate: laboratory counts and municipal declarations, no hydraulic model in the chain.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-SRC-WISE "What this claim rests on")</sup>
+
+**Why it was retired:** The licence and the size of the download were not recorded from any document.
+
+**Replaced by:** [`C-BA-B1-SRC-WISE`](CLAIMS.md#C-BA-B1-SRC-WISE) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-TAIL"></a>
+### The tail of the critical depths is a unit error.
+
+`C-BA-OLD-B1-TAIL` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-TAIL">the tail is a unit error, trim above p95 | `1` in the tail</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-TAIL "What this claim rests on")</sup>
+
+**Why it was retired:** It was asserted from the size of the tail alone; which structures are wrong is not recorded, so it is now an assumption the page states.
+
+**Replaced by:** [`C-BA-B1-TAIL`](CLAIMS.md#C-BA-B1-TAIL) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-VHF"></a>
+### A water utility publishes measured overflow from sensor-instrumented structures, with no API, inland and small, at the highest knowledge level.
+
+`C-BA-OLD-B1-VHF` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-VHF">Vesthimmerlands Forsyning, `/spildevand/overloebsdata` — measured: [11](SOURCES.md#F-2855fef2e1) sensor-instrumented structures, monthly counts and volumes, 2025 plus archive, HTML tables, no API. Inland and tiny, but a real knowledge-level-[5](SOURCES.md#F-b9c4e30023) set.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-VHF "What this claim rests on")</sup>
+
+**Why it was retired:** The utility's page says its registered points carry sensors that measure overflow and that some discharge to the Limfjord, so they are not inland; it says nothing of an API or of which knowledge level they report at, and DP02's highest level adds measured substance to measured flow.
+
+**Replaced by:** [`C-BA-B1-SRC-VHF`](CLAIMS.md#C-BA-B1-SRC-VHF), [`C-BA-B1-SRC-VHF-LEVEL`](CLAIMS.md#C-BA-B1-SRC-VHF-LEVEL) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-WISE"></a>
+### The EEA bathing-water tables hold the stated Danish samples, periods and flags, with a stated yearly rate, error classes for each, and the Directive's rule on discarding and substituting samples.
+
+`C-BA-OLD-B1-WISE` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-WISE">per-sample E. coli + enterococci, dated | [172,440](SOURCES.md#F-c7735e31a4) DK samples, 2008–2024, [1,437](SOURCES.md#F-20745fc01c) site ids, ~[9,000](SOURCES.md#F-ee9e9f1b0b)/yr; [0](SOURCES.md#F-e1fcbb8313) nulls; [26,301](SOURCES.md#F-a3a4b1f92a) at limit of detection; [688](SOURCES.md#F-1b811d8a29) flagged `missingValue` yet carrying a value | `2` LOD censoring; `1` the [688](SOURCES.md#F-1b811d8a29); `6` no clock time | | same, `[timeseries_SeasonalPeriod]` | dated episode log | [1,208](SOURCES.md#F-4a4fb3fd52) `shortTermPollution` periods (2011–2024), [755](SOURCES.md#F-137ebff10d) `bathingProhibition` (2017–), [76](SOURCES.md#F-bc8c5bea63) `abnormalSituation`, [76](SOURCES.md#F-bc8c5bea63) `cyanobacteriaBloom` | `5` — declaration is discretionary | | same, sample flags | — | [1,272](SOURCES.md#F-c6311942b8) `shortTermPollutionSample`, [1,205](SOURCES.md#F-034aa300b2) `replacementSample`, [22,912](SOURCES.md#F-22f47b3e4f) `preSeasonSample` | `3` — the Directive permits discarding the first and substituting the second, so the compliance statistic drops precisely the overflow samples; the raw table keeps them</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-WISE "What this claim rests on")</sup>
+
+**Why it was retired:** The counts reproduce from the EEA table and are kept, now read from pinned queries. But the yearly rate did not follow from the counts beside it, the class given to the missing-value flags is not one the taxonomy's definitions fit, calling the period log discretionary rested on no document, and the Directive's rule was stated without its text, which could not be fetched here.
+
+**Replaced by:** [`C-BA-B1-WISE`](CLAIMS.md#C-BA-B1-WISE), [`C-BA-B1-WISE-CLASS`](CLAIMS.md#C-BA-B1-WISE-CLASS), [`C-BA-B1-PERIODS`](CLAIMS.md#C-BA-B1-PERIODS), [`C-BA-B1-FLAGS`](CLAIMS.md#C-BA-B1-FLAGS) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-WOULD"></a>
+### A result would show sewage-specific contamination across the stated seasons and sites, and falsification is equally available and cheap.
+
+`C-BA-OLD-B1-WOULD` · retired 2026-09-11 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-WOULD">That combined systems deliver sewage-specific contamination to the shore, event-timed, near their outfalls, across [17](SOURCES.md#F-98d50913fc) seasons and ~[1,000](SOURCES.md#F-d4bd0debbe) sites — and via `C2` that the timing is set by storage, not weather alone. It separates `B1` from `B2` on a signature rather than a shared driver, and falsification is equally available and cheap.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-WOULD "What this claim rests on")</sup>
+
+**Why it was retired:** It called the contamination sewage-specific, which faecal indicators are not, and called falsification cheap with no costing.
+
+**Replaced by:** [`C-BA-B1-WOULD`](CLAIMS.md#C-BA-B1-WOULD) — each opens what it rests on.
+
+## hypodrafts/C1.md
+
+<a id="C-AF-OLD-C1-2GB"></a>
+### The intermediate file is a stated size on disk.
+
+`C-AF-OLD-C1-2GB` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-2GB">Intermediate ~[2](SOURCES.md#F-4bd89ab970) GB on disk; never load the archive into memory.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-2GB "What this claim rests on")</sup>
+
+**Why it was retired:** An estimate of the intermediate size that nothing computes.
+
+**Replaced by:** [`C-AF-C1-P1`](CLAIMS.md#C-AF-C1-P1) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-ANYWHERE"></a>
+### No time-of-day column exists anywhere in the archive, so the diurnal surface layer is neither countable nor correctable.
+
+`C-AF-OLD-C1-ANYWHERE` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-ANYWHERE">column exists anywhere — class 6. A midday cast carries a diurnal warm surface layer a dawn cast does not, inflating φ with no ventilation meaning; this attenuates `C1a` (making it conservative) and inflates the mixed set for `C1b` (making it anti-conservative). Neither countable nor correctable.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-ANYWHERE "What this claim rests on")</sup>
+
+**Why it was retired:** True of the CTD extract, not of the archive: the water-chemistry extract carries a clock value per sample, which can bound the hour of a cast on the same station-day where the clock is a real time.
+
+**Replaced by:** [`C-AF-C1-NOCLOCK`](CLAIMS.md#C-AF-C1-NOCLOCK), [`C-AF-C1-DIURNAL`](CLAIMS.md#C-AF-C1-DIURNAL) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-HUNDREDS"></a>
+### The floor consequence is falsified by a non-trivial count of well-mixed casts with low bottom oxygen: one is an outlier, hundreds refute it.
+
+`C-AF-OLD-C1-HUNDREDS` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-HUNDREDS">a non-trivial count of casts with stratification in the lowest > quintile *and* low bottom oxygen. One is an outlier; hundreds mean a mixed column can > also run out, and "near zero in well-mixed water" is false as stated.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-HUNDREDS "What this claim rests on")</sup>
+
+**Why it was retired:** The rule was put as counts in words, one against hundreds, that no null computes; the falsifying count now comes from Null C.
+
+**Replaced by:** [`C-AF-C1-FALSB`](CLAIMS.md#C-AF-C1-FALSB) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-MONTHLY"></a>
+### A cast is a snapshot and sampling is roughly monthly, so whether a pycnocline held between visits is unobserved.
+
+`C-AF-OLD-C1-MONTHLY` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-MONTHLY">A cast is a snapshot, sampling is roughly monthly, and whether a pycnocline held between visits is unobserved</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-MONTHLY "What this claim rests on")</sup>
+
+**Why it was retired:** The sampling interval was given as an approximate quantity in words that nothing here counts; the argument needs only that a cast is a snapshot.
+
+**Replaced by:** [`C-AF-C1-SCOPE`](CLAIMS.md#C-AF-C1-SCOPE) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-MOST"></a>
+### The probe name is the unknown code on most rows of temperature, salinity and oxygen, so Winkler cannot be told from optode, nor salinometer from CTD.
+
+`C-AF-OLD-C1-MOST` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-MOST">on most rows of all three parameters (over the whole extract: [2,384,882](SOURCES.md#F-af80ce1e9a) Temperatur, [2,365,982](SOURCES.md#F-6aaf0426d1) Salinitet, [2,130,873](SOURCES.md#F-2c93e27815) Oxygen rows; in the earlier [600](SOURCES.md#F-3448ea4e7b) MB sample the next-largest instrument had ~[9](SOURCES.md#F-04a9183b18)k) — class 5: Winkler cannot be separated from optode, nor salinometer from CTD.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-MOST "What this claim rests on")</sup>
+
+**Why it was retired:** Most rows is contradicted by the extract's own counts: the unknown code covers a minority of each parameter's rows. The sample figure came from a drafting session that stored nothing, and which instruments hide behind the code is not recorded.
+
+**Replaced by:** [`C-AF-C1-PROBE`](CLAIMS.md#C-AF-C1-PROBE) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-QUANT"></a>
+### Depth is quantised at stated steps below and above a stated depth, an error boundable by recomputing φ on sub-metre casts against decimated copies.
+
+`C-AF-OLD-C1-QUANT` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-QUANT">Depth quantised to [1](SOURCES.md#F-ceae0cc5c4) m below ~[5](SOURCES.md#F-ec2e00930a) m ([0.2](SOURCES.md#F-ba4486d7e2)/[0.5](SOURCES.md#F-d863d5c516) m nearer the surface) — class 2, boundable by recomputing φ on sub-metre casts against their own [1](SOURCES.md#F-ceae0cc5c4) m-decimated copies.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-QUANT "What this claim rests on")</sup>
+
+**Why it was retired:** The depth steps were read in a drafting session that stored nothing, and no script counts them.
+
+**Replaced by:** [`C-AF-C1-DEPTHRES`](CLAIMS.md#C-AF-C1-DEPTHRES) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-SALPATH"></a>
+### Salinity in the CTD extract is one parameter over two production paths, sonde and salinometer, with no column to tell them apart.
+
+`C-AF-OLD-C1-SALPATH` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-SALPATH">is one Parameter over both production paths with no distinguishing column — class 4, not boundable, and it enters φ directly.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-SALPATH "What this claim rests on")</sup>
+
+**Why it was retired:** No held record shows salinity from two production paths in the CTD extract; the national CTD method pinned here sends salinity measured on a water sample to the water-chemistry record instead.
+
+**Replaced by:** [`C-AF-C1-SALNOVA`](CLAIMS.md#C-AF-C1-SALNOVA) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-SHALLOW"></a>
+### Not finding hypoxic well-mixed casts confirms nothing, because well-mixed Danish columns are mostly shallow and some casts labelled mixed were sampled at dawn.
+
+`C-AF-OLD-C1-SHALLOW` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-SHALLOW">because well-mixed Danish columns are also mostly shallow, and the class 6 timing gap means some casts labelled mixed were merely sampled at dawn.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-SHALLOW "What this claim rests on")</sup>
+
+**Why it was retired:** Where well-mixed columns are is an empirical claim no count here supports, and that some casts were sampled at dawn is possible, not shown.
+
+**Replaced by:** [`C-AF-C1-FALS`](CLAIMS.md#C-AF-C1-FALS) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-STRAT"></a>
+### DCE's iltsvind criterion is oxygen below a threshold in stratified bottom water, so regressing the published extent on stratification is circular by construction.
+
+`C-AF-OLD-C1-STRAT` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-STRAT">DCE's iltsvind criterion is oxygen below [4](SOURCES.md#F-484f69e889) mg/l *in stratified bottom water* (CURRENTS.md), so regressing the published iltsvind extent on stratification tests nothing — stratification is inside the response's definition. Class 7, circular by construction. Only raw per-measurement oxygen is used.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-STRAT "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's oxygen notes define iltsvind by oxygen concentration alone; stratification appears in them as where iltsvind develops, not in the definition. The published extent is therefore not circular by construction on stratification.
+
+**Replaced by:** [`C-AF-C1-DEF`](CLAIMS.md#C-AF-C1-DEF), [`C-AF-C1-RAW`](CLAIMS.md#C-AF-C1-RAW) — each opens what it rests on.
+
+<a id="C-AF-OLD-C1-VANDKEMI"></a>
+### A nitrogen coefficient cannot be weighted by stratification, because load is absent: ODA's water chemistry is not fetched.
+
+`C-AF-OLD-C1-VANDKEMI` · retired 2026-09-11 from [hypodrafts/C1.md](hypodrafts/C1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-C1-VANDKEMI">nor weighting a nitrogen coefficient by stratification, since load is absent (ODA `vandkemi` is not fetched).</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-C1-VANDKEMI "What this claim rests on")</sup>
+
+**Why it was retired:** The water-chemistry extract has been fetched; it carries concentrations, not loads. What is not fetched is ODA's topic of nutrient input to the sea.
+
+**Replaced by:** [`C-AF-C1-LIC`](CLAIMS.md#C-AF-C1-LIC) — each opens what it rests on.
+
+## hypodrafts/C4.md
+
+<a id="C-CC-OLD-C4-BAROTROPIC"></a>
+### If bottom and surface salinity rise together, the event is barotropic exchange with no stratification consequence, and the stratification clause of the hypothesis fails at the Danish end.
+
+`C-CC-OLD-C4-BAROTROPIC` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-BAROTROPIC">If both rise together it is barotropic exchange with no stratification consequence, and `C4`'s "strengthens stratification above them" clause fails at the Danish end.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-BAROTROPIC "What this claim rests on")</sup>
+
+**Why it was retired:** Nothing held or pinned here says a barotropic exchange leaves stratification unchanged, and the inflow statistics pinned here call major inflows themselves barotropic. The replacement argues from the salinity difference between bed and surface alone.
+
+**Replaced by:** [`C-CC-C4-SECONDARY`](CLAIMS.md#C-CC-C4-SECONDARY) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-BIPHASIC"></a>
+### A biphasic check on near-bed oxygen.
+
+`C-CC-OLD-C4-BIPHASIC` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-BIPHASIC">biphasic check on `oxy_bed`.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-BIPHASIC "What this claim rests on")</sup>
+
+**Why it was retired:** The check was not defined; the replacement says what it looks for and why.
+
+**Replaced by:** [`C-CC-C4-P7`](CLAIMS.md#C-CC-C4-P7) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-BOX"></a>
+### Of the stations in the draft's box, a stated number carry no bottom depth.
+
+`C-CC-OLD-C4-BOX` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-BOX">stations carry a depth | `5` ([253](SOURCES.md#F-95e0dd4742) of [925](SOURCES.md#F-aa0b96b71b) box stations have none</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-BOX "What this claim rests on")</sup>
+
+**Why it was retired:** The count was made in a drafting session whose code and output are not held, and nothing here re-derives it; no script here counts stations in the box.
+
+**Replaced by:** [`C-CC-C4-PANEL-N`](CLAIMS.md#C-CC-C4-PANEL-N) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-COINCIDENCE"></a>
+### Fetching the inflow record would turn the coincidence of the index's winter maxima with two dated winters from suggestive into checked.
+
+`C-CC-OLD-C4-COINCIDENCE` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-COINCIDENCE">replacing a self-built proxy with the published chronology `C4` names and turning the §2 coincidence at 2003-01-18 and 2014-12-20 from suggestive into checked.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-COINCIDENCE "What this claim rests on")</sup>
+
+**Why it was retired:** The coincidence rested on index maxima computed in a drafting session whose output is not held.
+
+**Replaced by:** [`C-CC-C4-NEXT`](CLAIMS.md#C-CC-C4-NEXT) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-COMPUTED"></a>
+### Salinity is computed from conductivity and temperature, and saturation from oxygen, temperature and salinity.
+
+`C-CC-OLD-C4-COMPUTED` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-COMPUTED">Salinity is computed from conductivity and temperature, saturation from oxygen, temperature and salinity: `sal_bed`, `temp_bed`, `oxysat_bed` are one piece of evidence, not three.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-COMPUTED "What this claim rests on")</sup>
+
+**Why it was retired:** How the supplier computed its salinity and saturation is not documented here; the replacement rests on pinned definitions of the scales instead.
+
+**Replaced by:** [`C-CC-C4-NOT-THREE`](CLAIMS.md#C-CC-C4-NOT-THREE) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-DEFECTS"></a>
+### A naive read of the Gotland file computes a stated absurd annual mean; docs/data/baltic/gotland.json labels its oxygen in mg/l and calls the product a reanalysis while the source declares ml/l and observations; and established annual values reproduce as annual maxima in the file's native units.
+
+`C-CC-OLD-C4-DEFECTS` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-DEFECTS">naive read does not mask it — the 2012 annual mean at −[200](SOURCES.md#F-9eaf3ee625) m then computes as [8.3](SOURCES.md#F-700faa483e)×[10](SOURCES.md#F-820436c5cc)³⁴. (b) `docs/data/baltic/gotland.json` labels `oxy` mg/l and its `_provenance` calls the product a reanalysis; the source netCDF declares units `0.001` (volume fraction ⇒ ml l⁻¹) and *Observations Reprocessing*. The established [0.05](SOURCES.md#F-55ae1f1a94) / [1.38](SOURCES.md#F-801103b922) / [1.11](SOURCES.md#F-5b2fdae7ff) / [0.36](SOURCES.md#F-6b146c7ee3) / [0.05](SOURCES.md#F-55ae1f1a94) for 2014–2018 reproduce exactly as annual maxima at −[200](SOURCES.md#F-9eaf3ee625) m in native units (×[1.429](SOURCES.md#F-a96aac80a6) for mg l⁻¹).</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-DEFECTS "What this claim rests on")</sup>
+
+**Why it was retired:** The absurd mean was computed in a drafting session whose code is not held. The account of gotland.json was out of date when it was published: the same commit had corrected the file, which converts its oxygen to mg/l and describes the product as observations regridded, not a reanalysis. Where the established values came from is not recorded, and nothing here reproduces them.
+
+**Replaced by:** [`C-CC-C4-FILL`](CLAIMS.md#C-CC-C4-FILL), [`C-CC-C4-GOTUNITS`](CLAIMS.md#C-CC-C4-GOTUNITS) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-DIST"></a>
+### The ordering statistic uses stated distances along the path from the Belts to Arkona, Bornholm and Gotland.
+
+`C-CC-OLD-C4-DIST` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-DIST">Statistic: Kendall τ of peak lag against along-path distance (Belts [0](SOURCES.md#F-bae2a6bc93) km, Arkona ~[120](SOURCES.md#F-a16e502a8b), Bornholm ~[230](SOURCES.md#F-a5ac2c3f41), Gotland ~[380](SOURCES.md#F-7ee889515a)). [6](SOURCES.md#F-a48952a9b9). Recompute τ under</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-DIST "What this claim rests on")</sup>
+
+**Why it was retired:** The distances have no source held or pinned here, and Kendall's τ does not need them: it depends only on the order of the sites along the path.
+
+**Replaced by:** [`C-CC-C4-P5`](CLAIMS.md#C-CC-C4-P5) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-EVENTS"></a>
+### A result is capped at a stated p; the effective event count is a stated two or three, not the months; and the Gotland oxygen record, to 2024-12, holds at most one large event, so it has no p and is narrative only.
+
+`C-CC-OLD-C4-EVENTS` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-EVENTS">Otherwise weak corroboration, capped at p ≈ [0.03](SOURCES.md#F-17026cc7ba). Would not. (a) The effective event count is [2](SOURCES.md#F-61b997799e)–[3](SOURCES.md#F-4c0d8143d5), not [360](SOURCES.md#F-c392814bd0) months; no effect size is estimable, and the Gotland *oxygen* limb (2005-11→2024-12) holds at most one large event — n ≈ [1](SOURCES.md#F-a3c352fffc), no p at all, reportable only as narrative.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-EVENTS "What this claim rests on")</sup>
+
+**Why it was retired:** The cap followed from a shift count the design cannot make; the event count and the single large event were asserted without the inflow record, which is not held; and the oxygen record runs to 2025-01.
+
+**Replaced by:** [`C-CC-C4-WOULD`](CLAIMS.md#C-CC-C4-WOULD), [`C-CC-C4-NOT-N`](CLAIMS.md#C-CC-C4-NOT-N) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-FALSIFYDIST"></a>
+### The ordering statistic is Kendall's tau of peak lag against along-path distance.
+
+`C-CC-OLD-C4-FALSIFYDIST` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-FALSIFYDIST">or the ordering statistic (Kendall τ of peak lag against along-path distance) lies inside</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-FALSIFYDIST "What this claim rests on")</sup>
+
+**Why it was retired:** The distances have no source held or pinned here, and the statistic depends only on the order of the sites along the path.
+
+**Replaced by:** [`C-CC-C4-FALSIFY`](CLAIMS.md#C-CC-C4-FALSIFY), [`C-CC-C4-P5`](CLAIMS.md#C-CC-C4-P5) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-GOTEND"></a>
+### The Gotland file carries oxygen in a stated number of months, from 2005-11 to 2024-12.
+
+`C-CC-OLD-C4-GOTEND` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-GOTEND">valid profiles, `oxy` [226](SOURCES.md#F-13ea810ea7) (2005-11→2024-12). Title *"from Observations Reprocessing</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-GOTEND "What this claim rests on")</sup>
+
+**Why it was retired:** The file's oxygen runs to 2025-01, not 2024-12, as the file itself and landing_facts.py's count of the months in docs/data/baltic/gotland.json both show.
+
+**Replaced by:** [`C-CC-C4-GOTFILE`](CLAIMS.md#C-CC-C4-GOTFILE) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-GOTGRID"></a>
+### The Gotland file holds a stated number of depths and time steps and of valid salinity and temperature profiles, regridded to a stated vertical step, of numbered error class three.
+
+`C-CC-OLD-C4-GOTGRID` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-GOTGRID">`so`,`to`,`oxy` × [240](SOURCES.md#F-9bc7ebd876) depths | [385](SOURCES.md#F-c1cd67d6fb) steps; `so`/`to` [383](SOURCES.md#F-f1495f498c) valid profiles, `oxy` [226](SOURCES.md#F-21bbb65240) (2005-11→2024-12). Title *"from Observations Reprocessing"*, `INSITU_BAL_..._013_032` | `3` (regridded monthly / [1](SOURCES.md#F-68e953c261) m from discrete casts</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-GOTGRID "What this claim rests on")</sup>
+
+**Why it was retired:** Checked once by hand on 2026-09-11 against the file and found true, but nothing held reproduces the count, so the page no longer prints it. The class number belongs to a taxonomy the page does not state.
+
+**Replaced by:** [`C-CC-C4-GOTFILE`](CLAIMS.md#C-CC-C4-GOTFILE) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-INDEXRUN"></a>
+### The event index was built and run: its winter maxima rank the winters of 2002/03 and 2014/15 first and second, without the preconditioning term 2014/15 ranks seventh, so preconditioning is not optional.
+
+`C-CC-OLD-C4-INDEXRUN` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-INDEXRUN">Event index (built and run here). Eastward u at [55.0](SOURCES.md#F-5a6463a791) °N/[16.0](SOURCES.md#F-f2fafe70ec) °E, daily mean, [10](SOURCES.md#F-f4f7b71818)-day running sum as the westerly burst × the preceding [35](SOURCES.md#F-f4c5775895)-day easterly deficit ([5](SOURCES.md#F-25a6816c02)-day gap) as preconditioning. Winter maxima rank 2002/03 first (peak window ending 2003-01-18) and 2014/15 second (ending 2014-12-20). Without the preconditioning term 2014/15 ranks only seventh — preconditioning is not optional. Whether those winters are the events they appear to be cannot be confirmed in-repo: the IOW record is not held and I will not assert dates from memory.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-INDEXRUN "What this claim rests on")</sup>
+
+**Why it was retired:** The index was run in a drafting session whose code and output are not held, and no script here computes it, so its rankings cannot be checked. The index is kept as a stated design; what it would rank is not known.
+
+**Replaced by:** [`C-CC-C4-INDEX`](CLAIMS.md#C-CC-C4-INDEX), [`C-CC-C4-INDEX-NORUN`](CLAIMS.md#C-CC-C4-INDEX-NORUN) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-IOWROW"></a>
+### The published inflow record is not held, and a stated line of the fetch queue queues it.
+
+`C-CC-OLD-C4-IOWROW` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-IOWROW">IOW/Mohrholz MBI list | the published inflow record | Not held — `DATA_QUEUE.md:49` queues it for</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-IOWROW "What this claim rests on")</sup>
+
+**Why it was retired:** A line number in a generated page moves whenever the page is rebuilt; the record's entry in the source register, which the fetch queue is built from, is cited instead.
+
+**Replaced by:** [`C-CC-C4-IOW`](CLAIMS.md#C-CC-C4-IOW) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-LAYOUT"></a>
+### The panel's layout was checked by adding the last offset to a stated count times the bytes of a point, giving the file size; its errors are of numbered classes three and six.
+
+`C-CC-OLD-C4-LAYOUT` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-LAYOUT">Layout checked: last offset + [84,668](SOURCES.md#F-5b2774052d)×[8](SOURCES.md#F-599ce73b9d) = [5,435,376](SOURCES.md#F-8eae1cf549) = file size | `3` (median; "near the bed" is a bin of varying depth), `6` (no time-of-day)</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-LAYOUT "What this claim rests on")</sup>
+
+**Why it was retired:** The sum was checked once by hand and nothing held stores it; the generator now checks the whole layout on every build. The numbered classes belong to a taxonomy the page does not state, so the errors are now named in words.
+
+**Replaced by:** [`C-CC-C4-SERIES`](CLAIMS.md#C-CC-C4-SERIES), [`C-CC-C4-BEDBIN`](CLAIMS.md#C-CC-C4-BEDBIN) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-MASK"></a>
+### The Gotland series are read at a stated depth after masking values above a stated threshold.
+
+`C-CC-OLD-C4-MASK` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-MASK">Same for `sob_ark`/`sob_bor` (monthly means) and Gotland `so`/`oxy` at −[200](SOURCES.md#F-a6133f658d) m, after masking > [1](SOURCES.md#F-d12626df40)e30, in native units.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-MASK "What this claim rests on")</sup>
+
+**Why it was retired:** The threshold was a hand-chosen cut below the fill value; masking the declared fill value itself needs no number.
+
+**Replaced by:** [`C-CC-C4-P3`](CLAIMS.md#C-CC-C4-P3) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-MBICOUNT"></a>
+### The Arkona and Bornholm salinity file holds a stated number of daily values with none missing, of numbered error class seven.
+
+`C-CC-OLD-C4-MBICOUNT` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-MBICOUNT">`sob_ark`, `sob_bor` | [11,688](SOURCES.md#F-0f156f463a) daily, 1993-01-01→2024-12-31, [0](SOURCES.md#F-dbfc5adce4) missing. Title *"from Reanalysis"*, `BALTICSEA_MULTIYEAR_PHY_003_011` | [7](SOURCES.md#F-729aee71e1) — model, not datum</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-MBICOUNT "What this claim rests on")</sup>
+
+**Why it was retired:** Checked once by hand on 2026-09-11 against the file and found true, but nothing held reproduces the count, so the page no longer prints it. The class number belongs to a taxonomy the page does not state.
+
+**Replaced by:** [`C-CC-C4-MBIFILE`](CLAIMS.md#C-CC-C4-MBIFILE) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-N2"></a>
+### Fourier phase-randomised surrogates preserve both the spectrum and the distribution of values of a response, and they make inflow's pulse-like character Gaussian.
+
+`C-CC-OLD-C4-N2` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-N2">Fourier phase-randomised surrogates of each response, preserving spectrum and marginal. Continuous p, but it Gaussianises inflow's pulse-like character. `N1` and `N2` bound the answer from two sides; take the more conservative.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-N2 "What this claim rests on")</sup>
+
+**Why it was retired:** The two halves contradict each other. Random phases keep the periodogram; keeping the distribution of values as well is what the amplitude-adjusted variant tries to add. The design now names that variant.
+
+**Replaced by:** [`C-CC-C4-N2`](CLAIMS.md#C-CC-C4-N2) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-NOTE"></a>
+### Numbers shown as quotations were carried from the page as committed earlier, nothing in the repository storing them.
+
+`C-CC-OLD-C4-NOTE` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-NOTE">Numbers shown as quotations are carried from this page as committed at `c601feb`: nothing in the repository stores them yet, so each says what the page said, not that it was re-derived.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** A quotation of the site's own past is not a justification for a number; every such number is now read from data, read from a pinned document, stated as a design value, or retired.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-CC-OLD-C4-PANEL"></a>
+### In the draft's box a stated number of stations have a bottom depth, fewer are deep enough, and a stated number carry enough monthly salinity medians; their month-of-year counts show a summer sampling bias of a stated ratio, which makes a month-matched null mandatory.
+
+`C-CC-OLD-C4-PANEL` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-PANEL">Station panel (verified). Box 10–[15](SOURCES.md#F-e3ab2d7ad3) °E, [54](SOURCES.md#F-cfe6c454dc)–[56.5](SOURCES.md#F-8947c467f4) °N: [925](SOURCES.md#F-0731a40fd0) stations, [672](SOURCES.md#F-4b210222c5) with a bottom depth, [151](SOURCES.md#F-9194103f6b) with median depth ≥ [20](SOURCES.md#F-b0da37d40e) m, [20](SOURCES.md#F-b0da37d40e) with ≥ [120](SOURCES.md#F-f2d24ca57b) monthly `sal_bed` medians in 1993–2024 ([120](SOURCES.md#F-f2d24ca57b)–[381](SOURCES.md#F-8b2bba7be0); [4,822](SOURCES.md#F-9297774ca1) station-months). Month-of-year counts Jan→Dec: [[306](SOURCES.md#F-561ce99714), [309](SOURCES.md#F-073d4b3d7b), [315](SOURCES.md#F-7de13e601d), [310](SOURCES.md#F-1005d46d78), [322](SOURCES.md#F-7ece94638d), [341](SOURCES.md#F-9b96b7f2e4), [501](SOURCES.md#F-9353360941), [547](SOURCES.md#F-d5bac46d77), [541](SOURCES.md#F-dc0f33b4aa), [533](SOURCES.md#F-1e3539fe3b), [486](SOURCES.md#F-071554959e), [311](SOURCES.md#F-c3aab61bcf)] — a [2](SOURCES.md#F-aa78256256):1 summer sampling bias, and the reason a month-matched null is mandatory.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-PANEL "What this claim rests on")</sup>
+
+**Why it was retired:** The panel was made in a drafting session whose code and output are not held, and nothing here re-derives it or counts its months. The rule is kept as a stated rule, and removing each station's own seasonal cycle stands on its own reason.
+
+**Replaced by:** [`C-CC-C4-PANEL`](CLAIMS.md#C-CC-C4-PANEL), [`C-CC-C4-PANEL-N`](CLAIMS.md#C-CC-C4-PANEL-N), [`C-CC-C4-P2`](CLAIMS.md#C-CC-C4-P2) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-QUEUELINE"></a>
+### The published inflow statistics are queued at a stated line of the fetch queue.
+
+`C-CC-OLD-C4-QUEUELINE` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-QUEUELINE">Smallest improvement: fetch the IOW/Mohrholz MBI statistics (`DATA_QUEUE.md:49`), replacing a self-built proxy</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-QUEUELINE "What this claim rests on")</sup>
+
+**Why it was retired:** A line number in a generated page moves whenever the page is rebuilt.
+
+**Replaced by:** [`C-CC-C4-NEXT`](CLAIMS.md#C-CC-C4-NEXT) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-QUOTEDNULL"></a>
+### The usual quoted null, significance over a stated number of months, is wrong by an order of magnitude, because Gotland deep salinity has an effective sample size of order ten.
+
+`C-CC-OLD-C4-QUOTEDNULL` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-QUOTEDNULL">I compare one strait composite against one Gotland series over 1995–2024. Under that constraint the usual quoted null — "significant at n = [360](SOURCES.md#F-ae068c4484) months" — is wrong by an order of magnitude: Gotland deep salinity is a slow reservoir with effective sample size of order ten. Compute, do not quote.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-QUOTEDNULL "What this claim rests on")</sup>
+
+**Why it was retired:** Neither the order of magnitude nor the effective sample size was computed or sourced. The case for a computed null stands without them.
+
+**Replaced by:** [`C-CC-C4-NULLRULE`](CLAIMS.md#C-CC-C4-NULLRULE) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-REPLICATES"></a>
+### The panel's stated number of stations are that many positions in one hydrographic regime, not replicates, and the sensitivity run is that many single-station fits.
+
+`C-CC-OLD-C4-REPLICATES` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-REPLICATES">take the more conservative. - The [20](SOURCES.md#F-37a33d2f99) stations are not [20](SOURCES.md#F-37a33d2f99) replicates — they are [20](SOURCES.md#F-37a33d2f99) positions in one hydrographic regime. The statistic is the median across positions of a per-station z-anomaly, the panel shifts as one, and the null is over time only: cross-station spread buys precision, not degrees of freedom. Not a water-body aggregation — positions are listed individually under a stated depth-and-box rule, and the sensitivity run is [20](SOURCES.md#F-37a33d2f99) single-station fits reported as a *distribution of lags*, not [20](SOURCES.md#F-37a33d2f99) tests. If only the composite shows the signal, the composite made it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-REPLICATES "What this claim rests on")</sup>
+
+**Why it was retired:** The station count came from the panel made in a drafting session whose code and output are not held, and nothing here re-derives it, and nothing here shows that the positions form one hydrographic regime. The argument stands without either.
+
+**Replaced by:** [`C-CC-C4-PANELNULL`](CLAIMS.md#C-CC-C4-PANELNULL) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-ROBUST"></a>
+### The ordering statistic is robust to every calibration error listed in the data section.
+
+`C-CC-OLD-C4-ROBUST` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-ROBUST">A clean falsification if the order breaks — cheap, and the statistic is robust to every calibration error in</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-ROBUST "What this claim rests on")</sup>
+
+**Why it was retired:** Not every error listed there leaves the timing of a peak alone; the replacement names the errors the statistic is robust to.
+
+**Replaced by:** [`C-CC-C4-WOULD`](CLAIMS.md#C-CC-C4-WOULD) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-SHIFTS"></a>
+### The primary null has a stated number of non-zero whole-year shifts over 1993–2024, giving a stated p floor.
+
+`C-CC-OLD-C4-SHIFTS` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-SHIFTS">circular shift of the event index by whole years, [31](SOURCES.md#F-ebe5c671de) non-zero shifts over 1993–2024. Whole years preserve event seasonality, the summer sampling bias and every series' autocorrelation; only the alignment dies. p floor [1](SOURCES.md#F-951597c1e1)/[32](SOURCES.md#F-c0e57e7f62) = [0.031](SOURCES.md#F-ea395cbff3) — state it, never exceed it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-SHIFTS "What this claim rests on")</sup>
+
+**Why it was retired:** The event index needs the wind, which begins in 1995, so shifts over 1993–2024 are not ones the design can make: the count and the floor did not follow from the page's own spans. The rule is kept without them.
+
+**Replaced by:** [`C-CC-C4-N1`](CLAIMS.md#C-CC-C4-N1) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-TWODEFECTS"></a>
+### Two defects were found while verifying the files.
+
+`C-CC-OLD-C4-TWODEFECTS` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-TWODEFECTS">Two defects found while verifying; do not inherit them.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-TWODEFECTS "What this claim rests on")</sup>
+
+**Why it was retired:** One of the two had been corrected in the same commit that published it; only the fill-value trap remains.
+
+**Replaced by:** [`C-CC-C4-FILL`](CLAIMS.md#C-CC-C4-FILL) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-VALUES"></a>
+### The panel's near-bed oxygen holds stated counts of negative values and of values above a stated ceiling, its near-bed salinity stated counts of exact zeros and of values above a stated ceiling, and saturation percentages sit in a column of mg/l.
+
+`C-CC-OLD-C4-VALUES` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-VALUES">same, values | — | `oxy_bed`: [14](SOURCES.md#F-9771e45027) < 0, 40 > [20](SOURCES.md#F-3a8bef8403) mg/l — impossible. `sal_bed`: [56](SOURCES.md#F-9f915096d3) exact zeros, [4](SOURCES.md#F-00f2f6a125) > [36](SOURCES.md#F-b05a927df9) ‰ | `1`; `4` where saturation-% rows sit in an mg/l column</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-VALUES "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were made in a drafting session whose code and output are not held, and nothing here re-derives them or shows saturation values in the oxygen column. The flag record, which is held, stands in their place.
+
+**Replaced by:** [`C-CC-C4-FLAGS`](CLAIMS.md#C-CC-C4-FLAGS) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-VALVE"></a>
+### The straits are the valve for a basin whose deep water Denmark does not produce, so a ventilated Gotland Deep does not transfer to Danish coastal deficit.
+
+`C-CC-OLD-C4-VALVE` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-VALVE">the straits are the valve for a basin whose deep water Denmark does not produce, so a ventilated Gotland Deep does not transfer to Danish coastal deficit, and this design cannot make it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-VALVE "What this claim rests on")</sup>
+
+**Why it was retired:** A statement about how the Baltic's deep water bears on Danish coastal oxygen, with nothing held or pinned behind it. What the design does not reach is now argued from the design itself.
+
+**Replaced by:** [`C-CC-C4-NOT-O1`](CLAIMS.md#C-CC-C4-NOT-O1) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-VERIFIEDHEAD"></a>
+### The counts in the data section were verified in the drafting session.
+
+`C-CC-OLD-C4-VERIFIEDHEAD` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-VERIFIEDHEAD">The data (counts verified here)</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-VERIFIEDHEAD "What this claim rests on")</sup>
+
+**Why it was retired:** The verification was made in a drafting session whose code and output are not held, so it cannot be checked; the counts the page still prints are read from held outputs.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-CC-OLD-C4-WINDOWS"></a>
+### Pre-registered lag windows for each site along the path, derived from a bolus crossing a stated distance of bed at a stated speed with a stall in the Bornholm Basin; the test is whether the peaks fall in them.
+
+`C-CC-OLD-C4-WINDOWS` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-WINDOWS">Pre-registered windows, from a bolus crossing ~[350](SOURCES.md#F-9bc4c2796b) km of bed at a few cm s⁻¹ with a stall in the Bornholm Basin: strait bed [0](SOURCES.md#F-1852304b01)–[2](SOURCES.md#F-d2f3aeea0b) months, Arkona [0](SOURCES.md#F-1852304b01)–[3](SOURCES.md#F-441eed0194), Bornholm [1](SOURCES.md#F-6e91e6535a)–[6](SOURCES.md#F-df8982d4b5), Gotland salinity [3](SOURCES.md#F-441eed0194)–[15](SOURCES.md#F-87717da9bc), Gotland oxygen [3](SOURCES.md#F-441eed0194)–[18](SOURCES.md#F-e2ab31382a) decaying over [1](SOURCES.md#F-6e91e6535a)–[3](SOURCES.md#F-441eed0194) years. The lag structure is asserted, not fitted; the test is whether the peaks fall in it, in order.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-WINDOWS "What this claim rests on")</sup>
+
+**Why it was retired:** The windows were derived from a travel distance and a speed that no source held or pinned here gives, so they rested on a physical claim without support. The ordering test does not need them.
+
+**Replaced by:** [`C-CC-C4-ORDER`](CLAIMS.md#C-CC-C4-ORDER) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-WINDROW"></a>
+### The Baltic wind files hold a stated number of hourly rows each with none missing, at three stated coordinates, of numbered error classes seven and six.
+
+`C-CC-OLD-C4-WINDROW` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-WINDROW">wind_baltic_{n,c,s}.json` | hourly 10 m wind | 271,752 rows each, 1995-01-01→2025-12-31, 0 NaN; points 55.0/16.0, 57.0/19.0, 59.5/21.0 | `[7](SOURCES.md#F-af5f836ad2)`; `[6](SOURCES.md#F-b645cb5152)` — *no point over the Kattegat or the Belts</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-WINDROW "What this claim rests on")</sup>
+
+**Why it was retired:** Checked once by hand on 2026-09-11 against the file and found true, but nothing held reproduces the count, so the page no longer prints it. The coordinates are now described by place, and the class numbers belong to a taxonomy the page does not state.
+
+**Replaced by:** [`C-CC-C4-WIND`](CLAIMS.md#C-CC-C4-WIND), [`C-CC-C4-WINDSRC`](CLAIMS.md#C-CC-C4-WINDSRC) — each opens what it rests on.
+
+<a id="C-CC-OLD-C4-WITHOUT"></a>
+### An event should raise near-bed salinity without raising surface salinity.
+
+`C-CC-OLD-C4-WITHOUT` · retired 2026-09-11 from [hypodrafts/C4.md](hypodrafts/C4.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C4-WITHOUT">an event should raise `sal_bed` without raising `sal_surf`.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C4-WITHOUT "What this claim rests on")</sup>
+
+**Why it was retired:** A strong inflow can raise surface salinity too; the replacement asks only that the bed rise more than the surface, which is what a growing salinity difference needs.
+
+**Replaced by:** [`C-CC-C4-SECONDARY`](CLAIMS.md#C-CC-C4-SECONDARY) — each opens what it rests on.
+
+## hypodrafts/C6.md
+
+<a id="C-CC-OLD-C6-CLASS6"></a>
+### The missing ventilation timescale is of a numbered class.
+
+`C-CC-OLD-C6-CLASS6` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-CLASS6">ventilation timescale this archive does not record (class 6). It says nothing about water bodies.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-CLASS6 "What this claim rests on")</sup>
+
+**Why it was retired:** The class number belongs to a taxonomy the page does not state.
+
+**Replaced by:** [`C-CC-C6-NOQ10`](CLAIMS.md#C-CC-C6-NOQ10), [`C-CC-C6-NOWBODY`](CLAIMS.md#C-CC-C6-NOWBODY) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-COOCCUR"></a>
+### Warm within-month anomalies co-occur with weak wind and stronger stratification.
+
+`C-CC-OLD-C6-COOCCUR` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-COOCCUR">warm within-month anomalies co-occur with weak wind and stronger stratification, so the deficit may be failed ventilation rather than `Q10`. It cannot calibrate</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-COOCCUR "What this claim rests on")</sup>
+
+**Why it was retired:** Nothing held here shows it. DCE's note, pinned here, names both wind and temperature as drivers of oxygen depletion, which is what the replacement rests on.
+
+**Replaced by:** [`C-CC-C6-NOTRESP`](CLAIMS.md#C-CC-C6-NOTRESP) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-DIEL"></a>
+### Oxygen has a diel cycle and the hour of sampling covaries with season, so the missing hour is a confound with the same sign as the hypothesis.
+
+`C-CC-OLD-C6-DIEL` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-DIEL">Oxygen has a diel cycle, and sampling hour plausibly covaries with season (short winter days compress sampling toward midday). The confound has the *same sign* as the hypothesis.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-DIEL "What this claim rests on")</sup>
+
+**Why it was retired:** Within a station and calendar month, where the test works, the season's pull on the hour of sampling is held fixed, so a seasonal pattern in the hour cannot confound the within-cell slope, and the sign claimed did not follow. No document pinned here gives the diel cycle of near-bed oxygen.
+
+**Replaced by:** [`C-CC-C6-HOUR`](CLAIMS.md#C-CC-C6-HOUR) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-EIV"></a>
+### An error in temperature enters D with stated slopes and the regressor with slope one, inducing a negative spurious slope; with a stated error against a stated spread the attenuation is a stated share, and the salinity channel propagates a stated error: negligible.
+
+`C-CC-OLD-C6-EIV` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-EIV">residual risk is errors-in-variables: an error ε in T enters `D` with slope −[0.18](SOURCES.md#F-4473159dc5) to −[0.29](SOURCES.md#F-894348480b) and the regressor with slope +[1](SOURCES.md#F-06b52ec5c4), so it induces a negative spurious slope. The test is therefore conservative in the direction that matters; with σ_ε ≈ [0.05](SOURCES.md#F-995e6c4a10) °C against σ_T = [1.55](SOURCES.md#F-24f9d0d83e) °C the attenuation is ~[0.1](SOURCES.md#F-2edb800d31) %. Salinity is computed from conductivity and temperature, so it carries T error too, but dC_sat/dS = −[0.055](SOURCES.md#F-a7adf8ceb9) mg/l per psu — a [0.05](SOURCES.md#F-995e6c4a10) °C error propagates to under [0.001](SOURCES.md#F-37aed6aaf0) mg/l. Negligible.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-EIV "What this claim rests on")</sup>
+
+**Why it was retired:** The slopes, spreads and propagated errors were computed in a drafting session whose code is not held. The sign argument stands without them, and the magnitudes are left uncomputed.
+
+**Replaced by:** [`C-CC-C6-EIV`](CLAIMS.md#C-CC-C6-EIV) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-EQUALRATE"></a>
+### A deficit flag at a stated threshold, with the same overall rate as the oxygen threshold, varies less by season, and a stated share of the station-months under the oxygen threshold also exceed it: the two statistics differ at the margin, not in bulk.
+
+`C-CC-OLD-C6-EQUALRATE` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-EQUALRATE">Reference for the subsidiary claim: an *equal-rate* deficit flag `D > 5.13 mg/l` (same [8.47](SOURCES.md#F-2ed574d2e1) % overall rate) is [13.9](SOURCES.md#F-233792e1c3)-fold seasonally, and [90.2](SOURCES.md#F-a22e5cd606) % of `O < 4` station-months also exceed it. The two statistics differ at the margin, not in bulk.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-EQUALRATE "What this claim rests on")</sup>
+
+**Why it was retired:** The threshold and the shares were made in a drafting session whose code and output are not held, and nothing here re-derives them. The procedure keeps the equal-rate flag, to be computed.
+
+**Replaced by:** [`C-CC-C6-P6`](CLAIMS.md#C-CC-C6-P6) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-ERRCLASS"></a>
+### The data's errors fall in numbered classes of an error taxonomy.
+
+`C-CC-OLD-C6-ERRCLASS` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-ERRCLASS">Error classes present. ([1](SOURCES.md#F-c0b1025d80)) value errors — `oxy_bed` spans −[9.93](SOURCES.md#F-ef388b42ae) to [281.6](SOURCES.md#F-a4a6770fc9) mg/l, `oxysat_bed` to [3292](SOURCES.md#F-98d651cdf8) %, `temp_surf` to [80.3](SOURCES.md#F-859e55df4d) °C; the filter removes [44](SOURCES.md#F-c0bf9c20e7) of the join. ([2](SOURCES.md#F-ae0a011e1d)) quantisation — raw `Temperatur` is written with at most one decimal on [1,076,874](SOURCES.md#F-e18dfaef8b) of [7,501,421](SOURCES.md#F-f1cb145821) rows over the whole extract ([14](SOURCES.md#F-1d0a4b2223)%; an earlier sample put it at [119,496](SOURCES.md#F-b05fd4da24) of [141,731](SOURCES.md#F-83e05b1c29)); where it is, ±[0.05](SOURCES.md#F-d24732b6da) °C → ±[0.015](SOURCES.md#F-46a0fe8772) mg/l in `C_sat` (|dC_sat/dT| = [0.29](SOURCES.md#F-e7cbc0b362) at [4](SOURCES.md#F-96ebbb6661) °C, [0.18](SOURCES.md#F-11f437d666) at [16](SOURCES.md#F-32d0f556cd) °C), negligible against a deficit that reaches [14.6](SOURCES.md#F-2ec2846534) mg/l. ([3](SOURCES.md#F-d0b7e777ba)) aggregation — these are monthly *medians*, and "near the bed" is itself a within-cast selection, so the T, S and O medians of one station-month need not come from the same cast. ([5](SOURCES.md#F-ffcddb89cb)) unfilled — [12,736](SOURCES.md#F-15f4d747bd) `oxy_bed` cells carry no saturation; `SondeNavn` is `999 - Ukendt` on the raw rows inspected. ([6](SOURCES.md#F-4dc93264dc)) absent dimension — see below. ([7](SOURCES.md#F-14a61443f4)) is avoided: the unit is a station, never a water body. Class 6, stated not ignored.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-ERRCLASS "What this claim rests on")</sup>
+
+**Why it was retired:** The numbered classes belong to a taxonomy the page does not state, so the errors are now named in words; the counts among them are retired separately.
+
+**Replaced by:** [`C-CC-C6-FLAGS`](CLAIMS.md#C-CC-C6-FLAGS), [`C-CC-C6-QUANT`](CLAIMS.md#C-CC-C6-QUANT), [`C-CC-C6-AGG`](CLAIMS.md#C-CC-C6-AGG), [`C-CC-C6-UNFILLED`](CLAIMS.md#C-CC-C6-UNFILLED), [`C-CC-C6-NOCLOCK`](CLAIMS.md#C-CC-C6-NOCLOCK), [`C-CC-C6-NOWB`](CLAIMS.md#C-CC-C6-NOWB) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-EXACT"></a>
+### D contains temperature through the solubility on purpose, which removes the solubility channel rather than making the test circular, because Weiss's equations are exact and external to this dataset.
+
+`C-CC-OLD-C6-EXACT` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-EXACT">contains T through `C_sat` deliberately — that is the *removal* of the solubility channel, not circularity, because Weiss is exact and external to this dataset.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-EXACT "What this claim rests on")</sup>
+
+**Why it was retired:** The equations are not exact: the USGS memorandum pinned here records differences between Weiss's predictions and Benson and Krause's, and USGS replaced Weiss's. The replacement says what holds: a fixed published function, not fitted to these data.
+
+**Replaced by:** [`C-CC-C6-DELIBERATE`](CLAIMS.md#C-CC-C6-DELIBERATE) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-FORTY"></a>
+### Forty years of warming meet forty years of changing nutrient load.
+
+`C-CC-OLD-C6-FORTY` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-FORTY">so that forty years of warming meeting forty years of changing nutrient load cannot manufacture β̂.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-FORTY "What this claim rests on")</sup>
+
+**Why it was retired:** A span in words with no count behind it, and a trend in each asserted without data held here. The detrending needs neither: only that a trend shared by temperature and deficit be removed.
+
+**Replaced by:** [`C-CC-C6-P5`](CLAIMS.md#C-CC-C6-P5) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-JOIN"></a>
+### The join of near-bed oxygen, temperature and salinity, the rows the plausibility filter keeps, the cells with enough years and the within-cell spread of temperature, each with stated numbers.
+
+`C-CC-OLD-C6-JOIN` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-JOIN">Triple join `oxy_bed ∩ temp_bed ∩ sal_bed`: [76,349](SOURCES.md#F-be026a9d24); after a plausibility filter ([0](SOURCES.md#F-f0eda663e3) ≤ O ≤ [20](SOURCES.md#F-0e43071290), −[2](SOURCES.md#F-3a34c27ad8) ≤ T ≤ [30](SOURCES.md#F-a845c3415a), [0](SOURCES.md#F-f0eda663e3) ≤ S ≤ [40](SOURCES.md#F-f02585fd39)): [76,305](SOURCES.md#F-51077596fb) rows over [1,314](SOURCES.md#F-93f5e44f14) stations, [44](SOURCES.md#F-dd86c95c98) dropped. - Cells = (station × calendar month). With ≥ [8](SOURCES.md#F-fbcc0cc588) distinct years: [3,282](SOURCES.md#F-b803ef3f6a) cells, [63,262](SOURCES.md#F-820a3ff833) rows, [395](SOURCES.md#F-729764ee19) stations. With ≥ [3](SOURCES.md#F-10a68b234e): [5,129](SOURCES.md#F-eb248b5722) / [71,750](SOURCES.md#F-95dc7e32d2) / [641](SOURCES.md#F-d214771a10). With ≥ [10](SOURCES.md#F-793eb5c1a0): [2,837](SOURCES.md#F-bd0708fcd2) / [59,512](SOURCES.md#F-24107756a7) / [345](SOURCES.md#F-18498b8c84). - Within-cell SD of `temp_bed`: median [1.55](SOURCES.md#F-0509b918bf) °C (q10 [1.03](SOURCES.md#F-efed10583e), q90 [2.26](SOURCES.md#F-0849706749)) — real leverage.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-JOIN "What this claim rests on")</sup>
+
+**Why it was retired:** They were made in a drafting session whose code and output are not held, and nothing here re-derives them; no script here builds the join. The filter and the minimum years are kept as stated design values, and how many rows and cells pass them is not known.
+
+**Replaced by:** [`C-CC-C6-JOIN-NORUN`](CLAIMS.md#C-CC-C6-JOIN-NORUN), [`C-CC-C6-P1`](CLAIMS.md#C-CC-C6-P1), [`C-CC-C6-P2`](CLAIMS.md#C-CC-C6-P2) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-NOTE"></a>
+### Numbers shown as quotations were carried from the page as committed earlier, nothing in the repository storing them.
+
+`C-CC-OLD-C6-NOTE` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-NOTE">Numbers shown as quotations are carried from this page as committed at `680eccf`: nothing in the repository stores them yet, so each says what the page said, not that it was re-derived.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-NOTE "What this claim rests on")</sup>
+
+**Why it was retired:** A quotation of the site's own past is not a justification for a number; every such number is now read from data, read from a pinned document, stated as a design value, or retired.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-CC-OLD-C6-PRIOR"></a>
+### Prior work reproduced on this join: stated monthly rates of oxygen under the threshold in February and September, their ratio, a ratio for low saturation, and median near-bed temperatures in February and August.
+
+`C-CC-OLD-C6-PRIOR` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-PRIOR">Reproduced prior work on this join: `O < 4 mg/l` monthly rate [0.0090](SOURCES.md#F-d33b01f19e) (Feb) → [0.2119](SOURCES.md#F-c976d6fd0e) (Sep), [23.6](SOURCES.md#F-b3b5e6123d)-fold; recomputed `< 30 %` saturation [15.5](SOURCES.md#F-ead65c395f)-fold; median `temp_bed` [3.3](SOURCES.md#F-561a762071) °C (Feb) / [16.4](SOURCES.md#F-5b77f078ae) °C (Aug).</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-PRIOR "What this claim rests on")</sup>
+
+**Why it was retired:** Neither the prior work nor its reproduction is held, and no script here computes these rates.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-CC-OLD-C6-PROCN"></a>
+### The filtered join holds a stated number of rows, and a stated number of cells have enough years.
+
+`C-CC-OLD-C6-PROCN` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-PROCN">filter as above → [76,305](SOURCES.md#F-4850703973) rows. [2](SOURCES.md#F-47abaf3825). Compute `C_sat` (Weiss) and `D`. Keep cells with ≥ [8](SOURCES.md#F-eda0f6cc31) years ([3,282](SOURCES.md#F-273ba41b90) cells).</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-PROCN "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were made in a drafting session whose code and output are not held, and nothing here re-derives them; no script here builds the join.
+
+**Replaced by:** [`C-CC-C6-JOIN-NORUN`](CLAIMS.md#C-CC-C6-JOIN-NORUN) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-RECOMPUTE"></a>
+### The archive's near-bed saturation is computed from oxygen, temperature and salinity, and a recomputed Weiss saturation matches it to a stated median difference and correlation over a stated number of station-months, so it rests on the same solubility function.
+
+`C-CC-OLD-C6-RECOMPUTE` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-RECOMPUTE">Archived `oxysat_bed` is computed from O, T and S; using it as the outcome against T as the regressor would be circular, so it is never the outcome here. It is used once as a check: recomputed Weiss saturation matches the archived value to a median [0.33](SOURCES.md#F-9b78a4bb89) percentage points, r = [0.9948](SOURCES.md#F-127675575c), n = [63,638](SOURCES.md#F-b2062b8a05) — so the archive's saturation rests on essentially the same solubility function and `D` adds no second, rival model.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-RECOMPUTE "What this claim rests on")</sup>
+
+**Why it was retired:** How ODA computes its saturation is not documented in anything held or pinned here, and the recomputation was run in a drafting session whose code and output are not held.
+
+**Replaced by:** [`C-CC-C6-NOTOUTCOME`](CLAIMS.md#C-CC-C6-NOTOUTCOME), [`C-CC-C6-SATSRC`](CLAIMS.md#C-CC-C6-SATSRC) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-REGULATED"></a>
+### The oxygen threshold of the subsidiary claim is a regulated statistic.
+
+`C-CC-OLD-C6-REGULATED` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-REGULATED">Subsidiary claim about the regulated statistic: *the `< 4 mg/l` flag ranks stations by consumption, not by ceiling height.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-REGULATED "What this claim rests on")</sup>
+
+**Why it was retired:** Nothing held or pinned here shows the threshold is set in regulation; DCE uses it to define iltsvind, which is what the replacement says.
+
+**Replaced by:** [`C-CC-C6-SUBSID`](CLAIMS.md#C-CC-C6-SUBSID) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-SAMPLE"></a>
+### An earlier sample put the one-decimal temperatures at stated counts; the rounding moves the solubility by a stated amount through stated slopes at stated temperatures, negligible against the largest deficit.
+
+`C-CC-OLD-C6-SAMPLE` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-SAMPLE">an earlier sample put it at [119,496](SOURCES.md#F-8a80ace168) of [141,731](SOURCES.md#F-89ff907f59)); where it is, ±[0.05](SOURCES.md#F-060a5d4785) °C → ±[0.015](SOURCES.md#F-eff4e9141c) mg/l in `C_sat` (|dC_sat/dT| = [0.29](SOURCES.md#F-16b027cb9c) at [4](SOURCES.md#F-dfc339ef35) °C, [0.18](SOURCES.md#F-4290c6fe5a) at [16](SOURCES.md#F-27fae2f8cd) °C), negligible against a deficit that reaches [14.6](SOURCES.md#F-df89b9f681) mg/l. ([3](SOURCES.md#F-a9a15622ba)) aggregation</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-SAMPLE "What this claim rests on")</sup>
+
+**Why it was retired:** The page narrated its own earlier sample, which is history, not a finding. The slopes, the propagated error and the largest deficit were computed in a drafting session whose code is not held. The count over the whole extract, which is held, stays.
+
+**Replaced by:** [`C-CC-C6-QUANT`](CLAIMS.md#C-CC-C6-QUANT) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-SPAN"></a>
+### The monthly panel's months run over a stated range of month indices, from January 1980 to September 2026.
+
+`C-CC-OLD-C6-SPAN` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-SPAN">stations, months [0](SOURCES.md#F-b232ec3929)–[560](SOURCES.md#F-a0052bdf39) (Jan 1980 – Sep 2026). Near-bed:</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-SPAN "What this claim rests on")</sup>
+
+**Why it was retired:** The range was read in a drafting session whose output is not held. The panel as held declares its number of monthly slots from January of its first year, which the page now prints; the last month with data is not stored.
+
+**Replaced by:** [`C-CC-C6-SERIES`](CLAIMS.md#C-CC-C6-SERIES) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-SPEARMAN"></a>
+### The subsidiary test uses a deficit threshold of a stated value and ranks a stated number of stations.
+
+`C-CC-OLD-C6-SPEARMAN` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-SPEARMAN">Subsidiary: per station, flag rate under `O < 4` and under `D > 5.13`; Spearman ρ over [1,314](SOURCES.md#F-1c5a1d04ad) stations; count stations flagged by one and not the other.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-SPEARMAN "What this claim rests on")</sup>
+
+**Why it was retired:** The threshold and the station count came from the join made in a drafting session whose code and output are not held, and nothing here re-derives them. The procedure now defines the threshold by its equal rate, to be computed.
+
+**Replaced by:** [`C-CC-C6-P6`](CLAIMS.md#C-CC-C6-P6) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-STREAM"></a>
+### The CTD extract streamed for the confirmatory version is of a stated compressed size, and the pairing gap is of a numbered class.
+
+`C-CC-OLD-C6-STREAM` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-STREAM">streaming `ctd.csv.gz` ([449](SOURCES.md#F-e5891121f3) MB gz), removing the class-[3](SOURCES.md#F-224c52a0ca) pairing gap.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-STREAM "What this claim rests on")</sup>
+
+**Why it was retired:** The size was checked once by hand and is not printed from the held count; the class number belongs to a taxonomy the page does not state.
+
+**Replaced by:** [`C-CC-C6-P7`](CLAIMS.md#C-CC-C6-P7) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-UNFILLED"></a>
+### A stated number of near-bed oxygen station-months carry no saturation, and the probe name is unknown on the raw rows inspected.
+
+`C-CC-OLD-C6-UNFILLED` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-UNFILLED">unfilled — [12,736](SOURCES.md#F-6e9bf04dd2) `oxy_bed` cells carry no saturation; `SondeNavn` is `999 - Ukendt` on the raw rows inspected.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-UNFILLED "What this claim rests on")</sup>
+
+**Why it was retired:** The count was made in a drafting session whose output is not held, and which rows were inspected is not recorded. Held counts give a lower bound for the first and the share of unknown probes for the second.
+
+**Replaced by:** [`C-CC-C6-UNFILLED`](CLAIMS.md#C-CC-C6-UNFILLED) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-VALUES"></a>
+### The panel's near-bed oxygen, saturation and surface temperature reach stated impossible values, and the filter removes a stated number of rows of the join.
+
+`C-CC-OLD-C6-VALUES` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-VALUES">value errors — `oxy_bed` spans −[9.93](SOURCES.md#F-1337108841) to [281.6](SOURCES.md#F-0254436170) mg/l, `oxysat_bed` to [3292](SOURCES.md#F-a8a03020dd) %, `temp_surf` to [80.3](SOURCES.md#F-c1c7883455) °C; the filter removes [44](SOURCES.md#F-0cbb925963) of the join.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-VALUES "What this claim rests on")</sup>
+
+**Why it was retired:** The ranges and the count were read in a drafting session whose output is not held. The flag record, which is held, marks such values.
+
+**Replaced by:** [`C-CC-C6-FLAGS`](CLAIMS.md#C-CC-C6-FLAGS) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-VERIFIED"></a>
+### The draft's counts were verified by reading the files.
+
+`C-CC-OLD-C6-VERIFIED` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-VERIFIED">the counts were verified by reading the files.</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-VERIFIED "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were made in a drafting session whose code and output are not held, and nothing here re-derives them, so the verification cannot be checked. The counts the page still prints are read from held outputs.
+
+**Replaced by:** [`C-CC-C6-STATUS`](CLAIMS.md#C-CC-C6-STATUS) — each opens what it rests on.
+
+<a id="C-CC-OLD-C6-VERIFIEDHEAD"></a>
+### The counts in the data section were verified in the drafting session.
+
+`C-CC-OLD-C6-VERIFIEDHEAD` · retired 2026-09-11 from [hypodrafts/C6.md](hypodrafts/C6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-CC-OLD-C6-VERIFIEDHEAD">Data, with verified counts</span><sup class="claim-mark">[†](ARCHIVE.md#C-CC-OLD-C6-VERIFIEDHEAD "What this claim rests on")</sup>
+
+**Why it was retired:** The verification was made in a drafting session whose code and output are not held, so it cannot be checked; the counts the page still prints are read from held outputs.
+
+**Replaced by:** [`C-CC-C6-STATUS`](CLAIMS.md#C-CC-C6-STATUS) — each opens what it rests on.
+
+## hypodrafts/D1.md
+
+<a id="C-DZ-OLD-D1-EAST"></a>
+### A stated number of the panel's stations lie east of a stated meridian.
+
+`C-DZ-OLD-D1-EAST` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-EAST">(placebo). [1,392](SOURCES.md#F-16b806e63f) of [1,415](SOURCES.md#F-6c7456fb25) stations lie east of [8](SOURCES.md#F-66019f0c91)°E.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-EAST "What this claim rests on")</sup>
+
+**Why it was retired:** Counted in a one-off run whose output is not held.
+
+**Replaced by:** [`C-DZ-D1-OVERLAP`](CLAIMS.md#C-DZ-D1-OVERLAP) — each opens what it rests on.
+
+<a id="C-DZ-OLD-D1-FIELDS"></a>
+### The HELCOM record lists stated fields; the layers have a stated grid size and cover every station east of a meridian; swept area is modelled by a stated method; VMS is mandatory above a stated vessel length.
+
+`C-DZ-OLD-D1-FIELDS` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-FIELDS">Fields per HELCOM metadata record `0195e2c6-6b83-49ea-a0db-41f14a316c87`: `c-square`, `mid_lat`, `mid_lon`, `Year`, `quarter`, `geargroup`, `SurfSAR`, `SubsurfSAR`, `Fishing_ho` — [0.05](SOURCES.md#F-ada9e60431)° c-square, quarterly, 2016–2021, HELCOM area, covering every station east of [8](SOURCES.md#F-38d07f9d3c)°E. *Class 7 (model-as-datum):* SAR is not measured — pings are interpolated to tracks, fishing inferred from a speed rule, gear width imputed from vessel length by métier. *Class 6 (absent dimension):* VMS is mandatory only above [12](SOURCES.md#F-d827b9c07b) m, with [12](SOURCES.md#F-d827b9c07b)–[15](SOURCES.md#F-3efc385b53) m exemptions inside territorial waters, so the small inshore fleet is structurally absent — in the Belt Sea and Øresund that is the fleet.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-FIELDS "What this claim rests on")</sup>
+
+**Why it was retired:** The field names are not those the HELCOM record gives, the grid size and coverage were typed and neither record states them, and the method and the vessel-length rule had no source: the pinned records do not describe them, and the EU regulation could not be retrieved to pin.
+
+**Replaced by:** [`C-DZ-D1-META`](CLAIMS.md#C-DZ-D1-META), [`C-DZ-D1-SARMODEL`](CLAIMS.md#C-DZ-D1-SARMODEL), [`C-DZ-D1-FLEET`](CLAIMS.md#C-DZ-D1-FLEET) — each opens what it rests on.
+
+<a id="C-DZ-OLD-D1-OSPAR"></a>
+### An annual OSPAR effort product of a stated size covers a stated number of North Sea stations.
+
+`C-DZ-OLD-D1-OSPAR` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-OSPAR">Optional, larger. ICES/OSPAR annual layers 2009–2020, figshare `18601508`, [411.5](SOURCES.md#F-b9d4c70f0a) MB, `CC BY 4.0` — annual only, and only for the [23](SOURCES.md#F-6a0c0be20d) North Sea stations. Attended work.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-OSPAR "What this claim rests on")</sup>
+
+**Why it was retired:** The station count was made in the drafting session and is not held, and the figshare record describes the code that produces the layers, not their resolution.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-DZ-OLD-D1-OVERLAP"></a>
+### Stated counts of quarters, near-bed station-months and their share, of what OSPAR's layers would add, and of grid cells holding more than one station.
+
+`C-DZ-OLD-D1-OVERLAP` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-OVERLAP">Overlap, precisely. Effort is quarterly 2016–2021 against a monthly 1980–2026 record: [24](SOURCES.md#F-5bf623d6d1) quarters, [8,396](SOURCES.md#F-c8ab18bf66) near-bed station-months, [10.9](SOURCES.md#F-3bba83d78d)% of `oxy_bed`. OSPAR's 2009–2020 layers would raise that to [17,977](SOURCES.md#F-8f836834d6) station-months at [325](SOURCES.md#F-60ce281af9) stations, but at annual resolution, destroying the lag structure that makes the within-station arm a test rather than a correlation. The [0.05](SOURCES.md#F-692b9387ea)° cell is coarse against the station field — [262](SOURCES.md#F-657946f23f) of [791](SOURCES.md#F-073b1c81bb) cells hold more than one station — so effort is a shared regressor and errors must cluster on the c-square.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-OVERLAP "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were made in a one-off run whose output is not held.
+
+**Replaced by:** [`C-DZ-D1-OVERLAP`](CLAIMS.md#C-DZ-D1-OVERLAP), [`C-DZ-D1-CLUSTER`](CLAIMS.md#C-DZ-D1-CLUSTER) — each opens what it rests on.
+
+<a id="C-DZ-OLD-D1-POSITION"></a>
+### A stated share of CTD measurements lie at coordinates differing from their station's.
+
+`C-DZ-OLD-D1-POSITION` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-POSITION">Depth and true position. `data/raw/oda/ctd.csv.gz` ([448.7](SOURCES.md#F-8e3acf8bb6) MB gzip) carries `Dybde (m)` and `MålingX_UTM32`/`MalingY_UTM32` per measurement. With [56](SOURCES.md#F-3e5f43d67e)% of measurements at coordinates differing from their station's, the station→c-square join is itself an error source; one streamed pass places each cast in the c-square it was taken in and yields cast depth.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-POSITION "What this claim rests on")</sup>
+
+**Why it was retired:** The share was computed in a one-off run whose output is not held.
+
+**Replaced by:** [`C-DZ-D1-POSITION`](CLAIMS.md#C-DZ-D1-POSITION), [`C-DZ-D1-POSGAP`](CLAIMS.md#C-DZ-D1-POSGAP) — each opens what it rests on.
+
+<a id="C-DZ-OLD-D1-STATUS"></a>
+### The test was ready, the hypothesis register called trawling effort the most important missing layer, and the archive had a stated size.
+
+`C-DZ-OLD-D1-STATUS` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-STATUS">Status: testable. HYPOTHESES.md calls VMS/AIS effort "the single most important missing layer in this whole register". It is a [23.1](SOURCES.md#F-adeeb02657) MB `CC BY 4.0` zip. Nothing here has been run and nothing downloaded;</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-STATUS "What this claim rests on")</sup>
+
+**Why it was retired:** The quotation is not in the hypothesis register as it now stands, and nothing held says the test is ready; the archive's size was typed from the drafting session. The size and licence are now read from the pinned figshare record.
+
+**Replaced by:** [`C-DZ-D1-STATUS`](CLAIMS.md#C-DZ-D1-STATUS), [`C-DZ-D1-ZIP`](CLAIMS.md#C-DZ-D1-ZIP) — each opens what it rests on.
+
+<a id="C-DZ-OLD-D1-WEAK"></a>
+### A null is weakly informative over a stated number of observations, and trawling predates the record's start.
+
+`C-DZ-OLD-D1-WEAK` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-WEAK">A null is weakly informative: six years, [8,396](SOURCES.md#F-ba91b3a751) observations, quarterly effort and a modelled SAR missing the inshore fleet can all fail to see a real effect. And there is no pre-trawling baseline — trawling predates the 1980 record start, so this is contrast across places and quarters, never before-and-after.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-WEAK "What this claim rests on")</sup>
+
+**Why it was retired:** The observation count was made in an unheld run, and when trawling began in these waters had no source.
+
+**Replaced by:** [`C-DZ-D1-WEAK`](CLAIMS.md#C-DZ-D1-WEAK) — each opens what it rests on.
+
+<a id="C-DZ-OLD-D1-WINDOW"></a>
+### Stated counts of near-bed oxygen station-months and stations in the layers' years, of stations by quarters covered, of grid cells, and of fluorescence station-months sharing a month with oxygen.
+
+`C-DZ-OLD-D1-WINDOW` · retired 2026-09-11 from [hypodrafts/D1.md](hypodrafts/D1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-D1-WINDOW">Verified by reading the binary: `oxy_bed` [76,980](SOURCES.md#F-e0f3f125e9) station-months total, [8,396](SOURCES.md#F-7424096775) in 2016–2021 at [224](SOURCES.md#F-162bff5268) stations, of which [197](SOURCES.md#F-52494078fd) stations cover ≥[8](SOURCES.md#F-86cdb75929) distinct quarters, [180](SOURCES.md#F-8a03add2c6) ≥[12](SOURCES.md#F-3dc9795f24), [140](SOURCES.md#F-b496a5a080) ≥[16](SOURCES.md#F-aa39de85d6), [79](SOURCES.md#F-997614ff58) ≥[20](SOURCES.md#F-5e194c5aaa). Stations occupy [791](SOURCES.md#F-dea42ee2bc) distinct [0.05](SOURCES.md#F-40e526a637)° cells; [215](SOURCES.md#F-2a33ef6b1e) carry `oxy_bed` in-window, [175](SOURCES.md#F-14e1765978) in ≥[12](SOURCES.md#F-3dc9795f24) quarters. `fluo` [7,694](SOURCES.md#F-59f9a6b80c) in-window station-months, [7,655](SOURCES.md#F-5d598914a8) of them sharing a station-month with `oxy_bed` — the productivity covariate is nearly complete on the response.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-D1-WINDOW "What this claim rests on")</sup>
+
+**Why it was retired:** Counted in a one-off reading of the panel's binary whose output and code are not held.
+
+**Replaced by:** [`C-DZ-D1-OVERLAP`](CLAIMS.md#C-DZ-D1-OVERLAP) — each opens what it rests on.
+
+## hypodrafts/D7.md
+
+<a id="C-KD-OLD-D7-CENSOR"></a>
+### The bottom flag is set on a stated number of rows, most in shallow water, so a stated share of shallow readings are right-censored, against a small share in deep water.
+
+`C-KD-OLD-D7-CENSOR` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-CENSOR">informative censoring, on the treatment arm.* `SigtTilBund` is True for [9,998](SOURCES.md#F-4cbd54ea43) rows — [9,815](SOURCES.md#F-a3ce36c207) at ≤[10](SOURCES.md#F-99a34166b8) m, so [21.4](SOURCES.md#F-8624d7d2e3)% of shallow readings are right-censored at the bed, against [46](SOURCES.md#F-f6102bc31a) of [20,243](SOURCES.md#F-93c6d7fb0e) ([0.23](SOURCES.md#F-b131446511)%) at >[20](SOURCES.md#F-24ce672a21) m. The disc hits bottom exactly when the water</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-CENSOR "What this claim rests on")</sup>
+
+**Why it was retired:** Counted over station-dates in a one-off run whose output is not held. The held counts, of the flag over every record and of the two depths compared per band, differ from these; the page now gives those, each with its rule.
+
+**Replaced by:** [`C-KD-D7-CENSOR`](CLAIMS.md#C-KD-D7-CENSOR) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-EFFN"></a>
+### The effective sample is events, and the naive count is a clean shallow subset of a stated size.
+
+`C-KD-OLD-D7-EFFN` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-EFFN">Effective n is events, not visits. One synoptic system covers the domain, so every station sampled in its wake observes the same storm. Report distinct exceedance events and stations per event — never the</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-EFFN "What this claim rests on")</sup>
+
+**Why it was retired:** The subset was counted in an unheld run.
+
+**Replaced by:** [`C-KD-D7-EFFN`](CLAIMS.md#C-KD-D7-EFFN) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-LYS"></a>
+### The light file of a stated size holds stated valid rows, station-dates and stations, and a PAR photometer is a production path separate from the eye and the sonde.
+
+`C-KD-OLD-D7-LYS` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-LYS">Second response. `lys.csv.gz` ([22.5](SOURCES.md#F-da05a98208) MB gz): `LyssvaekkelsesKoefficient` (K_d) — [2,370,091](SOURCES.md#F-afa4d8bb06) valid rows, [62,848](SOURCES.md#F-ba13e1eea3) station-dates, [566](SOURCES.md#F-45b9af4443) stations, 1980–2026, with depth and coordinates per measurement. A PAR photometer is neither the eye nor the sonde: a separate production path</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-LYS "What this claim rests on")</sup>
+
+**Why it was retired:** The size and station-dates were counted in an unheld run. Whether the light profiles come from an instrument separate from the CTD cast is not established from anything held, and this project's list of independent paths does not count them.
+
+**Replaced by:** [`C-KD-D7-KD`](CLAIMS.md#C-KD-D7-KD), [`C-KD-D7-KDPATH`](CLAIMS.md#C-KD-D7-KDPATH) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-MARINE"></a>
+### Marine files for a stated number of Danish sites, hourly and complete, with a stated number of records each, are held and unused.
+
+`C-KD-OLD-D7-MARINE` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-MARINE">Also held and unused: `data/raw/marine/marine_*.json` — [9](SOURCES.md#F-0375db04e3) Danish sites incl. Drogden, Øresund and Køge Bugt, hourly `wave_height`, current and SST, [40,896](SOURCES.md#F-76b1dcc729) records each, 2022-01-01…2026-08-31, no gaps, covering exactly the dense turbidity era.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-MARINE "What this claim rests on")</sup>
+
+**Why it was retired:** They are used: currents.py fetches and reads them for CURRENTS.md. The site count and completeness are not recorded in any held output.
+
+**Replaced by:** [`C-KD-D7-MARINE`](CLAIMS.md#C-KD-D7-MARINE) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-MONTHS"></a>
+### Visits by month differ by a stated ratio between August and December, because vessels do not sail in a gale.
+
+`C-KD-OLD-D7-MONTHS` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-MONTHS">Visits by month: Aug [12,446](SOURCES.md#F-241655869c) vs Dec [4,618](SOURCES.md#F-3b81059779), [2.7](SOURCES.md#F-d2eb4520a4):1 — vessels do not sail in a gale.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-MONTHS "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were made in an unheld run, and the reason given for them had no source.
+
+**Replaced by:** [`C-KD-D7-TAIL`](CLAIMS.md#C-KD-D7-TAIL) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-PARSE"></a>
+### A stated number of rows carry numbers where booleans belong, and the light file has a latitude in a date field.
+
+`C-KD-OLD-D7-PARSE` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-PARSE">parse hazard.* ~[36](SOURCES.md#F-76e9debf2f) rows carry numbers where booleans belong (`1,1`, `458865`); `lys.csv.gz` has a latitude in a date field. Strict CSV parsing; add to `scripts/formats.py`.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-PARSE "What this claim rests on")</sup>
+
+**Why it was retired:** Neither the count nor the case is recorded in any held output, and formats.py does not list them.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KD-OLD-D7-PROC"></a>
+### Fetch is to be ray-cast at a stated angular step for a stated number of shallow stations.
+
+`C-KD-OLD-D7-PROC` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-PROC">Ray-cast fetch at [5](SOURCES.md#F-d58b39e488)° from the held OSM coastline for the [498](SOURCES.md#F-d0eacbd2d3) shallow stations and the >[20](SOURCES.md#F-a7960c91fa) m controls; run</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-PROC "What this claim rests on")</sup>
+
+**Why it was retired:** The step and the station count have no held source.
+
+**Replaced by:** [`C-KD-D7-PROC`](CLAIMS.md#C-KD-D7-PROC) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-RAYCAST"></a>
+### The wave model casts rays to the coastline at a stated angular step to find the fetch.
+
+`C-KD-OLD-D7-RAYCAST` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-RAYCAST">ray-cast fetch → Young & Verhagen 1996 → orbital velocity → Swart friction.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-RAYCAST "What this claim rests on")</sup>
+
+**Why it was retired:** waves.py reads the fetch from a table that no script in the repository produces; that the table was ray-cast to the coastline is said only in the script's docstring.
+
+**Replaced by:** [`C-KD-D7-PREDICTOR`](CLAIMS.md#C-KD-D7-PREDICTOR) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-SCOPE"></a>
+### The water-telescope flag is true, false and blank on stated counts, a viewing scope reads deeper, and a clean shallow subset has a stated size.
+
+`C-KD-OLD-D7-SCOPE` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-SCOPE">`SigtDybdeMedVandkikkert` True [5,945](SOURCES.md#F-769105a0df), False [75,199](SOURCES.md#F-f8dfa37b0b), blank [15,549](SOURCES.md#F-c72e1d67d6) — a viewing scope reads deeper, so one column holds two instruments and [16](SOURCES.md#F-f9ff96d976)% do not say which. Clean shallow subset</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-SCOPE "What this claim rests on")</sup>
+
+**Why it was retired:** The false and blank counts and the subset were counted in an unheld run, and the held count of the true flag differs from the one given; that a scope reads deeper was asserted without a source.
+
+**Replaced by:** [`C-KD-D7-SCOPE`](CLAIMS.md#C-KD-D7-SCOPE) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-SECCHI"></a>
+### The Secchi file has a stated size, station-dates with both depths at stated stations over stated dates and bands, a stated number join to positions over a stated extent, and depths are read to a stated precision.
+
+`C-KD-OLD-D7-SECCHI` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-SECCHI">Response — Secchi depth. `data/raw/oda/maaledybde.csv.gz` ([1.9](SOURCES.md#F-d2874f2535) MB gz), scanned in full: [151,203](SOURCES.md#F-497014c028) rows; [96,709](SOURCES.md#F-be924c2c1f) station-dates carrying both `SigtDybde_m` and `BundDybde_m`, at [949](SOURCES.md#F-ebb5088c66) stations, 1980-03-06 to 2026-09-07. By bottom depth: ≤[5](SOURCES.md#F-cd165995ae) m [24,394](SOURCES.md#F-45643f21ec) · [5](SOURCES.md#F-cd165995ae)–[10](SOURCES.md#F-7e2f7801e5) m [21,572](SOURCES.md#F-4f0394874e) · [10](SOURCES.md#F-7e2f7801e5)–[20](SOURCES.md#F-17aa7d87e6) m [30,500](SOURCES.md#F-72588387f4) · >[20](SOURCES.md#F-17aa7d87e6) m [20,243](SOURCES.md#F-2066f27ef5). [943](SOURCES.md#F-571c776b95) join to a lon/lat in `stations_series.json`, [498](SOURCES.md#F-424cc43f5c) of the [502](SOURCES.md#F-fec2d5d6ff) shallow; extent [8.09](SOURCES.md#F-323e067a22)–[14.90](SOURCES.md#F-cb71f7f8c1)°E, [54.52](SOURCES.md#F-8b08736629)–[57.63](SOURCES.md#F-0a818e06d8)°N. *Class 2:* read to [0.1](SOURCES.md#F-26f77bd08c) m, often</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-SECCHI "What this claim rests on")</sup>
+
+**Why it was retired:** The file size, station-dates, stations, join, extent and precision were counted in a one-off scan whose output is not held. The records and the depth bands are now read from drafts_b_counts.py and light.py, whose counting rules differ from the scan's.
+
+**Replaced by:** [`C-KD-D7-SECCHI`](CLAIMS.md#C-KD-D7-SECCHI) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-SEDIMENT"></a>
+### The oxygen outcomes need the resuspended material's chemistry, which fetch_oda.py fetches with a sediment topic.
+
+`C-KD-OLD-D7-SEDIMENT` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-SEDIMENT">oxygen outcomes need the resuspended material's chemistry (`fetch_oda.py sediment`)</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-SEDIMENT "What this claim rests on")</sup>
+
+**Why it was retired:** fetch_oda.py's TOPICS dict has no sediment topic; its docstring names one, and the code wins.
+
+**Replaced by:** [`C-KD-D7-NOTOXY`](CLAIMS.md#C-KD-D7-NOTOXY) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-SOURCES"></a>
+### The table of sources beyond those held: DMI's sea-level and wind series with resolution, span, licence and key policy; the Copernicus wave hindcast with grid, span and west edge; the ocean-colour product with suspended matter and turbidity; a measured wave archive; and the water chemistry as a blocking fetch.
+
+`C-KD-OLD-D7-SOURCES` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-SOURCES">sea level (`sealev_dvr`, `sealev_ln`), water temp · [10](SOURCES.md#F-67e3567f74) min since ~2001 · 1889–, DMI + Kystdirektoratet gauges · `CC BY 4.0`, no key since 2026-03-26 | yes — a float in a stilling well. Wind setup in a shallow bay is *observed* storm forcing, independent of ERA5 and of any wave model: class 1 / [2](SOURCES.md#F-e83e675626), the anchor τ lacks | | DMI metObs, same API | wind speed/direction · [10](SOURCES.md#F-67e3567f74) min · 1953– · `CC BY 4.0`, no key | yes — anemometers, the un-reanalysed wind | | CMEMS `BALTICSEA_MULTIYEAR_WAV_003_015` | Hs, mean period, direction, wind-sea/swell, Stokes drift, wave momentum flux · hourly, [2](SOURCES.md#F-e83e675626) km · 1980-01-01→2026-06-01, [53.01](SOURCES.md#F-93dc2f8062)–[65.91](SOURCES.md#F-10924f2cb3)°N, [9.01](SOURCES.md#F-94aa33ac20)–[30.21](SOURCES.md#F-fb16cd0733)°E · Copernicus Marine | no — WAM cy4.7 on ERA5: same atmosphere as the held wind, only the wave step differs; its west edge drops stations from [8.09](SOURCES.md#F-2e6e5055ed) to [9.01](SOURCES.md#F-94aa33ac20)°E. Class 7 | | CMEMS `OCEANCOLOUR_BAL_BGC_L3_MY_009_133` (EMODnet's ERDDAP `TSM_BALTICSEA` is the same idea at [300](SOURCES.md#F-e4f03e0634) m but monthly, so it aliases storms) | SPM, turbidity, KD490, RRS · daily `L3`, ~[300](SOURCES.md#F-e4f03e0634) m–[1](SOURCES.md#F-f9c85364e3) km · 1997– · Copernicus Marine | yes — satellite radiometry, daily, so it resolves a storm tail; cloud in an October gale is the limit | | Kystdirektoratet bølgemålinger (via mst.dk) | measured Hs/Tp · CSV archive, QC'd from 2010 · Jutland west-coast buoys and harbours; no study-region station on the reachable pages | the only measured wave record — but not, so far as documented, inside the Belts or Øresund where `D7` lives | | ODA `Vandkemi`, `scripts/fetch_oda.py kemi` | lab suspended solids / turbidity (`DS 290`), bottle samples · per visit · NOVANA · as ctd | yes — bottle to laboratory gravimetry, not a sonde; also the fetch PLAN.md names as blocking</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-SOURCES "What this claim rests on")</sup>
+
+**Why it was retired:** The rows were written from a session's survey and none was pinned. The Copernicus records, pinned now, state the wave hindcast's grid two ways, in its description and in a metadata field, and the row took one of them; they do not name suspended matter for the ocean-colour product. The DMI entry rests on the source register, and the water chemistry is held now, so it no longer blocks.
+
+**Replaced by:** [`C-KD-D7-SRC-DMI`](CLAIMS.md#C-KD-D7-SRC-DMI), [`C-KD-D7-SRC-WAV`](CLAIMS.md#C-KD-D7-SRC-WAV), [`C-KD-D7-SRC-OC`](CLAIMS.md#C-KD-D7-SRC-OC), [`C-KD-D7-SRC-SS`](CLAIMS.md#C-KD-D7-SRC-SS) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-STORM"></a>
+### A storm lasts a stated range of hours, and the wave model puts a stated share of all hours above the dead-bed threshold at a stated depth.
+
+`C-KD-OLD-D7-STORM` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-STORM">A storm is [6](SOURCES.md#F-880dfb3374)–[36](SOURCES.md#F-8b5ceb9545) hours; the wave model already here puts [61](SOURCES.md#F-b671665061)% of *all* hours at [3](SOURCES.md#F-a9989582f0) m above the dead-bed threshold,</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-STORM "What this claim rests on")</sup>
+
+**Why it was retired:** The storm duration had no source. The share is now read from waves.json as the page is built.
+
+**Replaced by:** [`C-KD-D7-WAVESHARE`](CLAIMS.md#C-KD-D7-WAVESHARE) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-SUN"></a>
+### Secchi depth depends on sun angle, as PLAN.md's worked example shows.
+
+`C-KD-OLD-D7-SUN` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-SUN">Secchi depends on sun angle — PLAN.md's worked example.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-SUN "What this claim rests on")</sup>
+
+**Why it was retired:** No source was given for the dependence, and PLAN.md's worked example, as it now stands, concerns microbial community composition.
+
+**Replaced by:** [`C-KD-D7-NOCLOCK`](CLAIMS.md#C-KD-D7-NOCLOCK) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-TURB"></a>
+### CTD turbidity spans stated dates at stated stations and mean depth, with a gap of years, stated row counts either side and mostly one sonde type; FDOM at stated stations.
+
+`C-KD-OLD-D7-TURB` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-TURB">Third response — turbidity is in the archive, and it is large. Full scan of `ctd.csv.gz`: `Turbiditet` [1,076,915](SOURCES.md#F-0bbe15e09a) measurements in FTU, 1994-01-10 to 2026-09-07, [252](SOURCES.md#F-c890ca5fa4) stations, mean depth [13.5](SOURCES.md#F-c1ed0e840e) m, with depth and coordinates per measurement; `FDOM` [890,921](SOURCES.md#F-50461c78dc) ppb, 2021-04-19 on, [211](SOURCES.md#F-8da908b4f5) stations. *Class 4, a regime break:* nothing between 2007 and 2021, ~[195](SOURCES.md#F-4c81a554b2)k rows before 2008, [880](SOURCES.md#F-55012076bc)k in 2022–2026 (mostly `MSE - Marin sonde II/III`). And not a separate production path — same cast, vessel, date and often sonde as the oxygen channel. A dense modern arm, not a fourth path.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-TURB "What this claim rests on")</sup>
+
+**Why it was retired:** Only the row counts are held, by enums.py, and the first and last FDOM years, by hypodraft_ctd.py; the span, stations, depth, gap and era counts were counted in an unheld run.
+
+**Replaced by:** [`C-KD-D7-TURB`](CLAIMS.md#C-KD-D7-TURB), [`C-KD-D7-TURBPATH`](CLAIMS.md#C-KD-D7-TURBPATH) — each opens what it rests on.
+
+<a id="C-KD-OLD-D7-UNUSED"></a>
+### The dated raw record holds transparency series that nobody in this project has used.
+
+`C-KD-OLD-D7-UNUSED` · retired 2026-09-11 from [hypodrafts/D7.md](hypodrafts/D7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-D7-UNUSED">The dated raw record can, and it holds transparency series nobody here has used.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-D7-UNUSED "What this claim rests on")</sup>
+
+**Why it was retired:** They are used: light.py reads the Secchi and light-attenuation extracts. What has not been done is setting any of them against bed shear.
+
+**Replaced by:** [`C-KD-D7-TRANSP`](CLAIMS.md#C-KD-D7-TRANSP) — each opens what it rests on.
+
+## hypodrafts/F3.md
+
+<a id="C-AF-OLD-F3-CLUSTER"></a>
+### Eelgrass sites are clustered and depth-constrained, and a contiguity-constrained null on the project's stations agrees at a stated adjusted Rand index rather than zero.
+
+`C-AF-OLD-F3-CLUSTER` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-CLUSTER">Eelgrass sites are clustered and depth-constrained, so a free permutation is the wrong null: on this project's own stations a contiguity-constrained null already agrees at ARI [0.337](SOURCES.md#F-6a294d2dc3), not [0](SOURCES.md#F-254d18b39f) (`docs/data/areas/partition_contiguous.json`).</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-CLUSTER "What this claim rests on")</sup>
+
+**Why it was retired:** No data on eelgrass sites is held, so their clustering is not established here; and the null's level is a figure from random partitions, a simulated number, which stands only on method pages.
+
+**Replaced by:** [`C-AF-F3-CONTIG`](CLAIMS.md#C-AF-F3-CONTIG) — each opens what it rests on.
+
+<a id="C-AF-OLD-F3-FETCH"></a>
+### Three topic entries are all the fetch needs; without a period ODA returns a stated part of the stations; the fetch would be tens of MB in three runs, inside the machine's budget.
+
+`C-AF-OLD-F3-FETCH` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-FETCH">needs three `TOPICS` entries (`{"emne": "Emne_3_182"}` etc.); nothing else changes. Run with explicit `--from 1970-01-01 --to 2026-12-31 --years 5` — omitting the period silently returns only the currently active network ([345](SOURCES.md#F-b313eedc34) of [1,990](SOURCES.md#F-cbac70f6ce) stations), and the script now raises rather than allow it. Expected tens of MB gzipped, three sequential runs, well inside the VM budget. I did not run it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-FETCH "What this claim rests on")</sup>
+
+**Why it was retired:** Whether three entries suffice is untested, since no vegetation fetch has been run; the station counts sit in the source register only as text a page cannot read live; and the expected size was an approximate quantity in words.
+
+**Replaced by:** [`C-AF-F3-FETCH`](CLAIMS.md#C-AF-F3-FETCH), [`C-AF-F3-PERIOD`](CLAIMS.md#C-AF-F3-PERIOD) — each opens what it rests on.
+
+<a id="C-AF-OLD-F3-JOIN"></a>
+### No transect shares a station id with a light-cast station; the distances from the transects to the nearest light-cast station have stated percentiles, and a join within a stated radius keeps a stated share of transects.
+
+`C-AF-OLD-F3-JOIN` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-JOIN">The join is spatial, not by id. Transect ↔ lys station-id overlap is [0](SOURCES.md#F-2da24e55dc). Distance from each of the [2,329](SOURCES.md#F-c4c6987be1) transects to the nearest light-cast station: p10 [0.82](SOURCES.md#F-75b7f97b44) km, median [2.42](SOURCES.md#F-9103565f59) km, p90 [7.51](SOURCES.md#F-c49e72ff13) km — [941](SOURCES.md#F-211e43a8c8) within [2](SOURCES.md#F-7530763ca0) km, [1,823](SOURCES.md#F-f390df099c) within [5](SOURCES.md#F-00d2a7920b) km. So a [2](SOURCES.md#F-7530763ca0) km-radius join retains about [40](SOURCES.md#F-de14da85f0)% of transects; below that, CMEMS pixels.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-JOIN "What this claim rests on")</sup>
+
+**Why it was retired:** The overlap and the distances were computed in a drafting session whose output and code are not held.
+
+**Replaced by:** [`C-AF-F3-IDS`](CLAIMS.md#C-AF-F3-IDS), [`C-AF-F3-JOIN`](CLAIMS.md#C-AF-F3-JOIN) — each opens what it rests on.
+
+<a id="C-AF-OLD-F3-MAALOFFER"></a>
+### The portal offered a stated number of Secchi stations, and the extract carries bottom depth and the disc-at-the-bed flag, with Secchi censored at the bed in shallow water.
+
+`C-AF-OLD-F3-MAALOFFER` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-MAALOFFER">`data/raw/oda/maaledybde.csv.gz` | [1,429](SOURCES.md#F-6e4f626918) stations offered; carries `BundDybde_m`, `SigtTilBund` | [2](SOURCES.md#F-5a89fa941f)/[1](SOURCES.md#F-de742f5e60) — Secchi censored at the bed in shallow water</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-MAALOFFER "What this claim rests on")</sup>
+
+**Why it was retired:** The count of stations the portal offered was read in a drafting session and is not held, and the error class given is a label from a taxonomy the site does not define.
+
+**Replaced by:** [`C-AF-F3-MAAL`](CLAIMS.md#C-AF-F3-MAAL) — each opens what it rests on.
+
+<a id="C-AF-OLD-F3-NAMESPACE"></a>
+### The station register shares a stated small number of station ids with each of the light, Secchi and CTD station lists.
+
+`C-AF-OLD-F3-NAMESPACE` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-NAMESPACE">this register shares only [19](SOURCES.md#F-f0f19e3a01) / [42](SOURCES.md#F-58221dee02) / [35](SOURCES.md#F-cf885d1f32) station ids with the lys / maaledybde / ctd criterion lists. Namespaces differ.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-NAMESPACE "What this claim rests on")</sup>
+
+**Why it was retired:** The overlaps were counted in a drafting session that stored neither its code nor its output. The overlap this project does store is between the register and the monthly series' stations.
+
+**Replaced by:** [`C-AF-F3-IDS`](CLAIMS.md#C-AF-F3-IDS) — each opens what it rests on.
+
+<a id="C-AF-OLD-F3-REQ"></a>
+### The eelgrass light requirement used in the block test is a stated range of shares of surface light, inherited from the physiology DCE derive their Kd target from, with a sensitivity range around it.
+
+`C-AF-OLD-F3-REQ` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-REQ">What stays circular and cannot be removed: the [11](SOURCES.md#F-6a244b63c9)–[14](SOURCES.md#F-b9b48492e6)% requirement used in `C2` is inherited physiology — the same physiology from which DCE derive the Kd target. I am not using their fitted target, but if the requirement is wrong the adequacy call moves with it. Mitigation: report `C2` across [8](SOURCES.md#F-a9e554fff0)–[20](SOURCES.md#F-fe0fad2acb)% rather than at one threshold.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-REQ "What this claim rests on")</sup>
+
+**Why it was retired:** No source for the requirement's values, or for DCE deriving their Kd target from them, could be found or is pinned; light.py's own construction records the same gap. The page now gives the values as this project's parameters, with that gap stated.
+
+**Replaced by:** [`C-AF-F3-STAYS`](CLAIMS.md#C-AF-F3-STAYS) — each opens what it rests on.
+
+<a id="C-AF-OLD-F3-TRANSPSIZE"></a>
+### The CMEMS transparency files number a stated count, of a stated size each and in total.
+
+`C-AF-OLD-F3-TRANSPSIZE` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-TRANSPSIZE">`data/raw/cmems/grid/transp__{inner,arkona}__YYYY.nc` | [87](SOURCES.md#F-57f97dfdc6) files, ~[107](SOURCES.md#F-326b3c2fd1) MB each, [24](SOURCES.md#F-81bc01e475) GB total | stream one year at a time</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-TRANSPSIZE "What this claim rests on")</sup>
+
+**Why it was retired:** The file count and the sizes were read in a drafting session and no script stores them; the directory holds a different number of such files.
+
+**Replaced by:** [`C-AF-F3-TRANSP`](CLAIMS.md#C-AF-F3-TRANSP) — each opens what it rests on.
+
+<a id="C-AF-OLD-F3-VEGCOUNT"></a>
+### ODA's vegetation topics list stated numbers of stations for the whole period, taken from the project's record of an authenticated enumeration and not re-checked.
+
+`C-AF-OLD-F3-VEGCOUNT` · retired 2026-09-11 from [hypodrafts/F3.md](hypodrafts/F3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-AF-OLD-F3-VEGCOUNT">ODA vegetation, not in repo: `Emne_3_182` Ålegræs plante, `Emne_3_181` makroalge, `Emne_3_180` bundfauna | [1,990](SOURCES.md#F-efbd574a67) / [810](SOURCES.md#F-1bffca828b) / [1,091](SOURCES.md#F-bad45427ad) stations for 1970–2026 (repo record, `data/manual/data_sources_2.json`, authenticated enumeration 2026-09-08 — not re-verified by me) | `7` if the indicator's fitted depth limit is used instead of the per-transect observed one. Use the ODA field.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AF-OLD-F3-VEGCOUNT "What this claim rests on")</sup>
+
+**Why it was retired:** The station counts sit in the source register only as text, which no page can read live, and the row itself said they were not re-checked. The page now says what the register records without them.
+
+**Replaced by:** [`C-AF-F3-VEG`](CLAIMS.md#C-AF-F3-VEG), [`C-AF-F3-FITTED`](CLAIMS.md#C-AF-F3-FITTED) — each opens what it rests on.
+
+## hypodrafts/G1.md
+
+<a id="C-GI-OLD-G1-CSAT"></a>
+### The [G1](hypodrafts/G1.md "Warming") solubility term is Weiss's equation with a stated conversion constant, exact and external.
+
+`C-GI-OLD-G1-CSAT` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-CSAT">Per station-month, `C_sat` = Weiss (1970) from near-bed T and S, mL/L × [1.42905](SOURCES.md#F-9a08af1d5e): > `O_bed = C_sat(T_bed, S_bed) − D`, so `dO/dt ≡ dC_sat/dt − dD/dt`. `C_sat` is exact and external, so the first term is computed, not estimated. The deficit `D` is solubility-neutral by construction and carries the rest: consumption, failed ventilation, advection.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-CSAT "What this claim rests on")</sup>
+
+**Why it was retired:** Weiss (1970) was cited, and its conversion constant printed, without the paper being read or pinned here; and a solubility equation is an empirical fit, so calling it exact claimed more than can be shown.
+
+**Replaced by:** [`C-GI-G1-CSAT`](CLAIMS.md#C-GI-G1-CSAT), [`C-GI-G1-DEFICIT`](CLAIMS.md#C-GI-G1-DEFICIT) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-DATA"></a>
+### The [G1](hypodrafts/G1.md "Warming") draft's joined, filtered and trend-panel counts, and the fall in rows per half-decade.
+
+`C-GI-OLD-G1-DATA` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-DATA">`docs/data/areas/stations_series.{json,bin}` — [679,422](SOURCES.md#F-6af5a409c0) station-months, [1,415](SOURCES.md#F-f42ee66dc2) stations, months [0](SOURCES.md#F-89c944a1b0)–[560](SOURCES.md#F-c9b991e3b0) (Jan 1980 – Sep 2026). Five-way join `oxy_bed ∩ temp_bed ∩ sal_bed ∩ temp_surf ∩ sal_surf`: [76,309](SOURCES.md#F-c418514cf5); after plausibility ([0](SOURCES.md#F-89c944a1b0) ≤ O ≤ [20](SOURCES.md#F-522bb2a1ae), −[2](SOURCES.md#F-973885d168) ≤ T ≤ [30](SOURCES.md#F-c70dae19c5), [0](SOURCES.md#F-89c944a1b0) ≤ S ≤ [40](SOURCES.md#F-e728745fef) at both depths) [76,264](SOURCES.md#F-492d04d86b) rows, [1,314](SOURCES.md#F-1d11abc428) stations, 1980–2026. Trend panel = cells (station × calendar month) with ≥ [8](SOURCES.md#F-740b583664) distinct years and ≥ [15](SOURCES.md#F-171cd76365)-year span: [2,429](SOURCES.md#F-84b07fcd62) cells · [54,211](SOURCES.md#F-71f6519abe) rows · [310](SOURCES.md#F-1d644afb7a) stations. Balanced variant (cell in both 1990–1999 and 2015–2026): [1,282](SOURCES.md#F-2cb727df89) cells · [35,215](SOURCES.md#F-35ee3e06a2) rows. Rows per half-decade fall [14,491](SOURCES.md#F-62c546156c) (1990–1994) → [6,842](SOURCES.md#F-a26ffe9b42) (2020–2024): the network thins, which is the composition problem.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-DATA "What this claim rests on")</sup>
+
+**Why it was retired:** The join, filter and panel counts, and the rows per half-decade, were made in a drafting session whose output and code are not held, and no script here computes them. The page now gives the panel's counts per variable from the data, a bound on the join, and the panel's rules without sizes.
+
+**Replaced by:** [`C-GI-G1-DATA`](CLAIMS.md#C-GI-G1-DATA), [`C-GI-G1-JOIN`](CLAIMS.md#C-GI-G1-JOIN), [`C-GI-G1-PANELRULE`](CLAIMS.md#C-GI-G1-PANELRULE) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-ERRORS"></a>
+### The [G1](hypodrafts/G1.md "Warming") draft's error classes: value ranges and removed rows, one-decimal temperature and its effect on solubility, cells without saturation, no time-of-day column anywhere, and the station as unit.
+
+`C-GI-OLD-G1-ERRORS` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-ERRORS">Error classes. class 1, value — `oxy_bed` −[9.93](SOURCES.md#F-ceb311e9eb) to [281.6](SOURCES.md#F-099eaeec8d) mg/l, `temp_surf` to [80.3](SOURCES.md#F-2e70c15028) °C; [45](SOURCES.md#F-9ab39eaa78) rows removed. class 2, quantisation — one-decimal T; ±[0.05](SOURCES.md#F-02bb897b65) °C is ±[0.015](SOURCES.md#F-242a83bd10) mg/l in `C_sat`, which matters for a single value, not a slope. class 3, aggregation — monthly medians, so `D` may pair T, S and O from different casts. class 5, unfilled — [12,736](SOURCES.md#F-58df1e375b) `oxy_bed` cells carry no archived saturation. class 6, no time-of-day column anywhere (`ctd.csv.gz` has `Dato` as `19701013`); if sampling hour drifted over [47](SOURCES.md#F-4d048ce1c9) years, the diel oxygen cycle drifted with it, uncorrectably — the one class that caps this test rather than bounds it. class 7, avoided: the unit is a station, and no water body is needed, every estimate being within-cell.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-ERRORS "What this claim rests on")</sup>
+
+**Why it was retired:** The value ranges, the removed rows, the rounding figures and the count of cells without saturation come from a session whose output is not held. Most temperature rows of the CTD extract are written with more than one decimal, so it is not a one-decimal series. And the claim of no time-of-day column anywhere is wrong: the water-chemistry extract carries clock values.
+
+**Replaced by:** [`C-GI-G1-VALUES`](CLAIMS.md#C-GI-G1-VALUES), [`C-GI-G1-DECIMALS`](CLAIMS.md#C-GI-G1-DECIMALS), [`C-GI-G1-CLOCK`](CLAIMS.md#C-GI-G1-CLOCK), [`C-GI-G1-UNIT`](CLAIMS.md#C-GI-G1-UNIT), [`C-GI-G1-SAT`](CLAIMS.md#C-GI-G1-SAT), [`C-GI-G1-BEDDEF`](CLAIMS.md#C-GI-G1-BEDDEF) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-NULL"></a>
+### Measured on the [G1](hypodrafts/G1.md "Warming") panel: residual autocorrelation indistinguishable from the detrending bias, a stated variance inflation across years, and a naive standard error understating by a stated factor.
+
+`C-GI-OLD-G1-NULL` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-NULL">Under it I measured the dependence the textbook SE ignores: - Autocorrelation of within-cell detrended `D` residuals at annual spacing: first-lag mean −[0.048](SOURCES.md#F-76c9fc4af9), second-lag −[0.057](SOURCES.md#F-747a891ddd) over [2,312](SOURCES.md#F-e99b4cda2d) cells — indistinguishable from detrending's own −[1](SOURCES.md#F-b08c49e90d)/(n−[1](SOURCES.md#F-b08c49e90d)) ≈ −[0.05](SOURCES.md#F-a502c4e414) bias. Temporal AR is not the problem here. - The dependence is *cross-sectional*: SD of the year-mean residual [0.2513](SOURCES.md#F-19f7993168) where independence predicts [0.0471](SOURCES.md#F-9494c72daa) — variance inflation [28.4](SOURCES.md#F-670657b3d7). All cells in a year sample the same weather. So the null is a year-block procedure: resample the [47](SOURCES.md#F-5c859bbae2) calendar years with replacement, and separately permute year labels attached to whole years; refit, [2,000](SOURCES.md#F-51cd2a6e3e) draws. That keeps every station effect, the seasonal cycle and the within-year common shock, destroying only the year→outcome ordering. Consequence: the naive SE on `dD/dt` ([0.00061](SOURCES.md#F-394fac90ec) mg/l/yr) understates by ≈ √[28.4](SOURCES.md#F-670657b3d7) ≈ [5.3](SOURCES.md#F-436533dcba)×, to ≈ [0.0032](SOURCES.md#F-aca5310cce). A quoted null would have been wrong by that factor.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-NULL "What this claim rests on")</sup>
+
+**Why it was retired:** The autocorrelations, the variance inflation and the standard errors were measured in a drafting session whose output and code are not held, and no script here computes them. The design of the null is kept without the figures.
+
+**Replaced by:** [`C-GI-G1-NULLDESIGN`](CLAIMS.md#C-GI-G1-NULLDESIGN), [`C-GI-G1-DEPEND`](CLAIMS.md#C-GI-G1-DEPEND) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-PHENO"></a>
+### Summer-peaked and year-round stations differ in May-October oxygen by a stated amount and effect size, their share moved between two periods, and the split reproduces a figure on file.
+
+`C-GI-OLD-G1-PHENO` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-PHENO">The phenology mix moves. On my own definition (≥ [8](SOURCES.md#F-582de2482b) `oxy_bed` months; ≥ [65](SOURCES.md#F-25152070c5) % in May–Oct → "summer-peaked"): [282](SOURCES.md#F-eda8245883) summer-peaked vs [480](SOURCES.md#F-bd75e086c4) year-round, the summer-peaked running [1.25](SOURCES.md#F-89e7fdfd25) mg/l lower in May–Oct ([6.31](SOURCES.md#F-bb5ab6eb56) vs [7.56](SOURCES.md#F-b6478b8ebf), d [0.50](SOURCES.md#F-d6fb219ea4), n = [12,390](SOURCES.md#F-65087f9cf4) / [32,924](SOURCES.md#F-ec6e615d2a)), their share of station-months moving [29.5](SOURCES.md#F-23616e9239) % (2010–2014) → [16.4](SOURCES.md#F-5818d50d3f) % (2015–2019). Direction and size reproduce the figure on file ([293](SOURCES.md#F-5ace97c1bd) / [481](SOURCES.md#F-56cb2824ed), [1.57](SOURCES.md#F-5c649a514a) mg/l, d [0.66](SOURCES.md#F-ce912bf156), [32](SOURCES.md#F-b84531e312)→[12](SOURCES.md#F-c83cdd9a41) %); the split is threshold-dependent, which is itself the warning. Three defences, all required: (i) within-cell FE, so a station only competes with itself; (ii) the balanced panel, so entry and exit cannot tilt the slope; (iii) phenology × year.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-PHENO "What this claim rests on")</sup>
+
+**Why it was retired:** The split rests on a station category no script here defines, which this project's register of its own constructions lists as never defined; its counts and effect sizes, and the figure on file they were said to reproduce, come from sessions whose output is not held.
+
+**Replaced by:** [`C-GI-NOLABEL`](CLAIMS.md#C-GI-NOLABEL), [`C-GI-G1-DEFENCES`](CLAIMS.md#C-GI-G1-DEFENCES) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-PILOT"></a>
+### The [G1](hypodrafts/G1.md "Warming") pilot: per decade, bed temperature up, solubility down by more than the observed oxygen decline, the deficit narrowing, and no strengthening of thermal stratification.
+
+`C-GI-OLD-G1-PILOT` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-PILOT">### What the pilot already shows (no null attached — not yet a result) On the [2,429](SOURCES.md#F-d78dd2009d)-cell panel, per decade: `T_bed` +[0.42](SOURCES.md#F-b269835462) °C, `C_sat` −[0.099](SOURCES.md#F-7ee28a9e5c) mg/l, `O_bed` −[0.046](SOURCES.md#F-9a3c51c473) mg/l, `D` −[0.053](SOURCES.md#F-90af654aea) mg/l. The solubility term exceeds the whole observed decline; the deficit appears to *narrow*. But `dD/dt` sits ~[1.6](SOURCES.md#F-c2f8954e12) block-SE from zero and moves to −[0.031](SOURCES.md#F-2828d58814) (balanced), −[0.088](SOURCES.md#F-e7d4a97cc9) (Jun–Sep), −[0.040](SOURCES.md#F-687b162627) (Dec–Mar) — spread wider than its own uncertainty. Surface-minus-bed temperature difference −[0.027](SOURCES.md#F-6ea6ccc088) °C/decade: no detectable strengthening of thermal stratification here.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-PILOT "What this claim rests on")</sup>
+
+**Why it was retired:** The pilot slopes were computed in a drafting session whose output and code are not held, and no script here computes them. Their reading - a solubility term exceeding the whole decline, a narrowing deficit, no strengthening of stratification - cannot be checked and is no longer claimed.
+
+**Replaced by:** [`C-GI-G1-STATUS`](CLAIMS.md#C-GI-G1-STATUS) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-PROC"></a>
+### The [G1](hypodrafts/G1.md "Warming") procedure's first four steps, with the filtered panel's size and a phenology interaction.
+
+`C-GI-OLD-G1-PROC` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-PROC">Read the five arrays at the `.json` offsets, key `station×1000 + month`, filter → [76,264](SOURCES.md#F-764b1e64c2); compute `C_sat` (Weiss) and `D`; build the ≥ [8](SOURCES.md#F-93823a0d62)-year / ≥ [15](SOURCES.md#F-3445c5489b)-span panel. [2](SOURCES.md#F-520bf9e6b6). FE slopes on year for `O`, `C_sat`, `D`, `T_bed`, `T_surf − T_bed`. The first three satisfy the identity exactly; report the split as a fraction of `dO/dt`, not a p-value. [3](SOURCES.md#F-07b34ee797). Year-block null (above) for each; report naive SE, block SE and their ratio. [4](SOURCES.md#F-e84e5e98cc). Repeat balanced, Jun–Sep, Dec–Mar, and with the phenology interaction. Agreement across all five is the finding; disagreement is equally the finding.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-PROC "What this claim rests on")</sup>
+
+**Why it was retired:** The first step carried the size of a filtered panel no script here computes, and the fourth leaned on a station label no script here defines.
+
+**Replaced by:** [`C-GI-G1-P1`](CLAIMS.md#C-GI-G1-P1), [`C-GI-G1-P2`](CLAIMS.md#C-GI-G1-P2), [`C-GI-G1-P3`](CLAIMS.md#C-GI-G1-P3), [`C-GI-G1-P4`](CLAIMS.md#C-GI-G1-P4) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-SPLIT"></a>
+### Warming reaches near-bed oxygen by solubility, stratification and metabolic rate, only solubility being policy-inert, and a seasonal decomposition done here found a stated fold change and a stated thermodynamic share.
+
+`C-GI-OLD-G1-SPLIT` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-SPLIT">But warming reaches near-bed oxygen by three routes — solubility (deterministic, Weiss 1970), stratification (`C1`'s object) and metabolic rate (`Q10`, unmeasured here) — only the first of which is policy-inert. So `G1`'s testable content is not *does oxygen fall* but what fraction of the long-term fall is thermodynamics: the seasonal decomposition done here ([23](SOURCES.md#F-097b08eb54)-fold → [14](SOURCES.md#F-547854941c)-fold on a saturation threshold, ~[40](SOURCES.md#F-98143d638b) % thermodynamic), moved onto the long-term axis.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-SPLIT "What this claim rests on")</sup>
+
+**Why it was retired:** The seasonal decomposition's figures were counted in a drafting session whose output and code are not held; Weiss (1970) was cited without being read or pinned here; and the metabolic route was called unmeasured without a search being recorded. The routes and the question are kept, argued from a pinned DCE note; the figures are dropped.
+
+**Replaced by:** [`C-GI-G1-ROUTES`](CLAIMS.md#C-GI-G1-ROUTES), [`C-GI-G1-QUESTION`](CLAIMS.md#C-GI-G1-QUESTION) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-VERIFIED"></a>
+### The [G1](hypodrafts/G1.md "Warming") draft's counts were verified by reading the files, and its pilot slopes carry no null.
+
+`C-GI-OLD-G1-VERIFIED` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-VERIFIED">Draft only. Counts verified by reading the files; the pilot slopes below carry no null, so none is a result.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-VERIFIED "What this claim rests on")</sup>
+
+**Why it was retired:** No output of the drafting session's reads is held, so that the counts were verified cannot be checked. The page now says what is held and that nothing has been run.
+
+**Replaced by:** [`C-GI-G1-STATUS`](CLAIMS.md#C-GI-G1-STATUS) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-WOULD"></a>
+### What a [G1](hypodrafts/G1.md "Warming") result would license, at a stated number of stations.
+
+`C-GI-OLD-G1-WOULD` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-WOULD">Would. If `dC_sat/dt` matches or exceeds `dO/dt` under the year-block null and across all five sensitivities, that licenses: *at these [310](SOURCES.md#F-5095680f70) stations the long-term near-bed oxygen decline is accounted for by the solubility ceiling alone, and the non-thermodynamic deficit did not widen.* That constrains `G1`'s headline directly: "monotone worsening independent of load" would be true of the water and still not evidence that load reduction failed, the falling term being the one no load policy touches.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-WOULD "What this claim rests on")</sup>
+
+**Why it was retired:** It named the stations of a panel no script here builds by a count from a session whose output is not held.
+
+**Replaced by:** [`C-GI-G1-WOULD`](CLAIMS.md#C-GI-G1-WOULD) — each opens what it rests on.
+
+<a id="C-GI-OLD-G1-WOULDNOT"></a>
+### What a [G1](hypodrafts/G1.md "Warming") result would not license, with a stated number of stations dropped by the span filter.
+
+`C-GI-OLD-G1-WOULDNOT` · retired 2026-09-11 from [hypodrafts/G1.md](hypodrafts/G1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-G1-WOULDNOT">Would not. It does not measure respiration and cannot: `D` is a standing stock, `Q10` a rate, and converting between them needs a ventilation timescale the archive lacks (class 6). A narrowing `D` is equally consistent with load reduction working *and* with the network drifting toward better-ventilated positions — (i)–(iii) bound that, they do not eliminate it. It says nothing about stratification beyond a two-point difference at sampling depth, which is no pycnocline (`C1`'s object; believe `C1` here), nothing about water bodies, nothing about the [1,004](SOURCES.md#F-4926c87492) stations the span filter drops. And `dD/dt ≈ 0` refutes G1-b only at the resolution of monthly medians taken at an unrecorded hour.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-G1-WOULDNOT "What this claim rests on")</sup>
+
+**Why it was retired:** It named the stations the span filter drops by a count no script here computes.
+
+**Replaced by:** [`C-GI-G1-WOULDNOT`](CLAIMS.md#C-GI-G1-WOULDNOT) — each opens what it rests on.
+
+## hypodrafts/I1.md
+
+<a id="C-GI-OLD-I1-BALANCED"></a>
+### The [I1](hypodrafts/I1.md "Changing station network") balanced panel's size, its per-era counts and the share of June-September observations outside it.
+
+`C-GI-OLD-I1-BALANCED` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-BALANCED">Balanced panel: stations with ≥1 Jun–Sep `oxy_bed` observation in *every* one of the eight eras — [64](SOURCES.md#F-88f491bb50) stations, [8,485](SOURCES.md#F-51619f290f) station-months, per-era n from [637](SOURCES.md#F-2f31a5a078) to [1,156](SOURCES.md#F-2954475643). Neither empty nor degenerate. Its complement, [21,975](SOURCES.md#F-f4da211294) of [30,460](SOURCES.md#F-52cf63425b) Jun–Sep observations ([72.1](SOURCES.md#F-820959b55f)%), is what turns over.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-BALANCED "What this claim rests on")</sup>
+
+**Why it was retired:** The panel's size, its per-era counts and the share outside it were counted in a session whose output is not held; no script here computes them.
+
+**Replaced by:** [`C-GI-I1-BALRULE`](CLAIMS.md#C-GI-I1-BALRULE) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-CIRC"></a>
+### The summer/year-round split was made on whole records, and stated numbers of stations have enough observations in enough eras to label within era.
+
+`C-GI-OLD-I1-CIRC` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-CIRC">On the classification circularity. The [293](SOURCES.md#F-36e3126591) / [481](SOURCES.md#F-e7e0fb0b8c) summer/year-round split was made on each station's *whole* record, so a station that switched regime is labelled by its aggregate — contaminated by the very time-variation under test. This design avoids the problem rather than fixing it: the balanced panel is defined by presence, observable per era, and no behavioural label enters the primary test. Any secondary analysis wanting the regime label must assign it within era, which is feasible: [395](SOURCES.md#F-f0caf54259) stations have ≥[12](SOURCES.md#F-f257acfd64) observations (all months) in ≥[2](SOURCES.md#F-929cb4f2aa) eras, [206](SOURCES.md#F-9999231d62) in ≥[4](SOURCES.md#F-340655cad4), [33](SOURCES.md#F-d3f42830c9) in all [8](SOURCES.md#F-f8c0352f0e). Report the switch rate before using a pooled label again.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-CIRC "What this claim rests on")</sup>
+
+**Why it was retired:** The split it names is the category no script here defines; the counts of stations with enough observations per era come from a session whose output is not held.
+
+**Replaced by:** [`C-GI-NOLABEL`](CLAIMS.md#C-GI-NOLABEL), [`C-GI-I1-CIRC`](CLAIMS.md#C-GI-I1-CIRC) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-CLASSES"></a>
+### The shares of near-bed oxygen values on two grids, the raw resolution of oxygen, and no time-of-day column anywhere in the record.
+
+`C-GI-OLD-I1-CLASSES` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-CLASSES">(quantisation): [62.1](SOURCES.md#F-0e3aaef77d)% of `oxy_bed` values sit exactly on a [0.1](SOURCES.md#F-c159a5b994) mg/l grid and [75.0](SOURCES.md#F-f6d967b0e2)% on [0.05](SOURCES.md#F-ea7522eef0) — the residual is the median of an even count. Underlying raw is [0.1](SOURCES.md#F-c159a5b994) mg/l. - Class 6 (absent dimension): no time-of-day column exists anywhere in the record. Diel oxygen swing aliases into whichever hour the boat went, per station, unrecoverably.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-CLASSES "What this claim rests on")</sup>
+
+**Why it was retired:** The shares on each grid and the raw resolution of oxygen come from a session whose output is not held; and a time-of-day column does exist in the record, in the water-chemistry extract.
+
+**Replaced by:** [`C-GI-I1-EVENMED`](CLAIMS.md#C-GI-I1-EVENMED), [`C-GI-I1-CLOCK`](CLAIMS.md#C-GI-I1-CLOCK) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-DATA"></a>
+### The monthly panel's counts, every near-bed oxygen value finite, and the June-September counts per era, with the station count halving while observations fall by less.
+
+`C-GI-OLD-I1-DATA` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-DATA">`docs/data/areas/stations_series.{json,bin}` — [679,422](SOURCES.md#F-b1dd428760) station-months, [1,415](SOURCES.md#F-52b923708c) stations, [564](SOURCES.md#F-0ccd5057fb) months from January 1980, [9](SOURCES.md#F-b79fec3be1) variables; `.bin` is [5,435,376](SOURCES.md#F-e3af9b8ee5) bytes, exactly the [8](SOURCES.md#F-8cd2d21162) bytes × Σn the layout implies. Variable used: `oxy_bed`: [76,980](SOURCES.md#F-d038c2477f) rows, all finite, [1,327](SOURCES.md#F-914e4543aa) stations. Jun–Sep, 1985–2024: [30,460](SOURCES.md#F-c7f780c219) station-months, [1,167](SOURCES.md#F-897c28907d) stations. Per era (n / stations): 1985–1989 [2,589](SOURCES.md#F-11822dbc00) / [443](SOURCES.md#F-4b13da2bcb) · 1990–1994 [5,734](SOURCES.md#F-7b6cb5a6cb) / [603](SOURCES.md#F-4e47e25fbe) · 1995–1999 [4,963](SOURCES.md#F-b3cd0d1b2f) / [563](SOURCES.md#F-4e4de84cc8) · 2000–2004 [4,448](SOURCES.md#F-daa03e437f) / [503](SOURCES.md#F-49fcccd98c) · 2005–2009 [3,635](SOURCES.md#F-bf71e85b3c) / [379](SOURCES.md#F-81dfe47cd2) · 2010–2014 [3,263](SOURCES.md#F-8c05cfc977) / [254](SOURCES.md#F-27368f9fd1) · 2015–2019 [2,815](SOURCES.md#F-7ef6e6db3f) / [210](SOURCES.md#F-91f3ff7fdc) · 2020–2024 [3,013](SOURCES.md#F-a1c76bb2df) / [211](SOURCES.md#F-00f09306e9). Station count halves while observation count falls by less — turnover, not merely decline.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-DATA "What this claim rests on")</sup>
+
+**Why it was retired:** That every near-bed oxygen value is finite was not checked by any script held here, and the reader parses with float, which accepts a not-a-number. The June-September counts per era were made in a session whose output is not held, and no script here computes them. The panel's held counts are now read from the data.
+
+**Replaced by:** [`C-GI-I1-PANEL`](CLAIMS.md#C-GI-I1-PANEL), [`C-GI-I1-STATUS`](CLAIMS.md#C-GI-I1-STATUS) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-FAIL"></a>
+### [I1](hypodrafts/I1.md "Changing station network") fails if the trajectories track each other, a stated share of observations having turned over.
+
+`C-GI-OLD-I1-FAIL` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-FAIL">fails if the two trajectories track each other inside the band in every era — a real possible outcome, and the interesting one: [72](SOURCES.md#F-b1ed4da8de)% of observations turned over between 1985 and 2024 (§2) without moving the number, and the composition objection could be set aside for this variable.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-FAIL "What this claim rests on")</sup>
+
+**Why it was retired:** The share of observations said to have turned over was counted in a session whose output is not held.
+
+**Replaced by:** [`C-GI-I1-FAIL`](CLAIMS.md#C-GI-I1-FAIL) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-NOTHINGRUN"></a>
+### Nothing in the [I1](hypodrafts/I1.md "Changing station network") draft has been run, and its counts are verified reads of the files.
+
+`C-GI-OLD-I1-NOTHINGRUN` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-NOTHINGRUN">Nothing here has been run. The counts in §2 are verified reads of the files; no trajectory, band or p-value is reported.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-NOTHINGRUN "What this claim rests on")</sup>
+
+**Why it was retired:** That the counts were verified reads of the files cannot be checked: the reads' output is not held.
+
+**Replaced by:** [`C-GI-I1-STATUS`](CLAIMS.md#C-GI-I1-STATUS) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-NOTLICENSE"></a>
+### What an [I1](hypodrafts/I1.md "Changing station network") result would not license: a water body, from a stated number of stations; the true trend, surviving stations being systematically unlike the rest; causes; and the early years, from stated counts.
+
+`C-GI-OLD-I1-NOTLICENSE` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> - <span class="claim" data-claim="C-GI-OLD-I1-NOTLICENSE">Any statement about a water body. The [64](SOURCES.md#F-303b8c70e9) stations are wherever they happen to be; they are not a designed sample of anything, and aggregating them into Vandområder would import the model assumption this repo refuses. - A claim that the fixed-panel trajectory is the *true* trend. The panel is survivorship-selected: stations that survive forty years are plausibly main-programme deep-water stations, systematically unlike the ones that came and went. Holding the network fixed trades a composition bias for a selection bias; it does not remove bias. The honest reading of agreement is "turnover did not move this number", not "this is what the sea did". - Anything about oxygen *causes*. Composition is an instrument question. - Transfer to other variables, seasons, or the pre-1985 record (1980–1984 holds only [763](SOURCES.md#F-518de6cc9b) Jun–Sep station-months over [109](SOURCES.md#F-e1dc9e318b) stations, which is why it is excluded).</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-NOTLICENSE "What this claim rests on")</sup>
+
+**Why it was retired:** It named the panel's stations and the early years' station-months by counts from a session whose output is not held, and asserted without evidence that the surviving stations are systematically unlike the rest.
+
+**Replaced by:** [`C-GI-I1-NOTWB`](CLAIMS.md#C-GI-I1-NOTWB), [`C-GI-I1-NOTTRUE`](CLAIMS.md#C-GI-I1-NOTTRUE), [`C-GI-I1-NOTTRANSFER`](CLAIMS.md#C-GI-I1-NOTTRANSFER) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-NULL"></a>
+### The [I1](hypodrafts/I1.md "Changing station network") null's sizes: the panel's n and station count, the replicates and the band, and the understatement from resampling observations.
+
+`C-GI-OLD-I1-NULL` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-NULL">The constraint is *fixed station set × fixed season window*, which shrinks n from [30,460](SOURCES.md#F-716bf5a612) to [8,485](SOURCES.md#F-b1397fb1ff) and clusters it into [64](SOURCES.md#F-edbd22b84f) groups. The relevant null is therefore not the sampling distribution of a median over [8,485](SOURCES.md#F-b1397fb1ff) independent draws, and no published standard error applies. Compute it: Primary null. `H0`: the pooled trajectory is what the fixed network would have shown. Cluster bootstrap over the [64](SOURCES.md#F-edbd22b84f) panel stations — resample [64](SOURCES.md#F-edbd22b84f) *with replacement*, carry each station's entire era-by-era Jun–Sep observation set, recompute Δ_fixed(e) = med(e) − med(1985–1989). [5,000](SOURCES.md#F-79e1e5f406) replicates give a percentile band per era; reject `H0` where Δ_pooled(e) falls outside the [95](SOURCES.md#F-00b2bde87b)% band. The station is the resampling unit because observations are not independent within it; resampling observations would understate the band by roughly √(obs per station).</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-NULL "What this claim rests on")</sup>
+
+**Why it was retired:** The panel's size and its number of stations were printed as counts from a session whose output is not held; the replicates and the band are design choices, now stated as such.
+
+**Replaced by:** [`C-GI-I1-NULLCONSTR`](CLAIMS.md#C-GI-I1-NULLCONSTR), [`C-GI-I1-BOOT`](CLAIMS.md#C-GI-I1-BOOT), [`C-GI-I1-UNIT`](CLAIMS.md#C-GI-I1-UNIT) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-PRIOR"></a>
+### Two non-exchangeable observing systems exist, summer-peaked and year-round stations, a stated distance apart in June-September near-bed oxygen, and their mixture changes over time.
+
+`C-GI-OLD-I1-PRIOR` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-PRIOR">Prior work this builds on. Two non-exchangeable observing systems exist ([293](SOURCES.md#F-07c811d376) summer-peaked, [481](SOURCES.md#F-496c5eab9d) year-round, [1.57](SOURCES.md#F-745a458d26) mg/l apart in Jun–Sep near-bed oxygen, d = [0.66](SOURCES.md#F-a1618a72d6)) and their mixture changes over time. That establishes the *ingredients* of a composition artefact, not that any published number moved because of it. This draft tests that step.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-PRIOR "What this claim rests on")</sup>
+
+**Why it was retired:** The two observing systems are the summer-peaked and year-round station category, which no script here defines and which this project's register of its own constructions lists as never defined; the counts and the effect size came from a session whose output is not held.
+
+**Replaced by:** [`C-GI-NOLABEL`](CLAIMS.md#C-GI-NOLABEL) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-PROC"></a>
+### The [I1](hypodrafts/I1.md "Changing station network") procedure's byte offset, run time, memory, panel size and counts of work.
+
+`C-GI-OLD-I1-PROC` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-PROC">Read `stations_series.bin` at the `oxy_bed` offset ([483,680](SOURCES.md#F-e69a6a9c14)); decode uint16 station index, uint16 month index, float32 value; `year = 1980 + month//12`, calendar month = `month%12 + 1`. ~[1](SOURCES.md#F-32b2aa7454) s, <[200](SOURCES.md#F-bb82cb71d5) MB. [2](SOURCES.md#F-d4e2311f96). Filter Jun–Sep, 1985–2024. Assign eras. [3](SOURCES.md#F-3dcc7291b2). Balanced panel = intersection of the eight per-era station sets ([64](SOURCES.md#F-9564100490) stations). [4](SOURCES.md#F-81f7a6c3f9). Compute Δ_pooled(e) and Δ_fixed(e). [5](SOURCES.md#F-e73b7b4fe0). Run the two nulls above. [5,000](SOURCES.md#F-437e2348e0) × [8](SOURCES.md#F-7f3a83dc09) medians over ≤[8,485](SOURCES.md#F-c917fe73f9) rows — seconds.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-PROC "What this claim rests on")</sup>
+
+**Why it was retired:** The run time, the memory, the panel's size and the counts of work were printed from a session whose output is not held.
+
+**Replaced by:** [`C-GI-I1-P1`](CLAIMS.md#C-GI-I1-P1), [`C-GI-I1-P3`](CLAIMS.md#C-GI-I1-P3), [`C-GI-I1-P5`](CLAIMS.md#C-GI-I1-P5) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-REGISTER"></a>
+### The station register's size and column count, the few series stations it carries, its visit dates, and that the hypothesis register's statement about it was wrong.
+
+`C-GI-OLD-I1-REGISTER` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-REGISTER">The register does not supply what `I1` says it supplies. `data/raw/oda/stations.csv` (`latin-1`, [798,574](SOURCES.md#F-0765a8ba6c) rows, [17](SOURCES.md#F-b6bed8b7f9) columns, [6,288](SOURCES.md#F-acbee586cf) distinct `ObservationsstedNr`) matches only [34](SOURCES.md#F-7edaa8a2cb) of the [1,415](SOURCES.md#F-5298cd71b8) series stations. Worse, `StartDato` equals `SlutDato` on [796,990](SOURCES.md#F-5cd6cefe0c) rows ([99.8](SOURCES.md#F-efe27c21c2)%): the field holds a single visit date, not a station lifespan — class 4, schema conflation, a column named as a validity period carrying an event date. HYPOTHESES.md's "Now held: the ODA register carries them" is wrong. Presence must be derived from the observation record itself, as above. (Flagged, not edited here.)</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-REGISTER "What this claim rests on")</sup>
+
+**Why it was retired:** The column count was never recorded by any script, and the sentence about the hypothesis register no longer describes it: the register now says the same. The counts are now read from the data.
+
+**Replaced by:** [`C-GI-I1-REGISTER`](CLAIMS.md#C-GI-I1-REGISTER), [`C-GI-I1-PRESENCE`](CLAIMS.md#C-GI-I1-PRESENCE) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-SUPPORT"></a>
+### [I1](hypodrafts/I1.md "Changing station network") is supported if the pooled trajectory lies outside the fixed set's band by more than twice a raw quantisation step of oxygen.
+
+`C-GI-OLD-I1-SUPPORT` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-SUPPORT">is supported if the era-to-era change measured on the fixed set differs from the change measured on the full pooled record by more than the fixed set's own sampling band — i.e. the pooled trajectory lies outside the band in at least one era, with the discrepancy exceeding [0.2](SOURCES.md#F-30643b7f4e) mg/l (twice the raw quantisation step</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-SUPPORT "What this claim rests on")</sup>
+
+**Why it was retired:** The threshold was set at twice a raw quantisation step of oxygen that no script here measures.
+
+**Replaced by:** [`C-GI-I1-SUPPORT`](CLAIMS.md#C-GI-I1-SUPPORT) — each opens what it rests on.
+
+<a id="C-GI-OLD-I1-WOULD"></a>
+### What an [I1](hypodrafts/I1.md "Changing station network") result would license, at a stated number of positions.
+
+`C-GI-OLD-I1-WOULD` · retired 2026-09-11 from [hypodrafts/I1.md](hypodrafts/I1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-GI-OLD-I1-WOULD">Would license. Whether, at [64](SOURCES.md#F-40b0429ebc) positions watched continuously for forty years, the Jun–Sep near-bed oxygen change is the change the pooled record reports — and if not, a quantified size for the composition contribution.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GI-OLD-I1-WOULD "What this claim rests on")</sup>
+
+**Why it was retired:** The number of positions was the size of a panel no script here builds.
+
+**Replaced by:** [`C-GI-I1-WOULD`](CLAIMS.md#C-GI-I1-WOULD) — each opens what it rests on.
+
+## hypodrafts/I3.md
+
+<a id="C-IL-OLD-I3-CANCEL"></a>
+### The count and window effects push opposite ways and the data show they nearly cancel.
+
+`C-IL-OLD-I3-CANCEL` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-CANCEL">Two directions must be separated, because they push opposite ways and the data show they nearly cancel:</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-CANCEL "What this claim rests on")</sup>
+
+**Why it was retired:** That the two effects nearly cancel came from a one-off run in the drafting session whose code and output are not held.
+
+**Replaced by:** [`C-IL-I3-TWO`](CLAIMS.md#C-IL-I3-TWO) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-CLASS1"></a>
+### Stated numbers of near-bed oxygen values below zero and above a stated ceiling were dropped, and a stated number retained.
+
+`C-IL-OLD-I3-CLASS1` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-CLASS1">value error: [432](SOURCES.md#F-bfcb00006b) values ≤ [0](SOURCES.md#F-0baf419904) and [40](SOURCES.md#F-c13b54e8d9) > [20](SOURCES.md#F-4dc5bb3a6e) mg/l. Dropped; [76,508](SOURCES.md#F-dd230babff) retained.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-CLASS1 "What this claim rests on")</sup>
+
+**Why it was retired:** The counts of values dropped and kept came from a one-off run and are not stored by any script; a re-count from the panel on 2026-09-11 agreed with them, but a page cannot rest on a re-count nobody keeps. The panel itself applies no range test.
+
+**Replaced by:** [`C-IL-I3-RANGE`](CLAIMS.md#C-IL-I3-RANGE) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-NOCLOCK"></a>
+### No ODA extract has a time-of-day column; the daily phase is unrecoverable, unboundable and unscoreable.
+
+`C-IL-OLD-I3-NOCLOCK` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-NOCLOCK">There is no time-of-day column anywhere in the archive. Verified across all four ODA exports: `ctd.csv.gz` ([34](SOURCES.md#F-12bc257a69) fields), `lys.csv.gz` ([30](SOURCES.md#F-805b237b88)), `maaledybde.csv.gz` ([19](SOURCES.md#F-9e5b02df8f)), `stations.csv` ([17](SOURCES.md#F-a9fd44f56c)) — every temporal field is `YYYYMMDD`. Class 6, absent dimension: not recoverable, not boundable, not countable. `I3b` is unscoreable, not unsupported, and no result below speaks to it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-NOCLOCK "What this claim rests on")</sup>
+
+**Why it was retired:** Not true of the archive: the water-chemistry extract carries a clock value per sample, and a CTD cast sharing a station-day with a bottle whose clock is an observed time can borrow it, so the daily phase can be bounded there. The field counts were read in the drafting session and are not held.
+
+**Replaced by:** [`C-IL-I3-CLOCK`](CLAIMS.md#C-IL-I3-CLOCK), [`C-IL-I3-B`](CLAIMS.md#C-IL-I3-B) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-NULL"></a>
+### Annual minima do not fall with visit count, and a resampling of full-year units gives the stated mean minima, exceedance probabilities and ratio.
+
+`C-IL-OLD-I3-NULL` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-NULL">The null is computed, not assumed, and the naive one is wrong. Marginally, minima do *not* fall with visit count: median annual minimum is [4.73](SOURCES.md#F-08efbe87e7) mg/l at [3](SOURCES.md#F-b9821ff32c) visits and [6.30](SOURCES.md#F-495a45a2db) at [12](SOURCES.md#F-6b6b08b9ba). A null of "severity rises with count" would be inverted by the window effect. Within the [2,314](SOURCES.md#F-3f5307d187) fixed units, drawing month-sets from each station-year's own twelve values ([200](SOURCES.md#F-420796a59d) Monte Carlo draws): | indicator on the same [2,314](SOURCES.md#F-3f5307d187) station-years | mean min (mg/l) | P(min < [4](SOURCES.md#F-8b0c070f57)) | |---|---|---| | min over all [12](SOURCES.md#F-6b6b08b9ba) months | [5.69](SOURCES.md#F-f2217111b2) | [0.250](SOURCES.md#F-272f9d03ec) | | Emin over [[3](SOURCES.md#F-b9821ff32c) months drawn at random] | [7.23](SOURCES.md#F-5cafebf354) | [0.058](SOURCES.md#F-1c230bcf95) | | min over the fixed window {Jul, Aug, Sep} | [5.93](SOURCES.md#F-3745c85309) | [0.219](SOURCES.md#F-a3c39e61ad) | Count alone moves exceedance by [4.3](SOURCES.md#F-7cecc23add)×; fixing the window to Jul–Sep recovers almost all of the [12](SOURCES.md#F-6b6b08b9ba)-month signal from [3](SOURCES.md#F-b9821ff32c) draws. That table *is* the null: the per-station-year resampling distribution of the indicator, against which any observed path is scored.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-NULL "What this claim rests on")</sup>
+
+**Why it was retired:** The marginal minima, the resampling table and the ratio drawn from it came from a one-off run whose code and output are not held.
+
+**Replaced by:** [`C-IL-I3-NULL`](CLAIMS.md#C-IL-I3-NULL), [`C-IL-I3-STATUS`](CLAIMS.md#C-IL-I3-STATUS) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-P1"></a>
+### The effort-matched panel has stated numbers of units, of stations with many such years, and of units by decade band.
+
+`C-IL-OLD-I3-P1` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-P1">all of Jul, Aug and Sep — [6,802](SOURCES.md#F-db46292d53) units; [8,771](SOURCES.md#F-faafcf3bdd) have ≥[2](SOURCES.md#F-df7ffec3c1) of the three. [323](SOURCES.md#F-cce99435ba) stations carry ≥[10](SOURCES.md#F-496a5dcfc2) such years, [225](SOURCES.md#F-6975c361e6) carry ≥[15](SOURCES.md#F-484d884a60), spanning 1980–2026 ([789](SOURCES.md#F-3e4f1a7a46) / [2,411](SOURCES.md#F-dce4d68cde) / [2,006](SOURCES.md#F-42cec5a314) / [1,697](SOURCES.md#F-6a71961ea5) / [1,091](SOURCES.md#F-ffcfca75a4) by decade band).</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-P1 "What this claim rests on")</sup>
+
+**Why it was retired:** The unit and station counts came from a one-off run whose code and output are not held; a re-count from the panel on 2026-09-11 did not reproduce the unit counts.
+
+**Replaced by:** [`C-IL-I3-P1`](CLAIMS.md#C-IL-I3-P1) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-PANEL"></a>
+### The panel's month index spans a stated range, and near-bed oxygen covers a stated number of station-years.
+
+`C-IL-OLD-I3-PANEL` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-PANEL">month index [0](SOURCES.md#F-02404eb562)–[560](SOURCES.md#F-9f98703112). Variable `oxy_bed`: [76,980](SOURCES.md#F-2dd8ac2589) station-months, [11,289](SOURCES.md#F-0887bef2ab) station-years.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-PANEL "What this claim rests on")</sup>
+
+**Why it was retired:** The month-index range and the count of station-years were read in the drafting session and are not stored by any script; a re-count from the panel on 2026-09-11 agreed with the range and not with the count of station-years.
+
+**Replaced by:** [`C-IL-I3-PANEL`](CLAIMS.md#C-IL-I3-PANEL) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-RATE"></a>
+### Rate indicators have already been shown robust to effort and station composition in this project.
+
+`C-IL-OLD-I3-RATE` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-RATE">already shown robust to effort and station composition here</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-RATE "What this claim rests on")</sup>
+
+**Why it was retired:** No held output or page of this project shows rate indicators to be robust to effort and station composition; a search of the documentation found no such result.
+
+**Replaced by:** [`C-IL-I3-WOULDNOT`](CLAIMS.md#C-IL-I3-WOULDNOT) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-REPLIC"></a>
+### The Secchi extract is the complete visit register, and stated shares of station-months, there and in a prefix of the CTD extract, carry more than one sampling day.
+
+`C-IL-OLD-I3-REPLIC` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-REPLIC">The complete visit register `data/raw/oda/maaledybde.csv.gz` ([151,203](SOURCES.md#F-3b3c2fe074) soundings, [1,429](SOURCES.md#F-95f7772fc5) stations, 1980–2026) has [50.9](SOURCES.md#F-83431f8880)% of its [83,011](SOURCES.md#F-65a7672bf4) station-months carrying ≥[2](SOURCES.md#F-c0958ce57a) distinct sampling days. Oxygen rows specifically, over a [6](SOURCES.md#F-63d4929c86)M-row prefix of `ctd.csv.gz` ([992](SOURCES.md#F-4880995e61) stations, [31,539](SOURCES.md#F-270f6705ec) station-months — a prefix, not a population estimate): [31.9](SOURCES.md#F-22b0982875)%. So the monthly panel</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-REPLIC "What this claim rests on")</sup>
+
+**Why it was retired:** The Secchi extract is not a register of every visit, and the shares came from one-off runs, one of them on a prefix of the CTD extract; none is held.
+
+**Replaced by:** [`C-IL-I3-REPLIC`](CLAIMS.md#C-IL-I3-REPLIC) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-VISITS"></a>
+### Near-bed oxygen station-years are distributed over visit counts as stated, and a stated number have all months present.
+
+`C-IL-OLD-I3-VISITS` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-VISITS">Visits per station-year, `oxy_bed`, all [11,289](SOURCES.md#F-3304b5a8a4): 1→[1,496](SOURCES.md#F-9c546eb99b) · [2](SOURCES.md#F-5834630294)→[956](SOURCES.md#F-d0433af3bf) · [3](SOURCES.md#F-8826c0e0e7)→[730](SOURCES.md#F-49f0370cdb) · [4](SOURCES.md#F-e20594e4ce)→[842](SOURCES.md#F-e9695a5497) · [5](SOURCES.md#F-1dbe9ea74e)→[1,154](SOURCES.md#F-663f09df10) · [6](SOURCES.md#F-37da5bc982)→[609](SOURCES.md#F-c44ec3af08) · [7](SOURCES.md#F-c8343d363d)→[336](SOURCES.md#F-c15f3d1c5e) · [8](SOURCES.md#F-cd5095eab9)→[383](SOURCES.md#F-b8513c2189) · [9](SOURCES.md#F-bf27dbc60b)→[527](SOURCES.md#F-4596c61ba5) · [10](SOURCES.md#F-62f36d6a3a)→[764](SOURCES.md#F-da1f59147c) · [11](SOURCES.md#F-1973d7c9c1)→[1,113](SOURCES.md#F-2393c4866d) · [12](SOURCES.md#F-c916aad4c9)→[2,379](SOURCES.md#F-53d9fd3af2). ## The null under the constraint I impose Constraint: station-years with all twelve calendar months present — [2,314](SOURCES.md#F-e6a89e6684) of [11,289](SOURCES.md#F-3304b5a8a4). Effort is fixed at [12](SOURCES.md#F-c916aad4c9) and station composition is fixed inside each unit, so nothing is compared across differently-observed units.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-VISITS "What this claim rests on")</sup>
+
+**Why it was retired:** The distribution of visits per station-year and the count of full-year units came from a one-off run whose code and output are not held; a re-count from the panel on 2026-09-11 agreed with the count of full-year units and not with the distribution.
+
+**Replaced by:** [`C-IL-I3-CONSTR`](CLAIMS.md#C-IL-I3-CONSTR) — each opens what it rests on.
+
+<a id="C-IL-OLD-I3-WINDOW"></a>
+### Sparsely sampled station-years put a stated share of their observations in August and September, and densely sampled ones are near-flat by month.
+
+`C-IL-OLD-I3-WINDOW` · retired 2026-09-11 from [hypodrafts/I3.md](hypodrafts/I3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-I3-WINDOW">Sparse programmes are not thin versions of dense ones — they are late-summer-targeted. Station-years with ≤[3](SOURCES.md#F-b444d21a62) near-bed oxygen months put [50.2](SOURCES.md#F-144c5ff5d8)% of their observations in August–September; station-years with ≥[9](SOURCES.md#F-3e08174330) months are near-flat ([7.2](SOURCES.md#F-162ded5f2a)%–[8.8](SOURCES.md#F-8707b6389b)% per month). Sparse sampling therefore *finds* hypoxia while having few chances to.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-I3-WINDOW "What this claim rests on")</sup>
+
+**Why it was retired:** The shares came from a one-off run whose code and output are not held; a re-count from the panel on 2026-09-11 did not reproduce them exactly.
+
+**Replaced by:** [`C-IL-I3-WINDOW`](CLAIMS.md#C-IL-I3-WINDOW) — each opens what it rests on.
+
+## hypodrafts/K1.md
+
+<a id="C-KD-OLD-K1-BACTERIA"></a>
+### The DOME dataset holds bacteria at a stated density in one event, and ciliates, and records identified above class have no class.
+
+`C-KD-OLD-K1-BACTERIA` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-BACTERIA">the dataset also holds bacteria ([7.1](SOURCES.md#F-a5e45168c5)e8 cells l⁻¹ in one event) and ciliates, and records identified above class have a null `class`.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-BACTERIA "What this claim rests on")</sup>
+
+**Why it was retired:** Read from records that are not held. The rule for the denominator stands on its own reason.
+
+**Replaced by:** [`C-KD-K1-DENOM`](CLAIMS.md#C-KD-K1-DENOM) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-EMODNET"></a>
+### EMODnet Chemistry serves a stated number of silicate samples in the Danish area with the other nutrients, quality flags and originator, openly.
+
+`C-KD-OLD-K1-EMODNET` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-EMODNET">ERDDAP `EUT_BALTIC_PROFILES`, tabledap CSV | [62,270](SOURCES.md#F-580b89629d) silicate depth-samples, 1967–2023, [29,573](SOURCES.md#F-761b17ac0a) profiles, [1,656](SOURCES.md#F-730417a262) positions in [9](SOURCES.md#F-87f1c7ae53)–[13.2](SOURCES.md#F-2d55b4590a) E / [54.4](SOURCES.md#F-ce28031789)–[58](SOURCES.md#F-d90511b35c) N; `NO₂⁻`+`NO₃⁻` on [92.5](SOURCES.md#F-1de24f2f80)%, phosphate [93.8](SOURCES.md#F-9e0a2c367b)%, ammonium [88.0](SOURCES.md#F-ce55390869)%, chlorophyll [38.4](SOURCES.md#F-0b288d5916)%; per-sample SeaDataNet QC flags, depth, EDMO originator; [7.1](SOURCES.md#F-35506a5239) MB. Open, no registration</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-EMODNET "What this claim rests on")</sup>
+
+**Why it was retired:** Counted in a session whose output is not held. The page takes silicate from the held water-chemistry extract instead.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KD-OLD-K1-GRID"></a>
+### The plankton files are on a stated grid and extent; the registry entry gave a shorter span and fewer variables until it was corrected; a stated number of cell-days was sampled.
+
+`C-KD-OLD-K1-GRID` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-GRID">CYANOBLOOM mask), daily, [327](SOURCES.md#F-6a3ea2aee9)×[223](SOURCES.md#F-6ef49f9033) cells at [0.01098](SOURCES.md#F-c51cd1eae4)° × [0.01772](SOURCES.md#F-2892cf29cf)°, [54.41](SOURCES.md#F-1fa8d0217e)–[57.99](SOURCES.md#F-9b70e241dd) N / [9.26](SOURCES.md#F-459fe8e6cf)–[13.19](SOURCES.md#F-db0a0edc91) E. The registry entry `LOCAL-CMEMS-PFT` said 1997–2016 and six variables until it was corrected on 2026-09-11 to match the files on disk. Sampling [261,652](SOURCES.md#F-2c2f2d80c8) valid cell-days from 2020 and [58](SOURCES.md#F-6b0a86487f)k–[257](SOURCES.md#F-d17a9fa3d2)k each from</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-GRID "What this claim rests on")</sup>
+
+**Why it was retired:** The grid, extent and sample sizes were read in a one-off session and are not held. The account of the register's correction is this project's history, not a statement about the data, and a page does not narrate its corrections.
+
+**Replaced by:** [`C-KD-K1-FILES`](CLAIMS.md#C-KD-K1-FILES) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-INDEP"></a>
+### Most EMODnet silicate values carry the Aarhus University originator, so EMODnet re-serves the national programme, and one programme produces each axis.
+
+`C-KD-OLD-K1-INDEP` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-INDEP">Independence. Of the [62,270](SOURCES.md#F-81b95f9fe6) EMODnet silicate values, [90.7](SOURCES.md#F-b8d23e39eb)% carry `EDMO 729` = Aarhus University, Bioscience, Roskilde — the NOVANA path that feeds ODA, re-served under a European label. Foreign: German DOD [5.1](SOURCES.md#F-b43646d2fc)%, SMHI [2.8](SOURCES.md#F-4e855184b8)%, ICES [0.7](SOURCES.md#F-87e54eff91)%, SYKE + FMI [0.8](SOURCES.md#F-ffd5acc409)%. EMODnet is an *access* route, not a second measurement, and the counts are the same programme again. One production path on each axis, and it is the same programme — this can score a mechanism, not cross-validate one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-INDEP "What this claim rests on")</sup>
+
+**Why it was retired:** The originator shares were counted in a session whose output is not held.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KD-OLD-K1-JOIN"></a>
+### Few events of one month have a surface silicate sample in the open EMODnet route within stated distances and days.
+
+`C-KD-OLD-K1-JOIN` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-JOIN">The open EMODnet route joins badly — of 40 March-2011 events, [3](SOURCES.md#F-18fa18d1c7) have a surface silicate sample within [5](SOURCES.md#F-9ca607938b) km and [2](SOURCES.md#F-ff4f2e71d4) days, [11](SOURCES.md#F-263c3f9c4e) within [25](SOURCES.md#F-3d12f20c47) km and [7](SOURCES.md#F-26d5b675fd) days, median nearest distance [74](SOURCES.md#F-d9309594b0) km. That is the binding constraint on an open-only version.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-JOIN "What this claim rests on")</sup>
+
+**Why it was retired:** Counted in a session whose output is not held.
+
+**Replaced by:** [`C-KD-K1-P6`](CLAIMS.md#C-KD-K1-P6) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-NULL"></a>
+### From the EMODnet samples a January-February surface Si:DIN series has a stated persistence and trend, and persistence-aware nulls give thresholds a stated multiple of the nominal one.
+
+`C-KD-OLD-K1-NULL` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-NULL">Not the statistic's nominal null. From the [62,270](SOURCES.md#F-7a70c7414e) EMODnet samples I built the Jan–Feb median surface Si:DIN per year: [40](SOURCES.md#F-e95174c6db) years with ≥[20](SOURCES.md#F-ce8d3b7531) samples, 1975–2021, lag-[1](SOURCES.md#F-53a7b1097a) autocorrelation ρ₁ = [0.417](SOURCES.md#F-747bf46d05), trend +[0.0002](SOURCES.md#F-164ec8ef28) yr⁻¹ (flat, and confounded — see below). - nominal iid [5](SOURCES.md#F-c71cb42354)% threshold on |r|, n = [40](SOURCES.md#F-e95174c6db): [0.312](SOURCES.md#F-2246fc966a) - circular year-shift null, all [39](SOURCES.md#F-f60132a101) non-identity shifts: 95th pct [0.333](SOURCES.md#F-8393a637d3); finest attainable p = `1/n` = [0.025](SOURCES.md#F-bd2e87b951) - phase-randomised surrogates preserving the series' spectrum, [20,000](SOURCES.md#F-415f321838) draws: 95th pct |r| = [0.490](SOURCES.md#F-760c23f6a3), 99th pct [0.603](SOURCES.md#F-543a7a2d9d) The persistence-aware threshold is [1.57](SOURCES.md#F-a5914b9c83)× the nominal one. A correlation of [0.35](SOURCES.md#F-19d5c78619) — "significant" against the textbook null — sits at the 60th percentile of this one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-NULL "What this claim rests on")</sup>
+
+**Why it was retired:** Computed from EMODnet samples in a session whose output and code are not held.
+
+**Replaced by:** [`C-KD-K1-NULLRULE`](CLAIMS.md#C-KD-K1-NULLRULE) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-OBIS"></a>
+### The ICES DOME phytoplankton records for Denmark served through OBIS number a stated total, most with an abundance measurement, over stated years and classes, openly served.
+
+`C-KD-OLD-K1-OBIS` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-OBIS">ICES DOME phytoplankton via OBIS, `api.obis.org/v3/occurrence?datasetid=46c52e34-…&areaid=49&mof=true` | [240,671](SOURCES.md#F-6e5b388260) DK records; [114,312](SOURCES.md#F-8936ad58a2) carry an eMoF extension, [103,005](SOURCES.md#F-ba9da82fbd) carry `Abundance number (number counted)` (`vocab.ices.dk/53840`); [45](SOURCES.md#F-3eb9376e95) years 1979–2023; Bacillariophyceae [34,193](SOURCES.md#F-c586a2b493), Dinophyceae [27,649](SOURCES.md#F-dac45ff660), Cyanophyceae [8,613](SOURCES.md#F-1f787f9fca). Open REST, no key</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-OBIS "What this claim rests on")</sup>
+
+**Why it was retired:** Counted from the OBIS API in a session whose output is not held. The dataset's own page, pinned now, shows the measurement table and the licence, but not the Danish counts.
+
+**Replaced by:** [`C-KD-K1-NOCOUNTS`](CLAIMS.md#C-KD-K1-NOCOUNTS), [`C-KD-K1-DOME`](CLAIMS.md#C-KD-K1-DOME) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-ODA"></a>
+### ODA's water chemistry carries silicate beside the nutrients at the portal's station count in one per-sample table, fetched since the draft, from which rescore.py computes a pooled yearly median.
+
+`C-KD-OLD-K1-ODA` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-ODA">ODA Hav / Vandkemi, `Emne_10_11` | `Silicium` with total-N, `NO₂⁻`+`NO₃⁻`, `NH₄⁺`, total-P, `PO₄³⁻`, chl, pH, alkalinity in one per-sample table, [205](SOURCES.md#F-39c4c4fe21) stations, joinable by station identity. Fetched since this draft (`data/raw/oda/kemi.csv.gz`): `scripts/rescore.py` now computes a yearly surface Si:DIN median from it, pooled over every month - not the January–February pre-bloom quantity specified in section</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-ODA "What this claim rests on")</sup>
+
+**Why it was retired:** The station count was the portal's count of stations offered with no period set, not the stations holding silicate in the extract now held; and 'fetched since this draft' narrates the page's history.
+
+**Replaced by:** [`C-KD-K1-SILICATE`](CLAIMS.md#C-KD-K1-SILICATE), [`C-KD-K1-POOLED`](CLAIMS.md#C-KD-K1-POOLED) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-PANEL"></a>
+### The January-February contributing positions, samples and the Aarhus originator share vary across years over stated ranges.
+
+`C-KD-OLD-K1-PANEL` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-PANEL">A second null to absorb: the panel is not fixed. Jan–Feb contributing positions run [16](SOURCES.md#F-a4af64e244) (1986) to [69](SOURCES.md#F-48ef54bf15) (2016), samples [27](SOURCES.md#F-ca7fca6335) to [408](SOURCES.md#F-c7a6892ca0), the `EDMO-729` share [0.53](SOURCES.md#F-acb72c1e37) to [1.00](SOURCES.md#F-2a4e034c25), so any across-year statistic on pooled medians is partly a statistic about who sampled.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-PANEL "What this claim rests on")</sup>
+
+**Why it was retired:** Counted from EMODnet samples that are not held. The held water-chemistry extract shows the same point from its own counts.
+
+**Replaced by:** [`C-KD-K1-PANEL`](CLAIMS.md#C-KD-K1-PANEL) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-PARTITION"></a>
+### The functional types sum to total chlorophyll within rounding, and the diatom share of chlorophyll is a fixed function of chlorophyll alone, at stated values in every year sampled.
+
+`C-KD-OLD-K1-PARTITION` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-PARTITION">PICO+NANO+MICRO − CHL` never exceeds 1.9e-6 mg m⁻³; `DIATO+DINO − MICRO` never exceeds 9.5e-7. The split is an exact partition of CHL, not a separate retrieval. - `DIATO/CHL` is a fixed function of `CHL` alone. Binning CHL to three decimals, the largest within-bin spread of the ratio in any year is [2.8](SOURCES.md#F-22ba84510d)e-[4](SOURCES.md#F-0e302f7465). At CHL = [1.000](SOURCES.md#F-7069065f2e) the ratio is [0.365009](SOURCES.md#F-939b223fd4) (1998), [0.364999](SOURCES.md#F-18c18e9814) (2005), [0.365002](SOURCES.md#F-a9184707f7) (2012), [0.365001](SOURCES.md#F-a56be0e5e6) (2020), [0.365000](SOURCES.md#F-5bd6d17507) (2025); at CHL = [0.5](SOURCES.md#F-0377bd0c48) it is [0.33935](SOURCES.md#F-6b6a953348) in every year — [28](SOURCES.md#F-81780401e4) years, all seasons, [73,000](SOURCES.md#F-3abcb48282) cells.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-PARTITION "What this claim rests on")</sup>
+
+**Why it was retired:** Computed in a one-off run whose output and code are not held. The files' own description, that each type is derived from chlorophyll, supports the conclusion without those figures.
+
+**Replaced by:** [`C-KD-K1-DERIVED`](CLAIMS.md#C-KD-K1-DERIVED) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-PEG"></a>
+### The HELCOM PEG biovolume list has a stated size and number of keyed rows carrying carbon per counting unit.
+
+`C-KD-OLD-K1-PEG` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-PEG">HELCOM PEG biovolume list, `ices.dk/data/Documents/ENV/PEG_BVOL.zip` | [1.79](SOURCES.md#F-20f9ee22e8) MB zip → `PEG_BVOL2026.xlsx`, [3,777](SOURCES.md#F-6431aea4cd) rows, [3,502](SOURCES.md#F-dcf4f1b411) (AphiaID, SizeClassNo) keys carrying carbon pg per counting unit, [1,293](SOURCES.md#F-b031dee30a) diatom rows | [7](SOURCES.md#F-4d695c70ee) (geometric model)</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-PEG "What this claim rests on")</sup>
+
+**Why it was retired:** Read from a download that is not held and not pinned. The procedure now asks for a published biovolume list without describing one.
+
+**Replaced by:** [`C-KD-K1-P4`](CLAIMS.md#C-KD-K1-P4) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-PROC"></a>
+### In one month of OBIS records, a stated request size, a stated number of complete events, stated match shares against the biovolume list, and a stated rank correlation between shares by carbon and by number.
+
+`C-KD-OLD-K1-PROC` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-PROC">Fetch OBIS occurrences with `mof=true`, paged by `after`: March 2011 is [2,420](SOURCES.md#F-c0caf683aa) records / [6.1](SOURCES.md#F-dd9881040f) MB in one request; [45](SOURCES.md#F-b068e9ec4b) years ~[280](SOURCES.md#F-f3232cda09) MB, paged to disk by year, not held. [2](SOURCES.md#F-76b93f8220). Group by `eventID`; keep only events where every occurrence carries an abundance — [29](SOURCES.md#F-4df93ad5c5) of [40](SOURCES.md#F-2700c030e4) complete, [9](SOURCES.md#F-4568f318f4) partial, [2](SOURCES.md#F-76b93f8220) none in March 2011 (class 5; report the drop). [3](SOURCES.md#F-1d14ba0101). Normalise to cells l⁻¹ per the record's own `measurementUnit`. [4](SOURCES.md#F-7987873979). Join to PEG on (AphiaID, SizeClassNo) for carbon per counting unit: [33](SOURCES.md#F-96cefbca77)% of abundance records match strictly, [69](SOURCES.md#F-bf1aed5221)% on AphiaID alone; the unmatched are higher-rank identifications (`Bacillariales`) and synonyms (`Skeletonema costatum`). Below ~[80](SOURCES.md#F-0937a1a41c)% matched carbon the share is unusable — a WoRMS synonym pass first. [5](SOURCES.md#F-df7c50f2e9). The currency is not neutral. On [23](SOURCES.md#F-9be6a08890) complete March-2011 events the diatom share by carbon (median [0.182](SOURCES.md#F-ab3448bc59)) and by cell number ([0.188](SOURCES.md#F-c1aced2443)) rank-correlate only [0.540](SOURCES.md#F-4e9025e7fa). State the individuation rule; report both.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-PROC "What this claim rests on")</sup>
+
+**Why it was retired:** Counted from records that are not held. The procedure keeps its rules and drops the counts.
+
+**Replaced by:** [`C-KD-K1-P1`](CLAIMS.md#C-KD-K1-P1), [`C-KD-K1-P2`](CLAIMS.md#C-KD-K1-P2), [`C-KD-K1-P4`](CLAIMS.md#C-KD-K1-P4), [`C-KD-K1-P5`](CLAIMS.md#C-KD-K1-P5) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-QUANT"></a>
+### A stated share of the EMODnet silicate values fall on exact multiples of the reciprocal of a rounded molar mass of silicon.
+
+`C-KD-OLD-K1-QUANT` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-QUANT">Quantisation: [61.3](SOURCES.md#F-b200b23a58)% of the silicate values are exact multiples of [1](SOURCES.md#F-c7e41fedcb) / [28](SOURCES.md#F-3bf81307fa) ([14.035714](SOURCES.md#F-bb527f8cf8) = [393](SOURCES.md#F-ad37795413) / [28](SOURCES.md#F-3bf81307fa)) — integer µg l⁻¹ converted with M = [28](SOURCES.md#F-3bf81307fa), not [28.09](SOURCES.md#F-52e367eb6c). Class</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-QUANT "What this claim rests on")</sup>
+
+**Why it was retired:** Counted in a session whose output is not held; the page no longer uses the EMODnet values.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-KD-OLD-K1-REACH"></a>
+### Every count on the draft was computed in the drafting session from the file or endpoint named, both halves of what the hypothesis needs are openly reachable, and computation settles that the chlorophyll asset is not the answer.
+
+`C-KD-OLD-K1-REACH` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-REACH">Every count below was computed in this session from the file or endpoint named. `K1` needs "dissolved silicate alongside N and P at the same stations and dates, and species-level phytoplankton counts". Both halves are openly reachable; the chlorophyll asset that looked like the answer is not one, and that is settled by computation.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-REACH "What this claim rests on")</sup>
+
+**Why it was retired:** The counts from external endpoints were made in a drafting session whose output and code are not held, so they cannot be checked; that the counts are openly reachable is not established, and none is held. The page now says what is held and what is not, and the chlorophyll point rests on the files' own description.
+
+**Replaced by:** [`C-KD-K1-NEEDS`](CLAIMS.md#C-KD-K1-NEEDS), [`C-KD-K1-DERIVED`](CLAIMS.md#C-KD-K1-DERIVED) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-RELABEL"></a>
+### The diatom field is a monotone relabelling of total chlorophyll, carrying no information about who the biomass is, so the hypothesis's distinguishing prediction has measure zero in it; the files are rated by error class.
+
+`C-KD-OLD-K1-RELABEL` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-RELABEL">The diatom field is a monotone relabelling of total chlorophyll and carries zero information about who the biomass is. `K1`'s distinguishing prediction — *composition moves while total biomass need not* — has measure zero here: it cannot be expressed, let alone tested. Error class 7. These files are a legitimate CHL field, not a community observation.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-RELABEL "What this claim rests on")</sup>
+
+**Why it was retired:** 'Monotone' and 'measure zero' rested on the unheld run above. What the held files support is narrower: each type is, by their own note, derived from chlorophyll, so it cannot move where chlorophyll does not.
+
+**Replaced by:** [`C-KD-K1-DERIVED`](CLAIMS.md#C-KD-K1-DERIVED) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-SHOCK"></a>
+### Nitrogen fell after a stated year while silicon has no anthropogenic source, so a step in Si:DIN driven by the nitrogen term is exogenous to diatoms.
+
+`C-KD-OLD-K1-SHOCK` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-SHOCK">The asymmetric policy shock — N fell after 1987 while Si has no anthropogenic source, so a step in Si:DIN driven by the N term alone is exogenous to diatoms in a way the Si term is not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-SHOCK "What this claim rests on")</sup>
+
+**Why it was retired:** Neither premise was justified on the page: no nitrogen series is read there, and the absence of an anthropogenic silicon source was asserted without a source. The argument is kept as a conditional.
+
+**Replaced by:** [`C-KD-K1-SHOCK`](CLAIMS.md#C-KD-K1-SHOCK) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-UNITS"></a>
+### The abundance measurement is in two units across the events of one month, consistent within an event.
+
+`C-KD-OLD-K1-UNITS` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-UNITS">the abundance eMoF is `number / cubic decimetre` on [686](SOURCES.md#F-01a65580be) and `number / cubic metre` on [356](SOURCES.md#F-5602df8144) of [1,042](SOURCES.md#F-90dd20acd5) March-2011 records — consistent *within* an event, mixed *across* events. Class 4; ignoring it moves a share by three orders of magnitude.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-UNITS "What this claim rests on")</sup>
+
+**Why it was retired:** Counted from records that are not held. The procedure keeps the rule the finding motivated, a unit read per record.
+
+**Replaced by:** [`C-KD-K1-P3`](CLAIMS.md#C-KD-K1-P3) — each opens what it rests on.
+
+<a id="C-KD-OLD-K1-VANDA"></a>
+### VanDa's phytoplankton endpoints refuse an anonymous request, and whether the Baltic biogeochemical reanalysis carries a silicate variable is not established.
+
+`C-KD-OLD-K1-VANDA` · retired 2026-09-11 from [hypodrafts/K1.md](hypodrafts/K1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-KD-OLD-K1-VANDA">VanDa `/phytoplankton/*` ([401](SOURCES.md#F-e126654a29)) would give the counts natively rather than through DOME's round trip; whether the CMEMS Baltic biogeochemical reanalysis carries a silicate state variable is not established.</span><sup class="claim-mark">[†](ARCHIVE.md#C-KD-OLD-K1-VANDA "What this claim rests on")</sup>
+
+**Why it was retired:** The refusal was observed in a session and not pinned, and the specification address the source register gives returned not found on 2026-09-11. The reanalysis's catalogue record, pinned now, lists the variables of its daily dataset, and silicate is not among them.
+
+**Replaced by:** [`C-KD-K1-BGC-LIST`](CLAIMS.md#C-KD-K1-BGC-LIST), [`C-KD-K1-BGC`](CLAIMS.md#C-KD-K1-BGC) — each opens what it rests on.
+
+## hypodrafts/L3.md
+
+<a id="C-IL-OLD-L3-COMP"></a>
+### The summer-peaked share falls by stated amounts, the core and year-round runs agree, and a stated split of stations was re-derived.
+
+`C-IL-OLD-L3-COMP` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-COMP">The summer-peaked share of `oxy_bed` station-months falls from [0.126](SOURCES.md#F-6a2b183be7) (1989–1994) to [0.035](SOURCES.md#F-c545abb168) (2015–2019) — the compositional shift is real and large in this variable. It is handled by re-running on a fixed [186](SOURCES.md#F-53d94ee7fa)-station core panel and on the [427](SOURCES.md#F-94cc435ca5) year-round stations separately; both give the same answer, and the core panel gives a *stronger* directional signal, not a weaker one. My Rayleigh classification ([426](SOURCES.md#F-eacbdd350c) summer / [427](SOURCES.md#F-94cc435ca5) year-round) is computed on `oxy_bed` rows only and does not reproduce the project's [293](SOURCES.md#F-f0108f1818) / [481](SOURCES.md#F-b99638d808) — treat the split as re-derived, not inherited.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-COMP "What this claim rests on")</sup>
+
+**Why it was retired:** The shares and the split came from the drafting run; the split's rule was not stated, and this project's audit of the drafts found the split reachable only with no minimum number of observations.
+
+**Replaced by:** [`C-IL-L3-COMP`](CLAIMS.md#C-IL-L3-COMP), [`C-IL-L3-CORE`](CLAIMS.md#C-IL-L3-CORE) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-CONSTR"></a>
+### The index years were chosen because fewer than a stated number of stations report before them and the final year holds a stated number of rows.
+
+`C-IL-OLD-L3-CONSTR` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-CONSTR">Constraint imposed: annual index years 1989–2025 ([37](SOURCES.md#F-27598d3564) years; before 1989 fewer than [200](SOURCES.md#F-5637d7fe0e) stations report per year, 2026 is a part-year of [819](SOURCES.md#F-e460ad70b7) rows), windows of ≥ [10](SOURCES.md#F-d824d53cca) years, giving [406](SOURCES.md#F-24219bbeba) admissible windows</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-CONSTR "What this claim rests on")</sup>
+
+**Why it was retired:** The reasons given for the chosen years rest on counts no held output stores.
+
+**Replaced by:** [`C-IL-L3-CONSTR`](CLAIMS.md#C-IL-L3-CONSTR) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-DROPS"></a>
+### The panel's months run over a stated range, and stated numbers of impossible near-bed oxygen values were dropped, with the raw range and the rows and stations kept.
+
+`C-IL-OLD-L3-DROPS` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-DROPS">month index [0](SOURCES.md#F-88e6bc77bc)–[560](SOURCES.md#F-a7a68df376) = 1980-01 to 2026-09. Variable used: `oxy_bed`, near-bed oxygen in mg/l, [76,980](SOURCES.md#F-7663de955d) rows. Dropped [472](SOURCES.md#F-de96e2c8bb) as impossible ([432](SOURCES.md#F-7a90d8ad35) at ≤ [0](SOURCES.md#F-88e6bc77bc) mg/l, [40](SOURCES.md#F-df1b844a38) above [20](SOURCES.md#F-ccaae88a59) mg/l; the raw range is −[9.93](SOURCES.md#F-94e5ce6b32) to [281.6](SOURCES.md#F-e6948bd0a3)) — error class 1, value error. Kept [76,508](SOURCES.md#F-a464d6860c) rows on [1,325](SOURCES.md#F-aca9ca88a0) stations.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-DROPS "What this claim rests on")</sup>
+
+**Why it was retired:** The month range, the counts dropped and kept and the raw range came from the drafting run and are not stored by any script; a re-count from the panel on 2026-09-11 agreed with them, but a page cannot rest on a re-count nobody keeps.
+
+**Replaced by:** [`C-IL-L3-PANEL`](CLAIMS.md#C-IL-L3-PANEL), [`C-IL-L3-RANGE`](CLAIMS.md#C-IL-L3-RANGE) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-H0"></a>
+### Sign-flipping windows occur in every simulation without a trend, with a stated median slope range.
+
+`C-IL-OLD-L3-H0` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-H0">Sign-flipping windows occur in [100.0](SOURCES.md#F-1ab177f671)% of simulations, in every station set. Median slope range [0.104](SOURCES.md#F-cf580f30e7) mg/l/yr (pooled).</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-H0 "What this claim rests on")</sup>
+
+**Why it was retired:** The share and the median range came from the unheld simulation.
+
+**Replaced by:** [`C-IL-L3-H0`](CLAIMS.md#C-IL-L3-H0) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-H1"></a>
+### Every dispersion statistic is consistent with one constant rate plus the series' own autocorrelation.
+
+`C-IL-OLD-L3-H1` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-H1">Every dispersion statistic is consistent with `H1`. P(`H1` range ≥ observed) is [0.36](SOURCES.md#F-51c6c3e1dc)–[0.44](SOURCES.md#F-fad17a3e40) everywhere: one constant rate plus this series' own autocorrelation reproduces the whole surface.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-H1 "What this claim rests on")</sup>
+
+**Why it was retired:** The probabilities came from the unheld simulation.
+
+**Replaced by:** [`C-IL-L3-LICENSE`](CLAIMS.md#C-IL-L3-LICENSE) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-LICENSED"></a>
+### For near-bed oxygen the strong reading is not established; start year barely matters and end year decides the sign.
+
+`C-IL-OLD-L3-LICENSED` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-LICENSED">Licensed: for near-bed oxygen in this archive, `L3`'s strong reading is not established. The window-dependence is fully reproduced by one constant slope with matched autocorrelation, and the interesting asymmetry is the opposite of `L3`'s framing — start year barely matters, end year decides the sign.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-LICENSED "What this claim rests on")</sup>
+
+**Why it was retired:** It reports the result of a run whose code and output are not held.
+
+**Replaced by:** [`C-IL-L3-LICENSE`](CLAIMS.md#C-IL-L3-LICENSE) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-NOCLOCK"></a>
+### The archive has no time-of-day column anywhere.
+
+`C-IL-OLD-L3-NOCLOCK` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-NOCLOCK">Two further error classes are structural and are not fixed, only declared. The archive is already a monthly median per station — class 3, aggregation: within-month spread and the diel oxygen cycle are gone before I see the file, and there is no time-of-day column anywhere (class 6, absent dimension</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-NOCLOCK "What this claim rests on")</sup>
+
+**Why it was retired:** Not true of the archive: the water-chemistry extract carries a clock value per sample, and the archive is not a monthly median - the panel built from it is. It is the CTD extract behind the panel that has no hour.
+
+**Replaced by:** [`C-IL-L3-STRUCT`](CLAIMS.md#C-IL-L3-STRUCT) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-PRE"></a>
+### The archive starts in the panel's first year, after the loading peak.
+
+`C-IL-OLD-L3-PRE` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-PRE">is really about — this archive starts at 1980, after the loading peak, so it cannot test "a trend measured from a peak</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-PRE "What this claim rests on")</sup>
+
+**Why it was retired:** The CTD extract behind the panel holds station-days from before the panel's first year, which the panel's construction fixes, and no source held here places the loading peak.
+
+**Replaced by:** [`C-IL-L3-PRE`](CLAIMS.md#C-IL-L3-PRE) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-RANGE"></a>
+### The fitted rate ranges between stated slopes.
+
+`C-IL-OLD-L3-RANGE` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-RANGE">And a negative here does not license reporting a single slope: the fitted rate still ranges −[0.054](SOURCES.md#F-5946133de0) to +[0.084](SOURCES.md#F-85bd530abb), so any published number needs its window and its `H1` interval printed beside it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-RANGE "What this claim rests on")</sup>
+
+**Why it was retired:** The slope range came from the unheld run.
+
+**Replaced by:** [`C-IL-L3-SLOPE`](CLAIMS.md#C-IL-L3-SLOPE) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-SAT"></a>
+### Repeating on oxygen saturation raises the positive fraction by stated amounts, with a stated slope, consistent with part of the decline being solubility.
+
+`C-IL-OLD-L3-SAT` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-SAT">Repeating on `oxysat_bed` ([64,493](SOURCES.md#F-0372c0d08f) rows, [449](SOURCES.md#F-920edc2c4b) dropped): the fraction of positive windows rises from [0.11](SOURCES.md#F-25158b05ca)–[0.15](SOURCES.md#F-610aa561cf) to [0.28](SOURCES.md#F-f79a863052)–[0.30](SOURCES.md#F-68da273566), and the full-window slope is −[0.015](SOURCES.md#F-59bff844e8) %sat/yr. Moving from a concentration to a saturation ruler roughly doubles the sign ambiguity. Consistent with part of the mg/l decline being solubility, not oxygen supply. Not separated here.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-SAT "What this claim rests on")</sup>
+
+**Why it was retired:** The counts and fractions came from the drafting run and are not held.
+
+**Replaced by:** [`C-IL-L3-SAT`](CLAIMS.md#C-IL-L3-SAT) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-STATUS"></a>
+### The procedure was run once on bed oxygen and the numbers on the page are that run.
+
+`C-IL-OLD-L3-STATUS` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-STATUS">Test draft. Status: procedure specified and run once on bed oxygen; numbers below are that run, not a literature quote.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-STATUS "What this claim rests on")</sup>
+
+**Why it was retired:** The run is not held: its code and output were never committed, so its numbers cannot be checked.
+
+**Replaced by:** [`C-IL-L3-STATUS`](CLAIMS.md#C-IL-L3-STATUS) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-TABLE"></a>
+### The run's table of slopes, autocorrelations, positive fractions and null probabilities for four station sets, and the finding that the end year sets the sign.
+
+`C-IL-OLD-L3-TABLE` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-TABLE">| set | stations | full-window slope | ρ | obs. slope range | frac. positive | P(`H0` frac ≤ obs) | P(`H1` frac ≤ obs) | P(`H1` range ≥ obs) | |---|---|---|---|---|---|---|---|---| | pooled | [1,325](SOURCES.md#F-605a15b61e) | −[0.0064](SOURCES.md#F-aebb11bd97) | +[0.35](SOURCES.md#F-63af526ad9) | [0.112](SOURCES.md#F-6a8bbb9380) | [0.145](SOURCES.md#F-15f892047b) | [0.023](SOURCES.md#F-44e31695a4) | [0.150](SOURCES.md#F-4c17deba60) | [0.360](SOURCES.md#F-a9de203b23) | | core (≥[20](SOURCES.md#F-e9269c289d) yrs) | [186](SOURCES.md#F-74d1f35d1b) | −[0.0085](SOURCES.md#F-c4fb550fa8) | +[0.44](SOURCES.md#F-200c92cbc1) | [0.138](SOURCES.md#F-caf6d66abb) | [0.108](SOURCES.md#F-ddf6ae2085) | [0.008](SOURCES.md#F-4e744678af) | [0.091](SOURCES.md#F-7b01973167) | [0.358](SOURCES.md#F-29bdbaca00) | | year-round (R<0.2) | 427 | −0.0052 | +0.50 | 0.105 | 0.170 | 0.049 | 0.177 | 0.436 | | summer-peaked (R>[0.5](SOURCES.md#F-7ee0b7631d)) | [426](SOURCES.md#F-ce4edc2591) | −[0.0035](SOURCES.md#F-c8072e1fb2) | −[0.15](SOURCES.md#F-e46044f2fe) | [0.171](SOURCES.md#F-02c46ef356) | [0.352](SOURCES.md#F-41a0f96595) | [0.246](SOURCES.md#F-36a3ab0224) | [0.448](SOURCES.md#F-48a90d92d9) | [0.429](SOURCES.md#F-d71f441eac) | Slopes in mg/l/yr. Fitted slopes run from −[0.054](SOURCES.md#F-3f0f01680c) to +[0.084](SOURCES.md#F-c3bb6494f1) (core set) — a [15](SOURCES.md#F-c38a0fc9cc)-fold range crossing zero. With the end fixed at 2025 every start year gives a negative slope (−[0.0085](SOURCES.md#F-c4fb550fa8) at 1989, −[0.054](SOURCES.md#F-3f0f01680c) at 2016); with the start fixed at 1989 the slope is +[0.084](SOURCES.md#F-c3bb6494f1) ending 1998 and −[0.0085](SOURCES.md#F-c4fb550fa8) ending 2025. The sign is set by the end year, not the start year.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Every figure in the table and the slopes beside it came from the drafting run, whose code and output are not held.
+
+**Replaced by:** [`C-IL-L3-LICENSE`](CLAIMS.md#C-IL-L3-LICENSE) — each opens what it rests on.
+
+<a id="C-IL-OLD-L3-WEAK"></a>
+### The no-trend null produces window-dependence in a stated share of simulations.
+
+`C-IL-OLD-L3-WEAK` · retired 2026-09-11 from [hypodrafts/L3.md](hypodrafts/L3.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-IL-OLD-L3-WEAK">This is true of every noisy series ever fitted and is not worth testing — see the null below, which produces it [100](SOURCES.md#F-16d1d84fcc)% of the time from nothing.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IL-OLD-L3-WEAK "What this claim rests on")</sup>
+
+**Why it was retired:** The share came from the unheld simulation; the point stands on the argument alone.
+
+**Replaced by:** [`C-IL-L3-WEAK`](CLAIMS.md#C-IL-L3-WEAK) — each opens what it rests on.
+
+## hypodrafts/TRIAGE.md
+
+<a id="C-TR-OLD-ASTRIAGED"></a>
+### A note that the classes predated the water-chemistry fetch and had not been re-scored.
+
+`C-TR-OLD-ASTRIAGED` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-ASTRIAGED">Classified before the water-chemistry extract was fetched on 2026-09-10. `scripts/rescore.py` re-scores the hypotheses that fetch unblocks; the classes below are as triaged.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-ASTRIAGED "What this claim rests on")</sup>
+
+**Why it was retired:** The classes of the hypotheses that waited on the extract now follow the re-score, so the note no longer describes the table; the page reports the re-score instead.
+
+**Replaced by:** [`C-TR-RESCORE`](CLAIMS.md#C-TR-RESCORE) — each opens what it rests on.
+
+<a id="C-TR-OLD-CAUSE"></a>
+### The public debate said to settle on nutrients because group A has a monitoring programme.
+
+`C-TR-OLD-CAUSE` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-CAUSE">It is because nutrients are in group A, and group A has a monitoring programme. [60](SOURCES.md#F-eccdc4de06) of these hypotheses have never been in a position to compete.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-CAUSE "What this claim rests on")</sup>
+
+**Why it was retired:** Why a public debate settles on nutrients is a claim about the debate that nothing here examines; that nutrients did not win a contest follows from the counts and is kept.
+
+**Replaced by:** [`C-TR-CONTEST`](CLAIMS.md#C-TR-CONTEST) — each opens what it rests on.
+
+<a id="C-TR-OLD-CHEAP"></a>
+### Neither missing dimension was said to be expensive to start measuring.
+
+`C-TR-OLD-CHEAP` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-CHEAP">and neither is expensive to start measuring. eDNA and Alcian-blue TEP are cheap standard methods; the register says so itself in several places.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-CHEAP "What this claim rests on")</sup>
+
+**Why it was retired:** Nothing on the page or in the source register prices measuring either dimension; the one method the register calls cheap, Alcian-blue staining for gel particles, belongs to neither cluster.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-TR-OLD-HALF"></a>
+### Half the field was said to be blocked on a fetch, most of those fetches small, and a day of fetching enough to move a large fraction of the table.
+
+`C-TR-OLD-HALF` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-HALF">Half the field is not blocked on money or effort [61](SOURCES.md#F-07a5e08f93) of [166](SOURCES.md#F-515eaedcd7) ([37](SOURCES.md#F-37c8e29e81)%) are blocked on a fetch, and most of those fetches are small. The ones that need no credentials at all: the ICES/HELCOM trawling layer ([23](SOURCES.md#F-53b5de439f) MB, `CC BY 4.0`), the three ODA vegetation and fauna topics (three one-line `TOPICS` entries), OBIS phytoplankton via the eMoF extension (open REST), DMI tide gauges and wind (no key since March 2026), `Sentinel-1` SAR, and ICES stock assessments. A day of fetching would move a large fraction of this table.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-HALF "What this claim rests on")</sup>
+
+**Why it was retired:** 'Half' in the heading was not the page's own count, 'most of those fetches are small' and 'a day of fetching would move a large fraction of this table' had no measure behind them, and the trawling layer's size was a quotation of this page. The page gives the count and what the source register records about access.
+
+**Replaced by:** [`C-TR-FETCH`](CLAIMS.md#C-TR-FETCH), [`C-TR-OPEN`](CLAIMS.md#C-TR-OPEN) — each opens what it rests on.
+
+<a id="C-TR-OLD-MICROBIAL"></a>
+### Microbial community composition as the largest single blocking dimension, with no Danish marine station sequencing a microbial community.
+
+`C-TR-OLD-MICROBIAL` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-MICROBIAL">The largest single blocking dimension is not nutrients [12](SOURCES.md#F-0b0b227960) hypotheses are unscoreable for one missing dimension: microbial, viral and fungal community composition — of `E13`, `E17`, `F8`, `F11`, `F12`, `F13`, `F14`, `J8`, `R11`, `T5`, `T6`, `T8`, `T9`, `T12`, all but [2](SOURCES.md#F-fa3e8efd8e), which need an experiment instead. Not one Danish marine station counts viruses, sequences a microbial community, or surveys fungi. That is a whole functional layer with no column anywhere, and it blocks more of this register than any other single absence.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-MICROBIAL "What this claim rests on")</sup>
+
+**Why it was retired:** Danish research sequencing of marine microbial communities exists outside the monitoring (source register), so 'not one Danish marine station sequences a microbial community, or surveys fungi' overstated the absence, and 'more than any other single absence' rested on no count of the others. The page bounds the absence to the monitoring and compares the clusters it names.
+
+**Replaced by:** [`C-TR-MICROBIAL`](CLAIMS.md#C-TR-MICROBIAL), [`C-TR-MICRO-REG`](CLAIMS.md#C-TR-MICRO-REG) — each opens what it rests on.
+
+<a id="C-TR-OLD-NEVER"></a>
+### The unscoreable hypotheses said to have no column anywhere, ever, and with the experimental ones to be beyond any reanalysis of existing data.
+
+`C-TR-OLD-NEVER` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-NEVER">cannot be scored at all, and that is the finding [40](SOURCES.md#F-0159c39f63) of [166](SOURCES.md#F-f0a6537bb5) ([24](SOURCES.md#F-c87662ec62)%) are unscoreable — the deciding dimension has no column and never did. Add the [20](SOURCES.md#F-262687cbb0) that need an experiment and [36](SOURCES.md#F-a3fc51cb5a)% of the hypothesis field is beyond reach of any reanalysis of existing data. No amount of cleverness with the archive touches them.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-NEVER "What this claim rests on")</sup>
+
+**Why it was retired:** 'Has no column and never did' and 'beyond reach of any reanalysis of existing data' claimed an absence from the world; what was searched is the sources the register records, and the page bounds the claim to them.
+
+**Replaced by:** [`C-TR-UNSCOREABLE`](CLAIMS.md#C-TR-UNSCOREABLE), [`C-TR-BEYOND`](CLAIMS.md#C-TR-BEYOND) — each opens what it rests on.
+
+<a id="C-TR-OLD-NORUN"></a>
+### Nothing on the page had been run; a classification is a claim about what could be done.
+
+`C-TR-OLD-NORUN` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-NORUN">Nothing here has been run. A classification is a claim about what could be done, not a result.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-NORUN "What this claim rests on")</sup>
+
+**Why it was retired:** The re-score against the water-chemistry extract has since run tests for some of these hypotheses (OPEN_PROBLEMS.md), so 'nothing here has been run' no longer holds. The page says what a classification is.
+
+**Replaced by:** [`C-TR-NOTRESULT`](CLAIMS.md#C-TR-NOTRESULT) — each opens what it rests on.
+
+<a id="C-TR-OLD-ONEFETCH"></a>
+### The water-chemistry fetch as the one that would unblock the most, and group A with nothing testable because it had not been fetched.
+
+`C-TR-OLD-ONEFETCH` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-ONEFETCH">One fetch unblocks the most ODA `vandkemi` (`Emne_10_11`) is the single highest-value fetch: it carries nitrogen, phosphorus, silicate, ammonium and chlorophyll, and it is named in the blocker for `A1`, `A2`, `A5`, `A7`, `B4`, `E2`, `E11`, `K1`, `K2` — [9](SOURCES.md#F-beaff77879) hypotheses, including the entire nutrient-limitation argument. When this was written it was also the fetch `fetch_oda.py` advertised in its docstring and did not implement. Second is ODA bundfauna (`Emne_3_180`) at [7](SOURCES.md#F-7a4bcf5461) — `D11`, `F1`, `F2`, `H3`, `K14`, `T2`, `W4`. Note what that means for group A. Not one hypothesis in the nutrient group is testable now. The group the entire public argument rests on is the group whose data this project had not fetched.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-ONEFETCH "What this claim rests on")</sup>
+
+**Why it was retired:** The extract has been fetched and the nine re-scored against it; what the section argued from its absence no longer holds. Group A still has nothing testable, but no longer because of that fetch: [A5](HYPOTHESES.md "Advected nutrients from outside Denmark")'s concentration half is now held and its transport half is not.
+
+**Replaced by:** [`C-TR-RESCORE`](CLAIMS.md#C-TR-RESCORE), [`C-TR-GROUPA`](CLAIMS.md#C-TR-GROUPA), [`C-TR-BUNDFAUNA`](CLAIMS.md#C-TR-BUNDFAUNA) — each opens what it rests on.
+
+<a id="C-TR-OLD-PATTERN"></a>
+### The physical groups said to hold most testable entries and the chemistry and biology groups almost none, with nearly all of the unscoreable and experimental ones.
+
+`C-TR-OLD-PATTERN` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-PATTERN">The pattern across groups is blunt: this archive can see physics and it cannot see biology. Groups C, G, Z and I hold most of the testable-now entries. Groups E, F, J, T and R — chemistry, biological structure, films, sediment sickness, decay — hold almost none, and hold nearly all of the unscoreable and experimental ones.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-PATTERN "What this claim rests on")</sup>
+
+**Why it was retired:** 'Most', 'almost none' and 'nearly all' were quantities with no count behind them, and by the page's own counts those five groups did not hold nearly all of the unscoreable and experimental entries. The page gives the counts.
+
+**Replaced by:** [`C-TR-PATTERN`](CLAIMS.md#C-TR-PATTERN) — each opens what it rests on.
+
+<a id="C-TR-OLD-PLAN"></a>
+### The triage stage described through what PLAN.md said of it.
+
+`C-TR-OLD-PLAN` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-PLAN">PLAN.md's triage stage is "most of the work", and the stage after it is meaningless until it exists.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-PLAN "What this claim rests on")</sup>
+
+**Why it was retired:** PLAN.md said the triage was most of the work when this was written, and has since been rewritten without it; this page does not keep another page's words once that page no longer says them. The page now says what it is.
+
+**Replaced by:** [`C-TR-ALL`](CLAIMS.md#C-TR-ALL) — each opens what it rests on.
+
+<a id="C-TR-OLD-QUOTES"></a>
+### A note that the page's quoted numbers were carried from an earlier commit.
+
+`C-TR-OLD-QUOTES` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-QUOTES">Numbers shown as quotations are carried from this page as committed at `4469fc7`: nothing in the repository stores them yet, so each says what the page said, not that it was re-derived. Every other number is read live.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-QUOTES "What this claim rests on")</sup>
+
+**Why it was retired:** The note described numbers that were only quotations of the page's own earlier version, which justify nothing. Those numbers are gone, and a page does not narrate its own sourcing.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-TR-OLD-SIX"></a>
+### A count of things this project had called absent that turned out to exist, and the time it took.
+
+`C-TR-OLD-SIX` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-SIX">Six things this project called absent turned out to exist in one day.</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-SIX "What this claim rests on")</sup>
+
+**Why it was retired:** A count and a day carried from the project's history with no record of them here; the page cites KNOWN_AND_UNKNOWN.md's claim that things called absent have turned up.
+
+**Replaced by:** [`C-TR-SEARCH`](CLAIMS.md#C-TR-SEARCH) — each opens what it rests on.
+
+<a id="C-TR-OLD-TABLE"></a>
+### The triage table, group by group, as first published.
+
+`C-TR-OLD-TABLE` · retired 2026-09-11 from [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-TR-OLD-TABLE">A. Nutrient-driven production in place *[10](SOURCES.md#F-e4d14a33ec) hypotheses — [8](SOURCES.md#F-afe6cd2354) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) unscoreable, [1](SOURCES.md#F-db0ba863c5) not established.* | id | consequence | class | blocker | |---|---|---|---| | `A1` | Load up -> summer chlorophyll up -> bottom `O₂` down, per area per month | blocked on a fetch | ODA vandkemi `Emne_10_11` (N, P, chlorophyll) — ODA login. Land load additionally needs `STOFTRANSPORT`/`TILFOERSEL`, which require a code change: `run()` hardcodes the Hav endpoint | | `A2` | P flux up -> spring chlorophyll up | blocked on a fetch | same vandkemi fetch | | `A3` | Deposition over sea up -> production up where land load is low | blocked on a fetch | DEHM marine-grid deposition, monthly, incl. the organic-N fraction that is generally not reported | | `A10` | Urea-derived N from exhaust treatment enters the budget it abates | not established | A mass-balance argument, not an observable here. Whether any reaches the sea is not established | | `A4` | Plant discharge down at upgrade date -> local N down stepwise | blocked on a fetch | per-plant monthly N/P/COD with upgrade dates. `punkt_rens_udl.geojson` gives locations only | | `A5` | Nutrients at Belt/Sound sections co-vary with inner-water state | blocked on a fetch | vandkemi at section stations. CMEMS Baltic indicators are held but carry no nutrients | | `A6` | SGD delivers N where no stream does | unscoreable | Submarine groundwater discharge is not a term in the national account. No Danish SGD survey exists at all | | `A7` | Bottom-water DIP rises in summer without a matching river input | blocked on a fetch | vandkemi `Emne_10_11` (ortho-P, now held: [650](SOURCES.md#F-54c84e553f) stations in the extract carry it) + sedimentkemi `Emne_12_19` ([39](SOURCES.md#F-38c8be0e14) stations). `openproblems/A7.md`: armchair for the weak form, measurement for the strong | | `A8` | Sediment near pens enriched vs matched controls | blocked on a fetch | per-farm production and feed by month. `punkt_havdam_udl.geojson` gives farm locations only | | `A9` | Cyanobacteria abundance up where N:P is low | blocked on a fetch | phytoplankton counts — OBIS eMoF carries [103,005](SOURCES.md#F-fa1f9e088f) Danish abundance records, open REST, no credentials (`hypodrafts/K1.md`) | ### B. Oxygen demand that arrived already made *[8](SOURCES.md#F-afe6cd2354) hypotheses — [1](SOURCES.md#F-db0ba863c5) testable now, [4](SOURCES.md#F-9e58f3eb77) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution, [2](SOURCES.md#F-e8ce47d698) unscoreable.* | id | consequence | class | blocker | |---|---|---|---| | `B1` | Bathing indicator up downstream of combined outfalls after rain, not separate ones | testable now | Draft exists (`hypodrafts/B1.md`). Uses combined-vs-separate class and an a priori critical rainfall depth, never modelled volume. Its EEA WISE claim is unverified | | `B2` | First-flush concentration x volume exceeds the annual-total assumption | blocked on resolution | event-resolved concentration and volume at the outfall. Annual totals over [16,185](SOURCES.md#F-a7cf3306e4) separate stormwater outfalls cannot test a first-flush claim | | `B3` | Plant COD/BOD up -> local oxygen demand up | blocked on a fetch | per-plant monthly COD/BOD | | `B4` | Riverine POC up -> sediment organic content up at the receiving coast | blocked on a fetch | suspended solids and organic carbon at stream stations (vandkemi / stoftransport) | | `B5` | Industrial organic load co-locates with local demand | blocked on a fetch | industrial discharge permits and reported loads per site per year | | `B6` | Harbour water shows a demand signature the open coast does not | unscoreable | Harbour water quality measurements are largely absent. No column anywhere held | | `B7` | Scrubber and bilge discharge along tracks -> local demand | blocked on a fetch | AIS tracks are obtainable; discharge volumes essentially do not exist, so the second half is unscoreable | | `B8` | Incident-linked slurry entry -> local spike | unscoreable | No public environmental incident register with date and location | ### C. Physical control of resupply *[9](SOURCES.md#F-aac9532646) hypotheses — [5](SOURCES.md#F-3867ec0439) testable now, [2](SOURCES.md#F-e8ce47d698) blocked on a fetch, [2](SOURCES.md#F-e8ce47d698) blocked on resolution.* | id | consequence | class | blocker | |---|---|---|---| | `C1` | Hypoxia is near-zero in well-mixed water at matched depth | testable now | Draft exists (`hypodrafts/C1.md`). [133,509](SOURCES.md#F-bf033efd0d) station-days with at least [4](SOURCES.md#F-9e58f3eb77) depth levels of T and S plus bottom oxygen, from the raw CTD | | `C2` | Wind work up -> stratification broken -> bottom `O₂` up | testable now | hourly wind held (`data/raw/weather/`, [31](SOURCES.md#F-96030b5d03) years) joined to CTD profiles | | `C3` | Long residence time -> lower `O₂` at matched load | blocked on resolution | per-area residence time held only coarsely — the [9](SOURCES.md#F-aac9532646) km field is too slow in the straits by its own calibration: at Drogden its peak speed falls short of the published peak by a factor of [1.9](SOURCES.md#F-e968de5a2e) | | `C4` | Inflow -> deep `O₂` pulse, lagged, ordered Belts->Arkona->Bornholm->Gotland | testable now | Draft exists (`hypodrafts/C4.md`). MBI indicator and Gotland profiles held; the published inflow record is not, so a wind-derived instrument substitutes | | `C5` | Freshwater pulse -> stratification up -> bottom `O₂` down | blocked on a fetch | daily freshwater discharge per catchment | | `C6` | Deficit vs saturation separates solubility from consumption | testable now | Draft exists (`hypodrafts/C6.md`). [76,305](SOURCES.md#F-6c29c95adc) station-months carrying `O₂`, T and S near-bed | | `C7` | Deeper and silled areas go hypoxic at lower load | testable now | bottom depth per visit in `maaledybde` ([151,203](SOURCES.md#F-32fd33dec1) rows); sill geometry from `marin_overordnet.geojson` | | `C8` | Construction changed exchange -> step in local state at the works date | blocked on resolution | construction chronology partial; needs works dates and footprints joined to sub-monthly state | | `C9` | Sea level and tidal change alter exchange | blocked on a fetch | DMI oceanObs tide gauges — [10](SOURCES.md#F-e4d14a33ec)-minute from 1889, `CC BY 4.0`, no API key required since 2026-03-26 | ### D. Physical disturbance of the bed *[11](SOURCES.md#F-607efb6304) hypotheses — [1](SOURCES.md#F-db0ba863c5) testable now, [8](SOURCES.md#F-afe6cd2354) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) unscoreable, [1](SOURCES.md#F-db0ba863c5) needs an experiment.* | id | consequence | class | blocker | |---|---|---|---| | `D1` | Effort up -> near-bed `O₂` down, strongest on fine substrate, absent >[20](SOURCES.md#F-4d487cc1b2) m | blocked on a fetch | ICES/HELCOM swept-area ratio, `figshare 20310255` — [23.1](SOURCES.md#F-bce9466683) MB, `CC BY 4.0`, no credentials. Draft exists (`hypodrafts/D1.md`) | | `D2` | Dredging event -> local turbidity and demand spike | blocked on a fetch | dredging permits with dates, volumes and locations | | `D3` | A dumping ground shows a signature its surroundings do not | blocked on a fetch | `klappladser.geojson` gives the grounds. Per-ground volume, date and material chemistry are in MST-KLAP as individual PDFs | | `D4` | An extraction area differs from matched unextracted seabed | blocked on a fetch | `raastofomr.geojson` gives the areas; per-area extracted volume by year is not held | | `D5` | Cable route works -> local disturbance signature | blocked on a fetch | route and installation-date registers | | `D6` | Anchorage seabed differs from matched non-anchorage | blocked on a fetch | AIS anchoring events and anchorage designations | | `D7` | Transparency deficit lags critical bed shear, only in shallow water | testable now | Draft exists (`hypodrafts/D7.md`). [96,709](SOURCES.md#F-c735741244) dated Secchi+depth visits, `Turbiditet` [1,076,915](SOURCES.md#F-53aa4b0147) rows, wind held. The monthly panel cannot resolve events, so the draft runs on the dated raw record | | `D8` | A biostabilised bed resists erosion to higher shear | needs an experiment | erodibility measurement (cohesive strength meter or flume) with matched surface-sediment chlorophyll. Standard method, not in Danish monitoring | | `D9` | Within-area fauna variance collapses under homogenisation | unscoreable | One grab per station by design. Within-area variance cannot be estimated from a design that samples one point per area | | `D10` | Grain size coarsens where fines are winnowed | blocked on a fetch | ODA sediment grain size as a time series. `seabed_sediment_dk.gpkg` is a static [108](SOURCES.md#F-ec0e83165f)-polygon mosaic from [19](SOURCES.md#F-180adf9563) mapping programmes, at scale denominators from [5,000](SOURCES.md#F-259389fe39) to [500,000](SOURCES.md#F-18263b3507) | | `D11` | Stabiliser:destabiliser ratio predicts bed state | blocked on a fetch | ODA bundfauna `Emne_3_180`, then a desk trait assignment | ### E. Chemical demand and toxicity *[20](SOURCES.md#F-4d487cc1b2) hypotheses — [6](SOURCES.md#F-ea4cb20f47) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution, [11](SOURCES.md#F-607efb6304) unscoreable, [1](SOURCES.md#F-db0ba863c5) needs an experiment, [1](SOURCES.md#F-db0ba863c5) not established.* | id | consequence | class | blocker | |---|---|---|---| | `E1` | Sulphide oxidation consumes `O₂` where redox is low | blocked on a fetch | sedimentkemi `Emne_12_19`; sediment redox and sulphide are rarely measured even there | | `E2` | Nitrification demand scales with ammonium | blocked on a fetch | ammonium is NOT in the CTD file. The Needs line saying 'in the ODA water chemistry' means unfetched — vandkemi `Emne_10_11` | | `E3` | Fe/Mn oxidation consumes `O₂` at the redox front | needs an experiment | porewater chemistry, very rare, and the mechanism is millimetre-scale | | `E4` | Methane oxidation consumes `O₂` above seeps | unscoreable | Essentially no Danish coastal methane flux record | | `E5` | Discharge COD carried into a marine budget changes the balance | blocked on a fetch | per-outlet COD — measured in discharge monitoring and never carried through | | `E6` | Antifoulant concentration up -> decomposer function down | unscoreable | Sediment measured at [5](SOURCES.md#F-3867ec0439) of [256](SOURCES.md#F-257ef37a1c) national hazardous-substance stations — and not one is coastal ([152](SOURCES.md#F-e647318789) lake, [104](SOURCES.md#F-d5801a485e) river, [0](SOURCES.md#F-f39b7b9bb1) coastal; `sw_mfs_tilstand.geojson`) | | `E7` | Pesticide load co-varies with N and acts separately | unscoreable | No toxicant column in [53,710,760](SOURCES.md#F-b205a6315b) CTD rows, none in [679,422](SOURCES.md#F-6589d15301) station-months. `openproblems/E7.md` classifies it measurement | | `E8` | Pharmaceutical residues alter microbial function | unscoreable | almost no Danish marine pharmaceutical monitoring | | `E9` | PFAS persists and accumulates in biota | blocked on a fetch | some biota data exists (ICES DOME); sediment barely. A fetch would establish the extent | | `E10` | Metal concentration up -> benthic function down | blocked on a fetch | ICES DOME holds Danish Fe/S/PTOT — [47](SOURCES.md#F-c620873a80) samples at [12](SOURCES.md#F-30e196302c) positions, all 1990-[91](SOURCES.md#F-5b16c09773) (`openproblems/R6.md`) | | `E11` | Un-ionised ammonia is toxic at high pH and temperature | blocked on a fetch | pH is held ([237,496](SOURCES.md#F-71758757ce) rows); ammonium is not. vandkemi fetch | | `E12` | Free sulphide is toxic to fauna above a threshold | blocked on resolution | `Dihydrogensulfid` is [2,601](SOURCES.md#F-5b2cb73e27) rows and [2,598](SOURCES.md#F-5ca507e43a) come from one station (Mariager, `93610032`). Usable for one silled basin, not a series | | `E13` | Fungicides remove decomposers -> decay stalls | unscoreable | Neither fungicide in sediment nor fungal biomass is measured. `R11` records that the fungi are not counted anywhere | | `E14` | Antiparasitic residues in manure reach water and act | unscoreable | not routinely measured in Danish soil, runoff or sediment | | `E15` | Total biocide load, not per-substance, predicts effect | unscoreable | Nothing assembles national sales data into an environmental load by catchment | | `E16` | High-tonnage compounds act on conserved targets at realistic dose | unscoreable | marine concentrations of the actual high-tonnage compounds are not monitored | | `E18` | `6PPD-quinone` is lethal to salmonids at road-runoff concentrations | unscoreable | `6PPD-quinone` is not measured in Danish monitoring. Danish sea-trout sensitivity is also unestablished | | `E20` | Fuel oxygenates reach coastal water | not established | groundwater monitoring covers some; whether any is reported for coastal discharge is not established | | `E19` | Standard test batteries miss locally present sensitive species | unscoreable | No panel of locally present species exists, so this cannot be checked for any compound | | `E17` | The microbiome is the exposed organ | unscoreable | No host-associated microbial community data for any Danish marine organism | ### F. Biological structure and feedback *[14](SOURCES.md#F-827a326037) hypotheses — [6](SOURCES.md#F-ea4cb20f47) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution, [7](SOURCES.md#F-c68d73f869) unscoreable.* | id | consequence | class | blocker | |---|---|---|---| | `F1` | Filter-feeder loss -> clearance down -> chlorophyll up | blocked on a fetch | ODA bundfauna `Emne_3_180`; shellfish stock assessments | | `F2` | Bioturbator loss -> sediment `O₂` penetration down | blocked on a fetch | ODA bundfauna `Emne_3_180`, species-level abundance and biomass | | `F3` | Cover falls where light is adequate -> the block is not light | blocked on a fetch | ODA `Emne_3_182` aalegraes, [1,990](SOURCES.md#F-3350980d2f) stations 1970-2026 — three one-line TOPICS entries, no extra credentials. Draft exists (`hypodrafts/F3.md`) | | `F4` | Distant stock removal -> cascade to local grazing | blocked on a fetch | ICES stock assessments and Danish landings by area and year — both open, already in the fetch queue | | `F5` | Invasive arrival -> function change at the arrival date | blocked on a fetch | species observation records with date and position (OBIS/GBIF, open) | | `F6` | Jellyfish blooms alter the pathway | unscoreable | Essentially no jellyfish monitoring in Denmark | | `F7` | HAB species specifically, not chlorophyll, drive the harm | blocked on a fetch | phytoplankton species counts — collected, and OBIS eMoF carries [103,005](SOURCES.md#F-fa1f9e088f) Danish abundance records | | `F8` | Community shifts to fast-growing forms under enrichment | unscoreable | Microbial community composition is not monitored at all | | `F9` | Disease mortality event -> structural loss | unscoreable | the marine mortality event register is ad hoc; no systematic column | | `F10` | Vertebrate mass mortality signals a pathway | blocked on resolution | stranding networks are partial; needs event dates joined to state | | `F11` | Viral lysis short-circuits the food web | unscoreable | Marine viral counts are not in Danish monitoring at any station — a standard method since the 1990s | | `F13` | Organisms between the folk categories go unrecorded | unscoreable | No eDNA survey with an open taxonomic frame. The categories on the existing forms are the cause | | `F14` | Viruses are structure, not only mortality | unscoreable | Not measured at any Danish station. Flagged in-register as the most likely location of the mycorrhizal gap | | `F12` | Micropathogens of invertebrates are uncatalogued | unscoreable | Denmark has no marine mortality response capability for invertebrates | ### G. Climate and long-term drivers *[6](SOURCES.md#F-ea4cb20f47) hypotheses — [2](SOURCES.md#F-e8ce47d698) testable now, [3](SOURCES.md#F-dfae9eb90e) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution.* | id | consequence | class | blocker | |---|---|---|---| | `G1` | dO₂/dt = dC_sat/dt − dD/dt; the deficit widens or it does not | testable now | Draft exists (`hypodrafts/G1.md`). [76,264](SOURCES.md#F-3da720d9f6) five-way joined station-months; Weiss makes the solubility channel exact rather than estimated | | `G2` | Runoff timing shifts -> load timing shifts -> state shifts | blocked on a fetch | daily discharge and concentration, not annual sums | | `G3` | Wind climatology change -> mixing change | testable now | hourly wind held, [31](SOURCES.md#F-96030b5d03) years. The trend null must be matched-autocorrelation, not independence | | `G4` | Acidification alters carbonate saturation for calcifiers | blocked on resolution | pH is held ([237,496](SOURCES.md#F-71758757ce) rows) but the carbonate system needs two of pH / alkalinity / DIC / pCO₂, and only one is held | | `G5` | Ice cover change alters seasonal mixing | blocked on a fetch | ice records — available, not fetched | | `G6` | Sea level rise alters exchange and inundation | blocked on a fetch | DMI tide gauges — long, open, not fetched | ### H. State, memory and regime *[4](SOURCES.md#F-9e58f3eb77) hypotheses — [3](SOURCES.md#F-dfae9eb90e) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution.* | id | consequence | class | blocker | |---|---|---|---| | `H1` | State does not retrace the load path — hysteresis | blocked on resolution | needs long paired load-and-state through both directions; the load half is unfetched and the reversal may not have occurred | | `H2` | Sediment legacy sustains demand after load falls | blocked on a fetch | sediment organic content and accumulation rates, and dated cores | | `H3` | Diversity loss -> variance of response up | blocked on a fetch | ODA bundfauna `Emne_3_180`, long species-level series | | `H4` | Response is non-monotone across the load gradient | blocked on a fetch | the [123](SOURCES.md#F-f5fa8839a8) areas supply the gradient; the load axis is the unfetched half | ### J. Surface film, gel and the greasy water itself *[9](SOURCES.md#F-aac9532646) hypotheses — [1](SOURCES.md#F-db0ba863c5) blocked on a fetch, [2](SOURCES.md#F-e8ce47d698) blocked on resolution, [5](SOURCES.md#F-3867ec0439) unscoreable, [1](SOURCES.md#F-db0ba863c5) not established.* | id | consequence | class | blocker | |---|---|---|---| | `J1` | Attenuation residual after chlorophyll, CDOM and particles is gel | unscoreable | TEP is not measured at all, and `Lysdaempning` is a bare `pct` with no path length recorded, so the total has no physical units. `openproblems/J1.md` | | `J2` | Microlayer enrichment concentrates surfactants and toxicants | unscoreable | No sea-surface microlayer sampling in Danish monitoring | | `J3` | Surfactant load -> film -> gas exchange down | unscoreable | essentially no marine surfactant measurements | | `J4` | UV filters accumulate in nearshore water | unscoreable | No marine UV-filter monitoring in Denmark | | `J9` | Fragmentation is a source term the inventory omits | not established | the national inventory gives [5,500](SOURCES.md#F-83fa638bd2)-[13,900](SOURCES.md#F-779db984b0) t/yr released and [600](SOURCES.md#F-4fdbb463a3)-[3,100](SOURCES.md#F-2af81c221b) t/yr to sea; whether fragmentation is separable within it is not established | | `J5` | Microplastic biofilm alters the microlayer | blocked on resolution | some Danish microplastic data exists; microlayer-specific, none | | `J6` | Oil films in SAR co-locate with the greasy-water reports | blocked on a fetch | `Sentinel-1` SAR is free and covers the whole period. The register's own Needs line says this one is testable now — it is a fetch away | | `J7` | Bloom collapse -> DOC pulse -> film | blocked on resolution | DOC at sub-monthly resolution. The sampling frequency is the binding constraint | | `J8` | Fast-growing communities exude more polymer | unscoreable | microbial community data is not monitored | ### K. Depletion and imbalance of what life requires *[14](SOURCES.md#F-827a326037) hypotheses — [2](SOURCES.md#F-e8ce47d698) testable now, [4](SOURCES.md#F-9e58f3eb77) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution, [6](SOURCES.md#F-ea4cb20f47) unscoreable, [1](SOURCES.md#F-db0ba863c5) needs an experiment.* | id | consequence | class | blocker | |---|---|---|---| | `K1` | Si:DIN falls -> diatom share falls -> flagellates rise | blocked on a fetch | silicate is NOT in the CTD file — vandkemi `Emne_10_11`; phytoplankton via OBIS eMoF. Draft exists (`hypodrafts/K1.md`); the CMEMS DIATO field is a relabelling of CHL and cannot bear it | | `K2` | N:P:Si ratio, not absolute load, selects the assemblage | blocked on a fetch | same vandkemi fetch plus species counts | | `K3` | Macronutrient excess induces micronutrient deficiency in tissue | needs an experiment | tissue elemental analysis of algae and eelgrass is not collected | | `K4` deficiency") | Thiamine deficiency propagates up the food web | unscoreable | No Danish marine thiamine assays. Swedish and Finnish work exists | | `K5` and cobalt limitation") | Vitamin `B12` and cobalt limit the auxotrophs | unscoreable | No marine `B12` measurements in Denmark | | `K6` | Iron bioavailability limits production or detoxification | unscoreable | iron speciation is not monitored | | `K7` | Carbonate ion depletion impairs calcification | blocked on resolution | needs two carbonate-system variables; one is held | | `K8` | The window between deficient and toxic is narrow and crossed | unscoreable | trace elements with matched biological response; sediment metals at four national points | | `K9` | Selenium status limits or intoxicates | unscoreable | selenium in Danish marine biota is not routinely measured | | `K10` | Salinity change imposes osmotic cost at the range edge | testable now | salinity by station, date and depth is in the CTD record — [7,474,645](SOURCES.md#F-42124279ac) rows | | `K11` | Light at the bed = f(Kd, depth), and the product is rarely formed | testable now | Both halves held: `lys` [2,370,091](SOURCES.md#F-e5ce387cb5) rows and bottom depth in `maaledybde`, [96,708](SOURCES.md#F-2ce18db947) paired. Carries the Kd start-depth artefact, and Secchi censoring at the bed: [36.9](SOURCES.md#F-5847cf5bc7)% of paired readings in water shallower than [5](SOURCES.md#F-3867ec0439) m reach the bed | | `K12` | Structure removal -> habitat loss independent of water quality | blocked on a fetch | stone extraction records, reef restoration locations and dates | | `K13` | Particle spectra shift below the filter-feeder window | unscoreable | Particle size spectra and larval condition indices are not monitored | | `K14` | Functional diversity falls before species richness does | blocked on a fetch | ODA bundfauna `Emne_3_180` | ### W. Renewal and rate *[8](SOURCES.md#F-afe6cd2354) hypotheses — [1](SOURCES.md#F-db0ba863c5) testable now, [3](SOURCES.md#F-dfae9eb90e) blocked on a fetch, [2](SOURCES.md#F-e8ce47d698) blocked on resolution, [2](SOURCES.md#F-e8ce47d698) needs an experiment.* | id | consequence | class | blocker | |---|---|---|---| | `W1` | Recovery fails where propagule supply is cut | blocked on resolution | source populations plus particle tracking; the held circulation model is [9](SOURCES.md#F-aac9532646) km and ~[2](SOURCES.md#F-e8ce47d698)x slow in the straits | | `W2` | Unconditioned substrate fails to recruit | needs an experiment | settlement plates with and without conditioning. Cheap, and connects to the sediment-inoculation experiment `X1` | | `W3` | Bloom and larval peak drift apart | blocked on resolution | sub-monthly plankton series. The register itself states sampling frequency is the binding constraint, not the parameters | | `W4` | Below a density threshold reproduction fails | blocked on a fetch | ODA bundfauna carries densities; the analysis is then a desk exercise | | `W5` | Disturbance interval shorter than recovery time | blocked on a fetch | trawling effort at monthly or finer. The ICES/HELCOM layer is quarterly; finer is the closed dataset | | `W6` | Rate of change exceeds acclimation rate | testable now | high-frequency records exist and are analysed for means rather than rates. The CTD record supports a rate analysis now | | `W8` | The founder community determines the endpoint | needs an experiment | composition immediately after disturbance and through recovery at the same place — requires having sampled before | | `W7` | Too little standing variation is left to respond with | blocked on a fetch | long species-level fauna is in ODA; genetic data nobody has, so that half is unscoreable | ### Z. The physical fields and their windows *[11](SOURCES.md#F-607efb6304) hypotheses — [3](SOURCES.md#F-dfae9eb90e) testable now, [2](SOURCES.md#F-e8ce47d698) blocked on a fetch, [3](SOURCES.md#F-dfae9eb90e) blocked on resolution, [2](SOURCES.md#F-e8ce47d698) unscoreable, [1](SOURCES.md#F-db0ba863c5) needs an experiment.* | id | consequence | class | blocker | |---|---|---|---| | `Z1` | Light at the bed outside the window -> loss | testable now | the same product as `K11`; both halves held | | `Z2` | Browning shifts the spectrum, not just the quantity | blocked on resolution | Kd is a single broadband number. FDOM ([890,921](SOURCES.md#F-3a88036019) rows, from 2021 onward only) is a CDOM proxy on the same cast — [6](SOURCES.md#F-ea4cb20f47) years of in-situ CDOM | | `Z3` | Photoperiod cue decouples from temperature cue | unscoreable | Effectively no phenological observations for Danish marine invertebrates | | `Z4` | Rate of temperature change, not level, exceeds tolerance | blocked on resolution | bottom temperature at high frequency; the monthly product aliases it, the raw record may not | | `Z5` | Energy has a floor — too still is also a failure | testable now | bed shear already computed here from [31](SOURCES.md#F-96030b5d03) years of wind; the floor is testable against the same state variables | | `Z6` | Sound masks settlement cues | unscoreable | essentially no noise measurement tied to invertebrate settlement | | `Z7` | EMF from cables alters behaviour | blocked on resolution | cable routes and energisation dates are available; biological response is not measured | | `Z8` | The attenuation budget is never partitioned | testable now | Draft exists (`hypodrafts/Z8.md`). Kd plus chlorophyll, CDOM and particle proxies on the same cast, [9,717](SOURCES.md#F-371a28bb8e) casts with all four — but `Lysdaempning` has no path length, so it is a variance apportionment, not a budget | | `Z9` | Epiphytes shade the plant regardless of water clarity | blocked on a fetch | epiphyte biomass on eelgrass — in research programmes, not routine monitoring | | `Z10` | Works plumes exceed natural turbidity long enough to matter | blocked on a fetch | works chronology plus the turbidity monitoring large projects must do and rarely reanalyse | | `Z11` | A weakened host fails at a stress a healthy one survives | needs an experiment | carbohydrate reserves, tissue sulphide and pathogen load on the same plants | ### T. Sediment sickness: symbionts, pathogens and why nothing grows back *[12](SOURCES.md#F-30e196302c) hypotheses — [1](SOURCES.md#F-db0ba863c5) blocked on a fetch, [4](SOURCES.md#F-9e58f3eb77) unscoreable, [7](SOURCES.md#F-c68d73f869) needs an experiment.* | id | consequence | class | blocker | |---|---|---|---| | `T1` | Sulphide intrudes when light cannot power the defence | needs an experiment | tissue sulphide, porewater sulphide and light at the bed on the same plants; a research method, not monitoring | | `T2` | Lucinid bivalves absent -> sulphide detoxification lost | blocked on a fetch | infaunal bivalve records within seagrass beds are in ODA bundfauna if anyone looks | | `T3` | Labyrinthula virulence rises with host stress | needs an experiment | Labyrinthula screening in Danish eelgrass; not routine | | `T4` | Replanting fails on conditioned sediment and succeeds on clean | needs an experiment | restoration trials with sediment treatments. A handful of Danish eelgrass trials exist; this design does not | | `T5` | Suppressive sediment resists invasion; degraded does not | needs an experiment | sediment microbial composition and transfer experiments — neither exists | | `T6` | Enrichment dissolves the partnership by making it unnecessary | needs an experiment | rhizosphere community composition along the gradient | | `T7` | Anaerobic phytotoxins beyond sulphide | needs an experiment | porewater chemistry beyond the standard nutrients | | `T8` | Anaerobia selects for the pathogens | unscoreable | essentially no marine oomycete or labyrinthulid surveys | | `T9` | Pathogen and partner are not kinds of organism | unscoreable | host-associated microbial and viral community data through a stress gradient — absent for every Danish marine species | | `T12` | Defence is outsourced; a biocide disarms the host | unscoreable | host-associated community data with matched disease outcomes — absent | | `T11` | Occupancy is the function; the empty niche is the risk | needs an experiment | challenge experiments on intact versus disturbed communities. Standard in medical and soil microbiology, not applied in Danish marine work | | `T10` | Removing an unknown-role organism is not neutral | unscoreable | baseline composition before intervention is almost never collected, which makes the comparison impossible by construction | ### S. The land side: the medium, not the input *[6](SOURCES.md#F-ea4cb20f47) hypotheses — [1](SOURCES.md#F-db0ba863c5) testable now, [3](SOURCES.md#F-dfae9eb90e) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution, [1](SOURCES.md#F-db0ba863c5) needs an experiment.* | id | consequence | class | blocker | |---|---|---|---| | `S1` | Retention varies an order of magnitude with the medium | blocked on a fetch | the soil map exists; the paired drainage validation largely does not | | `S2` | Legacy soil P leaks after inputs stop | blocked on a fetch | Denmark holds soil P status and it is not carried into the marine argument — a fetch and a join | | `S3` | Sorption is hysteretic — a ratchet on the land side too | needs an experiment | sorption-desorption experiments on Danish soils; standard method | | `S4` | Total P is not available P | blocked on a fetch | fractionated sediment P — sedimentkemi `Emne_12_19` carries Fe-adsorbed P at [39](SOURCES.md#F-38c8be0e14) stations | | `S5` | Buffering scales with the volume of reactive medium | blocked on resolution | bathymetry is held; sediment thickness is not | | `S6` | The retention coefficient is not constant — it saturates | testable now | the register's own Needs line: 'Requires no new measurement at all' — the same catchment flux data split by period. Blocked only insofar as the flux series is the unfetched input | ### R. Decay, and the community that does it *[11](SOURCES.md#F-607efb6304) hypotheses — [3](SOURCES.md#F-dfae9eb90e) blocked on a fetch, [1](SOURCES.md#F-db0ba863c5) blocked on resolution, [1](SOURCES.md#F-db0ba863c5) unscoreable, [6](SOURCES.md#F-ea4cb20f47) needs an experiment.* | id | consequence | class | blocker | |---|---|---|---| | `R11` | Marine fungi decompose and nobody counts them | unscoreable | essentially no marine fungal surveys in Danish waters | | `R1` | C:N of discharged material decides whether it is a sink | blocked on a fetch | both numbers exist in discharge monitoring and the ratio is never formed — a fetch and one arithmetic step | | `R2` | Fresh carbon primes the old sediment pool | needs an experiment | sediment incubation with and without labile addition | | `R3` | The decay relay stalls when a stage is removed | blocked on a fetch | sediment organic content with matched fauna — both in ODA and never analysed together | | `R4` | N enrichment retards decay of the recalcitrant fraction | needs an experiment | litter-bag or incubation studies with characterised organic fractions | | `R5` | The electron-acceptor cascade shifts with salinity | blocked on resolution | porewater sulphide and methane by station; rarely measured | | `R6` | Sulphide locks the iron that would hold the phosphate | needs an experiment | classified experiment-constructive in `openproblems/R6.md`. NOVA teknisk anvisning `kap. 14` ran exactly this method 1998-2003 and it was discontinued | | `R7` | Flocculation deposits river carbon at the coast | blocked on a fetch | sediment organic content with matched salinity — the register calls it obtainable | | `R8` | Lipids are less soluble in seawater, so they deposit | needs an experiment | lipid fractionation by salinity | | `R9` | Novel material decays slower — no home-field advantage | needs an experiment | comparative decomposition assays | | `R10` | Osmotic discontinuity stalls the decomposers themselves | needs an experiment | cross-transplant incubations | ### L. The baseline and the counterfactual *[6](SOURCES.md#F-ea4cb20f47) hypotheses — [2](SOURCES.md#F-e8ce47d698) testable now, [4](SOURCES.md#F-9e58f3eb77) blocked on a fetch.* | id | consequence | class | blocker | |---|---|---|---| | `L6` | The degraded bed is classified as its own habitat type | blocked on a fetch | historical seabed charts, old fisheries records and trawling effort — the history a classification key discards | | `L1` | The reference condition never existed | blocked on a fetch | dated sediment cores with diatom and pigment stratigraphy; some exist and are not what the reference derives from | | `L2` | The reference is a model output treated as a fact | testable now | Archival, not statistical. The reference model's assumptions and the indsatsbehov recomputed across their plausible range; DCE reports are public, text-extractable PDFs | | `L3` | The trend depends on the start year | testable now | Draft exists and was run (`hypodrafts/L3.md`). [406](SOURCES.md#F-95fdc09be8) admissible windows; sign-flipping occurs in [100](SOURCES.md#F-a5e49ee809)% of matched-AR nulls, so `L3`'s strong reading is not established for bed oxygen | | `L4` | Recovery is blocked by something other than the driver | blocked on a fetch | restoration trials with controls — a handful exist in Denmark and are not treated as decisive | | `L5` | The reference sites are not references | blocked on a fetch | trawling, dumping and contaminant coverage for the areas used as references. The trawling layer is a [23](SOURCES.md#F-3f6161ca84) MB open fetch | ### I. Observation and measurement *[7](SOURCES.md#F-c68d73f869) hypotheses — [6](SOURCES.md#F-ea4cb20f47) testable now, [1](SOURCES.md#F-db0ba863c5) blocked on resolution.* | id | consequence | class | blocker | |---|---|---|---| | `I1` | Apparent change concentrates where the network changed | testable now | Draft exists (`hypodrafts/I1.md`). [64](SOURCES.md#F-d617cff5d1) stations present in all eight [5](SOURCES.md#F-3867ec0439)-year eras, [8,485](SOURCES.md#F-1b84d3d624) station-months. The register cannot supply lifespans; presence comes from the observation record | | `I2` | Step changes at probe changeover, shared across geography | blocked on resolution | `SondeNr` is `999` on [25.6](SOURCES.md#F-3192df739d)% of rows in the whole CTD extract. The rest carries [81](SOURCES.md#F-3da7ba1cd3) identified probes and is where `I2` is testable | | `I3` | Apparent severity scales with visit count and window | testable now | Draft exists (`hypodrafts/I3.md`). The count-and-window half is fully testable; the diel half is carved out as `class 6`, unscoreable | | `I4` | Status shifts at definition changes with no measurement change | testable now | the definitions with their adoption dates — archival, and the recomputation runs on held data | | `I5` | Trends present in corrected but not original results | testable now | Held. `KorrektionsFaktor` is exactly one on [94.76](SOURCES.md#F-34e6149dcb)% of rows, and Original differs from Korrigeret on [5.21](SOURCES.md#F-16d5f19ba0)% of those carrying both | | `I6` | Discontinuities at 2007 shared across stations that changed hands | testable now | `Dataleverandoer` and `TekniskAnvisningAnvendt` are in the raw record — but over the whole CTD extract they carry [2](SOURCES.md#F-e8ce47d698) and [1](SOURCES.md#F-db0ba863c5) distinct values, so the contrast may be empty | | `I7` | Implausible values cluster in time across unrelated custodians | testable now | Worked case already found: [11](SOURCES.md#F-607efb6304) station-months at [6](SOURCES.md#F-ea4cb20f47) stations, [4](SOURCES.md#F-9e58f3eb77) custodian prefixes, May-June 2005, recorded in `flags.json`</span><sup class="claim-mark">[†](ARCHIVE.md#C-TR-OLD-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Its classes for the hypotheses that waited on the water-chemistry extract predate the fetch; rows carried numbers only as quotations of this page's earlier version; blockers were contradicted by the source register or the held files - an extract holding total alkalinity said to hold one carbonate variable, replicate grabs said not to exist, open sequencing and a sediment core record said to exist or not to exist against what the register found - and some cited other pages for what those pages no longer say. The table is rebuilt row by row from the register, the held files and the re-score, and the classes follow.
+
+**Replaced by:** [`C-TR-RULE`](CLAIMS.md#C-TR-RULE) — each opens what it rests on.
+
+## hypodrafts/Z8.md
+
+<a id="C-DZ-OLD-Z8-ACS"></a>
+### Absorption profiles beside a PAR cast were taken twice in Danish waters and never in monitoring.
+
+`C-DZ-OLD-Z8-ACS` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-ACS">needs absorption in units: an AC-S or spectroradiometer profile beside the PAR cast, done twice in Danish waters (Gonçalves-Araujo & Markager 2020, around Fyn, 2017 and 2019) and never in monitoring.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-ACS "What this claim rests on")</sup>
+
+**Why it was retired:** The paper it cites, now pinned, took its AC-S profiles at stations of the national monitoring programme and describes the instrument's incorporation into the sampling programme; never in monitoring is contradicted by that source.
+
+**Replaced by:** [`C-DZ-Z8-SHRINK`](CLAIMS.md#C-DZ-Z8-SHRINK), [`C-DZ-Z8-ACS`](CLAIMS.md#C-DZ-Z8-ACS), [`C-DZ-Z8-ACSGAP`](CLAIMS.md#C-DZ-Z8-ACSGAP) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-CLASSES"></a>
+### The proxies' error classes, with the unknown-probe placeholder on a stated share of rows.
+
+`C-DZ-OLD-Z8-CLASSES` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-CLASSES">Error classes on the proxies: *class 1* — ppb and FTU are sensor units, not absorption coefficients; *class 4* — FDOM is fluorescence, not a(λ)CDOM, and turbidity is scattering, not non-algal absorption; *class 5* — `SondeNr` is [999](SOURCES.md#F-9c838864e5) on [83.5](SOURCES.md#F-793729c237)% of rows, so the per-cast calibration that would convert units is unrecoverable. *Class 6* over all of it: no wavelength, no clock time.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-CLASSES "What this claim rests on")</sup>
+
+**Why it was retired:** The share was not the held one: enums.py, counting every row, finds the placeholder on a smaller share of the rows than the one given.
+
+**Replaced by:** [`C-DZ-Z8-PROXY`](CLAIMS.md#C-DZ-Z8-PROXY), [`C-DZ-Z8-SONDE`](CLAIMS.md#C-DZ-Z8-SONDE), [`C-DZ-Z8-NOCLOCK`](CLAIMS.md#C-DZ-Z8-NOCLOCK) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-CTD"></a>
+### Stated counts of the CTD extract's Parameter values and of the rows of each channel the test needs.
+
+`C-DZ-OLD-Z8-CTD` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-CTD">`ctd.csv.gz` — all [18](SOURCES.md#F-45221b50b0) `Parameter` values counted ([17](SOURCES.md#F-1bca278ec2) named, one blank; accented names truncate in my scan). The four this needs: Lysdæmpning [5,217,330](SOURCES.md#F-3a3ddbf6a6) · Fluorescens [6,783,570](SOURCES.md#F-18c199893d) · Turbiditet [1,076,915](SOURCES.md#F-ba4311adcc) · FDOM [890,921](SOURCES.md#F-f29acbf4ae), with `Photometer m…` [576,179](SOURCES.md#F-eca5a91ea0) and `Photometer reference` [531,071](SOURCES.md#F-94474938d9) beside them. The rest are channels this project already uses, plus five under [240,000](SOURCES.md#F-883391d33b) rows.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-CTD "What this claim rests on")</sup>
+
+**Why it was retired:** The counts came from the drafting session's scan, which truncated accented names; the held enumeration over every row differs for two channels.
+
+**Replaced by:** [`C-DZ-Z8-CTDPARAM`](CLAIMS.md#C-DZ-Z8-CTDPARAM) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-LYS"></a>
+### Stated counts of light records, casts, fitted casts, start depths, field-shifted rows and stations, all of them CTD stations.
+
+`C-DZ-OLD-Z8-LYS` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-LYS">`lys.csv.gz` — [2,370,340](SOURCES.md#F-57e36cb43d) rows; [62,848](SOURCES.md#F-7f6a803ade) distinct station|date casts with a fitted Kd, [62,845](SOURCES.md#F-423babf553) with a fit coefficient, [62,136](SOURCES.md#F-f7a6578326) with `ZMin`, the depth the regression started from — [40.6](SOURCES.md#F-877255fd52)% shallower than [0.6](SOURCES.md#F-f3094dca8c) m, only [1,290](SOURCES.md#F-7769d4d4a6) deeper than [5.1](SOURCES.md#F-e59cfa7398) m. [249](SOURCES.md#F-6d33dbdfdf) rows are field-shifted and must be dropped by field count, not silently. [566](SOURCES.md#F-4dff3292b0) stations, all also CTD stations (of [1,527](SOURCES.md#F-eb6e850382)). *Class 7* — Kd is a regression the operator fitted over a window the operator chose; *class 3* — a profile collapsed to one slope. Guard against circularity: require the fit coefficient, so Secchi-derived Kd cannot enter.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-LYS "What this claim rests on")</sup>
+
+**Why it was retired:** The counts and the shared-station check were made in the drafting session and are not held, and the held counts differ. The classes and the guard are kept, restated against the instruction.
+
+**Replaced by:** [`C-DZ-Z8-LYS`](CLAIMS.md#C-DZ-Z8-LYS), [`C-DZ-Z8-LYSCOLS`](CLAIMS.md#C-DZ-Z8-LYSCOLS), [`C-DZ-Z8-FIT`](CLAIMS.md#C-DZ-Z8-FIT) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-LYSD"></a>
+### Lysdæmpning holds the underwater and surface readings the instruction requires, per depth, in a unit still to be checked.
+
+`C-DZ-OLD-Z8-LYSD` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-LYSD">is the finding: the underwater and surface readings TA `M06` requires survive per depth, so Kd can be refitted over a *stated* window instead of the operator's — on the same cast as the three proxies: composition and light in one frame. Check its unit first: attenuation, or transmissometer beam-c, which is a different quantity.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-LYSD "What this claim rests on")</sup>
+
+**Why it was retired:** It named the wrong channel: by the held unit counts Lysdæmpning is a percentage, and the two photometer channels are the ones in photon flux; the unit question it left open is answered from those counts.
+
+**Replaced by:** [`C-DZ-Z8-UNITS`](CLAIMS.md#C-DZ-Z8-UNITS), [`C-DZ-Z8-REFIT`](CLAIMS.md#C-DZ-Z8-REFIT) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-MATCH"></a>
+### matchup.py found the matched subset not random, with stated medians for matched and all casts.
+
+`C-DZ-OLD-Z8-MATCH` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-MATCH">Second constraint, already shown here: `matchup.py` found the satellite-matched subset is not a random sample (matched median Kd [0.270](SOURCES.md#F-bfb5fe616d) against [0.330](SOURCES.md#F-3038ffcdfc) in the same months), so the satellite arm's null is built on that subset.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-MATCH "What this claim rests on")</sup>
+
+**Why it was retired:** The two medians are typed into matchup.py's docstring and output warning from its first run, not computed as it runs, and the comparison with all casts in the same months is not stored.
+
+**Replaced by:** [`C-DZ-Z8-MATCH`](CLAIMS.md#C-DZ-Z8-MATCH) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-REDISCOVER"></a>
+### This project rediscovered the instruction's spectral mechanism from its own data.
+
+`C-DZ-OLD-Z8-REDISCOVER` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-REDISCOVER">names the spectral mechanism this project rediscovered from the data</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-REDISCOVER "What this claim rests on")</sup>
+
+**Why it was retired:** That this project found the mechanism in its data was not shown: the light analysis measures the decline of apparent Kd with depth and how the result depends on where a profile starts, not its spectral cause.
+
+**Replaced by:** [`C-DZ-Z8-M06-SPEC`](CLAIMS.md#C-DZ-Z8-M06-SPEC), [`C-DZ-Z8-WINDOW`](CLAIMS.md#C-DZ-Z8-WINDOW) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-SEARCH"></a>
+### The multiyear product lists no inherent optical properties, only the global sets reach back to its start, and EMODnet Chemistry and ICES were searched without finding a product for Danish waters.
+
+`C-DZ-OLD-Z8-SEARCH` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-SEARCH">The Baltic multiyear product already fetched (`009_133`, [1](SOURCES.md#F-6205cef571) km, 1997 →) lists no IOP: only the [4](SOURCES.md#F-d2508ab9ab) km global sets reach back to 1997. EMODnet Chemistry and ICES were searched and no CDOM-absorption or spectral-attenuation product for Danish waters was established — not "absent", *not found by the search performed*.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-SEARCH "What this claim rests on")</sup>
+
+**Why it was retired:** That only the global sets reach back rested on the unpinned rows, and the EMODnet and ICES searches are recorded nowhere in this project.
+
+**Replaced by:** [`C-DZ-Z8-SRC-133`](CLAIMS.md#C-DZ-Z8-SRC-133), [`C-DZ-Z8-SEARCH`](CLAIMS.md#C-DZ-Z8-SEARCH) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-SPAN"></a>
+### Turbidity and FDOM cover stated spans, stations and station-days, each in one unit throughout.
+
+`C-DZ-OLD-Z8-SPAN` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-SPAN">The two composition channels do not cover the same record, and that decides the shape of the test. Turbiditet: 1994-01-10 → 2026-09-07, [252](SOURCES.md#F-1ec681c766) stations, [12,700](SOURCES.md#F-257414f2aa) station-days, FTU throughout. FDOM: 2021-04-19 → 2026-09-07, [211](SOURCES.md#F-64fd41f3b9) stations, [10,550](SOURCES.md#F-6af9968096) station-days, ppb throughout. The in-situ CDOM term exists for five years; before 2021 only satellite `adg443` carries it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-SPAN "What this claim rests on")</sup>
+
+**Why it was retired:** The spans, station and station-day counts and the units were read in the drafting session and are not held; the held FDOM years and the unit column's counts support a narrower statement.
+
+**Replaced by:** [`C-DZ-Z8-FDOMSPAN`](CLAIMS.md#C-DZ-Z8-FDOMSPAN), [`C-DZ-Z8-UNITS`](CLAIMS.md#C-DZ-Z8-UNITS) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-STATUS"></a>
+### The test can be run now on a subset, with one term left by subtraction.
+
+`C-DZ-OLD-Z8-STATUS` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-STATUS">Testable now, on a subset, with one term left by subtraction — said, not hidden.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-STATUS "What this claim rests on")</sup>
+
+**Why it was retired:** A judgment that the test is ready, which nothing held supports: it has not been run, and its joined subset has not been counted.
+
+**Replaced by:** [`C-DZ-Z8-STATUS`](CLAIMS.md#C-DZ-Z8-STATUS) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-TABLE"></a>
+### A table of products with their variables, resolutions, coverage, licences and production paths.
+
+`C-DZ-OLD-Z8-TABLE` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-TABLE">Satellite IOPs are all *class 7*: a QAA or neural-net retrieval. | source | measures | resolution · coverage · licence | separate path | |---|---|---|---| | `ctd.csv.gz` Lysdæmpning · Photometer · FDOM · Turbiditet · Fluorescens (held) | attenuation + [3](SOURCES.md#F-fa57b4796b) composition proxies, per depth | per cast · counts above · ODA open | no — same ship and frame as `lys` | | BAL_BGC_L3_NRT_009_131 | ADG443, APH443, BBP443, KD490, RRS | [300](SOURCES.md#F-4e8ab57931) m daily · OLCI, NRT only · free | yes | | BAL_BGC_HR_L4_NRT_009_208 | TUR, SPM, BBP443, CHL — no ADG | [100](SOURCES.md#F-2a0a443842) m, [20](SOURCES.md#F-00872fd060) km coastal band · `S2`/MSI, 2020-01-08 → · free | yes; CDOM is its residual | | OC-CCI v6.0 IOP · ERDDAP | adg/aph/atot/bbp at [412](SOURCES.md#F-86fa634ba5)–[665](SOURCES.md#F-37578c7efa) nm, kd_490, [14](SOURCES.md#F-05e7677105) water classes | [4](SOURCES.md#F-370be656b6) km, monthly & [8](SOURCES.md#F-a3fc3d31b4)-day · 1997-09 → · ESA CCI open | yes; box-subsettable, small | | `Sentinel-3` OLCI `L2` WFR | ADG443_NN, TSM_NN, CHL_NN, KD490_M07 | [300](SOURCES.md#F-4e8ab57931) m · 2016 → · free | yes | | MODIS-A `L3` IOP GIOP | adg/aph/bbp_443_giop | [4](SOURCES.md#F-370be656b6) km · 2002 → · Earthdata login | yes — GIOP, not QAA | | TA `M06` v3 | the method itself | in force 2015 · AU/DCE public | primary document |</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** The rows were written from a session's survey and none was pinned. Four of the products are pinned now and the page says what their records state; the ESA page for the `Sentinel-3` water product could not be reached to pin, and the OC-CCI record does not state the water classes or the monthly start the row gave.
+
+**Replaced by:** [`C-DZ-Z8-SRC-CTD`](CLAIMS.md#C-DZ-Z8-SRC-CTD), [`C-DZ-Z8-SRC-131`](CLAIMS.md#C-DZ-Z8-SRC-131), [`C-DZ-Z8-SRC-208`](CLAIMS.md#C-DZ-Z8-SRC-208), [`C-DZ-Z8-SRC-CCI`](CLAIMS.md#C-DZ-Z8-SRC-CCI), [`C-DZ-Z8-SRC-MODIS`](CLAIMS.md#C-DZ-Z8-SRC-MODIS), [`C-DZ-Z8-SRC-PATH`](CLAIMS.md#C-DZ-Z8-SRC-PATH) — each opens what it rests on.
+
+<a id="C-DZ-OLD-Z8-TRENDS"></a>
+### matchup.py already found trends of both signs.
+
+`C-DZ-OLD-Z8-TRENDS` · retired 2026-09-11 from [hypodrafts/Z8.md](hypodrafts/Z8.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-DZ-OLD-Z8-TRENDS">Would not: a physical budget, a causal attribution, any per-water-body or national number, or any trend — matchup.py already got both signs.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DZ-OLD-Z8-TRENDS "What this claim rests on")</sup>
+
+**Why it was retired:** The trend results are typed into matchup.py's docstring from a first run and are not held as output.
+
+**Replaced by:** [`C-DZ-Z8-WOULDNOT`](CLAIMS.md#C-DZ-Z8-WOULDNOT) — each opens what it rests on.
 
 ## index.html
 
@@ -7041,3 +13432,572 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** DCE's definition sets thresholds for oxygen in the water and places the low values in the bottom water; stratification is not part of it.
 
 **Replaced by:** [`C-LR-L-ILTSVIND`](CLAIMS.md#C-LR-L-ILTSVIND) — each opens what it rests on.
+
+## openproblems/A7.md
+
+<a id="C-OQ-OLD-A7-ASYM"></a>
+### The response side has about as many stations as the whole water-chemistry topic.
+
+`C-OQ-OLD-A7-ASYM` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-ASYM">That asymmetry is the problem. The response side is ~[1,125](SOURCES.md#F-60daeacae4) stations; the pool side is [39](SOURCES.md#F-3410a6faf8) in the entire national record.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-ASYM "What this claim rests on")</sup>
+
+**Why it was retired:** The response side was counted as every station of the water-chemistry topic; the held extract gives the stations with ortho-phosphate.
+
+**Replaced by:** [`C-OQ-A7-ASYM`](CLAIMS.md#C-OQ-A7-ASYM) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-BORNHOLM"></a>
+### The Zenodo file allows a check of the CTD bottom-oxygen field at a stated number of stations near Bornholm.
+
+`C-OQ-OLD-A7-BORNHOLM` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-BORNHOLM">Separately, the Zenodo file makes one check possible now: whether the CTD-derived bottom-oxygen field agrees with the independently measured bottom-water oxygen recorded beside each chamber flux, at the [5](SOURCES.md#F-f191b03039) stations near Bornholm.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-BORNHOLM "What this claim rests on")</sup>
+
+**Why it was retired:** The station count came from the one-off parse, and whether the CTD panel reaches those positions was not checked.
+
+**Replaced by:** [`C-OQ-A7-WOULD`](CLAIMS.md#C-OQ-A7-WOULD) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-BOTHSIDES"></a>
+### Both sides of the seasonality test exist in ODA, neither is fetched, and the join is small.
+
+`C-OQ-OLD-A7-BOTHSIDES` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-BOTHSIDES">both sides exist in ODA, neither is fetched, the join is small. Armchair. Tentative, not an obstacle.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-BOTHSIDES "What this claim rests on")</sup>
+
+**Why it was retired:** The water chemistry is held, so 'neither is fetched' is false; the size of the join has not been counted.
+
+**Replaced by:** [`C-OQ-A7-WEAK`](CLAIMS.md#C-OQ-A7-WEAK) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-CHAMBERS"></a>
+### Benthic flux chambers are close to unrecorded for Danish inner waters, and the page counted what exists.
+
+`C-OQ-OLD-A7-CHAMBERS` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-CHAMBERS">for Danish inner waters, close to unrecorded. I counted what exists.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-CHAMBERS "What this claim rests on")</sup>
+
+**Why it was retired:** 'Close to unrecorded' left out the national method's core-incubation fluxes and SR323's fjord table; the count it referred to was the one-off parse that was not kept.
+
+**Replaced by:** [`C-OQ-A7-STRONG`](CLAIMS.md#C-OQ-A7-STRONG) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-CHEAP"></a>
+### The measurement is cheap, and the chamber count in Danish inner waters is zero.
+
+`C-OQ-OLD-A7-CHEAP` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-CHEAP">The measurement, and it is cheap. Sample the existing sediment stations twice, late February and late September, instead of once in winter. That one change turns the summer release from a residual into a difference of two measured pools, at whatever station count is already funded. Then: one chamber deployment anywhere in the Kattegat, the Belts or a Danish fjord, since the count there is zero.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-CHEAP "What this claim rests on")</sup>
+
+**Why it was retired:** 'Cheap' was not costed, and the zero was not a count over a named corpus.
+
+**Replaced by:** [`C-OQ-A7-S3`](CLAIMS.md#C-OQ-A7-S3) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-ESSNONE"></a>
+### Denmark has essentially none of the chamber form.
+
+`C-OQ-OLD-A7-ESSNONE` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-ESSNONE">Denmark has essentially none of it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-ESSNONE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Essentially none' was not a count over a named corpus and left out the national method's core incubations.
+
+**Replaced by:** [`C-OQ-A7-CHAMBERFORM`](CLAIMS.md#C-OQ-A7-CHAMBERFORM) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-FETCH"></a>
+### fetch_oda.py implements neither topic: its topics have a stated number of keys and its parser rejects both.
+
+`C-OQ-OLD-A7-FETCH` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-FETCH">One fetch, in this order. `Emne_12_19` (Sedimentkemi) first — [39](SOURCES.md#F-aba7105965) stations ever, trivially small, and it fixes how many positions the test can have. Then `Emne_10_11` (Vandkemi), tens of MB. `scripts/fetch_oda.py` implements neither: `TOPICS` has five keys and `argparse(choices=...)` rejects both, so it is one dict entry each, node ids already recorded in `data/manual/data_sources.json`. Set an explicit period — the criterion pane is period-filtered and silently returns the current network otherwise.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-FETCH "What this claim rests on")</sup>
+
+**Why it was retired:** fetch_oda.py now carries the water-chemistry topic; the item described an earlier state of the code.
+
+**Replaced by:** [`C-OQ-A7-S1`](CLAIMS.md#C-OQ-A7-S1) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-HYLEN"></a>
+### The Zenodo file was downloaded and parsed: its size, flux rows, stations and years, its fields, the rows by subbasin, the stations west of a stated longitude with a position, the months and the sediment types.
+
+`C-OQ-OLD-A7-HYLEN` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-HYLEN">record `17465937`, one file `BalticSeaInSituFluxDIP_v3.xlsx`, [852,169](SOURCES.md#F-bd6952b14b) bytes, `CC-BY-4.0`; paper `https://essd.copernicus.org/articles/17 / 6423 / 2025/`. I downloaded and parsed it. Sheet `StationOverview` holds [498](SOURCES.md#F-587b739da4) flux rows, [59](SOURCES.md#F-412b14a9bb) stations, 2001–2021, one row per chamber unit per deployment, carrying DIP flux with its standard error, bottom-water oxygen, salinity, temperature, depth, sediment type, sediment organic carbon, oxygen class, lander type, lat/lon, year and month. Per-measurement, not a summary — a directly measured benthic release rate, the rarest object in the whole `A7` problem. And it is almost entirely outside Denmark. By subbasin: EGB [237](SOURCES.md#F-5662bb5db6), NBP [82](SOURCES.md#F-c342d04de4), WGB [65](SOURCES.md#F-5ff290580c), Gulf of Finland [60](SOURCES.md#F-d88400a756), Gulf of Bothnia [30](SOURCES.md#F-15bfdab595), Bornholm Basin [18](SOURCES.md#F-7e487d49de), Arkona [6](SOURCES.md#F-90516fec1f). Only [5](SOURCES.md#F-a68672ff4c) of [59](SOURCES.md#F-412b14a9bb) stations lie west of [15.5](SOURCES.md#F-0012cb45fa)°E — `BY2` ([14.099](SOURCES.md#F-c196c07ee6)°E, [54.975](SOURCES.md#F-76df5f6835)°N), HB3, HB1, HB2, BY5, all near Bornholm. The paper states it *"does not consider the Kattegat and the Belt Sea … as being part of the Baltic Sea."* Zero stations in the Kattegat, the Belts, the Sound or any Danish fjord. Months run [2](SOURCES.md#F-1a0df2de49)–[11](SOURCES.md#F-6e616e777a) — no December or January anywhere. Sediment types: mud/muddy sand [372](SOURCES.md#F-70b59c26d0), mixed [113](SOURCES.md#F-2edbba7780), coarse</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-HYLEN "What this claim rests on")</sup>
+
+**Why it was retired:** The download and parse were a one-off whose output was not kept, so the counts by subbasin, longitude, month and sediment type cannot be checked; the paper's own figures are now read from its pinned text.
+
+**Replaced by:** [`C-OQ-A7-HYLEN`](CLAIMS.md#C-OQ-A7-HYLEN), [`C-OQ-A7-HYLEN-WEST`](CLAIMS.md#C-OQ-A7-HYLEN-WEST) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-INDEP"></a>
+### A chamber lander is a fourth production path beside the CTD, ocean colour and Secchi, operated from Gothenburg and GEOMAR.
+
+`C-OQ-OLD-A7-INDEP` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-INDEP">Independence: high. A chamber lander incubating a patch of bed is a different instrument, quantity and operator (Gothenburg/GEOMAR, not Danish monitoring) from the CTD sonde — a *fourth* production path beside CTD, ocean colour and Secchi.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-INDEP "What this claim rests on")</sup>
+
+**Why it was retired:** The count of paths was not tied to a held list, and the operators were not read from the paper; its authors' institutions now are.
+
+**Replaced by:** [`C-OQ-A7-HYLEN-PATH`](CLAIMS.md#C-OQ-A7-HYLEN-PATH) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-NOVANA"></a>
+### The programme takes sediment pools at a stated range of stations a year across a stated number of water bodies, at stated depths, every January-February.
+
+`C-OQ-OLD-A7-NOVANA` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-NOVANA">An unresolved discrepancy, flagged not settled. `NOVANA-PROG` (Miljøstyrelsen, 2023–2027) states sediment nutrient pools are taken at [16](SOURCES.md#F-89596c8d2e)–[19](SOURCES.md#F-6d957140c5) stations a year *"across [89](SOURCES.md#F-907dfc9928) of [109](SOURCES.md#F-ce65ea5873) water bodies"*, at [7](SOURCES.md#F-3f8b0ef206) depths, every January–February. ODA exposes [39](SOURCES.md#F-401162376e) ever. Either that rotation has not run or ODA does not expose the whole record. Ask before quoting either number.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-NOVANA "What this claim rests on")</sup>
+
+**Why it was retired:** The programme's text gives a different number of water bodies than the page quoted, and its table a different range of stations; both are now read from the pinned text.
+
+**Replaced by:** [`C-OQ-A7-NOVANA`](CLAIMS.md#C-OQ-A7-NOVANA), [`C-OQ-A7-DISCREP`](CLAIMS.md#C-OQ-A7-DISCREP) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-ONLYDEPTH"></a>
+### The Secchi extract carries the only per-station water depth held.
+
+`C-OQ-OLD-A7-ONLYDEPTH` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-ONLYDEPTH">the only per-station water depth held.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-ONLYDEPTH "What this claim rests on")</sup>
+
+**Why it was retired:** Not checked against the other held extracts.
+
+**Replaced by:** [`C-OQ-A7-MD`](CLAIMS.md#C-OQ-A7-MD) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-RESID"></a>
+### Internal loading is normally inferred as a mass-balance remainder; the NERI report's sediment term is fitted, not read.
+
+`C-OQ-OLD-A7-RESID` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-RESID">Internal loading is normally *inferred* as what is left over after a mass balance, which makes it model-as-datum by construction. FR483 is the local instance: a model of Aarhus Bay whose sediment term is fitted, not read.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-RESID "What this claim rests on")</sup>
+
+**Why it was retired:** 'Normally' generalised without a source, and the report's sediment term was not checked term by term; what the report says of its constants is now quoted.
+
+**Replaced by:** [`C-OQ-A7-RESID`](CLAIMS.md#C-OQ-A7-RESID) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-TABLE"></a>
+### A table of other sources: the NERI report with its size and a monthly flux series at one station credited to two studies, the DMU assessment's flux campaign with its stations and observations, AL561 with its stations, ODA's two topics as not fetched, and the EMODnet climatology as not evidence.
+
+`C-OQ-OLD-A7-TABLE` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-TABLE">| source | what it measures | resolution / coverage | note | |---|---|---|---| | NERI Technical Report 483, Fossing et al. 2004, `dmu.dk/1_viden/2_publikationer/3_fagrapporter/rapporter/FR483.PDF` ([1.9](SOURCES.md#F-0eadc94f34) MB; `pdftotext -layout` → [214,023](SOURCES.md#F-ead1d4447a) chars) | Aarhus Bay measured sediment oxygen uptake, `NO₃⁻` and `NH₄⁺` flux, sulphate reduction rate, ~monthly | one station, Mar 1990 – May 1991 | The report is a *model* set-up (class 7); the flux series in it is not, and is credited to Gundersen et al. (1995) and Lomstein & Blackburn (1992) — the only seasonal Danish benthic flux series I found | | DMU eutrophication assessment, `www2.dmu.dk/.../4_eutrophication/degradation.asp`, Figure 2.29 | seasonal sediment `NO₃⁻`, `NH₄⁺`, `PO₄³⁻` flux | *"[6](SOURCES.md#F-9ac9cd9ad7) estuaries each represented with [3](SOURCES.md#F-507b460a5a) stations sampled [16](SOURCES.md#F-a154f10c7e) times over a two-year period"* — [18](SOURCES.md#F-af76c1073d) stations, ~[288](SOURCES.md#F-362c6476de) observations | The largest Danish benthic flux campaign I found any trace of. Quartiles only, and no source cited. Finding the underlying data is a small, undone task | | AL561 / APOC, PANGAEA `10.1594/PANGAEA.987348`, `.987349`, `.987353` | in-situ chamber `NH₄⁺`, `PO₄³⁻`, Fe, alkalinity flux + porewater | [15](SOURCES.md#F-ef7b3a7540) stations, one cruise, Aug 2021, Kattegat→Skagerrak | already in `DATA_QUEUE.md`; several stations sit nearer Sweden/Norway | | ODA Vandkemi `Emne_10_11` / Sedimentkemi `Emne_12_19` | ortho-phosphat-P, N, P, chlorophyll, pH, alkalinity, sulphide / loss-on-ignition, total N and P, Fe-adsorbed P by layer | per sample with depth / per core per depth interval | neither fetched. `A7`'s two sides. Bottle wet chemistry is a production path separate from the CTD sonde | | EMODnet Chemistry DIVAnd phosphate climatologies, Baltic 1975 / 2021 v2023 | interpolated phosphate on HELCOM standard depths | [6](SOURCES.md#F-9ac9cd9ad7)-year centred seasonal means | not evidence. A DIVA interpolation of SeaDataNet — class 7, and built partly from the same Danish data |</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Sizes and character counts came from a one-off session; the DMU assessment's address was elided and its passage could not be found again; the NERI report's station and months were not found in its text; the water chemistry is held; the EMODnet row's figures and class rest on nothing held.
+
+**Replaced by:** [`C-OQ-A7-FR483`](CLAIMS.md#C-OQ-A7-FR483), [`C-OQ-A7-AL561`](CLAIMS.md#C-OQ-A7-AL561), [`C-OQ-A7-TA14`](CLAIMS.md#C-OQ-A7-TA14), [`C-OQ-A7-SR323`](CLAIMS.md#C-OQ-A7-SR323), [`C-OQ-A7-ODA`](CLAIMS.md#C-OQ-A7-ODA) — each opens what it rests on.
+
+<a id="C-OQ-OLD-A7-WHEN"></a>
+### When the page was written no nutrient concentration was held; the water chemistry was fetched since.
+
+`C-OQ-OLD-A7-WHEN` · retired 2026-09-11 from [openproblems/A7.md](openproblems/A7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-A7-WHEN">When this was written nothing in the repository carried a nutrient concentration. The Vandkemi extract has been fetched since (`data/raw/oda/kemi.csv.gz`), so the response side is now held; the pool side, Sedimentkemi, is not, and `A7` still cannot be scored in either form.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-A7-WHEN "What this claim rests on")</sup>
+
+**Why it was retired:** The page narrated its own history; what is held now is said plainly instead.
+
+**Replaced by:** [`C-OQ-A7-DIP`](CLAIMS.md#C-OQ-A7-DIP), [`C-OQ-A7-POOL`](CLAIMS.md#C-OQ-A7-POOL) — each opens what it rests on.
+
+## openproblems/E7.md
+
+<a id="C-OQ-OLD-E7-ABC"></a>
+### The nutrient-load covariate is abundant here, the fauna is in ODA unfetched, and the concentration exists in nothing held.
+
+`C-OQ-OLD-E7-ABC` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-ABC">(c) is abundant here. (b) exists in ODA `Bundfauna`, not yet fetched. (a) does not exist in anything held.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-ABC "What this claim rests on")</sup>
+
+**Why it was retired:** Nutrient load is not held - river load lives on an endpoint the fetch script cannot reach - and the held water chemistry carries named pesticides.
+
+**Replaced by:** [`C-OQ-E7-SIDES`](CLAIMS.md#C-OQ-E7-SIDES), [`C-OQ-E7-KEMI`](CLAIMS.md#C-OQ-E7-KEMI) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-CONFLATE"></a>
+### One quality-element code pools every river-basin-specific pollutant - pesticides, metals, everything.
+
+`C-OQ-OLD-E7-CONFLATE` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-CONFLATE">One quality-element code pools every river-basin-specific pollutant — pesticides, metals, everything — into a single column. A pesticide effect cannot be separated from a metal one even in principle at this resolution.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-CONFLATE "What this claim rests on")</sup>
+
+**Why it was retired:** Which substances the code covers was not sourced; the code's own label names only the category.
+
+**Replaced by:** [`C-OQ-E7-CONFLATE`](CLAIMS.md#C-OQ-E7-CONFLATE) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-CTD"></a>
+### The CTD extract's measurements, scanned in full, with its parameter values and a count of blank ones.
+
+`C-OQ-OLD-E7-CTD` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-CTD">measurements scanned in full; the `Parameter` column takes [17](SOURCES.md#F-25f37d15d0) distinct named values: Temperatur, Salinitet, Oxygen indhold, Fluorescens, Oxygenmætning, Lysdæmpning, Konduktivitet, Vægtfylde, Turbiditet, FDOM, Photometer måling, Photometer reference, pH, Strømhastighed, Strømretning, Farvestof, Dihydrogensulfid ([2,601](SOURCES.md#F-48b507fb2d) rows), plus [3,381](SOURCES.md#F-e463b48f66) blank.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-CTD "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were quotations of an earlier draft; the extract held now has a different number of records and no blank parameter.
+
+**Replaced by:** [`C-OQ-E7-CTD`](CLAIMS.md#C-OQ-E7-CTD) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-DOWNSTREAM"></a>
+### The water-body file marks a stated number of marine water bodies as having hazardous-substance observation, by assigning inland points to the nearest marine body.
+
+`C-OQ-OLD-E7-DOWNSTREAM` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-DOWNSTREAM">downstream. `docs/data/areas/areas.json` marks [66](SOURCES.md#F-daeda2d7b8) of the [123](SOURCES.md#F-c7ccb702da) marine water bodies as having hazardous-substance observation. That flag is manufactured in `scripts/areas.py` by assigning each of these inland points to the *nearest marine water body within `MAX_ASSIGN_KM = 20`* — [205](SOURCES.md#F-4699a3286b) of the [256](SOURCES.md#F-62ce88a6d4) were assigned this way. The marine toxicant "coverage" in this archive is lake and stream points attributed to the sea by proximity. It is not a marine sample, and it is not a pesticide measurement.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-DOWNSTREAM "What this claim rests on")</sup>
+
+**Why it was retired:** areas.py no longer assigns the layer's inland points to marine water bodies, and in its current output no marine water body carries a hazardous-substance observation.
+
+**Replaced by:** [`C-OQ-E7-NOMARINE`](CLAIMS.md#C-OQ-E7-NOMARINE) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-GW"></a>
+### The groundwater layers hold stated numbers of water levels, contours and depth polygons.
+
+`C-OQ-OLD-E7-GW` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-GW">the three groundwater layers in `data/raw/` are water levels ([419](SOURCES.md#F-e0c26a7058)), potentiometric contours ([138](SOURCES.md#F-452248b464)) and depth-to-table polygons ([2,087](SOURCES.md#F-5082f097b8)), carrying no analyte.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-GW "What this claim rests on")</sup>
+
+**Why it was retired:** The feature counts were typed as quotations and no script stores them, so the page cannot print them; the files' contents are now read by the generator.
+
+**Replaced by:** [`C-OQ-E7-GW`](CLAIMS.md#C-OQ-E7-GW) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-LEAD"></a>
+### The quantity the hypothesis is about is recorded nowhere in the archive, at any density, in any matrix, at any station.
+
+`C-OQ-OLD-E7-LEAD` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-LEAD">The quantity the hypothesis is about is not recorded in this archive at any density, in any matrix, at any station. `E7` is therefore unscoreable, not refuted — an absent dimension (error class 6), not a null result.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-LEAD "What this claim rests on")</sup>
+
+**Why it was retired:** The held water chemistry names a herbicide and herbicide degradation products; the sentence was not checked against it.
+
+**Replaced by:** [`C-OQ-E7-STATUS`](CLAIMS.md#C-OQ-E7-STATUS), [`C-OQ-E7-KEMI`](CLAIMS.md#C-OQ-E7-KEMI) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-NOBODY"></a>
+### Nobody here can say, in either direction, whether the exposure is near effect thresholds.
+
+`C-OQ-OLD-E7-NOBODY` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-NOBODY">which at present nobody here can make in either direction.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-NOBODY "What this claim rests on")</sup>
+
+**Why it was retired:** The held water chemistry carries herbicide concentrations; what is true is that they have not been set against any threshold.
+
+**Replaced by:** [`C-OQ-E7-LICENSE2`](CLAIMS.md#C-OQ-E7-LICENSE2) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-OXY"></a>
+### Stated numbers of near-bed oxygen stations have at least stated numbers of months.
+
+`C-OQ-OLD-E7-OXY` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-OXY">of them with ≥[60](SOURCES.md#F-bc79d47019) months and [231](SOURCES.md#F-9e80e935e9) with ≥[120](SOURCES.md#F-996c2a45d2) — the response-side record is dense; the exposure side has no column to sit in.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-OXY "What this claim rests on")</sup>
+
+**Why it was retired:** The month thresholds and station counts came from a count that was not kept.
+
+**Replaced by:** [`C-OQ-E7-PANEL`](CLAIMS.md#C-OQ-E7-PANEL) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-PANEL"></a>
+### The panel's classes act on named targets: algae, copepods, and the sterol pathway every eukaryote has.
+
+`C-OQ-OLD-E7-PANEL` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-PANEL">Pick the panel by target conservation, not market label: a photosystem-II inhibitor plus its degradation product (the algae the chlorophyll indicator counts), a neuroactive (copepods), an azole (the sterol pathway every eukaryote has), and glyphosate with AMPA.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-PANEL "What this claim rests on")</sup>
+
+**Why it was retired:** The targets named for the neuroactive and azole classes were not sourced.
+
+**Replaced by:** [`C-OQ-E7-PANELCHOICE`](CLAIMS.md#C-OQ-E7-PANELCHOICE) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-REGISTER"></a>
+### The station register's distinct sites are all marine, with rows by site type.
+
+`C-OQ-OLD-E7-REGISTER` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-REGISTER">distinct marine observation sites (`Hav` [798,324](SOURCES.md#F-7723db711e) rows, `Havn` [201](SOURCES.md#F-90935292f7), `Punkt i fjord`</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-REGISTER "What this claim rests on")</sup>
+
+**Why it was retired:** The breakdown by site type is counted by nothing held, so neither it nor 'marine' can be checked.
+
+**Replaced by:** [`C-OQ-E7-REG`](CLAIMS.md#C-OQ-E7-REG) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-S1"></a>
+### Enumerate the water chemistry among the ODA topics, in one session.
+
+`C-OQ-OLD-E7-S1` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-S1">Enumerate, do not download. Run the topic and parameter *metadata* calls already implemented in `scripts/fetch_oda.py` (`expand`, `option_list`) against Hav / Sedimentkemi / MFS Sporstof, Hav / MFS i biota, and Hav / Vandkemi, and record the parameter names and per-parameter station counts. Metadata only, no extract. One session. This decides whether `E7` has an exposure side at all.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-S1 "What this claim rests on")</sup>
+
+**Why it was retired:** The water chemistry is held, so its parameters need counting, not enumeration; the item described the state before the fetch.
+
+**Replaced by:** [`C-OQ-E7-S1`](CLAIMS.md#C-OQ-E7-S1) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-SALES"></a>
+### A keyword search over the data queue's sources and the raw files finds no pesticide statistics, which are published nationally as general knowledge.
+
+`C-OQ-OLD-E7-SALES` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-SALES">keyword search over `docs/DATA_QUEUE.md` ([145](SOURCES.md#F-313ec40d4a) sources) and `data/raw/` returns no *bekæmpelsesmiddelstatistik*, *behandlingshyppighed* or equivalent. Such statistics are published nationally; that is general knowledge and is not verified from anything in this repository</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-SALES "What this claim rests on")</sup>
+
+**Why it was retired:** The source count was a quotation, and 'published nationally' had no source; the register now records that where the statistics are published could not be established.
+
+**Replaced by:** [`C-OQ-E7-SALES`](CLAIMS.md#C-OQ-E7-SALES) — each opens what it rests on.
+
+<a id="C-OQ-OLD-E7-UNVERIFIED"></a>
+### The analyte lists of the marine hazardous-substance topics have not been verified by anyone here, so nobody here can say whether a marine pesticide concentration is recorded.
+
+`C-OQ-OLD-E7-UNVERIFIED` · retired 2026-09-11 from [openproblems/E7.md](openproblems/E7.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-E7-UNVERIFIED">analyte lists have not been verified by anyone here. That uncertainty is itself the point: nobody in this project can currently say whether a single marine pesticide concentration is recorded in Denmark, which is what makes this a measurement question.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-E7-UNVERIFIED "What this claim rests on")</sup>
+
+**Why it was retired:** The source register records the analyte lists of all three topics from a direct query, and the held water chemistry carries named herbicides.
+
+**Replaced by:** [`C-OQ-E7-MFSTOPICS`](CLAIMS.md#C-OQ-E7-MFSTOPICS), [`C-OQ-E7-LEGACY`](CLAIMS.md#C-OQ-E7-LEGACY) — each opens what it rests on.
+
+## openproblems/J1.md
+
+<a id="C-OQ-OLD-J1-ASK"></a>
+### The path length is already known to the operators, and without it no coefficient can be reconstructed from some millions of readings.
+
+`C-OQ-OLD-J1-ASK` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-ASK">One field, already known to the operators, currently unrecorded — without it no attenuation coefficient can be reconstructed from five million readings.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-ASK "What this claim rests on")</sup>
+
+**Why it was retired:** That the operators know the path length was not established, and the number of readings was given in words.
+
+**Replaced by:** [`C-OQ-J1-ASK`](CLAIMS.md#C-OQ-J1-ASK) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-COOCCUR"></a>
+### The optical channels co-occur on casts in stated numbers by sensor set, and FDOM is carried at a stated number of stations; the metric is formed on a stated number of casts.
+
+`C-OQ-OLD-J1-COOCCUR` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-COOCCUR">The raw CTD file carries three more, and they co-occur. Distinct (station, date) casts by sensor set: | sensors present on the cast | casts | |---|---:| | fluorescence + attenuation | [74,391](SOURCES.md#F-0b93573cde) | | fluorescence + attenuation + turbidity | [2,148](SOURCES.md#F-bcbcc7dcc5) | | fluorescence + attenuation + FDOM | [191](SOURCES.md#F-bd2fa84037) | | all four (fluo + FDOM + attenuation + turbidity) | [9,717](SOURCES.md#F-8cdd9ff0bc) | | any FDOM at all | [10,589](SOURCES.md#F-5caa8495d1) ([211](SOURCES.md#F-d3d1d6aba7) stations, 2021–2026 only) | FDOM — the CDOM proxy, and the one term that could be measured *out* of an optical residual — begins in 2021. The metric would be, per cast in the</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-COOCCUR "What this claim rests on")</sup>
+
+**Why it was retired:** The cast and station counts came from a one-off pass over the CTD extract whose output was not kept; nothing held counts casts by sensor set or the stations carrying FDOM.
+
+**Replaced by:** [`C-OQ-J1-OPTICS`](CLAIMS.md#C-OQ-J1-OPTICS) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-DEMONSTRABLY"></a>
+### The list demonstrably includes sonde calibration drift, unstated path length, residual dissolved matter and a spectral mismatch between a broadband channel and two fluorometers.
+
+`C-OQ-OLD-J1-DEMONSTRABLY` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-DEMONSTRABLY">demonstrably includes sonde calibration drift, unstated path length, residual CDOM beyond what FDOM tracks, and spectral mismatch between a broadband channel and two fluorometers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-DEMONSTRABLY "What this claim rests on")</sup>
+
+**Why it was retired:** Calibration drift and the spectral mismatch were not demonstrated, and that the attenuation channel is broadband was not established.
+
+**Replaced by:** [`C-OQ-J1-WOULDNOT`](CLAIMS.md#C-OQ-J1-WOULDNOT) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-FOURTH"></a>
+### LIGHT.md establishes that broadband attenuation falls with depth in uniform water, and the start-depth split of casts is an undocumented metadata choice worth a stated share of the median.
+
+`C-OQ-OLD-J1-FOURTH` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-FOURTH">Fourth, even the ship total is partly a model. `LIGHT.md` establishes that broadband Kd falls with depth in uniform water; casts beginning above [2](SOURCES.md#F-d0eadc99d0) m give median Kd [0.35](SOURCES.md#F-8309e9727c), below [2](SOURCES.md#F-d0eadc99d0) m [0.27](SOURCES.md#F-35bba47704) — a [23](SOURCES.md#F-fc4fd685e1)% swing from an undocumented metadata choice. Error class 7, model-as-datum</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-FOURTH "What this claim rests on")</sup>
+
+**Why it was retired:** That LIGHT.md establishes a fall with depth in uniform water was not checked, and 'an undocumented metadata choice' was not established; the medians and the split are now read from the light analysis.
+
+**Replaced by:** [`C-OQ-J1-START`](CLAIMS.md#C-OQ-J1-START) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-NOBODY"></a>
+### Nobody has that figure.
+
+`C-OQ-OLD-J1-NOBODY` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-NOBODY">Nobody has that figure and it is worth having.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-NOBODY "What this claim rests on")</sup>
+
+**Why it was retired:** 'Nobody' is an absence over everything, not a count over a named corpus; what can be said is that no script here computes it.
+
+**Replaced by:** [`C-OQ-J1-NOSCRIPT`](CLAIMS.md#C-OQ-J1-NOSCRIPT) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-NP"></a>
+### Nitrogen and phosphorus in the water are not held here, so the hypothesis lacks its discriminator as well as its dependent variable.
+
+`C-OQ-OLD-J1-NP` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-NP">In-water N and P are also absent locally — `data/raw/oda/stations.csv` is a station registry, and `ODA-TILFOERSEL` (queued, unfetched) is *region-aggregated load*, the exact quantity `J1` says not to use. The hypothesis is missing both its dependent variable and its discriminator.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-NP "What this claim rests on")</sup>
+
+**Why it was retired:** The water-chemistry extract, with nitrogen and phosphorus in the water, is held, so the sentence was false against the files; the load topic it named is not what the discriminator needs.
+
+**Replaced by:** [`C-OQ-J1-NP`](CLAIMS.md#C-OQ-J1-NP), [`C-OQ-J1-UNSCOREABLE`](CLAIMS.md#C-OQ-J1-UNSCOREABLE) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-ONLYTEST"></a>
+### RESIDUAL.md gives the only test such a number admits.
+
+`C-OQ-OLD-J1-ONLYTEST` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-ONLYTEST">gives the only test such a number admits: R must shrink by exactly P when a part P is measured out of it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-ONLYTEST "What this claim rests on")</sup>
+
+**Why it was retired:** RESIDUAL.md states the rule as a test any residual must pass, not as the only test one admits.
+
+**Replaced by:** [`C-OQ-J1-SHRINK`](CLAIMS.md#C-OQ-J1-SHRINK) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-PARAMS"></a>
+### The CTD extract's Parameter column holds a stated number of values, with the records each carries.
+
+`C-OQ-OLD-J1-PARAMS` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-PARAMS">Enumerating the `Parameter` column of the whole CTD extract (`data/raw/oda/ctd.csv.gz`, one streaming pass) returns [17](SOURCES.md#F-65ebc58ade) distinct parameters and no more: > Temperatur [7,501,201](SOURCES.md#F-2c1ac2324f) · Salinitet [7,474,425](SOURCES.md#F-d0df661212) · Oxygen indhold [7,146,792](SOURCES.md#F-b61bc2c8dc) · Fluorescens > [6,783,570](SOURCES.md#F-949e117072) · Oxygenmætning [6,598,099](SOURCES.md#F-95dd6e3964) · Lysdæmpning [5,217,330](SOURCES.md#F-2080e8a7fa) · Konduktivitet > [5,169,272](SOURCES.md#F-7dbe1a1dea) · Vægtfylde [4,329,607](SOURCES.md#F-3f3a3b502b) · Turbiditet [1,076,915](SOURCES.md#F-130ee93d3d) · FDOM [890,921](SOURCES.md#F-749b1569b6) · > Photometer måling [576,179](SOURCES.md#F-c3538fac97) · Photometer reference [531,071](SOURCES.md#F-66d9003caa) · pH [237,445](SOURCES.md#F-bbb1d36c9c) · > Strømhastighed [84,734](SOURCES.md#F-94e7bb053a) · Strømretning [84,572](SOURCES.md#F-e77b6b65d9) · Farvestof [4,601](SOURCES.md#F-b35fc27504) · Dihydrogensulfid</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-PARAMS "What this claim rests on")</sup>
+
+**Why it was retired:** The counts were quotations of an earlier version of the draft, not read from the extract; the extract held now gives different counts. The page now prints them from the enumeration of the file.
+
+**Replaced by:** [`C-OQ-J1-CTDPARAMS`](CLAIMS.md#C-OQ-J1-CTDPARAMS) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-REFRACT"></a>
+### TEP is called transparent because its refractive index is close to seawater's.
+
+`C-OQ-OLD-J1-REFRACT` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-REFRACT">TEP is called *transparent* because its refractive index is close to seawater's; it requires staining to be counted at all.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-REFRACT "What this claim rests on")</sup>
+
+**Why it was retired:** The refractive-index explanation has no source here; the encyclopaedia says TEP are otherwise transparent and are counted by Alcian-blue staining.
+
+**Replaced by:** [`C-OQ-J1-TRANSP`](CLAIMS.md#C-OQ-J1-TRANSP) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-SMALLEST"></a>
+### Thirty Alcian-blue samples at the stations carrying FDOM, a stated number of them, would turn a stated number of casts into a retrospective series; the method costs a filter, a dye and a spectrophotometer.
+
+`C-OQ-OLD-J1-SMALLEST` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-SMALLEST">Thirty Alcian blue TEP samples from the rosette on casts already running the four-sensor suite, at any of the [211](SOURCES.md#F-9867746470) stations carrying FDOM since 2021. Not a survey — a calibration. Thirty paired points settle whether R carries any TEP information: a correlation turns [9,717](SOURCES.md#F-fd4bcfaa65) existing casts into a retrospective TEP series; no correlation retires the optical route permanently and cheaply. The method costs a filter, a dye and a spectrophotometer.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-SMALLEST "What this claim rests on")</sup>
+
+**Why it was retired:** The station and cast counts came from the one-off pass that was not kept, and the filter is not in the method's source here; the sample number is now a stated design value.
+
+**Replaced by:** [`C-OQ-J1-SMALL`](CLAIMS.md#C-OQ-J1-SMALL) — each opens what it rests on.
+
+<a id="C-OQ-OLD-J1-THIRD"></a>
+### The candidate signal is smaller than the disagreement between ship and satellite attenuation, from a spread of their log ratio and the residual spread of satellite attenuation on chlorophyll in single-day slices.
+
+`C-OQ-OLD-J1-THIRD` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-THIRD">Third, the candidate signal is smaller than the disagreement between two measurements of the total. On the [6,879](SOURCES.md#F-d383469191) same-day ship/satellite pairs in `data/derived/matchups.json`, the log ratio of satellite Kd490 to ship Kd(PAR) has sd [0.352](SOURCES.md#F-b03870c0aa) (median [0.769](SOURCES.md#F-c56fd786f8), p10–p90 [0.566](SOURCES.md#F-5b0beedada)–[1.188](SOURCES.md#F-443da5446d)). Regressing log KD490 on log CHL in two single-day slices of `data/raw/cmems/grid/{transp,plankton}__inner__2015.nc` (n = [22,916](SOURCES.md#F-1d5bb38136) and [15,624](SOURCES.md#F-13452cc0f6)) leaves residuals of sd [0.172](SOURCES.md#F-c657b85163) and [0.206](SOURCES.md#F-a1168505c0). The satellite-only version of this metric is dead on arrival, by arithmetic rather than judgement.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-THIRD "What this claim rests on")</sup>
+
+**Why it was retired:** The regressions on single-day satellite slices were run once and not kept, so the comparison cannot be checked; without them the argument has no second term.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-OQ-OLD-J1-UNITS"></a>
+### The inputs have no units: the attenuation, fluorescence and FDOM units are given with record counts, and the unit column holds conductivity and density at factors of a hundred and a thousand, with column-shifted records.
+
+`C-OQ-OLD-J1-UNITS` · retired 2026-09-11 from [openproblems/J1.md](openproblems/J1.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-J1-UNITS">First, R has no physical units, because the inputs have none. Enumerating `Parameter`×`Enhed` over the same file: Lysdæmpning is recorded in `pct` ([5,217,330](SOURCES.md#F-b026295d45) rows) — a transmission percentage whose beam path length is nowhere in the record, so it cannot be converted to m⁻¹. Fluorescens is `Ingen`, dimensionless, on [6,783,473](SOURCES.md#F-04cc5899b8) of its [6,783,570](SOURCES.md#F-2e071cb18b) rows ([83](SOURCES.md#F-80cab1c1ab) in µg/l, [14](SOURCES.md#F-44b98e8a8d) "Ikke oplyst"). FDOM is `ppb`, a fluorescence-standard unit, not an absorption coefficient. Error class 6, absent dimension, on the total; class 4, schema conflation, on the parts. That the column really does conflate units is visible in the same table: Konduktivitet appears as mS/cm ([4,425,525](SOURCES.md#F-df1fb28a32)) *and* mS/m ([743,747](SOURCES.md#F-a8a88b42c8)), Vægtfylde as g/l ([3,412,223](SOURCES.md#F-ec13c59bbe)) *and* kg/m³ ([917,384](SOURCES.md#F-36c58d2f4b)) — factors of [100](SOURCES.md#F-f49e4b418d) and [1000](SOURCES.md#F-64c41a7bac) inside one column, unflagged. [494](SOURCES.md#F-e72e9f3454) further rows are column-shifted, with the parameter name sitting in the unit field.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-J1-UNITS "What this claim rests on")</sup>
+
+**Why it was retired:** The parameter-by-unit counts came from a one-off pass that was not kept and differ from the extract held now; g/l and kg/m3 are one unit under two labels, so the stated factor for density was wrong; the column-shifted records are counted by nothing held; and FDOM does carry a unit.
+
+**Replaced by:** [`C-OQ-J1-PCT`](CLAIMS.md#C-OQ-J1-PCT), [`C-OQ-J1-PATH`](CLAIMS.md#C-OQ-J1-PATH), [`C-OQ-J1-TWOUNITS`](CLAIMS.md#C-OQ-J1-TWOUNITS) — each opens what it rests on.
+
+## openproblems/R6.md
+
+<a id="C-OQ-OLD-R6-ABSENT"></a>
+### No Danish phosphate release rate exists outside the AL561 chambers, and no paired iron and sulphur extraction.
+
+`C-OQ-OLD-R6-ABSENT` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-ABSENT">Still absent: any paired sequential Fe *and* S extraction (AVS, CRS, ascorbate/dithionite Fe) on Danish sediment, and any Danish phosphate release rate outside the [15](SOURCES.md#F-ebb064a233) AL561 chambers.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-ABSENT "What this claim rests on")</sup>
+
+**Why it was retired:** The 1998 national method specifies core-incubation phosphate fluxes, and SR323 tabulates a fjord internal load from unpublished data; the count of chambers came from the register.
+
+**Replaced by:** [`C-OQ-R6-ABSENT`](CLAIMS.md#C-OQ-R6-ABSENT), [`C-OQ-R6-FLUXES`](CLAIMS.md#C-OQ-R6-FLUXES), [`C-OQ-R6-FLUXDATA`](CLAIMS.md#C-OQ-R6-FLUXDATA) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-DOMECONF"></a>
+### In DOME one physical sample appears twice as two grain-size fractions, and a value's precision betrays a unit conversion.
+
+`C-OQ-OLD-R6-DOMECONF` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-DOMECONF">in DOME: one physical sample appears twice as `SED63` and `SED2000`, two grain-size fractions with different values; pooling them shifts any ratio. Values like `16400000.000000002 ug/kg` betray a unit conversion inside DOME — that precision is manufactured.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-DOMECONF "What this claim rests on")</sup>
+
+**Why it was retired:** From the one-off reading of the DOME file, whose analysis was not stored.
+
+**Replaced by:** [`C-OQ-R6-DOME`](CLAIMS.md#C-OQ-R6-DOME) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-H2S"></a>
+### Two independent scans give the sulphide rows, with casts, dates, years, depths, zeros, median, maximum, gear and instrument counts, in one permanently stratified basin under one authority over nine years.
+
+`C-OQ-OLD-R6-H2S` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-H2S">Two full independent scans of `ctd.csv.gz` both return [2,601](SOURCES.md#F-6f9e6a9b2a) rows, and they are not a Danish series. [2,598](SOURCES.md#F-3c2a5bc4c6) come from one station — `93610032` "Dybet", Mariager Fjord midterdel — with [1](SOURCES.md#F-dc4bbf59d0) row each from three other Mariager sites; [210](SOURCES.md#F-ce876f4363) casts on [207](SOURCES.md#F-f661c044e5) dates, 2001–2008 and 2010, nothing since; µg/l; depths [2](SOURCES.md#F-8e1f7f2e14)–[66](SOURCES.md#F-1d89de2357) m; [432](SOURCES.md#F-18f07b031d) zeros; median [27.9](SOURCES.md#F-37b50ff131), max [30,022](SOURCES.md#F-73609b2955) µg/l. Gear is `Ketcher` on every row (a bottle, not a sonde; [1,941](SOURCES.md#F-9813d9ff93) rows carry `999 - Ukendt` as instrument). One permanently stratified silled basin, one authority, nine years: usable for the `H₂S` climatology of Mariager Fjord's monolimnion and nothing comparative.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-H2S "What this claim rests on")</sup>
+
+**Why it was retired:** Beyond the rows and stations, the figures came from one-off scans whose output was not kept; 'permanently stratified' and 'one authority, nine years' are not established here.
+
+**Replaced by:** [`C-OQ-R6-H2S`](CLAIMS.md#C-OQ-R6-H2S), [`C-OQ-R6-H2SUSE`](CLAIMS.md#C-OQ-R6-H2SUSE) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-LEAD"></a>
+### Nothing in Denmark varies sulphate alone, so a core incubation is the answer, and it is cheap.
+
+`C-OQ-OLD-R6-LEAD` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-LEAD">Nothing in Denmark varies sulphate while holding organic loading, iron supply and temperature fixed, so the contrast has to be built. A core incubation is the answer, and it is cheap.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-LEAD "What this claim rests on")</sup>
+
+**Why it was retired:** 'Cheap' was not costed; the need for an incubation is kept, with its reason.
+
+**Replaced by:** [`C-OQ-R6-CLASS`](CLAIMS.md#C-OQ-R6-CLASS) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-NULL"></a>
+### The null is computed under the constraint imposed, not quoted.
+
+`C-OQ-OLD-R6-NULL` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-NULL">The null, computed under the constraint imposed, not quoted.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-NULL "What this claim rests on")</sup>
+
+**Why it was retired:** The null is derived by argument, not computed.
+
+**Replaced by:** [`C-OQ-R6-NULL`](CLAIMS.md#C-OQ-R6-NULL) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-PG"></a>
+### The Kiel Bight dataset makes every one of the incubation's measurements, current, standard and adjacent.
+
+`C-OQ-OLD-R6-PG` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-PG">makes every one of those measurements together, in the western Baltic, in 2025 — current, standard and adjacent.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-PG "What this claim rests on")</sup>
+
+**Why it was retired:** Its record lists no dissolved inorganic carbon, so 'every one' was overstated.
+
+**Replaced by:** [`C-OQ-R6-S2B`](CLAIMS.md#C-OQ-R6-S2B) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-REGISTER"></a>
+### The register's statement that no iron speciation exists for any Danish site is wrong for 1998-2003 and right for everything after.
+
+`C-OQ-OLD-R6-REGISTER` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-REGISTER">The register's "no Fe speciation for any Danish site" is wrong for 1998–2003 and right for everything after.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-REGISTER "What this claim rests on")</sup>
+
+**Why it was retired:** The page narrated a correction of this project's register, and 'right for everything after' was not established.
+
+**Replaced by:** [`C-OQ-R6-ODASED`](CLAIMS.md#C-OQ-R6-ODASED), [`C-OQ-R6-NOVANA-NOBUF`](CLAIMS.md#C-OQ-R6-NOVANA-NOBUF) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-REINSTATE"></a>
+### Reinstate the 1998 assay at a stated number of stations.
+
+`C-OQ-OLD-R6-REINSTATE` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-REINSTATE">Reinstate the 1998 assay at [20](SOURCES.md#F-d7ff320425) existing `Bundfauna` stations, one spring and one autumn.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-REINSTATE "What this claim rests on")</sup>
+
+**Why it was retired:** 'Reinstate' presumed the assay stopped, which is not established; the station number was a proposal typed as a quotation.
+
+**Replaced by:** [`C-OQ-R6-S1`](CLAIMS.md#C-OQ-R6-S1) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-SCALE"></a>
+### A station-month median of bed oxygen is four orders of magnitude coarser than the sulphide front.
+
+`C-OQ-OLD-R6-SCALE` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-SCALE">That is four orders of magnitude coarser than the front it would have to resolve</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-SCALE "What this claim rests on")</sup>
+
+**Why it was retired:** The ratio was given in words and not computed from the panel and the front's depth.
+
+**Replaced by:** [`C-OQ-R6-SCALE`](CLAIMS.md#C-OQ-R6-SCALE) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-STOPPED"></a>
+### Denmark had a written national method for the hypothesis's own variables and stopped running it.
+
+`C-OQ-OLD-R6-STOPPED` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-STOPPED">Denmark had a written national method for `R6`'s own variables and stopped running it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-STOPPED "What this claim rests on")</sup>
+
+**Why it was retired:** SR323 reports the national sediment programme at the same stations in 2017-2018, and the current programme still takes iron-bound phosphate; that the front and buffer assay stopped after 2003 is not established from any pinned document.
+
+**Replaced by:** [`C-OQ-R6-METHOD`](CLAIMS.md#C-OQ-R6-METHOD), [`C-OQ-R6-RESULTS`](CLAIMS.md#C-OQ-R6-RESULTS), [`C-OQ-R6-NOVANA`](CLAIMS.md#C-OQ-R6-NOVANA), [`C-OQ-R6-NOVANA-NOBUF`](CLAIMS.md#C-OQ-R6-NOVANA-NOBUF) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-TABLE"></a>
+### A table of sources with file sizes, character counts, DOME sample counts and dates, PANGAEA point and station counts, the size of the front dataset, and ODA station counts.
+
+`C-OQ-OLD-R6-TABLE` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-TABLE">| Source | What it measures | Resolution / coverage | Size, licence | Separate production path? | |---|---|---|---|---| | DCE SR323, *Sammenhænge i det marine miljø*, `dce2.au.dk/pub/SR323.pdf` | LOI, TN, TP and iron-bound P over the top [10](SOURCES.md#F-4a1a35d307) cm; sulphide-front depth; buffer capacity; oxidised iron, top [1.5](SOURCES.md#F-ded59afbd9) cm | [12](SOURCES.md#F-9f3315768c) NOVANA stations, 1999–2003 and 2017–2018, [7](SOURCES.md#F-aea7bba17c) fjords + Sydfynske Øhav + N. Øresund; front dataset [1,759](SOURCES.md#F-ee2c496117) measurements, [16](SOURCES.md#F-20d429e500) areas, spring+autumn; research series 2005–2015, [20](SOURCES.md#F-0f1d4b59fd) open-water stations | [5.24](SOURCES.md#F-78a134a7b7) MB PDF, text-extractable ([219,607](SOURCES.md#F-e75c595f2e) chars) | Analysis of NOVANA — not separate; the 2005–2015 front series is | | NOVA teknisk anvisning kap. 14, `ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap14.pdf` | The method: `§14.7.1.1` front by silver plate, `§14.7.1.2` buffer capacity, `§14.7.1.3` oxidised iron in the `H₂S` buffer zone, `§14.6.1.1` iron-bound P, bilag 14.3 photometric `Fe²⁺` | protocol, 1998 | [389](SOURCES.md#F-e16defc924) KB, [138,791](SOURCES.md#F-ee2a21747c) chars | n/a — it is the path | | ICES DOME sediment, Denmark — direct GET, no login | `Fe`, `Mn`, `S`, `PTOT`, `CORG`, `LOIGN`, `AL`, `PB210`, grain size | Counted here: [47,019](SOURCES.md#F-a945bc0c14) rows; [47](SOURCES.md#F-878702d730) samples at [12](SOURCES.md#F-9f3315768c) positions carry Fe+S+PTOT together, all of them 14 Feb 1990 – 19 Mar 1991. Fe elsewhere: [2](SOURCES.md#F-a91d2cba78) stations | [823](SOURCES.md#F-4c0b748912) KB zip → [9.6](SOURCES.md#F-04dc58fad6) MB CSV, open | From Danish VanDa/ODA — not separate | | PANGAEA `997075`, Kiel Bight core incubation, 2025 | Sequential Fe extraction (poorly-crystalline/crystalline Fe(II)/Fe(III)), total S, `H₂S`, sulphate, ³⁵S reduction rate, alkalinity — under controlled oxygen cycling | [54.572](SOURCES.md#F-f03060a27a) N [10.178](SOURCES.md#F-5dcea505f4) E, Feb–Mar 2025, [767](SOURCES.md#F-118e432562) points | small, CC-BY | Yes, GEOMAR | | PANGAEA `987329`–`987366` (AL561, 2021) | TOC, TN, bulk TS, porewater dissolved Fe and phosphate; in-situ chamber phosphate flux | [15](SOURCES.md#F-6bb6370ab8) Kattegat–Skagerrak stations, one cruise | small, CC-BY | Yes | | PANGAEA `880132` (Bornholm SEDEX) | Sequential P fractions incl. Fe-bound P | one borehole, 2013, [563](SOURCES.md#F-4a934240fe) points | small, CC-BY | Yes | | ODA `Sedimentkemi/Sporstof` (`Emne_12_19`) | `Phosphor, Fe-adsorberet`, TP, TN, glødetab | [18](SOURCES.md#F-1acff88ebd) stations now, [39](SOURCES.md#F-0dd212ef3f) ever | small, login | NOVANA, different lab chain |</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Sizes, character counts, the DOME counts and dates and the PANGAEA counts came from a one-off session; the DOME figures rest on no stored analysis; the size of the front dataset could not be found in the report.
+
+**Replaced by:** [`C-OQ-R6-SR323`](CLAIMS.md#C-OQ-R6-SR323), [`C-OQ-R6-TA14`](CLAIMS.md#C-OQ-R6-TA14), [`C-OQ-R6-DOME`](CLAIMS.md#C-OQ-R6-DOME), [`C-OQ-R6-PG997075`](CLAIMS.md#C-OQ-R6-PG997075), [`C-OQ-R6-AL561`](CLAIMS.md#C-OQ-R6-AL561), [`C-OQ-R6-ODASED`](CLAIMS.md#C-OQ-R6-ODASED) — each opens what it rests on.
+
+<a id="C-OQ-OLD-R6-VANDKEMI"></a>
+### ODA's water chemistry carries hydrogen sulphide at the stated number of historical stations.
+
+`C-OQ-OLD-R6-VANDKEMI` · retired 2026-09-11 from [openproblems/R6.md](openproblems/R6.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-OQ-OLD-R6-VANDKEMI">ODA `vandkemi` carries `Svovlbrinte (sulfid)` at [1,125](SOURCES.md#F-436b0e29cc) historical stations: a far better series, measuring the same endpoint.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OQ-OLD-R6-VANDKEMI "What this claim rests on")</sup>
+
+**Why it was retired:** The station count was the number of stations in the whole water-chemistry topic, not of stations with sulphide.
+
+**Replaced by:** [`C-OQ-R6-KEMIH2S`](CLAIMS.md#C-OQ-R6-KEMIH2S) — each opens what it rests on.

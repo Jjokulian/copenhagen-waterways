@@ -1,106 +1,51 @@
 # Documenting what pollution does to a body
 
-**This is a documentation project, not an investigation page.** Everything else on this
-site works on Danish coastal water and reports what its data supports. This page works on
-a different question — *what does high exposure actually do to a living organism, and who
-has ever recorded it* — and it is kept separate because nothing here depends on it. It is
-related to the rest of the reading and is a prerequisite for none of it.
+<span class="claim" data-claim="C-LE-X-KIND">**This is a documentation project, not an investigation page.**</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-KIND "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-OTHERS">The investigation pages of this site work on Danish coastal water and report what its data supports.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-OTHERS "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-QUESTION">This page works on a different question — *what does high exposure actually do to a living organism, and who has ever recorded it*</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-QUESTION "What this claim rests on")</sup> — <span class="claim" data-claim="C-LE-X-SEPARATE">and it is kept separate because nothing here depends on it. It is related to the rest of the reading and is a prerequisite for none of it.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SEPARATE "What this claim rests on")</sup>
 
-It exists because the recurring finding of this project arrives one layer further out
-here. The thing that is easy to count gets counted, and the thing that would show what
-the count *means* does not.
+<span class="claim" data-claim="C-LE-X-EXISTS">It exists because the recurring finding of this project arrives one layer further out here. The thing that is easy to count gets counted, and the thing that would show what the count *means* does not.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-EXISTS "What this claim rests on")</sup>
 
 ## The problem
 
-Danish monitoring produces concentrations. It does not produce images of consequence,
-and the two are not substitutes.
+<span class="claim" data-claim="C-LE-X-CONC">The Danish monitoring this project has profiled produces concentrations. It does not produce images of consequence, and the two are not substitutes.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-CONC "What this claim rests on")</sup>
 
-**Korsør, 2021.** Fødevarestyrelsen found PFOS in calf meat at [156, 189 and 230](SOURCES.md#F-b603d9648c) ng/g,
-analysed [27](SOURCES.md#F-66fe0fac0b) samples across beef, fish, fruit, berries, vegetables and honey, and offered
-[179](SOURCES.md#F-f545c455b9) residents a health examination. Every one of those is a measurement of a
-*concentration* — in the food, and then in the people. Nothing published records what
-the animals looked like, whether they were examined beyond a meat assay, or what
-symptoms if any they showed. The exposure was documented as a number in the food chain
-and never as an effect in an organism.
+**Korsør, 2021.** <span class="claim" data-claim="C-LE-X-KOR-MEAT">Fødevarestyrelsen reported PFOS in three samples of meat from cattle from Korsør Nor at [156](SOURCES.md#F-08f11961e5), [189](SOURCES.md#F-dee413cc02) and [230](SOURCES.md#F-3046e55b86) ng/g — its press release calls them calf meat, while its final report lists the same three values under beef cuts, beside a separate calf sample.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-KOR-MEAT "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-KOR-27">It analysed [27](SOURCES.md#F-4dd8782028) samples from Korsør that year, among them beef, fish, fruit, berries, vegetables and honey,</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-KOR-27 "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-KOR-179">and [179](SOURCES.md#F-3862c0d85c) residents who had eaten meat from cattle that grazed near the fire school in Korsør were to be examined for PFOS in their bodies.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-KOR-179 "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-KOR-CONC">Every one of those is a measurement of a *concentration* — in the food, and then in the people.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-KOR-CONC "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-KOR-NOTHING">In the sources searched — the agency's results page, final report and press release, and the news reports found — nothing records what the animals looked like, whether they were examined beyond a meat assay, or what symptoms if any they showed. The exposure is on record as a number in the food chain, not as an effect in an organism.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-KOR-NOTHING "What this claim rests on")</sup>
 
-**Parkersburg, 1998–2004**, is the counter-case, and it is the reason anyone outside a
-toxicology department has heard of PFAS at all. Wilbur Tennant filmed his own herd over
-years: more than [150](SOURCES.md#F-bd341d266c) animals dead one at a time, blackened teeth, tumours, deformities,
-calves born with white blind eyes, a creek running with foam and a discharge pipe from a
-DuPont landfill. He made that record himself because no official programme covered what
-was happening to him.
+<span class="claim" data-claim="C-LE-X-PKB">**Parkersburg, West Virginia**: a farmer whose cattle were dying, on land downstream from a landfill where DuPont had been dumping, filmed his herd, and his footage is in the documentary *The Devil We Know*.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-PKB "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-PKB-COUNTER">It is the counter-case: there the harm was recorded as an effect in whole animals, by the person it happened to.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-PKB-COUNTER "What this claim rests on")</sup>
 
-**Why it matters.** Dose–response at the high end is where a mechanism shows itself, and
-whole-organism failure is a kind of evidence a hazard ratio cannot carry. It is also the
-form of evidence that moves anything. And it is entirely absent from the Danish record —
-which is this project's recurring finding arriving one layer further out: the thing that
-is easy to count gets counted, and the thing that would show what it means does not.
+<span class="claim" data-claim="C-LE-X-WHY">**Why it matters.** Dose–response at the high end is where a mechanism shows itself, and whole-organism failure is a kind of evidence a hazard ratio cannot carry.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-WHY "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-WHY-ABSENT">None of the Danish sources this project has profiled holds a record of that kind.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-WHY-ABSENT "What this claim rests on")</sup>
 
-**The asymmetry worth noting.** The *paper* record from that litigation is open. Bilott's
-discovery documents were donated to UCSF's Industry Documents Library — free, fully
-searchable, two PFAS collections spanning 1961–2006, including the [39](SOURCES.md#F-7fdf60bf01) documents used in
-*The Devil We Know*, alongside the tobacco and opioid archives. **The document archive is
-public. The video archive is not**, and remains under copyright into the 2070s.
+<span class="claim" data-claim="C-LE-X-PAPER">**The asymmetry worth noting.** The *paper* record from that litigation is open. Documents from it, dating from 1961 to 2006, were given to the producers of *The Devil We Know*, who donated them to UCSF's Chemical Industry Documents Library, where the first of its two PFAS collections holds the [39](SOURCES.md#F-0551888c5e) documents featured in the film; the library is best known for its tobacco archive and its growing opioid archive.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-PAPER "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-VIDEO">**The video is another matter:** who holds the farmer's footage, and on what terms, is not in any source found.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-VIDEO "What this claim rests on")</sup>
 
 **What would settle it.**
 
-- Locate the Tennant archive and establish who holds it. Both films licensed the footage,
-  so a rights holder exists and has granted permission before.
-- Ask Fødevarestyrelsen and DTU Fødevareinstituttet whether the Korsør animals were
-  examined beyond the meat assay, and whether anything was photographed or necropsied.
-- For everything since: a standing, provenanced archive of visual documentation of
-  pollution effects, contributed by the people it happens to.
+- <span class="claim" data-claim="C-LE-X-SETTLE-1">Locate the farmer's film archive and establish who holds it.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SETTLE-1 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-LE-X-SETTLE-2">Ask Fødevarestyrelsen and DTU Fødevareinstituttet whether the Korsør animals were examined beyond the meat assay, and whether anything was photographed or necropsied.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SETTLE-2 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-LE-X-SETTLE-3">For everything since: a standing, provenanced archive of visual documentation of pollution effects, contributed by the people it happens to.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SETTLE-3 "What this claim rests on")</sup>
 
-**This is larger than this project.** It is its own thing — *documenting pollution
-effects* — and it needs an archive, a contribution standard, a provenance chain and a
-licence model, none of which belong in a repository about Copenhagen's sewers. It is
-recorded here because this project kept running into the gap and could not fill it. The
-nearest thing here is `viz/log.html`, an offline field logger that records a shore
-observation in the flood model's own vocabulary — the right shape, at approximately none
-of the required scale.
+<span class="claim" data-claim="C-LE-X-LARGER">**This is larger than this project.** It is its own thing — *documenting pollution effects* — and it needs an archive, a contribution standard, a provenance chain and a licence model, none of which belong in a repository about Copenhagen's sewers. It is recorded here because this project kept running into the gap and could not fill it.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-LARGER "What this claim rests on")</sup> <span class="claim" data-claim="C-LE-X-LOG">The nearest thing here is `viz/log.html`, an offline field log for rain and flooding, built for one hand on a phone and kept in the browser so that it works with no signal, whose depth options are the bands of the 2012 flood model sheets — the right shape, for one observer at a time.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-LOG "What this claim rests on")</sup>
 
 ## Why it is its own project
 
-Three reasons it does not belong inside a repository about Danish coastal water, and one
-reason it belongs beside it.
+<span class="claim" data-claim="C-LE-X-THREE">Three reasons it does not belong inside a repository about Danish coastal water, and one reason it belongs beside it.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-THREE "What this claim rests on")</sup>
 
-**It is a different object of study.** The investigation pages study the sea; the public
-record studies what was said about it; this studies whole-organism effect and its
-documentation. Those have different evidentiary standards and mixing them lets a claim
-about one borrow credibility from another.
+<span class="claim" data-claim="C-LE-X-OBJECT">**It is a different object of study.** The investigation pages study the sea; the public record studies what was said about it; this studies whole-organism effect and its documentation. Those have different evidentiary standards and mixing them lets a claim about one borrow credibility from another.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-OBJECT "What this claim rests on")</sup>
 
-**It is not Danish, and mostly cannot be.** The cases that carry the evidence are
-elsewhere, and the reason they are elsewhere is itself part of the finding: the exposure
-had to be extreme and unregulated before anyone was moved to record it.
+<span class="claim" data-claim="C-LE-X-NOTDANISH">**It is not Danish.** The one whole-organism record this page names is American, and it was made by the farmer, not by an institution; the Danish case it names is on record only as concentrations.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-NOTDANISH "What this claim rests on")</sup>
 
-**It has no dependency in either direction.** Nothing in the investigation needs it, and
-it needs nothing from the investigation. Read it or do not; the argument about Danish
-water is unchanged either way.
+<span class="claim" data-claim="C-LE-X-NODEP">**It has no dependency in either direction.** Nothing in the investigation needs it, and it needs nothing from the investigation. Read it or do not; the argument about Danish water is unchanged either way.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-NODEP "What this claim rests on")</sup>
 
-**And it belongs beside it** because it answers the question the rest of the site keeps
-raising and cannot settle: what would it take for a harm nobody is measuring to become
-visible at all. That is the same question as `X19` and `X20` in
-[EXPERIMENTS.md](EXPERIMENTS.md), asked at a different scale.
+<span class="claim" data-claim="C-LE-X-BESIDE">**And it belongs beside it** because it asks the question the rest of the site keeps raising and cannot settle: what would it take for a harm nobody is measuring to become visible at all. [`X19` and `X20`](EXPERIMENTS.md) ask it for Danish water — a panel that reports on a schedule, including the days nothing happens, and dated accounts from the people with the longest baseline.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-BESIDE "What this claim rests on")</sup>
 
 ## What would go in it
 
-Nothing here is done. The scope, if it is ever built:
+<span class="claim" data-claim="C-LE-X-NOTDONE">Nothing here is done. The scope, if it is ever built:</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-NOTDONE "What this claim rests on")</sup>
 
-- **The archives that are already open**, and what is in them.
-- **The asymmetry between paper and image** — discovery documents are routinely donated
-  to public libraries after litigation; film and photographs almost never are, and the
-  reasons are legal rather than scientific.
-- **The cases where a whole-organism record exists**, what made those different, and who
-  made the record. In the known instances it was the affected party, not an institution.
-- **The Danish equivalent, which does not exist.** No open register of fish kills, no
-  photographic record of a fouled shore, no examination of an affected animal beyond a
-  residue assay.
-- **What a deliberately-built record would need** to be evidence rather than a gallery:
-  the null, the date, the position, and a defined observable — the same four things `X19`
-  turns on.
+- <span class="claim" data-claim="C-LE-X-SCOPE-1">**The archives that are already open**, and what is in them.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SCOPE-1 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-LE-X-SCOPE-2">**The asymmetry between paper and image** in what reaches public archives after litigation, and the reasons for it.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SCOPE-2 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-LE-X-SCOPE-3">**The cases where a whole-organism record exists**, what made those different, and who made the record. In the one case named here it was the affected farmer.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SCOPE-3 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-LE-X-SCOPE-4">**The Danish equivalent, which this project has not found.** No open register of fish kills, no photographic record of a fouled shore and no examination of an affected animal beyond a residue assay turned up in the sources searched.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SCOPE-4 "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-LE-X-SCOPE-5">**What a deliberately-built record would need** to be evidence rather than a gallery: the null, the date, the position, and a defined observable — the things `X19` turns on.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-SCOPE-5 "What this claim rests on")</sup>
 
 ---
 
-*Hand-written. Extracted from `OPEN_PROBLEMS.md` item 9, which now points here. Nothing
-in this page has been verified beyond what that item already stated, and it should be
-read as a project outline rather than as findings.*
+*<span class="claim" data-claim="C-LE-X-FOOTER">Every statement on this page is a checked claim, with what it rests on in [CLAIMS.md](CLAIMS.md). Read it as a project outline rather than as findings.</span><sup class="claim-mark">[†](CLAIMS.md#C-LE-X-FOOTER "What this claim rests on")</sup>*

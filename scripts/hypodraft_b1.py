@@ -14,7 +14,8 @@ positive storage and positive area, carry one.
 
 Nearest outfall: for each bathing site, the nearest register point whose
 structure type is combined (OV, OS, OF, OK, Bypass) or separate (SE, SF), by
-great-circle distance.
+an equirectangular approximation of distance (km() below), not a
+great-circle one.
 
     scripts/heavy python3 scripts/hypodraft_b1.py
 """

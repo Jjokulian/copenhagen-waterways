@@ -129,8 +129,10 @@ def main():
         "**ceiling, not an estimate**:") + "\n")
     a("> " + C("C-PC-CA-CEILING", f"On this project's own bounds, agriculture accounts for **no more "
                f"than {ceil_hi:.0f}%** of enumerated reactive nitrogen reaching Danish marine waters "
-               f"— and at the wide end of the bounds as little as {ceil_lo:.0f}%. Filling any empty "
-               "row lowers that ceiling. The bounds carry no source for each row, so the ceiling is "
+               f"— and at the wide end of the bounds as little as {ceil_lo:.0f}%. Filling an empty "
+               "row lowers that ceiling, unless the register's own notes put the row inside another or "
+               "make it a timing term, as [LANDBRUG.md](LANDBRUG.md) sets out row by row. The bounds "
+               "carry no source for each row, so the ceiling is "
                "only as good as they are.") + "\n")
     a(C("C-PC-CA-DIFFERENT", f"The published {PCT}% and this ceiling are not competing estimates of "
         "the same thing. They answer different questions, and only the second is the question an "

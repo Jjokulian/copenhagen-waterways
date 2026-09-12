@@ -1,0 +1,57 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/hypodraft_c4.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/w3-cc.json",
+    "data/manual/number_constructions.d/w3-cc.json",
+    "data/manual/claims.d/drafts-a.json",
+    "data/manual/claims.d/w2-hyp.json",
+    "data/manual/claims.d/w2-kp.json",
+    "data/manual/claims.d/w1-lr.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/landing_facts.json",
+    "data/derived/hypotheses.json",
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/stations_series.bin",
+    "data/raw/marine/wind_baltic_n.json",
+    "data/raw/marine/wind_baltic_c.json",
+    "data/raw/marine/wind_baltic_s.json",
+    "data/derived/pins/CC-MOHRHOLZ-2018.txt",
+    "data/derived/pins/CC-WIKI-SURROGATE.txt",
+    "data/derived/pins/CC-WIKI-SALINITY.txt",
+    "data/derived/pins/CC-WIKI-O2SAT.txt",
+    "data/derived/pins/CC-USGS-OWQ-2011-03.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/C4.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_c6.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/w3-cc.json",
+    "data/manual/number_constructions.d/w3-cc.json",
+    "data/manual/claims.d/drafts-a.json",
+    "data/manual/claims.d/w2-hyp.json",
+    "data/manual/claims.d/w2-kp.json",
+    "data/manual/claims.d/w2-pc.json",
+    "data/manual/claims.d/w1-lr.json",
+    "data/manual/claims.d/w1-ob.json",
+    "data/manual/claims.d/w1-ds.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/enums.json",
+    "data/derived/hypotheses.json",
+    "data/derived/pins/CC-USGS-OWQ-2011-03.txt",
+    "data/derived/pins/CC-WIKI-O2SAT.txt",
+    "data/derived/pins/CC-WIKI-SALINITY.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/C6.md"
+   ]
+  }
+ ]
+}

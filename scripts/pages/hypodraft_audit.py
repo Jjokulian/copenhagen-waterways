@@ -1,180 +1,193 @@
 #!/usr/bin/env python3
-"""Writes docs/hypodrafts/AUDIT.md: a hypothesis draft, as generated text.
+"""docs/hypodrafts/AUDIT.md - the audit of the hypothesis drafts.
 
-Every hypothesis ID is a checked reference, every chemical species a checked
-species, and every number either read live or quoted from the page as committed
-({q:…@@…}, a located quotation - see draftkit.py) because nothing in the repository stores it yet.
+Every verdict is a checked claim (LIVE_NUMBERS.md section 11), registered in
+data/manual/claims.d/w3-af.json: an argued judgement of ours, resting on what each
+draft says as committed (history nodes read out of git) and, where a verdict says
+something about the data, on the data claims that carry it. What the audit once said
+and could not justify is in docs/ARCHIVE.md, not here. The page is written through
+scripts/pages/drafts_b_page.py.
 
     python3 scripts/pages/hypodraft_audit.py
 """
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import draftkit
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+from drafts_b_page import render
+import claims
+import live
 
-REL = "docs/hypodrafts/AUDIT.md"
-TEXT = r"""# Audit of the drafts
-
-Every file in `hypodrafts/` and `openproblems/`, checked against the standards in
-[`../AGENT_BRIEF.md`](../AGENT_BRIEF.md) — which **none of their authors had**. They were
-briefed on null discipline and their own hypothesis's trap; not on applefication, not on
-naming what kind of thing a quantity is, and not on the steelman rule.
-
-Verdicts are **sound** / **needs a stated fix** / **has an error**. Only defects are
-listed. Nothing here rewrites a draft.
-
----
-
-## Per draft
-
-**{ref:A1} — needs a stated fix.** Its primary-source work is correct and independently
-verified: DK-QNP takes the field surplus as an input, and `SR353 ch.6` reports the
-resulting correlation as a finding. Its scoping is also correct — *"this does not show
-the attribution is wrong. It shows `Figur 6.7 D` cannot be what shows it is right."* But it
-predates the Windolf reading and therefore does not know that the attribution **does**
-have independent support (measured estuary N falling {q:estuary N falling @@, heterogeneous response}, heterogeneous
-response timing). **Fix:** cross-reference `../NITROGEN.md` §2, so the draft cannot be
-read as implying the attribution is unevidenced. Its null is arithmetic (publication
-rounding), which is the right kind for a residual-growth test — the zero
-permutation-count is not a defect.
-
-**A1b — sound.** Written after the correction; states what it would not license.
-
-**{ref:B1} — needs a stated fix.** The design is strong: exposure enters only as the
-combined-vs-separate class of the nearest outfall and as an a-priori critical rainfall
-depth, so rainfall cancels in the contrast. **But its central data claim is
-unverified.** The parent queried `[latest].[timeseries_MonitoringResult]` at
-`discodata.eea.europa.eu/sql` and got `Invalid object name`. Every figure in its data row
-— {q:data row — @@ at LOD —} at LOD — rests on that table resolving. **Fix:**
-mark the EEA row unverified until the correct object name is established. The
-`shortTermPollutionSample` claim, which is the most interesting thing in the draft, is
-also unconfirmed.
-
-**{ref:C1} — sound, and the strongest single finding in the set.** It refused the published
-iltsvind extent as a response variable because DCE's criterion is oxygen below {q:oxygen below @@ *in stratified}
-*in stratified bottom water* — stratification inside the definition of the dependent
-variable. It names its own null as non-zero (fully-ventilated saturation) rather than
-assuming zero.
-
-**{ref:C4} — sound.** It found the Gotland unit and provenance errors that the parent then
-verified and fixed. Its p-floor of {q:Its p-floor of @@ is stated honestly} is stated honestly against an effective event
-count of {q:effective event count of @@}.
-
-**{ref:C6} — sound; best null work in the set.** Excluded archived `oxysat_bed` as an outcome
-because it shares two of three inputs with the statistic, and used it only as a
-consistency check. Its {q:check. Its @@ figures are} figures are the ones now carried in
-`../CONSTRUCTED.md`; they supersede the parent's earlier {q:the parent's earlier @@}.
-
-**{ref:D1} — sound.** Breaks the productivity confound three ways, including a substrate ×
-effort interaction that the confound does not predict.
-
-**{ref:D7} — sound.** Correctly says the *monthly panel* carries no turbidity while identifying
-`Turbiditet` in the raw CTD — those are not in conflict. Found the Secchi censoring the
-parent then verified ({q:then verified (@@ shallow vs} shallow vs {q:(21.36% shallow vs @@ deep). **F3 —} deep).
-
-**{ref:F3} — sound.** Avoids the clarity-indicator circularity by using cover rather than depth
-limit, and states the part it could not remove.
-
-**{ref:G1} — sound.** Independently re-derived the station split as {q:station split as @@, explicitly flagged}, explicitly flagged
-the disagreement with the on-file {q:the on-file @@, and}, and called it threshold-dependent. That is the
-correct handling and the other two drafts should have done the same.
-
-**{ref:I1} — needs a stated fix.** It inherits **{q:inherits **@@ summer-peaked /} summer-peaked / {q:summer-peaked / @@ year-round** as} year-round** as
-established fact in its opening. That figure *is* reproducible — I recover exactly
-{q:recover exactly @@ under its} under its stated rule (all {q:stated rule (all @@, ≥24 observations,}, {q:(all 9 variables, @@, R>0.5 with}, {q:observations, @@ with peak} with peak Jun–Sep
-and {q:Jun–Sep and @@) —}) — but the draft neither states the rule nor notes that {ref:G1} and {ref:L3} derived
-different numbers. **Fix:** state the definition inline and cite it as one convention
-among several. Its own methodological work is sound: it dissolves the classification
-circularity by defining the balanced panel on *presence*, which is observable per era.
-
-**{ref:I3} — needs a stated fix.** Line {q:fix.** Line @@ records *"Class} records *"Class 6: no time of day"* as a property of
-the archive. That is true of the **CTD extract** and not established for ODA as a whole:
-the topic enumeration records marine water chemistry (`Emne_10_11`) as carrying
-`Startdato + Startklok`. **Fix:** scope the claim to the CTD extract and note the
-unfetched topic. The rest — the inverted marginal, the {q:marginal, the @@× swing}× swing from count alone — is
-sound and was verified by its own pilot.
-
-**{ref:K1} — sound.** The DIATO/CHL finding is correct; the parent verified within-bin ratio
-spread at {q:ratio spread at @@. Its claim}. Its claim that OBIS returns eMoF cell counts under `&mof=true`
-remains unverified.
-
-**{ref:L3} — HAS AN ERROR.** Its station split of **{q:split of **@@ summer-peaked /} summer-peaked / {q:summer-peaked / @@ year-round** is} year-round** is
-impossible under the definition it states. Only **{q:Only **@@** `oxy_bed`}** `oxy_bed` stations have {q:stations have @@ observations;}
-observations; {q:observations; @@ exceeds that.} exceeds that. The numbers are reachable only with **no
-minimum observation count**, and at that setting the classification is meaningless:
-
-| stations with {q:| stations with @@, no minimum}, no minimum | {q:no minimum | @@ | |---|---| |} |
-|---|---|
-| of which N = {q:|---|---| | of which N = @@} observation | **{q:1 observation | **@@** | | of}** |
-| of which N ≤ {q:| | of which N ≤ @@} | **{q:≤ 3 | **@@** | | median}** |
-| median N in the group | **`3`** |
-
-**With N = {q:**With N = @@ the resultant length} the resultant length R is exactly {q:R is exactly @@ by construction** —} by construction** — all the mass sits in
-one calendar month. Over half of {ref:L3}'s "summer-peaked" group is stations where the
-seasonality statistic measures nothing but scarcity. **Fix:** re-run the composition
-check with a stated minimum ({q:with a stated minimum (@@} gives {q:gives @@ on `oxy_bed`),} on `oxy_bed`), or drop the split arm and
-rely on the {q:on the @@-station core}-station core panel, which is unaffected. **The draft's headline result is
-not touched by this** — the `AR(1)` finding that sign-flipping windows occur in {q:windows occur in @@ of no-trend simulations} of
-no-trend simulations stands, and was independently reimplemented.
-
-**{ref:Z8} — sound.** Extracted TA M06 as a primary document rather than summarising it, and
-names its residual honestly: *"nothing is in absorption units, so it is a variance
-apportionment, not a budget."*
-
-**{ref:A7} — sound.** Downloaded and parsed the Zenodo flux dataset rather than citing it, then
-established it is nearly useless for Denmark ({q:for Denmark (@@ west of} west of {q:stations west of @@, none in}, none in
-Kattegat, Belts, Sound or any fjord). A negative with numbers.
-
-**{ref:E7} — sound.** Pre-commits to a reclassification test that would make the file wrong.
-
-**{ref:J1} — sound.** Took the new-metric option seriously, wrote the metric down, then killed
-it with four computed reasons rather than asserting absence. Its per-parameter counts
-differ from the parent's full scan by {q:scan by @@ (malformed-row handling);} (malformed-row handling); immaterial.
-
-**{ref:R6} — sound.** Found that Denmark ran a national standard method for {ref:R6}'s own variables
-1998–2003 and discontinued it, and states a reclassification test in advance.
-
----
-
-## What the set gets systematically wrong
-
-1. **Inherited figures are not re-derived, and the one convention that matters was never
-fixed.** Three drafts use a summer/year-round station split and get {q:and get @@ and} and
-{q:@@. All three are}. All three are defensible arithmetic on different rules; none of the rules is
-written down anywhere as *the* convention. {ref:G1} flagged it, {ref:L3} flagged it and got it wrong
-anyway, {ref:I1} inherited it silently. **This is the applefication failure in its purest form:
-a category everyone uses and nobody defines.** A single line in `AGENT_BRIEF.md` fixing
-the rule would remove a cross-draft contradiction and one hard error.
-
-2. **Absence is scoped to the search, not the world — except where it isn't.** {ref:D7} gets
-this right ("the monthly panel carries no turbidity"), {ref:I3} gets it wrong ("no time of
-day"). The difference is one clause. Every absence claim in these files should name the
-*file* it is absent from, never "the archive".
-
-3. **Quantity kinds are used correctly but almost never named.** The drafts avoid the
-traps in practice — {ref:C6} excludes a derived channel, {ref:C1} refuses a threshold class with the
-predictor inside it, {ref:Z8} calls its residual a variance apportionment — but they do it
-case-by-case rather than by labelling. No draft carries a line saying *this quantity is a
-norm product*, *this one is a residual*. The behaviour is right; the vocabulary that
-would make it checkable by a reader is missing.
-
-4. **The (B) files steelman better than the (A) files.** {ref:E7} and {ref:R6} pre-commit to what
-would make them wrong. {ref:A7} and {ref:J1} come close. Among the (A) drafts, only {ref:C6}, {ref:B1} and {ref:C1}
-seriously argue against their own design. **The asymmetry is backwards** — a draft that
-proposes a test has more room to be wrong than one that declines to.
-
-5. **Nobody checked anyone else.** Sixteen files, three incompatible station splits, and
-one arithmetic impossibility that a single `wc`-scale check would have caught. The set was
-written in parallel with no cross-reading, which is the right way to get independence and
-the wrong way to get consistency. **This audit is the missing step, and it should run
-after every batch rather than once.**
-"""
+C = live.claim
+R = live.ref
 
 
-def main(argv):
-    return 0 if draftkit.build(REL, TEXT) is not None else 1
+def text():
+    o = []
+    w = o.append
+    w("# Audit of the drafts")
+    w("")
+    w("*Generated by `scripts/pages/hypodraft_audit.py`. Each marked statement links to "
+      "what it rests on.*")
+    w("")
+    w(C("C-AF-AU-SCOPE", "This audit reads each draft in `hypodrafts/` and each open problem "
+        f"in `openproblems/` as committed at `7c4dd30`, and {R('Z8')}, first committed later, "
+        "at `0138743`, against the standards in [`../AGENT_BRIEF.md`](../AGENT_BRIEF.md): "
+        "what kind of thing a quantity is, a null computed rather than quoted, and the "
+        "steelman rule."))
+    w("")
+    w("Verdicts are **sound** / **needs a stated fix** / **has an error**. Only defects are "
+      "listed. Nothing here rewrites a draft.")
+    w("")
+    w("---")
+    w("")
+    w("## Per draft")
+    w("")
+    w(C("C-AF-AU-A1", f"**{R('A1')} — not settled here.** Its scoping is right: it says its "
+        "finding *does not show the attribution is wrong*, only that one published figure "
+        "cannot be what shows it is right — and the chain it examines is the one [what the "
+        "sea actually receives](../NITROGEN.md) sets out, where DK-QNP takes the field "
+        "surplus as a key input. Whether it misses independent support for the attribution "
+        "cannot be judged here: that support would be Windolf and colleagues' paired "
+        "catchment-and-estuary study, whose text could not be read."))
+    w("")
+    w(C("C-AF-AU-A1B", "**A1b — sound.** It states what a result would and would not "
+        "license, and it names the field surplus a norm product."))
+    w("")
+    w(C("C-AF-AU-B1", f"**{R('B1')} — needs a stated fix.** The design is strong: exposure "
+        "enters only as the combined-vs-separate class of the nearest outfall and as an "
+        "*a-priori* critical rainfall depth, so rainfall cancels in the contrast.") + " "
+      + C("C-AF-AU-B1-EEA", "**But its central data claim is unverified here.** Its data row "
+          "counts a table of EEA bathing-water samples that nothing in this repository holds "
+          "or queries, so every figure in that row, and its `shortTermPollutionSample` "
+          "count, stands unchecked. **Fix:** mark the EEA row unverified until the table is "
+          "fetched and counted."))
+    w("")
+    w(C("C-AF-AU-C1", f"**{R('C1')} — needs a stated fix.** It refuses the published "
+        "iltsvind extent as a response on the ground that DCE's criterion puts "
+        "stratification inside the response's definition; DCE define iltsvind by oxygen "
+        "concentration alone and name stratified water as where it develops, so the extent "
+        "is not circular by construction. Its choice of raw per-measurement oxygen stands on "
+        "the design's own unit, the cast. Its null work is sound: it names a non-zero floor, "
+        "the fully ventilated saturation, rather than assuming zero."))
+    w("")
+    w(C("C-AF-AU-C4", f"**{R('C4')} — sound.** It checks the Gotland file's units and "
+        "provenance against the source netCDF, states its permutation floor, and gives its "
+        "effective event count among what the design would not license."))
+    w("")
+    w(C("C-AF-AU-C6", f"**{R('C6')} — sound.** It never uses the archived `oxysat_bed` as "
+        "its outcome, because it is computed from oxygen, temperature and salinity and so "
+        "shares inputs with the statistic, and uses it once, as a consistency check."))
+    w("")
+    w(C("C-AF-AU-D1", f"**{R('D1')} — sound.** It breaks the productivity confound with a "
+        "within-station fixed effect, fluorescence for the confound's time-varying part, "
+        "and a substrate × effort interaction that the confound does not predict."))
+    w("")
+    w(C("C-AF-AU-D7", f"**{R('D7')} — sound.** It says the *monthly panel* carries no "
+        "turbidity while identifying `Turbiditet` in the raw CTD — those are not in "
+        "conflict — and it models the Secchi censoring that differs between its arms, which "
+        "this project's light analysis counts."))
+    w("")
+    w(C("C-AF-AU-F3", f"**{R('F3')} — needs a stated fix.** It avoids the clarity-indicator "
+        "circularity by using cover rather than depth limit, and states the part it could "
+        "not remove. That part, the eelgrass light requirement, has no source here, so its "
+        "adequacy call is only as good as a requirement nobody has pinned."))
+    w("")
+    w(C("C-AF-AU-G1", f"**{R('G1')} — sound.** It re-derived the station split on a rule it "
+        "states, set the result beside the split on file, and called the split "
+        "threshold-dependent. That is the correct handling, and the other drafts that use "
+        "the split should have done the same."))
+    w("")
+    w(C("C-AF-AU-I1", f"**{R('I1')} — needs a stated fix.** It opens on the summer-peaked / "
+        "year-round split carried on file as prior work, without stating the rule behind it "
+        f"or noting that {R('G1')} and {R('L3')} derived other splits. **Fix:** state the "
+        "rule inline and cite the brief's stated convention, as one convention among "
+        "several. Its own methodological work is sound: it dissolves the classification "
+        "circularity by defining the balanced panel on *presence*, which is observable per "
+        "era."))
+    w("")
+    w(C("C-AF-AU-I3", f"**{R('I3')} — needs a stated fix.** It records that there is no "
+        "time-of-day column anywhere in the archive. That is true of the **CTD extract** "
+        "and not of ODA as a whole: the water-chemistry extract carries a clock value per "
+        "sample. **Fix:** scope the claim to the CTD extract."))
+    w("")
+    w(C("C-AF-AU-K1", f"**{R('K1')} — sound.** Its point that the satellite functional types "
+        "cannot carry the hypothesis stands on the files' own note that each is derived "
+        "from chlorophyll. Its claim that OBIS returns cell counts through a measurement "
+        "extension remains unchecked: no phytoplankton counts are held."))
+    w("")
+    w(C("C-AF-AU-L3", f"**{R('L3')} — needs a stated fix.** It classifies stations as "
+        "summer-peaked or year-round on thresholds of the raw Rayleigh resultant length R, "
+        "and states no minimum number of observations. Under such a rule a station with a "
+        "single observation has the largest R possible and counts as summer-peaked whenever "
+        "that observation fell in summer, so the split can measure scarcity rather than "
+        "season. **Fix:** redo the split under the brief's convention, which classifies on "
+        "Z = N·R² and calls a station year-round only when it has enough observations, or "
+        "drop the split arm and rely on the core panel.") + " "
+      + C("C-AF-AU-L3-HEAD", "**The draft's headline is not touched by this:** it reports its "
+          "no-trend simulation null on a fixed core panel as well as on the split arms, and "
+          "the core panel does not use the split."))
+    w("")
+    w(C("C-AF-AU-Z8", f"**{R('Z8')} — sound.** It extracted `TA M06` as a primary document "
+        "rather than summarising it, and names its residual honestly: *so this yields a "
+        "variance apportionment, not a budget*."))
+    w("")
+    w(C("C-AF-AU-A7", f"**{R('A7')} — sound.** It downloaded and parsed the flux dataset "
+        "rather than citing it, and reports none of its stations in the Kattegat, the "
+        "Belts, the Sound or any Danish fjord: a negative it counted rather than asserted."))
+    w("")
+    w(C("C-AF-AU-E7", f"**{R('E7')} — sound.** It pre-commits to a reclassification test "
+        "that would make the file wrong."))
+    w("")
+    w(C("C-AF-AU-J1", f"**{R('J1')} — sound.** It took the new-metric option seriously, "
+        "wrote the metric down precisely enough to be rejected, then rejected it for reasons "
+        "it computed rather than by asserting absence."))
+    w("")
+    w(C("C-AF-AU-R6", f"**{R('R6')} — sound.** It reports that Denmark had a written national "
+        "method for its own variables and stopped running it, and it states a "
+        "reclassification test in advance."))
+    w("")
+    w("---")
+    w("")
+    w("## What the set gets systematically wrong")
+    w("")
+    w("1. " + C("C-AF-AU-W1", "**Inherited figures are not re-derived, and the one "
+                f"convention that matters was written down in none of them.** {R('G1')}, "
+                f"{R('I1')} and {R('L3')} each split the stations into summer-peaked and "
+                f"year-round: {R('G1')} on the share of a station's months falling in "
+                f"May–October, {R('L3')} on thresholds of the raw resultant length, "
+                f"{R('I1')} on the split carried on file. **This is the applefication failure "
+                "in its purest form: a category everyone uses and nobody defines.** The "
+                "brief's section on stated conventions fixes one: classify on Z = N·R², and "
+                "call a station year-round only when it has enough observations for the test "
+                "to reject."))
+    w("2. " + C("C-AF-AU-W2", "**Absence is scoped to the search, not the world — except "
+                f"where it isn't.** {R('D7')} gets this right (*the monthly panel carries no "
+                f"turbidity*), {R('I3')} gets it wrong (*no time of day* anywhere in the "
+                "archive). The difference is a clause.") + " "
+      + C("C-AF-AU-W2-RULE", "Every absence claim in these files should name the *file* it "
+          "is absent from, never \"the archive\"."))
+    w("3. " + C("C-AF-AU-W3", "**Quantity kinds are named case by case, not by rule.** "
+                f"{R('A1')} calls its attribution a residual, A1b calls the field surplus a "
+                f"norm product, {R('B1')} calls per-outfall discharge volume a model output "
+                f"and {R('G1')} names its estimator; {R('C6')} keeps a derived channel out of "
+                f"its outcome and {R('Z8')} calls its residual a variance apportionment. The "
+                "brief asks for the kind beside every quantity."))
+    w("4. " + C("C-AF-AU-W4", f"**The open problems pre-commit.** {R('E7')} and {R('R6')} "
+                "each state in advance the reclassification test that would move them."))
+    w("5. " + C("C-AF-AU-W5", "**Nobody checked anyone else.** The station split is a defect "
+                "no single draft could show: it appears only when the drafts are read side by "
+                "side. **This audit is the missing step, and it should run after every batch "
+                "rather than once.**"))
+    return "\n".join(o) + "\n"
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    try:
+        page = text()
+    except (live.Unjustified, claims.Refused) as e:
+        print(e, file=sys.stderr)
+        sys.exit(1)
+    sys.exit(render("docs/hypodrafts/AUDIT.md", page))

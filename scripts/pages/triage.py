@@ -1,15 +1,26 @@
 #!/usr/bin/env python3
 """Writes docs/hypodrafts/TRIAGE.md: the triage of the hypothesis field.
 
-The rows are data (scripts/pages/triage_rows.py); every count is a count over
-them (scripts/triage_counts.py -> data/derived/triage.json), read live here;
-every hypothesis is a checked reference to the register, and every number in a
-blocker is a figure in data/manual/claims.d/drafts-a.json. Nothing on the page is
-typed: a reclassification, a renumbered hypothesis or a refetched file changes
-the page the next time it is built.
+The rows are data (scripts/pages/triage_rows.py); every count is a count over them
+(scripts/triage_counts.py -> data/derived/triage.json), read live here; every
+hypothesis is a checked reference to the register. Every assertion on the page is a
+checked claim (LIVE_NUMBERS.md section 11), registered in
+data/manual/claims.d/w3-tr.json with what it rests on. The table is claimed by its
+rule (C-TR-RULE): each row's class is a judgement on its blocker, and a blocker says
+only what the source register, the held files and the water-chemistry re-score
+(data/derived/rescore.json) say. What the page once said and could not justify is in
+docs/ARCHIVE.md, not here.
+
+One count is the page's own: how many water-chemistry stations in the Belts and the
+Sound carry total N, ortho-P and silicon, which the A5 row gives. It is counted here
+from data/raw/oda/kemi.csv.gz and kept in data/derived/triage_sections.json, and
+recounted only when the extract changes.
 
     python3 scripts/pages/triage.py
 """
+import csv
+import gzip
+import io
 import json
 import os
 import sys
@@ -18,7 +29,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 sys.path.insert(0, HERE)
 
-from common import DERIVED, ROOT, log, write_doc
+from common import DERIVED, RAW, ROOT, log, write_doc
 import claims
 import live
 import refs as _refs
@@ -28,48 +39,119 @@ _amb = _refs.ambiguous
 import triage_rows as T
 
 OUT = os.path.join(ROOT, "docs", "hypodrafts", "TRIAGE.md")
+KEMI = os.path.join(RAW, "oda", "kemi.csv.gz")
+SECTIONS = os.path.join(DERIVED, "triage_sections.json")
 ORDER = list(T.CLASSES)
+C = live.claim
+
+# the sections the A5 row names, as the extract's locality names begin
+SECTION_PREFIXES = ("Storebælt", "Lillebælt", "Øresund")
+SECTION_PARAMETERS = ("Nitrogen,total N", "Ortho-phosphat-P", "Silicium")
+
+# rescore.py's class strings
+RS_TESTABLE = "testable now"
+RS_PARTLY = "partly unblocked - a second blocker was behind the first"
+# the hypotheses C-TR-SECOND names, by what stands behind the fetch
+RS_SECOND = {"A1", "A2", "A5", "A7", "B4", "K1", "K2", "E11"}
+
+PHYSICAL = ["C", "G", "Z", "I"]
+BIOLOGY = ["F", "J", "T", "R"]
+
+
+def sections():
+    """Stations whose locality is in the Belts or the Sound and that carry all three
+    nutrients the A5 row names. Streams the extract once, keeping a set of
+    parameters per station; recounted only when the extract's size or time changes."""
+    st = os.stat(KEMI)
+    key = {"bytes": st.st_size, "mtime": int(st.st_mtime)}
+    try:
+        old = json.load(open(SECTIONS, encoding="utf-8"))
+        if old.get("source") == key:
+            return
+    except (OSError, ValueError):
+        pass
+    have, where = {}, {}
+    with gzip.open(KEMI, "rb") as fh:
+        rd = csv.reader(io.TextIOWrapper(fh, encoding="latin-1"), delimiter=";")
+        head = next(rd)
+        ip, il, ist = head.index("Parameter"), head.index("Lokalitetsnavn"), head.index("ObservationsStedNr")
+        top = max(ip, il, ist)
+        for row in rd:
+            if len(row) <= top or row[ip] not in SECTION_PARAMETERS:
+                continue
+            loc = row[il]
+            if not loc.startswith(SECTION_PREFIXES):
+                continue
+            have.setdefault(row[ist], set()).add(row[ip])
+            where[row[ist]] = next(p for p in SECTION_PREFIXES if loc.startswith(p))
+    full = sorted(s for s, v in have.items() if len(v) == len(SECTION_PARAMETERS))
+    by = {p: sum(where[s] == p for s in full) for p in SECTION_PREFIXES}
+    out = {"_what": "Water-chemistry stations whose Lokalitetsnavn begins with one of "
+                    "the prefixes, and how many of them carry a row of every one of the "
+                    "parameters; counted by scripts/pages/triage.py over "
+                    "data/raw/oda/kemi.csv.gz.",
+           "source": key, "prefixes": list(SECTION_PREFIXES),
+           "parameters": list(SECTION_PARAMETERS),
+           "n_stations_any": len(have), "n_stations": len(full),
+           "by_prefix": by, "stations": full}
+    with open(SECTIONS, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+    log(f"  counted {len(full)} section stations; wrote {os.path.relpath(SECTIONS, ROOT)}")
 
 
 def main(argv):
+    sections()
     d, _, _ = claims.load()
     cache = {}
     R = lambda text: claims.resolve(d, text, cache)[0]
     tc = live.live_json(os.path.join(DERIVED, "triage.json"))
+    rs = live.live_json(os.path.join(DERIVED, "rescore.json"))
     reg = json.load(open(os.path.join(DERIVED, "hypotheses.json"), encoding="utf-8"))
-    orphans = set(tc["orphans"])
     n = tc["n_triaged"]
     cls = tc["classes"]
+    gs = tc["groups"]
     share = lambda k: live.step("K-SUBSET-SHARE", cls[k]["n"] / n * 100)
     label = lambda k: f"**{T.CLASSES[k][0]}**" if T.CLASSES[k][1] else T.CLASSES[k][0]
-    refs = lambda ids: ", ".join(live.ref(i, family="hypotheses" if _amb(i) else None) for i in ids)
+    ref = lambda i: live.ref(i, family="hypotheses" if _amb(i) else None)
+
+    def refs(ids):
+        ids = [ref(i) for i in ids]
+        return ids[0] if len(ids) == 1 else ", ".join(ids[:-1]) + " and " + ids[-1]
+
+    cls_of = {r["id"]: r["cls"] for r in T.ROWS}
+    # the page says every register entry is triaged, once
+    if list(tc["orphans"]) or list(tc["untriaged"]) or int(n) != int(tc["n_register"]):
+        raise live.Unjustified("TRIAGE: the rows and the register no longer match - "
+                               f"orphans {list(tc['orphans'])}, untriaged {list(tc['untriaged'])}")
+    # the re-score and the rows must agree on which of the nine are testable now
+    mx = rs["matrix"]
+    nine = T.CLUSTERS["vandkemi"]
+    if sorted(mx) != sorted(nine):
+        raise live.Unjustified(f"TRIAGE: rescore.json scores {sorted(mx)}, the rows name {sorted(nine)}")
+    rs_t = [h for h in nine if mx[h]["class"] == RS_TESTABLE]
+    rs_p = [h for h in nine if mx[h]["class"] == RS_PARTLY]
+    bad = [h for h in nine if (cls_of[h] == "testable") != (h in rs_t)]
+    if bad or set(rs_p) != RS_SECOND or len(rs_t) + len(rs_p) != len(nine):
+        raise live.Unjustified(f"TRIAGE: the rows' classes for {bad or nine} no longer follow "
+                               "rescore.json, or its partly-unblocked set is not the one the "
+                               "page names")
 
     o = []
     w = o.append
     w("# Triage of the hypothesis field")
     w("")
-    w('PLAN.md\'s triage stage is "most of the work", and the stage after it is')
-    w("meaningless until it exists. This is it: **all "
-      f"{n} lettered hypotheses in [HYPOTHESES.md](../HYPOTHESES.md)**,")
-    w("each in exactly one class, with the specific blocker.")
+    w(C("C-TR-ALL", f"This page puts **all {n} lettered hypotheses in "
+        "[HYPOTHESES.md](../HYPOTHESES.md)** each in exactly one class, with the specific "
+        "blocker."))
     w("")
-    if orphans:
-        w("The triage also classifies " + ", ".join(f"`{i}`" for i in sorted(orphans))
-          + ", which the register no longer holds; it is listed in its group below and")
-        w("counted nowhere.")
-        w("")
-    w(f"{tc['n_with_entry']} already have a draft or an open-problem entry; those are marked "
-      "and cite it rather")
-    w("than being redone. **Nothing here has been run.** A classification is a claim about "
-      "what could be done, not a result.")
+    w(C("C-TR-ENTRIES", f"{tc['n_with_entry']} of them have a draft or an open-problem page "
+        "of their own, and their identifiers link to it.") + " "
+      + C("C-TR-NOTRESULT", "A classification says what testing a hypothesis would need and "
+          "whether that is held here; it is not a test result."))
     w("")
-    w("*Numbers shown as quotations are carried from this page as committed at `4469fc7`: "
-      "nothing in the repository stores them yet, so each says what the page said, not that "
-      "it was re-derived. Every other number is read live.*")
-    w("")
-    w("*Classified before the water-chemistry extract was fetched on 2026-09-10. "
-      "`scripts/rescore.py` re-scores the hypotheses that fetch unblocks; the classes "
-      "below are as triaged.*")
+    w(C("C-TR-COUNTS", "Counted over the rows, restricted to the identifiers the register "
+        "holds, the classes stand at:"))
     w("")
     w("| class | n | share |")
     w("|---|---:|---:|")
@@ -77,8 +159,8 @@ def main(argv):
         w(f"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |")
     w(f"| | **{n}** | |")
     w("")
-    w("**Class definitions.** *Testable now* — consequence, a source in hand, and a null "
-      "computable")
+    w(live.claim_begin("C-TR-CLASSES") + "**Class definitions.** *Testable now* — consequence, "
+      "a source in hand, and a null computable")
     w("under the constraint imposed. *Blocked on a fetch* — named, with whether it needs "
       "credentials.")
     w("*Blocked on resolution* — needs depth, sub-monthly time, per-measurement position, or "
@@ -87,15 +169,22 @@ def main(argv):
       "never did;")
     w("**this is not a refutation**. *Needs an experiment* — no observational design reaches "
       "it.")
-    w("*Not established* — I could not tell, and say so rather than guess.")
+    w("*Not established* — I could not tell, and say so rather than guess." + live.CLAIM_END)
     w("")
     w("---")
     w("")
     w("## The table")
     w("")
+    w(C("C-TR-RULE", "Each row's class is a judgement on its blocker: what the row's "
+        "consequence needs, and whether this project holds it. A blocker says only what the "
+        "source register (`data/manual/data_sources*.json`, the record of what each source "
+        "holds and what its searches found), the files held here and, for the hypotheses that "
+        "waited on the water-chemistry extract, `scripts/rescore.py` say. *Not found* means "
+        "not found in the sources the register surveyed."))
+    w("")
     for g in reg["groups"]:
         gid = g["id"]
-        gc = tc["groups"][gid]
+        gc = gs[gid]
         rows = [r for r in T.ROWS if r["group"] == gid]
         if not rows:
             continue
@@ -103,149 +192,150 @@ def main(argv):
         w("")
         parts = [f"{gc[k]} {T.CLASSES[k][0]}" for k in ORDER if gc[k]]
         noun = "hypothesis" if gc["n"] == 1 else "hypotheses"
-        w(f"*{gc['n']} {noun} — " + ", ".join(parts) + ".*")
+        w(C(f"C-TR-N-{gid}", f"*{gc['n']} {noun} — " + ", ".join(parts) + ".*"))
         w("")
         w("| id | consequence | class | blocker |")
         w("|---|---|---|---|")
         for r in rows:
-            idc = (f"**`{r['id']}`** *(no longer in the register)*" if r["id"] in orphans
-                   else f"**{live.ref(r['id'], family="hypotheses" if _amb(r['id']) else None)}**")
-            w(f"| {idc} | {R(r['consequence'])} | {label(r['cls'])} | {R(r['blocker'])} |")
+            w(f"| **{ref(r['id'])}** | {R(r['consequence'])} | {label(r['cls'])} | {R(r['blocker'])} |")
         w("")
     w("---")
     w("")
     w("## What the shape of it says")
     w("")
-    w("### Half the field is not blocked on money or effort")
+    w("### Blocked on a fetch")
     w("")
-    w(f"**{cls['fetch']['n']} of {n} ({share('fetch'):.0f}%) are blocked on a fetch**, and "
-      "most of those fetches are")
-    w("small. The ones that need no credentials at all: the ICES/HELCOM trawling layer "
-      "(" + R("{was:4469fc7:docs/hypodrafts/TRIAGE.md:ICES/HELCOM trawling layer (@@, CC BY}") + ", `CC BY 4.0`), the three ODA")
-    w("vegetation and fauna topics (three one-line `TOPICS` entries), OBIS phytoplankton via "
-      "the eMoF extension (open")
-    w("REST), DMI tide gauges and wind (no key since March 2026), `Sentinel-1` SAR, and ICES "
-      "stock assessments.")
-    w("**A day of fetching would move a large fraction of this table.**")
+    w(C("C-TR-FETCH", f"**{cls['fetch']['n']} of {n} ({share('fetch'):.0f}%) are blocked on a "
+        "fetch**: what they need is named and is not held here.") + " "
+      + C("C-TR-OPEN", "The source register records some of those sources as open without a "
+          "login: the ICES swept-area-ratio product and HELCOM's fishing-intensity layers, ICES "
+          "stock assessments, OBIS occurrences, and DMI's sea-level and weather series, "
+          "unauthenticated in its testing. `Sentinel-1` scenes need a free account. ODA's "
+          "bottom-fauna and vegetation topics need the ODA registration this project already "
+          "uses, and are not in `fetch_oda.py`'s topic list. Phytoplankton counts need "
+          "credentials: VanDa refused access, and the ICES route needs an account."))
     w("")
     vk, bf = tc["clusters"]["vandkemi"], tc["clusters"]["bundfauna"]
-    w("### One fetch unblocks the most")
+    tl = rs["tally"]
+    one = int(tl[RS_TESTABLE]) == 1
+    w("### The water-chemistry extract, re-scored")
     w("")
-    w("**ODA `vandkemi` (`Emne_10_11`)** is the single highest-value fetch: it carries "
-      "nitrogen,")
-    w("phosphorus, silicate, ammonium and chlorophyll, and it is named in the blocker for "
-      f"**{refs(T.CLUSTERS['vandkemi'])}** — {vk['n']} hypotheses, including the entire "
-      "nutrient-limitation")
-    w("argument. When this was written it was also the fetch `fetch_oda.py` advertised in its "
-      "docstring and did not")
-    w(f"implement. Second is **ODA bundfauna (`Emne_3_180`)** at {bf['n']} — "
-      f"{refs(T.CLUSTERS['bundfauna'])}.")
+    w(C("C-TR-RESCORE", "The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named "
+        f"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and "
+        "`scripts/rescore.py` checks each against it: "
+        f"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} "
+        f"consequence needs and {'is' if one else 'are'} testable "
+        f"now, {refs(rs_t)}**; for the other {tl[RS_PARTLY]} a second blocker stood behind the "
+        "first.") + " "
+      + C("C-TR-SECOND", f"{refs(['A1', 'A2', 'A7'])} need river input, on ODA topics "
+          f"`fetch_oda.py` does not reach; {ref('A5')} needs volume transport at the Belt and Sound "
+          f"sections, which no open series the source register found carries; {ref('B4')} needs stream stations, outside the "
+          f"marine topic; {refs(['K1', 'K2'])} need phytoplankton counts, which are not held; "
+          f"and {ref('E11')} needs a temperature from the same bottle."))
     w("")
-    ga = tc["groups"]["A"]
-    if ga["testable"] == 0:
-        w("Note what that means for group A. **Not one hypothesis in the nutrient group is "
-          "testable")
-        w("now.** The group the entire public argument rests on is the group whose data this "
-          "project")
-        w("had not fetched.")
+    ga = gs["A"]
+    a_test = [r["id"] for r in T.ROWS if r["group"] == "A" and r["cls"] == "testable"]
+    if len(a_test) != int(ga["testable"]):
+        raise live.Unjustified("TRIAGE: group A's testable rows and its count disagree")
+    rest = [T.CLASSES[k][0] for k in ORDER if k != "testable" and int(ga[k])]
+    rest = rest[0] if len(rest) == 1 else ", ".join(rest[:-1]) + " or " + rest[-1]
+    if a_test:
+        verb = "is" if len(a_test) == 1 else "are"
+        w(C("C-TR-GROUPA", f"In group A, the nutrient group, {ga['testable']} of {ga['n']} "
+            f"{verb} testable now: {refs(a_test)}. The rest are {rest}."))
     else:
-        w(f"Note what that means for group A: only {ga['testable']} of its {ga['n']} "
-          "hypotheses are testable now.")
+        w(C("C-TR-GROUPA", f"No hypothesis in group A, the nutrient group, is testable now; its "
+            f"{ga['n']} are {rest}."))
+    w("")
+    if int(bf["fetch"]) != int(bf["n"]):
+        raise live.Unjustified("TRIAGE: the page calls every bottom-fauna row a fetch not yet made")
+    w(C("C-TR-BUNDFAUNA", "Of the fetches not yet made, ODA's bottom-fauna topic (`bundfauna`) "
+        f"is named in the blocker for {bf['n']}: {refs(T.CLUSTERS['bundfauna'])}."))
     w("")
     mc, tx = tc["clusters"]["microbial"], tc["clusters"]["toxicant"]
+    others = [int(tc["clusters"][c]["n"]) for c in T.CLUSTERS if c != "microbial"]
+    extra = {k for k in ORDER if k not in ("unscoreable", "experiment", "fetch") and int(mc[k])}
+    if extra or int(mc["n"]) <= max(others):
+        raise live.Unjustified("TRIAGE: the microbial cluster no longer reads as the page says")
+    tail = f"{mc['experiment']} need an experiment instead"
+    if int(mc["fetch"]):
+        tail += f" and {mc['fetch']} {'waits' if int(mc['fetch']) == 1 else 'wait'} on a fetch"
+    w("### The largest named blocking dimension is not nutrients")
+    w("")
+    w(C("C-TR-MICROBIAL", f"**{mc['unscoreable']} hypotheses are unscoreable for one missing "
+        "dimension: microbial, viral and fungal community composition** — among "
+        f"{refs(T.CLUSTERS['microbial'])}; of the rest, {tail}.") + " "
+      + C("C-TR-MICRO-REG", "National marine monitoring counts no viruses and monitors no "
+          "microbial community composition; the Danish sequencing the source register found is "
+          "research outside the programme, and for the unscoreable ones none of it records what "
+          "they turn on. Of the clusters of blockers this page names, it is the largest."))
+    w("")
     both = mc["unscoreable"] + tx["unscoreable"]
-    w("### The largest single blocking dimension is not nutrients")
-    w("")
-    w(f"**{mc['unscoreable']} hypotheses are unscoreable for one missing dimension: "
-      "microbial, viral and fungal")
-    w(f"community composition** — of {refs(T.CLUSTERS['microbial'])}, all but "
-      f"{mc['experiment']}, which need an experiment instead.")
-    w("Not one Danish marine station counts viruses, sequences a microbial community, or "
-      "surveys")
-    w("fungi. That is a whole functional layer with no column anywhere, and it blocks more "
-      "of this")
-    w("register than any other single absence.")
-    w("")
-    w(f"A second cluster of {tx['n']} is **toxicant concentration in a marine matrix** — "
-      f"{refs(T.CLUSTERS['toxicant'])} —")
-    w(R("where the national hazardous-substance layer turns out to hold {fig:da_mfs_total} "
-        "stations, not one of them coastal."))
-    w(f"Together those two dimensions account for **{both} of the "
-      f"{cls['unscoreable']['n']} unscoreable** "
-      f"({live.step('K-SUBSET-SHARE', both / cls['unscoreable']['n'] * 100):.0f}%), and "
-      "neither is expensive to start")
-    w("measuring. eDNA and Alcian-blue TEP are cheap standard methods; the register says so "
-      "itself in several places.")
+    w(C("C-TR-TOXICANT", f"A second cluster of {tx['n']} is **toxicant concentration in a "
+        f"marine matrix** — {refs(T.CLUSTERS['toxicant'])} — "
+        + R("where the national hazardous-substance layer holds {fig:da_mfs_total} stations, "
+            "not one of them coastal.")) + " "
+      + C("C-TR-TWO", f"Together those two dimensions account for **{both} of the "
+          f"{cls['unscoreable']['n']} unscoreable** "
+          f"({live.step('K-SUBSET-SHARE', both / cls['unscoreable']['n'] * 100):.0f}%)."))
     w("")
     beyond = cls["unscoreable"]["n"] + cls["experiment"]["n"]
-    w(f"### {share('unscoreable'):.0f}% of the field cannot be scored at all, and that is the finding")
+    w(f"### {share('unscoreable'):.0f}% of the field cannot be scored with any source surveyed")
     w("")
-    w(f"**{cls['unscoreable']['n']} of {n} ({share('unscoreable'):.0f}%) are unscoreable** "
-      "— the deciding dimension has no")
-    w(f"column and never did. Add the {cls['experiment']['n']} that need an experiment and "
-      f"**{live.step('K-SUBSET-SHARE', beyond / n * 100):.0f}% of the hypothesis field is")
-    w("beyond reach of any reanalysis of existing data.** No amount of cleverness with the "
-      "archive")
-    w("touches them.")
+    w(C("C-TR-UNSCOREABLE", f"**{cls['unscoreable']['n']} of {n} ({share('unscoreable'):.0f}%) "
+        "are unscoreable**: the deciding measurement is in none of the sources this project "
+        "surveyed.") + " "
+      + C("C-TR-BEYOND", f"Add the {cls['experiment']['n']} that need an experiment and "
+          f"**{live.step('K-SUBSET-SHARE', beyond / n * 100):.0f}% of the hypothesis field is "
+          "beyond reach of any reanalysis of the data this project holds or has found.**"))
     w("")
-    w("This is the number that matters for how the whole argument should be read. When a "
-      "public")
-    w("debate settles on nutrients, it is not because nutrients won a contest against the")
-    w("alternatives. **It is because nutrients are in group A, and group A has a monitoring")
-    w(f"programme.** {beyond} of these hypotheses have never been in a position to compete.")
+    w(C("C-TR-CONTEST", "This is the number that matters for how the whole argument should be "
+        "read. When a public debate settles on nutrients, it is not because nutrients won a "
+        f"contest against the alternatives: {beyond} of these hypotheses have not been in a "
+        "position to compete."))
     w("")
-    gs = tc["groups"]
     frac = {k: int(v["testable"]) / int(v["n"]) for k, v in dict.items(gs) if int(v["n"])}
     ranked = sorted(frac, key=lambda k: -frac[k])
     majority = [k for k in ranked if frac[k] > 0.5]
     w("### Where the archive is strong")
     w("")
-    if majority == ["I"]:
-        w("The **I** group — observation and measurement — is the only one where most "
-          "hypotheses are")
-        w(f"testable now ({gs['I']['testable']} of {gs['I']['n']}). That is not a "
-          "coincidence: those hypotheses are about the archive, and")
-        w("the archive is the thing this project holds.", )
-    else:
-        w("Where most hypotheses are testable now: " + ", ".join(
-            f"**{k}** ({gs[k]['testable']} of {gs[k]['n']})" for k in majority) + ".")
-    if len(ranked) > 1 and ranked[1] == "C":
-        w(f"**C** (physical resupply) is next at {gs['C']['testable']} of {gs['C']['n']},")
-        w("because temperature, salinity, depth and wind are exactly what a CTD and a "
-          "weather reanalysis")
-        w("give you.")
+    strong = C("C-TR-STRONG", "Where most hypotheses are testable now: " + ", ".join(
+        f"**{k}** ({gs[k]['testable']} of {gs[k]['n']})" for k in majority) + ".")
+    if "C" in majority:
+        strong += " " + C("C-TR-CTD", "In **C**, physical resupply, they are the ones the CTD "
+                          "record, the depth soundings, the inflow indicator files and the "
+                          "weather reanalysis held here measure: temperature, salinity, oxygen, "
+                          "depth and wind.")
+    w(strong)
     w("")
-    w("The pattern across groups is blunt: **this archive can see physics and it cannot see "
-      "biology.**")
-    w("Groups C, G, Z and I hold most of the testable-now entries. Groups E, F, J, T and R — "
-      "chemistry,")
-    w("biological structure, films, sediment sickness, decay — hold almost none, and hold "
-      "nearly all")
-    w("of the unscoreable and experimental ones.")
+    phys = sum(gs[g]["testable"] for g in PHYSICAL)
+    bio = sum(int(gs[g]["testable"]) for g in BIOLOGY)
+    hard = sum(gs[g]["unscoreable"] + gs[g]["experiment"] for g in BIOLOGY + ["E"])
+    if bio:
+        raise live.Unjustified("TRIAGE: the page says the biology groups hold no testable entry")
+    w(C("C-TR-PATTERN", "The pattern across groups: **the archive held here tests physics and "
+        "itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold "
+        f"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — "
+        "biological structure, films, sediment sickness, decay — hold none of them, and E, "
+        f"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the "
+        f"{beyond} entries that are unscoreable or need an experiment."))
     w("")
     w("### An honest caveat about this table")
     w("")
-    w("The classification is mine and is itself an untested partition, exactly as the "
-      f"{tc['n_groups']} groups are")
-    w("(PLAN.md says so of them). Two judgements are load-bearing and contestable: I treated "
-      "*not")
-    w("fetched but fetchable* as **blocked on a fetch** rather than unscoreable even where "
-      "nobody has")
-    w("confirmed the topic contains what its name suggests; and I treated *measured "
-      "somewhere in the")
-    w("world but not in Denmark* as unscoreable **for this archive**, which is a statement "
-      "about")
-    w(f"Denmark's monitoring rather than about nature. The {cls['unestablished']['n']} "
-      "entries I could not place at all are")
-    w("marked *not established* rather than guessed.")
+    w(C("C-TR-CAVEAT", "The classification is mine and is itself an untested partition, exactly "
+        f"as the {tc['n_groups']} groups are (PLAN.md says so of them). Two judgements are "
+        "load-bearing and contestable: I treated *not fetched but fetchable* as **blocked on a "
+        "fetch** rather than unscoreable even where nobody has confirmed the topic contains what "
+        "its name suggests; and I treated *measured somewhere in the world but not in Denmark* "
+        "as unscoreable **for this archive**, which is a statement about Denmark's monitoring "
+        f"rather than about nature. The {cls['unestablished']['n']} entries I could not place "
+        "at all are marked *not established* rather than guessed."))
     w("")
-    w("And per [KNOWN_AND_UNKNOWN.md](../KNOWN_AND_UNKNOWN.md): **every \"not measured\" in "
-      "this table")
-    w("should be read as \"not found by a search whose sensitivity nobody has "
-      "characterised.\"** Six")
-    w("things this project called absent turned out to exist in one day. The "
-      "unscoreable column is")
-    w("an upper bound on what is missing, not a measurement of it.")
+    w(C("C-TR-SEARCH", "And per [KNOWN_AND_UNKNOWN.md](../KNOWN_AND_UNKNOWN.md): **every \"not "
+        "measured\" in this table should be read as \"not found by a search whose sensitivity "
+        "nobody has characterised.\"** Things this project had called absent have turned up "
+        "before. The unscoreable column is an upper bound on what is missing, not a measurement "
+        "of it."))
     try:
         write_doc(OUT, "\n".join(o).rstrip("\n") + "\n")
     except live.Unjustified as e:
@@ -256,4 +346,8 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    try:
+        sys.exit(main(sys.argv[1:]))
+    except live.Unjustified as e:
+        log(str(e))
+        sys.exit(1)

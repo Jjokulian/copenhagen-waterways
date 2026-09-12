@@ -307,10 +307,10 @@
     "scripts/light.py"
    ],
    "confirmed": {
-    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: light.py changed only in its docstring and one comment, which now give DCE's pinned figures - growth possible at 11-20% of surface light at the bed, the Kd targets assuming 14% - instead of a threshold below which eelgrass dies, as agent w3-fr found; the syntax tree without docstrings is identical. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/light.py": "e531a8f798693bf5"
+     "scripts/light.py": "3ae830df900f3d69"
     }
    }
   },
@@ -359,22 +359,20 @@
    "assumptions": [
     "Waves at each depth are those the local wind grows over the fetch in its direction; swell from outside the bay and currents are ignored.",
     "One bed roughness and one water density describe the whole bay.",
-    "The critical stresses stand for a live and a dead bed; the absolute values are literature ranges, the ratio is the point."
+    "The two critical stresses stand for a live and a dead bed; neither value rests on a pinned document (see the gaps)."
    ],
    "justified": [
     {
      "text": "Wave growth, dispersion and friction follow published relations written out in the script.",
      "ref": "scripts/waves.py:78"
-    },
-    {
-     "text": "The live and dead thresholds are compared under identical weather, so the ratio between them does not depend on the wave model's absolute calibration.",
-     "ref": "scripts/waves.py:129"
     }
    ],
    "gaps": [
     "The critical stresses come from a comment citing the cohesive-sediment literature; no document is pinned.",
     "No observation of sediment moving is used; the model is not checked against turbidity or sediment traps.",
-    "The fetch table it reads has no producer script in the repository."
+    "The fetch table it reads has no producer script in the repository.",
+    "The ratio of resuspending hours over the live and the dead threshold is not independent of the wave model's calibration: it depends on where the modelled shear distribution sits relative to both thresholds, so scaling the shear changes it. No sensitivity run has been done.",
+    "The fetch table's longest entries are the ray cast's ceiling, not distances to a coast: several south-easterly directions hold exactly the same maximum. Whether the cap matters for wave growth at the model depths has not been checked."
    ],
    "void_if": [
     "waves in the bay are dominated by swell from outside it",
@@ -386,8 +384,8 @@
     "scripts/waves.py"
    ],
    "confirmed": {
-    "by": "fork water (written against scripts/light.py, waves.py and seabed.py as read, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (re-read waves.py against agent w3-fr's findings: the claim that the threshold ratio is independent of calibration does not hold, so it is withdrawn and recorded as a gap, with the fetch table's ceiling; waves.py is unchanged. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
     "saw": {
      "scripts/waves.py": "f04e67813675be81"
     }
@@ -545,10 +543,10 @@
     "scripts/seabed.py"
    ],
    "confirmed": {
-    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "by": "agent w3-fr (re-confirmed only because the computation is unchanged: this declaration was last confirmed against scripts/seabed.py at the sha256 recorded in its saw, and the edit changed only the page-writing main and a new _run; every other top-level definition of the file hashes identically by AST, and the page's own derived file is written by the same statement; the declaration's text was not re-read, and line references into the page-writing code may now point elsewhere; 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/seabed.py": "ca1577888b48ba6e"
+     "scripts/seabed.py": "9fa3a28badfbf173"
     }
    }
   },

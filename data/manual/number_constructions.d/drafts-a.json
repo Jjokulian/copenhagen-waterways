@@ -114,11 +114,11 @@
     "scripts/pages/triage_rows.py"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read after my edit: triage_rows.py changed only in A5's row - class fetch, blocker the Belt and Sound transport - and triage.py only in the partly-unblocked set (A5 added), the singular/plural wording and the sentence naming what each still needs; no count is computed differently. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/triage_counts.py": "bb341ecbe2888cc4",
-     "scripts/pages/triage_rows.py": "4171a429b080c973"
+     "scripts/pages/triage_rows.py": "3019de0a4510cb44"
     }
    }
   },
@@ -628,10 +628,10 @@
     "scripts/light.py"
    ],
    "confirmed": {
-    "by": "Claude (verified quotation-only by diff against the converting fork's backup of the script, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: light.py changed only in its docstring and one comment, which now give DCE's pinned figures - growth possible at 11-20% of surface light at the bed, the Kd targets assuming 14% - instead of a threshold below which eelgrass dies, as agent w3-fr found; the syntax tree without docstrings is identical. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/light.py": "e531a8f798693bf5"
+     "scripts/light.py": "3ae830df900f3d69"
     }
    }
   },
@@ -816,10 +816,10 @@
     "data/raw/national/punkt_rbu_udl.geojson"
    ],
    "confirmed": {
-    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (re-read: hypodraft_b1.py changed only in its docstring, which now says km() is an equirectangular approximation rather than a great-circle distance, as the gap already recorded; the syntax tree without docstrings is identical. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
     "saw": {
-     "scripts/hypodraft_b1.py": "ffb95ece6590eac2",
+     "scripts/hypodraft_b1.py": "c22bafd6fe175134",
      "data/raw/national/badevand.geojson": "fe37bb58e7734cf4",
      "data/raw/spildevand/combined_overflow.geojson": "2d67fa185ea6ee81",
      "data/raw/national/punkt_rbu_udl.geojson": "0280cc777737f84c"

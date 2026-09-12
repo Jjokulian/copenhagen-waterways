@@ -166,12 +166,12 @@
     "data/derived/floodmaps/_sheets.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: floodgap.py changed only in two comments - typed shares that no longer match the data are gone, and the unstored palette check is called unstored, as agent w3-fr found; the syntax tree is identical, so no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/floodgap.py": "76ca448241807d3d",
+     "scripts/floodgap.py": "740a7dae580b98d0",
      "scripts/floodreg.py": "6b088c68b01a063a",
-     "scripts/floodmaps.py": "b6aac5de8e3311c4",
+     "scripts/floodmaps.py": "eefd81a4560f94b7",
      "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
      "data/derived/floodmaps/_sheets.json": "711eee27cb50234c"
     }
@@ -535,10 +535,10 @@
     "data/derived/floodalign.json"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "agent w3-dq (re-read against scripts/export_flood.py after an edit confined to write_readme() and a removed unused constant: main() byte-identical and docs/data/flood2012/manifest.json unchanged by sha256; 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/export_flood.py": "c52b0ae14d150596",
+     "scripts/export_flood.py": "91c7e5474d4bb01b",
      "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
      "data/derived/floodalign.json": "19bee7a60e77a02e"
     }
@@ -581,10 +581,10 @@
     "scripts/pages/constructed.py"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read constructed.py after agent w3-gc's rewrite: it still writes constructed.json with entries = len of the row list and ours = the rows whose last element marks them as the project's own, as the model says; the rows themselves changed, and are the agent's to justify. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/pages/constructed.py": "f375a511d3596d25"
+     "scripts/pages/constructed.py": "6cd23729076d2852"
     }
    }
   },
@@ -629,10 +629,10 @@
     "scripts/pages/settle.py"
    ],
    "confirmed": {
-    "by": "Claude (rendered pages verified identical by the fork that converted the script's quotations; the code was not re-read line by line, 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: settle.py's only change since the last confirmation is my rewording of one printed string, the marine tier's line; values() and every computed field are untouched. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/pages/settle.py": "7eb6f74cf6368be2"
+     "scripts/pages/settle.py": "368021f06d9968c2"
     }
    }
   }

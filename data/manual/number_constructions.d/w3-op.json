@@ -1,0 +1,99 @@
+{
+ "constructions": [
+  {
+   "id": "K-OQ-CTD-ENHED",
+   "title": "Records of the CTD extract per unit value",
+   "covers": {
+    "file": "data/derived/enums.json",
+    "fields": {
+     "ctd.categorical.Enhed.*": {
+      "kind": "counted",
+      "is": "Records of the CTD extract `data/raw/oda/ctd.csv.gz` carrying one value of the unit column `Enhed`, over the whole file; a record is one reading of one `Parameter` at one depth of one cast, so this counts readings, not casts or stations, and nothing was filtered out."
+     }
+    }
+   },
+   "what": "How many records of the CTD extract carry each value of its unit column.",
+   "model": "`scan()` in `scripts/enums.py` streams the extract with the declared ODA format and, for every column still below the cardinality cap, increments a `collections.Counter` per value; `main()` writes each counter whole, most common first, under `categorical`.",
+   "assumptions": [
+    "The unit column holds the unit of the reading in the same record."
+   ],
+   "justified": [
+    {
+     "text": "Every value of a categorical column is counted over every record the reader yields.",
+     "ref": "scripts/enums.py:92"
+    },
+    {
+     "text": "The whole count is written for each value, so the counts of a column sum to the records that carry it.",
+     "ref": "scripts/enums.py:139"
+    }
+   ],
+   "gaps": [
+    "The counts are per unit only. Nothing held cross-tabulates unit by parameter, so which parameter a unit belongs to can be inferred only where the totals match.",
+    "The `ctd` entry of `enums.json` was written by an earlier version of the script, as `K-ENUMS` records, and survives through the merge."
+   ],
+   "void_if": [
+    "the CTD extract is re-fetched and enums.py is not rerun"
+   ],
+   "licenses": "How many CTD records carry each unit label, and, where a unit's count equals a sum of parameter counts, that those records can be those parameters'.",
+   "not_licensed": "Which parameter any single record's unit belongs to; any statement about the instruments or their calibration.",
+   "watches": [
+    "scripts/enums.py",
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "confirmed": {
+    "by": "agent w3-op (written against the code it describes: scan() and main() in scripts/enums.py at lines 92 and 139, START_SPLIT and the params block in scripts/light.py at lines 63 and 362; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/enums.py": "e21dcf1b1c5748b5",
+     "data/raw/oda/ctd.csv.gz": "99004e1b7bcc8b5b"
+    }
+   }
+  },
+  {
+   "id": "K-OQ-LIGHT-SPLIT",
+   "title": "Start depth that splits light profiles into shallow- and deep-start casts",
+   "covers": {
+    "file": "data/derived/light.json",
+    "fields": {
+     "params.start_split_m": {
+      "kind": "stipulated",
+      "is": "The depth in metres above which a light-attenuation profile counts as starting shallow and below which it counts as starting deep: a threshold chosen in `scripts/light.py`, not measured."
+     }
+    }
+   },
+   "what": "The threshold light.py uses to split casts by where the profile begins.",
+   "model": "The constant `START_SPLIT` in `scripts/light.py`, stored under `params` so the pages print it from the output rather than from the code.",
+   "assumptions": [
+    "A single threshold is enough to show whether the start depth moves the median."
+   ],
+   "justified": [
+    {
+     "text": "The threshold is a named constant, with the comment that profiles starting above it are shallow-start.",
+     "ref": "scripts/light.py:63"
+    },
+    {
+     "text": "It is written to the output beside the other choices the analysis rests on.",
+     "ref": "scripts/light.py:362"
+    }
+   ],
+   "gaps": [
+    "No other threshold is tried in the stored output, so the size of the split's effect at other depths is not held."
+   ],
+   "void_if": [
+    "light.py changes the constant and is not rerun"
+   ],
+   "licenses": "Which casts the stored shallow-start and deep-start medians are taken over.",
+   "not_licensed": "That the threshold is a physical boundary in the water.",
+   "watches": [
+    "scripts/light.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: light.py changed only in its docstring and one comment, which now give DCE's pinned figures - growth possible at 11-20% of surface light at the bed, the Kd targets assuming 14% - instead of a threshold below which eelgrass dies, as agent w3-fr found; the syntax tree without docstrings is identical. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/light.py": "3ae830df900f3d69"
+    }
+   }
+  }
+ ]
+}

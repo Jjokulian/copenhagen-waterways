@@ -44,6 +44,7 @@ REGISTERS = {"CLAIMS.md", "ARCHIVE.md", "SOURCES.md"}
 def flat(t):
     t = re.sub(r"<[^>]+>", " ", t)
     t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t)
+    t = re.sub(r"https?://\S+", " ", t)      # a URL's digits are an address, not a quantity
     t = t.replace("**", "").replace("`", "")
     return re.sub(r"\s+", " ", t).strip()
 

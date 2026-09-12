@@ -218,9 +218,11 @@ def main():
         "with one arm. Every catchment gets the same treatment in the same years, so whatever happens "
         "next happens to all of them together, and no estimator can recover a contrast that was never "
         "created.") + " "
-      + C("C-PC-X17", "[`X17`](EXPERIMENTS.md) argues the specific case: every Danish catchment has "
-          "been sprayed for decades, so for that mechanism there is nothing to compare against — "
-          "**the counterfactual does not exist at any price until somebody stops somewhere.**") + "\n")
+      + C("C-PC-X17", "[`X17`](EXPERIMENTS.md) argues the specific case: for agricultural biocides there is "
+          "nothing to compare against, because the register holds no measurement of what they do to marine "
+          "decomposers and this project could not locate Danish pesticide use at any unit finer than the "
+          "nation — **a comparison exists only once somebody creates one**, which `X17` proposes to do by a "
+          "staggered crossover rather than a ban.") + "\n")
     w(C("C-PC-PLURAL-TRADE", "The corollary is uncomfortable for both sides of the argument. "
         "Uniformity is what a fair regulation looks like and it is also what an uninformative "
         "experiment looks like: **applying one instrument everywhere buys equity and spends "

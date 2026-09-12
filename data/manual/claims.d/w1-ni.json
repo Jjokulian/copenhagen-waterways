@@ -1000,8 +1000,8 @@
    "kind": "argued",
    "stance": "ours",
    "page": "NITROGEN.md",
-   "claim": "Because the coefficients are administrative, the balance moves when they move: SR120 documents a step from the 1999 norm changes, a rise in the phosphorus figures from the 2012 change of harvest method, and 2013 published twice from two fertiliser registers.",
-   "because": "Each is stated in SR120 and read from the pin; together they show the balance responding to its own coefficients.",
+   "claim": "Because the coefficients are administrative, the published figures move when they move: SR120 documents a step in the compiled nitrogen quotas from the 1999 norm changes, a rise in the phosphorus net-input figures from the 2012 change of harvest method, and 2013 published twice from two fertiliser registers.",
+   "because": "Each is stated in SR120 and read from the pin. The 1999 step is in the quotas - what may be applied - not in the field balance; the 2012 rise is in the phosphorus net input. Together they show the published figures responding to their own coefficients.",
    "rests_on": [
     "E-NI-SR120-STEP",
     "E-NI-SR120-P2012",
@@ -1010,10 +1010,10 @@
    "basis": "assessed",
    "confirmed": {
     "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (reworded after agent w3-ba's reading of SR120, checked against the pin: its 'spring' is in the compiled nitrogen quotas - what may be applied - not in the field balance; the other two steps unchanged. 2026-09-11; not yet read by the project owner)",
     "saw": {
-     "said on NITROGEN.md": "Because the coefficients are administrative, the number moves when they move, with no change in any field. In **1999** the nitrogen norm was cut 10%, dropping the quota by about 40,000 t N, while grass norms changed at the same time, raising it by about 15,000 t N a year; SR120 calls the result a *\"spring\"* — a step — in the compiled series. In **2012** the method for nutrients removed at harvest changed from dry-matter yield to feed units, and SR120 records that its phosphorus net-input figures *\"er steget lidt ift. de tidligere opgørelser\"* — rose, from the method change alone. And **2013** is published **twice**, differing only in which register the fertiliser figure came from: **84 kg N/ha** from the *gødningsregnskaber*, **81** from Danmarks Statistik.",
-     "texts": "6d9ccfcd46e34357",
+     "said on NITROGEN.md": "Because the coefficients are administrative, the published figures move when they move, with no change in any field. In **1999** the nitrogen norm was cut 10%, dropping the quota by about 40,000 t N, while grass norms changed at the same time, raising it by about 15,000 t N a year; SR120 calls the result a *\"spring\"* — a step — in the compiled nitrogen quotas, the limit on what may be applied, not the field balance itself. In **2012** the method for nutrients removed at harvest changed from dry-matter yield to feed units, and SR120 records that its phosphorus net-input figures *\"er steget lidt ift. de tidligere opgørelser\"* — rose, from the method change alone. And **2013** is published **twice**, differing only in which register the fertiliser figure came from: **84 kg N/ha** from the *gødningsregnskaber*, **81** from Danmarks Statistik.",
+     "texts": "6d19ef9b6bcaf697",
      "node E-NI-SR120-STEP": "b9edf9ed7614fdae",
      "pinned SR120": "cea5fe54325343de",
      "node E-NI-SR120-P2012": "5c8b11a6fb5000f8",
@@ -1038,13 +1038,13 @@
    ],
    "confirmed": {
     "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: C-NI-NORM-STEPS under it now places SR120's 1999 step in the quotas rather than the field balance; this claim's own statement does not depend on which, so it still follows. 2026-09-11; not yet read by the project owner)",
     "saw": {
      "said on NITROGEN.md": "That last one sets the scale. The surplus fell 148 → 84 kg N/ha over 22 years, -2.9 kg/ha/yr. **Choosing which register to read is worth 1.0 years of the trend** — small against the whole decline, not small against a year of it.",
      "texts": "d164aa5a8694717a",
      "node E-NI-SR120-T34": "2f094ce77f6ad717",
      "pinned SR120": "cea5fe54325343de",
-     "rests on C-NI-NORM-STEPS": "6d9ccfcd46e34357"
+     "rests on C-NI-NORM-STEPS": "6d19ef9b6bcaf697"
     }
    }
   },
@@ -2696,8 +2696,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "including what is probably the largest supply to the productive layer — internal regeneration from sediment, which is not a \"source\" and so has no row in any apportionment",
      "texts": "dd597e9ea9df26ff"
@@ -2724,8 +2724,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Note the scale of what the apportionment omits. Atmospheric deposition to Danish marine waters is 45–90 kt N/yr, comparable to the entire land-based waterborne term, and appears in none of the published shares",
      "texts": "36357d0e88e24175"
@@ -2752,8 +2752,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Model output — and the subtrahend that determines the residual above",
      "texts": "c9672b03ba00069e"
@@ -2780,8 +2780,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Aquaculture and marine farms, 1.5% | Reported, feed-balance based. | | Separate stormwater, 0.7% | Modelled volume × a concentration from a 1990 measurement programme. | | Rain-dependent overflow, 0.6% | Modelled volume (30-135% stated uncertainty) × an assumed concentration, quality-controlled against that same assumed concentration. | | Industry, 0.5% | Reported. | | Scattered dwellings, 0.2% | Modelled from dwelling counts × assumed per-capita loads",
      "texts": "a8348ba64388c53b"
@@ -2808,8 +2808,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "We have now read it, and it refutes the broader reading. Windolf, Blicher-Mathiesen, Carstensen & Kronvang (2012), *Environmental Science and Policy* 24: 24–33, 10.1016/j.envsci.2012.08.009. The design is a catchment↔estuary pairing — 10 catchments covering 35% of Danish land area with their estuaries, 1990–2009 — not the treated-versus-control paired catchment experiment. On that, an earlier draft of this section guessed right and then guessed wrong about what followed. What matters is where the numbers come from: | link | how it is obtained | |---|---| | catchment N surplus | the norm-product residual, as above | | stream N load | measured on the gauged fraction — fortnightly total-N concentrations × daily discharge — and modelled on the rest per Windolf et al. (2011), the DK-QNP family | | estuary total N | measured. Discrete samples, surface and bottom, 12–46×/year, upper/middle/lower reaches | Gauged area runs from 22% (Isefjord) to 87% (Randers Fjord), median about 66%. So the surplus↔load relation *is* partly circular, and unevenly so — at Isefjord more than three quarters of the catchment is modelled, at Randers about an eighth",
      "texts": "28e4989ceb6f329d"
@@ -2836,8 +2836,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "But two things in this paper are not circular at all, and together they carry the attribution: 1. Estuary nitrogen is measured, and fell 24–62%. It sits downstream of the load model and takes no input from *markoverskud*. Stream and upper-estuary concentrations *\"nearly halved over the time frame investigated.\"* 2. The catchments respond differently, and that is the tell. Eight show a direct response under five years; two show a decadal delay attributed to nitrate surviving in oxic chalk aquifers. A relation manufactured by a shared input would give all ten the same response. The heterogeneity is a signature of real hydrology, and a construction does not produce it. So the position changes. The narrow claim stands: Figur 6.7 D in SR353 cannot evidence what it is used for, and this paper does not rescue that figure. The broad claim — that the attribution lacks independent support — is now positively refuted, not merely unestablished. Measured stream loads over a gauged majority, measured estuary concentrations, and between-catchment heterogeneity are support that no circularity in one monitoring-report figure touches",
      "texts": "72fb8c79de2a8b8d"
@@ -2862,8 +2862,8 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "This is worth stating plainly because it is the error this project audits, committed here twice in one hour, in both directions. First we found one bad argument and let it stand for the case — a bad argument in a source does not mean there are no good ones. Then, correcting that, we asserted from a *title* that a non-circular design existed. Softening an overclaim is still an overclaim. Reading the paper settled it, and against us. That is the steelman rule working as intended: the strongest version of the case was looked for, found, and turned out to be stronger than the finding. The circularity is real and local. The attribution is not unevidenced. Both sentences are needed, and only the first was in the first draft",
      "texts": "35a78630fd98649c"
@@ -2891,8 +2891,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "crop nitrogen content — norm tables from the *Fodermiddeltabeller* of 1992, 1995 and 2000, with cereals corrected annually from analyses by the pig industry's own research centre. - atmospheric deposition — modelled. No field is observed at any point. Every term is a register count or an area times a regulatory coefficient, and the surplus is what is left over. Nitrogen never touches",
      "texts": "e02a7ab79ff753df"
@@ -2919,8 +2919,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Small against the whole decline; not small against a year of it, and it is never carried as an uncertainty",
      "texts": "474cd88cb88ce627"
@@ -2947,8 +2947,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "New Zealand's OVERSEER is the same pattern with an audit attached: successive versions raised modelled nitrogen leaching by up to 60% with no change in on-farm practice, and a 2021 review panel would not say whether the tool could tell a rise from a fall",
      "texts": "451ef00aa4f20d54"
@@ -2975,8 +2975,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "That matters because sediment resuspension is a threshold in flow, not a frequency of events. Below the critical shear stress the deposit stays in the basin; above it, the accumulated sludge leaves — and the hazardous-substances programme reports the highest median metal concentrations precisely in basin sludge. Multiplying an annual volume by an average concentration cannot represent that, and the resulting error is one-directional and largest in the wettest years",
      "texts": "706dedcc6e522edd"
@@ -3003,8 +3003,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "They are coupled, which is why they get confused: A is an input to DK-QNP, and DK-QNP supplies B's river-transport term over the ungauged ~45–51% of the country. So A partly determines the minuend of B. But the ~70% itself is B",
      "texts": "7822e683e5bad56a"
@@ -3031,8 +3031,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "gives that assumption its one strong check: the intercept of their measured regressions implies 1.24 ± 0.46 mg N/L, against 1.27 ± 0.55 measured in nine minimally-disturbed streams. That agreement is real and is the best evidence the background term is not arbitrary",
      "texts": "94241ef2d0eb42dd"
@@ -3059,8 +3059,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "So how does the construction perform against things that were measured? This is the question the rest of it turns on, and Windolf et al. (2012) answer it per catchment. Over 1990–2009: | catchment | field surplus fell | measured normalised diffuse load fell | pass-through | |---|---|---|---| | Horsens, Isefjord, Odense | 30–52 kg N ha⁻¹ yr⁻¹ | 10–14 | roughly ¼ to ⅓ | | Randers, Roskilde | 24–50 | 3–5 | roughly a tenth | | Mariager | fell as elsewhere | no response traceable | zero | The construction moves and the measurement mostly does not. For every kilogram per hectare the surplus fell, the measured diffuse load fell by something like 0.1 to 0.4 where it responded at all, and by nothing in one catchment of ten. The paper attributes the spread to nitrogen removal in groundwater varying with geology, and the Mariager failure to old oxic aquifers where nitrate survives. Read carefully, that is three separate findings: 1. Direction: good. Nine of ten catchments show a significant relation. The surplus is not noise. 2. Magnitude: poor. The transfer coefficient ranges from 0 to about a third. A load reduction predicted from a surplus reduction would be overestimated by a factor of three to ten, or entirely, depending which catchment you are standing in. 3. And the national figure hides exactly this. Figur 6.7 D shows *\"en meget stærk, signifikant lineær relation\"* at national scale. That relation is an aggregate over catchments whose individual pass-through runs from zero to a third. The strength of the national fit is not evidence that the local coefficient is stable — it is what aggregation does to a variable coefficient. Point 3 is this project's recurring finding arriving in the nitrogen account: a basket looks tight from outside and is heterogeneous within, and the tightness is partly an artefact of looking from outside. It is the same shape as the water bodies that carry no within-basket signal, and the same shape as a national trend that tracks which stations were reporting. None of which says the decline was not real. Measured estuary nitrogen fell 24–62% and measured inlet concentrations 18–55%. Something large happened. What the numbers do not support is using the surplus as a quantitative instrument — sizing an intervention on it, or converting a surplus target into an expected load",
      "texts": "ac4c87073a4a0490"
@@ -3087,8 +3087,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Every one of them that reaches a river — submarine groundwater discharge, drained organic soils, legacy nitrogen in transit, foreign inflow to shared waters — lands inside B's leftover, and is named agriculture by subtraction. That is the substantive weakness of the ~70%, and it is separate from, and larger than, the circularity",
      "texts": "777a467cb684c255"
@@ -3115,8 +3115,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "A question that gets asked constantly and has no answer downstream: how much of this is because Denmark keeps animals? The apportionment above has no livestock term. Diffuse load is one bucket — cultivated land *including scattered dwellings*, by DCE's own definition — and no measurement in a stream could separate the fractions anyway. A nitrate ion that passed through a pig is the same ion as one out of a bag. The question cannot be answered by measuring, only by accounting",
      "texts": "29d53c7e3d278630"
@@ -3143,8 +3143,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Manure has been the larger of the two since about 2000; in 1991 it was mineral",
      "texts": "c489859ac515323a"
@@ -3171,8 +3171,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Set that beside half one and the input-side answer is not close: the herd is behind most of the nitrogen applied to Danish soil — the manure directly, and the majority of the mineral fertiliser through what it is spread on",
      "texts": "637dfc68f029a34f"
@@ -3199,8 +3199,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "This project's own comparison of *markoverskud* against measured load puts pass-through between zero and about a third, varying by catchment",
      "texts": "90730dc46cbf049b"
@@ -3227,8 +3227,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "This document's own comparison puts pass-through from field surplus to measured load between zero and about a third, varying by catchment and zero at Mariager",
      "texts": "63e183669d1140fb"
@@ -3255,8 +3255,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Read that plainly: roughly half the animals in Denmark are on farms whose own declared land cannot take their own manure. The export the law would force is not a future consequence of a quota. It is the arrangement already in place, held together by inter-farm contracts — and those contracts are the one part of it that is not public",
      "texts": "ff28306e27fc2204"
@@ -3283,8 +3283,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The instruments are in the public record rather than in this analysis: `L5` passed 119–34 on 3 September 2026 and puts per-catchment nitrogen quotas on individual holdings from",
      "texts": "cd3e4d14806c61fd"
@@ -3311,8 +3311,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Only the first line is modelled by the accounts. Three consequences",
      "texts": "426829edac48e8bd"
@@ -3339,8 +3339,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "though vertical mixing across a summer pycnocline is roughly four orders of magnitude weaker, which is what decides whether the nitrogen is used or flushed",
      "texts": "fa384f518cd9069b"
@@ -3367,8 +3367,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "So the event that decides which organisms are present to receive the next year's nitrogen is the one thing nobody watches",
      "texts": "e317960ea3f0f084"
@@ -3396,8 +3396,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The national typetal for hazardous substances in rain-dependent discharges — applied to all 19,665 discharge points — rest on 6 combined-sewer overflows and 5 separate stormwater outlets",
      "texts": "4b24a60a62def8ab"
@@ -3424,8 +3424,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Meanwhile the same programme reports the highest median metal concentrations in sludge from basins. The design excludes the worst cases, and says so",
      "texts": "ae65181351934988"
@@ -3452,8 +3452,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "and nationally there is 195 million m³/yr of the former against 33 million m³/yr of the latter",
      "texts": "c82c2efee974b846"
@@ -3480,8 +3480,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "no oxygen depletion registered, including in 2023, the worst iltsvind year in two decades",
      "texts": "bdcedf76303bcc83"
@@ -3508,8 +3508,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "mapped in stratified basins. Køge Bugt is shallow and mixes readily, so it may never qualify while still having anoxic sediment, sulphate reduction and a putrefying shoreline. 'Not registered' is probably accurate and says nothing about whether the bay is dead",
      "texts": "e836d51179866a58"
@@ -3536,8 +3536,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The shoreline communities separated their systems and physically cannot discharge sewage into the bay in a storm",
      "texts": "b83c3914328eaeff"
@@ -3562,8 +3562,8 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "The municipality that built the storage is not the one that smells it",
      "texts": "8e6e4d86edea6d61"
@@ -3590,8 +3590,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "heavy Copenhagen rain arrives with cyclonic southwesterlies that drive the Sound northward",
      "texts": "ec182dadd3445e84"
@@ -3618,8 +3618,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "separately finds that Køge Bugt does not flush, so what does arrive stays",
      "texts": "7f7b09d07bac27f0"
@@ -3646,8 +3646,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Where that material went has never been computed: the current field used above covers 2022–2026 only, and is about twice too slow in the straits by its own calibration",
      "texts": "e4988521dd571c6f"
@@ -3674,8 +3674,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Under every reconstruction attempted, including ones stacked generously in that direction, agriculture remained the largest nitrogen term. Stacking every identified bias in the overflow figures reaches roughly 10% of the land-based term — material, far above the published 0.6%, and still not the driver",
      "texts": "0521cc6784716da4"
@@ -3702,8 +3702,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the retired passages as read out of git at their commits, each against its reason and replacement, on the forks' research; register IDs named in a heading or reason made checked references. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on ARCHIVE.md": "Bounds marked as ours are ours. Several ranges in section 1 are constructed here from the biases identified, not published figures. They are stated so they can be argued with",
      "texts": "f63fea34a2a0d968"

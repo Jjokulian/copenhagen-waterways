@@ -47,6 +47,9 @@ def main():
     grp, clu = tri["groups"], tri["clusters"]
     beyond = cls["unscoreable"] + cls["experiment"]
     nine = triage_rows.CLUSTERS["vandkemi"]
+    now9 = [r["id"] for r in triage_rows.ROWS if r["id"] in nine and r["cls"] == "testable"]
+    if not now9:
+        raise live.Unjustified("PLAN: the page names the nine testable now, and the triage has none")
     zero = [g for g in grp if g != "A" and grp[g]["testable"] == 0]
 
     o = []
@@ -206,9 +209,11 @@ def main():
     w("is named in the blocker for " + ", ".join(ref(h) for h in nine[:-1]) + f" and {ref(nine[-1])}.")
     w(f"It is now held — {rows:,} rows and {ds['kemi']['parameters']} parameters from {ds['kemi']['years'][0]}, among")
     w("them total N, total P, ortho-P, nitrite+nitrate, ammonium, chlorophyll a, silicon, and")
-    w(f"{en['kemi']['categorical']['Parameter']['Oxygen indhold']:,} oxygen measurements each carrying a depth — but the triage above")
-    w("still counts the nine as blocked on a fetch. Re-scoring them against the data, rather than")
-    w("against its absence, is in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)." + E)
+    w(f"{en['kemi']['categorical']['Parameter']['Oxygen indhold']:,} oxygen measurements each carrying a depth. The triage above")
+    w("now classes the nine against what the extract holds rather than against its absence: "
+      + (", ".join(ref(h) for h in now9[:-1]) + " and " + ref(now9[-1]) if len(now9) > 1 else ref(now9[0]))
+      + (" are" if len(now9) > 1 else " is") + " testable now, and the rest wait on something the extract")
+    w("does not carry; [TRIAGE.md](hypodrafts/TRIAGE.md) names each one's blocker." + E)
     w(C("C-KP-ILTKOR", "(`iltkor` is declared in `fetch_oda.py`'s topics and has never been fetched: the "
         "only one of its six topics with no file on disk.)"))
     w()

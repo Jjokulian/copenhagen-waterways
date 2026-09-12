@@ -1,0 +1,146 @@
+{
+ "constructions": [
+  {
+   "id": "K-KD-PLANKTON",
+   "title": "Span of the CMEMS plankton files on disk",
+   "covers": {
+    "file": "data/derived/drafts_b_counts.json",
+    "fields": {
+     "plankton.first_year": {
+      "kind": "computed",
+      "is": "The earliest year among the file names `plankton__inner__YYYY.nc` under `data/raw/cmems/grid`, read from the name, not from the dates inside the file."
+     },
+     "plankton.last_year": {
+      "kind": "computed",
+      "is": "The latest year among the same file names."
+     },
+     "plankton.partial_years.*": {
+      "kind": "computed",
+      "is": "A year whose file is smaller than the median file size divided as `typical / 2` in the code: taken as a year the product covers only in part."
+     }
+    }
+   },
+   "what": "The first and last year of the yearly CMEMS Baltic plankton files held on disk, and which years look partial by file size.",
+   "model": "`plankton()` in `scripts/drafts_b_counts.py` globs the files, parses the year from each name with `re.search`, takes `min` and `max` of the years, and marks a year partial when its size is below `typical / 2`, with `typical` the median of the file sizes.",
+   "assumptions": [
+    "The year in a file name is the year of the data in it.",
+    "A file much smaller than the others holds fewer days, not a denser encoding."
+   ],
+   "justified": [
+    {
+     "text": "The years are read from every file present, so they follow the directory as it is when the script runs.",
+     "ref": "scripts/drafts_b_counts.py:122"
+    }
+   ],
+   "gaps": [
+    "The partial-year test is by file size; it does not open the file to count its days.",
+    "Neither the first nor the last year is checked against the dates inside the files."
+   ],
+   "void_if": [
+    "files are added or removed and the script is not rerun"
+   ],
+   "licenses": "Which years of the plankton product are on disk, and that the first of them is not a full year.",
+   "not_licensed": "Anything about the data inside the files, or about the years the product itself covers.",
+   "watches": [
+    "scripts/drafts_b_counts.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-kd (written against the code it describes: plankton() in drafts_b_counts.py, run_tests() in rescore.py, the exceedance loop in waves.py main(); 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/drafts_b_counts.py": "b257668118049836"
+    }
+   }
+  },
+  {
+   "id": "K-KD-SIDIN-N",
+   "title": "Cells behind each yearly pooled surface Si:DIN median",
+   "covers": {
+    "file": "data/derived/rescore.json",
+    "fields": {
+     "tests.K1_si_din_molar_surface.*.n": {
+      "kind": "counted",
+      "is": "Cells behind one year's pooled surface Si:DIN median: one station, date and depth as `round(dep, 1)`, not deeper than the cut `dep > 10` excludes, carrying a silicon and a nitrite+nitrate value with silicon and DIN both positive; a year with fewer cells than the cut `len(v) < 100` is left out of the file."
+     }
+    }
+   },
+   "what": "How many water-chemistry cells stand behind each yearly median of surface Si:DIN that rescore.py computes for the `K1` driver.",
+   "model": "`rescore.py` keeps rows by unit, censoring, sample type and parseable value, date and depth, and groups them into cells keyed by station, date and `round(dep, 1)`. In `run_tests` it forms DIN as nitrite+nitrate plus ammonium where present, keeps a cell if silicon and DIN are positive and the depth passes the cut, and stores `n` as `len(v)`, the number of ratios the year's median is taken over.",
+   "assumptions": [
+    "A cell is one water sample: one station, date and depth."
+   ],
+   "justified": [
+    {
+     "text": "The count is the length of the very list the year's median is taken over, so it is exactly the number of values behind that median.",
+     "ref": "scripts/rescore.py"
+    }
+   ],
+   "gaps": [
+    "Cells are pooled over every station and month, so the count mixes stations entering and leaving the record with the sampling effort at stations that stay."
+   ],
+   "void_if": [
+    "the water-chemistry extract is refetched and rescore.py is not rerun"
+   ],
+   "licenses": "How many surface cells stand behind each yearly pooled median, and so how much the sampling effort behind it changes from year to year.",
+   "not_licensed": "How many stations were sampled, or which.",
+   "watches": [
+    "scripts/rescore.py",
+    "data/raw/oda/kemi.csv.gz"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read rescore.py after my edit: A5's still-missing list now names volume transport at the Belt and Sound sections, as A5's own Needs line asks and the source register finds no open series; the salinity key takes promille, the unit the extract carries; a docstring and a comment lost typed counts. The matrix logic and every test are unchanged - the tests read no salinity and select no hypothesis by class. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/rescore.py": "7bbddbd8f771e443",
+     "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3"
+    }
+   }
+  },
+  {
+   "id": "K-KD-WAVES-PCT",
+   "title": "Share of all hours in which modelled bed shear exceeds a critical stress",
+   "covers": {
+    "file": "data/derived/waves.json",
+    "fields": {
+     "by_depth.*.exceedance.*.pct_of_time": {
+      "kind": "modelled",
+      "is": "Of every hourly record in the wind archive, the percentage in which the modelled wave-driven bed shear stress at that depth exceeds that bed's critical stress; an hour with a missing wind value counts as not exceeding."
+     }
+    }
+   },
+   "what": "The share of all hours in which the wave model's bed shear at one depth exceeds the critical stress of a live or a dead bed.",
+   "model": "For each hour: fetch from the direction table (`fetch_lookup`), wave height and period by `young_verhagen`, orbital velocity $u_b = \\pi H_s / (T_p \\sinh kd)$ and shear by `bed_shear`; the share is `ex.mean() * 100` with `ex = tau > tc` taken over every hour of the archive.",
+   "assumptions": [
+    "Waves at each depth are those the local wind grows over the fetch in its direction; swell from outside the bay and currents are ignored.",
+    "One bed roughness and one water density describe the whole bay."
+   ],
+   "justified": [
+    {
+     "text": "The share is computed in the same loop, from the same exceedance array, as the hours per year the file already declares, and divides by the number of hours rather than of years.",
+     "ref": "scripts/waves.py:153"
+    }
+   ],
+   "gaps": [
+    "An hour with missing wind counts as not exceeding, so a gap in the wind record lowers the share.",
+    "The fetch table the model reads has no producer script in the repository.",
+    "No observation of sediment moving is used; the model is not checked against turbidity or Secchi."
+   ],
+   "void_if": [
+    "waves in the bay are dominated by swell from outside it",
+    "the bed's critical stress differs strongly from the stated values across the bay"
+   ],
+   "licenses": "How often the modelled wind-driven shear at a depth exceeds a critical stress, as a share of all hours.",
+   "not_licensed": "That sediment moved in those hours, or anything outside Køge Bugt.",
+   "watches": [
+    "scripts/waves.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-kd (written against the code it describes: plankton() in drafts_b_counts.py, run_tests() in rescore.py, the exceedance loop in waves.py main(); 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/waves.py": "f04e67813675be81"
+    }
+   }
+  }
+ ]
+}

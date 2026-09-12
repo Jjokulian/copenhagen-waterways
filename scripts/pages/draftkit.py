@@ -8,10 +8,12 @@ placeholders - {ref:ID}, {chem:KEY}, {fig:name}, {calc:...}, {param:name},
 
 a located quotation of the page as committed at COMMITS[page], expanded to
 {was:COMMIT:docs/hypodrafts/PAGE.md:phrase with @@}: the value is read out of
-`git show` at build time, never typed here. It is how a number nothing in the
-repository stores is carried honestly: it says what the page said, not that it
-was re-derived. A {q:} without @@ is a typed copy and is refused. build() counts
-them, so the report can say how many a page carries.
+`git show` at build time, never typed here. What this site once said is not a
+justification for saying it again, so the compiler accepts such a quotation only
+inside a historical claim - the archive of retired claims, docs/ARCHIVE.md -
+and refuses it on a page. A number nothing in the repository stores is not
+printed: it is computed and stored, read from a pinned document, or retired.
+No draft uses {q:} now. A {q:} without @@ is a typed copy and is refused.
 """
 import os
 import re
@@ -39,6 +41,24 @@ COMMITS = {
     "docs/hypodrafts/C6.md": "680eccf",
     "docs/hypodrafts/F3.md": "c601feb",
 }
+
+
+def RD(sid, shown, phrase):
+    """A {read:} placeholder: the number `shown`, located by `phrase` in pin `sid`."""
+    return "{read:%s:%s|%s}" % (sid, shown, phrase)
+
+
+def reading(d, sid, shown, phrase, value):
+    """A number read out of a pinned document, as a live value that can take part
+    in arithmetic. It is checked exactly as {read:} is - the phrase must be in the
+    pin and state the number shown - and `value` must be that number."""
+    try:
+        claims.resolve(d, RD(sid, shown, phrase), {})
+    except claims.Refused as e:
+        raise live.Unjustified(str(e))
+    if re.sub(r"\D", "", shown) != re.sub(r"\D", "", str(value)):
+        raise live.Unjustified(f"reading {sid}: the value {value} is not the {shown} the pin states")
+    return live.reading_value(sid, "phrase", phrase, value, claims._meta(d, sid))
 
 
 def commit_of(rel):

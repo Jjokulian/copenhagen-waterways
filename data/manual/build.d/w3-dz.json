@@ -1,0 +1,47 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/hypodraft_d1.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-dz.json",
+    "data/manual/number_constructions.d/w3-dz.json",
+    "data/derived/drafts_b_counts.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/enums.json",
+    "docs/data/areas/partition_contiguous.json",
+    "data/derived/hypotheses.json",
+    "data/derived/pins/HY-FIGSHARE-D1.txt",
+    "data/derived/pins/DZ-HELCOM-META.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/D1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_z8.py",
+   "inputs": [
+    "scripts/pages/drafts_b_page.py",
+    "data/manual/claims.d/w3-dz.json",
+    "data/manual/number_constructions.d/w3-dz.json",
+    "data/derived/light.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/enums.json",
+    "data/derived/hypodraft_ctd.json",
+    "data/derived/hypotheses.json",
+    "data/derived/pins/DZ-TA-M06.txt",
+    "data/derived/pins/DZ-CMEMS-131.txt",
+    "data/derived/pins/DZ-CMEMS-208.txt",
+    "data/derived/pins/DZ-CEDA-OCCCI.txt",
+    "data/derived/pins/DZ-NASA-IOP.txt",
+    "data/derived/pins/DZ-GA-2020.txt",
+    "data/derived/pins/KD-CMEMS-OC133.txt",
+    "data/derived/pins/SS-PMC-FDOM-REV.txt",
+    "data/derived/pins/SS-WIKI-TURBIDITY.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/Z8.md"
+   ]
+  }
+ ]
+}

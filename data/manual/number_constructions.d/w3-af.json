@@ -1,0 +1,4 @@
+{
+ "_what": "Construction declarations for the pages written by agent w3-af (docs/hypodrafts/F3.md, C1.md, AUDIT.md). None is needed: every field those pages print is already declared (K-DRAFTSA-FACTS, K-DRAFTSA-CTD, K-DRAFTSA-ENUMS, K-DRAFTSA-TRIAGE, K-WATER-LIGHT, the w2-hyp register evidence, K-SUBSET-SHARE); stated design values are params in data/manual/claims.d/w3-af.json.",
+ "constructions": []
+}

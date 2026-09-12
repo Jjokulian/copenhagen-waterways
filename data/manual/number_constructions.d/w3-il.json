@@ -1,0 +1,44 @@
+{
+ "constructions": [
+  {
+   "id": "K-IL-WINDOWS",
+   "title": "Admissible windows of consecutive years",
+   "covers": {
+    "step": true
+   },
+   "produces": "computed",
+   "what": "How many windows of consecutive whole years, each at least a minimum length, fit inside an index period.",
+   "model": "With $n$ years in the period and a minimum length $w$, a window is fixed by its first and last year, and windows of length $L$ number $n - L + 1$, so the total is $\\sum_{L=w}^{n}(n-L+1) = \\dfrac{(n-w+1)(n-w+2)}{2}$, in the code `(nyears - wmin + 1) * (nyears - wmin + 2) // 2`, with `nyears` computed as `last - first + 1` from the stated first and last year.",
+   "assumptions": [
+    "A window is a run of consecutive years with both ends inside the index period; windows of every length from the minimum to the whole period count, each once."
+   ],
+   "justified": [
+    {
+     "text": "The closed form is the sum of an arithmetic series; the generator refuses the page if it differs from the enumeration over every window length.",
+     "ref": "scripts/pages/hypodraft_l3.py:49"
+    }
+   ],
+   "gaps": [
+    "Whether every window holds enough stations in each year for a fit is not checked: the count is of windows, not of fits."
+   ],
+   "void_if": [
+    "the test admits windows that skip years",
+    "a window must also hold a minimum number of stations each year"
+   ],
+   "licenses": "The number of windows the slope surface of the L3 test is computed over.",
+   "not_licensed": "Anything about the slopes fitted in them.",
+   "watches": [
+    "scripts/pages/hypodraft_l3.py",
+    "data/manual/claims.d/w3-il.json#params"
+   ],
+   "confirmed": {
+    "by": "agent w3-il (written against the code it describes: the window count in scripts/pages/hypodraft_l3.py lines 45-50, closed form checked against the enumeration there; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/hypodraft_l3.py": "3303542b5a111743",
+     "data/manual/claims.d/w3-il.json#params": "b60fda72457665b9"
+    }
+   }
+  }
+ ]
+}

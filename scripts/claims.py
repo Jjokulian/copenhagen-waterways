@@ -340,8 +340,10 @@ def resolve(d, text, cache):
             # an HTML pin: a phrase may run across a tag, so real tags are set aside -
             # only real ones: a plain-text pin may hold a literal "<" (SR353 does)
             tag = r"</?[A-Za-z][A-Za-z0-9:-]*(?:\s[^<>]*)?/?>"
-            pinned = _norm(re.sub(tag, " ", pin_text(d, sid)))
-            if not phrase or _norm(re.sub(tag, " ", phrase)) not in pinned:
+            # entities read as the characters they stand for, in both
+            import html
+            pinned = _norm(html.unescape(re.sub(tag, " ", pin_text(d, sid))))
+            if not phrase or _norm(html.unescape(re.sub(tag, " ", phrase))) not in pinned:
                 raise Refused(f"{key}: the pinned text of {sid} does not contain "
                               f"'{phrase}', so this reading is unsupported")
             # and the number shown must be one the document states - compared as a

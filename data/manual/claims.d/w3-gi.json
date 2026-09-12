@@ -1,0 +1,2098 @@
+{
+ "_what": "Claims, nodes and stated values for the hypothesis drafts G1 and I1 (docs/hypodrafts/G1.md, docs/hypodrafts/I1.md), written by agent w3-gi; and the claims those pages published at commit 00a157f and could not justify, retired to the archive.",
+ "sources": {},
+ "figures": {},
+ "params": {
+  "gi_g1_min_years": {
+   "value": 8,
+   "shown": "8",
+   "reason": "The fewest distinct years a station-and-calendar-month cell must have to enter the G1 trend panel: a design choice, enough years for a within-cell slope and its own residual spread, not derived from the data."
+  },
+  "gi_g1_min_span": {
+   "value": 15,
+   "shown": "15",
+   "reason": "The shortest span, first year to last, a cell must cover to enter the G1 trend panel: a design choice, so that a slope belongs to the long-term axis rather than to a run of adjacent years."
+  },
+  "gi_i1_era_years": {
+   "value": 5,
+   "shown": "5",
+   "reason": "Years per era in the I1 test: a design choice, long enough to give each era a June-September median at many stations and short enough to show when a change happened; the eras tile the years the test covers."
+  },
+  "gi_i1_reps": {
+   "value": 5000,
+   "shown": "5,000",
+   "reason": "Bootstrap replicates for the I1 primary null: a design choice, enough draws for a stable percentile band."
+  },
+  "gi_i1_band": {
+   "value": 95,
+   "shown": "95",
+   "reason": "The percentile band, in per cent, outside which the I1 primary null is rejected: the conventional choice, stated as a choice."
+  }
+ },
+ "nodes": [
+  {
+   "id": "U-GI-G1-NORUN",
+   "kind": "untraced",
+   "label": "Trail ends: no script\\nruns the {ref:G1} test",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for a computation, on the monthly station panel, of oxygen solubility from temperature and salinity, of a deficit below it, of fixed-effect slopes on year, and of a null that resamples years. The scripts that read the panel - series.py, cube.py, the partition scripts, drafts_b_counts.py, hypodraft_facts.py, station_places.py, extrapolation.py and hypotheses.py - compute none of these; oxygen.py and causation.py name solubility in prose only. Nothing further was found."
+  },
+  {
+   "id": "U-GI-I1-NORUN",
+   "kind": "untraced",
+   "label": "Trail ends: no script\\nruns the {ref:I1} test",
+   "detail": "Searched scripts/*.py and scripts/pages/*.py on 2026-09-11 for a count of June-September near-bed oxygen per era, for a set of stations present in every era, and for a trajectory on either: no script that reads the monthly station panel filters it by season and era or intersects station sets across eras. Nothing further was found."
+  },
+  {
+   "id": "U-GI-NOSPLIT",
+   "kind": "untraced",
+   "label": "Trail ends: no definition of\\nsummer-peaked stations",
+   "detail": "Searched scripts/*.py, scripts/pages/*.py and data/derived/*.json on 2026-09-11 for a definition, a computation or a stored list of summer-peaked and year-round stations: the category is named only in prose, in the generators of CONSTRUCTED.md and of these drafts; no script computes it and no derived file holds it. Nothing further was found."
+  },
+  {
+   "id": "H-GI-CONSTRUCTED",
+   "kind": "history",
+   "label": "Our own register\\nof constructions",
+   "detail": "CONSTRUCTED.md as committed lists the summer-peaked versus year-round station category among this project's own constructions that failed its own check.",
+   "commit": "00a157f",
+   "file": "docs/CONSTRUCTED.md",
+   "said": "the category was never defined"
+  },
+  {
+   "id": "X-GI-SERIES",
+   "kind": "script",
+   "label": "stations_series.py",
+   "detail": "Streams the CTD extract cast by cast. Per cast it puts the values in the deepest and the shallowest part of the cast's sampled depth range, cut a fixed fraction in from each end, into lists per station, month and variable; it stores each list's median - the middle value, or the mean of the middle pair - as a point of a `uint16` station index, a `uint16` month index and a `float32` value, per variable at an offset in stations_series.bin."
+  },
+  {
+   "id": "H-GI-SERIESMETA",
+   "kind": "held",
+   "label": "The panel's own header\\ndocs/data/areas/stations_series.json",
+   "detail": "Gives the first year, the monthly slots, the station list, each variable's count and byte offset, the layout of indices and values in stations_series.bin, and a note that which water body a station falls in is deliberately absent, as a model assumption kept in its own overlay."
+  },
+  {
+   "id": "H-GI-HYPCTD",
+   "kind": "held",
+   "label": "CTD extract counts\\ndata/derived/hypodraft_ctd.json",
+   "detail": "What hypodraft_ctd.py counted in one pass over the CTD extract, among them the temperature rows and those whose original result is written with at most one decimal."
+  },
+  {
+   "id": "H-GI-FACTS",
+   "kind": "held",
+   "label": "File facts\\ndata/derived/hypodraft_facts.json",
+   "detail": "What hypodraft_facts.py counted from held files, among them the station register's rows and its distinct station numbers, and the monthly panel's first year."
+  },
+  {
+   "id": "E-GI-DCE23-EUTRO",
+   "kind": "external",
+   "label": "DCE oxygen note: eutrophication\\nand the stratified bed",
+   "detail": "Eutrophication raises the production of phytoplankton, which sinks and is broken down; oxygen consumption rises, and depletion can develop at the bed, especially where the water column is stratified.",
+   "source": "NI-DCE-ILT-2023",
+   "said": "Eutrofiering fører til øget produktion af planteplankton"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-GI-G1-STATUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "The test this page specifies has not been run: no script in this repository computes the solubility term, the deficit or their slopes on the station panel, so no slope, share or null is reported here.",
+   "because": "A search of the scripts found none that computes oxygen solubility from the panel, a deficit below it, fixed-effect slopes on year or a null that resamples years.",
+   "rests_on": [
+    "U-GI-G1-NORUN"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-VERIFIED",
+    "C-GI-OLD-G1-PILOT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-GI-G1-NORUN.label {ref:G1}": "G1: Warming",
+     "said on hypodrafts/G1.md": "The test this page specifies has not been run: no script in this repository computes the solubility term, the deficit or their slopes on the station panel, so no slope, share or null is reported here.",
+     "texts": "954e74d01decd4fc",
+     "node U-GI-G1-NORUN": "19e2f0c1101462ef"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-ROUTES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Warming reaches near-bed oxygen by the routes {ref:G1} names - solubility, stratification and the rate of respiration - and only the first lowers near-bed oxygen whatever is consumed there; the other two act through the consumption beneath the stratified layer, which the load feeds.",
+   "because": "DCE's oxygen note states that oxygen's solubility in water falls with temperature and that the rate of oxygen consumption rises with it, and that eutrophication raises the production that sinks and is broken down at the bed, with depletion especially where the water column is stratified. Solubility sets the ceiling whatever is consumed; a faster respiration or a longer-isolated bottom layer lowers oxygen only through what there is to consume, which the load supplies.",
+   "rests_on": [
+    "E-PC-DCE23-TEMP",
+    "E-GI-DCE23-EUTRO",
+    "D-LR-REGISTER"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-SPLIT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on hypodrafts/G1.md": "Warming reaches near-bed oxygen by the routes it names — **solubility**, **stratification** and the **rate of respiration** — and only the first lowers near-bed oxygen whatever is consumed there; the other two act through the consumption beneath the stratified layer, which the load feeds.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "ec643191de047b21",
+     "node E-PC-DCE23-TEMP": "14c9c8e82bb5a0a4",
+     "pinned NI-DCE-ILT-2023": "f5a0f9f2d3140e18",
+     "node E-GI-DCE23-EUTRO": "740856e8693a4bc8",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-QUESTION",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "So {ref:G1}'s testable content is not whether oxygen falls but what share of the long-term fall is the solubility ceiling falling.",
+   "because": "If only the solubility route acts whatever the load, the part of the fall it explains is the part no load policy could have prevented; the rest is where load and warming can be told apart.",
+   "rests_on": [
+    "C-GI-G1-ROUTES"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-SPLIT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on hypodrafts/G1.md": "So G1's testable content is not *does oxygen fall* but **what share of the long-term fall is the solubility ceiling falling**.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "d939f1dd0a619803",
+     "rests on C-GI-G1-ROUTES": "ec643191de047b21"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-CSAT",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Per station-month, C_sat is the oxygen solubility at the panel's near-bed temperature and salinity from a published solubility equation for seawater, in mg/l; then O_bed = C_sat(T_bed, S_bed) - D, so dO/dt = dC_sat/dt - dD/dt.",
+   "because": "Taking the solubility from a published equation at the observed temperature and salinity makes the first term a computation on held values; the identity then defines the deficit as the remainder.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-G1-CSAT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "Per station-month, `C_sat` is the oxygen solubility at the panel's near-bed temperature and salinity, from a published solubility equation for seawater, in mg/l; then `O_bed = C_sat(T_bed, S_bed) − D`, so `dO/dt ≡ dC_sat/dt − dD/dt`.",
+     "texts": "7ff9a53dca235028"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-DEFICIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "C_sat is computed from temperature and salinity by an equation from outside the archive, so the first term is computed, not estimated from it; the deficit D is solubility-neutral by construction and carries the rest: consumption, failed ventilation, advection.",
+   "because": "The solubility equation is a fit made outside this archive, so none of its parameters is estimated from the data tested. D is what is left once the ceiling is subtracted, so whatever holds oxygen below the ceiling moves it, and the ceiling itself does not.",
+   "rests_on": [
+    "U-KP-PSS"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-CSAT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "`C_sat` is computed from temperature and salinity by an equation from outside the archive, so the first term is **computed, not estimated** from it. The deficit `D` is solubility-neutral by construction and carries the rest: consumption, failed ventilation, advection.",
+     "texts": "64422ffb08d20977",
+     "node U-KP-PSS": "083819c51a0631eb"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-A",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "`G1-a`: the decline is not mostly solubility - dC_sat/dt is a minority of dO/dt; falsified if the solubility term equals or exceeds the observed decline.",
+   "because": "It is the part of the hypothesis that the solubility term alone can refute.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "**`G1-a`:** *the decline is not mostly solubility* — `dC_sat/dt` is a minority of `dO/dt`. Falsified if the solubility term equals or exceeds the observed decline.",
+     "texts": "3ab02b78f95f9325"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-B",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "`G1-b`: the deficit widens, as it must if warming drives respiration or stratification faster than ventilation recovers; falsified by a slope of D at or below nought, or one indistinguishable from the year-block null. `G1-b` carries the load-independence claim, `G1-a` decides whom the finding is about.",
+   "because": "A deficit that widens while load falls is what the hypothesis's independence of load needs; the year-block null is the test's own threshold.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "**`G1-b`:** *`dD/dt > 0`* — the deficit widens, as it must if warming drives respiration or stratification faster than ventilation recovers. Falsified by `dD/dt ≤ 0`, or by a `dD/dt` indistinguishable from the year-block null. `G1-b` carries the load-independence claim; `G1-a` decides whom the finding is about.",
+     "texts": "16abf93c5bfba7d4"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-DATA",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "The monthly station panel holds the counted station-months at the counted stations, in its monthly slots from January 1980, each a median per station and month, with the counted station-months for near-bed oxygen, temperature and salinity and near-surface temperature and salinity.",
+   "because": "drafts_b_counts.py sums the panel's declared counts, counts its stations and months, and reads each variable's count; the panel's own header gives its first year and its layout.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS",
+    "H-GI-SERIESMETA",
+    "H-GI-FACTS"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-DATA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "`docs/data/areas/stations_series.{json,bin}` holds 679,422 station-months at 1,415 stations, in 564 monthly slots from January 1980, each value a median per station and month. The variables the identity needs are held on: `oxy_bed` 76,980, `temp_bed` 84,656, `sal_bed` 83,309, `temp_surf` 84,668 and `sal_surf` 83,341 station-months.",
+     "texts": "97776262ee979d44",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35",
+     "node H-GI-FACTS": "a77b92e347805287"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-JOIN",
+   "kind": "bounded",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "No script here joins the variables the identity needs or filters them for plausibility; a station-month carrying every one of them can be no more common than the rarest, so the join holds at most that many before any filter.",
+   "because": "A station-month in the join carries every variable, so the join is a subset of each variable's station-months, and no larger than the smallest of them.",
+   "rests_on": [
+    "C-GI-G1-DATA",
+    "U-GI-G1-NORUN"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-DATA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-GI-G1-NORUN.label {ref:G1}": "G1: Warming",
+     "said on hypodrafts/G1.md": "No script here joins them or applies a plausibility filter; a station-month carrying every one of them can be no more common than the rarest, so the joined panel holds at most 76,980 station-months before any filter.",
+     "texts": "b44ff9a46617a245",
+     "rests on C-GI-G1-DATA": "97776262ee979d44",
+     "node U-GI-G1-NORUN": "19e2f0c1101462ef"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-BEDDEF",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Near the bed and near the surface are not fixed depths: stations_series.py takes, for each cast, the values in the deepest and in the shallowest part of the cast's own sampled depth range, cut at a fixed fraction of that range, and puts every such value in a station-month into one median, so D can pair temperature, salinity and oxygen from different casts and depths.",
+   "because": "stations_series.py computes, per cast, two cut depths a fixed fraction of the sampled range in from the shallowest and the deepest depth, appends each value beyond them to a list for its station, month and variable, and stores the median of each list; each variable has its own list.",
+   "rests_on": [
+    "X-GI-SERIES",
+    "D-KP-SERIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "“Near the bed” and “near the surface” are not fixed depths: `stations_series.py` takes, for each cast, the values in the deepest and in the shallowest part of the cast's own sampled depth range, cut at the fraction `0.25` of that range, and puts every such value in a station-month into one median. So `D` can pair temperature, salinity and oxygen from different casts and depths.",
+     "texts": "7c79f6d55673a9b4",
+     "node X-GI-SERIES": "4c8493acdda70a07",
+     "node D-KP-SERIES": "75fa427597293f59"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-PANELRULE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Trend panel = cells of one station and calendar month with at least the stated number of distinct years and at least the stated span; balanced variant = cells present in both the nineties and from the middle of the last decade to now. No script here builds either, so neither's size is known.",
+   "because": "A within-cell slope needs enough years, and a long enough span, to belong to the long-term axis; the balanced variant keeps only cells seen at both ends. The thresholds are design values, stated with their reasons.",
+   "rests_on": [
+    "U-GI-G1-NORUN"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-DATA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-GI-G1-NORUN.label {ref:G1}": "G1: Warming",
+     "said on hypodrafts/G1.md": "Trend panel = cells (station × calendar month) with at least 8 distinct years **and** a span of at least 15 years. Balanced variant = cells present in both 1990–1999 and 2015–2026. No script here builds either, so neither's size is known.",
+     "texts": "3a79888a2dbbeaf0",
+     "node U-GI-G1-NORUN": "19e2f0c1101462ef"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-VALUES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "The panel holds values no water has, station-months of negative oxygen that the flag record reads as sign inversions, so a plausibility filter must be stated, and what each of its bounds removes counted, before any slope.",
+   "because": "The negative-oxygen station-months and their reading as sign inversions are established in `C-HY-I7-CASE`; a slope fitted through them, or through a filter nobody counted, carries their error.",
+   "rests_on": [
+    "C-HY-I7-CASE"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-ERRORS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "*Values.* The panel holds values no water has: station-months of negative oxygen, which the flag record reads as sign inversions. A plausibility filter must be stated, and what each of its bounds removes counted, before any slope.",
+     "texts": "8ff6b6c1c5b98082",
+     "rests on C-HY-I7-CASE": "d66906822d86e34b"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-DECIMALS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Temperature in the CTD extract is mostly written with more than one decimal: of its temperature rows, the counted share carry at most one decimal in the original result.",
+   "because": "hypodraft_ctd.py counts every temperature row of the CTD extract and, of those, the rows whose original result has no decimal part or a single digit after the decimal comma.",
+   "rests_on": [
+    "D-CTD",
+    "X-KD-HYPCTD",
+    "H-GI-HYPCTD"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-ERRORS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "D-CTD.label {fig:ctd_rows}": "53,710,760",
+     "said on hypodrafts/G1.md": "*Precision.* Temperature in the CTD extract is mostly written with more than one decimal: of its 7,501,421 temperature rows, 1,076,874 (14.4%) carry at most one decimal in the original result.",
+     "texts": "d2a55ba28a43f0aa",
+     "node D-CTD": "f8d18f725cee6bd0",
+     "node X-KD-HYPCTD": "1ceeb76bd5900e03",
+     "node H-GI-HYPCTD": "cf9e35200ae82727"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-CLOCK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "The CTD extract the panel is built from has no time of day in any row and no column for it; if the sampling hour drifted over the record, the diel oxygen cycle drifted with it, and nothing inside the panel can correct it, which caps the test rather than bounds it. The water-chemistry extract does carry clock values, which can bound the hour only where a cast shares its day with a bottle.",
+   "because": "The panel is written from the CTD extract, which carries a date and no clock (`C-HY-I3-NOCLOCK`); a diel cycle sampled at a drifting hour moves the monthly median with the hour, and no column in the panel records it. A clock borrowed from a same-day water-chemistry sample is the only way to place a cast in the day (`C-HY-I3-CHEMCLOCK`).",
+   "rests_on": [
+    "C-HY-I3-NOCLOCK",
+    "C-HY-I3-CHEMCLOCK",
+    "X-GI-SERIES"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-ERRORS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "*Hour.* The CTD extract the panel is built from has no time of day in any row and no column for it. If the sampling hour drifted over the record, the diel oxygen cycle drifted with it, and nothing inside the panel can correct it: this caps the test rather than bounds it. The water-chemistry extract does carry clock values, which can bound the hour only where a cast shares its day with a bottle.",
+     "texts": "7276cd2f36f269a6",
+     "rests on C-HY-I3-NOCLOCK": "5ba9810307ebde13",
+     "rests on C-HY-I3-CHEMCLOCK": "5ce61a93780b6fd5",
+     "node X-GI-SERIES": "4c8493acdda70a07"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-UNIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "The unit is a station: the panel deliberately carries no water body, and every estimate is within a cell of one station and one calendar month, so none is needed.",
+   "because": "The panel's header says which water body a station falls in is deliberately absent; every estimate the design names is within one station and one calendar month.",
+   "rests_on": [
+    "H-GI-SERIESMETA"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-ERRORS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "*Unit.* The unit is a station: the panel deliberately carries no water body, and every estimate is within a cell of one station and one calendar month, so none is needed.",
+     "texts": "eb0bd2c8a34f4255",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-SAT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Archived near-bed oxygen saturation is held on fewer station-months of the panel than near-bed oxygen.",
+   "because": "drafts_b_counts.py reads each variable's count from the panel.",
+   "rests_on": [
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-ERRORS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "Archived near-bed oxygen saturation (`oxysat_bed`) is held on 64,493 station-months, fewer than the 76,980 with near-bed oxygen.",
+     "texts": "6bd99da89caf96c0",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-CIRC",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Archived near-bed saturation is computed from oxygen, temperature and salinity, so it already contains temperature and is never an outcome here; D contains temperature through C_sat deliberately, the subtraction of the solubility channel with the equation coming from outside the archive, and errors in temperature enter D but not the year regressor, so they add noise, not trend.",
+   "because": "Oxygen saturation is oxygen over its solubility at the sample's temperature and salinity, so a trend in it carries a trend in temperature. D subtracts the solubility on purpose, and an error in temperature that does not trend with the year cannot put a trend into D.",
+   "rests_on": [
+    "U-KP-PSS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "It is computed from oxygen, temperature and salinity, so it already contains temperature. **It is never an outcome here.** `D` contains temperature through `C_sat` deliberately — that is the *subtraction* of the solubility channel, the equation coming from outside the archive — and errors in temperature enter `D` but not the year regressor, so they add noise, not trend.",
+     "texts": "704658e98b35552d",
+     "node U-KP-PSS": "083819c51a0631eb"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-NULLDESIGN",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "The null is not a zero slope but a year-block procedure under the constraint within station and within calendar month: resample the calendar years with replacement, and separately permute year labels attached to whole years, refitting on each draw; that keeps every station effect, the seasonal cycle and the within-year common shock, and destroys only the ordering of years against outcome.",
+   "because": "Every cell in a year samples the same weather, so the year is the unit that can be exchanged; resampling station-months within years would treat a shared shock as independent draws.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-G1-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "Not “zero slope”. The estimator is a within-cell fixed-effect slope on year; the constraint imposed is *within station and within calendar month*. The null is a **year-block procedure**: resample the calendar years with replacement, and separately permute year labels attached to whole years, refitting on each draw. That keeps every station effect, the seasonal cycle and the within-year common shock, destroying only the ordering of years against outcome.",
+     "texts": "725b056b8be618c6"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-DEPEND",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Whether the dependence the textbook standard error ignores is temporal or cross-sectional has not been measured here; the year-block null holds under both, and the naive standard error is to be reported beside the block one, with their ratio.",
+   "because": "No script computes residuals on the panel (U-GI-G1-NORUN). Resampling whole years keeps both kinds of dependence inside each draw, and reporting the naive error beside the block one shows how far it would have understated.",
+   "rests_on": [
+    "U-GI-G1-NORUN"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-GI-G1-NORUN.label {ref:G1}": "G1: Warming",
+     "said on hypodrafts/G1.md": "Whether the dependence the textbook standard error ignores is temporal — a cell's years following one another — or cross-sectional — every cell in a year sampling the same weather — has not been measured here; the year-block null holds under both, and the naive standard error is to be reported beside the block one, with their ratio.",
+     "texts": "31719154dec7561c",
+     "node U-GI-G1-NORUN": "19e2f0c1101462ef"
+    }
+   }
+  },
+  {
+   "id": "C-GI-NOLABEL",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "said_on": [
+    "hypodrafts/I1.md"
+   ],
+   "claim": "No script in this repository defines a split of the stations by the season they are sampled in, so no such label enters this design.",
+   "because": "A search of the scripts and the derived data found no definition and no stored split; this project's register of its own constructions records the category as never defined.",
+   "rests_on": [
+    "U-GI-NOSPLIT",
+    "H-GI-CONSTRUCTED"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-PHENO",
+    "C-GI-OLD-I1-PRIOR",
+    "C-GI-OLD-I1-CIRC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "No script in this repository defines a split of the stations by the season they are sampled in, so no such label enters this design.",
+     "said on hypodrafts/I1.md": "No script in this repository defines a split of the stations by the season they are sampled in, so no such label enters this design.",
+     "texts": "6a6c7af0cbe5032e",
+     "node U-GI-NOSPLIT": "4014c641cba56866",
+     "node H-GI-CONSTRUCTED": "fe2913595f6f5b1f"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-DEFENCES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "If the mix of stations moves, it can tilt a pooled slope; the defences required are within-cell fixed effects, so a station only competes with itself, and the balanced panel, so entry and exit cannot tilt the slope.",
+   "because": "A fixed effect per cell removes each station's level, so a station entering or leaving changes which cells are fitted, not the level a slope is measured against; a balanced panel keeps the same cells at both ends.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-G1-PHENO"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "If the mix of stations moves, it can tilt a pooled slope; the defences required are (i) within-cell fixed effects, so a station only competes with itself, and (ii) the balanced panel, so entry and exit cannot tilt the slope.",
+     "texts": "a9cb4e2eb58ecb56"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-P1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Read the variables the identity needs at the offsets the panel's header gives, keyed by station and month; apply stated plausibility bounds on value, counting what each removes; compute C_sat and D; build the trend panel.",
+   "because": "The panel stores each variable at an offset its header gives; a key of station and month joins them, the month index staying below the multiplier; counting what each bound removes makes the filter's effect visible.",
+   "rests_on": [
+    "H-GI-SERIESMETA"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "Read `oxy_bed`, `temp_bed`, `sal_bed`, `temp_surf` and `sal_surf` at the offsets the `.json` gives, keyed `station×1000 + month`; apply stated plausibility bounds on value, counting what each removes; compute `C_sat` and `D`; build the trend panel.",
+     "texts": "7447da1183f4577f",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-P2",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Fit fixed-effect slopes on year for O, C_sat, D, T_bed and T_surf - T_bed; the slopes of O, C_sat and D satisfy the identity exactly; report the split as a share of dO/dt, not a p-value.",
+   "because": "A least-squares slope is linear in the outcome, so the identity between O, C_sat and D holds for their fitted slopes as for the values; the split is a share to be reported, not a test.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-G1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "Fixed-effect slopes on year for `O`, `C_sat`, `D`, `T_bed` and `T_surf − T_bed`. The slopes of `O`, `C_sat` and `D` satisfy the identity exactly; report the split as a **share of `dO/dt`**, not a p-value.",
+     "texts": "fb2c30afd599d952"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-P3",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Apply the year-block null to each slope; report the naive standard error, the block standard error and their ratio.",
+   "because": "The ratio says how much the textbook error would have understated, which is what the null is for.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-G1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "Year-block null (above) for each; report the naive standard error, the block standard error and their ratio.",
+     "texts": "ccfe6e7959ab60ff"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-P4",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Repeat on the balanced panel, on June-September and on December-March; agreement across the variants is the finding, and disagreement is equally the finding.",
+   "because": "The balanced panel removes entry and exit; the summer and winter windows separate the stratified season from the mixed one. A split that holds only in some of them is a result about those, not about the whole.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-G1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "Repeat on the balanced panel, on June–September and on December–March. **Agreement across the variants is the finding; disagreement is equally the finding.**",
+     "texts": "5262938fb8bdb1ee"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-P5",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "Refit the slope of D with surface-minus-bed density as a covariate; this uses {ref:C1}'s variable and does not test it, and what survives is the metabolic-plus-unknown residue, a residue, not a temperature coefficient of respiration.",
+   "because": "Conditioning on the density difference removes what stratification at the sampled ends explains; what remains is respiration and whatever else was not modelled, as a residue in oxygen, not a rate.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:C1}": "C1: Stratification strength",
+     "said on hypodrafts/G1.md": "Refit `dD/dt` with surface-minus-bed density as a covariate — this *uses* C1's variable and does not test it. What survives is the metabolic-plus-unknown residue, a residue, not a `Q10`.",
+     "hypothesis C1": "9706dba4e14e7a98",
+     "texts": "f269a17cd371c37c"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-WOULD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "If dC_sat/dt matches or exceeds dO/dt under the year-block null and across the variants, that licenses: at the trend panel's stations the long-term near-bed oxygen decline is accounted for by the solubility ceiling alone, and the non-thermodynamic deficit did not widen; {ref:G1}'s monotone worsening independent of load would then be true of the water and still not evidence that load reduction failed, the falling term being the one no load policy touches.",
+   "because": "The solubility term is the route that acts whatever the load (`C-GI-G1-ROUTES`); a decline it accounts for would have happened under any load, so it cannot show that cutting load failed.",
+   "rests_on": [
+    "C-GI-G1-ROUTES"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-WOULD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on hypodrafts/G1.md": "**Would.** If `dC_sat/dt` matches or exceeds `dO/dt` under the year-block null and across the variants, that licenses: *at the trend panel's stations the long-term near-bed oxygen decline is accounted for by the solubility ceiling alone, and the non-thermodynamic deficit did not widen.* That constrains G1's headline directly: “monotone worsening independent of load” would be true of the water and still not evidence that load reduction failed, the falling term being the one no load policy touches.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "101fa447aff1850a",
+     "rests on C-GI-G1-ROUTES": "ec643191de047b21"
+    }
+   }
+  },
+  {
+   "id": "C-GI-G1-WOULDNOT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/G1.md",
+   "claim": "It would not measure respiration, since D is a standing stock and converting to a rate needs a ventilation timescale the archive does not hold; a narrowing D fits load reduction working and a network drifting toward better-ventilated positions alike; and it says nothing about stratification beyond the difference between the ends of the sampled range, nothing about water bodies, nothing about the stations the span filter drops, and refutes `G1-b` only at the resolution of monthly medians taken at an unrecorded hour.",
+   "because": "D is an amount and a respiration rate is per unit time, and converting needs how fast the bottom water is renewed, which the panel does not hold. The defences bound drift in the network but cannot rule out a network that moved to better-ventilated positions. Near-bed and near-surface values are the ends of each cast's sampled range, not a measured pycnocline (`C-GI-G1-BEDDEF`); the panel holds monthly medians with no clock (`C-GI-G1-CLOCK`) and no water body (H-GI-SERIESMETA).",
+   "rests_on": [
+    "C-GI-G1-BEDDEF",
+    "C-GI-G1-CLOCK",
+    "H-GI-SERIESMETA"
+   ],
+   "replaces": [
+    "C-GI-OLD-G1-WOULDNOT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/G1.md": "**Would not.** It does not measure respiration and cannot: `D` is a standing stock, a respiration rate is a rate, and converting between them needs a ventilation timescale the archive does not hold. A narrowing `D` is equally consistent with load reduction working *and* with the network drifting toward better-ventilated positions — the defences bound that, they do not eliminate it. It says nothing about stratification beyond a difference between the top and the bottom of the sampled range, which is no pycnocline (C1's object), nothing about water bodies, nothing about the stations the span filter drops. And `dD/dt ≈ 0` refutes `G1-b` only at the resolution of monthly medians taken at an unrecorded hour.",
+     "hypothesis C1": "9706dba4e14e7a98",
+     "texts": "bae03efdb56cd131",
+     "rests on C-GI-G1-BEDDEF": "7c79f6d55673a9b4",
+     "rests on C-GI-G1-CLOCK": "7276cd2f36f269a6",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-STATUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "The test this page specifies has not been run: no script in this repository computes the June-September counts per era, the balanced panel or either trajectory, so no count of them, no band and no p-value is reported here.",
+   "because": "A search of the scripts found none that filters the panel by season and era, intersects station sets across eras or computes a trajectory on either.",
+   "rests_on": [
+    "U-GI-I1-NORUN"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-NOTHINGRUN",
+    "C-GI-OLD-I1-DATA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-GI-I1-NORUN.label {ref:I1}": "I1: Changing station network",
+     "said on hypodrafts/I1.md": "The test this page specifies has not been run: no script in this repository computes the June–September counts per era, the balanced panel or either trajectory, so no count of them, no band and no p-value is reported here.",
+     "texts": "5ddf7884cd676337",
+     "node U-GI-I1-NORUN": "8251c51667d5ac7f"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-DESIGN",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Hold the station set fixed and the season fixed, and recompute the June-September near-bed oxygen trajectory over the years the test covers, in eras of the stated length.",
+   "because": "Fixing stations and season removes the network's and the season's composition from the comparison; eras pool years so that each has a median at many stations.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Hold the station set fixed and the season fixed, and recompute the June–September near-bed oxygen trajectory 1985–2024 in eras of 5 years.",
+     "texts": "d883ded7cf0a7b09"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-SUPPORT",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "{ref:I1} is supported if the era-to-era change on the fixed set differs from the change on the full pooled record by more than the fixed set's own sampling band, that is, if the pooled trajectory lies outside the band in at least one era.",
+   "because": "The band is the fixed set's own sampling variation; a pooled trajectory outside it moved for a reason the fixed set does not share, and changing composition is the candidate.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-SUPPORT"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on hypodrafts/I1.md": "**I1 is supported** if the era-to-era change measured on the fixed set differs from the change measured on the full pooled record by more than the fixed set's own sampling band — that is, the pooled trajectory lies outside the band in at least one era.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "2bf43c2dcd939831"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-FAIL",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "{ref:I1} fails if the two trajectories track each other inside the band in every era; the network's turnover would then not have moved the number, and the composition objection could be set aside for this variable.",
+   "because": "If the pooled and the fixed trajectories agree within the band everywhere, the network's changes did not move this variable's number.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-FAIL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on hypodrafts/I1.md": "**I1 fails** if the two trajectories track each other inside the band in every era — a real possible outcome, and the interesting one: the network's turnover would then not have moved the number, and the composition objection could be set aside for this variable.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "e4d219f47a82b922"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-PANEL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "The monthly station panel holds the counted station-months at the counted stations, in its monthly slots from January 1980, for its counted variables; the binary's size is exactly the bytes per station-month its layout implies; near-bed oxygen is held on the counted station-months at the counted stations.",
+   "because": "drafts_b_counts.py reads the panel's counts and the binary's size, and counts distinct stations from the station indices in the binary; stations_series.py writes a `uint16` station index, a `uint16` month index and a `float32` value per point, and the binary's size divided by the station-months is that sum.",
+   "rests_on": [
+    "D-KP-SERIES",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS",
+    "H-GI-SERIESMETA",
+    "X-GI-SERIES",
+    "H-GI-FACTS"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-DATA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "`docs/data/areas/stations_series.{json,bin}` holds 679,422 station-months at 1,415 stations, in 564 monthly slots from January 1980, for 9 variables; the `.bin` is 5,435,376 bytes, exactly 8 bytes per station-month, as the layout's `uint16` station index, `uint16` month index and `float32` value per point imply. The variable used, `oxy_bed`, is held on 76,980 station-months at 1,327 stations.",
+     "texts": "32287dbb44290742",
+     "node D-KP-SERIES": "75fa427597293f59",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35",
+     "node X-GI-SERIES": "4c8493acdda70a07",
+     "node H-GI-FACTS": "a77b92e347805287"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-BALRULE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Balanced panel: the stations with a June-September near-bed oxygen value in every era; its size, and the share of June-September values outside it, have not been computed here.",
+   "because": "Presence in every era is the one definition of a fixed set that needs no label; no script computes it (U-GI-I1-NORUN).",
+   "rests_on": [
+    "U-GI-I1-NORUN"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-BALANCED"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "U-GI-I1-NORUN.label {ref:I1}": "I1: Changing station network",
+     "said on hypodrafts/I1.md": "**Balanced panel:** the stations with a June–September `oxy_bed` value in *every* era. Its size, and the share of June–September values outside it, have not been computed here.",
+     "texts": "1ba5381b8f8a570d",
+     "node U-GI-I1-NORUN": "8251c51667d5ac7f"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-AGG",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Each value is already a median per station, month and depth layer over every value in that layer of every cast that month, and how many casts went into it is not stored, so {ref:I3}'s effort confound cannot be controlled inside this file.",
+   "because": "stations_series.py pools every value in a layer of every cast in a month into one list and stores its median; the layout stores indices and a value, and no count.",
+   "rests_on": [
+    "X-GI-SERIES",
+    "H-GI-SERIESMETA"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I3}": "I3: Changing sampling frequency and season",
+     "said on hypodrafts/I1.md": "*Aggregation.* Each value is already a median per station, month and depth layer, over every value in that layer of every cast that month; how many casts went into it is not stored, so I3's effort confound cannot be controlled inside this file: a station visited once and one visited often weigh the same.",
+     "hypothesis I3": "1d55bcf7bf92738b",
+     "texts": "b213f726840156ec",
+     "node X-GI-SERIES": "4c8493acdda70a07",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-EVENMED",
+   "kind": "code",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Where a station-month holds an even number of values, its median is the mean of the two middle values, so a stored value can sit between the steps the raw values were reported in.",
+   "because": "stations_series.py takes the middle value of an odd-length list and the mean of the middle pair of an even-length one.",
+   "rests_on": [
+    "X-GI-SERIES"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "*Resolution.* Where a station-month holds an even number of values, its median is the mean of the two middle values, so a stored value can sit between the steps the raw values were reported in.",
+     "texts": "1a5bbde4837b707d",
+     "node X-GI-SERIES": "4c8493acdda70a07"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-CLOCK",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "The CTD extract the panel is built from has no time of day in any row and no column for it, so the diel oxygen swing aliases into whichever hour the boat went, per station; the water-chemistry extract does carry clock values, which can bound the hour only where a cast shares its day with a bottle.",
+   "because": "The panel is written from the CTD extract, which carries a date and no clock (`C-HY-I3-NOCLOCK`); oxygen swings over the day, so a value from an unrecorded hour carries the swing. A clock borrowed from a same-day water-chemistry sample is the only way to place a cast in the day (`C-HY-I3-CHEMCLOCK`).",
+   "rests_on": [
+    "C-HY-I3-NOCLOCK",
+    "C-HY-I3-CHEMCLOCK",
+    "X-GI-SERIES"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-CLASSES"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "*Hour.* The CTD extract the panel is built from has no time of day in any row and no column for it, so the diel oxygen swing aliases into whichever hour the boat went, per station. The water-chemistry extract does carry clock values, which can bound the hour only where a cast shares its day with a bottle.",
+     "texts": "ae653037bad4cbb5",
+     "rests on C-HY-I3-NOCLOCK": "5ba9810307ebde13",
+     "rests on C-HY-I3-CHEMCLOCK": "5ce61a93780b6fd5",
+     "node X-GI-SERIES": "4c8493acdda70a07"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-REGISTER",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "The ODA station register holds the counted rows and distinct station numbers and carries only {fig:hy_i1_in} of the {fig:hy_i1_series} series stations; StartDato equals SlutDato on {calc@K-SUBSET-SHARE:hy_reg_eq / hy_reg_both * 100|.1f}% of its rows with both dates, so the field holds a visit date, not a station lifespan.",
+   "because": "hypotheses.py streams the register, counts its rows, the rows with both dates and those where the two are the same string, and intersects its station numbers with the series stations (`C-HY-I1-REGISTER`); hypodraft_facts.py counts its rows and distinct station numbers, and the page refuses to build if the two readers' row counts differ.",
+   "rests_on": [
+    "C-HY-I1-REGISTER",
+    "D-HY-REGISTER",
+    "X-HY-HYPOTHESES",
+    "X-HY-FACTS",
+    "H-GI-FACTS"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {fig:hy_i1_in}": "34",
+     "claim {fig:hy_i1_series}": "1,415",
+     "claim {calc@K-SUBSET-SHARE:hy_reg_eq / hy_reg_both * 100|.1f}": "99.8",
+     "said on hypodrafts/I1.md": "**The station register cannot supply station lifespans.** `data/raw/oda/stations.csv` holds 798,574 rows and 6,288 distinct `ObservationsstedNr`, and carries only 34 of the 1,415 series stations. `StartDato` equals `SlutDato` on 796,990 of the 798,574 rows with both dates (99.8%): the field holds a visit date, not a station lifespan — a column named as a validity period carrying an event date.",
+     "texts": "1fbec595d2aa2db1",
+     "rests on C-HY-I1-REGISTER": "d1bc4413cf2b0908",
+     "node D-HY-REGISTER": "62c37f9461c9976a",
+     "node X-HY-HYPOTHESES": "b6b9dab6ca712d28",
+     "node X-HY-FACTS": "0c9203a01293ee22",
+     "node H-GI-FACTS": "a77b92e347805287"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-PRESENCE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "So the start and end dates {ref:I1} needs are not held; presence must be derived from the observation record itself, era by era.",
+   "because": "The register's dates are visit dates and it carries few of the series stations (`C-GI-I1-REGISTER`); the hypothesis register names station start and end dates as what the test needs; the observation record shows where a station was measured in each era.",
+   "rests_on": [
+    "C-GI-I1-REGISTER",
+    "D-LR-REGISTER"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-REGISTER"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on hypodrafts/I1.md": "So the start and end dates I1 needs are not held; presence must be derived from the observation record itself, era by era.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "eb7f406130f451c9",
+     "rests on C-GI-I1-REGISTER": "1fbec595d2aa2db1",
+     "node D-LR-REGISTER": "2d21a171b8570678"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-NULLCONSTR",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "The constraint is a fixed station set and a fixed season window, which shrinks n and clusters it into as many groups as the panel has stations; the relevant null is therefore not the sampling distribution of a median over independent draws, and no published standard error applies.",
+   "because": "Values at one station share its depth and level, so they are clustered by station, and the effective sample is closer to the number of stations than to the number of values.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "The constraint is *a fixed station set × a fixed season window*, which shrinks n and clusters it into as many groups as the panel has stations. The relevant null is therefore **not** the sampling distribution of a median over independent draws, and no published standard error applies.",
+     "texts": "43a4a854f20cedaf"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-BOOT",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Primary null: the pooled trajectory is what the fixed network would have shown. Cluster bootstrap over the panel's stations, drawing as many as the panel holds with replacement and carrying each station's whole era-by-era June-September value set; the stated number of replicates gives a percentile band per era, and the null is rejected where the pooled change falls outside the stated band.",
+   "because": "Resampling whole stations keeps each station's dependence inside every draw. The replicates and the band are design values, stated with their reasons.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "**Primary null.** `H0`: the pooled trajectory is what the fixed network would have shown. Cluster bootstrap over the panel's stations — draw as many stations as the panel holds, *with replacement*, carrying each station's entire era-by-era June–September value set, and recompute Δ_fixed(e) = med(e) − med(first era). 5,000 replicates give a percentile band per era; reject `H0` where Δ_pooled(e) falls outside the 95% band.",
+     "texts": "c648c570e46d8c7c"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-UNIT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "The station is the resampling unit because observations are not independent within it; resampling observations would understate the band, by up to a factor of the square root of the observations per station when a station's observations move together.",
+   "because": "The design effect of clustered sampling: the variance of a mean grows with the correlation within a station, up to the number of observations per station when they move together, so the standard error grows up to the square root of that number.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-NULL"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "The station is the resampling unit because observations are not independent within it; resampling observations would understate the band, by up to a factor of √(observations per station) when a station's observations move together.",
+     "texts": "31e6ecd1aa9e9cc1"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-SECONDARY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Secondary null, for the season channel: within each era and calendar month, permute station labels among observations; era n, month composition and every visit schedule stay fixed, and only the link between station and value is destroyed. It will almost certainly reject, since stations differ in depth and level by construction, so it checks the season channel and is not a test of {ref:I1}; rejection is not support.",
+   "because": "Permuting labels within an era and calendar month keeps the counts and schedules and breaks only the link between station and value; stations differ in depth and level, so that link is strong whatever {ref:I1} says, and rejecting it says nothing about composition over time.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "because {ref:I1}": "I1: Changing station network",
+     "said on hypodrafts/I1.md": "**Secondary null, for the season channel.** Month-stratified station-label permutation: within each (era, calendar-month) cell, permute station labels among observations. Era n, month composition and every visit schedule stay fixed; only the association between *which* station and *what value* is destroyed. It will almost certainly reject — stations differ in depth and level by construction — so it is a check on the season channel, not a test of I1. Do not present rejection here as support.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "5cb0e7f2c96b6c7d"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-MULT",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Pre-register the contrast between the last era and the first as primary; treat the intermediate eras as descriptive, Holm-corrected.",
+   "because": "Fixing the primary contrast in advance keeps the many era contrasts from being searched for the one that crosses the band.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "**Multiplicity.** Pre-register the contrast between the last era and the first as primary; treat the intermediate eras as descriptive, Holm-corrected.",
+     "texts": "7e60b24fa3897b89"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-P1",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Read the binary at the near-bed oxygen offset the header gives; decode the station index, the month index and the value; the year is the first year plus the month index divided by twelve, rounded down, and the calendar month the remainder plus one.",
+   "because": "The panel's header gives each variable's offset, the layout of indices and values and the first year; stations_series.py counts the month index in months since January of the first year.",
+   "rests_on": [
+    "H-GI-SERIESMETA",
+    "X-GI-SERIES"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Read `stations_series.bin` at the `oxy_bed` offset the `.json` gives; decode the `uint16` station index, the `uint16` month index and the `float32` value; `year = 1980 + month//12`, calendar month = `month%12 + 1`.",
+     "texts": "12ff08580740a400",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35",
+     "node X-GI-SERIES": "4c8493acdda70a07"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-P2",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Keep June-September over the years the test covers, and assign eras.",
+   "because": "The season and the years are the test's; the eras are its stated length.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Keep June–September, 1985–2024. Assign eras.",
+     "texts": "50990a4a9faf985f"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-P3",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Balanced panel = the intersection of the per-era station sets.",
+   "because": "A station in every per-era set is present in every era, which is the definition.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Balanced panel = the intersection of the per-era station sets.",
+     "texts": "7ff861fc8795ec0f"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-P4",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Compute the pooled and the fixed-set change per era.",
+   "because": "They are the two quantities the test compares.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Compute Δ_pooled(e) and Δ_fixed(e).",
+     "texts": "fdd65c22db60f079"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-P5",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Run both nulls.",
+   "because": "The primary null tests the hypothesis; the secondary checks the season channel.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-PROC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Run both nulls above.",
+     "texts": "a17049640d17bd09"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-P6",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "Repeat for near-bed oxygen saturation, salinity and temperature; salinity and saturation are computed, from conductivity and temperature and from oxygen, temperature and salinity, so these are not independent replications and a consistent result across them is one result.",
+   "because": "Variables computed from shared inputs share their errors; agreement among them is expected whether or not composition moved the number.",
+   "rests_on": [
+    "U-KP-PSS"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Repeat for `oxysat_bed`, `sal_bed` and `temp_bed`. Salinity and oxygen saturation are computed (from conductivity and temperature, and from oxygen, temperature and salinity), so these are not independent replications: a consistent result across them is one result, not several.",
+     "texts": "6bb3561470058677",
+     "node U-KP-PSS": "083819c51a0631eb"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-CIRC",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "A label sorting stations by the season of their sampling, made on each station's whole record, labels a station that switched regime by its aggregate, contaminated by the very time-variation under test; this design avoids the problem, defining the balanced panel by presence per era with no behavioural label in the primary test, and a secondary analysis wanting such a label must assign it within era and report the switch rate first.",
+   "because": "A label computed over the whole record averages over the change the test looks for, so conditioning on it builds that change into the comparison; presence per era is observed, not inferred. No such label is defined here in any case (C-GI-NOLABEL).",
+   "rests_on": [
+    "C-GI-NOLABEL"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-CIRC"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "**On the classification circularity.** A label that sorts stations by the season of their sampling, made on each station's *whole* record, labels a station that switched regime by its aggregate — contaminated by the very time-variation under test. This design avoids the problem rather than fixing it: the balanced panel is defined by **presence**, observable per era, and no behavioural label enters the primary test. Any secondary analysis wanting such a label must assign it **within era**, and report the switch rate before using a pooled label.",
+     "texts": "ed490ef0d31f0573",
+     "rests on C-GI-NOLABEL": "6a6c7af0cbe5032e"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-WOULD",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "The test would license whether, at the positions watched in every era, the June-September near-bed oxygen change is the change the pooled record reports, and if not, a quantified size for the composition contribution.",
+   "because": "The fixed set and the pooled record differ only in which stations are counted, so their difference is the part of the pooled change that composition made.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-WOULD"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "**Would license.** Whether, at the positions watched in every era, the June–September near-bed oxygen change is the change the pooled record reports — and if not, a quantified size for the composition contribution.",
+     "texts": "1f30468dcda96261"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-NOTWB",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "It would not license any statement about a water body: the panel's stations are wherever they happen to be, not a designed sample of anything, and aggregating them into water bodies would import the model assumption this repository refuses.",
+   "because": "The panel's header keeps which water body a station falls in out of the data, as a model assumption in its own overlay; a fixed set of stations was not placed to represent any water body.",
+   "rests_on": [
+    "H-GI-SERIESMETA"
+   ],
+   "replaces": [
+    "C-GI-OLD-I1-NOTLICENSE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Any statement about a water body. The panel's stations are wherever they happen to be; they are not a designed sample of anything, and aggregating them into Vandområder would import the model assumption this repository refuses.",
+     "texts": "f99d9d2aba7a9151",
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-NOTTRUE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "It would not license a claim that the fixed-panel trajectory is the true trend: the panel is survivorship-selected, stations present in every era may differ from those that came and went, and holding the network fixed trades a composition bias for a selection bias; agreement reads as turnover not having moved this number, not as what the sea did.",
+   "because": "Stations kept through every era were kept for reasons, and those reasons can correlate with depth, programme or place; a set selected that way is not a random sample of the sea.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-NOTLICENSE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "A claim that the fixed-panel trajectory is the *true* trend. The panel is survivorship-selected: stations present in every era may differ from the ones that came and went, in depth, programme or place. Holding the network fixed trades a composition bias for a selection bias; it does not remove bias. The honest reading of agreement is “turnover did not move this number”, not “this is what the sea did”.",
+     "texts": "49c016ebaeed92ce"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-NOTCAUSE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "It would not license anything about oxygen causes: composition is an instrument question.",
+   "because": "Composition decides where and when the sea was looked at, not what moved its oxygen.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Anything about oxygen *causes*. Composition is an instrument question.",
+     "texts": "bd494baec8222027"
+    }
+   }
+  },
+  {
+   "id": "C-GI-I1-NOTTRANSFER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "hypodrafts/I1.md",
+   "claim": "It would not license transfer to other variables, other seasons, or the years before the test's first year, which the design leaves out.",
+   "because": "The test measures one variable in one season over its own years; composition can act differently elsewhere.",
+   "rests_on": [],
+   "replaces": [
+    "C-GI-OLD-I1-NOTLICENSE"
+   ],
+   "confirmed": {
+    "on": "2026-09-11",
+    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "saw": {
+     "said on hypodrafts/I1.md": "Transfer to other variables, other seasons, or the years before 1985, which the design leaves out.",
+     "texts": "3d959235166e8725"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-VERIFIED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:G1} draft's counts were verified by reading the files, and its pilot slopes carry no null.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "Draft only. Counts verified by reading the files;",
+    "end": "so none is a result.",
+    "why": "No output of the drafting session's reads is held, so that the counts were verified cannot be checked. The page now says what is held and that nothing has been run."
+   },
+   "replaced_by": [
+    "C-GI-G1-STATUS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "Draft only. Counts verified by reading the files; the pilot slopes below carry no null, so none is a result.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "8e94a35210cf4f28"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-SPLIT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Warming reaches near-bed oxygen by solubility, stratification and metabolic rate, only solubility being policy-inert, and a seasonal decomposition done here found a stated fold change and a stated thermodynamic share.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "But warming reaches near-bed oxygen",
+    "end": "moved onto the long-term axis.",
+    "why": "The seasonal decomposition's figures were counted in a drafting session whose output and code are not held; Weiss (1970) was cited without being read or pinned here; and the metabolic route was called unmeasured without a search being recorded. The routes and the question are kept, argued from a pinned DCE note; the figures are dropped."
+   },
+   "replaced_by": [
+    "C-GI-G1-ROUTES",
+    "C-GI-G1-QUESTION"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "But warming reaches near-bed oxygen by three routes — solubility (deterministic, Weiss 1970), stratification (`C1`'s object) and metabolic rate (`Q10`, unmeasured here) — only the first of which is policy-inert. So `G1`'s testable content is not *does oxygen fall* but what fraction of the long-term fall is thermodynamics: the seasonal decomposition done here (23-fold → 14-fold on a saturation threshold, ~40 % thermodynamic), moved onto the long-term axis.",
+     "texts": "88dc77076d2c4139"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-CSAT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:G1} solubility term is Weiss's equation with a stated conversion constant, exact and external.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "Per station-month, `C_sat` = Weiss",
+    "end": "ventilation, advection.",
+    "why": "Weiss (1970) was cited, and its conversion constant printed, without the paper being read or pinned here; and a solubility equation is an empirical fit, so calling it exact claimed more than can be shown."
+   },
+   "replaced_by": [
+    "C-GI-G1-CSAT",
+    "C-GI-G1-DEFICIT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "Per station-month, `C_sat` = Weiss (1970) from near-bed T and S, mL/L × 1.42905: > `O_bed = C_sat(T_bed, S_bed) − D`, so `dO/dt ≡ dC_sat/dt − dD/dt`. `C_sat` is exact and external, so the first term is computed, not estimated. The deficit `D` is solubility-neutral by construction and carries the rest: consumption, failed ventilation, advection.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "da1d94561b91419a"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-DATA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:G1} draft's joined, filtered and trend-panel counts, and the fall in rows per half-decade.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "`docs/data/areas/stations_series.{json,bin}` —",
+    "end": "which is the composition problem.",
+    "why": "The join, filter and panel counts, and the rows per half-decade, were made in a drafting session whose output and code are not held, and no script here computes them. The page now gives the panel's counts per variable from the data, a bound on the join, and the panel's rules without sizes."
+   },
+   "replaced_by": [
+    "C-GI-G1-DATA",
+    "C-GI-G1-JOIN",
+    "C-GI-G1-PANELRULE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "`docs/data/areas/stations_series.{json,bin}` — 679,422 station-months, 1,415 stations, months 0–560 (Jan 1980 – Sep 2026). Five-way join `oxy_bed ∩ temp_bed ∩ sal_bed ∩ temp_surf ∩ sal_surf`: 76,309; after plausibility (0 ≤ O ≤ 20, −2 ≤ T ≤ 30, 0 ≤ S ≤ 40 at both depths) 76,264 rows, 1,314 stations, 1980–2026. Trend panel = cells (station × calendar month) with ≥ 8 distinct years and ≥ 15-year span: 2,429 cells · 54,211 rows · 310 stations. Balanced variant (cell in both 1990–1999 and 2015–2026): 1,282 cells · 35,215 rows. Rows per half-decade fall 14,491 (1990–1994) → 6,842 (2020–2024): the network thins, which is the composition problem.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "064e9f12583c7769"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-ERRORS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:G1} draft's error classes: value ranges and removed rows, one-decimal temperature and its effect on solubility, cells without saturation, no time-of-day column anywhere, and the station as unit.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "**Error classes.** class",
+    "end": "every estimate being within-cell.",
+    "why": "The value ranges, the removed rows, the rounding figures and the count of cells without saturation come from a session whose output is not held. Most temperature rows of the CTD extract are written with more than one decimal, so it is not a one-decimal series. And the claim of no time-of-day column anywhere is wrong: the water-chemistry extract carries clock values."
+   },
+   "replaced_by": [
+    "C-GI-G1-VALUES",
+    "C-GI-G1-DECIMALS",
+    "C-GI-G1-CLOCK",
+    "C-GI-G1-UNIT",
+    "C-GI-G1-SAT",
+    "C-GI-G1-BEDDEF"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "Error classes. class 1, value — `oxy_bed` −9.93 to 281.6 mg/l, `temp_surf` to 80.3 °C; 45 rows removed. class 2, quantisation — one-decimal T; ±0.05 °C is ±0.015 mg/l in `C_sat`, which matters for a single value, not a slope. class 3, aggregation — monthly medians, so `D` may pair T, S and O from different casts. class 5, unfilled — 12,736 `oxy_bed` cells carry no archived saturation. class 6, no time-of-day column anywhere (`ctd.csv.gz` has `Dato` as `19701013`); if sampling hour drifted over 47 years, the diel oxygen cycle drifted with it, uncorrectably — the one class that caps this test rather than bounds it. class 7, avoided: the unit is a station, and no water body is needed, every estimate being within-cell.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "61a23d23b232b2e0"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-NULL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Measured on the {ref:G1} panel: residual autocorrelation indistinguishable from the detrending bias, a stated variance inflation across years, and a naive standard error understating by a stated factor.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "Under it I measured the dependence",
+    "end": "would have been wrong by that factor.",
+    "why": "The autocorrelations, the variance inflation and the standard errors were measured in a drafting session whose output and code are not held, and no script here computes them. The design of the null is kept without the figures."
+   },
+   "replaced_by": [
+    "C-GI-G1-NULLDESIGN",
+    "C-GI-G1-DEPEND"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "Under it I measured the dependence the textbook SE ignores: - Autocorrelation of within-cell detrended `D` residuals at annual spacing: first-lag mean −0.048, second-lag −0.057 over 2,312 cells — indistinguishable from detrending's own −1/(n−1) ≈ −0.05 bias. Temporal AR is not the problem here. - The dependence is *cross-sectional*: SD of the year-mean residual 0.2513 where independence predicts 0.0471 — variance inflation 28.4. All cells in a year sample the same weather. So the null is a year-block procedure: resample the 47 calendar years with replacement, and separately permute year labels attached to whole years; refit, 2,000 draws. That keeps every station effect, the seasonal cycle and the within-year common shock, destroying only the year→outcome ordering. Consequence: the naive SE on `dD/dt` (0.00061 mg/l/yr) understates by ≈ √28.4 ≈ 5.3×, to ≈ 0.0032. A quoted null would have been wrong by that factor.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "a4fcc96614310b64"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-PHENO",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Summer-peaked and year-round stations differ in May-October oxygen by a stated amount and effect size, their share moved between two periods, and the split reproduces a figure on file.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "The phenology mix moves.",
+    "end": "phenology × year.",
+    "why": "The split rests on a station category no script here defines, which this project's register of its own constructions lists as never defined; its counts and effect sizes, and the figure on file they were said to reproduce, come from sessions whose output is not held."
+   },
+   "replaced_by": [
+    "C-GI-NOLABEL",
+    "C-GI-G1-DEFENCES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The phenology mix moves. On my own definition (≥ 8 `oxy_bed` months; ≥ 65 % in May–Oct → \"summer-peaked\"): 282 summer-peaked vs 480 year-round, the summer-peaked running 1.25 mg/l lower in May–Oct (6.31 vs 7.56, d 0.50, n = 12,390 / 32,924), their share of station-months moving 29.5 % (2010–2014) → 16.4 % (2015–2019). Direction and size reproduce the figure on file (293 / 481, 1.57 mg/l, d 0.66, 32→12 %); the split is threshold-dependent, which is itself the warning. Three defences, all required: (i) within-cell FE, so a station only competes with itself; (ii) the balanced panel, so entry and exit cannot tilt the slope; (iii) phenology × year.",
+     "texts": "3c6134383bd0e80a"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-PROC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:G1} procedure's first four steps, with the filtered panel's size and a phenology interaction.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "Read the five arrays at the",
+    "end": "disagreement is equally the finding.",
+    "why": "The first step carried the size of a filtered panel no script here computes, and the fourth leaned on a station label no script here defines."
+   },
+   "replaced_by": [
+    "C-GI-G1-P1",
+    "C-GI-G1-P2",
+    "C-GI-G1-P3",
+    "C-GI-G1-P4"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "Read the five arrays at the `.json` offsets, key `station×1000 + month`, filter → 76,264; compute `C_sat` (Weiss) and `D`; build the ≥ 8-year / ≥ 15-span panel. 2. FE slopes on year for `O`, `C_sat`, `D`, `T_bed`, `T_surf − T_bed`. The first three satisfy the identity exactly; report the split as a fraction of `dO/dt`, not a p-value. 3. Year-block null (above) for each; report naive SE, block SE and their ratio. 4. Repeat balanced, Jun–Sep, Dec–Mar, and with the phenology interaction. Agreement across all five is the finding; disagreement is equally the finding.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "cb720604ac3adbdc"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-PILOT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:G1} pilot: per decade, bed temperature up, solubility down by more than the observed oxygen decline, the deficit narrowing, and no strengthening of thermal stratification.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "### What the pilot already shows",
+    "end": "strengthening of thermal stratification here.",
+    "why": "The pilot slopes were computed in a drafting session whose output and code are not held, and no script here computes them. Their reading - a solubility term exceeding the whole decline, a narrowing deficit, no strengthening of stratification - cannot be checked and is no longer claimed."
+   },
+   "replaced_by": [
+    "C-GI-G1-STATUS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "### What the pilot already shows (no null attached — not yet a result) On the 2,429-cell panel, per decade: `T_bed` +0.42 °C, `C_sat` −0.099 mg/l, `O_bed` −0.046 mg/l, `D` −0.053 mg/l. The solubility term exceeds the whole observed decline; the deficit appears to *narrow*. But `dD/dt` sits ~1.6 block-SE from zero and moves to −0.031 (balanced), −0.088 (Jun–Sep), −0.040 (Dec–Mar) — spread wider than its own uncertainty. Surface-minus-bed temperature difference −0.027 °C/decade: no detectable strengthening of thermal stratification here.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "af12675a04268c76"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-WOULD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "What a {ref:G1} result would license, at a stated number of stations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "**Would.** If",
+    "end": "no load policy touches.",
+    "why": "It named the stations of a panel no script here builds by a count from a session whose output is not held."
+   },
+   "replaced_by": [
+    "C-GI-G1-WOULD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "Would. If `dC_sat/dt` matches or exceeds `dO/dt` under the year-block null and across all five sensitivities, that licenses: *at these 310 stations the long-term near-bed oxygen decline is accounted for by the solubility ceiling alone, and the non-thermodynamic deficit did not widen.* That constrains `G1`'s headline directly: \"monotone worsening independent of load\" would be true of the water and still not evidence that load reduction failed, the falling term being the one no load policy touches.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "7776ddd28b52ccaa"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-G1-WOULDNOT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "What a {ref:G1} result would not license, with a stated number of stations dropped by the span filter.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/G1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/G1.md",
+    "begin": "**Would not.** It does not measure respiration",
+    "end": "taken at an unrecorded hour.",
+    "why": "It named the stations the span filter drops by a count no script here computes."
+   },
+   "replaced_by": [
+    "C-GI-G1-WOULDNOT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:G1}": "G1: Warming",
+     "said on ARCHIVE.md": "Would not. It does not measure respiration and cannot: `D` is a standing stock, `Q10` a rate, and converting between them needs a ventilation timescale the archive lacks (class 6). A narrowing `D` is equally consistent with load reduction working *and* with the network drifting toward better-ventilated positions — (i)–(iii) bound that, they do not eliminate it. It says nothing about stratification beyond a two-point difference at sampling depth, which is no pycnocline (`C1`'s object; believe `C1` here), nothing about water bodies, nothing about the 1,004 stations the span filter drops. And `dD/dt ≈ 0` refutes G1-b only at the resolution of monthly medians taken at an unrecorded hour.",
+     "hypothesis G1": "24bb416be7f9a416",
+     "texts": "b90070f5635d6206"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-PRIOR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Two non-exchangeable observing systems exist, summer-peaked and year-round stations, a stated distance apart in June-September near-bed oxygen, and their mixture changes over time.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "**Prior work this builds on.**",
+    "end": "This draft tests that step.",
+    "why": "The two observing systems are the summer-peaked and year-round station category, which no script here defines and which this project's register of its own constructions lists as never defined; the counts and the effect size came from a session whose output is not held."
+   },
+   "replaced_by": [
+    "C-GI-NOLABEL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Prior work this builds on. Two non-exchangeable observing systems exist (293 summer-peaked, 481 year-round, 1.57 mg/l apart in Jun–Sep near-bed oxygen, d = 0.66) and their mixture changes over time. That establishes the *ingredients* of a composition artefact, not that any published number moved because of it. This draft tests that step.",
+     "texts": "0f2dcc6c306eb35b"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-SUPPORT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "{ref:I1} is supported if the pooled trajectory lies outside the fixed set's band by more than twice a raw quantisation step of oxygen.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "is supported** if the era-to-era change",
+    "end": "the raw quantisation step",
+    "why": "The threshold was set at twice a raw quantisation step of oxygen that no script here measures."
+   },
+   "replaced_by": [
+    "C-GI-I1-SUPPORT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "is supported if the era-to-era change measured on the fixed set differs from the change measured on the full pooled record by more than the fixed set's own sampling band — i.e. the pooled trajectory lies outside the band in at least one era, with the discrepancy exceeding 0.2 mg/l (twice the raw quantisation step",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "067453b80319cbb2"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-FAIL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "{ref:I1} fails if the trajectories track each other, a stated share of observations having turned over.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "fails** if the two trajectories",
+    "end": "set aside for this variable.",
+    "why": "The share of observations said to have turned over was counted in a session whose output is not held."
+   },
+   "replaced_by": [
+    "C-GI-I1-FAIL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "fails if the two trajectories track each other inside the band in every era — a real possible outcome, and the interesting one: 72% of observations turned over between 1985 and 2024 (§2) without moving the number, and the composition objection could be set aside for this variable.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "2dcf14a6fc0e2994"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-DATA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The monthly panel's counts, every near-bed oxygen value finite, and the June-September counts per era, with the station count halving while observations fall by less.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "`docs/data/areas/stations_series.{json,bin}` —",
+    "end": "turnover, not merely decline.",
+    "why": "That every near-bed oxygen value is finite was not checked by any script held here, and the reader parses with float, which accepts a not-a-number. The June-September counts per era were made in a session whose output is not held, and no script here computes them. The panel's held counts are now read from the data."
+   },
+   "replaced_by": [
+    "C-GI-I1-PANEL",
+    "C-GI-I1-STATUS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`docs/data/areas/stations_series.{json,bin}` — 679,422 station-months, 1,415 stations, 564 months from January 1980, 9 variables; `.bin` is 5,435,376 bytes, exactly the 8 bytes × Σn the layout implies. Variable used: `oxy_bed`: 76,980 rows, all finite, 1,327 stations. Jun–Sep, 1985–2024: 30,460 station-months, 1,167 stations. Per era (n / stations): 1985–1989 2,589 / 443 · 1990–1994 5,734 / 603 · 1995–1999 4,963 / 563 · 2000–2004 4,448 / 503 · 2005–2009 3,635 / 379 · 2010–2014 3,263 / 254 · 2015–2019 2,815 / 210 · 2020–2024 3,013 / 211. Station count halves while observation count falls by less — turnover, not merely decline.",
+     "texts": "2b7d2db6b7e5d80a"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-BALANCED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:I1} balanced panel's size, its per-era counts and the share of June-September observations outside it.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "**Balanced panel:** stations with",
+    "end": "is what turns over.",
+    "why": "The panel's size, its per-era counts and the share outside it were counted in a session whose output is not held; no script here computes them."
+   },
+   "replaced_by": [
+    "C-GI-I1-BALRULE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "Balanced panel: stations with ≥1 Jun–Sep `oxy_bed` observation in *every* one of the eight eras — 64 stations, 8,485 station-months, per-era n from 637 to 1,156. Neither empty nor degenerate. Its complement, 21,975 of 30,460 Jun–Sep observations (72.1%), is what turns over.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "56ae4aeb2efb4147"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-CLASSES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The shares of near-bed oxygen values on two grids, the raw resolution of oxygen, and no time-of-day column anywhere in the record.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "(quantisation):",
+    "end": "per station, unrecoverably.",
+    "why": "The shares on each grid and the raw resolution of oxygen come from a session whose output is not held; and a time-of-day column does exist in the record, in the water-chemistry extract."
+   },
+   "replaced_by": [
+    "C-GI-I1-EVENMED",
+    "C-GI-I1-CLOCK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "(quantisation): 62.1% of `oxy_bed` values sit exactly on a 0.1 mg/l grid and 75.0% on 0.05 — the residual is the median of an even count. Underlying raw is 0.1 mg/l. - Class 6 (absent dimension): no time-of-day column exists anywhere in the record. Diel oxygen swing aliases into whichever hour the boat went, per station, unrecoverably.",
+     "texts": "3f11e8162913a025"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-REGISTER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The station register's size and column count, the few series stations it carries, its visit dates, and that the hypothesis register's statement about it was wrong.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "**The register does not supply what",
+    "end": "(Flagged, not edited here.)",
+    "why": "The column count was never recorded by any script, and the sentence about the hypothesis register no longer describes it: the register now says the same. The counts are now read from the data."
+   },
+   "replaced_by": [
+    "C-GI-I1-REGISTER",
+    "C-GI-I1-PRESENCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The register does not supply what `I1` says it supplies. `data/raw/oda/stations.csv` (`latin-1`, 798,574 rows, 17 columns, 6,288 distinct `ObservationsstedNr`) matches only 34 of the 1,415 series stations. Worse, `StartDato` equals `SlutDato` on 796,990 rows (99.8%): the field holds a single visit date, not a station lifespan — class 4, schema conflation, a column named as a validity period carrying an event date. HYPOTHESES.md's \"Now held: the ODA register carries them\" is wrong. Presence must be derived from the observation record itself, as above. (Flagged, not edited here.)",
+     "texts": "f6f5f95d1da01c60"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-NULL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:I1} null's sizes: the panel's n and station count, the replicates and the band, and the understatement from resampling observations.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "The constraint is *fixed station set",
+    "end": "√(obs per station).",
+    "why": "The panel's size and its number of stations were printed as counts from a session whose output is not held; the replicates and the band are design choices, now stated as such."
+   },
+   "replaced_by": [
+    "C-GI-I1-NULLCONSTR",
+    "C-GI-I1-BOOT",
+    "C-GI-I1-UNIT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "The constraint is *fixed station set × fixed season window*, which shrinks n from 30,460 to 8,485 and clusters it into 64 groups. The relevant null is therefore not the sampling distribution of a median over 8,485 independent draws, and no published standard error applies. Compute it: Primary null. `H0`: the pooled trajectory is what the fixed network would have shown. Cluster bootstrap over the 64 panel stations — resample 64 *with replacement*, carry each station's entire era-by-era Jun–Sep observation set, recompute Δ_fixed(e) = med(e) − med(1985–1989). 5,000 replicates give a percentile band per era; reject `H0` where Δ_pooled(e) falls outside the 95% band. The station is the resampling unit because observations are not independent within it; resampling observations would understate the band by roughly √(obs per station).",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "9e7aed6bc510ad30"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-PROC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The {ref:I1} procedure's byte offset, run time, memory, panel size and counts of work.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "Read `stations_series.bin` at the",
+    "end": "rows — seconds.",
+    "why": "The run time, the memory, the panel's size and the counts of work were printed from a session whose output is not held."
+   },
+   "replaced_by": [
+    "C-GI-I1-P1",
+    "C-GI-I1-P3",
+    "C-GI-I1-P5"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "Read `stations_series.bin` at the `oxy_bed` offset (483,680); decode uint16 station index, uint16 month index, float32 value; `year = 1980 + month//12`, calendar month = `month%12 + 1`. ~1 s, <200 MB. 2. Filter Jun–Sep, 1985–2024. Assign eras. 3. Balanced panel = intersection of the eight per-era station sets (64 stations). 4. Compute Δ_pooled(e) and Δ_fixed(e). 5. Run the two nulls above. 5,000 × 8 medians over ≤8,485 rows — seconds.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "61f9af3f72e9ce10"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-CIRC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The summer/year-round split was made on whole records, and stated numbers of stations have enough observations in enough eras to label within era.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "**On the classification circularity.**",
+    "end": "before using a pooled label again.",
+    "why": "The split it names is the category no script here defines; the counts of stations with enough observations per era come from a session whose output is not held."
+   },
+   "replaced_by": [
+    "C-GI-NOLABEL",
+    "C-GI-I1-CIRC"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "On the classification circularity. The 293 / 481 summer/year-round split was made on each station's *whole* record, so a station that switched regime is labelled by its aggregate — contaminated by the very time-variation under test. This design avoids the problem rather than fixing it: the balanced panel is defined by presence, observable per era, and no behavioural label enters the primary test. Any secondary analysis wanting the regime label must assign it within era, which is feasible: 395 stations have ≥12 observations (all months) in ≥2 eras, 206 in ≥4, 33 in all 8. Report the switch rate before using a pooled label again.",
+     "texts": "75ef046112d33ec5"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-WOULD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "What an {ref:I1} result would license, at a stated number of positions.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "**Would license.** Whether, at",
+    "end": "for the composition contribution.",
+    "why": "The number of positions was the size of a panel no script here builds."
+   },
+   "replaced_by": [
+    "C-GI-I1-WOULD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "Would license. Whether, at 64 positions watched continuously for forty years, the Jun–Sep near-bed oxygen change is the change the pooled record reports — and if not, a quantified size for the composition contribution.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "a630f04fc32bb00c"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-NOTLICENSE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "What an {ref:I1} result would not license: a water body, from a stated number of stations; the true trend, surviving stations being systematically unlike the rest; causes; and the early years, from stated counts.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "- Any statement about a water body.",
+    "end": "which is why it is excluded).",
+    "why": "It named the panel's stations and the early years' station-months by counts from a session whose output is not held, and asserted without evidence that the surviving stations are systematically unlike the rest."
+   },
+   "replaced_by": [
+    "C-GI-I1-NOTWB",
+    "C-GI-I1-NOTTRUE",
+    "C-GI-I1-NOTTRANSFER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "- Any statement about a water body. The 64 stations are wherever they happen to be; they are not a designed sample of anything, and aggregating them into Vandområder would import the model assumption this repo refuses. - A claim that the fixed-panel trajectory is the *true* trend. The panel is survivorship-selected: stations that survive forty years are plausibly main-programme deep-water stations, systematically unlike the ones that came and went. Holding the network fixed trades a composition bias for a selection bias; it does not remove bias. The honest reading of agreement is \"turnover did not move this number\", not \"this is what the sea did\". - Anything about oxygen *causes*. Composition is an instrument question. - Transfer to other variables, seasons, or the pre-1985 record (1980–1984 holds only 763 Jun–Sep station-months over 109 stations, which is why it is excluded).",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "7bff391af68c099d"
+    }
+   }
+  },
+  {
+   "id": "C-GI-OLD-I1-NOTHINGRUN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Nothing in the {ref:I1} draft has been run, and its counts are verified reads of the files.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "hypodrafts/I1.md",
+    "commit": "00a157f",
+    "file": "docs/hypodrafts/I1.md",
+    "begin": "**Nothing here has been run.**",
+    "end": "p-value is reported.",
+    "why": "That the counts were verified reads of the files cannot be checked: the reads' output is not held."
+   },
+   "replaced_by": [
+    "C-GI-I1-STATUS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "claim {ref:I1}": "I1: Changing station network",
+     "said on ARCHIVE.md": "Nothing here has been run. The counts in §2 are verified reads of the files; no trajectory, band or p-value is reported.",
+     "hypothesis I1": "1ae73372a77a006c",
+     "texts": "ffb6babe5b0b8ea3"
+    }
+   }
+  }
+ ]
+}

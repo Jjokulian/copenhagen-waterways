@@ -1,0 +1,37 @@
+{
+ "steps": [
+  {
+   "script": "scripts/floodgap.py",
+   "inputs": [
+    "data/manual/claims.d/w3-fr.json"
+   ],
+   "outputs": []
+  },
+  {
+   "script": "scripts/report.py",
+   "inputs": [
+    "data/manual/claims.d/w3-fr.json",
+    "data/manual/number_constructions.d/w3-fr.json"
+   ],
+   "outputs": []
+  },
+  {
+   "script": "scripts/seabed.py",
+   "inputs": [
+    "data/derived/currents_rain.json",
+    "data/derived/hypotheses.json",
+    "data/manual/claims.d/w3-fr.json",
+    "data/manual/number_constructions.d/w3-fr.json"
+   ],
+   "outputs": []
+  },
+  {
+   "script": "scripts/light.py",
+   "inputs": [
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/manual/claims.d/w3-fr.json"
+   ],
+   "outputs": []
+  }
+ ]
+}

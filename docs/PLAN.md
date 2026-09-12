@@ -31,7 +31,7 @@ that could actually win.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-SATI
 the same error the rest of the project audits, committed on our own list. The grouping has
 not been run through a complement test, and it should be before stage 5 uses it.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-FLAW "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-KP-GATE1">**Gate:** passed. [24](SOURCES.md#F-e786dfc514) hypotheses are testable now, spread over several groups, so stage 4 is a real contest.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-GATE1 "What this claim rests on")</sup>
+<span class="claim" data-claim="C-KP-GATE1">**Gate:** passed. [23](SOURCES.md#F-e786dfc514) hypotheses are testable now, spread over several groups, so stage 4 is a real contest.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-GATE1 "What this claim rests on")</sup>
 
 ---
 
@@ -83,7 +83,7 @@ The triage classes:
 - **testable now** — consequence, source and null all available
 - **blocked on a named fetch**
 - **blocked on measurement resolution** — waiting on stage 3's remaining half
-- <span class="claim" data-claim="C-KP-MICROBIAL">**unscoreable** — the deciding dimension has no column. *Microbial, viral and fungal community composition is the worked example: it decides [14](SOURCES.md#F-15dd43136e) hypotheses in the triage, [12](SOURCES.md#F-e661888b83) of them unscoreable, and national marine monitoring has never measured it.*</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-MICROBIAL "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-KP-MICROBIAL">**unscoreable** — the deciding dimension has no column. *Microbial, viral and fungal community composition is the worked example: it decides [14](SOURCES.md#F-15dd43136e) hypotheses in the triage, [11](SOURCES.md#F-e661888b83) of them unscoreable, and national marine monitoring has never measured it.*</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-MICROBIAL "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-KP-ABSENT">An unscoreable hypothesis is marked **unscoreable**, not scored zero. An absent dimension is not evidence of absence.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-ABSENT "What this claim rests on")</sup>
 
@@ -111,12 +111,12 @@ essentially never visited.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-SA
 
 | class | n | share |
 |---|---:|---:|
-| blocked on a named fetch | [61](SOURCES.md#F-15045ed0fb) | [37](SOURCES.md#F-00ac661b28)% |
-| **unscoreable** | [40](SOURCES.md#F-198b20fb90) | [24](SOURCES.md#F-935d9e0296)% |
-| **testable now** | **[24](SOURCES.md#F-e786dfc514)** | **[14](SOURCES.md#F-aff8947a9f)%** |
+| blocked on a named fetch | [62](SOURCES.md#F-15045ed0fb) | [37](SOURCES.md#F-00ac661b28)% |
+| **unscoreable** | [42](SOURCES.md#F-198b20fb90) | [25](SOURCES.md#F-935d9e0296)% |
+| **testable now** | **[23](SOURCES.md#F-e786dfc514)** | **[14](SOURCES.md#F-aff8947a9f)%** |
 | needs an experiment | [20](SOURCES.md#F-64bb5d44db) | [12](SOURCES.md#F-42f0fd7709)% |
-| blocked on measurement resolution | [18](SOURCES.md#F-ab9e2895d5) | [11](SOURCES.md#F-0d520cad5c)% |
-| not established | [3](SOURCES.md#F-6f2641deb0) | [2](SOURCES.md#F-3307597d2e)% |
+| blocked on measurement resolution | [15](SOURCES.md#F-ab9e2895d5) | [9](SOURCES.md#F-0d520cad5c)% |
+| not established | [4](SOURCES.md#F-6f2641deb0) | [2](SOURCES.md#F-3307597d2e)% |
 
 **Four things the shape says.**
 
@@ -124,31 +124,31 @@ essentially never visited.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-SA
 is named in the blocker for [A1](hypodrafts/A1.md "Danish land-based nitrogen load"), [A2](HYPOTHESES.md "Phosphorus load"), [A5](HYPOTHESES.md "Advected nutrients from outside Denmark"), [A7](openproblems/A7.md "Sediment nutrient regeneration"), [B4](HYPOTHESES.md "Riverine particulate organic carbon"), [E2](HYPOTHESES.md "Nitrification demand"), [E11](HYPOTHESES.md "Ammonia toxicity"), [K1](hypodrafts/K1.md "Silicon depletion and the diatom-to-flagellate shift") and [K2](HYPOTHESES.md "Stoichiometric imbalance decides who grows").
 It is now held — [1,805,827](SOURCES.md#F-9fa9c3c21c) rows and [146](SOURCES.md#F-da414cb2c0) parameters from [1970](SOURCES.md#F-3609c5b182), among
 them total N, total P, ortho-P, nitrite+nitrate, ammonium, chlorophyll a, silicon, and
-[156,971](SOURCES.md#F-79f75c8b36) oxygen measurements each carrying a depth — but the triage above
-still counts the nine as blocked on a fetch. Re-scoring them against the data, rather than
-against its absence, is in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md).</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-VANDKEMI "What this claim rests on")</sup>
+[156,971](SOURCES.md#F-79f75c8b36) oxygen measurements each carrying a depth. The triage above
+now classes the nine against what the extract holds rather than against its absence: [E2](HYPOTHESES.md "Nitrification demand") is testable now, and the rest wait on something the extract
+does not carry; [TRIAGE.md](hypodrafts/TRIAGE.md) names each one's blocker.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-VANDKEMI "What this claim rests on")</sup>
 <span class="claim" data-claim="C-KP-ILTKOR">(`iltkor` is declared in `fetch_oda.py`'s topics and has never been fetched: the only one of its six topics with no file on disk.)</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-ILTKOR "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-KP-GROUPS">**Not one hypothesis in group A is testable now.** All [10](SOURCES.md#F-b17d38223a) are blocked,
-unscoreable or unestablished. Of the [24](SOURCES.md#F-e786dfc514) testable now, [6](SOURCES.md#F-c53557ff04) are from group I —
+unscoreable or unestablished. Of the [23](SOURCES.md#F-e786dfc514) testable now, [6](SOURCES.md#F-c53557ff04) are from group I —
 hypotheses about the archive itself — [5](SOURCES.md#F-0596b7e6b1) from C and [3](SOURCES.md#F-5a90478e4b) from Z, the two
-physical groups; none is from the groups on *chemical demand and toxicity*, *biological structure and feedback*, *state, memory and regime*, *surface film, gel and the greasy water itself*, *sediment sickness: symbionts, pathogens and why nothing grows back* or *decay, and the community that does it*. **The archive can test physics and audit itself, and can
+physical groups; none is from the groups on *biological structure and feedback*, *state, memory and regime*, *surface film, gel and the greasy water itself*, *sediment sickness: symbionts, pathogens and why nothing grows back*, *the land side: the medium, not the input* or *decay, and the community that does it*. **The archive can test physics and audit itself, and can
 scarcely test biology or chemistry.**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-GROUPS "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-KP-DIMENSIONS">**The largest blocking dimension is not nutrients.** Microbial, viral and fungal
-community composition alone makes [12](SOURCES.md#F-e661888b83) hypotheses unscoreable, and toxicant
-concentration in a marine matrix another [7](SOURCES.md#F-ad0e6f85ff). **Those two are [19](SOURCES.md#F-0df9013823) of the [40](SOURCES.md#F-198b20fb90).**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-DIMENSIONS "What this claim rests on")</sup>
+community composition alone makes [11](SOURCES.md#F-e661888b83) hypotheses unscoreable, and toxicant
+concentration in a marine matrix another [7](SOURCES.md#F-ad0e6f85ff). **Those two are [18](SOURCES.md#F-0df9013823) of the [42](SOURCES.md#F-198b20fb90).**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-DIMENSIONS "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-KP-REFRAME">**And [36](SOURCES.md#F-2cc76f7f45)% of the field is beyond any reanalysis of existing data**
+<span class="claim" data-claim="C-KP-REFRAME">**And [37](SOURCES.md#F-2cc76f7f45)% of the field is beyond any reanalysis of existing data**
 — unscoreable plus experiment. Which reframes the public argument: the nutrient hypotheses did
-not defeat the alternatives. **[60](SOURCES.md#F-38d4f3aa11) alternatives have never been in a position to compete.**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-REFRAME "What this claim rests on")</sup>
+not defeat the alternatives. **[62](SOURCES.md#F-38d4f3aa11) alternatives have never been in a position to compete.**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-REFRAME "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-KP-CAVEATS">Two caveats. The classification is itself an untested partition. And per
 [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), every "not measured" here means "not found by a
 search whose sensitivity nobody has characterised", so **the unscoreable column is an upper
 bound, not a measurement.**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-CAVEATS "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-KP-GATE4">**Gate:** stage 5 can proceed on the [24](SOURCES.md#F-e786dfc514) testable now.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-GATE4 "What this claim rests on")</sup>
+<span class="claim" data-claim="C-KP-GATE4">**Gate:** stage 5 can proceed on the [23](SOURCES.md#F-e786dfc514) testable now.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-GATE4 "What this claim rests on")</sup>
 
 ---
 
@@ -238,8 +238,8 @@ and read the outcome.**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-TRY "
 
 <span class="claim" data-claim="C-KP-BOUNDARY">**So this is not the analysis failing.** It is the analysis returning a specific,
 defensible answer: *here is the boundary of what observation can settle, and it is closer than
-anyone assumed.* [40](SOURCES.md#F-198b20fb90) of [166](SOURCES.md#F-4196d405de) mechanisms are unscoreable and [20](SOURCES.md#F-64bb5d44db) more need an
-experiment — **[36](SOURCES.md#F-2cc76f7f45)% of the field was never reachable this way**, and no amount of further
+anyone assumed.* [42](SOURCES.md#F-198b20fb90) of [166](SOURCES.md#F-4196d405de) mechanisms are unscoreable and [20](SOURCES.md#F-64bb5d44db) more need an
+experiment — **[37](SOURCES.md#F-2cc76f7f45)% of the field was never reachable this way**, and no amount of further
 modelling moves it.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-BOUNDARY "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-KP-INTERVENE">Past that boundary, intervening is not a retreat from method. It is the only

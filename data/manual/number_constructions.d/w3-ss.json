@@ -1,0 +1,79 @@
+{
+ "constructions": [
+  {
+   "id": "K-SS-SETTLE-RAIN",
+   "title": "Days of each spreading season at or above a daily rain total",
+   "covers": {
+    "file": "data/derived/settle.json",
+    "fields": {
+     "rain.first_year": {
+      "kind": "measured",
+      "is": "The first calendar year with a February-April season in the hourly ERA5 record held in `data/raw/weather`."
+     },
+     "rain.last_year": {
+      "kind": "measured",
+      "is": "The last calendar year with a February-April season in that record."
+     },
+     "rain.seasons": {
+      "kind": "counted",
+      "is": "February-April seasons in the record. Each must hold every day of its three months, or the page is refused, so none is partial."
+     },
+     "rain.by_threshold.*.mm": {
+      "kind": "stipulated",
+      "is": "The daily total a row counts days at. Chosen by the page (`THRESHOLDS_MM` in `scripts/pages/settle.py`); not measured."
+     },
+     "rain.by_threshold.*.median_days": {
+      "kind": "computed",
+      "is": "The median over seasons of the number of days in a season whose total is at or above the row's threshold. One day is one UTC calendar day; a storm spanning two days counts twice, so this counts days, not events."
+     },
+     "rain.by_threshold.*.min_days": {
+      "kind": "counted",
+      "is": "The fewest such days in any one season of the record."
+     },
+     "rain.by_threshold.*.max_days": {
+      "kind": "counted",
+      "is": "The most such days in any one season of the record."
+     }
+    }
+   },
+   "what": "For each daily rain total the page counts at, how many days of a February-April season reach it: the median over the seasons of the record, and the fewest and most.",
+   "model": "`rain_days()` sums the hourly `precipitation` values of the Open-Meteo ERA5 files per calendar day of their own clock, $P_d = \\sum_{h \\in d} p_h$, skipping missing hours; for each year it keeps the days of February, March and April, refuses any season that is not whole (`calendar.monthrange`), and counts $n_{y,t} = \\#\\{d \\in y : P_d \\ge t\\}$ for each threshold `t`. The median, minimum and maximum of $n_{y,t}$ over the years are stored.",
+   "assumptions": [
+    "The value at the record's grid point stands for rain over Copenhagen: it is the point `scripts/streams.py` names, and a reanalysis grid-cell average, not a gauge.",
+    "Days are UTC days: the record's clock is GMT (checked at every build; the page is refused otherwise), so a Danish evening storm can fall on two days."
+   ],
+   "justified": [
+    {
+     "text": "The counts are made from every hour of the fetched record, one raw file at a time, with incomplete seasons refused rather than counted short.",
+     "ref": "scripts/pages/settle.py"
+    },
+    {
+     "text": "The same hourly record is what the rest of the project reads for rain, so the page's counts and its other rain figures share one source.",
+     "ref": "scripts/streams.py"
+    }
+   ],
+   "gaps": [
+    "A grid-cell average smooths local downpours, so the counts at the higher thresholds are more likely to understate what one catchment sees; how much is not measured here.",
+    "Days are not events: the table cannot say how many separate storms a season holds."
+   ],
+   "void_if": [
+    "the raw weather files are refetched for another point or with another time zone",
+    "the season months or thresholds are changed without the page's wording following"
+   ],
+   "licenses": "How many days of a February-April season, in this record, reach each daily total - the sample a sampler triggered at that total would see.",
+   "not_licensed": "Counts of storms or events, rain at any one catchment, or anything about an autumn control window, which is not counted.",
+   "watches": [
+    "scripts/pages/settle.py",
+    "data/raw/weather/wind_2019_2025.json"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: settle.py's only change since agent w3-ss confirmed this is my rewording of one printed string, the marine tier's line; rain_days() and the fields it writes are untouched. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/settle.py": "368021f06d9968c2",
+     "data/raw/weather/wind_2019_2025.json": "57528b257df540bc"
+    }
+   }
+  }
+ ]
+}

@@ -2,8 +2,8 @@
 """Re-score the nine hypotheses that were blocked on the vandkemi fetch.
 
 TRIAGE.md named ODA vandkemi (Emne_10_11) as the blocker for A1, A2, A5, A7, B4,
-E2, E11, K1 and K2. The fetch has happened - 1,805,827 rows, 1,126 stations, 147
-parameters, 1970-2026 - so the classification "blocked on a fetch" is stale for
+E2, E11, K1 and K2. The fetch has happened (its size is logged when this runs, and kept in
+data/derived/ds_facts.json), so the classification "blocked on a fetch" is stale for
 all nine and has to be replaced by what the data actually supports.
 
 The first thing this does is not a test. It is an availability matrix: for each
@@ -41,8 +41,8 @@ TEMPS = os.path.join(DERIVED, "surface_temp.csv.gz")
 OUT = os.path.join(DERIVED, "rescore.json")
 
 # The exact parameter strings, verified against the enum sweep rather than
-# guessed - and with the unit each must carry, because 14 of 147 parameters in
-# this file appear under more than one.
+# guessed - and with the unit each must carry, because some parameters in this
+# file appear under more than one (enums.json lists the units of each).
 P = {
     "chl":  ("Klorofyl a", "µg/l"),
     "o2":   ("Oxygen indhold", "mg/l"),
@@ -53,7 +53,7 @@ P = {
     "nh4":  ("Ammoniak+ammonium-N", "µg/l"),
     "si":   ("Silicium", "µg/l"),
     "ph":   ("pH", "pH"),
-    "sal":  ("Salinitet", "psu"),
+    "sal":  ("Salinitet", "promille"),   # the extract carries salinity in promille only
     "ss":   ("Suspenderede stoffer", "mg/l"),
 }
 
@@ -63,7 +63,9 @@ NEEDS = {
     "A1": (["chl", "o2"], ["river load (Vandloeb STOFTRANSPORT - a different "
                            "ODA endpoint; run() hardcodes Hav)"]),
     "A2": (["tp", "dip", "chl"], ["river P flux (STOFTRANSPORT)"]),
-    "A5": (["tn", "dip", "si"], []),
+    "A5": (["tn", "dip", "si"], ["volume transport at the Belt and Sound sections - "
+                                 "A5's own Needs line asks for it, and the source "
+                                 "register found no open series"]),
     "A7": (["dip", "o2"], ["river input for the 'without a matching input' "
                            "clause (STOFTRANSPORT)"]),
     "B4": (["ss"], ["stream stations - this extract is the Hav topic, so "

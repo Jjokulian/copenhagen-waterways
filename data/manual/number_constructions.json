@@ -195,7 +195,7 @@
      "ref": "scripts/depth_clock.py:121"
     },
     {
-     "text": "Where supplied cast times exist, the offset between the supplied and the borrowed clock is measured cast by cast, so the borrowing can be checked instead of trusted.",
+     "text": "Where a station-day has both a supplied and a borrowed clock, the offset between the two is recorded for every oxygen row on that station-day - a station-day comparison, not a cast-by-cast one - so the borrowing can be checked instead of trusted.",
      "ref": "scripts/depth_clock.py:178"
     },
     {
@@ -218,8 +218,8 @@
     "scripts/depth_clock.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read against the clock.py version of the code, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (re-read depth_clock.py: both clocks are keyed by station and date, and an offset is appended for each oxygen row whose station-day has both; the declaration said cast by cast and now says station-day, as agent w3-dq found. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
     "saw": {
      "data/derived/clock_convention.json": "a3ea19fa01ca5d8d",
      "scripts/clock.py": "e2fb9cafe90c804b",
@@ -345,10 +345,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in saving register files atomically; resolve() is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: the only change to claims.py since the last reading is in the {read:} branch - entities decoded before a phrase is compared; {count:} is untouched. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "4f70bbd115d73cdb"
+     "scripts/claims.py": "a4f4f23278533e60"
     }
    }
   },
@@ -360,7 +360,7 @@
    },
    "produces": "document",
    "what": "A value as an external document states it, confirmed to be present in the document's pinned text.",
-   "model": "The phrase carrying the value must occur, with whitespace normalised and HTML tags set aside, in the pinned text; and the value shown must be one of the numbers that phrase states, compared as a number whatever its separators. Otherwise the page is refused.",
+   "model": "The phrase carrying the value must occur, with whitespace normalised and HTML tags set aside, in the pinned text; and the value shown must be one of the numbers that phrase states, compared as a number whatever its separators. Otherwise the page is refused. HTML tags are set aside and entities read as the characters they stand for, in the pinned text and in the phrase alike.",
    "assumptions": [
     "The phrase means what the claim takes it to mean."
    ],
@@ -386,10 +386,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: claims.py changed only in saving register files atomically; resolve() is identical to the version last read, verified by diff. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read resolve()'s {read:} branch: it now decodes HTML entities in the pinned text and in the phrase before comparing, as the declaration now says; the check is otherwise the same - tags set aside, whitespace collapsed, the shown number one the phrase states. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/claims.py": "4f70bbd115d73cdb"
+     "scripts/claims.py": "a4f4f23278533e60"
     }
    }
   },
@@ -444,7 +444,7 @@
    },
    "produces": "stipulated",
    "what": "A value chosen rather than measured - a threshold, a limit - with the reason for the choice written beside it.",
-   "model": "Declared once under `params` in `data/manual/claims.json` and shown with its reason wherever it is used.",
+   "model": "Declared once under `params`, in `data/manual/claims.json` or in a fragment in `data/manual/claims.d/`, with its value, the form it is shown in and its reason, and shown with its reason wherever it is used.",
    "assumptions": [
     "The reason given still holds."
    ],
@@ -467,31 +467,22 @@
     "data/manual/claims.d/*.json#params"
    ],
    "confirmed": {
-    "by": "Claude (re-read every params block in the claims fragments: the only stated values added are w1-lr's IUPAC atomic weights of carbon, hydrogen and nitrogen, each with its reason; the wave-2 fragments that made this stale add none. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (read every fragment's params: all 132 carry a value, the form shown and a reason. The wave-3 additions are design choices of the drafts' and open problems' tests, each saying so, and two rounding units read from how SR353 prints its totals; the model now says params live in fragments too. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "data/manual/claims.json#params": "762634f9547c3c3b",
-     "data/manual/claims.d/drafts-a.json#params": "44136fa355b3678a",
      "data/manual/claims.d/drafts-b.json#params": "90814001a2b364c7",
-     "data/manual/claims.d/farm.json#params": "missing",
-     "data/manual/claims.d/methodlab-a.json#params": "missing",
-     "data/manual/claims.d/methodlab-b.json#params": "missing",
      "data/manual/claims.d/nitrogen.json#params": "7353d9286191de1e",
      "data/manual/claims.d/politics.json#params": "1488bdd72ea933e2",
-     "data/manual/claims.d/w1-ar.json#params": "missing",
-     "data/manual/claims.d/w1-ds.json#params": "missing",
      "data/manual/claims.d/w1-lr.json#params": "8a98f7141c4c956b",
-     "data/manual/claims.d/w1-ni.json#params": "missing",
-     "data/manual/claims.d/w1-ob.json#params": "missing",
-     "data/manual/claims.d/w1-pg.json#params": "missing",
-     "data/manual/claims.d/w2-cs.json#params": "missing",
-     "data/manual/claims.d/w2-hyp.json#params": "44136fa355b3678a",
-     "data/manual/claims.d/w2-in.json#params": "missing",
-     "data/manual/claims.d/w2-kp.json#params": "missing",
-     "data/manual/claims.d/w2-op.json#params": "missing",
-     "data/manual/claims.d/w2-pc.json#params": "missing",
-     "data/manual/claims.d/w2-po.json#params": "missing",
-     "data/manual/claims.d/water.json#params": "missing"
+     "data/manual/claims.d/w3-af.json#params": "5fbd3f23d5c24426",
+     "data/manual/claims.d/w3-ba.json#params": "8738528500a3df0f",
+     "data/manual/claims.d/w3-cc.json#params": "b2bffcae2b57addc",
+     "data/manual/claims.d/w3-dz.json#params": "9bd9c25cca3b8317",
+     "data/manual/claims.d/w3-gi.json#params": "41aab4abe272f7d5",
+     "data/manual/claims.d/w3-il.json#params": "b60fda72457665b9",
+     "data/manual/claims.d/w3-kd.json#params": "36bf2bfd2d90f9df",
+     "data/manual/claims.d/w3-op.json#params": "ddcfbdc640e3b805"
     }
    }
   },
@@ -806,13 +797,13 @@
     "data/derived/terraincheck.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: export_flood.py changed only in write_readme() and a new helper for it; main(), which writes the manifest, is identical to the committed version, and docs/data/flood2012/manifest.json has the same hash; floodmaps.py changed only in a comment, with an identical syntax tree. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/convergence.py": "85c913e91bcc269c",
-     "scripts/floodmaps.py": "b6aac5de8e3311c4",
+     "scripts/floodmaps.py": "eefd81a4560f94b7",
      "scripts/floodalign.py": "1763009c1cf3e320",
-     "scripts/export_flood.py": "c52b0ae14d150596",
+     "scripts/export_flood.py": "91c7e5474d4bb01b",
      "scripts/floodreg.py": "6b088c68b01a063a",
      "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
      "docs/data/flood2012/manifest.json": "1a970644e76ae011",
@@ -861,10 +852,6 @@
      "ref": "scripts/floodmaps.py:359"
     },
     {
-     "text": "Every run checks whether modelled flooding avoids open water at each depth band against the water's own share of the grid, and reports a FAIL when it does not - which it now does.",
-     "ref": "scripts/floodgap.py:595"
-    },
-    {
      "text": "The sheets were made mutually consistent by photograph-to-photograph matching and a bundle adjustment anchored on control points, and paint over open water fell, a quantity the adjustment did not optimise for.",
      "ref": "docs/OPEN_PROBLEMS.md:220"
     },
@@ -875,11 +862,11 @@
    ],
    "gaps": [
     "The threshold `FLOOD_DEPTH_MIN` is justified only by an inline comment calling the shallowest band a wet film (`scripts/floodgap.py:33`). No source is cited.",
-    "Two comments disagree. floodgap.py says most classified cells are an exact match to a palette colour, 'verified, not assumed' (`scripts/floodgap.py:244`); floodmaps.py sets a colour tolerance because the sheets are JPEG and an exact match is rare (`scripts/floodmaps.py:92`). No code in either script computes the exact-match share.",
+    "No code computes the share of classified cells that match a palette colour exactly. floodgap.py's comment says such a check was once run and not stored (`scripts/floodgap.py:244`); floodmaps.py sets a colour tolerance because the sheets are JPEG and an exact match is rare (`scripts/floodmaps.py:92`).",
     "Max-per-cell resampling biases the area upward at every flood edge, since a cell counts whole if any pixel in it floods. The size of this bias is not measured.",
     "Every placement step omits the meridian convergence (`data/derived/convergence.json`). Its effect on this area, through the water mask and sheet overlaps, has never been computed; only its effect on the terrain check was tried.",
     "The water mask adds OSM water only if an optional raw file is present (`scripts/floodreg.py:163`), so the result depends on a file whose absence produces no warning.",
-    "The check that modelled flooding avoids open water now fails for several depth bands. A placement error or a fault in the water layer could explain it, and nothing yet decides between them."
+    "`qa_flood_vs_water.passes` assumes that correctly placed flooding avoids open water. Part of the paint on water was placement error - it shrank when the sheets were registered against each other - and the rest may be the city's paint on lakes and the harbour, so neither PASS nor FAIL says anything about placement. No page renders it; it should be dropped, or replaced by a test resting on another premise, such as the bundle adjustment's residuals."
    ],
    "void_if": [
     "Any sheet's registration changes. The area has moved with one sheet's placement before (`docs/KNOWN_AND_UNKNOWN.md:86`).",
@@ -909,11 +896,11 @@
     "data/derived/floodmaps/osterbro.band.npy"
    ],
    "confirmed": {
-    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read floodgap.py against agent w3-fr's finding: the water check's premise does not hold, so it is no longer listed as a justification and is recorded as a gap; the unstored palette check is recorded as unstored. Computation unchanged - the file changed only in comments, syntax tree identical. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/floodgap.py": "76ca448241807d3d",
-     "scripts/floodmaps.py": "b6aac5de8e3311c4",
+     "scripts/floodgap.py": "740a7dae580b98d0",
+     "scripts/floodmaps.py": "eefd81a4560f94b7",
      "scripts/floodreg.py": "6b088c68b01a063a",
      "scripts/floodalign.py": "1763009c1cf3e320",
      "data/derived/floodmaps/_georef.json": "62b9ceaed43893a4",
@@ -1505,10 +1492,10 @@
     "docs/hypodrafts/K1.md"
    ],
    "confirmed": {
-    "by": "Claude (re-read against the rewritten K1 draft by agent w3-kd: its policy-shock premise is no longer claimed there, so it is recorded here as an unestablished conditional in gaps, not as a justification; section references now name the sections. rescore.py unchanged. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read rescore.py after my edit: A5's still-missing list now names volume transport at the Belt and Sound sections, as A5's own Needs line asks and the source register finds no open series; the salinity key takes promille, the unit the extract carries; a docstring and a comment lost typed counts. The matrix logic and every test are unchanged - the tests read no salinity and select no hypothesis by class. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/rescore.py": "0f053842cbb98d60",
+     "scripts/rescore.py": "7bbddbd8f771e443",
      "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3",
      "docs/HYPOTHESES.md": "4ece3f8f0ef80d64",
      "docs/hypodrafts/K1.md": "aa8553e22bf51878"

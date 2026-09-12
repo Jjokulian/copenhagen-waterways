@@ -1,0 +1,197 @@
+{
+ "_what": "Archive entries added by the parent's audit of published sentences that had vanished without one (scratchpad audit_vanished.py, 2026-09-11).",
+ "claims": [
+  {
+   "id": "C-AU-OLD-GULLIES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Copenhagen's cloudburst programme would cut over a stated number of gully gratings and chambers.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "PROGRAMME.md",
+    "commit": "7954022",
+    "file": "docs/PROGRAMME.md",
+    "begin": "The same scope in structures rather than in metres",
+    "end": "which is the number a programme is actually planned in",
+    "why": "No source this project holds gives the counts of gully gratings and chambers, and no script counts them."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The same scope in structures rather than in metres: about 102,000 gully gratings to cut over and 73,000 chambers standing in the way of, or available to, the work — which is the number a programme is actually planned in",
+     "texts": "5d4fe468a39660d4"
+    }
+   }
+  },
+  {
+   "id": "C-AU-OLD-DESTRUCTION",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "High-temperature incineration and supercritical water oxidation destroy PFAS at stated temperatures, times and efficiencies.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "PROGRAMME.md",
+    "commit": "7954022",
+    "file": "docs/PROGRAMME.md",
+    "begin": "| High-temperature incineration |",
+    "end": "not yet at municipal scale.",
+    "why": "The temperatures, residence times and destruction efficiencies had no source this project holds."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| High-temperature incineration | >1,100 °C, 2–3 s residence, excess oxygen | >99.99% mineralisation for AFFF and similar wastes | Below that, the parent compound disappears but products of incomplete combustion form — perfluorocarboxylic acids, perfluoroalkanes, `C₂F₆`, `CHF₃`. Ordinary municipal waste incineration is not this. | | Supercritical water oxidation | 650 °C, 22 MPa, ~11% excess `O₂`, 10–11 s | >99.999% for all 12 PFAAs measured | Also produces small volatile organofluorines including trifluoromethane, a potent greenhouse gas. Emerging, not yet at municipal scale.",
+     "texts": "11600f817c6bd44e"
+    }
+   }
+  },
+  {
+   "id": "C-AU-OLD-3M-RANGE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The `3M` settlement with US public water systems lies in a stated range.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "PROGRAMME.md",
+    "commit": "7954022",
+    "file": "docs/PROGRAMME.md",
+    "begin": "| 3M, public water systems |",
+    "end": "12.5bn",
+    "why": "The range was typed in; the pinned source gives the settlement as one figure, which the replacement states."
+   },
+   "replaced_by": [
+    "C-PG-I-PFAS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| 3M, public water systems | 10.5–12.5bn",
+     "texts": "3e5f70f9ba9527ff"
+    }
+   }
+  },
+  {
+   "id": "C-AU-OLD-PULS-ROUGH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Municipalities report roughly a stated number of overflow structures and rain-dependent discharge points each year.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "The national point-source database behind",
+    "end": "event counts per year.",
+    "why": "The approximate counts were typed in; the extract held counts the combined-sewer overflow structures and separate stormwater outfalls exactly."
+   },
+   "replaced_by": [
+    "C-DS-PULS-EXTRACT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The national point-source database behind §2, run by Danmarks Miljøportal. Municipalities report roughly 4,500 overflow structures and ~20,000 rain-dependent discharge points annually, including measured or modelled overflow volumes and event counts per year.",
+     "texts": "3fed84810dc5081a"
+    }
+   }
+  },
+  {
+   "id": "C-AU-OLD-CENSOR-COUNT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "ResultatAttribut marks a stated number of rows as below the detection limit.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "DATA_SOURCES.md",
+    "commit": "5df1889",
+    "file": "docs/DATA_SOURCES.md",
+    "begin": "Censoring hidden behind column names",
+    "end": "biases the parameter high.",
+    "why": "The count is not reproduced by the extract held now; the replacement counts the censored rows from the data."
+   },
+   "replaced_by": [
+    "C-DS-CENSOR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Censoring hidden behind column names that do not say so. `ResultatAttribut` is `<` on 85,035 rows, where `Resultat` holds *the detection limit, not the measurement* — read as a value it biases the parameter high.",
+     "texts": "e5c1eb9a6c7a682f"
+    }
+   }
+  },
+  {
+   "id": "C-AU-OLD-KU-CENSOR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The censored water-chemistry rows number a stated count, read as measurements.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "KNOWN_AND_UNKNOWN.md",
+    "commit": "00a157f",
+    "file": "docs/KNOWN_AND_UNKNOWN.md",
+    "begin": "| **Censoring with no name** |",
+    "end": "Secchi readings that hit the bottom |",
+    "why": "The censored-row count is not reproduced by the extract held now; DATA_SOURCES counts the censored rows from the data."
+   },
+   "replaced_by": [
+    "C-DS-CENSOR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| Censoring with no name | read as measurements | `ResultatAttribut` = `<` on 85,035 rows, where the value is the *detection limit*; `SigtTilBund` on 26,380 Secchi readings that hit the bottom |",
+     "texts": "d650ffd6523435d0"
+    }
+   }
+  },
+  {
+   "id": "C-AU-OLD-ROSK-TABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Station spreads within each half of Roskilde Fjord, by variable, as the table gave them.",
+   "retired": {
+    "on": "2026-09-11",
+    "from": "AREAS.md",
+    "commit": "4469fc7",
+    "file": "docs/AREAS.md",
+    "begin": "| variable | basket | months with 3+ stations",
+    "end": "sd 0.44 | 6.64 | 0.07",
+    "why": "Superseded by the live computation in station_places.py, whose figures differ; what changed between the two is not recorded with the table."
+   },
+   "replaced_by": [
+    "C-AR-ROSK-HALVES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| variable | basket | months with 3+ stations | spread between stations, same month | spread across months | ratio | |---|---|---:|---:|---:|---:| | bottom oxygen | indre `DKCOAST2` | 221 | sd 1.82, median range 3.35 mg/l | 2.80 | 0.65 | | bottom oxygen | ydre `DKCOAST1` | 113 | sd 0.81, range 0.80 | 3.20 | 0.25 | | surface salinity | indre `DKCOAST2` | 222 | sd 0.49, range 1.06 | 1.71 | 0.29 | | surface salinity | ydre `DKCOAST1` | 114 | sd 1.07, range 2.08 | 1.22 | 0.88 | | bottom temperature | indre `DKCOAST2` | 224 | sd 1.64 | 5.36 | 0.31 | | bottom temperature | ydre `DKCOAST1` | 113 | sd 0.44 | 6.64 | 0.07",
+     "texts": "949dc68cb60dc678"
+    }
+   }
+  }
+ ]
+}

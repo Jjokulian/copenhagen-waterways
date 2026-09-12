@@ -256,11 +256,11 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: programme.py changed only in one sentence of prose - fedtemøg names rotting algae, not the discharge; no computation changed, verified by hashing the file with that sentence reversed. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: programme.py's only change against the committed version is my one-line grammar fix - 'is' or 'are' after the nutrient group's testable count, in a branch taken only when that count is not zero; no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/streams.py": "ba3177e06932c91c",
-     "scripts/programme.py": "f26b22368561be94"
+     "scripts/programme.py": "7ba7340da40f4dd0"
     }
    }
   },
@@ -315,11 +315,11 @@
     "scripts/floodgap.py"
    ],
    "confirmed": {
-    "by": "fork politics (written against the producing scripts on 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (re-read: floodgap.py changed only in two comments - typed shares that no longer match the data are gone, and the unstored palette check is called unstored, as agent w3-fr found; the syntax tree is identical, so no computation changed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
     "saw": {
      "scripts/rivermap.py": "eae940ce0c09aa37",
-     "scripts/floodgap.py": "76ca448241807d3d"
+     "scripts/floodgap.py": "740a7dae580b98d0"
     }
    }
   },
@@ -429,10 +429,10 @@
     "scripts/floodmaps.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: floodmaps.py changed only in two docstrings, where figures no run stored are now described in words and marked as unstored; no code changed, verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: floodmaps.py changed only in one comment - the depth PNG holds each band's legend colour, not a band index, as agent w3-dq found; the parsed syntax tree is identical before and after, so no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/floodmaps.py": "b6aac5de8e3311c4"
+     "scripts/floodmaps.py": "eefd81a4560f94b7"
     }
    }
   },
@@ -524,11 +524,11 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: programme.py changed only in one sentence of prose - fedtemøg names rotting algae, not the discharge; no computation changed, verified by hashing the file with that sentence reversed. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: programme.py's only change against the committed version is my one-line grammar fix - 'is' or 'are' after the nutrient group's testable count, in a branch taken only when that count is not zero; no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
      "scripts/architecture.py": "af0d805385dfbef8",
-     "scripts/programme.py": "f26b22368561be94"
+     "scripts/programme.py": "7ba7340da40f4dd0"
     }
    }
   },
@@ -715,10 +715,10 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: programme.py changed only in one sentence of prose - fedtemøg names rotting algae, not the discharge; no computation changed, verified by hashing the file with that sentence reversed. 2026-09-11; not yet read by the project owner)",
+    "by": "Claude (re-read: programme.py's only change against the committed version is my one-line grammar fix - 'is' or 'are' after the nutrient group's testable count, in a branch taken only when that count is not zero; no computation changed. 2026-09-11; not yet read by the project owner)",
     "on": "2026-09-11",
     "saw": {
-     "scripts/programme.py": "f26b22368561be94"
+     "scripts/programme.py": "7ba7340da40f4dd0"
     }
    }
   },

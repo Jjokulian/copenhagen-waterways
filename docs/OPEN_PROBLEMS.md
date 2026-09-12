@@ -36,7 +36,8 @@ could tell locally derived from imported material. It needs sediment samples.</s
 [55](SOURCES.md#F-b76b31049f) kt a year.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-2-LOAD "What this claim rests on")</sup> <span class="claim" data-claim="C-OP-2-EXTENT">September oxygen-depletion
 extent was [7,500](SOURCES.md#F-934bda9fbc) km² in 2023 and [11,000](SOURCES.md#F-066dfb9a42) km² in 2024 - by DCE's note on 2024 nearly half as
 large again as 2023, and the second largest registered, exceeded only by 2002. By late
-September 2025 it was [34](SOURCES.md#F-d81abd2971)% of 2024's area.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-2-EXTENT "What this claim rests on")</sup>
+September 2025 the register's figure was [34](SOURCES.md#F-d81abd2971)% of 2024's September area; it does not
+say whether the two were read at the same point in the month.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-2-EXTENT "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-OP-2-NOTREND">So the extremes have not fallen with a halved load, and the swing from one year to the next is large. No source this project holds explains either.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-2-NOTREND "What this claim rests on")</sup>
 
@@ -80,9 +81,10 @@ instruments. This project found no published regression of that form.</span><sup
 
 <span class="claim" data-claim="C-OP-5-METHOD">The reporting method is modelled annual volume times a fixed concentration, checked against that same concentration, with no flow rate recorded.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-5-METHOD "What this claim rests on")</sup> <span class="claim" data-claim="C-OP-5-THRESHOLD">Sediment resuspension in a basin is a *threshold* in flow, so the mass is plausibly dominated by a handful of events the method averages away.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-5-THRESHOLD "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-OP-5-SETTLE">**What would settle it.** Flow-proportional sampling at a handful of structures
-across a range of event sizes - videnniveau [5](SOURCES.md#F-3a70a9dc3f) in Miljøstyrelsen's own scheme,
-[30](SOURCES.md#F-00b2f8d525)% uncertainty, and the highest level in their hierarchy. How many structures
+<span class="claim" data-claim="C-OP-5-SETTLE">**What would settle it.** Measuring the overflow at a handful of structures
+across a range of event sizes - both its flow, directly or by mass balance, and the substance
+concentrations in the overflowing water. That is videnniveau [5](SOURCES.md#F-3a70a9dc3f) in Miljøstyrelsen's own scheme:
+[30](SOURCES.md#F-00b2f8d525)% uncertainty on the discharged mass, the highest level in their hierarchy. How many structures
 are measured this way is not in anything this project holds.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-5-SETTLE "What this claim rests on")</sup>
 
 ---
@@ -309,14 +311,14 @@ threshold is actually *about* - is essentially never visited.</span><sup class="
 <span class="claim" data-claim="C-OP-17-MOON">Two cycles were tested alongside the sun. **The moon does nothing detectable** - every oxygen term stays within ±[0.039](SOURCES.md#F-b04b8889f8) mg/l across the window widths, and the saturation terms flip sign between window widths. That is the expected answer: a full moon on a clear night gives [0.05](SOURCES.md#F-a39f8ed548)-[0.3](SOURCES.md#F-a39f8ed548) lux against [32,000](SOURCES.md#F-bc3273e2e0)-[100,000](SOURCES.md#F-bc3273e2e0) for direct sunlight, less than a hundred-thousandth, and cannot drive photosynthesis at any level these instruments resolve.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-17-MOON "What this claim rests on")</sup>
 <span class="claim" data-claim="C-OP-17-TIDE">**The spring-neap cycle is suggestive and no more**: neap comes out highest in oxygen at every window width ([+0.030](SOURCES.md#F-90fa5f2ba7), [+0.021](SOURCES.md#F-aaa774cb17), [+0.031](SOURCES.md#F-4c19488db1), [+0.039](SOURCES.md#F-ceefccf375) mg/l), a consistent sign on a tiny effect. Lunar phase is *forcing*, not water level, and inferring height from phase would be a model of the moon presented as a measurement of the sea. DMI's open sea-level series, oceanObs, would settle it.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-17-TIDE "What this claim rests on")</sup>
 
-## 18. The vandkemi fetch: [2](SOURCES.md#F-f392c48f94) of [9](SOURCES.md#F-2ccca457b4) hypotheses testable
+## 18. The vandkemi fetch: [1](SOURCES.md#F-f392c48f94) of [9](SOURCES.md#F-2ccca457b4) hypotheses testable
 
 <span class="claim" data-claim="C-OP-18-SET">`scripts/rescore.py` takes the hypotheses listed as waiting on the ODA `vandkemi` fetch - [A1](hypodrafts/A1.md "Danish land-based nitrogen load"), [A2](HYPOTHESES.md "Phosphorus load"), [A5](HYPOTHESES.md "Advected nutrients from outside Denmark"), [A7](openproblems/A7.md "Sediment nutrient regeneration"), [B4](HYPOTHESES.md "Riverine particulate organic carbon"), [E2](HYPOTHESES.md "Nitrification demand"), [E11](HYPOTHESES.md "Ammonia toxicity"), [K1](hypodrafts/K1.md "Silicon depletion and the diatom-to-flagellate shift") and [K2](HYPOTHESES.md "Stoichiometric imbalance decides who grows") - and checks, per hypothesis, which of the variables its consequence needs are now in hand:</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-18-SET "What this claim rests on")</sup>
 
 | | |
 |---|---|
-| **testable now** | [2](SOURCES.md#F-f392c48f94) — [A5](HYPOTHESES.md "Advected nutrients from outside Denmark"), [E2](HYPOTHESES.md "Nitrification demand") |
-| **partly unblocked; a second blocker was behind the first** | **[7](SOURCES.md#F-1b7430e469)** |
+| **testable now** | [1](SOURCES.md#F-f392c48f94) — [E2](HYPOTHESES.md "Nitrification demand") |
+| **partly unblocked; a second blocker was behind the first** | **[8](SOURCES.md#F-1b7430e469)** |
 
 <span class="claim" data-claim="C-OP-18-LOCKS">**A blocker can hide a blocker.** [A1](hypodrafts/A1.md "Danish land-based nitrogen load") and [A2](HYPOTHESES.md "Phosphorus load") need river load, which lives on a different ODA endpoint that `fetch_oda.py` cannot currently reach: its `run()` opens the Hav topic only. [A7](openproblems/A7.md "Sediment nutrient regeneration")'s *without a matching river input* clause needs the same. [K1](hypodrafts/K1.md "Silicon depletion and the diatom-to-flagellate shift") needs phytoplankton counts and [K2](HYPOTHESES.md "Stoichiometric imbalance decides who grows") a species assemblage, neither held. [E11](HYPOTHESES.md "Ammonia toxicity") needs temperature and salinity in the same bottle. [B4](HYPOTHESES.md "Riverine particulate organic carbon") needs *stream* stations, and this is the marine topic, so riverine particulate carbon was never going to be in it: its [19,114](SOURCES.md#F-dec8dbfc12) suspended-solids rows stop in 2017 and sit at [110](SOURCES.md#F-568821e8ea) stations.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-18-LOCKS "What this claim rests on")</sup> <span class="claim" data-claim="C-OP-18-TRIAGE">**That generalises: a triage counts the blocker someone wrote down, not the number of locks on the door.**</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-18-TRIAGE "What this claim rests on")</sup>
 

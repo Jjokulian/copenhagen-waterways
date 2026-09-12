@@ -453,6 +453,7 @@ const GROUPS = [
   ["What the water is doing", [
     ["PLACES.md",       "Places, not categories"],
     ["NITROGEN.md",     "What the sea actually receives"],
+    ["GRUNDLAGET.md",   "What the nitrogen requirement rests on"],
     ["OXYGEN.md",       "What actually removes the oxygen"],
     ["CURRENTS.md",     "Where the water goes"],
     ["SEABED.md",       "The seabed, the wind, and what stays put"],
@@ -476,7 +477,7 @@ const GROUPS = [
     ["KNOWN_AND_UNKNOWN.md", "What is known, by whom"],
     ["HYPOTHESES.md",   "The field of hypotheses"],
     ["HYPOTHESIS_DATA.md", "What the data holds for each hypothesis"],
-    ["hypodrafts/TRIAGE.md", "All 166 hypotheses, triaged"],
+    ["hypodrafts/TRIAGE.md", "Every hypothesis, triaged"],
     ["hypodrafts/AUDIT.md",  "The drafts, audited"],
     ["PLAN.md",         "The order of work"],
     ["AGENT_BRIEF.md",  "Standing brief"],
@@ -583,6 +584,11 @@ const ROUTES = [
    sees and shares - only the fetch URL is prefixed, and it is prefixed in exactly one
    place so the two can never drift apart. */
 const DOCS_DIR = "docs/";
+/* Any markdown document under docs/ is rendered here, listed in the sidebar or not.
+   A link to an unlisted page (a hypothesis draft, say) must not fall through to the
+   raw file: the browser would show the markdown source instead of the page. The
+   pattern admits plain relative paths only - no "..", no scheme, no query. */
+const isDocPath = f => /^[A-Za-z0-9_-]+(\/[A-Za-z0-9_-]+)*\.md$/.test(f);
 const urlOf = f => DOCS_DIR + f;
 const titleOf = f => (DOCS.find(([x]) => x === f) || [, f])[1];
 const leadsTo = f => Object.keys(META).filter(k => (META[k].after || []).includes(f));
@@ -620,7 +626,7 @@ function current() {
   const raw = decodeURIComponent(location.hash.slice(1));
   const cut = raw.indexOf("::");
   const want = cut < 0 ? raw : raw.slice(0, cut);
-  return { file: DOCS.some(([f]) => f === want) ? want : "map",
+  return { file: DOCS.some(([f]) => f === want) || isDocPath(want) ? want : "map",
            section: cut < 0 ? "" : raw.slice(cut + 2) };
 }
 
@@ -1450,7 +1456,7 @@ function resolveLinks(root, file) {
        filename, fails to find it, and shows the map instead. */
     if (raw && raw[0] === "#" && raw.length > 1) {
       const frag = raw.slice(1);
-      if (!DOCS.some(([f]) => f === frag) && frag.indexOf("::") < 0)
+      if (!DOCS.some(([f]) => f === frag) && !isDocPath(frag) && frag.indexOf("::") < 0)
         a.setAttribute("href", "#" + file + "::" + frag);
       continue;
     }
@@ -1479,7 +1485,8 @@ function resolveLinks(root, file) {
                                     : "Where this number comes from";
     }
     a.setAttribute("href",
-      doc && DOCS.some(([f]) => f === doc) ? "#" + doc : p + raw.slice(cut < 0 ? raw.length : cut));
+      doc && (DOCS.some(([f]) => f === doc) || isDocPath(doc)) ? "#" + doc
+          : p + raw.slice(cut < 0 ? raw.length : cut));
   }
   for (const img of root.querySelectorAll("img[src], iframe[src]")) {
     const raw = img.getAttribute("src");
@@ -2071,6 +2078,10 @@ async function show() {
     const r = await fetch(urlOf(file), { cache: "no-cache" });
     if (!r.ok) throw new Error(`${file} — HTTP ${r.status}`);
     docEl.innerHTML = mdParse(await r.text());
+    if (!DOCS.some(([f]) => f === file)) {  // an unlisted page names itself
+      const h = docEl.querySelector("h1");
+      if (h) { hereLabel = h.textContent.trim(); document.title = hereLabel + " — Copenhagen Waterways"; }
+    }
     nvMath(docEl);
     await drawMermaid(docEl);
     resolveLinks(docEl, file);

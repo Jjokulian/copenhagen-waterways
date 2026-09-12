@@ -1,0 +1,68 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/hypodraft_b1.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/w3-ba.json",
+    "data/manual/number_constructions.d/w3-ba.json",
+    "data/derived/hypodraft_b1.json",
+    "data/raw/national/badevand.geojson",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/BA-WISE-DK-SAMPLES.txt",
+    "data/derived/pins/BA-WISE-DK-ECOLI.txt",
+    "data/derived/pins/BA-WISE-DK-ENTERO.txt",
+    "data/derived/pins/BA-WISE-DK-SAMPLESTATUS.txt",
+    "data/derived/pins/BA-WISE-DK-PERIODS.txt",
+    "data/derived/pins/BA-WISE-DK-DATES.txt",
+    "data/derived/pins/BA-WISE-DK-SITES.txt",
+    "data/derived/pins/BA-WISE-DK-NOTDELISTED.txt",
+    "data/derived/pins/BA-WISE-DK-SCHEMA.txt",
+    "data/derived/pins/BA-VHF-OVERLOEB.txt",
+    "data/derived/pins/BA-SM-TAXONOMY.txt",
+    "data/derived/pins/DTA-DP02-2024.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/B1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_a1.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/w3-ba.json",
+    "data/manual/number_constructions.d/w3-ba.json",
+    "data/derived/hypodraft_facts.json",
+    "data/derived/enums.json",
+    "data/raw/national/hovedoplande.geojson",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/SR353.txt",
+    "data/derived/pins/BA-SR527.txt",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/BA-SM-TAXONOMY.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/A1.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/hypodraft_a1b.py",
+   "inputs": [
+    "scripts/pages/draftkit.py",
+    "data/manual/claims.d/w3-ba.json",
+    "data/manual/number_constructions.d/w3-ba.json",
+    "data/derived/enums.json",
+    "data/derived/hypotheses.json",
+    "data/manual/species.json",
+    "data/derived/pins/SR353.txt",
+    "data/derived/pins/SR120.txt",
+    "data/derived/pins/BA-SM-TAXONOMY.txt"
+   ],
+   "outputs": [
+    "docs/hypodrafts/A1b.md"
+   ]
+  }
+ ]
+}

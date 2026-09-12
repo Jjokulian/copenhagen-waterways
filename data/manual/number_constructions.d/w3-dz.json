@@ -1,0 +1,104 @@
+{
+ "constructions": [
+  {
+   "id": "K-DZ-ENUMS-UNITS",
+   "title": "Rows of the CTD extract per value of its unit column",
+   "covers": {
+    "file": "data/derived/enums.json",
+    "fields": {
+     "ctd.categorical.Enhed.*": {
+      "kind": "counted",
+      "is": "Rows of `data/raw/oda/ctd.csv.gz` carrying this exact string in the `Enhed` column, counted over every row; blank and differently spelled values are their own keys."
+     }
+    }
+   },
+   "what": "How many rows of the CTD extract carry each unit string, for the unit column that stays under the cardinality cap and so is kept whole.",
+   "model": "`scan()` in `scripts/enums.py` reads every row with `csv.DictReader` in `latin-1` and adds one to a `collections.Counter` per column and value (`c[v] += 1`); a column that passes `CARD_CAP` distinct values is dropped to a numeric sample. `main()` writes the surviving counters as `rec[\"categorical\"][col]`, most common first.",
+   "assumptions": [
+    "One row of the extract is one measurement of one parameter at one depth."
+   ],
+   "justified": [
+    {
+     "text": "The counter is incremented once per row and column for the value found there, so a unit's count is exactly the rows written in that unit.",
+     "ref": "scripts/enums.py:93"
+    },
+    {
+     "text": "The counts are written unaltered, keyed by the value as a string.",
+     "ref": "scripts/enums.py:139"
+    }
+   ],
+   "gaps": [
+    "The unit is counted per row without the parameter on the same row: which parameter carries which unit is not stored, and can only be read off by matching totals.",
+    "A unit written two ways counts as two units."
+   ],
+   "void_if": [
+    "the CTD extract is refetched and `enums.py` is not rerun"
+   ],
+   "licenses": "How many rows of the extract carry each unit string, and so which parameter totals a unit total can match.",
+   "not_licensed": "That a given row's parameter is in a given unit.",
+   "watches": [
+    "scripts/enums.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-dz (written against the code it describes: scan() and main() in enums.py, the Counter increment and the categorical write; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/enums.py": "e21dcf1b1c5748b5"
+    }
+   }
+  },
+  {
+   "id": "K-DZ-CONTIG-NULL",
+   "title": "Agreement between random connected partitions of the station graph",
+   "covers": {
+    "file": "docs/data/areas/partition_contiguous.json",
+    "fields": {
+     "graphs.*.stations": {
+      "kind": "counted",
+      "is": "Stations in the graph: those measured on every panel variable in at least `MIN_MONTHS` months and with a position, the first `MAX_STATIONS` of them; for the graphs named `water` and `knn_same_area`, only those inside the coastline file's extent."
+     },
+     "graphs.*.contiguous_null_ari": {
+      "kind": "computed",
+      "is": "The mean adjusted Rand index over every pair of the random connected partitions `contiguous_null` draws on this graph with the seeds `101`, `202`, `303` and `404`, their group sizes matched to the official water bodies' sizes scaled to the graph."
+     }
+    }
+   },
+   "what": "How far two partitions of the station graph agree from contiguity alone: the floor any contiguous derived partition must beat.",
+   "model": "`contiguous_null(adj, sizes, seed)` picks a free station at random and grows a group by breadth-first accretion until its size is met, for each size in turn, leftovers becoming singletons. `main()` draws one partition per seed, computes `ari` from `partition_stability.py` for each pair, and stores `null_floor = sum(nn) / len(nn)` rounded to three places.",
+   "assumptions": [
+    "The official water bodies' size distribution is a fair size distribution for random partitions of the same stations."
+   ],
+   "justified": [
+    {
+     "text": "The partitions are connected by construction: each group grows only along graph edges from its seed.",
+     "ref": "scripts/partition_contiguous.py:192"
+    },
+    {
+     "text": "The stored value is the mean over the pairs of null partitions, written with the graph's station count.",
+     "ref": "scripts/partition_contiguous.py:342"
+    }
+   ],
+   "gaps": [
+    "The seeds are fixed, so the value is a mean over the pairs of one set of `4` partitions: a sample of the null, with no spread stored.",
+    "The graph holds only the stations measured on every variable, capped at `MAX_STATIONS`, not the whole panel."
+   ],
+   "void_if": [
+    "the panel or the station overlay changes and `partition_contiguous.py` is not rerun"
+   ],
+   "licenses": "That contiguity alone makes partitions of these stations agree above the chance level the adjusted Rand index corrects for.",
+   "not_licensed": "The null distribution's spread, or anything about effort fields or c-squares.",
+   "watches": [
+    "scripts/partition_contiguous.py",
+    "scripts/partition_stability.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-dz (written against the code it describes: contiguous_null() and the null_floor loop in partition_contiguous.py main(), MIN_MONTHS, MAX_STATIONS and ari() in partition_stability.py; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/partition_contiguous.py": "f13ef2bf80d1df6e",
+     "scripts/partition_stability.py": "6f8a88d80b27215e"
+    }
+   }
+  }
+ ]
+}

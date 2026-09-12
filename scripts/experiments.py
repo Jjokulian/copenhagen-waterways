@@ -42,17 +42,9 @@ import refs as _refs
 # T1-T5 are both terminal outcomes and group T hypotheses; here they are hypotheses
 _amb = _refs.ambiguous
 
-import quote_locate
-
 OUT = os.path.join(ROOT, "docs", "EXPERIMENTS.md")
 PAGE = "docs/EXPERIMENTS.md"
-THEN = "4469fc7"        # the page as it stood before its numbers were checked
-SELF = []               # numbers carried as quotations of that page
 REF = re.compile(r"`?\b([A-Z]{1,2}\d{1,2})\b`?")
-NUM = re.compile(r"\d+(?:\.\d+)?")
-# measured once for X22 and stored by no script; quoted from the page, figure by figure
-CORRELOGRAM = ("pooled over 144 days, giving r = 0.97 at 1 km, 0.74 at 12 km, "
-               "0.50 at 31 km. Two points 12 km apart should agree at 0.74")
 
 # Three kinds of work, which are not interchangeable and are not equally strong.
 KINDS = [
@@ -685,164 +677,587 @@ X = [
 ]
 
 
-def _located(m, text):
-    """A number inside a passage carried from the committed page, located there by the
-    words around it: the value is read out of the history, not typed."""
-    loc = quote_locate.locate(THEN, PAGE, m.group(0),
-                              hints=text[max(0, m.start() - 60):m.end() + 60])
-    if not loc:
-        raise live.Unjustified(f"experiments: cannot locate '{m.group(0)}' in {PAGE} at {THEN}")
-    return loc
+# ---------------------------------------------------------------- the page ---
+# Everything from here to main() writes docs/EXPERIMENTS.md. Every assertion on the
+# page is a checked claim (LIVE_NUMBERS.md section 11), registered in
+# data/manual/claims.d/w3-ea.json with what it rests on: a design is this project's
+# own and stipulated, an argument is argued, a statement about the data rests on the
+# data or a pinned document, and a hypothesis is referenced, never claimed. A
+# paragraph the register entry X carries unchanged is rendered from it and marked
+# C-EA-<id>-<part>; a paragraph the page words differently is in PAGE below. What the
+# page once said and could not justify is in docs/ARCHIVE.md, not here.
+import claims as _claims
+
+C = live.claim
+_REG = {}
+# T1-T5 are both hypotheses and terminal outcomes. Everywhere on this page they are
+# hypotheses, except in the two entries about the outcomes themselves - a panel for
+# greasy water and a foul shore, and the fishermen's seabed - where they name outcomes.
+OUTCOME_ENTRIES = ("X19", "X20")
+CHOICE = " - a choice of this design, not a measurement"
+PARTS = [("why", "WHY", ""), ("manipulate", "MANIP", "**Manipulate.** "),
+         ("control", "CTRL", "**Control.** "), ("measure", "MEAS", "**Measure.** "),
+         ("decide", "DECIDE", "**Decide, in advance.** "), ("note", "NOTE", "")]
+SCALE_HEAD = {"small": "Small", "lab": "Lab", "programme": "Programme", "desk": "Desk"}
 
 
-def sq(shown):
-    SELF.append(shown)
-    return live.was(THEN, PAGE, shown)
+def _cl():
+    if "d" not in _REG:
+        _REG["d"] = _claims.load()[0]
+    return _REG["d"]
+
+
+def RD(sid, value, phrase):
+    """A number read from a pinned document, refused unless the pinned copy holds the
+    phrase. Each reading gets its own phrase: two readings with one phrase would
+    share an id."""
+    d = _cl()
+    if _claims._flat(phrase) not in _claims._flat(_claims.pin_text(d, sid)):
+        raise live.Unjustified(f"{sid}: the pinned text does not contain '{phrase}'")
+    return live._mk(value, ["reading", sid, "phrase", phrase, _claims._meta(d, sid)])
+
+
+def RS(placeholder):
+    """A figure the claims register already defines, resolved through it."""
+    return _claims.resolve(_cl(), placeholder, {})[0]
+
+
+def R(i, title=False, family=None):
+    return live.ref(i, title, family=family or ("hypotheses" if _amb(i) else None))
+
+
+def O(i):
+    """A terminal outcome, which T1-T5 also name."""
+    return live.ref(i, family="terminal")
 
 
 def stated(name, shown, reason):
     return live.stated(name, shown, shown, reason)
 
 
-CHOICE = " - a choice of this design, not a measurement"
+# Figures inside paragraphs rendered unchanged from the register entry.
+FIGS = {
+    "X1": [("3, 6 and 12 months", lambda v: stated(
+        "x1_survey_months", "3, 6 and 12", "the survey times proposed" + CHOICE) + " months")],
+    "X9": [("10-minute", lambda v: stated(
+               "x9_logging_minutes", "10", "the logging interval proposed" + CHOICE) + "-minute"),
+           ("48 hours", lambda v: stated(
+               "x9_window_hours", "48", "the post-event window fixed in advance" + CHOICE) + " hours")],
+    "X22": [("the 123 polygons", lambda v: f"the {v['wb']} polygons")],
+}
 
 
-def figures(F):
-    """Each figure an entry's prose carries, and the checked entity it becomes:
-    read from the file that holds it, stated as the design choice it is, or -
-    where no file stores it - quoted from the page as first published. Made
-    lazily, so a quotation is counted only where the text is found."""
-    return {
-        "X1": [("3, 6 and 12 months", lambda: stated(
-            "x1_survey_months", "3, 6 and 12", "the survey times proposed" + CHOICE) + " months")],
-        "X3": [("about 5", lambda: sq('from infinite to @@. **Control.** Undosed'))],
-        "X9": [("19,665", lambda: f"{F['discharge_points']:,}"),
-               ("10-minute", lambda: stated(
-                   "x9_logging_minutes", "10", "the logging interval proposed" + CHOICE) + "-minute"),
-               ("48 hours", lambda: stated(
-                   "x9_window_hours", "48", "the post-event window fixed in advance" + CHOICE) + " hours")],
-        "X14": [("about 8%", lambda: f"about {F['share_between_wb'] * 100:.0f}%"),
-                ("10% error", lambda: stated(
-                    "x14_sensor_error_pct", "10", "an illustrative sensor error" + CHOICE) + "% error")],
-        "X21": [("20,402", lambda: f"{F['outfalls']:,}"),
-                ("97 of 98", lambda: f"{sq('colour since 19@@, every pixel')} of {sq('@@ municipalities currently have')}")],
-        "X22": [("123 water bodies", lambda: f"{F['water_bodies']} water bodies"),
-                ("daily 1 km", lambda: "daily " + sq('- daily @@ ocean colour')),
-                (CORRELOGRAM, lambda: NUM.sub(lambda m: sq(_located(m, CORRELOGRAM)), CORRELOGRAM)),
-                ("the 123 polygons", lambda: f"the {F['water_bodies']} polygons")],
-    }
-
-
-def checked(xid, text, figs, known):
-    """An entry's prose with its register references, figures and species as
-    checked entities. References go first, on the typed text, so no marker is
-    read back as an id."""
-    text = REF.sub(lambda m: live.ref(m.group(1), family="hypotheses" if _amb(m.group(1)) else None) if m.group(1) in known else m.group(0), text)
-    for said, now in figs.get(xid, []):
+def checked(xid, text, v):
+    """A paragraph of the register entry with its references, figures and species as
+    checked entities. References go first, on the typed text, so no marker is read
+    back as an id."""
+    fam = "terminal" if xid in OUTCOME_ENTRIES else "hypotheses"
+    text = REF.sub(lambda m: R(m.group(1), family=fam if _amb(m.group(1)) else None)
+                   if m.group(1) in v["known"] else m.group(0), text)
+    for said, now in FIGS.get(xid, []):
         if said in text:
-            text = text.replace(said, now())
+            text = text.replace(said, now(v))
     return text.replace("CO₂", live.chem("CO2"))
 
 
+def page_words(v):
+    """The paragraphs the page words differently from the register entry, by entry and
+    part; a note is a list of paragraphs."""
+    T = R
+    return {
+        "X1": {
+            "why": C("C-EA-X1-WHY", f"{T('T4')} proposes that restoration plantings fail in "
+                     "sediment whose chemistry looks adequate - the marine form of what "
+                     "horticulture calls replant disease - and that the test is the one "
+                     "horticulture uses."),
+            "control": C("C-EA-X1-CTRL", "Two contrasts carry it. **Live against "
+                         "sterilised** (b vs d) separates a chemical effect from a biological "
+                         "one, because sterilising takes the organisms out and leaves the "
+                         "material. **Matched against mismatched** (b vs c) tests local "
+                         "adaptation: whether a community does worse in a setting unlike the "
+                         "one it came from. If donor origin matters, the practical rule follows "
+                         "immediately. Plus untransplanted plots and a transplant into a "
+                         "functioning bed as the upper bound."),
+            "note": [C("C-EA-X1-NOTE", "Among the sources this project surveyed, the nearest "
+                       "Danish trial is an eelgrass transplant in outer Horsens Fjord with "
+                       "bare-bottom and natural-bed controls. It followed the fauna that came "
+                       "back, not eelgrass survival against sediment condition, so this "
+                       "inoculation test was not found run in Denmark."),
+                     C("C-EA-X1-NOTE2", "The human analogue is faecal microbiota transplant, "
+                       "which moves the microbes of a healthy donor into an unhealthy person, "
+                       "and stool banks now hold donor material for it. The marine version of "
+                       "the bank is `X18`.")],
+        },
+        "X18": {
+            "why": C("C-EA-X18-WHY", "Restoring a community needs a source, and `X1` asks "
+                     "whether one from a matched setting works best. Medicine keeps such "
+                     "sources: stool banks hold donor material for faecal transplant. A marine "
+                     "bank of a site's own community cannot be made once that site has failed, "
+                     "and each site that fails is one donor fewer."),
+            "control": C("C-EA-X18-CTRL", "The metadata *is* the design. Without matched "
+                         "conditions recorded, a bank is a freezer full of mud whose donors "
+                         "cannot be paired to a recipient site, and `X1` is the test of whether "
+                         "pairing decides if an inoculum establishes."),
+            "decide": C("C-EA-X18-DECIDE", "There is no hypothesis to falsify here, which is "
+                        "why it is filed as measurement rather than experiment. What it produces "
+                        "is **optionality**: every later restoration attempt, and every test of "
+                        "whether donor origin matters, needs source material that either exists "
+                        "or does not. It also supplies a pre-disturbance baseline, which the "
+                        f"source search for {T('T10')} found for no Danish marine "
+                        "intervention."),
+            "note": [C("C-EA-X18-NOTE", "**It gets harder every year it is not done:** each "
+                       "site that degrades takes its community out of reach. A freezer, a "
+                       "coring tube, and somebody's time.")],
+        },
+        "X2": {
+            "why": C("C-EA-X2-WHY", f"{T('T1')} proposes that eelgrass keeps sulphide out by "
+                     "leaking oxygen from its roots, powered by photosynthesis. If the leak is "
+                     "the mechanism, shading kills by poisoning rather than by starving."),
+        },
+        "X7": {
+            "why": C("C-EA-X7-WHY", f"On {T('J2')}, the greasiness people report after "
+                     "swimming is a property of the sea-surface microlayer, where surfactants "
+                     "and other surface-active matter are enriched over the bulk water.")
+            + " " + C("C-EA-X7-NONE", "None of the sources this project surveyed holds a "
+                      "Danish sample of that layer: in two searches, every Baltic microlayer "
+                      "dataset that surfaced was German."),
+            "manipulate": C("C-EA-X7-MANIP", "Nothing. This is a measurement, not a "
+                            "manipulation, and its equipment is a glass plate and a squeegee."),
+            "control": C("C-EA-X7-CTRL", "Paired bulk-water samples from the same station and "
+                         "moment, so every result is an enrichment factor rather than a "
+                         "concentration. Sampled across wind speeds, because "
+                         f"{T('J2')} has wind destroying the film."),
+            "note": [C("C-EA-X7-NOTE", "The glass-plate microlayer sampler was first described "
+                       "in 1972 and is commonly used. That no Danish sample of the layer turned "
+                       "up in two searches is itself the finding.")],
+        },
+        "X19": {
+            "why": C("C-EA-X19-WHY", "Two of the outcomes the register ends in, water "
+                     f"unpleasant to be in ({O('T3')}) and the shore lost as a place "
+                     f"({O('T5')}), have no series in any source this project surveyed: none "
+                     "holds shore condition or fedtemøg, and the site's glossary says "
+                     "fedtemøg is not measured by anything.")
+            + " " + C("C-EA-X19-WHO", "The people who swim, walk and fish there are the ones "
+                      "placed to see them."),
+            "control": C("C-EA-X19-CTRL", "That null is the control and the entire difference "
+                         "between a dataset and a complaints inbox. Open reporting - tell us "
+                         "when it is bad - produces a map of attention, and attention follows "
+                         "news coverage, so the resulting series measures publicity. A panel "
+                         "with a denominator produces a rate: the observations must not be "
+                         "selected on the variable being measured."),
+            "measure": C("C-EA-X19-MEAS", "Per visit: position and time (a phone photograph "
+                         "can carry both in its EXIF metadata, and fedtemøg is visible, so the "
+                         "image is a record of the outcome rather than a report about it); an "
+                         "ordinal odour intensity on a fixed scale; water appearance; whether "
+                         "anything structural is growing; and the null when none of it applies. "
+                         "Plus one control question about something unrelated to the outcome, "
+                         "to detect when a panel's reporting effort is rising rather than the "
+                         "phenomenon."),
+            "note": [C("C-EA-X19-NOTE", "The recording device is the phone observers already "
+                       "carry. The hard part is recruiting observers who will keep reporting "
+                       "nothing.")],
+        },
+        "X20": {
+            "why": C("C-EA-X20-WHY", "Fishermen who have hauled gear across the same ground "
+                     "for years have seen the bottom there, and none of the sources this "
+                     "project surveyed records what they saw: its fisheries sources are "
+                     "landings and swept area, not what the bottom looked and smelled like."),
+            "control": C("C-EA-X20-CTRL", "The known failure mode is shifting baseline "
+                         "syndrome: each generation redefines what is natural, so 'how was it "
+                         "back then' is answered against a baseline that has already moved. The "
+                         "mitigation is to anchor every question on a **dated specific event** - "
+                         "what came up in that haul, in that autumn, on that ground - rather "
+                         "than on a remembered general state. Where two people fished the same "
+                         "ground in the same years, their accounts are a replicate."),
+            "note": [C("C-EA-X20-NOTE", "Like `X18`, it gets harder every year it is not "
+                       "done: the people who fished before the change are ageing, and what "
+                       "they remember of the baseline goes with them.")],
+        },
+        "X9": {
+            "why": C("C-EA-X9-WHY", f"The national register of rain-dependent discharge "
+                     f"points holds {v['rbu']:,} of them. The utilities' outfall layers carry "
+                     "one annual value per outfall, and a yearly count of overflows for "
+                     f"{v['co_count']:,} of the {v['co_n']:,} combined-sewer overflows; among "
+                     "the sources this project surveyed, a record of each overflow's count, "
+                     "duration and volume exists for one small utility.")
+            + " " + C("C-EA-X9-FREQ", "DCE note that oxygen is measured at a frequency that "
+                      "need not catch short-lived oxygen depletion.")
+            + " " + C("C-EA-X9-U2", f"{T('U2')} is about exactly such events: a discharge of "
+                      "hours after a storm, invisible in an annual average."),
+            "note": [C("C-EA-X9-NOTE", "Two loggers and a season. The register's "
+                       f"{T('B1')} names per-event overflow volume and duration as the "
+                       "single most valuable missing series.")],
+        },
+        "X10": {
+            "why": C("C-EA-X10-WHY", "A target can be unreachable because the driver is still "
+                     "too high, or because something else is missing "
+                     f"({T('L4')}). From the outside these look identical."),
+            "note": [C("C-EA-X10-NOTE", "It separates 'not yet' from 'never, for another "
+                       "reason', which is what a load target needs to know about itself.")],
+        },
+        "X12": {
+            "note": [C("C-EA-X12-NOTE", "The dead-shell control separates what the shells do "
+                       "as structure from what the animals do by filtering, and the two would "
+                       "call for different policies.")],
+        },
+        "X14": {
+            "why": C("C-EA-X14-DCE", "DCE's statistical models for the coastal indicators were "
+                     f"built for {v['dce29']} monitoring stations representing {v['dce22']} "
+                     "water bodies.")
+            + " " + C("C-EA-X14-ARG", "Where one station stands for a water body, the "
+                      "homogeneity that assumes cannot be tested with the data it produces.")
+            + " " + C("C-EA-X14-BATH", "In bathing-water samples, about "
+                      f"{v['bath'] * 100:.0f}% of the variation, with years taken out, lies "
+                      "between water bodies - but bathing water measures faecal indicators, "
+                      "not the variables at issue."),
+            "note": [C("C-EA-X14-NOTE", "**Precision is worth less than replication here.** A "
+                       "sensor with " + stated("x14_sensor_error_pct", "10",
+                                              "an illustrative sensor error" + CHOICE)
+                       + "% error at forty points tells you more about whether a polygon is "
+                       "homogeneous than one perfect instrument does, because the question is "
+                       "about variance and not about level.")],
+        },
+        "X15": {
+            "why": C("C-EA-X15-DCE", "DCE's oxygen indicator is the share of time oxygen is "
+                     "below each of two thresholds in the month with the most days of low "
+                     f"oxygen; {v['dce6a']} years of data go into the monthly frequencies, and "
+                     f"one value results per {v['dce6b']}-year period.")
+            + " " + C("C-EA-X15-ARG", "What that collapse discards can only be measured "
+                      "against a continuous record."),
+            "note": [C("C-EA-X15-NOTE", "One sensor and two years, and the answer can go "
+                       "against this project's argument as easily as for it.")],
+        },
+        "X16": {
+            "why": C("C-EA-X16-WHY", "Any distributed network is worthless if its readings "
+                     "cannot be tied to the national record, and a sensor left in the water "
+                     "fouls. This is the calibration that makes `X14` and `X15` admissible "
+                     "rather than interesting."),
+            "note": [C("C-EA-X16-NOTE", "**Biofouling affects underwater instruments**, so the "
+                       "honest version of this proposal budgets for servicing rather than "
+                       "pretending a buoy is unattended infrastructure.")],
+        },
+        "X3": {
+            "why": C("C-EA-X3-WHY", f"{T('R1')} starts from fat carrying no nitrogen: "
+                     "bacteria decomposing it must then take nitrogen from the water, so a "
+                     "fat-loaded water would read as *less* eutrophic on the regulated "
+                     "indicator while being more degraded."),
+            "manipulate": C("C-EA-X3-MANIP", "Mesocosms of natural seawater dosed with equal "
+                            "chemical oxygen demand as (a) fat, (b) carbohydrate, (c) algal "
+                            "biomass, (d) protein - four materials, same oxygen demand, "
+                            "carrying different amounts of nitrogen."),
+            "note": [C("C-EA-X3-NOTE", "A three-week bench experiment that would tell you "
+                       "whether a nitrogen indicator can move the wrong way.")],
+        },
+        "X4": {
+            "why": C("C-EA-X4-WHY", f"{T('R2')} is priming: labile carbon gives microbes the "
+                     "energy to attack the recalcitrant pool, so an input's oxygen demand can "
+                     "exceed its own COD."),
+            "note": [C("C-EA-X4-NOTE", "Priming is a soil-science idea - something added to "
+                       "soil changing how fast its organic matter decomposes - applied here to "
+                       "marine sediment. The equipment is a core tube and an oxygen optode.")],
+        },
+        "X6": {
+            "manipulate": C("C-EA-X6-MANIP", "A nutrient-addition bioassay on natural water: "
+                            "control, +N, +N+P, +N+P+Si, +Si alone."),
+            "why": C("C-EA-X6-WHY", f"{T('K1')} starts from silicon coming from rock "
+                     "weathering, so that N and P rise with human activity while Si does not. "
+                     "If Si then limits, the community shifts away from diatoms toward the "
+                     "flagellates and gel-formers."),
+            "note": [C("C-EA-X6-NOTE", "A bottle experiment. Silicon is among the parameters "
+                       "of the ODA water-chemistry extract held here, so the observational half "
+                       "needs no fieldwork.")],
+        },
+        "X13": {
+            "why": C("C-EA-X13-THATCH", "Turf thatch builds up for several reasons, among "
+                     "them insecticides that reduce earthworm activity, acidic soils that "
+                     "cannot support enough decomposing microorganisms, and too much nitrogen "
+                     "fertiliser.")
+            + " " + C("C-EA-X13-WHY", f"{T('E13')} and {T('R3')} propose that fedtemøg is "
+                      "the same failure in sediment: organic matter accumulating because the "
+                      "decomposers are gone, not because more is arriving."),
+            "note": [C("C-EA-X13-NOTE", "Two hypotheses that predict the same observed outcome "
+                       "are separated by holding the input fixed and varying only the "
+                       "processors.")
+                     + " " + C("C-EA-X13-DOSE", "What counts as a realistic dose needs Danish "
+                               "use and residue figures, and this project could not locate "
+                               "Danish pesticide use at any unit finer than the nation.")],
+        },
+        "X23": {
+            "why": C("C-EA-X23-LOAD", "The national overflow and stormwater layers report "
+                     "water, nitrogen and phosphorus per outfall, and nothing else of what "
+                     "the water carries.")
+            + " " + C("C-EA-X23-PAYLOAD", "What else goes onto fields with manure has no "
+                      "such account: for veterinary drugs, VetStat holds what is dispensed, and "
+                      "no manure, soil or sediment measurement of where they went was found.")
+            + " " + C("C-EA-X23-REACTOR", "A field is a reactor: labile carbon is respired "
+                      "there, so the default assumption is that little arrives. Rain onto "
+                      "freshly spread ground, frozen or saturated soil, tile drains and "
+                      "preferential flow are the ways it could arrive anyway.")
+            + " " + C("C-EA-X23-BLIND", "**The stream monitoring this project records cannot "
+                      "see it**: it samples at fixed intervals rather than on events, and "
+                      "measures none of the faecal markers."),
+            "control": C("C-EA-X23-CTRL", "Three controls, and the design needs all of them. "
+                         "**Time:** the same streams outside the spreading window. **Space:** "
+                         "catchments matched on soil, drainage and area but contrasting in "
+                         "livestock density, which is where the national register earns its "
+                         "place. **And source:** faecal sterols and host-specific microbial "
+                         "markers, whose limits in telling a pig from a person "
+                         "[SENSING.md](SENSING.md) sets out, are what would turn a "
+                         "concentration into an attribution."),
+            "note": [C("C-EA-X23-NAV", "The instrument is constructed in "
+                       "[SENSING.md](SENSING.md), and the full protocol - hypotheses that can "
+                       "lose, the decision rules fixed before the first sample, the matched "
+                       "pairs and what invalidates the whole thing rather than answering it - "
+                       "is [SETTLE.md](SETTLE.md).")
+                     + " " + C("C-EA-X23-NEG", "It is a design whose *negative* result would "
+                               "strengthen the official account — which is a reason to run it, "
+                               "not a reason to avoid it.")
+                     + " " + C("C-EA-X23-GRAB", "**Grab sampling cannot substitute:** in every "
+                               "stream of the 2018 study this project records, transport "
+                               "computed from grab samples came out underestimated against "
+                               "intensive daily measurement, and an event is exactly what a "
+                               "visit at fixed intervals misses.")],
+        },
+        "X17": {
+            "why": C("C-EA-X17-WHY", "The register cannot say what agricultural biocides do "
+                     "to marine decomposers: ODA's marine sediment topic carries no pesticide, "
+                     "and this project could not locate Danish pesticide use at any unit finer "
+                     "than the nation.")
+            + " " + C("C-EA-X17-BAN", "A ban would create a comparison, and would put its "
+                      "whole cost on the people asked to absorb it."),
+            "note": [C("C-EA-X17-NOTE", "It would supply **a real counterfactual for the "
+                       "chemical argument**, at the scale the argument is made, without "
+                       "withholding the treatment from anyone.")
+                     + " " + C("C-EA-X17-PLACES", "The general form of that observation is "
+                               "the meta-solution in [PLACES.md](PLACES.md): a country that "
+                               "does one thing everywhere has spent the contrast that would "
+                               "have told it whether the thing worked, and a staggered order "
+                               "is how you buy it back.")],
+        },
+        "X21": {
+            "why": C("C-EA-X21-WHY", "The spildevandsdata.dk extract of the utilities' PULS "
+                     f"reports holds {v['outfalls']:,} outfalls, each with a point position "
+                     "and a reported reduced impervious area, and "
+                     f"{v['with_volume']:,} of them with an annual volume. No national map of "
+                     "which ground drains to which was found among the sources this project "
+                     "surveyed.")
+            + " " + C("C-EA-X21-LER", "The pipe geometry is held in Ledningsejerregistret, "
+                      "which is not open data, so the network cannot be looked up here. It may "
+                      "be inferable."),
+            "control": C("C-EA-X21-CTRL", f"The {v['outfalls']:,} reported areas are the "
+                         "control: they come from the utilities' reports, not from the terrain "
+                         "analysis they would be compared with. A delineation that reproduces "
+                         "them is doing something right; one that cannot is falsified without "
+                         "fieldwork. Hold out a random tenth to fit nothing and check against "
+                         "those."),
+            "measure": C("C-EA-X21-MEAS", "Terrain, building footprints with year built, and "
+                         "the outfall register. Plus, where a municipal wastewater plan "
+                         "publishes real catchment boundaries, those become a second and much "
+                         "harder test."),
+            "note": [C("C-EA-X21-NOTE", "It produces a plausible network, not the real one, "
+                       "and every use must say so. This project has a drainage reconstruction "
+                       f"for Copenhagen only, because its {v['sheets']} flood PDFs were "
+                       "published and their georeferencing could be recovered.")],
+        },
+        "X22": {
+            "why": C("C-EA-X22-WHY", f"The marine map inherits the {v['wb']} water-body "
+                     "polygons of the national layer, and every statistic computed in them "
+                     "inherits that drawing. Across every subset of up to four station "
+                     "variables, those water bodies agree with the partitions the data produce "
+                     "no better than random connected regions of the same sizes.")
+            + " " + C("C-EA-X22-Q", "The question is whether those lines are where the sea "
+                      "changes."),
+            "manipulate": C("C-EA-X22-MANIP", "Nothing physical. The satellite record supplies "
+                            "a field with no station placement in it: Copernicus Marine's "
+                            "Baltic ocean-colour product is daily, at "
+                            f"{v['km']} km in its multi-sensor series, from 1997, merged from "
+                            "sensors from SeaWiFS to OLCI - so the partition can be derived "
+                            "from the water rather than imposed on it."),
+            "control": C("C-EA-X22-CTRL", "**The null is to be measured first**: similarity of "
+                         "log Kd490 against separation, pooled over days, says how much two "
+                         "points a given distance apart should agree wherever they are. Take "
+                         "pairs at a fixed separation that straddle an official boundary and "
+                         "pairs at the same separation that do not. A boundary that is real "
+                         "shows *less* agreement across it than the curve predicts; one that "
+                         "agrees more than the curve predicts is splitting water that behaves "
+                         "as one thing."),
+            "note": [C("C-EA-X22-NOTE", "Two limits stated in advance. The satellite sees only "
+                       "the surface. And a partition discovered from one variable is a "
+                       "partition for that variable: the baskets for light need not be the "
+                       "baskets for oxygen, and finding that they differ would itself dispose "
+                       "of the idea that one set of lines can serve every purpose.")],
+        },
+        "X8": {
+            "why": C("C-EA-X8-WHY", "The CTD extract carries the supplier, the sampling gear, "
+                     "the sonde, the technical instruction used, and both the original and the "
+                     "corrected result with the correction factor.")
+            + " " + C("C-EA-X8-GEAR", f"The gear, though, is `Ketcher` on {v['ketcher']}% "
+                      "of rows, and `SondeNr` is the `999` placeholder, probe unknown, on "
+                      f"{v['s999']}%."),
+            "note": [C("C-EA-X8-NOTE", "**No fieldwork and no permission required:** the "
+                       "extract carrying these columns is on disk.")],
+        },
+    }
+
+
+# The kinds of work and the scales, as the page words them. The register's own
+# wording (KINDS, SCALES) carried a price, durations and shares in words that nothing
+# counted; the page says what can be justified.
+KIND_WORDS = {
+    "measurement": "You observe something real that nobody recorded. It creates the "
+                   "*record* rather than the evidence: it can establish what is happening, "
+                   "where and when, but not why. It still requires being there.",
+    "instrument": "You make the thing that takes the reading, and put it where nobody was "
+                  "looking. It is a measurement project with a build phase, and it differs "
+                  "from the others in what it can be aimed at: **a network can be pointed at "
+                  "the assumptions of the existing monitoring**, not only at the sea. Whether "
+                  "one station can stand for a water body, whether monthly sampling sees a "
+                  "six-hour event, what an aggregation costs - all of those are questions "
+                  "about the instrument, and all of them are answerable by building a denser "
+                  "one beside it.",
+    "analysis": "You work on what is already written down. It can establish consistency, "
+                "bound magnitudes, expose contradictions and kill hypotheses - but it cannot "
+                "establish causation, and it cannot recover a fact that was never recorded. "
+                "**Everything this project has produced is of this kind**: none of the data "
+                "it works on was measured by the project itself. A finding of the form *your "
+                "evidence does not support what you claim* is a real result and a limited "
+                "one.",
+}
+SCALE_WORDS = {
+    "small": "Fieldwork one person or a small group could run, with no institution required.",
+    "lab": "A university lab.",
+    "programme": "A funded programme or ship time, but still a bounded experiment rather "
+                 "than a monitoring commitment.",
+    "desk": "No fieldwork of its own; the analysis has not been run here.",
+}
+
+
+def values(hyp):
+    """The live values the page reads, by name."""
+    J = lambda *p: live.live_json(os.path.join(*p))
+    ej, tri = J(DERIVED, "experiments.json"), J(DERIVED, "triage.json")
+    sol, obs, of = J(DERIVED, "solutions.json"), J(DERIVED, "observing.json"), J(DERIVED, "outfalls.json")
+    man = J(ROOT, "docs", "data", "flood2012", "manifest.json")
+    co, sw = of["layers"]["combined_overflow"], of["layers"]["separate_stormwater"]
+    # the page says every outfall reports a reduced area; refuse it if that stops holding
+    for lay in (co, sw):
+        if lay["totals"]["Red areal"]["n"] != lay["n"]:
+            raise live.Unjustified("experiments: not every outfall now reports a reduced area")
+    dce = "DCE-STATMOD-2015"
+    return {
+        "known": ({h["id"] for h in hyp["hypotheses"]} | {u["id"] for u in hyp["unquantifiable"]}
+                  | {o["id"] for o in hyp["observables"]} | {r["id"] for r in hyp["routes"]}
+                  | {t["id"] for t in hyp["terminal"]}) - {r[0] for r in X},
+        "ej": ej, "tri": tri,
+        "rbu": sol["register"]["discharge_points"],
+        "co_n": co["n"], "co_count": co["totals"]["Antal overløb"]["n"],
+        "outfalls": co["n"] + sw["n"],
+        "with_volume": co["totals"]["Vand_(m3/ aar)"]["n"] + sw["totals"]["Vand_(m3/ aar)"]["n"],
+        "wb": obs["sizes"]["n"], "bath": obs["variance"]["share_between_wb"],
+        "sheets": man["n_sheets"],
+        "dce29": RD(dce, 29, "Der er blevet udviklet statistiske modeller for 29 kystnære "
+                             "overvågningsstationer"),
+        "dce22": RD(dce, 22, "som repræsenterer 22 vandområder"),
+        "dce6a": RD(dce, 6, "Der bruges 6 års data til beregning af månedsfrekvenser"),
+        "dce6b": RD(dce, 6, "Der fremkommer én indikator værdi pr. 6. år"),
+        "km": RD("KD-CMEMS-OC133", 1, "Spatial resolution**: 1 km for"),
+        "ketcher": RS("{calc@K-SUBSET-SHARE:hy_ctd_ketcher / hy_ctd_rows * 100|.1f}"),
+        "s999": RS("{calc@K-SUBSET-SHARE:hy_ctd_999 / hy_ctd_rows * 100|.1f}"),
+    }
+
+
 def render(rows, hyp):
+    v = values(hyp)
+    ej, tri = v["ej"], v["tri"]
+    words = page_words(v)
     o = []
     a = o.append
     by_scale = {}
     for r in rows:
         by_scale.setdefault(r[4], []).append(r)
-    known = ({h["id"] for h in hyp["hypotheses"]}
-             | {u["id"] for u in hyp["unquantifiable"]}
-             | {o["id"] for o in hyp["observables"]}
-             | {r["id"] for r in hyp["routes"]}
-             | {t["id"] for t in hyp["terminal"]}) - {r[0] for r in rows}
-    ej = live.live_json(os.path.join(DERIVED, "experiments.json"))
-    sol = live.live_json(os.path.join(DERIVED, "solutions.json"))
-    obs = live.live_json(os.path.join(DERIVED, "observing.json"))
-    of = live.live_json(os.path.join(DERIVED, "outfalls.json"))
-    figs = figures({
-        "discharge_points": sol["register"]["discharge_points"],
-        "share_between_wb": obs["variance"]["share_between_wb"],
-        "water_bodies": obs["sizes"]["n"],
-        "outfalls": of["layers"]["combined_overflow"]["n"] + of["layers"]["separate_stormwater"]["n"],
-    })
 
     a("# Experiments, not studies\n")
-    a("Most of what this project marks untestable is untestable **with existing "
-      "monitoring**. That is a different claim, and a weaker one. A national "
-      "observing programme answers questions about what is happening; a "
-      "manipulation with a control answers questions about what causes what, and "
-      "several of the open questions here would yield to one that fits in a season "
-      "and a small boat.\n")
-    a("The distinction matters because a study and an experiment fail differently. "
-      "An analysis of existing data can always be argued with — the confounders are "
-      "real, the record is short, the aggregation lost the signal. An experiment "
-      "with a control and a decision rule fixed in advance either falsifies the "
-      "hypothesis or does not.\n")
-    a("So every entry below states its decision rule **before** anyone runs it, "
-      "including what result would count against the hypothesis this project "
-      "prefers.\n")
-    a("> **The recurring design element is the sterilised control** — the same "
-      "material, autoclaved or irradiated, run alongside the live one. Identical "
-      "chemistry, no organisms. It separates *the chemistry of this stuff* from "
-      "*the organisms in it* in a single step, and that is exactly the distinction "
-      "the sediment-sickness and inoculation hypotheses turn on. Soil science has "
-      "used it for a century.\n")
+    a(C("C-EA-I-TRIAGE", f"Of the {tri['n_triaged']} hypotheses this project triaged, "
+        f"{tri['classes']['unscoreable']['n']} are unscoreable because the deciding "
+        "measurement is in none of the sources it surveyed, and "
+        f"{tri['classes']['experiment']['n']} more need an experiment that no surveyed source "
+        "reports.") + " " +
+      C("C-EA-I-WEAKER", "That is untestable **with the monitoring and data that exist**, "
+        "which is a different claim from untestable, and a weaker one. A national observing "
+        "programme answers questions about what is happening; a manipulation with a control "
+        "answers questions about what causes what, and several of the open questions here "
+        "would yield to one that fits in a season and a small boat.") + "\n")
+    a(C("C-EA-I-FAIL", "The distinction matters because a study and an experiment fail "
+        "differently. An analysis of existing data can always be argued with — the "
+        "confounders are real, the record is short, the aggregation lost the signal. An "
+        "experiment with a control and a decision rule fixed in advance either falsifies the "
+        "hypothesis or does not.") + "\n")
+    a(C("C-EA-I-RULE", "So every entry below states its decision rule **before** anyone runs "
+        "it.") + "\n")
+    a("> " + C("C-EA-I-STERILE", "**The recurring design element is the sterilised control** "
+               "— the same material, autoclaved or irradiated, run alongside the live one: "
+               "the organisms taken out, the material left. It separates *the chemistry of "
+               "this stuff* from *the organisms in it* in a single step, and that is exactly "
+               f"the distinction {R('T4')} and {R('T5')} turn on.") + "\n")
 
     a("## Three kinds of work, which are not interchangeable\n")
     for kid, label, what in KINDS:
-        a(f"**{label} — `{kid}`** ({ej['by_kind'][kid]} of {ej['n_experiments']} below). "
-          f"{what}\n")
-    a("Naming them separately matters because they are not substitutes and they are "
-      "not equally strong. Only an experiment establishes causation. Only a "
-      "measurement can recover something nobody wrote down. Analysis is the cheapest "
-      "and the weakest, and it is what a project like this one can do from a desk — "
-      "so it should be honest that most of its output is of that kind, and that the "
-      "step up in force comes from going and looking.\n")
+        a(C(f"C-EA-K-{kid.upper()}", f"**{label} — `{kid}`** ({ej['by_kind'][kid]} of "
+            f"{ej['n_experiments']} below). {KIND_WORDS.get(kid, what)}") + "\n")
+    a(C("C-EA-K-NAMING", "Naming them separately matters because they are not substitutes "
+        "and they are not equally strong. Only an experiment establishes causation. Only a "
+        "measurement can recover something nobody wrote down. Analysis is the cheapest and "
+        "the weakest, and it is what a project like this one can do from a desk — so it "
+        "should be honest that its output is of that kind, and that the step up in force "
+        "comes from going and looking.") + "\n")
 
     a("## What it would take\n")
     a("| | | experiments |")
     a("|---|---|---|")
-    for key, what in SCALES:
+    for key, _ in SCALES:
         ids = [r[0] for r in rows if r[4] == key]
-        a(f"| `{key}` | {what} | {', '.join(ids) if ids else '—'} |")
+        a(f"| `{key}` | {C('C-EA-S-' + key.upper(), SCALE_WORDS[key])} | "
+          f"{', '.join(ids) if ids else '—'} |")
     a("")
-    a(f"**{ej['no_institution']} of {ej['n_experiments']} need no institution.** Two need no fieldwork "
-      f"or none of their own. The most consequential — X8, whether the national "
-      f"trends are in the sea or in the instruments — is a desk exercise on data "
-      f"that is already downloaded.\n")
+    a(C("C-EA-S-COUNT", f"**{ej['no_institution']} of {ej['n_experiments']} need no "
+        f"institution**, and {ej['by_scale']['desk']} need no fieldwork of their own.") + " " +
+      C("C-EA-S-X8", "One of those, `X8` - whether the national trends are in the sea or in "
+        "the instruments - runs on the CTD extract already on disk.") + "\n")
 
-    for key, what in SCALES:
+    for key, _ in SCALES:
         rs = by_scale.get(key, [])
         if not rs:
             continue
-        a(f"## {key.capitalize()} — {what}\n")
+        a(f"## {SCALE_HEAD[key]}\n")
         for xid, title, kind, settles, _, why, manip, ctrl, meas, decide, note in rs:
+            x = dict(zip([p[0] for p in PARTS], (why, manip, ctrl, meas, decide, note)))
+            mine = words.get(xid, {})
+            fam = "terminal" if xid in OUTCOME_ENTRIES else "hypotheses"
             a(f"### {xid} — {title}\n")
-            a(f"`{kind}`\n")
-            named = ", ".join(live.ref(h, True, family="hypotheses" if _amb(h) else None) for h in settles)
-            a(f"**Bears on:** {named}\n")
+            named = ", ".join(R(h, True, fam if _amb(h) else None) for h in settles)
+            a(C(f"C-EA-{xid}-FRAME", f"`{kind}` · **Bears on:** {named}") + "\n")
+            for part, tag, lead in PARTS:
+                if part in mine:
+                    body = mine[part]
+                else:
+                    if "\n\n" in x[part]:
+                        raise live.Unjustified(f"experiments: {xid} {part} is two paragraphs "
+                                               "- give each its own claim in PAGE")
+                    body = C(f"C-EA-{xid}-{tag}", checked(xid, x[part], v))
+                if part == "note":
+                    for p in (body if isinstance(body, list) else [body]):
+                        a(f"*{p}*\n")
+                else:
+                    a(f"{lead}{body}\n")
 
-            def c(t):
-                return checked(xid, t, figs, known)
-            a(f"{c(why)}\n")
-            a(f"**Manipulate.** {c(manip)}\n")
-            a(f"**Control.** {c(ctrl)}\n")
-            a(f"**Measure.** {c(meas)}\n")
-            a(f"**Decide, in advance.** {c(decide)}\n")
-            a(f"*{c(note)}*\n")
-
-    a("## Why this list is short\n")
-    a("It is short on purpose. Every entry had to clear three tests: a control that "
-      "isolates one mechanism, a decision rule written before the result, and an "
-      "outcome that would change what someone does. A great many interesting "
-      "measurements fail the third test, and a great many proposals fail the "
-      "first.\n")
-    a("It is also worth saying what these experiments cannot do. None of them "
-      "settles the national attribution question, because that is a question about "
-      "a whole country over decades and no manipulation reaches it. What they "
-      "settle is whether the *mechanisms* the attribution assumes actually operate — "
-      "which is the part currently taken on trust in every direction, this "
-      "project's included.\n")
+    a("## What each entry has to have\n")
+    a(C("C-EA-C-TESTS", "Each entry states a control, a decision rule written before the "
+        "result, and an outcome that would change what someone does.") + "\n")
+    a(C("C-EA-C-LIMIT", "It is also worth saying what these experiments cannot do. None of "
+        "them settles the national attribution question, because that is a question about a "
+        "whole country over decades and no manipulation reaches it. What they settle is "
+        "whether the *mechanisms* the attribution assumes actually operate — which is the part "
+        "currently taken on trust in every direction, this project's included.") + "\n")
     return "\n".join(o) + "\n"
 
 
@@ -873,8 +1288,7 @@ def main():
                                  "note": j_}
                                 for a_, b_, k_, c_, d_, e_, f_, g_, h_, i_, j_ in X]})
     write_doc(OUT, render(X, hyp))
-    log(f"wrote docs/EXPERIMENTS.md ({os.path.getsize(OUT):,} chars) - "
-        f"{len(SELF)} number(s) carried as self-quotation")
+    log(f"wrote docs/EXPERIMENTS.md ({os.path.getsize(OUT):,} chars)")
     cheap = sum(1 for r in X if r[4] in ("small", "desk"))
     log(f"  {len(X)} experiments; {cheap} need no institution")
     log(f"  covering {len({h for r in X for h in r[3]})} ids across the register")

@@ -1,0 +1,4 @@
+{
+ "_what": "Construction declarations for the hypothesis drafts C4 and C6 (agent w3-cc). None is needed: every data field the two pages print is already declared - hypodraft_facts.json and hypodraft_ctd.json by K-DRAFTSA-FACTS and K-DRAFTSA-CTD, enums.json by K-DRAFTSA-ENUMS and K-ENUMS, landing_facts.json gotland.months by K-LANDING-FACTS, and the shares by the step K-SUBSET-SHARE; the rest are stated design values and readings of pinned documents.",
+ "constructions": []
+}

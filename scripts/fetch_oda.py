@@ -21,7 +21,7 @@ Politeness: stations are requested in batches with a pause between them, the cli
 sends a User-Agent naming the project, and nothing here runs concurrently. The
 station register is fetched first because it is small and indexes everything else.
 
-Written for a small machine. This VM has ~3 GB of RAM and /tmp is a 1 GB tmpfs, so
+Written for a small machine (CLAUDE.md gives the memory budget; /tmp is a tmpfs), so
 a response held in memory is a response competing with everything else. Every
 download streams to disk in chunks and is never materialised as a single object;
 each batch is appended to the output file and forgotten; the output file is replaced
@@ -29,12 +29,14 @@ at the start of a run rather than grown; and the run stops on its own if it woul
 exceed --max-mb or leave less than MIN_FREE_MB on the volume. Storage that must be
 replaced rather than filled without care is the constraint, not an afterthought.
 
-Topics (Hav):
-    stations   Observationssted   the register: id, name, water body, UTM32, dates
-    ctd        Feltmaaling/CTD    oxygen, temperature, salinity by depth
-    kemi       Vandkemi           nutrients, chlorophyll and hazardous substances
-    sediment   Sedimentkemi       what is in the bed
-    fauna      Bundfauna          the soft-bottom survey
+Topics (Hav) - the keys of TOPICS below. Sediment chemistry and bottom fauna are
+not among them; this script cannot fetch either.
+    stations    Observationssted   the register: id, name, water body, UTM32, dates
+    ctd         Feltmaaling/CTD    oxygen, temperature, salinity by depth
+    lys         Feltmaaling        light attenuation
+    iltkor      Feltmaaling        oxygen correction
+    kemi        Vandkemi           nutrients, chlorophyll and hazardous substances
+    maaledybde  Maaledybde         Secchi depth paired with bottom depth
 
 Usage:
     python3 scripts/fetch_oda.py stations
@@ -65,9 +67,9 @@ TOPICS = {
     # The topic this file's own docstring advertised for a year without listing.
     # Read off the tree rather than guessed: topic.aspx?id=h&t=h, then
     # topic_TabClick tab=hent-tab gives the Hav roots (Vandkemi is node 10_0),
-    # then EmneNodeClick on 10_0 gives its one child. It is the fetch that
-    # unblocks nine hypotheses in hypodrafts/TRIAGE.md - A1, A2, A5, A7, B4, E2,
-    # E11, K1, K2 - none of which had any other route to a number.
+    # then EmneNodeClick on 10_0 gives its one child. hypodrafts/TRIAGE.md named
+    # it in the blocker for nine hypotheses (the vandkemi cluster in
+    # triage_rows.py); rescore.py scores what the fetch actually unblocked.
     "kemi":     {"emne": "Emne_10_11",
                  "what": "Vandkemi / Næringsstof og Miljøfarligt stof"},
     "maaledybde": {"emne": "Emne_53_159",

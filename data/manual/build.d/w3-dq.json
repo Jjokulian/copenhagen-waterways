@@ -1,0 +1,44 @@
+{
+ "steps": [
+  {
+   "script": "scripts/fetch_queue.py",
+   "inputs": [
+    "data/derived/observing.json",
+    "data/derived/hypotheses.json",
+    "data/manual/data_sources_3.json",
+    "data/manual/claims.d/w3-dq.json"
+   ],
+   "outputs": [
+    "data/derived/fetch_queue.json",
+    "docs/DATA_QUEUE.md"
+   ]
+  },
+  {
+   "script": "scripts/unlock.py",
+   "args": [
+    "--doc"
+   ],
+   "inputs": [
+    "scripts/fetch_queue.py",
+    "data/derived/fetch_queue.json",
+    "data/derived/hypotheses.json",
+    "data/derived/pins/LER-GRAVE.txt",
+    "data/derived/pins/KP-DRAENKORT-DCA135.txt",
+    "data/manual/claims.d/w3-dq.json"
+   ],
+   "outputs": [
+    "docs/IF_YOU_HAVE_THE_DATA.md"
+   ]
+  },
+  {
+   "script": "scripts/export_flood.py",
+   "inputs": [
+    "scripts/floodmaps.py",
+    "data/derived/floodgap.json",
+    "data/derived/pins/FLOOD2012-AMAGER.txt",
+    "data/manual/claims.d/w3-dq.json"
+   ],
+   "outputs": []
+  }
+ ]
+}

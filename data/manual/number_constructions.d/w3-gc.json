@@ -1,0 +1,114 @@
+{
+ "constructions": [
+  {
+   "id": "K-GC-TABEL3",
+   "title": "DCE's Tabel 3, tallied from its pinned text",
+   "covers": {
+    "file": "data/derived/grundlaget.json",
+    "fields": {
+     "models": {
+      "kind": "counted",
+      "is": "Fitted indicator-models in Tabel 3 of DCE's statistical-model report: one per row of the table, that is one per triple of deviation, R² and ja/nej in the pinned extraction. Refused unless it equals the count `observing.py` parses independently."
+     },
+     "mean_r2": {
+      "kind": "computed",
+      "is": "The arithmetic mean of the models' R², as DCE print them, over every model counted in `models`."
+     },
+     "mean_dev_pct": {
+      "kind": "computed",
+      "is": "The arithmetic mean of the models' mean absolute percentage deviation (DCE's `Afvigelse %`), over every model counted in `models`."
+     },
+     "r2_criterion": {
+      "kind": "document",
+      "is": "DCE's tentative minimum R², read by pattern from the report's own sentence stating it."
+     },
+     "dev_criterion_pct": {
+      "kind": "document",
+      "is": "DCE's tentative maximum deviation in per cent, read by pattern from the report's own sentence stating it."
+     },
+     "below_r2": {
+      "kind": "counted",
+      "is": "Models whose R² is strictly below `r2_criterion`."
+     },
+     "above_dev": {
+      "kind": "counted",
+      "is": "Models whose deviation is strictly above `dev_criterion_pct`."
+     },
+     "sys_dev": {
+      "kind": "counted",
+      "is": "Models whose systematic-deviation column reads `ja`."
+     },
+     "failing_one": {
+      "kind": "counted",
+      "is": "Models below `r2_criterion` or above `dev_criterion_pct`, each counted once. The minimum number of data points, DCE's third numeric criterion, is not in the table and is not tested."
+     },
+     "r2_min": {
+      "kind": "computed",
+      "is": "The smallest R² among the models."
+     },
+     "r2_max": {
+      "kind": "computed",
+      "is": "The largest R² among the models."
+     },
+     "dev_min": {
+      "kind": "computed",
+      "is": "The smallest deviation among the models, in per cent."
+     },
+     "dev_max": {
+      "kind": "computed",
+      "is": "The largest deviation among the models, in per cent."
+     },
+     "with_bv": {
+      "kind": "counted",
+      "is": "Models whose list of selected variables includes `BV`, water-column stability. Refused unless it equals `observing.py`'s count."
+     },
+     "with_temp": {
+      "kind": "counted",
+      "is": "Models whose list of selected variables includes `temp`, water temperature."
+     }
+    }
+   },
+   "what": "The page's own tally of DCE's Tabel 3: how many indicator-models DCE fitted, their mean R² and mean deviation, how many fall outside DCE's own criteria or carry systematic deviations, and how many select stability or temperature.",
+   "model": "`tabel3()` takes the pinned text between the caption `Tabel 3: Oversigt` and the next section, splits it at `Tabel 3 fortsat` into its two halves, and walks the tokens after `vurdering`. The extraction lists each block of the table as its variable lists, then the block's deviations, then its R² values, then its `ja`/`nej`, column by column; a block of $n$ flags must be preceded by exactly $2n$ decimal numbers, the first $n$ deviations and the next $n$ R² values, so that the $k$-th of each is one model. Means are $\\bar{x} = \\frac{1}{N}\\sum_i x_i$ over all $N$ models; counts compare each model with the criteria read from the report's sentences.",
+   "assumptions": [
+    "Within one block of the extraction the deviations, the R² values and the flags come in the same row order. The pinned text gives no row labels to check this against; what supports it is that every block holds exactly two numbers per flag and that the tally's means round to the means DCE state."
+   ],
+   "justified": [
+    {
+     "text": "The parse is refused unless every block holds two numbers per flag, each half's variable lists match its models, every R² lies between zero and one, and the model count and the stability count equal those of `observing.py`, which parses the same table independently.",
+     "ref": "scripts/pages/grundlaget.py"
+    },
+    {
+     "text": "The independent parse of the same table that the model count is checked against.",
+     "ref": "scripts/observing.py"
+    },
+    {
+     "text": "DCE state a mean R² across their models and a mean absolute deviation; the tally's means round to both.",
+     "ref": "data/derived/pins/DCE-STATMOD-2015.txt"
+    }
+   ],
+   "gaps": [
+    "Which station and indicator each model belongs to is not recovered: the extraction does not keep the table's layout, so the tally supports counts, means and ranges, not statements about a named station.",
+    "DCE's colour verdict for each model is in the PDF's colours, which the text does not hold."
+   ],
+   "void_if": [
+    "the pinned report is re-pinned with a different extraction",
+    "the table's blocks stop holding two numbers per flag"
+   ],
+   "licenses": "How many of DCE's fitted models fall short of DCE's own tentative criteria, and the spread of their fit, as a tally of the whole table.",
+   "not_licensed": "Any statement about a named station's or indicator's model, or about DCE's green or yellow verdicts.",
+   "watches": [
+    "scripts/pages/grundlaget.py",
+    "data/derived/pins/DCE-STATMOD-2015.txt"
+   ],
+   "confirmed": {
+    "by": "agent w3-gc (written against scripts/pages/grundlaget.py tabel3(): blocks of the pinned Tabel 3 extraction split into deviations, R² and ja/nej, two numbers per flag enforced, variable lists matched per half, model and BV counts checked against observing.py, criteria read from the report's sentences; output reproduces DCE's stated mean R² and mean deviation; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/pages/grundlaget.py": "7b84287f07d1799d",
+     "data/derived/pins/DCE-STATMOD-2015.txt": "089dd0c3baa388a3"
+    }
+   }
+  }
+ ]
+}

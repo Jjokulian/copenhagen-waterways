@@ -1,0 +1,4 @@
+{
+ "_what": "Agent w3-le's construction declarations. LANDBRUG.md, EXPOSURE.md and EXTERNALITY.md print only fields already declared elsewhere (K-FARM-LANDBRUG, K-FARM-PATHWAYS, K-FARM-MONITORING, K-FLOOD-MONITORING, K-NITROGEN-PATHWAYS), numbers read from pinned documents, and arithmetic on those; no step or new field needed a declaration of its own.",
+ "constructions": []
+}

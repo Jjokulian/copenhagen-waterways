@@ -1,0 +1,40 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/grundlaget.py",
+   "inputs": [
+    "data/manual/nitrogen_readings.json",
+    "data/manual/science_chain.json",
+    "data/manual/species.json",
+    "data/manual/claims.d/w3-gc.json",
+    "data/derived/observing.json",
+    "data/derived/pins/NOVANA-2327.txt",
+    "data/derived/pins/DHI-MODEL-DEL1-2015.txt",
+    "data/derived/pins/DHI-MODEL-DEL2-2015.txt",
+    "data/derived/pins/DCE-STATMOD-2015.txt",
+    "data/derived/pins/SO-BG-2024.txt",
+    "data/derived/pins/POL-SO-2024.txt"
+   ],
+   "outputs": [
+    "docs/GRUNDLAGET.md",
+    "data/derived/grundlaget.json"
+   ]
+  },
+  {
+   "script": "scripts/pages/constructed.py",
+   "inputs": [
+    "data/derived/light.json",
+    "data/derived/areas.json",
+    "docs/data/flood2012/manifest.json",
+    "docs/data/areas/partition_subspace.json",
+    "docs/data/architecture.json",
+    "data/manual/claims.d/w3-gc.json",
+    "data/derived/pins/GC-STATMETHODS.txt"
+   ],
+   "outputs": [
+    "docs/CONSTRUCTED.md",
+    "data/derived/constructed.json"
+   ]
+  }
+ ]
+}

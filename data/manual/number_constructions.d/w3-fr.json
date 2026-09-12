@@ -1,0 +1,207 @@
+{
+ "constructions": [
+  {
+   "id": "K-FR-REGISTRY-UNDOC",
+   "title": "What the unmentioned map values are made of",
+   "covers": {
+    "file": "data/derived/registry.json",
+    "fields": {
+     "klima_id_without_documentation.n_composite": {
+      "kind": "counted",
+      "is": "Values in `klima_id_without_documentation` that join several ids in one value: split at a semicolon, an ampersand or a comma, more than one part remains."
+     },
+     "klima_id_without_documentation.n_composite_part_cited": {
+      "kind": "counted",
+      "is": "Of those joined values, the ones with at least one part that some plan project page cites (`projects.*.klima_ids`) or some other plan page mentions (`klima_id_only_mentioned_outside_the_project_register`). A part written without a letter prefix takes the first part's prefix."
+     },
+     "klima_id_without_documentation.n_no_digit": {
+      "kind": "counted",
+      "is": "Values in `klima_id_without_documentation` with no digit in them, so no structure number: a place name or a placeholder for an unstated id."
+     }
+    }
+   },
+   "what": "Counts, over the list of mapped `klima_id` values that no plan page mentions, the values that join several ids, the joined values of which some part is cited after all, and the values that carry no number.",
+   "model": "`id_parts()` in `scripts/report.py` splits a value at `;`, `&` or `,`, strips each part and gives a part that starts with no letter the first part's letter prefix. A value is joined if it has more than one part; its part is cited if it is in the union of the ids `build_registry.py` found on project pages and the ids it found only on other plan pages. A value with no digit matches no `\\d`.",
+   "assumptions": [
+    "A part of a joined value names the same structure as the single id with that text, so a joined value whose part is cited is not wholly unmentioned.",
+    "A value without a digit is not a structure number."
+   ],
+   "justified": [
+    {
+     "text": "The parts and the cited set are read from the same register the unmentioned list comes from, so the counts are subsets of that list counted by one rule.",
+     "ref": "scripts/report.py"
+    },
+    {
+     "text": "The list of unmentioned values holds the values as the map layers carry them, joined values included, after `norm_id` has removed spaces and upper-cased them.",
+     "ref": "scripts/build_registry.py:49"
+    }
+   ],
+   "gaps": [
+    "A joined value whose parts are all uncited is still counted as unmentioned, and whether its parts are separate structures is not checked.",
+    "The split does not handle ranges or other separators the layers might use."
+   ],
+   "void_if": [
+    "the map layers change how they join several ids in one value",
+    "build_registry.py starts splitting joined values itself"
+   ],
+   "licenses": "How many of the unmentioned map values are joined values, joined values with a cited part, or values without a number.",
+   "not_licensed": "How many distinct structures the plan leaves undescribed.",
+   "watches": [
+    "scripts/report.py",
+    "scripts/build_registry.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-fr (written against id_parts() and the counting lines in scripts/report.py main(), and build_registry.py norm_id and the orphan list; counts checked by hand against registry.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/report.py": "e8d3ee0a7ec5adfd",
+     "scripts/build_registry.py": "d9172dc81ce2b1b8"
+    }
+   }
+  },
+  {
+   "id": "K-FR-RBU-MUNI",
+   "title": "Municipalities in the fetched discharge-point layer",
+   "covers": {
+    "file": "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "fields": {
+     "municipalities.count": {
+      "kind": "counted",
+      "is": "Distinct `komm_navn` values over the features of the layer as fetched."
+     }
+    }
+   },
+   "what": "How many municipalities the fetched layer of rain-dependent discharge points covers.",
+   "model": "The set of `komm_navn` values over every feature, counted in `scripts/report.py`.",
+   "assumptions": [
+    "Every feature carries the municipality it lies in."
+   ],
+   "justified": [
+    {
+     "text": "The national layer was clipped by `komm_navn` on fetch, so the municipalities present are the ones the fetch kept.",
+     "ref": "data/raw/_manifest.json"
+    }
+   ],
+   "gaps": [
+    "Which municipalities the fetch was asked for is recorded in the fetch script, not in the layer; a municipality with no discharge point would not appear."
+   ],
+   "void_if": [
+    "the layer is refetched for other municipalities and the page is not rebuilt"
+   ],
+   "licenses": "The municipalities the page's counts of discharge points cover.",
+   "not_licensed": "Anything about municipalities outside the fetch.",
+   "watches": [
+    "scripts/report.py"
+   ],
+   "confirmed": {
+    "by": "agent w3-fr (written against the municipality set in scripts/report.py and the fetched layer, nine komm_navn values counted by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/report.py": "e8d3ee0a7ec5adfd"
+    }
+   }
+  },
+  {
+   "id": "K-FR-FETCH-CAP",
+   "title": "Where the fetch table stops",
+   "covers": {
+    "file": "data/raw/weather/fetch.json",
+    "fields": {
+     "cap.n_directions": {
+      "kind": "counted",
+      "is": "Directions in the fetch table, one entry per five degrees."
+     },
+     "cap.n_at_max": {
+      "kind": "counted",
+      "is": "Directions whose fetch equals the table's largest value exactly."
+     },
+     "cap.first_deg_at_max": {
+      "kind": "computed",
+      "is": "The smallest direction key, in degrees, among the entries equal to the largest value."
+     },
+     "cap.last_deg_at_max": {
+      "kind": "computed",
+      "is": "The largest direction key, in degrees, among the entries equal to the largest value."
+     }
+    }
+   },
+   "what": "Whether the fetch table's largest value is a distance or a ceiling: how many directions hold it exactly, and between which directions they lie.",
+   "model": "In `scripts/seabed.py`, the largest value of the table is found and the keys whose value equals it exactly are collected and counted; the first and last of them, sorted as integers, are stored as paths of the file.",
+   "assumptions": [
+    "A round value repeated exactly over several directions is a limit on the ray, not a coincidence of coastlines."
+   ],
+   "justified": [
+    {
+     "text": "The count and the directions are read from the same table the wave model reads, with exact equality, so nothing is estimated.",
+     "ref": "scripts/seabed.py"
+    }
+   ],
+   "gaps": [
+    "No script in the repository writes the table, so the ceiling cannot be confirmed from code: that it is one is argued from the repeated exact value."
+   ],
+   "void_if": [
+    "the table is recomputed with a different ray length or from another point"
+   ],
+   "licenses": "That the table's largest fetch is where it stops, and in which directions.",
+   "not_licensed": "The true distance to the coast in those directions.",
+   "watches": [
+    "scripts/seabed.py",
+    "data/raw/weather/fetch.json"
+   ],
+   "confirmed": {
+    "by": "agent w3-fr (written against the cap lines in scripts/seabed.py main() and data/raw/weather/fetch.json, whose seven exact maxima were listed by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/seabed.py": "9fa3a28badfbf173",
+     "data/raw/weather/fetch.json": "d1ccbe7e312b326c"
+    }
+   }
+  },
+  {
+   "id": "K-FR-LIGHT-SECCHI-ALL",
+   "title": "Secchi readings at the bed, over every paired reading",
+   "covers": {
+    "file": "data/derived/light.json",
+    "fields": {
+     "secchi.at_bed_pct": {
+      "kind": "share",
+      "is": "Of the readings in `maaledybde.csv.gz` with a positive `SigtDybde_m`, a positive `BundDybde_m` and a dated `StartDato` (the count `secchi.n_paired`), the percentage whose Secchi depth reaches the recorded bottom depth less a centimetre. Not the supplier's `SigtTilBund` flag, which is tallied over every reading with a Secchi depth."
+     }
+    }
+   },
+   "what": "The share of all paired Secchi readings in which the disc reached the recorded bed, over every bottom depth together.",
+   "model": "`read_secchi()` pairs each Secchi reading $s$ with the bottom depth $b$ on the same record and applies `at_bed`, $100 \\cdot \\#\\{s \\ge b - 0.01\\} / n$, to all the pairs at once; the per-band shares apply the same rule within each band.",
+   "assumptions": [
+    "A Secchi depth equal to the recorded bottom depth means the disc was on the bed, not that the water happened to be exactly that clear."
+   ],
+   "justified": [
+    {
+     "text": "The rule is the one the per-band shares use, applied to the whole paired set, so the overall share and the band shares are counted alike.",
+     "ref": "scripts/light.py:135"
+    },
+    {
+     "text": "The share is stored over the paired rows, the same rows `n_paired` counts.",
+     "ref": "scripts/light.py:157"
+    }
+   ],
+   "gaps": [
+    "The share is not checked record by record against the supplier's `SigtTilBund` flag; the flag is set on more readings, counted over a larger set, and how far the two agree is not computed."
+   ],
+   "void_if": [
+    "the depth register is refetched and light.py is not rerun"
+   ],
+   "licenses": "How often, over the paired record, the recorded Secchi depth reaches the recorded bed.",
+   "not_licensed": "The true clarity of the water where the disc reached the bed, or agreement with the supplier's flag.",
+   "watches": [
+    "scripts/light.py"
+   ],
+   "confirmed": {
+    "by": "Claude (re-read: light.py changed only in its docstring and one comment, which now give DCE's pinned figures - growth possible at 11-20% of surface light at the bed, the Kd targets assuming 14% - instead of a threshold below which eelgrass dies, as agent w3-fr found; the syntax tree without docstrings is identical. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-11",
+    "saw": {
+     "scripts/light.py": "3ae830df900f3d69"
+    }
+   }
+  }
+ ]
+}

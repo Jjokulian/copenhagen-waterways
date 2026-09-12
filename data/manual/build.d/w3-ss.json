@@ -1,0 +1,38 @@
+{
+ "steps": [
+  {
+   "script": "scripts/pages/sensing.py",
+   "inputs": [
+    "data/manual/monitoring.json",
+    "data/manual/species.json",
+    "data/manual/claims.d/w3-ss.json",
+    "data/derived/pins/DANVA-2024.txt",
+    "data/derived/pins/SS-WIKI-COPRO.txt",
+    "data/derived/pins/SS-USGS-KENDALL.txt",
+    "data/derived/pins/SS-PMC-MST-REV.txt"
+   ],
+   "outputs": [
+    "docs/SENSING.md"
+   ]
+  },
+  {
+   "script": "scripts/pages/settle.py",
+   "inputs": [
+    "data/derived/experiments.json",
+    "data/derived/triage.json",
+    "data/derived/programme.json",
+    "data/raw/weather/wind_1995_2000.json",
+    "data/raw/weather/wind_2001_2006.json",
+    "data/raw/weather/wind_2007_2012.json",
+    "data/raw/weather/wind_2013_2018.json",
+    "data/raw/weather/wind_2019_2025.json",
+    "data/derived/pins/PG-WIKI-ERA5.txt",
+    "data/manual/claims.d/w3-ss.json"
+   ],
+   "outputs": [
+    "docs/SETTLE.md",
+    "data/derived/settle.json"
+   ]
+  }
+ ]
+}

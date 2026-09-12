@@ -9,10 +9,11 @@ It is in Danish because the audience is Danish and an English document from an o
 gets filed under "foreigner with opinions" before it is read.
 
 The document concedes deliberately and early. An argument that admits what it cannot
-show is much harder to dismiss than one that claims too much, and the claim being made
-here is narrow and strong: not that agriculture is blameless, but that the evidential
-chain from the published figure to the imposed measure has three missing links, each of
-which is missing in the same direction.
+show is much harder to dismiss than one that claims too much. Every number on the page
+is read from data, a pinned document or arithmetic on those, and every statement is a
+checked claim (LIVE_NUMBERS.md section 11), registered in
+data/manual/claims.d/w3-le.json with what it rests on. What the page once said and
+could not justify is in docs/ARCHIVE.md, not here.
 
 Usage:  python3 scripts/landbrug.py
 """
@@ -22,6 +23,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, ROOT, log, read_json, write_doc
+import claims as _claims
 import live
 
 MANUAL = os.path.join(ROOT, "data", "manual")
@@ -29,18 +31,40 @@ AGRI_PCT = 69.6           # the published agricultural share; declared, not pinn
 C_PER_COD = 0.375         # kg C per kg COD: one O2 (32) oxidises one C (12)
 C_PER_N = (106 * 12.011) / (16 * 14.007)   # Redfield C:N 106:16, as a mass ratio
 FACTS = os.path.join(DERIVED, "landbrug.json")
-PAGE0 = "4469fc7"         # the commit whose text the self-quotations below are checked against
 
+C, B, E = live.claim, live.claim_begin, live.CLAIM_END
+_REG = {}
 
-def said(text):
-    """A figure nothing in this repo stores, carried as a quotation of this page as
-    committed - the site once said this, not that it was right. Counted."""
-    return live.was(PAGE0, "docs/LANDBRUG.md", text)   # text: a locator, @@ at the value
+# empty rows the pathway register itself places inside other rows, or calls a timing
+# term: filling them adds nothing to the total. The build refuses if the notes change.
+INSIDE = {"Shipping NOx deposited locally": "inside the deposition total",
+          "Drained organic soils / lowmoor peat": "inside the diffuse residual",
+          "Legacy N still in transit": "not an extra source"}
 
 
 def dk(marked):
     """Danish decimal comma in the shown text of a live number (ids carry no dot)."""
     return marked.replace(".", ",")
+
+
+def dkt(marked):
+    """Danish thousands separator in the shown text of a live number (ids carry no comma)."""
+    return marked.replace(",", ".")
+
+
+def _cl():
+    if "d" not in _REG:
+        _REG["d"] = _claims.load()[0]
+    return _REG["d"]
+
+
+def RD(sid, value, phrase):
+    """A number read from a pinned document, refused unless the pinned copy holds the
+    phrase. Each reading has its own phrase: two readings with one phrase share an id."""
+    d = _cl()
+    if _claims._flat(phrase) not in _claims._flat(_claims.pin_text(d, sid)):
+        raise live.Unjustified(f"{sid}: the pinned text does not contain '{phrase}'")
+    return live._mk(value, ["reading", sid, "phrase", phrase, _claims._meta(d, sid)])
 
 
 def main():
@@ -55,12 +79,38 @@ def main():
                    "agri_pct": AGRI_PCT, "c_per_n": C_PER_N, "c_per_cod": C_PER_COD},
                   f, ensure_ascii=False, indent=1)
         f.write("\n")
+    path = os.path.join(ROOT, "docs", "LANDBRUG.md")
+    try:
+        text = render()
+        write_doc(path, text)
+    except (live.Unjustified, _claims.Refused) as e:
+        log(str(e))
+        return 1
+    log(f"wrote docs/LANDBRUG.md ({len(text):,} chars)")
+    return 0
+
+
+def render():
     F = live.live_json(FACTS)
     paths = live.live_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
     mon = live.live_json(os.path.join(MANUAL, "monitoring.json"))
     tt = mon["typetal_nutrients_mg_per_l"]
     hz = mon["hazardous_substances"]
     ov = mon["overflow_reporting"]
+    dl = mon["diffuse_load"]
+
+    # the published share, read from DANVA's page; the arithmetic uses the same value as
+    # stored in landbrug.json, and the page is refused if the two ever differ
+    PCT = RD("DANVA-2024", 69.6, "hvor landbruget alene står for 69,6 %")
+    if abs(float(PCT) - F["agri_pct"]) > 1e-9:
+        raise live.Unjustified("landbrug: landbrug.json's agri_pct no longer matches DANVA's page")
+    pct = dk(format(PCT, ".1f"))
+    CUT = RD("DCE-STATMOD-2015", 25, "fastsættes et indsatsbehov på 25 %")
+    CUTQ = RD("DCE-STATMOD-2015", 25, "det vurderes at en 25 % reduktion")
+    RED = RD("SR353", 51, "The reductions are 51% and 72% for nitrogen and phosphorus")
+    KM24 = RD("PC-DCE-ILT-2024", 11000, "udgjorde midt i september 11.000 km2")
+    YES = RD("POL-TV2-20260903", 119, "119 medlemmer af Folketinget stemte for loven")
+    NO = RD("POL-TV2-20260903", 34, "mens 34 stemte imod")
 
     land = [p for p in paths if p["pathway"].startswith("Danish land via")]
     land_lo = sum(p["lo"] for p in land)
@@ -68,51 +118,67 @@ def main():
     agri_lo, agri_hi = land_lo * F["agri_pct"] / 100, land_hi * F["agri_pct"] / 100
     atm = next(p for p in paths if p["pathway"].startswith("Atmospheric deposition"))
     quant = [p for p in paths if p["lo"] is not None]
-    unq = [p for p in paths if p["lo"] is None]
     tot_lo = sum(p["lo"] for p in quant)
     tot_hi = sum(p["hi"] for p in quant)
     ceil_hi = agri_hi / tot_lo * 100
+    ceil_lo = agri_lo / tot_hi * 100
+    cso = next(p for p in paths if p["pathway"].startswith("Rain-dependent overflow, combined"))
+    cso_lo = cso["typetal_kt"] / land_hi * 100
+    cso_hi = cso["typetal_kt"] / land_lo * 100
+    for name, note in INSIDE.items():
+        row = next((p for p in paths if p["pathway"] == name), None)
+        if row is None or row["lo"] is not None or note not in str(row["note"]):
+            raise live.Unjustified(f"landbrug: the register no longer says '{note}' of '{name}'")
+    lv = {k["level"]: k for k in ov["knowledge_levels"]}
+    n_unq, n_all = F["n_unquantified"], F["n_pathways"]
+    ret = dl["retention_uncertainty_national_average_pct_points"]
+    k12, d8, t4 = live.ref("K12"), live.ref("D8"), live.ref("T4", family="hypotheses")
 
     o = []
     a = o.append
 
     a("# Til landbruget: grundlaget for kravet\n")
-    a("> ## Om denne sides p\u00e5stand om koefficienter\n")
-    a("> En tidligere version af denne side sagde, at der *ikke findes nogen "
-      "koefficient mellem kv\u00e6lstof og nogen \u00f8kologisk effekt*. Det er for bredt, "
-      "og det er nu rettet til det, dokumenterne faktisk viser \u2014 en sk\u00e6rpelse, "
-      "ikke en tilbagetr\u00e6kning.\n")
-    a("> **For klorofyl og lyssv\u00e6kkelse findes der en koefficient.** DCE har "
-      "opstillet statistiske relationer, og indsatsbehovet regnes ud af en h\u00e6ldning: "
-      "hvor meget indikatoren \u00e6ndrer sig pr. \u00e6ndring i N-tilf\u00f8rsel.\n")
-    a("> **For iltsvind findes der ingen.** Iltsvindsindikatoren er en *bin\u00e6r "
-      "udl\u00f8ser*. Hvis \u00e9n eller flere iltsvindsindikatorer siger, at vandomr\u00e5det er "
-      "ramt, s\u00e6ttes indsatsbehovet til en fast reduktion p\u00e5 **" + said("fast reduktion på **@@** af den nuværende") + "** af den "
-      "nuv\u00e6rende TN-koncentration \u2014 uanset hvor slemt iltsvindet er, hvor meget "
-      "kv\u00e6lstof der tilf\u00f8res, eller hvordan omr\u00e5det er indrettet. DCE skriver selv, "
-      "hvorfor: tallet er valgt, s\u00e5 det er *st\u00f8rre end de normale \u00e5r-til-\u00e5r "
-      "variationer*, og \u201ddet **vurderes**, at en " + said("**vurderes**, at en @@ reduktion i TN-koncentrationen") + " reduktion i TN-koncentrationen "
-      "er minimumskrav for at \u00e6ndre systemet\u201d. Det er en fagligt begrundet "
-      "tommelfingerregel, ikke en m\u00e5lt d\u00e6mpning. Den kan hverken falsificeres eller "
-      "kalibreres, fordi der ingen respons-kurve er bag den.\n")
-    a("> Det er iltsvind, der b\u00e6rer den offentlige begrundelse for aftalen. Og "
-      "netop der er koefficienten et sk\u00f8n.\n")
-    a("*Denne side er skrevet på dansk og henvender sig til landmænd og deres "
-      "organisationer. Resten af sitet er på engelsk.* "
+    a("> ## Om koefficienterne\n")
+    a("> " + C("C-LE-SLOPE", "**For klorofyl og lyssvækkelse findes der en koefficient.** DCE "
+               "har opstillet statistiske relationer mellem kvælstoftilførslen og indikatorerne, "
+               "og indsatsbehovet regnes ud af relationens hældning, som angiver, hvor følsom "
+               "indikatoren er over for ændringer i N-tilførslen.") + "\n")
+    a("> " + C("C-LE-TRIGGER", "**For iltsvind findes der ingen.** Iltsvindsindikatoren er en "
+               "*binær udløser*: viser én eller flere af iltsvindsindikatorerne, at et vandområde "
+               f"er ramt, sættes indsatsbehovet til en reduktion på **{CUT} %** af vandområdets "
+               "nuværende TN-koncentration, uanset hvor slemt iltsvindet er. Hvor meget "
+               "tilførslen så skal ned, regner DCE ud af vandområdets egen relation mellem "
+               "N-tilførsel og TN-koncentration.") + "\n")
+    a("> " + C("C-LE-WHY25", "DCE skriver selv, hvorfor tallet er valgt: det skal være "
+               "tilstrækkeligt stort til at rykke systemet, *større end de normale år-til-år "
+               f"variationer*, og ”det vurderes at en {CUTQ} % reduktion i TN-koncentrationen er "
+               "minimumskrav for at ændre systemet”.") + " "
+      + C("C-LE-JUDGED", "Det er en fagligt begrundet tommelfingerregel, ikke en målt dæmpning: "
+          "begrundelsen er år-til-år-variationen og en vurdering, ikke en sammenhæng mellem "
+          "kvælstof og ilt, og DCE skriver i samme rapport, at der ikke findes en interkalibreret "
+          "indikator for ilt.") + "\n")
+    a("> " + C("C-LE-MINISTER", "Da den nye reguleringsmodel blev fremlagt, sagde ministeren, at "
+               "*”for meget kvælstof på landbrugets marker har ført til iltsvind og ødelagt "
+               "levesteder for fisk, muslinger og planter”*.") + " "
+      + C("C-LE-THERE", "Og netop for iltsvind er kravet en vurdering, ikke en fittet "
+          "sammenhæng.") + "\n")
+    a("*" + C("C-LE-LANG", "Denne side er skrevet på dansk og henvender sig til landmænd og deres "
+              "organisationer. Resten af sitet er på engelsk.") + "* "
       "*[An English summary follows at the bottom.](#in-english)*\n")
-
-    a("> **Hvad dette er, og hvad det ikke er.** Dette er ikke et partsindlæg for "
-      "landbruget. Projektet her bruger det meste af sin plads på at tage byens egne "
-      "udledninger fra hinanden — regnbetingede overløb, spildevandsplanens huller, "
-      "hvad Københavns skybrudsplan faktisk dækker. Det er *samme* metode anvendt på "
-      "kvælstoftallet, og resultatet er ubelejligt for flere end landbruget.\n")
+    a("> " + C("C-LE-NOTPARTISAN", "**Hvad dette er, og hvad det ikke er.** Dette er ikke et "
+               "partsindlæg for landbruget.") + " "
+      + C("C-LE-CITY-TOO", "Projektet her tager også byens egne udledninger fra hinanden — "
+          "regnbetingede overløb, spildevandsplanens huller, hvad Københavns skybrudsplan "
+          "faktisk dækker.") + " "
+      + C("C-LE-SAME", "Det er *samme* metode anvendt på kvælstoftallet, og resultatet er "
+          "ubelejligt for flere end landbruget.") + "\n")
 
     # ---------------------------------------------------------------- 1
-    a(f"## 1. Hvad de {dk(format(F['agri_pct'], '.1f'))} % faktisk er en andel af\n")
-    a(f"Tallet er landbrugets andel af **den landbaserede, vandbårne post alene** — "
-      "kvælstof, der når kysten gennem danske vandløb og umålte oplande. Det er to "
-      "rækker ud af tyve i den opgørelse, projektet har lavet over alle veje, ad hvilke "
-      "reaktivt kvælstof når danske havområder:\n")
+    a(f"## 1. Hvad de {pct} % faktisk er en andel af\n")
+    a(C("C-LE-SCOPE", "Tallet er landbrugets andel af det kvælstof, der udledes til kystvandene, "
+        "fordelt på kilder: **den landbaserede, vandbårne post** — kvælstof, der når kysten "
+        f"gennem danske vandløb og umålte oplande. Det er to rækker ud af de {n_all} veje, ad "
+        "hvilke reaktivt kvælstof når danske havområder, som projektet har kunnet opregne:") + "\n")
     a("| Række | kt N/år | Grundlag |")
     a("|---|---:|---|")
     for p in land:
@@ -120,246 +186,299 @@ def main():
             p["status"], p["status"].lower())
         a(f"| {p['pathway'].replace('Danish land via monitored streams', 'Dansk land via målte vandløb').replace('Danish land via unmonitored catchments', 'Dansk land via umålte oplande')} "
           f"| {p['lo']:.0f} – {p['hi']:.0f} | {st} |")
-    a(f"| **Posten, procenten deler** | **{land_lo:.0f} – {land_hi:.0f}** | |")
-    a(f"| **{dk(format(F['agri_pct'], '.1f'))} % af den** | **{agri_lo:.0f} – {agri_hi:.0f}** | |")
+    a(f"| **Posten, andelen deler** | **{land_lo:.0f} – {land_hi:.0f}** | |")
+    a(f"| **{pct} % af den** | **{agri_lo:.0f} – {agri_hi:.0f}** | |")
     a("")
-    a(f"De **{F['n_unquantified']} af {F['n_pathways']} veje har slet intet tal** — heriblandt "
-      "atmosfærisk afsætning af organisk kvælstof, udsivning af grundvand under havet, "
-      "og frigivelse fra sedimentet, som efter én undersøgelse leverer størstedelen af "
-      "det, den årlige primærproduktion kræver. De veje, der *har* et tal, summerer til "
-      f"**{tot_lo:.0f} – {tot_hi:.0f} kt N/år**.\n")
-    a("En tom række kan kun lægge til. Nævneren har altså et gulv og intet loft, og "
-      "enhver procent regnet mod den er et **loft, ikke et estimat**:\n")
-    a(f"> Landbruget står for **højst {ceil_hi:.0f} %** af det opgjorte reaktive "
-      "kvælstof, der når danske havområder. Udfyld én af de tomme rækker, og loftet "
-      "falder. Det kan ikke stige.\n")
-    a(f"Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen er "
-      f"{atm['lo']:.0f}–{atm['hi']:.0f} kt N/år** — på størrelse med hele den landbaserede post — og optræder ikke i nogen "
-      "offentliggjort fordeling.\n")
+    a(C("C-LE-EMPTY", f"De **{n_unq} af {n_all} veje har slet intet tal** — heriblandt organisk "
+        "kvælstof i den atmosfæriske afsætning, udsivning af grundvand under havet og frigivelse "
+        "fra sedimentet. De veje, der *har* et tal, summerer til "
+        f"**{tot_lo:.0f} – {tot_hi:.0f} kt N/år**.") + "\n")
+    a(C("C-LE-FLOOR", "En tom række, der er en kilde for sig, kan kun lægge til. Nævneren har "
+        "altså et gulv og intet loft, og enhver andel regnet mod den er et **loft, ikke et "
+        "estimat**:") + "\n")
+    a("> " + C("C-LE-CEILING", f"På projektets egne grænser står landbruget for **højst "
+               f"{ceil_hi:.0f} %** af det opgjorte reaktive kvælstof, der når danske havområder, og "
+               f"ved den brede ende af grænserne for ned til {ceil_lo:.0f} %. Grænserne har ikke en "
+               "kilde for hver række, så loftet er ikke bedre end dem.") + "\n")
+    a(C("C-LE-NOTADD", "Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes "
+        "lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den "
+        "diffuse restpost; og kvælstof, der stadig er undervejs, er en tidsforskydning af de andre "
+        "rækker, ikke en ekstra kilde. De øvrige tomme rækker kan kun sænke loftet, når de bliver "
+        "fyldt ud.") + "\n")
+    a(C("C-LE-DEPOSITION", "Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen "
+        f"er {atm['lo']:.0f}–{atm['hi']:.0f} kt N/år** i projektets register — på størrelse med "
+        "hele den landbaserede post — og den er ikke en linje i den fordeling, andelen kommer "
+        "fra.") + "\n")
 
     # ---------------------------------------------------------------- 2
     a("## 2. Tallet er en restpost, ikke en måling\n")
-    d = mon["diffuse_load"]
-    a("Sådan fremkommer landbrugsandelen: målt-plus-modelleret total, minus modellerede "
-      "punktkilder, minus modelleret naturligt baggrundsbidrag. Det, der bliver tilbage, "
-      "kaldes landbrug.\n")
+    a(C("C-LE-RESIDUAL", "Sådan fremkommer landbrugsandelen: den målte og modellerede transport "
+        "fra land, minus punktkilderne — renseanlæg og industri, som indberetter deres "
+        "udledninger, og overløb og regnvand, som modelleres — minus et naturligt "
+        "baggrundsbidrag, der bestemmes i små oplande med lille menneskelig påvirkning og overføres "
+        "til resten. Det, der bliver tilbage, kaldes landbrug, og det rummer også den spredte "
+        "bebyggelse, som ikke kan skilles ud.") + "\n")
     a("| | |")
     a("|---|---|")
-    a(f"| Måledækning | {d['area_measured_pct']} % af arealet måles, "
-      f"{d['area_modelled_pct']} % modelleres |")
-    a("| Målemetode | stikprøver med faste mellemrum, transport beregnet som sum af "
-      "daglig vandføring gange lineært interpoleret koncentration |")
-    a("| Dokumenteret skævhed | i alle tre vandløb i GUDP-undersøgelsen fra 2018 gav "
-      "stikprøver **altid lavere** transport end højfrekvent måling |")
-    a(f"| Retentionens usikkerhed | ± {d['retention_uncertainty_national_average_pct_points']} "
-      "procentpoint på landsgennemsnittet |")
-    a("| Estimatorens opførsel | i tørre år som 1996 og 2005 bliver det beregnede "
-      "dyrkningsbidrag **negativt** |")
+    a("| Måledækning | " + C("C-LE-R-COVER", f"{dl['area_measured_pct']} % af arealet måles, "
+                                f"{dl['area_modelled_pct']} % modelleres") + " |")
+    a("| Målemetode | " + C("C-LE-R-METHOD", "stikprøver med faste mellemrum; transporten "
+                               "beregnes som summen af daglig vandføring gange lineært "
+                               "interpoleret koncentration") + " |")
+    a("| Dokumenteret skævhed | " + C("C-LE-R-BIAS", "i alle tre vandløb i GUDP-undersøgelsen fra "
+                                        "2018 gav stikprøverne **altid lavere** transport end "
+                                        "intensiv daglig måling") + " |")
+    a("| Retentionens usikkerhed | " + C("C-LE-R-RETENTION", f"± {ret} procentpoint på "
+                                            "landsgennemsnittet") + " |")
+    a("| Estimatorens opførsel | " + C("C-LE-R-DRY", "i tørre år som 1996 og 2005 er det "
+                                          "beregnede dyrkningsbidrag kommet ud **negativt**") + " |")
     a("")
-    a("En størrelse, der kan blive negativ, er ikke en måling af en fysisk mængde. Den "
-      "er residualet af to modeller, og den arver begges fejl med modsat fortegn.\n")
+    a(C("C-LE-R-SOURCE", "Rækkerne står i projektets register over overvågningen, som ikke "
+        "angiver, hvor de kommer fra; de dokumenter, de bygger på, er ikke fastholdt her.") + "\n")
+    a(C("C-LE-NEGATIVE", "En beregnet størrelse, der bliver negativ, hvor den fysiske mængde ikke "
+        "kan være det, har en fejl, der kan være større end selve signalet. Den er det, der bliver "
+        "tilbage, når modellerede led trækkes fra en delvist modelleret total, og den arver "
+        "fejlene i dem alle — og andelen offentliggøres med én decimal og uden usikkerhed.") + "\n")
 
     # ---------------------------------------------------------------- 3
     a("## 3. Tre led mangler mellem tallet og skaden\n")
-    a(f"Sætningen, der bruges politisk, er ikke *{dk(format(F['agri_pct'], '.1f'))} % af den landbaserede vandbårne "
-      f"kvælstofpost*. Den er *landbruget står for {said("står for @@ af iltsvindet*")} af iltsvindet* — eller "
-      "af fedtemøget. Mellem de to sætninger ligger tre led:\n")
+    a(C("C-LE-FEDT", "*Fedtemøg* er en folkelig betegnelse for masseforekomster af løstliggende, "
+        "trådformede brunalger, som kan ligge og rådne i vandkanten og på stranden.") + " "
+      + C("C-LE-PUBLIC", "I den offentlige debat, som projektet har fastholdt, knyttes fedtemøg og "
+          "iltsvind til landbrugets kvælstof. Den danske Wikipedia-artikel om fedtemøg skriver, at "
+          "forekomsten ved danske kyster *”skyldes især landbrugets udledning af kvælstof”*, og "
+          "Danmarks Naturfredningsforenings præsident sagde om kvælstofaftalen: *”År efter år har "
+          "vi set forfærdeligt iltsvind og fedtemøg. Skal havet have en chance, må landbrugets "
+          "kvælstofforurening ned.”*") + "\n")
+    a(C("C-LE-JOIN", f"Andelen på {pct} % kommer fra en tredje kilde. Ingen af dem, der citeres "
+        "her, ganger de to sammen, men argumentet indbyder læseren til det. Mellem andelen og "
+        "skaden ligger disse led:") + "\n")
     a("| Led | Koefficient |")
     a("|---|---|")
-    a("| Kvælstof → iltsvind | **findes ikke.** Kvælstof er én af mindst seks iltforbrugende "
-      "processer. Der er ingen potensfaktor: et kilo i februar i en opblandet vandsøjle "
-      "tæller som et kilo i juli under et springlag |")
-    a("| Iltsvind → tab af højere liv | **findes ikke.** Iltsvind er én vej blandt flere — "
-      "miljøfremmede stoffer, trawl, turbiditet, svovlbrinte. Bundfaunaen prøvetages "
-      f"**{said("Bundfaunaen prøvetages **@@**, så efterårets")}**, så efterårets dødelighed ses aldrig |")
-    a("| Tab af højere liv → fedtemøg | **findes ikke.** Fedtemøg overvåges ikke "
-      "systematisk overhovedet — ikke udbredelse, ikke biomasse, ikke varighed |")
+    a("| Landbrug → den landbaserede, vandbårne kvælstofpost | "
+      + C("C-LE-L1", f"**{pct} %, offentliggjort.** En restpost: målt og modelleret total minus "
+          f"punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på ± {ret} "
+          "procentpoint i projektets register, som ikke angiver en kilde til den") + " |")
+    a("| Den post → alt reaktivt kvælstof, der når havet | "
+      + C("C-LE-L2", f"**ingen: mængden er åben.** {n_unq} af {n_all} opregnede veje har intet "
+          "tal, heriblandt organisk kvælstof i afsætningen, udsivning af grundvand under havet og "
+          "frigivelse fra sedimentet") + " |")
+    a("| Kvælstof i havet → iltsvind | "
+      + C("C-LE-L3", f"**ingen fittet koefficient.** DCE's krav er en vurderet reduktion på {CUT} % "
+          "af TN-koncentrationen. Iltsvind opstår af et samspil mellem mængden af dødt organisk "
+          "stof, klimatiske forhold og vandområdets hydrografi, og kvælstof er én vej til det døde "
+          "stof blandt flere. Der er ingen potensfaktor: et kilo i februar i en opblandet "
+          "vandsøjle tæller som et kilo i juli under et springlag") + " |")
+    a("| Kvælstof i havet → algevækst → fedtemøg på en strand | "
+      + C("C-LE-L4", "**intet beregnet.** Algerne vokser også på lys, fosfor, en sæson og noget at "
+          "hæfte sig på, og på kvælstof, der frigives på stedet; trådene river sig løs, driver og "
+          "strander, hvilket kræver vind og en kyst. Ingen serie over strandens tilstand er fundet "
+          "i nogen af de kilder, projektet har gennemgået") + " |")
     a("")
-    a("Hvert led er en reel årsagssammenhæng. Ingen af dem har et tal. **Et produkt af "
-      "tre ukendte brøker er en ukendt brøk** — og det præsenteres som ét målt tal.\n")
+    a(C("C-LE-EVERYLINK", "Hvert led er en reel årsagssammenhæng, og de tre sidste har intet tal "
+        "her. Et produkt af ukendte brøker er en ukendt brøk — **ikke en lille**. Landbruget kan "
+        "stadig være den største enkelte bidragyder i hvert led; det har projektet ikke regnet ud, "
+        "og ingen kilde, det har, gør det.") + "\n")
+    a(C("C-LE-FAUNA", "Selv hvor der er en sammenhæng, ser overvågningen den dårligt: bundfaunaen "
+        "på blød bund prøvetages i tidsrummet 1. marts – 31. maj, så en dødelighed sidst på "
+        "sommeren og om efteråret ses først bagefter, når genindvandringen er begyndt.") + "\n")
 
     # ---------------------------------------------------------------- 4
-    a("## 4. Prøven, der allerede er taget\n")
-    tr = mon["load_trend_vs_outcome"]
-    ld = tr["nitrogen_load"]
-    a(f"Den landbaserede kvælstoftilførsel er faldet fra omkring "
-      f"{ld['approx_1990_kt']:,} kt N/år i 1990 til omkring {ld['approx_recent_kt']:,} kt "
-      f"— en reduktion på cirka {ld['reduction_pct_since_1990']} %. Luftbåren kvælstof "
-      "til danske havområder er faldet tilsvarende. Det er den største miljøindsats i "
-      "nyere dansk politik, og den er ikke omstridt.\n")
-    a("Imens:\n")
-    a("| År | Iltsvindets udbredelse i september |")
-    a("|---|---|")
-    for r in tr["iltsvind_extent"]["observations"]:
-        km = r.get("km2_september") or r.get("km2_late_september")
-        a(f"| {r['year']} | {'~' + format(km, ',') + ' km²' if km else '—'} |")
-    a("")
-    a("**Halvér tilførslen, og yderpunkterne rykker sig ikke.** 2023 og 2024 lå på "
-      "niveau med 1989, 2000 og 2002, hvor belastningen var omtrent dobbelt så stor. "
-      "Og 2025 kom ind på en tredjedel af 2024 — så udsvinget mellem to på hinanden "
-      "følgende år er større end trenden over femogtredive.\n")
-    a("Det er ikke bevis for, at kvælstof er ligegyldigt. Det er bevis for, at "
-      "**udbredelsen styres af det enkelte års fysik og af havbundens tilstand**, med "
-      "belastningen som en langsom baggrund. Ingen af de to ting kan en kildeopgørelse "
-      "overhovedet udtrykke, for ingen af dem er en kilde.\n")
+    a("## 4. Det, der er sket siden 1990\n")
+    a(C("C-LE-REDUCTION", "**Indgrebet.** DCE's rapport om vandløbene opgør faldet i tilførslen "
+        f"af kvælstof fra land til de danske kystvande i perioden 1990–2018 til {RED} %, beregnet "
+        "på vandføringsvægtede årsmiddelkoncentrationer.") + " "
+      + C("C-LE-NOTDISPUTED", "Denne side bestrider hverken faldet eller indsatsen bag det.") + "\n")
+    a(C("C-LE-OUTCOME", "**Udfaldet.** DCE's notat fra efteråret 2023 kaldte iltsvindet i midten "
+        "af september det hidtil næststørste registrerede. I midten af september 2024 dækkede "
+        f"iltsvindet {dkt(format(KM24, ','))} km², og DCE kaldte det igen det hidtil næststørste "
+        "registrerede, kun overgået af iltsvindet i 2002.") + "\n")
+    a(C("C-LE-JUXTA", "**Side om side:** tilførslen fra land er omtrent halveret, og udbredelsen i "
+        "september 2024 var den næststørste registrerede. Yderpunkterne følger ikke tydeligt "
+        "belastningen. Men en sammenligning af udvalgte år kan ikke bære en trend i en serie med "
+        "store udsving fra år til år, den kan ikke skelne *ingen virkning* fra *værre uden*, og "
+        "varmere vand holder på mindre ilt og trækker dermed imod en lavere belastning. Det er en "
+        "iagttagelse, ikke en test — det sidste afsnit siger, hvad der ville være en.") + "\n")
+    a(C("C-LE-NOTIRRELEVANT", "Det er ikke bevis for, at kvælstof er ligegyldigt.") + " "
+      + C("C-LE-WEATHER", "Det er heller ikke bevis for, hvad der så styrer udbredelsen. DCE "
+          "forklarer, hvordan en iltsvindssæson udvikler sig, med årets vejr: vind, der blander "
+          "vandsøjlen, bremser iltsvindet, og høj vandtemperatur fremmer det, fordi iltforbruget "
+          "stiger med temperaturen, og iltens opløselighed falder. En belastningsserie, der er "
+          "regnet, så vejret er taget ud, kan derfor ikke læses mod yderpunkterne år for år.") + " "
+      + C("C-LE-STATE", f"Registret har desuden hypoteser om, at havbundens tilstand spiller ind: "
+          f"{k12}, {d8} og {t4} beskriver hver en måde, hvorpå den samme belastning kan gøre mere "
+          "skade nu end før.") + " "
+      + C("C-LE-NOTSOURCE", "Ingen af de to ting kan en kildeopgørelse udtrykke, for ingen af dem "
+          "er en kilde.") + "\n")
 
     # ---------------------------------------------------------------- 5
     a("## 5. Det, byen slipper for at få talt med\n")
-    a("Samme metode på byens egne udledninger, så det er klart, at kritikken ikke kun "
-      "peger én vej:\n")
-    for t in [
-        f"**Overløbsmængder er modellerede**, ikke målte. PULS registrerer antal overløb "
-        f"og ingen vandføring. Massen beregnes som modelleret årsvolumen gange et fast "
-        f"typetal — og kvalitetskontrolleres ved at tjekke, om koncentrationen ligger "
-        f"tæt på det samme typetal. Usikkerheden på volumen er angivet til "
-        f"{ov['knowledge_levels'][1]['uncertainty_pct']} % på det laveste videnniveau.",
-        f"**Typetallene for miljøfarlige stoffer** hviler på "
-        f"{hz['stations_combined_overflow']} målestationer for fællessystem og "
-        f"{hz['stations_separate_stormwater']} for separat regnvand, anvendt på "
-        f"{hz['applied_to_discharge_points_nationally']:,} udledningspunkter — i oplande "
-        f"*valgt* til at repræsentere husholdninger og boligområder, og udtrykkeligt "
-        f"afgrænset over for industriområder og stærkt trafikerede veje. Samme rapport "
-        f"finder de højeste medianer for metaller i slam fra bassiner.",
-        f"**Et fællessystemsoverløb leverer lige så meget organisk kulstof direkte, som "
-        f"dets kvælstof kunne nå at producere.** Ved Redfield-forhold svarer "
-        f"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til "
-        f"{tt['combined_overflow']['Tot-N']*F['c_per_n']:.0f} mg C/l; vandet bærer selv "
-        f"{tt['combined_overflow']['COD']*F['c_per_cod']:.0f} mg C/l. Kun den ene halvdel "
-        f"tælles, og den tælles til {said("den tælles til @@ af en national")} af en national kvælstoftotal.",
-        "**Fedt indeholder intet kvælstof overhovedet.** Triglycerider er kulstof, "
-        "brint og ilt. En kvælstofopgørelse kan ikke undervurdere det materiale — den "
-        "kan slet ikke se det. Og det frigives på en flowtærskel, altså netop i de "
-        "timer, hvor vandet går uden om renseanlægget.",
-    ]:
-        a(f"- {t}")
+    a(C("C-LE-C-INTRO", "Samme metode på byens egne udledninger, så det er klart, at kritikken "
+        "ikke kun peger én vej:") + "\n")
+    a("- " + C("C-LE-C-OVERFLOW", "**Overløbsmængder opgøres på videnniveauer**, fra en beregning "
+               "i PULS over modeller til målebaseret overløbsestimering. PULS registrerer antal "
+               "overløb og ingen vandføring. Stofmængden beregnes med typetal ud fra den "
+               "indberettede vandmængde — og kvalitetskontrolleres ved at tjekke, om "
+               "koncentrationen ligger inden for et interval omkring det samme typetal. "
+               "Usikkerheden på den udledte stofmængde er angivet til "
+               f"{lv[1]['uncertainty_pct']} % på videnniveau {lv[1]['level']}, en simpel "
+               f"massebalance; for niveau {lv[0]['level']}, en beregning i PULS, er der ingen "
+               "angivet."))
+    a("- " + C("C-LE-C-TYPETAL", "**Typetallene for miljøfarlige stoffer** hviler på "
+               f"{hz['stations_combined_overflow']} målestationer for fællessystem og "
+               f"{hz['stations_separate_stormwater']} for separat regnvand — i oplande *valgt* til at "
+               "repræsentere husholdninger og boligområder, og udtrykkeligt afgrænset over for "
+               "industriområder og stærkt trafikerede veje. Samme rapport finder, at en væsentlig "
+               "andel af de adsorberende stoffer bliver fanget i sedimentet i regnvandsbassiner, "
+               "som typetallene ikke dækker."))
+    a("- " + C("C-LE-C-CSO", "**Et fællessystemsoverløb leverer omtrent lige så meget organisk "
+               "kulstof direkte, som dets kvælstof kunne nå at producere.** Ved typetallene i "
+               "projektets register og Redfield-forholdet svarer "
+               f"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til "
+               f"{tt['combined_overflow']['Tot-N'] * F['c_per_n']:.0f} mg C/l; vandet bærer selv "
+               f"{tt['combined_overflow']['COD'] * F['c_per_cod']:.0f} mg C/l. Kvælstofopgørelsen "
+               "tæller kun den ene halvdel, og i projektets register er overløbets kvælstof "
+               f"{dk(format(cso_lo, '.1f'))}–{dk(format(cso_hi, '.1f'))} % af den landbaserede "
+               "post."))
+    a("- " + C("C-LE-C-FAT", "**Fedt indeholder intet kvælstof overhovedet.** Triglycerider "
+               "består af kulstof, brint og ilt. En kvælstofopgørelse kan ikke undervurdere det "
+               "materiale — den kan slet ikke se det. Kloakker samler fedt som aflejringer, og et "
+               "overløb sker kun, når vandføringen overstiger en tærskel, altså i de timer, hvor "
+               "vandet går uden om renseanlægget; hvor meget fedt der følger med ud, er ikke "
+               "opgjort i nogen kilde, projektet har."))
     a("")
 
     # ---------------------------------------------------------------- 6
     a("## 6. Hvad dette **ikke** viser\n")
-    a("Dette afsnit står her, fordi et argument, der indrømmer hvad det ikke kan vise, "
-      "er langt sværere at afvise end et, der påstår for meget.\n")
-    for t in [
-        "**Det viser ikke, at landbruget er uden andel.** At gange ukendte brøker giver "
-        "en ukendt, ikke en lille. Landbruget er sandsynligvis stadig den største enkelte "
-        "kvælstofkilde, belastningen er reel, og reduktioner har dokumenterede lokale "
-        "gevinster.",
-        "**Det viser ikke, at kvælstofpolitikken har fejlet.** *Nødvendig* og "
-        "*utilstrækkelig* er to forskellige konklusioner, og forløbet siden 1990 er "
-        "foreneligt med den anden.",
-        "**Og det er ikke et argument for at gøre ingenting.** Det er et argument for at "
-        "gøre noget andet — og for at måle det.",
-    ]:
-        a(f"- {t}")
+    a(C("C-LE-CONCEDE", "Dette afsnit står her, fordi et argument, der indrømmer, hvad det ikke kan "
+        "vise, er langt sværere at afvise end et, der påstår for meget.") + "\n")
+    a("- " + C("C-LE-NOTHOOK", "**Det viser ikke, at landbruget er uden andel.** At gange ukendte "
+               "brøker giver en ukendt, ikke en lille. Landbruget er sandsynligvis stadig den "
+               "største enkelte kvælstofkilde, og belastningen er reel."))
+    a("- " + C("C-LE-NOTFAILED", "**Det viser ikke, at kvælstofpolitikken har fejlet.** "
+               "*Nødvendig* og *utilstrækkelig* er to forskellige konklusioner, og forløbet siden "
+               "1990 er foreneligt med den anden."))
+    a("- " + C("C-LE-NOTNOTHING", "**Og det er ikke et argument for at gøre ingenting.** Det er et "
+               "argument for at gøre noget andet — og for at måle det."))
     a("")
-    a("Det, det *viser*, er snævrere og stærkere: **grundlaget for et kvantificeret, "
-      "sektorspecifikt mål er ikke til stede.** Der findes ingen nævner, ingen "
-      "potensfaktor, og ingen dokumenteret virkning på yderpunkterne efter femogtredive "
-      "år. Et fejlspecificeret instrument er ikke kun urimeligt over for den regulerede "
-      "— det er farligt for alle, fordi det bliver ved med at kræve mere af det samme, "
-      "når det samme ikke virker.\n")
+    a(C("C-LE-SHOWS", "Det, det *viser*, er snævrere: **den del af kravet, der hviler på iltsvind, "
+        f"har ingen fittet sammenhæng bag sig; andelen på {pct} % er ikke en andel af alt det "
+        "kvælstof, der når havet; og de seneste yderpunkter følger ikke tydeligt en belastning, der "
+        "er omtrent halveret.** Hvis instrumentet er fejlspecificeret, kan det kun anbefale "
+        "mere af det samme, når det samme ikke virker, for det er det eneste, en kildeopgørelse "
+        "kan udtrykke.") + "\n")
 
     # ---------------------------------------------------------------- 7
     a("## 7. Hvis begrænsningen er havets evne til at optage, bliver løsningsrummet større\n")
-    a("Antag et øjeblik, at skaden ikke er *f(belastning)* men *f(belastning, tilstand)* "
-      "— at det samme kilo kvælstof gør mere skade i 2025 end i 1990, fordi ålegræsset, "
-      "filtratorerne og en sammenhængende havbund er væk. Så er der to håndtag, ikke ét, "
-      "og det andet har hidtil ikke været i spil.\n")
-    a("| Virkemiddel | Hvad det gør, som reduktion ikke gør |")
+    a(C("C-LE-7-SUPPOSE", "Antag et øjeblik, at skaden ikke er *f(belastning)* men "
+        "*f(belastning, tilstand)* — at det samme kilo kvælstof gør mere skade i 2025 end i 1990, "
+        "fordi ålegræsset, filtratorerne og en sammenhængende havbund er væk. Så er der to "
+        "håndtag, ikke ét: tilførslen og havets egen tilstand.") + " "
+      + C("C-LE-7-WEIGHED", "Det andet håndtag har været vejet. Ifølge den second opinion om det "
+          "faglige grundlag for kvælstofindsatsen, som Ministeriet for Grøn Trepart offentliggjorde "
+          "i 2024, valgte ingen af kystvandrådene at tage marine virkemidler direkte med i deres "
+          "indstillede indsatsprogrammer, mens rådene for Odense Fjord og Limfjorden anbefalede "
+          "enkle marine virkemidler som supplerende indsatser — som dog ikke vurderes at kunne "
+          "erstatte andre indsatser. Og muslingeopdræt bruges i dag ikke som marint virkemiddel i "
+          "vandområdeplanen, skriver projektet BalticMUPPETS.") + "\n")
+    a("| Virkemiddel | Hvad det gør, som reduktion på land ikke gør |")
     a("|---|---|")
-    a("| **Muslinge- og tangopdræt** | fjerner kvælstof, der **allerede er i vandet**, "
-      "og høstes i stedet for at rådne. Det eneste virkemiddel, der arbejder på "
-      "lageret frem for på tilførslen |")
-    a("| **Ålegræs og bundintegritet** | genopretter optagelsen og stabiliserer "
-      "sedimentet, så metaller og svovlbrinte bliver liggende |")
-    a("| **Vådområder og efterafgrøder** | de kendte, og de virker — men kun på "
-      "tilførslen |")
+    a("| **Muslinge- og tangopdræt** | "
+      + C("C-LE-7-MUSSEL", "optager kvælstof, der **allerede er i vandet**, og fjerner det, når "
+          "høsten tages op: næringssalte fra land bygges ind i muslingerne og føres tilbage til "
+          "land, når de høstes, og høstet tang tager næringsstofferne helt ud af havmiljøet") + " |")
+    a("| **Ålegræs og bundintegritet** | "
+      + C("C-LE-7-EELGRASS", "optager, stabiliserer og giver levested på én gang, hvor lyset "
+          f"tillader det; registret har hypoteser om, hvad tabet af dem gør ved bunden ({k12}, "
+          f"{d8}, {t4})") + " |")
+    a("| **Vådområder og efterafgrøder** | "
+      + C("C-LE-7-LAND", "virker på tilførslen fra land, før kvælstoffet når havet — ikke på det, "
+          "der allerede er der") + " |")
     a("")
-    a("Det afgørende ved marin ekstraktion er, at det **er en produktion**. Muslingemel "
-      "og tang er foder. Og foderet er selve miljøydelsen: kvælstoffet fjernes ved, at "
-      "biomassen tages op.\n")
+    a(C("C-LE-7-PRODUCTION", "Det særlige ved marin ekstraktion er, at den **er en produktion**: "
+        "muslingemel er afprøvet som foder til grise og fjerkræ, og høstet tang kan bruges til "
+        "foder. Hvor kvælstoffet fjernes ved, at biomassen tages op og bruges, er foderet selve "
+        "miljøydelsen.") + "\n")
 
     # ---------------------------------------------------------------- 8
     a("## 8. Og dermed et led, der sjældent trækkes\n")
-    a("Den bindende omkostning ved at lade et dyr leve længere er foder. Hvis et "
-      "kvælstofvirkemiddel *producerer* foder og betales som miljøydelse, så kan den "
-      "samme politik finansiere, at dyr lever længere, i stedet for at besætninger "
-      "bliver mindre.\n")
-    a("Det er ikke en omskrivning. Det er en ændring af, hvad betalingen er knyttet til. "
-      "I den nuværende ordning falder dyrets værdi sammen med dets død, og jo tidligere "
-      "jo bedre — tyrekalve, lam, orner. **Et foderflow, der betales for at fjerne "
-      "kvælstof fra havet, afkobler betalingen fra aflivningen.**\n")
-    a("Forbeholdene, som skal med, ellers er det reklame:\n")
-    for t in [
-        "Ekstraktivt opdræt opkoncentrerer metaller og organiske miljøfremmede stoffer. "
-        "Hvor høsten må gå hen, afgøres af analyse, ikke af hensigt — og zink og kobber "
-        "er ikke det samme som cadmium og kviksølv, som opkoncentreres op gennem "
-        "fødekæden og som intet levende har et evolutionært beredskab over for.",
-        "Ekstraktivt opdræt i den nødvendige skala er ikke økonomisk afprøvet. Der er "
-        "ikke sket en effektivitetsrevolution endnu — men der er heller ikke gjort "
-        "noget alvorligt forsøg.",
-        "Og intet af dette fritager nogen. Det udvider listen over, hvad der kan gøres.",
-    ]:
-        a(f"- {t}")
+    a(C("C-LE-8-FEED", "Et dyr, der lever længere, skal fodres længere. Hvis et "
+        "kvælstofvirkemiddel *producerer* foder og betales som miljøydelse, kan den samme politik "
+        "betale en del af det foder, der skal til, for at dyr kan leve længere, i stedet for at "
+        "besætninger bliver mindre.") + "\n")
+    a(C("C-LE-8-DECOUPLE", "Det er ikke en omskrivning. Det er en ændring af, hvad betalingen er "
+        "knyttet til: **et foderflow, der betales for at fjerne kvælstof fra havet, betaler for "
+        "det, dyret spiser, mens det lever, ikke for det, det giver ved slagtning.**") + "\n")
+    a(C("C-LE-8-CAVEATS", "Forbeholdene, som skal med, ellers er det reklame:") + "\n")
+    a("- " + C("C-LE-8-METALS", "Muslinger ophober miljøfremmede stoffer fra omgivelserne — derfor "
+               "bruges de til at overvåge havmiljøet. Hvor høsten må gå hen, afgøres af analyse, "
+               "ikke af hensigt, og zink og kobber, som er nødvendige sporstoffer, er ikke det "
+               "samme som cadmium, der ingen kendt funktion har i højere organismer, og kviksølv, "
+               "der som methylkviksølv opkoncentreres op gennem fødekæderne i vand."))
+    a("- " + C("C-LE-8-TESTED", "Kompensationsopdræt af muslinger er afprøvet i fuld skala i Skive "
+               "Fjord, og DCE har regnet omkostningen pr. kilo fjernet kvælstof ud under de "
+               "forhold, der blev testet. Alligevel bruges muslingeopdræt i dag ikke som marint "
+               "virkemiddel i vandområdeplanen."))
+    a("- " + C("C-LE-8-NOONE", "Og intet af dette fritager nogen. Det udvider listen over, hvad der "
+               "kan gøres."))
     a("")
 
     # ---------------------------------------------------------------- 9
     a("## 9. Hvad man konkret kan forlange\n")
-    a("Ikke *drop kravet*. Det er en tabt sag og en dårlig sag. I stedet fire ting, som "
-      "alle er billige, og som ingen kan afvise uden at forklare hvorfor:\n")
+    a(C("C-LE-9-INTRO", "Ikke *drop kravet*. Det er en tabt sag og en dårlig sag: gødskningsloven "
+        f"`L 5` blev vedtaget med {YES} stemmer mod {NO}, og belastningen er reel. I stedet fire "
+        "ting, som ingen kan afvise uden at forklare hvorfor:") + "\n")
     a("| Krav | Hvorfor det ikke kan afvises |")
     a("|---|---|")
-    a("| **Offentliggør regressionen.** Iltsvindets årlige udbredelse mod "
-      "flow-normaliseret belastning, vindarbejde i lagdelingssæsonen og "
-      "bundvandstemperatur | alle tre serier er allerede offentliggjort af DCE. Det "
-      "kræver ingen nye data, ingen nye målinger og ingen bevilling |")
-    a(f"| **Udfyld nævneren.** Mindst de to tomme rækker, der kan måles med "
-      "standardmetoder — udsivning af grundvand under havet med radon- og radiumsporing, "
-      "og intern frigivelse fra sedimentet med bundkamre | begge er rutine i udlandet. "
-      "Uden en nævner er der ingen procent |")
-    lv = {k["level"]: k for k in ov["knowledge_levels"]}
-    a("| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største "
-      f"bygværker, over hændelser af forskellig størrelse | det er videnniveau {lv[5]['level']} i "
-      f"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed mod "
-      f"{lv[1]['uncertainty_pct']} %. Metoden er defineret. "
-      "Næsten ingen bruger den |")
+    a("| **Regn regressionen ud.** Iltsvindets årlige udbredelse mod belastningen, vindarbejdet i "
+      "lagdelingssæsonen og bundvandets temperatur | "
+      + C("C-LE-9-REGRESSION", "udbredelsen og belastningen offentliggøres af DCE, og vindarbejde "
+          "og bundvandstemperatur kan regnes ud af de vind- og CTD-data, projektet har. Det kræver "
+          "ingen nye målinger, og ingen offentliggjort regression af den slags er fundet i de "
+          "kilder, projektet har") + " |")
+    a("| **Udfyld nævneren.** "
+      + C("C-LE-9-METHODS", "Mindst to af de tomme rækker har etablerede metoder — udsivning af "
+          "grundvand under havet med radium som sporstof eller med sivemålere, og intern "
+          "frigivelse fra sedimentet med bundkamre") + " | "
+      + C("C-LE-9-DENOM", "begge kræver nye målinger. Uden en nævner er der ingen andel af "
+          "helheden") + " |")
+    a("| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, "
+      "over hændelser af forskellig størrelse | "
+      + C("C-LE-9-LEVEL5", f"målebaseret overløbsestimering er videnniveau {lv[5]['level']} i "
+          f"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed på den udledte "
+          f"stofmængde mod {lv[1]['uncertainty_pct']} % på niveau {lv[1]['level']}. Metoden er "
+          "defineret. Hvor mange bygværker der opgøres sådan, står ikke i noget, projektet har")
+      + " |")
     a("| **Finansiér marin ekstraktion som virkemiddel**, med krav om analyse af høsten | "
-      "det er det eneste virkemiddel, der fjerner kvælstof, som allerede er i vandet |")
+      + C("C-LE-9-EXTRACT", "det virker på kvælstof, der allerede er i vandet, hvor reduktion på "
+          "land kun virker på tilførslen") + " |")
     a("")
-    a("De tre første er krav om *måling*. Det er den stærkeste position, man kan indtage "
-      "over for et tal, man mener er forkert: forlang ikke, at det ændres — forlang, at "
-      "det bliver efterprøvet.\n")
+    a(C("C-LE-9-KIND", "De tre første er krav om at måle og efterprøve, ikke om et andet svar: "
+        "forlang ikke, at tallet ændres — forlang, at det bliver efterprøvet. Det er en stærk "
+        "position over for et tal, man mener er forkert.") + "\n")
 
     a("---\n")
     a("## In English\n")
-    a("This page argues, in Danish and to a Danish agricultural audience, that the "
-      f"evidential chain from the published {F['agri_pct']:.1f}% figure to a quantified sector-specific "
-      f"reduction target has three missing links: there is no closed denominator ({F['n_unquantified']} of "
-      f"{F['n_pathways']} enumerated nitrogen pathways carry no number), no dose-response behind the "
-      f"oxygen requirement — which is a binary trigger and a judged flat {said("judged flat @@, where")}, where "
-      "chlorophyll and light attenuation do have fitted coefficients — and no "
-      "detectable movement in the extremes after a "
-      f"{said("extremes after a @@ halving of the")} halving of the load. It states explicitly that this does not exonerate "
-      "agriculture, that multiplying unknown fractions yields an unknown rather than a "
-      "small one, and that it is not an argument for inaction. It applies the same "
-      "scrutiny to urban discharge, where the numbers are worse. And it ends with four "
-      "demands, three of which are demands for measurement rather than for a different "
-      "answer.\n")
-    a("The full audit is in [NITROGEN.md](NITROGEN.md) and "
-      "[CAUSATION.md](CAUSATION.md); the argument about what to build instead is in "
-      "[PROGRAMME.md](PROGRAMME.md).\n")
-    a("*Denne side er skrevet af en ikke-modersmålstalende og bør læses igennem af en "
-      "dansker, før den citeres.*")
-
-    path = os.path.join(ROOT, "docs", "LANDBRUG.md")
-    text = "\n".join(o)
-    try:
-        write_doc(path, text)
-    except live.Unjustified as e:
-        log(str(e))
-        return 1
-    log(f"wrote docs/LANDBRUG.md ({len(text):,} chars)")
-    log(f"  ceiling on agriculture's share: {live.strip_marks(format(ceil_hi, '.0f'))}%")
-    return 0
+    a(C("C-LE-EN", "This page argues, in Danish and to a Danish agricultural audience, that the "
+        f"chain from the published {PCT:.1f}% figure to the damage it is used to explain has "
+        "missing links. The figure is a residual share of one term of an open account "
+        f"({n_unq} of {n_all} enumerated nitrogen pathways carry no number). The oxygen part of "
+        f"the requirement is a binary trigger that sets a judged {CUT}% cut in total-nitrogen "
+        "concentration, converted to a load through each water body's own relation, where "
+        "chlorophyll and light attenuation have fitted slopes. And the recent extremes of oxygen "
+        f"depletion do not obviously track a land-based supply that DCE put {RED}% lower - though "
+        "a comparison of chosen years cannot tell no effect from worse without, and warming works "
+        "against the reduction. "
+        "The page states that this does not exonerate agriculture, that multiplying unknown "
+        "fractions yields an unknown rather than a small one, and that it is not an argument for "
+        "inaction. It applies the same scrutiny to the city's own discharges, and ends with four "
+        "demands, three of which ask for measurement or a test rather than a different answer.")
+      + "\n")
+    a("The full audit is in [NITROGEN.md](NITROGEN.md) and [CAUSATION.md](CAUSATION.md); the "
+      "argument about what to build instead is in [PROGRAMME.md](PROGRAMME.md).\n")
+    a("*" + C("C-LE-NONNATIVE", "Denne side er skrevet af en ikke-modersmålstalende og bør læses "
+              "igennem af en dansker, før den citeres.") + "*")
+    return "\n".join(o)
 
 
 if __name__ == "__main__":

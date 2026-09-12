@@ -321,7 +321,8 @@ def cmd_extract(args):
             counts[b["label"]] = {"pixels": n, "area_m2": round(n * px_m2)}
         missing = [b["label"] for i, b in enumerate(BANDS, start=1) if counts[b["label"]]["pixels"] == 0]
 
-        # depth-coded PNG: band index in R, 255 alpha where flooded
+        # depth-coded PNG: each band's legend colour, alpha 255 where a band was read,
+        # transparent black elsewhere (colours, not band numbers)
         rgba = np.zeros((a.shape[0], a.shape[1], 4), np.uint8)
         for i, b in enumerate(BANDS, start=1):
             sel = band == i

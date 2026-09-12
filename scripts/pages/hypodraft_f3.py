@@ -1,143 +1,259 @@
 #!/usr/bin/env python3
-"""Writes docs/hypodrafts/F3.md: a hypothesis draft, as generated text.
+"""docs/hypodrafts/F3.md - what the data held here can and cannot show about F3.
 
-Every hypothesis ID is a checked reference, every chemical species a checked
-species, and every number either read live or quoted from the page as committed
-({q:…@@…}, a located quotation - see draftkit.py) because nothing in the repository stores it yet.
+Every number is read from data (live_json) or is a stated design value with its
+reason; every assertion is a checked claim (LIVE_NUMBERS.md section 11), registered
+in data/manual/claims.d/w3-af.json with what it rests on, and every field printed
+has a declared construction. What the draft once said and could not justify is in
+docs/ARCHIVE.md, not here. The page is written through scripts/pages/drafts_b_page.py.
 
     python3 scripts/pages/hypodraft_f3.py
 """
+import glob
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import draftkit
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+from drafts_b_page import render
+from common import DERIVED, RAW
+import claims
+import live
 
-REL = "docs/hypodrafts/F3.md"
-TEXT = r"""# {ref:F3|title}
-
-*Draft. Nothing here has been run. One dataset it needs is not yet in the repo; the
-fetch is specified below and was not executed.*
-
-## The observable consequence, stated so it can fail
-
-{ref:F3} says vegetation loss is self-reinforcing: cover goes, the bed resuspends, the water
-darkens, and the darkness prevents return. Two consequences follow that can each be
-wrong.
-
-**`C1` (the feedback).** At a transect, a drop in vegetation **cover** is followed by a
-rise in local light attenuation, more strongly than a rise in attenuation is followed
-by a drop in cover. *Falsified* if the cross-lagged asymmetry is zero or reversed
-under the nulls below — which is what "the water darkened first, for its own reasons"
-looks like.
-
-**`C2` (the block).** Transects that lost cover stay light-limited: light at the bed
-remains below the eelgrass requirement. *Falsified* by transects where light at the
-bed has been adequate for five consecutive growth seasons and cover has not returned.
-
-`C1` and `C2` are separable. `C1` can hold and `C2` fail — the feedback is real and something
-else now holds the system down.
-
-## Avoiding the circularity, and what stays circular
-
-The eelgrass **depth limit** is Denmark's clarity indicator; regressing it on
-attenuation tests the indicator's own construction, not {ref:F3}. Three defences:
-
-1. **The response is cover, not depth limit.** `Dækningsgrad (%)` per species enters
-   no clarity indicator. The depth-limit columns are used only as a covariate to check
-   `C1` is not driven by them.
-2. **Drop light-limited transects from the depth-limit checks.** ODA carries
-   `Maks dybde begrænset af` — *why the transect stopped*. Where the answer is
-   substrate or end-of-transect, the depth limit is not a light measurement by
-   construction. This field must be counted for fill before it is trusted (error class
-   {q:(error class @@, unfilled}, unfilled field); if it is largely empty, drop the depth-limit strand entirely.
-3. **Clarity is measured, not inferred.** `LyssvækkelsesKoefficient` per cast, and
-   CMEMS `transp` grid pixels, neither derived from vegetation.
-
-**What stays circular and cannot be removed:** the {q:removed:** the @@ requirement used} requirement used in `C2` is
-inherited physiology — the same physiology from which DCE derive the Kd target. I am
-not using their fitted target, but if the requirement is wrong the adequacy call moves
-with it. Mitigation: report `C2` across {q:across @@ rather than} rather than at one threshold.
-
-## Data, with counts verified here
-
-| Source | Verified | Error class |
-|---|---|---|
-| `data/raw/oda/lys.csv.gz` | **{fig:da_lys_rows} rows, {fig:da_lys_stations} stations with coordinates** (streamed, this session) | **`4`** — apparent Kd depends on cast start depth: median {q:depth: median @@ for casts} for casts starting above {q:starting above @@ below (`docs/LIGHT.md`).} below (`docs/LIGHT.md`). Two answers in one column. |
-| ODA vegetation, **not in repo**: `Emne_3_182` Ålegræs plante, `Emne_3_181` makroalge, `Emne_3_180` bundfauna | {q:`Emne_3_180` bundfauna | @@ for 1970–2026 (repo} for 1970–2026 (repo record, `data/manual/data_sources_2.json`, authenticated enumeration 2026-09-08 — **not re-verified by me**) | **`7`** if the indicator's fitted depth limit is used instead of the per-transect observed one. Use the ODA field. |
-| `data/raw/oda/stations.csv` | {fig:da_st_rows} rows, {fig:da_st_stations} stations; **{fig:da_st_transect} carry a transect end coordinate**, spanning {fig:da_st_first} to {fig:da_st_last} | **`4`** — this register shares only {q:shares only @@ station ids} station ids with the lys / maaledybde / ctd criterion lists. Namespaces differ. |
-| `data/raw/oda/maaledybde.csv.gz` | {q:`data/raw/oda/maaledybde.csv.gz` | @@ offered; carries} offered; carries `BundDybde_m`, `SigtTilBund` | **{q:`BundDybde_m`, `SigtTilBund` | **@@** — Secchi censored}** — Secchi censored at the bed in shallow water |
-| `data/raw/geus/seabed_sediment_dk.gpkg` | read via sqlite3 by `scripts/substrate.py` | — |
-| `data/raw/cmems/grid/transp__{inner,arkona}__YYYY.nc` | {q:__YYYY.nc` | @@ files} files, {q:| 87 files, @@ each, 24 GB} each, {q:MB each, @@ total | stream} total | stream one year at a time |
-
-**Not usable here:** `docs/data/areas/val_kd.bin` and the coverage cube are indexed by
-`DKCOAST` water body (error class 3, and water bodies are a model assumption, not a
-unit). Clarity must come from per-cast lys or per-pixel CMEMS.
-
-**The join is spatial, not by id.** Transect ↔ lys station-id overlap is **{q:overlap is **@@**. Distance from}**.
-Distance from each of the {q:each of the @@ transects to the} transects to the nearest light-cast station: p10
-{q:light-cast station: p10 @@, median 2.42}, median {q:p10 0.82 km, median @@, p90 7.51 km}, p90 {q:2.42 km, p90 @@ — 941 within} — {q:7.51 km — @@ within 2 km,} within {q:— 941 within @@ within 5 km.} within {q:2 km, 1,823 within @@. So a 2}. So a
-{q:km. So a @@-radius join retains}-radius join retains about {q:retains about @@ of transects;} of transects; below that, CMEMS pixels.
-
-## The fetch, specified, not run
-
-`scripts/fetch_oda.py` needs three `TOPICS` entries (`{"emne": "Emne_3_182"}` etc.);
-nothing else changes. Run with explicit `--from 1970-01-01 --to 2026-12-31 --years 5`
-— omitting the period silently returns only the currently active network ({q:network (@@ stations), and}
-stations), and the script now raises rather than allow it. Expected tens of MB gzipped,
-three sequential runs, well inside the VM budget. **I did not run it.**
-
-## The null, computed under the constraint actually imposed
-
-Nothing is quoted. Two nulls, because two things could fake the result.
-
-**`N1`, temporal.** For `C1`: circularly shift each transect's cover series against its own
-clarity series by a random whole number of years, {q:number of years, @@, preserving within-series}, preserving within-series
-autocorrelation and the transect's mean. {q:transect's mean. @@ draws; the} draws; the null distribution of the median
-cross-lagged asymmetry is computed, not assumed to centre on zero.
-
-**`N2`, spatial, contiguity- and depth-preserving.** Eelgrass sites are clustered and
-depth-constrained, so a free permutation is the wrong null: on this project's own
-stations a contiguity-constrained null already agrees at **ARI {q:agrees at **ARI @@, not}, not {q:not @@** (`docs/data/areas/partition_contiguous.json`).}**
-(`docs/data/areas/partition_contiguous.json`). So relabel cover-loss status only
-*within* strata of (substrate class from GEUS × {q:GEUS × @@ bottom-depth band),} bottom-depth band), and only across
-transects connected on a k-NN graph whose edges crossing the OSM coastline are removed
-— the same water graph the partition work uses, never the water-body polygons. Report
-the observed statistic as **lift over this null**, and report the null's own level.
-
-## Procedure
-
-1. Fetch the three vegetation topics. Count fill of `Maks dybde begrænset af`,
-   `Dækningsgrad`, and both depth-limit columns before using any of them.
-2. Per transect-year, growth season (Mar–Sep): median cover; nearest-cast Kd
-   **stratified by cast start depth**, never pooled; bottom depth from the transect's
-   own `Vanddybde maks`; light at bed = exp(−Kd·z).
-3. `C1`: per-transect cross-lagged regression, lag {q:regression, lag @@, median}, median across transects,
-   against `N1` and `N2`.
-4. `C2`: count transect-years with {q:transect-years with @@ consecutive adequate} consecutive adequate growth seasons and cover
-   below {q:cover below @@; sensitivity}; sensitivity over {q:5%; sensitivity over @@. 5. Repeat}.
-5. Repeat with CMEMS `transp` pixels as the clarity source, streamed by year.
-
-## What a result would and would not license
-
-A positive `C1` with lift over `N2` licenses: *at these transects, cover change leads
-clarity change*. It does **not** license a national statement, does not identify the
-resuspension mechanism (no sediment flux is measured), and cannot separate eelgrass
-from drifting macroalgae shading unless the epiphyte and drift columns are filled.
-
-`C2` is the {ref:L4} discrimination. Finding light-adequate, cover-absent transects shows the
-block is **not** light — it does not say what the block is (seed supply, substrate
-mobility, wasting disease {ref:T3|hypotheses} all remain). Finding none is consistent with {ref:F3}'s feedback
-*and* with light simply never having recovered; `C1` is what separates those, which is
-why both are needed.
-
-Failure of both leaves {ref:F3} unscored at these transects, not refuted elsewhere.
-"""
+C = live.claim
+R = live.ref
 
 
-def main(argv):
-    return 0 if draftkit.build(REL, TEXT) is not None else 1
+def J(name):
+    return live.live_json(os.path.join(DERIVED, name))
+
+
+def refuse(msg):
+    raise live.Unjustified("F3: " + msg)
+
+
+def text():
+    params = claims.load()[0]["params"]
+
+    def P(name):
+        """A design value the test chooses, declared with its reason."""
+        p = params[name]
+        return live.stated_value(name, p["value"], p["reason"])
+
+    seasons, shift, draws = P("af_f3_seasons"), P("af_f3_min_shift_years"), P("af_f3_draws")
+    band, join = P("af_f3_depth_band_m"), P("af_f3_join_km")
+    lag0, lag1, cover = P("af_f3_lag_lo"), P("af_f3_lag_hi"), P("af_f3_cover_pct")
+    rq0, rq1 = P("af_f3_req_lo_pct"), P("af_f3_req_hi_pct")
+
+    hf = J("hypodraft_facts.json")
+    lys, reg, md = hf["lys"], hf["stations_register"], hf["maaledybde"]
+    lt = J("light.json")
+    sd, lp = lt["start_depth"], lt["params"]
+    lo, hi = lp["req_lo_pct"], lp["req_hi_pct"]
+    # the page states each of these; refuse it if one stops holding
+    if not (rq0 < lo < hi < rq1):
+        refuse("the sensitivity range no longer brackets light.py's two requirements")
+    if (int(lp["growth_first_month"]), int(lp["growth_last_month"])) != (3, 9):
+        refuse("light.py's growth season is no longer March to September")
+    if not (sd["kd_shallow_start"] > sd["kd_deep_start"]
+            and sd["z11_shallow_start"] < sd["z11_deep_start"]):
+        refuse("shallow-start casts no longer give the larger Kd and the shallower depth")
+    for area in ("inner", "arkona"):
+        if not glob.glob(os.path.join(RAW, "cmems", "grid", f"transp__{area}__*.nc")):
+            refuse(f"no CMEMS transparency files for {area} under data/raw/cmems/grid")
+    ev = J("hypotheses_evidence.json")["register"]
+
+    o = []
+    w = o.append
+    w(f"# {R('F3', title=True)}")
+    w("")
+    w("*Generated by `scripts/pages/hypodraft_f3.py`: what the data held here can and "
+      "cannot show about the hypothesis. Each marked statement links to what it rests on.*")
+    w("")
+    w("**Draft, not a result.** "
+      + C("C-AF-F3-STATUS", "The test this page specifies has not been run: no script in "
+          "this repository computes it.") + " "
+      + C("C-AF-F3-NEEDS", f"{R('F3')} needs the eelgrass depth limit and cover by station "
+          "and year, from ODA's vegetation topics; none of them is held here, and "
+          "`scripts/fetch_oda.py` does not list them."))
+    w("")
+    w("## The observable consequence, stated so it can fail")
+    w("")
+    w(C("C-AF-F3-MECH", f"{R('F3')} says vegetation loss is self-reinforcing: cover goes, the "
+        "bed resuspends, the water darkens, and the darkness prevents return. Two "
+        "consequences follow that can each be wrong."))
+    w("")
+    w(C("C-AF-F3-C1", "**`C1` (the feedback).** At a transect, a drop in vegetation **cover** "
+        "is followed by a rise in local light attenuation, more strongly than a rise in "
+        "attenuation is followed by a drop in cover. *Falsified* if the cross-lagged "
+        "asymmetry is zero or reversed under the nulls below — which is what \"the water "
+        "darkened first, for its own reasons\" looks like."))
+    w("")
+    w(C("C-AF-F3-C2", "**`C2` (the block).** Transects that lost cover stay light-limited: "
+        "light at the bed remains below the eelgrass requirement. *Falsified* by transects "
+        f"where light at the bed has been adequate for {seasons} consecutive growth seasons "
+        "and cover has not returned."))
+    w("")
+    w(C("C-AF-F3-SEP", "`C1` and `C2` are separable. `C1` can hold and `C2` fail — the "
+        "feedback is real and something else now holds the system down."))
+    w("")
+    w("## Avoiding the circularity, and what stays circular")
+    w("")
+    w(C("C-AF-F3-CIRC", "The eelgrass **depth limit** is, in DCE's words, an indicator of "
+        "eutrophication and of the bottom-vegetation quality element, and light attenuation "
+        "is the factor that matters most for it; the national models express the depth "
+        "limit through Kd. Regressing it on attenuation re-reads the relation the indicator "
+        f"is built on, not {R('F3')}.") + " The defences:")
+    w("")
+    w("1. " + C("C-AF-F3-D1", "**The response is cover, not depth limit.** Cover per species "
+                "(`Daekningsgrad (%)`) is its own field in the vegetation topics, apart from "
+                "the depth limits, and the Danish indicator, as the source register records, "
+                "uses the main-distribution depth limit. The depth-limit columns are used only "
+                "as a covariate, to check `C1` is not driven by them."))
+    w("2. " + C("C-AF-F3-D2", "**Drop light-limited transects from the depth-limit checks.** "
+                "The source register records a vegetation field, `Maks dybde begraenset af`, "
+                "naming why the transect stopped. Where the answer is substrate or "
+                "end-of-transect, the depth limit is not a light measurement by construction. "
+                "The field is counted for fill first, and the depth-limit strand runs only on "
+                "the transects that carry it."))
+    w("3. " + C("C-AF-F3-D3", "**Clarity is measured, not inferred.** "
+                "`LyssvaekkelsesKoefficient` per cast in the light extract, and the daily "
+                "satellite attenuation `KD490` in the held CMEMS transparency files — neither "
+                "derived from vegetation."))
+    w("")
+    w(C("C-AF-F3-STAYS", "**What stays circular and cannot be removed:** the light requirement "
+        "`C2` needs — the share of surface light eelgrass needs at the bed — is physiology, "
+        "not measured here, and no document pinned in this project gives it. This project's "
+        f"light analysis carries two values for it, {lo}% and {hi}% of surface light, as "
+        "parameters of its own code with no source recorded. If the requirement is wrong, "
+        f"the adequacy call moves with it, so `C2` is reported across requirements from "
+        f"{rq0}% to {rq1}% rather than at one threshold."))
+    w("")
+    w("## The data held, counted here")
+    w("")
+    w(C("C-AF-F3-LYS", f"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at "
+        f"{lys['stations_with_coordinates']:,} stations with coordinates.") + " "
+      + C("C-AF-F3-STARTDEPTH", "Its apparent Kd depends on where a cast starts: this "
+          f"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a "
+          f"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for "
+          f"casts starting above {lp['start_split_m']:g} m, against "
+          f"{sd['kd_deep_start']:g} and {sd['z11_deep_start']:g} m for casts starting below. "
+          "Two answers in one column, so Kd is stratified by start depth, never pooled."))
+    w("")
+    w(C("C-AF-F3-VEG", "ODA's vegetation topics — eelgrass with bottom fauna, with "
+        "macroalgae, and the plant itself (`Emne_3_180`, `Emne_3_181`, `Emne_3_182`) — are "
+        "not held. This project's source register records them, from an authenticated "
+        "enumeration, as per-transect surveys carrying cover per species, the maximum and "
+        "main-distribution depth limits, the maximum water depth, the bottom type, epiphyte "
+        "and drifting-macroalgae cover, and why the transect stopped; each lists fewer "
+        "stations under the portal's default period than with a period set.") + " "
+      + C("C-AF-F3-FITTED", "Use the per-transect observed depth limit, never an indicator's "
+          "fitted one: a fitted depth limit is a model output, and testing a model's output "
+          "against its own input tests the model."))
+    w("")
+    w(C("C-AF-F3-REG", f"`data/raw/oda/stations.csv`, the ODA station register, holds "
+        f"{reg['rows']:,} records for {reg['stations']:,} stations, "
+        f"{reg['with_transect_end']:,} of them with a transect end coordinate; its dates run "
+        f"from {reg['first_date']} to {reg['last_date']}.") + " "
+      + C("C-AF-F3-IDS", f"The register carries only {ev['series_stations_in_register']:,} of "
+          f"the {ev['series_stations']:,} stations of the monthly series built from the CTD "
+          "extract, so its identifiers are not the extracts'; a transect is joined to light "
+          "casts by distance, not by id.") + " "
+      + C("C-AF-F3-JOIN", f"Where a light cast lies within {join} km of a transect, the "
+          "transect's clarity comes from it; where none does, from CMEMS pixels. The share "
+          "of transects the radius keeps is reported with the result."))
+    w("")
+    w(C("C-AF-F3-MAAL", f"`data/raw/oda/maaledybde.csv.gz` holds {md['rows']:,} records, at "
+        f"{md['stations_with_bottom']:,} stations with a bottom depth, and carries "
+        "`BundDybde_m` and `SigtTilBund`; its Secchi depths are censored at the bed, far "
+        f"more often in shallow water ({R('D7')} counts it)."))
+    w("")
+    w(C("C-AF-F3-GEUS", "`data/raw/geus/seabed_sediment_dk.gpkg`, the GEUS seabed-sediment "
+        "map, is read with `sqlite3` by `scripts/substrate.py`.") + " "
+      + C("C-AF-F3-TRANSP", "`data/raw/cmems/grid/` holds the CMEMS satellite transparency "
+          "product as one file per year for the inner waters and for the Arkona basin, "
+          "`transp__inner__YYYY.nc` and `transp__arkona__YYYY.nc`, each with the daily "
+          "diffuse attenuation `KD490`; they are streamed one year at a time."))
+    w("")
+    w(C("C-AF-F3-NOTUSABLE", "**Not usable here:** `docs/data/areas/val_kd.bin` and the "
+        "coverage cube are indexed by marine water body, a unit in which this project's "
+        "partition work finds no measured signal. Clarity must come from per-cast light "
+        "profiles or per-pixel CMEMS."))
+    w("")
+    w("## The fetch, specified, not run")
+    w("")
+    w(C("C-AF-F3-FETCH", "Add the three vegetation topics to the `TOPICS` of "
+        "`scripts/fetch_oda.py`, one entry each (`{\"emne\": \"Emne_3_182\"}` and its "
+        "siblings), and run each with an explicit period: "
+        "`--from 1970-01-01 --to 2026-12-31 --years 5`.") + " "
+      + C("C-AF-F3-PERIOD", "Without a period ODA returns only the currently active "
+          "network, and `fetch_oda.py` refuses to extract without one."))
+    w("")
+    w("## The null, computed under the constraint actually imposed")
+    w("")
+    w(C("C-AF-F3-NULLS", "The nulls are computed, not quoted: a temporal one and a spatial "
+        "one, because either time or place could fake the result."))
+    w("")
+    w(C("C-AF-F3-N1", "**`N1`, temporal.** For `C1`: circularly shift each transect's cover "
+        "series against its own clarity series by a random whole number of years, at least "
+        f"{shift}, preserving within-series autocorrelation and the transect's mean. "
+        f"{draws} draws; the null distribution of the median cross-lagged asymmetry is "
+        "computed, not assumed to centre on zero."))
+    w("")
+    w("**`N2`, spatial, contiguity- and depth-preserving.** "
+      + C("C-AF-F3-CONTIG", "A free permutation is the wrong null for anything spatial: on "
+          "this project's own stations, random connected partitions of matched sizes agree "
+          "with each other well above chance, by contiguity alone "
+          "(`docs/data/areas/partition_contiguous.json`).") + " "
+      + C("C-AF-F3-N2", "So relabel cover-loss status only *within* strata of substrate "
+          f"class from GEUS × {band} m bottom-depth band, and only across transects connected "
+          "on a nearest-neighbour graph whose edges crossing the OSM coastline are removed — "
+          "the same water graph the partition work uses, never the water-body polygons. "
+          "Report the observed statistic as **lift over this null**, and report the null's "
+          "own level."))
+    w("")
+    w("## Procedure")
+    w("")
+    w("1. " + C("C-AF-F3-P1", "Fetch the three vegetation topics. Count the fill of "
+                "`Maks dybde begraenset af`, `Daekningsgrad (%)` and both depth-limit columns "
+                "before using any of them."))
+    w("2. " + C("C-AF-F3-P2", "Per transect-year, over the growth season this project's "
+                "light analysis uses, March to September: median cover; nearest-cast Kd "
+                "**stratified by cast start depth**, never pooled; bottom depth from the "
+                "transect's own `Vanddybde maks (m)`; light at bed = exp(−Kd·z)."))
+    w("3. " + C("C-AF-F3-P3", f"`C1`: per-transect cross-lagged regression at lags of {lag0} "
+                f"to {lag1} years, median across transects, against `N1` and `N2`."))
+    w("4. " + C("C-AF-F3-P4", f"`C2`: count transect-years with at least {seasons} "
+                f"consecutive adequate growth seasons and cover below {cover}%; sensitivity "
+                f"over requirements from {rq0}% to {rq1}%."))
+    w("5. " + C("C-AF-F3-P5", "Repeat with the CMEMS `KD490` pixels as the clarity source, "
+                "streamed by year."))
+    w("")
+    w("## What a result would and would not license")
+    w("")
+    w(C("C-AF-F3-LICENSE", "A positive `C1` with lift over `N2` licenses: *at these "
+        "transects, cover change leads clarity change*. It does **not** license a national "
+        "statement, does not identify the resuspension mechanism — nothing held here "
+        "measures sediment flux — and cannot separate eelgrass from drifting macroalgae "
+        "shading unless the epiphyte and drift columns are filled."))
+    w("")
+    w(C("C-AF-F3-L4", f"`C2` is the {R('L4')} discrimination. Finding light-adequate, "
+        "cover-absent transects shows the block is **not** light — it does not say what the "
+        "block is: seed supply, substrate mobility and wasting disease "
+        f"({R('T3', family='hypotheses')}) all remain. Finding none is consistent with "
+        f"{R('F3')}'s feedback *and* with light simply never having recovered; `C1` is what "
+        "separates those, which is why both are needed."))
+    w("")
+    w(C("C-AF-F3-FAIL", f"Failure of both leaves {R('F3')} unscored at these transects, not "
+        "refuted elsewhere."))
+    return "\n".join(o) + "\n"
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    try:
+        page = text()
+    except live.Unjustified as e:
+        print(e, file=sys.stderr)
+        sys.exit(1)
+    sys.exit(render("docs/hypodrafts/F3.md", page))

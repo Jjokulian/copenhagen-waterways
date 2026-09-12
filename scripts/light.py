@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """K11: is there enough light at the bed for anything to root there?
 
-Eelgrass has a hard requirement, not a preference. Below roughly 11-14% of surface
-irradiance at the bed it does not grow slowly; it dies. That threshold is what the
-Danish Kd indicator is built on - the environmental target for light attenuation is
-derived by assuming eelgrass needs about 14% of surface light at its target depth.
+Eelgrass needs a share of surface irradiance at the bed. DCE (the pinned
+DCE-STATMOD-2015) say it can grow where mean light at the bed is between 11% and
+20% of surface light, and the Danish Kd indicator's environmental target is derived
+by assuming eelgrass needs 14% of surface light at its target depth.
 
 So the indicator and the requirement are two ends of the same calculation, and the
 calculation can be run directly from the raw record instead of inherited from an
@@ -51,8 +51,9 @@ import live
 ODA = os.path.join(RAW, "oda")
 OUT = os.path.join(ROOT, "docs", "LIGHT.md")
 
-# The eelgrass light requirement, as a share of surface irradiance at the bed.
-# DCE derive the Kd environmental target from the upper end of this range.
+# Two shares of surface irradiance at the bed, both from DCE (DCE-STATMOD-2015): the
+# low end of the range where eelgrass can grow, and the share the Kd targets assume
+# at the target depth. Neither is a threshold below which eelgrass dies.
 REQ_LO, REQ_HI = 0.11, 0.14
 GROWTH = range(3, 10)          # March-September, the eelgrass growing season
 MIN_FIT = 0.9                  # discard casts whose Kd regression fits badly
@@ -381,50 +382,68 @@ def analyse():
 
 
 def render(d):
-    """d is light.json loaded live: every number below carries its field."""
+    """d is light.json loaded live: every number below carries its field, and every
+    assertion is a checked claim (LIVE_NUMBERS.md section 11), registered in
+    data/manual/claims.d/w3-fr.json. The figures from DCE are read from the pinned note,
+    refused unless the pinned text holds the phrase."""
+    import claims as _claims
+    cd = _claims.load()[0]
+
+    def RD(sid, value, phrase):
+        if _claims._flat(phrase) not in _claims._flat(_claims.pin_text(cd, sid)):
+            raise live.Unjustified(f"{sid}: the pinned text does not contain '{phrase}'")
+        return live._mk(value, ["reading", sid, "phrase", phrase, _claims._meta(cd, sid)])
+
+    C = live.claim
     o = []
     a = o.append
     t, p = d["trend"], d["params"]
     lo, hi = p["req_lo_pct"], p["req_hi_pct"]
+    dce_lo = RD("DCE-STATMOD-2015", 11, "mellem 11 % og")
+    dce_top = RD("DCE-STATMOD-2015", 20, "og 20 % af overfladeindstrålingen")
+    dce_target = RD("DCE-STATMOD-2015", 14, "er 14 % af overfladeindstrålingen")
+    if lo != dce_lo or hi != dce_target:
+        raise live.Unjustified("light: the page's light thresholds no longer match the lower "
+                               "end of DCE's range and DCE's target share - reword")
     months = f"{calendar.month_name[p['growth_first_month']]}–{calendar.month_name[p['growth_last_month']]}"
     a("# Is there enough light at the bed?\n")
-    a(f"Eelgrass has a requirement, not a preference. Below roughly **{lo}–{hi}% of "
-      "surface light at the seabed** it does not grow slowly — it dies. The Danish "
-      "light-attenuation target is built on the same number from the other "
-      "direction: the environmental objective for Kd is derived by assuming "
-      f"eelgrass needs about {hi}% of surface irradiance at the depth it is supposed "
-      "to reach.\n")
-    a("So the indicator and the requirement are two ends of one calculation, and "
-      "the calculation can be run from the raw record rather than inherited from an "
-      "assessment. ODA publishes the attenuation coefficient per cast, with the fit "
-      "quality of the regression that produced it. Two lines of arithmetic follow:\n")
+    a(C("C-FR-LT-DCE", f"DCE write that eelgrass can grow where the mean light at the bed is "
+        f"between {dce_lo}% and {dce_top}% of surface irradiance, and turn the environmental "
+        "targets for eelgrass depth limits into targets for the Kd indicator by assuming that the "
+        f"light at the bed at the target depth limit is {dce_target}% of surface irradiance: the "
+        "Kd indicator is thus a measure of eelgrass's potential depth limit.") + "\n")
+    a(C("C-FR-LT-THRESH", f"This page uses the lower end of that range, {lo}%, and the target's "
+        f"{hi}%: for each cast, the depth at which its light falls to each.") + "\n")
+    a(C("C-FR-LT-ODA", "ODA publishes the attenuation coefficient Kd per cast, with the "
+        "correlation coefficient of the regression it comes from - the technical instruction fits "
+        "the logarithm of the light fraction against depth by linear regression - so these depths "
+        "can be computed from the raw record rather than inherited from an assessment. The "
+        "arithmetic:") + "\n")
     a("```\nlight at the bed   =  100 · exp(−Kd · bottom depth)\n"
-      "potential depth    =  −ln(r) / Kd      r the light requirement: the deepest a plant could root\n```\n")
+      "potential depth    =  −ln(r) / Kd      r the light threshold\n```\n")
 
     a("## What the record contains\n")
     a("| | |\n|---|---:|")
     a(f"| Light casts in the record | {d['n_casts_total']:,} |")
     a(f"| …with a usable Kd regression (r ≥ {p['min_fit']}, or no fit reported) | {d['n_casts_good_fit']:,} |")
-    a(f"| …in the {months} growing season | {d['n_growth_season']:,} |")
+    a(f"| …in {months}, the months this page counts as the growing season | {d['n_growth_season']:,} |")
     a(f"| Stations | {d['n_stations']:,} |")
     a(f"| Years covered | {d['years'][0]}–{d['years'][1]} |")
     a("")
-    a(f"Attenuation runs from Kd = {d['kd']['p10']} (p10, the clearest casts) to "
-      f"{d['kd']['p90']} (p90, the murkiest), median {d['kd']['median']}.\n")
+    a(C("C-FR-LT-KDRANGE", f"Attenuation runs from Kd = {d['kd']['p10']} (p10, the clearest "
+        f"casts) to {d['kd']['p90']} (p90, the murkiest), median {d['kd']['median']}.") + "\n")
 
     a("## The depth a plant could reach\n")
-    a(f"Converting each cast to the deepest point still receiving {lo}% of surface "
-      "light:\n")
-    a(f"> Median **{d['z11']['median']} m**. The clearest casts (p90) reach "
-      f"{d['z11']['p90']} m; the murkiest (p10) reach only {d['z11']['p10']} m. At "
-      f"the stricter {hi}% requirement the median falls to **{d['z14_median']} m**.\n")
-    a("That is the whole eelgrass question in one number per cast, and it is "
-      "computed from a measurement rather than from a model of a reference "
-      "condition.\n")
+    a(C("C-FR-LT-CONVERT", f"Each cast converted to the deepest point still receiving {lo}% of "
+        "surface light, by the second line above:") + "\n")
+    a("> " + C("C-FR-LT-DEPTH", f"Median **{d['z11']['median']} m**. The clearest casts (p90) "
+               f"reach {d['z11']['p90']} m; the murkiest (p10) reach {d['z11']['p10']} m. At the "
+               f"target's {hi}% the median is **{d['z14_median']} m**.") + "\n")
+    a(C("C-FR-LT-POTENTIAL", "It is a number per cast, computed from the published Kd rather "
+        "than from a model of a reference condition; DCE add that enough light does not mean "
+        "eelgrass grows at that depth, since other factors can limit it.") + "\n")
 
     a("## Has it improved?\n")
-    a("This is the question decades of load reduction are supposed to have "
-      "answered.\n")
     a("| | metres per decade | casts |")
     a("|---|---:|---:|")
     a(f"| All casts | {t['all_casts_m_per_decade']} | {t['n_all']:,} |")
@@ -432,30 +451,30 @@ def render(d):
       f"({t['n_stable_stations']} stations) | {t['stable_stations_m_per_decade']} "
       f"| {t['n_stable']:,} |")
     a("")
-    a(f"*Both ends* means casts in the first and in the last {p['stable_window_years']} "
-      f"years of the record; {t['n_stable_stations']} stations qualify, so the second "
-      "row rests on those alone.\n")
-    a("The second row is the check that matters, and it is the one nobody runs. If "
-      "a trend appears on all casts but not on the stations measured throughout, it "
-      "is a trend in **where Denmark chose to measure**, not in the water — "
-      f"hypothesis {live.ref('I1', title=True)}, put to the record rather than "
-      "asserted.\n")
+    a(C("C-FR-LT-BOTHENDS", f"*Both ends* means casts in the first and in the last "
+        f"{p['stable_window_years']} years of the record; {t['n_stable_stations']} stations "
+        "qualify, so the second row rests on those alone.") + "\n")
+    a(C("C-FR-LT-I1", "The second row is this page's check on hypothesis "
+        f"{live.ref('I1', title=True)}: if a trend appears on all casts but not on the stations "
+        "measured throughout, it may be a trend in which stations were sampled rather than in the "
+        "water. Resting on the stations that qualify, it can show that the question matters, not "
+        "settle it.") + "\n")
 
     if d["bed"]["n_with_bottom_depth"]:
         b = d["bed"]
         a("## And does the light actually reach the bed?\n")
-        a(f"Where a bottom depth is known ({b['n_with_bottom_depth']:,} casts: "
-          f"{b['n_same_day']:,} from a sounding on the same day, "
-          f"{b['n_station_median']:,} from the station's median sounding), the share "
-          f"where the seabed receives at least {lo}% of surface light is "
-          f"**{100 * b['share_meeting']:.0f}%**.\n")
+        a(C("C-FR-LT-BED", f"Where a bottom depth is known ({b['n_with_bottom_depth']:,} casts: "
+            f"{b['n_same_day']:,} from a sounding on the same day, "
+            f"{b['n_station_median']:,} from the station's median sounding), the share where the "
+            f"seabed receives at least {lo}% of surface light is "
+            f"**{100 * b['share_meeting']:.0f}%**.") + "\n")
 
     st = sorted(d["per_station"].values(), key=lambda s: s["trend_m_per_decade"])
     if st:
         a("## Station by station\n")
-        a(f"Stations with at least {p['min_station_years']} years of growing-season "
-          "casts, sorted by trend: the darkening end and the brightening end. A "
-          "negative number is water getting darker.\n")
+        a(C("C-FR-LT-STATIONS", f"Stations with at least {p['min_station_years']} years of "
+            "growing-season casts, sorted by trend: the darkening end and the brightening end. A "
+            "negative number is water getting darker.") + "\n")
         a(f"| station | casts | years | median Kd | median depth at {lo}% | m/decade |")
         a("|---|---:|---|---:|---:|---:|")
         shown = st if len(st) <= 20 else st[:10] + [None] + st[-10:]
@@ -473,14 +492,13 @@ def render(d):
     g = d.get("geometry") or []
     sd = d.get("start_depth") or {}
     if g:
-        a("## The number depends on where the sensor started\n")
-        a("Every figure above rests on Kd, and Kd is a straight line fitted to the "
-          "logarithm of light against depth. That fit assumes attenuation is the "
-          "same all the way down. ODA publishes the measurements the line was "
-          "fitted to, so the assumption can be checked rather than granted: refit "
-          f"the top half of each profile against the bottom half. {sd['n_profiles']:,} "
-          f"casts carry enough points to allow it — at least {p['min_profile_points']} "
-          f"readings spanning at least {p['min_profile_span_m']} m.\n")
+        a("## The fit and the depth window\n")
+        a(C("C-FR-LT-REFIT", "Every figure above rests on Kd, the slope of a straight line fitted "
+            "to the logarithm of light against depth, which assumes attenuation is the same all "
+            "the way down. ODA publishes each cast's light readings beside its Kd, so the "
+            "assumption can be checked: this page refits the top half of each profile and the "
+            f"bottom half separately. {sd['n_profiles']:,} casts carry enough readings - at least "
+            f"{p['min_profile_points']} spanning at least {p['min_profile_span_m']} m.") + "\n")
         a("| profile starts at | casts | Kd top half | Kd bottom half | ratio | "
           "steepens with depth |")
         a("|---|---:|---:|---:|---:|---:|")
@@ -491,60 +509,67 @@ def render(d):
         steep = [r["steepens"] for r in g]
         ratios = [r["ratio"] for r in g]
         rising = all(x <= y for x, y in zip(ratios, ratios[1:]))
-        a("**The bottom half attenuates less, and the gap closes the deeper the "
-          "profile begins.** That ordering is the whole result. It runs opposite to "
-          "resuspension — a turbid layer over the bed would make the bottom half "
-          f"steeper, and it does so in only {min(steep):.0f}–{max(steep):.0f}% of "
-          "casts, outweighed on average by something else.\n")
-        a("The something else is that a PAR sensor counts photons across the whole "
-          "band without distinguishing them, and water absorbs the band unevenly - as "
-          "an earlier version of this page put it, "
-          + live.was("ea77da4", "docs/LIGHT.md",
-                       'band unevenly — @@. The red')
-          + ". The red part of the light is gone near the "
-          "surface, and what continues downward is the fraction water attenuates "
-          "least. So the apparent broadband Kd falls with depth **in perfectly "
-          "uniform water**, purely because the surviving spectrum has shifted. If "
-          "that is the mechanism, the effect must fade for profiles that begin below "
-          "the red-absorbing layer, because the red is already gone. It does: the "
-          f"ratio runs from {g[0]['ratio']} for profiles starting at the surface to "
-          f"{g[-1]['ratio']} for those starting below {g[-1]['from']} m, "
-          + ("rising at every step" if rising else "rising overall though not at every step")
-          + ".\n")
-        a("> **What follows is that Kd measured this way is not a property of the "
-          "water.** It is a property of the water and the depth window jointly. Two "
-          "casts in identical water, one begun near the surface and one begun "
-          "deeper, return different numbers. The indicator, the target derived from "
-          "it, and every figure on this page inherit that.\n")
+        below = all(x < 1 for x in ratios)
+        a(C("C-FR-LT-HALVES", ("**In every band the bottom half attenuates less than the top on "
+                               "the median" if below else
+                               "**The bottom half does not attenuate less in every band")
+            + f", and the ratio runs from {g[0]['ratio']} for profiles starting within "
+            f"{g[0]['to']} m of the surface to {g[-1]['ratio']} for those starting below "
+            f"{g[-1]['from']} m, "
+            + ("rising at every step.**" if rising else "rising overall though not at every "
+               "step.**")) + "\n")
+        a(C("C-FR-LT-RESUSP", "A turbid layer over the bed would make the bottom half steeper. "
+            f"The bottom half is steeper in {min(steep):.0f}–{max(steep):.0f}% of casts in each "
+            "band" + (", and less steep on the median." if below else ".")) + "\n")
+        a(C("C-FR-LT-SPECTRAL", "One explanation is spectral. The technical instruction specifies "
+            "quantum sensors for photosynthetically active light, PAR, which respond equally to "
+            "every wavelength in the band, and water absorbs the red end of it: what continues "
+            "downward is the part water attenuates least, so a broadband Kd falls with depth even "
+            "in uniform water. The instruction itself notes that the light's spectral composition "
+            "changes with depth and can bend the curve. If that is the mechanism, the effect "
+            "should fade for profiles that begin below the depth where the red is gone, and the "
+            "ratio does rise with start depth. Nothing here measures the spectrum, so it remains "
+            "an explanation.") + "\n")
+        a("> " + C("C-FR-LT-WINDOW", "**Within a cast, the line fitted to the upper half and the "
+                   "line fitted to the lower half differ, so a Kd depends on the depth window it "
+                   "is fitted over as well as on the water.** The instruction's own rules - fit "
+                   "above the thermocline only where the curve differs across it, leave out the "
+                   "lowest readings where it bends - choose that window cast by cast.") + "\n")
         if sd.get("z11_deep_start") and sd.get("z11_shallow_start"):
-            a(f"Splitting the growth-season casts on where they started: "
-              f"{sd['n_shallow_start']:,} began above {p['start_split_m']} m and give a "
-              f"median Kd of {sd['kd_shallow_start']} and a median depth reaching "
-              f"{lo}% of {sd['z11_shallow_start']} m; {sd['n_deep_start']:,} began "
-              f"below {p['start_split_m']} m and give {sd['kd_deep_start']} and "
-              f"{sd['z11_deep_start']} m. Neither is the true number. They are two "
-              "answers from one record, separated by a choice nobody documents "
-              "making.\n")
-        a("The measurement that would separate the two explanations — spectral "
-          "attenuation rather than one broadband coefficient — is not made anywhere "
-          "in the Danish programme. A single number cannot say whether the light "
-          "stopped because something was in the water or because water is red-"
-          f"absorbing and the sensor started shallow. That is {live.ref('Z8', title=True)} "
-          "again, one layer below where it is stated.\n")
+            a(C("C-FR-LT-SPLIT", f"Splitting the growth-season casts on where they started: "
+                f"{sd['n_shallow_start']:,} began above {p['start_split_m']} m and give a median "
+                f"Kd of {sd['kd_shallow_start']} and a median depth reaching {lo}% of "
+                f"{sd['z11_shallow_start']} m; {sd['n_deep_start']:,} began below "
+                f"{p['start_split_m']} m and give {sd['kd_deep_start']} and "
+                f"{sd['z11_deep_start']} m. They are different casts, not the same water "
+                "measured twice, so the gap mixes where a profile starts with where it was "
+                "taken.") + "\n")
+        a(C("C-FR-LT-NOSPECTRAL", "The measurement that would separate the explanations - "
+            "attenuation by wavelength rather than a broadband coefficient - is in none of the "
+            "ODA extracts this project fetched, and the technical instruction specifies "
+            "broadband sensors.") + " " +
+          C("C-FR-LT-Z8", "A broadband number cannot say whether the light stopped because "
+            "something was in the water or because water absorbs red and the profile started "
+            f"shallow: that is {live.ref('Z8', title=True)}, a layer below where it is stated.")
+          + "\n")
     sc = d.get("secchi")
     if sc:
         bands = sc["bands"]
         a("## The other optical record measures the seabed when the water is shallow\n")
-        a("Kd is not the only transparency number Denmark holds. There is also "
-          f"Secchi depth — a white disc lowered until it disappears — {sc['n_secchi']:,} "
-          f"readings, {sc['n_paired']:,} of them paired with a bottom depth, "
-          f"{sc['years'][0]}–{sc['years'][1]}. It has one hard limit: **a disc cannot "
-          "be seen deeper than the bottom.** Where the water is shallower than the "
-          "water is clear, the number recorded is the depth of the seabed.\n")
-        a("ODA is straightforward about this and publishes the flag — "
-          "`SigtTilBund`, sight-to-bottom — which is the only reason any of this "
-          f"can be checked. It is set on {sc['flag']['True']:,} of "
-          f"{sc['n_secchi']:,} readings.\n")
+        a(C("C-FR-LT-SECCHI", "Kd is not the only transparency number Denmark holds. There is "
+            "also Secchi depth - a white disc lowered until it can no longer be seen - "
+            f"{sc['n_secchi']:,} readings, {sc['n_paired']:,} of them paired with a bottom depth, "
+            f"{sc['years'][0]}–{sc['years'][1]}. It has a hard limit: **a disc cannot be seen "
+            "deeper than the bottom.** Where the water is shallower than the water is clear, the "
+            "number recorded is the depth of the seabed.") + "\n")
+        flagged = live.step("K-SUBSET-SHARE", sc["flag"]["True"] / sc["n_secchi"] * 100)
+        a(C("C-FR-LT-FLAG", "ODA also publishes a flag, `SigtTilBund` (sight-to-bottom), set on "
+            f"{sc['flag']['True']:,} of {sc['n_secchi']:,} readings ({flagged:.1f}%). The shares "
+            "below do not use it: they count a reading as at the bed where its Secchi depth "
+            "reaches the bottom depth on the same record, which puts "
+            f"{sc['at_bed_pct']}% of the {sc['n_paired']:,} paired readings at the bed. The flag "
+            "is counted over all readings and the comparison over the paired ones, so the two are "
+            "not compared record by record here.") + "\n")
         a("| bottom depth | readings | median Secchi | disc reached the bed |")
         a("|---|---:|---:|---:|")
         for b in bands:
@@ -552,47 +577,44 @@ def render(d):
               f"**{b['at_bed_pct']}%** |")
         a("")
         rare = next((b for b in bands if b["at_bed_pct"] < 1), None)
-        a(f"So in water under {bands[0]['to']} m, {bands[0]['at_bed_pct']}% of the "
-          "readings are measurements of bathymetry wearing the units of clarity."
-          + (f" From {rare['from']} m down it essentially stops happening "
-             f"({rare['at_bed_pct']}%)." if rare else "")
-          + " The censoring is not an error — it is what the instrument does — but "
-          "it is **one-sided**: it can only make the water look less clear than it "
-          "is, never more, and only in the shallows.\n")
-        a("**And the censored share is not constant, which is the part that "
-          "matters for any series built from it.**\n")
+        a(C("C-FR-LT-CENSOR", f"So in water under {bands[0]['to']} m, {bands[0]['at_bed_pct']}% "
+            "of the readings record the depth of the bed rather than the clarity of the water"
+            + (f"; in the {rare['from']}–{rare['to']} m band it is {rare['at_bed_pct']}%"
+               if rare else "")
+            + ". The censoring is not an error - it is what the instrument does - but it is "
+            "**one-sided**: it can only make the water look less clear than it is, never "
+            "more.") + "\n")
+        a(C("C-FR-LT-NOTCONST", "**And the censored share is not constant, which is the part "
+            "that matters for any series built from it.**") + "\n")
         a(f"| period | readings | disc reached the bed | in water under {p['shallow_secchi_m']} m |")
         a("|---|---:|---:|---:|")
         for e in sc["eras"]:
             sh = "—" if e["shallow_at_bed_pct"] is None else f"{e['shallow_at_bed_pct']}%"
             a(f"| {e['from']}–{e['to']} | {e['n']:,} | {e['at_bed_pct']}% | {sh} |")
         a("")
-        a("A time-varying censored fraction is a time-varying bias, so a Secchi "
-          "trend computed across these eras is partly a trend in how often the "
-          "instrument hit the ground. **Why it varies is not settled here.** "
-          "Cleaner water would raise it, because a disc that can be seen further "
-          "reaches the bed more often; so would a shift of effort toward shallower "
-          "stations; so would a change in field practice. Those are not separable "
-          "from this table, and the direction of the resulting bias is "
-          "uncomfortable: a genuine improvement in clarity partly hides itself, "
-          "because the readings that would show it are the ones that get capped.\n")
-        a("The same caution as the Kd section, arrived at from the other side. "
-          "Neither of Denmark's two transparency records is a clean measurement of "
-          "the water alone — one depends on where the sensor started, the other on "
-          "how deep the sea is underneath it.\n")
+        a(C("C-FR-LT-BIAS", "A time-varying censored fraction is a time-varying bias, so a "
+            "Secchi trend computed across these eras is partly a trend in how often the "
+            "instrument hit the ground. **Why it varies is not settled here.** Cleaner water "
+            "would raise it, because a disc that can be seen further reaches the bed more often; "
+            "so would a shift of effort toward shallower stations; so would a change in field "
+            "practice. Those are not separable from this table, and the direction of the "
+            "resulting bias is uncomfortable: a genuine improvement in clarity partly hides "
+            "itself, because the readings that would show it are the ones that get capped.")
+          + "\n")
+        a(C("C-FR-LT-NEITHER", "Neither of the transparency records in ODA is a clean "
+            "measurement of the water alone: one depends on the depth window its line is fitted "
+            "over, the other on how deep the sea is underneath it.") + "\n")
     a("## What this does and does not settle\n")
-    a("It settles the arithmetic, which was never in doubt, and it puts a number on "
-      "the thing the Kd indicator is a proxy for. What it cannot settle is *why* the "
-      "light is where it is. Kd is one broadband number and its causes do not "
-      "separate — phytoplankton, resuspended mineral sediment, coloured dissolved "
-      "organic matter and drifted detritus all darken water identically at this "
-      f"resolution. That is {live.ref('Z8')}, and it is why a Kd exceedance is "
-      "attributed to algae by assumption rather than by measurement.\n")
-    a("It also cannot see the shading that happens *after* the light has passed "
-      "through the water. Epiphytes growing on the leaf shade the host at the blade "
-      f"surface, where no water-column measurement reaches ({live.ref('Z9', title=True)}), "
-      "so the nutrient-to-light pathway can operate with every number on this page "
-      "looking acceptable.\n")
+    a(C("C-FR-LT-SETTLES", "It computes, from the published record, the depth at which each "
+        "cast's light falls to thresholds taken from DCE - the quantity the Kd indicator stands "
+        "for. It cannot say why the light is where it is: Kd is a broadband number, and "
+        "phytoplankton, resuspended mineral sediment, coloured dissolved organic matter and "
+        "detritus all attenuate light within it without being told apart. That is "
+        f"{live.ref('Z8')}.") + "\n")
+    a(C("C-FR-LT-Z9", "Nor can it see shading after the light has passed through the water: "
+        f"{live.ref('Z9', title=True)} holds that algae growing on the leaf shade it at the blade "
+        "surface, where no water-column measurement reaches, so a nutrient effect on eelgrass "
+        "could act with every number on this page looking acceptable.") + "\n")
     return "\n".join(o) + "\n"
 
 
