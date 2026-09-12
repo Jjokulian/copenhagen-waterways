@@ -138,6 +138,13 @@ def render():
     a = o.append
 
     a("# Til landbruget: grundlaget for kravet\n")
+    a("> " + C("C-LE-LEFTOVER", "**Landbrugets andel er ikke målt.** Den regnes som det, der er "
+        "tilbage: den samlede kvælstoftilførsel fra land minus punktkilderne giver det diffuse "
+        "bidrag, og det diffuse bidrag minus det naturlige baggrundsbidrag er det, der kaldes "
+        "landbrugets andel. Det er en restpost - og alt, hvad der er regnet forkert eller mangler "
+        "i de andre poster, havner i den. [Hvordan hver post er lavet](NITROGEN.md).") + "\n")
+    a(C("C-LE-FIX", "*Har du fundet en fejl? [Skriv den her](https://github.com/Jjokulian/copenhagen-waterways/issues). Hvad sitet har "
+        "trukket tilbage, står med begrundelse i [arkivet](ARCHIVE.md).*") + "\n")
     a("> ## Om koefficienterne\n")
     a("> " + C("C-LE-SLOPE", "**For klorofyl og lyssvækkelse findes der en koefficient.** DCE "
                "har opstillet statistiske relationer mellem kvælstoftilførslen og indikatorerne, "

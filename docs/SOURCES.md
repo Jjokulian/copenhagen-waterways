@@ -77061,7 +77061,7 @@ Joins the sibling project's livestock register, declared field parcels, CVR mast
 <a id="K-FARM-LANDBRUG"></a>
 ### Counts and constants the Danish-language page derives itself
 
-`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **current** · read by agent w3-le (re-read the declaration against scripts/landbrug.py after its last page-text edit: the constants and the block that writes data/derived/landbrug.json are textually unchanged from HEAD, and the file it writes is byte-identical to before any edit (sha256 71eae2b6); the page also refuses to build if agri_pct differs from DANVA's pinned page. The declaration's model gives 12 / 32 where the code types 0.375, the same value; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **stale: scripts/landbrug.py changed since it was read** · read by agent w3-le (re-read the declaration against scripts/landbrug.py after its last page-text edit: the constants and the block that writes data/derived/landbrug.json are textually unchanged from HEAD, and the file it writes is byte-identical to before any edit (sha256 71eae2b6); the page also refuses to build if agri_pct differs from DANVA's pinned page. The declaration's model gives 12 / 32 where the code types 0.375, the same value; 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Writes the few numbers the page derives itself - two counts over the pathway register, the published agricultural share it quotes, and two stoichiometric constants - so that the page reads them back live.
 

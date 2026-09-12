@@ -37357,6 +37357,62 @@ Said on [LANDBRUG.md](LANDBRUG.md).
 
 *Confirmed 2026-09-11 by* `agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
+<a id="C-LE-LEFTOVER"></a>
+### The agricultural share is not measured: the land-borne nitrogen load minus point sources gives the diffuse input, and the diffuse input minus the natural background is what is called agriculture's share - a leftover, into which every error or omission in the other terms falls.
+
+`C-LE-LEFTOVER` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [LANDBRUG.md](LANDBRUG.md).
+
+**Why it follows:** DCE's methods summary defines the diffuse anthropogenic contribution as diffuse inputs minus the background, and NITROGEN.md sets out how each line is produced; a difference carries the errors of every term subtracted from it.
+
+```mermaid
+graph BT
+  C-LE-LEFTOVER("The agricultural share is not measured: the land-borne nit...")
+  C-NI-RELABEL("Relabelled by what produced it: the agricultural share is ...")
+  E-NI-MSFD-RESIDUAL[("DCE MSFD note: the · anthropogenic diffuse load")]
+  E-NI-MSFD-BACKGROUND[("DCE MSFD note: how the · background is determined")]
+  E-NI-DANVA-MINOR[("DANVA: the remaining lines · are even smaller")]
+  D-NI-MONITORING[("Monitoring register")]
+  U-NI-LINE-METHODS(("Trail ends: how the smaller · lines are estimated"))
+  C-NI-RELABEL --> C-LE-LEFTOVER
+  E-NI-MSFD-RESIDUAL --> C-NI-RELABEL
+  E-NI-MSFD-BACKGROUND --> C-NI-RELABEL
+  E-NI-DANVA-MINOR --> C-NI-RELABEL
+  D-NI-MONITORING --> C-NI-RELABEL
+  U-NI-LINE-METHODS --> C-NI-RELABEL
+  E-NI-MSFD-RESIDUAL --> C-LE-LEFTOVER
+  style C-LE-LEFTOVER fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-RELABEL fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-MSFD-RESIDUAL fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-MSFD-BACKGROUND fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-DANVA-MINOR fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-NI-MONITORING fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style U-NI-LINE-METHODS fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+```
+
+- **claim** — Relabelled by what produced it: the agricultural share is a residual; the background is determined in small low-impact catchments and transferred; the treatment-plant line is reported effluent monitoring; the other lines are reported or modelled, and the pinned summary gives them only as smaller shares. ([`C-NI-RELABEL`](CLAIMS.md#C-NI-RELABEL))
+- **external** — DCE MSFD note: the anthropogenic diffuse load: “Diffuse tilførsler (inkl. spredt bebyggelse) minus baggrundsbidraget (diffus antropogen)” ([`MSFD28`](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Havstrateginotater/2-8_MSFD_notat_tilfoersel_NPO.pdf), pinned). The anthropogenic diffuse load is the diffuse load, scattered dwellings included, minus the background.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-LE-FIX"></a>
+### Readers who find a mistake are asked to report it; what this site has retracted is kept, with the reason, in its archive.
+
+`C-LE-FIX` · **stipulated** — a rule this project sets itself, with its reason
+
+Said on [LANDBRUG.md](LANDBRUG.md).
+
+**Why it follows:** An invitation; the archive is this site's own record of its corrections.
+
+- **the argument alone** — nothing further is cited: the reasoning above is the whole of it, for the reader to judge
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
 ## LANDING.md
 
 <a id="C-CONVEYANCE"></a>
@@ -38322,6 +38378,66 @@ graph BT
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
 *Confirmed 2026-09-11 by* `fork w1-lr (read the LANDING sentence against the claim, its reasoning and what it rests on: triage, register, light, partition, currents and Gotland data read in the files; SR353, SR120, DCE and NOVANA phrases found in the pinned texts by the engine; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-LR-L-LEFTOVER"></a>
+### The farm share of the nitrogen reaching the sea is not measured: it is what is left of the land-borne load once point sources and the natural background are subtracted, a leftover that takes up every error in the terms subtracted.
+
+`C-LR-L-LEFTOVER` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [LANDING.md](LANDING.md).
+
+**Why it follows:** As LANDBRUG and NITROGEN set out from DCE's own methods summary.
+
+```mermaid
+graph BT
+  C-LR-L-LEFTOVER("The farm share of the nitrogen reaching the sea is not mea...")
+  C-LE-LEFTOVER("The agricultural share is not measured: the land-borne nit...")
+  C-NI-RELABEL("Relabelled by what produced it: the agricultural share is ...")
+  E-NI-MSFD-RESIDUAL[("DCE MSFD note: the · anthropogenic diffuse load")]
+  E-NI-MSFD-BACKGROUND[("DCE MSFD note: how the · background is determined")]
+  E-NI-DANVA-MINOR[("DANVA: the remaining lines · are even smaller")]
+  D-NI-MONITORING[("Monitoring register")]
+  U-NI-LINE-METHODS(("Trail ends: how the smaller · lines are estimated"))
+  C-LE-LEFTOVER --> C-LR-L-LEFTOVER
+  C-NI-RELABEL --> C-LE-LEFTOVER
+  E-NI-MSFD-RESIDUAL --> C-NI-RELABEL
+  E-NI-MSFD-BACKGROUND --> C-NI-RELABEL
+  E-NI-DANVA-MINOR --> C-NI-RELABEL
+  D-NI-MONITORING --> C-NI-RELABEL
+  U-NI-LINE-METHODS --> C-NI-RELABEL
+  E-NI-MSFD-RESIDUAL --> C-LE-LEFTOVER
+  C-NI-RELABEL --> C-LR-L-LEFTOVER
+  style C-LR-L-LEFTOVER fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-LE-LEFTOVER fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-NI-RELABEL fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-NI-MSFD-RESIDUAL fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-MSFD-BACKGROUND fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-NI-DANVA-MINOR fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-NI-MONITORING fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style U-NI-LINE-METHODS fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
+```
+
+- **claim** — The agricultural share is not measured: the land-borne nitrogen load minus point sources gives the diffuse input, and the diffuse input minus the natural background is what is called agriculture's share - a leftover, into which every error or omission in the other terms falls. ([`C-LE-LEFTOVER`](CLAIMS.md#C-LE-LEFTOVER))
+- **claim** — Relabelled by what produced it: the agricultural share is a residual; the background is determined in small low-impact catchments and transferred; the treatment-plant line is reported effluent monitoring; the other lines are reported or modelled, and the pinned summary gives them only as smaller shares. ([`C-NI-RELABEL`](CLAIMS.md#C-NI-RELABEL))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-LR-L-FIX"></a>
+### Readers who find a mistake are asked to report it; retractions are kept with their reasons in the archive.
+
+`C-LR-L-FIX` · **stipulated** — a rule this project sets itself, with its reason
+
+Said on [LANDING.md](LANDING.md).
+
+**Why it follows:** An invitation; the archive is this site's own record of its corrections.
+
+- **the argument alone** — nothing further is cited: the reasoning above is the whole of it, for the reader to judge
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-13 by* `Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 ## LIGHT.md
 

@@ -94,6 +94,14 @@ def main(argv):
       "source this project surveyed, because the deciding measurement is in none of them. "
       f"{experiment} more need an experiment that no surveyed source reports.**" + E)
     w("")
+    w(C("C-LR-L-LEFTOVER", "**The farm share of the nitrogen reaching the sea is not measured.** "
+      "It is what is left of the land-borne load once point sources and the natural background "
+      "are subtracted: a leftover, which takes up every error in the terms subtracted. "
+      "[Why that matters](RESIDUAL.md) · [på dansk, til landbruget](LANDBRUG.md)"))
+    w("")
+    w(C("C-LR-L-FIX", "*Found a mistake? [Report it](https://github.com/Jjokulian/copenhagen-waterways/issues). What this site has "
+      "retracted, and why, is in its [archive](ARCHIVE.md).*"))
+    w("")
     w("**But the question is not “what killed Danish coastal water”, because that is not "
       f"one thing.** {B('C-LR-L-MENU')}These are not {n_reg} rivals for a single prize: "
       f"where the evidence reaches, different places behave differently.{E} "

@@ -1,0 +1,84 @@
+{
+ "_what": "The farm share stated plainly as a leftover, at the top of LANDBRUG and on the landing page, and an invitation to report mistakes (owner, 2026-09-13).",
+ "claims": [
+  {
+   "id": "C-LE-LEFTOVER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "LANDBRUG.md",
+   "claim": "The agricultural share is not measured: the land-borne nitrogen load minus point sources gives the diffuse input, and the diffuse input minus the natural background is what is called agriculture's share - a leftover, into which every error or omission in the other terms falls.",
+   "because": "DCE's methods summary defines the diffuse anthropogenic contribution as diffuse inputs minus the background, and NITROGEN.md sets out how each line is produced; a difference carries the errors of every term subtracted from it.",
+   "rests_on": [
+    "C-NI-RELABEL",
+    "E-NI-MSFD-RESIDUAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDBRUG.md": "**Landbrugets andel er ikke målt.** Den regnes som det, der er tilbage: den samlede kvælstoftilførsel fra land minus punktkilderne giver det diffuse bidrag, og det diffuse bidrag minus det naturlige baggrundsbidrag er det, der kaldes landbrugets andel. Det er en restpost - og alt, hvad der er regnet forkert eller mangler i de andre poster, havner i den. [Hvordan hver post er lavet](NITROGEN.md).",
+     "texts": "e568cfaf63931fb3",
+     "rests on C-NI-RELABEL": "eec5f3032f2482cc",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b"
+    }
+   }
+  },
+  {
+   "id": "C-LE-FIX",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "LANDBRUG.md",
+   "claim": "Readers who find a mistake are asked to report it; what this site has retracted is kept, with the reason, in its archive.",
+   "because": "An invitation; the archive is this site's own record of its corrections.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDBRUG.md": "*Har du fundet en fejl? [Skriv den her](https://github.com/Jjokulian/copenhagen-waterways/issues). Hvad sitet har trukket tilbage, står med begrundelse i [arkivet](ARCHIVE.md).*",
+     "texts": "40224234f038823b"
+    }
+   }
+  },
+  {
+   "id": "C-LR-L-LEFTOVER",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "LANDING.md",
+   "claim": "The farm share of the nitrogen reaching the sea is not measured: it is what is left of the land-borne load once point sources and the natural background are subtracted, a leftover that takes up every error in the terms subtracted.",
+   "because": "As LANDBRUG and NITROGEN set out from DCE's own methods summary.",
+   "rests_on": [
+    "C-LE-LEFTOVER",
+    "C-NI-RELABEL"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDING.md": "**The farm share of the nitrogen reaching the sea is not measured.** It is what is left of the land-borne load once point sources and the natural background are subtracted: a leftover, which takes up every error in the terms subtracted. [Why that matters](RESIDUAL.md) · [på dansk, til landbruget](LANDBRUG.md)",
+     "texts": "b0afd59cd2471f23",
+     "rests on C-LE-LEFTOVER": "e568cfaf63931fb3",
+     "rests on C-NI-RELABEL": "eec5f3032f2482cc"
+    }
+   }
+  },
+  {
+   "id": "C-LR-L-FIX",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "LANDING.md",
+   "claim": "Readers who find a mistake are asked to report it; retractions are kept with their reasons in the archive.",
+   "because": "An invitation; the archive is this site's own record of its corrections.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on LANDING.md": "*Found a mistake? [Report it](https://github.com/Jjokulian/copenhagen-waterways/issues). What this site has retracted, and why, is in its [archive](ARCHIVE.md).*",
+     "texts": "b5f28b33d40621b8"
+    }
+   }
+  }
+ ]
+}

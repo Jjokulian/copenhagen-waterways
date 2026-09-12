@@ -1422,7 +1422,7 @@
    "licenses": "The counts and the arithmetic the page does with them.",
    "model": "The counts are taken over the pathway register as it stands at the build; the constants are `(106 * 12.011) / (16 * 14.007)` and `12 / 32` in the code's terms.",
    "not_licensed": "That the published share is right.",
-   "status": "current",
+   "status": "stale: scripts/landbrug.py changed since it was read",
    "title": "Counts and constants the Danish-language page derives itself",
    "void_if": [
     "the published share is revised"
@@ -14114,10 +14114,10 @@
   },
   "F-0019d1e160": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 810,
-    "line": 816,
-    "text": "    mfs = mon[\"hazardous_substances\"]\n    n_st = mfs[\"stations_combined_overflow\"] + mfs[\"stations_separate_stormwater\"]\n    w(f\"### Toxicants: {n_st} stations\\n\")\n    points = (\" \" + C(\"C-NI-RBU-COUNT\", f\"The national register holds **{kt[3]:,}** rain-dependent \"\n                      \"discharge points.\")) if kt else \"\"\n    w(C(\"C-NI-TYPETAL-BASIS\", \"The national typetal for hazardous substances in rain-dependent \"\n        f\"discharges rest on **{mfs['stations_combined_overflow']} combined-sewer overflows and \"\n        f\"{mfs['stations_separate_stormwater']} separate stormwater outlets** — *\\\"\"\n        + quote(\"TYPETAL22\", \"fælleskloakerede spildevandsoverløb og fem separatkloakerede \"\n                \"regnvandsudledninger\") + \"\\\"* — monitored 2000–2020 in catchments representing *\\\"\""
+    "file": "scripts/landbrug.py",
+    "first": 329,
+    "line": 335,
+    "text": "               \"koncentrationen ligger inden for et interval omkring det samme typetal. \"\n               \"Usikkerheden på den udledte stofmængde er angivet til \"\n               f\"{lv[1]['uncertainty_pct']} % på videnniveau {lv[1]['level']}, en simpel \"\n               f\"massebalance; for niveau {lv[0]['level']}, en beregning i PULS, er der ingen \"\n               \"angivet.\"))\n    a(\"- \" + C(\"C-LE-C-TYPETAL\", \"**Typetallene for miljøfarlige stoffer** hviler på \"\n               f\"{hz['stations_combined_overflow']} målestationer for fællessystem og \"\n               f\"{hz['stations_separate_stormwater']} for separat regnvand — i oplande *valgt* til at \"\n               \"repræsentere husholdninger og boligområder, og udtrykkeligt afgrænset over for \"\n               \"industriområder og stærkt trafikerede veje. Samme rapport finder, at en væsentlig \""
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -14185,8 +14185,8 @@
    "synthetic": false,
    "value": 6,
    "where": [
-    "scripts/nitrogen.py",
-    816
+    "scripts/landbrug.py",
+    335
    ]
   },
   "F-001c24e716": {
@@ -15466,10 +15466,10 @@
   },
   "F-00b2f8d525": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 158,
-    "line": 164,
-    "text": "      + C(\"C-OP-5-THRESHOLD\", \"Sediment resuspension in a basin is a *threshold* in flow, so the mass is \"\n          \"plausibly dominated by a handful of events the method averages away.\"))\n    w()\n    w(B(\"C-OP-5-SETTLE\") + \"**What would settle it.** Measuring the overflow at a handful of structures\")\n    w(\"across a range of event sizes - both its flow, directly or by mass balance, and the substance\")\n    w(f\"concentrations in the overflowing water. That is videnniveau {lv['level']} in Miljøstyrelsen's own scheme:\")\n    w(f\"{lv['uncertainty_pct']}% uncertainty on the discharged mass, the highest level in their hierarchy. How many structures\")\n    w(\"are measured this way is not in anything this project holds.\" + E)\n    w()\n    w(\"---\")"
+    "file": "scripts/landbrug.py",
+    "first": 449,
+    "line": 455,
+    "text": "          \"frigivelse fra sedimentet med bundkamre\") + \" | \"\n      + C(\"C-LE-9-DENOM\", \"begge kræver nye målinger. Uden en nævner er der ingen andel af \"\n          \"helheden\") + \" |\")\n    a(\"| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, \"\n      \"over hændelser af forskellig størrelse | \"\n      + C(\"C-LE-9-LEVEL5\", f\"målebaseret overløbsestimering er videnniveau {lv[5]['level']} i \"\n          f\"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed på den udledte \"\n          f\"stofmængde mod {lv[1]['uncertainty_pct']} % på niveau {lv[1]['level']}. Metoden er \"\n          \"defineret. Hvor mange bygværker der opgøres sådan, står ikke i noget, projektet har\")\n      + \" |\")"
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -15509,8 +15509,8 @@
    "synthetic": false,
    "value": 30,
    "where": [
-    "scripts/pages/open_problems.py",
-    164
+    "scripts/landbrug.py",
+    455
    ]
   },
   "F-00ba3a9068": {
@@ -23155,7 +23155,7 @@
     "file": "scripts/landbrug.py",
     "first": 189,
     "line": 195,
-    "text": "    a(f\"| **Posten, andelen deler** | **{land_lo:.0f} – {land_hi:.0f}** | |\")\n    a(f\"| **{pct} % af den** | **{agri_lo:.0f} – {agri_hi:.0f}** | |\")\n    a(\"\")\n    a(C(\"C-LE-EMPTY\", f\"De **{n_unq} af {n_all} veje har slet intet tal** — heriblandt organisk \"\n        \"kvælstof i den atmosfæriske afsætning, udsivning af grundvand under havet og frigivelse \"\n        \"fra sedimentet. De veje, der *har* et tal, summerer til \"\n        f\"**{tot_lo:.0f} – {tot_hi:.0f} kt N/år**.\") + \"\\n\")\n    a(C(\"C-LE-FLOOR\", \"En tom række, der er en kilde for sig, kan kun lægge til. Nævneren har \"\n        \"altså et gulv og intet loft, og enhver andel regnet mod den er et **loft, ikke et \"\n        \"estimat**:\") + \"\\n\")"
+    "text": "    a(\"| Række | kt N/år | Grundlag |\")\n    a(\"|---|---:|---|\")\n    for p in land:\n        st = {\"PARTLY MEASURED\": \"delvist målt\", \"MODELLED\": \"modelleret\"}.get(\n            p[\"status\"], p[\"status\"].lower())\n        a(f\"| {p['pathway'].replace('Danish land via monitored streams', 'Dansk land via målte vandløb').replace('Danish land via unmonitored catchments', 'Dansk land via umålte oplande')} \"\n          f\"| {p['lo']:.0f} – {p['hi']:.0f} | {st} |\")\n    a(f\"| **Posten, andelen deler** | **{land_lo:.0f} – {land_hi:.0f}** | |\")\n    a(f\"| **{pct} % af den** | **{agri_lo:.0f} – {agri_hi:.0f}** | |\")\n    a(\"\")"
    },
    "constructions": [
     "K-FARM-MONITORING"
@@ -34858,8 +34858,8 @@
   "F-0f944d1be8": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 163,
-    "line": 169,
+    "first": 171,
+    "line": 177,
     "text": "    w(f\"{tr['all_casts_m_per_decade']:+.2f} <span>or</span> {tr['stable_stations_m_per_decade']:+.2f}\")\n    w(\"\")\n    ratio = tr[\"stable_stations_m_per_decade\"] / tr[\"all_casts_m_per_decade\"] * 100\n    w(C(\"C-LR-L-LIGHTTREND\", \"metres per decade: how fast the depth useful light reaches is \"\n        \"changing, over all casts, or only at the stations measured at both ends of the \"\n        f\"record. Keeping only those shrinks the trend to {ratio:.0f}% of the all-cast \"\n        f\"figure, and rests on {tr['n_stable_stations']} stations.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:light-depth -->\")\n    sd = light[\"start_depth\"]"
    },
    "constructions": [
@@ -34910,7 +34910,7 @@
    "value": 2,
    "where": [
     "scripts/pages/landing.py",
-    169
+    177
    ]
   },
   "F-0f95472e55": {
@@ -34937,10 +34937,10 @@
   },
   "F-0f96452fb9": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 125,
-    "line": 131,
-    "text": "        \"small. The question is what it is a share *of*.\") + \"\\n\")\n    a(C(\"C-PC-CA-FLOOR\", f\"The enumerated pathways that carry any number sum to **{fmt(tot_lo)} – \"\n        f\"{fmt(tot_hi)} kt N/yr**, with **{n_empty} of {n_paths} rows empty**. An empty row can only \"\n        \"add, so the sum is a floor on the denominator, and a share computed against it is a \"\n        \"**ceiling, not an estimate**:\") + \"\\n\")\n    a(\"> \" + C(\"C-PC-CA-CEILING\", f\"On this project's own bounds, agriculture accounts for **no more \"\n               f\"than {ceil_hi:.0f}%** of enumerated reactive nitrogen reaching Danish marine waters \"\n               f\"— and at the wide end of the bounds as little as {ceil_lo:.0f}%. Filling an empty \"\n               \"row lowers that ceiling, unless the register's own notes put the row inside another or \"\n               \"make it a timing term, as [LANDBRUG.md](LANDBRUG.md) sets out row by row. The bounds \""
+    "file": "scripts/landbrug.py",
+    "first": 201,
+    "line": 207,
+    "text": "        \"fra sedimentet. De veje, der *har* et tal, summerer til \"\n        f\"**{tot_lo:.0f} – {tot_hi:.0f} kt N/år**.\") + \"\\n\")\n    a(C(\"C-LE-FLOOR\", \"En tom række, der er en kilde for sig, kan kun lægge til. Nævneren har \"\n        \"altså et gulv og intet loft, og enhver andel regnet mod den er et **loft, ikke et \"\n        \"estimat**:\") + \"\\n\")\n    a(\"> \" + C(\"C-LE-CEILING\", f\"På projektets egne grænser står landbruget for **højst \"\n               f\"{ceil_hi:.0f} %** af det opgjorte reaktive kvælstof, der når danske havområder, og \"\n               f\"ved den brede ende af grænserne for ned til {ceil_lo:.0f} %. Grænserne har ikke en \"\n               \"kilde for hver række, så loftet er ikke bedre end dem.\") + \"\\n\")\n    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \""
    },
    "constructions": [
     "K-FARM-PATHWAYS",
@@ -35036,8 +35036,8 @@
    "synthetic": false,
    "value": 29.510898775753958,
    "where": [
-    "scripts/causation.py",
-    131
+    "scripts/landbrug.py",
+    207
    ]
   },
   "F-0fa639fd84": {
@@ -35652,8 +35652,8 @@
   "F-10301e05f2": {
    "code": {
     "file": "scripts/landbrug.py",
-    "first": 459,
-    "line": 465,
+    "first": 466,
+    "line": 472,
     "text": "\n    a(\"---\\n\")\n    a(\"## In English\\n\")\n    a(C(\"C-LE-EN\", \"This page argues, in Danish and to a Danish agricultural audience, that the \"\n        f\"chain from the published {PCT:.1f}% figure to the damage it is used to explain has \"\n        \"missing links. The figure is a residual share of one term of an open account \"\n        f\"({n_unq} of {n_all} enumerated nitrogen pathways carry no number). The oxygen part of \"\n        f\"the requirement is a binary trigger that sets a judged {CUT}% cut in total-nitrogen \"\n        \"concentration, converted to a load through each water body's own relation, where \"\n        \"chlorophyll and light attenuation have fitted slopes. And the recent extremes of oxygen \""
    },
    "constructions": [
@@ -35708,7 +35708,7 @@
    "value": 10,
    "where": [
     "scripts/landbrug.py",
-    465
+    472
    ]
   },
   "F-1046218c89": {
@@ -36598,8 +36598,8 @@
   "F-1153a11de9": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 225,
-    "line": 231,
+    "first": 233,
+    "line": 239,
     "text": "        \"the recovered flood overlays, every feature clickable to its own record: every \"\n        \"stream in one spatial view, for one city, on a 2012 reconstruction.\") +\n      \" What it would take to have this for the rest of the country is [an open \"\n      \"problem](OPEN_PROBLEMS.md).\")\n    w(\"\")\n    w(\"<!-- landing:tool:viz:note -->\")\n    w(f\"{lf['viz_mb']:.1f} MB · desktop · Copenhagen only\")\n    w(\"\")\n    w(\"<!-- landing:tool:flood2012 -->\")\n    w(C(\"C-LR-L-FLOOD2012\", f\"All {man['n_sheets']} 2012 cloudburst sheets as georeferenced \""
    },
    "constructions": [
@@ -36654,7 +36654,7 @@
    "value": 7.7,
    "where": [
     "scripts/pages/landing.py",
-    231
+    239
    ]
   },
   "F-1158f59e22": {
@@ -39556,8 +39556,8 @@
   "F-13d1b87901": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 228,
-    "line": 234,
+    "first": 236,
+    "line": 242,
     "text": "      \"problem](OPEN_PROBLEMS.md).\")\n    w(\"\")\n    w(\"<!-- landing:tool:viz:note -->\")\n    w(f\"{lf['viz_mb']:.1f} MB · desktop · Copenhagen only\")\n    w(\"\")\n    w(\"<!-- landing:tool:flood2012 -->\")\n    w(C(\"C-LR-L-FLOOD2012\", f\"All {man['n_sheets']} 2012 cloudburst sheets as georeferenced \"\n        \"rasters — PNG, world file and .prj — so they open straight in QGIS, with the \"\n        \"coordinates put back.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -39582,7 +39582,7 @@
    "value": 7,
    "where": [
     "scripts/pages/landing.py",
-    234
+    242
    ]
   },
   "F-13d89aa62c": {
@@ -39879,8 +39879,8 @@
   "F-1467517dff": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 208,
-    "line": 214,
+    "first": 216,
+    "line": 222,
     "text": "    w(\"\")\n    w(\"<!-- landing:tool:baltic -->\")\n    w(C(\"C-LR-L-BALTIC-TOOL\", \"Oxygen at the Gotland Deep in the central Baltic, on a \"\n        \"one-metre depth grid interpolated between discrete samples. In \"\n        f\"{g['months_all_below_pct']:.0f}% of the months of a {g['span_years']:.0f}-year \"\n        f\"record, every value below {P['depth_m']:g} m is under {P['o2_mg_l']:g} mg/l, against \"\n        f\"{dk_below:.1f}% of Danish near-bed observations. Two things are being called by one \"\n        \"word.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:rivers3d -->\")"
    },
    "constructions": [
@@ -40096,7 +40096,7 @@
    "value": 3.5061161314870444,
    "where": [
     "scripts/pages/landing.py",
-    214
+    222
    ]
   },
   "F-146cbc8115": {
@@ -42397,8 +42397,8 @@
   "F-16416eede3": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 144,
-    "line": 150,
+    "first": 152,
+    "line": 158,
     "text": "      \"The national stream report plots the field surplus against the normalised diffuse \"\n      \"nitrogen load and calls the relation very strong and significant; the same report \"\n      \"then notes that not all fjord catchments respond equally quickly, Mariager Fjord \"\n      \"among them. Whether the modelled part of that load is itself computed from the \"\n      f\"surplus is the question [what the sea actually receives](NITROGEN.md) takes up.{E}\")\n    w(f\"- {B('C-LR-L-BOUNDARIES')}**The boundaries carry no measured signal.** Across all \"\n      f\"{n_sub} feature subsets of the station record, the official water bodies agree with \"\n      \"the partitions the data produce no better than random connected regions of the same \"\n      f\"sizes agree with each other — lift {min(lifts):+.3f} to {max(lifts):+.3f} against \"\n      f\"that contiguity-matched null.{E} [how that was tested →](AREAS.md)\")"
    },
    "constructions": [
@@ -42444,7 +42444,7 @@
    "value": 255,
    "where": [
     "scripts/pages/landing.py",
-    150
+    158
    ]
   },
   "F-164c70310c": {
@@ -42746,10 +42746,10 @@
   },
   "F-16bd766a2e": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 703,
-    "line": 709,
-    "text": "        f\"reaching {dl['deviation_monthly_pct'][1]:+.0f}%. Retention, the largest single term, \"\n        f\"carries **±{dl['retention_uncertainty_pct_points'][0]}–\"\n        f\"{dl['retention_uncertainty_pct_points'][1]} percentage points**.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \""
+    "file": "scripts/landbrug.py",
+    "first": 450,
+    "line": 456,
+    "text": "      + C(\"C-LE-9-DENOM\", \"begge kræver nye målinger. Uden en nævner er der ingen andel af \"\n          \"helheden\") + \" |\")\n    a(\"| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, \"\n      \"over hændelser af forskellig størrelse | \"\n      + C(\"C-LE-9-LEVEL5\", f\"målebaseret overløbsestimering er videnniveau {lv[5]['level']} i \"\n          f\"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed på den udledte \"\n          f\"stofmængde mod {lv[1]['uncertainty_pct']} % på niveau {lv[1]['level']}. Metoden er \"\n          \"defineret. Hvor mange bygværker der opgøres sådan, står ikke i noget, projektet har\")\n      + \" |\")\n    a(\"| **Finansiér marin ekstraktion som virkemiddel**, med krav om analyse af høsten | \""
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -42789,8 +42789,8 @@
    "synthetic": false,
    "value": 135,
    "where": [
-    "scripts/nitrogen.py",
-    709
+    "scripts/landbrug.py",
+    456
    ]
   },
   "F-16c2345f41": {
@@ -43127,8 +43127,8 @@
   "F-173aca9550": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 198,
-    "line": 204,
+    "first": 206,
+    "line": 212,
     "text": "        \"models on.\"))\n    w(\"\")\n    s3 = lf[\"section3d\"]\n    w(\"<!-- landing:tool:section3d -->\")\n    w(C(\"C-LR-L-SECTION3D\", \"The street arrangement in three dimensions at its real sizes: the \"\n        \"bored rain line, the sewer left where it is, the two-storey shaft and the pan that \"\n        f\"serves both. {s3['stated']} of its {s3['total']} dimensions are stated conventions \"\n        \"rather than measurements, marked as such and all adjustable, and the hydraulic \"\n        \"panel shows whether a pipe that carries the flow is still fast enough to carry its \"\n        \"own grit.\"))"
    },
    "constructions": [
@@ -43167,7 +43167,7 @@
    "value": 14,
    "where": [
     "scripts/pages/landing.py",
-    204
+    212
    ]
   },
   "F-173c374201": {
@@ -57026,10 +57026,10 @@
   },
   "F-219d622646": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 44,
-    "line": 50,
-    "text": "    F = live.live_json(os.path.join(DERIVED, \"landbrug.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    cd = _claims.load()[0]\n    cache = {}\n\n    def read(ph):\n        return _claims.resolve(cd, ph, cache)[0]\n\n    # the published share, read from DANVA's page; the arithmetic below uses the same\n    # value as landbrug.json keeps it, and the two are checked against each other"
+    "file": "scripts/landbrug.py",
+    "first": 295,
+    "line": 301,
+    "text": "    a(C(\"C-LE-REDUCTION\", \"**Indgrebet.** DCE's rapport om vandløbene opgør faldet i tilførslen \"\n        f\"af kvælstof fra land til de danske kystvande i perioden 1990–2018 til {RED} %, beregnet \"\n        \"på vandføringsvægtede årsmiddelkoncentrationer.\") + \" \"\n      + C(\"C-LE-NOTDISPUTED\", \"Denne side bestrider hverken faldet eller indsatsen bag det.\") + \"\\n\")\n    a(C(\"C-LE-OUTCOME\", \"**Udfaldet.** DCE's notat fra efteråret 2023 kaldte iltsvindet i midten \"\n        \"af september det hidtil næststørste registrerede. I midten af september 2024 dækkede \"\n        f\"iltsvindet {dkt(format(KM24, ','))} km², og DCE kaldte det igen det hidtil næststørste \"\n        \"registrerede, kun overgået af iltsvindet i 2002.\") + \"\\n\")\n    a(C(\"C-LE-JUXTA\", \"**Side om side:** tilførslen fra land er omtrent halveret, og udbredelsen i \"\n        \"september 2024 var den næststørste registrerede. Yderpunkterne følger ikke tydeligt \""
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -57057,10 +57057,10 @@
     }
    ],
    "synthetic": false,
-   "value": "11,000",
+   "value": 11000,
    "where": [
-    "scripts/causation.py",
-    50
+    "scripts/landbrug.py",
+    301
    ]
   },
   "F-21b0b58a3a": {
@@ -61761,10 +61761,10 @@
   },
   "F-258bfbe96b": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 126,
-    "line": 132,
-    "text": "    a(C(\"C-PC-CA-FLOOR\", f\"The enumerated pathways that carry any number sum to **{fmt(tot_lo)} – \"\n        f\"{fmt(tot_hi)} kt N/yr**, with **{n_empty} of {n_paths} rows empty**. An empty row can only \"\n        \"add, so the sum is a floor on the denominator, and a share computed against it is a \"\n        \"**ceiling, not an estimate**:\") + \"\\n\")\n    a(\"> \" + C(\"C-PC-CA-CEILING\", f\"On this project's own bounds, agriculture accounts for **no more \"\n               f\"than {ceil_hi:.0f}%** of enumerated reactive nitrogen reaching Danish marine waters \"\n               f\"— and at the wide end of the bounds as little as {ceil_lo:.0f}%. Filling an empty \"\n               \"row lowers that ceiling, unless the register's own notes put the row inside another or \"\n               \"make it a timing term, as [LANDBRUG.md](LANDBRUG.md) sets out row by row. The bounds \"\n               \"carry no source for each row, so the ceiling is \""
+    "file": "scripts/landbrug.py",
+    "first": 202,
+    "line": 208,
+    "text": "        f\"**{tot_lo:.0f} – {tot_hi:.0f} kt N/år**.\") + \"\\n\")\n    a(C(\"C-LE-FLOOR\", \"En tom række, der er en kilde for sig, kan kun lægge til. Nævneren har \"\n        \"altså et gulv og intet loft, og enhver andel regnet mod den er et **loft, ikke et \"\n        \"estimat**:\") + \"\\n\")\n    a(\"> \" + C(\"C-LE-CEILING\", f\"På projektets egne grænser står landbruget for **højst \"\n               f\"{ceil_hi:.0f} %** af det opgjorte reaktive kvælstof, der når danske havområder, og \"\n               f\"ved den brede ende af grænserne for ned til {ceil_lo:.0f} %. Grænserne har ikke en \"\n               \"kilde for hver række, så loftet er ikke bedre end dem.\") + \"\\n\")\n    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \"\n        \"lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den \""
    },
    "constructions": [
     "K-FARM-PATHWAYS",
@@ -61860,8 +61860,8 @@
    "synthetic": false,
    "value": 12.546287809349218,
    "where": [
-    "scripts/causation.py",
-    132
+    "scripts/landbrug.py",
+    208
    ]
   },
   "F-259389fe39": {
@@ -65570,8 +65570,8 @@
   "F-2843de66c9": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 153,
-    "line": 159,
+    "first": 161,
+    "line": 167,
     "text": "      f\"that contiguity-matched null.{E} [how that was tested →](AREAS.md)\")\n    w(\"\")\n    w(\"Each link above has its working, its null and its limits in [what the sea actually \"\n      \"receives](NITROGEN.md). And for the question that follows — *so where, and what \"\n      \"would actually help?* — [Places, not categories](PLACES.md) takes the coasts one at a \"\n      \"time. \" + C(\"C-LR-L-PLACES\", f\"In near-bed oxygen, one region is below {lo:g} mg/l \"\n                                     f\"{times:.1f} times as often as the next.\"))\n    w(\"\")\n\n    w(\"<!-- landing:fact:light-trend -->\")"
    },
    "constructions": [
@@ -65605,7 +65605,7 @@
    "value": 3.866957470010905,
    "where": [
     "scripts/pages/landing.py",
-    159
+    167
    ]
   },
   "F-2855fef2e1": {
@@ -67643,10 +67643,10 @@
   },
   "F-2a17fa5268": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 218,
-    "line": 224,
-    "text": "    r = tt[\"combined_overflow\"]\n    cb = r[\"COD\"] * C_PER_COD\n    ca = r[\"Tot-N\"] * C_PER_N\n    a(C(\"C-PC-CA-CSO\", f\"A combined sewer overflow carries **{cb:.0f} mg of organic carbon per litre \"\n        f\"directly**, and enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of **{cb/ca:.2f}**. \"\n        \"The two routes are the same size. The nitrogen apportionment counts only the second, and in \"\n        f\"this project's register the overflow's nitrogen is {cso_lo:.1f}–{cso_hi:.1f}% of the \"\n        \"land-based term.\") + \"\\n\")\n    a(C(\"C-PC-CA-OTHERS\", \"For separate stormwater and for the stormwater-runoff reference the direct \"\n        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \""
+    "file": "scripts/landbrug.py",
+    "first": 342,
+    "line": 348,
+    "text": "               \"kulstof direkte, som dets kvælstof kunne nå at producere.** Ved typetallene i \"\n               \"projektets register og Redfield-forholdet svarer \"\n               f\"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til \"\n               f\"{tt['combined_overflow']['Tot-N'] * F['c_per_n']:.0f} mg C/l; vandet bærer selv \"\n               f\"{tt['combined_overflow']['COD'] * F['c_per_cod']:.0f} mg C/l. Kvælstofopgørelsen \"\n               \"tæller kun den ene halvdel, og i projektets register er overløbets kvælstof \"\n               f\"{dk(format(cso_lo, '.1f'))}–{dk(format(cso_hi, '.1f'))} % af den landbaserede \"\n               \"post.\"))\n    a(\"- \" + C(\"C-LE-C-FAT\", \"**Fedt indeholder intet kvælstof overhovedet.** Triglycerider \"\n               \"består af kulstof, brint og ilt. En kvælstofopgørelse kan ikke undervurdere det \""
    },
    "constructions": [
     "K-NITROGEN-PATHWAYS",
@@ -67709,8 +67709,8 @@
    "synthetic": false,
    "value": 0.5633802816901409,
    "where": [
-    "scripts/causation.py",
-    224
+    "scripts/landbrug.py",
+    348
    ]
   },
   "F-2a1bda786d": {
@@ -75356,8 +75356,8 @@
   "F-2f37b30ded": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 189,
-    "line": 195,
+    "first": 197,
+    "line": 203,
     "text": "\n    w(\"<!-- landing:word:iltsvind -->\")\n    w(C(\"C-LR-L-ILTSVIND\", f\"oxygen below {dce4} mg/l **in the bottom water**\"))\n    w(\"\")\n\n    w(\"<!-- landing:tool:areas -->\")\n    w(C(\"C-LR-L-AREAS\", f\"All {areas['summary']['sets']['all']['n']} marine water bodies \"\n        \"coloured by how much is actually known about each, with the years every stream of \"\n        \"observation covers. The red line is 2012, the end of the period DCE fitted their \"\n        \"models on.\"))"
    },
    "constructions": [
@@ -75396,7 +75396,7 @@
    "value": 123,
    "where": [
     "scripts/pages/landing.py",
-    195
+    203
    ]
   },
   "F-2f3eadf859": {
@@ -76582,8 +76582,8 @@
   "F-301a45c3f7": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 167,
-    "line": 173,
+    "first": 175,
+    "line": 181,
     "text": "        \"changing, over all casts, or only at the stations measured at both ends of the \"\n        f\"record. Keeping only those shrinks the trend to {ratio:.0f}% of the all-cast \"\n        f\"figure, and rests on {tr['n_stable_stations']} stations.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:light-depth -->\")\n    sd = light[\"start_depth\"]\n    w(f\"{sd['z11_shallow_start']:.2f} <span>or</span> {sd['z11_deep_start']:.2f} m\")\n    w(\"\")\n    w(C(\"C-LR-L-LIGHTDEPTH\", \"How deep useful light reaches, as a median over the casts that \"\n        \"began near the surface and over those that began deeper: the two differ by \""
    },
    "constructions": [
@@ -76642,7 +76642,7 @@
    "value": 8.18,
    "where": [
     "scripts/pages/landing.py",
-    173
+    181
    ]
   },
   "F-302225b842": {
@@ -81304,8 +81304,8 @@
   "F-340af001dc": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 162,
-    "line": 168,
+    "first": 170,
+    "line": 176,
     "text": "    w(\"<!-- landing:fact:light-trend -->\")\n    w(f\"{tr['all_casts_m_per_decade']:+.2f} <span>or</span> {tr['stable_stations_m_per_decade']:+.2f}\")\n    w(\"\")\n    ratio = tr[\"stable_stations_m_per_decade\"] / tr[\"all_casts_m_per_decade\"] * 100\n    w(C(\"C-LR-L-LIGHTTREND\", \"metres per decade: how fast the depth useful light reaches is \"\n        \"changing, over all casts, or only at the stations measured at both ends of the \"\n        f\"record. Keeping only those shrinks the trend to {ratio:.0f}% of the all-cast \"\n        f\"figure, and rests on {tr['n_stable_stations']} stations.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:light-depth -->\")"
    },
    "constructions": [
@@ -81353,7 +81353,7 @@
    "value": 27.091633466135463,
    "where": [
     "scripts/pages/landing.py",
-    168
+    176
    ]
   },
   "F-3410a6faf8": {
@@ -88311,10 +88311,10 @@
   },
   "F-38d4f3aa11": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 2624,
-    "line": 2630,
-    "text": "         \"past it.** Said first, *just try things* is the oldest way to avoid an argument. \"\n         \"Said after the hypotheses have been laid out, the data queued and the field \"\n         \"triaged, it is something else: the recognition that **the observational route to an \"\n         f\"answer may not exist**. {tri['unscoreable']} of the {tri_total} triaged mechanisms \"\n         \"cannot be scored at all, because the deciding measurement has no column anywhere; \"\n         f\"{tri['needs an experiment']} more need an experiment nobody has run. No amount of \"\n         f\"further collection reaches those {tri['unscoreable'] + tri['needs an experiment']}.\\n\"))\n    a(CL(\"C-PG-L-ENTITLE\", \"So the entitlement is earned, and the instrument is the one \"\n         \"[PLACES.md](PLACES.md) sets out: **fund trials of solution models, in named places, \"\n         \"with pre-stated outcomes, and let the results decide** — with the anti-delay \""
+    "file": "scripts/pages/landing.py",
+    "first": 120,
+    "line": 126,
+    "text": "      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \"\n      f\"{arch} are the monitoring archive auditing itself.{E} \"\n      f\"{B('C-LR-L-MONITORED')}**So nutrients did not win an argument against the \"\n      \"alternatives. Nutrients are the group that has a monitoring programme, and \"\n      f\"{unscore + experiment} rival mechanisms have never been in a position to \"\n      f\"compete.**{E} [the whole triage →](PLAN.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-CHECKABLE')}That is not a claim that nutrients are innocent, or that the \""
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -88346,8 +88346,8 @@
    "synthetic": false,
    "value": 62,
    "where": [
-    "scripts/programme.py",
-    2630
+    "scripts/pages/landing.py",
+    126
    ]
   },
   "F-38de94525e": {
@@ -89980,10 +89980,10 @@
   },
   "F-3a70a9dc3f": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 157,
-    "line": 163,
-    "text": "        \"checked against that same concentration, with no flow rate recorded.\") + \" \"\n      + C(\"C-OP-5-THRESHOLD\", \"Sediment resuspension in a basin is a *threshold* in flow, so the mass is \"\n          \"plausibly dominated by a handful of events the method averages away.\"))\n    w()\n    w(B(\"C-OP-5-SETTLE\") + \"**What would settle it.** Measuring the overflow at a handful of structures\")\n    w(\"across a range of event sizes - both its flow, directly or by mass balance, and the substance\")\n    w(f\"concentrations in the overflowing water. That is videnniveau {lv['level']} in Miljøstyrelsen's own scheme:\")\n    w(f\"{lv['uncertainty_pct']}% uncertainty on the discharged mass, the highest level in their hierarchy. How many structures\")\n    w(\"are measured this way is not in anything this project holds.\" + E)\n    w()"
+    "file": "scripts/landbrug.py",
+    "first": 448,
+    "line": 454,
+    "text": "          \"grundvand under havet med radium som sporstof eller med sivemålere, og intern \"\n          \"frigivelse fra sedimentet med bundkamre\") + \" | \"\n      + C(\"C-LE-9-DENOM\", \"begge kræver nye målinger. Uden en nævner er der ingen andel af \"\n          \"helheden\") + \" |\")\n    a(\"| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, \"\n      \"over hændelser af forskellig størrelse | \"\n      + C(\"C-LE-9-LEVEL5\", f\"målebaseret overløbsestimering er videnniveau {lv[5]['level']} i \"\n          f\"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed på den udledte \"\n          f\"stofmængde mod {lv[1]['uncertainty_pct']} % på niveau {lv[1]['level']}. Metoden er \"\n          \"defineret. Hvor mange bygværker der opgøres sådan, står ikke i noget, projektet har\")"
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -90023,8 +90023,8 @@
    "synthetic": false,
    "value": 5,
    "where": [
-    "scripts/pages/open_problems.py",
-    163
+    "scripts/landbrug.py",
+    454
    ]
   },
   "F-3a70c7df44": {
@@ -92636,8 +92636,8 @@
   "F-3c48f91d7c": {
    "code": {
     "file": "scripts/landbrug.py",
-    "first": 460,
-    "line": 466,
+    "first": 467,
+    "line": 473,
     "text": "    a(\"---\\n\")\n    a(\"## In English\\n\")\n    a(C(\"C-LE-EN\", \"This page argues, in Danish and to a Danish agricultural audience, that the \"\n        f\"chain from the published {PCT:.1f}% figure to the damage it is used to explain has \"\n        \"missing links. The figure is a residual share of one term of an open account \"\n        f\"({n_unq} of {n_all} enumerated nitrogen pathways carry no number). The oxygen part of \"\n        f\"the requirement is a binary trigger that sets a judged {CUT}% cut in total-nitrogen \"\n        \"concentration, converted to a load through each water body's own relation, where \"\n        \"chlorophyll and light attenuation have fitted slopes. And the recent extremes of oxygen \"\n        f\"depletion do not obviously track a land-based supply that DCE put {RED}% lower - though \""
    },
    "constructions": [
@@ -92669,7 +92669,7 @@
    "value": 25,
    "where": [
     "scripts/landbrug.py",
-    466
+    473
    ]
   },
   "F-3c4eacfb1c": {
@@ -109973,10 +109973,10 @@
   },
   "F-4a992b51dd": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 704,
-    "line": 710,
-    "text": "        f\"carries **±{dl['retention_uncertainty_pct_points'][0]}–\"\n        f\"{dl['retention_uncertainty_pct_points'][1]} percentage points**.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
+    "file": "scripts/landbrug.py",
+    "first": 326,
+    "line": 332,
+    "text": "               \"i PULS over modeller til målebaseret overløbsestimering. PULS registrerer antal \"\n               \"overløb og ingen vandføring. Stofmængden beregnes med typetal ud fra den \"\n               \"indberettede vandmængde — og kvalitetskontrolleres ved at tjekke, om \"\n               \"koncentrationen ligger inden for et interval omkring det samme typetal. \"\n               \"Usikkerheden på den udledte stofmængde er angivet til \"\n               f\"{lv[1]['uncertainty_pct']} % på videnniveau {lv[1]['level']}, en simpel \"\n               f\"massebalance; for niveau {lv[0]['level']}, en beregning i PULS, er der ingen \"\n               \"angivet.\"))\n    a(\"- \" + C(\"C-LE-C-TYPETAL\", \"**Typetallene for miljøfarlige stoffer** hviler på \"\n               f\"{hz['stations_combined_overflow']} målestationer for fællessystem og \""
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -110016,8 +110016,8 @@
    "synthetic": false,
    "value": 0,
    "where": [
-    "scripts/nitrogen.py",
-    710
+    "scripts/landbrug.py",
+    332
    ]
   },
   "F-4a9f0973af": {
@@ -110129,8 +110129,8 @@
   "F-4ab9232cf1": {
    "code": {
     "file": "scripts/landbrug.py",
-    "first": 148,
-    "line": 154,
+    "first": 155,
+    "line": 161,
     "text": "               f\"er ramt, sættes indsatsbehovet til en reduktion på **{CUT} %** af vandområdets \"\n               \"nuværende TN-koncentration, uanset hvor slemt iltsvindet er. Hvor meget \"\n               \"tilførslen så skal ned, regner DCE ud af vandområdets egen relation mellem \"\n               \"N-tilførsel og TN-koncentration.\") + \"\\n\")\n    a(\"> \" + C(\"C-LE-WHY25\", \"DCE skriver selv, hvorfor tallet er valgt: det skal være \"\n               \"tilstrækkeligt stort til at rykke systemet, *større end de normale år-til-år \"\n               f\"variationer*, og ”det vurderes at en {CUTQ} % reduktion i TN-koncentrationen er \"\n               \"minimumskrav for at ændre systemet”.\") + \" \"\n      + C(\"C-LE-JUDGED\", \"Det er en fagligt begrundet tommelfingerregel, ikke en målt dæmpning: \"\n          \"begrundelsen er år-til-år-variationen og en vurdering, ikke en sammenhæng mellem \""
    },
    "constructions": [
@@ -110162,7 +110162,7 @@
    "value": 25,
    "where": [
     "scripts/landbrug.py",
-    154
+    161
    ]
   },
   "F-4aba8b445f": {
@@ -113955,8 +113955,8 @@
   "F-4d9b539b78": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 171,
-    "line": 177,
+    "first": 179,
+    "line": 185,
     "text": "    w(\"<!-- landing:fact:light-depth -->\")\n    sd = light[\"start_depth\"]\n    w(f\"{sd['z11_shallow_start']:.2f} <span>or</span> {sd['z11_deep_start']:.2f} m\")\n    w(\"\")\n    w(C(\"C-LR-L-LIGHTDEPTH\", \"How deep useful light reaches, as a median over the casts that \"\n        \"began near the surface and over those that began deeper: the two differ by \"\n        f\"{meta['light_start_depth_diff_pct']:.0f}%.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:partition -->\")\n    v = obs[\"variance\"]"
    },
    "constructions": [
@@ -114063,7 +114063,7 @@
    "value": 29.6,
    "where": [
     "scripts/pages/landing.py",
-    177
+    185
    ]
   },
   "F-4d9f42a7c7": {
@@ -116379,8 +116379,8 @@
   "F-4f4a15420d": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 97,
-    "line": 103,
+    "first": 105,
+    "line": 111,
     "text": "    w(\"**But the question is not “what killed Danish coastal water”, because that is not \"\n      f\"one thing.** {B('C-LR-L-MENU')}These are not {n_reg} rivals for a single prize: \"\n      f\"where the evidence reaches, different places behave differently.{E} \"\n      f\"{B('C-LR-L-MARIAGER')}Mariager Fjord's catchment cut its diffuse nitrogen by less than \"\n      \"the national fall in field surplus would lead one to expect, as the national stream \"\n      f\"report itself notes.{E} {B('C-LR-L-FLUSH')}The current model this project uses gives \"\n      f\"Køge Bugt a flush time of {kb:.0f} days, against {min(others):.1f} to \"\n      f\"{max(others):.1f} days for the other waters it was run for.{E} \"\n      f\"{B('C-LR-L-BALTIC')}At the Gotland Deep, every oxygen value below {P['depth_m']:g} m \"\n      f\"is under {P['o2_mg_l']:g} mg/l in **{g['months_all_below_pct']:.0f}%** of months, \""
    },
    "constructions": [
@@ -116434,7 +116434,7 @@
    "value": 3.4,
    "where": [
     "scripts/pages/landing.py",
-    103
+    111
    ]
   },
   "F-4f57374fad": {
@@ -136863,8 +136863,8 @@
   "F-5ea2ff5966": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 206,
-    "line": 212,
+    "first": 214,
+    "line": 220,
     "text": "        \"panel shows whether a pipe that carries the flow is still fast enough to carry its \"\n        \"own grit.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:baltic -->\")\n    w(C(\"C-LR-L-BALTIC-TOOL\", \"Oxygen at the Gotland Deep in the central Baltic, on a \"\n        \"one-metre depth grid interpolated between discrete samples. In \"\n        f\"{g['months_all_below_pct']:.0f}% of the months of a {g['span_years']:.0f}-year \"\n        f\"record, every value below {P['depth_m']:g} m is under {P['o2_mg_l']:g} mg/l, against \"\n        f\"{dk_below:.1f}% of Danish near-bed observations. Two things are being called by one \"\n        \"word.\"))"
    },
    "constructions": [
@@ -136923,7 +136923,7 @@
    "value": 19.2,
    "where": [
     "scripts/pages/landing.py",
-    212
+    220
    ]
   },
   "F-5ec392b512": {
@@ -140420,8 +140420,8 @@
   "F-61713409de": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 233,
-    "line": 239,
+    "first": 241,
+    "line": 247,
     "text": "    w(\"<!-- landing:tool:flood2012 -->\")\n    w(C(\"C-LR-L-FLOOD2012\", f\"All {man['n_sheets']} 2012 cloudburst sheets as georeferenced \"\n        \"rasters — PNG, world file and .prj — so they open straight in QGIS, with the \"\n        \"coordinates put back.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:flood2012:note -->\")\n    w(f\"{lf['flood2012_mb']:.1f} MB · EPSG:4326\")\n    w(\"\")\n    w(\"<!-- landing:tool:georef -->\")\n    w(C(\"C-LR-L-GEOREF\", f\"The sheets are tied together to {fa['pair_rms_m']:g} m RMS where \""
    },
    "constructions": [
@@ -140476,7 +140476,7 @@
    "value": 1.1,
    "where": [
     "scripts/pages/landing.py",
-    239
+    247
    ]
   },
   "F-61750c20de": {
@@ -140708,10 +140708,10 @@
   },
   "F-61a9da50ff": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 32,
-    "line": 38,
-    "text": "\nOUT = os.path.join(ROOT, \"docs\", \"CAUSATION.md\")\nB, E, C, R = live.claim_begin, live.CLAIM_END, live.claim, live.ref\n\n\ndef fmt(x):\n    return f\"{x:,.0f}\" if abs(x) >= 10 else f\"{x:,.1f}\"\n\n\ndef main():"
+    "file": "scripts/landbrug.py",
+    "first": 210,
+    "line": 216,
+    "text": "    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \"\n        \"lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den \"\n        \"diffuse restpost; og kvælstof, der stadig er undervejs, er en tidsforskydning af de andre \"\n        \"rækker, ikke en ekstra kilde. De øvrige tomme rækker kan kun sænke loftet, når de bliver \"\n        \"fyldt ud.\") + \"\\n\")\n    a(C(\"C-LE-DEPOSITION\", \"Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen \"\n        f\"er {atm['lo']:.0f}–{atm['hi']:.0f} kt N/år** i projektets register — på størrelse med \"\n        \"hele den landbaserede post — og den er ikke en linje i den fordeling, andelen kommer \"\n        \"fra.\") + \"\\n\")\n"
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -140771,8 +140771,8 @@
    "synthetic": false,
    "value": 65,
    "where": [
-    "scripts/causation.py",
-    38
+    "scripts/landbrug.py",
+    216
    ]
   },
   "F-61b997799e": {
@@ -151373,8 +151373,8 @@
   "F-69c790d829": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 236,
-    "line": 242,
+    "first": 244,
+    "line": 250,
     "text": "        \"coordinates put back.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:flood2012:note -->\")\n    w(f\"{lf['flood2012_mb']:.1f} MB · EPSG:4326\")\n    w(\"\")\n    w(\"<!-- landing:tool:georef -->\")\n    w(C(\"C-LR-L-GEOREF\", f\"The sheets are tied together to {fa['pair_rms_m']:g} m RMS where \"\n        \"they overlap. Nørrebro would not correlate with any neighbour, so it rests on \"\n        f\"{nb['control_points']} reader-supplied control points alone.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -151420,7 +151420,7 @@
    "value": 22.6,
    "where": [
     "scripts/pages/landing.py",
-    242
+    250
    ]
   },
   "F-69cb82eaee": {
@@ -156589,8 +156589,8 @@
   "F-6e395085a5": {
    "code": {
     "file": "scripts/landbrug.py",
-    "first": 332,
-    "line": 338,
+    "first": 339,
+    "line": 345,
     "text": "               \"andel af de adsorberende stoffer bliver fanget i sedimentet i regnvandsbassiner, \"\n               \"som typetallene ikke dækker.\"))\n    a(\"- \" + C(\"C-LE-C-CSO\", \"**Et fællessystemsoverløb leverer omtrent lige så meget organisk \"\n               \"kulstof direkte, som dets kvælstof kunne nå at producere.** Ved typetallene i \"\n               \"projektets register og Redfield-forholdet svarer \"\n               f\"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til \"\n               f\"{tt['combined_overflow']['Tot-N'] * F['c_per_n']:.0f} mg C/l; vandet bærer selv \"\n               f\"{tt['combined_overflow']['COD'] * F['c_per_cod']:.0f} mg C/l. Kvælstofopgørelsen \"\n               \"tæller kun den ene halvdel, og i projektets register er overløbets kvælstof \"\n               f\"{dk(format(cso_lo, '.1f'))}–{dk(format(cso_hi, '.1f'))} % af den landbaserede \""
    },
    "constructions": [
@@ -156626,7 +156626,7 @@
    "value": 68.1712358106661,
    "where": [
     "scripts/landbrug.py",
-    338
+    345
    ]
   },
   "F-6e3f9b57a5": {
@@ -164072,8 +164072,8 @@
   "F-73b3ca6a77": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 98,
-    "line": 104,
+    "first": 106,
+    "line": 112,
     "text": "      f\"one thing.** {B('C-LR-L-MENU')}These are not {n_reg} rivals for a single prize: \"\n      f\"where the evidence reaches, different places behave differently.{E} \"\n      f\"{B('C-LR-L-MARIAGER')}Mariager Fjord's catchment cut its diffuse nitrogen by less than \"\n      \"the national fall in field surplus would lead one to expect, as the national stream \"\n      f\"report itself notes.{E} {B('C-LR-L-FLUSH')}The current model this project uses gives \"\n      f\"Køge Bugt a flush time of {kb:.0f} days, against {min(others):.1f} to \"\n      f\"{max(others):.1f} days for the other waters it was run for.{E} \"\n      f\"{B('C-LR-L-BALTIC')}At the Gotland Deep, every oxygen value below {P['depth_m']:g} m \"\n      f\"is under {P['o2_mg_l']:g} mg/l in **{g['months_all_below_pct']:.0f}%** of months, \"\n      f\"while Danish inner waters are below {lo:g} mg/l in **{dk_below:.1f}%** of near-bed \""
    },
    "constructions": [
@@ -164127,7 +164127,7 @@
    "value": 22.8,
    "where": [
     "scripts/pages/landing.py",
-    104
+    112
    ]
   },
   "F-73c3029c4f": {
@@ -165316,8 +165316,8 @@
   "F-74da188f3e": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 107,
-    "line": 113,
+    "first": 115,
+    "line": 121,
     "text": "      f\"while Danish inner waters are below {lo:g} mg/l in **{dk_below:.1f}%** of near-bed \"\n      f\"observations — two different conditions under one word.{E} \"\n      \"[there is no Denmark →](AREAS.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-NUTRIENTS')}**And none of the {testable} testable mechanisms is a nutrient \"\n      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \"\n      f\"{arch} are the monitoring archive auditing itself.{E} \"\n      f\"{B('C-LR-L-MONITORED')}**So nutrients did not win an argument against the \""
    },
    "constructions": [
@@ -165363,7 +165363,7 @@
    "value": 10,
    "where": [
     "scripts/pages/landing.py",
-    113
+    121
    ]
   },
   "F-74df7a34c3": {
@@ -180585,8 +180585,8 @@
   "F-810c4eaf44": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 207,
-    "line": 213,
+    "first": 215,
+    "line": 221,
     "text": "        \"own grit.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:baltic -->\")\n    w(C(\"C-LR-L-BALTIC-TOOL\", \"Oxygen at the Gotland Deep in the central Baltic, on a \"\n        \"one-metre depth grid interpolated between discrete samples. In \"\n        f\"{g['months_all_below_pct']:.0f}% of the months of a {g['span_years']:.0f}-year \"\n        f\"record, every value below {P['depth_m']:g} m is under {P['o2_mg_l']:g} mg/l, against \"\n        f\"{dk_below:.1f}% of Danish near-bed observations. Two things are being called by one \"\n        \"word.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -180625,7 +180625,7 @@
    "value": 100.0,
    "where": [
     "scripts/pages/landing.py",
-    213
+    221
    ]
   },
   "F-81102a3dc0": {
@@ -182978,8 +182978,8 @@
   "F-8310e3e2ec": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 134,
-    "line": 140,
+    "first": 142,
+    "line": 148,
     "text": "    w(\"\")\n    w(f\"- {B('C-LR-L-FIELD')}**No field is measured.** The *markoverskud* that drives the \"\n      \"model is a balance — nitrogen supplied to the fields minus nitrogen harvested — \"\n      \"computed from registers and statistics, not measured in any field. Change a rule and \"\n      f\"the number moves with no change in any field: in 1999 the nitrogen norm was cut by \"\n      f\"{nr['norm_cut_1999_pct']['value']}%, and the national report publishes 2013 twice, at \"\n      f\"{nr['t34_2013_surplus']['value']} and {nr['t34_2013_ds_surplus']['value']} kg N/ha, \"\n      f\"depending on which register supplied the mineral-fertiliser term.{E} \"\n      \"[the construction, term by term →](NITROGEN.md)\")\n    w(f\"- {B('C-LR-L-CIRCULAR')}**One published figure rests on less than it appears to.** \""
    },
    "constructions": [
@@ -183025,7 +183025,7 @@
    "value": 84,
    "where": [
     "scripts/pages/landing.py",
-    140
+    148
    ]
   },
   "F-83139ce5e2": {
@@ -194084,8 +194084,8 @@
   "F-8af536c068": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 198,
-    "line": 204,
+    "first": 206,
+    "line": 212,
     "text": "        \"models on.\"))\n    w(\"\")\n    s3 = lf[\"section3d\"]\n    w(\"<!-- landing:tool:section3d -->\")\n    w(C(\"C-LR-L-SECTION3D\", \"The street arrangement in three dimensions at its real sizes: the \"\n        \"bored rain line, the sewer left where it is, the two-storey shaft and the pan that \"\n        f\"serves both. {s3['stated']} of its {s3['total']} dimensions are stated conventions \"\n        \"rather than measurements, marked as such and all adjustable, and the hydraulic \"\n        \"panel shows whether a pipe that carries the flow is still fast enough to carry its \"\n        \"own grit.\"))"
    },
    "constructions": [
@@ -194124,7 +194124,7 @@
    "value": 13,
    "where": [
     "scripts/pages/landing.py",
-    204
+    212
    ]
   },
   "F-8afad8bacb": {
@@ -200390,8 +200390,8 @@
   "F-8f0c3bce24": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 175,
-    "line": 181,
+    "first": 183,
+    "line": 189,
     "text": "    w(C(\"C-LR-L-LIGHTDEPTH\", \"How deep useful light reaches, as a median over the casts that \"\n        \"began near the surface and over those that began deeper: the two differ by \"\n        f\"{meta['light_start_depth_diff_pct']:.0f}%.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:partition -->\")\n    v = obs[\"variance\"]\n    w(f\"{v['share_between_wb'] * 100:.1f}% <span>vs</span> \"\n      f\"{v['share_between_st'] * 100:.1f}%\")\n    w(\"\")\n    w(C(\"C-LR-L-PARTITION\", \"Of the variation in bathing-water samples, the first share lies \""
    },
    "constructions": [
@@ -200424,7 +200424,7 @@
    "value": 7.911569618272756,
    "where": [
     "scripts/pages/landing.py",
-    181
+    189
    ]
   },
   "F-8f1936f08e": {
@@ -211050,10 +211050,10 @@
   },
   "F-967b074b52": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 32,
-    "line": 38,
-    "text": "\nOUT = os.path.join(ROOT, \"docs\", \"CAUSATION.md\")\nB, E, C, R = live.claim_begin, live.CLAIM_END, live.claim, live.ref\n\n\ndef fmt(x):\n    return f\"{x:,.0f}\" if abs(x) >= 10 else f\"{x:,.1f}\"\n\n\ndef main():"
+    "file": "scripts/landbrug.py",
+    "first": 210,
+    "line": 216,
+    "text": "    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \"\n        \"lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den \"\n        \"diffuse restpost; og kvælstof, der stadig er undervejs, er en tidsforskydning af de andre \"\n        \"rækker, ikke en ekstra kilde. De øvrige tomme rækker kan kun sænke loftet, når de bliver \"\n        \"fyldt ud.\") + \"\\n\")\n    a(C(\"C-LE-DEPOSITION\", \"Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen \"\n        f\"er {atm['lo']:.0f}–{atm['hi']:.0f} kt N/år** i projektets register — på størrelse med \"\n        \"hele den landbaserede post — og den er ikke en linje i den fordeling, andelen kommer \"\n        \"fra.\") + \"\\n\")\n"
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -211113,8 +211113,8 @@
    "synthetic": false,
    "value": 45,
    "where": [
-    "scripts/causation.py",
-    38
+    "scripts/landbrug.py",
+    216
    ]
   },
   "F-968699b575": {
@@ -241806,10 +241806,10 @@
   },
   "F-ae67e45764": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 149,
-    "line": 155,
-    "text": "    a(C(\"C-PC-CA-GRANT\", f\"Granting the {PCT}% entirely, here is what it has to pass through to \"\n        \"become a statement about fedtemøg:\") + \"\\n\")\n    a(\"| Link | Coefficient | Status | Why |\")\n    a(\"|---|---|---|---|\")\n    a(f\"| Agriculture → the land-based waterborne nitrogen term | {PCT}% | **PUBLISHED** | \"\n      + C(\"C-PC-CA-L1\", \"A residual: measured-plus-modelled total minus modelled point sources minus \"\n          f\"modelled background, with a retention uncertainty of {ret} percentage points in this \"\n          \"project's register, which gives no source for it.\") + \" |\")\n    a(\"| That term → all reactive nitrogen reaching the sea | no coefficient | **OPEN SET** | \"\n      + C(\"C-PC-CA-L2\", f\"{n_empty} of {n_paths} enumerated pathways carry no number, among them \""
+    "file": "scripts/landbrug.py",
+    "first": 261,
+    "line": 267,
+    "text": "        \"her, ganger de to sammen, men argumentet indbyder læseren til det. Mellem andelen og \"\n        \"skaden ligger disse led:\") + \"\\n\")\n    a(\"| Led | Koefficient |\")\n    a(\"|---|---|\")\n    a(\"| Landbrug → den landbaserede, vandbårne kvælstofpost | \"\n      + C(\"C-LE-L1\", f\"**{pct} %, offentliggjort.** En restpost: målt og modelleret total minus \"\n          f\"punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på ± {ret} \"\n          \"procentpoint i projektets register, som ikke angiver en kilde til den\") + \" |\")\n    a(\"| Den post → alt reaktivt kvælstof, der når havet | \"\n      + C(\"C-LE-L2\", f\"**ingen: mængden er åben.** {n_unq} af {n_all} opregnede veje har intet \""
    },
    "constructions": [
     "K-FARM-MONITORING"
@@ -241889,8 +241889,8 @@
    "synthetic": false,
    "value": 16,
    "where": [
-    "scripts/causation.py",
-    155
+    "scripts/landbrug.py",
+    267
    ]
   },
   "F-ae74e014e2": {
@@ -247539,8 +247539,8 @@
   "F-b3238ec32b": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 206,
-    "line": 212,
+    "first": 214,
+    "line": 220,
     "text": "        \"panel shows whether a pipe that carries the flow is still fast enough to carry its \"\n        \"own grit.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:baltic -->\")\n    w(C(\"C-LR-L-BALTIC-TOOL\", \"Oxygen at the Gotland Deep in the central Baltic, on a \"\n        \"one-metre depth grid interpolated between discrete samples. In \"\n        f\"{g['months_all_below_pct']:.0f}% of the months of a {g['span_years']:.0f}-year \"\n        f\"record, every value below {P['depth_m']:g} m is under {P['o2_mg_l']:g} mg/l, against \"\n        f\"{dk_below:.1f}% of Danish near-bed observations. Two things are being called by one \"\n        \"word.\"))"
    },
    "constructions": [
@@ -247599,7 +247599,7 @@
    "value": 94.7,
    "where": [
     "scripts/pages/landing.py",
-    212
+    220
    ]
   },
   "F-b326075d55": {
@@ -249017,8 +249017,8 @@
   "F-b4ecc40fb3": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 134,
-    "line": 140,
+    "first": 142,
+    "line": 148,
     "text": "    w(\"\")\n    w(f\"- {B('C-LR-L-FIELD')}**No field is measured.** The *markoverskud* that drives the \"\n      \"model is a balance — nitrogen supplied to the fields minus nitrogen harvested — \"\n      \"computed from registers and statistics, not measured in any field. Change a rule and \"\n      f\"the number moves with no change in any field: in 1999 the nitrogen norm was cut by \"\n      f\"{nr['norm_cut_1999_pct']['value']}%, and the national report publishes 2013 twice, at \"\n      f\"{nr['t34_2013_surplus']['value']} and {nr['t34_2013_ds_surplus']['value']} kg N/ha, \"\n      f\"depending on which register supplied the mineral-fertiliser term.{E} \"\n      \"[the construction, term by term →](NITROGEN.md)\")\n    w(f\"- {B('C-LR-L-CIRCULAR')}**One published figure rests on less than it appears to.** \""
    },
    "constructions": [
@@ -249064,7 +249064,7 @@
    "value": 81,
    "where": [
     "scripts/pages/landing.py",
-    140
+    148
    ]
   },
   "F-b4fadf5201": {
@@ -251264,8 +251264,8 @@
   "F-b5f33a89f8": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 167,
-    "line": 173,
+    "first": 175,
+    "line": 181,
     "text": "        \"changing, over all casts, or only at the stations measured at both ends of the \"\n        f\"record. Keeping only those shrinks the trend to {ratio:.0f}% of the all-cast \"\n        f\"figure, and rests on {tr['n_stable_stations']} stations.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:light-depth -->\")\n    sd = light[\"start_depth\"]\n    w(f\"{sd['z11_shallow_start']:.2f} <span>or</span> {sd['z11_deep_start']:.2f} m\")\n    w(\"\")\n    w(C(\"C-LR-L-LIGHTDEPTH\", \"How deep useful light reaches, as a median over the casts that \"\n        \"began near the surface and over those that began deeper: the two differ by \""
    },
    "constructions": [
@@ -251324,7 +251324,7 @@
    "value": 6.31,
    "where": [
     "scripts/pages/landing.py",
-    173
+    181
    ]
   },
   "F-b5ffbe35ae": {
@@ -269319,10 +269319,10 @@
   },
   "F-c376e1041d": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 811,
-    "line": 817,
-    "text": "    n_st = mfs[\"stations_combined_overflow\"] + mfs[\"stations_separate_stormwater\"]\n    w(f\"### Toxicants: {n_st} stations\\n\")\n    points = (\" \" + C(\"C-NI-RBU-COUNT\", f\"The national register holds **{kt[3]:,}** rain-dependent \"\n                      \"discharge points.\")) if kt else \"\"\n    w(C(\"C-NI-TYPETAL-BASIS\", \"The national typetal for hazardous substances in rain-dependent \"\n        f\"discharges rest on **{mfs['stations_combined_overflow']} combined-sewer overflows and \"\n        f\"{mfs['stations_separate_stormwater']} separate stormwater outlets** — *\\\"\"\n        + quote(\"TYPETAL22\", \"fælleskloakerede spildevandsoverløb og fem separatkloakerede \"\n                \"regnvandsudledninger\") + \"\\\"* — monitored 2000–2020 in catchments representing *\\\"\"\n        + quote(\"TYPETAL22\", \"husholdninger og boligområder\") + \"\\\"*. They cover only discharges *\\\"\""
+    "file": "scripts/landbrug.py",
+    "first": 330,
+    "line": 336,
+    "text": "               \"Usikkerheden på den udledte stofmængde er angivet til \"\n               f\"{lv[1]['uncertainty_pct']} % på videnniveau {lv[1]['level']}, en simpel \"\n               f\"massebalance; for niveau {lv[0]['level']}, en beregning i PULS, er der ingen \"\n               \"angivet.\"))\n    a(\"- \" + C(\"C-LE-C-TYPETAL\", \"**Typetallene for miljøfarlige stoffer** hviler på \"\n               f\"{hz['stations_combined_overflow']} målestationer for fællessystem og \"\n               f\"{hz['stations_separate_stormwater']} for separat regnvand — i oplande *valgt* til at \"\n               \"repræsentere husholdninger og boligområder, og udtrykkeligt afgrænset over for \"\n               \"industriområder og stærkt trafikerede veje. Samme rapport finder, at en væsentlig \"\n               \"andel af de adsorberende stoffer bliver fanget i sedimentet i regnvandsbassiner, \""
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -269390,8 +269390,8 @@
    "synthetic": false,
    "value": 5,
    "where": [
-    "scripts/nitrogen.py",
-    817
+    "scripts/landbrug.py",
+    336
    ]
   },
   "F-c38a0fc9cc": {
@@ -271727,8 +271727,8 @@
   "F-c53557ff04": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 109,
-    "line": 115,
+    "first": 117,
+    "line": 123,
     "text": "      \"[there is no Denmark →](AREAS.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-NUTRIENTS')}**And none of the {testable} testable mechanisms is a nutrient \"\n      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \"\n      f\"{arch} are the monitoring archive auditing itself.{E} \"\n      f\"{B('C-LR-L-MONITORED')}**So nutrients did not win an argument against the \"\n      \"alternatives. Nutrients are the group that has a monitoring programme, and \"\n      f\"{unscore + experiment} rival mechanisms have never been in a position to \""
    },
    "constructions": [
@@ -271787,7 +271787,7 @@
    "value": 6,
    "where": [
     "scripts/pages/landing.py",
-    115
+    123
    ]
   },
   "F-c5372ac745": {
@@ -275944,8 +275944,8 @@
   "F-c889b9ac7d": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 133,
-    "line": 139,
+    "first": 141,
+    "line": 147,
     "text": "      \"than it appears to.**\" + E)\n    w(\"\")\n    w(f\"- {B('C-LR-L-FIELD')}**No field is measured.** The *markoverskud* that drives the \"\n      \"model is a balance — nitrogen supplied to the fields minus nitrogen harvested — \"\n      \"computed from registers and statistics, not measured in any field. Change a rule and \"\n      f\"the number moves with no change in any field: in 1999 the nitrogen norm was cut by \"\n      f\"{nr['norm_cut_1999_pct']['value']}%, and the national report publishes 2013 twice, at \"\n      f\"{nr['t34_2013_surplus']['value']} and {nr['t34_2013_ds_surplus']['value']} kg N/ha, \"\n      f\"depending on which register supplied the mineral-fertiliser term.{E} \"\n      \"[the construction, term by term →](NITROGEN.md)\")"
    },
    "constructions": [
@@ -275991,7 +275991,7 @@
    "value": 10,
    "where": [
     "scripts/pages/landing.py",
-    139
+    147
    ]
   },
   "F-c88b033d1b": {
@@ -277015,10 +277015,10 @@
   },
   "F-c973a7016e": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 704,
-    "line": 710,
-    "text": "        f\"carries **±{dl['retention_uncertainty_pct_points'][0]}–\"\n        f\"{dl['retention_uncertainty_pct_points'][1]} percentage points**.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
+    "file": "scripts/landbrug.py",
+    "first": 450,
+    "line": 456,
+    "text": "      + C(\"C-LE-9-DENOM\", \"begge kræver nye målinger. Uden en nævner er der ingen andel af \"\n          \"helheden\") + \" |\")\n    a(\"| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, \"\n      \"over hændelser af forskellig størrelse | \"\n      + C(\"C-LE-9-LEVEL5\", f\"målebaseret overløbsestimering er videnniveau {lv[5]['level']} i \"\n          f\"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed på den udledte \"\n          f\"stofmængde mod {lv[1]['uncertainty_pct']} % på niveau {lv[1]['level']}. Metoden er \"\n          \"defineret. Hvor mange bygværker der opgøres sådan, står ikke i noget, projektet har\")\n      + \" |\")\n    a(\"| **Finansiér marin ekstraktion som virkemiddel**, med krav om analyse af høsten | \""
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -277058,8 +277058,8 @@
    "synthetic": false,
    "value": 1,
    "where": [
-    "scripts/nitrogen.py",
-    710
+    "scripts/landbrug.py",
+    456
    ]
   },
   "F-c976d6fd0e": {
@@ -280382,8 +280382,8 @@
   "F-cc1d7f1b8e": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 146,
-    "line": 152,
+    "first": 154,
+    "line": 160,
     "text": "      \"then notes that not all fjord catchments respond equally quickly, Mariager Fjord \"\n      \"among them. Whether the modelled part of that load is itself computed from the \"\n      f\"surplus is the question [what the sea actually receives](NITROGEN.md) takes up.{E}\")\n    w(f\"- {B('C-LR-L-BOUNDARIES')}**The boundaries carry no measured signal.** Across all \"\n      f\"{n_sub} feature subsets of the station record, the official water bodies agree with \"\n      \"the partitions the data produce no better than random connected regions of the same \"\n      f\"sizes agree with each other — lift {min(lifts):+.3f} to {max(lifts):+.3f} against \"\n      f\"that contiguity-matched null.{E} [how that was tested →](AREAS.md)\")\n    w(\"\")\n    w(\"Each link above has its working, its null and its limits in [what the sea actually \""
    },
    "constructions": [
@@ -280407,7 +280407,7 @@
    "value": -0.026,
    "where": [
     "scripts/pages/landing.py",
-    152
+    160
    ]
   },
   "F-cc1d931683": {
@@ -284257,9 +284257,9 @@
   "F-cf625d6012": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 92,
-    "line": 98,
-    "text": "      \"warming, disease, film on the surface, and the rest — then asked which could be \"\n      f\"tested against data that exists. **{testable} can. {unscore} cannot be tested with any \"\n      \"source this project surveyed, because the deciding measurement is in none of them. \"\n      f\"{experiment} more need an experiment that no surveyed source reports.**\" + E)\n    w(\"\")\n    w(\"**But the question is not “what killed Danish coastal water”, because that is not \"\n      f\"one thing.** {B('C-LR-L-MENU')}These are not {n_reg} rivals for a single prize: \"\n      f\"where the evidence reaches, different places behave differently.{E} \"\n      f\"{B('C-LR-L-MARIAGER')}Mariager Fjord's catchment cut its diffuse nitrogen by less than \"\n      \"the national fall in field surplus would lead one to expect, as the national stream \""
+    "first": 100,
+    "line": 106,
+    "text": "      \"[Why that matters](RESIDUAL.md) · [på dansk, til landbruget](LANDBRUG.md)\"))\n    w(\"\")\n    w(C(\"C-LR-L-FIX\", \"*Found a mistake? [Report it](https://github.com/Jjokulian/copenhagen-waterways/issues). What this site has \"\n      \"retracted, and why, is in its [archive](ARCHIVE.md).*\"))\n    w(\"\")\n    w(\"**But the question is not “what killed Danish coastal water”, because that is not \"\n      f\"one thing.** {B('C-LR-L-MENU')}These are not {n_reg} rivals for a single prize: \"\n      f\"where the evidence reaches, different places behave differently.{E} \"\n      f\"{B('C-LR-L-MARIAGER')}Mariager Fjord's catchment cut its diffuse nitrogen by less than \"\n      \"the national fall in field surplus would lead one to expect, as the national stream \""
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -284341,7 +284341,7 @@
    "value": 166,
    "where": [
     "scripts/pages/landing.py",
-    98
+    106
    ]
   },
   "F-cf62f799d5": {
@@ -285003,8 +285003,8 @@
   "F-d0101bc26f": {
    "code": {
     "file": "scripts/landbrug.py",
-    "first": 333,
-    "line": 339,
+    "first": 340,
+    "line": 346,
     "text": "               \"som typetallene ikke dækker.\"))\n    a(\"- \" + C(\"C-LE-C-CSO\", \"**Et fællessystemsoverløb leverer omtrent lige så meget organisk \"\n               \"kulstof direkte, som dets kvælstof kunne nå at producere.** Ved typetallene i \"\n               \"projektets register og Redfield-forholdet svarer \"\n               f\"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til \"\n               f\"{tt['combined_overflow']['Tot-N'] * F['c_per_n']:.0f} mg C/l; vandet bærer selv \"\n               f\"{tt['combined_overflow']['COD'] * F['c_per_cod']:.0f} mg C/l. Kvælstofopgørelsen \"\n               \"tæller kun den ene halvdel, og i projektets register er overløbets kvælstof \"\n               f\"{dk(format(cso_lo, '.1f'))}–{dk(format(cso_hi, '.1f'))} % af den landbaserede \"\n               \"post.\"))"
    },
    "constructions": [
@@ -285040,7 +285040,7 @@
    "value": 67.5,
    "where": [
     "scripts/landbrug.py",
-    339
+    346
    ]
   },
   "F-d017f7e6ba": {
@@ -291123,8 +291123,8 @@
   "F-d44427aa79": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 97,
-    "line": 103,
+    "first": 105,
+    "line": 111,
     "text": "    w(\"**But the question is not “what killed Danish coastal water”, because that is not \"\n      f\"one thing.** {B('C-LR-L-MENU')}These are not {n_reg} rivals for a single prize: \"\n      f\"where the evidence reaches, different places behave differently.{E} \"\n      f\"{B('C-LR-L-MARIAGER')}Mariager Fjord's catchment cut its diffuse nitrogen by less than \"\n      \"the national fall in field surplus would lead one to expect, as the national stream \"\n      f\"report itself notes.{E} {B('C-LR-L-FLUSH')}The current model this project uses gives \"\n      f\"Køge Bugt a flush time of {kb:.0f} days, against {min(others):.1f} to \"\n      f\"{max(others):.1f} days for the other waters it was run for.{E} \"\n      f\"{B('C-LR-L-BALTIC')}At the Gotland Deep, every oxygen value below {P['depth_m']:g} m \"\n      f\"is under {P['o2_mg_l']:g} mg/l in **{g['months_all_below_pct']:.0f}%** of months, \""
    },
    "constructions": [
@@ -291178,7 +291178,7 @@
    "value": 73.2,
    "where": [
     "scripts/pages/landing.py",
-    103
+    111
    ]
   },
   "F-d44ffeb8f9": {
@@ -296820,10 +296820,10 @@
   },
   "F-d90ee38f36": {
    "code": {
-    "file": "scripts/pages/sensing.py",
-    "first": 73,
-    "line": 79,
-    "text": "      C(\"C-SS-S-PURPOSE\", \"This page asks the harder version of the same question: **what \"\n        \"would it take to measure it everywhere**, so that no result anywhere has to be \"\n        \"extrapolated to a place nobody visited.\"))\n    w(\"\")\n    w(\"That is the whole point. \" +\n      C(\"C-SS-S-AREA\", f\"Denmark's diffuse load figure rests on catchment area that is \"\n        f\"{meas}% measured and {mod}% modelled ([NITROGEN.md](NITROGEN.md))\") + \", and \" +\n      C(\"C-SS-S-OBJECTION\", \"the objection this project keeps making is not that the model \"\n        \"is bad but that **a partition is not a measurement**. A network dense enough to have \"\n        \"a node on every stream that reaches the sea would end that argument by removing its \""
+    "file": "scripts/landbrug.py",
+    "first": 224,
+    "line": 230,
+    "text": "        \"udledninger, og overløb og regnvand, som modelleres — minus et naturligt \"\n        \"baggrundsbidrag, der bestemmes i små oplande med lille menneskelig påvirkning og overføres \"\n        \"til resten. Det, der bliver tilbage, kaldes landbrug, og det rummer også den spredte \"\n        \"bebyggelse, som ikke kan skilles ud.\") + \"\\n\")\n    a(\"| | |\")\n    a(\"|---|---|\")\n    a(\"| Måledækning | \" + C(\"C-LE-R-COVER\", f\"{dl['area_measured_pct']} % af arealet måles, \"\n                                f\"{dl['area_modelled_pct']} % modelleres\") + \" |\")\n    a(\"| Målemetode | \" + C(\"C-LE-R-METHOD\", \"stikprøver med faste mellemrum; transporten \"\n                               \"beregnes som summen af daglig vandføring gange lineært \""
    },
    "constructions": [
     "K-FARM-MONITORING"
@@ -296903,8 +296903,8 @@
    "synthetic": false,
    "value": 49,
    "where": [
-    "scripts/pages/sensing.py",
-    79
+    "scripts/landbrug.py",
+    230
    ]
   },
   "F-d9150221ae": {
@@ -300238,10 +300238,10 @@
   },
   "F-db2b4d8e7a": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 218,
-    "line": 224,
-    "text": "    r = tt[\"combined_overflow\"]\n    cb = r[\"COD\"] * C_PER_COD\n    ca = r[\"Tot-N\"] * C_PER_N\n    a(C(\"C-PC-CA-CSO\", f\"A combined sewer overflow carries **{cb:.0f} mg of organic carbon per litre \"\n        f\"directly**, and enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of **{cb/ca:.2f}**. \"\n        \"The two routes are the same size. The nitrogen apportionment counts only the second, and in \"\n        f\"this project's register the overflow's nitrogen is {cso_lo:.1f}–{cso_hi:.1f}% of the \"\n        \"land-based term.\") + \"\\n\")\n    a(C(\"C-PC-CA-OTHERS\", \"For separate stormwater and for the stormwater-runoff reference the direct \"\n        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \""
+    "file": "scripts/landbrug.py",
+    "first": 342,
+    "line": 348,
+    "text": "               \"kulstof direkte, som dets kvælstof kunne nå at producere.** Ved typetallene i \"\n               \"projektets register og Redfield-forholdet svarer \"\n               f\"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til \"\n               f\"{tt['combined_overflow']['Tot-N'] * F['c_per_n']:.0f} mg C/l; vandet bærer selv \"\n               f\"{tt['combined_overflow']['COD'] * F['c_per_cod']:.0f} mg C/l. Kvælstofopgørelsen \"\n               \"tæller kun den ene halvdel, og i projektets register er overløbets kvælstof \"\n               f\"{dk(format(cso_lo, '.1f'))}–{dk(format(cso_hi, '.1f'))} % af den landbaserede \"\n               \"post.\"))\n    a(\"- \" + C(\"C-LE-C-FAT\", \"**Fedt indeholder intet kvælstof overhovedet.** Triglycerider \"\n               \"består af kulstof, brint og ilt. En kvælstofopgørelse kan ikke undervurdere det \""
    },
    "constructions": [
     "K-NITROGEN-PATHWAYS",
@@ -300304,8 +300304,8 @@
    "synthetic": false,
    "value": 0.6779661016949153,
    "where": [
-    "scripts/causation.py",
-    224
+    "scripts/landbrug.py",
+    348
    ]
   },
   "F-db2e05e3d9": {
@@ -301215,8 +301215,8 @@
   "F-dbc579d4ab": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 152,
-    "line": 158,
+    "first": 160,
+    "line": 166,
     "text": "      f\"sizes agree with each other — lift {min(lifts):+.3f} to {max(lifts):+.3f} against \"\n      f\"that contiguity-matched null.{E} [how that was tested →](AREAS.md)\")\n    w(\"\")\n    w(\"Each link above has its working, its null and its limits in [what the sea actually \"\n      \"receives](NITROGEN.md). And for the question that follows — *so where, and what \"\n      \"would actually help?* — [Places, not categories](PLACES.md) takes the coasts one at a \"\n      \"time. \" + C(\"C-LR-L-PLACES\", f\"In near-bed oxygen, one region is below {lo:g} mg/l \"\n                                     f\"{times:.1f} times as often as the next.\"))\n    w(\"\")\n"
    },
    "constructions": [
@@ -301275,7 +301275,7 @@
    "value": 2.0,
    "where": [
     "scripts/pages/landing.py",
-    158
+    166
    ]
   },
   "F-dbca3955b7": {
@@ -314455,8 +314455,8 @@
   "F-e6b4aea5c8": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 207,
-    "line": 213,
+    "first": 215,
+    "line": 221,
     "text": "        \"own grit.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:baltic -->\")\n    w(C(\"C-LR-L-BALTIC-TOOL\", \"Oxygen at the Gotland Deep in the central Baltic, on a \"\n        \"one-metre depth grid interpolated between discrete samples. In \"\n        f\"{g['months_all_below_pct']:.0f}% of the months of a {g['span_years']:.0f}-year \"\n        f\"record, every value below {P['depth_m']:g} m is under {P['o2_mg_l']:g} mg/l, against \"\n        f\"{dk_below:.1f}% of Danish near-bed observations. Two things are being called by one \"\n        \"word.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -314495,7 +314495,7 @@
    "value": 2.0,
    "where": [
     "scripts/pages/landing.py",
-    213
+    221
    ]
   },
   "F-e6b4eb923f": {
@@ -315458,10 +315458,10 @@
   },
   "F-e786dfc514": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 614,
-    "line": 620,
-    "text": "    a(CL(\"C-PG-FIVE\", \"The four words name losses. The public framing names one mechanism — \"\n         \"nitrogen, to oxygen, to damage — and then measures the mechanism. Four findings \"\n         \"say why that does not reach the losses, each stated with what it does **not** \"\n         \"establish.\\n\"))\n    a(CL(\"C-PG-F1\", \"**First: the nutrient account never beat the alternatives; it is the one \"\n         f\"with a monitoring programme.** The [triage](hypodrafts/TRIAGE.md) classifies \"\n         f\"{scope} against the data that exists. {tri['testable now']} are testable now — \"\n         f\"{nutrient} {tri['unscoreable']} mechanisms cannot be tested at all because the \"\n         f\"deciding measurement has no column anywhere, and {tri['needs an experiment']} \"\n         f\"more need an experiment nobody has run. **{never} of them have never been in a \""
+    "file": "scripts/pages/landing.py",
+    "first": 113,
+    "line": 119,
+    "text": "      f\"{B('C-LR-L-BALTIC')}At the Gotland Deep, every oxygen value below {P['depth_m']:g} m \"\n      f\"is under {P['o2_mg_l']:g} mg/l in **{g['months_all_below_pct']:.0f}%** of months, \"\n      f\"while Danish inner waters are below {lo:g} mg/l in **{dk_below:.1f}%** of near-bed \"\n      f\"observations — two different conditions under one word.{E} \"\n      \"[there is no Denmark →](AREAS.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-NUTRIENTS')}**And none of the {testable} testable mechanisms is a nutrient \"\n      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \""
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -315494,8 +315494,8 @@
    "synthetic": false,
    "value": 23,
    "where": [
-    "scripts/programme.py",
-    620
+    "scripts/pages/landing.py",
+    119
    ]
   },
   "F-e787032151": {
@@ -317878,10 +317878,10 @@
   },
   "F-e986da2740": {
    "code": {
-    "file": "scripts/pages/sensing.py",
-    "first": 73,
-    "line": 79,
-    "text": "      C(\"C-SS-S-PURPOSE\", \"This page asks the harder version of the same question: **what \"\n        \"would it take to measure it everywhere**, so that no result anywhere has to be \"\n        \"extrapolated to a place nobody visited.\"))\n    w(\"\")\n    w(\"That is the whole point. \" +\n      C(\"C-SS-S-AREA\", f\"Denmark's diffuse load figure rests on catchment area that is \"\n        f\"{meas}% measured and {mod}% modelled ([NITROGEN.md](NITROGEN.md))\") + \", and \" +\n      C(\"C-SS-S-OBJECTION\", \"the objection this project keeps making is not that the model \"\n        \"is bad but that **a partition is not a measurement**. A network dense enough to have \"\n        \"a node on every stream that reaches the sea would end that argument by removing its \""
+    "file": "scripts/landbrug.py",
+    "first": 225,
+    "line": 231,
+    "text": "        \"baggrundsbidrag, der bestemmes i små oplande med lille menneskelig påvirkning og overføres \"\n        \"til resten. Det, der bliver tilbage, kaldes landbrug, og det rummer også den spredte \"\n        \"bebyggelse, som ikke kan skilles ud.\") + \"\\n\")\n    a(\"| | |\")\n    a(\"|---|---|\")\n    a(\"| Måledækning | \" + C(\"C-LE-R-COVER\", f\"{dl['area_measured_pct']} % af arealet måles, \"\n                                f\"{dl['area_modelled_pct']} % modelleres\") + \" |\")\n    a(\"| Målemetode | \" + C(\"C-LE-R-METHOD\", \"stikprøver med faste mellemrum; transporten \"\n                               \"beregnes som summen af daglig vandføring gange lineært \"\n                               \"interpoleret koncentration\") + \" |\")"
    },
    "constructions": [
     "K-FARM-MONITORING"
@@ -317961,8 +317961,8 @@
    "synthetic": false,
    "value": 51,
    "where": [
-    "scripts/pages/sensing.py",
-    79
+    "scripts/landbrug.py",
+    231
    ]
   },
   "F-e98d356567": {
@@ -322443,8 +322443,8 @@
   "F-ed6addefe7": {
    "code": {
     "file": "scripts/landbrug.py",
-    "first": 459,
-    "line": 465,
+    "first": 466,
+    "line": 472,
     "text": "\n    a(\"---\\n\")\n    a(\"## In English\\n\")\n    a(C(\"C-LE-EN\", \"This page argues, in Danish and to a Danish agricultural audience, that the \"\n        f\"chain from the published {PCT:.1f}% figure to the damage it is used to explain has \"\n        \"missing links. The figure is a residual share of one term of an open account \"\n        f\"({n_unq} of {n_all} enumerated nitrogen pathways carry no number). The oxygen part of \"\n        f\"the requirement is a binary trigger that sets a judged {CUT}% cut in total-nitrogen \"\n        \"concentration, converted to a load through each water body's own relation, where \"\n        \"chlorophyll and light attenuation have fitted slopes. And the recent extremes of oxygen \""
    },
    "constructions": [
@@ -322499,7 +322499,7 @@
    "value": 20,
    "where": [
     "scripts/landbrug.py",
-    465
+    472
    ]
   },
   "F-ed6df64ef2": {
@@ -326953,8 +326953,8 @@
   "F-f0df4f87a2": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 176,
-    "line": 182,
+    "first": 184,
+    "line": 190,
     "text": "        \"began near the surface and over those that began deeper: the two differ by \"\n        f\"{meta['light_start_depth_diff_pct']:.0f}%.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:partition -->\")\n    v = obs[\"variance\"]\n    w(f\"{v['share_between_wb'] * 100:.1f}% <span>vs</span> \"\n      f\"{v['share_between_st'] * 100:.1f}%\")\n    w(\"\")\n    w(C(\"C-LR-L-PARTITION\", \"Of the variation in bathing-water samples, the first share lies \"\n        \"between water bodies and the second between beaches inside one water body. A water \""
    },
    "constructions": [
@@ -326987,7 +326987,7 @@
    "value": 13.26798662712406,
    "where": [
     "scripts/pages/landing.py",
-    182
+    190
    ]
   },
   "F-f0e694707d": {
@@ -343118,8 +343118,8 @@
   "F-fe6a50860b": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 146,
-    "line": 152,
+    "first": 154,
+    "line": 160,
     "text": "      \"then notes that not all fjord catchments respond equally quickly, Mariager Fjord \"\n      \"among them. Whether the modelled part of that load is itself computed from the \"\n      f\"surplus is the question [what the sea actually receives](NITROGEN.md) takes up.{E}\")\n    w(f\"- {B('C-LR-L-BOUNDARIES')}**The boundaries carry no measured signal.** Across all \"\n      f\"{n_sub} feature subsets of the station record, the official water bodies agree with \"\n      \"the partitions the data produce no better than random connected regions of the same \"\n      f\"sizes agree with each other — lift {min(lifts):+.3f} to {max(lifts):+.3f} against \"\n      f\"that contiguity-matched null.{E} [how that was tested →](AREAS.md)\")\n    w(\"\")\n    w(\"Each link above has its working, its null and its limits in [what the sea actually \""
    },
    "constructions": [
@@ -343143,7 +343143,7 @@
    "value": -0.014,
    "where": [
     "scripts/pages/landing.py",
-    152
+    160
    ]
   },
   "F-fe6cd4c3cd": {
@@ -343713,8 +343713,8 @@
   "F-fee62b85f5": {
    "code": {
     "file": "scripts/pages/landing.py",
-    "first": 238,
-    "line": 244,
+    "first": 246,
+    "line": 252,
     "text": "    w(\"<!-- landing:tool:flood2012:note -->\")\n    w(f\"{lf['flood2012_mb']:.1f} MB · EPSG:4326\")\n    w(\"\")\n    w(\"<!-- landing:tool:georef -->\")\n    w(C(\"C-LR-L-GEOREF\", f\"The sheets are tied together to {fa['pair_rms_m']:g} m RMS where \"\n        \"they overlap. Nørrebro would not correlate with any neighbour, so it rests on \"\n        f\"{nb['control_points']} reader-supplied control points alone.\"))\n    w(\"\")\n    try:\n        write_doc(OUT, \"\\n\".join(o).rstrip(\"\\n\") + \"\\n\")"
    },
    "constructions": [
@@ -343808,7 +343808,7 @@
    "value": 2,
    "where": [
     "scripts/pages/landing.py",
-    244
+    252
    ]
   },
   "F-feeaadb4d5": {
