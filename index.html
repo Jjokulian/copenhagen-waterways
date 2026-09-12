@@ -308,7 +308,26 @@ h2.sec{font-size:17px;font-weight:640;letter-spacing:-.01em;margin:26px 0 8px}
    author display rule otherwise beats the browser's, as line 50 already warns. */
 .mermaid-fig{margin:14px 0;overflow-x:auto;text-align:center}
 .mermaid-fig svg{max-width:100%;height:auto}
+.mermaid-fig.zoomable{cursor:zoom-in}
+.mermaid-fig.zoomable:focus-visible{outline:2px solid #58a6ff;outline-offset:2px}
+.mmd-zoom{position:fixed;inset:0;z-index:10000;background:#0d1117;display:flex;flex-direction:column}
+.mmd-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;border-bottom:1px solid #30363d}
+.mmd-bar button{font:inherit;font-size:14px;min-width:36px;padding:4px 10px;background:#21262d;color:#e6edf3;border:1px solid #30363d;border-radius:6px;cursor:pointer}
+.mmd-bar button:hover,.mmd-bar button:focus-visible{border-color:#58a6ff;outline:none}
+.mmd-bar [data-z=close]{margin-left:auto;font-size:18px;line-height:1}
+.mmd-hint{color:#8b949e;font-size:12px;margin-left:6px}
+.mmd-stage{flex:1;overflow:hidden;position:relative;cursor:grab;touch-action:none}
+.mmd-stage.dragging{cursor:grabbing}
+.mmd-canvas{position:absolute;left:0;top:0;transform-origin:0 0}
+.mmd-canvas svg{max-width:none!important;min-width:0!important;display:block}
+body.mmd-open{overflow:hidden}
+@media (max-width:600px){.mmd-hint{display:none}}
 .mermaid-failed{font-size:11px;color:#8b949e;border-left:2px solid #e8a33d;padding-left:8px}
+.lin-said{margin:4px 0 8px;padding:6px 10px;border-left:3px solid #a58cf0;background:rgba(165,140,240,.07)}
+.lin-said p{margin:2px 0;overflow-wrap:anywhere}
+.lin-said-h{margin:10px 0 2px}
+.lin-settle{border-left:3px solid #3fb950;padding-left:8px}
+.lin-tw{overflow-x:auto}
 /* A linked number, and the menu of views it opens. Every colour is a site token,
    so the menu and panel follow the reader's light or dark theme. */
 a.figure{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent);cursor:pointer}
@@ -1616,6 +1635,107 @@ function mmdFinish(host, full) {
     g.prepend(tip);
     g.querySelectorAll("foreignObject div, foreignObject span").forEach(d => { d.title = t; });
   }
+  host.classList.add("zoomable");
+  host.tabIndex = 0;
+  host.setAttribute("role", "button");
+  host.setAttribute("aria-label", "Diagram: open it enlarged");
+  host.title = "Click to enlarge";
+  host.addEventListener("click", () => mmdZoom(host));
+  host.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); mmdZoom(host); }
+  });
+}
+/* Click a diagram to open it full-screen: wheel or pinch to zoom, drag to move,
+   Fit and 1:1 on the bar, Esc or × to close. The diagram itself moves into the
+   view and back (a clone would duplicate the id its own styles are scoped to). */
+function mmdZoom(host) {
+  const svg = host.querySelector("svg");
+  if (!svg || document.querySelector(".mmd-zoom")) return;
+  const vb = svg.viewBox.baseVal, box = svg.getBBox();
+  const W = (vb && vb.width) || box.width, H = (vb && vb.height) || box.height;
+  const keep = ["style", "width", "height"].map(a => [a, svg.getAttribute(a)]);
+  const ov = document.createElement("div");
+  ov.className = "mmd-zoom";
+  ov.setAttribute("role", "dialog");
+  ov.setAttribute("aria-modal", "true");
+  ov.setAttribute("aria-label", "Diagram, enlarged");
+  ov.innerHTML = `<div class="mmd-bar"><button type="button" data-z="out" aria-label="Zoom out">−</button>`
+    + `<button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="fit">Fit</button>`
+    + `<button type="button" data-z="one">1:1</button><span class="mmd-hint">drag to move · wheel or pinch to zoom · `
+    + `hover a box for its full text · Esc to close</span><button type="button" data-z="close" aria-label="Close">×</button></div>`
+    + `<div class="mmd-stage"><div class="mmd-canvas"></div></div>`;
+  const stage = ov.querySelector(".mmd-stage"), canvas = ov.querySelector(".mmd-canvas");
+  const spot = document.createComment("diagram");
+  svg.replaceWith(spot);
+  svg.removeAttribute("style");
+  svg.setAttribute("width", W);
+  svg.setAttribute("height", H);
+  canvas.appendChild(svg);
+  document.body.appendChild(ov);
+  document.body.classList.add("mmd-open");
+  let s = 1, x = 0, y = 0;
+  const apply = () => { canvas.style.transform = `translate(${x}px,${y}px) scale(${s})`; };
+  const centre = () => { const r = stage.getBoundingClientRect(); return [r.width / 2, r.height / 2]; };
+  const zoomAt = (f, cx, cy) => {
+    const n = Math.min(8, Math.max(0.05, s * f));
+    x = cx - (cx - x) * n / s; y = cy - (cy - y) * n / s; s = n; apply();
+  };
+  const fit = () => {
+    const r = stage.getBoundingClientRect();
+    s = Math.min(r.width / W, r.height / H, 3) * 0.95;
+    x = (r.width - W * s) / 2; y = (r.height - H * s) / 2; apply();
+  };
+  const close = () => {
+    document.removeEventListener("keydown", key, true);
+    for (const [a, v] of keep) v === null ? svg.removeAttribute(a) : svg.setAttribute(a, v);
+    spot.replaceWith(svg);
+    ov.remove();
+    document.body.classList.remove("mmd-open");
+    host.focus();
+  };
+  const key = e => {
+    if (e.key === "Escape") { e.stopPropagation(); close(); }
+    else if (e.key === "+" || e.key === "=") zoomAt(1.25, ...centre());
+    else if (e.key === "-") zoomAt(0.8, ...centre());
+    else if (e.key === "0") fit();
+  };
+  document.addEventListener("keydown", key, true);
+  ov.querySelector(".mmd-bar").addEventListener("click", e => {
+    const z = e.target.dataset && e.target.dataset.z;
+    if (z === "close") close();
+    else if (z === "fit") fit();
+    else if (z === "one") zoomAt(1 / s, ...centre());
+    else if (z) zoomAt(z === "in" ? 1.25 : 0.8, ...centre());
+  });
+  stage.addEventListener("wheel", e => {
+    e.preventDefault();
+    const r = stage.getBoundingClientRect();
+    zoomAt(Math.exp(-e.deltaY * 0.0015), e.clientX - r.left, e.clientY - r.top);
+  }, { passive: false });
+  const pts = new Map();
+  let pinch = 0;
+  stage.addEventListener("pointerdown", e => {
+    stage.setPointerCapture(e.pointerId);
+    pts.set(e.pointerId, [e.clientX, e.clientY]);
+    stage.classList.add("dragging");
+    if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = Math.hypot(a[0] - b[0], a[1] - b[1]); }
+  });
+  stage.addEventListener("pointermove", e => {
+    if (!pts.has(e.pointerId)) return;
+    const [px, py] = pts.get(e.pointerId);
+    pts.set(e.pointerId, [e.clientX, e.clientY]);
+    if (pts.size === 1) { x += e.clientX - px; y += e.clientY - py; apply(); }
+    else if (pts.size === 2) {
+      const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]), r = stage.getBoundingClientRect();
+      if (pinch) zoomAt(d / pinch, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top);
+      pinch = d;
+    }
+  });
+  const up = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch = 0; if (!pts.size) stage.classList.remove("dragging"); };
+  stage.addEventListener("pointerup", up);
+  stage.addEventListener("pointercancel", up);
+  fit();
+  ov.querySelector('[data-z="close"]').focus();
 }
 let mermaidReady = false;
 async function drawMermaid(root) {
@@ -1881,11 +2001,32 @@ function nvLinScatter(sp) {
     + `<text transform="translate(12 ${(m.t + H - m.b) / 2}) rotate(-90)" text-anchor="middle" class="axis">${nvEsc(sp.y_label.split(":")[0])}</text>`;
   return `<svg class="lin-sc" viewBox="0 0 ${W} ${H}" role="img" aria-label="${n} water bodies, ${nvEsc(sp.x_label)} against ${nvEsc(sp.y_label)}">${g}</svg>`;
 }
+/* A step somebody else did and published no code for shows their method, reason
+   and stated limits in their own words (Danish, checked against the pinned
+   document), each with an English translation. */
+const NV_SAID_ROLE = { method: "How they did it, in their words", reason: "Their reason",
+  limit: "What they say about its limits" };
+function nvLinSaid(said) {
+  if (!said || !said.length) return "";
+  let h = "";
+  for (const role of ["method", "reason", "limit"]) {
+    const qs = said.filter(q => (q.role || "method") === role);
+    if (!qs.length) continue;
+    h += `<p class="small lin-said-h"><b>${NV_SAID_ROLE[role]}</b></p>` + qs.map(q =>
+      `<blockquote class="lin-said"><p lang="da">“${nvEsc(q.da)}”</p>`
+      + `<p class="small">${nvEsc(q.en)} <span class="muted">(our translation)</span></p>`
+      + `<p class="small muted">— <a class="ref" href="${nvEsc(q.url)}">${nvEsc(q.title)}</a>`
+      + `${q.where ? `, ${nvEsc(q.where)}` : ""}</p></blockquote>`).join("");
+  }
+  return h;
+}
+const nvLinNum = (N, v) => N.unit === "%" ? (v === null || v === undefined ? "…" : `${nvFmt(v)}%`) : nvSigned(v);
 function nvLineageHTML(e) {
   const L = nvLin[e.lineage];
   if (!L) return `<p class="simflag">The record of how this number was made could not be loaded (<code>docs/${nvEsc(e.lineage)}</code>).</p>`;
   const N = L.number, sp = L.spread || {};
-  let h = `<p>${nvCode(N.says)}</p><p class="muted small">Recorded by <code>${nvEsc(N.producer)}</code> as it ran, in `
+  let h = `<p>${nvCode(N.says)}</p>` + (N.note ? `<p class="small">${nvCode(N.note)}</p>` : "")
+    + `<p class="muted small">Recorded by <code>${nvEsc(N.producer)}</code> as it ran, in `
     + `<a href="${NV_GH}main/docs/${nvEsc(e.lineage)}"><code>docs/${nvEsc(e.lineage)}</code></a>. It looks backward from `
     + `<code>${nvEsc(N.path)}</code> to the records.</p>`;
   h += `<h4>Counted as one</h4><ul class="lin-one">` + L.counted_as_one.map(c =>
@@ -1907,14 +2048,18 @@ function nvLineageHTML(e) {
     const none = s.why.reason === "no reason recorded";
     h += `<div class="lin-step" id="lin-${nvEsc(s.id)}"><div>${nvKindBadge(s.kind)}<b>${nvEsc(s.title)}</b> <span class="lin-ref">${nvEsc(s.id)}</span></div>`
       + `<p>${nvCode(s.imposes)}</p>`
-      + `<p class="small muted">In: ${s.inputs.map(i => nvEsc(nvLinVal(i))).join("; ")}</p>`
+      + (s.inputs.length ? `<p class="small muted">In: ${s.inputs.map(i => nvEsc(nvLinVal(i))).join("; ")}</p>` : "")
       + s.code.map(c => nvLinCode(c, false)).join("")
+      + nvLinSaid(s.said)
       + `<p class="small"><b>Why:</b> ${none ? `<span class="lin-none">no reason recorded</span>` : nvCode(s.why.reason)}`
       + (s.why.ref ? ` <a class="ref" href="${NV_GH}main/${nvEsc(s.why.ref.file)}#L${s.why.ref.first}-L${s.why.ref.last}">${nvEsc(s.why.ref.file)}:${s.why.ref.first}</a>` : "")
-      + ` <span class="muted">— by ${nvEsc(s.why.author)}</span></p>`
+      + (s.why.author && s.why.author !== "not recorded" ? ` <span class="muted">— by ${nvEsc(s.why.author)}</span>` : "") + `</p>`
       + (s.alternative ? `<p class="small"><b>What else could have been chosen:</b> ${nvCode(s.alternative)}</p>` : "")
       + `<p class="small"><b>Tested:</b> ${s.tested === "not tested" ? `<span class="lin-none">not tested</span>` : nvEsc(s.tested)}</p>`
-      + `<table class="ex lin-kv">${Object.entries(s.outputs).map(([a, v]) => `<tr><td><code>${nvEsc(a)}</code></td><td>${nvEsc(nvLinVal(v))}</td></tr>`).join("")}</table></div>`;
+      + (s.settle ? `<p class="small lin-settle"><b>What would settle it:</b> ${nvCode(s.settle)}</p>` : "")
+      + (Object.keys(s.outputs || {}).length
+        ? `<table class="ex lin-kv">${Object.entries(s.outputs).map(([a, v]) => `<tr><td><code>${nvEsc(a)}</code></td><td>${nvEsc(nvLinVal(v))}</td></tr>`).join("")}</table>` : "")
+      + `</div>`;
   }
   if (N.page_line) h += `<div class="lin-branch">the page</div><div class="lin-step"><p class="small">${nvEsc(N.page_note || "")}</p>${nvLinCode(N.page_line, false)}</div>`;
   h += `<h4>Where the chain ends</h4><ul class="lin-ends">` + L.ends.map(x =>
@@ -1924,6 +2069,13 @@ function nvLineageHTML(e) {
   if (L.notes && L.notes.model_output) h += `<p class="small"><b>Model output presented as data:</b> ${nvCode(L.notes.model_output)}</p>`;
   if (L.not_on_this_chain && L.not_on_this_chain.length)
     h += `<h5>Read by the producer, not on this chain</h5><ul class="small">${L.not_on_this_chain.map(a => `<li>${nvCode(a.what)}: ${nvCode(a.why)}</li>`).join("")}</ul>`;
+  if (sp.table) {
+    const t = sp.table;
+    h += `<h4>The spread under it</h4><p class="small">${nvCode(sp.what || "")}</p><div class="lin-tw"><table class="ex">`
+      + `<tr>${t.columns.map(c => `<td class="muted">${nvEsc(c)}</td>`).join("")}</tr>`
+      + t.rows.map(r => `<tr>${r.map(v => `<td>${nvEsc(nvLinVal(v))}</td>`).join("")}</tr>`).join("") + `</table></div>`
+      + (sp.note ? `<p class="small">${nvCode(sp.note)}</p>` : "");
+  }
   if (sp.pairs) {
     const d = sp.dropped || {}, wb = d.within_between || {};
     h += `<h4>The spread under it</h4><p class="small">${sp.n} water bodies, one point each. `
@@ -1938,8 +2090,8 @@ function nvLineageHTML(e) {
       + `</table></details>`;
   }
   if (L.robustness && L.robustness.length) {
-    h += `<h4>Rerun with one choice changed</h4><table class="ex lin-rr"><tr><td></td><td>as published</td><td><b>${nvSigned(N.value)}</b></td><td class="muted">n ${N.n}</td></tr>`
-      + L.robustness.map(x => `<tr class="${x.headline ? "hit" : ""}"><td><a class="lin-ref" href="#lin-${nvEsc(x.step || "")}">${nvEsc(x.id)}</a></td><td>${nvEsc(x.imposed)}${x.note ? `<br><span class="muted small">${nvEsc(x.note)}</span>` : ""}</td><td>${nvSigned(x.value)}</td><td class="muted">n ${x.n}</td></tr>`).join("")
+    h += `<h4>Rerun with one choice changed</h4><table class="ex lin-rr"><tr><td></td><td>as published</td><td><b>${nvLinNum(N, N.value)}</b></td><td class="muted">${N.n !== undefined ? `n ${N.n}` : ""}</td></tr>`
+      + L.robustness.map(x => `<tr class="${x.headline ? "hit" : ""}"><td><a class="lin-ref" href="#lin-${nvEsc(x.step || "")}">${nvEsc(x.id)}</a></td><td>${nvEsc(x.imposed)}${x.note ? `<br><span class="muted small">${nvEsc(x.note)}</span>` : ""}${x.code ? nvLinCode(x.code, false) : ""}</td><td>${nvLinNum(N, x.value)}</td><td class="muted">${x.n !== undefined && x.n !== null ? `n ${x.n}` : ""}</td></tr>`).join("")
       + `</table>`;
   }
   return h;

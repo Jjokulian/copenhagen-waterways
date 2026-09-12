@@ -144,13 +144,18 @@ class Lineage:
 
     def step(self, sid, kind, title, code, imposes, inputs, outputs, branch=None,
              why=NO_REASON, why_ref=None, author=NO_AUTHOR, alternative=None,
-             tested=None, counted_as_one=None):
+             tested=None, counted_as_one=None, said=None, settle=None):
+        """`said` carries a step that somebody else did and published no code for:
+        their method, reason and stated limits in their own words, each checked
+        against the pinned document by the caller. `settle` is what would close the
+        question the step leaves open."""
         if kind not in KINDS:
             raise ValueError(f"lineage: {kind!r} is not a kind in PROVENANCE_SPEC.md")
         self.doc["steps"].append({
             "id": sid, "kind": kind, "branch": branch, "title": title,
             "imposes": imposes, "counted_as_one": counted_as_one,
             "inputs": _plain(inputs), "code": code if isinstance(code, list) else [code],
+            "said": _plain(said or []), "settle": settle,
             "why": {"reason": why or NO_REASON, "ref": why_ref, "author": author or NO_AUTHOR},
             "alternative": alternative, "tested": tested or "not tested",
             "outputs": _plain(outputs)})
@@ -169,10 +174,11 @@ class Lineage:
     def spread(self, **kw):
         self.doc["spread"] = _plain(kw)
 
-    def rerun(self, rid, imposed, changed, value, n, step=None, headline=False, note=None):
+    def rerun(self, rid, imposed, changed, value, n, step=None, headline=False, note=None,
+              code=None):
         self.doc["robustness"].append({"id": rid, "imposed": imposed, "changed": changed,
                                        "value": value, "n": n, "step": step,
-                                       "headline": headline, "note": note})
+                                       "headline": headline, "note": note, "code": code})
 
     def aside(self, what, why):
         self.doc["not_on_this_chain"].append({"what": what, "why": why})

@@ -73,6 +73,60 @@
    "retrieved": "2026-09-10",
    "checked": "2026-09-10",
    "status": "pinned"
+  },
+  "SR681": {
+   "title": "Thodsen et al. 2025, Vand- og Næringsstoftransport 2024. NOVANA, DCE Videnskabelig rapport nr. 681",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Videnskabelige_rapporter_600-699/SR681.pdf",
+   "sha256": "6a21213f0742201eb32557b8519d375bd8a11d11581f843d86ca7b0e255d45e9",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned",
+   "note": "The fetched PDF's own sha256 is a2b50a7f527db627ed4e3e4a22d567e43a07cd099954998169937231cfe85131, the same file read for the correction of 2026-09-13."
+  },
+  "NKM2020": {
+   "title": "Højberg et al. 2021, National kvælstofmodel - version 2020. Metode rapport (GEUS, DCE, DCA)",
+   "url": "https://www.geus.dk/Media/637576521860083405/NKM2020_Rapport_18maj2021_web.pdf",
+   "sha256": "f291d3650b9a0f3cc6f644f2e09d3e41c6e65c11973a70d2f65c5946fc0bf7b9",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned",
+   "note": "The fetched PDF's own sha256 is 0b57898a3e32d9dfea8feee0a426710f3ce0ec27de2122ee7577f692a6b483f0, the same file read for the correction of 2026-09-13."
+  },
+  "DMU-AR245": {
+   "title": "Andersen, Heckrath, Thodsen, Dybkjær & Ovesen 2008, Fosfortab fra det dyrkede areal til Stevning Dam, Hindemaj og Haderslev Dam. Arbejdsrapport fra DMU nr. 245",
+   "url": "https://www2.dmu.dk/pub/ar245.pdf",
+   "sha256": "03be5012f9934b013378f663254a079d913688763ac8d3d01ecbb6b89b092204",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned",
+   "note": "The fetched PDF's own sha256 is c66e956236f7ba44464dae314b0c4c0ef96d60d13645c182db482a13d7eea4f7, the same file read for the correction of 2026-09-13."
+  },
+  "VJ-2018-N-VANDLOEB": {
+   "title": "van't Veen, Tornbjerg, Windolf, Kjeldgaard, Ovesen, Poulsen & Kronvang 2018, Hvordan måles kvælstof i vandløb? Vand & Jord 25(4), pages 169-173",
+   "url": "http://vand-og-jord.dk/wp-content/uploads/2021/03/VJ-4_18-N-i-vandloeb-s169-173.pdf",
+   "sha256": "3d2d0c67d1959223bb44f0adc99cbd057d457a08dcdfe480fd28640a30d76f6d",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned",
+   "note": "The fetched PDF's own sha256 is 3ed967782b681fa5230b96126b1a1a62c8f37b3ead37be56ddb8ce6d46184877, the same file read for the correction of 2026-09-13."
+  },
+  "MST-2023-MOF121": {
+   "title": "Miljøstyrelsen, notat af 24. januar 2023 (J.nr. 2023-4725), Udledning af kvælstof til kystvand opdelt på kilder. Folketinget, MOF Alm.del 2022-23 (2. samling), bilag 121",
+   "url": "https://web.archive.org/web/2024id_/https://www.ft.dk/samling/20222/almdel/MOF/bilag/121/2657955.pdf",
+   "sha256": "236916cec82b76b569cb5a573debefd74a0641380a0ee8b1e5bff80e21b95913",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned",
+   "note": "The primary source of the published agricultural share. Canonical URL https://www.ft.dk/samling/20222/almdel/MOF/bilag/121/2657955.pdf, which refuses scripted fetches (HTTP 403 behind Cloudflare), so the retrieval URL is the Internet Archive's raw copy of it. The fetched PDF's own sha256 is 74b4c4e4793d4287235d0e1011becec6402b26cb9a3fb3af68e2a53d122d9608, the same file read for the correction of 2026-09-13."
+  },
+  "VP3-2023": {
+   "title": "Miljøministeriet (juni 2023), Vandområdeplanerne 2021-2027 (the edition dated 22.9.2023)",
+   "url": "https://edit.mst.dk/media/njvlvhax/vandomraadeplanerne-2021-2027-22-9-2023.pdf",
+   "sha256": "0a64c6fff7f13a2490a3e6f2a8b479154af0c0fc57aac44dad4fe313ec04bfc1",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned",
+   "note": "The fetched PDF's own sha256 is 7b6444fbc04b343045f38f5d64c5551581fcc67c30d95f6bcf9100c7fb9be5cb, the same file read for the correction of 2026-09-13."
   }
  },
  "params": {

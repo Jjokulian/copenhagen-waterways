@@ -1,0 +1,29 @@
+{
+ "_what": "Sources pinned for the 17-step record of how the published agricultural share of nitrogen was made (scripts/agri_share_chain.py).",
+ "sources": {
+  "DCE-BAGGRUND-2014": {
+   "title": "Bøgestrand, Kronvang, Windolf & Kjeldgaard (DCE notat, 16.12.2014), Baggrundsbelastning med total N og nitrat-N - opdatering",
+   "url": "https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2014/Baggrundsbelastning_med_total_N_opdatering.pdf",
+   "sha256": "cd5a9a361f019fd5f715ab43f5eeebccaf198a8489bf09bfc2f8298a5b6ed431",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned"
+  },
+  "DCE-TA-DB01": {
+   "title": "Bøgestrand & Erfurt (2014), Teknisk anvisning DB01: Stoftransport, Fagdatacenter for Ferskvand, DCE",
+   "url": "https://ecos.au.dk/fileadmin/ecos/Fagdatacentre/Ferskvand/DB01_stoftransport.pdf",
+   "sha256": "1cb49ba26392b2e55c74f93cc64c4677d6c2f0dc207ec4ba83697bac212b16c5",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned"
+  },
+  "SR4": {
+   "title": "DCE (2011), Vandløb 2010. NOVANA. Videnskabelig rapport fra DCE nr. 4",
+   "url": "https://www.dmu.dk/Pub/SR4.pdf",
+   "sha256": "c3edb8e0aa4b91d8d8de08178c723c23b497bdb74aa6eff81a5903824097ac84",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned"
+  }
+ }
+}

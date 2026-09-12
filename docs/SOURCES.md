@@ -78081,7 +78081,7 @@ Every pathway of reactive nitrogen to Danish marine waters this project could en
 <a id="K-NITROGEN-READINGS"></a>
 ### Values read out of pinned documents, each checked at its phrase
 
-`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (re-read grundlaget.py after agent w3-gc's rewrite: rv() still refuses a nitrogen_readings.json value unless its phrase is in the pinned text of its source and the value is printed in the phrase, as the model says; the page also reads pins directly through rval(), which applies the same two checks. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **stale: data/manual/claims.d/nitrogen.json#sources changed since it was read** · read by Claude (re-read grundlaget.py after agent w3-gc's rewrite: rv() still refuses a nitrogen_readings.json value unless its phrase is in the pinned text of its source and the value is printed in the phrase, as the model says; the page also reads pins directly through rval(), which applies the same two checks. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Holds the numbers docs/NITROGEN.md and docs/GRUNDLAGET.md read from documents rather than compute: DCE SR120's field balance and its method notes, the published national apportionment, the second opinion's chlorophyll G/M boundaries, DCE's Kd banding and DHI's Danish share for Hjarbæk Fjord.
 

@@ -3615,7 +3615,7 @@
    "licenses": "That the named document prints the value, in the phrase shown.",
    "model": "Each entry names a source pinned by its sha256 in `data/manual/claims.d/nitrogen.json` and a phrase copied from it. `rv()` in `scripts/nitrogen.py` and in `scripts/pages/grundlaget.py` refuses to write the page unless the phrase, with whitespace collapsed and, for a web page, entities decoded and tags dropped, occurs in the pinned text. A table row is checked as the whole row in order, so a value cannot be taken from the wrong column without the row failing to match. The GRUNDLAGET generator also refuses a value that is not printed in its own phrase.",
    "not_licensed": "That the document's value is right, or that it means what the page's surrounding argument takes it to mean.",
-   "status": "current",
+   "status": "stale: data/manual/claims.d/nitrogen.json#sources changed since it was read",
    "title": "Values read out of pinned documents, each checked at its phrase",
    "void_if": [
     "a phrase matches by coincidence somewhere other than where the value was read",
@@ -231872,6 +231872,7 @@
     "synthetic": false
    },
    "kind": "document",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "document": 1
    },
